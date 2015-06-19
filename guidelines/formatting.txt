@@ -1,0 +1,85 @@
+[[formatting]]
+=== Project-specific formatting notes
+
+This section contains a few notes on AsciiDoc syntax and conventions that are
+specific to this guide.
+
+[[style-sections]]
+==== Chapters and Sections
+
+AsciiDoc supports several syntax styles for indicating chapters and
+sections (not all of which are covered in all AsciiDoc manuals). This guide
+uses the following syntax, with required identifiers on each chapter and
+section:
+
+----
+ = Overall Book Title
+
+
+ [[first_chapter_id]]
+ == Chapter Title One
+
+
+ [[first_section_id]]
+ === Section Title Sub 1
+
+
+ [[first_subsection_id]]
+ === Section Title SubSub 1
+----
+
+For readability of the source, leave two blank lines before the start of each
+chapter and section. By convention, each chapter is in its own file, and each
+first-level section is displayed on its own page when the guide is displayed in
+HTML format.
+
+Once you have a chapter or section defined with an identifier,
+you can make a cross-link by putting, for example:
+
+----
+ <<first_section_id>>
+----
+
+into your text. This will be formatted with the title of the section or
+chapter, and (depending on the output format) a link and/or page number.
+
+
+[[style-code]]
+==== Code
+
+To include PHP code, prefix a literal block (which starts and ends with +----+
+on its own line) with +[source,php]+. Other types of source code are also
+recognized, such as +css+, +javascript+, +sql+, +html+, etc. For generic source
+code, such as commands to type at an operating system prompt, you can omit the
++[source,php]+ line.
+
+
+[[style-literals]]
+==== Literals and Text Formatting
+
+File names and directories in text should be formatted in italics, as well as
+new terms that are introduced:
+
+----
+_sites/default.settings.php_
+_view_ (in the context of the Views module)
+----
+
+Programming details (functions, variables, etc.) and operating system
+commands embedded in text should be formatted in monospace:
+
+----
++my_function_name()+
++$foo+
+----
+
+
+[[style-comments]]
+==== Comments
+
+You can put comments into your AsciiDoc using double slashes, like PHP:
+
+----
+// This is a comment that is only relevant to someone reading
+// the AsciiDoc source. It will not be displayed in the output.
+----

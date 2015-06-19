@@ -1,0 +1,25 @@
+[[text-conventions]]
+=== Text conventions
+
+The following conventions should be followed when writing text for this guide.
+
+[[drupal-name]]
+==== Using the word Drupal
+
+Use the word "Drupal" in the guide as little as possible. The reason for this
+guideline is that some people may download Drupal in a Distribution, which may
+somewhat hide the fact that they are actually, behind-the-scenes, using
+Drupal. Also, the text in the guide is under an open-source license, so to
+encourage re-use of topics, the text should specifically reference Drupal as
+little as possible.
+
+[[drupal-versions]]
+==== Drupal Versions
+
+This repository will be branched for new versions of Drupal. So, do not
+specifically use the version number in your writing, except in the top-level
+book title, and in specific sections about updating from one version to
+another. The hope is that when we branch to the next version, we should just be
+able to delete the version-specific updating sections, change the main title in
+one place, and be done.
+
