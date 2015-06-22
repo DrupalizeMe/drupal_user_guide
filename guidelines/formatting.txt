@@ -25,13 +25,18 @@ section:
 
 
  [[first_subsection_id]]
- === Section Title SubSub 1
+ ==== Section Title SubSub 1
 ----
 
 For readability of the source, leave two blank lines before the start of each
-chapter and section. By convention, each chapter is in its own file, and each
-first-level section is displayed on its own page when the guide is displayed in
-HTML format.
+chapter and section. In this guide, the convention is that the main book title
+and chapters are created in the main _guide.txt_ file. Each section is in a
+separate include file, with an include statement in the _guide.txt_ file. The
+idea is that the sections could be reassembled into different guides if
+desired.
+
+When the book is displayed on a web site, each first-level section is displayed
+on its own page.
 
 Once you have a chapter or section defined with an identifier,
 you can make a cross-link by putting, for example:
