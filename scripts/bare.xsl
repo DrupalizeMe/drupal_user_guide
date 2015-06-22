@@ -8,6 +8,7 @@
 <!-- Use outline numbering for sections. -->
 <xsl:param name="section.autolabel" select="1"/>
 <xsl:param name="section.label.includes.component.label" select="1"/>
+<xsl:param name="preface.autolabel">i</xsl:param>
 
 <!-- Use item IDs as file names, for portability as content shifts. -->
 <xsl:variable name="use.id.as.filename">

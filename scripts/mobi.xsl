@@ -5,6 +5,11 @@
      in the xmlto command for making .mobi output.
      See script mkhtml.sh for usage. -->
 
+<!-- Use outline numbering for sections. -->
+<xsl:param name="section.autolabel" select="1"/>
+<xsl:param name="section.label.includes.component.label" select="1"/>
+<xsl:param name="preface.autolabel">i</xsl:param>
+
 <!-- Set the maximum depth for tables of contents to 2. -->
 <xsl:variable name="toc.max.depth">
   <xsl:value-of select="'2'" />
