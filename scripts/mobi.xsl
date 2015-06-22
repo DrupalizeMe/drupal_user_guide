@@ -5,6 +5,11 @@
      in the xmlto command for making .mobi output.
      See script mkhtml.sh for usage. -->
 
+<!-- Set the maximum depth for tables of contents to 2. -->
+<xsl:variable name="toc.max.depth">
+  <xsl:value-of select="'2'" />
+</xsl:variable>
+
 <!-- Override table of contents creation to limit depth. -->
   <xsl:template match="book|
                        article|
