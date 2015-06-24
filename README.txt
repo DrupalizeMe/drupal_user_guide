@@ -4,12 +4,14 @@ which in turn can be compiled into HTML, PDF, and various e-book formats. The
 AsciiDoc Display module (https://www.drupal.org/project/asciidoc_display) can be
 used to display special HTML output in a Drupal site.
 
+
 COPYRIGHT AND LICENSE
 ---------------------
 
-The copyright and license for the text source files in this project can be found
-in files called "copyright.txt" in various subdirectories; information is also
-found in the ASSETS.txt file in this directory.
+See the ASSETS.yml file in this directory, and files it references, for
+copyright and license information for the text source files in this
+project. Output files produced and displayed by this project also must contain
+copyright/license information.
 
 Code (scripts) in this project are licensed under the GNU/GPL version 2 and
 later license.
