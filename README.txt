@@ -32,7 +32,8 @@ guidelines / templates
 
 Guidelines and templates for contributors to this project are in the guidelines
 and templates directories, respectively. The guidelines are in the form of
-another AsciiDoc manual, with guidelines.txt as the index file.
+another AsciiDoc manual, with guidelines.txt as the index file. There are
+separate templates for topics covering tasks and concepts.
 
 scripts / output
 
