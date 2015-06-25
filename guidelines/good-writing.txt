@@ -1,0 +1,40 @@
+[[good-writing]]
+=== Writing Good Documentation
+
+[[good-writing-minimal]]
+==== Keep it minimal
+
+A good guideline to follow when writing documentation is to keep the writing to
+a minimum. Include just enough information so that the information is conveyed.
+
+
+[[good-writing-reuse]]
+==== Write reusable topics
+
+Ideally, each topic in this guide should be reusable. To facilitate that:
+
+* Separate task information and concept information into separate
+  topics. Cross-reference the concept topic in the task topic, rather than
+  describing the concept again.
+* Make each concept topic cover one concept rather than multiple
+  concepts. Cross-reference related topics.
+* Make each task topic cover the minimal amount of actions that makes sense to
+  stand alone. Reference prerequisite and follow-on tasks rather than describing
+  them in the same topic.
+
+If you find that the proposed topic outline is not following these guidelines,
+bring it to the attention of the project coordinators -- see <<contact>>.
+
+
+[[good-writing-best-practices]]
+==== Follow best practices
+
+Make sure that all topics encourage best practices. Considerations to keep in
+mind:
+
+* Accessibility: See https://www.drupal.org/node/1637990
+* Usability: Make sure that UI text created in examples follows the Drupal User
+  Interface text guidelines: https://www.drupal.org/node/604342
+* Security: See https://www.drupal.org/security/secure-configuration
+* The "Drupal Way": Encourage use of existing modules rather than writing your
+  own, etc.
