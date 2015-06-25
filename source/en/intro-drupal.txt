@@ -1,8 +1,10 @@
 [[intro-drupal]]
 === Introduction to Drupal
 
-Drupal is a Content Management System (CMS). Generically, a CMS is software for
-managing a web site, with these features:
+(((Content Management System)))
+
+Drupal is a <<glossary-cms,Content Management System (CMS)>>. Generically, a CMS
+is software for managing a web site, with these features:
 
 * Content and configuration are stored in a database, so you can edit content
   and manage menus, navigation, and other site aspects on the web.
@@ -15,6 +17,8 @@ managing a web site, with these features:
 * A permission system permits different users to have permission to do different
   actions on the site (administrators, content editors, etc.).
 
+(((LAMP stack)))
+
 Drupal normally runs on a "LAMP" platform:
 
 * L = Linux  operating system, but it can also run on Windows and Mac.
@@ -23,6 +27,9 @@ Drupal normally runs on a "LAMP" platform:
 * M = MySQL database, but it can also run on PostgreSQL, SQLite, and other
   database systems.
 * P = PHP scripting language.
+
+(((Open-source software)))
+(((GNU public license)))
 
 Drupal is _Free, Open Source Software_ (FOSS), developed by a world-wide
 community of developers who donate their time to the project. It is licensed

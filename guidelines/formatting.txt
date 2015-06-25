@@ -1,16 +1,28 @@
 [[formatting]]
-=== Project-specific formatting notes
+=== AsciiDoc Formatting Conventions
 
-This section contains a few notes on AsciiDoc syntax and conventions that are
-specific to this guide.
+
+[[asciidoc]]
+==== AsciiDoc Reference
+
+The documentation in this project is formatted using
+http://asciidoc.org[AsciiDoc], which is a fairly generic markdown-style
+syntax. The
+http://asciidoc.org/userguide.html[AsciiDoc user guide] explains the markup
+syntax in detail, and an
+http://powerman.name/doc/asciidoc[AsciiDoc Cheat Sheet] is also available.
+
+The remainder of this topic goes over some conventions that are specific to this
+project.
+
 
 [[style-sections]]
-==== Chapters and Sections
+==== Creating Chapters, Topics, and Sections
 
 AsciiDoc supports several syntax styles for indicating chapters and
 sections (not all of which are covered in all AsciiDoc manuals). This guide
 uses the following syntax, with required identifiers on each chapter and
-section:
+topic:
 
 ----
  = Overall Book Title
@@ -20,25 +32,30 @@ section:
  == Chapter Title One
 
 
- [[first_section_id]]
- === Section Title Sub 1
+ [[first_topic_id]]
+ === Topic One
 
 
  [[first_subsection_id]]
- ==== Section Title SubSub 1
+ ==== Section Title 1
 ----
 
 For readability of the source, leave two blank lines before the start of each
-chapter and section. In this guide, the convention is that the main book title
-and chapters are created in the main _guide.txt_ file. Each section is in a
+chapter, topic, and section. In this guide, the convention is that the main book
+title and chapters are created in the main _guide.txt_ file. Each topic within
+the section is in a
 separate include file, with an include statement in the _guide.txt_ file. The
-idea is that the sections could be reassembled into different guides if
+idea is that the topics could be reassembled into different guides if
 desired.
 
-When the book is displayed on a web site, each first-level section is displayed
+When the book is displayed on a web site, each topic is displayed
 on its own page.
 
-Once you have a chapter or section defined with an identifier,
+
+[[style-crosslinks]]
+==== Cross-linking
+
+Once you have a chapter or topic defined with an identifier,
 you can make a cross-link by putting, for example:
 
 ----
@@ -49,14 +66,51 @@ into your text. This will be formatted with the title of the section or
 chapter, and (depending on the output format) a link and/or page number.
 
 
-[[style-code]]
-==== Code
+[[style-glossary]]
+==== Glossary Entries
 
-To include PHP code, prefix a literal block (which starts and ends with +----+
-on its own line) with +[source,php]+. Other types of source code are also
-recognized, such as +css+, +javascript+, +sql+, +html+, etc. For generic source
-code, such as commands to type at an operating system prompt, you can omit the
-+[source,php]+ line.
+Glossary entries go into the _glossary.txt_ file. Keep them in alphabetical
+order and follow the format of existing items in that file. Example:
+
+----
+[[glossary-cms]] Content Management System (CMS)::
+    A collection of tools designed to allow the creation, modification,
+    organization, search, retrieval and removal of information on a web site.
+    See <<intro-drupal>>.
+----
+
+This entry starts with the ID +glossary-cms+, followed by the glossary entry
+name and a double-colon. The definition starts on the next line, and is indented
+4 spaces. It also includes a link to a topic that has more information --
+glossary entries should only be a couple of lines long.
+
+To cross-link to a glossary item in text, use syntax like this:
+
+----
+<<glossary-cms,CMS>>
+----
+
+That will make a cross-link with link text "CMS".
+
+
+[[style-index]]
+==== Index Entries
+
+Each topic should have at least one entry in the index. For task topics,
+the usual format for the entry name is +Nouns, verb-ing+; for example, if the
+task is called _Creating a block_, the index entry should be +Blocks,
+creating+. For a concept topic, the index entry should be something like
++Blocks+. In some cases, it may be sensible to have more than one index
+entry for a topic.
+
+To define an index entry, put this just before the paragraph text related to the
+entry:
+
+----
+(((Blocks,creating)))
+----
+
+Note that there is no space after the comma.
 
 
 [[style-literals]]
@@ -77,6 +131,17 @@ commands embedded in text should be formatted in monospace:
 +my_function_name()+
 +$foo+
 ----
+
+
+[[style-code]]
+==== Code Blocks
+
+Blocks of code should go into a literal block (which starts and ends with +----+
+on its own line). You can prefix this with an indication of what type of code
+is in the block, such as +[source,php]+ for PHP. Other recognized code types
+include +css+, +javascript+, +sql+, +html+, etc. For generic source
+code, such as commands to type at an operating system prompt, you can omit the
++[source,php]+ line.
 
 
 [[style-comments]]
