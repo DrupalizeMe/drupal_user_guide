@@ -13,6 +13,11 @@ Drupal. Also, the text in the guide is under an open-source license, so to
 encourage re-use of topics, the text should specifically reference Drupal as
 little as possible.
 
+So, in the introductory sections about what Drupal is, we'll need to use the
+word Drupal. But later in the Guide, try to use words or phrases like "the site"
+or "the system" or "the Foo module", instead of specifically mentioning the word
+Drupal.
+
 
 [[drupal-versions]]
 ==== Drupal Versions
@@ -27,3 +32,22 @@ main title in one place, and be done.
 Also, do not refer to earlier versions of Drupal. Just document what the version
 of Drupal you are writing about does and how it should be used.
 
+
+[[text-caps]]
+==== References to Drupal components and interface
+
+When referring to a specific module or theme, capitalize it as follows:
+
+* ... the Foo Bar module ...
+* ... the Foo Bar theme ...
+
+When referring to text that the user can see in the user interface, use the
+exact text that they will see, and put it in italics. Example:
+
+----
+Click _Save configuration_.
+----
+
+which is formatted as:
+
+Click _Save configuration_.
