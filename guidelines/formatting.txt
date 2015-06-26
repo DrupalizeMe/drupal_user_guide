@@ -54,6 +54,8 @@ different guides if desired.
 Chapter and topic titles should use "Title Case". Titles for any sections at
 levels  below topics should use "Sentence case".
 
+See also: <<choosing-titles>>
+
 
 [[style-crosslinks]]
 ==== Cross-linking
@@ -103,25 +105,16 @@ That will make a cross-link with link text "CMS".
 [[style-index]]
 ==== Creating index entries
 
-Each topic should have at least one entry in the index. For task topics,
-the usual format for the entry name is +Nouns, verb-ing+; for example, if the
-task is called _Creating a block_, the index entry should be +Blocks,
-creating+. For a concept topic, the index entry should be something like
-+Blocks+ or +Blocks, overview+.
-For a glossary entry, the index entry should be something like
-+Blocks, definition+. Note that we want to have Blocks, plural, not Block,
-singular, so that all the Blocks entries stay together. Also, note that
-in some cases, it may be sensible to have more than one index entry in a single
-topic.
-
-To define an index entry, put this just before the paragraph text related to the
-entry:
+Each topic should have at least one entry in the index. To define an index
+entry, put this just before the paragraph text related to the entry:
 
 ----
 (((Blocks,creating)))
 ----
 
 Note that there is no space after the comma.
+
+See also: <<choosing-titles>>
 
 
 [[formatting-images]]

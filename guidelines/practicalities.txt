@@ -20,8 +20,16 @@ assigned a topic:
 * If one of the <<coordinators, project coordinators>> is in the
   documentation IRC channel (see <<contact>>), ask them for an assignment.
 * If there is not a meeting or a sprint day when you're ready for an assignment,
-  on the https://www.drupal.org/node/2512362[main tracking issue], locate a
-  topic that needs a writer or editor.
+  on the
+  https://docs.google.com/spreadsheets/d/1ov0FyJhKrJe7PYvohzV5UrrLyRaVCy2A0BjjEatqxKw/edit?usp=sharing[tracking
+  spreadsheet] for the
+  https://www.drupal.org/node/2512362[main tracking issue], locate a
+  topic that needs a writer or editor. Choose a topic that appears on the
+  https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html[temporary
+  site with the guide output], and that has a file name listed on the tracking
+  spreadsheet. (These topics are ones we're certain need to be written; if a
+  topic does not have a file name in the tracking spreadsheet, it is not
+  finalized yet.)
 
 Once you have a topic:
 
@@ -49,8 +57,7 @@ different assignment:
 ==== Viewing output and editing source files
 
 Once you have an assigned topic, your next step is to look at the topic, see
-what needs to be written or edited, and actually edit the source file, keeping
-in mind the <<guidelines,project guidelines>>.
+what needs to be written or edited, and actually edit the source file.
 
 We have set up a temporary site where you can view the in-progress user guide:
 https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html (the user
@@ -77,6 +84,9 @@ that file:
   finish your edits use the "Download new file" button to download a new version
   of the source file that contains your edits, and save it into the source
   directory _source/en_.
+
+When editing your topic, follow the <<guidelines,project guidelines>> and the
+instructions in the template file.
 
 Once you have a new version of one or more source files ready, your next step is
 to make a patch; see <<practicalities-project>>.
