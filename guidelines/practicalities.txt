@@ -17,24 +17,32 @@ assigned a topic:
   days, and ask for an assignment. These are announced on the
   https://groups.drupal.org/documentation[Documentation group on
   Groups.Drupal.org].
-* If one of the <<practicalities-coordinators, project coordinators>> is in the
+* If one of the <<coordinators, project coordinators>> is in the
   documentation IRC channel (see <<contact>>), ask them for an assignment.
 * If there is not a meeting or a sprint day when you're ready for an assignment,
   on the https://www.drupal.org/node/2512362[main tracking issue], locate a
-  topic that needs a writer or editor. If the topic does not already have a
-  sub-issue created, create a new one, following the instructions in the main
-  tracking issue. Then (either on the existing issue or the new one you
-  created), use the "Assigned" field under "Issue metadata" to assign the issue
-  to yourself, and add a comment saying what you plan to do (write or edit) and
-  when you plan to do it. The project coordinators are subscribed to issues for
-  the project, so they will notice your change and update the tracking issue.
+  topic that needs a writer or editor.
+
+Once you have a topic:
+
+. If the topic does not already have a
+  sub-issue created, create a new one, following the instructions
+  on the https://www.drupal.org/node/2512362[main tracking issue].
+. Either on the existing issue or the new one you
+  created, use the "Assigned" field under "Issue metadata" to assign the issue
+  to yourself.
+. Add a comment saying what you plan to do (write or edit) and
+  when you plan to do it.
+. Save your comment and changes. The project coordinators are subscribed to
+  issues for the project, so they will notice your change and update the
+  tracking issue.
 
 If you find that you cannot complete the assignment you took, or need a
 different assignment:
 
-* Un-assign the issue
-* Add a comment explaining that you are not completing it
-* Hopefully, find a different topic to work on by following these steps again.
+. Un-assign the issue
+. Add a comment explaining that you are not completing it
+. Hopefully, find a different topic to work on by following these steps again.
 
 
 [[practicalities-editing]]
@@ -67,7 +75,8 @@ that file:
   link to edit the source file. Click that link, and you can edit the source in
   a window. There is a Preview button that will show you the output as you edit,
   and when you finish your edits, you can use the Download button to download a
-  new version of the source file.
+  new version of the source file, and save it into the source directory
+  _source/en_.
 
 Once you have a new version of one or more source files ready, your next step is
 to make a patch; see <<practicalities-project>>.
@@ -97,7 +106,8 @@ community members who contribute their time to it:
 The source files for both this guidelines documentation and the User Guide
 itself are located in a https://www.drupal.org/project/user_guide[Drupal.org
 project called User Guide]. The source files are managed in a Git revision
-control repository.
+control repository; the English Guide files are in subdirectory _source/en_, and
+other languages will eventually be in similar subdirectories there.
 
 This project uses Drupal.org issues to track progress and manage changes. There
 is a https://www.drupal.org/node/2512362[main tracking issue] where you can find
@@ -122,7 +132,7 @@ located or created its issue), and
 <<practicalities-editing,edited the source file for the topic>>, you will need
 to submit your changes to the issue. If possible, you should make
 a Git differences (or _patch_) file, but if you don't know how to do that, don't
-worry! Someone else can help with that. Then you'll want to go back to your
+worry! Someone else can help with that. Then go back to your
 issue and:
 
 * Upload the text source file(s) you changed, in the Files section of the issue.
@@ -159,66 +169,11 @@ cd user_guide
 git pull
 ----
 
-* Edit the files, which are in the source/en directory of this repository.
+* Edit the source files, which are in the _source/en_ directory of this
+  repository (see <<practicalities-editing>>).
 * Make a patch file with this command:
 
 ----
 git diff > name_of_the_patch_file.patch
 ----
 
-
-[[practicalities-coordinators]]
-==== Project coordinators
-
-The project coordinators are:
-
-* https://www.drupal.org/u/amber-himes-matz[Amber Matz] (Amber Himes Matz on
-  Drupal.org and ambermatz on IRC) - Volunteer coordination
-  and project management
-* https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] (jhodgdon on Drupal.org
-  and IRC) - Content oversight
-* https://www.drupal.org/u/eojthebrave[Joe Shindelar] (eojthebrave on Drupal.org
-  and IRC) - Content oversight
-
-
-
-[[contact]]
-==== Contact information
-
-Here are some suggestions for contacting the project participants and
-coordinators, depending on the nature of your question, comment, or suggestion:
-
-Question about guidelines or practicalities of contributing::
-  * Post to the email list (see below).
-  * Find a project coordinator in IRC (see below).
-  * Contact a project coordinator through their Drupal.org contact form.
-    See <<practicalities-coordinators>>.
-Suggestion about the content of the Guide::
-  Use an issue. See <<practicalities-project>>.
-Suggestions about Guide organization::
-  Use an issue. See <<practicalities-project>>.
-Getting assigned a topic to write or edit::
-  See <<practicalities-assignment>>.
-Project management question or suggestion::
-  Contact one of the project coordinators using their Drupal.org contact
-  form. See <<practicalities-coordinators>>.
-Staying informed::
-  * Subscribe to the https://groups.drupal.org/documentation[Documentation group
-    on groups.Drupal.org]
-  * Follow issues. See <<practicalities-project>>.
-  * Join the email list (see below).
-
-The meetings for the project are held in the #drupal-documentation IRC channel,
-and you can feel free to "ping" project coordinators in this channel if they are
-there and you have a quick question. To learn more about IRC, see
-https://drupal.org/irc
-
-Project announcements are posted to the
-https://groups.drupal.org/documentation[Documentation group on
-groups.drupal.org].
-
-There is also an email list for this project, which is totally voluntary to
-join. You can view the archives at:
-https://groups.google.com/d/forum/d8manual
-To join the list, contact one of the project managers in IRC or
-through their Drupal.org contact form; see <<practicalities-coordinators>>.
