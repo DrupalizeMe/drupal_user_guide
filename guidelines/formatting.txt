@@ -9,7 +9,7 @@ The documentation in this project is formatted using
 http://asciidoc.org[AsciiDoc], which is a fairly generic markdown-style
 syntax. The
 http://asciidoc.org/userguide.html[AsciiDoc user guide] explains the markup
-syntax in detail, and an
+syntax in detail, and a more concise but less complete
 http://powerman.name/doc/asciidoc[AsciiDoc Cheat Sheet] is also available.
 
 The remainder of this topic goes over some conventions that are specific to this
@@ -118,6 +118,29 @@ entry:
 ----
 
 Note that there is no space after the comma.
+
+
+[[formatting-images]]
+==== Including images
+
+Here's the syntax to include an image:
+
+----
+// Comment explaining how to regenerate the image, for future contributors.
+image:images/filename.png[alt text]
+----
+
+Some conventions:
+
+* Images should be put in an images subdirectory.
+* They should be PNG files.
+* They should be scaled to a reasonable viewing size.
+* If you annotate an image, be sure to use an annotation color with good
+  contrast to both foreground and background colors.
+* Always include "alt" text that describes what is in the image.
+* A comment before the image is helpful, for people who may need to
+  re-create the image, explaining how to generate it. See <<style-comments>>.
+* See also <<good-writing-text>>.
 
 
 [[style-literals]]
