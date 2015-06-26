@@ -1,47 +1,76 @@
 [[practicalities]]
 === Practicalities of Contributing
 
-Add some stuff here about where the repo is, projects, patches, which guidelines
-to definitely read, where to find templates, how to contact the project
-managers, etc.
+Thank you for your desire to help us create a great User Guide! The sections
+below contain information you'll need, in order to contribute your time and
+skills to this project.
 
 
-[[practicalities-coordinators]]
-==== Project coordinators
+[[practicalities-assignment]]
+==== Finding a topic to write or edit
 
-The project coordinators are:
+The first step in contributing is to find a topic to write, test, or edit. To
+avoid duplication of effort and conflicts, please do one of the following to get
+assigned a topic:
 
-* https://www.drupal.org/u/amber-himes-matz[Amber Matz] - Volunteer coordination
-  and project management
-* https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] - Content oversight
-* https://www.drupal.org/u/eojthebrave[Joe Shindelar] - Content oversight
+* Come to one of our regular virtual or in-person meetings or "sprint" work
+  days, and ask for an assignment. These are announced on the
+  https://groups.drupal.org/documentation[Documentation group on
+  Groups.Drupal.org].
+* If one of the <<practicalities-coordinators, project coordinators>> is in the
+  documentation IRC channel (see <<contact>>), ask them for an assignment.
+* If there is not a meeting or a sprint day when you're ready for an assignment,
+  on the https://www.drupal.org/node/2512362[main tracking issue], locate a
+  topic that needs a writer or editor. If the topic does not already have a
+  sub-issue created, create a new one, following the instructions in the main
+  tracking issue. Then (either on the existing issue or the new one you
+  created), use the "Assigned" field under "Issue metadata" to assign the issue
+  to yourself, and add a comment saying what you plan to do (write or edit) and
+  when you plan to do it. The project coordinators are subscribed to issues for
+  the project, so they will notice your change and update the tracking issue.
 
-[[practicalities-project]]
-==== Drupal.org project
+If you find that you cannot complete the assignment you took, or need a
+different assignment:
 
-The source files for both this guidelines documentation and the User Guide
-itself are located in a https://www.drupal.org/project/user_guide[Drupal.org
-project called User Guide].
-
-This project uses Drupal.org issues and Git patches to manage changes. There is
-a https://www.drupal.org/node/2512362[main tracking issue] where you can find
-information on the status of writing and editing all the topics that make up the
-guide, and links to issues for each of the individual topics that people are
-working on.
-
-...say more about issues...
+* Un-assign the issue
+* Add a comment explaining that you are not completing it
+* Hopefully, find a different topic to work on by following these steps again.
 
 
 [[practicalities-editing]]
 ==== Viewing output and editing source files
 
-...say something about choice of using your own text editor or editing online...
+Once you have an assigned topic, your next step is to look at the topic, see
+what needs to be written or edited, and actually edit the source file.
 
-Site (user name/password: drupal/drupal):
-https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.htm
+We have set up a temporary site where you can view the in-progress user guide:
+https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html (the user
+name and password are both +drupal+).
+The guidelines and instructions for the project are also on this site, at:
+https://userguide-drupal.redesign.devdrupal.org/guidelines/index.html
+Both of these "books" have navigation on the right sidebar, with expand/collapse
+capability.
 
-...describe how to find the templates and the source files in the project
-git repo...
+When you are on a particular topic page, you'll notice there will be a line
+like:
+
+_Source file: text-conventions.txt_
+
+This indicates which source file the topic you are viewing was generated
+from. If you are working on this topic, you have two choices for how to edit
+that file:
+
+* You can use a text editor on your local computer, working off the Git source
+  repository for the project. See <<practicalities-project>>.
+* You can use the online editor on the temporary site. In the right sidebar
+  there is a "Source information" block, and at the bottom there should be a
+  link to edit the source file. Click that link, and you can edit the source in
+  a window. There is a Preview button that will show you the output as you edit,
+  and when you finish your edits, you can use the Download button to download a
+  new version of the source file.
+
+Once you have a new version of one or more source files ready, your next step is
+to make a patch; see <<practicalities-project>>.
 
 
 [[practicalities-recognition]]
@@ -50,9 +79,9 @@ git repo...
 This guide is a community project, and we have two ways to recognize the
 community members who contribute their time to it:
 
-. People who write or edit a topic should add their names (and optionally, their
-  organization or company names) to the _attributions.txt_ file in the User
-  Guide. See <<copyright-license>> for details on how to do that. This
+. People who write or edit a topic should also add their names (and optionally,
+  their organization or company names) to the _attributions.txt_ file in the
+  User Guide. See <<copyright-license>> for details on how to do that. This
   attribution information will appear in e-book and HTML versions of the Guide.
 
 . In addition, when you comment or upload a file on a Drupal.org issue in this
@@ -62,44 +91,134 @@ community members who contribute their time to it:
   let you enter or select the organization to credit.
 
 
+[[practicalities-project]]
+==== Drupal.org project, Git, and patches
+
+The source files for both this guidelines documentation and the User Guide
+itself are located in a https://www.drupal.org/project/user_guide[Drupal.org
+project called User Guide]. The source files are managed in a Git revision
+control repository.
+
+This project uses Drupal.org issues to track progress and manage changes. There
+is a https://www.drupal.org/node/2512362[main tracking issue] where you can find
+information on the status of writing and editing all the topics that make up the
+guide, and links to issues for each of the individual topics that people are
+working on.
+
+Background on Drupal.org projects and issues:
+
+* https://www.drupal.org/node/24565[Documentation issue reports] -- The
+  introduction section at the top is the most relevant part;
+  the rest is about issues for the Drupal.org online documentation so it is not
+  completely relevant.
+* https://www.drupal.org/node/1468332[How to find the issues for a project]
+* https://www.drupal.org/node/2276011[Updating or editing an issue report]
+* If you are viewing any issue, you can click the "Follow" button in the right
+  sidebar, to receive email when the issue is updated. If you comment on an
+  issue, you'll automatically be subscribed.
+
+Once you have <<practicalities-assignment,found a topic to write or edit>> (and
+located or created its issue), and
+<<practicalities-editing,edited the source file for the topic>>, you will need
+to submit your changes to the issue. If possible, you should make
+a Git differences (or _patch_) file, but if you don't know how to do that, don't
+worry! Someone else can help with that. Then you'll want to go back to your
+issue and:
+
+* Upload the text source file(s) you changed, in the Files section of the issue.
+* If you made a patch file, also upload that.
+* Add a comment with a brief summary of what you wrote or edited. Note whether
+  you think it needs more work, any difficulties you encountered, any questions
+  you had, and any other pertinent details.
+* Change the issue status to "Needs review".
+* Submit your comment.
+
+Background on Git and patching:
+
+* https://www.drupal.org/node/1010894[Installing Git]
+* https://www.drupal.org/novice[Novice code contribution guide] - although this
+  is oriented towards code, the process of making a patch file for this user
+  guide is the same as for Drupal core and contributed modules.
+* https://www.drupal.org/node/707484[Making a Drupal patch]
+* Git instructions for this project:
+  https://www.drupal.org/project/user_guide/git-instructions
+
+Quick steps for making a patch:
+
+* Install Git (see above).
+* Clone the repository (make a local copy):
+
+----
+git clone --branch 8.0.x http://git.drupal.org/project/user_guide.git
+cd user_guide
+----
+
+* Make sure the repository is updated to the latest source files:
+
+----
+git pull
+----
+
+* Edit the files, which are in the source/en directory of this repository.
+* Make a patch file with this command:
+
+----
+git diff > name_of_the_patch_file.patch
+----
+
+
+[[practicalities-coordinators]]
+==== Project coordinators
+
+The project coordinators are:
+
+* https://www.drupal.org/u/amber-himes-matz[Amber Matz] (Amber Himes Matz on
+  Drupal.org and ambermatz on IRC) - Volunteer coordination
+  and project management
+* https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] (jhodgdon on Drupal.org
+  and IRC) - Content oversight
+* https://www.drupal.org/u/eojthebrave[Joe Shindelar] (eojthebrave on Drupal.org
+  and IRC) - Content oversight
+
+
+
 [[contact]]
-==== How to contact the coordinators
+==== Contact information
 
-If you have a question, comment, or suggestion regarding:
+Here are some suggestions for contacting the project participants and
+coordinators, depending on the nature of your question, comment, or suggestion:
 
-Editing the content of the Guide::
+Question about guidelines or practicalities of contributing::
+  * Post to the email list (see below).
+  * Find a project coordinator in IRC (see below).
+  * Contact a project coordinator through their Drupal.org contact form.
+    See <<practicalities-coordinators>>.
+Suggestion about the content of the Guide::
   Use an issue. See <<practicalities-project>>.
-Guide organization::
+Suggestions about Guide organization::
   Use an issue. See <<practicalities-project>>.
 Getting assigned a topic to write or edit::
   See <<practicalities-assignment>>.
-Project management::
-  Contact the project coordinators on Drupal.org. See
-  <<practicalities-coordinators>>.
+Project management question or suggestion::
+  Contact one of the project coordinators using their Drupal.org contact
+  form. See <<practicalities-coordinators>>.
 Staying informed::
-  Subscribe to the https://groups.drupal.org/documentation[Documentation group
-  on Groups.Drupal.org].
+  * Subscribe to the https://groups.drupal.org/documentation[Documentation group
+    on groups.Drupal.org]
+  * Follow issues. See <<practicalities-project>>.
+  * Join the email list (see below).
 
+The meetings for the project are held in the #drupal-documentation IRC channel,
+and you can feel free to "ping" project coordinators in this channel if they are
+there and you have a quick question. To learn more about IRC, see
+https://drupal.org/irc
 
-[[practicalities-assignment]]
-==== Getting assigned a topic to write or edit
+Project announcements are posted to the
+https://groups.drupal.org/documentation[Documentation group on
+groups.drupal.org].
 
-There are two main ways that you can get assigned a topic to write or edit:
-
-* Come to one of our regular meetings or "sprint" work days, and ask for an
-  assignment. These are announced on the
-  https://groups.drupal.org/documentation[Documentation group on
-  Groups.Drupal.org].
-* On the https://www.drupal.org/node/2512362[main tracking issue], locate a
-  topic that needs a writer or editor. If the topic does not already have a
-  sub-issue created, create a new one,
-  following the instructions in the main tracking issue. Then (either on the
-  existing issue or the new one you created),
-  use the "Assigned" field under "Issue metadata" to assign the issue
-  to yourself, and add a comment saying what you plan to do (write or edit) and
-  when you plan to do it. The project coordinators are subscribed to issues for
-  the project, so they will notice your change and update the tracking issue.
-
-If you complete your assignment, find that you cannot complete the assignment
-you took, or need a different assignment, un-assign the issue, add a comment,
-and find a new topic to work on (if you want to).
+There is also an email list for this project, which is totally voluntary to
+join. You can view the archives at:
+https://groups.google.com/d/forum/d8manual
+To join the list, contact one of the project managers in IRC or
+through their Drupal.org contact form; see <<practicalities-coordinators>>.
