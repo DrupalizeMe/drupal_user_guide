@@ -136,6 +136,7 @@ worry! Someone else can help with that. Then go back to your
 issue and:
 
 * Upload the text source file(s) you changed, in the Files section of the issue.
+  This makes it easier to review the proposed changes in context.
 * If you made a patch file, also upload that.
 * Add a comment with a brief summary of what you wrote or edited. Note whether
   you think it needs more work, any difficulties you encountered, any questions
@@ -150,8 +151,8 @@ Background on Git and patching:
   is oriented towards code, the process of making a patch file for this user
   guide is the same as for Drupal core and contributed modules.
 * https://www.drupal.org/node/707484[Making a Drupal patch]
-* Git instructions for this project:
-  https://www.drupal.org/project/user_guide/git-instructions
+* https://www.drupal.org/project/user_guide/git-instructions[Git instructions
+  for this project]
 
 Quick steps for making a patch:
 
@@ -176,4 +177,3 @@ git pull
 ----
 git diff > name_of_the_patch_file.patch
 ----
-
