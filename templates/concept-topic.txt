@@ -15,12 +15,14 @@
 // file (without the .txt extension; for example, [[block-overview]].
 [[id-goes-here]]
 // The topic title goes on this line. Use "Title Case" for topic titles.
-=== What is a Block?
+=== What is a Noun?
 
 // - Replace the text in (((indexentry))) with an appropriate index entry,
 //   such as (((Blocks,overview))). You can add additional index entries if
 //   appropriate.
-(((indexentry)))
+// - Also remove the // before the ((( so that this becomes an index entry
+//   and not a comment.
+//(((indexentry)))
 
 
 ==== Prerequisite knowledge
@@ -29,9 +31,14 @@
 // the guide that someone would need to understand before trying this task.
 // Some of the entries could be background knowledge that is needed that is
 // not covered in the guide.
-* <<cross-reference-one>>
-* <<cross-reference-two>>
-* How to upload files from your local server to your web server
+//
+// Some ideas (remove the // to make these not comments):
+//* <<cross-reference-one>>
+//* <<cross-reference-two>>
+//* How to upload files from your local server to your web server.
+
+
+Remove this placeholder text.
 
 
 ==== Concept: What is a block?
@@ -39,16 +46,26 @@
 // Describe your concept here.
 
 
+Remove this placeholder text.
+
+
 ==== Related topics
 
 // In this section, make cross-references to related tasks and concepts that
 // are covered in this book.
+// Also remove the // so these lines are a list and not comments:
+//* <<cross-reference-1>>
+//* <<cross-reference-2>>
 
-* <<cross-reference-1>>
-* <<cross-reference-2>>
+
+Remove this placeholder text.
 
 
 ==== Additional resources
 
 // In this section, make a list of outside references: videos, Drupal.org
 // documentation, etc.
+
+
+Remove this placeholder text.
+
