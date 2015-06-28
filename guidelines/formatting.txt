@@ -152,6 +152,9 @@ Some conventions:
 
 * Images should be put in an images subdirectory.
 * They should be PNG files.
+* If they are included in a source file  _my-filename.txt_, then they should be
+  named _my-filename-[something].png_ (replace _[something]_ with a suffix
+  describing what the image is.
 * They should be scaled to a reasonable viewing size.
 * If you annotate an image, be sure to use an annotation color with good
   contrast to both foreground and background colors. But keeping in mind that
