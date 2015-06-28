@@ -154,11 +154,23 @@ Some conventions:
 * They should be PNG files.
 * They should be scaled to a reasonable viewing size.
 * If you annotate an image, be sure to use an annotation color with good
-  contrast to both foreground and background colors.
+  contrast to both foreground and background colors. But keeping in mind that
+  all images will need to be regenerated when the UI changes and for each
+  translated language, avoid annotations if possible.
 * Always include "alt" text that describes what is in the image.
 * A comment before the image is helpful, for people who may need to
   re-create the image, explaining how to generate it. See <<style-comments>>.
-* See also <<good-writing-text>>.
+* See <<good-writing-text>> for guidelines on what images should be included.
+
+
+@todo Add specifics to these guidelines:
+
+* Which browser to use
+* Which theme to use
+* Browser width
+* Where to crop
+* File resolution (dpi)
+* Maximum width and height of image
 
 
 [[style-literals]]
