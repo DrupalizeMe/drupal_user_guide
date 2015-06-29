@@ -1,65 +1,31 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt".
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-
-
-// This next line is an ID, which should be left alone.
 [[block-concept]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
+
 === What is a Block?
 
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+(((Blocks,overview)))
 
-Remove this placeholder text.
+//==== Prerequisite knowledge
 
-==== Prerequisite knowledge
+(((Blocks)))
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+*Blocks* are individual pieces of a web page layout in Drupal. Blocks are
+placed inside the <<block-regions,regions>> of your theme, and can be
+created, removed, and rearranged from the "Block layout" administration page.
+Examples of blocks include the "Who's online" listing, the main navigation
+menu, and the breadcrumb trail. The main page content is also a block.
 
-Remove this placeholder text.
+Some modules make new blocks available for placement on your site. For
+example, when the Search module is enabled, it provides a block that contains
+a search form. Drupal also allows you to create and place your own custom
+blocks.
 
-==== Concept: What is a block?
-
-// Describe your concept here.
-
-Remove this placeholder text.
-
+Each block has its own configuration settings, which allow you to select
+which pages of your site will display the block. It is even possible to place
+multiple copies of a block, each with its own separate configuration and
+visibility rules.
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
+* <<block-regions>>
 
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc.
-
-Remove this placeholder text.
+//==== Additional resources
