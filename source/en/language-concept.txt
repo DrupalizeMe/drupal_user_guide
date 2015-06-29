@@ -2,24 +2,33 @@
 //
 // To use this template:
 // - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt".
+//   "blocks-overview.txt". [The project coordinators may already have done
+//   that for you.]
 // - Follow the instructions that are contained in lines starting with //
 //   throughout this file.
 // - Replace placeholder text with your content.
 // - Before you submit your topic, remove all the lines in the file that
 //   start with // -- these are comments that do not belong in the topic. Also
 //   remove any blank lines that are before the ID line.
+// - Then, if there are sections that do not apply to your topic (for example,
+//   Prerequisites might not), put // before the ==== on that line and leave
+//   those lines in the topic file. So it would look like:
+//==== Prerequisite knowledge
 
 
-// Replace the text in the brackets below so that it matches the name of the
-// file (without the .txt extension; for example, [[block-overview]].
+// The first thing in the file is an ID: replace the text in the brackets below
+// so that it matches the name of the file (without the .txt extension; for
+// example, [[block-overview]] if the file name is block-overview.txt.
 [[language-concept.txt]]
 // The topic title goes on this line. Use "Title Case" for topic titles.
-=== What is a Noun?
+// Titles for Concept topics should start with "What is" or "What are".
+=== What are the Different Types of Translation?
 
+// The next thing that is needed is an entry for the index:
 // - Replace the text in (((indexentry))) with an appropriate index entry,
 //   such as (((Blocks,overview))). You can add additional index entries if
 //   appropriate.
+// - Refer to the Guidelines if you have questions.
 // - Also remove the // before the ((( so that this becomes an index entry
 //   and not a comment.
 //(((indexentry)))
@@ -43,7 +52,10 @@ Remove this placeholder text.
 
 ==== Concept: What is a block?
 
-// Describe your concept here.
+// Describe your concept here. The title of this section should remain
+// Concept: ______
+// If possible, relate this concept to the specific scenario of the guide,
+// perhaps using "for example" language.
 
 
 Remove this placeholder text.
@@ -64,7 +76,8 @@ Remove this placeholder text.
 ==== Additional resources
 
 // In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc.
+// documentation, etc. Make sure all links have link text showing the name
+// of the article or page it being linked to.
 
 
 Remove this placeholder text.
