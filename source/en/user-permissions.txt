@@ -1,110 +1,56 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, in noun-verbing.txt
-//   format, such as "block-creating.txt".
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content. You may need to remove
-//   sections that do not apply.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-
-// This next line is an ID, which should be left alone.
 [[user-permissions]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-=== Changing the Permissions for a Role
+=== Changing the permissions for a role
 
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
-
+(((Permissions,changing)))
+(((Permissions,granting)))
+(((Permissions,denying)))
 
 ==== Goal
 
-// Describe the goal of this task here.
-
-
-
-Remove this placeholder text.
-
+By changing the permissions for a role you can grant or deny users the right
+to perform particular actions on the website.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-
-Remove this placeholder text.
-
-
+* <<user-concept>>
+* <<user-new-role>>
+* <<user-roles>>
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-
-
-Remove this placeholder text.
-
+* At least one role exists
+  <<user-roles>>
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
+. Select the Roles tab on the People page (admin/people/roles). You will see a
+  list of all the roles that exist on the website.
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. From the drop button choose "Edit permissions" for the role whose
+  permissions you would like to change. The permissions page will show all the
+  available actions for the website such as, for example, "post comments" or
+  "Use advanced search". The available permissions depend on the modules that
+  are enabled in the site.
 
-  And it could be a couple of paragraphs.
+. Select the permissions that you wish to grant to a particular role and
+  uncheck the permissions that you wish to deny to a particular role.
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Click "Save permissions" in the bottom of the page to save the changes.
 
-. Text of step 3.
-
+// For this image a content type Recipe and a role Vendor were created. The
+// image is partial screenshot of the page located at
+// admin/people/permissions/vendor ()
+image:images/user-permissions-check-permissions.png[Granting users with the
+Vendor role the rights to create, delete and edit Recipes]
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+* <<user-admin-account>>
 
-
-Remove this placeholder text.
-
-
+You can grant or deny users the right to perform particular actions by
+assigning roles to, or removing roles from users.
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc.
-
-
-Remove this placeholder text.
-
+* https://www.drupal.org/node/627158[drupal.org community documentation on
+Managing Users]
