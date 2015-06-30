@@ -6,9 +6,11 @@
 mkdir -p ../output
 mkdir -p ../output/html
 mkdir -p ../output/html/en
+mkdir -p ../output/html/en/images
 mkdir -p ../output/html/guidelines
 mkdir -p ../output/ebooks
 mkdir -p ../output/ebooks/en
+mkdir -p ../output/ebooks/en/images
 
 # Run the preprocessor that puts file names into the files under each header.
 # Only for the special HTML output.
@@ -27,8 +29,14 @@ asciidoc -d book -b docbook -f std.conf -o ../output/html/guidelines/guidelines.
 xmlto -m bare.xsl xhtml -o ../output/html/en ../output/html/en/guide.docbook
 xmlto -m bare.xsl xhtml -o ../output/html/guidelines ../output/html/guidelines/guidelines.docbook
 
+# Copy image files to output directory
+cp ../source/en/images/*.png ../output/html/en/images
+
 # Run the AsciiDoc processor to convert to DocBook for ebooks.
 asciidoc -d book -b docbook -f std.conf -o ../output/ebooks/en/guide.docbook ../source/en/guide.txt
+
+# Copy image files to e-book directory
+cp ../source/en/images/*.png ../output/ebooks/en/images
 
 # Run the xmlto processor to convert from DocBook to PDF.
 # The syntax is:
