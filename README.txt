@@ -17,8 +17,8 @@ Code (scripts) in this project are licensed under the GNU/GPL version 2 and
 later license.
 
 
-ORGANIZATION
-------------
+FILE ORGANIZATION
+-----------------
 
 This project contains the following directories:
 
@@ -38,11 +38,31 @@ separate templates for topics covering tasks and concepts.
 scripts / output
 
 To build both the User Guide and Guidelines, use the scripts in the scripts
-directory; see the README.txt in the AsciiDoc Display module for more
-information on what they do. Currently the Guidelines document scripts only
-produce HTML output for the AsciiDoc Display module, and the User Guide scripts
-produce HTML output as well as PDF and other e-books.
+directory; see below for more information.  Currently the Guidelines document
+scripts only produce HTML output for the AsciiDoc Display module, and the User
+Guide scripts produce HTML output as well as PDF and other e-books.
 
 The output the scripts produces lands in the output directory. Subdirectory html
 of that is the output for the AsciiDoc Display module; e-books land in the
 ebooks subdirectory.
+
+
+ASCIIDOC OUTPUT BUILD SCRIPTS
+-----------------------------
+
+The Guide and Guidelines are both set up with scripts to make output compatible
+with the AsciiDoc Display module
+(https://www.drupal.org/project/asciidoc_display), as well as PDF and other
+e-book output (the scripts are adapted from the sample scripts in that project,
+and only the Guide is currently set up to make e-book output).
+
+To run the scripts/mkoutput.sh script, you will need several open-source tools:
+- AsciiDoc (for any output): http://asciidoc.org/INSTALL.html
+- DocBook (for any output): http://docbook.org or
+  http://www.dpawson.co.uk/docbook/tools.html
+- FOP (for PDF): http://xmlgraphics.apache.org/fop/
+- Calibre (for MOBI): http://calibre-ebook.com/
+
+On a Linux machine, you can use one of these commands to install all the tools:
+  apt-get install asciidoc docbook fop calibre
+  yum install asciidoc docbook fop calibre
