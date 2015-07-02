@@ -5,11 +5,15 @@ Thank you for your desire to help us create a great User Guide! The sections
 below contain information you'll need, in order to contribute your time and
 skills to this project.
 
+There is a quick start guide to contributing on the
+https://www.drupal.org/project/user_guide[project home page]; the sections below
+have more details about each step.
+
 
 [[practicalities-assignment]]
 ==== Finding a topic to write or edit
 
-The first step in contributing is to find a topic to write, test, or edit. To
+The first step in contributing is to find a topic to write or edit. To
 avoid duplication of effort and conflicts, please do one of the following to get
 assigned a topic:
 
@@ -18,33 +22,34 @@ assigned a topic:
   https://groups.drupal.org/documentation[Documentation group on
   Groups.Drupal.org].
 * If one of the <<coordinators, project coordinators>> is in the
-  documentation IRC channel (see <<contact>>), ask them for an assignment.
+  <<contact,documentation IRC channel>>, ask them for an assignment.
 * If there is not a meeting or a sprint day when you're ready for an assignment,
   on the
   https://docs.google.com/spreadsheets/d/1ov0FyJhKrJe7PYvohzV5UrrLyRaVCy2A0BjjEatqxKw/edit?usp=sharing[tracking
   spreadsheet] for the
   https://www.drupal.org/node/2512362[main tracking issue], locate a
-  topic that needs a writer or editor. Choose a topic that appears on the
+  topic that needs a writer or editor. (Choose a topic that appears on the
   https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html[temporary
   site with the guide output], and that appears on the "Decided" sheet of
   the tracking
-  spreadsheet. (These topics are ones we're certain need to be written; there
+  spreadsheet. These topics are ones we're certain need to be written; there
   is also an "Undecided" sheet that contains the full list of topics under
   consideration.)
 
 Once you have a topic:
 
-. If the topic does not already have a
-  sub-issue created, create a new one, following the instructions
+* If the topic does not already have an
+  issue created for your writing/editing phase, create a new one, following the
+  instructions
   on the https://www.drupal.org/node/2512362[main tracking issue].
-. Either on the existing issue or the new one you
-  created, use the "Assigned" field under "Issue metadata" to assign the issue
-  to yourself.
-. Add a comment saying what you plan to do (write or edit) and
-  when you plan to do it.
-. Save your comment and changes. The project coordinators are subscribed to
-  issues for the project, so they will notice your change and update the
-  tracking issue.
+* If you are taking over for a topic that already had an issue,
+  use the "Assigned" field under "Issue metadata" to assign the issue
+  to yourself, and save the changes.
+* Save your issue and/or changes.
+
+The project coordinators are subscribed to
+issues for the project, so they will notice your change and update the
+tracking spreadshseet.
 
 If you find that you cannot complete the assignment you took, or need a
 different assignment:
@@ -79,18 +84,38 @@ that file:
 
 * Use any text editor to edit the files in the Git source repository for the
   project. See <<practicalities-project>>.
-* Use the online editor. Locate the _Edit the source file filename.txt_ link in
-  the _Source information_ block. Follow that link to edit the page content.
-  There is a preview button that will show you the output as you edit. When you
-  finish your edits use the "Download new file" button to download a new version
-  of the source file that contains your edits, and save it into the source
-  directory _source/en_.
+* Use the online editor:
+  . Locate the _Edit the source file filename.txt_ link in
+    the _Source information_ block.
+  . Follow that link to edit the page content.
+  . There is a preview button that will show you the output as you edit.
+  . When you finish your edits use the "Download new file" button to download a
+    new version of the source file that contains your edits.
 
 For information about how to actually _write_ or _edit_ the topic, see
 <<writing-editing>>.
 
-Once you have a new version of one or more source files ready, your next step is
-to make a patch; see <<practicalities-project>>.
+
+[[practicalities-submitting]]
+==== Submitting your writing or editing
+
+After you have selected a topic, created or assigned yourself an issue, done the
+writing or editing, and possibly made some images, you will need to submit the
+changes on your issue:
+
+. Upload the text source file(s) you changed, in the Files section of the issue.
+  Even if you make a patch file, still upload the full text file as well.
+. If you made a patch file, also upload that. See <<practicalities-project>> for
+  instructions.
+. If you have made images, upload them also.
+. Add a comment with a brief summary of what you wrote or edited. Note whether
+  you think it needs more work, any difficulties you encountered, any questions
+  you had, and any other pertinent details.
+. Make sure the attributions information for your topic is included in the issue
+  summary (in the Summary and Relationships section). See <<copyright-license>>
+  for instructions.
+. Change the issue status to "Needs review" (in the Issue meta-data section).
+. Submit your comment and changes.
 
 
 [[practicalities-recognition]]
@@ -120,7 +145,8 @@ project called User Guide]. The source files are managed in a Git revision
 control repository; the English Guide files are in subdirectory _source/en_, and
 other languages will eventually be in similar subdirectories there.
 
-This project uses Drupal.org issues to track progress and manage changes. There
+This project uses Drupal.org issues to track progress and manage changes for
+each topic. There
 is a https://www.drupal.org/node/2512362[main tracking issue] where you can find
 information on the status of writing and editing all the topics that make up the
 guide, and links to issues for each of the individual topics that people are
@@ -137,23 +163,6 @@ Background on Drupal.org projects and issues:
 * If you are viewing any issue, you can click the "Follow" button in the right
   sidebar, to receive email when the issue is updated. If you comment on an
   issue, you'll automatically be subscribed.
-
-Once you have <<practicalities-assignment,found a topic to write or edit>> (and
-located or created its issue), and
-<<practicalities-editing,edited the source file for the topic>>, you will need
-to submit your changes to the issue. If possible, you should make
-a Git differences (or _patch_) file, but if you don't know how to do that, don't
-worry! Someone else can help with that. Then go back to your
-issue and:
-
-* Upload the text source file(s) you changed, in the Files section of the issue.
-  This makes it easier to review the proposed changes in context.
-* If you made a patch file, also upload that.
-* Add a comment with a brief summary of what you wrote or edited. Note whether
-  you think it needs more work, any difficulties you encountered, any questions
-  you had, and any other pertinent details.
-* Change the issue status to "Needs review".
-* Submit your comment.
 
 Background on Git and patching:
 

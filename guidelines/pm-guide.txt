@@ -1,0 +1,54 @@
+[[pm-guide]]
+=== Instructions for Project Managers
+
+
+[[pm-guide-topics]]
+==== Adding new topic files
+
+When adding a new topic file to the outline:
+
+. Add the topic to the tracking spreadsheet, filling in the "covers"
+  information and defining the file name.
+. Copy the correct template file (task or concept) to the desired file name.
+. Edit the ID and the topic title in the file -- *the ID should be the file name
+  without the .txt extension*.
+. Add the file as an include to the guide.txt outline file.
+. Commit the changes and (at this point) get Jennifer to put them up on the
+  site.
+
+
+[[pm-guide-commits]]
+==== Committing changes
+
+When committing changes from contributors (writers and editors) to the guide...
+
+All phases:
+
+* Insist on attributions information.
+* Insist on valid AsciiDoc because the project will not compile otherwise.
+* Make sure to update the attributions.txt file as well as the topic file.
+* Make sure to put any attached images in the images directory.
+* When making the commit, use the section at the bottom of the image page to
+  compose the commit message. Make sure that the author radio button is chosen
+  for the primary writer or editor for the issue, and that checkboxes for
+  everyone who contributed substantially to this phase are checked.
+  This will give everyone involved the proper credit.
+
+
+Writing phase:
+
+* Require that the template is followed, and that the comments from the template
+  have been removed.
+* If sections have been omitted, make sure they are still there but commented
+  out.
+* Make sure everything the topic is supposed to cover is included, and nothing
+  more (should have cross-references to additional information rather than
+  repeating it).
+* If there are @todo notes, make sure that it is clear what needs to be done.
+* If images are included, make sure there are instructions for how to redo them,
+  in a comment just before the image include.
+* Do not insist on perfect writing or perfect adherence to
+  guidelines. Point things out "for the next time" and commit as it is.
+* Do not insist on perfect screenshots. We'll probably need to redo all of
+  them at the end for uniformity, size, resolution, etc., not to mention that
+  Drupal 8's UI still is not in its final form.

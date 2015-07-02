@@ -96,6 +96,12 @@ You can also change the link text by doing this:
  <<first_section_id,text for the link>>
 ----
 
+As a general rule, only change the link text if the cross-link is embedded in a
+paragraph (for text flow). If it is in a bullet list (for instance, prerequisite
+topics), use the default link text (which will be the topic title, making sure
+that if the topic is re-titled, the link text will update).
+
+
 [[style-glossary]]
 ==== Creating glossary entries
 
@@ -145,29 +151,34 @@ Here's the syntax to include an image:
 
 ----
 // Comment explaining how to regenerate the image, for future contributors.
-image:images/filename.png[alt text]
+image:images/filename.png[alt text goes here]
 ----
+
+When writing a topic as a contributor, make a rough screenshot or image, and
+attach it as a File to the issue. Do not worry about making it perfect in the
+first draft.
 
 Some conventions:
 
-* Images should be put in an images subdirectory.
+* Images should be put in an images subdirectory (the project managers will
+  take care of this).
 * They should be PNG files.
 * If they are included in a source file  _my-filename.txt_, then they should be
   named _my-filename-[something].png_ (replace _[something]_ with a suffix
   describing what the image is.
-* They should be scaled to a reasonable viewing size.
 * If you annotate an image, be sure to use an annotation color with good
   contrast to both foreground and background colors. But keeping in mind that
   all images will need to be regenerated when the UI changes and for each
   translated language, avoid annotations if possible.
 * Always include "alt" text that describes what is in the image.
-* A comment before the image is helpful, for people who may need to
-  re-create the image, explaining how to generate it. See <<style-comments>>.
+* Always include a comment before the image include statement, which
+  describes how to generate the image. See <<style-comments>>.
 * See <<good-writing-text>> for guidelines on what images should be included.
 
 
-@todo Add specifics to these guidelines:
+@todo Define and add specifics to these guidelines:
 
+* Size of images
 * Which browser to use
 * Which theme to use
 * Browser width
