@@ -6,9 +6,9 @@
 
 //==== Prerequisite knowledge
 
-(((Blocks)))
+==== Concept: What is a block?
 
-*Blocks* are individual pieces of a web page layout in Drupal. Blocks are
+*Blocks* are individual pieces of your site's web page layout. Blocks are
 placed inside the <<block-regions,regions>> of your theme, and can be
 created, removed, and rearranged from the "Block layout" administration page.
 Examples of blocks include the "Who's online" listing, the main navigation
@@ -16,8 +16,7 @@ menu, and the breadcrumb trail. The main page content is also a block.
 
 Some modules make new blocks available for placement on your site. For
 example, when the Search module is enabled, it provides a block that contains
-a search form. Drupal also allows you to create and place your own custom
-blocks.
+a search form. You may also create and place your own custom blocks.
 
 Each block has its own configuration settings, which allow you to select
 which pages of your site will display the block. It is even possible to place
@@ -27,5 +26,6 @@ visibility rules.
 ==== Related topics
 
 * <<block-regions>>
+* <<block-create-custom>>
 
 //==== Additional resources
