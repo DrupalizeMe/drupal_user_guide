@@ -226,8 +226,8 @@ concepts. Here is the template for concept topics, including the instructions
 // example, [[block-overview]] if the file name is block-overview.txt.
 [[id-goes-here]]
 // The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "What is" or "What are".
-=== What is a ...?
+// Titles for Concept topics should start with "Concept: ".
+=== Concept: ...
 
 // The next thing that is needed is an entry for the index:
 // - Replace the text in (((indexentry))) with an appropriate index entry,
@@ -254,10 +254,13 @@ concepts. Here is the template for concept topics, including the instructions
 Remove this placeholder text.
 
 
-==== Concept: What is a block?
+==== What is a ...?
 
-// Describe your concept here. The title of this section should remain
-// Concept: ______
+// Describe your concept here. The title of this section should be
+// What is a ...? or What are ...? (where the ... is the same as the topic
+// title). If the topic title contains several things to describe, you can also
+// have multiple of these "What is a ..." sections.
+//
 // If possible, relate this concept to the specific scenario of the guide,
 // perhaps using "for example" language.
 
