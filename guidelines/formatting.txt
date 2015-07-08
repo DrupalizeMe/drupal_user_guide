@@ -151,7 +151,7 @@ Here's the syntax to include an image:
 
 ----
 // Comment explaining how to regenerate the image, for future contributors.
-image:images/filename.png[alt text goes here]
+image:images/filename.png["alt text goes here"]
 ----
 
 When writing a topic as a contributor, make a rough screenshot or image, and
@@ -170,7 +170,8 @@ Some conventions:
   contrast to both foreground and background colors. But keeping in mind that
   all images will need to be regenerated when the UI changes and for each
   translated language, avoid annotations if possible.
-* Always include "alt" text that describes what is in the image.
+* Always include "alt" text that describes what is in the image, the alt text
+  should be in quotes.
 * Always include a comment before the image include statement, which
   describes how to generate the image. See <<style-comments>>.
 * See <<good-writing-text>> for guidelines on what images should be included.
