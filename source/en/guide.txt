@@ -1,62 +1,179 @@
 [[user_guide]]
 = Drupal 8 User Guide
 
-// Chapters should be defined here, and each one should include the individual
+// Chapters are defined here, and each one includes the individual
 // topic files that make up the chapter, in order.
+
 
 [[preface]]
 == Preface
 
 include::copyright.txt[]
-include::scenario.txt[]
+include::preface-audience.txt[]
+include::preface-organization.txt[]
+include::preface-conventions.txt[]
+include::preface-scenario.txt[]
 
 
+[[understanding-chapter]]
+== Understanding Drupal
+
+include::understanding-drupal.txt[]
+include::understanding-modules.txt[]
+include::understanding-themes.txt[]
+include::understanding-distributions.txt[]
+include::understanding-data.txt[]
+include::understanding-project.txt[]
+include::understanding-gpl.txt[]
+
+
+[[planning-chapter]]
+== Planning Your Site
+
+include::block-regions.txt[]
+include::planning-layout.txt[]
+include::planning-data-types.txt[]
+include::planning-modular.txt[]
+include::planning-structure.txt[]
+include::planning-workflow.txt[]
+
+
+[[installation-chapter]]
 == Installation
 
-something goes here.
+include::install-requirements.txt[]
+include::install-prepare.txt[]
+include::install-run.txt[]
+include::install-dev-sites.txt[]
+include::install-dev-making.txt[]
+include::install-tools.txt
 
 
-== Creating Content
+[[config-chapter]]
+== Basic Site Configuration
+
+include::config-overview.txt[]
+include::config-basic.txt[]
+include::config-uninstall.txt[]
+include::config-user.txt[]
+
+
+[[config-multilingual-chapter]]
+== Multilingual Configuration
+
+include::language-enable.txt[]
+include::language-add.txt[]
+include::language-concept.txt[]
+include::language-content-config.txt[]
+
+
+[[content-chapter]]
+== Basic Page Management
 
 include::content-create.txt[]
+include::content-paths.txt[]
 include::content-edit.txt[]
 include::content-in-place-edit.txt[]
-
-
-== Menus and Navigation
-
 include::menu-home.txt[]
-include::menu-link-add.txt[]
+include::menu-concept.txt[]
 include::menu-link-from-content.txt[]
-include::menu-create.txt[]
 
 
-== Administering Blocks
+[[content-structure-chapter]]
+== Setting Up Content Structure
 
-include::block-concept.txt[]
-include::block-regions.txt[]
-include::block-create-custom.txt[]
+include::structure-content-type.txt[]
+include::structure-content-type-delete.txt[]
+include::structure-fields.txt[]
+include::structure-reference-fields.txt[]
+include::structure-taxonomy.txt[]
+include::structure-taxonomy-setup.txt[]
+include::structure-widgets.txt[]
+include::structure-form-editing.txt[]
+include::structure-view-modes.txt[]
+include::structure-content-display.txt[]
+include::structure-image-styles.txt[]
+include::structure-image-style-create.txt[]
+include::structure-image-responsive.txt[]
+include::structure-text-formats.txt[]
+include::structure-text-format-config.txt[]
 
 
-== Users, Roles, and Permissions
+[[user-chapter]]
+== Managing User Accounts
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
 include::user-new-user.txt[]
 include::user-new-role.txt[]
-include::user-roles.txt[]
 include::user-permissions.txt[]
+include::user-roles.txt[]
+include::user-content.txt[]
 
-== Multilingual
+
+[[blocks-chapter]]
+== Blocks
+
+include::block-concept.txt[]
+include::block-create-custom.txt[]
 
 
-include::language-concept.txt[]
-include::language-enable.txt[]
-include::language-add.txt[]
-include::language-content-config.txt[]
+[[views-chapter]]
+== Creating Listings with Views
+
+include::views-concept.txt[]
+include::views-parts.txt[]
+include::views-create.txt[]
+include::views-duplicate.txt[]
+include::views-block.txt[]
+
+
+[[translate-chapter]]
+== Translating Your Site
+
 include::language-content-translate.txt[]
 include::language-config-translate.txt[]
-include::language-update.txt[]
+
+
+[[extend-chapter]]
+== Extending and Customizing Your Site
+
+include::extend-module-find.txt[]
+include::extend-module-install.txt[]
+include::extend-theme-find.txt[]
+include::extend-theme-install.txt[]
+include::extend-deploy.txt[]
+include::extend-config-versions.txt[]
+
+
+[[security-chapter]]
+== Security and Maintenance
+
+include::security-concept.txt[]
+include::security-announce.txt[]
+include::security-update-core.txt[]
+include::security-update-module.txt[]
+include::security-update-theme.txt[]
+include::security-cron-concept.txt[]
+include::security-cron.txt[]
+
+
+[[prevent-chapter]]
+== Preventing and Fixing Problems
+
+include::prevent-cache.txt[]
+include::prevent-cache-clear.txt[]
+include::prevent-backups.txt[]
+include::prevent-log.txt[]
+include::prevent-status.txt[]
+
+
+[[thoughts-chapter]]
+== Final Thoughts
+
+include::thoughts-connecting.txt[]
+include::thoughts-support.txt[]
+include::thoughts-learn-more.txt[]
 
 
 // Glossary and index.

@@ -2,23 +2,33 @@
 //
 // To use this template:
 // - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt".
+//   "blocks-overview.txt". [The project coordinators may already have done
+//   that for you.]
 // - Follow the instructions that are contained in lines starting with //
 //   throughout this file.
 // - Replace placeholder text with your content.
 // - Before you submit your topic, remove all the lines in the file that
 //   start with // -- these are comments that do not belong in the topic. Also
 //   remove any blank lines that are before the ID line.
+// - Then, if there are sections that do not apply to your topic (for example,
+//   Prerequisites might not), put // before the ==== on that line and leave
+//   those lines in the topic file. So it would look like:
+//==== Prerequisite knowledge
 
 
-// This next line is an ID, which should be left alone.
+// The first thing in the file is an ID: replace the text in the brackets below
+// so that it matches the name of the file (without the .txt extension; for
+// example, [[block-overview]] if the file name is block-overview.txt.
 [[user-admin-account]]
 // The topic title goes on this line. Use "Title Case" for topic titles.
-=== Concept: User 1 Account
+// Titles for Concept topics should start with "Concept: ".
+=== UNWRITTEN - Concept: The User 1 Account
 
+// The next thing that is needed is an entry for the index:
 // - Replace the text in (((indexentry))) with an appropriate index entry,
 //   such as (((Blocks,overview))). You can add additional index entries if
 //   appropriate.
+// - Refer to the Guidelines if you have questions.
 // - Also remove the // before the ((( so that this becomes an index entry
 //   and not a comment.
 //(((indexentry)))
@@ -35,7 +45,6 @@
 //* <<cross-reference-one>>
 //* <<cross-reference-two>>
 //* How to upload files from your local server to your web server.
-
 
 Remove this placeholder text.
 
@@ -61,16 +70,14 @@ Remove this placeholder text.
 //* <<cross-reference-1>>
 //* <<cross-reference-2>>
 
-
-
 Remove this placeholder text.
 
 
 ==== Additional resources
 
 // In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc.
+// documentation, etc. Make sure all links have link text showing the name
+// of the article or page it being linked to.
 
 
 Remove this placeholder text.
-

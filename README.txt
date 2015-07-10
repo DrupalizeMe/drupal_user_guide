@@ -28,6 +28,11 @@ The AsciiDoc source for the manual is in language subdirectories of the source
 directory. The index file is called "guide.txt", and it has include statements
 for the other files that make up the manual.
 
+unused
+
+Some topics that were written or partially written, that we decided not to
+include in the final guide.
+
 guidelines / templates
 
 Guidelines and templates for contributors to this project are in the guidelines
