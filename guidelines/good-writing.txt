@@ -1,17 +1,6 @@
 [[good-writing]]
 === Writing Good Documentation
 
-[[follow-scenario]]
-==== Follow the scenario
-
-The User Guide has a scenario that is used to provide unity and context to the
-topics. Keep the scenario in mind as you write your topics, especially when
-writing tasks (for example, if writing a task about creating a content type, the
-example should be one of the content types needed to create the scenario site).
-
-The scenario can be found in the Preface section of the User Guide.
-
-
 [[correct-audience]]
 ==== Speak to the audience
 
@@ -69,11 +58,17 @@ For the mechanics of adding images, see <<formatting-images>>.
 The objective of the User Guide is to be a learning tool. So although the guide
 may contain instructions for specific tasks, those may not be the exact tasks
 that a reader will eventually need to perform. Keep this in mind as you write
-task topics: think about the skills that someone would need to be able to do
-similar tasks, rather than focusing on a narrowly-defined task. In the Follow-on
-tasks section (from the Task topic template), list related tasks that someone
-who has just read your task topic should be able to perform, and that might lead
-them to solidify and broaden their skills and knowledge.
+task topics:
+
+* Think about the skills that someone would need to be able to do
+  similar tasks, rather than focusing on a narrowly-defined task.
+* When describing the goal and writing the steps for a task topic, make it
+  specific by <<follow-scenario,following the scenario>>, but make it clear
+  that this is an example (use phrases like "For example").
+* In the Follow-on
+  tasks section (from the Task topic template), list related tasks that someone
+  who has just read your task topic should be able to perform, and that might
+  lead them to solidify and broaden their skills and knowledge.
 
 
 [[good-writing-reuse]]
@@ -89,17 +84,10 @@ Ideally, each topic in this guide should be reusable. To facilitate that:
 * Make each task topic cover the minimal amount of actions that makes sense to
   stand alone. Reference prerequisite and follow-on tasks rather than describing
   them in the same topic.
-
-The templates in use for this guide should be of help. If you are the first
-person working on a topic, the instructions from the template should be there to
-guide you. If someone has already partially or completely followed the
-instructions, or they are not present, you can look at the generic templates for
-task and concept topics for guidance. The templates are located in the
-subdirectory _templates_ in the project Git repository; see
-<<practicalities-project>>.
-
-If you find that the proposed topic outline is not following these guidelines,
-bring it to the attention of the project coordinators -- see <<management-contact>>.
+* The project managers have hopefully followed this guideline when
+  they set up the outline. If not,
+  bring it to the attention of the project coordinators -- see
+  <<management-contact>>.
 
 
 [[good-writing-best-practices]]
@@ -115,16 +103,3 @@ mind:
 * The "Drupal Way": Encourage use of existing modules rather than writing your
   own, etc.
 
-
-[[choosing-titles]]
-==== Composing titles and index entries
-
-Titles for task topics should be in the format +Verbing a Noun+ or +Verbing
-Nouns+; examples:  _Creating a block_, _Configuring date formats_. Titles for
-concept topics should usually be in the format +What is a Noun?+ or +What are
-Nouns?+; example: _What is a block?_.
-
-Index entries should usually be two-level entries, such as
-+Blocks, creating+ or +Blocks, overview+. They should normally start with a
-plural noun. When adding a glossary entry to the index, the index entry should
-be +Blocks, definition+.

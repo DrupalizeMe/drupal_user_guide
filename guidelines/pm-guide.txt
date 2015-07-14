@@ -16,26 +16,8 @@ When adding a new topic file to the outline:
 . Commit the changes and (at this point) get Jennifer to put them up on the
   site.
 
-
-[[pm-guide-guidelines-review]]
-==== Reviewing for guidelines
-
-We want to make sure that each topic follows our guidelines. On
-<<editing-testing>>, there is a list of what the guidelines review should check
-for:
-
-* Does it follow the template?
-* Does it follow our guidelines on
-   <<good-writing,writing good documentation>>?
-* Does it follow the scenario?
-* Does it speak to the intended audience?
-* Does it have appropriate index entries?
-
-After a topic has been committed to the guide in the Writing phase, it is a good
-idea for one of the project content coordinators to review the topic for these
-standards, and file an issue with suggestions for what should be changed. Then
-post this issue to the tracking spreadsheet, and a project participant can make
-the suggested edits.
+There is a Perl script in the _scripts_ directory called _mktopics.pl_ that will
+make a batch of topics from templates.
 
 
 [[pm-guide-commits]]
@@ -73,3 +55,24 @@ Writing phase:
 * Do not insist on perfect screenshots. We'll probably need to redo all of
   them at the end for uniformity, size, resolution, etc., not to mention that
   Drupal 8's UI still is not in its final form.
+
+
+[[pm-guide-guidelines-review]]
+==== Reviewing for guidelines
+
+We want to make sure that each topic follows our guidelines. On
+<<editing-testing>>, there is a list of what the guidelines review should check
+for:
+
+* Does it follow the template?
+* Does it follow our guidelines on
+   <<good-writing,writing good documentation>>?
+* Does it follow the scenario?
+* Does it speak to the intended audience?
+* Does it have appropriate index entries?
+
+After a topic has been committed to the guide in the Writing phase, it is a good
+idea for one of the project content coordinators to review the topic for these
+standards, and file an issue with suggestions for what should be changed. Then
+post this issue to the tracking spreadsheet, and a project participant can make
+the suggested edits.

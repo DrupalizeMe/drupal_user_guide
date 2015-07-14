@@ -1,38 +1,56 @@
 [[writing-editing]]
 === Writing and Editing Topics
 
+
+See <<practicalities-quickstart>> for instructions on how to help with this
+project. This section talks about how to write or edit your topic.
+
 [[writing]]
-==== Writing a New Topic
+==== Writing a Topic
 
-This section is about what you should put into your topic. It assumes you have
-already <<practicalities-assignment,found a topic to work on>>, and
-<<practicalities-editing, opened the file in your choice of editor>>. Here are
-some instructions for writing:
+If you are on the Writing phase of a topic, here are some instructions:
 
-* If you are the first writer on a topic, the file should contain a template,
-  with instructions and notes. Follow the instructions in the template file, and
-  fill in all or most of the sections.
-* Start by trying to find existing documentation on Drupal.org for your
+* *Start by trying to find existing documentation on Drupal.org* for your
   topic. We do not want to write completely new documentation if there is
   existing good documentation that we can copy or modify. You can also use other
   sources, if they are under the CC BY-SA 2.0 license. *If you do use
   Drupal.org or other sources, you must <<copyright-license,attribute and list
   all of your sources>>*.
-* Whether you are writing new text, or editing existing text, follow our
-  guidelines on <<good-writing,writing good documentation>>, and the
-  <<text-conventions,text and content conventions>>.
-* The guide uses the AsciiDoc markdown language. We have some
+* If you are the first writer on a topic, the file should contain a template,
+  with instructions and notes. *Follow the instructions in the template file*,
+  and fill in all or most of the sections (there are instructions in the
+  template for what to do if you want to omit a section).
+* If someone else started the writing phase and you are finishing it, the
+  template may not be there. See <<template-task>> and
+  <<template-concept>> below.
+* The guide uses the *AsciiDoc markdown language* for formatting. We have some
   <<formatting,reference information on AsciiDoc>>.
-* Make sure you <<practicalities-recognition,get recognized for your work>>.
-* When you're done with your first draft, we have
-  <<practicalities-submitting,instructions on how to submit your work to the
-  project>>.
+
+We also have some guidelines to make your writing better:
+
+* <<good-writing>> -- Definitely follow these guidelines!
+* <<follow-scenario>> -- If you are writing a task topic, read this!
+* <<text-conventions>> -- These are guidelines that are useful to know about;
+  however, they will be checked in the editing phases, so don't stress out about
+  them.
+
+Before your topic is finalized for the writing phase, it will be checked for the
+following:
+
+* Does it follow the template?
+* Have the comments and placeholder text been removed from the template?
+* Is everything the topic was supposed to cover included, and nothing extra?
+* If there are @todo notes, are they clear?
+* If there are images included, do they include instructions for how to
+  redo them in a comment? (Note: Screenshots do not need to be perfect. Just
+  make a rough cut.)
 
 
 [[editing-testing]]
 ==== Editing or Testing a Topic
 
-We have several phases of editing:
+We have several phases of editing. Here is a list of what each phase should
+check for.
 
 Guidelines::
   * Does it follow the template?
@@ -56,6 +74,34 @@ Copy::
   * Does the AsciiDoc formatting work?
   * Does it follow our <<text-conventions,text and content conventions>>, and
     obey the https://www.drupal.org/style-guide/content[Drupal.org style guide]?
+
+
+[[formatting-todo]]
+==== How to indicate a topic is incomplete
+
+If you write a topic, and you want to submit your work in an incomplete state
+(such as because you could not find needed information, ran out of time, or need
+to refer to other topics that do not yet exist), put text like this into your
+file:
+
+----
+@todo Explain what still needs to be done here.
+----
+
+
+[[choosing-titles]]
+==== Composing titles and index entries
+
+Titles for task topics should be in the format +Verbing a Noun+ or +Verbing
+Nouns+; examples:  _Creating a block_, _Configuring date formats_. Titles for
+concept topics should usually be in the format +What is a Noun?+ or +What are
+Nouns?+; example: _What is a block?_.
+
+Index entries should usually be two-level entries, such as
++Blocks, creating+ or +Blocks, overview+. They should normally start with a
+plural noun. When adding a glossary entry to the index, the index entry should
+be +Blocks, definition+.
+
 
 [[template-task]]
 ==== Template for task topics

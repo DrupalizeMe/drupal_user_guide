@@ -1,0 +1,63 @@
+[[follow-scenario]]
+=== Follow the Scenario
+
+The User Guide has a scenario that is used to provide unity and context to the
+topics. Keep the scenario in mind as you write your topics, especially when
+writing tasks (for example, if writing a task about creating a content type, the
+example should be one of the content types needed to create the scenario site).
+
+The scenario can be found in the Preface section of the user guide.
+
+The following sections contain specifics of how to follow the scenario.
+
+
+[[scenario-example]]
+==== Use the scenario as an example
+
+When writing a task topic, in the Goal, Site prerequisites, Steps, and Follow-on
+tasks sections, use the scenario as an example. For instance, in a topic about
+creating content types, given a scenario of creating a web site for a farmers
+market, these sections could be something like:
+
+Goal::
+  Create a new content type; for example, a Vendor content type for vendor
+  profiles.
+Steps::
+  When describing how to fill in the form, your example data values would be
+  for the Vendor content type.
+Follow-on tasks::
+  Create another content type, such as for the Recipe content type.
+
+
+[[scenario-profile]]
+==== Assume previous tasks have been completed
+
+When writing task topics and making screen shots, assume that the site was
+installed with the _Standard_ install profile, so that the _Bartik_ theme is
+used for visitor-facing pages, and the _Seven_ theme is used for administrative
+pages. Also, assume that tasks previous to yours in the Guide have been
+completed when you make your screen shots (for instance, there is a task that
+changes the color scheme and logo for the Bartik theme).
+
+
+[[scenario-assets]]
+==== Use the provided assets
+
+The project includes several assets (text, images, and color instructions).
+Use these assets:
+
+* When providing sample values for form completion, copy and paste the
+  text and/or color instructions in appropriate fields.
+* When setting up the site for making screen shots of the result of a task,
+  use the provided text, colors, and images.
+
+These assets can be found in the
+http://cgit.drupalcode.org/user_guide/tree/assets?h=8.0.x[_assets_ folder of the
+Git repository for the project] (click the "plain" link next to a file name to
+view it). See also <<practicalities-project>>.
+
+@todo make a screen shot here!
+
+If images from the _assets_ folder appear in your screen shots, you *must
+include attributions information* for them in your attributions. There is
+information about this in the _README.txt_ file in the _assets_ folder.

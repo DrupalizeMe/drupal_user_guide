@@ -78,7 +78,9 @@ information for each stage of writing and editing.
 This seems to be working OK so far, but I'm not sure yet whether the people
 working on this guide will be comfortable or quick with the issue process. For
 instance, if they submit a topic and we set the issue to "needs work", will they
-notice this and fix the problems and resubmit? This remains to be seen.
+notice this and fix the problems and resubmit? To mitigate this, instructions
+were added to tell participants how to "follow" their issue and get email
+updates. It remains to be seen whether participants will actually follow up.
 
 
 [[notes-contributor-guide]]
@@ -118,12 +120,15 @@ Lessons learned:
   into the templates (instead of the generic ones in the template files). People
   using the on-line editor otherwise couldn't find the files they were supposed
   to be editing, and that meant that sometimes they picked the wrong file (with
-  perhaps the wrong template) to edit.
+  perhaps the wrong template) to edit. We eventually wrote a script that would
+  create a batch of template files.
 * The guidelines were long, and people didn't easily see how to get
-  started. To remedy that, we posted a 6-step list on the project home page,
-  which everyone thinks is much easier to follow.
+  started. To remedy that, we posted a quick start list initially on the project
+  home page, and eventually this was moved into the contributor guide so that
+  everything was in the same place. This proved to be much easier to follow.
 * The first few participants made a lot of the same mistakes. So, we updated the
-  templates so that the correct way of doing things would be explained there.
+  templates and instructions so that the correct way of doing things would be
+  explained there.
 
 
 [[notes-communication]]
@@ -135,9 +140,8 @@ and see how it works:
 * Posting major announcements on groups.drupal.org/documentation
 * Tweeting when we do so from @drupaldocs
 * We set up an email list for participants; will see how that works
-* The main Tracking issue has a link to the tracking spreadsheet so that
-  anyone can see progress (only the project coordinators can edit the sheet)
+* There are links all over the place to the tracking spreadsheet (a "view" link)
+  so that anyone can follow progress.
 * Periodic meetings in IRC. We considered Hangouts but were not sure that would
   work well with large numbers of people; on the other hand, IRC may be
   unfamiliar to some people too.
-

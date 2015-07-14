@@ -9,7 +9,7 @@ COPYRIGHT AND LICENSE
 ---------------------
 
 See the ASSETS.yml file in this directory, and files it references, for
-copyright and license information for the text source files in this
+copyright and license information for the text source files and images in this
 project. Output files produced and displayed by this project also must contain
 copyright/license information.
 
@@ -22,25 +22,29 @@ FILE ORGANIZATION
 
 This project contains the following directories:
 
-source
+* source
 
 The AsciiDoc source for the manual is in language subdirectories of the source
 directory. The index file is called "guide.txt", and it has include statements
 for the other files that make up the manual.
 
-unused
+* assets
+
+Images and text for use in making screen shots for the guide.
+
+* unused
 
 Some topics that were written or partially written, that we decided not to
 include in the final guide.
 
-guidelines / templates
+* guidelines / templates
 
 Guidelines and templates for contributors to this project are in the guidelines
 and templates directories, respectively. The guidelines are in the form of
 another AsciiDoc manual, with guidelines.txt as the index file. There are
 separate templates for topics covering tasks and concepts.
 
-scripts / output
+* scripts / output
 
 To build both the User Guide and Guidelines, use the scripts in the scripts
 directory; see below for more information.  Currently the Guidelines document
