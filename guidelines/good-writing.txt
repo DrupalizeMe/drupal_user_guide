@@ -42,7 +42,21 @@ At the same time, many people learn best through images. So, especially for Task
 topics, we want to include screen shots. In a typical task, we would have:
 
 * A screen shot of a form that will be filled out.
-* A table of fields and values to fill in.
+* A table of fields and values to fill in. Sample table code (this example is
+  for creating a menu link):
+
+----
+.Fields and values
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name|Explanation|Example value
+|Menu link title|Title to be displayed in the menu|Opening hours
+
+(rest of the fields go here)
+
+|================================
+----
+
 * The last step would be something that shows them they succeeded (like viewing
   the content if the task is to create the content), with a screen shot of what
   it looks like.
@@ -85,7 +99,7 @@ subdirectory _templates_ in the project Git repository; see
 <<practicalities-project>>.
 
 If you find that the proposed topic outline is not following these guidelines,
-bring it to the attention of the project coordinators -- see <<contact>>.
+bring it to the attention of the project coordinators -- see <<management-contact>>.
 
 
 [[good-writing-best-practices]]

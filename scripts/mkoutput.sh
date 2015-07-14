@@ -8,6 +8,7 @@ mkdir -p ../output/html
 mkdir -p ../output/html/en
 mkdir -p ../output/html/en/images
 mkdir -p ../output/html/guidelines
+mkdir -p ../output/html/guidelines/images
 mkdir -p ../output/ebooks
 mkdir -p ../output/ebooks/en
 mkdir -p ../output/ebooks/en/images
@@ -31,6 +32,7 @@ xmlto -m bare.xsl xhtml -o ../output/html/guidelines ../output/html/guidelines/g
 
 # Copy image files to output directory
 cp ../source/en/images/*.png ../output/html/en/images
+cp ../guidelines/images/*.png ../output/html/guidelines/images
 
 # Run the AsciiDoc processor to convert to DocBook for ebooks.
 asciidoc -d book -b docbook -f std.conf -o ../output/ebooks/en/guide.docbook ../source/en/guide.txt

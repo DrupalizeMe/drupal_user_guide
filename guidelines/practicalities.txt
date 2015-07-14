@@ -5,9 +5,37 @@ Thank you for your desire to help us create a great User Guide! The sections
 below contain information you'll need, in order to contribute your time and
 skills to this project.
 
-There is a quick start guide to contributing on the
-https://www.drupal.org/project/user_guide[project home page]; the sections below
+[[practicalities-quickstart]]
+==== Quick Start Guide
+
+Here is an abbreviated guide to contributing to this project. The sections below
 have more details about each step.
+
+*Note: Several links require a user name / password -- this is "drupal/drupal"*
+
+. Find a topic to write, edit, or test. See <<practicalities-assignment>>.
+. Create an issue for your topic>>, if there is
+  not one already. See <<practicalities-issue-create>>.
+.  Write or edit your topic. See the <<practicalities-editing>> (for
+   practicalities) and <<writing-editing>> (for guidelines). *Note about
+   screenshots: don't worry about them being perfect - just make a rough cut.*
+. Submit your work to the issue. See <<practicalities-submitting>>.
+. Optionally, make a "patch" file and submit that to the issue too. Really,
+  it's optional; mostly helpful in the Editing phase, but not necessary. See
+  <<practicalities-project>> if you want to do this.
+. Add copyright attributions information to the Issue Summary section of your
+  issue. See <<copyright-license>>.
+. Make sure you get <<practicalities-recognition,recognized for your work>>.
+. Update the status of your issue (in the Issue metadata section) to "needs
+  review", and save.
+. Subscribe to email updates for your issue. See <<practicalities-subscribe>>.
+. Check on the status of your issue until your change is "committed" (added to
+  the source file repository). You may be asked to make a few changes before
+  this happens.
+. If you have more time, follow these steps again to write/edit/test a new
+  topic.
+
+See also: <<management-channels>> to keep up with project announcements.
 
 
 [[practicalities-assignment]]
@@ -21,42 +49,115 @@ assigned a topic:
   days, and ask for an assignment. These are announced on the
   https://groups.drupal.org/documentation[Documentation group on
   Groups.Drupal.org].
-* If one of the <<coordinators, project coordinators>> is in the
-  <<contact,documentation IRC channel>>, ask them for an assignment.
+* If one of the <<management-coordinators, project coordinators>> is in the
+  <<management-contact,documentation IRC channel>>, ask them for an assignment.
 * If there is not a meeting or a sprint day when you're ready for an assignment,
   on the
-  https://docs.google.com/spreadsheets/d/1ov0FyJhKrJe7PYvohzV5UrrLyRaVCy2A0BjjEatqxKw/edit?usp=sharing[tracking
-  spreadsheet] for the
-  https://www.drupal.org/node/2512362[main tracking issue], locate a
-  topic that needs a writer or editor. (Choose a topic that appears on the
+  https://docs.google.com/spreadsheets/d/1ov0FyJhKrJe7PYvohzV5UrrLyRaVCy2A0BjjEatqxKw/edit?usp=sharing[topic
+  tracking spreadsheet], locate a
+  topic that needs a writer or editor. It looks like this:
+
+image:images/spreadsheet.png["Screen shot of the tracking spreadsheet"]
+
+Some notes about the topic tracking spreadsheet:
+
+* The topics are listed, one per row in the spreadsheet, within the outline of
+  the guide. You can also see them on the
   https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html[temporary
-  site with the guide output], and that appears on the "Decided" sheet of
-  the tracking
-  spreadsheet. These topics are ones we're certain need to be written; there
-  is also an "Undecided" sheet that contains the full list of topics under
-  consideration.)
+  site with the guide output].
+* Each topic will go through several writing and editing phases, including
+  "Writing the initial draft" and "Copy edit".
+* Each phase has a set of 3 columns for the issue link, the person who is
+  working on it, and the status.
+* You'll want to find a topic that interests you, that you feel comfortable
+  writing or editing, that is ready for the phase of writing/editing that you
+  want to do, and that is blank in the "Person/date started" column for
+  the phase you want to do. For instance, in the screen shot above, the
+  "Planning your Site Layout" needs someone to write it, but "Concept:
+  Regions in a Theme" is already being worked on by someone else.
 
 Once you have a topic:
 
 * If the topic does not already have an
-  issue created for your writing/editing phase, create a new one, following the
-  instructions
-  on the https://www.drupal.org/node/2512362[main tracking issue].
+  issue created for your writing/editing phase, create a new one. See
+  <<practicalities-issue-create>>.
 * If you are taking over for a topic that already had an issue,
-  use the "Assigned" field under "Issue metadata" to assign the issue
-  to yourself, and save the changes.
-* Save your issue and/or changes.
+  use the "Assigned" field under "Issue metadata" (near the bottom of the issue
+  page) to assign the issue to yourself, and save the changes. You may have to
+  expand the Issue metadata section to see the fields. Here's a screen
+  shot; Assigned is over on the right:
 
-The project coordinators are subscribed to
-issues for the project, so they will notice your change and update the
-tracking spreadshseet.
+image:images/issue-metadata.png["Screen shot of the issue meta-data section of
+an issue"]
+
+* The project coordinators are subscribed to
+  issues for the project, so they will notice your change and update the
+  tracking spreadshseet.
 
 If you find that you cannot complete the assignment you took, or need a
 different assignment:
 
-. Un-assign the issue
-. Add a comment explaining that you are not completing it
+. Un-assign the issue (set Assigned to "Unassigned" and save the issue).
+. Add a comment explaining that you are not completing it.
 . Hopefully, find a different topic to work on by following these steps again.
+
+
+[[practicalities-issue-create]]
+==== Creating a new issue
+
+If you have chosen or been assigned a topic to write or edit, the next step is
+to make an issue for your phase of writing or editing. First steps:
+
+. Log in to Drupal.org with your user name and password.
+. Visit the https://www.drupal.org/project/issues/user_guide["Issues" page for
+  the User Guide project].
+. Scan the list (it may be a few pages) or search to make sure there isn't
+  already an issue for your phase of writing/editing for your topic. (Search for
+  the assigned file name of your topic, such as _block-concept.txt_ ). Note
+  that there will be one issue for writing, and separate issues for each
+  editing phase.
+. If you find an existing
+  issue for your topic/phase, return to <<practicalities-assignment>> to make
+  sure someone else isn't working on it, and if not, assign the issue to
+  yourself.
+
+
+If there is no existing issue, then follow these steps to create a new one:
+
+. From the Issues page, click "Create new issue".
+. Fill in the issue form with the following information:
+
+image:images/issue-form.png["Screen shot of the new issue form"]
+
+.Fields and values
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name|Value
+|Title| Make a title with the writing/editing phase you are doing, and the
+assigned filename of your topic. Example: Write content-create.txt
+|Category 	|Task
+|Component 	|User Guide content
+|Assigned 	|(assign it to yourself)
+|Issue summary 	|Copy/paste the template below, and then fill in the
+values where the [] parts are.
+|================================
+
+Template for the issue summary section:
+
+----
+<strong>Title:</strong>  [Topic title]
+<strong>Section:</strong> [Book section name]
+<strong>File name:</strong> [File name]
+<strong>Covers:</strong> [Copy from the Tracking spreadsheet]
+<h4>Attribution</h4>
+See https://userguide-drupal.redesign.devdrupal.org/guidelines/guidelines.html#copyright-license
+[Fill in!]
+----
+
+[start=3]
+. Save the issue.
+. Make sure you are subscribed to issue updates. See
+  <<practicalities-subscribe>>.
 
 
 [[practicalities-editing]]
@@ -65,34 +166,40 @@ different assignment:
 Once you have an assigned topic, your next step is to look at the topic, see
 what needs to be written or edited, and actually edit the source file.
 
-We have set up a temporary site where you can view the in-progress user guide:
-https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html (the user
-name and password are both +drupal+).
-The guidelines and instructions for the project are also on this site, at:
-https://userguide-drupal.redesign.devdrupal.org/guidelines/index.html
-Both of these "books" have navigation on the right sidebar, with expand/collapse
-capability.
+Presumably, if you've <<practicalities-assignment,been assigned a topic>>, you
+will know what the assigned file name is for your topic, such as
+_understanding-themes.txt_.
 
-When you are on a particular topic page, you'll notice there will be a line
-like:
+You have two options for editing this source file:
 
-_Source file: text-conventions.txt_
+* If you are familiar with Git (the revision control system the Drupal project
+  uses), you can obtain the source files using Git and then use any text editor
+  to edit your file. See <<practicalities-project>>.
+* Use the online editor.
 
-This indicates which source file the topic you are viewing was generated
-from. If you are working on this topic, you have two choices for how to edit
-that file:
+To use the online editor:
 
-* Use any text editor to edit the files in the Git source repository for the
-  project. See <<practicalities-project>>.
-* Use the online editor:
-  . Locate the _Edit the source file filename.txt_ link in
-    the _Source information_ block.
-  . Follow that link to edit the page content.
-  . There is a preview button that will show you the output as you edit.
-  . When you finish your edits use the "Download new file" button to download a
+. Find your page in the outline on the
+    https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html[User
+    Guide output site] (user name and password are both *drupal*).
+. Click the link to see your page. It may be a template (if you are in
+    the Writing phase), or it may be a written topic that you are editing.
+. Locate the _Edit the source file filename.txt_ link (with the file name
+    for your topic) in
+    the _Source information_ block on the sidebar:
+
+image:images/edit-link.png["Screen shot of the Source information block on
+the User Guide output site"]
+
+[start=4]
+. Follow that link to edit the page content.
+. There is a preview button that will show you the output as you edit.
+    You may have to click the button to refresh the preview, or it may
+    refresh as you type.
+. When you finish your edits use the "Download new file" button to download a
     new version of the source file that contains your edits.
 
-For information about how to actually _write_ or _edit_ the topic, see
+For guidelines to use when writing or editing your topic, see
 <<writing-editing>>.
 
 
@@ -103,18 +210,34 @@ After you have selected a topic, created or assigned yourself an issue, done the
 writing or editing, and possibly made some images, you will need to submit the
 changes on your issue:
 
-. Upload the text source file(s) you changed, in the Files section of the issue.
-  Even if you make a patch file, still upload the full text file as well.
-. If you made a patch file, also upload that. See <<practicalities-project>> for
-  instructions.
-. If you have made images, upload them also.
+. Log in to Drupal.org with your user name and password.
+. Find your issue (try the _Your Issues_ link on your user profile page).
 . Add a comment with a brief summary of what you wrote or edited. Note whether
   you think it needs more work, any difficulties you encountered, any questions
   you had, and any other pertinent details.
+. Change the issue status to "Needs review" (in the Issue metadata section just
+  above the comment form).
+. Upload the text source file(s) you changed, in the Files section of the issue
+(near the bottom; you may need to expand it to see the Upload button).
+
+image:images/issue-files.png["Screen shot of the Files section of an issue"]
+
+[start=6]
+. If you made a patch file, also upload that to the Files section. See
+  <<practicalities-project>> for instructions. This is completely optional!
+. If you have made images, also upload them to the Files section. Note that
+  images can be rough -- don't worry about making them perfect at this stage.
 . Make sure the attributions information for your topic is included in the issue
   summary (in the Summary and Relationships section). See <<copyright-license>>
-  for instructions.
-. Change the issue status to "Needs review" (in the Issue meta-data section).
+  for instructions. (Put it where it says "[Fill in!]" at the bottom of the
+  issue summary template from <<practicalities-issue-create>>.)
+
+// Paste in the template from the issue create section above, put in a
+// sample topic title and stuff, and take a screen shot of the Issue Summary
+// section of an issue, if you need to re-create this.
+image:images/issue-summary.png["Screen shot of the Issue Summary section of an issue"]
+
+[start=9]
 . Submit your comment and changes.
 
 
@@ -125,32 +248,74 @@ This guide is a community project, and we have two ways to recognize the
 community members who contribute their time to it:
 
 . People who write or edit a topic should also add their names (and optionally,
-  their organization or company names) to the _attributions.txt_ file in the
-  User Guide. See <<copyright-license>> for details on how to do that. This
-  attribution information will appear in e-book and HTML versions of the Guide.
+  their organization or company names) to the Attributions page in the
+  User Guide. When you work on an issue, you will put this into the issue
+  summary (see <<practicalities-submitting>>) and the project managers will
+  add it to the attributions page. This
+  attribution information will appear in both e-book and HTML versions of the
+  Guide.
 
-. In addition, when you comment or upload a file on a Drupal.org issue in this
+. In addition, when you comment on or update a Drupal.org issue in this
   project, the Drupal.org web site will track that contribution to the project.
   If you want your sponsoring organization to get credit for your contributions,
-  you'll need to find the fields on the Drupal issue comment form that
-  let you enter or select the organization to credit.
+  make sure to fill in the "Attribute this contribution" section of the issue
+  comment form:
+
+image:images/issue-attribution.png["Screen shot of Attribute this contribution
+section of the issue comment form"]
+
+
+[[practicalities-subscribe]]
+==== Subscribing to email issue updates
+
+If you are writing or editing a topic for this project, you will be using an
+issue to communicate with the project managers and submit your writing or
+edits. See <<practicalities-issue-create>> for details of how to create an
+issue, and <<practicalities-submitting>> for how to submit your changes.
+
+It is important to watch your issue for comments from the project managers,
+until it is finalized. You can do this by bookmarking the issue in your browser
+and checking it every day or two, or you can subscribe to receive email
+updates.
+
+Here are the steps to receive email updates about an issue:
+
+. Log in to your Drupal.org user account, which presumably has a valid email
+  address in it (if not, edit your profile).
+. Make sure you are "Following" the issue. If you created it or added a
+  comment, you should be following it. You can also follow other issues
+  by clicking the "Follow" button on the right sidebar. If it already says
+  Following, then you are already following the issue.
+
+image:images/issue-follow.png["Screen shot of issue follow button"]
+
+[start=3]
+. From your user profile page, click the Notifications link. Make sure the
+  "Default notification" says it will send email for "Issues you follow", and
+  save.
+
+image:images/profile-notifications.png["Screen shot of Notifications page of
+user profile"]
 
 
 [[practicalities-project]]
 ==== Drupal.org project, Git, and patches
 
+*Note: this section is rather technical. You can skip it unless you want to use
+ an off-line editor or make a patch file.*
+
 The source files for both this guidelines documentation and the User Guide
 itself are located in a https://www.drupal.org/project/user_guide[Drupal.org
 project called User Guide]. The source files are managed in a Git revision
-control repository; the English Guide files are in subdirectory _source/en_, and
+control repository; the English-language files for the Guide are in subdirectory
+_source/en_, and
 other languages will eventually be in similar subdirectories there.
 
-This project uses Drupal.org issues to track progress and manage changes for
-each topic. There
-is a https://www.drupal.org/node/2512362[main tracking issue] where you can find
-information on the status of writing and editing all the topics that make up the
-guide, and links to issues for each of the individual topics that people are
-working on.
+This project uses individual Drupal.org issues to track progress on the
+individual writing and editing phases for each topic. There is a
+https://docs.google.com/spreadsheets/d/1ov0FyJhKrJe7PYvohzV5UrrLyRaVCy2A0BjjEatqxKw/edit?usp=sharing[tracking
+spreadsheet for the topics] that lists all the topics, the issues for each phase
+of writing and editing, and their status.
 
 Background on Drupal.org projects and issues:
 
@@ -160,9 +325,6 @@ Background on Drupal.org projects and issues:
   completely relevant.
 * https://www.drupal.org/node/1468332[How to find the issues for a project]
 * https://www.drupal.org/node/2276011[Updating or editing an issue report]
-* If you are viewing any issue, you can click the "Follow" button in the right
-  sidebar, to receive email when the issue is updated. If you comment on an
-  issue, you'll automatically be subscribed.
 
 Background on Git and patching:
 
