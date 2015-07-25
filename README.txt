@@ -55,6 +55,12 @@ The output the scripts produces lands in the output directory. Subdirectory html
 of that is the output for the AsciiDoc Display module; e-books land in the
 ebooks subdirectory.
 
+* userguide_demo
+
+This directory holds a module that contains a Simpletest test that creates
+a demo site for the guide. This can be used as a reference, and to make
+screen shots. See README.txt in that directory for more information.
+
 
 ASCIIDOC OUTPUT BUILD SCRIPTS
 -----------------------------
