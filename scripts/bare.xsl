@@ -70,6 +70,9 @@
 
 <!-- Override the output, to omit HTML headers and put titles in divs. -->
 <xsl:template name="chunk-element-content">
+  <xsl:param name="prev"/>
+  <xsl:param name="next"/>
+  <xsl:param name="nav.context"/>
   <xsl:param name="content">
     <xsl:apply-imports/>
   </xsl:param>
@@ -83,6 +86,11 @@
   </div>
   <div class="asciidoc-display-main-content">
     <xsl:copy-of select="$content"/>
+    <xsl:call-template name="footer.navigation">
+      <xsl:with-param name="prev" select="$prev"/>
+      <xsl:with-param name="next" select="$next"/>
+      <xsl:with-param name="nav.context" select="$nav.context"/>
+    </xsl:call-template>
   </div>
 </xsl:template>
 
