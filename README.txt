@@ -81,3 +81,8 @@ To run the scripts/mkoutput.sh script, you will need several open-source tools:
 On a Linux machine, you can use one of these commands to install all the tools:
   apt-get install asciidoc docbook fop calibre
   yum install asciidoc docbook fop calibre
+
+On a Mac:
+  brew install asciidoc xmlto
+  echo "export XML_CATALOG_FILES=/usr/local/etc/xml/catalog" >> ~/.bash_profile
+  source ~/.bash_profile
