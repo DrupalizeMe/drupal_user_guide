@@ -1,4 +1,4 @@
-This module does not do anything directly. All it contains is a test,
+This module does not do anything directly. All it contains is tests,
 which can be used to generate screen shots and (eventually) a database
 dump and files directory so you can clone the demo site.
 
@@ -19,9 +19,10 @@ These steps need to be done once to get your Firefox browser and tools set up:
 4. Save the file.
 
 5. You'll need to have the "import" command installed from ImageMagick. On
-   Debian/Ubuntu:
+   Linux, use one of the following commands:
 
 sudo apt-get install imagemagick
+yum install imagemagick
 
 
 Once you have the Greasemonkey script and ImageMagick set up, to make
@@ -35,8 +36,8 @@ screenshots:
 3. Go to admin/config/development/testing (Configuration / Development /
    Testing).
 
-4. Run the "UserGuideDemoTest" test interactively and wait for it to
-   finish.
+4. Run the "UserGuideDemoTestEn" test interactively and wait for it to
+   finish (or the one for the language you want to generate).
 
 5. At the bottom of the page, you should see a form (from the Greasemonkey
    script). Enter the values and click the button. You'll need to supply:

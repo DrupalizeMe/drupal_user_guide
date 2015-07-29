@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\search\Tests\UserGuideDemoTest.
+ * Contains \Drupal\search\Tests\UserGuideDemoTestBase.
  */
 
 namespace Drupal\userguide_demo\Tests;
@@ -10,16 +10,63 @@ namespace Drupal\userguide_demo\Tests;
 use Drupal\simpletest\WebTestBase;
 
 /**
- * Builds the demo site for the User Guide, with screenshots.
+ * Base class for tests that build demo sites for User Guide and screenshots.
  *
  * See README.txt file in the module directory for more information about
  * making screenshots.
  *
- * @group UserGuide
+ * To make a class for a new language:
+ * - Extend this class.
+ * - Override the $installLanguage and $demoInput member variables, translating
+ *   the input into the target language.
+ * - Add a method:
+ *   @code
+ *   public function testBuildSite() {
+ *     $this->makeDemoSite();
+ *   }
+ *   @endcode
  */
-class UserGuideDemoTest extends WebTestBase {
+abstract class UserGuideDemoTestBase extends WebTestBase {
+
+  /**
+   * The language to install in.
+   *
+   * @var string
+   */
+  protected $installLanguage = 'en';
+
+  /**
+   * Strings and other information to input into the demo site.
+   *
+   * @var array
+   */
+  protected $demoInput = array(
+    'site_name' => 'Anytown Farmers Market',
+    'site_slogan' => 'Farm Fresh Food',
+    'site_mail' => 'info@example.com',
+  );
 
   protected $profile = 'standard';
+
+  // Set $strictConfigSchema to FALSE due to issue
+  // https://www.drupal.org/node/2541800, which makes the foreign language
+  // install fail with strict config checking in the standard profile.
+  protected $strictConfigSchema = FALSE;
+
+  /**
+   * Sets up for an install in the specified language.
+   *
+   * This is an override of WebTestBase::installParameters(). See that for
+   * full documentation.
+   */
+  protected function installParameters() {
+    $params = parent::installParameters();
+    if ($this->installLanguage != 'en') {
+      $params['parameters']['langcode'] = $this->installLanguage;
+      $params['download_translation'] = TRUE;
+    }
+    return $params;
+  }
 
   /**
    * Counter for screenshot output, separate from regular verbose IDs.
@@ -29,7 +76,7 @@ class UserGuideDemoTest extends WebTestBase {
   /**
    * Makes the demo site.
    */
-  public function testMakeDemoSite() {
+  public function makeDemoSite() {
     $this->drupalLogin($this->rootUser);
 
     // Topic: config-basic - Edit basic site information.
@@ -37,15 +84,14 @@ class UserGuideDemoTest extends WebTestBase {
     $this->setUpScreenShot('config-basic-test1.png', array(550, 275, 30, 200));
 
     $this->drupalPostForm(NULL, array(
-        'site_name' => t('Anytown Farmers Market'),
-        'site_slogan' => t('Farm Fresh Food'),
-        'site_mail' => t('info@example.com'),
+        'site_name' => $this->demoInput['site_name'],
+        'site_slogan' => $this->demoInput['site_slogan'],
+        'site_mail' => $this->demoInput['site_mail'],
       ), t('Save configuration'));
     // In this case, we want the screen shot made after we have entered the
     // information, because for a normal user, this information would have
     // been set up during the install.
     $this->setUpScreenShot('config-basic-test2.png', array(550, 275, 30, 200), 'admin/config/system/site-information');
-
   }
 
   /**
