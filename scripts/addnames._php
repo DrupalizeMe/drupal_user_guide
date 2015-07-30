@@ -76,7 +76,13 @@ function process_file($file, $source, $output, $depths = array(2,3)) {
     return FALSE;
   }
   $match = '/^(' . implode('|', $match) . ')[^\=].*$/m';
-  $text = preg_replace($match, '$0' . "\n" . $addition, $text);
 
+  // Split the text at code block indicator lines: ----.
+  // Only process the odd results, which will skip processing the code blocks.
+  $codes = preg_split('/^----$/m', $text);
+  for ($i = 0; $i < count($codes); $i += 2) {
+    $codes[$i] = preg_replace($match, '$0' . "\n" . $addition, $codes[$i]);
+  }
+  $text = implode("----\n", $codes);
   return file_put_contents($output . '/' . $file, $text);
 }
