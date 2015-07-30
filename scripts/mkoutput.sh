@@ -43,12 +43,12 @@ cp ../source/en/images/*.png ../output/ebooks/en/images
 # Run the xmlto processor to convert from DocBook to PDF.
 # The syntax is:
 #   xmlto pdf --with-fop -o [output dir] [input docbook file]
-xmlto pdf  -m normal.xsl --with-fop -o ../output/ebooks/en ../output/ebooks/en/guide.docbook
+xmlto pdf  -m pdf.xsl --with-fop -o ../output/ebooks/en ../output/ebooks/en/guide.docbook
 
 # Run the xmlto processor to convert from DocBook to ePub.
 # The syntax is:
 #   xmlto epub -o [output dir] [input docbook file]
-xmlto epub  -m normal.xsl -o ../output/ebooks/en ../output/ebooks/en/guide.docbook
+xmlto epub  -m epub.xsl -o ../output/ebooks/en ../output/ebooks/en/guide.docbook
 
 # Run the calibre processor to convert from ePub to Mobi, but on a modified
 # ePub format. The syntax is:
