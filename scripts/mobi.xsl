@@ -15,6 +15,9 @@
   <xsl:value-of select="'2'" />
 </xsl:variable>
 
+<!-- Do not generate a TOC in the text of the book. -->
+<xsl:param name="generate.toc">book nop</xsl:param>
+
 <!-- Override table of contents creation to limit depth. -->
   <xsl:template match="book|
                        article|
