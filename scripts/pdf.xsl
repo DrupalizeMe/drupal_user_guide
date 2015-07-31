@@ -28,4 +28,7 @@
   <xsl:attribute name="color">blue</xsl:attribute>
 </xsl:attribute-set>
 
+<!-- Images -->
+<xsl:param name="default.image.width">12cm</xsl:param>
+
 </xsl:stylesheet>
