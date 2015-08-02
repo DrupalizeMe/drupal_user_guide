@@ -1,127 +1,77 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[config-theme]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN: Configuring the Theme
+//@todo: fix indenting on paragraphs after numbered items.
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Configuring the Theme
 
+(((Theme,configuration)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+The goal of this task is to edit the settings of the default Bartik theme to update "Color scheme" and insert a logo of your choice. For this example, we will be using the visual guidelines for our farmers market site. 
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+<<understanding-themes>>
 
-Remove this placeholder text.
-
-
-==== Site prerequisites
-
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+//==== Site prerequisites
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
-
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
-
-  And it could be a couple of paragraphs.
+. In the administration menu under "Manage" select "Appearance".
+//To create this image: download Drupal 8.0.0-beta13 and view the site. I captured just the top administration menu (2-levels). 
+image:images/config-theme_admin_menu.png["screen capture of admin menu",width="100%"]
 
 [start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Under "Installed Themes" you will find "Bartik" as your "(default theme)". Under the "Bartik (default theme)" select "Settings".
+//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". I captured the "Installed themes" title along with the listing of the default theme.
+image:images/config-theme_bartik_settings.png["screen capture of default theme, Bartik",width="100%"]
 
-. Text of step 3.
+[start=3]
+. Under "Color scheme" click inside each color build box and type the proper color codes you would like to add. For this example, we are using the following builds:
 
-Notes:
+  Header background top: #7db84a (green)
+  Header background bottom: #2a3524 (dark green)
+  Main background: #ffffff (white)
+  Sidebar background: #f8bc65 (light orange)
+  Sidebar borders: #e96b3c (orange)
+  Footer background: #2a3524 (dark green)
+  Title and slogan: #ffffff (white)
+  Text color: #000000 (black)
+  Link color: #2a3524 (dark green)
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+Please note: when creating your own color selections, you may use the color wheel to the right to select colors, and the web color codes will be added for you.
+//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Edit color themes to match the farmer's market scenario and capture the updated settings along with the title "Color scheme" 
+image:images/config-theme_color_scheme.png["screen capture of the updated color specifications in the Bartik color theme",width="100%"]
+
+[start=4]
+. Under "Logo Image Settings" uncheck the box next to "Use the default logo supplied by the theme".
+
+[start=5]
+. Under "Upload logo image" select "Choose file" and locate the logo file you want to upload to your site. 
+
+Once you have selected the file you would like to upload, you will see the filename next to the "Choose File" button under "Upload logo image"
+
+[start=6]
+. In order to save your changes and see that the colors and logo have been changed on your site, select "Save configuration" at the bottom of the Bartik "Settings" page.
+
+//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Uncheck the "Use a different logo ..." box and upload the scenario image. 
+image:images/config-theme_logo_upload.png["screen capture after uploading a new logo to Bartik theme settings",width="100%"]
+
+Please note, under the "Color scheme" of the "Settings" page for the Bartik theme, you will find a "Preview" section which displays your website front page with the settings administered.
+
+//To create this image: followed all above steps of updating colors and logo, then took a screen shot including the "Preview" title with example preview of front page with updated settings. 
+image:images/config-theme_color_scheme_preview.png["screen capture Bartik theme settings preview",width="100%"]
+
+[start=7]
+. Congratulations! You have updated the Bartik theme settings for your website.
+image:images/config-theme_final_result.png["final result of editing Bartik theme settings - colors and logo",width="100%"]
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+<<extend-theme-find>>
 
-Remove this placeholder text.
+<<extend-theme-install>>
 
+//==== Related concepts
 
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+//==== Additional resources
