@@ -4,6 +4,7 @@
 (((Permissions,changing)))
 (((Permissions,granting)))
 (((Permissions,denying)))
+(((Roles,changing permissions)))
 
 ==== Goal
 
@@ -30,10 +31,12 @@ to perform particular actions on the website.
   permissions you would like to change. The permissions page will show all the
   available actions for the website such as, for example, "post comments" or
   "Use advanced search". The available permissions depend on the modules that
-  are enabled in the site.
+  are enabled in the site. Note: some permissions may have security implications, be cautious when when assigning permissions to User Roles
 
-. Select the permissions that you wish to grant to a particular role and
-  uncheck the permissions that you wish to deny to a particular role.
+. Select the permissions that you wish to grant to a particular role and uncheck
+  the permissions that you wish to deny to a particular role. For example with
+  our farmers market scenario you might want to grant permission to vendors to
+  create recipe content.
 
 . Click "Save permissions" in the bottom of the page to save the changes.
 
@@ -45,12 +48,12 @@ Vendor role the rights to create, delete and edit Recipes",width="100%"]
 
 ==== Follow-on tasks
 
-* <<user-admin-account>>
+* You can grant or deny users the right to perform particular actions by
+assigning roles to, or removing roles from users. <<user-roles>>
 
-You can grant or deny users the right to perform particular actions by
-assigning roles to, or removing roles from users.
+==== Related concepts
+* <<user-admin-account>>
 
 ==== Additional resources
 
-* https://www.drupal.org/node/627158[drupal.org community documentation on
-Managing Users]
+* https://www.drupal.org/node/627158[drupal.org community documentation on Managing Users]
