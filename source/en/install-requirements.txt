@@ -1,83 +1,87 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[install-requirements]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Server Requirements
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+=== Concept: Server Requirements
+
+(((Install Requirements Overview)))
+
+To install and run Drupal your web server must meet certain minimum
+requirements.
+
+// ==== Prerequisite knowledge
+
+// Note: The "What is a ..." normal template section does not really
+// make sense for this topic.
+//==== What is a ...?
+
+==== Disclaimer
+
+Note that the minimum requirements of Drupal core can be subject to
+change, given an important enough reason. Where such a change is
+likely to have broad impact on Drupal's user base, every effort will
+be made to communicate these decisions ahead of time.
+
+==== Disk space
+
+A minimum installation requires 15 Megabytes. 60 MB is needed for a
+website with many contributed modules and themes installed. Keep in
+mind you need much more for the database, files uploaded by the users,
+media, backups and other files.
+
+==== Web server
+
+Apache, Nginx, Hiawatha, or Microsoft IIS
+
+===== Apache (Recommended)
+
+Apache is the most commonly used web server for Drupal. Drupal will
+work on Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have
+the mod_rewrite module installed and enabled.
+
+The Apache Virtualhost configuration must contain the directive
+AllowOverride All to allow Drupal's .htaccess file to be used.
+
+===== Nginx
+
+Nginx is a commonly used web server that focuses on high concurrency,
+performance and low memory usage. Drupal will work on Nginx 1.1 or
+greater hosted on UNIX/Linux, OS X, or Windows. The
+ngx_http_rewrite_module must be installed and enabled.
+
+===== Hiawatha
+
+Hiawatha is a web server with a strong focus on security. It also aims
+at being easy to use and being lightweight. Research performed by
+independent researchers proves that Hiawatha offers a performance
+comparable to other web servers under normal conditions, but much
+better while under attack. URL Toolkit must be installed and
+configured to rewrite URLs.
+
+===== Microsoft IIS
+
+Microsoft IIS is a web server and set of feature extension modules for
+use with Microsoft Windows. Drupal will work with IIS 5, IIS 6, or IIS
+7 if PHP is configured correctly.
+
+Because clean URLs are required in Drupal 8, you may need to use a
+third party product. For IIS 7 you can use the Microsoft URL Rewrite
+Module or a third party solution.
+
+==== Database
+
+MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
+InnoDB-compatible primary storage engine.
+
+PostgreSQL - 9.1.2 or higher.
+
+SQLite - 3.4.2 or higher.
+
+==== PHP
+
+PHP 5.5.9 or higher.
 
 
-==== Prerequisite knowledge
-
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
-
-==== What is a ...?
-
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
-
-Remove this placeholder text.
-
-
-==== Related topics
-
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
-
-Remove this placeholder text.
-
+//==== Related topics
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+https://www.drupal.org/requirements[System requirements on drupal.org]
