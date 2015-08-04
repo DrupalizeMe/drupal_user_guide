@@ -29,7 +29,7 @@ asciidoc -d book -b docbook -f std.conf -o ../output/html/guidelines/guidelines.
 # style sheet that makes output this module can recognize.  The syntax is:
 #   xmlto -m bare.xsl xhtml -o [output dir] [input docbook file]
 xmlto -m bare.xsl xhtml -o ../output/html/en ../output/html/en/guide.docbook
-xmlto -m bare.xsl xhtml -o ../output/html/guidelines ../output/html/guidelines/guidelines.docbook
+xmlto -m bare.xsl xhtml --stringparam section.autolabel.max.depth=2 -o ../output/html/guidelines ../output/html/guidelines/guidelines.docbook
 
 # Copy image files to output directory.
 cp ../source/en/images/*.png ../output/html/en/images

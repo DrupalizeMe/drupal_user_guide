@@ -5,6 +5,7 @@
 
 <!-- Use outline numbering for sections. -->
 <xsl:param name="section.autolabel" select="1"/>
+<xsl:param name="section.autolabel.max.depth">1</xsl:param>
 <xsl:param name="section.label.includes.component.label" select="1"/>
 <xsl:param name="preface.autolabel">i</xsl:param>
 
