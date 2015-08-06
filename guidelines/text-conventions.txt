@@ -64,3 +64,35 @@ Click _Save configuration_.
 which is formatted as:
 
 Click _Save configuration_.
+
+
+[[text-navigation]]
+==== How to describe navigation
+
+In most task topics, you will need to provide instructions for how to find
+pages in the Drupal administrative interface. Here are two examples of how to do
+this:
+
+----
+In the _Manage_ administrative menu, navigate to
+_Structure_ > _Taxonomy_ (admin/structure/taxonomy).
+
+In the _Manage_ administrative menu, navigate to
+_Configuration_ > _System_ > _Site information_
+(admin/config/system/site-information).
+----
+
+Notes:
+
+* Refer to the administrative menu as the "Manage administrative
+  menu". (The reason for doing this is that it is sometimes hidden, and to
+  make it visible, you click on "Manage" in the top bar of the screen,
+  assuming you have the Drupal core Toolbar module enabled.)
+* From there, use the exact link text for the links someone would need to
+  click; on the Configuration page, also include the name of the
+  category/section the link is in.
+* Each link text or section is in italics (underscores make words italic in
+  AsciiDoc), because it is user interface text (see previous section).
+* After the complete navigation, include the path to the page, starting
+  with "admin".
+* Do NOT include a screen shot of the navigation.

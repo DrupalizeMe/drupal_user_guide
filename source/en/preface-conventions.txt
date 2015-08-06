@@ -1,4 +1,59 @@
 [[preface-conventions]]
-=== UNWRITTEN - Conventions
+=== UNFINISHED - Conventions of the Guide
 
-Tables for filling out forms, text conventions for things you type, etc.
+This page will eventually include notes about:
+
+* How we indicate values for forms (tables and images)
+* etc.
+
+==== Text conventions
+
+The following conventions are used in this guide:
+
+* Text you will see in the user interface of your site is shown in _italics_,
+  such as: Click _Save configuration_.
+* Text that you would type at a shell command line will be in monospace type,
+  such as:
+
+----
+drush cr
+----
+
+==== Navigation
+
+To do most of the task-oriented topics in this guide, you will need to navigate
+to one or more pages in the administrative interface of your site. You might see
+something like this in the instructions:
+
+=============
+In the _Manage_ administrative menu, navigate to
+_Structure_ > _Taxonomy_ (admin/structure/taxonomy).
+=============
+
+This instruction assumes that you have the Drupal core Toolbar module enabled,
+and it means that in the menu bar at the top of your site, you would need to
+click on _Manage_ to expose the menu choices, then click on _Structure_, then on
+_Taxonomy_, and that at the end, you would be on a page with URL
+_http://example.com/admin/structure/taxonomy_ (if your site base URL is
+_http://example.com_).
+
+// Screen shot of the top bar of any admin page, with the Manage menu
+// showing.
+image:images/preface-conventions-top-menu.png["screen capture of admin menu",width="100%"]
+
+Here's another example:
+
+=============
+In the _Manage_ administrative menu, navigate to
+_Configuration_ > _System_ > _Site information_
+(admin/config/system/site-information).
+=============
+
+In this case, after clicking on _Manage_ and _Configuration_, you would need to
+find the _System_ section of the page, and within that, click on _Site
+information_.
+
+// Screen shot of the System section of the page at admin/config
+image:images/preface-conventions-config-system.png["screen capture of _System_ section of the
+_Configuration_ page",width="100%"]
+
