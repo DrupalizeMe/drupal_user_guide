@@ -25,13 +25,18 @@ image:images/menu-home_admin_menu.png["screen capture of admin menu",width="100%
 
 [start=2]
 . Under the "System" category, select "Site information".
-//To create this image: download Drupal 8.0.0-beta14, select "Configuration" in the administration menu. I captured just the "System" category and sub-items, "Site information" and "Cron". 
+//To create this image: download Drupal 8.0.0-beta14, select "Configuration" in the administration menu. I captured just the "System" category and sub-items, "Site information" and "Cron".
 image:images/menu-home_site_info.png["screen capture of 'System' category",width="100%"]
 
 [start=3]
-. Under the "FRONT PAGE" section type the name of your page you would like to make the front. In this example, we have created a node using the Basic page content type with the title of "Home". We will type "/home" in the text field and select the "Save configuration" button at the bottom of the page.
-//To create this image: download Drupal 8.0.0-beta14, select "Configuration" under "Manage", then select "Site information". I captured just the "FRONT PAGE" area with "/home" in the text field including empty "ERROR PAGES" text fields and "Save configuration" button
-image:images/menu-home_front_page_text_field.png["screen capture of 'FRONT PAGE' area thru 'Save configuration' button,width="100%"]
+. Under the "FRONT PAGE" section, replace "/node" with the name of your page you would like to make the front.
+//To create this image: download Drupal 8.0.0-beta14, select "Configuration" under "Manage", then select "Site information". I captured just the "FRONT PAGE" area with the default, "/node" in the text field
+image:images/menu-home_front_page_text_field.png["screen capture of 'FRONT PAGE' area with default "/node" in text field",width="100%"]
+
+In this example, we have created a node using the Basic page content type with the title of "Home". We will type "/home" in the text field and select the "Save configuration" button at the bottom of the page.
+//To create this image: download Drupal 8.0.0-beta14, select "Configuration" under "Manage", then select "Site information". I captured just the "FRONT PAGE" area with "/home" in the text field
+image:images/menu-home_new_text_field.png["screen capture of 'FRONT PAGE' area
+with "/home" in text field",width="100%"]
 
 [start=4]
 . Congratulations! You have identified content for your front page (home page)!
