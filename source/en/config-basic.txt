@@ -1,127 +1,87 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[config-basic]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Editing Basic Site Information
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Editing Basic Site Information
 
+(((Configuration,Basic Site Information)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+Learn about updating the Basic Site Information details like Site name, Slogan, time zones and so on.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<config-overview>>
 
-Remove this placeholder text.
-
-
-==== Site prerequisites
-
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+//==== Site prerequisites
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+Open the Site information settings via Menu > Configuration > Site information
+(admin/config/system/site-information) to update basic settings, such as the
+site name, slogan, e-mail address or the default front-page path.
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. The very first thing which you may like to update is the site name: You can
+  change this by visiting the /admin/config/system/site-information  page and
+  enter the desired name of the site in 'Site name' field under 'site details'
+  section.
 
-  And it could be a couple of paragraphs.
+. Site Slogan can be updated by entering the desired text in the 'Slogan' field.
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Site wide administrative E-Mail address (which would be used as 'From' address
+  in sitewide automated e-mail communications,  like in the case of
+  Registrations, Passwords etc) can be set by entering the appropriate mail ID
+  in 'E-Mail address' field.
 
-. Text of step 3.
+. Site wide error pages for 403/404 errors can be defined in the respective
+  fields provided in the 'Error pages' section.
 
-Notes:
+Please refer the below image to understand the steps:
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+// To create this image, install Drupal 8 successfully and traverse to /admin/config/system/site-information  page and take the screenshot
+image:images/config-basic-SiteInfo.png["Site Information",width="100%"]
 
-==== Follow-on tasks
+.Fields and values
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name|Explanation|Example value
+|Site name|Name of the site to be displayed |Farmers market
+|Slogan|Sitewide Slogan to be displayed |One stop market place
+|Email address|Sitewide Email address to be displayed |support@farmersmarket.com
+|Default 403 (access denied) page|Page to be displayed when 403 error occurs|user
+|Default 404 (not found) page|Page to be displayed when 404 error occurs|user
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+|================================
 
-Remove this placeholder text.
+[start=5]
+. Once all the above mentioned fields are updated as per your choice, please
+  click on the 'Save configuration' button to see the changes applied to the
+  site.
 
+Now, let us see how to update site's default Country and time zone in our next
+section below.
 
-==== Related concepts
+. Visit Menu > Configuration then click on 'Regional settings' and you can see
+  various settings related to Default Country and time zone there as shown in
+  the below figure:
 
-// In this section, add links to related concept topics, if any.
+. Choose the required Country from the drop down available under 'Default
+  Country' of 'Locale' section.
+. You can also change the 'First day of week' from respective drop down
+  available.
+. Under 'Time Zones' section, there is a drop down from which you can change the
+  sitewide 'Default time zone'.
 
-Remove this placeholder text.
+Please refer the below image to understand the steps:
 
+// To create this image, install Drupal 8 successfully, visit Menu > Configuration then click on 'Regional settings' and get the screenshot
+image:images/config-basic-TimeZone.png["Time Zones",width="100%"]
+
+[start=5]
+. Once all the above mentioned fields are updated as per your choice, please
+  click on the 'Save configuration' button to see the changes applied to the
+  site.
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+* https://www.drupal.org/node/1896670[Getting started with Drupal 8
+  administration]
