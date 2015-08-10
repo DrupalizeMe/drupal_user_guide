@@ -16,47 +16,50 @@
 //==== Site prerequisites
 
 ==== Steps
-There are several options for installing Drupal. They include:
 
-===== Free online options
-Using an online provider to get a demo installation of Drupal in 20 minutes or less. https://www.drupal.org/try-drupal[Try Drupal Online].
+There are several options for installing Drupal. You can use an external service
+that provides you with an automated installation, or you can choose to install
+Drupal yourself.
 
-===== Installing at your hosting provider
-If you choose to install Drupal at your hosting provider, your hosting provider
-may have specific documentation and/or a one-click install that you can use.
+===== Automated installation on an external server
 
-https://www.drupal.org/supporters/hosting[Recommended Drupal hosting providers].
+Free online options::
+  Use an online provider to get a demo installation of Drupal in 20 minutes or
+  less. https://www.drupal.org/try-drupal[Try Drupal Online].
 
+Install Drupal at your hosting provider::
+  If you choose to install Drupal at your hosting provider, your hosting
+  provider may have specific documentation and/or a one-click install that you
+  can use.
 
-If not, please refer to Installing Drupal on your own:
+See: https://www.drupal.org/supporters/hosting[Recommended Drupal hosting providers]
 
-===== Installing Drupal on your own.
-You can install Drupal on your own computer or server via Drush, Drupal's
-command-line tool or manually.
+===== Install Drupal on your own
 
-====== Installing via Drush
-The Drush syntax to install Drupal is:
+You can install Drupal on your own computer or server via Drush (Drupal's
+command-line tool), or manually.
 
-----
-drush dl drupal --drupal-project-rename=example
-cd example
-drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=Example
-----
+Installing via Drush::
+  The Drush syntax to install Drupal is:
 
-For additional information refer to http://www.drush.org/en/master[Drush's
+  ----
+  drush dl drupal --drupal-project-rename=example
+  cd example
+  drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-  name=Example
+  ----
+
+For additional information refer to the http://www.drush.org/en/master[Drush
 documentation].
 
-====== Installing Drupal Manually
-To install Drupal manually, you will need to:
+Installing Drupal Manually::
+  To install Drupal manually, you will need to:
 
-. Create a database.
-. Get a full-access database user.
-. Download Drupal core or the Drupal distribution you would like to use.
-. Place the files in the web root.
-. Make sites/default writeable.
-. Make sites/default/settings.php and sites/default/services.yml and make sure
-  these are writeable.
-
+  . Create a database.
+  . Get a full-access database user.
+  . Download Drupal core or the Drupal distribution you would like to use.
+  . Place the files in the web root.
+  . Make sites/default writeable.
+  . Create the files sites/default/settings.php and sites/default/services.yml and make sure these are writeable.
 
 ==== Related concepts
 <<install-tools>>
