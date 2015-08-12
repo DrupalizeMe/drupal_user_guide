@@ -4,56 +4,94 @@
 
 (((Administration,overview)))
 (((Toolbar,overview)))
+(((Contextual links,overview)))
 
+As a site administrator or content editor, you will need to be able to locate
+various editing forms and administrative pages on the site. There are two
+main ways to do this, described in this topic:
 
-//==== Prerequisite knowledge
+* Using the administrative menu
+* Using contextual links
 
+==== Prerequisite knowledge
 
-==== Administration Sections 
+* <<understanding-themes>>
+* <<understanding-modules>>
 
-The toolbar provides access to the administrative areas of the site. The buttons
-may vary depending on how the site is configured. The default buttons on a
-typical new site are as follows:
+==== What is the administrative menu?
 
-* Content
-* Structure
-* Appearance
-* Extend
-* Configuration
-* People
-* Reports
-* Help
+The toolbar provided by the core Toolbar module displays the _Manage_
+administrative menu at the top or left side of the site, for users with
+permission to see it. This menu provides access to all of the administrative
+areas of the site. The menu entries will vary depending on which modules are
+active on your site and the permissions of the person viewing the menu; if you
+install using the Standard profile and have full administrative permissions, the
+top-level entries are as follows:
 
 // Screenshot of toolbar in horizontal display mode showing all options that
 // an administrator might see.
-image:images/config-overview-toolbar.png["Administrative Toolbar",width="100%"]
+image:images/config-overview-toolbar.png["Administrative menu in horizontal mode",width="100%"]
 
 Content::
-  Lists existing content, and allows creation of new content. Existing content
-  can be managed from this page also.
+  Lists and manages existing content, and allows creation of new content.
 
 Structure::
   Contains a lists of links for managing structural elements of the site, such
-  as blocks, comments, menus and taxonomy.
+  as blocks, content types, menus, and taxonomy.
 
 Appearance::
-  Manages themes and appearance related settings.
+  Manages themes and appearance-related settings.
 
 Extend::
-  Manages the installation, and uninstallation of modules.
+  Manages the installation and uninstallation of modules.
 
 Configuration::
-  Contains links to settings for various site features.
+  Contains links to settings pages for various site features.
 
 People::
-  Manages users, roles and permissions.
+  Manages users, roles, and permissions.
 
 Reports::
   Contains links to logs, update information, search information, and other
-  information about the sites status.
+  information about the site's status.
 
 Help::
-  Helpful topics relating to the features and modules used in the site.
+  Lists help topics for installed modules that provide them.
+
+The arrow button on the far right side of the second line of the toolbar (or far
+left side, if the site is being viewed using a right-to-left-reading language
+like Arabic) can be used to switch the menu from appearing horizontally at the
+top of the page, to a vertical format on the left side (or right side, in
+right-to-left languages). When viewed vertically, the menu becomes an
+interactive tree.
+
+// Screenshot of toolbar in vertical display mode, with Reports section
+// open.
+image:images/config-overview-vertical-menu.png["Administrative menu in vertical mode",width="100%"]
+
+==== What are contextual links?
+
+Some administrative and editing functionality on the site can be accessed
+through the _contextual links_ displayed by the core Contextual Links module.
+Contextual links take you to some of the same pages that you can access through
+the administrative menu, but instead of having to navigate through the menu
+hierarchy, these links are provided near where the related content is displayed
+on your site.
+
+Contextual links have to be activated to be visible. If your site's theme uses
+the default styling for contextual links, a pencil icon is used to indicate that
+contextual links are present and activated, and if you click the icon, you will
+see the contextual links. There are two ways to activate the pencil icons that
+provide access to the contextual links:
+
+* If you are using a mouse in a browser, the icon will temporarily appear when
+  you hover over an area that has related contextual links.
+* You can click the master pencil icon at the right end of the top bar in the
+  toolbar, which will activate all of the contextual links on the current page.
+
+// Screenshot of a section of the site home page, with the pencil icons turned
+// on.
+image:images/config-overview-pencils.png["Page with pencil icons turned on"]
 
 
 //==== Related topics
