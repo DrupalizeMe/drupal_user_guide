@@ -1,127 +1,191 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[security-update-core]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Updating Drupal core
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
 
+=== Updating Drupal core
+
+(((Drupal core,updating)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
+In this section, we will learn how to update our Drupal core from one minor 8.x
+version to another minor 8.x version. Say for example, from version 8.0 to 8.1
+or from 8.0 to 8.2. For demonstration purpose, we will consider updating _Drupal
+8.0.0-beta13_ to _Drupal 8.0.0-beta14_ (latest version at the time of writing
+this document). Moreover, we assume that the Drupal 8 application we intend to
+update is accessible at http://www.example.com.
 
-Remove this placeholder text.
+Additionally, we can update Drupal 8 core primarily using two different
+methods. These methods are; firstly, using the administer interface, and
+secondly, using Drush.
 
+//==== Prerequisite knowledge
 
-==== Prerequisite knowledge
-
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
 
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
+Prior to stepping into the actual update procedure, it is recommended to ensure
+the following points:
 
-Remove this placeholder text.
+* In order to use Drush with Drupal 8.x applications, ensure that you have Drush
+  7.x version installed. Drush versions less than 7.x doesn't support Drupal
+  8.x. If you wish to explore further into Drush and it's usage, we recommend
+  you to refer https://github.com/drush-ops/drush["Drush repository"]. Moreover,
+  in case you don't have Drush installed on your server, <<install-tools>> will
+  guide you on this.
 
+* We encourage you to test Drupal core update process in some test or
+  development environment, and later proceed to the production environment upon
+  success. <<install-dev-making>> recipe of the guide will help you how to setup
+  your development environment for your Drupal 8 application.
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+You are advised to perform the following steps in order to update your Drupal 8
+core to the higher minor version:
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
-
-  And it could be a couple of paragraphs.
+. Take a backup of your code as well as database. It will help you in disaster
+  recovery process, in case anything goes wrong during update process. You are
+  recommended to refer <<prevent-backups>> to learn more about taking the
+  complete backups of your site.
 
 [start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Open the _/sites/default/settings.php_ file in any of the text editors of your
+  choice. Find the line about _$settings['update_free_access']_ variable and
+  edit it so it says:
 
-. Text of step 3.
+----
+$settings['update_free_access'] = TRUE;
+----
 
-Notes:
+By default, it is set to *FALSE* due to security reasons, and to ensure that
+Drupal 8 core doesn't accidently get updated leading to disaster.
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+[start=3]
+. Disable any caching technique (memcache, varnish, and so on) your application
+  might be using.
+
+[start=4]
+. In case your site is open and accessible to public, it is *highly recommended*
+  to set it to maintenance mode by navigating to _Configuration > Development >
+  Maintenance mode_, enabling the _Put site into maintenance mode_ check box and
+  saving the configuration. The motive behind this step is to restrict both the
+  end users as well as caching processes to access the site and it's database
+  during update process.
+
+[start=5]
+. Download Drupal 8.x core latest version (preferably, stable version) manually
+  from https://www.drupal.org/project/drupal["Drupal core"] and extract it to
+  some backup or temporary directory on your server (should be outside the
+  directory where the site is hosted). You may use Drush command instead, in
+  order to achieve the same by navigating to the backup or temporary directory
+  on the server and hitting one of the following commands on your Drush command
+  prompt:
+
+----
+drush dl drupal //in case there is Drupal 8.x stable version available.
+----
+
+*OR*
+
+----
+drush dl drupal-8.0.0-beta14 //where, drupal-8.0.0-beta14 is the specific Drupal version to which our site needs to be updated.
+----
+
+
+Where,
+_dl_ is an alias of _pm-download_
+
+[start=6]
+. Delete the _core_ directory, and all the independent files, including
+  _.htaccess_, _composer.json_,_autoload.php_, and so on from your Drupal 8
+  installation directory. In case, you had included any custom file or
+  customized any of these files, it is *not recommended* to delete them; else
+  you may end up losing the custom functionalities that use these
+  custom/customized files.
+
+[start=7]
+. Copy the _core_ directory and the non-custom/non-customized files that you may
+  have deleted during the preceding step from the newly downloaded code base (in
+  our case, _drupal-8.0.0-beta14_) and paste them to your Drupal 8 site
+  directory (version _8.0.0-beta13_).
+
+[start=8]
+. Run the _update.php_ script using either of the following, and let the script
+  do it's job:
+
+*Using Browser interface:*
+
+http://www.example.com/update.php
+
+*Using Drush command:*
+----
+drush updb //where, updb is the alias of pm-updatedb
+----
+
+
+*Note:*
+In case you get to see any error or warning, you are advised to re-run the
+_update.php_ script again until all the updates have been completed
+successfully.
+
+[start=9]
+. Either navigate to _Configuration > Development > Performance_ and clear the
+  cache using the administer interface; or run the following Drush command:
+
+----
+drush cc all //where cc is the alias of clear-cache
+----
+
+[start=10]
+. Open the _/sites/default/settings.php_ file in a text editor. Find the line
+  about _$settings['update_free_access']_ and edit it so it says:
+
+----
+$settings['update_free_access'] = FALSE;
+----
+
+[start=11]
+. If you have followed *step 4*, navigating to _Configuration > Development >
+  Maintenance mode_, disable the _Put site into maintenance mode_ check box and
+  save the configuration.
+
+[start=12]
+. In case you are using any caching technique (varnish, memcache, or so on) and
+  had disabled at *step 3*, re-enable them; else, skip this step.
+
+[start=13]
+. By now, you should be able to have the updated version running. To cross
+  verify the current version of your drupal site, navigate to _Reports > Status
+  report_. Following screen shot demonstrates the status report with the desired
+  output encircled:
+
+// Login to your Drupal 8 site as an administrator and navigate to _Reports >
+// Status report_ page. Add a circle around the Drupal version.
+image:images/security-update-core_statusReport.png["Status report",width="100%"]
+
+*Note:*
+Upon clearing the cache, you may come across some error(s) that might ask you to
+rebuild your registry. This is sometimes essential in case some module might
+have moved around during the update process. In order to get rid of such error
+messages, we recommend you to follow the instructions at
+https://www.drupal.org/project/registry_rebuild["Registry Rebuild"].
+
+You may also refer _/core/UPGRADE.txt_ within your Drupal 8 installation in case
+you want to learn more about updating Drupal 8 core.
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
-
-Remove this placeholder text.
-
+* <<install-tools>>
+* <<install-dev-making>>
+* <<prevent-backups>>
 
 ==== Related concepts
 
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
+* <<prevent-status>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+* https://github.com/drush-ops/drush["Drush repository"]
+* https://www.drupal.org/project/drupal["Drupal core"]
+* https://www.drupal.org/project/registry_rebuild["Registry Rebuild"]
