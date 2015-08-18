@@ -1,127 +1,87 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[user-roles]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Changing a User's Roles
+=== Changing a User's Roles
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+(((User roles,changing)))
+(((Roles,changing)))
+(((Permissions,changing roles)))
 
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
+This page will explain how to change or add roles to a given user, using two
+different methods: single-user edit and bulk edit.
 
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
+* <<new-user>>
+* <<new-role>>
+* <<user-concept>>
 
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
+The user account that you want to update, and the role you want it to have, must
+already exist.
 
 
-==== Steps
+==== Steps for single-user edit
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+. In the _Manage_ administrative menu, navigate to _People_
+  (admin/people).
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. Locate the user name of the account you want to update in the list. If it is
+  not immediately visible, use the _Name or email contains_ filter, or other
+  filters, to narrow down the list.
 
-  And it could be a couple of paragraphs.
+.  Click the _Edit_ link in the row of the user account you want to update.
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+// Screen shot of admin/people page, showing the Edit link.
+image:images/user-roles_people-list.png["Screen shot of the People page",,width="100%"]
 
-. Text of step 3.
+.  On the _Edit_ page, scroll down to _Roles_ section. Check or uncheck boxes,
+   to assign the desired roles to the user account.
 
-Notes:
+// Screen shot of the Roles section of the user edit page.
+image:images/user-roles_person-edit.png["Screen shot of Roles section of user
+edit page",width="100%"]
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
-
-==== Follow-on tasks
-
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
-
-Remove this placeholder text.
+.  Click Save to update the user account. You should be returned to the
+   _People_ page and see a message saying that the changes have been saved.
 
 
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
+// Screen shot of admin/people with message about changes being saved.
+image:images/user-roles_message.png["Screen shot of People page with saved message",width="100%"]
 
 
-==== Additional resources
+==== Steps for bulk edit
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
+. In the _Manage_ administrative menu, navigate to _People_
+  (admin/people).
 
-Remove this placeholder text.
+. Locate the names of all of the user accounts you want to update, and select
+  them using the checkboxes. If they are
+  not immediately visible, use the _Name or email contains_ filter, or other
+  filters, to narrow down the list.
+
+. In the _With selection_ select box, find the desired update. For example, you
+  might select _Add the Vendor role to the selected users_, or _Remove the
+  Administrator role from the selected users_.
+
+// Screen shot of admin/people with two users checked and With selection
+// set to "Add the Vendor role to the selected users".
+image:images/user-roles_bulk.png["Screen shot of People page with bulk
+operation set up",width="100%"]
+
+. Click _Apply_. You should see a message indicating that the desired changes
+  were made.
+
+// Screen shot of admin/people with message about changes being saved.
+image:images/user-roles_message_bulk.png["Screen shot of People page with saved message",width="100%"]
+
+
+// ==== Follow-on tasks
+
+// ==== Related concepts
+
+// ==== Additional resources
