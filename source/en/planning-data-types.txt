@@ -1,83 +1,87 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[planning-data-types]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Content Entities
+=== Concept: Content Entities and Fields
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
-
+(((Entities,overview)))
+(((Entity types,overview)))
+(((Entity sub-types,overview)))
+(((Fields,overview)))
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<understanding-data>>
 
-Remove this placeholder text.
+==== What is a content entity?
 
+A _content entity_ (or commonly, just _entity_) is an item of content data,
+which can consist of text, HTML markup, images, attached files, and other data
+that is intended to be displayed to site visitors.
+Content entities are grouped into _entity types_, which have different purposes
+and are displayed in very different ways on the site. Most entity
+types are also divided into _entity sub-types_, which are divisions within an
+entity type to allow for smaller variations in how the entities are used and
+displayed. Here is a table of some common content entity types:
 
-==== What is a ...?
+[width="100%",frame="topbot",options="header"]
+|=============================================
+|Entity type |Entity sub-type |Main uses |Examples
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+|Content item |Content type
+  |Content intended to be the main page area for pages on the site
+  |In the farmers market site example, you might have content types for
+   basic pages, vendor pages, and recipe pages.
 
-Remove this placeholder text.
+|Comment |Comment type
+  |Commentary added to content entities (typically to Content item entities)
+  |On a blog site, blog posts might have comments. They are not needed in the
+   farmers market site example.
 
+|User profile |(none)
+  |Data related to a person with a user account (login access) on the site
+  |Every site has at least basic user profiles with user names and email
+   addresses; social networking sites may have more complex user profiles with
+   more information.
+
+|Custom block |Block type
+  |Text and images in smaller chunks, often displayed in the site header,
+   footer, or sidebar
+  |In the farmers market site example, you might put the hours and location in
+   a sidebar block.
+
+|Taxonomy term |Vocabulary
+  |Used to classify other types of content
+  |In the farmers market site example, you might classify Recipe content with an
+   Ingredients taxonomy vocabulary, with taxonomy terms like Carrots and
+   Tomatoes. In a blogging site, blog posts might be classified using a Tags
+   vocabulary, and perhaps also a Categories vocabulary.
+
+|File |(none)
+  |An image or attachment file that is tracked and managed by the site, often
+   attached to other types of content
+  |In the farmers market site example, both Recipe and Vendor pages might have
+   image attachments, which would (behind the scenes) be managed as File
+   entities by the site
+
+|=============================================
+
+==== What is a field?
+
+Within entity items, the data is stored in individual _fields_, each of which
+holds one type of data, such as formatted or plain text, images or other files,
+or dates. Fields are specified on entity sub-types, so that all entity items of
+a given entity sub-type have the same collection of fields available. For
+example, the Vendor content type in the farmers market example might have fields
+for the vendor name, a logo image, website URL, and description, whereas the
+Basic page content type might only have fields for the title and page body. When
+you create or edit entity items, you are specifying the values for the fields on
+the entity item.
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
+* <<planning-structure>>
+* <<content-create>>
+* <<structure-content-type>>
+* <<structure-taxonomy>>
+* <<user-concept>>
+* <<block-concept>>
 
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+// ==== Additional resources
