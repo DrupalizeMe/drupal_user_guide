@@ -1,83 +1,53 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[user-admin-account]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: The User 1 Account
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+=== Concept: The User 1 Account
 
+(((Users,root)))
+(((Users,user 1)))
+(((Security,user 1 account)))
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<user-concept>>
 
-Remove this placeholder text.
+==== What is the user 1 account?
 
+During the installation of your site, you created the first user account. Each
+user account internally has a numeric user ID, and since the ID of this user is
+one, it is commonly referred to as the _user 1_ account. This user account is
+special, because independent of what roles it is assigned, someone logged in as
+user 1 has permission to do all actions on the site, including viewing and
+editing all content, editing any user account, changing site configuration,
+installing and uninstalling modules, and running the update script.
 
-==== What is a ...?
+Because of this level of permission, some people refer to this account as the
+_root user_, similar to the "root" user account that has full administrative
+permissions in Linux and other operating systems.
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+It is usually better to make separate accounts for each administrative user,
+giving them the _Administrator_ role, rather than having all administrative
+users log in using the user 1 account. There are several reasons for this:
 
-Remove this placeholder text.
+* Some actions and updates on the site are logged, and if everyone uses the same
+  account, it is difficult to know who did them if you have questions.
+* The _Administrator_ role permissions can be modified to be safer than the
+  full permissions of the user 1 account, so that people do not inadvertently
+  change site features that shouldn't be changed.
+* People's responsibilities on a site may change over time. With ordinary user
+  accounts, this can be mirrored in permissions by assigning or unassigning
+  roles to their user accounts. If they are all using the user 1 account,
+  this is more difficult.
+* On some sites, the author of content or comments is displayed or tracked, and
+  if everyone uses the same account to create content, it is difficult to know
+  who created the content.
 
+It is not possible to delete the user 1 account from the administrative user
+interface. It would be possible to do with a database query, but it could cause
+problems in your site and is not advisable.
 
-==== Related topics
-
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
-
-Remove this placeholder text.
+//==== Related topics
 
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+* https://www.drupal.org/node/22284[Accounts and roles]
