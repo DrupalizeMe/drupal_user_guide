@@ -1,127 +1,87 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[block-create-custom]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Creating a Custom Block
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
-
+=== Creating A Custom Block
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+Create a block showing the opening hours and location of the farmer's market and
+place it in the sidebar of the website.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
+* <<block-concept>>
+* <<block-regions>>
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+You need to have a role that has been granted the "Administer Blocks"
+permission. See <<user-permissions>>
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+Create a block showing the opening hours and location and place it in the
+"Sidebar Second" region.
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_
+  (admin/structure/block)
 
-  And it could be a couple of paragraphs.
+. Click _+Add custom block_. The _Add custom block_ page appears.
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Fill in the fields as shown below.
 
-. Text of step 3.
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Value
+|Block description | Opening hours and location block
+|Body | Open: Sundays, 9 AM to 2 PM, April to September<br />Location: Parking
+lot of Trust Bank, 1st & Union, downtown Anytown.
+|================================
 
-Notes:
+// Go to block/add
+image:images/block-create-custom-add-custom-block.png ["Add a custom block"]
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+[start=4]
+. Click _Save_. The block will be saved. The block configuration form will
+  appear.
+
+. Fill in the fields as shown below.
+
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Value
+|Title | Opening hours and location
+|Display title | Checked
+|Cache settings, maximum age|Forever
+|Region|Sidebar Second
+|================================
+
+// Go to block/add, enter field values & click Save
+image:images/block-create-custom-configure-block.png ["Configure a custom block"]
+
+[start=6]
+. Click _Save block_. The block configuration will be saved. The _Block layout_
+  page will appear.
+
+. Click _Save blocks_.
+
+. Click _Back to site_ in the toolbar to verify that the block has been added to
+  the sidebar.
+
+If the block doesn't immediately appear in the appropriate region it may be
+cached. You can either wait for the cache to be refreshed or open the
+_Performance_ page via Configuration > Performance
+(admin/config/development/performance) and click _Clear all caches._
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+Edit the content of your custom block. In the _Manage_ administrative menu,
+navigate to _Structure_ > _Block layout_ > _Custom block library_
+(admin/structure/block/block-content), find your block in the list and click the
+edit link to make changes.
 
-Remove this placeholder text.
-
-
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
+//==== Related concepts
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+* https://www.drupal.org/documentation/modules/block[Working with blocks
+(content in regions)]
