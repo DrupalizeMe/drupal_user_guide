@@ -1,127 +1,48 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[language-add]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Adding a Language
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Adding a Language
 
+(((Languages,adding)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+By adding additional languages to the farmer's market site you allow users and
+visitors to browse and use the website in their preferred language.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
+* <<language-concept>>.
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+* The multilingual modules must be enabled. See <<language-enable>>.
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+You can add an additional language to the website.
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. In the _Manage_ administrative menu, navigate to Configuration >
+  Regional and Language (admin/config/regional/language).
 
-  And it could be a couple of paragraphs.
+. Select _+ Add language_
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Choose the language you want to add from the drop down list and click _Add
+  language_.
 
-. Text of step 3.
+The language is added.
 
-Notes:
-
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+// Screen shot after adding Spanish from admin/config/regional/language
+image:images/language-add-list.png["List of available languages in the
+website",width="100%"]
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+// @todo We don't have a topic yet about language switching. Should we?
 
-Remove this placeholder text.
+* Enable users to switch between languages.
 
-
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
+* Enable content translation. See <<language-content-translate>>.
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+*  https://www.drupal.org/resource-guides/configuring-multilingual-site[Configuring a Multilingual Site Resource Guide].
