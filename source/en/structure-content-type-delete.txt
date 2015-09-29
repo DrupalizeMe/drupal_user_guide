@@ -2,11 +2,13 @@
 
 === Deleting a Content Type
 
-(((Structure Content Type,deleting)))
+(((Content Type,deleting)))
 
 ==== Goal
 
-Learn about deleting unwanted content types. Here in our example let us delete the 'Article' content type which may not be useful for us.
+Learn how deleting unwanted content types. We can delete the _Article_ content
+type which may not be very useful for our example of the Farmer's market
+website.
 
 ==== Prerequisite knowledge
 
@@ -16,25 +18,23 @@ Learn about deleting unwanted content types. Here in our example let us delete t
 
 ==== Steps
 
-. Visit Menu > Structure then click on 'content types' as shown in the below
-  figure:
-
-// To create this image, install Drupal 8 successfully, visit Menu > Structure then click on 'content types' and get the screenshot
-image:images/structure-content-type-delete-listing.png["content-types",width="100%"]
-
-. There you can see list of all the available types of content having a dropdown
-  available on the right side (under Operations heading)for every content
-  type. Click on the dropdown against the unwanted content type (which you wish
-  to delete from the system - here 'Article' in our example) and click on
-  'Delete' option as shown in the below figure (considering deletion of
-  'Article' content type).
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
+  types_ (admin/structure/types). The _Content types_ page appears.
 
 // To create this image, install Drupal 8 successfully, visit Menu > Structure
 // then click on 'content types' and click on the dropdown against 'Article'
 // content type and get the screenshot
 image:images/structure-content-type-delete-dropdown.png["Article-dropdown",width="100%"]
 
-. There is a confirmation page displayed with all the basic default
+[start=2]
+. You can see list of all the available types of content having a dropdown
+  available on the right side (under Operations heading)for every content
+  type. Click on the dropdown against the unwanted content type (which you wish
+  to delete from the system - here 'Article' in our example) and click on
+  'Delete' option as shown in the below figure (considering deletion of
+  'Article' content type).
+
+. A confirmation page is displayed with all the basic default
   configurations listed as shown in the below figure: Click on 'Delete' button
 
 // To create this image, install Drupal 8 successfully, visit Menu > Structure
@@ -42,7 +42,8 @@ image:images/structure-content-type-delete-dropdown.png["Article-dropdown",width
 // content type, click on 'delete' option and get the screenshot
 image:images/structure-content-type-delete-confirmation.png["Article-delete",width="100%"]
 
-. Content type listing page appears with a confirmation message displayed on the
+[start=4]
+. The _Content types_ page appears with a confirmation message displayed on the
   top of it as shown in the below figure:
 
 // To create this image, install Drupal 8 successfully, visit Menu > Structure
@@ -53,6 +54,8 @@ image:images/structure-content-type-delete-confirm.png["Article-delete-confirm",
 
 //==== Follow-on tasks
 
-//==== Related concepts
+==== Related concepts
+
+* <<structure-content-type>>
 
 //==== Additional resources
