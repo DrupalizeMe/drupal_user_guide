@@ -1,83 +1,66 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[user-concept]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Users, roles, and permissions
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+=== Users, Roles, and Permissions
 
+(((Users, overview)))
+(((Roles, overview)))
+(((Permissions, overview)))
 
-==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+==== What are Users?
 
-Remove this placeholder text.
+Anyone who visits your website is a _user_, including you. There are three
+groups of users:
+* Users who are not logged in, or _anonymous users_.
+* Users who are logged in, or _authenticated users_.
+* The admininstrative user account that was automatically created when you
+  installed your site, or <<user-admin-account,User 1>>.
 
+==== What are Permissions?
 
-==== What is a ...?
+The ability to do actions on your site (including viewing content, editing
+content, and changing configuration) is governed by _permissions_. Each
+permission has a name (such as _View published content_) and covers one action
+or a small subset of actions. A user must be granted a permission in order to do
+the corresponding action on the site; permissions are defined by the modules
+that provide the actions.
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+==== What are Roles?
 
-Remove this placeholder text.
+Rather than assigning individual permissions directly to each user, permissions
+are grouped into _roles_. You can define one or more roles on your site, and
+then grant permissions to each role. The permissions granted to authenticated
+and anonymous users are contained in the _Authenticated user_ and _Anonymous
+user_ roles, and depending on the installation profile you used when you
+installed your site, there may also be an _Administrator_ role that is
+automatically assigned all permissions on your site.
 
+Each user account on your site is automatically given the _Authenticated user_
+role, and may optionally be assigned one or more additional roles. When you
+assign a role to a user account, the user will have all the permissions of the
+role when logged in.
+
+It is a good practice to make several roles on your site. In our farmers market
+site example, you might want the following roles:
+
+* A Vendor role that allows vendors to edit their own vendor listing pages.
+* A Content editor role for editing the general farmers market pages.
+* A User manager role for managing the vendor accounts.
+* The Administrator role that was installed with your site, for expert users
+  to manage the site configuration.
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
-
-Remove this placeholder text.
-
+* <<user-new-role>
+* <<user-permissions>>
+* <<user-roles>>
+* <<user-new-user>>
+* <<user-admin-account>>
+* <<user-content>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+* https://www.drupal.org/node/120614[Users, roles and permissions]
+* https://www.drupal.org/node/627158[Managing Users]
+* https://www.drupal.org/node/1803614[User Roles]
