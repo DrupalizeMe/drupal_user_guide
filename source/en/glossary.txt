@@ -144,13 +144,25 @@
    <<glossary-taxonomy-term,taxonomy term>>. See
    <<planning-data-types>> for more information.
 (((Formatter,definition)))
-[[glossary-formatter]] Formatter::
+(((Field formatter,definition)))
+[[glossary-field-formatter]] Field formatter::
    <<glossary-configuration,Configuration>> that defines how the data in
    a <<glossary-field,field>> is displayed. For example, a text field could
    be displayed with a prefix and/or suffix, and it could have its HTML tags
    stripped out or limited. See also <<glossary-view-mode,view mode>> and
-   <<glossary-widget,widget>>. See <<structure-view-modes>> for more
+   <<glossary-field-widget,field widget>>. See <<structure-view-modes>> for more
    information.
+(((Widget,definition)))
+(((Field widget,definition)))
+[[glossary-field-widget]] Field widget::
+   <<glossary-configuration,Configuration>> that defines how someone can
+   enter or edit data for a <<glossary-field,field>> on a data entry form. For
+   example, a text field could use a single-line or multi-line entry box, and
+   there could be a setting for the size of the box. See also
+   <<glossary-field-formatter,field formatter>>. See <<structure-widgets>> for
+   more information.
+[[glossary-formatter]] Formatter::
+   See <<glossary-field-formatter,Field formatter>>.
 (((FOSS,definition)))
 [[glossary-foss]] FOSS::
    Acronym for _Free and Open Source Software_, meaning software that is
@@ -301,7 +313,7 @@
    vendors. See <<planning-modular>> for more information.
 (((View mode,definition)))
 [[glossary-view-mode]] View mode::
-   A set of <<glossary-formatter,formatter>>
+   A set of <<glossary-field-formatter,field formatter>>
    <<glossary-configuration,configuration>> for all of the
    <<glossary-field,fields>> of a <<glossary-content,content>>
    <<glossary-entity,entity>>, some of which may be hidden. Each
@@ -318,14 +330,8 @@
    <<glossary-entity-subtype,entity subtype>> for the taxonomy term
    <<glossary-entity-type,entity type>>. See
    <<structure-taxonomy>> for more information.
-(((Widget,definition)))
-[[glossary-widget]] Widget::
-   <<glossary-configuration,Configuration>> that defines how someone can
-   enter or edit data for a <<glossary-field,field>> on a data entry form. For
-   example, a text field could use a single-line or multi-line entry box, and
-   there could be a setting for the size of the box. See also
-   <<glossary-formatter,formatter>>. See <<structure-widgets>> for more
-   information.
+[[glossary-widget]] Widget:
+   See <<glossary-field-widget,Field widget>>.
 (((WYSIWYG,definition)))
 [[glossary-wysiwyg]] WYSIWYG::
    Acronym for What You See is What You Get, meaning a method for editing
