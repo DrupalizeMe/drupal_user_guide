@@ -83,28 +83,24 @@ scenario example site:
 |=============================================
 |Entity type |Entity sub-type |Examples |Fields
 
-|Content item |Basic page |Home page, about page
-   |Title, page body
+|Content item |Basic page |Home page, about page |Title, page body
 
-|Content item |Vendor |A page for each vendor at the market
-   |Vendor name, page body, image, URL
+|Content item |Vendor |A page for each vendor at the market |
+  Vendor name, page body, image, URL
 
-|Content item |Recipe |A page for each submitted recipe
-   |Vendor name, page body, image, reference to Vendor who submitted it,
-    Ingredients taxonomy
+|Content item |Recipe |A page for each submitted recipe |
+  Vendor name, page body, image, reference to Vendor who submitted it,
+  Ingredients taxonomy
 
-|Custom block |(generic)
-  |Copyright notice for footer, Hours and location for sidebar
-  |No special fields
+|Custom block |(generic) |Copyright notice for footer,
+  Hours and location for sidebar |No special fields
 
-|Taxonomy term |Ingredients |Carrots, tomatoes, and other recipe ingredients
-  |No special fields
+|Taxonomy term |Ingredients |Carrots, tomatoes, and other recipe ingredients |
+  No special fields
 
-|Contact form |(generic) |Generic contact form
-  |Name, email, subject, message
+|Contact form |(generic) |Generic contact form |Name, email, subject, message
 
-|User profile |(none) |Will not be displayed on site
-  |No special fields
+|User profile |(none) |Will not be displayed on site |No special fields
 
 |=============================================
 
@@ -112,17 +108,17 @@ And here are the listings the site needs:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
+|Page or page area |Entity type and sub-type |Filter/sort/pagination |
+  Fields displayed
 
-|Page or page area |Entity type and sub-type |Filter/sort/pagination |Fields displayed
+|Vendors page |Vendor content items |All vendors, alphabetical, paged |
+  Image, vendor name, trimmed body
 
-|Vendors page |Vendor content items |All vendors, alphabetical, paged
-  |Image, vendor name, trimmed body
+|Recipes page |Recipe content items |
+  Filter by ingredients, alphabetical, paged |Image, recipe name
 
-|Recipes page |Recipe content items |Filter by ingredients, alphabetical, paged
-  |Image, recipe name
-
-|Recent recipes sidebar |Recipe content items |List 5 most recent
-  |Image, recipe name
+|Recent recipes sidebar |Recipe content items |List 5 most recent |
+  Image, recipe name
 
 |=============================================
 
