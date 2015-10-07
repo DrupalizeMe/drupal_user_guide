@@ -1,127 +1,109 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[structure-image-style-create]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Setting Up an Image Style
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Setting Up an Image Style
 
+(((Image styles,creating)))
+((Images,resizing))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+By creating image styles you can apply one or more image effects on the
+images that you upload. For example you might upload any image to a Vendor or
+Recipe page and display it consistently scaled and cropped to 300 by 200
+pixels.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
+* <<structure-fields>>
+* <<structure-content-display>>
+* <<structure-image-styles>>
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+* The content types _Vendor_ and _Recipe_ exist and they have Image fields
+  called _Main Image_. See <<structure-fields>>.
+* You have created one _Vendor_ content item.
+  See <<content-create>>
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+You can create an image style that scales and crops the images to 300 by 200
+pixels and use this to display images on Vendor pages.
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. In the _Manage_ administrative menu, navigate to _Configuration_ > _Media_
+  > _Image styles_ (admin/config/media/image-styles).
 
-  And it could be a couple of paragraphs.
+. Click _Add image style_
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Enter the name _Extra medium (300x200)_
 
-. Text of step 3.
+. Click Create new style. You will see the page Edit style Extra medium
+  (300x200) where you can define the effects for this new style.
 
-Notes:
+. In the Effect table choose _Scale and crop_ and click _Add_
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+. Fill in the fields as shown below.
+
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Value
+|Width | 300
+|Height | 200
+|================================
+
+[start=7]
+. Click _Add effect_. The image style is saved with the chosen effects.
+
+// Add a new image style and enter the values as shown in the table above.
+image:images/structure-image-style-create-add-style.png[Add an image style]
+
+[start=8]
+. Open the _Content types_ page via Structure > Content types
+  (admin/structure/types/manage).
+
+. Next to _Vendor_ choose _Manage display_ from the _Operations_ dropbutton. The
+  _Manage display_ page (admin/structure/types/manage/vendor/display) appears.
+
+. Ensure that the secondary tab _Default_ is selected.
+
+. Next to _Main Image_ click the cogwheel. The option fields appear.
+
+. Fill in the fields as shown below.
+
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Value
+|Image style | Extra medium (300x200)
+|Link image to | Nothing
+|================================
+
+[start=13]
+. Click _Update_
+
+. Click _Save_. The new image style will be used when displaying Vendor content.
+
+// Open manage display tab of Vendor content type.
+image:images/structure-image-style-create-manage-display.png[Change field formatter settings of image field]
+
+[start=15]
+. Open a _Vendor_ content item and verify that it now shows up with the
+  scaled-down image. See <<content-edit>> for information on how to locate an
+  existing content item.
+
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
-
-Remove this placeholder text.
-
+* Repeat the steps for the Recipe content. See <<structure-content-display>>.
+* Create Vendor and Recipe content and upload images that are automatically
+  displayed using the newly created image style. See <<content-create>>.
 
 ==== Related concepts
 
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
+* <<structure-fields>>
+* <<structure-image-styles>>
+* <<structure-image-responsive>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+* https://www.drupal.org/documentation/modules/image[Working with images in
+  Drupal 7 and 8]
