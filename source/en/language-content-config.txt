@@ -1,6 +1,6 @@
 [[language-content-config]]
 
-==== Configuring Content Translation
+=== Configuring Content Translation
 
 (((Content Translation,configuring)))
 
@@ -13,7 +13,7 @@ content type translatable, as well as the Basic Block and the Custom Menu Link
 ==== Prerequisite knowledge
 
 * <<planning-data-types>>
-* <<language-concept>> 
+* <<language-concept>>
 
 ==== Site prerequisites
 
@@ -28,10 +28,10 @@ content type translatable, as well as the Basic Block and the Custom Menu Link
   language selector visibility.
 
 . In the Custom language settings enable _Content_, _Custom block_ and _Custom
-  menu link_. 
+  menu link_.
 
-  // To create this image, take a screenshot: admin/config/regional/content-language
-  image:images/language-content-config_01.png[“Custom language settings, content types checklist“]
+// To create this image, take a screenshot: admin/config/regional/content-language
+image:images/language-content-config_01.png["Custom language settings, content types checklist"]
 
 [start=3]
 . Configuration options for the enabled items appear: within each entity type,
@@ -44,30 +44,35 @@ content type translatable, as well as the Basic Block and the Custom Menu Link
   content is created or the preferred language of the user who creates the
   entity.
 
-  // To create this image, take a screenshot from admin/config/regional/content-language once content, custom block and custom menu link are enabled to be translatable.
-  image:images/language-content-config_02.png[“Default language and translatability for content types”] 
+// To create this image, take a screenshot from
+// admin/config/regional/content-language once content, custom block and
+// custom menu link are enabled to be translatable.
+image:images/language-content-config_02.png["Default language and translatability for content types"]
 
 [start=4]
 . Within each translatable entity sub-type, you can decide which fields should
   be translatable. Many of these fields may not be translation dependent (e.g.
   Publishing status) in which case it is better to leave them disabled. However,
   enabling translation for fields that are numbers or dates has use for
-  accountability or implementing workflows. 
+  accountability or implementing workflows.
 
-  // To create this image, take a screenshot from admin/config/regional/content-language once content, custom block and custom menu link are enabled to be translatable then basic page is checked to be translatable.
-  image:images/language-content-config_03.png[“Translatable content entity subtypes’ fields checklist”] 
+// To create this image, take a screenshot from admin/config/regional/content-language once content, custom block and custom menu link are enabled to be translatable then basic page is checked to be translatable.
+image:images/language-content-config_03.png["Translatable content entity subtypes’ fields checklist"]
 
 [start=5]
-. Click on _Save configuration_. 
+. Click on _Save configuration_.
 
 . If you also enable the language selector to be shown, a link to translate
   appears, for example on the Home page, as on this screenshot (only for users
   with translate permissions):
- 
-  // To create this image, take a screenshot of the content Home (created as in <<content-create>> according to the scenario) once the Basic page content type is set to be translatable with the language selector enabled to be shown on the UI. 
-  image:images/language-content-config_04.png[“Language selector link on UI”] 
- 
-==== Follow-on tasks  
+
+// To create this image, take a screenshot of the content Home (created as in
+// <<content-create>> according to the scenario) once the Basic page content
+// type is set to be translatable with the language selector enabled to be
+// shown on the UI.
+image:images/language-content-config_04.png["Language selector link on UI"]
+
+==== Follow-on tasks
 
 * <<language-config-translate>>
 * <<language-content-translate>>
