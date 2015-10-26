@@ -1,127 +1,77 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[block-place]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN: Placing a Block in a Region
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Placing a Block in a Region
 
+(((Block,placing)))
+(((Block,ordering)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+Place the _User login_ block in the website's sidebar so that it is easy for
+vendors to log in.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
+* <<block-concept>>
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+* The website needs to have the Bartik theme enabled and set as default. See
+  <<config-theme>>.
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+You place the _User login_ block in the _Sidebar second_ region of the _Bartik_
+theme as follows:
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_
+  (admin/structure/block). The _Block layout_ page appears, listing the theme's
+  regions.
 
-  And it could be a couple of paragraphs.
+. Ensure that in the secondary tab the theme _Bartik_ is selected. Block
+  placement is defined per theme.
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Locate the region _Sidebar second_ in the list and click _Place block_ next to
+  it. The _Place block_ window appears, listing all the blocks.
 
-. Text of step 3.
+. Locate the block _User login_ and click _Place block_ next to it. The
+  _Configure block_ window appears. Fill in the fields as shown below.
 
-Notes:
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Value
+| Title | Vendor login
+| Display title | Checked
+| Region | Sidebar second
+|================================
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+This configuration allows you also to hide or display the block on specific
+pages. In the case of the Farmer's market website you do not set any of these
+configuration options because you want to show the block everywhere.
+
+// To create this screenshot, follow the 4 steps above.
+image:images/block-place-configure-block.png["Screenshot of block configuration page",width="100%"]
+
+[start=6]
+. Click _Save block_. The _Block layout_ page appears.
+
+You can drag blocks to change the order in which they will appear. Don't forget
+to click _Save blocks_  to actually save the changes that you made.
+
+[start=7]
+. Verify that the _User login_ block is listed and click _Save blocks_.
+
+The block has been added to the sidebar of all pages. You have to be logged out
+to verify this.
+
+// To create this screenshot, follow the 7 steps above.
+image:images/block-place-sidebar.png["Screenshot of sidebar with login block",width="100%"]
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+* Remove the _Powered by Drupal_ block from the _Footer_ region by setting the
+  region to _- None -_.
 
-Remove this placeholder text.
+//==== Related concepts
 
-
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+//==== Additional resources
