@@ -86,3 +86,13 @@ On a Mac:
   brew install asciidoc xmlto
   echo "export XML_CATALOG_FILES=/usr/local/etc/xml/catalog" >> ~/.bash_profile
   source ~/.bash_profile
+
+Note that these scripts do not work with all available versions of AsciiDoc
+and Docbook tools. They have been tested to work with:
+asciidoc - version 8.6.9
+xmlto - version 0.0.25
+
+You can check versions by typing
+  asciidoc --version
+  xmlto --version
+on the command line.
