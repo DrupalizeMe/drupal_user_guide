@@ -7,6 +7,7 @@
 
 namespace Drupal\userguide_demo\Tests;
 
+use Drupal\Core\Site\Settings;
 use Drupal\simpletest\WebTestBase;
 
 /**
@@ -19,12 +20,6 @@ use Drupal\simpletest\WebTestBase;
  * - Extend this class.
  * - Override the $installLanguage and $demoInput member variables, translating
  *   the input into the target language.
- * - Add a method:
- *   @code
- *   public function testBuildSite() {
- *     $this->makeDemoSite();
- *   }
- *   @endcode
  */
 abstract class UserGuideDemoTestBase extends WebTestBase {
 
@@ -46,12 +41,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'site_mail' => 'info@example.com',
   );
 
+  /**
+   * For our demo site, start with the standard profile install.
+   */
   protected $profile = 'standard';
 
-  // Set $strictConfigSchema to FALSE due to issue
-  // https://www.drupal.org/node/2541800, which makes the foreign language
-  // install fail with strict config checking in the standard profile.
-  protected $strictConfigSchema = FALSE;
+  /**
+   * Add this module to the modules list, so we can get the assets directory.
+   */
+  public static $modules = array('userguide_demo', 'update');
+
+  /**
+   * We need verbose logging to be on.
+   */
+  public $verbose = TRUE;
 
   /**
    * Sets up for an install in the specified language.
@@ -74,12 +77,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected $screenshotId = 0;
 
   /**
-   * Makes the demo site.
+   * Builds the entire demo site and makes screenshots.
+   *
+   * Note that the method name starts with "test" so that it will be detected
+   * as a "test" to run.
    */
-  public function makeDemoSite() {
+  public function testBuildDemoSite() {
+
+    // Figure out where the assets directory is.
+    $dir_parts = explode('/', drupal_get_path('module', 'userguide_demo'));
+    array_pop($dir_parts);
+    $assets_directory = implode('/', $dir_parts) . '/assets/';
+
+    // Set up a red border CSS style.
+    $red_border = '2px solid #e62600;';
+
     $this->drupalLogin($this->rootUser);
 
     // Topic: config-basic - Edit basic site information.
+    // @todo Replace with actual screen shots of this topic.
     $this->drupalGet('admin/config/system/site-information');
     $this->setUpScreenShot('config-basic-test1.png', array(550, 275, 30, 200));
 
@@ -88,42 +104,120 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'site_slogan' => $this->demoInput['site_slogan'],
         'site_mail' => $this->demoInput['site_mail'],
       ), t('Save configuration'));
+    $this->assertText(t('The configuration options have been saved.'));
+
     // In this case, we want the screen shot made after we have entered the
     // information, because for a normal user, this information would have
     // been set up during the install.
-    $this->setUpScreenShot('config-basic-test2.png', array(550, 275, 30, 200), 'admin/config/system/site-information');
+    $this->drupalGet('admin/config/system/site-information');
+    $this->setUpScreenShot('config-basic-test2.png', array(550, 275, 30, 200));
+
+    // Topic: config-uninstall - Uninstall unused modules.
+    $this->drupalGet('admin/modules/uninstall');
+    // For this screen shot, scroll to the bottom and make sure the
+    // Search checkbox is checked, using JavaScript.
+    $this->setUpScreenShot('config-uninstall_searchModUninstall.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,2000); jQuery(\'#edit-uninstall-search\').attr(\'checked\', 1);"');
+    $this->drupalPostForm(NULL, array(
+        'uninstall[search]' => TRUE,
+      ), t('Uninstall'));
+    $this->assertText(t('Would you like to continue with uninstalling the above?'));
+    $this->assertText('Search');
+    $this->setUpScreenShot('config-uninstall_confirmUninstall.png', array(550, 275, 30, 200));
+    $this->drupalPostForm(NULL, array(), t('Uninstall'));
+    $this->assertText(t('The selected modules have been uninstalled.'));
+
+    // Follow-on task: also uninstall Comment and History. No screen shots.
+    // Before removing Comment, we have to remove the Comment field.
+    $this->drupalPostForm('admin/structure/types/manage/article/fields/node.article.comment/delete', array(), t('Delete'));
+    $this->drupalPostForm('admin/structure/comment/manage/comment/delete', array(), t('Delete'));
+    $this->drupalGet('admin/modules/uninstall');
+    $this->drupalPostForm(NULL, array(
+        'uninstall[comment]' => TRUE,
+        'uninstall[history]' => TRUE,
+      ), t('Uninstall'));
+    $this->assertText(t('Would you like to continue with uninstalling the above?'));
+    $this->assertText('History');
+    $this->assertText('Comment');
+    $this->drupalPostForm(NULL, array(), t('Uninstall'));
+    $this->assertText(t('The selected modules have been uninstalled.'));
+
+    // Topic config-user: Configuring user account settings.
+    // @todo Screen shots not defined yet.
+    $this->drupalGet('admin/config/people/accounts');
+    $this->drupalPostForm(NULL, array(
+        'user_register' => 'admin_only',
+      ),
+      t('Save configuration'));
+    $this->assertText(t('The configuration options have been saved.'));
+
+    // Topic config-theme: Configuring the theme.
+    $this->drupalGet('admin/appearance');
+    $this->assertText('Bartik');
+    $this->assertLink(t('Settings'));
+    $this->setUpScreenShot('config-theme_bartik_settings.png', array(550, 275, 30, 200));
+    $this->drupalGet('admin/appearance/settings/bartik');
+    $this->drupalPostForm(NULL, array(
+        'scheme' => '',
+        'palette[top]' => '#7db84a',
+        'palette[bottom]' => '#2a3524',
+        'palette[bg]' => '#ffffff',
+        'palette[sidebar]' => '#f8bc65',
+        'palette[sidebarborders]' => '#e96b3c',
+        'palette[footer]' => '#2a3524',
+        'palette[titleslogan]' => '#ffffff',
+        'palette[text]' => '#000000',
+        'palette[link]' => '#2a3524',
+      ), t('Save configuration'));
+    $this->assertText(t('The configuration options have been saved.'));
+
+    $this->drupalGet('admin/appearance/settings/bartik');
+    $this->assertText(t('Color scheme'));
+    $this->assertText(t('Header background top'));
+    $this->setUpScreenShot('config-theme_color_scheme.png', array(550, 275, 30, 200));
+    // For this screen shot, scroll down so the Preview is in view.
+    $this->assertText(t('Preview'));
+    $this->setUpScreenShot('config-theme_color_scheme_preview.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,600);"');
+
+    $this->drupalGet('admin/appearance/settings');
+    $this->assertText(t('Use the default logo supplied by the theme'));
+    $this->assertText(t('Upload logo image'));
+    $this->setUpScreenShot('config-theme_logo_upload.png', array(550, 275, 30, 200), 'onLoad="jQuery(\'#edit-default-logo\').click(); jQuery(\'#edit-logo-upload\').css(\'border\', \'' . $red_border . '\');"');
+
+    $this->drupalPostForm(NULL, array(
+        'default_logo' => FALSE,
+        'logo_path' => $assets_directory . 'AnytownFarmersMarket.png',
+      ), t('Save configuration'));
+    $this->assertText(t('The configuration options have been saved.'));
+    $this->assertRaw($assets_directory);
+
+    $this->drupalGet('<front>');
+    $this->setUpScreenShot('config-theme_final_result.png', array(550, 275, 30, 200));
+
+  }
+
+  /**
+   * Clears the Drupal cache.
+   */
+  protected function clearCache() {
+    $this->drupalPostForm('admin/config/development/performance', array(), t('Clear all caches'));
   }
 
   /**
    * Makes clean screenshot output, and adds a note afterwards.
    *
-   * Note: Unlike drupalGet(), meta refresh is not obeyed, and unlike verbose(),
-   * it always makes these files.
+   * The screen shot is of the current page.
    *
    * @param string $file
    *   Name of the screen shot file.
    * @param int[] $geometry
    *   Geometry of the screen shot, in pixels: width, height, and offset
    *   x and y.
-   * @param \Drupal\Core\Url|string $path
-   *   (optional) Drupal path or URL to make a screen shot of. Omit to keep
-   *   the current page.
-   * @param $options
-   *   (optional) Options to be forwarded to the url generator.
-   * @param $headers
-   *   (optional) An array containing additional HTTP request headers, each
-   *   formatted as "name: value".
+   * @param string $body_addition
+   *   Additional text to add into the HTML body tag. Example:
+   *   'onLoad="window.scroll(0,500);"'.
    */
-  protected function setUpScreenShot($file, $geometry, $path = '', $options = array(), $headers = array()) {
-    if ($path) {
-      // This is the line from WebTestBase::drupalGet() that does the URL
-      // request. We don't want the stuff at the top of the screen, just a
-      // clean output.
-      $output = $this->curlExec(array(CURLOPT_HTTPGET => TRUE, CURLOPT_URL => $this->buildUrl($path, $options), CURLOPT_NOBODY => FALSE, CURLOPT_HTTPHEADER => $headers));
-    }
-    else {
-      $output = $this->getRawContent();
-    }
+  protected function setUpScreenShot($file, $geometry, $body_addition = '') {
+    $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getRawContent());
 
     // This is like TestBase::verbose() but just the bare HTML output, and
     // with a separate file counter so it doesn't interfere.
@@ -135,6 +229,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
     $this->screenshotId++;
     $this->pass('SCREENSHOT: ' . $file . ' ' . implode(' ', $geometry) . ' ' . $url);
+  }
+
+  /**
+   * Prepares site settings and services before installation.
+   *
+   * Overrides WebTestBase::prepareSettings() so that we can store public
+   * files in a directory that will not get removed until the verbose output
+   * is gone.
+   */
+  protected function prepareSettings() {
+    parent::prepareSettings();
+
+    $this->publicFilesDirectory = $this->verboseDirectory . '/' . $this->databasePrefix;
+    $settings['settings']['file_public_path'] = (object) [
+      'value' => $this->publicFilesDirectory,
+      'required' => TRUE,
+    ];
+    $this->writeSettings($settings);
+    Settings::initialize(DRUPAL_ROOT, $this->siteDirectory, $this->classLoader);
   }
 
 }

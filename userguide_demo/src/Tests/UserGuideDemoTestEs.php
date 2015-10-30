@@ -31,16 +31,10 @@ class UserGuideDemoTestEs extends UserGuideDemoTestBase {
    */
   protected $demoInput = array(
     // Note: These need to be actually translated by a real Spanish speaker!
+    // Current values are for a proof of concept.
     'site_name' => 'Mercado de Fincas de Pueblo',
     'site_slogan' => 'Comida Fresca de Finca',
     'site_mail' => 'info@example.com',
   );
-
-  /**
-   * Makes the demo site.
-   */
-  public function testBuildSite() {
-    $this->makeDemoSite();
-  }
 
 }

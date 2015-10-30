@@ -16,12 +16,4 @@ namespace Drupal\userguide_demo\Tests;
  * @group UserGuide
  */
 class UserGuideDemoTestEn extends UserGuideDemoTestBase {
-
-  /**
-   * Makes the demo site.
-   */
-  public function testBuildSite() {
-    $this->makeDemoSite();
-  }
-
 }
