@@ -1,83 +1,40 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[understanding-themes]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Themes
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+=== Concept: Themes
 
+(((Themes,overview)))
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+<<understanding-drupal>>
 
-Remove this placeholder text.
+==== What is a Theme?
 
+A theme is a set of files that define the visual look and feel of your site.
+The core Drupal software and modules that run on your site determine which
+_content_ (including HTML text and other data stored in the database, uploaded
+images, and any other asset files) is displayed on the pages of your site.  The theme determines the HTML markup and CSS styling that wraps the content.
 
-==== What is a ...?
+Drupal provides several basic themes with the core distribution.  These themes
+have largely been designed and built by the community over the last several
+years and will all be good choices for building your first sites and becoming
+more familiar with how Drupal works.
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+Drupal is a well established CMS so the market for 3rd party themes - both free
+and paid - is very robust.  There is <<extend-theme-find,a user guide page that
+explains how to find, evaluate, and download themes>> on Drupal.org.
 
-Remove this placeholder text.
-
+If none of these options suit your needs, you'll need to create a custom theme.
+A custom theme can be as simple as a single CSS file that adds styling to the
+markup that Drupal provides.  Guidance for creating custom themes in Drupal 8
+can be found in the  https://www.drupal.org/theme-guide/8[theming guide].
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
-
-Remove this placeholder text.
-
+* <<extend-theme-find>>
+* <<entend-theme-install>>
+* <<understanding-modules>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+* https://www.drupal.org/theme-guide/8[Drupal 8 theming guide]
