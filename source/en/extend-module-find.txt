@@ -1,127 +1,120 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[extend-module-find]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Finding modules
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Finding Modules
 
+(((Modules,finding)))
+(((Contributed Modules,finding)))
+(((Modules,searching)))
+(((Contributed Modules,searching)))
+(((Modules,evaluating)))
+(((Contributed Modules,evaluating)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+Find and evaluate modules on Drupal.org or Drupalmodules.com.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<understanding-drupal>>
+* <<understanding-modules>>
 
-Remove this placeholder text.
-
-
-==== Site prerequisites
-
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+//==== Site prerequisites
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+**Finding and evaluating modules on Drupal.org**
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. Go to https://www.drupal.org, and navigate to _Download & Extend > Modules_
+  (https://www.drupal.org/project/project_module).
 
-  And it could be a couple of paragraphs.
+. Filter your search using the categories on the module search page.
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+.Fields and values
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name |Explanation |Example value
+|Maintenance status |How actively should the module be maintained? | Actively maintained
+|Development status |What kind of development should the module undergo?|Maintenance fixes only
+|Module categories |The module's topic area, e.g. _Content_ or _Event_.|Content
+|Core compatibility |The Drupal version the module is compatible with.|8.x
+|Status |Project status: _Sandbox projects_ are experimental projects. _Full projects_ have already gone through an approval process, but they can still be in development.
+ |Full projects
+|Search Modules |Search by search term in the module's description.|-
+|Sort by |Order your search results by criteria like _Most installed_ (popular modules that many sites use) or _Last release_ (date of latest version released). |Most installed
+|================================
 
-. Text of step 3.
+// This screenshot was taken from https://www.drupal.org/project/project_module with the example values selected.
+image:images/extend-module-find_module_finder.png["Filters on the module search page on Drupal.org"]
 
-Notes:
+[start=3]
+. Click on _Search_.
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+// This screenshot was taken from the search results after clicking on Search.
+image:images/extend-module-find_search_results.png["The search results page on Drupal.org"]
+
+[start=4]
+. To further evaluate a module, click on its title in the list of search results
+  to visit its project page.
+
+Some aspects to pay attention to when evaluating modules:
+
+* Project description: The description of the module on its project page should
+  be clear and useful. You should get an idea of its features and requirements.
+* Maintenance status: If a module is _Actively maintained_, you can be sure that
+  there will be security updates, bug fixes and feature improvements provided on
+  a regular basis. However, if the module is unmaintained or abandoned, you
+  shouldn't use it.
+* Development status: _Under active development_ means you can expect new
+  features to be added to the project, but some aspects (e.g. API) may still
+  change. _Maintenance fixes only_ means that the project is considered feature
+  complete.
+* Reported installs, downloads: You can see how many people have downloaded and
+  how many sites use the module. If it's only used by a few sites, it might be a
+  unique solution that not many people need, or it might be a warning sign that
+  you shouldn't use it either.
+* Maintainers: When was the last commit (the last time someone updated something
+  on the module) or last release (new version)? If the project has few open
+  issues, a long time since commits/releases might be appropriate, but if it has
+  a lot of open issues and there are no commits/releases, that would be a clue
+  that it might be abandoned.
+* Issues: See if there are any open issues, potential problems with the
+  module. Check the _Statistics_ to see how regularly issues are responded to.
+* Resources: Check if the module has documentation or a README file, that can
+  help you install, configure, explore, and test it.
+
+// This screenshot was taken from https://www.drupal.org/project/google_analytics with the areas described in the above list annotated.
+image:images/extend-module-find_project_info.png["Information on the project page to look for when evaluating a module"]
+
+**Finding modules on Drupalmodules.com**
+
+. Go to http://drupalmodules.com/ and navigate to _Module Finder_
+  (http://drupalmodules.com/module-finder).
+
+. Filter your search using the categories in the Module Finder.
+
+.Fields and values
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name |Explanation |Example value
+|Category |The module's topic area, e.g. _Content_ or _Event_.|Content
+|Version |The Drupal version the module is compatible with.|8.x
+|Title |Search in the module's title.|-
+|Body |Search in the module's description.|-
+|================================
+
+// This screenshot was taken from the Module Finder on http://drupalmodules.com/module-finder.
+image:images/extend-module-find_drupalmodules_module_finder.png["The Module Finder on Drupalmodules.com"]
+
+[start=3]
+. Search results are sorted by module popularity.
+
+// This screenshot was taken from the search results on http://drupalmodules.com/module-finder.
+image:images/extend-module-find_search_results_dm.png["The search results on Drupalmodules.com"]
+
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+* <<extend-module-install>>
 
-Remove this placeholder text.
-
-
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+//==== Related concepts
+//==== Additional resources
