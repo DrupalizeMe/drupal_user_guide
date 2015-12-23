@@ -1,6 +1,6 @@
-This module does not do anything directly. All it contains is tests,
-which can be used to generate screen shots and (eventually) a database
-dump and files directory so you can clone the demo site.
+This module does not do anything directly. All it contains is tests that can be
+used to generate screen shots and (eventually, maybe?) a database dump and files
+directory so you can clone the demo site.
 
 
 SETTING UP THE ENVIRONMENT
@@ -26,17 +26,18 @@ details how to set up the tools. Here are the steps:
    is not present:
 
    sudo apt-get install imagemagick
-   yum install imagemagick
+   sudo yum install imagemagick
 
 6. Install a local test Drupal site, running the version of Drupal you want to
-   generate screen shots for.
+   generate screen shots for (Drupal 8.0.x, 8.1.x, etc.).
 
 7. Put the entire parent project directory of this file (i.e., directory
    "user_guide") into the top-level 'modules' directory of your local Drupal
    site.
 
-8. Enable the Testing (simpletest) module in the Drupal site. Drush command:
-   drush en simpletest
+8. Enable the Testing (simpletest) module in the Drupal site, as well as
+   Language and Interface Translation. Drush command:
+   drush en simpletest locale language
 
 
 MAKING SCREENSHOTS

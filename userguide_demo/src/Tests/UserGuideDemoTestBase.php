@@ -18,17 +18,10 @@ use Drupal\simpletest\WebTestBase;
  *
  * To make a class for a new language:
  * - Extend this class.
- * - Override the $installLanguage and $demoInput member variables, translating
- *   the input into the target language.
+ * - Override the $demoInput member variable, translating the input into the
+ *   target language.
  */
 abstract class UserGuideDemoTestBase extends WebTestBase {
-
-  /**
-   * The language to install in.
-   *
-   * @var string
-   */
-  protected $installLanguage = 'en';
 
   /**
    * Strings and other information to input into the demo site.
@@ -36,9 +29,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @var array
    */
   protected $demoInput = array(
+    // Default and second languages for the site.
+    'first_langcode' => 'en',
+    'second_langcode' => 'es',
+
+    // Basic site information.
     'site_name' => 'Anytown Farmers Market',
     'site_slogan' => 'Farm Fresh Food',
     'site_mail' => 'info@example.com',
+
+    // Vendor content type settings.
+    'vendor_type_name' => 'Vendor',
+    'vendor_type_description' => 'Information about a vendor',
+    'vendor_type_title_label' => 'Vendor name',
+
+    // Recipe content type settings.
+    'recipe_type_name' => 'Recipe',
+    'recipe_type_description' => 'Recipe submitted by a vendor',
+    'recipe_type_title_label' => 'Recipe name',
+
   );
 
   /**
@@ -47,29 +56,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected $profile = 'standard';
 
   /**
-   * Add this module to the modules list, so we can get the assets directory.
+   * Modules needed for this test.
+   *
+   * @todo 'language' and 'locale' are currently needed to get around this bug:
+   *   https://www.drupal.org/node/2573975
+   *   When that is fixed, it may be possible to enable them later in the
+   *   process, but they'll be needed when the language is added at the top
+   *   of the test, so might as well just turn them on here.
    */
-  public static $modules = array('userguide_demo', 'update');
+  public static $modules = array('userguide_demo', 'update', 'language', 'locale');
 
   /**
    * We need verbose logging to be on.
    */
   public $verbose = TRUE;
-
-  /**
-   * Sets up for an install in the specified language.
-   *
-   * This is an override of WebTestBase::installParameters(). See that for
-   * full documentation.
-   */
-  protected function installParameters() {
-    $params = parent::installParameters();
-    if ($this->installLanguage != 'en') {
-      $params['parameters']['langcode'] = $this->installLanguage;
-      $params['download_translation'] = TRUE;
-    }
-    return $params;
-  }
 
   /**
    * Counter for screenshot output, separate from regular verbose IDs.
@@ -83,6 +83,24 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * as a "test" to run.
    */
   public function testBuildDemoSite() {
+    $this->drupalLogin($this->rootUser);
+
+    // Add the first language, set the default language to that, and delete
+    // English, to simulate having installed in a different language. No
+    // screen shots for this!
+    if ($this->demoInput['first_langcode'] != 'en') {
+      // Note that here the buttons should still be in English until after
+      // the other language is set as the default language.
+      $this->drupalPostForm('admin/config/regional/language/add', array(
+          'predefined_langcode' => $this->demoInput['first_langcode'],
+        ), 'Add language');
+      $this->drupalPostForm('admin/config/regional/language', array(
+          'site_default_language' => $this->demoInput['first_langcode'],
+        ), 'Save configuration');
+      // From this point on, everything should be translated into the first
+      // language.
+      $this->drupalPostForm('admin/config/regional/language/delete/en', array(), $this->callT('Delete'));
+    }
 
     // Figure out where the assets directory is.
     $dir_parts = explode('/', drupal_get_path('module', 'userguide_demo'));
@@ -91,8 +109,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Set up a red border CSS style.
     $red_border = '2px solid #e62600;';
-
-    $this->drupalLogin($this->rootUser);
 
     // Topic: config-basic - Edit basic site information.
     // @todo Replace with actual screen shots of this topic.
@@ -103,8 +119,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'site_name' => $this->demoInput['site_name'],
         'site_slogan' => $this->demoInput['site_slogan'],
         'site_mail' => $this->demoInput['site_mail'],
-      ), t('Save configuration'));
-    $this->assertText(t('The configuration options have been saved.'));
+      ), $this->callT('Save configuration'));
+    $this->assertText($this->callT('The configuration options have been saved.'));
 
     // In this case, we want the screen shot made after we have entered the
     // information, because for a normal user, this information would have
@@ -119,41 +135,41 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('config-uninstall_searchModUninstall.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,2000); jQuery(\'#edit-uninstall-search\').attr(\'checked\', 1);"');
     $this->drupalPostForm(NULL, array(
         'uninstall[search]' => TRUE,
-      ), t('Uninstall'));
-    $this->assertText(t('Would you like to continue with uninstalling the above?'));
-    $this->assertText('Search');
+      ), $this->callT('Uninstall'));
+    $this->assertText($this->callT('Would you like to continue with uninstalling the above?'));
+    $this->assertText($this->callT('Search'));
     $this->setUpScreenShot('config-uninstall_confirmUninstall.png', array(550, 275, 30, 200));
-    $this->drupalPostForm(NULL, array(), t('Uninstall'));
-    $this->assertText(t('The selected modules have been uninstalled.'));
+    $this->drupalPostForm(NULL, array(), $this->callT('Uninstall'));
+    $this->assertText($this->callT('The selected modules have been uninstalled.'));
 
     // Follow-on task: also uninstall Comment and History. No screen shots.
     // Before removing Comment, we have to remove the Comment field.
-    $this->drupalPostForm('admin/structure/types/manage/article/fields/node.article.comment/delete', array(), t('Delete'));
-    $this->drupalPostForm('admin/structure/comment/manage/comment/delete', array(), t('Delete'));
+    $this->drupalPostForm('admin/structure/types/manage/article/fields/node.article.comment/delete', array(), $this->callT('Delete'));
+    $this->drupalPostForm('admin/structure/comment/manage/comment/delete', array(), $this->callT('Delete'));
     $this->drupalGet('admin/modules/uninstall');
     $this->drupalPostForm(NULL, array(
         'uninstall[comment]' => TRUE,
         'uninstall[history]' => TRUE,
-      ), t('Uninstall'));
-    $this->assertText(t('Would you like to continue with uninstalling the above?'));
+      ), $this->callT('Uninstall'));
+    $this->assertText($this->callT('Would you like to continue with uninstalling the above?'));
+    // Module names are not translated.
     $this->assertText('History');
     $this->assertText('Comment');
-    $this->drupalPostForm(NULL, array(), t('Uninstall'));
-    $this->assertText(t('The selected modules have been uninstalled.'));
+    $this->drupalPostForm(NULL, array(), $this->callT('Uninstall'));
+    $this->assertText($this->callT('The selected modules have been uninstalled.'));
 
     // Topic config-user: Configuring user account settings.
     // @todo Screen shots not defined yet.
     $this->drupalGet('admin/config/people/accounts');
     $this->drupalPostForm(NULL, array(
         'user_register' => 'admin_only',
-      ),
-      t('Save configuration'));
-    $this->assertText(t('The configuration options have been saved.'));
+      ), $this->callT('Save configuration'));
+    $this->assertText($this->callT('The configuration options have been saved.'));
 
     // Topic config-theme: Configuring the theme.
     $this->drupalGet('admin/appearance');
     $this->assertText('Bartik');
-    $this->assertLink(t('Settings'));
+    $this->assertLink($this->callT('Settings'));
     $this->setUpScreenShot('config-theme_bartik_settings.png', array(550, 275, 30, 200));
     $this->drupalGet('admin/appearance/settings/bartik');
     $this->drupalPostForm(NULL, array(
@@ -167,39 +183,163 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'palette[titleslogan]' => '#ffffff',
         'palette[text]' => '#000000',
         'palette[link]' => '#2a3524',
-      ), t('Save configuration'));
-    $this->assertText(t('The configuration options have been saved.'));
+      ), $this->callT('Save configuration'));
+    $this->assertText($this->callT('The configuration options have been saved.'));
 
     $this->drupalGet('admin/appearance/settings/bartik');
-    $this->assertText(t('Color scheme'));
-    $this->assertText(t('Header background top'));
+    $this->assertText($this->callT('Color scheme'));
+    $this->assertText($this->callT('Header background top'));
     $this->setUpScreenShot('config-theme_color_scheme.png', array(550, 275, 30, 200));
     // For this screen shot, scroll down so the Preview is in view.
-    $this->assertText(t('Preview'));
+    $this->assertText($this->callT('Preview'));
     $this->setUpScreenShot('config-theme_color_scheme_preview.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,600);"');
 
     $this->drupalGet('admin/appearance/settings');
-    $this->assertText(t('Use the default logo supplied by the theme'));
-    $this->assertText(t('Upload logo image'));
+    $this->assertText($this->callT('Use the default logo supplied by the theme'));
+    $this->assertText($this->callT('Upload logo image'));
     $this->setUpScreenShot('config-theme_logo_upload.png', array(550, 275, 30, 200), 'onLoad="jQuery(\'#edit-default-logo\').click(); jQuery(\'#edit-logo-upload\').css(\'border\', \'' . $red_border . '\');"');
 
     $this->drupalPostForm(NULL, array(
         'default_logo' => FALSE,
         'logo_path' => $assets_directory . 'AnytownFarmersMarket.png',
-      ), t('Save configuration'));
-    $this->assertText(t('The configuration options have been saved.'));
+      ), $this->callT('Save configuration'));
+    $this->assertText($this->callT('The configuration options have been saved.'));
     $this->assertRaw($assets_directory);
 
     $this->drupalGet('<front>');
     $this->setUpScreenShot('config-theme_final_result.png', array(550, 275, 30, 200));
 
+    // Topic: language-enable - Installing multilingual modules
+    // fix! add screen shots in this section
+    $this->drupalGet('admin/modules');
+    $this->drupalPostForm(NULL, array(
+      'modules[Multilingual][config_translation][enable]' => TRUE,
+      'modules[Multilingual][content_translation][enable]' => TRUE,
+      ), $this->callT('Install'));
+
+    // Topic: language-add - Adding a language
+    // fix! add screen shots in this section
+    $this->drupalGet('admin/config/regional/language');
+    $this->drupalGet('admin/config/regional/language/add');
+    $this->drupalPostForm(NULL, array(
+        'predefined_langcode' => $this->demoInput['second_langcode'],
+      ), $this->callT('Add language'));
+
+    // Topic: language-content-config - Configuring Content Translation
+    // fix! add screen shots in this section
+    $this->drupalGet('/admin/config/regional/content-language');
+    $this->drupalPostForm(NULL, array(
+        'entity_types[node]' => TRUE,
+        'entity_types[block_content]' => TRUE,
+        'entity_types[menu_link_content]' => TRUE,
+
+        'settings[node][page][translatable]' => TRUE,
+        'settings[node][page][fields][title]' => TRUE,
+        'settings[node][page][fields][uid]' => FALSE,
+        'settings[node][page][fields][status]' => FALSE,
+        'settings[node][page][fields][created]' => FALSE,
+        'settings[node][page][fields][changed]' => FALSE,
+        'settings[node][page][fields][promote]' => FALSE,
+        'settings[node][page][fields][uid]' => FALSE,
+        'settings[node][page][fields][sticky]' => FALSE,
+        'settings[node][page][fields][path]' => TRUE,
+        'settings[node][page][fields][body]' => TRUE,
+
+        'settings[block_content][basic][translatable]' => TRUE,
+        'settings[block_content][basic][fields][info]' => TRUE,
+        'settings[block_content][basic][fields][changed]' => FALSE,
+        'settings[block_content][basic][fields][body]' => TRUE,
+
+        'settings[menu_link_content][menu_link_content][translatable]' => TRUE,
+        'settings[menu_link_content][menu_link_content][fields][title]' => TRUE,
+        'settings[menu_link_content][menu_link_content][fields][description]' => TRUE,
+        'settings[menu_link_content][menu_link_content][fields][changed]' => FALSE,
+      ), $this->callT('Save configuration'));
+
+    // Topic: structure-content-type - Adding a Content Type
+    // fix! add screen shots in this section
+    // Create the Vendor content type.
+    $this->drupalGet('admin/structure/types');
+    $this->drupalGet('admin/structure/types/add');
+    $this->drupalPostForm(NULL, array(
+        'name' => $this->demoInput['vendor_type_name'],
+        'description' => $this->demoInput['vendor_type_description'],
+        'title_label' => $this->demoInput['vendor_type_title_label'],
+        'options[promote]' => FALSE,
+        'options[revision]' => TRUE,
+        'display_submitted' => FALSE,
+        'menu_options[main]' => FALSE,
+        'language_configuration[content_translation]' => TRUE,
+      ), $this->callT('Save and manage fields'));
+
+    // Follow-on task for structure-content-type - Add content type for Recipe
+    // No screen shots.
+    $this->drupalGet('admin/structure/types');
+    $this->drupalGet('admin/structure/types/add');
+    $this->drupalPostForm(NULL, array(
+        'name' => $this->demoInput['recipe_type_name'],
+        'description' => $this->demoInput['recipe_type_description'],
+        'title_label' => $this->demoInput['recipe_type_title_label'],
+        'options[promote]' => FALSE,
+        'display_submitted' => FALSE,
+        'menu_options[main]' => FALSE,
+        'language_configuration[content_translation]' => TRUE,
+      ), $this->callT('Save and manage fields'));
+
+    // Topic: structure-content-type-delete - Deleting a Content Type
+    // fix! add screen shots in this section
+    // Delete the Article content type.
+    $this->drupalGet('admin/structure/types');
+    $this->drupalGet('admin/structure/types/manage/article/delete');
+    $this->drupalPostForm(NULL, array(), $this->callT('Delete'));
+
   }
 
   /**
    * Clears the Drupal cache.
+   *
+   * @todo Remove this if it is not used.
    */
   protected function clearCache() {
-    $this->drupalPostForm('admin/config/development/performance', array(), t('Clear all caches'));
+    $this->drupalPostForm('admin/config/development/performance', array(), $this->callT('Clear all caches'));
+  }
+
+  /**
+   * Calls t() in the user interface, with the site's first language.
+   *
+   * For some unknown reason, when running this in non-English languages, the
+   * form submits etc. are not working because it is not looking for the
+   * correct (translated) button text when you make a call like
+   * @code
+   * $this->drupalPostForm('url/here', array(), t('Button name'));
+   * @endcode
+   * So this method wraps t() by passing in the language code to translate
+   * to, which is easier than trying to figure out what the real problem is.
+   *
+   * @param string $text
+   *   Text to pass into t(). Must have been defined by another module or it
+   *   will not be in the translation database.
+   * @param bool $first
+   *   (optional) TRUE (default) to translate to the first language in the
+   *   demoInput member variable; FALSE to use the second language.
+   *
+   * @return string
+   *   Original string, translated string, or a wrapper object that can be used
+   *   like a string.
+   */
+  protected function callT($text, $first = TRUE) {
+    if ($first) {
+      $langcode = $this->demoInput['first_langcode'];
+    }
+    else {
+      $langcode = $this->demoInput['second_langcode'];
+    }
+
+    if ($langcode == 'en') {
+      return $text;
+    }
+
+    return t($text, array(), array('langcode' => $langcode));
   }
 
   /**
