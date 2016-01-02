@@ -1,83 +1,47 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[structure-widgets]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Forms and Widgets
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+=== Concept: Forms and Widgets
 
+(((Content editing forms,overview)))
+(((Widgets,overview)))
+(((Fields,overview)))
+(((Forms,overview)))
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<planning-data-types>>
 
-Remove this placeholder text.
+==== What are forms and widgets?
 
+The content management system software that your site is running allows
+administrators to edit content and configure settings online, using various web
+_forms_. In particular, _content editing forms_ are the forms that are used to
+edit your site content, and they are configurable by administrators; settings
+configuration forms are provided by modules and cannot themselves be configured.
 
-==== What is a ...?
+The data in your site content is stored in one or more fields that are attached
+to the content type and/or sub-type. When you configure the content editing
+form for each content sub-type, you can:
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+* Choose a _widget_ for each field. A widget defines the method used to enter
+  the data for the field. For example, a taxonomy term can be chosen using
+  an autocomplete field, a select list, or a tags-style field that lets editors
+  add new tags automatically.
+* Configure widget settings. For example, you can choose the size of a
+  plain-text entry field.
+* Hide one or more fields from the editing form.
+* Reorder the fields.
 
-Remove this placeholder text.
-
+In principle, you can also have multiple content editing forms available for
+each content sub-type. This feature is rarely used, however; the only exception
+in common use is for the user profile fields: you can use different forms for
+user registration and user editing. For example, you might have a limited set of
+fields shown when users first register on the site, and more fields shown later
+on when they edit their profiles.
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
+* <<structure-form-editing>>>
+* <<structure-view-modes>>
 
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+//==== Additional resources
