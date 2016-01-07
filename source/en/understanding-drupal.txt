@@ -1,83 +1,62 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
+[[understanding-drupal]]
+
+=== Concept: Drupal as a Content Management System
+
+(((CMS,overview)))
+(((Content Management System,overview)))
+(((Drupal,overview)))
+
 //==== Prerequisite knowledge
 
+==== What is a Content Management System?
 
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
-[[understanding-drupal]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Drupal as a Content Management System
+A content management system (CMS) is a software tool that lets users add,
+publish, edit, or remove content from a website, using a web browser on a
+smartphone, tablet, or desktop computer. Typically the CMS software is written
+in a scripting language, and its scripts run on a computer where a database and
+a web server are installed. The content and settings for the website are usually
+stored in a database, and for each page request that comes to the web server,
+the scripts combine information from the database and _assets_ (JavaScript
+files, CSS files, image files, etc. that are part of the CMS or have been
+uploaded) to build the pages of the website.
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+The combination of the operating system that the CMS runs on, the scripting
+language it is written in, the database it stores its information in, and the
+web server that runs the scripts to retrieve information and send it to the
+browser is known as the _stack_ that the CMS runs on; the commonly-used
+combination of the Linux operating system, Apache web server, MySQL database,
+and PHP scripting language is known as the _LAMP stack_.
 
+==== What is Drupal?
 
-==== Prerequisite knowledge
+Drupal is a flexible CMS based on the LAMP stack, with a modular design allowing
+features to be added and removed by installing and uninstalling _modules_, and
+allowing the entire look and feel of the website to be changed by enabling and
+disabling _themes_. The base Drupal download, known as Drupal Core, contains the
+PHP scripts needed to run the basic CMS functionality, several optional modules
+and themes, and many JavaScript, CSS, and image assets. Many additional modules
+and themes can be downloaded from the https://www.drupal.org[Drupal.org] web
+site.
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+Drupal can also run on other technology stacks:
 
-Remove this placeholder text.
+* The operating system can be Windows or MacOS instead of Linux.
+* The web server can be Nginix or IIS instead of Apache.
+* The database can be PostgreSQL or SQLite instead of MySQL, or a
+  MySQL-compatible replacement such as MariaDB or Percona.
 
-
-==== What is a ...?
-
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
-
-Remove this placeholder text.
-
+Other operating systems, web servers, and databases can also be made to work;
+however, the scripts that Drupal uses are written in PHP, so that cannot be
+changed.
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
-
-Remove this placeholder text.
-
+* <<understanding-modules>>
+* <<understanding-themes>>
+* <<understanding-distributions>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+* https://www.drupal.org/getting-started/before/overview[The Drupal overview]
+* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia entry on Content management systems]
+* https://en.wikipedia.org/wiki/Modular_design[Wikipedia entry on Modular design]
