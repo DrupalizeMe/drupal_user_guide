@@ -29,8 +29,8 @@ Commons].
 
 farm.jpg
 
-The farm image is a CC BY-SA 2.0 licensed image by Anne Burgess via
-https://commons.wikimedia.org/wiki/File:Barnyards_-_geograph.org.uk_-_290284.jpg[Wikimedia Commons].
+The farm image is a public domain image by Xianmin Chang via
+https://commons.wikimedia.org/wiki/File:Bere%26ModernBarley.jpg[Wikimedia Commons].
 
 
 salad.jpg
