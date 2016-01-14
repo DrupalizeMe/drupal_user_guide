@@ -9,7 +9,11 @@
 
 ==== Goal
 
-The goal of this task is to identify specific content (which has already been created) as the front page of our website. The content for the front of a website can be any type of content. For example, a "Basic page" or "Article". For this task we are going to use content that is of the content type "Basic page" and identify it as the site front page content.
+The goal of this task is to identify specific content (which has already been
+created) as the front page of our website. The content for the front of a
+website can be any type of content. For example, a "Basic page" or
+"Article". For this task we are going to use content that is of the content type
+"Basic page" and identify it as the site front page content.
 
 //==== Prerequisite knowledge
 
@@ -19,16 +23,9 @@ The goal of this task is to identify specific content (which has already been cr
 
 ==== Steps
 
-. Under "Manage" in the administration menu, select "Configuration".
-//To create this image: download Drupal 8.0.0-beta14 and view the site. I captured just the top administration menu (2-levels). Made sure my mouse was hovered over "Configuration" to get the underline
-image:images/menu-home_admin_menu.png["screen capture of admin menu",width="100%"]
+. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
+  _Site information_ (admin/config/system/site-information).
 
-[start=2]
-. Under the "System" category, select "Site information".
-//To create this image: download Drupal 8.0.0-beta14, select "Configuration" in the administration menu. I captured just the "System" category and sub-items, "Site information" and "Cron".
-image:images/menu-home_site_info.png["screen capture of 'System' category",width="100%"]
-
-[start=3]
 . Under the "FRONT PAGE" section, replace "/node" with the name of your page you would like to make the front.
 //To create this image: download Drupal 8.0.0-beta14, select "Configuration" under "Manage", then select "Site information". I captured just the "FRONT PAGE" area with the default, "/node" in the text field
 image:images/menu-home_front_page_text_field.png["screen capture of 'FRONT PAGE' area with default "/node" in text field",width="100%"]
@@ -38,7 +35,7 @@ In this example, we have created a node using the Basic page content type with t
 image:images/menu-home_new_text_field.png["screen capture of 'FRONT PAGE' area
 with "/home" in text field",width="100%"]
 
-[start=4]
+[start=3]
 . Congratulations! You have identified content for your front page (home page)!
 //To create this image: download Drupal 8.0.0-beta14, follow above steps, making sure to follow all scenario specifications for colors, logo, site name, slogan, etc. I captured the front page after the "home" content had been selected as the front page content.
 image:images/menu-home_final.png["screen capture of 'FRONT PAGE' with 'Home' (Basic page) content added,width="100%"]
