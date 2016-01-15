@@ -1,83 +1,70 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[prevent-backups]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Data Backups
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+=== Concept: Data Backups
 
+(((Backups,overview)))
+(((Content,backing up)))
+(((Files,backing up)))
+(((Database,backing up)))
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<understanding-drupal>>
+* <<install-prepare>>
 
-Remove this placeholder text.
+==== What is a site backup?
 
+If something happens to the computer (or computers) that your site and its
+database are running on, or if you lose access to this computer, you could lose
+some or all of your site's data. You could also lose data if your site is
+hacked, or if someone with administrative privileges on your site deletes or
+alters data mistakenly from the administrative interface. In order to prevent
+scenarios like this from being permanent, expensive data losses, it is important
+to make regular backups of your site's data, and to store them in a location
+that is separate from the computer where your site is running.
 
-==== What is a ...?
+The frequency with which you should make data backups, and how many backups you
+should keep, depends on how frequently your site is changing. If you have a very
+large amount of content on your site that is being added to or updated many
+times per day, you would want to make more frequent backups than you would for a
+site that changes rarely. Also consider that some time could pass between when a
+data problem occurs and when you notice that it is a problem, so storing a
+sequence of backups (so that you can go back to the last known good data and
+retrieve that), rather than overwriting a single backup repeatedly, is a
+good practice.
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+Another consideration is that whatever format you store your backups in, it is a
+good idea to verify that you can actually retrieve lost data from your
+backups. You might want to test several possible data loss scenarios, and make
+sure that your data can be restored to the site in all cases.
 
-Remove this placeholder text.
+In order to make a complete backup of your site, you will need to make copies of
+the following:
 
+* The data in your site's database. A few tables can be truncated, such as those
+  storing the temporary data cache and user login session information, but it is
+  always safe to back up the entire database.
+* Uploaded files, such as images and other attachments. The location of these
+  files is configurable; the standard location is the _sites/default/files_
+  directory under your site root. In the _Manage_ administrative menu, navigate
+  to _Configuration_ > _Media_ > _File system_ (admin/config/media/file-system)
+  to check the file upload locations; to change them, you'll need to edit your
+  _settings.php_ file.
+* Custom modules and any other software files you have customized. Some people
+  prefer to simply back up all of the software files, including core files and
+  contributed modules and themes (which you could recover by downloading them
+  again from the source), rather than trying to pick out specific files
+  that definitely need to be backed up.
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
-
-Remove this placeholder text.
-
+* <<security-update-core>>
+* <<install-dev-making>>
+* <<prevent-cache>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+* https://www.drupal.org/documentation/backup[Backing up a site]
+* The https://www.drupal.org/project/backup_migrate[Backup and Migrate] module
+  can be used to set up automatic backups of the database and user uploaded
+  files.
