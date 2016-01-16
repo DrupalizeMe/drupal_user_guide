@@ -20,12 +20,13 @@ mkdir -p ../output/ebooks/en/images
 # Run the preprocessor that puts file names into the files under each header.
 # Only for the special HTML output.
 php addnames._php ../source/en ../output/html/en
+cp ../source/en/guide-docinfo.xml ../output/html/en
 php addnames._php ../guidelines ../output/html/guidelines
 
 # Run the AsciiDoc processor to convert to DocBook format, for the special
 # HTML output. The syntax is:
 #  asciidoc -d book -b docbook -f [config file] -o [output file] [input file]
-asciidoc -d book -b docbook -f std.conf -o ../output/html/en/guide.docbook ../output/html/en/guide.txt
+asciidoc -d book -b docbook -f std.conf -a docinfo -o ../output/html/en/guide.docbook ../output/html/en/guide.txt
 asciidoc -d book -b docbook -f std.conf -o ../output/html/guidelines/guidelines.docbook ../output/html/guidelines/guidelines.txt
 
 # Run the xmlto processor to convert from DocBook to bare XHTML, using a custom
@@ -43,7 +44,7 @@ cp ../guidelines/images/*.png ../output/html/guidelines/images
 [ "${1-}" = "--no-ebooks" ] && exit
 
 # Run the AsciiDoc processor to convert to DocBook for ebooks.
-asciidoc -d book -b docbook -f std.conf -o ../output/ebooks/en/guide.docbook ../source/en/guide.txt
+asciidoc -d book -b docbook -f std.conf -a docinfo -o ../output/ebooks/en/guide.docbook ../source/en/guide.txt
 
 # Copy image files to e-book directory.
 cp ../source/en/images/*.png ../output/ebooks/en/images
