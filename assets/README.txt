@@ -55,3 +55,18 @@ AnytownFarmersMarket.png
 
 The Anytown Farmers Market logo image is a CC BY-SA 2.0 licensed illustration by
 Justin Harrell of https://drupalize.me/[Drupalize.Me].
+
+
+coverimage.svg
+
+This is the vector graphics source file for the User Guide cover image (the PNG
+version of this image is included in the User Guide). The image is a CC BY-SA
+2.0 licensed illustration by https://www.drupal.org/u/mndonx[Amanda Luker] at
+http://advomatic.com/[Advomatic]. It includes the Drupal wordmark logo and
+Druplicon logo, which are
+https://www.drupal.org/about/media-kit/logos[registered trademarks of Dries Buytaert]).
+It also uses a background from the free version of the
+http://www.dafont.com/peoni-patterns.font[Peoni Patterns font] by
+http://www.emilylimedesign.etsy.com/[Emily Lime Design]. Text is rendered using
+the http://www.fontsquirrel.com/fonts/montserrat[Montserrat font], which is
+licensed under the http://scripts.sil.org/OFL[SIL Open Font License v1.10].
