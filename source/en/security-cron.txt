@@ -1,127 +1,95 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[security-cron]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Configuring Cron
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Configuring cron maintenance tasks
 
+(((Automated Cron module,configuring)))
+(((Cron,configuring)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+Ensure that cron maintenance tasks are run regularly.  If not, then enable the
+_Automated Cron_ module.  Alternatively run cron maintenance tasks from outside
+the website.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<security-cron-concept>>
 
-Remove this placeholder text.
-
-
-==== Site prerequisites
-
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+// ==== Site prerequisites
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
-
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
-
-  And it could be a couple of paragraphs.
+. Review the Status Report (see <<prevent-status>>) to see when cron maintenance
+  tasks were last run.
++
+If you installed the website using the _Standard_ installation profile (or
+similar), then cron maintenance tasks might already be running via the
+_Automated Cron_ module.  By default these tasks are run at most every three
+hours.
 
 [start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Choose whether to run cron maintenance tasks using the _Automated Cron_
+  module, or by other means.
++
+The _Automated Cron_ module may not be suitable for some websites because:
 
-. Text of step 3.
+* Cron maintenance tasks will only be run after a page on the website is
+  visited. If no one visits the website for a long time, cron maintenance tasks
+  will not be run.
+* Because cron maintenance tasks are run after the page has been generated,
+  there is less time for the tasks to be run before various server timeouts are
+  reached (e.g. PHP execution timeout).  If this happens the logs (See
+  <<prevent-log>>) will show error messages that cron is unable to complete.
+* There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
+  to _Automated Cron_ module — because cron maintenance tasks are being run by
+  the web server, that HTTP connection is occupied until the tasks are complete
+  (which may run for several minutes).
 
-Notes:
+[start=3]
+. Enable and configure the _Automated Cron_ module (see
+  <<extend-module-install>>).
++
+Once enabled, and after the website sends a page to the web browser, it will
+check how long since cron maintenance tasks have last run, and run them if
+necessary.
++
+The _Automated Cron_ module can be configured to control how frequently cron
+maintenance tasks are run.  In the _Manage_ administrative menu, navigate to
+_Configuration_ > _System_ > _Cron_
+(admin/config/system/cron).
++
+// Screenshot of typical form at admin/config/system/cron
+image:images/config-automated-cron.png["Configure Automated Cron module",width="100%"]
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+[start=4]
+. Run cron maintenance tasks from outside the website.
++
+The status report (see above) shows a URL that can be used to
+run cron from outside of the website e.g.
 
-==== Follow-on tasks
+................
+http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re
+................
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+This URL can be used by:
 
-Remove this placeholder text.
+* https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
+  BSD)
+* https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
+* A cron SASS provider (software as a service)
+* A cron manager provided by your webhost (see the documentation provided by
+    your webhost)
 
+If you use one of these methods be sure to disable the _Automated Cron_ module
+(see <<config-uninstall>>).
+
+// ==== Follow-on tasks
 
 ==== Related concepts
 
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
+* <<security-concept>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+* http://www.drush.org/en/master/cron/[Running Drupal cron tasks from Drush]
+* https://www.drupal.org/cron[Setting up cron]
