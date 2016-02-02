@@ -1,127 +1,103 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[structure-taxonomy-setup]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Setting Up a Taxonomy
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Setting Up a Taxonomy
 
+(((Taxonomy, create)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
+We will create an Ingredients vocabulary for Recipes. Once created, we will add
+it as a field to the Recipe content type. This field will be setup with
+unlimited values and allow for new items (terms) to be automatically created in
+the Ingredients vocabulary.
 
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
+* <<planning-data-types>>
+* <<structure-taxonomy>>
+* <<structure-fields>>
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+You must have a Recipe content type created. See <<structure-content-type>>.
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_
+  (admin/structure/taxonomy). You will see a list of any vocabularies that
+  already exist on your site. Initially there might be a Tags vocabulary in the
+  list which is created with a Standard installation.
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
-
-  And it could be a couple of paragraphs.
+//Screenshot of admin/structure/taxonomy page
+image:images/structure-taxonomy-setup-1.png["taxonomy list page",width="100%"]
 
 [start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+.  Use the Add vocabulary button to create your Ingredients taxonomy vocabulary
+   with the name "Ingredients".
 
-. Text of step 3.
+//Screenshot of admin/structure/taxonomy/add page
+image:images/structure-taxonomy-setup-2.png["taxonomy add Ingredients",width="100%"]
 
-Notes:
+[start=3]
+.  Once you have saved the Ingredients vocabulary you will be viewing the
+   Ingredients vocabulary record on the list tab, showing a list of all the
+   terms in this vocabulary.
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+//Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
+image:images/structure-taxonomy-setup-3.png["Ingredients taxonomy Term listing",width="100%"]
+
+[start=4]
+. At this point you can add some terms to your Ingredients vocabulary using the
+  Add term button, add “Butter” in the Name field. and save.
+
+//Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
+image:images/structure-taxonomy-setup-4.png[“Add term page”,width="100%"]
+
+Once you save the Butter term record the screen will clear and you can continue
+to add more terms at this point; for example, “Eggs” and “Milk”.
+
+//Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
+image:images/structure-taxonomy-setup-5.png[“Ingredients List page”,width="100%"]
+
+[start=5]
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_
+  (admin/structure/types). Select Manage Fields for your Recipes content type.
+
+//@todo Insert Screenshot admin/structure/types/manage/recipes/fields
+// for the completed Recipes content type.
+
+[start=6]
+. Select the Add field button. First you will select your data type, in this
+  case a Taxonomy reference field with the name Ingredients, click the save and
+  continue button.
+
+//Screenshot admin/structure/types/manage/recipes/fields/add-field page
+image:images/structure-taxonomy-setup-6.png["Add Content type Ingredients field-first page",width="100%"]
+
+[start=7]
+. Set the number of ingredients that can be added to the field, in this case to Unlimited and save the field settings.
+
+//Screenshot of admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients/storage?
+image:images/structure-taxonomy-setup-7.png["add ingredient field settings to unlimited",width="100%"]
+
+[start=8]
+. Edit the detail settings for this field. Since this field is a taxonomy
+  reference data type we can select what taxonomy will be referenced. We will
+  also make sure to check the box that allows new ingredients to be added as
+  recipes are created. These setting are in the Reference Type section on the
+  form.
+
+//Screenshot /admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients
+image:images/structure-taxonomy-setup-8.png["reference type field settings",width="100%"]
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+Add content of type Recipe, using this field (see <<content-create>>). As you
+type, matching ingredient terms will be displayed. New terms not already
+existing will be added to the Ingredients taxonomy automatically.
 
-Remove this placeholder text.
+//==== Related concepts
 
+//==== Additional resources
 
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
