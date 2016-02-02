@@ -65,21 +65,18 @@ image:images/config-automated-cron.png["Configure Automated Cron module",width="
 . Run cron maintenance tasks from outside the website.
 +
 The status report (see above) shows a URL that can be used to
-run cron from outside of the website e.g.
-
-................
-http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re
-................
-
+run cron from outside of the website; for example:
+_http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
++
 This URL can be used by:
-
-* https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
-  BSD)
-* https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
-* A cron SASS provider (software as a service)
-* A cron manager provided by your webhost (see the documentation provided by
++
+  * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
+    BSD)
+  * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
+  * A cron SASS provider (software as a service)
+  * A cron manager provided by your webhost (see the documentation provided by
     your webhost)
-
++
 If you use one of these methods be sure to disable the _Automated Cron_ module
 (see <<config-uninstall>>).
 
