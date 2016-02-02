@@ -46,8 +46,8 @@ The _Automated Cron_ module may not be suitable for some websites because:
   (which may run for several minutes).
 
 [start=3]
-. Enable and configure the _Automated Cron_ module (see
-  <<extend-module-install>>).
+. Enable and configure the core _Automated Cron_ module (see
+  <<language-enable>> for instructions on installing core modules).
 +
 Once enabled, and after the website sends a page to the web browser, it will
 check how long since cron maintenance tasks have last run, and run them if
