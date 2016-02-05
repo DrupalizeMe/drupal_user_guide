@@ -108,6 +108,8 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
   copyright 2000-2015 by the individual contributors to the
   https://www.drupal.org/documentation[Drupal Community Documentation]
 
+// <<understanding-project>>::
+
 <<understanding-gpl>>::
   Adapted by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] at
   http://pronovix.com[Pronovix] from
@@ -122,8 +124,12 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
   and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
   https://erdfisch.de[erdfisch].
 
+// <<planning-layout>>::
+
 <<planning-data-types>>::
   Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+// <<planning-modular>>::
 
 <<planning-structure>>
   Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
@@ -153,6 +159,9 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
 <<install-dev-sites>>::
   Written by https://www.drupal.org/u/diana.lakatos[Diána Lakatos].
 
+// <<install-dev-making>>::
+// <<install-tools>>::
+
 ==== Basic Site Configuration
 
 <<config-overview>>::
@@ -179,10 +188,19 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
 
 ==== Multilingual Configuration
 
+// <<language-enable>>::
+
 <<language-add>>::
   Written by https://www.drupal.org/u/yrvyn[Leila Tite],
   https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
   https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+<<language-concept>>::
+  Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+<<language-content-config>>
+  Written by https://www.drupal.org/u/lolk [Laura Vass] at
+  http://pronovix.com [Pronovix].
 
 ==== Basic Page Management
 
@@ -202,6 +220,8 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
   Written by https://www.drupal.org/u/chris-dart [Chris Dart]
   and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
 
+// <<content-in-place-edit>>::
+
 <<menu-home>>::
   Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel]
   and https://www.drupal.org/u/jerseycheese[Jack Haas].
@@ -216,7 +236,6 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
   https://www.drupal.org/documentation[Drupal Community Documentation];
   edited by https://www.drupal.org/u/jerseycheese[Jack Haas].
 
-
 <<menu-reorder>>::
   Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel].
 
@@ -229,6 +248,10 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
 <<structure-content-type-delete>>::
   Written and edited by https://www.drupal.org/u/sree[Sree Veturi]
   and https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+<<structure-fields>>::
+    Written by https://www.drupal.org/u/sree[Sree Veturi] and
+    https://www.drupal.org/u/batigolix[Boris Doesborg].
 
 <<structure-reference-fields>>::
   Written by https://www.drupal.org/u/surendramohan[Surendra Mohan].
@@ -249,6 +272,8 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
 
 <<structure-widgets>>::
   Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+// <<structure-form-editing>>::
 
 <<structure-view-modes>>::
   Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
@@ -281,6 +306,10 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
   copyright 2000-2015 by the individual contributors to the
   https://www.drupal.org/documentation[Drupal Community Documentation].
 
+// <<structure-text-formats>>::
+// <<structure-text-format-config>>::
+// <<structure-pathauto>>::
+
 ==== Managing User Accounts
 
 <<user-concept>>
@@ -294,6 +323,8 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
 <<user-admin-account>>
   Written and edited by https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
   and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+// <<user-new-role>>::
 
 <<user-new-user>>
   Adapted by https://www.drupal.org/u/JackProbst[Jack Probst] and
@@ -353,14 +384,14 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
   Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan]
   and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
 
-==== Translating Your Site
+// <<views-create>>::
+// <<views-duplicate>>::
+// <views-block>>::
 
-<<language-concept>>::
-  Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+// ==== Translating Your Site
 
-<<language-content-config>>
-  Written by https://www.drupal.org/u/lolk [Laura Vass] at
-  http://pronovix.com [Pronovix].
+// <<language-content-translate>>::
+// <<language-config-translate>>::
 
 ==== Extending and Customizing Your Site
 
@@ -368,12 +399,17 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
   Written by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] at
   http://pronovix.com/[Pronovix].
 
+// <<extend-module-install>>::
+
 <<extend-theme-find>>::
   Written by https://www.drupal.org/u/diana.lakatos[Diána Lakatos].
 
 <<extend-theme-install>>::
   Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
   https://drupalize.me[Drupalize.Me].
+
+// <<extend-deploy>>::
+// <<extend-config-versions>>::
 
 ==== Security and Maintenance
 
@@ -387,6 +423,9 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
 
 <<security-update-core>>::
   Written by https://www.drupal.org/u/surendramohan[Surendra Mohan].
+
+// <<security-update-module>>::
+// <<security-update-theme>>::
 
 <<security-cron-concept>>::
   Written by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] at
@@ -427,6 +466,10 @@ https://commons.wikimedia.org/wiki/File:Carrots_of_many_colors.jpg[Wikimedia Com
 
 
 //==== Final Thoughts
+
+// <<thoughts-connecting>>::
+// <<thoughts-support>>::
+// <<thoughts-learn-more>>::
 
 ==== Glossary and Appendix
 
