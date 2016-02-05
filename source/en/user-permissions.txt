@@ -5,11 +5,17 @@
 (((Permissions,granting)))
 (((Permissions,denying)))
 (((Roles,changing permissions)))
+(((Security,assigning permissions)))
 
 ==== Goal
 
 By changing the permissions for a role you can grant or deny users the right
 to perform particular actions on the website.
+
+You give the _Vendor_ role the permissions to create Recipes, edit own Recipes
+and Vendor content items, delete own Recipes, use personal contact forms (so
+vendors can contact each other), use Restricted HTML text filter and access in
+place editing.
 
 ==== Prerequisite knowledge
 
@@ -19,32 +25,30 @@ to perform particular actions on the website.
 
 ==== Site prerequisites
 
-* At least one role exists
-  <<user-roles>>
+* The site needs to have a _Vendor_ role. See <<user-roles>>.
 
 ==== Steps
 
-. Select the Roles tab on the People page (admin/people/roles). You will see a
-  list of all the roles that exist on the website.
+. In the _Manage_ administrative menu, navigate to _People_ and then the _Roles_
+tab (admin/people/roles). The _Roles_ page appears.
 
-. From the drop button choose "Edit permissions" for the role whose
-  permissions you would like to change. The permissions page will show all the
-  available actions for the website such as, for example, "post comments" or
-  "Use advanced search". The available permissions depend on the modules that
-  are enabled in the site. Note: some permissions may have security implications, be cautious when when assigning permissions to User Roles
+. Select the _Edit permissions_ option in the drop down for the _Vendor_ role. The _Edit role_ page appears where you show can see all the available actions for the website such as, for example, _Post comments_ or _Use advanced search_. The available permissions depend on the modules that are enabled in the site. Note: some permissions may have security implications, be cautious when when assigning permissions to roles.
 
-. Select the permissions that you wish to grant to a particular role and uncheck
-  the permissions that you wish to deny to a particular role. For example with
-  our farmers market scenario you might want to grant permission to vendors to
-  create recipe content.
+. Check the permissions:
+.. Recipe: Create new content
+.. Recipe: Edit own content
+.. Recipe: Delete own content
+.. Vendor: Edit own content
+.. Use users' personal contact forms
+.. Use the Restricted HTML text format
+.. Access in-place editing
 
-. Click "Save permissions" in the bottom of the page to save the changes.
+. Click _Save permissions_ in the bottom of the page to save the changes.
 
 // For this image a content type Recipe and a role Vendor were created. The
 // image is partial screenshot of the page located at
 // admin/people/permissions/vendor ()
-image:images/user-permissions-check-permissions.png["Granting users with the
-Vendor role the rights to create, delete and edit Recipes",width="100%"]
+image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width=_100%_]
 
 ==== Follow-on tasks
 
@@ -52,6 +56,7 @@ Vendor role the rights to create, delete and edit Recipes",width="100%"]
 assigning roles to, or removing roles from users. <<user-roles>>
 
 ==== Related concepts
+
 * <<user-admin-account>>
 
 ==== Additional resources
