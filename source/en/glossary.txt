@@ -6,7 +6,7 @@
 
 (((Alias,definition)))
 [glossary]
-[[glossary-alias-path]] Alias::
+[[glossary-alias]] Alias::
    A user-friendly name to replace the internal <<glossary-path,path>> that
    the system assigns to a URL on the site. For example, you might assign an
    alias of _about_ to the About page on your site, to replace the internal path
@@ -60,6 +60,11 @@
    displayed as the main content of a page on your site. This is an
    <<glossary-entity-type,entity type>>.
    See <<planning-data-types>> for more information.
+(((Content Management System,definition)))
+[[glossary-content-management-system]] Content Management System (CMS)::
+   A collection of tools designed to allow the creation, modification,
+   organization, search, retrieval and removal of information on a web site.
+   See <<understanding-drupal>> for more information.
 (((Content type,definition)))
 [[glossary-content-type]] Content type::
    An <<glossary-entity-subtype,entity subtype>> for the
@@ -74,11 +79,6 @@
    site, shown in the context where that feature is displayed. Example: a
    link to configure a <<glossary-menu,menu>> that is shown when you hover your
    mouse over the menu. See <<config-overview>> for more information.
-(((Content Management System,definition)))
-[[glossary-content-management-system]] Content Management System (CMS)::
-   A collection of tools designed to allow the creation, modification,
-   organization, search, retrieval and removal of information on a web site.
-   See <<understanding-drupal>> for more information.
 (((Contributed,definition)))
 [[glossary-contributed]] Contributed::
    <<glossary-module,Modules>>, <<glossary-theme,themes>>, and
@@ -170,6 +170,7 @@
    license. See also <<glossary-gpl,GPL>>. See <<understanding-project>> for
    more information.
 (((GPL,definition)))
+(((GNU Public License,definition)))
 [[glossary-gpl]] GPL::
    Acronym for the _GNU General Public License_, a non-commercial software
    license. All software downloaded from
@@ -208,7 +209,7 @@
    on the site, which can be a visitor-facing page or an administrative
    page. For example, the internal URL for the About page on your site might be
    _http://example.com/node/5_, and in this case, the path is _node/5_. See also
-   <<glossary-alias-path,alias>>. See <<content-paths>> for more information.
+   <<glossary-alias,alias>>. See <<content-paths>> for more information.
 (((Permission,definition)))
 [[glossary-permission]] Permission::
    The ability to perform some action on the site, such as editing
@@ -256,6 +257,10 @@
    See also <<glossary-content,Content>> and
    <<glossary-configuration,Configuration>>.  See <<understanding-data>> for
    more information.
+(((Taxonomy,definition)))
+[[glossary-taxonomy]] Taxonomy::
+   The process of classifying <<glossary-content,content>>. See
+   <<structure-taxonomy>> for more information.
 (((Taxonomy term,definition)))
 [[glossary-taxonomy-term]] Taxonomy term::
    A term used to classify <<glossary-content,content>>, such as a tag or
@@ -267,7 +272,7 @@
    happens to user-entered text before it is shown in the browser. This might
    include stripping or limiting HTML tags, or turning URLs into links. See
    <<structure-text-formats>> for more information.
-(((Theme, definition)))
+(((Theme,definition)))
 [[glossary-theme]] Theme::
    Software and asset files (images, CSS, PHP code, and/or templates) that
    determine the style and layout of the site. The Drupal project distinguishes
@@ -332,6 +337,12 @@
    <<structure-taxonomy>> for more information.
 [[glossary-widget]] Widget:
    See <<glossary-field-widget,Field widget>>.
+(((Wizard,definition)))
+[[glossary-wizard]] Wizard::
+   A web form that allows you to fill in a few values, and creates something
+   with sensible defaults based on the values you chose. For example, there
+   are wizards for creating <<glossary-view,views>> of different types; see
+   <<views-create>> for details.
 (((WYSIWYG,definition)))
 [[glossary-wysiwyg]] WYSIWYG::
    Acronym for What You See is What You Get, meaning a method for editing
