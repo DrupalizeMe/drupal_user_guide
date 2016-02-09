@@ -1,83 +1,58 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[understanding-project]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: The Drupal Project
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
+=== Concept: The Drupal Project
 
+(((Drupal project,overview)))
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+<<understanding-drupal>>
 
-Remove this placeholder text.
+==== What is Free and Open Source Software?
 
+Free and Open Source Software (FOSS) is software that is developed by a
+community of people, released under a non-commercial license, and whose _source
+code_ (the program files that make up the software) is freely available.
 
-==== What is a ...?
+==== What is the Drupal project?
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+The Drupal project is a FOSS project whose purpose is to develop the core Drupal
+content management system software, as well as add-on modules, additional
+themes, translations, documentation, and special-purpose distributions. The
+people who contribute their time and money to the Drupal project come from all
+over the world, and form a diverse community that comes together for this common
+purpose.
 
-Remove this placeholder text.
+The community encompasses many smaller groups, who form for purposes
+such as developing a particular piece of Drupal-related software, writing
+documentation, maintaining the security of the Drupal software, translating
+Drupal software into a particular language, using Drupal for some specific
+purpose, and meeting in person in a particular geographical area.
 
+For more on how you can connect to and communicate with the world-wide
+community, see <<thoughts-connecting>> and <<thoughts-support>>.
+
+==== What is the Drupal Association?
+
+The https://assoc.drupal.org[Drupal Association] is a non-profit organization
+dedicated to supporting the Drupal project and community. Its main functions
+are:
+
+* Putting on large conventions around the world
+* Maintaining the Drupal.org web sites and the servers that they run on
+* Promoting Drupal as a web platform
+* Supporting Drupal education and training
+* Providing grants to the Drupal community in support of its mission
+* Raising funds for these purposes
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
-
-Remove this placeholder text.
-
+* <<understanding-gpl>>
+* <<security-concept>>
+* <<thoughts-connecting>>
+* <<thoughts-support>>
 
 ==== Additional resources
 
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+* https://www.drupal.org/governance[Drupal project governance]
+* https://www.drupal.org/dcoc[Drupal Code of Conduct]
