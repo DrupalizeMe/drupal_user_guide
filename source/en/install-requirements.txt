@@ -16,81 +16,62 @@
 (((Drupal server requirements)))
 (((Disk space)))
 
+// ==== Prerequisite knowledge
+
+==== What are the requirements for running Drupal?
+
 To install and run Drupal your web server must meet certain minimum
 requirements.
 
-// ==== Prerequisite knowledge
-
-// Note: The "What is a ..." normal template section does not really
-// make sense for this topic.
-//==== What is a ...?
-
-==== Disclaimer
-
-Note that the minimum requirements of Drupal core can be subject to
-change, given an important enough reason. Where such a change is
-likely to have broad impact on Drupal's user base, every effort will
-be made to communicate these decisions ahead of time.
-
-==== Disk space
+===== Disk space
 
 A minimum installation requires 15 Megabytes. 60 MB is needed for a
 website with many contributed modules and themes installed. Keep in
 mind you need much more for the database, files uploaded by the users,
 media, backups and other files.
 
-==== Web server
+===== Web server
 
-Apache, Nginx, Hiawatha, or Microsoft IIS
+Apache (Recommended)::
+  Apache is the most commonly used web server for Drupal. Drupal will
+  work on Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have
+  the mod_rewrite module installed and enabled.
+  The Apache Virtualhost configuration must contain the directive
+  AllowOverride All to allow Drupal's .htaccess file to be used.
+Nginx::
+  Nginx is a commonly used web server that focuses on high concurrency,
+  performance and low memory usage. Drupal will work on Nginx 1.1 or
+  greater hosted on UNIX/Linux, OS X, or Windows. The
+  ngx_http_rewrite_module must be installed and enabled.
+Hiawatha::
+  Hiawatha is a web server with a strong focus on security. It also aims
+  at being easy to use and being lightweight. Research performed by
+  independent researchers proves that Hiawatha offers a performance
+  comparable to other web servers under normal conditions, but much
+  better while under attack. URL Toolkit must be installed and
+  configured to rewrite URLs.
+Microsoft IIS::
+  Microsoft IIS is a web server and set of feature extension modules for
+  use with Microsoft Windows. Drupal will work with IIS 5, IIS 6, or IIS
+  7 if PHP is configured correctly.
+  Because clean URLs are required in Drupal 8, you may need to use a
+  third party product. For IIS 7 you can use the Microsoft URL Rewrite
+  Module or a third party solution.
 
-===== Apache (Recommended)
+===== Database
 
-Apache is the most commonly used web server for Drupal. Drupal will
-work on Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have
-the mod_rewrite module installed and enabled.
+Use one of the following databases:
 
-The Apache Virtualhost configuration must contain the directive
-AllowOverride All to allow Drupal's .htaccess file to be used.
-
-===== Nginx
-
-Nginx is a commonly used web server that focuses on high concurrency,
-performance and low memory usage. Drupal will work on Nginx 1.1 or
-greater hosted on UNIX/Linux, OS X, or Windows. The
-ngx_http_rewrite_module must be installed and enabled.
-
-===== Hiawatha
-
-Hiawatha is a web server with a strong focus on security. It also aims
-at being easy to use and being lightweight. Research performed by
-independent researchers proves that Hiawatha offers a performance
-comparable to other web servers under normal conditions, but much
-better while under attack. URL Toolkit must be installed and
-configured to rewrite URLs.
-
-===== Microsoft IIS
-
-Microsoft IIS is a web server and set of feature extension modules for
-use with Microsoft Windows. Drupal will work with IIS 5, IIS 6, or IIS
-7 if PHP is configured correctly.
-
-Because clean URLs are required in Drupal 8, you may need to use a
-third party product. For IIS 7 you can use the Microsoft URL Rewrite
-Module or a third party solution.
-
-==== Database
-
-MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
 InnoDB-compatible primary storage engine.
 
-PostgreSQL - 9.1.2 or higher.
+* PostgreSQL - 9.1.2 or higher.
 
-SQLite - 3.4.2 or higher.
+* SQLite - 3.4.2 or higher.
 
-==== PHP
+===== PHP
 
 PHP 5.5.9 or higher.
-
 
 //==== Related topics
 

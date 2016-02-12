@@ -9,15 +9,12 @@
 
 Install Drupal and create the admin account by running the included installer.
 
-
 ==== Prerequisite knowledge
 
-<<install-requirements>>
-<<install-prepare>>
-
+* <<install-requirements>>
+* <<install-prepare>>
 
 //==== Site prerequisites
-
 
 ==== Steps
 
@@ -26,95 +23,97 @@ installer. This is a one time process that will walk you through some basic
 configuration necessary to get your site up and running.
 
 . Choose a language using the select list on the first page of the installer.
-  We'll use English for our site. You could optionally choose from any of the
-  other listed languages. The language files for the chosen language will be
-  downloaded and installed so that the rest of the installation process can be
-  finished the the chosen language. After choosing a language click _Save and
-  continue_.
-
+We'll use English for our site. You could optionally choose from any of the
+other listed languages. The language files for the chosen language will be
+downloaded and installed so that the rest of the installation process can be
+finished the the chosen language. After choosing a language click _Save and
+continue_.
++
 // Go to the first step of the installer
-image:images/install-run-1.png["Choose a language"]
+image:images/install-run-1.png["Choose a language",width="100%"]
 
+[start=2]
 . Choose an installation profile. Installation profiles provide site features
-  and functions for a specific type of site as a single download containing
-  Drupal core, contributed modules, themes, and pre-defined configuration. Core
-  contains two installation profiles to choose from. Choose the _Standard_
-  profile and click _Save and continue_.
-
+and functions for a specific type of site as a single download containing
+Drupal core, contributed modules, themes, and pre-defined configuration. Core
+contains two installation profiles to choose from. Choose the _Standard_
+profile and click _Save and continue_.
++
 // Go to the choose an installation profile step of the installer
-image:images/install-run-2.png["Choose an installation profile"]
+image:images/install-run-2.png["Choose an installation profile",width="100%"]
 
+[start=3]
 . The next step in the installer will verify that your system meets the minimum
-  requirements. If it does not, you'll be presented with an outline of what
-  needs to be corrected in order to proceed. If it does, the installer will
-  automatically advance to the next step.
+requirements. If it does not, you'll be presented with an outline of what
+needs to be corrected in order to proceed. If it does, the installer will
+automatically advance to the next step.
 
 . Database configuration. Before you can complete this step you'll need to
-  create new database on your database server, and then obtain the database name
-  username and password. Fill in the correct information for your environment:
-
-  [width="100%",frame="topbot",options="header"]
-  |================================
-  |Field name | Value
-  |Database name | drupal8
-  |Database username | databaseUsername
-  |Database password | ************
-  |================================
-
+create new database on your database server, and then obtain the database name
+username and password. Fill in the correct information for your environment.
+Then click _Save and continue_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Value
+|Database name | drupal8
+|Database username | databaseUsername
+|Database password | ************
+|================================
++
 // Go to the database configuration step of the installer
-image:images/install-run-3.png["Database configuration form"]
+image:images/install-run-3.png["Database configuration form",width="100%"]
 
-  Then click _Save and continue_.
-
+[start=5]
 . The next step will display a progress bar under the heading _Installing
-  Drupal_. After the installer has completed it will automatically advance to
-  the next step.
-
+Drupal_. After the installer has completed it will automatically advance to
+the next step.
++
 // Go to the page displaying the installation progress bar
-image:images/install-run-4.png["Installation progress bar"]
+image:images/install-run-4.png["Installation progress bar",width="100%"]
 
+[start=6]
 . The final step is to configure some basic information about your new site.
-  Note that the user account you create in this step is the site's admin
-  account. See <<user-admin-account>> for important information about this
-  unique account. You can safely name this account "admin", and make sure chose
-  a secure and unique password.
-
-  Fill in the form with the following information:
-
-  [width="100%",frame="topbot",options="header"]
-  |================================
-  |Field name | Value
-  |Site name | Anytown Farmers Market
-  |Site email address | info@example.com
-  |Username | admin
-  |Password | ************
-  |Confirm password | ************
-  |Email address | admin@example.com
-  |================================
-
-  The remaining fields can likely be left at their default values.
-
+Note that the user account you create in this step is the site's admin
+account. See <<user-admin-account>> for important information about this
+unique account. You can safely name this account "admin", and make sure chose
+a secure and unique password.
++
+Fill in the form with the following information:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Value
+|Site name | Anytown Farmers Market
+|Site email address | info@example.com
+|Username | admin
+|Password | ************
+|Confirm password | ************
+|Email address | admin@example.com
+|================================
++
+The remaining fields can likely be left at their default values.
++
 // Go to the basic site information configuration step of the installer
-image:images/install-run-5.png["Configuration form"]
+image:images/install-run-5.png["Configuration form",width="100%"]
 
-Click the _Save and continue_ button.
+[start=7]
+. Click the _Save and continue_ button.
 
 . You will be redirected to the front page of your new site and you should see
-  the message _Congratulations, you installed Drupal!_ displayed at the top of
-  the page.
-
+the message _Congratulations, you installed Drupal!_ displayed at the top of
+the page.
++
 // Front page of Drupal after the installer just completed showing the success message
-image:images/install-run-6.png["Installation success"]
+image:images/install-run-6.png["Installation success",width="100%"]
 
 //==== Follow-on tasks
-
 
 ==== Related concepts
 
 * <<install-dev-sites>>
 * <<install-tools>>
 
-
 ==== Additional resources
 
-* Create A Database - https://www.drupal.org/documentation/install/create-database
+https://www.drupal.org/documentation/install/create-database[Create A Database]

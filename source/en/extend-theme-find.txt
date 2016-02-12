@@ -24,11 +24,11 @@ Find and evaluate themes on Drupal.org.
 ==== Steps
 
 . Go to https://www.drupal.org, and navigate to _Download & Extend > Themes_
-  (https://www.drupal.org/project/project_theme).
+(https://www.drupal.org/project/project_theme).
 
 . Filter your search using the categories on the theme search page.
-
-.Fields and values
+For example, you might use these filters:
++
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name |Explanation |Example value
@@ -39,30 +39,35 @@ Find and evaluate themes on Drupal.org.
 |Search Themes |Search by search term in the theme's description.|-
 |Sort by |Order your search results by criteria like _Most installed_ (popular themes that many sites use) or _Last release_ (date of latest version released). |Most installed
 |================================
-
++
 // This screenshot was taken from https://www.drupal.org/project/project_theme with the example values selected.
 image:images/extend-theme-find_theme_finder.png["Filters on the theme search page on Drupal.org"]
 
 [start=3]
 . Click on _Search_.
-
++
 // This screenshot was taken from the search results after clicking on Search.
 image:images/extend-theme-find_search_results.png["The search results page on Drupal.org"]
 
 [start=4]
 . To further evaluate a theme, click on its title in the list of search results
-  to visit its project page. Some aspects to pay attention to when evaluating
-  themes:
+to visit its project page.
+
+Some aspects to pay attention to when evaluating themes:
 
 * Introduction: The description of the theme on its project page should be clear
-  and useful. A screenshot of the theme helps your evaluation as well.
+and useful. A screenshot of the theme helps your evaluation as well.
+
 * Releases: The theme should be available for your version of Drupal. Pay
-  attention to the color-coding: Themes marked with green are recommended to be
-  used on live sites, the ones marked with yellow should be carefully evaluated
-  before use, and the ones marked with red are only recommended for testing.
+attention to the color-coding: Themes marked with green are recommended to be
+used on live sites, the ones marked with yellow should be carefully evaluated
+before use, and the ones marked with red are only recommended for testing.
+
 * Project information: Check the theme's maintenance and development status, and
-  how frequently it's downloaded and installed.
+how frequently it's downloaded and installed.
+
 * Issues: See if there are any open issues, potential problems with the theme.
+
 * Resources: Check if the theme has documentation.
 
 ==== Follow-on tasks
@@ -70,4 +75,5 @@ image:images/extend-theme-find_search_results.png["The search results page on Dr
 * <<extend-theme-install>>
 
 //==== Related concepts
+
 //==== Additional resources

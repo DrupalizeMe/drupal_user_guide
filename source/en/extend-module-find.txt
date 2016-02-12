@@ -22,14 +22,14 @@ Find and evaluate modules on Drupal.org or Drupalmodules.com.
 
 ==== Steps
 
-**Finding and evaluating modules on Drupal.org**
+===== Finding and evaluating modules on Drupal.org
 
 . Go to https://www.drupal.org, and navigate to _Download & Extend > Modules_
-  (https://www.drupal.org/project/project_module).
+(https://www.drupal.org/project/project_module).
 
 . Filter your search using the categories on the module search page.
-
-.Fields and values
+Fill in the fields as shown below.
++
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name |Explanation |Example value
@@ -48,51 +48,57 @@ image:images/extend-module-find_module_finder.png["Filters on the module search 
 
 [start=3]
 . Click on _Search_.
-
++
 // This screenshot was taken from the search results after clicking on Search.
 image:images/extend-module-find_search_results.png["The search results page on Drupal.org"]
 
 [start=4]
 . To further evaluate a module, click on its title in the list of search results
-  to visit its project page.
+to visit its project page.
 
 Some aspects to pay attention to when evaluating modules:
 
 * Project description: The description of the module on its project page should
-  be clear and useful. You should get an idea of its features and requirements.
+be clear and useful. You should get an idea of its features and requirements.
+
 * Maintenance status: If a module is _Actively maintained_, you can be sure that
-  there will be security updates, bug fixes and feature improvements provided on
-  a regular basis. However, if the module is unmaintained or abandoned, you
-  shouldn't use it.
+there will be security updates, bug fixes and feature improvements provided on
+a regular basis. However, if the module is unmaintained or abandoned, you
+shouldn't use it.
+
 * Development status: _Under active development_ means you can expect new
-  features to be added to the project, but some aspects (e.g. API) may still
-  change. _Maintenance fixes only_ means that the project is considered feature
-  complete.
+features to be added to the project, but some aspects (e.g. API) may still
+change. _Maintenance fixes only_ means that the project is considered feature
+complete.
+
 * Reported installs, downloads: You can see how many people have downloaded and
-  how many sites use the module. If it's only used by a few sites, it might be a
-  unique solution that not many people need, or it might be a warning sign that
-  you shouldn't use it either.
+how many sites use the module. If it's only used by a few sites, it might be a
+unique solution that not many people need, or it might be a warning sign that
+you shouldn't use it either.
+
 * Maintainers: When was the last commit (the last time someone updated something
-  on the module) or last release (new version)? If the project has few open
-  issues, a long time since commits/releases might be appropriate, but if it has
-  a lot of open issues and there are no commits/releases, that would be a clue
-  that it might be abandoned.
+on the module) or last release (new version)? If the project has few open
+issues, a long time since commits/releases might be appropriate, but if it has
+a lot of open issues and there are no commits/releases, that would be a clue
+that it might be abandoned.
+
 * Issues: See if there are any open issues, potential problems with the
-  module. Check the _Statistics_ to see how regularly issues are responded to.
+module. Check the _Statistics_ to see how regularly issues are responded to.
+
 * Resources: Check if the module has documentation or a README file, that can
-  help you install, configure, explore, and test it.
+help you install, configure, explore, and test it.
 
 // This screenshot was taken from https://www.drupal.org/project/google_analytics with the areas described in the above list annotated.
 image:images/extend-module-find_project_info.png["Information on the project page to look for when evaluating a module"]
 
-**Finding modules on Drupalmodules.com**
+===== Finding modules on Drupalmodules.com
 
 . Go to http://drupalmodules.com/ and navigate to _Module Finder_
-  (http://drupalmodules.com/module-finder).
+(http://drupalmodules.com/module-finder).
 
 . Filter your search using the categories in the Module Finder.
-
-.Fields and values
+Fill in the fields as shown below.
++
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name |Explanation |Example value
@@ -101,20 +107,20 @@ image:images/extend-module-find_project_info.png["Information on the project pag
 |Title |Search in the module's title.|-
 |Body |Search in the module's description.|-
 |================================
-
++
 // This screenshot was taken from the Module Finder on http://drupalmodules.com/module-finder.
 image:images/extend-module-find_drupalmodules_module_finder.png["The Module Finder on Drupalmodules.com"]
 
 [start=3]
 . Search results are sorted by module popularity.
-
++
 // This screenshot was taken from the search results on http://drupalmodules.com/module-finder.
 image:images/extend-module-find_search_results_dm.png["The search results on Drupalmodules.com"]
 
-
 ==== Follow-on tasks
 
-* <<extend-module-install>>
+<<extend-module-install>>
 
 //==== Related concepts
+
 //==== Additional resources

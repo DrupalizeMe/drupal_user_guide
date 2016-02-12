@@ -2,24 +2,20 @@
 
 === Downloading and Installing a Theme from Drupal.org
 
-((Extend,themes))
+(((Extend,themes)))
 (((Themes,downloading)))
 (((Themes,enabling)))
 (((Themes,installing)))
-
 
 ==== Goal
 
 Download and install a theme from Drupal.org.
 
-
 ==== Prerequisite knowledge
 
-* <<extend-theme-find>>
-
+<<extend-theme-find>>
 
 //==== Site prerequisites
-
 
 ==== Steps
 
@@ -34,56 +30,55 @@ If you have the Update Manager module installed, the first part (download,
 expand, upload) can be done automatically. Here are the steps:
 
 . After locating a theme on drupal.org copy the link for the .tar.gz download of
-  the theme that you want to install.
+the theme that you want to install.
 
 . In the _Manage_ administrative menu on your site, navigate to _Appearance_
-  (admin/theme) and then click the _Install new theme_ button
-  (admin/theme/install).
+(admin/theme) and then click the _Install new theme_ button
+(admin/theme/install).
 
 . Paste the link to the .tar.gz file for the theme you want to install into the
-  _Install from a URL_ field. Then click the _Install_ button.
-
+_Install from a URL_ field. Then click the _Install_ button.
++
 // Go to page where you can copy/paste a link for installing a theme and
 // screenshot the form on that page.
-image:images/extend-theme-install-1.png["Install a theme"]
+image:images/extend-theme-install-1.png["Install a theme",width="100%"]
 
 [start=4]
 . This will take you to the _Update manager_ which will download the theme and
-  display a success message. The message should read _Installation was completed
-  successfully._, and underneath it will list the theme you've just installed.
-
+display a success message. The message should read _Installation was completed
+successfully._, and underneath it will list the theme you've just installed.
++
 // Screenshot of the page displaying a success message after installing a theme
 // with the update manager.
-image:images/extend-theme-install-2.png["Update manager success message"]
+image:images/extend-theme-install-2.png["Update manager success message",width="100%"]
 
 [start=5]
 . Under _Next steps_ click the _Install newly added themes_ link. This will take
-  you back to the _Appearance_ page (admin/appearance) in the _Manage_
-  administrative menu.
-
+you back to the _Appearance_ page (admin/appearance) in the _Manage_
+administrative menu.
++
 // Screenshot of the appearance page, with newly added theme ready to be
 // installed.
-image:images/extend-theme-install-3.png["Uninstalled themes on Appearance page"]
+image:images/extend-theme-install-3.png["Uninstalled themes on Appearance page",width="100%"]
 
 [start=6]
 . If you didn't use the _Update manager_, and instead downloaded the theme
-  manually you can start with this step.
-
-  Any themes which have been download, but not yet installed, are listed under
-  the _Unisntalled themes_. To enable the new theme click the _Install and set
-  as default_ link. This will enable the new theme, and display a message
-  letting you know it is now the default theme.
+manually you can start with this step.
++
+Any themes which have been download, but not yet installed, are listed under
+the _Unisntalled themes_. To enable the new theme click the _Install and set
+as default_ link. This will enable the new theme, and display a message
+letting you know it is now the default theme.
 
 . All non-administrative pages on the site will now use this new theme.
 
 
-//==== Follow-on tasks
+==== Follow-on tasks
 
-==== Related concepts
-
-* <<extend-theme-find>>
 * <<extend-module-find>>
 * <<extend-module-install>>
+
+// ==== Related concepts
 
 
 //==== Additional resources

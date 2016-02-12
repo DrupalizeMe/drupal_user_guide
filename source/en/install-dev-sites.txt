@@ -22,20 +22,23 @@ the new features you developed have proved to be safe to go live.
 An example workflow:
 
 * **Local environment**: The development process starts with developers working
-  on new features, bug fixes, theming, configuration, etc. in their local
-  environment.
+on new features, bug fixes, theming, configuration, etc. in their local
+environment.
+
 * **Development site**: Developers push the changes they've been working on to
-  the development site. For a team of more than one developer, version control
-  is usually used. Git is a version control system that tracks your files for
-  any changes. You can then commit those changes to a repository. Using Git
-  allows team members to work on the same site without overriding each others'
-  work. It also makes it possible to easily roll back to previous stages of the
-  development.
+the development site. For a team of more than one developer, version control
+is usually used. Git is a version control system that tracks your files for
+any changes. You can then commit those changes to a repository. Using Git
+allows team members to work on the same site without overriding each others'
+work. It also makes it possible to easily roll back to previous stages of the
+development.
+
 * **Staging site**: The staging site can be used for testing, or presenting the
-  changes to the client for approval. QA (Quality Assurance) and UAT (User
-  Acceptance Testing) are most often carried out on the staging site. It is
-  recommended to have live content on both the development and staging sites, so
-  that you can test how the new features will work with the existing content.
+changes to the client for approval. QA (Quality Assurance) and UAT (User
+Acceptance Testing) are most often carried out on the staging site. It is
+recommended to have live content on both the development and staging sites, so
+that you can test how the new features will work with the existing content.
+
 * **Production site**: The live site on the web available to visitors.
 
 Based on the project's size, scope, requirements, or stakeholders, stages from
@@ -50,4 +53,4 @@ acceptance processes.
 
 ==== Additional resources
 
-* https://www.drupal.org/node/991716[Introduction to Git]
+https://www.drupal.org/node/991716[Introduction to Git]

@@ -8,10 +8,10 @@
 * Choose the best option for your situation
 * Handle any necessary pre-requisites for your chosen option
 
-
 ==== Prerequisite knowledge
-<<install-requirements>>
 
+* <<install-requirements>>
+* <<install-tools>>
 
 //==== Site prerequisites
 
@@ -19,7 +19,8 @@
 
 There are several options for installing Drupal. You can use an external service
 that provides you with an automated installation, or you can choose to install
-Drupal yourself.
+Drupal yourself on your own computer or server. If you install it yourself, you
+can use Drush or the web installer.
 
 ===== Automated installation on an external server
 
@@ -34,35 +35,42 @@ Install Drupal at your hosting provider::
 
 See: https://www.drupal.org/supporters/hosting[Recommended Drupal hosting providers]
 
-===== Install Drupal on your own
+===== Install using Drush
 
-You can install Drupal on your own computer or server via Drush (Drupal's
-command-line tool), or manually.
+Type the following at the Drush command line:
 
-Installing via Drush::
-  The Drush syntax to install Drupal is:
+----
+drush dl drupal --drupal-project-rename=example
+cd example
+drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-  name=Example
+----
 
-  ----
-  drush dl drupal --drupal-project-rename=example
-  cd example
-  drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-  name=Example
-  ----
+For additional information refer to the
+http://www.drush.org/en/master[Drush documentation].
 
-For additional information refer to the http://www.drush.org/en/master[Drush
-documentation].
+===== Install using the web installer
 
-Installing Drupal Manually::
-  To install Drupal manually, you will need to:
+To install Drupal manually, you will need to:
 
-  . Create a database.
-  . Get a full-access database user.
-  . Download Drupal core or the Drupal distribution you would like to use.
-  . Place the files in the web root.
-  . Make sites/default writeable.
-  . Create the files sites/default/settings.php and sites/default/services.yml and make sure these are writeable.
+. Create a database.
 
-==== Related concepts
-<<install-tools>>
+. Get a full-access database user.
+
+. Download Drupal core or the Drupal distribution you would like to use.
+
+. Place the files in the web root.
+
+. Make sites/default writeable.
+
+. Create the files sites/default/settings.php and sites/default/services.yml and
+make sure these are writeable.
+
+. Run the installer. See <<install-run>>.
+
+// ==== Follow-on tasks
+
+// ==== Related concepts
 
 ==== Additional resources
+
 http://www.drush.org[Drush]
