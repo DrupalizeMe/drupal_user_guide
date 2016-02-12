@@ -4,7 +4,6 @@
 
 (((Modules,uninstalling)))
 
-
 ==== Goal
 
 Leaving the modules installed that are unused by your Drupal application (in our
@@ -15,7 +14,7 @@ using Drush as well as site administer UI interface.
 
 ==== Prerequisite knowledge
 
-* <<understanding-modules>>
+<<understanding-modules>>
 
 ==== Site prerequisites
 
@@ -25,16 +24,15 @@ running. If not installed yet, we recommend you to refer the guide at
 
 ==== Steps
 
-Following are the steps you should perform when you intend to use *Drupal
-interface* to uninstall one or more modules:
+===== Uninstalling using the user interface
 
 . In the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ tab
-  (admin/modules/uninstall) wherein you should find the list of modules that are
-  ready to be uninstalled.
+(admin/modules/uninstall) wherein you should find the list of modules that are
+ready to be uninstalled.
 
 . Enable the checkbox corresponding to one or more modules you wish to disable
-  (e.g., _Search_ module), and click the _Uninstall_ button at the bottom of the
-  page, as demonstrated in the following screenshot:
+(e.g., _Search_ module), and click the _Uninstall_ button at the bottom of the
+page, as demonstrated in the following screenshot:
 
 //Login to your Drupal 8 site as an administrator and in the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ tab.
 image:images/config-uninstall_searchModUninstall.png["Uninstalling module",width="100%"]
@@ -50,20 +48,19 @@ dependent module(s) and functionality.
 
 [start=3]
 . Step 2 will prompt you to confirm the module uninstall request wherein click
-  on the _Uninstall_ button, as demonstrated in the following screenshot:
+on the _Uninstall_ button, as demonstrated in the following screenshot:
 
 //Login to your Drupal 8 site as an administrator; then in the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ tab, select _search_ module, and click the _Uninstall_ button.
 image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
 
-If you intent to use *Drush* to perform module uninstallation process, follow
-the below steps:
+===== Uninstalling using Drush
 
 . Open the Drush command line window and navigate to the base directory of your
-  Drupal application.
+Drupal application.
 
 . Run the following Drush command to initiate the uninstall request (for
-  instance, _search_ module):
-
+instance, _search_ module):
++
 ----
 drush pm-uninstall search
 ----
@@ -73,8 +70,8 @@ drush pm-uninstall search
 * <<install-tools>>
 * <<prevent-cache-clear>>
 * We also *recommend* you to follow the discussed guidelines in order to
-  uninstall other modules such as _Comment_ and _History_ that are not required
-  in the site.
+uninstall other modules such as _Comment_ and _History_ that are not required
+in the site.
 
 //==== Related concepts
 

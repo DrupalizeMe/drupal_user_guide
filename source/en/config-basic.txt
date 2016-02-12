@@ -19,37 +19,39 @@ _Default time zone_, and so on.
 
 ==== Prerequisite knowledge
 
-* <<config-overview>>
+<<config-overview>>
 
 //==== Site prerequisites
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-  _Site information_ (admin/config/system/site-information) to update basic
-  settings, such as the _Site name_, _Slogan_, _Email address_ or the
-  _Default front page_ path.
+===== Configuring the basic site information
 
-. The very first thing which you may like to update is the site name: You can
-  enter the desired name of the site in the _Site name_ field (in the
-  _Site details_ section).
-
-. The site slogan can be updated by entering the desired text in the _Slogan_
-  field.
-
-. The site's administrative email address (which would be used as the 'From'
-  address in automated e-mail communications, such as registrations, password
-  resets, etc) can be entered in the _Email address_ field.
-
-. Site wide error pages for 403 or 404 errors can be defined in the respective
-  fields provided in the _Error pages_ section.
-
-Please refer to the image below, to understand the steps:
+Refer to the image below to understand these steps.
 
 // To create this image, install Drupal 8, navigate to
 // admin/config/system/site-information and take the screenshot.
 image:images/config-basic-SiteInfo.png["Site Information",width="100%"]
 
+. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
+_Site information_ (admin/config/system/site-information) to update basic
+settings, such as the _Site name_, _Slogan_, _Email address_ or the
+_Default front page_ path.
+
+. The very first thing which you may like to update is the site name: You can
+enter the desired name of the site in the _Site name_ field (in the
+_Site details_ section).
+
+. The site slogan can be updated by entering the desired text in the _Slogan_
+field.
+
+. The site's administrative email address (which would be used as the 'From'
+address in automated e-mail communications, such as registrations, password
+resets, etc) can be entered in the _Email address_ field.
+
+. Site wide error pages for 403 or 404 errors can be defined in the respective
+fields provided in the _Error pages_ section.
++
 .Fields and values
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -57,36 +59,40 @@ image:images/config-basic-SiteInfo.png["Site Information",width="100%"]
 |Site name|Name of the site to be displayed|Anytown Farmers Market
 |Slogan|Sitewide slogan to be displayed|Farm Fresh Food
 |Email address|Sitewide email address to be displayed|info@example.com
-
 |================================
 
-[start=5]
 . Once all the above mentioned fields are updated, click the
-  _Save configuration_ button to see the changes applied to the site.
+_Save configuration_ button to see the changes applied to the site.
 
-Now, let us see how to update the site's default country and time zone.
+===== Configuring the country and time zone
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-  _Regional and Language_ > _Regional settings_
-  (admin/config/regional/settings). Here you can see the various settings
-  related to the default country and time zone (see the screenshot below).
-. Choose the required country from the _Default country_ drop down in the
-  'Locale' section.
-. You can also change the _First day of week_ for your region.
-. In the _Time zones_ section, there is a drop down with which you can change
-  the sitewide _Default time zone_.
-
-Please refer the below image to understand the steps:
+Refer to the image below to understand these steps.
 
 // To create this image, install Drupal 8, navigate to
 // admin/config/regional/settings and take the screenshot.
 image:images/config-basic-TimeZone.png["Time Zones",width="100%"]
 
+. In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Regional and Language_ > _Regional settings_
+(admin/config/regional/settings). Here you can see the various settings
+related to the default country and time zone (see the screenshot below).
+
+. Choose the required country from the _Default country_ drop down in the
+'Locale' section.
+
+. You can also change the _First day of week_ for your region.
+
+. In the _Time zones_ section, there is a drop down with which you can change
+the sitewide _Default time zone_.
+
+
 [start=5]
 . Once all the above mentioned fields are updated, click the
-  _Save configuration_ button to see the changes applied to the site.
+_Save configuration_ button to see the changes applied to the site.
+
+// ==== Follow-on tasks
+// ==== Related concepts
 
 ==== Additional resources
 
-* https://www.drupal.org/node/1896670[Getting started with Drupal 8
-  administration]
+https://www.drupal.org/node/1896670[Getting started with Drupal 8 administration]

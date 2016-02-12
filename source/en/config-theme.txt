@@ -1,5 +1,4 @@
 [[config-theme]]
-//@todo: fix indenting on paragraphs after numbered items.
 
 === Configuring the Theme
 
@@ -20,71 +19,76 @@ will be using the visual guidelines for our farmers market site.
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _Appearance_
-  (/admin/appearance).
+(/admin/appearance).
 
 . Under "Installed Themes" you will find "Bartik" as your "(default
-  theme)". Under the "Bartik (default theme)" select "Settings".
+theme)". Under the "Bartik (default theme)" select "Settings".
++
 //To create this image: download Drupal 8.0.0-beta13 and select "Appearance". I captured the "Installed themes" title along with the listing of the default theme.
 image:images/config-theme_bartik_settings.png["screen capture of default theme, Bartik",width="100%"]
 
 [start=3]
 . Under "Color scheme" click inside each color build box and type the proper
-    color codes you would like to add. For this example, we are using the
-    following builds:
-
-  Header background top: #7db84a (green)
-  Header background bottom: #2a3524 (dark green)
-  Main background: #ffffff (white)
-  Sidebar background: #f8bc65 (light orange)
-  Sidebar borders: #e96b3c (orange)
-  Footer background: #2a3524 (dark green)
-  Title and slogan: #ffffff (white)
-  Text color: #000000 (black)
-  Link color: #2a3524 (dark green)
-
+color codes you would like to add. For this example, we are using the
+following colors:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Area | Color
+|Header background top| #7db84a (green)
+|Header background bottom| #2a3524 (dark green)
+|Main background| #ffffff (white)
+|Sidebar background| #f8bc65 (light orange)
+|Sidebar borders| #e96b3c (orange)
+|Footer background| #2a3524 (dark green)
+|Title and slogan| #ffffff (white)
+|Text color| #000000 (black)
+|Link color| #2a3524 (dark green)
+|================================
++
 Please note: when creating your own color selections, you may use the color
 wheel to the right to select colors, and the web color codes will be added for
 you.
+
 //To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Edit color themes to match the farmer's market scenario and capture the updated settings along with the title "Color scheme"
 image:images/config-theme_color_scheme.png["screen capture of the updated color specifications in the Bartik color theme",width="100%"]
 
 [start=4]
 . Under "Logo Image Settings" uncheck the box next to "Use the default logo
-  supplied by the theme."
+supplied by the theme."
 
-[start=5]
 . Under "Upload logo image" select "Choose file" and locate the logo file you
-  want to upload to your site. Note: you can also set a universal logo for all
-  themes under _Appearance_ > _Settings_ (admin/appearance/settings). A custom
-  logo for your theme will override the universal logo.
-
+want to upload to your site. Note: you can also set a universal logo for all
+themes under _Appearance_ > _Settings_ (admin/appearance/settings). A custom
+logo for your theme will override the universal logo.
++
 Once you have selected the file you would like to upload, you will see the
 filename next to the "Choose File" button under "Upload logo image."
 
-[start=6]
 . In order to save your changes and see that the colors and logo have been
-  changed on your site, select "Save configuration" at the bottom of the Bartik
-  "Settings" page.
-
+changed on your site, select "Save configuration" at the bottom of the Bartik
+"Settings" page.
++
 //To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Uncheck the "Use a different logo ..." box and upload the scenario image.
 image:images/config-theme_logo_upload.png["screen capture after uploading a new logo to Bartik theme settings",width="100%"]
 
-Please note, under the "Color scheme" of the "Settings" page for the Bartik
+[start=7]
+. Please note, under the "Color scheme" of the "Settings" page for the Bartik
 theme, you will find a "Preview" section which displays your website front page
 with the settings administered.
-
++
 //To create this image: followed all above steps of updating colors and logo, then took a screen shot including the "Preview" title with example preview of front page with updated settings.
 image:images/config-theme_color_scheme_preview.png["screen capture Bartik theme settings preview",width="100%"]
 
-[start=7]
+[start=8]
 . Congratulations! You have updated the Bartik theme settings for your website.
++
 image:images/config-theme_final_result.png["final result of editing Bartik theme settings - colors and logo",width="100%"]
 
 ==== Follow-on tasks
 
-<<extend-theme-find>>
-
-<<extend-theme-install>>
+* <<extend-theme-find>>
+* <<extend-theme-install>>
 
 //==== Related concepts
 

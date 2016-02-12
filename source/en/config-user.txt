@@ -14,42 +14,42 @@ messages generated upon account related events.
 
 ==== Prerequisite knowledge
 
-* <<config-overview>>
+<<config-overview>>
 
 //==== Site prerequisites
 
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ > _People_ >
-  _Account settings_ (admin/config/people/accounts): we find quick settings on
-  the creation of user accounts and the site's automated communication with
-  them.
+_Account settings_ (admin/config/people/accounts): we find quick settings on
+the creation of user accounts and the site's automated communication with
+them.
 
 . In Registration and cancellation, (in this example) choose _Administrators
-  only_ as for who can register user accounts. Leaving the self-registered
-  users' email verification requirement enabled is superfluous now, however best
-  to leave it _on_ in case we would change the settings for account registration
-  later on.
-
+only_ as for who can register user accounts. Leaving the self-registered
+users' email verification requirement enabled is superfluous now, however best
+to leave it _on_ in case we would change the settings for account registration
+later on.
++
 //To create this image, take a screenshot on admin/config/people/accounts
-image:images/config-user_01.png["Account registration only by admin"]
+image:images/config-user_01.png["Account registration only by admin",width="100%"]
 
 [start=3]
 . Below we can give an email address from which user account notifications of
-  our farmers' market website will be sent. This is recommended for keeping the
-  workflow clear, especially if it is not the site's creator who will be engaged
-  with its users and content.
+our farmers' market website will be sent. This is recommended for keeping the
+workflow clear, especially if it is not the site's creator who will be engaged
+with its users and content.
 
 . In the _Emails_ section below, we find the user account related events to
-  which automated emails can be coupled. This list cannot be extended and only 3
-  can be disabled via its checkbox: activation, blocking and cancellation.
-  Templates are given with the core installation. We are however free to send
-  out our own text, for example welcoming our new vendors for whom we just
-  created accounts. At each email-occasion there is a list of available
-  variables which will brand and personalize the text.
-
+which automated emails can be coupled. This list cannot be extended and only 3
+can be disabled via its checkbox: activation, blocking and cancellation.
+Templates are given with the core installation. We are however free to send
+out our own text, for example welcoming our new vendors for whom we just
+created accounts. At each email-occasion there is a list of available
+variables which will brand and personalize the text.
++
 // To create this image, take a screenshot on admin/config/people/accounts
-image:images/config-user_02.png["Email notification on account events"]
+image:images/config-user_02.png["Email notification on account events",width="100%"]
 
 [start=5]
 . Save all changes via the _Save configuration_ button.
@@ -57,14 +57,14 @@ image:images/config-user_02.png["Email notification on account events"]
 ==== Follow-on tasks
 
 * It is recommended to clear caches when doing a significant admin action. See
-  <<prevent-cache-clear>>
+<<prevent-cache-clear>>
 * <<user-new-user>>
 
 ==== Related concepts
 
-* See <<user-chapter>> for more information about user accounts and permissions.
+See <<user-chapter>> for more information about user accounts and permissions.
 
 ==== Additional resources
 
-* https://www.drupal.org/security/secure-configuration[Security Guide] can help
-  you with a more safety-focused approach to configuration.
+https://www.drupal.org/security/secure-configuration[Security Guide] can help
+you with a more safety-focused approach to configuration.

@@ -11,7 +11,7 @@ Home page created in <<content-create>>.
 
 ==== Prerequisite knowledge
 
-* <<content-create>>
+<<content-create>>
 
 ==== Site prerequisites
 
@@ -23,36 +23,36 @@ to edit it.
 . In the _Manage_ administrative menu, navigate to _Content_ (admin/content).
 
 . If the content item you want to edit was updated or created recently, it
-  should appear near the top of the content list on that page. If not, you can
-  use the _Type_, _Title_, or other filters to locate the content item.
-
+should appear near the top of the content list on that page. If not, you can
+use the _Type_, _Title_, or other filters to locate the content item.
++
 // Screen shot of admin/content. This needs to be redone so that only the
 // Home and About pages are present.
 image:images/content-edit-admin-content.png["Screen shot of the Content administration page",width="100%"]
 
 [start=3]
 . Click the _Edit_ link in the row of the content item you want to edit, to
-  open the content editing form. You can
-  change the title, body text and other fields here. See <<content-create>>
-  for an explanation of the fields and a screen shot.
+open the content editing form. You can
+change the title, body text and other fields here. See <<content-create>>
+for an explanation of the fields and a screen shot.
 
 . Check _Create new revision_ in the box on the right, if it is not already
-  checked, and enter a _Revision log message_ explaining what changes you are
-  making (for example, you might enter "Updated opening hours"). This text
-  will appear in the revision log for the page.
-
+checked, and enter a _Revision log message_ explaining what changes you are
+making (for example, you might enter "Updated opening hours"). This text
+will appear in the revision log for the page.
++
 // Screen shot of content edit page, such as node/1/edit, with Create new
 // revision checked and the Revision log message box visible.
-image:images/content-edit-revision.png["Screen shot of the revision information section of the content edit page",width="100%"]
+image:images/content-edit-revision.png["Screen shot of the revision information section of the content edit page"]
 
 [start=5]
 . Click _Save and keep published_ to save your changes.
 
 . You will be redirected back to the _Content_ administrative page, and there
-  should be a message showing that the content item was updated.
-
+should be a message showing that the content item was updated.
++
 // Screen shot of admin/content showing the updated content message.
-image:images/content-edit-message.png["Screen shot of Content page with updated content message showing",width="100%"]
+image:images/content-edit-message.png["Screen shot of Content page with updated content message showing"]
 
 ==== Follow-on tasks
 
@@ -60,14 +60,14 @@ As an alternative to the first two steps above, you can also reach the
 content edit form as follows:
 
 . Starting from your site's home page, use the site's navigation menus to locate
-  the page where the content you want to edit is displayed to visitors.
+the page where the content you want to edit is displayed to visitors.
 
 . Most themes will display an _Edit_ link or tab near the top of that page to
-  people with permission to edit the page; clicking the link will take you to
-  the full content edit form.
+people with permission to edit the page; clicking the link will take you to
+the full content edit form.
 
 . You could also use the <<content-in-place-edit,in-place editor>> from this
-  page.
+page.
 
 //==== Related concepts
 

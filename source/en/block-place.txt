@@ -12,31 +12,28 @@ vendors to log in.
 
 ==== Prerequisite knowledge
 
-* <<block-concept>>
+<<block-concept>>
 
 ==== Site prerequisites
 
-* The website needs to have the Bartik theme enabled and set as default. See
-  <<config-theme>>.
+The website needs to have the Bartik theme enabled and set as default. See
+<<config-theme>>.
 
 ==== Steps
 
-You place the _User login_ block in the _Sidebar second_ region of the _Bartik_
-theme as follows:
-
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_
-  (admin/structure/block). The _Block layout_ page appears, listing the theme's
-  regions.
+(admin/structure/block). The _Block layout_ page appears, listing the theme's
+regions.
 
 . Ensure that in the secondary tab the theme _Bartik_ is selected. Block
-  placement is defined per theme.
+placement is defined per theme.
 
 . Locate the region _Sidebar second_ in the list and click _Place block_ next to
-  it. The _Place block_ window appears, listing all the blocks.
+it. The _Place block_ window appears, listing all the blocks.
 
 . Locate the block _User login_ and click _Place block_ next to it. The
-  _Configure block_ window appears. Fill in the fields as shown below.
-
+ _Configure block_ window appears. Fill in the fields as shown below.
++
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Value
@@ -44,33 +41,32 @@ theme as follows:
 | Display title | Checked
 | Region | Sidebar second
 |================================
-
++
 This configuration allows you also to hide or display the block on specific
 pages. In the case of the Farmer's market website you do not set any of these
 configuration options because you want to show the block everywhere.
-
++
 // To create this screenshot, follow the 4 steps above.
 image:images/block-place-configure-block.png["Screenshot of block configuration page",width="100%"]
 
-[start=6]
+[start=5]
 . Click _Save block_. The _Block layout_ page appears.
-
++
 You can drag blocks to change the order in which they will appear. Don't forget
 to click _Save blocks_  to actually save the changes that you made.
 
-[start=7]
 . Verify that the _User login_ block is listed and click _Save blocks_.
-
++
 The block has been added to the sidebar of all pages. You have to be logged out
 to verify this.
-
++
 // To create this screenshot, follow the 7 steps above.
 image:images/block-place-sidebar.png["Screenshot of sidebar with login block",width="100%"]
 
 ==== Follow-on tasks
 
-* Remove the _Powered by Drupal_ block from the _Footer_ region by setting the
-  region to _- None -_.
+Remove the _Powered by Drupal_ block from the _Footer_ region by setting the
+region to _- None -_.
 
 //==== Related concepts
 
