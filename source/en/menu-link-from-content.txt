@@ -16,9 +16,7 @@ This saves you a visit tot menu management page afterwards.
 
 ==== Site prerequisites
 
-You have already created your About page.
-
-* <<content-create>>
+You have already created your About page. See <<content-create>>.
 
 ==== Steps
 
@@ -27,6 +25,7 @@ You have already created your About page.
 . Find the page you want to add to the navigation; for example, your About page.
 
 . Click the "Edit" link for that page.
++
 //To create this image: screen shot of admin/content page, line showing About page.
 image:images/menu-link-from-content_edit_page.png["screen capture of page edit link",width="100%"]
 
@@ -34,11 +33,8 @@ image:images/menu-link-from-content_edit_page.png["screen capture of page edit l
 
 . Check "Provide a menu link". The menu options appear.
 
-. Fill in the form fields. See the table "Fields and values" below.
-
-. Click "Save as published" or "Save unpublished" to save the changes.
-
-.Fields and values
+. Fill in the form fields.
++
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name |Explanation |Example value
@@ -52,13 +48,15 @@ level of the navigation. By choosing another menu item as parent you can
 create a menu hierarchy of multiple levels. |<Main navigation>
 |Weight|the order in which the page should appear in the menu | -3
 |================================
-
++
 // This screenshot was taken from a default Drupal Basic page node edit form.
 image:images/menu-link-from-content.png["Creating a menu link from
 within the content edit form",width="100%"]
 
+[start=4]
+. Click "Save as published" or "Save unpublished" to save the changes.
 The result could look like the picture below.
-
++
 // This screenshot was taken from a default Drupal install with Bartik after
 // adding a link to the main menu.
 image:images/menu-link-from-content-result.png["Link has been added to the
@@ -67,11 +65,8 @@ main menu",width="100%"]
 ==== Follow-on tasks
 
 When you have created the menu items you can re-order the menu on the menu
-management page.
-
-* <<menu-reorder>>
+management page. See <<menu-reorder>>.
 
 ==== Additional resources
 
-* https://www.drupal.org/documentation/modules/menu[drupal.org community
-documentation on working with menus]
+https://www.drupal.org/documentation/modules/menu[drupal.org community documentation on working with menus]

@@ -17,60 +17,59 @@ content type translatable, as well as the Basic Block and the Custom Menu Link
 
 ==== Site prerequisites
 
-* Language modules enabled. See <<language-enable>>.
+Language modules enabled. See <<language-enable>>.
 
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ > _Regional
-  and Language_ > _Content Language and Translation_
-  (admin/config/regional/content-language): it lists all available content
-  entity types and lets you configure per sub-type the default language and
-  language selector visibility.
+and Language_ > _Content Language and Translation_
+(admin/config/regional/content-language): it lists all available content
+entity types and lets you configure per sub-type the default language and
+language selector visibility.
 
 . In the Custom language settings enable _Content_, _Custom block_ and _Custom
-  menu link_.
-
+menu link_.
++
 // To create this image, take a screenshot: admin/config/regional/content-language
-image:images/language-content-config_01.png["Custom language settings, content types checklist"]
+image:images/language-content-config_01.png["Custom language settings, content types checklist",width="100%"]
 
 [start=3]
 . Configuration options for the enabled items appear: within each entity type,
-  you can choose (via their drop down) whether the sub-types (for example
-  Article and Basic Page types of Content) are translatable. You have the option
-  to show the language selector on the UI, which would let users change from the
-  default language and also to initialize the default language to a dynamic
-  language or a specific value. Dynamic possibilities include the site default
-  language at the time of creation, the current interface language when the
-  content is created or the preferred language of the user who creates the
-  entity.
-
+you can choose (via their drop down) whether the sub-types (for example Article
+and Basic Page types of Content) are translatable. You have the option to show
+the language selector on the UI, which would let users change from the default
+language and also to initialize the default language to a dynamic language or a
+specific value. Dynamic possibilities include the site default language at the
+time of creation, the current interface language when the content is created or
+the preferred language of the user who creates the entity.
++
 // To create this image, take a screenshot from
 // admin/config/regional/content-language once content, custom block and
 // custom menu link are enabled to be translatable.
-image:images/language-content-config_02.png["Default language and translatability for content types"]
+image:images/language-content-config_02.png["Default language and translatability for content types",width="100%"]
 
 [start=4]
 . Within each translatable entity sub-type, you can decide which fields should
-  be translatable. Many of these fields may not be translation dependent (e.g.
-  Publishing status) in which case it is better to leave them disabled. However,
-  enabling translation for fields that are numbers or dates has use for
-  accountability or implementing workflows.
-
+be translatable. Many of these fields may not be translation dependent (e.g.
+Publishing status) in which case it is better to leave them disabled. However,
+enabling translation for fields that are numbers or dates has use for
+accountability or implementing workflows.
++
 // To create this image, take a screenshot from admin/config/regional/content-language once content, custom block and custom menu link are enabled to be translatable then basic page is checked to be translatable.
-image:images/language-content-config_03.png["Translatable content entity subtypes’ fields checklist"]
+image:images/language-content-config_03.png["Translatable content entity subtypes’ fields checklist",width="100%"]
 
 [start=5]
 . Click on _Save configuration_.
 
 . If you also enable the language selector to be shown, a link to translate
-  appears, for example on the Home page, as on this screenshot (only for users
-  with translate permissions):
-
+appears, for example on the Home page, as on this screenshot (only for users
+with translate permissions):
++
 // To create this image, take a screenshot of the content Home (created as in
 // <<content-create>> according to the scenario) once the Basic page content
 // type is set to be translatable with the language selector enabled to be
 // shown on the UI.
-image:images/language-content-config_04.png["Language selector link on UI"]
+image:images/language-content-config_04.png["Language selector link on UI",width="100%"]
 
 ==== Follow-on tasks
 
@@ -81,5 +80,6 @@ image:images/language-content-config_04.png["Language selector link on UI"]
 
 ==== Additional resources
 
-* http://hojtsy.hu/blog/2013-jun-21/drupal-8-multilingual-tidbits-5-almost-limitless-language-assignment [Gabor Hojtsy: Multilingual Drupal 8 tidbits, part 5]
-* http://hojtsy.hu/blog/2015-jan-27/drupal-8-multilingual-tidbits-17-content-translation-basics [Gabor Hojtsy: Multilingual Drupal 8 tidbits, part 17]
+* http://hojtsy.hu/blog/2013-jun-21/drupal-8-multilingual-tidbits-5-almost-limitless-language-assignment[Gabor Hojtsy: Multilingual Drupal 8 tidbits, part 5]
+
+* http://hojtsy.hu/blog/2015-jan-27/drupal-8-multilingual-tidbits-17-content-translation-basics[Gabor Hojtsy: Multilingual Drupal 8 tidbits, part 17]

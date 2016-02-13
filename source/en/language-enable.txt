@@ -27,7 +27,7 @@ different languages.
 You can enable the multilingual module either via the administrative interface
 or by using Drush.
 
-===== Using the administrative interface =====
+===== Using the administrative interface
 
 . In the _Manage_ administrative menu, navigate to _Extend_ (admin/modules). The
 _Extend_ page appears showing all the available modules in your site.
@@ -36,13 +36,13 @@ _Extend_ page appears showing all the available modules in your site.
 Translation_ and _Language_.
 
 . Click _Install_. The selected modules will be enabled.
-
++
 // For this image check the mentioned modules at admin/modules
-image:images/language-enable-check-modules.png[_Enabling the multilingual modules_,width=_100%_]
+image:images/language-enable-check-modules.png["Enabling the multilingual modules",width="100%"]
 
-===== Using Drush =====
+===== Using Drush
 
-. Run the command:
+Run the command:
 
 ----
 drush en locale language config_translation content_translation

@@ -11,25 +11,21 @@ visitors to browse and use the website in their preferred language.
 
 ==== Prerequisite knowledge
 
-* <<language-concept>>.
+<<language-concept>>
 
 ==== Site prerequisites
 
-* The multilingual modules must be enabled. See <<language-enable>>.
+The multilingual modules must be enabled. See <<language-enable>>.
 
 ==== Steps
 
-You can add an additional language to the website.
-
 . In the _Manage_ administrative menu, navigate to Configuration >
-  Regional and Language (admin/config/regional/language).
+Regional and Language (admin/config/regional/language).
 
 . Select _+ Add language_
 
 . Choose the language you want to add from the drop down list and click _Add
-  language_.
-
-The language is added.
+language_. The language is added.
 
 // Screen shot after adding Spanish from admin/config/regional/language
 image:images/language-add-list.png["List of available languages in the
@@ -37,12 +33,13 @@ website",width="100%"]
 
 ==== Follow-on tasks
 
-// @todo We don't have a topic yet about language switching. Should we?
+* Enable users to switch between languages, by placing the _Language switcher_
+block in the sidebar. See <<block-place>>.
 
-* Enable users to switch between languages.
+* Enable content translation. See <<language-content-config>>.
 
-* Enable content translation. See <<language-content-translate>>.
+// ==== Related concepts
 
 ==== Additional resources
 
-*  https://www.drupal.org/resource-guides/configuring-multilingual-site[Configuring a Multilingual Site Resource Guide].
+https://www.drupal.org/resource-guides/configuring-multilingual-site[Configuring a Multilingual Site Resource Guide]
