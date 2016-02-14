@@ -42,19 +42,21 @@ In order to make a complete backup of your site, you will need to make copies of
 the following:
 
 * The data in your site's database. A few tables can be truncated, such as those
-  storing the temporary data cache and user login session information, but it is
-  always safe to back up the entire database.
+storing the temporary data cache and user login session information, but it is
+always safe to back up the entire database.
+
 * Uploaded files, such as images and other attachments. The location of these
-  files is configurable; the standard location is the _sites/default/files_
-  directory under your site root. In the _Manage_ administrative menu, navigate
-  to _Configuration_ > _Media_ > _File system_ (admin/config/media/file-system)
-  to check the file upload locations; to change them, you'll need to edit your
-  _settings.php_ file.
+files is configurable; the standard location is the _sites/default/files_
+directory under your site root. In the _Manage_ administrative menu, navigate
+to _Configuration_ > _Media_ > _File system_ (admin/config/media/file-system)
+to check the file upload locations; to change them, you'll need to edit your
+_settings.php_ file.
+
 * Custom modules and any other software files you have customized. Some people
-  prefer to simply back up all of the software files, including core files and
-  contributed modules and themes (which you could recover by downloading them
-  again from the source), rather than trying to pick out specific files
-  that definitely need to be backed up.
+prefer to simply back up all of the software files, including core files and
+contributed modules and themes (which you could recover by downloading them
+again from the source), rather than trying to pick out specific files
+that definitely need to be backed up.
 
 ==== Related topics
 
@@ -65,6 +67,7 @@ the following:
 ==== Additional resources
 
 * https://www.drupal.org/documentation/backup[Backing up a site]
+
 * The https://www.drupal.org/project/backup_migrate[Backup and Migrate] module
-  can be used to set up automatic backups of the database and user uploaded
-  files.
+can be used to set up automatic backups of the database and user uploaded
+files.

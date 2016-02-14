@@ -5,44 +5,42 @@
 (((Cache,clearing)))
 (((Cache,rebuild)))
 
-
 ==== Goal
 
 Clear, or rebuild, Drupal's internal caches in order to ensure that all items in
 them are up-to-date with the most recent data using either the UI, or Drush.
-
 
 ==== Prerequisite knowledge
 
 * <<prevent-cache>>
 * <<install-tools>>
 
-
 //==== Site prerequisites
-
 
 ==== Steps
 
-To clear the cache via the UI:
+===== Clearing the cache via the UI
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
-  _Development_ > _Performance_ (admin/config/development/performance).
+_Development_ > _Performance_ (admin/config/development/performance).
 
 . Click the button labeled "Clear all caches".
 
 . Once the cache has been cleared you should see a success message at the top of
-  the page with the text, "Caches cleared.".
+the page with the text, "Caches cleared.".
 
-Alternately, to clear the cache with Drush you can use one of two commands:
+===== Clearing the cache via Drush
 
-. Use the command `drush cache-rebuild` to clear, and rebuild, all cached data
-  for a site. After running this command you should see the output "Cache
-  rebuild complete."
+You can use one of two commands:
 
-. Or, use the command `drush cc` to see a list of individual caches and then
-  choose the specific cache you would like to clear. Running this command should
-  produce output like the following:
+* Use the command `drush cache-rebuild` to clear, and rebuild, all cached data
+for a site. After running this command you should see the output "Cache
+rebuild complete."
 
+* Use the command `drush cc` to see a list of individual caches and then
+choose the specific cache you would like to clear. Running this command should
+produce output like the following:
++
 ----
 > drush cc
 Enter a number to choose which cache to clear.
@@ -57,10 +55,8 @@ Enter a number to choose which cache to clear.
  [8]  :  render
  [9]  :  views
 ----
-
-[start=3]
-. Choose a cache to clear by entering the number associated with that cache and
-  hitting Enter to continue.
+Choose a cache to clear by entering the number associated with that cache and
+hitting Enter to continue.
 
 
 //==== Follow-on tasks
@@ -71,5 +67,5 @@ Enter a number to choose which cache to clear.
 
 ==== Additional resources
 
-* More on https://www.drupal.org/documentation/clearing-rebuilding-cache[
-  clearing or rebuilding Drupal's cache]
+More on
+https://www.drupal.org/documentation/clearing-rebuilding-cache[clearing or rebuilding Drupal's cache]

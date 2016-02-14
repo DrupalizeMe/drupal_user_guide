@@ -23,9 +23,10 @@ In Drupal 8, content types can have either a Published or an Unpublished flag to
 track their workflow states, that you can set for each content item when saving:
 
 * Published content items are visible to all visitors of the site.
+
 * Unpublished content items are not visible to the visitors of the site, but can
-  be seen by authenticated users who have the permissions to view unpublished
-  versions of specific content items.
+be seen by authenticated users who have the permissions to view unpublished
+versions of specific content items.
 
 You can track differences between multiple versions of your content, and revert
 to older versions using Revisions.

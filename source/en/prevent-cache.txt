@@ -33,7 +33,9 @@ speed-up for most sites. However, sometimes the page cache can have problems,
 such as:
 
 * Corrupted data in the cache, leading to garbled or incorrect page output
+
 * Old data remaining in the cache too long, leading to outdated page output
+
 * Insufficient caching, leading to slow page loads
 
 ==== What other data is cached?
@@ -43,26 +45,28 @@ the software that your site runs will still cache the output of many internal
 calculations. The core systems that cache data include:
 
 * The theme system caches information in the database cache about which template
-  files are used to render various types of data. If you are developing a new
-  theme and add a new template file, you'll need to clear this cache to have
-  your theme file recognized.
+files are used to render various types of data. If you are developing a new
+theme and add a new template file, you'll need to clear this cache to have
+your theme file recognized.
+
 * CSS and JavaScript files can optionally be optimized and compressed (depending
-  on your site settings). If so, the compressed versions are stored in the file
-  system so that they don't have to be re-optimized too often. If you are
-  developing a module or theme, you may need to either turn off or clear this
-  file cache to have changes to CSS or JavaScript files be recognized.
+on your site settings). If so, the compressed versions are stored in the file
+system so that they don't have to be re-optimized too often. If you are
+developing a module or theme, you may need to either turn off or clear this
+file cache to have changes to CSS or JavaScript files be recognized.
+
 * The system locates certain low-level PHP functions and classes, such as
-  _hook implementations_ and _plugin classes_, from your installed modules and
-  stores information about which module has which functionality. If you are
-  developing a new module or adding features to an existing module, you may need
-  to clear this cache to have your new features be recognized.
+_hook implementations_ and _plugin classes_, from your installed modules and
+stores information about which module has which functionality. If you are
+developing a new module or adding features to an existing module, you may need
+to clear this cache to have your new features be recognized.
 
 ==== Related topics
 
-* If you have problems with your site, the first thing to try to fix it is
-  usually to clear the cache. See <<prevent-cache-clear>> for more information.
+If you have problems with your site, the first thing to try to fix it is
+usually to clear the cache. See <<prevent-cache-clear>> for more information.
 
 ==== Additional resources
 
-* Learn about additional caching and performance optimization methods in the
-  https://www.drupal.org/documentation/performance[Caching documentation section].
+Learn about additional caching and performance optimization methods in the
+https://www.drupal.org/documentation/performance[Caching documentation section].
