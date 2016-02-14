@@ -13,11 +13,11 @@ Learn how to add basic link and image fields to the _Vendor_ content type.
 
 ==== Prerequisite knowledge
 
-* <<planning-data-types>>
+<<planning-data-types>>
 
 ==== Site prerequisites
 
-* The website needs a _Vendor_ content type. See <<structure-content-type>>.
+The website needs a _Vendor_ content type. See <<structure-content-type>>.
 
 ==== Steps
 
@@ -31,25 +31,24 @@ for _Vendor_ content type. The _Manage fields_ page appears.
 field* for the content type or *re-use an existing field*.
 
 . Fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Value
 | Add a new field | Field type| Link
 | Label | Label that is visible in administration pages | Vendor URL
 |================================
-
++
 A machine name is automatically generated, based on the label value. Click
 _Edit_ if you want to override the default name.
-
++
 // To create this screenshot, follow the 3 steps above.
 image:images/structure-fields-add-field.png["Add field page",width="100%"]
 
 [start=4]
-
 . Click _Save and continue_. The page _Vendor URL_ appears which lets you set
 the allowed number of values . Fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Value
@@ -57,11 +56,10 @@ the allowed number of values . Fill in the fields as shown below.
 |================================
 
 [start=5]
-
 . Click _Save field settings_. The page _Vendor URL settings for Basic page_
 appears which allows you to configure the field. Fill in the fields as shown
 below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Explanation | Value
@@ -71,18 +69,17 @@ below.
 | Allowed link type | The kind of links that can be entered | External links only
 | Allow link text | Whether a link text can be entered | Optional
 |================================
-
++
 // To create this screenshot, add a url field to the vendor content type and fill in the fields shown in the table above.
 image:images/structure-fields-vendor-url.png["Field settings page",width="100%"]
 
 [start=6]
-
 . Click _Save settings_. The _Vendor URL_ has been added to the content
 type. Continue creating the _Main image_ field.
 
 . Click _Add field_. The _Add field_ page appears. Fill in the fields as shown
 below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Value
@@ -91,24 +88,21 @@ below.
 |================================
 
 [start=8]
-
 . Click _Save and continue_. The page _Main image_ appears. Fill in the fields
 as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Value
 | Allowed number of values | The number of values that can be entered | Limited, 1
 |================================
-
++
 You can set a default image here. This will be used when you do not provide an
 image when creating a _Vendor_ content item.
 
-[start=9]
-
 . Click _Save field settings_. The page _Main image settings for Basic page_
 appears. Fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Value
@@ -122,34 +116,38 @@ appears. Fill in the fields as shown below.
 | Enable Alt field | Whether an alternative text can be entered | Checked
 | Alt field required | Whether an alternative text is required | Checked
 |================================
-
++
 By providing a file directory value you ensure that all the images that are uploaded via the main image field will be located in the same folder.
-
++
 // To create this screenshot, add an image field to the vendor content type and fill in the fields shown in the table above.
 image:images/structure-fields-main-img.png["Field settings page",width="100%"]
 
 [start=10]
-
 . Click _Save settings_. The _Main image_ has been added to the content type.
-
++
 // To create this screenshot, add an image and a URL field to the vendor content type and fill in the fields shown in the tables above.
 image:images/structure-fields-result.png["Field settings page",width="100%"]
 
 ==== Follow-on tasks
 
 * Create _Vendor_ content items. See <<content-create>>.
+
 * Add the same Main Image field to the _Recipe_ content type.
+
 * Verify the field language settings. If you add a new field to an existing
-  translated content type, you need to revisit the language settings. See
-  <<language-content-config>>.
+translated content type, you need to revisit the language settings. See
+<<language-content-config>>.
+
 * <<structure-image-styles>>
+
 * Manage the display of the Vendor and Recipe content types. See
-  <<structure-content-display>>.
+<<structure-content-display>>.
+
 * Manage the display of form of the Vendor and Recipe content types. See
-  <<structure-form-editing>>
+<<structure-form-editing>>
 
 // ==== Related concepts
 
 ==== Additional resources
 
-* https://www.drupal.org/node/774742[Add a field to a content type]
+https://www.drupal.org/node/774742[Add a field to a content type]

@@ -25,69 +25,69 @@ You must have a Recipe content type created. See <<structure-content-type>>.
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_
-  (admin/structure/taxonomy). You will see a list of any vocabularies that
-  already exist on your site. Initially there might be a Tags vocabulary in the
-  list which is created with a Standard installation.
-
+(admin/structure/taxonomy). You will see a list of any vocabularies that
+already exist on your site. Initially there might be a Tags vocabulary in the
+list which is created with a Standard installation.
++
 //Screenshot of admin/structure/taxonomy page
 image:images/structure-taxonomy-setup-1.png["taxonomy list page",width="100%"]
 
 [start=2]
-.  Use the Add vocabulary button to create your Ingredients taxonomy vocabulary
-   with the name "Ingredients".
-
+. Use the Add vocabulary button to create your Ingredients taxonomy vocabulary
+with the name "Ingredients".
++
 //Screenshot of admin/structure/taxonomy/add page
 image:images/structure-taxonomy-setup-2.png["taxonomy add Ingredients",width="100%"]
 
 [start=3]
-.  Once you have saved the Ingredients vocabulary you will be viewing the
-   Ingredients vocabulary record on the list tab, showing a list of all the
-   terms in this vocabulary.
-
+. Once you have saved the Ingredients vocabulary you will be viewing the
+Ingredients vocabulary record on the list tab, showing a list of all the
+terms in this vocabulary.
++
 //Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
 image:images/structure-taxonomy-setup-3.png["Ingredients taxonomy Term listing",width="100%"]
 
 [start=4]
 . At this point you can add some terms to your Ingredients vocabulary using the
-  Add term button, add “Butter” in the Name field. and save.
+Add term button, add "Butter" in the Name field. and save. Once you save the
+Butter term record the screen will clear and you can continue to add more terms
+at this point; for example, "Eggs" and "Milk".
++
+//Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
+image:images/structure-taxonomy-setup-4.png["Add term page",width="100%"]
 
 //Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
-image:images/structure-taxonomy-setup-4.png[“Add term page”,width="100%"]
-
-Once you save the Butter term record the screen will clear and you can continue
-to add more terms at this point; for example, “Eggs” and “Milk”.
-
-//Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
-image:images/structure-taxonomy-setup-5.png[“Ingredients List page”,width="100%"]
+image:images/structure-taxonomy-setup-5.png["Ingredients List page",width="100%"]
 
 [start=5]
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_
-  (admin/structure/types). Select Manage Fields for your Recipes content type.
+(admin/structure/types). Select Manage Fields for your Recipes content type.
 
 //@todo Insert Screenshot admin/structure/types/manage/recipes/fields
 // for the completed Recipes content type.
 
 [start=6]
 . Select the Add field button. First you will select your data type, in this
-  case a Taxonomy reference field with the name Ingredients, click the save and
-  continue button.
-
+case a Taxonomy reference field with the name Ingredients, click the save and
+continue button.
++
 //Screenshot admin/structure/types/manage/recipes/fields/add-field page
 image:images/structure-taxonomy-setup-6.png["Add Content type Ingredients field-first page",width="100%"]
 
 [start=7]
-. Set the number of ingredients that can be added to the field, in this case to Unlimited and save the field settings.
-
+. Set the number of ingredients that can be added to the field, in this case to
+Unlimited and save the field settings.
++
 //Screenshot of admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients/storage?
 image:images/structure-taxonomy-setup-7.png["add ingredient field settings to unlimited",width="100%"]
 
 [start=8]
 . Edit the detail settings for this field. Since this field is a taxonomy
-  reference data type we can select what taxonomy will be referenced. We will
-  also make sure to check the box that allows new ingredients to be added as
-  recipes are created. These setting are in the Reference Type section on the
-  form.
-
+reference data type we can select what taxonomy will be referenced. We will
+also make sure to check the box that allows new ingredients to be added as
+recipes are created. These setting are in the Reference Type section on the
+form.
++
 //Screenshot /admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients
 image:images/structure-taxonomy-setup-8.png["reference type field settings",width="100%"]
 
@@ -100,4 +100,3 @@ existing will be added to the Ingredients taxonomy automatically.
 //==== Related concepts
 
 //==== Additional resources
-

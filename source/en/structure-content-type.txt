@@ -11,11 +11,11 @@ configuration settings considering 'Vendor' content type as an example here.
 
 ==== Prerequisite knowledge
 
-* <<planning-data-types>>
+<<planning-data-types>>
 
 ==== Site prerequisites
 
-* <<planning-structure>>
+<<planning-structure>>
 
 ==== Steps
 
@@ -25,14 +25,14 @@ available types of content.
 
 . Click the _Add content type_ button. The _Add content type_ page appears. Fill
 in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
 | Name | Name of the content type | Vendor
 | Description | Explain the use of the content type | Use this form to add Vendors to your website.
 |================================
-
++
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on 'content types', click on this 'Add content type' button and get the screenshot
 image:images/structure-content-type-add.png["Content type add",width="100%"]
 
@@ -40,7 +40,7 @@ image:images/structure-content-type-add.png["Content type add",width="100%"]
 . In the vertical tab _Submission form settings_ you configure the form that is
 used for creating and editing content of this type. Fill in the fields as shown
 below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
@@ -48,14 +48,14 @@ below.
 | Preview before submitting | Option to choose whether you should preview the content before submitting. | Optional
 | Explanation or submission guidelines | Instructions for creating or editing content | (Leave blank)
 |================================
-
++
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on 'content types', click on this 'Add content type' button, click on  'Submission form settings' tab on left hand side, fill the details as per above guidelines and get the screenshot
 image:images/structure-content-type-add-submission-form-settings.png["Submission form settings",width="100%"]
 
 [start=4]
 . In the vertical tab _Publishing options_ you decide on default options for new
 content of this type. Fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
@@ -64,10 +64,10 @@ content of this type. Fill in the fields as shown below.
 | Sticky at the top of the list | In a default Drupal website this setting can be used to keep content on top of a list. In your website you will not use this option. | Unchecked
 | Create new revision | Create a new revision each time the vendor is being edited. | Checked
 |================================
-
++
 Changing these settings does not affect the content items that have already been
 created.
-
++
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on 'content types', click on this 'Add content type' button, click on  'Publishing Options' tab on left hand side, uncheck/check the option as per above guidelines and get the screenshot
 image:images/structure-content-type-add-Publishing-Options.png["Publishing Options",width="100%"]
 
@@ -75,28 +75,28 @@ image:images/structure-content-type-add-Publishing-Options.png["Publishing Optio
 . In the vertical tab _Display settings_ you decide if the author and
 publication date will be visible in the content item. Fill in the fields as
 shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
 | Display author and date information | Display the author username and publication date on each vendor page | Unchecked
 |================================
-
++
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on 'content types', click on this 'Add content type' button, click on  'Display settings' tab on left hand side, uncheck the option as per above guidelines and get the screenshot
 image:images/structure-content-type-add-Display-settings.png["Display settings",width="100%"]
 
 [start=6]
 . In the vertical tab _Menu settings_ fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
 |  Available menus | The menus that are available in the form when creating or editing content. | Unchecked
 |================================
-
++
 The vendors do no need to appear in any menu, so all menu options can be left
 unchecked.
-
++
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on 'content types', click on this 'Add content type' button, click on  'Menu settings' tab on left hand side, uncheck the option as per above guidelines and get the screenshot
 image:images/structure-content-type-add-Menu-settings.png["Menu settings",width="100%"]
 
@@ -104,17 +104,20 @@ image:images/structure-content-type-add-Menu-settings.png["Menu settings",width=
 . Click the _Save and manage fields_ button to save the content type. The
 _Manage fields_ page appears that allows you to add fields to the content
 type. See <<structure-fields>>
-
++
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on 'content types', click on this 'Add content type' button, click on  'Menu settings' tab on left hand side, uncheck the option as per above guidelines and get the screenshot
 image:images/structure-content-type-add-confirmation.png["Confirmation",width="100%"]
 
 ==== Follow-on tasks
 
 * Add a content type for Recipe.
+
 * If your site is multilingual, you'll see a section for multilingual settings
-  when creating or editing a content type. See <<language-content-config>> for
-  more information about what the settings mean.
+when creating or editing a content type. See <<language-content-config>> for
+more information about what the settings mean.
+
 * Add link and image fields to the _Vendor_ content type: <<structure-fields>>
+
 * Create content: <<content-create>>
 
 // ==== Related concepts

@@ -1,6 +1,5 @@
 [[security-update-core]]
 
-
 === Updating Drupal core
 
 (((Drupal core,updating)))
@@ -20,146 +19,121 @@ secondly, using Drush.
 
 //==== Prerequisite knowledge
 
-
-
 ==== Site prerequisites
 
 Prior to stepping into the actual update procedure, it is recommended to ensure
 the following points:
 
 * In order to use Drush with Drupal 8.x applications, ensure that you have Drush
-  7.x version installed. Drush versions less than 7.x doesn't support Drupal
-  8.x. If you wish to explore further into Drush and it's usage, we recommend
-  you to refer https://github.com/drush-ops/drush["Drush repository"]. Moreover,
-  in case you don't have Drush installed on your server, <<install-tools>> will
-  guide you on this.
+7.x version installed. Drush versions less than 7.x doesn't support Drupal
+8.x. If you wish to explore further into Drush and it's usage, we recommend
+you to refer https://github.com/drush-ops/drush["Drush repository"]. Moreover,
+in case you don't have Drush installed on your server, <<install-tools>> will
+guide you on this.
 
 * We encourage you to test Drupal core update process in some test or
-  development environment, and later proceed to the production environment upon
-  success. <<install-dev-making>> recipe of the guide will help you how to setup
-  your development environment for your Drupal 8 application.
+development environment, and later proceed to the production environment upon
+success. <<install-dev-making>> recipe of the guide will help you how to setup
+your development environment for your Drupal 8 application.
 
 ==== Steps
 
-You are advised to perform the following steps in order to update your Drupal 8
-core to the higher minor version:
-
 . Take a backup of your code as well as database. It will help you in disaster
-  recovery process, in case anything goes wrong during update process. You are
-  recommended to refer <<prevent-backups>> to learn more about taking the
-  complete backups of your site.
+recovery process, in case anything goes wrong during update process. You are
+recommended to refer <<prevent-backups>> to learn more about taking the
+complete backups of your site.
 
-[start=2]
 . Open the _/sites/default/settings.php_ file in any of the text editors of your
-  choice. Find the line about _$settings['update_free_access']_ variable and
-  edit it so it says:
-
+choice. Find the line about _$settings['update_free_access']_ variable. By
+default, it is set to *FALSE* due to security reasons, and to ensure that Drupal
+8 core doesn't accidently get updated leading to disaster.  Edit it so it says:
++
 ----
 $settings['update_free_access'] = TRUE;
 ----
 
-By default, it is set to *FALSE* due to security reasons, and to ensure that
-Drupal 8 core doesn't accidently get updated leading to disaster.
-
 [start=3]
 . Disable any caching technique (memcache, varnish, and so on) your application
-  might be using.
+might be using.
 
-[start=4]
 . In case your site is open and accessible to public, it is *highly recommended*
-  to set it to maintenance mode by navigating to _Configuration > Development >
-  Maintenance mode_, enabling the _Put site into maintenance mode_ check box and
-  saving the configuration. The motive behind this step is to restrict both the
-  end users as well as caching processes to access the site and it's database
-  during update process.
+to set it to maintenance mode by navigating to _Configuration > Development >
+Maintenance mode_, enabling the _Put site into maintenance mode_ check box and
+saving the configuration. The motive behind this step is to restrict both the
+end users as well as caching processes to access the site and it's database
+during update process.
 
-[start=5]
 . Download Drupal 8.x core latest version (preferably, stable version) manually
-  from https://www.drupal.org/project/drupal["Drupal core"] and extract it to
-  some backup or temporary directory on your server (should be outside the
-  directory where the site is hosted). You may use Drush command instead, in
-  order to achieve the same by navigating to the backup or temporary directory
-  on the server and hitting one of the following commands on your Drush command
-  prompt:
-
+from https://www.drupal.org/project/drupal["Drupal core"] and extract it to
+some backup or temporary directory on your server (should be outside the
+directory where the site is hosted). You may use Drush command instead, in
+order to achieve the same by navigating to the backup or temporary directory
+on the server and enter this command on your Drush command
+prompt:
++
 ----
-drush dl drupal //in case there is Drupal 8.x stable version available.
+drush dl drupal
 ----
-
-*OR*
-
-----
-drush dl drupal-8.0.0-beta14 //where, drupal-8.0.0-beta14 is the specific Drupal version to which our site needs to be updated.
-----
-
-
-Where,
-_dl_ is an alias of _pm-download_
 
 [start=6]
 . Delete the _core_ directory, and all the independent files, including
-  _.htaccess_, _composer.json_,_autoload.php_, and so on from your Drupal 8
-  installation directory. In case, you had included any custom file or
-  customized any of these files, it is *not recommended* to delete them; else
-  you may end up losing the custom functionalities that use these
-  custom/customized files.
+_.htaccess_, _composer.json_,_autoload.php_, and so on from your Drupal 8
+installation directory. In case, you had included any custom file or
+customized any of these files, it is *not recommended* to delete them; else
+you may end up losing the custom functionalities that use these
+custom/customized files.
 
-[start=7]
 . Copy the _core_ directory and the non-custom/non-customized files that you may
-  have deleted during the preceding step from the newly downloaded code base (in
-  our case, _drupal-8.0.0-beta14_) and paste them to your Drupal 8 site
-  directory (version _8.0.0-beta13_).
+have deleted during the preceding step from the newly downloaded code base (in
+our case, _drupal-8.0.0-beta14_) and paste them to your Drupal 8 site
+directory (version _8.0.0-beta13_).
 
-[start=8]
 . Run the _update.php_ script using either of the following, and let the script
-  do it's job:
-
+do it's job:
++
 *Using Browser interface:*
-
++
 http://www.example.com/update.php
-
++
 *Using Drush command:*
++
 ----
 drush updb //where, updb is the alias of pm-updatedb
 ----
 
-
-*Note:*
-In case you get to see any error or warning, you are advised to re-run the
+[start=9]
+. In case you get to see any error or warning, you are advised to re-run the
 _update.php_ script again until all the updates have been completed
 successfully.
 
-[start=9]
 . Either navigate to _Configuration > Development > Performance_ and clear the
-  cache using the administer interface; or run the following Drush command:
-
+cache using the administer interface; or run the following Drush command:
++
 ----
 drush cc all //where cc is the alias of clear-cache
 ----
 
-[start=10]
+[start=11]
 . Open the _/sites/default/settings.php_ file in a text editor. Find the line
-  about _$settings['update_free_access']_ and edit it so it says:
-
+about _$settings['update_free_access']_ and edit it so it says:
++
 ----
 $settings['update_free_access'] = FALSE;
 ----
 
-[start=11]
-. If you have followed *step 4*, navigating to _Configuration > Development >
-  Maintenance mode_, disable the _Put site into maintenance mode_ check box and
-  save the configuration.
-
 [start=12]
+. If you have followed *step 4*, navigating to _Configuration > Development >
+Maintenance mode_, disable the _Put site into maintenance mode_ check box and
+save the configuration.
+
 . In case you are using any caching technique (varnish, memcache, or so on) and
-  had disabled at *step 3*, re-enable them; else, skip this step.
+had disabled at *step 3*, re-enable them; else, skip this step.
 
-[start=13]
 . By now, you should be able to have the updated version running. To cross
-  verify the current version of your drupal site, navigate to _Reports > Status
-  report_. Following screen shot demonstrates the status report with the desired
-  output encircled:
-
+verify the current version of your drupal site, navigate to _Reports > Status
+report_. Following screen shot demonstrates the status report with the desired
+output encircled:
++
 // Login to your Drupal 8 site as an administrator and navigate to _Reports >
 // Status report_ page. Add a circle around the Drupal version.
 image:images/security-update-core_statusReport.png["Status report",width="100%"]
@@ -182,7 +156,7 @@ you want to learn more about updating Drupal 8 core.
 
 ==== Related concepts
 
-* <<prevent-status>>
+<<prevent-status>>
 
 ==== Additional resources
 

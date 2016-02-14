@@ -19,9 +19,10 @@ reordering the fields, hiding labels, and tuning the output of the fields.
 ==== Site prerequisites
 
 * The _Vendor_ content type is created with the fields _Main Image_ and _Vendor
-  URL_ . See <<structure-content-type>> and <<structure-fields>>.
+URL_ . See <<structure-content-type>> and <<structure-fields>>.
+
 * At least one published content item of this type exists. See
-  <<content-create>>
+<<content-create>>.
 
 ==== Steps
 
@@ -36,9 +37,9 @@ image:images/structure-content-display_initial_output.png["screen capture of
 initial output of the vendor content type",width="100%"]
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-  types_ (admin/structure/types). Then select the _Manage display_ drop down
-  for _Vendor_ content type.
-
+types_ (admin/structure/types). Then select the _Manage display_ drop down
+for _Vendor_ content type.
++
 // Under _Manage_ administrative menu select Structure > Content Types and
 // select the _Manage fields_ drop down for _Vendor_ content type.
 image:images/structure-content-display_manage_display.png["screen capture
@@ -46,8 +47,8 @@ selecting manage display",width="100%"]
 
 [start=2]
 . Under the _Label_ column, select _Hidden_ for the _Main image_. Do the same
-  for the _Vendor URL_.
-
+for the _Vendor URL_.
++
 // Under the _Label_ column, select _Hidden_ for the _Main image_. Do the same
 // for the _Vendor URL_.
 image:images/structure-content-display_main_image_hidden.png["screen capture
@@ -55,10 +56,10 @@ selecting _main image title_ as _hidden_",width="100%"]
 
 [start=3]
 . Select the gear for the _Link_ field. Clear the _Trim link text length_.
-  Links will now not have a trim length. Select the _Open link in new window_
-  option. Now, when the link is clicked, it will open in a new window of the
-  browser. Select _Update_.
-
+Links will now not have a trim length. Select the _Open link in new window_
+option. Now, when the link is clicked, it will open in a new window of the
+browser. Select _Update_.
++
 // Select the gear next to the _Link_ field and update according to above
 // instructions of this step.
 image:images/structure-content-display_trim_length.png["screen capture for
@@ -66,10 +67,10 @@ link trim length",width="100%"]
 
 [start=4]
 . Select the cross arrows next to the field items to reorder as _Main image_,
-  _Body_, _Vendor URL_, _Links_.
+_Body_, _Vendor URL_, _Links_.
 
 . Click _Save_.
-
++
 // Select the cross arrows next to the field items to reorder as _Main
 // image_, _Body_, _Vendor URL_, _Links_.
 image:images/structure-content-display_change_order.png["screen capture for
@@ -87,14 +88,15 @@ completed task",width="100%"]
 ==== Follow-on tasks
 
 * Notice that the main image takes up more space than you would like on the
-  page. To solve that, create an image style to control the display of this
-  image. See <<structure-image-style-create>>.
+page. To solve that, create an image style to control the display of this
+image. See <<structure-image-style-create>>.
+
 * Repeat the same steps to manage the display of the _Recipe_ content type
-  fields.
+fields.
 
 ==== Related concepts
 
-* <<structure-image-styles>>
+<<structure-image-styles>>
 
 ==== Additional resources
 
