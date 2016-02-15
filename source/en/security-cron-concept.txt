@@ -8,15 +8,19 @@
 
 ==== What is Cron?
 
-Cron is a time-based task scheduler that you can configure to automatically run
-periodic tasks like checking for updates, indexing content for search, or
-cleaning up log files. Both Drupal core and many contributed modules utilize
-Cron.
+To ensure that your site site and its modules continue to function well, a group
+of administrative operations should be run periodically. These operations are
+called _cron_ tasks. Examples of cron tasks are: checking for module and theme
+updates, indexing content for search, or cleaning up temporary files.
 
-An action triggered by Cron is called a "cron job".
+The _Automated Cron_ module runs the cron tasks periodically as part of server
+responses. You can turn this off and trigger cron from a process outside of the
+server. You can check the cron tasks' status in the status report.
 
 ==== Related topics
 
 <<security-cron>>
 
-//==== Additional resources
+==== Additional resources
+
+https://www.drupal.org/cron[Step 5: Setting up cron]
