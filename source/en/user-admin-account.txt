@@ -8,7 +8,7 @@
 
 ==== Prerequisite knowledge
 
-* <<user-concept>>
+<<user-concept>>
 
 ==== What is the user 1 account?
 
@@ -29,17 +29,20 @@ giving them the _Administrator_ role, rather than having all administrative
 users log in using the user 1 account. There are several reasons for this:
 
 * Some actions and updates on the site are logged, and if everyone uses the same
-  account, it is difficult to know who did them if you have questions.
+account, it is difficult to know who did them if you have questions.
+
 * The _Administrator_ role permissions can be modified to be safer than the
-  full permissions of the user 1 account, so that people do not inadvertently
-  change site features that shouldn't be changed.
+full permissions of the user 1 account, so that people do not inadvertently
+change site features that shouldn't be changed.
+
 * People's responsibilities on a site may change over time. With ordinary user
-  accounts, this can be mirrored in permissions by assigning or unassigning
-  roles to their user accounts. If they are all using the user 1 account,
-  this is more difficult.
+accounts, this can be mirrored in permissions by assigning or unassigning
+roles to their user accounts. If they are all using the user 1 account,
+this is more difficult.
+
 * On some sites, the author of content or comments is displayed or tracked, and
-  if everyone uses the same account to create content, it is difficult to know
-  who created the content.
+if everyone uses the same account to create content, it is difficult to know
+who created the content.
 
 It is not possible to delete the user 1 account from the administrative user
 interface. It would be possible to do with a database query, but it could cause
@@ -47,7 +50,6 @@ problems in your site and is not advisable.
 
 //==== Related topics
 
-
 ==== Additional resources
 
-* https://www.drupal.org/node/22284[Accounts and roles]
+https://www.drupal.org/node/22284[Accounts and roles]

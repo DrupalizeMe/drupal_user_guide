@@ -11,7 +11,7 @@ perform tasks (for example creating Recipes) in the website.
 
 ==== Prerequisite knowledge
 
-* <<user-concept>>
+<<user-concept>>
 
 // ==== Site prerequisites
 
@@ -21,42 +21,42 @@ Create a Vendor role that you can assign to users in order to give them certain
 permissions.
 
 . In the _Manage_ administrative menu, navigate to _People_ > _Roles_
-  (admin/people/roles).
+(admin/people/roles).
 
 . Once there, you will find the three default roles of "Anonymous user",
-  "Authenticated user", and "Administrator" along with a button _+Add role_
-  allowing the creation of a new custom role.
-
+"Authenticated user", and "Administrator" along with a button _+Add role_
+allowing the creation of a new custom role.
++
 // Go to /admin/people/roles and take a screenshot of the page image.
-image:images/user-new-role-1.png["default role page"]
+image:images/user-new-role-1.png["default role page",width="100%"]
 
 [start=3]
 . Click on the _+Add Role_ button above the list of roles.
 
-[start=4]
 . Name the new role. For this example, enter *Vendor* in the _Role name_ text
-  box and press _Save_.
-
+box and press _Save_.
++
 // Go to /admin/people/roles/add and type the word Vendor in the text field.
-image:images/user-new-role-2.png["adding vendor as a role"]
+image:images/user-new-role-2.png["adding vendor as a role",width="100%"]
 
 [start=5]
 . You should see the message "Role Vendor has been added." displayed at the top
-  of the page.
-
+of the page.
++
 // Add the Vendor role and take a screenshot of the roles page with the success
 // message.
-image:images/user-new-role-3.png["vendor role added success message"]
+image:images/user-new-role-3.png["vendor role added success message",width="100%"]
 
 You have now created a new user Role called Vendor.
 
 ==== Follow-on tasks
 
 * Assign permissions to the role. See <<user-permissions>>.
+
 * Give the role to users. See <<user-roles>>.
 
 //==== Related concepts
 
 ==== Additional resources
 
-* https://www.drupal.org/node/1803614["User Roles"]
+https://www.drupal.org/node/1803614["User Roles"]

@@ -25,40 +25,46 @@ place editing.
 
 ==== Site prerequisites
 
-* The site needs to have a _Vendor_ role. See <<user-roles>>.
+The site needs to have a _Vendor_ role. See <<user-roles>>.
 
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _People_ and then the _Roles_
 tab (admin/people/roles). The _Roles_ page appears.
 
-. Select the _Edit permissions_ option in the drop down for the _Vendor_ role. The _Edit role_ page appears where you show can see all the available actions for the website such as, for example, _Post comments_ or _Use advanced search_. The available permissions depend on the modules that are enabled in the site. Note: some permissions may have security implications, be cautious when when assigning permissions to roles.
+. Select the _Edit permissions_ option in the drop down for the _Vendor_
+role. The _Edit role_ page appears where you show can see all the available
+actions for the website such as, for example, _Post comments_ or _Use advanced
+search_. The available permissions depend on the modules that are enabled in the
+site. Note: some permissions may have security implications, be cautious when
+when assigning permissions to roles.
 
 . Check the permissions:
-.. Recipe: Create new content
-.. Recipe: Edit own content
-.. Recipe: Delete own content
-.. Vendor: Edit own content
-.. Use users' personal contact forms
-.. Use the Restricted HTML text format
-.. Access in-place editing
++
+  * Recipe: Create new content
+  * Recipe: Edit own content
+  * Recipe: Delete own content
+  * Vendor: Edit own content
+  * Use users' personal contact forms
+  * Use the Restricted HTML text format
+  * Access in-place editing
 
 . Click _Save permissions_ in the bottom of the page to save the changes.
-
++
 // For this image a content type Recipe and a role Vendor were created. The
 // image is partial screenshot of the page located at
 // admin/people/permissions/vendor ()
-image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width=_100%_]
+image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
 
 ==== Follow-on tasks
 
-* You can grant or deny users the right to perform particular actions by
+You can grant or deny users the right to perform particular actions by
 assigning roles to, or removing roles from users. <<user-roles>>
 
 ==== Related concepts
 
-* <<user-admin-account>>
+<<user-admin-account>>
 
 ==== Additional resources
 
-* https://www.drupal.org/node/627158[drupal.org community documentation on Managing Users]
+https://www.drupal.org/node/627158[drupal.org community documentation on Managing Users]

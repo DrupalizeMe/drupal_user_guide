@@ -10,48 +10,48 @@
 Assign each Vendor content item to the corresponding Vendor user account, so
 they can edit their own Vendor profiles on the site.
 
-//==== Prerequisite knowledge
+==== Prerequisite knowledge
+
+* <<user-concept>>
 
 ==== Site prerequisites
 
 * A Vendor content type is defined. See <<structure-content-type>>.
+
 * Two Vendor content items have been created. See <<structure-fields>>.
+
 * User accounts for two Vendors have been created. See <<user-new-user>>.
 
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _Content_.
 
-[start=2]
 . Find one of the Vendor content items in the list. You can filter the
-  list by _Published status_, _Type_, _Title_ or _Language_. You can easily find
-  the Vendor content items by filtering for the Vendor content type. Click
-   _Edit_ for the Vendor content item you would like to assign an author to.
+list by _Published status_, _Type_, _Title_ or _Language_. You can easily find
+the Vendor content items by filtering for the Vendor content type. Click
+_Edit_ for the Vendor content item you would like to assign an author to.
 
 . Locate the information block and click _AUTHORING INFORMATION_.
-
++
 // This screenshot was taken from the information block of the Vendor content item.
 image:images/user-content.png["Assinging an author to the Vendor content item"]
 
 [start=4]
 . Start typing the Vendor's user name in the _Authored by_ field. The field
-  lists matching user names. Select the Vendor's user name from the list.
+lists matching user names. Select the Vendor's user name from the list.
 
 . Click _Save and keep published_.
 
 . You will get a notification about updating the Vendor content item similar to
-  the one below.
-
+the one below.
++
 // This screenshot was taken after saving the Vendor content item with the updated authoring information.
 image:images/user_content_updated.png["Vendor content item has been updated"]
 
-
 ==== Follow-on tasks
 
-* Assign the other Vendor content item to the other Vendor user account.
+Assign the other Vendor content item to the other Vendor user account.
 
-==== Related concepts
-
-* <<user-concept>>
+// ==== Related concepts
 
 //==== Additional resources

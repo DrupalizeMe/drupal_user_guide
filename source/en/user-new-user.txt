@@ -4,11 +4,9 @@
 
 (((User Account,creating)))
 
-
 ==== Goal
 
 Create user accounts for two vendors on your site, and yourself.
-
 
 ==== Prerequisite knowledge
 
@@ -17,7 +15,6 @@ Create user accounts for two vendors on your site, and yourself.
 * <<user-new-role>>
 
 //==== Site prerequisites
-
 
 ==== Steps
 
@@ -28,8 +25,8 @@ Create user accounts for two vendors on your site, and yourself.
 . Fill in the form fields. See the table _Fields and values_ below.
 
 . Click _Create new account_ to create the new account for the vendor.
-
-.Fields and values
+Enter the following values:
++
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name |Explanation |Example value
@@ -46,17 +43,16 @@ Create user accounts for two vendors on your site, and yourself.
 |Contact settings |Enable or disable the display of a contact form for the account. | Enable
 |Locale settings |Select the time zone for the user account from the drop-down menu. | America/Kentucky/Louisville
 |================================
-
++
 // This screenshot was taken from a default Drupal Basic user create form (/admin/people/create).
-image:images/user-new-user_form.png["Form for creating a new user account"]
+image:images/user-new-user_form.png["Form for creating a new user account",width="100%"]
 
 [start=5]
 . You will get a notification about the creation of the new user account similar
-  to the one below.
-
+to the one below.
++
 // This screenshot was taken from a default Drupal Basic user create form (/admin/people/create) after adding a new user account by following the steps above.
-image:images/user-new-user-created.png["New user account has been created"]
-
+image:images/user-new-user-created.png["New user account has been created",width="100%"]
 
 ==== Follow-on tasks
 
@@ -66,4 +62,3 @@ image:images/user-new-user-created.png["New user account has been created"]
 //==== Related concepts
 
 //==== Additional resources
-
