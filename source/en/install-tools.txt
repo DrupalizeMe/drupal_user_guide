@@ -13,41 +13,57 @@
 
 ==== Prerequisite knowledge
 
-* <<install-dev-making>>
+<<install-dev-making>>
 
 ==== What tools are available for site builders?
 
-There are several additional tools available that help you create sites faster, more accurate and with less effort.
+There are several additional tools available that help you create sites faster,
+more accurate and with less effort.
 
-===== Drush
-
-http://www.drush.org[Drush] is a command line tool for building and maintaining sites. It has commands for installing and enabling modules, updating and copying databases, executing database queries, resetting passwords, clearing caches and many, many more. Drupal modules and themes can add their own commands to Drush.
-
-===== Git
-
-http://git-scm.com[Git] is a version control system you can use to track changes made to files within your entire site, or just the module or theme that you are working on. Git makes it possible to try out changes, and if necessary, revert to a previous version. It can be used as well to track changes in the configuration files and synchronize the configuration of different environments. Git has become the standard for web development projects.
-
-===== Devel
-
-http://drupal.org/project/devel[Devel] is a contributed module that helps with development tasks such as debugging and inspecting code, analyzing database queries and generating dummy content.
+Drush::
+  http://www.drush.org[Drush] is a command line tool for building and
+  maintaining sites. It has commands for installing and enabling modules,
+  updating and copying databases, executing database queries, resetting
+  passwords, clearing caches and many, many more. Drupal modules and themes can
+  add their own commands to Drush.
+Git::
+  http://git-scm.com[Git] is a version control system you can use to track
+  changes made to files within your entire site, or just the module or theme
+  that you are working on. Git makes it possible to try out changes, and if
+  necessary, revert to a previous version. It can be used as well to track
+  changes in the configuration files and synchronize the configuration of
+  different environments. Git has become the standard for web development
+  projects.
+Devel::
+  http://drupal.org/project/devel[Devel] is a contributed module that helps with
+  development tasks such as debugging and inspecting code, analyzing database
+  queries and generating dummy content.
 
 ==== What tools are available for module and theme developers?
 
-In addition to the site builder tools mentioned above, the following tools are useful for module and theme developers.
+In addition to the site builder tools mentioned above, the following tools are
+useful for module and theme developers.
 
-===== Drupal Console
-
-https://drupalconsole.com[Drupal Console] is a command line tool that generates boilerplate code and interacts with a Drupal 8 site. It can generate for example block or form code, install modules and themes and create dummy content. Drupal Console makes use of the Symfony Console.
-
-===== Coder
-
-https://www.drupal.org/project/coder[Coder] is a command line tool that checks if your modules and themes comply with coding standards and other best practices. It can also fix coding standard violations.
-
-===== Firebug
-http://getfirebug.com[Firebug] is a Firefox plugin that allows viewing, editing, debugging, and monitoring CSS, HTML, and JavaScript in a separate browser window. The contributed module https://www.drupal.org/project/drupalforfirebug[Drupal for Firebug] displays Drupal debugging and SQL query information to the Firebug window.
+Drupal Console::
+  https://drupalconsole.com[Drupal Console] is a command line tool that
+  generates boilerplate code and interacts with a Drupal 8 site. It can generate
+  for example block or form code, install modules and themes and create dummy
+  content. Drupal Console makes use of the Symfony Console.
+Coder::
+  https://www.drupal.org/project/coder[Coder] is a command line tool that checks
+  if your modules and themes comply with coding standards and other best
+  practices. It can also fix coding standard violations.
+Firebug::
+  http://getfirebug.com[Firebug] is a Firefox plugin that allows viewing,
+  editing, debugging, and monitoring CSS, HTML, and JavaScript in a separate
+  browser window. The contributed module
+  https://www.drupal.org/project/drupalforfirebug[Drupal for Firebug] displays
+  Drupal debugging and SQL query information to the Firebug window.
 
 // ==== Related topics
 
 ==== Additional resources
 
-* The community documentation page about https://www.drupal.org/node/147789[Development tools] on drupal.org provides an extended list of additional tools.
+The community documentation page about
+https://www.drupal.org/node/147789[Development tools]
+on drupal.org provides an extended list of additional tools.
