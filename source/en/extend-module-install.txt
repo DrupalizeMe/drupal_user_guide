@@ -10,7 +10,9 @@
 
 ==== Goal
 
-Drupal has many contributed modules that help you extend the functionality of your website. Download and install the contributed module _Admin toolbar_ which allows you to easily browse through the administration section of the website.
+Drupal has many contributed modules that help you extend the functionality of
+your website. Download and install the contributed module _Admin toolbar_ which
+allows you to easily browse through the administration section of the website.
 
 ==== Prerequisite knowledge
 
@@ -23,30 +25,32 @@ Your site must have the _Update Manager_ module enabled.
 
 ==== Steps
 
-. On the _Admin toolbar_ project page on drupal.org (https://www.drupal.org/project/admin_toolbar) scroll to the _Downloads_ section in the bottom of the page.
+. On the _Admin toolbar_ project page on drupal.org
+(https://www.drupal.org/project/admin_toolbar) scroll to the _Downloads_ section
+in the bottom of the page.
 
 . Right click the _tar.gz_ download link and copy the address.
-
++
 // For this screenshot got https://www.drupal.org/project/admin_toolbar and
 // crop to the downloads section. Highlight the tar.gz link.
 image:images/extend-module-install-admin-toolbar-do.png[_Locating the tar.gz download link of the Admin toolbar module_,width=_100%_]
 
 [start=3]
-
-. In the _Manage_ administrative menu, navigate to _Extend_ (admin/modules). The _Extend_ page appears.
+. In the _Manage_ administrative menu, navigate to _Extend_ (admin/modules). The
+_Extend_ page appears.
 
 . Click _Install new module_. The _Install new module_ page appears.
 
-. In the field _Install from a URL_ paste the copied download link. This value could look like `https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz`
-
+. In the field _Install from a URL_ paste the copied download link. This value
+could look like
+`https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz`
++
 // For this screenshot follow steps 1 - 3
 image:images/extend-module-install-download.png[_Downloading a module using a URL_,width=_100%_]
 
 [start=6]
-
-. Click _Install_ to upload and unpack the new module on the server. The files are being downloaded to the _modules_ folder.
-
-[start=7]
+. Click _Install_ to upload and unpack the new module on the server. The files
+are being downloaded to the _modules_ folder.
 
 . Select _Enable newly added modules_ to return to the _Extend_ page.
 
@@ -56,7 +60,8 @@ image:images/extend-module-install-download.png[_Downloading a module using a UR
 
 ==== Follow-on tasks
 
-Verify that the _Admin toolbar_ module is working by browsing through the menu in the administration section.
+Verify that the _Admin toolbar_ module is working by browsing through the menu
+in the administration section.
 
 //==== Related concepts
 
