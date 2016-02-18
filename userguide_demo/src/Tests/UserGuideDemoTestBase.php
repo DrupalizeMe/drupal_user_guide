@@ -231,16 +231,24 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ), $this->callT('Install'));
 
     // Topic: language-add - Adding a language
-    // fix! add screen shots in this section
     $this->drupalGet('admin/config/regional/language');
     $this->drupalGet('admin/config/regional/language/add');
     $this->drupalPostForm(NULL, array(
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ), $this->callT('Add language'));
+    // Simple screenshot.
+    $this->setUpScreenShot('language-add-list.png', array(550, 275, 30, 200));
 
     // Topic: language-content-config - Configuring Content Translation
-    // fix! add screen shots in this section
     $this->drupalGet('/admin/config/regional/content-language');
+    // Simple screenshot of top section
+    $this->setUpScreenShot('language-content-config_custom.png', array(550, 275, 30, 200));
+    // For this screenshot, we need to check Content, and then under
+    // Article and Basic Page, click the Show language selector button. Also
+    // under Basic page, simulate expanding the drop-down for default language
+    // by setting the 'size' attribute.
+    $this->setUpScreenShot('language-content-config_content.png', array(550, 275, 30, 200), 'onLoad="jQuery(\'#edit-entity-types-node\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', 1); jQuery(\'#edit-settings-node\').show(); jQuery(\'#edit-settings-node-article-settings-language-language-alterable\').attr(\'checked\', 1); jQuery(\'#edit-settings-node-page-settings-language-langcode\').attr(\'size\', 7);"');
+
     $this->drupalPostForm(NULL, array(
         'entity_types[node]' => TRUE,
         'entity_types[block_content]' => TRUE,
@@ -268,6 +276,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'settings[menu_link_content][menu_link_content][fields][description]' => TRUE,
         'settings[menu_link_content][menu_link_content][fields][changed]' => FALSE,
       ), $this->callT('Save configuration'));
+    // Screenshot of the Basic page area after saving the configuration.
+    $this->setUpScreenShot('language-content-config_custom.png', array(550, 275, 30, 200));
+
+    // Topic: content-create - Creating a Content Item
+    // @todo This is the next topic to set up.
+
 
     // Topic: structure-content-type - Adding a Content Type
     // fix! add screen shots in this section
