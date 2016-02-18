@@ -56,7 +56,11 @@ image:images/config-theme_color_scheme.png["screen capture of the updated color 
 [start=4]
 . Under "Logo Image Settings" uncheck the box next to "Use the default logo
 supplied by the theme."
++
+//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Uncheck the "Use a different logo ..." box and upload the scenario image.
+image:images/config-theme_logo_upload.png["screen capture after uploading a new logo to Bartik theme settings",width="100%"]
 
+[start=5]
 . Under "Upload logo image" select "Choose file" and locate the logo file you
 want to upload to your site. Note: you can also set a universal logo for all
 themes under _Appearance_ > _Settings_ (admin/appearance/settings). A custom
@@ -68,11 +72,7 @@ filename next to the "Choose File" button under "Upload logo image."
 . In order to save your changes and see that the colors and logo have been
 changed on your site, select "Save configuration" at the bottom of the Bartik
 "Settings" page.
-+
-//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Uncheck the "Use a different logo ..." box and upload the scenario image.
-image:images/config-theme_logo_upload.png["screen capture after uploading a new logo to Bartik theme settings",width="100%"]
 
-[start=7]
 . Please note, under the "Color scheme" of the "Settings" page for the Bartik
 theme, you will find a "Preview" section which displays your website front page
 with the settings administered.

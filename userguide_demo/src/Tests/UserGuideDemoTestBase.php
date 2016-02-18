@@ -37,6 +37,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'site_name' => 'Anytown Farmers Market',
     'site_slogan' => 'Farm Fresh Food',
     'site_mail' => 'info@example.com',
+    'site_default_country' => 'US',
+    'date_default_timezone' => 'America/Los_Angeles',
 
     // Vendor content type settings.
     'vendor_type_name' => 'Vendor',
@@ -107,14 +109,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     array_pop($dir_parts);
     $assets_directory = implode('/', $dir_parts) . '/assets/';
 
-    // Set up a red border CSS style.
+    // Set up a red border CSS style for outlining portions of images.
     $red_border = '2px solid #e62600;';
 
     // Topic: config-basic - Edit basic site information.
-    // @todo Replace with actual screen shots of this topic.
-    $this->drupalGet('admin/config/system/site-information');
-    $this->setUpScreenShot('config-basic-test1.png', array(550, 275, 30, 200));
-
     $this->drupalPostForm(NULL, array(
         'site_name' => $this->demoInput['site_name'],
         'site_slogan' => $this->demoInput['site_slogan'],
@@ -126,7 +124,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // information, because for a normal user, this information would have
     // been set up during the install.
     $this->drupalGet('admin/config/system/site-information');
-    $this->setUpScreenShot('config-basic-test2.png', array(550, 275, 30, 200));
+    $this->setUpScreenShot('config-basic-SiteInfo.png', array(550, 275, 30, 200));
+
+    // Date and time configuration, same topic.
+    $this->drupalGet('admin/config/regional/settings');
+    $this->drupalPostForm(NULL, array(
+      'site_default_country' => $this->demoInput['site_default_country'],
+      'date_default_timezone' => $this->demoInput['date_default_timezone'],
+      'configurable_timezones' => FALSE,
+      ), $this->callT('Save configuration'));
+    $this->assertText($this->callT('The configuration options have been saved.'));
+
+    // In this case, we want the screen shot made after we have entered the
+    // information, because for a normal user, this information would have
+    // been set up during the install.
+    $this->drupalGet('admin/config/regional/settings');
+    $this->setUpScreenShot('config-basic-TimeZone.png', array(550, 275, 30, 200));
 
     // Topic: config-uninstall - Uninstall unused modules.
     $this->drupalGet('admin/modules/uninstall');
@@ -159,12 +172,16 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('The selected modules have been uninstalled.'));
 
     // Topic config-user: Configuring user account settings.
-    // @todo Screen shots not defined yet.
     $this->drupalGet('admin/config/people/accounts');
     $this->drupalPostForm(NULL, array(
         'user_register' => 'admin_only',
       ), $this->callT('Save configuration'));
     $this->assertText($this->callT('The configuration options have been saved.'));
+    // For this screen shot, scroll down 500px.
+    $this->setUpScreenShot('config-user_account_reg.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,500);"');
+    // For this screen shot, scroll down to the bottom and open the Account
+    // activation vertical tab.
+    $this->setUpScreenShot('config-user_email.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,5000); jQuery(\'#edit-email-activated\').click();"');
 
     // Topic config-theme: Configuring the theme.
     $this->drupalGet('admin/appearance');
@@ -172,6 +189,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertLink($this->callT('Settings'));
     $this->setUpScreenShot('config-theme_bartik_settings.png', array(550, 275, 30, 200));
     $this->drupalGet('admin/appearance/settings/bartik');
+    // For this screenshot, before the setting are changed, use JavaScript to
+    // scroll down to the bottom, uncheck Use the default logo, and outline
+    // the logo upload box.
+    $this->setUpScreenShot('config-theme_logo_upload.png', array(550, 275, 30, 200), 'onLoad="widow.scroll(0,5000); jQuery(\'#edit-default-logo\').click(); jQuery(\'#edit-logo-upload\').css(\'border\', \'' . $red_border . '\');"');
+
     $this->drupalPostForm(NULL, array(
         'scheme' => '',
         'palette[top]' => '#7db84a',
@@ -183,35 +205,26 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'palette[titleslogan]' => '#ffffff',
         'palette[text]' => '#000000',
         'palette[link]' => '#2a3524',
-      ), $this->callT('Save configuration'));
-    $this->assertText($this->callT('The configuration options have been saved.'));
-
-    $this->drupalGet('admin/appearance/settings/bartik');
-    $this->assertText($this->callT('Color scheme'));
-    $this->assertText($this->callT('Header background top'));
-    $this->setUpScreenShot('config-theme_color_scheme.png', array(550, 275, 30, 200));
-    // For this screen shot, scroll down so the Preview is in view.
-    $this->assertText($this->callT('Preview'));
-    $this->setUpScreenShot('config-theme_color_scheme_preview.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,600);"');
-
-    $this->drupalGet('admin/appearance/settings');
-    $this->assertText($this->callT('Use the default logo supplied by the theme'));
-    $this->assertText($this->callT('Upload logo image'));
-    $this->setUpScreenShot('config-theme_logo_upload.png', array(550, 275, 30, 200), 'onLoad="jQuery(\'#edit-default-logo\').click(); jQuery(\'#edit-logo-upload\').css(\'border\', \'' . $red_border . '\');"');
-
-    $this->drupalPostForm(NULL, array(
         'default_logo' => FALSE,
         'logo_path' => $assets_directory . 'AnytownFarmersMarket.png',
       ), $this->callT('Save configuration'));
     $this->assertText($this->callT('The configuration options have been saved.'));
     $this->assertRaw($assets_directory);
 
+    // For this screen shot, scroll down so the color wheel is in view.
+    $this->setUpScreenShot('config-theme_color_scheme.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,600);"');
+    // For this screen shot, scroll down to the bottom so the preview is in
+    // view.
+    $this->setUpScreenShot('config-theme_color_scheme_preview.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,5000);"');
+
     $this->drupalGet('<front>');
     $this->setUpScreenShot('config-theme_final_result.png', array(550, 275, 30, 200));
 
     // Topic: language-enable - Installing multilingual modules
-    // fix! add screen shots in this section
     $this->drupalGet('admin/modules');
+    // For this screen shot, scroll to the bottom and make sure the
+    // modules are checked, using JavaScript.
+    $this->setUpScreenShot('language-enable-check-modules.png', array(550, 275, 30, 200), 'onLoad="window.scroll(0,2000); jQuery(\'#module-config-translation\').attr(\'checked\', 1); jQuery(\'#module-content-translation\').attr(\'checked\', 1);"');
     $this->drupalPostForm(NULL, array(
       'modules[Multilingual][config_translation][enable]' => TRUE,
       'modules[Multilingual][content_translation][enable]' => TRUE,

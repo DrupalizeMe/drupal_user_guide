@@ -8,7 +8,8 @@
 
 ==== Goal
 
-Keep your website secure by updating contributed modules when security updates are announced.
+Keep your website secure by updating contributed modules when security updates
+are announced.
 
 ==== Prerequisite knowledge
 
@@ -17,70 +18,74 @@ Keep your website secure by updating contributed modules when security updates a
 
 ==== Site prerequisites
 
-* <<security-cron>>
+<<security-cron>>
 
 ==== Steps
 
-. Check for module-specific update instructions.
-Review the release notes by clicking on the version number of the download on the project page for the version you're
-downloading.
+. Check for module-specific update instructions. This is typically necessary
+when updating modules that involve the usage of third party libraries. Be sure
+to read and understand all module specific requirements before proceeding with
+the updates. To find instructions, check the module's project page "Read
+Documentation" link, as well as the instructions (for example, _README.txt_,
+_INSTALL.txt_, and _UPGRADE.txt_) that come with the module's installation
+file. Also review the release notes by clicking on the version number of the
+download on the project page for the version you're downloading.
 +
 //Screenshot of the release notes link
 image:images/security-update-module-release-notes.png["Release notes link",width="100%"]
 
-Check the module's project page "Read Documentation" link, as well as the instructions
-(for example, _README.txt_, _INSTALL.txt_, and _UPGRADE.txt_) that come with the module's installation file
-for any module-specific update instructions. This is typically necessary when updating
-modules that involve the usage of third party libraries. Be sure to read and understand all module specific
-requirements before proceeding with the updates.
-
-. Back up your database and files.
-Though unlikely, any operation that modifies the database can be potentially damaging. It is highly recommended that you
+[start=2]
+. Back up your database and files. Though unlikely, any operation that modifies
+the database can be potentially damaging. It is highly recommended that you
 <<prevent-backups,back up your site>> before updating modules.
 
-. Put your site into Maintenance mode.
-In the _Manage_ administrative menu, navigate to _Configuration_ > _Maintenance mode_
-(_/admin/config/development/maintenance_). Put the site into maintenance mode by selecting
-_Put site into maintenance mode_.
+. Put your site into Maintenance mode.  In the _Manage_ administrative menu,
+navigate to _Configuration_ > _Maintenance mode_
+(_/admin/config/development/maintenance_). Put the site into maintenance mode by
+selecting _Put site into maintenance mode_.
 
-. Replace the module code with the updated version.
-You can use any of these methods to update a module:
-
-* Use the _Update manager_:
-In the _Manage_ administrative menu, navigate to the _Update Manager_ by clicking _Extend_,
-and then browsing to the _Update_ tab (_admin/modules/update_).
-If there available updates for any enabled modules on your site, they will be listed here. To install an update,
-mark the checkbox next to the module(s) you're updating and click _Download these updates_.
-
-* Manually updating files:
-Download a copy of the new module from the drupal.org project page, or navigate to the _Update Manager_
-and use the link in the module _Name_ column of the updates list. Delete the entire outdated module's
-directory and upload the new one as if you were <<extend-module-install,installing the module>>
-for the first time.
-
-* Use Drush:
-If you have Drush installed, you can also update your modules from the command line.
+. Replace the module code with the updated version.  You can use any of these
+methods to update a module:
 +
-To update one or more modules using Drush run the following command from a command prompt,
-where [module] is the drupal.org project name of the module you want to update: +drush up [module]+
-+
-If you have more than one module to update, add the additional module project names to the end of the command,
-separated by spaces.
-+
-Note: If you use Drush to update your module, you don't need to run update.php, allowing you to skip the next step.
+  * Use the _Update manager_: In the _Manage_ administrative menu, navigate to
+  the _Update Manager_ by clicking _Extend_, and then browsing to the _Update_
+  tab (_admin/modules/update_).  If there available updates for any enabled
+  modules on your site, they will be listed here. To install an update, mark
+  the checkbox next to the module(s) you're updating and click _Download these
+  updates_.
+  * Manually updating files: Download a copy of the new module from the
+  drupal.org project page, or navigate to the _Update Manager_ and use the
+  link in the module _Name_ column of the updates list. Delete the entire
+  outdated module's directory and upload the new one as if you were
+  <<extend-module-install,installing the module>> for the first time.
+  * Use Drush:
+  If you have Drush installed, you can also update your modules from the
+  command line.
+  +
+  To update one or more modules using Drush run the following command from a
+  command prompt, where [module] is the drupal.org project name of the module
+  you want to update: +drush up [module]+
+  +
+  If you have more than one module to update, add the additional module project
+  names to the end of the command, separated by spaces.
+  +
+  Note: If you use Drush to update your module, you don't need to run
+  update.php, allowing you to skip the next step.
 
-. Run _update.php_, which updates the database after modules, themes, or core have been updated
-or upgraded. You can run _update.php_ using a web browser by going to _http://example.com/update.php_
-(replacing example.com with the base URL of your Drupal site).
+. Run _update.php_, which updates the database after modules, themes, or core
+have been updated or upgraded. You can run _update.php_ using a web browser by
+going to _http://example.com/update.php_ (replacing example.com with the base
+URL of your Drupal site).
 +
-Performing updates requires the _administer software updates_ <<user-permissions,user permission>>. The first account
-created on your site ("user 1") will always have the required privileges.
+Performing updates requires the _administer software updates_
+<<user-permissions,user permission>>. The first account created on your site
+("user 1") will always have the required privileges.
 +
-Follow the steps through the update utility, and optionally, review the <<prevent-log,site log>> once the updates
-are complete to check for errors.
+Follow the steps through the update utility, and optionally, review the
+<<prevent-log,site log>> once the updates are complete to check for errors.
 
-. Turn off Maintenance mode.
-Put the site back online by returning to __/admin/config/development/maintenance_ and disabling maintenance mode.
+. Turn off Maintenance mode.  Put the site back online by returning to
+__/admin/config/development/maintenance_ and disabling maintenance mode.
 
 //==== Follow-on tasks
 
@@ -88,4 +93,4 @@ Put the site back online by returning to __/admin/config/development/maintenance
 
 ==== Additional resources
 
-* https://www.drupal.org/node/250790[Updating modules]
+https://www.drupal.org/node/250790[Updating modules]
