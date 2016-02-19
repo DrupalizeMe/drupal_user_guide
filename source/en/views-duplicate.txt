@@ -1,127 +1,71 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[views-duplicate]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Duplicating a View
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
+=== Duplicating a View
 
+(((Views,duplicating)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+We explore the _views_ content type settings: we first _duplicate_ (or clone) the view called "Vendors" into "Recipes", then _modify_ its configuration. The result is a new page displaying all recipes (title and picture) in a grid, with an option to filter on ingredients. 
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
+* <<views-concept>>
+* <<views-parts>>
+* <<views-create>>
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+* Vendor and Recipe content types created, see <<structure-content-type>>.
+* Main image fields added to Vendor and Recipe content types, see <<structure-fields>>.
+* Vendors view created, see<<views-create>>.
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
-
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
-
-  And it could be a couple of paragraphs.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ (admin/structure/views). Find the view "Vendors" and choose _Duplicate_ from its drop-down operations.  
+//To create this image, take a screenshot on admin/structure/views
+image:images/views-duplicate_01.png["Duplicate existing view"]
 
 [start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+. Name the duplicate "Recipes", confirm by clicking on _Duplicate_. The view configuration page appears.   
 
-. Text of step 3.
+. Click _Vendors_ (what we just duplicated) in the _Title_ section. _The title of this view_ pop-up appears. Title it "Recipes" then click _Apply (all displays)_.  
+//To create this image, take a screenshot on admin/structure/views/view/recipes with _The title of this view_ pop-up open.  
+image:images/views-duplicate_02.png["Change view title"]  
 
-Notes:
+[start=4]
+. In the _Format_ section change _Format: Unformatted_ to grid by choosing the style _Grid_ in the pop-up configurations. Further options on style settings appear. Click _Apply (all displays)_.  
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+. In the _Fields_ section click on _Content: Body_ then choose _Remove_ in the pop-up. This leaves our Recipes view with the title and image only.  
+
+. In the _Filter criteria_ section change filtering from _Content: Type(=Vendor)_ to filtering only for recipe content types: in the pop-up check _Recipe_ and uncheck _Vendor_ then click _Apply(all displays)_.  
+
+. We add a further filter, one exposed to visitors: click _Add_ in the _Filter criteria_ section then search for "ingredients". Select _Ingredients (field_ingredients)_ via its checkbox then _Apply (all displays)_.  
+//To create this image, take a screenshot on admin/structure/views/recipes with the _Add filter criteria_ pop-up open, searching for "ingredients" fields.  
+image:images/views-duplicate_03.png["Add ingredients filter"]  
+
+[start=8]
+. The appearing pop-up offers extra settings on vocabulary and selection type. _Apply and continue_. The next configuration pop-up allows to _expose this filter to visitors_: check. Within the appearing extra settings give the _Label_ "Find recipes using…". Confirm by clicking on _Apply(all displays)_.  
+//To create this image, take a screenshot on admin/structure/views/recipes with the _Configure filter criterion_ pop-up open, check in "Expose this filter to visitors" and give Label "Find recipes using…".  
+image:images/views-duplicate_04.png["Expose filter"]  
+
+[start=9]
+. In the _Page settings_ section change _Path: /vendors_ to /recipes: give the new path "recipes" in the pop-up then _Apply_. Then via the _Menu_ pop-up change the menu link title to "Recipes".  
+
+. Roll out the _Advanced_ sections. In the _Other_ section change _Use AJAX: No_ to "Yes": click on "No" and choose for using AJAX in the pop-up then _Apply_.  
+
+. Save all the above changes by clicking on _Save_ of the _Displays_ panel.  
+
+. Go back to site, and we see the new page Recipes.  
+//To create this image, take a screenshot on /recipes.  
+image:images/views-duplicate_05.png["Recipes view"]  
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
-
-Remove this placeholder text.
-
+* The link to the view in the main navigation will probably not be in the right place. Change the order of the menu items in the main navigation. See <<menu-reorder>>.
 
 ==== Related concepts
 
-// In this section, add links to related concept topics, if any.
+* <<planning-structure>>
 
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+//==== Additional resources
