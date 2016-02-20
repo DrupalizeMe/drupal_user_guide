@@ -6,7 +6,10 @@
 
 ==== Goal
 
-We explore the _views_ content type settings: we first _duplicate_ (or clone) the view called "Vendors" into "Recipes", then _modify_ its configuration. The result is a new page displaying all recipes (title and picture) in a grid, with an option to filter on ingredients. 
+We explore the _views_ content type settings: we first _duplicate_ (or clone)
+the view called "Vendors" into "Recipes", then _modify_ its configuration. The
+result is a new page displaying all recipes (title and picture) in a grid, with
+an option to filter on ingredients.
 
 ==== Prerequisite knowledge
 
@@ -17,55 +20,83 @@ We explore the _views_ content type settings: we first _duplicate_ (or clone) th
 ==== Site prerequisites
 
 * Vendor and Recipe content types created, see <<structure-content-type>>.
-* Main image fields added to Vendor and Recipe content types, see <<structure-fields>>.
-* Vendors view created, see<<views-create>>.
+
+* Main image fields added to Vendor and Recipe content types, see
+<<structure-fields>>.
+
+* Vendors view created, see <<views-create>>.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ (admin/structure/views). Find the view "Vendors" and choose _Duplicate_ from its drop-down operations.  
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
+(admin/structure/views). Find the view "Vendors" and choose _Duplicate_ from its
+drop-down operations.
++
 //To create this image, take a screenshot on admin/structure/views
-image:images/views-duplicate_01.png["Duplicate existing view"]
+image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
 
 [start=2]
-. Name the duplicate "Recipes", confirm by clicking on _Duplicate_. The view configuration page appears.   
+. Name the duplicate "Recipes", confirm by clicking on _Duplicate_. The view
+configuration page appears.
 
-. Click _Vendors_ (what we just duplicated) in the _Title_ section. _The title of this view_ pop-up appears. Title it "Recipes" then click _Apply (all displays)_.  
-//To create this image, take a screenshot on admin/structure/views/view/recipes with _The title of this view_ pop-up open.  
-image:images/views-duplicate_02.png["Change view title"]  
+. Click _Vendors_ (what we just duplicated) in the _Title_ section. _The title
+of this view_ pop-up appears. Title it "Recipes" then click _Apply (all
+displays)_.
++
+//To create this image, take a screenshot on admin/structure/views/view/recipes with _The title of this view_ pop-up open.
+image:images/views-duplicate_title.png["Change view title",width="100%"]
 
 [start=4]
-. In the _Format_ section change _Format: Unformatted_ to grid by choosing the style _Grid_ in the pop-up configurations. Further options on style settings appear. Click _Apply (all displays)_.  
+. In the _Format_ section change _Format: Unformatted_ to grid by choosing the
+style _Grid_ in the pop-up configurations. Further options on style settings
+appear. Click _Apply (all displays)_.
 
-. In the _Fields_ section click on _Content: Body_ then choose _Remove_ in the pop-up. This leaves our Recipes view with the title and image only.  
+. In the _Fields_ section click on _Content: Body_ then choose _Remove_ in the
+pop-up. This leaves our Recipes view with the title and image only.
 
-. In the _Filter criteria_ section change filtering from _Content: Type(=Vendor)_ to filtering only for recipe content types: in the pop-up check _Recipe_ and uncheck _Vendor_ then click _Apply(all displays)_.  
+. In the _Filter criteria_ section change filtering from _Content:
+Type(=Vendor)_ to filtering only for recipe content types: in the pop-up check
+_Recipe_ and uncheck _Vendor_ then click _Apply(all displays)_.
 
-. We add a further filter, one exposed to visitors: click _Add_ in the _Filter criteria_ section then search for "ingredients". Select _Ingredients (field_ingredients)_ via its checkbox then _Apply (all displays)_.  
-//To create this image, take a screenshot on admin/structure/views/recipes with the _Add filter criteria_ pop-up open, searching for "ingredients" fields.  
-image:images/views-duplicate_03.png["Add ingredients filter"]  
+. We add a further filter, one exposed to visitors: click _Add_ in the _Filter
+criteria_ section then search for "ingredients". Select _Ingredients
+(field_ingredients)_ via its checkbox then _Apply (all displays)_.
++
+//To create this image, take a screenshot on admin/structure/views/recipes with the _Add filter criteria_ pop-up open, searching for "ingredients" fields.
+image:images/views-duplicate_filter.png["Add ingredients filter",width="100%"]
 
 [start=8]
-. The appearing pop-up offers extra settings on vocabulary and selection type. _Apply and continue_. The next configuration pop-up allows to _expose this filter to visitors_: check. Within the appearing extra settings give the _Label_ "Find recipes using…". Confirm by clicking on _Apply(all displays)_.  
-//To create this image, take a screenshot on admin/structure/views/recipes with the _Configure filter criterion_ pop-up open, check in "Expose this filter to visitors" and give Label "Find recipes using…".  
-image:images/views-duplicate_04.png["Expose filter"]  
+. The appearing pop-up offers extra settings on vocabulary and selection
+type. _Apply and continue_. The next configuration pop-up allows to _expose this
+filter to visitors_: check. Within the appearing extra settings give the _Label_
+"Find recipes using...". Confirm by clicking on _Apply(all displays)_.
++
+//To create this image, take a screenshot on admin/structure/views/recipes with the _Configure filter criterion_ pop-up open, check in "Expose this filter to visitors" and give Label "Find recipes using...".
+image:images/views-duplicate_expose.png["Expose filter",width="100%"]
 
 [start=9]
-. In the _Page settings_ section change _Path: /vendors_ to /recipes: give the new path "recipes" in the pop-up then _Apply_. Then via the _Menu_ pop-up change the menu link title to "Recipes".  
+. In the _Page settings_ section change _Path: /vendors_ to /recipes: give the
+new path "recipes" in the pop-up then _Apply_. Then via the _Menu_ pop-up change
+the menu link title to "Recipes".
 
-. Roll out the _Advanced_ sections. In the _Other_ section change _Use AJAX: No_ to "Yes": click on "No" and choose for using AJAX in the pop-up then _Apply_.  
+. Roll out the _Advanced_ sections. In the _Other_ section change _Use AJAX: No_
+to "Yes": click on "No" and choose for using AJAX in the pop-up then _Apply_.
 
-. Save all the above changes by clicking on _Save_ of the _Displays_ panel.  
+. Save all the above changes by clicking on _Save_ of the _Displays_ panel.
 
-. Go back to site, and we see the new page Recipes.  
-//To create this image, take a screenshot on /recipes.  
-image:images/views-duplicate_05.png["Recipes view"]  
+. Go back to site, and we see the new page Recipes.
++
+//To create this image, take a screenshot on /recipes.
+image:images/views-duplicate_final.png["Recipes view",width="100%"]
 
 ==== Follow-on tasks
 
-* The link to the view in the main navigation will probably not be in the right place. Change the order of the menu items in the main navigation. See <<menu-reorder>>.
+The link to the view in the main navigation will probably not be in the right
+place. Change the order of the menu items in the main navigation. See
+<<menu-reorder>>.
 
 ==== Related concepts
 
-* <<planning-structure>>
+<<planning-structure>>
 
 //==== Additional resources
