@@ -31,9 +31,10 @@ details how to set up the tools. Here are the steps:
 6. Install a local test Drupal site, running the version of Drupal you want to
    generate screen shots for (Drupal 8.0.x, 8.1.x, etc.).
 
-7. Put the entire parent project directory of this file (i.e., directory
-   "user_guide") into the top-level 'modules' directory of your local Drupal
-   site.
+7. Copy either this directory or the entire User Guide project directory
+   into the top-level 'modules' directory of your local Drupal site.
+   (Alternatively, if your operating system supports it, you can instead make
+   a symbolic link.)
 
 8. Enable the Testing (simpletest) module in the Drupal site, as well as
    Language and Interface Translation. Drush command:
@@ -46,8 +47,8 @@ MAKING SCREENSHOTS
 Once you are set up for screenshots, you can make a set of screen shots for
 a particular language as follows:
 
-1. Go to admin/config/development/testing (Configuration / Development /
-   Testing) in your local Drupal test site.
+1. Go to admin/config/development/testing (Administration / Configuration /
+   Development / Testing) in your local Drupal test site.
 
 2. Run the "UserGuideDemoTestEn" test interactively and wait for it to
    finish (or the one for the language you want to generate). Just run one

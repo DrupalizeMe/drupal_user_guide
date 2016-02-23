@@ -1,11 +1,6 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\search\Tests\UserGuideDemoTestBase.
- */
-
-namespace Drupal\userguide_demo\Tests;
+namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Core\Site\Settings;
 use Drupal\simpletest\WebTestBase;
@@ -66,7 +61,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *   process, but they'll be needed when the language is added at the top
    *   of the test, so might as well just turn them on here.
    */
-  public static $modules = array('userguide_demo', 'update', 'language', 'locale');
+  public static $modules = array('update', 'language', 'locale');
 
   /**
    * We need verbose logging to be on.
@@ -105,7 +100,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     // Figure out where the assets directory is.
-    $dir_parts = explode('/', drupal_get_path('module', 'userguide_demo'));
+    $dir_parts = explode('/', drupal_get_path('module', 'auto_screenshots'));
     array_pop($dir_parts);
     $assets_directory = implode('/', $dir_parts) . '/assets/';
 

@@ -1,11 +1,6 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\search\Tests\UserGuideDemoTestEs.
- */
-
-namespace Drupal\userguide_demo\Tests;
+namespace Drupal\auto_screenshots\Tests;
 
 /**
  * Builds the demo site for the User Guide, Spanish, with screenshots.
