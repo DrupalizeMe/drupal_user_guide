@@ -7,17 +7,31 @@
 
 ==== Goal
 
-By configuring _Text Formats_ you decide how HTML tags and other text that has been entered by the user will be processed and displayed in the site. You also define if a Text editor is available, so that users do not need to enter HTML code.
+By configuring _Text Formats_ you decide how HTML tags and other text that has
+been entered by the user will be processed and displayed in the site. You also
+define if a Text editor is available, so that users do not need to enter HTML
+code.
 
-For the text editor to be available, it has to be assigned to a text formats. By default the text editor _Ckeditor_ is assigned to the _Basic HTML_ and _Full HTML_ text formats. You can configure the toolbar of the text editor, for example to make the _horizontal rule_ button (corresponding with the _HR_ HTML tag) available to the user.
+For the text editor to be available, it has to be assigned to a text formats. By
+default the text editor _Ckeditor_ is assigned to the _Basic HTML_ and _Full
+HTML_ text formats. You can configure the toolbar of the text editor, for
+example to make the _horizontal rule_ button (corresponding with the _HR_ HTML
+tag) available to the user.
 
-By default all not allowed HTML tags are being removed by the text format when the page is being generated (the original input is being preserved in the database). If, for example, you let users embed YouTube videos, you will need to add the IFRAME tag as an allowed HTML tag.
+By default all not allowed HTML tags are being removed by the text format when
+the page is being generated (the original input is being preserved in the
+database). If, for example, you let users embed YouTube videos, you will need to
+add the IFRAME tag as an allowed HTML tag.
 
-A text format has multiple filters that are processed in a particular order. The order is important because one filter can prevent another filter from working properly. For example, when URLs are converted into links before HTML tags are removed, all links may be removed. You can configure the order in which filters are processed.
+A text format has multiple filters that are processed in a particular order. The
+order is important because one filter can prevent another filter from working
+properly. For example, when URLs are converted into links before HTML tags are
+removed, all links may be removed. You can configure the order in which filters
+are processed.
 
 ==== Prerequisite knowledge
 
-* <<structure-text-formats>>
+<<structure-text-formats>>
 
 ==== Site prerequisites
 
@@ -26,34 +40,41 @@ A text format has multiple filters that are processed in a particular order. The
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Text formats and editors_ (admin/config/content/formats). The _Text formats and editors_ page appears.
+. In the _Manage_ administrative menu, navigate to _Configuration_ > _Text
+formats and editors_ (admin/config/content/formats). The _Text formats and
+editors_ page appears.
 
-. Click _Configure_ for the _Basic HTML_ text format. The _Basic HTML_ page appears.
+. Click _Configure_ for the _Basic HTML_ text format. The _Basic HTML_ page
+appears.
 
-. Note that _Ckeditor_ is selected in the _Text editor_ field. This allows to configure the editor's toolbar.
+. Note that _Ckeditor_ is selected in the _Text editor_ field. This allows to
+configure the editor's toolbar.
 
-. Drag the _horizontal rule_ button from the _Available buttons_ to the _Active toolbar_.
+. Drag the _horizontal rule_ button from the _Available buttons_ to the _Active
+toolbar_.
 
 // For this image Follow the steps below and drag the HR button.
 image:images/structure-text-format-config-editor-config.png["Configuring the editor",width="100%"]
 
+[start=5]
 . Note that you can change the _Filter processing order_.
 
-. In the field _Allowed HTML tags_ add the IFRAME tag and its attributes as follows: `<iframe width height src frameborder allowfullscreen>`
+. In the field _Allowed HTML tags_ add the IFRAME tag and its attributes as
+follows: `<iframe width height src frameborder allowfullscreen>`
 
 // For this image add the <iframe> tag to the allowed list of HTML tags.
 image:images/structure-text-format-config-allowed-html.png["Configuring the HTML
 tags",width="100%"]
 
 [start=7]
-
-. Click _Save configuration_. You can now create content with a YouTube embedded video.
+. Click _Save configuration_. You can now create content with a YouTube embedded
+video.
 
 ==== Follow-on tasks
 
-Create a recipe and embed a video from YouTube that explains how the dish is being prepared. See <<content-create>>
+Create a recipe and embed a video from YouTube that explains how the dish is
+being prepared. See <<content-create>>.
 
 // ==== Related concepts
 
 // ==== Additional resources
-
