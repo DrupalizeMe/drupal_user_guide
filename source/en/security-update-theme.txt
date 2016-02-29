@@ -28,13 +28,16 @@ and there is an update available for it.
 
 * <<security-cron, Ensure that cron maintenance tasks are run regularly on
 your site>>.
+
 * <<prevent-backups,Back up your site>>. Though unlikely, operations that
 modify the database can be damaging.
 
 If you update via the website:
 
 * <<user-admin-account, Login with the User 1 account>>.
-* <<extend-module-install, Enable the _Update Manager_ module>>.
+
+* The _Update Manager_ module must be installed. See <<language-enable>> for
+instructions on installing modules.
 
 If you are using Drush to update the theme:
 
@@ -42,7 +45,7 @@ If you are using Drush to update the theme:
 
 ==== Steps
 
-You can use the website or drush to update contributed themes.
+You can use the website or Drush to update contributed themes.
 
 ===== Using the website
 
@@ -68,20 +71,22 @@ image:images/security-update-theme-updates.png["Available updates",width="100%"]
 
 . Put your site out of the <<extend-maintenance, Maintenance mode>>.
 
-====== Using drush
+===== Using drush
 
 If you have Drush, you can update your themes from the command line.
 
 . Run the _up_ command from a command prompt, where [theme] is the drupal.org
-  project name of the theme:
+project name of the theme:
+----
+drush up [theme]
+----
 
-  drush up [theme]
-
+[start=2]
 . Follow the instructions on the screen.
 
 ==== Follow-on tasks
 
-* <<security-update-module>>
+<<security-update-module>>
 
 // ==== Related concepts
 
