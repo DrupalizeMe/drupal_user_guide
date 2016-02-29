@@ -1,0 +1,54 @@
+[[extend-maintenance]]
+
+=== Enabling and disabling maintenance mode
+
+(((Maintenance mode,enabling)))
+(((Maintenance mode,disabling)))
+
+==== Goal
+
+When you are updating your website, you put it in to maintenance mode.
+This will prevent visitors from seeing error messages. It also prevents users
+from editing content while the update scripts runs.
+
+==== Prerequisite knowledge
+
+* <<security-concept>>
+
+// ==== Site prerequisites
+
+==== Steps
+
+. Navigate in the _Manage_
+administrative menu, navigate to _Configuration_ > _Maintenance mode_. The
+_Maintenance mode_ page appears.
+
+. Fill in the fields as shown below.
+
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Explanation | Value
+| Put site into maintenance mode | Enable or disable the maintenance mode | Checked to enable, unchecked to disable.
+| Message to display when in maintenance mode | The information that is shown to website vistors when the mode is enabled. Variables such as @site can be used in the message | @site is currently under maintenance. We should be back shortly. Thank you for your patience.
+|================================
++
+
+[start=2]
+
+. Click _Save configuration_
+
+==== Follow-on tasks
+
+* Disable maintenance mode when you are done with the site maintenance, by
+returning to the same page.
+
+* <<security-update-core>>
+
+* <<security-update-theme>>
+
+* <<security-update-module>>
+
+//==== Related concepts
+
+// ==== Additional resources
