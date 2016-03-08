@@ -1,127 +1,125 @@
-// This template is for a topic that covers how to perform a task.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "block-creating.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-create]] if the file name is block-create.txt.
 [[views-create]]
-// The topic title goes on the next line. Use "Title Case" for topic titles.
-// Titles for task topics should be in the format "Verbing a Noun".
-=== UNWRITTEN - Creating a Content List View
+=== Creating a Content List View
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
-//   such as (((Blocks,creating))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((Nouns,verbing)))
-
+(((View,creating)))
+(((Content list,creating)))
+(((List,creating)))
 
 ==== Goal
 
-// Describe the goal of this task here. This should be the goal for the reader,
-// so describe the end result, like "Create an About page". It should relate to
-// the Scenario and be specific rather than generic.
-
-Remove this placeholder text.
-
+You create a page that lists the vendors at the farmers market. When, in the future, you add a new vendor than it is automatically added to this table.
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
-
-Remove this placeholder text.
-
+* <<views-concept>>
+* <<views-parts>>
 
 ==== Site prerequisites
 
-// The items below are an example of what might go here for a task where
-// a "most recent image" view is created. They describe things that must be
-// present on the site (configuration, content, etc.) in order to perform
-// this task.
-//
-// Some ideas (remove the // to make these not comments):
-//* A content type is defined with an Image field. See <<cross-reference-one>>.
-//* At least one published content item of this type exists. See
-//  <<cross-reference-two>>.
-
-Remove this placeholder text.
-
+* The _Views_ module is enabled on the site.
+* The content type _Vendor_ has been created and it has the URL and Image fields added. See: <<structure-content-type>> and <<structure-fields>>.
+* <<structure-image-style-create, The image style _Medium_ has been created>>. This style is being created when the Image module is installed for the first time, but if it has been deleted for some reason, you can recreate it.
+* A couple of _Vendor_   content items has been created. See: <<content-create>>.
 
 ==== Steps
 
-// This is where you describe the actual steps needed to perform this task.
-// Remember to use the scenario and be specific, not generic.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _+Add a new view_ (admin/structure/views/add). The _Add new view_ wizard appears.
 
-. Text of step one goes here. The subsequent lines of this step need
-  to be indented by two spaces.
+. Fill in the fields as shown below.
 
-  And it could be a couple of paragraphs.
+[width="100%",frame="topbot",options="header"]
+|================================
+| Field name | Explanation| Example value
+| View name | Name of the view that will be visible in the administration pages | Vendors
+| Show: | Type of information listed in the view | Content
+| Sorted by: | List order | Title
+| Create a page | Create a page that displays the view | Checked
+| Page title | Title show above the view | Vendors
+| Path | Address of the page | vendors
+| Display format: | Type of list | Table
+| Items to display | Number of items visible on the page | 22
+| Use a pager | Split up the list in several pages if there are more items | Checked
+| Create a menu link | Add the view page to the menu | Checked
+| Menu | Menu in which to add the link | Main navigation
+| Link text | Label of the link in the menu | Vendors
+|================================
 
-[start=2]
-. Text of step two goes here. If you preview the output and the numbering is
-  wrong, you can use this start=(number) line to set the numbering correctly.
+// to create this image go to admin/structure/views/add and add the values from the table above.
+image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 
-. Text of step 3.
+[start=3]
 
-Notes:
+. Click _Save and edit_. The view configuration page appears.
 
-* If your task involves filling out a form, include a screen shot.
-* Also include a table of fields and values to fill in.
-* The last step should be something that shows them the task has been
-  completed. Include a screen shot.
+. Choose _Add_ from the dropdown button in the _Fields_ section. The _Add fields_ pop-up appears.
+
+. Enter _image_ in the search field.
+
+. Select _Image_ in the table.
+
+. Click _Apply (all displays)_. The _Configure field: Content: Image_ pop-up appears.
+
+. Fill in the fields as shown below.
+
+[width="100%",frame="topbot",options="header"]
+|================================
+| Field name | Explanation| Example value
+| Create a label | Add a label before the field value | Unchecked
+| Image style | The format of the image | Medium (220x220)
+| Link image to: | Add a link to the content item | Content
+|================================
+
+[start=9]
+
+. Click _Apply (all displays)_. The view configuration page appears.
+
+. Choose _Add_ from the dropdown button in the _Fields_ section. The _Add fields_ pop-up appears.
+
+. Enter _body_ in the search field.
+
+. Select _Body_ in the table.
+
+. Click _Apply (all displays)_. The _Configure field: Content: Body_ pop-up appears.
+
+. Fill in the fields as shown below.
+
+[width="100%",frame="topbot",options="header"]
+|================================
+| Field name | Explanation| Example value
+| Create a label | Add a label before the field value | Unchecked
+| Formatter | The presentation of the field value | Summary or trimmed
+| Trimmed limit: | The number of maximum characters shown | 120
+|================================
+
+[start=15]
+
+. Click _Apply (all displays)_. The view configuration page appears.
+
+. Click the link _Content: title (Title)_ link in the _Fields_ list. The _Configure field: Content: Title_ pop-up appears.
+
+. Uncheck _Create a label_. This will remove the label that was created by the wizard.
+
+. Click _Apply (all displays)_. The view configuration page appears.
+
+. Choose _Rearrange_ from the dropdown button in the _Fields_ section. The _Rearrange fields_ pop-up appears.
+
+. Drag the fields in the right order: Image, Title. Body.
+
+. Click _Apply (all displays)_. The view configuration page appears.
+
+. Click _Save_.
+
+. Click _Update preview_ for a preview.
+
+. Navigate to the homepage and select _Vendors_ from the main navigation to see the result.
+
+// to create this image follow all the above steps.
+image:images/views-create-view.png["Vendors view configuration page",width="100%"]
 
 ==== Follow-on tasks
 
-// In this section, you can make cross-references to other task topics in this
-// book that are related. You can also make suggestions for tasks that someone
-// who just learned this task might be able to do that are not in the book --
-// try to think of tasks that would help someone solidify and broaden their
-// skills and knowledge, especially other tasks related to the scenario.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-1>>
-//* Brief description of another task not in the book.
+* The link to the view in the main navigation will probably not be in the right place. Change the order of the menu items in the main navigation. See <<menu-reorder.txt>>.
 
-Remove this placeholder text.
+//==== Related concepts
 
-
-==== Related concepts
-
-// In this section, add links to related concept topics, if any.
-
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-Remove this placeholder text.
+// ==== Additional resources
