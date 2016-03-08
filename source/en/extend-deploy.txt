@@ -21,45 +21,42 @@ site.
 ==== Site prerequisites
 
 * The module _Configuration Manager_ is enabled in the local development site
-  and the production site. See <<language-enable>> for instructions on
-  installing Core modules.
+and the production site. See <<language-enable>> for instructions on
+installing Core modules.
+
 * <<structure-content-type, Have the _Vendor_ content type created>> in
-  the local development site and the production site.
+the local development site and the production site.
+
 * <<views-create, Have the _Vendors_ view created>> in the local development
-  site but not the production site.
+site but not the production site.
 
 ==== Steps
 
 . Open the local development site
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
-  _Development_ > _Configuration synchronization_ > _Export_ > _Single item_.
-  (admin/config/development/configuration/single/export).
-  The _Single export_ page appears.
+_Development_ > _Configuration synchronization_ > _Export_ > _Single item_.
+(admin/config/development/configuration/single/export).
+The _Single export_ page appears.
 
 . Choose _View_ from the _Configuration type_ list.
 
-// @todo. create issue for weird field label "Here is your configuration:"
-
-[start=4]
-
 . Choose _Vendors_ from the _Configuration name_ list. The configuration
-  appears in the textarea.
+appears in the textarea.
 
 . Copy the configuration from the textarea.
 
 // To create this image, create a view called vendors and go to
 // admin/config/development/configuration/single/export. Choose View and
 // Vendors as explained above
-image:images/extend-deploy-single-item.png["Export a single item",width="100%"]
+image:images/extend-deploy-export-single.png["Export a single item",width="100%"]
 
 [start=6]
-
 . Open the production site.
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
-  _Development_ > _Configuration synchronization_ _Import_ > _Single_
-  (admin/config/development/configuration). The _Import_ page appears.
+_Development_ > _Configuration synchronization_ _Import_ > _Single_
+(admin/config/development/configuration). The _Import_ page appears.
 
 . Choose _View_ from the _Configuration type_ list.
 
@@ -70,7 +67,7 @@ image:images/extend-deploy-single-item.png["Export a single item",width="100%"]
 . Click _Confirm_.
 
 . Verify that the new view is being created by navigating in the _Manage_
-  administrative menu to _Structure_ > _Views_.
+administrative menu to _Structure_ > _Views_.
 
 ==== Follow-on tasks
 

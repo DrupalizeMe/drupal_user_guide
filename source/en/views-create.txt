@@ -7,7 +7,8 @@
 
 ==== Goal
 
-You create a page that lists the vendors at the farmers market. When, in the future, you add a new vendor than it is automatically added to this table.
+You create a page that lists the vendors at the farmers market. When, in the
+future, you add a new vendor than it is automatically added to this table.
 
 ==== Prerequisite knowledge
 
@@ -17,16 +18,24 @@ You create a page that lists the vendors at the farmers market. When, in the fut
 ==== Site prerequisites
 
 * The _Views_ module is enabled on the site.
-* The content type _Vendor_ has been created and it has the URL and Image fields added. See: <<structure-content-type>> and <<structure-fields>>.
-* <<structure-image-style-create, The image style _Medium_ has been created>>. This style is being created when the Image module is installed for the first time, but if it has been deleted for some reason, you can recreate it.
-* A couple of _Vendor_   content items has been created. See: <<content-create>>.
+
+* The content type _Vendor_ has been created and it has the URL and Image fields
+added. See: <<structure-content-type>> and <<structure-fields>>.
+
+* <<structure-image-style-create, The image style _Medium_ has been created>>.
+This style is created when the Image module is installed for the first time,
+but if it has been deleted for some reason, you can recreate it.
+
+* A couple of _Vendor_   content items has been created. See:
+<<content-create>>.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _+Add a new view_ (admin/structure/views/add). The _Add new view_ wizard appears.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _+Add
+a new view_ (admin/structure/views/add). The _Add new view_ wizard appears.
 
 . Fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation| Example value
@@ -48,19 +57,20 @@ You create a page that lists the vendors at the farmers market. When, in the fut
 image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 
 [start=3]
-
 . Click _Save and edit_. The view configuration page appears.
 
-. Choose _Add_ from the dropdown button in the _Fields_ section. The _Add fields_ pop-up appears.
+. Choose _Add_ from the dropdown button in the _Fields_ section. The _Add
+fields_ pop-up appears.
 
 . Enter _image_ in the search field.
 
 . Select _Image_ in the table.
 
-. Click _Apply (all displays)_. The _Configure field: Content: Image_ pop-up appears.
+. Click _Apply (all displays)_. The _Configure field: Content: Image_ pop-up
+appears.
 
 . Fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation| Example value
@@ -69,20 +79,20 @@ image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 | Link image to: | Add a link to the content item | Content
 |================================
 
-[start=9]
-
 . Click _Apply (all displays)_. The view configuration page appears.
 
-. Choose _Add_ from the dropdown button in the _Fields_ section. The _Add fields_ pop-up appears.
+. Choose _Add_ from the dropdown button in the _Fields_ section. The _Add
+fields_ pop-up appears.
 
 . Enter _body_ in the search field.
 
 . Select _Body_ in the table.
 
-. Click _Apply (all displays)_. The _Configure field: Content: Body_ pop-up appears.
+. Click _Apply (all displays)_. The _Configure field: Content: Body_ pop-up
+appears.
 
 . Fill in the fields as shown below.
-
++
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation| Example value
@@ -91,17 +101,18 @@ image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 | Trimmed limit: | The number of maximum characters shown | 120
 |================================
 
-[start=15]
+. Click _Apply (all displays)_. The view configuration page appears.
+
+. Click the link _Content: title (Title)_ link in the _Fields_ list. The
+_Configure field: Content: Title_ pop-up appears.
+
+. Uncheck _Create a label_. This will remove the label that was created by the
+wizard.
 
 . Click _Apply (all displays)_. The view configuration page appears.
 
-. Click the link _Content: title (Title)_ link in the _Fields_ list. The _Configure field: Content: Title_ pop-up appears.
-
-. Uncheck _Create a label_. This will remove the label that was created by the wizard.
-
-. Click _Apply (all displays)_. The view configuration page appears.
-
-. Choose _Rearrange_ from the dropdown button in the _Fields_ section. The _Rearrange fields_ pop-up appears.
+. Choose _Rearrange_ from the dropdown button in the _Fields_ section. The
+_Rearrange fields_ pop-up appears.
 
 . Drag the fields in the right order: Image, Title. Body.
 
@@ -109,16 +120,22 @@ image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 
 . Click _Save_.
 
-. Click _Update preview_ for a preview.
-
-. Navigate to the homepage and select _Vendors_ from the main navigation to see the result.
-
 // to create this image follow all the above steps.
 image:images/views-create-view.png["Vendors view configuration page",width="100%"]
 
+[start=23]
+. Click _Update preview_ for a preview.
+
+. Navigate to the homepage and select _Vendors_ from the main navigation to see
+the result.
+
+// @todo Add a screen shot of the Vendors page.
+
 ==== Follow-on tasks
 
-* The link to the view in the main navigation will probably not be in the right place. Change the order of the menu items in the main navigation. See <<menu-reorder.txt>>.
+The link to the view in the main navigation will probably not be in the right
+place. Change the order of the menu items in the main navigation. See
+<<menu-reorder>>.
 
 //==== Related concepts
 

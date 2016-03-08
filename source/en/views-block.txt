@@ -6,7 +6,10 @@
 
 ==== Goal
 
-We want to show the most recent recipes on the site in a sideblock. Rather than creating an entirely new view for it, we add a Block display to the already existing Recipes view. Then we change the configuration, for this new display only.
+We want to show the most recent recipes on the site in a sideblock. Rather than
+creating an entirely new view for it, we add a Block display to the already
+existing Recipes view. Then we change the configuration, for this new display
+only.
 
 ==== Prerequisite knowledge
 
@@ -23,53 +26,84 @@ We want to show the most recent recipes on the site in a sideblock. Rather than 
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ (admin/structure/views). Find the view "Recipes" and choose _Edit_ from its drop-down operations. Alternatively, in the main visitor-facing site navigation click on _Recipes_ to go to the Recipes page. There click on the appearing pencil icon, then click on _Edit view_.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
+(admin/structure/views). Find the view "Recipes" and choose _Edit_ from its
+drop-down operations. Alternatively, in the main visitor-facing site navigation
+click on _Recipes_ to go to the Recipes page. There click on the appearing
+pencil icon, then click on _Edit view_.
+
 //To create this image, take a screenshot on /recipes once you clicked on the edit icon for the Recipes view.
-image:images/views-block_01.png["Edit view directly"]
+image:images/views-block_edit.png["Edit view directly",width="100%"]
 
 [start=2]
-. Click on "+Add" in the Displays section and choose "Block" from the drop-down options. Click Save in the bottom of the section. The new display is created, we are automatically swithed to its configuration.
+. Click on "+Add" in the Displays section and choose "Block" from the drop-down
+options. Click Save in the bottom of the section. The new display is created, we
+are automatically swithed to its configuration.
+
 //To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/page_1 when clicked onto the "+Add" button.
-image:images/views-block_02.png["Add block display"]
+image:images/views-block_add-block.png["Add block display",width="100%"]
 
-. Click on the _Display name: Block_, this opens _The name and the description of this display_ pop-up. Change the Administrative name to "Recent recipes" and click _Apply_.
+[start=3]
+. Click on the _Display name: Block_, this opens _The name and the description
+of this display_ pop-up. Change the Administrative name to "Recent recipes" and
+click _Apply_.
 
-. In the Title section, click on _Title: Recipes_. Change _For This block (override)_ the Title to "New Recipes" and click _Apply (this display)_.
+. In the Title section, click on _Title: Recipes_. Change _For This block
+(override)_ the Title to "New Recipes" and click _Apply (this display)_.
+
 //To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the view's title configuration pop-up opened.
-image:images/views-block_03.png["Title only for this block"]
+image:images/views-block_title.png["Title only for this block",width="100%"]
 
 [start=5]
-. In the Format section, click on _Format: Grid_ then in the appearing pop-up choose _For This block (override)_ the Style checked for "Unformatted list". _Apply (this display)_. You can further configure the _Style options_ in the pop-up that now appears.
+. In the Format section, click on _Format: Grid_ then in the appearing pop-up
+choose _For This block (override)_ the Style checked for "Unformatted
+list". _Apply (this display)_. You can further configure the _Style options_ in
+the pop-up that now appears.
 
-. In the Fields section click on _Content: Main Image_. Choose _For This block (override)_ the _Image style Thumbnail (100x100)_ then click on _Apply (this display)_.
+. In the Fields section click on _Content: Main Image_. Choose _For This block
+(override)_ the _Image style Thumbnail (100x100)_ then click on _Apply (this
+display)_.
+
 //To create this image take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the _Configure field: Content: Main Image_ pop-up open.
-image:images/views-block_04.png["Image to thumbnail"]
+image:images/views-block_image.png["Image to thumbnail",width="100%"]
 
 [start=7]
-. In the Filter criteria section click on _Content: Ingredients (exposed)_, in the appearing pop-op choose _For This Block (override)_ and click on _Remove_ at the bottom.
+. In the Filter criteria section click on _Content: Ingredients (exposed)_, in
+the appearing pop-op choose _For This Block (override)_ and click on _Remove_ at
+the bottom.
 
-. In the Sort criteria section click on "Add". In the appearing _Add sort criteria_ pop-up choose _For This block (override)_, check the field title _Authored on_ (from Content category) then _Apply (this display)_.
+. In the Sort criteria section click on "Add". In the appearing _Add sort
+criteria_ pop-up choose _For This block (override)_, check the field title
+_Authored on_ (from Content category) then _Apply (this display)_.
+
 //To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the _Add sort criteria_ pop-op open.
-image: images/views-block_05.png["Sort by recent"]
+image:images/views-block_sort.png["Sort by recent",width="100%"]
 
 [start=9]
-. In the appering configuration pop-up choose the sorting order to be _Sort descending_ to have the most recent recipes appear first, then apply.
+. In the appering configuration pop-up choose the sorting order to be _Sort
+descending_ to have the most recent recipes appear first, then apply.
 
-. In the Pager section click on _Use pager: Full_. Select _For This block (override)_ a pager to _Display a specified number of items_. Give 5 to be the _"Items to display".
+. In the Pager section click on _Use pager: Full_. Select _For This block
+(override)_ a pager to _Display a specified number of items_. Give 5 to be the
+_"Items to display".
+
 //To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the _Select pager_ pop-op open.
-image: images/views-block_06.png["Specified number of items pager"]
+image:images/views-block_pager.png["Specified number of items pager",width="100%"]
 
 [start=11]
-. Save all the above changes by clicking on _Save_ at the bottom of the _Displays_ panel.
+. Save all the above changes by clicking on _Save_ at the bottom of the
+_Displays_ panel.
 
 ==== Follow-on tasks
 
-* Add this "Recent Recipes" block to Sidebar Second. See <<block-place>>. Now we see the new block view on the Home page too:
+* Add this "Recent Recipes" block to Sidebar Second. See <<block-place>>. Now we
+see the new block view on the Home page too:
+
 //To create this image, take a screenshot on the home page once the New Recipes block is added to Sidebar Second.
-imge:images/views-block_07.png["New Recipes block on homepage"]
+image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%"]
 
 ==== Related concepts
 
-* <<planning-structure>>
+<<planning-structure>>
 
 //==== Additional resources
