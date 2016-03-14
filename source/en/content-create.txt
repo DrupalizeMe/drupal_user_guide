@@ -24,14 +24,19 @@ type.
 . In the _Manage_ administrative menu, navigate to _Content_ > _+Add content_ >
 _Basic page_ (node/add/page). The _Create Basic page_ form appears.
 
+. Click _Edit summary_.
+
 . Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Title | Home
-|Body |
-Welcome to City Market - your neighborhood farmers market!
+| Field name | Explanation| Value
+| Title | Title of the page. Will also be used a metatag in the source code,
+ URL alias and as label of the content item in administration screens | Home
+| Summary | Summary of the the value of the body field. Can be used as teaser
+in overview pages | Opening times and location of the City Market.
+| Body | Full content of the page | Welcome to City Market - your neighborhood
+farmers market!
 
 Open: Sundays, 9 AM to 2 PM, April to September
 
@@ -45,7 +50,7 @@ HTML source code of the text that you are editing.
 // Go to node/add/page
 image:images/content-create-create-basic-page.png["Create a basic page"]
 
-[start=3]
+[start=4]
 . Click _Preview_ to ensure everything looks like expected.
 
 . Click _Back to content editing_.
