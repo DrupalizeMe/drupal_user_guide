@@ -15,70 +15,86 @@ Download and install a theme from Drupal.org.
 
 <<extend-theme-find>>
 
-//==== Site prerequisites
+==== Site prerequisites
+
+If you install via the website: have the _Update Manager_ module installed. See
+<<language-enable>> for instructions on installing modules.
+
+If you are using Drush to install the theme: <<install-tools, Have Drush
+installed>>.
 
 ==== Steps
 
-Installing a theme involves downloading the required file from drupal.org,
-expanding the archive file, and then placing the resulting directory and all the
-files into the _themes/_ directory in the root of your project. You can
-optionally add a subdirectory, _themes/contrib/_, which is recommended in order
-to keep themes downloaded from drupal.org separate from any custom themes. Then,
-you need to enable the theme from within your site.
+You can use the website or Drush to install a contributed theme. Alternatively
+you can install the theme by <<extend-manual-install, downloading and
+unpacking it>>.
 
-If you have the Update Manager module installed, the first part (download,
-expand, upload) can be done automatically. Here are the steps:
+===== Using the website
 
-. After locating a theme on drupal.org copy the link for the .tar.gz download of
-the theme that you want to install.
+. On the theme's project page on drupal.org (for example,
+https://www.drupal.org/project/bootstrap) scroll to the _Downloads_ section
+in the bottom of the page.
 
-. In the _Manage_ administrative menu on your site, navigate to _Appearance_
-(admin/theme) and then click the _Install new theme_ button
-(admin/theme/install).
+. Right click the _tar.gz_ download link and copy the address.
 
-. Paste the link to the .tar.gz file for the theme you want to install into the
-_Install from a URL_ field. Then click the _Install_ button.
-+
+// For this screenshot got https://www.drupal.org/project/bootstrap and
+// crop to the downloads section. Highlight the tar.gz link.
+image:images/extend-theme-install-download.png["Downloading a theme using a URL",width="100%"]
+
+[start=3]
+. In the _Manage_ administrative menu, navigate to _Appearance_ (admin/themes).
+The _Appearance_ page appears.
+
+. Click _Install new theme_. The _Install new theme_ page appears.
+
+. In the field _Install from a URL_ paste the copied download link. This value
+could look like
+`https://ftp.drupal.org/files/projects/bootstrap-8.x-3.0-beta3.tar.gz`
+
 // Go to page where you can copy/paste a link for installing a theme and
 // screenshot the form on that page.
 image:images/extend-theme-install-1.png["Install a theme",width="100%"]
 
-[start=4]
-. This will take you to the _Update manager_ which will download the theme and
-display a success message. The message should read _Installation was completed
-successfully._, and underneath it will list the theme you've just installed.
-+
-// Screenshot of the page displaying a success message after installing a theme
-// with the update manager.
-image:images/extend-theme-install-2.png["Update manager success message",width="100%"]
+[start=6]
+. Click _Install_ to upload and unpack the new theme on the server. The files
+are being downloaded to the _themes_ folder.
 
-[start=5]
-. Under _Next steps_ click the _Install newly added themes_ link. This will take
-you back to the _Appearance_ page (admin/appearance) in the _Manage_
-administrative menu.
-+
+. Select _Install newly added themes_ to return to the _Appearance_ page.
+
+. Locate the new theme and click _Install and set as default_ to use it. All
+non-administrative pages on the site will now use this new theme.
+
 // Screenshot of the appearance page, with newly added theme ready to be
 // installed.
 image:images/extend-theme-install-3.png["Uninstalled themes on Appearance page",width="100%"]
 
-[start=6]
-. If you didn't use the _Update manager_, and instead downloaded the theme
-manually you can start with this step.
-+
-Any themes which have been download, but not yet installed, are listed under
-the _Unisntalled themes_. To enable the new theme click the _Install and set
-as default_ link. This will enable the new theme, and display a message
-letting you know it is now the default theme.
+===== Using Drush
 
-. All non-administrative pages on the site will now use this new theme.
+. Find the project name for the theme you want to install, which is the last
+segment of the theme's project page URL. For example, if the project URL is
+_https://www.drupal.org/project/bootstrap, the project name is +bootstrap+.
 
+. Run the _dl_, _en_ and _config-set_ commands from a command prompt and give
+the drupal.org project name (for example, _bootstrap_) as a parameter.
+
+----
+drush dl bootstrap
+drush en bootstrap
+drush config-set system.theme default bootstrap
+----
+
+[start=3]
+. Follow the instructions on the screen.
 
 ==== Follow-on tasks
 
+* In the _Manage_ administrative menu, navigate to _Appearance_ (admin/themes)
+and uninstall any themes that you are not using.
+
 * <<extend-module-find>>
+
 * <<extend-module-install>>
 
 // ==== Related concepts
-
 
 //==== Additional resources

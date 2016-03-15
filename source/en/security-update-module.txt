@@ -18,76 +18,87 @@ are announced.
 
 ==== Site prerequisites
 
-<<security-cron>>
+* <<extend-module-install, A contributed module has been installed>>
+and there is an update available for it.
+
+* <<security-cron, Ensure that cron maintenance tasks are run regularly on
+your site>>.
+
+* <<prevent-backups,Back up your site>>. Though unlikely, operations that
+modify the database can be damaging.
+
+If you update via the website:
+
+* <<user-admin-account, Login with the User 1 account>>.
+* Install the _Update Manager_ module. See <<language-enable>> for
+instructions on installing modules.
+
+If you are using Drush to update the module: <<install-tools, Have Drush
+installed>>.
 
 ==== Steps
 
-. Check for module-specific update instructions. This is typically necessary
-when updating modules that involve the usage of third party libraries. Be sure
-to read and understand all module specific requirements before proceeding with
-the updates. To find instructions, check the module's project page "Read
-Documentation" link, as well as the instructions (for example, _README.txt_,
-_INSTALL.txt_, and _UPGRADE.txt_) that come with the module's installation
-file. Also review the release notes by clicking on the version number of the
-download on the project page for the version you're downloading.
-+
+Before you start, check for module-specific update instructions. This is
+typically necessary when updating modules that involve the usage of third party
+libraries. Be sure to read and understand all module specific requirements
+before proceeding with the updates. To find instructions, check the module's
+project page _Read Documentation_ link, as well as the instructions (for
+example, _README.txt_, _INSTALL.txt_, and _UPGRADE.txt_) that come with the
+module's installation file. Also review the release notes by clicking on the
+version number of the download on the project page for the version you're
+downloading.
+
 //Screenshot of the release notes link
 image:images/security-update-module-release-notes.png["Release notes link",width="100%"]
 
-[start=2]
-. Back up your database and files. Though unlikely, any operation that modifies
-the database can be potentially damaging. It is highly recommended that you
-<<prevent-backups,back up your site>> before updating modules.
+You can use the website or Drush to update a contributed module. Alternatively
+you can update the module by <<extend-manual-install, downloading and unpacking
+it>>.
 
-. Put your site into Maintenance mode.  In the _Manage_ administrative menu,
-navigate to _Configuration_ > _Maintenance mode_
-(_/admin/config/development/maintenance_). Put the site into maintenance mode by
-selecting _Put site into maintenance mode_.
+===== Using the website
 
-. Replace the module code with the updated version.  You can use any of these
-methods to update a module:
-+
-  * Use the _Update manager_: In the _Manage_ administrative menu, navigate to
-  the _Update Manager_ by clicking _Extend_, and then browsing to the _Update_
-  tab (_admin/modules/update_).  If there available updates for any enabled
-  modules on your site, they will be listed here. To install an update, mark
-  the checkbox next to the module(s) you're updating and click _Download these
-  updates_.
-  * Manually updating files: Download a copy of the new module from the
-  drupal.org project page, or navigate to the _Update Manager_ and use the
-  link in the module _Name_ column of the updates list. Delete the entire
-  outdated module's directory and upload the new one as if you were
-  <<extend-module-install,installing the module>> for the first time.
-  * Use Drush:
-  If you have Drush installed, you can also update your modules from the
-  command line.
-  +
-  To update one or more modules using Drush run the following command from a
-  command prompt, where [module] is the drupal.org project name of the module
-  you want to update: +drush up [module]+
-  +
-  If you have more than one module to update, add the additional module project
-  names to the end of the command, separated by spaces.
-  +
-  Note: If you use Drush to update your module, you don't need to run
-  update.php, allowing you to skip the next step.
+. Put your site in to <<extend-maintenance, maintenance mode>>.
 
-. Run _update.php_, which updates the database after modules, themes, or core
-have been updated or upgraded. You can run _update.php_ using a web browser by
-going to _http://example.com/update.php_ (replacing example.com with the base
-URL of your Drupal site).
-+
-Performing updates requires the _administer software updates_
-<<user-permissions,user permission>>. The first account created on your site
-("user 1") will always have the required privileges.
-+
-Follow the steps through the update utility, and optionally, review the
-<<prevent-log,site log>> once the updates are complete to check for errors.
+. In the _Manage_ administrative menu, navigate to _Configuration_ > _Reports_ >
+_Available updates_ > _Update_ (admin/reports/updates/update).
 
-. Turn off Maintenance mode.  Put the site back online by returning to
-__/admin/config/development/maintenance_ and disabling maintenance mode.
+. Select the module.
 
-//==== Follow-on tasks
+. Click _Download these updates_.
+
+. Click _Continue_.
+
+. Click _Run database updates_.
+
+. Click _Continue_. The database update scripts will be executed.
+
+. Put your site out of the <<extend-maintenance, maintenance mode>>.
+
+===== Using Drush
+
+. Find the project name for the module you update, which is the last
+segment of the module's project page URL. For example, if the project URL is
+_https://www.drupal.org/project/admin_toolbar_, the project name is
++admin_toolbar+.
+
+. Run the _up_ command from a command prompt and give the drupal.org
+project name (for example, _admin_toolbar_) as a parameter.
+
+----
+drush up admin_toolbar
+----
+
+[start=3]
+. Follow the instructions on the screen.
+
+If you have more than one module to update, add the additional module project
+names to the end of the command, separated by spaces.
+
+==== Follow-on tasks
+
+* Review the <<prevent-log,site log>> once the updates are complete to check for
+errors.
+* <<security-update-theme>>
 
 //==== Related concepts
 

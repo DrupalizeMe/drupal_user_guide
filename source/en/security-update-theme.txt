@@ -36,20 +36,21 @@ If you update via the website:
 
 * <<user-admin-account, Login with the User 1 account>>.
 
-* The _Update Manager_ module must be installed. See <<language-enable>> for
+* Install the _Update Manager_ module. See <<language-enable>> for
 instructions on installing modules.
 
-If you are using Drush to update the theme:
-
-* <<install-tools, Have Drush installed>>
+If you are using Drush to update the theme: <<install-tools, Have Drush
+installed>>.
 
 ==== Steps
 
-You can use the website or Drush to update contributed themes.
+You can use the website or Drush to update a contributed theme. Alternatively
+you can update the theme by <<extend-manual-install, downloading and unpacking
+it>>.
 
 ===== Using the website
 
-. Put your site in to <<extend-maintenance, Maintenance mode>>.
+. Put your site in to <<extend-maintenance, maintenance mode>>.
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ > _Reports_ >
 _Available updates_ > _Update_ (admin/reports/updates/update).
@@ -69,24 +70,30 @@ image:images/security-update-theme-updates.png["Available updates",width="100%"]
 
 . Click _Continue_. The database update scripts will be executed.
 
-. Put your site out of the <<extend-maintenance, Maintenance mode>>.
+. Put your site out of the <<extend-maintenance, maintenance mode>>.
 
-===== Using drush
+===== Using Drush
 
-If you have Drush, you can update your themes from the command line.
+. Find the project name for the theme you update, which is the last segment of
+the theme's project page URL. For example, if the project URL is
+_https://www.drupal.org/project/bootstrap, the project name is +bootstrap+.
 
-. Run the _up_ command from a command prompt, where [theme] is the drupal.org
-project name of the theme:
+. Run the _up_ command from a command prompt and give the drupal.org project
+name (for example, _bootstrap_) as a parameter.
+
 ----
-drush up [theme]
+drush up bootstrap
 ----
 
-[start=2]
+[start=3]
 . Follow the instructions on the screen.
 
 ==== Follow-on tasks
 
-<<security-update-module>>
+* Review the <<prevent-log,site log>> once the updates are complete to check for
+errors.
+
+* <<security-update-module>>
 
 // ==== Related concepts
 

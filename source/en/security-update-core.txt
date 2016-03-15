@@ -56,12 +56,7 @@ $settings['update_free_access'] = TRUE;
 . Disable any caching technique (memcache, varnish, and so on) your application
 might be using.
 
-. In case your site is open and accessible to public, it is *highly recommended*
-to set it to maintenance mode by navigating to _Configuration > Development >
-Maintenance mode_, enabling the _Put site into maintenance mode_ check box and
-saving the configuration. The motive behind this step is to restrict both the
-end users as well as caching processes to access the site and it's database
-during update process.
+. Put your site in to <<extend-maintenance, maintenance mode>>.
 
 . Download Drupal 8.x core latest version (preferably, stable version) manually
 from https://www.drupal.org/project/drupal["Drupal core"] and extract it to
@@ -122,9 +117,7 @@ $settings['update_free_access'] = FALSE;
 ----
 
 [start=12]
-. If you have followed *step 4*, navigating to _Configuration > Development >
-Maintenance mode_, disable the _Put site into maintenance mode_ check box and
-save the configuration.
+. Put your site out of the <<extend-maintenance, maintenance mode>>.
 
 . In case you are using any caching technique (varnish, memcache, or so on) and
 had disabled at *step 3*, re-enable them; else, skip this step.

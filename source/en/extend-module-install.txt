@@ -21,9 +21,19 @@ allows you to easily browse through the administration section of the website.
 
 ==== Site prerequisites
 
-Your site must have the _Update Manager_ module enabled.
+If you install via the website: have the _Update Manager_ module installed. See
+<<language-enable>> for instructions on installing modules.
+
+If you are using Drush to install the module, <<install-tools, have Drush
+installed>>.
 
 ==== Steps
+
+You can use the website or Drush to install a contributed module. Alternatively
+you can install the module by <<extend-manual-install, downloading and
+unpacking it>>.
+
+===== Using the website
 
 . On the _Admin toolbar_ project page on drupal.org
 (https://www.drupal.org/project/admin_toolbar) scroll to the _Downloads_ section
@@ -33,7 +43,7 @@ in the bottom of the page.
 +
 // For this screenshot got https://www.drupal.org/project/admin_toolbar and
 // crop to the downloads section. Highlight the tar.gz link.
-image:images/extend-module-install-admin-toolbar-do.png[_Locating the tar.gz download link of the Admin toolbar module_,width=_100%_]
+image:images/extend-module-install-download.png[_Downloading a module using a URL_,width=_100%_]
 
 [start=3]
 . In the _Manage_ administrative menu, navigate to _Extend_ (admin/modules). The
@@ -46,7 +56,7 @@ could look like
 `https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz`
 +
 // For this screenshot follow steps 1 - 3
-image:images/extend-module-install-download.png[_Downloading a module using a URL_,width=_100%_]
+image:images/extend-module-install-admin-toolbar-do.png[_Locating the tar.gz download link of the Admin toolbar module_,width=_100%_]
 
 [start=6]
 . Click _Install_ to upload and unpack the new module on the server. The files
@@ -57,6 +67,24 @@ are being downloaded to the _modules_ folder.
 . Locate and select the module _Admin toolbar_.
 
 . Click _Install_ to turn on the new module.
+
+===== Using Drush
+
+. Find the project name for the module you want to install, which is the last
+segment of the module's project page URL. For example, if the project URL is
+_https://www.drupal.org/project/admin_toolbar_, the project name is
++admin_toolbar+.
+
+. Run the _dl_ and _en_ commands from a command prompt and give the drupal.org
+project name (for example, _admin_toolbar_) as a parameter.
+
+----
+drush dl admin_toolbar
+drush en admin_toolbar
+----
+
+[start=3]
+. Follow the instructions on the screen.
 
 ==== Follow-on tasks
 
