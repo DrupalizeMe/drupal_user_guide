@@ -1,83 +1,56 @@
-// This template is for a topic that covers a concept.
-//
-// To use this template:
-// - Copy it to your source directory with a new name, such as
-//   "blocks-overview.txt". [The project coordinators may already have done
-//   that for you.]
-// - Follow the instructions that are contained in lines starting with //
-//   throughout this file.
-// - Replace placeholder text with your content.
-// - Before you submit your topic, remove all the lines in the file that
-//   start with // -- these are comments that do not belong in the topic. Also
-//   remove any blank lines that are before the ID line.
-// - Then, if there are sections that do not apply to your topic (for example,
-//   Prerequisites might not), put // before the ==== on that line and leave
-//   those lines in the topic file. So it would look like:
-//==== Prerequisite knowledge
-
-
-// The first thing in the file is an ID: replace the text in the brackets below
-// so that it matches the name of the file (without the .txt extension; for
-// example, [[block-overview]] if the file name is block-overview.txt.
 [[planning-modular]]
-// The topic title goes on this line. Use "Title Case" for topic titles.
-// Titles for Concept topics should start with "Concept: ".
-=== UNWRITTEN - Concept: Modular Content
+=== Concept: Modular Content
 
-// The next thing that is needed is an entry for the index:
-// - Replace the text in (((indexentry))) with an appropriate index entry,
-//   such as (((Blocks,overview))). You can add additional index entries if
-//   appropriate.
-// - Refer to the Guidelines if you have questions.
-// - Also remove the // before the ((( so that this becomes an index entry
-//   and not a comment.
-//(((indexentry)))
-
+(((Content,modular)))
+(((Views,and modular content)))
+(((Modular content)))
+(((Pages,composite)))
 
 ==== Prerequisite knowledge
 
-// This section should mostly link to topic and concept tasks within
-// the guide that someone would need to understand before trying this task.
-// Some of the entries could be background knowledge that is needed that is
-// not covered in the guide.
-//
-// Some ideas (remove the // to make these not comments):
-//* <<cross-reference-one>>
-//* <<cross-reference-two>>
-//* How to upload files from your local server to your web server.
+* <<planning-data-types>>
+* <<planning-layout>>
 
-Remove this placeholder text.
+==== What is modular content?
 
+Given that the content of your site is stored in a database, it is desirable to
+make the content _modular_, meaning that certain pages on your site, rather than
+being edited as a whole page, are instead generated automatically from other
+content items. For instance, in our farmer's market site scenario, you might
+create individual content items for recipes. If the recipe content items have a
+field that keeps track of ingredients, then your site could include a composite
+page that would list recipes, and allow visitors to search for a recipe that
+contained some particular ingredient they had bought at the market.
 
-==== What is a ...?
+Smaller sections of pages can also be generated as composites. For instance,
+recipe content items could have a field that keeps track of which vendor
+submitted the recipe (see <<structure-reference-fields>>), with the vendor
+details edited in separate vendor content items. This would allow you to do the
+following on your site:
 
-// Describe your concept here. The title of this section should be
-// What is a ...? or What are ...? (where the ... is the same as the topic
-// title). If the topic title contains several things to describe, you can also
-// have multiple of these "What is a ..." sections.
-//
-// If possible, relate this concept to the specific scenario of the guide,
-// perhaps using "for example" language.
+* On each Recipe page, there could be an area that displays some information
+about the vendor that submitted the recipe, such as their name and market stall
+number.
 
-Remove this placeholder text.
+* Each Vendor page could have a section that lists the recipes they have
+submitted.
 
+The key idea is that each piece of information is only edited in one place. When
+vendor information is updated, all recipe pages that display that vendor
+information are automatically updated; when a recipe is submitted by a vendor,
+it is automatically displayed on the vendor page. In Drupal specifically, the
+core _Views_ module is the usual way to use modular content to create composite
+pages and page sections; see <<views-concept>> for more information. Also, _view
+modes_ are useful for defining different ways to display each content item; see
+<<structure-view-modes>> for more information.
 
 ==== Related topics
 
-// In this section, make cross-references to related tasks and concepts that
-// are covered in this book.
-// Also remove the // so these lines are a list and not comments:
-//* <<cross-reference-1>>
-//* <<cross-reference-2>>
+* <<planning-structure>>
+* <<structure-content-type>>
+* <<structure-fields>>
+* <<structure-reference-fields>>
+* <<structure-view-modes>>
+* <<views-concept>>
 
-Remove this placeholder text.
-
-
-==== Additional resources
-
-// In this section, make a list of outside references: videos, Drupal.org
-// documentation, etc. Make sure all links have link text showing the name
-// of the article or page it being linked to.
-
-
-Remove this placeholder text.
+// ==== Additional resources
