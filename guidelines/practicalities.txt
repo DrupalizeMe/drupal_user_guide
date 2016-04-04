@@ -81,9 +81,11 @@ image:images/spreadsheet.png["Screen shot of the tracking spreadsheet"]
 Some notes about the topic tracking spreadsheet:
 
 * The topics are listed, one per row in the spreadsheet, within the outline of
-  the guide. You can also see them on the
-  https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html[temporary
-  site with the guide output].
+  the guide.
+* You can also see their current output. To find the site where the user guide
+  output is listed, go to the
+  https://www.drupal.org/project/user_guide[User Guide project home page], and
+  it is listed there.
 * Each topic will go through several writing and editing phases, including
   "Writing the initial draft" and "Copy edit".
 * Each phase has a set of 3 columns for the issue link, the person who is
@@ -161,7 +163,8 @@ assigned filename of your topic. Example: Write content-create.txt
 values where the [] parts are.
 |================================
 
-Template for the issue summary section:
+Template for the issue summary section -- note that you may need to change the
+URL in the attribution section to the current location of the guidelines book:
 
 ----
 <strong>Title:</strong>  [Topic title]
@@ -169,7 +172,7 @@ Template for the issue summary section:
 <strong>File name:</strong> [File name]
 <strong>Covers:</strong> [Copy from the Tracking spreadsheet]
 <h4>Attribution</h4>
-See https://userguide-drupal.redesign.devdrupal.org/guidelines/guidelines.html#copyright-license
+See https://userguide-new-drupal.dev.devdrupal.org/guidelines/guidelines.html#copyright-license
 [Fill in!]
 ----
 
@@ -198,11 +201,11 @@ You have two options for editing this source file:
 
 To use the online editor:
 
-. Find your page in the outline on the
-    https://userguide-drupal.redesign.devdrupal.org/d8guide/en/index.html[User
-    Guide output site] (user name and password are both *drupal*).
-. Click the link to see your page. It may be a template (if you are in
-    the Writing phase), or it may be a written topic that you are editing.
+. Locate the current home of the user guide output. This is always listed on
+  the https://www.drupal.org/project/user_guide[User Guide project home page].
+. Find your page in the outline, and click the link to see your page. It may be
+  a template (if you are in the Writing phase), or it may be a written topic
+  that you are editing.
 . Locate the _Edit the source file filename.txt_ link (with the file name
     for your topic) in
     the _Source information_ block on the sidebar:
