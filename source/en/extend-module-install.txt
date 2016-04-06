@@ -29,9 +29,10 @@ installed>>.
 
 ==== Steps
 
-You can use the website or Drush to install a contributed module. Alternatively
-you can install the module by <<extend-manual-install, downloading and
-unpacking it>>.
+You can use the website or Drush to install a contributed module. If you are
+installing a custom module rather than a contributed module, or if the steps
+below do not work to download and unpack the module files, follow the steps in
+<<extend-manual-install>>, and then continue here with website step 7.
 
 ===== Using the website
 
@@ -62,7 +63,10 @@ image:images/extend-module-install-admin-toolbar-do.png["Locating the tar.gz dow
 . Click _Install_ to upload and unpack the new module on the server. The files
 are being downloaded to the _modules_ folder.
 
-. Select _Enable newly added modules_ to return to the _Extend_ page.
+. Select _Enable newly added modules_ to return to the _Extend_ page. If you
+used the manual uploading procedure, start with this step, and reach the
+_Extend_ page by navigating: in the _Manage_ administrative menu, navigate to
+_Extend_ (admin/modules).
 
 . Locate and select the module _Admin toolbar_.
 

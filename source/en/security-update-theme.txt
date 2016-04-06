@@ -44,9 +44,10 @@ installed>>.
 
 ==== Steps
 
-You can use the website or Drush to update a contributed theme. Alternatively
-you can update the theme by <<extend-manual-install, downloading and unpacking
-it>>.
+You can use the website or Drush to update a contributed theme. If you are
+updating a custom theme rather than a contributed theme, or if the steps below
+do not work to obtain the new theme files, follow the steps in
+<<extend-manual-install>>, and then continue here with website step 6.
 
 ===== Using the website
 
@@ -66,7 +67,9 @@ image:images/security-update-theme-updates.png["Available updates",width="100%"]
 
 . Click _Continue_.
 
-. Click _Run database updates_.
+. Click _Run database updates_. If you obtained the new theme files manually,
+start with this step, and reach the database updates page by typing the URL
+_example.com/update.php_ in your browser.
 
 . Click _Continue_. The database update scripts will be executed.
 

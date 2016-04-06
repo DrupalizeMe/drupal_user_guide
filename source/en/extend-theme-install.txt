@@ -25,9 +25,10 @@ installed>>.
 
 ==== Steps
 
-You can use the website or Drush to install a contributed theme. Alternatively
-you can install the theme by <<extend-manual-install, downloading and
-unpacking it>>.
+You can use the website or Drush to install a contributed theme. If you are
+installing a custom theme rather than a contributed theme, or if the steps
+below do not work to download and unpack the theme files, follow the steps in
+<<extend-manual-install>>, and then continue here with website step 7.
 
 ===== Using the website
 
@@ -59,7 +60,10 @@ image:images/extend-theme-install-1.png["Install a theme",width="100%"]
 . Click _Install_ to upload and unpack the new theme on the server. The files
 are being downloaded to the _themes_ folder.
 
-. Select _Install newly added themes_ to return to the _Appearance_ page.
+. Select _Install newly added themes_ to return to the _Appearance_ page. If you
+used the manual uploading procedure, start with this step, and reach the
+_Appearance_ page by navigating: in the _Manage_ administrative menu, navigate
+to _Appearance_ (admin/themes).
 
 . Locate the new theme and click _Install and set as default_ to use it. All
 non-administrative pages on the site will now use this new theme.
