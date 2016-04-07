@@ -12,18 +12,18 @@
 ==== What are text formats?
 
 Text formats change how HTML tags and other text will be processed and displayed
-in the site. They are used to transform text, and also help to defend your web
-site against potentially damaging input from malicious users, like for example
-cross-site scripting. By default the site has the text formats _Basic HTML_,
-_Restricted HTML_, and _Full HTML_. When using the _Basic HTML_ and _Restricted
-HTML_ formats, only a limited set of HTML tags are allowed. The user input is
-stored in the database but the not-allowed HTML tags are removed when displaying
-the input.
+in the site. They are used to transform text, and also help to defend your
+website against potentially damaging input from malicious users, like for
+example cross-site scripting. By default the site has the text formats _Basic
+HTML_, _Restricted HTML_, and _Full HTML_. When using the _Basic HTML_ and
+_Restricted HTML_ formats, only a limited set of HTML tags are allowed. The user
+input is stored in the database but the not-allowed HTML tags are removed when
+displaying the input.
 
 ==== What is cross-site scripting?
 
-Cross-site scripting (XSS) is a security vulnerability typically found in web
-sites. In a site that is not well protected, malicious users can enter script
+Cross-site scripting (XSS) is a security vulnerability typically found in
+websites. In a site that is not well protected, malicious users can enter script
 into web pages that are viewed by other users, for example in a comment or in
 the body of a page. A cross-site scripting vulnerability may be used by
 attackers to login as another user. It is important to configure the Text
