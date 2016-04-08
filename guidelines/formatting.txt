@@ -24,7 +24,8 @@ help.
 
 * A completely blank line makes a paragraph break.
 
-* When making lists, format the source similar to this:
+* When making lists (see also <<guideline-lists>>), format the source similar to
+this:
 
 ----
 * A single-line bullet item.
@@ -40,8 +41,9 @@ A second paragraph within the numbered list item.
 ----
 
 * For a paragraph break within a bullet or numbered list item, use a + sign as
-shown above. See http://asciidoc.org/userguide.html#X15[ASCII Doc — List Item
-Continuation]. for more details.
+shown above. See the
+http://asciidoc.org/userguide.html#X15[AsciiDoc documentation]
+for more details.
 
 
 [[style-sections]]
@@ -80,11 +82,11 @@ include statement in the outline file, and most contributors will be editing
 these files.
 
 Chapter and topic titles should use "Title Case". Titles for any sections at
-levels  below topics should use "Sentence case".
+levels below topics should use "Sentence case".
 
 
 [[style-crosslinks]]
-==== Cross-linking
+==== Making cross-links
 
 Once you have a chapter or topic defined with an identifier,
 you can make a cross-link by putting, for example:
@@ -144,14 +146,14 @@ Each topic should have at least one entry in the index. To define an index
 entry, put this just before the paragraph text related to the entry:
 
 ----
-(((Blocks,creating)))
+(((Block,creating)))
 ----
 
 Note that there is no space after the comma. If the main entry text or sub-entry
 text needs to have a comma in it, you can enclose it in quotes. Example:
 
 ----
-(((Blocks,"Creating, or whatever")))
+(((Block,"Creating, or whatever")))
 ----
 
 See also: <<composing-index-entries>>
@@ -202,7 +204,7 @@ translated language, avoid annotations if possible.
 
 
 [[style-literals]]
-==== Typography
+==== Typography formatting
 
 File names and directories in text should be formatted in italics, as well as
 new terms that are introduced. Use underscores to format text in italics:
@@ -230,7 +232,7 @@ bold:
 
 
 [[style-code]]
-==== Code blocks
+==== Formatting code blocks
 
 Blocks of code should go into a literal block. To make a literal block, leave a
 blank line, then a line containing just +----+. Then put in your lines of code,
@@ -243,7 +245,7 @@ type at an operating system prompt, you can omit the +[source,php]+ line.
 
 
 [[style-comments]]
-==== Comments
+==== Adding comments to source files
 
 You can put comments into your AsciiDoc using double slashes, like PHP:
 

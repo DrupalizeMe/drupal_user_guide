@@ -43,7 +43,19 @@ organized into chapters, and you'll need to define the name of each topic, its
 file name, what each topic should cover, and the ordering and organization into
 chapters.
 
-Ideally, each topic in this guide should be reusable. To facilitate that:
+Another aspect of the plan, if it is some type of user guide material, is to
+come up with a guiding scenario, which provides a unified context for all of the
+topics. As an example, in the User Guide project, we selected the scenario of
+creating a web site for a farmers market, and we made sure that whenever
+examples were called for in topics, they were related to this scenario. You'll
+also need to create (or find) sample text and images related to the scenario,
+which authors of topics can use in their writing and screenshots. Make sure the
+sample images have compatible licenses. A good place to search for images
+(you'll still have to check the licenses) is
+https://commons.wikimedia.org[Wikimedia Commons].
+
+Ideally, each topic in this guide should be reusable (assuming that another
+project uses the same guiding scenario, anyway). To facilitate that:
 
 * Separate task information and concept information into separate
 topics. Cross-reference the concept topic in the task topic, rather than
@@ -61,7 +73,12 @@ concepts. Cross-reference related topics and required background knowledge.
 stand alone. Reference prerequisite and follow-on tasks rather than describing
 them in the same topic.
 
-Once you've defined what the outline should be:
+Once you've defined what the outline and scenario should be, follow these
+instructions to set up the project and instructions pages (some of the
+instructions assume this setup and directory structure). Note that you can also
+start the process with just a few topics, and then add to the outline as
+you decide on more of it (see <<pm-guide-topics>>). Here are the suggested steps
+for initiating a project:
 
 . Using the templates in <<templates>>, make a template file for each
 topic. You'll need to edit the ID at the top, rename the file to
@@ -72,8 +89,17 @@ UNWRITTEN). Add these to the Git repository for the project.
 chapters, and add this to the Git repository. See _guide.txt_ in the User Guide
 project for an example.
 
+. Write up a topic in the preface explaining what the scenario is. This needs to
+be in place before contributors start writing other topics.
+
+. Make an _assets_ directory for the project. Put the sample images there, as
+well as a file called _text.txt_ with the sample text in it, and _colors.txt_
+with color information in it.
+
 . Make an _attributions.txt_ file for keeping track of who wrote the
-topic. See _attributions.txt_ in the User Guide project for an example.
+topic. See _attributions.txt_ in the User Guide project for an example. Add
+attributions information for the image assets, and for the project
+coordinators.
 
 . Make build scripts for the project and test them. Add these to the Git
 repository.
@@ -104,10 +130,13 @@ they cannot edit it. Columns needed in the spreadsheet:
   more extensive, they can file an issue to get a volunteer to make the changes.
 
   * Testing: You might consider having one or more interactive sessions where
-  volunteers (with project coordinators present) attempt to read the text and
-  follow its instructions, and either the volunteers or the coordinators make
-  notes on what was unclear or didn't work. You may also want to have experts
-  review the text for accuracy, especially the concept topics.
+  volunteers (with project coordinators present) attempt to read the text in
+  order and follow its instructions, and either the volunteers or the
+  coordinators make notes on what was unclear or didn't work. Note that in some
+  cases, they will also need to do the Follow-on tasks, if they are listed as
+  Site Prerequisites in a later topic, so they may find they need to backtrack
+  now and then. You may also want to have experts review the text for accuracy,
+  especially the concept topics.
 
   * Copy editing
 
@@ -116,7 +145,8 @@ to start with a copy the files in the User Guide project's _guidelines_
 directory. You'll need to make a new _management.txt file (about project
 managers and communication channels), and you'll also need to set up a new
 _guidelines.conf_ file in the _scripts_ directory with variable
-substitutions. Most of the other stuff should be OK as it is.
+substitutions. Most of the other stuff should be OK as it is, if you've followed
+these instructions.
 
 . Initiate the first phase. See <<pm-guide-new-phase>>.
 

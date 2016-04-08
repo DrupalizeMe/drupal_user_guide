@@ -39,6 +39,9 @@ issue. See <<practicalities-find-topic>> for details on how to do this.
   * See <<formatting>> for details on how to format the text in files.
   * See <<practicalities-composing>> for suggestions on deciding what to
     write.
+  * See <<good-writing>> and <<guidelines-writing>> for guidelines on how to
+    write it, as well as <<follow-scenario>> (especially if you are writing a
+    task topic).
   * If you need a *Drupal site to work with* (to try your task steps), you can
     make a temporary site at https://simplytest.me[simplytest.me]. Enter
     _drupal_ as the project, and choose the version you want to use. The site
@@ -87,7 +90,8 @@ _Assigned_ field is blank.
 
 . Follow the instructions in the issue to complete the task and make a _patch
 file_ for the task; if your task only affects a single source file, you can skip
-making a patch. See also:
+making a patch. Make sure to *only make edits that are covered by the guideline
+or task in your issue* -- other issues will cover other tasks. See also:
   * <<practicalities-editing>> for details on how to find and edit files.
   * <<formatting>> for details on how to format the text in files.
 
@@ -170,12 +174,19 @@ The project coordinators are subscribed to issues for the project, so they will
 notice your change and update the tracking spreadshseet.
 
 If you find that you cannot complete the assignment you took, or need a
-different assignment:
+different assignment, return to the issue page and do the following:
 
-. Un-assign the issue (set the _Assigned_ field to _unassigned_ and save the
-issue).
+. Upload a file with whatever work you have completed, such as a
+partially-written topic file, some screenshot images, or a patch file that does
+some but not all of the required editing. See also
+<<practicalities-submitting>>.
+
+. Un-assign the issue (set the _Assigned_ field to _unassigned_).
 
 . Add a comment explaining that you are not completing it.
+
+. Submit your comment, uploads, and changes (click _Save_ at the bottom of the
+issue page).
 
 . Hopefully, find a different task to work on by following the steps above
 again.
@@ -255,11 +266,6 @@ template for what to do if you want to omit a section).
 template may not be there. There are separate templates for concept topics
 (topic names start with "Concept") and task topics (topic names start with a
 -ing verb); you can see find them at <<templates>>.
-
-* Guidelines for writing a good topic: <<good-writing>>.
-
-* If you are  writing a task topic, see <<follow-scenario>> for
-additional guidelines and instructions.
 
 * *Note about screenshots*: don't worry about them being perfect - just make a
 rough cut.
@@ -425,3 +431,27 @@ a link to project_cgit_link.
 specific Git instructions for that project, including instructions on how to get
 a local copy of the source files and make a patch. Here's a link to
 project_git_instructions_link.
+
+Quick guide to making a patch file:
+
+* One time: install Git. See
+https://www.drupal.org/node/1010894[Installing Git].
+
+* One time: "clone" the repository (get a local copy of the Git repository). See
+project_git_instructions_link.
+
+* Each time, before you start your task: +git pull+ (update source files to
+their latest versions).
+
+* Do your editing task, using a text editor on your local computer, in the
+repository directory.
+
+* Look at the differences in the command window: +git diff+.
+
+* When you're satisfied that they are correct, make a patch file:
+  +git diff > 12345656-task-description.patch+ -- in this command,
+  _123456-task-description.patch_ is the name of the patch file that will be
+  created. Substitute your issue number and a brief task description for the
+  "123456" and "task-description" parts.
+
+* See <<practicalities-submitting>> to submit your work to the issue.
