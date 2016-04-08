@@ -88,12 +88,17 @@ _Assigned_ field is blank.
 . *Claim the task* by assigning the issue to yourself. See
 <<practicalities-task-claim>> for details on how to do this.
 
-. Follow the instructions in the issue to complete the task and make a _patch
-file_ for the task; if your task only affects a single source file, you can skip
-making a patch. Make sure to *only make edits that are covered by the guideline
-or task in your issue* -- other issues will cover other tasks. See also:
+. *Complete the editing task* detailed in the issue, by editing source files on
+your local computer. Make sure to *only make edits that are covered by the
+guideline or task in your issue* -- other issues will cover other tasks. See:
+  * <<practicalities-project>> for details on how to obtain the source files
+    from the Git revision control system.
   * <<practicalities-editing>> for details on how to find and edit files.
   * <<formatting>> for details on how to format the text in files.
+
+. Make a _patch file_ with your changes; if your task only affects a single
+source file, you can skip making a patch. See <<practicalities-project>> for
+patch file instructions.
 
 . *Submit your work* to the issue. See <<practicalities-submitting>> for
 details.
