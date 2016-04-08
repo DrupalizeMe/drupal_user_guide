@@ -27,7 +27,7 @@ php addnames._php ../guidelines ../output/html/guidelines
 # HTML output. The syntax is:
 #  asciidoc -d book -b docbook -f [config file] -o [output file] [input file]
 asciidoc -d book -b docbook -f std.conf -a docinfo -o ../output/html/en/guide.docbook ../output/html/en/guide.txt
-asciidoc -d book -b docbook -f std.conf -o ../output/html/guidelines/guidelines.docbook ../output/html/guidelines/guidelines.txt
+asciidoc -d book -b docbook -f std.conf -f guidelines.conf -o ../output/html/guidelines/guidelines.docbook ../output/html/guidelines/guidelines.txt
 
 # Run the xmlto processor to convert from DocBook to bare XHTML, using a custom
 # style sheet that makes output this module can recognize.  The syntax is:

@@ -1,7 +1,6 @@
 [[formatting]]
 === Formatting Your Text
 
-
 [[asciidoc]]
 ==== AsciiDoc reference
 
@@ -13,26 +12,43 @@ syntax in detail, and a more concise but less complete
 http://powerman.name/doc/asciidoc[AsciiDoc Cheat Sheet] is also available.
 
 The remainder of this topic goes over some conventions that are specific to this
-project.
+project, and related to formatting.
 
 
-[[formatting-general]]
-==== General formatting instructions
+[[formatting-paragraph]]
+==== Paragraph and list formatting
 
 * Wrap your text in 80-character or less lines. Line breaks do not affect
-  the output, but for people reviewing the text source, 80-character limits
-  help.
+the output, but for people reviewing the text source, 80-character limits
+help.
+
 * A completely blank line makes a paragraph break.
-* For a paragraph break within a bullet or numbered list item, use a + sign.
-  See
-  http://asciidoc.org/userguide.html#X15[ASCII Doc — List Item Continuation].
-  for more details.
+
+* When making lists, format the source similar to this:
+
+----
+* A single-line bullet item.
+
+* A multiple-line bullet item. A multiple-line bullet item. A multiple-line
+bullet item. A multiple-line bullet item. A multiple-line bullet item.
+
+. A multiple-line numbered list item. A multiple-line numbered list item. A
+multiple-line numbered list item. A multiple-line numbered list item. A
+multiple-line numbered list item.
++
+A second paragraph within the numbered list item.
+----
+
+* For a paragraph break within a bullet or numbered list item, use a + sign as
+shown above. See http://asciidoc.org/userguide.html#X15[ASCII Doc — List Item
+Continuation]. for more details.
+
 
 [[style-sections]]
 ==== Creating chapters, topics, and sections
 
 AsciiDoc supports several syntax styles for indicating chapters and
-sections (not all of which are covered in all AsciiDoc manuals). This guide
+sections (not all of which are covered in all AsciiDoc manuals). This project
 uses the following syntax, with required identifiers on each chapter and
 topic:
 
@@ -57,16 +73,14 @@ topic:
 ----
 
 For readability of the source, leave two blank lines before the start of each
-chapter, topic, and section. In this guide, the convention is that the main book
-title and chapters are created in the main _guide.txt_ file. Each topic within
-the chapter is in a separate include file, with an include statement in the
-_guide.txt_ file. The idea is that the topics could be reassembled into
-different guides if desired.
+chapter, topic, and section of any depth. In this project, the main book title
+and chapters are created in an outline file that most contributors should not
+edit. Each topic within the chapter is in a separate include file, with an
+include statement in the outline file, and most contributors will be editing
+these files.
 
 Chapter and topic titles should use "Title Case". Titles for any sections at
 levels  below topics should use "Sentence case".
-
-See also: <<choosing-titles>>
 
 
 [[style-crosslinks]]
@@ -84,19 +98,24 @@ chapter, and (depending on the output format) a link and/or page number.
 You can also change the link text by doing this:
 
 ----
- <<first_section_id,text for the link>>
+Within a paragraph, you can <<first_section_id,change the link text>>
+like this.
 ----
 
-As a general rule, only change the link text if the cross-link is embedded in a
-paragraph (for text flow). If it is in a bullet list (for instance, prerequisite
-topics), use the default link text (which will be the topic title, making sure
-that if the topic is re-titled, the link text will update).
+However, a preferable writing style is:
+
+----
+Within a paragraph, you can change the link text. See <<first_section_id>> for
+details.
+----
+
+@todo Link to the guideline on this!
 
 
 [[style-glossary]]
-==== Creating glossary entries
+==== Formatting glossary entries
 
-Glossary entries go into the _glossary.txt_ file. Keep them in alphabetical
+Glossary entries go into a separate glossary file. Keep them in alphabetical
 order and follow the format of existing items in that file. Example:
 
 ----
@@ -114,14 +133,12 @@ glossary entries should only be a couple of lines long.
 To cross-link to a glossary item in text, use syntax like this:
 
 ----
-<<glossary-cms,CMS>>
+<<glossary-cms,glossary entry for "CMS">>
 ----
-
-That will make a cross-link with link text "CMS".
 
 
 [[style-index]]
-==== Creating index entries
+==== Making index entries
 
 Each topic should have at least one entry in the index. To define an index
 entry, put this just before the paragraph text related to the entry:
@@ -130,9 +147,14 @@ entry, put this just before the paragraph text related to the entry:
 (((Blocks,creating)))
 ----
 
-Note that there is no space after the comma.
+Note that there is no space after the comma. If the main entry text or sub-entry
+text needs to have a comma in it, you can enclose it in quotes. Example:
 
-See also: <<choosing-titles>>
+----
+(((Blocks,"Creating, or whatever")))
+----
+
+See also: <<composing-index-entries>>
 
 
 [[formatting-images]]
@@ -145,52 +167,45 @@ Here's the syntax to include an image:
 image:images/filename.png["alt text goes here",width="100%"]
 ----
 
-Notes:
+Notes and conventions:
 
 * Both of these lines must start at the left margin of your text file.
+
 * There cannot be a space before the [ in the image line.
-* Use regular plain-text quotes in the text file.
 
-When writing a topic as a contributor, make a rough screenshot or image, and
-attach it as a File to the issue. Do not worry about making it perfect in the
-first draft.
+* Use regular plain-text ASCII quote characters in the text file, not
+"curly-quote" characters.
 
-Some conventions:
+* Always include "alt" text that describes what is in the image. The alt text
+should be in quotes.
 
-* Images should be put in an images subdirectory (the project managers will
-  take care of this).
-* They should be PNG files.
-* If they are included in a source file  _my-filename.txt_, then they should be
-  named _my-filename-[something].png_ (replace _[something]_ with a suffix
-  describing what the image is. However, do not ever use two - characters in
-  a row in an image name.
-* If you annotate an image, be sure to use an annotation color with good
-  contrast to both foreground and background colors. But keeping in mind that
-  all images will need to be regenerated when the UI changes and for each
-  translated language, avoid annotations if possible.
-* Always include "alt" text that describes what is in the image, the alt text
-  should be in quotes.
 * Always include a comment before the image include statement, which
-  describes how to generate the image. See <<style-comments>>.
+describes how to generate the image. See <<style-comments>>.
+
+* When writing a topic as a contributor, make a rough screenshot or image, and
+attach it as a File to the issue (see <<practicalities-submitting>>). Do not
+worry about making it perfect in the first draft.
+
+* Images should be PNG files.
+
+* If an image is meant for inclusion in source file _my-filename.txt_, then the
+file name should be _my-filename-short-description.png_ (replace
+_short-description_ with a suffix describing what the image is. However, do not
+ever use two - characters in a row in an image name.
+
+* If you annotate an image, be sure to use an annotation color with good
+contrast to both foreground and background colors. But keeping in mind that
+all images will need to be regenerated when the UI changes and for each
+translated language, avoid annotations if possible.
+
 * See <<good-writing-text>> for guidelines on what images should be included.
 
 
-@todo Define and add specifics to these guidelines:
-
-* Size of images
-* Which browser to use
-* Which theme to use
-* Browser width
-* Where to crop
-* File resolution (dpi)
-* Maximum width and height of image
-
-
 [[style-literals]]
-==== Literals and text formatting
+==== Typography
 
 File names and directories in text should be formatted in italics, as well as
-new terms that are introduced:
+new terms that are introduced. Use underscores to format text in italics:
 
 ----
 _sites/default.settings.php_
@@ -198,23 +213,33 @@ _view_ (in the context of the Views module)
 ----
 
 Programming details (functions, variables, etc.) and operating system
-commands embedded in text should be formatted in monospace:
+commands embedded in text should be formatted in monospace. Use plus signs to
+format text in monospace:
 
 ----
 +my_function_name()+
 +$foo+
 ----
 
+Boldface should be used sparingly. Use asterix characters to format text in
+bold:
+
+----
+*A really important fact to note*
+----
+
 
 [[style-code]]
 ==== Code blocks
 
-Blocks of code should go into a literal block (which starts and ends with +----+
-on its own line). You can prefix this with an indication of what type of code
-is in the block, such as +[source,php]+ for PHP. Other recognized code types
-include +css+, +javascript+, +sql+, +html+, etc. For generic source
-code, such as commands to type at an operating system prompt, you can omit the
-+[source,php]+ line.
+Blocks of code should go into a literal block. To make a literal block, leave a
+blank line, then a line containing just +----+. Then put in your lines of code,
+and afterwards, another +----+ line.
+
+You can prefix this with an indication of what type of code is in the block,
+such as +[source,php]+ for PHP. Other recognized code types include +css+,
++javascript+, +sql+, +html+, etc. For generic source code, such as commands to
+type at an operating system prompt, you can omit the +[source,php]+ line.
 
 
 [[style-comments]]
@@ -225,4 +250,17 @@ You can put comments into your AsciiDoc using double slashes, like PHP:
 ----
 // This is a comment that is only relevant to someone reading
 // the AsciiDoc source. It will not be displayed in the output.
+----
+
+
+[[formatting-todo]]
+==== How to indicate a topic is incomplete
+
+If you write a topic, and you want to submit your work in an incomplete state
+(such as because you could not find needed information, ran out of time, or need
+to refer to other topics that do not yet exist), put text like this into your
+file:
+
+----
+@todo Explain what still needs to be done here.
 ----

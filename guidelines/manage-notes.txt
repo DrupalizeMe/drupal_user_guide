@@ -1,9 +1,9 @@
 [[manage-notes]]
-=== Notes About Project Management
+=== Notes and Lessons Learned
 
-This section contains some notes about how we set up this project and managed
-it. It is intended for groups who want to set up a future project, and will be
-updated as time goes on.
+This section contains some notes about how we set up the User Guide project and
+managed it. It is intended for groups who want to set up a future project, and
+will be updated as time goes on.
 
 
 [[notes-personnel]]
@@ -16,12 +16,21 @@ Volunteer coordinator::
 Content coordinators::
   Three people who oversaw quality and adherence to standards
 General volunteers::
-  These come in the forms of writers, editors, testers, and graphics people, and
-  they wrote the bulk of the topics and made the final screenshots.
+  These come in the forms of writers, editors, and testers. They wrote the
+  topics and did most of the editing.
+Paid copy editor::
+  We decided that for the sake of unity of voice, it would be good to hire
+  a copy editor to do a final edit of the guide. A sponsoring company paid
+  for this; we also considered applying for a Community Cultivation Grant
+  from the Drupal association.
 
-For copyright reasons, we needed to attribute copyright to the contributors
-anyway. We also used Drupal.org issues and commit authorship to give credit to
-people who contributed to the project.
+To recognize the contributions of all of these people, we:
+
+* Added names and links to an _attributions.txt_ file. This is published as part
+of the guide (in the appendix).
+
+* Used Drupal.org issues and commit authorship to give credit to people who
+contributed to the project.
 
 
 [[notes-project-repo]]
@@ -29,15 +38,17 @@ people who contributed to the project.
 
 We thought for a while that due to Drupal.org Git repository policies, we might
 not be able to host this project on Drupal.org (due to license
-incompatibility). But luckily, this issue was resolved and we were able to use
-a Drupal.org project with a Drupal.org git repository.
+incompatibility). But luckily, this issue was resolved and we were able to use a
+Drupal.org project with a Drupal.org git repository.
 
-Since we had standardized on AsciiDoc, we needed to be able to build the output
-from source and display it on a site, keeping it updated as we went. Since this
-involves installing software on a server, our immediate "solution" was for
-Jennifer to do the builds locally, and upload them to a Drupal.org development
-site. This is obviously not sustainable, so we'll need to figure out a better
-solution eventually.
+Since we had standardized on AsciiDoc for formatting, we needed to be able to
+build the output from source and display it on a site, keeping it updated as we
+went. Since this involves installing software on a server, our immediate
+"solution" was for Jennifer to do the builds locally, and upload them to a
+Drupal.org development site. This was obviously not sustainable, but after a
+short delay, we were able to have the Drupal.org infrastructure team set up a
+"Jenkins" job that updated the source and build output whenever a commit was
+made to the Git repository.
 
 
 [[notes-file-structure]]
@@ -47,14 +58,20 @@ We decided to put the source files to the Guide in directories by language, such
 as source/en, source/es, etc. This way, all the files for one branch were
 together and could be built together into the desired output.
 
-We put all of the files into one flat directory, with an images
+We put all of the source files into one flat directory, with an images
 subdirectory. Because there were a lot of files, we used a prefix naming system,
-such as naming all the topics related to blocks _block-something.txt_. Also, on
-the suggestion of one of our participants the first day, we adopted a naming
-convention for images that they should be named with a prefix of the text file
-name they are included in.
+such as naming all the topics related to blocks _block-something.txt_. We made
+also made sure that the file name matched the AsciiDoc ID of each topic. This
+scheme wasn't all that great, however, because as we started working on the
+topics, we realized that some of them needed to be moved to different sections,
+and by then it was too late to change the IDs and hence file names easily. We
+could have gone back at the end and fixed names and IDs, but didn't choose to do
+that.
 
-This all seems to be working OK.
+Also, on the suggestion of one of our participants the first day, we adopted a
+naming convention for images that they should be named with a prefix of the text
+file name they are included in. This was a good idea, as it helped to organize
+the images directory.
 
 
 [[notes-tracking]]
@@ -67,30 +84,29 @@ writing and editing could be done by different people and added to the
 repository in each stage as the topic was refined. Types of editing: copy
 editing, testing for correctness, and adherence to the guidelines.
 
-We decided to use a Drupal.org issue for each phase of writing and editing each
-topic, so that we would have a place for people to upload their files, and for
+We decided to use a Drupal.org issue for each phase of writing and each editing
+task, so that we would have a place for people to upload their files, and for
 the project managers to provide feedback at each stage. But Drupal.org issues
 are not a great way to track overall status of a project, so we
 used a spreadsheet, where each topic was a row, and there were columns for the
 topic information (title, file name, what it covers), as well as the who/status
-information for each stage of writing and editing.
+information for each task. Some tasks were across many topics, so those were put
+on a separate tab of the spreadsheet.
 
-This seems to be working OK so far, but I'm not sure yet whether the people
-working on this guide will be comfortable or quick with the issue process. For
-instance, if they submit a topic and we set the issue to "needs work", will they
-notice this and fix the problems and resubmit? To mitigate this, instructions
-were added to tell participants how to "follow" their issue and get email
-updates. It remains to be seen whether participants will actually follow up.
+We found early on that it was much better for project managers to create the
+issues than to expect contributors to create them. Contributors were also asked
+to "follow" their issues and sign up for email notifications, but even so, some
+contributors were unresponsive.
 
 
 [[notes-contributor-guide]]
 ==== Contributor guide, outline, and templates
 
 Before we launched the general volunteers' work on this project, the content
-coordinators wrote a contributor guide and made templates. Then we made a topic
-outline. We felt that this was good for the coordinators to do rather than
-letting the participants suggest topics (we needed to keep the outline limited
-and focused on the goals of the book).
+coordinators wrote a contributor guide and made templates for the topics. Then
+we made a topic outline. We felt that this was good for the coordinators to do
+rather than letting the participants suggest topics (we needed to keep the
+outline limited and focused on the goals of the book).
 
 We actually started getting topics written before we had finalized the outline:
 we picked out a few sets of related topics that we were certain would be in the
@@ -111,37 +127,50 @@ topics (and the template explained you needed an ID for each topic).
 
 Lessons learned:
 
-* I think doing it this way (giving people the files as starting points) was a
-  good idea, so that we chose the topics that were ready to work on, and their
-  file names. It made some extra work for the coordinators, but was good for
-  the participants.
+* Giving people the templates in individual files was a good idea, so that we
+chose the topics that were ready to work on, and their file names. It made some
+extra work for the coordinators, but was good for the participants.
+
 * When we copied the templates into their final file names, we discovered that
-  it would have been better to put something recognizable for the topic titles
-  into the templates (instead of the generic ones in the template files). People
-  using the on-line editor otherwise couldn't find the files they were supposed
-  to be editing, and that meant that sometimes they picked the wrong file (with
-  perhaps the wrong template) to edit. We eventually wrote a script that would
-  create a batch of template files.
-* The guidelines were long, and people didn't easily see how to get
-  started. To remedy that, we posted a quick start list initially on the project
-  home page, and eventually this was moved into the contributor guide so that
-  everything was in the same place. This proved to be much easier to follow.
+it would have been better to put something recognizable for the topic titles
+into the templates (instead of the generic ones in the template files). So,
+after a while we switched to doing this. People
+using the on-line editor otherwise couldn't find the files they were supposed
+to be editing, and that meant that sometimes they picked the wrong file (with
+perhaps the wrong template) to edit. We eventually wrote a script that would
+create a batch of template files.
+
+* The guidelines were initially very long, and people didn't easily see how to
+get started. To remedy that, we posted a quick start list initially on the
+project home page, and eventually this was moved into the contributor guide so
+that everything was in the same place. This proved to be much easier to follow.
+
 * The first few participants made a lot of the same mistakes. So, we updated the
-  templates and instructions so that the correct way of doing things would be
-  explained there.
+templates and instructions so that the correct way of doing things would be
+explained there.
 
 
 [[notes-communication]]
 ==== Communication
 
-We are using the following at the moment for communication; we'll have to wait
-and see how it works:
+The following communication channels were used:
 
-* Posting major announcements on groups.drupal.org/documentation
-* Tweeting when we do so from @drupaldocs
-* We set up an email list for participants; will see how that works
-* There are links all over the place to the tracking spreadsheet (a "view" link)
-  so that anyone can follow progress.
-* Periodic meetings in IRC. We considered Hangouts but were not sure that would
-  work well with large numbers of people; on the other hand, IRC may be
-  unfamiliar to some people too.
+* Posting major announcements on groups.drupal.org/documentation -- works pretty
+well.
+
+* Tweeting when we do so from @drupaldocs -- not sure if people see this but it
+cannot really hurt.
+
+* We set up an email list for participants, but aside from us posting
+announcements, this didn't get traffic. We were hoping people would discuss how
+it was going or ask for help, but they didn't.
+
+* The tracking spreadsheet was open to the public to view. We decided we didn't
+want to let everyone edit it. It seemed better to let people use issues to
+communicate claiming tasks and their progress, and leave the spreadsheet updates
+to the project managers.
+
+* We had meetings in IRC for a while. We considered Hangouts but were not sure
+that would work well with large numbers of people; on the other hand, IRC may be
+unfamiliar to some people too. Not too many people attended the meetings, and we
+eventually stopped having them.
