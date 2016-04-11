@@ -35,6 +35,13 @@ drop-down list or radio button, say "Select (choice)". For a checkbox, say
 "Check (choice)". Make sure that the actual UI text you are selecting or
 clicking on is in italics.
 
+* There are two types of *dropdown user interface elements*. When referring to
+select lists (lists of choices in an HTML "select" tag, such as what you would
+see when you select a language to add or the default country), use the term
+"select list". When referring to buttons that contain lists of links, such as
+what you would see in an Operations section of the Content form at
+admin/content, use the term "dropdown button" (not drop-down or drop down).
+
 * If a step in a task includes a *screenshot*, it should go after the
 description of how to do the step. If there is also a table of values for
 filling out the form, the screenshot should go after the table of
@@ -43,8 +50,9 @@ captions. The alternate text should NOT start with "screenshot" or "screen
 capture" or "image". It should describe what is in the image.
 
 * *Referring to a module, installation profile, or theme* -- use a style like:
-"the Contextual Links module", "the Bartik theme", or "the Standard installation
-profile". No italics. Also, capitalize the module name (like "the Views module")
+"the core Contextual Links module", "the core Bartik theme",
+"the core Standard installation profile", or "the contributed Admin Toolbar
+module". No italics. Also, capitalize the module name (like "the Views module")
 but not the "things" it works with (like "you can create views of your data").
 
 * *Index entries* should be singular ("block" not "blocks"), and have
