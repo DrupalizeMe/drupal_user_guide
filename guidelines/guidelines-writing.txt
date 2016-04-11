@@ -83,8 +83,29 @@ with "admin".
 [[composing-index-entries]]
 ==== Composing index entries
 
-Index entries should usually be two-level entries, such as
-+Block, creating+ or +Block, overview+. They should normally start with a
-singular noun. When adding a glossary entry to the index, the index entry should
-be +Block, definition+. See <<style-index>> or the templates in <<templates>>
-for instructions on how to put index entries into your topic.
+Index entries should usually be two-level entries, such as +Block, creating+ or
++Block, overview+. Some standards:
+
+* If a noun is used in an entry, it should normally be singular; for example,
++Block+, not +Blocks+.
+
+* Do not make the first-level entry a verb if it's a common action, like
+creating, configuring, updating, etc. For instance, we would want +Block,
+creating+ not +Creating, block+. Usually the noun being operated on is a better
+choice for the first-level entry, but an entry for something like +Translating+
+might make sense.
+
+* Capitalize the first word of the first-level entry, but not the rest of the
+entry (unless it's an acronym being written out, or a proper noun).
+
+* Use a gerund-form (-ing) verb in preference to -tion nouns, such as
++Content, translating+, not +Content, translation+.
+
+* When using an acronym in an index main entry, include both the acronym and
+what it stands for (make two entries).
+
+* The index entries for glossary definitions should have secondary entry
+"definition", such as +Block, definition+.
+
+See <<style-index>> or the templates in <<templates>> for instructions on how to
+put index entries into your topic.
