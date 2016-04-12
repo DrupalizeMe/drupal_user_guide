@@ -7,7 +7,7 @@
 
 ==== Goal
 
-Ensure that cron maintenance tasks are run regularly.  If not, then enable the
+Ensure that cron maintenance tasks are run regularly.  If not, then install the
 _Automated Cron_ module.  Alternatively run cron maintenance tasks from outside
 the website.
 
@@ -44,10 +44,10 @@ The _Automated Cron_ module may not be suitable for some websites because:
   the web server, that HTTP connection is occupied until the tasks are complete
   (which may run for several minutes).
 
-. Enable and configure the core _Automated Cron_ module (see
+. Install and configure the core _Automated Cron_ module (see
 <<language-enable>> for instructions on installing core modules).
 +
-Once enabled, and after the website sends a page to the web browser, it will
+Once installed, and after the website sends a page to the web browser, it will
 check how long since cron maintenance tasks have last run, and run them if
 necessary.
 +
