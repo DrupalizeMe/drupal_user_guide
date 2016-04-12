@@ -59,12 +59,11 @@ might be using.
 . Put your site in to <<extend-maintenance, maintenance mode>>.
 
 . Download Drupal 8.x core latest version (preferably, stable version) manually
-from https://www.drupal.org/project/drupal["Drupal core"] and extract it to
-some backup or temporary directory on your server (should be outside the
-directory where the site is hosted). You may use Drush command instead, in
-order to achieve the same by navigating to the backup or temporary directory
-on the server and enter this command on your Drush command
-prompt:
+from https://www.drupal.org/project/drupal[Drupal.org Drupal Core Downloads] and
+extract it to some backup or temporary directory on your server (should be
+outside the directory where the site is hosted). You may use Drush command
+instead, in order to achieve the same by navigating to the backup or temporary
+directory on the server and enter this command on your Drush command prompt:
 +
 ----
 drush dl drupal
@@ -135,8 +134,9 @@ image:images/security-update-core_statusReport.png["Status report",width="100%"]
 Upon clearing the cache, you may come across some error(s) that might ask you to
 rebuild your registry. This is sometimes essential in case some module might
 have moved around during the update process. In order to get rid of such error
-messages, we recommend you to follow the instructions at
-https://www.drupal.org/project/registry_rebuild["Registry Rebuild"].
+messages, we recommend you to follow the instructions on the
+https://www.drupal.org/project/registry_rebuild[Drupal.org page "Registry
+Rebuild"].
 
 You may also refer _/core/UPGRADE.txt_ within your Drupal 8 installation in case
 you want to learn more about updating Drupal 8 core.
@@ -153,6 +153,6 @@ you want to learn more about updating Drupal 8 core.
 
 ==== Additional resources
 
-* https://github.com/drush-ops/drush["Drush repository"]
-* https://www.drupal.org/project/drupal["Drupal core"]
-* https://www.drupal.org/project/registry_rebuild["Registry Rebuild"]
+* https://github.com/drush-ops/drush[Github repository for "Drush"]
+* https://www.drupal.org/project/drupal["Drupal Core Downloads" page on Drupal.org]
+* https://www.drupal.org/project/registry_rebuild["Registry Rebuild" page on Drupal.org]
