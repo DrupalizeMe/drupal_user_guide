@@ -40,7 +40,7 @@ The _Automated Cron_ module may not be suitable for some websites because:
   reached (e.g. PHP execution timeout).  If this happens the logs (See
   <<prevent-log>>) will show error messages that cron is unable to complete.
   * There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
-  to _Automated Cron_ module — because cron maintenance tasks are being run by
+  to _Automated Cron_ module -- because cron maintenance tasks are being run by
   the web server, that HTTP connection is occupied until the tasks are complete
   (which may run for several minutes).
 
