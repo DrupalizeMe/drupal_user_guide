@@ -14,7 +14,9 @@ it says [QUICK-START-LINK].
 * For each issue, the things like [TOPIC TITLE] need to be replaced with actual
 information for the topic.
 
+* The issue title should be something like: "Write filename.txt".
 
+Here is the issue summary template for writing issues:
 ----
 <h3>Task for this issue</h3>
 
@@ -63,10 +65,11 @@ rough cut.)
 ==== Checklists for guidelines and formatting
 
 After making a commit for the writing phase, the committing project manager
-should check for adherence the following guidelines (rather than requiring that
-the writer has followed them). If there are problems, the committer can either
-file an issue to get another volunteer to make updates, or do the edits directly
-and commit the changes.
+should check for adherence to the following guidelines (rather than requiring
+that the writer has followed them). If there are problems, the committer can
+either file an issue (using the template in <<phase-checklists-copyedit-task>>,
+with issue title "Guidelines edit: ...") to get another volunteer to make
+updates, or do the edits directly and commit the changes.
 
 Guidelines checklist:
 
@@ -142,11 +145,14 @@ might post this list somewhere or hand out copies):
 
 * Are concepts introduced in Concept topics (not in Task topics)?
 
-* Are the steps in Task topics clear, and do they work if you follow the steps
-exactly as written?
+* Are the steps in Task topics clear and concrete, and do they work if you
+follow the steps exactly as written?
 
-* Are the instructions in the steps presented in both text (with tables for
-filling out forms) and images (screen shots)?
+* Are the instructions in the steps presented fully in the text (with tables for
+filling out forms)?
+
+* Are screen shots provided at appropriate times (not too many or too few), to
+supplement and illustrate the text?
 
 * Does the user interface text mentioned in the steps match what you see in the
 actual user interface?
@@ -156,55 +162,105 @@ specified in the navigation text correct?
 
 * Are the knowledge and site prerequisites listed for each topic adequate?
 
+Assuming that the testing phase is happening before copy editing and screenshot
+improvements, you might want to tell the testers to _not_ look for or report
+the following types of problems:
+
+* Typographical, spelling, grammar, and punctuation errors, unless they have
+made the text incorrect or prevented understanding it.
+
+* Whether screen shots exactly match the text, instructions, and what you see in
+the user interface.
+
 
 [[phase-checklists-copyedit-task]]
-==== Issue template for copy editing by task
+==== Issue templates and checklists for editing
 
-Use this issue template for issues about copy editing the entire guide for one
-specific guideline. You'll need to replace the following:
+Use the following issue summary template for issues for writing individual
+topics. You'll need to replace the following:
 
-* Before you start making issues, put in the URL for <<copyright-license>> where
-it says [COPYRIGHT-LINK] and the URL for <<practicalities-editing-by-task>>
-where it says [QUICK-START-LINK]. Also put the name of the project, such as User
-Guide, where it says [PROJECT-NAME].
+* Put in the URL for <<copyright-license>> where it says [COPYRIGHT-LINK], and
+the URL for <<practicalities-editing-by-task>> where it says [QUICK-START-LINK].
 
-* For each issue, put the guideline and specific instructions where it says
-[GUIDELINE HERE]. An example guideline for this type of issue:
-....
-In the text of the guide, use "website" instead of "web site".
-....
-
-* You can also adapt this template for a content editing task. Just put the
-specific task in the Task section at the top.
+* For the task area and issue title, see list of suggestions below the
+template.
 
 Issue summary template:
 
 ----
 <h3>Task for this issue</h3>
 
-Copy edit the entire [PROJECT-NAME] to adhere to the following guidelines:
-
-[GUIDELINE HERE]
+[SPECIFIC TASK]
 
 <h3>Instructions</h3>
 
 See [QUICK-START-LINK]  -- but skip the section on finding a task to do, since you have selected this one.
 
 <h3>Checklist for this task</h3>
-- Is a patch file provided?
-- Is the edit for the provided guidelines complete and correct?
-- Is the patch free from additional edits outside the scope of the provided guidelines?
+- Is a patch file provided? If only one or a few topics were edited, you can instead attach the updated source file(s).
+- Is the edit complete and correct?
+- Is the work free from additional edits outside the scope of the provided guidelines or task?
 - Is attribution provided? See [COPYRIGHT-LINK]
 ----
 
-Writing phase checklist for editing tasks:
+This template can be used for the following:
 
-* Is a patch file provided? If only one topic is changed, you can also accept a
-new topic file instead of a patch file.
+. *Editing for content after testing*. In this case, put specific editing tasks
+in the task section, which will resolve the problems uncovered during
+testing. The issue title should start with "Content edit:".
 
-* Is the edit for the provided guidelines complete and correct?
+. *Editing the entire project_name for one guideline*; for example, the
+guideline could be:
++
+In the text of the guide, use "website" instead of "web site".
++
+Here is the template for the Task section of the issue summary; you will need to
+substitute the name of the project, such as User Guide, where it says
+[PROJECT-NAME], and the guideline where it says [GUIDELINE HERE]:
++
+----
+Copy edit the entire [PROJECT-NAME] to adhere to the following guidelines:
 
-* Is the patch free from additional edits outside the scope of the provided
-guidelines?
+[GUIDELINE HERE]
+----
+
+[start=3]
+. *Editing one topic so that it complies with all of the editing
+guidelines*. For this type of issue, use the following template for the task
+section. You'll need to put the topic information near the top, and you'll need
+to substitute in the URLs for <<guidelines-editing>> and <<guidelines-writing>>
+for [EDITING_GUIDELINES] and [WRITING_GUIDELINES]). Make the issue title start
+with "Copy edit:".
++
+Here is the template for the Task section of the issue summary:
++
+----
+Copy edit the following topic:
+
+<strong>Title:</strong>  [TOPIC TITLE]
+<strong>Section:</strong> [BOOK SECTION NAME]
+<strong>File name:</strong> [FILE NAME]
+
+Look for:
+- Typographical errors
+- Spelling errors
+- Grammar and usage errors
+- Punctuation problems
+- Adherence to the project's editing guidelines: [EDITING_GUIDELINES]
+- Adherence to the project's writing guidelines: [WRITING_GUIDELINES]
+
+Note that the "single-issue" guidelines in the Editing guidelines page, as well
+as the entire Writing guidelines page, should have already been enforced. But it is still a good idea to at least check them quickly.
+----
+
+Editing phase checklist for committing:
+
+* Is a patch file provided? If only one or a few topics were edited, you can
+accept updated source file(s) instead of a patch.
+
+* Is the edit complete and correct?
+
+* Is the work free from additional edits outside the scope of the provided
+guidelines or task?
 
 * Is attribution provided?
