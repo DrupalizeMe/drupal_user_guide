@@ -28,14 +28,14 @@ ingredients.
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(admin/structure/views). Find the view "Vendors" and choose _Duplicate_ from its
-drop-down operations.
+(admin/structure/views). Find the view "Vendors" and click _Duplicate_ in its
+drop-down list.
 +
 //To create this image, take a screenshot on admin/structure/views
 image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
 
 [start=2]
-. Name the duplicate "Recipes", confirm by clicking on _Duplicate_. The view
+. Name the duplicate "Recipes", confirm by clicking _Duplicate_. The view
 configuration page appears.
 
 . Click _Vendors_ (what we just duplicated) in the _Title_ section. _The title
@@ -50,7 +50,7 @@ image:images/views-duplicate_title.png["Change view title",width="100%"]
 style _Grid_ in the pop-up configurations. Further options on style settings
 appear. Click _Apply (all displays)_.
 
-. In the _Fields_ section click on _Content: Body_ then choose _Remove_ in the
+. In the _Fields_ section check _Content: Body_ and then click _Remove_ in the
 pop-up. This leaves our Recipes view with the title and image only.
 
 . In the _Filter criteria_ section change filtering from _Content:
@@ -68,7 +68,7 @@ image:images/views-duplicate_filter.png["Add ingredients filter",width="100%"]
 . The appearing pop-up offers extra settings on vocabulary and selection
 type. _Apply and continue_. The next configuration pop-up allows to _expose this
 filter to visitors_: check. Within the appearing extra settings give the _Label_
-"Find recipes using...". Confirm by clicking on _Apply(all displays)_.
+"Find recipes using...". Confirm by clicking _Apply(all displays)_.
 +
 //To create this image, take a screenshot on admin/structure/views/recipes with the _Configure filter criterion_ pop-up open, check in "Expose this filter to visitors" and give Label "Find recipes using...".
 image:images/views-duplicate_expose.png["Expose filter",width="100%"]
@@ -79,7 +79,8 @@ new path "recipes" in the pop-up then _Apply_. Then via the _Menu_ pop-up change
 the menu link title to "Recipes".
 
 . Roll out the _Advanced_ sections. In the _Other_ section change _Use AJAX: No_
-to "Yes": click on "No" and choose for using AJAX in the pop-up then _Apply_.
+to "Yes" by clicking _No_ and checking _Use AJAX_ in the pop-up that appears.
+Then click _Apply_.
 
 . Save all the above changes by clicking on _Save_ of the _Displays_ panel.
 
