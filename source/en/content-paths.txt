@@ -13,7 +13,7 @@
 
 URL is an abbreviation of "Uniform Resource Locator" and is the page's address
 on the web. It is the "name" by which a browser identifies a page to display. In
-the example "Check us out at farmersmarket.com." the part farmersmarket.com is
+the example "Check us out at _example.com_." the part _example.com_ is
 the URL for the home page of your website. Users use URLs implicitly to locate
 content on the web.
 
@@ -21,7 +21,7 @@ content on the web.
 
 In Drupal terms, a path is the unique, last part of the URL for a specific
 function or piece of content. For example, for a page whose full URL is
-http://farmersmarket.com/node/7, the path is node/7.
+_http://example.com/node/7_, the path is _node/7_.
 
 Here are some examples of paths you might find in a Drupal site:
 
@@ -35,8 +35,8 @@ Here are some examples of paths you might find in a Drupal site:
 
 Drupal has a feature called "URL Alias" that allows you to provide a more
 understandable name to the content. So, if you have an "About Us" page with the
-path node/7, you can set up an alias so that your visitors will see it as
-http://www.farmersmarket.com/AboutUs. As far as browsers, servers, and search
+path _node/7_, you can set up an alias so that your visitors will see it as
+_http://www.example.com/AboutUs_. As far as browsers, servers, and search
 engines go, it is totally unnecessary. But for humans, it is nearly
 mandatory. This is why most consultants tell people to always turn on the Path
 core module, which supports URL aliasing.
