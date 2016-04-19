@@ -16,11 +16,11 @@
 
 Any software occasionally has bugs, and sometimes these bugs have security
 implications. When security bugs are fixed in the core software, modules, or
-themes that your site uses, they are released in a _security update_; you will
-need to download and install the relevant security updates in order to keep your
-site secure. See <<security-announce>> to learn how to be notified of security
-updates by email, and <<security-update-core>>, <<security-update-module>>, and
-<<security-update-theme>> to learn how to install updates.
+themes that your site uses, they are released in a _security update_. You will
+need to apply Security updates order to keep your site secure. See
+<<security-announce>> to learn how to be notified of security updates by
+email, and <<security-update-core>>, <<security-update-module>>, and
+<<security-update-theme>> to learn how to make updates.
 
 ==== What is the security team?
 
@@ -42,11 +42,11 @@ the https://www.drupal.org/security-team[_Drupal.org_ Security Team] page to rep
 
 The core software, modules, and themes also periodically have regular updates to
 add new features and fix bugs. These updates are less critical than security
-updates, but generally should be installed if they do not cause problems with
-your site. Testing on a development copy of your site is always a good idea
-before installing an update on the live site, because sometimes an update may
-include changes that are not compatible with the modules or themes on your site,
-or that will break your site's particular functionality.
+updates. As a general best practice, updates should be applied as long as they
+do not cause problems with your site. Testing on a development copy of your
+site is always a good idea before applying updates on a live site, because some
+updates may include changes that are not compatible with the modules or themes
+on your site, or that will break your site's particular functionality.
 
 ==== Related topics
 
