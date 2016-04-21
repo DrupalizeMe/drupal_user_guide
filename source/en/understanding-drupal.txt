@@ -51,15 +51,54 @@ Other operating systems, web servers, and databases can also be made to work;
 however, the scripts that Drupal uses are written in PHP, so that cannot be
 changed.
 
+==== What are the reasons for using Drupal?
+
+When building a web site, you have your choice of using one of the many existing
+CMS packages and hosted services, developing your own CMS, or building the site
+without using a CMS. Here are some of the reasons you might choose to use
+Drupal:
+
+* Building a small, simple site with static HTML pages is not difficult, and you
+can get a simple site up very quickly. Setting up a site in a CMS generally
+requires more time initially, but brings you the benefits of on-line editing
+(easier for less experienced content maintainers), uniformity (harder to
+maintain using static HTML for larger sites), and the possibility of more
+complex features requiring a database.
+
+* Some CMS software is special-purpose; for instance, there are packages and
+hosted services that you can use to build a blog or a club membership web
+site. Drupal, in contrast, is a general-purpose CMS. If you are building a
+special-purpose site, you might choose to use a special-purpose CMS; however, if
+your site falls even slightly outside the intended purpose, you will probably be
+better off using a general-purpose CMS rather than trying to adapt a
+special-purpose CMS.
+
+* Building your own CMS-type software can seem attractive. However, using a
+general-purpose CMS like Drupal as a starting point is usually a better idea,
+because the basic CMS functionality (such as user accounts and content
+management) has thousands of developer hours behind it, including many years of
+user testing, bug fixing, and security hardening.
+
+* Some CMS software packages are expensive to purchase a license for. Some are
+free or have a free version, but have restrictive licenses that do not allow you
+to make modifications and extensions. You might prefer to use a package (like
+Drupal) that has a less restrictive software license, and is developed by a
+world-wide community. See <<understanding-project>> for more on this topic.
+
 ==== Related topics
 
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-distributions>>
+* <<understanding-project>>
 
 ==== Additional resources
 
 * https://www.drupal.org/getting-started/before/overview[The Drupal overview]
+
+* https://www.drupal.org/about/faq[_Drupal.org_ page "FAQ" (Frequently Asked Questions)]
+
+* https://www.drupal.org/case-studies[_Drupal.org_ page "Case Studies"]
 
 * https://en.wikipedia.org/wiki/Content_management_system[Wikipedia page "Content management systems"]
 
