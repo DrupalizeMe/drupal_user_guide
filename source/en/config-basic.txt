@@ -35,11 +35,6 @@ _Site information_ (_admin/config/system/site-information_) to change the _Site
 name_, _Slogan_, administrative _Email address_, or the _Default front page_
 path.
 
-// To create this image, install Drupal 8, navigate to
-// admin/config/system/site-information and take the screenshot.
-image:images/config-basic-SiteInfo.png["Site Information",width="100%"]
-
-[start=2]
 . Fill in the available fields as appropriate for your site.
 +
 [width="100%",frame="topbot",options="header"]
@@ -49,6 +44,10 @@ image:images/config-basic-SiteInfo.png["Site Information",width="100%"]
 |Slogan|Usually displayed sitewide|Farm Fresh Food
 |Email address|Used as _From_ address in automated email messages (registrations, password resets, etc)|info@example.com
 |================================
+
+// To create this image, install Drupal 8, navigate to
+// admin/config/system/site-information and take the screenshot.
+image:images/config-basic-SiteInfo.png["Site Information",width="100%"]
 
 [start=3]
 . You can replace the default site wide error pages for 403 or 404 errors
@@ -64,11 +63,6 @@ _Save configuration_ to see the changes applied to the site.
 _Regional and Language_ > _Regional settings_
 (_admin/config/regional/settings_).
 
-// To create this image, install Drupal 8, navigate to
-// admin/config/regional/settings and take the screenshot.
-image:images/config-basic-TimeZone.png["Time Zones",width="100%"]
-
-[start=2]
 . Select the appropriate country from the _Default country_ drop-down in the
 _Locale_ section, and set which day will be displayed as _First day of week_
 on your site.
@@ -76,6 +70,11 @@ on your site.
 . In the _Time zones_ section, you can select a the sitewide _Default time
 zone_ from the drop-down list and configure user-specific time zones.
 
+// To create this image, install Drupal 8, navigate to
+// admin/config/regional/settings and take the screenshot.
+image:images/config-basic-TimeZone.png["Time Zones",width="100%"]
+
+[start=4]
 . After editing the fields, click
 _Save configuration_ to see the changes applied to the site.
 
