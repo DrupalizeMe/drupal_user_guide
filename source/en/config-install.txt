@@ -1,0 +1,60 @@
+[[config-install]]
+=== Installing a Module
+
+(((Module,enabling)))
+(((Module,installing)))
+
+==== Goal
+
+Install a core module, or a contributed module whose files have already been
+uploaded to the site, through the administrative interface or using Drush.
+
+==== Prerequisite knowledge
+
+<<understanding-modules>>
+
+// ==== Site prerequisites
+
+==== Steps
+
+You can install modules either via the administrative interface or by using
+Drush.
+
+===== Using the administrative interface
+
+. In the _Manage_ administrative menu, navigate to _Extend_
+(_admin/modules_). The _Extend_ page appears showing all the available modules
+in your site.
+
+. Check the boxes for the module or modules you want to install. For example,
+check the box for the core Activity Tracker module.
++
+// For this image check the mentioned modules at admin/modules
+image:images/config-install-check-modules.png["Enabling the Activity Tracker module",width="100%"]
+
+[start=3]
+. Click _Install_. The checked modules will be installed.
+
+===== Using Drush
+
+. In the _Manage_ administrative menu, navigate to _Extend_
+(_admin/modules_). The _Extend_ page appears showing all the available modules
+in your site.
+
+. Find the machine name of the module you want to install, by expanding the
+information area for the module. For instance, the core Activity Tracker
+module's machine name is _tracker_.
+
+. Run the following Drush command to install the module:
++
+----
+drush en tracker
+----
+
+// ==== Follow-on tasks
+
+// ==== Related concepts
+
+==== Additional resources
+
+http://www.drush.org[Drush]

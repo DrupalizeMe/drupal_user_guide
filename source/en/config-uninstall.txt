@@ -33,9 +33,9 @@ running. If not installed yet, we recommend you to refer the guide at
 (_admin/modules/uninstall_) wherein you should find the list of modules that are
 ready to be uninstalled.
 
-. Check the modules you wish to uninstall (e.g., _Search_ module), and click
-_Uninstall_ at the bottom of the page, as demonstrated in the following
-screenshot:
+. Check the modules you wish to uninstall (e.g., the core _Activity Tracker_
+module), and click _Uninstall_ at the bottom of the page, as demonstrated in the
+following screenshot:
 
 //Login to your Drupal 8 site as an administrator and in the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ tab.
 image:images/config-uninstall_searchModUninstall.png["Uninstalling module",width="100%"]
@@ -60,14 +60,18 @@ image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search m
 
 ===== Uninstalling using Drush
 
-. Open the Drush command line window and navigate to the base directory of your
-Drupal application.
+. In the _Manage_ administrative menu, navigate to _Extend_
+(_admin/modules_). The _Extend_ page appears showing all the available modules
+in your site.
 
-. Run the following Drush command to initiate the uninstall request (for
-instance, _search_ module):
+. Find the machine name of the module you want to uninstall, by expanding the
+information area for the module. For instance, the core Activity Tracker
+module's machine name is _tracker_.
+
+. Run the following Drush command to uninstall the module:
 +
 ----
-drush pm-uninstall search
+drush pm-uninstall tracker
 ----
 
 ==== Follow-on tasks
