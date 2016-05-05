@@ -47,8 +47,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'about_title' => 'About',
     'about_body' => "<p>City Market started in April 1990 with five vendors.</p>\n<p>Today, it has 100 vendors and an average of 2000 visitors per day.</p>",
     'about_path' => '/about',
-
-
+    'about_description' => 'History of the market',
 
     // Vendor content type settings.
     'vendor_type_name' => 'Vendor',
@@ -68,14 +67,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
   /**
    * Modules needed for this test.
-   *
-   * @todo 'language' and 'locale' are currently needed to get around this bug:
-   *   https://www.drupal.org/node/2573975
-   *   When that is fixed, it may be possible to enable them later in the
-   *   process, but they'll be needed when the language is added at the top
-   *   of the test, so might as well just turn them on here.
    */
-  public static $modules = ['update', 'language', 'locale'];
+  public static $modules = ['update'];
 
   /**
    * We need verbose logging to be on.
@@ -100,16 +93,24 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // English, to simulate having installed in a different language. No
     // screen shots for this!
     if ($this->demoInput['first_langcode'] != 'en') {
-      // Note that here the buttons should still be in English until after
+      // Note that the buttons should still be in English until after
       // the other language is set as the default language.
+      // Turn on the language and locale modules.
+      $this->drupalGet('admin/modules');
+      $this->drupalPostForm(NULL, [
+          'modules[Multilingual][language][enable]' => TRUE,
+          'modules[Multilingual][locale][enable]' => TRUE,
+        ], 'Install');
+
+      // Add the other language.
       $this->drupalPostForm('admin/config/regional/language/add', [
           'predefined_langcode' => $this->demoInput['first_langcode'],
         ], 'Add language');
+      // Set it to default. After this, the buttons should be translated.
       $this->drupalPostForm('admin/config/regional/language', [
           'site_default_language' => $this->demoInput['first_langcode'],
         ], 'Save configuration');
-      // From this point on, everything should be translated into the first
-      // language.
+      // Delete English.
       $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
     }
 
@@ -150,33 +151,30 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/config/regional/settings');
     $this->setUpScreenShot('config-basic-TimeZone.png', [550, 275, 30, 200]);
 
+    // Topic: config-install -- Installing a module.
+    $this->drupalGet('admin/modules');
+    // For this screenshot, check the Activity Tracker module checkbox.
+    $this->setUpScreenShot('config-install-check-modules.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);"');
+    $this->drupalPostForm(NULL, [
+        'modules[Core][tracker][enable]' => TRUE,
+      ], $this->callT('Install'));
+
     // Topic: config-uninstall - Uninstall unused modules.
     $this->drupalGet('admin/modules/uninstall');
-    // For this screen shot, scroll to the bottom and make sure the
-    // Search checkbox is checked, using JavaScript.
-    $this->setUpScreenShot('config-uninstall_searchModUninstall.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000); jQuery(\'#edit-uninstall-search\').attr(\'checked\', 1);"');
+    // For this screen shot, make sure the Search, History, and Activity
+    // Tracker checkboxes are checked, using JavaScript.
+    $this->setUpScreenShot('config-uninstall_searchModUninstall.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000); jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); jQuery(\'#edit-uninstall-search\').attr(\'checked\', 1); jQuery(\'#edit-uninstall-history\').attr(\'checked\', 1);"');
     $this->drupalPostForm(NULL, [
+        'uninstall[tracker]' => TRUE,
         'uninstall[search]' => TRUE,
-      ], $this->callT('Uninstall'));
-    $this->assertText($this->callT('Would you like to continue with uninstalling the above?'));
-    $this->assertText($this->callT('Search'));
-    $this->setUpScreenShot('config-uninstall_confirmUninstall.png', [550, 275, 30, 200]);
-    $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
-    $this->assertText($this->callT('The selected modules have been uninstalled.'));
-
-    // Follow-on task: also uninstall Comment and History. No screen shots.
-    // Before removing Comment, we have to remove the Comment field.
-    $this->drupalPostForm('admin/structure/types/manage/article/fields/node.article.comment/delete', [], $this->callT('Delete'));
-    $this->drupalPostForm('admin/structure/comment/manage/comment/delete', [], $this->callT('Delete'));
-    $this->drupalGet('admin/modules/uninstall');
-    $this->drupalPostForm(NULL, [
-        'uninstall[comment]' => TRUE,
         'uninstall[history]' => TRUE,
       ], $this->callT('Uninstall'));
     $this->assertText($this->callT('Would you like to continue with uninstalling the above?'));
     // Module names are not translated.
+    $this->assertText('Activity Tracker');
+    $this->assertText('Search');
     $this->assertText('History');
-    $this->assertText('Comment');
+    $this->setUpScreenShot('config-uninstall_confirmUninstall.png', [550, 275, 30, 200]);
     $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
     $this->assertText($this->callT('The selected modules have been uninstalled.'));
 
@@ -229,65 +227,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('<front>');
     $this->setUpScreenShot('config-theme_final_result.png', [550, 275, 30, 200]);
 
-    // Topic: language-enable - Installing multilingual modules
-    $this->drupalGet('admin/modules');
-    // For this screen shot, scroll to the bottom and make sure the
-    // modules are checked, using JavaScript.
-    $this->setUpScreenShot('language-enable-check-modules.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000); jQuery(\'#module-config-translation\').attr(\'checked\', 1); jQuery(\'#module-content-translation\').attr(\'checked\', 1);"');
-    $this->drupalPostForm(NULL, [
-      'modules[Multilingual][config_translation][enable]' => TRUE,
-      'modules[Multilingual][content_translation][enable]' => TRUE,
-      ], $this->callT('Install'));
-
-    // Topic: language-add - Adding a language
-    $this->drupalGet('admin/config/regional/language');
-    $this->drupalGet('admin/config/regional/language/add');
-    $this->drupalPostForm(NULL, [
-      'predefined_langcode' => $this->demoInput['second_langcode'],
-      ], $this->callT('Add language'));
-    // Simple screenshot.
-    $this->setUpScreenShot('language-add-list.png', [550, 275, 30, 200]);
-
-    // Topic: language-content-config - Configuring Content Translation
-    $this->drupalGet('/admin/config/regional/content-language');
-    // Simple screenshot of top section.
-    $this->setUpScreenShot('language-content-config_custom.png', [550, 275, 30, 200]);
-    // For this screenshot, we need to check Content, and then under
-    // Article and Basic Page, click the Show language selector button. Also
-    // under Basic page, simulate expanding the drop-down for default language
-    // by setting the 'size' attribute.
-    $this->setUpScreenShot('language-content-config_content.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-entity-types-node\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', 1); jQuery(\'#edit-settings-node\').show(); jQuery(\'#edit-settings-node-article-settings-language-language-alterable\').attr(\'checked\', 1); jQuery(\'#edit-settings-node-page-settings-language-langcode\').attr(\'size\', 7);"');
-
-    $this->drupalPostForm(NULL, [
-        'entity_types[node]' => TRUE,
-        'entity_types[block_content]' => TRUE,
-        'entity_types[menu_link_content]' => TRUE,
-
-        'settings[node][page][translatable]' => TRUE,
-        'settings[node][page][fields][title]' => TRUE,
-        'settings[node][page][fields][uid]' => FALSE,
-        'settings[node][page][fields][status]' => FALSE,
-        'settings[node][page][fields][created]' => FALSE,
-        'settings[node][page][fields][changed]' => FALSE,
-        'settings[node][page][fields][promote]' => FALSE,
-        'settings[node][page][fields][uid]' => FALSE,
-        'settings[node][page][fields][sticky]' => FALSE,
-        'settings[node][page][fields][path]' => TRUE,
-        'settings[node][page][fields][body]' => TRUE,
-
-        'settings[block_content][basic][translatable]' => TRUE,
-        'settings[block_content][basic][fields][info]' => TRUE,
-        'settings[block_content][basic][fields][changed]' => FALSE,
-        'settings[block_content][basic][fields][body]' => TRUE,
-
-        'settings[menu_link_content][menu_link_content][translatable]' => TRUE,
-        'settings[menu_link_content][menu_link_content][fields][title]' => TRUE,
-        'settings[menu_link_content][menu_link_content][fields][description]' => TRUE,
-        'settings[menu_link_content][menu_link_content][fields][changed]' => FALSE,
-      ], $this->callT('Save configuration'));
-    // Screenshot of the Basic page area after saving the configuration.
-    $this->setUpScreenShot('language-content-config_custom.png', [550, 275, 30, 200]);
-
     // Topic: content-create - Creating a Content Item
     $this->drupalGet('node/add/page');
     // Screen shot with title, body, and alias filled in, and alias area
@@ -330,14 +269,69 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('test-in-place-edit.png', [550, 275, 30, 200]);
 
     // Topic: menu-home - Designating a Front Page for your Site
-    // @todo This is the next topic to do.
+    $this->drupalGet('admin/config/system/site-information');
+    $this->drupalPostForm(NULL, [
+        'site_frontpage' => '/home',
+      ], $this->callT('Save configuration'));
+    // Take the screenshot after posting the form.
+    $this->setUpScreenShot('menu-home_new_text_field.png', [550, 275, 30, 200]);
+    $this->drupalGet('<front>');
+    $this->setUpScreenShot('menu-home_final.png', [550, 275, 30, 200]);
+
+    // Topic: menu-link-from-content: Adding a page to the navigation.
+    $this->drupalGet('admin/content');
+    $this->setUpScreenShot('menu-link-from-content_edit_page.png', [550, 275, 30, 200], 'onLoad="jQuery(\'table.views-view-table tr:eq(0) .dropbutton-widget).css(\'border\', \'' . $red_border . '\');"');
+
+    $this->drupalGet('node/2/edit');
+    $this->drupalPostForm(NULL, [
+        'menu[enabled]' => TRUE,
+        'menu[title]' => $this->demoInput['about_title'],
+        'menu[description]' => $this->demoInput['about_description'],
+        'menu[weight]' => -3,
+      ], $this->callT('Save and keep published'));
+    // Make this screenshot after the menu information is submitted.
+    $this->drupalGet('node/2/edit');
+    $this->setUpScreenShot('menu-link-from-content.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-menu .details-wrapper).show();"');
+    $this->drupalGet('<front>');
+    $this->setUpScreenShot('menu-link-from-content_result.png', [550, 275, 30, 200]);
+
+    // Topic: menu-reorder - Changing the order of navigation.
+    $this->drupalGet('admin/structure/menu');
+    $this->setUpScreenShot('menu-reorder_menu_titles.png', [550, 275, 30, 200], 'onLoad="jQuery(\'tr:eq(2) .dropbutton-widget).css(\'border\', \'' . $red_border . '\');"');
+    $this->drupalGet('admin/structure/menu/manage/main');
+    $this->setUpScreenShot('menu-reorder_edit_menu.png', [550, 275, 30, 200]);
+
+    // @todo - can we make the after-drag screenshot? Maybe not.
+    // menu-reorder_reorder.png
+
+    // Actually figuring out what to submit on the editing page is difficult,
+    // because the field name has some config hash in it. So instead, to make
+    // the change in the test, go back to the about page and edit the weight
+    // there.
+    $this->drupalGet('node/2/edit');
+    $this->drupalPostForm(NULL, [
+        'menu[weight]' => 10,
+      ], $this->callT('Save and keep published'));
+    $this->drupalGet('<front>');
+    $this->setUpScreenShot('menu-reorder_final_order.png', [550, 275, 30, 200]);
 
 
     // Topic: structure-content-type - Adding a Content Type
-    // fix! add screen shots in this section
+    // @todo add screen shots in this section
     // Create the Vendor content type.
     $this->drupalGet('admin/structure/types');
     $this->drupalGet('admin/structure/types/add');
+    // For this one, get the Name and Description fields, and the top of page.
+    $this->setUpScreenShot('structure-content-type-add.png', [550, 275, 30, 200]);
+    // For this one, get just the Submission form settings section.
+    $this->setUpScreenShot('structure-content-type-add-submission-form-settings.png', [550, 275, 30, 200]);
+    // For this one, expand Publishing options and check boxes.
+    $this->setUpScreenShot('structure-content-type-add-Publishing-Options.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-workflow .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(1)).toggleClass(\'is-selected\');" jQuery(\'#edit-options-promote\').attr(\'checked\', 0); jQuery(\'#edit-options-revision\').attr(\'checked\', 1);');
+    // For this one, expand Display settings and uncheck boxes.
+    $this->setUpScreenShot('structure-content-type-add-Display-Settings.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-display .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(2)).toggleClass(\'is-selected\');" jQuery(\'#edit-display-submitted\').attr(\'checked\', 0);');
+    // For this one, expand Menu settings and uncheck boxes.
+    $this->setUpScreenShot('structure-content-type-add-Menu-Settings.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-menu .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(3)).toggleClass(\'is-selected\');" jQuery(\'#edit-menu-options-main\').attr(\'checked\', 0);');
+
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['vendor_type_name'],
         'description' => $this->demoInput['vendor_type_description'],
@@ -348,6 +342,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'menu_options[main]' => FALSE,
         'language_configuration[content_translation]' => TRUE,
       ], $this->callT('Save and manage fields'));
+    $this->setUpScreenShot('structure-content-type-add-confirmation.png', [550, 275, 30, 200]);
 
     // Follow-on task for structure-content-type - Add content type for Recipe
     // No screen shots.
@@ -363,12 +358,80 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'language_configuration[content_translation]' => TRUE,
       ], $this->callT('Save and manage fields'));
 
+
     // Topic: structure-content-type-delete - Deleting a Content Type
-    // fix! add screen shots in this section
+    // @todo add screen shots in this section
     // Delete the Article content type.
     $this->drupalGet('admin/structure/types');
     $this->drupalGet('admin/structure/types/manage/article/delete');
     $this->drupalPostForm(NULL, [], $this->callT('Delete'));
+
+    // @todo Ready to add more topics here!
+
+
+    // Topic: language-add - Adding a language
+    // For non-English versions, locale and language will already be enabled.
+    // For English, not yet. In both cases, we need config/content translation
+    // though.
+    $this->drupalGet('admin/modules');
+    $values = [
+      'modules[Multilingual][config_translation][enable]' => TRUE,
+      'modules[Multilingual][content_translation][enable]' => TRUE,
+    ];
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $values += [
+        'modules[Multilingual][language][enable]' => TRUE,
+        'modules[Multilingual][locale][enable]' => TRUE,
+      ];
+    }
+    $this->drupalPostForm(NULL, $values, $this->callT('Install'));
+
+    $this->drupalGet('admin/config/regional/language');
+    $this->drupalGet('admin/config/regional/language/add');
+    $this->drupalPostForm(NULL, [
+        'predefined_langcode' => $this->demoInput['second_langcode'],
+      ], $this->callT('Add language'));
+    $this->setUpScreenShot('language-add-list.png', [550, 275, 30, 200]);
+
+    // Topic: language-content-config - Configuring Content Translation
+    $this->drupalGet('/admin/config/regional/content-language');
+    // Simple screenshot of top section.
+    $this->setUpScreenShot('language-content-config_custom.png', [550, 275, 30, 200]);
+    // For this screenshot, we need to check Content, and then under
+    // Article and Basic Page, click the Show language selector button. Also
+    // under Basic page, simulate expanding the drop-down for default language
+    // by setting the 'size' attribute.
+    $this->setUpScreenShot('language-content-config_content.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-entity-types-node\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', 1); jQuery(\'#edit-settings-node\').show(); jQuery(\'#edit-settings-node-article-settings-language-language-alterable\').attr(\'checked\', 1); jQuery(\'#edit-settings-node-page-settings-language-langcode\').attr(\'size\', 7);"');
+
+    $this->drupalPostForm(NULL, [
+        'entity_types[node]' => TRUE,
+        'entity_types[block_content]' => TRUE,
+        'entity_types[menu_link_content]' => TRUE,
+
+        'settings[node][page][translatable]' => TRUE,
+        'settings[node][page][fields][title]' => TRUE,
+        'settings[node][page][fields][uid]' => FALSE,
+        'settings[node][page][fields][status]' => FALSE,
+        'settings[node][page][fields][created]' => FALSE,
+        'settings[node][page][fields][changed]' => FALSE,
+        'settings[node][page][fields][promote]' => FALSE,
+        'settings[node][page][fields][uid]' => FALSE,
+        'settings[node][page][fields][sticky]' => FALSE,
+        'settings[node][page][fields][path]' => TRUE,
+        'settings[node][page][fields][body]' => TRUE,
+
+        'settings[block_content][basic][translatable]' => TRUE,
+        'settings[block_content][basic][fields][info]' => TRUE,
+        'settings[block_content][basic][fields][changed]' => FALSE,
+        'settings[block_content][basic][fields][body]' => TRUE,
+
+        'settings[menu_link_content][menu_link_content][translatable]' => TRUE,
+        'settings[menu_link_content][menu_link_content][fields][title]' => TRUE,
+        'settings[menu_link_content][menu_link_content][fields][description]' => TRUE,
+        'settings[menu_link_content][menu_link_content][fields][changed]' => FALSE,
+      ], $this->callT('Save configuration'));
+    // Screenshot of the Basic page area after saving the configuration.
+    $this->setUpScreenShot('language-content-config_custom.png', [550, 275, 30, 200]);
 
   }
 
