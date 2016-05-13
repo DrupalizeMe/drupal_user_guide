@@ -28,7 +28,7 @@ guide you on this.
 * We encourage you to test Drupal core update process in some test or
 development environment, and later proceed to the production environment upon
 success. <<install-dev-making>> recipe of the guide will help you how to setup
-your development environment for your Drupal 8 application.
+your development environment for your Drupal application.
 
 ==== Steps
 
@@ -65,7 +65,7 @@ drush dl drupal
 
 [start=6]
 . Delete the _core_ directory, and all the independent files, including
-_.htaccess_, _composer.json_,_autoload.php_, and so on from your Drupal 8
+_.htaccess_, _composer.json_,_autoload.php_, and so on from your Drupal
 installation directory. In case, you had included any custom file or
 customized any of these files, it is *not recommended* to delete them; else
 you may end up losing the custom functionalities that use these
@@ -73,7 +73,7 @@ custom/customized files.
 
 . Copy the _core_ directory and the non-custom/non-customized files that you may
 have deleted during the preceding step from the newly downloaded code base (in
-our case, _drupal-8.0.0-beta14_) and paste them to your Drupal 8 site
+our case, _drupal-8.0.0-beta14_) and paste them to your Drupal site
 directory (version _8.0.0-beta13_).
 
 . Run the _update.php_ script using either of the following, and let the script
@@ -132,8 +132,8 @@ messages, we recommend you to follow the instructions on the
 https://www.drupal.org/project/registry_rebuild[_Drupal.org_ page "Registry
 Rebuild"].
 
-You may also refer _/core/UPGRADE.txt_ within your Drupal 8 installation in case
-you want to learn more about updating Drupal 8 core.
+You may also refer _/core/UPGRADE.txt_ within your Drupal installation in case
+you want to learn more about updating Drupal core.
 
 ==== Follow-on tasks
 
