@@ -16,23 +16,23 @@
 
 ==== What are image styles?
 
-Image styles allow you to upload a single image but display it in several
-ways; each display variation, or _image style_, is the result of
-applying one or more _effects_ to the original image. As an example,
-you might upload a high-resolution image with a 4:3 aspect ratio, and
-display it scaled down, square cropped, or black-and-white (or any
-combination of these effects). Drupal provides a way to do this efficiently:
-you configure an image style with the desired effects on the Image styles
-page (_admin/config/media/image-styles_), and the first time a particular image
-is requested in that style, the effects are applied. The resulting image is
-saved, and the next time that same style is requested, the saved image is
-retrieved without the need to recalculate the effects. Drupal core provides
-several effects that you can use to define styles; others may be provided by
-contributed modules.
+Image styles allow you to upload a single image but display it in several ways;
+each display variation, or _image style_, is the result of applying one or more
+_effects_ to the original image. As an example, you might upload a
+high-resolution image with a 4:3 aspect ratio, and display it scaled down,
+square cropped, or black-and-white (or any combination of these effects). The
+core software provides a way to do this efficiently: you configure an image
+style with the desired effects on the Image styles page
+(_admin/config/media/image-styles_), and the first time a particular image is
+requested in that style, the effects are applied. The resulting image is saved,
+and the next time that same style is requested, the saved image is retrieved
+without the need to recalculate the effects. The core software provides several
+effects that you can use to define styles; others may be provided by contributed
+modules.
 
 Visit the Image styles page via the _Manage_ administrative menu, navigate to
-_Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_) to
-see the image styles that are defined by default.
+_Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_)
+to see the image styles that are defined by default.
 
 ==== Related topics
 
