@@ -7,8 +7,8 @@
 (((Installation requirements,web server)))
 (((Installation requirements,database)))
 (((Installation requirements,PHP programming language)))
-(((Installing,Drupal)))
-(((Drupal installation,requirements)))
+(((Installing,core software)))
+(((Core software installation,requirements)))
 (((Disk space,installation requirements)))
 (((Web server,installation requirements)))
 (((Apache web server,version requirements)))
@@ -23,9 +23,9 @@
 
 // ==== Prerequisite knowledge
 
-==== What are the requirements for running Drupal?
+==== What are the requirements for running the core software?
 
-To install and run Drupal your web server must meet certain minimum
+To install and run the core software your web server must meet certain minimum
 requirements.
 
 ===== Disk space
@@ -41,7 +41,7 @@ Apache (Recommended)::
   Apache is the most commonly used web server. The core software will work on
   Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the mod_rewrite
   module installed and enabled. The Apache Virtualhost configuration must
-  contain the directive AllowOverride All to allow Drupal's .htaccess file to be
+  contain the directive AllowOverride All to allow the .htaccess file to be
   used.
 Nginx::
   Nginx is a commonly used web server that focuses on high concurrency,
@@ -57,9 +57,9 @@ Hiawatha::
 Microsoft IIS::
   Microsoft IIS is a web server and set of feature extension modules for use
   with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
-  7 if PHP is configured correctly. Because clean URLs are required in Drupal,
-  you may need to use a third party product. For IIS 7 you can use the Microsoft
-  URL Rewrite Module or a third party solution.
+  7 if PHP is configured correctly. Because clean URLs are required, you may
+  need to use a third party product. For IIS 7 you can use the Microsoft URL
+  Rewrite Module or a third party solution.
 
 ===== Database
 

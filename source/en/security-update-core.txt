@@ -1,15 +1,15 @@
 [[security-update-core]]
 
-=== Updating Drupal core
+=== Updating the Core Software
 
-(((Drupal core,updating)))
-(((Drush tool,using to update Drupal core)))
-(((Administrative interface,using to update Drupal core)))
+(((Core software,updating)))
+(((Drush tool,using to update the core software)))
+(((Administrative interface,using to update the core software)))
 
 ==== Goal
 
-Update Drupal core, either through the administrative interface or by using
-Drush.
+Update the core software, either through the administrative interface or by
+using Drush.
 
 //==== Prerequisite knowledge
 
@@ -25,10 +25,10 @@ you to refer https://github.com/drush-ops/drush["Drush repository"]. Moreover,
 in case you don't have Drush installed on your server, <<install-tools>> will
 guide you on this.
 
-* We encourage you to test Drupal core update process in some test or
+* We encourage you to test the core update process in some test or
 development environment, and later proceed to the production environment upon
 success. <<install-dev-making>> recipe of the guide will help you how to setup
-your development environment for your Drupal application.
+your development environment for your application.
 
 ==== Steps
 
@@ -65,15 +65,14 @@ drush dl drupal
 
 [start=6]
 . Delete the _core_ directory, and all the independent files, including
-_.htaccess_, _composer.json_,_autoload.php_, and so on from your Drupal
-installation directory. In case, you had included any custom file or
-customized any of these files, it is *not recommended* to delete them; else
-you may end up losing the custom functionalities that use these
-custom/customized files.
+_.htaccess_, _composer.json_,_autoload.php_, and so on from your installation
+directory. In case, you had included any custom file or customized any of
+these files, it is *not recommended* to delete them; else you may end up
+losing the custom functionalities that use these custom/customized files.
 
 . Copy the _core_ directory and the non-custom/non-customized files that you may
 have deleted during the preceding step from the newly downloaded code base (in
-our case, _drupal-8.0.0-beta14_) and paste them to your Drupal site
+our case, _drupal-8.0.0-beta14_) and paste them to your site
 directory (version _8.0.0-beta13_).
 
 . Run the _update.php_ script using either of the following, and let the script
@@ -132,8 +131,8 @@ messages, we recommend you to follow the instructions on the
 https://www.drupal.org/project/registry_rebuild[_Drupal.org_ page "Registry
 Rebuild"].
 
-You may also refer _/core/UPGRADE.txt_ within your Drupal installation in case
-you want to learn more about updating Drupal core.
+You may also refer _/core/UPGRADE.txt_ within your installation in case you
+want to learn more about updating the core software.
 
 ==== Follow-on tasks
 
