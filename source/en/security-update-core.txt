@@ -18,29 +18,28 @@ using Drush.
 Prior to stepping into the actual update procedure, it is recommended to ensure
 the following points:
 
-* In order to use Drush with Drupal 8.x applications, ensure that you have Drush
-7.x version installed. Drush versions less than 7.x doesn't support Drupal
-8.x. If you wish to explore further into Drush and its usage, we recommend
-you to refer https://github.com/drush-ops/drush["Drush repository"]. Moreover,
-in case you don't have Drush installed on your server, <<install-tools>> will
-guide you on this.
+* In order to use Drush with Drupal 8.x applications, you must have Drush 7.x
+version installed. Drush versions less than 7.x don't support Drupal 8.x. If you
+want to explore further into Drush and its usage, refer to
+https://github.com/drush-ops/drush["Drush repository"]. Moreover, in case you
+don't have Drush installed on your server, <<install-tools>> will guide you on
+this.
 
-* We encourage you to test the core update process in some test or
-development environment, and later proceed to the production environment upon
-success. <<install-dev-making>> recipe of the guide will help you how to setup
-your development environment for your application.
+* Test the core update process in some test or development environment, and
+later proceed to the production environment upon success. <<install-dev-making>>
+recipe of the guide will help you set up your development environment for your
+application.
 
 ==== Steps
 
 . Take a backup of your code as well as database. It will help you in disaster
-recovery process, in case anything goes wrong during update process. You are
-recommended to refer <<prevent-backups>> to learn more about taking the
-complete backups of your site.
+recovery if anything goes wrong during update process. Refer to
+<<prevent-backups>> to learn more about taking the complete backups of your
+site.
 
-. Open the _/sites/default/settings.php_ file in any of the text editors of your
-choice. Find the line about _$settings['update_free_access']_ variable. By
-default, it is set to *FALSE* due to security reasons, and to ensure that Drupal
-8 core doesn't accidently get updated leading to disaster.  Edit it so it says:
+. Open the _/sites/default/settings.php_ file in any plain text editor.  Find
+the line about _$settings['update_free_access']_ variable. By default, it is set
+to *FALSE* due to security reasons. Edit it so it says:
 +
 ----
 $settings['update_free_access'] = TRUE;

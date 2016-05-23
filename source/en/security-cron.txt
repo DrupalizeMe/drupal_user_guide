@@ -30,9 +30,9 @@ hours.
 . Choose whether to run cron maintenance tasks using the _Automated Cron_
 module, or by other means.
 +
-The _Automated Cron_ module may not be suitable for some websites because:
+The _Automated Cron_ module might not be suitable for some websites because:
 +
-  * Cron maintenance tasks will only be run after a page on the website is
+  * Cron maintenance tasks will be run only after a page on the website is
   visited. If no one visits the website for a long time, cron maintenance tasks
   will not be run.
   * Because cron maintenance tasks are run after the page has been generated,
@@ -67,7 +67,7 @@ run cron from outside of the website; for example:
 _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
 This URL can be used by the following cron schedulers; if you use one of these
-methods be sure to uninstall the _Automated Cron_ module (see
+methods, uninstall the _Automated Cron_ module (see
 <<config-uninstall>>):
 +
   * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,

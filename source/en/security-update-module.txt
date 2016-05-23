@@ -20,7 +20,7 @@ Update a contributed module and run the _Database Updates_ script.
 * <<extend-module-install, A contributed module has been installed>>
 and there is an update available for it.
 
-* <<security-cron, Ensure that cron maintenance tasks are run regularly on
+* <<security-cron, Run the cron maintenance tasks regularly on
 your site>>.
 
 * <<prevent-backups,Back up your site>>. Though unlikely, operations that
@@ -39,7 +39,7 @@ installed>>.
 
 Before you start, check for module-specific update instructions. This is
 typically necessary when updating modules that involve the usage of third party
-libraries. Be sure to read and understand all module specific requirements
+libraries. Read and understand all module specific requirements
 before proceeding with the updates. To find instructions, check the module's
 project page _Read Documentation_ link, as well as the instructions (for
 example, _README.txt_, _INSTALL.txt_, and _UPGRADE.txt_) that come with the
