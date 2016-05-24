@@ -41,6 +41,9 @@ sure that your data can be restored to the site in all cases.
 In order to make a complete backup of your site, you will need to make copies of
 the following:
 
+* The data in the _sites_ directory, including the _sites/default/settings.php_
+file.
+
 * The data in your site's database. A few tables can be truncated, such as those
 storing the temporary data cache and user login session information, but it is
 always safe to back up the entire database.
@@ -52,11 +55,15 @@ to _Configuration_ > _Media_ > _File system_ (_admin/config/media/file-system_)
 to check the file upload locations; to change them, you'll need to edit your
 _settings.php_ file.
 
-* Custom modules and any other software files you have customized. Some people
-prefer to back up all of the software files, including core files and
-contributed modules and themes (which you could recover by downloading them
-again from the source), rather than trying to pick out specific files
-that definitely need to be backed up.
+* Modules, themes and any other software files you have customized. You can find
+customized modules and themes in the _modules_ and _themes_ directories
+respectively. Some people prefer to back up all software files, including core
+files and contributed modules and themes (which you could recover by downloading
+them again from the source), rather than trying to pick out specific files that
+definitely need to be backed up.
+
+You can perform a test to confirm whether your backup has been done right by
+making a development copy of the site (see <<install-dev-making>>).
 
 ==== Related topics
 
