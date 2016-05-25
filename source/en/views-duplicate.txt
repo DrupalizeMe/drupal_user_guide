@@ -48,9 +48,10 @@ displays)_.
 image:images/views-duplicate_title.png["Change view title",width="100%"]
 
 [start=4]
-. In the _Format_ section change _Format: Unformatted_ to grid by choosing the
-style _Grid_ in the pop-up configurations. Further options on style settings
-appear. Click _Apply (all displays)_.
+. In the _Format_ section click _Table_ next to _Format_. The _Page: How should
+this view be styled_ pop-up appears.  Select _Grid_ and click _Apply (all
+displays)_. The _Page: Style options_ pop-up appears where you can customize
+your grid's appearance. Retain the default values and click _Apply_.
 
 . In the _Fields_ section check _Content: Body_ and then click _Remove_ in the
 pop-up. This leaves our Recipes view with the title and image only.
@@ -68,23 +69,30 @@ image:images/views-duplicate_filter.png["Add ingredients filter",width="100%"]
 
 [start=8]
 . The appearing pop-up offers extra settings on vocabulary and selection
-type. _Apply and continue_. The next configuration pop-up allows to _expose this
-filter to visitors_: check. Within the appearing extra settings give the _Label_
-"Find recipes using...". Confirm by clicking _Apply(all displays)_.
+type. Click _Apply and continue_. The next pop-up allows to expose this
+filter to visitors. Fill in the fields as shown below.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Field name | Explanation| Example value
+| Expose this filter to visitors, to allow them to change it | Allow visitors to filter and search | Checked
+| Required field | Whether a value has to be provided or not | Unchecked
+| Label | Label shown for this filter on the view page | Find recipes using...
+|================================
 +
 //To create this image, take a screenshot on admin/structure/views/recipes with the _Configure filter criterion_ pop-up open, check in "Expose this filter to visitors" and give Label "Find recipes using...".
 image:images/views-duplicate_expose.png["Expose filter",width="100%"]
 
 [start=9]
-. In the _Page settings_ section change _Path: /vendors_ to /recipes: give the
-new path "recipes" in the pop-up then _Apply_. Then via the _Menu_ pop-up change
-the menu link title to "Recipes".
+. In the _Page settings_ section change _Path: /vendors_ to _/recipes_. Give the
+new path "recipes" in the pop-up and click _Apply_. Then via the _Menu_ pop-up
+change the menu link title to "Recipes". Click _Apply_.
 
-. Roll out the _Advanced_ sections. In the _Other_ section change _Use AJAX: No_
-to "Yes" by clicking _No_ and checking _Use AJAX_ in the pop-up that appears.
-Then click _Apply_.
+. Click _Advanced_ to expand the _Advanced_ section of the configuration
+page. In the _Other_ section change _Use AJAX: No_ to "Yes" by clicking _No_ and
+checking _Use AJAX_ in the pop-up that appears. Then click _Apply_.
 
-. Save all the above changes by clicking on _Save_ of the _Displays_ panel.
+. Click _Save_ to save the view.
 
 . Go back to site, and we see the new page Recipes.
 +
