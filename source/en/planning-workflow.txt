@@ -32,8 +32,11 @@ saving:
 be seen by authenticated users who have the permissions to view unpublished
 versions of specific content items.
 
-You can track differences between multiple versions of your content, and revert
-to older versions using Revisions.
+Most content entity types support revision tracking, if it is enabled by an
+administrator for the entity sub-type. If you have revision tracking enabled,
+the software will store old versions of the content each time it's revised, and
+add notes about what is changed. This allows you to look at the history and
+revert to older versions.
 
 Using the Unpublished flag and Revisions, you can build an editorial workflow
 that lets content creators and editors work on the live site without displaying

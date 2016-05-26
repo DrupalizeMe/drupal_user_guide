@@ -52,13 +52,15 @@ page URL, image, and description.
 
 . Decide on what entity listings are needed, which could be entire pages or
 smaller areas on the page. For each listing, you'll need to determine what
-entity items should be listed, in what order, and with what filtering
-options. You'll also need to decide what information from the entity items
-should be shown, which might result in adding to the list of fields you
-determined in the previous step. Our farmers market site, for example, needs
-to have a Recipes listing page that lists content items of type Recipe, with
-the ability to filter by ingredients, so that means that the Recipe content
-type needs an Ingredients field.
+entity items should be listed. Then you'll need to decide in what order and with
+what filtering options they should be displayed; for example, you might want to
+give the site visitor the option to search by keyword, to filter the list down
+to a subset, or to sort the list. You'll also need to decide what information
+from the entity items should be shown, which might result in adding to the list
+of fields you determined in the previous step. Our farmers market site, for
+example, needs to have a Recipes listing page that lists content items of type
+Recipe, with the ability to filter by ingredients, so that means that the Recipe
+content type needs an Ingredients field.
 
 . For each identified field on each entity subtype, identify what type of data
 it should contain (such as plain text, formatted text, a date, an image file,
@@ -66,10 +68,10 @@ etc.), and how many values should be allowed. Most fields are
 single-valued, but for example a Recipe should allow for multiple values in
 its Ingredients field.
 
-. Consider which fields would be best as taxonomy: fields whose values should be
-chosen from a list of allowed values, where the list of allowed values is
-expected to change and grow over time, are good candidates. An example is
-the Ingredients field for the Recipe content type.
+. Consider which fields would be best as references to taxonomy term entities:
+fields whose values should be chosen from a list of allowed values. Allowed
+values that are expected to change and grow over time, are good candidates. An
+example is the Ingredients field for the Recipe content type.
 
 . Consider which fields should reference other content entities. An example is
 that since vendors will be submitting recipes, we probably need a field on
