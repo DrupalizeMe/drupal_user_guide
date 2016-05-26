@@ -9,11 +9,11 @@
 
 ==== Goal
 
-Leaving the modules installed that are unused by your application (in our
-case, modules such as _Comment_, _History_, and _Search_) adds an overhead to
-the site performance. Thus, it is important to identify such modules and
-uninstall them. In this guide, you will learn how to uninstall such modules
-using Drush as well as site administer UI interface.
+Leaving the modules installed that are unused by your application adds an
+overhead to the site's performance. It is important to uninstall _Search_ and
+_History_ modules as well as the _Activity Tracker_ module if you installed it
+in the previous topic. In this guide, you will learn how to uninstall such
+modules using Drush as well as site administer UI interface.
 
 ==== Prerequisite knowledge
 
@@ -33,9 +33,9 @@ running. If not installed yet, we recommend you to refer the guide at
 (_admin/modules/uninstall_) wherein you should find the list of modules that are
 ready to be uninstalled.
 
-. Check the modules you wish to uninstall (e.g., the core _Activity Tracker_
-module), and click _Uninstall_ at the bottom of the page, as demonstrated in the
-following screenshot:
+. Check the boxes for the modules you are uninstalling (_Search_, _History_, and
+_Activity Tracker_) and click _Uninstall_ at the bottom of the page, as
+demonstrated in the following screenshot:
 
 //Login to your Drupal 8 site as an administrator and in the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ tab.
 image:images/config-uninstall_searchModUninstall.png["Uninstalling module",width="100%"]
@@ -77,10 +77,12 @@ drush pm-uninstall tracker
 ==== Follow-on tasks
 
 * <<install-tools>>
+
 * <<prevent-cache-clear>>
-* We also *recommend* you to follow the discussed guidelines in order to
-uninstall other modules such as _Comment_ and _History_ that are not required
-in the site.
+
+* You can also uninstall the _Comment_ module by following these steps, but only
+after comment fields have been removed, which is a side effect of
+<<structure-content-type-delete>>.
 
 //==== Related concepts
 
