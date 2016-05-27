@@ -1,6 +1,6 @@
 [[structure-text-formats]]
 
-=== Concept: Text Formats
+=== Concept: Text Formats and Editors
 
 (((Text format)))
 (((User-entered content,filtering)))
@@ -11,16 +11,29 @@
 
 // ==== Prerequisite knowledge
 
-==== What are text formats?
+==== What are text formats and filters?
 
-Text formats change how HTML tags and other text will be processed and displayed
-in the site. They are used to transform text, and also help to defend your
-website against potentially damaging input from malicious users, like for
-example cross-site scripting. By default the site has the text formats _Basic
-HTML_, _Restricted HTML_, and _Full HTML_. When using the _Basic HTML_ and
-_Restricted HTML_ formats, only a limited set of HTML tags are allowed. The user
-input is stored in the database but the not-allowed HTML tags are removed when
-displaying the input.
+_Text formats_ change how HTML tags and other text are processed and displayed
+on your site. Text formats are composed of a series of _filters_, each of which
+transforms text. When users create content, a text format is associated with the
+content, and the full, original text is stored in the database. Then, before it
+is output on the site, the content is passed through the filters in the text
+format that was assigned to the content.
+
+The core Filter module provides text format functionality, and the core Standard
+install profile sets up _Basic HTML_, _Restricted HTML_, and _Full HTML_ text
+formats. Each text format has an associated permission, so that you can allow
+only trusted users to use permissive text formats, and restrict untrusted users
+to text formats like _Basic HTML_, which filters out dangerous HTML tags.
+
+==== What are the editors associated with text formats?
+
+Each text format can be associated with an editor, such as a visual WSYIWYG
+(What You See Is What You Get) HTML editor. The core Text Editor module provides
+the ability to associate editors with text formats, and to configure the editors
+(such as adding and removing buttons from their toolbars). The core CKEditor
+module provides the industry-standard editor known as CKEditor, so that it can
+be used to edit HTML content on your site.
 
 ==== What is cross-site scripting?
 
@@ -28,8 +41,8 @@ Cross-site scripting (XSS) is a security vulnerability typically found in
 websites. In a site that is not well protected, malicious users can enter script
 into web pages that are viewed by other users, for example in a comment or in
 the body of a page. A cross-site scripting vulnerability may be used by
-attackers to login as another user. It is important to configure the Text
-Formats of your website to prevent such abuse.
+attackers to login as another user. It is important to configure the text
+formats of your website to prevent such abuse.
 
 ==== Related topics
 
