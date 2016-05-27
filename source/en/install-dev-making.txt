@@ -32,14 +32,28 @@ following methods:
   PHPMyAdmin installed (it is available from many hosting control panels),
   use the _Export_ tab in PHPMyAdmin to export in _SQL_ format. Using _gzip_
   compression on the output file is suggested, to reduce the file size.
+
   * If you are using MySQL and have access to the command line, use this
   command (substituting in your site's database name, user name, and password):
-  +mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql+.
++
+----
+mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
+----
+
   * If you prefer Drush, use this command:
-  +drush sql-dump > BACKUPFILE.sql+
++
+----
+drush sql-dump > BACKUPFILE.sql
+----
+
   * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and
   Migrate module] from within your live site. See <<extend-module-install>> for
   instructions on installing contributed modules.
++
+You now have a database dump stored in file _BACKUPFILE.sql_. For security
+reasons, avoid storing this file on your hosting server anywhere under the
+Drupal site root. This will prevent others from getting a copy of your
+database.
 
 . Copy all of the files from the web root of your live site to the web root of
 your development site.
@@ -57,7 +71,15 @@ $databases['default']['default'] = array (
   'password' => 'live_site_database_password',
 ----
 
-[start=5]
+. Check whether your _settings.php_ file has the following setting; if yes, then
+you will need to edit this to point to your development site URL instead of your
+production site URL:
++
+----
+$settings['trusted_host_patterns']
+----
+
+[start=6]
 . Import the database dump file you created, into the development site's
 database. Try one of the following methods:
 +
@@ -65,13 +87,34 @@ database. Try one of the following methods:
   PHPMyAdmin installed (it is available from many hosting control panels),
   use the _Import_ tab in PHPMyAdmin. You may find that you have to restart the
   import a few times, if your database was large.
+
   * If you are using MySQL and have access to the command line, use this
   command (substituting in your site's database name, user name, and password;
   if you made a gzip-compressed backup file, you will also need to uncompress it
   first):
-  +mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql+.
++
+----
+mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
+----
++
   * If you prefer Drush use this command:
-  +drush sql-query --file=BACKUPFILE.sql
++
+----
+drush sql-query --file=BACKUPFILE.sql
+----
+
+. If your development and live sites need to have different configuration, then
+you have to use configuration overrides in the _settings.php_ file. The
+_$config_ variable will help you maintain override values separately from the
+standard configuration data. For instance, you might want the site name to be
+"Anytown Farmers Market" on the production site, but "Development Site for
+Anytown Farmers Market" on the development site. To do that, you could have the
+production value in the site configuration (in the database), and on the
+development site, in the settings.php file, you would need to have:
++
+----
+$config['system.site']['name'] = "Development Site for Anytown Farmers Market";
+----
 
 ==== Follow-on tasks
 
