@@ -23,9 +23,9 @@ button to its editor configuration.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Text
-formats and editors_ (_admin/config/content/formats_). The _Text formats and
-editors_ page appears.
+. In the _Manage_ administrative menu, navigate to _Configuration_ > _Content
+authoring_ > _Text formats and editors_ (_admin/config/content/formats_). The
+_Text formats and editors_ page appears.
 
 . Click _Configure_ for the _Basic HTML_ text format. The _Basic HTML_ page
 appears.
@@ -42,12 +42,10 @@ image:images/structure-text-format-config-editor-config.png["Configuring the edi
 [start=5]
 . Note that you can change the _Filter processing order_.
 
-. In the field _Allowed HTML tags_ add the IFRAME tag and its attributes as
-follows: `<iframe width height src frameborder allowfullscreen>`
+. In the field _Allowed HTML tags_ add `<hr>` to what is there.
 
-// For this image add the <iframe> tag to the allowed list of HTML tags.
-image:images/structure-text-format-config-allowed-html.png["Configuring the HTML
-tags",width="100%"]
+// For this image add the <hr> tag to the allowed list of HTML tags.
+image:images/structure-text-format-config-allowed-html.png["Configuring the HTML tags",width="100%"]
 
 [start=7]
 . Click _Save configuration_. You can now create content with a YouTube embedded
