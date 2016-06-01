@@ -15,16 +15,18 @@ installer.
 
 ==== Prerequisite knowledge
 
-* <<install-requirements>>
-* <<install-prepare>>
+<<install-requirements>>
 
-//==== Site prerequisites
+==== Site prerequisites
+
+<<install-prepare>>
 
 ==== Steps
 
-The first time you visit your site you will be automatically presented with the
-installer. This is a one time process that will walk you through some basic
-configuration necessary to get your site up and running.
+. If you are using a 1-click install from a hosting provider or demo site, you
+will most likely see some or all of the following screens as part of the
+installation process. If you uploaded the core files manually, to start the
+installer, open a browser and visit the URL that you set up for your hosting.
 
 . Select a language on the first page of the installer. We'll use English for
 our site. You could optionally choose from any of the other listed languages.
@@ -35,7 +37,7 @@ language. After choosing a language click _Save and continue_.
 // Go to the first step of the installer
 image:images/install-run-1.png["Choose a language",width="100%"]
 
-[start=2]
+[start=3]
 . Select an installation profile. Installation profiles provide site features
 and functions for a specific type of site as a single download containing
 the core software, contributed modules, themes, and pre-defined
@@ -45,29 +47,27 @@ _Standard_ profile and click _Save and continue_.
 // Go to the choose an installation profile step of the installer
 image:images/install-run-2.png["Choose an installation profile",width="100%"]
 
-[start=3]
+[start=4]
 . The next step in the installer will verify that your system meets the minimum
 requirements. If it does not, you'll be presented with an outline of what
 needs to be corrected in order to proceed. If it does, the installer will
 automatically advance to the next step.
 
-. Database configuration. Before you can complete this step you'll need to
-create new database on your database server, and then obtain the database name
-username and password. Fill in the correct information for your environment.
-Then click _Save and continue_.
+. Provide details of the database you created in the <<install-prepare>>
+chapter. Then click _Save and continue_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Database name | drupal8
-|Database username | databaseUsername
-|Database password | ************
+|Field name | Explanation | Value
+|Database name | The custom name given to the database | drupal8
+|Database username | Username created | databaseUsername
+|Database password | Password chosen | ************
 |================================
 +
 // Go to the database configuration step of the installer
 image:images/install-run-3.png["Database configuration form",width="100%"]
 
-[start=5]
+[start=6]
 . The next step will display a progress bar under the heading _Installing
 Drupal_. After the installer has completed it will automatically advance to
 the next step.
@@ -75,7 +75,7 @@ the next step.
 // Go to the page displaying the installation progress bar
 image:images/install-run-4.png["Installation progress bar",width="100%"]
 
-[start=6]
+[start=7]
 . The final step is to configure some basic information about your new site.
 Note that the user account you create in this step is the site's admin
 account. See <<user-admin-account>> for important information about this
@@ -86,13 +86,13 @@ Fill in the form with the following information:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Site name | Anytown Farmers Market
-|Site email address | info@example.com
-|Username | admin
-|Password | ************
-|Confirm password | ************
-|Email address | admin@example.com
+|Field name | Explanation | Value
+|Site name | The name chosen for the site | Anytown Farmers Market
+|Site email address | The email associated with the site | info@example.com
+|Username | The designated user's credentials| admin
+|Password | The password chosen | ************
+|Confirm password | Repeat the password | ************
+|Email address | The user's email | admin@example.com
 |================================
 +
 The remaining fields can likely be left at their default values.
@@ -100,7 +100,7 @@ The remaining fields can likely be left at their default values.
 // Go to the basic site information configuration step of the installer
 image:images/install-run-5.png["Configuration form",width="100%"]
 
-[start=7]
+[start=8]
 . Click _Save and continue_.
 
 . You will be redirected to the front page of your new site and you should see
@@ -110,7 +110,10 @@ the page.
 // Front page of Drupal after the installer just completed showing the success message
 image:images/install-run-6.png["Installation success",width="100%"]
 
-//==== Follow-on tasks
+==== Follow-on tasks
+
+Check the Status Report to see if there are any problems with the
+installation. See <<prevent-status>>.
 
 ==== Related concepts
 
