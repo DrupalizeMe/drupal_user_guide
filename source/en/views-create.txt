@@ -22,17 +22,17 @@ once a new vendor is added on the site.
 
 ==== Site prerequisites
 
-* The _Views_ module is installed.
+* The _Views_ module must be installed. This is installed for you when you
+install with the core Standard installation profile.
 
-* The content type _Vendor_ has been created and it has the URL and Image fields
-added. See: <<structure-content-type>> and <<structure-fields>>.
+* The _Vendor_ content type must exist, with URL and Main Image fields, and your
+site must have a couple of Vendor content items. See <<structure-content-type>>,
+<<structure-fields>>, and <<content-create>>.
 
-* <<structure-image-style-create, The image style _Medium_ has been created>>.
-This style is created when the Image module is installed for the first time,
-but if it has been deleted for some reason, you can recreate it.
-
-* A couple of _Vendor_ content items has been created. See:
-<<content-create>>.
+* The _Medium (220x220)_ image style must be defined. This is created on your
+site when you install the core Image module, which is installed for you when you
+install with the core Standard installation profile, but can be recreated if it
+is deleted. See <<structure-image-style-create>>.
 
 ==== Steps
 

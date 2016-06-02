@@ -18,13 +18,17 @@ Tracker module if you installed it in <<config-install>>, to reduce overhead.
 
 ==== Site prerequisites
 
-We assume that Drush 8.x version has been installed on your server and is up and
-running. If not installed yet, we recommend you to refer the guide at
+* You must have at least one unused module on your site that you want to
+uninstall, such as the core Search module.
+
+* If you want to use Drush to uninstall modules, Drush must be installed. See
 <<install-tools>>.
 
 ==== Steps
 
-===== Uninstalling using the user interface
+You can use the administrative interface or Drush to uninstall modules.
+
+===== Using the administrative interface
 
 . In the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ tab
 (_admin/modules/uninstall_) wherein you should find the list of modules that are
@@ -55,7 +59,7 @@ _Uninstall_, as demonstrated in the following screenshot:
 //module, and click _Uninstall_.
 image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
 
-===== Uninstalling using Drush
+===== Using Drush
 
 . In the _Manage_ administrative menu, navigate to _Extend_
 (_admin/modules_). The _Extend_ page appears showing all the available modules

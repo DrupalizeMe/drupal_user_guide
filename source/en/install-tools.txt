@@ -22,11 +22,7 @@ There are several additional tools available that help you create sites faster,
 more accurate and with less effort.
 
 Drush::
-  http://www.drush.org[Drush] is a command line tool for building and
-  maintaining sites. It has commands for installing the base software, modules,
-  and themes; updating software; database operations, including copying and
-  querying; resetting passwords; clearing the cache; and many, many more. Some
-  modules and themes also define Drush commands.
+  See below for more about Drush.
 Git::
   http://git-scm.com[Git] is a version control system you can use to track
   changes made to files within your entire site, or files relating only to the
@@ -39,6 +35,33 @@ Devel::
   http://drupal.org/project/devel[Devel] is a contributed module that helps with
   development tasks such as debugging and inspecting code, analyzing database
   queries and generating dummy content.
+
+==== What is special about Drush?
+
+http://www.drush.org[Drush] is a command line tool for building and maintaining
+sites, providing an alternative to using the administrative interface for many
+operations. Many site builders and maintainers prefer to use Drush whenever
+possible, and consider the time spent installing and learning to use Drush to be
+a good investment. Reasons to consider using Drush:
+
+* Drush provides a large number of commands, for tasks such as installing the
+base software, modules, and themes; updating software; performing database
+operations, including copying and querying; resetting passwords; and clearing
+the cache. Some contributed modules and themes also define Drush commands.
+
+* Doing administrative tasks using Drush is typically faster and less tedious
+than performing the same tasks through the administrative interface.
+
+* The administrative interface does not link to all the tasks that Drush
+provides; for example, Drush provides access to database queries, which you
+cannot perform directly in the administrative interface.
+
+If you want to use Drush, you will need to have command-line terminal access to
+the server where your web site will be hosted, and you will need to have a
+compatible version of the Drush tool installed on that server. Check the
+http://www.drush.org[Drush web site] for installation instructions and version
+compatibility. There is also documentation on the available Drush commands on
+that site.
 
 ==== What tools are available for module and theme developers?
 

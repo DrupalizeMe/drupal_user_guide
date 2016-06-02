@@ -20,15 +20,15 @@ site.
 
 ==== Site prerequisites
 
-* The module _Configuration Manager_ is installed in the local development
-site and the production site. See <<config-install>> for instructions on
-installing Core modules.
+* The core Configuration Manager module must be installed in both the
+development site and the production site. See <<config-install>> for
+instructions on installing Core modules.
 
-* <<structure-content-type, Have the _Vendor_ content type created>> in
-the local development site and the production site.
+* The Vendor content type must exist in both the development and production
+sites, with the same fields. See <<structure-content-type>>.
 
-* <<views-create, Have the _Vendors_ view created>> in the local development
-site but not the production site.
+* The Vendors view must exist in the development site but not the production
+site. See <<views-create>>.
 
 ==== Steps
 

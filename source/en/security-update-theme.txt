@@ -17,33 +17,29 @@ Update a contributed theme on your site and run the _Database Updates_ script.
 
 ==== Site prerequisites
 
-* <<extend-theme-install, A custom or contributed theme has been installed>>
-and there is an update available for it.
+* A contributed theme has been installed and there is an update available for
+it. See <<extend-theme-install>> and <<security-announce>>.
 
-* <<security-cron, Run cron maintenance tasks regularly on
-your site>>.
+* If your site is live, you should test this process in a development
+environment before running it on your production site. See
+<<install-dev-making>>.
 
-* <<prevent-backups,Back up your site>>. Though unlikely, operations that
-modify the database can be damaging.
+* You have created a full site backup. See <<prevent-backups>>.
 
-If you update via the website:
+* If you want to use the user interface, the core Update Manager module must be
+installed. See <<config-install>> for instructions on installing core
+modules.
 
-* <<user-admin-account, Login with the User 1 account>>.
-
-* Install the _Update Manager_ module. See <<config-install>> for
-instructions on installing modules.
-
-If you are using Drush to update the theme: <<install-tools, Have Drush
-installed>>.
+* If you want to use Drush, Drush must be installed. See <<install-tools>>.
 
 ==== Steps
 
-You can use the website or Drush to update a contributed theme. If you are
-updating a custom theme rather than a contributed theme, or if the steps below
-do not work to obtain the new theme files, follow the steps in
+You can use the administrative interface or Drush to update a contributed
+theme. If you are updating a custom theme rather than a contributed theme, or if
+the steps below do not work to obtain the new theme files, follow the steps in
 <<extend-manual-install>>, and then continue here with website step 6.
 
-===== Using the website
+===== Using the administrative interface
 
 . Put your site in to <<extend-maintenance, maintenance mode>>.
 

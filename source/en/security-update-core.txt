@@ -15,20 +15,11 @@ using Drush.
 
 ==== Site prerequisites
 
-Prior to stepping into the actual update procedure, it is recommended to ensure
-the following points:
+* If you want to use Drush, Drush must be installed. See <<install-tools>>.
 
-* In order to use Drush with Drupal 8.x applications, you must have Drush 7.x
-version installed. Drush versions less than 7.x don't support Drupal 8.x. If you
-want to explore further into Drush and its usage, refer to
-https://github.com/drush-ops/drush["Drush repository"]. Moreover, in case you
-don't have Drush installed on your server, <<install-tools>> will guide you on
-this.
-
-* Test the core update process in some test or development environment, and
-later proceed to the production environment upon success. <<install-dev-making>>
-recipe of the guide will help you set up your development environment for your
-application.
+* If your site is live, you should test this process in a development
+environment before running it on your production site. See
+<<install-dev-making>>.
 
 ==== Steps
 
@@ -145,6 +136,5 @@ want to learn more about updating the core software.
 
 ==== Additional resources
 
-* https://github.com/drush-ops/drush[Github repository for "Drush"]
 * https://www.drupal.org/project/drupal["Drupal Core Downloads" page on _Drupal.org_]
 * https://www.drupal.org/project/registry_rebuild["Registry Rebuild" page on _Drupal.org_]

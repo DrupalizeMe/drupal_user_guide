@@ -19,11 +19,16 @@ recipes page view.
 
 ==== Site prerequisites
 
-* The Recipe content type is created, see <<structure-content-type>>.
-* The Main image fields are added to the Recipe content types, see
-<<structure-fields>>.
-* The Thumbnail 100x100 image style is defined.
-* The Recipes view is created, see <<views-duplicate>>.
+* The Recipe content type must exist, it must have a Main Image field, and your
+site must have a couple of Recipe content items. See <<structure-content-type>>,
+<<structure-fields>>, <<structure-form-editing>>, and <<content-create>>.
+
+* The _Thumbnail (100x100)_ image style must be defined. This is created on your
+site when you install the core Image module, which is installed for you when you
+install with the core Standard installation profile, but can be recreated if it
+is deleted. See <<structure-image-style-create>>.
+
+* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
 
 ==== Steps
 

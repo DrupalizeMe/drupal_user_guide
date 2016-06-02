@@ -15,8 +15,11 @@ on.
 
 ==== Site prerequisites
 
-You have a live, developed site that you would like to make a copy of for
+* You have a live, developed site that you would like to make a copy of for
 development purposes.
+
+* If you want to use Drush for some of the steps in this task, Drush must be
+installed. See <<install-tools>>.
 
 ==== Steps
 
@@ -40,7 +43,7 @@ following methods:
 mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
 ----
 
-  * If you prefer Drush, use this command:
+  * If you prefer to use Drush, use this command:
 +
 ----
 drush sql-dump > BACKUPFILE.sql
@@ -97,7 +100,7 @@ database. Try one of the following methods:
 mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
 ----
 +
-  * If you prefer Drush use this command:
+  * If you prefer to use Drush, use this command:
 +
 ----
 drush sql-query --file=BACKUPFILE.sql

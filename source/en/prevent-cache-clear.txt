@@ -15,11 +15,16 @@ in them are up-to-date with the most recent data using either the UI, or Drush.
 * <<prevent-cache>>
 * <<install-tools>>
 
-//==== Site prerequisites
+==== Site prerequisites
+
+If you want to use Drush to clear the cache, Drush must be installed. See
+<<install-tools>>.
 
 ==== Steps
 
-===== Clearing the cache via the UI
+You can use the administrative interface or Drush to clear the cache.
+
+===== Using the administrative interface
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
 _Development_ > _Performance_ (_admin/config/development/performance_).
@@ -29,7 +34,7 @@ _Development_ > _Performance_ (_admin/config/development/performance_).
 . Once the cache has been cleared you should see a success message at the top of
 the page with the text, "Caches cleared.".
 
-===== Clearing the cache via Drush
+===== Using Drush
 
 You can use one of two commands:
 

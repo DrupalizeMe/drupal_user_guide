@@ -19,13 +19,13 @@ ingredients.
 
 ==== Site prerequisites
 
-* The Vendor and Recipe content types are created, see
-<<structure-content-type>>.
+* The Vendor and Recipe content types must exist; both must have Main Image
+fields, and the Recipe content type must have an Ingredients field. Your site
+must also have a couple of Recipe content items. See <<structure-content-type>>,
+<<structure-fields>>, <<structure-taxonomy-setup>>, <<structure-form-editing>>,
+and <<content-create>>.
 
-* The Main image fields are added to Vendor and Recipe content types, see
-<<structure-fields>>.
-
-* The Vendors view is created, see <<views-create>>.
+* The Vendors view must exist. See <<views-create>>.
 
 ==== Steps
 

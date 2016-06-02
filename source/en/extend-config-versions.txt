@@ -21,21 +21,22 @@ Synchronize the configuration between a development and live site.
 
 ==== Site prerequisites
 
-* You have created a development copy of your site. See <<install-dev-making>>.
+* You must have a development copy of your production site. See
+<<install-dev-making>>.
 
-* The core _Configuration Manager_ module is installed on both the live and
-development sites. See <<config-install>> for instructions on how to install
-modules.
+* The core _Configuration Manager_ module must be installed on both the
+development and production sites. See <<config-install>> for instructions on how
+to install core modules.
 
-* You have changed configuration on either the live or development site (the
-_source site_), and want to synchronize the changes to the other site (the
-_destination site_). As an example, you can develop a new content type, fields,
-and views on your development site, and when it is all working correctly, deploy
-the changes to the live site.
+* You must have changed configuration on either the production or development
+site (the _source site_), and want to synchronize the changes to the other site
+(the _destination site_). As an example, you can develop a new content type,
+fields, and views on your development site, and when it is all working
+correctly, deploy the changes to the live site.
 
 * All configuration that should not be synchronized between the source and
-destination sites is stored in configuration overrides in the _settings.php_
-file rather than in the database (see <<install-dev-making>>).
+destination sites must be stored in configuration overrides in the
+_settings.php_ file rather than in the database. See <<install-dev-making>>.
 
 ==== Steps
 
