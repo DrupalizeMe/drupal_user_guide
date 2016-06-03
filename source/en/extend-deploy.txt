@@ -82,11 +82,13 @@ Getting this right can be both tedious and difficult.
 
 As an alternative you can export and import the complete configuration of the
 site. For this you would need a local development site which is a clone
-of the production site. See <<install-dev-making>>.
+of the production site (see <<install-dev-making>>), and then you can follow the
+steps in <<extend-config-versions>> to synchronize configuration between
+development and production sites.
 
-Finally you could use the contributed
-https://www.drupal.org/project/features[Features module from _Drupal.org_] that allows
-exporting and importing bundled functionality (for example, all the
+Another alternative is to use the contributed
+https://www.drupal.org/project/features[Features module from _Drupal.org_],
+which allows exporting and importing bundled functionality (for example, all the
 configuration for a photo gallery).
 
 ==== Related concepts

@@ -129,23 +129,23 @@ image:images/structure-fields-main-img.png["Field settings page",width="100%"]
 // To create this screenshot, add an image and a URL field to the vendor content type and fill in the fields shown in the tables above.
 image:images/structure-fields-result.png["Field settings page",width="100%"]
 
+[start=11]
+. Add a Main Image field to the Recipe content type, using similar steps. Start
+by navigating to the Recipe content type's _Manage Fields_ page in step 1. Then
+skip to step 7 and follow the remaining steps, but reuse the existing Main Image
+field you created for the Vendor content type rather than creating a new
+field. In subsequent steps, some of the configuration screens will not be
+available, because of the field reuse.
+
+. Create two Vendor content items (see <<content-create>>), such as for vendors
+called "Happy Farm" and "Sweet Honey". Make sure that they include images and
+URLs.
+
 ==== Follow-on tasks
 
-* Create _Vendor_ content items. See <<content-create>>.
-
-* Add the same Main Image field to the _Recipe_ content type.
-
-* Verify the field language settings. If you add a new field to an existing
-translated content type, you need to revisit the language settings. See
-<<language-content-config>>.
-
-* <<structure-image-styles>>.
-
-* Manage the display of the Vendor and Recipe content types. See
-<<structure-content-display>>.
-
-* Manage the display of form of the Vendor and Recipe content types. See
-<<structure-form-editing>>.
+* <<structure-image-styles>>
+* <<structure-content-display>>
+* <<structure-form-editing>>
 
 // ==== Related concepts
 

@@ -30,7 +30,7 @@ in the fields as shown below.
 |================================
 | Field name | Explanation | Example value
 | Name | Name of the content type | Vendor
-| Description | Explain the use of the content type | Use this form to add Vendors to your website.
+| Description | Explain the use of the content type | Information about a vendor
 |================================
 +
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on "content types", click on this "Add content type" button and get the screenshot
@@ -105,23 +105,28 @@ type. See <<structure-fields>>
 // To create this image, install Drupal 8 successfully, visit Menu > Structure then click on "content types", click on this "Add content type" button, click on  "Menu settings" tab on left hand side, uncheck the option as per above guidelines and get the screenshot
 image:images/structure-content-type-add-confirmation.png["Confirmation",width="100%"]
 
+[start=8]
+. Follow the same steps to create a content type for recipes. Example values
+for the fields in the forms, where they are different from the steps above:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Field name | Example value
+| Name | Recipe
+| Description | A recipe submitted by a vendor
+| Submission form settings - Title | Recipe name
+|================================
+
+
 ==== Follow-on tasks
 
-* Add a content type for Recipe.
-
-* If your site is multilingual, you'll see a section for multilingual settings
-when creating or editing a content type. See <<language-content-config>> for
-more information about what the settings mean.
-
-* Add link and image fields to the _Vendor_ content type: <<structure-fields>>
+* <<structure-fields>>
 
 * Install and configure the contributed Pathauto module so that content items
 get automatic nice URLs. See <<content-paths>> for more on URLs within your
 site, <<extend-module-find>> for instructions on finding contributed modules,
 and <<extend-module-install>> for instructions on downloading and installing
 contributed modules.
-
-* Create content: <<content-create>>
 
 // ==== Related concepts
 
