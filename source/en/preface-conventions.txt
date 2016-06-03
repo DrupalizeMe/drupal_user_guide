@@ -58,9 +58,10 @@ directories (which some people prefer to call _folders_).
 
 ==== Navigation
 
-To do most of the task topics in this guide, you will need to navigate to one or
-more pages in the administrative interface of your site. You might see something
-like this in the instructions:
+To do most of the task topics in this guide, you will need to navigate to one
+or more pages in the administrative interface of your site. You might see
+something like this in the instructions (this will make more sense after you
+have the base software installed):
 
 =============
 In the _Manage_ administrative menu, navigate to
@@ -94,6 +95,13 @@ _http://example.com/admin/config/system/site-information_.
 // Screen shot of the System section of the page at admin/config
 image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
 
+One other note: if you are using the standard "Seven" administrative theme, many
+"Add" buttons in the administrative interface are displayed with + signs on
+them. For instance, on admin/content, the Add new content button appears as
+_+ Add new content_. However, this is theme-dependent and is not really part of
+the text on the button (for instance, it would not necessarily be read by a
+screen reader), so in this guide, we have used the convention that we do not
+mention the + sign on the buttons.
 
 ==== Filling in forms
 
