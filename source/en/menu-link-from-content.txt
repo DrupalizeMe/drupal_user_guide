@@ -8,8 +8,7 @@
 
 ==== Goal
 
-Add a page to a menu while editing the content instead of visiting the menu
-management page afterwards.
+Add a page to a menu while editing the content.
 
 ==== Prerequisite knowledge
 
@@ -41,15 +40,15 @@ image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name |Explanation |Example value
-|Menu link title |Title which will be displayed in the menu | About the
-farmer's market
+|Menu link title |Title which will be displayed in the menu | About
 |Description |Text that will be displayed when a visitor hovers the link
-|Find out here what the farmer's market is and what its goals are.
+  |History of the market
 |Parent item |Location of the page in the menu hierarchy. By choosing for
-example "<Main navigation>" as parent, the page will appear in the highest
-level of the navigation. By choosing another menu item as parent you can
-create a menu hierarchy of multiple levels. |<Main navigation>
-|Weight|the order in which the page should appear in the menu | -3
+  example "<Main navigation>" as parent, the page will appear in the highest
+  level of the navigation. By choosing another menu item as parent you can
+  create a menu hierarchy of multiple levels. |<Main navigation>
+|Weight|The order in which the page should appear in the menu (lower-weighted
+  menu items will be shown before higher-weighted menu items) | -2
 |================================
 +
 // This screenshot was taken from a default Drupal Basic page node edit form.
@@ -57,8 +56,8 @@ image:images/menu-link-from-content.png["Creating a menu link from
 within the content edit form",width="100%"]
 
 [start=7]
-. Click _Save as published_ or _Save unpublished_ to save the changes.
-The result could look like the picture below.
+. Click _Save and keep published_ to save the changes. Click _Return to site_ in
+the navigation bar to see the result, which could look like the picture below.
 +
 // This screenshot was taken from a default Drupal install with Bartik after
 // adding a link to the main menu.
