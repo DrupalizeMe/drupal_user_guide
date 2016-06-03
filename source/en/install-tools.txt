@@ -63,6 +63,36 @@ http://www.drush.org[Drush web site] for installation instructions and version
 compatibility. There is also documentation on the available Drush commands on
 that site.
 
+==== What is special about Drush?
+
+http://www.drush.org[Drush] is a command line tool for building and maintaining
+sites, providing an alternative to using the administrative interface for many
+operations. Many site builders and maintainers prefer to use Drush whenever
+possible, and consider the time spent installing and learning to use Drush to be
+a good investment. Reasons to consider using Drush:
+
+* Drush provides a large number of commands, for tasks such as installing the
+base software, modules, and themes; updating software; performing database
+operations, including copying and querying; resetting passwords; and clearing
+the cache. Some contributed modules and themes also define Drush commands.
+
+* Doing administrative tasks using Drush is typically faster and less tedious
+than performing the same tasks through the administrative interface.
+
+* Since Drush is a command-line interface, you can write scripts that combine
+Drush commands and other commands on the server, to automate more complicated
+tasks.
+
+* Drush provides additional functionality not available via the administrative
+interface; for example, running database queries.
+
+If you want to use Drush, you will need to have command-line terminal access to
+the server where your web site will be hosted, and you will need to have a
+compatible version of the Drush tool installed on that server. Check the
+http://www.drush.org[Drush web site] for installation instructions and version
+compatibility. There is also documentation on the available Drush commands on
+that site.
+
 ==== What tools are available for module and theme developers?
 
 In addition to the site builder tools mentioned above, the following tools are
