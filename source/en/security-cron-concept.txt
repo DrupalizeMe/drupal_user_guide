@@ -14,7 +14,7 @@ of administrative operations should be run periodically. These operations are
 called _cron_ tasks. Examples of cron tasks are: checking for module and theme
 updates, indexing content for search, or cleaning up temporary files.
 
-The _Automated Cron_ module runs the cron tasks periodically as part of server
+The core Automated Cron module runs the cron tasks periodically as part of server
 responses. You can turn this off and trigger cron from a process outside of the
 server. You can check the cron tasks' status in the status report.
 

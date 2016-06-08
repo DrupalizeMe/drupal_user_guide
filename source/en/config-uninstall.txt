@@ -45,9 +45,9 @@ image:images/config-uninstall_searchModUninstall.png["Uninstalling module",width
 =================
 If a module that you intend to uninstall is required by some other module(s)
 and/or functionality, you will have the checkbox disabled; restricting you to
-uninstall it. For instance, _File_ module is required by _Text Editor_,
-_CKEditor_, and _Image_. Hence it can't be uninstalled unless you install its
-dependent module(s) and functionality.
+uninstall it. For instance, the core File module is required by the core Text
+Editor, CKEditor, and Image modules. Hence it can't be uninstalled unless you
+install its dependent module(s) and functionality.
 =================
 
 [start=3]
@@ -81,8 +81,8 @@ drush pm-uninstall tracker
 
 * <<prevent-cache-clear>>
 
-* You can also uninstall the _Comment_ module by following these steps, but only
-after comment fields have been removed, which is a side effect of
+* You can also uninstall the core Comment module by following these steps, but
+only after comment fields have been removed, which is a side effect of
 <<structure-content-type-delete>>.
 
 //==== Related concepts

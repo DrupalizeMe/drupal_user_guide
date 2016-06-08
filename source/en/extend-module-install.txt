@@ -20,7 +20,7 @@
 
 ==== Goal
 
-Download and install the contributed _Admin toolbar_ module, which allows you to
+Download and install the contributed Admin Toolbar module, which allows you to
 easily browse through the administration section of the website.
 
 ==== Prerequisite knowledge
@@ -30,8 +30,9 @@ easily browse through the administration section of the website.
 
 ==== Site prerequisites
 
-If you want to install via the website, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing modules.
+If you want to install modules via the website, the core Update Manager module
+must be installed. See <<config-install>> for instructions on installing
+modules.
 
 If you want to use Drush, Drush must be installed. See <<install-tools>>.
 
@@ -67,7 +68,7 @@ could look like
 `https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz`
 +
 // For this screenshot follow steps 1 - 3
-image:images/extend-module-install-admin-toolbar-do.png["Locating the tar.gz download link of the Admin toolbar module",width="100%"]
+image:images/extend-module-install-admin-toolbar-do.png["Locating the tar.gz download link of the contributed Admin Toolbar module",width="100%"]
 
 [start=6]
 . Click _Install_ to upload and unpack the new module on the server. The files
@@ -102,8 +103,8 @@ drush en admin_toolbar
 
 ==== Follow-on tasks
 
-* Verify that the _Admin toolbar_ module is working by browsing through the menu
-in the administration section.
+* Verify that the contributed Admin Toolbar module is working by browsing
+through the menu in the administration section.
 
 * Install and configure the contributed Pathauto module so that content pages in
 your site get automatic nice URLs. See <<content-paths>> for more on URLs.

@@ -8,8 +8,8 @@
 ==== Goal
 
 Check whether cron maintenance tasks are run regularly, and if not, either
-install the _Automated Cron_ module or run cron maintenance tasks from outside
-the website.
+install the core Automated Cron module or run cron maintenance tasks from
+outside the website.
 
 ==== Prerequisite knowledge
 
@@ -22,15 +22,15 @@ the website.
 . Review the Status Report (see <<prevent-status>>) to see when cron maintenance
 tasks were last run.
 +
-If you installed the website using the _Standard_ installation profile (or
+If you installed the website using the core Standard installation profile (or
 similar), then cron maintenance tasks might already be running via the
-_Automated Cron_ module.  By default these tasks are run at most every three
+core Automated Cron module.  By default these tasks are run at most every three
 hours.
 
-. Choose whether to run cron maintenance tasks using the _Automated Cron_
+. Choose whether to run cron maintenance tasks using the core Automated Cron
 module, or by other means.
 +
-The _Automated Cron_ module might not be suitable for some websites because:
+The core Automated Cron module might not be suitable for some websites because:
 +
   * Cron maintenance tasks will be run only after a page on the website is
   visited. If no one visits the website for a long time, cron maintenance tasks
@@ -40,24 +40,24 @@ The _Automated Cron_ module might not be suitable for some websites because:
   reached (e.g. PHP execution timeout).  If this happens the logs (See
   <<prevent-log>>) will show error messages that cron is unable to complete.
   * There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
-  to _Automated Cron_ module -- because cron maintenance tasks are being run by
-  the web server, that HTTP connection is occupied until the tasks are complete
-  (which may run for several minutes).
+  to the core Automated Cron module -- because cron maintenance tasks are being
+  run by the web server, that HTTP connection is occupied until the tasks are
+  complete (which may run for several minutes).
 
-. Install and configure the core _Automated Cron_ module (see
-<<config-install>> for instructions on installing core modules).
+. Install and configure the core Automated Cron module (see <<config-install>>
+for instructions on installing core modules).
 +
 Once installed, and after the website sends a page to the web browser, it will
 check how long since cron maintenance tasks have last run, and run them if
 necessary.
 +
-The _Automated Cron_ module can be configured to control how frequently cron
+The core Automated Cron module can be configured to control how frequently cron
 maintenance tasks are run.  In the _Manage_ administrative menu, navigate to
 _Configuration_ > _System_ > _Cron_
 (_admin/config/system/cron_).
 +
 // Screenshot of typical form at admin/config/system/cron
-image:images/config-automated-cron.png["Configure Automated Cron module",width="100%"]
+image:images/config-automated-cron.png["Configure the core Automated Cron module",width="100%"]
 
 [start=4]
 . Run cron maintenance tasks from outside the website.
@@ -67,8 +67,7 @@ run cron from outside of the website; for example:
 _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
 This URL can be used by the following cron schedulers; if you use one of these
-methods, uninstall the _Automated Cron_ module (see
-<<config-uninstall>>):
+methods, uninstall the core Automated Cron module (see <<config-uninstall>>):
 +
   * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
   BSD)

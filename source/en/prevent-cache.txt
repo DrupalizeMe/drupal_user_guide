@@ -22,8 +22,8 @@ site. These calculations take time, which can mean that your page load time is
 longer than would be desirable.
 
 There are several ways that page load time can be sped up, including installing
-software on the server. The core software includes the _Internal Page Cache_ and
-_Dynamic Page Cache_ modules, which do not require any additional server
+software on the server. The system includes the core Internal Page Cache and
+Dynamic Page Cache modules, which do not require any additional server
 software; they use a _database cache_ mechanism to speed up your site. The way
 these modules work is that during page calculations, intermediate results and
 the final page output are stored in a special database area (known as the

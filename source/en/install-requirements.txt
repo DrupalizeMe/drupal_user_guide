@@ -36,9 +36,9 @@ media, backups and other files.
 
 Apache (Recommended)::
   Apache is the most commonly used web server. The core software will work on
-  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the mod_rewrite
-  module installed and enabled. The Apache Virtualhost configuration must
-  contain the directive AllowOverride All to allow the .htaccess file to be
+  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache
+  mod_rewrite module installed and enabled. The Apache Virtualhost configuration
+  must contain the directive AllowOverride All to allow the .htaccess file to be
   used.
 Nginx::
   Nginx is a commonly used web server that focuses on high concurrency,
@@ -56,7 +56,7 @@ Microsoft IIS::
   with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
   7 if PHP is configured correctly. Because clean URLs are required, you may
   need to use a third party product. For IIS 7 you can use the Microsoft URL
-  Rewrite Module or a third party solution.
+  Rewrite module or a third party solution.
 
 ===== Database
 
