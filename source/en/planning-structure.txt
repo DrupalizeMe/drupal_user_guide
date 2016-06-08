@@ -74,7 +74,7 @@ values that are expected to change and grow over time, are good candidates. An
 example is the Ingredients field for the Recipe content type.
 
 . Consider which fields should reference other content entities. An example is
-that since vendors will be submitting recipes, we probably need a field on
+that since vendors will be submitting recipes, a field will be needed on
 the Recipe content type that references the Vendor content item for the vendor
 who submitted the recipe.
 

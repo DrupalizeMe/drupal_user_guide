@@ -26,8 +26,8 @@ _Account settings_ (_admin/config/people/accounts_).
 
 . In Registration and cancellation, (in this example) select _Administrators
 only_ as for who can register user accounts. Leaving the self-registered
-users' email verification requirement enabled is superfluous now, however best
-to leave it _on_ in case we would change the settings for account registration
+users' email verification requirement enabled is superfluous now, however
+leave it _on_ in case you want to change the settings for account registration
 later on.
 +
 //To create this image, take a screenshot on admin/config/people/accounts
@@ -35,8 +35,8 @@ image:images/config-user_account_reg.png["Account registration only by admin",wi
 
 [start=3]
 . Optionally, change the default email address from which user account
-notifications of our farmers' market website will be sent. This is recommended
-for keeping the workflow clear, especially if it is not the site's creator who
+notifications of the farmers' market website will be sent. This will keep
+the workflow clear, especially if it is not the site's creator who
 will be engaged with its users and content.
 
 . Optionally, edit the email templates in the _Emails_ section to customize
@@ -44,7 +44,7 @@ automated emails. You will find account related events to which automated emails
 can be coupled. This list cannot be extended and only 3 can be disabled via its
 checkbox: activation, blocking and cancellation. Templates are given with the
 core installation. However, you can send out your own text, for example
-welcoming our new vendors for whom we just created accounts. At each
+welcoming the new vendors for whom accounts were just created. At each
 email-occasion there is a list of available variables which will brand and
 personalize the text.
 

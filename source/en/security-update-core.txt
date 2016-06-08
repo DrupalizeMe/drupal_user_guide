@@ -113,16 +113,14 @@ output encircled:
 // Status report_ page. Add a circle around the Drupal version.
 image:images/security-update-core_statusReport.png["Status report",width="100%"]
 
-*Note:*
-Upon clearing the cache, you may come across some error(s) that might ask you to
-rebuild your registry. This is sometimes essential in case some module might
-have moved around during the update process. In order to get rid of such error
-messages, we recommend you to follow the instructions on the
-https://www.drupal.org/project/registry_rebuild[_Drupal.org_ page "Registry
-Rebuild"].
+*Note:* When you have cleared the cache, you might come across error(s) asking
+you to rebuild your registry. This is sometimes essential if a module has moved
+around during the update process. To get rid of such error messages, follow the
+instructions on the
+https://www.drupal.org/project/registry_rebuild[_Drupal.org_ page "Registry Rebuild"].
 
-You may also refer _/core/UPGRADE.txt_ within your installation in case you
-want to learn more about updating the core software.
+To learn more about updating the core software, refer to _/core/UPGRADE.txt_
+within your installation.
 
 ==== Follow-on tasks
 
