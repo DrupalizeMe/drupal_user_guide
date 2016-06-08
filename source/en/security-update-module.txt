@@ -80,8 +80,10 @@ segment of the module's project page URL. For example, if the project URL is
 _https://www.drupal.org/project/admin_toolbar_, the project name is
 +admin_toolbar+.
 
-. Run the _up_ command from a command prompt and give the drupal.org
-project name (for example, _admin_toolbar_) as a parameter.
+. Run the _up_ command from a command prompt and give the drupal.org project
+name (for example, _admin_toolbar_) as a parameter. If you have more than one
+module to update, add the additional module project names to the end of the
+command, separated by spaces.
 
 ----
 drush up admin_toolbar
@@ -89,9 +91,6 @@ drush up admin_toolbar
 
 [start=3]
 . Follow the instructions on the screen.
-
-If you have more than one module to update, add the additional module project
-names to the end of the command, separated by spaces.
 
 ==== Follow-on tasks
 

@@ -19,7 +19,7 @@ Add an image style and use it to display images on _Vendor_ pages.
 
 ==== Site prerequisites
 
-* The Vendor and Recipe content types must exist, with Main Image fields, and
+The Vendor and Recipe content types must exist, with Main Image fields, and
 your site must have at least one Vendor content item. See
 <<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
 
@@ -75,14 +75,14 @@ appears.
 |Link image to | Nothing
 |================================
 
-. Click _Update_.
-
-. Click _Save_. The new image style will be used when displaying Vendor content.
-+
 // Open manage display tab of Vendor content type.
 image:images/structure-image-style-create-manage-display.png["Change field formatter settings of image field",width="100%"]
 
-[start=15]
+[start=13]
+. Click _Update_.
+
+. Click _Save_. The new image style will be used when displaying Vendor content.
+
 . Open a _Vendor_ content item and verify that it now shows up with the
 scaled-down image. See <<content-edit>> for information on how to locate an
 existing content item.
