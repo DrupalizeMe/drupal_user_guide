@@ -49,9 +49,9 @@ mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
 drush sql-dump > BACKUPFILE.sql
 ----
 
-  * Use the contributed Backup and Migrate module from within your live site.
-  See <<extend-module-install>> for instructions on installing contributed
-  modules.
+  * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module]
+  from within your live site. See <<extend-module-install>> for instructions on
+  installing contributed modules.
 +
 You now have a database dump stored in file _BACKUPFILE.sql_. For security
 reasons, avoid storing this file on your hosting server anywhere under the
