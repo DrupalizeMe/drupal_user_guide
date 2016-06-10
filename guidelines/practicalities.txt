@@ -204,7 +204,7 @@ Once you have an assigned task, your next step is to actually edit the source
 file. For topic writing tasks, the source file name is listed in the topic
 spreadsheet. For editing tasks, some will be related to one particular source
 file (which should be noted in the issue). For others you may need to edit
-several files, which you'll find by running a +grep+ command at the command
+several files, which you'll find by running a `grep` command at the command
 line. For still others, you might be reading the project_current_output, looking
 for a particular problem, and then need to edit files that exhibit that problem;
 in this case, on each output page, there should be a line listing the source
@@ -445,16 +445,16 @@ https://www.drupal.org/node/1010894[Installing Git].
 * One time: "clone" the repository (get a local copy of the Git repository). See
 project_git_instructions_link.
 
-* Each time, before you start your task: +git pull+ (update source files to
+* Each time, before you start your task: `git pull` (update source files to
 their latest versions).
 
 * Do your editing task, using a text editor on your local computer, in the
 repository directory.
 
-* Look at the differences in the command window: +git diff+.
+* Look at the differences in the command window: `git diff`.
 
 * When you're satisfied that they are correct, make a patch file:
-  +git diff > 12345656-task-description.patch+ -- in this command,
+  `git diff > 12345656-task-description.patch` -- in this command,
   _123456-task-description.patch_ is the name of the patch file that will be
   created. Substitute your issue number and a brief task description for the
   "123456" and "task-description" parts.

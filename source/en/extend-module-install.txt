@@ -89,11 +89,11 @@ _Extend_ (_admin/modules_).
 . Find the project name for the module you want to install, which is the last
 segment of the module's project page URL. For example, if the project URL is
 _https://www.drupal.org/project/admin_toolbar_, the project name is
-+admin_toolbar+.
+`admin_toolbar`.
 
-. Run the _dl_ and _en_ commands from a command prompt and give the drupal.org
-project name (for example, _admin_toolbar_) as a parameter.
-
+. Run the following Drush commands, giving the project name (for example,
+_admin_toolbar_) as a parameter:
++
 ----
 drush dl admin_toolbar
 drush en admin_toolbar

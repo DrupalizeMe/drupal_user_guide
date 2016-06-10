@@ -89,11 +89,11 @@ image:images/extend-theme-install-3.png["Uninstalled themes on Appearance page",
 
 . Find the project name for the theme you want to install, which is the last
 segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/bootstrap, the project name is +bootstrap+.
+_https://www.drupal.org/project/bootstrap, the project name is `bootstrap`.
 
-. Run the _dl_, _en_ and _config-set_ commands from a command prompt and give
-the drupal.org project name (for example, _bootstrap_) as a parameter.
-
+. Run the following Drush commands, giving the project name (for example,
+_bootstrap_) as a parameter:
++
 ----
 drush dl bootstrap
 drush en bootstrap

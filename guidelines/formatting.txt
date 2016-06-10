@@ -125,7 +125,7 @@ order and follow the format of existing items in that file. Example:
     See <<intro-drupal>>.
 ----
 
-This entry starts with the ID +glossary-cms+, followed by the glossary entry
+This entry starts with the ID `glossary-cms`, followed by the glossary entry
 name and a double-colon. The definition starts on the next line, and is indented
 4 spaces. It also includes a link to a topic that has more information --
 glossary entries should only be a couple of lines long.
@@ -215,12 +215,12 @@ Click _Apply_
 ----
 
 Programming details (functions, variables, etc.) and operating system
-commands embedded in text should be formatted in monospace. Use plus signs to
+commands embedded in text should be formatted in monospace. Use backticks to
 format text in monospace:
 
 ----
-+my_function_name()+
-+$foo+
+`my_function_name()`
+`$foo`
 ----
 
 Boldface should be used sparingly. Use asterix characters to format text in
@@ -235,13 +235,13 @@ bold:
 ==== Formatting code blocks
 
 Blocks of code should go into a literal block. To make a literal block, leave a
-blank line, then a line containing just +----+. Then put in your lines of code,
-and afterwards, another +----+ line.
+blank line, then a line containing just `----`. Then put in your lines of code,
+and afterwards, another `----` line.
 
 You can prefix this with an indication of what type of code is in the block,
-such as +[source,php]+ for PHP. Other recognized code types include +css+,
-+javascript+, +sql+, +html+, etc. For generic source code, such as commands to
-type at an operating system prompt, you can omit the +[source,php]+ line.
+such as `[source,php]` for PHP. Other recognized code types include `css`,
+`javascript`, `sql`, `html`, etc. For generic source code, such as commands to
+type at an operating system prompt, you can omit the `[source,php]` line.
 
 
 [[style-comments]]

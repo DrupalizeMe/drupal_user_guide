@@ -68,11 +68,11 @@ _example.com/update.php_ in your browser.
 
 . Find the project name for the theme you update, which is the last segment of
 the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/bootstrap, the project name is +bootstrap+.
+_https://www.drupal.org/project/bootstrap, the project name is `bootstrap`.
 
-. Run the _up_ command from a command prompt and give the drupal.org project
-name (for example, _bootstrap_) as a parameter.
-
+. Run the following Drush command, giving the project name (for example,
+_bootstrap_) as a parameter:
++
 ----
 drush up bootstrap
 ----

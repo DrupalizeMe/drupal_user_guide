@@ -75,7 +75,7 @@ _http://www.example.com/update.php_
 *Using Drush command:*
 +
 ----
-drush updb //where, updb is the alias of pm-updatedb
+drush updb
 ----
 
 [start=9]
@@ -83,12 +83,7 @@ drush updb //where, updb is the alias of pm-updatedb
 _update.php_ script again until all the updates have been completed
 successfully.
 
-. Either navigate to _Configuration > Development > Performance_ and clear the
-cache using the administer interface; or run the following Drush command:
-+
-----
-drush cc all //where cc is the alias of clear-cache
-----
+. Clear the cache. See <<prevent-cache-clear>>.
 
 [start=11]
 . Open the _/sites/default/settings.php_ file in a text editor. Find the line
