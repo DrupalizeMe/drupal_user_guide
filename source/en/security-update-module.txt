@@ -38,11 +38,13 @@ Before you start, check for module-specific update instructions. This is
 typically necessary when updating modules that involve the usage of third party
 libraries. Read and understand all module specific requirements
 before proceeding with the updates. To find instructions, check the module's
-project page _Read Documentation_ link, as well as the instructions (for
-example, _README.txt_, _INSTALL.txt_, and _UPGRADE.txt_) that come with the
-module's installation file. Also review the release notes by clicking the
-version number of the download on the project page for the version you're
-downloading.
+project page _Read Documentation_ link.
+
+To view further instructions, download the tar.gz or .zip file from the project
+page to your local computer. Unzip the file and look for _README.txt_,
+_INSTALL.txt_ and _UPGRADE.txt_ that come with the module's installation
+file. Also review the release notes by clicking the version number of the
+download on the project page for the version you're downloading.
 
 //Screenshot of the release notes link
 image:images/security-update-module-release-notes.png["Release notes link",width="100%"]
@@ -57,10 +59,10 @@ interface step 6.
 
 . Put your site in to <<extend-maintenance, maintenance mode>>.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Reports_ >
+. In the _Manage_ administrative menu, navigate to _Reports_ >
 _Available updates_ > _Update_ (_admin/reports/updates/update_).
 
-. Find the module in the list, and click _Download these updates_ for the
+. Find and check the module in the list. Click _Download these updates_ for the
 module.
 
 . Click _Continue_.
@@ -69,9 +71,15 @@ module.
 start with this step, and reach the database updates page by typing the URL
 _example.com/update.php_ in your browser.
 
-. Click _Continue_. The database update scripts will be executed.
+. Click _Continue_ and apply all updates. The database update scripts will be
+executed.
+
+. Click _Administration pages_ to return to the administration section of your
+site.
 
 . Put your site out of the <<extend-maintenance, maintenance mode>>.
+
+. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
 
 ===== Using Drush
 
@@ -96,6 +104,7 @@ drush up admin_toolbar
 
 * Review the <<prevent-log,site log>> once the updates are complete to check for
 errors.
+
 * <<security-update-theme>>
 
 //==== Related concepts

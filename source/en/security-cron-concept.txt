@@ -7,20 +7,24 @@
 
 //==== Prerequisite knowledge
 
-==== What is Cron?
+==== What are cron tasks?
 
-To ensure that your site site and its modules continue to function well, a group
+To ensure that your site and its modules continue to function well, a group
 of administrative operations should be run periodically. These operations are
 called _cron_ tasks. Examples of cron tasks are: checking for module and theme
 updates, indexing content for search, or cleaning up temporary files.
 
-The core Automated Cron module runs the cron tasks periodically as part of server
-responses. You can turn this off and trigger cron from a process outside of the
-server. You can check the cron tasks' status in the status report.
+==== What is the relationship between the site's cron tasks and Unix cron?
+
+Linux/Unix-based operating systems have a cron scheduler that can be used to run
+periodic tasks. You can use the server’s cron scheduler to schedule runs of the
+site’s cron tasks. Alternatively, you can use the core Automated Cron module to
+run tasks. You can check the site’s cron tasks' status in the status report.
 
 ==== Related topics
 
-<<security-cron>>
+* <<security-cron>>
+* <<prevent-status>>
 
 ==== Additional resources
 

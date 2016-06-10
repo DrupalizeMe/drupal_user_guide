@@ -44,7 +44,7 @@ step 6.
 
 . Put your site in to <<extend-maintenance, maintenance mode>>.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Reports_ >
+. In the _Manage_ administrative menu, navigate to _Reports_ >
 _Available updates_ > _Update_ (_admin/reports/updates/update_).
 
 . Find the theme in the list, and click _Download these updates_ for the theme.
@@ -60,9 +60,15 @@ image:images/security-update-theme-updates.png["Available updates",width="100%"]
 start with this step, and reach the database updates page by typing the URL
 _example.com/update.php_ in your browser.
 
-. Click _Continue_. The database update scripts will be executed.
+. Click _Continue_ and apply all updates. The database update scripts will be
+executed.
+
+. Click _Administration pages_ to return to the administration section of your
+site.
 
 . Put your site out of the <<extend-maintenance, maintenance mode>>.
+
+. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
 
 ===== Using Drush
 
