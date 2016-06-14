@@ -40,10 +40,13 @@ _Home_. The page _Translations of Home_ appears.
 image:images/language-content-translate-add.png["Adding a content translation",width="100%"]
 
 [start=5]
-. Remove the first _es/_ part from the URL to see the administration interface
-in English.
+. Note that the user interface has switched to Spanish. To switch it back to
+English, remove the first instance of _es_ in the browser's URL. For
+example, if your URL looks like _example.com/es/node/5/translations/add/en/es_,
+remove the _es_ that comes immediately after _example.com_.
 
-. Fill in the fields as shown below.
+. Fill in the fields as shown below. You will have to click and expand _URL path
+settings_ on the right to provide the value for _URL alias_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -53,8 +56,12 @@ in English.
 Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio!
 Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre
 Lugar: parking del Banco Trust número 1. En el centro de la ciudad
-|URL path settings, URL alias | Translated address of the webpage | pagina-principal
+|URL path settings > URL alias | Translated address of the webpage | pagina-principal
 |================================
+
+. Click _Save and keep published_.
+
+. Go to your site's homepage to view the newly translated page.
 
 ==== Follow-on tasks
 
