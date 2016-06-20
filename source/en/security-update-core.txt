@@ -37,7 +37,7 @@ $settings['update_free_access'] = TRUE;
 . Disable any caching technique (memcache, varnish, and so on) your application
 might be using.
 
-. Put your site in to <<extend-maintenance, maintenance mode>>.
+. Put your site in to maintenance mode. See <<extend-maintenance>>.
 
 . Download Drupal 8.x core latest version (preferably, stable version) manually
 from https://www.drupal.org/project/drupal[_Drupal.org_ Drupal Core Downloads] and
@@ -91,7 +91,7 @@ $settings['update_free_access'] = FALSE;
 . Click _Administration pages_ to return to the administration section of your
 site.
 
-. Put your site out of the <<extend-maintenance, maintenance mode>>.
+. Put your site out of the maintenance mode. See <<extend-maintenance>>.
 
 . Clear the cache. See <<prevent-cache-clear>>.
 

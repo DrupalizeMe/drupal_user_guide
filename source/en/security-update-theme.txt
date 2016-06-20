@@ -42,7 +42,7 @@ step 6.
 
 ===== Using the administrative interface
 
-. Put your site in to <<extend-maintenance, maintenance mode>>.
+. Put your site in to maintenance mode. See <<extend-maintenance>>.
 
 . In the _Manage_ administrative menu, navigate to _Reports_ >
 _Available updates_ > _Update_ (_admin/reports/updates/update_).
@@ -66,7 +66,7 @@ executed.
 . Click _Administration pages_ to return to the administration section of your
 site.
 
-. Put your site out of the <<extend-maintenance, maintenance mode>>.
+. Put your site out of the maintenance mode. See <<extend-maintenance>>.
 
 . Clear the Drupal cache (refer to <<prevent-cache-clear>>).
 
@@ -88,8 +88,8 @@ drush up bootstrap
 
 ==== Follow-on tasks
 
-* Review the <<prevent-log,site log>> once the updates are complete to check for
-errors.
+* Review the site log, see <<prevent-log>>, once the updates are complete to
+check for errors.
 
 * <<security-update-module>>
 
