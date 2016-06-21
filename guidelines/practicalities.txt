@@ -94,13 +94,17 @@ own writing.
 your local computer. Make sure to *only make edits that are covered by the
 guideline or task in your issue* -- other issues will cover other tasks. See:
   * <<practicalities-project>> for details on how to obtain the source files
-    from the Git revision control system.
-  * <<practicalities-editing>> for details on how to find and edit files.
+    from the Git revision control system (this is optional if your editing
+    task only affects one file, and you choose to edit using the on-line
+    editor).
+  * <<practicalities-editing>> for details on how to find and edit files,
+    either on your local computer (if you obtained the source files from Git)
+    or using the on-line editor.
   * <<formatting>> for details on how to format the text in files.
 
-. Make a _patch file_ with your changes; if your task only affects a single
-source file, you can skip making a patch. See <<practicalities-project>> for
-patch file instructions.
+. Make a _patch file_ with your changes; however, if your task only affects a
+single source file, you can skip making a patch. See <<practicalities-project>>
+for patch file instructions if you need to make a patch.
 
 . *Submit your work* to the issue. See <<practicalities-submitting>> for
 details.
@@ -216,11 +220,13 @@ Once you figure out which source file or files you need to edit, you have two
 options for editing:
 
 * Use the online editor. This method is recommended for the initial topic
-writing tasks. See <<practicalities-online-editor>>.
+writing tasks, and some contributors prefer it for editing single topics as
+well. See <<practicalities-online-editor>>.
 
 * You can download all the source files to your local computer using Git (the
-revision control system the Drupal project uses), and then use any text editor
-to edit your file or files. This method is recommended for editing tasks. See
+revision control system the Drupal project uses), and then use any plain-text
+editor to edit your file or files. This method is recommended for editing
+tasks, especially if you are editing more than one file. See
 <<practicalities-project>>.
 
 
