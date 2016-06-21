@@ -21,6 +21,11 @@ use Drupal\simpletest\WebTestBase;
 abstract class UserGuideDemoTestBase extends WebTestBase {
 
   /**
+   * There is a screenshot of the Drupal Core download page for this release.
+   */
+  protected $latestRelease = '8.1.3';
+
+  /**
    * Strings and other information to input into the demo site.
    *
    * @var array
@@ -122,7 +127,37 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Set up a red border CSS style for outlining portions of images.
     $red_border = '2px solid #e62600;';
 
+    // Topic: preface-conventions - screen shot of the top navigation bar.
+    $this->drupalGet('admin/config');
+    $this->setUpScreenShot('preface-conventions-top-menu.png', [550, 275, 30, 200]);
+
+    // Screen shot of System section of the page.
+    $this->setUpScreenShot('preface-conventions-config-system.png', [550, 275, 30, 200]);
+
+    // Topic: block-regions - screen shot of region preview.
+    $this->drupalGet('admin/structure/block/demo/bartik');
+    $this->setUpScreenShot('block-regions-bartik.png', [550, 275, 30, 200]);
+
+    // Topic: install-prepare - screen shots of downloading from drupal.org.
+    $this->drupalGet('https://www.drupal.org/download');
+    $this->setUpScreenShot('install-prepare-downloads.png', [550, 275, 30, 200]);
+    $this->drupalGet('https://www.drupal.org/project/drupal');
+    $this->setUpScreenShot('install-prepare-recommended.png', [550, 275, 30, 200]);
+    $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
+    $this->setUpScreenShot('install-prepare-files.png', [550, 275, 30, 200]);
+
+    // Topic: config-overview - screen shot of the top navigation bar.
+    $this->drupalGet('admin/config');
+    $this->setUpScreenShot('config-overview-toolbar.png', [550, 275, 30, 200]);
+    // Use JQuery to orient it vertically and take another screenshot.
+    $this->setUpScreenShot('config-overview-vertical.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.toolbar-toggle-orientation button\').click();"'););
+
+    // Screen shot of contextual links, after clicking pencil icon.
+    $this->drupalGet('<front>');
+    $this->setUpScreenShot('config-overview-pencils.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.contextual-toolbar-tab button.toolbar-icon-edit\').click();"'););
+
     // Topic: config-basic - Edit basic site information.
+    $this->drupalGet('admin/config/system/site-information');
     $this->drupalPostForm(NULL, [
         'site_name' => $this->demoInput['site_name'],
         'site_slogan' => $this->demoInput['site_slogan'],
@@ -199,7 +234,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // For this screenshot, before the setting are changed, use JavaScript to
     // scroll down to the bottom, uncheck Use the default logo, and outline
     // the logo upload box.
-    $this->setUpScreenShot('config-theme_logo_upload.png', [550, 275, 30, 200], 'onLoad="widow.scroll(0,5000); jQuery(\'#edit-default-logo\').click(); jQuery(\'#edit-logo-upload\').css(\'border\', \'' . $red_border . '\');"');
+    $this->setUpScreenShot('config-theme_logo_upload.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,5000); jQuery(\'#edit-default-logo\').click(); jQuery(\'#edit-logo-upload\').css(\'border\', \'' . $red_border . '\');"');
 
     $this->drupalPostForm(NULL, [
         'scheme' => '',
@@ -239,7 +274,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'path[0][alias]' => $this->demoInput['home_path'],
       ], $this->callT('Save and publish'));
 
-    // Follow-on task: create About page.
+    // Last step: create About page. No screenshots.
     $this->drupalPostForm('node/page/add', [
         'title[0][value]' => $this->demoInput['about_title'],
         'body[0][value]' => $this->demoInput['about_body'],
@@ -293,7 +328,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('node/2/edit');
     $this->setUpScreenShot('menu-link-from-content.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-menu .details-wrapper).show();"');
     $this->drupalGet('<front>');
-    $this->setUpScreenShot('menu-link-from-content_result.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('menu-link-from-content-result.png', [550, 275, 30, 200]);
 
     // Topic: menu-reorder - Changing the order of navigation.
     $this->drupalGet('admin/structure/menu');
@@ -315,9 +350,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('<front>');
     $this->setUpScreenShot('menu-reorder_final_order.png', [550, 275, 30, 200]);
 
-
     // Topic: structure-content-type - Adding a Content Type
-    // @todo add screen shots in this section
     // Create the Vendor content type.
     $this->drupalGet('admin/structure/types');
     $this->drupalGet('admin/structure/types/add');
@@ -344,7 +377,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save and manage fields'));
     $this->setUpScreenShot('structure-content-type-add-confirmation.png', [550, 275, 30, 200]);
 
-    // Follow-on task for structure-content-type - Add content type for Recipe
+    // Final task for structure-content-type - Add content type for Recipe.
     // No screen shots.
     $this->drupalGet('admin/structure/types');
     $this->drupalGet('admin/structure/types/add');
