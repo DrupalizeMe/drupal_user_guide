@@ -20,10 +20,13 @@ Find and evaluate modules on _Drupal.org_ or _Drupalmodules.com_.
 
 ==== Steps
 
+The official site is _Drupal.org_, but some people prefer the search interface
+at _Drupalmodules.com_ to browse and download modules.
+
 ===== Finding and evaluating modules on _Drupal.org_
 
-. Go to https://www.drupal.org[_Drupal.org_], and navigate to _Download & Extend >
-Modules_ (https://www.drupal.org/project/project_module).
+. Go to https://www.drupal.org[_Drupal.org_], and navigate to _Download & Extend
+> Modules_ (https://www.drupal.org/project/project_module).
 
 . Filter your search using the categories on the module search page.
 Fill in the fields as shown below.
@@ -37,7 +40,7 @@ Fill in the fields as shown below.
 |Core compatibility |The version of the core software the module is compatible with.|8.x
 |Status |Project status: _Sandbox projects_ are experimental projects. _Full projects_ have already gone through an approval process, but they can still be in development.
  |Full projects
-|Search Modules |Search by search term in the module's description.|-
+|Search Modules |Search for _Admin Toolbar_, a module that will be covered in detail later. Alternatively, you can also leave the field blank if you are not sure which module to search for.|Admin Toolbar
 |Sort by |Order your search results by criteria like _Most installed_ (popular modules that many sites use) or _Last release_ (date of latest version released). |Most installed
 |================================
 
@@ -102,8 +105,8 @@ Fill in the fields as shown below.
 |Field name |Explanation |Example value
 |Category |The module's topic area, e.g. _Content_ or _Event_.|Content
 |Version |The version of the core software the module is compatible with.|8.x
-|Title |Search in the module's title.|-
-|Body |Search in the module's description.|-
+|Title |The name of the module you are searching for. Leave blank if you don't have any keyword|Admin Toolbar
+|Body |Search in the module's description.|(Leave blank)
 |================================
 +
 // This screenshot was taken from the Module Finder on http://drupalmodules.com/module-finder.

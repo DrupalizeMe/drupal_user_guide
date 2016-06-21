@@ -24,17 +24,26 @@ work, or if you are placing a custom-written module or theme.
 
 ==== Site prerequisites
 
-You want to install or update a module or theme, and the automatic downloading
-instructions in <<extend-module-install>>, <<extend-theme-install>>,
-<<security-update-module>>, or <<security-update-theme>>, using Drush or the web
-interface, do not succeed (or you are installing or updating a custom module or
-theme, which cannot be downloaded automatically).
+You need to be facing any of the following to perform the manual download
+described in this topic:
+
+* File permission issues
+
+* FTP permission issues
+
+* You created a custom module/theme or received its files from someone
+
+* You could not successfully complete the instructions in
+<<extend-module-install>>, <<extend-theme-install>>,
+<<security-update-module>>, or <<security-update-theme>>
+
+Skip this topic if none of the above applies to you.
 
 ==== Steps
 
-If you are installing a module or theme from _Drupal.org_, follow the Downloading
-and unpacking instructions, and then the uploading instructions. If you created
-the module or theme, skip the downloading and unpacking steps.
+If you are installing a module or theme from _Drupal.org_, follow the
+Downloading and unpacking instructions, and then the uploading instructions. If
+you created the module or theme, skip the downloading and unpacking steps.
 
 ===== Downloading and unpacking the files
 

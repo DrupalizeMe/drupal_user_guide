@@ -19,9 +19,11 @@ that the site is under maintenance.
 // ==== Site prerequisites
 
 ==== Steps
+===== Enabling maintenance mode
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Maintenance mode_. The _Maintenance mode_ page appears.
+_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
+_Maintenance mode_ page appears.
 
 . Fill in the fields as shown below.
 +
@@ -29,22 +31,48 @@ _Maintenance mode_. The _Maintenance mode_ page appears.
 |================================
 |Field name | Explanation | Value
 
-| Put site into maintenance mode | Enable or disable the maintenance mode |
-Checked to enable, unchecked to disable.
+| Put site into maintenance mode | Enable the maintenance mode |
+Checked
 
 | Message to display when in maintenance mode | The information that is shown to
-website vistors when the mode is enabled. Variables such as @site can be used in
-the message | @site is currently under maintenance but should be back
+website visitors when the mode is enabled. Variables such as @site can be used
+in the message |@site is currently under maintenance but should be back
 shortly. Thank you for your patience.
 
 |================================
 
 . Click _Save configuration_.
 
-==== Follow-on tasks
+. Verify that the site is in maintenance mode by accessing it from another
+browser where you aren't logged in. If you are not able to verify, try clearing
+the cache. See <<prevent-cache-clear>>.
 
-* Disable maintenance mode when you are done with the site maintenance, by
-returning to the same page.
+===== Disabling maintenance mode
+
+. In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
+_Maintenance mode_ page appears.
+
+. Fill in the fields as shown below.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Field name | Explanation | Value
+
+| Put site into maintenance mode | Disable the maintenance mode |
+Unchecked
+
+| Message to display when in maintenance mode | No message required while disabling. You can leave the field blank. |
+
+|================================
+
+. Click _Save configuration_.
+
+. Verify that the site is no longer in maintenance mode by accessing it from
+another browser where you aren't logged in. If you are not able to verify, try
+clearing the cache. See <<prevent-cache-clear>>.
+
+==== Follow-on tasks
 
 * <<security-update-core>>
 
