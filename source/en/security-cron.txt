@@ -37,7 +37,7 @@ The core Automated Cron module might not be suitable for some websites because:
   will not be run.
   * Because cron maintenance tasks are run after the page has been generated,
   there is less time for the tasks to be run before various server timeouts are
-  reached (e.g. PHP execution timeout).  If this happens the logs (See
+  reached (for example, PHP execution timeout). If this happens the logs (See
   <<prevent-log>>) will show error messages that cron is unable to complete.
   * There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
   to the core Automated Cron module -- because cron maintenance tasks are being
