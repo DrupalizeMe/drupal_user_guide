@@ -228,9 +228,9 @@ Copy edit the entire [PROJECT-NAME] to adhere to the following guidelines:
 . *Editing one topic so that it complies with all of the editing
 guidelines*. For this type of issue, use the following template for the task
 section. You'll need to put the topic information near the top, and you'll need
-to substitute in the URLs for <<guidelines-editing>> and <<guidelines-writing>>
-for [EDITING_GUIDELINES] and [WRITING_GUIDELINES]). Make the issue title start
-with "Copy edit:".
+to substitute in the URLs for <<guidelines-editing>>, <<guidelines-writing>>,
+and project_current_output for [EDITING_GUIDELINES], [WRITING_GUIDELINES], and
+[PROJECT_OUTPUT]. Make the issue title start with "Copy edit:".
 +
 Here is the template for the Task section of the issue summary:
 +
@@ -244,10 +244,12 @@ Copy edit the following topic:
 Look for:
 - Typographical errors
 - Spelling errors
-- Grammar and usage errors
-- Punctuation problems
+- Punctuation errors
+- Grammar, writing style, and usage problems
 - Adherence to the project's editing guidelines: [EDITING_GUIDELINES]
 - Adherence to the project's writing guidelines: [WRITING_GUIDELINES]
+- Formatting problems in the output. The output can be found on: [PROJECT_OUTPUT]
+- Also note (but do not fix) problems with screen shots in the output.
 
 Note that the "single-issue" guidelines in the Editing guidelines page, as well
 as the entire Writing guidelines page, should have already been enforced. But it is still a good idea to at least check them quickly.
