@@ -19,8 +19,8 @@ place it in the sidebar of the website.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_
-(_admin/structure/block_)
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Block
+layout_ > _Custom block library_ (admin/structure/block/block-content).
 
 . Click _Add custom block_. The _Add custom block_ page appears.
 
@@ -38,43 +38,16 @@ lot of Trust Bank, 1st & Union, downtown Anytown.
 image:images/block-create-custom-add-custom-block.png["Add a custom block"]
 
 [start=4]
-. Click _Save_. The block will be saved. The block configuration form will
-appear.
-
-. Fill in the fields as shown below.
-+
-[width="100%",frame="topbot",options="header"]
-|================================
-|Field name | Value
-|Title | Opening hours and location
-|Display title | Checked
-|Cache settings, maximum age|Forever
-|Region|Sidebar Second
-|================================
-+
-// Go to block/add, enter field values & click Save
-image:images/block-create-custom-configure-block.png["Configure a custom block"]
-
-[start=6]
-. Click _Save block_. The block configuration will be saved. The _Block layout_
-page will appear.
-
-. Click _Save blocks_.
-
-. Click _Back to site_ in the toolbar to verify that the block has been added to
-the sidebar.
-+
-If the block doesn't immediately appear in the appropriate region it may be
-cached. You can either wait for the cache to be refreshed or open the
-_Performance_ page via Configuration > Performance
-(_admin/config/development/performance_) and click _Clear all caches._
+. Click _Save_. A message appears indicating the block has been saved.
 
 ==== Follow-on tasks
 
-Edit the content of your custom block. In the _Manage_ administrative menu,
+* Edit the content of your custom block. In the _Manage_ administrative menu,
 navigate to _Structure_ > _Block layout_ > _Custom block library_
 (_admin/structure/block/block-content_), find your block in the list and click
 _Edit_ to make changes.
+
+* Place the block you created in the sidebar. See <<block-place>> for details.
 
 //==== Related concepts
 

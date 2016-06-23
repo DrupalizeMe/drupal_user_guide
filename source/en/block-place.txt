@@ -7,8 +7,7 @@
 
 ==== Goal
 
-Place the _User login_ block in the website's sidebar so that it is easy for
-vendors to log in.
+Place the Opening hours and location block in the website's sidebar.
 
 ==== Prerequisite knowledge
 
@@ -16,8 +15,10 @@ vendors to log in.
 
 ==== Site prerequisites
 
-The core Bartik theme must be installed and set as default. See
+* The core Bartik theme must be installed and set as default. See
 <<config-theme>>.
+
+* The Opening hours and location block must exist. See <<block-create-custom>>.
 
 ==== Steps
 
@@ -31,13 +32,13 @@ placement is defined per theme.
 . Locate the region _Sidebar second_ in the list and click _Place block_ next to
 it. The _Place block_ window appears, listing all the blocks.
 
-. Locate the block _User login_ and click _Place block_ next to it. The
- _Configure block_ window appears. Fill in the fields as shown below.
+. Locate the block Opening hours and location and click _Place block_ next to
+it. The _Configure block_ window appears. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Value
-| Title | Vendor login
+| Title | Hours and location
 | Display title | Checked
 | Region | Sidebar second
 |================================
@@ -55,7 +56,8 @@ image:images/block-place-configure-block.png["Block configuration page",width="1
 You can drag blocks to change the order in which they will appear. Don't forget
 to click _Save blocks_ to actually save the changes that you made.
 
-. Verify that the _User login_ block is listed and click _Save blocks_.
+. Verify that the Opening hours and location block is listed and click _Save
+blocks_.
 +
 The block has been placed on the sidebar of all pages. You have to be logged out
 to verify this.
@@ -65,8 +67,10 @@ image:images/block-place-sidebar.png["Sidebar with login block",width="100%"]
 
 ==== Follow-on tasks
 
-Remove the _Powered by Drupal_ block from the _Footer_ region by setting the
+* Remove the _Powered by Drupal_ block from the _Footer_ region by setting the
 region to _- None -_.
+
+* Place the _User login_ block in a region.
 
 //==== Related concepts
 
