@@ -30,11 +30,12 @@ Description: Information about a vendor
 Label: Main Image
 Type: Image
 Machine name: field_main_image
+Directory: vendors
 
 2.
 Label: Vendor URL
 Type: Link
-Machine name: field_vendor_link
+Machine name: field_vendor_url
 
 --------------
 * Recipe content type
@@ -55,6 +56,7 @@ Machine name: ingredients
 
 1.
 Reuse the Main Image field from Vendor
+==> directory: recipes
 
 2.
 Label: Submitted by
@@ -115,6 +117,7 @@ Title: Happy Farm
 Main Image: Use the farm.jpg image
 Authoring: Happy Farm
 Path: vendors/happy_farm
+Vendor URL: http://happyfarm.com
 Body:
 ----
 Happy Farm grows vegetables that you will love.
@@ -127,6 +130,7 @@ Title: Sweet Honey
 Image: Upload the honey_bee.jpg image
 Authoring: Sweet Honey
 Path: vendors/sweet_honey
+Vendor URL: http://sweethoney.com
 Body:
 ----
 Sweet Honey produces honey in a variety of flavors throughout the year.

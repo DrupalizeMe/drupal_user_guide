@@ -58,11 +58,37 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'vendor_type_name' => 'Vendor',
     'vendor_type_description' => 'Information about a vendor',
     'vendor_type_title_label' => 'Vendor name',
+    'vendor_field_url_label' => 'Vendor URL',
+    'vendor_field_image_label' => 'Main image',
+    'vendor_field_image_directory' => 'vendors',
+
+    // Vendor 1 content item.
+    'vendor_1_title' => 'Happy Farm',
+    'vendor_1_path' => '/vendors/happy_farm',
+    'vendor_1_summary' => 'Happy Farm grows vegetables that you will love.',
+    'vendor_1_body' => '<p>Happy Farm grows vegetables that you will love.</p>\n
+<p>We grow tomatoes, carrots, and beets, as well as a variety of salad greens.</p>',
+    'vendor_1_url' => 'http://happyfarm.com',
+
+    // Vendor 2 content item.
+    'vendor_2_title' => 'Sweet Honey',
+    'vendor_2_path' => '/vendors/sweet_honey',
+    'vendor_2_summary' => 'Sweet Honey produces honey in a variety of flavors throughout the year.',
+    'vendor_2_body' => '<p>Sweet Honey produces honey in a variety of flavors throughout the year.</p>\n<p>Our varieties include clover, apple blossom, and strawberry.</p>',
+    'vendor_2_url' => 'http://sweethoney.com',
 
     // Recipe content type settings.
     'recipe_type_name' => 'Recipe',
     'recipe_type_description' => 'Recipe submitted by a vendor',
     'recipe_type_title_label' => 'Recipe name',
+    'recipe_field_image_label' => 'Main image',
+    'recipe_field_image_directory' => 'recipes',
+    'recipe_field_ingredients_label' => 'Ingredients',
+
+    // Recipe ingredients terms added.
+    'recipe_field_ingredients_term_1' => 'Butter',
+    'recipe_field_ingredients_term_2' => 'Eggs',
+    'recipe_field_ingredients_term_3' => 'Milk',
   ];
 
   /**
@@ -150,11 +176,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/config');
     $this->setUpScreenShot('config-overview-toolbar.png', [550, 275, 30, 200]);
     // Use JQuery to orient it vertically and take another screenshot.
-    $this->setUpScreenShot('config-overview-vertical.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.toolbar-toggle-orientation button\').click();"'););
+    $this->setUpScreenShot('config-overview-vertical.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.toolbar-toggle-orientation button\').click();"');
 
     // Screen shot of contextual links, after clicking pencil icon.
     $this->drupalGet('<front>');
-    $this->setUpScreenShot('config-overview-pencils.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.contextual-toolbar-tab button.toolbar-icon-edit\').click();"'););
+    $this->setUpScreenShot('config-overview-pencils.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.contextual-toolbar-tab button.toolbar-icon-edit\').click();"');
 
     // Topic: config-basic - Edit basic site information.
     $this->drupalGet('admin/config/system/site-information');
@@ -393,16 +419,128 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
 
     // Topic: structure-content-type-delete - Deleting a Content Type
-    // @todo add screen shots in this section
     // Delete the Article content type.
     $this->drupalGet('admin/structure/types');
+    $this->setUpScreenShot('structure-content-type-delete-dropdown.png', [550, 275, 30, 200], 'onLoad="jQuery(\'tr.odd .dropbutton-toggle button\').click();');
+
     $this->drupalGet('admin/structure/types/manage/article/delete');
+    $this->setUpScreenShot('structure-content-type-delete-confirmation.png', [550, 275, 30, 200]);
+
     $this->drupalPostForm(NULL, [], $this->callT('Delete'));
+    $this->setUpScreenShot('structure-content-type-delete-confirm.png', [550, 275, 30, 200]);
+
+    // Topic: structure-fields - Adding basic fields to a content type.
+    // Add Vendor URL field to Vendor content type.
+    $this->drupalGet('admin/structure/types/manage/vendor/fields/add-field');
+    // Fill in the form in the screenshot: choose Link for field type and
+    // type in Vendor URL for the Label.
+    $this->setUpScreenShot('structure-fields-add-field.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'link\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendor_field_url_label'] . '\');');
+    $this->drupalPostForm(NULL, [
+        'new_storage_type' => 'link',
+        'label' => $this->demoInput['vendor_field_url_label'],
+      ], $this->callT('Save and continue'));
+    $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
+    $this->drupalPostForm(NULL, [
+        'settings[link_type]' => 16,
+        'settings[title]' => 0,
+      ], $this->callT('Save settings'));
+    // To make the screen shot, go back to the edit form for this field.
+    $this->drupalGet('admin/structure/types/manage/vendor/fields/node.vendor.field_vendor_url');
+    $this->setUpScreenShot('structure-fields-vendor-url.png', [550, 275, 30, 200]);
+
+    // Add Main Image field to Vendor content type.
+    $this->drupalGet('admin/structure/types/manage/vendor/fields/add-field');
+    $this->drupalPostForm(NULL, [
+        'new_storage_type' => 'image',
+        'label' => $this->demoInput['vendor_field_image_label'],
+      ], $this->callT('Save and continue'));
+    $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
+    $this->drupalPostForm(NULL, [
+        'required' => 1,
+        'settings[file_directory]' => $this->demoInput['vendor_field_image_directory'],
+        'settings[min_resolution][x]' => 800,
+        'settings[min_resolution][y]' => 600,
+        'settings[max_filesize]' => '5 MB',
+      ], $this->callT('Save settings'));
+    $this->setUpScreenShot('structure-fields-result.png', [550, 275, 30, 200]);
+    // To make the screen shot, go back to the edit form for this field.
+    $this->drupalGet('admin/structure/types/manage/vendor/fields/node.vendor.field_main_image');
+    $this->setUpScreenShot('structure-fields-main-img.png', [550, 275, 30, 200]);
+    // Add the main image field to Recipe. No screenshots.
+    $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
+    $this->drupalPostForm(NULL, [
+        'existing_storage_name' => 'field_main_image',
+        'label' => $this->demoInput['recipe_field_image_label'],
+      ], $this->callT('Save and continue'));
+    $this->drupalPostForm(NULL, [
+        'required' => 1,
+        'settings[file_directory]' => $this->demoInput['recipe_field_image_directory'],
+        'settings[min_resolution][x]' => 800,
+        'settings[min_resolution][y]' => 600,
+        'settings[max_filesize]' => '5 MB',
+      ], $this->callT('Save settings'));
+
+    // Create two Vendor content items. No screenshots.
+    $this->drupalGet('node/add/vendor');
+    $this->drupalPostForm(NULL, [
+        'title[0][value]' => $this->demoInput['vendor_1_title'],
+        'files[field_main_image_0]' => $assets_directory . 'farm.jpg',
+        'body[0][summary]' => $this->demoInput['vendor_1_summary'],
+        'body[0][value]' => $this->demoInput['vendor_1_body'],
+        'path[0][alias]' => $this->demoInput['vendor_1_path'],
+        'field_vendor_url[0][uri]' => $this->demoInput['vendor_1_url'],
+      ], $this->callT('Save and publish'));
+    $this->drupalGet('node/add/vendor');
+    $this->drupalPostForm(NULL, [
+        'title[0][value]' => $this->demoInput['vendor_2_title'],
+        'files[field_main_image_0]' => $assets_directory . 'honey_bee.jpg',
+        'body[0][summary]' => $this->demoInput['vendor_2_summary'],
+        'body[0][value]' => $this->demoInput['vendor_2_body'],
+        'path[0][alias]' => $this->demoInput['vendor_2_path'],
+        'field_vendor_url[0][uri]' => $this->demoInput['vendor_2_url'],
+      ], $this->callT('Save and publish'));
+
+    // The next topic with screenshots is structure-taxonomy, but the
+    // screenshot is generated later.
+
+    // Topic: structure-taxonomy-setup - Setting Up a Taxonomy.
+    $this->drupalGet('admin/structure/taxonomy');
+    $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png', [550, 275, 30, 200]);
+    // Add Ingredients taxonomy vocabulary.
+    $this->drupalGet('admin/structure/taxonomy/add');
+    // Fill in the form in the screenshot, with the vocabulary name.
+    $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-name\').val(\'' . $this->demoInput['recipe-field-ingredients-label'] . '\');');
+    $this->drupalPostForm(NULL, [
+        'name' => $this->demoInput['recipe-field-ingredients-label'],
+      ], $this->callT('Save'));
+    $this->setUpScreenShot('structure-taxonomy-setup-vocabulary-overview.png', [550, 275, 30, 200]);
+    // Add 3 sample terms.
+    $this->drupalGet('admin/structure/taxonomy/manage/ingredients/add');
+    // Fill in the form in the screenshot, with the term name Butter.
+    $this->setUpScreenShot('structure-taxonomy-setup-add-term.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-name-0-value\').val(\'' . $this->demoInput['recipe-field-ingredients-term_1'] . '\');');
+    $this->drupalPostForm(NULL, [
+        'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_1'],
+      ], $this->callT('Save'));
+    $this->drupalPostForm(NULL, [
+        'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_2'],
+      ], $this->callT('Save'));
+    $this->drupalPostForm(NULL, [
+        'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_3'],
+      ], $this->callT('Save'));
+
+    // Add the Ingredients field to Recipe content type.
+
+    // @todo Finish the structure-taxonomy-setup topic.
+
 
     // @todo Ready to add more topics here!
 
 
-    // Topic: language-add - Adding a language
+    // Topic (out of order): structure-taxonomy - Concept: Taxonomy.
+    // Screen shot of Carrots taxonomy page after adding Recipe content items.
+    // @todo make this screenshot.
+
+    // Topic: language-add - Adding a language.
     // For non-English versions, locale and language will already be enabled.
     // For English, not yet. In both cases, we need config/content translation
     // though.

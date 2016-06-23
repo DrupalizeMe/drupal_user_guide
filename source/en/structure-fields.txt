@@ -64,10 +64,10 @@ below.
 |================================
 |Field name | Explanation | Value
 | Label  | Label that is visible in the content form | Vendor URL
-| Help text | The instruction that is shown below the field | Enter a URL for the website of the vendor.
+| Help text | The instruction that is shown below the field | (leave blank)
 | Required field | Whether the field is required or not | Unchecked
 | Allowed link type | The kind of links that can be entered | External links only
-| Allow link text | Whether a link text can be entered | Optional
+| Allow link text | Whether a link text can be entered | Disabled
 |================================
 +
 // To create this screenshot, add a url field to the vendor content type and fill in the fields shown in the table above.
@@ -107,7 +107,7 @@ appears. Fill in the fields as shown below.
 |================================
 | Field name | Explanation | Value
 | Label  | Label that is visible in the content form | Main image
-| Help text | The instruction that is shown below the field | Upload a picture that will be shown as the main image on the Vendor page. A thumbnail of this image will be shown in lists.
+| Help text | The instruction that is shown below the field | (leave blank)
 | Required field | Whether the field is required or not | Checked
 | Allowed file extensions | The type of images that can be uploaded | png, gif, jpg, jpeg
 | File directory | The directory where the files will be stored | vendors
