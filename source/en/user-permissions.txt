@@ -29,11 +29,11 @@ The Vendor role must exist on your site. See <<user-new-role>>.
 tab (_admin/people/roles_). The _Roles_ page appears.
 
 . Click _Edit permissions_ in the dropdown for the _Vendor_
-role. The _Edit role_ page appears where you show can see all the available
+role. The _Edit role_ page appears where you can see all the available
 actions for the website such as, for example, _Post comments_ or _Use advanced
 search_. The available permissions depend on the modules that are installed in
 the site. Note: some permissions may have security implications, be cautious
-when when assigning permissions to roles.
+when assigning permissions to roles.
 
 . Check the permissions:
 +
@@ -51,7 +51,13 @@ when when assigning permissions to roles.
 image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
 
 [start=4]
-. Click _Save permissions_ in the bottom of the page to save the changes.
+. Click _Save permissions_. You will get a message saying your changes have been
+saved.
++
+// For this image permissions were assigned to the Vendor role and saved. The
+// image is partial screenshot of the page located at
+// admin/people/permissions
+image:images/user-permissions-save-permissions.png["Assigning a couple of permissions for the Vendor role",width="100%"]
 
 ==== Follow-on tasks
 
