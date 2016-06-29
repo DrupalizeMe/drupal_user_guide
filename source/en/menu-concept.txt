@@ -22,43 +22,56 @@
 ==== What is a menu?
 
 Menus are a collection of links (menu items) used to navigate a website. The
-core Menu UI module provides an interface to control and customize menu system.
-Menus are primarily displayed as a hierarchical list of links using flexible
-blocks feature. Each menu automatically creates a block of the same name. By
-default, new menu items are placed inside a built-in menu labelled Main
-navigation, but administrators can also create custom menus.
+core Menu UI module provides an interface to control and customize the menu
+system. Menus are primarily displayed as a hierarchical list of links. By
+default, new menu items are placed inside a built-in menu labeled _Main
+navigation_, but administrators can also create custom menus. Each menu, whether
+default or custom, has a block assigned to it.
 
 The core Standard installation profile contains five menus:
 
-Main menu::
-  It's built by site administrators and displayed automatically in
-  the page header of many themes (and if not, you can place their blocks to
-  display them).Main navigation menu usually contains links supplied by modules
-  on your site.
+Main navigation::
+  Links to sections intended for site visitors. They are usually created by site
+  administrators and displayed automatically in the page header of many themes.
 
-Administration menu::
-  It is displayed within the Admin toolbar.
+Administration::
+  Links to administrative tasks. This menu mainly contains links supplied by
+  modules on your site. If you have the core Toolbar module installed, this menu
+  is displayed when you click _Manage_. The contributed Admin Toolbar module
+  also displays this menu.
 
 User account menu::
-  It contains links to the User account and the logout link.
+  Links to tasks associated with the user account such as _My account_ and _Log
+  out_.
 
-Footer menu::
-  It contains menu displayed at the footer of the webpage.
+Footer::
+  Links to important pages within the site intended for the footer. They are
+  usually created by site administrators. In order to display the footer, you
+  need to place the footer menu block in the footer region of your theme.
 
-Custom menu::
-  You can also create your own custom menus, and display them by
-  placing their blocks.You can also add custom menu items to a main menu, using
-  the menu administration functionality.
+Tools::
+  Links to tasks necessary for site visitors. Some modules feature their links
+  here.
 
-You can customize menus in several ways, such as reordering menu items by
-setting their "weight" or by dragging them into place, renaming menu items,
-and changing the link title (the tooltip that appears when you mouse over a menu
-item). You can move a menu item into a different menu by editing the Parent
-property of the menu item.
+You can also create your own custom menus, and display them by placing their
+blocks. You can add custom menu items to a main menu, using the menu
+administration functionality.
 
-In all cases a menu item will only be shown to a visitor if they have the rights
-to view the page it links to. For example, the admin menu item is not shown to
-visitors who are not logged in.
+You can customize menus in the following ways:
+
+* Reordering menu items by setting their "weight" or by dragging them into
+place.
+
+* Renaming menu items.
+
+* Changing the link title (the tooltip that appears when you mouse over a menu
+item).
+
+* Moving a menu item into a different menu by editing its _Parent_ property.
+
+A menu item will only be shown to a visitor if they have the rights to view the
+page it links to. For example, the admin menu item is not shown to visitors who
+are not logged in.
 
 ==== Related topics
 
