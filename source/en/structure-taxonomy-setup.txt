@@ -79,7 +79,7 @@ continue_.
 |================================
 +
 //Screenshot admin/structure/types/manage/recipes/fields/add-field page
-image:images/structure-taxonomy-setup-6.png["Add Content type Ingredients field-first page",width="100%"]
+image:images/structure-taxonomy-setup-add-field.png["Add field to Content type Ingredients",width="100%"]
 
 [start=8]
 . On the following configuration screen, enter the values from the table below.
@@ -93,29 +93,30 @@ Click _Save field settings_.
 |================================
 +
 //Screenshot of admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients/storage?
-image:images/structure-taxonomy-setup-7.png["add ingredient field settings to unlimited",width="100%"]
+image:images/structure-taxonomy-setup-field-settings.png["add ingredient field settings to unlimited",width="100%"]
 
 [start=9]
 . On the following configuration screen, enter the values from the table below
-for the fields under _Reference type_. Click _Save settings_.
+for the fields, near the top and under _Reference type_. Click _Save settings_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Explanation | Value
+|Help text | Help shown to users creating content |Enter ingredients that site visitors might want to search for
 |Reference method| Select the method used to choose allowed values | Default
-|Vocabularies | Select the vocabulary to choose allowed values from | Ingredients
+|Available Vocabularies | Select the vocabulary to choose allowed values from | Ingredients
 | Create referenced entities if they don't already exist | Whether new ingredient terms can be created from the content editing form | Checked
 |================================
 +
 //Screenshot /admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients
-image:images/structure-taxonomy-setup-8.png["reference type field settings",width="100%"]
+image:images/structure-taxonomy-setup-field-settings-2.png["reference type field settings",width="100%"]
 
 . Click _Save settings_. You will be taken back to the _Manage Fields_ page. A
 message will be displayed saying that the configuration for _Ingredients_ is
 complete.
 +
 //Screenshot admin/structure/types/manage/recipe/fields/add-field
-image:images/structure-taxonomy-setup-9.png["manage fields summary page",width="100%"]
+image:images/structure-taxonomy-setup-finished.png["manage fields summary page",width="100%"]
 
 // ==== Follow-on tasks
 

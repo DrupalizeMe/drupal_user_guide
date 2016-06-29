@@ -84,6 +84,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'recipe_field_image_label' => 'Main image',
     'recipe_field_image_directory' => 'recipes',
     'recipe_field_ingredients_label' => 'Ingredients',
+    'recipe_field_ingredients_help' => 'Enter ingredients that site visitors might want to search for'
+    'recipe_field_submitted_label' => 'Submitted By',
+    'recipe_field_submitted_help' => 'Choose the vendor that submitted this recipe',
 
     // Recipe ingredients terms added.
     'recipe_field_ingredients_term_1' => 'Butter',
@@ -518,6 +521,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/taxonomy/manage/ingredients/add');
     // Fill in the form in the screenshot, with the term name Butter.
     $this->setUpScreenShot('structure-taxonomy-setup-add-term.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-name-0-value\').val(\'' . $this->demoInput['recipe-field-ingredients-term_1'] . '\');');
+    // Add the rest of the terms, with no screenshots.
     $this->drupalPostForm(NULL, [
         'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_1'],
       ], $this->callT('Save'));
@@ -529,8 +533,54 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save'));
 
     // Add the Ingredients field to Recipe content type.
+    $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
+    // Fill in the form in the screenshot: choose Taxonomy term for field type
+    // and type in Ingredients for the Label.
+    $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_ingredients_label'] . '\');');
+    $this->drupalPostForm(NULL, [
+        'new_storage_type' => 'field_ui:entity_reference:taxonomy_term',
+        'label' => $this->demoInput['recipe_field_ingredients_label'],
+      ], $this->callT('Save and continue'));
+    $this->drupalPostForm(NULL, [
+        'cardinality' => '-1',
+      ], $this->callT('Save field settings'));
+    $this->drupalPostForm(NULL, [
+        'description' => $this->demoInput['recipe_field_ingredients_help'],
+        'settings[handler_settings][target_bundles][ingredients]' => 1,
+        'settings[handler_settings][auto_create]' => 1,
+      ], $this->callT('Save settings'));
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-finished.png', [550, 275, 30, 200]);
+    // Go back and edit the field settings to make the next screenshot,
+    // scrolling to the bottom.
+    $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_ingredients');
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-2.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000);"');
+    // And make the other screenshot from the edit settings page.
+    $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_ingredients/storage');
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings.png', [550, 275, 30, 200]);
 
-    // @todo Finish the structure-taxonomy-setup topic.
+    // Topic: structure-adding-reference - Adding a reference field.
+    // Add the Submitted By field to Recipe content type.
+    $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
+    // Fill in the form in the screenshot: choose content reference for
+    // field type and type in Submitted By for the Label.
+    $this->setUpScreenShot('structure-adding-reference-add-field.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_submitted_label'] . '\');');
+    $this->drupalPostForm(NULL, [
+        'new_storage_type' => 'field_ui:entity_reference:node',
+        'label' => $this->demoInput['recipe_field_submitted_label'],
+      ], $this->callT('Save and continue'));
+    $this->setUpScreenshot('structure-adding-reference-set-field-basic.png', [550, 275, 30, 200]);
+    $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
+    $this->drupalPostForm(NULL, [
+        'description' => $this->demoInput['recipe_field_submitted_help'],
+        'required' => 1,
+        'settings[handler_settings][target_bundles][vendor]' => 1,
+        'settings[handler_settings][sort][field]' => 'title',
+      ], $this->callT('Save settings'));
+    $this->setUpScreenShot('structure-adding-reference-set-field-detailed.png', [550, 275, 30, 200]);
+    // Go back and edit the field settings to make the next screenshot,
+    // scrolling to the bottom.
+    $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_submitted_by');
+    $this->setUpScreenShot('structure-adding-reference-content-type.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000);"');
 
 
     // @todo Ready to add more topics here!
