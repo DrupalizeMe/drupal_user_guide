@@ -16,15 +16,16 @@
 _Text formats_ change how HTML tags and other text are processed and displayed
 on your site. Text formats are composed of a series of _filters_, each of which
 transforms text. When users create content, a text format is associated with the
-content, and the full, original text is stored in the database. Then, before it
-is output on the site, the content is passed through the filters in the text
-format that was assigned to the content.
+content, and the full, original text is stored in the database. The content is
+then passed through the filters in the text format before it becomes output on
+the site.
 
 The core Filter module provides text format functionality, and the core Standard
 installation profile sets up _Basic HTML_, _Restricted HTML_, and _Full HTML_
 text formats. Each text format has an associated permission, so that you can
-allow only trusted users to use permissive text formats, and restrict untrusted
-users to text formats like _Basic HTML_, which filters out dangerous HTML tags.
+allow only trusted users to use permissive text formats. This restricts
+untrusted users to text formats like _Basic HTML_, which filters out dangerous
+HTML tags.
 
 ==== What are the editors associated with text formats?
 
@@ -39,8 +40,8 @@ be used to edit HTML content on your site.
 
 Cross-site scripting (XSS) is a security vulnerability typically found in
 websites. In a site that is not well protected, malicious users can enter script
-into web pages that are viewed by other users, for example in a comment or in
-the body of a page. A cross-site scripting vulnerability may be used by
+into web pages that are viewed by other users (for example, in a comment or in
+the body of a page). A cross-site scripting vulnerability may be used by
 attackers to login as another user. It is important to configure the text
 formats of your website to prevent such abuse.
 
