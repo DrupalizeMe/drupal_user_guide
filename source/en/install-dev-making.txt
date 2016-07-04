@@ -32,8 +32,8 @@ use.
 following methods:
 +
   * If you are using MySQL as your database, and your live site's server has
-  PHPMyAdmin installed (it is available from many hosting control panels),
-  use the _Export_ tab in PHPMyAdmin to export in _SQL_ format. Using _gzip_
+  phpMyAdmin installed (it is available from many hosting control panels),
+  use the _Export_ tab in phpMyAdmin to export in _SQL_ format. Using _gzip_
   compression on the output file is suggested, to reduce the file size.
 
   * If you are using MySQL and have access to the command line, use this
@@ -53,7 +53,7 @@ drush sql-dump > BACKUPFILE.sql
   from within your live site. See <<extend-module-install>> for instructions on
   installing contributed modules.
 +
-You now have a database dump stored in file _BACKUPFILE.sql_. For security
+You now have a database dump stored in the file _BACKUPFILE.sql_. For security
 reasons, avoid storing this file on your hosting server anywhere under the
 Drupal site root. This will prevent others from getting a copy of your
 database.
