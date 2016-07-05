@@ -34,17 +34,17 @@ Git::
 Devel::
   The https://www.drupal.org/project/devel[contributed Devel module] helps with
   development tasks such as debugging and inspecting code, analyzing database
-  queries and generating dummy content.
+  queries, and generating dummy content.
 
 ==== What is special about Drush?
 
-http://www.drush.org[Drush] is a command line tool for building and maintaining
+http://www.drush.org[Drush] is a command-line tool for building and maintaining
 sites, providing an alternative to using the administrative interface for many
 operations. Many site builders and maintainers prefer to use Drush whenever
 possible, and consider the time spent installing and learning to use Drush to be
 a good investment. Reasons to consider using Drush:
 
-* Drush provides a large number of commands, for tasks such as installing the
+* Drush provides a large number of commands for tasks such as installing the
 base software, modules, and themes; updating software; performing database
 operations, including copying and querying; resetting passwords; and clearing
 the cache. Some contributed modules and themes also define Drush commands.
@@ -60,9 +60,9 @@ tasks.
 interface; for example, running database queries.
 
 If you want to use Drush, you will need to have command-line terminal access to
-the server where your web site will be hosted, and you will need to have a
+the server where your website will be hosted, and you will need to have a
 compatible version of the Drush tool installed on that server. Check the
-http://www.drush.org[Drush web site] for installation instructions and version
+http://www.drush.org[Drush website] for installation instructions and version
 compatibility. There is also documentation on the available Drush commands on
 that site.
 
@@ -72,12 +72,12 @@ In addition to the site builder tools mentioned above, the following tools are
 useful for module and theme developers.
 
 Drupal Console::
-  https://drupalconsole.com[Drupal Console] is a command line tool that
-  generates boilerplate code and interacts with a Drupal site. It can generate
-  for example block or form code, install modules and themes and create dummy
+  https://drupalconsole.com[Drupal Console] is a command-line tool that
+  generates boilerplate code and interacts with a Drupal site. It can generate,
+  for example, block or form code, install modules and themes, and create dummy
   content. Drupal Console makes use of the Symfony Console.
 Coder::
-  https://www.drupal.org/project/coder[Coder] is a command line tool that checks
+  https://www.drupal.org/project/coder[Coder] is a command-line tool that checks
   if your modules and themes comply with coding standards and other best
   practices. It can also fix coding standard violations.
 Firebug::
