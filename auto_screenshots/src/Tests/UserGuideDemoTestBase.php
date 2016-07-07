@@ -45,6 +45,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Home page content item.
     'home_title' => 'Home',
     'home_body' => "<p>Welcome to City Market - your neighborhood farmers market!</p>\n<p>Open: Sundays, 9 AM to 2 PM, April to September</p>\n<p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>",
+    'home_summary' => 'Opening times and location of City Market',
     'home_path' => '/home',
     'home_revision_log_message' => 'Updated opening hours',
 
@@ -84,7 +85,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'recipe_field_image_label' => 'Main image',
     'recipe_field_image_directory' => 'recipes',
     'recipe_field_ingredients_label' => 'Ingredients',
-    'recipe_field_ingredients_help' => 'Enter ingredients that site visitors might want to search for'
+    'recipe_field_ingredients_help' => 'Enter ingredients that site visitors might want to search for',
     'recipe_field_submitted_label' => 'Submitted By',
     'recipe_field_submitted_help' => 'Choose the vendor that submitted this recipe',
 
@@ -153,117 +154,112 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     array_pop($dir_parts);
     $assets_directory = implode('/', $dir_parts) . '/assets/';
 
-    // Set up a red border CSS style for outlining portions of images.
-    $red_border = '2px solid #e62600;';
-
-    // Topic: preface-conventions - screen shot of the top navigation bar.
+    // Topic: preface-conventions: Conventions of the user guide.
     $this->drupalGet('admin/config');
-    $this->setUpScreenShot('preface-conventions-top-menu.png', [550, 275, 30, 200]);
+    // Top navigation bar on any admin page, with Manage menu showing.
+    // This same screenshot is also config-overview-toolbar.png in the
+    // config-overview topic.
+    $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content') . $this->setBodyColor() . '"');
 
-    // Screen shot of System section of the page.
-    $this->setUpScreenShot('preface-conventions-config-system.png', [550, 275, 30, 200]);
+    // System section of admin/config page.
+    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.layout-column:odd .panel:first') . '"');
 
-    // Topic: block-regions - screen shot of region preview.
-    $this->drupalGet('admin/structure/block/demo/bartik');
-    $this->setUpScreenShot('block-regions-bartik.png', [550, 275, 30, 200]);
+    // Topic: block-regions - postpone until after theme is configured.
 
-    // Topic: install-prepare - screen shots of downloading from drupal.org.
+    // Topic: install-prepare - Preparing to install.
     $this->drupalGet('https://www.drupal.org/download');
-    $this->setUpScreenShot('install-prepare-downloads.png', [550, 275, 30, 200]);
+    // Main area of https://www.drupal.org/download.
+    $this->setUpScreenShot('install-prepare-downloads.png', 'onLoad="' . $this->hideArea('#nav-header') . $this->hideArea('#header') . $this->hideArea('.drupal-modules') . $this->hideArea('.drupal-modules-facets') . $this->hideArea('#footer') . '"');
     $this->drupalGet('https://www.drupal.org/project/drupal');
-    $this->setUpScreenShot('install-prepare-recommended.png', [550, 275, 30, 200]);
+    // Recommended releases section of https://www.drupal.org/project/drupal.
+    $this->setUpScreenShot('install-prepare-recommended.png', 'onLoad="' . $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link') . '"');
     $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
-    $this->setUpScreenShot('install-prepare-files.png', [550, 275, 30, 200]);
+    // File section of a recent Drupal release download page, such as
+    // https://www.drupal.org/project/drupal/releases/8.1.3.
+    $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools') . $this->hideArea('#nav-content') . $this->hideArea('.panel-display .content') . $this->hideArea('.panel-display .footer') . $this->hideArea('.views-field-field-release-file-hash') . $this->hideArea('.views-field-field-release-file-sha1') . $this->hideArea('.views-field-field-release-file-sha256') . '"');
 
-    // Topic: config-overview - screen shot of the top navigation bar.
+    // Topic install-run - Running the installer. Skip -- manual screenshots.
+
+    // Topic: config-overview - Concept: Administrative overview.
     $this->drupalGet('admin/config');
-    $this->setUpScreenShot('config-overview-toolbar.png', [550, 275, 30, 200]);
-    // Use JQuery to orient it vertically and take another screenshot.
-    $this->setUpScreenShot('config-overview-vertical.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.toolbar-toggle-orientation button\').click();"');
+    // Top navigation bar on any admin page, with Manage menu showing.
+    // Same as preface-conventions-top-menu.png defined earlier.
+    $this->setUpScreenShot('config-overview-toolbar.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content') . $this->setBodyColor() . '"');
 
-    // Screen shot of contextual links, after clicking pencil icon.
-    $this->drupalGet('<front>');
-    $this->setUpScreenShot('config-overview-pencils.png', [550, 275, 30, 200], 'onLoad="jQuery(\'.contextual-toolbar-tab button.toolbar-icon-edit\').click();"');
+    // The vertical orientation navigation screenshot could not be
+    // successfully reproduced, unfortunately -- the buttons didn't show up.
+    // So config-overview-vertical.png must be done manually.
 
-    // Topic: config-basic - Edit basic site information.
+    // Defer config-overview-pencils.png until after theme is configured.
+
+    // Topic: config-basic - Editing basic site information.
     $this->drupalGet('admin/config/system/site-information');
     $this->drupalPostForm(NULL, [
         'site_name' => $this->demoInput['site_name'],
         'site_slogan' => $this->demoInput['site_slogan'],
         'site_mail' => $this->demoInput['site_mail'],
       ], $this->callT('Save configuration'));
-    $this->assertText($this->callT('The configuration options have been saved.'));
 
     // In this case, we want the screen shot made after we have entered the
     // information, because for a normal user, this information would have
     // been set up during the install.
     $this->drupalGet('admin/config/system/site-information');
-    $this->setUpScreenShot('config-basic-SiteInfo.png', [550, 275, 30, 200]);
+    // Site details section of admin/config/system/site-information.
+    $this->setUpScreenShot('config-basic-SiteInfo.png', 'onLoad="' . $this->showOnly('#edit-site-information') . $this->setWidth('#edit-site-information') . '"');
 
-    // Date and time configuration, same topic.
     $this->drupalGet('admin/config/regional/settings');
     $this->drupalPostForm(NULL, [
       'site_default_country' => $this->demoInput['site_default_country'],
       'date_default_timezone' => $this->demoInput['date_default_timezone'],
       'configurable_timezones' => FALSE,
       ], $this->callT('Save configuration'));
-    $this->assertText($this->callT('The configuration options have been saved.'));
 
-    // In this case, we want the screen shot made after we have entered the
-    // information, because for a normal user, this information would have
-    // been set up during the install.
     $this->drupalGet('admin/config/regional/settings');
-    $this->setUpScreenShot('config-basic-TimeZone.png', [550, 275, 30, 200]);
+    // Locale and Time Zones sections of admin/config/regional/settings.
+    $this->setUpScreenShot('config-basic-TimeZone.png', 'onLoad="' . $this->showOnly('.page-content') . $this->setWidth('#edit-locale') . $this->setWidth('#edit-timezone') . '"');
 
     // Topic: config-install -- Installing a module.
     $this->drupalGet('admin/modules');
-    // For this screenshot, check the Activity Tracker module checkbox.
-    $this->setUpScreenShot('config-install-check-modules.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);"');
+    // Top part of Core section of admin/modules, with Activity Tracker checked.
+    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
     $this->drupalPostForm(NULL, [
         'modules[Core][tracker][enable]' => TRUE,
       ], $this->callT('Install'));
 
-    // Topic: config-uninstall - Uninstall unused modules.
+    // Topic: config-uninstall - Uninstalling unused modules.
     $this->drupalGet('admin/modules/uninstall');
-    // For this screen shot, make sure the Search, History, and Activity
-    // Tracker checkboxes are checked, using JavaScript.
-    $this->setUpScreenShot('config-uninstall_searchModUninstall.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000); jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); jQuery(\'#edit-uninstall-search\').attr(\'checked\', 1); jQuery(\'#edit-uninstall-history\').attr(\'checked\', 1);"');
+    // Top part of admin/modules/uninstall, with Activity Tracker checked.
+    $this->setUpScreenShot('config-uninstall_check-modules.png', 'onLoad="jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); ' . $this->showOnly('table thead, table tbody tr:lt(4)') . '"');
     $this->drupalPostForm(NULL, [
         'uninstall[tracker]' => TRUE,
         'uninstall[search]' => TRUE,
         'uninstall[history]' => TRUE,
       ], $this->callT('Uninstall'));
-    $this->assertText($this->callT('Would you like to continue with uninstalling the above?'));
-    // Module names are not translated.
-    $this->assertText('Activity Tracker');
-    $this->assertText('Search');
-    $this->assertText('History');
-    $this->setUpScreenShot('config-uninstall_confirmUninstall.png', [550, 275, 30, 200]);
+    // Uninstall confirmation screen, after checking Activity Tracker, History,
+    // and Search modules from admin/modules/uninstall.
+    $this->setUpScreenShot('config-uninstall_confirmUninstall.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.block-system-main-block') . $this->setWidth('header', 640) . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
-    $this->assertText($this->callT('The selected modules have been uninstalled.'));
 
     // Topic config-user: Configuring user account settings.
     $this->drupalGet('admin/config/people/accounts');
     $this->drupalPostForm(NULL, [
         'user_register' => 'admin_only',
       ], $this->callT('Save configuration'));
-    $this->assertText($this->callT('The configuration options have been saved.'));
-    // For this screen shot, scroll down 500px.
-    $this->setUpScreenShot('config-user_account_reg.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,500);"');
-    // For this screen shot, scroll down to the bottom and open the Account
-    // activation vertical tab.
-    $this->setUpScreenShot('config-user_email.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,5000); jQuery(\'#edit-email-activated\').click();"');
+    // Registration and cancellation section of admin/config/people/accounts.
+    $this->setUpScreenShot('config-user_account_reg.png', 'onLoad="window.scroll(0,500);' . $this->showOnly('#edit-registration-cancellation') . $this->setWidth('#edit-registration-cancellation') . '"');
+    // Emails section of admin/config/people/accounts.
+    $this->setUpScreenShot('config-user_email.png', 'onLoad="window.scroll(0,5000); ' . $this->showOnly('div.form-type-vertical-tabs') . $this->hideArea('div.form-type-vertical-tabs details:gt(0)') . '"');
 
     // Topic config-theme: Configuring the theme.
     $this->drupalGet('admin/appearance');
-    $this->assertText('Bartik');
-    $this->assertLink($this->callT('Settings'));
-    $this->setUpScreenShot('config-theme_bartik_settings.png', [550, 275, 30, 200]);
+    // Bartik section of admin/appearance.
+    $this->setUpScreenShot('config-theme_bartik_settings.png', 'onLoad="' . $this->showOnly('.system-themes-list-installed') . $this->hideArea('.theme-admin') . '"');
     $this->drupalGet('admin/appearance/settings/bartik');
     // For this screenshot, before the setting are changed, use JavaScript to
     // scroll down to the bottom, uncheck Use the default logo, and outline
     // the logo upload box.
-    $this->setUpScreenShot('config-theme_logo_upload.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,5000); jQuery(\'#edit-default-logo\').click(); jQuery(\'#edit-logo-upload\').css(\'border\', \'' . $red_border . '\');"');
+    // Logo upload section of admin/appearance/settings/bartik.
+    $this->setUpScreenShot('config-theme_logo_upload.png', 'onLoad="window.scroll(0,6000); jQuery(\'#edit-default-logo\').click(); ' . $this->addBorder('#edit-logo-upload') . $this->showOnly('#edit-logo') . $this->setWidth('#edit-logo') . '"');
 
     $this->drupalPostForm(NULL, [
         'scheme' => '',
@@ -279,32 +275,47 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'default_logo' => FALSE,
         'logo_path' => $assets_directory . 'AnytownFarmersMarket.png',
       ], $this->callT('Save configuration'));
-    $this->assertText($this->callT('The configuration options have been saved.'));
-    $this->assertRaw($assets_directory);
 
-    // For this screen shot, scroll down so the color wheel is in view.
-    $this->setUpScreenShot('config-theme_color_scheme.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,600);"');
-    // For this screen shot, scroll down to the bottom so the preview is in
-    // view.
-    $this->setUpScreenShot('config-theme_color_scheme_preview.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,5000);"');
+    $this->drupalGet('admin/appearance/settings/bartik');
+    // Color settings section of admin/appearance/settings/bartik.
+    $this->setUpScreenShot('config-theme_color_scheme.png', 'onLoad="window.scroll(0,200);' . $this->showOnly('#color_scheme_form') . $this->hideArea('h2') . $this->hideArea('.color-preview') . $this->setWidth('#color_scheme_form', 800) . '"');
+    // Preview section of admin/appearance/settings/bartik.
+    $this->setUpScreenShot('config-theme_color_scheme_preview.png', 'onLoad="window.scroll(0,1000);' . $this->showOnly('.color-preview') . $this->setWidth('#color_scheme_form', 700) . $this->removeScrollbars() . '"');
 
     $this->drupalGet('<front>');
-    $this->setUpScreenShot('config-theme_final_result.png', [550, 275, 30, 200]);
+    // Home page after theme settings are finished.
+    $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->removeScrollbars() . '"');
+
+    // Back to topic: block-regions.
+    $this->drupalGet('admin/structure/block/demo/bartik');
+    // Bartik theme region preview at admin/structure/block/demo/bartik,
+    // after configuring the theme for the Farmers Market scenario.
+    $this->setUpScreenShot('block-regions-bartik.png', 'onLoad="' . $this->showOnly('#page-wrapper') . $this->removeScrollbars() . '"');
+
+    // Back to screen shot: config-overview-pencils.jpg.
+    // Home page with pencil icons showing, with configured theme.
+    $this->drupalGet('<front>');
+    $this->setUpScreenShot('config-overview-pencils.png', 'onLoad="' . $this->hideArea('footer') . $this->removeScrollbars() . $this->setBodyColor() . 'jQuery(\'.contextual\').show();' . '"');
 
     // Topic: content-create - Creating a Content Item
+    // Create a Home page.
     $this->drupalGet('node/add/page');
-    // Screen shot with title, body, and alias filled in, and alias area
-    // expanded. The body is in an editor that is an iframe, so for the screen
-    // shot, replace the iframe with a text area.
-    $this->setUpScreenShot('content-create-create-basic-page.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-title-0-value\').val(\'' . $this->demoInput['home_title'] . '\'); jQuery(\'iframe\').replaceWith(\'<textarea rows=10 cols=200>' . $this->demoInput['home_body'] . '</textarea>\'); jQuery(\'#edit-path-settings\').show(); jQuery(\'#edit-path-0-alias\').val(\'' . $this->demoInput['home_path'] . '\');');
+    // General note: I could not get jQuery to fill in the text in
+    // any textarea fields, using a variety of methods. So I think we will
+    // need to live without these, alas! Also, some of the fields are
+    // transformed after page load into editors, which competes with our basic
+    // JavaScript.
+    // Hm, .append seems to work...2
+    // Partly filled-in node/add/page, with Summary section open.
+    $this->setUpScreenShot('content-create-create-basic-page.png', 'onLoad="jQuery(\'#edit-title-0-value\').val(\'' . $this->demoInput['home_title'] . '\'); jQuery(\'#edit-path-settings, #edit-path-settings .details-wrapper\').show(); jQuery(\'#edit-path-0-alias\').val(\'' . $this->demoInput['home_path'] . '\');' . $this->hideArea('#toolbar-administration') . 'jQuery(\'.link-edit-summary\').click(); jQuery(\'.form-item-body-0-summary\').show();' . 'jQuery(\'#edit-body-0-summary\').append(\'' . $this->demoInput['home_summary'] . '\');' . '"');
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['home_title'],
         'body[0][value]' => $this->demoInput['home_body'],
         'path[0][alias]' => $this->demoInput['home_path'],
       ], $this->callT('Save and publish'));
 
-    // Last step: create About page. No screenshots.
-    $this->drupalPostForm('node/page/add', [
+    // Create About page. No screenshots.
+    $this->drupalPostForm('node/add/page', [
         'title[0][value]' => $this->demoInput['about_title'],
         'body[0][value]' => $this->demoInput['about_body'],
         'path[0][alias]' => $this->demoInput['about_path'],
@@ -312,61 +323,68 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: content-edit - Editing a content item
     $this->drupalGet('admin/content');
-    // Simple screenshot of content list.
-    $this->setUpScreenShot('content-edit-admin-content.png', [550, 275, 30, 200]);
+    // Content list on admin/content, with filters above.
+    $this->setUpScreenShot('content-edit-admin-content.png', 'onLoad="' . $this->showOnly('.block-system-main-block') . $this->hideArea('.secondary-action') . $this->setBodyColor() . '"');
     $this->drupalGet('node/1/edit');
-    // Screen shot of the revision area of the edit page, with revision
-    // information filled in.
-    $this->setUpScreenShot('content-edit-revision.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-revision\').attr(\'checked\', 1); jQuery(\'#edit-revision-log-wrapper\').show(); jQuery(\'#edit-revision-log-0-val\').val(\'' . $this->demoInput['home_revision_log_message'] . '\');');
+    // Revision area of the content node edit page.
+    $this->setUpScreenShot('content-edit-revision.png', 'onLoad="' . $this->showOnly('#edit-meta') . 'jQuery(\'#edit-revision\').attr(\'checked\', 1); jQuery(\'#edit-revision-log-0-value\').append(\'' . $this->demoInput['home_revision_log_message'] . '\');' . '"');
     // Submit the revision.
     $this->drupalPostForm(NULL, [
         'revision_log[0][value]' => $this->demoInput['home_revision_log_message'],
       ], $this->callT('Save and keep published'));
-    // Simple screenshot of top of page with updated message.
-    $this->setUpScreenShot('content-edit-message.png', [550, 275, 30, 200]);
+    // Updated content message.
+    $this->setUpScreenShot('content-edit-message.png', 'onLoad="' . $this->showOnly('.highlighted') . $this->setWidth('.highlighted') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
-    // Topic: content-in-place-edit - Editing with the In-Place Editor
-    $this->drupalGet('node/2');
-    // @todo: Determine whether the screen shots in this topic can be
-    // auto-generated or not, since they are heavily JavaScript dependent.
-    // Possibly all the clicks and hovers can be simulated? Not sure.
-    $this->setUpScreenShot('test-in-place-edit.png', [550, 275, 30, 200]);
+    // Topic: content-in-place-edit - it does not seem possible to make these
+    // screenshots automatically. Skip.
 
     // Topic: menu-home - Designating a Front Page for your Site
     $this->drupalGet('admin/config/system/site-information');
     $this->drupalPostForm(NULL, [
         'site_frontpage' => '/home',
       ], $this->callT('Save configuration'));
-    // Take the screenshot after posting the form.
-    $this->setUpScreenShot('menu-home_new_text_field.png', [550, 275, 30, 200]);
+    // Fix the prefix showing the site URL to say example.com.
+    // Front page section of admin/config/system/site-information.
+    $this->setUpScreenShot('menu-home_new_text_field.png', 'onLoad="' . $this->showOnly('#edit-front-page') . $this->setWidth('#edit-front-page') . 'jQuery(\'.form-item-site-frontpage .field-prefix\').text(\'http://example.com\');' . '"');
+
     $this->drupalGet('<front>');
-    $this->setUpScreenShot('menu-home_final.png', [550, 275, 30, 200]);
+    // Site front page after configuring it to point to the Home content item.
+    $this->setUpScreenShot('menu-home_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer, .contextual') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
     // Topic: menu-link-from-content: Adding a page to the navigation.
     $this->drupalGet('admin/content');
-    $this->setUpScreenShot('menu-link-from-content_edit_page.png', [550, 275, 30, 200], 'onLoad="jQuery(\'table.views-view-table tr:eq(0) .dropbutton-widget).css(\'border\', \'' . $red_border . '\');"');
+    // Content table from admin/content page, with a red border around the Edit
+    // button for the About page.
+    $this->setUpScreenShot('menu-link-from-content_edit_page.png', 'onLoad="' . $this->showOnly('.views-table') . $this->addBorder('table.views-view-table tbody tr:last .dropbutton-widget') . $this->hideArea('.secondary-action') . '"');
 
     $this->drupalGet('node/2/edit');
     $this->drupalPostForm(NULL, [
         'menu[enabled]' => TRUE,
         'menu[title]' => $this->demoInput['about_title'],
         'menu[description]' => $this->demoInput['about_description'],
-        'menu[weight]' => -3,
+        'menu[weight]' => -2,
       ], $this->callT('Save and keep published'));
-    // Make this screenshot after the menu information is submitted.
     $this->drupalGet('node/2/edit');
-    $this->setUpScreenShot('menu-link-from-content.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-menu .details-wrapper).show();"');
+    // Menu settings section of content editing page.
+    $this->setUpScreenShot('menu-link-from-content.png', 'onLoad="' . $this->showOnly('#edit-menu') . '"');
     $this->drupalGet('<front>');
-    $this->setUpScreenShot('menu-link-from-content-result.png', [550, 275, 30, 200]);
+    // Home page after adding About to the navigation.
+    $this->setUpScreenShot('menu-link-from-content-result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual, footer') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
     // Topic: menu-reorder - Changing the order of navigation.
     $this->drupalGet('admin/structure/menu');
-    $this->setUpScreenShot('menu-reorder_menu_titles.png', [550, 275, 30, 200], 'onLoad="jQuery(\'tr:eq(2) .dropbutton-widget).css(\'border\', \'' . $red_border . '\');"');
-    $this->drupalGet('admin/structure/menu/manage/main');
-    $this->setUpScreenShot('menu-reorder_edit_menu.png', [550, 275, 30, 200]);
+    // Menu list section of admin/structure/menu, with Edit menu button on Main
+    // navigation menu highlighted.
+    $this->setUpScreenShot('menu-reorder_menu_titles.png', 'onLoad="' . $this->showOnly('table') . $this->addBorder('tr:eq(3) .dropbutton-widget') . $this->hideArea('.secondary-action') . '"');
 
-    // @todo - can we make the after-drag screenshot? Maybe not.
-    // menu-reorder_reorder.png
+    $this->drupalGet('admin/structure/menu/manage/main');
+    // Menu links section of admin/structure/menu/manage/main.
+    $this->setUpScreenShot('menu-reorder_edit_menu.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .form-type-textfield, .tabledrag-toggle-weight') . $this->setWidth('table') . '"');
+
+    // Simulating dragging on the ordering screen is a bit complex.
+    // Menu links section of admin/structure/menu/manage/main, after
+    // changing the order.
+    $this->setUpScreenShot('menu-reorder_reorder.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .form-type-textfield') . 'jQuery(\'table\').before(\'<div style=&quot;display: block; width: 600px;&quot; class=&quot;tabledrag-changed-warning messages messages--warning&quot; role=&quot;alert&quot;><abbr class=&quot;warning tabledrag-changed&quot;>*</abbr>' . $this->callT('You have unsaved changes.') . '</div>\');' . 'var r = jQuery(\'table tbody tr:last\').detach(); jQuery(\'table tbody\').prepend(r); jQuery(\'table tbody tr:first\').toggleClass(\'drag-previous\');' . $this->setWidth('table') . '"');
 
     // Actually figuring out what to submit on the editing page is difficult,
     // because the field name has some config hash in it. So instead, to make
@@ -377,22 +395,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'menu[weight]' => 10,
       ], $this->callT('Save and keep published'));
     $this->drupalGet('<front>');
-    $this->setUpScreenShot('menu-reorder_final_order.png', [550, 275, 30, 200]);
+    // Header section of Home page with reordered menu items.
+    $this->setUpScreenShot('menu-reorder_final_order.png', 'onLoad="' . $this->showOnly('header') . $this->hideArea('.visually-hidden, .contextual, .menu-toggle') . $this->setWidth('header') . $this->setBodyColor() . $this->removeScrollbars() . '"');
+
+    // @todo Continue with JavaScript stuff from here...
 
     // Topic: structure-content-type - Adding a Content Type
     // Create the Vendor content type.
     $this->drupalGet('admin/structure/types');
     $this->drupalGet('admin/structure/types/add');
     // For this one, get the Name and Description fields, and the top of page.
-    $this->setUpScreenShot('structure-content-type-add.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-content-type-add.png');
     // For this one, get just the Submission form settings section.
-    $this->setUpScreenShot('structure-content-type-add-submission-form-settings.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-content-type-add-submission-form-settings.png');
     // For this one, expand Publishing options and check boxes.
-    $this->setUpScreenShot('structure-content-type-add-Publishing-Options.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-workflow .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(1)).toggleClass(\'is-selected\');" jQuery(\'#edit-options-promote\').attr(\'checked\', 0); jQuery(\'#edit-options-revision\').attr(\'checked\', 1);');
+    $this->setUpScreenShot('structure-content-type-add-Publishing-Options.png', 'onLoad="jQuery(\'#edit-workflow .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(1)).toggleClass(\'is-selected\');" jQuery(\'#edit-options-promote\').attr(\'checked\', 0); jQuery(\'#edit-options-revision\').attr(\'checked\', 1);');
     // For this one, expand Display settings and uncheck boxes.
-    $this->setUpScreenShot('structure-content-type-add-Display-Settings.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-display .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(2)).toggleClass(\'is-selected\');" jQuery(\'#edit-display-submitted\').attr(\'checked\', 0);');
+    $this->setUpScreenShot('structure-content-type-add-Display-Settings.png', 'onLoad="jQuery(\'#edit-display .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(2)).toggleClass(\'is-selected\');" jQuery(\'#edit-display-submitted\').attr(\'checked\', 0);');
     // For this one, expand Menu settings and uncheck boxes.
-    $this->setUpScreenShot('structure-content-type-add-Menu-Settings.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-menu .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(3)).toggleClass(\'is-selected\');" jQuery(\'#edit-menu-options-main\').attr(\'checked\', 0);');
+    $this->setUpScreenShot('structure-content-type-add-Menu-Settings.png', 'onLoad="jQuery(\'#edit-menu .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(3)).toggleClass(\'is-selected\');" jQuery(\'#edit-menu-options-main\').attr(\'checked\', 0);');
 
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['vendor_type_name'],
@@ -402,9 +423,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'options[revision]' => TRUE,
         'display_submitted' => FALSE,
         'menu_options[main]' => FALSE,
-        'language_configuration[content_translation]' => TRUE,
       ], $this->callT('Save and manage fields'));
-    $this->setUpScreenShot('structure-content-type-add-confirmation.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-content-type-add-confirmation.png');
 
     // Final task for structure-content-type - Add content type for Recipe.
     // No screen shots.
@@ -417,27 +437,26 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'options[promote]' => FALSE,
         'display_submitted' => FALSE,
         'menu_options[main]' => FALSE,
-        'language_configuration[content_translation]' => TRUE,
       ], $this->callT('Save and manage fields'));
 
 
     // Topic: structure-content-type-delete - Deleting a Content Type
     // Delete the Article content type.
     $this->drupalGet('admin/structure/types');
-    $this->setUpScreenShot('structure-content-type-delete-dropdown.png', [550, 275, 30, 200], 'onLoad="jQuery(\'tr.odd .dropbutton-toggle button\').click();');
+    $this->setUpScreenShot('structure-content-type-delete-dropdown.png', 'onLoad="jQuery(\'tr.odd .dropbutton-toggle button\').click();');
 
     $this->drupalGet('admin/structure/types/manage/article/delete');
-    $this->setUpScreenShot('structure-content-type-delete-confirmation.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-content-type-delete-confirmation.png');
 
     $this->drupalPostForm(NULL, [], $this->callT('Delete'));
-    $this->setUpScreenShot('structure-content-type-delete-confirm.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-content-type-delete-confirm.png');
 
     // Topic: structure-fields - Adding basic fields to a content type.
     // Add Vendor URL field to Vendor content type.
     $this->drupalGet('admin/structure/types/manage/vendor/fields/add-field');
     // Fill in the form in the screenshot: choose Link for field type and
     // type in Vendor URL for the Label.
-    $this->setUpScreenShot('structure-fields-add-field.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'link\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendor_field_url_label'] . '\');');
+    $this->setUpScreenShot('structure-fields-add-field.png', 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'link\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendor_field_url_label'] . '\');');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'link',
         'label' => $this->demoInput['vendor_field_url_label'],
@@ -449,7 +468,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save settings'));
     // To make the screen shot, go back to the edit form for this field.
     $this->drupalGet('admin/structure/types/manage/vendor/fields/node.vendor.field_vendor_url');
-    $this->setUpScreenShot('structure-fields-vendor-url.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-fields-vendor-url.png');
 
     // Add Main Image field to Vendor content type.
     $this->drupalGet('admin/structure/types/manage/vendor/fields/add-field');
@@ -465,10 +484,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'settings[min_resolution][y]' => 600,
         'settings[max_filesize]' => '5 MB',
       ], $this->callT('Save settings'));
-    $this->setUpScreenShot('structure-fields-result.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-fields-result.png');
     // To make the screen shot, go back to the edit form for this field.
     $this->drupalGet('admin/structure/types/manage/vendor/fields/node.vendor.field_main_image');
-    $this->setUpScreenShot('structure-fields-main-img.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-fields-main-img.png');
     // Add the main image field to Recipe. No screenshots.
     $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
     $this->drupalPostForm(NULL, [
@@ -508,19 +527,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: structure-taxonomy-setup - Setting Up a Taxonomy.
     $this->drupalGet('admin/structure/taxonomy');
-    $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png');
     // Add Ingredients taxonomy vocabulary.
     $this->drupalGet('admin/structure/taxonomy/add');
     // Fill in the form in the screenshot, with the vocabulary name.
-    $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-name\').val(\'' . $this->demoInput['recipe-field-ingredients-label'] . '\');');
+    $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', 'onLoad="jQuery(\'#edit-name\').val(\'' . $this->demoInput['recipe-field-ingredients-label'] . '\');');
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['recipe-field-ingredients-label'],
       ], $this->callT('Save'));
-    $this->setUpScreenShot('structure-taxonomy-setup-vocabulary-overview.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-taxonomy-setup-vocabulary-overview.png');
     // Add 3 sample terms.
     $this->drupalGet('admin/structure/taxonomy/manage/ingredients/add');
     // Fill in the form in the screenshot, with the term name Butter.
-    $this->setUpScreenShot('structure-taxonomy-setup-add-term.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-name-0-value\').val(\'' . $this->demoInput['recipe-field-ingredients-term_1'] . '\');');
+    $this->setUpScreenShot('structure-taxonomy-setup-add-term.png', 'onLoad="jQuery(\'#edit-name-0-value\').val(\'' . $this->demoInput['recipe-field-ingredients-term_1'] . '\');');
     // Add the rest of the terms, with no screenshots.
     $this->drupalPostForm(NULL, [
         'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_1'],
@@ -536,7 +555,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
     // Fill in the form in the screenshot: choose Taxonomy term for field type
     // and type in Ingredients for the Label.
-    $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_ingredients_label'] . '\');');
+    $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_ingredients_label'] . '\');');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:taxonomy_term',
         'label' => $this->demoInput['recipe_field_ingredients_label'],
@@ -549,26 +568,26 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'settings[handler_settings][target_bundles][ingredients]' => 1,
         'settings[handler_settings][auto_create]' => 1,
       ], $this->callT('Save settings'));
-    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-finished.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-finished.png');
     // Go back and edit the field settings to make the next screenshot,
     // scrolling to the bottom.
     $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_ingredients');
-    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-2.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000);"');
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-2.png', 'onLoad="window.scroll(0,2000);"');
     // And make the other screenshot from the edit settings page.
     $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_ingredients/storage');
-    $this->setUpScreenShot('structure-taxonomy-setup-field-settings.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings.png');
 
     // Topic: structure-adding-reference - Adding a reference field.
     // Add the Submitted By field to Recipe content type.
     $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
     // Fill in the form in the screenshot: choose content reference for
     // field type and type in Submitted By for the Label.
-    $this->setUpScreenShot('structure-adding-reference-add-field.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_submitted_label'] . '\');');
+    $this->setUpScreenShot('structure-adding-reference-add-field.png', 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_submitted_label'] . '\');');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:node',
         'label' => $this->demoInput['recipe_field_submitted_label'],
       ], $this->callT('Save and continue'));
-    $this->setUpScreenshot('structure-adding-reference-set-field-basic.png', [550, 275, 30, 200]);
+    $this->setUpScreenshot('structure-adding-reference-set-field-basic.png');
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
     $this->drupalPostForm(NULL, [
         'description' => $this->demoInput['recipe_field_submitted_help'],
@@ -576,11 +595,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'settings[handler_settings][target_bundles][vendor]' => 1,
         'settings[handler_settings][sort][field]' => 'title',
       ], $this->callT('Save settings'));
-    $this->setUpScreenShot('structure-adding-reference-set-field-detailed.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('structure-adding-reference-set-field-detailed.png');
     // Go back and edit the field settings to make the next screenshot,
     // scrolling to the bottom.
     $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_submitted_by');
-    $this->setUpScreenShot('structure-adding-reference-content-type.png', [550, 275, 30, 200], 'onLoad="window.scroll(0,2000);"');
+    $this->setUpScreenShot('structure-adding-reference-content-type.png', 'onLoad="window.scroll(0,2000);"');
 
 
     // @todo Ready to add more topics here!
@@ -612,17 +631,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ], $this->callT('Add language'));
-    $this->setUpScreenShot('language-add-list.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('language-add-list.png');
 
     // Topic: language-content-config - Configuring Content Translation
     $this->drupalGet('/admin/config/regional/content-language');
     // Simple screenshot of top section.
-    $this->setUpScreenShot('language-content-config_custom.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('language-content-config_custom.png');
     // For this screenshot, we need to check Content, and then under
     // Article and Basic Page, click the Show language selector button. Also
     // under Basic page, simulate expanding the drop-down for default language
     // by setting the 'size' attribute.
-    $this->setUpScreenShot('language-content-config_content.png', [550, 275, 30, 200], 'onLoad="jQuery(\'#edit-entity-types-node\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', 1); jQuery(\'#edit-settings-node\').show(); jQuery(\'#edit-settings-node-article-settings-language-language-alterable\').attr(\'checked\', 1); jQuery(\'#edit-settings-node-page-settings-language-langcode\').attr(\'size\', 7);"');
+    $this->setUpScreenShot('language-content-config_content.png', 'onLoad="jQuery(\'#edit-entity-types-node\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', 1); jQuery(\'#edit-settings-node\').show(); jQuery(\'#edit-settings-node-article-settings-language-language-alterable\').attr(\'checked\', 1); jQuery(\'#edit-settings-node-page-settings-language-langcode\').attr(\'size\', 7);"');
 
     $this->drupalPostForm(NULL, [
         'entity_types[node]' => TRUE,
@@ -652,7 +671,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'settings[menu_link_content][menu_link_content][fields][changed]' => FALSE,
       ], $this->callT('Save configuration'));
     // Screenshot of the Basic page area after saving the configuration.
-    $this->setUpScreenShot('language-content-config_custom.png', [550, 275, 30, 200]);
+    $this->setUpScreenShot('language-content-config_custom.png');
 
   }
 
@@ -710,14 +729,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *
    * @param string $file
    *   Name of the screen shot file.
-   * @param int[] $geometry
-   *   Geometry of the screen shot, in pixels: width, height, and offset
-   *   x and y.
    * @param string $body_addition
    *   Additional text to add into the HTML body tag. Example:
    *   'onLoad="window.scroll(0,500);"'.
+   *
+   * @see UserGuideDemoTestBase::showOnly()
    */
-  protected function setUpScreenShot($file, $geometry, $body_addition = '') {
+  protected function setUpScreenShot($file, $body_addition = '') {
     $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getRawContent());
 
     // This is like TestBase::verbose() but just the bare HTML output, and
@@ -729,7 +747,112 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->error($link, 'User notice');
     }
     $this->screenshotId++;
-    $this->pass('SCREENSHOT: ' . $file . ' ' . implode(' ', $geometry) . ' ' . $url);
+    $this->pass('SCREENSHOT: ' . $file . ' ' . $url);
+  }
+
+  /**
+   * Creates jQuery code to show only the selected part of the page.
+   *
+   * @param string $selector
+   *   jQuery selector for the part of the page you want to be shown. Single
+   *   quotes must be escaped.
+   * @param bool $border
+   *   (optional) If TRUE, also add a white border around $selector. This is
+   *   needed as a buffer for trimming the image, if the part you are trimming
+   *   to is along the edge of the page. Defaults to FALSE.
+   *
+   * @return string
+   *   jQuery code that will hide everything else on the page. Also puts a
+   *   white border around the page for trimming purposes.
+   */
+  protected function showOnly($selector, $border = FALSE) {
+    // Hide everything.
+    $code = "jQuery('*').hide(); ";
+    // Show the selected item and its children and parents.
+    $code .= "jQuery('" . $selector . "').show(); ";
+    $code .= "jQuery('" . $selector . "').parents().show(); ";
+    $code .= "jQuery('" . $selector . "').find('*').show(); ";
+    // Add border and remove box shadow, if indicated.
+    if ($border) {
+      $code .= $this->addBorder($selector, '#ffffff', TRUE);
+    }
+    return $code;
+  }
+
+  /**
+   * Creates jQuery code to hide the selected part of the page.
+   *
+   * @param string $selector
+   *   jQuery selector for the part of the page you want to hide. Single
+   *   quotes must be escaped.
+   *
+   * @return string
+   *   jQuery code that will hide this section of the page.
+   */
+  protected function hideArea($selector) {
+    return "jQuery('" . $selector . "').hide(); ";
+  }
+
+  /**
+   * Creates jQuery code to set the width of an area on the page.
+   *
+   * @param string $selector
+   *   jQuery selector for the part of the page you want to set the width of.
+   *   Single quotes must be escaped.
+   * @param int $width
+   *   (optional) Number of pixels. Defaults to 600.
+   *
+   * @return string
+   *   jQuery code that will set the width of this area.
+   */
+  protected function setWidth($selector, $width = 600) {
+    return "jQuery('" . $selector . "').css('width', '" . $width . "px'); ";
+  }
+
+  /**
+   * Creates jQuery code to set the body background color.
+   *
+   * @param string $color
+   *   (optional) Color to set. Defaults to white.
+   *
+   * @return string
+   *   jQuery code that will set the background color.
+   */
+  protected function setBodyColor($color = '#ffffff') {
+    return "jQuery('body').css('background', '" . $color . "'); ";
+  }
+
+  /**
+   * Creates jQuery code to omit scrollbars.
+   *
+   * @return string
+   *   jQuery code that will set the body to not overflow.
+   */
+  protected function removeScrollbars() {
+    return "jQuery('body').css('overflow', 'hidden');";
+  }
+
+  /**
+   * Creates jQuery code to put a 2px border around an area of a page.
+   *
+   * @param string $selector
+   *   jQuery selector for the part of the page you want to add a border to.
+   *   Single quotes must be escaped.
+   * @param string $color
+   *   A hex color code starting with #. Defaults to a red color.
+   * @param bool $remove_shadow
+   *   (optional) TRUE to also remove the box shadow. Defaults to FALSE.
+   *
+   * @return string
+   *   jQuery code that adds the border.
+   */
+  protected function addBorder($selector, $color = '#e62600', $remove_shadow = FALSE) {
+    $code = "jQuery('" . $selector . "').css('border', '2px solid " . $color . "'); ";
+    if ($remove_shadow) {
+      $code .= "jQuery('" . $selector . "').css('box-shadow', 'none'); ";
+    }
+
+    return $code;
   }
 
   /**

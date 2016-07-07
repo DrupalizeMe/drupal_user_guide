@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 /**
- * Finds a TD element child of the input element, if there is one, and returns it.
+ * Finds a TD element child of the input element, if there, and returns it.
  */
 function findTdChild(elem) {
   var kids = elem.children;
@@ -22,7 +22,7 @@ function findTdChild(elem) {
 }
 
 /**
- * Builds the commands for the screenshots by parsing the special lines in the file.
+ * Builds the commands for the screenshots by parsing special lines in the file.
  */
 function buildCommands() {
   var cmds = '';
@@ -43,18 +43,18 @@ function buildCommands() {
     var txt = td.textContent;
     if (txt.search('SCREENSHOT') >= 0) {
       // The line should be:
-      // SCREENSHOT: filename W H X Y url
+      // SCREENSHOT: filename url
       var info = txt.split(' ');
-      if (info.length < 7) {
+      if (info.length < 3) {
         alert('Info too short for ' + txt);
         continue;
       }
-      cmds += 'firefox ' + info[6] + "\n";
+      var imageloc = output_dir + "/" + info[1];
+      cmds += 'firefox ' + info[2] + "\n";
       cmds += 'sleep ' + sleep_sec + "\n";
-      var y = offset_y + parseInt(info[5]);
-      cmds += 'import -window ' + window_id + " -crop '" +
-        info[2] + 'x' + info[3] + '+' + info[4] + '+' + y +
-        "' " + output_dir + " " + info[1] + "\n";
+      cmds += 'import -window ' + window_id + " " + imageloc + "\n";
+      cmds += 'convert ' + imageloc + " -shave '0x" + offset_y + "'" +
+        " -trim +repage " + imageloc + "\n";
     }
   }
   return cmds;

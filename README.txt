@@ -13,8 +13,9 @@ copyright and license information for the text source files and images in this
 project. Output files produced and displayed by this project also must contain
 copyright/license information.
 
-Code (scripts) in this project are licensed under the GNU/GPL version 2 and
-later license.
+Code in this project, consisting of scripts for generating output from the
+source files, and code for generating automatic screen captures, is licensed
+under the GNU/GPL version 2 and later license.
 
 
 FILE ORGANIZATION

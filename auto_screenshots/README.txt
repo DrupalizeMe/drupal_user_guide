@@ -1,6 +1,10 @@
 This module does not do anything directly. All it contains is tests that can be
-used to generate screen shots and (eventually, maybe?) a database dump and files
-directory so you can clone the demo site.
+used to generate screen capture images and (eventually, maybe?) a database dump
+and files directory so you can clone the demo site.
+
+A list of images that could not be automated, and therefore need to be generated
+manually, can be found in the source/en/images/README.txt file (under the main
+project directory).
 
 
 SETTING UP THE ENVIRONMENT
@@ -64,10 +68,11 @@ a particular language as follows:
   like 0x3200078. Or you can use the window name (if you can figure out what
   that would be).
 - The Y offset - how many pixels to offset the images, to get past all of the
-  Firefox toolbars in your Firefox window. It should be about 50 pixels per
-  line of toolbars you have visible.
+  Firefox toolbars in your Firefox window. A value of 128 seems to be about
+  right if you have the menu bar, tabs, URL bar, and bookmarks showing. If you
+  have fewer toolbars, use a smaller offset.
 - The timeout - how long to wait for the page to load before taking the
-  screenshot, in seconds. 1 is probably enough.
+  screenshot, in seconds. 2 is probably enough.
 
 4. The screen shot commands should appear below the form. Copy and paste them
    into a script, and run the script at the command line. Then close up all
@@ -80,6 +85,10 @@ page or start another test.
 NOTE 2: You may want to run just one screen shot command from the script to
 begin with, to see how it works, and then adjust the Y offset and timeout.
 
+NOTE 3: Some screenshots scroll the browser window. This may not work in a
+foolproof way, and assumes the browser width is set to about 1200 pixels wide,
+with normal text size settings.
+
 
 MORE DETAILS FOR THE CURIOUS
 ----------------------------
@@ -87,12 +96,10 @@ MORE DETAILS FOR THE CURIOUS
 You can look at the output before you make screen shots. There are links that
 say "Screen shot output", and below each one is a line like:
 
-SCREENSHOT filename.png 200 500 200 200 http://example.com/long_url_here
+SCREENSHOT filename.png http://example.com/long_url_here
 
-The numbers are the width, height, and offset x/y of the screen shot, relative
-to the browser window. The desired file name and URL where the output can be
-viewed are also given (this is the URL of the "Screen shot output" link in the
-line above).
+The desired file name and URL where the output can be viewed are given (this is
+the URL of the "Screen shot output" link in the line above).
 
 The Greasemonkey script finds these SCREENSHOT lines in the output, and
 parses them (along with the information you entered in the form) to make the

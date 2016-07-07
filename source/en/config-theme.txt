@@ -26,7 +26,7 @@ and to add a logo.
 . Under "Installed Themes" you will find "Bartik" as your "(default
 theme)". Under "Bartik (default theme)" click _Settings_.
 +
-//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Capture the "Installed themes" title along with the listing of the default theme.
+// Bartik section of admin/appearance.
 image:images/config-theme_bartik_settings.png["Default theme, Bartik",width="100%"]
 
 [start=3]
@@ -52,15 +52,15 @@ Note: When creating your own color selections you can use the color
 wheel to the right to select colors; the web color codes will be added for
 you.
 
-//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Edit color themes to match the farmer's market scenario and capture the updated settings along with the title "Color scheme"
+// Color settings section of admin/appearance/settings/bartik.
 image:images/config-theme_color_scheme.png["Updated color specifications in the core Bartik theme",width="100%"]
 
 [start=4]
 . Under "Logo Image Settings" uncheck the box next to "Use the default logo
 supplied by the theme."
 +
-//To create this image: download Drupal 8.0.0-beta13 and select "Appearance". Uncheck the "Use a different logo ..." box and upload the scenario image.
-image:images/config-theme_logo_upload.png["New logo in core Bartik theme settings",width="100%"]
+// Logo upload section of admin/appearance/settings/bartik.
+image:images/config-theme_logo_upload.png["New logo in core Bartik theme settings"]
 
 [start=5]
 . Under "Upload logo image" locate a logo file and upload to your site. Note:
@@ -79,13 +79,14 @@ changed on your site, click _Save configuration_ at the bottom of the Bartik
 theme is a "Preview" section that displays your website front page
 with the settings administered.
 +
-//To create this image: followed all above steps of updating colors and logo, then took a screen shot including the "Preview" title with example preview of front page with updated settings.
+// Preview section of admin/appearance/settings/bartik.
 image:images/config-theme_color_scheme_preview.png["core Bartik theme settings preview",width="100%"]
 
 [start=8]
 . Click _Return to site_ in the toolbar to verify that you have updated the
 core Bartik theme settings for your website.
 +
+// Home page after theme settings are finished.
 image:images/config-theme_final_result.png["Final result of editing the core Bartik theme settings - colors and logo",width="100%"]
 
 ==== Follow-on tasks

@@ -27,7 +27,8 @@ The About page content item must exist. See <<content-create>>.
 
 . Click _Edit_ for that page.
 +
-//To create this image: screen shot of admin/content page, line showing About page.
+// Content table from admin/content page, with a red border around the Edit
+// button for the About page.
 image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
 
 [start=4]
@@ -51,18 +52,16 @@ image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
   menu items will be shown before higher-weighted menu items) | -2
 |================================
 +
-// This screenshot was taken from a default Drupal Basic page node edit form.
-image:images/menu-link-from-content.png["Creating a menu link from
-within the content edit form",width="100%"]
+// Menu settings section of content editing page.
+image:images/menu-link-from-content.png["Creating a menu link from within the content edit form"]
 
 [start=7]
-. Click _Save and keep published_ to save the changes. Click _Return to site_ in
-the navigation bar to see the result, which could look like the picture below.
+. Click _Save and keep published_ to save the changes. Click _Home_ or _Return
+to site_ in the navigation bar to see the result, which could look like the
+picture below.
 +
-// This screenshot was taken from a default Drupal install with Bartik after
-// adding a link to the main menu.
-image:images/menu-link-from-content-result.png["Link has been added to the
-main menu",width="100%"]
+// Home page after adding About to the navigation.
+image:images/menu-link-from-content-result.png["Link has been added to the main menu",width="100%"]
 
 ==== Follow-on tasks
 

@@ -38,8 +38,8 @@ ready to be uninstalled.
 _Activity Tracker_) and click _Uninstall_ at the bottom of the page, as
 demonstrated in the following screenshot:
 
-//Login to your Drupal 8 site as an administrator and in the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ tab.
-image:images/config-uninstall_searchModUninstall.png["Uninstalling module",width="100%"]
+// Top part of admin/modules/uninstall, with Activity Tracker checked.
+image:images/config-uninstall_check-modules.png["Uninstalling module",width="100%"]
 
 [NOTE]
 =================
@@ -54,9 +54,8 @@ install its dependent module(s) and functionality.
 . Step 2 will prompt you to confirm the module uninstall request wherein click
 _Uninstall_, as demonstrated in the following screenshot:
 
-//Login to your Drupal 8 site as an administrator; then in the _Manage_
-//administrative menu, navigate to _Extend_ > _Uninstall_ tab, select _search_
-//module, and click _Uninstall_.
+// Uninstall confirmation screen, after checking Activity Tracker, History,
+// and Search modules from admin/modules/uninstall.
 image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
 
 ===== Using Drush
