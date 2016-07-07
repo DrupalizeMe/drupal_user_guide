@@ -6,10 +6,7 @@ use Drupal\Core\Site\Settings;
 use Drupal\simpletest\WebTestBase;
 
 /**
- * Base class for tests that build demo sites for User Guide and screenshots.
- *
- * See README.txt file in the module directory for more information about
- * making screenshots.
+ * Base class for tests that automate screenshots for the User Guide.
  *
  * To make a class for a new language:
  * - Extend this class.
@@ -17,16 +14,27 @@ use Drupal\simpletest\WebTestBase;
  *   target language. Note that most of the text should not contain
  *   ' characters, as this will result in an error when generating the screen
  *   shots.
+ *
+ * The HTML output for eachq screenshot is manipulated using JavaScript, so that
+ * it only shows a small area of the page, with the rest hidden. The script that
+ * captures the images then trims the images automatically down to the relevant
+ * area.
+ *
+ * See README.txt file in the module directory for instructions for making
+ * screenshot images from this test output.
  */
 abstract class UserGuideDemoTestBase extends WebTestBase {
 
   /**
-   * There is a screenshot of the Drupal Core download page for this release.
+   * Which Drupal Core software version to use for the downloading screenshots.
    */
   protected $latestRelease = '8.1.3';
 
   /**
    * Strings and other information to input into the demo site.
+   *
+   * This information is translated into other languages in the
+   * specific-language test classes.
    *
    * @var array
    */
@@ -119,7 +127,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Builds the entire demo site and makes screenshots.
    *
    * Note that the method name starts with "test" so that it will be detected
-   * as a "test" to run.
+   * as a "test" to run, in the specific-language classes.
    */
   public function testBuildDemoSite() {
     $this->drupalLogin($this->rootUser);
@@ -731,9 +739,16 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *   Name of the screen shot file.
    * @param string $body_addition
    *   Additional text to add into the HTML body tag. Example:
-   *   'onLoad="window.scroll(0,500);"'.
+   *   'onLoad="window.scroll(0,500);"'. This code should blank out irrelevant
+   *   portions of the page, so that the ImageMagick capture script can trim
+   *   the image automatically down to the right size.
    *
    * @see UserGuideDemoTestBase::showOnly()
+   * @see UserGuideDemoTestBase::hideArea()
+   * @see UserGuideDemoTestBase::setWidth()
+   * @see UserGuideDemoTestBase::setBodyColor()
+   * @see UserGuideDemoTestBase::removeScrollbars()
+   * @see UserGuideDemoTestBase::addBorder()
    */
   protected function setUpScreenShot($file, $body_addition = '') {
     $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getRawContent());
@@ -763,7 +778,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *
    * @return string
    *   jQuery code that will hide everything else on the page. Also puts a
-   *   white border around the page for trimming purposes.
+   *   white border around the page for trimming purposes. Note that everything
+   *   inside $selector is also shown, which may not be what you want.
+   *
+   * @see UserGuideDemoTestBase::hideArea()
    */
   protected function showOnly($selector, $border = FALSE) {
     // Hide everything.
@@ -788,6 +806,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *
    * @return string
    *   jQuery code that will hide this section of the page.
+   *
+   * @see UserGuideDemoTestBase::showOnly()
    */
   protected function hideArea($selector) {
     return "jQuery('" . $selector . "').hide(); ";
@@ -812,6 +832,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   /**
    * Creates jQuery code to set the body background color.
    *
+   * This is useful to aid in being able to trim the screenshot automatically.
+   * On some pages, non-white body background color may interfere with being
+   * able to trim the page effectively.
+   *
    * @param string $color
    *   (optional) Color to set. Defaults to white.
    *
@@ -824,6 +848,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
   /**
    * Creates jQuery code to omit scrollbars.
+   *
+   * This is useful to aid in being able to trim the screenshot automatically.
+   * On some pages, the scrollbars may interfere with the process.
    *
    * @return string
    *   jQuery code that will set the body to not overflow.
@@ -839,7 +866,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *   jQuery selector for the part of the page you want to add a border to.
    *   Single quotes must be escaped.
    * @param string $color
-   *   A hex color code starting with #. Defaults to a red color.
+   *   A hex color code starting with #. Defaults to the standard red color.
    * @param bool $remove_shadow
    *   (optional) TRUE to also remove the box shadow. Defaults to FALSE.
    *
