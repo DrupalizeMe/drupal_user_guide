@@ -6,8 +6,8 @@
 
 ==== Goal
 
-Change the _Recipe_ form to use a different widget to enter terms in the
-_Ingredients_ field.
+Change the Recipe form to use a different widget to enter terms in the
+Ingredients field.
 
 ==== Prerequisite knowledge
 
@@ -31,10 +31,10 @@ a more compact format.
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Content
 types_ (_admin/structure/types_). Then click _Manage form display_  on the
-dropdown button for the _Recipe_ content type. The _Manage form display_ page
+dropdown button for the Recipe content type. The _Manage form display_ page
 appears.
 
-. For the _Ingredients_ field select in the _Widget_ column the option
+. For the Ingredients field, select in the _Widget_ column the option
 _Autocomplete (Tags style)_.
 
 . Click _Save_.
@@ -44,8 +44,8 @@ image:images/structure-form-editing-manage-form.png["Manage the Recipe form",wid
 
 [start=5]
 . In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-_Recipe_ (_node/add/recipe_) to verify the changed behaviour of the content
-form. The _Ingredients_ field is now a single text field that accepts multiple
+Recipe (_node/add/recipe_) to verify the changed behaviour of the content
+form. The Ingredients field is now a single text field that accepts multiple
 values.
 +
 // For the image have a Recipe content type with Ingredients taxonomy field and add a Recipe node.
