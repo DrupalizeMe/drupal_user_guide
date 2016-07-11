@@ -9,7 +9,7 @@
 
 ==== Goal
 
-Configure which content is displayed as the front page of your website.
+Configure which content item is displayed as the front page of your website.
 
 //==== Prerequisite knowledge
 
@@ -23,17 +23,16 @@ exist. See <<content-create>>.
 . In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
 _Site information_ (_admin/config/system/site-information_).
 
-. Under the "FRONT PAGE" section, replace "/node" with the name of your page you
-would like to make the home page. To use the Home page that was previously
-created, type its path "/home" in the field and click _Save configuration_ at
-the bottom of the page.
+. Under _Front Page_, replace _/node_ with the name of the page you
+would like to make the home page. To use the home page that was previously
+created, provide its path _/home_. Click _Save configuration_.
 +
 // Front page section of admin/config/system/site-information.
 image:images/menu-home_new_text_field.png["'FRONT PAGE' area with /home in text field"]
 
 [start=3]
-. Navigate to the site home page to verify that you have identified content for
-your front page (home page).
+. Navigate to the home page to verify that it displays content as configured by
+you.
 +
 // Site front page after configuring it to point to the Home content item.
 image:images/menu-home_final.png["'FRONT PAGE' with 'Home' (Basic page) content added",width="100%"]
