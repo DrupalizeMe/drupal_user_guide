@@ -30,7 +30,7 @@ The Recipe content type must exist. See <<structure-content-type>>.
 already exist on your site. Initially there might be a Tags vocabulary in the
 list which is created with a Standard installation.
 +
-//Screenshot of admin/structure/taxonomy page
+// Taxonomy list page (admin/structure/taxonomy).
 image:images/structure-taxonomy-setup-taxonomy-page.png["taxonomy list page",width="100%"]
 
 [start=2]
@@ -43,21 +43,23 @@ image:images/structure-taxonomy-setup-taxonomy-page.png["taxonomy list page",wid
 | Description | A brief note about the vocabulary | (Leave blank)
 |================================
 +
-//Screenshot of admin/structure/taxonomy/add page
+// Add Ingredients vocabulary from admin/structure/taxonomy/add.
 image:images/structure-taxonomy-setup-add-vocabulary.png["taxonomy add Ingredients",width="100%"]
 
 [start=3]
 . Click _Save_. You will be taken to the _Ingredients_ page, which shows a list
 of all the terms in this vocabulary.
 +
-//Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
-image:images/structure-taxonomy-setup-vocabulary-overview.png["Ingredients taxonomy Term listing",width="100%"]
+// Ingredients vocabulary page
+// (admin/structure/taxonomy/manage/ingredients/overview).
+image:images/structure-taxonomy-setup-vocabulary-overview.png["Ingredients taxonomy term listing",width="100%"]
 
 [start=4]
 . At this point you can add some terms to your Ingredients vocabulary, by
 clicking _Add term_. Enter "Butter" in the _Name_ field. Click _Save_.
 +
-//Screenshot of admin/structure/taxonomy/manage/ingredients/overview page
+// Name portion of Add term page
+// (admin/structure/taxonomy/manage/ingredients/add).
 image:images/structure-taxonomy-setup-add-term.png["Add term page",width="100%"]
 
 [start=5]
@@ -78,8 +80,8 @@ continue_.
 | Label | The title to give the field | Ingredients
 |================================
 +
-//Screenshot admin/structure/types/manage/recipes/fields/add-field page
-image:images/structure-taxonomy-setup-add-field.png["Add field to Content type Ingredients",width="100%"]
+// Add field page to add Ingredients taxonomy reference field.
+image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
 
 [start=8]
 . On the following configuration screen, enter the values from the table below.
@@ -92,8 +94,8 @@ Click _Save field settings_.
 | Allowed number of values | The number of values a user can enter | Unlimited
 |================================
 +
-//Screenshot of admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients/storage?
-image:images/structure-taxonomy-setup-field-settings.png["add ingredient field settings to unlimited",width="100%"]
+// Field storage settings page for Ingredients field.
+image:images/structure-taxonomy-setup-field-settings.png["Field storage settings for Ingredients field"]
 
 [start=9]
 . On the following configuration screen, enter the values from the table below
@@ -108,7 +110,7 @@ for the fields, near the top and under _Reference type_. Click _Save settings_.
 | Create referenced entities if they don't already exist | Whether new ingredient terms can be created from the content editing form | Checked
 |================================
 +
-//Screenshot /admin/structure/types/manage/recipes/fields/node.recipes.field_ingredients
+// Reference type section of field settings page for Ingredients field.
 image:images/structure-taxonomy-setup-field-settings-2.png["reference type field settings",width="100%"]
 
 [start=10]
@@ -116,8 +118,8 @@ image:images/structure-taxonomy-setup-field-settings-2.png["reference type field
 message will be displayed saying that the configuration for Ingredients is
 complete.
 +
-//Screenshot admin/structure/types/manage/recipe/fields/add-field
-image:images/structure-taxonomy-setup-finished.png["manage fields summary page",width="100%"]
+// Manage fields page showing Ingredients field on Recipe content type.
+image:images/structure-taxonomy-setup-finished.png["Manage fields page for Recipe content type",width="100%"]
 
 // ==== Follow-on tasks
 

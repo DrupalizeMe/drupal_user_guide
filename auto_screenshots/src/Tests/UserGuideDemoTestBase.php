@@ -50,6 +50,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'site_default_country' => 'US',
     'date_default_timezone' => 'America/Los_Angeles',
 
+    // General note about machine names: All machine names must contain only
+    // lower-case letters, numbers, and underscores. They should be lower-case,
+    // ASCII version of the human-readable names from the line above. In an
+    // interactive environment, these names will be created automatically, but
+    // in this test, we have to supply them manually. Also be careful about
+    // the directory names for image uploads, and URL paths.
+
     // Home page content item.
     'home_title' => 'Home',
     'home_body' => "<p>Welcome to City Market - your neighborhood farmers market!</p>\n<p>Open: Sundays, 9 AM to 2 PM, April to September</p>\n<p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>",
@@ -65,36 +72,40 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Vendor content type settings.
     'vendor_type_name' => 'Vendor',
+    'vendor_type_machine_name' => 'vendor',
     'vendor_type_description' => 'Information about a vendor',
     'vendor_type_title_label' => 'Vendor name',
     'vendor_field_url_label' => 'Vendor URL',
+    'vendor_field_url_machine_name' => 'vendor_url',
     'vendor_field_image_label' => 'Main image',
+    'vendor_field_image_machine_name' => 'main_image',
     'vendor_field_image_directory' => 'vendors',
 
     // Vendor 1 content item.
     'vendor_1_title' => 'Happy Farm',
     'vendor_1_path' => '/vendors/happy_farm',
     'vendor_1_summary' => 'Happy Farm grows vegetables that you will love.',
-    'vendor_1_body' => '<p>Happy Farm grows vegetables that you will love.</p>\n
-<p>We grow tomatoes, carrots, and beets, as well as a variety of salad greens.</p>',
+    'vendor_1_body' => '<p>Happy Farm grows vegetables that you will love.</p><p>We grow tomatoes, carrots, and beets, as well as a variety of salad greens.</p>',
     'vendor_1_url' => 'http://happyfarm.com',
 
     // Vendor 2 content item.
     'vendor_2_title' => 'Sweet Honey',
     'vendor_2_path' => '/vendors/sweet_honey',
     'vendor_2_summary' => 'Sweet Honey produces honey in a variety of flavors throughout the year.',
-    'vendor_2_body' => '<p>Sweet Honey produces honey in a variety of flavors throughout the year.</p>\n<p>Our varieties include clover, apple blossom, and strawberry.</p>',
+    'vendor_2_body' => '<p>Sweet Honey produces honey in a variety of flavors throughout the year.</p><p>Our varieties include clover, apple blossom, and strawberry.</p>',
     'vendor_2_url' => 'http://sweethoney.com',
 
     // Recipe content type settings.
     'recipe_type_name' => 'Recipe',
+    'recipe_type_machine_name' => 'recipe',
     'recipe_type_description' => 'Recipe submitted by a vendor',
     'recipe_type_title_label' => 'Recipe name',
-    'recipe_field_image_label' => 'Main image',
     'recipe_field_image_directory' => 'recipes',
     'recipe_field_ingredients_label' => 'Ingredients',
+    'recipe_field_ingredients_machine_name' => 'ingredients',
     'recipe_field_ingredients_help' => 'Enter ingredients that site visitors might want to search for',
-    'recipe_field_submitted_label' => 'Submitted By',
+    'recipe_field_submitted_label' => 'Submitted by',
+    'recipe_field_submitted_machine_name' => 'submitted_by',
     'recipe_field_submitted_help' => 'Choose the vendor that submitted this recipe',
 
     // Recipe ingredients terms added.
@@ -167,7 +178,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Top navigation bar on any admin page, with Manage menu showing.
     // This same screenshot is also config-overview-toolbar.png in the
     // config-overview topic.
-    $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content') . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 960) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // System section of admin/config page.
     $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.layout-column:odd .panel:first') . '"');
@@ -192,7 +203,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/config');
     // Top navigation bar on any admin page, with Manage menu showing.
     // Same as preface-conventions-top-menu.png defined earlier.
-    $this->setUpScreenShot('config-overview-toolbar.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content') . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('config-overview-toolbar.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 960) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // The vertical orientation navigation screenshot could not be
     // successfully reproduced, unfortunately -- the buttons didn't show up.
@@ -298,22 +309,24 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/block/demo/bartik');
     // Bartik theme region preview at admin/structure/block/demo/bartik,
     // after configuring the theme for the Farmers Market scenario.
-    $this->setUpScreenShot('block-regions-bartik.png', 'onLoad="' . $this->showOnly('#page-wrapper') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('block-regions-bartik.png', 'onLoad="' . 'window.scroll(0,5000);' . $this->showOnly('#page-wrapper') . $this->removeScrollbars() . '"');
 
     // Back to screen shot: config-overview-pencils.jpg.
-    // Home page with pencil icons showing, with configured theme.
     $this->drupalGet('<front>');
-    $this->setUpScreenShot('config-overview-pencils.png', 'onLoad="' . $this->hideArea('footer') . $this->removeScrollbars() . $this->setBodyColor() . 'jQuery(\'.contextual\').show();' . '"');
+    // This screen shot has been problematic. The pencil buttons are present,
+    // but are turned off with some built-in JavaScript. To turn them back on,
+    // there is a race condition. I found that if I forced the page to reload
+    // once, it worked more reliably. Also note that unlike some other images,
+    // we do want the toolbar in this screenshot, because that shows the toggle
+    // button.
+    // Home page with pencil icons showing, with configured theme.
+    $this->setUpScreenShot('config-overview-pencils.png', 'onLoad="' . $this->reloadOnce() . $this->hideArea('footer') . $this->removeScrollbars() . $this->setBodyColor() . 'jQuery(\'.contextual button\').removeClass(\'visually-hidden\');' . '"');
 
     // Topic: content-create - Creating a Content Item
     // Create a Home page.
     $this->drupalGet('node/add/page');
-    // General note: I could not get jQuery to fill in the text in
-    // any textarea fields, using a variety of methods. So I think we will
-    // need to live without these, alas! Also, some of the fields are
-    // transformed after page load into editors, which competes with our basic
-    // JavaScript.
-    // Hm, .append seems to work...2
+    // General note: Filling in textarea fields -- use .append() in jQuery.
+    // However, this does not work with ckeditor fields.
     // Partly filled-in node/add/page, with Summary section open.
     $this->setUpScreenShot('content-create-create-basic-page.png', 'onLoad="jQuery(\'#edit-title-0-value\').val(\'' . $this->demoInput['home_title'] . '\'); jQuery(\'#edit-path-settings, #edit-path-settings .details-wrapper\').show(); jQuery(\'#edit-path-0-alias\').val(\'' . $this->demoInput['home_path'] . '\');' . $this->hideArea('#toolbar-administration') . 'jQuery(\'.link-edit-summary\').click(); jQuery(\'.form-item-body-0-summary\').show();' . 'jQuery(\'#edit-body-0-summary\').append(\'' . $this->demoInput['home_summary'] . '\');' . '"');
     $this->drupalPostForm(NULL, [
@@ -392,7 +405,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Simulating dragging on the ordering screen is a bit complex.
     // Menu links section of admin/structure/menu/manage/main, after
     // changing the order.
-    $this->setUpScreenShot('menu-reorder_reorder.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .form-type-textfield') . 'jQuery(\'table\').before(\'<div style=&quot;display: block; width: 600px;&quot; class=&quot;tabledrag-changed-warning messages messages--warning&quot; role=&quot;alert&quot;><abbr class=&quot;warning tabledrag-changed&quot;>*</abbr>' . $this->callT('You have unsaved changes.') . '</div>\');' . 'var r = jQuery(\'table tbody tr:last\').detach(); jQuery(\'table tbody\').prepend(r); jQuery(\'table tbody tr:first\').toggleClass(\'drag-previous\');' . $this->setWidth('table') . '"');
+    $this->setUpScreenShot('menu-reorder_reorder.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .form-type-textfield, .tabledrag-toggle-weight-wrapper') . 'jQuery(\'table\').before(\'<div style=&quot;display: block; width: 600px;&quot; class=&quot;tabledrag-changed-warning messages messages--warning&quot; role=&quot;alert&quot;><abbr class=&quot;warning tabledrag-changed&quot;>*</abbr>' . $this->callT('You have unsaved changes.') . '</div>\');' . 'var r = jQuery(\'table tbody tr:last\').detach(); jQuery(\'table tbody\').prepend(r); jQuery(\'table tbody tr:first\').toggleClass(\'drag-previous\');' . $this->setWidth('table') . '"');
 
     // Actually figuring out what to submit on the editing page is difficult,
     // because the field name has some config hash in it. So instead, to make
@@ -406,25 +419,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Header section of Home page with reordered menu items.
     $this->setUpScreenShot('menu-reorder_final_order.png', 'onLoad="' . $this->showOnly('header') . $this->hideArea('.visually-hidden, .contextual, .menu-toggle') . $this->setWidth('header') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
-    // @todo Continue with JavaScript stuff from here...
-
-    // Topic: structure-content-type - Adding a Content Type
+    // Topic: structure-content-type - Adding a Content Type.
     // Create the Vendor content type.
-    $this->drupalGet('admin/structure/types');
+
     $this->drupalGet('admin/structure/types/add');
-    // For this one, get the Name and Description fields, and the top of page.
-    $this->setUpScreenShot('structure-content-type-add.png');
-    // For this one, get just the Submission form settings section.
-    $this->setUpScreenShot('structure-content-type-add-submission-form-settings.png');
-    // For this one, expand Publishing options and check boxes.
-    $this->setUpScreenShot('structure-content-type-add-Publishing-Options.png', 'onLoad="jQuery(\'#edit-workflow .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(1)).toggleClass(\'is-selected\');" jQuery(\'#edit-options-promote\').attr(\'checked\', 0); jQuery(\'#edit-options-revision\').attr(\'checked\', 1);');
-    // For this one, expand Display settings and uncheck boxes.
-    $this->setUpScreenShot('structure-content-type-add-Display-Settings.png', 'onLoad="jQuery(\'#edit-display .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(2)).toggleClass(\'is-selected\');" jQuery(\'#edit-display-submitted\').attr(\'checked\', 0);');
-    // For this one, expand Menu settings and uncheck boxes.
-    $this->setUpScreenShot('structure-content-type-add-Menu-Settings.png', 'onLoad="jQuery(\'#edit-menu .details-wrapper).show(); jQuery(\'.vertical-tabs li:eq(0)).toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(3)).toggleClass(\'is-selected\');" jQuery(\'#edit-menu-options-main\').attr(\'checked\', 0);');
+
+    // We will be using this content type everywhere. Keep track of the
+    // machine name in a local variable (will be doing the same for other
+    // field and content type and view machine names).
+    $vendor = $this->demoInput['vendor_type_machine_name'];
+    $vendor_hyphens = str_replace('_', '-', $vendor);
+
+    // This screenshot, and others where we want the machine name to show,
+    // have a race condition. Try reloading the page once.
+    // Top of admin/structure/types/add, with Name and Description fields.
+    $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(\'' . $this->demoInput['vendor_type_name'] . '\'); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').change(); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
 
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['vendor_type_name'],
+        'type' => $vendor,
         'description' => $this->demoInput['vendor_type_description'],
         'title_label' => $this->demoInput['vendor_type_title_label'],
         'options[promote]' => FALSE,
@@ -432,14 +445,28 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'display_submitted' => FALSE,
         'menu_options[main]' => FALSE,
       ], $this->callT('Save and manage fields'));
-    $this->setUpScreenShot('structure-content-type-add-confirmation.png');
+    // Manage fields page after adding Vendor content type.
+    $this->setUpScreenShot('structure-content-type-add-confirmation.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
 
-    // Final task for structure-content-type - Add content type for Recipe.
-    // No screen shots.
-    $this->drupalGet('admin/structure/types');
+    // Go back to editing the content type to make screenshots with the
+    // right values in the form.
+    $this->drupalGet('admin/structure/types/manage/' . $vendor);
+    // Submission form settings section of admin/structure/types/add.
+    $this->setUpScreenShot('structure-content-type-add-submission-form-settings.png', 'onLoad="' . $this->setWidth('.layout-container') . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .form-item-name, .form-item-description, #edit-actions') . '"');
+    // Publishing settings section of admin/structure/types/add.
+    $this->setUpScreenShot('structure-content-type-add-Publishing-Options.png', 'onLoad="jQuery(\'#edit-workflow\').show(); jQuery(\'.vertical-tabs li:eq(0)\').toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(1)\').toggleClass(\'is-selected\'); ' . $this->setWidth('.layout-container') . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .form-item-name, .form-item-description, #edit-submission, #edit-actions') . '"');
+    // Display settings section of admin/structure/types/add.
+    $this->setUpScreenShot('structure-content-type-add-Display-settings.png', 'onLoad="jQuery(\'#edit-display\').show(); jQuery(\'.vertical-tabs li:eq(0)\').toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(2)\').toggleClass(\'is-selected\'); '. $this->setWidth('.layout-container') . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .form-item-name, .form-item-description, #edit-submission, #edit-actions') . '"');
+    // Menu settings section of admin/structure/types/add.
+    $this->setUpScreenShot('structure-content-type-add-Menu-settings.png', 'onLoad="jQuery(\'#edit-menu\').show(); jQuery(\'.vertical-tabs li:eq(0)\').toggleClass(\'is-selected\'); jQuery(\'.vertical-tabs li:eq(3)\').toggleClass(\'is-selected\'); ' . $this->setWidth('.layout-container') . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .form-item-name, .form-item-description, #edit-submission, #edit-actions') . '"');
+
+    // Add content type for Recipe. No screen shots.
     $this->drupalGet('admin/structure/types/add');
+    $recipe = $this->demoInput['recipe_type_machine_name'];
+    $recipe_hyphens = str_replace('_', '-', $recipe);
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['recipe_type_name'],
+        'type' => $recipe,
         'description' => $this->demoInput['recipe_type_description'],
         'title_label' => $this->demoInput['recipe_type_title_label'],
         'options[promote]' => FALSE,
@@ -447,27 +474,34 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'menu_options[main]' => FALSE,
       ], $this->callT('Save and manage fields'));
 
-
     // Topic: structure-content-type-delete - Deleting a Content Type
     // Delete the Article content type.
     $this->drupalGet('admin/structure/types');
-    $this->setUpScreenShot('structure-content-type-delete-dropdown.png', 'onLoad="jQuery(\'tr.odd .dropbutton-toggle button\').click();');
+    // Content types list on admin/structure/types, with operations dropdown
+    // for Article content type expanded.
+    $this->setUpScreenShot('structure-content-type-delete-dropdown.png', 'onLoad="jQuery(&quot;a[href*=\'article/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . '"');
 
     $this->drupalGet('admin/structure/types/manage/article/delete');
-    $this->setUpScreenShot('structure-content-type-delete-confirmation.png');
-
+    // Confirmation page for deleting Article content type.
+    $this->setUpScreenShot('structure-content-type-delete-confirmation.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Delete'));
-    $this->setUpScreenShot('structure-content-type-delete-confirm.png');
+    // Confirmation message after deleting Article content type.
+    $this->setUpScreenShot('structure-content-type-delete-confirm.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 600) . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
     // Topic: structure-fields - Adding basic fields to a content type.
     // Add Vendor URL field to Vendor content type.
-    $this->drupalGet('admin/structure/types/manage/vendor/fields/add-field');
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
+    $vendor_url = $this->demoInput['vendor_field_url_machine_name'];
+
     // Fill in the form in the screenshot: choose Link for field type and
-    // type in Vendor URL for the Label.
-    $this->setUpScreenShot('structure-fields-add-field.png', 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'link\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendor_field_url_label'] . '\');');
+    // type in Vendor URL for the Label, triggering the "change" event to set
+    // up the machine name.
+    // Initial page for admin/structure/types/manage/vendor/fields/add-field.
+    $this->setUpScreenShot('structure-fields-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'link\'); jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendor_field_url_label'] . '\'); jQuery(\'#edit-label\').change(); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper input, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'link',
         'label' => $this->demoInput['vendor_field_url_label'],
+        'field_name' => $vendor_url,
       ], $this->callT('Save and continue'));
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
     $this->drupalPostForm(NULL, [
@@ -475,14 +509,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'settings[title]' => 0,
       ], $this->callT('Save settings'));
     // To make the screen shot, go back to the edit form for this field.
-    $this->drupalGet('admin/structure/types/manage/vendor/fields/node.vendor.field_vendor_url');
-    $this->setUpScreenShot('structure-fields-vendor-url.png');
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/node.' . $vendor . '.field_' . $vendor_url);
+    // Field settings page for adding vendor URL field.
+    $this->setUpScreenShot('structure-fields-vendor-url.png', 'onLoad="window.scroll(0,100); ' . $this->hideArea('#toolbar-administration, #edit-actions') . $this->removeScrollbars() . '"');
 
     // Add Main Image field to Vendor content type.
-    $this->drupalGet('admin/structure/types/manage/vendor/fields/add-field');
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
+    $main_image = $this->demoInput['vendor_field_image_machine_name'];
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'image',
         'label' => $this->demoInput['vendor_field_image_label'],
+        'field_name' => $main_image,
       ], $this->callT('Save and continue'));
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
     $this->drupalPostForm(NULL, [
@@ -492,15 +529,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'settings[min_resolution][y]' => 600,
         'settings[max_filesize]' => '5 MB',
       ], $this->callT('Save settings'));
-    $this->setUpScreenShot('structure-fields-result.png');
-    // To make the screen shot, go back to the edit form for this field.
-    $this->drupalGet('admin/structure/types/manage/vendor/fields/node.vendor.field_main_image');
-    $this->setUpScreenShot('structure-fields-main-img.png');
+    // Manage fields page for Vendor, showing two new fields.
+    $this->setUpScreenShot('structure-fields-result.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . '"');
+
+    // To make the settings screen shot, go back to the edit form for this
+    // field.
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/node.' . $vendor . '.field_' . $main_image);
+    // Field settings page for adding main image field.
+    $this->setUpScreenShot('structure-fields-main-img.png', 'onLoad="window.scroll(0,100); ' . $this->hideArea('#toolbar-administration, #edit-actions') . $this->removeScrollbars() . '"');
     // Add the main image field to Recipe. No screenshots.
-    $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
     $this->drupalPostForm(NULL, [
-        'existing_storage_name' => 'field_main_image',
-        'label' => $this->demoInput['recipe_field_image_label'],
+        'existing_storage_name' => 'field_' . $main_image,
+        'existing_storage_label' => $this->demoInput['vendor_field_image_label'],
       ], $this->callT('Save and continue'));
     $this->drupalPostForm(NULL, [
         'required' => 1,
@@ -511,23 +552,33 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save settings'));
 
     // Create two Vendor content items. No screenshots.
-    $this->drupalGet('node/add/vendor');
+    $this->drupalGet('node/add/' . $vendor);
+    // Submit once.
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['vendor_1_title'],
-        'files[field_main_image_0]' => $assets_directory . 'farm.jpg',
+        'files[field_' . $main_image . '_0]' => $assets_directory . 'farm.jpg',
         'body[0][summary]' => $this->demoInput['vendor_1_summary'],
         'body[0][value]' => $this->demoInput['vendor_1_body'],
         'path[0][alias]' => $this->demoInput['vendor_1_path'],
-        'field_vendor_url[0][uri]' => $this->demoInput['vendor_1_url'],
+        'field_' . $vendor_url . '[0][uri]' => $this->demoInput['vendor_1_url'],
       ], $this->callT('Save and publish'));
-    $this->drupalGet('node/add/vendor');
+    // This will cause an error about missing alt text. Submit again with the
+    // alt text defined.
+    $this->drupalPostForm(NULL, [
+        'field_' . $main_image . '[0][alt]' => $this->demoInput['vendor_1_title'],
+      ], $this->callT('Save and publish'));
+
+    $this->drupalGet('node/add/' . $vendor);
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['vendor_2_title'],
-        'files[field_main_image_0]' => $assets_directory . 'honey_bee.jpg',
+        'files[field_' . $main_image . '_0]' => $assets_directory . 'honey_bee.jpg',
         'body[0][summary]' => $this->demoInput['vendor_2_summary'],
         'body[0][value]' => $this->demoInput['vendor_2_body'],
         'path[0][alias]' => $this->demoInput['vendor_2_path'],
-        'field_vendor_url[0][uri]' => $this->demoInput['vendor_2_url'],
+        'field_' . $vendor_url . '[0][uri]' => $this->demoInput['vendor_2_url'],
+      ], $this->callT('Save and publish'));
+    $this->drupalPostForm(NULL, [
+        'field_' . $main_image . '[0][alt]' => $this->demoInput['vendor_2_title'],
       ], $this->callT('Save and publish'));
 
     // The next topic with screenshots is structure-taxonomy, but the
@@ -535,80 +586,101 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: structure-taxonomy-setup - Setting Up a Taxonomy.
     $this->drupalGet('admin/structure/taxonomy');
-    $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png');
+    // Taxonomy list page (admin/structure/taxonomy).
+    $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container', 800) . '"');
     // Add Ingredients taxonomy vocabulary.
     $this->drupalGet('admin/structure/taxonomy/add');
-    // Fill in the form in the screenshot, with the vocabulary name.
-    $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', 'onLoad="jQuery(\'#edit-name\').val(\'' . $this->demoInput['recipe-field-ingredients-label'] . '\');');
+    // Add Ingredients vocabulary from admin/structure/taxonomy/add.
+    $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', 'onLoad="jQuery(\'#edit-name\').val(\'' . $this->demoInput['recipe_field_ingredients_label'] . '\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
+    $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
     $this->drupalPostForm(NULL, [
-        'name' => $this->demoInput['recipe-field-ingredients-label'],
+        'name' => $this->demoInput['recipe_field_ingredients_label'],
+        'vid' => $ingredients,
       ], $this->callT('Save'));
-    $this->setUpScreenShot('structure-taxonomy-setup-vocabulary-overview.png');
+    // Ingredients vocabulary page
+    // (admin/structure/taxonomy/manage/ingredients/overview).
+    $this->setUpScreenShot('structure-taxonomy-setup-vocabulary-overview.png' , 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container', 800) . '"');
     // Add 3 sample terms.
-    $this->drupalGet('admin/structure/taxonomy/manage/ingredients/add');
+    $this->drupalGet('admin/structure/taxonomy/manage/' . $ingredients . '/add');
     // Fill in the form in the screenshot, with the term name Butter.
-    $this->setUpScreenShot('structure-taxonomy-setup-add-term.png', 'onLoad="jQuery(\'#edit-name-0-value\').val(\'' . $this->demoInput['recipe-field-ingredients-term_1'] . '\');');
+    // Name portion of Add term page
+    // (admin/structure/taxonomy/manage/ingredients/add).
+    $this->setUpScreenShot('structure-taxonomy-setup-add-term.png', 'onLoad="jQuery(\'#edit-name-0-value\').val(\'' . $this->demoInput['recipe_field_ingredients_term_1'] . '\');' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . $this->setWidth('header, .layout-container', 800) . '"');
+
     // Add the rest of the terms, with no screenshots.
     $this->drupalPostForm(NULL, [
-        'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_1'],
+        'name[0][value]' => $this->demoInput['recipe_field_ingredients_term_1'],
       ], $this->callT('Save'));
     $this->drupalPostForm(NULL, [
-        'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_2'],
+        'name[0][value]' => $this->demoInput['recipe_field_ingredients_term_2'],
       ], $this->callT('Save'));
     $this->drupalPostForm(NULL, [
-        'name[0][value]' => $this->demoInput['recipe-field-ingredients-term_3'],
+        'name[0][value]' => $this->demoInput['recipe_field_ingredients_term_3'],
       ], $this->callT('Save'));
 
     // Add the Ingredients field to Recipe content type.
-    $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
     // Fill in the form in the screenshot: choose Taxonomy term for field type
     // and type in Ingredients for the Label.
-    $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_ingredients_label'] . '\');');
+    // Add field page to add Ingredients taxonomy reference field.
+    $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_ingredients_label'] . '\');  jQuery(\'#edit-label\').change(); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:taxonomy_term',
         'label' => $this->demoInput['recipe_field_ingredients_label'],
+        'field_name' => $ingredients,
       ], $this->callT('Save and continue'));
     $this->drupalPostForm(NULL, [
         'cardinality' => '-1',
       ], $this->callT('Save field settings'));
     $this->drupalPostForm(NULL, [
         'description' => $this->demoInput['recipe_field_ingredients_help'],
-        'settings[handler_settings][target_bundles][ingredients]' => 1,
+        'settings[handler_settings][target_bundles][' . $ingredients . ']' => 1,
         'settings[handler_settings][auto_create]' => 1,
       ], $this->callT('Save settings'));
-    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-finished.png');
+    // Manage fields page showing Ingredients field on Recipe content type.
+    $this->setUpScreenShot('structure-taxonomy-setup-finished.png', 'onLoad="' .  $this->hideArea('#toolbar-administration') . '"');
+
     // Go back and edit the field settings to make the next screenshot,
     // scrolling to the bottom.
-    $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_ingredients');
-    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-2.png', 'onLoad="window.scroll(0,2000);"');
-    // And make the other screenshot from the edit settings page.
-    $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_ingredients/storage');
-    $this->setUpScreenShot('structure-taxonomy-setup-field-settings.png');
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/node.' . $recipe . '.field_' . $ingredients);
+    // Reference type section of field settings page for Ingredients field.
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings-2.png', 'onLoad="window.scroll(0,2000);' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb') . 'jQuery(\'#edit-default-value-input\').removeAttr(\'open\')' . '"');
+
+    // Make the other screenshot from the edit settings page.
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/node.' . $recipe . '.field_' . $ingredients . '/storage');
+    // Field storage settings page for Ingredients field.
+    $this->setUpScreenShot('structure-taxonomy-setup-field-settings.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb') . $this->setWidth('.page-content') . '"');
 
     // Topic: structure-adding-reference - Adding a reference field.
-    // Add the Submitted By field to Recipe content type.
-    $this->drupalGet('admin/structure/types/manage/recipe/fields/add-field');
+    // Add the Submitted by field to Recipe content type.
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
+    $submitted_by = $this->demoInput['recipe_field_submitted_machine_name'];
+
     // Fill in the form in the screenshot: choose content reference for
-    // field type and type in Submitted By for the Label.
-    $this->setUpScreenShot('structure-adding-reference-add-field.png', 'onLoad="jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#new-storage-wrapper\').show(); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_submitted_label'] . '\');');
+    // field type and type in Submitted by for the Label.
+    // Add field page for adding a Submitted by field to Recipe.
+    $this->setUpScreenShot('structure-adding-reference-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#edit-label\').val(\'' . $this->demoInput['recipe_field_submitted_label'] . '\'); jQuery(\'#edit-label\').change(); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:node',
         'label' => $this->demoInput['recipe_field_submitted_label'],
+        'field_name' => $submitted_by,
       ], $this->callT('Save and continue'));
-    $this->setUpScreenshot('structure-adding-reference-set-field-basic.png');
+    // Field storage settings page for Submitted by field.
+    $this->setUpScreenshot('structure-adding-reference-set-field-basic.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container') . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
     $this->drupalPostForm(NULL, [
         'description' => $this->demoInput['recipe_field_submitted_help'],
         'required' => 1,
-        'settings[handler_settings][target_bundles][vendor]' => 1,
+        'settings[handler_settings][target_bundles][' . $vendor . ']' => 1,
         'settings[handler_settings][sort][field]' => 'title',
       ], $this->callT('Save settings'));
-    $this->setUpScreenShot('structure-adding-reference-set-field-detailed.png');
+    // Manage fields page for content type Recipe.
+    $this->setUpScreenShot('structure-adding-reference-manage-fields.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . '"');
     // Go back and edit the field settings to make the next screenshot,
     // scrolling to the bottom.
-    $this->drupalGet('admin/structure/types/manage/recipe/fields/node.recipe.field_submitted_by');
-    $this->setUpScreenShot('structure-adding-reference-content-type.png', 'onLoad="window.scroll(0,2000);"');
-
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/node.' . $recipe . '.field_' . $submitted_by);
+    // Field settings page for Submitted by field.
+    $this->setUpScreenShot('structure-adding-reference-field-settings.png', 'onLoad="window.scroll(0,2000);' . $this->hideArea('#toolbar-administration') . '"');
 
     // @todo Ready to add more topics here!
 
@@ -646,7 +718,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Simple screenshot of top section.
     $this->setUpScreenShot('language-content-config_custom.png');
     // For this screenshot, we need to check Content, and then under
-    // Article and Basic Page, click the Show language selector button. Also
+    // Basic Page, click the Show language selector button. Also
     // under Basic page, simulate expanding the drop-down for default language
     // by setting the 'size' attribute.
     $this->setUpScreenShot('language-content-config_content.png', 'onLoad="jQuery(\'#edit-entity-types-node\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', 1); jQuery(\'#edit-settings-node\').show(); jQuery(\'#edit-settings-node-article-settings-language-language-alterable\').attr(\'checked\', 1); jQuery(\'#edit-settings-node-page-settings-language-langcode\').attr(\'size\', 7);"');
@@ -857,6 +929,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    */
   protected function removeScrollbars() {
     return "jQuery('body').css('overflow', 'hidden');";
+  }
+
+
+  /**
+   * Creates JavaScript code to reload the page, exactly once.
+   *
+   * This is useful for race conditions on some pages between built-in Ajax
+   * and the added JavaScript code.
+   *
+   * @return string
+   *   JavaScript code that will cause the page to reload once.
+   */
+  protected function reloadOnce() {
+    return "if(window.location.href.substr(-2) !== '?r') window.location = window.location.href + '?r';";
   }
 
   /**

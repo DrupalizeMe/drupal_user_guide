@@ -53,7 +53,7 @@ function buildCommands() {
       cmds += 'firefox ' + info[2] + "\n";
       cmds += 'sleep ' + sleep_sec + "\n";
       cmds += 'import -window ' + window_id + " " + imageloc + "\n";
-      cmds += 'convert ' + imageloc + " -shave '0x" + offset_y + "'" +
+      cmds += 'convert ' + imageloc + " -chop '0x" + offset_y + "'" +
         " -trim +repage " + imageloc + "\n";
     }
   }
