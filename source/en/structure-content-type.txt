@@ -34,34 +34,34 @@ in the fields as shown below.
 |================================
 +
 // Top of admin/structure/types/add, with Name and Description fields.
-image:images/structure-content-type-add.png["Content type add"]
+image:images/structure-content-type-add.png["Adding a Content type"]
 
 [start=3]
-. In the vertical tab _Submission form settings_ you configure the form that is
+. In the vertical tab _Submission form settings_, configure the form that is
 used for creating and editing content of this type. Fill in the fields as shown
 below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
-| Title | Label of the Title field that is shown when editing or creating content of this type | Vendor name
+| Title | Label of the Title field that is shown when editing or creating content of this type. | Vendor name
 | Preview before submitting | Option to choose whether you should preview the content before submitting. | Optional
-| Explanation or submission guidelines | Instructions for creating or editing content | (Leave blank)
+| Explanation or submission guidelines | Instructions for creating or editing content. | (Leave blank)
 |================================
 +
 // Submission form settings section of admin/structure/types/add.
 image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
 
 [start=4]
-. In the vertical tab _Publishing options_ you decide on default options for new
+. In the vertical tab _Publishing options_, decide on default options for new
 content of this type. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
-| Published | Make the content item published by default | Checked
-| Promoted to front page | In a default website this setting can be used to show content on the homepage. In your website you will not use this option. | Unchecked
-| Sticky at the top of the list | In a default website this setting can be used to keep content on top of a list. In your website you will not use this option. | Unchecked
+| Published | Make the content item published by default. | Checked
+| Promoted to front page | In a default website, this setting can be used to show content on the homepage. | Unchecked
+| Sticky at the top of the list | In a default website, this setting can be used to keep content on top of a list. | Unchecked
 | Create new revision | Create a new revision each time the vendor is being edited. | Checked
 |================================
 +
@@ -72,33 +72,33 @@ created.
 image:images/structure-content-type-add-Publishing-Options.png["Publishing Options"]
 
 [start=5]
-. In the vertical tab _Display settings_ you decide if the author and
+. In the vertical tab _Display settings_, decide if the author and
 publication date will be visible in the content item. Fill in the fields as
 shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
-| Display author and date information | Display the author username and publication date on each vendor page | Unchecked
+| Display author and date information | Display the author username and publication date on each vendor page. | Unchecked
 |================================
 +
 // Display settings section of admin/structure/types/add.
 image:images/structure-content-type-add-Display-settings.png["Display settings"]
 
 [start=6]
-. In the vertical tab _Menu settings_ fill in the fields as shown below.
+. In the vertical tab _Menu settings_, fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation | Example value
-| Available menus | Menus that this type of content can be added to. Vendors do no need to appear in menus, so uncheck all menu options. | Unchecked
+| Available menus | Menus that this type of content can be added to. Vendors do not need to appear in menus, so uncheck all menu options. | Unchecked
 |================================
 +
 // Menu settings section of admin/structure/types/add.
 image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
 
 [start=7]
-. Click the _Save and manage fields_ button to save the content type. The
+. Click _Save and manage fields_ to save the content type. The
 _Manage fields_ page appears that allows you to add fields to the content
 type. See <<structure-fields>>
 +
@@ -123,7 +123,7 @@ for the fields in the forms, where they are different from the steps above:
 * <<structure-fields>>
 
 * Install and configure the https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content items get automatic nice URLs. See <<content-paths>> for more on
+so that content items get automatically generated URLs/path aliases. See <<content-paths>> for more on
 URLs within your site, <<extend-module-find>> for instructions on finding
 contributed modules, and <<extend-module-install>> for instructions on
 downloading and installing contributed modules.
