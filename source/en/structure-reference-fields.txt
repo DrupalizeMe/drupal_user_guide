@@ -20,34 +20,26 @@
 
 ==== What is a reference field?
 
-It is a field that represents a relationship between an entity and one or more
-other entities, which may belong to either the same entity type or a different
-type. The three most commonly-used types are:
+A _reference field_ is a field that represents a relationship between an entity
+and one or more other entities, which may belong to the same or different entity
+type. The three most commonly-used reference fields are:
 
 Content reference::
-  It provides a robust adds-on to entities that allows you to reference one or
-  more content items from another content item.
-  For example, you may want to display the vendor name (Submitted by
-  field in this case) against each of the recipes. This is where content
-  reference comes into action wherein you create Submitted by as the content
-  reference field that references to the content items that belong to Vendor
-  entity type.
+  A reference to a content item. For example, you might want to connect recipes
+  to the vendors who submitted them. You would set up a content reference field
+  called Submitted by referencing Vendor content items on the Recipe content
+  type.
 
 Taxonomy term reference::
-  Taxonomy term reference field allows you to reference one or more vocabulary
-  terms from any of the intended content items.
-  For instance, you may want to categorize your recipe contents based on
-  Ingredients that have been used for its preparation. In such scenario, you
-  need to create a taxonomy reference field that points to the vocabulary
-  Ingredients wherein you are allowed to associate your recipe content with
-  one or more taxonomy terms limited to the stated vocabulary.
+  A reference to a taxonomy term. For example, you might want to connect recipes
+  to their ingredients. You would set up a taxonomy term reference field called
+  Ingredients on the Recipe content type. This reference field will point to the
+  vocabulary Ingredients.
 
 User reference::
-  User reference field enables you to reference the associated user accounts to
-  the contents of a specific content type.
-  For instance, you may want to associate a recipe with one or more chefs who
-  gets credit for the delicious preparation. In such scenarios, you reference
-  these chefs' user accounts to the respective recipes.
+  A reference to a user account. For example, you might want to connect recipes
+  with their chefs. You would set up a user reference field called Chefs on the
+  Recipe content type.
 
 ==== Related topics
 
