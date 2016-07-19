@@ -26,17 +26,18 @@ to show to visitors. The result could be the description in
 <<preface-scenario>>.
 
 . For each identified piece of content, decide which content entity type would
-be the best fit for it. In doing this, you'll need to consider where and how
+be the best fit. In doing this, you'll need to consider where and how
 the content will be used and edited on the site. For example, in the farmers
 market site scenario, you might want to display the hours and location of the
 farmers market on the sidebar of every page. For that content, a single custom
 block makes sense. As another example, you might decide that pages displaying
 information about each vendor should be content items managed by the core Node
-module, because you want vendors to be able to edit their own listings, and
-the core Node module permission system lets you do this pretty easily. These
-decisions do not necessarily always have only one right answer; for instance,
-you could decide that vendor pages should be user profiles instead of content
-items, but if you did that the content would be tied to a specific user
+module, because you want vendors to be able to edit their own listings.
+The core Node module permission system lets you do this easily.
++
+These decisions do not necessarily always have only one right answer; for
+instance, you could decide that vendor pages should be user profiles instead of
+content items, but if you did that the content would be tied to a specific user
 account, and it would not be as easy to later change the ownership of a vendor
 page to a different user account.
 
@@ -65,7 +66,7 @@ content type needs an Ingredients field.
 . For each identified field on each entity subtype, identify what type of data
 it should contain (such as plain text, formatted text, a date, an image file,
 etc.), and how many values should be allowed. Most fields are
-single-valued, but for example a Recipe should allow for multiple values in
+single-valued, but for example, a Recipe should allow for multiple values in
 its Ingredients field.
 
 . Consider which fields would be best as references to taxonomy term entities:
