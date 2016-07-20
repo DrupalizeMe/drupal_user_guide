@@ -112,6 +112,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'recipe_field_ingredients_term_1' => 'Butter',
     'recipe_field_ingredients_term_2' => 'Eggs',
     'recipe_field_ingredients_term_3' => 'Milk',
+    'recipe_field_ingredients_term_4' => 'Carrots',
+
+    // Recipe 1 content item.
+    'recipe_1_title' => 'Green Salad',
+    'recipe_1_path' => '/recipes/green_salad',
+    'recipe_1_body' => 'Chop up your favorite vegetables and put them in a bowl.',
+    'recipe_1_ingredients' => 'Carrots, Lettuce, Tomatoes, Cucumbers',
+
+    // Recipe 2 content item.
+    'recipe_2_title' => 'Fresh Carrots',
+    'recipe_2_path' => '/recipes/carrots',
+    'recipe_2_body' => 'Serve multi-colored carrots on a plate for dinner.',
+    'recipe_2_ingredients' => 'Carrots',
+
   ];
 
   /**
@@ -525,7 +539,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'required' => 1,
         'settings[file_directory]' => $this->demoInput['vendor_field_image_directory'],
-        'settings[min_resolution][x]' => 800,
+        'settings[min_resolution][x]' => 600,
         'settings[min_resolution][y]' => 600,
         'settings[max_filesize]' => '5 MB',
       ], $this->callT('Save settings'));
@@ -546,7 +560,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'required' => 1,
         'settings[file_directory]' => $this->demoInput['recipe_field_image_directory'],
-        'settings[min_resolution][x]' => 800,
+        'settings[min_resolution][x]' => 600,
         'settings[min_resolution][y]' => 600,
         'settings[max_filesize]' => '5 MB',
       ], $this->callT('Save settings'));
@@ -617,6 +631,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'name[0][value]' => $this->demoInput['recipe_field_ingredients_term_3'],
       ], $this->callT('Save'));
+    $this->drupalPostForm(NULL, [
+        'name[0][value]' => $this->demoInput['recipe_field_ingredients_term_4'],
+      ], $this->callT('Save'));
 
     // Add the Ingredients field to Recipe content type.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
@@ -682,12 +699,69 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Field settings page for Submitted by field.
     $this->setUpScreenShot('structure-adding-reference-field-settings.png', 'onLoad="window.scroll(0,2000);' . $this->hideArea('#toolbar-administration') . '"');
 
-    // @todo Ready to add more topics here!
+    // Submit this form to set the sort direction to its default. It is not
+    // set properly in the earlier submit, leading to exceptions in a later
+    // test.
+    $this->drupalPostForm(NULL, [], $this->callT('Save settings'));
+
+    // Topic: structure-form-editing - Changing Content Entry Forms.
+
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/form-display');
+    // Manage form display page for Recipe, Ingredients field area, with
+    // Widget drop-down outlined.
+    // Note that ideally, the drop-down would be open, but this is not
+    // apparently possible using JavaScript.
+    $this->setUpScreenShot('structure-form-editing-manage-form.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help') . 'jQuery(\'#edit-fields-field-' . $ingredients . '-type\').val(\'entity_reference_autocomplete_tags\');' . $this->addBorder('#edit-fields-field-' . $ingredients . '-type') . $this->removeScrollbars() . '"');
+
+    // Set the Ingredients field to use tag-style autocomplete.
+    $this->drupalPostForm(NULL, [
+        'fields[field_' . $ingredients . '][type]' => 'entity_reference_autocomplete_tags',
+      ], $this->callT('Save'));
+
+    $this->drupalGet('node/add/' . $recipe);
+    // Create recipe page (node/add/recipe).
+    $this->setUpScreenShot('structure-form-editing-add-recipe.png', 'onLoad="window.scroll(0,100);' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+
+    // Create two Recipe content items. No screenshots.
+    $this->drupalGet('node/add/' . $recipe);
+    // Submit once.
+    $this->drupalPostForm(NULL, [
+        'title[0][value]' => $this->demoInput['recipe_1_title'],
+        'files[field_' . $main_image . '_0]' => $assets_directory . 'salad.jpg',
+        'body[0][value]' => $this->demoInput['recipe_1_body'],
+        'path[0][alias]' => $this->demoInput['recipe_1_path'],
+        'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_1_ingredients'],
+        'field_' . $submitted_by . '[0][target_id]' => $this->demoInput['vendor_1_title'],
+      ], $this->callT('Save and publish'));
+    // This will cause an error about missing alt text. Submit again with the
+    // alt text defined.
+    $this->drupalPostForm(NULL, [
+        'field_' . $main_image . '[0][alt]' => $this->demoInput['recipe_1_title'],
+      ], $this->callT('Save and publish'));
+
+    $this->drupalGet('node/add/' . $recipe);
+    $this->drupalPostForm(NULL, [
+        'title[0][value]' => $this->demoInput['recipe_2_title'],
+        'files[field_' . $main_image . '_0]' => $assets_directory . 'carrots.jpg',
+        'body[0][value]' => $this->demoInput['recipe_2_body'],
+        'path[0][alias]' => $this->demoInput['recipe_2_path'],
+        'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_2_ingredients'],
+        'field_' . $submitted_by . '[0][target_id]' => $this->demoInput['vendor_1_title'],
+      ], $this->callT('Save and publish'));
+    $this->drupalPostForm(NULL, [
+        'field_' . $main_image . '[0][alt]' => $this->demoInput['recipe_2_title'],
+      ], $this->callT('Save and publish'));
 
 
     // Topic (out of order): structure-taxonomy - Concept: Taxonomy.
-    // Screen shot of Carrots taxonomy page after adding Recipe content items.
-    // @todo make this screenshot.
+
+    $this->drupalGet('taxonomy/term/4');
+    // Carrots taxonomy page after adding Recipe content items.
+    $this->setUpScreenShot('structure-taxonomy_listingPage_carrots.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header#header, nav.tabs, footer, .feed-icons, .region-sidebar-first, .region-breadcrumb') . $this->setWidth('.block-system-main-block') . $this->removeScrollbars() . $this->setBodyColor() . '"');
+
+
+    // @todo Add more topics here.
+
 
     // Topic: language-add - Adding a language.
     // For non-English versions, locale and language will already be enabled.
