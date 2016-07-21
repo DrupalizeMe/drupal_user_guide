@@ -11,35 +11,34 @@
 
 ==== What is a view?
 
-A _view_ is a listing of content on a website. To take some examples from
-the farmers market project, the following listings will be implemented as views:
-
-* The list of all vendors
-* The list of recipes
-
-Views provide a way to output a listing of content from the system, which can
-then be displayed in various ways.
-
-The system allows you to define content entities so you can enter structured
-data _into_ the system. When you define views, you are interested in getting
-data _out_ and displaying it to the user.
+A _view_ is a listing of content on a website. The core Views module handles the
+display of views, and the core Views UI module allows you to create and edit
+them in the administrative interface. When you define views, you are interested
+in taking data from your website and displaying it to the user.
 
 ==== What types of data can be displayed using views?
 
-_Views_ can be used to output practically any _Content Entity_ that is stored in
-the system. For example, you can create:
+You can create views to output practically any content entity that is stored in
+the system. For example, you can create the following lists for the farmers
+market site:
 
+* Lists of vendors
+* Lists of recipes
 * Lists of the most recent content on the site
-* Lists of the users on the site
+* Lists of users on the site
 
-==== What are the various ways the data can be output using views?
+==== What are the ways data can be output using views?
 
-A listing created by _Views_ can be in the form of a page containing a table
-with sortable fields, or a page with a grid, or a page containing _teasers_ or
-pictures which link to respective articles.
+A listing created by a view can be in any of the following forms:
 
-However, _views_ can also provide data in the form of blocks, JSON output, RSS
-feeds, calendars, on-screen slideshows, and much more.
+* Table with sortable fields
+* Grid layouts
+* Teasers or pictures that link to articles
+* Blocks
+* JSON output
+* RSS feeds
+* Calendars
+* On-screen slideshows
 
 ==== Related topics
 
