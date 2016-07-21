@@ -15,7 +15,7 @@ use Drupal\simpletest\WebTestBase;
  *   ' characters, as this will result in an error when generating the screen
  *   shots.
  *
- * The HTML output for eachq screenshot is manipulated using JavaScript, so that
+ * The HTML output for each screenshot is manipulated using JavaScript, so that
  * it only shows a small area of the page, with the rest hidden. The script that
  * captures the images then trims the images automatically down to the relevant
  * area.
@@ -506,6 +506,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Add Vendor URL field to Vendor content type.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
     $vendor_url = $this->demoInput['vendor_field_url_machine_name'];
+    $vendor_url_hyphens = str_replace('_', '-', $vendor_url);
 
     // Fill in the form in the screenshot: choose Link for field type and
     // type in Vendor URL for the Label, triggering the "change" event to set
@@ -530,6 +531,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Add Main Image field to Vendor content type.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
     $main_image = $this->demoInput['vendor_field_image_machine_name'];
+    $main_image_hyphens = str_replace('_', '-', $main_image);
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'image',
         'label' => $this->demoInput['vendor_field_image_label'],
@@ -759,6 +761,62 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Carrots taxonomy page after adding Recipe content items.
     $this->setUpScreenShot('structure-taxonomy_listingPage_carrots.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header#header, nav.tabs, footer, .feed-icons, .region-sidebar-first, .region-breadcrumb') . $this->setWidth('.block-system-main-block') . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
+
+    // Topic: structure-content-display - Changing Content Display.
+
+    $this->drupalGet('admin/structure/types');
+    // Content types list on admin/structure/types, with operations dropdown
+    // for Vendor content type expanded.
+    $this->setUpScreenShot('structure-content-display_manage_display.png', 'onLoad="jQuery(&quot;a[href*=\'' . $vendor . '/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . '"');
+
+    // Set the labels for main image and vendor URL to hidden.
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
+    $this->drupalPostForm(NULL, [
+        'fields[field_' . $main_image . '][label]' => 'hidden',
+        'fields[field_' . $vendor_url . '][label]' => 'hidden',
+      ], $this->callT('Save'));
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
+
+    // Manage display page for Vendor content type
+    // (admin/structure/types/manage/vendor/display), with labels for Main
+    // Image and Vendor URL hidden, and their select lists outlined in red.
+    $this->setUpScreenShot('structure-content-display_main_image_hidden.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-breadcrumb, .help, #edit-modes, #edit-actions') . $this->removeScrollbars() . $this->addBorder('#edit-fields-field-' . $main_image_hyphens . '-label, #edit-fields-field-' . $vendor_url_hyphens . '-label') . '"');
+
+    // Use Ajax to open the Edit area for the Vendor URL field.
+    $this->drupalPostAjaxForm(NULL, [], 'field_' . $vendor_url . '_settings_edit');
+    // Vendor URL settings form, with trim length cleared, and open link in
+    // new window checked.
+    $this->setUpScreenShot('structure-content-display_trim_length.png', 'onLoad="' . $this->removeScrollbars() . $this->showOnly('.field-plugin-settings-edit-form') . $this->setWidth('table', 400) . 'jQuery(\'.form-item-fields-field-' . $vendor_url_hyphens . '-settings-edit-form-settings-trim-length input\').val(\'\'); jQuery(\'.form-item-fields-field-' . $vendor_url_hyphens . '-settings-edit-form-settings-target input\').attr(\'checked\', \'checked\'); ' . '"');
+
+    // Set the trim length to zero and set links to open in a new window.
+    $this->drupalPostForm(NULL, [
+        'fields[field_vendor_url][settings_edit_form][settings][trim_length]' => '',
+        'fields[field_vendor_url][settings_edit_form][settings][target]' => '_blank',
+      ], $this->callT('Save'));
+
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
+    // Manage display page for Vendor content type, with order changed.
+    $this->setUpScreenShot('structure-content-display_change_order.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-breadcrumb, .help, .tabledrag-toggle-weight-wrapper, #edit-modes, #edit-actions') . 'jQuery(\'table\').before(\'<div style=&quot;display: block; &quot; class=&quot;tabledrag-changed-warning messages messages--warning&quot; role=&quot;alert&quot;><abbr class=&quot;warning tabledrag-changed&quot;>*</abbr>' . $this->callT('You have unsaved changes.') . '</div>\');' . 'var img = jQuery(\'table tbody tr#field-' . $main_image_hyphens . '\').detach(); var bod = jQuery(\'table tbody tr#body\').detach(); var vurl = jQuery(\'table tbody tr#field-' . $vendor_url_hyphens . '\').detach(); jQuery(\'table tbody\').prepend(vurl).prepend(bod).prepend(img); jQuery(\'table tbody tr:first\').toggleClass(\'drag-previous\');' . '"');
+
+    // Submit the changed order in the form.
+    $this->drupalPostForm(NULL, [
+        'fields[field_' . $main_image . '][weight]' => 10,
+        'fields[body][weight]' => 20,
+        'fields[field_' . $vendor_url . '][weight]' => 30,
+        'fields[links][weight]' => 40,
+      ], $this->callT('Save'));
+
+    // Make similar changes for the Recipe content type. No screenshots.
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/display');
+    $this->drupalPostForm(NULL, [
+        'fields[field_' . $main_image . '][weight]' => 10,
+        'fields[field_' . $main_image . '][label]' => 'hidden',
+        'fields[body][weight]' => 20,
+        'fields[field_' . $ingredients . '][weight]' => 30,
+        'fields[field_' . $submitted_by . '][weight]' => 40,
+        'fields[field_' . $submitted_by . '][label]' => 'inline',
+        'fields[links][weight]' => 50,
+      ], $this->callT('Save'));
 
     // @todo Add more topics here.
 

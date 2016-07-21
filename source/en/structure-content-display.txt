@@ -24,68 +24,61 @@ fields, and your site must have at least one Vendor content item. See
 
 ==== Steps
 
-When initially creating a content type and adding fields, the output will most
-likely not look as desired. In the example below, the titles for Main image
-and Vendor URL are showing. The order of the items could also be changed to
-create a more visually aligned page.
-
-// Stand up Drupal 8.0.0-beta14 site and follow the scenario to create a
-// vendor content type. Input text as described in scenario for Happy Farm.
-image:images/structure-content-display_initial_output.png["Initial output of the vendor content type",width="100%"]
-
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). Then click _Manage display_ in the dropdown
-button for Vendor content type.
+. Find and view a Vendor content item you created in <<structure-fields>>.
+Notice that there are several things that could be done to improve how the page
+looks:
 +
-// Under _Manage_ administrative menu select Structure > Content Types and
-// select the _Manage fields_ dropdown for Vendor content type.
+  * The Main Image and Vendor URL fields should not have labels.
+  * The order of the fields should be changed so that the image comes first.
+  * The image should be smaller.
+
+. To fix the first two problems, and update some additional settings, in the
+_Manage_ administrative menu, navigate to _Structure_ > _Content types_
+(_admin/structure/types_). Then click _Manage display_ in the dropdown button
+for the Vendor content type.
++
+// Content types list on admin/structure/types, with operations dropdown
+// for Vendor content type expanded.
 image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
 
-[start=2]
+[start=3]
 . Under the _Label_ column, select _Hidden_ for Main image. Do the same
 for Vendor URL.
 +
-// Under the _Label_ column, select _Hidden_ for the Main image. Do the same
-// for Vendor URL.
+// Manage display page for Vendor content type
+// (admin/structure/types/manage/vendor/display), with labels for Main
+// Image and Vendor URL hidden, and their select lists outlined in red.
 image:images/structure-content-display_main_image_hidden.png["Selecting _main image title_ as _hidden_",width="100%"]
 
-[start=3]
+[start=4]
 . Click the gear for the Vendor URL field. Clear the _Trim link text length_
 setting.  Links will now not have a trim length. Check the _Open link in new
 window_ checkbox. Now, when the link is clicked, it will open in a new window of
 the browser. Click _Update_.
 +
-// Select the gear next to the _Link_ field and update according to above
-// instructions of this step.
+// Vendor URL settings form, with trim length cleared, and open link in
+// new window checked.
 image:images/structure-content-display_trim_length.png["Link trim length",width="100%"]
 
-[start=4]
+[start=5]
 . Drag the cross arrows next to the field items to reorder as Main image,
 _Body_, Vendor URL, and _Links_.
-
-. Click _Save_.
 +
-// Select the cross arrows next to the field items to reorder as Main
-// image, _Body_, Vendor URL, _Links_.
+// Manage display page for Vendor content type, with order changed.
 image:images/structure-content-display_change_order.png["Changing order of fields",width="100%"]
 
 [start=6]
-. Find the Vendor content item you created in <<structure-fields>> and verify
-that it looks as expected.
-+
-// Screen capture the content for the Happy Farm vendor after completing the
-// above steps.
-image:images/structure-content-display_final_output.png["Completed task",width="100%"]
+. Click _Save_.
 
-[start=7]
-. Repeat the same steps to manage the display of the Recipe content type
+. Find the Vendor content item from step 1 again, and verify that the updates
+have been made.
+
+. Repeat similar steps to manage the display of the Recipe content type
 fields.
 
 ==== Follow-on tasks
 
-Notice that the main image takes up more space than you would like on the
-page. To solve that, create an image style to control the display of this
-image. See <<structure-image-style-create>>.
+Make the main image smaller. See <<structure-image-style-create>>.
 
 ==== Related concepts
 
