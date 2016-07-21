@@ -7,8 +7,8 @@
 
 ==== Goal
 
-Clear, or rebuild, your site's internal caches in order to ensure that all items
-in them are up-to-date with the most recent data using either the UI, or Drush.
+Clear or rebuild your site's internal caches to ensure they are up-to-date with
+the most recent data, using the user interface or Drush.
 
 ==== Prerequisite knowledge
 
@@ -31,15 +31,15 @@ _Development_ > _Performance_ (_admin/config/development/performance_).
 
 . Click _Clear all caches_.
 
-. Once the cache has been cleared you should see a success message at the top of
-the page with the text, "Caches cleared.".
+. A message saying the cache has been cleared appears at the top of
+the page.
 
 ===== Using Drush
 
 You can use one of two commands:
 
-* Use the command `drush cache-rebuild` to clear, and rebuild, all cached data
-for a site. After running this command you should see the output "Cache
+* Use the command `drush cache-rebuild` to clear and rebuild all cached data
+for a site. After running this command, you will see the output message "Cache
 rebuild complete."
 
 * Use the command `drush cc` to see a list of individual caches and then
@@ -60,8 +60,8 @@ Enter a number to choose which cache to clear.
  [8]  :  render
  [9]  :  views
 ----
-Choose a cache to clear by entering the number associated with that cache and
-hitting Enter to continue.
+Choose a cache to clear by entering the number associated with that cache. Press
+"Enter" to continue.
 
 
 //==== Follow-on tasks
