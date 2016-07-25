@@ -7,6 +7,8 @@ On this page:
 * <<phase-checklists-guidelines>>
 * <<phase-checklists-testing>>
 * <<phase-checklists-copyedit-task>>
+* <<phase-checklists-translating>>
+
 
 [[phase-checklists-writing]]
 ==== Issue template and checklist for initial writing
@@ -273,3 +275,25 @@ accept updated source file(s) instead of a patch.
 guidelines or task?
 
 * Is attribution provided?
+
+[[phase-checklists-translating]]
+==== Issue templates and checklists for translating
+
+*This section is incomplete!*
+
+What this section needs to cover:
+
+* Managers of translation groups should only update issues and commit patches
+related to topic files in their language subdirectory. If there is a problem in
+a source file or a file for another language, open a separate issue.
+
+* When committing a patch, make sure the AsciiDoc formatting and IDs in the file
+have not been changed from the English source.
+
+* Issues should be named, for example: "[LC] Translate structure-widgets.txt",
+if "LC" is the two-letter code for the language. They should also be put into
+the issue component set up for this language.
+
+* Issue template for a translation issue, similar to others in this topic.
+
+* Checklist for committers, similar to others in this topic.

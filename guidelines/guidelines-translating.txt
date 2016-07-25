@@ -1,0 +1,35 @@
+[[guidelines-translating]]
+=== Translation Guidelines
+
+*Note: This is a rough draft still!*
+
+* When translating, follow the standard glossary of terminology translations
+that your language team has set up for the project_name, so that consistency is
+maintained across the entire book.
+
+* You may feel free to communicate on translation issues for the project_name
+either in English, or in the language you are translating into.
+
+* Be careful not to change any AsciiDoc formatting. See <<formatting>> for
+details.
+
+* Be careful not to change any IDs -- these should stay in English (they are not
+visible to the reader). IDs come in two places/types:
+** The topic ID at the top of each topic file, which looks like
+  `[[id-goes-here]]`.
+** Topic IDs used in cross-links, which look like either `<<id-goes-here>>`
+  without link text, and `<<id-goes-here,overridden link text>>`. In the second
+  format, you should translate the overridden link text, but not the ID.
+
+* If there is a Glossary topic, you will need to re-alphabetize it after
+translating the terms and definitions.
+
+* The Index will automatically be re-alphabetized, but you will need to
+translate index entries. These look like `(((Main entry,secondary entry)))`.
+
+* *Additional references section in some topics:* This section is for links to
+outside references, and most or all are in English. Translators will need to
+replace with references in their language if possible. If reference links are
+included that are in English or another language that is not the same as the
+language you are translating into, make sure that the link text notes that they
+are not in the expected language.

@@ -135,8 +135,80 @@ task.
 [[practicalities-translating]]
 ==== Quick start guide - translating tasks
 
-*This section has not been written yet. We're not ready for translating
-yet... soon!*
+Assumptions for this section:
+
+* The project_name is currently being translated from English into your language
+(that is, translation has started, and has not been completed).
+
+* You have already contacted and joined the team that is translating the
+project_name into your language. These translation teams are formed from the
+software localization teams on
+https://localize.drupal.org[localize.drupal.org].
+
+Steps to translate a topic or review a translation:
+
+. *Find a task* by looking in the project_issues_link for an open issue whose
+title starts with "[LC] Translate ", where "[LC]" is the two-letter code for
+your language. You can also filter the issue list by _Component_ -- there should
+be a component for your language in the list. If you want to translate a topic,
+look for an issue whose _Status_ field says _Active_. If you want to review a
+translation, look for an issue whose _Status_ field says _Needs review_.
+
+. *Claim the task* by assigning the issue to yourself. See
+<<practicalities-task-claim>> for details on how to do this.
+
+. *Complete the translating or reviewing task*. You will need to edit the
+AsciiDoc source files on your local computer, making sure to leave the topic
+structure and AsciiDoc formatting as it was in the source version. See:
+  * <<practicalities-project>> for details on how to obtain the source files
+    from the Git revision control system (this is optional for the initial
+    translation, if you  choose to edit using the on-line editor).
+  * <<practicalities-editing>> for details on how to find and edit files,
+    either on your local computer (if you obtained the source files from Git)
+    or using the on-line editor.
+  * <<formatting>> for details on the AsciiDoc formatting that is in the source
+    files.
+  * <<guidelines-translating>> for general guidelines on translating.
+  * Your language team's glossary, for guidelines on how to translate specific
+    terms consistently in the project_name.
+
+. Make a _patch file_ or _interdiff file_ with your changes; however, if you are
+doing the initial translation, you can skip making a patch. See
+<<practicalities-project>> for patch and interdiff file instructions.
+
+. *Submit your work* to the issue. See <<practicalities-submitting>> for
+details.
+
+. *Add copyright attributions information* in a comment on your issue. See
+<<copyright-license>> for details.
+
+. Make sure you get recognized for your work. See <<practicalities-recognition>>
+for details.
+
+. Update the status of your issue (in the Issue metadata section) to *_Needs
+review_*, for the initial translation. If you are reviewing a translation, you
+have the choice of either:
+  * Setting the status to _Needs work_, if you feel that the initial translator
+    should make another attempt.
+  * Setting the status to _Reviewed and tested by the community_, if you feel
+    that the translation was good. Also, you can upload a new patch and an
+    interdiff file, with small revisions and edits, if those are needed.
+
+. Save the issue comment and status update.
+
+. *Subscribe to email updates for your issue*. See <<practicalities-subscribe>>
+for details.
+
+. *Check on the status* of your issue until your change is "committed" (added to
+the source file repository). You may be asked to make a few changes before
+this happens.
+
+. If you find that you *cannot complete this task*, see
+<<practicalities-task-claim>> for instructions on how to drop a task, and
+try again with a different topic.
+
+. If you have more time, follow these steps again to complete another
+translating or reviewing task.
 
 
 [[practicalities-find-topic]]
@@ -207,8 +279,12 @@ again.
 ==== Detailed instructions: Viewing output and editing source files
 
 Once you have an assigned task, your next step is to actually edit the source
-file. For topic writing tasks, the source file name is listed in the topic
-spreadsheet. For editing tasks, some will be related to one particular source
+file:
+
+* For topic writing tasks, the source file name is listed in the topic
+spreadsheet.
+
+* For editing tasks, some will be related to one particular source
 file (which should be noted in the issue). For others you may need to edit
 several files, which you'll find by running a `grep` command at the command
 line. For still others, you might be reading the project_current_output, looking
@@ -216,12 +292,15 @@ for a particular problem, and then need to edit files that exhibit that problem;
 in this case, on each output page, there should be a line listing the source
 file that looks like: _Source file: structure-blocks.txt_.
 
+* For translating tasks, the source file and topic name should be noted in the
+issue.
+
 Once you figure out which source file or files you need to edit, you have two
 options for editing:
 
 * Use the online editor. This method is recommended for the initial topic
-writing tasks, and some contributors prefer it for editing single topics as
-well. See <<practicalities-online-editor>>.
+writing tasks, and some contributors prefer it for editing and translating
+single topics as well. See <<practicalities-online-editor>>.
 
 * You can download all the source files to your local computer using Git (the
 revision control system the Drupal project uses), and then use any plain-text
@@ -234,6 +313,9 @@ tasks, especially if you are editing more than one file. See
 ==== Detailed instructions: Using the online source editor
 
 . Locate the current home of the project_name output: project_current_output.
+
+. For translations, find the language you are translating into in the Languages
+block, and switch to that version of the project_name.
 
 . Find your page in the home page table of contents, or in the navigation block,
 and click the link to see your page. The page output may only be a template, or
@@ -251,6 +333,9 @@ the User Guide output site"]
 . There is a preview button that will show you the output in a pane below as you
 edit (it looks like a green check mark). You may have to click the button to
 refresh the preview, or it may refresh as you type.
+
+. For translations, there is a section on the page where you can view the text
+in the source language as you translate.
 
 . When you finish your edits use the _Download new file_ button to download a
 new version of the source file that contains your edits to your local computer.
@@ -316,16 +401,16 @@ you had, and any other pertinent details.
 . Change the issue status to _Needs review_ (in the _Issue metadata_ section
 just above the comment form).
 
-. If you were writing a new topic, or if your editing task only affected one
-source file, upload the text source file you edited, in the _Files_ section of
-the issue (near the bottom; you may need to expand it to see the _Upload_
-button).
+. If you were writing a new topic, translating a topic, or if your editing task
+only affected one source file, upload the text source file you edited, in the
+_Files_ section of the issue (near the bottom; you may need to expand it to see
+the _Upload_ button).
 
 image:images/issue-files.png["Screen shot of the Files section of an issue"]
 
 [start=6]
-. If you made a patch file (primarily for editing tasks), upload that to
-the _Files_ section.
+. If you made a patch or interdiff file (for editing and translating tasks),
+upload that to the _Files_ section.
 
 . If you have made screenshots or other images, also upload them to the _Files_
 section.
@@ -434,6 +519,8 @@ is oriented towards code, the process of making a patch file for this user
 guide is the same as for Drupal core and contributed modules.
 
 * https://www.drupal.org/node/707484[Making a Drupal patch]
+
+* https://www.drupal.org/documentation/git/interdiff[Creating an interdiff]
 
 * All Drupal.org projects have a link on the sidebar called _Browse code
 repository_, which will take you into the Git repository. From there, click

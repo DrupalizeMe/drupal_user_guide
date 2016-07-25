@@ -17,7 +17,7 @@ On this page:
 * <<pm-guide-topics>>
 * <<pm-guide-new-phase>>
 * <<pm-guide-translating>>
-
+* <<pm-guide-updates>>
 
 [[pm-guide-commits]]
 ==== Committing changes
@@ -216,24 +216,55 @@ the topic sheet, such as:
 [[pm-guide-translating]]
 ==== Setting up for translations
 
-*Note: This section is rough since we have not gotten to the Translating stage
-yet.*
+When a new team has been established to translate the project_name into another
+language, the project managers and language team manager(s) will need to follow
+these steps to initiate a new translation:
 
-Things to include when we write up this section:
+. Make a new _source/[lc]_ directory, where _[lc]_ is the two-letter language
+code for the language being added (project managers).
 
-* Need to write up the translators guide in the practicaliites.txt file in
-this guidelines/instructions book.
+. Copy all of the source (English) files, including the images subdirectory,
+into the new directory. Keep the file names and IDs the same as they were in
+English -- they are not displayed to the user and file names being the same aids
+in figuring out the correspondence. (It is also possible to use a different
+translation as the source for copying files, if the translation team thinks that
+would be more appropriate.) (project managers)
 
-* Put translations into source/[language code] folder. For each new language,
-start by copying in the English files.
+. Obtain a translation of the `$demoInput` array in the screenshot automation
+test base class, from the language team managers. Project managers will then
+make new automated screenshots for this language.
 
-* Keep file names and IDs the same (in English) -- they are not displayed to the
-user and file names being the same aids in figuring out the correspondence.
+. Add the new language to the build scripts, and make sure it is showing up on
+the display and editing site(s) for the project (project managers).
 
-* Translators will need to re-alphabetize the Glossary. Keep the IDs the same
-(in English).
+. Add a new issue component for translations into this new language, by editing
+the Project page (project managers).
 
-* Additional references sections - This is for outside references, and most or
-all are in English. Translators will need to replace with references in their
-language if possible. They can include English references but make sure they are
-noted as such.
+. Grant issue maintainer and VCS commit permissions to the manager or managers
+of the language team for the new language, by editing the _Maintainers_ page for
+the project (project managers).
+
+. Make a translation glossary specific to the project_name, so that terms are
+translated consistently throughout (language team managers). This should
+probably be located in the language team's pages on
+https://localize.drupal.org[localize.drupal.org].
+
+. Make issues for translating each topic into the target language, and recruit
+volunteers to translate and review (language team managers). See
+<<phase-checklists-translating>>. It may also be useful to make a spreadsheet to
+track progress.
+
+
+[[pm-guide-updates]]
+==== Making updates
+
+From time to time, there will be reasons to make updates to the
+project_name. For instance, it may need to be updated if a new version of Drupal
+comes out, if readers have reported problems, or if new topics need to be
+added.
+
+If the guide has been translated, updates are complicated somewhat, because
+translators need to be notified about the update.
+
+*TBD: Define this process*
+
