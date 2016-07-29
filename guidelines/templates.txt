@@ -1,6 +1,10 @@
 [[templates]]
 === Topic templates
 
+[role="summary"]
+Templates for writing task and concept topics.
+
+
 [[template-task]]
 ==== Template for task topics
 
@@ -34,6 +38,10 @@ is file _templates/task-topic.txt_ in the project Git repository):
 // The topic title goes on the next line. Use "Title Case" for topic titles.
 // Titles for task topics should be in the format "Verbing a Noun".
 === Verbing a Noun
+
+// The next few lines are a summary of what the topic covers.
+[role=summary]
+The steps in verbing a noun.
 
 // The next thing that is needed is an entry for the index:
 // - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
@@ -175,6 +183,10 @@ concepts. Here is the template for concept topics, including the instructions
 // The topic title goes on this line. Use "Title Case" for topic titles.
 // Titles for Concept topics should start with "Concept: ".
 === Concept: ...
+
+// The next few lines are a summary of what the topic covers.
+[role=summary]
+Explanation of what a foo is.
 
 // The next thing that is needed is an entry for the index:
 // - Replace the text in (((indexentry))) with an appropriate index entry,

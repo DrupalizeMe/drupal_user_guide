@@ -1,6 +1,10 @@
 [[formatting]]
 === Formatting Your Text
 
+[role="summary"]
+Information for contributors to the project_name on how to format text using the
+AsciiDoc formatting language.
+
 On this page:
 
 * <<asciidoc>>
@@ -32,6 +36,12 @@ project, and related to formatting.
 
 [[formatting-paragraph]]
 ==== Paragraph and list formatting
+
+* A few paragraphs have "role" attributes set. For example, an attribute line
+saying `[role=summary]` indicates that the following paragraph is a summary of
+the topic or chapter. Summaries do not appear in the output directly, but they
+still need to be copy edited and translated by looking at the source
+file. However, do not translate the role attribute lines themselves.
 
 * Wrap your text in 80-character or less lines. Line breaks do not affect
 the output, but for people reviewing the text source, 80-character limits
