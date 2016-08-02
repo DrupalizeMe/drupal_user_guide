@@ -70,7 +70,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'about_path' => '/about',
     'about_description' => 'History of the market',
 
-    // Vendor content type settings.
+    // Vendor content type settings. Type name and machine name are also
+    // used for the Vendor role.
     'vendor_type_name' => 'Vendor',
     'vendor_type_machine_name' => 'vendor',
     'vendor_type_description' => 'Information about a vendor',
@@ -81,19 +82,21 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'vendor_field_image_machine_name' => 'main_image',
     'vendor_field_image_directory' => 'vendors',
 
-    // Vendor 1 content item.
+    // Vendor 1 content item and user account.
     'vendor_1_title' => 'Happy Farm',
     'vendor_1_path' => '/vendors/happy_farm',
     'vendor_1_summary' => 'Happy Farm grows vegetables that you will love.',
     'vendor_1_body' => '<p>Happy Farm grows vegetables that you will love.</p><p>We grow tomatoes, carrots, and beets, as well as a variety of salad greens.</p>',
     'vendor_1_url' => 'http://happyfarm.com',
+    'vendor_1_email' => 'happy@example.com',
 
-    // Vendor 2 content item.
+    // Vendor 2 content item and user account.
     'vendor_2_title' => 'Sweet Honey',
     'vendor_2_path' => '/vendors/sweet_honey',
     'vendor_2_summary' => 'Sweet Honey produces honey in a variety of flavors throughout the year.',
     'vendor_2_body' => '<p>Sweet Honey produces honey in a variety of flavors throughout the year.</p><p>Our varieties include clover, apple blossom, and strawberry.</p>',
     'vendor_2_url' => 'http://sweethoney.com',
+    'vendor_2_email' => 'honey@example.com',
 
     // Recipe content type settings.
     'recipe_type_name' => 'Recipe',
@@ -448,8 +451,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $vendor = $this->demoInput['vendor_type_machine_name'];
     $vendor_hyphens = str_replace('_', '-', $vendor);
 
-    // This screenshot, and others where we want the machine name to show,
-    // have a race condition. Try reloading the page once.
     // Top of admin/structure/types/add, with Name and Description fields.
     $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(\'' . $this->demoInput['vendor_type_name'] . '\'); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').change(); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
 
@@ -881,10 +882,61 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('structure-text-format-config-allowed-html.png', 'onLoad="' . 'window.scroll(0,5000);' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .form-item-name, .form-type-machine-name, fieldset, .form-type-select, #editor-settings-wrapper, #filters-status-wrapper, .form-type-table,  #edit-actions') . $this->setWidth('.form-type-vertical-tabs', 800) . $this->removeScrollbars() . '"');
 
 
+    // Topic: user-new-role - Creating a role.
+
+    // Create vendor role.
+    $this->drupalGet('admin/people/roles');
+    // Roles page (admin/people/roles).
+    $this->setUpScreenShot('user-new-role-roles-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header', 630) . $this->setWidth('.layout-container', 600) . '"');
+    $this->clickLink($this->callT('Add role'));
+    // Add role page (admin/people/roles/add).
+    $this->setUpScreenShot('user-new-role-add-role.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendor_type_name'] . '\'); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').change(); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration') . '"');
+    $this->drupalPostForm(NULL, [
+        'label' => $this->demoInput['vendor_type_name'],
+        'id' => $this->demoInput['vendor_type_machine_name'],
+      ], $this->callT('Save'));
+    // Confirmation message after adding new role.
+    $this->setUpScreenShot('user-new-role-confirm.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 500) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+
+
+    // Topic: user-new-user - Creating a User Account.
+
+    // Create a user account for Sweet Honey.
+    $this->drupalGet('admin/people/create');
+    // Add new user form (/admin/people/create).
+    $this->setUpScreenShot('user-new-user_form.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header', 830) . $this->setWidth('.layout-container', 800) . $this->removeScrollbars() . '"');
+    $password = $this->randomString();
+    $this->drupalPostForm(NULL, [
+        'mail' => $this->demoInput['vendor_2_email'],
+        'name' => $this->demoInput['vendor_2_title'],
+        'pass[pass1]' => $password,
+        'pass[pass2]' => $password,
+        'roles[' . $vendor . ']' => $vendor,
+        'notify' => TRUE,
+        'files[user_picture_0]' => $assets_directory . 'honey_bee.jpg',
+      ], $this->callT('Create new account'));
+    // Confirmation message after adding new user.
+    $this->setUpScreenShot('user-new-user-created.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 800) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+
+    // Create a second user account for Happy Farms, no screenshots.
+    $this->drupalGet('admin/people/create');
+    $password = $this->randomString();
+    $this->drupalPostForm(NULL, [
+        'mail' => $this->demoInput['vendor_1_email'],
+        'name' => $this->demoInput['vendor_1_title'],
+        'pass[pass1]' => $password,
+        'pass[pass2]' => $password,
+        'roles[' . $vendor . ']' => $vendor,
+        'notify' => TRUE,
+        'files[user_picture_0]' => $assets_directory . 'farm.jpg',
+      ], $this->callT('Create new account'));
+
+
     // @todo Add more topics here.
 
 
     // Topic: language-add - Adding a language.
+
     // For non-English versions, locale and language will already be enabled.
     // For English, not yet. In both cases, we need config/content translation
     // though.
