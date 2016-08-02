@@ -19,6 +19,9 @@ include::preface-scenario.txt[]
 [[understanding-chapter]]
 == Understanding Drupal
 
+[role="summary"]
+Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
 include::understanding-themes.txt[]
@@ -31,6 +34,9 @@ include::understanding-gpl.txt[]
 [[planning-chapter]]
 == Planning Your Site
 
+[role="summary"]
+Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+
 include::block-regions.txt[]
 include::planning-layout.txt[]
 include::planning-data-types.txt[]
@@ -42,6 +48,9 @@ include::planning-workflow.txt[]
 [[installation-chapter]]
 == Installation
 
+[role="summary"]
+Overview of server requirements and details of common installation tasks.
+
 include::install-requirements.txt[]
 include::install-tools.txt[]
 include::install-prepare.txt[]
@@ -50,6 +59,9 @@ include::install-run.txt[]
 
 [[config-chapter]]
 == Basic Site Configuration
+
+[role="summary"]
+Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
 
 include::config-overview.txt[]
 include::config-basic.txt[]
@@ -63,6 +75,9 @@ include::config-theme.txt[]
 [[content-chapter]]
 == Basic Page Management
 
+[role="summary"]
+Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+
 include::content-paths.txt[]
 include::content-create.txt[]
 include::content-edit.txt[]
@@ -74,6 +89,9 @@ include::menu-reorder.txt[]
 
 [[content-structure-chapter]]
 == Setting Up Content Structure
+
+[role="summary"]
+Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -100,6 +118,9 @@ include::structure-text-format-config.txt[]
 [[user-chapter]]
 == Managing User Accounts
 
+[role="summary"]
+Overview of user account concepts and details of common user account tasks.
+
 include::user-concept.txt[]
 include::user-admin-account.txt[]
 include::user-new-role.txt[]
@@ -112,6 +133,9 @@ include::user-content.txt[]
 [[blocks-chapter]]
 == Blocks
 
+[role="summary"]
+Overview of block concepts and details of common block tasks.
+
 include::block-concept.txt[]
 include::block-create-custom.txt[]
 include::block-place.txt[]
@@ -119,6 +143,9 @@ include::block-place.txt[]
 
 [[views-chapter]]
 == Creating Listings with Views
+
+[role="summary"]
+Overview of view concepts and details of common view tasks.
 
 include::views-concept.txt[]
 include::views-parts.txt[]
@@ -130,6 +157,9 @@ include::views-block.txt[]
 [[multilingual-chapter]]
 == Making Your Site Multilingual
 
+[role="summary"]
+Overview of multilingual site concepts and details of tasks needed to make a site multilingual.
+
 include::language-concept.txt[]
 include::language-add.txt[]
 include::language-content-config.txt[]
@@ -139,6 +169,9 @@ include::language-config-translate.txt[]
 
 [[extend-chapter]]
 == Extending and Customizing Your Site
+
+[role="summary"]
+Overview of site customization and development. Tasks on downloading modules and themes are covered.
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -155,6 +188,9 @@ include::extend-config-versions.txt[]
 [[prevent-chapter]]
 == Preventing and Fixing Problems
 
+[role="summary"]
+Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
 include::prevent-backups.txt[]
@@ -164,6 +200,9 @@ include::prevent-status.txt[]
 
 [[security-chapter]]
 == Security and Maintenance
+
+[role="summary"]
+Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -176,6 +215,9 @@ include::security-update-theme.txt[]
 
 [[thoughts-chapter]]
 == Final Thoughts
+
+[role="summary"]
+Overview of the Drupal community and how to connect with other users.
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
