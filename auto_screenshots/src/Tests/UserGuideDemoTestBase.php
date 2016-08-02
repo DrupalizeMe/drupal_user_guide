@@ -126,6 +126,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'recipe_2_body' => 'Serve multi-colored carrots on a plate for dinner.',
     'recipe_2_ingredients' => 'Carrots',
 
+    // Image style.
+    'image_style_label' => 'Extra medium (300x200)',
+    'image_style_machine_name' => 'extra_medium_300x200',
+
   ];
 
   /**
@@ -790,8 +794,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Set the trim length to zero and set links to open in a new window.
     $this->drupalPostForm(NULL, [
-        'fields[field_vendor_url][settings_edit_form][settings][trim_length]' => '',
-        'fields[field_vendor_url][settings_edit_form][settings][target]' => '_blank',
+        'fields[field_' . $vendor_url . '][settings_edit_form][settings][trim_length]' => '',
+        'fields[field_' . $vendor_url . '][settings_edit_form][settings][target]' => '_blank',
       ], $this->callT('Save'));
 
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
@@ -817,6 +821,65 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'fields[field_' . $submitted_by . '][label]' => 'inline',
         'fields[links][weight]' => 50,
       ], $this->callT('Save'));
+
+    // Topic: structure-image-style-create - Setting Up an Image Style.
+
+    // Create the image style.
+    $this->drupalGet('admin/config/media/image-styles');
+    $this->clickLink($this->callT('Add image style'));
+    $this->drupalPostForm(NULL, [
+        'label' => $this->demoInput['image_style_label'],
+        'name' => $this->demoInput['image_style_machine_name'],
+      ], $this->callT('Create new style'));
+    $this->drupalPostForm(NULL, [
+        'new' => 'image_scale_and_crop',
+      ], $this->callT('Add'));
+    $this->drupalPostForm(NULL, [
+        'data[width]' => 300,
+        'data[height]' => 200,
+      ], $this->callT('Add effect'));
+    // Image style editing page, with effects added.
+    $this->setUpScreenShot('structure-image-style-create-add-style.png', 'onLoad="' . $this->removeScrollbars() . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container', 800) . $this->setWidth('header', 830) . '"');
+
+    // Use the image style in Manage Display for the Vendor.
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
+    // Use Ajax to open the Edit area for the Main Image field.
+    $this->drupalPostAjaxForm(NULL, [], 'field_' . $main_image . '_settings_edit');
+    // Main image settings area of Vendor content type.
+    $this->setUpScreenShot('structure-image-style-create-manage-display.png', 'onLoad="' . $this->removeScrollbars() . $this->showOnly('.field-plugin-settings-edit-form') . $this->setWidth('table', 400) . 'jQuery(\'.form-item-fields-field-' . $main_image_hyphens . '-settings-edit-form-settings-image-style select\').val(\'' . $this->demoInput['image_style_machine_name'] . '\');' . '"');
+    $this->drupalPostForm(NULL, [
+        'fields[field_' . $main_image . '][settings_edit_form][settings][image_style]' => $this->demoInput['image_style_machine_name'],
+      ], $this->callT('Save'));
+
+    // Repeat for Recipe content type, no screenshots.
+    $this->drupalGet('admin/structure/types/manage/' . $recipe . '/display');
+    $this->drupalPostAjaxForm(NULL, [], 'field_' . $main_image . '_settings_edit');
+    $this->drupalPostForm(NULL, [
+        'fields[field_' . $main_image . '][settings_edit_form][settings][image_style]' => $this->demoInput['image_style_machine_name'],
+      ], $this->callT('Save'));
+
+
+    // Topic: structure-text-format-config - Configuring Text Formats and
+    // Editors.
+
+    // Update the configuration for Basic HTML: add an HR tag.
+    $this->drupalGet('admin/config/content/formats/manage/basic_html');
+    // The button configuration for the editing toolbar uses drag-and-drop,
+    // but has a text field behind the scenes. So, save the configuration and
+    // then come back for the screenshot.
+    $this->drupalPostForm(NULL, [
+        'editor[settings][toolbar][button_groups]' => '[[{"name":"' . $this->callT('Formatting') . '","items":["Bold","Italic"]},{"name":"' . $this->callT('Links') . '","items":["DrupalLink","DrupalUnlink"]},{"name":"' . $this->callT('Lists') . '","items":["BulletedList","NumberedList"]},{"name":"' . $this->callT('Media') . '","items":["Blockquote","DrupalImage"]},{"name":"' . $this->callT('Tools') . '","items":["Source", "HorizontalRule"]}]]',
+        'filters[filter_html][settings][allowed_html]' => '<hr> <a hreflang href> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img width height data-caption data-align data-entity-uuid data-entity-type alt src> <hr>',
+      ], $this->callT('Save configuration'));
+
+    // Confirmation message after updating text format.
+    $this->setUpScreenShot('structure-text-format-config-summary.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 500) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->drupalGet('admin/config/content/formats/manage/basic_html');
+    // Button configuration area on text format edit page.
+    $this->setUpScreenShot('structure-text-format-config-editor-config.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .form-type-textfield, .form-type-machine-name, #edit-roles--wrapper, .form-type-select, #filters-status-wrapper, .form-type-table, .form-type-vertical-tabs, #edit-actions') . 'jQuery(\'.ckeditor-toolbar\').addClass(\'ckeditor-group-names-are-visible\');' . $this->removeScrollbars() . '"');
+    // Allowed HTML tags area on text format edit page.
+    $this->setUpScreenShot('structure-text-format-config-allowed-html.png', 'onLoad="' . 'window.scroll(0,5000);' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .form-item-name, .form-type-machine-name, fieldset, .form-type-select, #editor-settings-wrapper, #filters-status-wrapper, .form-type-table,  #edit-actions') . $this->setWidth('.form-type-vertical-tabs', 800) . $this->removeScrollbars() . '"');
+
 
     // @todo Add more topics here.
 
