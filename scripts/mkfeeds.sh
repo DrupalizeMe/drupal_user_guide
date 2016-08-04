@@ -27,9 +27,9 @@ asciidoc -d book -b docbook -f std.conf -f guidelines.conf -o ../output/html_fee
 # style sheet that makes output for the AsciiDoc Display Direct module, plus
 # a chunking parameter for Feeds that outputs all topics on their own pages
 # instead of having the first one on the chapter page. Syntax:
-#   xmlto -m bare.xsl xhtml [parameters] -o [output dir] [input docbook file]
-xmlto -m bare.xsl xhtml --stringparam chunk.first.sections=1 -o ../output/html_feed/en ../output/html_feed/en/guide.docbook
-xmlto -m bare.xsl xhtml  --stringparam chunk.first.sections=1 --stringparam section.autolabel.max.depth=2 -o ../output/html_feed/guidelines ../output/html_feed/guidelines/guidelines.docbook
+#   xmlto -m feeds.xsl xhtml [parameters] -o [output dir] [input docbook file]
+xmlto -m feeds.xsl xhtml -o ../output/html_feed/en ../output/html_feed/en/guide.docbook
+xmlto -m feeds.xsl xhtml --stringparam section.autolabel.max.depth=2 -o ../output/html_feed/guidelines ../output/html_feed/guidelines/guidelines.docbook
 
 # Copy image files to output directory.
 cp ../source/en/images/*.png ../output/html_feed/en/images
