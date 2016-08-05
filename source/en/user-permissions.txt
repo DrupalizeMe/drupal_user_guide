@@ -35,29 +35,29 @@ search_. The available permissions depend on the modules that are installed in
 the site. Note: some permissions may have security implications, be cautious
 when assigning permissions to roles.
 
-. Check the permissions:
+. Check the boxes for the following permissions, listed by module:
 +
-  * Recipe: Create new content
-  * Recipe: Edit own content
-  * Recipe: Delete own content
-  * Vendor: Edit own content
-  * Use users' personal contact forms
-  * Use the Restricted HTML text format
-  * Access in-place editing
+[width="100%",frame="topbot",options="header"]
+|================================
+| Module | Permission
+| Contact | Use users' personal contact forms
+| Filter | Use the Restricted HTML text format
+| Node | Recipe: Create new content
+| Node | Recipe: Edit own content
+| Node | Recipe: Delete own content
+| Node | Vendor: Edit own content
+| Quick Edit | Access in-place editing
+|================================
 +
-// For this image a content type Recipe and a role Vendor were created. The
-// image is partial screenshot of the page located at
-// admin/people/permissions/vendor ()
+// Permissions page for Vendor (admin/people/permissions/vendor).
 image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
 
 [start=4]
 . Click _Save permissions_. You will get a message saying your changes have been
 saved.
 +
-// For this image permissions were assigned to the Vendor role and saved. The
-// image is partial screenshot of the page located at
-// admin/people/permissions
-image:images/user-permissions-save-permissions.png["Assigning a couple of permissions for the Vendor role",width="100%"]
+// Confirmation message after updating permissions.
+image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
 
 ==== Follow-on tasks
 

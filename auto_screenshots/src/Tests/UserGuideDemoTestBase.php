@@ -932,6 +932,53 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Create new account'));
 
 
+    // Topic: user-permissions - Assigning permissions to a role.
+
+    // Update the permissions for the Vendor role.
+    $this->drupalGet('admin/people/permissions/' . $vendor);
+    $this->drupalPostForm(NULL, [
+        $vendor . '[access user contact forms]' => 1,
+        $vendor . '[use text format restricted_html]' => 1,
+        $vendor . '[create ' . $recipe . ' content]' => 1,
+        $vendor . '[edit own ' . $recipe . ' content]' => 1,
+        $vendor . '[delete own ' . $recipe . ' content]' => 1,
+        $vendor . '[edit own ' . $vendor . ' content]' => 1,
+        $vendor . '[access in-place editing]' => 1,
+      ], $this->callT('Save permissions'));
+    // Confirmation message after updating permissions.
+    $this->setUpScreenShot('user-permissions-save-permissions.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 400) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    // Permissions page for Vendor (admin/people/permissions/vendor).
+    $this->setUpScreenShot('user-permissions-check-permissions.png', 'onLoad="window.scroll(0,3500);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container, table.sticky-header', 800) . $this->removeScrollbars() . $this->setBodyColor() . '"');
+
+
+    // Topic: user-roles - Changing a User's Roles.
+
+    // Update the user 1 account via single user edit.
+    $this->drupalGet('admin/people');
+    // People page (admin/people), with user 1's Edit button outlined.
+    $this->setUpScreenShot('user-roles_people-list.png', 'onLoad="' . $this->addBorder('a[href*=&quot;user/1/edit&quot;]') . $this->hideArea('#toolbar-administration') . '"');
+    $this->drupalGet('user/1/edit');
+    // Roles area on user editing page.
+    $this->setUpScreenShot('user-roles_person-edit.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('#edit-roles--wrapper') . 'jQuery(\'#edit-roles-administrator\').attr(\'checked\', 1);' . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->drupalPostForm(NULL, [
+        'roles[administrator]' => 1,
+      ], $this->callT('Save'));
+    // Confirmation message after updating user.
+    $this->setUpScreenShot('user-roles_message.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 500) . $this->setBodyColor() . '"');
+
+    // Update two accounts using bulk edit.
+    $this->drupalGet('admin/people');
+    // Bulk editing form on People page (admin/people).
+    $this->setUpScreenShot('user-roles_bulk.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .view-filters') . 'jQuery(\'#edit-user-bulk-form-0, #edit-user-bulk-form-1\').attr(\'checked\', 1).parents(\'tr\').addClass(\'selected\');' . 'jQuery(\'#edit-action\').val(\'user_remove_role_action.' . $vendor . '\');' . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->drupalPostForm(NULL, [
+        'user_bulk_form[0]' => 1,
+        'user_bulk_form[1]' => 1,
+        'action' => 'user_add_role_action.' . $vendor,
+      ], $this->callT('Apply to selected items'));
+    // Confirmation message after bulk user update.
+    $this->setUpScreenShot('user-roles_message_bulk.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . '"');
+
+
     // @todo Add more topics here.
 
 

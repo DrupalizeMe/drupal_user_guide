@@ -27,28 +27,28 @@ already exist. See <<user-new-user>>,  <<user-new-role>>, and
 . In the _Manage_ administrative menu, navigate to _People_
 (_admin/people_).
 
-. Locate the admin account to assign it the _Administrator_ role. If it is
-not immediately visible, use the _Name or email contains_ filter, or other
-filters, to narrow down the list.
+. Locate the user 1 account (named "admin") to assign it the _Administrator_
+role. If it is not immediately visible, use the _Name or email contains_ filter,
+or other filters, to narrow down the list.
 
 .  Click _Edit_ to update the user account.
 +
-// Screen shot of admin/people page, showing the Edit link.
+// People page (admin/people), with user 1's Edit button outlined.
 image:images/user-roles_people-list.png["People page",width="100%"]
 
 [start=4]
 .  On the _Edit_ page, scroll down to _Roles_ section. Check the _Administrator_
 role for the user account.
 +
-// Screen shot of the Roles section of the user edit page.
-image:images/user-roles_person-edit.png["Roles section of user edit page",width="100%"]
+// Roles area on user editing page.
+image:images/user-roles_person-edit.png["Roles section of user edit page"]
 
 [start=5]
 .  Click _Save_ to update the user account. You should be returned to the
 _People_ page and see a message saying that the changes have been saved.
 +
-// Screen shot of admin/people with message about changes being saved.
-image:images/user-roles_message.png["People page with saved message"]
+// Confirmation message after updating user.
+image:images/user-roles_message.png["Confirmation message"]
 
 ===== Updating the roles using bulk editing method
 
@@ -62,16 +62,15 @@ other filters, to narrow down the list.
 . Select _Add the Vendor role to the selected users_ from the _With selection_
 select list.
 +
-// Screen shot of admin/people with two users checked and With selection
-// set to "Add the Vendor role to the selected users".
-image:images/user-roles_bulk.png["People page with bulk operation set up"]
+// Bulk editing form on People page (admin/people).
+image:images/user-roles_bulk.png["People page with bulk operation set up", width="100%"]
 
 [start=4]
 . Click _Apply_. You should see a message indicating that the desired changes
 were made.
 +
-// Screen shot of admin/people with message about changes being saved.
-image:images/user-roles_message_bulk.png["People page with saved message"]
+// Confirmation message after bulk user update.
+image:images/user-roles_message_bulk.png["Confirmation message"]
 
 
 // ==== Follow-on tasks
