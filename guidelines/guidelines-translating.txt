@@ -24,6 +24,12 @@ visible to the reader). IDs come in two places/types:
   without link text, and `<<id-goes-here,overridden link text>>`. In the second
   format, you should translate the overridden link text, but not the ID.
 
+* Be careful not to change any image file names, for embedded images. The
+image embedding lines look like:
+`image:images/spreadsheet.png["Screen shot of the tracking spreadsheet",width="100%"]`
+You will need to translate the "alt" text, such as (in this example) "Screen
+shot of the tracking spreadsheet".
+
 * If there is a Glossary topic, you will need to re-alphabetize it after
 translating the terms and definitions.
 
@@ -36,3 +42,17 @@ replace with references in their language if possible. If reference links are
 included that are in English or another language that is not the same as the
 language you are translating into, make sure that the link text notes that they
 are not in the expected language.
+
+* *Attributions information:* Do not translate people's names, URLs, or company
+names. Also note that the attributions information (which is in files called
+_attributions.txt_ and also at the bottom of each file in an Attributions
+section) will have additional information added (information not present in the
+English source), to provide attributions for the translation team for your
+language.
+
+
+*Attributions*
+
+This page was written/edited by
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar].

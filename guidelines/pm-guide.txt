@@ -32,9 +32,12 @@ When committing changes from contributors (writers and editors) to the guide:
 checklist has not been satisfied, do not make the commit. Especially, insist
 on attributions information.
 
-* Make sure to update the attributions.txt file as well as the topic file.
+* Make sure to update the attributions information for the topic being edited
+(at the bottom of the file). For guide-wide edits, attributions go into the
+attributions.txt file for the book as a whole.
 
-* Make sure to put any attached images in the images directory.
+* Make sure to put any attached images in the images directory, and also include
+the updated topic file or files themselves.
 
 * When making the commit, use the section at the bottom of the issue page to
 compose the commit message. Make sure that the author radio button is chosen
@@ -108,10 +111,9 @@ be in place before contributors start writing other topics.
 well as a file called _text.txt_ with the sample text in it, and _colors.txt_
 with color information in it.
 
-. Make an _attributions.txt_ file for keeping track of who wrote the
-topic. See _attributions.txt_ in the User Guide project for an example. Add
-attributions information for the image assets, and for the project
-coordinators.
+. Make an _attributions.txt_ file for keeping track of overall project writing,
+editing, translating, and project management. See _attributions.txt_ files for
+each language in the User Guide project for an example.
 
 . Make build scripts for the project and test them. Add these to the Git
 repository.
@@ -175,7 +177,7 @@ information and defining the file name.
 . Edit the ID and the topic title in the file -- *the ID should be the file name
 without the .txt extension*.
 
-. Add the file to the outline file and attributions file.
+. Add the file to the outline file.
 
 . Commit the changes.
 
@@ -272,3 +274,9 @@ translators need to be notified about the update.
 
 *TBD: Define this process*
 
+
+*Attributions*
+
+This page was written/edited by
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar].
