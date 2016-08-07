@@ -34,16 +34,17 @@ on attributions information.
 
 * Make sure to update the attributions information for the topic being edited
 (at the bottom of the file). For guide-wide edits, attributions go into the
-attributions.txt file for the book as a whole.
+_attributions.txt_ file for the book as a whole.
 
-* Make sure to put any attached images in the images directory, and also include
-the updated topic file or files themselves.
+* Make sure to include all the files in the commit: attached images (in the
+images directory), the updated topic file or files themselves, and the
+_attributions.txt_ file if it was updated.
 
 * When making the commit, use the section at the bottom of the issue page to
-compose the commit message. Make sure that the author radio button is chosen
-for the primary writer or editor for the issue, and that checkboxes for
-everyone who contributed substantially to this phase are checked.
-This will give everyone involved the proper credit.
+compose the commit message. Make sure that the author radio button is chosen, if
+there was just one contributor, and that checkboxes for everyone who contributed
+substantially to this phase are checked.  This will give everyone involved the
+proper credit.
 
 * If there is a project manager follow-up checklist (such as the guidelines
 check after writing tasks), do that.
@@ -154,9 +155,11 @@ they cannot edit it. Columns needed in the spreadsheet:
 
   * Copy editing
 
+  * Translating
+
 . Set up an Instructions book (like this one). To do that, you'll probably want
 to start with a copy the files in the User Guide project's _guidelines_
-directory. You'll need to make a new _management.txt file (about project
+directory. You'll need to make a new _management.txt_ file (about project
 managers and communication channels), and you'll also need to set up a new
 _guidelines.conf_ file in the _scripts_ directory with variable
 substitutions. Most of the other stuff should be OK as it is, if you've followed
@@ -185,7 +188,8 @@ without the .txt extension*.
 spreadsheet. See <<phase-checklists-writing>>.
 
 There is a Perl script in the _scripts_ directory of the User Guide project
-called _mktopics.pl_ that will make a batch of topics from templates.
+called _mktopics.pl_ that will make a batch of topic files. It has instructions
+at the top.
 
 
 [[pm-guide-new-phase]]
@@ -199,7 +203,7 @@ tasks should be writing individual topics. For the testing phase, there may be
 some specific tasks, such as "Have the Security team review the book for
 accuracy", but some testing may be best done in an interactive session. For copy
 editing, some tasks could be things like "Make sure to always say _directory_
-and not _folder_", and others could be "Do a general copy edit on a topic".
+and not _folder_", and others could be "Do a general copy edit on this topic".
 
 . Define the time frame for each task to be completed by a volunteer. Two weeks
 is reasonable.
@@ -227,38 +231,40 @@ language, the project managers and language team manager(s) will need to follow
 these steps to initiate a new translation:
 
 . Make a new _source/[lc]_ directory, where _[lc]_ is the two-letter language
-code for the language being added (project managers).
+code for the language being added. [Project managers]
 
 . Copy all of the source (English) files, including the images subdirectory,
 into the new directory. Keep the file names and IDs the same as they were in
-English -- they are not displayed to the user and file names being the same aids
-in figuring out the correspondence. (It is also possible to use a different
-translation as the source for copying files, if the translation team thinks that
-would be more appropriate.) (project managers)
+English. [Project managers]
 
-. Obtain a translation of the `$demoInput` array in the screenshot automation
-test base class, from the language team managers. Project managers will then
-make new automated screenshots for this language.
+. Add a new section to the _attributions.txt_ file for the translation team
+management for this language. [Language team]
 
-. Add the new language to the build scripts, and make sure it is showing up on
-the display and editing site(s) for the project (project managers).
+. Make new automated screenshots for the new language. In order to do this,
+you'll need to translate the `$demoInput` array in the screenshot automation
+test base class [Language team], and then run the automated screenshot
+procedure [Project managers].
+
+. Add the new language to the build scripts (file _languages.txt_), and make
+sure it is showing up on the display and editing site(s) for the
+project. [Project managers]
 
 . Add a new issue component for translations into this new language, by editing
-the Project page (project managers).
+the Project page [Project managers].
 
 . Grant issue maintainer and VCS commit permissions to the manager or managers
 of the language team for the new language, by editing the _Maintainers_ page for
-the project (project managers).
+the project [Project managers].
 
 . Make a translation glossary specific to the project_name, so that terms are
-translated consistently throughout (language team managers). This should
+translated consistently throughout. [Language team managers] This should
 probably be located in the language team's pages on
 https://localize.drupal.org[localize.drupal.org].
 
 . Make issues for translating each topic into the target language, and recruit
-volunteers to translate and review (language team managers). See
-<<phase-checklists-translating>>. It may also be useful to make a spreadsheet to
-track progress.
+volunteers to translate and review. [Language team managers]
+See <<phase-checklists-translating>>. It may also be useful to make a
+spreadsheet to track progress.
 
 
 [[pm-guide-updates]]
@@ -272,11 +278,14 @@ added.
 If the guide has been translated, updates are complicated somewhat, because
 translators need to be notified about the update.
 
+Also, if the project_name has been imported into a site, the import will need to
+be updated.
+
 *TBD: Define this process*
 
 
 *Attributions*
 
-This page was written/edited by
+Written/edited by
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] and
 https://www.drupal.org/u/eojthebrave[Joe Shindelar].

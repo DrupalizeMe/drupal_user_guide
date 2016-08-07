@@ -34,25 +34,30 @@ shot of the tracking spreadsheet".
 translating the terms and definitions.
 
 * The Index will automatically be re-alphabetized, but you will need to
-translate index entries. These look like `(((Main entry,secondary entry)))`.
+translate index entries. These are located at the top of each topic, and look
+like `(((Main entry,secondary entry)))`.
 
 * *Additional references section in some topics:* This section is for links to
 outside references, and most or all are in English. Translators will need to
-replace with references in their language if possible. If reference links are
-included that are in English or another language that is not the same as the
-language you are translating into, make sure that the link text notes that they
-are not in the expected language.
+replace the references with references in their language if possible. If you are
+not able to find reference links in your language, and feel that the English
+references are still useful to include (or want to include references in a third
+language), make sure to include a note with each reference that is not in the
+language you are translated into. For instance, it might say:
+----
+https://www.drupal.org/documentation/modules/block[_Drupal.org_ community
+documentation page "Working with blocks (content in regions)" (in English)]
+----
 
-* *Attributions information:* Do not translate people's names, URLs, or company
-names. Also note that the attributions information (which is in files called
-_attributions.txt_ and also at the bottom of each file in an Attributions
-section) will have additional information added (information not present in the
-English source), to provide attributions for the translation team for your
-language.
+* *Attributions information:* There may be attributions information at the
+bottom of topic files, as well as in a book-wide _attributions.txt_ file. When
+translating attributions information, do not translate people's names, URLs, or
+company names. Your language version of the book will also need to have
+additional attributions added for the translation team for your language.
 
 
 *Attributions*
 
-This page was written/edited by
+Written/edited by
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] and
 https://www.drupal.org/u/eojthebrave[Joe Shindelar].

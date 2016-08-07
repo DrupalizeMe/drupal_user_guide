@@ -8,7 +8,9 @@
 #  - Title here<tab>filename.txt
 # It parses these lines into the title (without the leading -) and the filename.
 # Then it makes a copy of the template with the given file name, and puts
-# the title and ID into the template.
+# the title and ID into the template. Note that you will need to separate the
+# topics into Task and Concept topics first, and run this script separately on
+# each list, because they have different templates.
 
 # Read in the template
 $template = $ARGV[0];
