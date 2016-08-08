@@ -133,6 +133,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'image_style_label' => 'Extra medium (300x200)',
     'image_style_machine_name' => 'extra_medium_300x200',
 
+    // Hours and location block.
+    'hours_block_description' => 'Hours and location block',
+    'hours_block_title' => 'Hours and location',
+    'hours_block_body' => '<p>Open: Sundays, 9 AM to 2 PM, April to September</p>\n<p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>',
+
   ];
 
   /**
@@ -979,10 +984,43 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('user-roles_message_bulk.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . '"');
 
 
+    // Topic: user-content - Assigning Authors to Content.
+
+    // Assign first vendor node to the corresponding vendor user.
+    $this->drupalPostForm('node/3/edit', [
+        'uid[0][target_id]' => $this->demoInput['vendor_1_title'],
+      ], $this->callT('Save and keep published'));
+    // Confirmation message after content update.
+    $this->setUpScreenShot('user-content_updated.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    // Go back and take the screenshot of the authoring information.
+    $this->drupalGet('node/3/edit');
+    // Authoring information section of content edit page.
+    $this->setUpScreenShot('user-content.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .layout-region-node-main, .layout-region-node-footer') . $this->setBodyColor() . 'jQuery(\'#edit-author\').attr(\'open\', \'open\'); ' . $this->removeScrollbars() . '"');
+
+    // Assign second vendor node to the corresponding vendor user, without
+    // screenshots.
+    $this->drupalPostForm('node/4/edit', [
+        'uid[0][target_id]' => $this->demoInput['vendor_2_title'],
+      ], $this->callT('Save and keep published'));
+
+
+    // Topic: block-create-custom - Creating a Custom Block.
+
+    // Create a block for hours and location.
+    $this->drupalGet('block/add');
+    // Block add page (block/add).
+    $this->setUpScreenShot('block-create-custom-add-custom-block.png', 'onLoad="jQuery(\'#edit-info-0-value\').val(\'' . $this->demoInput['hours_block_description'] . '\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->drupalPostForm(NULL, [
+        'info[0][value]' => $this->demoInput['hours_block_description'],
+        'body[0][value]' => $this->demoInput['hours_block_body'],
+      ], $this->callT('Save'));
+
+
+
     // @todo Add more topics here.
 
 
-    // Topic: language-add - Adding a language.
+    // Topic: language-add - Adding a Language.
 
     // For non-English versions, locale and language will already be enabled.
     // For English, not yet. In both cases, we need config/content translation

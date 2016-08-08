@@ -7,7 +7,7 @@
 
 ==== Goal
 
-Create a block showing the opening hours and location of the farmer's market and
+Create a block showing the hours and location of the farmer's market and
 place it in the sidebar of the website.
 
 ==== Prerequisite knowledge
@@ -29,13 +29,13 @@ layout_ > _Custom block library_ (admin/structure/block/block-content).
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Value
-|Block description | Opening hours and location block
+|Block description | Hours and location block
 |Body | Open: Sundays, 9 AM to 2 PM, April to September<br />Location: Parking
 lot of Trust Bank, 1st & Union, downtown Anytown.
 |================================
 +
-// Go to block/add
-image:images/block-create-custom-add-custom-block.png["Add a custom block"]
+// Block add page (block/add).
+image:images/block-create-custom-add-custom-block.png["Add a custom block", width="100%"]
 
 [start=4]
 . Click _Save_. A message appears indicating the block has been saved.
