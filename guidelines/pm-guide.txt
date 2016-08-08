@@ -238,7 +238,18 @@ into the new directory. Keep the file names and IDs the same as they were in
 English. [Project managers]
 
 . Add a new section to the _attributions.txt_ file for the translation team
-management for this language. [Language team]
+management for this language. [Project managers can set up skeleton; Language
+team fills it out, and volunteers translate it] Template:
++
+----
+==== Translation into LANGUAGE_NAME
+
+The LANGUAGE_NAME translation of this guide was coordinated by:
+
+* https://www.drupal.org/u/person1[Person One]
+
+* https://www.drupal.org/u/person2[Person Two] of http://example.com[Company]
+----
 
 . Make new automated screenshots for the new language. In order to do this,
 you'll need to translate the `$demoInput` array in the screenshot automation
