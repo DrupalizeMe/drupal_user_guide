@@ -22,14 +22,14 @@ Add an image style and use it to display images on Vendor pages.
 
 ==== Site prerequisites
 
-The Vendor and Recipe content types must exist, with Main Image fields, and
-your site must have at least one Vendor content item. See
+* Vendor and Recipe content types must exist. See <<structure-content-type>>.
+
+* Main image fields must exist for both content types. See <<structure-fields>>.
+
+* Content items must exist for both content types. See
 <<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
 
 ==== Steps
-
-You can create an image style that scales and crops the images to 300 by 200
-pixels and use this to display images on Vendor pages.
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ > _Media_ >
 _Image styles_ (_admin/config/media/image-styles_).
@@ -38,10 +38,10 @@ _Image styles_ (_admin/config/media/image-styles_).
 
 . Enter the name _Extra medium (300x200)_
 
-. Click _Create new style_:. You will see the page Edit style Extra medium
-(300x200) where you can define the effects for this new style.
+. Click _Create new style_. The page _Edit style Extra medium
+(300x200)_ appears.
 
-. In the Effect table select _Scale and crop_ and click _Add_.
+. In the _Effect_ table, select _Scale and crop_. Click _Add_.
 
 . Fill in the fields as shown below.
 +
@@ -58,8 +58,8 @@ _Image styles_ (_admin/config/media/image-styles_).
 image:images/structure-image-style-create-add-style.png["Add an image style",width="100%"]
 
 [start=8]
-. Open the _Content types_ page via Structure > Content types
-(_admin/structure/types/manage_).
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
+(_admin/structure/types_).
 
 . Click _Manage display_ in the _Operations_ dropdown for the Vendor content
 type. The _Manage display_ page (_admin/structure/types/manage/vendor/display_)
@@ -67,7 +67,7 @@ appears.
 
 . Ensure that the secondary tab _Default_ is selected.
 
-. Next to _Main Image_ click the cogwheel. The option fields appear.
+. Click the cogwheel next to _Main image_ for the configuration options.
 
 . Fill in the fields as shown below.
 +
@@ -84,14 +84,14 @@ image:images/structure-image-style-create-manage-display.png["Change field forma
 [start=13]
 . Click _Update_.
 
-. Click _Save_. The new image style will be used when displaying Vendor content.
+. Click _Save_. The new image style will be used while displaying Vendor
+content.
 
 . Open a Vendor content item and verify that it now shows up with the
 scaled-down image. See <<content-edit>> for information on how to locate an
 existing content item.
 
-. Repeat steps 8-15 for the Recipe content type. You will need to have
-previously created a Recipe content item (see <<structure-form-editing>>).
+. Repeat steps 8-15 for the Recipe content type.
 
 // ==== Follow-on tasks
 
@@ -108,7 +108,9 @@ https://www.drupal.org/documentation/modules/image[_Drupal.org_ community docume
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
+Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], and
+https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+http://redcrackle.com[Red Crackle] from
 https://www.drupal.org/documentation/modules/image["Working with images in
 Drupal 7 and 8"],
 copyright 2000-2016 by the individual contributors to the
