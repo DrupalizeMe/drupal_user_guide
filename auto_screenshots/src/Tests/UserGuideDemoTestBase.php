@@ -136,7 +136,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Hours and location block.
     'hours_block_description' => 'Hours and location block',
     'hours_block_title' => 'Hours and location',
-    'hours_block_body' => '<p>Open: Sundays, 9 AM to 2 PM, April to September</p>\n<p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>',
+    'hours_block_title_machine_name' => 'hours_location',
+    'hours_block_body' => "<p>Open: Sundays, 9 AM to 2 PM, April to September</p>\n<p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>",
 
   ];
 
@@ -167,6 +168,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * as a "test" to run, in the specific-language classes.
    */
   public function testBuildDemoSite() {
+    global $base_path;
+
     $this->drupalLogin($this->rootUser);
 
     // Add the first language, set the default language to that, and delete
@@ -1014,7 +1017,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'info[0][value]' => $this->demoInput['hours_block_description'],
         'body[0][value]' => $this->demoInput['hours_block_body'],
       ], $this->callT('Save'));
+    // In the test environment, saving a custom block takes you to the
+    // configure page, which we need to be on for the next topic. Otherwise,
+    // getting to that page involves some kind of obscured URL and is very
+    // difficult to manage.
 
+    // Topic: block-place - Placing a Block in a Region.
+
+    // Configuration page for placing a custom block in the sidebar.
+    $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(\'' . $this->demoInput['hours_block_title'] . '\'); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . $this->hideArea('#toolbar-administration, #edit-block-region-wrapper') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+
+    // Place the block in Bartik, sidebar second.
+    $this->drupalPostForm(NULL, [
+        'settings[label]' => $this->demoInput['hours_block_title'],
+        'id' => $this->demoInput['hours_block_title_machine_name'],
+        'region' => 'sidebar_second',
+      ], $this->callT('Save block'));
+    $this->drupalGet('node/2');
+    // About page with placed sidebar block.
+    $this->setUpScreenShot('block-place-sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars() . '"');
 
 
     // @todo Add more topics here.

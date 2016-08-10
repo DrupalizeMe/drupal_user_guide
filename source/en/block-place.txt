@@ -43,32 +43,33 @@ it. The _Configure block_ window appears. Fill in the fields as shown below.
 | Region | Sidebar second
 |================================
 +
-This configuration allows you also to hide or display the block on specific
-pages. In the case of the Farmer's market website you do not set any of these
-configuration options because you want to show the block everywhere.
+You can also hide or display the block on specific pages. In the case of the
+Farmer's market website you do not set any of these configuration options
+because you want to show the block everywhere.
 +
-// To create this screenshot, follow the 4 steps above.
+// Configuration page for placing a custom block in the sidebar.
 image:images/block-place-configure-block.png["Block configuration page",width="100%"]
 
 [start=5]
-. Click _Save block_. The _Block layout_ page appears.
-+
-You can drag blocks to change the order in which they will appear. Don't forget
-to click _Save blocks_ to actually save the changes that you made.
+. Click _Save block_. The _Block layout_ page appears. You can drag blocks to
+change the order in which they will appear.
 
-. Verify that the Opening hours and location block is listed and click _Save
-blocks_.
+. Verify that the Opening hours and location block is listed in the _Sidebar
+second_ region, and click _Save blocks_.
 +
-The block has been placed on the sidebar of all pages. You have to be logged out
-to verify this.
+The block has been placed on the sidebar of all pages that use the core Bartik
+theme.
 +
-// To create this screenshot, follow the 7 steps above.
+// About page with placed sidebar block.
 image:images/block-place-sidebar.png["Sidebar with login block",width="100%"]
 
 ==== Follow-on tasks
 
 * Remove the _Powered by Drupal_ block from the _Footer_ region by setting the
 region to _- None -_.
+
+* Remove the _Tools_ block from the _Sidebar first_ region by setting the
+region to _- None -_. This block is only visible to logged-in users.
 
 * Place the _User login_ block in a region.
 
@@ -79,4 +80,5 @@ region to _- None -_.
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
+and https://drupal.org/u/jhodgdon[Jennifer Hodgdon].
