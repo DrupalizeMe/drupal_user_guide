@@ -24,8 +24,8 @@ once a new vendor is added on the site.
 
 ==== Site prerequisites
 
-* The core Views module must be installed. This is installed for you when you
-install with the core Standard installation profile.
+* The core Views and Views UI modules must be installed. These are installed for
+you when you install with the core Standard installation profile.
 
 * The Vendor content type must exist, with URL and Main Image fields, and your
 site must have a couple of Vendor content items. See <<structure-content-type>>,
@@ -39,7 +39,7 @@ is deleted. See <<structure-image-style-create>>.
 ==== Steps
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add
-a new view_ (_admin/structure/views/add_). The _Add new view_ wizard appears.
+view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
 
 . Fill in the fields as shown below.
 +
@@ -54,14 +54,14 @@ a new view_ (_admin/structure/views/add_). The _Add new view_ wizard appears.
 | Page title | Title show above the view | Vendors
 | Path | Address of the page | vendors
 | Display format: | Type of list | Table
-| Items to display | Number of items visible on the page | 22
+| Items to display | Number of items visible on the page | 10
 | Use a pager | Split up the list in several pages if there are more items | Checked
 | Create a menu link | Add the view page to the menu | Checked
 | Menu | Menu in which to add the link | Main navigation
 | Link text | Label of the link in the menu | Vendors
 |================================
 
-// to create this image go to admin/structure/views/add and add the values from the table above.
+// Add view wizard.
 image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 
 [start=3]
@@ -70,11 +70,11 @@ image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 . Click _Add_ from the dropdown button in the _Fields_ section. The _Add
 fields_ pop-up appears.
 
-. Enter _image_ in the search field.
+. Enter the word "image" in the search field.
 
-. Check _Main Image_ in the table.
+. Check Main Image in the table.
 
-. Click _Apply (all displays)_. The _Configure field: Content: Main Image_
+. Click _Apply_. The _Configure field: Content: Main Image_
 pop-up appears.
 
 . Fill in the fields as shown below.
@@ -87,16 +87,16 @@ pop-up appears.
 | Link image to: | Add a link to the content item | Content
 |================================
 
-. Click _Apply (all displays)_. The view configuration page appears.
+. Click _Apply_. The view configuration page appears.
 
 . Click _Add_ from the dropdown button in the _Fields_ section. The _Add
 fields_ pop-up appears.
 
-. Enter _body_ in the search field.
+. Enter the word "body" in the search field.
 
 . Select _Body_ in the table.
 
-. Click _Apply (all displays)_. The _Configure field: Content: Body_ pop-up
+. Click _Apply_. The _Configure field: Content: Body_ pop-up
 appears.
 
 . Fill in the fields as shown below.
@@ -109,35 +109,43 @@ appears.
 | Trimmed limit: | The number of maximum characters shown | 120
 |================================
 
-. Click _Apply (all displays)_. The view configuration page appears.
+. Click _Apply_. The view configuration page appears.
 
-. Click the link _Content: title (Title)_ link in the _Fields_ list. The
+. Click the _Content: Title (Title)_ link in the _Fields_ list. The
 _Configure field: Content: Title_ pop-up appears.
 
 . Uncheck _Create a label_. This will remove the label that was created by the
 wizard.
 
-. Click _Apply (all displays)_. The view configuration page appears.
+. Click _Apply_. The view configuration page appears.
 
-. Click _Rearrange_ from the dropdown list in the _Fields_ section. The
+. Click _Rearrange_ from the dropdown button in the _Fields_ section. The
 _Rearrange fields_ pop-up appears.
 
-. Drag the fields in the right order: Image, Title. Body.
+. Drag the fields into the right order: Image, Title. Body.
 
-. Click _Apply (all displays)_. The view configuration page appears.
+. Click _Apply_. The view configuration page appears.
+
+. Click the _Content: Title (desc)_ link in the _Sort criteria_ list. The
+_Configure sort criterion: Content: Title_ pop-up appears.
+
+. Click _Sort ascending_ for the _Order.
+
+. Click _Apply_. The view configuration page appears.
+
+. Optionally, click _Update preview_ for a preview.
 
 . Click _Save_.
 
-// to create this image follow all the above steps.
-image:images/views-create-view.png["Vendors view configuration page",width="100%"]
+// Completed vendors view administration page.
+image:images/views-create-view.png["Vendors view configuration page", width="100%"]
 
-[start=23]
-. Click _Update preview_ for a preview.
-
+[start=27]
 . Navigate to the homepage and click Vendors from the main navigation to see
 the result.
 
-// @todo Add a screen shot of the Vendors page.
+// Completed vendors view output.
+image:images/views-create-view-output.png["Vendors view output"]
 
 ==== Follow-on tasks
 
@@ -152,4 +160,5 @@ place. Change the order of the menu items in the main navigation. See
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
+and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

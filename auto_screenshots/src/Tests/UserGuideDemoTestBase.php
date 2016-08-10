@@ -59,14 +59,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Home page content item.
     'home_title' => 'Home',
-    'home_body' => "<p>Welcome to City Market - your neighborhood farmers market!</p>\n<p>Open: Sundays, 9 AM to 2 PM, April to September</p>\n<p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>",
+    'home_body' => "<p>Welcome to City Market - your neighborhood farmers market!</p><p>Open: Sundays, 9 AM to 2 PM, April to September</p><p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>",
     'home_summary' => 'Opening times and location of City Market',
     'home_path' => '/home',
     'home_revision_log_message' => 'Updated opening hours',
 
     // About page content item.
     'about_title' => 'About',
-    'about_body' => "<p>City Market started in April 1990 with five vendors.</p>\n<p>Today, it has 100 vendors and an average of 2000 visitors per day.</p>",
+    'about_body' => "<p>City Market started in April 1990 with five vendors.</p><p>Today, it has 100 vendors and an average of 2000 visitors per day.</p>",
     'about_path' => '/about',
     'about_description' => 'History of the market',
 
@@ -137,8 +137,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'hours_block_description' => 'Hours and location block',
     'hours_block_title' => 'Hours and location',
     'hours_block_title_machine_name' => 'hours_location',
-    'hours_block_body' => "<p>Open: Sundays, 9 AM to 2 PM, April to September</p>\n<p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>",
+    'hours_block_body' => "<p>Open: Sundays, 9 AM to 2 PM, April to September</p><p>Location: Parking lot of Trust Bank, 1st & Union, downtown</p>",
 
+    // Vendors view.
+    'vendors_view_title' => 'Vendors',
+    'vendors_view_machine_name' => 'vendors',
+    'vendors_view_path' => 'vendors'
   ];
 
   /**
@@ -1025,7 +1029,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: block-place - Placing a Block in a Region.
 
     // Configuration page for placing a custom block in the sidebar.
-    $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(\'' . $this->demoInput['hours_block_title'] . '\'); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . $this->hideArea('#toolbar-administration, #edit-block-region-wrapper') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(\'' . $this->demoInput['hours_block_title'] . '\'); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . 'jQuery(\'#edit-region\').val(\'sidebar_second\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
 
     // Place the block in Bartik, sidebar second.
     $this->drupalPostForm(NULL, [
@@ -1037,6 +1041,82 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // About page with placed sidebar block.
     $this->setUpScreenShot('block-place-sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars() . '"');
 
+
+    // Topic: views-create: Creating a Content List View.
+
+    // Create a Vendors view.
+    $this->drupalGet('admin/structure/views/add');
+    // Add view wizard.
+    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendors_view_title'] . '\').change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $this->demoInput['vendor_type_machine_name'] . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:DESC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(\'' . $this->demoInput['vendors_view_title'] . '\'); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'check\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(\'' . $this->demoInput['vendors_view_title'] . '\');' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
+    $this->drupalPostForm(NULL, [
+        'label' => $this->demoInput['vendors_view_title'],
+        'id' => $this->demoInput['vendors_view_machine_name'],
+        'show[type]' => $this->demoInput['vendor_type_machine_name'],
+        'show[sort]' => 'node_field_data-title:DESC',
+        'page[create]' => TRUE,
+        'page[title]' => $this->demoInput['vendors_view_title'],
+        'page[path]' => $this->demoInput['vendors_view_path'],
+        'page[style][style_plugin]' => 'table',
+        'page[link]' => TRUE,
+        'page[link_properties][menu_name]' => 'main',
+        'page[link_properties][title]' => $this->demoInput['vendors_view_title'],
+      ], $this->callT('Save and edit'));
+    // The next statements add parts to the view, using no-JS options for the
+    // test.
+    // Add the main image field.
+    $this->clickLinkContainingUrl('add-handler');
+    $this->drupalPostForm(NULL, [
+        'name[node__field_' . $main_image . '.field_' . $main_image . ']' => 'node__field_' . $main_image . '.field_' . $main_image,
+      ], $this->callT('Add and configure fields'));
+    $this->drupalPostForm(NULL, [
+        'options[custom_label]' => FALSE,
+        'options[settings][image_style]' => 'medium',
+        'options[settings][image_link]' => 'content',
+      ], $this->callT('Apply'));
+    // Add the body field.
+    $this->clickLinkContainingUrl('add-handler');
+    $this->drupalPostForm(NULL, [
+        'name[node__body.body]' => 'node__body.body',
+      ], $this->callT('Add and configure fields'));
+    $this->drupalPostForm(NULL, [
+        'options[custom_label]' => FALSE,
+        'options[type]' => 'text_summary_or_trimmed',
+      ], $this->callT('Apply'));
+    // Fix the configuration for the Title field: remove the label.
+    $this->clickLinkContainingUrl('field/title');
+    $this->drupalPostForm(NULL, [
+        'options[custom_label]' => FALSE,
+      ], $this->callT('Apply'));
+    // Fix the configuration for the Body field: change the trim length.
+    $this->clickLinkContainingUrl('field/body');
+    $this->drupalPostForm(NULL, [
+        'options[settings][trim_length]' => 120,
+      ], $this->callT('Apply'));
+    // Reorder the fields.
+    $this->clickLinkContainingUrl('rearrange');
+    $this->drupalPostForm(NULL, [
+        'fields[title][weight]' => 3,
+        'fields[body][weight]' => 4,
+      ], $this->callT('Apply'));
+    // Fix the menu weight.
+    $this->clickLinkContainingUrl('menu');
+    $this->drupalPostForm(NULL, [
+        'menu[weight]' => 20,
+      ], $this->callT('Apply'));
+    // Change the title sort to ascending.
+    $this->clickLinkContainingUrl('sort/title');
+    $this->drupalPostForm(NULL, [
+        'options[order]' => 'ASC',
+      ], $this->callT('Apply'));
+
+    // Save the view.
+    $this->drupalPostForm(NULL, [], $this->callT('Save'));
+    // Completed vendors view administration page.
+    $this->setUpScreenShot('views-create-view.png', 'onLoad="' . $this->hideArea('#toolbar-administration, #views-preview-wrapper, .messages') . $this->removeScrollbars() . '"');
+    // View the output, with preloaded images.
+    $this->drupalGetWithImagePreload($this->demoInput['vendors_view_path']);
+    // Completed vendors view output.
+    $this->setUpScreenShot('views-create-view-output.png', 'onLoad="' . $this->hideArea('#toolbar-administration, #header, .breadcrumb, #sidebar-first, #sidebar-second, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
     // @todo Add more topics here.
 
@@ -1338,6 +1418,37 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     ];
     $this->writeSettings($settings);
     Settings::initialize(DRUPAL_ROOT, $this->siteDirectory, $this->classLoader);
+  }
+
+  /**
+   * Finds a link whose link contains the given URL substring, and clicks it.
+   */
+  protected function clickLinkContainingUrl($url, $index = 0) {
+    $urls = $this->xpath('//a[contains(@href, :url)]', [':url' => $url]);
+    if (isset($urls[$index])) {
+      $url_target = $this->getAbsoluteUrl($urls[$index]['href']);
+      $this->drupalGet($url_target);
+    }
+    else {
+      $this->fail('Could not find link matching ' . $url);
+    }
+  }
+
+  /**
+   * Finds and preloads all images on the given path, and the the page itself.
+   *
+   * This is primarily useful if you have image styles in force on the page.
+   */
+  protected function drupalGetWithImagePreload($path) {
+    $this->drupalGet($path);
+    $imgs = $this->xpath('//img');
+    foreach ($imgs as $img) {
+      $source = $this->getAbsoluteUrl($img['src']);
+      // Load the image.
+      $this->drupalGet($source);
+      // Reload the main page again so that getAbsoluteUrl() works right.
+      $this->drupalGet($path);
+    }
   }
 
 }
