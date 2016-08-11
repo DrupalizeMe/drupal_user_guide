@@ -24,30 +24,25 @@ tasks.
 
 ==== Steps
 
-Create a Vendor role that you can assign to users in order to give them certain
-permissions.
-
 . In the _Manage_ administrative menu, navigate to _People_ > _Roles_
 (_admin/people/roles_).
 
-. Once there, you will find the three default roles of "Anonymous user",
-"Authenticated user", and "Administrator" along with a button _Add role_
-allowing the creation of a new custom role.
+. You will find default roles _Anonymous user_,
+_Authenticated user_, and _Administrator_ already present.
 +
 // Roles page (admin/people/roles).
 image:images/user-new-role-roles-page.png["Roles page"]
 
 [start=3]
-. Click _Add Role_ above the list of roles.
+. Click _Add Role_ to add a custom role.
 
-. Name the new role. For this example, enter Vendor in the _Role name_ text
-box and click _Save_.
+. Type Vendor in the _Role name_ field. Click _Save_.
 +
 // Add role page (admin/people/roles/add).
 image:images/user-new-role-add-role.png["adding vendor as a role"]
 
 [start=5]
-. You should see the message "Role Vendor has been added." displayed at the top
+. You will see the message "Role Vendor has been added." displayed at the top
 of the page.
 +
 // Confirmation message after adding new role.
