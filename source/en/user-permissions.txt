@@ -13,7 +13,7 @@ How to assign a permission to a role.
 ==== Goal
 
 Change the permissions for the Vendor role so that users can create, edit,
-and delete recipe and vendor content, format the content, and contact each
+and delete Recipe and Vendor content, format the content, and contact each
 other.
 
 ==== Prerequisite knowledge
@@ -28,15 +28,15 @@ The Vendor role must exist on your site. See <<user-new-role>>.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _People_ and then the _Roles_
-tab (_admin/people/roles_). The _Roles_ page appears.
+. In the _Manage_ administrative menu, navigate to _People_ > _Roles_
+(_admin/people/roles_). The _Roles_ page appears.
 
 . Click _Edit permissions_ in the dropdown for the Vendor
 role. The _Edit role_ page appears where you can see all the available
 actions for the website such as, for example, _Post comments_ or _Use advanced
 search_. The available permissions depend on the modules that are installed in
-the site. Note: some permissions may have security implications, be cautious
-when assigning permissions to roles.
+the site. Note: Some permissions may have security implications. Be cautious
+while assigning permissions to roles.
 
 . Check the boxes for the following permissions, listed by module:
 +
