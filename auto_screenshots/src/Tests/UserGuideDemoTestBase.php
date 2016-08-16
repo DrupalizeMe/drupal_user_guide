@@ -3,7 +3,24 @@
 namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Database\Database;
 use Drupal\simpletest\WebTestBase;
+use Drupal\user\Entity\User;
+use BackupMigrate\Core\Config\Config;
+use BackupMigrate\Core\Destination\DirectoryDestination;
+use BackupMigrate\Core\File\TempFileAdapter;
+use BackupMigrate\Core\File\TempFileManager;
+use BackupMigrate\Core\Filter\CompressionFilter;
+use BackupMigrate\Core\Filter\DBExcludeFilter;
+use BackupMigrate\Core\Filter\FileExcludeFilter;
+use BackupMigrate\Core\Filter\FileNamer;
+use BackupMigrate\Core\Main\BackupMigrate;
+use BackupMigrate\Core\Service\TarArchiveReader;
+use BackupMigrate\Core\Service\TarArchiveWriter;
+use BackupMigrate\Core\Source\FileDirectorySource;
+use BackupMigrate\Core\Source\MySQLiSource;
+
+require __DIR__ . '/../../vendor/autoload.php';
 
 /**
  * Base class for tests that automate screenshots for the User Guide.
@@ -14,21 +31,21 @@ use Drupal\simpletest\WebTestBase;
  *   target language. Note that most of the text should not contain
  *   ' characters, as this will result in an error when generating the screen
  *   shots.
- *
- * The HTML output for each screenshot is manipulated using JavaScript, so that
- * it only shows a small area of the page, with the rest hidden. The script that
- * captures the images then trims the images automatically down to the relevant
- * area.
+ * - Override the $runList member variable to run the sections of interest.
  *
  * See README.txt file in the module directory for instructions for making
  * screenshot images from this test output.
+ *
+ * This script can also create/restore backups, to allow you to run only some
+ * portion of the screenshots. See the documentation for the $runList member
+ * variable for details.
  */
 abstract class UserGuideDemoTestBase extends WebTestBase {
 
   /**
    * Which Drupal Core software version to use for the downloading screenshots.
    */
-  protected $latestRelease = '8.1.3';
+  protected $latestRelease = '8.1.8';
 
   /**
    * Strings and other information to input into the demo site.
@@ -142,7 +159,50 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Vendors view.
     'vendors_view_title' => 'Vendors',
     'vendors_view_machine_name' => 'vendors',
-    'vendors_view_path' => 'vendors'
+    'vendors_view_path' => 'vendors',
+
+    // Recipes view.
+    'recipes_view_title' => 'Recipes',
+    'recipes_view_machine_name' => 'recipes',
+    'recipes_view_path' => 'recipes',
+    'recipes_view_ingredients_label' => 'Find recipes using...',
+
+  ];
+
+  /**
+   * Which chapters to run, and which to save backups for.
+   *
+   * Each key in this array is the name of a method to run. The values are:
+   * - run: Run normally. Assumes previous methods have been run or restored.
+   * - restore: Restore from the previous method's backup, and then run this
+   *   method.
+   * - backup: Run this method, and create a backup afterwards.
+   * - restore_backup: Restore from previous method's backup, then run this
+   *   method, then make a backup.
+   * - skip: Do nothing.
+   *
+   * Created backups are stored in a temporary directory inside /tmp on your
+   * local machine. There will be lines in the output telling you where they
+   * are, saying:
+   * "BACKUP MADE TO: ____".
+   *
+   * After verifying, save the backups for later restoration in the
+   * auto_screenshots/backups/LANGUAGE_CODE directory.
+   *
+   * @var array
+   */
+  protected $runList = [
+    'doPrefaceInstall' => 'run',
+    'doBasicConfig' => 'run',
+    'doBasicPage' => 'run',
+    'doContentStructure' => 'run',
+    'doUserAccounts' => 'run',
+    'doBlocks' => 'run',
+    'doViews' => 'run',
+    'doMultilingual' => 'run',
+    'doExtending' => 'run',
+    'doPreventing' => 'run',
+    'doSecurity' => 'run',
   ];
 
   /**
@@ -166,14 +226,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected $screenshotId = 0;
 
   /**
+   * The directory where asset files can be found.
+   *
+   * This is set in the testBuildDemoSite() method.
+   */
+  protected $assetsDirectory;
+
+  /**
    * Builds the entire demo site and makes screenshots.
    *
    * Note that the method name starts with "test" so that it will be detected
    * as a "test" to run, in the specific-language classes.
    */
   public function testBuildDemoSite() {
-    global $base_path;
-
     $this->drupalLogin($this->rootUser);
 
     // Add the first language, set the default language to that, and delete
@@ -204,8 +269,35 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Figure out where the assets directory is.
     $dir_parts = explode('/', drupal_get_path('module', 'auto_screenshots'));
     array_pop($dir_parts);
-    $assets_directory = implode('/', $dir_parts) . '/assets/';
+    $this->assetsDirectory = implode('/', $dir_parts) . '/assets/';
 
+    // Run all the desired chapters.
+    $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+    $backup_read_dir = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $this->demoInput['first_langcode']);
+    $previous = '';
+    foreach ($this->runList as $method => $op) {
+      if (($op == 'restore' || $op == 'restore_backup') && $previous) {
+        // Restore the database from the backup of the previous topic.
+        $this->restoreBackup($backup_read_dir . '/' . $previous);
+      }
+      $previous = $method;
+
+      if ($op != 'skip') {
+        // Run this topic.
+        call_user_func([$this, $method]);
+      }
+
+      if ($op == 'backup' || $op == 'restore_backup') {
+        // Make a backup of this topic.
+        $this->makeBackup($backup_write_dir . '/' . $method);
+      }
+    }
+  }
+
+  /**
+   * Makes screenshots for the Preface and Install chapters.
+   */
+  protected function doPrefaceInstall() {
     // Topic: preface-conventions: Conventions of the user guide.
     $this->drupalGet('admin/config');
     // Top navigation bar on any admin page, with Manage menu showing.
@@ -228,9 +320,16 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
     // File section of a recent Drupal release download page, such as
     // https://www.drupal.org/project/drupal/releases/8.1.3.
-    $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools') . $this->hideArea('#nav-content') . $this->hideArea('.panel-display .content') . $this->hideArea('.panel-display .footer') . $this->hideArea('.views-field-field-release-file-hash') . $this->hideArea('.views-field-field-release-file-sha1') . $this->hideArea('.views-field-field-release-file-sha256') . '"');
+    $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools, #nav-content, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
 
     // Topic install-run - Running the installer. Skip -- manual screenshots.
+
+  }
+
+  /**
+   * Makes screenshots for the Basic Site Configuration chapter.
+   */
+  protected function doBasicConfig() {
 
     // Topic: config-overview - Concept: Administrative overview.
     $this->drupalGet('admin/config');
@@ -325,7 +424,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'palette[text]' => '#000000',
         'palette[link]' => '#2a3524',
         'default_logo' => FALSE,
-        'logo_path' => $assets_directory . 'AnytownFarmersMarket.png',
+        'logo_path' => $this->assetsDirectory . 'AnytownFarmersMarket.png',
       ], $this->callT('Save configuration'));
 
     $this->drupalGet('admin/appearance/settings/bartik');
@@ -354,6 +453,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // button.
     // Home page with pencil icons showing, with configured theme.
     $this->setUpScreenShot('config-overview-pencils.png', 'onLoad="' . $this->reloadOnce() . $this->hideArea('footer') . $this->removeScrollbars() . $this->setBodyColor() . 'jQuery(\'.contextual button\').removeClass(\'visually-hidden\');' . '"');
+
+  }
+
+  /**
+   * Makes screenshots for the Basic Page Management chapter.
+   */
+  protected function doBasicPage() {
 
     // Topic: content-create - Creating a Content Item
     // Create a Home page.
@@ -452,16 +558,27 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Header section of Home page with reordered menu items.
     $this->setUpScreenShot('menu-reorder_final_order.png', 'onLoad="' . $this->showOnly('header') . $this->hideArea('.visually-hidden, .contextual, .menu-toggle') . $this->setWidth('header') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
+  }
+
+  /**
+   * Makes screenshots for the Content Structure chapter.
+   */
+  protected function doContentStructure() {
+    // Set up some helper variables.
+    $vendor = $this->demoInput['vendor_type_machine_name'];
+    $recipe = $this->demoInput['recipe_type_machine_name'];
+    $vendor_url = $this->demoInput['vendor_field_url_machine_name'];
+    $vendor_url_hyphens = str_replace('_', '-', $vendor_url);
+    $main_image = $this->demoInput['vendor_field_image_machine_name'];
+    $main_image_hyphens = str_replace('_', '-', $main_image);
+    $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
+    $submitted_by = $this->demoInput['recipe_field_submitted_machine_name'];
+
     // Topic: structure-content-type - Adding a Content Type.
     // Create the Vendor content type.
 
     $this->drupalGet('admin/structure/types/add');
 
-    // We will be using this content type everywhere. Keep track of the
-    // machine name in a local variable (will be doing the same for other
-    // field and content type and view machine names).
-    $vendor = $this->demoInput['vendor_type_machine_name'];
-    $vendor_hyphens = str_replace('_', '-', $vendor);
 
     // Top of admin/structure/types/add, with Name and Description fields.
     $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(\'' . $this->demoInput['vendor_type_name'] . '\'); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').change(); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
@@ -493,8 +610,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Add content type for Recipe. No screen shots.
     $this->drupalGet('admin/structure/types/add');
-    $recipe = $this->demoInput['recipe_type_machine_name'];
-    $recipe_hyphens = str_replace('_', '-', $recipe);
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['recipe_type_name'],
         'type' => $recipe,
@@ -522,8 +637,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: structure-fields - Adding basic fields to a content type.
     // Add Vendor URL field to Vendor content type.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
-    $vendor_url = $this->demoInput['vendor_field_url_machine_name'];
-    $vendor_url_hyphens = str_replace('_', '-', $vendor_url);
 
     // Fill in the form in the screenshot: choose Link for field type and
     // type in Vendor URL for the Label, triggering the "change" event to set
@@ -547,8 +660,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Add Main Image field to Vendor content type.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
-    $main_image = $this->demoInput['vendor_field_image_machine_name'];
-    $main_image_hyphens = str_replace('_', '-', $main_image);
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'image',
         'label' => $this->demoInput['vendor_field_image_label'],
@@ -589,7 +700,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Submit once.
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['vendor_1_title'],
-        'files[field_' . $main_image . '_0]' => $assets_directory . 'farm.jpg',
+        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'farm.jpg',
         'body[0][summary]' => $this->demoInput['vendor_1_summary'],
         'body[0][value]' => $this->demoInput['vendor_1_body'],
         'path[0][alias]' => $this->demoInput['vendor_1_path'],
@@ -604,7 +715,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('node/add/' . $vendor);
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['vendor_2_title'],
-        'files[field_' . $main_image . '_0]' => $assets_directory . 'honey_bee.jpg',
+        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'honey_bee.jpg',
         'body[0][summary]' => $this->demoInput['vendor_2_summary'],
         'body[0][value]' => $this->demoInput['vendor_2_body'],
         'path[0][alias]' => $this->demoInput['vendor_2_path'],
@@ -625,7 +736,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/taxonomy/add');
     // Add Ingredients vocabulary from admin/structure/taxonomy/add.
     $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', 'onLoad="jQuery(\'#edit-name\').val(\'' . $this->demoInput['recipe_field_ingredients_label'] . '\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
-    $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['recipe_field_ingredients_label'],
         'vid' => $ingredients,
@@ -690,7 +800,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: structure-adding-reference - Adding a reference field.
     // Add the Submitted by field to Recipe content type.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
-    $submitted_by = $this->demoInput['recipe_field_submitted_machine_name'];
 
     // Fill in the form in the screenshot: choose content reference for
     // field type and type in Submitted by for the Label.
@@ -746,7 +855,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Submit once.
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['recipe_1_title'],
-        'files[field_' . $main_image . '_0]' => $assets_directory . 'salad.jpg',
+        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'salad.jpg',
         'body[0][value]' => $this->demoInput['recipe_1_body'],
         'path[0][alias]' => $this->demoInput['recipe_1_path'],
         'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_1_ingredients'],
@@ -761,7 +870,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('node/add/' . $recipe);
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['recipe_2_title'],
-        'files[field_' . $main_image . '_0]' => $assets_directory . 'carrots.jpg',
+        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'carrots.jpg',
         'body[0][value]' => $this->demoInput['recipe_2_body'],
         'path[0][alias]' => $this->demoInput['recipe_2_path'],
         'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_2_ingredients'],
@@ -893,6 +1002,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Allowed HTML tags area on text format edit page.
     $this->setUpScreenShot('structure-text-format-config-allowed-html.png', 'onLoad="' . 'window.scroll(0,5000);' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .form-item-name, .form-type-machine-name, fieldset, .form-type-select, #editor-settings-wrapper, #filters-status-wrapper, .form-type-table,  #edit-actions') . $this->setWidth('.form-type-vertical-tabs', 800) . $this->removeScrollbars() . '"');
 
+  }
+
+  /**
+   * Makes screenshots for the User Accounts chapter.
+   */
+  protected function doUserAccounts() {
+    $vendor = $this->demoInput['vendor_type_machine_name'];
+    $recipe = $this->demoInput['recipe_type_machine_name'];
 
     // Topic: user-new-role - Creating a role.
 
@@ -905,7 +1022,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('user-new-role-add-role.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendor_type_name'] . '\'); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').change(); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration') . '"');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendor_type_name'],
-        'id' => $this->demoInput['vendor_type_machine_name'],
+        'id' => $vendor,
       ], $this->callT('Save'));
     // Confirmation message after adding new role.
     $this->setUpScreenShot('user-new-role-confirm.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 500) . $this->setBodyColor() . $this->removeScrollbars() . '"');
@@ -925,7 +1042,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'pass[pass2]' => $password,
         'roles[' . $vendor . ']' => $vendor,
         'notify' => TRUE,
-        'files[user_picture_0]' => $assets_directory . 'honey_bee.jpg',
+        'files[user_picture_0]' => $this->assetsDirectory . 'honey_bee.jpg',
       ], $this->callT('Create new account'));
     // Confirmation message after adding new user.
     $this->setUpScreenShot('user-new-user-created.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 800) . $this->setBodyColor() . $this->removeScrollbars() . '"');
@@ -940,7 +1057,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'pass[pass2]' => $password,
         'roles[' . $vendor . ']' => $vendor,
         'notify' => TRUE,
-        'files[user_picture_0]' => $assets_directory . 'farm.jpg',
+        'files[user_picture_0]' => $this->assetsDirectory . 'farm.jpg',
       ], $this->callT('Create new account'));
 
 
@@ -1010,6 +1127,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'uid[0][target_id]' => $this->demoInput['vendor_2_title'],
       ], $this->callT('Save and keep published'));
 
+  }
+
+  /**
+   * Makes screenshots for the Blocks chapter.
+   */
+  protected function doBlocks() {
 
     // Topic: block-create-custom - Creating a Custom Block.
 
@@ -1041,17 +1164,29 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // About page with placed sidebar block.
     $this->setUpScreenShot('block-place-sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars() . '"');
 
+  }
+
+  /**
+   * Makes screenshots for the Views chapter.
+   */
+  protected function doViews() {
+    $vendor = $this->demoInput['vendor_type_machine_name'];
+    $recipe = $this->demoInput['recipe_type_machine_name'];
+    $main_image = $this->demoInput['vendor_field_image_machine_name'];
+    $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
+    $vendors_view = $this->demoInput['vendors_view_machine_name'];
+    $recipes_view = $this->demoInput['recipes_view_machine_name'];
 
     // Topic: views-create: Creating a Content List View.
 
     // Create a Vendors view.
     $this->drupalGet('admin/structure/views/add');
     // Add view wizard.
-    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendors_view_title'] . '\').change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $this->demoInput['vendor_type_machine_name'] . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:DESC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(\'' . $this->demoInput['vendors_view_title'] . '\'); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'check\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(\'' . $this->demoInput['vendors_view_title'] . '\');' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendors_view_title'] . '\').change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:DESC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(\'' . $this->demoInput['vendors_view_title'] . '\'); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'check\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(\'' . $this->demoInput['vendors_view_title'] . '\');' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendors_view_title'],
-        'id' => $this->demoInput['vendors_view_machine_name'],
-        'show[type]' => $this->demoInput['vendor_type_machine_name'],
+        'id' => $vendors_view,
+        'show[type]' => $vendor,
         'show[sort]' => 'node_field_data-title:DESC',
         'page[create]' => TRUE,
         'page[title]' => $this->demoInput['vendors_view_title'],
@@ -1116,12 +1251,112 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // View the output, with preloaded images.
     $this->drupalGetWithImagePreload($this->demoInput['vendors_view_path']);
     // Completed vendors view output.
-    $this->setUpScreenShot('views-create-view-output.png', 'onLoad="' . $this->hideArea('#toolbar-administration, #header, .breadcrumb, #sidebar-first, #sidebar-second, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('views-create-view-output.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
-    // @todo Add more topics here.
 
+    // Topic: views-duplicating - Duplicating a View.
+
+    // Duplicate the Vendors view.
+    $this->drupalGet('admin/structure/views');
+    // Views page (admin/structure/views), with operations dropdown
+    // for Vendor view open.
+    $this->setUpScreenShot('views-duplicate_duplicate.png', 'onLoad="' . 'jQuery(&quot;a[href*=\'views/view/' . $vendors_view . '\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration, .views-list-section-disabled') . 'jQuery(\'.views-list-section-disabled\').height(0); "window.scroll(0,6000);' . $this->removeScrollbars() . '"');
+    $this->clickLinkContainingUrl('views/view/' . $vendors_view . '/duplicate');
+    $this->drupalPostForm(NULL, [
+        'label' => $this->demoInput['recipes_view_title'],
+        'id' => $recipes_view,
+      ], $this->callT('Duplicate'));
+
+    // Modify various aspects of the view, and make screenshots of some of
+    // the configuration forms.
+
+    // Page title.
+    $this->clickLinkContainingUrl('page_1/title');
+    $this->drupalPostForm(NULL, [
+        'title' => $this->demoInput['recipes_view_title'],
+      ], $this->callT('Apply'));
+    $this->clickLinkContainingUrl('page_1/title');
+    // View title configuration screen.
+    $this->setUpScreenShot('views-duplicate_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .breadcrumb') . $this->setWidth('layout-container') . '"');
+    $this->drupalPostForm(NULL, [], $this->callT('Apply'));
+
+    // Grid style.
+    $this->clickLinkContainingUrl('page_1/style');
+    $this->drupalPostForm(NULL, [
+        'style[type]' => 'grid',
+      ], $this->callT('Apply'));
+    $this->drupalPostForm(NULL, [], $this->callT('Apply'));
+    // In a real site, changing to Grid would also change the row style to
+    // Fields, but for some reason this is not working in the test environment.
+    $this->clickLinkContainingUrl('page_1/row');
+    $this->drupalPostForm(NULL, [
+        'row[type]' => 'fields',
+      ], $this->callT('Apply'));
+
+    // Remove body field.
+    $this->clickLinkContainingUrl('page_1/field/body');
+    $this->drupalPostForm(NULL, [], $this->callT('Remove'));
+
+    // Filter on Recipe content type.
+    $this->clickLinkContainingUrl('page_1/filter/type');
+    $this->drupalPostForm(NULL, [
+        'options[value][' . $vendor . ']' => FALSE,
+        'options[value][' . $recipe . ']' => $recipe,
+      ], $this->callT('Apply'));
+
+    // Add exposed filter for Ingredients.
+    $this->clickLinkContainingUrl('add-handler/' . $recipes_view . '/page_1/filter');
+    $this->drupalPostForm(NULL, [
+        'name[node__field_' . $ingredients . '.field_' . $ingredients . '_target_id]' => 'node__field_' . $ingredients . '.field_' . $ingredients . '_target_id',
+      ], $this->callT('Add and configure filter criteria'));
+    $this->drupalPostForm(NULL, [], $this->callT('Apply'));
+    $this->drupalPostForm(NULL, [
+        'options[expose_button][checkbox][checkbox]' => 1,
+      ], $this->callT('Expose filter'));
+    $this->drupalPostForm(NULL, [
+        'options[expose][label]' => $this->demoInput['recipes_view_ingredients_label'],
+      ], $this->callT('Apply'));
+    $this->clickLinkContainingUrl('/page_1/filter/field_');
+    // Ingredients field exposed filter configuration.
+    $this->setUpScreenShot('views-duplicate_expose.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .breadcrumb, .exposed-description, #edit-options-expose-button-button, .grouped-description, #edit-options-group-button-button, #edit-options-operator--wrapper, .form-item-options-value, .form-item-options-expose-use-operator,  .form-item-options-expose-operator-id,  .form-item-options-expose-multiple,  .form-item-options-expose-remember, #edit-options-expose-remember-roles--wrapper,  .form-item-options-expose-identifier,  .form-item-options-error-message,  .form-item-options-reduce-duplicates, #edit-options-admin-label, #edit-actions') . $this->setWidth('layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->drupalPostForm(NULL, [], $this->callT('Apply'));
+
+    // Path and menu link title.
+    $this->clickLinkContainingUrl('page_1/path');
+    $this->drupalPostForm(NULL, [
+        'path' => $this->demoInput['recipes_view_path'],
+      ], $this->callT('Apply'));
+    $this->clickLinkContainingUrl('page_1/menu');
+    $this->drupalPostForm(NULL, [
+        'menu[title]' => $this->demoInput['recipes_view_title'],
+      ], $this->callT('Apply'));
+
+    // Use Ajax.
+    $this->clickLinkContainingUrl('page_1/use_ajax');
+    $this->drupalPostForm(NULL, [
+        'use_ajax' => 1,
+      ], $this->callT('Apply'));
+
+    // Save the view.
+    $this->drupalPostForm(NULL, [], $this->callT('Save'));
+
+    $this->drupalGetWithImagePreload($this->demoInput['recipes_view_path']);
+    // Completed recipes view output.
+    $this->setUpScreenShot('views-duplicate_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
+
+    // @todo Add the rest of the Views topics here.
+
+
+  }
+
+  /**
+   * Makes screenshots for the Multilingual chapter.
+   */
+  protected function doMultilingual() {
 
     // Topic: language-add - Adding a Language.
+
+    // @todo This has not been really finished.
 
     // For non-English versions, locale and language will already be enabled.
     // For English, not yet. In both cases, we need config/content translation
@@ -1189,9 +1424,28 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
+   * Makes screenshots for the Extending chapter.
+   */
+  protected function doExtending() {
+    // @todo Write this.
+  }
+
+  /**
+   * Makes screenshots for the Preventing and Fixing Problems chapter.
+   */
+  protected function doPreventing() {
+    // @todo Write this.
+  }
+
+  /**
+   * Makes screenshots for the Security chapter.
+   */
+  protected function doSecurity() {
+    // @todo Write this.
+  }
+
+  /**
    * Clears the Drupal cache.
-   *
-   * @todo Remove this if it is not used.
    */
   protected function clearCache() {
     $this->drupalPostForm('admin/config/development/performance', [], $this->callT('Clear all caches'));
@@ -1238,7 +1492,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   /**
    * Makes clean screenshot output, and adds a note afterwards.
    *
-   * The screen shot is of the current page.
+   * The screen shot is of the current page. The HTML output for each screenshot
+   * can be manipulated using JavaScript, so that it only shows a small area of
+   * the page, with the rest hidden. The script that captures the images then
+   * trims the images automatically down to the relevant area.
    *
    * @param string $file
    *   Name of the screen shot file.
@@ -1253,6 +1510,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @see UserGuideDemoTestBase::setWidth()
    * @see UserGuideDemoTestBase::setBodyColor()
    * @see UserGuideDemoTestBase::removeScrollbars()
+   * @see UserGuideDemoTestBase::reloadOnce()
    * @see UserGuideDemoTestBase::addBorder()
    */
   protected function setUpScreenShot($file, $body_addition = '') {
@@ -1449,6 +1707,190 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       // Reload the main page again so that getAbsoluteUrl() works right.
       $this->drupalGet($path);
     }
+  }
+
+  /**
+   * Makes a backup of uploads and database, and stores it in a directory.
+   *
+   * @param string $directory
+   *   Directory to store the backup in.
+   *
+   * @see UserGuideDemoTestBase::restoreBackup()
+   */
+  protected function makeBackup($directory) {
+    $this->clearCache();
+    \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
+    $db_manager = $this->backupDBManager($directory);
+    $db_manager->backup('database1', 'directory1');
+    $file_manager = $this->backupFileManager($directory);
+    $file_manager->backup('public1', 'directory1');
+    $this->pass('BACKUP MADE TO: ' . $directory);
+  }
+
+  /**
+   * Restores a backup of uploads and database.
+   *
+   * @param string $directory
+   *   Directory the backup was saved in.
+   *
+   * @see UserGuideDemoTestBase::makeBackup()
+   */
+  protected function restoreBackup($directory) {
+    // The User 1 account created in this session will not match the one in
+    // the database we are restoring, so take care of this problem.
+    $pass_raw = $this->rootUser->pass_raw;
+    $this->drupalLogout();
+
+    // Actually update the database and files.
+    $db_manager = $this->backupDBManager($directory);
+    $db_manager->restore('database1', 'directory1', 'database.mysql.gz');
+    $file_manager = $this->backupFileManager($directory);
+    $file_manager->restore('public1', 'directory1', 'public_files.tar.gz');
+    $this->pass('BACKUP RESTORED FROM: ' . $directory);
+
+    // Update the root user, log in, and clear the cache.
+    $this->rootUser = User::load(1);
+    // This line is needed for $this->drupalLogin().
+    $this->rootUser->pass_raw = $pass_raw;
+    // This line is needed for User::save().
+    $this->rootUser->pass = $pass_raw;
+    $this->rootUser->save();
+    $this->drupalLogin($this->rootUser);
+    $this->clearCache();
+  }
+
+  /**
+   * Sets up and returns a database backup manager.
+   *
+   * @param string $directory
+   *   Directory for the backup. The backup file name should be
+   *   database.mysql.gz within this directory.
+   *
+   * @return BackupMigrate
+   *   The database backup manager object.
+   */
+  protected function backupDBManager($directory) {
+    // Figure out which tables to exclude: anything lacking the current
+    // test prefix. Also do not save data for any table containing 'cache_'.
+    $db_info = Database::getConnectionInfo()['default'];
+    $prefix = $this->getDatabasePrefix();
+    $exclude = [];
+    $no_data = [];
+    $all_tables = Database::getConnection()->query('SHOW TABLES')->fetchCol();
+    foreach ($all_tables as $table) {
+      if (strpos($table, $prefix) !== 0) {
+        $exclude[] = $table;
+      }
+      elseif ((strpos($table, 'cache_') !== FALSE)) {
+        $no_data[] = $table;
+      }
+    }
+
+    // Set up the backup manager object.
+    $config = new Config([
+        'database1' => $db_info,
+        'directory1' => [
+          'directory' => $directory,
+        ],
+        'compressor' => [
+          'compression' => 'gzip',
+        ],
+        'namer' => [
+          'filename' => 'database',
+          'timestamp' => FALSE,
+        ],
+        'excluder' => [
+          'exclude_tables' => $exclude,
+          'nodata_tables' => $no_data,
+        ],
+        'renamer' => [
+          'source_prefix' => $prefix,
+          'destination_prefix' => 'generic_simpletest_prefix_',
+        ],
+      ]);
+
+    $manager = new BackupMigrate();
+    $manager->services()->add('ArchiveReader', new TarArchiveReader());
+    $manager->services()->add('ArchiveWriter', new TarArchiveWriter());
+    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->getTempFilesDirectory()));
+    $manager->services()->add('TempFileManager', new TempFileManager($manager->services()->get('TempFileAdapter')));
+
+    $db_source = new MySQLiSource();
+    $manager->services()->addClient($db_source);
+    $manager->sources()->add('database1', $db_source);
+    $manager->sources()->setConfig($config);
+
+    $dir_dest = new DirectoryDestination();
+    $manager->services()->addClient($dir_dest);
+    $manager->destinations()->add('directory1', $dir_dest);
+    $manager->destinations()->setConfig($config);
+
+    $manager->plugins()->add('excluder', new DBExcludeFilter());
+    $manager->plugins()->add('renamer', new DBTableRenameFilter());
+    $manager->plugins()->add('namer', new FileNamer());
+    $manager->plugins()->add('compressor', new CompressionFilter());
+    $manager->plugins()->setConfig($config);
+
+    return $manager;
+  }
+
+  /**
+   * Sets up and returns a file backup manager.
+   *
+   * @param string $directory
+   *   Directory for the backup. The backup file name should be
+   *   public_files.tar within this directory.
+   *
+   * @return BackupMigrate
+   *   The file backup manager object.
+   */
+  protected function backupFileManager($directory) {
+    // Set up the backup manager object.
+    $files_source = new FileDirectorySource();
+    $config = new Config([
+        'public1' => [
+          'directory' => drupal_realpath('public://'),
+        ],
+        'directory1' => [
+          'directory' => $directory,
+        ],
+        'compressor' => [
+          'compression' => 'gzip',
+        ],
+        'namer' => [
+          'filename' => 'public_files',
+          'timestamp' => FALSE,
+        ],
+        'excluder' => [
+          'source' => $files_source,
+          'exclude_filepaths' => [
+            '.htaccess',
+            'php',
+          ],
+        ],
+      ]);
+
+    $manager = new BackupMigrate();
+    $manager->services()->add('ArchiveReader', new TarArchiveReader());
+    $manager->services()->add('ArchiveWriter', new TarArchiveWriter());
+    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->getTempFilesDirectory()));
+    $manager->services()->add('TempFileManager', new TempFileManager($manager->services()->get('TempFileAdapter')));
+
+    $manager->services()->addClient($files_source);
+    $manager->sources()->add('public1', $files_source);
+    $manager->sources()->setConfig($config);
+
+    $dir_dest = new DirectoryDestination();
+    $manager->services()->addClient($dir_dest);
+    $manager->destinations()->add('directory1', $dir_dest);
+    $manager->destinations()->setConfig($config);
+
+    $manager->plugins()->add('excluder', new FileExcludeFilter());
+    $manager->plugins()->add('namer', new FileNamer());
+    $manager->plugins()->add('compressor', new CompressionFilter());
+    $manager->plugins()->setConfig($config);
+
+    return $manager;
   }
 
 }

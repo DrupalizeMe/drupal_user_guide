@@ -11,4 +11,21 @@ namespace Drupal\auto_screenshots\Tests;
  * @group UserGuide
  */
 class UserGuideDemoTestEn extends UserGuideDemoTestBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $runList = [
+    'doPrefaceInstall' => 'skip',
+    'doBasicConfig' => 'skip',
+    'doBasicPage' => 'skip',
+    'doContentStructure' => 'skip',
+    'doUserAccounts' => 'skip',
+    'doBlocks' => 'skip',
+    'doViews' => 'restore',
+    'doMultilingual' => 'skip',
+    'doExtending' => 'skip',
+    'doPreventing' => 'skip',
+    'doSecurity' => 'skip',
+  ];
 }

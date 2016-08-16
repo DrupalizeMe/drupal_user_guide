@@ -40,7 +40,12 @@ details how to set up the tools. Here are the steps:
    (Alternatively, if your operating system supports it, you can instead make
    a symbolic link.)
 
-8. Enable the Testing (simpletest) module in the Drupal site.
+8. Run the command
+   composer install
+   to install dependencies of this project. If you do not have Composer
+   installed, see https://getcomposer.org/
+
+9. Enable the Testing (simpletest) module in the Drupal site.
    Drush command:
    drush en simpletest
 
@@ -88,6 +93,22 @@ begin with, to see how it works, and then adjust the Y offset and timeout.
 NOTE 3: Some screenshots scroll the browser window. This may not work in a
 foolproof way, and assumes the browser width is set to about 1200 pixels wide,
 with normal text size settings.
+
+
+BACKUP AND RESTORE
+------------------
+
+The screenshot script also has the ability to make database and public files
+backups at intermediate points (at the end of each chapter, roughly), so that
+you can restore to those points and make only a subset of the screenshots (to
+save time). See the documentation for the $runList member variable in the
+UserGuideDemoTestBase class for details, and override the $runList variable in
+the class for the language you are running.
+
+The backups themselves are in the source repository for this project, in
+subdirectory "backups" under this directory. They could also be used to set up
+demo sites, by restoring the database and files manually. The database table
+prefix is 'generic_simpletest_prefix'.
 
 
 MORE DETAILS FOR THE CURIOUS
