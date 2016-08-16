@@ -1260,7 +1260,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/views');
     // Views page (admin/structure/views), with operations dropdown
     // for Vendor view open.
-    $this->setUpScreenShot('views-duplicate_duplicate.png', 'onLoad="' . 'jQuery(&quot;a[href*=\'views/view/' . $vendors_view . '\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration, .views-list-section-disabled') . 'jQuery(\'.views-list-section-disabled\').height(0); "window.scroll(0,6000);' . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('views-duplicate_duplicate.png', 'onLoad="' . 'jQuery(&quot;a[href*=\'views/view/' . $vendors_view . '\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration, .disabled') . 'jQuery(&quot;a[href*=\'views/view/content\'], a[href*=\'views/view/block_content\'], a[href*=\'views/view/files\'], a[href*=\'views/view/frontpage\'], a[href*=\'views/view/user_admin_people\'], a[href*=\'views/view/comments_recent\']&quot;).parents(\'tr\').hide();' . $this->removeScrollbars() . '"');
     $this->clickLinkContainingUrl('views/view/' . $vendors_view . '/duplicate');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['recipes_view_title'],
@@ -1292,6 +1292,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'row[type]' => 'fields',
       ], $this->callT('Apply'));
+    $this->drupalPostForm(NULL, [], $this->callT('Apply'));
 
     // Remove body field.
     $this->clickLinkContainingUrl('page_1/field/body');
