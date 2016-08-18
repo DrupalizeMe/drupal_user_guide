@@ -39,20 +39,17 @@ is deleted. See <<structure-image-style-create>>.
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
 (_admin/structure/views_). Find the view "Recipes" and click _Edit_ from its
-dropdown button. Alternatively, in the main visitor-facing site navigation
-click _Recipes_ to go to the Recipes page. There click on the appearing
-pencil icon, then click _Edit view_.
+dropdown button. Alternatively, navigate to the Recipes page in the main site
+navigation, and click the _Edit view_ contextual link in the main area of the
+page. See <<config-overview>> for information about contextual links.
 
-//To create this image, take a screenshot on /recipes once you clicked on the edit icon for the Recipes view.
-image:images/views-block_edit.png["Edit view directly",width="100%"]
-
-[start=2]
 . Click _Add_ in the Displays section and click _Block_ from the dropdown
 button. The new display is created, and the focus is automatically switched to its
 configuration.
 
-//To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/page_1 when clicked onto the "+Add" button.
-image:images/views-block_add-block.png["Add block display",width="100%"]
+// Add display button on Recipes view edit page, with Block highlighted
+// (admin/structure/views/view/recipes).
+image:images/views-block_add-block.png["Add block display"]
 
 [start=3]
 . Next to _Display name_, click _Block_. This opens _The name and the
@@ -63,8 +60,8 @@ recipes" and click _Apply_.
 _For_, select _This block (override)_. Change the Title to "New Recipes" and
 click _Apply (this display)_.
 
-//To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the view's title configuration pop-up opened.
-image:images/views-block_title.png["Title only for this block",width="100%"]
+// Configuring the block title for this display only.
+image:images/views-block_title.png["Title only for this block"]
 
 [start=5]
 . In the Format section, click _Format: Grid_. Select _For This block
@@ -76,7 +73,7 @@ configure the _Style options_ in the next pop-up that appears.
 (override)_ the _Image style Thumbnail (100x100)_ then click on _Apply (this
 display)_.
 
-//To create this image take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the _Configure field: Content: Main Image_ pop-up open.
+// Configuring the image field for this display only.
 image:images/views-block_image.png["Image to thumbnail",width="100%"]
 
 [start=7]
@@ -86,36 +83,33 @@ at the bottom.
 
 . In the Sort criteria section click _Add_. In the appearing _Add sort
 criteria_ pop-up select _For This block (override)_, check the field title
-_Authored on_ (from Content category), and then _Apply (this display)_.
+_Authored on_ (from Content category), and then _Add and configure sort
+criteria_.
 
-//To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the _Add sort criteria_ pop-op open.
-image:images/views-block_sort.png["Sort by recent",width="100%"]
-
-[start=9]
 . In the appearing configuration pop-up select _Sort descending_ to have the
 most recent recipes appear first, then apply.
 
-. In the Pager section click _Use pager: Full_. Select _For This block
+. In the Pager section click _Use pager: Mini_. Select _For This block
 (override)_ a pager to _Display a specified number of items_. Give 5 to be the
 _"Items to display".
 
-//To create this image, take a screenshot on /admin/structure/views/view/recipes/edit/block_1 with the _Select pager_ pop-op open.
-image:images/views-block_pager.png["Specified number of items pager",width="100%"]
+. Click _Save_. You will either see the view editing page again, or the Recipes
+page, depending on what you did in step 1. You should also see a message saying
+that the view has been saved.
 
-[start=11]
-. Click _Save_. You will be taken to the _Recipes_ view page and a message
-appears saying the view has been saved.
-
-//To create this image, take a screenshot on /recipes after you have performed all the tasks in this topic.
+// View saved confirmation message.
 image:images/views-block_recipes.png["Summary page after configuration",width="100%"]
 
-==== Follow-on tasks
+[start=12]
+. Place this "Recipes: Recent Recipes" block in the _Sidebar second_ region. See
+<<block-place>>. Navigate to the site home page to see the block.
 
-* Add this "Recent Recipes" block to Sidebar Second. See <<block-place>>.
-Now the new block view is also on the Home page:
-
-//To create this image, take a screenshot on the home page once the New Recipes block is added to Sidebar Second.
+// Home page with recipes sidebar visible.
 image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%"]
+
+
+// ==== Follow-on tasks
+
 
 // ==== Related concepts
 
@@ -124,5 +118,6 @@ image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%
 
 *Attributions*
 
-Written by https://www.drupal.org/u/lolk[Laura Vass] at
-http://pronovix.com[Pronovix].
+Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+http://pronovix.com[Pronovix], and
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

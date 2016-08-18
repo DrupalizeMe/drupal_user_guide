@@ -81,6 +81,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'home_path' => '/home',
     'home_revision_log_message' => 'Updated opening hours',
 
+    // Translation of Home page content item into second language.
+    'home_title_translated' => 'Página principal',
+    'home_body_translated' => "<p>Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio!</p></p>Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre Lugar: parking del Banco Trust número 1. En el centro de la ciudad</p>",
+    'home_path_translated' => '/pagina-principal',
+
     // About page content item.
     'about_title' => 'About',
     'about_body' => "<p>City Market started in April 1990 with five vendors.</p><p>Today, it has 100 vendors and an average of 2000 visitors per day.</p>",
@@ -166,6 +171,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'recipes_view_machine_name' => 'recipes',
     'recipes_view_path' => 'recipes',
     'recipes_view_ingredients_label' => 'Find recipes using...',
+    'recipes_view_block_display_name' => 'Recent recipes',
+    'recipes_view_block_title' => 'New recipes',
+
+    // Recipes view translated.
+    'recipes_view_submit_button_translated' => 'Applicar',
+    'recipes_view_ingredients_label_translated' => 'Encontrar rectas usando...',
 
   ];
 
@@ -1345,8 +1356,93 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Completed recipes view output.
     $this->setUpScreenShot('views-duplicate_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
-    // @todo Add the rest of the Views topics here.
+    // Topic: views-block - Adding a Block Display to a View.
 
+    // Add a block to the Recipes view.
+    $this->drupalGet('admin/structure/views/view/' . $recipes_view);
+    // Add display button on Recipes view edit page, with Block highlighted
+    // (admin/structure/views/view/recipes).
+    $this->setUpScreenShot('views-block_add-block.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .region-highlighted, #views-display-extra-actions, #edit-display-settings, #edit-actions, .views-preview-wrapper, .dropbutton-wrapper, .messages') . 'jQuery(\'#views-display-menu-tabs li.add ul\').show();' . $this->setWidth('.region-content') . '"');
+    // Note: in the UI that you actually see in practice, the button looks
+    // like a link, and the displayed name is just "Block". But if you look at
+    // the HTML source of the page (before jQuery/Ajax processing), the
+    // button actually asys "Add Block" (with that capitalization).
+    $this->drupalPostForm(NULL, [], $this->callT('Add Block'));
+
+    // Update various settings for the block display.
+
+    // Display title.
+    $this->clickLinkContainingUrl('block_1/display_title');
+    $this->drupalPostForm(NULL, [
+        'display_title' => $this->demoInput['recipes_view_block_display_name'],
+      ], $this->callT('Apply'));
+
+    // Block title.
+    $this->clickLinkContainingUrl('block_1/title');
+    // Configuring the block title for this display only.
+    $this->setUpScreenShot('views-block_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region-breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-title\').val(\'' . $this->demoInput['recipes_view_block_title'] . '\');' . $this->setWidth('.content-header, .layout-container') . '"');
+    $this->drupalPostForm(NULL, [
+        'override[dropdown]' => 'block_1',
+        'title' => $this->demoInput['recipes_view_block_title'],
+      ], $this->callT('Apply'));
+
+    // Style - unformatted list.
+    $this->clickLinkContainingUrl('block_1/style');
+    $this->drupalPostForm(NULL, [
+        'override[dropdown]' => 'block_1',
+        'style[type]' => 'default',
+      ], $this->callT('Apply'));
+    $this->drupalPostForm(NULL, [], $this->callT('Apply'));
+
+    // Image field.
+    $this->clickLinkContainingUrl('block_1/field/field_' . $main_image);
+    // Configuring the image field for this display only.
+    $this->setUpScreenShot('views-block_image.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region_breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-options-settings-image-style\').val(\'thumbnail\');' . $this->addBorder('#edit-override-dropdown, #edit-options-settings-image-style') . $this->setWidth('.content-header, .layout-container') . $this->removeScrollbars() . '"');
+    $this->drupalPostForm(NULL, [
+        'override[dropdown]' => 'block_1',
+        'options[settings][image_style]' => 'thumbnail',
+      ], $this->callT('Apply'));
+
+
+    // Remove ingredients filter.
+    $this->clickLinkContainingUrl('block_1/filter/field_');
+    $this->drupalPostForm(NULL, [], $this->callT('Remove'));
+
+    // Add sort by authored date.
+    $this->clickLinkContainingUrl('add-handler/' . $recipes_view . '/block_1/sort');
+    $this->drupalPostForm(NULL, [
+        'override[dropdown]' => 'block_1',
+        'name[node_field_data.created]' => 'node_field_data.created',
+      ], $this->callT('Add and configure sort criteria'));
+    $this->drupalPostForm(NULL, [
+        'override[dropdown]' => 'block_1',
+        'options[order]' => 'DESC',
+      ], $this->callT('Apply'));
+
+    // Instead of pager, display 5 recipes.
+    $this->clickLinkContainingUrl('block_1/pager');
+    $this->drupalPostForm(NULL, [
+        'override[dropdown]' => 'block_1',
+        'pager[type]' => 'some',
+      ], $this->callT('Apply'));
+    $this->drupalPostForm(NULL, [
+        'pager_options[items_per_page]' => 5,
+      ], $this->callT('Apply'));
+
+    // Save the view.
+    $this->drupalPostForm(NULL, [], $this->callT('Save'));
+    // View saved confirmation message.
+    $this->setUpScreenShot('views-block_recipes.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 600) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+
+    // Place the block on the sidebar.
+    $this->placeBlock('views_block:' . $recipes_view . '-block_1', [
+        'region' => 'sidebar_second',
+        'theme' => 'bartik',
+        'label' => $this->demoInput['recipes_view_block_title'],
+      ]);
+    $this->drupalGetWithImagePreload('<front>');
+    // Home page with recipes sidebar visible.
+    $this->setUpScreenShot('views-block_sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars() . '"');
 
   }
 
