@@ -8,12 +8,17 @@ attributions.txt file in the directory above (with the topics they are featured
 in). Here is a list of the manually-generated images (in order by topic
 appearance in the guide):
 
+Running the installer (topic install-run.txt):
 - install-run-1.png
 - install-run-2.png
 - install-run-3.png
 - install-run-4.png
 - install-run-5.png
 - install-run-6.png
+
+Screen shot of vertical toolbar menu configuration (topic config-overview.txt):
 - config-overview-vertical-menu.png
+
+Editing with the In-Place Editor (topic content-in-place-edit.txt):
 - content-in-place-edit-hover-box.png
 - content-in-place-edit-save-box.png
