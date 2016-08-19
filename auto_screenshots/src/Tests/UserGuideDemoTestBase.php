@@ -850,7 +850,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Widget drop-down outlined.
     // Note that ideally, the drop-down would be open, but this is not
     // apparently possible using JavaScript.
-    $this->setUpScreenShot('structure-form-editing-manage-form.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help') . 'jQuery(\'#edit-fields-field-' . $ingredients . '-type\').val(\'entity_reference_autocomplete_tags\');' . $this->addBorder('#edit-fields-field-' . $ingredients . '-type') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('structure-form-editing-manage-form.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .field-plugin-settings-edit-wrapper, .tabledrag-toggle-weight-wrapper') . 'jQuery(\'#edit-fields-field-' . $ingredients . '-type\').val(\'entity_reference_autocomplete_tags\');' . $this->addBorder('#edit-fields-field-' . $ingredients . '-type') . $this->setWidth('#field-display-overview', 800) . $this->removeScrollbars() . '"');
 
     // Set the Ingredients field to use tag-style autocomplete.
     $this->drupalPostForm(NULL, [
@@ -1109,7 +1109,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Update two accounts using bulk edit.
     $this->drupalGet('admin/people');
     // Bulk editing form on People page (admin/people).
-    $this->setUpScreenShot('user-roles_bulk.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .view-filters') . 'jQuery(\'#edit-user-bulk-form-0, #edit-user-bulk-form-1\').attr(\'checked\', 1).parents(\'tr\').addClass(\'selected\');' . 'jQuery(\'#edit-action\').val(\'user_remove_role_action.' . $vendor . '\');' . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('user-roles_bulk.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .view-filters') . 'jQuery(\'#edit-user-bulk-form-0, #edit-user-bulk-form-1\').attr(\'checked\', 1).parents(\'tr\').addClass(\'selected\');' . 'jQuery(\'#edit-action\').val(\'user_add_role_action.' . $vendor . '\');' . $this->removeScrollbars() . $this->setBodyColor() . '"');
     $this->drupalPostForm(NULL, [
         'user_bulk_form[0]' => 1,
         'user_bulk_form[1]' => 1,
