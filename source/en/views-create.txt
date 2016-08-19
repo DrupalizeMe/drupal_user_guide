@@ -14,8 +14,8 @@ How to create a content list view.
 
 ==== Goal
 
-Create a page that lists all the vendors and that will be automatically updated
-once a new vendor is added on the site.
+Create a page listing vendors that will be automatically updated whenever a
+vendor is added, deleted, or updated on the site.
 
 ==== Prerequisite knowledge
 
@@ -27,14 +27,14 @@ once a new vendor is added on the site.
 * The core Views and Views UI modules must be installed. These are installed for
 you when you install with the core Standard installation profile.
 
-* The Vendor content type must exist, with URL and Main Image fields, and your
+* The Vendor content type must exist, with URL and Main image fields. Your
 site must have a couple of Vendor content items. See <<structure-content-type>>,
 <<structure-fields>>, and <<content-create>>.
 
 * The _Medium (220x220)_ image style must be defined. This is created on your
-site when you install the core Image module, which is installed for you when you
-install with the core Standard installation profile, but can be recreated if it
-is deleted. See <<structure-image-style-create>>.
+site when you install the core Image module (installed with the core Standard
+installation profile) but can be recreated if deleted. See
+<<structure-image-style-create>>.
 
 ==== Steps
 
@@ -47,13 +47,13 @@ view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
 |================================
 | Field name | Explanation| Example value
 | View name | Name of the view that will be visible in the administration pages | Vendors
-| Show: | Type of information listed in the view | Content
-| Of Type: | Specify content type | Vendor
-| Sorted by: | List order | Title
+| Show | Type of information listed in the view | Content
+| Of Type | Specify content type | Vendor
+| Sorted by | List order | Title
 | Create a page | Create a page that displays the view | Checked
 | Page title | Title show above the view | Vendors
 | Path | Address of the page | vendors
-| Display format: | Type of list | Table
+| Display format | Type of list | Table
 | Items to display | Number of items visible on the page | 10
 | Use a pager | Split up the list in several pages if there are more items | Checked
 | Create a menu link | Add the view page to the menu | Checked
@@ -72,7 +72,7 @@ fields_ pop-up appears.
 
 . Enter the word "image" in the search field.
 
-. Check Main Image in the table.
+. Check Main image in the table.
 
 . Click _Apply_. The _Configure field: Content: Main Image_
 pop-up appears.
@@ -84,7 +84,7 @@ pop-up appears.
 | Field name | Explanation| Example value
 | Create a label | Add a label before the field value | Unchecked
 | Image style | The format of the image | Medium (220x220)
-| Link image to: | Add a link to the content item | Content
+| Link image to | Add a link to the content item | Content
 |================================
 
 . Click _Apply_. The view configuration page appears.
@@ -111,7 +111,7 @@ appears.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click the _Content: Title (Title)_ link in the _Fields_ list. The
+. Click _Content: Title (Title)_ in the _Fields_ list. The
 _Configure field: Content: Title_ pop-up appears.
 
 . Uncheck _Create a label_. This will remove the label that was created by the
@@ -126,7 +126,7 @@ _Rearrange fields_ pop-up appears.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click the _Content: Title (desc)_ link in the _Sort criteria_ list. The
+. Click _Content: Title (desc)_ in the _Sort criteria_ list. The
 _Configure sort criterion: Content: Title_ pop-up appears.
 
 . Click _Sort ascending_ for the _Order.
