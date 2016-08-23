@@ -11,8 +11,8 @@ How to create a new page by duplicating a view.
 
 ==== Goal
 
-Create a page with all recipes by duplicating the existing Vendors view and
-modify it so that the recipes are displayed in a grid and can by filtered by
+Create a page listing recipes by duplicating the existing Vendors view.  Modify
+the page so that the recipes are displayed in a grid and can by filtered by
 ingredients.
 
 ==== Prerequisite knowledge
@@ -23,7 +23,7 @@ ingredients.
 
 ==== Site prerequisites
 
-* The Vendor and Recipe content types must exist; both must have Main Image
+* The Vendor and Recipe content types must exist; both must have Main image
 fields, and the Recipe content type must have an Ingredients field. Your site
 must also have a couple of Recipe content items. See <<structure-content-type>>,
 <<structure-fields>>, <<structure-taxonomy-setup>>, <<structure-form-editing>>,
@@ -42,35 +42,38 @@ dropdown button.
 image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
 
 [start=2]
-. Name the duplicate "Recipes", confirm by clicking _Duplicate_. The view
-configuration page appears.
+. Name the duplicate "Recipes" and click _Duplicate_. The view configuration
+page appears.
 
-. Click Vendors in the _Title_ section. _The title
-of this view_ pop-up appears. Title it "Recipes" then click _Apply_.
+. Change the title of the view page to "Recipes" by clicking Vendors in the
+_Title_ section. The _Page: The title of this view_ pop-up appears. Type in
+"Recipes". Click _Apply_.
 +
 // View title configuration screen.
 image:images/views-duplicate_title.png["Change view title",width="100%"]
 
 [start=4]
-. In the _Format_ section click _Table_ next to _Format_. The _Page: How should
-this view be styled_ pop-up appears. Check _Grid_ and click _Apply_.
-The _Page: Style options_ pop-up appears where you can customize
-your grid's appearance. Retain the default values and click _Apply_.
 
-. In the _Fields_ section click the _Content: Body_ link, and then click
-_Remove_ in the pop-up. This leaves the Recipes view with the title and image
-only.
+. Change from a table to a grid format by clicking _Table_ in the _Format_
+section. The _Page: How should this view be styled_ pop-up appears. Check _Grid_
+and click _Apply_. The _Page: Style options_ pop-up appears. Retain the default
+values and click _Apply_.
 
-. In the _Filter criteria_ section change filtering from _Content:
-Type(=Vendor)_ to filtering only for recipe content types: in the pop-up check
-Recipe and uncheck Vendor then click _Apply_.
+. Retain only the title and image fields for the Recipes view by clicking
+_Content: Body_ in the _Fields_ section. Click _Remove_ in the pop-up that
+appears.
 
-. Add a further filter, one exposed to visitors: click _Add_ in the _Filter
-criteria_ section then search for "ingredients". Check _Ingredients
-(field_ingredients)_ and click _Add and configure filter criteria_.
+. Change the content type filter to use the Recipe content type by clicking
+_Content: Type (=Vendor)_ in the _Filter criteria_ section. In the _Configure
+filter criterion: Content: Type_ pop-up, check Recipe and uncheck Vendor. Click
+_Apply_.
+
+. Add a further filter that is exposed to visitors by clicking _Add_ in the
+_Filter criteria_ section. Search for "ingredients" and check "Ingredients
+(field_ingredients)". Click _Add and configure filter criteria_.
 
 . The appearing pop-up offers extra settings on vocabulary and selection
-type. Click _Apply and continue_. The next pop-up allows to expose this
+type. Click _Apply and continue_. The next pop-up allows you to expose this
 filter to visitors. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
@@ -85,17 +88,27 @@ filter to visitors. Fill in the fields as shown below.
 image:images/views-duplicate_expose.png["Expose filter"]
 
 [start=9]
-. In the _Page settings_ section next to  _Path, click /vendors_. In the pop-up,
-enter path "recipes" and click _Apply_. Then via the _Menu_ pop-up
-change the menu link title to "Recipes". Click _Apply_.
+. Change the _Path_ label field to "Recipes" by clicking "/vendors" in the _Page
+settings_ section. In the pop-up that appears, enter the path "recipes" and
+click _Apply_.
++
+Note that when editing a view, you enter paths without the leading "/", unlike
+on other administrative pages (such as when providing a path to a content item
+page).
 
-. Click _Advanced_ to expand the _Advanced_ section of the configuration
-page. In the _Other_ section change _Use AJAX: No_ to "Yes" by clicking _No_ and
-checking _Use AJAX_ in the pop-up that appears. Then click _Apply_.
+. Change the menu link title by clicking "Normal: Vendors" in the _Page
+settings_ section. In the pop-up that appears, change the title to "Recipes" and
+click _Apply_.
+
+. In order to use Ajax to make filtering and paging faster for users, click
+_Advanced_ to expand the section for more options. In the _Other_ section,
+change _Use Ajax: No_ to "Yes" by clicking _No_ and checking _Use Ajax_ in the
+pop-up that appears. Click _Apply_.
 
 . Click _Save_ to save the view.
 
-. Go back to site, where the new Recipes page appears.
+. Go back to the home page and click Recipes in the navigation to view the new
+Recipes page.
 +
 // Completed recipes view output.
 image:images/views-duplicate_final.png["Recipes view",width="100%"]
@@ -115,5 +128,7 @@ place. Change the order of the menu items in the main navigation. See
 
 *Attributions*
 
-Written by https://www.drupal.org/u/lolk[Laura Vass] at
-http://pronovix.com[Pronovix].
+Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+http://pronovix.com[Pronovix],
+and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+http://redcrackle.com[Red Crackle].
