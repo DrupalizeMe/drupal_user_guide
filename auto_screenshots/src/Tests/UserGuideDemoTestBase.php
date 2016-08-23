@@ -210,7 +210,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'doUserAccounts' => 'run',
     'doBlocks' => 'run',
     'doViews' => 'run',
-    'doMultilingual' => 'run',
+    'doMultilingualSetup' => 'run',
+    'doTranslating' => 'run',
     'doExtending' => 'run',
     'doPreventing' => 'run',
     'doSecurity' => 'run',
@@ -250,32 +251,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * as a "test" to run, in the specific-language classes.
    */
   public function testBuildDemoSite() {
+
     $this->drupalLogin($this->rootUser);
-
-    // Add the first language, set the default language to that, and delete
-    // English, to simulate having installed in a different language. No
-    // screen shots for this!
-    if ($this->demoInput['first_langcode'] != 'en') {
-      // Note that the buttons should still be in English until after
-      // the other language is set as the default language.
-      // Turn on the language and locale modules.
-      $this->drupalGet('admin/modules');
-      $this->drupalPostForm(NULL, [
-          'modules[Multilingual][language][enable]' => TRUE,
-          'modules[Multilingual][locale][enable]' => TRUE,
-        ], 'Install');
-
-      // Add the other language.
-      $this->drupalPostForm('admin/config/regional/language/add', [
-          'predefined_langcode' => $this->demoInput['first_langcode'],
-        ], 'Add language');
-      // Set it to default. After this, the buttons should be translated.
-      $this->drupalPostForm('admin/config/regional/language', [
-          'site_default_language' => $this->demoInput['first_langcode'],
-        ], 'Save configuration');
-      // Delete English.
-      $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
-    }
 
     // Figure out where the assets directory is.
     $dir_parts = explode('/', drupal_get_path('module', 'auto_screenshots'));
@@ -309,6 +286,32 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Preface and Install chapters.
    */
   protected function doPrefaceInstall() {
+
+    // Add the first language, set the default language to that, and delete
+    // English, to simulate having installed in a different language. No
+    // screen shots for this!
+    if ($this->demoInput['first_langcode'] != 'en') {
+      // Note that the buttons should still be in English until after
+      // the other language is set as the default language.
+      // Turn on the language and locale modules.
+      $this->drupalGet('admin/modules');
+      $this->drupalPostForm(NULL, [
+          'modules[Multilingual][language][enable]' => TRUE,
+          'modules[Multilingual][locale][enable]' => TRUE,
+        ], 'Install');
+
+      // Add the other language.
+      $this->drupalPostForm('admin/config/regional/language/add', [
+          'predefined_langcode' => $this->demoInput['first_langcode'],
+        ], 'Add language');
+      // Set it to default. After this, the buttons should be translated.
+      $this->drupalPostForm('admin/config/regional/language', [
+          'site_default_language' => $this->demoInput['first_langcode'],
+        ], 'Save configuration');
+      // Delete English.
+      $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
+    }
+
     // Topic: preface-conventions: Conventions of the user guide.
     $this->drupalGet('admin/config');
     // Top navigation bar on any admin page, with Manage menu showing.
@@ -1193,7 +1196,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Create a Vendors view.
     $this->drupalGet('admin/structure/views/add');
     // Add view wizard.
-    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendors_view_title'] . '\').change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:DESC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(\'' . $this->demoInput['vendors_view_title'] . '\'); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'check\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(\'' . $this->demoInput['vendors_view_title'] . '\');' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendors_view_title'] . '\').change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:DESC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(\'' . $this->demoInput['vendors_view_title'] . '\'); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(\'' . $this->demoInput['vendors_view_title'] . '\');' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendors_view_title'],
         'id' => $vendors_view,
@@ -1447,16 +1450,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Makes screenshots for the Multilingual chapter.
+   * Makes screenshots for the Multilingual chapter, first topic only.
+   *
+   * The rest of the chapter is in the doTranslating() method. It was split
+   * because the first topic is very time-consuming due to needing to
+   * import the translations.
    */
-  protected function doMultilingual() {
+  protected function doMultilingualSetup() {
 
     // Topic: language-add - Adding a Language.
 
-    // @todo This has not been really finished.
-
-    // For non-English versions, locale and language will already be enabled.
-    // For English, not yet. In both cases, we need config/content translation
+    // Enable the 4 multilingual modules.
+    // For non-English versions, locale and language will already be enabled;
+    // for English, not yet. In both cases, we need config/content translation
     // though.
     $this->drupalGet('admin/modules');
     $values = [
@@ -1471,52 +1477,72 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
 
-    $this->drupalGet('admin/config/regional/language');
+    // Add the second language.
     $this->drupalGet('admin/config/regional/language/add');
     $this->drupalPostForm(NULL, [
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ], $this->callT('Add language'));
-    $this->setUpScreenShot('language-add-list.png');
+    // Confirmation and language list after adding Spanish language.
+    $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+
+    // Place the Language Switcher block in sidebar second (no screenshots).
+    $this->placeBlock('language_block:language_interface', [
+        'region' => 'sidebar_second',
+        'theme' => 'bartik',
+        'label' => $this->callT('Language'),
+      ]);
+  }
+
+  /**
+   * Makes screenshots for the Multilingual chapter, except first topic.
+   *
+   * The first topic is in the doMultilingualSetup() method.
+   */
+  protected function doTranslating() {
 
     // Topic: language-content-config - Configuring Content Translation
+
+    // Set up content translation for Basic page nodes, Custom blocks, and
+    // Custom menu links.
     $this->drupalGet('/admin/config/regional/content-language');
-    // Simple screenshot of top section.
-    $this->setUpScreenShot('language-content-config_custom.png');
-    // For this screenshot, we need to check Content, and then under
-    // Basic Page, click the Show language selector button. Also
-    // under Basic page, simulate expanding the drop-down for default language
-    // by setting the 'size' attribute.
-    $this->setUpScreenShot('language-content-config_content.png', 'onLoad="jQuery(\'#edit-entity-types-node\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', 1); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', 1); jQuery(\'#edit-settings-node\').show(); jQuery(\'#edit-settings-node-article-settings-language-language-alterable\').attr(\'checked\', 1); jQuery(\'#edit-settings-node-page-settings-language-langcode\').attr(\'size\', 7);"');
-
+    // Top section of Content language settings page
+    // (admin/config/regional/content-language).
+    $this->setUpScreenShot('language-content-config_custom.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, #edit-cations') . 'jQuery(\'#edit-entity-types-node\').attr(\'checked\', \'checked\'); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', \'checked\'); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', \'checked\');' . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
-        'entity_types[node]' => TRUE,
-        'entity_types[block_content]' => TRUE,
-        'entity_types[menu_link_content]' => TRUE,
-
+        'entity_types[node]' => 'node',
         'settings[node][page][translatable]' => TRUE,
+        'settings[node][page][settings][language][language_alterable]' => TRUE,
         'settings[node][page][fields][title]' => TRUE,
         'settings[node][page][fields][uid]' => FALSE,
-        'settings[node][page][fields][status]' => FALSE,
+        'settings[node][page][fields][status]' => TRUE,
         'settings[node][page][fields][created]' => FALSE,
         'settings[node][page][fields][changed]' => FALSE,
         'settings[node][page][fields][promote]' => FALSE,
-        'settings[node][page][fields][uid]' => FALSE,
         'settings[node][page][fields][sticky]' => FALSE,
         'settings[node][page][fields][path]' => TRUE,
         'settings[node][page][fields][body]' => TRUE,
 
+        'entity_types[block_content]' => 'block_content',
         'settings[block_content][basic][translatable]' => TRUE,
+        'settings[block_content][basic][settings][language][language_alterable]' => TRUE,
         'settings[block_content][basic][fields][info]' => TRUE,
         'settings[block_content][basic][fields][changed]' => FALSE,
         'settings[block_content][basic][fields][body]' => TRUE,
 
+        'entity_types[menu_link_content]' => 'menu_link_content',
+        'settings[menu_link_content][menu_link_content][translatable]' => TRUE,
+        'settings[menu_link_content][menu_link_content][settings][language][language_alterable]' => TRUE,
         'settings[menu_link_content][menu_link_content][translatable]' => TRUE,
         'settings[menu_link_content][menu_link_content][fields][title]' => TRUE,
         'settings[menu_link_content][menu_link_content][fields][description]' => TRUE,
         'settings[menu_link_content][menu_link_content][fields][changed]' => FALSE,
       ], $this->callT('Save configuration'));
-    // Screenshot of the Basic page area after saving the configuration.
-    $this->setUpScreenShot('language-content-config_custom.png');
+    // Main settings area for Custom Block translations.
+    $this->setUpScreenShot('language-content-config_content.png', 'onLoad="' . $this->showOnly('#edit-settings-block-content tr.bundle-settings') . $this->setWidth('#edit-settings-block-content', 600) . 'jQuery(\'tr\').css(\'border-bottom\', \'none\');' . $this->removeScrollbars() . '"');
+    // Field settings area for Basic page translations.
+    $this->setUpScreenShot('language-content-config_basic_page.png', 'onLoad="' . $this->hideArea('*') . 'jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*=&quot;settings[node][page]&quot;]\').show().parents().show(); jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*=&quot;settings[node][page]&quot;]\').find(\'*\').show();'  . $this->setWidth('#edit-settings-node', 400) . $this->setWidth('.language-content-settings-form .field', 350) . $this->setWidth('.language-content-settings-form .operations', 0) . $this->removeScrollbars() . '"');
+
+    // @todo Add rest of topics to this section.
 
   }
 
@@ -1844,6 +1870,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $file_manager = $this->backupFileManager($directory);
     $file_manager->restore('public1', 'directory1', 'public_files.tar.gz');
     $this->pass('BACKUP RESTORED FROM: ' . $directory);
+
+    // Fix the configuration for temp files directory.
+    \Drupal::configFactory()->getEditable('system.file')
+      ->set('path.temporary', $this->tempFilesDirectory)
+      ->save();
 
     // Update the root user, log in, and clear the cache.
     $this->rootUser = User::load(1);

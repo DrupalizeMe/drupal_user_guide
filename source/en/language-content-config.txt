@@ -29,11 +29,12 @@ have at least two languages. See <<language-add>>.
 and Language_ > _Content Language and Translation_
 (_admin/config/regional/content-language_).
 
-. Under _Custom language settings_, check content entity types _Content_,
-_Custom block_ and _Custom menu link_ to make them translatable.
+. Under _Custom language settings_, check _Content_,
+_Custom block_ and _Custom menu link_ to make these entity types translatable.
 +
-// To create this image, take a screenshot: admin/config/regional/content-language
-image:images/language-content-config_custom.png["Custom language settings, content types checklist",width="100%"]
+// Top section of Content language settings page
+// (admin/config/regional/content-language).
+image:images/language-content-config_custom.png["Custom language settings checklist"]
 
 [start=3]
 . Configuration options appear for _Content_, _Custom block_ and  _Custom menu
@@ -50,10 +51,8 @@ _Custom menu link_ for _Custom menu link_.
 | Show language selector on create and edit pages | Whether or not the language selector should be shown when editing and creating content | Checked
 |================================
 +
-// To create this image, take a screenshot from
-// admin/config/regional/content-language once content, custom block and
-// custom menu link are enabled to be translatable.
-image:images/language-content-config_content.png["Default language and translatability for content types",width="100%"]
+// Main settings area for Custom Block translations.
+image:images/language-content-config_content.png["Default language and translatability for content types"]
 
 [start=5]
 . Choose the fields that should be translatable for _Basic page_ as shown in the
@@ -65,19 +64,18 @@ accountability or implementing workflows.
 |================================
 |Field name | Explanation | Example value
 | Title	| The title of the content | Checked
-| Authored by | The author | Checked
+| Authored by | The author | Unchecked
 | Publishing status | Whether the content has been published or not | Checked
-| Authored on | Date of publishing | Checked
-| Changed | Date of last update | Checked
+| Authored on | Date of publishing | Unchecked
+| Changed | Date of last update | Unchecked
 | Promoted to front page | Whether the content will be included in some content views | Unchecked
 | Sticky at top of lists | Whether the content will be displayed first in some content views | Unchecked
-| Revision log message | Provides details of revisions made | Checked
 | URL alias | Nicer URL for the content | Checked
 | Body | The main content of the page | Checked
 |================================
 
-// To create this image, take a screenshot from admin/config/regional/content-language once content, custom block and custom menu link are enabled to be translatable then basic page is checked to be translatable.
-image:images/language-content-config_basic_page.png["Translatable content entity subtypes' fields checklist",width="100%"]
+// Field settings area for Basic page translations.
+image:images/language-content-config_basic_page.png["Translatable content entity subtypes' fields checklist"]
 
 [start=6]
 . Similarly, check the appropriate boxes for translatable fields belonging to
