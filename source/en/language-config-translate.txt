@@ -38,29 +38,20 @@ must have at least two languages. See <<language-add>>.
 Recipes view_ appears.
 
 . Find _Displays_ > _Master display settings_ > Recipes default display
-options > _Exposed form_ and click _Reset options_.
+options. Translate the _Display title_ from "Recipes" to "Recetas".
 
-. Fill in the fields as shown below.
-+
-[width="100%",frame="topbot",options="header"]
-|================================
-|Field name | Explanation| Value
-|Submit button text  | Label of button for submitting the exposed filter |
-Applicar
-|Reset button label  | Label of button for resetting the exposed filter |
-Borrar
-|Exposed sorts label  | Label for ordering the exposed filter results| Ordenar
-por
-|================================
+. Find _Displays_ > _Master display settings_ > Recipes default display
+options > _Exposed form_ > _Reset options_. Translate the _Submit button text_
+(_Apply_) to _Applicar_. The other buttons and labels in this section do not
+appear on the Recipes page or block, and do not need to be translated.
 
-// Follow steps 1-5 above
+// Exposed form options for Recipes view.
 image:images/language-config-translate-recipes-view.png["Translate the Recipes view",width="100%"]
 
 [start=6]
 . Find _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes using..._.
-
-. In the _Label_ field enter Ingredientes.
+options_ > _Filters_ > _(Empty) taxonomy term ID_ > Find recipes
+using... Expose. In the _Label_ field enter "Encontrar rectas usando...", without the quotes.
 
 . Click _Save translation_.
 
@@ -68,6 +59,11 @@ options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes using..._.
 block. Verify that the labels have been translated.
 
 ==== Follow-on tasks
+
+* Translate the block display title in the Recipes view, in the Recent recipes
+display settings section of the Recipes view.
+
+* Translate the page title in the Vendors view.
 
 * Translate other configuration, such as the site name and the contact form:
 
@@ -88,4 +84,5 @@ from the dropdown button in the _Website feedback_ row.
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

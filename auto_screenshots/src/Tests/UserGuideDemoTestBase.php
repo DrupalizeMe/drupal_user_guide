@@ -175,8 +175,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     'recipes_view_block_title' => 'New recipes',
 
     // Recipes view translated.
+    'recipes_view_title_translated' => 'Recetas',
     'recipes_view_submit_button_translated' => 'Applicar',
-    'recipes_view_ingredients_label_translated' => 'Encontrar rectas usando...',
+    'recipes_view_ingredients_label_translated' => 'Encontrar recetas usando...',
 
   ];
 
@@ -592,7 +593,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Create the Vendor content type.
 
     $this->drupalGet('admin/structure/types/add');
-
 
     // Top of admin/structure/types/add, with Name and Description fields.
     $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(\'' . $this->demoInput['vendor_type_name'] . '\'); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').change(); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
@@ -1196,12 +1196,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Create a Vendors view.
     $this->drupalGet('admin/structure/views/add');
     // Add view wizard.
-    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendors_view_title'] . '\').change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:DESC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(\'' . $this->demoInput['vendors_view_title'] . '\'); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(\'' . $this->demoInput['vendors_view_title'] . '\');' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(\'' . $this->demoInput['vendors_view_title'] . '\').change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:ASC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(\'' . $this->demoInput['vendors_view_title'] . '\'); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(\'' . $this->demoInput['vendors_view_title'] . '\');' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendors_view_title'],
         'id' => $vendors_view,
         'show[type]' => $vendor,
-        'show[sort]' => 'node_field_data-title:DESC',
+        'show[sort]' => 'node_field_data-title:ASC',
         'page[create]' => TRUE,
         'page[title]' => $this->demoInput['vendors_view_title'],
         'page[path]' => $this->demoInput['vendors_view_path'],
@@ -1251,11 +1251,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('menu');
     $this->drupalPostForm(NULL, [
         'menu[weight]' => 20,
-      ], $this->callT('Apply'));
-    // Change the title sort to ascending.
-    $this->clickLinkContainingUrl('sort/title');
-    $this->drupalPostForm(NULL, [
-        'options[order]' => 'ASC',
       ], $this->callT('Apply'));
 
     // Save the view.
@@ -1409,7 +1404,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Remove ingredients filter.
     $this->clickLinkContainingUrl('block_1/filter/field_');
-    $this->drupalPostForm(NULL, [], $this->callT('Remove'));
+    $this->drupalPostForm(NULL, [
+        'override[dropdown]' => 'block_1',
+      ], $this->callT('Remove'));
 
     // Add sort by authored date.
     $this->clickLinkContainingUrl('add-handler/' . $recipes_view . '/block_1/sort');
@@ -1500,6 +1497,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    */
   protected function doTranslating() {
 
+    $recipes_view = $this->demoInput['recipes_view_machine_name'];
+    $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
+
     // Topic: language-content-config - Configuring Content Translation
 
     // Set up content translation for Basic page nodes, Custom blocks, and
@@ -1542,7 +1542,29 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Field settings area for Basic page translations.
     $this->setUpScreenShot('language-content-config_basic_page.png', 'onLoad="' . $this->hideArea('*') . 'jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*=&quot;settings[node][page]&quot;]\').show().parents().show(); jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*=&quot;settings[node][page]&quot;]\').find(\'*\').show();'  . $this->setWidth('#edit-settings-node', 400) . $this->setWidth('.language-content-settings-form .field', 350) . $this->setWidth('.language-content-settings-form .operations', 0) . $this->removeScrollbars() . '"');
 
-    // @todo Add rest of topics to this section.
+    // Topic: language-content-translate - Translating Content.
+
+    // Add a translation of the Home page.
+    $this->drupalGet('node/1/translations');
+    // Screen shot of the translations page for the Home page content item.
+    $this->setUpScreenShot('language-content-translate-add.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . '"');
+    $this->drupalPostForm('node/1/translations/add/' . $this->demoInput['first_langcode'] . '/' . $this->demoInput['second_langcode'], [
+        'title[0][value]' => $this->demoInput['home_title_translated'],
+        'body[0][value]' => $this->demoInput['home_body_translated'],
+        'path[0][alias]' => $this->demoInput['home_path_translated'],
+      ], $this->callT('Save and keep published (this translation)'));
+
+    // Topic: language-config-translate - Translating Configuration.
+
+    // Translate the Recipes view.
+    $this->drupalGet('/admin/structure/views/view/' . $recipes_view . '/translate/' . $this->demoInput['second_langcode'] . '/add');
+    // Exposed form options for Recipes view.
+    $this->setUpScreenShot('language-config-translate-recipes-view.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . 'jQuery(\'#edit-default, #edit-display-options, #edit-exposed-form, #edit-options\').attr(\'open\', \'open\');' . $this->removeScrollbars() . '"');
+    $this->drupalPostForm(NULL, [
+        'translation[config_names][views.view.' . $recipes_view . '][display][default][display_options][title]' => $this->demoInput['recipes_view_title_translated'],
+        'translation[config_names][views.view.' . $recipes_view . '][display][default][display_options][exposed_form][options][submit_button]' => $this->demoInput['recipes_view_submit_button_translated'],
+        'translation[config_names][views.view.' . $recipes_view . '][display][default][display_options][filters][field_' . $ingredients . '_target_id][expose][label]' => $this->demoInput['recipes_view_ingredients_label_translated'],
+      ], $this->callT('Save translation'));
 
   }
 
