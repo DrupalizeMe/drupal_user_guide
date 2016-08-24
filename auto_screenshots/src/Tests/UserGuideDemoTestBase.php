@@ -1572,7 +1572,40 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Extending chapter.
    */
   protected function doExtending() {
-    // @todo Write this.
+
+    // Topic: extend-module-find - Finding Modules
+
+    // Search for Admin Toolbar in 8.x on drupal.org.
+    $this->drupalGet('https://www.drupal.org/project/project_module?f[0]=im_vid_44%3A13028&f[1]=&f[2]=im_vid_3%3A53&f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
+    // Module search box on https://www.drupal.org/project/project_module.
+    $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
+    // Search results on https://www.drupal.org/project/project_module.
+    $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="window.scroll(0,600);' . $this->showOnly('#block-system-main .node-project-module') . $this->removeScrollbars() . '"');
+    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+    // Project page for Admin Toolbar module.
+    $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info') . $this->removeScrollbars() . '"');
+
+    // Topic: extend-maintenance: Enabling and Disabling Maintenance Mode.
+    $this->drupalPostForm('admin/config/development/maintenance', [
+        'maintenance_mode' => 1,
+      ], $this->callT('Save configuration'));
+    $this->clearCache();
+    $this->drupalLogout();
+    $this->drupalGet('<front>');
+    // Site in maintenance mode.
+    $this->setUpScreenShot('extend-maintenance-mode-enabled.png', 'style="overflow: hidden;"');
+    $this->drupalLogin($this->rootUser);
+    $this->drupalPostForm('admin/config/development/maintenance', [
+        'maintenance_mode' => FALSE,
+      ], $this->callT('Save configuration'));
+    $this->clearCache();
+    $this->drupalLogout();
+    $this->drupalGet('<front>');
+    // Site no longer in maintenance mode.
+    $this->setUpScreenShot('extend-maintenance-mode-disabled.png', 'onLoad="' . $this->removeScrollbars() . '"');
+    $this->drupalLogin($this->rootUser);
+
+    // @todo Add the rest of the topics in this chapter here.
   }
 
   /**

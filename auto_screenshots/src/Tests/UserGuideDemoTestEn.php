@@ -24,8 +24,8 @@ class UserGuideDemoTestEn extends UserGuideDemoTestBase {
     'doBlocks' => 'skip',
     'doViews' => 'skip',
     'doMultilingualSetup' => 'skip',
-    'doTranslating' => 'restore_backup',
-    'doExtending' => 'skip',
+    'doTranslating' => 'skip',
+    'doExtending' => 'restore',
     'doPreventing' => 'skip',
     'doSecurity' => 'skip',
   ];
