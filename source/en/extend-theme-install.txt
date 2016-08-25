@@ -49,44 +49,42 @@ administrative interface step 7.
 ===== Using the administrative interface
 
 . On the theme's project page on drupal.org (for example,
-https://www.drupal.org/project/bootstrap) scroll to the _Downloads_ section
+https://www.drupal.org/project/mayo) scroll to the _Downloads_ section
 in the bottom of the page.
 
 . Right click _tar.gz_ to copy the address.
 
-// For this screenshot got https://www.drupal.org/project/bootstrap and
-// crop to the downloads section. Highlight the tar.gz link.
-image:images/extend-theme-install-download.png["Downloading a theme using a URL",width="100%"]
+// Downloads section of the Mayo project page on drupal.org.
+image:images/extend-theme-install-download.png["Finding the URL for a theme"]
 
 [start=3]
-. In the _Manage_ administrative menu, navigate to _Appearance_ (_admin/themes_).
-The _Appearance_ page appears.
+. In the _Manage_ administrative menu, navigate to _Appearance_
+(_admin/appearance_). The _Appearance_ page appears.
 
 . Click _Install new theme_. The _Install new theme_ page appears.
 
+// Install new theme page (admin/theme/install).
+image:images/extend-theme-install-page.png["Installing a theme"]
+
+[start=5]
 . In the field _Install from a URL_ paste the copied download link. This value
 could look like
-`https://ftp.drupal.org/files/projects/bootstrap-8.x-3.0-beta3.tar.gz`
+`https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
 
-// Go to page where you can copy/paste a link for installing a theme and
-// screenshot the form on that page.
-image:images/extend-theme-install-1.png["Install a theme",width="100%"]
-
-[start=6]
 . Click _Install_ to upload and unpack the new theme on the server. The files
 are being downloaded to the _themes_ directory.
 
 . Click _Install newly added themes_ to return to the _Appearance_ page. If you
 used the manual uploading procedure, start with this step, and reach the
 _Appearance_ page by navigating: in the _Manage_ administrative menu, navigate
-to _Appearance_ (_admin/themes_).
+to _Appearance_ (_admin/appearance_).
 
-. Locate the new theme and click _Install and set as default_ to use it. All
-non-administrative pages on the site will now use this new theme.
+. Locate the new theme under _Uninstalled themes_ and click _Install and set as
+default_ to use it. All non-administrative pages on the site will now use this
+new theme.
 
-// Screenshot of the appearance page, with newly added theme ready to be
-// installed.
-image:images/extend-theme-install-3.png["Uninstalled themes on Appearance page",width="100%"]
+// Mayo theme on the Appearance page.
+image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page"]
 
 ===== Using Drush
 
@@ -108,8 +106,8 @@ drush config-set system.theme default bootstrap
 
 ==== Follow-on tasks
 
-* In the _Manage_ administrative menu, navigate to _Appearance_ (_admin/themes_)
-and uninstall any themes that you are not using.
+* In the _Manage_ administrative menu, navigate to _Appearance_
+(_admin/appearance_) and uninstall any themes that you are not using.
 
 * <<extend-module-find>>
 

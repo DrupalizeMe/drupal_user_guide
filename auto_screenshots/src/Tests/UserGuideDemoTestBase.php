@@ -1573,6 +1573,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    */
   protected function doExtending() {
 
+    $vendors_view = $this->demoInput['vendors_view_machine_name'];
+
     // Topic: extend-module-find - Finding Modules
 
     // Search for Admin Toolbar in 8.x on drupal.org.
@@ -1580,7 +1582,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Module search box on https://www.drupal.org/project/project_module.
     $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
     // Search results on https://www.drupal.org/project/project_module.
-    $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="window.scroll(0,600);' . $this->showOnly('#block-system-main .node-project-module') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"');
     $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
     // Project page for Admin Toolbar module.
     $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info') . $this->removeScrollbars() . '"');
@@ -1605,7 +1607,58 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('extend-maintenance-mode-disabled.png', 'onLoad="' . $this->removeScrollbars() . '"');
     $this->drupalLogin($this->rootUser);
 
-    // @todo Add the rest of the topics in this chapter here.
+    // Topic: extend-module-install - Downloading and Installing a Module from
+    // drupal.org.
+
+    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+    // Downloads section of the Admin Toolbar project page on drupal.org.
+    $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+
+    $this->drupalGet('admin/modules/install');
+    // Install new module page (admin/modules/install).
+    $this->setUpScreenShot('extend-module-install-admin-toolbar-do.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
+
+    // Topic: extend-theme-find - Finding Themes
+
+    // Search for actively maintained 8.x themes on drupal.org.
+    $this->drupalGet('https://www.drupal.org/project/project_theme?f[0]=im_vid_44%3A13028&f[1]=&f[2]=drupal_core%3A7234&f[3]=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search');
+    // Theme search box on https://www.drupal.org/project/project_theme.
+    $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
+    // Search results on https://www.drupal.org/project/project_theme.
+    $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+
+    // Topic: extend-theme-install - Downloading and Installing a Theme from
+    // drupal.org.
+
+    $this->drupalGet('https://www.drupal.org/project/mayo');
+    // Downloads section of the Mayo project page on drupal.org.
+    $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+
+    $this->drupalGet('admin/theme/install');
+    // Install new theme page (admin/theme/install).
+    $this->setUpScreenShot('extend-theme-install-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
+
+    $this->drupalGet('admin/appearance');
+    // Mayo theme on the Appearance page.
+    $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)' . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
+
+    // Topic: extend-manual-install - Manually Downloading Module or Theme
+    // Files.
+
+    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+    // Downloads section of the Admin Toolbar project page on drupal.org.
+    $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+
+    // Topic: extend-deploy - Deploying New Site Features.
+
+    // Export the Vendors view configuration. In the UI, you can get the
+    // export via Ajax, but Ajax post did not work in the test. Luckily,
+    // it also has a direct URL.
+    $this->drupalGet('admin/config/development/configuration/single/export/view/' . $vendors_view);
+    // Single configuration export of the Vendors view from
+    // admin/config/development/configuration/single/export.
+    $this->setUpScreenShot('extend-deploy-export-single.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .breadcrumb ol li:gt(4)') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"');
+
   }
 
   /**

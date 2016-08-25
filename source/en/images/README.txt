@@ -19,3 +19,7 @@ Screen shot of vertical toolbar menu configuration (topic config-overview.txt):
 Editing with the In-Place Editor (topic content-in-place-edit.txt):
 - content-in-place-edit-hover-box.png
 - content-in-place-edit-save-box.png
+
+Suggested file directory structure for /modules directory (topic
+extend-manual-install.txt):
+- extend-manual-install-directories.png
