@@ -45,7 +45,7 @@ Skip this topic if none of the above applies to you.
 ==== Steps
 
 If you are installing a module or theme from _Drupal.org_, follow the
-Downloading and unpacking instructions, and then the uploading instructions. If
+downloading and unpacking instructions, and then the uploading instructions. If
 you created the module or theme, skip the downloading and unpacking steps.
 
 ===== Downloading and unpacking the files
@@ -66,10 +66,10 @@ image:images/extend-manual-install-download.png["Downloading module files"]
 ===== Uploading the files to your site
 
 . If you are adding a new module or theme, create subdirectories in your
-top-level _modules_ and _themes_ directory (if they don't already
+top-level _modules_ and _themes_ directories (if they don't already
 exist). Typically, people make a _contrib_ subdirectory for contributed modules
 and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for
-modules and themes that they created. Your modules directory might look like
+modules and themes that they created. Your _modules_ directory might look like
 this:
 
 // Make custom and contrib directories under modules, and take a screen shot
@@ -81,7 +81,7 @@ image:images/extend-manual-install-directories.png["Suggested directory structur
 the site into maintenance mode. See <<extend-maintenance>>.
 
 . If you are replacing an existing module or theme with an updated version, find
-and delete the all of the existing files and directories for the existing module
+and delete all the existing files and directories for the existing module
 or theme. Modules are normally located in directories under the top-level
 _modules_ directory, and themes are normally located in directories under the
 top-level _themes_ directory.
