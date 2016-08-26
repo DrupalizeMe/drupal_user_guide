@@ -10,8 +10,9 @@ How to configure content items to make them translatable.
 
 ==== Goal
 
-Make the Custom block, Custom menu links and Basic page content type
-translatable and set which fields of these can be translated.
+Make _Custom block_, _Custom menu link_, and _Content_ entity types
+translatable. Select specific subtypes and set which fields of these can be
+translated.
 
 ==== Prerequisite knowledge
 
@@ -38,7 +39,7 @@ image:images/language-content-config_custom.png["Custom language settings checkl
 
 [start=3]
 . Configuration options appear for _Content_, _Custom block_ and  _Custom menu
-link_. Choose the subtypes you want to be able to translate for each entity
+link_. Choose the subtypes you want to translate for each entity
 type. Check _Basic page_ for _Content_, _Basic block_ for _Custom block_ and
 _Custom menu link_ for _Custom menu link_.
 
@@ -48,7 +49,7 @@ _Custom menu link_ for _Custom menu link_.
 |================================
 |Field name | Explanation | Example value
 | Default language | The default language for the entity subtype | Site's default language (English)
-| Show language selector on create and edit pages | Whether or not the language selector should be shown when editing and creating content | Checked
+| Show language selector on create and edit pages | Whether or not the language selector should be shown while editing and creating content | Checked
 |================================
 +
 // Main settings area for Custom Block translations.
@@ -56,7 +57,7 @@ image:images/language-content-config_content.png["Default language and translata
 
 [start=5]
 . Choose the fields that should be translatable for _Basic page_ as shown in the
-table below. If a field is not translation dependent, leave it
+table below. If a field is not translation-dependent, leave it
 unchecked. Enabling translation for fields that are numbers or dates has use for
 accountability or implementing workflows.
 +
