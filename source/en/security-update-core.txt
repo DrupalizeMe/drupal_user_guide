@@ -102,22 +102,8 @@ site.
 had disabled at *step 3*, re-enable them; else, skip this step.
 
 . By now, you should be able to have the updated version running. To cross
-verify the current version of your software, navigate to _Reports > Status
-report_. Following screen shot demonstrates the status report with the desired
-output encircled:
-+
-// Login to your Drupal 8 site as an administrator and navigate to _Reports >
-// Status report_ page. Add a circle around the Drupal version.
-image:images/security-update-core_statusReport.png["Status report",width="100%"]
-
-*Note:* When you have cleared the cache, you might come across error(s) asking
-you to rebuild your registry. This is sometimes essential if a module has moved
-around during the update process. To get rid of such error messages, follow the
-instructions on the
-https://www.drupal.org/project/registry_rebuild[_Drupal.org_ page "Registry Rebuild"].
-
-To learn more about updating the core software, refer to _/core/UPGRADE.txt_
-within your installation.
+verify the current version of your software, check the _Status report_ (see
+<<prevent-status>>).
 
 ==== Follow-on tasks
 
@@ -133,6 +119,7 @@ within your installation.
 
 * https://www.drupal.org/project/drupal["Drupal Core Downloads" page on _Drupal.org_]
 * https://www.drupal.org/project/registry_rebuild["Registry Rebuild" page on _Drupal.org_]
+* The file _/core/UPDATE.txt_ within your installation.
 
 
 *Attributions*
