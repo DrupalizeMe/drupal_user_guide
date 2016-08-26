@@ -24,7 +24,7 @@ site.
 ==== Site prerequisites
 
 * The core Configuration Manager module must be installed in both the
-development site and the production site. See <<config-install>> for
+development and production sites. See <<config-install>> for
 instructions on installing core modules.
 
 * The Vendor content type must exist in both the development and production
@@ -35,10 +35,10 @@ site. See <<views-create>>.
 
 ==== Steps
 
-. Open the local development site
+. Open the local development site.
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Configuration synchronization_ > _Export_ > _Single item_.
+_Development_ > _Configuration synchronization_ > _Export_ > _Single item_
 (_admin/config/development/configuration/single/export_).
 The _Single export_ page appears.
 
@@ -82,8 +82,8 @@ each field, one for the content type itself, and possibly multiple view mode
 and form mode items, and they would have to be transferred in the right order.
 Getting this right can be both tedious and difficult.
 
-As an alternative you can export and import the complete configuration of the
-site. For this you would need a local development site which is a clone
+As an alternative, you can export and import the complete configuration of the
+site. For this, you would need a local development site that is a clone
 of the production site (see <<install-dev-making>>), and then you can follow the
 steps in <<extend-config-versions>> to synchronize configuration between
 development and production sites.
