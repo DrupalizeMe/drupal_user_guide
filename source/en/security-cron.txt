@@ -27,17 +27,17 @@ tasks were last run.
 +
 If you installed the website using the core Standard installation profile (or
 similar), then cron maintenance tasks might already be running via the
-core Automated Cron module.  By default these tasks are run at most every three
+core Automated Cron module.  By default these tasks are run about every three
 hours.
 
 . Choose whether to run cron maintenance tasks using the core Automated Cron
-module, or by other means.
+module, or by other means. The core Automated Cron module might not be suitable
+for some websites because:
 +
-The core Automated Cron module might not be suitable for some websites because:
-+
-  * Cron maintenance tasks will be run only after a page on the website is
-  visited. If no one visits the website for a long time, cron maintenance tasks
-  will not be run.
+  * The core Automated Cron module checks, each time someone accesses a page on
+  the site, how long it has been since cron maintenance tasks have last run, and
+  then runs them if necessary. If no one visits the website for a long time,
+  cron maintenance tasks will not be run.
   * Because cron maintenance tasks are run after the page has been generated,
   there is less time for the tasks to be run before various server timeouts are
   reached (for example, PHP execution timeout). If this happens the logs (See
@@ -47,37 +47,35 @@ The core Automated Cron module might not be suitable for some websites because:
   run by the web server, that HTTP connection is occupied until the tasks are
   complete (which may run for several minutes).
 
-. Install and configure the core Automated Cron module (see <<config-install>>
-for instructions on installing core modules).
+. If you want to use the core Automated Cron module, first make sure it is
+installed (it is installed with the core Standard install profile; see
+<<config-install>> if it is not installed).
 +
-Once installed, and after the website sends a page to the web browser, it will
-check how long since cron maintenance tasks have last run, and run them if
-necessary.
-+
-The core Automated Cron module can be configured to control how frequently cron
-maintenance tasks are run.  In the _Manage_ administrative menu, navigate to
-_Configuration_ > _System_ > _Cron_
-(_admin/config/system/cron_).
-+
-// Screenshot of typical form at admin/config/system/cron
-image:images/config-automated-cron.png["Configure the core Automated Cron module",width="100%"]
+Next, configure the module to control how frequently cron maintenance tasks are
+run. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_
+> _Cron_ (_admin/config/system/cron_). Choose the desired interval in the _Cron
+settings_ section, and click _Save configuration_.
+
+// Cron configuration page (admin/config/system/cron).
+image:images/security-cron.png["Configure the core Automated Cron module"]
 
 [start=4]
-. Run cron maintenance tasks from outside the website.
+. If you want to run cron maintenance tasks from outside the website, uninstall
+the core Automated Cron module (see <<config-uninstall>>). Next, find the
+cron URL. This URL is shown on the _Status report_ (see <<prevent-status>>), and
+on the _Cron_ administration page (see previous step). The URL looks something
+like this:
+http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_.
 +
-The status report (see above) shows a URL that can be used to
-run cron from outside of the website; for example:
-_http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
-+
-This URL can be used by the following cron schedulers; if you use one of these
-methods, uninstall the core Automated Cron module (see <<config-uninstall>>):
+Whenever this URL is visited, the cron maintenance tasks will run. Set up one of
+the following schedulers to access this URL regularly:
 +
   * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
   BSD)
   * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
   * A cron SASS provider (software as a service)
-  * A cron manager provided by your webhost (see the documentation provided by
-  your webhost)
+  * A cron manager provided by your web hosting provider (see the documentation
+  provided by your provider)
 
 
 // ==== Follow-on tasks
@@ -94,6 +92,7 @@ methods, uninstall the core Automated Cron module (see <<config-uninstall>>):
 
 *Attributions*
 
-Written by https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
+Written and edited by https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
 https://www.advomatic.com/[Advomatic],
-and https://www.drupal.org/u/batigolix[Boris Doesborg].
+https://www.drupal.org/u/batigolix[Boris Doesborg],
+and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

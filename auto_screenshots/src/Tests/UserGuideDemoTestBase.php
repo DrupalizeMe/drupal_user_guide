@@ -4,6 +4,7 @@ namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Database\Database;
+use Drupal\Core\Url;
 use Drupal\simpletest\WebTestBase;
 use Drupal\user\Entity\User;
 use BackupMigrate\Core\Config\Config;
@@ -186,6 +187,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *
    * Each key in this array is the name of a method to run. The values are:
    * - run: Run normally. Assumes previous methods have been run or restored.
+   *   This is the default in the base class, for all chapters.
    * - restore: Restore from the previous method's backup, and then run this
    *   method.
    * - backup: Run this method, and create a backup afterwards.
@@ -199,7 +201,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * "BACKUP MADE TO: ____".
    *
    * After verifying, save the backups for later restoration in the
-   * auto_screenshots/backups/LANGUAGE_CODE directory.
+   * auto_screenshots/backups/LANGUAGE_CODE/CHAPTER_METHOD directories.
    *
    * @var array
    */
@@ -232,6 +234,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * We need verbose logging to be on.
    */
   public $verbose = TRUE;
+
+  /**
+   * We don't care about schema checking.
+   */
+  protected $strictConfigSchema = FALSE;
 
   /**
    * Counter for screenshot output, separate from regular verbose IDs.
@@ -1675,8 +1682,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: prevent-status - Concept: Status Report.
 
     $this->drupalGet('admin/reports/status');
-    // Replace the URL with example.com for this page.
-    $this->content = preg_replace('|absolute=1">.*/cron/|U', 'absolute=1">example.com/cron/', $this->content);
+    $this->useExampleHome();
     // Status report (admin/reports/status).
     $this->setUpScreenShot('prevent-status.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
   }
@@ -1685,7 +1691,50 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Security chapter.
    */
   protected function doSecurity() {
-    // @todo Write this.
+    // For these topics, we do not want to download translations.
+    // They don't seem to get downloaded correctly within the test, and it
+    // causes the test to hang.
+    \Drupal::configFactory()->getEditable('locale.settings')
+      ->set('translation.import_enabled', FALSE)
+      ->save();
+    $this->clearCache();
+
+    // Topic: security-cron - Configuring Cron Maintenance Tasks.
+
+    $this->drupalGet('admin/config/system/cron');
+    $this->useExampleHome();
+    // Cron configuration page (admin/config/system/cron).
+    $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"');
+
+    // Topic: security-update-module - Updating a Module.
+
+    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+    // Downloads section of the Admin Toolbar project page on drupal.org.
+    $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-field-release-version a') . $this->removeScrollbars() . '"');
+
+    // Install an old version of the Admin Toolbar module, and visit the
+    // Updates page.
+    $this->drupalPostForm('admin/modules', [
+        'modules[Administration][admin_toolbar][enable]' => TRUE,
+      ], $this->callT('Install'));
+    $this->drupalGet('admin/reports/updates/update');
+    // Update page for module (admin/reports/updates/update).
+    $this->setUpScreenShot('security-update-module-updates.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    // Uninstall the module.
+    $this->drupalPostForm('admin/modules/uninstall', [
+        'uninstall[admin_toolbar]' => 1,
+      ], $this->callT('Uninstall'));
+    $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
+
+    // Topic: security-update-theme - Updating a Theme.
+
+    // Install an old version of the Mayo theme, and visit the Updates page.
+    $this->drupalGet('admin/appearance');
+    $this->clickLinkContainingUrl('theme=mayo');
+    $this->drupalGet('admin/reports/updates/update');
+    // Update page for theme (admin/reports/updates/update).
+    $this->setUpScreenShot('security-update-theme-updates.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    // As this is the last screenshot, do not bother to uninstall the theme.
   }
 
   /**
@@ -2140,6 +2189,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $manager->plugins()->setConfig($config);
 
     return $manager;
+  }
+
+  /**
+   * Replaces the front URL with example.com in the current page.
+   */
+  protected function useExampleHome() {
+    $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
+    $this->content = str_replace($front_url, 'http://example.com/', $this->content);
   }
 
 }

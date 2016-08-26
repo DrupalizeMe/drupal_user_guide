@@ -49,11 +49,13 @@ details how to set up the tools. Here are the steps:
    Drush command:
    drush en simpletest
 
-10. Download a current 8.x version of the Mayo theme to the /themes directory
-    in your test site. It is used for some of the screenshots.
+10. Download a near-current 8.x version of the Mayo theme to the /themes
+    directory in your test site (for instance, if the current version is
+    8.x-1.15, get 8.x-1.14). It is used for some of the screenshots.
     https://www.drupal.org/project/mayo
-    Drush command:
-    drush dl mayo
+
+11. Do the same for a near-current version of the Admin Toolbar module
+    from https://www.drupal.org/project/admin_toolbar
 
 
 MAKING SCREENSHOTS

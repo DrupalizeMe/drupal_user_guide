@@ -13,9 +13,14 @@ namespace Drupal\auto_screenshots\Tests;
 class UserGuideDemoTestEn extends UserGuideDemoTestBase {
 
   /**
-   * {@inheritdoc}
+   * Non-override of UserGuideDemoTestBase::runList.
+   *
+   * If you want to run only some chapters, or want to make backups, change
+   * the name of this variable (locally and temporarily) to $runList, and then
+   * change 'skip' to one of the other values for each chapter you want to run.
+   * See UserGuideDemoTestBase::runList for more information.
    */
-  protected $runList = [
+  protected $notRunList = [
     'doPrefaceInstall' => 'skip',
     'doBasicConfig' => 'skip',
     'doBasicPage' => 'skip',
@@ -26,7 +31,7 @@ class UserGuideDemoTestEn extends UserGuideDemoTestBase {
     'doMultilingualSetup' => 'skip',
     'doTranslating' => 'skip',
     'doExtending' => 'skip',
-    'doPreventing' => 'restore_backup',
+    'doPreventing' => 'skip',
     'doSecurity' => 'skip',
   ];
 }

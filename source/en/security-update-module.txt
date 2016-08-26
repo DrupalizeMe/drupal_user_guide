@@ -50,8 +50,8 @@ _INSTALL.txt_ and _UPGRADE.txt_ that come with the module's installation
 file. Also review the release notes by clicking the version number of the
 download on the project page for the version you're downloading.
 
-//Screenshot of the release notes link
-image:images/security-update-module-release-notes.png["Release notes link",width="100%"]
+// Downloads section of the Admin Toolbar project page on drupal.org.
+image:images/security-update-module-release-notes.png["Release notes link"]
 
 You can use the administrative interface or Drush to update a contributed
 module. If you are updating a custom module rather than a contributed module, or
@@ -69,6 +69,10 @@ _Available updates_ > _Update_ (_admin/reports/updates/update_).
 . Find and check the module in the list. Click _Download these updates_ for the
 module.
 
+// Update page for theme (admin/reports/updates/update).
+image:images/security-update-module-updates.png["Available updates",width="100%"]
+
+[start=4]
 . Click _Continue_.
 
 . Click _Run database updates_. If you obtained the new module files manually,
