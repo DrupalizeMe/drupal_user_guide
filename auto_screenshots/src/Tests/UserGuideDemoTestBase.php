@@ -1640,7 +1640,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $this->drupalGet('admin/appearance');
     // Mayo theme on the Appearance page.
-    $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)' . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
+    $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
 
     // Topic: extend-manual-install - Manually Downloading Module or Theme
     // Files.
@@ -1665,7 +1665,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Preventing and Fixing Problems chapter.
    */
   protected function doPreventing() {
-    // @todo Write this.
+
+    // Topic: prevent-log - Concept: Log.
+
+    $this->drupalGet('admin/reports/dblog');
+    // Recent log messages report (admin/reports/dblog).
+    $this->setUpScreenShot('prevent-log.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+
+    // Topic: prevent-status - Concept: Status Report.
+
+    $this->drupalGet('admin/reports/status');
+    // Replace the URL with example.com for this page.
+    $this->content = preg_replace('|absolute=1">.*/cron/|U', 'absolute=1">example.com/cron/', $this->content);
+    // Status report (admin/reports/status).
+    $this->setUpScreenShot('prevent-status.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
   }
 
   /**
