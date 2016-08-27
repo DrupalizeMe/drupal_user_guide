@@ -256,6 +256,9 @@ you'll need to translate the `$demoInput` array in the screenshot automation
 test base class [Language team], and then run the automated screenshot
 procedure [Project managers].
 
+. Manually make the few images that cannot be automated. There should be a
+README.txt file in the images directory listing what those images are.
+
 . Add the new language to the build scripts (file _languages.txt_), and make
 sure it is showing up on the display and editing site(s) for the
 project. [Project managers]
@@ -270,12 +273,13 @@ the project [Project managers].
 . Make a translation glossary specific to the project_name, so that terms are
 translated consistently throughout. [Language team managers] This should
 probably be located in the language team's pages on
-https://localize.drupal.org[localize.drupal.org].
+https://localize.drupal.org[localize.drupal.org]. There should be a centralized
+glossary list to start from.
 
-. Make issues for translating each topic into the target language, and recruit
-volunteers to translate and review. [Language team managers]
-See <<phase-checklists-translating>>. It may also be useful to make a
-spreadsheet to track progress.
+. Make issues for translating each topic into the target language (there should
+be a script to aid in doing this), and recruit volunteers to translate and
+review. [Language team managers] See <<phase-checklists-translating>>. It may
+also be useful to make a spreadsheet to track progress.
 
 
 [[pm-guide-updates]]
@@ -287,12 +291,28 @@ comes out, if readers have reported problems, or if new topics need to be
 added.
 
 If the guide has been translated, updates are complicated somewhat, because
-translators need to be notified about the update.
+translators need to be notified about the update. Also, if the project_name has
+been imported into a site, the import will need to be updated.
 
-Also, if the project_name has been imported into a site, the import will need to
-be updated.
+*Draft process* (possibly subject to change):
 
-*TBD: Define this process*
+* We will have an issue component for "Translation updates" (or something
+similar).
+
+* When there is a change committed to the English version that means
+translations need to be updated, we create an issue in this component like
+"Translations need updating: topic-file-name.txt".
+
+* The issue summary explains what section of this topic changed and why, and
+links to the commit that was made.
+
+* Translation team managers will notice this issue and individually create child
+issues, each in their own language component in the issue queue, with titles
+like "Update translation of topic-file-name.txt". [Note: there is not currently
+a way to notice that these issues exist, without subscribing to the entire issue
+queue for the project. We might need an email list?]
+
+* Once all the child issues have been fixed, we close the parent issue as Fixed.
 
 
 *Attributions*
