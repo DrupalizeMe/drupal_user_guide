@@ -41,12 +41,12 @@ modules.
 You can use the administrative interface or Drush to update a contributed
 theme. If you are updating a custom theme rather than a contributed theme, or if
 the steps below do not work to obtain the new theme files, follow the steps in
-<<extend-manual-install>>, and then continue here with administrative interface
-step 6.
+<<extend-manual-install>>, and then continue with step 6 in the instructions for
+administrative interface below.
 
 ===== Using the administrative interface
 
-. Put your site in to maintenance mode. See <<extend-maintenance>>.
+. Put your site in maintenance mode. See <<extend-maintenance>>.
 
 . In the _Manage_ administrative menu, navigate to _Reports_ >
 _Available updates_ > _Update_ (_admin/reports/updates/update_).
@@ -64,27 +64,27 @@ image:images/security-update-theme-updates.png["Available updates",width="100%"]
 start with this step, and reach the database updates page by typing the URL
 _example.com/update.php_ in your browser.
 
-. Click _Continue_ and apply all updates. The database update scripts will be
+. Click _Continue_ to run the updates. The database update scripts will be
 executed.
 
 . Click _Administration pages_ to return to the administration section of your
 site.
 
-. Put your site out of the maintenance mode. See <<extend-maintenance>>.
+. Take your site out of maintenance mode. See <<extend-maintenance>>.
 
 . Clear the Drupal cache (refer to <<prevent-cache-clear>>).
 
 ===== Using Drush
 
-. Find the project name for the theme you update, which is the last segment of
-the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/bootstrap, the project name is `bootstrap`.
+. Find the project name for the theme you wish to update, which is the last
+segment of the theme's project page URL. For example, if the project URL is
+_https://www.drupal.org/project/mayo_, the project name is "mayo".
 
 . Run the following Drush command, giving the project name (for example,
-_bootstrap_) as a parameter:
+`mayo`) as a parameter:
 +
 ----
-drush up bootstrap
+drush up mayo
 ----
 
 [start=3]
