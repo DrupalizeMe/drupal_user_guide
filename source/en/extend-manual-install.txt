@@ -54,11 +54,12 @@ you created the module or theme, skip the downloading and unpacking steps.
 toolbar_ page (https://www.drupal.org/project/admin_toolbar).
 
 . Scroll to the _Downloads_ section near the bottom of the page.
-
++
+--
 // Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/extend-manual-install-download.png["Downloading module files"]
+--
 
-[start=3]
 . Click _tar.gz_ or _zip_ to download the file to your computer.
 
 . Extract the files into a directory.
@@ -71,12 +72,13 @@ exist). Typically, people make a _contrib_ subdirectory for contributed modules
 and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for
 modules and themes that they created. Your _modules_ directory might look like
 this:
-
++
+--
 // Make custom and contrib directories under modules, and take a screen shot
 // showing the directory structure.
 image:images/extend-manual-install-directories.png["Suggested directory structure for modules"]
+--
 
-[start=2]
 . If you are replacing an existing module or theme with an updated version, put
 the site into maintenance mode. See <<extend-maintenance>>.
 

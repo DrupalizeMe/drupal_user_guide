@@ -6,6 +6,7 @@ set -uex
 # Make the output directories if they do not exist.
 mkdir -p ../output
 mkdir -p ../output/ebooks
+mkdir -p ../ebooks
 
 # Process each language. Add new languages to the languages.txt file.
 for lang in `cat languages.txt`
@@ -50,5 +51,10 @@ do
 
   # Go back to the scripts directory to process the next language.
   cd ../../../scripts
+
+  # Copy final output to ebooks directory.
+  cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
+  cp ../output/ebooks/$lang/guide.epub ../ebooks/guide-$lang.epub
+  cp ../output/ebooks/$lang/guide.mobi ../ebooks/guide-$lang.mobi
 
 done

@@ -33,11 +33,12 @@ and Language_ > _Content Language and Translation_
 . Under _Custom language settings_, check _Content_,
 _Custom block_ and _Custom menu link_ to make these entity types translatable.
 +
+--
 // Top section of Content language settings page
 // (admin/config/regional/content-language).
 image:images/language-content-config_custom.png["Custom language settings checklist"]
+--
 
-[start=3]
 . Configuration options appear for _Content_, _Custom block_ and  _Custom menu
 link_. Choose the subtypes you want to translate for each entity
 type. Check _Basic page_ for _Content_, _Basic block_ for _Custom block_ and
@@ -52,10 +53,11 @@ _Custom menu link_ for _Custom menu link_.
 | Show language selector on create and edit pages | Whether or not the language selector should be shown while editing and creating content | Checked
 |================================
 +
+--
 // Main settings area for Custom Block translations.
 image:images/language-content-config_content.png["Default language and translatability for content types"]
+--
 
-[start=5]
 . Choose the fields that should be translatable for _Basic page_ as shown in the
 table below. If a field is not translation-dependent, leave it
 unchecked. Enabling translation for fields that are numbers or dates has use for
@@ -74,11 +76,12 @@ accountability or implementing workflows.
 | URL alias | Nicer URL for the content | Checked
 | Body | The main content of the page | Checked
 |================================
-
++
+--
 // Field settings area for Basic page translations.
 image:images/language-content-config_basic_page.png["Translatable content entity subtypes' fields checklist"]
+--
 
-[start=6]
 . Similarly, check the appropriate boxes for translatable fields belonging to
 _Basic block_ and _Custom menu link_.
 

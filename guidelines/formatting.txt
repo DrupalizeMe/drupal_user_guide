@@ -189,13 +189,19 @@ See also: <<composing-index-entries>>
 Here's the syntax to include an image:
 
 ----
+. Text of the step immediately before the image.
+--
 // Comment explaining how to regenerate the image, for future contributors.
 image:images/filename.png["alt text goes here",width="100%"]
+--
 ----
 
 Notes and conventions:
 
-* Both of these lines must start at the left margin of your text file.
+* All of these lines must start at the left margin of your text file.
+
+* The "--" lines make the image embed properly into the list item. You can
+use them in bullet lists as well.
 
 * There cannot be a space before the [ in the image line.
 

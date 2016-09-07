@@ -31,11 +31,12 @@ _Account settings_ (_admin/config/people/accounts_).
 people with permissions to register user accounts. You can check _Require email
 verification when a visitor creates an account_ in case you want to change the
 settings for account registration later on.
-
++
+--
 // Registration and cancellation section of admin/config/people/accounts.
 image:images/config-user_account_reg.png["Account registration only by admin"]
+--
 
-[start=3]
 . Optionally, change the default email address from which user account
 notifications from the farmers market website will be sent. This will help you
 maintain a separate email address from the one used for the website in
@@ -51,11 +52,12 @@ cancellation.
 You can send out your own text (for example, welcoming the new vendors for whom
 accounts were just created) by editing the the _Welcome (new user created by
 administrator)_ template.
-
++
+--
 // Emails section of admin/config/people/accounts.
 image:images/config-user_email.png["Email notification on account events",width="100%"]
+--
 
-[start=5]
 . Click _Save configuration_ to save the changes.
 
 ==== Expand your understanding

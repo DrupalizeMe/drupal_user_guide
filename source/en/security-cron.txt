@@ -55,11 +55,12 @@ Next, configure the module to control how frequently cron maintenance tasks are
 run. In the _Manage_ administrative menu, navigate to _Configuration_ >
 _System_ > _Cron_ (_admin/config/system/cron_). Choose the desired interval in
 the _Cron settings_ section, and click _Save configuration_.
-
++
+--
 // Cron configuration page (admin/config/system/cron).
 image:images/security-cron.png["Configure the core Automated Cron module"]
+--
 
-[start=4]
 . If you want to run cron maintenance tasks from outside the website, uninstall
 the core Automated Cron module (see <<config-uninstall>>). Next, find the
 cron URL. This URL is shown in the _Status report_ (see <<prevent-status>>), and

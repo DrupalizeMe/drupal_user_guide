@@ -37,11 +37,12 @@ and <<content-create>>.
 (_admin/structure/views_). Find the view "Vendors" and click _Duplicate_ in its
 dropdown button.
 +
+--
 // Views page (admin/structure/views), with operations dropdown
 // for Vendor view open.
 image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
+--
 
-[start=2]
 . Name the duplicate "Recipes" and click _Duplicate_. The view configuration
 page appears.
 
@@ -49,10 +50,10 @@ page appears.
 _Title_ section. The _Page: The title of this view_ pop-up appears. Type in
 "Recipes". Click _Apply_.
 +
+--
 // View title configuration screen.
 image:images/views-duplicate_title.png["Change view title",width="100%"]
-
-[start=4]
+--
 
 . Change from a table to a grid format by clicking _Table_ in the _Format_
 section. The _Page: How should this view be styled_ pop-up appears. Check _Grid_
@@ -84,10 +85,11 @@ filter to visitors. Fill in the fields as shown below.
 | Label | Label shown for this filter on the view page | Find recipes using...
 |================================
 +
+--
 // Ingredients field exposed filter configuration.
 image:images/views-duplicate_expose.png["Expose filter"]
+--
 
-[start=9]
 . Change the _Path_ label field to "Recipes" by clicking "/vendors" in the _Page
 settings_ section. In the pop-up that appears, enter the path "recipes" and
 click _Apply_.
@@ -110,8 +112,10 @@ checking _Use Ajax_ in the pop-up that appears. Click _Apply_.
 . Go back to the home page and click Recipes in the navigation to view the new
 Recipes page.
 +
+--
 // Completed recipes view output.
 image:images/views-duplicate_final.png["Recipes view",width="100%"]
+--
 
 ==== Expand your understanding
 

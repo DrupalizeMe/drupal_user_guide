@@ -53,20 +53,22 @@ _https://www.drupal.org/project/mayo_), scroll to the _Downloads_ section
 at the bottom of the page.
 
 . Right-click _tar.gz_ to copy the address.
-
++
+--
 // Downloads section of the Mayo project page on drupal.org.
 image:images/extend-theme-install-download.png["Finding the URL for a theme"]
+--
 
-[start=3]
 . In the _Manage_ administrative menu, navigate to _Appearance_
 (_admin/appearance_). The _Appearance_ page appears.
 
 . Click _Install new theme_. The _Install new theme_ page appears.
-
++
+--
 // Install new theme page (admin/theme/install).
 image:images/extend-theme-install-page.png["Installing a theme"]
+--
 
-[start=5]
 . In the field _Install from a URL_, paste the copied download link. This value
 could look like
 `https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
@@ -82,9 +84,11 @@ to _Appearance_ (_admin/appearance_).
 . Locate the new theme under _Uninstalled themes_ and click _Install and set as
 default_ to use it. All non-administrative pages on the site will now use this
 new theme.
-
++
+--
 // Mayo theme on the Appearance page.
 image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page"]
+--
 
 ===== Using Drush
 
@@ -101,7 +105,6 @@ drush en mayo
 drush config-set system.theme default mayo
 ----
 
-[start=3]
 . Follow the instructions on the screen.
 
 ==== Expand your understanding

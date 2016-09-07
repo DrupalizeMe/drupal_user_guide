@@ -45,10 +45,11 @@ field for the content type or re-use an existing field.
 A machine name is automatically generated, based on the _Label_ value. Click
 _Edit_ if you want to override the default name.
 +
+--
 // Initial page for admin/structure/types/manage/vendor/fields/add-field.
 image:images/structure-fields-add-field.png["Add field page"]
+--
 
-[start=4]
 . Click _Save and continue_. The page Vendor URL appears which lets you set
 the allowed number of values. Fill in the fields as shown below.
 +
@@ -58,7 +59,7 @@ the allowed number of values. Fill in the fields as shown below.
 | Allowed number of values | The number of values that can be entered | Limited, 1
 |================================
 
-[start=5]
+
 . Click _Save field settings_. The page _Vendor URL settings for Basic page_
 appears which allows you to configure the field. Fill in the fields as shown
 below.
@@ -73,10 +74,11 @@ below.
 | Allow link text | Whether a link text can be entered | Disabled
 |================================
 +
+--
 // Field settings page for adding vendor URL field.
 image:images/structure-fields-vendor-url.png["Field settings page for Vendor URL",width="100%"]
+--
 
-[start=6]
 . Click _Save settings_. The Vendor URL has been added to the content
 type. Continue creating the Main image field.
 
@@ -90,7 +92,6 @@ below.
 | Label | Label that is visible in administration pages | Main image
 |================================
 
-[start=8]
 . Click _Save and continue_. The page Main image appears. Fill in the fields
 as shown below.
 +
@@ -120,16 +121,18 @@ appears. Fill in the fields as shown below.
 | Alt field required | Whether an alternative text is required | Checked
 |================================
 +
+--
 // Field settings page for adding main image field.
 image:images/structure-fields-main-img.png["Field settings page for Main Image",width="100%"]
+--
 
-[start=10]
 . Click _Save settings_. Main image has been added to the content type.
 +
+--
 // Manage fields page for Vendor, showing two new fields.
 image:images/structure-fields-result.png["Manage fields page",width="100%"]
+--
 
-[start=11]
 . Add a Main image field to the Recipe content type, using similar steps. Start
 by navigating to the Recipe content type's _Manage Fields_ page in step 1. Then
 skip to step 7 and follow the remaining steps, but reuse the existing Main image

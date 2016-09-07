@@ -40,11 +40,12 @@ appears.
 . For the Ingredients field, select _Autocomplete (Tags style)_ in the _Widget_
 column.
 +
+--
 // Manage form display page for Recipe, Ingredients field area, with
 // Widget drop-down outlined.
 image:images/structure-form-editing-manage-form.png["Manage the Recipe form",width="100%"]
+--
 
-[start=4]
 . Click _Save_.
 
 . In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
@@ -52,10 +53,11 @@ Recipe (_node/add/recipe_) to verify the changed behavior of the content
 form. The Ingredients field is now a single text field that accepts multiple
 values.
 +
+--
 // Create recipe page (node/add/recipe).
 image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
+--
 
-[start=6]
 . Create two Recipe content items (see <<content-create>>), such as recipes for
 "Green Salad" and "Fresh Carrots". Make sure all the fields have values,
 including images, ingredients, and submitted by (set this to one of the Vendor
