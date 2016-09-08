@@ -76,4 +76,54 @@
 <xsl:template match="simpara[@role='summary']">
 </xsl:template>
 
+
+<!-- Better fonts. Less whitespace. -->
+<xsl:param name="body.font.family">Helvetica</xsl:param>
+<xsl:param name="body.font.master">11</xsl:param>
+<xsl:param name="title.font.family">Helvetica</xsl:param>
+<xsl:attribute-set name="section.title.level1.properties">
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.6"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.8em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">1em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">1.2em</xsl:attribute>
+</xsl:attribute-set>
+<xsl:attribute-set name="section.title.level2.properties">
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.4"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.8em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">1em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">1.2em</xsl:attribute>
+</xsl:attribute-set>
+<xsl:attribute-set name="section.title.level3.properties">
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.2"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.8em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">1em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">1.2em</xsl:attribute>
+</xsl:attribute-set>
+<xsl:attribute-set name="section.title.level4.properties">
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.1"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
+</xsl:attribute-set>
+<xsl:param name="header.column.widths">1 5 1</xsl:param>
+<xsl:attribute-set name="list.item.spacing">
+  <xsl:attribute name="space-before.optimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0.4em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">0.6em</xsl:attribute>
+</xsl:attribute-set>
+
+<!-- Definition list and glossary formatting -->
+<xsl:param name="variablelist.as.blocks" select="1"/>
+<xsl:param name="glossary.as.blocks" select="1"/>
+<xsl:param name="glosslist.as.blocks" select="1"/>
+
 </xsl:stylesheet>
