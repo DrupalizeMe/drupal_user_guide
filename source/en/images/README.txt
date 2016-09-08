@@ -22,7 +22,7 @@ Screen shot of vertical toolbar menu configuration (topic config-overview.txt).
 To make this screenshot, install Drupal in your language using the Standard
 installation profile, log in as an administrator, change the Toolbar to vertical
 alignment, expand the Reports section, and take a screenshot of the vertical
-toolbar menu:
+toolbar menu. Trim it down to 228x540 pixels:
 - config-overview-vertical-menu.png
 
 Editing with the In-Place Editor (topic content-in-place-edit.txt). To make
@@ -38,5 +38,6 @@ extend-manual-install.txt). To make this screenshot, make a folder called
 "drupal" on your computer, and a "modules" subdirectory. Within that, make
 subdirectories "contrib" and "custom" (with these translated into your own
 language -- if you don't want to translate them, you can just use the English
-version of the image). Take a screenshot of this folder structure:
+version of the image). Take a screenshot of this folder structure, and crop to
+174 pixels wide:
 - extend-manual-install-directories.png
