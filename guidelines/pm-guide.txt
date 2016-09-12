@@ -225,20 +225,41 @@ the topic sheet, such as:
 
 When a new team has been established to translate the project_name into another
 language, the project managers and language team manager(s) will need to follow
-these steps to initiate a new translation:
+a number of steps to initiate a new translation. To do this, start by making an
+issue to track translation set-up, and another one to track screenshot
+making. Then follow the steps in the issue templates (creating the second issue
+is one of the steps in the first issue).
 
-. Make a new _source/[lc]_ directory, where _[lc]_ is the two-letter language
-code for the language being added. [Project managers]
+In these issue templates, make the following replacements:
 
-. Copy all of the source (English) files, including the images subdirectory,
-into the new directory. Keep the file names and IDs the same as they were in
-English. [Project managers]
+* LANGUAGE: the language name
 
-. Add a new section to the _attributions.txt_ file for the translation team
-management for this language. [Project managers can set up skeleton; Language
-team fills it out, and volunteers translate it] Template:
-+
+* langcode: the two-letter language code in lower-case
+
+* LANGCODE: the two-letter language code in all caps
+
+* Set the issue component to be "Project management" and the issue title to
+"Set up for LANGUAGE translations", for the "setup" issue.
+
+* Set the issue component to be the particular language translation component
+(created as one of the "setup" steps), and the issue title for the screenshot
+issue to "[LANGCODE] LANGUAGE screenshots".
+
+Here is the template for the "setup" issue:
+
 ----
+This issue is to track progress on setting up for translations into LANGUAGE.
+
+Tasks:
+
+<ol>
+
+<li>Add a new issue component for translations into this new language, by editing the Project page. The component should be called "LANGCODE translation".</li>
+
+<li>Make a new source/langcode directory. Copy all of the source (English) files, including the images subdirectory, into the new directory. Keep the file names and IDs the same as they were in English.</li>
+
+<li>Add a new section to the _attributions.txt_ file for the translation team management for this language. Template:
+<code>
 ==== Translation into LANGUAGE_NAME
 
 The LANGUAGE_NAME translation of this guide was coordinated by:
@@ -246,37 +267,50 @@ The LANGUAGE_NAME translation of this guide was coordinated by:
 * https://www.drupal.org/u/person1[Person One]
 
 * https://www.drupal.org/u/person2[Person Two] of http://example.com[Company]
+</code>
+</li>
+
+<li>Make a separate issue for the screenshots. See Guidelines document for issue template.</li>
+
+<li>Grant issue maintainer and VCS commit permissions to the manager or managers of the language team for the new language, by editing the _Maintainers_ page for the project.</li>
+
+<li>Make issues for translating each topic into the target language. There is a spreadsheet file scripts/bookmarks.fods that will aid in doing this.</li>
+
+<li>Add langcode to the build scripts in scripts/languages.txt, and verify that it builds without errors.</li>
+
+<li>Optional but recommended steps:
+  <ul>
+  <li>Make a translation glossary for this language. File scripts/TermsToTranslate.fods is a good starting point. This should be located in a place that the language team normally uses for communication, such as on localize.drupal.org.</li>
+  <li>Make a shared spreadsheet (for example, using Google Sheets) to track translation progress. File scripts/bare_topic_names.csv is a good starting point; you can add columns for the issue URLs, and status of each issue.</li>
+  </ul>
+</li>
+
+<li>Start translating!</li>
+
+</ol>
 ----
 
-. Make new automated screenshots for the new language. In order to do this,
-you'll need to translate the `$demoInput` array in the screenshot automation
-test base class [Language team], and then run the automated screenshot
-procedure [Project managers].
+Here is the template for the "screenshots" issue:
 
-. Manually make the few images that cannot be automated. There should be a
-README.txt file in the images directory listing what those images are.
+----
+This issue is for tracking progress and problems with the LANGUAGE screenshots.
 
-. Add the new language to the build scripts (file _languages.txt_), and make
-sure it is showing up on the display and editing site(s) for the
-project. [Project managers]
+Tasks and their status (unmarked tasks are assumed not to be done yet):
+<ol>
+<li>Translate the "scenario text" into LANGUAGE. The text to be translated is the "Scenario Text" section of the scripts/TermsToTranslate.fods spreadsheet. What is needed is a 3-column sheet with these columns:
 
-. Add a new issue component for translations into this new language, by editing
-the Project page [Project managers].
+<ul>
+<li>Context (the column called Context in the TermsTo Translate sheet)</li>
+<li>English text</li>
+<li>Your language text</li>
+</ul>
 
-. Grant issue maintainer and VCS commit permissions to the manager or managers
-of the language team for the new language, by editing the _Maintainers_ page for
-the project [Project managers].
-
-. Make a translation glossary specific to the project_name, so that terms are
-translated consistently throughout. [Language team managers] This should
-probably be located in the language team's pages on
-https://localize.drupal.org[localize.drupal.org]. There should be a centralized
-glossary list to start from.
-
-. Make issues for translating each topic into the target language (there should
-be a script to aid in doing this), and recruit volunteers to translate and
-review. [Language team managers] See <<phase-checklists-translating>>. It may
-also be useful to make a spreadsheet to track progress.
+</li>
+<li>Make initial automated screenshots. Procedure: See auto_screenshots/README.txt.</li>
+<li>Make initial non-automated screenshots. See the source/en/images/README.txt file for details of which images need to be made.</li>
+<li>Check each screenshot to make sure it is all in the target language and is readable. The LANGUAGE language team will do this as they translate each topic. If problems are found, add tasks here so that the screenshots can be updated. Leave this issue open until all the topics have been translated and the screenshots checked and/or updated.</li>
+</ol>
+----
 
 
 [[pm-guide-updates]]
