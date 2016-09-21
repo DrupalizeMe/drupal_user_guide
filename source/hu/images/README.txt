@@ -32,12 +32,3 @@ instructions in the topic to enable in-place editing, and take similar
 screenshots.
 - content-in-place-edit-hover-box.png
 - content-in-place-edit-save-box.png
-
-Suggested file directory structure for /modules directory (topic
-extend-manual-install.txt). To make this screenshot, make a folder called
-"drupal" on your computer, and a "modules" subdirectory. Within that, make
-subdirectories "contrib" and "custom" (with these translated into your own
-language -- if you don't want to translate them, you can just use the English
-version of the image). Take a screenshot of this folder structure, and crop to
-174 pixels wide:
-- extend-manual-install-directories.png
