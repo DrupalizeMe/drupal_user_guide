@@ -4,6 +4,7 @@ namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Database\Database;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 use Drupal\simpletest\WebTestBase;
 use Drupal\user\Entity\User;
@@ -31,7 +32,12 @@ require __DIR__ . '/../../vendor/autoload.php';
  * - Override the $demoInput member variable, translating the input into the
  *   target language. Note that most of the text should not contain
  *   ' characters, as this will result in an error when generating the screen
- *   shots.
+ *   shots. If you have a spreadsheet with the array keys for $demoInput in
+ *   column A, and the translated text in column C, you can use this formula
+ *   to generate the array in row 2 (and then copy to the other rows):
+ *   =IF(A2 <> "","'"&A2&"' => '"&C2&"',","")
+ *   Then just copy this column of output into the $deomInput array in your
+ *   new class.
  * - Override the $runList member variable to run the sections of interest.
  *
  * See README.txt file in the module directory for instructions for making
@@ -312,7 +318,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->drupalPostForm('admin/config/regional/language/add', [
           'predefined_langcode' => $this->demoInput['first_langcode'],
         ], 'Add language');
-      // Set it to default. After this, the buttons should be translated.
+      // Rebuild the container. Translations are not working without this.
+      $this->rebuildContainer();
+      drupal_flush_all_caches();
+      $this->refreshVariables();
+
+      // Set the new language to default. After this, the UI should be
+      // translated.
       $this->drupalPostForm('admin/config/regional/language', [
           'site_default_language' => $this->demoInput['first_langcode'],
         ], 'Save configuration');
@@ -325,7 +337,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Top navigation bar on any admin page, with Manage menu showing.
     // This same screenshot is also config-overview-toolbar.png in the
     // config-overview topic.
-    $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 960) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // System section of admin/config page.
     $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.layout-column:odd .panel:first') . '"');
@@ -1779,7 +1791,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       return $text;
     }
 
-    return t($text, [], ['langcode' => $langcode]);
+    return new TranslatableMarkup($text, [], ['langcode' => $langcode]);
   }
 
   /**
