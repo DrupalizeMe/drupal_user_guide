@@ -345,16 +345,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: block-regions - postpone until after theme is configured.
 
     // Topic: install-prepare - Preparing to install.
-    $this->drupalGet('https://www.drupal.org/download');
-    // Main area of https://www.drupal.org/download.
-    $this->setUpScreenShot('install-prepare-downloads.png', 'onLoad="' . $this->hideArea('#nav-header') . $this->hideArea('#header') . $this->hideArea('.drupal-modules') . $this->hideArea('.drupal-modules-facets') . $this->hideArea('#footer') . '"');
-    $this->drupalGet('https://www.drupal.org/project/drupal');
-    // Recommended releases section of https://www.drupal.org/project/drupal.
-    $this->setUpScreenShot('install-prepare-recommended.png', 'onLoad="' . $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link') . '"');
-    $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
-    // File section of a recent Drupal release download page, such as
-    // https://www.drupal.org/project/drupal/releases/8.1.3.
-    $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools, #nav-content, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
+
+    // English-only screenshots.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->drupalGet('https://www.drupal.org/project/drupal');
+      // Recommended releases section of https://www.drupal.org/project/drupal.
+      $this->setUpScreenShot('install-prepare-recommended.png', 'onLoad="' . $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link') . '"');
+      $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
+      // File section of a recent Drupal release download page, such as
+      // https://www.drupal.org/project/drupal/releases/8.1.3.
+      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools, #nav-content, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
+    }
 
     // Topic install-run - Running the installer. Skip -- manual screenshots.
 
@@ -1596,15 +1597,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: extend-module-find - Finding Modules
 
-    // Search for Admin Toolbar in 8.x on drupal.org.
-    $this->drupalGet('https://www.drupal.org/project/project_module?f[0]=im_vid_44%3A13028&f[1]=&f[2]=im_vid_3%3A53&f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
-    // Module search box on https://www.drupal.org/project/project_module.
-    $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
-    // Search results on https://www.drupal.org/project/project_module.
-    $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"');
-    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-    // Project page for Admin Toolbar module.
-    $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info') . $this->removeScrollbars() . '"');
+    // English-only screenshots.
+    if ($this->demoInput['first_langcode'] == 'en') {
+
+      // Search for Admin Toolbar in 8.x on drupal.org.
+      $this->drupalGet('https://www.drupal.org/project/project_module?f[0]=im_vid_44%3A13028&f[1]=&f[2]=im_vid_3%3A53&f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
+      // Module search box on https://www.drupal.org/project/project_module.
+      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
+      // Search results on https://www.drupal.org/project/project_module.
+      $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+      // Project page for Admin Toolbar module.
+      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info') . $this->removeScrollbars() . '"');
+    }
 
     // Topic: extend-maintenance: Enabling and Disabling Maintenance Mode.
     $this->drupalPostForm('admin/config/development/maintenance', [
@@ -1629,9 +1634,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: extend-module-install - Downloading and Installing a Module from
     // drupal.org.
 
-    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-    // Downloads section of the Admin Toolbar project page on drupal.org.
-    $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+    // English-only screenshot.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+    }
 
     $this->drupalGet('admin/modules/install');
     // Install new module page (admin/modules/install).
@@ -1639,12 +1647,15 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: extend-theme-find - Finding Themes
 
-    // Search for actively maintained 8.x themes on drupal.org.
-    $this->drupalGet('https://www.drupal.org/project/project_theme?f[0]=im_vid_44%3A13028&f[1]=&f[2]=drupal_core%3A7234&f[3]=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search');
-    // Theme search box on https://www.drupal.org/project/project_theme.
-    $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
-    // Search results on https://www.drupal.org/project/project_theme.
-    $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+    // English-only screenshots.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // Search for actively maintained 8.x themes on drupal.org.
+      $this->drupalGet('https://www.drupal.org/project/project_theme?f[0]=im_vid_44%3A13028&f[1]=&f[2]=drupal_core%3A7234&f[3]=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search');
+      // Theme search box on https://www.drupal.org/project/project_theme.
+      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
+      // Search results on https://www.drupal.org/project/project_theme.
+      $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+    }
 
     // Topic: extend-theme-install - Downloading and Installing a Theme from
     // drupal.org.
@@ -1664,9 +1675,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: extend-manual-install - Manually Downloading Module or Theme
     // Files.
 
-    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-    // Downloads section of the Admin Toolbar project page on drupal.org.
-    $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+    // English-only screenshot.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+    }
 
     // Topic: extend-deploy - Deploying New Site Features.
 
