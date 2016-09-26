@@ -554,7 +554,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: menu-home - Designating a Front Page for your Site
     $this->drupalGet('admin/config/system/site-information');
     $this->drupalPostForm(NULL, [
-        'site_frontpage' => '/home',
+        'site_frontpage' => $this->demoInput['home_path'],
       ], $this->callT('Save configuration'));
     // Fix the prefix showing the site URL to say example.com.
     // Front page section of admin/config/system/site-information.
