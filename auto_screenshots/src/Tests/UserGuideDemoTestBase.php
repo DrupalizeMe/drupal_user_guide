@@ -2,6 +2,7 @@
 
 namespace Drupal\auto_screenshots\Tests;
 
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Session\AccountInterface;
@@ -1254,7 +1255,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('add-handler');
     $this->drupalPostForm(NULL, [
         'name[node__field_' . $main_image . '.field_' . $main_image . ']' => 'node__field_' . $main_image . '.field_' . $main_image,
-      ], $this->callT('Add and configure fields'));
+      ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('fields')]));
     $this->drupalPostForm(NULL, [
         'options[custom_label]' => FALSE,
         'options[settings][image_style]' => 'medium',
@@ -1264,7 +1265,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('add-handler');
     $this->drupalPostForm(NULL, [
         'name[node__body.body]' => 'node__body.body',
-      ], $this->callT('Add and configure fields'));
+      ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('fields')]));
     $this->drupalPostForm(NULL, [
         'options[custom_label]' => FALSE,
         'options[type]' => 'text_summary_or_trimmed',
@@ -1356,7 +1357,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('add-handler/' . $recipes_view . '/page_1/filter');
     $this->drupalPostForm(NULL, [
         'name[node__field_' . $ingredients . '.field_' . $ingredients . '_target_id]' => 'node__field_' . $ingredients . '.field_' . $ingredients . '_target_id',
-      ], $this->callT('Add and configure filter criteria'));
+      ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('filter criteria')]));
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
     $this->drupalPostForm(NULL, [
         'options[expose_button][checkbox][checkbox]' => 1,
@@ -1403,7 +1404,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // like a link, and the displayed name is just "Block". But if you look at
     // the HTML source of the page (before jQuery/Ajax processing), the
     // button actually asys "Add Block" (with that capitalization).
-    $this->drupalPostForm(NULL, [], $this->callT('Add Block'));
+    $this->drupalPostForm(NULL, [],
+      $this->callT('Add @type', TRUE, ['@type' => $this->callT('Block')]));
 
     // Update various settings for the block display.
 
@@ -1451,7 +1453,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'name[node_field_data.created]' => 'node_field_data.created',
-      ], $this->callT('Add and configure sort criteria'));
+      ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('sort criteria')]));
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'options[order]' => 'DESC',
@@ -1806,12 +1808,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @param bool $first
    *   (optional) TRUE (default) to translate to the first language in the
    *   demoInput member variable; FALSE to use the second language.
+   * @param array $args
+   *   (optional) Arguments to substitute in for @vars etc. in the string.
    *
    * @return string
    *   Original string, translated string, or a wrapper object that can be used
    *   like a string.
    */
-  protected function callT($text, $first = TRUE) {
+  protected function callT($text, $first = TRUE, $args = []) {
     if ($first) {
       $langcode = $this->demoInput['first_langcode'];
     }
@@ -1820,10 +1824,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     if ($langcode == 'en') {
-      return $text;
+      return new FormattableMarkup($text, $args);
     }
 
-    return new TranslatableMarkup($text, [], ['langcode' => $langcode]);
+    return new TranslatableMarkup($text, $args, ['langcode' => $langcode]);
   }
 
   /**
