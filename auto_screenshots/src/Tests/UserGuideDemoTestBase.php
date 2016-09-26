@@ -1604,7 +1604,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'title[0][value]' => $this->demoInput['home_title_translated'],
         'body[0][value]' => $this->demoInput['home_body_translated'],
         'path[0][alias]' => $this->demoInput['home_path_translated'],
-      ], $this->callT('Save and keep published (this translation)'));
+        // This looks strange, but that is how the button text is translated.
+      ], $this->callT('Save and keep published') . ' ' . $this->callT('(this translation)'));
 
     // Topic: language-config-translate - Translating Configuration.
 

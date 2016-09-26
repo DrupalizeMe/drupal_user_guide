@@ -22,14 +22,14 @@ class UserGuideDemoTestHu extends UserGuideDemoTestBase {
    */
   protected $runList = [
     'doPrefaceInstall' => 'skip',
-    'doBasicConfig' => 'restore_backup',
+    'doBasicConfig' => 'skip',
     'doBasicPage' => 'skip',
     'doContentStructure' => 'skip',
     'doUserAccounts' => 'skip',
     'doBlocks' => 'skip',
     'doViews' => 'skip',
     'doMultilingualSetup' => 'skip',
-    'doTranslating' => 'skip',
+    'doTranslating' => 'restore_backup',
     'doExtending' => 'skip',
     'doPreventing' => 'skip',
     'doSecurity' => 'skip',
@@ -133,6 +133,7 @@ class UserGuideDemoTestHu extends UserGuideDemoTestBase {
     'recipes_view_block_display_name' => 'Legutóbbi receptek',
     'recipes_view_block_title' => 'Új receptek',
 
+    'recipes_view_title_translated' => 'Recipes',
     'recipes_view_submit_button_translated' => 'Apply',
     'recipes_view_ingredients_label_translated' => 'Find recipes using...',
 
