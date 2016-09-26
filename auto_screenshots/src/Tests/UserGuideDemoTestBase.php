@@ -413,11 +413,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Locale and Time Zones sections of admin/config/regional/settings.
     $this->setUpScreenShot('config-basic-TimeZone.png', 'onLoad="' . $this->showOnly('.page-content') . $this->setWidth('#edit-locale') . $this->setWidth('#edit-timezone') . '"');
 
+    // Topic: config-install -- Installing a module.
+
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.
     $this->exportTranslations();
 
-    // Topic: config-install -- Installing a module.
     $this->drupalGet('admin/modules');
     // Top part of Core section of admin/modules, with Activity Tracker checked.
     $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
@@ -432,6 +433,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clearCache();
 
     // Topic: config-uninstall - Uninstalling unused modules.
+
     $this->drupalGet('admin/modules/uninstall');
     // Top part of admin/modules/uninstall, with Activity Tracker checked.
     $this->setUpScreenShot('config-uninstall_check-modules.png', 'onLoad="jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); ' . $this->showOnly('table thead, table tbody tr:lt(4)') . '"');
@@ -1497,6 +1499,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: language-add - Adding a Language.
 
+    // Due to a Core bug, installing a module corrupts translations. So,
+    // export them first.
+    $this->exportTranslations();
+
     // Enable the 4 multilingual modules.
     // For non-English versions, locale and language will already be enabled;
     // for English, not yet. In both cases, we need config/content translation
@@ -1513,6 +1519,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ];
     }
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
+
+    // Due to a core bug, installing a module corrupts translations. So,
+    // import the saved translations. Then rebuild the cache/container.
+    $this->importTranslations();
+    $this->resetAll();
+    $this->clearCache();
 
     // Add the second language.
     $this->drupalGet('admin/config/regional/language/add');
@@ -1758,11 +1770,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Downloads section of the Admin Toolbar project page on drupal.org.
     $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-field-release-version a') . $this->removeScrollbars() . '"');
 
+    // Due to a Core bug, installing a module corrupts translations. So,
+    // export them first.
+    $this->exportTranslations();
+
     // Install an old version of the Admin Toolbar module, and visit the
     // Updates page.
     $this->drupalPostForm('admin/modules', [
         'modules[Administration][admin_toolbar][enable]' => TRUE,
       ], $this->callT('Install'));
+
+    // Due to a core bug, installing a module corrupts translations. So,
+    // import the saved translations. Then rebuild the cache/container.
+    $this->importTranslations();
+    $this->resetAll();
+    $this->clearCache();
+
     $this->drupalGet('admin/reports/updates/update');
     // Update page for module (admin/reports/updates/update).
     $this->setUpScreenShot('security-update-module-updates.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
