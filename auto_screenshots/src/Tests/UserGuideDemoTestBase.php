@@ -4,6 +4,7 @@ namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Database\Database;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 use Drupal\simpletest\WebTestBase;
@@ -259,6 +260,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected $assetsDirectory;
 
   /**
+   * The file name for exported translations, if any.
+   *
+   * @see UserGuideDemoTestBase::exportTranslations()
+   */
+  protected $translationFilename = '';
+
+  /**
    * Builds the entire demo site and makes screenshots.
    *
    * Note that the method name starts with "test" so that it will be detected
@@ -370,7 +378,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/config');
     // Top navigation bar on any admin page, with Manage menu showing.
     // Same as preface-conventions-top-menu.png defined earlier.
-    $this->setUpScreenShot('config-overview-toolbar.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 960) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('config-overview-toolbar.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // The vertical orientation navigation screenshot could not be
     // successfully reproduced, unfortunately -- the buttons didn't show up.
@@ -404,13 +412,23 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Locale and Time Zones sections of admin/config/regional/settings.
     $this->setUpScreenShot('config-basic-TimeZone.png', 'onLoad="' . $this->showOnly('.page-content') . $this->setWidth('#edit-locale') . $this->setWidth('#edit-timezone') . '"');
 
+    // Due to a Core bug, installing a module corrupts translations. So,
+    // export them first.
+    $this->exportTranslations();
+
     // Topic: config-install -- Installing a module.
     $this->drupalGet('admin/modules');
     // Top part of Core section of admin/modules, with Activity Tracker checked.
-    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
+    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
     $this->drupalPostForm(NULL, [
         'modules[Core][tracker][enable]' => TRUE,
       ], $this->callT('Install'));
+
+    // Due to a core bug, installing a module corrupts translations. So,
+    // import the saved translations. Then rebuild the cache/container.
+    $this->importTranslations();
+    $this->resetAll();
+    $this->clearCache();
 
     // Topic: config-uninstall - Uninstalling unused modules.
     $this->drupalGet('admin/modules/uninstall');
@@ -2072,7 +2090,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ->set('path.temporary', $this->tempFilesDirectory)
       ->save();
 
-    // Update the root user, log in, and clear the cache.
+    // Clear out the container and cache.
+    $this->rebuildContainer();
+    drupal_flush_all_caches();
+    $this->refreshVariables();
+
+    // Update the root user, log in, and clear the cache again.
     $this->rootUser = User::load(1);
     // This line is needed for $this->drupalLogin().
     $this->rootUser->pass_raw = $pass_raw;
@@ -2223,6 +2246,69 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected function useExampleHome() {
     $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
     $this->content = str_replace($front_url, 'http://example.com/', $this->content);
+  }
+
+  /**
+   * Overrides drupalLogin() so it will work in our multingual setup.
+   *
+   * Also skips some of the checks and logging out existing user.
+   */
+  protected function drupalLogin(AccountInterface $account) {
+    $this->drupalGet('user/login');
+    $this->drupalPostForm(NULL, [
+        'name' => $account->getUserName(),
+        'pass' => $account->pass_raw,
+      ], $this->callT('Log in'));
+    if (isset($this->sessionId)) {
+      $account->session_id = $this->sessionId;
+    }
+    $this->loggedInUser = $account;
+    $this->container->get('current_user')->setAccount($account);
+  }
+
+  /**
+   * Exports the translations for the first language to a temporary file.
+   *
+   * @see UserGuideDemoBase::importTranslations()
+   */
+  protected function exportTranslations() {
+    if ($this->demoInput['first_langcode'] != 'en') {
+      $this->drupalPostForm('admin/config/regional/translate/export', [
+          'langcode' => $this->demoInput['first_langcode'],
+          'content_options[not_customized]' => 1,
+          'content_options[customized]' => 1,
+          'content_options[not_translated]' => 0,
+        ], $this->callT('Export'));
+      $directory = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+      \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
+      $this->translationFilename = $directory . '/' . $this->demoInput['first_langcode'] . '_' . $this->randomMachineName() . '.po';
+      file_put_contents($this->translationFilename, $this->getRawContent());
+      $this->pass('TRANSLATIONS SAVED TO: ' . $this->translationFilename);
+    }
+  }
+
+  /**
+   * Imports the translations for the first language from the file, if any.
+   *
+   * @see UserGuideDemoBase::exportTranslations()
+   */
+  protected function importTranslations() {
+    if ($this->translationFilename) {
+      // The setting for translation path is likely incorrect, so fix it.
+      \Drupal::configFactory()->getEditable('locale.settings')
+        ->set('translation.path', $this->tempFilesDirectory)
+        ->save();
+
+      $this->drupalPostForm('admin/config/regional/translate/import', [
+        'langcode' => $this->demoInput['first_langcode'],
+        'overwrite_options[not_customized]' => 1,
+        'overwrite_options[customized]' => 1,
+        'customized' => 0,
+        'files[file]' => $this->translationFilename,
+      ], $this->callT('Import'));
+
+      $this->pass('TRANSLATIONS READ FROM: ' . $this->translationFilename);
+    }
   }
 
 }
