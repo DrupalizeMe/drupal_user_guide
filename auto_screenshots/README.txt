@@ -45,6 +45,15 @@ details how to set up the tools. Here are the steps:
    to install dependencies of this project. If you do not have Composer
    installed, see https://getcomposer.org/
 
+   This will install a Backup Migrate library from Github. You will need to
+   make sure that this issue has been fixed in the version you download:
+
+   https://github.com/backupmigrate/backup_migrate_core/issues/7
+
+   If not, you'll need to edit the file
+   vendor/backupmigrate/core/src/Source/MySQLiSource.php
+   to put in the fix shown in that issue.
+
 9. Enable the Testing (simpletest) module in the Drupal site.
    Drush command:
    drush en simpletest
