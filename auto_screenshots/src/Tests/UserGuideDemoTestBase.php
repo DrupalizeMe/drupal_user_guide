@@ -1693,9 +1693,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: extend-theme-install - Downloading and Installing a Theme from
     // drupal.org.
 
-    $this->drupalGet('https://www.drupal.org/project/mayo');
-    // Downloads section of the Mayo project page on drupal.org.
-    $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+    // English-only screenshots.
+    if ($this->demoInput['first_langcode'] == 'en') {
+
+      $this->drupalGet('https://www.drupal.org/project/mayo');
+      // Downloads section of the Mayo project page on drupal.org.
+      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+    }
 
     $this->drupalGet('admin/theme/install');
     // Install new theme page (admin/theme/install).
@@ -1767,9 +1771,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: security-update-module - Updating a Module.
 
-    $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-    // Downloads section of the Admin Toolbar project page on drupal.org.
-    $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-field-release-version a') . $this->removeScrollbars() . '"');
+    // English-only screenshots.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-field-release-version a') . $this->removeScrollbars() . '"');
+    }
 
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.

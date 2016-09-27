@@ -63,3 +63,5 @@ is a list:
   it no longer works.
 - install-prepare-files.png : Shot from drupal.org
 - install-prepare-recommended.png : Shot from drupal.org
+
+- security-update-module-release-notes.png : Shot from drupal.org
