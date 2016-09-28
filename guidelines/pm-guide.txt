@@ -223,8 +223,16 @@ the topic sheet, such as:
 [[pm-guide-translating]]
 ==== Setting up for translations
 
-When a new team has been established to translate the project_name into another
-language, the project managers and language team manager(s) will need to follow
+Each language the project_name will be translated into will need a team,
+which should normally be formed from the existing translation team for the
+software. As a prerequisite, the translation team should have already translated
+a large portion of the terms in the software user interface into their
+language. Then, the team should choose a manager or managers for the
+project_name translation project, and form a group specifically targeted at
+translating the project_name.
+
+Once the new team has been established,
+the overall project managers and language team manager(s) will need to follow
 a number of steps to initiate a new translation. To do this, start by making an
 issue to track translation set-up, and another one to track screenshot
 making. Then follow the steps in the issue templates (creating the second issue
@@ -297,6 +305,9 @@ This issue is for tracking progress and problems with the LANGUAGE screenshots.
 
 Tasks and their status (unmarked tasks are assumed not to be done yet):
 <ol>
+
+<li>Ensure that most of the current version's user interface has been translated into LANGUAGE, so that the screenshots will show very little if any English on them.</li>
+
 <li>Translate the "scenario text" into LANGUAGE. The text to be translated is the "Scenario Text" section of the scripts/TermsToTranslate.fods spreadsheet. What is needed is a 3-column sheet with these columns:
 
 <ul>
