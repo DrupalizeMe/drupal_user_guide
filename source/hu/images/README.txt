@@ -12,7 +12,8 @@ directory of this project and is called coverimage.svg. You will need to edit
 that file, translate the text "User Guide", then export to PNG.
 
 Running the installer (topic install-run.txt): You will need to run the standard
-installer, choosing your language, and take a screenshot of each step. Images:
+installer, choosing your language, entering values for the Farmers Market web
+site, and take a screenshot of each step. Images:
 - install-run-1.png -- Select language
 - install-run-2.png -- Select profile (Standard)
 - install-run-3.png -- Database
@@ -26,6 +27,15 @@ installation profile, log in as an administrator, change the Toolbar to vertical
 alignment, expand the Reports section, and take a screenshot of the vertical
 toolbar menu. Trim it down to 228x540 pixels:
 - config-overview-vertical-menu.png
+
+Screen shot of "pencils" (topic config-overview.txt). To make this screenshot,
+install Drupal in your language using the Standard installation profile, with
+the site name and slogan set to farmer's market values from the scenario. Log in
+as an administrator, go to the Home page, and click the Edit (pencil icon)
+button in the upper right corner of the Toolbar. This should turn on all of the
+contextual link pencils on the page. Take a screenshot of most or all of the
+screen, including the toolbar at the top:
+- config-overview-pencils.png
 
 Editing with the In-Place Editor (topic content-in-place-edit.txt). To make
 these screenshots, install Drupal with the Standard install profile, and create
