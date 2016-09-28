@@ -668,7 +668,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/types');
     // Content types list on admin/structure/types, with operations dropdown
     // for Article content type expanded.
-    $this->setUpScreenShot('structure-content-type-delete-dropdown.png', 'onLoad="jQuery(&quot;a[href*=\'article/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('.region-content', 1000) . '"');
+    $this->setUpScreenShot('structure-content-type-delete-dropdown.png', 'onLoad="jQuery(&quot;a[href*=\'article/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('.region-content', 950) . '"');
 
     $this->drupalGet('admin/structure/types/manage/article/delete');
     // Confirmation page for deleting Article content type.
@@ -936,7 +936,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/types');
     // Content types list on admin/structure/types, with operations dropdown
     // for Vendor content type expanded.
-    $this->setUpScreenShot('structure-content-display_manage_display.png', 'onLoad="jQuery(&quot;a[href*=\'' . $vendor . '/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('.region-content', 1000) . '"');
+    $this->setUpScreenShot('structure-content-display_manage_display.png', 'onLoad="jQuery(&quot;a[href*=\'' . $vendor . '/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('.region-content', 950) . '"');
 
     // Set the labels for main image and vendor URL to hidden.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
