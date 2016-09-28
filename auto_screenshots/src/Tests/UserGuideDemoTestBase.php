@@ -37,7 +37,7 @@ require __DIR__ . '/../../vendor/autoload.php';
  *   shots. If you have a spreadsheet with the array keys for $demoInput in
  *   column A, and the translated text in column C, you can use this formula
  *   to generate the array in row 2 (and then copy to the other rows):
- *   =IF(A2 <> "","'"&A2&"' => '"&C2&"',","")
+ *   =IF(A2 <> "","'"&A2&"' => """&C2&""",","")
  *   Then just copy this column of output into the $deomInput array in your
  *   new class.
  * - Override the $runList member variable to run the sections of interest.
