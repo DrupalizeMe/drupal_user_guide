@@ -21,10 +21,10 @@ class UserGuideDemoTestCa extends UserGuideDemoTestBase {
    * See UserGuideDemoTestBase::runList for more information.
    */
   protected $runList = [
-    'doPrefaceInstall' => 'backup',
+    'doPrefaceInstall' => 'skip',
     'doBasicConfig' => 'skip',
     'doBasicPage' => 'skip',
-    'doContentStructure' => 'skip',
+    'doContentStructure' => 'restore_backup',
     'doUserAccounts' => 'skip',
     'doBlocks' => 'skip',
     'doViews' => 'skip',
