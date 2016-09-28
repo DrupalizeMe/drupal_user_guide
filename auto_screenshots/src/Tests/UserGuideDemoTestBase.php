@@ -383,9 +383,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // The vertical orientation navigation screenshot could not be
     // successfully reproduced, unfortunately -- the buttons didn't show up.
-    // So config-overview-vertical.png must be done manually.
-
-    // Defer config-overview-pencils.png until after theme is configured.
+    // So config-overview-vertical.png must be done manually. Same with
+    // config-overview-pencils.png.
 
     // Topic: config-basic - Editing basic site information.
     $this->drupalGet('admin/config/system/site-information');
@@ -498,17 +497,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Bartik theme region preview at admin/structure/block/demo/bartik,
     // after configuring the theme for the Farmers Market scenario.
     $this->setUpScreenShot('block-regions-bartik.png', 'onLoad="' . 'window.scroll(0,5000);' . $this->showOnly('#page-wrapper') . $this->removeScrollbars() . '"');
-
-    // Back to screen shot: config-overview-pencils.jpg.
-    $this->drupalGet('<front>');
-    // This screen shot has been problematic. The pencil buttons are present,
-    // but are turned off with some built-in JavaScript. To turn them back on,
-    // there is a race condition. I found that if I forced the page to reload
-    // once, it worked more reliably. Also note that unlike some other images,
-    // we do want the toolbar in this screenshot, because that shows the toggle
-    // button.
-    // Home page with pencil icons showing, with configured theme.
-    $this->setUpScreenShot('config-overview-pencils.png', 'onLoad="' . $this->reloadOnce() . $this->hideArea('footer') . $this->removeScrollbars() . $this->setBodyColor() . 'jQuery(\'.contextual button\').removeClass(\'visually-hidden\');' . '"');
 
   }
 
