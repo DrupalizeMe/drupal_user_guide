@@ -33,7 +33,15 @@ details how to set up the tools. Here are the steps:
    sudo yum install imagemagick
 
 6. Install a local test Drupal site, running the version of Drupal you want to
-   generate screen shots for (Drupal 8.0.x, 8.1.x, etc.).
+   generate screen shots for (Drupal 8.0.x, 8.1.x, etc.). You will need to
+   make sure that one Core issue has been fixed, or else make a one-line change
+   in core/modules/simpletest/src/WebTestBase.php as detailed on this issue:
+        https://www.drupal.org/node/2808377
+   The line to change looks like:
+        @$newDom->loadHTML('<div>' . $command['data'] . '</div>');
+   and it needs to be changed to:
+        @$newDom->loadHTML('<?xml encoding="utf-8" ?>' .
+           '<div>' . $command['data'] . '</div>');
 
 7. Copy either this directory or the entire User Guide project directory
    into the top-level 'modules' directory of your local Drupal site.
