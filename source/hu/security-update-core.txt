@@ -66,13 +66,9 @@ downloaded code base (in our case, _drupal-8.0.0-beta14_) to your site directory
 . Run the _update.php_ script using either of the following:
 +
   * Visit _http://www.example.com/update.php_ in your browser (where
-  _www.example.com_ is your site's name). Click _Continue_ in the first screen
+  _www.example.com_ is your site's URL). Click _Continue_ in the first screen
   to run the updates and successfully complete the script.
-  * Run the following Drush command:
-  +
-  ----
-  drush updb
-  ----
+  * Run the following Drush command: `drush updb`
 
 . If you get any error or warning, re-run the _update.php_ script
 again till all the updates have been completed successfully.
