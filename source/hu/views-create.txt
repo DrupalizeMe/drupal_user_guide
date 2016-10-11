@@ -14,8 +14,7 @@ How to create a content list view.
 
 ==== Goal
 
-Create a page listing vendors that will be automatically updated whenever a
-vendor is added, deleted, or updated on the site.
+Create a page listing vendors that will be automatically updated whenever a vendor is added, deleted, or updated on the site.
 
 ==== Prerequisite knowledge
 
@@ -24,22 +23,15 @@ vendor is added, deleted, or updated on the site.
 
 ==== Site prerequisites
 
-* The core Views and Views UI modules must be installed. These are installed for
-you when you install with the core Standard installation profile.
+* The core Views and Views UI modules must be installed. These are installed for you when you install with the core Standard installation profile.
 
-* The Vendor content type must exist, with URL and Main image fields. Your
-site must have a couple of Vendor content items. See <<structure-content-type>>,
-<<structure-fields>>, and <<content-create>>.
+* The Vendor content type must exist, with URL and Main image fields. Your site must have a couple of Vendor content items. See <<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
 
-* The _Medium (220x220)_ image style must be defined. This is created on your
-site when you install the core Image module (installed with the core Standard
-installation profile) but can be recreated if deleted. See
-<<structure-image-style-create>>.
+* The _Medium (220x220)_ image style must be defined. This is created on your site when you install the core Image module (installed with the core Standard installation profile) but can be recreated if deleted. See <<structure-image-style-create>>.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add
-view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
 
 . Fill in the fields as shown below.
 +
@@ -68,15 +60,13 @@ image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 
 . Click _Save and edit_. The view configuration page appears.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. Click _Add_ from the dropdown button in the _Fields_ section. The _Add fields_ pop-up appears.
 
 . Enter the word "image" in the search field.
 
 . Check Main image in the table.
 
-. Click _Apply_. The _Configure field: Content: Main Image_
-pop-up appears.
+. Click _Apply_. The _Configure field: Content: Main Image_ pop-up appears.
 
 . Fill in the fields as shown below.
 +
@@ -90,15 +80,13 @@ pop-up appears.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. Click _Add_ from the dropdown button in the _Fields_ section. The _Add fields_ pop-up appears.
 
 . Enter the word "body" in the search field.
 
 . Select _Body_ in the table.
 
-. Click _Apply_. The _Configure field: Content: Body_ pop-up
-appears.
+. Click _Apply_. The _Configure field: Content: Body_ pop-up appears.
 
 . Fill in the fields as shown below.
 +
@@ -112,16 +100,13 @@ appears.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click _Content: Title (Title)_ in the _Fields_ list. The
-_Configure field: Content: Title_ pop-up appears.
+. Click _Content: Title (Title)_ in the _Fields_ list. The _Configure field: Content: Title_ pop-up appears.
 
-. Uncheck _Create a label_. This will remove the label that was created by the
-wizard.
+. Uncheck _Create a label_. This will remove the label that was created by the wizard.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click _Rearrange_ from the dropdown button in the _Fields_ section. The
-_Rearrange fields_ pop-up appears.
+. Click _Rearrange_ from the dropdown button in the _Fields_ section. The _Rearrange fields_ pop-up appears.
 
 . Drag the fields into the right order: Image, Title. Body.
 
@@ -136,8 +121,7 @@ _Rearrange fields_ pop-up appears.
 image:images/views-create-view.png["Vendors view configuration page", width="100%"]
 --
 
-. Navigate to the homepage and click Vendors from the main navigation to see
-the result.
+. Navigate to the homepage and click Vendors from the main navigation to see the result.
 +
 --
 // Completed vendors view output.
@@ -146,9 +130,7 @@ image:images/views-create-view-output.png["Vendors view output", width="100%"]
 
 ==== Expand your understanding
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
-<<menu-reorder>>.
+The link to the view in the main navigation will probably not be in the right place. Change the order of the menu items in the main navigation. See <<menu-reorder>>.
 
 //==== Related concepts
 
@@ -157,5 +139,4 @@ place. Change the order of the menu items in the main navigation. See
 
 *Attributions*
 
-Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -14,9 +14,7 @@ How to manually download and upload a module or theme.
 
 ==== Goal
 
-Manually download module or theme files and upload them to your site, if the
-website or Drush methods for installing or updating a module or theme do not
-work, or if you are placing a custom-written module or theme.
+Manually download module or theme files and upload them to your site, if the website or Drush methods for installing or updating a module or theme do not work, or if you are placing a custom-written module or theme.
 
 ==== Prerequisite knowledge
 
@@ -27,8 +25,7 @@ work, or if you are placing a custom-written module or theme.
 
 ==== Site prerequisites
 
-You need to be facing any of the following to perform the manual download
-described in this topic:
+You need to be facing any of the following to perform the manual download described in this topic:
 
 * File permission issues
 
@@ -36,22 +33,17 @@ described in this topic:
 
 * You created a custom module/theme or received its files from someone
 
-* You could not successfully complete the instructions in
-<<extend-module-install>>, <<extend-theme-install>>,
-<<security-update-module>>, or <<security-update-theme>>
+* You could not successfully complete the instructions in <<extend-module-install>>, <<extend-theme-install>>, <<security-update-module>>, or <<security-update-theme>>
 
 Skip this topic if none of the above applies to you.
 
 ==== Steps
 
-If you are installing a module or theme from _Drupal.org_, follow the
-downloading and unpacking instructions, and then the uploading instructions. If
-you created the module or theme, skip the downloading and unpacking steps.
+If you are installing a module or theme from _Drupal.org_, follow the downloading and unpacking instructions, and then the uploading instructions. If you created the module or theme, skip the downloading and unpacking steps.
 
 ===== Downloading and unpacking the files
 
-. Open the module or theme project page on drupal.org; for example, the _Admin
-toolbar_ page (https://www.drupal.org/project/admin_toolbar).
+. Open the module or theme project page on drupal.org; for example, the _Admin toolbar_ page (https://www.drupal.org/project/admin_toolbar).
 
 . Scroll to the _Downloads_ section near the bottom of the page.
 +
@@ -66,12 +58,7 @@ image:images/extend-manual-install-download.png["Downloading module files"]
 
 ===== Uploading the files to your site
 
-. If you are adding a new module or theme, create subdirectories in your
-top-level _modules_ and _themes_ directories (if they don't already
-exist). Typically, people make a _contrib_ subdirectory for contributed modules
-and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for
-modules and themes that they created. Your _modules_ directory might look like
-this:
+. If you are adding a new module or theme, create subdirectories in your top-level _modules_ and _themes_ directories (if they don't already exist). Typically, people make a _contrib_ subdirectory for contributed modules and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for modules and themes that they created. Your _modules_ directory might look like this:
 +
 --
 // Make custom and contrib directories under modules, and take a screen shot
@@ -81,32 +68,19 @@ image:images/extend-manual-install-directories.png["Suggested directory structur
 // NOTE for Translators: you don't need to localize the 'custom' and 'contrib' directory names as they are more common in English.
 --
 
-. If you are replacing an existing module or theme with an updated version, put
-the site into maintenance mode. See <<extend-maintenance>>.
+. If you are replacing an existing module or theme with an updated version, put the site into maintenance mode. See <<extend-maintenance>>.
 
-. If you are replacing an existing module or theme with an updated version, find
-and delete all the existing files and directories for the existing module
-or theme. Modules are normally located in directories under the top-level
-_modules_ directory, and themes are normally located in directories under the
-top-level _themes_ directory.
+. If you are replacing an existing module or theme with an updated version, find and delete all the existing files and directories for the existing module or theme. Modules are normally located in directories under the top-level _modules_ directory, and themes are normally located in directories under the top-level _themes_ directory.
 
-. Copy the extracted directory to either the same location as the one you
-deleted (if replacing an existing module or theme) or the appropriate
-subdirectory of _modules_ or _themes_ (if adding a new module or theme).
+. Copy the extracted directory to either the same location as the one you deleted (if replacing an existing module or theme) or the appropriate subdirectory of _modules_ or _themes_ (if adding a new module or theme).
 
-. Refer to <<extend-module-install>>, <<extend-theme-install>>,
-<<security-update-module>>, or <<security-update-theme>> to complete the
-installation or update of the module or theme. Start at the step after the
-automatic download has been completed.
+. Refer to <<extend-module-install>>, <<extend-theme-install>>, <<security-update-module>>, or <<security-update-theme>> to complete the installation or update of the module or theme. Start at the step after the automatic download has been completed.
 
 ==== Expand your understanding
 
-* If you work with multiple environments (for example, a local development site
-and a production site) you will have to repeat the steps on each environment, or
-re-clone the environment. See <<install-dev-making>>.
+* If you work with multiple environments (for example, a local development site and a production site) you will have to repeat the steps on each environment, or re-clone the environment. See <<install-dev-making>>.
 
-* If you added a new theme, navigate in the _Manage_ administrative menu to
-_Appearance_ (_admin/appearance_) and uninstall the old theme.
+* If you added a new theme, navigate in the _Manage_ administrative menu to _Appearance_ (_admin/appearance_) and uninstall the old theme.
 
 // ==== Related concepts
 
@@ -119,5 +93,4 @@ _Appearance_ (_admin/appearance_) and uninstall the old theme.
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Written by https://www.drupal.org/u/batigolix[Boris Doesborg] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
