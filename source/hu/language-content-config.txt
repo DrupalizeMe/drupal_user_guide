@@ -10,9 +10,7 @@ How to configure content items to make them translatable.
 
 ==== Goal
 
-Make _Custom block_, _Custom menu link_, and _Content_ entity types
-translatable. Select specific subtypes and set which fields of these can be
-translated.
+Make _Custom block_, _Custom menu link_, and _Content_ entity types translatable. Select specific subtypes and set which fields of these can be translated.
 
 ==== Prerequisite knowledge
 
@@ -21,17 +19,13 @@ translated.
 
 ==== Site prerequisites
 
-The core Content Translation module must be installed, and your site must
-have at least two languages. See <<language-add>>.
+The core Content Translation module must be installed, and your site must have at least two languages. See <<language-add>>.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Regional
-and Language_ > _Content Language and Translation_
-(_admin/config/regional/content-language_).
+. In the _Manage_ administrative menu, navigate to _Configuration_ > _Regional and Language_ > _Content Language and Translation_ (_admin/config/regional/content-language_).
 
-. Under _Custom language settings_, check _Content_,
-_Custom block_ and _Custom menu link_ to make these entity types translatable.
+. Under _Custom language settings_, check _Content_, _Custom block_ and _Custom menu link_ to make these entity types translatable.
 +
 --
 // Top section of Content language settings page
@@ -39,10 +33,7 @@ _Custom block_ and _Custom menu link_ to make these entity types translatable.
 image:images/language-content-config_custom.png["Custom language settings checklist",width="193px"]
 --
 
-. Configuration options appear for _Content_, _Custom block_ and  _Custom menu
-link_. Choose the subtypes you want to translate for each entity
-type. Check _Basic page_ for _Content_, _Basic block_ for _Custom block_ and
-_Custom menu link_ for _Custom menu link_.
+. Configuration options appear for _Content_, _Custom block_ and  _Custom menu link_. Choose the subtypes you want to translate for each entity type. Check _Basic page_ for _Content_, _Basic block_ for _Custom block_ and _Custom menu link_ for _Custom menu link_.
 
 . Verify the settings for the entity types as shown below:
 +
@@ -58,10 +49,7 @@ _Custom menu link_ for _Custom menu link_.
 image:images/language-content-config_content.png["Default language and translatability for content types"]
 --
 
-. Choose the fields that should be translatable for _Basic page_ as shown in the
-table below. If a field is not translation-dependent, leave it
-unchecked. Enabling translation for fields that are numbers or dates has use for
-accountability or implementing workflows.
+. Choose the fields that should be translatable for _Basic page_ as shown in the table below. If a field is not translation-dependent, leave it unchecked. Enabling translation for fields that are numbers or dates has use for accountability or implementing workflows.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -82,8 +70,7 @@ accountability or implementing workflows.
 image:images/language-content-config_basic_page.png["Translatable content entity subtypes' fields checklist"]
 --
 
-. Similarly, check the appropriate boxes for translatable fields belonging to
-_Basic block_ and _Custom menu link_.
+. Similarly, check the appropriate boxes for translatable fields belonging to _Basic block_ and _Custom menu link_.
 
 . Click _Save configuration_.
 
@@ -103,8 +90,4 @@ _Basic block_ and _Custom menu link_.
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
-http://pronovix.com[Pronovix],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at http://pronovix.com[Pronovix], https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle], and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

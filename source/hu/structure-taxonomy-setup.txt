@@ -12,9 +12,7 @@ How to create a taxonomy vocabulary and add it as a field to a content type.
 
 ==== Goal
 
-Create an Ingredients vocabulary and add it to the Recipe content type as
-a field that can contain an unlimited number of values and that allows adding
-new terms to the vocabulary.
+Create an Ingredients vocabulary and add it to the Recipe content type as a field that can contain an unlimited number of values and that allows adding new terms to the vocabulary.
 
 ==== Prerequisite knowledge
 
@@ -28,9 +26,7 @@ The Recipe content type must exist. See <<structure-content-type>>.
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_
-(_admin/structure/taxonomy_). You will see the _Tags_ vocabulary that was
-created with the core Standard installation profile.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_ (_admin/structure/taxonomy_). You will see the _Tags_ vocabulary that was created with the core Standard installation profile.
 +
 --
 // Taxonomy list page (admin/structure/taxonomy).
@@ -51,8 +47,7 @@ image:images/structure-taxonomy-setup-taxonomy-page.png["taxonomy list page",wid
 image:images/structure-taxonomy-setup-add-vocabulary.png["taxonomy add Ingredients",width="100%"]
 --
 
-. Click _Save_. You will be taken to the Ingredients page, which shows a list
-of all the terms in this vocabulary.
+. Click _Save_. You will be taken to the Ingredients page, which shows a list of all the terms in this vocabulary.
 +
 --
 // Ingredients vocabulary page
@@ -68,14 +63,11 @@ image:images/structure-taxonomy-setup-vocabulary-overview.png["Ingredients taxon
 image:images/structure-taxonomy-setup-add-term.png["Add term page",width="100%"]
 --
 
-. You will receive a confirmation about the term you created. Add more
-terms. For example, "Eggs" and "Milk".
+. You will receive a confirmation about the term you created. Add more terms. For example, "Eggs" and "Milk".
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_
-(_admin/structure/types_). Click _Manage fields_ for your Recipe content type.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_ (_admin/structure/types_). Click _Manage fields_ for your Recipe content type.
 
-. Click _Add field_, and enter values from the table below. Click _Save and
-continue_.
+. Click _Add field_, and enter values from the table below. Click _Save and continue_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -121,9 +113,7 @@ image:images/structure-taxonomy-setup-field-settings-2.png["reference type field
 --
 
 
-. Click _Save settings_. You will be taken back to the _Manage Fields_ page. A
-message will be displayed saying that the configuration for Ingredients is
-complete.
+. Click _Save settings_. You will be taken back to the _Manage Fields_ page. A message will be displayed saying that the configuration for Ingredients is complete.
 +
 --
 // Manage fields page showing Ingredients field on Recipe content type.
@@ -139,6 +129,4 @@ image:images/structure-taxonomy-setup-finished.png["Manage fields page for Recip
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/bsnodgrass[Bob Snodgrass],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Written and edited by https://www.drupal.org/u/bsnodgrass[Bob Snodgrass], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].

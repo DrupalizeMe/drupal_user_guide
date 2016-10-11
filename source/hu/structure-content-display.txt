@@ -11,8 +11,7 @@ How to make content items more presentable.
 
 ==== Goal
 
-Make the content items more readable, accessible, and visibly attractive by
-reordering the fields, hiding labels, and tuning the output of the fields.
+Make the content items more readable, accessible, and visibly attractive by reordering the fields, hiding labels, and tuning the output of the fields.
 
 ==== Prerequisite knowledge
 
@@ -21,24 +20,17 @@ reordering the fields, hiding labels, and tuning the output of the fields.
 
 ==== Site prerequisites
 
-The Vendor content type must exist, it must have Main Image and Vendor URL
-fields, and your site must have at least one Vendor content item. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+The Vendor content type must exist, it must have Main Image and Vendor URL fields, and your site must have at least one Vendor content item. See <<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
 
 ==== Steps
 
-. Find and view a Vendor content item you created in <<structure-fields>>.
-Notice that there are several things that could be done to improve how the page
-looks:
+. Find and view a Vendor content item you created in <<structure-fields>>. Notice that there are several things that could be done to improve how the page looks:
 +
   * The Main Image and Vendor URL fields should not have labels.
   * The order of the fields should be changed so that the image comes first.
   * The image should be smaller.
 
-. To fix the first two problems, and update some additional settings, in the
-_Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). Then click _Manage display_ in the dropdown button
-for the Vendor content type.
+. To fix the first two problems, and update some additional settings, in the _Manage_ administrative menu, navigate to _Structure_ > _Content types_ (_admin/structure/types_). Then click _Manage display_ in the dropdown button for the Vendor content type.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
@@ -46,8 +38,7 @@ for the Vendor content type.
 image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
 --
 
-. Under the _Label_ column, select _Hidden_ for Main image. Do the same
-for Vendor URL.
+. Under the _Label_ column, select _Hidden_ for Main image. Do the same for Vendor URL.
 +
 --
 // Manage display page for Vendor content type
@@ -56,10 +47,7 @@ for Vendor URL.
 image:images/structure-content-display_main_image_hidden.png["Selecting _main image title_ as _hidden_",width="100%"]
 --
 
-. Click the gear for the Vendor URL field. Clear the _Trim link text length_
-setting.  Links will no longer have a trim length. Check the _Open link in new
-window_ checkbox. Now, when the link is clicked, it will open in a new browser
-window. Click _Update_.
+. Click the gear for the Vendor URL field. Clear the _Trim link text length_ setting.  Links will no longer have a trim length. Check the _Open link in new window_ checkbox. Now, when the link is clicked, it will open in a new browser window. Click _Update_.
 +
 --
 // Vendor URL settings form, with trim length cleared, and open link in
@@ -67,8 +55,7 @@ window. Click _Update_.
 image:images/structure-content-display_trim_length.png["Link trim length",width="100%"]
 --
 
-. Drag the cross arrows next to the field items to reorder as Main image,
-_Body_, Vendor URL, and _Links_.
+. Drag the cross arrows next to the field items to reorder as Main image, _Body_, Vendor URL, and _Links_.
 +
 --
 // Manage display page for Vendor content type, with order changed.
@@ -77,11 +64,9 @@ image:images/structure-content-display_change_order.png["Changing order of field
 
 . Click _Save_.
 
-. Find the Vendor content item from step 1 again, and verify that the updates
-have been made.
+. Find the Vendor content item from step 1 again, and verify that the updates have been made.
 
-. Repeat similar steps to manage the display of the Recipe content type
-fields.
+. Repeat similar steps to manage the display of the Recipe content type fields.
 
 ==== Expand your understanding
 
@@ -100,5 +85,4 @@ Make the main image smaller. See <<structure-image-style-create>>.
 
 *Attributions*
 
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel] and
-https://www.drupal.org/u/batigolix[Boris Doesborg].
+Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel] and https://www.drupal.org/u/batigolix[Boris Doesborg].

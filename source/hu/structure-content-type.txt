@@ -22,12 +22,9 @@ You need to have a plan in place for your content structure. See
 
 ==== Steps
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). The _Content types_ page appears showing all the
-available types of content.
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_ (_admin/structure/types_). The _Content types_ page appears showing all the available types of content.
 
-. Click _Add content type_. The _Add content type_ page appears. Fill
-in the fields as shown below.
+. Click _Add content type_. The _Add content type_ page appears. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -41,9 +38,7 @@ in the fields as shown below.
 image:images/structure-content-type-add.png["Adding a Content type"]
 --
 
-. In the vertical tab _Submission form settings_, configure the form that is
-used for creating and editing content of this type. Fill in the fields as shown
-below.
+. In the vertical tab _Submission form settings_, configure the form that is used for creating and editing content of this type. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -58,8 +53,7 @@ below.
 image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
 --
 
-. In the vertical tab _Publishing options_, decide on default options for new
-content of this type. Fill in the fields as shown below.
+. In the vertical tab _Publishing options_, decide on default options for new content of this type. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -70,17 +64,14 @@ content of this type. Fill in the fields as shown below.
 | Create new revision | Create a new revision each time the vendor is being edited. | Checked
 |================================
 +
-Changing these settings does not affect the content items that have already been
-created.
+Changing these settings does not affect the content items that have already been created.
 +
 --
 // Publishing settings section of admin/structure/types/add.
 image:images/structure-content-type-add-Publishing-Options.png["Publishing Options"]
 --
 
-. In the vertical tab _Display settings_, decide if the author and
-publication date will be visible in the content item. Fill in the fields as
-shown below.
+. In the vertical tab _Display settings_, decide if the author and publication date will be visible in the content item. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -106,17 +97,14 @@ image:images/structure-content-type-add-Display-settings.png["Display settings"]
 image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
 --
 
-. Click _Save and manage fields_ to save the content type. The
-_Manage fields_ page appears that allows you to add fields to the content
-type. See <<structure-fields>>
+. Click _Save and manage fields_ to save the content type. The _Manage fields_ page appears that allows you to add fields to the content type. See <<structure-fields>>
 +
 --
 // Manage fields page after adding Vendor content type.
 image:images/structure-content-type-add-confirmation.png["Confirmation",width="100%"]
 --
 
-. Follow the same steps to create a content type for recipes. Example values
-for the fields in the forms, where they are different from the steps above:
+. Follow the same steps to create a content type for recipes. Example values for the fields in the forms, where they are different from the steps above:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -131,11 +119,7 @@ for the fields in the forms, where they are different from the steps above:
 
 * <<structure-fields>>
 
-* Install and configure the https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content items get automatically generated URLs/path aliases. See <<content-paths>> for more on
-URLs within your site, <<extend-module-find>> for instructions on finding
-contributed modules, and <<extend-module-install>> for instructions on
-downloading and installing contributed modules.
+* Install and configure the https://www.drupal.org/project/pathauto[contributed Pathauto module] so that content items get automatically generated URLs/path aliases. See <<content-paths>> for more on URLs within your site, <<extend-module-find>> for instructions on finding contributed modules, and <<extend-module-install>> for instructions on downloading and installing contributed modules.
 
 // ==== Related concepts
 
@@ -144,6 +128,4 @@ downloading and installing contributed modules.
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Written and edited by https://www.drupal.org/u/sree[Sree Veturi], https://www.drupal.org/u/batigolix[Boris Doesborg], and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
