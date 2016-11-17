@@ -14,13 +14,13 @@
 [[glossary-alias]] Alias::
    A user-friendly name to replace the internal <<glossary-path,path>> that
    the system assigns to a URL on the site. For example, you might assign an
-   alias of _about_ to the About page on your site, to replace the internal path
-   _node/5_. This would give the page a URL of _http://example.com/about_
+   alias of _/about_ to the About page on your site, to replace the internal
+   path _/node/5_. This would give the page a URL of _http://example.com/about_
    instead of _http://example.com/node/5_. See <<content-paths>> for more
    information.
 (((Anonymous,definition)))
 [[glossary-anonymous]] Anonymous::
-   A person interacting with the site (<<glossary-user,user>>) who is not logged
+   A person (<<glossary-user,user>>) interacting with the site who is not logged
    in. See <<user-concept>> for more information.
 (((Block,definition)))
 [[glossary-block]] Block::
@@ -48,7 +48,7 @@
 (((Content Management System (CMS),definition)))
 [[glossary-cms]] CMS::
    Acronym for
-   <<glossary-content-management-system,_Content Management System_>>.
+   <<glossary-content-management-system,Content Management System>>.
 (((Configuration,definition)))
 [[glossary-configuration]] Configuration::
    Information about your site that is not <<glossary-content,content>>,
@@ -142,7 +142,7 @@
 [[glossary-entity-type]] Entity type::
    The overall type of an <<glossary-entity,entity>>; in common usage, it is
    only applied to a <<glossary-content,content>> entity. Examples include
-   <<glossary-content-type,content items>>,
+   <<glossary-content-type,content types>>,
    <<glossary-taxonomy-term,taxonomy terms>>, and custom
    <<glossary-block,blocks>>. See <<planning-data-types>> for more information.
 (((Field,definition)))
@@ -153,6 +153,9 @@
    image, the vendor description, and a
    <<glossary-taxonomy-term,taxonomy term>>. See
    <<planning-data-types>> for more information.
+(((Field bundle,definition)))
+[[glossary-field-bundle]] Field bundle::
+   Synonym for <<glossary-entity-subtype,Entity subtype>>.
 (((Formatter,definition)))
 (((Field formatter,definition)))
 [[glossary-field-formatter]] Field formatter::
