@@ -16,8 +16,13 @@ do
   mkdir -p ../output/ebooks/$lang
   mkdir -p ../output/ebooks/$lang/images
 
+  langconf=''
+  if [[ -s lang-$lang.conf ]] ; then
+    langconf="-f lang-$lang.conf"
+  fi
+
   # Run the AsciiDoc processor to convert to DocBook for ebooks.
-  asciidoc -d book -b docbook -f std.conf -a docinfo -o ../output/ebooks/$lang/guide.docbook ../source/$lang/guide.txt
+  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/ebooks/$lang/guide.docbook ../source/$lang/guide.txt
 
   # Copy image files to e-book directory.
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images
