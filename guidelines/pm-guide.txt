@@ -266,7 +266,7 @@ Tasks:
 
 <li>Make a new source/langcode directory. Copy all of the source (English) files, including the images subdirectory, into the new directory. Keep the file names and IDs the same as they were in English.</li>
 
-<li>Add a new section to the _attributions.txt_ file for the translation team management for this language. Template:
+<li>Add a new section to the attributions.txt file for the translation team management for this language. Template:
 <code>
 ==== Translation into LANGUAGE_NAME
 
@@ -280,9 +280,26 @@ The LANGUAGE_NAME translation of this guide was coordinated by:
 
 <li>Make a separate issue for the screenshots. See Guidelines document for issue template.</li>
 
-<li>Grant issue maintainer and VCS commit permissions to the manager or managers of the language team for the new language, by editing the _Maintainers_ page for the project.</li>
+<li>Grant issue maintainer and VCS commit permissions to the manager or managers of the language team for the new language, by editing the Maintainers page for the project.</li>
 
 <li>Make issues for translating each topic into the target language. There is a spreadsheet file scripts/bookmarks.fods that will aid in doing this.</li>
+
+<li>Check to see if there is a language configuration file for the new language that is part of the standard AsciiDoc distribution:
+https://github.com/asciidoc/asciidoc
+(a file called lang-lc.conf, where lc is the language code). If there is, download it to the scripts directory. Also find the source/langcode/glossary.txt file (if there is one in this project), and edit the title line near the top:
+<code>
+== Glossary
+</code>
+so that the title matches what you see in a line like this in the conf file:
+<code>
+^Szójegyzék$=glossary
+<code>
+near the end of the file. (In this example, the Hungarian translation for "Glossary" is "Szójegyzék", and this must be translated in the glossary.txt file at the same time as this language conf file is added, or the build will not work.)
+</li>
+
+<li>If there is not a configuration file for the new language, download the lang-en.conf file from the Github project above, rename it to lang-lc.conf, save it into the scripts directory of the project, and add an issue to translate it to the project. Also add a note to the issues for both translating this file and glossary.txt (if there is a glossary in the project), saying that when the title of the Glossary page is translated, this line in the lang-lc.conf file must be translated at the same time.
+
+Note: To figure out what needs to be translated and what doesn't in this file, translators can look at the above Github project for examples.</li>
 
 <li>Add langcode to the build scripts in scripts/languages.txt, and verify that it builds without errors.</li>
 

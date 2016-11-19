@@ -16,13 +16,18 @@ do
   mkdir -p ../output/html_feed/$lang
   mkdir -p ../output/html_feed/$lang/images
 
+  langconf=''
+  if [[ -s lang-$lang.conf ]] ; then
+    langconf="-f lang-$lang.conf"
+  fi
+
   # Run the preprocessor that puts file names into the files under each header.
   php addnames._php ../source/$lang ../output/html_feed/$lang
   cp ../source/$lang/guide-docinfo.xml ../output/html_feed/$lang
 
   # Run the AsciiDoc processor to convert to DocBook format. Syntax:
   #  asciidoc -d book -b docbook -f [config file] -o [output file] [input file]
-  asciidoc -d book -b docbook -f std.conf -a docinfo -o ../output/html_feed/$lang/guide.docbook ../output/html_feed/$lang/guide.txt
+  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/html_feed/$lang/guide.docbook ../output/html_feed/$lang/guide.txt
 
   # Run the xmlto processor to convert from DocBook to bare XHTML,
   # using a custom style sheet that makes output for the AsciiDoc Display
