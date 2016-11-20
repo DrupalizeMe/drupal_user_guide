@@ -366,7 +366,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools, #nav-content, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
     }
 
-    // Topic install-run - Running the installer. Skip -- manual screenshots.
+    // Topic: install-run - Running the installer. Skip -- manual screenshots.
 
   }
 
@@ -432,7 +432,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clearCache();
 
     // Topic: config-uninstall - Uninstalling unused modules.
-
     $this->drupalGet('admin/modules/uninstall');
     // Top part of admin/modules/uninstall, with Activity Tracker checked.
     $this->setUpScreenShot('config-uninstall_check-modules.png', 'onLoad="jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); ' . $this->showOnly('table thead, table tbody tr:lt(4)') . '"');
@@ -446,17 +445,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('config-uninstall_confirmUninstall.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.block-system-main-block') . $this->setWidth('header', 640) . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
 
-    // Topic config-user: Configuring user account settings.
+    // Topic: config-user - Configuring user account settings.
     $this->drupalGet('admin/config/people/accounts');
     $this->drupalPostForm(NULL, [
         'user_register' => 'admin_only',
       ], $this->callT('Save configuration'));
     // Registration and cancellation section of admin/config/people/accounts.
     $this->setUpScreenShot('config-user_account_reg.png', 'onLoad="window.scroll(0,500);' . $this->showOnly('#edit-registration-cancellation') . $this->setWidth('#edit-registration-cancellation') . '"');
+    // Email address section of admin/config/people/accounts.
+    $this->setUpScreenShot('config-user_from_email.png', 'onLoad="window.scroll(0,500);' . $this->showOnly('.form-item-mail-notification-address') . $this->setWidth('.form-item-mail-notification-address') . '"');
     // Emails section of admin/config/people/accounts.
     $this->setUpScreenShot('config-user_email.png', 'onLoad="window.scroll(0,5000); ' . $this->showOnly('div.form-type-vertical-tabs') . $this->hideArea('div.form-type-vertical-tabs details:gt(0)') . '"');
 
-    // Topic config-theme: Configuring the theme.
+    // Topic: config-theme - Configuring the theme.
+
     $this->drupalGet('admin/appearance');
     // Bartik section of admin/appearance.
     $this->setUpScreenShot('config-theme_bartik_settings.png', 'onLoad="' . $this->showOnly('.system-themes-list-installed') . $this->hideArea('.theme-admin') . '"');
@@ -924,7 +926,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save and publish'));
 
 
-    // Topic (out of order): structure-taxonomy - Concept: Taxonomy.
+    // Topic: (out of order) structure-taxonomy - Concept: Taxonomy.
 
     $this->drupalGet('taxonomy/term/4');
     // Carrots taxonomy page after adding Recipe content items.
