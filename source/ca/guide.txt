@@ -1,5 +1,5 @@
 [[user_guide]]
-= Drupal 8 User Guide
+= Guia d'usuari del Drupal 8
 
 // Chapters are defined here, and each one includes the individual
 // topic files that make up the chapter, in order.
@@ -7,10 +7,10 @@
 
 [[preface]]
 
-== Preface
+== Prefaci
 
 [role="summary"]
-Overview of introductory topics that help to leverage this guide in an efficient manner.
+Descripció general dels temes introductoris que ajuden a aprofitar aquesta guia d'una forma eficient.
 
 include::copyright.txt[]
 include::preface-audience.txt[]
@@ -21,10 +21,10 @@ include::preface-scenario.txt[]
 
 
 [[understanding-chapter]]
-== Understanding Drupal
+== Entendre el Drupal
 
 [role="summary"]
-Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+Descripció general dels conceptes del Drupal com mòduls, temes, distribucions i tipus de dades.
 
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
@@ -36,10 +36,10 @@ include::understanding-gpl.txt[]
 
 
 [[planning-chapter]]
-== Planning Your Site
+== Planificació del vostre lloc
 
 [role="summary"]
-Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+Descripció general dels conceptes de planificació del lloc i detalls de les tasques comunes de disposició del lloc. Es cobreixen els conceptes d'entitat de contingut i estructura.
 
 include::block-regions.txt[]
 include::planning-layout.txt[]
@@ -50,10 +50,10 @@ include::planning-workflow.txt[]
 
 
 [[installation-chapter]]
-== Installation
+== Instal·lació
 
 [role="summary"]
-Overview of server requirements and details of common installation tasks.
+Descripció general dels requeriments del servidor i detalls de les tasques comunes d'instal·lació.
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
@@ -62,10 +62,10 @@ include::install-run.txt[]
 
 
 [[config-chapter]]
-== Basic Site Configuration
+== Configuració bàsica del lloc
 
 [role="summary"]
-Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+Descripció general dels conceptes de configuració bàsica del lloc. Es cobreixen les tasques d'instal·lació de mòduls, paràmetres del compte d'usuari i temes.
 
 include::config-overview.txt[]
 include::config-basic.txt[]
@@ -77,10 +77,10 @@ include::config-theme.txt[]
 
 
 [[content-chapter]]
-== Basic Page Management
+== Gestió bàsica de la pàgina
 
 [role="summary"]
-Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+Descripció general dels conceptes de gestió de la pàgina. Es cobreixen les tasques d'elements de contingut, edició en línia i menús.
 
 include::content-paths.txt[]
 include::content-create.txt[]
@@ -92,10 +92,10 @@ include::menu-link-from-content.txt[]
 include::menu-reorder.txt[]
 
 [[content-structure-chapter]]
-== Setting Up Content Structure
+== Configuració de l'estructura del contingut
 
 [role="summary"]
-Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+Descripció general dels conceptes d'estructura del contingut. Es cobreixen les tasques de tipus de contingut, taxonomies i camps de referència.
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -120,10 +120,10 @@ include::structure-text-format-config.txt[]
 
 
 [[user-chapter]]
-== Managing User Accounts
+== Gestió de comptes d'usuari
 
 [role="summary"]
-Overview of user account concepts and details of common user account tasks.
+Descripció general dels conceptes de compte d'usuari i detalls de les tasques comunes a comptes d'usuari.
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
@@ -135,10 +135,10 @@ include::user-content.txt[]
 
 
 [[blocks-chapter]]
-== Blocks
+== Blocs
 
 [role="summary"]
-Overview of block concepts and details of common block tasks.
+Descripció general dels conceptes de blocs i detalls de les tasques comunes dels blocs.
 
 include::block-concept.txt[]
 include::block-create-custom.txt[]
@@ -146,10 +146,10 @@ include::block-place.txt[]
 
 
 [[views-chapter]]
-== Creating Listings with Views
+== Creació de llistats amb el Views
 
 [role="summary"]
-Overview of view concepts and details of common view tasks.
+Descripció general dels conceptes del views i detalls de les tasques comunes del views.
 
 include::views-concept.txt[]
 include::views-parts.txt[]
@@ -159,10 +159,10 @@ include::views-block.txt[]
 
 
 [[multilingual-chapter]]
-== Making Your Site Multilingual
+== Feu el vostre lloc multilingüe
 
 [role="summary"]
-Overview of multilingual site concepts and details of tasks needed to make a site multilingual.
+Descripció general dels conceptes de lloc multilingüe i detalls de les tasques necessàries per a fer el lloc multilingüe.
 
 include::language-concept.txt[]
 include::language-add.txt[]
@@ -172,10 +172,10 @@ include::language-config-translate.txt[]
 
 
 [[extend-chapter]]
-== Extending and Customizing Your Site
+== Estendre i personalitzar el vostre lloc
 
 [role="summary"]
-Overview of site customization and development. Tasks on downloading modules and themes are covered.
+Descripció general de la personalització i el desenvolupament del lloc. Es cobreixen les tasques de descàrrega de mòduls i temes.
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -190,10 +190,10 @@ include::extend-config-versions.txt[]
 
 
 [[prevent-chapter]]
-== Preventing and Fixing Problems
+== Prevenció i ressolució de problemes
 
 [role="summary"]
-Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+Descripció general dels conceptes de memòria cau, còpia de seguretat de les dades i registre. Es cobreixen les tasques de neteja de la memòria cau.
 
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
@@ -203,10 +203,10 @@ include::prevent-status.txt[]
 
 
 [[security-chapter]]
-== Security and Maintenance
+== Seguretat i manteniment
 
 [role="summary"]
-Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+Descripció general dels conceptes de seguretat i manteniment. Es cobreixen les tasques d'actualització del nucli del programari, mòduls i temes.
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -218,10 +218,10 @@ include::security-update-theme.txt[]
 
 
 [[thoughts-chapter]]
-== Final Thoughts
+== Reflexions finals
 
 [role="summary"]
-Overview of the Drupal community and how to connect with other users.
+Descripció general de la comunitat del Drupal i de com connectar amb d'altres usuaris.
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
@@ -232,15 +232,15 @@ include::thoughts-learn-more.txt[]
 
 include::glossary.txt[]
 
-== Index
+== Índex
 
 // Appendix
 
 [[appendix]]
 [appendix]
-== Appendix
+== Apèndix
 
 [role="summary"]
-Overview of contributors to this guide.
+Descripció general dels contribuidors d'aquesta guia.
 
 include::attributions.txt[]
