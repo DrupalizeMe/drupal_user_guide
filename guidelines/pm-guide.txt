@@ -284,12 +284,13 @@ The LANGUAGE_NAME translation of this guide was coordinated by:
 
 <li>Make issues for translating each topic into the target language. There is a spreadsheet file scripts/bookmarks.fods that will aid in doing this.</li>
 
-<li>Copy the English configuration file scripts/lang-en.conf to file name lang-lc.conf, where lc is the language code.</li>
+<li>Copy the English configuration file scripts/lang-en.conf to file name lang-lc.conf, where lc is the language code. Optionally, check https://github.com/asciidoc/asciidoc to see if there is an existing language configuration file for that language, and copy the three lines we need in our language configuration file from there, so that they are translated already.</li>
 
 <li>Add notes to the guide.txt and glossary.txt file translation issues, that when the chapter headers for the Preface, Index, and Glossary sections are translated, the lang-lc.conf file translations of these same words need to be done at the same time. Suggested note:
 <code>
 When this translation is done, make sure to update the scripts/lang-lc.conf (for your language code) at the same time so the chapter headings for Preface, Index, and Glossary in that file match what is in the source file for this issue.
 </code>
+However, if you found an existing lang-lc.conf file on Github, you should instead edit the guide.txt and glossary.txt files so that these headings match the translations you put in.
 </li>
 
 <li>Add langcode to the build scripts in scripts/languages.txt, and verify that it builds without errors.</li>
