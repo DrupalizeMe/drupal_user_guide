@@ -1395,9 +1395,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Note: in the UI that you actually see in practice, the button looks
     // like a link, and the displayed name is just "Block". But if you look at
     // the HTML source of the page (before jQuery/Ajax processing), the
-    // button actually asys "Add Block" (with that capitalization).
+    // button actually says "Add Block" (with that capitalization).
+    // Note that there is a separate translation of 'Add @type' and
+    // 'Add @display'; Views UI uses the latter. In some languages they may
+    // be translated differently.
     $this->drupalPostForm(NULL, [],
-      $this->callT('Add @type', TRUE, ['@type' => $this->callT('Block')]));
+      $this->callT('Add @display', TRUE, ['@display' => $this->callT('Block')]));
 
     // Update various settings for the block display.
 
