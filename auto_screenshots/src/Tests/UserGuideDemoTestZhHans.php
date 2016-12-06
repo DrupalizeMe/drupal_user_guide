@@ -22,12 +22,12 @@ class UserGuideDemoTestZhHans extends UserGuideDemoTestBase {
    * See UserGuideDemoTestBase::runList for more information.
    */
   protected $runList = [
-    'doPrefaceInstall' => 'backup',
+    'doPrefaceInstall' => 'skip',
     'doBasicConfig' => 'skip',
     'doBasicPage' => 'skip',
-    'doContentStructure' => 'skip',
-    'doUserAccounts' => 'skip',
-    'doBlocks' => 'skip',
+    'doContentStructure' => 'restore_backup',
+    'doUserAccounts' => 'backup',
+    'doBlocks' => 'backup',
     'doViews' => 'skip',
     'doMultilingualSetup' => 'skip',
     'doTranslating' => 'skip',
