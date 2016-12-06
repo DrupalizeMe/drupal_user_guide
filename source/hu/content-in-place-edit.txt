@@ -1,70 +1,70 @@
 [[content-in-place-edit]]
-=== Editing with the In-Place Editor
+=== Tartalom helybeni szerkesztése
 
 [role="summary"]
-How to edit content with the in-place editor.
+Tartalom szerkesztése helyi szerkesztővel.
 
-(((Editing content)))
-(((Content,editing)))
-(((In-place editor)))
-(((Quick editor)))
-(((Full editor)))
+(((Tartalom szerkesztése)))
+(((Tartalom,szerkesztés)))
+(((Helyi szerkesztő)))
+(((Gyorsszerkesztő)))
+(((Teljes szerkesztő)))
 
-==== Goal
+==== Célkitűzés
 
-Use the in-place editor to add information to the About page without opening the full editor page.
+E feladat célja, hogy a helybeni szerkesztő segítségével különböző információkat adjunk hozzá a Rólunk oldalhoz annak szerkesztőoldalának külön megnyitása nélkül.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<planning-data-types>>
 * <<content-create>>
 * <<content-edit>>
 * <<config-overview>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-The About page you want to edit must exist. See <<content-create>>.
+A szerkeszteni kívánt Rólunk példaoldalnak már léteznie kell. Lásd <<content-create>>.
 
-==== Steps
+==== Lépések
 
-Navigate to the About page to edit content with the in-place editor. If the page has not yet been added to a navigation menu, you can find and open it by following these steps:
+A helyi szerkesztő használatához menjünk el a Rólunk oldalra. Ha az oldalt még nem adtuk hozzá a navigációhoz, ezt a következő lépésekkel tudjuk megtenni:
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Tartalom_ (_admin/content_) oldalra.
 
-. If the content item you want to edit was updated or created recently, it should appear near the top of the content list on that page. If not, you can use _Type_, _Title_, or other filters to locate the content item.
+. Ha a szerkeszteni kívánt tartalomelem nemrég jött létre vagy frissült, a tartalomlista tetején jelenik meg. Ha régebbi, akkor a _Típus_, a  _Cím_ vagy egyéb szűrők használatával is kereshetjük.
 
-. Find the About page and click it.
+. Keressük meg a Rólunk oldalt és kattintsunk rá.
 
-Once the content you want to edit is being viewed in your browser, follow these steps to use the quick editor:
+Ha a szerkeszteni kívánt tartalom megjelent a böngészőben, a gyorsszerkesztőt az alábbi lépéseket követve használhatjuk:
 
 
-. Find the section of the page that displays the content you want to edit, and turn on quick editing mode using the _Quick edit_ contextual link (see <<config-overview>> for instructions on how to access contextual links). You will see each editable field on this content item outlined in blue; also, a hovering dialog box will appear.
+. Keressük meg azt a részét az oldalnak, ahol megjelenik a szerkeszteni kívánt tartalom és kapcsoljuk be a gyorsszerkesztő módot a _Gyorsszerkesztés_ szövegkörnyezeti hivatkozás használatával (a szövegkörnyezeti hivatkozások hozzáférésével kapcsolatos utasításokat lásd itt: <<config-overview>>). Ennek a tartalomelemnek az összes szerkeszthető mezője kékkel keretezve jelenik meg, továbbá egy lebegő párbeszédablak is felugrik.
 +
 --
 // Screen shot of About page with Quick Edit turned on for the node.
-image:images/content-in-place-edit-hover-box.png["Quick edit mode",width="100%"]
+image:images/content-in-place-edit-hover-box.png["Képernyőkép a gyorsszerkesztő módról",width="100%"]
 --
 
-. Click the _Body_ text area to begin editing. The _Body_ field supports a rich text editor. The editing toolbar will be displayed in a hovering dialog box.
+. Mivel a _Törzs_ mező támogatja a szövegszerkesztőt, ezért kattintsunk a _Törzs_ szövegrészre a szerkesztés elkezdéséhez. A szerkesztő eszköztár a lebegő párbeszédablakban jelenik meg.
 
-. Add some information about City Market. A _Save_ button will appear in the hovering dialog box, and the field outline will change color.
+. Adjunk meg további információt a Városi Piacról. A _Mentés_ gomb a lebegő dobozban jelenik meg és a mező keretének színe megváltozik.
 +
 --
 // Screenshot of About page with Quick Edit turned on for the node area, after clicking the Body field and changing text in the box.
-image:images/content-in-place-edit-save-box.png["Quick edit mode after editing",width="100%"]
+image:images/content-in-place-edit-save-box.png["Képernyőkép a gyorsszerkesztő módról a szerkesztés után",width="100%"]
 --
 
-. If you are satisfied with your edits, click _Save_ in the hovering dialog box. If not, click "x" to discard your edits, and confirm. Either way, quick editing mode will be turned off.
+. Ha megelégedtünk az elvégzett módosításokkal, a párbeszédablakban található _Mentés_ gombbal jóváhagyjuk. Ha tovább szeretnénk szerkeszteni, kattintsunk az „X”-re a változtatások elvetéséhez. A gyorsszerkesztő mód mindkét esetben kikapcsolódik.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
-Try using the full editor on the same content (see <<content-edit>>) and note that there is much more information that can be edited that is not available in the quick editor.
+Ha a teljes szerkesztőt használjuk ugyanazon a tartalmi elemen (lásd <<content-edit>>), akkor láthatjuk, hogy így a gyorsszerkesztőben megjelentekhez képest sokkal többféle információt módosíthatunk.
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-// ==== Additional resources
+// ==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/davidlee55[David Lee] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta és szerkesztette https://www.drupal.org/u/davidlee55[David Lee] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította https://www.drupal.org/u/zsofimajor[Zsófi Major] (https://www.drupal.org/cheppers[Cheppers])
