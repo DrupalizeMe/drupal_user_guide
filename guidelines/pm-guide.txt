@@ -231,12 +231,12 @@ language. Then, the team should choose a manager or managers for the
 project_name translation project, and form a group specifically targeted at
 translating the project_name.
 
-Once the new team has been established,
-the overall project managers and language team manager(s) will need to follow
-a number of steps to initiate a new translation. To do this, start by making an
-issue to track translation set-up, and another one to track screenshot
-making. Then follow the steps in the issue templates (creating the second issue
-is one of the steps in the first issue).
+Once the new team has been established, the overall project managers and
+language team manager(s) will need to follow a number of steps to initiate a new
+translation. To do this, start by making an issue to track translation set-up,
+and another one to track screenshot making (templates below). Then follow the
+steps in the issue templates (creating the second issue is one of the steps in
+the first issue).
 
 In these issue templates, make the following replacements:
 
@@ -298,7 +298,24 @@ However, if you found an existing lang-lc.conf file on Github, you should instea
 <li>Optional but recommended steps:
   <ul>
   <li>Make a translation glossary for this language. File scripts/TermsToTranslate.fods is a good starting point. This should be located in a place that the language team normally uses for communication, such as on localize.drupal.org.</li>
-  <li>Make a shared spreadsheet (for example, using Google Sheets) to track translation progress. File scripts/bare_topic_names.csv is a good starting point; you can add columns for the issue URLs, and status of each issue.</li>
+  <li>Create an issue to track translation progress. It should list the individual translation issues, providing a place to look to see which are done and which still need to be done. You can make a list of the issues in the issue summary by following these steps:
+  <ol>
+  <li>Open the Issues page for the project.</li>
+  <li>Filter to the issue component for your translation. You'll see the first page of issues.</li>
+  <li>Open a JavaScript console tool in your browser (usually by using the Inspect or Inspect Element context menu).</li>
+  <li>Execute this JavaScript code to make a list of the issue numbers shown on this page:
+<code>
+jQuery("tbody .views-field-title a").each(
+  function(){
+    console.log("[#" + jQuery(this).attr("href").replace("/node/", "") + "]");
+      }
+);
+</code>
+  </li>
+  <li>Copy and paste the output into the issue summary.</li>
+  <li>Go to the next page of issues and repeat the JavaScript, until all issues have been found.</li>
+  </ol>
+  </li>
   </ul>
 </li>
 
