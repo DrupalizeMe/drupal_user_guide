@@ -1,11 +1,11 @@
 [[understanding-themes]]
 
-=== Concept: Themes
+=== Concepte: Temes
 
 [role="summary"]
-Overview of themes and where to obtain them.
+Descripció general dels temes i on obtenir-los.
 
-(((Theme,overview)))
+(((Tema,descripció general)))
 (((Theme,core)))
 (((Core theme,overview)))
 (((Theme,third-party)))
@@ -13,45 +13,50 @@ Overview of themes and where to obtain them.
 (((Theme,custom)))
 (((Custom theme,overview)))
 
-==== Prerequisite knowledge
+==== Coneixements previs
 
 <<understanding-drupal>>
 
-==== What is a Theme?
+==== Què és un tema?
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+Un tema és un conjunt de fitxers que defineixen l'aspecte visual i la percepció
+del vostre lloc. El programari del nucli i els mòduls que s'executen al vostre
+lloc a determinen quin _contingut_ (incloent text HTML i altres dades
+emmagatzemades a la base de dades, imatges carregades i qualsevol altre grup de
+fitxers) es mostra a les pàgines del vostre lloc. El tema determina el marcat
+HTML i els estils CSS que envolten el contingut.
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+El programari del nucli proveeix diversos temes bàsics a la distribució del
+nucli. Aquests temes han estat dissenyats i desenvolupats en gran part per la
+comunitat durant els últims anys i són bones opcions per a la construcció dels
+vostres primers llocs web i familiaritzar-vos cada vegada més amb com
+funciona el nucli.
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+El Drupal és un CMS ben establert pel que el mercat dels temes de terceres parts
+- tant gratuïts com de pagament - és molt sòlid.
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software.  Guidance for creating custom themes
-in Drupal 8 can be found in the
-https://www.drupal.org/theme-guide/8[_Drupal.org_ community documentation page
-"Theming Drupal"].
+Si cap de les opcions de terceres parts s'adapta a les vostres necessitats,
+haureu de crear un tema personalitzat. Un tema personalitzat pot ser tan simple
+com un sol fitxer CSS que afegeix estil al marcat proporcionat pel nucli.
+Podeu trobar una guia per a la creació de temes personalitzats al Drupal 8 a
+https://www.drupal.org/theme-guide/8[_Drupal.org_ Pàgina de documentació de
+drupal.org "Theming Drupal"].
 
-==== Related topics
+==== Temes relacionats
 
 * <<extend-theme-find>>
 * <<extend-theme-install>>
 * <<understanding-modules>>
 
-==== Additional resources
+==== Recursos addicionals
 
-https://www.drupal.org/theme-guide/8[_Drupal.org_ community documenation page "Theming Drupal"]
+https://www.drupal.org/theme-guide/8[_Drupal.org_ pàgina de documentació de la
+comunitat "Theming Drupal"]
 
 
-*Attributions*
+*Atribucions*
 
-Written and edited by https://www.drupal.org/u/jgrubb[John Grubb] and
+Escrit i editat per https://www.drupal.org/u/jgrubb[John Grubb] i
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduït per https://www.drupal.org/u/ckrina[Cristina Chumillas] i revisat per
+https://www.drupal.org/u/rvilar[Ramon Vilar] d'http://www.ymbra.com[Ymbra].
