@@ -1,51 +1,53 @@
 [[user-concept]]
 
-=== Concept: Users, Roles, and Permissions
+=== Alapfogalmak: felhasználói fiókok, szerepkörök és jogosultságok
 
 [role="summary"]
-Overview of user accounts, permissions, and roles.
+A felhasználói fiókok, jogosultságok és szerepkörök áttekintése.
 
-(((User,overview)))
-(((Role,overview)))
-(((User role,overview)))
-(((Permission,overview)))
-(((Anonymous user,overview)))
-(((Authenticated user,overview)))
-(((Administrative user account,overview)))
+(((Felhasználó,áttekintés)))
+(((Szerepkör,áttekintés)))
+(((Felhasználói szerepkör,áttekintés)))
+(((Jogosultság,áttekintés)))
+(((Névtelen felhasználó,áttekintés)))
+(((Azonosított felhasználó,áttekintés)))
+(((Adminisztrátori felhasználói fiók,áttekintés)))
 
-// ==== Prerequisite knowledge
+// ==== Szükséges előismeretek
 
-==== What are Users?
+==== Kik is azok a felhasználók?
 
-Anyone who visits your website is a _user_, including you. There are three groups of users:
+Bárki, aki ellátogat az oldalunkra egy _felhasználó_, saját magunkat is beleértve. Alapesetben három felhasználói szintet különböztetünk meg:
 
-* Users who are not logged in, or _anonymous users_
+* A be nem jelentkezett, vagyis _Névtelen_ felhasználókat,
 
-* Users who are logged in, or _authenticated users_
+* A bejelentkezett, vagyis _Azonosított_ felhasználókat,
 
-* The administrative user account that was automatically created when you installed your site, or User 1. See <<user-admin-account>>.
+* Illetve az adminisztratív felhasználói fiókot, vagyis az oldaltelepítés közben automatikusan létrejött _Egyes számú_ felhasználót. Erről bővebben lásd: <<user-admin-account>>.
 
-==== What are Permissions?
+==== Mik a jogosultságok?
 
-The ability to do actions on your site (including viewing content, editing content, and changing configuration) is governed by _permissions_. Each permission has a name (such as _View published content_) and covers one action or a small subset of actions. A user must be granted a permission in order to do the corresponding action on the site; permissions are defined by the modules that provide the actions.
+A webhelyünkön végrehajtott műveleteket (például a tartalmak megtekintése, szerkesztése, vagy a beállítások módosítása) a _jogosultságok_ teszik lehetővé számunkra. Minden jogosultság rendelkezik egy beszédes elnevezéssel (például _Közzétett tartalom megtekintése_), mely lefedi magát a műveletet vagy annak egy részhalmazát. A kívánt műveletet csak a kellő jogosultság birtokában tudjuk végrehajtani. A jogosultságokat pedig a műveleteket végrehajtó modulok határozzák meg.
 
-==== What are Roles?
+==== Mik a szerepkörök?
 
-Rather than assigning individual permissions directly to each user, permissions are grouped into _roles_. You can define one or more roles on your site, and then grant permissions to each role. The permissions granted to authenticated and anonymous users are contained in the _Authenticated user_ and _Anonymous user_ roles, and depending on the installation profile you used when you installed your site, there may also be an _Administrator_ role that is automatically assigned all permissions on your site.
+A jogosultságok konkrét felhasználókhoz való rendelése helyett azokat először _szerepkörökhöz_ adjuk hozzá. Webhelyünkön a még azonosítatlan látogatókat a _Névtelen felhasználó_ szerepkör, míg a már belépetteket pedig az _Azonosított felhasználó_ szerepkör fedi le. E két automatikusan működő szerepkör mellé természetesen akárhány sajátot is létrehozhatunk, melyeknek mind különböző jogosultságokat engedélyezhetünk.
 
-Each user account on your site is automatically given the _Authenticated user_ role, and may optionally be assigned one or more additional roles. When you assign a role to a user account, the user will have all the permissions of the role when logged in.
+ rendelt jogosultságok az és  szerepkörökben vannak meghatározva.
 
-It is a good practice to make several roles on your site. In the farmers market site example, you might want the following roles:
+Minden létrejövő felhasználói fiók automatikusan az _Azonosított felhasználó_ szerepkörbe kerül, emellett igény esetén további szerepkörökhöz is hozzá tudjuk rendelni. Ha egy felhasználói fiókot felruházunk egy szerepkörrel, az bejelentkezés után annak minden tulajdonságával és jogosultságával rendelkezni fog.
 
-* A Vendor role that allows vendors to edit their own vendor listing page
+Általában tanácsos inkább több szerepkört létrehozni webhelyünkön. A termelői piac példánkkal élve a következők például hasznosak lehetnek:
 
-* A Content editor role for editing the general farmers market pages
+* Egy _Árus_ szerepkör, mely engedélyezi a kereskedőknek a saját kereskedői oldaluk szerkesztését,
 
-* A User manager role for managing the vendor accounts
+* Egy _Tartalomkezelő_ szerepkör, mellyel az általános termelői piaci oldalak szerkesztése lehetséges,
 
-* The _Administrator_ role that was installed with your site, for expert users to manage the site configuration
+* Egy _Felhasználókezelő_ szerepkör, mely a kereskedők fiókjainak szerkesztésére jogosult,
 
-==== Related topics
+* Az _Adminisztrátor_ szerepkör, ami az oldal telepítése során már létrejött a fejlesztők számára, a webhelybeállítások kezeléséhez.
+
+==== Kapcsolódó témák
 
 * <<user-new-role>>
 * <<user-permissions>>
@@ -54,13 +56,13 @@ It is a good practice to make several roles on your site. In the farmers market 
 * <<user-admin-account>>
 * <<user-content>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/node/120614[_Drupal.org_ community documentation page "Users, roles and permissions"]
-* https://www.drupal.org/node/627158[_Drupal.org_ community documentation page "Managing Users"]
-* https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "User Roles"]
+* Közösségi dokumentáció a _Drupal.org_-on: https://www.drupal.org/node/120614[Users, roles and permissions] (angol nyelven)
+* Közösségi dokumentáció a _Drupal.org_-on: https://www.drupal.org/node/627158[Managing Users] (angol nyelven)
+* Közösségi dokumentáció a _Drupal.org_-on: https://www.drupal.org/node/1803614[User Roles] (angol nyelven)
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/mark-lacroix[Mark LaCroix], https://www.drupal.org/u/batigolix[Boris Doesborg], and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from https://www.drupal.org/node/1803614["User Roles"], copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+A https://www.drupal.org/documentation[Drupal közösségi dokumentáció] (melynek 2000-2016-os szerzői jogait egyéni közreműködői birtokolják) https://www.drupal.org/node/1803614[User Roles] (angolul „Szerepkörök”) című szócikkéből https://www.drupal.org/u/mark-lacroix[Mark LaCroix], https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] vette át és szerkesztette. Fordította https://www.drupal.org/u/docsi[Péter Dominika].
