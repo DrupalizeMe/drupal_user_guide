@@ -1,8 +1,8 @@
 [[understanding-data]]
-=== Concept: Types of Data
+=== Concepte: Tipus de Dades
 
 [role="summary"]
-Overview of common types of data used in a site.
+Descripció general dels tipus de dades comuns utilitzats a un lloc.
 
 (((Data type,overview)))
 (((Data type,configuration)))
@@ -15,44 +15,46 @@ Overview of common types of data used in a site.
 (((Session,as a type of data)))
 
 
-//==== Prerequisite knowledge
+//==== Coneixements previs
 
-==== What are the types of data?
+==== Què són els tipus de dades?
 
-The data and information on your site is divided up into four types, which are
-edited, translated, and stored differently. These four types are:
+Les dades i la informació del vostre lloc es divideixen en quatre tipus, que són
+editats, traduïts i s'emmagatzemen per separat. Aquests són els quatre tipus:
 
-Content::
-  Information (text, images, etc.) meant to be displayed to site visitors. This
-  type of information tends to be relatively permanent, but can normally be
-  edited.
-Configuration::
-  Information about your site that is not content, but is also relatively
-  permanent, and is used to define how your site behaves or is displayed. It is
-  sometimes also displayed to site visitors, but tends to be smaller pieces of
-  text (like field labels, the name of your site, etc.) rather than larger
-  chunks that you'd normally think of as Content.
-State::
-  Information of a temporary nature about the current state of your
-  site, such as the time when cron jobs were last run.
-Session::
-  Information about individual site visitors' interactions with the site, such
-  as whether they are logged in and their cookies. This is technically a
-  subtype of State information, since it is also temporary.
+Contingut::
+  Informació (text, imatges, etc.) destinada a ser mostrada als visitants del
+  lloc. Aquest tipus d'informació tendeix a ser relativament permanent, però
+  normalment es pot editar.
+Configuració::
+  Informació sobre el vostre lloc que no és contingut en si però que també és
+  relativament permanent, i que s'utilitza per definir com es comporta o es
+  visualitza el vostre lloc. A vegades també es mostra als visitants del lloc, però
+  sol ser en petits trossos de text (com etiquetes de camp, el nom del vostre lloc,
+  etc.) en lloc de trossos més grans que els que normalment considerem com a
+  contingut.
+Estat::
+  Informació de caràcter temporal sobre l'estat actual del vostre lloc, com ara la data en què s'ha executat el cron per darrer cop.
+Sessió::
+  Informació sobre les interaccions dels visitants individuals del lloc amb el
+  lloc en si, com ara si estan connectats o les seves galetes. Això és
+  tècnicament un subtipus de la informació de l'Estat perquè també és temporal.
 
-==== Related topics
+==== Temes relacionats
 
 * <<planning-data-types>>
 * <<security-cron-concept>>
 * <<user-concept>>
 * <<language-concept>>
 
-//==== Additional resources
+//==== Recursos addicionals
 
 
-*Attributions*
+*Atribucions*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"],
-copyright 2000-2016 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+Adaptat per https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] de
+https://www.drupal.org/node/2120523["Descripció general de a Configuració (vs. altres tipus d'informació)"],
+copyright 2000-2016 pels contribuïdors individuals a la
+https://www.drupal.org/documentation[Documentació de la Comunitat del Drupal]
+Traduït per https://www.drupal.org/u/ckrina[Cristina Chumillas] i revisat per
+https://www.drupal.org/u/rvilar[Ramon Vilar].
