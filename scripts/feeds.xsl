@@ -72,6 +72,9 @@
   </a>
 </xsl:template>
 
+<!-- Suppress the HR before the footer navigation -->
+<xsl:param name="footer.rule" select="0" />
+
 <!-- Override the output, to omit HTML headers and put titles in divs. -->
 <!-- Also, as compared to bare.xsl, omit footer navigation -->
 <xsl:template name="chunk-element-content">
