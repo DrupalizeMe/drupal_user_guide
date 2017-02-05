@@ -1,54 +1,54 @@
 [[prevent-cache]]
 
-=== Concept: Cache
+=== Alapfogalom: a gyorsítótár
 
 [role="summary"]
-Overview of the cache and the site data that can be cached.
+A gyorsítótár és a webhely gyorsítótárazható adatainak áttekintése.
 
-(((Cache,overview)))
-(((Page cache,overview)))
-(((Module,Internal Page Cache)))
-(((Module,Dynamic Page Cache)))
-(((Internal Page Cache module,overview)))
-(((Dynamic Page Cache module,overview)))
+(((Gyorsítótár,áttekintés)))
+(((Oldal gyorsítótár,áttekintés)))
+(((Modul,Internal Page Cache)))
+(((Modul,Dynamic Page Cache)))
+(((Internal Page Cache modul,áttekintés)))
+(((Dynamic Page Cache modul,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
-<<understanding-drupal>>
+* <<understanding-drupal>>
 
-==== What is the page cache?
+==== Mi az a gyorsítótár?
 
-The software that runs your site, on each page request, must perform calculations and retrieve data from the database, in order to compose the page that is sent to the web browser or other application that is accessing the site. These calculations take time, which can mean that your page load time is longer than would be desirable.
+A szoftvernek, ami fut az oldalunkon, minden oldallekéréskor le kell futtatnia számításokat és fogadnia adatokat az adatbázisból, hogy előállítsa az oldalt, amit megjelenít a böngésző vagy más alkalmazás, ami hozzáfér az oldalunkhoz. Ezek a számítások időbe kerülnek, ami azt jelentheti, hogy az oldal betöltésének ideje hosszabb lehet a kívántnál.
 
-There are several ways that page load time can be sped up, including installing software on the server. The system includes the core Internal Page Cache and Dynamic Page Cache modules, which do not require any additional server software; they use a _database cache_ mechanism to speed up your site. The way these modules work is that during page calculations, intermediate results and the final page output are stored in a special database area (known as the _cache_). Then the next time a compatible request is made, intermediate or final results, as appropriate, can be retrieved and used rather than redoing the entire calculation. In addition, when content or data that affects a particular calculation is updated, the affected cached data is removed from the cache, forcing that part of the calculation to be redone the next time it is needed.
+Sok módszer van arra, hogy az oldalbetöltést felgyorsítsuk, beleértve azt, hogy telepítünk egy programot a szerverre. Az alaprendszer már tartalmazza az _Internal Page Cache_ és _Dynamic Page Cache_ modulokat, amik az _adatbázis gyorsítótárat_ használják az oldal felgyorsításához, ezért nincs szükség további programokra a szerveren. A mód, ahogy ezek a modulok működnek az, hogy az oldal számításait, a közbülső eredményeket és a végleges oldal kimenetet egy speciális köztes adatbázis területen tárolják (ezt nevezzük _gyorsítótárnak_). Amikor a következő alkalommal összeegyeztethető kérés érkezik, a közbülső vagy a végleges eredményeket, ha megfelelőek, innen lehet lekérni és használni ahelyett, hogy újra elkészülne az egész számítás. Továbbá, amikor a tartalom vagy adat frissíti az említett számítást, az érintett gyorsítótárazott adatot eltávolítja a gyorsítótárból, kényszerítve ezzel az érintett számítást, hogy újra végrehajtsa azt következő alkalommal.
 
-These caching modules normally work reasonably well, and offer at least some speed-up for most sites. However, sometimes the page cache can have problems, such as:
+Ezek a gyorsítótárazó modulok normális esetben meglehetősen jól működnek és a legtöbb oldalon elérnek valamilyen sebességnövekedést. Azonban néha az oldal gyorsítótárazásával lehetnek problémák, különösen:
 
-* Corrupted data in the cache, leading to garbled or incorrect page output
+* Megsérült az adat a gyorsítótárban, ami hibás vagy helytelen oldalkimenethez vezet
 
-* Old data remaining in the cache too long, leading to outdated page output
+* Régi adat túl sokáig maradt a gyorsítótárban, ami elavult oldalkimenetet eredményez
 
-* Insufficient caching, leading to slow page loads
+* Elégtelen gyorsítás, ami lassú oldalbetöltéshez vezet
 
-==== What other data is cached?
+==== Milyen más adatok kerülnek a gyorsítótárba?
 
-Independent of whether the two page cache modules are installed on your site, the software that your site runs will still cache the output of many internal calculations. The core systems that cache data include:
+Függetlenül attól, hogy valamelyike a két gyorsítótár modulnak  engedélyezve van a webhelyünkön, a szoftver, amin az oldal fut, még mindig gyorsítótárazhatja sok belső számítás kimenetét. Az alaprendszerek, amit a gyorsítótár adatok tartalmazhatnak:
 
-* The theme system caches information in the database cache about which template files are used to render various types of data. If you are developing a new theme and add a new template file, you'll need to clear this cache to have your theme file recognized.
+* A smink rendszer gyorsítótárazza az információkat az adatbázis gyorsítótárban arról, melyik sablont használjuk a különbözö típusú adatok megjelenítésénél.  Ha fejlesztünk egy új sminket és hozzáadunk egy új sablont, ki kell ürítenünk ezt a gyorsítótárat, hogy a sminkfájl fel legyen ismerve.
 
-* CSS and JavaScript files can optionally be optimized and compressed (depending on your site settings). If so, the compressed versions are stored in the file system so that they don't have to be re-optimized too often. If you are developing a module or theme, you may need to either turn off or clear this file cache to have changes to CSS or JavaScript files be recognized.
+* CSS és JavaScript fájlok adott esetben lehetnek optimalizálva és összetömörítve (függ az oldalunk beállításaitól). Ha igen, akkor a tömörített változatok lesznek a fájlrendszerben tárolva, így azokat nem kell újra optimalizálni túl gyakran. Ha egy modult vagy sminket fejlesztünk, akkor vagy ki kell kapcsolni, vagy ki kell üríteni ezt a fájl gyorsítótárat, hogy a CSS vagy JavaScript fájljaink fel legyenek ismerve.
 
-* The system locates certain low-level PHP functions and classes, such as _hook implementations_ and _plugin classes_, from your installed modules and stores information about which module has which functionality. If you are developing a new module or adding features to an existing module, you may need to clear this cache to have your new features be recognized.
+* A rendszer felismer számos alacsony szintű PHP-funkciót és osztályt, mint a _hook_  megvalósítások  és a  _bővítmény osztályok_, a feltelepített moduljainkat és információkat tárol arról, melyik modulhoz melyik funkcionalitás tartozik. Ha egy modult vagy sminket fejlesztünk, akkor vagy ki kell kapcsolni, vagy ki kell üríteni ezt a fájl gyorsítótárat, hogy a CSS vagy JavaScript fájljaink fel legyenek ismerve.
 
-==== Related topics
+==== Kapcsolódó témák
 
-If you have problems with your site, the first thing to try to fix it is usually to clear the cache. See <<prevent-cache-clear>> for more information.
+Ha probléma adódik a webhelyünkkel, az első dolog ahogy próbáljuk megjavítani: általában kiürítjük a gyorsítótárat. Lásd a <<prevent-cache-clear>> témakört további információért.
 
-==== Additional resources
+==== Egyéb források
 
-Learn about additional caching and performance optimization methods in the https://www.drupal.org/documentation/performance[_Drupal.org_ community documentation page "Caching to improve performance"].
+A gyorsítótárakról és az optimalizálásról további tudnivaló a  https://www.drupal.org/documentation/performance[„Caching to improve performance”] című közösségi dokumentációban található a _Drupal.org_-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/pandelon[Pandelon]
