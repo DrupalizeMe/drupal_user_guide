@@ -1,8 +1,8 @@
 [[planning-modular]]
-=== Concept: Modular Content
+=== Concepte: Contingut modular
 
 [role="summary"]
-Overview of modular content and how content in a page can be sourced from other content items.
+Informació general del contingut modular i com el contingut d'una pàgina es pot obtenir a partir del contingut d'altres elements.
 
 (((Content,modular)))
 (((Modular content,overview)))
@@ -11,45 +11,24 @@ Overview of modular content and how content in a page can be sourced from other 
 (((View,and modular content)))
 (((Views module,overview)))
 
-==== Prerequisite knowledge
+==== Coneixements previs
 
 * <<planning-data-types>>
 * <<planning-layout>>
 
-==== What is modular content?
+==== Què és el contingut modular?
 
-Given that the content of your site is stored in a database, it is desirable to
-make the content _modular_, meaning that certain pages on your site, rather than
-being edited as a whole page, are instead generated automatically from other
-content items. For instance, in the farmers market site scenario, you might
-create individual content items for recipes. If the recipe content items have a
-field that keeps track of ingredients, then your site could include a composite
-page that would list recipes, and allow visitors to search for a recipe that
-contained some particular ingredient they had bought at the market.
+Donat que el contingut del vostre lloc està emmagatzemat en una base de dades, és desitjable fer el contingut _modular_, el que significa que certes pàgines del vostre lloc, en comptes de ser totalment editades, es generen automàticament des del contingut d'altres elements. Per exemple, en el mercat de grangers, heu de crear el contingut d'un element per a les receptes. Si hi ha un camp que conté el contingut dels elements de la recepta, llavors el vostre lloc pot incloure una pàgina composada que llisti les vostres receptes i permetrà als visitants buscar receptes a partir d'algun ingredient en particular que han comprat al mercat.
 
-Smaller sections of pages can also be generated as composites. For instance,
-recipe content items could have a field that keeps track of which vendor
-submitted the recipe (see <<structure-reference-fields>>), with the vendor
-details edited in separate vendor content items. This would allow you to do the
-following on your site:
+També es poden generar seccions més petites de pàgines de forma composada. Per exemple, els elements del contingut d'una recepta poden tenir un camp per a fer el seguiment del proveïdor que ha enviat la recepta (aneu a <<structure-reference-fields>>), amb els detalls del proveïdor editats en elements de contingut separats. Això us permetrà fer el següent al vostre lloc:
 
-* On each Recipe page, there could be an area that displays some information
-about the vendor that submitted the recipe, such as their name and market stall
-number.
+* A cada pàgina de receptes, hi pot haver una àrea que proporcioni informació sobre el proveïdor que ha enviat la recepta, com ara el seu nom o el número de la seva paradeta en el mercat.
 
-* Each vendor page could have a section that lists the recipes they have
-submitted.
+* Cada pàgina de proveïdor pot tenir una secció que llista totes les receptes que ha enviat.
 
-The key idea is that each piece of information is only edited in one place.
-When vendor information is updated, all recipe pages that display that vendor
-information are automatically updated; when a recipe is submitted by a vendor,
-it is automatically displayed on the vendor page. The core Views module is the
-usual way to use modular content to create composite pages and page sections;
-see <<views-concept>> for more information. Also, _view modes_ are useful for
-defining different ways to display each content item; see
-<<structure-view-modes>> for more information.
+La clau d'aquesta idea és que cada peça d'informació només s'edita en un únic lloc. Quan es puja informació d'un proveïdor, s'actualitza automàticament a totes les pàgines de receptes on ell hi és; quan un proveïdor envia una recepta, automàticament s'actualitza a la pàgina pròpia del proveïdor. El mòdul Views del nucli és la manera habitual de crear pàgines composades i pàgines de seccions; aneu a <<views-concept>> per a més informació. Els _modes de visualització_ també són útils per a definir les diferents formes de mostrar els elements de contingut; aneu a <<structure-view-modes>> per a més informació.
 
-==== Related topics
+==== Temes relacionats
 
 * <<planning-structure>>
 * <<structure-content-type>>
@@ -61,6 +40,7 @@ defining different ways to display each content item; see
 // ==== Additional resources
 
 
-*Attributions*
+*Atribucions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Escrit per https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduït per https://www.drupal.org/u/mericamps[Meritxell Camps] i revisat per https://www.drupal.org/u/rvilar[Ramon Vilar]
