@@ -1,9 +1,9 @@
 [[block-regions]]
 
-=== Concept: Regions in a Theme
+=== Concepte: Regions en un tema
 
 [role="summary"]
-Overview of regions from a theming perspective.
+Visió general de les regions des d'una perspectiva de temes.
 
 (((Theme,regions in)))
 (((Bartik theme,regions in)))
@@ -31,41 +31,40 @@ Overview of regions from a theming perspective.
 (((Region,secondary menu)))
 (((Region,sidebar)))
 
-==== Prerequisite knowledge
+==== Coneixements previs
 
 <<understanding-themes>>
 
-==== What is a region?
+==== Què és una regió?
 
-Besides its primary content, a web page contains other content such as site
-branding (site name, slogan, and logo), navigation aids (menus, links, and
-icons), formatted text, and images. Each theme provides a set of named regions,
-such as _Header_, _Content_, and _Sidebar_, where site builders may choose to
-place their content.
+A més del seu contingut principal, una pàgina web conté altre contingut com ara
+la marca del lloc (nom del lloc, eslògan i logotip), ajudes de navegació (menús,
+enllaços i icones), text amb format i imatges. Cada tema proporciona un conjunt de
+regions amb nom, com ara _Capçalera_, _Contingut_ i _Barra lateral_, on els constructors del
+lloc poden escollir situar el seu contingut.
 
-The available regions depend on the theme design. Only the Content region,
-which contains the primary content, is required; others are optional.  The
-core Bartik theme provides the eighteen regions highlighted in the following
-image.
+Les regions disponibles depenen del disseny del tema. Només la regió de
+Contingut, que conté el contingut principal, és obligatòria; les altres són
+opcionals. El tema Bartik del nucli proporciona les divuit regions destacades en
+la següent imatge.
 
 // Bartik theme region preview at admin/structure/block/demo/bartik,
 // after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+image:images/block-regions-bartik.png["regions del tema Bartik del nucli",width="100%"]
 
-==== Related topics
+==== Temes relacionats
 
 * <<block-concept>>
 * <<planning-data-types>>
 * <<block-place>>
 
-==== Additional resources
+==== Recursos addicionals
 
-* https://www.drupal.org/documentation/structure[_Drupal.org_ community documentation page "Structure Guide"]
-* https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
+* https://www.drupal.org/documentation/structure[Pàgina "Guia d'estructura" de la documentació de la comunitat _Drupal.org_]
+* https://www.drupal.org/node/171224[Pàgina "Assignació de contingut a regions" de la documentació de la comunitat _Drupal.org_]
 
 
-*Attributions*
+*Atribucions*
 
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch].
+Escrit i editat per https://www.drupal.org/u/jfmacdonald[John MacDonald] i https://www.drupal.org/u/michaellenahan[Michael Lenahan] de
+https://erdfisch.de[erdfisch]. Traduït per https://www.drupal.org/u/francescbassas[Francesc Bassas] i revisat per https://www.drupal.org/u/rvilar[Ramon Vilar].
