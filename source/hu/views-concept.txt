@@ -1,51 +1,50 @@
 [[views-concept]]
-=== Concept: Uses of Views
+=== Alapfogalom: Nézetek használata
 
 [role="summary"]
-Overview of views and the data that can be displayed or output by them.
+A nézetek, a Drupal e multifunkcionális listázó funkciójának áttekintése. Milyen fajta adatokat tudunk velük legyűjteni és hogyan tudjuk befolyásolni a kimenetüket.
 
-(((View,overview)))
-(((Views module,overview)))
+(((Nézet,áttekintés)))
+(((Views modul,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<planning-modular>>
 * <<planning-data-types>>
 
-==== What is a view?
+==== Mit nevezünk nézetnek?
 
-A _view_ is a listing of content on a website. The core Views module handles the display of views, and the core Views UI module allows you to create and edit them in the administrative interface. When you define views, you are interested in taking data from your website and displaying it to the user.
+A Drupal szaknyelvében a webhely tartalmának bizonyos szempontok szerint leszűrt részét nevezzük egy _nézetnek_. Az alaprendszer _Views_ modulja felelős a kért nézetek megjelenítéséért, míg annak egy kiegészítője, a _Views UI_ modul pedig egy felhasználói felületet biztosít, amin adminisztrátorként szerkeszthetjük a már létező nézeteket, vagy akár újakat adhatunk hozzá tetszés szerint. Egy nézet szerkesztésekor tulajdonképpen nem csinálunk mást, mint megmondjuk a Drupalnak, hogy milyen fajta adatokból melyikeket, mennyit, hogyan, milyen sorrendben, hogyan formázva jelenítsen meg a felhasználóknak.
 
-==== What types of data can be displayed using views?
+==== Milyen adatokat tudunk így kilistázni?
 
-You can create views to output practically any content entity that is stored in the system. For example, you can create the following lists for the farmers market site:
+Tulajdonképpen majdnem mindenfajta adatot ki tudunk nyerni nézeteken keresztül. A termelői piac webhelyünkön például könnyedén elkészíthetjük az alábbi listákat:
 
-* Lists of vendors
-* Lists of recipes
-* Lists of the most recent content on the site
-* Lists of users on the site
+* Árusok felsorolása
+* Receptek felsorolása
+* A webhelyen éppen legfrissebb tartalmak listája
+* A webhelyen regisztrált felhasználók névsora
 
-==== What are the ways data can be output using views?
+==== Milyen módok közül választhatunk?
 
-A listing created by a view can be in any of the following forms:
+A nézet által megjelenített kimenet nem csupán egy szöveges felsorolás lehet, sőt! Ennél sokkal többet tud:
 
-* Table with sortable fields
-* Grid layouts
-* Teasers or pictures that link to articles
-* Blocks
-* JSON output
-* RSS feeds
-* Calendars
-* On-screen slideshows
+* Táblázat dinamikusan rendezhető oszlopokkal
+* Rácsos oldalelrendezés
+* Képek vagy bevezetők a feltételnek megfelelő cikkekből
+* Kimenet megjelenítése egy külön blokkban
+* JSON szabvány szerint formázott adatcsomag
+* RSS hírcsatorna, melyre fel lehet iratkozni
+* Naptárként megjelenített események (közösségi modul által)
+* Lapozható képvetítések
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<views-parts>>
 * <<views-create>>
 
-// ==== Additional resources
+// ==== Egyéb források
 
+*Közreműködők*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/michaellenahan[Michael Lenahan] at https://erdfisch.de[erdfisch], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
+Írta és szerkesztette https://www.drupal.org/u/michaellenahan[Michael Lenahan] (https://erdfisch.de[erdfisch]) és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (http://www.brainsum.com/[Brainsum])
