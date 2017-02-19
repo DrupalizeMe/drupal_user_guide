@@ -1,52 +1,52 @@
 [[language-concept]]
 
-=== Concept: User Interface, Configuration, and Content translation
+=== Alapfogalom: a felhasználói felület, a webhelybeállítások és a tartalmak lefordítása
 
 [role="summary"]
-Overview of translation on a site.
+A webhely különböző részeinek lefordítása és a nyelvek kezelésének áttekintése.
 
-(((User interface,translating)))
-(((Configuration,translating)))
-(((Content,translating)))
-(((Translating,overview)))
-(((Module,Language)))
-(((Module,Content Translation)))
-(((Module,Configuration Translation)))
-(((Module,Interface Translation)))
-(((Content Translation module,overview)))
-(((Configuration Translation module,overview)))
-(((Interface Translation module,overview)))
-(((Language module,overview)))
+(((Felhasználói felület,lefordítás)))
+(((Konfiguráció,lefordítás)))
+(((Tartalom,lefordítás)))
+(((Lefordítás,áttekintés)))
+(((Modul,Language)))
+(((Modul,Content Translation)))
+(((Modul,Configuration Manager)))
+(((Modul,Interface Translation)))
+(((Content Translation modul,áttekintés)))
+(((Configuration Translation modul,áttekintés)))
+(((Interface Translation modul,áttekintés)))
+(((Language modul,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-data>>
 * <<understanding-modules>>
 * <<planning-data-types>>
 
-==== What can be translated on your site?
+==== Mit lehet több nyelvre lefordítani a webhelyen?
 
-The base language for the software that your site runs (core software, modules, and theme) is English. However, you can create either a site that displays in a different language or a multi-lingual site; if you do so, all relevant text, images, and file attachments should be shown in the appropriate language for each site visitor. You need to have the core Language module installed in order to use a language other than English on the site.
+A Drupal szoftvert egy nemzetközi közösség résztvevői építik a világ minden pontjáról, ezért mélyen a motorháztető alatt az eredeti nyelve az angol. Ez azonban egyáltalán nem jelenti azt, hogy akár nekünk, adminisztrátoroknak, akár pedig webhelyünk látogatóinak érteniük kellene angolul. Éppen ellenkezőleg, tetszőleges számú nyelvet adhatunk hozzá webhelyünkhöz, és ha mindent jól állítottunk be, akkor minden felhasználó az általa előnyben részesített nyelven fogja látni tartalmainkat, képeinket, letölthető fájlcsatolmányainkat, stb. Ehhez nem kell mást tennünk, mint első lépésként engedélyezzük az alaprendszer _Language_ modulját, ami felkészíti a Drupalt az angoltól eltérő más nyelvek kezelésére.
 
-There are three types of information that you can translate, each with its own method for translating:
+A 8-as főverzió esetén (amiről ez a Kézikönyv is szól) fontos megértenünk a következő 3 lefordítható rész közötti különbséget:
 
-User interface text::
-  Built-in text present in the core software, modules, and themes. This can be translated from the base English language of the software into the language(s) of your site. Typically, rather than needing to translate this text yourself, you can download translations. You need to have the core Interface Translation module installed in order to translate this text.
-Configuration text::
-  Text whose structure and initial values are defined by the core software, modules, and theme, but that you can edit. Examples include the labels for fields in your content types, header text in views, your site name, and the content of automatic email messages that your site sends out. After creating configuration text in the default language of your site, you can translate it into other languages. You need to have the core Configuration Translation module installed in order to translate this text.
-Content text and files::
-  If your site is multilingual, you can configure the content fields on your site to be translatable. After creating content in one language, you can translate it into other languages. Fields can contain textual information or uploaded files, and for each field on each content type, you can configure it to be translatable or non-translatable. You need to have the core Content Translation module installed in order to translate this text.
+A felhasználói felület szövegei::
+  Az alaprendszer, a modulok és sminkek forráskódjából származó, a webhelyünk látható felületén megjelenő hosszabb-rövidebb szövegek. Ezek lehetnek akár 1-2 szavasak is, mint például a gombfeliratok, de akár sok bekezdésből állók is, mint amilyenek a súgóleírások. Ezeket csak angol forrásnyelvről lehet lefordítani, viszont akárhány célnyelvre, amennyit a webhelyünk támogat. Általában azonban nem is mindig van szükségünk nekünk magunknak lefordítanunk őket, mert a magyar Drupal-használói közösség önkéntes fordítói hosszú évek óta dolgoznak a minél jobb minőségű magyar nyelvű fordításon, melyet mi is letölthetünk térítésmentesen. Ha élni szeretnénk ezzel a funkcióval, akkor az alaprendszer _Interface Translation_ modulját kell engedélyeznünk.
+Webhelybeállítások szövegei::
+  Ezeknek az eredeti szerkezetét és tartalmát bár az alaprendszer, a modulok és sminkek határozzák meg, de le lehet őket fordítani a webhely által támogatott valamennyi célnyelvre. A könnyebb érthetőség kedvéért pár példa a webhelybeállítások (más néven _konfiguráció_) szövegei közül: a tartalomtípusaink mezőinek címkéi, a nézeteink fej- és láblécei, a webhelyünk elnevezése és szlogenje, valamint például a rendszer által automatikusan kiküldött értesítő e-mailek sablonjai mind ide tartoznak. Fontos, hogy ha le szeretnénk őket fordítani más nyelvekre, akkor először mindig léteznie kell már az eredetijüknek a webhely alapértelmezett nyelvén (ami nem feltétlenül az angol). Ha élni szeretnénk ezzel a funkcióval is, akkor az alaprendszer _Configuration Translation_ modulját kell engedélyeznünk.
+Szöveges tartalmak és fájlok::
+  A végére hagytuk azt, amire vélhetően a legtöbben gondolnak először, ha azt hallják, „többnyelvű webhely”. Természetesen bármelyik tartalomtípusunkra engedélyezhetjük külön-külön, hogy kívánjuk-e lefordíthatóvá tenni vagy sem. Fontos, hogy ha le szeretnénk fordítani tartalmainkat más nyelvekre, akkor először mindig léteznie kell már az eredetijüknek a webhely alapértelmezett nyelvén (ami nem feltétlenül az angol). Mind a mezők, mind pedig a feltöltött fájlok lehetnek nyelvérzékenyek (például ha a letölthető e-könyvünknek francia és német nyelvű kiadása is létezik), ezért a tartalomtípusokon belül a mezők szintjén is szabályozhatjuk, hogy szükséges-e több nyelven kezelni, vagy elég csak egyen. Például ugyanaz a borítókép megfelel a cikkünk angol és magyar változatához is, igaz? Akkor miért tárolnánk kétszer? Ha élni szeretnénk ezzel a funkcióval is, akkor az alaprendszer _Content Translation_ modulját kell engedélyeznünk.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<language-add>>
 * <<language-content-config>>
 * <<language-content-translate>>
 * <<language-config-translate>>
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (http://www.brainsum.com/[Brainsum])
