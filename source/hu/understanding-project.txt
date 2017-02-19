@@ -1,55 +1,56 @@
 [[understanding-project]]
 
-=== Concept: The Drupal Project
+=== Alapfogalom: a Drupal világa
 
 [role="summary"]
-Overview of Free and Open Source Software (FOSS), Drupal project, and Drupal Association.
+A Szabad és Ingyenes Szoftver fogalmának, a Drupal körüli közösségnek és a nemzetközi Drupal Association céljainak áttekintése.
 
-(((Drupal project,overview)))
-(((Drupal Association,overview)))
-(((FOSS (Free and Open Source Software),overview)))
-(((Free and Open Source Software (FOSS),overview)))
+(((Drupal projekt,áttekintés)))
+(((Drupal Association,áttekintés)))
+(((FOSS (ingyenes és nyílt forráskódú szoftver),áttekintés)))
+(((Ingyenes és nyílt forráskódú szoftver (FOSS),áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<understanding-drupal>>
 
-==== What is Free and Open Source Software?
+==== Mitől lesz egy szoftver szabad?
 
-Free and Open Source Software (FOSS) is software that is developed by a community of people, released under a non-commercial license, and whose _source code_ (the program files that make up the software) is freely available. For more information on the non-commercial license used by Drupal, see <<understanding-gpl>>.
+Angol nyelvben ugyanazt a szót („free”) használjuk az ingyenesség és a szabadság fogalmára. A szoftverek világában azonban nem mindig jár együtt e két kifejezés: vannak programok, amiket bár ingyenesen letölthetünk legálisan, mégsem számítanak szabad szoftvernek. A különbség az, hogy a program hátterében a számítógépet vezérlő _forráskód_ megismerhető-e számunkra, vagy sem. Bár sok embernek, akik csak használni szeretnék a programot ez ugyan nem számít különösebben, ám ha értünk kicsit a programozáshoz, akkor lehetőségeink nagyságrendileg kitárulnak, ha megkapjuk és értelmezni tudjuk a program forráskódját. Ezért olyan fontos, hogy minél többen _nyílt forráskódú_ szoftvereket fejlesszenek, mivel így a felhasználók széles köre is jobban jár. A Drupal által használt nem-kereskedelmi liszenszről bővebb tudnivalót a <<understanding-gpl>> témakörben találunk.
 
-==== What is the Drupal project?
+==== Mi a Drupal tágabb értelemben?
 
-The Drupal project is a FOSS project whose purpose is to develop the core content management system software, as well as add-on modules, additional themes, translations, documentation, and special-purpose distributions. The people who contribute their time and money to the Drupal project come from all over the world, and are a diverse community that comes together for this common purpose.
+A Drupal jelentheti önmagában azt a tartalomkezelésre készült szabadszoftvert, mely egyrészt az alaprendszerből, másrészt pedig a közösség által készített és ingyenesen közzétett modulokból, sminkekből, dokumentációból, fordításokból áll. De tágabb értelemben érthetjük alatta ezen önkéntes közreműködők alkotta nemzetközi közösséget is, akik a világ minden tájáról saját szabadidejüket nem sajnálva vagy pénzüket anyagi támogatásként feláldozva együtt küzdenek a közös célért immár évtizedek óta.
 
-The community encompasses many smaller groups who perform many different tasks such as developing a particular piece of Drupal-related software, writing documentation, maintaining the security of Drupal software, translating Drupal software into a particular language, using Drupal for some specific purpose, and coming together to meet in person within a particular geographical area.
+A résztvevők sok kisebb munkacsoportba tömörülnek attól függően, hogy a Drupal-projekt mely feladataival foglalatoskodnak. Vannak, akik dokumentációt írnak, mások lefordítják azt a saját nyelvükre, egy harmadik csoport például a konferenciáinkat, találkozóink rendezvényeit szervezi, a fejlesztők pedig értelemszerűen a Drupal szoftver forráskódjában keresnek hibákat és oldják meg őket.
 
-For more on how you can connect to and communicate with the world-wide community, see <<thoughts-connecting>> and <<thoughts-support>>.
+A <<thoughts-connecting>> és <<thoughts-support>> témakörökben bővebben olvashatunk arról, hogy miért éri meg beszállnunk e közösség életébe és hogy tulajdonképpen milyen egyszerű is ez.
 
-==== What is the Drupal Association?
+==== Mi az a Drupal Association?
 
-The https://assoc.drupal.org[Drupal Association] is a non-profit organization dedicated to supporting the Drupal project and community. Its main functions are:
+E milliós létszámú közösség életét átlátni és megszervezni nem kis munka, szükséges, hogy dedikált munkatársak foglalkozzanak vele. Ezeket a feladatokat a https://assoc.drupal.org[Drupal Association] non-profit szervezet végzi:
 
-* Putting on large conventions around the world
-* Maintaining the _Drupal.org_ websites and the servers that they run on
-* Promoting Drupal as a web platform
-* Supporting Drupal education and training
-* Providing grants to the Drupal community in support of its mission
-* Raising funds for these purposes
+* Az évi két, egyenként többezer fős konferenciák megszervezését
+* A _Drupal.org_ portálrendszer fenntartását a tucatnyi alszájtjával együtt
+* A Drupal platform népszerűsítését minél szélesebb közönség felé
+* Drupalt oktató képzések támogatását
+* A Drupal közösség célzott motiválását anyagi szponzorálások formájában
+* És végül, de nem utolsó sorban, természetesen mindezen tevékenységek részére a pénzügyi háttér biztosítását.
 
-==== Related topics
+A globális Drupal Association mellett léteznek az egyes országoknak is saját Drupal szervezeteik, melyek helyi szinten törekszenek a fenti célok megvalósítására. Hazánkban 2014-ben alakult meg a http://egyesulet.drupal.hu[Magyar Drupal Egyesület] (röviden MDE), mely a Drupal itthoni, még szélesebb elterjedését segíti. Bárki beléphet tagjaink közé, aki szeretne csatlakozni a magyarországi Drupal-használók közösségéhez.
+
+==== Kapcsolódó témák
 
 * <<understanding-gpl>>
 * <<security-concept>>
 * <<thoughts-connecting>>
 * <<thoughts-support>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/governance[Drupal project governance]
-* https://www.drupal.org/dcoc[Drupal Code of Conduct]
+* https://www.drupal.org/governance[Drupal project governance], azaz „A Drupal projekt vezetése” (angol nyelven).
+* https://www.drupal.org/dcoc[Drupal Code of Conduct], azaz „Viselkedési irányelvek” a _Drupal.org_ közösségben (angol nyelven).
 
+*Közreműködők*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (http://www.brainsum.com/[Brainsum])
