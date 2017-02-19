@@ -1,71 +1,70 @@
 [[understanding-drupal]]
 
-=== Concept: Drupal as a Content Management System
+=== Alapfogalom: a Drupal tartalomkezelő
 
 [role="summary"]
-Overview of Drupal and the reasons to choose it as a reliable Content Management System (CMS).
+A Drupal, valamint pár érv áttekintése, hogy miért tartják sokan megbízható tartalomkezelő rendszernek.
 
-(((CMS (Content Management System),overview)))
-(((Content Management System (CMS),overview)))
-(((Drupal content management system,overview)))
-(((Drupal content management system,server requirements)))
-(((Drupal core,overview)))
-(((Drupal.org website,downloading modules and themes from)))
+(((CMS (tartalomkezelő rendszer),áttekintés)))
+(((Tartalomkezelő rendszer (CMS),áttekintés)))
+(((Drupal tartalomkezelő rendszer,áttekintés)))
+(((Drupal tartalomkezelő rendszer,szerver követelmények)))
+(((Drupal alaprendszer,áttekintés)))
+(((Drupal.org webhely,modulok és sminkek letöltése és telepítése innen)))
 
-//==== Prerequisite knowledge
+//==== Szükséges előismeretek
 
-==== What is a Content Management System?
+==== Mit nevezünk tartalomkezelő rendszernek?
 
-A content management system (CMS) is a software tool that lets users add, publish, edit, or remove content from a website, using a web browser on a smartphone, tablet, or desktop computer. Typically, the CMS software is written in a scripting language, and its scripts run on a computer where a database and a web server are installed. The content and settings for the website are usually stored in a database, and for each page request that comes to the web server, the scripts combine information from the database and _assets_ (JavaScript files, CSS files, image files, etc. that are part of the CMS or have been uploaded) to build the pages of the website.
+Tulajdonképpen minden olyan szoftveres eszközt, aminek a segítségével a felhasználók tartalmakat hozhatnak létre, szerkeszthetnek, tehetnek közzé vagy törölhetnek egy webhelyről, pusztán egy asztali vagy mobilos webböngésző használatával, azt tartalomkezelő rendszernek (angolul Content Management System) nevezhetjük. Leggyakrabban ezek a CMS-ek valamilyen szkriptnyelven íródnak, amiket aztán egy olyan számítógépen futtatnak le, amin egy webszerver is fut a háttérben, valamint egy adatbázis-program is elérhető. Ez utóbbira azért van szükség, mert a webhely valamennyi tartalma és beállítása általában ebben van eltárolva, hogy kérés esetén gyorsan elő lehessen őket hívni. Ilyenkor a webszerver fogadja a bejövő kérést és továbbítja a CMS-nek, aminek szkriptjei értelmezik azt és megkezdik a feldolgozását. Kikérik a szükséges információkat az adatbázisból és azt az előre meghatározott építőelemek (pl. oldalsablonok, CSS- és JavaScript-fájlok, képek, stb.) felhasználásával egy kész weboldallá „csomagolják” össze, amit válaszként visszaadnak a webszervernek, ami pedig továbbítja a kérést küldőnek.
 
-The combination of the operating system that the CMS runs on, the scripting language it is written in, the database it stores its information in, and the web server that runs the scripts to retrieve information and return it to the site visitor's web browser is known as the _stack_ that the CMS runs on; the commonly used combination of the Linux operating system, Apache web server, MySQL database, and PHP scripting language is known as the _LAMP stack_.
+Az ebben a folyamatban résztvevő szoftvereket egymásra épülő szintenként is elképzelhetjük: legalul van az operációs rendszer (leggyakrabban Linux), ezen fut a webszerver (szintén gyakori az Apache), mellette az adatbázis-kiszolgáló (például MySQL), legfelül pedig a szkriptnyelv értelmezője, a PHP. Ezek kezdőbetűit összeolvasva kapjuk a sok helyütt említett _LAMP_ mozaikszót, amivel ezt a szoftverkombinációt (angolul _stack_-et, azaz „rakást”) szokták jelölni.
 
-==== What is Drupal?
+==== Mi a Drupal?
 
-Drupal is a flexible CMS based on the LAMP stack, with a modular design allowing features to be added and removed by installing and uninstalling _modules_, and allowing the entire look and feel of the website to be changed by installing and uninstalling _themes_. The base Drupal download, known as Drupal Core, contains the PHP scripts needed to run the basic CMS functionality, several optional modules and themes, and many JavaScript, CSS, and image assets. Many additional modules and themes can be downloaded from the https://www.drupal.org[_Drupal.org_] website.
+A Drupal egy rugalmas, sok különböző fajta webhely megvalósítására alkalmas tartalomkezelő rendszer, ami ezen a LAMP-stack-en futtatható. Legnagyobb erőssége a csereszavatos elemekből (ún. _modulokból_) való felépítése, aminek köszönhetően a webhely teljes funkcionalitása könnyedén testreszabható a felhasználói felületen keresztül, a forráskód ismerete nélkül is. A képességek kialakításához hasonlóan egyszerű a webhely látványvilágának beállítása is a kompatibilis _sminkek_ révén. A kiinduló csomag a Drupal magját képező PHP-szkripteket tartalmazza csak, ezért _alaprendszernek_ is nevezzük magyarul. Ez önmagában még csak a működéshez leginkább szükséges funkciókat tartalmazza. Ám a https://www.drupal.org[_Drupal.org_] címen szintén ingyenesen letölthető több ezer modullal és sminkkel igényeink szerint bővíthetjük tovább.
 
-Drupal can also run on other technology stacks:
+Bár a leggyakoribb eset a LAMP alapokra való telepítés, de a Drupal több más rendszerrel is együttműködik:
 
-* The operating system can be Windows or Mac OS instead of Linux.
+* Az operációs rendszer lehet Windows vagy Mac OS is, nem csak Linux.
 
-* The web server can be Nginx or IIS instead of Apache.
+* A webszerver lehet Nginx vagy IIS is, nem csak Apache.
 
-* The database can be PostgreSQL or SQLite instead of MySQL, or a MySQL-compatible replacement such as MariaDB or Percona.
+* Az adatbázis-kiszolgáló lehet PostgreSQL vagy SQLite is, nem csak MySQL. Tulajdonképpen bármilyen MySQL-kompatibilis rendszer alkalmas, mint például a MariaDB vagy Percona.
 
-Other operating systems, web servers, and databases can also be made to work; however, the scripts that the software uses are written in PHP, so that cannot be changed.
+A fentieken kívül más operációs rendszerek, webszerverek és adatbázis-kiszolgálók is működhetnek, egyetlen dolog azonban semmiképp sem változtatható meg: mivel a Drupal forráskódja PHP-ben van írva, ezért ennek a szkriptnyelv-értelmezőnek mindenképp telepítve kell lennie a szerveren.
 
-==== What are the reasons for using Drupal?
+==== Milyen érvek szólnak a Drupal mellett?
 
-When building a website, you have your choice of using one of the many existing CMS packages and hosted services, developing your own CMS, or building the site without using a CMS. Here are some of the reasons you might choose to use Drupal:
+Ha egy webhely felépítését vesszük a fejünkbe, választhatunk egyet az interneten elérhető számos tartalomkezelő szoftver közül, bérelhetünk egy előre feltelepített szolgáltatást, belevághatunk saját CMS-program megírásába, de akár felépíthetjük leendő webhelyünket CMS rendszer nélkül is. Az alábbiakban felsorolunk pár nyomós érvet, amiért úgy gondoljuk, hogy a Drupal választása vezet minket sikerre:
 
-* Building a small, simple site with static HTML pages is not difficult, and you can get a simple site up very quickly. Setting up a site in a CMS generally requires more time initially, but brings you the benefits of on-line editing (easier for less experienced content maintainers), uniformity (harder to maintain using static HTML for larger sites), and the possibility of more complex features requiring a database.
+* Egy kicsi, csak egy vagy pár oldalból álló webhely felépítése statikus HTML-ben nem bonyolult és egyszerűségétől függően viszonylag gyorsan elérhető cél. Ehhez képest viszont, rögtön egy CMS-ben elkezdeni felépíteni talán kicsit több időt vehet igénybe az elején, viszont azzal a felbecsülhetetlen előnnyel jár, hogy a későbbiekben sokkal könnyebben alakítható pusztán egy online szerkesztőfelületen keresztül. Ehhez jön még hozzá a jobb áttekinthetőség (ami segítség a kevésbé járatos felhasználóknak) és az egységesség, amit egyre szaporodó HTML-oldalak esetén szinte lehetetlen fenntartani egy idő után. Nem beszélve az olyan bonyolultabb képességek megvalósításáról, amikhez már adatbáziskapcsolat használatára van szükség.
 
-* Some CMS software is special-purpose; for instance, there are packages and hosted services that you can use to build a blog or a club membership website. Drupal, in contrast, is a general-purpose CMS. If you are building a special-purpose site, you might choose to use a special-purpose CMS; however, if your site falls even slightly outside the intended purpose, you will probably be better off using a general-purpose CMS rather than trying to adapt a special-purpose CMS.
+* Néhány CMS célszoftverként készült: vannak például olyan csomagok és előtelepített szolgáltatások, amiket készítőik kifejezetten egy blog vagy webáruház működtetésére szabtak. A Drupal ellenben mindig a multifunkcionalitásra törekszik. Ha már pontosan tudjuk, hogy milyen kategóriájú webhelyet tervezünk felépíteni, akkor egy célszoftver bár ígéretesnek tűnhet, de magában rejti azt a komoly veszélyt, hogy nagyon hasonló lesz sok versenytársunk webhelyéhez. Ha viszont ezt szeretnénk elkerülni, és valami újszerűt találtunk ki, amit más eddig még nem csinált, akkor összeválogathatjuk a szükséges funkciókat egy bőséges webhelyépítő készletből – ez a Drupal.
 
-* Building your own CMS-type software can seem attractive. However, using a general-purpose CMS like Drupal as a starting point is usually a better idea, because the basic CMS functionality (such as user accounts and content management) has thousands of developer hours behind it, including many years of user testing, bug fixing, and security hardening.
+* Ha kicsit is értünk a programozáshoz, akkor vonzónak tűnhet belevágni egy saját CMS fejlesztésébe, hiszen így izgalmas, új dolgokat valósíthatunk meg, mivel semmi sem köti a kezünket. Azonban egyedül maradunk, és csak magunkra számíthatunk az olyan funkciók elkészítésében, tesztelésében, kijavításában és biztonsági ellenőrzésében is, amit sok ezer ember együttes erővel hosszú évek alatt már elvégzett – lássuk be őszintén – nálunk valószínűleg jobban.
 
-* Some CMS software packages are expensive to purchase a license for. Some are free or have a free version, but have restrictive licenses that do not allow you to make modifications and extensions. You might prefer to use a package (like Drupal) that has a less restrictive software license, and is developed by a world-wide community. See <<understanding-project>> for more on this topic.
+* Néhány tartalomkezelő szoftver liszenszének az ára megfizethetetlenül magas, amit egy éppen induló webhely, mint üzleti vállalkozás büdzséjéből nem tud finanszírozni. Néhány más rendszernek vannak ugyan ingyenesen kipróbálható, csökkentett képességű változatai, de ezek éppen a továbbfejleszthetőséget áldozzák fel az olcsóság oltárán. Ehelyett létezik a Drupal, amelyet jogi liszensze mindenki számára hozzáférhetővé, tetszés szerint módosíthatóvá és szabadon terjeszthetővé tesz, tehát senkinek nem tartozunk fizetni a használatáért. Minderről bővebben a <<understanding-project>> témakörnél olvashatunk.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-distributions>>
 * <<understanding-project>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/getting-started/before/overview[The Drupal overview]
+* https://www.drupal.org/getting-started/before/overview[The Drupal overview], azaz a „Drupal áttekintése” a _Drupal.org_-on angol nyelven.
 
-* https://www.drupal.org/about/faq[_Drupal.org_ page "FAQ" (Frequently Asked Questions)]
+* https://www.drupal.org/about/faq[FAQ], azaz „Gyakran ismételt kérdések” (GyIK) a _Drupal.org_-on angol nyelven.
 
-* https://www.drupal.org/case-studies[_Drupal.org_ page "Case Studies"]
+* https://www.drupal.org/case-studies[Case Studies], azaz „Esettanulmányok” a _Drupal.org_-on angol nyelven.
 
-* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia page "Content management systems"]
+* https://hu.wikipedia.org/wiki/Tartalomkezel%C5%91_rendszerek[Tartalomkezelő rendszerek] szócikk magyarul a Wikipédián.
 
-* https://en.wikipedia.org/wiki/Modular_design[Wikipedia page "Modular design"]
+* https://en.wikipedia.org/wiki/Modular_design[Modular design], azaz „Moduláris dizájn” szócikk a Wikipédián angol nyelven.
 
+*Közreműködők*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/kvantomme[Kristof van Tomme] at http://pronovix.com[Pronovix], https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at https://erdfisch.de[erdfisch].
+Írta és szerkesztette https://www.drupal.org/u/kvantomme[Kristof van Tomme] (http://pronovix.com[Pronovix]), https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] és https://www.drupal.org/u/michaellenahan[Michael Lenahan] (https://erdfisch.de[erdfisch]). Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (http://www.brainsum.com[Brainsum])
