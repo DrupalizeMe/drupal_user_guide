@@ -77,11 +77,21 @@ image:images/install-prepare-recommended.png["Recommended releases section of Dr
 image:images/install-prepare-files.png["Download files section of Drupal core download page on _Drupal.org_"]
 --
 
-.. Download the tar.gz or zip file to the web root in your local machine.
+.. Download the tar.gz or zip file to your local machine.
 
-.. Upload the downloaded files to your hosting account. Log in to the control panel and navigate to the _HTML_ directory. Save the Drupal files in a new directory at the same level as other sites you are hosting.
+.. Upload the downloaded file to your hosting account. Log in to the control panel and navigate to the _HTML_ directory. Save the file there.
 
-.. Uncompress the tar.gz or zip file. A new directory will be created featuring all the uncompressed Drupal files. Optionally, rename the directory to match your custom site's name.
+.. Uncompress the tar.gz or zip file, which will create a new directory.  For example, if you have terminal access to your hosting server (running Linux), you can use a command like:
++
+----
+tar -xzf drupal-8.3.2.tar.gz
+----
++
+If you do not have terminal access, or your hosting server is not running Linux, your hosting control panel's file manager should provide a way to extract the files.
+
+.. Delete the compressed file from the server, unless your unpacking method already deleted it.
+
+.. Rename the directory or reconfigure your web hosting, so that the directory name matches the directory your web hosting is configured to use for your site.
 
 ==== Expand your understanding
 
@@ -96,4 +106,8 @@ http://www.drush.org[Drush]
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton], https://www.drupal.org/u/michaellenahan[Michael Lenahan] at https://erdfisch.de[erdfisch], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
+Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+https://erdfisch.de[erdfisch],
+and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+http://redcrackle.com[Red Crackle].
