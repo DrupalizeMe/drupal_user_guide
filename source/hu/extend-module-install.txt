@@ -32,6 +32,7 @@ Download and install the https://www.drupal.org/project/admin_toolbar[contribute
 
 * <<understanding-modules>>
 * <<extend-module-find>>
+* <<install-tools>>
 
 ==== Site prerequisites
 
@@ -41,7 +42,7 @@ Download and install the https://www.drupal.org/project/admin_toolbar[contribute
 
 ==== Steps
 
-You can use the administrative interface or Drush to install a contributed module. If you are installing a custom module rather than a contributed module, or if the steps below do not work to download and unpack the module files, follow the steps in <<extend-manual-install>>, and then continue here with step 7 in the instructions for the administrative interface below.
+You can use the administrative interface or Drush to install a contributed module. If you are installing a custom module rather than a contributed module, or if the steps below do not work to download and unpack the module files, follow the steps in <<extend-manual-install>>. If you are installing a contributed module with external dependencies that are managed by Composer, follow the steps for downloading in <<install-composer>>. In either of these cases, then continue here with step 7 in the instructions for the administrative interface below.
 
 ===== Using the administrative interface
 
