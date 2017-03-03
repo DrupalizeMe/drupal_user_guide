@@ -8,14 +8,17 @@ Overview of additional tools that help site builders conveniently create sites.
 (((Tool,Coder)))
 (((Tool,Devel)))
 (((Tool,Drush)))
+(((Tool,Composer)))
 (((Tool,Firebug)))
 (((Tool,Git)))
+(((Tool,drupal Console)))
 (((Coder tool,overview)))
 (((Devel tool,overview)))
 (((Drush tool,overview)))
+(((Composer tool,overview)))
 (((Firebug tool,overview)))
 (((Git tool,overview)))
-(((Drupal Console,overview)))
+(((Drupal Console tool,overview)))
 
 // ==== Prerequisite knowledge
 
@@ -34,6 +37,8 @@ Git::
   track changes in the configuration files and synchronize the configuration of
   different sites. Git has become the standard for web development
   projects.
+Composer::
+  See below for more about Composer.
 Devel::
   The https://www.drupal.org/project/devel[contributed Devel module] helps with
   development tasks such as debugging and inspecting code, analyzing database
@@ -69,6 +74,25 @@ http://www.drush.org[Drush website] for installation instructions and version
 compatibility. There is also documentation on the available Drush commands on
 that site.
 
+==== What is Composer used for?
+
+https://getcomposer.org/[Composer] is a tool for managing PHP dependencies,
+where the developer specifies what version of each external library is needed,
+and Composer manages the process of downloading and installing the libraries.
+
+The core software is a primary user of Composer, because it makes use of several
+externally-developed software libraries, which must be downloaded and installed
+in order for the core software to work. When you install the core software, you
+either need to download an archive that contains compatible versions of the
+external libraries, or you need to run Composer to download the external
+libraries after the initial download.
+
+Some contributed modules also make use of externally-developed software
+libraries; for example, a Facebook integration module might require Facebook's
+integration library to be installed for the module to work, and a geographical
+module might make use of a standard library of geographical functions. To
+install a module with external dependencies, you will need to run Composer.
+
 ==== What tools are available for module and theme developers?
 
 In addition to the site builder tools mentioned above, the following tools are
@@ -89,11 +113,15 @@ Firebug::
   browser window. The https://www.drupal.org/project/drupalforfirebug[contributed Drupal for Firebug module]
   displays Drupal debugging and SQL query information in the Firebug window.
 
-// ==== Related topics
+==== Related topics
+
+<<install-composer>>
 
 ==== Additional resources
 
-https://www.drupal.org/node/147789[_Drupal.org_ community documentation page "Development tools"]
+* https://www.drupal.org/node/147789[_Drupal.org_ community documentation page "Development tools"]
+
+* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
 
 
 *Attributions*

@@ -56,7 +56,7 @@ cd example
 drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site- name=example
 ----
 
-. If you are installing using web installer, upload the core software files manually. You will need to:
+. If you are installing using the web installer, upload the core software files manually. To do this using Git and/or Composer, see <<install-composer>>; to do  this by downloading a zipped archive:
 
 .. Go to _https://www.drupal.org_ and click _Download & Extend_ on the top-level menu.
 +
@@ -84,13 +84,11 @@ image:images/install-prepare-files.png["Download files section of Drupal core do
 
 .. Upload the downloaded file to your hosting account. Log in to the control panel and navigate to the _HTML_ directory. Save the file there.
 
-.. Uncompress the tar.gz or zip file, which will create a new directory.  For example, if you have terminal access to your hosting server (running Linux), you can use a command like:
+.. Uncompress the tar.gz or zip file, which will create a new directory. If you do not have terminal access, or your hosting server is not running Linux, your hosting control panel's file manager should provide a way to extract the files. If you have terminal access to your hosting server (running Linux), you can use a command like:
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
 ----
-+
-If you do not have terminal access, or your hosting server is not running Linux, your hosting control panel's file manager should provide a way to extract the files.
 
 .. Delete the compressed file from the server, unless your unpacking method already deleted it.
 
@@ -112,5 +110,6 @@ http://www.drush.org[Drush]
 Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
 https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
 https://erdfisch.de[erdfisch],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
 and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
 http://redcrackle.com[Red Crackle].

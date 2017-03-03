@@ -35,17 +35,17 @@ $settings['update_free_access'] = TRUE;
 
 . Put your site in maintenance mode. See <<extend-maintenance>>.
 
+. If you are using Composer to manage dependencies, or using Git, skip the next six steps, and instead see <<install-composer>> for instructions on downloading updated files. Continue with the _update.php_ step.
+
 . Download the tar.gz or zip file archive for the latest version of Drupal 8.x core from https://www.drupal.org/project/drupal[_Drupal.org_ Drupal Core Downloads]. See <<install-prepare>> for more details on how to find the latest version.
 
 . Upload the archive file to your web hosting server.
 
-. Extract the archive file to a temporary directory on your server (should be outside the directory where the site is hosted). For example, if you have terminal access to your hosting server (running Linux), you can use a command like:
+. Extract the archive file to a temporary directory on your server (should be outside the directory where the site is hosted). Your hosting control panel's file manager should provide a way to extract the files. Or, if you have terminal access to your hosting server (running Linux), you can use a command like:
 +
-+----
-+tar -xzf drupal-8.3.2.tar.gz
-+----
-+
-If you do not have terminal access, or your hosting server is not running Linux, your hosting control panel's file manager should provide a way to extract the files.
+----
+tar -xzf drupal-8.3.2.tar.gz
+----
 
 . You can also use Drush to download the archive and extract it in one step, by navigating to the temporary directory on the server and entering this command:
 +
