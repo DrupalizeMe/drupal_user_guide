@@ -22,7 +22,7 @@ do
   fi
 
   # Run the preprocessor that puts file names into the files under each header.
-  php preprocess._php ../source/$lang ../output/html_feed/$lang f
+  php preprocess._php ../source/$lang ../output/html_feed/$lang fi
   cp ../source/$lang/guide-docinfo.xml ../output/html_feed/$lang
 
   # Run the AsciiDoc processor to convert to DocBook format. Syntax:
@@ -48,7 +48,7 @@ done
 mkdir -p ../output/html_feed/guidelines
 mkdir -p ../output/html_feed/guidelines/images
 
-php preprocess._php ../guidelines ../output/html_feed/guidelines f
+php preprocess._php ../guidelines ../output/html_feed/guidelines fi
 
 asciidoc -d book -b docbook -f std.conf -f guidelines.conf -o ../output/html_feed/guidelines/guidelines.docbook ../output/html_feed/guidelines/guidelines.txt
 
