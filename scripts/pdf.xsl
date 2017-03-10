@@ -86,6 +86,9 @@
     <xsl:value-of select="$body.font.master * 1.6"/>
     <xsl:text>pt</xsl:text>
   </xsl:attribute>
+  <xsl:attribute name="space-before.minimum">1.8em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">2em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">2.2em</xsl:attribute>
   <xsl:attribute name="space-after.minimum">0.8em</xsl:attribute>
   <xsl:attribute name="space-after.optimum">1em</xsl:attribute>
   <xsl:attribute name="space-after.maximum">1.2em</xsl:attribute>
@@ -125,5 +128,8 @@
 <xsl:param name="variablelist.as.blocks" select="1"/>
 <xsl:param name="glossary.as.blocks" select="1"/>
 <xsl:param name="glosslist.as.blocks" select="1"/>
+
+<!-- Ordered list formatting -->
+<xsl:param name="orderedlist.label.width">1.8em</xsl:param>
 
 </xsl:stylesheet>
