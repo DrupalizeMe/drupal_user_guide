@@ -21,8 +21,12 @@ do
     langconf="-f lang-$lang.conf"
   fi
 
+  # Run the preprocessor that fixes index entries.
+  php preprocess._php ../source/$lang ../output/ebooks/$lang i
+  cp ../source/$lang/guide-docinfo.xml ../output/ebooks/$lang
+
   # Run the AsciiDoc processor to convert to DocBook for ebooks.
-  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/ebooks/$lang/guide.docbook ../source/$lang/guide.txt
+  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/ebooks/$lang/guide.docbook ../output/ebooks/$lang/guide.txt
 
   # Copy image files to e-book directory.
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images

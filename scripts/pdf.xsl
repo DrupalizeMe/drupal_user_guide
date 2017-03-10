@@ -5,6 +5,9 @@
 <!-- Note that PDF is normally made with the fo stylesheets
      from the docbook-xsl project. -->
 
+<!-- Strip unnecessary whitespace. -->
+<xsl:strip-space elements="*"/>
+
 <!-- Use outline numbering for sections. -->
 <xsl:param name="section.autolabel" select="1"/>
 <xsl:param name="section.autolabel.max.depth">1</xsl:param>
