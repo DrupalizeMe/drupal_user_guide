@@ -387,7 +387,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // config-overview-pencils.png.
 
     // Topic: config-basic - Editing basic site information.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('System'));
+    // Here, you would ideally want to click the "Basic site settings" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL.
+    $this->assertText($this->callT('Basic site settings'));
     $this->drupalGet('admin/config/system/site-information');
+    $this->assertText($this->callT('Site name'));
+    $this->assertText($this->callT('Slogan'));
+    $this->assertText($this->callT('Email address'));
+    $this->assertText($this->callT('Default front page'));
     $this->drupalPostForm(NULL, [
         'site_name' => $this->demoInput['site_name'],
         'site_slogan' => $this->demoInput['site_slogan'],
@@ -401,7 +413,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Site details section of admin/config/system/site-information.
     $this->setUpScreenShot('config-basic-SiteInfo.png', 'onLoad="' . $this->showOnly('#edit-site-information') . $this->setWidth('#edit-site-information') . '"');
 
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('Regional and language'));
+    // Here, you would ideally want to click the "Regional settings" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL.
+    $this->assertText($this->callT('Regional settings'));
     $this->drupalGet('admin/config/regional/settings');
+    $this->assertText($this->callT('Locale'));
+    $this->assertText($this->callT('Default country'));
+    $this->assertText($this->callT('First day of week'));
+    $this->assertText($this->callT('Time zones'));
+    $this->assertText($this->callT('Default time zone'));
     $this->drupalPostForm(NULL, [
       'site_default_country' => $this->demoInput['site_default_country'],
       'date_default_timezone' => $this->demoInput['date_default_timezone'],
@@ -418,7 +443,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // export them first.
     $this->exportTranslations();
 
-    $this->drupalGet('admin/modules');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Extend'));
+    // Names of modules are not translated.
+    $this->assertText('Activity Tracker');
+    $this->assertText('tracker');
+
     // Top part of Core section of admin/modules, with Activity Tracker checked.
     $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
     $this->drupalPostForm(NULL, [
@@ -432,7 +462,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clearCache();
 
     // Topic: config-uninstall - Uninstalling unused modules.
-    $this->drupalGet('admin/modules/uninstall');
+
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Extend'));
+    $this->clickLink($this->callT('Uninstall'));
+    // Names of modules are not translated.
+    $this->assertText('Activity Tracker');
+    $this->assertText('Search');
+    $this->assertText('History');
+    $this->assertText('File');
+    $this->assertText('Text Editor');
+    $this->assertText('CKEditor');
+    $this->assertText('Image');
+
     // Top part of admin/modules/uninstall, with Activity Tracker checked.
     $this->setUpScreenShot('config-uninstall_check-modules.png', 'onLoad="jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); ' . $this->showOnly('table thead, table tbody tr:lt(4)') . '"');
     $this->drupalPostForm(NULL, [
@@ -446,6 +488,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
 
     // Topic: config-user - Configuring user account settings.
+
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('People'));
+    // Here, you would ideally want to click the "Account settings" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL.
+    $this->assertText($this->callT('Account settings'));
+    $this->drupalGet('admin/config/people/accounts');
+    $this->assertText($this->callT('Registration and cancellation'));
+    $this->assertText($this->callT('Administrators only'));
+    $this->assertText($this->callT('Require email verification when a visitor creates an account'));
+    $this->assertText($this->callT('Emails'));
+    $this->assertText($this->callT('Welcome (new user created by administrator)'));
+
     $this->drupalGet('admin/config/people/accounts');
     $this->drupalPostForm(NULL, [
         'user_register' => 'admin_only',
@@ -459,10 +517,32 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: config-theme - Configuring the theme.
 
-    $this->drupalGet('admin/appearance');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Appearance'));
+    $this->assertText($this->callT('Installed themes'));
+    // Theme names are not translated.
+    $this->assertText('Bartik');
+    $this->assertText($this->callT('default theme'));
+
     // Bartik section of admin/appearance.
     $this->setUpScreenShot('config-theme_bartik_settings.png', 'onLoad="' . $this->showOnly('.system-themes-list-installed') . $this->hideArea('.theme-admin') . '"');
-    $this->drupalGet('admin/appearance/settings/bartik');
+
+    $this->clickLink($this->callT('Settings'), 1);
+    $this->assertText($this->callT('Color scheme'));
+    $this->assertText($this->callT('Header background top'));
+    $this->assertText($this->callT('Header background bottom'));
+    $this->assertText($this->callT('Main background'));
+    $this->assertText($this->callT('Sidebar background'));
+    $this->assertText($this->callT('Sidebar borders'));
+    $this->assertText($this->callT('Footer background'));
+    $this->assertText($this->callT('Title and slogan'));
+    $this->assertText($this->callT('Text color'));
+    $this->assertText($this->callT('Link color'));
+    $this->assertText($this->callT('Logo image'));
+    $this->assertText($this->callT('Use the logo supplied by the theme'));
+    $this->assertText($this->callT('Upload logo image'));
+    $this->assertText($this->callT('Preview'));
+
     // For this screenshot, before the setting are changed, use JavaScript to
     // scroll down to the bottom, uncheck Use the default logo, and outline
     // the logo upload box.
@@ -490,7 +570,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Preview section of admin/appearance/settings/bartik.
     $this->setUpScreenShot('config-theme_color_scheme_preview.png', 'onLoad="window.scroll(0,1000);' . $this->showOnly('.color-preview') . $this->setWidth('#color_scheme_form', 700) . $this->removeScrollbars() . '"');
 
-    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Home'));
+    $this->assertText($this->callT('No front page content has been created yet.'));
+
     // Home page after theme settings are finished.
     $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->removeScrollbars() . '"');
 
