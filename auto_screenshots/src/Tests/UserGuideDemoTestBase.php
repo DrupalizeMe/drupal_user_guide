@@ -591,7 +591,23 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: content-create - Creating a Content Item
     // Create a Home page.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Content'));
+    $this->clickLink($this->callT('Add content'));
+    // Here, you would ideally want to click the "Basic page" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL.
+    $this->assertText($this->callT('Basic page'));
     $this->drupalGet('node/add/page');
+    $this->assertText($this->callT('Create @name', TRUE, ['@name' => $this->callT('Basic page')]));
+    $this->assertText($this->callT('Title'));
+    $this->assertText($this->callT('Summary'));
+    $this->assertText($this->callT('Body'));
+    $this->assertText($this->callT('URL path settings'));
+    $this->assertText($this->callT('URL alias'));
+    $this->assertRaw($this->callT('Preview'));
+
     // General note: Filling in textarea fields -- use .append() in jQuery.
     // However, this does not work with ckeditor fields.
     // Partly filled-in node/add/page, with Summary section open.
@@ -610,24 +626,50 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save and publish'));
 
     // Topic: content-edit - Editing a content item
-    $this->drupalGet('admin/content');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Content'));
+    $this->assertLink($this->callT('Edit'));
+    $this->assertText($this->callT('Content type'));
+    $this->assertText($this->callT('Title'));
+    $this->assertRaw($this->callT('Filter'));
+
     // Content list on admin/content, with filters above.
     $this->setUpScreenShot('content-edit-admin-content.png', 'onLoad="' . $this->showOnly('.block-system-main-block') . $this->hideArea('.secondary-action') . $this->setBodyColor() . '"');
+
+    // To avoid having to decide which Edit button to click, navigate to the
+    // correct edit page.
     $this->drupalGet('node/1/edit');
+    $this->assertText($this->callT('Body'));
+    $this->assertText($this->callT('Create new revision'));
+    $this->assertText($this->callT('Revision log message'));
+
     // Revision area of the content node edit page.
     $this->setUpScreenShot('content-edit-revision.png', 'onLoad="' . $this->showOnly('#edit-meta') . 'jQuery(\'#edit-revision\').attr(\'checked\', 1); jQuery(\'#edit-revision-log-0-value\').append(&quot;' . $this->demoInput['home_revision_log_message'] . '&quot;);' . '"');
     // Submit the revision.
     $this->drupalPostForm(NULL, [
         'revision_log[0][value]' => $this->demoInput['home_revision_log_message'],
       ], $this->callT('Save and keep published'));
+
     // Updated content message.
+    // Difficult to assert the whole message, as it has a URL in it.
+    $this->assertText($this->callT('Basic page'));
     $this->setUpScreenShot('content-edit-message.png', 'onLoad="' . $this->showOnly('.highlighted') . $this->setWidth('.highlighted') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
     // Topic: content-in-place-edit - it does not seem possible to make these
     // screenshots automatically. Skip.
 
     // Topic: menu-home - Designating a Front Page for your Site
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('System'));
+    // Here, you would ideally want to click the "Basic site settings" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL.
+    $this->assertText($this->callT('Basic site settings'));
     $this->drupalGet('admin/config/system/site-information');
+    $this->assertText($this->callT('Front page'));
+
     $this->drupalPostForm(NULL, [
         'site_frontpage' => $this->demoInput['home_path'],
       ], $this->callT('Save configuration'));
@@ -639,13 +681,38 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Site front page after configuring it to point to the Home content item.
     $this->setUpScreenShot('menu-home_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer, .contextual') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
+    // UI text tests from Topic: menu-concept.txt: Concept: Menu.
+    // For some reason, these texts in particular have some strange HTML
+    // entity stuff going on in them (mismatches between screen and raw text
+    // that amount to entities being present or decoded), so only test in
+    // English.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->drupalGet('admin/structure/menu');
+      $this->assertRaw($this->callT('Main navigation'));
+      $this->assertRaw($this->callT('Administration'));
+      $this->assertRaw($this->callT('User account menu'));
+      $this->assertRaw($this->callT('Footer'));
+      $this->assertRaw($this->callT('Tools'));
+    }
+
     // Topic: menu-link-from-content: Adding a page to the navigation.
-    $this->drupalGet('admin/content');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Content'));
+    $this->assertLink($this->callT('Edit'));
     // Content table from admin/content page, with a red border around the Edit
     // button for the About page.
     $this->setUpScreenShot('menu-link-from-content_edit_page.png', 'onLoad="' . $this->showOnly('.views-table') . $this->addBorder('table.views-view-table tbody tr:last .dropbutton-widget') . $this->hideArea('.secondary-action') . '"');
 
+    // To avoid having to decide which Edit button to click, navigate to the
+    // correct edit page.
     $this->drupalGet('node/2/edit');
+    $this->assertText($this->callT('Menu settings'));
+    $this->assertText($this->callT('Provide a menu link'));
+    $this->assertText($this->callT('Menu link title'));
+    $this->assertText($this->callT('Description'));
+    $this->assertText($this->callT('Parent item'));
+    $this->assertText($this->callT('Weight'));
+
     $this->drupalPostForm(NULL, [
         'menu[enabled]' => TRUE,
         'menu[title]' => $this->demoInput['about_title'],
@@ -660,12 +727,31 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('menu-link-from-content-result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual, footer') . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
     // Topic: menu-reorder - Changing the order of navigation.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Structure'));
+    // Here, you would ideally want to click the "Menus" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL.
+    $this->assertText($this->callT('Menus'));
     $this->drupalGet('admin/structure/menu');
+    $this->assertLink($this->callT('Edit menu'));
+    $this->assertText($this->callT('Operations'));
+    $this->assertText($this->callT('Main navigation'));
+
     // Menu list section of admin/structure/menu, with Edit menu button on Main
     // navigation menu highlighted.
     $this->setUpScreenShot('menu-reorder_menu_titles.png', 'onLoad="' . $this->showOnly('table') . $this->addBorder('tr:eq(3) .dropbutton-widget') . $this->hideArea('.secondary-action') . '"');
 
+    // To avoid having to figure out which menu edit button to click, go
+    // directly to the page.
     $this->drupalGet('admin/structure/menu/manage/main');
+    $this->assertText($this->callT('Edit menu'));
+    $this->assertText($this->callT('Main navigation'));
+    $this->assertRaw($this->callT('Save'));
+    $this->assertLink($this->callT('Home'));
+    $this->assertLink($this->demoInput['about_title']);
+
     // Menu links section of admin/structure/menu/manage/main.
     $this->setUpScreenShot('menu-reorder_edit_menu.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .form-type-textfield, .tabledrag-toggle-weight') . $this->setWidth('table') . '"');
 
