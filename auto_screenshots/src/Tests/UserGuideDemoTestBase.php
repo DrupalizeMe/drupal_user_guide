@@ -746,8 +746,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // To avoid having to figure out which menu edit button to click, go
     // directly to the page.
     $this->drupalGet('admin/structure/menu/manage/main');
-    $this->assertText($this->callT('Edit menu'));
-    $this->assertText($this->callT('Main navigation'));
+    $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => $this->callT('Main navigation')]));
     $this->assertRaw($this->callT('Save'));
     $this->assertLink($this->callT('Home'));
     $this->assertLink($this->demoInput['about_title']);
