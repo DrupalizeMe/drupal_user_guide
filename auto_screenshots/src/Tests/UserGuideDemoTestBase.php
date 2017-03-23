@@ -393,8 +393,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Basic site settings" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
-    // assert the text, and visit the URL.
-    $this->assertText($this->callT('Basic site settings'));
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Basic site settings'));
+    }
     $this->drupalGet('admin/config/system/site-information');
     $this->assertText($this->callT('Site name'));
     $this->assertText($this->callT('Slogan'));
@@ -419,8 +422,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Regional settings" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
-    // assert the text, and visit the URL.
-    $this->assertText($this->callT('Regional settings'));
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Regional settings'));
+    }
     $this->drupalGet('admin/config/regional/settings');
     $this->assertText($this->callT('Locale'));
     $this->assertText($this->callT('Default country'));
@@ -495,8 +501,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Account settings" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
-    // assert the text, and visit the URL.
-    $this->assertText($this->callT('Account settings'));
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Account settings'));
+    }
     $this->drupalGet('admin/config/people/accounts');
     $this->assertText($this->callT('Registration and cancellation'));
     $this->assertText($this->callT('Administrators only'));
@@ -597,8 +605,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Basic page" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
-    // assert the text, and visit the URL.
-    $this->assertText($this->callT('Basic page'));
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Basic page'));
+    }
     $this->drupalGet('node/add/page');
     $this->assertText($this->callT('Create @name', TRUE, ['@name' => $this->callT('Basic page')]));
     $this->assertText($this->callT('Title'));
@@ -665,8 +675,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Basic site settings" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
-    // assert the text, and visit the URL.
-    $this->assertText($this->callT('Basic site settings'));
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Basic site settings'));
+    }
     $this->drupalGet('admin/config/system/site-information');
     $this->assertText($this->callT('Front page'));
 
@@ -732,8 +745,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Menus" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
-    // assert the text, and visit the URL.
-    $this->assertText($this->callT('Menus'));
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Menus'));
+    }
     $this->drupalGet('admin/structure/menu');
     $this->assertLink($this->callT('Edit menu'));
     $this->assertText($this->callT('Operations'));
@@ -790,7 +805,35 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: structure-content-type - Adding a Content Type.
     // Create the Vendor content type.
 
-    $this->drupalGet('admin/structure/types/add');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Structure'));
+    // Here, you would ideally want to click the "Content types" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Content types'));
+    }
+    $this->drupalGet('admin/structure/types');
+
+    $this->clickLink($this->callT('Add content type'));
+    $this->assertRaw($this->callT('Add content type'));
+    $this->assertText($this->callT('Name'));
+    $this->assertText($this->callT('Description'));
+    $this->assertText($this->callT('Submission form settings'));
+    $this->assertText($this->callT('Title field label'));
+    $this->assertText($this->callT('Preview before submitting'));
+    $this->assertText($this->callT('Explanation or submission guidelines'));
+    $this->assertText($this->callT('Publishing options'));
+    $this->assertText($this->callT('Published'));
+    $this->assertText($this->callT('Promoted to front page'));
+    $this->assertText($this->callT('Sticky at top of lists'));
+    $this->assertText($this->callT('Create new revision'));
+    $this->assertText($this->callT('Display settings'));
+    $this->assertText($this->callT('Display author and date information'));
+    $this->assertText($this->callT('Menu settings'));
+    $this->assertText($this->callT('Available menus'));
 
     // Top of admin/structure/types/add, with Name and Description fields.
     $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').change(); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
@@ -805,6 +848,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'display_submitted' => FALSE,
         'menu_options[main]' => FALSE,
       ], $this->callT('Save and manage fields'));
+    $this->assertRaw($this->callT('Manage fields'));
+
     // Manage fields page after adding Vendor content type.
     $this->setUpScreenShot('structure-content-type-add-confirmation.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
 
@@ -834,21 +879,43 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: structure-content-type-delete - Deleting a Content Type
     // Delete the Article content type.
+    // Note: Navigation tested in previous topic.
     $this->drupalGet('admin/structure/types');
+    // Verify some links for other topics as well here.
+    $this->assertLink($this->callT('Delete'));
+    $this->assertLink($this->callT('Manage fields'));
+    $this->assertLink($this->callT('Manage form display'));
+    $this->assertLink($this->callT('Manage display'));
+
     // Content types list on admin/structure/types, with operations dropdown
     // for Article content type expanded.
     $this->setUpScreenShot('structure-content-type-delete-dropdown.png', 'onLoad="jQuery(&quot;a[href*=\'article/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('.region-content', 950) . '"');
 
     $this->drupalGet('admin/structure/types/manage/article/delete');
+    $this->assertText($this->callT('This action cannot be undone.'));
+    // This test is problematic in non-English, due to entities or something.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertRaw($this->callT('Are you sure you want to delete the @entity-type %label?', TRUE, ['@entity-type' => $this->callT('content type'), '%label' => $this->callT('Article')]));
+    }
+
     // Confirmation page for deleting Article content type.
     $this->setUpScreenShot('structure-content-type-delete-confirmation.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Delete'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertRaw($this->callT('The @entity-type %label has been deleted.', TRUE, ['@entity-type' => $this->callT('content type'), '%label' => $this->callT('Article')]));
+    }
+
     // Confirmation message after deleting Article content type.
     $this->setUpScreenShot('structure-content-type-delete-confirm.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 600) . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
     // Topic: structure-fields - Adding basic fields to a content type.
     // Add Vendor URL field to Vendor content type.
-    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
+    // Navigation to the Manage fields page has been tested in previous topics.
+    $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields');
+    $this->clickLink($this->callT('Add field'));
+    $this->assertRaw($this->callT('Add field'));
+    $this->assertText($this->callT('Add a new field'));
+    $this->assertText($this->callT('Label'));
 
     // Fill in the form in the screenshot: choose Link for field type and
     // type in Vendor URL for the Label, triggering the "change" event to set
@@ -860,11 +927,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'label' => $this->demoInput['vendor_field_url_label'],
         'field_name' => $vendor_url,
       ], $this->callT('Save and continue'));
+
+    $this->assertRaw($this->demoInput['vendor_field_url_label']);
+    $this->assertText($this->callT('Allowed number of values'));
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
+
+    $this->assertRaw($this->demoInput['vendor_field_url_label']);
+    $this->assertText($this->callT('Label'));
+    $this->assertText($this->callT('Help text'));
+    $this->assertText($this->callT('Required field'));
+    $this->assertText($this->callT('Allowed link type'));
+    $this->assertText($this->callT('Allow link text'));
     $this->drupalPostForm(NULL, [
         'settings[link_type]' => 16,
         'settings[title]' => 0,
       ], $this->callT('Save settings'));
+
     // To make the screen shot, go back to the edit form for this field.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/node.' . $vendor . '.field_' . $vendor_url);
     // Field settings page for adding vendor URL field.
@@ -878,6 +956,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'field_name' => $main_image,
       ], $this->callT('Save and continue'));
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
+
+    $this->assertRaw($this->demoInput['vendor_field_image_label']);
+    $this->assertText($this->callT('Label'));
+    $this->assertText($this->callT('Help text'));
+    $this->assertText($this->callT('Required field'));
+    $this->assertText($this->callT('Allowed file extensions'));
+    $this->assertText($this->callT('File directory'));
+    $this->assertText($this->callT('Minimum image resolution'));
+    $this->assertText($this->callT('Maximum upload size'));
+    $this->assertRaw($this->callT('Enable <em>Alt</em> field'));
+    $this->assertRaw($this->callT('<em>Alt</em> field required'));
     $this->drupalPostForm(NULL, [
         'required' => 1,
         'settings[file_directory]' => $this->demoInput['vendor_field_image_directory'],
@@ -941,22 +1030,42 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // screenshot is generated later.
 
     // Topic: structure-taxonomy-setup - Setting Up a Taxonomy.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Structure'));
+    // Here, you would ideally want to click the "Taxonomy" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Taxonomy'));
+    }
     $this->drupalGet('admin/structure/taxonomy');
+    $this->assertText($this->callT('Tags'));
+
     // Taxonomy list page (admin/structure/taxonomy).
     $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container', 800) . '"');
+
     // Add Ingredients taxonomy vocabulary.
-    $this->drupalGet('admin/structure/taxonomy/add');
+    $this->clickLink($this->callT('Add vocabulary'));
+    $this->assertText($this->callT('Name'));
+    $this->assertText($this->callT('Description'));
+
     // Add Ingredients vocabulary from admin/structure/taxonomy/add.
     $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', 'onLoad="jQuery(\'#edit-name\').val(&quot;' . $this->demoInput['recipe_field_ingredients_label'] . '&quot;);' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['recipe_field_ingredients_label'],
         'vid' => $ingredients,
       ], $this->callT('Save'));
+    $this->assertRaw($this->demoInput['recipe_field_ingredients_label']);
+
     // Ingredients vocabulary page
     // (admin/structure/taxonomy/manage/ingredients/overview).
     $this->setUpScreenShot('structure-taxonomy-setup-vocabulary-overview.png' , 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container', 800) . '"');
     // Add 3 sample terms.
-    $this->drupalGet('admin/structure/taxonomy/manage/' . $ingredients . '/add');
+    $this->clickLink($this->callT('Add term'));
+    $this->assertText($this->callT('Name'));
+
     // Fill in the form in the screenshot, with the term name Butter.
     // Name portion of Add term page
     // (admin/structure/taxonomy/manage/ingredients/add).
@@ -977,6 +1086,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save'));
 
     // Add the Ingredients field to Recipe content type.
+    // Skip navigation tests, as they have been tested on topics above.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
     // Fill in the form in the screenshot: choose Taxonomy term for field type
     // and type in Ingredients for the Label.
@@ -987,9 +1097,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'label' => $this->demoInput['recipe_field_ingredients_label'],
         'field_name' => $ingredients,
       ], $this->callT('Save and continue'));
+
+    $this->assertText($this->callT('Type of item to reference'));
+    $this->assertText($this->callT('Allowed number of values'));
     $this->drupalPostForm(NULL, [
         'cardinality' => '-1',
       ], $this->callT('Save field settings'));
+
+    $this->assertText($this->callT('Help text'));
+    $this->assertText($this->callT('Reference type'));
+    $this->assertText($this->callT('Reference method'));
+    $this->assertText($this->callT('Available Vocabularies'));
+    $this->assertText($this->callT("Create referenced entities if they don't already exist"));
+
     $this->drupalPostForm(NULL, [
         'description' => $this->demoInput['recipe_field_ingredients_help'],
         'settings[handler_settings][target_bundles][' . $ingredients . ']' => 1,
@@ -1011,28 +1131,42 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: structure-adding-reference - Adding a reference field.
     // Add the Submitted by field to Recipe content type.
+    // Note: Navigation to this page has been tested in previous topics.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
 
     // Fill in the form in the screenshot: choose content reference for
     // field type and type in Submitted by for the Label.
     // Add field page for adding a Submitted by field to Recipe.
     $this->setUpScreenShot('structure-adding-reference-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['recipe_field_submitted_label'] . '&quot;); jQuery(\'#edit-label\').change(); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
+
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:node',
         'label' => $this->demoInput['recipe_field_submitted_label'],
         'field_name' => $submitted_by,
       ], $this->callT('Save and continue'));
+
     // Field storage settings page for Submitted by field.
     $this->setUpScreenshot('structure-adding-reference-set-field-basic.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container') . '"');
+
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
+
+
+    $this->assertText($this->callT('Label'));
+    $this->assertText($this->callT('Help text'));
+    $this->assertText($this->callT('Required field'));
+    $this->assertText($this->callT('Reference method'));
+    $this->assertText($this->callT('Content types'));
+    $this->assertText($this->callT('Sort by'));
     $this->drupalPostForm(NULL, [
         'description' => $this->demoInput['recipe_field_submitted_help'],
         'required' => 1,
         'settings[handler_settings][target_bundles][' . $vendor . ']' => 1,
         'settings[handler_settings][sort][field]' => 'title',
       ], $this->callT('Save settings'));
+
     // Manage fields page for content type Recipe.
     $this->setUpScreenShot('structure-adding-reference-manage-fields.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . '"');
+
     // Go back and edit the field settings to make the next screenshot,
     // scrolling to the bottom.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/node.' . $recipe . '.field_' . $submitted_by);
@@ -1042,11 +1176,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Submit this form to set the sort direction to its default. It is not
     // set properly in the earlier submit, leading to exceptions in a later
     // test.
+    $this->assertText($this->callT('Sort direction'));
     $this->drupalPostForm(NULL, [], $this->callT('Save settings'));
 
     // Topic: structure-form-editing - Changing Content Entry Forms.
-
+    // Note: Navigation has been tested on other topics.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/form-display');
+
     // Manage form display page for Recipe, Ingredients field area, with
     // Widget drop-down outlined.
     // Note that ideally, the drop-down would be open, but this is not
@@ -1054,6 +1190,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('structure-form-editing-manage-form.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .field-plugin-settings-edit-wrapper, .tabledrag-toggle-weight-wrapper') . 'jQuery(\'#edit-fields-field-' . $ingredients . '-type\').val(\'entity_reference_autocomplete_tags\');' . $this->addBorder('#edit-fields-field-' . $ingredients . '-type') . $this->setWidth('#field-display-overview', 800) . $this->removeScrollbars() . '"');
 
     // Set the Ingredients field to use tag-style autocomplete.
+    $this->assertRaw($this->callT('Autocomplete (Tags style)'));
     $this->drupalPostForm(NULL, [
         'fields[field_' . $ingredients . '][type]' => 'entity_reference_autocomplete_tags',
       ], $this->callT('Save'));
@@ -1102,13 +1239,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: structure-content-display - Changing Content Display.
 
+    // Note: Navigation has been tested on topics above.
     $this->drupalGet('admin/structure/types');
     // Content types list on admin/structure/types, with operations dropdown
     // for Vendor content type expanded.
     $this->setUpScreenShot('structure-content-display_manage_display.png', 'onLoad="jQuery(&quot;a[href*=\'' . $vendor . '/delete\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('.region-content', 950) . '"');
 
+    // Note: Navigation has been tested on topics above.
     // Set the labels for main image and vendor URL to hidden.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
+    $this->assertText($this->callT('Label'));
+    $this->assertRaw($this->callT('Hidden'));
     $this->drupalPostForm(NULL, [
         'fields[field_' . $main_image . '][label]' => 'hidden',
         'fields[field_' . $vendor_url . '][label]' => 'hidden',
@@ -1122,6 +1263,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Use Ajax to open the Edit area for the Vendor URL field.
     $this->drupalPostAjaxForm(NULL, [], 'field_' . $vendor_url . '_settings_edit');
+    // These text tests can be problematic in non-English languages due to
+    // entities etc.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Trim link text length'));
+      $this->assertRaw($this->callT('Open link in new window'));
+      $this->assertRaw($this->callT('Update'));
+    }
+
     // Vendor URL settings form, with trim length cleared, and open link in
     // new window checked.
     $this->setUpScreenShot('structure-content-display_trim_length.png', 'onLoad="' . $this->removeScrollbars() . $this->showOnly('.field-plugin-settings-edit-form') . $this->setWidth('table', 400) . 'jQuery(\'.form-item-fields-field-' . $vendor_url_hyphens . '-settings-edit-form-settings-trim-length input\').val(\'\'); jQuery(\'.form-item-fields-field-' . $vendor_url_hyphens . '-settings-edit-form-settings-target input\').attr(\'checked\', \'checked\'); ' . '"');
@@ -1159,15 +1308,33 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: structure-image-style-create - Setting Up an Image Style.
 
     // Create the image style.
+    // Topic: config-basic - Editing basic site information.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('Media'));
+    // Here, you would ideally want to click the "Image styles" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Image styles'));
+    }
     $this->drupalGet('admin/config/media/image-styles');
+
     $this->clickLink($this->callT('Add image style'));
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['image_style_label'],
         'name' => $this->demoInput['image_style_machine_name'],
       ], $this->callT('Create new style'));
+
+
+    $this->assertText($this->callT('Effect'));
+    $this->assertRaw($this->callT('Scale and crop'));
     $this->drupalPostForm(NULL, [
         'new' => 'image_scale_and_crop',
       ], $this->callT('Add'));
+
     $this->drupalPostForm(NULL, [
         'data[width]' => 300,
         'data[height]' => 200,
@@ -1176,9 +1343,19 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('structure-image-style-create-add-style.png', 'onLoad="' . $this->removeScrollbars() . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container', 800) . $this->setWidth('header', 830) . '"');
 
     // Use the image style in Manage Display for the Vendor.
+    // Navigation has already been tested for this page.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
     // Use Ajax to open the Edit area for the Main Image field.
     $this->drupalPostAjaxForm(NULL, [], 'field_' . $main_image . '_settings_edit');
+    // These text tests can be problematic in non-English languages due to
+    // entities etc.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Image style'));
+      $this->assertRaw($this->callT('Link image to'));
+      $this->assertRaw($this->callT('Nothing'));
+      $this->assertRaw($this->callT('Update'));
+    }
+
     // Main image settings area of Vendor content type.
     $this->setUpScreenShot('structure-image-style-create-manage-display.png', 'onLoad="' . $this->removeScrollbars() . $this->showOnly('.field-plugin-settings-edit-form') . $this->setWidth('table', 400) . 'jQuery(\'.form-item-fields-field-' . $main_image_hyphens . '-settings-edit-form-settings-image-style select\').val(\'' . $this->demoInput['image_style_machine_name'] . '\');' . '"');
     $this->drupalPostForm(NULL, [
@@ -1197,7 +1374,31 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Editors.
 
     // Update the configuration for Basic HTML: add an HR tag.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('Content authoring'));
+    // Here, you would ideally want to click the "Text formats" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Text formats and editors'));
+    }
+    $this->drupalGet('admin/config/content/formats');
+
+    // Hard to figure out which button to click, so assert the text and
+    // then visit the URL.
+    $this->assertLink($this->callT('Configure'));
+    $this->assertText($this->callT('Basic HTML'));
     $this->drupalGet('admin/config/content/formats/manage/basic_html');
+    $this->assertText('CKEditor');
+    $this->assertText($this->callT('Text editor'));
+    // The Tools and Active toolbar words are apparently problematic due to
+    // JavaScript I think. Also Show group names and Available buttons.
+    $this->assertText($this->callT('Filter processing order'));
+    $this->assertText($this->callT('Allowed HTML tags'));
+
     // The button configuration for the editing toolbar uses drag-and-drop,
     // but has a text field behind the scenes. So, save the configuration and
     // then come back for the screenshot.
@@ -1208,6 +1409,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Confirmation message after updating text format.
     $this->setUpScreenShot('structure-text-format-config-summary.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 500) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+
     $this->drupalGet('admin/config/content/formats/manage/basic_html');
     // Button configuration area on text format edit page.
     $this->setUpScreenShot('structure-text-format-config-editor-config.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .form-type-textfield, .form-type-machine-name, #edit-roles--wrapper, .form-type-select, #filters-status-wrapper, .form-type-table, .form-type-vertical-tabs, #edit-actions') . 'jQuery(\'.ckeditor-toolbar\').addClass(\'ckeditor-group-names-are-visible\');' . $this->removeScrollbars() . '"');
