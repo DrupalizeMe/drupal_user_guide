@@ -641,6 +641,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertLink($this->callT('Edit'));
     $this->assertText($this->callT('Content type'));
     $this->assertText($this->callT('Title'));
+    // Some of these filters are mentioned on other topics.
+    $this->assertText($this->callT('Language'));
+    $this->assertText($this->callT('Published status'));
     $this->assertRaw($this->callT('Filter'));
 
     // Content list on admin/content, with filters above.
@@ -1426,26 +1429,49 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $recipe = $this->demoInput['recipe_type_machine_name'];
 
     // Topic: user-new-role - Creating a role.
-
     // Create vendor role.
-    $this->drupalGet('admin/people/roles');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('People'));
+    $this->clickLink($this->callT('Roles'));
+    $this->assertText($this->callT('Anonymous user'));
+    $this->assertText($this->callT('Authenticated user'));
+    $this->assertText($this->callT('Administrator'));
+
     // Roles page (admin/people/roles).
     $this->setUpScreenShot('user-new-role-roles-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header', 630) . $this->setWidth('.layout-container', 600) . '"');
+
     $this->clickLink($this->callT('Add role'));
+    $this->assertText($this->callT('Role name'));
+
     // Add role page (admin/people/roles/add).
     $this->setUpScreenShot('user-new-role-add-role.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').change(); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration') . '"');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendor_type_name'],
         'id' => $vendor,
       ], $this->callT('Save'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertRaw($this->callT('Role %label has been added.', TRUE, ['%label' => $this->demoInput['vendor_type_name']]));
+    }
+
     // Confirmation message after adding new role.
     $this->setUpScreenShot('user-new-role-confirm.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 500) . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
 
     // Topic: user-new-user - Creating a User Account.
-
     // Create a user account for Sweet Honey.
-    $this->drupalGet('admin/people/create');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('People'));
+    $this->clickLink($this->callT('Add user'));
+    $this->assertText($this->callT('Email address'));
+    $this->assertText($this->callT('Username'));
+    $this->assertText($this->callT('Password'));
+    $this->assertText($this->callT('Confirm password'));
+    $this->assertText($this->callT('Status'));
+    $this->assertText($this->callT('Roles'));
+    $this->assertText($this->callT('Notify user of new account'));
+    $this->assertText($this->callT('Picture'));
+    $this->assertText($this->callT('Contact settings'));
+
     // Add new user form (/admin/people/create).
     $this->setUpScreenShot('user-new-user_form.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header', 830) . $this->setWidth('.layout-container', 800) . $this->removeScrollbars() . '"');
     $password = $this->randomString();
@@ -1458,6 +1484,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'notify' => TRUE,
         'files[user_picture_0]' => $this->assetsDirectory . 'honey_bee.jpg',
       ], $this->callT('Create new account'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // Looking for the whole string requires that we know the URL. So,
+      // just look for the two parts separately. This will only work in
+      // English.
+      $this->assertRaw($this->callT('A welcome message with further instructions has been emailed to the new user'));
+      $this->assertRaw($this->demoInput['vendor_2_title']);
+    }
+
     // Confirmation message after adding new user.
     $this->setUpScreenShot('user-new-user-created.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 800) . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
@@ -1478,7 +1512,37 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: user-permissions - Assigning permissions to a role.
 
     // Update the permissions for the Vendor role.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('People'));
+    $this->clickLink($this->callT('Roles'));
+    // Figuring out how to navigate to the permissions page for the Vendor role
+    // is difficult, so just check that the text/links are there and then go
+    // directly.
+    $this->assertLink($this->callT('Edit permissions'));
+    $this->assertText($this->demoInput['vendor_type_name']);
     $this->drupalGet('admin/people/permissions/' . $vendor);
+    $this->assertRaw($this->callT('Edit role'));
+    $this->assertText($this->callT('Post comments'));
+    $this->assertText($this->callT('Administer blocks'));
+    $this->assertText('Contact');
+    $this->assertText($this->callT("Use users' personal contact forms"));
+    $this->assertText('Filter');
+    $this->assertText('Node');
+    $this->assertText('Quick Edit');
+    $this->assertText($this->callT('Access in-place editing'));
+    // These strings are problematic to test in non-English languages.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // This full text string includes a URL, so just assert the pieces, in
+      // English.
+      $this->assertText('Use the');
+      $this->assertText('Restricted HTML');
+      $this->assertText('text format');
+      $this->assertRaw($this->callT('%type_name: Create new content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
+      $this->assertRaw($this->callT('%type_name: Edit own content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
+      $this->assertRaw($this->callT('%type_name: Delete own content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
+      $this->assertRaw($this->callT('%type_name: Edit own content', TRUE, ['%type_name' => $this->demoInput['vendor_type_name']]));
+    }
+
     $this->drupalPostForm(NULL, [
         $vendor . '[access user contact forms]' => 1,
         $vendor . '[use text format restricted_html]' => 1,
@@ -1488,6 +1552,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         $vendor . '[edit own ' . $vendor . ' content]' => 1,
         $vendor . '[access in-place editing]' => 1,
       ], $this->callT('Save permissions'));
+    $this->assertText($this->callT('The changes have been saved.'));
+
     // Confirmation message after updating permissions.
     $this->setUpScreenShot('user-permissions-save-permissions.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 400) . $this->setBodyColor() . $this->removeScrollbars() . '"');
     // Permissions page for Vendor (admin/people/permissions/vendor).
@@ -1498,19 +1564,34 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Update the user 1 account via single user edit.
     $this->drupalGet('admin/people');
+    $this->assertLink($this->callT('Edit'));
+    $this->assertText($this->callT('Name or email contains'));
+    $this->assertRaw($this->callT('Filter'));
+
     // People page (admin/people), with user 1's Edit button outlined.
     $this->setUpScreenShot('user-roles_people-list.png', 'onLoad="' . $this->addBorder('a[href*=&quot;user/1/edit&quot;]') . $this->hideArea('#toolbar-administration') . '"');
+
     $this->drupalGet('user/1/edit');
+    $this->assertText($this->callT('Roles'));
+    $this->assertText($this->callT('Administrator'));
+
     // Roles area on user editing page.
     $this->setUpScreenShot('user-roles_person-edit.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('#edit-roles--wrapper') . 'jQuery(\'#edit-roles-administrator\').attr(\'checked\', 1);' . $this->removeScrollbars() . $this->setBodyColor() . '"');
     $this->drupalPostForm(NULL, [
         'roles[administrator]' => 1,
       ], $this->callT('Save'));
+    $this->assertText($this->callT('The changes have been saved.'));
+
     // Confirmation message after updating user.
     $this->setUpScreenShot('user-roles_message.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 500) . $this->setBodyColor() . '"');
 
     // Update two accounts using bulk edit.
     $this->drupalGet('admin/people');
+    $this->assertRaw($this->callT('Action'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertRaw($this->callT('Add the @label role to the selected users', TRUE, ['@label' => $this->demoInput['vendor_type_name']]));
+    }
+
     // Bulk editing form on People page (admin/people).
     $this->setUpScreenShot('user-roles_bulk.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .view-filters') . 'jQuery(\'#edit-user-bulk-form-0, #edit-user-bulk-form-1\').attr(\'checked\', 1).parents(\'tr\').addClass(\'selected\');' . 'jQuery(\'#edit-action\').val(\'user_add_role_action.' . $vendor . '\');' . $this->removeScrollbars() . $this->setBodyColor() . '"');
     $this->drupalPostForm(NULL, [
@@ -1518,6 +1599,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'user_bulk_form[1]' => 1,
         'action' => 'user_add_role_action.' . $vendor,
       ], $this->callT('Apply to selected items'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertRaw($this->callT('%action was applied to @count items.', TRUE, ['@count' => 2, '%action' => $this->callT('Add the @label role to the selected users', TRUE, ['@label' => $this->demoInput['vendor_type_name']])]));
+    }
+
     // Confirmation message after bulk user update.
     $this->setUpScreenShot('user-roles_message_bulk.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . '"');
 
@@ -1525,9 +1610,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: user-content - Assigning Authors to Content.
 
     // Assign first vendor node to the corresponding vendor user.
-    $this->drupalPostForm('node/3/edit', [
+    // Navigation has been tested on other topics.
+    $this->drupalGet('node/3/edit');
+    $this->assertText($this->callT('Authoring information'));
+    $this->assertText($this->callT('Authored by'));
+
+    $this->drupalPostForm(NULL, [
         'uid[0][target_id]' => $this->demoInput['vendor_1_title'],
       ], $this->callT('Save and keep published'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // The confirm message has a URL in it, so just look for the pieces of
+      // the message.
+      $this->assertText($this->demoInput['vendor_type_name']);
+      $this->assertText($this->demoInput['vendor_1_title']);
+      $this->assertText('has been updated');
+    }
+
     // Confirmation message after content update.
     $this->setUpScreenShot('user-content_updated.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . $this->removeScrollbars() . '"');
     // Go back and take the screenshot of the authoring information.
@@ -1540,7 +1638,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm('node/4/edit', [
         'uid[0][target_id]' => $this->demoInput['vendor_2_title'],
       ], $this->callT('Save and keep published'));
-
   }
 
   /**
