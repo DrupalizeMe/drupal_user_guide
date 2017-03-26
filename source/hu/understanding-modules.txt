@@ -1,50 +1,50 @@
 [[understanding-modules]]
-=== Concept: Modules
+=== Alapfogalom: a modulok
 
 [role="summary"]
-Overview of modules and the functionality they can be used for.
+A modulok, és az általuk elérhető bővítési lehetőségek áttekintése.
 
-(((Module,overview)))
-(((Contributed module,overview)))
-(((Core module,overview)))
-(((Field module,overview)))
-(((Field UI module,overview)))
-(((Menu UI module,overview)))
-(((Node module,overview)))
-(((User module,overview)))
-(((Views module,overview)))
-(((Views UI module,overview)))
-(((Module,core)))
-(((Module,contributed)))
-(((Module,Field)))
-(((Module,Field UI)))
-(((Module,Menu UI)))
-(((Module,Node)))
-(((Module,User)))
-(((Module,Views)))
-(((Module,Views UI)))
+(((Modul,áttekintés)))
+(((Közösségi modul,áttekintés)))
+(((Alaprendszeri modul,áttekintés)))
+(((Field modul,áttekintés)))
+(((Field UI modul,áttekintés)))
+(((Menu UI modul,áttekintés)))
+(((Node modul,áttekintés)))
+(((User modul,áttekintés)))
+(((Views modul,áttekintés)))
+(((Views UI modul,áttekintés)))
+(((Module,alarendszeri)))
+(((Modul,közösségi)))
+(((Modul,Field)))
+(((Modul,Field UI)))
+(((Modul,Menu UI)))
+(((Modul,Node)))
+(((Modul,User)))
+(((Modul,Views)))
+(((Modul,Views UI)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<understanding-drupal>>
 
-==== What is a module?
+==== Mi az a modul?
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site features and adds functionality. You can turn the features and functionality on by _installing_ the module, and you can turn it off by _uninstalling_ the module; before uninstalling, you may need to remove data and configuration related to the feature or functionality. Each module that is installed adds to the time needed to generate pages on your site, so it is a good idea to uninstall modules that are not needed.
+Olyan PHP, JavaScript, és/vagy CSS programkód, ami kibővíti a webhely képességeit és további funkciókat ad hozzá. Ezek engedélyezéséhez a modulokat _telepíteni_ kell, kikapcsolásukhoz pedig _eltávolítani_ a webhelyről. Ez utóbbi művelet előtt azonban fontos, hogy a letiltani kívánt modulok által kezelt adatokat lementsük. Általános jótanács: érdemes a modulok számát mindig a lehető legkisebbre leszorítani egy éles webhelyen. Amire nincs szükségünk, vagy nem használjuk, azt jobb, ha letiltjuk vagy eltávolítjuk.
 
-The core download provides modules for functionality such as:
+Az alaprendszer is modulokból áll (ezeket néha _alapmoduloknak_ is szokták nevezni), melyek a következő általános feladatokat látják el:
 
-* Managing user accounts (the core User module)
+* Felhasználói fiókok kezelése (ez a _User_ modul)
 
-* Managing basic content (the core Node module) and fields (the core Field and Field UI modules; there are also core modules providing field types)
+* Alapvető tartalomkezelés (_Node_ modul) és mezők konfigurációja (_Field_ modul, valamint felülete a _Field UI_ modul – illetve számos alapmodul biztosít még mezőtípusokat)
 
-* Managing navigation menus (the core Menu UI module)
+* Navigáció a webhelyen (_Menu UI_ modul)
 
-* Making lists, grids, and blocks from existing content (the core Views and Views UI modules)
+* A felvitt tartalmak listázása táblázatos, rácsos vagy egyszerű felsorolásokként (_Views_ modul, valamint felülete a _Views UI_ modul)
 
-You can download additional _contributed modules_ from the https://www.drupal.org/project/modules[_Drupal.org_ Module Downloads], or create your own _custom modules_.
+Bármikor további _közösségi modulok_ tölthetők le a https://www.drupal.org/project/modules[Drupal.org gyűjteményéből] térítésmentesen, de némi hozzáértéssel akár _egyedi modulok_ is programozhatóak.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<understanding-themes>>
 * <<understanding-distributions>>
@@ -54,11 +54,11 @@ You can download additional _contributed modules_ from the https://www.drupal.or
 * <<security-concept>>
 * <<security-update-module>>
 
-==== Additional resources
+==== Egyéb források
 
-https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
+https://www.drupal.org/developing/modules[Module developer's guide]: „Modulfejlesztők útmutatója” című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
