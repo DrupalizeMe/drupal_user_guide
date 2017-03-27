@@ -501,6 +501,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Account settings" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
     // non-English languages...
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->assertText($this->callT('Account settings'));
@@ -605,6 +606,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Basic page" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
     // non-English languages...
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->assertText($this->callT('Basic page'));
@@ -748,6 +750,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Here, you would ideally want to click the "Menus" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
     // non-English languages...
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->assertText($this->callT('Menus'));
@@ -1645,24 +1648,58 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    */
   protected function doBlocks() {
 
-    // Topic: block-create-custom - Creating a Custom Block.
+    // Some UI tests from the block-concept topic.
+    $this->drupalGet('admin/structure/block');
+    $this->assertRaw($this->callT('Block layout'));
+    $this->drupalGet('admin/structure/block/library/bartik');
+    // We should test the "Who's online" block title, but due to the ' being
+    // sometimes an entity, this is problematic. So only test in English and
+    // skip the '
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText('Who');
+      $this->assertText('online');
+    }
 
+    // Topic: block-create-custom - Creating a Custom Block.
     // Create a block for hours and location.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Structure'));
+    // Here, you would ideally want to click the "Block layout" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Block layout'));
+    }
+    $this->drupalGet('admin/structure/block');
+    $this->clickLink($this->callT('Custom block library'));
+    $this->clickLink($this->callT('Add custom block'));
+    $this->assertRaw($this->callT('Add custom block'));
+    $this->assertText($this->callT('Block description'));
+    $this->assertRaw($this->callT('Body'));
+
+    // Now navigate directly to the page, without the destination set.
+    // Without the destination set, saving a custom block takes you to the
+    // configure page, which we need to be on for the next topic. Otherwise,
+    // getting to that page involves some kind of obscured URL and is very
+    // difficult to manage.
     $this->drupalGet('block/add');
+
     // Block add page (block/add).
     $this->setUpScreenShot('block-create-custom-add-custom-block.png', 'onLoad="jQuery(\'#edit-info-0-value\').val(&quot;' . $this->demoInput['hours_block_description'] . '&quot;);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'info[0][value]' => $this->demoInput['hours_block_description'],
         'body[0][value]' => $this->demoInput['hours_block_body'],
       ], $this->callT('Save'));
-    // In the test environment, saving a custom block takes you to the
-    // configure page, which we need to be on for the next topic. Otherwise,
-    // getting to that page involves some kind of obscured URL and is very
-    // difficult to manage.
 
     // Topic: block-place - Placing a Block in a Region.
-
     // Configuration page for placing a custom block in the sidebar.
+    $this->assertRaw($this->callT('Configure block'));
+    $this->assertText($this->callT('Title'));
+    $this->assertText($this->callT('Display title'));
+    $this->assertText($this->callT('Region'));
+
     $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(&quot;' . $this->demoInput['hours_block_title'] . '&quot;); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . 'jQuery(\'#edit-region\').val(\'sidebar_second\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
 
     // Place the block in Bartik, sidebar second.
@@ -1675,6 +1712,26 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // About page with placed sidebar block.
     $this->setUpScreenShot('block-place-sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars() . '"');
 
+    // Verify some UI text on several block pages, without checking navigation.
+    $this->drupalGet('admin/structure/block');
+    $this->assertRaw('Bartik');
+    $this->assertText($this->callT('Powered by Drupal'));
+    $this->assertText($this->callT('Footer fifth'));
+    $this->assertText($this->callT('Tools'));
+    $this->assertText($this->callT('Sidebar first'));
+    $this->assertText($this->callT('Sidebar second'));
+    // The Place block link on this page has some other hidden text in it. So,
+    // only test in English.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText('Place block');
+    }
+
+    $this->drupalGet('admin/structure/block/library/bartik');
+    $this->assertRaw($this->callT('Place block'));
+    $this->assertRaw($this->callT('User login'));
+
+    $this->drupalGet('admin/structure/block/block-content');
+    $this->assertLink($this->callT('Edit'));
   }
 
   /**

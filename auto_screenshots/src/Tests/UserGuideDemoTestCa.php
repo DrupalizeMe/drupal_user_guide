@@ -20,13 +20,13 @@ class UserGuideDemoTestCa extends UserGuideDemoTestBase {
    * change 'skip' to one of the other values for each chapter you want to run.
    * See UserGuideDemoTestBase::runList for more information.
    */
-  protected $runList = [
+  protected $notRunList = [
     'doPrefaceInstall' => 'skip',
     'doBasicConfig' => 'skip',
     'doBasicPage' => 'skip',
     'doContentStructure' => 'skip',
     'doUserAccounts' => 'skip',
-    'doBlocks' => 'restore',
+    'doBlocks' => 'skip',
     'doViews' => 'skip',
     'doMultilingualSetup' => 'skip',
     'doTranslating' => 'skip',
