@@ -1746,9 +1746,36 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $recipes_view = $this->demoInput['recipes_view_machine_name'];
 
     // Topic: views-create: Creating a Content List View.
-
     // Create a Vendors view.
-    $this->drupalGet('admin/structure/views/add');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Structure'));
+    // Here, you would ideally want to click the "Views" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Views'));
+    }
+    $this->drupalGet('admin/structure/views');
+    $this->clickLink($this->callT('Add view'));
+    $this->assertText($this->callT('View name'));
+    $this->assertText($this->callT('Show'));
+    $this->assertRaw($this->callT('Content'));
+    $this->assertText($this->callT('of type'));
+    $this->assertText($this->callT('sorted by'));
+    $this->assertText($this->callT('Create a page'));
+    $this->assertText($this->callT('Page title'));
+    $this->assertText($this->callT('Path'));
+    $this->assertText($this->callT('Display format'));
+    $this->assertRaw($this->callT('Table'));
+    $this->assertText($this->callT('Items to display'));
+    $this->assertText($this->callT('Use a pager'));
+    $this->assertText($this->callT('Create a menu link'));
+    $this->assertText($this->callT('Menu'));
+    $this->assertRaw($this->callT('Main navigation'));
+    $this->assertText($this->callT('Link text'));
+
     // Add view wizard.
     $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;).change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:ASC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;);' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
@@ -1771,44 +1798,59 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'name[node__field_' . $main_image . '.field_' . $main_image . ']' => 'node__field_' . $main_image . '.field_' . $main_image,
       ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('fields')]));
+    $this->assertText($this->callT('Create a label'));
+    $this->assertText($this->callT('Image style'));
+    $this->assertText($this->callT('Link image to'));
+    $this->assertRaw($this->callT('Content'));
     $this->drupalPostForm(NULL, [
         'options[custom_label]' => FALSE,
         'options[settings][image_style]' => 'medium',
         'options[settings][image_link]' => 'content',
       ], $this->callT('Apply'));
+
     // Add the body field.
     $this->clickLinkContainingUrl('add-handler');
     $this->drupalPostForm(NULL, [
         'name[node__body.body]' => 'node__body.body',
       ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('fields')]));
+    $this->assertText($this->callT('Create a label'));
+    $this->assertText($this->callT('Formatter'));
+    $this->assertRaw($this->callT('Summary or trimmed'));
     $this->drupalPostForm(NULL, [
         'options[custom_label]' => FALSE,
         'options[type]' => 'text_summary_or_trimmed',
       ], $this->callT('Apply'));
+
     // Fix the configuration for the Title field: remove the label.
     $this->clickLinkContainingUrl('field/title');
+    $this->assertText($this->callT('Create a label'));
     $this->drupalPostForm(NULL, [
         'options[custom_label]' => FALSE,
       ], $this->callT('Apply'));
+
     // Fix the configuration for the Body field: change the trim length.
     $this->clickLinkContainingUrl('field/body');
     $this->drupalPostForm(NULL, [
         'options[settings][trim_length]' => 120,
       ], $this->callT('Apply'));
+
     // Reorder the fields.
     $this->clickLinkContainingUrl('rearrange');
     $this->drupalPostForm(NULL, [
         'fields[title][weight]' => 3,
         'fields[body][weight]' => 4,
       ], $this->callT('Apply'));
+
     // Fix the menu weight.
     $this->clickLinkContainingUrl('menu');
     $this->drupalPostForm(NULL, [
         'menu[weight]' => 20,
       ], $this->callT('Apply'));
+    $this->assertRaw($this->callT('Update preview'));
 
     // Save the view.
     $this->drupalPostForm(NULL, [], $this->callT('Save'));
+
     // Completed vendors view administration page.
     $this->setUpScreenShot('views-create-view.png', 'onLoad="' . $this->hideArea('#toolbar-administration, #views-preview-wrapper, .messages') . $this->removeScrollbars() . '"');
     // View the output, with preloaded images.
@@ -1818,9 +1860,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
 
     // Topic: views-duplicating - Duplicating a View.
-
     // Duplicate the Vendors view.
     $this->drupalGet('admin/structure/views');
+    $this->assertRaw($this->callT('Duplicate'));
+
     // Views page (admin/structure/views), with operations dropdown
     // for Vendor view open.
     $this->setUpScreenShot('views-duplicate_duplicate.png', 'onLoad="' . 'jQuery(&quot;a[href*=\'views/view/' . $vendors_view . '\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration, .disabled') . 'jQuery(&quot;a[href*=\'views/view/content\'], a[href*=\'views/view/block_content\'], a[href*=\'views/view/files\'], a[href*=\'views/view/frontpage\'], a[href*=\'views/view/user_admin_people\'], a[href*=\'views/view/comments_recent\']&quot;).parents(\'tr\').hide();' . $this->removeScrollbars() . '"');
@@ -1834,20 +1877,27 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // the configuration forms.
 
     // Page title.
+    $this->assertText($this->callT('Title'));
     $this->clickLinkContainingUrl('page_1/title');
+    $this->assertRaw($this->callT('The title of this view'));
     $this->drupalPostForm(NULL, [
         'title' => $this->demoInput['recipes_view_title'],
       ], $this->callT('Apply'));
+
     $this->clickLinkContainingUrl('page_1/title');
     // View title configuration screen.
     $this->setUpScreenShot('views-duplicate_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .breadcrumb') . $this->setWidth('layout-container') . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
 
     // Grid style.
+    $this->assertText($this->callT('Format'));
     $this->clickLinkContainingUrl('page_1/style');
+    $this->assertRaw($this->callT('How should this view be styled'));
+    $this->assertRaw($this->callT('Grid'));
     $this->drupalPostForm(NULL, [
         'style[type]' => 'grid',
       ], $this->callT('Apply'));
+    $this->assertRaw($this->callT('Style options'));
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
     // In a real site, changing to Grid would also change the row style to
     // Fields, but for some reason this is not working in the test environment.
@@ -1862,7 +1912,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [], $this->callT('Remove'));
 
     // Filter on Recipe content type.
+    $this->assertRaw($this->callT('Filter criteria'));
     $this->clickLinkContainingUrl('page_1/filter/type');
+    $this->assertRaw($this->callT('filter criterion'));
     $this->drupalPostForm(NULL, [
         'options[value][' . $vendor . ']' => FALSE,
         'options[value][' . $recipe . ']' => $recipe,
@@ -1874,9 +1926,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'name[node__field_' . $ingredients . '.field_' . $ingredients . '_target_id]' => 'node__field_' . $ingredients . '.field_' . $ingredients . '_target_id',
       ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('filter criteria')]));
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
+    $this->assertText($this->callT('Expose this filter to visitors, to allow them to change it'));
+
     $this->drupalPostForm(NULL, [
         'options[expose_button][checkbox][checkbox]' => 1,
       ], $this->callT('Expose filter'));
+    $this->assertText($this->callT('Required'));
+    $this->assertText($this->callT('Label'));
     $this->drupalPostForm(NULL, [
         'options[expose][label]' => $this->demoInput['recipes_view_ingredients_label'],
       ], $this->callT('Apply'));
@@ -1886,6 +1942,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
 
     // Path and menu link title.
+    $this->assertText($this->callT('Page settings'));
     $this->clickLinkContainingUrl('page_1/path');
     $this->drupalPostForm(NULL, [
         'path' => $this->demoInput['recipes_view_path'],
@@ -1896,6 +1953,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Apply'));
 
     // Use Ajax.
+    $this->assertRaw($this->callT('Advanced'));
+    $this->assertText($this->callT('Other'));
+    $this->assertText($this->callT('Use AJAX'));
     $this->clickLinkContainingUrl('page_1/use_ajax');
     $this->drupalPostForm(NULL, [
         'use_ajax' => 1,
@@ -1909,7 +1969,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('views-duplicate_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
     // Topic: views-block - Adding a Block Display to a View.
-
     // Add a block to the Recipes view.
     $this->drupalGet('admin/structure/views/view/' . $recipes_view);
     // Add display button on Recipes view edit page, with Block highlighted
@@ -1928,7 +1987,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Update various settings for the block display.
 
     // Display title.
+    $this->assertRaw($this->callT('Display name'));
     $this->clickLinkContainingUrl('block_1/display_title');
+    $this->assertRaw($this->callT('The name and the description of this display'));
+    $this->assertRaw($this->callT('Administrative name'));
     $this->drupalPostForm(NULL, [
         'display_title' => $this->demoInput['recipes_view_block_display_name'],
       ], $this->callT('Apply'));
@@ -1937,6 +1999,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('block_1/title');
     // Configuring the block title for this display only.
     $this->setUpScreenShot('views-block_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region-breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-title\').val(&quot;' . $this->demoInput['recipes_view_block_title'] . '&quot;);' . $this->setWidth('.content-header, .layout-container') . '"');
+    $this->assertRaw($this->callT('This @display_type (override)', TRUE, ['@display_type' => $this->callT('block')]));
+
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'title' => $this->demoInput['recipes_view_block_title'],
@@ -1944,6 +2008,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Style - unformatted list.
     $this->clickLinkContainingUrl('block_1/style');
+    $this->assertText($this->callT('Unformatted list'));
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'style[type]' => 'default',
@@ -1967,7 +2032,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Remove'));
 
     // Add sort by authored date.
+    $this->assertRaw($this->callT('Sort criteria'));
     $this->clickLinkContainingUrl('add-handler/' . $recipes_view . '/block_1/sort');
+    $this->assertRaw($this->callT('Authored on'));
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'name[node_field_data.created]' => 'node_field_data.created',
@@ -1978,17 +2045,26 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Apply'));
 
     // Instead of pager, display 5 recipes.
+    $this->assertText($this->callT('Pager'));
+    $this->assertRaw($this->callT('Mini'));
     $this->clickLinkContainingUrl('block_1/pager');
+    $this->assertRaw($this->callT('Display a specified number of items'));
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'pager[type]' => 'some',
       ], $this->callT('Apply'));
+    $this->assertRaw($this->callT('Pager options'));
+    $this->assertText($this->callT('Items to display'));
     $this->drupalPostForm(NULL, [
         'pager_options[items_per_page]' => 5,
       ], $this->callT('Apply'));
 
     // Save the view.
     $this->drupalPostForm(NULL, [], $this->callT('Save'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText('The view');
+      $this->assertText('has been saved.');
+    }
     // View saved confirmation message.
     $this->setUpScreenShot('views-block_recipes.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 600) . $this->setBodyColor() . $this->removeScrollbars() . '"');
 
