@@ -2090,7 +2090,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected function doMultilingualSetup() {
 
     // Topic: language-add - Adding a Language.
-
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.
     $this->exportTranslations();
@@ -2100,11 +2099,18 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // for English, not yet. In both cases, we need config/content translation
     // though.
     $this->drupalGet('admin/modules');
+    // Note that module names are not translated.
+    $this->assertText('Language');
+    $this->assertText('Interface Translation');
+    $this->assertText('Content Translation');
+    $this->assertText('Configuration Translation');
+
     $values = [
       'modules[Multilingual][config_translation][enable]' => TRUE,
       'modules[Multilingual][content_translation][enable]' => TRUE,
     ];
     if ($this->demoInput['first_langcode'] == 'en') {
+      // In other languages, these other two modules are already enabled.
       $values += [
         'modules[Multilingual][language][enable]' => TRUE,
         'modules[Multilingual][locale][enable]' => TRUE,
@@ -2113,13 +2119,32 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations. Then rebuild the cache/container.
+    // import the saved translations. Also, this test doesn't seem to work
+    // without some extensive route rebuilding... So, rebuild the cache,
+    // container, and routes.
     $this->importTranslations();
-    $this->resetAll();
+    $this->rebuildContainer();
+    $this->rebuildAll();
+    $this->container->get('router.builder')->rebuild();
     $this->clearCache();
 
     // Add the second language.
-    $this->drupalGet('admin/config/regional/language/add');
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('Regional and language'));
+    // Here, you would ideally want to click the "Languages" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Languages'));
+      // Also test the navigation text for the next topics.
+      $this->assertText($this->callT('Content language and translation'));
+    }
+    $this->drupalGet('admin/config/regional/language');
+    $this->clickLink($this->callT('Add language'));
+    $this->assertText($this->callT('Language name'));
     $this->drupalPostForm(NULL, [
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ], $this->callT('Add language'));
@@ -2127,6 +2152,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
 
     // Place the Language Switcher block in sidebar second (no screenshots).
+    $this->drupalGet('admin/structure/block/library/bartik');
+    $this->assertRaw($this->callT('Language switcher'));
     $this->placeBlock('language_block:language_interface', [
         'region' => 'sidebar_second',
         'theme' => 'bartik',
@@ -2145,10 +2172,29 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
 
     // Topic: language-content-config - Configuring Content Translation
-
     // Set up content translation for Basic page nodes, Custom blocks, and
     // Custom menu links.
-    $this->drupalGet('/admin/config/regional/content-language');
+    // Navigation for this page is tested in the language-content-config topic.
+    $this->drupalGet('admin/config/regional/content-language');
+    $this->assertText($this->callT('Custom language settings'));
+    $this->assertText($this->callT('Content'));
+    $this->assertText($this->callT('Custom block'));
+    $this->assertText($this->callT('Custom menu link'));
+    $this->assertText($this->callT('Basic page'));
+    $this->assertText($this->callT('Basic block'));
+    $this->assertText($this->callT('Custom menu link'));
+    $this->assertText($this->callT('Default language'));
+    $this->assertText($this->callT('Show language selector on create and edit pages'));
+    $this->assertText($this->callT('Title'));
+    $this->assertText($this->callT('Authored by'));
+    $this->assertText($this->callT('Publishing status'));
+    $this->assertText($this->callT('Authored on'));
+    $this->assertText($this->callT('Changed'));
+    $this->assertText($this->callT('Promoted to front page'));
+    $this->assertText($this->callT('Sticky at top of lists'));
+    $this->assertText($this->callT('URL alias'));
+    $this->assertText($this->callT('Body'));
+
     // Top section of Content language settings page
     // (admin/config/regional/content-language).
     $this->setUpScreenShot('language-content-config_custom.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, #edit-cations') . 'jQuery(\'#edit-entity-types-node\').attr(\'checked\', \'checked\'); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', \'checked\'); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', \'checked\');' . $this->removeScrollbars() . '"');
@@ -2189,10 +2235,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: language-content-translate - Translating Content.
 
     // Add a translation of the Home page.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Content'));
+    $this->assertLink($this->callT('Translate'));
+    // It is too complicated at this point to figure out which Translate link
+    // to click on, so jump to the node/1 translations page.
     $this->drupalGet('node/1/translations');
+    $this->assertLink($this->callT('Add'));
     // Screen shot of the translations page for the Home page content item.
     $this->setUpScreenShot('language-content-translate-add.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . '"');
-    $this->drupalPostForm('node/1/translations/add/' . $this->demoInput['first_langcode'] . '/' . $this->demoInput['second_langcode'], [
+
+    // The UI is in Spanish if you use the link, and the instructions in the
+    // User guide say to alter the URL... so go ahead and get the right page.
+    $this->drupalGet('node/1/translations/add/' . $this->demoInput['first_langcode'] . '/' . $this->demoInput['second_langcode']);
+    $this->assertText($this->callT('Title'));
+    $this->assertText($this->callT('Body'));
+    $this->assertText($this->callT('URL path settings'));
+    $this->assertText($this->callT('URL alias'));
+
+    $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['home_title_translated'],
         'body[0][value]' => $this->demoInput['home_body_translated'],
         'path[0][alias]' => $this->demoInput['home_path_translated'],
@@ -2202,7 +2263,26 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: language-config-translate - Translating Configuration.
 
     // Translate the Recipes view.
-    $this->drupalGet('/admin/structure/views/view/' . $recipes_view . '/translate/' . $this->demoInput['second_langcode'] . '/add');
+    // First test the navigation.
+    $this->drupalGet('admin/structure/views');
+    $this->assertLink($this->callT('Translate'));
+    $this->drupalGet('admin/structure/views/view/' . $recipes_view . '/translate');
+    $this->clickLink($this->callT('Add'));
+
+    // Now jump to the actual page we want.
+    $this->drupalGet('admin/structure/views/view/' . $recipes_view . '/translate/' . $this->demoInput['second_langcode'] . '/add');
+    $this->assertText($this->callT('Displays'));
+    $this->assertText($this->callT('Display settings'));
+    $this->assertText($this->callT('Display title'));
+    $this->assertText($this->callT('Exposed form'));
+    $this->assertText($this->callT('Reset'));
+    $this->assertText($this->callT('Options'));
+    $this->assertText($this->callT('Submit button text'));
+    $this->assertText($this->callT('Apply'));
+    $this->assertText($this->callT('Filters'));
+    $this->assertText($this->callT('Expose'));
+    $this->assertText($this->callT('Label'));
+
     // Exposed form options for Recipes view.
     $this->setUpScreenShot('language-config-translate-recipes-view.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . 'jQuery(\'#edit-default, #edit-display-options, #edit-exposed-form, #edit-options\').attr(\'open\', \'open\');' . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
