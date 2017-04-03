@@ -72,13 +72,11 @@ image:images/extend-manual-install-directories.png["Suggested directory structur
 
 . Upload the _.tar.gz_ file (or whatever archive you created) to your site. Place it in either the same location from which you deleted the directory (if replacing an existing module or theme) or the appropriate subdirectory of _modules_ or _themes_ (if adding a new module or theme).
 
-. Extract the files from the _.tar.gz_ archive (or whatever archive you created), making a subdirectory in the same location as the archive file. For example, if you have terminal access to your hosting server (running Linux), you can use a command like:
+. Extract the files from the _.tar.gz_ archive (or whatever archive you created), making a subdirectory in the same location as the archive file. If you do not have terminal access, or your hosting server is not running Linux, your hosting control panel's file manager should provide a way to extract the files. If you have uploaded your own archive in a different format, follow whatever method is appropriate to unpack your archive. If you have terminal access to your hosting server (running Linux) and you are using a tar.gz file, you can use a command like:
 +
 ----
 tar -xzf admin_toolbar-8.x-1.17.tar.gz
 ----
-+
-If you do not have terminal access, or your hosting server is not running Linux, your hosting control panel's file manager should provide a way to extract the files. If you have uploaded your own archive in a different format, follow whatever method is appropriate to unpack your archive.
 
 . Delete the compressed file from the server, unless your unpacking method already deleted it.
 
@@ -101,4 +99,4 @@ If you do not have terminal access, or your hosting server is not running Linux,
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] and https://www.drupal.org/u/vegantriathlete[Marc Isaacson].
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and https://www.drupal.org/u/vegantriathlete[Marc Isaacson].
