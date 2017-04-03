@@ -2304,20 +2304,64 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // English-only screenshots.
     if ($this->demoInput['first_langcode'] == 'en') {
+      // Test navigation and search page.
+      $this->drupalGet('https://www.drupal.org');
+      $this->assertLink('Download & Extend');
+      // clickLink doesn't work on external sites!
+      $this->drupalGet('https://www.drupal.org/download');
+      $this->assertLink('Modules');
+      $this->drupalGet('https://www.drupal.org/project/project_module');
+      $this->assertText('Maintenance status');
+      $this->assertText('Development status');
+      $this->assertText('Module categories');
+      $this->assertText('Core compatibility');
+      $this->assertText('Status');
+      $this->assertText('Search Modules');
+      $this->assertText('Sort by');
+      $this->drupalPostForm(NULL, [], 'Search');
 
-      // Search for Admin Toolbar in 8.x on drupal.org.
+      // Search for Admin Toolbar in 8.x on drupal.org. Just go directly to the
+      // URL.
       $this->drupalGet('https://www.drupal.org/project/project_module?f[0]=im_vid_44%3A13028&f[1]=&f[2]=im_vid_3%3A53&f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
       // Module search box on https://www.drupal.org/project/project_module.
       $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
       // Search results on https://www.drupal.org/project/project_module.
       $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+
+      // Test project page.
       $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+      $this->assertText('Maintenance status');
+      $this->assertText('Development status');
+      $this->assertText('Reported installs');
+      $this->assertText('Downloads');
+      $this->assertText('Maintainers');
+      $this->assertText('Issues');
+      $this->assertText('Statistics');
+      $this->assertText('Resources');
+      $this->assertText('tar.gz');
+
       // Project page for Admin Toolbar module.
       $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info') . $this->removeScrollbars() . '"');
     }
 
     // Topic: extend-maintenance: Enabling and Disabling Maintenance Mode.
-    $this->drupalPostForm('admin/config/development/maintenance', [
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('Development'));
+    // Here, you would ideally want to click the "Maintenance mode" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Maintenance mode'));
+    }
+
+    $this->drupalGet('admin/config/development/maintenance');
+    $this->assertText($this->callT('Put site into maintenance mode'));
+    $this->assertText($this->callT('Message to display when in maintenance mode'));
+
+    $this->drupalPostForm(NULL, [
         'maintenance_mode' => 1,
       ], $this->callT('Save configuration'));
     $this->clearCache();
@@ -2346,7 +2390,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
     }
 
-    $this->drupalGet('admin/modules/install');
+    // Test navigation to install page.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Extend'));
+    $this->clickLink($this->callT('Install new module'));
+    $this->assertText($this->callT('Install from a URL'));
+    $this->assertRaw($this->callT('Install'));
+
     // Install new module page (admin/modules/install).
     $this->setUpScreenShot('extend-module-install-admin-toolbar-do.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
 
@@ -2354,12 +2404,40 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // English-only screenshots.
     if ($this->demoInput['first_langcode'] == 'en') {
-      // Search for actively maintained 8.x themes on drupal.org.
+      // Test navigation and search page.
+      $this->drupalGet('https://www.drupal.org');
+      $this->assertLink('Download & Extend');
+      // clickLink doesn't work on external sites!
+      $this->drupalGet('https://www.drupal.org/download');
+      $this->assertLink('Themes');
+      $this->drupalGet('https://www.drupal.org/project/project_theme');
+      $this->assertText('Maintenance status');
+      $this->assertText('Development status');
+      $this->assertText('Core compatibility');
+      $this->assertText('Status');
+      $this->assertText('Search Themes');
+      $this->assertText('Sort by');
+      $this->drupalPostForm(NULL, [], 'Search');
+
+      // Search for actively maintained 8.x themes on drupal.org. Just go
+      // directly to the URL.
       $this->drupalGet('https://www.drupal.org/project/project_theme?f[0]=im_vid_44%3A13028&f[1]=&f[2]=drupal_core%3A7234&f[3]=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search');
       // Theme search box on https://www.drupal.org/project/project_theme.
       $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
       // Search results on https://www.drupal.org/project/project_theme.
       $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+
+      // Test project page
+      $this->drupalGet('https://www.drupal.org/project/mayo');
+      $this->assertText('Downloads');
+      $this->assertText('Project Information');
+      $this->assertText('Maintenance status');
+      $this->assertText('Development status');
+      $this->assertText('Reported installs');
+      $this->assertText('Downloads');
+      $this->assertText('Issues');
+      $this->assertText('Resources');
+      $this->assertText('tar.gz');
     }
 
     // Topic: extend-theme-install - Downloading and Installing a Theme from
@@ -2373,11 +2451,21 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
     }
 
+    // Test navigation to install page.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Appearance'));
+    $this->clickLink($this->callT('Install new theme'));
+    $this->assertText($this->callT('Install from a URL'));
+    $this->assertRaw($this->callT('Install'));
+
     $this->drupalGet('admin/theme/install');
     // Install new theme page (admin/theme/install).
     $this->setUpScreenShot('extend-theme-install-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
 
     $this->drupalGet('admin/appearance');
+    $this->assertText($this->callT('Uninstalled themes'));
+    $this->assertLink($this->callT('Install and set as default'));
+
     // Mayo theme on the Appearance page.
     $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
 
@@ -2392,6 +2480,35 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     // Topic: extend-deploy - Deploying New Site Features.
+
+    // Test navigation.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('Development'));
+    // Here, you would ideally want to click the "Configuration
+    // synchronization" link. However, the link text includes a span that says
+    // this, plus a div with the description, so using clickLink is not really
+    // feasible. So, just assert the text, and visit the URL. These can be
+    // problematic in non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Configuration synchronization'));
+    }
+    $this->drupalGet('admin/config/development/configuration');
+    $this->clickLink($this->callT('Export'));
+    $this->assertText($this->callT('Full archive'));
+    $this->clickLink($this->callT('Single item'));
+    $this->assertText($this->callT('Configuration type'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText('View');
+    }
+    $this->drupalGet('admin/config/development/configuration');
+    $this->clickLink($this->callT('Import'));
+    $this->assertText($this->callT('Full archive'));
+    $this->clickLink($this->callT('Single item'));
+    $this->assertText($this->callT('Configuration type'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText('View');
+    }
 
     // Export the Vendors view configuration. In the UI, you can get the
     // export via Ajax, but Ajax post did not work in the test. Luckily,
