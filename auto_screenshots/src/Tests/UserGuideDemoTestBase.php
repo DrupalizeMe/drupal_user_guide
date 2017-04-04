@@ -2525,7 +2525,35 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    */
   protected function doPreventing() {
 
+    // Topic: prevent-cache-clear - Clearing the cache.
+    // No screenshots, just UI text tests.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('Development'));
+    // Here, you would ideally want to click the "Performance" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Performance'));
+    }
+    $this->drupalGet('admin/config/development/performance');
+    $this->assertRaw($this->callT('Clear all caches'));
+
     // Topic: prevent-log - Concept: Log.
+    // Test navigation for this and the next few topics.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Reports'));
+    // Here, you would ideally want to click the "Recent log messages" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Recent log messages'));
+      $this->assertText($this->callT('Status report'));
+    }
 
     $this->drupalGet('admin/reports/dblog');
     // Recent log messages report (admin/reports/dblog).
@@ -2553,7 +2581,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: security-cron - Configuring Cron Maintenance Tasks.
 
+    // Test navigation.
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Configuration'));
+    $this->assertText($this->callT('System'));
+    // Here, you would ideally want to click the "Cron" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Cron'));
+    }
     $this->drupalGet('admin/config/system/cron');
+    $this->assertText($this->callT('Cron settings'));
+    $this->assertRaw($this->callT('Save configuration'));
+
     $this->useExampleHome();
     // Cron configuration page (admin/config/system/cron).
     $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"');
@@ -2582,6 +2625,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->importTranslations();
     $this->resetAll();
     $this->clearCache();
+
+    $this->drupalGet('<front>');
+    $this->clickLink($this->callT('Reports'));
+    // Here, you would ideally want to click the "Available updates" link.
+    // However, the link text includes a span that says this, plus a div with
+    // the description, so using clickLink is not really feasible. So, just
+    // assert the text, and visit the URL. These can be problematic in
+    // non-English languages...
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Available updates'));
+    }
+    $this->drupalGet('admin/reports/updates');
+    // This link text is in an earlier topic on security notifications.
+    $this->assertLink($this->callT('Settings'));
+    $this->clickLink($this->callT('Update'));
+    $this->assertRaw($this->callT('Download these updates'));
 
     $this->drupalGet('admin/reports/updates/update');
     // Update page for module (admin/reports/updates/update).
