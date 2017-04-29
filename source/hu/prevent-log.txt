@@ -1,32 +1,32 @@
 [[prevent-log]]
 
-=== Concept: Log
+=== Alapfogalom: a rendszernapló
 
 [role="summary"]
-Overview of logs and where to find recent log messages.
+A webhely rendszernaplójának és annak használatának áttekintése.
 
-(((Log,overview)))
-(((Report,Recent log messages)))
-(((Error,log report)))
-(((Troubleshooting,log report)))
-(((Performance,log report)))
+(((Napló,áttekintés)))
+(((Jelentés,Legutóbbi naplóüzenetek)))
+(((Hiba,rendszernapló)))
+(((Hibaelhárítás,rendszernapló)))
+(((Teljesítmény,rendszernapló)))
 
-//==== Prerequisite knowledge
+//==== Szükséges előismeretek
 
-==== What is a Log?
+==== Mi a rendszernapló?
 
-Your site captures system events in a log to be reviewed by an authorized individual at a later time. The log is a list of recorded events containing usage data, performance data, errors, warnings, and operational information. It is vital to check the log on a regular basis as it is often the only way to tell what is going on.
+A webhely működése során bizonyos események bekövetkeztekor eltárol egy bejegyzést az adott időponttal együtt, így később az erre jogosult adminisztrátorok visszakövethetik a történéseket. Ez egy időrendben rendezett lista a rögzített eseményekről, ami felhasználói és teljesítmény adatokat, hibákat, figyelmeztetéseket, valamint működési információkat tartalmaz. Éppen ezért a webhely biztonságos üzemeltetéséhez elengedhetetlenül fontos rendszeres időközönként ellenőrizni, hogy mi folyik a gépházban.
 
-You can find your site's recent log messages in the _Manage_ administrative menu by navigating to _Reports_ > _Recent log messages_ (_admin/reports/dblog_).
+A Drupal rendszernaplója a _Kezelés_ adminisztrációs menüben, a _Jelentések_ > _Legutóbbi naplóüzenetek_ (vagy admin/reports/dblog) oldalra ellátogatva tekinthető meg.
 
 // Recent log messages report (admin/reports/dblog).
-image:images/prevent-log.png["Recent log messages of a basic site",width="100%"]
+image:images/prevent-log.png["Egy egyszerű webhely legutóbbi naplóüzenetei",width="100%"]
 
-//==== Related topics
+//==== Kapcsolódó témák
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] from https://www.drupal.org/getting-started/admin/reports["Reports"] copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation]
+A https://www.drupal.org/documentation[Drupal közösségi dokumentációjának] (melynek szerzői joga 2000-2016 között annak egyéni közreműködőié) https://www.drupal.org/getting-started/admin/reports["Reports"] (magyarul „Jelentések”) című cikkét https://www.drupal.org/u/diana.lakatos[Diána Lakatos] vette át. Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
