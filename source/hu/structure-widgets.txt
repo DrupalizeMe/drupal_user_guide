@@ -1,43 +1,43 @@
 [[structure-widgets]]
 
-=== Concept: Forms and Widgets
+=== Alapfogalom: űrlapok és adatbevitel
 
 [role="summary"]
-Overview of forms and widgets.
+Ebben a témakörben áttekintjük a különböző adatok webhelyre való bevitelének lehetőségeit, mint amilyenek például az űrlapok is.
 
-(((Content editing form,overview)))
-(((Widget,overview)))
-(((Field,overview)))
-(((Form,overview)))
+(((Tartalomszerkesztő űrlap,áttekintés)))
+(((Felületi elem,áttekintés)))
+(((Mező,áttekintés)))
+(((Űrlap,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
-<<planning-data-types>>
+* <<planning-data-types>>
 
-==== What are forms and widgets?
+==== Adatbevitel űrlapokon keresztül
 
-The content management system software that your site is running allows administrators to edit content and configure settings online, using various web _forms_. In particular, _content editing forms_ are used to edit your site's content, and they are configurable by administrators; settings configuration forms are provided by modules and cannot themselves be configured.
+Tulajdonképpen majdnem minden adminisztrációs művelet, amit a webhelyet működtető tartalomkezelő rendszer lehetővé tesz, _űrlapok_ segítségével történik. Például a felvitt tartalmak szerkesztésére vagy a webhely beállításainak módosítására szolgáló oldalakon egyaránt űrlapok vannak, amelyeken keresztül adatokat vihetünk be a szoftverbe. Ám fontos különbség, hogy míg a tartalombeviteli oldalak tetszőlegesen testreszabhatóak, a beállítási oldalak viszont nem – azokat ugyanis különböző modulok biztosítják.
 
-The data in your site's content is stored in one or more fields that are attached to the content type and/or sub-type. When you configure the content editing form for each content sub-type, you can:
+A webhely tartalmát jelentő adatok sok különböző mezőként vannak tárolva, ezen mezők pedig tartalomtípusokhoz vannak rendelve. Így aztán minden egyes tartalomtípusnak az adatbeviteli oldala (ahol tulajdonképpen az űrlap megjelenik) egyéni igények szerint állítható be:
 
-* Select a _widget_ for each field. A widget defines the method used to enter the data for the field. For example, a taxonomy term can be chosen using an autocomplete field, a select list, or a tags-style field that lets editors add new tags automatically.
+* Minden mezőhöz kiválasztható a kívánt felületi elem. Ez határozza meg, hogy hogyan lehessen bevinni adatot abba a mezőbe. Egy blogbejegyzések felcímkézésére használt taxonómiamezőbe való adatbevitel történhet például legördülő listából, jelölőnégyzetekkel, vagy automatikusan kiegészített szabadszavas címkekeresővel is.
 
-* Configure widget settings. For example, you can choose the size of a plain-text entry field.
+* Ezen felületi elemek működésének részletei is beállíthatóak. Például egy sima szöveges beviteli mező esetében lekorlátozható a legnagyobb megengedett karakterszám.
 
-* Hide one or more fields from the editing form.
+* Elrejthetőek a szükségtelen mezők az űrlapról. (Ettől még a tartalomtípus részét képezik, csak a beviteli űrlapon nem jelennek meg.)
 
-* Reorder the fields.
+* Átrendezhető a mezők sorrendje.
 
-In principle, you can also have multiple content editing forms available for each content sub-type. This feature is rarely used, however; the only exception in common use is for the user profile fields: you can use different forms for user registration and user editing. For example, you might have a limited set of fields shown when users first register on the site, and more fields shown later on when they edit their profiles.
+Elvben valamennyi tartalomtípushoz külön beviteli űrlap is tartozhat. Habár ez egy ritkán használt lehetőség, az egyetlen gyakori példa, amikor egy webhelyen a felhasználói entitásokhoz két külön beviteli űrlapot hoznak létre: egy „csökkentett módú”, csak a legszükségesebb mezőket bekérőt a regisztrációhoz, és egy teljes, valamennyi mezőt felkínálót a későbbi profilszerkesztéshez.  Így a látogatók könnyen és gyorsan tudnak regisztrálni csak a kötelező mezőket kitöltve, majd később, ha már bejelentkeztek, bármikor szerkeszthetik felhasználói adatlapjukat az összes mező elérésével.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<structure-form-editing>>
 * <<structure-view-modes>>
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
