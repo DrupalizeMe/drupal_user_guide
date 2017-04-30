@@ -1,47 +1,45 @@
 [[planning-workflow]]
 
-=== Concept: Editorial Workflow
+=== Alapfogalom: a szerkesztői munkafolyamat
 
 [role="summary"]
-Overview of the editorial workflow to manage content on a website.
+Ebben a témakörben azt járjuk körbe, milyen szerkesztői munkafolyamatokat alakíthatunk ki webhelyünkön.
 
-(((Editorial Workflow,overview)))
-(((Published flag,overview)))
-(((Unpublished flag,overview)))
-(((Revision,overview)))
+(((Szerkesztői munkafolyamat,áttekintés)))
+(((Közzététel jelzője,áttekintés)))
+(((Nem közzétett jelzője,áttekintés)))
+(((Változat,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<understanding-drupal>>
 
-==== What is an Editorial Workflow?
+==== Mit értünk szerkesztői munkafolyamat alatt?
 
-An Editorial Workflow is the process organizations follow to create, review, edit and publish content.
+Ha röviden kellene összefoglalnunk, akkor azt mondhatnánk, hogy egy tartalmi egység (például blogbejegyzés) életciklusának különböző fázisairól van szó.
 
-Depending on the size and processes of the organization, multiple people in different roles can be part of the process. For example, content creators collect information and write content, editors review, edit, ask for changes, and publish the content once it's considered ready to be shared with the audience.
+Van, hogy egy webhelyet csak pár személy szerkeszt (például egy blogon maga a szerző és esetleg egy korrektor mellette), és van olyan is, amikor több száz, tartalomszerkesztési joggal felruházott felhasználó teheti ugyanezt egyszerre – például egy nagyvállalati intranetként használt Drupalon. Elképzelhető például olyan szervezeti működés, hogy ha bármelyik alkalmazottnak ötlete támad, hogy miről kellene cikket írni a vállalati újságba, akkor megvan a jogosultsága felvinni azt egy kezdeti piszkozatként. Ezt követően a kiadvány szerkesztői szemlézik a beérkezett vázlatokat, és amelyiket érdemesnek találják rá, azt teljes cikké formálják. Ezt követően a kommunikációs osztály képviselője kijavítja a kész cikkekben maradt esetleges hibákat, majd jóváhagyásra továbbküldi a vezetőségnek. Végül az igazgatóság döntést hoz és közzéteszi a cikkeket.
 
-In your site, content types can have either a Published or an Unpublished flag to track their workflow states, that you can set for each content item when saving:
+E példa számos életciklus-fázist igényelne, a Drupal alapértelmezés szerint azonban csak ezt a két állapotot kínálja:
 
-* Published content items are visible to all visitors of the site.
+* A _Közzétett_ állapotú tartalmak a webhely valamennyi látogatója számára elérhetőek.
 
-* Unpublished content items are not visible to the visitors of the site, but can be seen by authenticated users who have the permissions to view unpublished versions of specific content items.
+* A _Rejtett_ állapotú tartalmak viszont csak azon felhasználók számára láthatók, akik rendelkeznek az adott tartalomtípus rejtett elemeinek megtekintési jogosultságával.
 
-Most content entity types support revision tracking, if it is enabled by an administrator for the entity sub-type. If you have revision tracking enabled, the software will store old versions of the content each time it's revised, and add notes about what is changed. This allows you to look at the history and revert to older versions.
+A legtöbb tartalomtípusnál az adminisztrátor engedélyezheti a változatkövetést. Bekapcsolva a Drupal minden egyes mentéskor megőrzi a mentés előtti állapotot is. A módosításokhoz mentéskor megjegyzést fűzhetünk, így követhető válik, hogy mi változott. Ily módon tulajdonképpen visszatekinthetünk az időben, sőt, vissza is állíthatjuk a tartalmat egy korábbi állapotára.
 
-Using the Unpublished flag and Revisions, you can build an editorial workflow that lets content creators and editors work on the live site without displaying the content to visitors. When the content is ready to be published, all they need to do is save it as Published.
+E két funkcióval – a közzétett/rejtett kapcsolóval és a változatkövetéssel – a tartalmak szerzői és szerkesztői szabályozhatják, hogy mi kerül nyilvánosságra az éles webhelyen. Amint egy tartalom készen áll a publikálásra, nincs más teendőjük, csupán közzétett állapotúként elmenteni újra.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<content-create>>
 * <<content-edit>>
 
-==== Additional resources
+==== Egyéb források
 
-Talking about online content, organizations would also want to consider post-publication phases of the editorial workflow: content teams might need to update already published content. Some organizations might need a more complex workflow with the options to configure which content type goes through the workflow process, set up user roles and permissions, set different workflow states (for example draft, needs review, published).
-
-For more complex workflows, you can add install or more modules from the https://www.drupal.org/documentation/modules/workbench[contributed Workbench Suite module] to your site.
+Mivel online médiumról beszélünk, ahol a tartalmak életciklusa nem ér véget a közzététellel, ezért a szerkesztői munkafolyamatok ugyanúgy kiterjedhetnek a már nyilvános tartalmak utólagos kiegészítésére, folyamatos frissen tartására és archiválására is. Valamint ahogy intranetes példánkban fentebb említettük, egyes szervezeteknek bonyolultabb szerkesztői munkafolyamatai is lehetnek. Kifejezetten ezekre az igényekre ad megoldást a https://www.drupal.org/documentation/modules/workbench[Workbench Suite] közösségi modul.
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] at http://pronovix.com/[Pronovix], and https://www.drupal.org/u/gdunham[Grant Dunham].
+Írta és szerkesztette: https://www.drupal.org/u/diana.lakatos[Lakatos Diána] (https://drupal.org/pronovix[Pronovix]) és https://www.drupal.org/u/gdunham[Grant Dunham]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
