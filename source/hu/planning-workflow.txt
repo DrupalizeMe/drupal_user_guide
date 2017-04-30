@@ -16,19 +16,19 @@ Ebben a témakörben azt járjuk körbe, milyen szerkesztői munkafolyamatokat a
 
 ==== Mit értünk szerkesztői munkafolyamat alatt?
 
-Ha röviden kellene összefoglalnunk, akkor azt mondhatnánk, hogy egy tartalmi egység életciklusának különböző fázisairól van szó.
+Ha röviden kellene összefoglalnunk, akkor azt mondhatnánk, hogy egy tartalmi egység (például blogbejegyzés) életciklusának különböző fázisairól van szó.
 
-Van, hogy egy webhelyet csak pár személy szerkeszt (például egy blogon maga a bejegyzések szerzője és esetleg egy korrektor mellette), és van olyan is, amikor többszáz, tartalomszerkesztési joggal felruházott személy teszi ugyanezt egyszerre – például egy nagyvállalat intraneteként használt Drupalon. Elképzelhető például olyan szervezeti működés, hogy ha bármelyik alkalmazottnak ötlete támad, hogy miről kellene cikket írni a vállalati újságba, akkor megvan a jogosultsága felvinni azt egy kezdeti piszkozatként. Ezt követően a kiadvány szerkesztői szemlézik a beérkezett vázlatokat, és amelyiket érdemesnek találják rá, azt megírják egy teljes cikké. Ezt követően a kommunikációs osztály képviselője kijavítja a kész cikkekben maradt esetleges hibákat, majd jóváhagyásra továbbküldi a vezetőségnek. Végül az igazgatóság pedig döntést hoz és közzéteszi a cikkeket.
+Van, hogy egy webhelyet csak pár személy szerkeszt (például egy blogon maga a szerző és esetleg egy korrektor mellette), és van olyan is, amikor több száz, tartalomszerkesztési joggal felruházott felhasználó teheti ugyanezt egyszerre – például egy nagyvállalati intranetként használt Drupalon. Elképzelhető például olyan szervezeti működés, hogy ha bármelyik alkalmazottnak ötlete támad, hogy miről kellene cikket írni a vállalati újságba, akkor megvan a jogosultsága felvinni azt egy kezdeti piszkozatként. Ezt követően a kiadvány szerkesztői szemlézik a beérkezett vázlatokat, és amelyiket érdemesnek találják rá, azt teljes cikké formálják. Ezt követően a kommunikációs osztály képviselője kijavítja a kész cikkekben maradt esetleges hibákat, majd jóváhagyásra továbbküldi a vezetőségnek. Végül az igazgatóság döntést hoz és közzéteszi a cikkeket.
 
 E példa számos életciklus-fázist igényelne, a Drupal alapértelmezés szerint azonban csak ezt a két állapotot kínálja:
 
 * A _Közzétett_ állapotú tartalmak a webhely valamennyi látogatója számára elérhetőek.
 
-* A _Rejtett_ állapotú tartalmak viszont csak azoknak a felhasználóknak láthatóak, akik rendelkeznek az adott tartalomtípus rejtett elemeinek megtekintésének jogosultságával.
+* A _Rejtett_ állapotú tartalmak viszont csak azon felhasználók számára láthatók, akik rendelkeznek az adott tartalomtípus rejtett elemeinek megtekintési jogosultságával.
 
-A legtöbb tartalomtípusnál az adminisztrátor engedélyezheti a változatkövetést. Bekapcsolva a Drupal minden egyes mentéskor megőrzi az előző állapotait is ugyanannak a tartalomnak, amelyekhez így megjegyzést fűzhetünk, hogy pontosan mi is változott a legutolsó módosításkor. Ily módon tulajdonképpen visszatekinthetünk az időben, sőt, vissza is állíthatjuk a tartalmat egy korábbi állapotára.
+A legtöbb tartalomtípusnál az adminisztrátor engedélyezheti a változatkövetést. Bekapcsolva a Drupal minden egyes mentéskor megőrzi a mentés előtti állapotot is. A módosításokhoz mentéskor megjegyzést fűzhetünk, így követhető válik, hogy mi változott. Ily módon tulajdonképpen visszatekinthetünk az időben, sőt, vissza is állíthatjuk a tartalmat egy korábbi állapotára.
 
-E két funkcióval – a közzétett/rejtett kapcsolóval és a változatkezeléssel – a tartalmak szerzői és szerkesztői szabályozhatják, hogy mi kerül nyilvánosságra az éles webhelyen. Amint egy tartalom készen áll a publikálásra, nincs más teendőjük, csupán közzétett állapotúként elmenteni újra.
+E két funkcióval – a közzétett/rejtett kapcsolóval és a változatkövetéssel – a tartalmak szerzői és szerkesztői szabályozhatják, hogy mi kerül nyilvánosságra az éles webhelyen. Amint egy tartalom készen áll a publikálásra, nincs más teendőjük, csupán közzétett állapotúként elmenteni újra.
 
 ==== Kapcsolódó témák
 
@@ -37,7 +37,7 @@ E két funkcióval – a közzétett/rejtett kapcsolóval és a változatkezelé
 
 ==== Egyéb források
 
-Mivel online médiumról beszélünk, ahol a tartalmak életciklusa nem ér véget a közzététellel, ezért a szerkesztői munkafolyamatok ugyanúgy kiterjedhetnek a már nyilvános tartalmak utólagos kiegészítésére, folyamatos frissen tartására és archiválására is. Valamint ahogy intranetes példánkban fentebb említettük, egyes szervezeteknek bonyolultabb szerkesztői munkafolyamataik lehetnek. Kifejezetten ezekre az igényekre ad választ a https://www.drupal.org/documentation/modules/workbench[Workbench Suite] közösségi modul.
+Mivel online médiumról beszélünk, ahol a tartalmak életciklusa nem ér véget a közzététellel, ezért a szerkesztői munkafolyamatok ugyanúgy kiterjedhetnek a már nyilvános tartalmak utólagos kiegészítésére, folyamatos frissen tartására és archiválására is. Valamint ahogy intranetes példánkban fentebb említettük, egyes szervezeteknek bonyolultabb szerkesztői munkafolyamatai is lehetnek. Kifejezetten ezekre az igényekre ad megoldást a https://www.drupal.org/documentation/modules/workbench[Workbench Suite] közösségi modul.
 
 
 *Közreműködők*
