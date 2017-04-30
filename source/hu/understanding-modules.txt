@@ -30,9 +30,9 @@ A modulok, és az általuk elérhető bővítési lehetőségek áttekintése.
 
 ==== Mi az a modul?
 
-Olyan PHP, JavaScript, és/vagy CSS programkód, ami kibővíti a webhely képességeit és további funkciókat ad hozzá. Ezek engedélyezéséhez a modulokat _telepíteni_ kell, kikapcsolásukhoz pedig _eltávolítani_ a webhelyről. Ez utóbbi művelet előtt azonban fontos, hogy a letiltani kívánt modulok által kezelt adatokat lementsük. Általános jótanács: érdemes a modulok számát mindig a lehető legkisebbre leszorítani egy éles webhelyen. Amire nincs szükségünk, vagy nem használjuk, azt jobb, ha letiltjuk vagy eltávolítjuk.
+Olyan PHP, JavaScript, és/vagy CSS programkód, amely kibővíti a webhely képességeit és további funkciókat ad hozzá. A modulokat _telepíteni_ és engedélyezni kell használat előtt, kikapcsolásukhoz pedig letiltani vagy _eltávolítani_ a webhelyről. Ez utóbbi művelet előtt szükség lehet a letiltani kívánt modulok által kezelt adatok lementésére. Általános jótanács: érdemes a modulok számát mindig a lehető legkisebbre leszorítani egy éles webhelyen. Amire nincs szükségünk, vagy nem használjuk, azt jobb ha letiltjuk vagy eltávolítjuk.
 
-Az alaprendszer is modulokból áll (ezeket néha _alapmoduloknak_ is szokták nevezni), melyek a következő általános feladatokat látják el:
+Az alaprendszer is tartalmaz modulokat (ezeket _alapmoduloknak_ is szokták nevezni), melyek például a következő általános feladatokat látják el:
 
 * Felhasználói fiókok kezelése (ez a _User_ modul)
 
@@ -40,9 +40,9 @@ Az alaprendszer is modulokból áll (ezeket néha _alapmoduloknak_ is szokták n
 
 * Navigáció a webhelyen (_Menu UI_ modul)
 
-* A felvitt tartalmak listázása táblázatos, rácsos vagy egyszerű felsorolásokként (_Views_ modul, valamint felülete a _Views UI_ modul)
+* A tartalmak listázása táblázatos, rácsos vagy egyszerű felsorolásokként (_Views_ modul, valamint felülete a _Views UI_ modul)
 
-Bármikor további _közösségi modulok_ tölthetők le a https://www.drupal.org/project/modules[Drupal.org gyűjteményéből] térítésmentesen, de némi hozzáértéssel akár _egyedi modulok_ is programozhatóak.
+Bármikor további _közösség által fejlesztett modulok_ tölthetők le a https://www.drupal.org/project/modules[Drupal.org gyűjteményéből] ingyenesen, de némi hozzáértéssel és programozási tapasztalattal akár _egyedi modulok_ is készíthetőek.
 
 ==== Kapcsolódó témák
 
