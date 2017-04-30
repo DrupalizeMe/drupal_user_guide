@@ -1,44 +1,44 @@
 [[structure-text-formats]]
 
-=== Concept: Text Formats and Editors
+=== Alapfogalom: szövegformátumok és -szerkesztők
 
 [role="summary"]
-Overview of text formats, filters, editors, and cross-site scripting.
+Szövegformátumok, -szerkesztők, és azok szűrőinek áttekintése, a webhelyközi parancsprogram-támadásokkal (XSS) való összefüggésük megértése.
 
-(((Text format,overview)))
-(((User-entered content,filtering)))
-(((Security,text format)))
-(((Security,cross-site scripting)))
-(((Cross-site scripting (XSS),preventing)))
-(((XSS (Cross-site scripting),preventing)))
+(((Szövegformátum,áttekintés)))
+(((Felhasználó által létrehozott tartalom,szűrés)))
+(((Biztonság,szövegformátum)))
+(((Biztonság,webhelyközi parancsfájlok)))
+(((Webhelyközi parancsprogram-támadás (XSS),megelőzés)))
+(((XSS (webhelyközi parancsprogram-támadás),megelőzés)))
 
-// ==== Prerequisite knowledge
+// ==== Szükséges előismeretek
 
-==== What are text formats and filters?
+==== Mik a szövegszerkesztők és -formátumok?
 
-_Text formats_ change how HTML tags and other text are processed and displayed on your site. Text formats are composed of a series of _filters_, each of which transforms text. When users create content, a text format is associated with the content, and the full, original text is stored in the database. The content is then passed through the filters in the text format before it becomes output on the site.
+A tartalomkezelő rendszerekben jellemzően szöveges tartalmakat tudunk rögzíteni és szerkeszteni. Az egyszerűbb formázás érdekében ehhez gyakran használunk szövegszerkesztőt. Szövegek beküldésére szolgáló beviteli mezők gyakran elérhetőek nyilvános felületekről is – mint például a hozzászólás-beküldő vagy kapcsolatfelvételi űrlapokon – és adminisztrációs felületről is egyaránt (például cikkek beküldésekor). A Drupal-alapú webhelyen tárolt szövegek _formátuma_ azt határozza meg, hogy milyen HTML-elemeket tartalmazhat, ezáltal mennyire formázható meg a szöveg. Egy szövegformátum több _szűrőből_ épül fel, melyek mindegyike valamilyen módon átalakítja a kapott szöveget. Amikor a felhasználó valamilyen szöveget ír be a webhelyünkön (pl. hozzászólást küld be vagy kitölti a kapcsolatfelvételi űrlapot), azt egy előre meghatározott szövegformátum segítségével teszi, miközben az eredeti – módosítások nélküli – szöveg kerül letárolásra az adatbázisban. Így amikor legközelebb meg kell jeleníteni a szöveget, a Drupal kiolvassa az adatbázisból a nyers karaktersorozatot, alkalmazza rá a hozzárendelt formátumot (azaz a szűrőit egyesével érvényesíti rajta), és csak azután küldi ki az így kapott formázott végeredményt a böngésző felé.
 
-The core Filter module provides text format functionality, and the core Standard installation profile sets up _Basic HTML_, _Restricted HTML_, and _Full HTML_ text formats. Each text format has an associated permission, so that you can allow only trusted users to use permissive text formats. This restricts untrusted users to text formats like _Basic HTML_, which filters out dangerous HTML tags.
+Mindezt az alaprendszer _Filter_ modulja végzi, ami alapértelmezetten be van kapcsolva, ha webhelyünket az Általános telepítési profillal hoztuk létre. Ehhez a telepítési profilhoz gyárilag kapunk egy „Alap HTML”, egy „Korlátozott HTML” és egy „Teljes HTML” nevű szövegformátumot. Mindegyik szövegformátum önálló jogosultságokkal bír, így könnyen szabályozható, hogy a felhasználók mely szerepköréhez mennyire megengedő vagy éppen szigorú szűrésű formátumokat engedélyezünk. Így például a be nem jelentkezett felhasználóknak (másképpen azonosítatlan látogatóknak) a hozzászólások beküldéséhez elegendő csupán az _Alap HTML_ szövegformátum engedélyezése, így nem tudnak ártó szándékú tartalmat a webhelyünkre juttatni.
 
-==== What are the editors associated with text formats?
+==== Mik a szövegformátumokhoz rendelt -szerkesztők?
 
-Each text format can be associated with an editor, such as a visual WYSIWYG (What You See Is What You Get) HTML editor. The core Text Editor module provides the ability to associate editors with text formats, and to configure the editors (such as adding and removing buttons from their toolbars). The core CKEditor module provides the industry-standard editor known as CKEditor, so that it can be used to edit HTML content on your site.
+A jogosultságokon túl a szövegformátumokhoz szerkesztőprogramok is társíthatók, mint például az „azt kapod, amit látsz” (WYSIWYG) típusú _CKEditor_. Ezt az alaprendszer _Text Editor_ modulja biztosítja, valamint ugyanez teszi lehetővé azok testreszabását is (például további formázási műveletek gombjainak kihelyezését az eszközsorukra). Egy másik alaprendszerben található modul, a _CKEditor_ pedig – nevéből könnyen kitalálhatóan – a mára már széleskörűen elterjedt CKEditor nevű JavaScript-alapú szövegszerkesztőt integrálja a webhely működésébe.
 
-==== What is cross-site scripting?
+==== Mi a webhelyközi parancsprogram-támadás?
 
-Cross-site scripting (XSS) is a security vulnerability typically found in websites. In a site that is not well protected, malicious users can enter script into web pages that are viewed by other users (for example, in a comment or in the body of a page). A cross-site scripting vulnerability may be used by attackers to login as another user. It is important to configure the text formats of your website to prevent such abuse.
+Az angol eredeti elnevezéssel Cross-site scripting (rövidítve XSS, mely magyarra leginkább talán „webhelyközi parancsprogram-támadásként” fordítható le) egy elterjedt hackelési módszer, ami egyes webhelyek sérülékenységére épít. Lényege, hogy egy nem megfelelően védett webhelyre az ártó szándékú felhasználók képesek bejuttatni olyan szkripteket, amelyek más, ártatlan látogatók oldalmegtekintései során azzal együtt letöltődnek. Az egyik leggyakoribb célja az effajta támadásoknak a gyanútlan látogatók felhasználói fiókjába való bejelentkezés. A webhelyközi parancsprogram-támadás a webhely nyilvánosság számára elérhető szövegbeviteli lehetőségein (pl. hozzászólás, fórum, vendégkönyv, stb.) keresztül valósítható meg a legkönnyebben. Emiatt kell odafigyelni a szövegformátumok különböző szerepkörök részére való engedélyezésére.
 
-==== Related topics
+==== Kapcsolódó témák
 
 <<security-concept>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/documentation/modules/filter[_Drupal.org_ community documentation page "Filter module: text formats that filter user input"]
+* https://www.drupal.org/documentation/modules/filter[_Filter_ modul: felhasználók szövegbevitelének szűrése]: közösségi dokumentáció a Drupal.org-on angol nyelven.
 
-* https://en.wikipedia.org/wiki/Cross-site_scripting[Wikipedia page "Cross-site scripting"]
+* https://en.wikipedia.org/wiki/Cross-site_scripting[Cross-site scripting]: szócikk az angol Wikipédián.
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta és szerkesztette https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
