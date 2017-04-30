@@ -1,48 +1,48 @@
 [[install-dev-sites]]
 
-=== Concept: Development Sites
+=== Alapfogalom: fejlesztői környezet
 
 [role="summary"]
-Overview of development sites with an example deployment workflow for site building.
+A fejlesztői másolat fontosságának megértése egy példa élesítési folyamaton keresztül.
 
-(((Development site,overview)))
-(((Deployment workflow,overview)))
-(((Staging site,overview)))
-(((Installing,development site)))
-(((Installing,staging site)))
+(((Fejlesztői webhely,áttekintés)))
+(((Üzembe helyezési munkafolyamat,áttekintés)))
+(((Élesítésre váró webhely,áttekintés)))
+(((Telepítés,fejlesztői webhely)))
+(((Telepítés,élesítésre váró webhely)))
 
-//==== Prerequisite knowledge
+//==== Szükséges előismeretek
 
-==== What are Development Sites?
+==== Mit nevezünk egy webhely fejlesztői környezetének?
 
-Development Sites are different copies of the same site used for developing, updating, and testing a site without risking the integrity of the live site.
+A látogatók által használt, úgynevezett _éles_ webhelyről egy azzal lehetőleg majdnem mindenben megegyező másolatot (vagy többet) üzemeltetnek párhuzamosan a fejlesztők, hogy a folyamatos módosítások, változtatások, frissítések és mindezek tesztelése ne veszélyeztesse a valódi felhasználók tevékenységét, vagy az éles webhely megfelelő működését.
 
-An example deployment workflow for site building will usually include the sites mentioned below:
+Az alábbiakban bemutatjuk a webfejlesztési munkafolyamat talán leggyakoribb felállását, amelyben nem egy, hanem rögtön három másolata létezhet párhuzamosan ugyanannak a webhelynek:
 
-Local environment::
-  The development process starts with developers working on new features, bug fixes, theming, and configuration in their local environment.
+Helyi gépen futó webhelymásolat::
+  Mielőtt a fejesztők bármilyen módosítást hajtanának végre a webhely forráskódján vagy konfigurációján, előtte lemásolják azt a saját számítógépükre és egy azon futó webszerveren (localhost) futtatják azt.
 
-Development site::
-  Developers push the changes they've been working on to the development site. For a team of more than one developer, version control is usually used. Git is a version control system that tracks your files for any changes. You can then commit those changes to a repository. Using Git allows team members to work on the same site without overriding each other's work. It also makes it possible to easily roll back to previous stages of the development.
+Fejlesztés alatt álló webhelymásolat::
+  Amikor a változtatásuk elérte a kívánt célt, a módosított kódrészletet visszateszik ennek a webhelymásolatnak a forráskódjába. Ha egynél több fejlesztő vesz részt a közös munkában, akkor a változtatások könnyebb átláthatósága érdekében szinte mindig használnak valamilyen verziókövető rendszert. Ilyen például a Drupal világában szintén elterjedt Git, amely folyamatosan nyomonköveti egy adott könyvtárban lévő fájlok minden módosítását. Így a kiválasztott változtatások bármikor beküldhetőek a nyilvántartásába. Ez lehetővé teszi a programozócsapatok számára, hogy tagjaik úgy dolgozzanak ugyanazon a fejlesztés alatt álló webhelymásolaton, hogy nem írják felül egymás munkáját. Szintén a Git nyilvántartásának köszönhetően szükség esetén bármikor könnyen visszaállítható egy korábbi állapot.
 
-Staging site::
-  The staging site can be used for testing, or presenting the changes to the client for approval. QA (Quality Assurance) and UAT (User Acceptance Testing) are most often carried out on the staging site. It is recommended to have live content on both the development and staging sites, so that you can test how the new features will work with the existing content.
+Élesítésre váró webhelymásolat::
+  Amikor elegendő új funkció elkészült vagy hiba ki lett javítva, akkor azt leklónozzák egy következő szintű másolatra, ahol tesztelni lehet a friss fejlesztéseket, majd a megrendelőnek bemutatni őket. A minőségbiztosítási (angolul Quality Assurance, rövidítve QA) és megrendelő-oldali átvételi (User Acceptance Testing, UAT) teszteket leggyakrabban ezen a már élesítésre kész másolaton végzik el. Éppen ezért ez alá (de sokszor még az ez előtti munkafázisnak helyt adó fejlesztői másolat alá is) az éles webhely lehetőleg valamennyire friss adatbázisát szokás betölteni. Így biztosítható annak ellenőrzése, hogy a nemrég elvégzett fejlesztések nem fognak majd gondot okozni az elmúlt időszakban végzett tartalommódosításokkal.
 
-Production site::
-  The live site on the web available to visitors. It contains new features that have been proven safe to go live.
+Éles webhely::
+  Ez már nem másolat, hanem maga az igazi webhely, amit a látogatók elérhetnek a nyílt interneten keresztül. Ez már kizárólag csak olyan új módosításokat tartalmaz, amelyekról egyszer már meggyőződtek az üzemeltetők, hogy valóban jól működnek és biztonságosak.
 
-Based on the project's size, scope, requirements, or stakeholders, stages from the above workflow can be removed, or additional stages can be added. For example, a testing site before staging can be added to separate testing and user acceptance processes.
+Ez csak egy általános modell, amit bemutattunk, a projekt nagyságától, az elvárások kiterjedtségétől, vagy a műszaki bonyolultságtól függően a fenti munkafázisok némelyike elhagyható, vagy éppen továbbiak is közbeiktathatóak. Például elképzelhető olyan helyzet, ahol a fejlesztői és élesítésre váró munkafázisok között fenntartanak egy negyedik webhelymásolatot is, amin kizárólag csak az automata teszteket futtatják.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<install-dev-making>>
 * <<planning-workflow>>
 
-==== Additional resources
+==== Egyéb források
 
-https://www.drupal.org/node/991716[_Drupal.org_ community documentation page "Introduction to Git"]
+https://www.drupal.org/node/991716[Introduction to Git] (azaz „Ismerkedés a Gittel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/diana.lakatos[Diána Lakatos], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
+Írta és szerkesztette: https://www.drupal.org/u/diana.lakatos[Lakatos Diána] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
