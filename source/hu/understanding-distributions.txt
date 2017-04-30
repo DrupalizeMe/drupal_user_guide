@@ -1,43 +1,43 @@
 [[understanding-distributions]]
 
-=== Concept: Distributions
+=== Alapfogalom: terjesztések
 
 [role="summary"]
-Overview of distributions and their different types to set up use-specific websites.
+A terjesztések, azaz telepítési profilok áttekintése, valamint hogy miként lehet velük könnyen elkezdeni adott célú webhelyek felépítését.
 
-(((Distribution,overview)))
-(((Distribution,full-featured)))
-(((Distribution,quick-start)))
-(((Full-featured distribution,overview)))
-(((Quick-start distribution,overview)))
+(((Terjesztés,áttekintés)))
+(((Terjesztés,teljesértékű)))
+(((Terjesztés,első lépések)))
+(((Teljesértékű terjesztés,áttekintés)))
+(((Hamar elkezdhető terjesztés,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-drupal>>
 * <<understanding-modules>>
 * <<understanding-themes>>
 
-==== What are Distributions?
+==== Mit és miért nevezünk terjesztésnek?
 
-_Distributions_ provide site features and functions for a specific type of site as a single download containing the core software, contributed modules, themes, and pre-defined configuration. A distribution makes it possible to set up a complex, use-specific site in fewer steps than installing and configuring elements individually.
+A _terjesztések_ tulajdonképpen olyan „tematikus” telepítőkészletek, amelyek a készítőik által összeválogatott, beállított és telepítéskor engedélyezett modulokat – és adott esetben sminkeket tartalmaznak. A _terjesztések_ nagyon hasznosak speciális célú webhelyek gyors és kényelmes létrehozására (például webáruház, hírportál, céges bemutatkozó oldal). Akár a bonyolultabb, nem általános  célú webhelyek felépítésekor is megtakaríthatunk magunknak időt és energiát, ha a feladatunkhoz hasonló célra összeállított terjesztéssel telepítjük fel a Drupalt.
 
-There are two main types of distributions:
+A terjesztések egymástól eltérő mennyiségű beállítást tartalmaznak, aminek alapján két csoportra oszthatóak:
 
-Full-featured Distributions::
-  A full-featured distribution is a project that provides a complete solution to set up a site for a specialized purpose such as academic, business, government, nonprofit, publishing, social, etc. For example, you could use an existing distribution for farmers markets to build your own website, or you could share your set-up for the farmers market site as a distribution for others to use.
+Teljesértékű terjesztések::
+  Azokat soroljuk ide, amelyek egy kulcsrakész webhelyet hoznak létre, például felsőoktatási intézmények, közigazgatási hivatalok, vagy non-profit szervezetek általános igényeire alapozva. Kézikönyvünk példája, egy termelői piac webhelye felépíthető egy mások által korábban már létrehozott terjesztésből, de az elkészült webhelyünk beállításait ugyanúgy mi is közzétehetjük, hogy más városok termelői piacai is a mi telepítési profilunkból indulhassanak ki.
 
-Other Distributions::
-  Distributions can also be quick-start tools that developers and site builders can use as a starting point.
+Általános terjesztések::
+  A fentiektől eltérően azonban a telepítési profilok lehetnek nagyon egyszerűek is, amelyek viszont a fejlesztőknek kínálnak gyors és rugalmas kiindulási alapot.
 
-==== Related topics
+==== Kapcsolódó témák
 
 <<thoughts-connecting>>
 
-==== Additional resources
+==== Egyéb források
 
-https://www.drupal.org/project/project_distribution[_Drupal.org_ Drupal Distribution Downloads]
+https://www.drupal.org/project/project_distribution[Drupal Distributions], azaz a mások által közzétett terjesztések hivatalos gyűjteménye a Drupal.org-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted and edited by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] and https://www.drupal.org/u/ifrik[Antje Lorch], from https://www.drupal.org/documentation/build/distributions["Distributions"] and https://www.drupal.org/project/project_distribution["Download & Extend -- Distributions"] copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/ifrik[Antje Lorch] és https://www.drupal.org/u/diana.lakatos[Lakatos Diána] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/documentation/build/distributions[Distributions] (azaz „Terjesztések”) című szócikkéből vette át, melynek szerzői joga 2000-2016 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
