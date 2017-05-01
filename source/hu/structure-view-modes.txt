@@ -1,44 +1,44 @@
 [[structure-view-modes]]
 
-=== Concept: View Modes and Formatters
+=== Alapfogalom: nézetmódok és formázók
 
 [role="summary"]
-Overview of view modes and field formatters.
+Bár a kialakult terminológia nem a legszerencsésebb, a _nézetmódoknak_ nem sok közük van a _nézetekhez_, de ettől még nagyon is hasznosak.
 
-(((View mode, overview)))
-(((Entity view mode, overview)))
-(((Formatter, overview)))
-(((Field formatter, overview)))
+(((Nézetmód, áttekintés)))
+(((Entitás nézetmód,áttekintés)))
+(((Formázó,áttekintés)))
+(((Mező formázó,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<structure-content-type>>
 
-==== What is a View mode?
+==== Mit nevezünk nézetmódnak?
 
-How an entity (such as content, a user or a comment) is displayed, depends on the context in which it is shown. This context is known as a _view mode_. Examples of view modes are:
+Egy entitás (legyen az akár egy tartalom, egy felhasználó vagy egy hozzászólás) megjelenítése környezet (kontextus) függő. Ezt a kontextust hívjuk _nézetmódnak_ a Drupalban. A könnyebb érthetőség kedvéért álljon itt pár példa:
 
-* a full page of the content with all the field values
-* a teaser of the content with a thumbnail image and a _Read more_ link
-* a full user profile with a zoomable portrait photo
-* a user avatar with username and a link to the profile
+* egy egész oldalon megjelenített tartalom (például blogbejegyzés), amely valamennyi kitöltött mezőjét (úgymint szerző neve, közzététel dátuma, besorolási címkék, stb.) felsorolja
+* ugyanennek a tartalomnak egy tömörebb, csak a bevezető szöveget és egy kis előnézeti képet mutató nézete, a végén _Tovább »_ hivatkozással
+* egy teljes, önmagunkról minden megadható információt felsoroló felhasználói profil
+* egy felhasználói fiók kis méretű képe a névvel együtt a profilra linkelve
 
-Every view mode can be configured through the administration pages. To see the configuration options for the view modes of the Recipe content type, navigate in the _Manage_ administrative menu to _Structure_ > _Content types_ (_admin/structure/types_) and click _Manage display_ from the dropdown button. In each view mode, all fields can be hidden or displayed, and if they are displayed, you can choose and configure the field formatter.
+Minden ilyen és ehhez hasonló nézetmód az adminfelületen keresztül beállítható. Például az e Kézikönyvben bemutatott termelői piac webhelyünk visszatérő példájánál maradva, a _Receptek_ tartalomtípus nézetmódjainak beállítási lehetőségeit a _Kezelés_ adminmenü _Felépítés_ » _Tartalomtípusok_ (címsorban _/admin/structure/types_) oldalon kiválasztva, majd a _Megjelenés beállítása_ fülre kattintva látjuk. Minden nézetmódban külön-külön meghatározható, hogy a tartalomtípus adott mezője megjelenjen-e, és ha igen, melyik _formázó_ legyen rá alkalmazva.
 
-==== What is a field formatter?
+==== De mi az a mező formázó?
 
-A field formatter is a setting for displaying the field values. For example, long text fields can be displayed trimmed or full-length, and taxonomy term reference fields can be displayed in plain text or linked to the taxonomy term page. Consult the _Manage display_ page to see the field formatters for the fields of the Recipe content type.
+Az adatbázis egy adott táblájának cellájában tárolt és onnan kiolvasott nyers adatot (például egy időbélyeget) nem biztos, hogy mindig jó ötlet lenne közvetlenül a látogató elé ömleszteni, helyette inkább különböző szabályok szerint feldolgozva tálaljuk: átszámoltathatjuk a felhasználó időzónájára és kiírathatjuk betűvel a hónap nevét és a hét napját a saját nyelvén. Másik példa lehet a hosszabb szövegek tárolására is alkalmas mezők rövidített megjelenítése, vagy a taxonómiakifejezések saját oldalukra való linkelése. Tekintettel a rengeteg beállítási lehetőségre, javasolt körülnézni az előbb említett _Megjelenés beállítása_ oldalon, így magunk is felfedezhetjük, milyen további formázási lehetőségeket kínál a Drupal a _Receptek_ tartalomtípusban használt mezők ábrázolásához.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<structure-content-type>>
 * <<structure-content-display>>
 
-==== Additional resources
+==== Egyéb források
 
-https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+https://www.drupal.org/node/1577752[View modes] (azaz „Nézetmódok”) című közösségi dokumentáció a Drupal.org-on (angol nyelven).
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from https://www.drupal.org/node/1577752["View modes"], copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/node/1577752[View modes] (azaz „Nézetmódok”) című szócikkéből vette át, melynek szerzői joga 2000-2016 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
