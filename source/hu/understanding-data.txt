@@ -1,45 +1,45 @@
 [[understanding-data]]
-=== Concept: Types of Data
+=== Alapfogalom: adattípusok
 
 [role="summary"]
-Overview of common types of data used in a site.
+Áttekintjük az adatoknak a webhelyen gyakran előforduló fajtáit.
 
-(((Data type,overview)))
-(((Data type,configuration)))
-(((Data type,content)))
-(((Data type,state)))
-(((Data type,session)))
-(((Configuration,as a type of data)))
-(((Content,as a type of data)))
-(((State,as a type of data)))
-(((Session,as a type of data)))
+(((Adattípus,áttekintés)))
+(((Adattípus,beállítás)))
+(((Adattípus,tartalom)))
+(((Adattípus,állapot)))
+(((Adattípus,munkamenet)))
+(((Konfiguráció,mint adattípus)))
+(((Tartalom,mint adattípus)))
+(((Állapot,mint adattípus)))
+(((Munkamenet,mint adattípus)))
 
 
-//==== Prerequisite knowledge
+//==== Szükséges előismeretek
 
-==== What are the types of data?
+==== Milyen fajtái lehetnek az adatoknak?
 
-The data and information on your site is divided up into four types, which are edited, translated, and stored differently. These four types are:
+Minden információ, melynek tárolását a Drupal tartalomkezelőre bízzuk, négy külön csoportra osztható aszerint, hogyan lehet szerkeszteni, lefordítani és tárolni őket. Ezek pedig a következők:
 
-Content::
-  Information (text, images, etc.) meant to be displayed to site visitors. This type of information tends to be relatively permanent, but can normally be edited.
-Configuration::
-  Information about your site that is not content, but is also relatively permanent, and is used to define how your site behaves or is displayed. It is sometimes also displayed to site visitors, but tends to be smaller pieces of text (like field labels, the name of your site, etc.) rather than larger chunks that you'd normally think of as Content.
-State::
-  Information of a temporary nature about the current state of your site, such as the time when cron jobs were last run.
-Session::
-  Information about individual site visitors' interactions with the site, such as whether they are logged in and their cookies. This is technically a subtype of State information, since it is also temporary.
+Tartalom::
+  Olyan adatok (például szövegek, képek, stb.), melyeknek legfőbb célja, hogy a webhely látogatói megtekintsék őket. Mint ilyen, viszonylag ritkán módosulnak, de amúgy rendesen lehet szerkeszteni őket.
+Konfiguráció::
+  Ezek olyan információk, amik szintén nagyjából állandónak tekinthetőek, és a feladatuk, hogy meghatározzák a Drupal pontos működését és kinézetét. Persze ezek egy része is megjelenhet a látogatók előtt (például a mezők címkéi vagy a webhely neve is konfigurációnak minősül), de összehasonlítva jóval kisebb szövegdarabok, mint például egy sokbekezdéses blogbejegyzés.
+Webhelyállapot::
+  Ideiglenes jellegű információ a webhely pillanatnyi helyzetéről, mint például az utolsó alkalom, amikor az időzítő lefutott.
+Munkamenet::
+  A webhelyet meglátogató felhasználók részére fenntartott információk, mint például hogy be vannak-e jelentkezve, vagy hogy a doménnevünkről milyen sütik vannak letárolva számítógépükön. Mivel ez is egy folyamatosan létrejövő és megszűnő adatforma, ezért tulajdonképpen az előző _Webhelyállapot_ csoport altípusának tekinthető.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<planning-data-types>>
 * <<security-cron-concept>>
 * <<user-concept>>
 * <<language-concept>>
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"], copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation]
+E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/node/2120523[Overview of Configuration (vs. other types of information)] (azaz „A konfiguráció és az információ más fajtái”) című szócikkéből vette át, melynek szerzői joga 2000-2016 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
