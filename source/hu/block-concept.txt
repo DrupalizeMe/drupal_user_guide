@@ -1,36 +1,30 @@
 [[block-concept]]
 
-=== Concept: Blocks
+=== Alapfogalom: a blokkok
 
 [role="summary"]
-Overview of blocks.
+E témakörben röviden áttekintjük a blokkokat, az oldalelrendezések fontos építőköveit.
 
-(((Block,overview)))
+(((Blokk,áttekintés)))
 
-//==== Prerequisite knowledge
+//==== Szükséges előismeretek
 
-==== What is a block?
+==== Mit nevezünk blokknak?
 
-_Blocks_ are individual pieces of your site's web page layout.
-They are placed inside the regions (see <<block-regions>>) of your theme, and can be created, removed, and rearranged in the _Block layout_ (_admin/structure/block_) administration page.
-Examples of blocks include the _Who's online_ listing, the main navigation menu, and the breadcrumb trail.
-The main page content is also a block.
+Azokat a tartalmi egységeket hívjuk _blokknak_, amelyek a webhely oldalain egy-egy jól elkülöníthető részegységet képeznek. Mindegyik ilyen blokk kötelezően hozzá kell, hogy legyen rendelve az éppen használt smink által meghatározott számos régió (lásd: <<block-regions>>) egyikéhez. Létrehozni, átrendezni vagy eltávolítani pedig a _Blokk elrendezés_ (címsorban _admin/structure/block_) oldalon lehet őket. Tulajdonképpen minden blokkokban jelenik meg, például a „Jelenlévő felhasználók” lista, a fő navigáció vagy a kenyérmorzsamenü is egy-egy blokk. Sőt, még az oldal közepén a fő tartalom is egy blokk.
 
-Some modules make new blocks available for placement on your site.
-For example, when the core Search module is installed and configured, it provides a block that contains a search form.
-You may also create and place your own custom blocks.
+Vannak modulok, amelyek bekapcsolva további blokkokat biztosítanak számunkra, hogy elhelyezzük őket a szükséges oldalakon igény szerint. Ilyen például a _Search_ modul is, amit engedélyezve és megfelelően beállítva kapunk egy keresőmező blokkot, melyet kitehetünk abba a régióba, ahová szeretnénk. De mi magunk is elkészíthetjük saját blokkjainkat.
 
-Each block has its own configuration settings, which allow you to select which pages of your site will display the block.
-It is even possible to place multiple copies of a block, each with its own separate configuration and visibility rules.
+Minden egyes blokk egyedileg beállítható, testreszabhatjuk például, hogy a webhely melyik oldalain legyen látható vagy éppen rejtett. Még az is lehetséges, hogy ugyanannak a blokknak több példányát máshol és máshogy tegyük ki – miközben a tartalmát módosítani továbbra is csak egy helyen kell.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<block-regions>>
 * <<block-create-custom>>
 * <<block-place>>
 
-//==== Additional resources
+//==== Egyéb források
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/les-lim[Les Lim] from https://www.drupal.org/documentation/modules/blocks["Working with blocks (content in regions)"] and https://www.drupal.org/documentation/blocks["Blocks"], copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/les-lim[Les Lim] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/core/modules/block[Block module] (azaz „Blokk modul”) és https://www.drupal.org/docs/8/core/modules/custom_block[Custom Block module] (azaz „Egyéni blokk modul”) című szócikkeiből vette át, melyek szerzői joga 2000-2016 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
