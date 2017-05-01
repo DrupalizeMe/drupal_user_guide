@@ -1,62 +1,30 @@
-[[block-regions]]
+[[block-concept]]
 
-=== Concept: Regions in a Theme
+=== Alapfogalom: a blokkok
 
 [role="summary"]
-Overview of regions from a theming perspective.
+E témakörben röviden áttekintjük a blokkokat, az oldalelrendezések fontos építőköveit.
 
-(((Theme,regions in)))
-(((Bartik theme,regions in)))
-(((Region,overview)))
-(((Breadcrumb region,overview)))
-(((Content region,overview)))
-(((Featured regions,overview)))
-(((Footer regions,overview)))
-(((Header region,overview)))
-(((Help region,overview)))
-(((Highlighted region,overview)))
-(((Menu region,overview)))
-(((Primary menu region,overview)))
-(((Secondary menu region,overview)))
-(((Sidebar regions,overview)))
-(((Region,breadcrumb)))
-(((Region,content)))
-(((Region,featured)))
-(((Region,footer)))
-(((Region,header)))
-(((Region,help)))
-(((Region,highlighted)))
-(((Region,menu)))
-(((Region,primary menu)))
-(((Region,secondary menu)))
-(((Region,sidebar)))
+(((Blokk,áttekintés)))
 
-==== Prerequisite knowledge
+//==== Szükséges előismeretek
 
-<<understanding-themes>>
+==== Mit nevezünk blokknak?
 
-==== What is a region?
+Azokat a tartalmi egységeket hívjuk _blokknak_, amelyek a webhely oldalain egy-egy jól elkülöníthető részegységet képeznek. Mindegyik ilyen blokk kötelezően hozzá kell, hogy legyen rendelve az éppen használt smink által meghatározott számos régió (lásd: <<block-regions>>) egyikéhez. Létrehozni, átrendezni vagy eltávolítani pedig a _Blokk elrendezés_ (címsorban _admin/structure/block_) oldalon lehet őket. Tulajdonképpen minden blokkokban jelenik meg, például a „Jelenlévő felhasználók” lista, a fő navigáció vagy a kenyérmorzsamenü is egy-egy blokk. Sőt, még az oldal közepén a fő tartalom is egy blokk.
 
-Besides its primary content, a web page contains other content such as site branding (site name, slogan, and logo), navigation aids (menus, links, and icons), formatted text, and images. Each theme provides a set of named regions, such as _Header_, _Content_, and _Sidebar_, where site builders may choose to place their content.
+Vannak modulok, amelyek bekapcsolva további blokkokat biztosítanak számunkra, hogy elhelyezzük őket a szükséges oldalakon igény szerint. Ilyen például a _Search_ modul is, amit engedélyezve és megfelelően beállítva kapunk egy keresőmező blokkot, melyet kitehetünk abba a régióba, ahová szeretnénk. De mi magunk is elkészíthetjük saját blokkjainkat.
 
-The available regions depend on the theme design. Only the Content region, which contains the primary content, is required; others are optional.  The core Bartik theme provides the eighteen regions highlighted in the following image.
+Minden egyes blokk egyedileg beállítható, testreszabhatjuk például, hogy a webhely melyik oldalain legyen látható vagy éppen rejtett. Még az is lehetséges, hogy ugyanannak a blokknak több példányát máshol és máshogy tegyük ki – miközben a tartalmát módosítani továbbra is csak egy helyen kell.
 
-// Bartik theme region preview at admin/structure/block/demo/bartik,
-// after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+==== Kapcsolódó témák
 
-==== Related topics
-
-* <<block-concept>>
-* <<planning-data-types>>
+* <<block-regions>>
+* <<block-create-custom>>
 * <<block-place>>
 
-==== Additional resources
+//==== Egyéb források
 
-* https://www.drupal.org/documentation/structure[_Drupal.org_ community documentation page "Structure Guide"]
-* https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
+*Közreműködők*
 
-
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald], and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at https://erdfisch.de[erdfisch].
+E témakör szövegét https://www.drupal.org/u/les-lim[Les Lim] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/core/modules/block[Block module] (azaz „Blokk modul”) és https://www.drupal.org/docs/8/core/modules/custom_block[Custom Block module] (azaz „Egyéni blokk modul”) című szócikkeiből vette át, melyek szerzői joga 2000-2016 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
