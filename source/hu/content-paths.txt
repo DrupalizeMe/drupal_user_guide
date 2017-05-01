@@ -1,40 +1,39 @@
 [[content-paths]]
 
-=== Concept: Paths, Aliases, and URLs
+=== Alapfogalom: útvonalak és álnevek
 
 [role="summary"]
-Overview of paths, aliases, and URLs (with examples).
+Az útvonalak és azok álneveinek megismerése néhány példán keresztül.
 
-(((Path,overview)))
-(((Alias,overview)))
-(((URL (Uniform Resource Locator),overview)))
-(((Uniform Resource Locator (URL),overview)))
-(((URL alias,overview)))
+(((Útvonal,áttekintés)))
+(((Álnév,áttekintés)))
+(((URL (egységes erőforrás-azonosító),áttekintés)))
+(((Egységes erőforrás-azonosító (URL),áttekintés)))
+(((URL álnév,áttekintés)))
 
-//==== Prerequisite knowledge
+//==== Szükséges előismeretek
 
 
-==== What is a URL?
+==== Mit nevezünk URL-nek?
 
-URL is the abbreviation for "Uniform Resource Locator", which is the page's address on the web. It is the "name" by which a browser identifies a page to display. In the example "Visit us at _example.com_.", _example.com_ is the URL for the home page of your website. Users use URLs to locate content on the web.
+Az interneten elérhető webhelyek minden egyes oldalának egyedi webcímét nevezzük URL-nek az angol Uniform Resource Locator, azaz „egységes erőforrás-azonosító” kifejezés nyomán. A webböngészők az URL alapján tudják egyértelműen beazonosítani, hogy a felhasználó pontosan melyik webhely melyik oldalát szeretné megtekinteni. A „Látogasson meg minket a pelda.hu honlapunkon!” felhívásban a _pelda.hu_ URL közvetlenül a webhely címlapjára vezet. Így tehát azt mondhatjuk, hogy az URL-ek a weben való eligazodás legfontosabb eszközei.
 
-==== What is a Path?
+==== De akkor mi az útvonal?
 
-A path is the unique, last part of the URL for a specific function or piece of content. For example, for a page whose full URL is _http://example.com/node/7_, the path is _node/7_.
+Az előbb tárgyalt URL-nek egy kisebb részét szoktuk _elérési útvonalnak_ is nevezni, ami egy webhelyen belül egy bizonyos funkcióra vagy tartalomra mutat. Például ha egy oldalunk teljes URL-je _http://example.com/node/7_ lenne, akkor ebből az útvonal a _node/7_ rész.
 
-Here are some examples of paths you might find in your site:
+Az alábbiak szintén érvényes útvonalak lehetnek egy webhelyen:
 
-* _node/7_
 * _taxonomy/term/6_
 * _admin/content/comment_
 * _user/login_
 * _user/3_
 
-==== What is an Alias?
+==== És végül akkor az álnevek?
 
-The core software has a feature called "URL Alias" that allows you to provide a more understandable name to the content. So, if you have an "About Us" page with the path _node/7_, you can set up an alias so that your visitors will see it as _http://www.example.com/AboutUs_. The core Path module, which supports URL aliasing, provides this functionality.
+A Drupal az első CMS-ek között volt, amelyek alaprendszerük mély szintjén valósították meg az útvonalátírást. A könnyebben megjegyezhető álneveket a felhasználók hamar megkedvelték, ezért e funkciót sokan „szép URL”-ként szeretik említeni. Ha például webhelyünk bemutatkozó oldalának a „Rólunk” címet adtuk, és a tartalom elmentésekor a _node/7_ útvonalat kapja, akkor lehetőségünk van elfedni azt egy útvonalálnévvel, így látogatóink _http://www.pelda.hu/rolunk_ címet látnak majd a böngészőjük címsorában. Ezt a képességet az alaprendszer _Path_ modulja biztosítja.
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<content-create>>
 * <<content-edit>>
@@ -44,9 +43,9 @@ The core software has a feature called "URL Alias" that allows you to provide a 
 // * <<structure-pathauto>>
 
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] at http://pronovix.com[Pronovix] from https://www.drupal.org/node/120631["URL aliases"], and https://www.drupal.org/node/31644["Understanding Drupal paths"] copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation]
+E témakör szövegét https://www.drupal.org/u/diana.lakatos[Lakatos Diána] (http://pronovix.com[Pronovix]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának]  https://www.drupal.org/node/120631[URL aliases] (azaz „URL álnevek”) és https://www.drupal.org/node/31644[Understanding Drupal paths] (azaz „A Drupal útvonalainak megértése”) című szócikkeiből vette át, melyek szerzői joga 2000-2016 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
