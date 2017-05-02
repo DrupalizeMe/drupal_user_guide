@@ -1,69 +1,68 @@
 [[install-requirements]]
 
-=== Concept: Server Requirements
+=== Alapfogalom: rendszerkövetelmények
 
 [role="summary"]
-Overview of server requirements for installing and running the core software.
+Ebben a témakörben számba vesszük, hogy a számítógépen milyen feltételek szükségesek a Drupal alaprendszer telepítéséhez és futtatásához.
 
-(((Installation requirements,overview)))
-(((Installation requirements,disk space)))
-(((Installation requirements,web server)))
-(((Installation requirements,database)))
-(((Installation requirements,PHP programming language)))
-(((Installing,core software)))
-(((Core software,installation requirements)))
-(((Disk space,installation requirements)))
-(((Web server,installation requirements)))
-(((Apache web server,version requirements)))
-(((Hiawatha web server,version requirements)))
-(((Nginx web server,version requirements)))
-(((Microsoft IIS web server,version requirements)))
-(((Database,installation requirements)))
-(((MySQL database,version requirements)))
-(((PostgreSQL database,version requirements)))
-(((SQLight database,version requirements)))
-(((PHP programming language,version requirements)))
+(((Telepítési követelmények,áttekintés)))
+(((Telepítési követelmények,lemezterület)))
+(((Telepítési követelmények,webszerver)))
+(((Telepítési követelmények,adatbázis)))
+(((Telepítési követelmények,PHP programozási nyelv)))
+(((Telepítés,alaprendszer)))
+(((Alaprendszer,telepítési követelmények)))
+(((Lemezterület,telepítési követelmények)))
+(((Webszerver,telepítési követelmények)))
+(((Apache webszerver,verziókövetelmények)))
+(((Hiawatha webszerver,verziókövetelmények)))
+(((Nginx webszerver,verziókövetelmények)))
+(((Microsoft IIS webszerver,verziókövetelmények)))
+(((Adatbázis,telepítési követelmények)))
+(((MySQL adatbázis,verziókövetelmények)))
+(((PostgreSQL adatbázis,verziókövetelmények)))
+(((SQLight adatbázis,verziókövetelmények)))
+(((PHP programozási nyelv,verziókövetelmények)))
 
-// ==== Prerequisite knowledge
+// ==== Szükséges előismeretek
 
-==== What are the requirements for running the core software?
+==== Mi kell ahhoz, hogy elfusson a Drupal?
 
-===== Disk space
+===== Lemezterület
 
-A minimum installation requires 15 MB. 60 MB is needed for a website with many contributed modules and themes installed. Keep in mind you need much more for the database, files uploaded by the users, media, backups, and other files.
+Minimum 15 MB szükséges, de egy nagyobb, jóval több modult és sminket használó webhely már körülbelül 60 MB helyet igényel. Fontos azonban észben tartani, hogy a forráskódnál nagyságrendileg több tárhelyet fog igényelni várhatóan maga az adatbázis, a felhasználók által feltölthető fájlok, a biztonsági mentések, és más hasonló állományok.
 
-===== Web server
+===== Webkiszolgáló
 
-Apache (Recommended)::
-  Apache is the most commonly used web server. The core software will work on Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache mod_rewrite module installed and enabled. The Apache VirtualHost configuration must contain the directive _AllowOverride All_ to allow the _.htaccess_ file to be used.
+Apache (javasolt)::
+  Manapság az Apache a legelterjedtebb webszerver alkalmazás. A Drupal alaprendszer működik Apache 2.x verzión, ami futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Telepítve és engedélyezve kell lennie az Apache _mod_rewrite_ moduljának, valamint a _VirtualHost_ konfigurációjának tartalmaznia kell az _AllowOverride All_ utasítást annak érdekében, hogy a _.htaccess_ fájlok működjenek.
 Nginx::
-  Nginx is a commonly used web server that focuses on high concurrency, performance and low memory usage. The core software will work on Nginx 1.1 or greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module must be installed and enabled.
+  Az Nginx egy szintén gyakran használt webszerver, ami a nagy terhelés alatt is kielégítő teljesítményre törekszik, alacsony memóriahasználat mellett. A Drupal alaprendszer Nginx 1.1 és annál magasabb verzión is működik, és ez ugyanúgy futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Itt is fontos, hogy az _ngx_http_rewrite_module_ nevű modulja telepítve és engedélyezve legyen.
 Hiawatha::
-  Hiawatha is a web server with a strong focus on security. It also aims at being easy to use and lightweight. Research performed by independent researchers proves that Hiawatha offers a performance comparable to other web servers under normal conditions, but much better while under attack. URL Toolkit must be installed and configured to rewrite URLs.
+  A Hiawatha egy harmadik webszerver alkalmazás, amely leginkább a biztonságra összpontosít, de emellett igyekszik egyszerűen használható és pehelysúlyú maradni. Független kutatók által végrehajtott tesztek alapján a Hiawatha a többi webszerverrel összemérhető teljesítményt nyújt rendes körülmények között, viszont támadás alatt azoknál kimagaslóan jobban teljesít. A webcímek átírásához az _URL Toolkit_ funkciót telepíteni kell és megfelelően beállítani.
 Microsoft IIS::
-  Microsoft IIS is a web server and set of feature extension modules for use with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS 7 if PHP is configured correctly. Because clean URLs are required, you may need to use a third party product. For IIS 7, you can use the Microsoft URL Rewrite module or a third party solution.
+  A Microsoft IIS egy webszerver funkciókat tartalmazó kiegészítés Microsoft Windows-ra. A Drupal alaprendszer működik IIS 5, IIS 6 és IIS 7 verziókon, ha a PHP megfelelően van beállítva. Mivel a Drupal megköveteli a szép webcímek kezelését, amit viszont csak az IIS 7-hez elérhető _Microsoft URL Rewrite_ modul támogat, ezért ennél alacsonyabb verziókon e célra külső megoldásra lehet szükség.
 
-===== Database
+===== Adatbázis
 
-Use one of the following databases:
+A következő adatbázis-kiszolgálók bármelyike használható:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an InnoDB-compatible primary storage engine
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) vagy magasabb InnoDB-kompatibilis elsődleges tárolómotorral
 
-* PostgreSQL - 9.1.2 or higher
+* PostgreSQL - 9.1.2 vagy magasabb
 
-* SQLite - 3.4.2 or higher
+* SQLite - 3.4.2 vagy magasabb
 
 ===== PHP
 
-PHP 5.5.9 or higher.
+PHP 5.5.9 vagy magasabb
 
-//==== Related topics
+//==== Kapcsolódó témák
 
-==== Additional resources
+==== Egyéb források
 
-https://www.drupal.org/requirements[_Drupal.org_ community documentation page "System requirements"]
+https://www.drupal.org/requirements[System requirements] (azaz „Rendszerkövetelmények”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
+*Közreműködők*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] and https://www.drupal.org/u/bemery987[Brian Emery] from https://www.drupal.org/requirements["System requirements"], copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] és https://www.drupal.org/u/bemery987[Brian Emery] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/requirements[System requirements] (azaz „Rendszerkövetelmények”) című szócikkéből vette át, melynek szerzői joga 2000-2016 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
