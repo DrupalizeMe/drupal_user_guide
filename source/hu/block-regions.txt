@@ -1,62 +1,62 @@
 [[block-regions]]
 
-=== Concept: Regions in a Theme
+=== Alapfogalom: régiók a sminkekben
 
 [role="summary"]
-Overview of regions from a theming perspective.
+Ebben a témakörben a kinézet alakításának szemszögéből ismerjük meg a sminkek régióit, melyekbe a blokkok helyezhetők.
 
-(((Theme,regions in)))
-(((Bartik theme,regions in)))
-(((Region,overview)))
-(((Breadcrumb region,overview)))
-(((Content region,overview)))
-(((Featured regions,overview)))
-(((Footer regions,overview)))
-(((Header region,overview)))
-(((Help region,overview)))
-(((Highlighted region,overview)))
-(((Menu region,overview)))
-(((Primary menu region,overview)))
-(((Secondary menu region,overview)))
-(((Sidebar regions,overview)))
-(((Region,breadcrumb)))
-(((Region,content)))
-(((Region,featured)))
-(((Region,footer)))
-(((Region,header)))
-(((Region,help)))
-(((Region,highlighted)))
-(((Region,menu)))
-(((Region,primary menu)))
-(((Region,secondary menu)))
-(((Region,sidebar)))
+(((Smink,régiók benne)))
+(((Bartik smink,régiók benne)))
+(((Régió,áttekintés)))
+(((Morzsamenü régió,áttekintés)))
+(((Tartalmi régió,áttekintés)))
+(((Kiemelt régiók,áttekintés)))
+(((Lábléc régiók,áttekintés)))
+(((Fejléc rédió,áttekintés)))
+(((Súgó régió,áttekintés)))
+(((Kiemelt régió,áttekintés)))
+(((Menü régió,áttekintés)))
+(((Elsődleges menü régió,áttekintés)))
+(((Másodlagos menü régió,áttekintés)))
+(((Oldalsávi régiók,áttekintés)))
+(((Régió,morzsamenü)))
+(((Régió,tartalom)))
+(((Régió,kiemelt)))
+(((Régió,lábléc)))
+(((Régió,fejléc)))
+(((Régió,súgó)))
+(((Régió,kiemelt)))
+(((Régió,menü)))
+(((Régió,elsődleges menü)))
+(((Régió,másodlagos menü)))
+(((Régió,oldalsáv)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<understanding-themes>>
 
-==== What is a region?
+==== Mit nevezünk régiónak?
 
-Besides its primary content, a web page contains other content such as site branding (site name, slogan, and logo), navigation aids (menus, links, and icons), formatted text, and images. Each theme provides a set of named regions, such as _Header_, _Content_, and _Sidebar_, where site builders may choose to place their content.
+A webhely minden oldalának van valamilyen fő üzenete, tartalma, ami általában valahol középtájt szokott elhelyezkedni (például egy hírportál cikk oldalán a cikk szövege). Emellett azonban számos más elem is megjelenik körülötte: például a webhely márkaelemei (logó és szlogen) vagy segítség a tájékozódáshoz (menük, linkek, ikonok). A sminkek úgy vannak kialakítva, hogy előre meghatározott területeket jelölnek ki az oldalakon, például _Fejléc_, _Tartalom_ és _Oldalsáv_. Tucatnyi ilyen terület közül választhatják ki az adminisztrátorok, hogy pontosan hol és hogyan szeretnék az adott tartalmat viszontlátni.
 
-The available regions depend on the theme design. Only the Content region, which contains the primary content, is required; others are optional.  The core Bartik theme provides the eighteen regions highlighted in the following image.
+A sminkek általában ugyanazokat a régiókat kínálják. Kizárólag egyetlen régió kötelező (értelemszerűen a _Tartalom_, hogy legyen hol elhelyezni a központi, fő üzenetét az adott aloldalnak), a többi régió viszont nem biztos, hogy létezik az adott sminkben.  Az alaprendszer népszerű Bartik sminkje például tucatnyinál is több, összesen tizennyolc régiót határoz meg, ezek láthatóak alább sárga színnel kiemelve:
 
 // Bartik theme region preview at admin/structure/block/demo/bartik,
 // after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+image:images/block-regions-bartik.png["Az alaprendszeri Bartik smink összes régiója",width="100%"]
 
-==== Related topics
+==== Kapcsolódó témák
 
 * <<block-concept>>
 * <<planning-data-types>>
 * <<block-place>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/documentation/structure[_Drupal.org_ community documentation page "Structure Guide"]
-* https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
+* https://www.drupal.org/documentation/structure[Structure Guide] (azaz „Szerkezeti útmutató”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+* https://www.drupal.org/node/171224[Assigning content to regions] (azaz „Blokkok régiókhoz rendelése”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald], and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at https://erdfisch.de[erdfisch].
+Írta és szerkesztette: https://www.drupal.org/u/jfmacdonald[John MacDonald] és https://www.drupal.org/u/michaellenahan[Michael Lenahan] (https://erdfisch.de[erdfisch]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
