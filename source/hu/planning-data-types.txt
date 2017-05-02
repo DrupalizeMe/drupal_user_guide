@@ -1,90 +1,97 @@
 [[planning-data-types]]
-=== Concept: Content Entities and Fields
+=== Alapfogalom: a tartalomtípusok alapjai
 
 [role="summary"]
-Overview of content entities and fields.
+Megismerjük milyen logika mentén szervezi a Drupal a webhely adatait és hogyan tudjuk ezt tartalmaink tárolására kihasználni.
 
-(((Entity,overview)))
-(((Taxonomy term,overview)))
-(((Vocabulary,overview)))
-(((Content,entity type)))
-(((Entity type,overview)))
-(((Entity subtype,overview)))
-(((Block,entity type)))
-(((Comment entity type,overview)))
-(((Contact form entity type,overview)))
-(((Form entity type,overview)))
-(((Content entity type,overview)))
-(((Custom block,entity type)))
-(((Field,overview)))
-(((User profile entity type,overview)))
-(((Module,Comment)))
-(((Module,Contact)))
-(((Module,Taxonomy)))
-(((Module,User)))
-(((Module,Node)))
-(((Module,Custom Block)))
-(((Module,File)))
-(((Comment module,entity type)))
-(((Contact module,entity type)))
-(((Custom block module,entity type)))
-(((Node module,entity type)))
-(((Taxonomy module,entity type)))
-(((User module,entity type)))
-(((File module,entity type)))
+(((Entitás,áttekintés)))
+(((Taxonómia kifejezés,áttekintés)))
+(((Szótár,áttekintés)))
+(((Tartalom,entitástípus)))
+(((Entitástípus,áttekintés)))
+(((Entitásaltípus,áttekintés)))
+(((Blokk,entitástípus)))
+(((Hozzászólás entitástípus,áttekintés)))
+(((Kapcsolatfelvételi űrlap entitástípus,áttekintés)))
+(((Űrlap entitástípus,áttekintés)))
+(((Tartalom entitástípus,áttekintés)))
+(((Egyéni blokk,entitástípus)))
+(((Mező,áttekintés)))
+(((Felhasználói fiók entitástípus,áttekintés)))
+(((Modul,Comment)))
+(((Modul,Contact)))
+(((Modul,Taxonomy)))
+(((Modul,User)))
+(((Modul,Node)))
+(((Modul,Custom Block)))
+(((Modul,File)))
+(((Comment modul,entitástípus)))
+(((Contact modul,entitástípus)))
+(((Custom Block modul,entitástípus)))
+(((File modul,entitástípus)))
+(((Taxonomy modul,entitástípus)))
+(((User modul,entitástípus)))
+(((File modul,entitástípus)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-data>>
 * <<understanding-modules>>
 
-==== What is a content entity?
+==== A tartalmi entitás fogalma
 
-A _content entity_ (or more commonly, _entity_) is an item of content data, which can consist of text, HTML markup, images, attached files, and other data that is intended to be displayed to site visitors. Content entities can be defined by the core software or by modules.
+Egy _tartalmi entitás_ (vagy ahogy gyakran rövidítjük, egy _entitás_) olyan adat, aminek a célja, hogy a látogatók számára megjelenjen: lehet sima vagy HTML-formázott szöveg, kép, fotó, csatolt fájl, stb. A tartalmi entitások meghatározása általában az alaprendszer moduljaiból ered, de sok olyan közösségi modul is létezik, amely egy adott célú tartalmi entitást definiál.
 
-Content entities are grouped into _entity types_, which have different purposes and are displayed in very different ways on the site. Most entity types are also divided into _entity sub-types_, which are divisions within an entity type to allow for smaller variations in how the entities are used and displayed. Here is a table of some common content entity types:
+Fontos még, hogy ezek _entitástípusokba_ vannak sorolva, amelyeknek más-más célja van és akár teljesen eltérően is megjelenhetnek a webhelyen. Ha ez eddig túl egyszerűnek hangzott volna, sok entitástípus továbbosztódik _entitásaltípusokra_, melyek lehetővé teszik apróbb (például megjelenítést befolyásoló) különbségek megvalósítását. A könnyebb megértés végett íme egy áttekintő táblázat néhány gyakori entitásról:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Entity type |Entity sub-type |Defining Module |Main uses |Examples
+| Entitástípus | Entitásaltípus | Felelős modul | Fő célja | Példák
 
-|Content item |Content type |Node module
-  |Content intended to be the main page area for pages on the site
-  |In the farmers market site example, you might have content types for basic pages, vendor pages, and recipe pages.
+| Tartalom egy eleme | Tartalomtípus | _Node_ modul
+  | Ez fogja kitölteni a webhely oldalainak legnagyobb, középső területét.
+  | A termelői piac példánknál maradva 3 altípusát hozzuk létre ennek az entitásnak: egy _Egyszerű oldalt_ (amit majd az olyan sima szöveges oldalak létrehozásához fogunk használni, mint a Rólunk, Impresszum és Küldetés), egy _Árus oldala_ (amit már nem csak mi, adminisztrátorok fogunk tudni szerkeszteni, hanem szerepkörük révén a kereskedők is a saját oldalaikat), és egy _Recept oldalt_ (amit pedig már dinamikusan, mezőhivatkozásokból állít elő a Drupal).
 
-|Comment |Comment type |Comment module
-  |Commentary added to content entities (typically to Content item entities)
-  |On a blog site, blog posts might have comments. They are not needed in the farmers market site example.
+| Hozzászólás-lánc | Hozzászólás-típus | _Comment_ modul
+  | Felhasználók személyes megjegyzései, amelyeket leggyakrabban tartalmakhoz (lásd előző sor) fűznek.
+  | Egy blogon a naplóbejegyzések alatt gyakran lehet kommentelni. A mi termelői piac webhelyünkön azonban nem fogunk hozzászólásokat használni.
 
-|User profile |(none) |User module
-  |Data related to a person with a user account (login access) on the site
-  |Every site has at least basic user profiles with user names and email addresses; social networking sites may have more complex user profiles with more information.
+| Felhasználói fiók | (nincs altípusa) | _User_ modul
+  | Minden, a webhelyre bejelentkezési joggal rendelkező felhasználóval kapcsolatos adatot ilyen entitásként tárolunk.
+  | Ma már minden dinamikusan működő webhelyen van valamilyen felhasználói profil: a legegyszerűbb a felhasználónév és e-mail cím kiírása, de a közösségi hálózatok természetesen jóval részletesebb adatlapokat biztosítanak.
 
-|Custom block |Block type |Custom Block module
-  |Text and images in smaller chunks, often displayed in the site header, footer, or sidebar
-  |In the farmers market site example, you might put the hours and location in a sidebar block.
+| Egyéni blokk | Blokktípus | _Custom Block_ modul
+  | Általában rövidebb szövegrészletek kisebb képekkel, amelyeket gyakran az oldalsávokon, vagy fej- és lábléceken helyeznek el.
+  | A termelői piac webhelyén készítünk például egy _Nyitvatartás_ blokkot a jobb oldalsávra.
 
-|Taxonomy term |Vocabulary |Taxonomy module
-  |Used to classify other types of content
-  |In the farmers market site example, you might classify Recipe content with an Ingredients taxonomy vocabulary, with taxonomy terms like Carrots and Tomatoes. In a blogging site, blog posts might be classified using a Tags vocabulary, and perhaps also a Categories vocabulary.
+| Taxonómia-kifejezés | Taxonómia-szótár | _Taxonomy_ modul
+  | Leginkább a többi fajta entitás (lásd fentebbi sorok) kategorizálására szolgál.
+  | A termelői piac webhelyén osztályozhatjuk a _Recept_ tartalomtípus elemeit egy taxonómiaszótárral (mondjuk legyen a neve _Szükséges összetevők_), amiben két kifejezés (répa és paradicsom) van felvéve. Egy blogon a bejegyzéseket akár két, egymással párhuzamosan működő szótárral is címkézhetjük: míg a _Téma_ szótár három kifejezése (szakmai, hobbi, magánélet) a poszt témaköre szerint, addig a _Címkék_ szótár változó kifejezései pedig a megemlített fogalmak alapján csoportosíthatja ugyanazt a blogbejegyzést.
 
-|File |(none) |File module
-  |An image or attachment file that is tracked and managed by the site, often attached to other types of content
-  |In the farmers market site example, both Recipe and Vendor pages might have image attachments, which would (behind the scenes) be managed as File entities by the site
+| Fájl | (nincs altípusa) | _File_ modul
+  | Lehet például egy fotóillusztráció egy cikkhez vagy egy letölthető jelentkezési lap PDF-ként, a lényeg, hogy a webhely szoftvere kezeli.
+  | Példánknál maradva a _Recept_ és _Árus_ tartalomtípusok (lásd fent) egyaránt kínálhatnak képfeltöltési lehetőséget, amit a háttérben a webhely fájl entitásokként fog látni.
 
-|Contact form |Form type |Contact module
-  |A form that lets site visitors contact site owners
-  |A contact form is needed in the farmers market site example
+| Kapcsolatfelvételi űrlap | Űrlaptípus | _Contact_ modul
+  | Ezen az űrlapon keresztül a látogatók úgy írhatnak e-mailt a webhely üzemeltetőinek, hogy nem kell tudniuk hozzá a címzett e-mail címét.
+  | A termelői piac webhelyén is használunk kapcsolatfelvételi űrlapot.
 
 |=============================================
 
-==== What is a field?
+==== Mik azok a mezők?
+Így, hogy már alaposan átnéztük az entitástípusokat (első oszlop), jogosan merül fel a kérdés, hogy miben térnek el az altípusaik (második oszlop) egymástól? Elsősorban abban, hogy különböző fajta adatokat is képesek tárolni úgy, hogy közben megmaradnak ugyanannak a szülő entitástípus gyermekének. Ez úgy lehetséges, hogy a _mezők_ eltérő készletéből épülnek fel.
 
-Within entity items, the data is stored in individual _fields_, each of which holds one type of data, such as formatted or plain text, images or other files, or dates. Field types can be defined by the core software or by modules.
+Minden fentebb említett entitásaltípus tulajdonképpen nem más, mint mezők egy készlete.
 
-Fields can be added by an administrator on entity sub-types, so that all entity items of a given entity sub-type have the same collection of fields available. For example, the Vendor content type in the farmers market example might have fields for the vendor name, a logo image, website URL, and description, whereas the _Basic page_ content type might only have fields for the title and page body. When you create or edit entity items, you are specifying the values for the fields on the entity item.
+Bár eddig talán úgy tűnhetett, hogy az adatokat maguk az entitásaltípusok tárolják, de ez nem így van. Létezik ugyanis egy még mélyebb szintű építőelem, a mező.  Ahogy neve is sejteti, ez már igen közel áll az adatbázisszintű mező fogalmához (csakhogy ezeket még a Drupal kezeli), és mint ilyen, természetesen ez is csak egyféle formátumú adatot tud tárolni – például dátumot, formázatlan szöveget vagy egy fájlt (arra mutató hivatkozásként, nem binárisan). Hasonlóan az entitástípusokhoz, mezőket is általában az alaprendszer moduljai definiálnak, de sok olyan közösségi modul is létezik, amely egy adott célú tartalmi entitást biztosít a létezőkön felül.
 
-==== Related topics
+Adminisztrátorként mi magunk is tetszőlegesen rakhatunk össze új entitásaltípusokat a webhelyen elérhető mezőkből. Így a jövőben minden egyes elem, amit ebben az új entitásaltípusunkban mentünk majd el, mindig ugyanazokat a mezőket fogja tartalmazni.
+
+Hogy jobban megértsük, térjünk vissza a fenti táblázat első sorában említett példánkhoz: az _Egyszerű oldal_ és _Árus oldal_ egyaránt tartalomtípusnak számít (hiszen hagyományos értelemben véve valóban a webhely tartalmai, csak külön fajtájúak). Sőt, még közös mezőjük is van: egy hosszabb írás begépelésére alkamas szövegmező, legyen a címe mondjuk _Bemutatkozószöveg_. Ilyenkor ha az _Egyszerű oldal_ típusból készítjük a termelői farm webhelyünk ismertető oldalát „Rólunk” címmel, akkor csak ebbe a hosszú szövegbeviteli mezőbe írhatjuk piacunk ismertetőjét, míg ha egy kereskedő szerkeszti az _Árus oldal_ típusból készült saját adatlapját, akkor – amellett, hogy ő is kitöltheti a _Bemutatkozószöveg_ mezőt saját köszöntőjével – azon látni fog még egy további _Cégnév_, _Logó_ és _Honlapom linkje_ mezőt is.
+
+Végezetül összefoglalva talán már érthető, hogy amikor például a saját profiloldalunkon átállítunk valamit, tulajdonképpen nem teszünk mást, mint a mezők értékét definiáljuk az adott  entitástípus–entitásaltípus–entitáselem metszetben.
+
+==== Kapcsolódó témák
 
 * <<planning-structure>>
 * <<content-create>>
@@ -93,9 +100,9 @@ Fields can be added by an administrator on entity sub-types, so that all entity 
 * <<user-concept>>
 * <<block-concept>>
 
-// ==== Additional resources
+// ==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] and https://www.drupal.org/u/gdunham[Grant Dunham].
+Írta és szerkesztette: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] és https://www.drupal.org/u/gdunham[Grant Dunham]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
