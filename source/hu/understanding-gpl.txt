@@ -1,55 +1,55 @@
 [[understanding-gpl]]
 
-=== Concept: Drupal Licensing
+=== Alapfogalom: a Drupal licence
 
 [role="summary"]
-Overview of Drupal licensing and the guidelines to be followed by users and contributors.
+Ebben a fejezetben először áttekintjük a Drupal szoftver használatának feltételeit, majd a közreműködők által követendő irányelveket.
 
-(((Licensing,overview)))
-(((Drupal licensing,overview)))
-(((GPL (General Public License or GNU General Public License),overview)))
-(((GNU General Public License,overview)))
-(((Legal,overview)))
+(((Felhasználási engedély,áttekintés)))
+(((Drupal jogkezelés,áttekintés)))
+(((GPL (General Public License vagy GNU General Public License),áttekintés)))
+(((GNU General Public License,áttekintés)))
+(((Jogi,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<understanding-drupal>>
 
-==== What is Drupal Licensing?
+==== Miről is szól a licencelés?
 
-Drupal and all contributed files hosted on _Drupal.org_ are licensed under the GNU General Public License (GPL), version 2 or later. That means you are free to download, reuse, modify, and distribute any files that are part of a project on _Drupal.org_ under the terms of GPL version 2 or 3. You can also run the core software in combination with any code with any license that is compatible with version 2 or 3.
+A Drupal alaprendszerre és valamennyi közösségi projekt fájljaira – ami a Drupal.org portálon keresztül elérhető – kivétel nélkül a GNU General Public License liszenszének 2. vagy újabb változata vonatkozik. A GPL 2. vagy 3. liszensz alapján közzétett projekteket és fájljaikat bárki szabadon letöltheti, újra felhasználhatja, módosíthatja és terjesztheti. Az alaprendszer szintén együtt futtatható bármilyen más forráskóddal, ami illeszkedik a GPL 2. vagy 3. licenc kiadásával.
 
-Drupal contributors should follow these guidelines:
+A Drupal közreműködői az alábbi feltételek mentén járulhatnak hozzá a közösségi szoftverhez:
 
-* All files (PHP, JavaScript, images, Flash, etc.) that are part of a project on _Drupal.org_ have to be under GPL version 2 or later.
+* A Drupal.org-on kizárólag olyan forráskódot lehet közzétenni, melynek valamennyi fájljára (PHP, JavaScript, HTML, CSS, képek, stb.)  a GPL 2. vagy újabb változata vonatkozik.
 
-* All Drupal contributors retain copyright on their code, but agree to release it under the same license as Drupal.
+* A Drupal minden közreműködője megőrzi saját forráskódjának egyéni szerzői jogát, de egyetért annak a Drupal licencével megegyező feltételek szerinti átadásával.
 
-* Drupal modules and themes are a derivative work of Drupal. If you distribute them, you must do so under the terms of GPL version 2 or later.
+* A közösségi modulok és sminkek a Drupal alaprendszerből származtatott szoftvertermékek. Terjesztésükre ugyanúgy a GPL 2. verziója szerinti feltételek vonatkoznak.
 
-* All content on _Drupal.org_ itself is copyrighted by its original contributors, and is licensed under the Creative Commons Attribution-ShareAlike license 2.0.
+* A forráskódokon kívül minden más, a Drupal.org honlapon közzétett tartalom szerzői joga a tartalom létrehozásában közreműködőket illeti, és a Creative Commons Attribution – ShareAlike (azaz „Nevezd meg! – Így add tovább!”) licenc 2.0 kiadása érvényes rá.
 
-* Sample code on _Drupal.org_ is also available under GPL version 2 or later.
+* A Drupal.org-on közzétett minta bemutató kódok szintén a GPL 2. verziójának hatálya alá esnek.
 
-==== Related topics
+==== Kapcsolódó témák
 
 <<thoughts-connecting>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/about/licensing[_Drupal.org_ page on "Licensing"]
+* https://www.drupal.org/about/licensing[Licensing] („Licencelés”) című oldal a Drupal.org-on angol nyelven.
 
-* https://api.drupal.org/api/drupal/core!LICENSE.txt/8["Drupal 8 LICENSE.txt" page on _api.drupal.org_]
+* https://api.drupal.org/api/drupal/core!LICENSE.txt/8[LICENSE.txt] fájl a Drupal 8 forráskódjában megtekinthető az api.drupal.org-on angol nyelven.
 
-* http://www.gnu.org/licenses/old-licenses/gpl-2.0.html[GNU General Public License, version 2]
+* A GNU General Public License, azaz http://gnu.hu/gpl.html[GPL 2. verziója] magyar nyelven (nem hivatalos fordítás).
 
-* http://www.gnu.org/licenses/gpl-3.0.en.html[GNU General Public License, version 3]
+* A GNU General Public License, azaz http://gnu.hu/gplv3.html[GPL 3. verziója] magyar nyelven (nem hivatalos fordítás).
 
-* http://creativecommons.org/licenses/by-sa/2.0/[Creative Commons Attribution-ShareAlike license 2.0.]
+* A Creative Commons https://creativecommons.org/licenses/by-sa/2.0/deed.hu[„Nevezd meg! – Így add tovább!” 2.0] licence magyar nyelven.
 
-* https://groups.drupal.org/legal["Legal Group" on _groups.drupal.org_]
+* https://groups.drupal.org/legal[Legal Group] (azaz „Jogi csoport”) kör a groups.drupal.org-on (angol nyelvű).
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/diana.lakatos[Diána Lakatos] at http://pronovix.com[Pronovix] from https://www.drupal.org/about/licensing["Licensing"] copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/diana.lakatos[Lakatos Diána] (http://pronovix.com[Pronovix]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/about/licensing[Licensing] (azaz „Licencelés”) című szócikkéből vette át, melynek szerzői joga 2000-2016 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
