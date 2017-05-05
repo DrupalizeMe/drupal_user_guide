@@ -1,84 +1,84 @@
 [[install-tools]]
 
-=== Concept: Additional Tools
+=== Alapfogalom: további hasznos eszközök
 
 [role="summary"]
-Overview of additional tools that help site builders conveniently create sites.
+Ebben a témakörben áttekintjük, hogy még milyen praktikus kiegészítők segíthetik egy webhelyépítő munkáját.
 
-(((Tool,Coder)))
-(((Tool,Devel)))
-(((Tool,Drush)))
+(((Eszköz,Coder)))
+(((Eszköz,Devel)))
+(((Eszköz,Drush)))
 (((Tool,Composer)))
-(((Tool,Firebug)))
-(((Tool,Git)))
+(((Eszköz,Firebug)))
+(((Eszköz,Git)))
 (((Tool,drupal Console)))
-(((Coder tool,overview)))
-(((Devel tool,overview)))
-(((Drush tool,overview)))
+(((Coder eszköz,áttekintés)))
+(((Devel eszköz,áttekintés)))
+(((Drush eszköz,áttekintés)))
 (((Composer tool,overview)))
-(((Firebug tool,overview)))
-(((Git tool,overview)))
-(((Drupal Console tool,overview)))
+(((Firebug eszköz,áttekintés)))
+(((Git eszköz,áttekintés)))
+(((Drupal Console,áttekintés)))
 
-// ==== Prerequisite knowledge
+// ==== Szükséges előismeretek
 
-==== What tools are available for site builders?
+==== Milyen eszközök állnak rendelkezésünkre?
 
-There are several additional tools available that help you create sites faster, more accurately and with less effort.
+Az alábbiakban bemutatott eszközök célja az, hogy gyorsabban, pontosabban és kevesebb időbefektetéssel tudjunk webhelyeket építeni.
 
 Drush::
-  See below for more about Drush.
+  Ezzel a nélkülözhetetlen alkalmazással lentebb még bővebben is foglalkozunk.
 Git::
-  http://git-scm.com[Git] is a version control system you can use to track changes made to files within your entire site, or files relating only to the module or theme that you are using. Git makes it possible to try out changes, and if necessary, revert to a previous version. It can be used as well to track changes in the configuration files and synchronize the configuration of different sites. Git has become the standard for web development projects.
+  A http://git-scm.com[Git] egy verziókövető rendszer, amivel akár csak modulok és sminkek saját könyvtárait, akár a webhely teljes kódbázisát felügyelhetjük: hol, mikor, milyen változtatás történt. A Git nyilvántartására támaszkodva biztonságosabban próbálhatunk ki módosításokat, mert ha egy változtatás nem sikeres, könnyen vissza tudunk állni az utolsó, még működőképes állapotra. Mivel a Drupal fájlokban is tárolja a konfigurációját, ezért a Git segítségével összehasonlíthatjuk és hordozhatjuk a beállításokat két webhelymásolat (például a helyi gépen futó és az élesítésre váró) között. Napjainkra a Git a nemzetközi webfejlesztési iparág _de facto_ szabványává vált.
 Composer::
-  See below for more about Composer.
+  Erről a másik nagyszerű segítségről is írunk még alább.
 Devel::
-  The https://www.drupal.org/project/devel[contributed Devel module] helps with development tasks such as debugging and inspecting code, analyzing database queries, and generating dummy content.
+  A https://www.drupal.org/project/devel[Devel] egy közösségi modul, ami rengeteg praktikus funkciót kínál a webfejlesztési feladatok elvégzéséhez, mint például a forráskód vizsgálatát, az adatbázis-lekérdezések elemzését és próba tartalmak tömeges előállítását tesztjelleggel.
 
-==== What is special about Drush?
+==== Mitől különleges a Drush?
 
-http://www.drush.org[Drush] is a command-line tool for building and maintaining sites, providing an alternative to using the administrative interface for many operations. Many site builders and maintainers prefer to use Drush whenever possible, and consider the time spent installing and learning to use Drush to be a good investment. Reasons to consider using Drush:
+A http://www.drush.org[Drush] egy parancssorban futó alkalmazás, amellyel a Drupalnak adhatunk utasításokat kényelmesebben és gyorsabban, mintha ehhez az adminfelületen kellene kattintgatnunk. Sok webfejlesztő ahol csak tud, amikor csak lehet, Drusht használ a Drupal kezelésére, mert meggyőződésük, hogy a megismerésére és gyakorlására fordított tanulási idő hamar megtérül. Íme néhány érv, hogy miért lehet érdemes nekünk is áttérnünk a használatára:
 
-* Drush provides a large number of commands for tasks such as installing the base software, modules, and themes; updating software; performing database operations, including copying and querying; resetting passwords; and clearing the cache. Some contributed modules and themes also define Drush commands.
+* Rengeteg parancsot kínál szinte valamennyi feladathoz: a telepítéstől (nem csak modulokat vagy sminkeket, de magát az alaprendszert is akár) és frissítéstől kezdve a különböző adatbázisműveleteken át egészen a gyorsítótárak ürítéséig és jelszavak újragenerálásáig – csak hogy néhány előnyét említsük. Sőt, népszerűsége okán már más közösségi modulok és sminkek is definiálnak saját Drush-parancsokat a még gördülékenyebb üzemeltetés érdekében.
 
-* Doing administrative tasks using Drush is typically faster and less tedious than performing the same tasks through the administrative interface.
+* A gyakori, sokat ismételt adminisztrációs feladatok elvégzése általában gyorsabb és kényelmesebb parancsorban begépelve, mint ugyanez az adminfelületen, több oldalbetöltésen keresztül navigálva.
 
-* Since Drush is a command-line interface, you can write scripts that combine Drush commands and other commands on the server, to automate more complicated tasks.
+* Mivel a Drush az adminfelületnél jóval mélyebb szinten, a számítógép parancssorában fut, ezért a kívánt műveletek egymás utáni elvégzésére automata szkriptek írhatóak, amik nem csak a Drupalt vezérelhetik, hanem akár a webszervert és a stack más elemeit (például adatbázisszerver, külső gyorsítótár szerver, stb.) is.
 
-* Drush provides additional functionality not available via the administrative interface; for example, running database queries.
+* A Drush ezenkívül esetenként akár több lehetőséget is kínál, mint az adminfelület, például adatbázis-lekérdezések futtatását.
 
-If you want to use Drush, you will need to have command-line terminal access to the server where your website will be hosted, and you will need to have a compatible version of the Drush tool installed on that server. Check the http://www.drush.org[Drush website] for installation instructions and version compatibility. There is also documentation on the available Drush commands on that site.
+Ha sikerült felkelteni az érdeklődést a Drush kipróbálása iránt, akkor szükség lesz a parancssoron keresztüli hozzáférésre és a Drush kompatibilis verziójának feltelepítésére azon a számítógépen. További tudnivaló a telepítésről és kompatibilis verziókról a http://www.drush.org[Drush weboldalán] található. Ugyanott részletes dokumentáció is elérhető.
 
-==== What is Composer used for?
+==== Mire jó a Composer?
 
-https://getcomposer.org/[Composer] is a tool for managing PHP dependencies, where the developer specifies what version of each external library is needed, and Composer manages the process of downloading and installing the libraries.
+A https://getcomposer.org/[Composer] a PHP-függőségek kezelésére szolgáló eszköz, aminek segítségével a fejlesztőnek elég csak definiálnia, hogy egy adott külső függvénykönyvtár melyik verziójára van szüksége a saját programjai futtatásához, és onnantól a Composer gondoskodik annak letöltéséről és telepítéséről.
 
-The core software is a primary user of Composer, because it makes use of several externally-developed software libraries, which must be downloaded and installed in order for the core software to work. When you install the core software, you either need to download an archive that contains compatible versions of the external libraries, or you need to run Composer to download the external libraries after the initial download.
+A Drupal nagy mértékben támaszkodik a Composer szolgáltatásaira, mivel számos külső, Drupalon kívül készülő komponens lett beépítve a rendszerbe, és ezeknek mindig letöltve és telepítve kell lenniük a hibamentes működéshez. Az alaprendszer telepítésekor vagy le kell töltenünk egy tömörített állományt, ami tartalmazza e külső programok szükséges verzióit, vagy kézzel el kell indítanunk a Composert, hogy beszerezze azokat nekünk.
 
-Some contributed modules also make use of externally-developed software libraries; for example, a Facebook integration module might require Facebook's integration library to be installed for the module to work, and a geographical module might make use of a standard library of geographical functions. To install a module with external dependencies, you will need to run Composer.
+Közösségi modulok is megkövetelhetik a Composer használatát, például egy Facebook-kal való összeköttetést megvalósító modul igényli a Facebook által kiadott függvénykönyvtár meglétét a helyi szerveren, vagy egy földrajzi koordinátákat kezelő modulnak szüksége lehet egy adott geolokációs függvénykönyvtárra. Az ilyen, külső függőségekkel működő modulok és sminkek telepítéséhez futnia kell a Composer-nek.
 
-==== What tools are available for module and theme developers?
+==== Milyen segítség áll a modul- és sminkfejlesztők rendelkezésére?
 
-In addition to the site builder tools mentioned above, the following tools are useful for module and theme developers.
+Eddig azokról az eszközökről volt szó, amelyek leginkább a webhelyek építéséhez és üzemeltetéséhez hasznosak. Az alábbiakban azonban bemutatunk néhány olyat is, melyneknek inkább a modul- és sminkfejlesztők veszik nagy hasznát.
 
 Drupal Console::
-  https://drupalconsole.com[Drupal Console] is a command-line tool that generates boilerplate code and interacts with a Drupal site. It can generate, for example, block or form code, install modules and themes, and create dummy content. Drupal Console makes use of the Symfony Console.
+  A https://drupalconsole.com[Drupal Console] szintén egy parancssori eszköz, ami kapcsolatba lép a Drupal webhellyel és előregenerált kódrészleteket állít elő. Kérhetünk így blokkok vagy űrlapok programozásához sablon kódot, de szintén képes modulokat és sminkeket telepíteni, valamint próbatartalmat tömegesen előállítani. A Drupal Console tulajdonképpen a _Symfony Console_-ra épül.
 Coder::
-  https://www.drupal.org/project/coder[Coder] is a command-line tool that checks if your modules and themes comply with coding standards and other best practices. It can also fix coding standard violations.
+  A https://www.drupal.org/project/coder[Coder] modul ugyanúgy a parancssorban futtatható és arra készült, hogy segítsen az általunk írt forráskódot hozzáigazítani a projekt széleskörűen elfogadott és mások által is betartott szintaxis-szokásaihoz. Sőt, ha ezektől való eltérést észlel, akkor nem csak figyelmeztet minket, de akár ki is tudja javítani a hiányosságokat.
 Firebug::
-  http://getfirebug.com[Firebug] is a Firefox plugin that allows viewing, editing, debugging, and monitoring CSS, HTML, and JavaScript in a separate browser window. The https://www.drupal.org/project/drupalforfirebug[contributed Drupal for Firebug module] displays Drupal debugging and SQL query information in the Firebug window.
+  A http://getfirebug.com[Firebug] egy beépülő volt a Firefox-hoz, amely lehetővé tette a böngészőbe betöltődő weboldal HTML, CSS és JavaScript forráskódjának elemzését, szerkesztését, hibakeresését egy külön böngészőablakban. Funkcionalitását mára felváltották a nagyobb böngészők gyárilag beépített fejlesztői eszköztárai. Ezekről itt olvashatunk bővebben: https://developer.chrome.com/devtools[Google Chrome Dev Tools] és https://developer.mozilla.org/en-US/docs/Tools[Mozilla Firefox Dev Tools]. Ezen kívül a https://www.drupal.org/project/drupalforfirebug[Drupal for Firebug] közösségi modul képes hibakeresési információkat és SQL-lekérdezések adatait megjeleníteni a Firebug ablakában.
 
-==== Related topics
+==== Kapcsolódó témák
 
 <<install-composer>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/node/147789[_Drupal.org_ community documentation page "Development tools"]
+* https://www.drupal.org/node/147789[Development tools] (azaz „Fejlesztői eszközök”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
-* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
+* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[Using Composer with Drupal] (azaz „Drupal használata Composer-rel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta és szerkesztette: https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum])
