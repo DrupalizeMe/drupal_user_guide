@@ -1,42 +1,42 @@
 [[structure-image-responsive]]
 
-=== Concept: Responsive Image Styles
+=== Alapfogalom: alkalmazkodó képstílusok
 
 [role="summary"]
-Overview of responsive image styles, which allow you to provide different images for different screen sizes.
+Annak áttekintése, hogy miként lehet különböző kijelzőméretekhez a megfelelő méretű képeket szolgáltatni.
 
-(((Responsive image style,overview)))
-(((Image style,responsive)))
-(((Breakpoint,overview)))
-(((HTML5 picture tag,and responsive images)))
+(((Alkalmazkodó képstílus,áttekintés)))
+(((Képstílus,alkalmazkodó)))
+(((Töréspont,áttekintés)))
+(((HTML5 picture jelölő,és alkalmazkodó képek)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-themes>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== What are responsive image styles?
+==== Mit nevezünk alkalmazkodó képstílusnak?
 
-The core Responsive Image module provides responsive image styles. This allows you to have images in your website that are specifically sized for different screen sizes. This is useful, for example, to make your site load faster on mobile devices because image sizes are optimized for smaller screens.
+Az _alkalmazkodó képstílus_ tulajdonképpen nem más, mint a korábban meghatározott képstílusok összepárosítása adott töréspontokkal. Ez lehetővé teszi számunkra, hogy webhelyünk automatikusan létrehozza különböző méretváltozatait ugyanannak az egy képnek, így bármekkora felbontással rendelkező kijelzőről nézik meg oldalunkat, mindig az optimális (azaz se nem túl nagy vagy kicsi) méretben kapják meg őket. Ez azért nagyon hasznos, mert mobileszközökre a kisebb képernyők miatt amúgy is elég kisebb méretű változatait leküldeni egy fotónak, ami ezáltal kevesebb sávszélességet fogyaszt, így gyorsabban töltenek be oldalaink. Mindezt az alaprendszer _Responsive Image_ modulja biztosítja.
 
-A responsive image style is a mapping between images styles and breakpoints. Breakpoints are the points where a responsive design needs to change in order to respond to different screen sizes. Responsive image styles can only be used if the breakpoints are defined in the theme.
+Töréspontnak azt a számszerű értéket nevezzük, amihez képest ha szélesebb vagy keskenyebb a képernyő vízszintes dimenziója, átvált a weboldal sminkje egy másik elrendezésbe. Éppen ezért ilyen rugalmas képstílusokat csak azoknál a sminkeknél tudunk használni, melyeknek vannak töréspontjaik beállítva.
 
-When a responsive image style is defined, it can be used in the display settings for Image fields. This allows the site to display responsive images using the HTML5 picture tag.
+Ha viszont sikeresen felvettünk egy alkalmazkodó képstílust, akkor utána azt már kiválaszthatjuk a _Kép_ típusú mezők megjelenítési beállításai között. Ez lehetővé teszi, hogy a Drupal kihasználja a korszerű HTML5-ös _picture_ elemben rejlő lehetőségeket.
 
-==== Related topics
+==== Kapcsolódó témák
 
 <<structure-fields>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/node/1388492[_Drupal.org_ community documentation page "Responsive web design"]
+* https://www.drupal.org/node/1388492[Responsive web design] (azaz „Alkalmazkodó webdizájn”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
-* https://www.drupal.org/documentation/modules/responsive_image[_Drupal.org_ community documentation page "Responsive images in Drupal 8"]
+* https://www.drupal.org/documentation/modules/responsive_image[Responsive images in Drupal 8] (azaz „Alkalmazkodó képek a Drupal 8-ban”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
-* https://www.drupal.org/documentation/modules/breakpoint[_Drupal.org_ community documentation page "Working with breakpoints in Drupal 8"]
+* https://www.drupal.org/documentation/modules/breakpoint[Working with breakpoints in Drupal 8] (azaz „Töréspontok használata a Drupal 8-ban”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from https://www.drupal.org/documentation/modules/responsive_image[Responsive images in Drupal 8], copyright 2000-2016 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/documentation/modules/responsive_image[Responsive images in Drupal 8] (azaz „Alkalmazkodó képek a Drupal 8-ban”) című szócikkéből vette át, melynek szerzői joga 2000-2016 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
