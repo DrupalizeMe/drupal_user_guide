@@ -1,46 +1,46 @@
 [[structure-reference-fields]]
 
-=== Concept: Reference Fields
+=== Alapfogalom: hivatkozásmezők
 
 [role="summary"]
-Overview of reference fields and their commonly-used types.
+A hivatkozott mezők fogalmának megismerése, valamint néhány gyakran használt fajtájuk bemutatása.
 
-(((Reference field,overview)))
-(((Reference field,content)))
-(((Reference field,taxonomy term)))
-(((Reference field,user)))
-(((Field,reference)))
-(((Field,content reference)))
-(((Field,taxonomy term reference)))
-(((Field,user reference)))
-(((Taxonomy term reference field,overview)))
-(((User reference field,overview)))
-(((Content reference field,overview)))
+(((Entitáshivatkozás,áttekintés)))
+(((Entitáshivatkozás,tartalom)))
+(((Entitáshivatkozás,taxonómiai kifejezés)))
+(((Entitáshivatkozás,felhasználó)))
+(((Mező,hivatkozás)))
+(((Mező,tartalmi hivatkozás)))
+(((Mező,taxonómiai kifejezésre hivatkozás)))
+(((Mező,felhasználóra hivatkozás)))
+(((Taxonómia kifejezésre hivatkozó mező,áttekintés)))
+(((Felhasználóra hivatkozó mező,áttekintés)))
+(((Tartalmi hivatkozás mező,áttekintés)))
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<planning-data-types>>
 
-==== What is a reference field?
+==== Mit nevezünk hivatkozott mezőnek?
 
-A _reference field_ is a field that represents a relationship between an entity and one or more other entities, which may belong to the same or different entity type. The three most commonly-used reference fields are:
+A mezőhivatkozás tulajdonképpen nem más, mint kapcsolat egy entitás és egy vagy több másik entitás között. Az összekapcsolt entitások akár egyforma, akár eltérő entitástípus alá is tartozhatnak. A gyakorlatban az alábbi három mezőhivatkozás fordul elő a legtöbbször:
 
-Content reference::
-  A reference to a content item. For example, you might want to connect recipes to the vendors who submitted them. You would set up a content reference field called Submitted by referencing Vendor content items on the Recipe content type.
+Tartalmi entitások behivatkozása::
+  Amikor a webhely egy tartalmi egységére történik a hivatkozás. Például a termelői piac webhelyünkön összeköthetjük a recepteket az azokat feltöltő árusok bemutatkozó oldalaival. Ehhez nem kell mást tennünk, mint a _Recept_ tartalomtípushoz felvennünk egy mezőhivatkozást, amit elnevezhetünk „Beküldő árus adatlapja” néven.
 
-Taxonomy term reference::
-  A reference to a taxonomy term. For example, you might want to connect recipes to their ingredients. You would set up a taxonomy term reference field called Ingredients on the Recipe content type. This reference field will point to the vocabulary Ingredients.
+Taxonómia-kifejezésre hivatkozás::
+  A tartalmak címkézésére, kategorizálására használatos taxonómiaszótárak elemei ugyanígy hivatkozhatóak. Előbbi példánknál maradva a recepteket hozzákapcsolhatjuk az egyes összetevőikhez. Ezt úgy érhetjük el, hogy szintén a _Recept_ tartalomtípushoz felveszünk egy másik hivatkozott mezőt is, amit „Szükséges hozzávalóknak” nevezünk el. Ez pedig az _Összetevők_ nevű szótárra fog mutatni.
 
-User reference::
-  A reference to a user account. For example, you might want to connect recipes with their chefs. You would set up a user reference field called Chefs on the Recipe content type.
+Felhasználóra való hivatkozás::
+  Olyan mező, ami a webhelyen regisztrált felhasználókra hivatkozik. Az említett recepteket hozzákapcsolhatjuk bizonyos szakácsokhoz is. Ez is könnyen megvalósítható, ha ugyanehhez a _Recept_ tartalomtípushoz felveszünk egy harmadik, felhasználókra hivatkozó mezőt is.
 
-==== Related topics
+==== Kapcsolódó témák
 
 <<structure-taxonomy>>
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
+Írta és szerkesztette: https://www.drupal.org/u/surendramohan[Surendra Mohan] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
