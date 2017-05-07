@@ -1,74 +1,74 @@
 [[planning-layout]]
-=== Planning Your Site Layout
+=== Oldalaink elrendezésének megtervezése
 
 [role="summary"]
-How to plan the navigation and layout of a website (mobile and desktop browsers).
+Hogyan tervezzük meg a webhely navigációját és hogyan rendezzük el a különböző tartalmakat az oldalak nagy- és kisképernyős változatain.
 
-(((Planning,site layout)))
-(((Site layout,planning)))
-(((Layout,planning)))
+(((Tervezés,webhely elrendezés)))
+(((Webhely elrendezés,tervezés)))
+(((Elrendezés,tervezés)))
 
-==== Goal
+==== Célkitűzés
 
-Plan the navigation and layout of the site, for both mobile and desktop browsers.
+A szakasz végére képesek leszünk megtervezni egy webhely navigációját és oldalelrendezését asztali és mobilképernyőkre egyaránt.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-themes>>
 * <<block-regions>>
 * <<preface-scenario>>
 
-// ==== Site prerequisites
+//==== Webhely előfeltételei
 
-==== Steps
+==== Lépések
 
-It is a good idea to plan the site layout before you start building the site and writing content; however, your plan may need to be revised either before you start implementing it or after you have some of the site built with draft content in place, based on budgetary concerns or stakeholder feedback.
+Építkezés előtt tervezni szokás, nincs ez másképp a webhelyek létrehozásakor sem: mielőtt elkezdenénk írni az első cikkünket, érdemes átgondolnunk, nagyjából hogyan fogjuk elmenteni. Első nekifutásra elegendő csak nagyjából, mivel a későbbiekben tervünk részletei még változhatnak akár a megvalósítás során jövő újabb ötletek, akár idő- vagy pénzszűke miatt.
 
-. Make a list of the information that your site should present to visitors. In the farmers market scenario, this might include:
+. Szedjük össze, hogy milyen információkat fogunk közzétenni a webhelyünkön. A termelői piac példánkban ezek a következők lehetnek:
 +
-  * Location of the market, with directions and a map
-  * Hours and days the market is open
-  * History of the market
-  * List of vendors
-  * Details about each vendor
-  * Searchable list of recipes
-  * Details about each recipe
-  * List of the most recently added recipes
+  * A piac címe, helye és megközelíthetősége egy térképpel
+  * A piac nyitvatartásának ideje
+  * A piac története, múltja
+  * Árusok felsorolása
+  * Részletek az egyes árusokról
+  * Receptek kereshető listája
+  * Részletek az egyes receptekről
+  * A legutóbb feltöltött receptek listája
 
-. Decide which information should be on which pages or types of pages on the site:
+. Döntsük el, hogy az egyes információkat melyik oldalon, vagy oldaltípuson akarjuk megjeleníteni:
 +
-  Information that should be on all pages::
-    Address, hours, and recently-added recipes list
-  Vendor details pages::
-    Information about each vendor on its own page
-  Recipe details pages::
-    Details of each recipe on its own page
-  Home page::
-    Location, map, directions, and hours
-  About page::
-    History of the market
-  Vendors list page::
-    List of vendors, with links to vendor detail pages
-  Recipe list page::
-    Searchable list of recipes, with links to recipe detail pages
+  Minden oldalon megjelenő információk::
+    A helyszín, a nyitvatartás és a legutóbbi receptek
+  Árusok adatlapjai::
+    Tudnivalók az egyes kereskedőkről a saját oldalaikon
+  Receptek oldalai::
+    Az ételek elkészítésének részletei önálló oldalakon
+  Címlap::
+    Helyszín, térkép, megközelíthetőség és nyitvatartás
+  Rólunk oldal::
+    A piac története, múltja
+  Árusok listája oldal::
+    A piac kereskedőinek felsorolása, hivatkozásokkal az adatlapjaikra
+  Receptek listája oldal::
+    Egy kereshető felsorolása a recepteknek, szintén hivatkozásokkal a receptek saját oldalára
 
-. Decide which information is the most important on each page. Site visitors using mobile phones or other small browsers will often only see the content that is presented first, and they may not scroll down to see all of the information.
+. Döntsük el, hogy melyik információ a legfontosabb az egyes oldalakon. Ez azért fontos, mert a mobileszközöket használó látogatók a kis képernyő miatt sokszor csak az oldal legtetejét látják, nem mindig görgetnek lejjebb, ahol a többi tartalom jelenik meg.
 
-. Decide which of these pages should appear in the main site navigation. For instance, the main navigation might consist of the Home, About, Vendors, and Recipes pages.
+. Határozzuk meg, hogy ezen oldalak közül melyiknek kell szerepelnie a webhely fő navigációjában. Így például a menüsor állhat a Címlap, Rólunk, Árusok és Receptek menüpontokból.
 
-. Make a rough design sketch for each page, showing how it would look when viewed on a small screen such as a phone, as well as on a larger screen such as a desktop browser. Considering that most site visitors will be using smaller browsers, it is a good idea to start with the phone-size layout, to make sure that these visitors will be able to find the information they need without too much scrolling.
+. Rajzoljunk fel egy közelítőleges vázlatot arról, hogyan képzeljük el a kinézetet  amikor kis és nagy képernyőn tekintik meg webhelyünket. Feltételezve, hogy a legtöbb látogató mobileszközökön fogja látni oldalainkat, ezért a legfontosabb, hogy elsősorban számukra tegyük kényelmessé a szükséges információk könnyű megtalálhatóságát.
 +
-In making these page layout plans, you might find that you need to revise your plan for which information should be on which pages. For example, you might decide that the address, hours, and recently-added recipes list would all fit well in the right sidebar area of all pages, when the site is viewed on desktop-sized browsers. On the other hand, you might decide that for mobile browsers, you would instead put the address and hours in a short format at the top of each page, but only display the recent recipe list at the bottom of the home page.
+Már ennél a lépésnél előfordulhat, hogy azonnal újra kell gondolnunk a fenti, 2. pontban megfogalmazott terveinket. Például dönthetünk úgy, hogy az utcai cím, a nyitvatartás és a legfrissebb receptek mind kényelmesen elférnek az oldalak jobb oldalsávján, ha asztali – nagyobb felbontású – monitoron tekintik meg őket. Viszont a mobilkészülékek kisebb kijelzőin csak az utcai címet és nyitvatartást tesszük az oldal tetejére (azt is rövidített formában), míg a legutóbb beküldött receptek felsorolását pedig a lap aljára, de csak a címlapon.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 <<planning-structure>>
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-// ==== Additional resources
+// ==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
