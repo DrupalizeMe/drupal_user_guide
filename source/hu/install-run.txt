@@ -30,14 +30,14 @@ A Drupal beépített telepítőjének végigfuttatásával az alaprendszer felte
 
 . Ha egy bemutató webhelyen (mint például amilyen a simplytest.me is) telepítjük a Drupalt, akkor már az alábbi képernyők egyikét látjuk magunk előtt. Ha azonban mi másoltuk fel a Drupal fájljait és könyvtárait a tárhelyünkre, akkor először el kell indítanunk a telepítőt. Ehhez elég csupán meglátogatnunk egy webböngészőben a tárhelyünk webcímét, és máris az első lépés fogad.
 
-. Először is válasszuk ki a magyar nyelvet. Emellett persze bármelyik másikat is választhatjuk, de a Kézikönyvben a Drupal használatát magyar fordítással mutatjuk be. Az itt kiválasztott nyelv fordítási fájljai letöltődnek a tárhelyünkre, így a telepítés következő lépései már azon a nyelven jelennek meg. Miután kiválasztottuk a magyar nyelvet, kattintsunk a _Mentés és folytatás_ gombra.
+. Először is válasszuk ki a magyar nyelvet. Emellett persze bármelyik másikat is választhatjuk, de a Kézikönyvben a Drupal használatát magyar fordítással mutatjuk be. Az itt kiválasztott nyelv fordítási fájljai letöltődnek a tárhelyünkre, így a telepítés következő lépései már azon a nyelven jelennek meg. Miután kiválasztottuk a magyar nyelvet, kattintsunk az (ekkor még angol nyelvű) _Save and continue_ gombra.
 +
 --
 // Go to the first step of the installer
 image:images/install-run-1.png["Képernyőkép a nyelvválasztó lépésről",width="100%"]
 --
 
-. A következő lépés a telepítési profil kiválasztása. A telepítési profilok az alaprendszer mellé csomagolva különböző modulokat és sminkeket tartalmaznak gyárilag, azokat már előre engedélyezve és beállítva telepítik fel a Drupalt, ezért nagyon hasznosak speciális célú webhelyek létrehozására. Az alaprendszer két telepítési profilt tartalmaz, mi most válasszuk az _Általános_ profilt, majd kattintsunk a _Mentés és folytatás_ gombra.
+. A következő lépés a telepítési profil kiválasztása. A telepítési profilok az alaprendszer mellé csomagolva különböző modulokat és sminkeket tartalmaznak gyárilag, azokat már előre engedélyezve és beállítva telepítik fel a Drupalt, ezért nagyon hasznosak speciális célú webhelyek létrehozására. Az alaprendszer két telepítési profilt tartalmaz, mi most válasszuk az _Általános_ (korábbi fordításban _Szabványos_) profilt, majd kattintsunk a _Mentés és folytatás_ gombra.
 +
 --
 // Go to the choose an installation profile step of the installer
@@ -46,12 +46,12 @@ image:images/install-run-2.png["Képernyőkép a telepítési profil kiválaszt�
 
 . A következő lépésben a telepítő ellenőrzi, hogy teljesülnek-e Drupal rendszerkövetelményei az adott tárhelyen, azaz lehetséges-e a telepítése? Ha esetleg a környezet nem minden szempontból felel meg a kívánalmaknak, akkor egy kivonatos listát kapunk, hogy min kell változtatnunk, mielőtt folytathatnánk a telepítést. Ha viszont minden szempontból rendben vagyunk, akkor a telepítő automatikusan továbblép a következő pontra.
 
-. Most kell megadni a(z) <<install-prepare>> fejezetben létrehozott adatbázis kapcsolódási adatait.
+. Most kell megadni a <<install-prepare>> fejezetben létrehozott adatbázis kapcsolódási adatait.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Mező felirata | Magyarázat | Példa érték
-|Adatbázis neve | Egy tetszőleges név, ahogy az adatbázisunkat elneveztük | drupal8
+|Adatbázis neve | Egy tetszőleges név, ahogy az adatbázisunkat elneveztük | drupal9
 |Adatbázis-felhasználó neve | Az adatbázis használatára jogosult MySQL-felhasználó neve | databaseUsername
 |Adatbázis-felhasználó jelszava | Az előbbi fiókhoz választott jelszó | ************
 |================================
@@ -69,7 +69,7 @@ Kattintsunk a _Mentés és folytatás_ gombra.
 image:images/install-run-4.png["Képernyőkép a telepítő  folyamatjelzőjéről",width="100%"]
 --
 
-. Az utolsó lépés az új webhely néhány alapinformációjának megadása. Fontos tudni, hogy az itt létrehozott felhasználói fiók kiemelt szerepű lesz a későbbiekben. Ezt nevezzük ugyanis az Egyes számú felhasználónak, amelyről bővebben a <<user-admin-account>> fejezetben írunk. Most ezt nyugodtan elnevezhetjük „admin”-nak, de válasszunk hozzá egy jó biztonságos jelszót, amiben segítenek az alatta megjelenő tanácsok is.
+. Az utolsó lépés az új webhely néhány alapinformációjának megadása. Fontos tudni, hogy az itt létrehozott felhasználói fiók kiemelt szerepű lesz a későbbiekben. Ezt nevezzük ugyanis az Egyes számú felhasználónak, amelyről bővebben a <<user-admin-account>> témakörnél írunk. Most ezt nyugodtan elnevezhetjük „admin”-nak, de válasszunk hozzá egy jó biztonságos jelszót, amiben segítenek az alatta megjelenő tanácsok is.
 +
 Töltsük ki az űrlapot a következő információkkal:
 +
@@ -115,4 +115,4 @@ Közösségi dokumentáció a Drupal.org-on: https://www.drupal.org/documentatio
 
 *Közreműködők*
 
-Írta és szerkesztette https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum]).
+Írta és szerkesztette: https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum]).
