@@ -78,7 +78,7 @@ function process_file($dir, $file, &$urls) {
   $matches = array();
 
   if( $text &&
-    preg_match_all('|http[s]*\:[A-Za-z0-9-._~\:/\?\#\@\!\$&+=.]+|', $text, $matches) &&
+    preg_match_all('|http[s]*\:[A-Za-z0-9-._~\%\:/\?\#\@\!\$&+=.]+|', $text, $matches) &&
     count($matches[0]) > 0) {
 
     foreach ($matches[0] as $url) {
