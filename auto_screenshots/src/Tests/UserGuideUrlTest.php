@@ -262,7 +262,9 @@ class UserGuideUrlTest extends WebTestBase {
   public function testUrls() {
     foreach ($this->urlsToTest as $url) {
       $this->drupalGet($url);
-      $this->assertResponse($code, "$url is status 200");
+      $this->assertResponse(200, "$url is status 200");
+      $newURL = trim($this->getUrl(), '/');
+      $this->assertEqual($url, $newURL, "$url ended up at the starting URL");
     }
   }
 
