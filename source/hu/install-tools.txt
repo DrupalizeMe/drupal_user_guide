@@ -41,7 +41,7 @@ A http://www.drush.org[Drush] egy parancssorban futó alkalmazás, amellyel a Dr
 
 * Rengeteg parancsot kínál szinte valamennyi feladathoz: a telepítéstől (nem csak modulokat vagy sminkeket, de magát az alaprendszert is akár) és frissítéstől kezdve a különböző adatbázisműveleteken át egészen a gyorsítótárak ürítéséig és jelszavak újragenerálásáig – csak hogy néhány előnyét említsük. Sőt, népszerűsége okán már más közösségi modulok és sminkek is definiálnak saját Drush-parancsokat a még gördülékenyebb üzemeltetés érdekében.
 
-* A gyakori, sokat ismételt adminisztrációs feladatok elvégzése általában gyorsabb és kényelmesebb parancsorban begépelve, mint ugyanez az adminfelületen, több oldalbetöltésen keresztül navigálva.
+* A gyakori, sokat ismételt adminisztrációs feladatok elvégzése általában gyorsabb és kényelmesebb parancssorban begépelve, mint ugyanez az adminfelületen, több oldalbetöltésen keresztül navigálva.
 
 * Mivel a Drush az adminfelületnél jóval mélyebb szinten, a számítógép parancssorában fut, ezért a kívánt műveletek egymás utáni elvégzésére automata szkriptek írhatóak, amik nem csak a Drupalt vezérelhetik, hanem akár a webszervert és a stack más elemeit (például adatbázisszerver, külső gyorsítótár szerver, stb.) is.
 
@@ -59,7 +59,7 @@ Közösségi modulok is megkövetelhetik a Composer használatát, például egy
 
 ==== Milyen segítség áll a modul- és sminkfejlesztők rendelkezésére?
 
-Eddig azokról az eszközökről volt szó, amelyek leginkább a webhelyek építéséhez és üzemeltetéséhez hasznosak. Az alábbiakban azonban bemutatunk néhány olyat is, melyneknek inkább a modul- és sminkfejlesztők veszik nagy hasznát.
+Eddig azokról az eszközökről volt szó, amelyek leginkább a webhelyek építéséhez és üzemeltetéséhez hasznosak. Az alábbiakban azonban bemutatunk néhány olyat is, melyeknek inkább a modul- és sminkfejlesztők veszik nagy hasznát.
 
 Drupal Console::
   A https://drupalconsole.com[Drupal Console] szintén egy parancssori eszköz, ami kapcsolatba lép a Drupal webhellyel és előregenerált kódrészleteket állít elő. Kérhetünk így blokkok vagy űrlapok programozásához sablon kódot, de szintén képes modulokat és sminkeket telepíteni, valamint próbatartalmat tömegesen előállítani. A Drupal Console tulajdonképpen a _Symfony Console_-ra épül.
