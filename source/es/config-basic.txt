@@ -1,9 +1,10 @@
 [[config-basic]]
 
-=== Editing Basic Site Information
+=== Editando la información básica del sitio web
 
 [role="summary"]
-How to edit basic site information (site name, slogan, and default time zone).
+Como editar la configuración básica del sitio web (nombre del sitio, lema, y
+zona horaria predefinida).
 
 (((Configuring,site)))
 (((Site name,configuring)))
@@ -21,76 +22,80 @@ How to edit basic site information (site name, slogan, and default time zone).
 (((Time zone setting,configuring)))
 (((First day of week,configuring)))
 
-==== Goal
+==== Objetivo
 
-Change basic site information such as _Site name_, _Slogan_,
-_Default time zone_.
+Modificar información básica del sitio web como _Nombre del sitio_, _Lema_,
+_Zona horaria predefinida_.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 <<config-overview>>
 
-//==== Site prerequisites
+//==== Requisitos previos del sitio web
 
-==== Steps
+==== Pasos
 
-===== Configuring the basic site information
+===== Configurando la información básica del sitio web
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_) to change the
-_Site name_, _Slogan_, administrative _Email address_, or the _Default front
-page_ path.
+. En el menú de administración _Administrar_, navegar hacia _Configuración_ >
+_Sistema_ > _Configuraciones básicas del sitio_
+(_admin/config/system/site-information_) para modificar el _Nombre del sitio_,
+_Lema_, _Dirección de correo electrónico_ administrativo, o la ruta de la
+_Página inicial predeterminada_.
 
-. Fill in the available fields as appropriate for your site.
+. Rellenar los campos disponibles según corresponda para el sitio web.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site name|Used to identify the site and displayed in browsers|Anytown Farmers Market
-|Slogan|Usually displayed sitewide|Farm Fresh Food
-|Email address|Used as _From_ address in automated email messages (registrations, password resets, etc)|info@example.com
+|Nombre del campo|Explicación|Valor de ejemplo
+|Nombre del sitio|Utilizado para identificar el sitio y mostrarlo en los
+navegadores|Mercado Cualquiera de agricultores
+|Lema|Generalmente mostrado en todo el sitio web|Granja de alimentos frescos
+|Dirección de correo electrónico|Utilizado como dirección _De_ en mensajes de
+correo automáticos (registros, restablecer contraseñas, etc)|info@example.com
 |================================
 +
 --
 // Site details section of admin/config/system/site-information.
-image:images/config-basic-SiteInfo.png["Site Information"]
+image:images/config-basic-SiteInfo.png["Información del sitio"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. Después de editar los campos, hacer clic en _Guardar configuración_ para ver
+los cambios aplicados al sitio web.
 
-===== Configuring default Regional settings
+===== Configurando parámetros Regionales predeterminados
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and Language_ > _Regional settings_
-(_admin/config/regional/settings_).
+. En el menú administrativo _Administrar_, navegar hacia _Configuración_ >
+_Regional e idioma_ > _Opciones regionales_ (_admin/config/regional/settings_).
 
-. Select the appropriate country from the _Default country_ select list in the
-_Locale_ section, and set which day will be displayed as _First day of week_
-on your site.
+. Seleccionar el país apropiado desde la lista seleccionable _País predefinido_
+en la sección _Regionalización_, y establecer que día se mostrará como _Primer
+día de la semana_ en el sitio web.
 
-. In the _Time zones_ section, select the sitewide _Default time zone_ from the
-list and configure user-specific time zones.
+. En la sección _Zonas horarias_, seleccionar la _Zona horaria predefinida_ de
+la lista y configurar la zona horaria específica para usuarios.
 +
 --
 // Locale and Time Zones sections of admin/config/regional/settings.
-image:images/config-basic-TimeZone.png["Time Zones"]
+image:images/config-basic-TimeZone.png["Zonas horarias"]
 --
 
-. After editing the fields, click
-_Save configuration_ to see the changes applied to the site.
+. Después de editar los campos, hacer clic en _Guardar configuración_ para ver
+los cambios aplicados al sitio web.
 
-// ==== Expand your understanding
-// ==== Related concepts
+// ==== Ampliar conocimiento
+// ==== Conceptos relacionados
 
-==== Additional resources
+==== Recursos adicionales
 
-https://www.drupal.org/node/1896670[_Drupal.org_ community documentation page "Getting started with Drupal 8 administration"]
+https://www.drupal.org/node/1896670[Página de documentación de la comunidad en
+_Drupal.org_ "Getting started with Drupal 8 administration"]
 
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch],
-and https://www.drupal.org/u/ifrik[Antje Lorch].
+Escrito y editado por https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] de
+https://erdfisch.de[erdfisch], y https://www.drupal.org/u/ifrik[Antje Lorch].
+
+Traducido por https://www.drupal.org/u/lluvigne[Leandro Luvigne].
