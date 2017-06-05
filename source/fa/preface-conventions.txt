@@ -1,123 +1,70 @@
 [[preface-conventions]]
-=== Conventions of the Guide
+=== قواعد این راهنما
 
 [role="summary"]
-Understanding the conventions used in this guide.
+درک قواعد موجود در این راهنما.
 
-==== Assumptions and prerequisites
+==== فرضیات و پیشنیازها
 
-This guide has the following assumptions and prerequisites:
+این راهنما فرضیات و پیشنیازهای زیر را در نظر می‌گیرد:
 
-* This guide is organized into topics; see <<preface-organization>> for details.
-Many topics include a _Prerequisite knowledge_ section, which lists other
-topics whose content knowledge is needed in order to understand the topic you
-are reading. Some background knowledge that is not covered in the guide is
-also assumed; see <<preface-audience>> for details.
+* این راهنما بر اساس موضوعات طبقه‌بندی شده است؛ برای جزئیات بیشتر <<preface-organization>> را مشاهده کنید. بسیاری موضوعات شامل یک قسمت _دانش پیشنیاز_ هستند، که به فهرست کردن سایر موضوعات جانبی برای درک بهتر موضوع اصلی می‌پردازد. برخی دانش پیش‌زمینه که پوشش داده نمی‌شود نیز مد نظر است؛ برای جزئیات بیشتر <<preface-audience>> را مشاهده کنید.
 
-* Many task topics list _Site prerequisites_, which are tasks that you'll need
-to have completed on your site before you'll be able to do the task in the
-topic you are reading.
+* بسیاری موضوعات تمرین به فهرست کردن _پیشنیازهای سایت_ می‌پردازند، یعنی کارهایی که باید قبل از انجام دادن این تمرین روی سایت خود انجام دهید.
 
-* The specifics of the site prerequisites relate to the scenario used throughout
-this guide of building a site for a farmers market (see <<preface-scenario>>
-for details). You can adapt the tasks to your own scenario, but you will also
-need to remember the changes you made when deciding if your site satisfies the
-site prerequisites for a task.
+* مشخصات پیشنیازهای سایت، مرتبط با سناریویی مبتنی بر ایجاد یک سایت برای فروشگاه محصولات کشاورزی است (برای جزئیات بیشتر <<preface-scenario>> را مشاهده کنید). تمرین‌ها را می‌توانید با سناریو خود منطبق سازید، اما باید تغییرات مورد نیاز خود را به یاد داشته باشید اگر سایت شما با یک تمرین منطبق باشد.
 
-* For all task topics after <<install-run>>, there is also an implicit
-prerequisite: you must have installed the content management software on your
-site, and be logged in to a user account with sufficient permissions to do the
-task (such as the user account created when you installed your site, which
-automatically has full permissions).
+* برای تمام موضوعات کاربردی پس از <<install-run>>، یک پیشنیاز ضمنی وجود دارد: باید نرم‌افزار مدیریت محتوا رو نصب کرده باشید و با حساب کاربری اصلی وارد آن شوید (مانند حساب کاربری که هنگام نصب سایت ایجاد کرده‌اید، که به صورت پیش‌فرض تمام مجوزهای لازم را دارد).
 
-* If you read all the topics in order, and perform all of the steps in the task
-topics as you go (staying logged in), you should have the background knowledge
-and site prerequisites in place for each topic as you read it.
+* اگر تمام موضوعات را به ترتیب مطالعه و تمام گام‌ها را در یک تمرین اجرا کنید، باید دانش پیشنیاز و و پیشنیازهای سایت را نیز مظالعه کرده باشید.
 
+==== قواعد متنی
 
-==== Text conventions
+قواعد زیر در متن این راهنما استفاده شده‌اند:
 
-The following conventions are used in the text of this guide:
+* نشانی _example.com_ به معنای نشانی اصلی وبسایت شماست. قسمت پیمایش را در ادامه برای جزئیات بیشتر درباره نشانی‌های داخلی سایت خود مشاهده کنید.
 
-* The URL _example.com_ means the base URL of your website. See the Navigation
-section below for more details on how URLs internal to your site are
-indicated.
+* متنی که در رابط کاربری سایت خود می‌بینید به صورت _italics_ می‌آید مانند: کلیک روی _Save configuration_. این تنها در مورد متن موجود در نرم‌افزار اصلی است، نه متنی که در یک موضوع قبلی وارد شده است. برای نمونه، در موضوعی درباره ویرایش، ممکن است چنین دستورالعملی ببینید: روی _Edit_ در بالای صفحه About کلیک کنید(_Edit_ ممکن است به صورت ایتالیک باشد، اما About نیست چرا که صفحه About در یک موضوع قبلی ایجاد شده است).
 
-* Text you should see in the user interface of your site is shown in _italics_,
-such as: Click _Save configuration_. This only applies to text in the user
-interface that comes from the software, not to text that was entered in a
-previous topic. For example, in a topic about editing, you might see this
-instruction: Click _Edit_ in the row of the About page (_Edit_ would be in
-italics, but About would not be, because the About page was created in a
-previous topic).
+* نشانی‌ها، نام فایل‌ها و اصطلاحات جدید به صورت _italics_ نمایش می‌یابند.
 
-* URLs, file names, and newly-introduced terminology are also shown in
-_italics_.
-
-* Text that you should type at a shell command line is shown in monospace type,
-such as:
+* متنی که باید در قالب دستور در محبط خط-فرمان وارد شود به صورت monospace نمایش می‌یابد مانند:
 +
 ----
 drush cr
 ----
 
-* Within this guide, the word _directory_ is always used to refer to file
-directories (which some people prefer to call _folders_).
+* در این راهنما، کلمه _directory_ همیشه در مورد محلی برای ذخیره‌سازی فایل‌ها استفاده می‌شود (که برخی افراد با نام _folder_ به آن اشاره می‌کنند).
 
-==== Navigation
+==== پیمایش
 
-To do most of the task topics in this guide, you will need to navigate to one
-or more pages in the administrative interface of your site. You might see
-something like this in the instructions (this will make more sense after you
-have the base software installed):
+برای انجام اکثر موضوعات تمرینی در این راهنما، نیاز است که به یک یا چند صفحه در رابط مدیریتی سایت خود مراجعه کنید. ممکن است چیزی مشابه با این در دستورالعمل‌ها ببینید (زمانی که نرم‌افزار را نصب کنید درک بهتری خواهید داشت):
 
 =============
-In the _Manage_ administrative menu, navigate to
-_Structure_ > _Taxonomy_ (_admin/structure/taxonomy_).
+در منوی مدیریتی _Manage_، به مسیر _Structure_ > _Taxonomy_ (_admin/structure/taxonomy_) بروید.
 =============
 
-Navigation instructions like this assume that you have the core Toolbar module
-installed, and this example means that in the menu bar at the top of your site,
-you would need to click _Manage_ to expose the menu choices, then click
-_Structure_, then :_Taxonomy_, and that at the end, you would be on a page with
-URL _http://example.com/admin/structure/taxonomy_ (if your site base URL is
-_http://example.com_).
+دستورالعمل‌های پیمایش نظیر این فرض را بر این می‌گذارند که افزونه Toolbar را نصب دارید و این نمونه به معنی این است که در نوار منوی بالای صفحه پس از کلیک روی گزینه _Manage_ باید به مسیر _Structure_ سپس _Taxonomy_ بروید و در این مسیر نشانی صفحه عبارت است از _http://example.com/admin/structure/taxonomy_ (اگر نشانی پایه سایت شما _http://example.com_ باشد).
 
 // Top navigation bar on any admin page, with Manage menu showing.
 image:images/preface-conventions-top-menu.png["Admin menu",width="100%"]
 
-Here's another example:
+در اینجا نمونه دیگری مشاهده می‌کنید:
 
 =============
-In the _Manage_ administrative menu, navigate to
-_Configuration_ > _System_ > _Site information_
-(_admin/config/system/site-information_).
+در منوی مدیریتی _Manage_، به مسیر _Configuration_ > _System_ > _Site information_ (_admin/config/system/site-information_) بروید.
 =============
 
-In this example, after clicking on _Manage_ and _Configuration_, you would need
-to find the _System_ section of the page, and within that, click _Site
-information_. After that, you'd end up on
-_http://example.com/admin/config/system/site-information_.
+در این نمونه، پس از کلیک روی _Manage_ و _Configuration_، باید قسمت _System_ را پیدا کنید و روی _Site information_ کلیک کنید. در انتها در مسیر _http://example.com/admin/config/system/site-information_ قرار می‌گیرید.
 
 // System section of admin/config page.
 image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
 
-One other note: if you are using the standard administrative core Seven theme,
-many "Add" buttons in the administrative interface are displayed with + signs on
-them. For instance, on admin/content, the Add new content button appears as
-_+ Add new content_. However, this is theme-dependent and is not really part of
-the text on the button (for instance, it would not necessarily be read by a
-screen reader), so in this guide, the convention is to not mention the + sign
-on the buttons.
+یک نکته دیگر: اگر از قالب استاندارد مدیریتی Seven استفاده می‌کنید، بسیاری از دکمه‌های "Add" در رابط مدیریتی آن با علامت + نمایش داده می‌شوند. برای نمونه، در admin/content دکمه افزودن محتوای جدید به صورت _+ Add new content_ نمایش می‌یابد. اگرچه، این عمل مبتنی بر قالب است و در حقیقت قسمتی از متن روی دکمه نیست (برای نمونه، الزاما توسط یک صفحه‌خوان خوانده نمی‌شود). پس در این راهنما، به علامت + روی دکمه‌ها اشاره‌ای نمی‌شود.
 
-==== Filling in forms
+==== پرکردن فرم‌ها
 
-Many of the task topics in this guide include steps where you will fill out a
-web form. In most cases, a screen capture image of the form will be included,
-along with a table of the values you will need to enter into each form
-field. For example, you might see a table that starts out like this, explaining
-the site information form you would see if you navigated to _Configuration_ >
-_System_ > _Site information_ (_admin/config/system/site-information_):
+بسیاری از موضوعات تمرینی این راهنما شامل گامی هستند که باید در آن یک فرم را پر کنید. در اکثر موارد، یک تصویر از فرم نمایش داده می‌شود، به همراه جدولی از مقدارها که باید در فیلدهای آن قرار دهید. برای نمونه، ممکن است جدولی را ببینید که به صورت زیر شروع می‌شود، که اطلاعات سایت را برای فرم مربوط به آن در _Configuration_ >_System_ > _Site information_ (_admin/config/system/site-information_) توضیح می‌دهد.
 
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -125,13 +72,8 @@ _System_ > _Site information_ (_admin/config/system/site-information_):
 |Site name|Name of your site|Anytown Farmers Market
 |================================
 
-To use this table, find the field labeled _Site name_ in the form, and enter the
-name of your site in this field. An example site name of "Anytown Farmers
-Market" is suggested in the table, which relates to the scenario of building a
-website for a farmers market that you'll find all through this guide (see
-<<preface-scenario>> for details).
+برای استفاده از این جدول، فیلد _Site name_ را در فرم پیدا کرده و نام سایت خود را در آن قرار دهید. یک نام نمونه عبارت است از "Anytown Farmers Market"، که به سناریو ایجاد یک وبسایت برای فروشگاه کشاورزی اشاره شده در این راهنما مرتبط است (برای جزئیات بیشتر <<preface-scenario>> را مشاهده کنید).
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written/edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
