@@ -1,49 +1,40 @@
 [[preface-reporting]]
-=== Reporting Problems
+=== گزارش مشکلات
 [role="summary"]
-How to report an issue with this guide (with detailed steps).
+چگونه یک مشکل را با این راهنما گزارش کنید (به همراه گام‌های جزئی).
 
-==== Goal
+==== اهداف
 
-Report a problem with this guide, such as:
+گزارش یک مشکل با این راهنما، از جمله:
 
-* Information that is incorrect or does not follow best practices
-* Steps that do not work
-* Screen shots or text that doesn't match what you see on the screen
-* Unclear writing
-* Places where a table or screen shot would help clarify the text
-* Failure to define terminology
-* Missing knowledge prerequisites or site prerequisites for a topic
-* Typographical, spelling, grammar, or formatting errors
-* Broken links
+* اطلاعات نادرست یا آن دسته که به شیوه‌ای استاندارد نیستند
+* گام‌هایی که کار نمی‌کنند
+* تصاویر مرتبط با موضوع که با محتوای متن یکی نیستند
+* نوشته نامفهوم
+* جاهایی که تصویر بهتر از متن می‌تواند توضیح دهد
+* عدم وجود توضیحات صحیح
+* پیشنیازهای دانشی مورد نیاز و عدم وجود آن‌ها
+* خطاهای دستوری، نگارشی و نمایشی
+* پیوندهای خطا
 
 // ==== Prerequisite knowledge
 
 // ==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-. Make a note of the topic or topics that contain the problem you have found.
+. یادداشت‌برداری از موضوع یا موضوعاتی که شامل مشکل مطرح شده باشند.
 
-. Log in to https://www.drupal.org[_Drupal.org_] (you will need to create a user
-account if you do not already have one).
+. ورود به https://www.drupal.org[_Drupal.org_] (اگر حساب کاربری ندارید، اکنون زمان ساخت آن است).
 
-. Visit the https://www.drupal.org/project/issues/user_guide[User Guide issues
-page on _Drupal.org_].
+. مراجعه به صفجه https://www.drupal.org/project/issues/user_guide[User Guide issues در _Drupal.org_].
 
-. Verify that the problem you found has not already been reported in another
-issue:
-  * If there are only a few open issues, scan the _Summary_ column to see if
-  any of their descriptions match the problem you found. You may also need to
-  read some of the issues to make sure, which you can do by clicking the links
-  in the _Summary_ column.
-  * If the open issue list is long, enter either a keyword related to the
-  problem you found or the title of the topic where the problem occurs in the
-  _Search for_ box, and click _Search_ to reduce the issue list. Then either
-  scan the summaries or read the issues to see if they match your problem.
+. اطمینان حاصل کنید که مشکل شما هم اکنون توسط فرد دیگری گزارش نشده باشد:
+  * اگر تنها چند issue باز وجود دارد، ستون _Summary_ را پویش کنید تا ببینید آیا موضوع شما را پوشش می‌دهند یا خیر. ممکن است لازم باشد تا چند issue را بخوانید که می‌توانید با کلیک بر روی پیوند موجود در ستون _Summary_ آن را مطالعه کنید.
+  * اگر فهرست issue باز، طولانی باشد، با وارد کردن کلیدواژه مورد نظر خود یا عنوان موضوعی که مشکل در آنجا قرار دارد داخل جعبه _Search for_ و کلیک روی _Search_ به کمتر شدن تعداد issue مبادرت کنید. آنگاه خلاصه مشکل را بررسی کرده یا به مطالعه issue بپردازید که مشکل در آنجا است.
 
-. If you determine that your problem has not already been reported, click
-_Create a new issue_, and fill in the issue report as follows:
+. اگر دریافتید که مشکل مورد نظر شما هم اکنون گزارش نشده است، روی _Create a new issue_ کلیک کنید و گزارش مشکل را مطابق زیر پر کنید:
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -57,18 +48,15 @@ _Create a new issue_, and fill in the issue report as follows:
   message: ...
 |================================
 
-. Reread the _Title_ and _Issue summary_ you entered, and verify that the
-following information is included in your report:
-  * A complete description of the problem you found
-  * The name of the topic or topics where you found the problem
-  * The language you are reading the guide in (if not English)
-  * If you read the guide on a website, a link to the page or pages
-    with the problem
+. _Title_ و _Issue summary_ که وارد کرده‌اید را مجدد بخوانید و اطمینان یابید که اطلاعات زیر در گزارش شما قرار گرفته است:
+  * یک توضیح کامل از مشکلی که پیدا کرده‌اید
+  * نام موضوع یا موضوعاتی که مشکل در آن پیدا شده است
+  * زبانی که راهنما را به آن می‌خوانید (اگر انگلیسی نیست)
+  * اگر راهنما را روی سایت دیگری می‌خوانید، پیوند به صفحه یا صفحاتی که مشکل را شامل می‌شوند
 
-. Click _Save_ to create the issue.
+. برای ایجاد issue روی _Save_ کلیک کنید.
 
-. Check back on the issue in a few days. If one of the project maintainers has
-asked for clarification, respond by adding a comment to the issue.
+. طی چند روز به issue سر بزنید. اگر یکی از مدیران پروژه اطلاعات بیشتری از شما خواست، با استفاده از دیدگاه به آن پاسخ دهید.
 
 // ==== Expand your understanding
 
@@ -76,7 +64,6 @@ asked for clarification, respond by adding a comment to the issue.
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
