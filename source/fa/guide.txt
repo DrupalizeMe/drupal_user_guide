@@ -1,16 +1,15 @@
 [[user_guide]]
-= Drupal 8 User Guide
+= راهنمای کاربری دروپال ۸
 
 // Chapters are defined here, and each one includes the individual
 // topic files that make up the chapter, in order.
 
-
 [[preface]]
 
-== Preface
+== مقدمه
 
 [role="summary"]
-Overview of introductory topics that help to leverage this guide in an efficient manner.
+مروری بر مقاهیم مقدماتی  که به درک این راهنما به شیوه‌ای موثر کمک می‌کنند.
 
 include::copyright.txt[]
 include::preface-audience.txt[]
@@ -19,12 +18,11 @@ include::preface-reporting.txt[]
 include::preface-conventions.txt[]
 include::preface-scenario.txt[]
 
-
 [[understanding-chapter]]
-== Understanding Drupal
+== درک دروپال
 
 [role="summary"]
-Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+مروری بر مفاهیم دروپال از جمله افزونه‌ها، قالب‌ها، توزیع‌ها و انواع داده.
 
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
@@ -34,12 +32,11 @@ include::understanding-data.txt[]
 include::understanding-project.txt[]
 include::understanding-gpl.txt[]
 
-
 [[planning-chapter]]
-== Planning Your Site
+== طراحی سایت
 
 [role="summary"]
-Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+مروری بر مفاهیم طراحی سایت و جزئیات وظایف متداول در صفحه‌بندی سایت.
 
 include::block-regions.txt[]
 include::planning-layout.txt[]
@@ -48,12 +45,11 @@ include::planning-modular.txt[]
 include::planning-structure.txt[]
 include::planning-workflow.txt[]
 
-
 [[installation-chapter]]
-== Installation
+== نصب
 
 [role="summary"]
-Overview of server requirements and details of common installation tasks.
+مروری بر پیشنیازهای سرور و وظایف متداول در فرآیند نصب
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
@@ -62,10 +58,10 @@ include::install-run.txt[]
 
 
 [[config-chapter]]
-== Basic Site Configuration
+== پیکربندی پایه سایت
 
 [role="summary"]
-Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+مروری بر مفاهیم پایه در پیکربندی سایت. وظایف مرتبط با نصب افزونه، تنظیمات حساب کاربری و قالب‌ها پوشش داده می‌شوند.
 
 include::config-overview.txt[]
 include::config-basic.txt[]
@@ -74,13 +70,11 @@ include::config-uninstall.txt[]
 include::config-user.txt[]
 include::config-theme.txt[]
 
-
-
 [[content-chapter]]
-== Basic Page Management
+== مدیریت صفحه ساده
 
 [role="summary"]
-Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+مروری بر مفاهیم مدیریت صفحه. وظایف مرتبط با گزینه‌های محتوایی، ویرایش درجا و منوها پوشش داده می‌شوند.
 
 include::content-paths.txt[]
 include::content-create.txt[]
@@ -92,10 +86,10 @@ include::menu-link-from-content.txt[]
 include::menu-reorder.txt[]
 
 [[content-structure-chapter]]
-== Setting Up Content Structure
+== تنظیم ساختار محتوایی
 
 [role="summary"]
-Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+مروری بر مفاهیم ساختار محتوا. وظایف مرتبط با انواع محتوا، دسته‌بندی‌ها و فیلدهای مرجع پوشش داده می‌شوند.
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -118,12 +112,11 @@ include::structure-text-format-config.txt[]
 // @todo Put this link back in when/if the topic gets added back.
 // include::structure-pathauto.txt[]
 
-
 [[user-chapter]]
-== Managing User Accounts
+== مدیریت حساب‌های کاربری
 
 [role="summary"]
-Overview of user account concepts and details of common user account tasks.
+مروری بر مفاهیم حساب کاربری و جزئیات مرتبط با وظایف آن.
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
@@ -133,23 +126,21 @@ include::user-permissions.txt[]
 include::user-roles.txt[]
 include::user-content.txt[]
 
-
 [[blocks-chapter]]
-== Blocks
+== بلاک‌ها
 
 [role="summary"]
-Overview of block concepts and details of common block tasks.
+مروری بر مفاهیم بلاک و جزئیات مرتبط با وظایف آن.
 
 include::block-concept.txt[]
 include::block-create-custom.txt[]
 include::block-place.txt[]
 
-
 [[views-chapter]]
-== Creating Listings with Views
+== ایجاد فهرست با استفاده از Views
 
 [role="summary"]
-Overview of view concepts and details of common view tasks.
+مروری بر مفاهیم Views و جزئیات مرتبط با وظایف آن.
 
 include::views-concept.txt[]
 include::views-parts.txt[]
@@ -157,12 +148,11 @@ include::views-create.txt[]
 include::views-duplicate.txt[]
 include::views-block.txt[]
 
-
 [[multilingual-chapter]]
-== Making Your Site Multilingual
+== چندزبانه کردن سایت خود
 
 [role="summary"]
-Overview of multilingual site concepts and details of tasks needed to make a site multilingual.
+مروری بر مفاهیم سایت چندزبانه و فعالیت‌هایی که برای دستیابی به آن مورد نیاز است.
 
 include::language-concept.txt[]
 include::language-add.txt[]
@@ -170,12 +160,11 @@ include::language-content-config.txt[]
 include::language-content-translate.txt[]
 include::language-config-translate.txt[]
 
-
 [[extend-chapter]]
-== Extending and Customizing Your Site
+== توسعه و سفارشی‌سازی سایت خود
 
 [role="summary"]
-Overview of site customization and development. Tasks on downloading modules and themes are covered.
+مروری بر مفاهیم توسعه و سفارشی‌سازی سایت. وظایف مرتبط با دانلود افزونه‌ها و قالب‌ها پوشش داده می‌شوند.
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -189,12 +178,11 @@ include::install-composer.txt[]
 include::extend-deploy.txt[]
 include::extend-config-versions.txt[]
 
-
 [[prevent-chapter]]
-== Preventing and Fixing Problems
+== پیشگیری و حل مشکلات
 
 [role="summary"]
-Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+مروری بر مفاهیم حافظه، پشتیبان‌گیری از داده و فایل‌های گزارش.
 
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
@@ -202,12 +190,11 @@ include::prevent-backups.txt[]
 include::prevent-log.txt[]
 include::prevent-status.txt[]
 
-
 [[security-chapter]]
-== Security and Maintenance
+== امنیت و نگهداری
 
 [role="summary"]
-Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+مروری بر مفاهیم امنیت و نگهداری. وظایف مرتبط با بروزرسانی هسته دروپال، افزونه‌ها و قالب‌ها پوشش داده می‌شوند.
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -217,31 +204,29 @@ include::security-update-core.txt[]
 include::security-update-module.txt[]
 include::security-update-theme.txt[]
 
-
 [[thoughts-chapter]]
-== Final Thoughts
+== سخن آخر
 
 [role="summary"]
-Overview of the Drupal community and how to connect with other users.
+مروری بر جامعه‌کاربری دروپال و چگونگی ارتباط با افراد آن.
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
 include::thoughts-learn-more.txt[]
 
-
 // Glossary and index.
 
 include::glossary.txt[]
 
-== Index
+== نمایه
 
 // Appendix
 
 [[appendix]]
 [appendix]
-== Appendix
+== ضمیمه
 
 [role="summary"]
-Overview of contributors to this guide.
+مروری بر مشارکت‌کنندگان این راهنما
 
 include::attributions.txt[]
