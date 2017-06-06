@@ -1,8 +1,8 @@
 [[understanding-modules]]
-=== Concept: Modules
+=== مفهوم: افزونه‌ها
 
 [role="summary"]
-Overview of modules and the functionality they can be used for.
+مروری بر افزونه‌ها و قابلیت‌های کاربردی آن ها.
 
 (((Module,overview)))
 (((Contributed module,overview)))
@@ -24,37 +24,27 @@ Overview of modules and the functionality they can be used for.
 (((Module,Views)))
 (((Module,Views UI)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<understanding-drupal>>
 
-==== What is a module?
+==== افزونه چیست؟
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site
-features and adds functionality. You can turn the features and functionality on
-by _installing_ the module, and you can turn it off by _uninstalling_ the
-module; before uninstalling, you may need to remove data and configuration
-related to the feature or functionality. Each module that is installed adds to
-the time needed to generate pages on your site, so it is a good idea to
-uninstall modules that are not needed.
+یک افزونه مجموعه‌ای از فایل‌های JavaScript، PHP و CSS است که با افزودن قابلیت‌های بیشتر، عملکرد سایت را بهبود می‌بخشد. با _نصب_ افزونه می‌توانید این قابلیت‌ها را فعال و با _حذف_ آن را غیرفعال کنید؛ قبل از حذف، شاید نیاز باشد داده و پیکربندی‌های اعمال شده توسط افزونه را پاک کنید. هر افزونه‌ای که نصب می‌شود بر عملکرد کلی سایت شما تاثیر می‌گذارد، پس بهتر است افزونه‌های بلااستفاده را حذف کنید.
 
-The core download provides modules for functionality such as:
+هسته دروپال افزونه‌های مورد نیاز برای کارهای زیر را فراهم می‌کند:
 
-* Managing user accounts (the core User module)
+* مدیریت حساب‌های کاربری (افزونه User)
 
-* Managing basic content (the core Node module) and fields (the core Field and
-Field UI modules; there are also core modules providing field types)
+* مدیریت محتوای پایه (افزونه Node) و فیلد‌ها (افزونه‌های Field و Field UI)؛ همچنین افزونه‌هایی برای نوع فیلدها نیز وجود دارد.
 
-* Managing navigation menus (the core Menu UI module)
+* مدیریت منوی پیمایش (افزونه Menu UI)
 
-* Making lists, grids, and blocks from existing content (the core Views and
-Views UI modules)
+* ایجاد فهرست‌ها، شبکه‌ها و بلاک‌ها از داده‌های موجود (افزونه‌های Views و Views UI)
 
-You can download additional _contributed modules_ from the
-https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], or create your own
-_custom modules_.
+همچنین می‌توانید _افزونه‌های دیگری_ را از https://www.drupal.org/project/project_module[صفحه افزونه _Drupal.org_] دانلود کرده یا _افزونه سفارشی_ خود را بسازید.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<understanding-themes>>
 * <<understanding-distributions>>
@@ -64,11 +54,11 @@ _custom modules_.
 * <<security-concept>>
 * <<security-update-module>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
+https://www.drupal.org/developing/modules[راهنمای توسعه افزونه از جامعه کاربری _Drupal.org_]
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
