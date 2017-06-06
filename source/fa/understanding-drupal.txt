@@ -1,9 +1,9 @@
 [[understanding-drupal]]
 
-=== Concept: Drupal as a Content Management System
+=== مفهوم: دروپال به عنوان یک سیستم مدیریت محتوا
 
 [role="summary"]
-Overview of Drupal and the reasons to choose it as a reliable Content Management System (CMS).
+مروری بر دروپال و دلایلی که برای انتخاب سیستم مدیریت محتوا مناسب است.
 
 (((CMS (Content Management System),overview)))
 (((Content Management System (CMS),overview)))
@@ -14,107 +14,57 @@ Overview of Drupal and the reasons to choose it as a reliable Content Management
 
 //==== Prerequisite knowledge
 
-==== What is a Content Management System?
+==== سیستم مدیریت محتوا چیست؟
 
-A content management system (CMS) is a software tool that lets users add,
-publish, edit, or remove content from a website, using a web browser on a
-smartphone, tablet, or desktop computer. Typically, the CMS software is written
-in a scripting language, and its scripts run on a computer where a database and
-a web server are installed. The content and settings for the website are usually
-stored in a database, and for each page request that comes to the web server,
-the scripts combine information from the database and _assets_ (JavaScript
-files, CSS files, image files, etc. that are part of the CMS or have been
-uploaded) to build the pages of the website.
+یک سیستم مدیریت محتوا (CMS) نرم‌افزاری است که به کاربران اجازه افزودن، انتشار، ویرایش و حذف محتوای یک وبسایت را با استفاده از مرورگر وب موجود در گوشی هوشمند، تبلت یا رایانه رومیزی می‌دهد. معمولا، نرم‌افزار CMS به یک زبان اسکریپتی نوشته می‌شود و اسکریپت‌های آن روی رایانه‌ای که پایگاه‌داده و وب سرور نیز در آن است، نصب می‌گردد. محتوا و تنظیمات وبسایت معمولا در پایگاه‌داده ذخیره می‌شوند و به ازای هر درخواست صفحه‌ای که به وب‌سرور می‌شود، اسکریپت اطلاعات مورد نیاز را از پایگاه‌داده و _فایل‌های ایستا_ (فایل‌های تصویری، جاوااسکریپت، CSS که جزوی از CMS هستند یا به آن وارد شده‌اند) ترکیب می‌کند تا صفحه مورد نظر ساخته شود.
 
-The combination of the operating system that the CMS runs on, the scripting
-language it is written in, the database it stores its information in, and the
-web server that runs the scripts to retrieve information and return it to the
-site visitor's web browser is known as the _stack_ that the CMS runs on; the
-commonly used combination of the Linux operating system, Apache web server,
-MySQL database, and PHP scripting language is known as the _LAMP stack_.
+ترکیب سیستم‌عاملی که CMS روی آن اجرا می‌شود، زبان برنامه‌نویسی که به آن نوشته شده، پایگاه‌داده‌ای که اطلاعات آن را ذخیره می‌کند و وب‌سروری که درخواست‌های دریافتی را پردازش می‌کند با نام _پشته_ شناخته می‌شود؛ متداول‌ترین ترکیب سیستم‌عامل لینوکس، وب‌سرور آپاچی، پایگاه‌داده MySQL و زبان برنامه‌نویسی PHP با نام _LAMP Stack_ شناخته می‌شود.
 
-==== What is Drupal?
+==== دروپال چیست؟
 
-Drupal is a flexible CMS based on the LAMP stack, with a modular design allowing
-features to be added and removed by installing and uninstalling _modules_, and
-allowing the entire look and feel of the website to be changed by installing and
-uninstalling _themes_. The base Drupal download, known as Drupal Core, contains
-the PHP scripts needed to run the basic CMS functionality, several optional
-modules and themes, and many JavaScript, CSS, and image assets. Many additional
-modules and themes can be downloaded from the https://www.drupal.org[_Drupal.org_]
-website.
+دروپال یک CMS انعطاف‌پذیر بر اساس پشته LAMP است، به همراه طراحی ماژولار که امکان افزودن و حذف قابلیت‌ها را با نصب و حذف _افزونه‌ها_ و امکان تغییر ظاهر وبسایت را با نصب و حذف _قالب‌ها_ دارد. دانلود پایه دروپال، که با نام هسته شناخته می‌شود، شامل اسکریپت‌های PHP برای اجرای قابلیت‌های اولیه CMS است، به همراه برخی افزونه‌ها و قالب‌ها و بسیاری فایل‌های جاوااسکریپت و CSS و تصویر. بسیاری از افزونه‌ها و قالب‌های اضافی می‌توانند از طریق وبسایت https://www.drupal.org[_Drupal.org_] دانلود شوند.
 
-Drupal can also run on other technology stacks:
+دروپال همچنین می‌تواند در بسترهای دیگری نیز استفاده شود:
 
-* The operating system can be Windows or Mac OS instead of Linux.
+* سیستم‌عامل می‌تواند ویندوز یا مکینتاش باشد، بحای لینوکس.
 
-* The web server can be Nginx or IIS instead of Apache.
+* وب‌سرور می‌تواند Nginx یا IIS باشد بجای آپاچی.
 
-* The database can be PostgreSQL or SQLite instead of MySQL, or a
-MySQL-compatible replacement such as MariaDB or Percona.
+* پایگاه‌داده می‌تواند PostgreSQL یا SQLite باشد بجای MySQL یا جایگزین‌های مبتنی بر آن مانند MariaDB یا Percona.
 
-Other operating systems, web servers, and databases can also be made to work;
-however, the scripts that the software uses are written in PHP, so that cannot
-be changed.
+سایر سیستم‌عامل‌ها، وب‌سرورها و پایگاه‌داده‌ها نیز می‌توانند استفاده شوند؛ اگرچه، اسکریپت‌هایی که نرم‌افزار از آن استفاده می‌کند به زبان PHP هستند که غیر قابل تغییر باقی می‌مانند.
 
-==== What are the reasons for using Drupal?
+==== دلایل استفاده از دروپال چیست؟
 
-When building a website, you have your choice of using one of the many existing
-CMS packages and hosted services, developing your own CMS, or building the site
-without using a CMS. Here are some of the reasons you might choose to use
-Drupal:
+هنگام ساخت یک وبسایت، می‌توانید از بین بسته‌های CMS و سرویس‌های میزبانی مختلف انتخاب کنید، CMS خود را بسازید یا سایت را بدون استفاده از آن پیش ببرید. اینجا چند دلیل ذکر شده‌اند که برای انتخاب دروپال ممکن است موثر باشند:
 
-* Building a small, simple site with static HTML pages is not difficult, and you
-can get a simple site up very quickly. Setting up a site in a CMS generally
-requires more time initially, but brings you the benefits of on-line editing
-(easier for less experienced content maintainers), uniformity (harder to
-maintain using static HTML for larger sites), and the possibility of more
-complex features requiring a database.
+* ساخت یک سایت کوچک با صفحات ایستا HTML کار دشواری نیست و به راحتی می‌توانید اینکار را انجام دهید. برپایی یک سایت با CMS معمولا به زمان اولیه بیشتری نیاز دارد که مزیت‌هایی مانند ویرایش آنلاین (برای نویسندگان با تجربه کاری کمتر)، یکپارچگی (دشواری کار با فایل‌های ایستا در سایت‌های بزرگ‌تر) و امکان استفاده از قابلیت‌های پیچیده‌تر پایگاه‌داده را شامل می‌شود.
 
-* Some CMS software is special-purpose; for instance, there are packages and
-hosted services that you can use to build a blog or a club membership
-website. Drupal, in contrast, is a general-purpose CMS. If you are building a
-special-purpose site, you might choose to use a special-purpose CMS; however, if
-your site falls even slightly outside the intended purpose, you will probably be
-better off using a general-purpose CMS rather than trying to adapt a
-special-purpose CMS.
+* برخی نرم‌افزارهای CMS خاص-منظوره هستند؛ برای نمونه، بسته‌ها و خدمات میزبانی وجود دارند که با استفاده از آن‌ها می‌توانید یک وبلاگ یا وبسایت باشگاه عضویت را بسازید. دروپال، از طرف دیگر، یک CMS همه-منظوره است. اگر قصد ساخت یک سایت خاص-منظوره را دارید شاید بخواهید از یک CMS خاص-منظوره استفاده کنید؛ با این حال، اگر سایت شما خارج از شرایط خاص-منظوره باشد بهتر است که از یک CMS همه-منظوره استفاده کنید.
 
-* Building your own CMS-type software can seem attractive. However, using a
-general-purpose CMS like Drupal as a starting point is usually a better idea,
-because the basic CMS functionality (such as user accounts and content
-management) has thousands of developer hours behind it, including many years of
-user testing, bug fixing, and security hardening.
+* ساخت نرم‌افزار CMS خود کار جالبی به حساب می‌آید. اگرچه، استفاده از یک CMS همه-منطوره مانند دروپال  به عنوان نقطه آغاز انتخاب خوبی است، چرا که قابلیت‌های پایه در یک CMS (مانند حساب‌های کاربری و مدیریت محتوا) هزاران ساعت از تلاش توسعه‌دهندگان را به دنبال دارد، به همراه سالیان درازی که این قابلیت‌ها بررسی، عیب‌های آن برطرف و امنیت آن تقویت شده‌اند.
 
-* Some CMS software packages are expensive to purchase a license for. Some are
-free or have a free version, but have restrictive licenses that do not allow you
-to make modifications and extensions. You might prefer to use a package (like
-Drupal) that has a less restrictive software license, and is developed by a
-world-wide community. See <<understanding-project>> for more on this topic.
+* برخی بسته‌های نرم‌افزاری CMS مجوز گران‌قیمتی به همراه دارند. برخی هم که رایگان هستند یا نسخه‌ای رایگان را شامل می‌شوند به شما اجازه تغییر و توسعه را بنا به مجوزهای مخدودکننده خود نمی‌دهند. شاید بخواهید از بسته‌ای (مانند دروپال) استفاده کنید که مجوز نرم‌افزاری محدودکننده‌ای نداشته باشد و توسط جامعه‌کاربری بزرگی توسعه یابد. برای اطلاعات بیشتر در این رابطه <<understanding-project>> را مشاهده کنید.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-distributions>>
 * <<understanding-project>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/docs/8/understanding-drupal-8/overview[The Drupal overview]
+* https://www.drupal.org/docs/8/understanding-drupal-8/overview[مروری بر دروپال]
 
-* https://www.drupal.org/about/faq[_Drupal.org_ page "FAQ" (Frequently Asked Questions)]
+* https://www.drupal.org/about/faq[_Drupal.org_ صفحه "FAQ" (پرسش‌های متداول)]
 
-* https://www.drupal.org/case-studies[_Drupal.org_ page "Case Studies"]
+* https://www.drupal.org/case-studies[_Drupal.org_ صفحه "موارد مطالعاتی"]
 
-* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia page "Content management systems"]
+* https://en.wikipedia.org/wiki/Content_management_system[صفحه ویکیپدیا "سیستم مدیریت محتوا"]
 
-* https://en.wikipedia.org/wiki/Modular_design[Wikipedia page "Modular design"]
+* https://en.wikipedia.org/wiki/Modular_design[صفحه ویکیپدیا "طراحی ماژولار"]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/kvantomme[Kristof van Tomme]
-at https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan]
-at https://erdfisch.de[erdfisch].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/kvantomme[Kristof van Tomme] در https://pronovix.com/[Pronovix] به همراه https://www.drupal.org/u/michaellenahan[MichaelLenahan] در https://erdfisch.de[erdfisch] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
