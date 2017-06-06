@@ -1,9 +1,9 @@
 [[understanding-themes]]
 
-=== Concept: Themes
+=== مفهوم: قالب‌ها
 
 [role="summary"]
-Overview of themes and where to obtain them.
+مروری بر قالب‌ها و چگونگی فراهم کردن آن‌ها.
 
 (((Theme,overview)))
 (((Theme,core)))
@@ -13,46 +13,30 @@ Overview of themes and where to obtain them.
 (((Theme,custom)))
 (((Custom theme,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<understanding-drupal>>
 
-==== What is a Theme?
+==== قالب چیست؟
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+یک قالب مجموعه‌ای از فایل‌ها است که جلوه و ظاهر سایت شما را تعیین می‌کند. هسته دروپال و افزونه‌های فعال در سایت شما تعیین می‌کنند کدام _محتوا_ (از جمله متن HTML و سایر داده‌های ذخیره شده در پایگاه‌داده، تصاویر بارگذاری شده و بسیاری فایل‌های دیگر) روی صفحات سایت شما نمایش داده شود. قالب مشخص می‌کند از کدام تگ HTML و شیوه نمایش CSS برای ظاهر محتوا استفاده شود.
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+هسته دروپال شامل چند قالب پایه به همراه توزیع اصلی است. این قالب‌ها که اکثرا توسط جامعه‌کاربری طی سالیان دراز طراحی و پیاده‌سازی شده‌اند انتخاب مناسبی برای شروع کار بر روی ظاهر سایت هستند تا بتوانید با مفاهیم دروپال در این زمینه آشنا شوید.
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+دروپال یک CMS شناخته شده است پس بازار قالب‌های آن نیز - چه رایگان چه پولی - بسیار گسترده است.
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software. Guidance for creating custom themes in
-Drupal 8 can be found in the
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"].
+اگر هیچکدام از گزینه‌های موجود نیاز شما را برآورده نکردند، نیاز به ایجاد یک قالب سفارشی دارید. یک قالب سفارشی می‌تواند به سادگی ویرایش یک فایل CSS به منظور تغییر شیوه نمایش محتوا باشد. راهنمای مرتبط با ایجاد قالب‌های سفارشی دروپال ۸ در https://www.drupal.org/docs/8/theming[صفحه راهنمای استفاده از قالب‌ها در _Drupal.org_]. قرار دارد.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<extend-theme-find>>
 * <<extend-theme-install>>
 * <<understanding-modules>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"]
+https://www.drupal.org/docs/8/theming[صفحه راهنمای استفاده از قالب‌ها در _Drupal.org_].
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/jgrubb[John Grubb] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/jgrubb[John Grubb] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
