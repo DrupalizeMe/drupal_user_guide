@@ -1,8 +1,8 @@
 [[understanding-data]]
-=== Concept: Types of Data
+=== مفهوم: انواع داده
 
 [role="summary"]
-Overview of common types of data used in a site.
+مروری بر انواع داده‌های متداول در یک سایت
 
 (((Data type,overview)))
 (((Data type,configuration)))
@@ -17,30 +17,23 @@ Overview of common types of data used in a site.
 
 //==== Prerequisite knowledge
 
-==== What are the types of data?
+==== انواع داده‌ای کدام هستند؟
 
-The data and information on your site is divided up into four types, which are
-edited, translated, and stored differently. These four types are:
+داده و اطلاعات سایت شما به چهار نوع مختلف تقسیم می‌شوند، که هر یک به شیوه‌ای جداگانه ویرایش، ترجمه و ذخیره‌سازی می‌گردند. این چهار نوع عبارتند از:
 
-Content::
-  Information (text, images, etc.) meant to be displayed to site visitors. This
-  type of information tends to be relatively permanent, but can normally be
-  edited.
-Configuration::
-  Information about your site that is not content, but is also relatively
-  permanent, and is used to define how your site behaves or is displayed. It is
-  sometimes also displayed to site visitors, but tends to be smaller pieces of
-  text (like field labels, the name of your site, etc.) rather than larger
-  chunks that you'd normally think of as Content.
-State::
-  Information of a temporary nature about the current state of your
-  site, such as the time when cron jobs were last run.
-Session::
-  Information about individual site visitors' interactions with the site, such
-  as whether they are logged in and their cookies. This is technically a
-  subtype of State information, since it is also temporary.
-
-==== Related topics
+محتوا::
+  اطلاعات (متن، تصویر و از این قبیل) که باید به مخاطب سایت نمایش داده شوند. این نوع اطلاعات معمولا پایدار هستند اما می‌توانند ویرایش شوند.
+  
+پیکربندی::
+  اطلاعات درباره سایت شما که محتوا نباشد، اما پایدار است و برای تعیین ساختار سایت استفاده می‌شود. بعضی وقت‌ها نیز ممکن است به مخاطب نمایش داده شود، اما معمولا قسمت‌های متنی کوچکی را شامل می‌شود (مانند برچسب فیلدها، نام سایت و از این قبیل) بر خلاف قسمت‌های بزرگ‌تر که به عنوان محتوا می‌شناسید.
+  
+حالت::
+  اطلاعات درباره طبیعت موقت حالت فعلی سایت شما، مانند آخرین زمانی که فعالیت‌های cron اجرا شده‌اند.
+  
+نشست::
+  اطلاعات درباره تعامل انفرادی کاربران با سایت، مانند ورود آن‌ها به سایت یا اطلاعات کوکی. این یک حالت به خصوص است، چرا که موقتی است.
+  
+==== موضوعات مرتبط
 
 * <<planning-data-types>>
 * <<security-cron-concept>>
@@ -50,9 +43,6 @@ Session::
 //==== Additional resources
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"],
-copyright 2000-2016 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+اقتباس شده توسط  https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] از https://www.drupal.org/node/2120523["مروری بر پیکربندی در مقابل سایر انواع داده‌ای"]
