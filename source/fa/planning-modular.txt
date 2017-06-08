@@ -1,8 +1,8 @@
 [[planning-modular]]
-=== Concept: Modular Content
+=== مفهوم: محتوای ماژولار
 
 [role="summary"]
-Overview of modular content and how content in a page can be sourced from other content items.
+مروری بر محتوای ماژولار و اینکه چطور می‌توان از محتوای موجود، محتوای جدید ایجاد کرد.
 
 (((Content,modular)))
 (((Modular content,overview)))
@@ -11,45 +11,24 @@ Overview of modular content and how content in a page can be sourced from other 
 (((View,and modular content)))
 (((Views module,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<planning-data-types>>
 * <<planning-layout>>
 
-==== What is modular content?
+==== محتوای ماژولار چیست؟
 
-Given that the content of your site is stored in a database, it is desirable to
-make the content _modular_, meaning that certain pages on your site, rather than
-being edited as a whole page, are instead generated automatically from other
-content items. For instance, in the farmers market site scenario, you might
-create individual content items for recipes. If the recipe content items have a
-field that keeps track of ingredients, then your site could include a composite
-page that would list recipes, and allow visitors to search for a recipe that
-contained some particular ingredient they had bought at the market.
+با توجه به اینکه محتوای سایت شما در یک پایگاه‌داده ذخیره می‌شود، _ماژولار_ کردن این محتوا کار مطلوبی خواهد بود، یعنی برخی صفحات سایت شما، بجای اینکه به عنوان یک صفحه کامل ویرایش شوند، به صورت خودکار از سایر محتوای سایت تولید گردند. برای نمونه، در سناریو فروشگاه کشاورزی، ممکن است بخواهید برای هر محصول گزینه محتوایی جداگانه‌ای در نظر بگیرید. اگر محصول شامل یک فیلد مواد اولیه باشد آنگاه سایت می‌تواند با ترکیب این مواد اولیه و قابلیت جستجو دادن به مخاطب، این امکان را برای وی فراهم سازد تا بتواند بر اساس برخی مواد اولیه مورد نیاز خود به جستجوی محصولات شامل آن بپردازد.
 
-Smaller sections of pages can also be generated as composites. For instance,
-recipe content items could have a field that keeps track of which vendor
-submitted the recipe (see <<structure-reference-fields>>), with the vendor
-details edited in separate vendor content items. This would allow you to do the
-following on your site:
+قسمت‌های کوچک‌تر صفحات نیز می‌توانند از این ترکیبات ساخته شوند. برای نمونه، محصولات می‌توانند شامل فیلدی برای ذخیره‌سازی نام فروشنده آن باشند (<<structure-reference-fields>> را مشاهده کنید) که جزئیات فروشنده در صفحه دیگری قرار دارد. اینکار به شما امکان انجام فعالیت‌های زیر را می‌دهد:
 
-* On each Recipe page, there could be an area that displays some information
-about the vendor that submitted the recipe, such as their name and market stall
-number.
+* در صفحه هر محصول، می‌تواند ناحیه‌ای برای اطلاعات مربوط به فروشنده آن باشد، مانند نام و شماره تجاری آن.
 
-* Each vendor page could have a section that lists the recipes they have
-submitted.
+* در صفحه هر فروشنده، می‌تواند قسمتی برای فهرست محصولات آن موجود باشد.
 
-The key idea is that each piece of information is only edited in one place.
-When vendor information is updated, all recipe pages that display that vendor
-information are automatically updated; when a recipe is submitted by a vendor,
-it is automatically displayed on the vendor page. The core Views module is the
-usual way to use modular content to create composite pages and page sections;
-see <<views-concept>> for more information. Also, _view modes_ are useful for
-defining different ways to display each content item; see
-<<structure-view-modes>> for more information.
+ایده اصلی این است که هر قطعه از اطلاعات تنها در یک نقطه ویرایش شود. زمانی که اطلاعات فروشنده بروزرسانی شود، تمام محصولات مرتبط با آن نیز به صورت خودکار بروز می‌شوند؛ زمانی که یک محصول توسط فروشنده افزوده شود، به صورت خودکار در صفحه فروشنده آن قرار بگیرد. افزونه Views که در هسته دروپال قرار دارد، شیوه استاندارد استفاده از محتوای ماژولار برای ایجاد صفحات و بلاک‌های گوناگون است؛ برای اطلاعت بیشتر <<views-concept>> را مشاهده کنید. همچنین، برای نمایش مختلف هر نوع محتوا، _حالت‌های نمایشی_ ابزار مناسبی هستند؛ برای اطلاعات بیشتر <<structure-view-modes>> را مشاهده کنید.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<planning-structure>>
 * <<structure-content-type>>
@@ -61,6 +40,6 @@ defining different ways to display each content item; see
 // ==== Additional resources
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
