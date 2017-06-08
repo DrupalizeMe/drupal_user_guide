@@ -1,19 +1,17 @@
 [[planning-structure]]
-=== Planning your Content Structure
+=== برنامه‌ریزی ساختار محتوایی
 
 [role="summary"]
-How to plan a content structure that assigns content entity types to specific content on the website.
+چگونگی برنامه‌ریزی یک ساختار محتوایی که انواع موجودیت را به محتوای وبسایت تخصیص دهد.
 
 (((Content structure,planning)))
 (((Site plan,content structure)))
 
-==== Goal
+==== هدف
 
-Make a plan for the content structure of the site (which type and subtype of
-entity to use for which content), and which pages will contain listings of
-content.
+ایجاد طرحی برای ساختار محتوایی سایت (برای هر محتوا از چه نوع و زیر-شاحه موجودیت استفاده شود) و اینکه کدام صفحات شامل فهرستی از محتوای سایت باشند.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<planning-data-types>>
 * <<planning-modular>>
@@ -21,127 +19,76 @@ content.
 
 //==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-. Brainstorm about what content your site needs to contain, which could include
-content that visitors would be looking for, as well as content that you want
-to show to visitors. The result could be the description in
-<<preface-scenario>>.
+. همفکری درباره اینکه سایت شما به چه محتوایی نیاز دارد، که می‌تواند شامل محتوای مورد نظر بازدیدکنندگان یا محتوای مورد نظر شما برای نمایش به آنان باشد. نتیجه می‌تواند توضیح مربوط در <<preface-scenario>> باشد.
 
-. For each identified piece of content, decide which content entity type would
-be the best fit. In doing this, you'll need to consider where and how
-the content will be used and edited on the site. For example, in the farmers
-market site scenario, you might want to display the hours and location of the
-farmers market on the sidebar of every page. For that content, a single custom
-block makes sense. As another example, you might decide that pages displaying
-information about each vendor should be content items managed by the core Node
-module, because you want vendors to be able to edit their own listings.
-The core Node module permission system lets you do this easily.
+. برای هر محتوای شناسایی شده، تصمیم بگیرید کدام نوع موجودیت محتوایی برای آن مناسب‌تر است. برای اینکار، باید در نظر بگیرید کجا و چگونه این محتوا در سایت بکار می‌رود و ویرایش می‌شود. برای نمونه، در سناریو فروشگاه کشاورزی، شاید بخواهید ساعت کاری و مکان فروشگاه را در نوارکناری هر صفحه نمایش دهید. برای این محتوا، یک بلاک سفارشی کار شما را انجام می‌دهد. به عنوان مثالی دیگر، شاید تصمیم بگیرید صفحاتی که جزئیات هر فروشنده را نمایش می‌دهند توسط افزونه Node مدیریت گردند تا فروشندگان بتوانند اطلاعات خود را ویرایش کنند. سیستم مجوزدهی افزونه Node به شما چنین امکانی را می‌دهد.
+
 +
-These decisions do not necessarily always have only one right answer; for
-instance, you could decide that vendor pages should be user profiles instead of
-content items, but if you did that the content would be tied to a specific user
-account, and it would not be as easy to later change the ownership of a vendor
-page to a different user account.
+برای اینگونه تصمیمات معمولا یک پاسخ ثابت وجود ندارد؛ برای نمونه، می‌توانید از پروفایل کاربری بجای گزینه محتوایی برای صفحه فروشنده استفاده کنید، اما در این صورت محتوا به یک کاربر خاص تعلق می‌گیرد و اختصاص آن در آینده به سایر کاربران کار آسانی نخواهد بود.
 
-. Within each content entity type you identified, decide what division into
-entity sub-types would make sense. For example, in the farmers market site
-example, you would probably decide that under the Content item entity type,
-there should be one content type for basic pages (Home and
-About), one for vendor pages, and one for recipe pages.
+. درون هر نوع موجودیت محتوایی که تعریف می‌کنید، تصمیم بگیرید چه زیر-شاخه‌هایی برای آن مناسب است. برای نمونه، در مثال فروشگاه کشاورزی، ممکن است بخواهید در نوع موجودیت گزینه محتوایی، یک نوع محتوا برای صفحات ساده (صفحه اول و درباره)، یک نوع محتوا برای صفحات فروشندگان و یک نوع محتوا برای صفحات محصولات در نظر بگیرید.
 
-. For each entity sub-type you decided on, decide what fields are needed. For
-instance, the Vendor content type might need fields for the vendor name, web
-page URL, image, and description.
+. برای هر زیر-شاخه موجودیت که مشخص می‌کنید، فیلدهای مورد نیاز را تعریف کنید. برای نمونه، نوع محتوای Vendor ممکن است برای نام فروشنده، نشانی وبسایت، تصویر و توضیحات آن فیلدهای جداگانه‌ای بخواهد.
 
-. Decide on what entity listings are needed, which could be entire pages or
-smaller areas on the page. For each listing, you'll need to determine what
-entity items should be listed. Then you'll need to decide in what order and with
-what filtering options they should be displayed; for example, you might want to
-give the site visitor the option to search by keyword, to filter the list down
-to a subset, or to sort the list. You'll also need to decide what information
-from the entity items should be shown, which might result in adding to the list
-of fields you determined in the previous step. The farmers market site, for
-example, needs to have a Recipes listing page that lists content items of type
-Recipe, with the ability to filter by ingredients, so that means that the Recipe
-content type needs an Ingredients field.
+. فهرست‌های موجودیت مورد نیاز را مشخص کنید، که می‌توانند شامل صفحات کامل یا بخش کوچکی از یک صفحه باشند. برای هر فهرست، باید مشخص کنید چه گزینه‌هایی از آن را نیاز دارید. آنگاه بابد تصمیم بگیرید به چه ترتیب و به چه حالتی این گزینه‌ها باید نمایش یابند. برای نمونه، شاید بخواهید به بازدیدکنندگان سایت امکان جستجو با کلیدواژه، کوچک‌کردن یک فهرست به مجموعه‌ای خاص یا قابلیت مرتب‌سازی آن را بدهید. همچنین باید تصمیم بگیرید کدام گزینه‌ها باید نمایش یابند. برای نمونه،‌فروشگاه کشاورزی نیازمند یک فهرست از محصولات به همراه مواد اولیه مورد نیاز آن‌ها به صورت قابل جستجو می‌باشد که این امر باید توسط فیلد مواد اولیه در نوع محتوای محصولات در نظر گرفته شود.
 
-. For each identified field on each entity subtype, identify what type of data
-it should contain (such as plain text, formatted text, a date, an image file,
-etc.), and how many values should be allowed. Most fields are
-single-valued, but for example, a Recipe should allow for multiple values in
-its Ingredients field.
+. برای هر فیلد مشخص شده در زیر-شاخه موجودیت، تعیین کنید چه نوع محتوایی را نیاز دارد (مانند متن ساده، تاریخ، تصویر و از این قبیل) و چه مقدار مجازی برای آن ممکن است. اکثر فیلدها تک مقداری هستند اما برای نمونه، یک محصول باید اجازه ورود چند مقدار برای مواد اولیه خود را بدهد.
 
-. Consider which fields would be best as references to taxonomy term entities:
-fields whose values should be chosen from a list of allowed values. Allowed
-values that are expected to change and grow over time, are good candidates. An
-example is the Ingredients field for the Recipe content type.
+. فیلدهای مناسب جهت ارجاع به موجودیت‌های دسته‌بندی را مشخص کنید: فیلدهایی که مقدارشان باید از یک فهرست انتخابی برگزیده شود. مقادیر مجازی که در طول زمان قابل ویرایش باشند کاندیدای خوبی هستند. یک مثال می‌تواند فیلد مواد اولیه در نوع محتوای محصولات باشد.
 
-. Consider which fields should reference other content entities. An example is
-that since vendors will be submitting recipes, a field will be needed on
-the Recipe content type that references the Vendor content item for the vendor
-who submitted the recipe.
+. مشخص کنید کدام فیلدها می‌توانند برای ارجاع به سایر موجودیت‌های محتوایی استفاده شوند. برای نمونه، از آنجا که فروشندگان اقدام به ثبت محصول می‌کنند، یک فیلد در نوع محتوای محصول برای مشخص کردن اینکه کدام فروشنده آن را ثبت کرده است، مورد نیاز می‌باشد.
 
-Here's an example of the resulting content structure for the farmers market
-scenario example site:
+در اینجا مثالی از ساختار محتوایی نهایی برای فروشگاه کشاورزی آورده شده است:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Entity type |Entity sub-type |Examples |Fields
+|نوع موجودیت |زیر-شاخه موجودیت |نمونه‌ها |فیلدها
 
-|Content item |Basic page |Home page, about page |Title, page body
+|گزینه محتوایی |صفحه ساده |صفحه اصلی، صفحه درباره |عنوان و متن صفحه
 
-|Content item |Vendor |A page for each vendor at the market |
-  Vendor name, page body, image, URL
+|گزینه محتوایی |فروشنده |صفحه‌ای برای هر فروشنده در فروشگاه |نام فروشنده، متن صفحه، تصویر، نشانی
 
-|Content item |Recipe |A page for each submitted recipe |
-  Recipe name, page body, image, reference to Vendor who submitted it,
-  Ingredients taxonomy
+|گزینه محتوایی |محصول |صفحه‌ای برای هر محصول ثبت شده |نام محصول، متن صفحه، تصویر، ارجاع به فروشنده‌ای که محصول را ثبت کرده، دسته‌بندی مواد اولیه
 
-|Custom block |(generic) |Copyright notice for footer,
-  Hours and location for sidebar |No special fields
+|بلاک سفارشی |عمومی |اخطار کپی‌رایت در پایین صفحه به همراه ساعت کاری و نشانی فروشگاه |بدون فیلد به خصوصی
 
-|Taxonomy term |Ingredients |Carrots, tomatoes, and other recipe ingredients |
-  No special fields
+|عبارت دسته‌بندی |مواد اولیه |هویج، گوجه و سایر مواد اولیه |بدون فیلد به خصوصی
 
-|Contact form |(generic) |Generic contact form |Name, email, subject, message
+|فرم تماس |عمومی |فرم تماس عمومی |نام، ایمیل، موضوع و پیام
 
-|User profile |(none) |Will not be displayed on site |No special fields
+|پروفایل کاربری |هیچی |در سایت نمایش داده نمی‌شود |بدون فیلد به خصوصی
 
 |=============================================
 
-And here are the listings the site needs:
+و فهرست‌هایی که سایت به آن‌ها نیاز دارد:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Page or page area |Entity type and sub-type |Filter/sort/pagination |
-  Fields displayed
+|صفحه یا ناحیه صفحه |نوع موجودیت و زیر-شاخه آن |فیلتر/مرتب‌سازی/صفحه‌بندی |فیلدهای قابل نمایش
 
-|Vendors page |Vendor content items |All vendors, alphabetical, paged |
-  Image, vendor name, trimmed body
+|صفحه فروشندگان |گزینه‌های محتوایی فروشنده |تمام فروشندگان، الفبایی، به ترتیب صفحه |تصویر، نام فروشنده و خلاصه متن
 
-|Recipes page |Recipe content items |
-  Filter by ingredients, alphabetical, paged |Image, recipe name
+|صفحه محصولات |گزینه‌های محتوای محصول |فیلتر با مواد اولیه، الفبایی، به ترتیب صفحه |تصویر، نام محصول
 
-|Recent recipes sidebar |Recipe content items |List 5 most recent |
-  Image, recipe name
+|نوارکناری محصولات اخیر |گزینه‌های محتوایی محصول |آخرین ۵ محصول ثبت شده |تصویر، نام محصول
 
 |=============================================
 
-==== Expand your understanding
+==== درک خود را افزایش دهید
 
 * <<structure-content-type>>
 * <<structure-fields>>
 * <<structure-taxonomy-setup>>
 
-==== Related concepts
+==== مفاهیم مربوطه
 
 <<structure-taxonomy>>
 
 //==== Additional resources
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
-and https://www.drupal.org/u/gdunham[Grant Dunham].
+نوشته و ویرایش شده توسط by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] و https://www.drupal.org/u/gdunham[Grant Dunham].
