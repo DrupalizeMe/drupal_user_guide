@@ -1,72 +1,46 @@
 [[planning-workflow]]
 
-=== Concept: Editorial Workflow
+=== مفهوم: گردشکار ویراستاری
 
 [role="summary"]
-Overview of the editorial workflow to manage content on a website.
+مروری بر گردشکار ویراستاری به منظور مدیریت محتوا در یک وبسایت.
 
 (((Editorial Workflow,overview)))
 (((Published flag,overview)))
 (((Unpublished flag,overview)))
 (((Revision,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<understanding-drupal>>
 
-==== What is an Editorial Workflow?
+==== گردشکار ویراستاری چیست؟
 
-An Editorial Workflow is the process organizations follow to create, review,
-edit and publish content.
+گردشکار ویراستاری به فرآیندی می‌گویند که سازمان‌ها با تبعیت از آن به ایجاد، بازبینی، ویرایش و انتشار محتوا می‌پردازند.
 
-Depending on the size and processes of the organization, multiple people in
-different roles can be part of the process. For example, content creators
-collect information and write content, editors review, edit, ask for changes,
-and publish the content once it's considered ready to be shared with the
-audience.
+با توجه به اندازه و فرآیندهای سازمان، چندین نفر با نقش‌های مختلف می‌توانند بخشی از فرآیند باشند. برای نمونه، تولیدکنندگان محتوا اطلاعات را جمع‌آوری کرده و به نگارش در می‌آورند، ویراستاران پس از ویرایش، بازبینی و درخواست تغییر آن به انتشار محتوا می‌پردازند که برای مخاطبین مناسب باشد.
 
-In your site, content types can have either a Published or an Unpublished flag
-to track their workflow states, that you can set for each content item when
-saving:
+در سایت شما، انواع محتوا شامل یک پرچم انتشار یا عدم‌انتشار هستند که وضعیت آن‌ها را در خود نگاه می‌دارد و هنگام ذخیره هر محتوا می‌توانید برای آن ثبت کنید:
 
-* Published content items are visible to all visitors of the site.
+* گزینه‌های محتوایی منتشرشده برای تمام مخاطبین وبسایت قابل مشاهده هستند.
 
-* Unpublished content items are not visible to the visitors of the site, but can
-be seen by authenticated users who have the permissions to view unpublished
-versions of specific content items.
+* محتوای منتشرنشده برای مخاطبین وبسایت قابل مشاهده نیستند، اما توسط کاربران احرازهویت شده که مجوز لازم را داشته باشند قابل دسترسی هستند.
 
-Most content entity types support revision tracking, if it is enabled by an
-administrator for the entity sub-type. If you have revision tracking enabled,
-the software will store old versions of the content each time it's revised, and
-add notes about what is changed. This allows you to look at the history and
-revert to older versions.
+اکثر انواع موجودیت محتوایی از ردگیری نسخه پشتیبانی می‌کنند، در صورتی که توسط مدیر در زیر-شاخه موجودیت  فعال شده باشد. اگر این قابلیت فعال باشد، نرم‌افزار پس از هر بازبینی به ذخیره‌سازی نسخه قدیمی محتوا می‌پردازد و درباره تغییرات آن یادداشت‌هایی را ایجاد می‌کند. اینکار به شما اجازه مرور تاریخچه محتوا و بازگشت به یک نسخه قبلی را می‌دهد.
 
-Using the Unpublished flag and Revisions, you can build an editorial workflow
-that lets content creators and editors work on the live site without displaying
-the content to visitors. When the content is ready to be published, all they
-need to do is save it as Published.
+با استفاده از پرچم عدم‌انتشار و بازبینی‌ها، می‌توانید یک گردشکار ویراستاری برای تولیدکنندگان محتوا و ویراستاران بوجود آورید به صورتی که در سایت اصلی بدون نمایش محتوا به مخاطب به ویرایش و بررسی آن بپردازند. زمانی که محتوا آماده انتشار باشد، تنها کاری که باید انجام داد تغییر وضعیت انتشار آن است.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<content-create>>
 * <<content-edit>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-Talking about online content, organizations would also want to consider
-post-publication phases of the editorial workflow: content teams might need to
-update already published content. Some organizations might need a more complex
-workflow with the options to configure which content type goes through the
-workflow process, set up user roles and permissions, set different workflow
-states (for example draft, needs review, published).
+وقتی از محتوای آنلاین صحبت می‌کنیم، سازمان‌ها اغلب می‌خواهند فرآیند پس از انتشار را نیز در نظر بگیرند: تیم‌های محتوا شاید لازم باشد به بروزرسانی آن بپردازند. برخی سازمان‌ها به گردشکار پیچیده‌تری نیاز دارند به صورتی که مشخص باشد هر نوع محتوا در کجای گردشکار قرار می‌گیرد، نقش‌ها و مجوزهای کاربری آن چیست و از چه وضعیت گردشکاری برای آن استفاده می‌گردد (برای نمونه، پیش‌نویس، نیازمند بازبینی و منتشرشده) .
 
-For more complex workflows, you can add install or more modules from the
-https://www.drupal.org/documentation/modules/workbench[contributed Workbench Suite module]
-to your site.
+برای گردشکارهای پیچیده‌تر، شما می‌توانید از مجموعه افزونه‌های https://www.drupal.org/documentation/modules/workbench[Workbench] استفاده کنید.
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com//[Pronovix], and
-https://www.drupal.org/u/gdunham[Grant Dunham].
+نوشته و ویرایش شده توسط  https://www.drupal.org/u/dianalakatos[Diána Lakatos] در https://pronovix.com//[Pronovix] و https://www.drupal.org/u/gdunham[Grant Dunham].
