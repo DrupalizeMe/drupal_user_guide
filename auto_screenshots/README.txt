@@ -1,6 +1,7 @@
 This module does not do anything directly. All it contains is tests that can be
-used to generate screen capture images and (eventually, maybe?) a database dump
-and files directory so you can clone the demo site.
+used to generate screen capture images, as well as database dumps and files
+directories so you can clone the demo site as it would be at the end of each
+chapter of the User Guide.
 
 A list of images that could not be automated, and therefore need to be generated
 manually, can be found in the source/en/images/README.txt file (under the main
@@ -33,15 +34,24 @@ details how to set up the tools. Here are the steps:
    sudo yum install imagemagick
 
 6. Install a local test Drupal site, running the version of Drupal you want to
-   generate screen shots for (Drupal 8.0.x, 8.1.x, etc.). You will need to
-   make sure that one Core issue has been fixed, or else make a one-line change
-   in core/modules/simpletest/src/WebTestBase.php as detailed on this issue:
+   generate screen shots for (Drupal 8.0.2, 8.1.0, etc. -- make sure it is the
+   latest actual release, not a development branch, so that translations are
+   downloaded correctly). You will need to make sure that one Core issue has
+   been fixed, or else make a one-line change in
+   core/modules/simpletest/src/WebTestBase.php as detailed on this issue:
         https://www.drupal.org/node/2808377
    The line to change looks like:
         @$newDom->loadHTML('<div>' . $command['data'] . '</div>');
    and it needs to be changed to:
         @$newDom->loadHTML('<?xml encoding="utf-8" ?>' .
            '<div>' . $command['data'] . '</div>');
+
+   There is also another core issue that affects screenshots:
+     https://www.drupal.org/node/2886904
+   because it makes the open/closed icons for details elements on admin
+   forms go away in Firefox. To fix this, edit your local copy of file
+     core/assets/vendor/normalize-css/normalize.css
+   and remove "summary" from getting CSS display: block around line 47.
 
 7. Copy either this directory or the entire User Guide project directory
    into the top-level 'modules' directory of your local Drupal site.
