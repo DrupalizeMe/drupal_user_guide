@@ -282,6 +282,18 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     array_pop($dir_parts);
     $this->assetsDirectory = implode('/', $dir_parts) . '/assets/';
 
+    // Verify the temporary directory.
+    $temp_dir = $this->getTempFilesDirectory();
+    file_prepare_directory($temp_dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+    // Verify we can write to this directory.
+    $filename = $temp_dir . '/temp_test.txt';
+    $fp = @fopen($filename, 'x');
+    if (!$fp) {
+      $this->fail("Could not create temporary file $filename");
+      return;
+    }
+    fclose($fp);
+
     // Run all the desired chapters.
     $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
     $backup_read_dir = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $this->demoInput['first_langcode']);
@@ -456,9 +468,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText('tracker');
 
     // Top part of Core section of admin/modules, with Activity Tracker checked.
-    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-core-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
+    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
     $this->drupalPostForm(NULL, [
-        'modules[Core][tracker][enable]' => TRUE,
+        'modules[tracker][enable]' => TRUE,
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
