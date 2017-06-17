@@ -2118,14 +2118,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText('Configuration Translation');
 
     $values = [
-      'modules[Multilingual][config_translation][enable]' => TRUE,
-      'modules[Multilingual][content_translation][enable]' => TRUE,
+      'modules[config_translation][enable]' => TRUE,
+      'modules[content_translation][enable]' => TRUE,
     ];
     if ($this->demoInput['first_langcode'] == 'en') {
       // In other languages, these other two modules are already enabled.
       $values += [
-        'modules[Multilingual][language][enable]' => TRUE,
-        'modules[Multilingual][locale][enable]' => TRUE,
+        'modules[language][enable]' => TRUE,
+        'modules[locale][enable]' => TRUE,
       ];
     }
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
@@ -2330,13 +2330,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Status');
       $this->assertText('Search Modules');
       $this->assertText('Sort by');
-      $this->drupalPostForm(NULL, [], 'Search');
 
       // Search for Admin Toolbar in 8.x on drupal.org. Just go directly to the
       // URL.
-      $this->drupalGet('https://www.drupal.org/project/project_module?f[0]=im_vid_44%3A13028&f[1]=&f[2]=im_vid_3%3A53&f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
+      $this->drupalGet('https://www.drupal.org/project/project_module?f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&f[5]=&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
       // Module search box on https://www.drupal.org/project/project_module.
-      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
+      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"');
       // Search results on https://www.drupal.org/project/project_module.
       $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"');
 
@@ -2353,7 +2352,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('tar.gz');
 
       // Project page for Admin Toolbar module.
-      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info') . $this->removeScrollbars() . '"');
+      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info, .block-views') . $this->removeScrollbars() . '"');
     }
 
     // Topic: extend-maintenance: Enabling and Disabling Maintenance Mode.
@@ -2429,13 +2428,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Status');
       $this->assertText('Search Themes');
       $this->assertText('Sort by');
-      $this->drupalPostForm(NULL, [], 'Search');
 
       // Search for actively maintained 8.x themes on drupal.org. Just go
       // directly to the URL.
-      $this->drupalGet('https://www.drupal.org/project/project_theme?f[0]=im_vid_44%3A13028&f[1]=&f[2]=drupal_core%3A7234&f[3]=sm_field_project_type%3Afull&text=&solrsort=iss_project_release_usage+desc&op=Search');
+      $this->drupalGet('https://www.drupal.org/project/project_theme?f%5B0%5D=im_vid_44%3A13028&f%5B1%5D=&f%5B2%5D=drupal_core%3A7234&f%5B3%5D=sm_field_project_type%3Afull&f%5B4%5D=&text=&solrsort=iss_project_release_usage+desc&op=Search');
       // Theme search box on https://www.drupal.org/project/project_theme.
-      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#project-solr-browse-projects-form') . $this->removeScrollbars() . '"');
+      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"');
       // Search results on https://www.drupal.org/project/project_theme.
       $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"');
 
@@ -2629,7 +2627,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Install an old version of the Admin Toolbar module, and visit the
     // Updates page.
     $this->drupalPostForm('admin/modules', [
-        'modules[Administration][admin_toolbar][enable]' => TRUE,
+        'modules[admin_toolbar][enable]' => TRUE,
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
