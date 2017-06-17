@@ -293,7 +293,7 @@ When this translation is done, make sure to update the scripts/lang-lc.conf (for
 However, if you found an existing lang-lc.conf file on Github, you should instead edit the guide.txt and glossary.txt files so that these headings match the translations you put in.
 </li>
 
-<li>Add langcode to the build scripts in scripts/languages.txt, and verify that it builds without errors.</li>
+<li>Add langcode to the build scripts in scripts/languages.txt, and verify that it builds without errors. If it is a left-to-right language, also add it to scripts/languages-left-right.txt, and verify that e-books build without errors.</li>
 
 <li>Optional but recommended steps:
   <ul>

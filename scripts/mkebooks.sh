@@ -9,6 +9,7 @@ mkdir -p ../output/ebooks
 mkdir -p ../ebooks
 
 # Process each language. Add new languages to the languages.txt file.
+# This loop does the epub and mobi output.
 for lang in `cat languages.txt`
 do
 
@@ -30,11 +31,6 @@ do
 
   # Copy image files to e-book directory.
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images
-
-  # Run the xmlto processor to convert from DocBook to PDF.
-  # The syntax is:
-  #   xmlto pdf --with-fop -o [output dir] [input docbook file]
-  xmlto pdf  -m pdf.xsl --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
 
   # Run the xmlto processor to convert from DocBook to ePub.
   # The syntax is:
@@ -62,8 +58,23 @@ do
   cd ../../../scripts
 
   # Copy final output to ebooks directory.
-  cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
   cp ../output/ebooks/$lang/guide.epub ../ebooks/guide-$lang.epub
   cp ../output/ebooks/$lang/guide.mobi ../ebooks/guide-$lang.mobi
+
+done
+
+# PDFs can only be generated for left-to-right languages, unfortunately.
+# Assume that the epub files have already been made, so only do the
+# extra steps needed for PDF.
+for lang in `cat languages-left-right.txt`
+do
+
+  # Run the xmlto processor to convert from DocBook to PDF.
+  # The syntax is:
+  #   xmlto pdf --with-fop -o [output dir] [input docbook file]
+  xmlto pdf  -m pdf.xsl --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+
+  # Copy final output to ebooks directory.
+  cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
 
 done
