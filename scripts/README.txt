@@ -14,3 +14,9 @@ lang-lc.conf, where lc is the language code. This file contains three
 lines that give the translations for the words Preface, Index, and Glossary.
 They need to match the corresponding chapter/section headings in the guide.txt
 and glossary.txt files, in order for the document structure to build properly.
+
+There are also two files containing a list of languages to build:
+- languages.txt -- all languages
+- languages-left-right.txt -- left-to-right languages -- PDF files cannot be
+  built for right-to-left languages at this time; see issue
+  https://www.drupal.org/node/2887064
