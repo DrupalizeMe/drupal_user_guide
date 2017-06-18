@@ -129,6 +129,20 @@ NOTE 3: Some screenshots scroll the browser window. This may not work in a
 foolproof way, and assumes the browser width is set to about 1200 pixels wide,
 with normal text size settings.
 
+NOTE 4: There are several screenshots that are made only for English -- these
+are screenshots of drupal.org pages. If you update them, you should copy them
+to the other language directories:
+- extend-manual-install-download.png
+- extend-module-find_module_finder.png
+- extend-module-find_search_results.png
+- extend-module-find_project_info.png
+- extend-module-install-download.png
+- extend-theme-find_theme_finder.png
+- extend-theme-find_search_results.png
+- extend-theme-install-download.png
+- install-prepare-recommended.png
+- install-prepare-files.png
+- security-update-module-release-notes.png
 
 BACKUP AND RESTORE
 ------------------
