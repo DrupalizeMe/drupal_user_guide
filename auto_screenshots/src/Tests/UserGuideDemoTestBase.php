@@ -331,8 +331,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       // Turn on the language and locale modules.
       $this->drupalGet('admin/modules');
       $this->drupalPostForm(NULL, [
-          'modules[Multilingual][language][enable]' => TRUE,
-          'modules[Multilingual][locale][enable]' => TRUE,
+          'modules[language][enable]' => TRUE,
+          'modules[locale][enable]' => TRUE,
         ], 'Install');
 
       // Add the other language.
@@ -854,7 +854,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Available menus'));
 
     // Top of admin/structure/types/add, with Name and Description fields.
-    $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').change(); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
+    $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;' . $vendor . '&quot;); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
 
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['vendor_type_name'],
@@ -936,10 +936,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Label'));
 
     // Fill in the form in the screenshot: choose Link for field type and
-    // type in Vendor URL for the Label, triggering the "change" event to set
+    // type in Vendor URL for the Label, triggering the event to set
     // up the machine name.
     // Initial page for admin/structure/types/manage/vendor/fields/add-field.
-    $this->setUpScreenShot('structure-fields-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'link\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendor_field_url_label'] . '&quot;); jQuery(\'#edit-label\').change(); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper input, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
+    $this->setUpScreenShot('structure-fields-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'link\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendor_field_url_label'] . '&quot;); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;field_' . $vendor_url . '&quot;); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper input, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'link',
         'label' => $this->demoInput['vendor_field_url_label'],
@@ -1109,7 +1109,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Fill in the form in the screenshot: choose Taxonomy term for field type
     // and type in Ingredients for the Label.
     // Add field page to add Ingredients taxonomy reference field.
-    $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['recipe_field_ingredients_label'] . '&quot;);  jQuery(\'#edit-label\').change(); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
+    $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['recipe_field_ingredients_label'] . '&quot;);  jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;field_' . $ingredients . '&quot;); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:taxonomy_term',
         'label' => $this->demoInput['recipe_field_ingredients_label'],
@@ -1155,7 +1155,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Fill in the form in the screenshot: choose content reference for
     // field type and type in Submitted by for the Label.
     // Add field page for adding a Submitted by field to Recipe.
-    $this->setUpScreenShot('structure-adding-reference-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['recipe_field_submitted_label'] . '&quot;); jQuery(\'#edit-label\').change(); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
+    $this->setUpScreenShot('structure-adding-reference-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['recipe_field_submitted_label'] . '&quot;); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;field_' . $submitted_by . '&quot;);  jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
 
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:node',
@@ -1459,7 +1459,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Role name'));
 
     // Add role page (admin/people/roles/add).
-    $this->setUpScreenShot('user-new-role-add-role.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').change(); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration') . '"');
+    $this->setUpScreenShot('user-new-role-add-role.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;' . $vendor . '&quot;); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration') . '"');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendor_type_name'],
         'id' => $vendor,
@@ -1789,7 +1789,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Link text'));
 
     // Add view wizard.
-    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;).change(); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:ASC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;);' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:ASC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;);' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendors_view_title'],
         'id' => $vendors_view,
@@ -3173,7 +3173,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
           'content_options[not_translated]' => 0,
         ], $this->callT('Export'));
       $directory = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
-      \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
+      if (!is_dir($directory)) {
+        \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
+      }
       $this->translationFilename = $directory . '/' . $this->demoInput['first_langcode'] . '_' . $this->randomMachineName() . '.po';
       file_put_contents($this->translationFilename, $this->getRawContent());
       $this->pass('TRANSLATIONS SAVED TO: ' . $this->translationFilename);
