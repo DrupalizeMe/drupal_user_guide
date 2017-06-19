@@ -429,6 +429,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('config-basic-SiteInfo.png', 'onLoad="' . $this->showOnly('#edit-site-information') . $this->setWidth('#edit-site-information') . '"');
 
     $this->drupalGet('<front>');
+    /**
+     * Due to some weird bug, even though we have set the site name, it is
+     * not showing on the site except in English, so don't run this line of
+     * the test.
+     */
+    //    $this->assertText($this->demoInput['site_name']);
+    $this->assertText($this->demoInput['site_slogan']);
+
     $this->clickLink($this->callT('Configuration'));
     $this->assertText($this->callT('Regional and language'));
     // Here, you would ideally want to click the "Regional settings" link.
@@ -595,7 +603,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('No front page content has been created yet.'));
 
     // Home page after theme settings are finished.
-    $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName() . $this->removeScrollbars() . '"');
 
     // Back to topic: block-regions.
     $this->drupalGet('admin/structure/block/demo/bartik');
@@ -709,7 +717,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $this->drupalGet('<front>');
     // Site front page after configuring it to point to the Home content item.
-    $this->setUpScreenShot('menu-home_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer, .contextual') . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('menu-home_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer, .contextual') . $this->setBodyColor() . $this->replaceSiteName() . $this->removeScrollbars() . '"');
 
     // UI text tests from Topic: menu-concept.txt: Concept: Menu.
     // For some reason, these texts in particular have some strange HTML
@@ -754,7 +762,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('menu-link-from-content.png', 'onLoad="' . $this->showOnly('#edit-menu') . '"');
     $this->drupalGet('<front>');
     // Home page after adding About to the navigation.
-    $this->setUpScreenShot('menu-link-from-content-result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual, footer') . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('menu-link-from-content-result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual, footer') . $this->setBodyColor() . $this->replaceSiteName() . $this->removeScrollbars() . '"');
 
     // Topic: menu-reorder - Changing the order of navigation.
     $this->drupalGet('<front>');
@@ -802,7 +810,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save and keep published'));
     $this->drupalGet('<front>');
     // Header section of Home page with reordered menu items.
-    $this->setUpScreenShot('menu-reorder_final_order.png', 'onLoad="' . $this->showOnly('header') . $this->hideArea('.visually-hidden, .contextual, .menu-toggle') . $this->setWidth('header') . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('menu-reorder_final_order.png', 'onLoad="' . $this->showOnly('header') . $this->hideArea('.visually-hidden, .contextual, .menu-toggle') . $this->setWidth('header') . $this->setBodyColor() . $this->replaceSiteName() . $this->removeScrollbars() . '"');
 
   }
 
@@ -1722,7 +1730,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save block'));
     $this->drupalGet('node/2');
     // About page with placed sidebar block.
-    $this->setUpScreenShot('block-place-sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('block-place-sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars() . '"');
 
     // Verify some UI text on several block pages, without checking navigation.
     $this->drupalGet('admin/structure/block');
@@ -1868,10 +1876,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // View the output, with preloaded images.
     $this->drupalGetWithImagePreload($this->demoInput['vendors_view_path']);
     // Completed vendors view output.
-    $this->setUpScreenShot('views-create-view-output.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('views-create-view-output.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
 
-    // Topic: views-duplicating - Duplicating a View.
+    // Topic: views-duplicate - Duplicating a View.
     // Duplicate the Vendors view.
     $this->drupalGet('admin/structure/views');
     $this->assertRaw($this->callT('Duplicate'));
@@ -1978,7 +1986,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $this->drupalGetWithImagePreload($this->demoInput['recipes_view_path']);
     // Completed recipes view output.
-    $this->setUpScreenShot('views-duplicate_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('views-duplicate_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
     // Topic: views-block - Adding a Block Display to a View.
     // Add a block to the Recipes view.
@@ -2088,7 +2096,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ]);
     $this->drupalGetWithImagePreload('<front>');
     // Home page with recipes sidebar visible.
-    $this->setUpScreenShot('views-block_sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('views-block_sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars() . '"');
 
   }
 
@@ -2378,8 +2386,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clearCache();
     $this->drupalLogout();
     $this->drupalGet('<front>');
-    // Site in maintenance mode.
-    $this->setUpScreenShot('extend-maintenance-mode-enabled.png', 'style="overflow: hidden;"');
+    // Site in maintenance mode. Note that this page does not have
+    // jQuery, so we cannot use the $this->replaceSiteName() function.
+    $this->setUpScreenShot('extend-maintenance-mode-enabled.png', 'style="overflow: hidden;" onLoad="var orig = document.body.innerHTML; orig = orig.replace(\'Drupal\', \'' . $this->demoInput['site_name'] . '\').replace(\'Drupal\', \'' . $this->demoInput['site_name'] . '\'); document.body.innerHTML = orig;"');
     $this->drupalLogin($this->rootUser);
     $this->drupalPostForm('admin/config/development/maintenance', [
         'maintenance_mode' => FALSE,
@@ -2388,7 +2397,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalLogout();
     $this->drupalGet('<front>');
     // Site no longer in maintenance mode.
-    $this->setUpScreenShot('extend-maintenance-mode-disabled.png', 'onLoad="' . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('extend-maintenance-mode-disabled.png', 'onLoad="' . $this->replaceSiteName() . $this->removeScrollbars() . '"');
     $this->drupalLogin($this->rootUser);
 
     // Topic: extend-module-install - Downloading and Installing a Module from
@@ -2852,7 +2861,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     return "jQuery('body').css('overflow', 'hidden');";
   }
 
-
   /**
    * Creates JavaScript code to reload the page, exactly once.
    *
@@ -2887,6 +2895,31 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     return $code;
+  }
+
+  /**
+   * Returns JavaScript code to replace the site name in the header.
+   *
+   * There is a bug for non-English languages, which hasn't been reported or
+   * investigated, that in the test environment, even though the site name
+   * has been configured, it doesn't show up correctly in the page header. So,
+   * this method works around the bug for screenshots by using JQuery to
+   * replace the text in the header block.
+   *
+   * @param string[] $selectors
+   *   JQuery selectors for the HTML elements containing the site name. Defaults
+   *   to the site branding block in the header. Each array element will be
+   *   processed.
+   * @param string $original
+   *   Text currently appearing there that needs to be replaced with the site
+   *   name. Defaults to 'Drupal', which seems to be what is normally there.
+   */
+  protected function replaceSiteName($selectors = ['.region-header .site-branding__text a'], $original = 'Drupal') {
+    $string = 'var orig;';
+    foreach ($selectors as $selector) {
+       $string .= "orig = jQuery('" . $selector . "').html(); jQuery('" . $selector . "').html(orig.replace('" . $original . "', '" . $this->demoInput['site_name'] . "'));";
+    }
+    return $string;
   }
 
   /**
