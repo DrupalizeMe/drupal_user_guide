@@ -1,4 +1,5 @@
 # This script builds PDF, ePub, and Mobi output for the guide.
+# See README.txt for notes about fonts and languages.
 
 # Exit immediately on uninitialized variable or error, and print each command.
 set -uex
@@ -65,14 +66,31 @@ done
 
 # PDFs can only be generated for left-to-right languages, unfortunately.
 # Assume that the epub files have already been made, so only do the
-# extra steps needed for PDF.
+# extra steps needed for PDF. Here are the languages that can use the Noto
+# font.
 for lang in `cat languages-left-right.txt`
 do
 
   # Run the xmlto processor to convert from DocBook to PDF.
   # The syntax is:
   #   xmlto pdf --with-fop -o [output dir] [input docbook file]
-  xmlto pdf  -m pdf.xsl --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+  cp fop-conf.xml ../output/ebooks/$lang
+  xmlto pdf -m pdf.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+
+  # Copy final output to ebooks directory.
+  cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
+
+done
+
+# And finally, languages that can only be built using the GNU Unifont font.
+for lang in `cat languages-unifont.txt`
+do
+
+  # Run the xmlto processor to convert from DocBook to PDF.
+  # The syntax is:
+  #   xmlto pdf --with-fop -o [output dir] [input docbook file]
+  cp fop-conf.xml ../output/ebooks/$lang
+  xmlto pdf -m pdf.xsl --stringparam body.font.family=unifont --stringparam title.font.family=unifont -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
 
   # Copy final output to ebooks directory.
   cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf

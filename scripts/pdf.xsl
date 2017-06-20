@@ -81,9 +81,9 @@
 
 
 <!-- Better fonts. Less whitespace. -->
-<xsl:param name="body.font.family">Helvetica</xsl:param>
+<xsl:param name="body.font.family">Noto Sans</xsl:param>
 <xsl:param name="body.font.master">11</xsl:param>
-<xsl:param name="title.font.family">Helvetica</xsl:param>
+<xsl:param name="title.font.family">Noto Sans</xsl:param>
 <xsl:attribute-set name="section.title.level1.properties">
   <xsl:attribute name="font-size">
     <xsl:value-of select="$body.font.master * 1.6"/>
