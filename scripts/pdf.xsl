@@ -5,6 +5,9 @@
 <!-- Note that PDF is normally made with the fo stylesheets
      from the docbook-xsl project. -->
 
+<!-- Use FOP extensions, so RTL languages are supported. -->
+<xsl:param name="fop1.extensions" select="1"/>
+
 <!-- Strip unnecessary whitespace. -->
 <xsl:strip-space elements="*"/>
 
