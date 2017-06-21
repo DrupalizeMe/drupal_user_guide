@@ -66,7 +66,7 @@ class UserGuideDemoTestJa extends UserGuideDemoTestBase {
     'about_path' => "/about",
     'about_description' => "マーケットの歴史",
 
-    'vendor_type_name' => "Vendor",
+    'vendor_type_name' => "販売者",
     'vendor_type_machine_name' => "vendor",
     'vendor_type_description' => "販売者についての情報",
     'vendor_type_title_label' => "販売者名",
@@ -90,7 +90,7 @@ class UserGuideDemoTestJa extends UserGuideDemoTestBase {
     'vendor_2_url' => "http://sweethoney.com",
     'vendor_2_email' => "honey@example.com",
 
-    'recipe_type_name' => "Recipe",
+    'recipe_type_name' => "レシピ",
     'recipe_type_machine_name' => "recipe",
     'recipe_type_description' => "販売者が投稿したレシピ",
     'recipe_type_title_label' => "レシピ名",
