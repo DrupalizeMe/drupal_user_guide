@@ -2482,10 +2482,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('extend-theme-install-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
 
     $this->drupalGet('admin/appearance');
-    /* This is actually a formatPlural call so don't look for text saying
-       "Uninstalled themes". For languages without plurals, this string is
-       not translated. */
-    //    $this->assertText($this->callT('Uninstalled themes'));
+    // The text 'Uninstalled themes' is translated through a formatPlural call,
+    // so only test in English.
+    if ($this->demoInput['first_langcode'] != 'en') {
+      $this->assertText('Uninstalled themes');
+    }
     $this->assertLink($this->callT('Install and set as default'));
 
     // Mayo theme on the Appearance page.
