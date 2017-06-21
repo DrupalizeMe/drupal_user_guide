@@ -64,7 +64,7 @@ class UserGuideDemoTestFr extends UserGuideDemoTestBase {
     'about_description' => "Histoire du marché",
 
     'vendor_type_name' => "Vendeur",
-    'vendor_type_machine_name' => "Vendeur",
+    'vendor_type_machine_name' => "vendeur",
     'vendor_type_description' => "Informationà propos du vendeur",
     'vendor_type_title_label' => "Nom du vendeur",
     'vendor_field_url_label' => "URL du Vendeur",
@@ -122,11 +122,11 @@ class UserGuideDemoTestFr extends UserGuideDemoTestBase {
     'hours_block_title_machine_name' => "heures_localisation",
     'hours_block_body' => "<p>Ouvert : Dimanche de 9h à 14h, d’Avril à Septembre</p><p>Localisation: Parking de la Poste, Place du village, centre-ville</p>",
 
-    'vendors_view_title' => "vendeurs",
+    'vendors_view_title' => "Vendeurs",
     'vendors_view_machine_name' => "vendeurs",
     'vendors_view_path' => "vendeurs",
 
-    'recipes_view_title' => "Recette",
+    'recipes_view_title' => "Recettes",
     'recipes_view_machine_name' => "recettes",
     'recipes_view_path' => "recettes",
     'recipes_view_ingredients_label' => "Trouver une recette utilisant ..;",
