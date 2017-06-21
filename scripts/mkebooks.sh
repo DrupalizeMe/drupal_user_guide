@@ -10,7 +10,6 @@ mkdir -p ../output/ebooks
 mkdir -p ../ebooks
 
 # Process each language. Add new languages to the languages.txt file.
-# This loop does the epub and mobi output.
 for lang in `cat languages.txt`
 do
 
@@ -32,6 +31,20 @@ do
 
   # Copy image files to e-book directory.
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images
+
+  # Make PDF files. Which font to use depends on the language.
+  cp fop-conf.xml ../output/ebooks/$lang
+
+  if [ "$lang" = "fa" ]; then
+      xmlto pdf -m pdf-arabic.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+
+  elif [ "$lang" = "zh-hans" ] || [ "$lang" = "ja" ] ; then
+      xmlto pdf -m pdf-unifont.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+
+  else
+      xmlto pdf -m pdf.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+
+  fi
 
   # Run the xmlto processor to convert from DocBook to ePub.
   # The syntax is:
@@ -61,38 +74,6 @@ do
   # Copy final output to ebooks directory.
   cp ../output/ebooks/$lang/guide.epub ../ebooks/guide-$lang.epub
   cp ../output/ebooks/$lang/guide.mobi ../ebooks/guide-$lang.mobi
-
-done
-
-# PDFs can only be generated for left-to-right languages, unfortunately.
-# Assume that the epub files have already been made, so only do the
-# extra steps needed for PDF. Here are the languages that can use the Noto
-# font.
-for lang in `cat languages-left-right.txt`
-do
-
-  # Run the xmlto processor to convert from DocBook to PDF.
-  # The syntax is:
-  #   xmlto pdf --with-fop -o [output dir] [input docbook file]
-  cp fop-conf.xml ../output/ebooks/$lang
-  xmlto pdf -m pdf.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
-
-  # Copy final output to ebooks directory.
-  cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
-
-done
-
-# And finally, languages that can only be built using the GNU Unifont font.
-for lang in `cat languages-unifont.txt`
-do
-
-  # Run the xmlto processor to convert from DocBook to PDF.
-  # The syntax is:
-  #   xmlto pdf --with-fop -o [output dir] [input docbook file]
-  cp fop-conf.xml ../output/ebooks/$lang
-  xmlto pdf -m pdf.xsl --stringparam body.font.family=unifont --stringparam title.font.family=unifont -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
-
-  # Copy final output to ebooks directory.
   cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
 
 done

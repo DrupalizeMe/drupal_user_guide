@@ -17,25 +17,16 @@ lines that give the translations for the words Preface, Index, and Glossary.
 They need to match the corresponding chapter/section headings in the guide.txt
 and glossary.txt files, in order for the document structure to build properly.
 
-There are also three files containing lists of languages to build:
-- languages.txt -- all languages
-- languages-left-right.txt -- left-to-right languages -- PDF files cannot be
-  built for right-to-left languages at this time; see issue
-  https://www.drupal.org/node/2887064
-- languages-unifont.txt -- languages whose characters are not covered well by
-  the Noto font and need to use GNU Unifont instead (Chinese, Japanese, etc.)
+Also, to build output you need the language to be in the languages.txt file.
 
 FONTS
 
-In order to build PDF files, you need to have the Noto and GNU Unifont fonts
-installed. On Linux, try one of the following:
-  apt-get install fonts-noto unifont
-  yum install fonts-noto unifont
-For other operating systems, see https://www.google.com/get/noto/ and
-http://unifoundry.com/unifont.html
+In order to build PDF files, you need to have the Noto fonts installed,
+including Arabic, as well as GNU Unifont. On Linux, try one of the following:
+  apt-get install fonts-noto-hinted unifont
+  yum install fonts-noto-hinted unifont
+For other operating systems, see https://www.google.com/get/noto/ or
+http://www.unifoundry.com/unifont.html
 
-Once you have downloaded the fonts, you may need to edit the fop-conf.xml file
-in this directory to find them. On Linux systems, fonts should be located in
-  /usr/share/fonts/truetype
-but if they are somewhere else, you will need to edit the fop-conf.xml file to
-point to your location for the fonts.
+When adding a new language, you may need to adjust the mkebooks.sh script so
+that an appropriate font is used for the new language.

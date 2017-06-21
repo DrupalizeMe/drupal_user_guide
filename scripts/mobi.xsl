@@ -6,6 +6,20 @@
 <!-- Note that epub is normally made with the epub stylesheets, from the
      docbook-xsl project. -->
 
+<!-- Output the language and direction in the HTML head. -->
+<xsl:template name="root.attributes">
+  <xsl:variable name="lang">
+    <xsl:call-template name="l10n.language"/>
+  </xsl:variable>
+  <xsl:if test="starts-with($lang, 'he') or
+                starts-with($lang, 'ar') or
+                starts-with($lang, 'fa')"
+          >
+    <xsl:attribute name="dir">rtl</xsl:attribute>
+  </xsl:if>
+  <xsl:attribute name="lang">$lang</xsl:attribute>
+</xsl:template>
+
 <!-- Use outline numbering for sections. -->
 <xsl:param name="section.autolabel" select="1"/>
 <xsl:param name="section.autolabel.max.depth">1</xsl:param>
