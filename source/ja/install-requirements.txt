@@ -1,91 +1,89 @@
 [[install-requirements]]
 
-=== Concept: Server Requirements
+=== 概念: サーバー要件
 
 [role="summary"]
-Overview of server requirements for installing and running the core software.
+コアソフトウェアのインストールと実行のためのサーバー要件の概要
 
-(((Installation requirements,overview)))
-(((Installation requirements,disk space)))
-(((Installation requirements,web server)))
-(((Installation requirements,database)))
-(((Installation requirements,PHP programming language)))
-(((Installing,core software)))
-(((Core software,installation requirements)))
-(((Disk space,installation requirements)))
-(((Web server,installation requirements)))
-(((Apache web server,version requirements)))
-(((Hiawatha web server,version requirements)))
-(((Nginx web server,version requirements)))
-(((Microsoft IIS web server,version requirements)))
-(((Database,installation requirements)))
-(((MySQL database,version requirements)))
-(((PostgreSQL database,version requirements)))
-(((SQLight database,version requirements)))
-(((PHP programming language,version requirements)))
+(((インストール要件,概要)))
+(((インストール要件,ディスク容量)))
+(((インストール要件,Webサーバー)))
+(((インストール要件,データベース)))
+(((インストール要件,PHPプログラミング言語)))
+(((インストール,コアソフトウェア)))
+(((コアソフトウェア,インストール要件)))
+(((ディスク容量,インストール要件)))
+(((Webサーバー,インストール要件)))
+(((Apache Webサーバー,バージョン要件)))
+(((Hiawatha Webサーバー,バージョン要件)))
+(((Nginx Webサーバー,バージョン要件)))
+(((Microsoft IIS Webサーバー,バージョン要件)))
+(((データベース,インストール要件)))
+(((MySQL データベース,バージョン要件)))
+(((PostgreSQL データベース,バージョン要件)))
+(((SQLight データベース,バージョン要件)))
+(((PHP プログラミング言語,バージョン要件)))
 
-// ==== Prerequisite knowledge
+// ==== 前提知識
 
-==== What are the requirements for running the core software?
+==== コアソフトウェアを実行するための要件は何ですか？
 
-===== Disk space
+===== ディスク容量
 
-A minimum installation requires 15 MB. 60 MB is needed for a website with many
-contributed modules and themes installed. Keep in mind you need much more for
-the database, files uploaded by the users, media, backups, and other files.
+最小インストールには15MB、多くの拡張モジュールやテーマをインストールするには60MBが必要です。
+データベース、ユーザーによりアップロードされるファイル、メディア、バックアップ、その他のファイルの為に
+さらに多くの容量が必要になることにも留意ください。
 
-===== Web server
+===== Webサーバー
 
-Apache (Recommended)::
-  Apache is the most commonly used web server. The core software will work on
-  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache
-  mod_rewrite module installed and enabled. The Apache VirtualHost configuration
-  must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
-  to be used.
+Apache (推奨)::
+  Apacheは最も一般的に使用されているWebサーバーです。 コアソフトウェアは、
+  mod_rewriteモジュールがインストールされ有効になっているUNIX/Linux、OS X、またはWindows上の
+  Apache 2.xで動作します。
+  _.htaccess_ ファイルを使用するには、Apache VirtualHost設定で _AllowOverride All_
+  ディレクティブを含める必要があります。
 Nginx::
-  Nginx is a commonly used web server that focuses on high concurrency,
-  performance and low memory usage. The core software will work on Nginx 1.1 or
-  greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module
-  must be installed and enabled.
+  Nginxは高い同時実行性とパフォーマンスにフォーカスした一般的に使用されているWebサーバーです。
+  コアソフトウェアは、UNIX/Linux、OS X、またはWindows上のNginx 1.1またはそれ以上のバージョンで動作します。
+  ngx_http_rewrite_moduleをインストールして有効にする必要があります。
 Hiawatha::
-  Hiawatha is a web server with a strong focus on security. It also aims at
-  being easy to use and lightweight. Research performed by independent
-  researchers proves that Hiawatha offers a performance comparable to other web
-  servers under normal conditions, but much better while under attack. URL
-  Toolkit must be installed and configured to rewrite URLs.
+  Hiawathaはセキュリティに重点を置いたWebサーバーです。また使いやすく軽量である事を目指しています。
+  独立した研究者の調査によると、通常環境でも他のWebサーバーに匹敵するパフォーマンスですが、攻撃下の環境では
+  はるかに優れたパフォーマンスを発揮するとされています。
+  URLを書き換えるためには、URLツールキットをインストールして構成する必要があります。
 Microsoft IIS::
-  Microsoft IIS is a web server and set of feature extension modules for use
-  with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
-  7 if PHP is configured correctly. Because clean URLs are required, you may
-  need to use a third party product. For IIS 7, you can use the Microsoft URL
-  Rewrite module or a third party solution.
+  Microsoft IISはMicrosoft Windows上で動作する機能拡張モジュールを持ったWebサーバーです。
+  コアソフトウェアは、PHPが正しく設定されていればIIS 5、IIS 6、またはIIS 7で動作します。
+  クリーンURLが必要なため、サードパーティの製品を使用する必要があります。例えばIIS 7では、
+  Microsoft URL Rewriteモジュールやサードパーティのソリューションを使用できます。
 
-===== Database
+===== データベース
 
-Use one of the following databases:
+次のいずれかのデータベースを使用してください:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
-InnoDB-compatible primary storage engine
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) 以上でInnoDB互換のプライマリーストレージエンジン
 
-* PostgreSQL - 9.1.2 or higher
+* PostgreSQL - 9.1.2 以上
 
-* SQLite - 3.4.2 or higher
+* SQLite - 3.4.2 以上
 
 ===== PHP
 
-PHP 5.5.9 or higher.
+PHP 5.5.9 以上
 
-//==== Related topics
+//==== 関連トピック
 
-==== Additional resources
+==== その他のリソース
 
-https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"(in English)]
 
 
-*Attributions*
+*帰属情報*
 
 Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] and
 https://www.drupal.org/u/bemery987[Brian Emery] from
 https://www.drupal.org/docs/8/system-requirements["System requirements"],
 copyright 2000-2016 by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
+Translated by https://www.drupal.org/u/kabetani[Takashi Kabetani].
+Reviewed by https://www.drupal.org/u/ken_taguchi[Ken Taguchi] at http://www.dgcircus.com/[Digital Circus].
