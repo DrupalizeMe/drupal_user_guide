@@ -1,9 +1,9 @@
 [[content-paths]]
 
-=== Concept: Paths, Aliases, and URLs
+=== مفهوم: مسیرها، نام‌های مستعار و نشانی‌ها
 
 [role="summary"]
-Overview of paths, aliases, and URLs (with examples).
+مروری بر مسیرها، نام‌های مستعار و نشانی‌ها (به همراه مثال).
 
 (((Path,overview)))
 (((Alias,overview)))
@@ -14,20 +14,15 @@ Overview of paths, aliases, and URLs (with examples).
 //==== Prerequisite knowledge
 
 
-==== What is a URL?
+==== نشانی چیست؟
 
-URL is the abbreviation for "Uniform Resource Locator", which is the page's
-address on the web. It is the "name" by which a browser identifies a page to
-display. In the example "Visit us at _example.com_.", _example.com_ is the URL
-for the home page of your website. Users use URLs to locate content on the web.
+نشانی یا URL مخفف عبارت "Uniform Resource Locator' است، که نشانی صفحه در اینترنت می‌باشد. این "نام" است که به واسطه آن مرورگر می‌تواند یک صفحه را نمایش دهد. در مثال "ما را در _example.com_ ملاقات کنید'، _example.com_ نشانی صفحه خانگی شما است. کاربران با استفاده از این نشانی‌ها محتوای مورد نظر خود در وب را پیدا می‌کنند.
 
-==== What is a Path?
+==== مسیر چیست؟
 
-A path is the unique, last part of the URL for a specific function or piece of
-content. For example, for a page whose full URL is _http://example.com/node/7_,
-the path is _node/7_.
+یک مسیر قسمت منحصربفرد و انتهایی نشانی است که شامل عملکردی خاص یا قسمت از یک محتوا می‌باشد. برای نمونه، در صفحه‌ای که نشانی کامل _http://example.com/node/7_ را دارد مسیر عبارت است از _node/7_.
 
-Here are some examples of paths you might find in your site:
+این‌ها نمونه‌هایی از مسیرها هستند که ممکن است در سایت شما وجود داشته باشد:
 
 * _node/7_
 * _taxonomy/term/6_
@@ -35,15 +30,11 @@ Here are some examples of paths you might find in your site:
 * _user/login_
 * _user/3_
 
-==== What is an Alias?
+==== نام مستعار چیست؟
 
-The core software has a feature called "URL Alias" that allows you to provide a
-more understandable name to the content. So, if you have an "About Us" page with
-the path _node/7_, you can set up an alias so that your visitors will see it as
-_http://www.example.com/AboutUs_. The core Path module, which supports URL
-aliasing, provides this functionality.
+دروپال شامل ویژگی به نام "نام مستعار نشانی" است که به شما اجازه می‌دهد نام قابل فهم‌تری برای یک محتوا ایجاد کنید. پس، اگر صفحه _درباره ما_ دارید که در مسیر _node/7_ قرار گرفته است می‌توانید نام مستعاری برای آن ایجاد کنید که به صورت _http://example.com/AboutUs_ نمایش یابد. افزونه داخلی Path، که از نام‌های مستعار نشانی پشتیبانی می‌کند، این قابلیت را فراهم می‌آورد.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<content-create>>
 * <<content-edit>>
@@ -56,11 +47,6 @@ aliasing, provides this functionality.
 //==== Additional resources
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com/[Pronovix] from
-https://www.drupal.org/node/120631["URL aliases"], and
-https://www.drupal.org/node/31644["Understanding Drupal paths"]
-copyright 2000-2016 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+اقتباس شده توسط https://www.drupal.org/u/dianalakatos[Diána Lakatos] در https://pronovix.com/[Pronovix] از https://www.drupal.org/node/120631["نام‌های مستعار نشانی"] و https://www.drupal.org/node/31644["درک مسیرها در دروپال"].
