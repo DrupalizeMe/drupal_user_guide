@@ -1,83 +1,69 @@
 [[content-edit]]
-=== Editing a Content Item
+=== ویرایش یک محتوا
 
 [role="summary"]
-How to edit a content item.
+چگونگی ویرایش یک محتوا.
 
 (((Content,editing)))
 (((Content,finding)))
 (((Editing content)))
 
-==== Goal
+==== هدف
 
-Update the hours on the Home page content item.
+بروزرسانی ساعت بازگشایی در محتوای صفحه اول.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<content-create>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-A content item for the Home page must exist. See <<content-create>>.
+یک محتوا برای صفحه اول باید موجود باشد. <<content-create>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. در منوی مدیریتی _Manage_، به _Content_ (_admin/content_) بروید.
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use the _Content type_, _Title_, or other filters to locate the content item.
+. اگر گزینه محتوایی که قصد ویرایش آن را دارید بروزرسانی یا اخیرا ایجاد شده باشد، باید در ابتدای فهرست موجود در این صفحه نمایش یابد. در غیر اینصورت، با استفاده از _نوع محتوا_ یا فیلترهای دیگر می‌توانید به جستجوی آن بپردازید.
 +
 --
 // Content list on admin/content, with filters above.
-image:images/content-edit-admin-content.png["Content administration page",width="100%"]
+image:images/content-edit-admin-content.png["صفحه مدیریت محتوا",width="100%"]
 --
 
-. Click _Edit_ in the row of the content item you want to edit (Home), to
-open the content editing form. Update the opening hours in the _Body_ field. See
-<<content-create>> for an explanation of the fields and a screenshot.
+. روی سطری که قصد _ویرایش_ محتوایش را دارید کلیک کنید تا فرم ویرایش محتوا باز شود. ساعت‌های بازگشایی در فیلد متن را بروزرسانی کنید. برای توضیحات مرتبط با فیلدها و تصویر صفحه، <<content-create>> را مشاهده کنید.
 
-. Check _Create new revision_ in the box on the right, if it is not already
-checked, and enter a _Revision log message_ explaining what changes you are
-making (for example, you might enter "Updated opening hours"). This text
-will appear in the revision log for the page.
+. در جعبه واقع در سمت چپ، روی _ایجاد نسخه جدید_، اگر هنوز فعال نشده است، کلیک کنید و یک _پیام گزارش نسخه_ را در توضیح تغییرات مورد نظر خود بنویسید (برای نمونه، ممکن است بنویسید "بروزرسانی ساعت‌های بازگشایی"). این متن در صفحه گزارش نسخه نمایش می‌یابد.
 +
 --
 // Revision area of the content edit page.
-image:images/content-edit-revision.png["Revision information section of the content edit page"]
+image:images/content-edit-revision.png["قسمت اطلاعات نسخه واقع در صفحه ویرایش محتوا"]
 --
 
-. Click _Save and keep published_ to save your changes.
+. روی _ذخیره‌سازی و نگهداری انتشار_  کلیک کنید تا تغییرات شما ذخیره شود.
 
-. You will be redirected back to the _Content_ administrative page, and there
-should be a message showing that the content item was updated.
+. در این مرحله به صفحه مدیریت _محتوا_ باز می‌گردید و پیامی نمایش می‌یابد که گزینه محتوایی مورد نظر شما بروزرسانی شده است.
 +
 --
 // Updated content message.
-image:images/content-edit-message.png["Updated content message"]
+image:images/content-edit-message.png["پیام محتوای بروزرسانی شده"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-As an alternative to the first two steps above, you can also reach the
-content edit form as follows:
+به عنوان روشی جایگزین برای دو گام نخست بالا، می‌توانید از این طریق نیز به فرم ویرایش محتوا دسترسی یابید:
 
-. Starting from your site's home page, use the site's navigation menus to locate
-the page where the content you want to edit is displayed to visitors.
+. با شروع از صفحه نخست، از منوهای پیمایش سایت استفاده کنید تا صفحه مورد نظر خود جهت نمایش محتوا به بازدیدکنندگان را بیابید.
 
-. Most themes will display an _Edit_ link or tab near the top of that page to
-people with permission to edit the page; clicking the link will take you to
-the full content edit form.
+. اکثر قالب‌ها یک پیوند یا زبانه _ویرایش_ در بالای صفحه به افرادی که مجوزهای لازم را داشته باشند، نمایش می‌دهند؛ با کلیک روی این پیوند به فرم ویرایش محتوا هدایت می‌شوید.
 
-. You could also use the in-place editor (refer to <<content-in-place-edit>>)
-from this page.
+. همچنین می‌توانید از قابلیت ویرایش آنی (به <<content-in-place-edit>> مراجعه شود) این صفحه استفاده کنید.
 
 //==== Related concepts
 
 //==== Additional resources
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/chris-dart[Chris Dart] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
