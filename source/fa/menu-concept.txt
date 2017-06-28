@@ -1,9 +1,9 @@
 [[menu-concept]]
 
-=== Concept: Menu
+=== مفهوم: منو
 
 [role="summary"]
-Overview of the menu concept and menus automatically created with the core Standard installation profile.
+مروری بر مفهوم منو و منوهایی که به صورت خودکار توسط پروفایل نصب استاندارد ایجاد می‌شوند.
 
 (((Menu,overview)))
 (((Menu,main)))
@@ -18,78 +18,53 @@ Overview of the menu concept and menus automatically created with the core Stand
 
 // ==== Prerequisite knowledge
 
-==== What is a menu?
+==== منو چیست؟
 
-Menus are a collection of links (menu items) used to navigate a website. The
-core Menu UI module provides an interface to control and customize the menu
-system. Menus are primarily displayed as a hierarchical list of links. By
-default, new menu items are placed inside a built-in menu labeled _Main
-navigation_, but administrators can also create custom menus.
+منوها مجموعه‌ای از پیوندها (گزینه‌های منو) به منظور پیمایش در وبسایت هستند. افزونه داخلی Menu UI رابطی را برای کنترل و سفارشی‌سازی سیستم منو فراهم می‌کند. منوها اغلب به صورت سلسله‌مراتبی از پیوندها نمایش می‌یابند. به صورت پیشفرض، گزینه‌های جدید منو در قسمت _پیمایش اصلی_ قرار می‌گیرند، اما مدیران می‌توانند منوهای سفارشی نیز ایجاد کنند.
 
-The core Standard installation profile contains five menus:
+پروفایل نصب استاندارد دروپال شامل پنج منو است:
 
-Main navigation::
-  Links to sections intended for site visitors. They are usually created by site
-  administrators.
+پیمایش اصلی::
+  پیوند به قسمت‌های مورد نیاز کاربران سایت. معمولا توسط مدیران سایت ایجاد می‌شوند.
 
-Administration::
-  Links to administrative tasks. This menu mainly contains links supplied by
-  modules on your site.
+مدیریت::
+  پیوند به وظایف مدیریتی. این منو اغلب شامل پیوندهایی است که توسط افزونه‌های سایت شما ایجاد شده‌اند.
 
-User account menu::
-  Links to tasks associated with the user account such as _My account_ and _Log
-  out_.
+منو حساب کاربری::
+  پیوند به وظایف مرتبط درباره حساب کاربری مانند _حساب کاربری من_ و _خروج_.
 
-Footer::
-  Links to important pages within the site intended for the footer. They are
-  usually created by site administrators.
+پاورقی::
+  پیوند به صفحات مهم سایت جهت نمایش در پاورقی. معمولا توسط مدیران سایت ایجاد می‌شود.
 
-Tools::
-  Links to tasks necessary for site visitors. Some modules feature their links
-  here.
+ابزار::
+  پیوند به وظایف مرتبط و لازم برای مخاطبین سایت. برخی افزونه‌ها پیوندهای خود را در این قسمت قرار می‌دهند.
 
-You can customize menus in the following ways, using the menu administration
-functionality:
+با استفاده از قابلیت مدیریت منو، می‌توانید آن‌ها را به شیوه زیر سفارشی‌سازی کنید:
 
-* Creating new custom menus.
+* ایجاد منوهای جدید سفارشی.
 
-* Adding new menu items.
+* افزودن گزینه‌های جدید منو.
 
-* Reordering menu items by setting their "weight" or by dragging them into
-place.
+* تفییر ترتیب نمایش منوها با استفاده از _وزن_ یا جابجا کردن آن‌ها.
 
-* Renaming menu items.
+* نامگذاری مجدد گزینه‌های منو.
 
-* Changing the link title (the tooltip that appears when you mouse over a menu
-item).
+* بررسی عنوان پیوند (جعبه کوچکی که هنگام قرار گرفتن نشانگر ماوس فعال می‌شود).
 
-* Moving a menu item into a different menu by editing its _Parent_ property.
+* جابجایی یک گزینه منو به منوی دیگر با استفاده از ویژگی _والد_ در آن.
 
-A menu item will only be shown to a visitor if they have the rights to view the
-page it links to. For example, the admin menu item is not shown to visitors who
-are not logged in.
+یک گزینه منو در شرایطی به بازدیدکننده نمایش می‌یابد که مجوزهای لازم برای مشاهده صفحه مربوط به آن را داشته باشد. برای نمونه، گزینه منو مدیر به بازدیدکنندگانی که وارد سایت نشده‌اند نمایش داده نمی‌شود.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<menu-link-from-content>>
 
 * <<menu-reorder>>
 
-* To display a menu, you will need to place the block that corresponds to the
-menu in a region of your theme; see <<block-concept>>, <<block-regions>>, and
-<<block-place>>. The core Standard installation profile places all of the menus
-it defines except Administration in regions of the core Bartik theme. The core
-Toolbar module, which is installed by the core Standard installation profile,
-displays the Administration menu; it is also displayed by the contributed Admin
-Toolbar module.
-
+* برای نمایش منو، لازم است بلاکی که به آن منو اختصاص دارد را برای قالب پیشفرض سایت تعیین کنید؛ <<block-regions>>، <<block-concept>> و <<block-place>> را مشاهده کنید. پروفایل نصب استاندارد دروپال تمام منوهای تعریف شده را بجز منو مدیریت در قالب پیشفرض Bartik قرار می‌دهد. افزونه داخلی Toolbar، که توسط پروفایل نصب استاندارد دروپال نصب می‌شود، منوی مدیریتی را نمایش می‌دهد؛ این منو همچنین توسط افزونه خارجی Admin Toolbar نیز نمایش می‌یابد.
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/ajayvi[Ajay Viswambharan],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/jojyja[Jojy Alphonso]، https://www.drupal.org/u/ajayvi[Ajay Viswambharan] در http://redcrackle.com[Red Crackle] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
