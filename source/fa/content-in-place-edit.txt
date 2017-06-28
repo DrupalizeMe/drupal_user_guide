@@ -1,8 +1,8 @@
 [[content-in-place-edit]]
-=== Editing with the In-Place Editor
+=== ویرایش با استفاده از ویرایشگر آنی
 
 [role="summary"]
-How to edit content with the in-place editor.
+چگونگی ویرایش محتوا با استفاده از ویرایشگر آنی.
 
 (((Editing content)))
 (((Content,editing)))
@@ -10,79 +10,59 @@ How to edit content with the in-place editor.
 (((Quick editor)))
 (((Full editor)))
 
-==== Goal
+==== هدف
 
-Use the in-place editor to add information to the About page without opening
-the full editor page.
+استفاده از ویرایشگر آنی برای ویرایش صفحه درباره ما، بدون اینکه فرم کامل آن باز شود.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<planning-data-types>>
 * <<content-create>>
 * <<content-edit>>
 * <<config-overview>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The About page you want to edit must exist. See <<content-create>>.
+صفحه درباره ما که قصد ویرایش آن را دارید باید موجود باشد. <<content-create>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-Navigate to the About page to edit content with the in-place editor. If the
-page has not yet been added to a
-navigation menu, you can find and open it by following these steps:
+به صفحه درباره ما رفته تا محتوای آن را با ویرایشگر آنی تغییر دهید. اگر صفحه هنوز به منوی پیمایش اضافه نشده باشد، با دنبال کردن این گام‌ها می‌توانید آن را باز کنید:
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. در منوی مدیریتی _Manage_، به _Content_ (_admin/content_) بروید.
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use _Type_, _Title_, or other filters to locate the content item.
+. اگر گزینه محتوایی که قصد ویرایش آن را دارید، اخیرا بروزرسانی یا ایجاد شده باشد در ابتدای فهرست این صفحه قرار می‌گیرد. در غیر اینصورت، می‌توانید از _نوع_، _عنوان_ یا سایر فیلترها برای شناسایی محتوا استفاده کنید.
 
-. Find the About page and click it.
+. صفحه درباره ما را پیدا کرده و روی آن کلیک کنید.
 
-Once the content you want to edit is being viewed in your browser, follow these
-steps to use the quick editor:
+زمانی که محتوای مورد نظر شما که قصد ویرایش دارید در مرورگر ظاهر شد، گام‌های زیر را دنبال کرده تا از ویرایشگر سریع استفاده کنید:
 
-
-. Find the section of the page that displays the content you want to edit, and
-turn on quick editing mode using the _Quick edit_ contextual link (see
-<<config-overview>> for instructions on how to access contextual links). You
-will see each editable field on this content item outlined in blue; also,
-a hovering dialog box will appear.
+. قسمتی از صفحه که محتوای شما را نمایش می‌دهد پیدا کرده، با استفاده از پیوند متنی _ویرایش سریع_ به حالت ویرایش سریع وارد شوید (برای چگونگی دسترسی به پیوندهای متنی <<config-overview>> را مشاهده کنید). تمام فیلدهای قابل ویرایش این محتوا به رنگ آبی نمایش می‌یابند؛ همچنین یک جعبه دیالوگ شناور نیز نمایان می‌شود.
 +
 --
 // Screen shot of About page with Quick Edit turned on for the node.
-image:images/content-in-place-edit-hover-box.png["Quick edit mode",width="100%"]
+image:images/content-in-place-edit-hover-box.png["حالت ویرایش سریع",width="100%"]
 --
 
-. Click the _Body_ text area to begin editing. The _Body_ field
-supports a rich text editor. The editing toolbar will be displayed in a
-hovering dialog box.
+. برای آغاز ویرایش روی ناحیه متنی  _بدنه_ کلیک کنید. فیلد _بدنه_ شامل یک ویرایشگر متنی است. نوارابزار ویرایشگر به صورت یک جعبه دیالوگ شناور نمایش می‌یابد.
 
-. Add some information about City Market. A _Save_ button will appear in the
-hovering dialog box, and the field outline will change color.
+. درباره بازار شهر اندکی اطلاعات وارد کنید. یک دکمه _ذخیره‌سازی_ روی جعبه دیالوگ شناور نمایش می‌یابد و حاشیه فیلد نیز تغییر می‌کند.
 +
 --
 // Screenshot of About page with Quick Edit turned on for the node area, after clicking the Body field and changing text in the box.
-image:images/content-in-place-edit-save-box.png["Quick edit mode after editing",width="100%"]
+image:images/content-in-place-edit-save-box.png["حالت ویرایش سریع پس از عملیات ویرایش",width="100%"]
 --
 
-. If you are satisfied with your edits, click _Save_ in the hovering dialog
-box. If not, click "x" to discard your edits, and confirm. Either way, quick
-editing mode will be turned off.
+. اگر از تغییرات راضی هستید، روی _ذخیره‌سازی_ کلیک کنید. در غیر اینصورت، با کلیک روی "x" تغییرات بوجود آمده را حذف سپس تایید کنید. در هر صورت، حالت ویرایش سریع غیرفعال خواهد شد.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-Try using the full editor on the same content (see <<content-edit>>) and note
-that there is much more information that can be edited that is not available in
-the quick editor.
+سعی کنید از ویرایشگر کامل برای همان محتوا نیز استفاده کنید (<<content-edit>> را مشاهده کنید) و به خاطر بسپارید که اطلاعات بیشتری برای ویرایش در این حالت نسبت به ویرایشگر سریع وجود دارد.
 
 // ==== Related concepts
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/davidlee55[David Lee] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/davidlee55[David Lee] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
