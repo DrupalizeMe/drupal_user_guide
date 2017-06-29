@@ -21,12 +21,22 @@ Also, to build output you need the language to be in the languages.txt file.
 
 FONTS
 
-In order to build PDF files, you need to have the Noto fonts installed,
-including Arabic, as well as GNU Unifont. On Linux, try one of the following:
-  apt-get install fonts-noto-hinted unifont
-  yum install fonts-noto-hinted unifont
-For other operating systems, see https://www.google.com/get/noto/ or
-http://www.unifoundry.com/unifont.html
+In order to build PDF files, you need to have several fonts installed:
+ - Noto fonts, including Arabic https://www.google.com/get/noto/
+ - GNU Unifont http://www.unifoundry.com/unifont.html
+ - FreeFarsi https://fontlibrary.org/en/font/freefarsi
+
+On Linux, try one of the following:
+  apt-get install fonts-noto-hinted unifont fonts-freefarsi
+  yum install fonts-noto-hinted unifont fonts-freefarsi
+Use the links above for other operating systems. You can see which fonts
+are installed on Linux by using the command:
+  fc-list
 
 When adding a new language, you may need to adjust the mkebooks.sh script so
 that an appropriate font is used for the new language.
+
+FOP VERSION
+
+The current scripts for making ebooks depend on having FOP version 2.1 or
+later installed.
