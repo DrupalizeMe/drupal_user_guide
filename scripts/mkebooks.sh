@@ -29,34 +29,34 @@ do
   # Run the AsciiDoc processor to convert to DocBook for ebooks.
   asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/ebooks/$lang/guide.docbook ../output/ebooks/$lang/guide.txt
 
-  # Copy image files to e-book directory.
+  # Copy image files and config files to e-book directory.
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images
+  cp fop-conf.xml ../output/ebooks/$lang
+  cp *.xsl ../output/ebooks/$lang
+
+  # Run the rest of the script from the output directory.
+  cd ../output/ebooks/$lang
 
   # Make PDF files. Which font to use depends on the language.
-  cp fop-conf.xml ../output/ebooks/$lang
-
   if [ "$lang" = "fa" ]; then
-      xmlto pdf -m pdf-arabic.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+      xmlto pdf -m pdf-farsi.xsl -p "-c fop-conf.xml" --with-fop guide.docbook
 
   elif [ "$lang" = "zh-hans" ] || [ "$lang" = "ja" ] ; then
-      xmlto pdf -m pdf-unifont.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+      xmlto pdf -m pdf-unifont.xsl -p "-c fop-conf.xml" --with-fop guide.docbook
 
   else
-      xmlto pdf -m pdf.xsl -p "-c fop-conf.xml" --with-fop -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
+      xmlto pdf -m pdf.xsl -p "-c fop-conf.xml" --with-fop guide.docbook
 
   fi
 
   # Run the xmlto processor to convert from DocBook to ePub.
   # The syntax is:
-  #   xmlto epub -o [output dir] [input docbook file]
+  #   xmlto epub [input docbook file]
   # And we need to do this for the regular and mobi styles.
-  xmlto epub -m epub.xsl -o ../output/ebooks/$lang ../output/ebooks/$lang/guide.docbook
-  cp ../output/ebooks/$lang/guide.docbook ../output/ebooks/$lang/guide-simple.docbook
-  xmlto epub -m mobi.xsl -o ../output/ebooks/$lang ../output/ebooks/$lang/guide-simple.docbook
+  xmlto epub -m epub.xsl guide.docbook
+  cp guide.docbook guide-simple.docbook
+  xmlto epub -m mobi.xsl guide-simple.docbook
 
-  # At this point, we need to CD to the output directory to do some more
-  # processing, to add images to the epub files.
-  cd ../output/ebooks/$lang
   mkdir -p OEBPS
   mkdir -p OEBPS/images
   cp images/* OEBPS/images
