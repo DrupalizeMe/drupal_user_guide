@@ -1,8 +1,8 @@
 [[planning-data-types]]
-=== Concept: Content Entities and Fields
+=== Concepte: Entitats de contingut i camps
 
 [role="summary"]
-Overview of content entities and fields.
+Resum d'entitats de contingut i camps.
 
 (((Entity,overview)))
 (((Taxonomy term,overview)))
@@ -33,85 +33,59 @@ Overview of content entities and fields.
 (((User module,entity type)))
 (((File module,entity type)))
 
-==== Prerequisite knowledge
+==== Coneixements previs
 
 * <<understanding-data>>
 * <<understanding-modules>>
 
-==== What is a content entity?
+==== Què és una entitat de contingut?
 
-A _content entity_ (or more commonly, _entity_) is an item of content data,
-which can consist of text, HTML markup, images, attached files, and other data
-that is intended to be displayed to site visitors. Content entities can be
-defined by the core software or by modules.
+Una _entitat de contingut_ (o més comunment, _entitat_) és un element de contingut, que pot estar format per text, marcat HTML, imatges, fitxers adjunts i altres dades pensades per ser mostrades als visitants del lloc. Les entitats de contingut poden ser definides pel nucli o per mòduls.
 
-Content entities are grouped into _entity types_, which have different purposes
-and are displayed in very different ways on the site. Most entity
-types are also divided into _entity sub-types_, which are divisions within an
-entity type to allow for smaller variations in how the entities are used and
-displayed. Here is a table of some common content entity types:
+Les entitats de contingut estan agrupades dins els _tipus d'entitats_, que tenen diferents propòsits i formes diferents al lloc. La majoria d'entitats també estan dividides en _subtipus d'entitats_, que son divisions dins d'una entitat de contingut que permeten moltes petites variacions en com s'utilitzen i es mostren les entitats. La següent taula mostra els tipus d'entitat més comuns:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Entity type |Entity sub-type |Defining Module |Main uses |Examples
+|Tipus d'entitat |Subtipus d'entitat |Mòdul que el defineix |Usos principals |Exemples
 
-|Content item |Content type |Node module
-  |Content intended to be the main page area for pages on the site
-  |In the farmers market site example, you might have content types for
-   basic pages, vendor pages, and recipe pages.
+|Element de contingut |Tipus de contingut |Mòdul Node
+  |Contingut pensat per ser l'àrea principal per pàgines al lloc.
+  |Al lloc d'exemple mercat de grangers, és possible que tingueu tipus de contingut per pàgines bàsiques, pàgines de proveïdors i pàgines de recepta.
 
-|Comment |Comment type |Comment module
-  |Commentary added to content entities (typically to Content item entities)
-  |On a blog site, blog posts might have comments. They are not needed in the
-   farmers market site example.
+|Comentari |Tipus de comentari |Mòdul Content
+  |Comentari afegit a les entitats de contingut (en general a les entitats d'elements de contingut).
+  |A un bloc, les entrades de bloc poden tenir comentaris. A l'exemple del mercat de grangers els comentaris no són necessaris.
 
-|User profile |(none) |User module
-  |Data related to a person with a user account (login access) on the site
-  |Every site has at least basic user profiles with user names and email
-   addresses; social networking sites may have more complex user profiles with
-   more information.
+|Perfil d'usuari |(Cap) |Mòdul User
+  |Informació relacionada amb una persona amb compte d'usuari (inici de sessió) al lloc.
+  |Cada lloc té com a mínim perfils d'usuari bàsics amb noms d'usuari i adreces de correu
+electrònic; els llocs tipus xarxes socials poden tenir perfils més complexos amb més informació.
 
-|Custom block |Block type |Custom Block module
-  |Text and images in smaller chunks, often displayed in the site header,
-   footer, or sidebar
-  |In the farmers market site example, you might put the hours and location in
-   a sidebar block.
+|Bloc personalitzat |Tipus de bloc |Mòdul Custom Block
+  |Texts i imatges en petites porcions, sovint mostrades a la capçalera del lloc, al peu o a la barra lateral.
+  |Al lloc d'exemple mercat de grangers, podreu posar les hores i la localització al bloc de la barra lateral.
 
-|Taxonomy term |Vocabulary |Taxonomy module
-  |Used to classify other types of content
-  |In the farmers market site example, you might classify Recipe content with an
-   Ingredients taxonomy vocabulary, with taxonomy terms like Carrots and
-   Tomatoes. In a blogging site, blog posts might be classified using a Tags
-   vocabulary, and perhaps also a Categories vocabulary.
+|Terme de taxonomia |Vocabulari |Mòdul Taxonomy
+  |Utilitzat per classificar altres tipus de contingut
+  |Al lloc d'exemple mercat de grangers, podreu classificar els continguts Recepta amb el vocabulari de taxonomia Ingredients, amb termes de taxonomia com Pastanagues i Tomàquets. A un lloc tipus bloc, les entrades es poden classificar utilitzant el vocabulari Etiquetes i possiblement el vocabulari Categories.
 
-|File |(none) |File module
-  |An image or attachment file that is tracked and managed by the site, often
-   attached to other types of content
-  |In the farmers market site example, both Recipe and Vendor pages might have
-   image attachments, which would (behind the scenes) be managed as File
-   entities by the site
+|Fitxer |(Cap) |Mòdul File
+  |Una imatge o fitxer adjunt seguit i gestionat pel lloc, habitualment adjuntat a altres tipus de contingut.
+  |Al lloc d'exemple mercat de grangers, les pàgines de Recepta i Proveïdor poden tenir imatges adjuntades, que poden (per sota) ser gestionades com a entitats de fitxer pel lloc.
 
-|Contact form |Form type |Contact module
-  |A form that lets site visitors contact site owners
-  |A contact form is needed in the farmers market site example
+|Formulari de contacte |Tipus de formulari |Mòdul Contact
+  |Un formulari que permet als visitants contactar amb el propietari del lloc.
+  |Al lloc d'exemple mercat de grangers cal un formulari de contacte.
 
 |=============================================
 
-==== What is a field?
+==== Què és un camp?
 
-Within entity items, the data is stored in individual _fields_, each of which
-holds one type of data, such as formatted or plain text, images or other files,
-or dates. Field types can be defined by the core software or by modules.
+Dins els elements d'entitat, les dades s'emmagatzemen a _camps_ individuals, cadascun dels quals conté un tipus de dada, com text amb format o text pla, imatges o altres fitxers o dates. Els tipus de camp es poden estar definits pel nucli o per mòduls.
 
-Fields can be added by an administrator on entity sub-types, so that all
-entity items of a given entity sub-type have the same collection of fields
-available. For example, the Vendor content type in the farmers market example
-might have fields for the vendor name, a logo image, website URL, and
-description, whereas the _Basic page_ content type might only have fields for
-the title and page body. When you create or edit entity items, you are
-specifying the values for the fields on the entity item.
+Els camps els pot afegir un administrador o un subtipus d'entitat, així que  tots els elements d'entitat d'un determinat subtipus d'entiat tenen disponibles la mateixa col·lecció de camps. Per exemple, el tipus de contingut Proveïdor al lloc d'exemple mercat de grangers podria contenir camps pel nom del proveïdor, el logotip, l'URL del web i la descripció, mentre que el tipus de contingut _Pàgina bàsica_ podria contenir camps pel títol i el cos de la pàgina. Quan creeu o editeu elements d'entitat estareu especificant els valors dels seus camps.
 
-==== Related topics
+==== Temes relacionats
 
 * <<planning-structure>>
 * <<content-create>>
@@ -120,10 +94,11 @@ specifying the values for the fields on the entity item.
 * <<user-concept>>
 * <<block-concept>>
 
-// ==== Additional resources
+// ==== Recursos addicionals
 
 
-*Attributions*
+*Atribucions*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
-and https://www.drupal.org/u/gdunham[Grant Dunham].
+Escrit i editat per https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+i https://www.drupal.org/u/gdunham[Grant Dunham].
+Traduït per https://www.drupal.org/u/espurnes[Aleix Batalla] i revisat per https://www.drupal.org/u/rvilar[Ramon Vilar]
