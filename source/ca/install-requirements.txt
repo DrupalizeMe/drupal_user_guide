@@ -1,9 +1,9 @@
 [[install-requirements]]
 
-=== Concept: Server Requirements
+=== Concepte: Requeriments del servidor
 
 [role="summary"]
-Overview of server requirements for installing and running the core software.
+Descripció general dels requisits del servidor per instal·lar i executar el nucli.
 
 (((Installation requirements,overview)))
 (((Installation requirements,disk space)))
@@ -24,68 +24,51 @@ Overview of server requirements for installing and running the core software.
 (((SQLight database,version requirements)))
 (((PHP programming language,version requirements)))
 
-// ==== Prerequisite knowledge
+// ==== Coneixements previs
 
-==== What are the requirements for running the core software?
+==== Quins són els requisits per executar el programari principal?
 
-===== Disk space
+===== L'espai de disc
 
-A minimum installation requires 15 MB. 60 MB is needed for a website with many
-contributed modules and themes installed. Keep in mind you need much more for
-the database, files uploaded by the users, media, backups, and other files.
+Una instal·lació mínima requereix 15 MB. Es necessiten 60 MB per a un lloc web amb molts mòduls i temes contribuïts instal·lats. Recordeu que es necessita molt més per a la base de dades, fitxers carregats pels usuaris, fitxers multimèdia, les còpies de seguretat i altres fitxers.
 
-===== Web server
+===== Servidor web
 
-Apache (Recommended)::
-  Apache is the most commonly used web server. The core software will work on
-  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache
-  mod_rewrite module installed and enabled. The Apache VirtualHost configuration
-  must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
-  to be used.
+Apache (Recomanat)::
+  Apache és el servidor web més utilitzat. El nucli funcionarà amb Apache 2.x allotjat en UNIX/Linux, OS X o Windows amb el mòdul d'Apache mod_rewrite instal·lat i activat. La configuració d'Apache VirtualHost ha de contenir la directiva _AllowOverride ALL_ per permetre que s'utilitzi el fitxer _.htaccess_.
 Nginx::
-  Nginx is a commonly used web server that focuses on high concurrency,
-  performance and low memory usage. The core software will work on Nginx 1.1 or
-  greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module
-  must be installed and enabled.
+  Nginx és un servidor web d'ús comú que se centra en l'alta concurrència, el rendiment i baix ús de memòria. El nucli funcionarà en Nginx 1.1 o superiors allotjat en UNIX/Linux, OS X o Windows. El ngx_http_rewrite_module ha d'estar instal·lat i activat.
 Hiawatha::
-  Hiawatha is a web server with a strong focus on security. It also aims at
-  being easy to use and lightweight. Research performed by independent
-  researchers proves that Hiawatha offers a performance comparable to other web
-  servers under normal conditions, but much better while under attack. URL
-  Toolkit must be installed and configured to rewrite URLs.
+  Hiawatha és un servidor web amb un fort enfocament en la seguretat. També té com a objectiu ser fàcil d'usar i lleuger. La recerca feta per investigadors independents demostra que Hiawatha ofereix un rendiment comparable al d'altres servidors web en condicions normals, però molt millor quan són atacats. L'URL Toolkit ha d'estar instal·lat i configurat per reescriure els URL.
 Microsoft IIS::
-  Microsoft IIS is a web server and set of feature extension modules for use
-  with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
-  7 if PHP is configured correctly. Because clean URLs are required, you may
-  need to use a third party product. For IIS 7, you can use the Microsoft URL
-  Rewrite module or a third party solution.
+  Microsoft IIS és un servidor web i un conjunt de mòduls per a extendre funcionalitats per ser usat amb Microsoft Windows. El nucli treballarà amb IIS 5, IIS 6, 7 o IIS si el PHP està configurat correctament. Com que es requereixen els URL nets és possible que siguin necessaris productes de tercers. Per IIS 7, pot utilitzar-se el mòdul de sobreescriptura d'URL Microsoft o una solució de tercers.
 
-===== Database
+===== Base de dades
 
-Use one of the following databases:
+Utilitzeu una de les següents bases de dades:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
-InnoDB-compatible primary storage engine
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) o superior amb un motor d'emmagatzemament primari compatible amb InnoDB.
 
-* PostgreSQL - 9.1.2 or higher
+* PostgreSQL - 9.1.2 o superior
 
-* SQLite - 3.4.2 or higher
+* SQLite - 3.4.2 o superior
 
 ===== PHP
 
-PHP 5.5.9 or higher.
+PHP 5.5.9 o superior.
 
-//==== Related topics
+//==== Temes relacionats
 
-==== Additional resources
+==== Recursos addicionals
 
-https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+https://www.drupal.org/requirements[_Drupal.org_ pàgina de documentació de la comunitat "System requirements"]
 
 
-*Attributions*
+*Atribucions*
 
-Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] and
-https://www.drupal.org/u/bemery987[Brian Emery] from
-https://www.drupal.org/docs/8/system-requirements["System requirements"],
-copyright 2000-2016 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adaptad per https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] i
+https://www.drupal.org/u/bemery987[Brian Emery] de
+https://www.drupal.org/docs/8/system-requirements["Requeriments del sistema"],
+copyright 2000-2016 pels contribuïdors individuals a la
+https://www.drupal.org/documentation[Documentació de la Comunitat del Drupal].
+Traduït per https://www.drupal.org/u/ckrina[Cristina Chumillas] i revisat per https://www.drupal.org/u/rvilar[Ramon Vilar].
