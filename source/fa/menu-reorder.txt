@@ -1,80 +1,70 @@
 [[menu-reorder]]
 
-=== Changing the Order of Navigation
+=== تغییر ترتیب منو پیمایش
 
 [role="summary"]
-How to reorder items in a menu.
+چگونگی تغییر ترتیب گزینه‌ها در یک منو.
 
 (((Menu items,reordering)))
 (((Navigation,changing the order of menu items)))
 
-==== Goal
+==== هدف
 
-Reorder the items in a menu.
+جابجایی گزینه‌ها در یک منو.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<menu-concept>>
 * <<menu-link-from-content>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-Home and About pages must exist in the main navigation menu. See
-<<menu-link-from-content>>.
+صفحه‌های خانه و درباره ما باید در منو پیمایش اصلی موجود باشند. <<menu-link-from-content>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Menus_
-(_admin/structure/menu_) where all menus on your site are listed. Click _Edit
-Menu_ from the _Operations_ dropdown for _Main navigation_. You can also reach
-this page using contextual links (refer to <<config-overview>>) for the menu.
+. در منوی مدیریتی _Manage_ به _Structure_ > _Menus_ (_admin/structure/menu_) بروید که تمام منوهای سایت شما فهرست شده‌اند. روی _ویرایش منو_ از قسمت _عملیات_ برای _پیمایش اصلی_ کلیک کنید. همچنین می‌توانید با استفاده از پیوندهای متنی برای منو به این صفحه مراجعه کنید (<<config-overview>> را مشاهده کنید).
 +
 --
 // Menu list section of admin/structure/menu, with Edit menu button on Main
 // navigation menu highlighted.
-image:images/menu-reorder_menu_titles.png["List of menus on the site with 'Main navigation' highlighted",width="100%"]
+image:images/menu-reorder_menu_titles.png["فهرستی از منوهای سایت به همراه پیمایش اصلی",width="100%"]
 --
 
-. The _Edit menu_ page will display a list of each item in the menu you
-chose (_Main navigation_).
+. صفحه _ویرایش منو_ فهرستی از تمام گزینه‌های موجود در آن منو را نمایش می‌دهد (_پیمایش اصلی_).
 +
 --
 // Menu links section of admin/structure/menu/manage/main.
-image:images/menu-reorder_edit_menu.png["List of menus items under _Main navigation_"]
+image:images/menu-reorder_edit_menu.png["فهرستی از گزینه‌های منو در _پیمایش اصلی_"]
 --
 
-. Use the cross bar handles to reorder the menu items.  Drag the Home menu item
-above the About menu item so that it appears first.
+. با استفاده از دسته + گزینه‌های منو را جابجا کنید. گزینه منو خانه را به بالای منو درباره ما منتقل کنید.
 +
 --
 // Menu links section of admin/structure/menu/manage/main, after
 // changing the order.
-image:images/menu-reorder_reorder.png["Reordered menu items with warning message about unsaved changes and the _Save_ button"]
+image:images/menu-reorder_reorder.png["گزینه‌های منو جابجا شده به همراه پیام اخطار مبتنی بر ذخیره‌نشدن تغییرات همراه با دکمه _ذخیره‌سازی_"]
 --
 
-. Click _Save_.
+. روی _ذخیره‌سازی_ کلیک کنید.
 
-. The home page now displays the main navigation with the Home menu
-item displayed first.
+. صفحه اصلی اکنون منو خانه را در ابتدای سایر منوها قرار می‌دهد.
 +
 --
 // Header section of Home page with reordered menu items.
-image:images/menu-reorder_final_order.png["Reordered menu items on the home page with 'Home' first and then 'About'"]
+image:images/menu-reorder_final_order.png["گزینه‌های منو جابجا شده در صفحه اصلی همراه با 'خانه' سپس 'درباره ما'"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-Add a menu item called _Contact_, leading to the _/contact_ page, to your Main
-navigation menu. The contact page is provided by the core Contact module; you
-may want to edit its layout and fields (see <<structure-form-editing>>).
+یک گزینه منو به نام _تماس_ که به صفحه _contact/_ ختم می‌شود را به منو پیمایش اصلی اضافه کنید. صفحه تماس توسط افزونه داخلی Contact فراهم شده است؛ ممکن است بخواهید قالب و فیلدهای آن را ویرایش کنید (<<structure-form-editing>> را مشاهده کنید).
 
-==== Related concepts
+==== موضوعات مرتبط
 
 <<menu-concept>>
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel].
+نوشته شده توسط https://www.drupal.org/u/AnnGreazel[Ann Greazel].
