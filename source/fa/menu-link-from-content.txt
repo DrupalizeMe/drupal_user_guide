@@ -1,87 +1,75 @@
 [[menu-link-from-content]]
-=== Adding a Page to the Navigation
+=== افزودن یک صفحه به منو پیمایش
 
 [role="summary"]
-How to add a page to the navigation.
+چگونگی افزودن یک صفحه به منو پیمایش.
 
 (((Menu,adding a link to page)))
 (((Page,adding to menu while editing)))
 (((Content,adding to menu while editing)))
 (((Navigation,linking menu to page)))
 
-==== Goal
+==== هدف
 
-Add a page to the navigation. For example, the About page.
+افزودن یک صفحه به منو پیمایش،‌برای نمونه صفحه درباره ما.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<menu-concept>>
 * <<content-edit>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The About page content item must exist. See <<content-create>>.
+گزینه محتوایی صفحه درباره ما باید موجود باشد. <<content-create>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. در منوی مدیریتی _Manage_ به _Content_ (_admin/content_) بروید.
 
-. Find the About page, and click _Edit_ in that row. The content editing form
-appears.
+. صفحه درباره ما را پیدا کرده و روی _ویرایش_ در سطر آن کلیک کنید. فرم ویرایش محتوا ظاهر می‌شود.
 +
 --
 // Content table from admin/content page, with a red border around the Edit
 // button for the About page.
-image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
+image:images/menu-link-from-content_edit_page.png["پیوند ویرایش صفحه",width="100%"]
 --
 
-. Click _Menu settings_ on the right to expand it.
+. روی _تنظیمات منو_ از قسمت سمت چپ کلیک کنید.
 
-. Check _Provide a menu link_ for the menu options to appear.
+. برای ظاهر شدن گزینه‌های منو _فراهم‌کردن یک پیوند منو_ را انتخاب کنید.
 
-. Enter values from the table below:
+. مقادیر موجود  در جدول زیر را وارد کنید:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Menu link title |Title that will be displayed in the menu | About
-|Description |Text that will be displayed when a visitor hovers over the link
-  |History of the market
-|Parent item |Location of the page in the menu hierarchy. For example,
-  if you choose _<Main navigation>_, the page will appear in the highest
-  level of the navigation. By choosing another menu item as parent, you can
-  create a menu hierarchy of multiple levels. |<Main navigation>
-|Weight|The order in which the page should appear in the menu (lower-weighted
-  menu items will be shown before higher-weighted menu items) | -2
+|نام فیلد |توضیحات |مقدار آزمایشی
+|عنوان پیوند منو |عنوانی که برای نمایش منو استفاده می‌شود | درباره ما
+|توضیحات |متنی که در هنگام قرار گرفتن نشانگر ماوس نمایش می‌یابد.
+  |تاریخچه فروشگاه
+|گزینه والد |محل قرارگیری صفحه در سلسله‌مراتب منو. برای نمونه، اگر از _پیمایش اصلی_ استفاده کنید، صفحه در بالاترین سطح از این منو قرار می‌گیرد. با انتخاب گزینه منو دیگری به عنوان والد، می‌توانید سلسله‌مراتبی از منوها با سطوح مختلف ایجاد کنید. |<پیمایش اصلی>
+|وزن|ترتیبی که صفحه در منو قرار می‌گیرد (گزینه‌های منو با اعداد کوچک‌تر قبل از گزینه‌های منو با اعداد بزرگتر قرار می‌گیرند) | ۲-
 |================================
 +
 --
 // Menu settings section of content editing page.
-image:images/menu-link-from-content.png["Creating a menu link from within the content edit form"]
+image:images/menu-link-from-content.png["ایجاد یک پیوند منو از با استفاده از فرم ویرایش محتوا"]
 --
 
-. Click _Save and keep published_ to save the changes. Click _Home_ or _Return
-to site_ in the navigation bar to see the result, which could look like the
-picture below.
+. روی _ذخیره‌سازی و نگهداری انتشار_ برای اعمال تغییرات کلیک کنید. روی _خانه_ یا _بازگشت به سایت_ در نوار پیمایش کلیک کنید تا نتایج را ببینید، که می‌تواند مشابه تصویر زیر باشد.
 +
 --
 // Home page after adding About to the navigation.
-image:images/menu-link-from-content-result.png["Link has been added to the main menu",width="100%"]
+image:images/menu-link-from-content-result.png["پیوند به منوی اصلی افزوده شده است",width="100%"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 <<menu-reorder>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/docs/8/core/modules/menu[_Drupal.org_ community documentation page "Working with menus"]
+https://www.drupal.org/docs/8/core/modules/menu["کار با منوها" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/docs/8/core/modules/menu["Working with Menus"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation];
-edited by https://www.drupal.org/u/jerseycheese[Jack Haas].
+اقتباس شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] از https://www.drupal.org/docs/8/core/modules/menu["کار با منوها"], ویرایش شده توسط https://www.drupal.org/u/jerseycheese[Jack Haas].
