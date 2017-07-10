@@ -1,9 +1,9 @@
 [[config-basic]]
 
-=== Editing Basic Site Information
+=== ویرایش اطلاعات پایه سایت
 
 [role="summary"]
-How to edit basic site information (site name, slogan, and default time zone).
+چگونگی ویرایش اطلاعات پایه سایت (نام سایت، شعار و منطقه زمانی پیشفرض)
 
 (((Configuring,site)))
 (((Site name,configuring)))
@@ -21,76 +21,62 @@ How to edit basic site information (site name, slogan, and default time zone).
 (((Time zone setting,configuring)))
 (((First day of week,configuring)))
 
-==== Goal
+==== هدف
 
-Change basic site information such as _Site name_, _Slogan_,
-_Default time zone_.
+تغییر اطلاعات پایه سایت مانند _نام سایت_، _شعار_ و _منطقه زمانی پیشفرض_
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<config-overview>>
 
 //==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-===== Configuring the basic site information
+===== پیکربندی اطلاعات پایه سایت
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_) to change the
-_Site name_, _Slogan_, administrative _Email address_, or the _Default front
-page_ path.
+. در منوی مدیریتی _Manage_ به قسمت _Configuration_ > _System_ > _Basic site settings_ (_admin/config/system/site-information_) بروید تا _نام سایت_، _شعار_، _نشانی ایمیل_ مدیریتی یا _مسیر صفحه اول_ را تغییر دهید.
 
-. Fill in the available fields as appropriate for your site.
+. فیلدهای موجود را متناسب با سایت خود پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site name|Used to identify the site and displayed in browsers|Anytown Farmers Market
-|Slogan|Usually displayed sitewide|Farm Fresh Food
-|Email address|Used as _From_ address in automated email messages (registrations, password resets, etc)|info@example.com
+|نام فیلد|توضیحات|مقدار نمونه
+|نام سایت|برای شناسایی سایت و نمایش در مرورگر استفاده می‌شود|Anytown Farmers Market
+|شعار|به صورت گسترده در سایت نمایش می‌یابد|Farm Fresh Food
+|نشانی ایمیل|در نشانی _از_ ایمیل‌های ارسالی سایت استفاده می‌شود مانند ثبت‌نام، تغییر گذرواژه و ...|info@example.com
 |================================
 +
 --
 // Site details section of admin/config/system/site-information.
-image:images/config-basic-SiteInfo.png["Site Information"]
+image:images/config-basic-SiteInfo.png["اطلاعات سایت"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. پس از ویرایش فیلدها، روی _ذخیره پیکربندی_ برای اعمال تغییرات انجام شده کلیک کنید.
 
-===== Configuring default Regional settings
+===== پیکربندی تنظیمات منطقه زمانی
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and language_ > _Regional settings_
-(_admin/config/regional/settings_).
+. در منوی مدیریتی _Manage_ به قسمت _Configuration_ > _Regional and language_ > _Regional settings_ (_admin/config/regional/settings_) بروید.
 
-. Select the appropriate country from the _Default country_ select list in the
-_Locale_ section, and set which day will be displayed as _First day of week_
-on your site.
+. کشور مناسب را از فهرست انتخاب _کشور پیشفرض_ واقع در قسمت _بومی‌سازی_ برگزینید و تعیین کنید کدام روز به عنوان _اولین روز هفته_ در سایت نمایش می‌یابد.
 
-. In the _Time zones_ section, select the sitewide _Default time zone_ from the
-list and configure user-specific time zones.
+. در قسمت _منطقه زمانی_ گزینه _منطقه زمانی پیشفرض_ را از فهرست انتخاب کرده و به پیکربندی منطقه زمانی متناسب برای کاربران بپردازید.
 +
 --
 // Locale and Time Zones sections of admin/config/regional/settings.
-image:images/config-basic-TimeZone.png["Time Zones"]
+image:images/config-basic-TimeZone.png["منطقه‌های زمانی"]
 --
 
-. After editing the fields, click
-_Save configuration_ to see the changes applied to the site.
+پس از ویرایش فیلدها، روی _ذخیره پیکربندی_ برای اعمال تغییرات انجام شده کلیک کنید.
 
 // ==== Expand your understanding
 // ==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/node/1896670[_Drupal.org_ community documentation page "Getting started with Drupal 8 administration"]
+https://www.drupal.org/node/1896670["شروع کار با مدیریت دروپال ۸" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch],
-and https://www.drupal.org/u/ifrik[Antje Lorch].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/sree[Sree Veturi] به همراه https://www.drupal.org/u/michaellenahan[Michael Lenahan] در https://erdfisch.de[erdfisch] و https://www.drupal.org/u/ifrik[Antje Lorch].
