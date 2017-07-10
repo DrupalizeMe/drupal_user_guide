@@ -1,67 +1,54 @@
 [[menu-home]]
 
-=== Designating a Front Page for your Site
+=== تعیین صفحه اصلی برای سایت
 
 [role="summary"]
-How to configure a content item so that it gets displayed as the home page.
+چگونگی ویرایش یک گزینه محتوایی به منظور نمایش به عنوان صفحه اصلی.
 
 (((Front page,configuring)))
 (((Home page,configuring)))
 (((Configuring,home page)))
 
+==== هدف
 
-==== Goal
-
-Configure which content item is displayed as the front page of your website.
+پیکربندی گزینه محتوایی مورد نظر جهت نمایش به عنوان صفحه اصلی.
 
 //==== Prerequisite knowledge
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The content item that you want to designate as the front page of your site must
-exist. See <<content-create>>.
+گزینه محتوایی که قصد تعیین آن به عنوان صفحه اصلی را دارید باید موجود باشد. <<content-create>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_).
+. در منوی مدیریتی _Manage_، به _Configuration_ > _System_ > _Basic site settings_ (_admin/config/system/site-information_) بروید.
 
-. Under _Front page_, replace _/node_ with the name of the page you
-would like to make the home page. To use the home page that was previously
-created, provide its path _/home_. Click _Save configuration_.
+. زیر _صفحه نخست_، گزینه _node/_ را با نام صفحه‌ای که قصد نمایش به عنوان صفحه اصلی را دارد جایگزین کنید. برای استفاده از صفحه‌ای که قبلا ایجاد کردید مسیر _home/_ را استفاده کنید. روی _ذخیره‌سازی پیکربندی_ کلیک کنید.
 +
 --
 // Front page section of admin/config/system/site-information.
-image:images/menu-home_new_text_field.png["'FRONT PAGE' area with /home in text field"]
+image:images/menu-home_new_text_field.png["ناحیه صفحه اصلی با /home در فیلد آن"]
 --
 
-. Navigate to the home page to verify that it displays content as configured by
-you.
+. به صفحه اصلی رفته تا اطمینان یابید محتوای مورد نظر شما نمایش می‌یابد.
 +
 --
 // Site front page after configuring it to point to the Home content item.
-image:images/menu-home_final.png["'FRONT PAGE' with 'Home' (Basic page) content added",width="100%"]
+image:images/menu-home_final.png["صفحه اصلی همراه با محتوای خانه",width="100%"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 * <<menu-link-from-content>>
 
-* Follow <<content-create>> to create an error page to be used as a 404 (page
-not found) or 403 (not authorized) response on your site. Then following the
-steps here, you can designate it as the error response, in the _Error pages_
-section of the configuration.
+* <<content-create>> را دنبال کنید تا چگونگی ایجاد صفحات ۴۰۴ (صفحه پیدا نشد) و ۴۰۳ (دسترسی ممکن نیست) را بیاموزید. سپس در ادامه این قسمت می‌توانید از آن‌ها به عنوان _صفحات نمایش خطا_ برای سایت استفاده کنید.
 
-==== Related concepts
+==== مفاهیم مرتبط
 
 <<menu-concept>>
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel],
-https://www.drupal.org/u/jerseycheese[Jack Haas], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/jerseycheese[Jack Haas]، https://www.drupal.org/u/AnnGreazel[Ann Greazel] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].
