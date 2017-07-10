@@ -1,46 +1,41 @@
 [[config-theme]]
 
-=== Configuring the Theme
+=== پیکربندی قالب
 
 [role="summary"]
-How to edit a theme's settings to update the color scheme and add a logo.
+چگونگی ویرایش تنظیمات قالب برای بروزرسانی طرح رنگ و افزودن لوگو.
 
 (((Theme,configuring)))
 (((Bartik theme,configuring)))
 (((Color scheme,configuring)))
 (((Logo image,configuring)))
 
-==== Goal
+==== هدف
 
-Edit the settings of the default core Bartik theme to change the color scheme
-and to add a logo.
+ویرایش تنظیمات قالب پیشفرض Bartik برای تغییر طرح رنگ و افزودن لوگو به سایت.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<understanding-themes>>
 
 //==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Appearance_
-(_admin/appearance_).
+. در منوی مدیریتی _Manage_ به قسمت _Appearance_ (_admin/appearance_) بروید.
 
-. Under _Installed themes_, you will find Bartik listed as your default
-theme. Under _Bartik (default theme)_, click _Settings_.
+. زیر عنوان _قالب‌های نصب‌شده_، می‌توانید Bartik را به عنوان قالب پیشفرض مشاهده کنید. زیر عنوان _Bartik (قالب پیشفرض)_ روی _تنظیمات_ کلیک کنید.
 +
 --
 // Bartik section of admin/appearance.
-image:images/config-theme_bartik_settings.png["Default theme, Bartik",width="100%"]
+image:images/config-theme_bartik_settings.png["قالب پیشفرض، Bartik",width="100%"]
 --
 
-. Under _Color scheme_, click inside each color build box and type the proper
-color codes you would like to add. For example, use the
-following colors:
+. زیر عنوان _طرح رنگ_، مقدار مورد نظر برای هر یک از قسمت‌های مشخص شده را تعیین کنید. برای نمونه، از رنگ‌های زیر استفاده کنید:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Area | Color
+|ناحیه | رنگ
 |Header background top| #7db84a (green)
 |Header background bottom| #2a3524 (dark green)
 |Main background| #ffffff (white)
@@ -52,67 +47,53 @@ following colors:
 |Link color| #2a3524 (dark green)
 |================================
 +
-Note: You can also use the color wheel on the right to select colors of your
-choice. The web color codes will be added for you.
+یادداشت: همچنین می‌توانید از چرخ رنگ که در قسمت سمت راست قرار دارد استفاده کنید. کدهای رنگی مخصوص وب به صورت خودکار اضافه می‌شوند.
 +
 --
 // Color settings section of admin/appearance/settings/bartik.
-image:images/config-theme_color_scheme.png["Updated color specifications in the core Bartik theme",width="100%"]
+image:images/config-theme_color_scheme.png["مشخصات جدید رنگی برای قالب Bartik",width="100%"]
 --
 
-. Under _Logo image_, uncheck _Use the logo supplied by the
-theme_.
+. زیر عنوان _تصویر لوگو_، گزینه _استفاده از لوگوی همراه با قالب_ را از حالت انتخاب خارج کنید.
 +
 --
 // Logo upload section of admin/appearance/settings/bartik.
-image:images/config-theme_logo_upload.png["New logo in core Bartik theme settings"]
+image:images/config-theme_logo_upload.png["لوگوی جدید در قالب پیشفرض Bartik"]
 --
 
-. Under _Upload logo image_, locate a logo file and upload it to your
-site. Note: You can also set a universal logo for all themes under
-_Appearance_ > _Settings_ (_admin/appearance/settings_). A custom logo for your
-theme will override the universal logo.
+. زیر عنوان _آپلود تصویر لوگو_، یک فایل لوگو انتخاب کرده و در سایت خود آپلود کنید. یادداشت: همچنین می‌توانید از یک لوگوی عمومی برای تمام قالب‌ها در قسمت _Appearance_ > _Settings_ (_admin/appearance/settings_) استفاده کنید. یک لوگو سفارشی برای قالب شما جایگزین لوگوی عمومی می‌شود.
 +
-Once you have selected the file you would like to upload, you will see its
-filename next to the _Choose File_ or _Browse_ button in your browser.
+زمانی که فایل مورد نظر را برای آپلود انتخاب کردید، نام فایل آن را در کنار دکمه _انتخاب فایل_ یا _جستجو_ مشاهده می‌کنید.
 
-. In order to save your changes and see the updated colors and logo on your
-site, click _Save configuration_ at the bottom of the page.
+. به منظور ذخیره‌سازی تغییرات و مشاهده رنگ‌های بروزشده و لوگوی انتخابی، روی _ذخیره‌سازی پیکربندی_ در انتهای صفحه کلیک کنید.
 +
-Note: Under _Color scheme_, there is a _Preview_ section that displays a sample
-of how your website will look with the new settings.
+یادداشت: زیر عنوان _طرح رنگ_، یک قسمت _پیش‌نمایش_ وجود دارد که به صورت مختصر نشان می‌دهد سایت چگونه نمایش داده می‌شود.
 +
 --
 // Preview section of admin/appearance/settings/bartik.
-image:images/config-theme_color_scheme_preview.png["core Bartik theme settings preview",width="100%"]
+image:images/config-theme_color_scheme_preview.png["پیش‌نمایش تنظیمات قالب Bartik",width="100%"]
 --
 
-. Click _Return to site_ or _Home_ in the toolbar to verify that you have
-updated the core Bartik theme settings for your website.
+. روی _بارگشت به سایت_ یا _خانه_ در نوارابزار کلیک کنید تا تغییرات اعمال شده در تنظیمات قالب Bartik را مشاهده کنید.
 +
 --
 // Home page after theme settings are finished.
-image:images/config-theme_final_result.png["Final result of editing the core Bartik theme settings - colors and logo",width="100%"]
+image:images/config-theme_final_result.png["نتیجه نهایی ویرایش تنظیمات قالب Bartik- colors and logo",width="100%"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 * <<extend-theme-find>>
 
 * <<extend-theme-install>>
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
-
+* اگر تاثیر این تغییرات در سایت خود را نمی‌بینید، شاید نیاز باشد حافظه موقت را پاک کنید. <<prevent-cache-clear>> را مشاهده کنید.
 
 //==== Related concepts
 
 //==== Additional resources
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel],
-https://www.drupal.org/u/mndonx[Amanda Luker] at
-https://www.advomatic.com/[Advomatic], and
-https://www.drupal.org/u/jerseycheese[Jack Haas].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/AnnGreazel[Ann Greazel] به همراه https://www.drupal.org/u/mndonx[Amanda Luker] در https://www.advomatic.com/[Advomatic] و https://www.drupal.org/u/jerseycheese[Jack Haas].
