@@ -1,9 +1,9 @@
 [[config-overview]]
 
-=== Concept: Administrative Overview
+=== مفهوم: مروری بر گزینه‌های مدیریتی
 
 [role="summary"]
-Overview of administrative menu and contextual links.
+مروری بر منوی مدیریتی و پیوندهای محتوایی.
 
 (((Administration,overview)))
 (((Administrative menu,overview)))
@@ -19,89 +19,62 @@ Overview of administrative menu and contextual links.
 (((Reports menu entry,administrative menu)))
 (((Help menu entry,administrative menu)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<understanding-themes>>
 * <<understanding-modules>>
 
-==== What is the administrative menu?
+==== منوی مدیریتی چیست؟
 
-The toolbar provided by the core Toolbar module displays the _Manage_
-administrative menu at the top or left side of the site, for users with
-permission to see it. This menu provides access to all of the administrative
-areas of the site. The menu entries will vary depending on which modules are
-active on your site and the permissions of the person viewing the menu; if you
-install using the core Standard installation profile and have full
-administrative permissions, the top-level entries are as follows:
+نوارابزار ارائه شده توسط افزونه Toolbar منوی مدیریتی _Manage_ برای کاربرانی که مجوز لازم برای دیدن منو را دارند، نمایش می‌دهد. این منو دسترسی به تمام قسمت‌های مدیریتی سایت را ممکن می‌سازد. گزینه‌های منو با توجه به تعداد افزونه‌های فعال و مجوزهای تعریف شده برای کاربران محتلف، نشان داده می‌شوند؛ اگر پروفایل استاندارد دروپال را نصب کرده و مجوزهای لازم را داشته باشید، منوهای سطح بالا به صورت زیر نمایش می‌یابند:
 
 // Top navigation bar on any admin page, with Manage menu showing.
-image:images/config-overview-toolbar.png["Administrative menu in horizontal mode",width="100%"]
+image:images/config-overview-toolbar.png["منوی مدیریتی در حالت افقی",width="100%"]
 
-Content::
-  Lists and manages existing content, and allows creation of new content.
+محتوا::
+  فهرست و مدیریت محتوای فعلی و امکان ایجاد محتوای جدید.
+  
+ساختار::
+  فهرستی از پیوندها برای مدیریت عناصر ساختاری سایت را شامل می‌شود مانند بلاک‌ها، انواع محتوا، منوها و دسته‌بندی.
+  
+ظاهر::
+  مدیریت قالب‌ها و تنظیمات مرتبط با آن.
 
-Structure::
-  Contains a list of links for managing structural elements of the site, such
-  as blocks, content types, menus, and taxonomy.
+توسعه::
+  مدیریت نصب و حذف افزونه‌ها.
 
-Appearance::
-  Manages themes and appearance-related settings.
+پیکربندی::
+  شامل پیوندهایی به صفحات تنظیمات برای ویژگی‌های مختلف سایت است.
+  
+افراد::
+  مدیریت کاربران، نقش‌ها و مجوزها.
 
-Extend::
-  Manages the installation and uninstallation of modules.
+گزارش‌ها::
+  شامل پیوندهایی به گزارش‌ها، اطلاعات بروزرسانی، اطلاعات جستجو و سایر اطلاعات مرتبط با وضعیت سایت است.
+  
+راهنما::
+  فهرستی از موضوعات راهنما درباره افزونه‌های فعال در سایت را نشان می‌دهد.
 
-Configuration::
-  Contains links to settings pages for various site features.
-
-People::
-  Manages users, roles, and permissions.
-
-Reports::
-  Contains links to logs, update information, search information, and other
-  information about the site's status.
-
-Help::
-  Lists help topics for installed modules that provide them.
-
-The arrow button on the far right side of the second line of the toolbar (or far
-left side, if the site is being viewed using a right-to-left-reading language
-like Arabic) can be used to switch the menu from appearing horizontally at the
-top of the page, to a vertical format on the left side (or right side, in
-right-to-left languages). When viewed vertically, the menu becomes an
-interactive tree.
+دکمه فلش مانند که در قسمت سمت راست و بالای نوارابزار وجود دارد (یا در قسمت سمت چپ، اگر از یک زبان راست به چپ مانند فارسی استفاده می‌کنید) می‌تواند برای تغییر موقعیت منو از افقی به عمودی یا برعکس استفاده شود. هنگامی که به صورت عمودی باشد، ساختار درختی پیدا می‌کند.
 
 // Navigation in vertical orientation.
-image:images/config-overview-vertical-menu.png["Administrative menu in vertical mode",width="228px"]
+image:images/config-overview-vertical-menu.png["منوی مدیریتی در حالت عمودی",width="228px"]
 
-This guide has a standard way to describe navigation to administrative pages
-using the administrative toolbar. See <<preface-conventions>> for more
-information.
+این راهنما روشی استاندارد برای پیمایش در صفحات مدیریتی از طریق نوارابزار آن را پیش می‌گیرد. برای اطلاعات بیشتر <<preface-conventions>> را مشاهده کنید.
 
-==== What are contextual links?
+==== پیوند محتوایی چیست؟
 
-Some administrative and editing functionality on the site can be accessed
-through the _contextual links_ displayed by the core Contextual Links module.
-Contextual links take you to some of the same pages that you can access through
-the administrative menu, but instead of having to navigate through the menu
-hierarchy, these links are provided near where the related content is displayed
-on your site.
+برخی قابلیت‌های مدیریتی و ویراستاری موجود در سایت می‌توانند توسط _پیوندهای محتوایی_ که در افزونه Contextual Links قرار دارد، قابل دسترس باشند. پیوندهای محتوایی شما را به همان صفحاتی هدایت می‌کنند که از طریق منوی مدیریتی نیز قابل دسترس هستند با این تفاوت که به شیوه‌ای خلاصه و در کنار محتوا ظاهر می‌شوند.
 
-Contextual links have to be activated to be visible. If your site's theme uses
-the default styling for contextual links, a pencil icon is used to indicate that
-contextual links are present and activated, and if you click the icon, you will
-see the contextual links. There are two ways to activate the pencil icons that
-provide access to the contextual links:
+پیوندهای محتوایی ابتدا باید فعال گردند. اگر قالب سایت شما از شیوه نمایش پیشفرض برای پیوندهای محتوایی استفاده می‌کند، یک شمایل قلم نشان‌دهنده حضور این پیوندها در سایت است و در صورت کلیک روی قلم، این پیوندها را مشاهده می‌کنید. دو روش برای فعال‌سازی شمایل قلم وجود دارد که اجازه دسترسی به پیوندهای محتوایی را می‌دهد:
 
-* If you are using a mouse in a browser, the icon will temporarily appear when
-  you hover over an area that has related contextual links.
+* هنگام عبور از محتوا با استفاده از ماوس در مرورگر، قلم نمایش داده می‌شود.
 
-* You can click the master pencil icon (or its _Edit_ link) at the right end of
-  the top bar in the toolbar, which will activate all of the contextual links on
-  the current page. This icon is only visible on pages with contextual links.
+* می‌توانید روی شمایل اصلی قلم (یا پیوند _Edit_ آن) در قسمت انتهایی سمت راست از نوارابزار کلیک کنید، که تمام پیوندهای محتوایی در صفحه فعلی را فعال می‌کند. این شمایل تنها در صفحاتی که شامل پیوندهای محتوایی باشد قرار می‌گیرد.
 +
 --
 // Home page with pencil icons showing, with configured theme.
-image:images/config-overview-pencils.png["Page with pencil icons turned on",width="100%"]
+image:images/config-overview-pencils.png["صفحه‌ای با شمایل قلم که فعال شده است",width="100%"]
 --
 
 //==== Related topics
@@ -109,7 +82,6 @@ image:images/config-overview-pencils.png["Page with pencil icons turned on",widt
 //==== Additional resources
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written by https://www.drupal.org/u/halofx[Scott Wilkinson] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/halofx[Scott Wilkinson] و  https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
