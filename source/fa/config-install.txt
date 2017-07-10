@@ -1,75 +1,64 @@
 [[config-install]]
-=== Installing a Module
+=== نصب یک افزونه
 
 [role="summary"]
-How to install a core or contributed module, using the administrative interface or Drush.
+چگونگی نصب یک افزونه داخلی یا خارجی با استفاده از رابط مدیریتی و Drush
 
 (((Module,enabling)))
 (((Module,installing)))
 
-==== Goal
+==== هدف
 
-Install a core module, or a contributed module whose files have already been
-uploaded to the site, through the administrative interface or using Drush.
+نصب یک افزونه داخلی یا خارجی که فایل‌های آن هم‌اکنون در وبسایت قرار دارند، از طریق رابط مدیریتی یا Drush
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<understanding-modules>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-If you want to use Drush to install modules, Drush must be installed. See
-<<install-tools>>.
+اگر می‌خواهید از Drush برای نصب افزونه‌ها استفاده کنید، Drush باید نصب گردد. <<install-tools>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-You can use the administrative interface or Drush to install modules.
+برای نصب افزونه‌ها می‌توانید از رابط مدیریتی یا Drush استفاده کنید.
 
-===== Using the administrative interface
+===== استفاده از رابط مدیریتی
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. در منوی مدیریتی _Manage_ به قسمت _Extend_ (_admin/modules_) بروید. صفحه _Extend_ فهرستی از تمام افزونه‌های موجود را نمایش می‌دهد.
 
-. Check the boxes for the module or modules you want to install. For example,
-check the box for the core Activity Tracker module.
+. افزونه یا افزونه‌هایی که می‌خواهید نصب شوند را انتخاب کنید. برای نمونه، افزونه Activity Tracker را انتخاب کنید.
 +
 --
 // Top part of Core section of admin/modules, with Activity Tracker checked.
-image:images/config-install-check-modules.png["Enabling the core Activity Tracker module",width="100%"]
+image:images/config-install-check-modules.png["فعال‌سازی افزونه Activity Tracker",width="100%"]
 --
 
-. Click _Install_. The checked modules will be installed.
+. روی _نصب_ کلیک کنید. افزونه‌های انتخاب شده نصب می‌گردند.
 
-===== Using Drush
+===== استفاده از Drush
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. در منوی مدیریتی _Manage_ به قسمت _Extend_ (_admin/modules_) بروید. صفحه _Extend_ فهرستی از تمام افزونه‌های موجود را نمایش می‌دهد.
 
-. Find the machine name of the module you want to install, by expanding the
-information area for the module. For instance, the core Activity Tracker
-module's machine name is _tracker_.
+. با جستجو در قسمت اطلاعات افزونه، نام ماشینی آن را پیدا کنید. برای نمونه، نام ماشینی افزونه Activity Tracker برابر است با _tracker_.
 
-. Run the following Drush command to install the module:
+. دستور پیش رو Drush را برای نصب افزونه اجرا کنید:
 +
 ----
 drush en tracker
 ----
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+اگر تاثیر تغییرات اخیر در سایت را مشاهده نکردید، شاید نیاز باشد حافظه موقت را پاک کنید. <<prevent-cache-clear>> را مشاهده کنید.
 
 // ==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
 http://www.drush.org[Drush]
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و  https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
