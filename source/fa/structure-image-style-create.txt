@@ -1,119 +1,103 @@
 [[structure-image-style-create]]
 
-=== Setting Up an Image Style
+=== برپایی یک سبک تصویری
 
 [role="summary"]
-How to add an image style to reformat an image.
+چگونگی افزودن یک سبک تصویری به منظور قالب‌بندی مجدد یک تصویر.
 
 (((Image style,creating)))
 (((Style,image)))
 (((Effect,image)))
 (((Image,resizing)))
 
-==== Goal
+==== هدف
 
-Add an image style and use it to display images on Vendor pages.
+افزودن یک سبک تصویری و استفاده از آن در صفحات فروشنده برای فیلد تصویر.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<structure-fields>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* Vendor and Recipe content types must exist. See <<structure-content-type>>.
+* انوع محتوای فروشنده و محصول باید موجود باشند. <<structure-content-type>> را مشاهده کنید.
 
-* Main image fields must exist for both content types. See <<structure-fields>>.
+* فیلدهای تصویر اصلی در هر دو نوع محتوا باید موجود باشند. <<structure-fields>> را مشاهده کنید.
 
-* Content items must exist for both content types. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+* گزینه‌های محتوایی برای هر دو نوع محتوا باید موجود باشند. <<structure-content-type>>، <<structure-fields>> و <<content-create>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Media_ >
-_Image styles_ (_admin/config/media/image-styles_).
+. در منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_) بروید.
 
-. Click _Add image style_.
+. روی _افزودن سبک تصویری_ کلیک کنید.
 
-. Enter the name _Extra medium (300x200)_
+. نام _اندازه متوسط (۳۰۰x۳۰۰)_ را برای آن وارد کنید.
 
-. Click _Create new style_. The page _Edit style Extra medium
-(300x200)_ appears.
+. روی _ایجاد سبک جدید_ کلیک کنید. صفحه _ویرایش سبک اندازه متوسط (۳۰۰x۳۰۰)_ نمایش می‌یابد.
 
-. In the _Effect_ table, select _Scale and crop_. Click _Add_.
+. از جدول _تغییرات بصری_، گزینه _تغییر مقیاس و بریدن_ را انتخاب کنید. روی _افزودن_ کلیک کنید.
 
-. Fill in the fields as shown below.
+. فیلدها را با توجه به مقادیر زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Width | 300
-|Height | 200
+|نام فیلد | مقدار
+|عرض | ۳۰۰
+|ارتفاع | ۲۰۰
 |================================
 
-. Click _Add effect_. The image style is saved with the chosen effects.
+. روی _افزودن تغییر بصری_ کلیک کنید. سبک تصویری همراه با گزینه انتخاب شده ذخیره می‌گردد.
 +
 --
 // Image style editing page, with effects added.
-image:images/structure-image-style-create-add-style.png["Add an image style",width="100%"]
+image:images/structure-image-style-create-add-style.png["افزودن یک سبک تصویری",width="100%"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_).
+. در منوی مدیریتی _Manage_ به مسیر _Structure_ > _Content types_ (_admin/structure/types_) بروید.
 
-. Click _Manage display_ in the _Operations_ dropdown for the Vendor content
-type. The _Manage display_ page (_admin/structure/types/manage/vendor/display_)
-appears.
+. از منوی کشویی _عملیات_ برای نوع محتوای فروشنده گزینه _مدیریت نمایش_ را انتخاب کنید. صفحه _مدیریت نمایش_ (_admin/structure/types/manage/vendor/display_) ظاهر می‌شود.
 
-. Ensure that the secondary tab _Default_ is selected.
+. اطمینان یابید که زبانه ثانویه _پیشفرض_ انتخاب شده باشد.
 
-. Click the cogwheel next to _Main image_ for the configuration options.
+. روی چرخ‌دنده کنار _تصویر اصلی_ برای گزینه‌های پیکربندی کلیک کنید.
 
-. Fill in the fields as shown below.
+. فیلدها را با توجه به مقادیر زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Image style | Extra medium (300x200)
-|Link image to | Nothing
+|نام فیلد | مقدار
+|سبک تصویری | اندازه متوسط (۳۰۰x۳۰۰)
+|پیوند تصویر به | هیچ‌چیز
 |================================
 +
 --
 // Main image settings area of Vendor content type.
-image:images/structure-image-style-create-manage-display.png["Change field formatter settings of image field"]
+image:images/structure-image-style-create-manage-display.png["تغییر تنظیمات قالب‌دهنده فیلد تصویر"]
 --
 
-. Click _Update_.
+. روی _بروزرسانی_ کلیک کنید.
 
-. Click _Save_. The new image style will be used while displaying Vendor
-content.
+. روی _ذخیره‌سازی_ کلیک کنید. هنگام نمایش محتوای فروشنده از سبک تصویری جدید استفاده خواهد شد.
 
-. Open a Vendor content item and verify that it now shows up with the
-scaled-down image. See <<content-edit>> for information on how to locate an
-existing content item.
+. یک گزینه محتوایی فروشنده را باز کنید و اطمینان یابید که به شیوه قبل نمایش نمی‌یابد. برای اطلاعات بیشتر در مورد یافتن گزینه‌های محتوایی، <<content-edit>> را مشاهده کنید.
 
-. Repeat steps 8-15 for the Recipe content type.
+. گام‌های ۸ تا ۱۵ را برای نوع محتوای محصول نیز تکرار کنید.
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== موضوعات مرتبط
 
 * <<structure-fields>>
 * <<structure-image-styles>>
 * <<structure-image-responsive>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+https://www.drupal.org/docs/8/core/modules/image/working-with-images["کار با تصاویر در دروپال ۷ و ۸" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle] from
-https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in
-Drupal 7 and 8"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+اقتباس و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle] از https://www.drupal.org/docs/8/core/modules/image/working-with-images["کار با تصاویر در دروپال ۷ و ۸" در صفحه مستندات جامعه کاربری _Drupal.org_].
