@@ -1,69 +1,47 @@
 [[structure-image-styles]]
 
-=== Concept: Image Styles
+=== مفهوم: سبک‌های تصویری
 
 [role="summary"]
-Overview of image styles and how they are used to display a single image in several variations.
+مروری بر سبک‌های تصویری و اینکه چگونه آن‌ها می‌توانند برای نمایش یک تصویر در ابعاد مختلف استفاده شوند.
 
 (((Image style,overview)))
 (((Style,image)))
 (((Image effect,overview)))
 (((Effect,image)))
 
-
-
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<structure-fields>>
 
+==== سبک‌های تصویری چیستند؟
 
-==== What are image styles?
+سبک‌های تصویری به شما اجازه می‌دهند که با استفاده از یک فایل تصویری، حالت‌های نمایشی گوناگونی داشته باشید؛ هر شیوه نمایش، یا _سبک تصویر_، نتیجه اعمال یا چند یا _تغییر بصری_ در تصویر اصلی است.
 
-Image styles allow you to upload a single image but display it in several ways;
-each display variation, or _image style_, is the result of applying one or more
-_effects_ to the original image.
+به عنوان نمونه، ممکن است یک تصویر با وضوح-بالا با تناسب ابعاد ۴:۳ آپلود کنید، سپس آن را به صورت کوچک‌تر، مربعی یا سیاه و سفید نمایش دهید (یا هر ترکیبی از این تغییرات بصری). دروپال روشی برای دستیابی به این عمل فراهم کرده است:
 
-As an example, you might upload a high-resolution image with a 4:3 aspect ratio,
-and display it scaled down, square cropped, or black-and-white (or any
-combination of these effects). The core software provides a way to do this
-efficiently:
+. سبک تصویری مورد نظر خود را با توجه به تغییرات لازم در صفحه _سبک‌های تصویری_ پیکربندی کنید (_admin/config/media/image-styles_).
 
-. Configure an image style with the desired effects on the _Image styles_ page
-(_admin/config/media/image-styles_).
+. اولین مرتبه که درخواست برای یک تصویر مشخص مطرح گردد، تغییرات بصری مورد نظر اعمال می‌شوند.
 
-. The effects will be applied the first time a particular image is requested in
-that style.
+. تصویر بدست آمده ذخیره‌سازی می‌گردد.
 
-. The resulting image is saved.
+. دفعه بعدی که همان سبک تصویری مورد نیاز باشد، تصویر ذخیره‌شده بازیابی می‌گردد بدون آنکه نیاز به تولید مجدد آن باشد.
 
-. The next time that same style is requested, the saved image is retrieved
-without the need to recalculate the effects.
+دروپال چندین تغییر بصری مورد نیاز را فراهم کرده است؛ سایر تغییرات ممکن است توسط افزونه‌های خارجی اضافه گردند.
 
-The core software provides several effects that you can use to define styles;
-others may be provided by contributed modules.
+با استفاده از منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_) بروید تا سبک‌های تصویری پیشفرض ارائه شده را مشاهده کنید.
 
-Visit the _Image styles_ page via the _Manage_ administrative menu, navigate to
-_Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_)
-to see the image styles that are defined by default.
-
-==== Related topics
+==== موضوعات مرتبط
 
 * <<structure-image-style-create>>
 * <<structure-image-responsive>>
 * <<structure-fields>>
 
+==== منابع مطالعاتی
 
-==== Additional resources
+https://www.drupal.org/docs/8/core/modules/image/working-with-images["کار با تصاویر در دروپال ۷ و ۸" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+*مشارکت‌کنندگان*
 
-
-*Attributions*
-
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
-https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in
-Drupal 7 and 8"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+اقتباس و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle] از https://www.drupal.org/docs/8/core/modules/image/working-with-images["کار با تصاویر در دروپال ۷ و ۸" در صفحه مستندات جامعه کاربری _Drupal.org_].
