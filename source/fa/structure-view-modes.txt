@@ -1,58 +1,43 @@
 [[structure-view-modes]]
 
-=== Concept: View Modes and Formatters
+=== مفهوم: حالت‌های نمایشی و قالب‌دهنده‌ها
 
 [role="summary"]
-Overview of view modes and field formatters.
+مروری بر حالت‌های نمایشی و قالب‌دهنده‌ها.
 
 (((View mode, overview)))
 (((Entity view mode, overview)))
 (((Formatter, overview)))
 (((Field formatter, overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<structure-content-type>>
 
-==== What is a View mode?
+==== یک حالت نمایشی چیست؟
 
-How an entity (such as content, a user or a comment) is displayed, depends on
-the context in which it is shown. This context is known as a _view
-mode_. Examples of view modes are:
+اینکه چطور یک موجودیت (مانند محتوا، کاربر یا دیدگاه) نمایش داده می‌شود، کاملا به محیطی که در آن قرار می‌گیرد وابسته است. به این محیط یک _حالت نمایشی_ می‌گویند. نمونه‌های آن عبارتند از:
 
-* a full page of the content with all the field values
-* a teaser of the content with a thumbnail image and a _Read more_ link
-* a full user profile with a zoomable portrait photo
-* a user avatar with username and a link to the profile
+* صفحه کاملی از محتوا به همراه تمام فیلدهای آن
+* خلاصه‌ای از محتوا به همراه تصویر کوچک و یک پیوند _بیشتر بخوانید_
+* یک پروفایل کاربری کامل به همراه تصویر قابل بزرگنمایی
+* یک آواتار از کاربر به همراه نام کاربری و پیوند به پروفایل
 
-Every view mode can be configured through the administration pages. To see the
-configuration options for the view modes of the Recipe content type, navigate
-in the _Manage_ administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_) and click _Manage display_ from the dropdown
-button. In each view mode, all fields can be hidden or displayed, and if they
-are displayed, you can choose and configure the field formatter.
+هر حالت نمایشی می‌تواند از طریق صفحات مدیریتی پیکربندی شود. برای مشاهده گزینه‌های پیکربندی حالت‌های نمایشی در نوع محتوای محصول، از منوی مدیریتی _Manage_ به مسیر _Structure_ > _Content types_ (_admin/structure/types_) بروید و روی _مدیریت نمایش_ از فهرست کشویی آن کلیک کنید. در هر حالت نمایشی، تمامی فیلدها می‌توانند پنهان یا مخفی شوند، و در صورت نمایش داده شدن، می‌توانید قالب‌دهنده آن فیلد را پیکربندی کنید.
 
-==== What is a field formatter?
+==== یک قالب‌دهنده فیلد چیست؟
 
-A field formatter is a setting for displaying the field values. For example,
-long text fields can be displayed trimmed or full-length, and taxonomy term
-reference fields can be displayed in plain text or linked to the taxonomy term
-page. Consult the _Manage display_ page to see the field formatters for the
-fields of the Recipe content type.
+یک قالب‌دهنده فیلد تنظیمی است برای نحوه نمایش مقدار آن فیلد. برای نمونه، فیلدهای متنی طولانی می‌توانند به صورت کامل یا خلاصه نمایش یابند و فیلدهای مرجع عبارت دسته‌بندی می‌توانند به صورت ساده یا همراه با پیوند به صفحه مربوطه نمایش یابند. برای مشاهده قالب‌دهنده‌های فیلد نوع محتوای محصول، به صفحه _مدیریت نمایش_ آن مراجعه کنید.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<structure-content-type>>
 * <<structure-content-display>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+https://www.drupal.org/node/1577752["حالت‌های نمایشی" در صفحه مستندات جامعه‌کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/node/1577752["View modes"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+اقتباس شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] از https://www.drupal.org/node/1577752["حالت‌های نمایشی"].
