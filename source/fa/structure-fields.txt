@@ -1,149 +1,139 @@
 [[structure-fields]]
 
-=== Adding Basic Fields to a Content Type
+=== افزودن فیلدهای پایه به یک نوع محتوا
 
 [role="summary"]
-How to add fields to a content type.
+چگونگی افزودن فیلد به یک نوع محتوا.
 
 (((Content type,adding field to)))
 (((Field,adding to content type)))
 (((Image field,adding)))
 (((URL field,adding)))
 
-==== Goal
+==== هدف
 
-Add a link field and an image field to the Vendor content type.
+افزودن فیلد پیوند و تصویر به نوع محتوای فروشنده.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<planning-data-types>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The Vendor content type must exist. See <<structure-content-type>>.
+نوع محتوای فروشنده باید موجود باشد.<<structure-content-type>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-Add the fields Vendor URL and Main image to the Vendor content type.
+افزودن فیلدهای نشانی فروشنده و تصویر آن به نوع محتوا.
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). Then click _Manage fields_ in the dropdown
-button for the Vendor content type. The _Manage fields_ page appears.
+. در منوی مدیریتی _Manage_ به مسیر _Structure_ > _Content types_ (_admin/structure/types_) بروید. سپس روی _مدیریت فیلدها_ از منوی کشویی نوع محتوای فروشنده کلیک کنید. صفحه _مدیریت فیلدها_ نمایش می‌یابد.
 
-. Click _Add field_. The _Add field_ page appears. You can either create a new
-field for the content type or re-use an existing field.
+. روی _افزودن فیلد_ کلیک کنید. صفحه _افزودن فیلد_ نمایش می‌یابد. می‌توانید از یک فیلد جدید یا سایر فیلدهای موجود برای اینکار استفاده کنید.
 
-. Fill in the fields as shown below.
+. با توجه به مقادیر زیر فیلدها را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Add a new field | Field type| Link
-| Label | Label that is visible in administration pages | Vendor URL
+| نام فیلد | توضیحات | مقدار
+| افزودن یک فیلد جدید | نوع فیلد| پیوند
+| برچسب | برچسبی که در صفحات مدیریتی نمایان است. | نشانی فروشنده
 |================================
 +
-A machine name is automatically generated, based on the _Label_ value. Click
-_Edit_ if you want to override the default name.
+یک نام ماشینی بر اساس مقدار _برچسب_ به صورت خودکار تولید می‌شود. اگر قصد تغییر آن را دارید، روی _ویرایش_ کلیک کنید.
+
 +
 --
 // Initial page for admin/structure/types/manage/vendor/fields/add-field.
-image:images/structure-fields-add-field.png["Add field page"]
+image:images/structure-fields-add-field.png["صفحه افزودن فیلد"]
 --
 
-. Click _Save and continue_. The page Vendor URL appears which lets you set
-the allowed number of values. Fill in the fields as shown below.
+. روی _ذخیره‌سازی و ادامه_ کلیک کنید. صفحه نشانی فروشنده نمایش می‌یابد که در آن می‌توانید تعداد مقادیر مجاز را تعیین کنید. با توجه به مقادیر زیر فیلدها را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Allowed number of values | The number of values that can be entered | Limited, 1
+| نام فیلد | توضیحات | مقدار
+| تعداد مقادیر مجاز | تعداد مقادیری که می‌تواند وارد شود. | محدود، ۱
 |================================
 
 
-. Click _Save field settings_. The page _Vendor URL settings for Basic page_
-appears which allows you to configure the field. Fill in the fields as shown
-below.
+. روی _ذخیره‌سازی تنظیمات فیلد_ کلیک کنید. صفحه _تنظیمات نشانی فروشنده برای صفحه پایه_ نمایش می‌یابد که امکان پیکربندی فیلد را به شما می‌دهد. با توجه به مقادیر زیر فیلدها را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Label  | Label that is visible in the content form | Vendor URL
-| Help text | The instruction that is shown below the field | (leave blank)
-| Required field | Whether the field is required or not | Unchecked
-| Allowed link type | The kind of links that can be entered | External links only
-| Allow link text | Whether a link text can be entered | Disabled
+|نام فیلد | توضیحات | مقدار
+| برچسب  | برچسبی که در فرم محتوایی مشخص می‌شود. | نشانی فروشنده
+| متن راهنما | توضیحاتی که زیر فیلد نمایش می‌یابد. | (خالی بگذارید)
+| فیلد اجباری | تعیین کنید پرکردن این فیلد اجباری است یا خیر. | انتخاب نشده
+| نوع پیوند مجاز | نوع پیوندهایی که می‌تواند وارد شود. | فقط پیوندهای خارجی
+| اجازه برای متن پیوند | تعیین کنید متن پیوند می‌تواند وارد شود یا خیر. | غیرفعال‌شده
 |================================
 +
 --
 // Field settings page for adding vendor URL field.
-image:images/structure-fields-vendor-url.png["Field settings page for Vendor URL",width="100%"]
+image:images/structure-fields-vendor-url.png["صفحه تنظیمات فیلد برای نشانی فروشنده",width="100%"]
 --
 
-. Click _Save settings_. The Vendor URL has been added to the content
-type. Continue creating the Main image field.
+. روی _ذخیره‌سازی_ تنظیمات کلیک کنید. نشانی فروشنده به نوع محتوا افزوده شده است. در ادامه به افزودن فیلد تصویر می‌پردازیم.
 
-. Click _Add field_. The _Add field_ page appears. Fill in the fields as shown
-below.
+. روی _افزودن فیلد_ کلیک کنید. صفحه _افزودن فیلد_ نمایش می‌یابد. با توجه به مقادیر زیر فیلدها را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Add a new field | Field type | Image
-| Label | Label that is visible in administration pages | Main image
+| نام فیلد | توضیحات | مقدار
+| افزودن یک فیلد جدید | نوع فیلد | تصویر
+| برچسب | برچسبی که در صفحات مدیریتی نمایش می‌یابد. | تصویر اصلی
 |================================
 
-. Click _Save and continue_. The page Main image appears. Fill in the fields
-as shown below.
+. روی _ذخیره‌سازی و ادامه_ کلیک کنید. صفحه تصویر اصلی نمایش می‌یابد. با توجه به مقادیر زیر فیلدها را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Allowed number of values | The number of values that can be entered | Limited, 1
+| نام فیلد | توضیحات | مقدار
+| تعداد مقادیر مجاز | تعداد مقادیری که می‌تواند وارد شود. | محدود، ۱
 |================================
 +
-You can set a default image here. This will be used when you do not provide an
-image when creating a Vendor content item.
+در اینجا می‌توانید یک تصویر پیشفرض را تنظیم کنید. زمانی که از یک تصویر جدید برای فروشنده استفاده نکنید، این فیلد مورد استفاده قرار می‌گیرد.
 
-. Click _Save field settings_. The page _Main image settings for Basic page_
-appears. Fill in the fields as shown below.
+
+. روی _ذخیره‌سازی تنظیمات فیلد_ کلیک کنید. صفحه تنظیمات تصویر برای برای صفحه پایه_ نمایش می‌یابد. با توجه به مقادیر زیر فیلدها را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Label  | Label that is visible in the content form | Main image
-| Help text | The instruction that is shown below the field | (leave blank)
-| Required field | Whether the field is required or not | Checked
-| Allowed file extensions | The type of images that can be uploaded | png, gif, jpg, jpeg
-| File directory | The directory where the files will be stored. By providing a file directory value, you ensure that all images uploaded via the Main image field will be located in the same directory. | vendors
-| Minimum image resolution | The minimum resolution of the uploaded image | 600 x 600
-| Maximum upload size | The maximum file size of the uploaded image | 5 MB
-| Enable Alt field | Whether an alternative text can be entered | Checked
-| Alt field required | Whether an alternative text is required | Checked
+| نام فیلد | توضیحات | مقدار
+| برچسب  | برچسبی که در فرم محتوایی نمایش می‌یابد. | تصویر اصلی
+| متن راهنما | دستورالعملی که زیر فیلد نمایش می‌یابد. | (خالی بگذارید)
+| فیلد اجباری | تعیین کنید که این فیلد اجباری است یا خیر. | انتخاب شده
+| قالب‌های مجاز فایل | نوع تصاویری که می‌توانند بارگذاری شوند. | png, gif, jpg, jpeg
+| دایرکتوری فایل | دایرکتوری که در آن فایل‌ها ذخیره می‌شوند. با ایجاد یک مقدار برای این دایرکتوری، تضمین می‌کنید که تمام تصاویر آپلودشده برای تصویر اصلی در یک دایرکتوری واحد قرار می‌گیرند. | حداقل کیفیت تصویر | حداقل وضوح تصویر مورد نیاز. | ۶۰۰x۶۰۰
+| حداکثر اندازه آپلود | حداکثر اندازه فایل برای تصویر آپلود شده. | ۵ مگابایت
+| فعال‌سازی متن جایگزین | تعیین کنید آیا یک متن جایگزین می‌تواند درج شود یا خیر. | انتخاب شده
+| فیلد جایگزین مورد نیاز است | تعیین کنید آیا یک متن جایگزین الزامی است یا خیر. | انتخاب شده
 |================================
 +
 --
 // Field settings page for adding main image field.
-image:images/structure-fields-main-img.png["Field settings page for Main Image",width="100%"]
+image:images/structure-fields-main-img.png["صفحه تنظیمات فیلد برای تصویر اصلی",width="100%"]
 --
 
-. Click _Save settings_. Main image has been added to the content type.
+. روی _ذخیره‌سازی تنظیمات_ کلیک کنید. تصویر اصلی به نوع محتوا افزوده شده است.
+
 +
 --
 // Manage fields page for Vendor, showing two new fields.
-image:images/structure-fields-result.png["Manage fields page",width="100%"]
+image:images/structure-fields-result.png["صفحه مدیریت فیلدها",width="100%"]
 --
 
-. Add a Main image field to the Recipe content type, using similar steps. Start
-by navigating to the Recipe content type's _Manage Fields_ page in step 1. Then
-skip to step 7 and follow the remaining steps, but reuse the existing Main image
-field you created for the Vendor content type rather than creating a new
-field. In subsequent steps, some of the configuration screens will not be
-available, because of the field reuse.
+. با توجه به گام‌های بالا، یک فیلد تصویر نیز به نوع محتوای محصول اضافه کنید. در گام ۱ به صفحه _مدیریت فیلدها_ برای نوع محتوای محصول بروید. سپس به گام ۷ رفته و با استفاده از فیلد موجود تصویر، به ادامه ساخت آن بپردازید. در گام‌های متناظر با آن به دلیل استفاده مجدد از فیلد، برخی از صفحات پیکربندی موجود نخواهند بود.
 
-. Create two Vendor content items (see <<content-create>>) called "Happy Farm"
-and "Sweet Honey". Make sure that they include images and URLs.
+. دو گزینه محتوایی برای فروشنده به نام‌های "مزرعه خوشحال" و "عسل خوشمزه" ایجاد کنید (<<content-create>> را مشاهده کنید). اطمینان یابید که هر دو شامل پیوند و تصویر می‌باشند.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 * <<structure-image-styles>>
 * <<structure-content-display>>
@@ -151,12 +141,10 @@ and "Sweet Honey". Make sure that they include images and URLs.
 
 // ==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/node/774742[_Drupal.org_ community documentation page "Add a field to a content type"]
+https://www.drupal.org/node/774742["افزودن یک فیلد به نوع محتوا" در صفحه مستندات جامعه‌کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/sree[Sree Veturi] and
-https://www.drupal.org/u/batigolix[Boris Doesborg].
+نوشته شده توسط https://www.drupal.org/u/sree[Sree Veturi] و https://www.drupal.org/u/batigolix[Boris Doesborg].
