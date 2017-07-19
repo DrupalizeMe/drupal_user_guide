@@ -1,9 +1,9 @@
 [[structure-reference-fields]]
 
-=== Concept: Reference Fields
+=== مفهوم: فیلدهای مرجع
 
 [role="summary"]
-Overview of reference fields and their commonly-used types.
+مروری بر فیلدهای مرجع و کاربردهای متداول آن‌ها.
 
 (((Reference field,overview)))
 (((Reference field,content)))
@@ -17,32 +17,22 @@ Overview of reference fields and their commonly-used types.
 (((User reference field,overview)))
 (((Content reference field,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<planning-data-types>>
 
-==== What is a reference field?
+==== یک فیلد مرجع چیست؟
 
-A _reference field_ is a field that represents a relationship between an entity
-and one or more other entities, which may belong to the same or different entity
-type. The three most commonly-used reference fields are:
+یک _فیلد مرجع_ فیلدی است که ارتباط بین یک یا چند موجودیت را مشخص می‌کند، که ممکن است به همان نوع موجودیت یا انواع دیگری متعلق باشد. سه فیلد مرجع پرکاربرد عبارتند از:
 
-Content reference::
-  A reference to a content item. For example, you might want to connect recipes
-  to the vendors who submitted them. You would set up a content reference field
-  called Submitted by referencing Vendor content items on the Recipe content
-  type.
+ارجاع به محتوا::
+  ارجاعی به یک گزینه محتوایی. برای نمونه، شاید بخواهید محصولات را به فروشندگان اصلی هر کدام متصل کنید. برای اینکار در نوع محتوای محصول، یک فیلد مرجع محتوایی بنام _درج شده توسط_ فروشنده‌ای که مرتبط با آن است، ایجاد می‌کنید.
 
-Taxonomy term reference::
-  A reference to a taxonomy term. For example, you might want to connect recipes
-  to their ingredients. You would set up a taxonomy term reference field called
-  Ingredients on the Recipe content type. This reference field will point to the
-  vocabulary Ingredients.
+ارجاع به عبارت دسته‌بندی::
+  ارجاعی به عبارت دسته‌بندی. برای نمونه، شاید بخواهید محصولات را به مواد اولیه هر کدام متصل کنید. برای اینکار در نوع محتوای محصول، یک فیلد مرجع عبارت دسته‌بندی بنام مواد اولیه ایجاد می‌کنید. این فیلد مرجع به واژگان مواد اولیه اشاره خواهد کرد.
 
-User reference::
-  A reference to a user account. For example, you might want to connect recipes
-  with their chefs. You would set up a user reference field called Chefs on the
-  Recipe content type.
+ارجاع به کاربر::
+  ارجاعی به یک حساب کاربری. برای نمونه، شاید بخواهید محصولات را به آشپزها متصل کنید. برای اینکار در نوع محتوای محصول، یک فیلد مرجع کاربر بنام آشپز ایجاد می‌کنید.
 
 ==== Related topics
 
@@ -50,9 +40,6 @@ User reference::
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/surendramohan[Surendra Mohan] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].
