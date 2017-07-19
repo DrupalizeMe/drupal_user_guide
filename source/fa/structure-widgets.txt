@@ -1,58 +1,42 @@
 [[structure-widgets]]
 
-=== Concept: Forms and Widgets
+=== مفهوم: فرم‌ها و ویجت‌ها
 
 [role="summary"]
-Overview of forms and widgets.
+مروری بر فرم‌ها و ویجت‌ها.
 
 (((Content editing form,overview)))
 (((Widget,overview)))
 (((Field,overview)))
 (((Form,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<planning-data-types>>
 
-==== What are forms and widgets?
+==== فرم‌ها و ویجت‌ها چیستند؟
 
-The content management system software that your site is running allows
-administrators to edit content and configure settings online, using various web
-_forms_. In particular, _content editing forms_ are used to edit your site's
-content, and they are configurable by administrators; settings configuration
-forms are provided by modules and cannot themselves be configured.
+دروپال به مدیران اجازه می‌دهد که با استفاده از _فرم‌های_ وب گوناگون، به ایجاد و ویرایش محتوا به صورت آنلاین بپردازند. به طور مشخص، برای ویرایش محتوای وبسایت شما از _فرم‌های ویرایش محتوا_ استفاده می‌شود، که توسط مدیران قابل پیکربندی هستند؛ فرم‌های پیکربندی تنظیمات توسط افزونه‌ها فراهم می‌شوند که به خودی خود قابل پیکربندی نیستند.
 
-The data in your site's content is stored in one or more fields that are
-attached to the content type and/or sub-type. When you configure the content
-editing form for each content sub-type, you can:
+داده موجود در سایت شما در یک یا چند فیلد متصل به یک نوع محتوا و/یا زیرمجموعه‌های آن قرار می‌گیرد. زمانی که یک فرم ویرایش محتوا برای هر نوع محتوا را پیکربندی می‌کنید، شما می‌توانید:
 
-* Select a _widget_ for each field. A widget defines the method used to enter
-the data for the field. For example, a taxonomy term can be chosen using
-an autocomplete field, a select list, or a tags-style field that lets editors
-add new tags automatically.
+* برای هر فیلد یک _ویجت_ انتخاب کنید. ویجت شیوه‌ای برای ورود داده در آن فیلد است. برای نمونه، یک عبارت دسته‌بندی می‌تواند با استفاده از یک فیلد خودکار، یک فهرست انتخابی یا یک فیلد تگ-مانند که به ویراستاران اجازه می‌دهد تگ‌ها جدید را به صورت خودکار وارد سیستم کنند، ایجاد شود.
 
-* Configure widget settings. For example, you can choose the size of a
-plain-text entry field.
+* تنظیمات ویجت را پیکربندی کنید. برای نمونه، می‌توانید اندازه یک فیلد متنی-ساده را مشخص کنید.
 
-* Hide one or more fields from the editing form.
+* یک یا چند فیلد را از فرم ویرایش پنهان سازید.
 
-* Reorder the fields.
+* ترتیب نمایش فیلدها را تغییر دهید.
 
-In principle, you can also have multiple content editing forms available for
-each content sub-type. This feature is rarely used, however; the only exception
-in common use is for the user profile fields: you can use different forms for
-user registration and user editing. For example, you might have a limited set of
-fields shown when users first register on the site, and more fields shown later
-on when they edit their profiles.
+در اصل، می‌توانید چندین فرم ویرایش محتوا برای هر کدام از زیر مجموعه‌های محتوا داشته باشید. این قابلیت به ندرت مورد استفاده قرار می‌گیرد، اگرچه؛ تنها استثنای آن در کاربرد فیلدهای پروفایل کاربری است: شما می‌توانید از فرم‌های متفاوتی برای ثبت‌نام کاربر و ویرایش آن استفاده کنید. برای نمونه، ممکن است بخواهید فیلدهای محدودی به کاربر قبل از ثبت‌نام در سایت و فیلدهای بیشتر زمانی که پروفایل خود را ویرایش می‌کنند، نمایش یابد.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<structure-form-editing>>
 * <<structure-view-modes>>
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
