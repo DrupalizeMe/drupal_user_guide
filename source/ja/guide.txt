@@ -1,5 +1,5 @@
 [[user_guide]]
-= Drupal 8 User Guide
+= Drupal 8 ユーザーガイド
 
 // Chapters are defined here, and each one includes the individual
 // topic files that make up the chapter, in order.
@@ -10,7 +10,7 @@
 == まえがき
 
 [role="summary"]
-Overview of introductory topics that help to leverage this guide in an efficient manner.
+このガイドを効率的に活用するための入門トピック。
 
 include::copyright.txt[]
 include::preface-audience.txt[]
@@ -21,10 +21,10 @@ include::preface-scenario.txt[]
 
 
 [[understanding-chapter]]
-== Understanding Drupal
+== Drupalについて
 
 [role="summary"]
-Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+モジュール、テーマ、ディストリビューション、データタイプなどDrupalの概要。
 
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
@@ -36,10 +36,10 @@ include::understanding-gpl.txt[]
 
 
 [[planning-chapter]]
-== Planning Your Site
+== あなたのサイトを計画する
 
 [role="summary"]
-Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+サイト計画の概要と一般的なサイトレイアウト作業の詳細。コンテンツエンティティと構造についての説明。
 
 include::block-regions.txt[]
 include::planning-layout.txt[]
@@ -50,10 +50,10 @@ include::planning-workflow.txt[]
 
 
 [[installation-chapter]]
-== Installation
+== インストール
 
 [role="summary"]
-Overview of server requirements and details of common installation tasks.
+サーバー要件の概要と一般的なインストールタスクの詳細。
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
@@ -62,10 +62,10 @@ include::install-run.txt[]
 
 
 [[config-chapter]]
-== Basic Site Configuration
+== 基本的なサイト設定
 
 [role="summary"]
-Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+基本的なサイト設定の概要。モジュールのインストール、ユーザーアカウントの設定、テーマに関する作業の説明。
 
 include::config-overview.txt[]
 include::config-basic.txt[]
@@ -77,10 +77,10 @@ include::config-theme.txt[]
 
 
 [[content-chapter]]
-== Basic Page Management
+== 基本的なページ管理
 
 [role="summary"]
-Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+ページ管理の概要。コンテンツアイテム、インプレース編集、およびメニューに関する作業の説明。
 
 include::content-paths.txt[]
 include::content-create.txt[]
@@ -92,10 +92,10 @@ include::menu-link-from-content.txt[]
 include::menu-reorder.txt[]
 
 [[content-structure-chapter]]
-== Setting Up Content Structure
+== コンテンツ構造の設定
 
 [role="summary"]
-Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+コンテンツ構造の概要。コンテンツタイプ、タクソノミー、および参照フィールドに関する作業の説明。
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -120,10 +120,10 @@ include::structure-text-format-config.txt[]
 
 
 [[user-chapter]]
-== Managing User Accounts
+== ユーザーアカウントの管理
 
 [role="summary"]
-Overview of user account concepts and details of common user account tasks.
+ユーザーアカウントの概要と一般的なユーザーアカウントに関する作業の詳細。
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
@@ -135,10 +135,10 @@ include::user-content.txt[]
 
 
 [[blocks-chapter]]
-== Blocks
+== ブロック
 
 [role="summary"]
-Overview of block concepts and details of common block tasks.
+ブロックの概要と共通ブロックに関する作業の詳細。
 
 include::block-concept.txt[]
 include::block-create-custom.txt[]
@@ -146,10 +146,10 @@ include::block-place.txt[]
 
 
 [[views-chapter]]
-== Creating Listings with Views
+== ビューによるリスティングの作成
 
 [role="summary"]
-Overview of view concepts and details of common view tasks.
+ビューの概要と一般的なビューに関する作業の詳細。
 
 include::views-concept.txt[]
 include::views-parts.txt[]
@@ -159,10 +159,10 @@ include::views-block.txt[]
 
 
 [[multilingual-chapter]]
-== Making Your Site Multilingual
+== サイトを多言語化する
 
 [role="summary"]
-Overview of multilingual site concepts and details of tasks needed to make a site multilingual.
+多言語サイトの概要とサイトを多言語化するために必要な作業の詳細。
 
 include::language-concept.txt[]
 include::language-add.txt[]
@@ -172,10 +172,10 @@ include::language-config-translate.txt[]
 
 
 [[extend-chapter]]
-== Extending and Customizing Your Site
+== サイトの拡張とカスタマイズ
 
 [role="summary"]
-Overview of site customization and development. Tasks on downloading modules and themes are covered.
+サイトのカスタマイズと開発の概要。モジュールとテーマのダウンロードに関する作業の説明。
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -191,10 +191,10 @@ include::extend-config-versions.txt[]
 
 
 [[prevent-chapter]]
-== Preventing and Fixing Problems
+== 問題の予防と解決
 
 [role="summary"]
-Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+キャッシュ、データバックアップ、およびログの概要。キャッシュをクリアする作業についての説明。
 
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
@@ -204,10 +204,10 @@ include::prevent-status.txt[]
 
 
 [[security-chapter]]
-== Security and Maintenance
+== セキュリティとメンテナンス
 
 [role="summary"]
-Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+セキュリティとメンテナンスの概要。コアソフトウェア、モジュール、およびテーマの更新に関する作業の説明。
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -219,10 +219,10 @@ include::security-update-theme.txt[]
 
 
 [[thoughts-chapter]]
-== Final Thoughts
+== おわりに
 
 [role="summary"]
-Overview of the Drupal community and how to connect with other users.
+Drupalコミュニティの概要と他のユーザーとのコミュニケーション。
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
@@ -239,9 +239,9 @@ include::glossary.txt[]
 
 [[appendix]]
 [appendix]
-== Appendix
+== 付録
 
 [role="summary"]
-Overview of contributors to this guide.
+このガイドの寄稿者の概要。
 
 include::attributions.txt[]
