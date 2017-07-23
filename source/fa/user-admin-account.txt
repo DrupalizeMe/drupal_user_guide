@@ -1,65 +1,43 @@
 [[user-admin-account]]
 
-=== Concept: The User 1 Account
+=== مفهوم: حساب کاربری ۱
 
 [role="summary"]
-Overview of the User 1 account, also known as the root account or administrative account.
+مروری بر حساب کاربری ۱ که به نام root یا مدیر نیز شناخته می‌شود.
 
 (((User,root)))
 (((User,user one)))
 (((User,administrative)))
 (((Security,user one account)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<user-concept>>
 
-==== What is the user 1 account?
+==== حساب کاربری ۱ چیست؟
 
-During the installation of your site, you created the first user account. Each
-user account internally has a numeric user ID, and since the ID of this user is
-one, it is commonly referred to as the _user 1_ account. This user account is
-special, because independent of what roles it is assigned, someone logged in as
-user 1 has permission to do all actions on the site, including viewing and
-editing all content, editing any user account, changing site configuration,
-installing and uninstalling modules, and running the update script.
+هنگام نصب سایت خود، اولین حساب کاربری ایجاد شده است. هر حساب کاربری در حقیقت شامل یک شناسه عددی است، از آنجا که شناسه این کاربر یک است به عنوان حساب _کاربری ۱_ شناخته می‌شود. این حساب کاربری بخصوصی است، چرا که جدا از نقش اختصاص یافته به آن، هر کسی که با این حساب وارد شود تمام مجوزهای لازم برای عملیات روی وبسایت را دارد، از جمله مشاهده و ویرایش تمام محتوا، ویرایش هر حساب کاربری، تغییر پیکربندی سایت، نصب و حذف افزونه‌ها و اجرای اسکریپت بروزرسانی.
 
-Because of this level of permission, some people refer to this account as the
-_root user_, similar to the "root" user account that has full administrative
-permissions in Linux and other operating systems.
+به دلیل سطح نامحدود دسترسی این کاربر، برخی افراد از آن به عنوان کاربر _root_ یاد می‌کنند، مشابه با حساب کاربری "root" در لینوکس و سایر سیستم عامل‌ها که تمام مجوزهای لازم را در اختیار دارد.
 
-It is usually better to make separate accounts for each administrative user,
-giving them the _Administrator_ role, rather than having all administrative
-users log in using the user 1 account. There are several reasons for this:
+بهتر است که برای هر کاربر مدیر حساب جداگانه‌ای بوجود بیاید، که نقش _مدیر_ به آن‌ها اختصاص می‌یابد بجای اینکه با حساب کاربری ۱ و تمام مجوزهای لازم وارد وبسایت گردند. دلایل مختلفی برای اینکار وجود دارد:
 
-* Some actions and updates on the site are logged, and if everyone uses the same
-account, it is difficult to know who did them if you have questions.
+* برخی عملیات و بروزرسانی‌های روی سایت در فایل‌های گزارش ثبت می‌گردند و اگر هر فردی از حساب کاربری مشابهی استفاده کند تشخیص اینکه عملیات را چه کسی انجام داده است دشوار می‌شود.
 
-* The _Administrator_ role permissions can be modified to be safer than the
-full permissions of the user 1 account, so that people do not inadvertently
-change site features that shouldn't be changed.
+* مجوزهای نقش _مدیر_ به منظور امنیت بیشتر در مقایسه با حساب کاربری ۱ قابل تغییر هستند، به صورتی که کاربران به صورت ناخواسته دست به تغییرات ویژگی‌های اصلی سایت نزنند.
 
-* People's responsibilities on a site may change over time. With ordinary user
-accounts, this can be mirrored in permissions by assigning or unassigning
-roles to their user accounts. If they are all using the user 1 account,
-this is more difficult.
+* مسئولیت‌پذیری افراد روی سایت در گذر زمان تغییر می‌کند. با حساب‌های کاربری عادی، اینکار با اختصاص یا عدم اختصاص نقش‌های مختلف به حساب آنان صورت می‌گیرد. اگر همه آن‌ها از حساب کاربری ۱ استفاده کنند، این کار دشوارتر می‌شود.
 
-* On some sites, the author of content or comments is displayed or tracked, and
-if everyone uses the same account to create content, it is difficult to know
-who created the content.
+* در برخی سایت‌ها، نویسنده محتوا یا دیدگاه‌ها نمایش داده یا ردیابی می‌شود و اگر هر فردی برای ایجاد محتوا از یک حساب مشابه استفاده کند، تشخیص اینکه چه کسی محتوا را ایجاد کرده است دشوار می‌گردد.
 
-It is not possible to delete the user 1 account from the administrative user
-interface. It would be possible to do with a database query, but it could cause
-problems in your site and is not advisable.
+امکان حذف حساب کاربری ۱ از طریق رابط مدیریتی وبسایت وجود ندارد. اگرچه با استفاده از پرس و جوهای پایگاه‌داده می‌توان اینکار را انجام داد، اما احتمالا بروز خطا در سایت بالا می‌رود و اینکار توصیه نمی‌گردد.
 
 //==== Related topics
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/node/22284[_Drupal.org_ community documentation page "Accounts and roles"]
+https://www.drupal.org/node/22284["حساب‌ها و نقش‌های کاربری" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط by https://www.drupal.org/u/mark-lacroix[Mark LaCroix] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
