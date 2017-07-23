@@ -1,86 +1,72 @@
 [[user-roles]]
-=== Changing a User's Roles
+=== تغییر نقش‌های یک کاربر
 
 [role="summary"]
-How to change or add roles for a user.
+چگونگی تغییر یا افزودن نقش به یک کاربر.
 
 (((User role,changing)))
 (((Role,changing)))
 (((Permission,changing role)))
 
-==== Goal
+==== هدف
 
-Change or add roles to a given user, either by editing a single-user or by
-applying a bulk operation.
+تغییر یا افزودن نقش به یک کاربر مشخص، خواه با ویرایش تک-کاربره یا ویرایش انبوه.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<user-concept>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The user account that you want to update, and the role you want it to have, must
-already exist. See <<user-new-user>>,  <<user-new-role>>, and
-<<user-permissions>>.
+حساب کاربری که قصد بروزرسانی و نقشی که قصد اختصاص آن را دارید، باید موجود باشند. <<user-new-user>>، <<user-new-role>> و <<user-permissions>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-===== Updating the roles using single-user editing method
+===== بروزرسانی نقش‌ها با استفاده از شیوه ویرایش تک-کاربره
 
-. In the _Manage_ administrative menu, navigate to _People_
-(_admin/people_).
+. در منوی مدیریتی _Manage_ به مسیر navigate to _People_ (_admin/people_) بروید.
 
-. Locate the user 1 account (named "admin") to assign it the _Administrator_
-role. If it is not immediately visible, use the _Name or email contains_ filter,
-or other filters, to narrow down the list.
+. حساب کاربری ۱ (که "مدیر" نام دارد) را برای اختصاص نقش _مدیر_ پیدا کنید. اگر بلافاصله قابل مشاهده نیست، با استفاده از فیلتر _نام یا ایمیل شامل_ یا سایر فیلترها آن را بیابید.
 
-.  Click _Edit_ to update the user account.
+. برای بروزرسانی حساب کاربری روی _ویرایش_ کلیک کنید.
 +
 --
 // People page (admin/people), with user 1's Edit button outlined.
-image:images/user-roles_people-list.png["People page",width="100%"]
+image:images/user-roles_people-list.png["صفحه افراد",width="100%"]
 --
 
-.  On the _Edit_ page, scroll down to _Roles_ section. Check the _Administrator_
-role for the user account.
+. در صفحه _ویرایش_ به قسمت _نقش‌ها_ بروید. نقش _مدیر_ را برای حساب کاربری انتخاب کنید.
 +
 --
 // Roles area on user editing page.
-image:images/user-roles_person-edit.png["Roles section of user edit page",width="141px"]
+image:images/user-roles_person-edit.png["قسمت نقش‌ها در صفحه ویرایش حساب کاربری",width="141px"]
 --
 
-.  Click _Save_ to update the user account. You should be returned to the
-_People_ page and see a message saying that the changes have been saved.
+. برای بروزرسانی حساب کاربری روی _ذخیره‌سازی_ کلیک کنید. در این مرحله باید به صفحه _افراد_ بازگشته و پیامی مبنی بر ذخیره‌سازی تغییرات دریافت کنید.
 +
 --
 // Confirmation message after updating user.
-image:images/user-roles_message.png["Confirmation message"]
+image:images/user-roles_message.png["پیام تاییدیه"]
 --
 
-===== Updating the roles using bulk editing method
+===== بروزرسانی نقش‌ها با استفاده از شیوه ویرایش انبوه
 
-. If the users Happy Farm and Sweet Honey did not already have the Vendor role,
-here is how you would add it. In the _Manage_ administrative menu, navigate to
-_People_ (_admin/people_).
+. اگر کاربران عسل خوشمزه و مزرعه خوشحال هم‌اکنون نقش فروشنده را نداشته باشند، اینجا به افزودن آن می‌پردازیم. در منوی مدیریتی _Manage_ به مسیر _People_ (_admin/people_) بروید.
 
-. Locate Vendor user accounts  _Sweet Honey_ and _Happy Farm_ and check them. If
-they are not immediately visible, use the _Name or email contains_ filter, or
-other filters, to narrow down the list.
+. حساب‌های کاربری فروشندگان _عسل خوشمزه_ و _مزرعه خوشحال_ را شناسایی کرده و انتخاب کنید. اگر بلافاصله قابل مشاهده نیستند، با استفاده از فیلتر _نام یا ایمیل شامل_ یا سایر فیلترها آن‌ها را بیابید.
 
-. Select _Add the Vendor role to the selected users_ from the _Action_
-select list.
+. از فهرست انتخابی _عملیات_ گزینه _افزودن نقش فروشنده به کاربران انتخاب شده_ را برگزینید.
 +
 --
 // Bulk editing form on People page (admin/people).
-image:images/user-roles_bulk.png["People page with bulk operation set up", width="100%"]
+image:images/user-roles_bulk.png["صفحه افراد با تنظیم عملیات انبوه", width="100%"]
 --
 
-. Click _Apply to selected items_. You should see a message indicating that the
-desired changes were made.
+. روی _اعمال گزینه‌های انتخابی_ کلیک کنید. باید پیامی مبنی بر اعمال تغییرات انجام شده دریافت کنید.
 +
 --
 // Confirmation message after bulk user update.
-image:images/user-roles_message_bulk.png["Confirmation message"]
+image:images/user-roles_message_bulk.png["پیام تاییدیه"]
 --
 
 // ==== Expand your understanding
@@ -89,8 +75,6 @@ image:images/user-roles_message_bulk.png["Confirmation message"]
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+نوشته شده توسط https://www.drupal.org/u/chris-dart[Chris Dart] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
