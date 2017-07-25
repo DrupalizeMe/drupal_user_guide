@@ -1,94 +1,77 @@
 [[block-place]]
 
-=== Placing a Block in a Region
+=== قرارگیری بلاک در یک ناحیه
 
 [role="summary"]
-How to place a block in a region.
+چگونگی قرارگیری یک بلاک در یک ناحیه.
 
 (((Block,placing in a region)))
 (((Region,placing a block in)))
 
-==== Goal
+==== هدف
 
-Place the Opening hours and location block in the website's sidebar.
+قرارگیری بلاک ساعت‌های بازگشایی و مکان فروشگاه در نوارکناری وبسایت فروشگاه کشاورزی.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<block-concept>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* The core Bartik theme must be installed and set as default. See
-<<config-theme>>.
+* قالب داخلی Bartik باید نصب شده و به صورت پیشفرض باشد. <<config-theme>> را مشاهده کنید.
 
-* The Opening hours and location block must exist. See <<block-create-custom>>.
+* بلاک ساعت‌های بازگشایی و مکان فروشگاه باید موجود باشد. <<block-create-custom>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_
-(_admin/structure/block_). The _Block layout_ page appears, listing the theme's
-regions.
+. در منوی مدیریتی _Manage_ به مسیر _Structure_ > _Block layout_ (_admin/structure/block_) بروید. صفحه _ساختار بلاک_ نمایش می‌یابد، که ناحیه‌های بکار رفته در قالب را فهرست می‌کند.
 
-. Ensure that in the secondary tab the core Bartik theme is selected. Block
-placement is defined per theme.
+. اطمینان یابید که در زبانه ثانویه قالب داخلی Bartik انتخاب شده باشد. قرار گرفتن بلاک‌ها بر اساس هر قالب متفاوت است.
 
-. Locate the region _Sidebar second_ in the list and click _Place block_ next to
-it. The _Place block_ window appears, listing all the blocks.
+. ناحیه _نوارکناری دوم_ از فهرست یافته و روی _قرارگیری بلاک_ در کنار آن کلیک کنید. پنجره _قرارگیری بلاک_ نمایش می‌یابد، که تمام بلاک‌ها را فهرست می‌کند.
 
-. Locate the block Opening hours and location and click _Place block_ next to
-it. The _Configure block_ window appears. Fill in the fields as shown below.
+. بلاک ساعت‌های بازگشایی و مکان فروشگاه را یافته و روی _قرارگیری بلاک_ در کنار آن کلیک کنید. پنجره _پیکربندی بلاک_ نمایش می‌یابد. فیلدهای آن را با استفاده از جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-| Title | Hours and location
-| Display title | Checked
-| Region | Sidebar second
+| نام فیلد | مقدار
+| عنوان | ساعت‌های بازگشایی و مکان فروشگاه
+| نمایش عنوان | انتخاب شده
+| ناحیه | نوارکناری دوم
 |================================
 +
-You can also hide or display the block on specific pages. In the case of the
-Farmer's market website you do not set any of these configuration options
-because you want to show the block everywhere.
+همچنین می‌توانید بلاک را در صفحات خاصی نمایش داده یا مخفی کنید. در مورد وبسایت فروشگاه کشاورزی شما از هیچ گزینه پیکربندی مشابهی استفاده نکرده‌اید چرا که می‌خواهید بلاک همیشه نمایش داده شود.
 +
 --
 // Configuration page for placing a custom block in the sidebar.
-image:images/block-place-configure-block.png["Block configuration page",width="100%"]
+image:images/block-place-configure-block.png["صفحه پیکربندی بلاک",width="100%"]
 --
 
-. Click _Save block_. The _Block layout_ page appears. You can drag blocks to
-change the order in which they will appear.
+. روی _ذخیره‌سازی بلاک_ کلیک کنید. صفحه _ساختار بلاک_ نمایش می‌یابد. می‌توانید ترتیب نمایش بلاک‌ها را با کشیدن و رها کردن تغییر دهید.
 
-. Verify that the Opening hours and location block is listed in the _Sidebar
-second_ region, and click _Save blocks_.
+. اطمینان یابید که بلاک ساعت‌های بازگشایی و مکان در ناحیه _نوارکناری دوم_ فهرست شده است، سپس روی _ذخیره‌سازی بلاک‌ها_ کلیک کنید.
 +
-The block has been placed on the sidebar of all pages that use the core Bartik
-theme.
+بلاک در نوارکناری تمام صفحاتی که از قالب داخلی Bartik استفاده می‌کنند، قرار گرفته است.
 +
 --
 // About page with placed sidebar block.
-image:images/block-place-sidebar.png["Page with a block placed on the Sidebar second region",width="100%"]
+image:images/block-place-sidebar.png["صفحه‌ای با بلاک قرارگرفته در نوارکناری دوم",width="100%"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-* Remove the _Powered by Drupal_ block from the _Footer fifth_ region by setting
-the region to _- None -_.
+* بلاک _نیرو گرفته از دروپال_ موجود در ناحیه _پایینی پنجم_ را با تنظیم ناحیه آن به _-هیج-_ حذف کنید.
 
-* Remove the _Tools_ block from the _Sidebar first_ region by setting the
-region to _- None -_. This block is only visible to logged-in users.
+* بلاک _ابزارها_ موجود در ناحیه _نوارکناری اول_ را با تنظیم ناحیه آن به _-هیچ-_ حذف کنید. این بلاک تنها برای کاربران وارد شده نمایش می‌یابد.
 
-* Place the _User login_ block in a region.
+* بلاک _ورود کاربر_ را در یک ناحیه قرار دهید.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
-
+* اگر تاثیر تغییرات انجام شده روی سایت را مشاهده نمی‌کنید، ممکن است نیاز باشد حافظه موقت را خالی کنید. <<prevent-cache-clear>> را مشاهده کنید.
 
 //==== Related concepts
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط by https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

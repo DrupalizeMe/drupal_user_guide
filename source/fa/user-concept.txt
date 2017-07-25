@@ -1,9 +1,9 @@
 [[user-concept]]
 
-=== Concept: Users, Roles, and Permissions
+=== مفهوم: کاربران، نقش‌ها و مجوزها
 
 [role="summary"]
-Overview of user accounts, permissions, and roles.
+مروری بر حساب‌های کاربری، مجوزها و نقش‌ها.
 
 (((User,overview)))
 (((Role,overview)))
@@ -15,55 +15,37 @@ Overview of user accounts, permissions, and roles.
 
 // ==== Prerequisite knowledge
 
-==== What are Users?
+==== کاربران چه کسانی هستند؟
 
-Anyone who visits your website is a _user_, including you. There are three
-groups of users:
+هر کسی که از وبسایت شما بازدید کند یک _کاربر_ است، از جمله خود شما. سه گروه از کاربران وجود دارند:
 
-* Users who are not logged in, or _anonymous users_
+* کاربرانی که وارد وبسایت نشده‌اند یا _کاربران ناشناس_
 
-* Users who are logged in, or _authenticated users_
+* کاربرانی که وارد وبسایت شده باشند یا _کاربران احرازهویت شده_
 
-* The administrative user account that was automatically created when you
-installed your site, or User 1. See <<user-admin-account>>.
+* حساب کاربری مدیریتی که در زمان نصب اولیه سایت ایجاد شده است یا کاربر شماره ۱. <<user-admin-account>> را مشاهده کنید.
 
-==== What are Permissions?
+==== مجوزها
 
-The ability to do actions on your site (including viewing content, editing
-content, and changing configuration) is governed by _permissions_. Each
-permission has a name (such as _View published content_) and covers one action
-or a small subset of actions. A user must be granted a permission in order to do
-the corresponding action on the site; permissions are defined by the modules
-that provide the actions.
+توانایی انجام عملیات روی سایت (از جمله مشاهده و ویرایش محتوا و تغییر پیکربندی) توسط _مجوزها_ کنترل می‌شود. هر مجوز دارای نامی است (مانند _مشاهده محتوای منتشرشده_) که یک یا مجموعه کوچکی از عملیات را پوشش می‌دهد. کاربر برای اینکه بتواند عملیات خاصی را در سایت انجام دهد نیازمند مجوز مربوط به آن است؛ مجوزها توسط افزونه‌هایی که عملیات را فراهم می‌کنند، تعریف می‌شوند.
 
-==== What are Roles?
+==== نقش‌ها
 
-Rather than assigning individual permissions directly to each user, permissions
-are grouped into _roles_. You can define one or more roles on your site, and
-then grant permissions to each role. The permissions granted to authenticated
-and anonymous users are contained in the _Authenticated user_ and _Anonymous
-user_ roles, and depending on the installation profile you used when you
-installed your site, there may also be an _Administrator_ role that is
-automatically assigned all permissions on your site.
+بجای اینکه مجوزها به صورت تک تک به هر کاربر اختصاص یابد، گروهی از آن‌ها به عنوان _نقش‌ها_ ایجاد می‌گردد. شما می‌توانید یا یا چند نقش در سایت خود تعریف کرده سپس مجوزهای مربوط به هر کدام را تنظیم کنید. مجوزهای مرتبط با کاربران احرازهویت شده و ناشناس در نقش‌های _کاربر احرازهویت شده_ و _کاربر ناشناس_ قرار گرفته‌اند و بر اساس پروفایل نصبی که در زمان نصب وبسایت انتخاب کرده باشید، ممکن است یک نقش _مدیر_ نیز ایجاد شده باشد که به صورت خودکار تمام مجوزها به آن اختصاص می‌یابد.
 
-Each user account on your site is automatically given the _Authenticated user_
-role, and may optionally be assigned one or more additional roles. When you
-assign a role to a user account, the user will have all the permissions of the
-role when logged in.
+هر حساب کاربری سایت شما به صورت خودکار شامل نقش _کاربر احرازهویت شده_ می‌باشد و می‌تواند یک یا چند نقش دیگر نیز به آن اضافه کرد. زمانی که یک نقش را به یک حساب کاربری اختصاص می‌دهید، کاربر به محض ورود به سایت تمام آن مجوزها را در اختیار خواهد داشت.
 
-It is a good practice to make several roles on your site. In the farmers market
-site example, you might want the following roles:
+تمرین خوبی است که چندین نقش در سایت خود داشته باشید. در سایت فروشگاه محصولات کشاورزی، ممکن است نقش‌های زیر را بخواهید:
 
-* A Vendor role that allows vendors to edit their own vendor listing page
+* یک نقش فروشنده که به فروشندگان اجازه ویرایش صفحات خود را می‌دهد
 
-* A Content editor role for editing the general farmers market pages
+* یک نقش ویراستار محتوا که برای ویرایش عمومی صفحات فروشگاه استفاده می‌شود
 
-* A User manager role for managing the vendor accounts
+* یک نقش مدیر حساب کاربری برای حساب‌های فروشندگان
 
-* The _Administrator_ role that was installed with your site, for expert users
-to manage the site configuration
+* نقش _مدیر_ که در زمان نصب بوجود آمده است، برای کاربران پیشرفته‌تری که قصد مدیریت پیکربندی سایت را دارند
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<user-new-role>>
 * <<user-permissions>>
@@ -72,18 +54,12 @@ to manage the site configuration
 * <<user-admin-account>>
 * <<user-content>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/node/120614[_Drupal.org_ community documentation page "Users, roles and permissions"]
-* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
-* https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "User Roles"]
+* https://www.drupal.org/node/120614["کاربران، نقش‌ها و مجوزها" در صفحه مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/docs/7/managing-users["مدیریت کاربران" در صفحه مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/node/1803614["نقش‌های کاربری" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+اقتباس شده توسط https://www.drupal.org/u/mark-lacroix[Mark LaCroix]، https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] و https://www.drupal.org/u/batigolix[Boris Doesborg] از https://www.drupal.org/node/1803614["نقش‌های کاربری"].

@@ -1,8 +1,8 @@
 [[user-permissions]]
-=== Assigning Permissions to a Role
+=== اختصاص دادن مجوزها به یک نقش
 
 [role="summary"]
-How to assign a permission to a role.
+چگونگی اختصاص دادن مجوز به یک نقش.
 
 (((Permission,changing)))
 (((Permission,granting)))
@@ -10,81 +10,64 @@ How to assign a permission to a role.
 (((Role,changing permission)))
 (((Security,assigning permission)))
 
-==== Goal
+==== هدف
 
-Change the permissions for the Vendor role so that users can create, edit,
-and delete Recipe and Vendor content, format the content, and contact each
-other.
+تغییر مجوزهای فروشنده به گونه‌ای که کاربران بتوانند محتوای محصول و فروشنده را ایجاد، ویرایش و حذف کنند، قالب‌‌بندی آن را تغییر داده و با یکدیگر تماس بگیرند.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+نقش فروشنده در سایت شما باید موجود باشد. <<user-new-role>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _People_ > _Roles_
-(_admin/people/roles_). The _Roles_ page appears.
+. در منوی مدیریتی _Manage_ به مسیر _People_ > _Roles_ (_admin/people/roles_) بروید. صفحه نقش‌ها نمایش می‌یابد.
 
-. Click _Edit permissions_ in the dropdown for the Vendor
-role. The _Edit role_ page appears where you can see all the available
-actions for the website such as, for example, _Post comments_ or _Administer
-blocks_. The available permissions depend on the modules that are installed in
-the site. Note: Some permissions may have security implications. Be cautious
-while assigning permissions to roles.
+. از منوی کشویی برای نقش فروشنده روی _ویرایش مجوزها_ کلیک کنید. صفحه _ویرایش نقش_ نمایش می‌یابد که در آن می‌توانید تمام عملیات ممکن روی وبسایت را مشاهده کنید، برای نمونه، _درج دیدگاه‌ها_ یا _مدیریت بلاک‌ها_. مجوزهای موجود بستگی به افزونه‌ها نصب شده روی سایت دارند. نکته: برخی مجوزها ممکن است پیامدهای امنیتی داشته باشند، پس هنگام اختصاص آن‌ها به نقش محتاط باشید.
 
-. Check the boxes for the following permissions, listed by module:
+. مجوزهای زیر را که توسط افزونه‌ها فهرست شده‌اند، انتخاب کنید:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Module | Permission
-| Contact | Use users' personal contact forms
-| Filter | Use the Restricted HTML text format
-| Node | Recipe: Create new content
-| Node | Recipe: Edit own content
-| Node | Recipe: Delete own content
-| Node | Vendor: Edit own content
-| Quick Edit | Access in-place editing
+| افزونه | مجوز
+| Contact | استفاده از فرم‌های تماس شخصی کاربران
+| Filter | استفاده از قالب متنی محدود شده HTML
+| Node | محصول: ایجاد محتوای جدید
+| Node | محصول: ویرایش محتوای خود
+| Node | محصول: حذف محتوای خود
+| Node | فروشنده: ویرایش محتوای خود
+| Quick Edit | دسترسی به ویرایش در-جا
 |================================
 +
 --
 // Permissions page for Vendor (admin/people/permissions/vendor).
-image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
+image:images/user-permissions-check-permissions.png["اختصاص مجوزهای ایجاد، ویرایش و حذف محصول به نقش فروشنده",width="100%"]
 --
 
-. Click _Save permissions_. You will get a message saying your changes have been
-saved.
+. روی _ذخیره‌سازی مجوزها_ کلیک کنید. پیامی مبنی بر ذخیره‌سازی تغییرات خود دریافت می‌کنید.
 +
 --
 // Confirmation message after updating permissions.
-image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
+image:images/user-permissions-save-permissions.png["پیام تاییدیه پس از ذخیره‌سازی مجوزها"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-* Log in as one of the new users you created in <<user-new-user>>. Verify
-whether you have the correct permissions.
+* به عنوان یکی از کاربران ایجاد شده در قسمت <<user-new-user>> وارد سایت شوید و دسترسی خود به مجوزهای لازم را بررسی کنید.
 
 * <<user-roles>>
 
-==== Related concepts
+==== موضوعات مرتبط
 
 <<user-admin-account>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
+https://www.drupal.org/docs/7/managing-users["مدیریت کاربران" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-https://www.drupal.org/u/bemery987[Brian Emery],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
-https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+اقتباس و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg]، https://www.drupal.org/u/bemery987[Brian Emery] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle] از https://www.drupal.org/node/1803614["نقش‌های کاربری"].
