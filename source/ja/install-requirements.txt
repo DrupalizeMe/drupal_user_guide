@@ -3,7 +3,7 @@
 === 概念: サーバー要件
 
 [role="summary"]
-コアソフトウェアのインストールと実行のためのサーバー要件の概要
+コアソフトウェアのインストールと実行のためのサーバー要件の概要。
 
 (((インストール要件,概要)))
 (((インストール要件,ディスク容量)))
@@ -22,7 +22,7 @@
 (((MySQL データベース,バージョン要件)))
 (((PostgreSQL データベース,バージョン要件)))
 (((SQLight データベース,バージョン要件)))
-(((PHP プログラミング言語,バージョン要件)))
+(((PHPプログラミング言語,バージョン要件)))
 
 // ==== 前提知識
 
@@ -31,24 +31,21 @@
 ===== ディスク容量
 
 最小インストールには15MB、多くの拡張モジュールやテーマをインストールするには60MBが必要です。
-データベース、ユーザーによりアップロードされるファイル、メディア、バックアップ、その他のファイルの為に
-さらに多くの容量が必要になることにも留意ください。
+データベース、ユーザーによりアップロードされるファイル、メディア、バックアップ、その他のファイルの為にさらに多くの容量が必要になることにも留意ください。
 
 ===== Webサーバー
 
 Apache (推奨)::
   Apacheは最も一般的に使用されているWebサーバーです。 コアソフトウェアは、
-  mod_rewriteモジュールがインストールされ有効になっているUNIX/Linux、OS X、またはWindows上の
-  Apache 2.xで動作します。
-  _.htaccess_ ファイルを使用するには、Apache VirtualHost設定で _AllowOverride All_
-  ディレクティブを含める必要があります。
+  mod_rewriteモジュールがインストールされ有効になっているUNIX/Linux、OS X、またはWindows上のApache 2.xで動作します。
+  「.htaccess」ファイルを使用するには、Apache VirtualHost設定で「AllowOverride All」ディレクティブを含める必要があります。
 Nginx::
   Nginxは高い同時実行性とパフォーマンスにフォーカスした一般的に使用されているWebサーバーです。
   コアソフトウェアは、UNIX/Linux、OS X、またはWindows上のNginx 1.1またはそれ以上のバージョンで動作します。
-  ngx_http_rewrite_moduleをインストールして有効にする必要があります。
+  「ngx_http_rewrite_module」をインストールして有効にする必要があります。
 Hiawatha::
-  Hiawathaはセキュリティに重点を置いたWebサーバーです。また使いやすく軽量である事を目指しています。
-  独立した研究者の調査によると、通常環境でも他のWebサーバーに匹敵するパフォーマンスですが、攻撃下の環境では
+  Hiawathaはセキュリティに重点を置いたWebサーバーです。また使いやすく軽量であることを目指しています。
+  独立した研究者の調査によると、通常環境でも他のWebサーバーに匹敵するパフォーマンスですが、攻撃下の環境では、
   はるかに優れたパフォーマンスを発揮するとされています。
   URLを書き換えるためには、URLツールキットをインストールして構成する必要があります。
 Microsoft IIS::
@@ -75,7 +72,7 @@ PHP 5.5.9 以上
 
 ==== その他のリソース
 
-https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"(in English)]
+https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements" (in English)]
 
 
 *帰属情報*
