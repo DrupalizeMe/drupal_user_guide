@@ -1,58 +1,58 @@
 [[understanding-themes]]
 
-=== Concept: Themes
+=== 概念: テーマ
 
 [role="summary"]
-Overview of themes and where to obtain them.
+テーマの概要とテーマの入手方法。
 
-(((Theme,overview)))
-(((Theme,core)))
-(((Core theme,overview)))
-(((Theme,third-party)))
-(((Third-party theme,overview)))
-(((Theme,custom)))
-(((Custom theme,overview)))
+(((テーマ,概要)))
+(((テーマ,コア)))
+(((コアテーマ,概要)))
+(((テーマ,サードパーティ)))
+(((サードパーティテーマ,概要)))
+(((テーマ,カスタム)))
+(((カスタムテーマ,概要)))
 
-==== Prerequisite knowledge
+==== 前提知識
 
 <<understanding-drupal>>
 
-==== What is a Theme?
+==== テーマとは何ですか?
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+テーマは、サイトの視覚的な外観を定義するファイルの集合体です。
+コアソフトウェアとモジュールは、どの「コンテンツ」
+(HTMLテキストやデータベースに保存されたデータ、アップロードされた画像、その他のアセット)
+を表示するかを決定しますが、テーマはそのコンテンツをどのHTMLマークアップとCSSでラップして表示するかを決定します。
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+コアソフトウェアは、いくつかの基本的なテーマを提供します。
+それらのテーマは、ここ数年の間にコミュニティにより開発されたもので、
+最初のサイトを構築する際の良い選択肢となり、コアソフトウェアの動作を理解する助けにもなるでしょう。
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+Drupalは十分に普及したCMSなので、無料有料を問わずサードパーティテーマの市場は非常に活発です。
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software. Guidance for creating custom themes in
-Drupal 8 can be found in the
+もしサードパーティの選択肢があなたのニーズに合致しない場合は、カスタムテーマを作成する必要があります。
+カスタムテーマは、コアソフトウェアが提供するマークアップのスタイルを変更する
+1つのCSSファイルを追加するだけのように単純化することもできます。
+Drupal 8のカスタムテーマを作成するためのガイダンスは、
 https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"].
+"Theming Drupal" (in English)]
+を参照してください。
 
-==== Related topics
+==== 関連トピック
 
 * <<extend-theme-find>>
 * <<extend-theme-install>>
 * <<understanding-modules>>
 
-==== Additional resources
+==== その他のリソース
 
 https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"]
+"Theming Drupal" (in English)]
 
 
-*Attributions*
+*帰属情報*
 
 Written and edited by https://www.drupal.org/u/jgrubb[John Grubb] and
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Translated by https://www.drupal.org/u/kabetani[Takashi Kabetani].
+Reviewed by https://www.drupal.org/u/hgoto[Hayato Goto].
