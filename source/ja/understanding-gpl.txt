@@ -1,69 +1,69 @@
 [[understanding-gpl]]
 
-=== Concept: Drupal Licensing
+=== 概念: Drupalライセンス
 
 [role="summary"]
-Overview of Drupal licensing and the guidelines to be followed by users and contributors.
+ユーザーと貢献者が従うべきDrupalライセンスの概要とガイドライン。
 
-(((Licensing,overview)))
-(((Drupal licensing,overview)))
-(((GPL (General Public License or GNU General Public License),overview)))
-(((GNU General Public License,overview)))
-(((Legal,overview)))
+(((ライセンス,概要)))
+(((Drupalライセンス,概要)))
+(((GPL (General Public License または GNU General Public License),概要)))
+(((GNU General Public License,概要)))
+(((法定,概要)))
 
-==== Prerequisite knowledge
+==== 前提知識
 
 <<understanding-drupal>>
 
-==== What is Drupal Licensing?
+==== Drupalライセンスとは何ですか？
 
-Drupal and all contributed files hosted on _Drupal.org_ are licensed under the
-GNU General Public License (GPL), version 2 or later. That means you are free to
-download, reuse, modify, and distribute any files that are part of a project on
-_Drupal.org_ under the terms of GPL version 2 or 3. You can also run the core
-software in combination with any code with any license that is compatible with
-version 2 or 3.
+Drupalと _Drupal.org_ で提供されているすべての投稿ファイルは、
+バージョン2以降のGNU General Public License(GPL)の下でライセンスされています。
+すなわち、GPLバージョン2または3の条項下で、自由に _Drupal.org_ のプロジェクトに含まれているファイルをダウンロード、
+再利用、変更、配布することができます。
+また、バージョン2または3と互換性のあるライセンスを持つプログラムと組み合わせてコアソフトウェアを実行することもできます。
 
-Drupal contributors should follow these guidelines:
+Drupalの貢献者は次のガイドラインに従う必要があります:
 
-* All files (PHP, JavaScript, images, Flash, etc.) that are part of a project
-on _Drupal.org_ have to be under GPL version 2 or later.
+* _Drupal.org_ プロジェクトの一部となるすべてのファイル(PHP、JavaScript、画像、Flashなど)は、
+GPLバージョン2以降のライセンスにする必要があります。
 
-* All Drupal contributors retain copyright on their code, but agree to release
-it under the same license as Drupal.
+* すべてのDrupal貢献者はプログラムの著作権を持ちますが、
+Drupalと同じライセンスで公開することに同意しなければなりません。
 
-* Drupal modules and themes are a derivative work of Drupal. If you distribute
-them, you must do so under the terms of GPL version 2 or later.
+* Drupalのモジュールとテーマは、Drupalの派生的な成果物です。
+もしそれらを配布する場合は、GPLバージョン2以降の条件に従わなければなりません。
 
-* All content on _Drupal.org_ itself is copyrighted by its original
-contributors, and is licensed under the Creative Commons Attribution-ShareAlike
-license 2.0.
+* _Drupal.org_ のすべてのコンテンツは元々の投稿者に著作権があり、
+クリエイティブ・コモンズ 表示-継承(CC BY-SA)ライセンス2.0でライセンスされています。
 
-* Sample code on _Drupal.org_ is also available under GPL version 2 or later.
+* _Drupal.org_ のサンプルコードもGPLバージョン2以降のライセンスにする必要があります。
 
-==== Related topics
+==== 関連トピック
 
 <<thoughts-connecting>>
 
-==== Additional resources
+==== その他のリソース
 
-* https://www.drupal.org/about/licensing[_Drupal.org_ page on "Licensing"]
+* https://www.drupal.org/about/licensing[_Drupal.org_ page on "Licensing" (in English)]
 
-* https://api.drupal.org/api/drupal/core!LICENSE.txt/8.2.x["Drupal 8 LICENSE.txt" page on _api.drupal.org_]
+* https://api.drupal.org/api/drupal/core!LICENSE.txt/8.2.x["Drupal 8 LICENSE.txt" page on _api.drupal.org_ (in English)]
 
-* http://www.gnu.org/licenses/old-licenses/gpl-2.0.html[GNU General Public License, version 2]
+* http://www.gnu.org/licenses/old-licenses/gpl-2.0.html[GNU一般公衆ライセンス バージョン2]
 
-* http://www.gnu.org/licenses/gpl-3.0.en.html[GNU General Public License, version 3]
+* http://www.gnu.org/licenses/gpl-3.0.ja.html[GNU一般公衆ライセンス バージョン3]
 
-* https://creativecommons.org/licenses/by-sa/2.0/[Creative Commons Attribution-ShareAlike license 2.0.]
+* https://creativecommons.org/licenses/by-sa/2.0/deed.ja[クリエイティブ・コモンズ 表示-継承 2.0 一般]
 
-* https://groups.drupal.org/legal["Legal Group" on _groups.drupal.org_]
+* https://groups.drupal.org/legal["Legal Group" on _groups.drupal.org_ (in English)]
 
 
-*Attributions*
+*帰属情報*
 
 Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
 https://pronovix.com/[Pronovix] from
 https://www.drupal.org/about/licensing["Licensing"]
 copyright 2000-2017 by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
+Translated by https://www.drupal.org/u/kabetani[Takashi Kabetani].
+Reviewed by https://www.drupal.org/u/hgoto[Hayato Goto].
