@@ -1,54 +1,50 @@
 [[understanding-distributions]]
 
-=== Concept: Distributions
+=== 概念: ディストリビューション
 
 [role="summary"]
-Overview of distributions and their different types to set up use-specific websites.
+特定目的のWebサイトを構築するためのディストリビューションの概要とそのタイプ。
 
-(((Distribution,overview)))
-(((Distribution,full-featured)))
-(((Distribution,quick-start)))
-(((Full-featured distribution,overview)))
-(((Quick-start distribution,overview)))
+(((ディストリビューション,概要)))
+(((ディストリビューション,フル機能)))
+(((ディストリビューション,クイックスタート)))
+(((フル機能ディストリビューション,概要)))
+(((クイックスタートディストリビューション,概要)))
 
-==== Prerequisite knowledge
+==== 前提知識
 
 * <<understanding-drupal>>
 * <<understanding-modules>>
 * <<understanding-themes>>
 
-==== What are Distributions?
+==== ディストリビューションとは何ですか?
 
-_Distributions_ provide site features and functions for a specific type of site
-as a single download containing the core software, contributed modules, themes,
-and pre-defined configuration. A distribution makes it possible to set up a
-complex, use-specific site in fewer steps than installing and configuring
-elements individually.
+「ディストリビューション」とは、特定タイプのサイトのために、コアソフトウェア、
+拡張モジュール、テーマ、事前定義された設定を一度にダウンロードできるようにしたパッケージです。
+ディストリビューションを使用すると、個別にインストールして設定するよりも、
+複雑な特定目的のサイトをより簡単に設定できます。
 
-There are two main types of distributions:
+ディストリビューションには主に2つのタイプがあります:
 
-Full-featured Distributions::
-  A full-featured distribution is a project that provides a complete solution
-  to set up a site for a specialized purpose such as academic, business,
-  government, nonprofit, publishing, social, etc. For example, you could use an
-  existing distribution for farmers markets to build your own website, or you
-  could share your set-up for the farmers market site as a distribution for
-  others to use.
+フル機能ディストリビューション::
+  フル機能ディストリビューションは、学術、ビジネス、政府、非営利団体、出版、
+  SNSなどの専門的なサイトを構築するための完全なソリューションを提供するプロジェクトです。
+  例えば、既存の農産物市場向けディストリビューションを使用して自分の農産物市場向けサイトを構築したり、
+  あなたが農産物市場向けに構築したサイトを、他の人が使用できるようにディストリビューションとして共有することができます。
 
-Other Distributions::
-  Distributions can also be quick-start tools that developers and site
-  builders can use as a starting point.
+その他のディストリビューション::
+  ディストリビューションは、開発者やサイト構築者が、サイト構築の開始地点として使用するクイックスタートツールにもなります。
 
-==== Related topics
+==== 関連トピック
 
 <<thoughts-connecting>>
 
-==== Additional resources
+==== その他のリソース
 
-https://www.drupal.org/project/project_distribution[_Drupal.org_ Drupal Distribution Downloads]
+https://www.drupal.org/project/project_distribution[_Drupal.org_ Drupal Distribution Downloads (in English)]
 
 
-*Attributions*
+*帰属情報*
 
 Adapted and edited by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
 and https://www.drupal.org/u/ifrik[Antje Lorch],
@@ -56,3 +52,5 @@ from https://www.drupal.org/docs/7/distributions["Distributions"]
 and https://www.drupal.org/project/project_distribution["Download & Extend -- Distributions"]
 copyright 2000-2017 by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
+Translated by https://www.drupal.org/u/kabetani[Takashi Kabetani].
+Reviewed by https://www.drupal.org/u/hgoto[Hayato Goto].
