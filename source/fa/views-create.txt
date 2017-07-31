@@ -1,8 +1,8 @@
 [[views-create]]
-=== Creating a Content List View
+=== ایجاد یک View با فهرست محتوایی
 
 [role="summary"]
-How to create a content list view.
+چگونگی ایجاد یک view با فهرست محتوایی.
 
 (((View,creating)))
 (((Content list view,creating)))
@@ -12,150 +12,130 @@ How to create a content list view.
 (((Module,Views)))
 (((Module,Image)))
 
-==== Goal
+==== هدف
 
-Create a page listing vendors that will be automatically updated whenever a
-vendor is added, deleted, or updated on the site.
+ایجاد یک صفحه از فهرست فروشندگان که به صورت خودکار در زمان ایجاد، ویرایش یا حذف فروشندگان بروزرسانی می‌شود.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<views-concept>>
 * <<views-parts>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* The core Views and Views UI modules must be installed. These are installed for
-you when you install with the core Standard installation profile.
+* افزونه‌های داخلی Views و Views UI باید نصب باشند. هنگام نصب سایت با پروفایل استاندارد، این افزونه‌ها نصب می‌گردند.
 
-* The Vendor content type must exist, with URL and Main image fields. Your
-site must have a couple of Vendor content items. See <<structure-content-type>>,
-<<structure-fields>>, and <<content-create>>.
+* نوع محتوای فروشنده باید موجود باشد به همراه فیلدها نشانی و تصویر اصلی. سایت شما باید دارای چندین گزینه محتوایی فروشنده باشد. <<structure-content-type>>، <<structure-fields>> و <<content-create>> را مشاهده کنید.
 
-* The _Medium (220x220)_ image style must be defined. This is created on your
-site when you install the core Image module (installed with the core Standard
-installation profile) but can be recreated if deleted. See
-<<structure-image-style-create>>.
+* سبک تصویری _متوسط (۲۲۰x۲۲۰)_ باید تعریف شده باشد. هنگام نصب افزونه داخلی Image (در زمان نصب سایت با پروفایل استاندارد) ایجاد شده است اما در صورت حذف می‌تواند مجدد ایجاد گردد. <<structure-image-style-create>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add
-view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
+. در منوی مدیریتی _Manage_ به مسیر _Structure_ > _Views_ > _Add view_ (_admin/structure/views/add_) بروید. صفحه _افزودن view_ نمایش می‌یابد.
 
-. Fill in the fields as shown below.
+. فیلدها را با توجه به جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| View name | Name of the view that will be visible in the administration pages | Vendors
-| Show | Type of information listed in the view | Content
-| of type | Specify content type | Vendor
-| sorted by | List order | Title
-| Create a page | Create a page that displays the view | Checked
-| Page title | Title show above the view | Vendors
-| Path | Address of the page | vendors
-| Display format | Type of list | Table
-| Items to display | Number of items visible on the page | 10
-| Use a pager | Split up the list in several pages if there are more items | Checked
-| Create a menu link | Add the view page to the menu | Checked
-| Menu | Menu in which to add the link | Main navigation
-| Link text | Label of the link in the menu | Vendors
+| نام فیلد | توضیحات| مقدار نمونه
+| نام view | نام view که در صفحات مدیریتی نمایش می‌یابد. | فروشندگان
+| نمایش | نوع اطلاعات بکار رفته در view | محتوا
+| از نوع | نوع محتوا را مشخص کنید | فروشنده
+| مرتب‌سازی بر اساس | ترتیب فهرست | عنوان
+| ایجاد یک صفحه | ایجاد صفحه‌ای که view در آن نمایش می‌یابد. | انتخاب شده
+| عنوان صفحه | عنوان بکار رفته در بالای view | فروشندگان
+| مسیر | نشانی صفحه | vendors
+| قالب نمایشی | نوع فهرست | جدول
+| گزینه‌های قابل نمایش | تعداد گزینه‌های قابل نمایش در صفحه | ۱۰
+| استفاده از صفحه‌بندی | در صورت وجود گزینه‌های بیشتر، صفحه‌بندی استفاده می‌شود. | انتخاب شده
+| ایجاد یک پیوند منو | افزودن صفحه view به منوی سایت | انتخاب شده
+| منو | منویی که در آن پیوند قرار می‌گیرد. | پیمایش اصلی
+| متن پیوند | برچسب بکار رفته در منو | فروشندگان
 |================================
 +
 --
 // Add view wizard.
-image:images/views-create-wizard.png["Add new view wizard",width="100%"]
+image:images/views-create-wizard.png["صفحه افزودن view جدید",width="100%"]
 --
 
-. Click _Save and edit_. The view configuration page appears.
+. روی _ذخیره‌سازی و ویرایش_ کلیک کنید. صفحه پیکربندی view نمایش می‌یابد.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. روی _افزودن_ از منوی کشویی قسمت _فیلدها_ کلیک کنید. پنجره _افزودن فیلدها_ نمایش می‌یابد.
 
-. Enter the word "image" in the search field.
+. کلمه "image" را در فیلد جستجو وارد کنید.
 
-. Check Main image in the table.
+. تصویر اصلی را از جدول خروجی انتخاب کنید.
 
-. Click _Apply_. The _Configure field: Content: Main Image_
-pop-up appears.
+. روی _تایید_ کلیک کنید پنجره _پیکربندی فیلد: تصویر اصلی_ نمایش می‌یابد.
 
-. Fill in the fields as shown below.
+. فیلدها را با توجه به جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Image style | The format of the image | Medium (220x220)
-| Link image to | Add a link to the content item | Content
+| نام فیلد | توضیحات| مقدار نمونه
+| ایجاد یک برچسب | افزودن یک برچسب درست قبل از فیلد. | انتخاب نشده
+| سبک تصویری | قالب نمایشی تصویر. | متوسط (۲۲۰x۲۲۰)
+| پیوند تصویر به | افزودن یک پیوند به گزینه محتوایی. | محتوا
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. روی _تایید_ کلیک کنید. صفحه پیکربندی view نمایش می‌یابد.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. روی _افزودن_ از منوی کشویی قسمت _فیلدها_ کلیک کنید. پنجره _افزودن فیلدها_ نمایش می‌یابد.
 
-. Enter the word "body" in the search field.
+. کلمه "body" را در فیلد جستجو وارد کنید.
 
-. Select _Body_ in the table.
+. بدنه را از جدول خروجی انتخاب کنید.
 
-. Click _Apply_. The _Configure field: Content: Body_ pop-up
-appears.
+. روی _تایید_ کلیک کنید پنجره _پیکربندی فیلد: بدنه_ نمایش می‌یابد.
 
-. Fill in the fields as shown below.
+. فیلدها را با توجه به جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Formatter | The presentation of the field value | Summary or trimmed
-| Trimmed limit: | The number of maximum characters shown | 120
+| نام فیلد | توضیحات| مقدار نمونه
+| ایجاد یک برچسب | افزودن یک برچسب درست قبل از فیلد. | انتخاب نشده
+| قالب‌دهنده | شیوه نمایش مقدار فیلد. | خلاصه یا بریده شده
+| محدوده برش: | شمار تعداد کاراکترهای قابل نمایش. | ۱۲۰
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. روی _تایید_ کلیک کنید. صفحه پیکربندی view نمایش می‌یابد.
 
-. Click _Content: Title (Title)_ in the _Fields_ list. The
-_Configure field: Content: Title_ pop-up appears.
+. روی _محتوا: عنوان (عنوان)_ از فهرست _فیلدها کلیک کنید. پنجره _پیکربندی فیلد: محتوا: عنوان_ نمایش می‌یابد.
 
-. Uncheck _Create a label_. This will remove the label that was created by the
-wizard.
+. گزینه _ایجاد یک برچسب_ را از حالت انتخاب خارج کنید. اینکار باعث می‌شود برچسب ایجاد شده در مرحله ایجاد فیلد حذف گردد.
 
-. Click _Apply_. The view configuration page appears.
+. روی _تایید_ کلیک کنید. صفحه پیکربندی view نمایش می‌یابد.
 
-. Click _Rearrange_ from the dropdown button in the _Fields_ section. The
-_Rearrange fields_ pop-up appears.
+. روی _مرتب‌سازی_ از منوی کشویی قسمت _فیلدها_ کلیک کنید. پنجره _مرتب‌سازی فیلدها_ نمایش می‌یابد.
 
-. Drag the fields into the right order: Image, Title. Body.
+. فیلدها را به صورت تصویر، عنوان و بدنه مرتب کنید.
 
-. Click _Apply_. The view configuration page appears.
+. روی _تایید_ کلیک کنید. صفحه پیکربندی view نمایش می‌یابد.
 
-. Optionally, click _Update preview_ for a preview.
+. در صورت نیاز، روی _بروزرسانی پیش‌نمایش_ کلیک کنید.
 
-. Click _Save_.
+. روی _ذخیره‌سازی_ کلیک کنید.
 +
 --
 // Completed vendors view administration page.
-image:images/views-create-view.png["Vendors view configuration page", width="100%"]
+image:images/views-create-view.png["صفحه پیکربندی view فرشندگان", width="100%"]
 --
 
-. Navigate to the homepage and click Vendors from the main navigation to see
-the result.
+. به صفحه اصلی بروید و با کلیک روی منوی فروشندگان نتایج را مشاهده کنید.
 +
 --
 // Completed vendors view output.
-image:images/views-create-view-output.png["Vendors view output", width="100%"]
+image:images/views-create-view-output.png["خروجی view فروشندگان", width="100%"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
-<<menu-reorder>>.
+پیوند به view در صفحه اصلی ممکن است در جای درستی قرار نداشته باشد. ترتیب نمایش منو در پیمایش اصلی را تغییر دهید. <<menu-reorder>> را مشاهده کنید.
 
 //==== Related concepts
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
