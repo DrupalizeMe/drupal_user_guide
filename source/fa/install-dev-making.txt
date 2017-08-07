@@ -1,74 +1,53 @@
 [[install-dev-making]]
-=== Making a Development Site
+=== ایجاد یک سایت توسعه
 
 [role="summary"]
-How to make a copy of a live site for development purposes.
+چگونگی کپی کردن یک سایت زنده به منظور تبدیل به سایت توسعه
 
 (((Development site,making)))
 (((Staging site,making)))
 
-==== Goal
+==== هدف
 
-Make a copy of a site that you can use to develop new features and test updates
-on.
+ایجاد یک کپی از سایت مورد نظر خود به منظور بررسی ویژگی‌های جدید و بروزرسانی‌ها.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<install-dev-sites>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* You have a live, developed site that you would like to make a copy of for
-development purposes.
+* شما یک سایت زنده و توسعه‌یافته دارید که می‌خواهید از آن یک نسخه برای اهداف آزمایشی خود کپی بگیرید.
 
-* If you want to use Drush for some of the steps in this task, Drush must be
-installed. See <<install-tools>>.
+* اگر قصد استفاده از Drush برای برخی گام‌های این فعالیت را دارید، Drush باید نصب گردد. <<install-tools>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. Follow the steps in <<install-prepare>>, so that you have hosting set up for
-your development site, you know where the web root is for your development site,
-and you have an empty database and database user for your development site to
-use.
+. گام‌های موجود در <<install-prepare>> را دنبال کنید تا فضای میزبانی برای سایت توسعه خود را تنظیم کنید، می‌دانید که محل قرارگیری سایت توسعه کجاست و از چه پایگاه‌داده خالی و  حساب کاربری برای آن استفاده می‌شود.
 
-. Make a database dump file from your live site's database. Try one of the
-following methods:
+. از پایگاه‌داده سایت اصلی خود یک خروجی کامل بگیرید. یکی از روش‌های زیر را امتحان کنید:
 +
-  * If you are using MySQL as your database, and your live site's server has
-  phpMyAdmin installed (it is available from many hosting control panels),
-  use the _Export_ tab in phpMyAdmin to export in _SQL_ format. Using _gzip_
-  compression on the output file is suggested, to reduce the file size.
+  * اگر از MySQL به عنوان پایگاه‌داده استفاده می‌کنید، و سرور سایت اصلی شما دارای phpMyAdmin (از طرف بسیاری کنترل پنل‌های سرویس میزبانی قابل دسترس است) است، از زبانه _Export_ موجود در phpMyAdmin برای خروجی در قالب _SQL_ استفاده کنید. برای کاهش حجم فایل خروجی، استفاده از فشرده‌سازی _gzip_ توصیه می‌شود.
 
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password):
+  * اگر از MySQL به عنوان پایگاه‌داده استفاده می‌کنید و به خط-فرمان نیز دسترسی دارید، از دستور زیر (با جایگزین کردن نام پایگاه‌داده، نام کاربری و گذرواژه) استفاده کنید:
 +
 ----
 mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
 ----
 
-  * If you prefer to use Drush, use this command:
+  * اگر قصد استفاده از Drush را دارید، از دستور زیر استفاده کنید:
 +
 ----
 drush sql-dump > BACKUPFILE.sql
 ----
 
-  * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module]
-  from within your live site. See <<extend-module-install>> for instructions on
-  installing contributed modules.
+  از https://www.drupal.org/project/backup_migrate[افزونه خارجی Backup and Migrate] واقع در سایت اصلی خود استفاده کنید. برای مشاهده دستورالعمل‌های نصب افزونه‌های خارجی <<extend-module-install>> را مشاهده کنید.
 +
-You now have a database dump stored in the file _BACKUPFILE.sql_. For security
-reasons, avoid storing this file on your hosting server anywhere under the
-Drupal site root. This will prevent others from getting a copy of your
-database.
+اکنون خروجی پایگاه‌داده در فایل _BACKUPFILE.sql_ ذخیره شده است. به دلایل امنیتی، از ذخیره‌سازی این فایل در محل نصب دروپال واقع در سرور میزبانی خودداری کنید. اینکار از دسترسی دیگران به یک کپی از پایگاه‌داده شما جلوگیری بعمل می‌آورد.
 
-. Copy all of the files from the web root of your live site to the web root of
-your development site.
+. تمام فایل‌های موجود از سایت اصلی خود را به سایت توسعه کپی کنید.
 
-. Edit the _sites/default/settings.php_ file under your development site's
-top-level directory in a plain-text editor. Find the lines near the end that
-contain the database name, database username, and database password, and update
-them to the information about the development site database you set up. The
-lines look something like this (before editing):
+. با استفاده از یک ویرایشگر متن ساده، فایل _sites/default/settings.php_ موجود در بالاترین دایرکتوری سایت توسعه را ویرایش کنید. خطوط انتهای فایل که اطلاعات مربوط به پایگاه‌داده را ذخیره کرده است یافته و آن را مطابق با پایگاه‌داده سایت توسعه بروزرسانی کنید. این خطوط عبارتند از (قبل از ویرایش):
 +
 ----
 $databases['default']['default'] = array (
@@ -77,71 +56,49 @@ $databases['default']['default'] = array (
   'password' => 'live_site_database_password',
 ----
 
-. Check whether your _settings.php_ file has the following setting; if yes, then
-you will need to edit this to point to your development site URL instead of your
-production site URL:
+. بررسی کنید آیا فایل _settings.php_ دارای تنظیمات پیش رو باشد؛ در صورت مثبت بودن، نیاز دارید که نشانی آن را به سایت توسعه و نه سایت اصلی تغییر دهید:
 +
 ----
 $settings['trusted_host_patterns']
 ----
 
-. Import the database dump file you created, into the development site's
-database. Try one of the following methods:
+. فایل خروجی پایگاه‌داده را درون پایگاه‌داده سایت توسعه وارد کنید. یکی از روش‌های زیر را امتحان کنید:
 +
-  * If you are using MySQL as your database, and your live site's server has
-  PHPMyAdmin installed (it is available from many hosting control panels),
-  use the _Import_ tab in PHPMyAdmin. You may find that you have to restart the
-  import a few times, if your database was large.
+  * اگر از MySQL به عنوان پایگاه‌داده استفاده می‌کنید، و سرور سایت اصلی شما دارای phpMyAdmin (از طرف بسیاری کنترل پنل‌های سرویس میزبانی قابل دسترس است) است، از زبانه _Import_ موجود در phpMyAdmin برای ورودی استفاده کنید. در صورت بزرگ بودن حجم فایل، شاید نیاز باشد چندین بار اینکار را انجام دهید.
 
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password;
-  if you made a gzip-compressed backup file, you will also need to uncompress it
-  first):
+  * اگر از MySQL به عنوان پایگاه‌داده استفاده می‌کنید و به خط-فرمان نیز دسترسی دارید، از دستور زیر (با جایگزین کردن نام پایگاه‌داده، نام کاربری و گذرواژه) استفاده کنید؛ اگر یک فایل پشتیبان فشرده ایجاد کرده باشید، ابتدا نیاز دارید که آن را از حالت فشرده خارج سازید.
 +
 ----
 mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
 ----
 +
-  * If you prefer to use Drush, use this command:
+  * اگر قصد استفاده از Drush را دارید، از دستور زیر استفاده کنید:
 +
 ----
 drush sql-query --file=BACKUPFILE.sql
 ----
 
-. If your development and live sites need to have different configuration, then
-you have to use configuration overrides in the _settings.php_ file. The
-_$config_ variable will help you maintain override values separately from the
-standard configuration data. For instance, you might want the site name to be
-"Anytown Farmers Market" on the production site, but "Development Site for
-Anytown Farmers Market" on the development site. To do that, you could have the
-production value in the site configuration (in the database), and on the
-development site, in the settings.php file, you would need to have:
+. اگر سایت توسعه و اصلی از پیکربندی‌های گوناگونی استفاده می‌کنند پس نیاز است که تغییرات آن را در فایل _settings.php_ انجام دهید. متغیر _$config_ به شما اجازه می‌دهد که برای محیط‌های مختلف توسعه، پارامترهای جداگانه در نظر بگیرید. برای نمونه، ممکن است بخواهید نام سایت اصلی "فروشگاه محصولات کشاورزی" و سایت توسعه "فروشگاه محصولات کشاورزی (در حال توسعه)" باشد. به این منظور، شما می‌توانید مقدار اصلی را در پیکربندی سایت (پایگاه‌داده) و در سایت توسعه از فایل settings.php به شکل زیر استفاده کنید:
 +
 ----
 $config['system.site']['name'] = "Development Site for Anytown Farmers Market";
 ----
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-* Verify that the development site is working correctly.
+* اطمینان یابید که سایت توسعه به خوبی کار می‌کند.
 
-* Log in to the development site as an administrator, and clear the cache. See
-<<prevent-cache-clear>>.
+* به عنوان یک مدیر در سایت توسعه وارد شده و حافظه موقت را پاکسازی کنید. <<prevent-cache-clear>> را مشاهده کنید.
 
 * <<extend-deploy>>
 
 // ==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
-* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ community documentation page "Create a Test Site"]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site["پشتیبان‌گیری از یک سایت" صفحه مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site["ایجاد یک سایت آزمایشی" صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]، https://www.drupal.org/u/eojthebrave[Joe Shindelar] در https://drupalize.me[Drupalize.Me] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].
