@@ -1,9 +1,8 @@
 [[extend-theme-find]]
-
-=== Finding Themes
+=== یافتن قالب‌ها
 
 [role="summary"]
-How to use filters to search themes and evaluate them.
+چگونگی استفاده از فیلترها به منظور یافتن قالب‌ها.
 
 (((Theme,finding)))
 (((Theme,evaluating)))
@@ -11,71 +10,62 @@ How to use filters to search themes and evaluate them.
 (((Contributed theme,evaluating)))
 (((Drupal.org website,finding and evaluating themes on)))
 
+==== هدف
 
-==== Goal
+یافتن و ارزیابی قالب‌ها در _Drupal.org_.
 
-Find and evaluate themes on _Drupal.org_.
-
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<understanding-drupal>>
 * <<understanding-themes>>
 
 //==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-. Go to https://www.drupal.org, and navigate to _Download & Extend > Themes_
-(https://www.drupal.org/project/project_theme).
+. به https://www.drupal.org رفته و به مسیر _Download & Extend > Themes_ (https://www.drupal.org/project/project_theme) پیمایش کنید.
 
-. Filter your search using the categories on the theme search page.
-For example, you might use these filters:
+. جستجوی خود را با استفاده از طبقه‌بندی‌های موجود در صفحه جستجو فیلتر کنید. برای نمونه، ممکن است از این فیلترها استفاده کنید:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Maintenance status |How actively is the theme maintained? If a theme is actively maintained, you can expect bug fixes and improvements on a regular basis. | Actively maintained
-|Development status |What kind of development is the theme undergoing? If you select _Under active development_, you can expect new features to be added, and some aspects may still change. If you select _Maintenance fixes only_, it means that the theme is considered complete. |Any
-|Core compatibility |The Drupal version the theme is compatible with.|8.x
-|Status |_Sandbox projects_ are experimental projects. _Full projects_ have already gone through an approval process, but they can still be in development.|Full projects
-|Search Themes |Search by search term in the theme's description.|-
-|Sort by |Order your search results by criteria like _Most installed_ (popular themes that many sites use) or _Last release_ (date of latest version released). |Most installed
+| نام فیلد | توضیحات | مقدار نمونه
+| وضعیت نگهداری | قالب با چه شرایطی مدیریت می‌شود؟ | Actively maintained
+| وضعیت توسعه | چه نوع توسعه‌ای برای قالب در نظر گرفته شده است؟| Any
+| سازگاری با هسته | نسخه هسته که قالب با آن سازگار است.| 8.x
+| وضعیت | وضعیت پروژه: پروژه‌های _sandbox_ حالت آزمایشی دارند.  پروژه‌های _full_ فرآیند بازبینی را رد کرده اما ممکن است در حال توسعه باشند. | Full projects
+| جستجوی قالب‌ها | به جستجوی _Mayo_ بپردازید، قالبی که در ادامه آن را توضیح می‌دهیم. اگر قصد جستجوی قالب خاصی را ندارید، می‌توانید آن را خالی بگذارید. | Mayo
+| مرتب‌سازی | ترتیب نمایش نتایج جستجو مانند _بیشترین نصب‌شده‌ها_ (قالب‌های محبوب که اکثر سایت‌ها استفاده می‌کنند) یا _آخرین انتشار_ (تاریخ آخرین نسخه انتشار). | Most Installed
+
 |================================
 +
 --
 // Theme search box on https://www.drupal.org/project/project_theme.
-image:images/extend-theme-find_theme_finder.png["Filters on the theme search page on _Drupal.org_"]
+image:images/extend-theme-find_theme_finder.png["فیلترهای صفحه جستجوی قالب در _Drupal.org_"]
 --
 
-. Click _Search_. Search results will appear.
+روی _جستجو_ کلیک کنید. نتایج جستجو نمایش می‌یابد.
 +
 --
 // Search results on https://www.drupal.org/project/project_theme.
-image:images/extend-theme-find_search_results.png["The search results page on _Drupal.org_"]
+image:images/extend-theme-find_search_results.png["صفحه نمایش جستجو در _Drupal.org_"]
 --
 
-. To further evaluate a theme, click its title in the list of search results
-to visit its project page.
+. برای ارزیابی بیشتر یک قالب، روی عنوان آن از صفحه نتایج جستجو کلیک کرده تا به صفحه پروژه آن هدایت شوید.
 
-Some aspects to pay attention to while evaluating themes:
+برخی جنبه‌های قابل توجه هنگام ارزیابی قالب‌ها:
 
-* Introduction: The description of the theme on its project page should be clear
-and useful. A screenshot of the theme helps your evaluation as well.
+* مقدمه: توضیح قالب در صفحه پروژه خود باید واضح و کاربردی باشد. همچنین تصویر قالب به ارزیابی بهتر شما کمک می‌کند.
 
-* Downloads: The theme should be available for your version of the core
-software. Pay attention to the color-coding: Themes marked green are
-recommended to be used on live sites, the ones marked yellow should be
-carefully evaluated before use, and the ones marked red are only
-recommended for testing.
+* دانلودها: قالب باید برای نسخه مورد نظر شما از دروپال موجود باشد. به کدگذاری-رنگی توجه کنید: قالب‌های سبز رنگ برای استفاده در سایت‌های نهایی توصیه می‌شوند، آن‌هایی که زرد هستند قبل از استفاده باید مورد ارزیابی قرار بگیرند و آن‌هایی که قرمز هستند فقط باید مورد آزمون باشند.
 
-* Project Information: Check the theme's maintenance and development status, and
-how frequently it's downloaded and installed.
+* اطلاعات پروژه: وضعیت نگهداری و توسعه قالب را بررسی کنید، همچنین ببینید قالب چند بار دانلود و نصب شده است.
 
-* Issues: See if there are any open issues or potential problems with the theme.
+* مشکلات: ببینید آیا هیچ issue باز یا مشکلات احتمالی با این قالب وجود دارد یا خیر.
 
-* Resources: Check if the theme has documentation.
+* منابع: بررسی کنید آیا قالب سایر مستندات می‌شود یا خیر.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید.
 
 * <<extend-theme-install>>
 
@@ -83,7 +73,6 @@ how frequently it's downloaded and installed.
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos].
+نوشته شده توسط https://www.drupal.org/u/dianalakatos[Diána Lakatos].
