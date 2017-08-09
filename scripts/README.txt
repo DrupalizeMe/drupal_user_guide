@@ -9,6 +9,20 @@ The scripts were derived from the build scripts in:
   https://www.drupal.org/project/asciidoc_display
 See that project's README.txt file for more information.
 
+SOFTWARE
+
+To run the scripts here, you will need the following software:
+- AsciiDoc (has been tested with version 8.6.9)
+- DocBook XSL and xmlto (has been tested with xmlto version 0.0.28)
+- FOP (version 2.1 or later)
+- Calibre
+
+On Linux, you can try one of the following commands to install the packages:
+
+apt-get install asciidoc docbook fop calibre
+yum install asciidoc docbook fop calibre
+
+
 LANGUAGES
 
 A note on languages and configuration files: Each language has a file
@@ -22,11 +36,11 @@ Also, to build output you need the language to be in the languages.txt file.
 FONTS
 
 In order to build PDF files, you need to have several fonts installed:
- - Noto fonts, including Arabic https://www.google.com/get/noto/
- - GNU Unifont http://www.unifoundry.com/unifont.html
- - FreeFarsi https://fontlibrary.org/en/font/freefarsi
+ - Noto fonts -- https://www.google.com/get/noto/
+ - GNU Unifont -- http://www.unifoundry.com/unifont.html
+ - FreeFarsi -- https://fontlibrary.org/en/font/freefarsi
 
-On Linux, try one of the following:
+On Linux, try one of the following to install them:
   apt-get install fonts-noto-hinted unifont fonts-freefarsi
   yum install fonts-noto-hinted unifont fonts-freefarsi
 Use the links above for other operating systems. You can see which fonts
@@ -35,8 +49,3 @@ are installed on Linux by using the command:
 
 When adding a new language, you may need to adjust the mkebooks.sh script so
 that an appropriate font is used for the new language.
-
-FOP VERSION
-
-The current scripts for making ebooks depend on having FOP version 2.1 or
-later installed.
