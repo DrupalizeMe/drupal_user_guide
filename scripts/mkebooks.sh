@@ -44,10 +44,10 @@ do
       xmlto fo -m pdf-farsi.xsl guide.docbook
 
   elif [ "$lang" = "zh-hans" ]; then
-      xmlto fo -m pdf-unifont.xsl guide.docbook
+      xmlto fo -m pdf-cjk.xsl guide.docbook
 
   elif [ "$lang" = "ja" ]; then
-      xmlto fo -m pdf-unifont.xsl guide.docbook
+      xmlto fo -m pdf-cjk.xsl guide.docbook
 
   else
       xmlto fo -m pdf.xsl guide.docbook

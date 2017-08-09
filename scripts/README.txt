@@ -39,10 +39,11 @@ In order to build PDF files, you need to have several fonts installed:
  - Noto fonts -- https://www.google.com/get/noto/
  - GNU Unifont -- http://www.unifoundry.com/unifont.html
  - FreeFarsi -- https://fontlibrary.org/en/font/freefarsi
+ - BabelStone Han -- http://www.babelstone.co.uk/Fonts/Han.html
 
 On Linux, try one of the following to install them:
-  apt-get install fonts-noto-hinted unifont fonts-freefarsi
-  yum install fonts-noto-hinted unifont fonts-freefarsi
+  apt-get install fonts-noto-hinted unifont fonts-freefarsi fonts-babelstone-han
+  yum install fonts-noto-hinted unifont fonts-freefarsi fonts-babelstone-han
 Use the links above for other operating systems. You can see which fonts
 are installed on Linux by using the command:
   fc-list
