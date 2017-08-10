@@ -47,7 +47,7 @@ do
       xmlto fo -m pdf-cjk.xsl guide.docbook
 
   elif [ "$lang" = "ja" ]; then
-      xmlto fo -m pdf-cjk.xsl guide.docbook
+      xmlto fo -m pdf-takao.xsl guide.docbook
 
   else
       xmlto fo -m pdf.xsl guide.docbook
