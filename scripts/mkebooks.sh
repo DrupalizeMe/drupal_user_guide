@@ -67,6 +67,7 @@ do
   cp guide.docbook guide-simple.docbook
   xmlto epub -m mobi.xsl guide-simple.docbook
 
+  # Add images to the epub formats, which are actually zip files.
   mkdir -p OEBPS
   mkdir -p OEBPS/images
   cp images/* OEBPS/images
@@ -74,9 +75,11 @@ do
   zip guide-simple.epub OEBPS/images/*
 
   # Run the calibre processor to convert from ePub to Mobi, but on a modified
-  # ePub format. The syntax is:
+  # ePub format. Also convert to azw3 for newer Kindles and RTL languages.
+  # The syntax is:
   #   ebook-convert [input epub file] [output file] [options]
   ebook-convert guide-simple.epub guide.mobi
+  ebook-convert guide-simple.epub guide.azw3
 
   # Go back to the scripts directory to process the next language.
   cd ../../../scripts
@@ -84,6 +87,7 @@ do
   # Copy final output to ebooks directory.
   cp ../output/ebooks/$lang/guide.epub ../ebooks/guide-$lang.epub
   cp ../output/ebooks/$lang/guide.mobi ../ebooks/guide-$lang.mobi
+  cp ../output/ebooks/$lang/guide.azw3 ../ebooks/guide-$lang.azw3
   cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
 
 done
