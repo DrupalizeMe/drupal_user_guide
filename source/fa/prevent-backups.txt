@@ -1,88 +1,52 @@
 [[prevent-backups]]
 
-=== Concept: Data Backups
+=== مفهوم: پشتیبان‌گیری از داده
 
 [role="summary"]
-Overview of data backups and what should be backed up on a site.
+مروری بر پشتیبان‌گیری از داده و اینکه چه چیزهایی باید شامل آن شود.
 
 (((Backup,overview)))
 (((Content,backing up)))
 (((File,backing up)))
 (((Database,backing up)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<understanding-drupal>>
 * <<install-prepare>>
 
-==== What is a site backup?
+==== پشتیبان‌گیری از سایت چیست؟
 
-If something happens to the computer (or computers) that your site and its
-database are running on, or if you lose access to this computer, you could lose
-some or all of your site's data. You could also lose data if your site is
-hacked, or if someone with administrative privileges on your site deletes or
-alters data mistakenly from the administrative interface. In order to prevent
-scenarios like this from being permanent, expensive data losses, it is important
-to make regular backups of your site's data, and to store them in a location
-that is separate from the computer where your site is running.
+اگر اتفاقی برای سرور، که سایت و داده‌هایش روی آن قرار دارد، بیفتد یا اگر شما دسترسی خود به سرور را از دست دهید، بخش یا تمامی از داده‌های سایت شما از بین می‌رود. همچنین ممکن است در صورت نفوذ به سایت یا بی احتیاطی یکی از کاربران مدیریتی در نگهداری از داده‌ها، تمام داده‌های خود را از دست بدهید. به منظور پیشگیری از سناریوهایی احتمالی، که منجر به از دست رفتن داده می‌شود، پشتیبان‌گیری مداوم از سایت کار بسیار مهمی است به طوری که این فایل‌های پشتیبان در مکان دیگری بجز سرور قرار بگیرند.
 
-The frequency with which you should make data backups, and how many backups you
-should keep, depends on how frequently your site is changing. If you have a very
-large amount of content on your site that is being added to or updated many
-times per day, you would want to make more frequent backups than you would for a
-site that changes rarely. Also consider that some time could pass between when a
-data problem occurs and when you notice that it is a problem, so storing a
-sequence of backups (so that you can go back to the last known good data and
-retrieve that), rather than overwriting a single backup repeatedly, is a
-good practice.
+تعداد دفعات پشتیبان‌گیری از سایت و چگونگی انجام آن، بستگی به شرایط تغییر داده در سایت شما دارد. اگر داده سایت شما به صورت روزانه و چندین مرتبه تغییر می‌کند بهتر است که عملیات پشتیبان‌گیری نسبت به حالتی که این داده‌ها کمتر تغییر می‌کنند متفاوت باشد. به یاد داشته باشید که زمان بین بروز مشکل در سایت و آگاهی شما از آن مهم است، پس بجای اینکه یک فایل پشتیبان را هر دفعه بازنویسی کنید، بهتر است که چندین فایل پشتیبان در فاصله‌های زمانی گوناگون وجود داشته باشند تا عملیات بازیابی اطلاعات با آسانی بیشتر انجام شود.
 
-Another consideration is that whatever format you store your backups in, it is a
-good idea to verify that you can actually retrieve lost data from your
-backups. You might want to test several possible data loss scenarios, and make
-sure that your data can be restored to the site in all cases.
+همچنین قالبی که از آن برای نگهداری فایل‌های پشتیبان استفاده می‌کنید را به یاد داشته باشید، چرا که تنها از آن می‌توانید در زمان بازیابی بهره ببرید. بهتر است چندین سناریو مختلف از بین رفتن داده را آزمایش کنید تا اطمینان یابید در زمان بروز حادثه، عملیات بازیابی به درستی انجام می‌شود.
 
-In order to make a complete backup of your site, you will need to make copies of
-the following:
+به منظور ایجاد پشتیبان‌گیری کامل از سایت خود، نیاز است فایل‌های زیر را رونوشت بگیرید:
 
-* The data in the _sites_ directory, including the _sites/default/settings.php_
-file.
+* داده‌های موجود در دایرکتوری _sites_ از جمله فایل _sites/default/settings.php_.
 
-* The data in your site's database. A few tables can be truncated, such as those
-storing the temporary data cache and user login session information, but it is
-always safe to back up the entire database.
+* داده‌های موجود در پایگاه‌داده سایت. برخی از جدول‌ها می‌توانند پاکسازی (truncate) شوند از جمله آن‌هایی که شامل حافظه موقت یا اطلاعات ورودی کاربران هستند، اما پشتیبان‌گیری کامل از تمام پایگاه‌داده راهی ایمن‌تر است.
 
-* Uploaded files, such as images and other attachments. The location of these
-files is configurable; the standard location is the _sites/default/files_
-directory under your site root. In the _Manage_ administrative menu, navigate
-to _Configuration_ > _Media_ > _File system_ (_admin/config/media/file-system_)
-to check the file upload locations; to change them, you'll need to edit your
-_settings.php_ file.
+* فایل‌های آپلود شده، از جمله تصاویر و فایل‌های ضمیمه. مکان این فایل‌ها قابل پیکربندی است؛ مکان استاندارد این فایل‌ها دایرکتوری _sites/default/files_ است. در منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Media_ > _File system_ (_admin/config/media/file-system_) بروید تا مکان آپلود فایل‌ها را تنظیم کنید. برای تغییر آن‌ها، نیاز است فایل _settings.php_ را ویرایش کنید.
 
-* Modules, themes and any other software files you have customized. You can find
-customized modules and themes in the _modules_ and _themes_ directories
-respectively. Some people prefer to back up all software files, including core
-files and contributed modules and themes (which you could recover by downloading
-them again from the source), rather than trying to pick out specific files that
-definitely need to be backed up.
+* افزونه‌ها، قالب‌ها و تمام فایل‌های دروپال که سفارشی‌سازی کرده‌اید. می‌توانید افزونه‌ها و قالب‌های سفارشی‌سازی شده را در دایرکتوری‌های _modules_ و _themes_ پیدا کنید. برخی افراد ترجیح می‌دهند تمام فایل‌های دروپال را بجای بخشی از فایل‌های مشخص پشتیبان‌گیری کنند، از جمله هسته و تمام افزونه‌ها و قالب‌های خارجی (که در زمان بازیابی می‌توانید دوباره آن‌ها را دانلود کنید).
 
-You can perform a test to confirm whether your backup has been done right by
-making a development copy of the site (see <<install-dev-making>>).
+به منظور اطمینان از صحت عملیات پشتیبان‌گیری می‌توانید یک نسخه از سایت توسعه را با استفاده از آن راه‌اندازی کنید. <<install-dev-making>> را مشاهده کنید.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<security-update-core>>
 * <<install-dev-making>>
 * <<prevent-cache>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site["پشتیبان‌گیری از یک سایت" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
-* The https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module],
-which can be used to set up automatic backups of the database and uploaded
-files.
+* استفاده از https://www.drupal.org/project/backup_migrate[افزونه خارجی Backup and Migrate] به منظور پیاده‌سازی پشتیبان‌گیری خودکار از فایل‌های سایت، پایگاه‌داده و کاربران.
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
