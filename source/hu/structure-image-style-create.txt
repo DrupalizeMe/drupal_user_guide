@@ -1,106 +1,106 @@
 [[structure-image-style-create]]
 
-=== Setting Up an Image Style
+=== Képstílus létrehozása
 
 [role="summary"]
-How to add an image style to reformat an image.
+Hogyan vehetünk fel új formátumokat a képek automatikus módosításához.
 
-(((Image style,creating)))
-(((Style,image)))
-(((Effect,image)))
-(((Image,resizing)))
+(((Képstílus,létrehozás)))
+(((Stílus,kép)))
+(((Hatás,kép)))
+(((Kép,méretezés)))
 
-==== Goal
+==== Célkitűzés
 
-Add an image style and use it to display images on Vendor pages.
+Ebben a témakörben megismerjük, hogyan lehet a látogatóknak kiszolgált képek automatikus formázását a Drupalra bízni. A cél, hogy az _Árusok_ adatlapjain a bemutatkozó fotóik egységesen jelenjenek meg, ne mindig ugyanúgy, ahogy fel lettek töltve.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<structure-fields>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-* Vendor and Recipe content types must exist. See <<structure-content-type>>.
+* A _Recept_ és _Árus_ tartalomtípusoknak már létezniük kell. Ehhez lásd a <<structure-content-type>> témakört.
 
-* Main image fields must exist for both content types. See <<structure-fields>>.
+* Mind a két tartalomtípushoz hozzá kell, legyen rendelve a _Fő kép_ nevű mező. A mezőkről bővebben a <<structure-fields>> témakörben van szó.
 
-* Content items must exist for both content types. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+* Legyenek már beküldve tartalmak mindkét típusba. Lásd:
+<<structure-content-type>>, <<structure-fields>> és <<content-create>> témakörök.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Média_ > _Képstílusok_ (vagy címsorba gépelve: _admin/config/media/image-styles_) oldalra.
 
-. Click _Add image style_.
+. Kattintsunk a _Képstílus hozzáadása_ gombra.
 
-. Enter the name _Extra medium (300x200)_
+. Írjuk be az új képstílus nevét: _Közepesen nagy (300x200)_
 
-. Click _Create new style_. The page _Edit style Extra medium (300x200)_ appears.
+. Mentéshez kattintsunk az _Új stílus létrehozása_ gombra. Megjelenik a _Közepesen nagy (300x200) stílus szerkesztése_ című oldal.
 
-. In the _Effect_ table, select _Scale and crop_. Click _Add_.
+. A _Hatás_ táblázatban a legördülő listából válasszuk az _Arányos átméretezés és méretre vágás_ lehetőséget. Kattintsunk a _Hozzáadás_ gombra.
 
-. Fill in the fields as shown below.
+. Töltsünk ki minden mezőt a lent látható módon:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Width | 300
-|Height | 200
+| Mezőnév | Érték
+| Szélesség | 300
+| Magasság | 200
 |================================
 
-. Click _Add effect_. The image style is saved with the chosen effects.
+. Kattintsunk a _Hatás hozzáadása_ gombra. Ezzel sikeresen elmentettük első saját képstílusunkat, ami még csak egy hatásból (arányos átméretezés-kivágás) áll.
 +
 --
 // Image style editing page, with effects added.
-image:images/structure-image-style-create-add-style.png["Add an image style",width="100%"]
+image:images/structure-image-style-create-add-style.png["Egy képstílus hozzáadása",width="100%"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ menüpontot (vagy gépeljük a címsorba: _admin/structure/types_).
 (_admin/structure/types_).
 
-. Click _Manage display_ in the _Operations_ dropdown for the Vendor content type. The _Manage display_ page (_admin/structure/types/manage/vendor/display_) appears.
+. Az _Árus_ tartalomtípus sorának végén a _Műveletek_ oszlopban kattintsunk a lenyíló gomb _Megjelenés beállítása_ lehetőségére. Betöltődik a _Megjelenés beállítása_ oldal (_admin/structure/types/manage/vendor/display_).
 
-. Ensure that the secondary tab _Default_ is selected.
+. Győződjünk meg róla, hogy a másodlagos fülek közül az első, _Alapértelmezett_ (angolul „Default”) van kiválasztva.
 
-. Click the cogwheel next to _Main image_ for the configuration options.
+. A _Fő kép_ mező sorában kattintsunk a fogaskerék ikonra a további beállítási lehetőségek eléréséhez.
 
-. Fill in the fields as shown below.
+. Töltsünk ki minden mezőt a lent látható módon:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Image style | Extra medium (300x200)
-|Link image to | Nothing
+| Mezőnév | Érték
+| Képstílus | Közepesen nagy (300x200)
+| Kép hivatkozása erre | Semmi
 |================================
 +
 --
 // Main image settings area of Vendor content type.
-image:images/structure-image-style-create-manage-display.png["Change field formatter settings of image field"]
+image:images/structure-image-style-create-manage-display.png["Egy kép mező formázójának módosítása"]
 --
 
-. Click _Update_.
+. Kattintsunk a _Frissítés_ gombra.
 
-. Click _Save_. The new image style will be used while displaying Vendor content.
+. Kattintsunk a _Mentés_ gombra. Innentől már az új képstílus lesz használatban, amikor egy _Árus_ típusú tartalmat megnyitunk.
 
-. Open a Vendor content item and verify that it now shows up with the scaled-down image. See <<content-edit>> for information on how to locate an existing content item.
+. Nyissuk meg az egyik, korábban már felvitt ilyen típusú tartalmunkat, és ellenőrizzük, hogy már valóban ilyen méretben jelenik meg a bemutatkozó fotó. Ha még segítség szükséges egy tartalomegység megtalálásához, akkor a <<content-edit>> témakör hasznos lehet.
 
-. Repeat steps 8-15 for the Recipe content type.
+. Végezetül ismételjük meg a folyamatot a 8.-tól a 15. lépésig a _Recept_ tartalomtípuson is.
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== Kapcsolódó témák
 
 * <<structure-fields>>
 * <<structure-image-styles>>
 * <<structure-image-responsive>>
 
-==== Additional resources
+==== Egyéb források
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+https://www.drupal.org/documentation/modules/image[Working with images in Drupal 7 and 8] (azaz „Munka a képekkel D7-en és D8-on”) című közösségi dokumentáció a Drupal.org-on (angol nyelven).
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle] from https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in Drupal 7 and 8"], copyright 2000-2017 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in Drupal 7 and 8"] (azaz „Munka a képekkel D7-en és D8-on”) című szócikkéből vette át és szerkesztette, melynek szerzői joga 2000-2017 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
