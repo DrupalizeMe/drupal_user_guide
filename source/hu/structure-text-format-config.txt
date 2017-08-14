@@ -1,71 +1,71 @@
 [[structure-text-format-config]]
 
-=== Configuring Text Formats and Editors
+=== Szövegformátumok és -szerkesztők beállítása
 
 [role="summary"]
-How to make a change to a text format and its editor configuration.
+Hogyan változtassuk meg egy szövegformátum működését és a hozzá tartozó gombokat a szerkesztő eszközsorán.
 
-(((Text format,configuring)))
-(((Configuring,text format)))
-(((Editor,configuring)))
-(((Ckeditor text editor,default assignment to text format)))
-(((WYSIWYG (What You See Is What You Get),configuring editor)))
-(((What You See Is What You Get (WYSIWYG),configuring editor)))
-(((Module,Filter)))
-(((Module,Editor)))
-(((Module,CKEditor)))
-(((Filter module,configuring)))
-(((Editor module,configuring)))
-(((CKEditor module,configuring)))
+(((Szövegformátum,beállítás)))
+(((Beállítás,szövegformátum)))
+(((Szövegszerkesztő,beállítás)))
+(((CKeditor szövegszerkesztő,szövegformátumhoz rendelés alapértelmezés szerint)))
+(((WYSIWYG (Azt kapod, amit látsz),szövegszerkesztő beállítása)))
+(((Azt kapod, amit látsz (WYSIWYG),szövegszerkesztő beállítása)))
+(((Modul,Filter)))
+(((Modul,Editor)))
+(((Modul,CKEditor)))
+(((Filter modul,beállítás)))
+(((Editor modul,beállítás)))
+(((CKEditor modul,konfiguráció)))
 
-==== Goal
+==== Célkitűzés
 
-Add a horizontal rule tag to the _Basic HTML_ text format, and a corresponding button to its editor configuration.
+Az a cél, hogy a vízszintes elválasztó HTML-elemet hozzáadjuk az _Alap HTML_ szövegformátum engedélyezési listájához, majd pedig kitegyük ennek gombját az eszközsorra is.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<structure-text-formats>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-* The core Filter, Editor, and CKEditor modules must be installed. They are installed on your site when you install with the core Standard installation profile.
+* A webhelyen telepítve és engedélyezve kell lenniük az alaprendszer _Filter_, _Editor_ és _CKEditor_ moduljainak. Nem kell félnünk, ez nem a mi dolgunk: a Drupal telepítésekor ez már automatikusan megtörtént.
 
-* The _Basic HTML_ text format must exist. This is created on your site when you install with the core Standard installation profile.
+* Az _Alap HTML_ szövegformátumnak léteznie kell. Nem kell félnünk, ez nem a mi dolgunk: a Drupal telepítésekor ez már automatikusan megtörtént.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Content authoring_ > _Text formats and editors_ (_admin/config/content/formats_). The _Text formats and editors_ page appears.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Tartalom készítése_ > _Szövegformátumok és szerkesztők_ (vagy címsorba gépelve: _admin/config/content/formats_) oldalra. Megjelenik a _Szövegformátumok és szerkesztők_ oldal.
 
-. Click _Configure_ for the _Basic HTML_ text format. The _Basic HTML_ page appears.
+. Az _Alap HTML_ sorában kattintsunk a _Beállítás_ gombra. Megjelenik az _Alap HTML_ oldal.
 
-. Note that _Ckeditor_ is selected in the _Text editor_ field. This allows you to configure the editor's toolbar.
+. Figyeljük meg, hogy a _Szövegszerkesztő_ felirat alatt a _CKEditor_ van kiválasztva. Ez lehetővé teszi számunkra, hogy módosítsuk az eszközsorát.
 
-. Drag the _horizontal rule_ button from _Available buttons_ to _Tools_ in _Active toolbar_. You may need to click the _Show group names_ link to see the _Tools_ group name.
+. Húzzuk a _Vízszintes elválasztó vonal_ (angolul „horizontal rule”) gombot az _Rendelkezésre álló gombok_ területről az _Aktív eszköztár_ szalagra. Ha szükséges, akkor a _Csoportnevek mutatása_ linkre kattintva megjeleníthetjük a gombcsoportok nevét.
 +
 --
 // Button configuration area on text format edit page.
-image:images/structure-text-format-config-editor-config.png["Configuring the editor",width="100%"]
+image:images/structure-text-format-config-editor-config.png["A szövegszerkesztő beállítása",width="100%"]
 --
 
-. Note that you can change the _Filter processing order_.
+. Ne felejtsük el, hogy átrendezhetjük a _Szűrők feldolgozási sorrendjét_ is.
 
-. In the field _Allowed HTML tags_, add `<hr>` to what is already present.
+. A lentebbi _Engedélyezett HTML jelölők_ mezőbe írjuk be a `<hr>` elem kódját, ha még nem lenne ott.
 +
 --
 // Allowed HTML tags area on text format edit page.
-image:images/structure-text-format-config-allowed-html.png["Configuring the HTML tags",width="100%"]
+image:images/structure-text-format-config-allowed-html.png["HTML elemek beállítása",width="100%"]
 --
 
-. Click _Save configuration_. You will be taken back to the _Text formats and editors_ page. A message will be displayed saying that the text format has been updated.
+. Kattintsunk a _Beállítások mentése_ gombra. Ekkor visszajutunk a _Szövegformátumok és szerkesztők_ oldalra. Egy pozitív rendszerüzenet tájékoztat minket az előbbi módosításaink sikeres elmentéséről.
 +
 --
 // Confirmation message after updating text format.
-image:images/structure-text-format-config-summary.png["Confirmation message for text format configuration"]
+image:images/structure-text-format-config-summary.png["Visszajelzés a sikeres módosításról"]
 --
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
-If you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
+Ha nem látjuk azonnal az eredményét a változtatásainknak, akkor szükség lehet a gyorsítótár ürítésére. Lásd <<prevent-cache-clear>>.
 
 // ==== Related concepts
 
@@ -74,4 +74,4 @@ If you do not see the effect of these changes in your site, you might need to cl
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Írta: https://www.drupal.org/u/batigolix[Boris Doesborg]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
