@@ -1,135 +1,103 @@
 [[security-update-core]]
 
-=== Updating the Core Software
+=== بروزرسانی دروپال
 
 [role="summary"]
-How to update the core software using the administrative interface or Drush.
+چگونگی بروزرسانی دروپال با استفاده از رابط مدیریتی یا Drush.
 
 (((Core software,updating)))
 (((Drush tool,using to update the core software)))
 (((Administrative interface,using to update the core software)))
 
-==== Goal
+==== هدف
 
-Update the core software, either through the administrative interface or by
-using Drush.
+بروزرسانی دروپال با استفاده از رابط مدیریتی یا Drush.
+
 
 //==== Prerequisite knowledge
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* اگر قصد استفاده از Drush را دارید، باید آن را نصب کنید. <<install-tools>> را مشاهده کنید.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
-<<install-dev-making>>.
+* اگر سایت شما در دسترس عموم قرار دارد، ابتدا باید این فرآیند را در یک سایت توسعه آزمایش سپس به سایت اصلی منتقل کنید. <<install-dev-making>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. Make a complete backup of your site. Refer to <<prevent-backups>>.
+. یک پشتیبان کامل از سایت خود بگیرید. به <<prevent-backups>> مراجعه کنید.
 
-. Open _settings.php_ (_/sites/default/settings.php_) in any plain text
-editor. Find the line with the _$settings['update_free_access']_ variable. By
-default, it is set to "FALSE" due to security reasons. Change the setting to
-"TRUE":
+. فایل _settings.php_ (_/sites/default/settings.php_) را در یک ویرایشگر متن ساده باز کنید. خط مربوط به متغیر _$settings['update_free_access']_ را پیدا کنید. به صورت پیشفرض مقدار "FALSE" را دارد، بنا بر دلایل امنیتی. تنظیم آن را به "TRUE" تغییر دهید:
 +
 ----
 $settings['update_free_access'] = TRUE;
 ----
 
-. Disable any caching technique (memcache, varnish, and so on) your application
-might be using.
+. هر گونه تکنیک caching از جمله memcache یا varnish که نرم‌افزار از آن استفاده می‌کند را غیرفعال کنید.
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. سایت را در حالت نگهداری قرار دهید. <<extend-maintenance>> را مشاهده کنید.
 
-. If you are using Composer to manage dependencies, or using Git, skip the next
-six steps, and instead see <<install-composer>> for instructions on downloading
-updated files. Continue with the _update.php_ step.
+. اگر برای مدیریت وابستگی‌ها از Composer یا Git استفاده می‌کنید، شش گام بعدی را نادیده گرفته و در عوض <<install-composer>> را به منظور دانلود فایل‌های بروزرسانی مشاهده کنید. با گام _update.php_ ادامه دهید.
 
-. Download the tar.gz or zip file archive for the latest version of Drupal
-8.x core from https://www.drupal.org/project/drupal[_Drupal.org_ Drupal Core
-Downloads]. See <<install-prepare>> for more details on how to find the latest
-version.
+. فایل بایگانی tar.gz یا zip مربوط به آخرین نسخه از انتشار دروپال ۸ را از صفحه https://www.drupal.org/project/drupal[دانلود دروپال] دریافت کنید. به منظور چگونگی یافتن آخرین نسخه <<install-prepare>> را مشاهده کنید.
 
-. Upload the archive file to your web hosting server.
+. فایل بایگانی را در سرور میزبانی سایت خود آپلود کنید.
 
-. Extract the archive file to a temporary directory on your server (should be
-outside the directory where the site is hosted). Your hosting control panel's
-file manager should provide a way to extract the files. Or, if you have
-terminal access to your hosting server (running Linux), you can use a command
-like:
+. محتویات فایل بایگانی را در یک دایرکتوری موقت از سرور قرار دهید (باید خارج از مسیر اصلی سایت باشد). مدیر فایل سرویس میزبانی شما باید روشی برای اینکار داشته باشد. یا، اگر به ترمینال سرور (لینوکس) خود دسترسی دارید می‌توانید از دستور زیر استفاده کنید:
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
 ----
 
-. You can also use Drush to download the archive and extract it in one step, by
-navigating to the temporary directory on the server and entering this command:
+. همچنین می‌توانید با استفاده از Drush عملیات دانلود و استخراج فایل‌ها را با رفتن به یک دایرکتوری موقت از سرور به صورت زیر انجام دهید:
 +
 ----
 drush dl drupal
 ----
 
-. In your site hosting directory, delete the _core_ and _vendor_ directories,
-and all files that are not in a subdirectory, including _.htaccess_,
-_composer.json_, and _autoload.php_. Don't delete custom and customized files
-because you may end up losing the custom functionality stored in them.
+. در دایکتوری میزبانی سایت خود، دایرکتوری‌های _core_ و _vendor_ همراه با تمام فایل‌هایی که درون یک دایرکتوری فرزند نیستند را پاک کنید از جمله _.htaccess_، _composer.json_ و _autoload.php_. فایل‌های سفارشی شده را پاک نکنید چرا که ممکن است تغییرات اعمال شده در آن‌ها را از دست بدهید.
 
-. Copy the _core_ and _vendor_ directories and the non-custom/non-customized
-files that you deleted in the preceding step from the temporary directory to
-your site directory.
+. دایرکتوری‌های _core_ و _vendor_ به همراه تمام فایل‌هایی که از گام قبلی پاک کردید را از دایرکتوری موقت به دایرکتوری سایت خود انتقال دهید.
 
-. Run the _update.php_ script using either of the following:
+. با یکی از روش‌های زیر اسکریپت _update.php_ را اجرا کنید:
 +
-  * Visit _http://www.example.com/update.php_ in your browser (where
-  _www.example.com_ is your site's URL). Click _Continue_ in the first screen
-  to run the updates and successfully complete the script.
-  * Run the following Drush command: `drush updb`
+  * به نشانی _http://www.example.com/update.php_ در مرورگر خود بروید (به صورتی که _www.example.com_ نشانی سایت شما است). روی _ادامه_ در اولین صفحه کلیک کنید تا عملیات بروزرسانی انجام شود.
+  * دستور `drush updb` را از Drush اجرا کنید.
 
-. If you get any error or warning, re-run the _update.php_ script
-again till all the updates have been completed successfully.
+. اگر خطا یا هشداری دریافت کردید، اسکریپت _update.php_ را مجدد اجرا کنید تا تمام بروزرسانی‌ها اعمال شوند.
 
-. Open _settings.php_ (_/sites/default/settings.php_) in a text editor. Find the
-line with the _$settings['update_free_access']_ variable and update it to
-"FALSE":
+. فایل _settings.php_ (_/sites/default/settings.php_) را در یک ویرایشگر متن ساده باز کنید. خط مربوط به متغیر _$settings['update_free_access']_ را پیدا کنید. تنظیم آن را به "FALSE" تغییر دهید:
 +
 ----
 $settings['update_free_access'] = FALSE;
 ----
 
-. Click _Administration pages_ to return to the administration section of your
-site.
+. روی _صفحات مدیریتی_ کلیک کنید تا به قسمت مدیریتی سایت خود بازگردید.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. سایت را از حالت نگهداری خارج کنید. <<extend-maintenance>> را مشاهده کنید.
 
-. Clear the cache. See <<prevent-cache-clear>>.
+. حافظه موقت را پاکسازی کنید. <<prevent-cache-clear>> را مشاهده کنید.
 
-. Re-enable any caching technique you disabled at Step 3.
+. هر گونه تکنیک caching که در گام ۳ غیرفعال کرده‌اید را مجدد فعال کنید.
 
-. You should have the updated version running. You can verify the current
-version of your software by checking the _Status report_ (see
-<<prevent-status>>).
+. اکنون سایت شامل نسخه بروزرسانی شده است و می‌توانید اطلاعات مربوط به آن را از صفحه _گزارش وضعیت_ بازبینی کنید (<<prevent-status>> را مشاهده کنید).
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 * <<install-tools>>
 * <<install-dev-making>>
 * <<prevent-backups>>
 
-==== Related concepts
+==== موضوعات مرتبط
 
 <<prevent-status>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/project/drupal["Drupal Core Downloads" page on _Drupal.org_]
-* https://www.drupal.org/project/registry_rebuild["Registry Rebuild" page on _Drupal.org_]
-* The file _/core/UPDATE.txt_ within your installation.
+* https://www.drupal.org/project/drupal[صفحه "دانلود دروپال" در _Drupal.org_]
+* https://www.drupal.org/project/registry_rebuild[صفحه "بازسازی رجیستری" در _Drupal.org_]
+* فایل _/core/UPDATE.txt_ از نصب دروپال.
 
 
-*Attributions*
+*مشارکت‌کنندگان*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-https://www.drupal.org/u/batigolix[Boris Doesborgh], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/surendramohan[Surendra Mohan]، https://www.drupal.org/u/batigolix[Boris Doesborgh] and https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].
