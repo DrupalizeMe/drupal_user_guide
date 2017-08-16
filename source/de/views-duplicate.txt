@@ -15,7 +15,7 @@ Create a page listing recipes by duplicating the existing Vendors view.  Modify
 the page so that the recipes are displayed in a grid and can by filtered by
 ingredients.
 
-==== Prerequisite knowledge
+==== Was man wissen sollte
 
 * <<views-concept>>
 * <<views-parts>>
@@ -47,7 +47,7 @@ image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%
 page appears.
 
 . Change the title of the view page to "Recipes" by clicking Vendors in the
-_Title_ section. The _Page: The title of this view_ pop-up appears. Type in
+_Title_ Abschnitt. The _Page: The title of this view_ pop-up appears. Type in
 "Recipes". Click _Apply_.
 +
 --
@@ -56,21 +56,21 @@ image:images/views-duplicate_title.png["Change view title",width="100%"]
 --
 
 . Change from a table to a grid format by clicking _Table_ in the _Format_
-section. The _Page: How should this view be styled_ pop-up appears. Check _Grid_
+Abschnitt. The _Page: How should this view be styled_ pop-up appears. Check _Grid_
 and click _Apply_. The _Page: Style options_ pop-up appears. Retain the default
 values and click _Apply_.
 
 . Retain only the title and image fields for the Recipes view by clicking
-_Content: Body_ in the _Fields_ section. Click _Remove_ in the pop-up that
+_Content: Body_ in the _Fields_ Abschnitt. Click _Remove_ in the pop-up that
 appears.
 
 . Change the content type filter to use the Recipe content type by clicking
-_Content: Type (=Vendor)_ in the _Filter criteria_ section. In the _Configure
+_Content: Type (=Vendor)_ in the _Filter criteria_ Abschnitt. In the _Configure
 filter criterion: Content: Type_ pop-up, check Recipe and uncheck Vendor. Click
 _Apply_.
 
 . Add a further filter that is exposed to visitors by clicking _Add_ in the
-_Filter criteria_ section. Search for "ingredients" and check "Ingredients
+_Filter criteria_ Abschnitt. Search for "ingredients" and check "Ingredients
 (field_ingredients)". Click _Add and configure filter criteria_.
 
 . The appearing pop-up offers extra settings on vocabulary and selection
@@ -91,7 +91,7 @@ image:images/views-duplicate_expose.png["Expose filter"]
 --
 
 . Change the _Path_ label field to "Recipes" by clicking "/vendors" in the _Page
-settings_ section. In the pop-up that appears, enter the path "recipes" and
+settings_ Abschnitt. In the pop-up that appears, enter the path "recipes" and
 click _Apply_.
 +
 Note that when editing a view, you enter paths without the leading "/", unlike
@@ -99,12 +99,12 @@ on other administrative pages (such as when providing a path to a content item
 page).
 
 . Change the menu link title by clicking "Normal: Vendors" in the _Page
-settings_ section. In the pop-up that appears, change the title to "Recipes" and
+settings_ Abschnitt. In the pop-up that appears, change the title to "Recipes" and
 click _Apply_.
 
 . In order to use Ajax (see <<glossary-ajax,Ajax entry in the Glossary>>) to make filtering and paging
-faster for users, click _Advanced_ to expand the section for more options. In
-the _Other_ section, change _Use AJAX: No_ to "Yes" by clicking _No_ and
+faster for users, click _Advanced_ to expand the Abschnitt for more options. In
+the _Other_ Abschnitt, change _Use AJAX: No_ to "Yes" by clicking _No_ and
 checking _Use AJAX_ in the pop-up that appears. Click _Apply_.
 
 . Click _Save_ to save the view.
