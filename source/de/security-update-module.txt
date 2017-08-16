@@ -14,7 +14,7 @@ How to update a contributed module by using the administrative interface and run
 
 Update a contributed module and run the _Database updates_ script.
 
-==== Prerequisite knowledge
+==== Was man wissen sollte
 
 * <<security-concept>>
 * <<security-cron-concept>>
@@ -50,7 +50,7 @@ _INSTALL.txt_, and _UPGRADE.txt_ that come with the module's installation
 file. Also, review the release notes on the project page by clicking the version
 number you're downloading.
 
-// Downloads section of the Admin Toolbar project page on drupal.org.
+// Downloads Abschnitt of the Admin Toolbar project page on drupal.org.
 image:images/security-update-module-release-notes.png["Release notes link"]
 
 You can use the administrative interface or Drush to update a contributed
@@ -84,7 +84,7 @@ _example.com/update.php_ in your browser.
 . Click _Continue_ and apply all updates. The database update scripts will be
 executed.
 
-. Click _Administration pages_ to return to the administration section of your
+. Click _Administration pages_ to return to the administration Abschnitt of your
 site.
 
 . Take your site out of maintenance mode. See <<extend-maintenance>>.

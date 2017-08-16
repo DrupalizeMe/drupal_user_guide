@@ -11,7 +11,7 @@ Overview of modular content and how content in a page can be sourced from other 
 (((View,and modular content)))
 (((Views module,overview)))
 
-==== Prerequisite knowledge
+==== Was man wissen sollte
 
 * <<planning-data-types>>
 * <<planning-layout>>
@@ -27,7 +27,7 @@ field that keeps track of ingredients, then your site could include a composite
 page that would list recipes, and allow visitors to search for a recipe that
 contained some particular ingredient they had bought at the market.
 
-Smaller sections of pages can also be generated as composites. For instance,
+Smaller Abschnitte of pages can also be generated as composites. For instance,
 recipe content items could have a field that keeps track of which vendor
 submitted the recipe (see <<structure-reference-fields>>), with the vendor
 details edited in separate vendor content items. This would allow you to do the
@@ -37,19 +37,19 @@ following on your site:
 about the vendor that submitted the recipe, such as their name and market stall
 number.
 
-* Each vendor page could have a section that lists the recipes they have
+* Each vendor page could have a Abschnitt that lists the recipes they have
 submitted.
 
 The key idea is that each piece of information is only edited in one place.
 When vendor information is updated, all recipe pages that display that vendor
 information are automatically updated; when a recipe is submitted by a vendor,
 it is automatically displayed on the vendor page. The core Views module is the
-usual way to use modular content to create composite pages and page sections;
+usual way to use modular content to create composite pages and page Abschnitte;
 see <<views-concept>> for more information. Also, _view modes_ are useful for
 defining different ways to display each content item; see
 <<structure-view-modes>> for more information.
 
-==== Related topics
+==== Ähnliche Themen
 
 * <<planning-structure>>
 * <<structure-content-type>>
