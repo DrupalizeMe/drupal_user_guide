@@ -1,60 +1,50 @@
 [[views-concept]]
-=== Concept: Uses of Views
+=== مفهوم: کاربردهای Views
 
 [role="summary"]
-Overview of views and the data that can be displayed or output by them.
+مروری بر Views و داده‌هایی که توسط آن می‌تواند نمایش یابد.
 
 (((View,overview)))
 (((Views module,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<planning-modular>>
 * <<planning-data-types>>
 
-==== What is a view?
+==== View چیست؟
 
-A _view_ is a listing of content on a website. The core Views module handles the
-display of views, and the core Views UI module allows you to create and edit
-them in the administrative interface. When you define views, you are interested
-in taking data from your website and displaying it to the user.
+یک _view_ فهرستی از محتوای موجود در یک وبسایت است. افزونه داخلی Views نمایش view را مدیریت می‌کند و افزونه داخلی Views UI امکان ایجاد و ویرایش آن‌ها را از طریق رابط مدیریتی سایت می‌دهد. زمانی که views را تعریف می‌کنید، قصد دارید که بخشی از داده موجود در وبسایت را به کاربر نمایش دهید.
 
-==== What types of data can be displayed using views?
+==== چه نوع داده‌هایی توسط views می‌توانند نمایش یابند؟
 
-You can create views to output practically any content entity that is stored in
-the system. For example, you can create the following lists for the farmers
-market site:
+با استفاده از views می‌توانید هر موجودیت محتوایی که در وبسایت است را به کاربر نمایش دهید. برای نمونه، در وبسایت فروشگاه کشاورزی می‌توانید از فهرست‌های زیر استفاده کنید:
 
-* Lists of vendors
-* Lists of recipes
-* Lists of the most recent content on the site
-* Lists of users on the site
+* فهرستی از فروشندگان
+* فهرستی از مواد اولیه
+* فهرستی از آخرین محصولات موجود در سایت
+* فهرستی از کاربران موجود در سایت
 
-==== What are the ways data can be output using views?
+==== چه شیوه‌هایی برای نمایش داده از طریق views وجود دارد؟
 
-A listing created by a view can be in any of the following forms:
+فهرست ایجاد شده توسط یک view می‌تواند شامل موارد زیر باشد:
 
-* Table with sortable fields
-* Grid layouts
-* Teasers or pictures that link to articles
-* Blocks
-* JSON output
-* RSS feeds
-* Calendars
-* On-screen slideshows
+* جدول با فیلدهای قابل مرتب‌سازی
+* ساختار شبکه‌ای
+* متن‌ها یا تصویرهایی که به مقاله پیوند شده‌اند
+* بلاک‌ها
+* خروجی JSON
+* فید RSS
+* تقویم‌ها
+* اسلایدشوهای درون صفحه
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<views-parts>>
 * <<views-create>>
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/michaellenahan[Michael Lenahan] در https://erdfisch.de[erdfisch] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].

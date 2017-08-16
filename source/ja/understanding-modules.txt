@@ -1,60 +1,57 @@
 [[understanding-modules]]
-=== Concept: Modules
+=== 概念: モジュール
 
 [role="summary"]
-Overview of modules and the functionality they can be used for.
+モジュールの概要と提供する機能。
 
-(((Module,overview)))
-(((Contributed module,overview)))
-(((Core module,overview)))
-(((Field module,overview)))
-(((Field UI module,overview)))
-(((Menu UI module,overview)))
-(((Node module,overview)))
-(((User module,overview)))
-(((Views module,overview)))
-(((Views UI module,overview)))
-(((Module,core)))
-(((Module,contributed)))
-(((Module,Field)))
-(((Module,Field UI)))
-(((Module,Menu UI)))
-(((Module,Node)))
-(((Module,User)))
-(((Module,Views)))
-(((Module,Views UI)))
+(((モジュール,概要)))
+(((拡張モジュール,概要)))
+(((コアモジュール,概要)))
+(((フィールドモジュール,概要)))
+(((フィールドUIモジュール,概要)))
+(((メニューUIモジュール,概要)))
+(((ノードモジュール,概要)))
+(((ユーザーモジュール,概要)))
+(((Viewsモジュール,概要)))
+(((Views UIモジュール,概要)))
+(((モジュール,コア)))
+(((モジュール,拡張)))
+(((モジュール,フィールド)))
+(((モジュール,フィールドUI)))
+(((モジュール,メニューUI)))
+(((モジュール,ノード)))
+(((モジュール,ユーザー)))
+(((モジュール,Views)))
+(((モジュール,Views UI)))
 
-==== Prerequisite knowledge
+==== 前提知識
 
 <<understanding-drupal>>
 
-==== What is a module?
+==== モジュールとは何ですか?
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site
-features and adds functionality. You can turn the features and functionality on
-by _installing_ the module, and you can turn it off by _uninstalling_ the
-module; before uninstalling, you may need to remove data and configuration
-related to the feature or functionality. Each module that is installed adds to
-the time needed to generate pages on your site, so it is a good idea to
-uninstall modules that are not needed.
+モジュールは、サイトの特性を変更したり、機能を追加するPHP、JavaScript、CSSファイルの集合体です。
+モジュールを「インストール」することによって機能を有効にし、「アンインストール」することによって無効にすることができます。
+(ただし、アンインストールする前に関連するデータや設定を削除する必要があるかも知れません。)
+サイトのページ表示時に、インストールされたモジュールそれぞれの処理時間が必要になるため、
+必要でないモジュールはアンインストールした方がよいでしょう。
 
-The core download provides modules for functionality such as:
+最初にダウンロードされるコアモジュールは、以下のような機能を提供します:
 
-* Managing user accounts (the core User module)
+* ユーザー管理(コアユーザーモジュール)
 
-* Managing basic content (the core Node module) and fields (the core Field and
-Field UI modules; there are also core modules providing field types)
+* 基本コンテンツ管理(コアノードモジュール)とフィールド管理
+(コアフィールド、フィールドUIモジュール、フィールドタイプを生成するコアモジュール)
 
-* Managing navigation menus (the core Menu UI module)
+* ナビゲーションメニュー管理(コアメニューUIモジュール)
 
-* Making lists, grids, and blocks from existing content (the core Views and
-Views UI modules)
+* コンテンツのリスト、グリッド、ブロック作成(コアViews、Views UIモジュール)
 
-You can download additional _contributed modules_ from the
-https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], or create your own
-_custom modules_.
+追加の「拡張モジュール」は
+https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads]
+からダウンロードできますし、自分自身の「カスタムモジュール」を作成することも可能です。
 
-==== Related topics
+==== 関連トピック
 
 * <<understanding-themes>>
 * <<understanding-distributions>>
@@ -64,11 +61,13 @@ _custom modules_.
 * <<security-concept>>
 * <<security-update-module>>
 
-==== Additional resources
+==== その他のリソース
 
-https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
+https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide" (in English)]
 
 
-*Attributions*
+*帰属情報*
 
 Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Translated by https://www.drupal.org/u/kabetani[Takashi Kabetani].
+Reviewed by https://www.drupal.org/u/hgoto[Hayato Goto].

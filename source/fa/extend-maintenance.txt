@@ -1,91 +1,69 @@
 [[extend-maintenance]]
-
-=== Enabling and Disabling Maintenance Mode
+=== فعال‌سازی و غیرفعال‌سازی حالت نگهداری
 
 [role="summary"]
-How to enable maintenance mode to set up a "Site under maintenance" message, and how to disable it.
+چگونگی فعال‌سازی حالت نگهداری برای نمایش پیام "سایت در حالت نگهداری قرار دارد" و چگونگی غیرفعال کردن آن.
 
 (((Maintenance mode,overview)))
 (((Maintenance mode,enabling)))
 (((Maintenance mode,disabling)))
 
-==== Goal
+==== هدف
 
-Put your site in maintenance mode to allow users with the right permissions to
-use the site while users without this permission are presented with a message
-that the site is under maintenance.
+قرار دادن سایت در حالت نگهداری به صورتی که کاربران با مجوزهای درست بتوانند از آن استفاده کنند و به سایر کاربران یک پیام مشخص فرستاده شود.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<security-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
-===== Enabling maintenance mode
+==== گام‌ها
+===== فعال‌سازی حالت نگهداری
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
-_Maintenance mode_ page appears.
+. در منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Development_ > _Maintenance mode_ (_admin/config/development/maintenance_) بروید. صفحه _حالت نگهداری_ نمایش می‌یابد.
 
-. Fill in the fields as shown below.
+. فیلدها را با توجه به جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-
-| Put site into maintenance mode | Enable the maintenance mode |
-Checked
-
-| Message to display when in maintenance mode | The information that is shown to
-website visitors when the mode is enabled. Variables such as @site can be used
-in the message |@site is currently under maintenance but should be back
-shortly. Thank you for your patience.
-
+| نام فیلد | توضیحات | مقدار
+| قراردادن سایت در حالت نگهداری | فعال‌سازی حالت نگهداری | انتخاب شده
+| پیام قابل نمایش در حالت نگهداری | اطلاعاتی که در حالت فعال‌بودن نگهداری به بازدیدکنندکان نمایش داده می‌شود. متفیرهایی مانند @site می‌توانند در پیام نمایش داده شوند. | @site هم اکنون در حالت نگهداری است و به زودی به حالت اصلی خود باز می‌گردد. از صبر شما سپاسگزاریم.
 |================================
 
-. Click _Save configuration_.
+روی _ذخیره‌سازی پیکربندی_ کلیک کنید.
 
-. Verify that the site is in maintenance mode by accessing it from another
-browser where you aren't logged in. If you are not able to verify, try clearing
-the cache. See <<prevent-cache-clear>>.
+. با استفاده از یک مرورگر دیگر که در آن وارد سایت نشده‌اید، اطمینان یابید که سایت در حالت نگهداری قرار گرفته است. اگر قادر به انجام اینکار نیستید، حافظه موقت را پاکسازی نمایید. <<prevent-cache-clear>> را مشاهده کنید.
 +
 --
 // Site in maintenance mode.
-image:images/extend-maintenance-mode-enabled.png["Maintenance mode enabled",width="100%"]
+image:images/extend-maintenance-mode-enabled.png["حالت نگهداری فعال شده است",width="100%"]
 --
 
-===== Disabling maintenance mode
+===== غیرفعال‌سازی حالت نگهداری
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
-_Maintenance mode_ page appears.
+. در منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Development_ > _Maintenance mode_ (_admin/config/development/maintenance_) بروید. صفحه _حالت نگهداری_ نمایش می‌یابد.
 
-. Fill in the fields as shown below.
+. فیلدها را با توجه به جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-
-| Put site into maintenance mode | Disable the maintenance mode |
-Unchecked
-
-| Message to display when in maintenance mode | No message required while disabling. You can leave the field blank. |
-
+| نام فیلد | توضیحات | مقدار
+| قراردادن سایت در حالت نگهداری | غیرفعال‌سازی حالت نگهداری | انتخاب نشده
+| پیام قابل نمایش در حالت نگهداری | هنگام غیرفعال‌کردن، نیاز به نمایش هیچ پیامی نیست. می‌توانید آن را خالی بگذارید |
 |================================
 
-. Click _Save configuration_.
+روی _ذخیره‌سازی پیکربندی_ کلیک کنید.
 
-. Verify that the site is no longer in maintenance mode by accessing it from
-another browser where you aren't logged in. If you are not able to verify, try
-clearing the cache. See <<prevent-cache-clear>>.
+. با استفاده از یک مرورگر دیگر که در آن وارد سایت نشده‌اید، اطمینان یابید که سایت از حالت نگهداری خارج شده است. اگر قادر به انجام اینکار نیستید، حافظه موقت را پاکسازی نمایید. <<prevent-cache-clear>> را مشاهده کنید.
 +
 --
 // Site no longer in maintenance mode.
-image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",width="100%"]
+image:images/extend-maintenance-mode-disabled.png["حالت نگهداری غیرفعال شده است",width="100%"]
 --
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 * <<security-update-core>>
 
@@ -97,9 +75,6 @@ image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",wi
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].

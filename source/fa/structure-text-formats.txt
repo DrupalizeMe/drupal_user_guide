@@ -1,9 +1,9 @@
 [[structure-text-formats]]
 
-=== Concept: Text Formats and Editors
+=== مفهوم: قالب‌های متنی و ویرایشگرها
 
 [role="summary"]
-Overview of text formats, filters, editors, and cross-site scripting.
+مروری بر قالب‌های متنی، فیلترها، ویرایشگرها و cross-site scripting.
 
 (((Text format,overview)))
 (((User-entered content,filtering)))
@@ -14,54 +14,30 @@ Overview of text formats, filters, editors, and cross-site scripting.
 
 // ==== Prerequisite knowledge
 
-==== What are text formats and filters?
+==== قالب‌های متنی و فیلترها چیستند؟
 
-_Text formats_ change how HTML tags and other text are processed and displayed
-on your site. Text formats are composed of a series of _filters_, each of which
-transforms text. When users create content, a text format is associated with the
-content, and the full, original text is stored in the database. The content is
-then passed through the filters in the text format before it becomes output on
-the site.
+_قالب‌های متنی_ چگونگی پردازش و نمایش تگ‌های  HTML و سایر متن‌ها را در سایت شما تغییر می‌دهند. قالب‌های متنی از مجموعه _فیلترهایی_ تشکیل شده‌اند، که هر یک به شیوه خود متن را تغییر شکل می‌دهد. زمانی که کاربران به تولید محتوا می‌پردازند، یک قالب متنی به آن محتوا اختصاص یافته است، به صورتی که متن کامل و اصلی در پایگاه‌داده ذخیره می‌گردد. محتوا قبل از اینکه در خروجی سایت نمایش یابد، ابتدا از میان فیلترهای آن قالب متنی عبور می‌کند.
 
-The core Filter module provides text format functionality, and the core Standard
-installation profile sets up _Basic HTML_, _Restricted HTML_, and _Full HTML_
-text formats. Each text format has an associated permission, so that you can
-allow only trusted users to use permissive text formats. This restricts
-untrusted users to text formats like _Basic HTML_, which filters out dangerous
-HTML tags.
+افزونه داخلی Filter قابلیت قالب متنی را فراهم می‌کند، که پروفایل نصب استاندارد دروپال سه قالب متنی _HTML پایه_، _HTML محدود_ و _HTML کامل_ را برپا می‌سازد. هر قالب متنی مجوز مربوط به خود را دارد، به طوری که شما تنها به کاربران قابل اعتماد اجازه استفاده از این قالب‌های متنی را بدهید. این عمل کاربران غیر قابل اعتماد را محدود به استفاده از قالب متنی _HTML پایه_ می‌سازد که تگ‌های خطرناک HTML از آن جدا شده است. 
 
-==== What are the editors associated with text formats?
+==== ویرایشگرهای همراه با قالب‌های متنی کدامند؟
 
-Each text format can be associated with an editor, such as a visual WYSIWYG
-(What You See Is What You Get) HTML editor. The core Text Editor module provides
-the ability to associate editors with text formats, and to configure the editors
-(such as adding and removing buttons from their toolbars). The core CKEditor
-module provides the industry-standard editor known as CKEditor, so that it can
-be used to edit HTML content on your site.
+هر قالب متنی می‌تواند به یک ویرایشگر اختصاص یابد، مانند یک ویرایشگر بصری WYSIWYG یا همان What You See Is What You Get. افزونه داخلی Text Editor قابلیت اختصاص ویرایشگرها را به قالب‌های متنی و پیکربندی آن‌ها، فراهم می‌سازد (مانند افزودن یا حذف دکمه‌ها به نوارابزار ویرایشگر). افزونه داخلی CKEditor، که ویرایشگر معروف CKEditor را برای دروپال فراهم می‌آورد، می‌تواند برای ویرایش محتوای HTML در سایت شما بکار رود.
 
-==== What is cross-site scripting?
+==== cross-site scripting چیست؟
 
-Cross-site scripting (XSS) is a security vulnerability typically found in
-websites. In a site that is not well protected, malicious users can enter script
-into web pages that are viewed by other users (for example, in a comment or in
-the body of a page). A cross-site scripting vulnerability may be used by
-attackers to login as another user. It is important to configure the text
-formats of your website to prevent such abuse.
+cross-site scripting یا XSS یک آسیب‌پذیری امنیتی در وبسایت‌ها است. در سایتی که به خوبی محافظت نشده باشد، کاربران خرابکار می‌توانند اسکریپتی را درون صفحات سایت وارد کنند که توسط سایر کاربران مشاهده می‌شود (برای نمونه، در یک دیدگاه یا بدنه یک صفحه). یک آسیب‌پذیری cross-site scripting می‌تواند توسط مهاجمان به منظور ورود به سیستم مورد استفاده قرار گیرد. بسیار مهم است که قالب‌های متنی سایت خود را به درستی پیکربندی کنید تا از چنین آسیب‌پذیری در امان باشید.
 
-==== Related topics
+==== موضوعات مرتبط
 
 <<security-concept>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/docs/8/core/modules/filter/overview[_Drupal.org_ community
-documentation page "Filter module: text formats that filter user input"]
+* https://www.drupal.org/docs/8/core/modules/filter/overview["افزونه Filter: قالب‌های متنی که ورودی کاربر را فیلتر می‌کنند" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
-* https://en.wikipedia.org/wiki/Cross-site_scripting[Wikipedia page "Cross-site
-scripting"]
+* https://en.wikipedia.org/wiki/Cross-site_scripting["cross-site scripting" در ویکیپدیا]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

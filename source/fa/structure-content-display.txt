@@ -1,108 +1,89 @@
 [[structure-content-display]]
 
-=== Changing Content Display
+=== تغییر نمایش محتوا
 
 [role="summary"]
-How to make content items more presentable.
+چگونگی نمایش بهتر گزینه‌های محتوایی.
 
 (((Content display,changing)))
 (((Content display,managing)))
 (((Content,displaying)))
 
-==== Goal
+==== هدف
 
-Make the content items more readable, accessible, and visibly attractive by
-reordering the fields, hiding labels, and tuning the output of the fields.
+مرتب‌سازی فیلدها، مخفی‌کردن برچسب‌ها و تنظیم خروجی فلیدها به منظور خواناتر کردن، دسترس‌پذیرتر کردن و زیباکردن گزینه‌های محتوایی.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<planning-data-types>>
 * <<structure-view-modes>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The Vendor content type must exist, it must have Main Image and Vendor URL
-fields, and your site must have at least one Vendor content item. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+نوع محتوای فروشنده باید موجود باشد، شامل فیلدهای تصویر و نشانی فروشنده بوده و سایت شما باید حداقل یک گزینه محتوایی از این نوع داشته باشد. <<structure-content-type>>، <<structure-fields>> و <<content-create>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. Find and view a Vendor content item you created in <<structure-fields>>.
-Notice that there are several things that could be done to improve how the page
-looks:
+. یک گزینه محتوایی که در قسمت <<structure-fields>> ایجاد کردید را یافته و مشاهده کنید. مشاهده می‌کنید که با چند تغییر کوچک می‌توان شیوه نمایش بهتری ارائه داد:
 +
-  * The Main Image and Vendor URL fields should not have labels.
-  * The order of the fields should be changed so that the image comes first.
-  * The image should be smaller.
+  * فیلدهای تصویر و نشانی فروشنده نباید دارای برچسب باشند.
+  * ترتیب نمایش فیلدها باید طوری تغییر کند که ابتدا تصویر نمایش داده شود.
+  * تصویر باید اندازه کوچکتری داشته باشد.
 
-. To fix the first two problems, and update some additional settings, in the
-_Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). Then click _Manage display_ in the dropdown button
-for the Vendor content type.
+. برای رفع دو مشکل ابتدایی، و بروزرسانی چند تنظیم اضافی، از منوی مدیریتی _Manage_ به مسیر _Structure_ > _Content types_ (_admin/structure/types_) بروید. سپس روی _مدیریت نمایش_ از منوی کشویی نوع محتوای فروشنده کلیک کنید.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
 // for Vendor content type expanded.
-image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
+image:images/structure-content-display_manage_display.png["مدیریت نمایش",width="100%"]
 --
 
-. Under the _Label_ column, select _Hidden_ for Main image. Do the same
-for Vendor URL.
+. زیر ستون _برچسب_، گزینه _مخفی_ برای تصویر اصلی را انتخاب کنید. همین کار را برای نشانی فروشنده نیز انجام دهید.
 +
 --
 // Manage display page for Vendor content type
 // (admin/structure/types/manage/vendor/display), with labels for Main
 // Image and Vendor URL hidden, and their select lists outlined in red.
-image:images/structure-content-display_main_image_hidden.png["Selecting _main image title_ as _hidden_",width="100%"]
+image:images/structure-content-display_main_image_hidden.png["انتخاب _تصویر اصلی_ به عنوان _مخفی_",width="100%"]
 --
 
-. Click the gear for the Vendor URL field. Clear the _Trim link text length_
-setting.  Links will no longer have a trim length. Check the _Open link in new
-window_ checkbox. Now, when the link is clicked, it will open in a new browser
-window. Click _Update_.
+. روی چرخ‌دنده فیلد نشانی فروشنده کلیک کنید. تنظیم _کوتاه‌سازی طول متن پیوند_ را پاک کنید. پیوندها دیگر به صورت ناقص نمایش داده نمی‌شوند. گزینه _بازکردن پیوند در صفحه جدید_ را انتخاب کنید. اکنون، زمانی که روی پیوند کلیک شود، در یک صفحه جدید از مرورگر باز خواهد شد. روی _بروزرسانی_ کلیک کنید.
 +
 --
 // Vendor URL settings form, with trim length cleared, and open link in
 // new window checked.
-image:images/structure-content-display_trim_length.png["Link trim length",width="100%"]
+image:images/structure-content-display_trim_length.png["طول متن پیوند",width="100%"]
 --
 
-. Drag the cross arrows next to the field items to reorder as Main image,
-_Body_, Vendor URL, and _Links_.
+. نشانه‌های اشاره در کنار گزینه‌های فیلد را گرفته به صورتی که ترتیب آن‌ها تصویر اصلی، _بدنه_، نشانی فروشنده و _پیوندها_ باشد.
 +
 --
 // Manage display page for Vendor content type, with order changed.
-image:images/structure-content-display_change_order.png["Changing order of fields",width="100%"]
+image:images/structure-content-display_change_order.png["تغییر ترتیب فیلدها",width="100%"]
 --
 
-. Click _Save_.
+. روی _ذخیره‌سازی_ کلیک کنید.
 
-. Find the Vendor content item from step 1 again, and verify that the updates
-have been made.
+. گزینه محتوایی فروشنده که در گام ۱ پیدا کردید را مشاهده کنید تا از تغییرات انجام شده اطمینان یابید.
 
-. Repeat similar steps to manage the display of the Recipe content type
-fields.
+. برای مدیریت نمایش نوع محتوای محصول، همین گام‌ها را تکرار کنید.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-* Make the main image smaller. See <<structure-image-style-create>>.
+* تصویر اصلی را کوچک‌تر کنید. <<structure-image-style-create>> را مشاهده کنید.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* اگر تاثیر تغییرات انجام شده روی سایت را احساس نمی‌کنید، ممکن است لازم باشد حافظه موقت را پاکسازی کنید. <<prevent-cache-clear>> را مشاهده کنید.
 
-
-==== Related concepts
+==== موضوعات مرتبط
 
 <<structure-image-styles>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/node/774798[_Drupal.org_ community documentation page "Specify how fields are displayed"]
-* https://www.drupal.org/node/774744[_Drupal.org_ community documentation page "Rearrange the order of fields"]
-* https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+* https://www.drupal.org/node/774798["تعیین چگونگی نمایش فیلدها" در صفحه مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/node/774744["تغییر ترتیب نمایش فیلدها" در صفحه مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/node/1577752["حالت‌های نمایشی" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel] and
-https://www.drupal.org/u/batigolix[Boris Doesborg].
+نوشته شده توسط https://www.drupal.org/u/AnnGreazel[Ann Greazel] و https://www.drupal.org/u/batigolix[Boris Doesborg].

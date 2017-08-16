@@ -1,61 +1,52 @@
 [[user-content]]
 
-=== Assigning Authors to Content
+=== اختصاص دادن نویسنده به محتوا
 
 [role="summary"]
-How to assign authorship of content items to a user account.
+چگونگی اختصاص نویسندگی یک مطلب به یک حساب کاربری.
 
 (((Author,assigning)))
 (((Content,assigning author)))
 
-==== Goal
+==== هدف
 
-Assign Vendor content items Happy Farm and Sweet Honey to the corresponding
-Vendor user accounts, so they can edit their own Vendor profiles on the site.
+اختصاص گزینه‌های محتوایی عسل خوشمزه و مزرعه خوشحال به حساب‌های کاربری فروشندگان، تا آن‌ها بتوانند پروفایل خود روی سایت را ویرایش کنند.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* The Vendor content type must exist, and your site must have at least two
-Vendor content items. See <<structure-content-type>>, <<structure-fields>>, and
-<<content-create>>.
+* نوع محتوای فروشنده باید موجود بوده و حداقل دو گزینه محتوایی برای آن موجود باشد. <<structure-content-type>>، <<structure-fields>> و <<content-create>> را مشاهده کنید.
 
-* User accounts for at least two vendors must exist. See <<user-new-user>>.
+* حساب‌های کاربری برای دو فروشنده باید موجود باشد. <<user-new-user>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. در منوی مدیریتی _Manage_ به مسیر _Content_ (_admin/content_) بروید.
 
-. Find Vendor content item Happy Farm in the list. If it is not immediately
-visible, you can filter the list by _Published status_, _Content type_ (Vendor),
-_Title_, or _Language_.  Click _Edit_ for the Vendor content item you would like
-to assign an author to.
+. گزینه محتوایی مزرعه خوشحال مرتبط با فروشنده را در فهرست پیدا کنید. اگر بلافاصله قابل مشاهده نیست، می‌توانید فهرست را با استفاده از _وضعیت انتشار_، _نوع محتوا (فروشنده)_، _عنوان_ یا _زبان_ فیلتر کنید. گزینه محتوایی که قصد اختصاص نویسنده به آن را دارید را یافته و روی _ویرایش_ کلیک کنید.
 
-. Locate the information block and click _Authoring information_.
+. بلاک اطلاعات را یافته و روی _اطلاعات نویسنده_ کلیک کنید.
 +
 --
 // Authoring information section of content edit page.
-image:images/user-content.png["Assigning an author to the Vendor content item"]
+image:images/user-content.png["اختصاص دادن یک نویسنده به گزینه محتوایی فروشنده"]
 --
 
-. Start typing the Vendor's user name Happy Farm in the _Authored by_ field.
-The field lists matching user names. Select the Vendor's user name from the
-list.
+. نام فروشنده‌ای که ایجاد کرده‌اید را در فیلد _نوشته شده توسط_ وارد کنید. فیلد فهرستی از نام‌های کاربری مشابه را نشان می‌دهد که از میان آن باید یکی را انتخاب کنید.
 
-. Click _Save and keep published_.
+. روی _ذخیره‌سازی و انتشار_ کلیک کنید.
 
-. You will get a notification that the Vendor content item has been updated.
+. اطلاعیه‌ای مبنی بر بروزرسانی گزینه محتوایی فروشنده دریافت می‌کنید.
 +
 --
 // Confirmation message after content update.
-image:images/user-content_updated.png["Vendor content item has been updated"]
+image:images/user-content_updated.png["گزینه محتوایی فروشنده بروزرسانی شده است"]
 --
 
-. Follow these steps again to assign Vendor content item Sweet Honey to the
-Vendor user account Sweet Honey.
+. برای اختصاص حساب کاربری عسل خوشمزه به گزینه محتوایی مرتبط با آن، گام‌های بالا را تکرار کنید.
 
 // ==== Expand your understanding
 
@@ -63,8 +54,6 @@ Vendor user account Sweet Honey.
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com/[Pronovix].
+نوشته شده توسط https://www.drupal.org/u/dianalakatos[Diána Lakatos] در https://pronovix.com/[Pronovix].

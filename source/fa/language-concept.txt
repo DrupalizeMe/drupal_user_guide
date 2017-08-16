@@ -1,9 +1,9 @@
 [[language-concept]]
 
-=== Concept: User Interface, Configuration, and Content translation
+=== مفهوم: رابط کاربری، پیکربندی و ترجمه محتوا
 
 [role="summary"]
-Overview of translation on a site.
+مروری بر ترجمه یک سایت.
 
 (((User interface,translating)))
 (((Configuration,translating)))
@@ -18,47 +18,26 @@ Overview of translation on a site.
 (((Interface Translation module,overview)))
 (((Language module,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<understanding-data>>
 * <<understanding-modules>>
 * <<planning-data-types>>
 
-==== What can be translated on your site?
+==== چه چیز در سایت شما قابل ترجمه است؟
 
-The base language for the software that your site runs (core software,
-modules, and theme) is English. However, you can create either a site that
-displays in a different language or a multi-lingual site; if you do so, all
-relevant text, images, and file attachments should be shown in the appropriate
-language for each site visitor. You need to have the core Language
-module installed in order to use a language other than English on the site.
+زبان پایه‌ای که دروپال در آن اجرا می‌شود (هسته، افزونه‌ها و قالب‌ها) انگلیسی است. اگرچه، شما می‌توانید سایتی را ایجاد کنید که به یک زبان دیگر نمایش می‌یابد یا یک سایت چند-زبانه است؛ اگر چنین قصدی دارید، تمام متن‌ها، تصویرها و فایل‌های ضمیمه باید متناسب با هر بازدیدکننده سایت باشد. برای استفاده از زبانی بجز انگلیسی در سایت، نیاز دارید که افزونه داخلی Language نصب باشد.
 
-There are three types of information that you can translate, each with its own
-method for translating:
+سه نوع اطلاعات وجود دارد که می‌توانید ترجمه کنید، هر کدام با شیوه مخصوص به خود:
 
-User interface text::
-  Built-in text present in the core software, modules, and themes. This can be
-  translated from the base English language of the software into the language(s)
-  of your site. Typically, rather than needing to translate this text yourself,
-  you can download translations. You need to have the core Interface Translation
-  module installed in order to translate this text.
-Configuration text::
-  Text whose structure and initial values are defined by the core software,
-  modules, and theme, but that you can edit. Examples include the
-  labels for fields in your content types, header text in views, your site name,
-  and the content of automatic email messages that your site sends out. After
-  creating configuration text in the default language of your site, you can
-  translate it into other languages. You need to have the core Configuration
-  Translation module installed in order to translate this text.
-Content text and files::
-  If your site is multilingual, you can configure the content fields on your
-  site to be translatable. After creating content in one language, you can
-  translate it into other languages. Fields can contain textual information or
-  uploaded files, and for each field on each content type, you can configure it
-  to be translatable or non-translatable. You need to have the core Content
-  Translation module installed in order to translate this text.
+متن رابط کاربری::
+  متن داخلی هسته، افزونه‌ها و قالب‌های سایت. این متن می‌تواند از زبان انگلیسی به سایر زبان(ها) موجود در سایت ترجمه شود. به طور معمول، بجای اینکه تمام این متن را خود ترجمه کنید، می‌توانید ترجمه‌ها را دانلود کنید. برای ترجمه این متن نیازمند افزونه داخلی Interface Translation هستید.
+متن پیکربندی::
+  متنی که ساختار و مقدار اولیه آن توسط هسته، افزونه‌ها و قالب‌ها تعیین می‌شود، اما شما نیز می‌توانید آن را ویرایش کنید. نمونه‌های آن شامل برچسب فیلدها در انواع محتوا، متن سرآیند در views، نام سایت و محتوای پیام‌های ایمیل که به صورت خودکار برای کاربران فرستاده می‌شوند. پس از ایجاد متن پیکربندی برای زبان پیشفرض سایت خود، می‌توانید آن را به زبان دیگری ترجمه کنید. برای ترجمه این متن نیازمند افزونه داخلی Configuration Translation هستید.
+متن محتوا و فایل‌ها::
+  اگر سایت شما چندزبانه است، می‌توانید فیلدهای محتوایی را در سایت خود قابل ترجمه سازید. پس از ایجاد محتوا در یک زبان، می‌توانید آن را به زبان‌های دیگری ترجمه کنید. فیلدها می‌توانند شامل اطلاعات متنی یا فایل‌های آپلودشده باشند، که برای هر کدام در هر نوع محتوا، شما می‌توانید قابل ترجمه بودن یا نبودن آن را پیکربندی کنید. برای ترجمه این متن نیازمند افزونه داخلی Content Translation هستید.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<language-add>>
 * <<language-content-config>>
@@ -67,7 +46,6 @@ Content text and files::
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -1,149 +1,137 @@
 [[structure-content-type]]
 
-=== Adding a Content Type
+=== افزودن یک نوع محتوا
 
 [role="summary"]
-How to add and configure a new content type.
+چگونگی افزودن یا ویرایش یک نوع محتوای جدید.
 
 (((Content type, adding)))
 
-==== Goal
+==== هدف
 
-Add and configure a new content type Vendor.
+افزودن و پیکربندی نوع محتوای جدید فروشنده.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<planning-data-types>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-You need to have a plan in place for your content structure. See
-<<planning-structure>>.
+برای ساختار محتوایی خود نیازمند یک طرح مشخص هستید. <<planning-structure>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). The _Content types_ page appears showing all the
-available types of content.
+. در منوی مدیریتی _Manage_ به مسیر _Structure_ > _Content types_ (_admin/structure/types_) بروید. صفحه _انواع محتوا_ تمام انواع محتوای موجود را فهرست می‌کند.
 
-. Click _Add content type_. The _Add content type_ page appears. Fill
-in the fields as shown below.
+. روی _افزودن نوع محتوا_ کلیک کنید. صفحه _افزودن نوع محتوا_ نمایش می‌شود. با توجه مقادیر زیر فیلدهای آن را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Name | Name of the content type | Vendor
-| Description | Explain the use of the content type | Information about a vendor
+| نام فیلد | توضیحات | مقدار نمونه
+| نام | نام نوع محتوا | فروشنده
+| توضیحات | کاربرد این نوع محتوا را توضیح دهید | اطلاعات درباره یک فروشنده
 |================================
 +
 --
 // Top of admin/structure/types/add, with Name and Description fields.
-image:images/structure-content-type-add.png["Adding a Content type"]
+image:images/structure-content-type-add.png["افزودن یک نوع محتوا"]
 --
 
-. In the vertical tab _Submission form settings_, configure the form that is
-used for creating and editing content of this type. Fill in the fields as shown
-below.
+. در زبانه عمودی _تنظیمات فرم ارسالی_ به پیکربندی فرمی بپردازید که برای ایجاد و ویرایش این نوع استفاده می‌شود. با توجه به مقادیر زیر فیلدهای آن را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title field label | Label of the Title field that is shown when editing or creating content of this type. | Vendor name
-| Preview before submitting | Option to choose whether you should preview the content before submitting. | Optional
-| Explanation or submission guidelines | Instructions for creating or editing content. | (Leave blank)
+| نام فیلد | توضیحات | مقدار نمونه
+| برچسب فیلد عنوان | برچسب فیلد عنوان که در زمان ایجاد یا ویرایش محتوا از این نوع بکار می‌رود. | نام فروشنده
+| پیش‌نمایش قبل از ارسال | گزینه‌ای که امکان پیش‌نمایش محتوا قبل از ذخیره‌سازی را ممکن می‌سازد. | اختیاری
+| راهنمایی‌ها برای ارسال فرم | دستورالعمل‌هایی برای ایجاد یا ویرایش محتوا. | (خالی بگذارید)
 |================================
 +
 --
 // Submission form settings section of admin/structure/types/add.
-image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
+image:images/structure-content-type-add-submission-form-settings.png["تنظیمات فرم ارسالی"]
 --
 
-. In the vertical tab _Publishing options_, decide on default options for new
-content of this type. Fill in the fields as shown below.
+. در زبانه عمودی _گزینه‌های انتشار_، درباره گزینه‌های پیشفرض این نوع محتوا تصمیم‌گیری کنید. با توجه به مقادیر زیر فیلدهای آن را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Published | Make the content item published by default. | Checked
-| Promoted to front page | In a default website, this setting can be used to show content on the homepage. | Unchecked
-| Sticky at top of lists | In a default website, this setting can be used to keep content on top of a list. | Unchecked
-| Create new revision | Create a new revision each time the vendor is being edited. | Checked
+| نام فیلد | توضیحات | مقدار نمونه
+| منتشرشده | گزینه محتوایی به صورت پیشفرض منتشر شود. | انتخاب شده
+| انتقال به صفحه اول | در یک وبسایت پیشفرض، این گزینه منجر به نمایش محتوا در صفحه اول خواهد شد. | انتخاب نشده
+| چسبنده در بالای فهرست | در یک وبسایت پیشفرض، این گزینه منجر به باقی ماندن محتوا در بالای فهرست می‌شود. | انتخاب نشده
+| ایجاد نسخه بازبینی جدید | با هر بار ویرایش اطلاعات فروشنده،‌ یک نسخه بازبینی جدید منتشر کن. | انتخاب شده
 |================================
 +
-Changing these settings does not affect the content items that have already been
-created.
+تغییر این تنظیمات روی محتوایی که قبل از این ایجاد شده است تاثیرگذار نخواهد بود.
+
 +
 --
 // Publishing settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Publishing-Options.png["Publishing Options"]
+image:images/structure-content-type-add-Publishing-Options.png["گزینه‌های انتشار"]
 --
 
-. In the vertical tab _Display settings_, decide if the author and
-publication date will be visible in the content item. Fill in the fields as
-shown below.
+. در زبانه عمودی _تنظیمات نمایش_، تصمیم بگیرید آیا نویسنده و تاریخ انتشار در کنار محتوا نمایش یابد یا خیر. با توجه به مقادیر زیر فیلدهای آن را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Display author and date information | Display the author username and publication date on each vendor page. | Unchecked
+| نام فیلد | توضیحات | مقدار نمونه
+| نمایش نویسنده و تاریخ انتشار | نمایش نام کاربری نویسنده و تاریخ انتشار مطلب در هر محتوای فروشنده. | انتخاب نشده
 |================================
 +
 --
 // Display settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Display-settings.png["Display settings"]
+image:images/structure-content-type-add-Display-settings.png["تنظیمات نمایش"]
 --
 
-. In the vertical tab _Menu settings_, fill in the fields as shown below.
+. در زبانه عمودی _تنظیمات منو_، با توجه به مقادیر زیر فیلدهای آن را پر کنید.
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Available menus | Menus that this type of content can be added to. Vendors do not need to appear in menus, so uncheck all menu options. | Unchecked
+| نام فیلد | توضیحات | مقدار نمونه
+| منوهای موجود | منوهایی که این نوع محتوا می‌توانند به آن افزوده شوند. نیازی ندارد که فروشندگان در منو قرار گیرند، پس تیک آن را بردارید. | انتخاب نشده
 |================================
 +
 --
 // Menu settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
+image:images/structure-content-type-add-Menu-settings.png["تنظیمات منو"]
 --
 
-. Click _Save and manage fields_ to save the content type. The
-_Manage fields_ page appears that allows you to add fields to the content
-type. See <<structure-fields>>
+. روی _ذخیره‌سازی و مدیریت فیلدها_ برای ذخیره‌سازی نوع محتوا کلیک کنید. صفحه _مدیریت فیلدها_ ظاهر می‌شود که به شما امکان افزودن فیلدهای دیگر را می‌دهد. <<structure-fields>> را مشاهده کنید.
+
 +
 --
 // Manage fields page after adding Vendor content type.
-image:images/structure-content-type-add-confirmation.png["Confirmation",width="100%"]
+image:images/structure-content-type-add-confirmation.png["تاییدیه",width="100%"]
 --
 
-. Follow the same steps to create a content type for recipes. Example values
-for the fields in the forms, where they are different from the steps above:
+. گام‌های مشابه را برای ایجاد نوع محتوای محصولات تکرار کنید. مقادیر نمونه برای فیلدهای فرم، که در مقایسه با گام‌های بالا تفاوت دارند عبارتند از:
+
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Example value
-| Name | Recipe
-| Description | A recipe submitted by a vendor
-| Submission form settings - Title | Recipe name
+| نام فیلد | مقدار نمونه
+| نام | محصول
+| توضیح | محصولی که توسط فروشنده ثبت می‌شود
+| تنظیمات فرم ارسالی - عنوان | نام محصول
 |================================
 
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 * <<structure-fields>>
 
-* Install and configure the https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content items get automatically generated URLs/path aliases. See <<content-paths>> for more on
-URLs within your site, <<extend-module-find>> for instructions on finding
-contributed modules, and <<extend-module-install>> for instructions on
-downloading and installing contributed modules.
+* https://www.drupal.org/project/pathauto[افزونه خارجی Pathauto] را به منظور تولید خودکار نشانی‌ها/مسیرهای مستعار نصب و پیکربندی کنید. برای مشاهده نشانی‌های موجود در سایت خود <<content-paths>>، برای دستورالعمل‌هایی به منظور جستجوی افزونه‌ها <<extend-module-find>> و برای دستورالعمل‌هایی به منظور دانلود و نصب افزونه‌ها <<extend-module-install>> را مشاهده کنید.
 
 // ==== Related concepts
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/sree[Sree Veturi]، https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

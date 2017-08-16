@@ -1,69 +1,69 @@
 [[content-edit]]
-=== Editing a Content Item
+=== Tartalmi egységek szerkesztése
 
 [role="summary"]
-How to edit a content item.
+Ebben a témakörben röviden áttekintjük, hogyan tudunk egy már létező tartalmi egységet módosítani, szerkeszteni.
 
 (((Content,editing)))
 (((Content,finding)))
 (((Editing content)))
 
-==== Goal
+==== Célkitűzés
 
-Update the hours on the Home page content item.
+Frissítjük a nyitvatartási időt a címlapot jelentő tartalmi egységen.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<content-create>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-A content item for the Home page must exist. See <<content-create>>.
+Már léteznie kell a címlapot jelentő tartalomelemnek. Ehhez lásd a <<content-create>> szakaszt.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Tartalom_ (címsorban _admin/content_) oldalra.
 
-. If the content item you want to edit was updated or created recently, it should appear near the top of the content list on that page. If not, you can use the _Type_, _Title_, or other filters to locate the content item.
+. Ha a szerkeszteni kívánt tartalomelem nemrég jött létre vagy frissült, a tartalomlista tetején jelenik meg. Ha régebbi, akkor a _Típus_, a  _Cím_ vagy egyéb szűrők használatával is kereshetjük.
 +
 --
 // Content list on admin/content, with filters above.
-image:images/content-edit-admin-content.png["Content administration page",width="100%"]
+image:images/content-edit-admin-content.png["Tartalmak adminsztrációs oldala",width="100%"]
 --
 
-. Click _Edit_ in the row of the content item you want to edit (Home), to open the content editing form. Update the opening hours in the _Body_ field. See <<content-create>> for an explanation of the fields and a screenshot.
+. Kattintsunk a _Szerkesztés_ gombra annak az elemnek (Címlap) a sorában, amit módosítani szeretnénk. A _Törzs_ mezőben tudjuk átírni a nyitvatartási időt. A többi beviteli mező leírását lásd az előző, <<content-create>> témakörnél.
 
-. Check _Create new revision_ in the box on the right, if it is not already checked, and enter a _Revision log message_ explaining what changes you are making (for example, you might enter "Updated opening hours"). This text will appear in the revision log for the page.
+. Ha még nincs bejelölve a négyzet az _Új változat készítése_ opció mellett, akkor tegyük meg: ekkor megjelenik a _Változatnapló-üzenet_ szövegmező, ahová beírhatunk egy tömör kis emlékeztetőt, hogy éppen mit módosítottunk most. Ezen megjegyzések sorozatából épül fel egy tartalomegység változattörténete.
 +
 --
 // Revision area of the content edit page.
-image:images/content-edit-revision.png["Revision information section of the content edit page"]
+image:images/content-edit-revision.png["Változatnapló üzenet beviteli mező a tartalomszerkesztési oldalon"]
 --
 
-. Click _Save and keep published_ to save your changes.
+. A _Mentés és megtartás közzétettként_ gombra kattintva menthetjük el új változtatásainkat.
 
-. You will be redirected back to the _Content_ administrative page, and there should be a message showing that the content item was updated.
+. Ezután visszakerülünk a _Tartalom_ áttekintő oldalra, valamint megjelenik egy rendszerüzenet, miszerint az előbb szerkesztett tartalom sikeresen frissült.
 +
 --
 // Updated content message.
-image:images/content-edit-message.png["Updated content message"]
+image:images/content-edit-message.png["Rendszerüzenet a frissült tartalomról"]
 --
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
-As an alternative to the first two steps above, you can also reach the content edit form as follows:
+Az első két lépésben bemutatott szokványos módon túl másféleképpen is el lehet érni a szerkeszteni kívánt tartalmat:
 
-. Starting from your site's home page, use the site's navigation menus to locate the page where the content you want to edit is displayed to visitors.
+. Webhelyünk címlapjáról indulva a navigációs menükön keresztül megkereshetjük, hogy hol van a látogatóknak megjelenített tartalom.
 
-. Most themes will display an _Edit_ link or tab near the top of that page to people with permission to edit the page; clicking the link will take you to the full content edit form.
+. A legtöbb smink megjelenít egy _Szerkesztés_ hivatkozást vagy fület közel az oldal tetejéhez, de csak azoknak a felhasználóknak, akiknek megvan a szükséges jogosultsága ehhez a művelethez. Mivel nekünk megvan, ezért erre kattintva szintén a fentebb is látott tartalomszerkesztési oldalra jutunk.
 
-. You could also use the in-place editor (refer to <<content-in-place-edit>>) from this page.
+. Használhatjuk a helybeni szerkesztőt is, melyről bővebben a <<content-in-place-edit>> témakörben lesz szó.
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta: https://www.drupal.org/u/chris-dart[Chris Dart] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

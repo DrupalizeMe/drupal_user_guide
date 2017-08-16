@@ -33,21 +33,31 @@ do
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images
   cp fop-conf.xml ../output/ebooks/$lang
   cp *.xsl ../output/ebooks/$lang
+  cp foprocess._php ../output/ebooks/$lang
 
   # Run the rest of the script from the output directory.
   cd ../output/ebooks/$lang
 
-  # Make PDF files. Which font to use depends on the language.
+  # Make FO intermediate file for PDF output. Which font to use depends on the
+  # language.
   if [ "$lang" = "fa" ]; then
-      xmlto pdf -m pdf-farsi.xsl -p "-c fop-conf.xml" --with-fop guide.docbook
+      xmlto fo -m pdf-farsi.xsl guide.docbook
 
-  elif [ "$lang" = "zh-hans" ] || [ "$lang" = "ja" ] ; then
-      xmlto pdf -m pdf-unifont.xsl -p "-c fop-conf.xml" --with-fop guide.docbook
+  elif [ "$lang" = "zh-hans" ]; then
+      xmlto fo -m pdf-cjk.xsl guide.docbook
+
+  elif [ "$lang" = "ja" ]; then
+      xmlto fo -m pdf-takao.xsl guide.docbook
 
   else
-      xmlto pdf -m pdf.xsl -p "-c fop-conf.xml" --with-fop guide.docbook
+      xmlto fo -m pdf.xsl guide.docbook
 
   fi
+
+  # Process the FO output to remove certain characters and language attributes.
+  php foprocess._php guide.fo guide.fop
+  # Process this output into PDF.
+  fop -c fop-conf.xml -fo guide.fop -pdf guide.pdf
 
   # Run the xmlto processor to convert from DocBook to ePub.
   # The syntax is:
@@ -57,6 +67,7 @@ do
   cp guide.docbook guide-simple.docbook
   xmlto epub -m mobi.xsl guide-simple.docbook
 
+  # Add images to the epub formats, which are actually zip files.
   mkdir -p OEBPS
   mkdir -p OEBPS/images
   cp images/* OEBPS/images
@@ -64,9 +75,11 @@ do
   zip guide-simple.epub OEBPS/images/*
 
   # Run the calibre processor to convert from ePub to Mobi, but on a modified
-  # ePub format. The syntax is:
+  # ePub format. Also convert to azw3 for newer Kindles and RTL languages.
+  # The syntax is:
   #   ebook-convert [input epub file] [output file] [options]
   ebook-convert guide-simple.epub guide.mobi
+  ebook-convert guide-simple.epub guide.azw3
 
   # Go back to the scripts directory to process the next language.
   cd ../../../scripts
@@ -74,6 +87,7 @@ do
   # Copy final output to ebooks directory.
   cp ../output/ebooks/$lang/guide.epub ../ebooks/guide-$lang.epub
   cp ../output/ebooks/$lang/guide.mobi ../ebooks/guide-$lang.mobi
+  cp ../output/ebooks/$lang/guide.azw3 ../ebooks/guide-$lang.azw3
   cp ../output/ebooks/$lang/guide.pdf ../ebooks/guide-$lang.pdf
 
 done

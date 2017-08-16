@@ -1,74 +1,70 @@
 [[user-new-user]]
 
-=== Creating a User Account
+=== ایجاد یک حساب کاربری
 
 [role="summary"]
-How to create a user account.
+چگونگی ایجاد یک حساب کاربری.
 
 (((User,creating account)))
 
-==== Goal
+==== هدف
 
-Create Vendor user accounts for Sweet Honey and Happy Farm vendors.
+ایجاد حساب‌های کاربری برای فروشندگان عسل خوشمزه و مزرعه خوشحال.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<user-concept>>
 * <<user-admin-account>>
 * <<user-new-role>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+نقش فروشنده در سایت شما باید موجود باشد. <<user-new-role>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _People_ (_admin/people_).
+. در منوی مدیریتی _Manage_ به مسیر _People_ (_admin/people_) بروید.
 
-. Click _Add user_.
+روی _افزودن کاربر_ کلیک کنید.
 +
 --
 // Add new user form (/admin/people/create).
-image:images/user-new-user_form.png["Form for creating a new user account",width="100%"]
+image:images/user-new-user_form.png["فرمی برای ایجاد یک حساب کاربری جدید",width="100%"]
 --
 
-. Fill in the form fields. See the table below.
+. فیلدهای فرم را با توجه به جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Email address |A valid email address for the vendor. All emails from the system will be sent to this address. The email address is not made public. | honey@example.com
-|Username |A username for the vendor that they will use to sign in or author content items. Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores. |Sweet Honey
-|Password |A password the vendor will use to sign in to the site. You can see how safe the password is on the _Password strength_ gauge. You also get tips on how to make it safer.  |(Make a secure password)
-|Confirm password |Type the same password to avoid any typing mistakes. |(Repeat password)
-|Status |Set the status of the user account. _Blocked_ users will not be able to sign in. |Active
-|Roles |Set the role of the user account.|Vendor
-|Notify user of new account |Whether or not to send a notification to the vendor's email address. |Checked
-|Picture |Click _Browse_ and select a picture to upload. Pay attention to size restrictions. | Photo of the vendor
-|Contact settings |Enable or disable the display of a contact form for the account. | Checked
+| نام فیلد | توضیحات | مقدار نمونه
+| نشانی ایمیل |یک نشانی ایمیل معتبر برای فروشنده. تمام ایمیل‌ها از طریق سیستم به این نشانی فرستاده می‌شود.این نشانی به صورت عمومی نمایش داده نمی‌شود. | honey@example.com
+| نام کاربری | یک نام کاربری برای فروشنده‌ای که قصد ورود به منظور افزودن یا ویرایش محتوا را دارد. استفاده از فاصله مجاز است؛ علام اختصاری مجاز نیستند بجز نقطه‌ها، خط‌ها، آپوستروف و زیرخط‌ها. | Sweet Honey
+| گذرواژه |گذرواژه‌ای که فروشنده برای ورود به سایت استفاده می‌کند. می‌توانید میزان قوی بودن آن را در قسمت _قدرت گذرواژه_ مشاهده کنید. همچنین نکاتی درباره چگونگی انتخاب گذرواژه ایمن نمایش داده می‌شود.  | (یک گذرواژه امن انتخاب کنید)
+| تایید گذرواژه |همان گذرواژه قبلی را وارد کنید. | (تکرار گذرواژه)
+| وضعیت | وضعیت حساب کاربری را مشخص کنید. کاربران _مسدودشده_ امکان ورود به سایت را ندارد. | فعال
+| نقش‌ها | نقش مرتبط با حساب کاربری را تنظیم کنید.| فروشنده
+| اطلاع‌رسانی به کاربر از حساب جدید | آیا یک ایمیل اطلاع‌رسانی به کاربر جدید فرستاده شود یا خیر. | انتخاب‌شده
+| تصویر | روی _مرور_ کلیک کرده و یک تصویر برای بارگذاری انتخاب کنید. به محدودیت‌های اعمال شده در اندازه تصویر دقت کنید. | تصویر فروشنده
+| تنظیمات تماس | فعال یا غیرفعال کردن فرم تماس شخصی برای کاربر. | انتخاب‌شده
 |================================
 
-
-. Click _Create new account_. You will get a notification about the user account
-creation.
+. روی _ایجاد حساب‌کاربری جدید_ کلیک کنید. اطلاعیه‌ای در رابطه با ایجاد حساب کاربری جدید دریافت می‌کنید.
 +
 --
 // Confirmation message after adding new user.
-image:images/user-new-user-created.png["New user account has been created",width="100%"]
+image:images/user-new-user-created.png["جساب کاربری جدید ایجاد شده است",width="100%"]
 --
 
-. Create a second Vendor account for Happy Farm by following the steps above.
+. با پیروی از گام‌های بالا، یک حساب کاربری دیگر برای مزرعه خوشحال ایجاد کنید.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-Create a user account for yourself.
+یک حساب کاربری برای خود ایجاد کنید.
 
 //==== Related concepts
 
 //==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-at https://pronovix.com/[Pronovix].
+نوشته شده توسط https://www.drupal.org/u/dianalakatos[Diána Lakatos] در https://pronovix.com/[Pronovix].

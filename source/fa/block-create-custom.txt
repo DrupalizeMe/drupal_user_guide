@@ -1,69 +1,58 @@
 [[block-create-custom]]
 
-=== Creating A Custom Block
+=== ایجاد یک بلاک سفارشی
 
 [role="summary"]
-How to create a custom block.
+چگونگی ایجاد یک بلاک سفارشی.
 
 (((Block,creating)))
 (((Custom block,creating)))
 
-==== Goal
+==== هدف
 
-Create a block showing the hours and location of the farmers market.
+ایجاد یک بلاک که ساعت بازگشایی و محل فروشگاه محصولات کشاورزی را نمایش می‌دهد.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<block-concept>>
 * <<block-regions>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block
-layout_ > _Custom block library_ (_admin/structure/block/block-content_).
+. در منوی مدیریتی _Manage_ به مسیر _Structure_ > _Block layout_ > _Custom block library_ (_admin/structure/block/block-content_) بروید.
 
-. Click _Add custom block_. The _Add custom block_ page appears.
+. روی _افزودن بلاک سفارشی_ کلیک کنید. صفحه _افزودن بلاک سفارشی_ نمایش می‌یابد.
 
-. Fill in the fields as shown below.
+. فیلدهای آن را با توجه به جدول زیر پر کنید.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Block description |Name of the block shown to administrators |Hours and location block
-|Body |Content of the block when it is displayed |Open: Sundays, 9 AM to
-2 PM, April to September<br />Location: Parking lot of Trust Bank, 1st & Union,
-downtown Anytown.
+| نام فیلد | توضیحات | مقدار نمونه
+| توضیح بلاک | نام بلاکی که به مدیران نمایش داده می‌شود. | بلاک ساعت‌های بازگشایی و مکان فروشگاه
+| بدنه | محتوای بلاک زمانی که نمایش می‌یابد. | زمان: یکشنبه‌ها از ساعت ۰۹:۰۰ تا ۱۴:۰۰، بهار تا پاییز. مکان: پارکینگ عمومی بانک ملی، شعبه مرکزی.
 |================================
 +
 --
 // Block add page (block/add).
-image:images/block-create-custom-add-custom-block.png["Add a custom block", width="100%"]
+image:images/block-create-custom-add-custom-block.png["افزودن یک بلاک سفارشی", width="100%"]
 --
 
-. Click _Save_. A message appears indicating the block has been saved.
+. روی _ذخیره‌سازی_ کلیک کنید. پیامی مبنی بر ذخیره‌سازی بلاک نمایش می‌یابد.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید.
 
-* Edit the content of your custom block. In the _Manage_ administrative menu,
-navigate to _Structure_ > _Block layout_ > _Custom block library_
-(_admin/structure/block/block-content_). Find your block in the list and click
-_Edit_ to make changes.
+* محتوای بلاک سفارشی خود را ویرایش کنید. در منوی مدیریتی _Manage_ به مسیر _Structure_ > _Block layout_ > _Custom block library_ (_admin/structure/block/block-content_) بروید. بلاک خود را از فهرست پیدا کرده و روی _ویرایش_ کلیک کنید.
 
-* Place the block you created in the sidebar. See <<block-place>> for details.
+* بلاکی که ایجاد کرده‌اید را در نوارکناری قرار دهید. برای جزئیات بیشتر <<block-place>> را مشاهده کنید.
 
 //==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/docs/8/core/modules/block/overview[_Drupal.org_ community documentation page "Working with blocks (content in regions)"]
+https://www.drupal.org/docs/8/core/modules/block/overview["کار با بلاک‌ها (محتوا در ناحیه‌ها)" در صفحه مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/jredding[Jacob Redding] and
-https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks
-(content in regions)], copyright 2000-2017 by the individual contributors to
-the https://www.drupal.org/documentation[Drupal Community Documentation].
+اقتباس شده توسط https://www.drupal.org/u/jredding[Jacob Redding] و https://www.drupal.org/u/batigolix[Boris Doesborg] از https://www.drupal.org/docs/8/core/modules/block/overview["کار با بلاک‌ها (محتوا در ناحیه‌ها)" در صفحه مستندات جامعه کاربری _Drupal.org_]
