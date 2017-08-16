@@ -1,9 +1,8 @@
 [[extend-config-versions]]
-
-=== Synchronizing Configuration Versions
+=== همگام‌سازی نسخه‌های پیکربندی
 
 [role="summary"]
-How to synchronize the configuration between a development and live site using the core Configuration Manager module.
+چگونگی همگام‌سازی نسخه‌های پیکربندی بین سایت توسعه و اصلی با استفاده از افزونه داخلی Configuration Manager.
 
 (((Configuration,synchronizing between development and live site)))
 (((Development site,synchronizing with live site)))
@@ -11,78 +10,51 @@ How to synchronize the configuration between a development and live site using t
 (((Configuration Manager module,using to synchronize the configuration between a development and live site)))
 (((Module,Configuration Manager)))
 
-==== Goal
+==== هدف
 
-Synchronize the configuration between a development and live site.
+همگام‌سازی پیکربندی بین سایت توسعه و اصلی.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<understanding-data>>
 * <<install-prepare>>
 * <<install-dev-sites>>
 * <<install-dev-making>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* You must have a development copy of your production site. See
-<<install-dev-making>>.
+* باید یک نسخه توسعه از سایت اصلی خود داشته باشید. <<install-dev-making>> را مشاهده کنید.
 
-* The core Configuration Manager module must be installed on both the
-development and production sites. See <<config-install>> for instructions on how
-to install core modules.
+* افزونه داخلی Configuration Manger در هر دو سایت توسعه و اصلی باید نصب گردد. برای دستورالعمل‌های نصب افزونه‌های داخلی <<config-install>> را مشاهده کنید.
 
-* You must have changed configuration on either the production or development
-site (the _source site_), and want to synchronize the changes to the other site
-(the _destination site_). As an example, you can develop a new content type,
-fields, and views on your development site, and when it is all working
-correctly, deploy the changes to the live site.
+* باید پیکربندی یکی از سایت‌های اصلی یا توسعه را تغییر داده باشید (_سایت مبدا_) تا بتوانید روی سایت دیگر تغییرات آن را اعمال کنید (_سایت مقصد_). برای نمونه، می‌توانید یک نوع محتوای جدید به همراه view در سایت توسعه بسازید و زمانی که از عملکرد صحیح آن اطمینان جاصل کردید تغییرات را در سایت توسعه قرار دهید.
 
-* All configuration that should not be synchronized between the source and
-destination sites must be stored in configuration overrides in the
-_settings.php_ file rather than in the database. See <<install-dev-making>>.
+* تمام پیکربندی‌هایی که نباید بین سایت مبدا و مقصد همگام‌سازی گردند، حتما باید به صورت متنی در فایل _settings.php_ قرار گیرند و نه در پایگاه‌داده. <<install-dev-making>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-. In the source site, in the _Manage_ administrative menu, navigate to
-_Configuration_ > _Development_ > _Configuration synchronization_ > _Export_
-(_admin/config/development/configuration/full/export_).
+. در سایت مبدا، از منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Development_ > _Configuration synchronization_ > _Export_ (_admin/config/development/configuration/full/export_) بروید.
 
-. Click _Export_. Your site will generate an archive of the full site
-configuration. Save the file on your local computer.
+. روی _خارج‌‌کردن_ کلیک کنید. سایت شما یک فایل بایگانی از تمام پیکربندی‌های خود را تولید می‌کند. فایل را در رایانه خود ذخیره سازید.
 
-. In the destination site, in the _Manage_ administrative menu, navigate to
-_Configuration_ > _Development_ > _Configuration synchronization_ > _Import_
-(_admin/config/development/configuration/full/import_).
+. در سایت مقصد، از منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Development_ > _Configuration synchronization_ > _Import_ (_admin/config/development/configuration/full/import_) بروید.
 
-. Browse to find the downloaded configuration archive, and click _Upload_. Your
-configuration archive will be uploaded to the destination site, and you will be
-redirected to the configuration _Synchronize_ page
-(_admin/config/development/configuration_) with a message saying your files were
-uploaded.
+. فایل بایگانی پیکربندی دانلود شده را پیدا کرده و روی _آپلود_ کلیک کنید. فایل بایگانی پیکربندی شما در سایت مقصد آپلود شده و به صفحه _همگام‌سازی_ (_admin/config/development/configuration_) با پیامی مبنی بر آپلود فایل مورد نظر، هدایت می‌شوید. 
 
-. Verify that the differences shown on the page are what you expect. You may see
-configuration items that have been added, deleted, or changed; for changed
-items, you can click _View differences_ to see what the changes are.
+. اطمینان یابید که تفاوت‌های نشان داده شده در صفحه مطابق با میل شما هستند. ممکن است گزینه‌های پیکربندی را ببینید که اضافه، ویرایش یا حذف شده باشند؛ برای گزینه‌های تغییر یافته، به منظور مشاهده تغییرات می‌توانید روی _مشاهده تغییرات_ کلیک کنید.
 
-. When you are satisfied, click _Import all_ to import the configuration
-changes.
+. زمانی که از پیکربندی رضایت داشتید، روی _واردکردن همه_ کلیک کرده تا تغییرات پیکربندی اعمال شوند.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-* If the changes you have made involve only one configuration item (such as one
-view), you can use the single configuration export/import feature to deploy
-the change between sites. See <<extend-deploy>>.
+* اگر تغییرات ایجاد شده شما تنها شامل یک گزینه پیکربندی می‌شوند (برای نمونه، view)، می‌توانید از ویژگی خروجی/ورودی پیکربندی انفرادی برای اعمال تغییرات خود استفاده کنید. <<extend-deploy>> را مشاهده کنید.
 
-* After the step where you export the full configuration from the source site,
-you might also want to unpack the archive and commit it to a version control
-system, such as Git, to track changes in your site configuration. See
-<<install-tools>>.
+* پس از گامی که پیکربندی کامل را از سایت مبدا وارد کردید، می‌توانید با خارج کردن فایل بایگانی آن از حالت فشرده و اعمال تغییراتش به سیستم کنترل نسخه مانند گیت، تغییرات آن را در سایت اصلی ردیابی کنید. <<install-tools>> را مشاهده کنید.
 
 // ==== Related concepts
 
 // ==== Additional resources
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

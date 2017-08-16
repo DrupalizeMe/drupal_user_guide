@@ -1,133 +1,96 @@
 [[security-update-module]]
 
-=== Updating a Module
+=== بروزرسانی یک افزونه
 
 [role="summary"]
-How to update a contributed module by using the administrative interface and running the Database updates script, or by using Drush.
+چگونگی بروزرسانی یک افزونه خارجی با استفاده از رابط مدیریتی یا Drush و اجرای اسکریپت بروزرسانی پایگاه‌داده.
 
 (((Module,updating)))
 (((Security update,applying)))
 (((Contributed module,updating)))
 (((Drush tool,using to update module)))
 
-==== Goal
+==== هدف
 
-Update a contributed module and run the _Database updates_ script.
+بروزرسانی یک افزونه خارجی و اجرای اسکریپت _بروزرسانی پایگاه‌داده_.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* A contributed module has been installed and there is an update available for
-it. See <<extend-module-install>> and <<security-announce>>.
+* یک افزونه خارجی نصب شده و یک بروزرسانی نیز برای آن موجود باشد. <<extend-module-install>> و <<security-announce>> را مشاهده کنید.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
-<<install-dev-making>>.
+* اگر سایت شما در دسترس عموم است، ابتدا باید این فرآیند را در یک سایت توسعه آزمایش سپس به سایت اصلی منتقل کنید. <<install-dev-making>> را مشاهده کنید.
 
-* You have created a full-site backup. See <<prevent-backups>>.
+* یک پشتیبان کامل از سایت خود ایجاد کنید. <<prevent-backups>> را مشاهده کنید.
 
-* If you want to use the user interface, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing core
-modules.
+* اگر قصد استفاده از رابط کاربری را دارید، افزونه داخلی Update Manager باید فعال باشد. به منظور نصب افزونه‌های داخلی <<config-install>> را مشاهده کنید.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* اگر قصد استفاده از Drush را دارید باید آن را نصب کنید. <<install-tools>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-Before you start, check for module-specific update instructions. This is
-typically necessary while updating modules that involve the usage of third-party
-libraries. Read and understand all module-specific requirements before
-proceeding with the updates. To find instructions, check the module's project
-page _Read Documentation_ link.
+قبل از شروع، به بررسی دستورالعمل‌های بروزرسانی خاص یک افزونه بپردازید. این کار در مورد افزونه‌هایی که از کتابخانه‌های شخص-ثالث استفاده می‌کنند بسیار ضروری است. نیازمندی‌های خاص یک افزونه را به دقت مطالعه و درک کنید قبل از اینکه عملیات بروزرسانی انجام شود. برای یافتن این دستورالعمل‌ها، پیوند _Read Documentation_ در صفحه پروژه افزونه را بررسی کنید.
 
-To view further instructions, download the tar.gz or .zip file from the project
-page to your local computer. Unzip the file and look for _README.txt_,
-_INSTALL.txt_, and _UPGRADE.txt_ that come with the module's installation
-file. Also, review the release notes on the project page by clicking the version
-number you're downloading.
+برای مشاهده دستورالعمل‌های بیشتر، فایل tar.gz یا zip پروژه را دانلود کنید. فایل را از حالت فشرده خارج کرده و به دنبال _README.txt_، _INSTALL.txt_ و _UPGRADE.txt_ باشید. همچنین در صفحه پروژه با کلیک روی نسخه‌ای که دانلود کرده‌اید، یادداشت‌های انتشار مربوط به آن را بازبینی کنید.
 
 // Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/security-update-module-release-notes.png["Release notes link"]
+image:images/security-update-module-release-notes.png["پیوند یادداشت‌های انتشار"]
 
-You can use the administrative interface or Drush to update a contributed
-module. If you are updating a custom module rather than a contributed module, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to obtain the new module files,
-follow the steps in <<extend-manual-install>>. You can then continue here with
-step 6 in the instructions for the administrative interface below.
+برای بروزرسانی یک افزونه خارجی می‌توانید از رابط مدیریتی یا Drush استفاده کنید. اگر قصد بروزرسانی یک افزونه سفارشی بجای افزونه خارجی را دارید و پیامی مبنی بر اینکه _نصب افزونه‌ها و قالب‌ها نیازمند دسترسی FTP به سرور است_ را مشاهده کردید، یا گام‌های زیر برای دریافت فایل‌های افزونه به درستی کار نمی‌کنند، گام‌های موجود در <<extend-manual-install>> را دنبال کنید. سپس می‌توانید از گام ۶ مربوط به رابط مدیریتی در قسمت زیر ادامه دهید.
 
-===== Using the administrative interface
+===== استفاده از رابط مدیریتی
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. سایت را در حالت نگهداری قرار دهید. <<extend-maintenance>> را مشاهده کنید.
 
-. In the _Manage_ administrative menu, navigate to _Reports_ >
-_Available updates_ > _Update_ (_admin/reports/updates/update_).
+. در منوی مدیریتی _Manage_ به مسیر _Reports_ > _Available updates_ > _Update_ (_admin/reports/updates/update_) بروید
 
-. Find and check the module in the list. Click _Download these updates_ for the
-module.
+. افزونه مورد نظر را از فهرست پیدا کرده و انتخاب کنید. روی _دانلود این بروزرسانی‌ها_ برای افزونه کلیک کنید.
 +
 --
 // Update page for theme (admin/reports/updates/update).
-image:images/security-update-module-updates.png["Available updates",width="100%"]
+image:images/security-update-module-updates.png["بروزرسانی‌های موجود",width="100%"]
 --
 
-. Click _Continue_.
+. روی _ادامه_ کلیک کنید.
 
-. Click _Run database updates_. If you obtained the new module files manually,
-start with this step, and reach the database updates page by typing the URL
-_example.com/update.php_ in your browser.
+. روی _اجرای بروزرسانی‌های پایگاه‌داده_ کلیک کنید. اگر فایل‌های افزونه جدید را به صورت دستی دریافت کرده‌اید، از این گام شروع کرده و با رفتن به نشانی _example.com/update.php_ در مرورگر خود بروزرسانی‌های پایگاه‌داده را اجرا کنید.
 
-. Click _Continue_ and apply all updates. The database update scripts will be
-executed.
+. روی _ادامه_ کلیک کرده و تمام بروزرسانی‌ها را اعمال کنید. اسکریپت‌های بروزرسانی پایگاه‌داده اجرا خواهند شد.
 
-. Click _Administration pages_ to return to the administration section of your
-site.
+. روی _صفحات مدیریتی_ کلیک کرده تا به قسمت مدیریتی سایت خود بازگردید.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. سایت را از حالت نگهداری خارج کنید. <<extend-maintenance>> را مشاهده کنید.
 
-. Clear the cache (refer to <<prevent-cache-clear>>).
+. حافظه موقت را پاکسازی کنید. <<prevent-cache-clear>> را مشاهده کنید.
 
-===== Using Drush
+===== استفاده از Drush
 
-. Find the project name for the module you wish to update. It is the last
-segment of the module's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/admin_toolbar_, the project name is
-"admin_toolbar".
+. نام پروژه افزونه مورد نظر خود را پیدا کنید. این نام، آخرین قسمت از نشانی صفحه پروژه است. برای نمونه، اگر نشانی پروژه _https://www.drupal.org/project/admin_toolbar_ باشد، نام آن "admin_toolbar" است.
 
-. Run the following Drush command, giving the project name (for example,
-`admin_toolbar`) as a parameter (if you have more than one module to update, add
-the additional module project names to the end of the command, separated by
-spaces):
+. دستور زیر را همراه با نام پروژه به عنوان پارامتر اجرا کنید (اگر بیش از یک افزونه برای بروزرسانی دارید، نام پروژه آن‌ها را به صورت پشت سر هم همراه با فاصله وارد کنید):
 +
 ----
 drush up admin_toolbar
 ----
 
-. Follow the instructions on the screen.
+. دستورالعمل‌های روی صفحه را دنبال کنید.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-* Review the site log (refer to <<prevent-log>>) once the updates are complete
-to check for errors.
+* زمانی که بروزرسانی‌ها به پایان رسیدند، گزارش سایت خود را برای بررسی خطا بازبینی کنید. <<prevent-log>> را مشاهده کنید.
 
 * <<security-update-theme>>
 
 //==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Updating modules"]
+https://www.drupal.org/node/250790[صفحه "بروزرسانی افزونه‌ها" در مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborgh], and
-https://www.drupal.org/u/hey_germano[Sarah German] at
-https://www.advomatic.com[Advomatic], from
-https://www.drupal.org/node/250790["Updating modules"], copyright 2000-2017 by
-the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+اقتباس شده توسط https://www.drupal.org/u/batigolix[Boris Doesborgh] و https://www.drupal.org/u/hey_germano[Sarah German] در https://www.advomatic.com[Advomatic] از https://www.drupal.org/node/250790["بروزرسانی افزونه‌ها"].

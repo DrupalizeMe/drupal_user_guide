@@ -1,99 +1,65 @@
 [[security-cron]]
 
-=== Configuring Cron Maintenance Tasks
+=== پیکربندی وظایف نگهداری Cron
 
 [role="summary"]
-How to run cron maintenance tasks using the core Automated Cron module, or by running them from outside the site.
+چگونگی اجرای وظایف نگهداری cron با استفاده از افزونه Automated Cron یا اجرا از خارج سایت.
 
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
 
-==== Goal
+==== هدف
 
-Check whether cron maintenance tasks are run regularly, and if not, either
-install the core Automated Cron module or run cron maintenance tasks from
-outside the website.
+بررسی اینکه آیا وظایف نگهداری cron به صورت منظم اجرا می‌شوند یا خیر، و اجرای آن‌ها با استفاده از افزونه داخلی Automated Cron یا سرور سایت.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<security-cron-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-. Review the _Status report_ (see <<prevent-status>>) to see when cron
-maintenance tasks were last run.
+. صفحه _گزارش وضعیت_ را بررسی کرده تا ببینید آخرین اجرای وظایف نگهداری cron چه زمانی بوده است. <<prevent-status>> را مشاهده کنید
 +
-If you installed the website using the core Standard installation profile (or
-similar), then cron maintenance tasks might already be running via the
-core Automated Cron module.  By default, these tasks are run about every three
-hours.
+اگر سایت را با استفاده از پروفایل استاندارد نصب (یا گزینه‌های مشابه) ایجاد کرده باشید، آنگاه وظایف نگهداری cron به صورت خودکار توسط افزونه داخلی Automated Cron اجرا می‌شوند. به صورت پیشفرض، این وظایف هر ۳ ساعت یکبار اجرا می‌شوند.
 
-. Choose whether to run cron maintenance tasks using the core Automated Cron
-module, or by other means. The core Automated Cron module might not be suitable
-for some websites because:
+. انتخاب کنید به چه صورت می‌خواهید وظایف نگهداری cron را اجرا کنید، با افزونه داخلی Automated Cron یا روشی دیگر. این افزونه ممکن است برای برخی وبسایت‌ها مناسب نباشد زیرا:
 +
-  * Each time someone accesses a page on the site, the module checks how long it
-  has been since cron maintenance tasks have last run, and then runs them if
-  necessary. If no one visits the website for a long time, cron maintenance
-  tasks will not be run.
-  * Cron maintenance tasks are run after the page has been generated. This means
-  there is less time for the tasks to be run before various server timeouts are
-  reached (for example, PHP execution timeout). If this happens, the logs (see
-  <<prevent-log>>) will show error messages that cron is unable to complete.
-  * There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
-  associated with the core Automated Cron module. This is because one of the web
-  server's processes is occupied (and can't serve other web pages) until the
-  cron maintenance tasks are complete.
+  * هر زمان که فردی به یک صفحه از سایت دسترسی می‌یابد، افزونه آخرین زمان اجرای وظایف نگهداری cron را بررسی و در صورت لزوم آن‌ها را اجرا می‌کند. اگر کسی از وبسایت بازدید نکند، وظایف نگهداری cron هیچگاه اجرا نمی‌شوند.
+  * وظایف نگهداری cron درست پس از تولیدشدن صفحه اجرا می‌گردند. به این معنی که زمان کوتاهی برای وظایف درست قبل از به پایان رسیدن زمان سرور برای تولید صفحه وجود دارد (برای نمونه، مدت زمان اجرای اسکریپت PHP). اگر این اتفاق بیفتد، گزارش‌ها بیان می‌کنند که مدت زمان کافی برای اجرا cron وجود ندارد. <<prevent-log>> را مشاهده کنید
+  * یک هزینه کوچک https://en.wikipedia.org/wiki/Scalability[مقیاس‌پذیری] در رابطه با استفاده از افزونه داخلی Automated Cron وجود دارد. به این دلیل که یکی از فرآیندهای سرور وب اشغال شده است و تا زمانی که اجرای وظایف نگهداری cron به پایان نرسد نمی‌تواند به سایر درخواست‌ها پاسخ دهد.
 
-. If you want to use the core Automated Cron module, first make sure it is
-installed (it is installed with the core Standard install profile; see
-<<config-install>> if it is not installed).
+. اگر قصد استفاده از افزونه داخلی Automated Cron را دارید، ابتدا از نصب آن اطمینان حاصل کنید (این افزونه هنگام استفاده از پروفایل استاندارد نصب فعال می‌شود؛ در صورت غیرفعال بودن، <<config-install>> را مشاهده کنید).
 +
-Next, configure the module to control how frequently cron maintenance tasks are
-run. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Choose the desired interval in
-the _Cron settings_ section, and click _Save configuration_.
+سپس، افزونه را به منظور تعداد دفعات اجرای وظایف نگهداری cron پیکربندی کنید. در منوی مدیریتی _Manage_ به مسیر _Configuration_ > _System_ > _Cron_ (_admin/config/system/cron_) بروید. بازه زمانی مورد نظر را از قسمت _تنظیمات Cron_ انتخاب کرده و روی _ذخیره پیکربندی_ کلیک کنید.
 +
 --
 // Cron configuration page (admin/config/system/cron).
-image:images/security-cron.png["Configure the core Automated Cron module"]
+image:images/security-cron.png["پیکربندی افزونه داخلی Automated Cron"]
 --
 
-. If you want to run cron maintenance tasks from outside the website, uninstall
-the core Automated Cron module (see <<config-uninstall>>). Next, find the
-cron URL. This URL is shown in the _Status report_ (see <<prevent-status>>), and
-in the _Cron_ administration page (see previous step). The URL looks
-like this:
+. اگر قصد اجرای وظایف نگهداری cron با استفاده از ابزار موجود در سرور را دارید، افزونه داخلی Automated Cron را غیرفعال کنید (<<config-uninstall>> را مشاهده کنید). سپس، نشانی cron را بیابید. این نشانی در صفحه _گزارش وضعیت_ (<<prevent-status>> را مشاهده کنید) و صفحه مدیریتی _Cron_ (گام قبل را مشاهده کنید) وجود دارد. نشانی شبیه به این رشته است:
 _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
-Whenever this URL is visited, cron maintenance tasks will run. Set up one of
-the following schedulers to access this URL regularly:
+هر زمان که این نشانی بازدید شود، وظایف نگهداری cron اجرا می‌شوند. یکی از زمانبندهای زیر را به منظور دسترسی متداول به این نشانی تنظیم کنید:
 +
-  * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
-  BSD)
-  * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
-  * A cron SASS provider (software as a service)
-  * A cron manager provided by your web hosting provider (see the documentation
-  provided by your provider)
-
+  * https://www.drupal.org/node/23714[فرآیند پس‌زمینه Cron] (لینوکس، OS X، سولاریس، BSD)
+  * https://www.drupal.org/node/31506[وظایف زمانبندی] (ویندوز)
+  * یک فراهم‌کننده SASS یا Software as a Service برای cron.
+  * یک مدیر cron که توسط سرویس میزبانی وب شما فراهم شده باشد (مستندات مربوط به ارائه‌دهنده سرویس خود را مشاهده کنید).
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== موضوعات مرتبط
 
 <<security-concept>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* http://www.drush.org/en/master/cron/[Drush page "Running Drupal cron tasks from Drush"]
-* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
+* http://www.drush.org/en/master/cron/["صفحه "اجرای وظایف cron دروپال" در مستندات Drush]
+* https://www.drupal.org/docs/7/setting-up-cron/overview[صفحه "برپایی cron" در مستندات جامعه کاربری _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
-https://www.advomatic.com/[Advomatic],
-https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/dalin[Dave Hansen-Lange] در https://www.advomatic.com/[Advomatic]، https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

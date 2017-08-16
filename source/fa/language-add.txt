@@ -1,10 +1,9 @@
 [[language-add]]
 
-=== Adding a Language
+=== افزودن یک زبان
 
 [role="summary"]
-How to add a language, install the necessary modules, and turn on the _Language
-switcher_ block.
+چگونگی افزودن یک زبان، نصب افزونه‌های لازم و فعال کردن بلاک _تغییر زبان_.
 
 (((Language,adding)))
 (((Multilingual modules,installing)))
@@ -18,55 +17,44 @@ switcher_ block.
 (((Module,Configuration Translation)))
 (((Module,Interface Translation)))
 
-==== Goal
+==== هدف
 
-Add one or more languages to your site and define which one is used by default.
+افزودن یک یا چند زبان به سایت خود و تعیین اینکه کدام زبان پیشفرض باشد.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 <<language-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== گام‌ها
 
-. Install the four core multilingual modules (Language, Interface Translation,
-Content Translation, and Configuration Translation), by following the steps in
-<<config-install>>.
+. با پیروی گام‌ها در <<config-install>>، چهار افزونه داخلی چندزبانه را نصب کنید (Language، Interface Translation، Content Translation و Configuration Translation).
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and language_ > _Languages_ (_admin/config/regional/language_).
+. در منوی مدیریتی _Manage_ به مسیر _Configuration_ > _Regional and language_ > _Languages_ (_admin/config/regional/language_) بروید.
 
-. Click _Add language_.
+. روی _افزودن زبان_ کلیک کنید.
 
-. Select _Spanish_ (or your preferred language) from the _Language name_ select
-list. Click _Add language_. After waiting for translations to finish
-downloading, you will be returned to the _Languages_ page, with a confirmation
-message and the new language shown.
+. از فهرست انتخابی _نام زبان_ گزینه _Persian_ یا _فارسی_ را انتخاب کنید. پس از منتظر ماندن برای اتمام دانلود ترجمه‌ها، به صفحه _زبان‌ها_ هدایت می‌شوید همراه با پیام تاییدیه و فهرست زبان‌های انتخابی.
 +
 --
-// Confirmation and language list after adding Spanish language.
-image:images/language-add-list.png["List of available languages in the website",width="100%"]
+// Confirmation and language list after adding Persian language.
+image:images/language-add-list.png["فهرست زبان‌های موجود در وبسایت",width="100%"]
 --
 
-. Follow the steps in <<block-place>> to place the _Language switcher_ block in
-the _Sidebar second_ region. This will enable site visitors to switch between
-languages, once the site has been translated.
+. با پیروی گام‌ها در <<block-place>>، بلاک _تغییر زبان_ را در ناحیه _نوارکناری دوم_ قرار دهید. اینکار به بازدیدکنندگان سایت امکان می‌دهد که زبان آن را تغییر دهند، زمانی که سایت ترجمه شده باشد.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
 * <<language-content-config>>
 * <<language-content-translate>>
 
 // ==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
-https://www.drupal.org/resource-guides/configuring-multilingual-site[_Drupal.org_ page "Resource Guide: Configuring a Multilingual Site"]
+https://www.drupal.org/resource-guides/configuring-multilingual-site[صفحه "راهنمای منابع: پیکربندی یک سایت چندزبانه" در _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/yrvyn[Leila Tite],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
-https://www.drupal.org/u/batigolix[Boris Doesborg].
+نوشته و ویرایش شده توسط by https://www.drupal.org/u/yrvyn[Leila Tite]، https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] و https://www.drupal.org/u/batigolix[Boris Doesborg].

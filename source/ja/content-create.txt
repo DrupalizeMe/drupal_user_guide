@@ -1,89 +1,83 @@
 [[content-create]]
 
-=== Creating a Content Item
+=== コンテンツアイテムの作成
 
 [role="summary"]
-How to create a content item for use as the home page.
+ホームページとして使用する、コンテンツアイテムの作成方法。
 
-(((Content item,creating)))
-(((Basic page,creating)))
-(((Home page,creating)))
+(((コンテンツアイテム,作成)))
+(((基本ページ,作成)))
+(((ホームページ,作成)))
 
-==== Goal
+==== 目標
 
-Create and publish a content item that will be used as the home page of the
-site.
+サイトのホームページとして使用する、コンテンツアイテムを作成し、公開する。
 
-==== Prerequisite knowledge
+==== 前提知識
 
 <<content-paths>>
 
-==== Site prerequisites
+==== サイトの前提条件
 
-The _Basic page_ content type must exist. This is created on your site when you
-install with the core Standard installation profile.
+コンテンツタイプ「基本ページ」が存在すること。
+コアの「標準」インストールプロフィールでインストールした場合、これはすでに作成されている。
 
-==== Steps
+==== 手順
 
-. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-_Basic page_ (_node/add/page_). The _Create Basic page_ form appears.
+. 管理用メニューの「管理」から、「コンテンツ」 > 「コンテンツを追加」 > 「基本ページ」（ _node/add/page_ ）の順に進み、「基本ページの作成」フォームを表示します。 
 
-. Click _Edit summary_.
+. 「概要を編集」をクリックします。
 
-. Fill in the fields as shown below.
+. 次のように、フィールドに入力します。
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Value
-| Title | Title of the page. Will also be used as a meta tag in the source code,
- URL alias, and as label of the content item in administration screens | Home
-| Summary | Summary of the value of the body field. Can be used as teaser
-in overview pages | Opening times and location of City Market.
-| Body | Full content of the page | Welcome to City Market - your neighborhood
-farmers market!
+| フィールド名 | 説明 | 値（入力内容）
+| タイトル | ページのタイトル。ソースコードのメタタグ、URL エイリアス、管理用ページでのコンテンツアイテムのラベルとして使用される。 | ホーム 
+| 概要 |「本文」フィールドの値の概要。概要ページのティーザーとして使用できる。 | シティマーケットの営業時間と場所。
+| 本文 | ページの本文 | あなたの近所の農産物市場、シティマーケットへようこそ！
 
-Open: Sundays, 9 AM to 2 PM, April to September
+営業時間:  4 月 ～ 9 月の毎週日曜日 午前 9 時 ～ 午後 2 時
 
-Location: Parking lot of Trust Bank, 1st & Union, downtown
-|URL path settings > URL alias| Alternate relative path for the content | /home
+場所: ダウンタウン 1st & ユニオン トラストバンクの駐車場
+| URL パス設定 > URL エイリアス | コンテンツの代替相対パス | /home
 |================================
 +
-By clicking the _Source_ button in the rich text editor toolbar, you can see the
-HTML source code of the text that you are editing.
+リッチテキストエディターのツールバーにある「ソース」をクリックすると、編集中テキストの HTML ソースコードを表示できます。 
 +
 --
 // Partly filled-in node/add/page, with Summary section open.
-image:images/content-create-create-basic-page.png["Create a basic page",width="100%"]
+image:images/content-create-create-basic-page.png["基本ページの作成",width="100%"]
 --
 
-. Click _Preview_ to ensure everything looks like expected.
+. 「プレビュー」をクリックし、すべてが期待どおりに表示されることを確認します。
 
-. Click _Back to content editing_.
+. 「コンテンツの編集に戻る」をクリックします。
 
-. Click _Save and publish_. The content is saved and can be found on the
-_Content_ page.
+. 「保存して掲載」をクリックします。コンテンツが保存され、「コンテンツ」のページで検索できるようになります。
 
-. Follow the same steps to create an About page, with title "About", and a body
-telling about the history of the farmer's market.
+. 同じ手順で「About」ページを作ります。タイトルは「農産物市場について」とし、本文に農産物市場の歴史を記述します。
 
-==== Expand your understanding
+==== 理解を深める
 
 * <<menu-home>>
 * <<menu-link-from-content>>
 * <<language-content-translate>>
 
-==== Related concepts
+==== 関連概念
 
 * <<language-concept>>
 * <<content-paths>>
 * <<content-edit>>
 
-==== Additional resources
+==== その他のリソース
 
-https://www.drupal.org/docs/8/core/modules/node-module/about-nodes[_Drupal.org_ community documentation page "About nodes"]
+https://www.drupal.org/docs/8/core/modules/node-module/about-nodes[_Drupal.org_ community documentation page "About nodes" (in English)]
 
 
-*Attributions*
+*帰属情報*
 
 Written by https://www.drupal.org/u/pixiekiss[Agnes Kiss] and
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+Translated by https://www.drupal.org/u/hgoto[Hayato Goto].
+Reviewed by https://www.drupal.org/u/takafumi[Takafumi].

@@ -1,131 +1,119 @@
 [[install-tools]]
 
-=== Concept: Additional Tools
+=== 概念: その他のツール
 
 [role="summary"]
-Overview of additional tools that help site builders conveniently create sites.
+サイト構築者がサイトを作成するのに便利なその他のツールの概要。
 
-(((Tool,Coder)))
-(((Tool,Devel)))
-(((Tool,Drush)))
-(((Tool,Composer)))
-(((Tool,Git)))
-(((Tool,drupal Console)))
-(((Coder tool,overview)))
-(((Devel tool,overview)))
-(((Drush tool,overview)))
-(((Composer tool,overview)))
-(((Git tool,overview)))
-(((Drupal Console tool,overview)))
+(((ツール,Coder)))
+(((ツール,Devel)))
+(((ツール,Drush)))
+(((ツール,Composer)))
+(((ツール,Git)))
+(((ツール,drupal Console)))
+(((Coder ツール,概要)))
+(((Devel ツール,概要)))
+(((Drush ツール,概要)))
+(((Composer ツール,概要)))
+(((Git ツール,概要)))
+(((Drupal Console ツール,概要)))
 
-// ==== Prerequisite knowledge
+// ==== 前提知識
 
-==== What tools are available for site builders?
+==== サイト構築者はどのようなツールを利用できますか？
 
-There are several additional tools available that help you create sites faster,
-more accurately and with less effort.
+より素早く、より正確に、少ない労力でサイトを作成するためのツールがいくつかあります。
 
 Drush::
-  See below for more about Drush.
+  Drushの詳細については、以下を参照してください。
 Git::
-  https://git-scm.com/[Git] is a version control system you can use to track
-  changes made to files within your entire site, or files relating only to the
-  module or theme that you are using. Git makes it possible to try out changes,
-  and if necessary, revert to a previous version. It can be used as well to
-  track changes in the configuration files and synchronize the configuration of
-  different sites. Git has become the standard for web development
-  projects.
+  https://git-scm.com/[Git]は、サイト全体または使用しているモジュールやテーマに関連したファイルの変更を追跡可能にするバージョン管理システムです。
+  Gitは変更を試行することができ、必要に応じて以前のバージョンに戻すことができます。
+  設定ファイルの変更を追跡したり、異なるサイトの設定を同期させるためにも使用できます。
+  GitはWeb開発プロジェクトの標準となっています。
 Composer::
-  See below for more about Composer.
+  Composerの詳細については、以下を参照してください。
 Devel::
-  The https://www.drupal.org/project/devel[contributed Devel module] helps with
-  development tasks such as debugging and inspecting code, analyzing database
-  queries, and generating dummy content.
+  https://www.drupal.org/project/devel[Devel拡張モジュール]は、デバッグやコードの調査、
+  データベースクエリーの分析、ダミーコンテンツの生成のような開発時の作業を支援します。
 
-==== What is special about Drush?
+==== Drushの優れたところは何ですか？
 
-http://www.drush.org[Drush] is a command-line tool for building and maintaining
-sites, providing an alternative to using the administrative interface for many
-operations. Many site builders and maintainers prefer to use Drush whenever
-possible, and consider the time spent installing and learning to use Drush to be
-a good investment. Reasons to consider using Drush:
+http://www.drush.org[Drush]は、管理画面を使って行うサイト構築や保守操作を代替するコマンドラインツールです。
+多くのサイト構築者やメンテナーは可能な限りDrushを使用することを好み、
+Drushをインストールして学習することは良い投資であると考えています。
+Drushを使用する理由：
 
-* Drush provides a large number of commands for tasks such as installing the
-base software, modules, and themes; updating software; performing database
-operations, including copying and querying; resetting passwords; and clearing
-the cache. Some contributed modules and themes also define Drush commands.
+* Drushは、基本ソフトウェア、モジュール、テーマのインストール、ソフトウェアの更新、
+コピーやクエリーなどのデータベース操作、パスワードのリセット、キャッシュクリアなど、
+多くのコマンドを提供します。
+また拡張モジュールやテーマの中には独自のDrushコマンドを提供するものもあります。
 
-* Doing administrative tasks using Drush is typically faster and less tedious
-than performing the same tasks through the administrative interface.
+* Drushを使用して管理タスクを実行するのは、管理インターフェイスを使用して同じタスクを実行するよりも早くてより簡単です。
 
-* Since Drush is a command-line interface, you can write scripts that combine
-Drush commands and other commands on the server, to automate more complicated
-tasks.
+* Drushはコマンドラインインターフェイスなので、Drushコマンドと他のコマンドを組み合わせてスクリプトを作成し、
+サーバー上でより複雑な作業を自動化することができます。
 
-* Drush provides additional functionality not available via the administrative
-interface; for example, running database queries.
+* Drushは管理インターフェイス経由では利用できない追加の機能を提供します。
+たとえば、データベースクエリの実行などです。
 
-If you want to use Drush, you will need to have command-line terminal access to
-the server where your website will be hosted, and you will need to have a
-compatible version of the Drush tool installed on that server. Check the
-http://www.drush.org[Drush website] for installation instructions and version
-compatibility. There is also documentation on the available Drush commands on
-that site.
+Drushを使用するには、ウェブサイトがホストされるサーバーのコマンドラインアクセス権限が必要です。
+また、そのサーバー上に互換性のあるバージョンのDrushツールがインストールされている必要があります。
+インストール方法とバージョンの互換性については、
+http://www.drush.org[Drushウェブサイト]をチェックしてください。
+そのサイトには、利用可能なDrushコマンドについてのドキュメントもあります。
 
-==== What is Composer used for?
+==== Composerは何のために使用されていますか？
 
-https://getcomposer.org/[Composer] is a tool for managing PHP dependencies,
-where the developer specifies what version of each external library is needed,
-and Composer manages the process of downloading and installing the libraries.
+https://getcomposer.org/[Composer]は、PHPの依存関係を管理するためのツールです。
+開発者は、外部ライブラリについてそれぞれどのバージョンが必要かという依存関係を指定し、
+Composerは、その指定されたライブラリのダウンロードとインストールのプロセスを管理します。
 
-The core software is a primary user of Composer, because it makes use of several
-externally-developed software libraries, which must be downloaded and installed
-in order for the core software to work. When you install the core software, you
-either need to download an archive that contains compatible versions of the
-external libraries, or you need to run Composer to download the external
-libraries after the initial download.
+コアソフトウェアはComposerの主なユーザーです。
+なぜならコアソフトウェアを動作させるために、
+複数の外部で開発されたソフトウェアライブラリをダウンロードしてインストールする必要があるからです。
+コアソフトウェアをインストールする際は、外部ライブラリの互換バージョンを含むアーカイブをダウンロードするか、
+初期ダウンロード後に外部ライブラリをダウンロードするためにComposerを実行する必要があります。
 
-Some contributed modules also make use of externally-developed software
-libraries; for example, a Facebook integration module might require Facebook's
-integration library to be installed for the module to work, and a geographical
-module might make use of a standard library of geographical functions. To
-install a module with external dependencies, you will need to run Composer.
+拡張モジュールの中には、外部で開発されたソフトウェアライブラリを利用するものもあります。
+例えば、Facebook統合モジュールはモジュールが動作するためにFacebookの統合ライブラリをインストールする必要があり、
+ジオグラフィックモジュールはジオグラフィック機能の標準ライブラリを利用することがあります。
+そのような外部依存関係を持つモジュールをインストールするには、Composerを実行する必要があります。
 
-==== What tools are available for module and theme developers?
+==== モジュールやテーマの開発者はどのようなツールを利用できますか？
 
-In addition to the site builder tools mentioned above, the following tools are
-useful for module and theme developers.
+上記のサイト構築ツールに加えて、モジュールやテーマ開発者にとって有用な以下のツールがあります。
 
 Drupal Console::
-  https://drupalconsole.com[Drupal Console] is a command-line tool that
-  generates boilerplate code and interacts with a Drupal site. It can generate,
-  for example, block or form code, install modules and themes, and create dummy
-  content. Drupal Console makes use of the Symfony Console.
+  https://drupalconsole.com[Drupal Console]は、ボイラープレートコードの生成やDrupalサイトの操作を行うコマンドラインツールです。
+  たとえば、ブロックやフォームのコードを生成したり、モジュールやテーマをインストールしたり、
+  ダミーコンテンツを作成したりすることができます。
+  Drupal ConsoleはSymfony Consoleを使用します。
 Coder::
-  https://www.drupal.org/project/coder[Coder] is a command-line tool that checks
-  if your modules and themes comply with coding standards and other best
-  practices. It can also fix coding standard violations.
-Browser debugging tools::
-  Web browsers such as Firefox and Chrome include tools that allow viewing,
-  editing, debugging, and monitoring CSS, HTML, and JavaScript. You can open the
-  debugging pane or window by right-clicking the mouse in an area of your
-  window, and choosing "Inspect" or "Inspect element".  The
-  https://www.drupal.org/project/drupalforfirebug[contributed Drupal for Firebug
-  module] displays additional Drupal-specific debugging and SQL query
-  information in the debugging window.
+  https://www.drupal.org/project/coder[Coder]は、
+  モジュールやテーマがコーディング規約やその他のベストプラクティスに準拠しているかどうかをチェックするコマンドラインツールです。
+  また、規約違反のコードを修正することもできます。
+ブラウザデバッキングツール::
+  FirefoxやChromeのようなWebブラウザには、CSS、HTML、およびJavaScriptの表示、編集、デバッグ、および監視を可能にするツールが含まれています。
+  デバッグペインまたはウィンドウを開くには、ウィンドウのある領域でマウスを右クリックし、
+  「検証」(Chrome)または「要素を調査」(Firefox)を選択します。
+  https://www.drupal.org/project/drupalforfirebug[Drupal for Firebug拡張モジュール]
+  は、追加のDrupal固有のデバッグ情報とSQLクエリ情報をデバッグウィンドウに表示します。
 
-==== Related topics
+==== 関連トピック
 
 <<install-composer>>
 
-==== Additional resources
+==== その他のリソース
 
-* https://www.drupal.org/node/147789[_Drupal.org_ community documentation page "Development tools"]
+* https://www.drupal.org/node/147789[「Drupal.org」community documentation page "Development tools" (in English)]
 
-* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
+* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[「Drupal.org」community documentation page "Using Composer with Drupal" (in English)]
 
 
-*Attributions*
+*帰属情報*
 
 Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
 and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Translated by https://www.drupal.org/u/kabetani[Takashi Kabetani].
+Reviewed by https://www.drupal.org/u/hgoto[Hayato Goto].

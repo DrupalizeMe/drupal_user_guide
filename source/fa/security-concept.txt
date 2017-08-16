@@ -1,9 +1,9 @@
 [[security-concept]]
 
-=== Concept: Security and Regular Updates
+=== مفهوم: امنیت و بروزرسانی‌های منظم
 
 [role="summary"]
-Overview of security updates, how bugs are handled, and non-security updates.
+مروری بر بروزرسانی‌های امنیتی، چگونگی مدیریت باگ‌ها و بروزرسانی‌های غیر-امنیتی.
 
 (((Security,overview)))
 (((Update,overview)))
@@ -11,52 +11,30 @@ Overview of security updates, how bugs are handled, and non-security updates.
 (((Security bug,reporting)))
 (((Security team,overview)))
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<understanding-drupal>>
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-project>>
 
-==== What are security updates?
+==== بروزرسانی‌های امنیتی چه مواردی هستند؟
 
-Any software occasionally has bugs, and sometimes these bugs have security
-implications. When security bugs are fixed in the core software, modules, or
-themes that your site uses, they are released in a _security update_. You will
-need to apply security updates in order to keep your site secure. See
-<<security-announce>> to learn how to be notified of security updates by
-email, and <<security-update-core>>, <<security-update-module>>, and
-<<security-update-theme>> to learn how to make updates.
+هر نرم‌افزاری ممکن است دارای باگ باشد که بعضی وقت‌ها این باگ‌ها پیامدهای امنیتی به همراه دارند. زمانی که باگ‌های امنیتی موجود در دروپال، افزونه‌ها یا قالب‌های سایت شما برطرف می‌شوند، به صورت یک _بروزرسانی امنیتی_ منتشر می‌شوند. به منظور ایمن نگاه داشتن سایت خود نیاز دارید که این بروزرسانی‌های امنیتی را اعمال کنید. به منظور چگونگی اطلاع از بروزرسانی‌های امنیتی توسط ایمیل <<security-announce>> و به منظور چگونگی اعمال آن‌ها <<security-update-core>>، <<security-update-module>> و <<security-update-theme>> را مشاهده کنید.
 
-==== What is the security team?
+==== تیم امنیتی چه نقشی دارد؟
 
-The Drupal open-source project has a team of volunteers who track
-security-related bugs and release security updates. They also help other
-developers fix bugs, and maintain information for users on how to keep their
-websites secure. You can learn more about the security team and their practices
-and processes at the
-https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team] page.
+پروژه اوپن-سورس دروپال شامل تیمی از داوطلبین است که به بررسی باگ‌های امنیتی و انتشار بروزرسانی‌های امنیتی می‌پردازند. آن‌ها همچنین به سایر توسعه‌دهندگان کمک می‌کنند که باگ‌ها را رفع کرده و اطلاعات مورد نیاز کاربران برای ایمن نگاه داشتن سایت خود را مدیریت کنند. اطلاعات بیشتر درباره آن‌ها در صفحه https://www.drupal.org/drupal-security-team/general-information[تیم امنیتی _Drupal.org_] موجود است.
 
-==== How are security bugs reported?
+==== باگ‌های امنیتی چگونه گزارش می‌شوند؟
 
-It is important that security problems be kept confidential until they are
-fixed, so that sites are less likely to be compromised before they can be
-secured. If you find a potential security problem in any of the software you
-downloaded from the _Drupal.org_ website, follow the procedures on the
-https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team] page to report
-it.
+محرمانه نگاه داشتن مشکلات امنیتی تا زمان انتشار اصلاحیه برای آن‌ها از اهمیت بالایی برخوردار است، تا سایت‌ها قبل از انتشار این اصلاحیه‌ها مورد نفوذ قرار نگیرند. اگر هر مشکل امنیتی در نرم‌افزارهای وبسایت _Drupal.org_ مشاهده کردید، با پیروی از فرآیندهای موجود در صفحه https://www.drupal.org/drupal-security-team/general-information[تیم امنیتی _Drupal.org_] آن‌ها را گزارش کنید.
 
-==== What are regular (non-security) updates?
+==== بروزرسانی‌های عادی (غیر-امنیتی) چه مواردی هستند؟
 
-The core software, modules, and themes also periodically have regular updates to
-add new features and fix bugs. These updates are less critical than security
-updates. As a general best practice, updates should be applied as long as they
-do not cause problems with your site. Testing on a development copy of your site
-is always a good idea before applying updates on a live site. This is because
-some updates may include changes that are not compatible with the modules or
-themes on your site, or that will break a particular functionality on your site.
+دروپال، افزونه‌ها و قالب‌های آن شامل بروزرسانی‌های منظمی هستند که ویژگی‌های جدید را شامل می‌شود و مشکلات قبلی را برطرف می‌کند. این بروزرسانی‌ها از اهمیت کمتری نسبت به بروزرسانی‌های امنیتی برخوردارند. به عنوان یک قانون، بروزرسانی‌ها تنها زمانی باید اعمال شوند که مشکلی برای سایت فعلی شما بوجود نیاورند. به این دلیل آزمایش روی سایت توسعه قبل از اعمال این بروزرسانی‌ها در سایت اصلی توصیه می‌شود چرا که برخی بروزرسانی‌ها ممکن است شامل تغییراتی باشند که با افزونه‌ها و قالب‌های سایت شما سازگار نبوده یا عملکرد مشخصی از سایت را از بین می‌برند.
 
-==== Related topics
+==== موضوعات مرتبط
 
 * <<security-announce>>
 * <<security-update-core>>
@@ -64,14 +42,12 @@ themes on your site, or that will break a particular functionality on your site.
 * <<security-update-theme>>
 * <<install-dev-making>>
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/security/secure-configuration[_Drupal.org_ community documentation page "Securing your site"]
-* https://www.drupal.org/security["Security advisories" on Drupal.org]
-* https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security team]
+* https://www.drupal.org/security/secure-configuration[صفحه "ایمن‌سازی سایت خود" در مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/security["توصیه‌های امنیتی" در Drupal.org]
+* https://www.drupal.org/drupal-security-team/general-information[تیم امنیتی _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

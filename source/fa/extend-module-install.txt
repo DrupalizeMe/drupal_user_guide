@@ -1,9 +1,8 @@
 [[extend-module-install]]
-
-=== Downloading and Installing a Module from _Drupal.org_
+=== دانلود و نصب یک افزونه از _Drupal.org_
 
 [role="summary"]
-How to download and install a module from Drupal.org (using the user interface) or by using Drush.
+چگونگی دانلود و نصب یک افزونه از Drupal.org با استفاده از رابط مدیریتی یا Drush.
 
 (((Module,downloading)))
 (((Module,installing)))
@@ -24,121 +23,86 @@ How to download and install a module from Drupal.org (using the user interface) 
 (((Module,Update Manager)))
 (((Drupal.org website,downloading and installing module from)))
 
-==== Goal
+==== هدف
 
-Download and install the
-https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module],
-which allows you to easily browse through the administration section of the
-website.
+دانلود و نصب https://www.drupal.org/project/admin_toolbar[افزونه خارجی Admin Toolbar] که به شما اجازه می‌دهد به راحتی در میان رابط مدیریتی وبسایت پیمایش کنید.
 
-==== Prerequisite knowledge
+==== دانش پیشنیاز
 
 * <<understanding-modules>>
 * <<extend-module-find>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== پیشنیازهای سایت
 
-* If you want to install modules via the website, the core Update Manager module
-must be installed. See <<config-install>> for instructions on installing
-modules.
+* اگر قصد نصب افزونه‌ها از طریق رابط مدیریتی وبسایت را دارید، افزونه داخلی Update Manager باید نصب گردد. برای اطلاعات بیشتر درباره نصب افزونه‌ها، <<config-install>> را مشاهده کنید.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* اگر قصد استفاده از Drush را دارید، <<install-tools>> را مشاهده کنید.
 
-==== Steps
+==== گام‌ها
 
-You can use the administrative interface or Drush to install a contributed
-module. If you are installing a custom module rather than a contributed module,
-if you see a message saying _Installing modules and themes requires FTP access
-to your server_, or if the steps below do not work to download and unpack the
-module files, follow the steps in <<extend-manual-install>>. If you are
-installing a contributed module with external dependencies that are managed by
-Composer, follow the steps for downloading in <<install-composer>>. In either of
-these cases, then continue here with step 7 in the instructions for the
-administrative interface below.
+برای نصب یک افزونه خارجی، می‌توانید از رابط مدیریتی یا Drush استفاده کنید. اگر قصد نصب یک افزونه سفارشی را دارید و پیام _نصب افزونه‌ها و قالب‌ها نیازمند دسترسی FTP به سرور شما می‌باشد_ نمایش یافت، یا گام‌های پیش رو برای دانلود و استفاده از افزونه‌های خارجی به کار شما نمی‌آید، <<extend-manual-install>> را مشاهده کنید. اگر قصد نصب افزونه خارجی را دارید که وابستگی‌های خود را با استفاده از Composer مدیریت می‌کند، <<install-composer>> را مشاهده کنید. در هر کدام از این موارد، به گام ۷ از این راهنما مراجعه کرده تا فرآیند نصب افزونه کامل شود.
 
-===== Using the administrative interface
+===== استفاده از رابط مدیریتی
 
-. On the _Admin toolbar_ project page on drupal.org
-(_https://www.drupal.org/project/admin_toolbar_), scroll to the _Downloads_
-section at the bottom of the page.
+. در صفحه پروژه _Admin Toolbar_ وافع در drupal.org ((_https://www.drupal.org/project/admin_toolbar_))، به قسمت _دانلودها_ در انتهای صفحه بروید.
 
-. Copy the address of the _tar.gz_ link. Depending on your device and browser,
-you might do this by right clicking and selecting _Copy link address_.
+. از نشانی پیوند _tar.gz_ رونوشت بگیرید.
 +
 --
 // Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/extend-module-install-download.png["Finding a module URL"]
+image:images/extend-module-install-download.png["یافتن نشانی یک افزونه"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears.
+. در منوی مدیریتی _Manage_ به مسیر _Extend_ (_admin/modules_) بروید. صفحه _توسعه_ نمایش داده می‌شود.
 
-. Click _Install new module_. The _Install new module_ page appears.
+. روی _نصب افزونه جدید_ کلیک کنید. صفحه _نصب افزونه جدید_ نمایش می‌یابد.
 +
 --
 // Install new module page (admin/modules/install).
-image:images/extend-module-install-admin-toolbar-do.png["Installing a module from a URL"]
+image:images/extend-module-install-admin-toolbar-do.png["نصب افزونه با استفاده از نشانی آن"]
 --
 
-. In the field _Install from a URL_, paste the copied download link. This value
-could look like this:
+. در فیلد _نصب از یک نشانی_ محتوای پیوند موجود را قرار دهید. این مقدار شبیه به زیر است:
 _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz_
 
-. Click _Install_ to upload and unpack the new module on the server. The files
-are being downloaded to the _modules_ directory.
+. روی _نصب_ کلیک کنید تا افزونه جدید در سرور قرار بگیرد. فایل‌ها در دایرکتوری _modules_ قرار می‌گیرند.
 
-. Click _Enable newly added modules_ to return to the _Extend_ page. If you
-used the manual uploading procedure, start with this step, and reach the
-_Extend_ page by using the _Manage_ administrative menu and navigating to
-_Extend_ (_admin/modules_).
+. روی _فعال‌سازی افزونه‌های تازه اضافه شده_ کلیک کنید تا به صفحه _توسعه_ بازگردید. اگر با شیوه دستی اقدام به قرار دادن فایل‌ها روی سرور کرده‌اید، با استفاده از منوی مدیریتی _Manage_ به مسیر _Extend_ (_admin/modules_) بروید و از این قسمت ادامه دهید.
 
-. Locate and check _Admin toolbar_.
+. _Admin Toolbar_ را شناسایی و انتخاب کنید.
 
-. Click _Install_ to turn on the new module.
+برای فعال‌سازی افزونه جدید روی _نصب_ کلیک کنید.
 
-===== Using Drush
+===== استفاده از Drush
 
-. Find the project name for the module you want to install, which is the last
-segment of the module's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/admin_toolbar_, the project name is
-"admin_toolbar".
+. نام پروژه افزونه‌ای که قصد نصب آن را دارید پیدا کنید، این نام قسمت انتهایی نشانی صفحه پروژه است. برای نمونه، اگر نشانی پروژه _https://www.drupal.org/project/admin_toolbar_ باشد، آنگاه نام پروژه برابر "admin_toolbar" است.
 
-. Run the following Drush commands, giving the project name (for example,
-`admin_toolbar`) as a parameter:
+. با استفاده از نام پروژه (برای نمونه `admin_toolbar`)، دستورات زیر را اجرا کنید:
 +
 ----
 drush dl admin_toolbar
 drush en admin_toolbar
 ----
 
-. Follow the instructions on the screen.
+. توضیحات روی صفحه را دنبال کنید.
 
-==== Expand your understanding
+==== درک خود را گسترش دهید
 
-* Verify that the
-https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module]
-is working by browsing through the menu in the administration section.
+* با پیمایش از منوی مدیریتی سایت به قسمت‌های مختلف، اطمینان یابید که https://www.drupal.org/project/admin_toolbar[افزونه خارجی Admin Toolbar] به درستی کار می‌کند.
 
-* Install and configure the
-https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content pages in your site get nice URLs by default. See
-<<content-paths>> for more on URLs.
+* با نصب و پیکربندی https://www.drupal.org/project/pathauto[افزونه خارجی Pathauto] محتوای سایت خود را به صورت خودکار از نشانی‌های تمیز بهره‌مند سازید. برای اطلاعات بیشتر <<content-paths>> را مشاهده کنید.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
-
+* اگر تاثیر این تغییرات را در سایت خود مشاهده نمی‌کنید، ممکن است لازم باشد حافظه موقت را پاکسازی نمایید. <<prevent-cache-clear>> را مشاهده کنید.
 
 //==== Related concepts
 
-==== Additional resources
+==== منابع مطالعاتی
 
-* https://www.drupal.org/node/340271[_Drupal.org_ community documentation page "Contributed modules"]
-* https://www.drupal.org/download["Download and Extend" page on _Drupal.org_]
-* https://www.drupal.org/project/admin_toolbar[Admin Toolbar module on _Drupal.org_]
+* https://www.drupal.org/node/340271[در صفحه مستندات جامعه‌کاربری _Drupal.org_ "افزونه‌های خارجی"]
+* https://www.drupal.org/download["دانلود و توسعه" صفحه در _Drupal.org_]
+* https://www.drupal.org/project/admin_toolbar[افزونه Admin Toolbar در _Drupal.org_]
 
+*مشارکت‌کنندگان*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نوشته و ویرایش شده توسط https://www.drupal.org/u/batigolix[Boris Doesborg] و https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
