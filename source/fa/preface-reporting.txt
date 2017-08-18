@@ -7,7 +7,7 @@
 
 گزارش یک مشکل با این راهنما، از جمله:
 
-* اطلاعات نادرست یا آن دسته که به شیوه‌ای استاندارد نیستند
+* اطلاعات نادرست یا آن دسته که استاندارد نیستند
 * گام‌هایی که کار نمی‌کنند
 * تصاویر مرتبط با موضوع که با محتوای متن یکی نیستند
 * نوشته نامفهوم
@@ -27,10 +27,10 @@
 
 . ورود به https://www.drupal.org[_Drupal.org_] (اگر حساب کاربری ندارید، اکنون زمان ساخت آن است).
 
-. مراجعه به صفجه https://www.drupal.org/project/issues/user_guide[User Guide issues در _Drupal.org_].
+. مراجعه به صفجه https://www.drupal.org/project/issues/user_guide[مشکلات راهنمای کاربری در _Drupal.org_].
 
 . اطمینان حاصل کنید که مشکل شما هم اکنون توسط فرد دیگری گزارش نشده باشد:
-  * اگر تنها چند issue باز وجود دارد، ستون _Summary_ را پویش کنید تا ببینید آیا موضوع شما را پوشش می‌دهند یا خیر. ممکن است لازم باشد تا چند issue را بخوانید که می‌توانید با کلیک بر روی پیوند موجود در ستون _Summary_ آن را مطالعه کنید.
+  * اگر تنها چند issue باز وجود دارد، ستون _Summary_ را پویش کنید تا ببینید آیا موضوع شما را پوشش می‌دهد یا خیر. ممکن است لازم باشد تا چند issue را بخوانید که می‌توانید با کلیک بر روی پیوند موجود در ستون _Summary_ آن را مطالعه کنید.
   * اگر فهرست issue باز، طولانی باشد، با وارد کردن کلیدواژه مورد نظر خود یا عنوان موضوعی که مشکل در آنجا قرار دارد داخل جعبه _Search for_ و کلیک روی _Search_ به کمتر شدن تعداد issue مبادرت کنید. آنگاه خلاصه مشکل را بررسی کرده یا به مطالعه issue بپردازید که مشکل در آنجا است.
 
 . اگر دریافتید که مشکل مورد نظر شما هم اکنون گزارش نشده است، روی _Create a new issue_ کلیک کنید و گزارش مشکل را مطابق زیر پر کنید:
@@ -38,17 +38,15 @@
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title | Short summary of the problem you found | Instructions in "Adding
-  a Content Type" do not work
-| Category | Type of issue being reported | Bug report
-| Version | Version of the guide you found the problem in | 8.x-0.x-dev
-| Issue summary | Details of the problem you found | In the "Adding a Content
-  Type" topic, in step 3, when I clicked _Save_, I got the following error
+| نام فیلد | توضیحات | مقدار نمونه
+| عنوان | توضیح مختصر از مشکلی که پیدا کرده‌اید | Instructions in "Adding a Content Type" do not work
+| طبقه‌بندی | نوع مشکلی که گزارش می‌کنید | Bug report
+| نسخه | نسخه‌ای از راهنما که مشکل را در آن پیدا کرده‌اید | 8.x-0.x-dev
+| خلاصه مشکل | جزئیات مشکلی که پیدا کرده‌اید | In the "Adding a Content Type" topic, in step 3, when I clicked _Save_, I got the following error
   message: ...
 |================================
 
-. _Title_ و _Issue summary_ که وارد کرده‌اید را مجدد بخوانید و اطمینان یابید که اطلاعات زیر در گزارش شما قرار گرفته است:
+. _عنوان_ و _خلاصه مشکلی_ که وارد کرده‌اید را مجدد بخوانید و اطمینان یابید که اطلاعات زیر در گزارش شما قرار گرفته است:
   * یک توضیح کامل از مشکلی که پیدا کرده‌اید
   * نام موضوع یا موضوعاتی که مشکل در آن پیدا شده است
   * زبانی که راهنما را به آن می‌خوانید (اگر انگلیسی نیست)
@@ -66,4 +64,6 @@
 
 *مشارکت‌کنندگان*
 
-نوشته شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+نگارش توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+
+ترجمه توسط https://www.drupal.org/u/novid[Navid Emami]
