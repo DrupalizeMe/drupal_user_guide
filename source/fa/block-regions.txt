@@ -1,5 +1,4 @@
 [[block-regions]]
-
 === مفهوم: ناحیه‌ها در یک قالب
 
 [role="summary"]
@@ -35,15 +34,14 @@
 
 <<understanding-themes>>
 
-==== یک ناحیه چیست؟
+==== ناحیه چیست؟
 
-علاوه بر محتوای اصلی، یک صفحه وب شامل محتوای دیگری مانند نام تجاری وبسایت (نام سایت، شعار و نماد)، ابزار پیمایش (منوها، پیوندها و آیکون‌ها)، متن قالب‌بندی شده و تصاویر است. هر قالب مجموعه‌ای از ناحیه‌های نامگذاری شده را فراهم می‌کند مانند _Content_، _Header_ و _Sidebar_ که سایت‌سازان می‌توانند محتوای خود را در آن قرار دهند.
-
+علاوه بر محتوای اصلی، یک صفحه وب شامل محتوای دیگری مانند نام تجاری وبسایت (نام سایت، شعار و نماد)، ابزار پیمایش (منوها، پیوندها و آیکون‌ها)، متن قالب‌بندی شده و تصاویر است. هر قالب مجموعه‌ای از ناحیه‌های نامگذاری شده را فراهم می‌کند مانند _سرآیند_، _محتوا_ و _نوارکناری_ که سایت‌سازان می‌توانند محتوای خود را در آن قرار دهند.
 ناحیه‌های موجود بستگی به طراحی قالب دارند. تنها ناحیه محتوا، که شامل محتوای اصلی وبسایت است، مورد نیاز می‌باشد؛ سایر ناحیه‌ها اختیاری هستند. قالب Bartik که در هسته دروپال وجود دارد شامل ۱۸ ناحیه است که در تصویر زیر مشاهده می‌کنید.
 
 // Bartik theme region preview at admin/structure/block/demo/bartik,
 // after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+image:images/block-regions-bartik.png["ناحیه‌های قالب داخلی Bartik",width="100%"]
 
 ==== موضوعات مرتبط
 
@@ -53,9 +51,10 @@ image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
 
 ==== منابع مطالعاتی
 
-* https://www.drupal.org/node/171224["اختصاص محتوا به ناحیه‌ها" در صفحه مستندات جامعه کاربری _Drupal.org_]
-
+* https://www.drupal.org/node/171224[صفحه "اختصاص محتوا به ناحیه‌ها" مستندات جامعه کاربری _Drupal.org_]
 
 *مشارکت‌کنندگان*
 
-نوشته و ویرایش‌شده توسط https://www.drupal.org/u/jfmacdonald[John MacDonald] و https://www.drupal.org/u/michaellenahan[Michael Lenahan] در https://erdfisch.de[erdfisch].
+نگارش و ویرایش توسط https://www.drupal.org/u/jfmacdonald[John MacDonald] و https://www.drupal.org/u/michaellenahan[Michael Lenahan] در https://erdfisch.de[erdfisch]
+
+ترجمه توسط https://www.drupal.org/u/novid[Navid Emami]
