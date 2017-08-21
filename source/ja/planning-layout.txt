@@ -1,88 +1,69 @@
 [[planning-layout]]
-=== Planning Your Site Layout
+=== サイトレイアウトの設計
 
 [role="summary"]
-How to plan the navigation and layout of a website (mobile and desktop browsers).
+ウェブサイト（モバイル向けとデスクトップ向け）のナビゲーションとレイアウトの設計方法。
 
-(((Planning,site layout)))
-(((Site layout,planning)))
-(((Layout,planning)))
+(((設計,サイトレイアウト)))
+(((サイトレイアウト,設計)))
+(((レイアウト,設計)))
 
-==== Goal
+==== 目標
 
-Plan the navigation and layout of the site, for both mobile and desktop
-browsers.
+モバイルとデスクトップのどちらのブラウザーにも対応する、サイトのナビゲーションとレイアウトを設計する。
 
-==== Prerequisite knowledge
+==== 前提知識
 
 * <<understanding-themes>>
 * <<block-regions>>
 * <<preface-scenario>>
 
-// ==== Site prerequisites
+// ==== サイトの前提条件
 
-==== Steps
+==== 手順
 
-It is a good idea to plan the site layout before you start building
-the site and writing content; however, your plan may need to be revised either
-before you start implementing it or after you have some of the site built with
-draft content in place, based on budgetary concerns or stakeholder feedback.
+サイトの構築とコンテンツの作成を始める前に、サイトのレイアウトを設計するのはよい考えです。
+ただし、実装を始める前でも、あるいは、草稿コンテンツを配置した状態のサイトがすでにいくつかある場合でも、予算の関係や顧客の意見次第では、設計を見直す必要が生じる場合があります。
 
-. Make a list of the information that your site should present to visitors. In
-the farmers market scenario, this might include:
+. サイトが訪問者に提供するべき情報の一覧を作成します。農産物市場のシナリオでは、次のようなものが含まれます。
 +
-  * Location of the market, with directions and a map
-  * Hours and days the market is open
-  * History of the market
-  * List of vendors
-  * Details about each vendor
-  * Searchable list of recipes
-  * Details about each recipe
-  * List of the most recently added recipes
+  * 地図と道順が記載された市場の場所
+  * 市場が営業する期間と時間
+  * 市場の歴史
+  * 生産者の一覧
+  * 各生産者の詳細
+  * 検索機能付きのレシピの一覧
+  * 各レシピの詳細
+  * 最近追加されたレシピの一覧
 
-. Decide which information should be on which pages or types of pages on the
-site:
+. 各情報を配置する、サイト上のページやページタイプを決定します。
 +
-  Information that should be on all pages::
-    Address, hours, and recently-added recipes list
-  Vendor details pages::
-    Information about each vendor on its own page
-  Recipe details pages::
-    Details of each recipe on its own page
-  Home page::
-    Location, map, directions, and hours
-  About page::
-    History of the market
-  Vendors list page::
-    List of vendors, with links to vendor detail pages
-  Recipe list page::
-    Searchable list of recipes, with links to recipe detail pages
+  すべてのページに表示する情報::
+    所在地、営業時間、最近追加されたレシピの一覧
+  生産者の詳細ページ:: 
+    生産者ごとに用意する、生産者の情報ページ
+  レシピの詳細ページ:: 
+    レシピごとに用意する、レシピの詳細ページ
+  ホームページ::
+    場所、地図、道順、営業時間
+  About ページ::
+    市場の歴史
+  生産者の一覧ページ:: 
+    生産者の詳細ページにリンクする、生産者の一覧ページ
+  レシピの一覧ページ:: 
+    レシピの詳細ページにリンクする、検索機能付きのレシピの一覧ページ
 
-. Decide which information is the most important on each page. Site visitors
-using mobile phones or other small browsers will often only see the content that
-is presented first, and they may not scroll down to see all of the information.
+. 各ページで、もっとも重要な情報を決定します。スマートフォンなどの携帯端末を利用したサイト訪問者は、最初に表示されたコンテンツだけを閲覧し、わざわざ下へスクロールして、すべてのコンテンツを閲覧しようとはしない傾向があります。
 
-. Decide which of these pages should appear in the main site navigation. For
-instance, the main navigation might consist of the Home, About, Vendors, and
-Recipes pages.
+. メインのサイトナビゲーションに表示するべきページを決定します。たとえば、「ホーム」、「About」、「生産者」、「レシピ」の各ページで構成することが考えられます。
 
-. Make a rough design sketch for each page, showing how it would look when
-viewed on a small screen such as a phone, as well as on a larger screen such as
-a desktop browser. Considering that most site visitors will be using smaller
-browsers, it is a good idea to start with the phone-size layout, to make sure
-that these visitors will be able to find the information they need without too
-much scrolling.
-+
-In making these page layout plans, you might find that you need to revise your
-plan for which information should be on which pages. For example, you might
-decide that the address, hours, and recently-added recipes list would all fit
-well in the right sidebar area of all pages, when the site is viewed on
-desktop-sized browsers. On the other hand, you might decide that for mobile
-browsers, you would instead put the address and hours in a short format at the
-top of each page, but only display the recent recipe list at the bottom of the
-home page.
+. スマートフォンなどの小さな画面と、デスクトップなどの大きな画面で表示した場合を想定して、各ページ向けの大まかなデザインスケッチを作成します。サイト訪問者の多くがスマートフォンのブラウザーを利用することを考慮した場合、あまりスクロールしなくても必要な情報にたどり着けるように、スマートフォンサイズのレイアウトから始めるのはよい考えです。
++ 
+これらのページレイアウトを設計するにあたり、情報を表示するべきページが適当かどうかについて、設計を見直す必要が生じる場合があります。
+たとえば、サイトがデスクトップサイズのブラウザーで表示された場合は、「所在地」、「営業時間」、「最近追加されたレシピの一覧」を、すべてのページの右サイドバーエリアに配置するのが適当と判断するでしょう。
+一方で、スマートフォンのブラウザーで表示された場合には、「所在地」と「営業時間」は各ページの最上部に短く表示し、「最近追加されたレシピの一覧」はホームページの最下部だけに表示するのが適当と判断するでしょう。
 
-==== Expand your understanding
+==== 理解を深める
 
 <<planning-structure>>
 
@@ -91,6 +72,8 @@ home page.
 // ==== Additional resources
 
 
-*Attributions*
+*帰属情報*
 
 Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Translated by https://www.drupal.org/u/hgoto[Hayato Goto], https://www.drupal.org/u/takafumi[Takafumi].
+Reviewed by https://www.drupal.org/u/takafumi[Takafumi], https://www.drupal.org/u/hgoto[Hayato Goto].
