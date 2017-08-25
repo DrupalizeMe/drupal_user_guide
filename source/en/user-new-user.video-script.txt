@@ -1,0 +1,31 @@
+--- video script ---
+
+Slide (title): In this tutorial, we'll walk through how to create a user account.
+
+Slide (goal): By the end of this tutorial, you will understand how to create vendor user accounts for Sweet Honey and Happy Farm vendors.
+
+Slide (prereq): To follow along, you should understand the concepts of users, roles, and permissions, the user 1 account, and have completed the tutorial Creating a Role, where we created the Vendor role. See the written version of this tutorial for links to these prerequisite tutorials.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to People, which is the admin/people path.
+2. Click Add user.
+3. This form allows administrators to register new users. Users' email addresses and usernames must be unique within the system.
+4. Let's create a new user for the vendor, Sweet Honey.
+5. The email address is A valid email address for the vendor. All emails from the system will be sent to this address. The email address is not made public. Fill in "honey@example.com".
+6. The username is A username for the vendor that they will use to sign in or author content items. Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores. Fill in "Sweet Honey"
+7. A password the vendor will use to sign in to the site. You can see how safe the password is on the Password strength gauge. You also get tips on how to make it safer. An administrator can assign a password to a new user who can then change it after they login or they can use the reset my password link which will cause the system to send a one-time login link to the user's email address. Fill in any password for this example. In practice, you should fill in a more secure password.
+8. Just remember what you typed, because in this field we need to confirm the new password by typing it again. This prevents accidental typos when creating a new password.
+9. The status is a field for administrators  which allows thme to Set the status of the user account. Blocked users will not be able to sign in. Let's make sure "Active" is selected.
+10. A user may be assigned multiple roles. Let's add "Vendor" to the roles for this user.
+11. Notify user of new account allows you to decide Whether or not to send a notification to the vendor’s email address when this form is submitted. Let's check it.
+12. The Picture field allows you to Click Browse and select a picture to upload. Pay attention to size restrictions. As an administrator, it's common to leave this blank and allow the user to select a picture for themselves when they log-in.
+13. Contact settings allows the user to Enable or disable the display of a contact form for the account. Drupal comes with a built-in contact form module and visitors can use this form to contact users of the site instead of exposing the user's email address to the public.
+14. We're now done filling out this form. By clicking save, the new user will be notified of their new account. Also, we will get a notification that a new user account has been created.
+15. Now create a 2nd user account for Happy Farm by following the steps just demonstrated.
+
+Slide (recap): In this tutorial, we walked through the steps of how to create a new user account for the vendor Sweet Honey. You're now ready to create another user account for the vendor Happy Farm. Refer to the steps in the written version of this tutorial to refresh your memory of the process.
+
+Slide (CC):  This work is a derivative of “Drupal 8 User Guide: 7.4 Creating a User Account”  written and edited by members of the Drupal open-source community and is licensed under the CC BY-SA 2.0 license by Drupalize.Me.
+
+https://www.drupal.org/docs/user_guide/en/user-new-user.html
