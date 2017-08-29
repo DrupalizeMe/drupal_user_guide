@@ -1,83 +1,76 @@
 [[content-edit]]
-=== Editing a Content Item
+=== コンテンツアイテムの編集
 
 [role="summary"]
-How to edit a content item.
+コンテンツアイテムの編集方法。
 
-(((Content,editing)))
-(((Content,finding)))
-(((Editing content)))
+(((コンテンツ,編集)))
+(((コンテンツ,発見)))
+(((コンテンツ編集)))
 
-==== Goal
+==== 目標
 
-Update the hours on the Home page content item.
+ホームページのコンテンツアイテムにある「営業時間」を更新する。
 
-==== Prerequisite knowledge
+==== 前提知識
 
 <<content-create>>
 
-==== Site prerequisites
+==== サイトの前提条件
 
-A content item for the Home page must exist. See <<content-create>>.
+ホームページのコンテンツアイテムが存在すること。<<content-create>> を参照。
 
-==== Steps
+==== 手順
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. 管理用メニューの「管理」から、「コンテンツ」（ _admin/content_ ）へ進みます。
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use the _Content type_, _Title_, or other filters to locate the content item.
+. 編集したいコンテンツアイテムが、最近作成されたか、更新された場合、そのページのコンテンツ一覧の上部に表示されているはずです。
+見当たらない場合は、「コンテンツタイプ」や「タイトル」などのフィルターを使用し、目的のコンテンツアイテムを検索できます。
 +
 --
 // Content list on admin/content, with filters above.
-image:images/content-edit-admin-content.png["Content administration page",width="100%"]
+image:images/content-edit-admin-content.png["コンテンツの管理ページ",width="100%"]
 --
 
-. Click _Edit_ in the row of the content item you want to edit (Home), to
-open the content editing form. Update the opening hours in the _Body_ field. See
-<<content-create>> for an explanation of the fields and a screenshot.
+. 編集したいコンテンツアイテム（「ホーム」）の行にある「編集」をクリックし、コンテンツ編集フォームを開き、「本文」フィールドに入力されている営業時間を更新します。
+フィールドの説明とスクリーンショットは、<<content-create>> を参照してください。
 
-. Check _Create new revision_ in the box on the right, if it is not already
-checked, and enter a _Revision log message_ explaining what changes you are
-making (for example, you might enter "Updated opening hours"). This text
-will appear in the revision log for the page.
+. 編集フォームの右側にあるボックスで、「新しいリビジョンの作成」にチェックを入れ、「リビジョンログメッセージ」に変更内容を入力します（たとえば「営業時間を更新」など）。
+このテキストは、ページのリビジョンログに表示されます。
 +
 --
 // Revision area of the content edit page.
-image:images/content-edit-revision.png["Revision information section of the content edit page"]
+image:images/content-edit-revision.png["コンテンツ編集ページのリビジョン情報エリア"]
 --
 
-. Click _Save and keep published_ to save your changes.
+. 「保存して掲載のまま」をクリックし、変更を保存します。
 
-. You will be redirected back to the _Content_ administrative page, and there
-should be a message showing that the content item was updated.
+. 「コンテンツ」の管理ページにリダイレクトされ、コンテンツアイテムが更新されたことを示すメッセージが表示されるはずです。
 +
 --
 // Updated content message.
-image:images/content-edit-message.png["Updated content message"]
+image:images/content-edit-message.png["コンテンツ更新のメッセージ"]
 --
 
-==== Expand your understanding
+==== 理解を深める
 
-As an alternative to the first two steps above, you can also reach the
-content edit form as follows:
+上述した最初の 2 ステップの代わりに、次の方法でコンテンツ編集フォームを開くこともできます。
 
-. Starting from your site's home page, use the site's navigation menus to locate
-the page where the content you want to edit is displayed to visitors.
+. サイトのホームページから、サイトのナビゲーションメニューを使用し、編集したいコンテンツが訪問者に表示されるページを探します。
 
-. Most themes will display an _Edit_ link or tab near the top of that page to
-people with permission to edit the page; clicking the link will take you to
-the full content edit form.
+. ほとんどのテーマでは、そのページの編集権限があるユーザーの場合、最上部付近に「編集」リンク（またはタブ）が表示されます。
+リンクをクリックすると、完全なコンテンツ編集フォームへ進みます。
 
-. You could also use the in-place editor (refer to <<content-in-place-edit>>)
-from this page.
+. また、リンクをクリックしないで、そのページからインプレースエディターを使用することもできます（<<content-in-place-edit>>を参照）。
 
-//==== Related concepts
+//==== 関連概念
 
-//==== Additional resources
+//==== その他のリソース
 
 
-*Attributions*
+*帰属情報*
 
 Written by https://www.drupal.org/u/chris-dart[Chris Dart]
 and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Translated by https://www.drupal.org/u/hgoto[Hayato Goto].
+Reviewed by https://www.drupal.org/u/takafumi[Takafumi].
