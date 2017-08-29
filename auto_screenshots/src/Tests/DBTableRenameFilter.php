@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\auto_screenshots\FunctionalJavascript;
+namespace Drupal\auto_screenshots\Tests;
 
 // Assumes that BackupMigrate has been added to autoload.
 use BackupMigrate\Core\File\BackupFileReadableInterface;
