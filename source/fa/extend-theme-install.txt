@@ -52,7 +52,7 @@
 image:images/extend-theme-install-download.png["یافتن نشانی یک قالب"]
 --
 
-. در منوی مدیریتی _Manage_ به مسیر _Appearance_ (_admin/appearance_) بروید. صفحه _نمایش_ ظاهر می‌شود.
+. از منوی _مدیریت_ به مسیر _ظاهر_ (_admin/appearance_) بروید.
 
 . روی _نصب قالب جدید_ کلیک کنید. صفحه _نصب قالب جدید_ نمایش می‌یابد.
 +
@@ -66,7 +66,7 @@ image:images/extend-theme-install-page.png["نصب یک قالب"]
 
 . روی _نصب_ کلیک کنید تا قالب جدید در سرور قرار بگیرد. فایل‌ها در دایرکتوری _themes_ قرار می‌گیرند.
 
-. روی _فعال‌سازی قالب‌های تازه اضافه شده_ کلیک کنید تا به صفحه _نمایش_ بازگردید. اگر با شیوه دستی اقدام به قرار دادن فایل‌ها روی سرور کرده‌اید، با استفاده از منوی مدیریتی _Manage_ به مسیر _Appearance_ (_admin/appearance_) بروید و از این قسمت ادامه دهید.
+. روی _فعال‌سازی قالب‌های تازه اضافه شده_ کلیک کنید تا به صفحه _نمایش_ بازگردید. اگر با شیوه دستی اقدام به قرار دادن فایل‌ها روی سرور کرده‌اید، از منوی _مدیریت_ به مسیر _ظاهر_ (_admin/appearance_) بروید و از آنجا ادامه دهید.
 
 . قالب جدید زیر _قالب‌های نصب‌نشده_ را شناسایی کرده و برای استفاده از آن روی _نصب و تنظیم به عنوان پیشفرض_ کلیک کنید. اکنون تمام صفحات غیر-مدیریتی سایت از این قالب استفاده می‌کنند.
 +
@@ -91,7 +91,7 @@ drush config-set system.theme default mayo
 
 ==== درک خود را گسترش دهید
 
-* در منوی مدیریتی _Manage_ به مسیر _Appearance_ (_admin/appearance_) رفته و هر قالبی که استفاده نمی‌کنید را غیرفعال کنید.
+* از منوی _مدیریت_ به مسیر _ظاهر_ (_admin/appearance_) رفته و هر قالبی که استفاده نمی‌کنید را غیرفعال کنید.
 
 * <<extend-module-find>>
 
@@ -105,4 +105,6 @@ drush config-set system.theme default mayo
 
 *مشارکت‌کنندگان*
 
-نوشته و ویرایش شده توسط https://www.drupal.org/u/eojthebrave[Joe Shindelar] در https://drupalize.me[Drupalize.Me] و https://www.drupal.org/u/batigolix[Boris Doesborgh].
+نگارش و ویرایش توسط https://www.drupal.org/u/eojthebrave[Joe Shindelar] در https://drupalize.me[Drupalize.Me] و https://www.drupal.org/u/batigolix[Boris Doesborgh]
+
+ترجمه توسط https://www.drupal.org/u/novid[Navid Emami]
