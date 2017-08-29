@@ -1,18 +1,14 @@
 <?php
 
-namespace Drupal\Tests\auto_screenshots\FunctionalJavascript;
+namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Component\Render\FormattableMarkup;
-use Drupal\Component\Gettext\PoStreamReader;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Database\Database;
-use Drupal\Core\PhpStorage\PhpStorageFactory;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\StreamWrapper\PublicStream;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
-use Drupal\FunctionalJavascriptTests\JavascriptTestBase;
-use Drupal\locale\PoDatabaseWriter;
+use Drupal\simpletest\WebTestBase;
 use Drupal\user\Entity\User;
 use BackupMigrate\Core\Config\Config;
 use BackupMigrate\Core\Destination\DirectoryDestination;
@@ -28,7 +24,7 @@ use BackupMigrate\Core\Service\TarArchiveWriter;
 use BackupMigrate\Core\Source\FileDirectorySource;
 use BackupMigrate\Core\Source\MySQLiSource;
 
-require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 /**
  * Base class for tests that automate screenshots for the User Guide.
@@ -53,12 +49,12 @@ require __DIR__ . '/../../../vendor/autoload.php';
  * portion of the screenshots. See the documentation for the $runList member
  * variable for details.
  */
-abstract class UserGuideDemoTestBase extends JavascriptTestBase {
+abstract class UserGuideDemoTestBase extends WebTestBase {
 
   /**
    * Which Drupal Core software version to use for the downloading screenshots.
    */
-  protected $latestRelease = '8.3.6';
+  protected $latestRelease = '8.1.8';
 
   /**
    * Strings and other information to input into the demo site.
@@ -207,9 +203,10 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
    *   method, then make a backup.
    * - skip: Do nothing.
    *
-   * Created backups and images are placed in a new temporary directory inside
-   * sites/default/files/simpletest in your Drupal installation.
-   * local machine.
+   * Created backups are stored in a temporary directory inside /tmp on your
+   * local machine. There will be lines in the output telling you where they
+   * are, saying:
+   * "BACKUP MADE TO: ____".
    *
    * After verifying, save the backups for later restoration in the
    * auto_screenshots/backups/LANGUAGE_CODE/CHAPTER_METHOD directories.
@@ -217,18 +214,18 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
    * @var array
    */
   protected $runList = [
-    'doPrefaceInstall' => 'backup',
-    'doBasicConfig' => 'skip',
-    'doBasicPage' => 'skip',
-    'doContentStructure' => 'skip',
-    'doUserAccounts' => 'skip',
-    'doBlocks' => 'skip',
-    'doViews' => 'skip',
-    'doMultilingualSetup' => 'skip',
-    'doTranslating' => 'skip',
-    'doExtending' => 'skip',
-    'doPreventing' => 'skip',
-    'doSecurity' => 'skip',
+    'doPrefaceInstall' => 'run',
+    'doBasicConfig' => 'run',
+    'doBasicPage' => 'run',
+    'doContentStructure' => 'run',
+    'doUserAccounts' => 'run',
+    'doBlocks' => 'run',
+    'doViews' => 'run',
+    'doMultilingualSetup' => 'run',
+    'doTranslating' => 'run',
+    'doExtending' => 'run',
+    'doPreventing' => 'run',
+    'doSecurity' => 'run',
   ];
 
   /**
@@ -242,14 +239,19 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
   public static $modules = ['update'];
 
   /**
+   * We need verbose logging to be on.
+   */
+  public $verbose = TRUE;
+
+  /**
    * We don't care about schema checking.
    */
   protected $strictConfigSchema = FALSE;
 
   /**
-   * Directory for screenshots, backups, etc.
+   * Counter for screenshot output, separate from regular verbose IDs.
    */
-  protected $outputDirectory;
+  protected $screenshotId = 0;
 
   /**
    * The directory where asset files can be found.
@@ -280,24 +282,20 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     array_pop($dir_parts);
     $this->assetsDirectory = implode('/', $dir_parts) . '/assets/';
 
-    // Create and/or verify the output directory, which we create under the
-    // sites/default/files/simpletest directory so that if DrupalCI runs these
-    // tests, the images show up as build artifacts. Note that we already made
-    // sure sites/default/files/simpletest existed in
-    // self::prepareEnvironment().
-    $this->outputDirectory = \Drupal::root() . '/sites/default/files/simpletest/images_backups_' . $this->demoInput['first_langcode'] . '_' . $this->databasePrefix;
-    $this->ensureDirectoryWriteable($this->outputDirectory, "output");
-
-    // Several directories needed for Drupal and/or tests do not seem to be
-    // created during setup, and/or their permissions are incorrect. So, try
-    // to create them and test that they work. Some we also fixed up in
-    // self::prepareEnvironment(). See also https://www.drupal.org/node/2902700
-    $this->resetAll();
-    $this->clearCache();
-    $this->ensureDirectoryWriteable($this->siteDirectory, "site");
-    $this->ensureDirectoryWriteable(file_directory_temp(), "temp");
+    // Verify the temporary directory.
+    $temp_dir = $this->getTempFilesDirectory();
+    file_prepare_directory($temp_dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+    // Verify we can write to this directory.
+    $filename = $temp_dir . '/temp_test.txt';
+    $fp = @fopen($filename, 'x');
+    if (!$fp) {
+      $this->fail("Could not create temporary file $filename");
+      return;
+    }
+    fclose($fp);
 
     // Run all the desired chapters.
+    $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
     $backup_read_dir = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $this->demoInput['first_langcode']);
     $previous = '';
     foreach ($this->runList as $method => $op) {
@@ -314,7 +312,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
 
       if ($op == 'backup' || $op == 'restore_backup') {
         // Make a backup of this topic.
-        $this->makeBackup($this->outputDirectory . '/' . $method);
+        $this->makeBackup($backup_write_dir . '/' . $method);
       }
     }
   }
@@ -325,36 +323,26 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
   protected function doPrefaceInstall() {
 
     // Add the first language, set the default language to that, and delete
-    // English, to simulate having installed in a different language.
+    // English, to simulate having installed in a different language. No
+    // screen shots for this!
     if ($this->demoInput['first_langcode'] != 'en') {
       // Note that the buttons should still be in English until after
       // the other language is set as the default language.
       // Turn on the language and locale modules.
-      $this->drupalPostForm('admin/modules', [
+      $this->drupalGet('admin/modules');
+      $this->drupalPostForm(NULL, [
           'modules[language][enable]' => TRUE,
-        ], 'Install');
-      // Wait a minute for the installation to complete.
-      $this->assertSession()->waitForButton('Install', 60000);
-      $this->assertSession()->pageTextContains('has been enabled');
-      $this->drupalPostForm('admin/modules', [
           'modules[locale][enable]' => TRUE,
         ], 'Install');
-      // Wait a minute for the installation to complete.
-      $this->assertSession()->waitForButton('Install', 60000);
-      $this->assertSession()->pageTextContains('has been enabled');
-      // Rebuild the container, etc.
-      $this->rebuildContainer();
-      $this->rebuildAll();
-      $this->container->get('router.builder')->rebuild();
-      drupal_flush_all_caches();
-      $this->refreshVariables();
 
-      // Add the main language and fully import translations.
-      $this->fixTranslationSettings();
+      // Add the other language.
       $this->drupalPostForm('admin/config/regional/language/add', [
           'predefined_langcode' => $this->demoInput['first_langcode'],
         ], 'Add language');
-      $this->importTranslations($this->demoInput['first_langcode']);
+      // Rebuild the container. Translations are not working without this.
+      $this->rebuildContainer();
+      drupal_flush_all_caches();
+      $this->refreshVariables();
 
       // Set the new language to default. After this, the UI should be
       // translated.
@@ -363,10 +351,6 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
         ], 'Save configuration');
       // Delete English.
       $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
-
-      // Assert a translation, to verify that they were loaded.
-      $test_string = 'This action cannot be undone.';
-      $this->assertNotEquals($test_string, (string) $this->callT($test_string));
     }
 
     // Topic: preface-conventions: Conventions of the user guide.
@@ -374,11 +358,10 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     // Top navigation bar on any admin page, with Manage menu showing.
     // This same screenshot is also config-overview-toolbar.png in the
     // config-overview topic.
-    $this->setUpScreenShot('preface-conventions-top-menu.jpg', $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor());
+    $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // System section of admin/config page.
-    $this->drupalGet('admin/config');
-    $this->setUpScreenShot('preface-conventions-config-system.jpg', $this->showOnly('.layout-column:odd .panel:first'));
+    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.layout-column:odd .panel:first') . '"');
 
     // Topic: block-regions - postpone until after theme is configured.
 
@@ -388,11 +371,11 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->drupalGet('https://www.drupal.org/project/drupal');
       // Recommended releases section of https://www.drupal.org/project/drupal.
-      $this->setUpScreenShot('install-prepare-recommended.jpg', $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link'));
+      $this->setUpScreenShot('install-prepare-recommended.png', 'onLoad="' . $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link') . '"');
       $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
       // File section of a recent Drupal release download page, such as
       // https://www.drupal.org/project/drupal/releases/8.1.3.
-      $this->setUpScreenShot('install-prepare-files.jpg', $this->showOnly('#page') . $this->hideArea('#page-title-tools, #nav-content, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom'));
+      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools, #nav-content, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
     }
 
     // Topic: install-run - Running the installer. Skip -- manual screenshots.
@@ -414,7 +397,6 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     // successfully reproduced, unfortunately -- the buttons didn't show up.
     // So config-overview-vertical.png must be done manually. Same with
     // config-overview-pencils.png.
-    // @todo Make these automatically?
 
     // Topic: config-basic - Editing basic site information.
     $this->drupalGet('<front>');
@@ -500,8 +482,10 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations.
-    $this->importTranslations($this->demoInput['first_langcode']);
+    // import the saved translations. Then rebuild the cache/container.
+    $this->importTranslations();
+    $this->resetAll();
+    $this->clearCache();
 
     // Topic: config-uninstall - Uninstalling unused modules.
 
@@ -2159,8 +2143,14 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations.
-    $this->importTranslations($this->demoInput['first_langcode']);
+    // import the saved translations. Also, this test doesn't seem to work
+    // without some extensive route rebuilding... So, rebuild the cache,
+    // container, and routes.
+    $this->importTranslations();
+    $this->rebuildContainer();
+    $this->rebuildAll();
+    $this->container->get('router.builder')->rebuild();
+    $this->clearCache();
 
     // Add the second language.
     $this->drupalGet('<front>');
@@ -2182,9 +2172,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     $this->drupalPostForm(NULL, [
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ], $this->callT('Add language'));
-    $this->importTranslations($this->demoInput['second_langcode']);
     // Confirmation and language list after adding Spanish language.
-    $this->drupalGet('admin/config/regional/language');
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
 
     // Place the Language Switcher block in sidebar second (no screenshots).
@@ -2668,7 +2656,9 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
 
     // Due to a core bug, installing a module corrupts translations. So,
     // import the saved translations. Then rebuild the cache/container.
-    $this->importTranslations($this->demoInput['first_langcode']);
+    $this->importTranslations();
+    $this->resetAll();
+    $this->clearCache();
 
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Reports'));
@@ -2762,11 +2752,12 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
    * trims the images automatically down to the relevant area.
    *
    * @param string $file
-   *   Name of the screen shot file. It will be a JPEG file.
-   * @param string $javascript
-   *   JavaScript to run before making the screenshot, which should blank out
-   *   irrelevant portions of the page, so that the ImageMagick processing can
-   *   trim the image automatically down to the right size.
+   *   Name of the screen shot file.
+   * @param string $body_addition
+   *   Additional text to add into the HTML body tag. Example:
+   *   'onLoad="window.scroll(0,500);"'. This code should blank out irrelevant
+   *   portions of the page, so that the ImageMagick capture script can trim
+   *   the image automatically down to the right size.
    *
    * @see UserGuideDemoTestBase::showOnly()
    * @see UserGuideDemoTestBase::hideArea()
@@ -2776,13 +2767,19 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
    * @see UserGuideDemoTestBase::reloadOnce()
    * @see UserGuideDemoTestBase::addBorder()
    */
-  protected function setUpScreenShot($file, $javascript = '') {
-    $session = $this->getSession();
-    if ($javascript) {
-      $session->executeScript($javascript);
+  protected function setUpScreenShot($file, $body_addition = '') {
+    $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getRawContent());
+
+    // This is like TestBase::verbose() but just the bare HTML output, and
+    // with a separate file counter so it doesn't interfere.
+    $screenshot_filename =  $this->verboseClassName . '-screenshot-' . $this->screenshotId . '-' . $this->testId . '.html';
+    if (file_put_contents($this->verboseDirectory . '/' . $screenshot_filename, $output)) {
+      $url = $this->verboseDirectoryUrl . '/' . $screenshot_filename;
+      $link = '<a href="' . $url . '" target="_blank">Screen shot output</a>';
+      $this->error($link, 'User notice');
     }
-    $image = $session->getScreenshot();
-    file_put_contents($this->outputDirectory . '/' . $file, $image);
+    $this->screenshotId++;
+    $this->pass('SCREENSHOT: ' . $file . ' ' . $url);
   }
 
   /**
@@ -2941,6 +2938,25 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
   }
 
   /**
+   * Prepares site settings and services before installation.
+   *
+   * Overrides WebTestBase::prepareSettings() so that we can store public
+   * files in a directory that will not get removed until the verbose output
+   * is gone.
+   */
+  protected function prepareSettings() {
+    parent::prepareSettings();
+
+    $this->publicFilesDirectory = $this->verboseDirectory . '/' . $this->databasePrefix;
+    $settings['settings']['file_public_path'] = (object) [
+      'value' => $this->publicFilesDirectory,
+      'required' => TRUE,
+    ];
+    $this->writeSettings($settings);
+    Settings::initialize(DRUPAL_ROOT, $this->siteDirectory, $this->classLoader);
+  }
+
+  /**
    * Finds a link whose link contains the given URL substring, and clicks it.
    */
   protected function clickLinkContainingUrl($url, $index = 0) {
@@ -2950,7 +2966,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
       $this->drupalGet($url_target);
     }
     else {
-      $this->assertTrue(FALSE, 'Could not find link matching ' . $url);
+      $this->fail('Could not find link matching ' . $url);
     }
   }
 
@@ -2986,6 +3002,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     $db_manager->backup('database1', 'directory1');
     $file_manager = $this->backupFileManager($directory);
     $file_manager->backup('public1', 'directory1');
+    $this->pass('BACKUP MADE TO: ' . $directory);
   }
 
   /**
@@ -3007,7 +3024,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     $db_manager->restore('database1', 'directory1', 'database.mysql.gz');
     $file_manager = $this->backupFileManager($directory);
     $file_manager->restore('public1', 'directory1', 'public_files.tar.gz');
-    print 'BACKUP RESTORED FROM: ' . $directory;
+    $this->pass('BACKUP RESTORED FROM: ' . $directory);
 
     // Fix the configuration for temp files directory.
     \Drupal::configFactory()->getEditable('system.file')
@@ -3044,7 +3061,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     // Figure out which tables to exclude: anything lacking the current
     // test prefix. Also do not save data for any table containing 'cache_'.
     $db_info = Database::getConnectionInfo()['default'];
-    $prefix = $this->databasePrefix;
+    $prefix = $this->getDatabasePrefix();
     $exclude = [];
     $no_data = [];
     $all_tables = Database::getConnection()->query('SHOW TABLES')->fetchCol();
@@ -3083,7 +3100,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     $manager = new BackupMigrate();
     $manager->services()->add('ArchiveReader', new TarArchiveReader());
     $manager->services()->add('ArchiveWriter', new TarArchiveWriter());
-    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->tempFilesDirectory));
+    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->getTempFilesDirectory()));
     $manager->services()->add('TempFileManager', new TempFileManager($manager->services()->get('TempFileAdapter')));
 
     $db_source = new MySQLiSource();
@@ -3144,7 +3161,7 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
     $manager = new BackupMigrate();
     $manager->services()->add('ArchiveReader', new TarArchiveReader());
     $manager->services()->add('ArchiveWriter', new TarArchiveWriter());
-    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->tempFilesDirectory));
+    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->getTempFilesDirectory()));
     $manager->services()->add('TempFileManager', new TempFileManager($manager->services()->get('TempFileAdapter')));
 
     $manager->services()->addClient($files_source);
@@ -3193,153 +3210,48 @@ abstract class UserGuideDemoTestBase extends JavascriptTestBase {
   /**
    * Exports the translations for the first language to a temporary file.
    *
-   * @see UserGuideDemoTestBase::importTranslations()
+   * @see UserGuideDemoBase::importTranslations()
    */
   protected function exportTranslations() {
     if ($this->demoInput['first_langcode'] != 'en') {
-      $this->fixTranslationSettings();
       $this->drupalPostForm('admin/config/regional/translate/export', [
           'langcode' => $this->demoInput['first_langcode'],
           'content_options[not_customized]' => 1,
           'content_options[customized]' => 1,
           'content_options[not_translated]' => 0,
         ], $this->callT('Export'));
-      $this->translationFilename = \Drupal::config('locale.settings')->get('translation.path') . '/' . $this->demoInput['first_langcode'] . '_' . $this->randomMachineName() . '.po';
+      $directory = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+      if (!is_dir($directory)) {
+        \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
+      }
+      $this->translationFilename = $directory . '/' . $this->demoInput['first_langcode'] . '_' . $this->randomMachineName() . '.po';
       file_put_contents($this->translationFilename, $this->getRawContent());
+      $this->pass('TRANSLATIONS SAVED TO: ' . $this->translationFilename);
     }
   }
 
   /**
-   * Imports translations from any existing .po files in translation directory.
+   * Imports the translations for the first language from the file, if any.
    *
-   * @param string $langcode
-   *   Language code to import the translations for.
+   * @see UserGuideDemoBase::exportTranslations()
    */
-  protected function importTranslations($langcode) {
-    if ($langcode == 'en') {
-      return;
+  protected function importTranslations() {
+    if ($this->translationFilename) {
+      // The setting for translation path is likely incorrect, so fix it.
+      \Drupal::configFactory()->getEditable('locale.settings')
+        ->set('translation.path', $this->tempFilesDirectory)
+        ->save();
+
+      $this->drupalPostForm('admin/config/regional/translate/import', [
+        'langcode' => $this->demoInput['first_langcode'],
+        'overwrite_options[not_customized]' => 1,
+        'overwrite_options[customized]' => 1,
+        'customized' => 0,
+        'files[file]' => $this->translationFilename,
+      ], $this->callT('Import'));
+
+      $this->pass('TRANSLATIONS READ FROM: ' . $this->translationFilename);
     }
-
-    // In case this came from an add language page, wait for the translation
-    // batch to start so the file is downloaded, allowing a minute for the
-    // file to download.
-    $this->assertSession()->waitForButton('Add language', 60000);
-
-    // The batch import would not finish -- in tests, even if you allowed for
-    // a lot of time, it ran out of refreshes or something, and didn't
-    // complete. So, find any translation files in the translation directory
-    // and import them, deleting after import so that they don't get imported
-    // again later.
-    $directory = \Drupal::config('locale.settings')->get('translation.path');
-    $result = file_scan_directory($directory, '|[a-z_\-0-9\.]+\.po$|', ['recurse' => FALSE]);
-    foreach ($result as $file) {
-      $file->langcode = $langcode;
-      $this->readPoFile($file->uri, $langcode);
-      unlink($directory . '/' . $file->filename);
-    }
-
-    // Rebuild the container. Translations may not "take" without this.
-    // Also rebuild routes and variables, because sometimes we need that too.
-    $this->rebuildContainer();
-    $this->rebuildAll();
-    $this->container->get('router.builder')->rebuild();
-    drupal_flush_all_caches();
-    $this->refreshVariables();
-  }
-
-  /**
-   * Ensures that we can write a file to a directory, with an assertion if not.
-   *
-   * @param string $directory
-   *   Directory to ensure is writeable.
-   * @param string $name
-   *   Name of directory for error message if there is a problem.
-   */
-  protected function ensureDirectoryWriteable($directory, $name) {
-    // Attempt to create and modify permissions in the directory. Do not use
-    // Drupal container calls, so this can run before installation.
-    if (!is_dir($directory)) {
-      @mkdir($directory);
-    }
-    @chmod($directory, 0777);
-
-    // Just to make sure, attempt to create a file. fopen fails if the file
-    // exists, so attempt to delete it first, but ignore errors if it doesn't
-    // exist yet (it shouldn't).
-    $filename = $directory . '/temp_test' . $this->randomMachineName() . '.txt';
-    @unlink($filename);
-    $fp = @fopen($filename, 'x');
-    if (!$fp) {
-      $this->assertTrue(FALSE, "Could not create output file $filename in $name");
-    }
-    fclose($fp);
-    @unlink($filename);
-  }
-
-  /**
-   * Prepares a customized environment for running the test.
-   *
-   * Uses a different spot for directories so they do not vanish after the
-   * test run, for debugging purposes.
-   */
-  protected function prepareEnvironment() {
-    parent::prepareEnvironment();
-
-    $top_directory = DRUPAL_ROOT . '/sites/default/files/simpletest';
-    $this->ensureDirectoryWriteable($top_directory, "top");
-    $base_directory = $top_directory . '/tmp_files_' . $this->databasePrefix;
-    $this->ensureDirectoryWriteable($base_directory, "base");
-    $this->publicFilesDirectory = $base_directory . '/files';
-    $this->ensureDirectoryWriteable($this->publicFilesDirectory, "public");
-    $php_directory = $this->publicFilesDirectory . '/php';
-    $this->ensureDirectoryWriteable($php_directory, "php");
-    $twig_directory = $php_directory . '/twig';
-    $this->ensureDirectoryWriteable($twig_directory, "twig");
-    $this->privateFilesDirectory = $base_directory . '/private';
-    $this->ensureDirectoryWriteable($this->privateFilesDirectory, "private");
-    $this->tempFilesDirectory = $base_directory . '/temp';
-    $this->ensureDirectoryWriteable($this->tempFilesDirectory, "temp");
-    $this->translationFilesDirectory = $base_directory . '/translations';
-    $this->ensureDirectoryWriteable($this->translationFilesDirectory, "translations");
-  }
-
-  /**
-   * Fixes the settings for translation.
-   *
-   * Makes sure the translation directory exists.
-   */
-  protected function fixTranslationSettings() {
-    \Drupal::configFactory()->getEditable('locale.settings')
-      ->set('translation.path', file_directory_temp())
-      ->save();
-    $translations_directory = \Drupal::service('file_system')->realpath('translations://');
-    $this->ensureDirectoryWriteable($translations_directory, "translations");
-  }
-
-  /**
-   * Replicates what Gettext::fileToDatabase() does, but simpler.
-   *
-   * @param string $file_uri
-   *   URI of file to read.
-   * @param string $langcode
-   *   Language code to save the strings for.
-   */
-  protected function readPoFile($file_uri, $langcode) {
-    $reader = new PoStreamReader();
-    $reader->setLangcode($langcode);
-    $reader->setURI($file_uri);
-    $reader->open();
-
-    $header = $reader->getHeader();
-    if (!$header) {
-      throw new \Exception('Missing or malformed header.');
-    }
-
-    $writer = new PoDatabaseWriter();
-    $writer->setOptions([]);
-    $writer->setLangcode($langcode);
-    $writer->setHeader($header);
-    $writer->writeItems($reader);
   }
 
 }
