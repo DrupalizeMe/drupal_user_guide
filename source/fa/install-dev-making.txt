@@ -19,7 +19,7 @@
 
 * شما یک سایت زنده و توسعه‌یافته دارید که می‌خواهید از آن یک نسخه برای اهداف آزمایشی خود کپی بگیرید.
 
-* اگر قصد استفاده از Drush برای برخی گام‌های این فعالیت را دارید، Drush باید نصب گردد. <<install-tools>> را مشاهده کنید.
+* اگر قصد استفاده از Drush را دارید، <<install-tools>> را مشاهده کنید.
 
 ==== گام‌ها
 
@@ -41,7 +41,7 @@ mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
 drush sql-dump > BACKUPFILE.sql
 ----
 
-  از https://www.drupal.org/project/backup_migrate[افزونه خارجی Backup and Migrate] واقع در سایت اصلی خود استفاده کنید. برای مشاهده دستورالعمل‌های نصب افزونه‌های خارجی <<extend-module-install>> را مشاهده کنید.
+  * از https://www.drupal.org/project/backup_migrate[افزونه خارجی Backup and Migrate] واقع در سایت اصلی خود استفاده کنید. برای مشاهده دستورالعمل‌های نصب افزونه‌های خارجی <<extend-module-install>> را مشاهده کنید.
 +
 اکنون خروجی پایگاه‌داده در فایل _BACKUPFILE.sql_ ذخیره شده است. به دلایل امنیتی، از ذخیره‌سازی این فایل در محل نصب دروپال واقع در سرور میزبانی خودداری کنید. اینکار از دسترسی دیگران به یک کپی از پایگاه‌داده شما جلوگیری بعمل می‌آورد.
 
@@ -96,9 +96,11 @@ $config['system.site']['name'] = "Development Site for Anytown Farmers Market";
 
 ==== منابع مطالعاتی
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site["پشتیبان‌گیری از یک سایت" صفحه مستندات جامعه کاربری _Drupal.org_]
-* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site["ایجاد یک سایت آزمایشی" صفحه مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[صفحه "پشتیبان‌گیری از یک سایت" در مستندات جامعه کاربری _Drupal.org_]
+* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[صفحه "ایجاد یک سایت آزمایشی" در مستندات جامعه کاربری _Drupal.org_]
 
 *مشارکت‌کنندگان*
 
-نوشته و ویرایش شده توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]، https://www.drupal.org/u/eojthebrave[Joe Shindelar] در https://drupalize.me[Drupalize.Me] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].
+نگارش و ویرایش توسط https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]، https://www.drupal.org/u/eojthebrave[Joe Shindelar] در https://drupalize.me[Drupalize.Me] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle]
+
+ترجمه توسط https://www.drupal.org/u/novid[Navid Emami]
