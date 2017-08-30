@@ -1,5 +1,4 @@
 [[security-update-core]]
-
 === بروزرسانی دروپال
 
 [role="summary"]
@@ -18,7 +17,7 @@
 
 ==== پیشنیازهای سایت
 
-* اگر قصد استفاده از Drush را دارید، باید آن را نصب کنید. <<install-tools>> را مشاهده کنید.
+* اگر قصد استفاده از Drush را دارید، <<install-tools>> را مشاهده کنید.
 
 * اگر سایت شما در دسترس عموم قرار دارد، ابتدا باید این فرآیند را در یک سایت توسعه آزمایش سپس به سایت اصلی منتقل کنید. <<install-dev-making>> را مشاهده کنید.
 
@@ -42,7 +41,7 @@ $settings['update_free_access'] = TRUE;
 
 . فایل بایگانی را در سرور میزبانی سایت خود آپلود کنید.
 
-. محتویات فایل بایگانی را در یک دایرکتوری موقت از سرور قرار دهید (باید خارج از مسیر اصلی سایت باشد). مدیر فایل سرویس میزبانی شما باید روشی برای اینکار داشته باشد. یا، اگر به ترمینال سرور (لینوکس) خود دسترسی دارید می‌توانید از دستور زیر استفاده کنید:
+. محتویات فایل بایگانی را در یک دایرکتوری موقت از سرور قرار دهید (باید خارج از مسیر اصلی سایت باشد). مدیر فایل سرویس میزبانی شما باید روشی برای اینکار داشته باشد. اگر به ترمینال سرور (لینوکس) خود دسترسی دارید می‌توانید از دستور زیر استفاده کنید:
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
@@ -100,4 +99,6 @@ $settings['update_free_access'] = FALSE;
 
 *مشارکت‌کنندگان*
 
-نوشته و ویرایش شده توسط https://www.drupal.org/u/surendramohan[Surendra Mohan]، https://www.drupal.org/u/batigolix[Boris Doesborgh] and https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle].
+نگارش و ویرایش توسط https://www.drupal.org/u/surendramohan[Surendra Mohan]، https://www.drupal.org/u/batigolix[Boris Doesborgh] و https://www.drupal.org/u/jojyja[Jojy Alphonso] در http://redcrackle.com[Red Crackle]
+
+ترجمه توسط https://www.drupal.org/u/novid[Navid Emami]
