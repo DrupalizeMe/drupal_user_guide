@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\auto_screenshots\FunctionalJavascript;
+namespace Drupal\auto_screenshots\Tests;
 
 /**
  * Builds the demo site for the User Guide, English, with screenshots.
