@@ -548,7 +548,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Appearance'));
-    $this->assertText($this->callT('Installed themes'));
+    // This text is part of a plural translation, so only test in English.
+    if ($this->demoInput['first_langcode'] == 'en') {
+      $this->assertText($this->callT('Installed themes'));
+    }
     // Theme names are not translated.
     $this->assertText('Bartik');
     $this->assertText($this->callT('default theme'));
