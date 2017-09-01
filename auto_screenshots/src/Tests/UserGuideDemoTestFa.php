@@ -20,14 +20,14 @@ class UserGuideDemoTestFa extends UserGuideDemoTestBase {
    * change 'skip' to one of the other values for each chapter you want to run.
    * See UserGuideDemoTestBase::runList for more information.
    */
-  protected $notRunList = [
+  protected $runList = [
     'doPrefaceInstall' => 'skip',
     'doBasicConfig' => 'skip',
     'doBasicPage' => 'skip',
-    'doContentStructure' => 'skip',
-    'doUserAccounts' => 'skip',
-    'doBlocks' => 'skip',
-    'doViews' => 'skip',
+    'doContentStructure' => 'restore_backup',
+    'doUserAccounts' => 'backup',
+    'doBlocks' => 'backup',
+    'doViews' => 'backup',
     'doMultilingualSetup' => 'skip',
     'doTranslating' => 'skip',
     'doExtending' => 'skip',
@@ -107,12 +107,12 @@ class UserGuideDemoTestFa extends UserGuideDemoTestBase {
     'recipe_1_title' => "سالاد سبز",
     'recipe_1_path' => "/recipes/green_salad",
     'recipe_1_body' => "سبزیجات مورد علاقه خود را تکه تکه کرده و درون کاسه قرار دهید.",
-    'recipe_1_ingredients' => "هویج‌ها",
+    'recipe_1_ingredients' => "هویج, کاهو, گوجه, خیار",
 
     'recipe_2_title' => "هویج‌های تازه",
     'recipe_2_path' => "/recipes/carrots",
     'recipe_2_body' => "هویج‌های چند رنگ را درون یک ظرف قرار دهید.",
-    'recipe_2_ingredients' => "هویج‌ها",
+    'recipe_2_ingredients' => "هویج",
 
     'image_style_label' => "متوسط (۳۰۰x۲۰۰)",
     'image_style_machine_name' => "medium_300x200",

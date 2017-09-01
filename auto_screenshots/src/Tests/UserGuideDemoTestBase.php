@@ -598,7 +598,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $this->drupalGet('admin/appearance/settings/bartik');
     // Color settings section of admin/appearance/settings/bartik.
-    $this->setUpScreenShot('config-theme_color_scheme.png', 'onLoad="window.scroll(0,200);' . $this->showOnly('#color_scheme_form') . $this->hideArea('h2') . $this->hideArea('.color-preview') . $this->setWidth('#color_scheme_form', 800) . '"');
+    $this->setUpScreenShot('config-theme_color_scheme.png', 'onLoad="window.scroll(0,200);' . $this->showOnly('#color_scheme_form') . $this->hideArea('h2') . $this->hideArea('.color-preview') . $this->setWidth('#color_scheme_form', 800) . $this->removeScrollbars() . '"');
     // Preview section of admin/appearance/settings/bartik.
     $this->setUpScreenShot('config-theme_color_scheme_preview.png', 'onLoad="window.scroll(0,1000);' . $this->showOnly('.color-preview') . $this->setWidth('#color_scheme_form', 700) . $this->removeScrollbars() . '"');
 
@@ -1200,7 +1200,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // scrolling to the bottom.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/node.' . $recipe . '.field_' . $submitted_by);
     // Field settings page for Submitted by field.
-    $this->setUpScreenShot('structure-adding-reference-field-settings.png', 'onLoad="window.scroll(0,2000);' . $this->hideArea('#toolbar-administration') . '"');
+    $this->setUpScreenShot('structure-adding-reference-field-settings.png', 'onLoad="window.scroll(0,2000);' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
 
     // Submit this form to set the sort direction to its default. It is not
     // set properly in the earlier submit, leading to exceptions in a later
