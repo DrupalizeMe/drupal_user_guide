@@ -1,0 +1,69 @@
+[[install-prepare_video-script]]
+
+=== Preparing to Install
+
+(Slide/Intro)
+Learn how to choose a method for installing the core software, and satisfy prerequisites for installation.
+
+(Slide/Goal)
+By the end of this tutorial you should be able to choose an appropriate way to install the core software, and handle any required prerequisites.
+
+(Slide/Prerequisites)
+Before you get started with this tutorial you'll want to make sure that you:
+
+- Understand the system requirements that must be met in order to host a Drupal site
+- And, if you want to use Drush to install the core software, Drush must be installed already
+
+(Slide/Choose)
+The first thing you need to do is choose a method for installing the software.
+
+The fastest and easiest is to use an online provider to get a demo installation of the software. This method is especially useful for evaluation purposes. Checkout drupal.org/try-drupal
+
+Another option is to use a one-click installer from your hosting provider If you choose to install the core software at your hosting provider, your hosting provider may have specific documentation and/or a one-click install that you can use. You can checkout a a list of hosting providers that support Drupal on drupal.org
+
+You can use Drush to install Drupal via the command line. You will need to have Drush installed and command-line access to the site.
+
+You can use the web installer. You will need space on a local or hosted web server to install the core software manually.
+
+Finally, you could use a pre-configured environment or virtual machine that contains Drupal and all the required supporting software to install Drupal locally. See the section for your operating system under Drupal.org's Local server setup guide for possible options.
+
+Links with more information about each option are included in the written version of this tutorial.
+
+If you are installing using Drush or the web installer, set up a URL and hosting for your site, either at an external hosting provider or on your own computer. Verify that the hosting is working by putting a simple HTML file in the web root directory of the hosting, and visiting the URL for your site.
+
+If you are installing using Drush or the web installer, create a database, along with a database user account with full access. If you do not know how to do this consult your hosting provider or the INSTALL.mysql.txt file that comes with the core software.
+
+(Terminal/Drush)
+If you are installing using Drush, you can use the download, and site-install commands. First type `drush dl drupal --drupal-project-rename=example` at the command line this will download the core software into the directory name example. Then change into the new directory, and type `drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site- name=example`. Make sure you provide your database name and credentials.
+
+If you are installing using the web installer, upload the core software files manually. To do this using Git and/or Composer, see the tutorial on Using Composer and Git to Download Files. You can also do this by downloading a zipped archive from drupal.org
+
+(Browser/Drupal.org)
+Go to https://www.drupal.org and click Download & Extend on the top-level menu.
+
+Then click the Download Drupal button (of the appropriate version) to be taken to the Downloads page.
+
+Click the version you wish to download under Recommended releases.
+
+Download the tar.gz or zip file to your local machine.
+
+(Finder)
+Extract the compressed file into a web accessible directory on your hosting provider or development environment.
+
+Then delete the compressed file from the server, unless your unpacking method already deleted it.
+
+Rename the directory or reconfigure your web hosting, so that the directory name matches the directory your web hosting is configured to use for your site.
+
+With the files in place you're now ready to run the installer.
+
+(Slide/Recap)
+In this tutorial
+
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+https://erdfisch.de[erdfisch],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+http://redcrackle.com[Red Crackle].
