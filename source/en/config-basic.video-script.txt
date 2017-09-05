@@ -1,0 +1,50 @@
+[[config-basic_video-script]]
+
+=== Editing Basic Site Information
+
+(Slide/Intro)
+This tutorial covers how to edit basic site information like site name, email, and time-zone.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to change basic site information such as Site name, Slogan, Default time zone.
+
+(Slide/Prerequisites)
+Before you get started with this tutorial you'll want to make sure your familiar with accesing and navigating Drupal's administrative interface.
+
+(Demo/Browser)
+In the Manage administrative menu, click on Configuration, then System, and then
+Basic site settings (admin/config/system/site-information). This takes you to the page where you can change the Site name, Slogan, administrative Email address, or the Default front page path.
+
+Fill in the available fields as appropriate for your site.
+
+The site name is used to identify the site and generally displayed in the header, and the browsers title bar: value="Anytown Farmers Market"
+
+The slogan is usually displayed sitewide in the header: value ="Farm Fresh Food"
+
+The email address here is used as the From address in automated email messages (registrations, password resets, etc): value="info@example.com"
+
+After editing the fields, click Save configuration to see the changes applied to the site.
+
+(Demo/Browser) topic change graphic - Regional settings
+As another example lets change the default Regional settings.
+
+In the Manage administrative menu, click on Configuration, then Regional and language and then Regional settings. (admin/config/regional/settings).
+
+Select the appropriate country from the Default country select list in the Locale section, and set which day will be displayed as First day of week on your site.
+
+In the Time zones section, select the sitewide Default time zone from the list and configure user-specific time zones.
+
+The core software will do it's best to guess this particular information when it is first installed. But you can change it at any time. I'll change the default time zone to "America/Los Angeles"
+
+Then after editing the fields, click Save configuration to see the changes applied to the site.
+
+(Slide/Recap)
+In this tutorial we looked at editing basic site configuration. We:
+
+- Navigated to the site information settings form and updated a couple of settings
+- Then we navigated to the regional settings form and updated some additional global settings
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from config-basic.txt.
