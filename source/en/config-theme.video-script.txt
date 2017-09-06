@@ -1,0 +1,61 @@
+[[config-theme_video-script]]
+
+=== Configuring the Theme
+
+(Slide/Intro)
+This tutorial covers how to edit a theme's settings to update the color scheme and add a logo.
+
+(Slide/Goal)
+By the end of this tutorial you will be able to edit the settings of the default core Bartik theme to change the color scheme and to add a logo.
+
+(Slide/Prerequisite)
+Before starting this tutorial you'll want to make sure you're familiar with the concept of theme's and the role they play.
+
+(Demo/Browser)
+In the Manage administrative menu, click on Appearance (admin/appearance).
+
+Under the Installed themes section of the page, you will find Bartik listed as your default theme. Click the settings link for Bartik to configure this theme.
+
+Under the Color scheme section, click inside each color build box and type the proper color codes you would like to add. I'll go ahead and fill it in with the example values from the written version of this tutorial.
+
+[width="100%",frame="topbot",options="header"]
+|================================
+|Area | Color
+|Header background top| #7db84a (green)
+|Header background bottom| #2a3524 (dark green)
+|Main background| #ffffff (white)
+|Sidebar background| #f8bc65 (light orange)
+|Sidebar borders| #e96b3c (orange)
+|Footer background| #2a3524 (dark green)
+|Title and slogan| #ffffff (white)
+|Text color| #000000 (black)
+|Link color| #2a3524 (dark green)
+|================================
+
+As a note, you can also use the color wheel on the right to select colors of your choice. The web color codes will be added for you.
+
+Under Logo image, uncheck Use the logo supplied by the theme.
+
+Under Upload logo image, click the button to locate a logo file and upload it to your site. You can also set a universal logo for all themes under the main settings tab on the appearance page. A custom logo for your theme will override the universal logo.
+
+Once you have selected the file you would like to upload, you will see its filename next to the Choose File or Browse button in your browser.
+
+In order to save your changes and see the updated colors and logo on your site, click Save configuration at the bottom of the page.
+
+Notice that under Color scheme, there is a _Preview_ section that displays a sample of how your website will look with the new settings.
+
+Click Return to site or Home in the toolbar to navigate back to the front page of your site and verify that you have updated the core Bartik theme settings for your website.
+
+One final note, if you do not see the effect of these changes in your site, you might need to clear the cache.
+
+(Slide/Recap)
+In this tutorial we learned how to customize the settings for the Bartik theme and
+- Changed the colors used for our theme
+- And uploaded a custom logo
+
+The settings available will vary per-theme, but the process for configuring a theme is generally the same.
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from config-theme.txt.
