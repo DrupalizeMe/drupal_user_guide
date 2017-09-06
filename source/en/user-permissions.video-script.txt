@@ -1,0 +1,29 @@
+--- video script ---
+
+Slide (title): In this tutorial, we'll walk through how to assign permissions to a role.
+
+Slide (goal): By the end of this tutorial, you will understand how to Change the permissions for the Vendor role so that users can create, edit, and delete Recipe and Vendor content, format the content, and contact each other.
+
+Slide (prereq): To follow along, you should understand the concept of users, roles, and permissions and have completed the tutorial Creating a Role, where we created the Vendor role. See the written version of this tutorial for links to these prerequisite tutorials.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to People > Roles, which is the admin/people/roles path. The Roles page appears.
+2. Click Edit permissions in the dropdown for the Vendor role. The Edit role page appears where you can see all the available actions for the website such as, for example, Post comments or Administer blocks. The available permissions depend on the modules that are installed in the site. Note: Some permissions may have security implications. Be cautious while assigning permissions to roles.
+3. The permissions page is organized by module. Let's assign the following permissions to the Vendor role.
+4. Under Contact, check Use users' personal contact forms
+5. Under Filter, check Use the Restricted HTML text format
+6. Under Node, check Recipe: Create new content
+7. Check Recipe: Edit own content
+8. Check Recipe: Delete own content. By selecting "Edit own content and Delete own content" and not "Edit or Delete any content" we allow the user to manage the content they created themselves without allowing them to edit or delete any one else's.
+9. Check Vendor: Edit own content
+10. Under Quick Edit, check Access in-place editing.
+11. Now click Save Permissions. You will get a message saying your changes have been saved.
+12. You can test these permissions by Logging in as one of the new users you created in a previous tutorial “Creating a User Account”. Verify whether you have the correct permissions by testing each of the actions that you granted permissions for, like creating a new recipe and using the Restricted HTML text format (and not any other more permissive formats).
+
+
+Slide (recap): In this tutorial, we walked through the steps of how to Change the permissions for the Vendor role so that users can create, edit, and delete Recipe and Vendor content, format the content, and contact each other.
+
+Slide (CC):  This work is a derivative of “Drupal 8 User Guide: 7.5 Assigning Permissions to a Role”  written and edited by members of the Drupal open-source community and is licensed under the CC BY-SA 2.0 license by Drupalize.Me.
+
+https://www.drupal.org/docs/user_guide/en/user-permissions.html
