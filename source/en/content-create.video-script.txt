@@ -1,0 +1,40 @@
+--- video script ---
+
+Slide (Title): In this tutorial, we'll walk through how to create a content item using the basic page content type.
+
+Slide (Goal): By the end of this tutorial, you will understand how to create and publish a content item that will be used as the home page of the site.
+
+Slide (Prerequisites): To follow along, you should have Drupal 8 installed and the basic page content type must exist. If you installed Drupal with the standard installation profile, the basic page content will already be created for you.
+
+Finally, to get the most out of this tutorial, you'll need to understand how Paths, Aliases, and URLs work on the web and in Drupal. See the written version of this tutorial for a link to Concept: Paths, Aliases, and URLs if you need to review this information before continuing.
+
+Demo (switch to browser)
+
+1. In the Manage administrative menu, navigate to Content > Add content > Basic page, which is the node/add/page path. The Create Basic page form appears.
+2. Click Edit summary to reveal the summary field.
+3. First, let's give our page a title of "Home". The title field will be used in the title tag in the HTML source code of the page and in any other relevant metatags. The words in the title are used to construct the automatic URL alias and the title is also used as a label for the content item in various administrative screens.
+4. The summary field value should be a summary of the body field. Enter "Opening times and location of City Market." The summary is commonly used as teaser text especially in lists of content, RSS feeds, and other views. The summary can be optional and if it is blank, a trimmed version of the body would be used in teasers instead.
+5. The body field is the simplest and most straightforward way to enter the primary content of your page. Let's enter:
+
+Welcome to City Market - your neighborhood farmers market!
+
+Open: Sundays, 9 AM to 2 PM, April to September
+
+Location: Parking lot of Trust Bank, 1st & Union, downtown
+
+(Continue)
+Our body field is using a Basic HTML filter which configured to use a WYSIWYG or What-You-See-Is-What-You-Get editor called CKEditor. That's what's providing these handy formatting buttons here. If we click on Source, we can see the underlying HTML that will be used as the markup for the contents of this field. Clicking Source again will return us to the WYSIWYG editor. If I wanted to bold some text, for example, I would highlight the text I wanted to bold, like "Open" and click the "B". I can do the same with "Location". For "Welcome to City Market - your neighborhood farmers market", I could highlight that and select "Normal" which drops down a list of preset formats and choose Heading 2. The CKEditor buttons are a handy way to add some HTML markup. Explore the toolbar and practice creating linked text, bulleted lists and numbered lists as well.
+
+6. Next go over to the URL path settings under URL alias. Remember that a URL alias is a more friendly and readable version of our node slash node-id path. In this case, we plan to use this node as the home page for our site, so for now, let's enter /home as the alias for this content item. We'll configure this as the path for our home page in the tutorial "Designating a Front Page for Your Site".
+7. Now we're ready to preview our changes. Click the "Preview" button to ensure everything looks as expected.
+8. That looks good so now click "Back to content editing" and we're ready to publish.
+9. Click the Save and Publish button.
+10. Now you're ready to create an About Us page. You can follow the same steps to create a page with the title "About" and a body field telling folks about the history of the market.
+11. See the written version of this tutorial for tutorial links to expand your understanding as well as related tutorials and additional resources.
+
+
+Slide (Recap): In this tutorial, we created a new content item using the Basic page content type that will be used as our site's front page.
+
+Slide (CC): This work is a derivative of “Drupal 8 User Guide: 5.2 Creating a Content Item”  written and edited by members of the Drupal open-source community and is licensed under the CC BY-SA 2.0 license by Drupalize.Me.
+
+https://www.drupal.org/docs/user_guide/en/content-create.html

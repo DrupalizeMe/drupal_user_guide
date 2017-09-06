@@ -1,0 +1,28 @@
+--- video script ---
+
+Slide (title): In this tutorial, we’ll add a page to the navigation.
+
+Slide (goal): By the end of this tutorial, you will understand how to add a page to the navigation and you will add the About page that you created in a previous tutorial to a menu.
+
+Slide (prereq): To follow along, you should understand the concept of menus and how to edit a content item. See the written version of this tutorial for links to tutorials on both of these prerequisites.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Content, which is the admin/content path.
+2. Find the About page, and click Edit in that row. The content editing form appears.
+3. Click Menu settings on the right to expand it.
+4. Check Provide a menu link for the menu options to appear.
+5. Now let's enter the following values:
+
+- The menu link title is Title that will be displayed in the menu. Enter "About".
+- The description is the Text that will be displayed when a visitor hovers over the link. Enter "History of the market"
+- The Parent item is the Location of the page in the menu hierarchy. For example, if you choose <Main navigation>, the page will appear in the highest level of the navigation. By choosing another menu item as parent, you can create a menu hierarchy of multiple levels. Select "<Main Navigation".
+- The Weight is The order in which the page should appear in the menu (lower-weighted menu items will be shown before higher-weighted menu items). Enter -2. In a separate tutorial, we'll discuss how to change the order of menu items in the navigation.
+- Click Save and keep published to save the changes. Click Home or Return to site in the navigation bar to see the result, which could look like the picture below.
+
+
+Slide (recap): In this tutorial, we added the “About” page to the main navigation menu.
+
+Slide (CC): This work is a derivative of “Drupal 8 User Guide: 5.7 Adding a Page to the Navigation”  written and edited by members of the Drupal open-source community and is licensed under the CC BY-SA 2.0 license by Drupalize.Me.
+
+https://www.drupal.org/docs/user_guide/en/menu-link-from-content.html
