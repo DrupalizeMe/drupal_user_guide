@@ -1,0 +1,65 @@
+--- video script ---
+
+Slide 1 (title): In this tutorial, we'll walk through the process of adding basic fields to a content type.
+
+Slide 2 (goal): Add a link field and an image field to the Vendor content type.
+
+Slide 3 (prereq): Understand the concepts of content entities and fields.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Structure > Content types, which is the  (admin/structure/types) path. Then click Manage fields in the dropdown button for the Vendor content type. The Manage fields page appears.
+
+2. Click Add field. The Add field page appears. You can either create a new field for the content type or re-use an existing field.
+
+3.
+- Let's select the field type "Link" for our first new field.
+- Next, we'll give it a label that will be viewable in administrative pages. Enter "Vendor URL".
+- A machine name for the field is automatically generated, based on the Label value. Click Edit if you want to override the default machine name.
+
+4. Click Save and continue. We can now start to edit this field's global settings in the The page Vendor URL that appears. First, we set the allowed number of values for this field. We'll enter a limited number, 1.
+
+5. Click Save field settings. Now we are directed to configure this field's settings as it exists in the Vendor content type.
+
+- The Label is the Label that is visible in the content form. Enter "Vendor URL".
+- Help text is where you can specify instructions which will be shown below the field in the content form. We'll leave this blank, but this is a great place to document to your content editors what kind of values are expected for this field or any other special instructions.
+- The Required field allows you to decide whether the field is required or not. This will be an optional field, so we'll ensure this field is unchecked.
+- The Allowed link type field allows you to specify the kind of links that can be entered. We only want External links to be entered for this field, such as the Vendor's own website and not any internal links, so we'll select "External links only".
+- Allow link text allows you to specific whether a link text can be entered. We'll select Disabled, but if you wanted to allow editors of content of this type to specify custom text to link, this would be the place to allow that.
+
+6. Click Save settings. The Vendor URL has been added to the content type. Now let's create another new field, the main image field for this content type.
+
+7. Click Add field. The Add field page appears.
+
+- Select Add a new field, and image.
+- For Label, enter "Main image".
+
+8. Click Save and continue. The page Main image appears where we begin to configure our field's settings.
+
+- For Allowed number of values, enter Limited, 1.
+- You can also set a default image here. This will be used when you do not provide an image when creating a Vendor content item.
+
+9. Click Save field settings. The page Main image settings for Basic page appears.
+
+- For label enter Main image
+- For help text, we'll leave this blank.
+- For Required field, we'll check this to make it a required field.
+- Next we'll enter Allowed file extensions of the types of images that can be uploaded:
+png, gif, jpg, jpeg
+- In the File directory field, we can help keep our files directory well-organized. Here we specific the directory where the files will be stored. By providing a file directory value, you ensure that all images uploaded via the Main image field will be located in the same directory. Let's enter "vendors". This will be a sub-directory of your public files directory, for example, sites/default/files.
+- Next we can specific a Minimum image resolution for the uploaded image. Let's enter 600 x 600.
+- We can also specify a different Maximum upload size. Let's enter 5 MB. In a separate tutorial, we'll cover Drupal's image styles module which allows us create different image sizes. That's why we're using such a high value here, because we'll be configuring image styles later on and we don't want to put ourselves in a position where images are getting upscaled and losing quality.
+- Next we'll Enable the Alt field
+- And make sure that the Alt field is required by checking both these boxes.
+
+10. Click Save settings. The Main image field has been added to the content type.
+
+11. Now you're ready to add some fields on your own. First, navigate to the Recipe content type's manage fields page, and instead of adding a new field, re-use an existing field, and add the Main image field to the Recipe content type. Because you're re-using a field, some of the configuration will look a little different, for example you won't be able to change how many values are allowed for this field.
+
+12. After that, create two Vendor content items called "Happy Farm" and "Sweet Honey". Make sure that they include images and URLs.
+
+See the written version of this tutorial for further instructions, links to related tutorials, as well as links to further your understanding of this topic.
+
+Slide 4 (recap): In this tutorial, we added a link field and an image field to the Vendor content type. On your own, add the existing Main image field to the Recipe content type and create 2 new Vendor content items for Happy Farm and Sweet Honey, making sure to fill in values for Vendor URL and Main image.
+
+Slide 5 (cc): (hold for 5 seconds)
