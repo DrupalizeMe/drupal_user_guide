@@ -1,0 +1,39 @@
+--- video script ---
+
+Slide 1 (title): In this tutorial, we'll walk through the process of adding a reference field.
+
+Slide 2 (goal): By the end of this tutorial you will understand how to add a reference field so that recipes can be linked to the vendor that has submitted it.
+
+Slide 3 (prereq): To follow along, you should understand the concepts of how to add basic fields to a content type, what reference fields are, and how a content type is created. Finally, the Recipe and Vendor content types must exist. See the written version of this tutorial for links to the prerequisite tutorials.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Structure > Content types, which is the (admin/structure/types) path. Then click Manage fields in the dropdown button for the Recipe content type. The Manage fields page appears.
+
+2. Click Add field. The Add field page appears.
+
+- We're going to add a new field. First, we'll select the field type Reference > Content.
+- For a label, enter Submitted by.
+
+3. The page Submitted by appears which lets you set its field settings.
+
+- For Type of item to reference, which is an Option to select the type of referenced item, select Content.
+- For Allowed number of values, select Limited, 1.
+
+4. The page Submitted by settings for Recipe appears which allows you to configure the field as it exists in the Recipe content type.
+
+- For label, enter Submitted by
+- For help text, enter "Choose the vendor that submitted this recipe"
+- Let's make this a required field and check this Required box.
+- For Reference method, keep Default
+- For Content Types, select Vendor
+- For Sort by, select the sorting field Title, which will sort the values we can reference alphabetically by the Vendor content type's Title field.
+- For Sort direction, select ascending, which will sort from A to Z.
+- Click Save Settings
+
+5. The Submitted by field has been added to the content type and a confirmation message appears.
+
+
+Slide 4 (recap): In this tutorial, we added a reference field so that recipes can be linked to the vendor that has submitted it.
+
+Slide 5 (cc): (hold for 5 seconds)
