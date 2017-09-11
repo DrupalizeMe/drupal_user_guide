@@ -1,0 +1,31 @@
+--- video script ---
+
+Slide (title): In this tutorial, we'll walk through the process of changing how content on our site is displayed.
+
+Slide (goal): By the end of this tutorial you will understand how to make the content items more readable, accessible, and visibly attractive by reordering the fields, hiding labels, and tuning the output of the fields.
+
+Slide (prereq): To follow along, you should understand the concepts of entities, fields, view modes and formatters. On your demo site, the vendor content type must exist and include a the main image and vendor URL fields that we added in a separate tutorial. Also, at least 1 vendor content item should be created with all fields filled in, so that we can test the display settings. See the written version of this tutorial for links to the prerequisite tutorials.
+
+Demo:
+
+1. Find and view a Vendor content item you created in Section 6.3, “Adding Basic Fields to a Content Type”. From the Manage administrative menu, click on Content, then filter by Vendor content types to find a vendor content item. Click on the title to view the content. Notice that there are several things that could be done to improve how the page looks:
+
+- The Main Image and Vendor URL fields should not have labels.
+- The order of the fields should be changed so that the image comes first.
+- The image should be smaller.
+
+2. To fix the first two problems, and update some additional settings, in the Manage administrative menu, navigate to Structure > Content types, which is the path (admin/structure/types). Then click Manage display in the dropdown button for the Vendor content type.
+
+3. Under the Label column, select Hidden for Main image. Let's do the same for Vendor URL.
+
+4. Click the gear for the Vendor URL field. Clear the Trim link text length setting. Links will no longer have a trim length. Check the Open link in new window checkbox. Now, when the link is clicked, it will open in a new browser window. Click Update.
+
+5. To reorder the display of the fields, click and drag the cross arrows next to the field items to reorder as Main image, Body, Vendor URL, and Links.
+
+6. Click Save.
+
+7. Let's verify the changes we've made so far. Navigate back to Content from the Manage administrative menu and click on a vendor item. Remember to use the filters if you need to. I'll click on the title of this vendor content item. The order of our fields appears as expected, field labels no longer display, and this Vendor URL link isn't trimmed and if I click on it, it opens in a new window. The main image is still too big and we'll tackle that in the next lesson. See the written version of this tutorial for links to that and other related tutorials to expand your understanding of this topic.
+
+Slide (recap): Made the content items more readable, accessible, and visibly attractive by reordering the fields, hiding labels, and tuning the output of the fields.
+
+Slide (cc): (hold for 5 seconds)
