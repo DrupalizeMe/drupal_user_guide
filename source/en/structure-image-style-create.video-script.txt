@@ -1,0 +1,51 @@
+--- video script ---
+
+Slide 1 (title): In this tutorial, we'll walk through the process of setting up an image style.
+
+Slide 2 (goal): Add an image style and use it to display images on Vendor pages.
+
+Slide 3 (prereq): To follow along, you should understand how to add basic fields to a content type, how to change content display, and the concept of image styles. On your demo site, the vendor and recipe content types must exist and a Main Image field should be added to each. Finally, at least 1 Vendor and Recipe content item should be created, in particular, a large image should be uploaded to the main image field on each. See the written version of this tutorial for links to the prerequisite tutorials.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Configuration > Media > Image styles, which is the path (admin/config/media/image-styles).
+
+2. Click Add image style.
+
+3. Enter the name Extra medium (300x200)
+
+4. Click Create new style. The page Edit style Extra medium (300x200) appears.
+
+5. In the Effect table, select Scale and crop. Click Add.
+
+6. Fill in the width as 300 and the height as 200.
+
+7. Click Add effect. The image style is now saved with the chosen effect.
+
+8. Now we can apply this image style to the display of an image field. In the Manage administrative menu, navigate to Structure > Content types, which is the path (admin/structure/types).
+
+9. Click Manage display in the Operations dropdown for the Vendor content type. The Manage display page for the Vendor content type appears.
+
+10. Ensure that the secondary tab Default is selected. This means we're configuring display for the Default view mode.
+
+11. Click the cogwheel next to Main image for the configuration options.
+
+12.
+- For Image Style, select Extra Medium (300x200)
+- Link image to: Nothing
+
+13. Click Update.
+
+14. Click Save. The new image style will be used while displaying Vendor content.
+
+15. Open a Vendor content item and verify that it now shows up with the scaled-down image. Navigate to Content and click on a title of a Vendor item or use the filters to narrow down the list of content. Now we can see that the image is displaying with the image style applied and is 300 by 200 instead of the original image size.
+
+16. Repeat these steps for the Recipe content type and verify that the image style is being applied to the main image on a recipe content item as well.
+
+See the written version of this tutorial for links to related tutorials and additional resources.
+
+
+
+Slide 4 (recap): In this tutorial, we added an image style and use it to display images on Vendor pages.
+
+Slide 5 (cc): (hold for 5 seconds)
