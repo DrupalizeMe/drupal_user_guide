@@ -1,0 +1,32 @@
+--- video script ---
+
+Slide 1 (title): In this tutorial, we'll walk through the process of configuring text formats and editors.
+
+Slide 2 (goal): By the end of this tutorial you will understand how to Add a horizontal rule tag to the Basic HTML text format, and a corresponding button to its editor configuration.
+
+Slide 3 (prereq): To follow along, you should understand:
+- Understand the concept of text formats and editors.
+- The core Filter, Editor, and CKEditor modules must be installed. They are installed on your site when you install with the core Standard installation profile.
+- The Basic HTML text format must exist. This is created on your site when you install with the core Standard installation profile. See the written version of this tutorial for links to the prerequisite tutorials.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Configuration > Content authoring > Text formats and editors, which is the path (admin/config/content/formats). The Text formats and editors page appears.
+
+2. Click Configure for the Basic HTML text format. The Basic HTML page appears.
+
+3. Note that CKEditor is selected in the Text editor field. This allows you to configure the editor’s toolbar.
+
+4. Drag the horizontal rule button from Available buttons to Tools in Active toolbar. You may need to click the Show group names link to see the Tools group name.
+
+5. Note that you can change the Filter processing order.
+
+6. In the field Allowed HTML tags, add the <hr> element to what is already present.
+
+7. Click Save configuration. You will be taken back to the Text formats and editors page. A message will be displayed saying that the text format has been updated.
+
+8. Let's test this out by creating a new content item, here we have a new button to insert a horizontal rule. If this button didn't appear for you, clear the cache and refresh the content editing page.
+
+Slide 4 (recap): In this tutorial, we added a horizontal rule tag to the Basic HTML text format, and a corresponding button to its editor configuration.
+
+Slide 5 (cc): (hold for 5 seconds)
