@@ -32,7 +32,7 @@ Demo:
 8. On the following configuration screen:
 
 - For Type of item to reference, which is the the type of entity that is referenced by the field, select Taxonomy term.
-- For Allowed number of values, which is the number of values a user can enter, enter Unlimited, since we don't want know how many ingredients any one recipe will have.
+- For Allowed number of values, which is the number of values a user can enter, enter Unlimited, since we don't know how many ingredients any one recipe will have.
 - Click Save field settings.
 
 9. On the next configuration screen:
@@ -40,7 +40,7 @@ Demo:
 - For Help text, which is help shown to users creating content, let's put: "Enter ingredients that site visitors might want to search for".
 
 - Under Reference type, Reference method, allows us to select the method used to choose allowed values. Select Default.
-- Also keep checked Create referenced entities if they don't already exist, which will be useful for this vocabulary because a content editor will be able to add new ingredients to the Ingredients vocabulary as they are creating new recipes. As the content editor is typing a an ingredient, the autocomplete field, if it is used, will display any matches to existing ingredients. However, the downside to this option is that you might end up with multiple variations of terms or even misspellings that should instead be represented by one term. So keep that in mind.
+- Also keep checked Create referenced entities if they don't already exist, which will be useful for this vocabulary because a content editor will be able to add new ingredients to the Ingredients vocabulary as they are creating new recipes. As the content editor is typing an ingredient, the autocomplete field, if it is used, will display any matches to existing ingredients. However, the downside to this option is that you might end up with multiple variations of terms or even misspellings that should instead be represented by one term. So keep that in mind.
 
 - Next we need to select the Available Vocabularies, which is the vocabulary to choose allowed values from. We'll choose the Ingredients vocabulary.
 
