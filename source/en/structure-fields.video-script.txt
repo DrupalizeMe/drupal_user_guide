@@ -2,9 +2,9 @@
 
 Slide 1 (title): In this tutorial, we'll walk through the process of adding basic fields to a content type.
 
-Slide 2 (goal): Add a link field and an image field to the Vendor content type.
+Slide 2 (goal): By the end of this tutorial you'll know how to add a link field and an image field to the Vendor content type.
 
-Slide 3 (prereq): Understand the concepts of content entities and fields.
+Slide 3 (prereq): Before getting started with this tutorial you'll want to make sure you understand the concepts of content entities and fields. See the links in the written version of this tutorial for more information.
 
 Demo:
 
@@ -37,7 +37,7 @@ Demo:
 8. Click Save and continue. The page Main image appears where we begin to configure our field's settings.
 
 - For Allowed number of values, enter Limited, 1.
-- You can also set a default image here. This will be used when you do not provide an image when creating a Vendor content item.
+- You can also set an optional default image here. This will be used when you do not provide an image when creating a Vendor content item.
 
 9. Click Save field settings. The page Main image settings for Basic page appears.
 
@@ -47,7 +47,7 @@ Demo:
 - Next we'll enter Allowed file extensions of the types of images that can be uploaded:
 png, gif, jpg, jpeg
 - In the File directory field, we can help keep our files directory well-organized. Here we specific the directory where the files will be stored. By providing a file directory value, you ensure that all images uploaded via the Main image field will be located in the same directory. Let's enter "vendors". This will be a sub-directory of your public files directory, for example, sites/default/files.
-- Next we can specific a Minimum image resolution for the uploaded image. Let's enter 600 x 600.
+- Next we can specify a Minimum image resolution for the uploaded image. Let's enter 600 x 600.
 - We can also specify a different Maximum upload size. Let's enter 5 MB. In a separate tutorial, we'll cover Drupal's image styles module which allows us create different image sizes. That's why we're using such a high value here, because we'll be configuring image styles later on and we don't want to put ourselves in a position where images are getting upscaled and losing quality.
 - Next we'll Enable the Alt field
 - And make sure that the Alt field is required by checking both these boxes.
