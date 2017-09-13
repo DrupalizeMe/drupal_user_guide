@@ -8,7 +8,7 @@ Slide 3 [Prereq]: To follow along, you should understand the concepts of content
 
 Demo:
 
-1. In the Manage administrative menu, navigate to Structure > Content types (which is the path admin/structure/types). The Content types page appears showing all the available types of content.
+1. In the Manage administrative menu, navigate to Structure > Content types (which can also be accessed by the path admin/structure/types). The Content types page appears showing all the available types of content.
 
 2. Click Add content type. The Add content type page appears. Fill in the fields.
 
@@ -26,7 +26,7 @@ Demo:
 
 4. Let's move on to the next vertical tab: Publishing options, where we decide on default options for new content of this type.
 
-- The "Published" field allows you to decide whether to make the content item published by default. Let's check this box to make Vendor pages published by default. But a content editor can uncheck this box before saving their content to save a draft. We are only setting the default value for the content type, not the only value.
+- The "Published" checkbox allows you to decide whether to make the content item published by default when the content is saved. Let's keep this box checked to make Vendor pages published by default. But a content editor can uncheck this box before saving their content to save a draft. We are only setting the default value for the content type, not the only value.
 
 - Next is the the "Promoted to front page" field. In a default website, this setting can be used to show content on the homepage, in a "river of news" format. We'll leave the default value as unchecked. This field can also be useful as a filter when configuring views or lists of content that only appear on the front page and if the site is configured as such can provide a way for content editors to easily promote content.
 
@@ -36,9 +36,9 @@ Demo:
 
 Note that Changing these settings does not affect the content items that have already been created. So this is a good task for the beginning of your site build, before any content has been created.
 
-5. Now let's move on to the next vertical tab: Display settings where we can decide if the author and publication date will be visible in the content item.
+5. Now let's move on to the next vertical tab: Display settings.
 
-- This tab contains the field Display author and date information, which when checked will Display the author username and publication date on each vendor page. However, we'd like this off, so let's uncheck it.
+- This tab contains the field Display author and date information, which, when checked, will Display the author's username and the content publication date on each vendor page. However, we'd like this off, so let's uncheck it.
 
 6. Next we can configure defaults for Menu settings.
 
@@ -46,7 +46,7 @@ Note that Changing these settings does not affect the content items that have al
 
 7. Ok, we've configured all the defaults for the Vendor content type. Click Save and manage fields to save the content type.
 
-8. The next tab is Manage Fields. The Manage fields page appears that allows you to add fields to the content type. We'll cover adding fields separately. See the written version of this tutorial for a link to the related tutorial Adding Basic Fields to a Content Type.
+8. We're then directed to the Manage fields tab, which is where we can add fields to our content type. But we'll save that task for a separate tutorial.
 
 9. Now go ahead and create another new content type for recipes. See the written version of this tutorial for further instructions and specific values. But the general process is the same as what we have just walked through.
 

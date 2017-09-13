@@ -24,8 +24,9 @@ Demo:
 - The Label is the Label that is visible in the content form. Enter "Vendor URL".
 - Help text is where you can specify instructions which will be shown below the field in the content form. We'll leave this blank, but this is a great place to document to your content editors what kind of values are expected for this field or any other special instructions.
 - The Required field allows you to decide whether the field is required or not. This will be an optional field, so we'll ensure this field is unchecked.
+- If you wanted to add a default value for this field, you could do so here. But we'll leave this blank for this example.
 - The Allowed link type field allows you to specify the kind of links that can be entered. We only want External links to be entered for this field, such as the Vendor's own website and not any internal links, so we'll select "External links only".
-- Allow link text allows you to specific whether a link text can be entered. We'll select Disabled, but if you wanted to allow editors of content of this type to specify custom text to link, this would be the place to allow that.
+- Allow link text allows you to specify whether a link text can be entered. We'll select Disabled, but if you wanted to allow editors of content of this type to specify custom text to link, this would be the place to allow that.
 
 6. Click Save settings. The Vendor URL has been added to the content type. Now let's create another new field, the main image field for this content type.
 
@@ -39,7 +40,7 @@ Demo:
 - For Allowed number of values, enter Limited, 1.
 - You can also set an optional default image here. This will be used when you do not provide an image when creating a Vendor content item.
 
-9. Click Save field settings. The page Main image settings for Basic page appears.
+9. Click Save field settings. The page Main image settings for Vendor page appears.
 
 - For label enter Main image
 - For help text, we'll leave this blank.
