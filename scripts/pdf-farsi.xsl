@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exsl="http://exslt.org/common" xmlns:cf="http://docbook.sourceforge.net/xmlns/chunkfast/1.0" xmlns:ng="http://docbook.org/docbook-ng" xmlns:db="http://docbook.org/ns/docbook" xmlns="http://www.w3.org/1999/xhtml" version="1.0" exclude-result-prefixes="exsl cf ng db">
+<xsl:stylesheet
+    xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:exsl="http://exslt.org/common"
+    xmlns:cf="http://docbook.sourceforge.net/xmlns/chunkfast/1.0"
+    xmlns:ng="http://docbook.org/docbook-ng"
+    xmlns:db="http://docbook.org/ns/docbook"
+    xmlns="http://www.w3.org/1999/xhtml"
+    version="1.0" exclude-result-prefixes="exsl cf ng db">
 
 <!-- This file contains overrides for output for PDF e-books using
-   the FreeFarsi font family. -->
+   the Amiri font family. -->
 <!-- Note that PDF is normally made with the fo stylesheets
      from the docbook-xsl project. -->
 
@@ -22,6 +30,45 @@
 <xsl:variable name="toc.max.depth">
   <xsl:value-of select="'2'" />
 </xsl:variable>
+
+<!-- Fix the ... in table of contents. Change is in the leader-pattern-width
+     line in this template, telling it to use font metrics rather than assuming
+     the width of the . is always 3pt, which doesn't seem to work well for
+     Arabic/Farsi fonts. -->
+<xsl:template name="toc.line">
+  <xsl:param name="toc-context" select="NOTANODE"/>
+
+  <xsl:variable name="id">
+    <xsl:call-template name="object.id"/>
+  </xsl:variable>
+
+  <xsl:variable name="label">
+    <xsl:apply-templates select="." mode="label.markup"/>
+  </xsl:variable>
+
+  <fo:block xsl:use-attribute-sets="toc.line.properties">
+    <fo:inline keep-with-next.within-line="always">
+      <fo:basic-link internal-destination="{$id}">
+        <xsl:if test="$label != ''">
+          <xsl:copy-of select="$label"/>
+          <xsl:value-of select="$autotoc.label.separator"/>
+        </xsl:if>
+        <xsl:apply-templates select="." mode="titleabbrev.markup"/>
+      </fo:basic-link>
+    </fo:inline>
+    <fo:inline keep-together.within-line="always">
+      <xsl:text> </xsl:text>
+      <fo:leader leader-pattern="dots"
+                 leader-pattern-width="use-font-metrics"
+                 leader-alignment="reference-area"
+                 keep-with-next.within-line="always"/>
+      <xsl:text> </xsl:text>
+      <fo:basic-link internal-destination="{$id}">
+        <fo:page-number-citation ref-id="{$id}"/>
+      </fo:basic-link>
+    </fo:inline>
+  </fo:block>
+</xsl:template>
 
 <!-- Waste less space by not indenting all text. -->
 <xsl:param name="body.start.indent">0pt</xsl:param>
@@ -85,9 +132,9 @@
 
 
 <!-- Better fonts. Less whitespace. -->
-<xsl:param name="body.font.family">FreeFarsi, Noto Sans</xsl:param>
+<xsl:param name="body.font.family">Amiri, Noto Sans</xsl:param>
 <xsl:param name="body.font.master">11</xsl:param>
-<xsl:param name="title.font.family">FreeFarsi, Noto Sans</xsl:param>
+<xsl:param name="title.font.family">Amiri, Noto Sans</xsl:param>
 <xsl:attribute-set name="section.title.level1.properties">
   <xsl:attribute name="font-size">
     <xsl:value-of select="$body.font.master * 1.6"/>

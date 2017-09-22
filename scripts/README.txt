@@ -38,13 +38,13 @@ FONTS
 In order to build PDF files, you need to have several fonts installed:
  - Noto fonts -- https://www.google.com/get/noto/
  - GNU Unifont -- http://www.unifoundry.com/unifont.html
- - FreeFarsi -- https://fontlibrary.org/en/font/freefarsi
+ - Amiri -- http://www.amirifont.org/
  - BabelStone Han -- http://www.babelstone.co.uk/Fonts/Han.html
  - Takao -- https://launchpad.net/takao-fonts
 
 On Linux, they can be found in the following packages (install with apt-get or
 yum):
-  fonts-noto-hinted unifont fonts-freefarsi fonts-babelstone-han fonts-takao
+  fonts-noto-hinted unifont fonts-hosny-amiri fonts-babelstone-han fonts-takao
 Use the links above for other operating systems. You can see which fonts
 are installed on Linux by using the command:
   fc-list
