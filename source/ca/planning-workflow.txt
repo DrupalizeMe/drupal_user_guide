@@ -1,72 +1,47 @@
 [[planning-workflow]]
 
-=== Concept: Editorial Workflow
+=== Concepte: Flux de treball editorial
 
 [role="summary"]
-Overview of the editorial workflow to manage content on a website.
+Visió general del flux de treball editorial per gestionar el contingut en un lloc web.
 
 (((Editorial Workflow,overview)))
 (((Published flag,overview)))
 (((Unpublished flag,overview)))
 (((Revision,overview)))
 
-==== Prerequisite knowledge
+==== Coneixements previs
 
 <<understanding-drupal>>
 
-==== What is an Editorial Workflow?
+==== Què és un flux de treball editorial?
 
-An Editorial Workflow is the process organizations follow to create, review,
-edit and publish content.
+Un flux de treball editorial és el procés que les organitzacions segueixen per a crear, revisar, editar i publicar contingut.
 
-Depending on the size and processes of the organization, multiple people in
-different roles can be part of the process. For example, content creators
-collect information and write content, editors review, edit, ask for changes,
-and publish the content once it's considered ready to be shared with the
-audience.
+Depenent de la mida i processos de l'organització, diverses persones amb diferents rols poden formar part del procés. Per exemple, els creadors de continguts recol·lecten informació i escriuen contingut, els editors revisen, editen, demanen canvis i publiquen el contingut quan és considerat vàlid per a ser compartit amb l’audiència.
 
-In your site, content types can have either a Published or an Unpublished flag
-to track their workflow states, that you can set for each content item when
-saving:
+Al vostre lloc, els tipus de contingut poden tenir marques de Publicat o No publicat per fer un seguiment dels seus estats de flux de treball i es pot establir per a cada element de contingut quan es desa:
 
-* Published content items are visible to all visitors of the site.
+* Els elements de contingut publicats són visibles per a tots els visitants del lloc.
 
-* Unpublished content items are not visible to the visitors of the site, but can
-be seen by authenticated users who have the permissions to view unpublished
-versions of specific content items.
+* Els elements de contingut no publicats no són visibles per a tots els visitants del lloc, però poden ser vistos per usuaris autenticats que tenen els permisos per a veure versions no publicades d'elements de contingut específics.
 
-Most content entity types support revision tracking, if it is enabled by an
-administrator for the entity sub-type. If you have revision tracking enabled,
-the software will store old versions of the content each time it's revised, and
-add notes about what is changed. This allows you to look at the history and
-revert to older versions.
+La majoria de tipus d’entitat de contingut tenen suport el control de revisió, si està habilitat per un administrador de l'entitat sub-tipus. Si teniu habilitat el seguiment de les revisions, el programari emmagatzemarà versions antigues del contingut cada vegada que es revisi, i afegirà notes sobre el que s’està  canviant. Això us permet buscar a la història i tornar a versions més antigues.
 
-Using the Unpublished flag and Revisions, you can build an editorial workflow
-that lets content creators and editors work on the live site without displaying
-the content to visitors. When the content is ready to be published, all they
-need to do is save it as Published.
+Usant les marques de No publicat i de Revisions, podeu crear un flux de treball editorial que permet als creadors i editors de continguts treballar al lloc de producció sense mostrar el contingut als visitants. Quan el contingut està llest per a ser publicat, només cal desar-lo com a Publicat.
 
-==== Related topics
+==== Temes relacionats
 
 * <<content-create>>
 * <<content-edit>>
 
-==== Additional resources
+==== Recursos addicionals
 
-Talking about online content, organizations would also want to consider
-post-publication phases of the editorial workflow: content teams might need to
-update already published content. Some organizations might need a more complex
-workflow with the options to configure which content type goes through the
-workflow process, set up user roles and permissions, set different workflow
-states (for example draft, needs review, published).
+Parlant de contingut en línia, les organitzacions poden voler també considerar les fases posteriors a la publicació del flux de treball editorial: potser l’equip de contingut pot necessitar pujar contingut ja publicat. Algunes organitzacions poden necessitar un flux de treball més complex amb opcions per a configurar quin tipus de contingut passa a través del procés de flux de treball, configurar funcions d'usuari i permisos, establir diferents estats del flux de treball (per exemple esborranys, necessita revisió, publicat).
 
-For more complex workflows, you can add install or more modules from the
-https://www.drupal.org/documentation/modules/workbench[contributed Workbench Suite module]
-to your site.
-
+Per fluxos de treball més complexos, podeu instal·lar més mòduls del https://www.drupal.org/documentation/modules/workbench[paquet de mòduls contribuïts Workbench] al vostre lloc.
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com//[Pronovix], and
-https://www.drupal.org/u/gdunham[Grant Dunham].
+Escrit i editat per https://www.drupal.org/u/dianalakatos[Diána Lakatos] de https://pronovix.com//[Pronovix], i https://www.drupal.org/u/gdunham[Grant Dunham].
+Traduït per https://www.drupal.org/u/mericamps [Meritxell Camps] i revisat per https://www.drupal.org/u/rvilar [Ramon Vilar] de https://ymbra.com//[Ymbra]
