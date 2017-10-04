@@ -30,9 +30,13 @@ Overview of server requirements for installing and running the core software.
 
 ===== Disk space
 
-A minimum installation requires 15 MB. 60 MB is needed for a website with many
-contributed modules and themes installed. Keep in mind you need much more for
-the database, files uploaded by the users, media, backups, and other files.
+The total amount of disk space needed for your site is not a fixed amount, as it
+depends on your site. The base files for the core software take up about 100 MB
+on the web server. You will need more space if you install additional modules or
+themes, and you'll also need space for media, backups, and other files generated
+by and uploaded to your site. The database also uses disk space, although that
+is typically not in the same area (and in some cases, not even on the same
+server) as that used by the site files.
 
 ===== Web server
 
@@ -84,8 +88,9 @@ https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documen
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] and
-https://www.drupal.org/u/bemery987[Brian Emery] from
+Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
+https://www.drupal.org/u/bemery987[Brian Emery], and
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
 https://www.drupal.org/docs/8/system-requirements["System requirements"],
 copyright 2000-2017 by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
