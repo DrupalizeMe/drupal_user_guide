@@ -46,19 +46,19 @@ view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
 [width="100%",frame="topbot",options="header"]
 |================================
 | Field name | Explanation| Example value
-| View name | Name of the view that will be visible in the administration pages | Vendors
-| Show | Type of information listed in the view | Content
-| of type | Specify content type | Vendor
-| sorted by | List order | Title
-| Create a page | Create a page that displays the view | Checked
-| Page title | Title show above the view | Vendors
-| Path | Address of the page | vendors
-| Display format | Type of list | Table
-| Items to display | Number of items visible on the page | 10
-| Use a pager | Split up the list in several pages if there are more items | Checked
-| Create a menu link | Add the view page to the menu | Checked
-| Menu | Menu in which to add the link | Main navigation
-| Link text | Label of the link in the menu | Vendors
+| View basic information > View name | Name of the view that will be visible in the administration pages | Vendors
+| View settings > Show | Type of information listed in the view | Content
+| View settings > of type | Specify content type | Vendor
+| View settings > sorted by | List order | Title
+| Page settings > Create a page | Create a page that displays the view | Checked
+| Page settings > Page title | Title show above the view | Vendors
+| Page settings > Path | Address of the page | vendors
+| Page settings > Page display settings > Display format | Type of list | Table
+| Page settings > Items to display | Number of items visible on the page | 10
+| Page settings > Use a pager | Split up the list in several pages if there are more items | Checked
+| Page settings > Create a menu link | Add the view page to the menu | Checked
+| Page settings > Menu | Menu in which to add the link | Main navigation
+| Page settings > Link text | Label of the link in the menu | Vendors
 |================================
 +
 --
@@ -68,8 +68,8 @@ image:images/views-create-wizard.png["Add new view wizard",width="100%"]
 
 . Click _Save and edit_. The view configuration page appears.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
+appears.
 
 . Enter the word "image" in the search field.
 
@@ -90,8 +90,8 @@ pop-up appears.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
+appears.
 
 . Enter the word "body" in the search field.
 
@@ -112,18 +112,18 @@ appears.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click _Content: Title (Title)_ in the _Fields_ list. The
-_Configure field: Content: Title_ pop-up appears.
+. Under _Fields_, click _Content: Title (Title)_. The _Configure field: Content:
+Title_ pop-up appears.
 
 . Uncheck _Create a label_. This will remove the label that was created by the
 wizard.
 
 . Click _Apply_. The view configuration page appears.
 
-. Click _Rearrange_ from the dropdown button in the _Fields_ section. The
-_Rearrange fields_ pop-up appears.
+. Under _Fields_, click _Rearrange_ in the dropdown button. The _Rearrange
+fields_ pop-up appears.
 
-. Drag the fields into the right order: Image, Title. Body.
+. Drag the fields into the right order: Image, Title, Body.
 
 . Click _Apply_. The view configuration page appears.
 
