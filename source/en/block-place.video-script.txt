@@ -1,0 +1,55 @@
+[[block-place_video-script]]
+
+=== Placing a Block in a Region
+
+(Slide/Intro)
+This tutorial covers how to place a block in a region.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to  place the opening hours and location block in the website's sidebar.
+
+(Slide/Prerequisites)
+Before you get started with this tutorial you'll want to make sure that:
+
+- You're familiar with the concept of blocks
+- The core Bartik theme must be installed and set as default
+- And the Opening hours and location block must exist
+
+See the written version of this tutorial for links to each of these prerequisite tutorials.
+
+(Demo/Browser)
+
+In the _Manage_ administrative menu, navigate to _Structure_ and then _Block layout_. Here you'll see the _Block layout_ page, which lists the current default theme's regions.
+
+Ensure that in the secondary tab the core Bartik theme is selected. This is important because Block placement is defined per theme.
+
+Next, locate the region _Sidebar second_ in the list and click the _Place block_ button next to it. This triggers the _Place block_ window, which lists all the available blocks.
+
+Locate the block Opening hours and location and click _Place block_ next to it. The _Configure block_ window appears and you can fill in the form.
+
+Set the title, which is the text to be displayed for the block title to ="Hours and location"
+
+Check the "display title" box, indicating you would like to display the title for the block.
+
+Choose a region from the theme region to display the block in = "Sidebar second"
+
+You can also hide or display the block on specific pages. In the case of the Farmer's market website you do not set any of these configuration options because you want to show the block everywhere.
+
+
+Finally, Click _Save block_. After which you're taken back to the _Block layout_ page. From here you can drag blocks to change the order in which they will appear within a region.
+
+Verify that the Opening hours and location block is listed in the _Sidebar second_ region, and click _Save blocks_.
+
+The block has been now placed on the sidebar of all pages that use the core Bartik theme.
+
+(Slide/Recap)
+In this tutorial we:
+
+- Placed a block into the sidebar second region of the Bartik theme, set a title to display for the block, and configured it to display on all pages.
+
+(Slide/CC)
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from block-place.txt.
