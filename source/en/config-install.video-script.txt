@@ -1,0 +1,49 @@
+[[config-install_video-script]]
+=== Installing a Module
+
+(Slide/Intro)
+In this tutorial we will learn how to install a core or contributed module, using the administrative interface or Drush.
+
+(Slide/Goal)
+By the end of this tutorial you'll be able to install a core module, or a contributed module whose files have already been uploaded to the site, through the administrative interface or by using Drush.
+
+(Slide/Prerequisites)
+Before you get started you'll want to make sure you:
+
+- Know what modules are, where to find them, and where to place the downloaded code in your site Drupal site
+- If you want to use Drush to install modules, Drush must be installed
+
+For more information on these topics see the links in the written version of this tutorial.
+
+(Browser/Demo)
+
+You can use either the administrative interface, or the Drush command line tool to install modules. We'll look at both. Let's start with the administrative interface.
+
+On your Drupal site, in the Manage administrative menu, click on Extend which takes you to the path admin/modules. Where the Extend page appears showing all the available modules in your site.
+
+Check the boxes for the module or modules you want to install. For example, check the box for the core Activity Tracker module.
+
+Then scroll to the bottom of the page and click Install. The checked modules, and any dependencies, will be installed. After completion you should see a message at the top of the page indicating that the module was successfully installed.
+
+(Terminal/Demo) - insert topic change graphic
+Alternatively you can install modules using the `pm-enable` Drush command. "en" for short. First, you need to know the machine name of the module you wish to install. If you don't already, in the Manage administrative menu, click Extend. The Extend page appears showing all the available modules in your site.
+
+Find the machine name of the module you want to install, by expanding the information area for the module. For instance, the core Activity Tracker module's machine name is tracker.
+
+Then, in your terminal, from the root of your Drupal installation run the following Drush command to install the module: `drush en tracker`
+
+Choose "yes" to continue with installation. And, after the process is completed you should see a message indicating that the module was successfully  installed.
+
+Quick tip, if you do not see the effect of these changes in your site immediately, you might need to clear the cache.
+
+(Slide/Recap)
+In this tutorial we walked through how to:
+
+- Install a module using the user interface
+- And, how to install a module using the pm-enable drush command
+
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from config-install.txt.

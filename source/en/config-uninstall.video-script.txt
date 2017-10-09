@@ -1,0 +1,52 @@
+[[config-uninstall_video-script]]
+
+=== Uninstalling Unused Modules
+
+(Slide/Intro)
+This tutorial covers how to uninstall modules.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to uninstall the core Search and History modules, as well as the core Activity Tracker module if you installed it in earlier, to reduce overhead. This same technique applies to any module.
+
+(Slide/Prerequisites)
+Before getting started you'll want to make sure that you're:
+- Familiar with the concept of modules and the role they play
+- Have at least one unused module on your site that you want to uninstall
+- And, if you want to use Drush to uninstall modules you'll need to have Drush installed
+
+See the links in the written version of this tutorial for more information about any of these topics.
+
+(Demo/Browser)
+You can use either the administrative interface or Drush to uninstall modules. We'll look at how to do both.
+
+To use the administrative interface, in the Manage administrative menu, click on Extend, and then on the Uninstall tab. (admin/modules/uninstall) Here you will find the list of modules that are ready to be uninstalled.
+
+Quick note you cannot uninstall a module if it is required by some other module. For example, the core File module is required by the core Text Editor, CKEditor, and Image modules. It can't be uninstalled unless you uninstall its dependent module(s) and functionality first. A module that cannot be uninstalled yet will have a disabled checkbox, restricting you from uninstalling it.
+
+Check the boxes for the modules you are uninstalling. Search, History, and
+Activity Tracker in this case. Then click Uninstall at the bottom of the page.
+
+You will prompted to confirm the module uninstall request. Click Uninstall to continue
+
+After the module has been uninstalled you will be returned to the Extend page and a message will be displayed indicating that the module has been successfully uninstalled.
+
+(Demo/Terminal) - topic change graphic
+In order to use Drush to uninstall a module you need to know the module's machine name. This can be found by going to the Extend page in the manage administrative menu.
+
+Find the machine name of the module you want to uninstall, by expanding the information area for the module. For instance, the core Activity Tracker module's machine name is tracker.
+
+In the terminal, run the following Drush command to uninstall the module: `drush pm-uninstall tracker`.
+
+The command will prompt you to confirm the request. And then, display a message letting you know the module has been successfully uninstalled.
+
+(Slide/Recap)
+In this tutorial we looked at how to uninstall an unused module using:
+
+- The administrative user interface,
+- And via the Drush command line tool
+
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from config-uninstall.txt.

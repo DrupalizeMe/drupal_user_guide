@@ -1,0 +1,81 @@
+[[planning-structure_video-script]]
+
+=== Video script for planning-structure.txt
+
+(Intro/Slide)
+
+How to plan a content structure that assigns content entity types to specific content on the website.
+
+(Goal/Slide)
+
+By the end of this tutorial you should have a rough draft of a plan for the content structure of the site including which type and subtypes of entity to use for which content, and which pages will contain listings of content.
+
+(Prerequisites/Slide)
+
+Before you get started with this tutorial you'll want to make sure you're:
+
+- Familiar with the concepts of entities and fields
+- And how they relate to the fact that each page on your site that someome might interact with is actually composed of numerous different pieces of modular content
+- And finally, this tutorial will follow along with the farmers market scenario being used throughout the user guide
+
+(Steps)
+
+Start by brainstorming about what content your site needs to contain, which could include content that visitors would be looking for, as well as content that you want
+to show to visitors. Here's an example from the farmers market guiding scenario for this set of tutorials:
+
+(Slide)
+____
+The site needs to display information about the location and hours of the market, and an About page with the history of the market. It also needs to list the vendors. Vendors should be able to edit their listings (including a logo or photo), and post recipes. Site visitors should be able to browse recipes, or locate recipes using ingredients that they purchased at the market. Some visitors to your site speak another language, so the main pages and vendor pages need to be translated.
+____
+
+For each identified piece of content, decide which content entity type would be the best fit. In doing this, you'll need to consider where and how the content will be used and edited on the site.
+
+(Screenshot of farmers market site, show blocks with hours and location)
+For example, in the farmers market site scenario, you might want to display the hours and location of the farmers market on the sidebar of every page. For that content, a single custom block makes sense.
+
+(Screenshot of node/add page with content types, and then screenshot of permissions page highlighting vendor node type permissions)
+As another example, you might decide that pages displaying information about each vendor should be content items managed by the core Node module, because you want vendors to be able to edit their own listings. The core Node module permission system lets you do this easily.
+
+(TBD, what should we show here?)
+These decisions do not necessarily always have only one right answer; for instance, you could decide that vendor pages should be user profiles instead of content items, but if you did that the content would be tied to a specific user account, and it would not be as easy to later change the ownership of a vendor page to a different user account.
+
+(Show a spreadsheet? Maybe record a screencast of filling out this spreadsheet, and then also record voiceover and edit the two together. Speedup/cut the screencast to fit appropriately)
+Within each content entity type you identified, decide what division into sub-types would make sense. For example, in the farmers market site example, you would probably decide that under the Content item entity type, there should be one content type for basic pages like them Home page and an About page, one for vendor pages, and one for recipe pages.
+
+(Show adding fields in the spreadsheet)
+For each entity sub-type you decided on, decide what fields are needed. For
+instance, the Vendor content type might need fields for the vendor name, web
+page URL, image, and description.
+
+(Screencast showing listing of recipes, demonstrate using the filter to narrow the list, with voiceover)
+Next, decide on what content listings are needed, which could be entire pages or smaller areas on the page. For each listing, you'll need to determine what entity items should be listed. Then you'll need to decide in what order and with what filtering options they should be displayed; for example, you might want to give the site visitor the option to search by keyword, to filter the list down to a subset, or to sort the list.
+
+(Show recipe breakdown in spreadsheet)
+You'll also need to decide what information from the entity items should be shown, which might result in adding to the list of fields you determined in the previous step. The farmers market site, for example, needs to have a Recipes listing page that lists content items of type Recipe, with the ability to filter by ingredients, so that means that the Recipe content type needs an Ingredients field.
+
+(Screencast showing adding a new field form that shows the field for selecting a field type, as well as an image of the spreadsheet with this data broken out)
+For each identified field on each entity subtype, identify what type of data it should contain (such as plain text, formatted text, a date, an image file, etc.), and how many values should be allowed. Most fields are single-valued, but for example, a Recipe should allow for multiple values in its Ingredients field.
+
+(Screencast of form for adding a recipe showing ingredients field being used)
+Consider which fields would be best as references to taxonomy term entities: fields whose values should be chosen from a list of allowed values. Those with allowed values that are expected to change and grow over time, are good candidates. An example is the Ingredients field for the Recipe content type.
+
+(Screencast of vendor field on recipe content type in use)
+Consider which fields should reference other content on the site. As an example of that; since vendors will be submitting recipes, a field will be needed on the Recipe content type that references the Vendor content item for the vendor who submitted the recipe.
+
+(Show complete spreadsheet)
+Combine all of your brainstorming about different types of content, lists, and how you would like the data on your site to be structured into a document that you can refer back to later while building your site.
+
+(Recap/Slide)
+In this tutorial we went through some examples of the types of things you'll want to keep in mind when creating a plan for the structure of your sites data. Including things like:
+
+- What kind of content do you want to collect and display
+- How does that content relate to other content on your site
+- What form fields do you want to present to a user who is adding or editing a piece of content
+- And how will that content be used in lists throughout your site?
+
+As you learn more about how Drupal functions make sure you come back to your original document and reconsider your previous decisions, and make updates as necessary.
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from planning-structure.txt.

@@ -1,0 +1,59 @@
+[[planning-layout_video-script]]
+
+=== Video script for planning-layout.txt
+
+(Intro/Slide)
+
+(Goal/Slide)
+By the end of this tutorial you should have at least a rough draft of a plan for the navigation and layout of the site, for both mobile and desktop browsers. This will help to inform future decisions about which feature to use in order to achieve the desired results.
+
+(Prerequisites/Slide)
+Before you get started with this tutorial you'll want to make sure you:
+
+- Know what themes are and the role the play in a Drupal site
+- Understand how Drupal uses regions for block placement
+- And that you've familiarized yourself with the farmers market guiding scenario
+
+(Steps)
+
+Before you get started building your site it's a good idea to spend a some time upfront on planning. This will help you to make decisions about which Drupal features to use and how to use them. Keep in mind that your plan may need to be revised as you go, based on draft content, budgetary concerns, or stakeholder feedback and that's perfectly fine. The goal here is to just get us started thinking about what it is we're trying to build.
+
+Start by making a list of the information that your site should present to visitors. In the farmers market scenario, this might include:
+
+* Location of the market, with directions and a map
+* Hours and days the market is open
+* A brief history of the market
+* A List of vendors with details about each vendor
+* Perhaps a searchable list of recipes and a way to find recipes based on what's currently in season
+* As well as a list of the most recently added recipes
+
+From there decide which information should be on which pages or types of pages on the site:
+
+- Some information like the address, hours, and recently added recipes list might appear on all pages
+- Each vendor will have a details pages that shows information about that vendor
+- A recipe details pages that shows a complete recipe
+- The home page, with the location a map, directions and hours for the market
+- And about page that contains the history of the market
+- Listing pages for both vendors and recipes so users can browse the list and then click to get more details about a particular vendor or recipe, perhaps made searchable so you can for example lists only recipes with a specific ingredient
+
+For each of these page decide which information is the most important on each page. Site visitors using mobile phones or other small browsers will often only see the content that is presented first, and they may not scroll down to see all of the information.
+
+And then decide which of these pages should appear in the main site navigation. For instance, the main navigation might consist of the Home, About, Vendors, and Recipes pages.
+
+Finally, make a rough design sketch for each page, showing how it would look when viewed on a small screen such as a phone, as well as on a larger screen such as a desktop browser. Considering that most site visitors will be using smaller browsers, it is a good idea to start with the phone-size layout, to make sure that these visitors will be able to find the information they need without too much scrolling.
+
+In making these page layout plans, you might find that you need to revise your plan for which information should be on which pages. For example, you might decide that the address, hours, and recently-added recipes list would all fit well in the right sidebar area of all pages, when the site is viewed on desktop-sized browsers. On the other hand, you might decide that for mobile browsers, you would instead put the address and hours in a short format at the top of each page, but only display the recent recipe list at the bottom of the home page.
+
+(Recap/Slide)
+In this tutorial we started the process of making a plan for or site. We:
+
+- Listed the different pieces of information we want to have on the site
+- Broke that up into information about which information should appear on which pages, and a draft list of both landing pages and detail pages
+- And then created a sketch of what a possible layout might look like on both mobile and desktop devices
+
+Remember that this isn't intended to be a final specification, but rather an exercise to help us being to translate our ideas into the various tools Drupal provides.
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from planning-layout.txt.
