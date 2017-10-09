@@ -1722,6 +1722,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Display title'));
     $this->assertText($this->callT('Region'));
+    $this->assertText($this->callT('Operations'));
+    $this->assertText($this->callT('Disable'));
+    $this->assertText($this->callT('Remove'));
 
     $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(&quot;' . $this->demoInput['hours_block_title'] . '&quot;); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . 'jQuery(\'#edit-region\').val(\'sidebar_second\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
 
