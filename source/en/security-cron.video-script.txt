@@ -1,0 +1,57 @@
+[[security-cron_video-script]]
+
+=== Configuring Cron Maintenance Tasks
+
+(Slide/Intro)
+This tutorial covers how to run cron maintenance tasks using the core Automated Cron module, or by running them from outside the site.
+
+(Slide/Goal)
+
+Check whether cron maintenance tasks are run regularly, and if not, either
+install the core Automated Cron module or run cron maintenance tasks from
+outside the website.
+
+(Slide/Prerequisites)
+
+Before you get started with this tutorial you'll want to make sure your familiar with
+
+- What cron tasks are, and the role they in regards to the website
+
+See the written version of this tutorial for links to each of these prerequisite tutorials.
+
+(Slide/Automated vs. Manual)
+The first think you need to do is choose whether to run cron maintenance tasks using the core Automated Cron module, or by other means. The core Automated Cron module might not be suitable for some websites because:
+
+- Each time someone accesses a page on the site, the module checks how long it has been since cron maintenance tasks have last run, and then runs them if necessary. If no one visits the website for a long time, cron maintenance tasks will not be run.
+- Cron maintenance tasks are run after the page has been generated. This means there is less time for the tasks to be run before various server timeouts are reached (for example, PHP execution timeout). If this happens, the logs (see <<prevent-log>>) will show error messages that cron is unable to complete.
+- There is a small scalability cost associated with the core Automated Cron module. This is because one of the web server's processes is occupied (and can't serve other web pages) until the cron maintenance tasks are complete.
+- Alternatives include using the Cron dameon, or scheduled tasks, in your OS, using a Cron SASS provider, or using a cron manager provided by your web hosting provider, to execute a script that triggers the websites cron tasks either by pinging a specific URL or using Drush.
+
+(Demo/Browser)
+
+You can review the _Status report_ to see when cron maintenance tasks were last run. In the manage administrative menu navigate to Reports > Status report. Look for the section that indicates when cron was last run.
+
+If you installed the website using the core Standard installation profile (or similar), then cron maintenance tasks might already be running via the core Automated Cron module.  By default, these tasks are run about every three hours.
+
+If you want to use the core Automated Cron module, first make sure it is installed (it is installed with the core Standard install profile;
+
+Next, configure the module to control how frequently cron maintenance tasks are run. In the Manage administrative menu, navigate to Configuration > System > Cron. Choose the desired interval in the _Cron settings_ section, and click _Save configuration_.
+
+(Topic change)
+If you want to run cron maintenance tasks from outside the website, first uninstall the core Automated Cron module. Next, find the cron URL. This URL is shown in the Status report , and in the Cron administration page. The URL looks
+like this: http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re -- show example
+
+Whenever this URL is visited, cron maintenance tasks will run. See the cron-curl.sh, or cron-lynx.sh examples in the core/scripts/ directory of your websites files. Or read about using Drush to trigger cron.
+
+(Slide/Recap)
+In this tutorial we:
+
+- Discussed the advantages and disadvantages of the automated cron module for running the website's scheduled tasks
+- Demonstrated how to configure the module
+- And finally, discussed some alternative ways to trigger scheduled tasks
+
+(Slide/CC)
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from security-cron.txt.
