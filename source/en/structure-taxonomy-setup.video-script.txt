@@ -1,0 +1,51 @@
+--- video script ---
+
+Slide 1 (title): In this tutorial, we'll walk through the process of setting up a taxonomy for use in a content type.
+
+Slide 2 (goal): By the end of this tutorial you will understand how to create an Ingredients vocabulary and add it to the Recipe content type as a field that can contain an unlimited number of values and that allows adding new terms to the vocabulary.
+
+Slide 3 (prereq): To follow along, you should understand the concepts of content entities and fields, taxonomy, and how to add a field to a content type. Also, the Recipe content type must exist. See the written version of this tutorial for links to the prerequisites.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Structure > Taxonomy which is the path (admin/structure/taxonomy). You will see the Tags vocabulary that was created with the core Standard installation profile.
+
+2. Click Add vocabulary.
+
+- For Name, which is the name of the vocabulary, fill in Ingredients as a value.
+- For Description, which is a brief note about the vocabulary, we'll leave blank.
+
+3. Click Save. You will be taken to the Ingredients page, which shows a list of all the terms in this vocabulary, if there were any. Now we can create new terms.
+
+4. Click Add term. Enter "Butter" in the Name field. Click Save.
+
+5. You will receive a confirmation about the term you created. Let's create a couple more terms. For example, "Eggs" and "Milk".
+
+6. You can return to this vocabulary and create more terms later. Now let's add a taxonomy field to the Recipe content type. In the Manage administrative menu, navigate to Structure > Content Types. Click Manage fields for your Recipe content type.
+
+7. Click Add field, and enter values from the table below.
+
+- For Add a new field, select the field type Reference > Taxonomy term.
+- For Label, enter a title for this field, Ingredients.
+- Click save and continue
+
+8. On the following configuration screen:
+
+- For Type of item to reference, which is the the type of entity that is referenced by the field, select Taxonomy term.
+- For Allowed number of values, which is the number of values a user can enter, enter Unlimited, since we don't know how many ingredients any one recipe will have.
+- Click Save field settings.
+
+9. On the next configuration screen:
+
+- For Help text, which is help shown to users creating content, let's put: "Enter ingredients that site visitors might want to search for".
+
+- Under Reference type, Reference method, allows us to select the method used to choose allowed values. Select Default.
+- Also keep checked Create referenced entities if they don't already exist, which will be useful for this vocabulary because a content editor will be able to add new ingredients to the Ingredients vocabulary as they are creating new recipes. As the content editor is typing an ingredient, the autocomplete field, if it is used, will display any matches to existing ingredients. However, the downside to this option is that you might end up with multiple variations of terms or even misspellings that should instead be represented by one term. So keep that in mind.
+
+- Next we need to select the Available Vocabularies, which is the vocabulary to choose allowed values from. We'll choose the Ingredients vocabulary.
+
+10. Click Save settings. You will be taken back to the Manage Fields page. A message will be displayed saying that the configuration for Ingredients is complete.
+
+Slide 4 (recap): In this tutorial, we created an Ingredients vocabulary and added it to the Recipe content type as a field that can contain an unlimited number of values and that allows adding new terms to the vocabulary.
+
+Slide 5 (cc): (show for 5 seconds)

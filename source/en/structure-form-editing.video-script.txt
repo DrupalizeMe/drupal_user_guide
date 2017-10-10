@@ -1,0 +1,25 @@
+--- video script ---
+
+Slide 1 (title): In this tutorial, we'll walk through the process of changing content entry forms.
+
+Slide 2 (goal): By the end of this tutorial you will understand how to change the Recipe form to use a different widget to enter terms in the Ingredients field.
+
+Slide 3 (prereq): To follow along, you should understand how to add a content type, how to add basic fields to a content type, the concept of taxonomy and the concept of forms and widgets. Also, the Recipe content type must exist and contain the Ingredients taxonomy term reference field. See the written version of this tutorial for links to the prerequisites.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Content > Add content > Recipe, which can also be accessed by the path (node/add/recipe) and look at the content entry form that is set up by default. Notice how you have to select ingredients, by checking the box next to each item. We can change this form field widget to use an autocomplete field instead, which would provide us with a more compact entry form, which would be desirable, as the list of possible ingredients for a Recipe could grow to be quite extensive.
+
+2. In the Manage administrative menu, navigate to Structure > Content types, which is the path (admin/structure/types). Then click Manage form display on the dropdown button for the Recipe content type. The Manage form display page appears.
+
+3. For the Ingredients field, select Autocomplete (Tags style) in the Widget column.
+
+4. Click Save.
+
+5. In the Manage administrative menu, navigate to Content > Add content > Recipe to verify the changed behavior of the content form. The Ingredients field is now a single text field that accepts multiple values.
+
+6. Now Create two Recipe content items, using recipes of your choice. Make sure all the fields have values, including images, ingredients, and submitted by. See the written version of this tutorial for further instructions and links to the related tutorials.
+
+Slide 4 (recap): In this tutorial, we changed the Recipe form to use a different widget to enter terms in the Ingredients field.
+
+Slide 5 (cc): (hold for 5 seconds)

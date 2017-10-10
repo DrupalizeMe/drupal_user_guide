@@ -1,0 +1,55 @@
+--- video script ---
+
+Slide 1 [Title]: In this tutorial, we'll walk through how to add a new content type.
+
+Slide 2 [Goal]: By the end of this tutorial you will understand how to add and configure a new content type named Vendor.
+
+Slide 3 [Prereq]: To follow along, you should understand the concepts of content entities and fields and you should have a plan in place for your content structure. See the written version of this tutorial for links to these prerequisite tutorials.
+
+Demo:
+
+1. In the Manage administrative menu, navigate to Structure > Content types (which can also be accessed by the path admin/structure/types). The Content types page appears showing all the available types of content.
+
+2. Click Add content type. The Add content type page appears. Fill in the fields.
+
+- The Name field is the Name of the content type. Fill in the value: Vendor
+
+- The Description field is used to Explain the use of the content type. Fill in the value: Information about a vendor
+
+3. In the vertical tab labeled Submission form settings, we can configure the form that is used for creating and editing content of this type.
+
+- The Title field label is the Label of the Title field that is shown when editing or creating content of this type. Let's fill in as a value: Vendor name
+
+- Preview before submitting allows you to choose whether you should allow content creators to preview the content before submitting. The options are disabled, which means no preview button would be provided anyone creating or editing this content, optional, which provides a preview button to content editors along with the regular save submit button, and required, in which editors are forced to preview content before it can be saved or published. Let's select "optional". This will allow content creators to preview the content when they are ready to, rather than forcing them to always preview before saving content.
+
+- The Explanation or submission guidelines field allows you to provide instructions for creating or editing content. Anything you put here will be displayed at the top of the page when someone is creating or editing content of this type. We'll leave this blank, but it can be a useful place to add help text for your content editors.
+
+4. Let's move on to the next vertical tab: Publishing options, where we decide on default options for new content of this type.
+
+- The "Published" checkbox allows you to decide whether to make the content item published by default when the content is saved. Let's keep this box checked to make Vendor pages published by default. But a content editor can uncheck this box before saving their content to save a draft. We are only setting the default value for the content type, not the only value.
+
+- Next is the the "Promoted to front page" field. In a default website, this setting can be used to show content on the homepage, in a "river of news" format. We'll leave the default value as unchecked. This field can also be useful as a filter when configuring views or lists of content that only appear on the front page and if the site is configured as such can provide a way for content editors to easily promote content.
+
+- Next we have the "Sticky at top of lists" field. In a default website, this setting can be used to keep content on top of a list. It can also be a useful filter when configuring views. We'll leave this unchecked as well for the default value.
+
+- Finally in this vertical tab we have Create new revision. By leaving this on by default, we can better ensure that a new revision is created each time the vendor is being edited.
+
+Note that Changing these settings does not affect the content items that have already been created. So this is a good task for the beginning of your site build, before any content has been created.
+
+5. Now let's move on to the next vertical tab: Display settings.
+
+- This tab contains the field Display author and date information, which, when checked, will Display the author's username and the content publication date on each vendor page. However, we'd like this off, so let's uncheck it.
+
+6. Next we can configure defaults for Menu settings.
+
+- Available menus allows us to decide which menus that this type of content can be added to. Vendors do not need to appear in menus, so uncheck all menu options. Since we are not adding any content to a menu by default, we don't need to set the default parent item either, but it is available here to configure if you do add a default menu.
+
+7. Ok, we've configured all the defaults for the Vendor content type. Click Save and manage fields to save the content type.
+
+8. We're then directed to the Manage fields tab, which is where we can add fields to our content type. But we'll save that task for a separate tutorial.
+
+9. Now go ahead and create another new content type for recipes. See the written version of this tutorial for further instructions and specific values. But the general process is the same as what we have just walked through.
+
+Slide 4 [Recap]: In this tutorial, we walked through the steps of how to add a new content type Vendor. On your own, create a content type for Recipes. See the written version of this tutorial to refresh your memory of the process and for values specific to the Recipes content type. You'll also find links to related tutorials that will help you expand your understanding of this topic.
+
+Slide 5 (CC): (Show for 5 seconds)
