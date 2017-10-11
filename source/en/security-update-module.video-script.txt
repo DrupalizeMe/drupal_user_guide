@@ -1,0 +1,75 @@
+[[security-update-module_video-script]]
+
+=== Updating a Module
+
+(Slide/Intro)
+This tutorial covers how to update a contributed module by using the administrative interface and running the Database updates script, or by using Drush.
+
+(Slide/Goal)
+
+By the end of this tutorial you'll know how to update a contributed module and run the Database updates script.
+
+(Slide/Prerequisites)
+Before doing this you should make sure that:
+
+- A contributed module has been installed and there is an update available for
+it.
+- You have a development version of your site you can test this on first
+- That you have created a full-site backup before proceeding on the live site
+- If you want to use the user interface, the core Update Manager module must be installed.
+- And finally, if you want to use Drush, Drush must be installed.
+
+See the written version of this tutorial for links to each of these prerequisite tutorials.
+
+(Setup: Start by installing a known out-of-date version of https://www.drupal.org/project/google_analytics)
+
+(Demo/Browser - https://www.drupal.org/project/google_analytics)
+Before you start, check for module-specific update instructions. This is typically necessary while updating modules that involve the usage of third-party libraries, but it's always a good idea to read and understand all module-specific requirements before proceeding with the updates. To find instructions, check the module's project page _Read Documentation_ link.
+
+To view further instructions you can also download the tar.gz or .zip file from the project page to your local computer. Unzip the file and look for a README.txt, INSTALL.txt, and UPGRADE.txt that might contain additional information. You should also, review the release notes on the project page by clicking the version number you're downloading.
+
+You can use the administrative interface or Drush to update a contributed module.
+
+If you are updating a custom module rather than a contributed module, of if you see a message saying "Installing modules and themes requires FTP access to your server", or if the steps below do not work to obtain the new module files, follow the steps in manual installation tutorial. Then continue here with the step for running database updates.
+
+(Demo/Browser / Drupal site)
+To use the administrative interface to update a contributed module first Put your site in maintenance mode.
+
+Then in the _Manage_ administrative menu, navigate to Reports > Available updates > Update. This shows you a list of all contributed modules with available updates.
+
+Find and check the box for each module you want to update in the list. Then click Download these updates for the module.
+
+On the next screen Click Continue. This will download the new code and place into your file system.
+
+Once that is complete click "Run database updates". If you obtained the new module files manually, start with this step, and reach the database updates page by typing the URL /update.php in your browser.
+
+From the updates page click Continue and apply all updates. The database update scripts will be executed.
+
+After that's complete, Click "Administration pages" to return to the administration section of your site.
+
+From here you can take your site out of maintenance mode.
+
+And, for good measure clear the cache.
+
+(Demo/Terminal - Drush)
+
+Alternatively you can use Drush to update a module.
+
+First find the project name for the module you wish to update. It is the last segment of the module's project page URL. For example, if the project URL is https://www.drupal.org/project/admin_toolbar, the project name is "admin_toolbar".
+
+Then run the Drush pm-update command, giving the project name as a parameter. If you have more than one module to update, add the additional module project names to the end of the command, separated by spaces: example `drush up admin_toolbar`
+
+Follow the instructions on the screen.
+
+(Slide/Recap)
+In this tutorial we learned how to:
+
+- Update a contributed module using the user interface provided by the Upgrade Manager module
+- And alternatively using the Drush pm-update command
+
+(Slide/CC)
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from security-update-module.txt.
