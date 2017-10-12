@@ -1,0 +1,73 @@
+[[security-update-theme_video-script]]
+Setup notes:
+- Install an older version of the Mayo theme first, this is the one we'll be updating. https://www.drupal.org/project/mayo/releases/8.x-1.2
+
+
+=== Updating a Theme
+
+(Slide/Intro)
+This tutorial covers how to update a contributed theme by using the administrative interface and running the Database Updates script, or by using Drush.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to update a contributed theme on your site and run the Database Updates script.
+
+(Slide/Prerequisites)
+Before doing this you should make sure that:
+
+- A contributed theme has been installed and there is an update available for
+it.
+- You have a development version of your site you can test this on first
+- That you have created a full-site backup before proceeding on the live site
+- If you want to use the user interface, the core Update Manager module must be installed.
+- And finally, if you want to use Drush, Drush must be installed.
+
+See the written version of this tutorial for links to each of these prerequisite tutorials.
+
+Note that if you're using composer to manage your sites dependencies you'll want to follow the tutorial on using composer to update the code, and then come back here for instructions on running the database update script.
+
+(Demo/Browser - https://www.drupal.org/project/mayo)
+
+You can use the administrative interface or Drush to update a contributed theme. If you are updating a custom theme rather than a contributed theme, if you see a message saying "Installing modules and themes requires FTP access to your server", or if the steps below do not work to obtain the new theme files, follow the steps in the tutorial for manual installation, and then come back here and continue with the instructions for running the database update script below.
+
+===== Using the administrative interface
+
+Start by putting your site in maintenance mode.
+
+Then in the Manage administrative menu, navigate to Reports > Available updates > Update. This will show you a list of any modules or themes that need updating.
+
+Find the theme that you want to update in the list and check the box. Then click Download these updates.
+
+On the next page click _Continue_. This will download and install the updated code.
+
+Once that's done you can click _Run database updates_. If you obtained the new theme files manually or via composer, start with this step, and reach the database updates page by typing the URL /update.php in your browser.
+
+Click _Continue_ to run the updates. The database update scripts will be executed.
+
+Click _Administration pages_ to return to the administration section of your site.
+
+Now you can go ahead and take your site out of maintenance mode.
+
+And for good measure clear the Drupal cache.
+
+(Demo/Drush in Browser - https://www.drupal.org/project/mayo)
+Alternatively you can use Drush to update a theme.
+
+Start by find the project name for the theme you wish to update, which is the last segment of the theme's project page URL. For example, if the project URL is _https://www.drupal.org/project/mayo_, the project name is "mayo".
+
+(Demo/Terinal)
+In your terminal run the Drush pm-update command, giving the project name, in this case "mayo" as a parameter: `drush up mayo`
+
+And then follow any instructions on the screen.
+
+(Slide/Recap)
+In this tutorial we learned how to:
+
+- Update a contributed theme using the user interface provided by the Upgrade Manager module
+- And alternatively using the Drush pm-update command
+
+(Slide/CC)
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from security-update-theme.txt.
