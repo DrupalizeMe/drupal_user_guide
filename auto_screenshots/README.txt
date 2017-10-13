@@ -108,7 +108,7 @@ a particular language as follows:
   like 0x3200078. Or you can use the window name (if you can figure out what
   that would be).
 - The Y offset - how many pixels to offset the images, to get past all of the
-  Firefox toolbars in your Firefox window. A value of 128 seems to be about
+  Firefox toolbars in your Firefox window. A value of 133 seems to be about
   right if you have the menu bar, tabs, URL bar, and bookmarks showing. If you
   have fewer toolbars, use a smaller offset.
 - The timeout - how long to wait for the page to load before taking the

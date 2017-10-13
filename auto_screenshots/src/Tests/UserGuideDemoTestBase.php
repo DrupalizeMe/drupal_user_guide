@@ -54,7 +54,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   /**
    * Which Drupal Core software version to use for the downloading screenshots.
    */
-  protected $latestRelease = '8.1.8';
+  protected $latestRelease = '8.4.0';
 
   /**
    * Strings and other information to input into the demo site.
@@ -374,8 +374,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->setUpScreenShot('install-prepare-recommended.png', 'onLoad="' . $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link') . '"');
       $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
       // File section of a recent Drupal release download page, such as
-      // https://www.drupal.org/project/drupal/releases/8.1.3.
-      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page-inner') . $this->hideArea('#page-title-tools, #nav-content, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
+      // https://www.drupal.org/project/drupal/releases/8.4.0.
+      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page') . $this->hideArea('#page-title-tools, #nav-content, #tabs, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
     }
 
     // Topic: install-run - Running the installer. Skip -- manual screenshots.
@@ -641,24 +641,25 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Body'));
     $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
+    $this->assertText($this->callT('Publish'));
     $this->assertRaw($this->callT('Preview'));
 
     // General note: Filling in textarea fields -- use .append() in jQuery.
     // However, this does not work with ckeditor fields.
     // Partly filled-in node/add/page, with Summary section open.
-    $this->setUpScreenShot('content-create-create-basic-page.png', 'onLoad="jQuery(\'#edit-title-0-value\').val(&quot;' . $this->demoInput['home_title'] . '&quot;); jQuery(\'#edit-path-settings, #edit-path-settings .details-wrapper\').show(); jQuery(\'#edit-path-0-alias\').val(\'' . $this->demoInput['home_path'] . '\');' . $this->hideArea('#toolbar-administration') . 'jQuery(\'.link-edit-summary\').click(); jQuery(\'.form-item-body-0-summary\').show();' . 'jQuery(\'#edit-body-0-summary\').append(\'' . $this->demoInput['home_summary'] . '\');' . '"');
+    $this->setUpScreenShot('content-create-create-basic-page.png', 'onLoad="jQuery(\'#edit-title-0-value\').val(&quot;' . $this->demoInput['home_title'] . '&quot;); jQuery(\'#edit-path-settings, #edit-path-settings .details-wrapper\').show(); jQuery(\'#edit-path-0-alias\').val(\'' . $this->demoInput['home_path'] . '\');' . $this->hideArea('#toolbar-administration') . 'jQuery(\'.link-edit-summary\').click(); jQuery(\'.form-item-body-0-summary\').show();' . 'jQuery(\'#edit-body-0-summary\').append(\'' . $this->demoInput['home_summary'] . '\');' . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['home_title'],
         'body[0][value]' => $this->demoInput['home_body'],
         'path[0][alias]' => $this->demoInput['home_path'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
 
     // Create About page. No screenshots.
     $this->drupalPostForm('node/add/page', [
         'title[0][value]' => $this->demoInput['about_title'],
         'body[0][value]' => $this->demoInput['about_body'],
         'path[0][alias]' => $this->demoInput['about_path'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
 
     // Topic: content-edit - Editing a content item
     $this->drupalGet('<front>');
@@ -686,7 +687,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Submit the revision.
     $this->drupalPostForm(NULL, [
         'revision_log[0][value]' => $this->demoInput['home_revision_log_message'],
-      ], $this->callT('Save and keep published'));
+      ], $this->callT('Save'));
 
     // Updated content message.
     // Difficult to assert the whole message, as it has a URL in it.
@@ -759,7 +760,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'menu[title]' => $this->demoInput['about_title'],
         'menu[description]' => $this->demoInput['about_description'],
         'menu[weight]' => -2,
-      ], $this->callT('Save and keep published'));
+      ], $this->callT('Save'));
     $this->drupalGet('node/2/edit');
     // Menu settings section of content editing page.
     $this->setUpScreenShot('menu-link-from-content.png', 'onLoad="' . $this->showOnly('#edit-menu') . '"');
@@ -810,7 +811,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('node/2/edit');
     $this->drupalPostForm(NULL, [
         'menu[weight]' => 10,
-      ], $this->callT('Save and keep published'));
+      ], $this->callT('Save'));
     $this->drupalGet('<front>');
     // Header section of Home page with reordered menu items.
     $this->setUpScreenShot('menu-reorder_final_order.png', 'onLoad="' . $this->showOnly('header') . $this->hideArea('.visually-hidden, .contextual, .menu-toggle') . $this->setWidth('header') . $this->setBodyColor() . $this->replaceSiteName() . $this->removeScrollbars() . '"');
@@ -1035,12 +1036,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'body[0][value]' => $this->demoInput['vendor_1_body'],
         'path[0][alias]' => $this->demoInput['vendor_1_path'],
         'field_' . $vendor_url . '[0][uri]' => $this->demoInput['vendor_1_url'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
     // This will cause an error about missing alt text. Submit again with the
     // alt text defined.
     $this->drupalPostForm(NULL, [
         'field_' . $main_image . '[0][alt]' => $this->demoInput['vendor_1_title'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
 
     $this->drupalGet('node/add/' . $vendor);
     $this->drupalPostForm(NULL, [
@@ -1050,10 +1051,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'body[0][value]' => $this->demoInput['vendor_2_body'],
         'path[0][alias]' => $this->demoInput['vendor_2_path'],
         'field_' . $vendor_url . '[0][uri]' => $this->demoInput['vendor_2_url'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
     $this->drupalPostForm(NULL, [
         'field_' . $main_image . '[0][alt]' => $this->demoInput['vendor_2_title'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
 
     // The next topic with screenshots is structure-taxonomy, but the
     // screenshot is generated later.
@@ -1238,12 +1239,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'path[0][alias]' => $this->demoInput['recipe_1_path'],
         'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_1_ingredients'],
         'field_' . $submitted_by . '[0][target_id]' => $this->demoInput['vendor_1_title'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
     // This will cause an error about missing alt text. Submit again with the
     // alt text defined.
     $this->drupalPostForm(NULL, [
         'field_' . $main_image . '[0][alt]' => $this->demoInput['recipe_1_title'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
 
     $this->drupalGet('node/add/' . $recipe);
     $this->drupalPostForm(NULL, [
@@ -1253,10 +1254,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'path[0][alias]' => $this->demoInput['recipe_2_path'],
         'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_2_ingredients'],
         'field_' . $submitted_by . '[0][target_id]' => $this->demoInput['vendor_1_title'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
     $this->drupalPostForm(NULL, [
         'field_' . $main_image . '[0][alt]' => $this->demoInput['recipe_2_title'],
-      ], $this->callT('Save and publish'));
+      ], $this->callT('Save'));
 
 
     // Topic: (out of order) structure-taxonomy - Concept: Taxonomy.
@@ -1643,7 +1644,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $this->drupalPostForm(NULL, [
         'uid[0][target_id]' => $this->demoInput['vendor_1_title'],
-      ], $this->callT('Save and keep published'));
+      ], $this->callT('Save'));
     if ($this->demoInput['first_langcode'] == 'en') {
       // The confirm message has a URL in it, so just look for the pieces of
       // the message.
@@ -1663,7 +1664,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // screenshots.
     $this->drupalPostForm('node/4/edit', [
         'uid[0][target_id]' => $this->demoInput['vendor_2_title'],
-      ], $this->callT('Save and keep published'));
+      ], $this->callT('Save'));
   }
 
   /**
@@ -2292,7 +2293,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'body[0][value]' => $this->demoInput['home_body_translated'],
         'path[0][alias]' => $this->demoInput['home_path_translated'],
         // This looks strange, but that is how the button text is translated.
-      ], $this->callT('Save and keep published') . ' ' . $this->callT('(this translation)'));
+      ], $this->callT('Save') . ' ' . $this->callT('(this translation)'));
 
     // Topic: language-config-translate - Translating Configuration.
 
