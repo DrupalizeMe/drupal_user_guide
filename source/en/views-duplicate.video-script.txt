@@ -1,0 +1,88 @@
+[[views-duplicate]]
+
+=== Duplicating a View
+
+(Slide/Intro)
+This tutorial covers creating a new page by duplicating a view.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to create a page listing recipes by duplicating the existing Vendors view.  We'll also modify the page so that the recipes are displayed in a grid and can by filtered by
+ingredients.
+
+(Slide/Prerequisites)
+
+Before you get started with this tutorial you'll want to make sure you:
+
+* Understand the main concepts and parts that make up a view.
+* Know how to create a view from scratch.
+* Your site also needs the vendor and recipe content types, each with main image fields. Your site must also have a couple of recipe content items created.
+* The Vendors view must also exist.
+
+See the written version of this tutorial for links to each of these prerequisites.
+
+(Demo/Browser)
+
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
+(_admin/structure/views_). Find the view "Vendors" and click _Duplicate_ in its
+dropdown button.
+
+. We're going to name this duplicate view "Recipes" and click _Duplicate_. The view configuration page appears.
+
+. To change the title of the view page to "Recipes", click Vendors in the
+_Title_ field under _Title_. The _Page: The title of this view_ pop-up
+appears. Enter "Recipes". Click _Apply_.
+
+. To change from a table to a grid format, click _Table_ in the _Format_ field
+under _Format_. The _Page: How should this view be styled_ pop-up
+appears. Check _Grid_ and click _Apply_. The _Page: Style options_ pop-up
+appears. Retain the default values and click _Apply_.
+
+. To retain only the title and image fields for the Recipes view, click
+_Content: Body_ under _Fields_. Click _Remove_ in the pop-up that appears.
+
+. To change the content type filter to use the Recipe content type, click
+_Content: Type (=Vendor)_ under _Filter criteria_. In the _Configure
+filter criterion: Content: Type_ pop-up, check Recipe and uncheck Vendor. Click
+_Apply_.
+
+. To add a further filter that is exposed to visitors, click _Add_ in the
+dropdown button under _Filter criteria_. Search for "ingredients" and check
+"Ingredients (field_ingredients)". Click _Add and configure filter criteria_.
+
+. The appearing pop-up offers extra settings on vocabulary and selection
+type. Click _Apply and continue_. The next pop-up allows you to expose this
+filter to visitors.
+
+We're going to allow visitors to change this filter, so check the Expose this filter checkbox. We're also going to make sure this filter isn't required, so that box should be unchecked. The label we want to use for this filter is "Find recipes using..." so we'll add that to the label field. Then click _Apply_.
+
+. To change the _Path_ label field to "Recipes", click "/vendors" in the _Path_
+field under _Page settings_. In the pop-up that appears, enter the path
+"recipes" and click _Apply_.
+
+Note that when editing a view, you enter paths without the leading "/", unlike
+on other administrative pages (such as when providing a path to a content item
+page).
+
+. To change the menu link title, click "Normal: Vendors" in the _Menu_ field
+under _Page settings_. In the pop-up that appears, change the title to "Recipes"
+and click _Apply_.
+
+. In order to use Ajax to make filtering and paging faster for users, under _Advanced_ > _Other_, click _No_ in the _Use AJAX_ field. Check _Use AJAX_ in the pop-up that appears, and click _Apply_.
+
+. Click _Save_ to save the view.
+
+. Go back to the home page and click Recipes in the navigation to view the new
+Recipes page.
+
+(Slide/Recap)
+
+In this tutorial we duplicated the vendors view and changed it's configuration in order to display receipe content items to our users. We also added an exposed filter to our view so that our users can search recipes by ingredients.
+
+(Slide/CC)
+
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+https://pronovix.com/[Pronovix],
+and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+http://redcrackle.com[Red Crackle].

@@ -1,0 +1,106 @@
+[[views-create]]
+=== Creating a Content List View
+
+(Slide/Intro)
+This tutorial covers how to create a content list view.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to create a page listing vendors that will be automatically updated whenever a
+vendor is added, deleted, or updated on the site.
+
+(Slide/Prerequisites)
+
+Before you get started with this tutorial you'll want to make sure you:
+
+Know what Views are from a conceptual level.
+You'll also want to understand the main parts that make up a view.
+
+Your site will need the core Views and Views UI modules installed. These are already installed for you when you use the core Standard installation profile.
+
+Another requirement is to have a vendor content type with URL and main image fields on your site.
+
+See the written version of this tutorial for links to each of these prerequisites if they're unfamiliar to you.
+
+(Demo/Browser)
+
+In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add
+view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
+
+We'll now fill in the fields that we want to appear in our listing.
+
+The view name will be the label that is applied to this view on the administration pages. We'll use "Vendors".
+
+The type of information that will be shown in this view is Content. Specifically we're going to restrict our view to Vendor content items.
+
+We'll also specify that we're going to sort our vendor itmes by their Title.
+
+Now we're ready to move on to the page settings. We're going to create a page to display our view with the title "Vendors". We'll also use "vendors" for the path this page will be available at.
+
+On our page we'll diplay a table listing, with 10 items visible per page. We'll also make sure that we've enabled a pager so that users can browse our complete list of vendors.
+
+We'll create a menu link, adding our view listing to the Main navigation menu also with the title "Vendors".
+
+With our basic view settings properly configured we can now click _Save and edit_. This will take us to the full view configuration page. Now we're ready to specify which fields will actually appear in our table listing.
+
+. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
+appears.
+
+. Enter the word "image" in the search field.
+
+. Check Main image in the table.
+
+. Click _Apply_. The _Configure field: Content: Main Image_
+pop-up appears.
+
+We'll configure this image field by removing the label value, using the Medium image style, and ensuring the image links to the content item.
+
+. Click _Apply_. The view configuration page appears.
+
+. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
+appears.
+
+. Enter the word "body" in the search field.
+
+. Select _Body_ in the table.
+
+. Click _Apply_. The _Configure field: Content: Body_ pop-up
+appears.
+
+We'll configure the body field by removing the label value, making sure the formatter is set to display the Summary or a trimmed value, and set the trimmed limit to a 120 character maximum.
+
+. Click _Apply_. The view configuration page appears.
+
+. Under _Fields_, click _Content: Title (Title)_. The _Configure field: Content:
+Title_ pop-up appears.
+
+. Uncheck _Create a label_. This will remove the label that was created by the
+wizard.
+
+. Click _Apply_. The view configuration page appears.
+
+. Under _Fields_, click _Rearrange_ in the dropdown button. The _Rearrange
+fields_ pop-up appears.
+
+. Drag the fields into the right order: Image, Title, Body.
+
+. Click _Apply_. The view configuration page appears.
+
+. Optionally, click _Update preview_ for a preview.
+
+. Click _Save_.
+
+. Navigate to the homepage and click Vendors from the main navigation to see
+the result.
+
+(Slide/Recap)
+
+In this tutorial we:
+
+- Created a new view to display a table listing particular fields from our Vendor content type.
+
+(Slide/CC)
+
+*Attributions*
+
+Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
+and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
