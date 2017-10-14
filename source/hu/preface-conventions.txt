@@ -1,82 +1,82 @@
 [[preface-conventions]]
-=== Conventions of the Guide
+=== A könyvben használt formázásról
 
 [role="summary"]
-Understanding the conventions used in this guide.
+A Kézikönyvben leírtak jobb megértésének érdekében egységes formázással igyekszünk elkülöníteni az információkat.
 
-==== Assumptions and prerequisites
+==== Előfeltevések és követelmények
 
-This guide has the following assumptions and prerequisites:
+A Kézikönyv szerkesztése során a következő feltételezésekre építettünk:
 
-* This guide is organized into topics; see <<preface-organization>> for details. Many topics include a _Prerequisite knowledge_ section, which lists other topics whose content knowledge is needed in order to understand the topic you are reading. Some background knowledge that is not covered in the guide is also assumed; see <<preface-audience>> for details.
+* A teljes tartalmát témakörökre osztottuk fel, melynek részletei a <<preface-organization>> oldalon olvashatóak. Sok ilyen témakör elején szerepel egy _Szükséges előismeretek_ című szakasz: itt soroljuk fel azon korábbi témaköröket, melyek előzetes elolvasása hasznos az adott témakör megértéséhez. Minden szükséges tudást azonban mi sem írhattunk le a Kézikönyvben, ezért feltételezzük, hogy az Olvasónak már vannak alapvető ismeretei a <<preface-audience>> témakörben leírtakról.
 
-* Many task topics list _Site prerequisites_, which are tasks that you'll need to have completed on your site before you'll be able to do the task in the topic you are reading.
+* Ezen kívül azoknál a témakörnél, melyek egy lépéssor elvégzéséhez szolgálnak útmutatóul, egy _Webhely előfeltételei_ című szakaszban felsoroljuk azt is, hogy az ismertetett művelet elvégzéséhez a példa webhelyünknek milyen korábbi, előző témakörök során végzett módosításokat kell tükröznie.
 
-* The specifics of the site prerequisites relate to the scenario used throughout this guide of building a site for a farmers market (see <<preface-scenario>> for details). You can adapt the tasks to your own scenario, but you will also need to remember the changes you made when deciding if your site satisfies the site prerequisites for a task.
+* A példaként használt webhely ugyanis a teljes Kézikönyv során ugyanaz. Egy valós élethelyzetben, egy kisvárosi termelői piac weboldalán keresztül mutatjuk be példáinkat, ennek részletei a <<preface-scenario>> témakörben olvashatóak. Természetesen nem kötelező mindenkinek ugyanilyen célú webhelyet építenie, sőt, az Olvasó szabadon alkalmazhatja a leírtakat a saját webhelyére. Ekkor azonban gondolnia kell majd arra is, hogy a későbbi fejezetekben ismertetett lépéssoroknak megfelel-e a saját Drupal példánya?
 
-* For all task topics after <<install-run>>, there is also an implicit prerequisite: you must have installed the content management software on your site, and be logged in to a user account with sufficient permissions to do the task (such as the user account created when you installed your site, which automatically has full permissions).
+* A <<install-run>> témakör után következő továbbiak egy további feltételt is támasztanak: onnantól értelemszerűen elvárt, hogy fel legyen telepítve a Drupal a tárhelyen és az Olvasó be legyen rajta jelentkezve egy kellő jogosultságokkal bíró felhasználói fiókkal. +
+ +
+Ha a Kézikönyv fejezetein sorban haladunk végig, akkor ez nem igényel semmilyen további előkészületet: a telepítés során automatikusan létrejön az Egyes számú fiók, amelyben a telepítés végeztével bejelentkezve maradunk, így a lehető legmagasabb szintű hozzáféréssel rendelkezünk.
 
-* If you read all the topics in order, and perform all of the steps in the task topics as you go (staying logged in), you should have the background knowledge and site prerequisites in place for each topic as you read it.
 
+==== Szövegbeli egységes jelölések
 
-==== Text conventions
+A Kézikönyv során a következő fogalmazási és szerkesztési gyakorlatot követtük a könnyebb érthetőség kedvéért:
 
-The following conventions are used in the text of this guide:
+* A _pelda.hu_ doménnév alatt mindig a webhelyünk alap webcímét értjük. A webhelyünkön belül használatos további webcímekről lentebb, a Navigáció szakaszban írunk.
 
-* The URL _example.com_ means the base URL of your website. See the Navigation section below for more details on how URLs internal to your site are indicated.
+* _Dőlt betűvel_ a képernyőn megjelenő kifejezéseket jelöltük, mint például: „Kattintsunk a _Beállítások mentése_ gombra”. Ez azonban csak a szoftver kezelőfelületének részét képező kifejezésekre vonatkozik, nem pedig a korábbi témakörök során begépelt szövegekre. Például amikor egy tartalomszerkesztésről szóló leírásban egy ehhez hasonló utasítást olvashatunk: „Kattintsunk a _Szerkesztés_ gombra a Rólunk oldal sorában”, akkor a _Szerkesztés_ dőlt betűs, mert a gomb felirata, de a Rólunk nem az, mivel az egy általunk feltöltött tartalomnak a címe.
 
-* Text you should see in the user interface of your site is shown in _italics_, such as: Click _Save configuration_. This only applies to text in the user interface that comes from the software, not to text that was entered in a previous topic. For example, in a topic about editing, you might see this instruction: Click _Edit_ in the row of the About page (_Edit_ would be in italics, but About would not be, because the About page was created in a previous topic).
+* Az előbb említett UI-feliratokon kívül a _dőlttel_ való formázást használjuk még modulok és sminkek, valamint fájlok neveinek és az újonnan ismertetett szakkifejezések kiemelésére is.
 
-* URLs, file names, and newly-introduced terminology are also shown in _italics_.
-
-* Text that you should type at a shell command line is shown in monospace type, such as:
+* Minden olyan szöveget, amelyet egy parancssori ablakba kell begépelnünk, +egyenszélességű+ betűvel jelöltünk:
 +
 ----
 drush cr
 ----
 
-* Within this guide, the word _directory_ is always used to refer to file directories (which some people prefer to call _folders_).
+* Bár egyesek ritkán mappáknak szeretik hívni a fájlok tárolóit, a Kézikönyvben azonban az elterjedt szóhasználatnak megfelelően könyvtáraknak nevezzük őket.
 
-==== Navigation
+==== Navigáció
 
-To do most of the task topics in this guide, you will need to navigate to one or more pages in the administrative interface of your site. You might see something like this in the instructions (this will make more sense after you have the base software installed):
+Az útmutató leírások elvégzéséhez leggyakrabban a Drupal adminisztrációs felületét fogjuk használni. Ezért a lépéssorok gyakran tartalmaznak majd ehhez hasonló utasításokat:
 
 =============
-In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_ (_admin/structure/taxonomy_).
+„Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Taxonómia_ menüpontot”. (Ez igazán majd az alaprendszer feltelepítését követően nyer majd értelmet.)
 =============
 
-Navigation instructions like this assume that you have the core Toolbar module installed, and this example means that in the menu bar at the top of your site, you would need to click _Manage_ to expose the menu choices, then click _Structure_, then _Taxonomy_, and that at the end, you would be on a page with URL _http://example.com/admin/structure/taxonomy_ (if your site base URL is _http://example.com_).
+Az ehhez hasonló navigációs útmutatások során feltételezzük, hogy a webhelyen a _Toolbar_ modul telepítve és engedélyezve van. Ha igen, akkor az oldal tetején megjelenő eszközsor _Kezelés_ menüpontjára kattintva kinyíló további lehetőségek közül nekünk a _Felépítés_, majd pedig a _Taxonómia_ nevű menüpontokra kell kattintanunk. Másik lehetőség, hogy böngészőnk címsorába beírjuk a _http://pelda.hu/admin/structure/taxonomy_ webcímet.
 
 // Top navigation bar on any admin page, with Manage menu showing.
-image:images/preface-conventions-top-menu.png["Admin menu",width="100%"]
+image:images/preface-conventions-top-menu.png["Az adminisztrációs menü",width="100%"]
 
-Here's another example:
+Vagy nézzünk egy másik példát:
 
 =============
-In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ > _Site information_
-(_admin/config/system/site-information_).
+„Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Konfiguráció_ > _Rendszer_ > _Alapvető webhelybeállítások_”.
+(vagy címsorban admin/config/system/site-information).
 =============
 
-In this example, after clicking on _Manage_ and _Configuration_, you would need to find the _System_ section of the page, and within that, click _Site information_. After that, you'd end up on _http://example.com/admin/config/system/site-information_.
+Ebben az esetben a _Kezelés_, majd _Konfiguráció_ menüpontokra való kattintás után megnyíló oldalon meg kell keresnünk a _Rendszer_ című szakaszt, amelyben megtaláljuk az _Alapvető webhelybeállításokat_:
 
 // System section of admin/config page.
-image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
+image:images/preface-conventions-config-system.png["A _Rendszer_ feliratú doboz a Konfiguráció oldalon"]
 
-One other note: if you are using the standard administrative core Seven theme, many "Add" buttons in the administrative interface are displayed with + signs on them. For instance, on admin/content, the Add new content button appears as _+ Add new content_. However, this is theme-dependent and is not really part of the text on the button (for instance, it would not necessarily be read by a screen reader), so in this guide, the convention is to not mention the + sign on the buttons.
+Végezetül pedig még egy apró megjegyzés: ha az alapértelmezett adminisztrációs sminket, a _Sevent_ használjuk, akkor az új elemeket hozzáadó gombokon szerepelni fog egy plusz (+) jel. Például az admin/content oldalon ezen a gombon a „++ Tartalom hozzáadása” felirat olvasható. Ez azonban csupán a _Seven_ design egy funkciója, a plusz jel nem a gombfelirat része (például a képernyőfelolvasó szoftverek is figyelmen kívül hagyják), ezért mi is anélkül fogjuk említeni ezeket a gombokat a Kézikönyvben.
 
-==== Filling in forms
+==== Űrlapok kitöltése, adatok bevitele
 
-Many of the task topics in this guide include steps where you will fill out a web form. In most cases, a screen capture image of the form will be included, along with a table of the values you will need to enter into each form field. For example, you might see a table that starts out like this, explaining the site information form you would see if you navigated to _Configuration_ > _System_ > _Site information_ (_admin/config/system/site-information_):
+Könyvünk lépéssorainak majdnem valamennyi feladata során szükségünk lesz különböző adatok webes űrlapokon keresztüli bevitelére. Ennek megkönnyítésére a legtöbb esetben egy képernyőképpel illusztráljuk majd őket, valamint egy táblázatban összefoglaljuk, hogy melyik mezőbe mit kell beírni. Például találkozni fogunk majd egy ehhez hasonló táblázattal, ami három oszlopban összefoglalja, hogyan töltsük ki a mezőket a _Konfiguráció_ > _Rendszer_ > _Alapvető webhelybeállítások_ oldalon (vagy címsorban _admin/config/system/site-information_):
 
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site name|Name of your site|Anytown Farmers Market
+| Mező neve | Magyarázat | Példa érték
+| Webhely neve | A webhelyünkhöz kitalált tetszőleges elnevezés. | Bárkifalva Termelői Piac
 |================================
 
-To use this table, find the field labeled _Site name_ in the form, and enter the name of your site in this field. An example site name of "Anytown Farmers Market" is suggested in the table, which relates to the scenario of building a website for a farmers market that you'll find all through this guide (see <<preface-scenario>> for details).
+A táblázat segítségével nincs más dolgunk, mint megkeresni az adott oldalon a _Webhely neve_ beviteli mezőt, és bemásolni a példaként megadott értéket, vagy begépelni egy magunk választotta sajátot. Az előbb példa értékként feltüntetett „Bárkifalva Termelői Piac” nem véletlen: a <<preface-scenario>> témakörnél ismertetjük, hogy milyen valós életbeli példán keresztül építjük fel webhelyünket a Kézikönyv során.
 
 
-*Attributions*
+*Közreműködők*
 
-Written/edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta és szerkesztette: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
