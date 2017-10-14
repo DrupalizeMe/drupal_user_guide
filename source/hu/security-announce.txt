@@ -1,54 +1,54 @@
 [[security-announce]]
 
-=== Keeping Track of Updates
+=== Frissítések figyelemmel kísérése
 
 [role="summary"]
-How to secure a site by staying informed about the latest security updates.
+Hogyan segíti elő webhelyünk biztonságát, ha jól tájékozottak és naprakészek vagyunk.
 
-(((Update,keeping track of)))
-(((Security update,keeping track of)))
-(((Update Manager module,overview)))
-(((Security announcement,subscribing to by email)))
-(((Security announcement,subscribing to on Twitter)))
+(((Frissítés,nyomonkövetés)))
+(((Biztonsági frissítés,nyomonkövetés)))
+(((Update Manager modul,áttekintés)))
+(((Biztonsági bejelentés,feliratkozás e-mailben)))
+(((Biztonsági bejelentés,feliratkozás Twitteren)))
 
-==== Goal
+==== Célkitűzés
 
-Keep your site safe and up-to-date by keeping up with the latest security updates.
+E témakör végére megértjük, miért olyʼ fontos, hogy az éles webhelyek üzemeltetői mindig jól tájékozottak legyenek a friss biztonsági hírek terén.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<security-concept>>
 
-//==== Site prerequisites
+//==== Webhely előfeltételei
 
-==== Steps
+==== Lépések
 
-There are a few different ways to receive notifications of security releases:
+Az alábbiakban bemutatjuk pár különböző módját annak, honnan értesülhetünk a legfrissebb biztonsági frissítések megjelenéséről:
 
-* In the _Manage_ administrative menu, navigate to _Reports_ > _Available updates_ > _Settings_. Enter the email addresses to be notified when updates are available. You can also specify whether you want daily or weekly updates. Click _Save configuration_.
+* Webhelyünk adminisztrációs eszközsorán kattintsunk a _Kezelés_ > _Jelentések_ > _Elérhető frissítések_ > _Beállítások_ menüpontokra vagy a címsorban nyissuk meg az /admin/reports/updates/settings oldalt. Adjuk meg az értesítendő e-mail címünket, amelyre az automata levelet kérjük új kiadás megjelenésének észlelésekor. Beállíthatjuk az értesítések gyakoriságát és biztonsági szintjét is. Kattintsunk a _Beállítások mentése_ gombra.
 
-* Subscribe to the security announcements email list. To subscribe, log in to _Drupal.org_, go to your user profile page and subscribe to the security newsletter on the _Edit_ > _My newsletters_ tab.
+* Feliratkozhatunk a biztonsági frissítések megjelenésének szolgálati közleményeit bejelentő levelezési listára, ami angol nyelvű. Ehhez jelentkezzünk be a Drupal.org-on, nyissuk meg személyes profilunkat és az _Edit_ > _My newsletters_ fülön válasszuk a _Security announcements_ lehetőséget.
 
-* Follow @drupalsecurity on Twitter.
+* Kövessük a @drupalsecurity csatornát Twitteren.
 
-* Subscribe to RSS feeds for https://www.drupal.org/security/rss.xml[core security updates], https://www.drupal.org/security/contrib/rss.xml[contributed project updates] and https://www.drupal.org/security/psa/rss.xml[public service announcements].
+* RSS hírolvasóval feliratkozhatunk a http://drupal.org/security/rss.xml[Drupal alaprendszer] és a http://drupal.org/security/contrib/rss.xml[közösségi modulok] biztonsági frissítéseinek, valamint az általános http://drupal.org/security/psa/rss.xml[közérdekű közlemények] hírcsatornáira.
 
-//==== Expand your understanding
+//==== Az ismeretek elmélyítése
 
-==== Related concepts
+==== Kapcsolódó témák
 
 * <<security-concept>>
 * <<security-update-core>>
 * <<security-update-module>>
 * <<security-update-theme>>
 
-==== Additional resources
+==== Egyéb források
 
-* https://www.drupal.org/security["Security advisories" on _Drupal.org_]
-* https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team]
-* https://twitter.com/drupalsecurity[@drupalsecurity on Twitter]
+* https://www.drupal.org/security[Security advisories] (azaz „Biztonsági tanácsok”) a Drupal.org webhelyen angol nyelven.
+* https://www.drupal.org/security-team[Drupal Biztonsági Munkacsoport] bemutatása angol nyelven.
+* https://twitter.com/drupalsecurity[@drupalsecurity] a Twitteren
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/hey_germano[Sarah German] at https://www.advomatic.com[Advomatic].
+Írta: https://www.drupal.org/u/hey_germano[Sarah German] (https://www.advomatic.com[Advomatic]).  Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
