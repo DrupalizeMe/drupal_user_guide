@@ -1,132 +1,132 @@
 [[structure-taxonomy-setup]]
 
-=== Setting Up a Taxonomy
+=== Egy taxonómia-szótár létrehozása
 
 [role="summary"]
-How to create a taxonomy vocabulary and add it as a field to a content type.
+Hogyan hozzunk létre egy címkeszótárat (taxonómiát) és adjuk hozzá mezőként egy tartalomtípushoz?
 
-(((Taxonomy,creating)))
-(((Vocabulary,creating)))
-(((Metadata,creating)))
-(((Term list,creating)))
+(((Taxonómia,létrehozás)))
+(((Szótár,létrehozás)))
+(((Metaadat,létrehozás)))
+(((Kifejezéslista,létrehozás)))
 
-==== Goal
+==== Célkitűzés
 
-Create an Ingredients vocabulary and add it to the Recipe content type as a field that can contain an unlimited number of values and that allows adding new terms to the vocabulary.
+A célunk az, hogy legyen egy _Hozzávalók_ nevű szótárunk, amit mezőként hozzá tudunk rendelni a _Recept_ tartalomtípushoz, így annak tartalmai korlátlan alkalommal hivatkozhatják az ételek összetevőit a szótár kifejezéseihez a későbbiekben is.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<planning-data-types>>
 * <<structure-taxonomy>>
 * <<structure-fields>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-The Recipe content type must exist. See <<structure-content-type>>.
+A _Recept_ tartalomtípusnak léteznie kell. Ehhez lásd a <<structure-content-type>> témakört.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_ (_admin/structure/taxonomy_). You will see the _Tags_ vocabulary that was created with the core Standard installation profile.
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Taxonómia_ menüpontot (vagy gépeljük a címsorba: _admin/structure/taxonomy_). Az így megnyíló oldalon még csak egy, _Címkék_ nevű szótárat látunk felsorolva. Ez azért van már itt, mert a webhely létrehozásakor az _Általános_ telepítési profilt választottuk, ami automatikusan definiálta ezt a példa szótárat bemutató céllal.
 +
 --
 // Taxonomy list page (admin/structure/taxonomy).
-image:images/structure-taxonomy-setup-taxonomy-page.png["taxonomy list page",width="100%"]
+image:images/structure-taxonomy-setup-taxonomy-page.png["Taxonómiaszótárak listaoldala",width="100%"]
 --
 
-. Click _Add vocabulary_, and fill in the values below.
+. Kattintsunk a _Szótár hozzáadása_ gombra, és írjuk be az alábbi értékeket:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Name | The name of the vocabulary | Ingredients
-| Description | A brief note about the vocabulary | (Leave blank)
+| Mező neve | Magyarázat | Példa érték
+| Név | Adjunk egy beszédes megnevezést ennek a szótárnak. | Hozzávalók
+| Leírás | Röviden összefoglalhatjuk, hogy milyen célra fogjuk használni ezt a szótárat, milyen fajta kifejezésekből fog állni. | (üresen hagyhatjuk)
 |================================
 +
 --
 // Add Ingredients vocabulary from admin/structure/taxonomy/add.
-image:images/structure-taxonomy-setup-add-vocabulary.png["taxonomy add Ingredients",width="100%"]
+image:images/structure-taxonomy-setup-add-vocabulary.png["Hozzávalók taxonómiaszótár mentése",width="100%"]
 --
 
-. Click _Save_. You will be taken to the Ingredients page, which shows a list of all the terms in this vocabulary.
+. Kattintsunk a _Mentés_ gombra. Ekkor az újonnan létrejött _Hozzávalók_ szótár kifejezéslista oldalára jutunk, ami egyelőre még üres:
 +
 --
 // Ingredients vocabulary page
 // (admin/structure/taxonomy/manage/ingredients/overview).
-image:images/structure-taxonomy-setup-vocabulary-overview.png["Ingredients taxonomy term listing",width="100%"]
+image:images/structure-taxonomy-setup-add-vocabulary.png["Hozzávalók taxonómiaszótár kifejezéseinek listája",width="100%"]
 --
 
-. Click _Add term_. Enter "Butter" in the _Name_ field. Click _Save_.
+. Kattintsunk a _Kifejezés hozzáadása_ gombra. A _Név_ mezőbe írjuk be: „Vaj”. Kattintsunk a _Mentés_ gombra.
 +
 --
 // Name portion of Add term page
 // (admin/structure/taxonomy/manage/ingredients/add).
-image:images/structure-taxonomy-setup-add-term.png["Add term page",width="100%"]
+image:images/structure-taxonomy-setup-add-term.png["Kifejezés hozzáadása oldal",width="100%"]
 --
 
-. You will receive a confirmation about the term you created. Add more terms. For example, "Eggs" and "Milk".
+. A kifejezés sikeres mentéséről egy pozitív rendszerüzenetben kapunk visszajelzést. Ennek mintájára adjunk hozzá további kifejezéseket is a szótárhoz különböző élelmiszer-alapanyagokról. Lehetnek például „tojás” és „tej”.
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_ (_admin/structure/types_). Click _Manage fields_ for your Recipe content type.
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. A _Recept_ tartalomtípusunk sorának végén a legördülő gombon válasszuk a _Mezők kezelése_ lehetőséget.
 
-. Click _Add field_, and enter values from the table below. Click _Save and continue_.
+. Kattintsunk a _Mező hozzáadása_ gombra és másoljuk be az alábbi értékeket a megfelelő helyekre. Miután végeztünk, mentsük munkánkat a _Mentés és folytatás_ gombbal.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Add a new field | Select the field type | Reference > Taxonomy term
-| Label | The title to give the field | Ingredients
+| Mező felirata | Magyarázat | Példa érték
+| Új mező hozzáadása | Itt kell kiválasztanunk, hogy milyen típusú mezőt szeretnénk használni. | Referencia > Taxonómia kifejezés
+| Felirat | Adjuk meg, hogy mi legyen a neve ennek az új mezőnek. | Hozzávalók
 |================================
 +
 --
 // Add field page to add Ingredients taxonomy reference field.
-image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
+image:images/structure-taxonomy-setup-add-field.png["Hozzávalók mező hozzáadása a Recept tartalomtípushoz"]
 --
 
-. On the following configuration screen, enter the values from the table below.
-Click _Save field settings_.
+. A következő beállítási oldalon másoljuk be az alábbi értékeket a megfelelő helyekre.
+Amikor végeztünk, kattintsunk a _Mező beállításainak mentése_ gombra.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Type of item to reference| The type of entity that is referenced by the field | Taxonomy term
-| Allowed number of values | The number of values a user can enter | Unlimited
+| Mező felirata | Magyarázat | Példa érték
+| Hivatkozó elem típusa | A webhelyen létező entitástípusok közül ki kell választanunk, hogy pontosan melyikre fog hivatkozni ez a mező. | Taxonómia kifejezés
+| Értékek megengedett száma  | Az ebben a mezőben tárolható értékek számának felső határa. | Korlátlan
 |================================
 +
 --
 // Field storage settings page for Ingredients field.
-image:images/structure-taxonomy-setup-field-settings.png["Field storage settings for Ingredients field"]
+image:images/structure-taxonomy-setup-field-settings.png["A Hozzávalók mező tárolási beállításai"]
 --
 
-. On the following configuration screen, enter the values from the table below. Click _Save settings_.
+. A következő beállítási oldalon másoljuk be az alábbi értékeket a megfelelő helyekre. Végezetül kattintsunk majd a _Beállítások mentése_ gombra.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Help text | Help shown to users creating content |Enter ingredients that site visitors might want to search for
-|Reference type > Reference method | Select the method used to choose allowed values | Default
-|Reference type > Available Vocabularies | Select the vocabulary to choose allowed values from | Ingredients
-|Reference type > Create referenced entities if they don't already exist | Whether new ingredient terms can be created from the content editing form | Checked
+| Mező felirata | Magyarázat | Példa érték
+| Súgó szöveg | A _Recept_ típusú tartalmakat szerkesztő adminisztrátorok számára egy tájékoztatás, hogy mire való ez a mező. | répa, retek, burgonya
+| _Hivatkozás típusa_ keretben _Hivatkozási mód_ legördülő lista | Kiválasztható, hogy a mező kitöltésekor miként legyenek felsorolva a lehetséges értékek. | Alapértelmezés
+| _Hivatkozás típusa_ keretben _A hivatkozott entitások létrehozása, ha még nem léteznek_ jelölőnégyzet | Ha ezt engedélyezzük, akkor nem kell előre létrehozni a lehetséges kifejezéseket, hanem a _Recept_ szerkesztési oldalán ebbe a mezőbe a nevüket begépelve automatikusan létrejönnek, ha még nem léteztek korábban. | Bepipálva
+| _Hivatkozás típusa_ keretben _Elérhető szótárak_ jelölőnégyzetek | A webhelyen párhuzamosan létező több taxonómiaszótár közül melyikekből lehessen kifejezéseket kiválasztani ebbe a mezőbe. | Hozzávalók
 |================================
 +
 --
 // Reference type section of field settings page for Ingredients field.
-image:images/structure-taxonomy-setup-field-settings-2.png["reference type field settings",width="100%"]
+image:images/structure-taxonomy-setup-field-settings-2.png["Mező hivatkozási beállításainak szerkesztése",width="100%"]
 --
 
 
-. Click _Save settings_. You will be taken back to the _Manage Fields_ page. A message will be displayed saying that the configuration for Ingredients is complete.
+. Kattintsunk a _Beállítások mentése_ gombra. Ekkor visszajutunk a _Recept_ tartalomtípus _Mezők kezelése_ oldalára, ahonnan korábban kiindultunk. Szintén a betöltődő oldalon egy pozitív rendszerüzenet tájékoztat minket a mező tartalomtípushoz való hozzárendelésének sikerességéről.
 +
 --
 // Manage fields page showing Ingredients field on Recipe content type.
-image:images/structure-taxonomy-setup-finished.png["Manage fields page for Recipe content type",width="100%"]
+image:images/structure-taxonomy-setup-finished.png["A Recept tartalomtípus Mezők kezelése oldala",width="100%"]
 --
 
-// ==== Expand your understanding
+//==== Expand your understanding
 
 //==== Related concepts
 
 //==== Additional resources
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/bsnodgrass[Bob Snodgrass], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
+Írta és szerkesztette: https://www.drupal.org/u/bsnodgrass[Bob Snodgrass] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum])
