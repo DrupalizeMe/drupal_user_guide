@@ -1,64 +1,64 @@
 [[config-install]]
-=== Installing a Module
+=== Modulok telepítése
 
 [role="summary"]
-How to install a core or contributed module, using the administrative interface or Drush.
+Hogyan adjunk hozzá új alaprendszeri vagy közösségi modulokat webhelyünkhöz az adminfelületen keresztül vagy a Drush használatával.
 
-(((Module,enabling)))
-(((Module,installing)))
+(((Modul,engedélyezés)))
+(((Modul,telepítés)))
 
-==== Goal
+==== Célkitűzés
 
-Install a core module, or a contributed module whose files have already been uploaded to the site, through the administrative interface or using Drush.
+Adjunk hozzá webhelyünkhöz új alaprendszeri vagy közösségi modulokat (amelyek fájljai már fel vannak töltve a tárhelyre) az adminfelületen keresztül vagy a Drush használatával.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<understanding-modules>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-If you want to use Drush to install modules, Drush must be installed. See <<install-tools>>.
+Ha szeretnénk Drush eszközt használni az alaprendszer telepítéséhez, akkor a Drush-t telepíteni kell. Lásd <<install-tools>>.
 
-==== Steps
+==== Lépések
 
-You can use the administrative interface or Drush to install modules.
+E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfelületét használjuk webböngészőnkben, vagy pedig a Drush nevű eszközt parancssorban.
 
-===== Using the administrative interface
+===== Adminfelületen keresztül
 
-. In the _Manage_ administrative menu, navigate to _Extend_ (_admin/modules_). The _Extend_ page appears showing all the available modules in your site.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ (vagy címsorban az _admin/modules_) oldalra. A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
-. Check the boxes for the module or modules you want to install. For example, check the box for the core Activity Tracker module.
+. Ha már tudjuk, hogy melyik modulra van szükségünk, akkor a neve melletti jelölőnégyzettel engedélyezhetjük. Például jelöljük most be az alaprendszer _Activity Tracker_ moduljának négyzetét.
 +
 --
 // Top part of Core section of admin/modules, with Activity Tracker checked.
-image:images/config-install-check-modules.png["Enabling the core Activity Tracker module",width="100%"]
+image:images/config-install-check-modules.png["Az alaprendszeri Activity Tracker modul bekapcsolása",width="100%"]
 --
 
-. Click _Install_. The checked modules will be installed.
+. Kattintsunk a _Telepítés_ gombra. Az így megjelölt modulok ekkor működésbe lépnek a webhelyen.
 
-===== Using Drush
+===== Drush használatával
 
-. In the _Manage_ administrative menu, navigate to _Extend_ (_admin/modules_). The _Extend_ page appears showing all the available modules in your site.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ (vagy címsorban az _admin/modules_) oldalra. A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
-. Find the machine name of the module you want to install, by expanding the information area for the module. For instance, the core Activity Tracker module's machine name is _tracker_.
+. Keressük ki az engedélyezni kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk annak a modulnak a programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
 
-. Run the following Drush command to install the module:
+. Ennek ismeretében már le tudjuk futtatni a következő Drush-parancsot:
 +
 ----
 drush en tracker
 ----
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
-If you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
+Ha nem látjuk azonnal az eredményét a változtatásainknak, akkor szükség lehet a gyorsítótár ürítésére. Lásd <<prevent-cache-clear>>.
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-==== Additional resources
+==== Egyéb források
 
-http://www.drush.org[Drush]
+Hivatalos dokumentáció és segítség a Drush használatához annak http://www.drush.org[weboldalán] található.
 
 
-*Attributions*
+*Közreműködők*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta és szerkesztette: https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum])
