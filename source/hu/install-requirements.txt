@@ -30,7 +30,7 @@ Ebben a témakörben számba vesszük, hogy a számítógépen milyen feltétele
 
 ===== Lemezterület
 
-Minimum 15 MB szükséges, de egy nagyobb, jóval több modult és sminket használó webhely már körülbelül 60 MB helyet igényel. Fontos azonban észben tartani, hogy a forráskódnál nagyságrendileg több tárhelyet fog igényelni várhatóan maga az adatbázis, a felhasználók által feltölthető fájlok, a biztonsági mentések, és más hasonló állományok.
+A webhely szoftvere által elfoglalt teljes tárterület nem egy általános, mindenkinél egyező érték, hiszen igencsak függ annak képességeitől, funkcionalitásától, ezért esetenként akár erősen eltérő is lehet. Annyi azonban így is elmondható, hogy maga a Drupal alaprendszer körülbelül 100 MB helyet igényel a kiszolgálón. De több tárhelyre lesz valószínűleg szükség, ha további modulokat és sminkeket használunk. Valamint fontos még arra is gondolni, hogy a puszta forráskódnál nagyságrendileg több tárhelyet fog igényelni várhatóan a felhasználók által feltölthető és a Drupal által automatikusan előállított fájlok, a biztonsági mentések, és más hasonló állományok. Természetesen maga az adatbázis is helyet igényel, bár ez sok esetben a kiszolgálón máshol kerül tárolásra (sőt, bizonyos esetekben akár másik gépen is lehet).
 
 ===== Webkiszolgáló
 
