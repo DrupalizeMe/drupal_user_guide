@@ -1,71 +1,71 @@
 [[menu-reorder]]
 
-=== Changing the Order of Navigation
+=== Navigáció sorrendjének átállítása
 
 [role="summary"]
-How to reorder items in a menu.
+Áttekintjük, hogyan kell a navigáció sorrendjét átállítani.
 
-(((Menu items,reordering)))
-(((Navigation,changing the order of menu items)))
+(((Menüpontok,újrarendezés)))
+(((Navigáció,menüpontok sorrendjének megváltoztatása)))
 
-==== Goal
+==== Célkitűzés
 
-Reorder the items in a menu.
+Átállítjuk a navigáció sorrendjét.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<menu-concept>>
 * <<menu-link-from-content>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-Home and About pages must exist in the main navigation menu. See <<menu-link-from-content>>.
+A _Címlap_ és _Rólunk_ oldalak menüpontjainak léteznie kell a főmenüben. Lásd az előző, <<menu-link-from-content>> témakört.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Menus_ (_admin/structure/menu_) where all menus on your site are listed. Click _Edit Menu_ from the _Operations_ dropdown for _Main Navigation_. You can also reach this page using contextual links (refer to <<config-overview>>) for the menu.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Felépítés_ > _Menük_ (vagy címsorban _admin/structure/menu_) oldalra, ahol webhelyünk valamennyi menüjét látjuk felsorolva. A _Fő navigáció_ sorában válasszuk ki a legördülő listából a _Menü szerkesztése_ lehetőséget.
 +
 --
 // Menu list section of admin/structure/menu, with Edit menu button on Main
 // navigation menu highlighted.
-image:images/menu-reorder_menu_titles.png["List of menus on the site with 'Main navigation' highlighted",width="100%"]
+image:images/menu-reorder_menu_titles.png["Menük listája, a Fő navigáció sora kiemelve",width="100%"]
 --
 
-. The _Edit Menu_ page will display a list of each item in the menu you chose (_Main navigation_).
+. Erre a _Menü szerkesztése_ oldalra eljuthatunk az adott menü környezeti hivatkozásán keresztül is, melyről lásd a <<config-overview>> témakört. Itt áttekinthetjük, hogy milyen menüpontok vannak jelenleg a kiválasztott menüben (példánknál maradva a _Fő navigáció_ nevűben).
 +
 --
 // Menu links section of admin/structure/menu/manage/main.
-image:images/menu-reorder_edit_menu.png["List of menus items under _Main navigation_"]
+image:images/menu-reorder_edit_menu.png["A Fő navigáció menüben lévő linkek"]
 --
 
-. Use the cross bar handles to reorder the menu items.  Drag the Home menu item above the About menu item so that it appears first.
+. A menüelemek keresztirányú nyíl ikonjait megragadva fogd-és-vidd módszerrel új helyükre húzhatók.  Húzzuk tehát a _Címlap_ tételt a _Rólunk_ elé, így hamarabb jelenik majd meg a sorban.
 +
 --
 // Menu links section of admin/structure/menu/manage/main, after
 // changing the order.
-image:images/menu-reorder_reorder.png["Reordered menu items with warning message about unsaved changes and the _Save_ button"]
+image:images/menu-reorder_reorder.png["Az immár átrendezett menüpontok, a figyelmeztető üzenet és a Mentés gomb"]
 --
 
-. Click _Save_.
+. Kattintsunk a _Mentés_ gombra.
 
-. The home page now displays the main navigation with the Home menu item displayed first.
+. Ha most nyitjuk meg webhelyünk valamely oldalát, azt fogjuk látni, hogy a főmenü fülei között a _Címlap_ az első helyre került.
 +
 --
 // Header section of Home page with reordered menu items.
-image:images/menu-reorder_final_order.png["Reordered menu items on the home page with 'Home' first and then 'About'"]
+image:images/menu-reorder_final_order.png["Az átrendezett menülelemek, első a Címlap, második a Rólunk"]
 --
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
-Add a menu item called _Contact_, leading to the _/contact_ page, to your Main navigation menu. The contact page is provided by the core Contact module; you may want to edit its layout and fields (see <<structure-form-editing>>).
+Adjunk hozzá ehhez a menühöz egy új menüpontot _Kapcsolat_ néven, ami majd a _/contact_ oldalra fog vezetni. Ezt az oldalt ugyanis az alaprendszer _Contact_ modulja biztosítja, beállításairól bővebben pedig a <<structure-form-editing>> témakörben olvashatunk.
 
-==== Related concepts
+==== Kapcsolódó témák
 
 <<menu-concept>>
 
-//==== Additional resources
+//==== Egyéb források
 
 
-*Attributions*
+*Közreműködők*
 
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel].
+Írta: https://www.drupal.org/u/AnnGreazel[Ann Greazel]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
