@@ -1,54 +1,74 @@
-[[prevent-cache]]
+[[prevent-cache-clear]]
 
-=== Alapfogalom: a gyorsítótár
+=== A gyorsítótár ürítése
 
 [role="summary"]
-A gyorsítótár és a webhely gyorsítótárazható adatainak áttekintése.
+E témakör arról szól, hogyan tudjuk kiüríteni webhelyünk gyorsítótárát akár az adminfelületen keresztül, akár a Drush segítségével.
 
-(((Gyorsítótár,áttekintés)))
-(((Oldal gyorsítótár,áttekintés)))
-(((Modul,Internal Page Cache)))
-(((Modul,Dynamic Page Cache)))
-(((Internal Page Cache modul,áttekintés)))
-(((Dynamic Page Cache modul,áttekintés)))
+(((Gyorsítótár,ürítés)))
+(((Gyorsítótár,újraépítés)))
+
+==== Célkitűzés
+
+Az adminfelület vagy a Drush segítségével kiürítjük webhelyünk belső gyorsítótárát, hogy ezzel a tartalmak legfrissebb változatának kiszolgálására kényszerítsük.
 
 ==== Szükséges előismeretek
 
-* <<understanding-drupal>>
+* <<prevent-cache>>
+* <<install-tools>>
 
-==== Mi az a gyorsítótár?
+==== Webhely előfeltételei
 
-A szoftvernek, ami fut az oldalunkon, minden oldallekéréskor le kell futtatnia számításokat és fogadnia adatokat az adatbázisból, hogy előállítsa az oldalt, amit megjelenít a böngésző vagy más alkalmazás, ami hozzáfér az oldalunkhoz. Ezek a számítások időbe kerülnek, ami azt jelentheti, hogy az oldal betöltésének ideje hosszabb lehet a kívántnál.
+Ha szeretnénk Drush eszközt használni a gyorsítótár kiürítéséhez, akkor azt telepíteni kell. Lásd <<install-tools>>.
 
-Sok módszer van arra, hogy az oldalbetöltést felgyorsítsuk, beleértve azt, hogy telepítünk egy programot a szerverre. Az alaprendszer már tartalmazza az _Internal Page Cache_ és _Dynamic Page Cache_ modulokat, amik az _adatbázis gyorsítótárat_ használják az oldal felgyorsításához, ezért nincs szükség további programokra a szerveren. A mód, ahogy ezek a modulok működnek az, hogy az oldal számításait, a közbülső eredményeket és a végleges oldal kimenetet egy speciális köztes adatbázis területen tárolják (ezt nevezzük _gyorsítótárnak_). Amikor a következő alkalommal összeegyeztethető kérés érkezik, a közbülső vagy a végleges eredményeket, ha megfelelőek, innen lehet lekérni és használni ahelyett, hogy újra elkészülne az egész számítás. Továbbá, amikor a tartalom vagy adat frissíti az említett számítást, az érintett gyorsítótárazott adatot eltávolítja a gyorsítótárból, kényszerítve ezzel az érintett számítást, hogy újra végrehajtsa azt következő alkalommal.
+==== Lépések
 
-Ezek a gyorsítótárazó modulok normális esetben meglehetősen jól működnek és a legtöbb oldalon elérnek valamilyen sebességnövekedést. Azonban néha az oldal gyorsítótárazásával lehetnek problémák, különösen:
+E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfelületét használjuk webböngészőnkben, vagy pedig a Drush nevű eszközt parancssorban.
 
-* Megsérült az adat a gyorsítótárban, ami hibás vagy helytelen oldalkimenethez vezet
+===== Adminfelületen keresztül
 
-* Régi adat túl sokáig maradt a gyorsítótárban, ami elavult oldalkimenetet eredményez
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Teljesítmény_ (vagy címsorban _admin/config/development/performance_) oldalra.
 
-* Elégtelen gyorsítás, ami lassú oldalbetöltéshez vezet
+. Kattintsunk a _Gyorsítótár teljes törlése_ gombra.
 
-==== Milyen más adatok kerülnek a gyorsítótárba?
+. Kis idő elteltével az oldal újratöltődik, immár egy rendszerüzenettel a tetején, ami tájékoztat minket a művelet eredményéről.
 
-Függetlenül attól, hogy valamelyike a két gyorsítótár modulnak  engedélyezve van a webhelyünkön, a szoftver, amin az oldal fut, még mindig gyorsítótárazhatja sok belső számítás kimenetét. Az alaprendszerek, amit a gyorsítótár adatok tartalmazhatnak:
+===== Drush használatával
 
-* A smink rendszer gyorsítótárazza az információkat az adatbázis gyorsítótárban arról, melyik sablont használjuk a különbözö típusú adatok megjelenítésénél.  Ha fejlesztünk egy új sminket és hozzáadunk egy új sablont, ki kell ürítenünk ezt a gyorsítótárat, hogy a sminkfájl fel legyen ismerve.
+A következő két parancs valamelyikét használhatjuk e célra:
 
-* CSS és JavaScript fájlok adott esetben lehetnek optimalizálva és összetömörítve (függ az oldalunk beállításaitól). Ha igen, akkor a tömörített változatok lesznek a fájlrendszerben tárolva, így azokat nem kell újra optimalizálni túl gyakran. Ha egy modult vagy sminket fejlesztünk, akkor vagy ki kell kapcsolni, vagy ki kell üríteni ezt a fájl gyorsítótárat, hogy a CSS vagy JavaScript fájljaink fel legyenek ismerve.
+* A `drush cache-rebuild` parancs kiadása a webhely valamennyi gyorsítótárát kiüríti, majd újraépíti. A parancs sikeres lefutását követően egy „Cache rebuild complete” visszajelzést kapunk a kijelzőn.
 
-* A rendszer felismer számos alacsony szintű PHP-funkciót és osztályt, mint a _hook_  megvalósítások  és a  _bővítmény osztályok_, a feltelepített moduljainkat és információkat tárol arról, melyik modulhoz melyik funkcionalitás tartozik. Ha egy modult vagy sminket fejlesztünk, akkor vagy ki kell kapcsolni, vagy ki kell üríteni ezt a fájl gyorsítótárat, hogy a CSS vagy JavaScript fájljaink fel legyenek ismerve.
+* A `drush cc` paranccsal viszont először lekérjük a webhely gyorsítótárainak listáját, amiből csak a kiválasztottat ürítjük ki. E parancs kiadása a következőhöz hasonló eredményt ad vissza:
++
+----
+> drush cc
+Enter a number to choose which cache to clear.
+ [0]  :  Cancel
+ [1]  :  drush
+ [2]  :  theme-registry
+ [3]  :  menu
+ [4]  :  css-js
+ [5]  :  block
+ [6]  :  module-list
+ [7]  :  theme-list
+ [8]  :  render
+ [9]  :  views
+----
+A kijelzőnkön megjelenő felsorolásból válasszuk ki az üríteni kívánt gyorsítótár sorszámát, írjuk be, majd nyomjunk Entert a végrehajtásához.
 
-==== Kapcsolódó témák
 
-Ha probléma adódik a webhelyünkkel, az első dolog ahogy próbáljuk megjavítani: általában kiürítjük a gyorsítótárat. Lásd a <<prevent-cache-clear>> témakört további információért.
+//==== Az ismeretek elmélyítése
+
+
+//==== Kapcsolódó témák
+
 
 ==== Egyéb források
 
-A gyorsítótárakról és az optimalizálásról további tudnivaló a  https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[„Caching to improve performance”] című közösségi dokumentációban található a _Drupal.org_-on angol nyelven.
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[Clearing or rebuilding Drupal's cache] (azaz „A Drupal gyorsítótárának kiürítése és újraépítése”) közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 
 *Közreműködők*
 
-Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/pandelon[Pandelon]
+E témakör szövegét https://www.drupal.org/u/eojthebrave[Joe Shindelar] és https://www.drupal.org/u/jerseycheese[Jack Haas] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[Clearing or rebuilding Drupal's cache] (azaz „A Drupal gyorsítótárának kiürítése és újraépítése”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000-2016 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
