@@ -24,7 +24,7 @@ Turn off the ability for people to register user accounts on the site. Also, rev
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ > _People_ > _Account settings_ (_admin/config/people/accounts_).
 
-. Under _Registration and Cancellation_, select _Administrators only_ as the people with permissions to register user accounts. You can check _Require email verification when a visitor creates an account_ in case you want to change the settings for account registration later on.
+. Under _Registration and cancellation_, select _Administrators only_ as the people with permissions to register user accounts. You can check _Require email verification when a visitor creates an account_ in case you want to change the settings for account registration later on.
 +
 --
 // Registration and cancellation section of admin/config/people/accounts.
@@ -38,7 +38,7 @@ image:images/config-user_account_reg.png["Account registration only by admin"]
 image:images/config-user_from_email.png["Notification email from address"]
 --
 
-. Optionally, edit the email templates in the _Emails_ section to customize automated emails. There are seven email templates available with the core. They are meant for different user-specific occasions. All of them can be personalized and three can be disabled via checkboxes: activation, blocking, and cancellation.
+. Optionally, edit the email templates under _Emails_ to customize automated emails. There are seven email templates available with the core. They are meant for different user-specific occasions. All of them can be personalized and three can be disabled via checkboxes: activation, blocking, and cancellation.
 +
 You can send out your own text (for example, welcoming the new vendors for whom accounts were just created) by editing the the _Welcome (new user created by administrator)_ template.
 +

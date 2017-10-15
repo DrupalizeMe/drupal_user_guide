@@ -32,15 +32,14 @@ If you installed the website using the core Standard installation profile (or si
 
 . If you want to use the core Automated Cron module, first make sure it is installed (it is installed with the core Standard install profile; see <<config-install>> if it is not installed).
 +
-Next, configure the module to control how frequently cron maintenance tasks are run. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ > _Cron_ (_admin/config/system/cron_). Choose the desired interval in the _Cron settings_ section, and click _Save configuration_.
+Next, configure the module to control how frequently cron maintenance tasks are run. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ > _Cron_ (_admin/config/system/cron_). Select the desired interval from the _Run cron every_ field under _Cron settings_, and click _Save configuration_.
 +
 --
 // Cron configuration page (admin/config/system/cron).
 image:images/security-cron.png["Configure the core Automated Cron module"]
 --
 
-. If you want to run cron maintenance tasks from outside the website, uninstall the core Automated Cron module (see <<config-uninstall>>). Next, find the cron URL. This URL is shown in the _Status report_ (see <<prevent-status>>), and in the _Cron_ administration page (see previous step). The URL looks like this:
-_http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
+. If you want to run cron maintenance tasks from outside the website, uninstall the core Automated Cron module (see <<config-uninstall>>). Next, find the cron URL. This URL is shown in the _Status report_ (see <<prevent-status>>), and in the _Cron_ administration page (see previous step). The URL looks like this: _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
 Whenever this URL is visited, cron maintenance tasks will run. Set up one of the following schedulers to access this URL regularly:
 +
@@ -48,7 +47,6 @@ Whenever this URL is visited, cron maintenance tasks will run. Set up one of the
   * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
   * A cron SASS provider (software as a service)
   * A cron manager provided by your web hosting provider (see the documentation provided by your provider)
-
 
 // ==== Expand your understanding
 
@@ -60,7 +58,6 @@ Whenever this URL is visited, cron maintenance tasks will run. Set up one of the
 
 * http://www.drush.org/en/master/cron/[Drush page "Running Drupal cron tasks from Drush"]
 * https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
-
 
 *Attributions*
 
