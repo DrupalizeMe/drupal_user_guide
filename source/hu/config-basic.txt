@@ -58,9 +58,16 @@ image:images/config-basic-SiteInfo.png["Webhely részletei űrlap"]
 
 . Ezután a _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Helyek és nyelvek_ > _Területi beállítások_ útvonalon az _admin/config/regional/settings_ oldalra.
 
-. Az _Alapértelmezés szerinti ország_ felirat alatt válasszuk ki a legördülő lehetőségek közül azt az országot, amelyet webhelyünk központjának gondolunk. Szintén ugyanitt a _Honosítás_ keretben tudjuk kiválasztani _A hét első napját_ is.
-
-. Az _Időzónák_ keretben megadhatjuk általánosan, hogy webhelyünkön mit tekintünk _Alapértelmezés szerinti időzónának_, valamint ha látogatóink várhatóan a Föld sok más pontjáról is használják majd webhelyünket, akkor engedélyezhetjük számukra, hogy felhasználói fiókjukban megadhassák a saját időzónájukat. Ez a dátumok és időpontok megjelenítésekor az átszámítást fogja befolyásolni számukra.
+. Töltsük ki az alább felsorolt mezőket ezekkel az értékekkel:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Mező neve | Magyarázat | Példa érték
+| Honosítás > Alapértelmezés szerinti ország | Válasszuk ki a legördülő lehetőségek közül azt az országot, amelyet webhelyünk központjának gondolunk. | Magyarország
+| Honosítás > A hét első napja | A hetekkel kapcsolatos számításokhoz (pl. naptár funkció) szükséges. | hétfő
+| Időzónák > Alapértelmezés szerinti időzóna | Megadhatjuk általánosan, hogy webhelyünk működésének szempontjából mit tekintünk alapidőnek. | Európa > Budapest
+| Időzónák > A felhasználók beállíthatják a saját időzónájukat | Ha látogatóink várhatóan a Föld sok más pontjáról is használják majd webhelyünket, akkor engedélyezhetjük számukra, hogy felhasználói fiókjukban megadhassák a saját időzónájukat. Ez a dátumok és időpontok megjelenítésekor az átszámítást fogja befolyásolni számukra. | Nincs bejelölve
+|================================
 +
 --
 // Locale and Time Zones sections of admin/config/regional/settings.
@@ -79,4 +86,4 @@ https://www.drupal.org/node/1896670[Getting started with Drupal 8 administration
 
 *Közreműködők*
 
-Írta és szerkesztette: https://www.drupal.org/u/sree[Sree Veturi], https://www.drupal.org/u/michaellenahan[Michael Lenahan] (https://erdfisch.de[erdfisch]) és https://www.drupal.org/u/ifrik[Antje Lorch]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+Írta és szerkesztette: https://www.drupal.org/u/sree[Sree Veturi], https://www.drupal.org/u/michaellenahan[Michael Lenahan] (https://erdfisch.de[erdfisch]), https://www.drupal.org/u/ifrik[Antje Lorch] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
