@@ -90,7 +90,7 @@
 <xsl:param name="title.font.family">Noto Naskh Arabic, Noto Sans</xsl:param>
 <xsl:attribute-set name="section.title.level1.properties">
   <xsl:attribute name="font-size">
-    <xsl:value-of select="$body.font.master * 1.6"/>
+    <xsl:value-of select="$body.font.master * 1.8"/>
     <xsl:text>pt</xsl:text>
   </xsl:attribute>
   <xsl:attribute name="space-before.minimum">1.8em</xsl:attribute>
