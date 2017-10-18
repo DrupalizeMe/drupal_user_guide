@@ -361,7 +361,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // System section of admin/config page.
-    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.layout-column:odd .panel:first') . '"');
+    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.panel:has(a[href$=\'admin/config/system/site-information\'])') . '"');
 
     // Topic: block-regions - postpone until after theme is configured.
 
@@ -606,7 +606,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('No front page content has been created yet.'));
 
     // Home page after theme settings are finished.
-    $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName() . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName( ['.region-header .site-branding__text a', 'main .content h1']) . $this->removeScrollbars() . '"');
 
     // Back to topic: block-regions.
     $this->drupalGet('admin/structure/block/demo/bartik');
@@ -641,7 +641,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Body'));
     $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
-    $this->assertText($this->callT('Publish'));
+    $this->assertText($this->callT('Published'));
+    $this->assertText($this->callT('Save'));
     $this->assertRaw($this->callT('Preview'));
 
     // General note: Filling in textarea fields -- use .append() in jQuery.
