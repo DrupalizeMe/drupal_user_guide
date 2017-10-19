@@ -1597,7 +1597,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertRaw($this->callT('Filter'));
 
     // People page (admin/people), with user 1's Edit button outlined.
-    $this->setUpScreenShot('user-roles_people-list.png', 'onLoad="' . $this->addBorder('a[href*=&quot;user/1/edit&quot;]') . $this->hideArea('#toolbar-administration') . '"');
+    $this->setUpScreenShot('user-roles_people-list.png', 'onLoad="' . $this->addBorder('a[href*=&quot;user/1/edit&quot;]') . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
 
     $this->drupalGet('user/1/edit');
     $this->assertText($this->callT('Roles'));
@@ -1617,7 +1617,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/people');
     $this->assertRaw($this->callT('Action'));
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('Add the @label role to the selected users', TRUE, ['@label' => $this->demoInput['vendor_type_name']]));
+      $this->assertRaw($this->callT('Add the @label role to the selected user(s)', TRUE, ['@label' => $this->demoInput['vendor_type_name']]));
     }
 
     // Bulk editing form on People page (admin/people).
@@ -1628,7 +1628,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'action' => 'user_add_role_action.' . $vendor,
       ], $this->callT('Apply to selected items'));
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('%action was applied to @count items.', TRUE, ['@count' => 2, '%action' => $this->callT('Add the @label role to the selected users', TRUE, ['@label' => $this->demoInput['vendor_type_name']])]));
+      $this->assertRaw($this->callT('%action was applied to @count items.', TRUE, ['@count' => 2, '%action' => $this->callT('Add the @label role to the selected user(s)', TRUE, ['@label' => $this->demoInput['vendor_type_name']])]));
     }
 
     // Confirmation message after bulk user update.
@@ -1724,9 +1724,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Display title'));
     $this->assertText($this->callT('Region'));
-    $this->assertText($this->callT('Operations'));
-    $this->assertText($this->callT('Disable'));
-    $this->assertText($this->callT('Remove'));
 
     $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(&quot;' . $this->demoInput['hours_block_title'] . '&quot;); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . 'jQuery(\'#edit-region\').val(\'sidebar_second\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
 
@@ -1748,6 +1745,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Tools'));
     $this->assertText($this->callT('Sidebar first'));
     $this->assertText($this->callT('Sidebar second'));
+    $this->assertText($this->callT('Operations'));
+    $this->assertText($this->callT('Disable'));
+    $this->assertText($this->callT('Remove'));
     // The Place block link on this page has some other hidden text in it. So,
     // only test in English.
     if ($this->demoInput['first_langcode'] == 'en') {
@@ -2003,7 +2003,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/views/view/' . $recipes_view);
     // Add display button on Recipes view edit page, with Block highlighted
     // (admin/structure/views/view/recipes).
-    $this->setUpScreenShot('views-block_add-block.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .region-highlighted, #views-display-extra-actions, #edit-display-settings, #edit-actions, .views-preview-wrapper, .dropbutton-wrapper, .messages') . 'jQuery(\'#views-display-menu-tabs li.add ul\').show();' . $this->setWidth('.region-content') . '"');
+    $this->setUpScreenShot('views-block_add-block.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .region-highlighted, #views-display-extra-actions, #edit-display-settings, #edit-actions, .views-preview-wrapper, #views-preview-wrapper, .dropbutton-wrapper, .messages') . 'jQuery(\'#views-display-menu-tabs li.add ul\').show();' . $this->setWidth('.region-content') . '"');
     // Note: in the UI that you actually see in practice, the button looks
     // like a link, and the displayed name is just "Block". But if you look at
     // the HTML source of the page (before jQuery/Ajax processing), the
