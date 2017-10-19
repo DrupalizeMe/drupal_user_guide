@@ -118,7 +118,7 @@ class UserGuideDemoTestHu extends UserGuideDemoTestBase {
     'image_style_machine_name' => 'kozepesen_nagy_300x200',
 
     'hours_block_description' => 'Helyszín és nyitvatartás blokk',
-    'hours_block_title' => 'Helyszín és nyitvatartás blokk',
+    'hours_block_title' => 'Helyszín és nyitvatartás',
     'hours_block_title_machine_name' => 'hely_nyitvatartas',
     'hours_block_body' => '<p>Nyitvatartás: vasárnaponként 9 órától 14 óráig, áprilistól szeptemberig</p><p>Helyszín: Fő tér 1. a városközpontban, a Bizalom Bank parkolójában</p>',
 
