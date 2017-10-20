@@ -2219,15 +2219,15 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Show language selector on create and edit pages'));
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Authored by'));
-    $this->assertText($this->callT('Publishing status'));
+    $this->assertText($this->callT('Published'));
     $this->assertText($this->callT('Authored on'));
     $this->assertText($this->callT('Changed'));
-    $this->assertText($this->callT('URL alias'));
     $this->assertText($this->callT('Body'));
     if ($this->demoInput['first_langcode'] == 'en') {
       // These strings had trouble in French due to accents and apostrophes.
       $this->assertText($this->callT('Promoted to front page'));
       $this->assertText($this->callT('Sticky at top of lists'));
+      $this->assertText($this->callT('URL alias'));
     }
 
 
