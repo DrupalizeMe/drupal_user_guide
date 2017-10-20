@@ -1,0 +1,67 @@
+[[extend-deploy]]
+
+=== Deploying New Site Features
+
+(Slide/Intro)
+How to copy a view created in a local development site to a production site.
+
+(Slide/Goal)
+Copy a view that you have created in a local development site to the production
+site.
+
+(Slide/Prerequisites)
+- Making a Development Site
+- Synchronizing Configuration Versions
+- Concept: "Development Sites"
+
+==== Site prerequisites
+
+* The core Configuration Manager module must be installed in both the
+development and production sites.
+
+* The Vendor content type must exist in both the development and production
+sites, with the same fields.
+
+If you need help with any of these prerequisites please refer to the written versions of this tutorial for more information.
+
+(Demo/Browser)
+. Open the local development site.
+
+. In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Development_ > _Configuration synchronization_ > _Export_ > _Single item_
+(_admin/config/development/configuration/single/export_).
+The _Single export_ page appears.
+
+. Select _View_ from the _Configuration type_ list.
+
+. Select Vendors from the _Configuration name_ list. The configuration
+appears in the textarea.
+
+. Copy the configuration from the textarea.
+
+. Open the production site.
+
+. In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Development_ > _Configuration synchronization_ _Import_ > _Single item_
+(_admin/config/development/configuration_). The _Import_ page appears.
+
+. Select _View_ from the _Configuration type_ list.
+
+. Paste the configuration in the textarea.
+
+. Click _Import_. The confirmation page appears.
+
+. Click _Confirm_.
+
+. Verify that the view was imported by navigating in the _Manage_
+administrative menu to _Structure_ > _Views_.
+
+
+(Slide/Recap)
+In this tutorial we learned how to move a single configuration item between sites in order to deploy new features.
+
+
+(Slide/CC)
+*Attributions*
+
+Written by https://www.drupal.org/u/batigolix[Boris Doesborg].

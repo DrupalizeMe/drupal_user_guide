@@ -1,0 +1,104 @@
+[[extend-manual-install]]
+
+=== Manually Downloading Module or Theme Files
+
+(Slide/Intro)
+How to manually download and upload a module or theme.
+
+(Slide/Goal)
+
+Manually download module or theme files and upload them to your site, if the
+website or Drush methods for installing or updating a module or theme do not
+work, or if you are placing a custom-written module or theme.
+
+==== Prerequisite knowledge
+
+- Concept: Modules
+- Finding Modules
+- Concept: Themes
+- Finding Themes
+
+You need to be facing any of the following to perform the manual download
+described in this topic:
+
+* File permission issues
+
+* FTP permission issues
+
+* You created a custom module/theme or received its files from someone
+
+* You could not successfully complete the instructions in
+the Module installation, theme installation, update a security release for a module or theme. You can skip this topic if none of the above applies to you.
+
+(Demo/Browser)
+
+If you are installing a module or theme from _Drupal.org_, follow the
+downloading instructions, and then the uploading/unpacking instructions. If
+you created the module or theme, skip the downloading step. Instead, create
+an archive file (that you know how to extract on the server) and proceed with
+the steps in uploading/unpacking, using whatever method is appropriate for the
+way you initially created the archive file.
+
+===== Downloading the files
+
+. Open the module or theme project page on drupal.org; for example, the _Admin
+toolbar_ page (https://www.drupal.org/project/admin_toolbar).
+
+. Scroll to the _Downloads_ section near the bottom of the page.
+
+. Click _tar.gz_ to download the file to your computer.
+
+===== Uploading the files to your site and unpacking them
+
+. If you are adding a new module or theme, create subdirectories in your
+top-level _modules_ and _themes_ directories (if they don't already
+exist). Typically, people make a _contrib_ subdirectory for contributed modules
+and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for
+modules and themes that they created. Your _modules_ directory might look like
+this:
+
+. If you are replacing an existing module or theme with an updated version, put
+the site into maintenance mode.
+
+. If you are replacing an existing module or theme with an updated version, find
+and delete all the existing files and directories for the existing module
+or theme. Modules are normally located in directories under the top-level
+_modules_ directory, and themes are normally located in directories under the
+top-level _themes_ directory.
+
+. Upload the _.tar.gz_ file (or whatever archive you created) to your site.
+Place it in either the same location from which you deleted the directory
+(if replacing an existing module or theme) or the appropriate subdirectory
+of _modules_ or _themes_ (if adding a new module or theme).
+
+. Extract the files from the _.tar.gz_ archive (or whatever archive you
+created), making a subdirectory in the same location as the archive file.
+If you do not have terminal access, or your hosting server is not running
+Linux, your hosting control panel's file manager should provide a way to
+extract the files. If you have terminal access to your hosting server
+(running Linux) and you are using a tar.gz file, you can use a command like:
+
++
+----
+tar -xzf admin_toolbar-8.x-1.17.tar.gz
+----
+
+. Delete the compressed file from the server, unless your unpacking method
+already deleted it.
+
+. Refer to the module or theme installation tutorials to complete the
+installation or update of the module or theme. Start at the step after the
+automatic download has been completed.
+
+(Slide/Recap)
+In this tutorial we:
+
+- Took a look at how modules and themes are organized,
+ how the manual installation process works.
+
+(Slide/CC)
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
+https://www.drupal.org/u/vegantriathlete[Marc Isaacson].

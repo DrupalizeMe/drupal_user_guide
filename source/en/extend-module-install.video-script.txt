@@ -1,0 +1,95 @@
+[[extend-module-install]]
+
+=== Downloading and Installing a Module from _Drupal.org_
+
+(Slide/Intro)
+How to download and install a module from Drupal.org (using the user interface) or by using Drush.
+
+
+(Slide/Goal)
+
+Download and install the
+https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module],
+which allows you to easily browse through the administration section of the
+website.
+
+(Slide/Prerequisites)
+- Concept: “Modules”
+- Concept: “Additional Tools”
+- Finding Modules
+
+(Demo/Browser)
+
+* If you want to install modules via your website, the core Update Manager module
+must be installed.
+
+* If you want to use Drush, Drush must be installed.
+
+If you need help with either of these steps refer to the written version of this tutorial.
+
+==== Steps
+
+You can use the administrative interface or Drush to install a contributed
+module. If you are installing a custom module rather than a contributed module,
+if you see a message saying _Installing modules and themes requires FTP access
+to your server_, or if the steps below do not work to download and unpack the
+module files, follow the steps in the Manually installing a module or theme tutorial.
+
+If you are installing a contributed module with external dependencies that are managed by Composer, follow the steps for downloading in the Using Composer tutorial.
+
+First we're going to look at using the administrative interface.
+
+. On the _Admin toolbar_ project page on drupal.org
+(_https://www.drupal.org/project/admin_toolbar_), scroll to the _Downloads_
+section at the bottom of the page.
+
+. Copy the address of the _tar.gz_ link. Depending on your device and browser,
+you might do this by right clicking and selecting _Copy link address_.
+
+. In the _Manage_ administrative menu, navigate to _Extend_
+(_admin/modules_).
+
+. Click _Install new module_. The _Install new module_ page appears.
+
+. In the field _Install from a URL_, paste the copied download link. This value
+could look like this:
+_https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz_
+
+. Click _Install_ to upload and unpack the new module on the server. The files
+are being downloaded to the _modules_ directory.
+
+. Click _Enable newly added modules_ to return to the _Extend_ page. If you
+used the manual uploading procedure, you'll be starting with this step, and reach the
+_Extend_ page by using the _Manage_ administrative menu and navigating to
+_Extend_ (_admin/modules_).
+
+. Locate and check _Admin toolbar_.
+
+. Click _Install_ to turn on the new module.
+
+===== Using Drush
+
+. Find the project name for the module you want to install, which is the last
+segment of the module's project page URL. For example, if the project URL is
+_https://www.drupal.org/project/admin_toolbar_, the project name is
+"admin_toolbar".
+
+. Run the following Drush commands, giving the project name (for example,
+`admin_toolbar`) as a parameter. The first command downloads the module, and the second one enables it.
+
+----
+drush dl admin_toolbar
+drush en admin_toolbar
+----
+
+(Slide/Recap)
+In this tutorial we:
+
+- Learned how to find and download modules from Drupal.org.
+- We also learned how to use drush to download modules from the command line.
+
+(Slide/CC)
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
