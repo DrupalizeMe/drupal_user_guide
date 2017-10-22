@@ -2368,13 +2368,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
       // Test project page.
       $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      $this->assertText('Maintenance status');
-      $this->assertText('Development status');
-      $this->assertText('Reported installs');
-      $this->assertText('Downloads');
+      $this->assertText('downloads');
+      $this->assertText('sites report using this module');
       $this->assertText('Maintainers');
       $this->assertText('Issues');
       $this->assertText('Statistics');
+      $this->assertText('Documentation');
       $this->assertText('Resources');
       $this->assertText('tar.gz');
 
@@ -2426,7 +2425,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
       // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"');
     }
 
     // Test navigation to install page.
@@ -2468,13 +2467,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       // Test project page
       $this->drupalGet('https://www.drupal.org/project/mayo');
       $this->assertText('Downloads');
-      $this->assertText('Project Information');
-      $this->assertText('Maintenance status');
-      $this->assertText('Development status');
-      $this->assertText('Reported installs');
-      $this->assertText('Downloads');
+      $this->assertText('Project information');
+      $this->assertText('sites report using this theme');
+      $this->assertText('downloads');
       $this->assertText('Issues');
       $this->assertText('Resources');
+      $this->assertText('Documentation');
       $this->assertText('tar.gz');
     }
 
@@ -2486,7 +2484,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
       $this->drupalGet('https://www.drupal.org/project/mayo');
       // Downloads section of the Mayo project page on drupal.org.
-      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension:first a:first') . $this->removeScrollbars() . '"');
     }
 
     // Test navigation to install page.
@@ -2518,7 +2516,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
       // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-extension a:first') . $this->removeScrollbars() . '"');
+      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"');
     }
 
     // Topic: extend-deploy - Deploying New Site Features.
@@ -2649,7 +2647,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
       // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('#header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-display-id-recommended > .view-content td.views-field-field-release-version a') . $this->removeScrollbars() . '"');
+      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-field-release-version:first a:first') . $this->removeScrollbars() . '"');
     }
 
     // Due to a Core bug, installing a module corrupts translations. So,
