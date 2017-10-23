@@ -1,45 +1,45 @@
 [[prevent-cache-clear]]
 
-=== Clearing the Cache
+=== A gyorsítótár ürítése
 
 [role="summary"]
-How to clear the cache using Drush or the user interface.
+E témakör arról szól, hogyan tudjuk kiüríteni webhelyünk gyorsítótárát akár az adminfelületen keresztül, akár a Drush segítségével.
 
-(((Cache,clearing)))
-(((Cache,rebuilding)))
+(((Gyorsítótár,ürítés)))
+(((Gyorsítótár,újraépítés)))
 
-==== Goal
+==== Célkitűzés
 
-Clear or rebuild your site's internal caches to ensure they are up-to-date with the most recent data, using the user interface or Drush.
+Az adminfelület vagy a Drush segítségével kiürítjük webhelyünk belső gyorsítótárát, hogy ezzel a tartalmak legfrissebb változatának kiszolgálására kényszerítsük.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<prevent-cache>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-If you want to use Drush to clear the cache, Drush must be installed. See <<install-tools>>.
+Ha szeretnénk Drush eszközt használni a gyorsítótár kiürítéséhez, akkor azt telepíteni kell. Lásd <<install-tools>>.
 
-==== Steps
+==== Lépések
 
-You can use the administrative interface or Drush to clear the cache.
+E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfelületét használjuk webböngészőnkben, vagy pedig a Drush nevű eszközt parancssorban.
 
-===== Using the administrative interface
+===== Adminfelületen keresztül
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Development_ > _Performance_ (_admin/config/development/performance_).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Teljesítmény_ (vagy címsorban _admin/config/development/performance_) oldalra.
 
-. Click _Clear all caches_.
+. Kattintsunk a _Gyorsítótár teljes törlése_ gombra.
 
-. A message saying the cache has been cleared appears at the top of the page.
+. Kis idő elteltével az oldal újratöltődik, immár egy rendszerüzenettel a tetején, ami tájékoztat minket a művelet eredményéről.
 
-===== Using Drush
+===== Drush használatával
 
-You can use one of two commands:
+A következő két parancs valamelyikét használhatjuk e célra:
 
-* Use the command `drush cache-rebuild` to clear and rebuild all cached data for a site. After running this command, you will see the output message "Cache rebuild complete."
+* A `drush cache-rebuild` parancs kiadása a webhely valamennyi gyorsítótárát kiüríti, majd újraépíti. A parancs sikeres lefutását követően egy „Cache rebuild complete” visszajelzést kapunk a kijelzőn.
 
-* Use the command `drush cc` to see a list of individual caches and then choose the specific cache you would like to clear. Running this command should produce output like the following:
+* A `drush cc` paranccsal viszont először lekérjük a webhely gyorsítótárainak listáját, amiből csak a kiválasztottat ürítjük ki. E parancs kiadása a következőhöz hasonló eredményt ad vissza:
 +
 ----
 > drush cc
@@ -55,20 +55,20 @@ Enter a number to choose which cache to clear.
  [8]  :  render
  [9]  :  views
 ----
-Choose a cache to clear by entering the number associated with that cache. Press "Enter" to continue.
+A kijelzőnkön megjelenő felsorolásból válasszuk ki az üríteni kívánt gyorsítótár sorszámát, írjuk be, majd nyomjunk Entert a végrehajtásához.
 
 
-//==== Expand your understanding
+//==== Az ismeretek elmélyítése
 
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
 
-==== Additional resources
+==== Egyéb források
 
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ community documentation page "Clearing or rebuilding Drupal's cache"]
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[Clearing or rebuilding Drupal's cache] (azaz „A Drupal gyorsítótárának kiürítése és újraépítése”) közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 
-*Attributions*
+*Közreműködők*
 
-Adapted and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] and https://www.drupal.org/u/jerseycheese[Jack Haas] from https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Clearing or rebuilding Drupal's cache"], copyright 2000-2017 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/eojthebrave[Joe Shindelar] és https://www.drupal.org/u/jerseycheese[Jack Haas] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[Clearing or rebuilding Drupal's cache] (azaz „A Drupal gyorsítótárának kiürítése és újraépítése”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000-2016 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
