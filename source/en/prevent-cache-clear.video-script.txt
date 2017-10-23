@@ -1,0 +1,59 @@
+[[prevent-cache-clear_video-script]]
+
+=== Clearing the Cache
+
+(Slide/Intro)
+This tutorial covers how to clear the cache using Drush or the user interface.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to clear or rebuild your site's internal caches to ensure they are up-to-date with the most recent data, using either the user interface or Drush.
+
+(Silde/Prerequisites)
+Before you get started you you should make sure that you:
+
+- Know what Drupals cache is and when you might want to consider rebuilding it
+- And if you plan to use Drush you'll need to have it installed already
+
+See the written version of this tutorial for links to each of these prerequisite tutorials.
+
+(Demo/Browser - via the UI)
+
+. In the _Manage_ administrative menu, navigate to Configuration > Development > Performance.
+
+At the top of the page click the button labeled _Clear all caches_.
+
+This will instruct Drupal to clear and rebuild all of its internal caches. After completing a message saying the cache has been cleared appears at the top of the page.
+
+(Demo/Terminal - Drush)
+If you want to use one of two commands:
+
+Use the command `drush cache-rebuild`, or the shorter alias `drush cr`, to clear and rebuild all cached data for a site. After running this command, you will see the output message "Cache rebuild complete."
+
+Alternatively, use the command `drush cc` to see a list of individual caches and then choose the specific cache you would like to clear. Running this command should produce output like the following:
+
+> drush cc
+Enter a number to choose which cache to clear.
+ [0]  :  Cancel
+ [1]  :  drush
+ [2]  :  theme-registry
+ [3]  :  menu
+ [4]  :  css-js
+ [5]  :  block
+ [6]  :  module-list
+ [7]  :  theme-list
+ [8]  :  render
+ [9]  :  views
+----
+
+Choose a cache to clear from the list provided by entering the number associated with that cache, and then press "Enter" to continue.
+
+After running this command you'll see the output message, " .... "
+
+(Slide/Recap)
+In this tutorial we looked at how you can clear and rebuild your site's internal cache using either the administrative user interface, or via Drush.
+
+(Slide/CC)
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from prevent-cache-clear.txt.

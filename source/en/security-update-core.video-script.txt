@@ -1,0 +1,94 @@
+[[security-update-core_video-script]]
+
+=== Updating the Core Software
+
+(Slide/Intro)
+This tutorial covers how to update the core software using the administrative interface or Drush.
+
+(Slide/Goal)
+By the end of this tutorial you'll know how to update the core software, either through the administrative interface or by using Drush.
+
+(Slide/Prerequisites)
+If you want to use Drush to perform the update you'll need to make sure that Drush is installed first.
+
+It's also a good idea to test this process on a development version of your site first. If you haven't already now would be a good time to create development version of your site.
+
+See the written version of this tutorial for links to each of these prerequisite tutorials.
+
+(Slide/Steps)
+At a high level the steps involved are as follows:
+
+- Make a backup just in-case anything goes wrong
+- Put your site into maintenance mode
+- Update the core software code to the latest version
+- Run the database update script
+- Take the site out of maintenance mode
+- Clear the cache
+
+Lets walk through an example.
+
+(Demo/Browser)
+First, make a complete backup of your site. In this case I'll make a database snapshot using the `mysqldump` command, but use whatever method is easiest for you. You can also make a copy of the site's files directory as needed.
+
+In order for this to work you'll need to be either logged in as a user with the "Administer software updates" permissions, or you can open settings.php, find the line with the $settings['update_free_access'] variable. Which for security reasons is set to FALSE by default. As needed you can temporarily change the setting to "TRUE". Which overrides the need to be logged in when performing updates.
+
+Temporarily disable any caching technique your application might be using.
+
+Put your site in maintenance mode.
+
+The next step is to download the updated code. At this point you've got to make a decision:
+
+- If you're managing your site's files with Composer you'll want to use Composer to get the updated files. This is covered in another tutorial.
+- Otherwise, you can download the code from drupal.org and place it manually
+- Or you can download it using Drush
+
+(Demo/Browser - https://www.drupal.org/project/drupal)
+If you're downloading the code manually you need to download the tar.gz or zip file archive for the latest version of Drupal 8.x core from https://www.drupal.org/project/drupal
+
+Once you've obtained the archive you'll need to extract it, and then copy the updated files to your site. Depending on your setup this may or may not be easier to do on your localhost, or directly on the server.
+
+In my case I'll extract the archive file to a temporary directory.
+
+(Demo/Terminal)
+Alternatively you can also use Drush to download the archive and extract it in one step, by navigating to the temporary directory on the terminal and entering this command: `drush dl drupal`
+
+(note: CMD-SHIFT-. to view hidden files on a Mac)
+Once you've extracted the files; In your site hosting directory, delete the core/ and vendor/ directories, and all files that are not in a subdirectory, including hidden files like .htaccess, composer.json, and autoload.php. Don't delete custom and customized files because you may end up losing the custom functionality stored in them.
+
+Next, copy the core/ and vendor/ directories and the non-custom/non-customized files that you deleted in the preceding step from the temporary directory to your site directory.
+
+Note, that if you used Composer to manage your files you'll pick up here in the update process.
+
+Run the _update.php_ script by either:
+
+- Visiting _http://www.example.com/update.php_ in your browser (where _www.example.com_ is your site's URL). Click _Continue_ in the first screen to run the updates and successfully complete the script.
+
+- Or by running the Drush command: `drush updb`
+
+If you get any error or warning, re-run the update script again till all the updates have been completed successfully.
+
+Once complete, if you changed settings.php earlier you'll need to revert that now. Open settings.php in a text editor. Find the line with the $settings['update_free_access'] variable and update it to "FALSE":
+
+(Demo/Browser)
+Then, back on your site, Take your site out of maintenance mode.
+
+Clear the cache.
+
+Re-enable any caching technique you disabled earlier.
+
+And finally, verify that you have the updated version running. You can verify the current version of your software by checking the Status report.
+
+(Slide/Recap)
+In this tutorial we learned how to:
+
+- Upgrade the core code after a security update either manually or via drush
+- As well as how to run the database update script
+
+In order to keep our site up-to-date and secure.
+
+(Slide/CC)
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from security-update-core.txt.

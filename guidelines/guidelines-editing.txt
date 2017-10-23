@@ -46,12 +46,24 @@ select list or radio button, say "Select (choice)". For a checkbox, say
 (choice)". Make sure that the actual UI text you are selecting or
 clicking on is in italics.
 
+* The *gear wheel* icon you click on to open field settings should be referred
+to like this: "Click the gear wheel for the ___ field".
+
 * There are two types of *dropdown user interface elements*. When referring to
 select lists (lists of choices in an HTML "select" tag, such as what you would
 see when you select a language to add or the default country), use the term
 "select list". When referring to buttons that contain lists of links, such as
 what you would see in an Operations section of the Content form at
 admin/content, use the term "dropdown button" (not drop-down or drop down).
+
+* There are several types of *details-type user interface elements* (elements
+that can collapse or expand to hide or show sections of the user
+interface). These include fieldsets and vertical tabs, and most of them have
+titles that you click on to show/hide their content. When referring to these
+types of user interface elements in text, use the phrase "under (title)", and
+always provide this information to help people locate the correct area of the
+user interface. When referring to fields inside such elements in tables of
+fields, explanations, and values, use notation like "(title) > (field)".
 
 * If a step in a task includes a *screenshot*, it should go after the
 description of how to do the step. If there is also a table of values for
