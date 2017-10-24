@@ -1,0 +1,43 @@
+-- video script --
+
+Slide (title): In this tutorial, we'll walk through the process of configuring content translation.
+
+Slide (goal): By the end of this tutorial, you know how to configure the custom block, custom menu link, and content entity types to be translatable and select which of the fields on each subtype should be translated.
+
+Slide (prereq): To follow along, you should understand the concepts of content entities and fields as well as user interface, content, and configuration translation in a Drupal site. See the written version of this tutorial for links to the prerequisite tutorials.
+
+Steps:
+
+1. In the Manage administrative menu, navigate to Configuration > Regional and language > Content language and translation.
+
+2. Under Custom language settings, check Content, Custom block and Custom menu link to make these entity types translatable.
+
+3. This causes 3 sets Configuration options to appear, labeled with the headings Content, Custom block and Custom menu link. The second column contains the available subtypes. These subtypes will have different labels depending on the entity type, for example content type, custom block type, or custom menu link. Let's choose the subtypes we want to translate for each entity type. Check Basic page for Content, Basic block for Custom block and Custom menu link for Custom menu link.
+
+4. Let's start with the Basic page. When we check this box in the Translatable column next to the Basic page subtype, a bunch of other boxes get checked that we need to verify and possibly uncheck. First, let's verify the default language. You can drop down this select widget to see the options, but for this instance, we'll recommend to select the default language option.
+  - Default language, which is the default language for the entity subtype, select site’s default language
+  - When you checked the Translatable box for Basic page, the checkbox for Show language selector on create and edit pages also was checked. And we'll keep that checked.
+
+5. Next, we'll Choose the fields that should be translatable for Basic page as shown in the table below. If a field is not translation-dependent, leave it unchecked. Enabling translation for fields that are numbers or dates has use for accountability or implementing workflows.
+  - Title, Checked
+  - Authored by, Unchecked
+  - Published, Checked
+  - Authored on, Unchecked
+  - Changed, which is date of last update, Unchecked
+  - Promoted to front page, whether the content will be included in some content views, Unchecked
+  - Sticky at top of lists, Whether the content will be displayed first in some content views, Unchecked
+  - URL alias, which is a Nicer URL for the content, Checked
+  - Body, the main content of the page, Checked
+
+For basic block, let's uncheck Changed, as we did for Basic page.
+
+And same for Custom Menu Link, uncheck the Changed box.
+
+Now click save configuration.
+
+Be sure to check out the written version of this tutorial for links additional tutorials to expand your understanding and additional resources.
+
+
+Slide (recap): By the end of this tutorial, we configured the custom block, custom menu link, and content entity types to be translatable and selected which of the fields on each subtype should be translated.
+
+Slide (cc):
