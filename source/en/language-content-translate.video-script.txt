@@ -1,0 +1,34 @@
+--- video script ---
+
+Slide (title): In this tutorial, we'll walk through the process of translating content.
+
+Slide (goal): To follow along, you should understand the concept of user interface, content, and configuration translation in a Drupal site. See the written version of this tutorial for a link to the prerequisite tutorial.
+
+Slide (prereq): To follow along, you should understand the concept of user interface, content, and configuration translation in a Drupal site. On the demo site, the home page content item must exist, the core content translation module must be installed and your site must have at least two languages. Finally the basic page content type must be configured to be translatable. See the written version of this tutorial for links to the prerequisite tutorials.
+
+Steps:
+
+1. In the Manage administrative menu, navigate to Content (admin/content).
+
+2. Locate the home page. You can search for it by entering "Home" in the title field.
+
+3. Select Translate from the dropdown button in the row of the Home content item. The page Translations of Home appears.
+
+4. Click Add in the row Spanish.
+
+5. Note that the user interface has switched to Spanish. To switch it back to English, remove the first instance of es in the browser’s URL. For example, if your URL looks like example.com/es/node/5/translations/add/en/es, remove the es that comes immediately after example.com.
+
+6. Let's fill in some fields to translate this content to Spanish.
+
+ - for title, enter Página principal
+ - for the body, enter:
+   Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio! Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre Lugar: parking del Banco Trust número 1. En el centro de la ciudad
+ - for URL alias, enter: /pagina-principal
+
+7. Click Save (this translation).
+
+8. Go to your site’s home page to view the newly translated page and click on Spanish in the language switcher block to see your newly translated home page. You can follow these steps to translate other content on your site.
+
+Slide (recap): In this tutorial, we translated the home page to Spanish. See the written version of this tutorial for links to resources that will expand your understanding of this topic.
+
+Slide (cc):
