@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # This script builds the AsciiDoc Display Feeds module output for the
 # guidelines and user guide.
 

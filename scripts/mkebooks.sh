@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # This script builds PDF, ePub, and Mobi output for the guide.
 # See README.txt for notes about fonts and languages.
 
