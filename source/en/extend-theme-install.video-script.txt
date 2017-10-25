@@ -1,0 +1,94 @@
+[[extend-theme-install]]
+
+=== Downloading and Installing a Theme from _Drupal.org_
+
+(Slides/Intro)
+How to download and install a theme from Drupal.org or by using Drush.
+
+(Slides/Goal)
+Download and install a theme from _Drupal.org_.
+
+(Slide/Prerequisites)
+- “Finding Themes”
+- Concept: "Additional Tools”
+
+==== Site prerequisites
+
+If you want to install via the website, the core Update Manager module must be
+installed. See the written version of this tutorial for links to instructions on installing modules.
+
+If you want to use Drush, it must be installed.
+
+If you need help with any of these prerequisites consult the written version of this tutorial for links.
+
+(Demo/Browser)
+
+You can use the administrative interface or Drush to install a contributed
+theme. If you are installing a custom theme rather than a contributed theme, if
+you see a message saying _Installing modules and themes requires FTP access to
+your server_, or if the steps below do not work to download and unpack the theme
+files, follow the steps in the manual installation tutorial. If you are installing a
+contributed theme with external dependencies that are managed by Composer,
+follow the steps for downloading in the Using Composer tutorial. In either of these
+cases, then continue here with the instructions for using the administrative
+interface below.
+
+===== Using the administrative interface
+
+. On the theme's project page on drupal.org (for example,
+_https://www.drupal.org/project/mayo_), scroll to the _Downloads_ section
+at the bottom of the page.
+
+. Right-click _tar.gz_ to copy the address.
+
+. In the _Manage_ administrative menu, navigate to _Appearance_
+(_admin/appearance_). The _Appearance_ page appears.
+
+. Click _Install new theme_. The _Install new theme_ page appears.
+
+. In the field _Install from a URL_, paste the copied download link.
+
+. Click _Install_ to upload and unpack the new theme on the server. The files
+are being downloaded to the _themes_ directory.
+
+. Click _Install newly added themes_ to return to the _Appearance_ page. If you
+used the manual uploading procedure, start with this step, and reach the
+_Appearance_ page by using the _Manage_ administrative menu and navigating
+to _Appearance_ (_admin/appearance_).
+
+. Locate the new theme under _Uninstalled themes_ and click _Install and set as
+default_ to use it. All non-administrative pages on the site will now use this
+new theme.
+
+===== Using Drush
+
+Now let's download and install another new theme using the command line and drush.
+
+. Find the project name for the theme you want to install, which is the last
+segment of the theme's project page URL. For example, if the project URL is
+_https://www.drupal.org/project/mayo_, the project name is `mayo`.
+
+. Run the following Drush commands, giving the project name (for example,
+_mayo_) as a parameter:
++
+----
+drush dl mayo
+drush en mayo
+drush config-set system.theme default mayo
+----
+
+These download, then enable, then set mayo to be the default system theme for your site.
+
+* If you do not see the effect of these changes in your site, you might need
+to clear the cache.
+
+(Slide/Recap)
+
+In this tutorial we took a look at how to download and enable a theme using the administrative user interface, and using drush.
+
+(Slide/CC)
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+https://drupalize.me[Drupalize.Me], and
+https://www.drupal.org/u/batigolix[Boris Doesborgh].

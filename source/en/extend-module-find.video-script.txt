@@ -1,0 +1,78 @@
+[[extend-module-find]]
+
+=== Finding Modules
+
+(Slide/Intro)
+How to search and evaluate modules on Drupal.org.
+
+(Slide/Goal)
+Find and evaluate modules on _Drupal.org_.
+
+(Slide/Prerequisites)
+- Concept: Drupal as a Content Management System
+- Concept: Modules
+
+If you need help with any of these prerequisites consult the written version of this tutorial for links.
+
+(Demo/Browser)
+
+. Go to https://www.drupal.org, and navigate to _Download &
+Extend_ > _Modules_ (https://www.drupal.org/project/project_module).
+
+. Filter your search using the categories on the module search page.
+We'll be looking for Actively maintained modules in the Administration category.
+We want to find a module compatible with Drupal 8, so we set the core compatibility.
+_Sandbox projects_ are experimental projects. _Full projects_ have already gone through an approval process, but they can still be in development.
+We're going to choose full projects in this case.
+Let's search for _Admin Toolbar_, a module that will be covered in detail later. Alternatively, you can also leave the field blank if you are not sure which module to search for.
+Order your search results by criteria like _Most installed_ (popular modules that many sites use) or _Last release_ (date of latest version released).
+
+
+. Click _Search_ and our filtered results will appear.
+
+. To further evaluate a module, click its title in the list of search results
+to visit its project page.
+
+When evaluating modules there are a few important aspects to pay attention on these project pages.
+
+* Project description: The description of the module on its project page should
+be clear and useful. You should get an idea of its features and requirements.
+
+* Maintenance status: If a module is _Actively maintained_, you can be sure that
+there will be security updates, bug fixes and feature improvements provided on
+a regular basis. However, if the module is unmaintained or abandoned, you
+shouldn't use it.
+
+* Development status: _Under active development_ means you can expect new
+features to be added to the project, but some aspects (for example, API) may
+still change. _Maintenance fixes only_ means that the project is considered
+feature complete.
+
+* Reported installs, downloads: You can see how many people have downloaded and
+how many sites use the module. If it's only used by a few sites, it might be a
+unique solution that not many people need, or it might be a warning sign that
+you shouldn't use it either.
+
+* Maintainers: When was the last commit (the last time someone updated something
+on the module) or last release (new version)? If the project has few open
+issues, a long time since commits/releases might be appropriate, but if it has
+a lot of open issues and there are no commits/releases, that would be a clue
+that it might be abandoned.
+
+* Issues: See if there are any open issues, potential problems with the
+module. Check the _Statistics_ to see how regularly issues are responded to.
+
+* Resources: Check if the module has documentation or a README file, that can
+help you install, configure, explore, and test it.
+
+(Slide/Recap)
+In this tutorial we:
+
+- Took a look at the module search form, and learned how to use it to find the type of modules we're interested in.
+- We also examined a project page and walked through the important aspects to consider when evaluating a potential module for your site.
+
+(Slide/CC)
+*Attributions*
+
+Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+https://pronovix.com//[Pronovix].

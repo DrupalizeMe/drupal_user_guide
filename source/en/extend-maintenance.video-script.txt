@@ -1,0 +1,94 @@
+[[extend-maintenance]]
+
+=== Enabling and Disabling Maintenance Mode
+
+(Slide/Intro)
+How to enable maintenance mode to set up a "Site under maintenance" message, and how to disable it.
+
+(Slide/Goal)
+Learn how to put your site in maintenance mode. Which allows users with the right permissions to use the site while users without this permission are presented with a message that the site is under maintenance.
+
+(Slide/Prerequisites)
+- Concept: Security and Regular Updates
+- If you want to use Drush to enable or disable maintenance mode, Drush must be
+installed.
+
+If you need help with any of these prerequisites consult the written version of this tutorial for links.
+
+(Demo/Browser)
+
+You can use the administrative interface or Drush to enable or disable
+maintenance mode.
+
+First we're going to enable maintenance mode using the administrative interface
+
+. In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
+_Maintenance mode_ page appears.
+
+We will put the site into maintenance mode by checking the "Put site into maintenance mode" box on this form.
+
+We can specify the information that is shown to
+website visitors when maintenance mode is enabled. Variables such as @site can be used in the message
+
+_ type_ @site is currently under maintenance but should be back
+shortly. Thank you for your patience.
+
+. Click _Save configuration_.
+
+. Verify that the site is in maintenance mode by accessing it from another
+browser where you aren't logged in. If you are not able to verify, try clearing
+the cache.
+
+===== Disabling maintenance mode using the administrative interface
+
+. In order to disable maintenance mode, we'll navigate back to the maintenance mode configuration page.
+
+In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
+_Maintenance mode_ page appears.
+
+We can disable maintenance mode by unchecking the box. and Saving the form.
+
+. Verify that the site is no longer in maintenance mode by accessing it from
+another browser where you aren't logged in. If you are not able to verify, try
+clearing the cache.
+
+===== Enabling or disabling maintenance mode using Drush
+
+We can also enable (or disable) maintenance mode using Drush.
+
+By typing
+----
+drush sset system.maintenance_mode 1
+---
+
+followed by
+
+---
+drush cr
+----
+
+We enable maintenance mode and clear the cache. We should then verify that the site is indeed in maintenance mode by visitng our site in a browser where we're not logged in.
+
+To disable maintenance mode fun the Drush command
+
+----
+drush sset system.maintenance_mode 0
+drush cr
+----
+
+Again we'll clear the cache in order to see our change in action.
+
+(Slide/Recap)
+In this tutorial we:
+
+- Learned how to use both the administrative user interface and drush to enable and disable maintenance mode.
+
+(Slide/CC)
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+http://redcrackle.com[Red Crackle], and
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
