@@ -1,0 +1,35 @@
+--- video script ---
+
+Slide (title): In this tutorial, we'll walk through the process of translating configuration.
+
+Slide (goal): By the end of this tutorial, you will understand how to translate the labels on the Recipe view page into Spanish.
+
+Slide (prereq): To follow along, you should understand the concept of user interface, content, and configuration translation in a Drupal site and know how to create a content listing view. On the demo site, the core Configuration Translation module must be installed and your site must have at least 2 languages. Finally, the Recipes view must exist. See the written version of this tutorial for links to the prerequisite tutorials.
+
+Steps:
+The basic steps for translating any configuration on your site are:
+1. Locate the page where the configuration you want to translate is created or edited in the site’s primary language. For example, to translate the site name, you need to find the page where you would edit the site name (navigate to Configuration > Site Information).
+2. Find a link, tab, or button on the page that says "Translate" or something similar. Click this link, tab, or button. In the case of the site information page, we'd click on this tab "Translate system information"
+3. Find a button that will let you add a translation in the desired language, and click this button. For example, we'd click the Edit button in the row for the Spanish language, to edit the Spanish translation for these site configuration values.
+4. Enter the translation in the form, and save. For example, for site name, I'd enter "Mercado Cualquiera de agricultores" and for slogan "Granja de alimentos frescos" and then click save translation.
+
+Most configuration is fairly straightforward and intuitive to edit in this manner.  However, Views configuration is an exception (Show http://user-guide.demo/admin/structure/views/view/recipes/translate/es/add), because the translation editing form is nothing like the view editing form, and it is complex and hierarchical rather than being a simple form with just a few fields. Let's take a look at how to we might translate a view and translate the labels in the Recipes view to Spanish:
+
+1. In the Manage administrative menu, navigate to Structure > Views
+2. Locate the Recipes view and click Translate from the dropdown button in the operations column
+3. Click Add in the row Spanish. The page Add Spanish translation for Recipes view appears
+4. Under Displays > Master Display settings > Recipes default display Options, translate Display title from "Recipes" to "Recetas".
+5. Under Displays > Master display settings > Recipes default display options > Exposed form > Reset options, translate Submit button text from "Apply" to "Applicar". The other buttons and labels in this section do not appear on the Recipes page or block, and do not need to be translated.
+6. Under Displays > Master display settings > Recipes default display options > Filters > (Empty) taxonomy term ID > Find recipes using… Expose, translate Label from "Find recipes using..." to "Encontrar recetas usando...".
+7. Click Save translation.
+8. Navigate to the Recipes page (using the main menu) and switch to Spanish using the Language switcher block. Verify that the labels have been translated.
+
+To expand your understanding of this topic, translate the block display title in the Recent recipes display settings section of the Recipes view and translate the page title in the Vendors view.
+
+Here's another hint: use the user guide's own language switcher block on the corresponding tutorials where we originally set those values to see configuration values in Spanish. (Navigate to https://www.drupal.org/docs/user_guide/en/index.html > Ch 4: Basic Site Configuration > 4.2 Editing Basic Site Information > Español (language switcher block) and scroll down to the table of values and highlight the site name in Spanish).
+
+See the written version of this tutorial for other configuration translation ideas and links to related tutorials.
+
+Slide (recap): In this tutorial, we translated the labels on the Recipes view page into Spanish.
+
+Slide (cc):
