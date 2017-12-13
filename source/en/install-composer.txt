@@ -115,34 +115,6 @@ Follow these steps if you have already downloaded the core software, and you
 want to use Composer to add a contributed module or theme (usually because it
 has external dependencies that need to be downloaded with Composer):
 
-. If you have not already done so, tell Composer about the download location for
-contributed modules and themes, by entering this command from the root of your
-site installation:
-+
-----
-composer config repositories.drupal composer https://packages.drupal.org/8
-----
-
-. If you have not already done so, you can optionally override the default
-location where Composer will put downloaded modules and themes. For example,
-typically you would want contributed modules to go in a _contrib_ subdirectory
-of the top-level _modules_ directory, instead of the default location of
-_modules_. To make this change, edit the _composer.json_ file at the root level
-in your site installation. Find the line that says +"extra": {+, and add these
-lines following that line:
-+
-----
-"installer-paths": {
-    "modules/contrib/{$name}": ["type:drupal-module"],
-    "modules/custom/{$name}": ["type:drupal-custom-module"],
-    "profiles/contrib/{$name}": ["type:drupal-profile"],
-    "themes/contrib/{$name}": ["type:drupal-theme"],
-    "themes/custom/{$name}": ["type:drupal-custom-theme"],
-    "libraries/{$name}": ["type:drupal-library"],
-    "drush/{$name}": ["type:drupal-drush"]
-},
-----
-
 . Each time you want to add a contributed module or theme, determine the
 project's short name. This is the last part of the URL of the project page; for
 example, the Geofield module, at
@@ -190,7 +162,9 @@ https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_D
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+https://drupalize.me[Drupalize.Me] from
 https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal["Using Composer with Drupal"],
 copyright 2000-2017 by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
