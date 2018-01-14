@@ -1,65 +1,63 @@
 [[language-config-translate]]
-=== A webhelybeállítások lefordítása
+=== Translating Configuration
 
 [role="summary"]
-Ebben a témakörben áttekintjük, hogyan lehet további nyelveken változatokat készíteni például nézetek és mezők címkéiből.
+How to translate field labels in a view, and other configuration.
 
-(((Konfiguráció,lefordítás)))
-(((Nézet,lefordítás)))
-(((Címke,lefordítás)))
-(((Lefordítás,beállítás)))
-(((Lefordítás,nézet)))
-(((Lefordítás,címke)))
+(((Configuration,translating)))
+(((View,translating)))
+(((Label,translating)))
+(((Translating,configuration)))
+(((Translating,view)))
+(((Translating,label)))
 
-==== Célkitűzés
+==== Goal
 
-Fordítsuk le a recepteket listázó oldalt egy új nyelvre!
+Translate the labels on the Recipes view page into Spanish.
 
-==== Szükséges előismeretek
+==== Prerequisite knowledge
 
 * <<language-concept>>
 * <<views-create>>
 
-==== Webhely előfeltételei
+==== Site prerequisites
 
-* Az alaprendszer _Configuration Translation_ moduljának engedélyezve kell lennie és a webhelyen legalább két nyelvnek telepítve kell lennie. Lásd a <<language-add>> témakört.
+* The core Configuration Translation module must be installed, and your site must have at least two languages. See <<language-add>>.
 
-* A _Receptek_ nézetnek léteznie kell. Ehhez bővebb segítségért lásd a <<views-create>> és <<views-duplicate>> szakaszokat.
+* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
 
-==== Lépések
+==== Steps
 
-A legtöbb esetben az alábbi alapvető lépéseken keresztül tudjuk webhelyünk konfigurációját lefordítani:
+The basic steps for translating any configuration on your site are:
 
-. Először is keressük meg, melyik oldalon bukkan fel a lefordítani kívánt beállításszöveg a webhely eredeti nyelvén. Például a webhely nevének lefordítását ott kezdjük, ahol az alapértelmezett nyelven, magyarul is meg kell adnunk (tipp: lásd a <<config-basic>> szakaszt).
+. Locate the page where the configuration you want to translate is created or edited in the site's primary language. For example, to translate the site name, you need to find the page where you would edit the site name (see <<config-basic>>).
 
-. Ha ez megvan, akkor az eredeti nyelv szerkesztő oldala mellett találni fogunk egy „Fordítás” vagy hasonló hivatkozást, fület vagy gombot.
+. Find a link, tab, or button on the page that says "Translate" or something similar. Click this link, tab, or button.
 
-. Erre kattintva egy nyelvválasztó oldalra jutunk, ami felsorolja a webhelyen pillanatnyilag engedélyezett nyelveket. Válasszunk egyet közülük.
+. Find a button that will let you add a translation in the desired language, and click this button.
 
-. Töltsük ki a megjelenő űrlapot értelemszerűen és mentsük el.
+. Enter the translation in the form, and save.
 
-A legtöbb webhelykonfiguráció ilyen egyszerűen lefordítható. Ez alól azonban kivétel a nézetek (melyet az alaprendszer _Views_ modulja biztosít) lefordítása, mivel ennek űrlapja nem csupán ilyen egyszerű, hanem összetett, alá-fölé rendelt szerkezetű. A következőkben a _Receptek_ listaoldalának példáján keresztül végigvesszük annak lépéseit, hogy hogyan kell egy nézetet lefordítani.
+Most configuration is fairly straightforward and intuitive to edit in this manner. Views configuration is an exception, because the translation editing form is nothing like the view editing form, and it is complex and hierarchical rather than being a simple form with just a few fields. As an example of how to translate a view, here are the steps to translate the labels in the Recipes view to Spanish:
 
-. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Nézetek_ menüpontot” (vagy címsorban adjuk meg az _admin/structure/views_ útvonalat).
+. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ (_admin/structure/views_).
 
-. Keressük ki a _Receptek_ (angolul _Recipes_) nézetet és a sorának a végén a lenyíló gomb lehetőségei közül válasszuk a „Fordítás”-t.
+. Locate the Recipes view and click _Translate_ from the dropdown button.
 
-. Kattintsunk a _Hozzáadás_ gombra a _spanyol_ nyelv sorában. A _Receptek nézet spanyol nyelvű fordításának hozzáadása_ oldal jelenik meg.
+. Click _Add_ in the row _Spanish_. The page _Add Spanish translation for Recipes view_ appears.
 
-. Ezen az oldalon számos egymásba ágyazott, lenyitható keretet látunk. Válasszuk ki a _Megjelenítések_ > _Mester megjelenítési beállítások_ > _Receptek alapértelmezett megjelenítési lehetőségei_ keretet. Itt tudjuk a megjelenítő nevét lefordítani a _Cím_ mezőben, írjuk be a „Receptek” helyett, hogy „Recetas”.
+. Under _Displays_ > _Master Display settings_ > _Recipes default display Options_, translate _Display title_ from "Recipes" to "Recetas".
 
-. Ezután egy szinttel mélyebben, a _Receptek alapértelmezett megjelenítési lehetőségei_ keretben nyissuk ki a _Felfedett űrlap_ > _Alaphelyzet beállítások_ keretet. Itt tudjuk a _Beküldés gomb felirata_ mezőbe (aminek alapértelmezett értéke magyarul „Alkalmaz”) beírni, hogy mi legyen a gomb felirata spanyolul. A többi gomb nálunk nem fog megjelenni a nézet szűrőjében, ezért ebben a keretben a többi gombfeliratot hagyhatjuk érintetlenül.
-
+. Under _Displays_ > _Master display settings_ > _Recipes default display options_ > _Exposed form_ > _Reset options_, translate _Submit button text_ from "Apply" to "Applicar". The other buttons and labels in this section do not appear on the Recipes page or block, and do not need to be translated.
 +
 --
 // Exposed form options for Recipes view.
-image:images/language-config-translate-recipes-view.png["A Receptek nézet lefordítása",width="100%"]
+image:images/language-config-translate-recipes-view.png["Translate the Recipes view",width="100%"]
 --
 
-. Menjünk a _Megjelenítések_ > _Mester megjelenítési beállítások_ > _Receptek alapértelmezett megjelenítési lehetőségei_ > _Szűrők_ keretet.
-. Find _Displays_ > _Master display settings_ > _Recipes default display options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes using... Expose_. In the _Label_ field, enter "Encontrar rectas usando...".
+. Under _Displays_ > _Master display settings_ > _Recipes default display options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes using... Expose_, translate _Label_ from "Find recipes using..." to "Encontrar recetas usando...".
 
-. Kattintsunk a _Fordítás mentése_ gombra.
+. Click _Save translation_.
 
 . Navigate to the Recipes page and switch to Spanish using the Language switcher block. Verify that the labels have been translated.
 
