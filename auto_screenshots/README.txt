@@ -13,18 +13,23 @@ SETTING UP THE ENVIRONMENT
 
 The screenshots can be generated using Firefox, the Greasemonkey plugin, a
 local Drupal test site, and some command line image tools. This section
-details how to set up the tools. Here are the steps:
+details how to set up the tools; some steps may need to be repeated if
+you update software on your local computer. Here are the steps:
 
 1. Install Firefox if necessary.
 
 2. Open up Firefox, and install the "Greasemonkey" add-on.
 
-3. From the Tools / Greasemonkey menu, choose "New user script". Type in some
-   name and click OK. It should pop up an editing window.
+3. From the Greasemonkey menu (pops up when you click the monkey icon in the
+   upper right corner of the status bar), choose "New user script". An editing
+   window should open.
 
 4. In place of the entire text in that window, copy in the contents of the
    greasemonkey_screenshot.js file in this directory. You may need to do
-   something special to enable pasting into the editor. Save the file.
+   something special to enable pasting into the editor. Save the file
+   (control-S). You should now see an entry in the Greasemonkey menu showing
+   "Screenshots from Simpletest", and if you choose that menu item, it should
+   say it is enabled.
 
 5. At the command line, make sure the "import" command from ImageMagick is
    installed. On Linux, use one of the following commands to install it, if it
@@ -58,8 +63,15 @@ details how to set up the tools. Here are the steps:
    (Alternatively, if your operating system supports it, you can instead make
    a symbolic link.)
 
-8. Run the command
-   composer install
+8. Edit the top-level Drupal site composer.json file. Add the following to
+   the "extra" / "merge-plugin" section (you may need to edit the path):
+
+     "require": [
+       "modules/user_guide/auto_screenshots/composer.json"
+     ],
+
+9. Run the command
+     composer update
    to install dependencies of this project. If you do not have Composer
    installed, see https://getcomposer.org/
 
@@ -72,16 +84,16 @@ details how to set up the tools. Here are the steps:
    vendor/backupmigrate/core/src/Source/MySQLiSource.php
    to put in the fix shown in that issue.
 
-9. Enable the Testing (simpletest) module in the Drupal site.
-   Drush command:
-   drush en simpletest
+10. Enable the Testing (simpletest) module in the Drupal site.
+    Drush command:
+     drush en simpletest
 
-10. Download a near-current 8.x version of the Mayo theme to the /themes
+11. Download a near-current 8.x version of the Mayo theme to the /themes
     directory in your test site (for instance, if the current version is
     8.x-1.15, get 8.x-1.14). It is used for some of the screenshots.
     https://www.drupal.org/project/mayo
 
-11. Do the same for a near-current version of the Admin Toolbar module
+12. Do the same for a near-current version of the Admin Toolbar module
     from https://www.drupal.org/project/admin_toolbar
 
 
@@ -96,7 +108,11 @@ a particular language as follows:
 
 2. Run the "UserGuideDemoTestEn" test interactively and wait for it to
    finish (or the one for the language you want to generate). Just run one
-   language at a time.
+   language at a time. Note that you can edit the test file that you are
+   running, to make it run just a subset of the screenshots and tests. To
+   do this, find the member variable $notRunList, change its name to $runList,
+   and change 'skip' to another value to run it (see the definitions in the
+   UserGuideDemoTestBase.php file).
 
 3. At the bottom of the page, you should see a form (from the Greasemonkey
    script). Enter the values and click the button. You'll need to supply:
@@ -108,11 +124,11 @@ a particular language as follows:
   like 0x3200078. Or you can use the window name (if you can figure out what
   that would be).
 - The Y offset - how many pixels to offset the images, to get past all of the
-  Firefox toolbars in your Firefox window. A value of 133 seems to be about
+  Firefox toolbars in your Firefox window. A value of 125 seems to be about
   right if you have the menu bar, tabs, URL bar, and bookmarks showing. If you
   have fewer toolbars, use a smaller offset.
 - The timeout - how long to wait for the page to load before taking the
-  screenshot, in seconds. 2 is probably enough.
+  screenshot, in seconds. 3 is probably enough.
 
 4. The screen shot commands should appear below the form. Copy and paste them
    into a script, and run the script at the command line. Then close up all
