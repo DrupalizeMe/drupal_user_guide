@@ -54,7 +54,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   /**
    * Which Drupal Core software version to use for the downloading screenshots.
    */
-  protected $latestRelease = '8.4.0';
+  protected $latestRelease = '8.5.0';
 
   /**
    * Strings and other information to input into the demo site.
@@ -318,7 +318,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Makes screenshots for the Preface and Install chapters.
+   * Makes screenshots for Preface and Install chapters, and from drupal.org.
    */
   protected function doPrefaceInstall() {
 
@@ -361,21 +361,60 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // System section of admin/config page.
-    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.panel:has(a[href$=\'admin/config/system/site-information\'])') . '"');
+    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.panel:has(a[href$=&quot;admin/config/system/site-information&quot;])') . '"');
 
     // Topic: block-regions - postpone until after theme is configured.
 
     // Topic: install-prepare - Preparing to install.
 
-    // English-only screenshots.
+    // English-only drupal.org screenshots, from this and other topics.
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/drupal');
-      // Recommended releases section of https://www.drupal.org/project/drupal.
-      $this->setUpScreenShot('install-prepare-recommended.png', 'onLoad="' . $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link') . '"');
+
       $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
+
       // File section of a recent Drupal release download page, such as
       // https://www.drupal.org/project/drupal/releases/8.4.0.
-      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page') . $this->hideArea('#page-title-tools, #nav-content, #tabs, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
+      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page') . $this->hideArea('#page-title-tools, #nav-content, #tabs, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"', TRUE);
+
+      // Search for Admin Toolbar in 8.x on drupal.org. Just go directly to the
+      // URL.
+      $this->drupalGet('https://www.drupal.org/project/project_module?f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&f[5]=&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
+
+      // Module search box on https://www.drupal.org/project/project_module.
+      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"', TRUE);
+
+      // Search results on https://www.drupal.org/project/project_module.
+      $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"', TRUE);
+
+      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+
+      // Project page for Admin Toolbar module.
+      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info, .block-views') . $this->removeScrollbars() . '"', TRUE);
+
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"', TRUE);
+
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"', TRUE);
+
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-field-release-version:first a:first') . $this->removeScrollbars() . '"', TRUE);
+
+      // Search for actively maintained 8.x themes on drupal.org. Just go
+      // directly to the URL.
+      $this->drupalGet('https://www.drupal.org/project/project_theme?f%5B0%5D=im_vid_44%3A13028&f%5B1%5D=&f%5B2%5D=drupal_core%3A7234&f%5B3%5D=sm_field_project_type%3Afull&f%5B4%5D=&text=&solrsort=iss_project_release_usage+desc&op=Search');
+
+      // Theme search box on https://www.drupal.org/project/project_theme.
+      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"', TRUE);
+
+      // Search results on https://www.drupal.org/project/project_theme.
+      $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"', TRUE);
+
+      $this->drupalGet('https://www.drupal.org/project/mayo');
+
+      // Downloads section of the Mayo project page on drupal.org.
+      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension:first a:first') . $this->removeScrollbars() . '"', TRUE);
+
     }
 
     // Topic: install-run - Running the installer. Skip -- manual screenshots.
@@ -642,7 +681,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
     $this->assertText($this->callT('Published'));
-    $this->assertText($this->callT('Save'));
+    $this->assertRaw($this->callT('Save'));
     $this->assertRaw($this->callT('Preview'));
 
     // General note: Filling in textarea fields -- use .append() in jQuery.
@@ -1138,7 +1177,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Help text'));
     $this->assertText($this->callT('Reference type'));
     $this->assertText($this->callT('Reference method'));
-    $this->assertText($this->callT('Available Vocabularies'));
+    $this->assertText($this->callT('Vocabulary'));
     $this->assertText($this->callT("Create referenced entities if they don't already exist"));
 
     $this->drupalPostForm(NULL, [
@@ -2358,13 +2397,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Search Modules');
       $this->assertText('Sort by');
 
-      // Search for Admin Toolbar in 8.x on drupal.org. Just go directly to the
-      // URL.
-      $this->drupalGet('https://www.drupal.org/project/project_module?f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&f[5]=&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
-      // Module search box on https://www.drupal.org/project/project_module.
-      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"');
-      // Search results on https://www.drupal.org/project/project_module.
-      $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+      // drupal.org screenshots for extend-module are in the doPrefaceInstall()
+      // method.
 
       // Test project page.
       $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
@@ -2376,9 +2410,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Documentation');
       $this->assertText('Resources');
       $this->assertText('tar.gz');
-
-      // Project page for Admin Toolbar module.
-      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info, .block-views') . $this->removeScrollbars() . '"');
     }
 
     // Topic: extend-maintenance: Enabling and Disabling Maintenance Mode.
@@ -2419,14 +2450,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalLogin($this->rootUser);
 
     // Topic: extend-module-install - Downloading and Installing a Module from
-    // drupal.org.
-
-    // English-only screenshot.
-    if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"');
-    }
+    // drupal.org. drupal.org screenshots are in the doPrefaceInstall() method.
 
     // Test navigation to install page.
     $this->drupalGet('<front>');
@@ -2438,9 +2462,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Install new module page (admin/modules/install).
     $this->setUpScreenShot('extend-module-install-admin-toolbar-do.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
 
-    // Topic: extend-theme-find - Finding Themes
+    // Topic: extend-theme-find - Finding Themes. drupal.org screenshots are
+    // in the doPrefaceInstall() method.
 
-    // English-only screenshots.
     if ($this->demoInput['first_langcode'] == 'en') {
       // Test navigation and search page.
       $this->drupalGet('https://www.drupal.org');
@@ -2456,14 +2480,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Search Themes');
       $this->assertText('Sort by');
 
-      // Search for actively maintained 8.x themes on drupal.org. Just go
-      // directly to the URL.
-      $this->drupalGet('https://www.drupal.org/project/project_theme?f%5B0%5D=im_vid_44%3A13028&f%5B1%5D=&f%5B2%5D=drupal_core%3A7234&f%5B3%5D=sm_field_project_type%3Afull&f%5B4%5D=&text=&solrsort=iss_project_release_usage+desc&op=Search');
-      // Theme search box on https://www.drupal.org/project/project_theme.
-      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"');
-      // Search results on https://www.drupal.org/project/project_theme.
-      $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"');
-
       // Test project page
       $this->drupalGet('https://www.drupal.org/project/mayo');
       $this->assertText('Downloads');
@@ -2477,15 +2493,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     // Topic: extend-theme-install - Downloading and Installing a Theme from
-    // drupal.org.
-
-    // English-only screenshots.
-    if ($this->demoInput['first_langcode'] == 'en') {
-
-      $this->drupalGet('https://www.drupal.org/project/mayo');
-      // Downloads section of the Mayo project page on drupal.org.
-      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension:first a:first') . $this->removeScrollbars() . '"');
-    }
+    // drupal.org. Screenshot from drupal.org is in the doPrefaceInstall()
+    // method.
 
     // Test navigation to install page.
     $this->drupalGet('<front>');
@@ -2510,14 +2519,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
 
     // Topic: extend-manual-install - Manually Downloading Module or Theme
-    // Files.
-
-    // English-only screenshot.
-    if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"');
-    }
+    // Files. Screenshot from drupal.org is in the doPrefaceInstall()
+    // method.
 
     // Topic: extend-deploy - Deploying New Site Features.
 
@@ -2641,14 +2644,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Cron configuration page (admin/config/system/cron).
     $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"');
 
-    // Topic: security-update-module - Updating a Module.
-
-    // English-only screenshots.
-    if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-field-release-version:first a:first') . $this->removeScrollbars() . '"');
-    }
+    // Topic: security-update-module - Updating a Module. Screenshots from
+    // drupal.org are in the doPrefaceInstall() method.
 
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.
@@ -2760,10 +2757,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @param string $file
    *   Name of the screen shot file.
    * @param string $body_addition
-   *   Additional text to add into the HTML body tag. Example:
+   *   (optional) Additional text to add into the HTML body tag. Example:
    *   'onLoad="window.scroll(0,500);"'. This code should blank out irrelevant
    *   portions of the page, so that the ImageMagick capture script can trim
    *   the image automatically down to the right size.
+   * @param bool $fix_drupal_org
+   *   (optional) If set to TRUE, do an additional search/replace to fix
+   *   screenshots of drupal.org pages.
    *
    * @see UserGuideDemoTestBase::showOnly()
    * @see UserGuideDemoTestBase::hideArea()
@@ -2773,8 +2773,15 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @see UserGuideDemoTestBase::reloadOnce()
    * @see UserGuideDemoTestBase::addBorder()
    */
-  protected function setUpScreenShot($file, $body_addition = '') {
+  protected function setUpScreenShot($file, $body_addition = '', $fix_drupal_org = FALSE) {
     $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getRawContent());
+    if ($fix_drupal_org) {
+      // Drupal is putting out a bunch of relative URLs for CSS and images,
+      // which do not work well in screenshots. Fix them.
+      $output = str_replace('"//', '"https://', $output);
+      $output = preg_replace('|"/(?=\w+)|', '"https://www.drupal.org/', $output);
+      $output = preg_replace("|'/(?=\w+)|", "'https://www.drupal.org/", $output);
+    }
 
     // This is like TestBase::verbose() but just the bare HTML output, and
     // with a separate file counter so it doesn't interfere.
