@@ -642,7 +642,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('config-theme_color_scheme_preview.png', 'onLoad="window.scroll(0,1000);' . $this->showOnly('.color-preview') . $this->setWidth('#color_scheme_form', 700) . $this->removeScrollbars() . '"');
 
     $this->clickLink($this->callT('Home'));
-    $this->assertText($this->callT('No front page content has been created yet.'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // This string is part of a complicated config string now, and checking
+      // for the whole string doesn't work in tests. So, just check in English
+      // for part of the string.
+      $this->assertText('No front page content has been created yet.');
+    }
 
     // Home page after theme settings are finished.
     $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName( ['.region-header .site-branding__text a', 'main .content h1']) . $this->removeScrollbars() . '"');
