@@ -9,20 +9,16 @@ How to assign a permission to a role.
 (((Permission,denying)))
 (((Role,changing permission)))
 (((Security,assigning permission)))
-
-==== Goal
+==== Célkitűzés
 
 Change the permissions for the Vendor role so that users can create, edit, and delete Recipe and Vendor content, format the content, and contact each other.
-
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<user-concept>>
-
-==== Site prerequisites
+==== Webhely előfeltételei
 
 The Vendor role must exist on your site. See <<user-new-role>>.
-
-==== Steps
+==== Lépések
 
 . In the _Manage_ administrative menu, navigate to _People_ > _Roles_ (_admin/people/roles_). The _Roles_ page appears.
 
@@ -54,21 +50,19 @@ image:images/user-permissions-check-permissions.png["Granting users with the Ven
 image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
 --
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * Log in as one of the new users you created in <<user-new-user>>. Verify whether you have the correct permissions.
 
 * <<user-roles>>
-
-==== Related concepts
+==== Kapcsolódó témák
 
 <<user-admin-account>>
-
-==== Additional resources
+==== Egyéb források
 
 https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
 
 
-*Attributions*
+*Közreműködők*
 
 Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], https://www.drupal.org/u/bemery987[Brian Emery], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle], from https://www.drupal.org/node/1803614["User Roles"], copyright 2000-2017 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].

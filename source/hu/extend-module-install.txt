@@ -23,24 +23,20 @@ How to download and install a module from Drupal.org (using the user interface) 
 (((Update Manager module,using to install module)))
 (((Module,Update Manager)))
 (((Drupal.org website,downloading and installing module from)))
-
-==== Goal
+==== Célkitűzés
 
 Download and install the https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module], which allows you to easily browse through the administration section of the website.
-
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-modules>>
 * <<extend-module-find>>
 * <<install-tools>>
-
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * If you want to install modules via the website, the core Update Manager module must be installed. See <<config-install>> for instructions on installing modules.
 
 * If you want to use Drush, Drush must be installed. See <<install-tools>>.
-
-==== Steps
+==== Lépések
 
 You can use the administrative interface or Drush to install a contributed module. If you are installing a custom module rather than a contributed module, if you see a message saying _Installing modules and themes requires FTP access to your server_, or if the steps below do not work to download and unpack the module files, follow the steps in <<extend-manual-install>>. If you are installing a contributed module with external dependencies that are managed by Composer, follow the steps for downloading in <<install-composer>>. In either of these cases, then continue here with step 7 in the instructions for the administrative interface below.
 
@@ -87,7 +83,7 @@ drush en admin_toolbar
 
 . Follow the instructions on the screen.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * Verify that the https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module] is working by browsing through the menu in the administration section.
 
@@ -96,15 +92,14 @@ drush en admin_toolbar
 * If you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
 
 
-//==== Related concepts
-
-==== Additional resources
+//==== Kapcsolódó témák
+==== Egyéb források
 
 * https://www.drupal.org/node/340271[_Drupal.org_ community documentation page "Contributed modules"]
 * https://www.drupal.org/download["Download and Extend" page on _Drupal.org_]
 * https://www.drupal.org/project/admin_toolbar[Admin Toolbar module on _Drupal.org_]
 
 
-*Attributions*
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
