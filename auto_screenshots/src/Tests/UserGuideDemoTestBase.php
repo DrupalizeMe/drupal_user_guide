@@ -3,11 +3,13 @@
 namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Component\Gettext\PoStreamReader;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
+use Drupal\locale\PoDatabaseWriter;
 use Drupal\simpletest\WebTestBase;
 use Drupal\user\Entity\User;
 use BackupMigrate\Core\Config\Config;
@@ -261,13 +263,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected $assetsDirectory;
 
   /**
-   * The file name for exported translations, if any.
-   *
-   * @see UserGuideDemoTestBase::exportTranslations()
-   */
-  protected $translationFilename = '';
-
-  /**
    * Builds the entire demo site and makes screenshots.
    *
    * Note that the method name starts with "test" so that it will be detected
@@ -334,15 +329,18 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
           'modules[language][enable]' => TRUE,
           'modules[locale][enable]' => TRUE,
         ], 'Install');
+      $this->rebuildContainer();
+      $this->rebuildAll();
+      $this->container->get('router.builder')->rebuild();
+      drupal_flush_all_caches();
+      $this->refreshVariables();
 
-      // Add the other language.
+      // Add the main language and fully import translations.
+      $this->fixTranslationSettings();
       $this->drupalPostForm('admin/config/regional/language/add', [
           'predefined_langcode' => $this->demoInput['first_langcode'],
         ], 'Add language');
-      // Rebuild the container. Translations are not working without this.
-      $this->rebuildContainer();
-      drupal_flush_all_caches();
-      $this->refreshVariables();
+      $this->importTranslations($this->demoInput['first_langcode']);
 
       // Set the new language to default. After this, the UI should be
       // translated.
@@ -506,7 +504,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.
-    $this->exportTranslations();
+    $this->exportTranslations($this->demoInput['first_langcode']);
 
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Extend'));
@@ -521,10 +519,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations. Then rebuild the cache/container.
-    $this->importTranslations();
-    $this->resetAll();
-    $this->clearCache();
+    // import the saved translations.
+    $this->importTranslations($this->demoInput['first_langcode']);
 
     // Topic: config-uninstall - Uninstalling unused modules.
 
@@ -2168,7 +2164,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: language-add - Adding a Language.
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.
-    $this->exportTranslations();
+    $this->exportTranslations($this->demoInput['first_langcode']);
 
     // Enable the 4 multilingual modules.
     // For non-English versions, locale and language will already be enabled;
@@ -2195,14 +2191,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations. Also, this test doesn't seem to work
-    // without some extensive route rebuilding... So, rebuild the cache,
-    // container, and routes.
-    $this->importTranslations();
-    $this->rebuildContainer();
-    $this->rebuildAll();
-    $this->container->get('router.builder')->rebuild();
-    $this->clearCache();
+    // import the saved translations.
+    $this->importTranslations($this->demoInput['first_langcode']);
 
     // Add the second language.
     $this->drupalGet('<front>');
@@ -2226,6 +2216,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Add language'));
     // Confirmation and language list after adding Spanish language.
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+    $this->importTranslations($this->demoInput['second_langcode']);
 
     // Place the Language Switcher block in sidebar second (no screenshots).
     $this->drupalGet('admin/structure/block/library/bartik');
@@ -2653,8 +2644,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // drupal.org are in the doPrefaceInstall() method.
 
     // Due to a Core bug, installing a module corrupts translations. So,
-    // export them first.
-    $this->exportTranslations();
+    // export them first. Note that this could cause problems if one of the
+    // two languages here is not English! But normally one is English.
+    $this->exportTranslations($this->demoInput['first_langcode']);
+    $this->exportTranslations($this->demoInput['second_langcode']);
 
     // Install an old version of the Admin Toolbar module, and visit the
     // Updates page.
@@ -2663,10 +2656,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations. Then rebuild the cache/container.
-    $this->importTranslations();
-    $this->resetAll();
-    $this->clearCache();
+    // import the saved translations.
+    $this->importTranslations($this->demoInput['first_langcode']);
+    $this->importTranslations($this->demoInput['second_langcode']);
 
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Reports'));
@@ -3226,50 +3218,141 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Exports the translations for the first language to a temporary file.
+   * Exports the translations for a language to a temporary file.
    *
-   * @see UserGuideDemoBase::importTranslations()
+   * @param string $langcode
+   *   Language code to export the translations for.
+   *
+   * @see UserGuideDemoTestBase::importTranslations()
    */
-  protected function exportTranslations() {
-    if ($this->demoInput['first_langcode'] != 'en') {
+  protected function exportTranslations($langcode) {
+    if ($langcode != 'en') {
+      $this->fixTranslationSettings();
       $this->drupalPostForm('admin/config/regional/translate/export', [
-          'langcode' => $this->demoInput['first_langcode'],
+          'langcode' => $langcode,
           'content_options[not_customized]' => 1,
           'content_options[customized]' => 1,
           'content_options[not_translated]' => 0,
         ], $this->callT('Export'));
-      $directory = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
-      if (!is_dir($directory)) {
-        \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
-      }
-      $this->translationFilename = $directory . '/' . $this->demoInput['first_langcode'] . '_' . $this->randomMachineName() . '.po';
-      file_put_contents($this->translationFilename, $this->getRawContent());
-      $this->pass('TRANSLATIONS SAVED TO: ' . $this->translationFilename);
+      $filename = \Drupal::config('locale.settings')->get('translation.path') . '/' . $langcode . '_' . $this->randomMachineName() . '.po';
+      file_put_contents($filename, $this->getRawContent());
+      $this->pass('TRANSLATIONS SAVED TO: ' . $filename);
     }
   }
 
   /**
-   * Imports the translations for the first language from the file, if any.
+   * Imports translations from all existing .po files in translation directory.
    *
-   * @see UserGuideDemoBase::exportTranslations()
+   * @param string $langcode
+   *   Language code to import the translations for.
+   *
+   * @see UserGuideDemoTestBase::exportTranslations()
    */
-  protected function importTranslations() {
-    if ($this->translationFilename) {
-      // The setting for translation path is likely incorrect, so fix it.
-      \Drupal::configFactory()->getEditable('locale.settings')
-        ->set('translation.path', $this->tempFilesDirectory)
-        ->save();
+  protected function importTranslations($langcode) {
+    if ($langcode != 'en') {
+      $this->fixTranslationSettings();
 
-      $this->drupalPostForm('admin/config/regional/translate/import', [
-        'langcode' => $this->demoInput['first_langcode'],
-        'overwrite_options[not_customized]' => 1,
-        'overwrite_options[customized]' => 1,
-        'customized' => 0,
-        'files[file]' => $this->translationFilename,
-      ], $this->callT('Import'));
+      // Find any translation files in the translation directory, which could
+      // have come from a batch import that didn't really finish, or from the
+      // exportTranslations() method, and import them, deleting after import so
+      // that they don't get imported again later.
 
-      $this->pass('TRANSLATIONS READ FROM: ' . $this->translationFilename);
+      $directory = \Drupal::config('locale.settings')->get('translation.path');
+      $result = file_scan_directory($directory, '|[a-z_\-0-9\.]+\.po$|', ['recurse' => FALSE]);
+      foreach ($result as $file) {
+        $file->langcode = $langcode;
+        $this->readPoFile($file->uri, $langcode);
+        $this->pass('TRANSLATIONS READ FROM: ' . $file->filename);
+        unlink($directory . '/' . $file->filename);
+      }
     }
+
+    // Flush cashes to make sure translations are being used, and also rebuild
+    // the routes and container.
+    $this->rebuildContainer();
+    $this->rebuildAll();
+    $this->container->get('router.builder')->rebuild();
+    drupal_flush_all_caches();
+    $this->refreshVariables();
+  }
+
+  /**
+   * Fixes the settings for translation.
+   *
+   * Makes sure the translation directory exists.
+   */
+  protected function fixTranslationSettings() {
+    $this->ensureDirectoryWriteable(file_directory_temp(), 'temp');
+    \Drupal::configFactory()->getEditable('locale.settings')
+      ->set('translation.path', file_directory_temp())
+      ->save();
+    drupal_flush_all_caches();
+    $this->refreshVariables();
+    $translations_directory = \Drupal::service('file_system')->realpath('translations://');
+    $this->ensureDirectoryWriteable($translations_directory, 'translations');
+  }
+
+  /**
+   * Ensures that we can write a file to a directory, with an assertion if not.
+   *
+   * @param string $directory
+   *   Directory to ensure is writeable.
+   * @param string $name
+   *   Name of directory for error message if there is a problem.
+   */
+  protected function ensureDirectoryWriteable($directory, $name) {
+    if (!$directory) {
+      $this->fail("Attempting to ensure empty directory variable in $name");
+      return;
+    }
+    // Attempt to create and modify permissions in the directory. Do not use
+    // Drupal container calls, so this can run before installation.
+    if (!is_dir($directory)) {
+      @mkdir($directory);
+    }
+    @chmod($directory, 0777);
+
+    // Just to make sure, attempt to create a file. fopen fails if the file
+    // exists, so attempt to delete it first, but ignore errors if it doesn't
+    // exist yet (it shouldn't).
+    $filename = $directory . '/temp_test' . $this->randomMachineName() . '.txt';
+    @unlink($filename);
+    $fp = @fopen($filename, 'x');
+    if (!$fp) {
+      $this->fail("Could not create output file $filename in $name");
+    }
+    else {
+      fclose($fp);
+    }
+    @unlink($filename);
+
+    $this->pass("Directory $directory is working for $name");
+  }
+
+  /**
+   * Replicates what Gettext::fileToDatabase() does, but simpler.
+   *
+   * @param string $file_uri
+   *   URI of file to read.
+   * @param string $langcode
+   *   Language code to save the strings for.
+   */
+  protected function readPoFile($file_uri, $langcode) {
+    $reader = new PoStreamReader();
+    $reader->setLangcode($langcode);
+    $reader->setURI($file_uri);
+    $reader->open();
+
+    $header = $reader->getHeader();
+    if (!$header) {
+      throw new \Exception('Missing or malformed header.');
+    }
+
+    $writer = new PoDatabaseWriter();
+    $writer->setOptions([]);
+    $writer->setLangcode($langcode);
+    $writer->setHeader($header);
+    $writer->writeItems($reader);
   }
 
 }
