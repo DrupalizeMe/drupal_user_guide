@@ -114,7 +114,12 @@ a particular language as follows:
    and change 'skip' to another value to run it (see the definitions in the
    UserGuideDemoTestBase.php file).
 
-3. At the bottom of the page, you should see a form (from the Greasemonkey
+3. At the bottom of the page, you should see first a list of all the backups
+   that were made during the test. You can copy the .gz files in these
+   directories into the "backups" directory under this directory, in the
+   subdirectory for the appropriate language.
+
+4. Below the list of backups, you should see a form (from the Greasemonkey
    script). Enter the values and click the button. You'll need to supply:
 
 - The output directory where you'd like the screen shots to be saved,
@@ -130,7 +135,7 @@ a particular language as follows:
 - The timeout - how long to wait for the page to load before taking the
   screenshot, in seconds. 3 is probably enough.
 
-4. The screen shot commands should appear below the form. Copy and paste them
+5. The screen shot commands should appear below the form. Copy and paste them
    into a script, and run the script at the command line. Then close up all
    the Firefox windows it opened up.
 
@@ -170,10 +175,11 @@ save time). See the documentation for the $runList member variable in the
 UserGuideDemoTestBase class for details, and override the $runList variable in
 the class for the language you are running.
 
-The backups themselves are in the source repository for this project, in
-subdirectory "backups" under this directory. They could also be used to set up
-demo sites, by restoring the database and files manually. The database table
-prefix is 'generic_simpletest_prefix'.
+The backups from the tests have been saved in the repository for this project,
+for each language, in subdirectories of the "backups" directory under this
+directory. They could also be used to set up demo sites, by restoring the
+database and files manually. The database table prefix is
+'generic_simpletest_prefix'.
 
 
 MORE DETAILS FOR THE CURIOUS
