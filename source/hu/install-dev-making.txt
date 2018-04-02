@@ -6,22 +6,18 @@ How to make a copy of a live site for development purposes.
 
 (((Development site,making)))
 (((Staging site,making)))
-
-==== Goal
+==== Célkitűzés
 
 Make a copy of a site that you can use to develop new features and test updates on.
-
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<install-dev-sites>>
-
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * You have a live, developed site that you would like to make a copy of for development purposes.
 
 * If you want to use Drush for some of the steps in this task, Drush must be installed. See <<install-tools>>.
-
-==== Steps
+==== Lépések
 
 . Follow the steps in <<install-prepare>>, so that you have hosting set up for your development site, you know where the web root is for your development site, and you have an empty database and database user for your development site to use.
 
@@ -84,7 +80,7 @@ drush sql-query --file=BACKUPFILE.sql
 $config['system.site']['name'] = "Development Site for Anytown Farmers Market";
 ----
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * Verify that the development site is working correctly.
 
@@ -92,14 +88,13 @@ $config['system.site']['name'] = "Development Site for Anytown Farmers Market";
 
 * <<extend-deploy>>
 
-// ==== Related concepts
-
-==== Additional resources
+//==== Kapcsolódó témák
+==== Egyéb források
 
 * https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
 * https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ community documentation page "Create a Test Site"]
 
 
-*Attributions*
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].

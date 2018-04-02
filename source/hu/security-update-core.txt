@@ -8,20 +8,17 @@ How to update the core software using the administrative interface or Drush.
 (((Core software,updating)))
 (((Drush tool,using to update the core software)))
 (((Administrative interface,using to update the core software)))
-
-==== Goal
+==== Célkitűzés
 
 Update the core software, either through the administrative interface or by using Drush.
 
-//==== Prerequisite knowledge
-
-==== Site prerequisites
+//==== Szükséges előismeretek
+==== Webhely előfeltételei
 
 * If you want to use Drush, Drush must be installed. See <<install-tools>>.
 
 * If your site is live, you should test this process in a development environment before running it on your production site. See <<install-dev-making>>.
-
-==== Steps
+==== Lépések
 
 . Make a complete backup of your site. Refer to <<prevent-backups>>.
 
@@ -80,23 +77,21 @@ $settings['update_free_access'] = FALSE;
 
 . You should have the updated version running. You can verify the current version of your software by checking the _Status report_ (see <<prevent-status>>).
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * <<install-tools>>
 * <<install-dev-making>>
 * <<prevent-backups>>
-
-==== Related concepts
+==== Kapcsolódó témák
 
 <<prevent-status>>
-
-==== Additional resources
+==== Egyéb források
 
 * https://www.drupal.org/project/drupal["Drupal Core Downloads" page on _Drupal.org_]
 * https://www.drupal.org/project/registry_rebuild["Registry Rebuild" page on _Drupal.org_]
 * The file _/core/UPDATE.txt_ within your installation.
 
 
-*Attributions*
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan], https://www.drupal.org/u/batigolix[Boris Doesborgh], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
