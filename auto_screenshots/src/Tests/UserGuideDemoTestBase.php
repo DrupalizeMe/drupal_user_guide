@@ -291,6 +291,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Run all the desired chapters.
     $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+    $this->ensureDirectoryWriteable($backup_write_dir, 'top');
+
     $backup_read_dir = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $this->demoInput['first_langcode']);
     $previous = '';
     foreach ($this->runList as $method => $op) {
@@ -328,12 +330,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->drupalPostForm(NULL, [
           'modules[language][enable]' => TRUE,
           'modules[locale][enable]' => TRUE,
+          'modules[config_translation][enable]' => TRUE,
         ], 'Install');
-      $this->rebuildContainer();
-      $this->rebuildAll();
-      $this->container->get('router.builder')->rebuild();
-      drupal_flush_all_caches();
-      $this->refreshVariables();
+      $this->flushAll();
 
       // Add the main language and fully import translations.
       $this->fixTranslationSettings();
@@ -347,8 +346,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->drupalPostForm('admin/config/regional/language', [
           'site_default_language' => $this->demoInput['first_langcode'],
         ], 'Save configuration');
-      // Delete English.
+
+      // Delete English and flush caches.
       $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
+      $this->flushAll();
+
+      $this->verifyTranslations();
     }
 
     // Topic: preface-conventions: Conventions of the user guide.
@@ -416,13 +419,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     // Topic: install-run - Running the installer. Skip -- manual screenshots.
-
   }
 
   /**
    * Makes screenshots for the Basic Site Configuration chapter.
    */
   protected function doBasicConfig() {
+    $this->verifyTranslations();
 
     // Topic: config-overview - Concept: Administrative overview.
     $this->drupalGet('admin/config');
@@ -521,6 +524,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Due to a core bug, installing a module corrupts translations. So,
     // import the saved translations.
     $this->importTranslations($this->demoInput['first_langcode']);
+    $this->verifyTranslations();
 
     // Topic: config-uninstall - Uninstalling unused modules.
 
@@ -547,6 +551,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // and Search modules from admin/modules/uninstall.
     $this->setUpScreenShot('config-uninstall_confirmUninstall.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.block-system-main-block') . $this->setWidth('header', 640) . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
+    $this->flushAll();
 
     // Topic: config-user - Configuring user account settings.
 
@@ -660,6 +665,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Basic Page Management chapter.
    */
   protected function doBasicPage() {
+    $this->verifyTranslations();
 
     // Topic: content-create - Creating a Content Item
     // Create a Home page.
@@ -823,6 +829,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/menu');
     $this->assertLink($this->callT('Edit menu'));
     $this->assertText($this->callT('Operations'));
+    // This will fail in non-English languages currently. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
     $this->assertText($this->callT('Main navigation'));
 
     // Menu list section of admin/structure/menu, with Edit menu button on Main
@@ -832,7 +840,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // To avoid having to figure out which menu edit button to click, go
     // directly to the page.
     $this->drupalGet('admin/structure/menu/manage/main');
-    $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => $this->callT('Main navigation')]));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // This is only going to pass in English, because editing a menu means
+      // editing the non-translated menu. See also
+      // https://www.drupal.org/project/user_guide/issues/2959852
+      $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => $this->callT('Main navigation')]));
+    }
     $this->assertRaw($this->callT('Save'));
     $this->assertLink($this->callT('Home'));
     $this->assertLink($this->demoInput['about_title']);
@@ -863,6 +876,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Content Structure chapter.
    */
   protected function doContentStructure() {
+    $this->verifyTranslations();
+
     // Set up some helper variables.
     $vendor = $this->demoInput['vendor_type_machine_name'];
     $recipe = $this->demoInput['recipe_type_machine_name'];
@@ -1112,6 +1127,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText($this->callT('Taxonomy'));
     }
     $this->drupalGet('admin/structure/taxonomy');
+    // This will fail in non-English languages currently. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
     $this->assertText($this->callT('Tags'));
 
     // Taxonomy list page (admin/structure/taxonomy).
@@ -1461,6 +1478,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Hard to figure out which button to click, so assert the text and
     // then visit the URL.
     $this->assertLink($this->callT('Configure'));
+    // This will fail in non-English languages currently. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
     $this->assertText($this->callT('Basic HTML'));
     $this->drupalGet('admin/config/content/formats/manage/basic_html');
     $this->assertText('CKEditor');
@@ -1493,6 +1512,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the User Accounts chapter.
    */
   protected function doUserAccounts() {
+    $this->verifyTranslations();
+
     $vendor = $this->demoInput['vendor_type_machine_name'];
     $recipe = $this->demoInput['recipe_type_machine_name'];
 
@@ -1712,6 +1733,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Blocks chapter.
    */
   protected function doBlocks() {
+    $this->verifyTranslations();
 
     // Some UI tests from the block-concept topic.
     $this->drupalGet('admin/structure/block');
@@ -1780,8 +1802,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Verify some UI text on several block pages, without checking navigation.
     $this->drupalGet('admin/structure/block');
     $this->assertRaw('Bartik');
+    // This will fail in non-English languages currently. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
     $this->assertText($this->callT('Powered by Drupal'));
     $this->assertText($this->callT('Footer fifth'));
+    // This will fail in non-English languages currently. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
     $this->assertText($this->callT('Tools'));
     $this->assertText($this->callT('Sidebar first'));
     $this->assertText($this->callT('Sidebar second'));
@@ -1806,6 +1832,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Views chapter.
    */
   protected function doViews() {
+    $this->verifyTranslations();
+
     $vendor = $this->demoInput['vendor_type_machine_name'];
     $recipe = $this->demoInput['recipe_type_machine_name'];
     $main_image = $this->demoInput['vendor_field_image_machine_name'];
@@ -2160,6 +2188,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * import the translations.
    */
   protected function doMultilingualSetup() {
+    $this->verifyTranslations();
 
     // Topic: language-add - Adding a Language.
     // Due to a Core bug, installing a module corrupts translations. So,
@@ -2178,14 +2207,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText('Configuration Translation');
 
     $values = [
-      'modules[config_translation][enable]' => TRUE,
       'modules[content_translation][enable]' => TRUE,
     ];
     if ($this->demoInput['first_langcode'] == 'en') {
-      // In other languages, these other two modules are already enabled.
+      // In other languages, these other three modules are already enabled.
       $values += [
         'modules[language][enable]' => TRUE,
         'modules[locale][enable]' => TRUE,
+        'modules[config_translation][enable]' => TRUE,
       ];
     }
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
@@ -2193,6 +2222,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Due to a core bug, installing a module corrupts translations. So,
     // import the saved translations.
     $this->importTranslations($this->demoInput['first_langcode']);
+    $this->verifyTranslations();
 
     // Add the second language.
     $this->drupalGet('<front>');
@@ -2217,6 +2247,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Confirmation and language list after adding Spanish language.
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
     $this->importTranslations($this->demoInput['second_langcode']);
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     // Place the Language Switcher block in sidebar second (no screenshots).
     $this->drupalGet('admin/structure/block/library/bartik');
@@ -2234,6 +2266,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * The first topic is in the doMultilingualSetup() method.
    */
   protected function doTranslating() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     $recipes_view = $this->demoInput['recipes_view_machine_name'];
     $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
@@ -2371,6 +2405,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Extending chapter.
    */
   protected function doExtending() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     $vendors_view = $this->demoInput['vendors_view_machine_name'];
 
@@ -2563,6 +2599,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Preventing and Fixing Problems chapter.
    */
   protected function doPreventing() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     // Topic: prevent-cache-clear - Clearing the cache.
     // No screenshots, just UI text tests.
@@ -2610,6 +2648,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Security chapter.
    */
   protected function doSecurity() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
+
     // For these topics, we do not want to download translations.
     // They don't seem to get downloaded correctly within the test, and it
     // causes the test to hang.
@@ -2659,6 +2700,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // import the saved translations.
     $this->importTranslations($this->demoInput['first_langcode']);
     $this->importTranslations($this->demoInput['second_langcode']);
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Reports'));
@@ -2697,7 +2740,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Clears the Drupal cache.
+   * Clears the Drupal cache using the user interface page.
    */
   protected function clearCache() {
     $this->drupalPostForm('admin/config/development/performance', [], $this->callT('Clear all caches'));
@@ -3006,8 +3049,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @see UserGuideDemoTestBase::restoreBackup()
    */
   protected function makeBackup($directory) {
-    $this->clearCache();
-    \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
+    drupal_flush_all_caches();
+    $this->ensureDirectoryWriteable($directory, 'backup');
     $db_manager = $this->backupDBManager($directory);
     $db_manager->backup('database1', 'directory1');
     $file_manager = $this->backupFileManager($directory);
@@ -3040,11 +3083,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     \Drupal::configFactory()->getEditable('system.file')
       ->set('path.temporary', $this->tempFilesDirectory)
       ->save();
-
-    // Clear out the container and cache.
-    $this->rebuildContainer();
-    drupal_flush_all_caches();
-    $this->refreshVariables();
+    $this->flushAll();
 
     // Update the root user, log in, and clear the cache again.
     $this->rootUser = User::load(1);
@@ -3054,7 +3093,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->rootUser->pass = $pass_raw;
     $this->rootUser->save();
     $this->drupalLogin($this->rootUser);
-    $this->clearCache();
+    $this->flushAll();
   }
 
   /**
@@ -3224,6 +3263,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *   Language code to export the translations for.
    *
    * @see UserGuideDemoTestBase::importTranslations()
+   * @see https://www.drupal.org/project/drupal/issues/2806009
    */
   protected function exportTranslations($langcode) {
     if ($langcode != 'en') {
@@ -3244,9 +3284,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Imports translations from all existing .po files in translation directory.
    *
    * @param string $langcode
-   *   Language code to import the translations for.
+   *   Language code to import the translations for. Skips if it is English.
    *
    * @see UserGuideDemoTestBase::exportTranslations()
+   * @see https://www.drupal.org/project/drupal/issues/2806009
    */
   protected function importTranslations($langcode) {
     if ($langcode != 'en') {
@@ -3258,22 +3299,27 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       // that they don't get imported again later.
 
       $directory = \Drupal::config('locale.settings')->get('translation.path');
-      $result = file_scan_directory($directory, '|[a-z_\-0-9\.]+\.po$|', ['recurse' => FALSE]);
+      $this->pass('CHECKING FOR TRANSLATION EXPORTS IN: ' . $directory);
+      $result = file_scan_directory($directory, '|[a-zA-Z0-9_\-\.]+\.po$|', ['recurse' => FALSE]);
+      $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+      $this->ensureDirectoryWriteable($backup_write_dir, 'backup');
       foreach ($result as $file) {
         $file->langcode = $langcode;
         $this->readPoFile($file->uri, $langcode);
-        $this->pass('TRANSLATIONS READ FROM: ' . $file->filename);
-        unlink($directory . '/' . $file->filename);
+        $this->pass('TRANSLATIONS READ FROM: ' . $file->uri);
+        $new_name = file_unmanaged_move($file->uri, $backup_write_dir, FILE_EXISTS_RENAME);
+        if ($new_name) {
+          $this->pass('TRANSLATION FILE COPIED TO: ' . $new_name);
+        }
+        else {
+          $this->fail('Could not copy translation file to ' . $backup_write_dir);
+          unlink($directory . '/' . $file->filename);
+          $this->drupalGet('admin/reports/dblog');
+        }
       }
     }
 
-    // Flush cashes to make sure translations are being used, and also rebuild
-    // the routes and container.
-    $this->rebuildContainer();
-    $this->rebuildAll();
-    $this->container->get('router.builder')->rebuild();
-    drupal_flush_all_caches();
-    $this->refreshVariables();
+    $this->flushAll();
   }
 
   /**
@@ -3323,10 +3369,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
     else {
       fclose($fp);
+      $this->pass("Directory $directory is working for $name");
     }
     @unlink($filename);
-
-    $this->pass("Directory $directory is working for $name");
   }
 
   /**
@@ -3349,10 +3394,86 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     $writer = new PoDatabaseWriter();
-    $writer->setOptions([]);
+    // We need to overwrite existing translations when we read this in,
+    // because the reason we have this method is that translations are being
+    // corrupted (overwritten with English) when modules are enabled.
+    $writer->setOptions([
+      'overwrite_options' => [
+        'not_customized' => TRUE,
+        'customized' => TRUE,
+      ],
+    ]);
     $writer->setLangcode($langcode);
     $writer->setHeader($header);
     $writer->writeItems($reader);
+  }
+
+  /**
+   * Verifies translations to something other than English do not match English.
+   *
+   * @param bool $first
+   *   (optional) TRUE (default) to translate to the first language in the
+   *   demoInput member variable; FALSE to use the second language.
+   */
+  protected function verifyTranslations($first = TRUE) {
+    // Only test if we're testing a non-English language.
+    if (($this->demoInput['first_langcode'] == 'en' && $first) ||
+      ($this->demoInput['second_langcode'] == 'en' && !$first)) {
+      return;
+    }
+
+    // These strings are examples of ones found in English in some previous
+    // tests that should have been translated.
+    $to_test = [
+      'Author',
+      'Basic page',
+      'Body',
+      'Content type',
+      'Comments',
+      'Description',
+      'Filter',
+      'Language',
+      'Main navigation',
+      'Preview',
+      'Published status',
+      'Published',
+      'Site section links',
+      'Title',
+    ];
+
+    foreach ($to_test as $string) {
+      $this->assertNotEqual($string, (string) $this->callT($string, $first));
+    }
+
+    // If we're looking at the site's main language (it is not English if we
+    // get to this point in the method), also test that some config is not
+    // English when we load it, and when we visit the page where it is
+    // displayed. We have also just verified that the translation
+    // of this config and UI text was correct above.
+    if ($first) {
+      $config = \Drupal::config('system.menu.main');
+      $this->assertNotEqual('Main navigation', $config->get('label'));
+      $this->assertNotEqual('Site section links', $config->get('description'));
+
+      $this->drupalGet('admin/structure/menu');
+      // These two lines will fail in non-English languages currently. See
+      // https://www.drupal.org/project/user_guide/issues/2959852
+      $this->assertText($this->callT('Main navigation'));
+      $this->assertText($this->callT('Site section links'));
+      $this->assertText($this->callT('Title'));
+      $this->assertText($this->callT('Description'));
+    }
+  }
+
+  /**
+   * Flushes all caches and rebuilds container and routing.
+   */
+  protected function flushAll() {
+    $this->rebuildContainer();
+    $this->rebuildAll();
+    $this->container->get('router.builder')->rebuild();
+    drupal_flush_all_caches();
+    $this->refreshVariables();
   }
 
 }
