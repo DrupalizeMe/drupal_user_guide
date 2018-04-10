@@ -58,6 +58,14 @@ you update software on your local computer. Here are the steps:
      core/assets/vendor/normalize-css/normalize.css
    and remove "summary" from getting CSS display: block around line 47.
 
+   And one more core issue:
+     https://www.drupal.org/project/drupal/issues/2905295
+   At this time, the issue has no patch. But it can be gotten around by
+   editing
+     core/modules/locale/locale.module
+   and commenting out the call to locale_system_set_config_langcodes() in the
+   function locale_modules_installed() around line 316.
+
 7. Copy either this directory or the entire User Guide project directory
    into the top-level 'modules' directory of your local Drupal site.
    (Alternatively, if your operating system supports it, you can instead make
@@ -95,6 +103,12 @@ you update software on your local computer. Here are the steps:
 
 12. Do the same for a near-current version of the Admin Toolbar module
     from https://www.drupal.org/project/admin_toolbar
+
+13. Make directory /tmp/screenshots_backups on your computer, and make sure
+    the web server user can write to it. Backups and translation files are
+    stored there during test runs. If that path doesn't work on your computer,
+    you'll need to edit the src/Tests/UserGuideDemoTestBase.php file to use a
+    different base directory.
 
 
 MAKING SCREENSHOTS
