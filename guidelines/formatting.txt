@@ -241,9 +241,15 @@ video::https://www.youtube.com/embed/HymQsDOcT3E[title="Name of video"]
 
 Notes and guidelines:
 
-* Make sure you use a URL suitable for video embedding in an HTML video tag.
+* The video line must start at the left margin of your text file.
 
-* This line must start at the left margin of your text file.
+* At this time, only YouTube videos are supported, and the URL must not have
+a ? in it or any URL parameters (various parameters are added by the formatting
+scripts).
+
+* Consider using https://www.youtube-nocookie.com as the base URL instead of
+https://www.youtube.com, which ensures that YouTube won't store information
+about visitors to the page unless they play the video.
 
 * See <<guideline-additional-info>> for guidelines on embedding videos.
 
