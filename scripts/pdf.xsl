@@ -5,6 +5,9 @@
 <!-- Note that PDF is normally made with the fo stylesheets
      from the docbook-xsl project. -->
 
+<!-- No title on the abstract for title page. -->
+<xsl:param name="abstract.notitle.enabled" select="1"/>
+
 <!-- Use FOP extensions, so RTL languages are supported. -->
 <xsl:param name="fop1.extensions" select="1"/>
 
@@ -137,5 +140,25 @@
 
 <!-- Ordered list formatting -->
 <xsl:param name="orderedlist.label.width">1.8em</xsl:param>
+
+<!-- Override video template to output a video as a link. -->
+<xsl:template match="videodata">
+  <xsl:variable name="alt">
+    <xsl:choose>
+      <xsl:when test="ancestor::mediaobject/alt">
+        <xsl:apply-templates select="ancestor::mediaobject/alt"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="(ancestor::mediaobject/textobject/phrase)[1]"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="filename">
+    <xsl:call-template name="mediaobject.filename">
+      <xsl:with-param name="object" select=".."/>
+    </xsl:call-template>
+  </xsl:variable>
+  <fo:basic-link external-destination="{$filename}"><xsl:copy-of select="$alt"/></fo:basic-link>
+</xsl:template>
 
 </xsl:stylesheet>

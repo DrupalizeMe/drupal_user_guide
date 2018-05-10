@@ -6,6 +6,9 @@
      import with Feeds using the asciidoc_display_feeds module. See script
      mkfeeds.sh for usage. -->
 
+<!-- No title on the abstract for title page. -->
+<xsl:param name="abstract.notitle.enabled" select="1"/>
+
 <!-- Use outline numbering for sections. -->
 <xsl:param name="section.autolabel" select="1"/>
 <xsl:param name="section.autolabel.max.depth">1</xsl:param>
