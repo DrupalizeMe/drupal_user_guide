@@ -6,6 +6,9 @@
 <!-- Note that epub is normally made with the epub stylesheets, from the
      docbook-xsl project. -->
 
+<!-- No title on the abstract for title page. -->
+<xsl:param name="abstract.notitle.enabled" select="1"/>
+
 <!-- Output the language and direction in the HTML head. -->
 <xsl:template name="root.attributes">
   <xsl:variable name="lang">
