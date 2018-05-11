@@ -773,7 +773,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // UI text tests from Topic: menu-concept.txt: Concept: Menu.
     // For some reason, these texts in particular have some strange HTML
     // entity stuff going on in them (mismatches between screen and raw text
-    // that amount to entities being present or decoded), so only test in
+    // that amount to HTML entities being present or decoded), so only test in
     // English.
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->drupalGet('admin/structure/menu');
@@ -829,9 +829,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/menu');
     $this->assertLink($this->callT('Edit menu'));
     $this->assertText($this->callT('Operations'));
-    // This will fail in non-English languages currently. See
+    // Menu names are in English, so do not translate this text. See also
     // https://www.drupal.org/project/user_guide/issues/2959852
-    $this->assertText($this->callT('Main navigation'));
+    $this->assertText('Main navigation');
 
     // Menu list section of admin/structure/menu, with Edit menu button on Main
     // navigation menu highlighted.
@@ -841,10 +841,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // directly to the page.
     $this->drupalGet('admin/structure/menu/manage/main');
     if ($this->demoInput['first_langcode'] == 'en') {
-      // This is only going to pass in English, because editing a menu means
-      // editing the non-translated menu. See also
+      // Menu names are in English, so do not translate this text. See also
       // https://www.drupal.org/project/user_guide/issues/2959852
-      $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => $this->callT('Main navigation')]));
+      $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => 'Main navigation']));
     }
     $this->assertRaw($this->callT('Save'));
     $this->assertLink($this->callT('Home'));
@@ -1127,9 +1126,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText($this->callT('Taxonomy'));
     }
     $this->drupalGet('admin/structure/taxonomy');
-    // This will fail in non-English languages currently. See
+    // Vocabulary names for built-in vocabularies should be English. See
     // https://www.drupal.org/project/user_guide/issues/2959852
-    $this->assertText($this->callT('Tags'));
+    $this->assertText('Tags');
 
     // Taxonomy list page (admin/structure/taxonomy).
     $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container', 800) . '"');
@@ -1478,9 +1477,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Hard to figure out which button to click, so assert the text and
     // then visit the URL.
     $this->assertLink($this->callT('Configure'));
-    // This will fail in non-English languages currently. See
+    // Text format names are in English. See
     // https://www.drupal.org/project/user_guide/issues/2959852
-    $this->assertText($this->callT('Basic HTML'));
+    $this->assertText('Basic HTML');
     $this->drupalGet('admin/config/content/formats/manage/basic_html');
     $this->assertText('CKEditor');
     $this->assertText($this->callT('Text editor'));
@@ -1802,13 +1801,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Verify some UI text on several block pages, without checking navigation.
     $this->drupalGet('admin/structure/block');
     $this->assertRaw('Bartik');
-    // This will fail in non-English languages currently. See
+    // Block and menu names are shown in English for built-in blocks. See
     // https://www.drupal.org/project/user_guide/issues/2959852
-    $this->assertText($this->callT('Powered by Drupal'));
+    $this->assertText('Powered by Drupal');
     $this->assertText($this->callT('Footer fifth'));
-    // This will fail in non-English languages currently. See
-    // https://www.drupal.org/project/user_guide/issues/2959852
-    $this->assertText($this->callT('Tools'));
+    $this->assertText('Tools');
     $this->assertText($this->callT('Sidebar first'));
     $this->assertText($this->callT('Sidebar second'));
     $this->assertText($this->callT('Operations'));
@@ -3447,19 +3444,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // If we're looking at the site's main language (it is not English if we
     // get to this point in the method), also test that some config is not
-    // English when we load it, and when we visit the page where it is
-    // displayed. We have also just verified that the translation
-    // of this config and UI text was correct above.
+    // English when we load it, and UI text when we view it. We have also just
+    // verified that the translation of this config and UI text was correct
+    // above.
     if ($first) {
       $config = \Drupal::config('system.menu.main');
       $this->assertNotEqual('Main navigation', $config->get('label'));
       $this->assertNotEqual('Site section links', $config->get('description'));
 
+      // Menu names and descriptions on this page are in English, even if site
+      // language is not English, so only test UI text here.
       $this->drupalGet('admin/structure/menu');
-      // These two lines will fail in non-English languages currently. See
-      // https://www.drupal.org/project/user_guide/issues/2959852
-      $this->assertText($this->callT('Main navigation'));
-      $this->assertText($this->callT('Site section links'));
       $this->assertText($this->callT('Title'));
       $this->assertText($this->callT('Description'));
     }
