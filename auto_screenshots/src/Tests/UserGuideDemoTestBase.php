@@ -3427,7 +3427,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       'Body',
       'Content type',
       'Comments',
-      'Description',
       'Filter',
       'Language',
       'Main navigation',
