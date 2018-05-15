@@ -43,6 +43,9 @@ require __DIR__ . '/../../vendor/autoload.php';
  *   Then just copy this column of output into the $demoInput array in your
  *   new class.
  * - Override the $runList member variable to run the sections of interest.
+ * - If the language needs a custom translation PO file to be imported during
+ *   initial setup, put it in the auto_screenshots/backups/lc/translation
+ *   directory, where lc is the language code.
  *
  * See README.txt file in the module directory for instructions for making
  * screenshot images from this test output.
@@ -339,7 +342,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->drupalPostForm('admin/config/regional/language/add', [
           'predefined_langcode' => $this->demoInput['first_langcode'],
         ], 'Add language');
-      $this->importTranslations($this->demoInput['first_langcode']);
+      $this->importTranslations($this->demoInput['first_langcode'], TRUE);
 
       // Set the new language to default. After this, the UI should be
       // translated.
@@ -3282,11 +3285,15 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *
    * @param string $langcode
    *   Language code to import the translations for. Skips if it is English.
+   * @param bool $read_initial
+   *   If TRUE (FALSE is the default), also read the initial translation file
+   *   from the auto_screenshots/backups/LANGCODE/translation directory, if
+   *   there is one.
    *
    * @see UserGuideDemoTestBase::exportTranslations()
    * @see https://www.drupal.org/project/drupal/issues/2806009
    */
-  protected function importTranslations($langcode) {
+  protected function importTranslations($langcode, $read_initial = FALSE) {
     if ($langcode != 'en') {
       $this->fixTranslationSettings();
 
@@ -3297,7 +3304,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
       $directory = \Drupal::config('locale.settings')->get('translation.path');
       $this->pass('CHECKING FOR TRANSLATION EXPORTS IN: ' . $directory);
-      $result = file_scan_directory($directory, '|[a-zA-Z0-9_\-\.]+\.po$|', ['recurse' => FALSE]);
+      $pattern = '|[a-zA-Z0-9_\-\.]+\.po$|';
+      $options = ['recurse' => FALSE];
+      $result = file_scan_directory($directory, $pattern, $options);
+      if ($read_initial) {
+        $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $langcode . '/translation');
+        if (is_dir($directory)) {
+          $this->pass('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory);
+          $result = array_merge($result, file_scan_directory($directory, $pattern, $options));
+        }
+      }
+
       $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
       $this->ensureDirectoryWriteable($backup_write_dir, 'backup');
       foreach ($result as $file) {
