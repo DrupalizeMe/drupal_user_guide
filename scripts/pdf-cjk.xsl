@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exsl="http://exslt.org/common" xmlns:cf="http://docbook.sourceforge.net/xmlns/chunkfast/1.0" xmlns:ng="http://docbook.org/docbook-ng" xmlns:db="http://docbook.org/ns/docbook" xmlns="http://www.w3.org/1999/xhtml" version="1.0" exclude-result-prefixes="exsl cf ng db">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:exsl="http://exslt.org/common"
+                xmlns:cf="http://docbook.sourceforge.net/xmlns/chunkfast/1.0"
+                xmlns:ng="http://docbook.org/docbook-ng"
+                xmlns:db="http://docbook.org/ns/docbook"
+                xmlns="http://www.w3.org/1999/xhtml" version="1.0"
+                exclude-result-prefixes="exsl cf ng db">
 
 <!-- This file contains overrides for output for PDF e-books using
    the BabelStone Han font (a CJK font)-->
