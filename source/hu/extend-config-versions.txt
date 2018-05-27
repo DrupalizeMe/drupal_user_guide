@@ -11,18 +11,18 @@ How to synchronize the configuration between a development and live site using t
 (((Configuration Manager module,using to synchronize the configuration between a development and live site)))
 (((Module,Configuration Manager)))
 
-==== Goal
+==== Célkitűzés
 
 Synchronize the configuration between a development and live site.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-data>>
 * <<install-prepare>>
 * <<install-dev-sites>>
 * <<install-dev-making>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * You must have a development copy of your production site. See <<install-dev-making>>.
 
@@ -32,7 +32,7 @@ Synchronize the configuration between a development and live site.
 
 * All configuration that should not be synchronized between the source and destination sites must be stored in configuration overrides in the _settings.php_ file rather than in the database. See <<install-dev-making>>.
 
-==== Steps
+==== Lépések
 
 . In the source site, in the _Manage_ administrative menu, navigate to _Configuration_ > _Development_ > _Configuration synchronization_ > _Export_ (_admin/config/development/configuration/full/export_).
 
