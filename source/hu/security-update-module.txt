@@ -10,16 +10,16 @@ How to update a contributed module by using the administrative interface and run
 (((Contributed module,updating)))
 (((Drush tool,using to update module)))
 
-==== Goal
+==== Célkitűzés
 
 Update a contributed module and run the _Database updates_ script.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * A contributed module has been installed and there is an update available for it. See <<extend-module-install>> and <<security-announce>>.
 
@@ -31,7 +31,7 @@ Update a contributed module and run the _Database updates_ script.
 
 * If you want to use Drush, Drush must be installed. See <<install-tools>>.
 
-==== Steps
+==== Lépések
 
 Before you start, check for module-specific update instructions. This is typically necessary while updating modules that involve the usage of third-party libraries. Read and understand all module-specific requirements before proceeding with the updates. To find instructions, check the module's project page _Read Documentation_ link.
 

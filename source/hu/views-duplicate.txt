@@ -9,19 +9,19 @@ How to create a new page by duplicating a view.
 (((Views module,duplicating a view)))
 (((Module,Views)))
 
-==== Goal
+==== Célkitűzés
 
 Create a page listing recipes by duplicating the existing Vendors view.  Modify
 the page so that the recipes are displayed in a grid and can by filtered by
 ingredients.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<views-concept>>
 * <<views-parts>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * The Vendor and Recipe content types must exist; both must have Main image
 fields, and the Recipe content type must have an Ingredients field. Your site
@@ -31,7 +31,7 @@ and <<content-create>>.
 
 * The Vendors view must exist. See <<views-create>>.
 
-==== Steps
+==== Lépések
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
 (_admin/structure/views_). Find the view "Vendors" and click _Duplicate_ in its
