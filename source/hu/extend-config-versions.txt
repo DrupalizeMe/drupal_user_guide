@@ -31,7 +31,8 @@ Synchronize the configuration between a development and live site.
 * You must have changed configuration on either the production or development site (the _source site_), and want to synchronize the changes to the other site (the _destination site_). As an example, you can develop a new content type, fields, and views on your development site, and when it is all working correctly, deploy the changes to the live site.
 
 * All configuration that should not be synchronized between the source and destination sites must be stored in configuration overrides in the _settings.php_ file rather than in the database. See <<install-dev-making>>.
-==== Lépések
+
+==== Steps
 
 . In the source site, in the _Manage_ administrative menu, navigate to _Configuration_ > _Development_ > _Configuration synchronization_ > _Export_ (_admin/config/development/configuration/full/export_).
 
