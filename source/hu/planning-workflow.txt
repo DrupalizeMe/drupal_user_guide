@@ -12,7 +12,8 @@ Ebben a témakörben azt járjuk körbe, milyen szerkesztői munkafolyamatokat a
 
 ==== Szükséges előismeretek
 
-<<understanding-drupal>>
+* <<understanding-drupal>>
+* <<planning-data-types>>
 
 ==== Mit értünk szerkesztői munkafolyamat alatt?
 
@@ -20,25 +21,27 @@ Ha röviden kellene összefoglalnunk, akkor azt mondhatnánk, hogy egy tartalmi 
 
 Van, hogy egy webhelyet csak pár személy szerkeszt (például egy blogon maga a szerző és esetleg egy korrektor mellette), és van olyan is, amikor több száz, tartalomszerkesztési joggal felruházott felhasználó teheti ugyanezt egyszerre – például egy nagyvállalati intranetként használt Drupalon. Elképzelhető például olyan szervezeti működés, hogy ha bármelyik alkalmazottnak ötlete támad, hogy miről kellene cikket írni a vállalati újságba, akkor megvan a jogosultsága felvinni azt egy kezdeti piszkozatként. Ezt követően a kiadvány szerkesztői szemlézik a beérkezett vázlatokat, és amelyiket érdemesnek találják rá, azt teljes cikké formálják. Ezt követően a kommunikációs osztály képviselője kijavítja a kész cikkekben maradt esetleges hibákat, majd jóváhagyásra továbbküldi a vezetőségnek. Végül az igazgatóság döntést hoz és közzéteszi a cikkeket.
 
-E példa számos életciklus-fázist igényelne, a Drupal alapértelmezés szerint azonban csak ezt a két állapotot kínálja:
+Mivel online médiumról beszélünk, ahol a tartalmak életciklusa nem ér véget a közzététellel, ezért a szerkesztői munkafolyamatok ugyanúgy kiterjedhetnek a már nyilvános tartalmak utólagos kiegészítésére, folyamatos frissen tartására és archiválására is. Valamint ahogy intranetes példánkban fentebb említettük, egyes szervezeteknek bonyolultabb szerkesztői munkafolyamatai is lehetnek.
 
-* A _Közzétett_ állapotú tartalmak a webhely valamennyi látogatója számára elérhetőek.
+==== Milyen eszközökkel szervezhetjük az ilyen munkafolyamatokat?
 
-* A _Rejtett_ állapotú tartalmak viszont csak azon felhasználók számára láthatók, akik rendelkeznek az adott tartalomtípus rejtett elemeinek megtekintési jogosultságával.
-
-A legtöbb tartalomtípusnál az adminisztrátor engedélyezheti a változatkövetést. Bekapcsolva a Drupal minden egyes mentéskor megőrzi a mentés előtti állapotot is. A módosításokhoz mentéskor megjegyzést fűzhetünk, így követhető válik, hogy mi változott. Ily módon tulajdonképpen visszatekinthetünk az időben, sőt, vissza is állíthatjuk a tartalmat egy korábbi állapotára.
-
-E két funkcióval – a közzétett/rejtett kapcsolóval és a változatkövetéssel – a tartalmak szerzői és szerkesztői szabályozhatják, hogy mi kerül nyilvánosságra az éles webhelyen. Amint egy tartalom készen áll a publikálásra, nincs más teendőjük, csupán közzétett állapotúként elmenteni újra.
+Tartalmak nyilvánossági állapota::
+  Ha a webhely entitástípusai közül a tartalmi egységekre gondolunk, akkor ezek nyilvánossági állapotát a Közzétett/Rejtett lehetőségek között állíthatjuk. Ennek akkor van jelentősége, ha a különböző szerepkörű felhasználóknak eltérő jogosultságokat állítunk be a rejtett tartalmak elérését illetően: például csak a cikkek szerzői és szerkesztői láthassák őket, egyszerű látogatók viszont ne.
+Munkafolyamatok::
+  Az előbb említett _közzétett_ és _rejtett_ állapotok és a kettő között lehetséges két átmenet (egyikből a másikba illetve visszafelé) bár néhány esetben elég lehet, ám sokszor ennél több állapot és a köztük való átmenetek meghatározására van szükség. Pontosan ezt kínálja az alaprendszer legújabb verzióival együtt érkező _Workflows_ modul, ami lehetővé teszi a webhely adminisztrátorai számára, hogy tovább bővítsék a szerkesztői munkafolyamataik állomásait és lépéseit.
+Változatkövetés::
+  Bizonyos entitástípusok támogatják a változatkövetést, amit engedélyezve a Drupal minden egyes mentéskor megőrzi a mentés előtti állapotot is. Ilyenkor megjegyzést is fűzhetünk hozzájuk, így követhetővé válik, hogy mi változott. Ily módon tulajdonképpen visszatekinthetünk az időben, sőt, vissza is állíthatjuk a tartalmat egy korábbi állapotára.
+Blokkok elhelyezése::
+  Egy másik érdekes szerkesztési lehetőség az _Egyéni blokk_ nevű tartalmi entitástípus használata. Előre létre tudunk hozni blokkokat, de még nem kihelyezni őket oldalakra. Így amíg rejtettek, szabadon változtathatjuk tartalmukat, és majd csak akkor oldalhoz rendelni őket, ha már véglegesnek érezzük őket.
 
 ==== Kapcsolódó témák
 
 * <<content-create>>
 * <<content-edit>>
+* <<block-create-custom>>
+* <<block-place>>
 
-==== Egyéb források
-
-Mivel online médiumról beszélünk, ahol a tartalmak életciklusa nem ér véget a közzététellel, ezért a szerkesztői munkafolyamatok ugyanúgy kiterjedhetnek a már nyilvános tartalmak utólagos kiegészítésére, folyamatos frissen tartására és archiválására is. Valamint ahogy intranetes példánkban fentebb említettük, egyes szervezeteknek bonyolultabb szerkesztői munkafolyamatai is lehetnek. Kifejezetten ezekre az igényekre ad megoldást a https://www.drupal.org/documentation/modules/workbench[Workbench Suite] közösségi modul.
-
+//==== Egyéb források
 
 *Közreműködők*
 
