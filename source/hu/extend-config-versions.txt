@@ -11,18 +11,18 @@ How to synchronize the configuration between a development and live site using t
 (((Configuration Manager module,using to synchronize the configuration between a development and live site)))
 (((Module,Configuration Manager)))
 
-==== Goal
+==== Célkitűzés
 
 Synchronize the configuration between a development and live site.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<understanding-data>>
 * <<install-prepare>>
 * <<install-dev-sites>>
 * <<install-dev-making>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * You must have a development copy of your production site. See <<install-dev-making>>.
 
@@ -32,7 +32,7 @@ Synchronize the configuration between a development and live site.
 
 * All configuration that should not be synchronized between the source and destination sites must be stored in configuration overrides in the _settings.php_ file rather than in the database. See <<install-dev-making>>.
 
-==== Steps
+==== Lépések
 
 . In the source site, in the _Manage_ administrative menu, navigate to _Configuration_ > _Development_ > _Configuration synchronization_ > _Export_ (_admin/config/development/configuration/full/export_).
 
@@ -46,17 +46,21 @@ Synchronize the configuration between a development and live site.
 
 . When you are satisfied, click _Import all_ to import the configuration changes.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * If the changes you have made involve only one configuration item (such as one view), you can use the single configuration export/import feature to deploy the change between sites. See <<extend-deploy>>.
 
 * After the step where you export the full configuration from the source site, you might also want to unpack the archive and commit it to a version control system, such as Git, to track changes in your site configuration. See <<install-tools>>.
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-// ==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/dLUGQk8GKa0[title="Synchronizing Configuration Versions"]
 
-*Attributions*
+//==== Egyéb források
+
+*Közreműködők*
 
 Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

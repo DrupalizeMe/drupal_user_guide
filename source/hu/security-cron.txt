@@ -8,17 +8,17 @@ How to run cron maintenance tasks using the core Automated Cron module, or by ru
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
 
-==== Goal
+==== Célkitűzés
 
 Check whether cron maintenance tasks are run regularly, and if not, either install the core Automated Cron module or run cron maintenance tasks from outside the website.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<security-cron-concept>>
 
-// ==== Site prerequisites
+// ==== Webhely előfeltételei
 
-==== Steps
+==== Lépések
 
 . Review the _Status report_ (see <<prevent-status>>) to see when cron maintenance tasks were last run.
 +
@@ -48,17 +48,22 @@ Whenever this URL is visited, cron maintenance tasks will run. Set up one of the
   * A cron SASS provider (software as a service)
   * A cron manager provided by your web hosting provider (see the documentation provided by your provider)
 
-// ==== Expand your understanding
+// ==== Az ismeretek elmélyítése
 
-==== Related concepts
+==== Kapcsolódó témák
 
 <<security-concept>>
 
-==== Additional resources
+==== Videó
 
-* http://www.drush.org/en/master/cron/[Drush page "Running Drupal cron tasks from Drush"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
+
+==== Egyéb források
+
+* http://docs.drush.org/en/master/cron/[Drush page "Running Drupal cron tasks from Drush"]
 * https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
 
-*Attributions*
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/dalin[Dave Hansen-Lange] at https://www.advomatic.com/[Advomatic], https://www.drupal.org/u/batigolix[Boris Doesborg], and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -9,22 +9,22 @@ How to enable maintenance mode to set up a "Site under maintenance" message, and
 (((Maintenance mode,enabling)))
 (((Maintenance mode,disabling)))
 
-==== Goal
+==== Célkitűzés
 
 Put your site in maintenance mode to allow users with the right permissions to
 use the site while users without this permission are presented with a message
 that the site is under maintenance.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<security-concept>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 If you want to use Drush to enable or disable maintenance mode, Drush must be
 installed. See <<install-tools>>.
 
-==== Steps
+==== Lépések
 
 You can use the administrative interface or Drush to enable or disable
 maintenance mode.
@@ -117,7 +117,7 @@ drush cr
 out of maintenance mode by visiting the site in a browser where you are not
 logged in.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * <<security-update-core>>
 
@@ -125,12 +125,16 @@ logged in.
 
 * <<security-update-module>>
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
-// ==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Disabling Maintenance Mode"]
 
-*Attributions*
+//==== Egyéb források
+
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
 https://www.drupal.org/u/jojyja[Jojy Alphonso] at

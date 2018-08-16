@@ -75,7 +75,10 @@ image:images/block-place-sidebar.png["Page with a block placed on the Sidebar se
 clicking _Disable_ or _Remove_ in the _Operations_ dropdown button. Clicking
 _Disable_ will let you enable the block easily later with the same
 configuration; if you click _Remove_ and you want the block back, you would
-need to go through the steps in this topic to place it in a region again.
+need to go through the steps in this topic to place it in a region again. Note
+that the names of the blocks that are provided by the core software, such as
+_Powered by Drupal_ and _User login_, are shown in English on this page; see
+<<language-concept>> for an explanation.
 
 * Remove the _Tools_ block from the _Sidebar first_ region. This block is only
 visible to logged-in users.
@@ -87,6 +90,11 @@ to clear the cache. See <<prevent-cache-clear>>.
 
 
 //==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/iWW7Ja5p0hA[title="Placing a Block in a Region"]
 
 //==== Additional resources
 

@@ -21,6 +21,7 @@ On this page:
 * <<guideline-text-caps>>
 * <<text-navigation>>
 * <<composing-index-entries>>
+* <<guideline-additional-info>>
 
 
 [[guideline-lists]]
@@ -127,6 +128,53 @@ what it stands for (make two entries). Example: `Cross-site scripting
 
 See <<style-index>> or the templates in <<templates>> for instructions on how to
 put index entries into your topic.
+
+[[guideline-additional-info]]
+==== Adding links and videos
+
+There are several sections in both task and concept topics where links to
+additional information can be added:
+
+Prerequisite knowledge::
+  Add links in this section to other topics within the same book that cover
+  knowledge someone would need to understand before reading this topic.
+Site prerequisites (task topics)::
+  Most site prerequisites listed here should include link(s) to the topic(s)
+  that explain how to create the necessary content, configure the site, etc.
+Expand your understanding (task topics)::
+  Add links in this section to task topics in the same book that would help
+  solidify or broaden the knowledge covered in this topic.
+Related concepts (task topics)::
+  Add links in this section to concept topics in the same book that are not
+  prerequisites, but which are somehow related.
+Related topics (concept topics)::
+  Add links to related task and concept topics in the same book that are not
+  prerequisites.
+Videos::
+  Embed videos in this section that exactly (or nearly exactly) reproduce the
+  content of the topic in video format. See <<formatting-images>> for syntax.
+Additional resources::
+  Add links in this section to outside materials related to this topic, which
+  could include videos, articles, documentation pages, blog posts, and books.
+  Do not embed videos in this section; instead, provide a link.
+
+All outside links to resources and videos must conform to the following
+guidelines:
+
+* The page or video linked to must be primarily providing knowledge, not
+  promotion or advertising.
+* The page or video must be freely available, without paying, logging in, or
+  subscribing to the site.
+* If a video is embedded (instead of just linked) in the guide, it must also be
+  captioned; ideally, linked videos should also be captioned. (Captioning makes
+  a video accessible, according the
+  https://www.w3.org/2008/06/video-notes[W3C Accessibility Guidelines]).
+* Embedded videos must also be translatable, and the video producer must
+  provide a means for incorporating translated captions into the video.
+* Instructions for downloading the translatable caption file, translating, and
+  providing translations to the producer must be provided when the video is
+  embedded into the text, by adding this information in a README-VIDEOS.txt
+  file in the source directory.
 
 
 *Attributions*

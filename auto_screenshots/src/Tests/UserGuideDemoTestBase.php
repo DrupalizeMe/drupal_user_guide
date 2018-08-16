@@ -3,11 +3,13 @@
 namespace Drupal\auto_screenshots\Tests;
 
 use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Component\Gettext\PoStreamReader;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
+use Drupal\locale\PoDatabaseWriter;
 use Drupal\simpletest\WebTestBase;
 use Drupal\user\Entity\User;
 use BackupMigrate\Core\Config\Config;
@@ -41,6 +43,9 @@ require __DIR__ . '/../../vendor/autoload.php';
  *   Then just copy this column of output into the $demoInput array in your
  *   new class.
  * - Override the $runList member variable to run the sections of interest.
+ * - If the language needs a custom translation PO file to be imported during
+ *   initial setup, put it in the auto_screenshots/backups/lc/translation
+ *   directory, where lc is the language code.
  *
  * See README.txt file in the module directory for instructions for making
  * screenshot images from this test output.
@@ -54,7 +59,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   /**
    * Which Drupal Core software version to use for the downloading screenshots.
    */
-  protected $latestRelease = '8.4.0';
+  protected $latestRelease = '8.5.0';
 
   /**
    * Strings and other information to input into the demo site.
@@ -261,13 +266,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected $assetsDirectory;
 
   /**
-   * The file name for exported translations, if any.
-   *
-   * @see UserGuideDemoTestBase::exportTranslations()
-   */
-  protected $translationFilename = '';
-
-  /**
    * Builds the entire demo site and makes screenshots.
    *
    * Note that the method name starts with "test" so that it will be detected
@@ -296,6 +294,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Run all the desired chapters.
     $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+    $this->ensureDirectoryWriteable($backup_write_dir, 'top');
+
     $backup_read_dir = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $this->demoInput['first_langcode']);
     $previous = '';
     foreach ($this->runList as $method => $op) {
@@ -318,7 +318,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Makes screenshots for the Preface and Install chapters.
+   * Makes screenshots for Preface and Install chapters, and from drupal.org.
    */
   protected function doPrefaceInstall() {
 
@@ -333,24 +333,28 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->drupalPostForm(NULL, [
           'modules[language][enable]' => TRUE,
           'modules[locale][enable]' => TRUE,
+          'modules[config_translation][enable]' => TRUE,
         ], 'Install');
+      $this->flushAll();
 
-      // Add the other language.
+      // Add the main language and fully import translations.
+      $this->fixTranslationSettings();
       $this->drupalPostForm('admin/config/regional/language/add', [
           'predefined_langcode' => $this->demoInput['first_langcode'],
         ], 'Add language');
-      // Rebuild the container. Translations are not working without this.
-      $this->rebuildContainer();
-      drupal_flush_all_caches();
-      $this->refreshVariables();
+      $this->importTranslations($this->demoInput['first_langcode'], TRUE);
 
       // Set the new language to default. After this, the UI should be
       // translated.
       $this->drupalPostForm('admin/config/regional/language', [
           'site_default_language' => $this->demoInput['first_langcode'],
         ], 'Save configuration');
-      // Delete English.
+
+      // Delete English and flush caches.
       $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
+      $this->flushAll();
+
+      $this->verifyTranslations();
     }
 
     // Topic: preface-conventions: Conventions of the user guide.
@@ -361,31 +365,70 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
     // System section of admin/config page.
-    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.panel:has(a[href$=\'admin/config/system/site-information\'])') . '"');
+    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.panel:has(a[href$=&quot;admin/config/system/site-information&quot;])') . '"');
 
     // Topic: block-regions - postpone until after theme is configured.
 
     // Topic: install-prepare - Preparing to install.
 
-    // English-only screenshots.
+    // English-only drupal.org screenshots, from this and other topics.
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/drupal');
-      // Recommended releases section of https://www.drupal.org/project/drupal.
-      $this->setUpScreenShot('install-prepare-recommended.png', 'onLoad="' . $this->showOnly('#node-3060 .content') . $this->hideArea('.field-name-body') . $this->hideArea('.pane-project-downloads-development') . $this->hideArea('.pane-custom') . $this->hideArea('.pane-project-downloads-other') . $this->hideArea('.pane-download-releases-link') . '"');
+
       $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
+
       // File section of a recent Drupal release download page, such as
       // https://www.drupal.org/project/drupal/releases/8.4.0.
-      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page') . $this->hideArea('#page-title-tools, #nav-content, #tabs, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"');
+      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page') . $this->hideArea('#page-title-tools, #nav-content, #tabs, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"', TRUE);
+
+      // Search for Admin Toolbar in 8.x on drupal.org. Just go directly to the
+      // URL.
+      $this->drupalGet('https://www.drupal.org/project/project_module?f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&f[5]=&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
+
+      // Module search box on https://www.drupal.org/project/project_module.
+      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"', TRUE);
+
+      // Search results on https://www.drupal.org/project/project_module.
+      $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"', TRUE);
+
+      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
+
+      // Project page for Admin Toolbar module.
+      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info, .block-views') . $this->removeScrollbars() . '"', TRUE);
+
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"', TRUE);
+
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"', TRUE);
+
+      // Downloads section of the Admin Toolbar project page on drupal.org.
+      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-field-release-version:first a:first') . $this->removeScrollbars() . '"', TRUE);
+
+      // Search for actively maintained 8.x themes on drupal.org. Just go
+      // directly to the URL.
+      $this->drupalGet('https://www.drupal.org/project/project_theme?f%5B0%5D=im_vid_44%3A13028&f%5B1%5D=&f%5B2%5D=drupal_core%3A7234&f%5B3%5D=sm_field_project_type%3Afull&f%5B4%5D=&text=&solrsort=iss_project_release_usage+desc&op=Search');
+
+      // Theme search box on https://www.drupal.org/project/project_theme.
+      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"', TRUE);
+
+      // Search results on https://www.drupal.org/project/project_theme.
+      $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"', TRUE);
+
+      $this->drupalGet('https://www.drupal.org/project/mayo');
+
+      // Downloads section of the Mayo project page on drupal.org.
+      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension:first a:first') . $this->removeScrollbars() . '"', TRUE);
+
     }
 
     // Topic: install-run - Running the installer. Skip -- manual screenshots.
-
   }
 
   /**
    * Makes screenshots for the Basic Site Configuration chapter.
    */
   protected function doBasicConfig() {
+    $this->verifyTranslations();
 
     // Topic: config-overview - Concept: Administrative overview.
     $this->drupalGet('admin/config');
@@ -467,7 +510,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.
-    $this->exportTranslations();
+    $this->exportTranslations($this->demoInput['first_langcode']);
 
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Extend'));
@@ -482,10 +525,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations. Then rebuild the cache/container.
-    $this->importTranslations();
-    $this->resetAll();
-    $this->clearCache();
+    // import the saved translations.
+    $this->importTranslations($this->demoInput['first_langcode']);
+    $this->verifyTranslations();
 
     // Topic: config-uninstall - Uninstalling unused modules.
 
@@ -512,6 +554,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // and Search modules from admin/modules/uninstall.
     $this->setUpScreenShot('config-uninstall_confirmUninstall.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.block-system-main-block') . $this->setWidth('header', 640) . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
+    $this->flushAll();
 
     // Topic: config-user - Configuring user account settings.
 
@@ -603,7 +646,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('config-theme_color_scheme_preview.png', 'onLoad="window.scroll(0,1000);' . $this->showOnly('.color-preview') . $this->setWidth('#color_scheme_form', 700) . $this->removeScrollbars() . '"');
 
     $this->clickLink($this->callT('Home'));
-    $this->assertText($this->callT('No front page content has been created yet.'));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // This string is part of a complicated config string now, and checking
+      // for the whole string doesn't work in tests. So, just check in English
+      // for part of the string.
+      $this->assertText('No front page content has been created yet.');
+    }
 
     // Home page after theme settings are finished.
     $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName( ['.region-header .site-branding__text a', 'main .content h1']) . $this->removeScrollbars() . '"');
@@ -620,6 +668,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Basic Page Management chapter.
    */
   protected function doBasicPage() {
+    $this->verifyTranslations();
 
     // Topic: content-create - Creating a Content Item
     // Create a Home page.
@@ -642,7 +691,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
     $this->assertText($this->callT('Published'));
-    $this->assertText($this->callT('Save'));
+    $this->assertRaw($this->callT('Save'));
     $this->assertRaw($this->callT('Preview'));
 
     // General note: Filling in textarea fields -- use .append() in jQuery.
@@ -727,7 +776,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // UI text tests from Topic: menu-concept.txt: Concept: Menu.
     // For some reason, these texts in particular have some strange HTML
     // entity stuff going on in them (mismatches between screen and raw text
-    // that amount to entities being present or decoded), so only test in
+    // that amount to HTML entities being present or decoded), so only test in
     // English.
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->drupalGet('admin/structure/menu');
@@ -783,7 +832,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/menu');
     $this->assertLink($this->callT('Edit menu'));
     $this->assertText($this->callT('Operations'));
-    $this->assertText($this->callT('Main navigation'));
+    // Menu names are in English, so do not translate this text. See also
+    // https://www.drupal.org/project/user_guide/issues/2959852
+    $this->assertText('Main navigation');
 
     // Menu list section of admin/structure/menu, with Edit menu button on Main
     // navigation menu highlighted.
@@ -792,7 +843,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // To avoid having to figure out which menu edit button to click, go
     // directly to the page.
     $this->drupalGet('admin/structure/menu/manage/main');
-    $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => $this->callT('Main navigation')]));
+    if ($this->demoInput['first_langcode'] == 'en') {
+      // Menu names are in English, so do not translate this text. See also
+      // https://www.drupal.org/project/user_guide/issues/2959852
+      $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => 'Main navigation']));
+    }
     $this->assertRaw($this->callT('Save'));
     $this->assertLink($this->callT('Home'));
     $this->assertLink($this->demoInput['about_title']);
@@ -823,6 +878,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Content Structure chapter.
    */
   protected function doContentStructure() {
+    $this->verifyTranslations();
+
     // Set up some helper variables.
     $vendor = $this->demoInput['vendor_type_machine_name'];
     $recipe = $this->demoInput['recipe_type_machine_name'];
@@ -1072,7 +1129,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText($this->callT('Taxonomy'));
     }
     $this->drupalGet('admin/structure/taxonomy');
-    $this->assertText($this->callT('Tags'));
+    // Vocabulary names for built-in vocabularies should be English. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
+    $this->assertText('Tags');
 
     // Taxonomy list page (admin/structure/taxonomy).
     $this->setUpScreenShot('structure-taxonomy-setup-taxonomy-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .layout-container', 800) . '"');
@@ -1138,7 +1197,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Help text'));
     $this->assertText($this->callT('Reference type'));
     $this->assertText($this->callT('Reference method'));
-    $this->assertText($this->callT('Available Vocabularies'));
+    $this->assertText($this->callT('Vocabulary'));
     $this->assertText($this->callT("Create referenced entities if they don't already exist"));
 
     $this->drupalPostForm(NULL, [
@@ -1421,7 +1480,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Hard to figure out which button to click, so assert the text and
     // then visit the URL.
     $this->assertLink($this->callT('Configure'));
-    $this->assertText($this->callT('Basic HTML'));
+    // Text format names are in English. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
+    $this->assertText('Basic HTML');
     $this->drupalGet('admin/config/content/formats/manage/basic_html');
     $this->assertText('CKEditor');
     $this->assertText($this->callT('Text editor'));
@@ -1453,6 +1514,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the User Accounts chapter.
    */
   protected function doUserAccounts() {
+    $this->verifyTranslations();
+
     $vendor = $this->demoInput['vendor_type_machine_name'];
     $recipe = $this->demoInput['recipe_type_machine_name'];
 
@@ -1672,6 +1735,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Blocks chapter.
    */
   protected function doBlocks() {
+    $this->verifyTranslations();
 
     // Some UI tests from the block-concept topic.
     $this->drupalGet('admin/structure/block');
@@ -1740,9 +1804,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Verify some UI text on several block pages, without checking navigation.
     $this->drupalGet('admin/structure/block');
     $this->assertRaw('Bartik');
-    $this->assertText($this->callT('Powered by Drupal'));
+    // Block and menu names are shown in English for built-in blocks. See
+    // https://www.drupal.org/project/user_guide/issues/2959852
+    $this->assertText('Powered by Drupal');
     $this->assertText($this->callT('Footer fifth'));
-    $this->assertText($this->callT('Tools'));
+    $this->assertText('Tools');
     $this->assertText($this->callT('Sidebar first'));
     $this->assertText($this->callT('Sidebar second'));
     $this->assertText($this->callT('Operations'));
@@ -1766,6 +1832,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Views chapter.
    */
   protected function doViews() {
+    $this->verifyTranslations();
+
     $vendor = $this->demoInput['vendor_type_machine_name'];
     $recipe = $this->demoInput['recipe_type_machine_name'];
     $main_image = $this->demoInput['vendor_field_image_machine_name'];
@@ -2120,11 +2188,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * import the translations.
    */
   protected function doMultilingualSetup() {
+    $this->verifyTranslations();
 
     // Topic: language-add - Adding a Language.
     // Due to a Core bug, installing a module corrupts translations. So,
     // export them first.
-    $this->exportTranslations();
+    $this->exportTranslations($this->demoInput['first_langcode']);
 
     // Enable the 4 multilingual modules.
     // For non-English versions, locale and language will already be enabled;
@@ -2138,27 +2207,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText('Configuration Translation');
 
     $values = [
-      'modules[config_translation][enable]' => TRUE,
       'modules[content_translation][enable]' => TRUE,
     ];
     if ($this->demoInput['first_langcode'] == 'en') {
-      // In other languages, these other two modules are already enabled.
+      // In other languages, these other three modules are already enabled.
       $values += [
         'modules[language][enable]' => TRUE,
         'modules[locale][enable]' => TRUE,
+        'modules[config_translation][enable]' => TRUE,
       ];
     }
     $this->drupalPostForm(NULL, $values, $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations. Also, this test doesn't seem to work
-    // without some extensive route rebuilding... So, rebuild the cache,
-    // container, and routes.
-    $this->importTranslations();
-    $this->rebuildContainer();
-    $this->rebuildAll();
-    $this->container->get('router.builder')->rebuild();
-    $this->clearCache();
+    // import the saved translations.
+    $this->importTranslations($this->demoInput['first_langcode']);
+    $this->verifyTranslations();
 
     // Add the second language.
     $this->drupalGet('<front>');
@@ -2182,6 +2246,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Add language'));
     // Confirmation and language list after adding Spanish language.
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+    $this->importTranslations($this->demoInput['second_langcode']);
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     // Place the Language Switcher block in sidebar second (no screenshots).
     $this->drupalGet('admin/structure/block/library/bartik');
@@ -2199,6 +2266,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * The first topic is in the doMultilingualSetup() method.
    */
   protected function doTranslating() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     $recipes_view = $this->demoInput['recipes_view_machine_name'];
     $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
@@ -2336,6 +2405,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Extending chapter.
    */
   protected function doExtending() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     $vendors_view = $this->demoInput['vendors_view_machine_name'];
 
@@ -2358,13 +2429,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Search Modules');
       $this->assertText('Sort by');
 
-      // Search for Admin Toolbar in 8.x on drupal.org. Just go directly to the
-      // URL.
-      $this->drupalGet('https://www.drupal.org/project/project_module?f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&f[5]=&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
-      // Module search box on https://www.drupal.org/project/project_module.
-      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"');
-      // Search results on https://www.drupal.org/project/project_module.
-      $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"');
+      // drupal.org screenshots for extend-module are in the doPrefaceInstall()
+      // method.
 
       // Test project page.
       $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
@@ -2376,9 +2442,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Documentation');
       $this->assertText('Resources');
       $this->assertText('tar.gz');
-
-      // Project page for Admin Toolbar module.
-      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info, .block-views') . $this->removeScrollbars() . '"');
     }
 
     // Topic: extend-maintenance: Enabling and Disabling Maintenance Mode.
@@ -2419,14 +2482,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalLogin($this->rootUser);
 
     // Topic: extend-module-install - Downloading and Installing a Module from
-    // drupal.org.
-
-    // English-only screenshot.
-    if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"');
-    }
+    // drupal.org. drupal.org screenshots are in the doPrefaceInstall() method.
 
     // Test navigation to install page.
     $this->drupalGet('<front>');
@@ -2438,9 +2494,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Install new module page (admin/modules/install).
     $this->setUpScreenShot('extend-module-install-admin-toolbar-do.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
 
-    // Topic: extend-theme-find - Finding Themes
+    // Topic: extend-theme-find - Finding Themes. drupal.org screenshots are
+    // in the doPrefaceInstall() method.
 
-    // English-only screenshots.
     if ($this->demoInput['first_langcode'] == 'en') {
       // Test navigation and search page.
       $this->drupalGet('https://www.drupal.org');
@@ -2456,14 +2512,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Search Themes');
       $this->assertText('Sort by');
 
-      // Search for actively maintained 8.x themes on drupal.org. Just go
-      // directly to the URL.
-      $this->drupalGet('https://www.drupal.org/project/project_theme?f%5B0%5D=im_vid_44%3A13028&f%5B1%5D=&f%5B2%5D=drupal_core%3A7234&f%5B3%5D=sm_field_project_type%3Afull&f%5B4%5D=&text=&solrsort=iss_project_release_usage+desc&op=Search');
-      // Theme search box on https://www.drupal.org/project/project_theme.
-      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"');
-      // Search results on https://www.drupal.org/project/project_theme.
-      $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"');
-
       // Test project page
       $this->drupalGet('https://www.drupal.org/project/mayo');
       $this->assertText('Downloads');
@@ -2477,15 +2525,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     // Topic: extend-theme-install - Downloading and Installing a Theme from
-    // drupal.org.
-
-    // English-only screenshots.
-    if ($this->demoInput['first_langcode'] == 'en') {
-
-      $this->drupalGet('https://www.drupal.org/project/mayo');
-      // Downloads section of the Mayo project page on drupal.org.
-      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension:first a:first') . $this->removeScrollbars() . '"');
-    }
+    // drupal.org. Screenshot from drupal.org is in the doPrefaceInstall()
+    // method.
 
     // Test navigation to install page.
     $this->drupalGet('<front>');
@@ -2510,14 +2551,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
 
     // Topic: extend-manual-install - Manually Downloading Module or Theme
-    // Files.
-
-    // English-only screenshot.
-    if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"');
-    }
+    // Files. Screenshot from drupal.org is in the doPrefaceInstall()
+    // method.
 
     // Topic: extend-deploy - Deploying New Site Features.
 
@@ -2564,6 +2599,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Preventing and Fixing Problems chapter.
    */
   protected function doPreventing() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     // Topic: prevent-cache-clear - Clearing the cache.
     // No screenshots, just UI text tests.
@@ -2611,6 +2648,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * Makes screenshots for the Security chapter.
    */
   protected function doSecurity() {
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
+
     // For these topics, we do not want to download translations.
     // They don't seem to get downloaded correctly within the test, and it
     // causes the test to hang.
@@ -2641,18 +2681,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Cron configuration page (admin/config/system/cron).
     $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"');
 
-    // Topic: security-update-module - Updating a Module.
-
-    // English-only screenshots.
-    if ($this->demoInput['first_langcode'] == 'en') {
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-field-release-version:first a:first') . $this->removeScrollbars() . '"');
-    }
+    // Topic: security-update-module - Updating a Module. Screenshots from
+    // drupal.org are in the doPrefaceInstall() method.
 
     // Due to a Core bug, installing a module corrupts translations. So,
-    // export them first.
-    $this->exportTranslations();
+    // export them first. Note that this could cause problems if one of the
+    // two languages here is not English! But normally one is English.
+    $this->exportTranslations($this->demoInput['first_langcode']);
+    $this->exportTranslations($this->demoInput['second_langcode']);
 
     // Install an old version of the Admin Toolbar module, and visit the
     // Updates page.
@@ -2661,10 +2697,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations. Then rebuild the cache/container.
-    $this->importTranslations();
-    $this->resetAll();
-    $this->clearCache();
+    // import the saved translations.
+    $this->importTranslations($this->demoInput['first_langcode']);
+    $this->importTranslations($this->demoInput['second_langcode']);
+    $this->verifyTranslations();
+    $this->verifyTranslations(FALSE);
 
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Reports'));
@@ -2703,7 +2740,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Clears the Drupal cache.
+   * Clears the Drupal cache using the user interface page.
    */
   protected function clearCache() {
     $this->drupalPostForm('admin/config/development/performance', [], $this->callT('Clear all caches'));
@@ -2760,10 +2797,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @param string $file
    *   Name of the screen shot file.
    * @param string $body_addition
-   *   Additional text to add into the HTML body tag. Example:
+   *   (optional) Additional text to add into the HTML body tag. Example:
    *   'onLoad="window.scroll(0,500);"'. This code should blank out irrelevant
    *   portions of the page, so that the ImageMagick capture script can trim
    *   the image automatically down to the right size.
+   * @param bool $fix_drupal_org
+   *   (optional) If set to TRUE, do an additional search/replace to fix
+   *   screenshots of drupal.org pages.
    *
    * @see UserGuideDemoTestBase::showOnly()
    * @see UserGuideDemoTestBase::hideArea()
@@ -2773,8 +2813,15 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @see UserGuideDemoTestBase::reloadOnce()
    * @see UserGuideDemoTestBase::addBorder()
    */
-  protected function setUpScreenShot($file, $body_addition = '') {
+  protected function setUpScreenShot($file, $body_addition = '', $fix_drupal_org = FALSE) {
     $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getRawContent());
+    if ($fix_drupal_org) {
+      // Drupal is putting out a bunch of relative URLs for CSS and images,
+      // which do not work well in screenshots. Fix them.
+      $output = str_replace('"//', '"https://', $output);
+      $output = preg_replace('|"/(?=\w+)|', '"https://www.drupal.org/', $output);
+      $output = preg_replace("|'/(?=\w+)|", "'https://www.drupal.org/", $output);
+    }
 
     // This is like TestBase::verbose() but just the bare HTML output, and
     // with a separate file counter so it doesn't interfere.
@@ -3002,8 +3049,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @see UserGuideDemoTestBase::restoreBackup()
    */
   protected function makeBackup($directory) {
-    $this->clearCache();
-    \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
+    drupal_flush_all_caches();
+    $this->ensureDirectoryWriteable($directory, 'backup');
     $db_manager = $this->backupDBManager($directory);
     $db_manager->backup('database1', 'directory1');
     $file_manager = $this->backupFileManager($directory);
@@ -3036,11 +3083,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     \Drupal::configFactory()->getEditable('system.file')
       ->set('path.temporary', $this->tempFilesDirectory)
       ->save();
-
-    // Clear out the container and cache.
-    $this->rebuildContainer();
-    drupal_flush_all_caches();
-    $this->refreshVariables();
+    $this->flushAll();
 
     // Update the root user, log in, and clear the cache again.
     $this->rootUser = User::load(1);
@@ -3050,7 +3093,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->rootUser->pass = $pass_raw;
     $this->rootUser->save();
     $this->drupalLogin($this->rootUser);
-    $this->clearCache();
+    $this->flushAll();
   }
 
   /**
@@ -3214,50 +3257,234 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Exports the translations for the first language to a temporary file.
+   * Exports the translations for a language to a temporary file.
    *
-   * @see UserGuideDemoBase::importTranslations()
+   * @param string $langcode
+   *   Language code to export the translations for.
+   *
+   * @see UserGuideDemoTestBase::importTranslations()
+   * @see https://www.drupal.org/project/drupal/issues/2806009
    */
-  protected function exportTranslations() {
-    if ($this->demoInput['first_langcode'] != 'en') {
+  protected function exportTranslations($langcode) {
+    if ($langcode != 'en') {
+      $this->fixTranslationSettings();
       $this->drupalPostForm('admin/config/regional/translate/export', [
-          'langcode' => $this->demoInput['first_langcode'],
+          'langcode' => $langcode,
           'content_options[not_customized]' => 1,
           'content_options[customized]' => 1,
           'content_options[not_translated]' => 0,
         ], $this->callT('Export'));
-      $directory = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
-      if (!is_dir($directory)) {
-        \Drupal::service('file_system')->mkdir($directory, NULL, TRUE);
-      }
-      $this->translationFilename = $directory . '/' . $this->demoInput['first_langcode'] . '_' . $this->randomMachineName() . '.po';
-      file_put_contents($this->translationFilename, $this->getRawContent());
-      $this->pass('TRANSLATIONS SAVED TO: ' . $this->translationFilename);
+      $filename = \Drupal::config('locale.settings')->get('translation.path') . '/' . $langcode . '_' . $this->randomMachineName() . '.po';
+      file_put_contents($filename, $this->getRawContent());
+      $this->pass('TRANSLATIONS SAVED TO: ' . $filename);
     }
   }
 
   /**
-   * Imports the translations for the first language from the file, if any.
+   * Imports translations from all existing .po files in translation directory.
    *
-   * @see UserGuideDemoBase::exportTranslations()
+   * @param string $langcode
+   *   Language code to import the translations for. Skips if it is English.
+   * @param bool $read_initial
+   *   If TRUE (FALSE is the default), also read the initial translation file
+   *   from the auto_screenshots/backups/LANGCODE/translation directory, if
+   *   there is one.
+   *
+   * @see UserGuideDemoTestBase::exportTranslations()
+   * @see https://www.drupal.org/project/drupal/issues/2806009
    */
-  protected function importTranslations() {
-    if ($this->translationFilename) {
-      // The setting for translation path is likely incorrect, so fix it.
-      \Drupal::configFactory()->getEditable('locale.settings')
-        ->set('translation.path', $this->tempFilesDirectory)
-        ->save();
+  protected function importTranslations($langcode, $read_initial = FALSE) {
+    if ($langcode != 'en') {
+      $this->fixTranslationSettings();
 
-      $this->drupalPostForm('admin/config/regional/translate/import', [
-        'langcode' => $this->demoInput['first_langcode'],
-        'overwrite_options[not_customized]' => 1,
-        'overwrite_options[customized]' => 1,
-        'customized' => 0,
-        'files[file]' => $this->translationFilename,
-      ], $this->callT('Import'));
+      // Find any translation files in the translation directory, which could
+      // have come from a batch import that didn't really finish, or from the
+      // exportTranslations() method, and import them, deleting after import so
+      // that they don't get imported again later.
 
-      $this->pass('TRANSLATIONS READ FROM: ' . $this->translationFilename);
+      $directory = \Drupal::config('locale.settings')->get('translation.path');
+      $this->pass('CHECKING FOR TRANSLATION EXPORTS IN: ' . $directory);
+      $pattern = '|[a-zA-Z0-9_\-\.]+\.po$|';
+      $options = ['recurse' => FALSE];
+      $result = file_scan_directory($directory, $pattern, $options);
+      if ($read_initial) {
+        $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $langcode . '/translation');
+        if (is_dir($directory)) {
+          $this->pass('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory);
+          $result = array_merge($result, file_scan_directory($directory, $pattern, $options));
+        }
+      }
+
+      $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+      $this->ensureDirectoryWriteable($backup_write_dir, 'backup');
+      foreach ($result as $file) {
+        $file->langcode = $langcode;
+        $this->readPoFile($file->uri, $langcode);
+        $this->pass('TRANSLATIONS READ FROM: ' . $file->uri);
+        $new_name = file_unmanaged_move($file->uri, $backup_write_dir, FILE_EXISTS_RENAME);
+        if ($new_name) {
+          $this->pass('TRANSLATION FILE COPIED TO: ' . $new_name);
+        }
+        else {
+          $this->fail('Could not copy translation file to ' . $backup_write_dir);
+          unlink($directory . '/' . $file->filename);
+          $this->drupalGet('admin/reports/dblog');
+        }
+      }
     }
+
+    $this->flushAll();
+  }
+
+  /**
+   * Fixes the settings for translation.
+   *
+   * Makes sure the translation directory exists.
+   */
+  protected function fixTranslationSettings() {
+    $this->ensureDirectoryWriteable(file_directory_temp(), 'temp');
+    \Drupal::configFactory()->getEditable('locale.settings')
+      ->set('translation.path', file_directory_temp())
+      ->save();
+    drupal_flush_all_caches();
+    $this->refreshVariables();
+    $translations_directory = \Drupal::service('file_system')->realpath('translations://');
+    $this->ensureDirectoryWriteable($translations_directory, 'translations');
+  }
+
+  /**
+   * Ensures that we can write a file to a directory, with an assertion if not.
+   *
+   * @param string $directory
+   *   Directory to ensure is writeable.
+   * @param string $name
+   *   Name of directory for error message if there is a problem.
+   */
+  protected function ensureDirectoryWriteable($directory, $name) {
+    if (!$directory) {
+      $this->fail("Attempting to ensure empty directory variable in $name");
+      return;
+    }
+    // Attempt to create and modify permissions in the directory. Do not use
+    // Drupal container calls, so this can run before installation.
+    if (!is_dir($directory)) {
+      @mkdir($directory);
+    }
+    @chmod($directory, 0777);
+
+    // Just to make sure, attempt to create a file. fopen fails if the file
+    // exists, so attempt to delete it first, but ignore errors if it doesn't
+    // exist yet (it shouldn't).
+    $filename = $directory . '/temp_test' . $this->randomMachineName() . '.txt';
+    @unlink($filename);
+    $fp = @fopen($filename, 'x');
+    if (!$fp) {
+      $this->fail("Could not create output file $filename in $name");
+    }
+    else {
+      fclose($fp);
+      $this->pass("Directory $directory is working for $name");
+    }
+    @unlink($filename);
+  }
+
+  /**
+   * Replicates what Gettext::fileToDatabase() does, but simpler.
+   *
+   * @param string $file_uri
+   *   URI of file to read.
+   * @param string $langcode
+   *   Language code to save the strings for.
+   */
+  protected function readPoFile($file_uri, $langcode) {
+    $reader = new PoStreamReader();
+    $reader->setLangcode($langcode);
+    $reader->setURI($file_uri);
+    $reader->open();
+
+    $header = $reader->getHeader();
+    if (!$header) {
+      throw new \Exception('Missing or malformed header.');
+    }
+
+    $writer = new PoDatabaseWriter();
+    // We need to overwrite existing translations when we read this in,
+    // because the reason we have this method is that translations are being
+    // corrupted (overwritten with English) when modules are enabled.
+    $writer->setOptions([
+      'overwrite_options' => [
+        'not_customized' => TRUE,
+        'customized' => TRUE,
+      ],
+    ]);
+    $writer->setLangcode($langcode);
+    $writer->setHeader($header);
+    $writer->writeItems($reader);
+  }
+
+  /**
+   * Verifies translations to something other than English do not match English.
+   *
+   * @param bool $first
+   *   (optional) TRUE (default) to translate to the first language in the
+   *   demoInput member variable; FALSE to use the second language.
+   */
+  protected function verifyTranslations($first = TRUE) {
+    // Only test if we're testing a non-English language.
+    if (($this->demoInput['first_langcode'] == 'en' && $first) ||
+      ($this->demoInput['second_langcode'] == 'en' && !$first)) {
+      return;
+    }
+
+    // These strings are examples of ones found in English in some previous
+    // tests that should have been translated.
+    $to_test = [
+      'Author',
+      'Basic page',
+      'Body',
+      'Content type',
+      'Comments',
+      'Filter',
+      'Language',
+      'Main navigation',
+      'Preview',
+      'Published status',
+      'Published',
+      'Site section links',
+      'Title',
+    ];
+
+    foreach ($to_test as $string) {
+      $this->assertNotEqual($string, (string) $this->callT($string, $first));
+    }
+
+    // If we're looking at the site's main language (it is not English if we
+    // get to this point in the method), also test that some config is not
+    // English when we load it, and UI text when we view it. We have also just
+    // verified that the translation of this config and UI text was correct
+    // above.
+    if ($first) {
+      $config = \Drupal::config('system.menu.main');
+      $this->assertNotEqual('Main navigation', $config->get('label'));
+      $this->assertNotEqual('Site section links', $config->get('description'));
+
+      // Menu names and descriptions on this page are in English, even if site
+      // language is not English, so only test UI text here.
+      $this->drupalGet('admin/structure/menu');
+      $this->assertText($this->callT('Title'));
+      $this->assertText($this->callT('Description'));
+    }
+  }
+
+  /**
+   * Flushes all caches and rebuilds container and routing.
+   */
+  protected function flushAll() {
+    $this->rebuildContainer();
+    $this->rebuildAll();
+    $this->container->get('router.builder')->rebuild();
+    drupal_flush_all_caches();
+    $this->refreshVariables();
   }
 
 }

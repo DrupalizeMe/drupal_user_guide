@@ -9,6 +9,10 @@ The scripts were derived from the build scripts in:
   https://www.drupal.org/project/asciidoc_display
 See that project's README.txt file for more information.
 
+It also contains two utility scripts:
+- testurls._php - tests validity of URLs in a source directory.
+- search_replace._php - performs text search and replace in a source directory.
+
 SOFTWARE
 
 To run the scripts here, you will need the following software:

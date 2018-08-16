@@ -26,7 +26,7 @@ A _Recept_ tartalomtípusnak léteznie kell. Ehhez lásd a <<structure-content-t
 
 ==== Lépések
 
-. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Taxonómia_ menüpontot (vagy gépeljük a címsorba: _admin/structure/taxonomy_). Az így megnyíló oldalon még csak egy, _Címkék_ nevű szótárat látunk felsorolva. Ez azért van már itt, mert a webhely létrehozásakor az _Általános_ telepítési profilt választottuk, ami automatikusan definiálta ezt a példa szótárat bemutató céllal.
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Taxonómia_ menüpontot (vagy gépeljük a címsorba: _admin/structure/taxonomy_). Az így megnyíló oldalon még csak egy, _Tags_ nevű szótárat látunk felsorolva. Ez azért van már itt, mert a webhely létrehozásakor az _Általános_ telepítési profilt választottuk, ami automatikusan definiálta ezt a példa szótárat bemutató céllal. Ha pedig webhelyünk többnyelvű és adminfelületét nem angolul használjuk, akkor is angolul látjuk a szótár címét – ennek oka a <<language-concept>> témakörnél olvasható.
 +
 --
 // Taxonomy list page (admin/structure/taxonomy).
@@ -104,14 +104,13 @@ image:images/structure-taxonomy-setup-field-settings.png["A Hozzávalók mező t
 | Súgó szöveg | A _Recept_ típusú tartalmakat szerkesztő adminisztrátorok számára egy tájékoztatás, hogy mire való ez a mező. | répa, retek, burgonya
 | _Hivatkozás típusa_ keretben _Hivatkozási mód_ legördülő lista | Kiválasztható, hogy a mező kitöltésekor miként legyenek felsorolva a lehetséges értékek. | Alapértelmezés
 | _Hivatkozás típusa_ keretben _A hivatkozott entitások létrehozása, ha még nem léteznek_ jelölőnégyzet | Ha ezt engedélyezzük, akkor nem kell előre létrehozni a lehetséges kifejezéseket, hanem a _Recept_ szerkesztési oldalán ebbe a mezőbe a nevüket begépelve automatikusan létrejönnek, ha még nem léteztek korábban. | Bepipálva
-| _Hivatkozás típusa_ keretben _Elérhető szótárak_ jelölőnégyzetek | A webhelyen párhuzamosan létező több taxonómiaszótár közül melyikekből lehessen kifejezéseket kiválasztani ebbe a mezőbe. | Hozzávalók
+| _Hivatkozás típusa_ keretben _Szótár_ jelölőnégyzetek | A webhelyen párhuzamosan létező több taxonómiaszótár közül melyikekből lehessen kifejezéseket kiválasztani ebbe a mezőbe. | Hozzávalók
 |================================
 +
 --
 // Reference type section of field settings page for Ingredients field.
 image:images/structure-taxonomy-setup-field-settings-2.png["Mező hivatkozási beállításainak szerkesztése",width="100%"]
 --
-
 
 . Kattintsunk a _Beállítások mentése_ gombra. Ekkor visszajutunk a _Recept_ tartalomtípus _Mezők kezelése_ oldalára, ahonnan korábban kiindultunk. Szintén a betöltődő oldalon egy pozitív rendszerüzenet tájékoztat minket a mező tartalomtípushoz való hozzárendelésének sikerességéről.
 +
@@ -120,12 +119,16 @@ image:images/structure-taxonomy-setup-field-settings-2.png["Mező hivatkozási b
 image:images/structure-taxonomy-setup-finished.png["A Recept tartalomtípus Mezők kezelése oldala",width="100%"]
 --
 
-//==== Expand your understanding
+//==== Az ismeretek elmélyítése
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
-//==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Egy taxonómia-szótár létrehozása"]
+
+//==== Egyéb források
 
 *Közreműködők*
 

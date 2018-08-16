@@ -1,4 +1,5 @@
 [[install-prepare]]
+
 === Preparing to Install
 
 [role="summary"]
@@ -10,20 +11,20 @@ How to choose a method for installing the core software, and satisfy prerequisit
 (((Downloading,core software)))
 (((Drupal core,preparing install)))
 
-==== Goal
+==== Célkitűzés
 
 Choose an appropriate way to install the core software, and handle any required prerequisites.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<install-requirements>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 If you want to use Drush to install the core software, Drush must be installed. See <<install-tools>>.
 
-==== Steps
+==== Lépések
 
 . Choose a method for installing the core software.
 +
@@ -94,18 +95,22 @@ tar -xzf drupal-8.3.2.tar.gz
 
 .. Rename the directory or reconfigure your web hosting, so that the directory name matches the directory your web hosting is configured to use for your site.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 Run the installer if you chose web installer to install the core software. See <<install-run>>.
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-==== Additional resources
+==== Videó
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Preparing to Install"]
+
+==== Egyéb források
 
 http://www.drush.org[Drush]
 
-
-*Attributions*
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
 https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
