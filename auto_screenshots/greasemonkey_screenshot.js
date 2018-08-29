@@ -22,7 +22,7 @@ function findTdChild(elem) {
 }
 
 /**
- * Builds the commands for the screenshots by parsing special lines in the file.
+ * Builds the commands for the screenshots by parsing special lines in the page.
  */
 function buildCommands() {
   var cmds = '';
@@ -61,6 +61,29 @@ function buildCommands() {
 }
 
 /**
+ * Returns the backup lines in the page.
+ */
+function listBackups() {
+  var lines = '';
+
+  // Go through the "passed" elements of the page.
+  var passes = document.getElementsByClassName('simpletest-pass');
+  for (var i = 0; i < passes.length; i++) {
+    var item = passes.item(i);
+    var td = findTdChild(item);
+    if (!td) {
+      continue;
+    }
+    var txt = td.textContent;
+    if (txt.search('BACKUP MADE') >= 0) {
+      lines += txt + "\n";
+    }
+  }
+  return lines;
+}
+
+
+/**
  * Outputs the commands into the special div.
  */
 function outputCommands() {
@@ -71,6 +94,11 @@ function outputCommands() {
 // Make a form for the inputs to the script. But put it in a div not a form so
 // it cannot be submitted by mistake.
 var form = document.createElement('div');
+
+// Put in a list of the backups that were made.
+var backups = document.createElement('pre');
+backups.textContent = listBackups();
+form.appendChild(backups);
 
 // Add input boxes for the script inputs.
 var boxes = [

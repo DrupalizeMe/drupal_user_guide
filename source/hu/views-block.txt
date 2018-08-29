@@ -10,19 +10,19 @@ How to add a block display to a view.
 (((Views module,adding to a view)))
 (((Module,Views)))
 
-==== Goal
+==== Célkitűzés
 
 Add a block display to the Recipes view to display the most recent recipes
 in a sidebar, and change its configuration without changing the existing
 Recipes page view.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<views-concept>>
 * <<views-parts>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * The Recipe content type must exist, it must have a Main image field, and your
 site must have a couple of Recipe content items. See <<structure-content-type>>,
@@ -35,7 +35,7 @@ installation profile) but can be recreated if deleted. See
 
 * The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
 
-==== Steps
+==== Lépések
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
 (_admin/structure/views_). Find the view "Recipes" and click _Edit_ from its
@@ -119,15 +119,18 @@ image:images/views-block_recipes.png["Summary page after configuration",width="1
 image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%"]
 --
 
-// ==== Expand your understanding
+//==== Az ismeretek elmélyítése
 
+//==== Kapcsolódó témák
 
-// ==== Related concepts
+==== Videó
 
-//==== Additional resources
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/xrnuekARwYc[title="Adding a Block Display to a View"]
 
+//==== Egyéb források
 
-*Attributions*
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
 https://pronovix.com/[Pronovix],

@@ -1,74 +1,76 @@
 [[preface-reporting]]
-=== Reporting Problems
+=== Melaporkan Masalah
 [role="summary"]
-How to report an issue with this guide (with detailed steps).
+Cara melaporkan masalah dengan panduan ini (dengan langkah-langkah terperinci).
 
-==== Goal
+==== Tujuan
 
-Report a problem with this guide, such as:
+Laporkan masalah dengan panduan ini, seperti:
 
-* Information that is incorrect or does not follow best practices
-* Steps that do not work
-* Screen shots or text that doesn't match what you see on the screen
-* Unclear writing
-* Places where a table or screen shot would help clarify the text
-* Failure to define terminology
-* Missing knowledge prerequisites or site prerequisites for a topic
-* Typographical, spelling, grammar, or formatting errors
-* Broken links
+* Informasi yang salah atau tidak mengikuti praktik terbaik
+* Langkah-langkah yang tidak berhasil
+* Cuplikan layar atau teks yang tidak sesuai dengan apa yang Anda lihat di layar
+* Tulisan yang tidak jelas
+* Tempat-tempat di mana meja atau screen shot akan membantu memperjelas teks
+* Kegagalan untuk mendefinisikan terminologi
+* Hilang prasyarat pengetahuan atau prasyarat situs untuk suatu topik
+* Kesalahan ketik, ejaan, tata bahasa, atau pemformatan
+* Tautan rusak
 
 // ==== Prerequisite knowledge
 
 // ==== Site prerequisites
 
-==== Steps
+==== Langkah-langkah
 
-. Make a note of the topic or topics that contain the problem you have found.
+. Catat topik atau topik yang mengandung masalah yang Anda temukan.
 
-. Log in to https://www.drupal.org[_Drupal.org_] (you will need to create a user
-account if you do not already have one).
+. Masuk ke https://www.drupal.org[_Drupal.org_] (Anda perlu membuat akun
+ pengguna jika Anda belum memilikinya).
 
-. Visit the https://www.drupal.org/project/issues/user_guide[User Guide issues
-page on _Drupal.org_].
+. Kunjungi https://www.drupal.org/project/issues/user_guide[Halaman masalah
+ Panduan Pengguna pada _Drupal.org_].
 
-. Verify that the problem you found has not already been reported in another
-issue:
-  * If there are only a few open issues, scan the _Summary_ column to see if
-  any of their descriptions match the problem you found. You may also need to
-  read some of the issues to make sure, which you can do by clicking the links
-  in the _Summary_ column.
-  * If the open issue list is long, enter either a keyword related to the
-  problem you found or the title of the topic where the problem occurs in the
-  _Search for_ box, and click _Search_ to reduce the issue list. Then either
-  scan the summaries or read the issues to see if they match your problem.
+. Verifikasi bahwa masalah yang Anda temukan belum dilaporkan dalam masalah
+ lain:
+  * Jika hanya ada beberapa masalah terbuka, pindai kolom _Summary_ untuk
+  melihat apakah salah satu deskripsi mereka sesuai dengan masalah yang Anda
+  temukan. Anda mungkin juga perlu membaca beberapa masalah untuk memastikan,
+  yang dapat Anda lakukan dengan mengklik tautan di kolom _Summary_.
+  * Jika daftar masalah terbuka panjang, masukkan kata kunci yang terkait
+  dengan masalah yang Anda temukan atau judul topik tempat masalah terjadi di
+  kotak _Search for_, dan klik _Search_ untuk mengurangi daftar masalah.
+  Kemudian pindai ringkasan atau baca masalah untuk melihat apakah mereka
+  cocok dengan masalah Anda.
 
-. If you determine that your problem has not already been reported, click
-_Create a new issue_, and fill in the issue report as follows:
+. Jika Anda menemukan bahwa masalah Anda belum dilaporkan, klik
+_Create a new issue_, dan isi laporan masalah sebagai berikut:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title | Short summary of the problem you found | Instructions in "Adding
-  a Content Type" do not work
-| Category | Type of issue being reported | Bug report
-| Version | Version of the guide you found the problem in | 8.x-0.x-dev
-| Issue summary | Details of the problem you found | In the "Adding a Content
-  Type" topic, in step 3, when I clicked _Save_, I got the following error
-  message: ...
+| Nama bidang | Penjelasan | Contoh nilai
+| Title | Ringkasan singkat masalah yang Anda temukan | Petunjuk dalam
+  "Menambahkan Jenis Konten" tidak berfungsi
+| Category | Jenis masalah sedang dilaporkan | Laporan bug
+| Version | Versi panduan yang Anda temukan masalahnya | 8.x-0.x-dev
+| Issue summary | Detail masalah yang Anda temukan | Di topik "Menambahkan tipe
+  konten", di langkah 3, ketika saya mengklik _Simpan_, saya mendapat pesan
+  galat berikut: ...
 |================================
 
-. Reread the _Title_ and _Issue summary_ you entered, and verify that the
-following information is included in your report:
-  * A complete description of the problem you found
-  * The name of the topic or topics where you found the problem
-  * The language you are reading the guide in (if not English)
-  * If you read the guide on a website, a link to the page or pages
-    with the problem
+. Baca kembali _Title_ dan _Issue summary_ yang Anda masukkan, dan verifikasi
+bahwa informasi berikut disertakan dalam laporan Anda:
+* Penjelasan lengkap tentang masalah yang Anda temukan
+   * Nama topik atau topik tempat Anda menemukan masalah
+   * Bahasa yang Anda baca di panduan (jika bukan bahasa Inggris)
+   * Jika Anda membaca panduan di situs web, tautan ke halaman atau halaman
+     dengan masalah
 
-. Click _Save_ to create the issue.
+. Klik _Save_ untuk melaporkan masalah.
 
-. Check back on the issue in a few days. If one of the project maintainers has
-asked for clarification, respond by adding a comment to the issue.
+. Periksa kembali masalah ini dalam beberapa hari. Jika salah satu pengelola
+  proyek telah meminta klarifikasi, tanggapi dengan menambahkan komentar
+  untuk masalah ini.
 
 // ==== Expand your understanding
 
@@ -77,6 +79,7 @@ asked for clarification, respond by adding a comment to the issue.
 // ==== Additional resources
 
 
-*Attributions*
+*Atribusi*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Ditulis oleh https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Diterjemahkan oleh https://www.drupal.org/u/suryanto[Suryanto Rachmat]

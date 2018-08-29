@@ -10,16 +10,16 @@ How to update a contributed module by using the administrative interface and run
 (((Contributed module,updating)))
 (((Drush tool,using to update module)))
 
-==== Goal
+==== Célkitűzés
 
 Update a contributed module and run the _Database updates_ script.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 * A contributed module has been installed and there is an update available for it. See <<extend-module-install>> and <<security-announce>>.
 
@@ -31,7 +31,7 @@ Update a contributed module and run the _Database updates_ script.
 
 * If you want to use Drush, Drush must be installed. See <<install-tools>>.
 
-==== Steps
+==== Lépések
 
 Before you start, check for module-specific update instructions. This is typically necessary while updating modules that involve the usage of third-party libraries. Read and understand all module-specific requirements before proceeding with the updates. To find instructions, check the module's project page _Read Documentation_ link.
 
@@ -79,19 +79,23 @@ drush up admin_toolbar
 
 . Follow the instructions on the screen.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * Review the site log (refer to <<prevent-log>>) once the updates are complete to check for errors.
 
 * <<security-update-theme>>
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
-==== Additional resources
+==== Videó
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/ZYFJ_OJaK4M[title="Updating a Module"]
+
+==== Egyéb források
 
 https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Updating modules"]
 
-
-*Attributions*
+*Közreműködők*
 
 Adapted by https://www.drupal.org/u/batigolix[Boris Doesborgh], and https://www.drupal.org/u/hey_germano[Sarah German] at https://www.advomatic.com[Advomatic], from https://www.drupal.org/node/250790["Updating modules"], copyright 2000-2017 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].

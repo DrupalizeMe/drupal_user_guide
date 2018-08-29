@@ -23,22 +23,22 @@ How to download and install a theme from Drupal.org or by using Drush.
 (((Drush tool,using to download and install theme)))
 (((Drupal.org website,downloading and installing theme from)))
 
-==== Goal
+==== Célkitűzés
 
 Download and install a theme from _Drupal.org_.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<extend-theme-find>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
 If you want to install via the website, the core Update Manager module must be installed. See <<config-install>> for instructions on installing modules.
 
 If you want to use Drush, Drush must be installed. See <<install-tools>>.
 
-==== Steps
+==== Lépések
 
 You can use the administrative interface or Drush to install a contributed theme. If you are installing a custom theme rather than a contributed theme, if you see a message saying _Installing modules and themes requires FTP access to your server_,  or if the steps below do not work to download and unpack the theme files, follow the steps in <<extend-manual-install>>. If you are installing a contributed theme with external dependencies that are managed by Composer, follow the steps for downloading in <<install-composer>>. In either of these cases, then continue here with step 7 in the instructions for the administrative interface below.
 
@@ -89,7 +89,7 @@ drush config-set system.theme default mayo
 
 . Follow the instructions on the screen.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * In the _Manage_ administrative menu, navigate to _Appearance_ (_admin/appearance_) and uninstall any themes that you are not using.
 
@@ -99,11 +99,15 @@ drush config-set system.theme default mayo
 
 * If you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-//==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/UOYy9A_9_Lw[title="Downloading and Installing a Theme from Drupal.org"]
 
-*Attributions*
+//==== Egyéb források
+
+*Közreműködők*
 
 Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me], and https://www.drupal.org/u/batigolix[Boris Doesborgh].

@@ -30,7 +30,9 @@ The Recipe content type must exist. See <<structure-content-type>>.
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_
 (_admin/structure/taxonomy_). You will see the _Tags_ vocabulary that was
-created with the core Standard installation profile.
+created with the core Standard installation profile. (Note that the name and
+description of this vocabulary are shown in English on this page; see
+<<language-concept>> for an explanation.)
 +
 --
 // Taxonomy list page (admin/structure/taxonomy).
@@ -111,7 +113,7 @@ image:images/structure-taxonomy-setup-field-settings.png["Field storage settings
 |Field name | Explanation | Value
 |Help text | Help shown to users creating content |Enter ingredients that site visitors might want to search for
 |Reference type > Reference method | Select the method used to choose allowed values | Default
-|Reference type > Available Vocabularies | Select the vocabulary to choose allowed values from | Ingredients
+|Reference type > Vocabulary | Select the vocabulary to choose allowed values from | Ingredients
 |Reference type > Create referenced entities if they don't already exist | Whether new ingredient terms can be created from the content editing form | Checked
 |================================
 +
@@ -133,6 +135,11 @@ image:images/structure-taxonomy-setup-finished.png["Manage fields page for Recip
 // ==== Expand your understanding
 
 //==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Setting up a Taxonomy"]
 
 //==== Additional resources
 

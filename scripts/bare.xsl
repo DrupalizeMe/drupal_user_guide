@@ -6,6 +6,9 @@
      display in the asciidoc_display module. See script mkoutput.sh for
      usage. -->
 
+<!-- No title on the abstract for title page. -->
+<xsl:param name="abstract.notitle.enabled" select="1"/>
+
 <!-- Use outline numbering for sections. -->
 <xsl:param name="section.autolabel" select="1"/>
 <xsl:param name="section.autolabel.max.depth">1</xsl:param>
@@ -327,6 +330,41 @@
       </xsl:if>
     </xsl:otherwise>
   </xsl:choose>
+</xsl:template>
+
+<!-- Override video template to output in an iframe instead of an embed tag.
+     Customized for our purpose; doesn't support attributes in the original
+     except the URL of the video and the title. -->
+<xsl:template match="videodata">
+  <xsl:variable name="alt">
+    <xsl:choose>
+      <xsl:when test="ancestor::mediaobject/alt">
+        <xsl:apply-templates select="ancestor::mediaobject/alt"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="(ancestor::mediaobject/textobject/phrase)[1]"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="filename">
+    <xsl:call-template name="mediaobject.filename">
+      <xsl:with-param name="object" select=".."/>
+    </xsl:call-template>
+  </xsl:variable>
+  <xsl:element name="iframe" namespace="http://www.w3.org/1999/xhtml">
+    <xsl:attribute name="id">ytplayer</xsl:attribute>
+    <xsl:attribute name="type">text/html</xsl:attribute>
+    <xsl:attribute name="width">640</xsl:attribute>
+    <xsl:attribute name="height">360</xsl:attribute>
+    <xsl:attribute name="src">
+      <xsl:value-of select="concat($filename, '?modestbranding=1&amp;rel=0&amp;autoplay=0')"/>
+    </xsl:attribute>
+    <xsl:attribute name="alt">
+      <xsl:value-of select="$alt"/>
+    </xsl:attribute>
+    <xsl:attribute name="frameborder">0</xsl:attribute>
+    <xsl:attribute name="allowfullscreen">allowfullscreen</xsl:attribute>
+  </xsl:element>
 </xsl:template>
 
 </xsl:stylesheet>
