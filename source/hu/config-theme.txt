@@ -1,18 +1,18 @@
 [[config-theme]]
 
-=== Configuring the Theme
+=== A smink beállítása
 
 [role="summary"]
-How to edit a theme's settings to update the color scheme and add a logo.
+A smink néhány beállításának szerkesztése, mint például a színséma módosítása és a logó cseréje.
 
-(((Theme,configuring)))
-(((Bartik theme,configuring)))
-(((Color scheme,configuring)))
-(((Logo image,configuring)))
+(((Smink,beállítása)))
+(((Bartik smink,beállítása)))
+(((Színséma,beállítása)))
+(((Logó kép,beállítása)))
 
 ==== Célkitűzés
 
-Edit the settings of the default core Bartik theme to change the color scheme and to add a logo.
+Módosítsuk az alaprendszer alapértelmezett _Bartik_ sminkjét azzal, hogy megváltoztatjuk a színsémáját és hozzáadunk egy logót.
 
 ==== Szükséges előismeretek
 
@@ -22,63 +22,63 @@ Edit the settings of the default core Bartik theme to change the color scheme an
 
 ==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Appearance_ (_admin/appearance_).
+. Webhelyünk _Kezelés_ adminisztrációs menüjében menjünk a _Megjelenés_ oldalra (vagy címsorban adjuk meg az _admin/appearance_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi sminket.
 
-. Under _Installed Themes_, you will find Bartik listed as your default theme. Under _Bartik (default theme)_, click _Settings_.
+. A _Telepített sminkek_ cím alatt találjuk a Bartik sminket, a neve mellett zárójelben pedig valószínűleg az „alapértelmezés szerinti smink” megjegyzés olvasható. Ha igen, akkor kattintsunk a _Beállítások_ hivatkozásra.
 +
 --
 // Bartik section of admin/appearance.
-image:images/config-theme_bartik_settings.png["Default theme, Bartik",width="100%"]
+image:images/config-theme_bartik_settings.png["Alapértelmezett smink, Bartik",width="100%"]
 --
 
-. Under _Color scheme_, click inside each color build box and type the proper color codes you would like to add. For example, use the following colors:
+. A _Színséma_ keretben kattintsunk bele minden egyes beviteli mezőbe és gépeljünk be tetszőlegesen választott színkódokat hexadecimális formában, de beírhatjuk a Kézikönyv során példaként használt _Termelői Piac_ webhelyünk színeit is az alábbi táblázatból:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Area | Color
-|Header background top| #7db84a (green)
-|Header background bottom| #2a3524 (dark green)
-|Main background| #ffffff (white)
-|Sidebar background| #f8bc65 (light orange)
-|Sidebar borders| #e96b3c (orange)
-|Footer background| #2a3524 (dark green)
-|Title and slogan| #ffffff (white)
-|Text color| #000000 (black)
-|Link color| #2a3524 (dark green)
+| Terület | Színkód
+| Fejléc háttere fent | `#7db84a` (zöld)
+| Fejléc háttere lent | `#2a3524` (sötét zöld)
+| Általános háttér | `#ffffff` (fehér)
+| Oldalsáv háttere | `#f8bc65` (világos narancs)
+| Oldalsáv keretei | `#e96b3c` (narancssárga)
+| Lábléc háttere | `#2a3524` (sötét zöld)
+| Cím és jelmondat | `#ffffff` (fehér)
+| Szöveg szín | `#000000` (fekete)
+| Hivatkozás színe | `#2a3524` (sötét zöld)
 |================================
 +
-Note: You can also use the color wheel on the right to select colors of your choice. The web color codes will be added for you.
+Megjegyzés: A színek kiválasztásához használhatjuk a jobb oldalon megjelenő színkereket is. A színkerékre kattintva a színkódok automatikusan kitöltődnek.
 +
 --
 // Color settings section of admin/appearance/settings/bartik.
-image:images/config-theme_color_scheme.png["Updated color specifications in the core Bartik theme",width="100%"]
+image:images/config-theme_color_scheme.png["Az alaprendszer Bartik sminkjének frissített színbeállításai",width="100%"]
 --
 
-. Under _Logo Image Settings_, uncheck _Use the default logo supplied by the theme_.
+. A _Logókép_ keretben, tiltsuk le az _A smink által nyújtott logó használata_ jelölőnégyzetet.
+
+. A _Logó kép feltöltése_ felirat alatti gombra kattintva keressük meg a logó fájlt számítógépünkön:
 +
 --
 // Logo upload section of admin/appearance/settings/bartik.
-image:images/config-theme_logo_upload.png["New logo in core Bartik theme settings"]
+image:images/config-theme_logo_upload.png["Új logó az alaprendszer Bartik sminkjének beállításainál"]
 --
-
-. Under _Upload logo image_, locate a logo file and upload it to your site. Note: You can also set a universal logo for all themes under _Appearance_ > _Settings_ (_admin/appearance/settings_). A custom logo for your theme will override the universal logo.
 +
-Once you have selected the file you would like to upload, you will see its filename next to the _Choose File_ button.
+Ha kiválasztottuk a fájlt a gépünk mappa ablakában, akkor annak neve megjelenik a gomb mellett. Jó tudni, hogy beállítható általános, sminktől független logó kép is a _Megjelenítés_ > _Beállítások_ (vagy címsorban _admin/appearance/settings_) oldalon. A smink itt megadott egyéni logója azonban felülírja azt az általános logót.
 
-. In order to save your changes and see the updated colors and logo on your site, click _Save configuration_ at the bottom of the page.
+. Változtatásaink elmentéséhez és az új logónk feltöltéséhez kattintsunk a _Beállítások mentése_ gombra a lap alján.
 +
-Note: Under _Color scheme_, there is a _Preview_ section that displays a sample of how your website will look with the new settings.
+Megjegyzés: fentebb, a színkódok táblázata alatt egy _Előnézet_ látható, ami segít elképzelnünk nagyjából a választott színek összhatását.
 +
 --
 // Preview section of admin/appearance/settings/bartik.
-image:images/config-theme_color_scheme_preview.png["core Bartik theme settings preview",width="100%"]
+image:images/config-theme_color_scheme_preview.png["A Bartik smink előnézete",width="100%"]
 --
 
-. Click _Return to site_ in the toolbar to verify that you have updated the core Bartik theme settings for your website.
+. Kattintsunk a _Vissza a webhelyre_ gombra az eszközsor bal végén, hogy ellenőrizzük a smink új beállításait a webhelyünkön.
 +
 --
 // Home page after theme settings are finished.
-image:images/config-theme_final_result.png["Final result of editing the core Bartik theme settings - colors and logo",width="100%"]
+image:images/config-theme_final_result.png["Végső eredmény az alaprendszer Bartik sminkjének beállítása - színek és logó - után",width="100%"]
 --
 
 ==== Az ismeretek elmélyítése
@@ -87,18 +87,17 @@ image:images/config-theme_final_result.png["Final result of editing the core Bar
 
 * <<extend-theme-install>>
 
-* If you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
+* Ha nem látjuk azonnal az eredményét a változtatásainknak, akkor szükség lehet a gyorsítótár ürítésére. Lásd <<prevent-cache-clear>>.
 
 //==== Kapcsolódó témák
 
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/CEi3i1YGOs0[title="Configuring the Theme"]
+video::https://www.youtube-nocookie.com/embed/CEi3i1YGOs0[title="A smink beállítása"]
 
 //==== Egyéb források
 
-
 *Közreműködők*
 
-Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel], https://www.drupal.org/u/mndonx[Amanda Luker] at https://www.advomatic.com/[Advomatic], and https://www.drupal.org/u/jerseycheese[Jack Haas].
+Írta és szerkesztette: https://www.drupal.org/u/AnnGreazel[Ann Greazel], https://www.drupal.org/u/mndonx[Amanda Luker] (https://www.advomatic.com/[Advomatic]) és https://www.drupal.org/u/jerseycheese[Jack Haas]. Fordította: https://www.drupal.org/u/pandelon[Pandelon].
