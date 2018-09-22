@@ -1,19 +1,19 @@
 [[user-permissions]]
 
-=== Assigning Permissions to a Role
+=== Jogosultság adása egy szerepkörnek
 
 [role="summary"]
-How to assign a permission to a role.
+Hogyan kezeljük a jogosultságait egy már létező szerepkörnek.
 
-(((Permission,changing)))
-(((Permission,granting)))
-(((Permission,denying)))
-(((Role,changing permission)))
-(((Security,assigning permission)))
+(((Jogosultság,megváltoztatása)))
+(((Jogosultság,adása)))
+(((Jogosultság,megvonása)))
+(((Szerepkör,jogosultságok megváltoztatása)))
+(((Biztonság,jogosultságok adása)))
 
 ==== Célkitűzés
 
-Change the permissions for the Vendor role so that users can create, edit, and delete Recipe and Vendor content, format the content, and contact each other.
+Megváltoztatjuk a jogosultságait az _Árus_ szerepkörnek úgy, hogy az ebbe sorolt felhasználók képesek legyenek beküldeni új, szerkeszteni és törölni már meglévő recepteket, valamint frissíteni a saját adatlapjukat. Mindehhez használhassanak szövegformázást és üzenhessenek egymásnak.
 
 ==== Szükséges előismeretek
 
@@ -21,43 +21,43 @@ Change the permissions for the Vendor role so that users can create, edit, and d
 
 ==== Webhely előfeltételei
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Már léteznie kell az _Árus_ szerepkörnek, amit az előző, <<user-new-role>> részben végeztünk el.
 
 ==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _People_ > _Roles_ (_admin/people/roles_). The _Roles_ page appears.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Felhasználók_ > _Szerepkörök_ oldalra (vagy címsorban adjuk meg az _admin/people/roles_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi szerepkört.
 
-. Click _Edit permissions_ in the dropdown for the Vendor role. The _Edit role_ page appears where you can see all the available actions for the website such as, for example, _Post comments_ or _Use advanced  search_. The available permissions depend on the modules that are installed in the site. Note: Some permissions may have security implications. Be cautious while assigning permissions to roles.
+. Válasszuk a _Jogosultságok szerkesztése_ lehetőséget a lenyíló gombról. Az ekkor megjelenő _Szerepkör szerkesztése_ oldal felsorolja a webhelyünkön létező valamennyi jogosultságot. Ha végigfutunk rajta a szemünkkel, olyasmiket fogunk látni, mint például _Hozzászólások beküldése_ vagy _Haladó keresés használata_. Megjegyzés: néhány jogosultságnak biztonsági következményei vannak, ezért tanácsos elővigyázatosnak lenni atekintetben, hogy mely szerepköröknek adjuk meg őket. Mivel a jogosultságokat a webhelyen pillanatnyilag engedélyezett modulok határozzák meg, ezért a könnyebb áttekintés végett csoportosítva vannak az őket definiáló modulok szerint.
 
-. Check the boxes for the following permissions, listed by module:
+. Jelöljük be az alább felsorolt jogosultságokat:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Module | Permission
-| Contact | Use users' personal contact forms
-| Filter | Use the Restricted HTML text format
-| Node | Recipe: Create new content
-| Node | Recipe: Edit own content
-| Node | Recipe: Delete own content
-| Node | Vendor: Edit own content
-| Quick Edit | Access in-place editing
+| Modul | Jogosultság neve
+| Contact | Felhasználói szintű kapcsolatfelvételi űrlap használata
+| Filter | Korlátozott HTML szövegformátum használata
+| Node | Recept: új tartalom létrehozása
+| Node | Recept: saját tartalom törlése
+| Node | Recept: saját tartalom szerkesztése
+| Node | Árus: saját tartalom szerkesztése
+| Quick Edit | Helybeni szerkesztés engedélyezett
 |================================
 +
 --
 // Permissions page for Vendor (admin/people/permissions/vendor).
-image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
+image:images/user-permissions-check-permissions.png["Receptek kezelésére vonatkozó jogosultságok megadása az Árus szerepkörű felhasználóknak",width="100%"]
 --
 
-. Click _Save permissions_. You will get a message saying your changes have been saved.
+. Kattintsunk a _Jogosultságok mentése_ gombra, majd egy _A változások mentése megtörtént_ állapotüzenet tájékoztat róla, ha a mentés sikeres volt:
 +
 --
 // Confirmation message after updating permissions.
-image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
+image:images/user-permissions-save-permissions.png["Megerősítő üzenet a jogosultságok mentése után"]
 --
 
 ==== Az ismeretek elmélyítése
 
-* Log in as one of the new users you created in <<user-new-user>>. Verify whether you have the correct permissions.
+* Mivel emlékszünk a jelszavaikra, ezért ellenőrzésképpen be tudunk jelentkezni az előző, <<user-new-user>> részben készített két Árus szerepkörű fiókkal, hogy megnézzük, milyen funkciókhoz férnek hozzá a jogosultságaik kibővítését követően.
 
 * <<user-roles>>
 
@@ -68,12 +68,12 @@ image:images/user-permissions-save-permissions.png["Confirmation message after u
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/IlVh9f4BHVw[title="Assigning Permissions to a Role"]
+video::https://www.youtube-nocookie.com/embed/IlVh9f4BHVw[title="Jogosultság adása egy szerepkörnek"]
 
 ==== Egyéb források
 
-https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
+https://www.drupal.org/docs/7/managing-users[Managing Users] (azaz „Felhasználók kezelése”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 *Közreműködők*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], https://www.drupal.org/u/bemery987[Brian Emery], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle], from https://www.drupal.org/node/1803614["User Roles"], copyright 2000-2017 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg], https://www.drupal.org/u/bemery987[Brian Emery] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/node/1803614[User Roles] (azaz „Felhasználói szerepkörök”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000-2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
