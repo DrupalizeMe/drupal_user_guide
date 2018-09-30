@@ -34,11 +34,11 @@ Hogyan lehet a Configuration Manager modullal összhangba hozni egymással a web
 
 ==== Lépések
 
-. A *kiinduló* példány _Kezelés_ adminisztrációs menüjében menjünk a _Konfiguráció_ > _Fejlesztés_ > _Konfiguráció szinkronizálása_ > _Export_ oldalra (vagy címsorban adjuk meg az _admin/config/development/configuration/full/export_ útvonalat).
+. A *kiinduló* példány _Kezelés_ adminisztrációs menüjében menjünk a _Konfiguráció_ > _Fejlesztés_ > _Konfiguráció szinkronizálása_ > _Export_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/configuration/full/export_ útvonalat).
 
 . Kattintsunk az _Export_ gombra. A webhely előállít egy tömörített állományt ami a teljes konfigurációját tartalmazza. Ezt mentsük le a számítógépünkre.
 
-. Hasonlóképpen az előző lépésekhez, a *cél* példányon is menjünk a _Kezelés_ adminisztrációs menüben a _Konfiguráció_ > _Fejlesztés_ > _Konfiguráció szinkronizálása_ > _Import_ oldalra (vagy címsorban adjuk meg az _admin/config/development/configuration/full/import_ útvonalat).
+. Hasonlóképpen az előző lépésekhez, a *cél* példányon is menjünk a _Kezelés_ adminisztrációs menüben a _Konfiguráció_ > _Fejlesztés_ > _Konfiguráció szinkronizálása_ > _Import_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/configuration/full/import_ útvonalat).
 
 . Keressük ki az előbb letöltött tömörített fájlt a számítógépünkön és kattintsunk a _Feltöltés_ gombra. A sikeres feltöltést és a fájl automatikus kicsomagolását követően a _Szinkronizálás_ oldalra (címsorban _admin/config/development/configuration_) jutunk, ahol a „A beállításokat tartalmazó fájlok feltöltése sikeres volt és készen állnak az importálásra” állapotüzenet fogad.
 
