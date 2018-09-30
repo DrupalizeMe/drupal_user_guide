@@ -8,7 +8,7 @@ Bár a kialakult terminológia nem a legszerencsésebb, a _nézetmódoknak_ nem 
 (((Nézetmód, áttekintés)))
 (((Entitás nézetmód,áttekintés)))
 (((Formázó,áttekintés)))
-(((Mező formázó,áttekintés)))
+(((Mezőformázó,áttekintés)))
 
 ==== Szükséges előismeretek
 
@@ -25,7 +25,7 @@ Egy entitás (legyen az akár egy tartalom, egy felhasználó vagy egy hozzász�
 
 Minden ilyen és ehhez hasonló nézetmód az adminfelületen keresztül beállítható. Például az e Kézikönyvben bemutatott termelői piac webhelyünk visszatérő példájánál maradva, a _Receptek_ tartalomtípus nézetmódjainak beállítási lehetőségeit a _Kezelés_ adminmenü _Felépítés_ » _Tartalomtípusok_ (címsorban _/admin/structure/types_) oldalon kiválasztva, majd a _Megjelenés beállítása_ fülre kattintva látjuk. Minden nézetmódban külön-külön meghatározható, hogy a tartalomtípus adott mezője megjelenjen-e, és ha igen, melyik _formázó_ legyen rá alkalmazva.
 
-==== De mi az a mező formázó?
+==== De mi az a mezőformázó?
 
 Az adatbázis egy adott táblájának cellájában tárolt és onnan kiolvasott nyers adatot (például egy időbélyeget) nem biztos, hogy mindig jó ötlet lenne közvetlenül a látogató elé ömleszteni, helyette inkább különböző szabályok szerint feldolgozva tálaljuk: átszámoltathatjuk a felhasználó időzónájára és kiírathatjuk betűvel a hónap nevét és a hét napját a saját nyelvén. Másik példa lehet a hosszabb szövegek tárolására is alkalmas mezők rövidített megjelenítése, vagy a taxonómiakifejezések saját oldalukra való linkelése. Tekintettel a rengeteg beállítási lehetőségre, javasolt körülnézni az előbb említett _Megjelenés beállítása_ oldalon, így magunk is felfedezhetjük, milyen további formázási lehetőségeket kínál a Drupal a _Receptek_ tartalomtípusban használt mezők ábrázolásához.
 
