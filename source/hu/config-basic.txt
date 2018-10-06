@@ -23,7 +23,7 @@ E témakörben áttekintjük, hogyan lehet a webhelyünket elnevezni, jelmondatu
 
 ==== Célkitűzés
 
-Változtassuk meg az olyan alapvető információkat webhelyünkön, mint annak elnevezése, jelmondatunk és az alapértelmezett időzónája.
+Változtassuk meg az olyan alapvető információkat webhelyünkön, mint az elnevezése, a jelmondatunk és az alapértelmezett időzónája.
 
 ==== Szükséges előismeretek
 
@@ -62,11 +62,11 @@ image:images/config-basic-SiteInfo.png["Webhely részletei űrlap"]
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Javasolt kitöltés
+| Mező neve | Magyarázat | Példaérték
 | Honosítás > Alapértelmezés szerinti ország | Válasszuk ki a legördülő lehetőségek közül azt az országot, amelyet webhelyünk központjának gondolunk. | Magyarország
-| Honosítás > A hét első napja | A hetekkel kapcsolatos számításokhoz (pl. naptár funkció) szükséges. | hétfő
+| Honosítás > A hét első napja | A hetekkel kapcsolatos számításokhoz szükséges (pl. naptár funkció). | hétfő
 | Időzónák > Alapértelmezés szerinti időzóna | Megadhatjuk általánosan, hogy webhelyünk működésének szempontjából mit tekintünk alapidőnek. | Európa > Budapest
-| Időzónák > A felhasználók beállíthatják a saját időzónájukat | Ha látogatóink várhatóan a Föld sok más pontjáról is használják majd webhelyünket, akkor engedélyezhetjük számukra, hogy felhasználói fiókjukban megadhassák a saját időzónájukat. Ez a dátumok és időpontok megjelenítésekor az átszámítást fogja befolyásolni számukra. | Nincs bejelölve
+| Időzónák > A felhasználók beállíthatják a saját időzónájukat | Ha látogatóink várhatóan a világ más pontjairól is használják majd webhelyünket, akkor engedélyezhetjük számukra, hogy felhasználói fiókjukban megadhassák a saját időzónájukat. Ez a dátumok és időpontok megjelenítésekor az átszámítást fogja befolyásolni számukra. | Nincs bejelölve
 |================================
 +
 --
