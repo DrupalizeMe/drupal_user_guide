@@ -20,7 +20,7 @@ Lemásoljuk a meglévő webhelyünket, hogy legyen belőle egy másik példányu
 
 * Talán szükségtelen mondani, hogy mindenképpen léteznie kell már a webhelyünknek legalább egy példányban, amit klónozni tervezünk.
 
-* Ha úgy döntünk, hogy a Drush-t használnánk az alábbi lépések némelyikéhez, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
+* Ha úgy döntünk, hogy a Drusht használnánk az alábbi lépések némelyikéhez, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
 
 ==== Lépések
 
@@ -36,7 +36,7 @@ Lemásoljuk a meglévő webhelyünket, hogy legyen belőle egy másik példányu
 $ mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
 ----
 
-  * Ha inkább Drush-t használnánk, akkor ezt a parancsot futtassuk:
+  * Ha inkább Drusht használnánk, akkor ezt a parancsot futtassuk:
 +
 ----
 $ drush sql-dump > BACKUPFILE.sql
@@ -75,7 +75,7 @@ $settings['trusted_host_patterns']
 $ mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
 ----
 +
-  * Drush-sal is lehet importálni, mégpedig így:
+  * Drushsal is lehet importálni, mégpedig így:
 +
 ----
 $ drush sql-query --file=BACKUPFILE.sql

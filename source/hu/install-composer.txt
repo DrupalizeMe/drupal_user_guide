@@ -32,7 +32,7 @@ A Git vagy Composer használatához telepítve kell lenniük vagy a helyi fejles
 
 ==== Lépések
 
-Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése mennyi különbségben eltér, előfordulhat, hogy az alábbiakban leírt, a helyi fejlesztői környezetünkre való telepítésről szóló lépéssor alapján nem sikerül telepítenünk a Gitet vagy a Composer-t az éles webkiszolgálón. Ilyen esetekben javasolt a Gittel/Composerrel lokálhoszton elvégezni a frissítéseket, majd a módosult könyvtárakat és fájlokat betömörítve felmásolni a távoli tárhelyünkre. Ott kicsomagolva remélhetőleg a helyi webhelypéldányunkkal megegyező fájlrendszert kapunk. Composer használata esetén különösen ügyeljünk az alábbiak módosulásaira a telepítésünk gyökerében:
+Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése mennyi különbségben eltér, előfordulhat, hogy az alábbiakban leírt, a helyi fejlesztői környezetünkre való telepítésről szóló lépéssor alapján nem sikerül telepítenünk a Gitet vagy a Composert az éles webkiszolgálón. Ilyen esetekben javasolt a Gittel/Composerrel lokálhoszton elvégezni a frissítéseket, majd a módosult könyvtárakat és fájlokat betömörítve felmásolni a távoli tárhelyünkre. Ott kicsomagolva remélhetőleg a helyi webhelypéldányunkkal megegyező fájlrendszert kapunk. Composer használata esetén különösen ügyeljünk az alábbiak módosulásaira a telepítésünk gyökerében:
 
 * _vendor_ könyvtár
 * _autoload.php_ fájl
@@ -61,7 +61,7 @@ $ git clone --branch 8.6.x https://git.drupal.org/project/drupal.git
 
 Ha követtük a példánkat, és a _drupal_ projektet (azaz magát az alaprendszert) töltöttük le, akkor folytassuk a következő szakaszban leírt lépésekkel a Drupal külső függőségeinek beszerzéséhez.
 
-===== Külső függőségek beszerzése Composer-rel
+===== Külső függőségek beszerzése Composerrel
 
 A Git eszköz, amit az előző példánkban használtunk, nem gondoskodik egy szoftver külső, azaz más, nem Drupalhoz kötődő fejlesztők által közrebocsátott elemeinek meglétéről. Erre ugyanis egy másik eszköz, a Composer való, amit most ki is próbálunk.
 
@@ -69,7 +69,7 @@ A Git eszköz, amit az előző példánkban használtunk, nem gondoskodik egy sz
 
 . Adjuk ki a +composer install+ parancsot, ami automatikusan feltérképezi a szükséges követelményeket és elkezdi letölteni őket gépünkre. Ez internetkapcsolatunk sebességétől függően akár több percig is eltarthat.
 
-===== Alaprendszer letöltése Composer-rel
+===== Alaprendszer letöltése Composerrel
 
 Ahogy eddigre talán már kitalálta az Olvasó, ha a Composer képes letölteni más programok meghatározott verzióit, akkor képes lehet magát a Drupal alaprendszert is beszerezni a függőségeivel együtt. A következő lépéseket követve most ezt a módot fogjuk kipróbálni:
 
@@ -81,9 +81,9 @@ Ahogy eddigre talán már kitalálta az Olvasó, ha a Composer képes letölteni
 $ composer create-project drupal/drupal webhelyem_neve
 ----
 
-===== Projektek letöltése Composer-rel
+===== Projektek letöltése Composerrel
 
-Külső függőségei azonban nem csak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már meg is van a Drupal alaprendszerünk (akár a Git-es, akár a Composer-es úton), akkor a Composer-t is használhatjuk arra, hogy beszerezzük vele a kívánt verziókat az alábbi lépéseket követve:
+Külső függőségei azonban nem csak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már meg is van a Drupal alaprendszerünk (akár a Gites, akár a Composeres úton), akkor a Composert is használhatjuk arra, hogy beszerezzük vele a kívánt verziókat az alábbi lépéseket követve:
 
 . Bármikor, ha egy új, az adott webhelyen korábban még nem használt közösségi projektet (modult vagy sminket) szeretnénk hozzáadni a már meglévőkhöz, akkor először is a legelső lépés, hogy pontosan tudnunk kell a letölteni kívánt projekt gépek által használt nevét. Ez mindig csak az angol ábécé kisbetűiből áll, nem tartalmazhat szóközt, szavak elkülönítésére helyette az aláhúzás karaktert használja. Legkönnyebben a Drupal.org portálon a projektoldal webcímének végén találjuk. Például a _Geofield_ modulé a https://www.drupal.org/project/geofield URL-ben a +geofield+.
 
@@ -93,13 +93,13 @@ Külső függőségei azonban nem csak az alaprendszernek lehetnek, hanem tulajd
 $ composer require drupal/geofield
 ----
 
-===== Projektek frissítése Composer-rel
+===== Projektek frissítése Composerrel
 
-Miután az előző részeknél leírtak szerint már használunk Composer-t a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így már könnyedén elvégezhetjük mindezek rendszeres frissítését a következő lépéseket követve.
+Miután az előző részeknél leírtak szerint már használunk Composert a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így már könnyedén elvégezhetjük mindezek rendszeres frissítését a következő lépéseket követve.
 
 . Akárcsak telepítéskor (lásd fentebb), most is tudnunk kell a frissíteni kívánt modulok vagy sminkek gépi nevét. Az alaprendszeré +drupal+, a közösségi projektekét pedig megnézhetjük webhelyünk adminfelületén,
 
-. Második lépésként meg kell határoznunk, hogy az adott szoftverelem melyik verzióját szeretnénk letöltetni a Composer-rel. Ehhez jó, ha tudjuk, hogy a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composer-nek elég már csak az +1.7+ verziószámot megadnunk. Ugyanezt a logikát követve a +8.5.5+-ös alaprendszert elég csak +5.5+-ként leírnunk.
+. Második lépésként meg kell határoznunk, hogy az adott szoftverelem melyik verzióját szeretnénk letöltetni a Composerrel. Ehhez jó, ha tudjuk, hogy a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az +1.7+ verziószámot megadnunk. Ugyanezt a logikát követve a +8.5.5+-ös alaprendszert elég csak +5.5+-ként leírnunk.
 
 . Ha minden információ rendelkezésre áll, akkor a parancssoros ablakban webhelyünk gyökérkönyvtárában állva adjuk ki a következőhöz hasonló parancsot, melyben a +geofield+ mintát értelemszerűen a frissíteni kívánt projekt nevére cseréljük:
 +
@@ -118,8 +118,8 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer 
 
 ==== Egyéb források
 
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[Using Composer with Drupal] (azaz „A Drupal használata Composer-rel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[Using Composer with Drupal] (azaz „A Drupal használata Composerrel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] és  https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[„Using Composer with Drupal”] (azaz „A Drupal használata Composer-rel”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] és  https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[„Using Composer with Drupal”] (azaz „A Drupal használata Composerrel”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
