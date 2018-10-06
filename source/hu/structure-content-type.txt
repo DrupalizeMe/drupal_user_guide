@@ -28,7 +28,7 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Név | Ez lesz az új tartalomtípusunk megnevezése. | Árus
 | Leírás | Egy rövid ismertető szöveg pár mondatban, hogy mi célból hoztuk létre és mire való. | Ismertető az árusokról.
 |================================
@@ -42,7 +42,7 @@ image:images/structure-content-type-add.png["Az új tartalomtípus hozzáadásá
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Cím | Az éppen beküldendő új tartalmi egység _Cím_ mezőjének mi legyen a felirata. | Árus neve
 | Előnézet beküldés előtt | Szabályozható, hogy a leendő új tartalmakat beküldő adminisztrátoroknak kötelező legyen-e ellenőrizni a beküldés előtt álló tartalmuk előnézetét, mielőtt az letárolásra kerülne? | Nem kötelező
 | Magyarázat, vagy beküldési irányelvek | Útmutató a jövőbeli adminisztrátoroknak, hogy hogyan vigyenek fel új _Árusokat_ ezen űrlapon keresztül. | (üresen hagyható)
@@ -57,7 +57,7 @@ image:images/structure-content-type-add-submission-form-settings.png["Beküldés
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Közzétéve | A beküldött tartalmi egység rögtön közzétettként kerül mentésre. | Bejelölve
 | Címlapra helyezve | Egy általános célú webhelyen ez a beállítás hasznos lehet arra, hogy az új tartalmak rögtön megjelenjenek a címlapon is. | Nincs bejelölve
 | Kiemelt, az oldal tetejére | Ezt bepipálva biztosítható, hogy az újonnan beküldött ilyen típusú tartalmak minden listázáskor legfelül, a többi elemet megelőzve jelenjenek meg. | Nincs bejelölve
@@ -75,7 +75,7 @@ image:images/structure-content-type-add-Publishing-Options.png["Közzétételi l
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Szerző- és dátuminformáció mutatása | Ha bejelölnénk, akkor minden árus adatlapján automatikusan megjelenne egy kis betűs sor, hogy melyik adminisztrátor felhasználó melyik nap hány óra hány perckor hozta létre az adott árus oldalát. Nekünk erre most nincs szükségünk. | Nincs bejelölve
 |================================
 +
@@ -88,7 +88,7 @@ image:images/structure-content-type-add-Display-settings.png["Megjelenítési be
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Elérhető menük | Lekorlátozható, hogy a webhely összes menüje közül melyek azok, amikhez hozzá lehessen adni az ilyen típusú tartalmakat külön menüpontként. A városi piac webhelyén az árusok től sokan lennének ahhoz, hogy mindenki megjelenhessen egy menüben, ezért ezt az opciót itt most nem használjuk. | Nincs bejelölve
 |================================
 +
@@ -108,7 +108,7 @@ image:images/structure-content-type-add-confirmation.png["Megerősítés a siker
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Példa érték
+| Mező neve | Javasolt kitöltés
 | Név | Recept
 | Leírás | Egy étel elkészítésének leírása, amit egy árus küldött be.
 | _Beküldési űrlap beállításai_ fülön Cím mező | Recept neve

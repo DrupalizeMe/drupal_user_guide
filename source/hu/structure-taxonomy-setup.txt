@@ -37,7 +37,7 @@ image:images/structure-taxonomy-setup-taxonomy-page.png["Taxonómiaszótárak li
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Név | Adjunk egy beszédes megnevezést ennek a szótárnak. | Hozzávalók
 | Leírás | Röviden összefoglalhatjuk, hogy milyen célra fogjuk használni ezt a szótárat, milyen fajta kifejezésekből fog állni. | (üresen hagyhatjuk)
 |================================
@@ -71,7 +71,7 @@ image:images/structure-taxonomy-setup-add-term.png["Kifejezés hozzáadása olda
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező felirata | Magyarázat | Példa érték
+| Mező felirata | Magyarázat | Javasolt kitöltés
 | Új mező hozzáadása | Itt kell kiválasztanunk, hogy milyen típusú mezőt szeretnénk használni. | Referencia > Taxonómia kifejezés
 | Felirat | Adjuk meg, hogy mi legyen a neve ennek az új mezőnek. | Hozzávalók
 |================================
@@ -86,7 +86,7 @@ Amikor végeztünk, kattintsunk a _Mező beállításainak mentése_ gombra.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező felirata | Magyarázat | Példa érték
+| Mező felirata | Magyarázat | Javasolt kitöltés
 | Hivatkozó elem típusa | A webhelyen létező entitástípusok közül ki kell választanunk, hogy pontosan melyikre fog hivatkozni ez a mező. | Taxonómia kifejezés
 | Értékek megengedett száma  | Az ebben a mezőben tárolható értékek számának felső határa. | Korlátlan
 |================================
@@ -100,7 +100,7 @@ image:images/structure-taxonomy-setup-field-settings.png["A Hozzávalók mező t
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező felirata | Magyarázat | Példa érték
+| Mező felirata | Magyarázat | Javasolt kitöltés
 | Súgó szöveg | A _Recept_ típusú tartalmakat szerkesztő adminisztrátorok számára egy tájékoztatás, hogy mire való ez a mező. | répa, retek, burgonya
 | _Hivatkozás típusa_ keretben _Hivatkozási mód_ legördülő lista | Kiválasztható, hogy a mező kitöltésekor miként legyenek felsorolva a lehetséges értékek. | Alapértelmezés
 | _Hivatkozás típusa_ keretben _A hivatkozott entitások létrehozása, ha még nem léteznek_ jelölőnégyzet | Ha ezt engedélyezzük, akkor nem kell előre létrehozni a lehetséges kifejezéseket, hanem a _Recept_ szerkesztési oldalán ebbe a mezőbe a nevüket begépelve automatikusan létrejönnek, ha még nem léteztek korábban. | Bepipálva
