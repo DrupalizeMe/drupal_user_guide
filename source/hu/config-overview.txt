@@ -26,7 +26,7 @@ Eligazodás a webhely beállításai között az adminisztrátori menü segíts�
 
 ==== Mit nevezünk adminisztrátori menünek?
 
-Ha egy adminisztrátori jogosultsággal rendelkező felhasználói fiókkal jelentkezünk be webhelyünkre, akkor az alaprendszer _Toolbar_ modulja megjelenít számunkra minden oldal tetején egy eszközsort, amelynek van egy _Kezelés_ nevü menüpontja. Ez tartalmaz minden olyan lehetőséget, amelyre csak szükségünk lehet a webhely üzemeltetéséhez. Menüpontjai egyrészt az adott felhasználó szerepköréhez igazodnak (amihez nincs jogosultsága, az nem jelenik meg), másrészt pedig a bekapcsolt modulok is hozzáadhatnak további elemeket. Ezért az alábbiakban csak azokat a menüpontokat soroljuk fel, amiket egy _Általános_ telepítési profillal létrehozott webhely _Egyes számú felhasználója_ lát:
+Ha egy adminisztrátori jogosultsággal rendelkező felhasználói fiókkal jelentkezünk be webhelyünkre, akkor az alaprendszer _Toolbar_ modulja minden oldal tetején megjelenít számunkra egy eszközsort, amelynek van egy _Kezelés_ nevű menüpontja. Ez tartalmaz minden olyan lehetőséget, amelyre csak szükségünk lehet a webhely üzemeltetéséhez. Menüpontjai egyrészt az adott felhasználó szerepköréhez igazodnak (amihez nincs jogosultsága, az nem jelenik meg), másrészt pedig a bekapcsolt modulok is hozzáadhatnak további elemeket. Ezért az alábbiakban csak azokat a menüpontokat soroljuk fel, amiket egy _Általános_ telepítési profillal létrehozott webhely _Egyes számú felhasználója_ lát:
 
 // Top navigation bar on any admin page, with Manage menu showing.
 image:images/config-overview-toolbar.png["Az adminmenü vízszintes üzemmódban",width="100%"]
@@ -41,26 +41,26 @@ Megjelenés::
   A webhely látványvilágával kapcsolatos beállítások, mint például a sminkek kezelése kapott itt helyet.
 
 Bővítés::
-  Itt lehet a már engedélyezett modulokat frissíteni, vagy eltávolítani, valamint újakat telepíteni.
+  Itt lehet a már engedélyezett modulokat frissíteni vagy eltávolítani, valamint újakat telepíteni.
 
 Konfiguráció::
-  A webhely valamennyi további beállítási lehetősége, amit az eddigi menüpontok alatt nem említettünk, mind innen kiindulva érhető el.
+  A webhely valamennyi további beállítási lehetőségei, amelyeket az eddigi menüpontok alatt nem említettünk, mind innen kiindulva érhető el.
 
 Felhasználók::
   A felhasználók áttekintésén és profiljaik szerkesztésén túl itt találjuk a szerepkörök és azok jogosultságainak beállításait is.
 
 Jelentések::
-  E menüpont nem beállítások módosítására szolgál, hanem megtekinthetjük a rendszernaplót, az elérhető frissítésekről való értesítéseket, a különböző hibaoldalak eredményeit és más, a webhely általános működéséről kapott visszajelzéseket.
+  E menüpont nem beállítások módosítására szolgál, hanem itt tekinthetjük meg a rendszernaplót, az elérhető frissítésekről való értesítéseket, a különböző hibaoldalak eredményeit és más, a webhely általános működéséről kapott visszajelzéseket.
 
 Súgó::
   Az engedélyezett modulok hozzáadhatnak oldalakat a webhely súgójához, ezeket találjuk itt ábécé szerinti rendben.
 
-A nyíl ikon a képernyő legszélén jobb oldalon (ha jobbról-balra írásirányú nyelven, például Arabul nézzük a felületet, akkor a bal oldalon) arra szolgál, hogy a jelenlegi vízszintesből függőleges megjelenítésbe váltsuk át az adminisztrációs menüt. Függőlegesen nem fejléc lesz, hanem egy alá-fölé rendelt szerkezetű menüfa:
+A nyíl ikon a képernyő legszélén jobb oldalon (ha jobbról-balra írásirányú nyelven, például arabul nézzük a felületet, akkor a bal oldalon) arra szolgál, hogy a jelenlegi vízszintesből függőleges megjelenítésbe váltsuk át az adminisztrációs menüt. Függőlegesen nem fejléc lesz, hanem egy alá-fölé rendelt szerkezetű menüfa:
 
 // Navigation in vertical orientation.
 image:images/config-overview-vertical-menu.png["Az adminmenü függőleges üzemmódban",width="228px"]
 
-A Kézikönyvben valahányszor ezen adminmenün keresztüli navigációt írunk le, akkor mindig az alapértelmezett _vízszintes_ módra gondolunk. Mindezt a <<preface-conventions>> témakörnél foglaltuk össze.
+A Kézikönyvben valahányszor ezen az adminmenün keresztüli navigációt írunk le, akkor mindig az alapértelmezett _vízszintes_ módra gondolunk. Mindezt a <<preface-conventions>> témakörnél foglaltuk össze.
 
 ==== Mik a szövegkörnyezeti hivatkozások?
 
@@ -68,7 +68,7 @@ Az alaprendszer _Contextual Links_ modulját engedélyezve bizonyos adminisztrá
 
 Ám ahhoz, hogy láthatóvá váljanak az adott oldalon, aktiválni kell őket, mert betöltődéskor rejtettek. Ha a webhely sminkje az alapértelmezett formázást használja a szövegkörnyezeti hivatkozásokhoz, akkor egy kis körben egy ferde ceruza ikon lebeg azon blokkok jobb felső sarkában, amelyeknek ilyen lehetőségei vannak. Két módja is van, hogyan lehet ezt a ceruza ikont előcsalni:
 
-* Az egérkurzort mozgatva az oldalon, ha az egy ilyen blokk fölé ér, akkor ahhoz az egyhez megjelenik az ikon.
+* Az egérkurzort mozgatva az oldalon ha az egy ilyen blokk fölé ér, akkor ahhoz az egyhez megjelenik az ikon.
 
 * Az adminisztrátori eszközsor jobb szélén a fő ceruza ikonra (vagy _Szerkesztés_ feliratára) kattintva, ami viszont az oldalon lévő valamennyi blokknál láthatóvá teszi őket.
 
