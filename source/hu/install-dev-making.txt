@@ -57,7 +57,7 @@ $databases['default']['default'] = array (
   'password' => 'live_site_database_password',
 ----
 +
-Ezeket írjuk át az éles webhely adatbázisa helyett az új, fejlesztési példány kapcsolódási adataira (pl. adatbázisfelhasználó neve, jelszava, stb.).
+Ezeket írjuk át az éles webhely adatbázisa helyett az új, fejlesztési példány kapcsolódási adataira (pl. adatbázisfelhasználó neve, jelszava stb.).
 
 . Ugyanebben a _settings.php_ fájlban ellenőrizzük, hogy az alábbi beállítás érvényben van-e (nincs-e kikommentelve?). Ha igen, akkor módosítsuk az értékét a fejlesztési példányunk webcímére:
 +
