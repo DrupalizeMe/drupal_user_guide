@@ -10,7 +10,7 @@ Végigvesszük annak lépéseit, hogyan lehet egyéni, saját blokkot létrehozn
 
 ==== Célkitűzés
 
-E témakör végére lesz egy saját blokkunk definiálva, amiben a termelői piacunk nyitvatartási idejét és helyszínét tüntetjük fel.
+E témakör végére lesz egy saját definiált blokkunk, amiben a termelői piacunk nyitvatartási idejét és helyszínét tüntetjük fel.
 
 ==== Szükséges előismeretek
 
@@ -29,7 +29,7 @@ E témakör végére lesz egy saját blokkunk definiálva, amiben a termelői pi
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Példaérték
 | Blokk leírása | A csak az adminisztrátoroknak megjelenő összefoglalója a blokknak. | Helyszín és nyitvatartás blokk
 | Törzs | A blokk látogatóknak megjelenített tartalma. | Nyitva: vasárnap de. 9 órától du. 2 óráig április és szeptember között<br />Helyszín: Bárkifalva városközpontjában, a Bizalom Bank parkolójában.
 |================================
@@ -43,7 +43,7 @@ image:images/block-create-custom-add-custom-block.png["Egy egyéni blokk hozzáa
 
 ==== Az ismeretek elmélyítése
 
-* A blokkunk tartalmának tetszőleges módosítása. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Blokk elrendezés_ > _Egyéni blokkok könyvtára_ menüpontot, vagy írjuk be a címsorba az _admin/structure/block/block-content_) útvonalat. Keressük meg a blokkunkat a listában és a _Szerkesztés_ hivatkozásra kattintva írjuk át, amit változtatni szeretnénk.
+* A blokkunk tartalmának tetszőleges módosítása. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Blokk elrendezés_ > _Egyéni blokkok könyvtára_ menüpontot, vagy írjuk be a címsorba az _admin/structure/block/block-content_) útvonalat. Keressük meg a blokkunkat a listában, és a _Szerkesztés_ hivatkozásra kattintva írjuk át, amit változtatni szeretnénk.
 
 * A most létrehozott blokkunk kihelyezése az oldalsávra. Ennek részleteit lásd a <<block-place>> témakörnél.
 
