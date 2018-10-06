@@ -3,7 +3,7 @@
 === Nem használt modulok letiltása
 
 [role="summary"]
-Hogyan csökkenthetjük a felesleget webhelyünkön a használaton kívüli modulok kikapcsolásával.
+A felesleg csökkentése webhelyünkön a használaton kívüli modulok kikapcsolásával.
 
 (((Modul,nem használtak törlése)))
 (((Törlés,nem használt modulok)))
@@ -56,7 +56,7 @@ image:images/config-uninstall_confirmUninstall.png["Eltávolítás megerősíté
 
 . A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
-. Keressük ki a letiltani kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk annak a modulnak a programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
+. Keressük ki a letiltani kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk a modul programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
 
 . Ennek ismeretében már le tudjuk futtatni a következő Drush-parancsot:
 +
