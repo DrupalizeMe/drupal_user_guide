@@ -3,7 +3,7 @@
 === Webhelyfunkciók átvitele
 
 [role="summary"]
-Hogyan lehet átvinni egy funkciót ugyanannak a webhelynek a két példánya között?
+Egy funkció átvitele ugyanannak a webhelynek a két példánya között.
 
 (((Funkció,átmásolása)))
 (((Funkció,élesítése)))
@@ -26,7 +26,7 @@ Ebben a részben át fogjuk vinni az egyik nézetet (másképpen listát) a hely
 
 * Az _Árus_ tartalomtípusnak már léteznie kell ugyanazokkal a mezőkkel szintén mindkét webhelypéldányon. Ehhez lásd a <<structure-content-type>> részt.
 
-* Az _Árusok_ nevű nézetnek már léteznie kell a fejlesztési példányon, de még nem lehet jelen az éles webhelyen. Nézetekről a <<views-create>> részben ejtettünk szót.
+* Az _Árusok_ nevű nézetnek már léteznie kell a fejlesztési példányon, de még nem lehet jelen az éles webhelyen. A nézetekről a <<views-create>> részben ejtettünk szót.
 
 ==== Lépések
 
@@ -38,7 +38,7 @@ Ebben a részben át fogjuk vinni az egyik nézetet (másképpen listát) a hely
 
 . Pár másodperc alatt frissül a második, _Beállításnév_ legördülő listája, amiből válasszuk az _Árusok (arusok)_ lehetőséget.
 
-. Ekkor megjelenik egy hosszú szöveg az _Ezek a beállítások_ felirat alatt, amit másoljunk ki vágólapra egészben.
+. Ekkor megjelenik egy hosszú szöveg az _Ezek a beállítások_ felirat alatt, amit egészben másoljunk ki vágólapra.
 +
 --
 // Single configuration export of the Vendors view from
@@ -56,17 +56,17 @@ image:images/extend-deploy-export-single.png["A konfiguráció egyetlen eleméne
 
 . Kattintsunk az _Import_ gombra, mire megjelenik egy megerősítő képernyő, amit szintén fogadjunk el.
 
-. Ellenőrizzük a _Kezelés_ adminisztrációs menüben a _Felépítés_ > _Nézetek_ oldalon, hogy az újonnan felvitt nézet létrejött-e és működik.
+. Ellenőrizzük a _Kezelés_ adminisztrációs menüben a _Felépítés_ > _Nézetek_ oldalon, hogy az újonnan felvitt nézet létrejött-e, és működik-e.
 
 ==== Az ismeretek elmélyítése
 
-Az itt bemutatott lépéssor a webhely teljes konfigurációjának csak egyetlen elemének átvitelére való. Az általános gyakorlat szerint ez meglehetősen ritkán fordul elő, mivel a valós helyzetekben sokszor egyszerre több konfiguráció-elemet kell szinkronizálni két webhelypéldány között. Például ha a fejlesztési példányon egy új tartalomtípust hoztunk létre különféle mezőkkel, akkor máris féltucat elemet (egyet magának a tartalomtípusnak, egyet-egyet minden mezőjéhez, és valószínűleg még továbbiakat a megjelenítési és beviteli módokhoz) kellene ezen a módon külön-külön átmásolni, ráadásul a kötött sorrendjükre pontosan ügyelve. Belátható, hogy ez nem lenne életképes megoldás.
+Az itt bemutatott lépéssor a webhely teljes konfigurációjából csak egyetlen elem átvitelére való. Az általános gyakorlat szerint ez meglehetősen ritkán fordul elő, mivel a valós helyzetekben sokszor egyszerre több konfigurációelemet kell szinkronizálni két webhelypéldány között. Például ha a fejlesztési példányon egy új tartalomtípust hoztunk létre különféle mezőkkel, akkor máris fél tucat elemet (egyet magának a tartalomtípusnak, egyet-egyet minden mezőjéhez, és valószínűleg még továbbiakat a megjelenítési és beviteli módokhoz) kellene ezen a módon külön-külön átmásolni, ráadásul a kötött sorrendjükre pontosan ügyelve. Belátható, hogy ez nem lenne életképes megoldás.
 
-Helyette kiexportálható és beimportálható a webhely teljes konfigurációkészlete. Ehhez a legjobb, ha az éles webhelyet egy lehetőleg (majdnem) mindenben hű másolatként leklónozzuk a <<install-dev-making>> részben leírtakat követve, majd a <<extend-config-versions>> útmutatása szerint szinkronizáljuk a két példányt.
+Helyette exportálható és importálható a webhely teljes konfigurációkészlete. Ehhez a legjobb, ha az éles webhelyet egy lehetőleg (majdnem) mindenben hű másolatként klónozzuk a <<install-dev-making>> részben leírtakat követve, majd a <<extend-config-versions>> útmutatása szerint szinkronizáljuk a két példányt.
 
-További lehetőség még a https://www.drupal.org/project/features[Features] közösségi modul használata, ami a csoportosítás fenti két (egyesével vagy egybe mindent) véglete között köztes lehetőségeket biztosít (például egy képgaléria valamennyi konfigurációjának – de csak annak – kimentése-beolvasása).
+További lehetőség még a https://www.drupal.org/project/features[Features] közösségi modul használata, ami a csoportosítás fenti két (egyesével vagy egyben mindent) véglete között köztes lehetőségeket biztosít (például egy képgaléria valamennyi konfigurációjának – de csak annak – kimentése-beolvasása).
 
-Ha nem látjuk azonnal a változtatásaink eredményét, szükség lehet a gyorsítótár kiürítésére. Lásd <<prevent-cache-clear>>.
+Ha nem látjuk azonnal a változtatásaink eredményét, akkor szükség lehet a gyorsítótár kiürítésére. Lásd <<prevent-cache-clear>>.
 
 ==== Kapcsolódó témák
 
