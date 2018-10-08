@@ -14,7 +14,7 @@ Hogyan lehet kézzel, azaz automatizált eszközök használata nélkül beszere
 
 ==== Célkitűzés
 
-Ahogy a korábbi részeknél már említettük, néha előfordulhat olyan eset, amikor az automatizált eszközök, mint a Drush vagy Composer nem használhatóak valamilyen oknál fogva (például amikor egyedileg fejlesztett modult vagy sminket telepítenénk a webhelyünkre).
+Ahogy a korábbi részeknél már említettük, néha előfordulhat olyan eset, amikor az automatizált eszközök, mint a Drush vagy a Composer nem használhatóak valamilyen oknál fogva (például amikor egyedileg fejlesztett modult vagy sminket telepítenénk a webhelyünkre).
 
 ==== Szükséges előismeretek
 
@@ -49,7 +49,7 @@ Utóbbi esetben tehát átugorhatjuk a következő, _Letöltés_ részt (hiszen 
 
 ===== Letöltés
 
-. Nyissuk meg a modul vagy smink projektoldalát a Drupal.org központi webhelyen. Például az _Admin toolbar_ modulé a _https://www.drupal.org/project/admin_toolbar_ címen található.
+. Nyissuk meg a modul vagy smink projektoldalát a Drupal.org webhelyen. Például az _Admin toolbar_ modulé a _https://www.drupal.org/project/admin_toolbar_ címen található.
 
 . Görgessünk le a _Downloads_ szakaszhoz egészen a lap alján:
 +
@@ -58,7 +58,7 @@ Utóbbi esetben tehát átugorhatjuk a következő, _Letöltés_ részt (hiszen 
 image:images/extend-manual-install-download.png["Közösségi modul forráskódjának letöltése"]
 --
 
-. Kattitsunk a _tar.gz_ hivatkozásra, mire böngészőnk lementi azt a tömörített fájlt a számítógépünkre.
+. Kattintsunk a _tar.gz_ hivatkozásra, így böngészőnk lementi a tömörített fájlt a számítógépünkre.
 
 ===== Feltöltés és kicsomagolás
 
@@ -76,7 +76,7 @@ image:images/extend-manual-install-directories.png["Javasolt könyvtárszerkezet
 
 . Ez azért javasolt, mert most töröljük a frissítendő modul/smink már létező könyvtárát. (Ha a látogató eközben épp olyan oldalt nyitna meg, amelyhez az ideiglenesen törölt modul/smink szükséges lenne, akkor hibát tapasztalna.)
 
-. Töltsük fel a _.tar.gz_ fájlt (lehet más kiterjesztése is a tömörített állománynak) a webhelyünk tárhelyére. A feltöltés célkönyvtárát válasszuk meg az alábbiak szerint:
+. Töltsük fel a _.tar.gz_ fájlt (lehet más kiterjesztése is a tömörített állománynak) a webhelyünk tárhelyére. A feltöltés célkönyvtárát válasszuk ki az alábbiak szerint:
 
 * Új modul/smink első telepítésekor a fentiekben létrehozott _/contrib_ vagy _/custom_ könyvtárak egyikét.
 * Már korábban létező modul/smink frissítésekor azt, ahonnan az imént letöröltük a régi verzióját.
@@ -91,7 +91,7 @@ Ha nem Linuxon fut a kiszolgáló, vagy nem használhatjuk a parancssort, akkor 
 
 . Ha a kicsomagolási művelet nem tette meg magától, akkor töröljük a tömörített állományt kézzel.
 
-. Innentől már visszatérhetünk a korábbi témakörökhöz, ahol elakadtunk, hogy befejezzük lépéssoraikat:
+. Innentől már visszatérhetünk a korábbi témakörökhöz, ahol elakadtunk, hogy befejezzük a lépéssorokat:
 ** <<extend-module-install>>
 ** <<extend-theme-install>>
 ** <<security-update-module>>
