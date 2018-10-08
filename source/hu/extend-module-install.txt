@@ -3,7 +3,7 @@
 === Modulok letöltése a Drupal.org-ról és telepítésük
 
 [role="summary"]
-Hogyan lehet letölteni egy modult a központi Drupal.org webhelyről akár az adminfelületet, akár Drush eszközt használva.
+Modul letöltése a központi Drupal.org webhelyről az adminfelületet vagy a Drush eszközt használva.
 
 (((Admin Toolbar modul,letöltése)))
 (((Admin Toolbar modul,telepítése)))
@@ -36,13 +36,13 @@ Letöltjük és telepítjük az https://www.drupal.org/project/admin_toolbar[Adm
 
 ==== Webhely előfeltételei
 
-* Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek mikéntjéről a <<config-install>> szakaszban már esett szó.
+* Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek módjáról a <<config-install>> szakaszban már esett szó.
 
 * Ha viszont úgy döntünk, hogy inkább a Drusht használnánk, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
 
 ==== Lépések
 
-Ahogy a bevezetőből már kiderült, egy közösségi modul webhelyünkhoz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett modult telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide és folytathatjuk a 7. lépéstől tovább ugyanúgy.
+Ahogy a bevezetőből már kiderült, egy közösségi modul webhelyünkhöz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett modult telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 7. lépéstől tovább ugyanúgy.
 
 ===== Az adminfelület használatával
 
@@ -66,7 +66,7 @@ image:images/extend-module-install-admin-toolbar-do.png["Modultelepítési oldal
 
 . A _Telepítés webcímről_ mezőbe illesszük be a tar.gz fájl előbb kimásolt webcímét, ami valami ehhez hasonló lesz: _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.24.tar.gz_
 
-. Kattintsunk a _Telepítés_ gombra, ami letölti a Drupal.org fájlkiszolgálójáról a kért verziót és felmásolja webhelyünk szerverére. Ezek a fájlok általában a _modules_ könyvtárban vannak tárolva.
+. Kattintsunk a _Telepítés_ gombra, ami letölti a Drupal.org fájlkiszolgálójáról a kért verziót, és felmásolja webhelyünk szerverére. Ezek a fájlok általában a _modules_ könyvtárban vannak tárolva.
 
 . Miután a következő képernyőn lefutott a folyamatjelző, „A telepítés sikeresen befejeződött” állapotüzenetet kell kapnunk. Ekkor az „Újonnan hozzáadott modulok engedélyezése” hivatkozás közvetlenül visszavisz minket a _Bővítés_ oldalra, ahonnan indultunk.
 
@@ -91,7 +91,7 @@ $ drush en admin_toolbar
 
 * Ellenőrizhetjük, hogy az imént telepített és engedélyezett _Admin Toolbar_ modul megfelelően működik-e, ha egerünket végigmozgatjuk a felső eszközsor fehér sávján.
 
-* Ha esetleg még nem látnánk azonnal a változást, akkor előfordulhat, hogy a gyorsítótárat ürítenünk kell, amihez előreugorhatunk a <<prevent-cache-clear>> szakaszhoz.
+* Ha esetleg még nem látnánk azonnal a változást, akkor előfordulhat, hogy a gyorsítótárat ki kell ürítenünk, amihez előreugorhatunk a <<prevent-cache-clear>> szakaszhoz.
 
 * Ha szeretnénk újra gyakorolni a fenti lépéseket, akkor egy másik hasznos és ezért gyakran szükséges közösségi modul a https://www.drupal.org/project/pathauto[Pathauto], mellyel a tartalmaink automatikusan jobban olvasható webcímeket kapnak. Erről bővebben lásd a <<content-paths>> szakaszt.
 
