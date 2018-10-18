@@ -20,12 +20,12 @@ and add-on modules and themes.
 ==== Goal
 
 Use Composer and/or Git to download files and dependencies in the core software,
-or in add-on modules and themes.
+or in add-on modules and themes. Skip this topic if you are not using Composer
+or Git.
 
 ==== Prerequisite knowledge
 
-* <<install-tools>>
-* <<install-dev-sites>>
+<<install-tools>>
 
 ==== Site prerequisites
 
@@ -34,13 +34,14 @@ development server or your live site. See <<install-tools>>.
 
 ==== Steps
 
-If you are unable to install the Git or Composer tools on your live server,
-after following the steps in any of the sections below on your local server, you
-will need to transfer any updated or added files to your live server. The
-recommended procedure is to make an archive or zip file of the new and changed
-files, transfer the archive to your live server, and extract it there. If you
-are using Composer, make sure to check for updates and additions to the
-following files, in the root of your installation:
+If you are unable to install the Git or Composer tools on your live server, you
+can follow the steps in any of the sections below on your local server, and then
+transfer any updated or added files to your live server. The recommended
+procedure is to make an archive or zip file of the new and changed directories,
+transfer the archive to your live server, delete the directories that have
+changed, and extract the archive. If you are using Composer, make sure to check
+for updates and additions to the following files, in the root of your
+installation:
 
 * _vendor_ directory
 * _autoload.php_

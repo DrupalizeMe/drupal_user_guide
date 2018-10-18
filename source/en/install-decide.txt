@@ -1,0 +1,67 @@
+[[install-decide]]
+=== Concept: Methods for Downloading the Core Software
+
+[role="summary"]
+Overview of methods you can use to download the core software.
+
+(((Downloading,core software)))
+(((Core software,downloading)))
+
+==== Prerequisite knowledge
+
+* <<install-tools>>
+* <<understanding-distributions>>
+
+==== What methods are available for downloading the core software?
+
+Before you can build a site, you will need to first download the core software,
+and then run the installer. Depending on your plans, there are several ways that
+you can download the core software:
+
+Try a free online demo::
+  If you are evaluating whether or not to use Drupal to build a site, you
+  can use an online provider to get a demo installation of the core software in
+  20 minutes or less. See the
+  https://www.drupal.org/try-drupal[_Drupal.org_ page "Try Drupal"].
+
+Use a one-click installer from your hosting provider::
+  If you choose to install the core software at your hosting provider, your
+  hosting provider may have specific documentation and/or a one-click install
+  that you can use. See
+  https://www.drupal.org/association/supporters/hosting[_Drupal.org's_ list of hosting providers that support Drupal].
+
+Use a pre-configured environment::
+  Use a pre-configured environment or virtual machine that contains Drupal and
+  all the required supporting software to install Drupal locally. See the
+  section for your operating system under
+  https://www.drupal.org/docs/develop/local-server-setup[Drupal.org's Local server setup guide]
+  for possible options.
+
+Use Composer::
+  If you plan to use the Drush tool (see <<install-tools>>), or if you are
+  building a site that might use modules with complicated dependencies, you
+  should use Composer to download the core software, because Composer will
+  manage the dependencies properly. See <<install-composer>> for instructions.
+
+Download manually from the web site::
+  You can download the core software, or a distribution that contains the core
+  software and additional modules or themes, from the web site. See
+  <<install-manual>> for instructions.
+
+Use Git::
+  It is possible to download a development version of the core files using Git,
+  although you will then need to use Composer to download additional
+  libraries. See <<install-composer>> for instructions.
+
+// ==== Related topics
+
+// ==== Additional resources
+
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+https://erdfisch.de[erdfisch],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+http://redcrackle.com[Red Crackle].
