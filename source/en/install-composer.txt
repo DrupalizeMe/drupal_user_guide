@@ -52,7 +52,8 @@ installation:
 
 Follow these steps if you want to download the development version of the core
 software, or of a contributed module or theme, from the project's Git version
-control repository:
+control repository. This method should only be used if you want to work on code
+development for the project:
 
 . In a command-line window, change to one level above the directory where you
 want the files to reside. For the core software, this would be your web
@@ -71,29 +72,25 @@ page giving Git commands for this project.
 and paste it into your command line. For example, it might be:
 +
 ----
-git clone --branch 8.2.x https://git.drupal.org/project/drupal.git
+git clone --branch 8.6.x https://git.drupal.org/project/drupal.git
 ----
 
 . This will create a directory named with the short name of the project
 (_drupal_ in this example), and download the required files into that
 directory. If necessary, rename the directory.
 
-. If you downloaded the _drupal_ project (the core software), follow the
-instructions below to download its external dependencies.
-
 . Later on, you can change to the created directory and run the command +git
 pull+ to update the files to the latest version from the Git repository for the
 project.
 
-===== Using Composer to download external core dependencies
-
-Follow these steps if you downloaded the core software files using Git, which
-does not include the external dependencies:
-
-. Change to the core software's root directory.
-
-. Run the command +composer install+ at the command line. The external
-dependencies will be downloaded.
+. If you downloaded the _drupal_ project (the core software), or a module or
+theme that has external dependencies, you also need to download the external
+dependencies with Composer. To do that, run this command in the core software's
+root directory:
++
+----
+composer install
+----
 
 ===== Using Composer to download the core software
 
@@ -104,11 +101,15 @@ its external dependencies:
 . At the command line, change to one level above the directory where you want
 the software to reside.
 
-. Enter this command, where +my_site_name+ is the directory you want to create:
+. Enter this command, where _mydir_ is the directory you want to create:
 +
 ----
-composer create-project drupal/drupal my_site_name
+composer create-project drupal-composer/drupal-project:8.x-dev mydir --no-dev --no-progress --stability dev --no-interaction
 ----
+
+. Drupal will be downloaded to the _mydir/web_ sub-directory, along with extra
+tools such as Drush and Drupal Console.
+
 
 ===== Using Composer to download a module or theme
 
@@ -136,17 +137,24 @@ module or theme, after having already started to manage dependencies with
 Composer:
 
 . Determine the short name of the project you want to update. For the core
-software, it is _drupal_. For contributed modules and themes, it is the last
+software, it is _core_. For contributed modules and themes, it is the last
 part of the URL of the project page; for example, the Geofield module, at
 https://www.drupal.org/project/geofield, has short name +geofield+.
 
-. Determine how to enter the version number you want to update to. For
-example, for version 8.x-1.7 of a contributed module, you would enter just the
-1.7, and for the core software version 8.3.1, you would enter 3.1.
+. If you want to update to the latest stable release, use the following
+command, substituting the short name of the project to be updated for
++geofield+:
++
+----
+composer update drupal/geofield  --with-dependencies
+----
 
-. Enter the following command at the root of your site (substituting
-the short name of the module or theme for +geofield+ and the correct version
-number):
+. If you need a specific version, determine how to enter the version number you
+want to update to. For example, for version 8.x-1.7 of a contributed module, you
+would enter just the 1.7, and for the core software version 8.3.1, you would
+enter 8.3.1. Then enter the following command at the root of your site
+(substituting the short name of the project for +geofield+ and the correct
+version number):
 +
 ----
 composer require drupal/geofield:1.7
@@ -168,7 +176,8 @@ https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_D
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
+Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], and
 https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
 https://drupalize.me[Drupalize.Me] from
 https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal["Using Composer with Drupal"],
