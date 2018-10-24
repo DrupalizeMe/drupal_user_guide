@@ -1,8 +1,8 @@
 [[install-composer]]
-=== Using Composer and Git to Download Files
+=== Using Composer to Download Files
 
 [role="summary"]
-How to use the Composer and Git tools to manage the files in the core software
+How to use the Composer tool to manage the files in the core software
 and add-on modules and themes.
 
 (((Composer tool,using to download the core software)))
@@ -19,9 +19,8 @@ and add-on modules and themes.
 
 ==== Goal
 
-Use Composer and/or Git to download files and dependencies in the core software,
-or in add-on modules and themes. Skip this topic if you are not using Composer
-or Git.
+Use Composer to download files and dependencies in the core software, or in
+add-on modules and themes. Skip this topic if you are not using Composer.
 
 ==== Prerequisite knowledge
 
@@ -29,68 +28,23 @@ or Git.
 
 ==== Site prerequisites
 
-If you want to use Git or Composer, they must be installed either on a local
-development server or your live site. See <<install-tools>>.
+If you want to use Composer, it must be installed either on a local development
+server or your live site. See <<install-tools>>.
 
 ==== Steps
 
-If you are unable to install the Git or Composer tools on your live server, you
-can follow the steps in any of the sections below on your local server, and then
+If you are unable to install the Composer tool on your live server, you can
+follow the steps in any of the sections below on your local server, and then
 transfer any updated or added files to your live server. The recommended
 procedure is to make an archive or zip file of the new and changed directories,
 transfer the archive to your live server, delete the directories that have
-changed, and extract the archive. If you are using Composer, make sure to check
-for updates and additions to the following files, in the root of your
-installation:
+changed, and extract the archive. Make sure to check for updates and additions
+to the following files, in the root of your installation:
 
 * _vendor_ directory
 * _autoload.php_
 * _composer.json_
 * _composer.lock_
-
-===== Using Git to download a project
-
-Follow these steps if you want to download the development version of the core
-software, or of a contributed module or theme, from the project's Git version
-control repository. This method should only be used if you want to work on code
-development for the project:
-
-. In a command-line window, change to one level above the directory where you
-want the files to reside. For the core software, this would be your web
-root. For an add-on module, this would be the _modules_ directory, or a
-sub-directory like _contrib_ under the modules directory.
-
-. Locate the page for the project that you want to download on _Drupal.org_; for
-example, https://www.drupal.org/project/drupal for the core software, or
-https://www.drupal.org/project/admin_toolbar for the contributed Admin Toolbar
-module.
-
-. Click the _Version control_ link near the top of the page, which opens up a
-page giving Git commands for this project.
-
-. Copy the +git clone+ command under _Setting up repository for the first time_,
-and paste it into your command line. For example, it might be:
-+
-----
-git clone --branch 8.6.x https://git.drupal.org/project/drupal.git
-----
-
-. This will create a directory named with the short name of the project
-(_drupal_ in this example), and download the required files into that
-directory. If necessary, rename the directory.
-
-. Later on, you can change to the created directory and run the command +git
-pull+ to update the files to the latest version from the Git repository for the
-project.
-
-. If you downloaded the _drupal_ project (the core software), or a module or
-theme that has external dependencies, you also need to download the external
-dependencies with Composer. To do that, run this command in the core software's
-root directory:
-+
-----
-composer install
-----
 
 ===== Using Composer to download the core software
 
@@ -107,8 +61,8 @@ the software to reside.
 composer create-project drupal-composer/drupal-project:8.x-dev mydir --no-dev --no-progress --stability dev --no-interaction
 ----
 
-. Drupal will be downloaded to the _mydir/web_ sub-directory, along with extra
-tools such as Drush and Drupal Console.
+. The core software will be downloaded to the _mydir/web_ sub-directory, along
+with extra tools such as Drush and Drupal Console.
 
 
 ===== Using Composer to download a module or theme
