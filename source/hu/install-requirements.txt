@@ -3,7 +3,7 @@
 === Alapfogalom: rendszerkövetelmények
 
 [role="summary"]
-Ebben a témakörben számba vesszük, hogy a számítógépen milyen feltételek szükségesek a Drupal alaprendszer telepítéséhez és futtatásához.
+Ebben a témakörben azt tekintjük át, hogy a számítógépen milyen feltételek szükségesek a Drupal alaprendszer telepítéséhez és futtatásához.
 
 (((Telepítési követelmények,áttekintés)))
 (((Telepítési követelmények,lemezterület)))
@@ -26,22 +26,22 @@ Ebben a témakörben számba vesszük, hogy a számítógépen milyen feltétele
 
 // ==== Szükséges előismeretek
 
-==== Mi kell ahhoz, hogy elfusson a Drupal?
+==== Mi kell ahhoz, hogy fusson a Drupal?
 
 ===== Lemezterület
 
-A webhely szoftvere által elfoglalt teljes tárterület nem egy általános, mindenkinél egyező érték, hiszen igencsak függ annak képességeitől, funkcionalitásától, ezért esetenként akár erősen eltérő is lehet. Annyi azonban így is elmondható, hogy maga a Drupal alaprendszer körülbelül 100 MB helyet igényel a kiszolgálón. De több tárhelyre lesz valószínűleg szükség, ha további modulokat és sminkeket használunk. Valamint fontos még arra is gondolni, hogy a puszta forráskódnál nagyságrendileg több tárhelyet fog igényelni várhatóan a felhasználók által feltölthető és a Drupal által automatikusan előállított fájlok, a biztonsági mentések, és más hasonló állományok. Természetesen maga az adatbázis is helyet igényel, bár ez sok esetben a kiszolgálón máshol kerül tárolásra (sőt, bizonyos esetekben akár másik gépen is lehet).
+A webhely szoftvere által elfoglalt teljes tárterület nem egy általános, mindenkinél egyező érték, hiszen igencsak függ annak képességeitől, funkcionalitásától, ezért esetenként akár erősen eltérő is lehet. Annyi azonban így is elmondható, hogy maga a Drupal alaprendszer körülbelül 100 MB helyet igényel a kiszolgálón. Ennél több tárhelyre lesz valószínűleg szükség, ha további modulokat és sminkeket használunk, valamint fontos még arra is gondolni, hogy a puszta forráskódnál nagyságrendileg több tárhelyet fognak várhatóan igényelni a felhasználók által feltölthető és a Drupal által automatikusan előállított fájlok, a biztonsági mentések és más hasonló állományok. Természetesen maga az adatbázis is helyet igényel, bár ez sok esetben a kiszolgálón máshol kerül tárolásra (sőt, bizonyos esetekben akár másik gépen is lehet).
 
 ===== Webkiszolgáló
 
 Apache (javasolt)::
-  Manapság az Apache a legelterjedtebb webszerver alkalmazás. A Drupal alaprendszer működik Apache 2.x verzión, ami futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Telepítve és engedélyezve kell lennie az Apache _mod_rewrite_ moduljának, valamint a _VirtualHost_ konfigurációjának tartalmaznia kell az _AllowOverride All_ utasítást annak érdekében, hogy a _.htaccess_ fájlok működjenek.
+  Manapság az Apache a legelterjedtebb webszerver-alkalmazás. A Drupal alaprendszer működik Apache 2.x verzión, ami futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Az Apache _mod_rewrite_ modulját telepíteni és engedélyezni kell, valamint a _VirtualHost_ konfigurációjának tartalmaznia kell az _AllowOverride All_ utasítást azért, hogy a _.htaccess_ fájlok működjenek.
 Nginx::
-  Az Nginx egy szintén gyakran használt webszerver, ami a nagy terhelés alatt is kielégítő teljesítményre törekszik, alacsony memóriahasználat mellett. A Drupal alaprendszer Nginx 1.1 és annál magasabb verzión is működik, és ez ugyanúgy futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Itt is fontos, hogy az _ngx_http_rewrite_module_ nevű modulja telepítve és engedélyezve legyen.
+  Az Nginx egy szintén gyakran használt webszerver, ami nagy terhelés alatt, alacsony memóriahasználat mellett is kielégítő teljesítményre törekszik. A Drupal alaprendszer Nginx 1.1 és annál magasabb verzión is működik, és ez ugyanúgy futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Itt is fontos, hogy az _ngx_http_rewrite_module_ nevű modulja telepítve és engedélyezve legyen.
 Hiawatha::
-  A Hiawatha egy harmadik webszerver alkalmazás, amely leginkább a biztonságra összpontosít, de emellett igyekszik egyszerűen használható és pehelysúlyú maradni. Független kutatók által végrehajtott tesztek alapján a Hiawatha a többi webszerverrel összemérhető teljesítményt nyújt rendes körülmények között, viszont támadás alatt azoknál kimagaslóan jobban teljesít. A webcímek átírásához az _URL Toolkit_ funkciót telepíteni kell és megfelelően beállítani.
+  A Hiawatha egy harmadik webszerver alkalmazás, amely leginkább a biztonságra összpontosít, de emellett igyekszik egyszerűen használható és pehelysúlyú maradni. Független kutatók által végrehajtott tesztek alapján a Hiawatha a többi webszerverrel összemérhető teljesítményt nyújt rendes körülmények között, viszont támadás alatt azoknál kimagaslóan jobban teljesít. A webcímek átírásához az _URL Toolkit_ funkciót kell telepíteni és megfelelően beállítani.
 Microsoft IIS::
-  A Microsoft IIS egy webszerver funkciókat tartalmazó kiegészítés Microsoft Windows-ra. A Drupal alaprendszer működik IIS 5, IIS 6 és IIS 7 verziókon, ha a PHP megfelelően van beállítva. Mivel a Drupal megköveteli a szép webcímek kezelését, amit viszont csak az IIS 7-hez elérhető _Microsoft URL Rewrite_ modul támogat, ezért ennél alacsonyabb verziókon e célra külső megoldásra lehet szükség.
+  A Microsoft IIS egy webszerverfunkciókat tartalmazó kiegészítés Microsoft Windowsra. A Drupal alaprendszer működik IIS 5, IIS 6 és IIS 7 verziókon, ha a PHP megfelelően van beállítva. Mivel a Drupal megköveteli a szép webcímek kezelését, amit viszont csak az IIS 7-hez elérhető _Microsoft URL Rewrite_ modul támogat, ezért ennél alacsonyabb verziókon erre a célra külső megoldásra lehet szükség.
 
 ===== Adatbázis
 
