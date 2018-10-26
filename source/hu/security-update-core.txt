@@ -31,13 +31,13 @@ Az a célunk, hogy a Drupal legújabb verziójú kiadásán fusson a webhelyünk
 $settings['update_free_access'] = TRUE;
 ----
 
-. Tiltsunk le minden külső gyorsítótárazási módszert (pl. Memcache, Varnish stb.) amit esetleg használunk.
+. Tiltsunk le minden külső gyorsítótárazási módszert (pl. Memcache, Varnish stb.), amit esetleg használunk.
 
 . Állítsuk a webhelyet karbantartási módba (lásd <<extend-maintenance>>).
 
-. Ha Composert használunk a függőségek kezelésére vagy Gitet a verziókezelésre, akkor a következő hat lépés kihagyható. Helyette kövessük a <<install-composer>> szakaszban leírt útmutatást a friss kódbázis letöltésére. Ha azzal végeztünk, térjünk vissza ide és folytassuk az _update.php_ lépéssel.
+. Ha Composert használunk a függőségek kezelésére vagy Gitet a verziókezelésre, akkor a következő hat lépés kihagyható. Helyette kövessük a <<install-composer>> szakaszban leírt útmutatást a friss kódbázis letöltésére. Ha azzal végeztünk, térjünk vissza ide, és folytassuk az _update.php_ lépéssel.
 
-. A Drupal.org központi webhely https://www.drupal.org/project/drupal[letöltési oldalán] a _Downloads_ > _Recommended releases_ cím alól szerezzük be a Drupal 8 legújabb kiadását: először válasszuk a 8.x-es gombot, majd az így megnyíló oldalon kattintsunk a _tar.gz_ vagy _zip_ állományok gombjára tetszés szerint. A <<install-prepare>> szakaszban már esett róla szó, hogyan szerezzük be a legfrissebb kiadásokat.
+. A Drupal.org webhely https://www.drupal.org/project/drupal[letöltési oldalán] a _Downloads_ > _Recommended releases_ cím alól szerezzük be a Drupal 8 legújabb kiadását: először válasszuk a 8.x-es gombot, majd az így megnyíló oldalon kattintsunk a _tar.gz_ vagy _zip_ állományok gombjára tetszés szerint. A <<install-prepare>> szakaszban már volt arról szó, hogyan szerezzük be a legfrissebb kiadásokat.
 
 . Töltsük fel a tömörített állományok egyikét a tárhelyünkre.
 
@@ -62,9 +62,9 @@ $ drush dl drupal
   * Nyissuk meg a _https://www.pelda.hu/update.php_ oldalt a webböngészőben, ahol a „pelda.hu” a webhelyünk doménje. Kattintsunk a _Folytatás_ gombra.
   * Vagy parancssori hozzáféréssel futtassuk a `$ drush updb` parancsot
 
-. Ha bármilyen üzenetet kaptunk a lefutást követően, akkor futtassuk újra mindaddig, amíg az adatbázisfrissítés teljes egészében sikeresen le nem zajlik.
+. Ha bármilyen üzenetet kaptunk a lefutást követően, akkor futtassuk újra mindaddig, amíg az adatbázis-frissítés teljes egészében sikeresen le nem zajlik.
 
-. A fentebbi 2. lépésben tett ideiglenes engedélyezését a `$settings['update_free_access']` beállításnak állítsuk vissza letiltott értékre a _/sites/default/settings.php_ fájlban:
+. A `$settings['update_free_access']` beállítás fenti, 2. lépésben tett ideiglenes engedélyezését állítsuk vissza letiltott értékre a _/sites/default/settings.php_ fájlban:
 +
 ----
 $settings['update_free_access'] = FALSE;
