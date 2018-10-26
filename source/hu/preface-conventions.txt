@@ -1,4 +1,5 @@
 [[preface-conventions]]
+
 === A könyvben használt formázásról
 
 [role="summary"]
@@ -10,11 +11,11 @@ A Kézikönyv szerkesztése során a következő feltételezésekre építettün
 
 * A teljes tartalmát témakörökre osztottuk fel, melynek részletei a <<preface-organization>> oldalon olvashatóak. Sok ilyen témakör elején szerepel egy _Szükséges előismeretek_ című szakasz: itt soroljuk fel azon korábbi témaköröket, melyek előzetes elolvasása hasznos az adott témakör megértéséhez. Minden szükséges tudást azonban mi sem írhattunk le a Kézikönyvben, ezért feltételezzük, hogy az Olvasónak már vannak alapvető ismeretei a <<preface-audience>> témakörben leírtakról.
 
-* Ezen kívül azoknál a témakörnél, melyek egy lépéssor elvégzéséhez szolgálnak útmutatóul, egy _Webhely előfeltételei_ című szakaszban felsoroljuk azt is, hogy az ismertetett művelet elvégzéséhez a példa webhelyünknek milyen korábbi, előző témakörök során végzett módosításokat kell tükröznie.
+* Ezenkívül azoknál a témaköröknél, melyek egy lépéssor elvégzéséhez szolgálnak útmutatóul, egy _Webhely előfeltételei_ című szakaszban felsoroljuk azt is, hogy az ismertetett művelet elvégzéséhez a példawebhelyünknek milyen korábbi, előző témakörök során végzett módosításokat kell tükröznie.
 
-* A példaként használt webhely ugyanis a teljes Kézikönyv során ugyanaz. Egy valós élethelyzetben, egy kisvárosi termelői piac weboldalán keresztül mutatjuk be példáinkat, ennek részletei a <<preface-scenario>> témakörben olvashatóak. Természetesen nem kötelező mindenkinek ugyanilyen célú webhelyet építenie, sőt, az Olvasó szabadon alkalmazhatja a leírtakat a saját webhelyére. Ekkor azonban gondolnia kell majd arra is, hogy a későbbi fejezetekben ismertetett lépéssoroknak megfelel-e a saját Drupal példánya?
+* A példaként használt webhely ugyanis a teljes Kézikönyv során ugyanaz. Egy valós élethelyzetben, egy kisvárosi termelői piac weboldalán keresztül mutatjuk be példáinkat, ennek részletei a <<preface-scenario>> témakörben olvashatóak. Természetesen nem kötelező mindenkinek ugyanilyen célú webhelyet építenie, sőt, az Olvasó szabadon alkalmazhatja a leírtakat a saját webhelyére. Ekkor azonban gondolnia kell majd arra is, hogy a későbbi fejezetekben ismertetett lépéssoroknak megfelel-e a saját Drupal-példánya?
 
-* A <<install-run>> témakör után következő továbbiak egy további feltételt is támasztanak: onnantól értelemszerűen elvárt, hogy fel legyen telepítve a Drupal a tárhelyen és az Olvasó be legyen rajta jelentkezve egy kellő jogosultságokkal bíró felhasználói fiókkal. +
+* A <<install-run>> témakör után következő részek egy további feltételt is támasztanak: onnantól értelemszerűen elvárt, hogy fel legyen telepítve a Drupal a tárhelyen és az Olvasó be legyen rajta jelentkezve egy kellő jogosultságokkal bíró felhasználói fiókkal. +
  +
 Ha a Kézikönyv fejezetein sorban haladunk végig, akkor ez nem igényel semmilyen további előkészületet: a telepítés során automatikusan létrejön az Egyes számú fiók, amelyben a telepítés végeztével bejelentkezve maradunk, így a lehető legmagasabb szintű hozzáféréssel rendelkezünk.
 
@@ -23,11 +24,11 @@ Ha a Kézikönyv fejezetein sorban haladunk végig, akkor ez nem igényel semmil
 
 A Kézikönyv során a következő fogalmazási és szerkesztési gyakorlatot követtük a könnyebb érthetőség kedvéért:
 
-* A _pelda.hu_ doménnév alatt mindig a webhelyünk alap webcímét értjük. A webhelyünkön belül használatos további webcímekről lentebb, a Navigáció szakaszban írunk.
+* A _pelda.hu_ doménnév alatt mindig a webhelyünk alapwebcímét értjük. A webhelyünkön belül használatos további webcímekről lentebb, a Navigáció szakaszban írunk.
 
 * _Dőlt betűvel_ a képernyőn megjelenő kifejezéseket jelöltük, mint például: „Kattintsunk a _Beállítások mentése_ gombra”. Ez azonban csak a szoftver kezelőfelületének részét képező kifejezésekre vonatkozik, nem pedig a korábbi témakörök során begépelt szövegekre. Például amikor egy tartalomszerkesztésről szóló leírásban egy ehhez hasonló utasítást olvashatunk: „Kattintsunk a _Szerkesztés_ gombra a Rólunk oldal sorában”, akkor a _Szerkesztés_ dőlt betűs, mert a gomb felirata, de a Rólunk nem az, mivel az egy általunk feltöltött tartalomnak a címe.
 
-* Az előbb említett UI-feliratokon kívül a _dőlttel_ való formázást használjuk még modulok és sminkek, valamint fájlok neveinek és az újonnan ismertetett szakkifejezések kiemelésére is.
+* Az előbb említett UI-feliratokon kívül a _dőlttel_ való formázást használjuk még modulok és sminkek, valamint fájlok neveinek és az újonnan ismertetett szakkifejezéseknek a kiemelésére is.
 
 * Minden olyan szöveget, amelyet egy parancssori ablakba kell begépelnünk, +egyenszélességű+ betűvel jelöltünk:
 +
@@ -39,7 +40,7 @@ drush cr
 
 ==== Navigáció
 
-Az útmutató leírások elvégzéséhez leggyakrabban a Drupal adminisztrációs felületét fogjuk használni. Ezért a lépéssorok gyakran tartalmaznak majd ehhez hasonló utasításokat:
+Az útmutató leírások elvégzéséhez leggyakrabban a Drupal adminisztrációs felületét fogjuk használni, ezért a lépéssorok gyakran tartalmaznak majd ehhez hasonló utasításokat:
 
 =============
 „Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Taxonómia_ menüpontot”. (Ez igazán majd az alaprendszer feltelepítését követően nyer majd értelmet.)
@@ -65,7 +66,7 @@ Végezetül pedig még egy apró megjegyzés: ha az alapértelmezett adminisztr�
 
 ==== Űrlapok kitöltése, adatok bevitele
 
-Könyvünk lépéssorainak majdnem valamennyi feladata során szükségünk lesz különböző adatok webes űrlapokon keresztüli bevitelére. Ennek megkönnyítésére a legtöbb esetben egy képernyőképpel illusztráljuk majd őket, valamint egy táblázatban összefoglaljuk, hogy melyik mezőbe mit kell beírni. Például találkozni fogunk majd egy ehhez hasonló táblázattal, ami három oszlopban összefoglalja, hogyan töltsük ki a mezőket a _Konfiguráció_ > _Rendszer_ > _Alapvető webhelybeállítások_ (vagy címsorban az  _admin/config/system/site-information_) oldalon:
+Könyvünk lépéssorainak majdnem minden feladata során szükségünk lesz különböző adatok webes űrlapokon keresztüli bevitelére. Ennek megkönnyítésére a legtöbb esetben egy képernyőképpel illusztráljuk majd őket, valamint egy táblázatban összefoglaljuk, hogy melyik mezőbe mit kell beírni. Például találkozni fogunk majd egy ehhez hasonló táblázattal, ami három oszlopban összefoglalja, hogyan töltsük ki a mezőket a _Konfiguráció_ > _Rendszer_ > _Alapvető webhelybeállítások_ (vagy a címsorban az  _admin/config/system/site-information_) oldalon:
 
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -73,7 +74,7 @@ Könyvünk lépéssorainak majdnem valamennyi feladata során szükségünk lesz
 | Webhely részletei > A webhely neve | A webhelyünkhöz kitalált tetszőleges elnevezés. | Bárkifalva Termelői Piac
 |================================
 
-A táblázat segítségével nincs más dolgunk, mint megkeresni az adott oldalon a _Webhely részletei_ mezőcsoportot (amit a legtöbb adminsmink valamilyen keretezéssel jelöl), azon belül _A webhely neve_ beviteli mezőt, és bemásolni a példaként megadott értéket, vagy begépelni egy magunk választotta sajátot. Egyes oldalakon előfordulhat, hogy ezek a keretek alapértelmezetten összecsukva jelennek meg, ilyenkor a címükre kattintva nyithatóak ki. Egyébként az előbb példa értékként feltüntetett „Bárkifalva Termelői Piac” nem véletlen: a <<preface-scenario>> témakörnél ismertetjük, hogy milyen valós életbeli példán keresztül építjük fel webhelyünket a Kézikönyv során.
+A táblázat segítségével nincs más dolgunk, mint megkeresni az adott oldalon a _Webhely részletei_ mezőcsoportot (amit a legtöbb adminsmink valamilyen keretezéssel jelöl), azon belül _A webhely neve_ beviteli mezőt, és bemásolni a példaként megadott értéket vagy begépelni egy magunk választotta sajátot. Egyes oldalakon előfordulhat, hogy ezek a keretek alapértelmezetten összecsukva jelennek meg, ilyenkor a címükre kattintva nyithatóak ki. Egyébként az előbb példaértékként feltüntetett „Bárkifalva Termelői Piac” nem véletlen: a <<preface-scenario>> témakörnél ismertetjük, hogy milyen valódi példán keresztül építjük fel webhelyünket a Kézikönyv során.
 
 *Közreműködők*
 
