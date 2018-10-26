@@ -33,17 +33,17 @@ Git::
 Composer::
   Erről a másik nagyszerű segítségről is írunk még alább.
 Devel::
-  A https://www.drupal.org/project/devel[Devel] egy közösségi modul, ami rengeteg praktikus funkciót kínál a webfejlesztési feladatok elvégzéséhez, mint például a forráskód vizsgálatát, az adatbázis-lekérdezések elemzését és próba tartalmak tömeges előállítását tesztjelleggel.
+  A https://www.drupal.org/project/devel[Devel] egy közösségi modul, ami rengeteg praktikus funkciót kínál a webfejlesztési feladatok elvégzéséhez, mint például a forráskód vizsgálatát, az adatbázis-lekérdezések elemzését és próbatartalmak tömeges előállítását tesztjelleggel.
 
 ==== Mitől különleges a Drush?
 
-A http://www.drush.org[Drush] egy parancssorban futó alkalmazás, amellyel a Drupalnak adhatunk utasításokat kényelmesebben és gyorsabban, mintha ehhez az adminfelületen kellene kattintgatnunk. Sok webfejlesztő ahol csak tud, amikor csak lehet, Drusht használ a Drupal kezelésére, mert meggyőződésük, hogy a megismerésére és gyakorlására fordított tanulási idő hamar megtérül. Íme néhány érv, hogy miért lehet érdemes nekünk is áttérnünk a használatára:
+A http://www.drush.org[Drush] egy parancssorban futó alkalmazás, amellyel a Drupalnak kényelmesebben és gyorsabban adhatunk utasításokat, mintha ehhez az adminfelületen kellene kattintgatnunk. Sok webfejlesztő Drusht használ a Drupal kezelésére amikor csak lehet, mert meggyőződésük, hogy a megismerésére és gyakorlására fordított tanulási idő hamar megtérül. Íme néhány érv, hogy miért lehet érdemes nekünk is áttérnünk a használatára:
 
-* Rengeteg parancsot kínál szinte valamennyi feladathoz: a telepítéstől (nem csak modulokat vagy sminkeket, de magát az alaprendszert is akár) és frissítéstől kezdve a különböző adatbázisműveleteken át egészen a gyorsítótárak ürítéséig és jelszavak újragenerálásáig – csak hogy néhány előnyét említsük. Sőt, népszerűsége okán már más közösségi modulok és sminkek is definiálnak saját Drush-parancsokat a még gördülékenyebb üzemeltetés érdekében.
+* Rengeteg parancsot kínál szinte valamennyi feladathoz: a telepítéstől (nemcsak modulokat vagy sminkeket, de akár magát az alaprendszert is) és frissítéstől kezdve a különböző adatbázis-műveleteken át egészen a gyorsítótárak kiürítéséig és jelszavak újragenerálásáig – csak hogy néhány előnyét említsük. Sőt, népszerűsége okán már más közösségi modulok és sminkek is definiálnak saját Drush-parancsokat a még gördülékenyebb üzemeltetés érdekében.
 
 * A gyakori, sokat ismételt adminisztrációs feladatok elvégzése általában gyorsabb és kényelmesebb parancssorban begépelve, mint ugyanez az adminfelületen, több oldalbetöltésen keresztül navigálva.
 
-* Mivel a Drush az adminfelületnél jóval mélyebb szinten, a számítógép parancssorában fut, ezért a kívánt műveletek egymás utáni elvégzésére automata szkriptek írhatóak, amik nem csak a Drupalt vezérelhetik, hanem akár a webszervert és a stack más elemeit (például adatbázisszerver, külső gyorsítótár szerver stb.) is.
+* Mivel a Drush az adminfelületnél jóval mélyebb szinten, a számítógép parancssorában fut, ezért a kívánt műveletek egymás utáni elvégzésére automata szkriptek írhatóak, amik nemcsak a Drupalt vezérelhetik, hanem akár a webszervert és a stack más elemeit (például adatbázisszerver, külső gyorsítótárszerver stb.) is.
 
 * A Drush ezenkívül esetenként akár több lehetőséget is kínál, mint az adminfelület, például adatbázis-lekérdezések futtatását.
 
@@ -53,20 +53,20 @@ Ha sikerült felkelteni az érdeklődést a Drush kipróbálása iránt, akkor s
 
 A https://getcomposer.org/[Composer] a PHP-függőségek kezelésére szolgáló eszköz, aminek segítségével a fejlesztőnek elég csak definiálnia, hogy egy adott külső függvénykönyvtár melyik verziójára van szüksége a saját programjai futtatásához, és onnantól a Composer gondoskodik annak letöltéséről és telepítéséről.
 
-A Drupal nagy mértékben támaszkodik a Composer szolgáltatásaira, mivel számos külső, Drupalon kívül készülő komponens lett beépítve a rendszerbe, és ezeknek mindig letöltve és telepítve kell lenniük a hibamentes működéshez. Az alaprendszer telepítésekor vagy le kell töltenünk egy tömörített állományt, ami tartalmazza e külső programok szükséges verzióit, vagy kézzel el kell indítanunk a Composert, hogy beszerezze azokat nekünk.
+A Drupal nagymértékben támaszkodik a Composer szolgáltatásaira, mivel számos külső, Drupalon kívül készülő komponens lett beépítve a rendszerbe, és a hibamentes működéshez ezeket mindig le kell tölteni és telepíteni. Az alaprendszer telepítésekor vagy le kell töltenünk egy tömörített állományt, ami tartalmazza e külső programok szükséges verzióit, vagy kézzel el kell indítanunk a Composert, hogy beszerezze azokat nekünk.
 
-Közösségi modulok is megkövetelhetik a Composer használatát, például egy Facebook-kal való összeköttetést megvalósító modul igényli a Facebook által kiadott függvénykönyvtár meglétét a helyi szerveren, vagy egy földrajzi koordinátákat kezelő modulnak szüksége lehet egy adott geolokációs függvénykönyvtárra. Az ilyen, külső függőségekkel működő modulok és sminkek telepítéséhez futnia kell a Composernek.
+Közösségi modulok is megkövetelhetik a Composer használatát, például egy Facebookkal való összeköttetést megvalósító modul igényli a Facebook által kiadott függvénykönyvtár meglétét a helyi szerveren, vagy egy földrajzi koordinátákat kezelő modulnak szüksége lehet egy adott geolokációs függvénykönyvtárra. Az ilyen, külső függőségekkel működő modulok és sminkek telepítéséhez futnia kell a Composernek.
 
 ==== Milyen segítség áll a modul- és sminkfejlesztők rendelkezésére?
 
 Eddig azokról az eszközökről volt szó, amelyek leginkább a webhelyek építéséhez és üzemeltetéséhez hasznosak. Az alábbiakban azonban bemutatunk néhány olyat is, melyeknek inkább a modul- és sminkfejlesztők veszik nagy hasznát.
 
 Drupal Console::
-  A https://drupalconsole.com[Drupal Console] szintén egy parancssori eszköz, ami kapcsolatba lép a Drupal webhellyel és előregenerált kódrészleteket állít elő. Kérhetünk így blokkok vagy űrlapok programozásához sablon kódot, de szintén képes modulokat és sminkeket telepíteni, valamint próbatartalmat tömegesen előállítani. A Drupal Console tulajdonképpen a _Symfony Console_-ra épül.
+  A https://drupalconsole.com[Drupal Console] szintén egy parancssori eszköz, ami kapcsolatba lép a Drupal webhellyel, és előregenerált kódrészleteket állít elő. Kérhetünk így blokkok vagy űrlapok programozásához sablonkódot, de szintén képes modulokat és sminkeket telepíteni, valamint próbatartalmat tömegesen előállítani. A Drupal Console tulajdonképpen a _Symfony Console_-ra épül.
 Coder::
-  A https://www.drupal.org/project/coder[Coder] modul ugyanúgy a parancssorban futtatható és arra készült, hogy segítsen az általunk írt forráskódot hozzáigazítani a projekt széleskörűen elfogadott és mások által is betartott szintaxis-szokásaihoz. Sőt, ha ezektől való eltérést észlel, akkor nem csak figyelmeztet minket, de akár ki is tudja javítani a hiányosságokat.
+  A https://www.drupal.org/project/coder[Coder] modul ugyanúgy a parancssorban futtatható, és arra készült, hogy segítsen az általunk írt forráskódot hozzáigazítani a projekt széleskörűen elfogadott és mások által is betartott szintaxisszokásaihoz. Sőt, ha ezektől való eltérést észlel, akkor nemcsak figyelmeztet minket, de akár ki is tudja javítani a hiányosságokat.
 Firebug::
-  A http://getfirebug.com[Firebug] egy beépülő volt a Firefox-hoz, amely lehetővé tette a böngészőbe betöltődő weboldal HTML, CSS és JavaScript forráskódjának elemzését, szerkesztését, hibakeresését egy külön böngészőablakban. Funkcionalitását mára felváltották a nagyobb böngészők gyárilag beépített fejlesztői eszköztárai. Ezekről itt olvashatunk bővebben: https://developer.chrome.com/devtools[Google Chrome Dev Tools] és https://developer.mozilla.org/en-US/docs/Tools[Mozilla Firefox Dev Tools].
+  A http://getfirebug.com[Firebug] egy beépülő volt a Firefoxhoz, amely lehetővé tette a böngészőbe betöltődő weboldal HTML, CSS és JavaScript forráskódjának elemzését, szerkesztését, hibakeresését egy külön böngészőablakban. Funkcionalitását mára felváltották a nagyobb böngészők gyárilag beépített fejlesztői eszköztárai. Ezekről itt olvashatunk bővebben: https://developer.chrome.com/devtools[Google Chrome Dev Tools] és https://developer.mozilla.org/en-US/docs/Tools[Mozilla Firefox Dev Tools].
 
 ==== Kapcsolódó témák
 
