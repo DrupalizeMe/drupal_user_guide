@@ -3,14 +3,14 @@
 === Fejlesztési célú webhelypéldány létrehozása
 
 [role="summary"]
-Hogyan készíthetünk az éles webhelyünkről egy másolatot, amin szabadon kísérletezhetünk.
+Így készíthetünk az éles webhelyünkről egy másolatot, amin szabadon kísérletezhetünk.
 
 (((Fejlesztői webhelypéldány,létrehozása)))
 (((Élesítésre kész webhelypéldány,létrehozása)))
 
 ==== Célkitűzés
 
-Lemásoljuk a meglévő webhelyünket, hogy legyen belőle egy másik példányunk, amin szabadon, kockázat nélkül kísérletezhetünk új funkciók fejlesztésével, vagy kipróbálhatjuk a frissítéseket.
+Lemásoljuk a meglévő webhelyünket, hogy legyen belőle egy másik példányunk, amin szabadon, kockázat nélkül kísérletezhetünk új funkciók fejlesztésével, vagy ahol kipróbálhatjuk a frissítéseket.
 
 ==== Szükséges előismeretek
 
@@ -20,20 +20,20 @@ Lemásoljuk a meglévő webhelyünket, hogy legyen belőle egy másik példányu
 
 * Talán szükségtelen mondani, hogy mindenképpen léteznie kell már a webhelyünknek legalább egy példányban, amit klónozni tervezünk.
 
-* Ha úgy döntünk, hogy a Drusht használnánk az alábbi lépések némelyikéhez, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
+* Ha úgy döntünk, hogy a Drusht használnánk az alábbi lépések valamelyikéhez, akkor annak már telepítve kell lennie. Ehhez további tudnivalót a <<install-tools>> szakaszban találunk.
 
 ==== Lépések
 
-. A korábbi <<install-prepare>> részben leírt lépéseket követve már van rálátásunk a tárhelyünk működésére, így elő tudjuk készíteni a terepet az új webhelypéldánynak: a gyökérkönyvtárat a hozzá tartozó, külső internetről elérhető webcímmel, valamint az (egyelőre még üres) adatbázist a szintén hozzá tartozó adatbázisfelhasználóval együtt.
+. A korábbi <<install-prepare>> részben leírt lépéseket követve már van rálátásunk a tárhelyünk működésére, így elő tudjuk készíteni a terepet az új webhelypéldány számára: a gyökérkönyvtárat a hozzá tartozó, külső internetről elérhető webcímmel, valamint az (egyelőre még üres) adatbázist a szintén hozzá tartozó adatbázis-felhasználóval együtt.
 
 . Készítsünk másolatot az éles webhely adatbázisáról az alábbi két mód valamelyikét választva:
 +
-  * Ha MySQL-t használunk adatbázisnak és a távoli kiszolgálón telepítve van a _phpMyAdmin_ nevű eszköz (nagy valószínűséggel, ugyanis elég népszerű), akkor keressük meg annak _Export_ fülét a felső eszközsoron. Válasszuk az _SQL_ formátumot és engedélyezzük a kimenet _gzip_ fájllá való tömörítését.
+  * Ha MySQL-t használunk adatbázisnak, és a távoli kiszolgálón telepítve van a _phpMyAdmin_ nevű eszköz (nagy valószínűséggel, ugyanis elég népszerű), akkor keressük meg annak _Export_ fülét a felső eszközsoron. Válasszuk az _SQL_ formátumot és engedélyezzük a kimenet _gzip_ fájllá való tömörítését.
 
   * Ha az előbb említett grafikus felület nem elérhető számunkra, de van parancssori hozzáférésünk, akkor küldhetjük az utasítást közvetlenül a MySQL kiszolgálónak is (természetesen behelyettesítve a webhelyünk adatbázisának nevét, felhasználóját és annak jelszavát):
 +
 ----
-$ mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
+$ mysqldump -u USERNAME -p 'PASSWORD' DATABASENAME > BACKUPFILE.sql
 ----
 
   * Ha inkább Drusht használnánk, akkor ezt a parancsot futtassuk:
@@ -42,13 +42,13 @@ $ mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
 $ drush sql-dump > BACKUPFILE.sql
 ----
 
-  * Használhatjuk a https://www.drupal.org/project/backup_migrate[Backup and Migrate] nevű közösségi modult is. Modulok webhelyünkre való feltelepítéséről a <<extend-module-install>> részben volt szó.
+  * Használhatjuk a https://www.drupal.org/project/backup_migrate[Backup and Migrate] nevű közösségi modult is. A modulok webhelyünkre való feltelepítéséről a <<extend-module-install>> részben volt szó.
 +
-Így tehát megvan a webhely adatbázisa elmentve egy _BACKUPFILE.sql_ (hacsak más nevet nem adtunk neki) fájlban. Le is menthetjük a helyi számítgépünkre, de tárolhatjuk a távoli gépen is. Utóbbi esetén viszont fontos biztonsági óvintézkedés, hogy a kiszolgálónak csak olyan könyvtárában tartsuk, ami nem érhető el kívülről az internetről. (Tehát ne a Drupal gyökérkönyvtárában vagy az alatt!)
+Így tehát megvan a webhely adatbázisa elmentve egy _BACKUPFILE.sql_ (hacsak más nevet nem adtunk neki) fájlban. Le is menthetjük a helyi számítógépünkre, de tárolhatjuk a távoli gépen is. Utóbbi esetén viszont fontos biztonsági óvintézkedés, hogy a kiszolgálónak csak olyan könyvtárában tartsuk, ami nem érhető el kívülről az internetről. (Tehát ne a Drupal gyökérkönyvtárában vagy az alatt!)
 
 . Másoljunk át minden fájlt az éles webhely gyökérkönyvtárából a fejlesztési példányéba.
 
-. Nyissuk meg a fejlesztési példány _sites/default/settings.php_ konfigurációs fájlját egy egyszerű szövegszerkesztőben. Keressük meg benne az adatbáziskapcsolatot leíró beállításokat (lehet, hogy a végefelé találjuk). Körülbelül ehhez hasonlóan festenek:
+. Nyissuk meg a fejlesztési példány _sites/default/settings.php_ konfigurációs fájlját egy egyszerű szövegszerkesztőben. Keressük meg benne az adatbáziskapcsolatot leíró beállításokat (lehet, hogy a végefelé találjuk). Ehhez hasonlóan festenek:
 +
 ----
 $databases['default']['default'] = array (
@@ -72,7 +72,7 @@ $settings['trusted_host_patterns']
   * Ha viszont parancssoron keresztül exportáltuk fentebb, akkor az alábbi utasítást használhatjuk a MySQL kiszolgáló felé (a paramétereket ismét behelyettesítve persze):
 +
 ----
-$ mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
+$ mysql -u USERNAME -p PASSWORD  DATABASE_NAME < BACKUPFILE.sql
 ----
 +
   * Drushsal is lehet importálni, mégpedig így:
@@ -81,7 +81,7 @@ $ mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
 $ drush sql-query --file=BACKUPFILE.sql
 ----
 
-. Ahogy fentebb már tapasztaltuk, két példány (bár ugyanannak az egy webhelynek a másolatai) eltérő beállításokat használhat a szétválasztott működésük érdekében. Az előbb átírt adatbáziskapcsolatokon kívül azonban számos további beállításuk különbözhet, amit ugyanúgy a _settings.php_ fájljaikban tárolnak. Lehetőség van azonban felülírást megvalósítani közöttük a `$config` változó segítségével. Például az éles webhely neve továbbra is maradjon „Bárkifalva Termelői Piac”, de a fejlesztési példányon ez inkább figyelmeztessen rá azzal, hogy átírjuk „DEV! – Bárkifalva Termelői Piac” címre. Ezt úgy érthetjük el, hogy mindkettejük adatbázisában továbbra is meghagyjuk az éles szövegváltozatot, de a fejlesztési példány _settings.php_ fájljában elhelyezzük az alábbi extra sort:
+. Ahogy fentebb már tapasztaltuk, két példány – bár ugyanannak az egy webhelynek a másolatai – eltérő beállításokat használhat a szétválasztott működésük érdekében. Az előbb átírt adatbáziskapcsolatokon kívül azonban számos további beállításuk különbözhet, amit ugyanúgy a _settings.php_ fájljaikban tárolnak. Lehetőség van azonban felülírást megvalósítani közöttük a `$config` változó segítségével. Például az éles webhely neve továbbra is maradjon „Bárkifalva Termelői Piac”, de a fejlesztési példányon ez inkább figyelmeztessen azzal, hogy átírjuk „DEV! – Bárkifalva Termelői Piac” címre. Ezt úgy érhetjük el, hogy mindkettő adatbázisában továbbra is meghagyjuk az éles szövegváltozatot, de a fejlesztési példány _settings.php_ fájljában elhelyezzük az alábbi kiegészítő sort:
 +
 ----
 $config['system.site']['name'] = "DEV! – Bárkifalva Termelői Piac";
@@ -89,9 +89,9 @@ $config['system.site']['name'] = "DEV! – Bárkifalva Termelői Piac";
 
 ==== Az ismeretek elmélyítése
 
-* Ellenőrizzük, hogy a fejlesztési példány jól működik – lehetőleg ugyanúgy (vagy jobban), mint az éles párja.
+* Ellenőrizzük, hogy a fejlesztési példány jól működik-e – lehetőleg ugyanúgy (vagy jobban), mint az éles párja.
 
-* Jelentkezzünk be a fejlesztési példányon is (adminisztrátori fiókunk megegyezik az élessel) és ürítsük a gyorsítótárat. Ehhez lásd a későbbi <<prevent-cache-clear>> részt.
+* Jelentkezzünk be a fejlesztési példányon is (adminisztrátori fiókunk megegyezik az élessel) és ürítsük ki a gyorsítótárat. Ehhez lásd a későbbi <<prevent-cache-clear>> részt.
 
 * <<extend-deploy>>
 
