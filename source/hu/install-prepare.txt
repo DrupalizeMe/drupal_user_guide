@@ -3,7 +3,7 @@
 === Felkészülés a telepítésre
 
 [role="summary"]
-Hogyan válasszuk ki az alaprendszer telepítési módját és biztosítsuk a telepítés előfeltételeit.
+Így válasszuk ki az alaprendszer telepítési módját és biztosítsuk a telepítés előfeltételeit.
 
 (((Telepítés,alaprendszer)))
 (((Drush eszköz,az alaprendszer telepítése a használatával)))
@@ -22,7 +22,7 @@ Kiválasztjuk a számunkra megfelelő módszert az alaprendszer telepítéséhez
 
 ==== Webhely előfeltételei
 
-Ha a Drusht használnánk az alábbi lépések némelyikéhez, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
+Ha a Drusht használnánk az alábbi lépések valamelyikéhez, akkor annak már telepítve kell lennie, amihez további tudnivalót a <<install-tools>> szakaszban találunk.
 
 ==== Lépések
 
@@ -30,13 +30,13 @@ Ha a Drusht használnánk az alábbi lépések némelyikéhez, akkor annak már 
 +
 --
 Kipróbálhatjuk egy szolgáltató ingyenes lehetőségét::
-  Igénybe vehetjük egy online szolgáltató által kínált bemutatót, ami kb. 20 perc alatt telepíthető. Ehhez lásd a https://www.drupal.org/try-drupal[Try Drupal] (azaz „Drupal kipróbálása”) című oldalt a Drupal.org-on angol nyelven.
+  Igénybe vehetünk egy online szolgáltató által kínált bemutatót, ami kb. 20 perc alatt telepíthető. Ehhez lásd a https://www.drupal.org/try-drupal[Try Drupal] (azaz „Drupal kipróbálása”) című oldalt a Drupal.org-on angol nyelven.
 
 Indulhatunk a tárhelyszolgáltatónk „egykattintásos” telepítésével::
-  Ha már előfizettünk egy tárhelyszolgáltatónál, akkor lehet, hogy ők is biztosítanak funkciót az olyan CMS-ek, mint a Drupal telepítésére. Ekkor a saját környezetükről általában külön leírást adnak, de az is megeshet, hogy „egykattintásos” telepítési lehetőséget is biztosítanak. Ha még nem kötöttünk szerződést egyik tárhelyszolgáltatóval sem, akkor hasznos lehet átböngésznünk a https://www.drupal.org/supporters/hosting[Hosting Supporters] (angol nyelvű) oldalon szereplő szolgáltatók listáját, akik biztosan támogatják a Drupal használatát.
+  Ha már előfizettünk egy tárhelyszolgáltatónál, akkor lehet, hogy ők is biztosítanak funkciót az olyan CMS-ek telepítésére, mint a Drupal. Ekkor a saját környezetükről általában külön leírást adnak, de az is megeshet, hogy „egykattintásos” telepítési lehetőséget is biztosítanak. Ha még nem kötöttünk szerződést egyik tárhelyszolgáltatóval sem, akkor hasznos lehet átböngésznünk a https://www.drupal.org/supporters/hosting[Hosting Supporters] (angol nyelvű) oldalon szereplő szolgáltatók listáját, akik biztosan támogatják a Drupal használatát.
 
 Használhatjuk a Drush eszközt::
-  Ehhez szükségünk lesz parancssori hozzáférésre a tárhelyen és a Drush eszközre már feltelepítve. Lásd <<install-tools>>.
+  Ehhez szükségünk lesz parancssori hozzáférésre a tárhelyen és a már feltelepített Drush eszközre. Lásd <<install-tools>>.
 
 Futtathatjuk a webes telepítőt::
   Az alaprendszer kézi telepítéséhez gondoskodnunk kell lemezterületről helyi számítógépünkön vagy a távoli bérelt tárhelyen.
@@ -83,9 +83,9 @@ image:images/install-prepare-files.png["Fájlok letöltése az alaprendszer let�
 
 .. Töltsük le a _tar.gz_ (vagy _zip_) fájlt a helyi gépünkre.
 
-.. Töltsük fel a letöltött fájlt a tárhelyünkre. Ha tárhelyszolgáltatónk kínál valamilyen vezérlőpult eszközt (pl. cPanel) a tárhely kezelésére, akkor lépjünk az internetről kívülről látható gyökérkönyvtárba (ez lehet „HTML”, „public” vagy „web”) és válasszuk azt a feltöltés céljának.
+.. Töltsük fel a letöltött fájlt a tárhelyünkre. Ha tárhelyszolgáltatónk kínál valamilyen vezérlőpult eszközt (pl. cPanel) a tárhely kezelésére, akkor lépjünk az internetről kívülről látható gyökérkönyvtárba (ez lehet „HTML”, „public”, „www” vagy „web”), és válasszuk azt a feltöltés céljának.
 
-.. Itt tömörítsük ki a _tar.gz_ (vagy _zip_) fájlt, ami egy új könyvtárat fog létrehozni. Ha nincs parancssori hozzáférésünk vagy a tárhely nem Linux operációs rendszeren fut, akkor a szolgáltató vezérlőpultjának fájlkezelője általában biztosít kicsomagolási lehetőséget. Ha viszont van parancssori hozzáférésünk a távoli szerverhez (és az Linuxon fut), akkor a következő parancs kiadásával csomagolhatjuk ki a tömörített fájlt:
+.. Itt tömörítsük ki a _tar.gz_ (vagy _zip_) fájlt, ami egy új könyvtárat fog létrehozni. Ha nincs parancssori hozzáférésünk, vagy a tárhely nem Linux operációs rendszeren fut, akkor a szolgáltató vezérlőpultjának fájlkezelője általában biztosít kicsomagolási lehetőséget. Ha viszont van parancssori hozzáférésünk a távoli szerverhez (és az Linuxon fut), akkor a következő parancs kiadásával csomagolhatjuk ki a tömörített fájlt:
 +
 ----
 $ tar -xzf drupal-8.3.2.tar.gz
