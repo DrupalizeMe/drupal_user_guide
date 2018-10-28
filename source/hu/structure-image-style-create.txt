@@ -3,7 +3,7 @@
 === Képstílus létrehozása
 
 [role="summary"]
-Hogyan vehetünk fel új formátumokat a képek automatikus módosításához.
+Új képformátumok felvétele a képek automatikus módosításához.
 
 (((Képstílus,létrehozás)))
 (((Stílus,kép)))
@@ -12,7 +12,7 @@ Hogyan vehetünk fel új formátumokat a képek automatikus módosításához.
 
 ==== Célkitűzés
 
-Ebben a témakörben megismerjük, hogyan lehet a látogatóknak kiszolgált képek automatikus formázását a Drupalra bízni. A cél, hogy az _Árusok_ adatlapjain a bemutatkozó fotóik egységesen jelenjenek meg, ne mindig ugyanúgy, ahogy fel lettek töltve.
+Ebben a témakörben megismerjük, hogyan lehet a Drupalra bízni a látogatóknak kiszolgált képek automatikus formázását. A cél, hogy az _Árusok_ adatlapjain a bemutatkozó fotóik egységesen jelenjenek meg, ne mindig ugyanabban a formátumban, ahogy fel lettek töltve.
 
 ==== Szükséges előismeretek
 
@@ -24,14 +24,14 @@ Ebben a témakörben megismerjük, hogyan lehet a látogatóknak kiszolgált ké
 
 * A _Recept_ és _Árus_ tartalomtípusoknak már létezniük kell. Ehhez lásd a <<structure-content-type>> témakört.
 
-* Mind a két tartalomtípushoz hozzá kell, legyen rendelve a _Fő kép_ nevű mező. A mezőkről bővebben a <<structure-fields>> témakörben van szó.
+* Mind a két tartalomtípushoz hozzá kell, hogy legyen rendelve a _Fő kép_ nevű mező. A mezőkről bővebben a <<structure-fields>> témakörben van szó.
 
-* Legyenek már beküldve tartalmak mindkét típusba. Lásd:
+* Mindkét típusban legyenek már beküldött tartalmak. Lásd:
 <<structure-content-type>>, <<structure-fields>> és <<content-create>> témakörök.
 
 ==== Lépések
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Média_ > _Képstílusok_ (vagy címsorba gépelve: _admin/config/media/image-styles_) oldalra.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Média_ > _Képstílusok_ (vagy a címsorba gépelve: _admin/config/media/image-styles_) oldalra.
 
 . Kattintsunk a _Képstílus hozzáadása_ gombra.
 
@@ -60,9 +60,9 @@ image:images/structure-image-style-create-add-style.png["Egy képstílus hozzáa
 . Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ menüpontot (vagy gépeljük a címsorba: _admin/structure/types_).
 (_admin/structure/types_).
 
-. Az _Árus_ tartalomtípus sorának végén a _Műveletek_ oszlopban kattintsunk a lenyíló gomb _Megjelenés beállítása_ lehetőségére. Betöltődik a _Megjelenés beállítása_ oldal (_admin/structure/types/manage/vendor/display_).
+. Az _Árus_ tartalomtípus sorának végén, a _Műveletek_ oszlopban kattintsunk a lenyíló gomb _Megjelenés beállítása_ lehetőségére. Betöltődik a _Megjelenés beállítása_ oldal (_admin/structure/types/manage/vendor/display_).
 
-. Győződjünk meg róla, hogy a másodlagos fülek közül az első, _Alapértelmezett_ (angolul „Default”) van kiválasztva.
+. Győződjünk meg arról, hogy a másodlagos fülek közül az első, _Alapértelmezett_ (angolul „Default”) van kiválasztva.
 
 . A _Fő kép_ mező sorában kattintsunk a fogaskerék ikonra a további beállítási lehetőségek eléréséhez.
 
@@ -72,19 +72,19 @@ image:images/structure-image-style-create-add-style.png["Egy képstílus hozzáa
 |================================
 | Mezőnév | Magyarázat | Érték
 | Képstílus | Kiválaszthatjuk a már létezők közül, hogy itt melyik legyen alkalmazva. | Közepesen nagy (300x200)
-| Kép hivatkozása erre | Hová legyen a látogató átirányítva, ha rákattint a képre. | Semmi
+| Kép hivatkozása erre | Hová legyen a látogató átirányítva, ha rákattint a képre? | Semmi
 |================================
 +
 --
 // Main image settings area of Vendor content type.
-image:images/structure-image-style-create-manage-display.png["Egy kép mezőformázójának módosítása"]
+image:images/structure-image-style-create-manage-display.png["Egy képmező formázójának módosítása"]
 --
 
 . Kattintsunk a _Frissítés_ gombra.
 
 . Kattintsunk a _Mentés_ gombra. Innentől már az új képstílus lesz használatban, amikor egy _Árus_ típusú tartalmat megnyitunk.
 
-. Nyissuk meg az egyik, korábban már felvitt ilyen típusú tartalmunkat, és ellenőrizzük, hogy már valóban ilyen méretben jelenik meg a bemutatkozó fotó. Ha még segítség szükséges egy tartalomegység megtalálásához, akkor a <<content-edit>> témakör hasznos lehet.
+. Nyissuk meg az egyik, korábban már felvitt, ilyen típusú tartalmunkat, és ellenőrizzük, hogy valóban ilyen méretben jelenik-e meg a bemutatkozó fotó. Ha még segítség szükséges egy tartalomegység megtalálásához, akkor a <<content-edit>> témakör hasznos lehet.
 
 . Végül ismételjük meg a folyamatot a 8.-tól a 15. lépésig a _Recept_ tartalomtípuson is.
 
