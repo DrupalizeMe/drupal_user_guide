@@ -26,8 +26,6 @@ use BackupMigrate\Core\Service\TarArchiveWriter;
 use BackupMigrate\Core\Source\FileDirectorySource;
 use BackupMigrate\Core\Source\MySQLiSource;
 
-require __DIR__ . '/../../vendor/autoload.php';
-
 /**
  * Base class for tests that automate screenshots for the User Guide.
  *
@@ -349,6 +347,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->drupalPostForm('admin/config/regional/language', [
           'site_default_language' => $this->demoInput['first_langcode'],
         ], 'Save configuration');
+      $this->flushAll();
 
       // Delete English and flush caches.
       $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
@@ -519,7 +518,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText('tracker');
 
     // Top part of Core section of admin/modules, with Activity Tracker checked.
-    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
+    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services, #edit-modules-migrate') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
     $this->drupalPostForm(NULL, [
         'modules[tracker][enable]' => TRUE,
       ], $this->callT('Install'));
@@ -688,7 +687,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Summary'));
     $this->assertText($this->callT('Body'));
-    $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
     $this->assertText($this->callT('Published'));
     $this->assertRaw($this->callT('Save'));
@@ -1648,7 +1646,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Confirmation message after updating permissions.
     $this->setUpScreenShot('user-permissions-save-permissions.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 400) . $this->setBodyColor() . $this->removeScrollbars() . '"');
     // Permissions page for Vendor (admin/people/permissions/vendor).
-    $this->setUpScreenShot('user-permissions-check-permissions.png', 'onLoad="window.scroll(0,3500);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container, table.sticky-header', 800) . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('user-permissions-check-permissions.png', 'onLoad="window.scroll(0,3200);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container, table.sticky-header', 800) . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
 
     // Topic: user-roles - Changing a User's Roles.
@@ -1722,7 +1720,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Go back and take the screenshot of the authoring information.
     $this->drupalGet('node/3/edit');
     // Authoring information section of content edit page.
-    $this->setUpScreenShot('user-content.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .layout-region-node-main, .layout-region-node-footer') . $this->setBodyColor() . 'jQuery(\'#edit-author\').attr(\'open\', \'open\'); ' . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('user-content.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .layout-region-node-main, .layout-region-node-footer') . $this->setBodyColor() . 'jQuery(\'#edit-author\').attr(\'open\', \'open\'); ' . 'jQuery(\'#edit-path-0\').removeAttr(\'open\'); ' . $this->removeScrollbars() . '"');
 
     // Assign second vendor node to the corresponding vendor user, without
     // screenshots.
@@ -2355,7 +2353,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('node/1/translations/add/' . $this->demoInput['first_langcode'] . '/' . $this->demoInput['second_langcode']);
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Body'));
-    $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
 
     $this->drupalPostForm(NULL, [
@@ -2426,7 +2423,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Module categories');
       $this->assertText('Core compatibility');
       $this->assertText('Status');
-      $this->assertText('Search Modules');
+      $this->assertText('Search modules');
       $this->assertText('Sort by');
 
       // drupal.org screenshots for extend-module are in the doPrefaceInstall()
@@ -2509,7 +2506,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Development status');
       $this->assertText('Core compatibility');
       $this->assertText('Status');
-      $this->assertText('Search Themes');
+      $this->assertText('Search themes');
       $this->assertText('Sort by');
 
       // Test project page
@@ -3368,7 +3365,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Attempt to create and modify permissions in the directory. Do not use
     // Drupal container calls, so this can run before installation.
     if (!is_dir($directory)) {
-      @mkdir($directory);
+      @mkdir($directory, 0777, TRUE);
     }
     @chmod($directory, 0777);
 
