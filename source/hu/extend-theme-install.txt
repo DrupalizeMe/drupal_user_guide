@@ -6,7 +6,7 @@
 Hogyan tölthető le egy smink a központi Drupal.org webhelyről akár az adminfelületet, akár a Drush eszközt használva.
 
 (((Drupal.org webhely,sminkek letöltése és telepítése innen)))
-(((Drush eszköz,sminkek letöltése és telepítése a használatával)))
+(((Drush eszköz,sminkek telepítése a használatával)))
 (((Egyéni smink,engedélyezése)))
 (((Egyéni smink,telepítése)))
 (((Engedélyezés,smink)))
@@ -40,7 +40,7 @@ Letöltünk a Drupal.org-ról egy közösségi sminket, és telepítjük a sajá
 
 ==== Lépések
 
-Ahogy a bevezetőből már kiderült, egy közösségi smink webhelyünkhöz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett sminket telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi smink már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a smink projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 7. lépéstől tovább ugyanúgy.
+Ahogy a bevezetőből már kiderült, egy közösségi smink webhelyünkhöz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett sminket telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi smink már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a smink projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és telepíthetjük a sminket Drushsal vagy folytathatjuk a lenti 7. lépéstől tovább ugyanúgy.
 
 ===== Az adminfelület használatával
 
@@ -75,14 +75,13 @@ image:images/extend-theme-install-page.png["Sminktelepítési oldal az adminfel�
 image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
 --
 
-===== A Drush használatával
+===== Telepítés a Drush használatával
 
 . Ehhez először is tudnunk kell a smink gépi nevét, amit legegyszerűbben a projektoldalának webcíméből találhatunk ki: a mi példánkban használt _https://www.drupal.org/project/mayo_ címből tudjuk tehát, hogy `mayo` a smink programok által használt neve.
 
-. A következő Drush parancsok lefuttatásával először letöltjük (angolul „download”, innen a „dl” rövidítés), majd pedig engedélyezzük (angolul „enable”, de véletlen egybeesésként magyarul is ugyanígy kezdődik, így könnyű megjegyezni), végül pedig beállítjuk alapértelmezettként. A parancsok paramétereként minden esetben meg kell adnunk a smink gépi nevét:
+. Miután a <<extend-manual-install>> vagy <<install-composer>> szakaszok egyikének lépéseit követve a letöltéssel megvagyunk, utána a következő Drush parancsok lefuttatásával először engedélyezzük (angolul „enable”, de véletlen egybeesésként magyarul is ugyanígy kezdődik, így könnyű megjegyezni), majd pedig beállítjuk alapértelmezettként. A parancsok paramétereként minden esetben meg kell adnunk a smink gépi nevét:
 +
 ----
-$ drush dl mayo
 $ drush en mayo
 $ drush config-set system.theme default mayo
 ----

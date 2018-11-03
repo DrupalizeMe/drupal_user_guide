@@ -3,10 +3,9 @@
 === Egy modul frissítése
 
 [role="summary"]
-Így frissítsünk egy közösségi modult, és futtassuk az adatbázis-karbantartó szkriptet adminfelületről vagy Drushsal.
+Így frissítsünk egy közösségi modult, és futtassuk az adatbázis-karbantartó szkriptet adminfelületről.
 
 (((Közösségi modul,frissítése)))
-(((Drush eszköz,modul frissítése a használatával)))
 (((Modul,frissítése)))
 (((Biztonsági frissítés,alkalmazása)))
 
@@ -29,8 +28,6 @@ Frissítjük webhelyünk egyik közösségi modulját az elavult verziójáról 
 
 * Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek módjáról a <<config-install>> szakaszban már esett szó.
 
-* Ha viszont úgy döntünk, hogy inkább a Drusht használnánk, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
-
 ==== Lépések
 
 Mielőtt elkezdjük, körültekintően olvassuk el a modulhoz adott frissítési útmutatót, amit általában a projektoldalukon, a _Read Documentation_ (azaz „Dokumentáció elolvasása”) hivatkozáson találunk. Ez kifejezetten akkor szükséges, amikor valamilyen külső függvénykönyvtárat vagy harmadik fél általi szolgáltatást integráló modulról van szó. További tudnivalókat szerezhetünk még, ha letöltjük a számítógépünkre és kicsomagoljuk _tar.gz_ vagy _zip_ fájljukat, és megnyitjuk bennük a _README.txt_, _INSTALL.txt_ vagy _UPGRADE.txt_ dokumentumokat. Mindezen túl pedig érdemes vetni egy pillantást a modul telepíteni tervezett verziójának kiadási jegyzékére is, amit a projektoldalán a verziószámra kattintva nyithatunk meg:
@@ -38,7 +35,7 @@ Mielőtt elkezdjük, körültekintően olvassuk el a modulhoz adott frissítési
 // Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/security-update-module-release-notes.png["Hivatkozás a kiadási jegyzékre"]
 
-Nem meglepő módon, ahogy sok más esetben is, itt is választhatunk, hogy az adminfelületen keresztül vagy a Drush eszköz használatával szeretnénk-e elvégezni a műveletet. Ha viszont közösségi helyett egy egyedileg fejlesztett modult frissítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének, akkor még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 6. lépéstől tovább ugyanúgy.
+Itt most az egyszerűbb, az adminfelületen keresztül történő frissítést mutatjuk be. Ha viszont közösségi helyett egy egyedileg fejlesztett modult frissítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének, akkor még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 6. lépéstől tovább ugyanúgy.
 
 ===== Az adminfelület használatával
 
@@ -64,18 +61,6 @@ image:images/security-update-module-updates.png["Elérhető frissítések",width
 . Kapcsoljuk ki a _Karbantartási módot_ (lásd: <<extend-maintenance>>).
 
 . Ürítsük ki a gyorsítótárat (lásd: <<prevent-cache-clear>>).
-
-===== A Drush használatával
-
-. Ehhez először is tudnunk kell a modul gépi nevét, amit legegyszerűbben a projektoldalának webcíméből találhatunk ki: a mi példánkban használt _https://www.drupal.org/project/admin_toolbar_ címből tudjuk tehát, hogy „admin_toolbar” a modul programok által használt neve.
-
-. Futtassuk le a következő Drush-parancsot. Paraméterként minden esetben meg kell adnunk a modul gépi nevét (pl. `admin_toolbar`), ha pedig több modult frissítenénk egyszerre, szóközzel elválasztva többet is megadhatunk:
-+
-----
-$ drush up admin_toolbar
-----
-
-. Ezután már csak kövessük a képernyőn megjelenő utasításokat.
 
 ==== Az ismeretek elmélyítése
 

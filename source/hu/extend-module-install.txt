@@ -8,7 +8,7 @@ Modul letöltése a központi Drupal.org webhelyről az adminfelületet vagy a D
 (((Admin Toolbar modul,letöltése)))
 (((Admin Toolbar modul,telepítése)))
 (((Drupal.org webhely,modulok letöltése és telepítése innen)))
-(((Drush eszköz,modulok letöltése és telepítése a használatával)))
+(((Drush eszköz,modulok telepítése a használatával)))
 (((Engedélyezés,modul)))
 (((Funkcionalitás,bővítése)))
 (((Közösségi modul,letöltés)))
@@ -42,7 +42,7 @@ Letöltjük és telepítjük az https://www.drupal.org/project/admin_toolbar[Adm
 
 ==== Lépések
 
-Ahogy a bevezetőből már kiderült, egy közösségi modul webhelyünkhöz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett modult telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 7. lépéstől tovább ugyanúgy.
+Ahogy a bevezetőből már kiderült, egy közösségi modul webhelyünkhöz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett modult telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és telepíthetjük a modult Drushsal vagy folytathatjuk a lenti 7. lépéstől tovább ugyanúgy.
 
 ===== Az adminfelület használatával
 
@@ -74,14 +74,13 @@ image:images/extend-module-install-admin-toolbar-do.png["Modultelepítési oldal
 
 . A neve előtti jelölőnégyzet bepipálásával engedélyezhetjük a modult.
 
-===== A Drush használatával
+===== Telepítés a Drush használatával
 
 . Ehhez először is tudnunk kell a modul gépi nevét, amit legegyszerűbben a projektoldalának webcíméből találhatunk ki: a mi példánkban használt _https://www.drupal.org/project/admin_toolbar_ címből tudjuk tehát, hogy „admin_toolbar” a modul programok által használt neve.
 
-. A következő Drush parancsok lefuttatásával először letöltjük (angolul „download”, innen a „dl” rövidítés), majd pedig engedélyezzük (angolul „enable”, de véletlen egybeesésként magyarul is illik, így könnyű megjegyezni). A parancsok paramétereként minden esetben meg kell adnunk a modul gépi nevét:
+. Miután a <<extend-manual-install>> vagy <<install-composer>> szakaszok egyikének lépéseit követve a letöltéssel megvagyunk, utána a következő Drush parancs lefuttatásával engedélyezzük (angolul „enable”, de véletlen egybeesésként magyarul is illik, így könnyű megjegyezni). A parancs paramétereként minden esetben meg kell adnunk a modul gépi nevét:
 +
 ----
-$ drush dl admin_toolbar
 $ drush en admin_toolbar
 ----
 

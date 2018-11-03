@@ -47,12 +47,6 @@ $settings['update_free_access'] = TRUE;
 $ tar -xzf drupal-8.3.2.tar.gz
 ----
 
-. Szintén parancssori hozzáférés birtokában használhatjuk a Drush eszközt is az új kiadás letöltésére és kicsomagolására egyetlen lépésben. Ehhez előbb lépjünk az ideiglenes könyvtárba, majd adjuk ki az alábbi parancsot:
-+
-----
-$ drush dl drupal
-----
-
 . Most a webhelyünk eredeti telepítési könyvtárában töröljük ki a _core_ és _vendor_ könyvtárakat, valamint minden fájlt, ami nem alkönyvtárban van (beleértve a _.htaccess_, _composer.json_ és _autoload.php_ fájlokat is). Csak azokat hagyjuk meg, amelyekben valami módosítást végeztünk.
 
 . Ezután az ideiglenes könyvtárból másoljuk/helyezzük át a _core_ és _vendor_ könyvtárakat, valamint a gyári (általunk nem módosított) fájlok friss példányait, amiknek a régi verzióit az előző lépésben töröltük. Például a _drupal-8.6.1_ nevű új könyvtárból a webhelyünk _8.6.0_ nevű könyvtárába.
