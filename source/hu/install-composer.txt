@@ -19,12 +19,11 @@ Megismerjük, hogyan lehet az alaprendszer és más modulok fájljait a Composer
 
 ==== Célkitűzés
 
-Használjuk a Composer és Git fejlesztői eszközöket arra, hogy kezeljük az alaprendszer, a modulok és a sminkek függőségeit, azaz letöltsük a szükséges fájljaikat.
+Használjuk a Composer és Git fejlesztői eszközöket arra, hogy kezeljük az alaprendszer, a modulok és a sminkek függőségeit, azaz letöltsük a szükséges fájljaikat. Ha egyik eszközt sem használjuk, nyugodtan ugorjuk át ezt a témakört.
 
 ==== Szükséges előismeretek
 
-* <<install-tools>>
-* <<install-dev-sites>>
+<<install-tools>>
 
 ==== Webhely előfeltételei
 
@@ -32,7 +31,7 @@ A Git vagy Composer használatához ezeknek először is telepítve kell lenniü
 
 ==== Lépések
 
-Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése sok mindenben eltér, előfordulhat, hogy az alábbiakban leírt, a helyi fejlesztői környezetünkre való telepítésről szóló lépéssor alapján nem sikerül telepítenünk a Gitet vagy a Composert az éles webkiszolgálón. Ilyen esetekben javasolt a Gittel/Composerrel lokálhoszton elvégezni a frissítéseket, majd a módosult könyvtárakat és fájlokat betömörítve felmásolni a távoli tárhelyünkre. Ott kicsomagolva remélhetőleg a helyi webhelypéldányunkkal megegyező fájlrendszert kapunk. Composer használata esetén különösen ügyeljünk az alábbiak módosulásaira a telepítésünk gyökerében:
+Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése sok mindenben eltér, előfordulhat, hogy az alábbiakban leírt, a helyi fejlesztői környezetünkre való telepítésről szóló lépéssor alapján nem sikerül telepítenünk a Gitet vagy a Composert az éles webkiszolgálón. Ilyen esetekben javasolt a Gittel/Composerrel lokálhoszton elvégezni a frissítéseket az alábbi lépések alapján, majd a módosult könyvtárakat és fájlokat betömörítve felmásolni a távoli tárhelyünkre. Ott kicsomagolva remélhetőleg a helyi webhelypéldányunkkal megegyező fájlrendszert kapunk. Composer használata esetén különösen ügyeljünk az alábbiak módosulásaira a telepítésünk gyökerében:
 
 * _vendor_ könyvtár
 * _autoload.php_ fájl

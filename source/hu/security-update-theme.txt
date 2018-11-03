@@ -3,12 +3,11 @@
 === Egy smink frissítése
 
 [role="summary"]
-Így frissítsünk egy közösségi sminket, és futtassuk az adatbázis-karbantartó szkriptet adminfelületről vagy Drushsal.
+Így frissítsünk egy közösségi sminket, és futtassuk az adatbázis-karbantartó szkriptet adminfelületről.
 
+(((Közösségi smink,frissítése)))
 (((Smink,frissítése)))
 (((Biztonsági frissítés,alkalmazása)))
-(((Közösségi smink,frissítése)))
-(((Drush eszköz,smink frissítése a használatával)))
 
 ==== Célkitűzés
 
@@ -29,11 +28,9 @@ Frissítjük webhelyünk egyik közösségi sminkjét az elavult verziójáról 
 
 * Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek módjáról a <<config-install>> szakaszban már esett szó.
 
-* Ha viszont úgy döntünk, hogy inkább a Drusht használnánk, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
-
 ==== Lépések
 
-Nem meglepő módon, ahogy sok más esetben is, itt is választhatunk, hogy az adminfelületen keresztül vagy a Drush eszköz használatával szeretnénk-e elvégezni a műveletet. Ha viszont közösségi helyett egy egyedileg fejlesztett sminket frissítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének, akkor még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány közösségi smink Composer eszközzel kezelheti a függőségeit, ezért ha erre utaló felhívást látunk a smink projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 6. lépéstől tovább ugyanúgy.
+Itt most az egyszerűbb, az adminfelületen keresztül történő frissítést mutatjuk be. Ha viszont közösségi helyett egy egyedileg fejlesztett sminket frissítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének, akkor még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány közösségi smink Composer eszközzel kezelheti a függőségeit, ezért ha erre utaló felhívást látunk a smink projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 6. lépéstől tovább ugyanúgy.
 
 ===== Az adminfelület használatával
 
@@ -59,18 +56,6 @@ image:images/security-update-theme-updates.png["Elérhető frissítések",width=
 . Kapcsoljuk ki a _Karbantartási módot_ (lásd: <<extend-maintenance>>).
 
 . Ürítsük ki a gyorsítótárat (lásd: <<prevent-cache-clear>>).
-
-===== A Drush használatával
-
-. Ehhez először is tudnunk kell a smink gépi nevét, amit legegyszerűbben a projektoldalának webcíméből találhatunk ki: a mi példánkban használt _https://www.drupal.org/project/mayo_ címből tudjuk tehát, hogy „mayo” a smink programok által használt neve.
-
-. Futtassuk le a következő Drush-parancsot. Paraméterként minden esetben meg kell adnunk a smink gépi nevét (pl. `mayo`)
-+
-----
-$ drush up mayo
-----
-
-. Ezután már csak kövessük a képernyőn megjelenő utasításokat.
 
 ==== Az ismeretek elmélyítése
 
