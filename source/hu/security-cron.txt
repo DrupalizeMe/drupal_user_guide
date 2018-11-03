@@ -20,7 +20,7 @@ Ellenőrizzük, hogy a webhely üzemszerű működésének szempontjából fonto
 
 ==== Lépések
 
-. Nyissuk meg webhelyünk _Állapotjelentését_ (lásd <<prevent-status>>), és keressük meg rajta az időzítő adatait, hogy mikor futott le utoljára.
+. Nyissuk meg webhelyünk _Állapotjelentését_ (lásd: <<prevent-status>>), és keressük meg rajta az időzítő adatait, hogy mikor futott le utoljára.
 +
 Ha a webhely annak idején a Standard (vagy magyarul Általános) profillal volt telepítve, akkor az időzített feladatok már valószínűleg megfelelően (alapértelmezés szerint háromóránként) futnak az _Automated Cron_ modulnak köszönhetően.
 
@@ -34,7 +34,7 @@ Ha a webhely annak idején a Standard (vagy magyarul Általános) profillal volt
 . A megalapozott döntéshez tudnunk kell mindkét lehetőség előnyeit és hátrányait. Az alaprendszer _Automated cron_ modulja („A” opció) nem mindig alkalmas bizonyos webhelyek esetén:
 +
   * A modul ugyanis annyit csinál, hogy valahányszor egy látogató lekér egy oldalt a webhelytől, akkor a kért oldal előállításán kívül ez a modul is lefut, és ellenőrzi, hogy mennyi ideje futottak le utoljára az időzített feladatok. Ha több, mint a beállított időköz, akkor meghívja őket automatikusan. Ebből az következik, hogy ha a webhelynek alacsony a látogatottsága (vagy egyáltalán nincs), akkor ez a folyamat ritkán (vagy akár soha) nem játszódik le.
-  * A fent vázolt működési mód azt is jelenti, hogy az időzített feladatok végrehajtására csak azután kerülhet sor, hogy a látogató által kért oldal előállítása már megtörtént. Mivel a webkiszolgálók csak egy előre megadott időkeretet szánnak egy-egy kérés feldolgozására (pl. a PHP-szkriptek végrehajtására), ezért ha maga az oldalgenerálás sok időt vett igénybe, akkor előfordulhat, hogy az időzített feladatok elvégzésére már alig (vagy semmi) fennmaradó idő nem jut ebből az időkeretből. Ilyen esetben a rendszernapló (lásd <<prevent-log>>) hibákat fog tartalmazni, melyből értesülhetünk, hogy nem volt teljes az oldallekéréshez hozzáfűzött feladatok végrehajtása.
+  * A fent vázolt működési mód azt is jelenti, hogy az időzített feladatok végrehajtására csak azután kerülhet sor, hogy a látogató által kért oldal előállítása már megtörtént. Mivel a webkiszolgálók csak egy előre megadott időkeretet szánnak egy-egy kérés feldolgozására (pl. a PHP-szkriptek végrehajtására), ezért ha maga az oldalgenerálás sok időt vett igénybe, akkor előfordulhat, hogy az időzített feladatok elvégzésére már alig (vagy semmi) fennmaradó idő nem jut ebből az időkeretből. Ilyen esetben a rendszernapló (lásd: <<prevent-log>>) hibákat fog tartalmazni, melyből értesülhetünk, hogy nem volt teljes az oldallekéréshez hozzáfűzött feladatok végrehajtása.
   * Bár elhanyagolható mértékben, de szintén hátrányosan érinti a https://hu.wikipedia.org/wiki/Sk%C3%A1l%C3%A1zhat%C3%B3s%C3%A1g[skálázhatóságot], hogy a webkiszolgáló folyamatainak egyikét lefoglalja az időzített feladatok futtatása, és ezen idő alatt ez a folyamat nem tud látogatói kérésekre válaszolni.
 
 . A fent leírtak ellenére az _Automated cron_ modul által kínált funkcionalitás megfelelő lehet kis és közepes forgalmú webhelyeken, ezért ha a használata mellett döntünk, először is győződjünk meg róla, hogy telepítve van-e a webhelyünkön? (Az _Általános_ telepítési profillal biztosan engedélyezve lett, más esetben pedig a <<config-install>> leírás segíthet.)
