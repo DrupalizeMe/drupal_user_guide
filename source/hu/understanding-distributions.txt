@@ -1,15 +1,15 @@
 [[understanding-distributions]]
 
-=== Alapfogalom: terjesztések
+=== Alapfogalom: disztribúciók
 
 [role="summary"]
-A terjesztések, azaz telepítési profilok áttekintése, valamint hogy miként lehet velük könnyen elkezdeni adott célú webhelyek felépítését.
+A disztribúciók, azaz telepítési profilok áttekintése, valamint hogy miként lehet velük könnyen elkezdeni adott célú webhelyek felépítését.
 
-(((Terjesztés,áttekintés)))
-(((Terjesztés,teljesértékű)))
-(((Terjesztés,első lépések)))
-(((Teljesértékű terjesztés,áttekintés)))
-(((Hamar elkezdhető terjesztés,áttekintés)))
+(((Disztribúció,áttekintés)))
+(((Disztribúció,teljesértékű)))
+(((Disztribúció,első lépések)))
+(((Teljesértékű disztribúció,áttekintés)))
+(((Hamar elkezdhető disztribúció,áttekintés)))
 
 ==== Szükséges előismeretek
 
@@ -17,16 +17,16 @@ A terjesztések, azaz telepítési profilok áttekintése, valamint hogy miként
 * <<understanding-modules>>
 * <<understanding-themes>>
 
-==== Mit és miért nevezünk terjesztésnek?
+==== Mit és miért nevezünk disztribúciónak?
 
-A _terjesztések_ tulajdonképpen olyan „tematikus” telepítőkészletek, amelyek a készítőik által összeválogatott, beállított és telepítéskor engedélyezett modulokat – és adott esetben sminkeket tartalmaznak. A _terjesztések_ nagyon hasznosak speciális célú webhelyek gyors és kényelmes létrehozására (például webáruház, hírportál, céges bemutatkozó oldal). Akár a bonyolultabb, nem általános  célú webhelyek felépítésekor is megtakaríthatunk magunknak időt és energiát, ha a feladatunkhoz hasonló célra összeállított terjesztéssel telepítjük fel a Drupalt.
+A _disztribúciók_ tulajdonképpen olyan „tematikus” telepítőkészletek, amelyek a készítőik által összeválogatott, beállított és telepítéskor engedélyezett modulokat – és adott esetben sminkeket tartalmaznak. A _disztribúciók_ nagyon hasznosak speciális célú webhelyek gyors és kényelmes létrehozására (például webáruház, hírportál, céges bemutatkozó oldal). Akár a bonyolultabb, nem általános  célú webhelyek felépítésekor is megtakaríthatunk magunknak időt és energiát, ha a feladatunkhoz hasonló célra összeállított disztribúcióval telepítjük fel a Drupalt.
 
-A terjesztések egymástól eltérő mennyiségű beállítást tartalmaznak, aminek alapján két csoportra oszthatóak:
+A disztribúciók egymástól eltérő mennyiségű beállítást tartalmaznak, aminek alapján két csoportra oszthatóak:
 
-Teljesértékű terjesztések::
-  Azokat soroljuk ide, amelyek egy kulcsrakész webhelyet hoznak létre, például felsőoktatási intézmények, közigazgatási hivatalok, vagy non-profit szervezetek általános igényeire alapozva. Kézikönyvünk példája, egy termelői piac webhelye felépíthető egy mások által korábban már létrehozott terjesztésből, de az elkészült webhelyünk beállításait ugyanúgy mi is közzétehetjük, hogy más városok termelői piacai is a mi telepítési profilunkból indulhassanak ki.
+Teljesértékű disztribúciók::
+  Azokat soroljuk ide, amelyek egy kulcsrakész webhelyet hoznak létre, például felsőoktatási intézmények, közigazgatási hivatalok, vagy non-profit szervezetek általános igényeire alapozva. Kézikönyvünk példája, egy termelői piac webhelye felépíthető egy mások által korábban már létrehozott disztribúcióból, de az elkészült webhelyünk beállításait ugyanúgy mi is közzétehetjük, hogy más városok termelői piacai is a mi telepítési profilunkból indulhassanak ki.
 
-Általános terjesztések::
+Általános disztribúciók::
   A fentiektől eltérően azonban a telepítési profilok lehetnek nagyon egyszerűek is, amelyek viszont a fejlesztőknek kínálnak gyors és rugalmas kiindulási alapot.
 
 ==== Kapcsolódó témák
@@ -35,9 +35,9 @@ Teljesértékű terjesztések::
 
 ==== Egyéb források
 
-https://www.drupal.org/project/project_distribution[Drupal Distributions], azaz a mások által közzétett terjesztések hivatalos gyűjteménye a Drupal.org-on angol nyelven.
+https://www.drupal.org/project/project_distribution[Drupal Distributions], azaz a mások által közzétett disztribúciók hivatalos gyűjteménye a Drupal.org-on angol nyelven.
 
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/ifrik[Antje Lorch] és https://www.drupal.org/u/dianalakatos[Lakatos Diána] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/7/distributions[Distributions] (azaz „Terjesztések”) című szócikkéből vette át, melynek szerzői joga 2000–2017 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/ifrik[Antje Lorch] és https://www.drupal.org/u/dianalakatos[Lakatos Diána] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/7/distributions[Distributions] (azaz „Disztribúciók”) című szócikkéből vette át, melynek szerzői joga 2000–2017 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
