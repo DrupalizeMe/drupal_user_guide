@@ -3,13 +3,13 @@
 === Felhasználói fiók létrehozása
 
 [role="summary"]
-Hogyan hozhatunk létre egy új felhasználói fiókot a webhelyünkön.
+Így hozhatunk létre új felhasználói fiókot a webhelyünkön.
 
 (((Felhasználó,fiók létrehozása)))
 
 ==== Célkitűzés
 
-Hogy be tudjanak jelentkezni a webhelyre az adatlapjukat kitölteni, elkészítjük két árus, a _Csemege Méhészet_ és a _Víg tanya_ felhasználói fiókjait.
+Azért, hogy be tudjanak jelentkezni a webhelyre az adatlapjukat kitölteni, elkészítjük két árus, a _Csemege Méhészet_ és a _Víg Tanya_ felhasználói fiókját.
 
 ==== Szükséges előismeretek
 
@@ -19,7 +19,7 @@ Hogy be tudjanak jelentkezni a webhelyre az adatlapjukat kitölteni, elkészítj
 
 ==== Webhely előfeltételei
 
-Már léteznie kell az _Árus_ szerepkörnek, amit az előző, <<user-new-role>> részben végeztünk el.
+Az _Árus_ szerepkört már létre kellett hozni, amit az előző, <<user-new-role>> részben végeztünk el.
 
 ==== Lépések
 
@@ -37,11 +37,11 @@ image:images/user-new-user_form.png["Az új felhasználói fiók létrehozása �
 [width="100%",frame="topbot",options="header"]
 |================================
 | Mező neve | Magyarázat | Javasolt kitöltés
-| E-mail cím | Egy érvényes elektronikus levelezési címe az árusnak. A rendszer az illető minden levelét erre a címére fogja küldeni. Az e-mail címet a rendszer soha nem hozza nyilvánosságra automatikusan. | meheszet@pelda.hu
-| Felhasználónév | Ezt a nevet használva fog majd tudni bejelentkezni az árus és az általa írt tartalmaknál (például beküldött recepteknél) is ez fog megjelenni szerzőként. A szóköz és néhány írásjel (a pont, a kötőjel, az aposztróf és az aláhúzás) megengedettek benne. | Csemege Méhészet
+| E-mail cím | Egy érvényes elektronikus levelezési címe az árusnak. A rendszer a felhasználó minden levelét erre a címre fogja küldeni. Az e-mail címet a rendszer soha nem hozza automatikusan nyilvánosságra. | meheszet@pelda.hu
+| Felhasználónév | Ezt a nevet használva fog majd tudni bejelentkezni az árus, és az általa írt tartalmaknál (például beküldött recepteknél) is ez fog megjelenni szerzőként. A szóköz és néhány írásjel (a pont, a kötőjel, az aposztróf és az aláhúzás) megengedettek benne. | Csemege Méhészet
 | Jelszó | Ezt a jelszót használva fog majd tudni bejelentkezni az árus. A _Jelszó erőssége_ kijelző mutatja, hogy az addig beírt szöveg mennyire lenne erős jelszóként. Ahogy elkezdünk gépelni, a _Javaslatok a jelszó erősségének növelésére_ keretben további tanácsokat is kapunk, hogyan tegyük még biztonságosabbá az addig beírt szöveget. | Válasszunk egy megjegyezhető és biztonságos jelszót
 | Jelszó megerősítése | Pontosan ugyanazt a jelszót, ugyanúgy kell beírni még egyszer |
-| Állapot | A felhasználói fiókot ha _Zárolt_ állapotúra állítanánk, akkor azzal nem lehetne bejelentkezni a webhelyre. | Aktív
+| Állapot | Ha a felhasználói fiókot_Zárolt_ állapotúra állítanánk, akkor azzal nem lehetne bejelentkezni a webhelyre. | Aktív
 | Szerepkörök | Adjuk meg, hogy melyik csoportba soroljuk az illetőt. | Árus
 | Új felhasználó értesítése e-mailben | Küldjön-e a rendszer egy automatikus üdvözlő levelet a fent megadott e-mail címre, amikor itt a _Létrehozás_ gombra kattintunk? | Bejelölve
 | Kép | A tallózás gombra kattintva keressük ki számítógépünkről az adott személyhez tartozó fotót vagy logót. Ügyeljünk a fájlméretbeli korlátozásokra. | Egy képfájl
@@ -55,13 +55,13 @@ image:images/user-new-user_form.png["Az új felhasználói fiók létrehozása �
 image:images/user-new-user-created.png["Az új felhasználói fiók sikeresen létrejött",width="100%"]
 --
 
-. Ugyanezen lépéseket megismételve készítsünk egy felhasználói fiókot a _Víg tanya_ árus számára is.
+. Ugyanezeket a lépéseket megismételve készítsünk egy felhasználói fiókot a _Víg Tanya_ árus számára is.
 
 ==== Az ismeretek elmélyítése
 
-Mindeddig a Kézikönyv lépéssorainak végrehajtása során valószínűleg a korábban a <<install-run>> résznél létrehozott _Egyes számú felhasználói fiókot_ használtuk, amiről bővebben a <<user-admin-account>> résznél volt szó. Mivel ez egy különleges (angolul „superuser”) felhasználó, ezért biztonsági megfontolásból az általánosan javasolt gyakorlat az, hogy az _Egyes számú felhasználói fiók_ mindvégig le van tiltva, és az adminisztrátorok saját, névre szóló felhasználói fiókjukba bejelentkezve tevékenykednek a webhelyen. Ez különösen akkor lesz hasznos, ha rajtunk kívül több adminisztrátor is kezeli a webhelyet, így a rendszernaplóban elkülöníthető lesz majd, hogy ki, mikor, mit csinált.
+A Kézikönyv lépéssorainak végrehajtása során mindeddig valószínűleg a korábban a <<install-run>> résznél létrehozott _Egyes számú felhasználói fiókot_ használtuk, amiről bővebben a <<user-admin-account>> résznél volt szó. Mivel ez egy különleges (angolul „superuser”) felhasználó, ezért biztonsági megfontolásból az általánosan javasolt gyakorlat az, hogy az _Egyes számú felhasználói fiók_ végig le van tiltva, és az adminisztrátorok saját, névre szóló felhasználói fiókjukba bejelentkezve tevékenykednek a webhelyen. Ez különösen akkor lesz hasznos, ha rajtunk kívül több adminisztrátor is kezeli a webhelyet, így a rendszernaplóban elkülöníthető lesz majd, hogy ki, mikor, mit csinált.
 
-A fenti lépéssort követve tehát hozzunk létre magunknak is egy felhasználói fiókot, a szerepköröknél pedig ne felejtsük egy bejelölni az _Adminisztrátor_ opciót.
+A fenti lépéssort követve tehát hozzunk létre magunknak is egy felhasználói fiókot, a szerepköröknél pedig ne felejtsük el bejelölni az _Adminisztrátor_ opciót.
 
 //==== Kapcsolódó témák
 
