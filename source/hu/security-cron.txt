@@ -46,7 +46,7 @@ Ezt követően állítsuk be, milyen gyakran futtassa az időzített feladatokat
 image:images/security-cron.png["Az alaprendszer Automated cron moduljának beállítása"]
 --
 
-. Ha azonban a fenti érveket megfontolva úgy döntünk, hogy az időzített feladatokat a webhelyen kívülről indíttatjuk („B” opció), akkor javasolt letiltani az _Automated cron_ modult, mivel nem lesz rá szükség (ehhez lásd a <<config-uninstall>> részt). Ezután keressük meg az időzített feladatok webcímét az előző lépésnél is megnyitott _Időzítő_ oldalon. Valószínűleg ehhez hasonlóan fog festeni: _https://pelda.hu/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
+. Ha azonban a fenti érveket megfontolva úgy döntünk, hogy az időzített feladatokat a webhelyen kívülről indíttatjuk („B” opció), akkor javasolt letiltani az _Automated cron_ modult, mivel nem lesz rá szükség (ehhez lásd a <<config-uninstall>> részt). Ezután keressük meg az időzített feladatok webcímét az előző lépésnél is megnyitott _Időzítő_ oldalon. Valószínűleg ehhez hasonlóan fog festeni: _http://pelda.hu/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
 Valahányszor ezt a speciális URL-t meghívják, a webhely időzített feladatai lefutnak. Így már könnyen be tudunk állítani valamilyen külső eszközt ennek kezelésére:
 +
