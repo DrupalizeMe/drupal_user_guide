@@ -33,7 +33,7 @@ A Kézikönyv során a következő fogalmazási és szerkesztési gyakorlatot k�
 * Minden olyan szöveget, amelyet egy parancssori ablakba kell begépelnünk, +egyenszélességű+ betűvel jelöltünk:
 +
 ----
-drush cr
+$ drush cr
 ----
 
 * Bár egyesek ritkán mappáknak szeretik hívni a fájlok tárolóit, a Kézikönyvben azonban az elterjedt szóhasználatnak megfelelően könyvtáraknak nevezzük őket.
@@ -62,7 +62,7 @@ Ebben az esetben a _Kezelés_, majd _Konfiguráció_ menüpontokra való kattint
 // System section of admin/config page.
 image:images/preface-conventions-config-system.png["A _Rendszer_ feliratú doboz a Konfiguráció oldalon"]
 
-Végezetül pedig még egy apró megjegyzés: ha az alapértelmezett adminisztrációs sminket, a _Sevent_ használjuk, akkor az új elemeket hozzáadó gombokon szerepelni fog egy plusz (+) jel. Például az admin/content oldalon ezen a gombon a „++ Tartalom hozzáadása” felirat olvasható. Ez azonban csupán a _Seven_ design egy funkciója, a plusz jel nem a gombfelirat része (például a képernyőfelolvasó szoftverek is figyelmen kívül hagyják), ezért mi is anélkül fogjuk említeni ezeket a gombokat a Kézikönyvben.
+Végezetül pedig még egy apró megjegyzés: ha az alapértelmezett adminisztrációs sminket, a _Sevent_ használjuk, akkor az új elemeket hozzáadó gombokon szerepelni fog egy plusz („\+”) jel. Például az admin/content oldalon ezen a gombon a „+ Tartalom hozzáadása” felirat olvasható. Ez azonban csupán a _Seven_ design egy funkciója, a plusz jel nem a gombfelirat része (például a képernyőfelolvasó szoftverek is figyelmen kívül hagyják), ezért mi is anélkül fogjuk említeni ezeket a gombokat a Kézikönyvben.
 
 ==== Űrlapok kitöltése, adatok bevitele
 
