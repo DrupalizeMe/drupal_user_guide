@@ -518,7 +518,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText('tracker');
 
     // Top part of Core section of admin/modules, with Activity Tracker checked.
-    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services, #edit-modules-migrate') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
+    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services, #edit-modules-migration') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
     $this->drupalPostForm(NULL, [
         'modules[tracker][enable]' => TRUE,
       ], $this->callT('Install'));
