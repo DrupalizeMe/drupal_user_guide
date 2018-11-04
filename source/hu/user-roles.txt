@@ -3,7 +3,7 @@
 === Felhasználók szerepköreinek megváltoztatása
 
 [role="summary"]
-Hogyan változtassuk meg felhasználók szerepköreit.
+Így változtathatjuk meg a felhasználók szerepköreit.
 
 (((Felhasználói szerepkör,megváltoztatása)))
 (((Szerepkör,megváltoztatása)))
@@ -19,7 +19,7 @@ Változtassuk meg adott felhasználók szerepköreit akár egyesével az adatlap
 
 ==== Webhely előfeltételei
 
-Talán szükségtelen mondani, hogy pár felhasználói fióknak, amit módosítani tervezünk, már léteznie kell. Ha csak idecsöppentünk, akkor az előző részek segítenek ennek elérésében:
+Talán szükségtelen mondani, hogy pár felhasználói fióknak, amit módosítani tervezünk, már léteznie kell. Ha csak véletlenül jutottunk ide, akkor az előző részek segítenek:
 
 * <<user-new-role>>
 * <<user-new-user>>
@@ -40,7 +40,7 @@ Talán szükségtelen mondani, hogy pár felhasználói fióknak, amit módosít
 image:images/user-roles_people-list.png["A felhasználók listája",width="100%"]
 --
 
-. Az adatlapjának szerkesztőoldalán görgessünk le a _Szerepörök_ részhez és jelöljük be az _Adminisztrátor_ lehetőséget.
+. Az adatlapjának szerkesztőoldalán görgessünk le a _Szerepörök_ részhez, és jelöljük be az _Adminisztrátor_ lehetőséget.
 +
 --
 // Roles area on user editing page.
@@ -58,7 +58,7 @@ image:images/user-roles_message.png["Megerősítő állapotüzenet"]
 
 . Ha a _Csemege Méhészet_ és _Víg tanya_ felhasználóknak még nem lenne _Árus_ szerepkörük, akkor ezzel a módszerrel egyszerre tudjuk nekik megadni. Ha esetleg éppen nem ott állnánk, akkor a _Kezelés_ adminisztrációs menüben menjünk a _Felhasználók_ oldalra (vagy a címsorban adjuk meg az _admin/people_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag létező valamennyi felhasználói fiókot.
 
-. Keressük meg kettejük felhasználói fiókjait a felsorolásban, és ha megvannak, jelöljük be mindkettőt a soraik elején.
+. Keressük meg kettejük felhasználói fiókjait a felsorolásban, és ha megvannak, jelöljük be mindkettőt a soruk elején.
 
 . A _Művelet_ legördülőből válasszuk a _Kiválasztott felhasználók felhatalmazása Árusok szerepkörrel_ lehetőséget:
 +
