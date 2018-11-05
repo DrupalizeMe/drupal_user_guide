@@ -2097,7 +2097,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('block_1/title');
     // Configuring the block title for this display only.
     $this->setUpScreenShot('views-block_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region-breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-title\').val(&quot;' . $this->demoInput['recipes_view_block_title'] . '&quot;);' . $this->setWidth('.content-header, .layout-container') . '"');
-    $this->assertRaw($this->callT('This @display_type (override)', TRUE, ['@display_type' => $this->callT('block')]));
+    $this->assertRaw($this->callT('This @display_type (override)', TRUE, ['@display_type' => 'block']));
 
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
