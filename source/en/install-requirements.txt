@@ -38,6 +38,10 @@ by and uploaded to your site. The database also uses disk space, although that
 is typically not in the same area (and in some cases, not even on the same
 server) as that used by the site files.
 
+===== PHP
+
+PHP 5.5.9 or higher.
+
 ===== Web server
 
 Apache (Recommended)::
@@ -46,6 +50,9 @@ Apache (Recommended)::
   mod_rewrite module installed and enabled. The Apache VirtualHost configuration
   must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
   to be used.
+PHP Local Server::
+  You can temporarily run a local demo site on your computer using just PHP,
+  without installing web server software.
 Nginx::
   Nginx is a commonly used web server that focuses on high concurrency,
   performance and low memory usage. The core software will work on Nginx 1.1 or
@@ -73,11 +80,9 @@ InnoDB-compatible primary storage engine
 
 * PostgreSQL - 9.1.2 or higher
 
-* SQLite - 3.4.2 or higher
-
-===== PHP
-
-PHP 5.5.9 or higher.
+* SQLite - 3.4.2 or higher. Temporary local demo sites use SQLite, which is
+distributed as part of PHP and doesn't require installing separate database
+software.
 
 //==== Related topics
 
