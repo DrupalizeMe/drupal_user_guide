@@ -63,7 +63,24 @@ already deleted it.
 . Rename the directory or reconfigure your web hosting, so that the directory
 name matches the directory your web hosting is configured to use for your site.
 
-// ==== Expand your understanding
+==== Expand your understanding
+
+Once you have the software downloaded, you can install a temporary demo site
+(see <<install-decide>>) by running the following command from the top-level
+directory of the core software:
+
+----
+php core/scripts/drupal quick-start standard
+----
+
+The demo site will be installed, and your web browser should open to log in to
+the new site, which will only run as long as the PHP command is active. To learn
+more about this functionality, use its help command:
+
+----
+php core/scripts/drupal quick-start --help
+----
+
 
 // ==== Related concepts
 
