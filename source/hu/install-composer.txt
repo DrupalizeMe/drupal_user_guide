@@ -1,9 +1,9 @@
 [[install-composer]]
 
-=== Telepítőfájlok letöltése Composer és Git használatával
+=== Telepítőfájlok letöltése Composer használatával
 
 [role="summary"]
-Megismerjük, hogyan lehet az alaprendszer és más modulok fájljait a Composer és Git fejlesztőeszközökkel karbantartani.
+Megismerjük, hogyan lehet az alaprendszer és más modulok fájljait a Composer nevű fejlesztőeszközzel karbantartani.
 
 (((Composer eszköz,az alaprendszer letöltése a használatával)))
 (((Composer eszköz,modulok letöltése a használatával)))
@@ -19,7 +19,7 @@ Megismerjük, hogyan lehet az alaprendszer és más modulok fájljait a Composer
 
 ==== Célkitűzés
 
-Használjuk a Composer és Git fejlesztői eszközöket arra, hogy kezeljük az alaprendszer, a modulok és a sminkek függőségeit, azaz letöltsük a szükséges fájljaikat. Ha egyik eszközt sem használjuk, nyugodtan ugorjuk át ezt a témakört.
+Használjuk a Composer fejlesztői eszközt arra, hogy letöltsük az alaprendszer, a modulok és a sminkek forráskódját, valamint kezeljük azok függőségeit, azaz beszerezzük hozzájuk a további szükséges szoftverelemeket. Ha nem használjuk ezt az eszközt, akkor nyugodtan ugorjuk át ezt a témakört.
 
 ==== Szükséges előismeretek
 
@@ -27,52 +27,20 @@ Használjuk a Composer és Git fejlesztői eszközöket arra, hogy kezeljük az 
 
 ==== Webhely előfeltételei
 
-A Git vagy Composer használatához ezeknek először is telepítve kell lenniük vagy a helyi fejlesztői környezetünkön, vagy az éles webhelyünk távoli kiszolgálóján. Erről bővebben lásd a <<install-tools>> témakört.
+A Composer használatához annak először is telepítve kell lennie vagy a helyi fejlesztői környezetünkön, vagy az éles webhelyünk távoli kiszolgálóján. Erről bővebben lásd a <<install-tools>> témakört.
 
 ==== Lépések
 
-Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése sok mindenben eltér, előfordulhat, hogy az alábbiakban leírt, a helyi fejlesztői környezetünkre való telepítésről szóló lépéssor alapján nem sikerül telepítenünk a Gitet vagy a Composert az éles webkiszolgálón. Ilyen esetekben javasolt a Gittel/Composerrel lokálhoszton elvégezni a frissítéseket az alábbi lépések alapján, majd a módosult könyvtárakat és fájlokat betömörítve felmásolni a távoli tárhelyünkre. Ott kicsomagolva remélhetőleg a helyi webhelypéldányunkkal megegyező fájlrendszert kapunk. Composer használata esetén különösen ügyeljünk az alábbiak módosulásaira a telepítésünk gyökerében:
+Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése sok mindenben eltér, előfordulhat, hogy az alábbiakban leírt, a helyi fejlesztői környezetünkre való telepítésről szóló lépéssor alapján nem sikerül telepítenünk a Composert az éles webkiszolgálón. Ilyen esetekben javasolt lokálhoszton elvégezni vele a frissítéseket az alábbi lépések alapján, majd a módosult könyvtárakat és fájlokat betömörítve felmásolni a távoli tárhelyünkre. Ott kicsomagolva remélhetőleg a helyi webhelypéldányunkkal megegyező fájlrendszert kapunk. Composer használata esetén különösen ügyeljünk az alábbiak módosulásaira a telepítésünk gyökerében:
 
 * _vendor_ könyvtár
 * _autoload.php_ fájl
 * _composer.json_ fájl
 * _composer.lock_ fájl
 
-===== Egy projekt letöltése Gittel
-
-A következő lépésekkel nemcsak a verziószámmal ellátott, előrecsomagolt kiadásait (angolul _„release”_) érhetjük el a Drupal.org-on lévő projekteknek (ez alatt együtt értjük a közösségi modulokat és sminkeket, de sokszor magát az alaprendszert is szokás projektnek nevezni), hanem az azok legfrissebb állapotát tükröző _dev_ változatát is. Fontos azonban, hogy Gittel csak akkor érdemes letölteni szoftverkódot, ha kifejezetten azon tervezünk dolgozni, azon módosításokat végezni. Ha viszont egyszerűen csak használni (azaz futtatni) szeretnénk, akkor inkább a lentebbi composeres módok javasoltak.
-
-. Számítógépünk parancssoros ablakában álljunk egy szinttel feljebb, mint amelyik könyvtárban majd szeretnénk, hogy az új szoftverelem létrejöjjön. Példának okáért a Drupal alaprendszer esetében ez mondjuk a webkiszolgálónk gyökérkönyvtára lehet, egy modul esetében pedig a _modules_ könyvtár. (Jó tanács haladóknak: ha majd később saját modulokat is elkezdünk írni webhelyünkhöz, akkor hasznos lehet a _modules_ könyvtárat tovább bontani a könnyebb áttekinthetőség kedvéért: egy _contrib_ alkönyvtárba kerülhetnek a Drupal.org-ról vagy más forrásból beszerzett, mások által készített modulok, míg a sajátjainkat egy _custom_ nevűben különíthetjük el.)
-
-. Keressük meg a beszerezni kívánt modul projektoldalát a Drupal.org-on. Ezeket onnan könnyű felismerni, hogy mindig a _https://www.drupal.org/project/akarmi_ formában találjuk őket, ahol az „akarmi” a modul gépek által használt neve. Például a népszerű _Admin Toolbar_ modul projektoldalának webcíme: https://www.drupal.org/project/admin_toolbar.
-
-. Itt kattintsunk a _Version control_ (magyarul „verziókövetés”) linkre a modul neve alatt, így az ezzel kapcsolatos Git-parancsokat leíró oldalra jutunk.
-
-. Másoljuk ki az egész, +git clone+ paranccsal kezdődő sort a _Setting up repository for the first time_ (azaz „Tároló beállítása a legelső alkalommal”) szakaszcím alól. Ennek az alábbihoz hasonlónak kell lennie:
-+
-----
-$ git clone --branch 8.6.x https://git.drupal.org/project/drupal.git
-----
-
-. Futtassuk le a parancssoros ablakban. Sikeres lefutást követően létrejön egy könyvtár a modul rövid nevével, ami annak a parancs +--branch+ argumentuma által jelzett verzióját tartalmazza. Ha szükséges, akár át is nevezhetjük ezt az új könyvtárat.
-
-. Innentől kezdve ebbe az új könyvtárba belépve (+cd+ parancs) a jövőben bármikor futtathatjuk a +git pull+ parancsot, így mindig az adott projekt lehető legfrissebb változatát tudhatjuk a számítógépünkön (hacsak időközben ágat nem váltottunk).
-
-. A Git eszköz, amit az előző példánkban használtunk, nem gondoskodik egy szoftver külső, azaz más, nem Drupalhoz kötődő fejlesztők által közzétett elemeinek meglétéről. Erre ugyanis egy másik eszköz, a Composer való. Ha előbbi példánkat követve az alaprendszer kódját töltöttük le, vagy bármely olyan közösségi projektét, aminek szintén függőségei vannak, akkor még egy lépés hátravan.
-
-. Számítógépünk parancssoros ablakában álljunk a Drupal gyökérkönyvtárába.
-
-. Adjuk ki az alábbi parancsot:
-+
-----
-$ composer install
-----
-+
-Ekkor a Composer automatikusan feltérképezi a szükséges követelményeket, és elkezdi letölteni őket gépünkre. Ez internetkapcsolatunk sebességétől függően akár több percig is eltarthat.
-
 ===== Alaprendszer letöltése Composerrel
 
-Ahogy eddigre talán már kitalálta az Olvasó, ha a Composer képes letölteni más programok meghatározott verzióit, akkor képes lehet magát a Drupal alaprendszert is beszerezni a függőségeivel együtt. A következő lépéseket követve most ezt a módot fogjuk kipróbálni:
+Ha még nem töltöttük le az alaprendszer forráskódját, és szeretnénk élni a Composer azon áldásos hatásával, hogy automatikusan gondoskodik a Drupal függőségeinek meglétéről, akkor kövessük az alábbi lépéseket:
 
 . Számítógépünk parancssoros ablakában álljunk egy szinttel feljebb, mint amelyik könyvtárban majd szeretnénk, hogy a Drupal létrejöjjön.
 
@@ -84,9 +52,9 @@ $ composer create-project drupal-composer/drupal-project:8.x-dev webhelyem --no-
 +
 Sikeres lefutást követően létrejön a +webhelyem+ argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
 
-===== Projektek letöltése Composerrel
+===== Közösségi projektek letöltése Composerrel
 
-Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már meg is van a Drupal alaprendszerünk (akár a gites, akár a composeres úton), akkor a Composert is használhatjuk arra, hogy beszerezzük vele a kívánt verziókat az alábbi lépéseket követve:
+Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már meg is van a Drupal alaprendszerünk, akkor használhatjuk a Composert arra is, hogy beszerezzük vele a kívánt verziókat az alábbi lépéseket követve:
 
 . Bármikor, ha egy új, az adott webhelyen korábban még nem használt közösségi projektet (modult vagy sminket) szeretnénk hozzáadni a már meglévőkhöz, akkor először is a legelső lépés, hogy pontosan tudnunk kell a letölteni kívánt projekt gépek által használt nevét. Ez mindig csak az angol ábécé kisbetűiből áll, nem tartalmazhat szóközt, szavak elkülönítésére helyette az aláhúzás karaktert használja. Legkönnyebben a Drupal.org portálon a projektoldal webcímének végén találjuk. Például a _Geofield_ modulé a https://www.drupal.org/project/geofield URL-ben a +geofield+.
 
@@ -96,7 +64,7 @@ Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdo
 $ composer require drupal/geofield
 ----
 
-===== Projektek frissítése Composerrel
+===== Közösségi projektek frissítése Composerrel
 
 Miután az előző részeknél leírtak szerint már használunk Composert a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így a következő lépéseket követve már könnyedén elvégezhetjük mindezek rendszeres frissítését.
 
@@ -123,7 +91,7 @@ $ composer require drupal/geofield:1.7
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer and Git to Download files"]
+video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer to Download files"]
 
 ==== Egyéb források
 
