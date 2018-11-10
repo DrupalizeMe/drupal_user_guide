@@ -40,7 +40,7 @@ Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése 
 
 ===== Egy projekt letöltése Gittel
 
-A következő lépésekkel nemcsak a verziószámmal ellátott, előrecsomagolt kiadásait (angolul _„release”_) érhetjük el a Drupal.org-on lévő projekteknek (ez alatt együtt értjük a közösségi modulokat és sminkeket, de sokszor magát az alaprendszert is szokás projektnek nevezni), hanem az azok legfrissebb állapotát tükröző _dev_ változatát is.
+A következő lépésekkel nemcsak a verziószámmal ellátott, előrecsomagolt kiadásait (angolul _„release”_) érhetjük el a Drupal.org-on lévő projekteknek (ez alatt együtt értjük a közösségi modulokat és sminkeket, de sokszor magát az alaprendszert is szokás projektnek nevezni), hanem az azok legfrissebb állapotát tükröző _dev_ változatát is. Fontos azonban, hogy Gittel csak akkor érdemes letölteni szoftverkódot, ha kifejezetten azon tervezünk dolgozni, azon módosításokat végezni. Ha viszont egyszerűen csak használni (azaz futtatni) szeretnénk, akkor inkább a lentebbi composeres módok javasoltak.
 
 . Számítógépünk parancssoros ablakában álljunk egy szinttel feljebb, mint amelyik könyvtárban majd szeretnénk, hogy az új szoftverelem létrejöjjön. Példának okáért a Drupal alaprendszer esetében ez mondjuk a webkiszolgálónk gyökérkönyvtára lehet, egy modul esetében pedig a _modules_ könyvtár. (Jó tanács haladóknak: ha majd később saját modulokat is elkezdünk írni webhelyünkhöz, akkor hasznos lehet a _modules_ könyvtárat tovább bontani a könnyebb áttekinthetőség kedvéért: egy _contrib_ alkönyvtárba kerülhetnek a Drupal.org-ról vagy más forrásból beszerzett, mások által készített modulok, míg a sajátjainkat egy _custom_ nevűben különíthetjük el.)
 
@@ -56,17 +56,19 @@ $ git clone --branch 8.6.x https://git.drupal.org/project/drupal.git
 
 . Futtassuk le a parancssoros ablakban. Sikeres lefutást követően létrejön egy könyvtár a modul rövid nevével, ami annak a parancs +--branch+ argumentuma által jelzett verzióját tartalmazza. Ha szükséges, akár át is nevezhetjük ezt az új könyvtárat.
 
-. Innentől kezdve ebbe az új könyvtárba belépve (+cd+ parancs) a jövőben bármikor futtathatjuk a +git pull+ parancsot, így mindig az adott projekt lehető legfrissebbváltozatát tudhatjuk a számítógépünkön (hacsak időközben ágat nem váltottunk).
+. Innentől kezdve ebbe az új könyvtárba belépve (+cd+ parancs) a jövőben bármikor futtathatjuk a +git pull+ parancsot, így mindig az adott projekt lehető legfrissebb változatát tudhatjuk a számítógépünkön (hacsak időközben ágat nem váltottunk).
 
-Ha követtük a példánkat, és a _drupal_ projektet (azaz magát az alaprendszert) töltöttük le, akkor a Drupal külső függőségeinek beszerzéséhez folytassuk a következő szakaszban leírt lépésekkel.
-
-===== Külső függőségek beszerzése Composerrel
-
-A Git eszköz, amit az előző példánkban használtunk, nem gondoskodik egy szoftver külső, azaz más, nem Drupalhoz kötődő fejlesztők által közzétett elemeinek meglétéről. Erre ugyanis egy másik eszköz, a Composer való, amit most ki is próbálunk.
+. A Git eszköz, amit az előző példánkban használtunk, nem gondoskodik egy szoftver külső, azaz más, nem Drupalhoz kötődő fejlesztők által közzétett elemeinek meglétéről. Erre ugyanis egy másik eszköz, a Composer való. Ha előbbi példánkat követve az alaprendszer kódját töltöttük le, vagy bármely olyan közösségi projektét, aminek szintén függőségei vannak, akkor még egy lépés hátravan.
 
 . Számítógépünk parancssoros ablakában álljunk a Drupal gyökérkönyvtárába.
 
-. Adjuk ki a +composer install+ parancsot, ami automatikusan feltérképezi a szükséges követelményeket, és elkezdi letölteni őket gépünkre. Ez internetkapcsolatunk sebességétől függően akár több percig is eltarthat.
+. Adjuk ki az alábbi parancsot:
++
+----
+$ composer install
+----
++
+Ekkor a Composer automatikusan feltérképezi a szükséges követelményeket, és elkezdi letölteni őket gépünkre. Ez internetkapcsolatunk sebességétől függően akár több percig is eltarthat.
 
 ===== Alaprendszer letöltése Composerrel
 
@@ -74,11 +76,13 @@ Ahogy eddigre talán már kitalálta az Olvasó, ha a Composer képes letölteni
 
 . Számítógépünk parancssoros ablakában álljunk egy szinttel feljebb, mint amelyik könyvtárban majd szeretnénk, hogy a Drupal létrejöjjön.
 
-. Adjuk ki az alábbi parancsot, melyben a +webhelyem_neve+ részt helyettesítsük be a létrehozni kívánt könyvtárunk nevével:
+. Adjuk ki az alábbi parancsot, melyben a +webhelyem+ részt helyettesítsük be a létrehozni kívánt könyvtárunk nevével:
 +
 ----
-$ composer create-project drupal/drupal webhelyem_neve
+$ composer create-project drupal-composer/drupal-project:8.x-dev webhelyem --no-dev --no-progress --stability dev --no-interaction
 ----
++
+Sikeres lefutást követően létrejön a +webhelyem+ argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
 
 ===== Projektek letöltése Composerrel
 
@@ -96,15 +100,21 @@ $ composer require drupal/geofield
 
 Miután az előző részeknél leírtak szerint már használunk Composert a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így a következő lépéseket követve már könnyedén elvégezhetjük mindezek rendszeres frissítését.
 
-. Akárcsak telepítéskor (lásd fentebb), most is tudnunk kell a frissíteni kívánt modulok vagy sminkek gépi nevét. Az alaprendszeré +drupal+, a közösségi projektekét pedig megnézhetjük webhelyünk adminfelületén.
+. Akárcsak telepítéskor (lásd fentebb), most is tudnunk kell a frissíteni kívánt modulok vagy sminkek gépi nevét. Az alaprendszeré +core+, a közösségi projektekét pedig megnézhetjük webhelyünk adminfelületén.
 
-. Második lépésként meg kell határoznunk, hogy az adott szoftverelem melyik verzióját szeretnénk letöltetni a Composerrel. Ehhez jó, ha tudjuk, hogy a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az +1.7+ verziószámot megadnunk. Ugyanezt a logikát követve a +8.5.5+-ös alaprendszert elég csak +5.5+-ként leírnunk.
-
-. Ha minden információ rendelkezésre áll, akkor a parancssoros ablakban webhelyünk gyökérkönyvtárában állva adjuk ki a következőhöz hasonló parancsot, melyben a +geofield+ mintát értelemszerűen a frissíteni kívánt projekt nevére cseréljük:
+. Második lépésként meg kell határoznunk, hogy az adott szoftverelem melyik verzióját szeretnénk letöltetni a Composerrel. Egyszerű dolgunk van, ha a legfrissebb verziót kérjük:
++
+----
+$ composer update drupal/geofield  --with-dependencies
+----
++
+Ha valamilyen oknál fogva egy adott verzióra van szükségünk, akkor jó, ha tudjuk, hogy a kötőjeles verziószámok esetén a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az +1.7+ verziószámot megadnunk. Ugyanez nem érvényes azonban az alaprendszerre, mert annak nem kötőjellel összetett verziószáma van. Ott továbbra is ugyanúgy ki kell írnunk: például +drupal/core:8.6.3+.
 +
 ----
 $ composer require drupal/geofield:1.7
 ----
++
+. Ha minden információ rendelkezésre áll, akkor a parancssoros ablakban webhelyünk gyökérkönyvtárában állva adjuk ki a fentiekhez hasonló parancsunkat, melyben a +geofield+ mintát értelemszerűen a frissíteni kívánt projekt nevére cseréltük.
 
 //==== Az ismeretek elmélyítése
 
@@ -121,4 +131,4 @@ https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[Us
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] és  https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[„Using Composer with Drupal”] (azaz „A Drupal használata Composerrel”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug] és https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[„Using Composer with Drupal”] (azaz „A Drupal használata Composerrel”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
