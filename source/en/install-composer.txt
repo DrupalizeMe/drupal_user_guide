@@ -1,5 +1,5 @@
 [[install-composer]]
-=== Using Composer to Download Files
+=== Using Composer to Download and Update Files
 
 [role="summary"]
 How to use the Composer tool to manage the files in the core software
@@ -8,19 +8,26 @@ and add-on modules and themes.
 (((Composer tool,using to download the core software)))
 (((Composer tool,using to download modules)))
 (((Composer tool,using to download themes)))
+(((Core software,downloading)))
+(((Core software,updating)))
 (((Downloading,core software)))
 (((Downloading,theme)))
 (((Downloading,module)))
 (((Software dependencies,managing)))
 (((Module,downloading)))
+(((Module,updating)))
 (((Theme,downloading)))
+(((Theme,updating)))
 (((Contributed theme,downloading)))
+(((Contributed theme,updating)))
 (((Contributed module,downloading)))
+(((Contributed module,updating)))
+(((Security update,applying)))
 
 ==== Goal
 
-Use Composer to download files and dependencies in the core software, or in
-add-on modules and themes. Skip this topic if you are not using Composer.
+Use Composer to download or update files and dependencies in the core software,
+or in add-on modules and themes. Skip this topic if you are not using Composer.
 
 ==== Prerequisite knowledge
 
@@ -58,18 +65,19 @@ the software to reside.
 . Enter this command, where _mydir_ is the directory you want to create:
 +
 ----
-composer create-project drupal-composer/drupal-project:8.x-dev mydir --no-dev --no-progress --stability dev --no-interaction
+composer create-project drupal-composer/drupal-project:8.x-dev mydir --no-interaction
 ----
 
-. The core software will be downloaded to the _mydir/web_ sub-directory, along
-with extra tools such as Drush and Drupal Console.
+. The latest release of the core software will be downloaded to the _mydir/web_
+sub-directory; you'll also get some extra tools such as Drush and Drupal Console
+in the _mydir/vendor_ directory.
 
 
 ===== Using Composer to download a module or theme
 
 Follow these steps if you have already downloaded the core software, and you
-want to use Composer to add a contributed module or theme (usually because it
-has external dependencies that need to be downloaded with Composer):
+want to use Composer to add a contributed module or theme with its
+dependencies.
 
 . Each time you want to add a contributed module or theme, determine the
 project's short name. This is the last part of the URL of the project page; for
@@ -84,7 +92,7 @@ the short name of the module or theme for +geofield+):
 composer require drupal/geofield
 ----
 
-===== Using Composer to update a project's files
+===== Using Composer to update previously-downloaded files
 
 Follow these steps to update the files for the core software or a contributed
 module or theme, after having already started to manage dependencies with
@@ -100,7 +108,7 @@ command, substituting the short name of the project to be updated for
 +geofield+:
 +
 ----
-composer update drupal/geofield  --with-dependencies
+composer update drupal/geofield --with-dependencies
 ----
 
 . If you need a specific version, determine how to enter the version number you
@@ -114,7 +122,11 @@ version number):
 composer require drupal/geofield:1.7
 ----
 
-// ==== Expand your understanding
+==== Expand your understanding
+
+You can learn more about Composer commands by using Composer's built-in help
+system. For example, to learn more about the `create-project` command, enter
+`composer help create-project` in your command window.
 
 // ==== Related concepts
 
@@ -125,8 +137,8 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer 
 
 ==== Additional resources
 
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
-
+* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Using Composer to manage Drupal site dependencies"]
+* https://www.drupal.org/docs/8/update/update-core-via-composer["Update core via Composer"]
 
 *Attributions*
 
@@ -134,6 +146,6 @@ Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
 https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], and
 https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
 https://drupalize.me[Drupalize.Me] from
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal["Using Composer with Drupal"],
+https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Using Composer to manage Drupal site dependencies"],
 copyright 2000-2017 by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
