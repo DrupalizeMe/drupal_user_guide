@@ -41,9 +41,8 @@ use BackupMigrate\Core\Source\MySQLiSource;
  *   Then just copy this column of output into the $demoInput array in your
  *   new class.
  * - Override the $runList member variable to run the sections of interest.
- * - If the language needs a custom translation PO file to be imported during
- *   initial setup, put it in the auto_screenshots/backups/lc/translation
- *   directory, where lc is the language code.
+ * - Add PO files to the auto_screenshots/translations directory (see
+ *   README.txt file there for instructions).
  *
  * See README.txt file in the module directory for instructions for making
  * screenshot images from this test output.
@@ -239,7 +238,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   /**
    * Modules needed for this test.
    */
-  public static $modules = ['update'];
+  public static $modules = ['update', 'screenshot_alters'];
 
   /**
    * We need verbose logging to be on.
@@ -270,7 +269,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * as a "test" to run, in the specific-language classes.
    */
   public function testBuildDemoSite() {
-
     $this->drupalLogin($this->rootUser);
 
     // Figure out where the assets directory is.
@@ -2242,7 +2240,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ], $this->callT('Add language'));
-    // Confirmation and language list after adding Spanish language.
+    // Confirmation and language list after adding second language.
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
     $this->importTranslations($this->demoInput['second_langcode']);
     $this->verifyTranslations();
@@ -3283,9 +3281,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @param string $langcode
    *   Language code to import the translations for. Skips if it is English.
    * @param bool $read_initial
-   *   If TRUE (FALSE is the default), also read the initial translation file
-   *   from the auto_screenshots/backups/LANGCODE/translation directory, if
-   *   there is one.
+   *   If TRUE (FALSE is the default), also read the initial translation files
+   *   from the auto_screenshots/translations/LANGCODE directory.
    *
    * @see UserGuideDemoTestBase::exportTranslations()
    * @see https://www.drupal.org/project/drupal/issues/2806009
@@ -3305,7 +3302,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $options = ['recurse' => FALSE];
       $result = file_scan_directory($directory, $pattern, $options);
       if ($read_initial) {
-        $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $langcode . '/translation');
+        $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/translations/' . $langcode);
         if (is_dir($directory)) {
           $this->pass('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory);
           $result = array_merge($result, file_scan_directory($directory, $pattern, $options));
@@ -3330,17 +3327,33 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       }
     }
 
+    // Emulate the batch that we turned off in the screenshot_alters module,
+    // that was coming from locale_form_language_admin_add_form_alter().
+    $locale_config = \Drupal::service('locale.config_manager');
+    $names = $locale_config()->getComponentNames([]);
+    $locale_config()->updateConfigTranslations($names, [$langcode]);
+
     $this->flushAll();
   }
 
   /**
    * Fixes the settings for translation.
    *
-   * Makes sure the translation directory exists.
+   * Makes sure the translation directory exists, and sets up to only use local
+   * translation files.
    */
   protected function fixTranslationSettings() {
+    // Alter the core.extension config to put the screenshot_alters module
+    // last.
+    $config = \Drupal::configFactory()->getEditable('core.extension');
+    $modules = $config->get('module');
+    $modules['screenshot_alters'] = 500;
+    $config->set('module', $modules)->save();
+
+    // Alter the translation path, and set up to not import.
     $this->ensureDirectoryWriteable(file_directory_temp(), 'temp');
     \Drupal::configFactory()->getEditable('locale.settings')
+      ->set('translation.import_enabled', FALSE)
       ->set('translation.path', file_directory_temp())
       ->save();
     drupal_flush_all_caches();
