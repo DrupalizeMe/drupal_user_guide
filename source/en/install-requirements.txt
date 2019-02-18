@@ -40,7 +40,18 @@ server) as that used by the site files.
 
 ===== PHP
 
-PHP 5.5.9 or higher.
+PHP 7.2 or higher. PHP must be set up with a minimum memory size of 64MB; if you
+are running multiple modules on your site or using memory-intensive PHP-based
+command-line tools (such as Composer), considerably more memory than that may be
+needed.
+
+Certain PHP extensions are also required; the exact list of required PHP
+extensions depends on how you install the core software and which modules you
+are using on your site. Generally, hosting service providers have installed all
+the PHP extensions you will need. If you are self-hosting or running your site
+on your local computer, you will get error messages during installation if any
+required PHP extensions are missing, and should be able to install them and
+continue.
 
 ===== Web server
 
@@ -88,7 +99,8 @@ software.
 
 ==== Additional resources
 
-https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+* https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+* https://secure.php.net/manual/en/configuration.php[PHP Runtime Configuration (PHP memory limit and other settings)]
 
 
 *Attributions*
