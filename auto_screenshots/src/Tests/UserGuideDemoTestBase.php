@@ -2242,7 +2242,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Add language'));
     // Confirmation and language list after adding second language.
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
-    $this->importTranslations($this->demoInput['second_langcode']);
+    $this->importTranslations($this->demoInput['second_langcode'], TRUE);
     $this->verifyTranslations();
     $this->verifyTranslations(FALSE);
 
@@ -3327,13 +3327,16 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       }
     }
 
-    // Emulate the batch that we turned off in the screenshot_alters module,
-    // that was coming from locale_form_language_admin_add_form_alter().
-    $locale_config = \Drupal::service('locale.config_manager');
-    $names = $locale_config()->getComponentNames([]);
-    $locale_config()->updateConfigTranslations($names, [$langcode]);
-
+    if ($read_initial) {
+      // Emulate the batch that we turned off in the screenshot_alters module,
+      // that was coming from locale_form_language_admin_add_form_alter() and
+      // should run whenever a new language is added (even English).
+      $locale_config = \Drupal::service('locale.config_manager');
+      $names = $locale_config()->getComponentNames([]);
+      $locale_config()->updateConfigTranslations($names, [$langcode]);
+    }
     $this->flushAll();
+
   }
 
   /**
