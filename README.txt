@@ -33,11 +33,6 @@ for the other files that make up the manual.
 
 Images and text for use in making screen shots for the guide.
 
-* unused
-
-Some topics that were written or partially written, that we decided not to
-include in the final guide.
-
 * guidelines / templates
 
 Guidelines and templates for contributors to this project are in the guidelines
