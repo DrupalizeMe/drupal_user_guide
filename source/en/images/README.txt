@@ -45,11 +45,12 @@ screenshots.
 - content-in-place-edit-hover-box.png
 - content-in-place-edit-save-box.png
 
-ENGLISH-ONLY IMAGES
+ENGLISH-ONLY MANUALLY-GENERATED IMAGES
 
 A few images are English-only, and should be copied directly from the English
-version rather than regenerated. (Most of them are from drupal.org pages.) Here
-is a list:
+version rather than regenerated. (Most of them are from drupal.org pages,
+and they would only need to be updated if the download pages on drupal.org
+changed.) Here is a list:
 
 - extend-manual-install-directories.png : A manually-generated image that shows
   the directory structure of "contrib" and "custom" directories under "modules"
@@ -66,11 +67,7 @@ is a list:
 
 - extend-theme-install-download.png_ : Shot from drupal.org
 
-- install-prepare-downloads.png : Shot from drupal.org. This is a
-  manually-generated screenshot of the section of the Download & Extend page
-  on drupal.org that has the "Download Drupal 8...." button on it. We used
-  to be able to generate it automatically, but drupal.org markup changed and
-  it no longer works.
+- install-prepare-downloads.png : Shot from drupal.org
 - install-prepare-files.png : Shot from drupal.org
 - install-prepare-recommended.png : Shot from drupal.org
 

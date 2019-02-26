@@ -1,83 +1,72 @@
-This module does not do anything directly. All it contains is tests that can be
-used to generate screen capture images, as well as database dumps and files
-directories so you can clone the demo site as it would be at the end of each
-chapter of the User Guide.
+This module does not do anything directly. All it contains is tests that:
+- Verify that the user interface text that is used in the User Guide and the
+  steps for the tasks are present and work.
+- Generates screen capture images
+- Generates database dumps and files directories that you can use to clone the
+  demo site that the User Guide builds, as it would be at the end of each
+  chapter.
 
 A list of images that could not be automated, and therefore need to be generated
 manually, can be found in the source/en/images/README.txt file (under the main
 project directory).
 
+Also, text that comes from drupal.org pages cannot be tested in the current
+testing framework, because drupal.org blocks access. So, periodically, the
+following topic pages should be checked for accuracy with respect to changes
+to drupal.org pages:
+- extend-manual-install
+- extend-module-find
+- extend-module-install
+- extend-theme-find
+- extend-theme-install
+- install-prepare
+- security-update-module
+- security-update-theme
 
 SETTING UP THE ENVIRONMENT
 --------------------------
 
-The screenshots can be generated using Firefox, the Greasemonkey plugin, a
-local Drupal test site, and some command line image tools. This section
-details how to set up the tools; some steps may need to be repeated if
-you update software on your local computer. Here are the steps:
+The tests are run using Drupal Core's PHPUnit test framework from the
+command line. They generate HTML files, which can be processed using command-
+line image tools to make screenshot images. This section details how to set up
+the tools; some steps may need to be repeated if you update software on your
+local computer. Here are the steps:
 
-1. Install Firefox if necessary.
+1. Install Firefox and Chrome or Chromium browser, if you do not already have
+   them installed.
 
-2. Open up Firefox, and install the "Greasemonkey" add-on.
-
-3. From the Greasemonkey menu (pops up when you click the monkey icon in the
-   upper right corner of the status bar), choose "New user script". An editing
-   window should open.
-
-4. In place of the entire text in that window, copy in the contents of the
-   greasemonkey_screenshot.js file in this directory. You may need to do
-   something special to enable pasting into the editor. Save the file
-   (control-S). You should now see an entry in the Greasemonkey menu showing
-   "Screenshots from Simpletest", and if you choose that menu item, it should
-   say it is enabled.
-
-5. At the command line, make sure the "import" command from ImageMagick is
-   installed. On Linux, use one of the following commands to install it, if it
-   is not present:
-
-   sudo apt-get install imagemagick
-   sudo yum install imagemagick
-
-6. Install a local test Drupal site, running the version of Drupal you want to
+2. Install a local test Drupal site, running the version of Drupal you want to
    generate screen shots for (Drupal 8.0.2, 8.1.0, etc. -- make sure it is the
    latest actual release, not a development branch, so that translations are
-   downloaded correctly). You will need to make sure that one Core issue has
-   been fixed, or else make a one-line change in
-   core/modules/simpletest/src/WebTestBase.php as detailed on this issue:
-        https://www.drupal.org/node/2808377
-   The line to change looks like:
-        @$newDom->loadHTML('<div>' . $command['data'] . '</div>');
-   and it needs to be changed to:
-        @$newDom->loadHTML('<?xml encoding="utf-8" ?>' .
-           '<div>' . $command['data'] . '</div>');
+   downloaded correctly).
 
-   There is also another core issue that affects screenshots:
-     https://www.drupal.org/node/2886904
-   because it makes the open/closed icons for details elements on admin
+3. Apply patches for two core issues:
+
+   a. https://www.drupal.org/node/2886904
+   This makes the open/closed icons for details elements on admin
    forms go away in Firefox. To fix this, edit your local copy of file
      core/assets/vendor/normalize-css/normalize.css
    and remove "summary" from getting CSS display: block around line 47.
 
-   And one more core issue:
-     https://www.drupal.org/project/drupal/issues/2905295
+   b. https://www.drupal.org/project/drupal/issues/2905295
    At this time, the issue has no patch. But it can be gotten around by
    editing
      core/modules/locale/locale.module
    and commenting out the call to locale_system_set_config_langcodes() in the
    function locale_modules_installed() around line 316.
 
-7. Copy the entire User Guide project directory into the top-level 'modules'
+4. Copy the entire User Guide project directory into the top-level 'modules'
    directory of your local Drupal site. (Alternatively, if your operating
    system supports it, you can instead make a symbolic link.)
 
-8. Edit the top-level Drupal site composer.json file. Add the following to
+5. Edit the top-level Drupal site composer.json file. Add the following to
    the "extra" / "merge-plugin" section:
 
      "require": [
        "modules/user_guide/auto_screenshots/composer.json"
      ],
 
-9. Run the command
+6. Run the command
      composer update
    to install dependencies of this project. If you do not have Composer
    installed, see https://getcomposer.org/
@@ -91,25 +80,24 @@ you update software on your local computer. Here are the steps:
    vendor/backupmigrate/core/src/Source/MySQLiSource.php
    to put in the fix shown in that issue.
 
-10. Enable the Testing (simpletest) module in the Drupal site.
-    Drush command:
-     drush en simpletest
+7. Follow the steps in core/tests/README.md to set up the testing environment,
+   including the parts that are specific to running tests that use
+   chromedriver and WebDriverTestBase.
 
-11. Download a near-current 8.x version of the Mayo theme to the /themes
-    directory in your test site (for instance, if the current version is
-    8.x-1.15, get 8.x-1.14). It is used for some of the screenshots.
-    https://www.drupal.org/project/mayo
+8. At the command line, make sure the "import" command from ImageMagick is
+   installed. On Linux, use one of the following commands to install it, if it
+   is not present:
 
-12. Do the same for a near-current version of the Admin Toolbar module
+   sudo apt-get install imagemagick
+   sudo yum install imagemagick
+
+9. Download a near-current 8.x version of the Mayo theme to the /themes
+   directory in your test site (for instance, if the current version is
+   8.x-1.15, get 8.x-1.14). It is used for some of the screenshots.
+   https://www.drupal.org/project/mayo
+
+10. Do the same for a near-current version of the Admin Toolbar module
     from https://www.drupal.org/project/admin_toolbar
-
-13. Make directory /tmp/screenshots_backups on your computer, and make sure
-    the web server user can write to it. Backups and translation files are
-    stored there during test runs. If that path doesn't work on your computer,
-    you'll need to edit the src/Tests/UserGuideDemoTestBase.php file to use a
-    different base directory. Note that on newer Linux systems, this directory
-    may be put inside a directory like /tmp/system-private-a34asf.../ behind
-    the scenes, for security reasons.
 
 
 MAKING SCREENSHOTS
@@ -118,70 +106,51 @@ MAKING SCREENSHOTS
 Once you are set up for screenshots, you can make a set of screen shots for
 a particular language as follows:
 
-1. Go to admin/config/development/testing (Administration / Configuration /
-   Development / Testing) in your local Drupal test site.
+1. Start chromedriver and keep it running:
 
-2. Run the "UserGuideDemoTestEn" test interactively and wait for it to
-   finish (or the one for the language you want to generate). Just run one
-   language at a time. Note that you can edit the test file that you are
-   running, to make it run just a subset of the screenshots and tests. To
-   do this, find the member variable $notRunList, change its name to $runList,
-   and change 'skip' to another value to run it (see the definitions in the
-   UserGuideDemoTestBase.php file).
+   chromedriver --port=4444
 
-3. At the bottom of the page, you should see first a list of all the backups
-   that were made during the test. You can copy the .gz files in these
-   directories into the "backups" directory under this directory, in the
-   subdirectory for the appropriate language. Remember, if they say they are
-   in /tmp/screenshots_backups, this might be inside a /tmp/systemd-private*
-   directory.
 
-4. Below the list of backups, you should see a form (from the Greasemonkey
-   script). Enter the values and click the button. You'll need to supply:
+2. Run the test for that language with a command like this, from the core
+   directory under your Drupal root:
 
-- The output directory where you'd like the screen shots to be saved,
-  as either absolute path or relative to where you plan to run the scripts.
-- The window ID for your Firefox window. You can find this by running the
-  xwininfo command and clicking in the Firefox window.  It should be something
-  like 0x3200078. Or you can use the window name (if you can figure out what
-  that would be).
-- The Y offset - how many pixels to offset the images, to get past all of the
-  Firefox toolbars in your Firefox window. A value of 125 seems to be about
-  right if you have the menu bar, tabs, URL bar, and bookmarks showing. If you
-  have fewer toolbars, use a smaller offset.
-- The timeout - how long to wait for the page to load before taking the
-  screenshot, in seconds. 3 is probably enough.
+   sudo -u www-data ../vendor/bin/phpunit -v -c /path/to/phpunit.xml \
+   ../modules/user_guide/auto_screenshots/tests/src/FunctionalJavascript/UserGuideDemoTestEn.php
 
-5. The screen shot commands should appear below the form. Copy and paste them
-   into a script, and run the script at the command line. Then close up all
-   the Firefox windows it opened up.
+   If your web user is something other than www-data, modify the command
+   appropriately, and change the language near the end of the command if
+   necessary. You will also need to change the path to your phpunit.xml file.
 
-NOTE: You need to run the screen shot script before you leave the testing output
-page. The Testing module will delete all HTML output once you leave the results
-page or start another test.
+   Note that you can edit the test file that you are running, to make it run
+   just a subset of the screenshots and tests. To do this, find the member
+   variable $notRunList, change its name to $runList, and change 'skip' to
+   another value to run it (see the definitions in the UserGuideDemoTestBase.php
+   file).
 
-NOTE 2: You may want to run just one screen shot command from the script to
-begin with, to see how it works, and then adjust the Y offset and timeout.
+3. Assuming the test run succeeds, you should see some output that tells you
+   where the backups and screenshot HTML files have been stored. You can copy
+   the .gz files in these directories into the "backups" directory under this
+   directory, in the subdirectory for the appropriate language, and commit
+   them to Git.
 
-NOTE 3: Some screenshots scroll the browser window. This may not work in a
-foolproof way, and assumes the browser width is set to about 1200 pixels wide,
-with normal text size settings. It also needs to be a desktop-height browser
-to make some of the screenshots.
+4. To make images from the screenshot files, open Firefox, and set the browser
+   width to 1200 pixels, and height to 800 pixels. Make sure the zoom level
+   is set to normal.
 
-NOTE 4: There are several screenshots that are made only for English -- these
-are screenshots of drupal.org pages. If you update them, you should copy them
-to the other language directories:
-- extend-manual-install-download.png
-- extend-module-find_module_finder.png
-- extend-module-find_search_results.png
-- extend-module-find_project_info.png
-- extend-module-install-download.png
-- extend-theme-find_theme_finder.png
-- extend-theme-find_search_results.png
-- extend-theme-install-download.png
-- install-prepare-recommended.png
-- install-prepare-files.png
-- security-update-module-release-notes.png
+   Then run the mkshots.sh file in this directory. It takes 4 arguments:
+
+   - The directory where the HTML files are.
+   - The base URL for that directory within the Drupal site.
+   - The output directory where you'd like the screen shots to be saved,
+     as either absolute path or relative to where you plan to run the scripts.
+   - The window ID for your Firefox window. You can find this by running the
+     xwininfo command and clicking in the Firefox window.  It should be
+     something like 0x3200078. Or you can use the window name (if you can figure
+     out what that would be).
+
+   You may need to edit the timeout (3 seconds) or the Y offset (125) in the
+   script if it doesn't run correctly.
+
 
 BACKUP AND RESTORE
 ------------------
@@ -203,23 +172,18 @@ database and files manually. The database table prefix is
 MORE DETAILS FOR THE CURIOUS
 ----------------------------
 
-You can look at the output before you make screen shots. In the test results
-page, there are links that say "Screen shot output", and below each one is a
-line like:
+You can look at the output before you make screen shots. In the test results,
+there are lines like:
 
 SCREENSHOT filename.png http://example.com/long_url_here
 
 The file name in this line is the image file that will be created by the
-script. The URL is the URL of the "Screen shot output" link from the line above.
-
-The Greasemonkey script finds these SCREENSHOT lines in the output, and
-parses them (along with the information you entered in the form) to make the
-screen shot script.
+script. The URL is the HTML for making the image.
 
 For developers... The screen shot output is generated by a custom method
 in the UserGuideDemoTest class called setUpScreenShot(). It generates a
 clean output file (without the headers that are usually on a drupalGet()),
-as well as the SCREENSHOT line for the Greasemonkey script to parse.
+as well as the SCREENSHOT line.
 
 Also, the code that generates each screenshot adds JavaScript commands to each
 page's HTML output, which do things like clicking buttons, opening up vertical
