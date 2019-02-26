@@ -3,14 +3,14 @@
 === Szövegformátumok és -szerkesztők beállítása
 
 [role="summary"]
-Hogyan változtassuk meg egy szövegformátum működését és a hozzá tartozó gombokat a szerkesztő eszközsorán.
+Így változtassuk meg egy szövegformátum működését és a hozzá tartozó gombokat a szerkesztő eszközsorán.
 
 (((Szövegformátum,beállítás)))
 (((Beállítás,szövegformátum)))
 (((Szövegszerkesztő,beállítás)))
 (((CKeditor szövegszerkesztő,szövegformátumhoz rendelés alapértelmezés szerint)))
-(((WYSIWYG (Azt kapod, amit látsz),szövegszerkesztő beállítása)))
-(((Azt kapod, amit látsz (WYSIWYG),szövegszerkesztő beállítása)))
+(((WYSIWYG (Azt kapod amit látsz),szövegszerkesztő beállítása)))
+(((Azt kapod amit látsz (WYSIWYG),szövegszerkesztő beállítása)))
 (((Modul,Filter)))
 (((Modul,Editor)))
 (((Modul,CKEditor)))
@@ -20,7 +20,7 @@ Hogyan változtassuk meg egy szövegformátum működését és a hozzá tartoz�
 
 ==== Célkitűzés
 
-Az a cél, hogy a vízszintes elválasztó HTML-elemet hozzáadjuk az _Alap HTML_ szövegformátum engedélyezési listájához, majd pedig kitegyük ennek gombját az eszközsorra is.
+Az a cél, hogy a vízszintes elválasztó HTML-elemet hozzáadjuk az _Alap HTML_ szövegformátum engedélyezési listájához, majd kitegyük ennek gombját az eszközsorra is.
 
 ==== Szükséges előismeretek
 
@@ -30,17 +30,17 @@ Az a cél, hogy a vízszintes elválasztó HTML-elemet hozzáadjuk az _Alap HTML
 
 * A webhelyen telepítve és engedélyezve kell lenniük az alaprendszer _Filter_, _Editor_ és _CKEditor_ moduljainak. Nem kell félnünk, ez nem a mi dolgunk: a Drupal telepítésekor ez már automatikusan megtörtént.
 
-* Az _Alap HTML_ szövegformátumnak léteznie kell. Nem kell félnünk, ez nem a mi dolgunk: a Drupal telepítésekor ez már automatikusan megtörtént.
+* Az _Alap HTML_ szövegformátumnak léteznie kell. Ahogy előbb sem, úgy ez most sem a mi dolgunk: a Drupal telepítésekor az már automatikusan létrejött.
 
 ==== Lépések
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Tartalom készítése_ > _Szövegformátumok és szerkesztők_ (vagy címsorba gépelve: _admin/config/content/formats_) oldalra. Megjelenik a _Szövegformátumok és szerkesztők_ oldal. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt mégis találkozunk még angol feliratokkal a <<language-concept>> témakörnél leírtak miatt.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Tartalom készítése_ > _Szövegformátumok és -szerkesztők_ (vagy a címsorba gépelve: _admin/config/content/formats_) oldalra. Megjelenik a _Szövegformátumok és szerkesztők_ oldal. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt mégis találkozunk angol feliratokkal a <<language-concept>> témakörnél leírtak miatt.
 
 . Az _Alap HTML_ sorában kattintsunk a _Beállítás_ gombra. Megjelenik az _Alap HTML_ oldal.
 
 . Figyeljük meg, hogy a _Szövegszerkesztő_ felirat alatt a _CKEditor_ van kiválasztva. Ez lehetővé teszi számunkra, hogy módosítsuk az eszközsorát.
 
-. Húzzuk a _Vízszintes elválasztó vonal_ (angolul „horizontal rule”) gombot az _Rendelkezésre álló gombok_ területről az _Aktív eszköztár_ szalagra. Ha szükséges, akkor a _Csoportnevek mutatása_ linkre kattintva megjeleníthetjük a gombcsoportok nevét.
+. Húzzuk a _Vízszintes elválasztó vonal_ (angolul „horizontal rule”) gombot a _Rendelkezésre álló gombok_ területről az _Aktív eszköztár_ szalagra. Ha szükséges, akkor a _Csoportnevek mutatása_ linkre kattintva megjeleníthetjük a gombcsoportok nevét.
 +
 --
 // Button configuration area on text format edit page.
@@ -53,7 +53,7 @@ image:images/structure-text-format-config-editor-config.png["A szövegszerkeszt�
 +
 --
 // Allowed HTML tags area on text format edit page.
-image:images/structure-text-format-config-allowed-html.png["HTML elemek beállítása",width="100%"]
+image:images/structure-text-format-config-allowed-html.png["HTML-elemek beállítása",width="100%"]
 --
 
 . Kattintsunk a _Beállítások mentése_ gombra. Ekkor visszajutunk a _Szövegformátumok és szerkesztők_ oldalra. Egy pozitív rendszerüzenet tájékoztat minket az előbbi módosításaink sikeres elmentéséről.
@@ -65,7 +65,7 @@ image:images/structure-text-format-config-summary.png["Visszajelzés a sikeres m
 
 ==== Az ismeretek elmélyítése
 
-Ha nem látjuk azonnal az eredményét a változtatásainknak, akkor szükség lehet a gyorsítótár ürítésére. Lásd <<prevent-cache-clear>>.
+Ha nem látjuk azonnal a változtatásaink eredményét, szükség lehet a gyorsítótár kiürítésére. Lásd: <<prevent-cache-clear>>.
 
 //==== Kapcsolódó témák
 

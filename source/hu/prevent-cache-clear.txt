@@ -1,9 +1,9 @@
 [[prevent-cache-clear]]
 
-=== A gyorsítótár ürítése
+=== A gyorsítótár kiürítése
 
 [role="summary"]
-E témakör arról szól, hogyan tudjuk kiüríteni webhelyünk gyorsítótárát akár az adminfelületen keresztül, akár a Drush segítségével.
+Hogyan tudjuk kiüríteni webhelyünk gyorsítótárát akár az adminfelületen keresztül, akár a Drush segítségével.
 
 (((Gyorsítótár,ürítés)))
 (((Gyorsítótár,újraépítés)))
@@ -19,7 +19,7 @@ Az adminfelület vagy a Drush segítségével kiürítjük webhelyünk belső gy
 
 ==== Webhely előfeltételei
 
-Ha szeretnénk Drush eszközt használni a gyorsítótár kiürítéséhez, akkor azt telepíteni kell. Lásd <<install-tools>>.
+Ha szeretnénk Drush eszközt használni a gyorsítótár kiürítéséhez, akkor azt telepíteni kell. Lásd: <<install-tools>>.
 
 ==== Lépések
 
@@ -27,7 +27,7 @@ E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfel�
 
 ===== Adminfelületen keresztül
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Teljesítmény_ oldalra (vagy címsorban adjuk meg az _admin/config/development/performance_ útvonalat) .
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Teljesítmény_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/performance_ útvonalat).
 
 . Kattintsunk a _Gyorsítótár teljes törlése_ gombra.
 
@@ -55,7 +55,7 @@ Enter a number to choose which cache to clear.
  [8]  :  render
  [9]  :  views
 ----
-A kijelzőnkön megjelenő felsorolásból válasszuk ki az üríteni kívánt gyorsítótár sorszámát, írjuk be, majd nyomjunk Entert a végrehajtásához.
+A képernyőnkön megjelenő felsorolásból válasszuk ki a kiüríteni kívánt gyorsítótár sorszámát, írjuk be, majd nyomjunk Entert a végrehajtásához.
 
 //==== Az ismeretek elmélyítése
 
@@ -64,7 +64,7 @@ A kijelzőnkön megjelenő felsorolásból válasszuk ki az üríteni kívánt g
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="A gyorsítótár ürítése"]
+video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="A gyorsítótár kiürítése"]
 
 ==== Egyéb források
 
@@ -72,4 +72,4 @@ https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/eojthebrave[Joe Shindelar] és https://www.drupal.org/u/jerseycheese[Jack Haas] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[Clearing or rebuilding Drupal's cache] (azaz „A Drupal gyorsítótárának kiürítése és újraépítése”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000-2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/eojthebrave[Joe Shindelar] és https://www.drupal.org/u/jerseycheese[Jack Haas] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[Clearing or rebuilding Drupal's cache] (azaz „A Drupal gyorsítótárának kiürítése és újraépítése”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

@@ -3,7 +3,7 @@
 === Modulok telepítése
 
 [role="summary"]
-Hogyan adjunk hozzá új alaprendszeri vagy közösségi modulokat webhelyünkhöz az adminfelületen keresztül vagy a Drush használatával.
+Így adhatunk hozzá alaprendszeri, közösségi modulokat webhelyünkhöz adminfelületen keresztül vagy a Drush használatával.
 
 (((Modul,engedélyezés)))
 (((Modul,telepítés)))
@@ -18,7 +18,7 @@ Adjunk hozzá webhelyünkhöz új alaprendszeri vagy közösségi modulokat (ame
 
 ==== Webhely előfeltételei
 
-Ha szeretnénk Drush eszközt használni az alaprendszer telepítéséhez, akkor a Drush-t telepíteni kell. Lásd <<install-tools>>.
+Ha szeretnénk Drush eszközt használni az alaprendszer telepítéséhez, akkor a Drusht telepíteni kell. Lásd: <<install-tools>>.
 
 ==== Lépések
 
@@ -26,7 +26,7 @@ E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfel�
 
 ===== Adminfelületen keresztül
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
 . Ha már tudjuk, hogy melyik modulra van szükségünk, akkor a neve melletti jelölőnégyzettel engedélyezhetjük. Például jelöljük most be az alaprendszer _Activity Tracker_ moduljának négyzetét.
 +
@@ -39,9 +39,9 @@ image:images/config-install-check-modules.png["Az alaprendszeri Activity Tracker
 
 ===== Drush használatával
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
-. Keressük ki az engedélyezni kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk annak a modulnak a programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
+. Keressük ki az engedélyezni kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk a modul programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
 
 . Ennek ismeretében már le tudjuk futtatni a következő Drush-parancsot:
 +
@@ -51,7 +51,7 @@ drush en tracker
 
 ==== Az ismeretek elmélyítése
 
-Ha nem látjuk azonnal az eredményét a változtatásainknak, akkor szükség lehet a gyorsítótár ürítésére. Lásd <<prevent-cache-clear>>.
+Ha nem látjuk azonnal a változtatásaink eredményét, szükség lehet a gyorsítótár kiürítésére. Lásd: <<prevent-cache-clear>>.
 
 //==== Kapcsolódó témák
 

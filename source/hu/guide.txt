@@ -1,4 +1,5 @@
 [[user_guide]]
+
 = Drupal 8 Kézikönyv
 
 // Chapters are defined here, and each one includes the individual
@@ -24,7 +25,7 @@ include::preface-scenario.txt[]
 == Ismerkedés
 
 [role="summary"]
-Legyenek mindenki számára egyértelműek a leggyakrabban használt fogalmak jelentései: mik azok a modulok, sminkek, telepítési profilok, stb.
+Legyenek mindenki számára egyértelműek a leggyakrabban használt fogalmak jelentései: mik azok a modulok, sminkek, telepítési profilok stb.
 
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
@@ -58,7 +59,10 @@ Pár szó a Drupal rendszerkövetelményeiről, valamint hogy azok teljesülése
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
+include::install-decide.txt[]
 include::install-prepare.txt[]
+include::install-composer.txt[]
+include::install-manual.txt[]
 include::install-run.txt[]
 
 
@@ -98,7 +102,7 @@ include::menu-reorder.txt[]
 == Tartalomszerkezet
 
 [role="summary"]
-A webhely működési hátterének részletes kidolgozása: tartalomtípusok, mezők, taxonómiák, űrlapok, formázók és más csupa izgalmas fogalmak.
+A webhely működési hátterének részletes kidolgozása: tartalomtípusok, mezők, taxonómiák, űrlapok, formázók és más izgalmas fogalmak.
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -126,7 +130,7 @@ include::structure-text-format-config.txt[]
 == Felhasználókezelés
 
 [role="summary"]
-A webhelyet használó emberekkel kapcsolatos fogalmak, mint például felhasználói és admin fiókok, szerepkörök, jogosultságok megismerése.
+A webhelyet használó emberekkel kapcsolatos fogalmak, mint például felhasználói és adminfiókok, szerepkörök, jogosultságok megismerése.
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
@@ -141,7 +145,7 @@ include::user-content.txt[]
 == Blokkok
 
 [role="summary"]
-Immár semmi nem blokkol minket, hogy megismerjük a blokkokat: mik ezek, mire valók és hogyan szabályozzuk az oldalakon való megjelenésüket.
+Most már semmi nem blokkol minket, hogy megismerjük a blokkokat: mik ezek, mire valók, és hogyan használjuk őket az oldalakon.
 
 include::block-concept.txt[]
 include::block-create-custom.txt[]
@@ -177,7 +181,7 @@ include::language-config-translate.txt[]
 == Továbbfejlesztés
 
 [role="summary"]
-Eddigre már haladó webmesterekké váltunk, így ideje, hogy szétnézzünk a műhelyben és szerszámosládánk mélyére nyúljunk: fejlesztői eszközök.
+Most már haladó webmesterek vagyunk, így ideje, hogy szétnézzünk a műhelyben, és szerszámosládánk mélyére nyúljunk: fejlesztői eszközök.
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -187,7 +191,6 @@ include::extend-theme-install.txt[]
 include::extend-manual-install.txt[]
 include::install-dev-sites.txt[]
 include::install-dev-making.txt[]
-include::install-composer.txt[]
 include::extend-deploy.txt[]
 include::extend-config-versions.txt[]
 
@@ -196,7 +199,7 @@ include::extend-config-versions.txt[]
 == Hibaelhárítás
 
 [role="summary"]
-A szakma réme, a gyorsítótár. Megtanuljuk, miért tartsuk mindig üresen, azon kívül pedig biztonsági mentés, rendszernapló, állapotjelentés.
+A szakma réme, a gyorsítótár. Miért tartsuk mindig üresen, mi is az a biztonsági mentés, a rendszernapló, és az állapotjelentés.
 
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
@@ -209,7 +212,7 @@ include::prevent-status.txt[]
 == Karbantartás
 
 [role="summary"]
-Elkészültünk webhelyünkkel, de legyünk törődő jó gazdája a jövőben is: az alaprendszer biztonsági kiadásai, modul- és sminkfrissítések, stb.
+Elkészültünk webhelyünkkel, de legyünk törődő jó gazdája a jövőben is: az alaprendszer biztonsági kiadásai, modul- és sminkfrissítések stb.
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -224,7 +227,7 @@ include::security-update-theme.txt[]
 == Záró gondolatok
 
 [role="summary"]
-A Drupal két dolgot jelent: a szoftveres részét immár kipipáltuk, de másik értelme, a közösségi élet még előttünk áll. Nézzünk hát körül!
+A Drupal két összetevőből áll: a szoftveres részét már kipipáltuk, de a másik, a közösségi élet még előttünk áll. Nézzünk hát körül!
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
@@ -244,6 +247,6 @@ include::glossary.txt[]
 == Közreműködők
 
 [role="summary"]
-Köszönetnyilvánítás mindazoknak, akik nélkül ma nem, vagy nem magyarul olvashattuk volna ezt a könyvet.
+Köszönetnyilvánítás mindazoknak, akik nélkül ma nem, vagy nem magyarul olvashatnánk ezt a könyvet.
 
 include::attributions.txt[]

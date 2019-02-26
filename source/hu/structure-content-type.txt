@@ -1,15 +1,15 @@
 [[structure-content-type]]
 
-=== Egy tartalomtípus hozzáadása
+=== Tartalomtípus hozzáadása
 
 [role="summary"]
 Ebben a témakörben átvesszük, hogyan lehet egy új tartalomtípust definiálni és testreszabni.
 
-(((Tartalomtípus, hozzáadás)))
+(((Tartalomtípus,hozzáadás)))
 
 ==== Célkitűzés
 
-Ebben a témakörben definiáljuk az új „Árus” tartalomtípusunkat és testreszabjuk a városi piac webhelyünk igényei szerint.
+Ebben a témakörben definiáljuk az új „Árus” tartalomtípusunkat és a városi piac webhelyünk igényei szerint testreszabjuk.
 
 ==== Szükséges előismeretek
 
@@ -22,13 +22,13 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
 
 ==== Lépések
 
-. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. Az ekkor megjelenő oldal felsorolja valamennyi, a webhelyen pillanatnyilag elérhető tartalomtípust, amiből választhatunk. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt mégis találkozunk még angol feliratokkal a <<language-concept>> témakörnél leírtak miatt.
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. Az ekkor megjelenő oldal felsorolja valamennyi, a webhelyen pillanatnyilag elérhető, kiválasztható tartalomtípust. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt mégis találkozunk angol feliratokkal a <<language-concept>> témakörnél leírtak miatt.
 
 . Kattintsunk a _Tartalomtípus hozzáadása_ gombra. Az így megnyitott _Tartalomtípus hozzáadása_ oldalon tudunk egy új, tetszőleges mezőkből álló, egyedi működésű tartalomtípust beküldeni. Töltsünk ki minden mezőt a lent látható módon.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Név | Ez lesz az új tartalomtípusunk megnevezése. | Árus
 | Leírás | Egy rövid ismertető szöveg pár mondatban, hogy mi célból hoztuk létre és mire való. | Ismertető az árusokról.
 |================================
@@ -38,13 +38,13 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
 image:images/structure-content-type-add.png["Az új tartalomtípus hozzáadására szolgáló oldal"]
 --
 
-. Az oldal alján, a _Beküldési űrlap beállításai_ függőleges fül alatt pár beállítást tudunk megadni, hogyan nézzen ki az űrlap, amin keresztül az ilyen típusú tartalmakat lehet majd beküldeni. Töltsünk ki minden mezőt a lent látható módon.
+. Az oldal alján, a _Beküldési űrlap beállításai_ függőleges fül alatt pár beállítást meg tudunk adni, hogyan nézzen ki az űrlap, amin keresztül az ilyen típusú tartalmakat lehet majd beküldeni. Töltsünk ki minden mezőt a lent látható módon.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Cím | Az éppen beküldendő új tartalmi egység _Cím_ mezőjének mi legyen a felirata. | Árus neve
-| Előnézet beküldés előtt | Szabályozható, hogy a leendő új tartalmakat beküldő adminisztrátoroknak kötelező legyen-e ellenőrizni a beküldés előtt álló tartalmuk előnézetét, mielőtt az letárolásra kerülne? | Nem kötelező
+| Előnézet beküldés előtt | Szabályozható, hogy a leendő új tartalmakat beküldő adminisztrátoroknak kötelező legyen-e ellenőrizni a beküldés előtt álló tartalmuk előnézetét, mielőtt azt elmentené a rendszer. | Nem kötelező
 | Magyarázat, vagy beküldési irányelvek | Útmutató a jövőbeli adminisztrátoroknak, hogy hogyan vigyenek fel új _Árusokat_ ezen űrlapon keresztül. | (üresen hagyható)
 |================================
 +
@@ -57,26 +57,26 @@ image:images/structure-content-type-add-submission-form-settings.png["Beküldés
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
-| Közzétéve | A beküldött tartalmi egység rögtön közzétettként kerül mentésre. | Bejelölve
+| Mező neve | Magyarázat | Javasolt kitöltés
+| Közzétéve | A beküldött tartalmi egységet azonnal közzétettként menti a rendszer. | Bejelölve
 | Címlapra helyezve | Egy általános célú webhelyen ez a beállítás hasznos lehet arra, hogy az új tartalmak rögtön megjelenjenek a címlapon is. | Nincs bejelölve
 | Kiemelt, az oldal tetejére | Ezt bepipálva biztosítható, hogy az újonnan beküldött ilyen típusú tartalmak minden listázáskor legfelül, a többi elemet megelőzve jelenjenek meg. | Nincs bejelölve
-| Új változat készítése | Az árus adatlapjának valamennyi módosításakor jöjjön létre egy új változat a korábbiakon felül. | Bejelölve
+| Új változat készítése | Az árus adatlapjának valamennyi módosításakor jöjjön létre egy új, a korábbiakon felüli változat. | Bejelölve
 |================================
 +
-Bár most egy vadonatúj tartalomtípust hozunk létre, tehát még nem létezhetnek ilyen típusú tartalmaink. Viszont mivel egy már létező tartalomtípus beállításai bármikor módosíthatóak a későbbiekben, de nem árt tudni azonban, hogy az visszamenőlegesen már nem fogja befolyásolni a korábban egyszer már beküldött tartalmakat.
+Tekintettel arra, hogy most egy vadonatúj tartalomtípust hozunk létre, még nem létezhetnek ilyen típusú tartalmaink. Ellenben egy már létező tartalomtípus beállításai bármikor módosíthatóak a későbbiekben, azonban nem árt tudni, hogy az visszamenőlegesen már nem fogja befolyásolni a korábban már beküldött tartalmakat.
 +
 --
 // Publishing settings section of admin/structure/types/add.
 image:images/structure-content-type-add-Publishing-Options.png["Közzétételi lehetőségek beállítása"]
 --
 
-. Eggyel lentebb, a  _Megjelenítési beállítások_ függőleges fül alatt szabályozható, hogy a ki legyen-e írva minden ilyen típusú tartalomnál, hogy ki és mikor hozta létre őket a webhelyen? Töltsünk ki minden mezőt a lent látható módon.
+. Eggyel lentebb, a  _Megjelenítési beállítások_ függőleges fül alatt szabályozható, hogy ki legyen-e írva minden ilyen típusú tartalomnál, hogy ki és mikor hozta létre őket a webhelyen. Töltsünk ki minden mezőt a lent látható módon.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
-| Szerző- és dátuminformáció mutatása | Ha bejelölnénk, akkor minden árus adatlapján automatikusan megjelenne egy kis betűs sor, hogy melyik adminisztrátor felhasználó melyik nap hány óra hány perckor hozta létre az adott árus oldalát. Nekünk erre most nincs szükségünk. | Nincs bejelölve
+| Mező neve | Magyarázat | Javasolt kitöltés
+| Szerző- és dátuminformáció mutatása | Ha bejelölnénk, akkor minden árus adatlapján automatikusan megjelenne egy kisbetűs sor, hogy melyik adminisztrátor felhasználó melyik napon, hány óra hány perckor hozta létre az adott árus oldalát. Nekünk erre most nincs szükségünk. | Nincs bejelölve
 |================================
 +
 --
@@ -88,8 +88,8 @@ image:images/structure-content-type-add-Display-settings.png["Megjelenítési be
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
-| Elérhető menük | Lekorlátozható, hogy a webhely összes menüje közül melyek azok, amikhez hozzá lehessen adni az ilyen típusú tartalmakat külön menüpontként. A városi piac webhelyén az árusok től sokan lennének ahhoz, hogy mindenki megjelenhessen egy menüben, ezért ezt az opciót itt most nem használjuk. | Nincs bejelölve
+| Mező neve | Magyarázat | Javasolt kitöltés
+| Elérhető menük | Korlátozható, hogy a webhely összes menüje közül melyekhez lehessen az ilyen típusú tartalmakat külön menüpontként hozzáadni. A városi piac webhelyén az árusok túl sokan lennének ahhoz, hogy mindenki megjelenhessen egy menüben, ezért ezt az opciót itt most nem használjuk. | Nincs bejelölve
 |================================
 +
 --
@@ -104,11 +104,11 @@ image:images/structure-content-type-add-Menu-settings.png["Menübeállítások f
 image:images/structure-content-type-add-confirmation.png["Megerősítés a sikeres mentésről",width="100%"]
 --
 
-. A fenti lépéssort követve ugyanígy hozzunk létre egy másik, _Recept_ nevű tartalomtípust is, amiben majd az árusok által beküldött recepteket tároljuk. A legtöbb helyen használhatjuk ugyanazokat a példa értékeket a receptekhez is, mint az árusokhoz. Ahol mégis eltér, ott ezeket a példákat gépeljük be:
+. A fenti lépéssort követve ugyanígy hozzunk létre egy másik, _Recept_ nevű tartalomtípust is, amiben majd az árusok által beküldött recepteket tároljuk. Ugyanazokat a példaértékeket használhatjuk a legtöbb helyen a receptekhez is, mint az árusokhoz. Ahol mégis eltér, ott ezeket a példákat gépeljük be:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Példa érték
+| Mező neve | Javasolt kitöltés
 | Név | Recept
 | Leírás | Egy étel elkészítésének leírása, amit egy árus küldött be.
 | _Beküldési űrlap beállításai_ fülön Cím mező | Recept neve
@@ -118,7 +118,7 @@ image:images/structure-content-type-add-confirmation.png["Megerősítés a siker
 
 * <<structure-fields>>
 
-* Telepítsük fel webhelyünkre és állítsuk be a közösségi https://www.drupal.org/project/pathauto[Pathauto] modult, amivel az újonnan beküldött tartalmak rögtön kapnak egy automatikusan generált olvasható webcím álnevet. Ezekről többet a <<content-paths>> témakörben olvashatunk, míg a közösségi modulok felderítéséhez a <<extend-module-find>>, telepítésükhöz pedig a <<extend-module-install>> témakörökben kaphatunk hasznos segítséget.
+* Telepítsük fel webhelyünkre, és állítsuk be a közösségi https://www.drupal.org/project/pathauto[Pathauto] modult, amivel az újonnan beküldött tartalmak rögtön kapnak egy automatikusan generált olvasható webcímálnevet. Ezekről többet az <<content-paths>> témakörben olvashatunk, míg a közösségi modulok felderítéséhez a <<extend-module-find>>, telepítésükhöz pedig a <<extend-module-install>> témakörökben kaphatunk hasznos segítséget.
 
 //==== Kapcsolódó témák
 

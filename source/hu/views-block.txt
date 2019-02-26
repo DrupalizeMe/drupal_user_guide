@@ -1,20 +1,18 @@
 [[views-block]]
 
-=== Adding a Block Display to a View
+=== Blokk típusú megjelenítő létrehozása egy nézethez
 
 [role="summary"]
-How to add a block display to a view.
+Így adható egy blokk típusú megjelenítő egy már létező nézethez.
 
-(((View,adding block display to)))
-(((Block,creating from a view)))
-(((Views module,adding to a view)))
-(((Module,Views)))
+(((Nézet,blokk típusú megjelenítő hozzáadása)))
+(((Blokk,létrehozás nézetből)))
+(((Views modul,hozzáadás egy nézethez)))
+(((Modul,Views)))
 
 ==== Célkitűzés
 
-Add a block display to the Recipes view to display the most recent recipes
-in a sidebar, and change its configuration without changing the existing
-Recipes page view.
+Adjunk hozzá egy blokk típusú megjelenítőt a már létező _Receptek_ nézetünkhöz, amit így kitehetünk az oldalsávi régióba, hogy a webhely minden oldalán láthatóak legyenek a legutóbb beküldött receptek. Mindezt úgy fogjuk csinálni, hogy közben ugyanennek a nézetnek az _Oldal_ típusú megjelenítőjét nem módosítjuk.
 
 ==== Szükséges előismeretek
 
@@ -24,99 +22,69 @@ Recipes page view.
 
 ==== Webhely előfeltételei
 
-* The Recipe content type must exist, it must have a Main image field, and your
-site must have a couple of Recipe content items. See <<structure-content-type>>,
-<<structure-fields>>, <<structure-form-editing>>, and <<content-create>>.
+* Léteznie kell a _Recept_ tartalomtípusnak, aminek kell, hogy legyen egy _Fő kép_ mezője, valamint tanácsos, hogy a webhelyre már fel legyen töltve pár recept típusú tartalom. Ezen állapot elérésében segíthetnek az alábbiak:
+** <<structure-content-type>>
+** <<structure-fields>>
+** <<structure-form-editing>>
+** <<content-create>>
 
-* The _Thumbnail (100x100)_ image style must be defined. This is created on your
-site when you install the core Image module (installed with the core Standard
-installation profile) but can be recreated if deleted. See
-<<structure-image-style-create>>.
+* Szintén léteznie kell egy _Bélyegkép (100×100 képpont)_ nevű képstílusnak, ami az alaprendszer _Image_ moduljának engedélyezésekor (vagyis a webhely _Általános_ profillal való telepítésekor) jön létre. Ha szükséges, kézzel is bármikor gyorsan összeállítható a <<structure-image-style-create>> alapján.
 
-* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
+* Talán nyilvánvaló, hogy a _Receptek_ nézetnek már léteznie kell. Ha csak véletlenül jutottunk ide, akkor a <<views-create>> és <<views-duplicate>> részeket érdemes előbb elolvasnunk, mielőtt itt folytathatnánk.
 
 ==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_). Find the view "Recipes" and click _Edit_ from its
-dropdown button. Alternatively, navigate to the Recipes page in the main site
-navigation, and click the _Edit view_ contextual link in the main area of the
-page. See <<config-overview>> for information about contextual links.
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Nézetek_ menüpontot (vagy a címsorban adjuk meg az _admin/structure/views_ útvonalat). Keressük meg a felsorolásban a _Receptek_ nevű nézetet, és a sorának jobb végén a lenyíló gombon válasszuk a _Szerkesztés_ lehetőséget. Ugyanide érkezünk, ha webhelyünk Receptek oldalán (a címsorban _/receptek_) a _Nézet szerkesztése_ feliratú szövegkörnyezeti hivatkozást használjuk, melyről bővebben a <<config-overview>> részben esett szó.
 
-. Create a new block display by clicking _Add_ under _Displays_. Click
-_Block_ from the list of links that appears. The new display is created, and the
-focus is automatically switched to its configuration.
+. A nézet beállítási képernyőjének tetején a _Megjelenítések_ cím alatt az _Oldal_ nevű megjelenítő mellett kattintsunk a _Hozzáadás_ gombra, és a lenyíló lehetőségek közül válasszuk ki a blokkot:
 +
 --
-// Add display button on Recipes view edit page, with Block highlighted
-// (admin/structure/views/view/recipes).
-image:images/views-block_add-block.png["Add block display"]
+// Add display button on Recipes view edit page, with Block highlighted (admin/structure/views/view/recipes).
+image:images/views-block_add-block.png["Blokk típusú megjelenítő hozzáadása"]
 --
++
+Rögtön létre is jön az új megjelenítő, és mivel az aktív kiválasztás rákerült, így folytathatjuk a beállítását.
 
-. To change the title of this display, click _Block_ in the _Display
-name_ field. The _Block: The name and the description of this display_ pop-up
-appears. Change the _Administrative name_ to "Recent recipes". Click _Apply_.
+. Először is írjuk át ennek a megjelenítőnek a belsőleg használt nevét: a _Megjelenített név:_ felirat mellett kattintsunk a hivatkozásra, és a megnyíló _Blokk: A megjelenés neve és leírása_ című ablakban az _Adminisztratív név_ mezőbe írjuk be, hogy „Legutóbbi receptek”. Zárjuk be az ablakot az _Alkalmaz_ gombbal.
 
-. To change the title of the block, click Recipes in the _Title_ field
-under _Title_. In the pop-up that appears, select _This block (override)_ from
-the _For_ select list. Change the _Title_ field to "New recipes" and click
-_Apply (this display)_.
+. Az előbb megadott nevén kívül a címét is módosítsuk, ehhez kattintsunk a képernyő három hasábja közül a bal oldalinak a tetején látható _Cím:_ felirat melletti _Receptek_ hivatkozásra, így feljön egy _Legutóbbi receptek: Ennek a nézetnek a címe_ feliratú ablak. Fontos, hogy ne felejtsük a _Mire vonatkozóan_ legördülőből kiválasztani az _Ezen blokk (felülírás)_ lehetőséget, ekkor a mentés gomb felirata megváltozik _Alkalmazás (erre a megjelenítésre)_ szövegre. Címként írjuk be, hogy „Új receptek” és mentsük el az ablakot.
 +
 --
 // Configuring the block title for this display only.
-image:images/views-block_title.png["Title only for this block"]
+image:images/views-block_title.png["Egyedi cím megadása csak ennek a megjelenítőnek"]
 --
 
-. To change the block's style, click _Grid_ in the _Format_ field under
-_Format_. In the pop-up that appears, select _This block (override)_ from the
-_For_ select list. Select _Unformatted list_ and Click _Apply (this
-display)_. You can further configure the style options in the next pop-up that
-appears. Then click _Apply_.
+. A lista kimenetének szerkezetét rácsosról formázatlanra eggyel lejjebb, a _Formátum_ cím alatt a _Rács_ hivatkozásra kattintva tudjuk átállítani. Ismét egy ablak jelenik meg, most _Legutóbbi receptek: Milyen legyen a nézet stílusa_ felirattal. Ismét aktiváljuk az egyedi beállítást. Jelöljük be a „Formázatlan lista” lehetőséget, kattintsunk az _Alkalmazás (erre a megjelenítésre)_ gombra, ekkor még egy ablak marad, ahol a formázatlan lista szerkezet beállításait tudjuk finomítani. Ha megfelelnek az alapértelmezett értékek, akkor kattintsunk ismét az _Alkalmaz_ gombra.
 
-. To configure the image field, click _Content: Main image_ under _Fields_.
-In the pop-up that appears, select _This block (override)_ from the
-_For_ select list. Select _Image style Thumbnail (100x100)_. Click _Apply
-(this display)_.
+. A kép mező beállításához a _Mezők_ cím alatt kattintsunk a _Tartalom: Fő kép_ elemre, majd a megjelenő _mező: Tartalom: Fő kép beállítása_ ablakban továbbra is az _Ezen blokk (felülírás)_ lehetőséget adjuk meg a _Mire vonatkozóan_ legördülőben. Képstílusként válasszuk a _Bélyegkép (100×100 képpont)_ nevűt, majd az _Alkalmazás (erre a megjelenítésre)_ gombbal mentsük az ablak tartalmát.
 +
 --
 // Configuring the image field for this display only.
-image:images/views-block_image.png["Image to thumbnail",width="100%"]
+image:images/views-block_image.png["Képmező Bélyegkép stílussal",width="100%"]
 --
 
-. To remove ingredients as a filter, click _Content: Ingredients (exposed)_
-under _Filter criteria_. In the pop-up that appears, select _This
-block (override)_ from the _For_ select list. Click _Remove_ at the bottom.
+. Ez a lista csak egy kis blokk lesz az oldalsávon, nem szükséges, hogy szűrőkkel állítani lehessen a kimenetén. Távolítsuk el tehát a hozzávalókat mint szűrési feltételt úgy, hogy a _Szűrési feltétel_ cím alatt a _Tartalom: Összetevők (felfedett)_ hivatkozásra kattintva megnyitjuk az azonos nevű ablakot, és – miután az _Ezen blokk (felülírás)_ opcióval aktiváltuk az egyedi beállítást – az _Eltávolítás_ hivatkozásra kattintunk az ablak alján.
 
-. To configure how you want the content to be sorted in the view, click _Add_
-from the dropdown button under _Sort criteria_. In the pop-up that appears,
-select _This block (override)_ from the _For_ select list. Check
-_Authored on_ (in the _Content_ category), and then click _Add and configure
-sort criteria_.
+. Egy időrendi felsorolás esetén, mint most, fontos a sorrendiság megtartása: ezért a _Rendezési szempont_ cím alatt válasszuk a _Hozzáadása_ opciót a lenyíló gombról, majd a megnyíló _Rendezési szempont hozzáadása_ ablak keresőmezőjébe kezdjük el begépelni a „beküldés” szót. Vigyázzunk, mert két találatot is fogunk látni: nekünk itt most az kell, amelyiknek kategóriája „Tartalom”. Miután itt is kiválasztottuk az _Ezen blokk (felülírás)_ opciót, az _Alkalmazás (erre a megjelenítésre)_ gombbal adjuk hozzá a rendezési szempontot.
 
-. In the appearing configuration pop-up, select _Sort descending_ to have the
-most recent recipes appear first. Click _Apply_.
+. Egy másik ablakra jutunk, ahol további részleteket szükséges még beállítanunk a rendezési szempontról. A _Sorrend_ alatt válasszuk a _Csökkenő rendezés_ lehetőséget, végül kattintsunk ismét az _Alkalmaz_ gombra.
 
-. To specify the number of items to be displayed, click _Mini_ in the _Use
-pager_ field under _Pager_. In the pop-up that appears, select _This block
-(override)_ from the _For_ select list. Under _Pager_, select _Display a
-specified number of items_. Click _Apply (this display)_. In the _Block: Pager
-options_ pop-up, provide "5" as the value for _Items to display_. Click _Apply_.
+. Már csak egy dolgot kell beállítanunk, mielőtt végeznénk: a listázott elemek mennyiségét. Mivel szeretnénk, ha ez a kis blokk diszkrét maradna az oldalsávon, ezért a _Lapozó_ cím alatt a _Lapozó használata:_ felirat mellett kattintsunk a hivatkozásra, és az így megnyitott _Legutóbbi receptek: Lapozó kiválasztása_ ablakban jelöljük be a _Lapozható kimenet, mini lapozó_ rádiógombot. Mielőtt alkalmaznánk, továbbra se feledkezzünk meg az egyedi beállításról (_Ezen blokk (felülírás)_ opció), majd a következő ablakban a _Megjelenő elemek száma_ értéknek írjunk be ötöt és mentsük az ablakot.
 
-. Click _Save_. You will either see the view editing page again, or the Recipes
-page, depending on what you did in step 1. You should also see a message saying
-that the view has been saved.
+. Nézetünk új megjelenítőjének beállítási képernyőjére visszatérve kattintsunk a _Mentés_ gombra annak véglegesítéséhez. Ekkor vagy visszakerülünk a nézetek listájához, vagy újra a Receptek (a címsorban _/receptek_) oldalt látjuk attól függően, hogy az 1. lépésnél milyen irányból érkeztünk. Egy _Receptek nézet elmentve_ állapotüzenet biztosít minket róla, hogy nem dolgoztunk hiába:
 +
 --
 // View saved confirmation message.
-image:images/views-block_recipes.png["Summary page after configuration",width="100%"]
+image:images/views-block_recipes.png["Állapotüzenet a sikeres beállítás után",width="100%"]
 --
 
-. Place the "Recipes: Recent Recipes" block in the _Sidebar second_ region. See
-<<block-place>>. Navigate to the site's home page to see the block.
+. Minden, amit eddig beállítottunk, csak a nézetünk új, blokk típusú megjelenítőjének létrehozását szolgálta. Az így létrehozott blokkot azonban mindaddig nem fogják látni webhelyünk látogatói, amíg azt egy régiójához nem rendeljük az alapértelmezett sminknek. Tegyük is meg ezt a korábbi <<block-place>> részben leírtak szerint: egy „Receptek: Legutóbbi receptek” nevű blokkot kell keresnünk, helye pedig legyen például a _Második oldalsáv_.
+
+. Lépjünk vissza webhelyünk címlapjára, és máris látni fogjuk az új blokkunkat az oldalsávon:
 +
 --
 // Home page with recipes sidebar visible.
-image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%"]
+image:images/views-block_sidebar.png["Az új Receptek blokk a címlap oldalsávján",width="100%"]
 --
 
 //==== Az ismeretek elmélyítése
@@ -126,14 +94,10 @@ image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/xrnuekARwYc[title="Adding a Block Display to a View"]
+video::https://www.youtube-nocookie.com/embed/xrnuekARwYc[title="Blokk típusú megjelenítő létrehozása egy nézethez"]
 
 //==== Egyéb források
 
 *Közreműködők*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
-https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Írta és szerkesztette: https://www.drupal.org/u/lolk[Laura Vass] (https://pronovix.com/[Pronovix]), https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum]).

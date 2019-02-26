@@ -5,10 +5,10 @@
 [role="summary"]
 Röviden áttekintjük, hogyan lehet egy tartalmat elhelyezni a webhely navigációjában.
 
-(((Menu,adding a link to page)))
-(((Page,adding to menu while editing)))
-(((Content,adding to menu while editing)))
-(((Navigation,linking menu to page)))
+(((Menü,hivatkozás adása egy oldalhoz)))
+(((Oldal,menühöz adás szerkesztéskor)))
+(((Tartalom,menühöz adás szerkesztéskor)))
+(((Navigation,menü oldalhoz linkelése)))
 
 ==== Célkitűzés
 
@@ -21,7 +21,7 @@ Elhelyezünk egy tartalmat a webhely navigációjában. Legyen ez például a _R
 
 ==== Webhely előfeltételei
 
-Már léteznie kell a _Rólunk_ tartalomelemnek. Ehhez lásd a <<content-create>> szakaszt.
+Már léteznie kell a _Rólunk_ tartalomelemnek. Ehhez lásd az <<content-create>> szakaszt.
 
 ==== Lépések
 
@@ -43,11 +43,11 @@ image:images/menu-link-from-content_edit_page.png["Oldal szerkesztése hivatkoz�
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Menüpont neve | Az a szöveg, ami magának a menüpontnak a felirata lesz | Rólunk
 | Leírás | Akkor jelenik meg, ha az egér a menühivatkozás fölé kerül.
   | A piac története
-| Szülő elem | A menü hierarchiájában melyik elem alá tartozzon ez az új menüpont. Például ha a _<Fő navigáció>_ lehetőséget választjuk, akkor ez az oldal is a legfelső szintű menüpontok között fog szerepelni. Ellenben ha egy már létező menüpontot választunk ki szülőjének, akkor azzal máris elkezdhetünk többszintű menüszerkezetet építeni. |<Fő navigáció>
+| Szülőelem | A menü hierarchiájában melyik elem alá tartozzon ez az új menüpont. Például ha a _<Fő navigáció>_ lehetőséget választjuk, akkor ez az oldal is a legfelső szintű menüpontok között fog szerepelni. Ellenben ha egy már létező menüpontot választunk ki szülőnek, akkor azzal máris elkezdhetünk többszintű menüszerkezetet építeni. |<Fő navigáció>
 | Súly | Az azonos szintre kerülő menüpontok sorrendjét befolyásolja, a nagyobb súlyúak lesüllyednek, a kisebb súlyúak felemelkednek. | -2
 |================================
 +
@@ -78,4 +78,4 @@ https://www.drupal.org/docs/8/core/modules/block/overview[Working with menus] (a
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/core/modules/menu-ui["Working with Menus"] (azaz „Menük használata”) című szócikkéből vette át és szerkesztette, melynek szerzői joga 2000-2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/core/modules/menu-ui["Working with Menus"] (azaz „Menük használata”) című szócikkéből vette át és szerkesztette, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

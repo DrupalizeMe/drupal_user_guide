@@ -3,12 +3,12 @@
 === Alapfogalom: az Egyes számú felhasználó
 
 [role="summary"]
-Ebben a fejezetben az Egyes számú felhasználó (más nevén fő adminisztratív fiók) áttekintésére kerítünk sort.
+Ebben a témakörben az Egyes számú felhasználót (más néven fő adminisztratív fiókot) tekintjük át.
 
 (((Felhasználó,gyökér)))
 (((Felhasználó,Egyes számú)))
 (((Felhasználó,adminisztrációs)))
-(((Biztonság,egyes számú felhasználói fiók)))
+(((Biztonság,Egyes számú felhasználói fiók)))
 
 ==== Szükséges előismeretek
 
@@ -16,9 +16,9 @@ Ebben a fejezetben az Egyes számú felhasználó (más nevén fő adminisztrat�
 
 ==== Mi az Egyes számú felhasználói fiók?
 
-Webhelyünk telepítése során automatikusan hoztuk létre az első felhasználói fiókot. A rendszer a felhasználókat egy számazonosítóval látja el, esetünkben az egyessel. Ennyire egyszerű az _„egyes felhasználó”_ elnevezésének eredete. Megnevezésének egyszerűsége azonban nem áll párhuzamban a fiók különlegességével, ugyanis az Egyes számú felhasználó a webhely összes jogosultságával rendelkezik, függetlenül attól, hogy milyen szerepkörökkel ruházzuk fel. A tartalmak megtekintésétől és módosításától kezdve a felhasználók szerkesztésén és a webhelybeállítások konfigurációján át a modulok telepítéséig vagy épp eltávolításáig, egészen a frissítési szkriptek futtatásáig, egyszóval bármit megtehet.
+Webhelyünk telepítése során automatikusan létrehoztuk az első felhasználói fiókot. A rendszer a felhasználókat egy számazonosítóval látja el, ebben az esetben az egyessel. Ennyire egyszerű az _„egyes felhasználó”_ elnevezésének eredete. Megnevezésének egyszerűsége azonban nem áll párhuzamban a fiók különlegességével, ugyanis az Egyes számú felhasználó a webhely összes jogosultságával rendelkezik, függetlenül attól, hogy milyen szerepkörökkel ruházzuk fel. A tartalmak megtekintésétől és módosításától kezdve a felhasználók szerkesztésén és a webhelybeállítások konfigurációján át a modulok telepítéséig vagy épp eltávolításáig, egészen a frissítési szkriptek futtatásáig, egyszóval bármit megtehet.
 
-E legmagasabb jogosultsági szint miatt sokan _rendszerszintű jogosultsággal bíró adminisztrátorként_ is hivatkoznak rá, hasonlóan a Linuxból és más operációs rendszerekből ismert főadminisztrátorhoz. De éppen emiatt biztonsági megfontolásból ezt a fiókot nem, vagy csak nagyon ritka és indokolt esetekben használjuk. Helyette inkább saját felhasználói fiókokat hozunk létre a webhely adminisztrátorainak, melyeket egy külön szerepkörrel ruházunk fel ahelyett, hogy mindenki számára elérhetővé tennénk az Egyes számú felhasználó belépési adatait. Ennek több oka is van:
+E legmagasabb jogosultsági szint miatt sokan _rendszerszintű jogosultsággal bíró adminisztrátorként_ is hivatkoznak rá, hasonlóan a Linuxból és más operációs rendszerekből ismert főadminisztrátorhoz. Éppen emiatt biztonsági megfontolásból ezt a fiókot nem, vagy csak nagyon ritka és indokolt esetekben használjuk. Helyette inkább saját felhasználói fiókokat hozunk létre a webhely adminisztrátorainak, melyeket külön szerepkörrel ruházunk fel ahelyett, hogy mindenki számára elérhetővé tennénk az Egyes számú felhasználó belépési adatait. Ennek több oka is van:
 
 * Bizonyos műveletek és frissítések automatikusan feljegyzésre kerülnek a webhelyen. Ha minden műveletet ugyanazzal a felhasználóval hajtanánk végre, a felmerülő kérdések esetén a módosítások visszakövetése szinte lehetetlen lenne.
 
@@ -28,14 +28,14 @@ E legmagasabb jogosultsági szint miatt sokan _rendszerszintű jogosultsággal b
 
 * Bizonyos webhelyeken feltüntetjük a tartalmak és hozzászólások létrehozóit, azonban ha mindenki az Egyes számú felhasználóval hajtaná végre ezeket a műveleteket, nehezen tudnánk nyomon követni, kihez tartozik az érintett tartalom.
 
-Az adminisztrációs felületről az Egyes számú felhasználói fiók törlése nem lehetséges. Kizárólag az adatbázis szerkesztésével lenne lehetséges, ám ez a művelet nem javasolt, ugyanis az Egyes számú felhasználó törlése komoly problémákat okozhat a későbbiekben.
+Az adminisztrációs felületről az Egyes számú felhasználói fiók törlése nem lehetséges. Kizárólag az adatbázis szerkesztésével lenne megoldható, ám ez a művelet nem javasolt, ugyanis az Egyes számú felhasználó törlése komoly problémákat okozhat a későbbiekben.
 
 //==== Kapcsolódó témák
 
 ==== Egyéb források
 
-Közösségi dokumentáció a _Drupal.org_-on: https://www.drupal.org/node/22284[„Accounts and roles”] (angol nyelven)
+https://www.drupal.org/node/22284[„Accounts and roles”] (azaz „Felhasználói fiókok és szerepkörök”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 *Közreműködők*
 
-Írta és szerkesztette https://www.drupal.org/u/mark-lacroix[Mark LaCroix] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/docsi[Péter Dominika] (https://www.drupal.org/brainsum/[Brainsum]).
+Írta és szerkesztette: https://www.drupal.org/u/mark-lacroix[Mark LaCroix] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/docsi[Péter Dominika] (https://www.drupal.org/brainsum/[Brainsum]).

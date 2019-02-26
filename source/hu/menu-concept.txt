@@ -3,7 +3,7 @@
 === Alapfogalom: a menük
 
 [role="summary"]
-Ebben a fejezetben megismerkedünk a menükkel és megnézzük, hogyan hozhatóak létre automatikusan az _Általános_ telepítési profillal.
+Megismerkedünk a menükkel, és megnézzük, hogyan hozhatók létre automatikusan az _Általános_ telepítési profillal.
 
 (((Menü,áttekintés)))
 (((Menü,fő)))
@@ -20,7 +20,7 @@ Ebben a fejezetben megismerkedünk a menükkel és megnézzük, hogyan hozhatóa
 
 ==== Mik azok a menük?
 
-A menük tulajdonképpen a webhelyen használható navigációs hivatkozások különböző linkgyűjteményei. Az alaprendszer _Menu UI_ modulja egy felhasználói felületet biztosít ezek kezelésére, rendszerezésére. A menüben a linkek alapvetően alá-fölé rendeltségi viszonyban állnak egymással. Az arra jogosult adminisztrátorok akárhány egyéni menüt létrehozhatnak igény szerint, ám a Drupal is igyekszik segíteni pár automatikusan előállított menüvel.
+A menük tulajdonképpen a webhelyen használható navigációs hivatkozások különböző linkgyűjteményei. Az alaprendszer _Menu UI_ modulja egy felhasználói felületet biztosít ezek kezelésére, rendszerezésére. A menüben a linkek alapvetően alá-fölérendeltségi viszonyban állnak egymással. Az arra jogosult adminisztrátorok akárhány egyéni menüt létrehozhatnak igény szerint, ám a Drupal is igyekszik segíteni pár automatikusan előállított menüvel.
 
 A Drupal alaprendszer _Általános_ telepítési profilja például a következő öt menüt állítja elő:
 
@@ -39,11 +39,11 @@ Lábléc::
 Eszközök::
   A webhely látogatói számára hasznos eszközökhöz, mint például a kereséshez lehet itt linkeket létrehozni. Néhány modul is elhelyezhet itt menüpontokat.
 
-A menük könnyedén kezelhetők az alábbi funkciók használatával:
+A menük könnyen kezelhetők az alábbi funkciók használatával:
 
 * Új egyéni menük készítése
 
-* Új menüpontok felvitele hozzájuk
+* Ezekhez új menüpontok felvitele
 
 * A hivatkozások adott menün belüli sorrendjének átrendezése fogd-és-vidd módszerrel, vagy a menüpontok súlyának szabályozásával
 
@@ -61,10 +61,10 @@ A menüpontok megjelenítése mindig intelligensen történik: csak akkor látha
 
 * <<menu-reorder>>
 
-* Ahhoz, hogy a menüket elhelyezhessük az oldalakon, blokkokba kell tennünk őket, amik azután a sminkek tetszőleges régióihoz rendelhetőek. Ehhez javasolt a <<block-concept>>, <<block-regions>>, és <<block-place>> témakörök áttekintése is. Az alaprendszer _Általános_ telepítési profilja automatikusan kihelyezi valamennyi menüjét, kivéve az _Adminisztráció_ nevűt, mivel annak nem szabad a webhely nyilvános felületéről (azaz a _Bartik_ sminkben) elérhetőnek lennie, hanem csupán az adminisztrátorok számára (_Seven_ smink). A szintén az alaprendszer részeként érkező _Toolbar_ modul felelős tehát ezen _Adminisztráció_ menü megjelenítséért, valamint használható helyette a népszerű _Admin Toolbar_ nevű közösségi modul is.
+* Ahhoz, hogy a menüket elhelyezhessük az oldalakon, blokkokba kell tennünk őket, amik azután a sminkek tetszőleges régióihoz rendelhetőek. Ehhez javasolt a <<block-concept>>, <<block-regions>> és <<block-place>> témakörök áttekintése is. Az alaprendszer _Általános_ telepítési profilja automatikusan megjeleníti valamennyi menüjét, kivéve az _Adminisztráció_ nevűt, mivel annak nem szabad a webhely nyilvános felületéről (azaz a _Bartik_ sminkben) elérhetőnek lennie, csupán az adminisztrátorok számára (_Seven_ smink). A szintén az alaprendszer részeként érkező _Toolbar_ modul felelős tehát ezen _Adminisztráció_ menü megjelenítéséért, valamint használható helyette a népszerű _Admin Toolbar_ nevű közösségi modul is.
 
 //==== Egyéb források
 
 *Közreműködők*
 
-Írta és szerkesztette https://www.drupal.org/u/ajayvi[Ajay Viswambharan], https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]) és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum]).
+Írta és szerkesztette: https://www.drupal.org/u/ajayvi[Ajay Viswambharan], https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]) és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum]).

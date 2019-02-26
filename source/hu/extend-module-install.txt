@@ -1,32 +1,32 @@
 [[extend-module-install]]
 
-=== Downloading and Installing a Module from _Drupal.org_
+=== Modulok letöltése a Drupal.org-ról és telepítésük
 
 [role="summary"]
-How to download and install a module from Drupal.org (using the user interface) or by using Drush.
+Modul letöltése a központi Drupal.org webhelyről az adminfelületet vagy a Drush eszközt használva.
 
-(((Module,downloading)))
-(((Module,installing)))
-(((Module,enabling)))
-(((Module,contributed)))
-(((Module,custom)))
-(((Downloading,module)))
-(((Installing,module)))
-(((Enabling,module)))
-(((Contributed module,downloading)))
-(((Contributed module,installing)))
-(((Functionality,extending)))
-(((Drush tool,using to download and install module)))
-(((Admin Toolbar module,downloading)))
-(((Admin Toolbar module,installing)))
-(((Module,Admin Toolbar)))
-(((Update Manager module,using to install module)))
-(((Module,Update Manager)))
-(((Drupal.org website,downloading and installing module from)))
+(((Admin Toolbar modul,letöltése)))
+(((Admin Toolbar modul,telepítése)))
+(((Drupal.org webhely,modulok letöltése és telepítése innen)))
+(((Drush eszköz,modulok telepítése a használatával)))
+(((Engedélyezés,modul)))
+(((Funkcionalitás,bővítése)))
+(((Közösségi modul,letöltés)))
+(((Közösségi modul,telepítés)))
+(((Letöltés,modul)))
+(((Modul,Admin Toolbar)))
+(((Modul,egyéni)))
+(((Modul,engedélyezés)))
+(((Modul,közösségi)))
+(((Modul,letöltés)))
+(((Modul,telepítés)))
+(((Modul,Update Manager)))
+(((Telepítés,modul)))
+(((Update Manager modul,modulok telepítése a használatával)))
 
 ==== Célkitűzés
 
-Download and install the https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module], which allows you to easily browse through the administration section of the website.
+Letöltjük és telepítjük az https://www.drupal.org/project/admin_toolbar[Admin Toolbar] közösségi modult, ami nagyban megkönnyíti majd számunkra a webhelyünk adminfelületén való tájékozódást.
 
 ==== Szükséges előismeretek
 
@@ -36,78 +36,77 @@ Download and install the https://www.drupal.org/project/admin_toolbar[contribute
 
 ==== Webhely előfeltételei
 
-* If you want to install modules via the website, the core Update Manager module must be installed. See <<config-install>> for instructions on installing modules.
+* Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek módjáról a <<config-install>> szakaszban már esett szó.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* Ha viszont úgy döntünk, hogy inkább a Drusht használnánk, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
 
 ==== Lépések
 
-You can use the administrative interface or Drush to install a contributed module. If you are installing a custom module rather than a contributed module, if you see a message saying _Installing modules and themes requires FTP access to your server_, or if the steps below do not work to download and unpack the module files, follow the steps in <<extend-manual-install>>. If you are installing a contributed module with external dependencies that are managed by Composer, follow the steps for downloading in <<install-composer>>. In either of these cases, then continue here with step 7 in the instructions for the administrative interface below.
+Ahogy a bevezetőből már kiderült, egy közösségi modul webhelyünkhöz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett modult telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és telepíthetjük a modult Drushsal vagy folytathatjuk a lenti 7. lépéstől tovább ugyanúgy.
 
-===== Using the administrative interface
+===== Az adminfelület használatával
 
-. On the _Admin toolbar_ project page on drupal.org (_https://www.drupal.org/project/admin_toolbar_), scroll to the _Downloads_ section at the bottom of the page.
+. Az _Admin toolbar_ modul projektoldalán (_https://www.drupal.org/project/admin_toolbar_) görgessünk le a _Downloads_ részhez a lap alján.
 
-. Copy the address of the _tar.gz_ link. Depending on your device and browser, you might do this by right clicking and selecting _Copy link address_.
+. Másoljuk ki a _tar.gz_ hivatkozás webcímét. A legtöbb korszerű webböngészőben ez általában a jobbklikkre megnyíló helyi menüben a _Hivatkozás címének másolása_ (vagy hasonló) menüpont.
 +
 --
 // Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/extend-module-install-download.png["Finding a module URL"]
+image:images/extend-module-install-download.png["A modul letöltési linkje"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Extend_ (_admin/modules_). The _Extend_ page appears.
+. Webhelyünk _Kezelés_ adminisztrációs menüjében menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
-. Click _Install new module_. The _Install new module_ page appears.
+. Kattintsunk az _Új modul telepítése_ gombra, majd az azonos nevű oldalon két beviteli mezőt találunk:
 +
 --
 // Install new module page (admin/modules/install).
-image:images/extend-module-install-admin-toolbar-do.png["Installing a module from a URL"]
+image:images/extend-module-install-admin-toolbar-do.png["Modultelepítési oldal az adminfelületen"]
 --
 
-. In the field _Install from a URL_, paste the copied download link. This value could look like this: _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz_
+. A _Telepítés webcímről_ mezőbe illesszük be a tar.gz fájl előbb kimásolt webcímét, ami valami ehhez hasonló lesz: _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.24.tar.gz_
 
-. Click _Install_ to upload and unpack the new module on the server. The files are being downloaded to the _modules_ directory.
+. Kattintsunk a _Telepítés_ gombra, ami letölti a Drupal.org fájlkiszolgálójáról a kért verziót, és felmásolja webhelyünk szerverére. Ezek a fájlok általában a _modules_ könyvtárban vannak tárolva.
 
-. Click _Enable newly added modules_ to return to the _Extend_ page. If you used the manual uploading procedure, start with this step, and reach the _Extend_ page by using the _Manage_ administrative menu and navigating to _Extend_ (_admin/modules_).
+. Miután a következő képernyőn lefutott a folyamatjelző, „A telepítés sikeresen befejeződött” állapotüzenetet kell kapnunk. Ekkor az „Újonnan hozzáadott modulok engedélyezése” hivatkozás közvetlenül visszavisz minket a _Bővítés_ oldalra, ahonnan indultunk.
 
-. Locate and check _Admin toolbar_.
+. Keressük meg a listában az _Admin toolbar_ modult.
 
-. Click _Install_ to turn on the new module.
+. A neve előtti jelölőnégyzet bepipálásával engedélyezhetjük a modult.
 
-===== Using Drush
+===== Telepítés a Drush használatával
 
-. Find the project name for the module you want to install, which is the last segment of the module's project page URL. For example, if the project URL is _https://www.drupal.org/project/admin_toolbar_, the project name is "admin_toolbar".
+. Ehhez először is tudnunk kell a modul gépi nevét, amit legegyszerűbben a projektoldalának webcíméből találhatunk ki: a mi példánkban használt _https://www.drupal.org/project/admin_toolbar_ címből tudjuk tehát, hogy „admin_toolbar” a modul programok által használt neve.
 
-. Run the following Drush commands, giving the project name (for example, `admin_toolbar`) as a parameter:
+. Miután a <<extend-manual-install>> vagy <<install-composer>> szakaszok egyikének lépéseit követve a letöltéssel megvagyunk, utána a következő Drush parancs lefuttatásával engedélyezzük (angolul „enable”, de véletlen egybeesésként magyarul is illik, így könnyű megjegyezni). A parancs paramétereként minden esetben meg kell adnunk a modul gépi nevét:
 +
 ----
-drush dl admin_toolbar
-drush en admin_toolbar
+$ drush en admin_toolbar
 ----
 
-. Follow the instructions on the screen.
+. Ezután már csak kövessük a parancssorban megjelenő utasításokat.
 
 ==== Az ismeretek elmélyítése
 
-* Verify that the https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module] is working by browsing through the menu in the administration section.
+* Ellenőrizhetjük, hogy az imént telepített és engedélyezett _Admin Toolbar_ modul megfelelően működik-e, ha egerünket végigmozgatjuk a felső eszközsor fehér sávján.
 
-* Install and configure the https://www.drupal.org/project/pathauto[contributed Pathauto module] so that content pages in your site get nice URLs by default. See <<content-paths>> for more on URLs.
+* Ha esetleg még nem látnánk azonnal a változást, akkor előfordulhat, hogy a gyorsítótárat ki kell ürítenünk, amihez előreugorhatunk a <<prevent-cache-clear>> szakaszhoz.
 
-* If you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
+* Ha szeretnénk újra gyakorolni a fenti lépéseket, akkor egy másik hasznos és ezért gyakran szükséges közösségi modul a https://www.drupal.org/project/pathauto[Pathauto], mellyel a tartalmaink automatikusan jobban olvasható webcímeket kapnak. Erről bővebben lásd az <<content-paths>> szakaszt.
 
 //==== Kapcsolódó témák
 
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/GJWS2TLtEpk[title="Downloading and Installing a Module from Drupal.org"]
+video::https://www.youtube-nocookie.com/embed/GJWS2TLtEpk[title="Modulok letöltése a Drupal.org-ról és telepítésük"]
 
 ==== Egyéb források
 
-* https://www.drupal.org/node/340271[_Drupal.org_ community documentation page "Contributed modules"]
-* https://www.drupal.org/download["Download and Extend" page on _Drupal.org_]
-* https://www.drupal.org/project/admin_toolbar[Admin Toolbar module on _Drupal.org_]
+* https://www.drupal.org/node/340271[Contributed modules] (azaz „Közösségi modulok”) dokumentáció a Drupal.org-on angol nyelven.
+* A Drupal.org https://www.drupal.org/download[Download and Extend] (azaz „Letöltés és bővítés”) oldala (szintén angol nyelven).
+* Maga az _Admin Toolbar_ modul https://www.drupal.org/project/admin_toolbar[projektoldala] a Drupal.org-on.
 
 *Közreműködők*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Írta és szerkesztette: https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum])
