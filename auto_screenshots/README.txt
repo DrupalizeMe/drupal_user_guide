@@ -66,13 +66,12 @@ you update software on your local computer. Here are the steps:
    and commenting out the call to locale_system_set_config_langcodes() in the
    function locale_modules_installed() around line 316.
 
-7. Copy either this directory or the entire User Guide project directory
-   into the top-level 'modules' directory of your local Drupal site.
-   (Alternatively, if your operating system supports it, you can instead make
-   a symbolic link.)
+7. Copy the entire User Guide project directory into the top-level 'modules'
+   directory of your local Drupal site. (Alternatively, if your operating
+   system supports it, you can instead make a symbolic link.)
 
 8. Edit the top-level Drupal site composer.json file. Add the following to
-   the "extra" / "merge-plugin" section (you may need to edit the path):
+   the "extra" / "merge-plugin" section:
 
      "require": [
        "modules/user_guide/auto_screenshots/composer.json"
@@ -108,7 +107,9 @@ you update software on your local computer. Here are the steps:
     the web server user can write to it. Backups and translation files are
     stored there during test runs. If that path doesn't work on your computer,
     you'll need to edit the src/Tests/UserGuideDemoTestBase.php file to use a
-    different base directory.
+    different base directory. Note that on newer Linux systems, this directory
+    may be put inside a directory like /tmp/system-private-a34asf.../ behind
+    the scenes, for security reasons.
 
 
 MAKING SCREENSHOTS
@@ -131,7 +132,9 @@ a particular language as follows:
 3. At the bottom of the page, you should see first a list of all the backups
    that were made during the test. You can copy the .gz files in these
    directories into the "backups" directory under this directory, in the
-   subdirectory for the appropriate language.
+   subdirectory for the appropriate language. Remember, if they say they are
+   in /tmp/screenshots_backups, this might be inside a /tmp/systemd-private*
+   directory.
 
 4. Below the list of backups, you should see a form (from the Greasemonkey
    script). Enter the values and click the button. You'll need to supply:
@@ -162,7 +165,8 @@ begin with, to see how it works, and then adjust the Y offset and timeout.
 
 NOTE 3: Some screenshots scroll the browser window. This may not work in a
 foolproof way, and assumes the browser width is set to about 1200 pixels wide,
-with normal text size settings.
+with normal text size settings. It also needs to be a desktop-height browser
+to make some of the screenshots.
 
 NOTE 4: There are several screenshots that are made only for English -- these
 are screenshots of drupal.org pages. If you update them, you should copy them

@@ -20,7 +20,7 @@ Az interneten elérhető webhelyek minden egyes oldalának egyedi webcímét nev
 
 ==== De akkor mi az útvonal?
 
-Az előbb tárgyalt URL-nek egy kisebb részét szoktuk _elérési útvonalnak_ is nevezni, ami egy webhelyen belül egy bizonyos funkcióra vagy tartalomra mutat. Például ha egy oldalunk teljes URL-je _http://example.com/node/7_ lenne, akkor ebből az útvonal a _node/7_ rész.
+Az előbb tárgyalt URL-nek egy kisebb részét szoktuk _elérési útvonalnak_ is nevezni, ami egy webhelyen belül egy bizonyos funkcióra vagy tartalomra mutat. Például ha egy oldalunk teljes URL-je _http://pelda.hu/node/7_ lenne, akkor ebből az útvonal a _node/7_ rész.
 
 Az alábbiak szintén érvényes útvonalak lehetnek egy webhelyen:
 
@@ -31,7 +31,7 @@ Az alábbiak szintén érvényes útvonalak lehetnek egy webhelyen:
 
 ==== És végül akkor az álnevek?
 
-A Drupal az első CMS-ek között volt, amelyek alaprendszerük mély szintjén valósították meg az útvonalátírást. A könnyebben megjegyezhető álneveket a felhasználók hamar megkedvelték, ezért e funkciót sokan „szép URL”-ként szeretik említeni. Ha például webhelyünk bemutatkozó oldalának a „Rólunk” címet adtuk, és a tartalom elmentésekor a _node/7_ útvonalat kapja, akkor lehetőségünk van elfedni azt egy útvonalálnévvel, így látogatóink _http://www.pelda.hu/rolunk_ címet látnak majd a böngészőjük címsorában. Ezt a képességet az alaprendszer _Path_ modulja biztosítja.
+A Drupal az első CMS-ek között volt, amelyek alaprendszerük mély szintjén valósították meg az útvonalátírást. A könnyebben megjegyezhető álneveket a felhasználók hamar megkedvelték, ezért e funkciót sokan „szép URL”-ként szeretik említeni. Ha például webhelyünk bemutatkozó oldalának a „Rólunk” címet adtuk, és ez a tartalom elmentésekor a _node/7_ útvonalat kapja, akkor lehetőségünk van elfedni azt egy útvonalálnévvel, így látogatóink _http://pelda.hu/rolunk_ címet látnak majd a böngészőjük címsorában. Ezt a képességet az alaprendszer _Path_ modulja biztosítja.
 
 ==== Kapcsolódó témák
 
@@ -48,4 +48,4 @@ A Drupal az első CMS-ek között volt, amelyek alaprendszerük mély szintjén 
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/dianalakatos[Lakatos Diána] (https://pronovix.com/[Pronovix]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának]  https://www.drupal.org/node/120631[URL aliases] (azaz „URL álnevek”) és https://www.drupal.org/node/31644[Understanding Drupal paths] (azaz „A Drupal útvonalainak megértése”) című szócikkeiből vette át, melyek szerzői joga 2000-2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/dianalakatos[Lakatos Diána] (https://pronovix.com/[Pronovix]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának]  https://www.drupal.org/node/120631[URL aliases] (azaz „URL álnevek”) és https://www.drupal.org/node/31644[Understanding Drupal paths] (azaz „A Drupal útvonalainak megértése”) című szócikkeiből vette át, melyek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

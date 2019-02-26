@@ -1,6 +1,6 @@
 [[content-in-place-edit]]
- 
-=== Tartalom helybeni szerkesztése
+
+=== Tartalom szerkesztése helyben
 
 [role="summary"]
 Tartalom szerkesztése helyi szerkesztővel.
@@ -13,7 +13,7 @@ Tartalom szerkesztése helyi szerkesztővel.
 
 ==== Célkitűzés
 
-E feladat célja, hogy a helybeni szerkesztő segítségével különböző információkat adjunk hozzá a Rólunk oldalhoz annak szerkesztőoldalának külön megnyitása nélkül.
+E feladat célja, hogy a helyi szerkesztő segítségével különböző információkat adjunk hozzá a Rólunk oldalhoz anélkül, hogy a szerkesztőoldalát külön megnyitnánk.
 
 ==== Szükséges előismeretek
 
@@ -24,7 +24,7 @@ E feladat célja, hogy a helybeni szerkesztő segítségével különböző info
 
 ==== Webhely előfeltételei
 
-A szerkeszteni kívánt Rólunk példaoldalnak már léteznie kell. Lásd <<content-create>>.
+A szerkeszteni kívánt Rólunk példaoldalnak már léteznie kell. Lásd: <<content-create>>.
 
 ==== Lépések
 
@@ -32,14 +32,14 @@ A helyi szerkesztő használatához menjünk el a Rólunk oldalra. Ha az oldalt 
 
 . A _Kezelés_ adminisztrációs menüben menjünk a _Tartalom_ (_admin/content_) oldalra.
 
-. Ha a szerkeszteni kívánt tartalomelem nemrég jött létre vagy frissült, a tartalomlista tetején jelenik meg. Ha régebbi, akkor a _Típus_, a  _Cím_ vagy egyéb szűrők használatával is kereshetjük.
+. Ha a szerkeszteni kívánt tartalomelem nemrég jött létre, vagy frissült, a tartalomlista tetején jelenik meg. Ha régebbi, akkor a _Típus_, a  _Cím_ vagy egyéb szűrők használatával is kereshetjük.
 
-. Keressük meg a Rólunk oldalt és kattintsunk rá.
+. Keressük meg a Rólunk oldalt, és kattintsunk rá.
 
 Ha a szerkeszteni kívánt tartalom megjelent a böngészőben, a gyorsszerkesztőt az alábbi lépéseket követve használhatjuk:
 
 
-. Keressük meg azt a részét az oldalnak, ahol megjelenik a szerkeszteni kívánt tartalom és kapcsoljuk be a gyorsszerkesztő módot a _Gyorsszerkesztés_ szövegkörnyezeti hivatkozás használatával (a szövegkörnyezeti hivatkozások hozzáférésével kapcsolatos utasításokat lásd itt: <<config-overview>>). Ennek a tartalomelemnek az összes szerkeszthető mezője kékkel keretezve jelenik meg, továbbá egy lebegő párbeszédablak is felugrik.
+. Keressük meg azt a részét az oldalnak, ahol megjelenik a szerkeszteni kívánt tartalom, és kapcsoljuk be a gyorsszerkesztő módot a _Gyorsszerkesztés_ szövegkörnyezeti hivatkozás használatával (a szövegkörnyezeti hivatkozások hozzáférésével kapcsolatos utasításokat lásd itt: <<config-overview>>). Ennek a tartalomelemnek az összes szerkeszthető mezője kékkel keretezve jelenik meg, továbbá egy lebegő párbeszédablak is felugrik.
 +
 --
 // Screen shot of About page with Quick Edit turned on for the node.
@@ -48,7 +48,7 @@ image:images/content-in-place-edit-hover-box.png["Képernyőkép a gyorsszerkesz
 
 . Mivel a _Törzs_ mező támogatja a szövegszerkesztőt, ezért kattintsunk a _Törzs_ szövegrészre a szerkesztés elkezdéséhez. A szerkesztő eszköztár a lebegő párbeszédablakban jelenik meg.
 
-. Adjunk meg további információt a Városi Piacról. A _Mentés_ gomb a lebegő dobozban jelenik meg és a mező keretének színe megváltozik.
+. Adjunk meg további információt a Termelői Piacról. A _Mentés_ gomb a lebegő dobozban jelenik meg, és a mező keretének színe megváltozik.
 +
 --
 // Screenshot of About page with Quick Edit turned on for the node area, after clicking the Body field and changing text in the box.
@@ -59,17 +59,17 @@ image:images/content-in-place-edit-save-box.png["Képernyőkép a gyorsszerkeszt
 
 ==== Az ismeretek elmélyítése
 
-Ha a teljes szerkesztőt használjuk ugyanazon a tartalmi elemen (lásd <<content-edit>>), akkor láthatjuk, hogy így a gyorsszerkesztőben megjelentekhez képest sokkal többféle információt módosíthatunk.
+Ha a teljes szerkesztőt használjuk ugyanazon a tartalmi elemen (lásd: <<content-edit>>), akkor láthatjuk, hogy így a gyorsszerkesztőben megjelentekhez képest sokkal többféle információt módosíthatunk.
 
 //==== Kapcsolódó témák
 
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/6A6kbceIKKw[title="Tartalom helybeni szerkesztése"]
+video::https://www.youtube-nocookie.com/embed/6A6kbceIKKw[title="Tartalom szerkesztése helyben"]
 
 //==== Egyéb források
 
 *Közreműködők*
 
-Írta és szerkesztette https://www.drupal.org/u/davidlee55[David Lee] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította https://www.drupal.org/u/zsofimajor[Zsófi Major] (https://www.drupal.org/cheppers[Cheppers])
+Írta és szerkesztette: https://www.drupal.org/u/davidlee55[David Lee] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/zsofimajor[Zsófi Major] (https://www.drupal.org/cheppers[Cheppers])

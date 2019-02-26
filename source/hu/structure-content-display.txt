@@ -3,7 +3,7 @@
 === A tartalom megjelenítési módjának alakítása
 
 [role="summary"]
-Miként lehet ugyanazt a tartalmat többféleképpen tálalni a látogatóknak.
+Így lehet ugyanazt a tartalmat többféleképpen tálalni a látogatóknak.
 
 (((Tartalom megjelenítése,megváltoztatás)))
 (((Tartalom megjelenítése,kezelés)))
@@ -11,7 +11,7 @@ Miként lehet ugyanazt a tartalmat többféleképpen tálalni a látogatóknak.
 
 ==== Célkitűzés
 
-E témakörben felfedezzük, hogy a tartalomtípusok mezőinek nem tartalmát, pusztán kimenetét módosítva, mennyire más benyomást képesek kelteni a látogató szemszögéből.
+E témakörben megismerjük, hogy a tartalomtípusok mezőinek csak a kimenetét, és nem a tartalmát módosítva azok mennyire más benyomást keltenek a látogatóban.
 
 ==== Szükséges előismeretek
 
@@ -20,17 +20,17 @@ E témakörben felfedezzük, hogy a tartalomtípusok mezőinek nem tartalmát, p
 
 ==== Webhely előfeltételei
 
-Az _Árus_ tartalomtípusnak már léteznie kell, valamint már hozzá kell, legyenek rendelve a _Fő kép_ és _Árus webcíme_ mezők, végül pedig már léteznie kell legalább egy ilyen _Árus_ típusú tartalomnak. Ezen állapot eléréséhez segítséget a <<structure-content-type>>, <<structure-fields>> és <<content-create>> témakörök nyújtanak.
+Az _Árus_ tartalomtípusnak már léteznie kell, valamint már hozzá kell, hogy legyenek rendelve a _Fő kép_ és _Árus webcíme_ mezők, végül pedig már léteznie kell legalább egy ilyen _Árus_ típusú tartalomnak. Ezen állapot eléréséhez segítséget a <<structure-content-type>>, <<structure-fields>> és <<content-create>> témakörök nyújtanak.
 
 ==== Lépések
 
-. Keressük meg és nyissuk meg a <<structure-fields>> témakörnél létrehozott _Árus_ típusú tartalmunkat. Valószínűleg rögtön megakad a szemünk pár dolgon, amit jobbá lehetne tenni ezen az oldalon:
+. Keressük meg, és nyissuk meg a <<structure-fields>> témakörnél létrehozott _Árus_ típusú tartalmunkat. Valószínűleg rögtön megakad a szemünk pár dolgon, amit javítani lehetne ezen az oldalon:
 +
   * A _Fő kép_ és _Árus webcíme_ mezők felett felesleges a mező címkéjét kiírni.
   * A web mai látogatóit a képek jobban érdeklik, mint a szövegek, ezért jó lenne, ha a fotó jönne először, majd utána a többi mező tartalma.
-  * Bár jó, hogy a kereskedők tölthetnek fel magukról fotót a bemutatkozásukhoz, de azért azt kisebb méretben is elég lenne megjeleníteni.
+  * Bár jó, hogy a kereskedők tölthetnek fel magukról fotót a bemutatkozásukhoz, de azt kisebb méretben is elég lenne megjeleníteni.
 
-. Az első két pontot ugyanott tudjuk javítani: a _Kezelés_ adminisztrációs menüben menjünk a _Felépítés_ > _Tartalomtípusok_ (vagy címsorba gépelve: _admin/structure/types_) oldalra. Aztán az _Árus_ tartalomtípus sorának végén kattintsunk a lenyíló gomb _Megjelenés beállítása_ lehetőségére.
+. Az első két pontot ugyanott tudjuk javítani: a _Kezelés_ adminisztrációs menüben menjünk a _Felépítés_ > _Tartalomtípusok_ (vagy a címsorba gépelve: _admin/structure/types_) oldalra. Aztán az _Árus_ tartalomtípus sorának végén kattintsunk a lenyíló gomb _Megjelenés beállítása_ lehetőségére.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
@@ -52,10 +52,10 @@ image:images/structure-content-display_main_image_hidden.png["Két mező felirat
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Hivatkozásszöveg hosszának csonkolása | Ha töröljük e beállítás értékét, akkor a linkek szövegének (nem céljának!) hossza nem lesz korlátozva.
  | _(üres)_
-| A hivatkozás megnyitása új ablakban | Ha bepipáljuk, akkor a linkre kattintva az új böngészőfülön/-ablakban nyílik majd meg. | Bejelölve
+| A hivatkozás megnyitása új ablakban | Ha bepipáljuk, akkor a linkre kattintva az új böngészőfülön vagy -ablakban nyílik majd meg. | Bejelölve
 |================================
 +
 --
@@ -64,7 +64,7 @@ image:images/structure-content-display_main_image_hidden.png["Két mező felirat
 image:images/structure-content-display_trim_length.png["Linkszöveg hosszának korlátozása",width="100%"]
 --
 . Kattintsunk a _Frissítés_ gombra.
-. Most pedig a kereszt alakú nyíl ikonjaiknál fogva húzzuk a mezőket a következő sorrendbe: Fő kép, Törzs, Árus webcíme és Hivatkozások.
+. Most pedig a kereszt alakú nyíl ikonjainál fogva húzzuk a mezőket a következő sorrendbe: Fő kép, Törzs, Árus webcíme és Hivatkozások.
 +
 --
 // Manage display page for Vendor content type, with order changed.
@@ -73,15 +73,15 @@ image:images/structure-content-display_change_order.png["Mezők sorrendjének á
 
 . Kattintsunk a _Mentés_ gombra.
 
-. Nyissuk meg újra az 1. lépésnél megtekintett adatlapját az árusnak, és ellenőrizzük, hogy iménti módosításaink valóban megváltoztatták a kinézetét az oldalnak.
+. Nyissuk meg újra az árus 1. lépésnél megtekintett adatlapját, és ellenőrizzük, hogy iménti módosításaink valóban megváltoztatták a kinézetét az oldalnak.
 
-. A fentiekhez hasonló módon ugyanezen lépések mentén testreszabhatjuk a _Recept_ típusú tartalmaink megjelenítését is.
+. A fentiekhez hasonló módon ugyanezen lépésekkel testreszabhatjuk a _Recept_ típusú tartalmaink megjelenítését is.
 
 ==== Az ismeretek elmélyítése
 
 * Állítsuk kisebb méretűre a _Fő kép_ mezőben tárolt fotót. Ehhez segítségképpen lásd a <<structure-image-style-create>> témakört.
 
-* Ha nem látjuk azonnal az eredményét a változtatásainknak, akkor szükség lehet a gyorsítótár ürítésére. Lásd <<prevent-cache-clear>>.
+* Ha nem látjuk azonnal a változtatásaink eredményét, akkor szükség lehet a gyorsítótár kiürítésére. Lásd: <<prevent-cache-clear>>.
 
 ==== Kapcsolódó témák
 

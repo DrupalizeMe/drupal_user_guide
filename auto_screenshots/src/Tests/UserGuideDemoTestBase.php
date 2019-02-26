@@ -26,8 +26,6 @@ use BackupMigrate\Core\Service\TarArchiveWriter;
 use BackupMigrate\Core\Source\FileDirectorySource;
 use BackupMigrate\Core\Source\MySQLiSource;
 
-require __DIR__ . '/../../vendor/autoload.php';
-
 /**
  * Base class for tests that automate screenshots for the User Guide.
  *
@@ -43,9 +41,8 @@ require __DIR__ . '/../../vendor/autoload.php';
  *   Then just copy this column of output into the $demoInput array in your
  *   new class.
  * - Override the $runList member variable to run the sections of interest.
- * - If the language needs a custom translation PO file to be imported during
- *   initial setup, put it in the auto_screenshots/backups/lc/translation
- *   directory, where lc is the language code.
+ * - Add PO files to the auto_screenshots/translations directory (see
+ *   README.txt file there for instructions).
  *
  * See README.txt file in the module directory for instructions for making
  * screenshot images from this test output.
@@ -241,7 +238,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   /**
    * Modules needed for this test.
    */
-  public static $modules = ['update'];
+  public static $modules = ['update', 'screenshot_alters'];
 
   /**
    * We need verbose logging to be on.
@@ -272,7 +269,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * as a "test" to run, in the specific-language classes.
    */
   public function testBuildDemoSite() {
-
     $this->drupalLogin($this->rootUser);
 
     // Figure out where the assets directory is.
@@ -349,6 +345,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->drupalPostForm('admin/config/regional/language', [
           'site_default_language' => $this->demoInput['first_langcode'],
         ], 'Save configuration');
+      $this->flushAll();
 
       // Delete English and flush caches.
       $this->drupalPostForm('admin/config/regional/language/delete/en', [], $this->callT('Delete'));
@@ -519,7 +516,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText('tracker');
 
     // Top part of Core section of admin/modules, with Activity Tracker checked.
-    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
+    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services, #edit-modules-migration') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
     $this->drupalPostForm(NULL, [
         'modules[tracker][enable]' => TRUE,
       ], $this->callT('Install'));
@@ -688,7 +685,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Summary'));
     $this->assertText($this->callT('Body'));
-    $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
     $this->assertText($this->callT('Published'));
     $this->assertRaw($this->callT('Save'));
@@ -1648,7 +1644,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Confirmation message after updating permissions.
     $this->setUpScreenShot('user-permissions-save-permissions.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 400) . $this->setBodyColor() . $this->removeScrollbars() . '"');
     // Permissions page for Vendor (admin/people/permissions/vendor).
-    $this->setUpScreenShot('user-permissions-check-permissions.png', 'onLoad="window.scroll(0,3500);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container, table.sticky-header', 800) . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->setUpScreenShot('user-permissions-check-permissions.png', 'onLoad="window.scroll(0,3200);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container, table.sticky-header', 800) . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
 
     // Topic: user-roles - Changing a User's Roles.
@@ -1722,7 +1718,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Go back and take the screenshot of the authoring information.
     $this->drupalGet('node/3/edit');
     // Authoring information section of content edit page.
-    $this->setUpScreenShot('user-content.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .layout-region-node-main, .layout-region-node-footer') . $this->setBodyColor() . 'jQuery(\'#edit-author\').attr(\'open\', \'open\'); ' . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('user-content.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .layout-region-node-main, .layout-region-node-footer') . $this->setBodyColor() . 'jQuery(\'#edit-author\').attr(\'open\', \'open\'); ' . 'jQuery(\'#edit-path-0\').removeAttr(\'open\'); ' . $this->removeScrollbars() . '"');
 
     // Assign second vendor node to the corresponding vendor user, without
     // screenshots.
@@ -2099,7 +2095,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('block_1/title');
     // Configuring the block title for this display only.
     $this->setUpScreenShot('views-block_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region-breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-title\').val(&quot;' . $this->demoInput['recipes_view_block_title'] . '&quot;);' . $this->setWidth('.content-header, .layout-container') . '"');
-    $this->assertRaw($this->callT('This @display_type (override)', TRUE, ['@display_type' => $this->callT('block')]));
+    $this->assertRaw($this->callT('This @display_type (override)', TRUE, ['@display_type' => 'block']));
 
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
@@ -2244,9 +2240,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ], $this->callT('Add language'));
-    // Confirmation and language list after adding Spanish language.
+    // Confirmation and language list after adding second language.
     $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
-    $this->importTranslations($this->demoInput['second_langcode']);
+    $this->importTranslations($this->demoInput['second_langcode'], TRUE);
     $this->verifyTranslations();
     $this->verifyTranslations(FALSE);
 
@@ -2355,7 +2351,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('node/1/translations/add/' . $this->demoInput['first_langcode'] . '/' . $this->demoInput['second_langcode']);
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Body'));
-    $this->assertText($this->callT('URL path settings'));
     $this->assertText($this->callT('URL alias'));
 
     $this->drupalPostForm(NULL, [
@@ -2426,7 +2421,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Module categories');
       $this->assertText('Core compatibility');
       $this->assertText('Status');
-      $this->assertText('Search Modules');
+      $this->assertText('Search modules');
       $this->assertText('Sort by');
 
       // drupal.org screenshots for extend-module are in the doPrefaceInstall()
@@ -2509,7 +2504,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Development status');
       $this->assertText('Core compatibility');
       $this->assertText('Status');
-      $this->assertText('Search Themes');
+      $this->assertText('Search themes');
       $this->assertText('Sort by');
 
       // Test project page
@@ -3286,9 +3281,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @param string $langcode
    *   Language code to import the translations for. Skips if it is English.
    * @param bool $read_initial
-   *   If TRUE (FALSE is the default), also read the initial translation file
-   *   from the auto_screenshots/backups/LANGCODE/translation directory, if
-   *   there is one.
+   *   If TRUE (FALSE is the default), also read the initial translation files
+   *   from the auto_screenshots/translations/LANGCODE directory.
    *
    * @see UserGuideDemoTestBase::exportTranslations()
    * @see https://www.drupal.org/project/drupal/issues/2806009
@@ -3308,7 +3302,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $options = ['recurse' => FALSE];
       $result = file_scan_directory($directory, $pattern, $options);
       if ($read_initial) {
-        $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $langcode . '/translation');
+        $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/translations/' . $langcode);
         if (is_dir($directory)) {
           $this->pass('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory);
           $result = array_merge($result, file_scan_directory($directory, $pattern, $options));
@@ -3333,17 +3327,36 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       }
     }
 
+    if ($read_initial) {
+      // Emulate the batch that we turned off in the screenshot_alters module,
+      // that was coming from locale_form_language_admin_add_form_alter() and
+      // should run whenever a new language is added (even English).
+      $locale_config = \Drupal::service('locale.config_manager');
+      $names = $locale_config()->getComponentNames([]);
+      $locale_config()->updateConfigTranslations($names, [$langcode]);
+    }
     $this->flushAll();
+
   }
 
   /**
    * Fixes the settings for translation.
    *
-   * Makes sure the translation directory exists.
+   * Makes sure the translation directory exists, and sets up to only use local
+   * translation files.
    */
   protected function fixTranslationSettings() {
+    // Alter the core.extension config to put the screenshot_alters module
+    // last.
+    $config = \Drupal::configFactory()->getEditable('core.extension');
+    $modules = $config->get('module');
+    $modules['screenshot_alters'] = 500;
+    $config->set('module', $modules)->save();
+
+    // Alter the translation path, and set up to not import.
     $this->ensureDirectoryWriteable(file_directory_temp(), 'temp');
     \Drupal::configFactory()->getEditable('locale.settings')
+      ->set('translation.import_enabled', FALSE)
       ->set('translation.path', file_directory_temp())
       ->save();
     drupal_flush_all_caches();
@@ -3368,7 +3381,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Attempt to create and modify permissions in the directory. Do not use
     // Drupal container calls, so this can run before installation.
     if (!is_dir($directory)) {
-      @mkdir($directory);
+      @mkdir($directory, 0777, TRUE);
     }
     @chmod($directory, 0777);
 

@@ -1,31 +1,31 @@
 [[extend-theme-install]]
 
-=== Downloading and Installing a Theme from _Drupal.org_
+=== Sminkek letöltése a Drupal.org-ról és telepítésük
 
 [role="summary"]
-How to download and install a theme from Drupal.org or by using Drush.
+Hogyan tölthető le egy smink a központi Drupal.org webhelyről akár az adminfelületet, akár a Drush eszközt használva.
 
-(((Theme,downloading)))
-(((Theme,installing)))
-(((Theme,enabling)))
-(((Theme,contributed)))
-(((Theme,custom)))
-(((Contributed theme,downloading)))
-(((Contributed theme,installing)))
-(((Contributed theme,enabling)))
-(((Custom theme,installing)))
-(((Custom theme,enabling)))
-(((Downloading,theme)))
-(((Installing,theme)))
-(((Enabling,theme)))
-(((Update Manager module,using to install theme)))
-(((Module,Update Manager)))
-(((Drush tool,using to download and install theme)))
-(((Drupal.org website,downloading and installing theme from)))
+(((Drupal.org webhely,sminkek letöltése és telepítése innen)))
+(((Drush eszköz,sminkek telepítése a használatával)))
+(((Egyéni smink,engedélyezése)))
+(((Egyéni smink,telepítése)))
+(((Engedélyezés,smink)))
+(((Közösségi smink,engedélyezése)))
+(((Közösségi smink,letöltése)))
+(((Közösségi smink,telepítése)))
+(((Letöltés,smink)))
+(((Modul,Update Manager)))
+(((Smink,egyéni)))
+(((Smink,engedélyezése)))
+(((Smink,közösségi)))
+(((Smink,letöltése)))
+(((Smink,telepítése)))
+(((Telepítés,smink)))
+(((Update Manager modul,sminkek telepítése a használatával)))
 
 ==== Célkitűzés
 
-Download and install a theme from _Drupal.org_.
+Letöltünk a Drupal.org-ról egy közösségi sminket, és telepítjük a saját webhelyünkre.
 
 ==== Szükséges előismeretek
 
@@ -34,80 +34,79 @@ Download and install a theme from _Drupal.org_.
 
 ==== Webhely előfeltételei
 
-If you want to install via the website, the core Update Manager module must be installed. See <<config-install>> for instructions on installing modules.
+* Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek módjáról a <<config-install>> szakaszban már esett szó.
 
-If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* Ha viszont úgy döntünk, hogy inkább a Drusht használnánk, akkor annak már telepítve kell lennie, melyhez további tudnivalót a <<install-tools>> szakaszban találunk.
 
 ==== Lépések
 
-You can use the administrative interface or Drush to install a contributed theme. If you are installing a custom theme rather than a contributed theme, if you see a message saying _Installing modules and themes requires FTP access to your server_,  or if the steps below do not work to download and unpack the theme files, follow the steps in <<extend-manual-install>>. If you are installing a contributed theme with external dependencies that are managed by Composer, follow the steps for downloading in <<install-composer>>. In either of these cases, then continue here with step 7 in the instructions for the administrative interface below.
+Ahogy a bevezetőből már kiderült, egy közösségi smink webhelyünkhöz adására több lehetőség közül választhatunk. Itt most csak a két legegyszerűbb (ezért talán a leggyakrabban használt) módot ismertetjük, de más esetekben (például amikor egy egyedileg fejlesztett sminket telepítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének) még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi smink már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a smink projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és telepíthetjük a sminket Drushsal vagy folytathatjuk a lenti 7. lépéstől tovább ugyanúgy.
 
-===== Using the administrative interface
+===== Az adminfelület használatával
 
-. On the theme's project page on drupal.org (for example, _https://www.drupal.org/project/mayo_), scroll to the _Downloads_ section at the bottom of the page.
+. Válasszunk ki egy sminket (lehet például a _https://www.drupal.org/project/mayo_) és a projektoldalán görgessünk le a _Downloads_ részhez a lap alján.
 
-. Right-click _tar.gz_ to copy the address.
+. Másoljuk ki a _tar.gz_ hivatkozás webcímét. A legtöbb korszerű webböngészőben ez általában a jobb klikkre megnyíló helyi menüben a _Hivatkozás címének másolása_ (vagy hasonló) menüpont.
 +
 --
 // Downloads section of the Mayo project page on drupal.org.
-image:images/extend-theme-install-download.png["Finding the URL for a theme"]
+image:images/extend-theme-install-download.png["A smink letöltési linkje"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Appearance_ (_admin/appearance_). The _Appearance_ page appears.
+. Webhelyünk _Kezelés_ adminisztrációs menüjében menjünk a _Megjelenés_ oldalra (vagy a címsorban adjuk meg az _admin/appearance_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi sminket.
 
-. Click _Install new theme_. The _Install new theme_ page appears.
+. Kattintsunk az _Új smink telepítése_ gombra, majd az azonos nevű oldalon két beviteli mezőt találunk:
 +
 --
 // Install new theme page (admin/theme/install).
-image:images/extend-theme-install-page.png["Installing a theme"]
+image:images/extend-theme-install-page.png["Sminktelepítési oldal az adminfelületen"]
 --
 
-. In the field _Install from a URL_, paste the copied download link. This value could look like `https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
+. A _Telepítés webcímről_ mezőbe illesszük be a tar.gz fájl előbb kimásolt webcímét, ami valami ehhez hasonló lesz: _https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz_
 
-. Click _Install_ to upload and unpack the new theme on the server. The files are being downloaded to the _themes_ directory.
+. Kattintsunk a _Telepítés_ gombra, ami letölti a Drupal.org fájlkiszolgálójáról a kért verziót, és felmásolja webhelyünk szerverére. Ezek a fájlok általában a _themes_ könyvtárban vannak tárolva.
 
-. Click _Install newly added themes_ to return to the _Appearance_ page. If you used the manual uploading procedure, start with this step, and reach the _Appearance_ page by using the _Manage_ administrative menu and navigating to _Appearance_ (_admin/appearance_).
+. Miután a következő képernyőn lefutott a folyamatjelző, „A telepítés sikeresen befejeződött” állapotüzenetet kell kapnunk. Ekkor az „Újonnan hozzáadott sminkek telepítése” hivatkozás közvetlenül visszavisz minket a _Megjelenés_ oldalra, ahonnan indultunk.
 
-. Locate the new theme under _Uninstalled themes_ and click _Install and set as default_ to use it. All non-administrative pages on the site will now use this new theme.
+. Keressük meg az oldalon az „Eltávolított sminkek” cím alatt a _Mayo_ nevűt, és az alatta lévő „Telepítés és beállítás alapértelmezettként” hivatkozásra kattintva engedélyezzük. Innentől a webhely minden, nem az adminfelülethez tartozó oldala ezzel a kinézettel fog megjelenni.
 +
 --
 // Mayo theme on the Appearance page.
 image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
 --
 
-===== Using Drush
+===== Telepítés a Drush használatával
 
-. Find the project name for the theme you want to install, which is the last segment of the theme's project page URL. For example, if the project URL is _https://www.drupal.org/project/mayo_, the project name is `mayo`.
+. Ehhez először is tudnunk kell a smink gépi nevét, amit legegyszerűbben a projektoldalának webcíméből találhatunk ki: a mi példánkban használt _https://www.drupal.org/project/mayo_ címből tudjuk tehát, hogy `mayo` a smink programok által használt neve.
 
-. Run the following Drush commands, giving the project name (for example, _mayo_) as a parameter:
+. Miután a <<extend-manual-install>> vagy <<install-composer>> szakaszok egyikének lépéseit követve a letöltéssel megvagyunk, utána a következő Drush parancsok lefuttatásával először engedélyezzük (angolul „enable”, de véletlen egybeesésként magyarul is ugyanígy kezdődik, így könnyű megjegyezni), majd pedig beállítjuk alapértelmezettként. A parancsok paramétereként minden esetben meg kell adnunk a smink gépi nevét:
 +
 ----
-drush dl mayo
-drush en mayo
-drush config-set system.theme default mayo
+$ drush en mayo
+$ drush config-set system.theme default mayo
 ----
 
-. Follow the instructions on the screen.
+. Ezután már csak kövessük a parancssorban megjelenő utasításokat.
 
 ==== Az ismeretek elmélyítése
 
-* In the _Manage_ administrative menu, navigate to _Appearance_ (_admin/appearance_) and uninstall any themes that you are not using.
+* Webhelyünk _Kezelés_ adminisztrációs menüjében menjünk a _Megjelenés_ oldalra (vagy a címsorban adjuk meg az _admin/appearance_ útvonalat) és tiltsunk le minden, használaton kívüli sminket.
 
-* <<extend-module-find>>
+* Ha sminkek mellett modulokat is keresünk, akkor a <<extend-module-find>> segíthet.
 
-* <<extend-module-install>>
+* Ha az így talált modulokat telepítenénk, akkor a <<extend-module-install>> rész lehet érdekes.
 
-* If you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
+* Ha esetleg még nem látnánk azonnal a változást, akkor előfordulhat, hogy a gyorsítótárat ki kell ürítenünk, amihez előreugorhatunk a <<prevent-cache-clear>> szakaszhoz.
 
 //==== Kapcsolódó témák
 
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/UOYy9A_9_Lw[title="Downloading and Installing a Theme from Drupal.org"]
+video::https://www.youtube-nocookie.com/embed/UOYy9A_9_Lw[title="Sminkek letöltése a Drupal.org-ról és telepítésük"]
 
 //==== Egyéb források
 
 *Közreműködők*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me], and https://www.drupal.org/u/batigolix[Boris Doesborgh].
+Írta és szerkesztette: https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) és https://www.drupal.org/u/batigolix[Boris Doesborgh]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum]).

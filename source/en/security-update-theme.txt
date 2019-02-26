@@ -3,12 +3,11 @@
 === Updating a Theme
 
 [role="summary"]
-How to update a contributed theme by using the administrative interface and running the Database Updates script, or by using Drush.
+How to update a contributed theme by using the administrative interface and running the Database Updates script.
 
 (((Theme,updating)))
 (((Security update,applying)))
 (((Contributed theme,updating)))
-(((Drush tool,using to update theme)))
 
 ==== Goal
 
@@ -34,16 +33,18 @@ environment before running it on your production site. See
 installed. See <<config-install>> for instructions on installing core
 modules.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
-
 ==== Steps
 
-You can use the administrative interface or Drush to update a contributed
-theme. If you are updating a custom theme rather than a contributed theme, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to obtain the new theme files,
-follow the steps in <<extend-manual-install>>, and then continue with step 6 in
-the instructions for administrative interface below.
+You can use the administrative interface to update a contributed theme. If you
+are updating a custom theme rather than a contributed theme, if you see a
+message saying _Installing modules and themes requires FTP access to your
+server_, or if the steps below do not work to obtain the new theme files, follow
+the steps in <<extend-manual-install>>, and then continue with step 6 in the
+instructions for administrative interface below.
+
+If you are using Composer to manage the files in your site, follow the steps
+in <<install-composer>> to update the files, then continue here with step 6 in
+the instructions for the administrative interface below.
 
 ===== Using the administrative interface
 
@@ -76,20 +77,6 @@ site.
 
 . Clear the Drupal cache (refer to <<prevent-cache-clear>>).
 
-===== Using Drush
-
-. Find the project name for the theme you wish to update, which is the last
-segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/mayo_, the project name is "mayo".
-
-. Run the following Drush command, giving the project name (for example,
-`mayo`) as a parameter:
-+
-----
-drush up mayo
-----
-
-. Follow the instructions on the screen.
 
 ==== Expand your understanding
 

@@ -38,6 +38,21 @@ by and uploaded to your site. The database also uses disk space, although that
 is typically not in the same area (and in some cases, not even on the same
 server) as that used by the site files.
 
+===== PHP
+
+PHP 7.2 or higher. PHP must be set up with a minimum memory size of 64MB; if you
+are running multiple modules on your site or using memory-intensive PHP-based
+command-line tools (such as Composer), considerably more memory than that may be
+needed.
+
+Certain PHP extensions are also required; the exact list of required PHP
+extensions depends on how you install the core software and which modules you
+are using on your site. Generally, hosting service providers have installed all
+the PHP extensions you will need. If you are self-hosting or running your site
+on your local computer, you will get error messages during installation if any
+required PHP extensions are missing, and should be able to install them and
+continue.
+
 ===== Web server
 
 Apache (Recommended)::
@@ -46,6 +61,9 @@ Apache (Recommended)::
   mod_rewrite module installed and enabled. The Apache VirtualHost configuration
   must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
   to be used.
+PHP Local Server::
+  You can temporarily run a local demo site on your computer using just PHP,
+  without installing web server software.
 Nginx::
   Nginx is a commonly used web server that focuses on high concurrency,
   performance and low memory usage. The core software will work on Nginx 1.1 or
@@ -73,17 +91,16 @@ InnoDB-compatible primary storage engine
 
 * PostgreSQL - 9.1.2 or higher
 
-* SQLite - 3.4.2 or higher
-
-===== PHP
-
-PHP 5.5.9 or higher.
+* SQLite - 3.4.2 or higher. Temporary local demo sites use SQLite, which is
+distributed as part of PHP and doesn't require installing separate database
+software.
 
 //==== Related topics
 
 ==== Additional resources
 
-https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+* https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+* https://secure.php.net/manual/en/configuration.php[PHP Runtime Configuration (PHP memory limit and other settings)]
 
 
 *Attributions*

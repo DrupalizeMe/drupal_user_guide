@@ -3,7 +3,7 @@
 === Nem használt modulok letiltása
 
 [role="summary"]
-Hogyan csökkenthetjük a felesleget webhelyünkön a használaton kívüli modulok kikapcsolásával.
+A felesleg csökkentése webhelyünkön a használaton kívüli modulok kikapcsolásával.
 
 (((Modul,nem használtak törlése)))
 (((Törlés,nem használt modulok)))
@@ -22,7 +22,7 @@ Hogy optimalizáljuk webhelyünk működését, ebben a témakörben letiltjuk a
 
 * A webhely legalább egy moduljának használaton kívül kell lennie, amin a letiltást kockázat nélkül kipróbálhatjuk.
 
-* Ha szeretnénk Drush eszközt használni a modulok letiltásához, akkor azt telepíteni kell. Lásd <<install-tools>>.
+* Ha szeretnénk Drush eszközt használni a modulok letiltásához, akkor azt telepíteni kell. Lásd: <<install-tools>>.
 
 ==== Lépések
 
@@ -30,7 +30,7 @@ E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfel�
 
 ===== Adminfelületen keresztül
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ > _Modul eltávolítása_ oldalra (vagy címsorban adjuk meg az _admin/modules/uninstall_ útvonalat), ahol csak azokat a modulokat látjuk felsorolva, amelyek nem szolgálnak feltételként más modulok működéséhez, ezáltal készen állnak arra, hogy letiltsuk őket.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ > _Modul eltávolítása_ oldalra (vagy a címsorban adjuk meg az _admin/modules/uninstall_ útvonalat), ahol csak azokat a modulokat látjuk felsorolva, amelyek nem szolgálnak feltételként más modulok működéséhez, ezáltal készen állnak arra, hogy letiltsuk őket.
 
 . Jelöljük be a letiltani kívánt modulok (_Search_, _History_ és _Activity Tracker_) négyzeteit. Kattinsunk az _Eltávolítás_ gombra a lap alján.
 +
@@ -54,9 +54,9 @@ image:images/config-uninstall_confirmUninstall.png["Eltávolítás megerősíté
 
 ===== Drush használatával
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
-. Keressük ki a letiltani kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk annak a modulnak a programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
+. Keressük ki a letiltani kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk a modul programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
 
 . Ennek ismeretében már le tudjuk futtatni a következő Drush-parancsot:
 +

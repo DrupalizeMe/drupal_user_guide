@@ -1,18 +1,17 @@
 [[security-update-theme]]
 
-=== Updating a Theme
+=== Egy smink frissítése
 
 [role="summary"]
-How to update a contributed theme by using the administrative interface and running the Database Updates script, or by using Drush.
+Így frissítsünk egy közösségi sminket, és futtassuk az adatbázis-karbantartó szkriptet adminfelületről.
 
-(((Theme,updating)))
-(((Security update,applying)))
-(((Contributed theme,updating)))
-(((Drush tool,using to update theme)))
+(((Közösségi smink,frissítése)))
+(((Smink,frissítése)))
+(((Biztonsági frissítés,alkalmazása)))
 
 ==== Célkitűzés
 
-Update a contributed theme on your site and run the _Database Updates_ script.
+Frissítjük webhelyünk egyik közösségi sminkjét az elavult verziójáról a legújabbra, majd lefuttatjuk az adatbázis-karbantartó szkriptet.
 
 ==== Szükséges előismeretek
 
@@ -21,60 +20,46 @@ Update a contributed theme on your site and run the _Database Updates_ script.
 
 ==== Webhely előfeltételei
 
-* A contributed theme has been installed and there is an update available for it. See <<extend-theme-install>> and <<security-announce>>.
+* Legalább egy közösségi sminknek telepítve kell lennie, és kell, hogy legyen hozzá elérhető frissítés. Előbbihez lásd a <<extend-theme-install>> leírást, míg utóbbihoz a <<security-announce>> lehet hasznos.
 
-* If your site is live, you should test this process in a development environment before running it on your production site. See <<install-dev-making>>.
+* Ha webhelyünk már éles, látogatók előtt megnyitott, akkor ezt a folyamatot javasolt előbb egy tesztkörnyezeten elvégezni. Erről a <<install-dev-making>> részben volt szó.
 
-* You have created a full site backup. See <<prevent-backups>>.
+* A webhelyről készítsünk egy tartalék másolatot (lásd: <<prevent-backups>>).
 
-* If you want to use the user interface, the core Update Manager module must be installed. See <<config-install>> for instructions on installing core modules.
-
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek módjáról a <<config-install>> szakaszban már esett szó.
 
 ==== Lépések
 
-You can use the administrative interface or Drush to update a contributed theme. If you are updating a custom theme rather than a contributed theme, if you see a message saying _Installing modules and themes requires FTP access to your server_, or if the steps below do not work to obtain the new theme files, follow the steps in <<extend-manual-install>>, and then continue with step 6 in the instructions for administrative interface below.
+Itt most az egyszerűbb, az adminfelületen keresztül történő frissítést mutatjuk be. Ha viszont közösségi helyett egy egyedileg fejlesztett sminket frissítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének, akkor még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány közösségi smink Composer eszközzel kezelheti a függőségeit, ezért ha erre utaló felhívást látunk a smink projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 6. lépéstől tovább ugyanúgy.
 
-===== Using the administrative interface
+===== Az adminfelület használatával
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. Állítsuk a webhelyet karbantartási módba (lásd: <<extend-maintenance>>).
 
-. In the _Manage_ administrative menu, navigate to _Reports_ > _Available updates_ > _Update_ (_admin/reports/updates/update_).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Jelentések_ > _Elérhető frissítések_ > _Frissítés_ oldalra (vagy a címsorban adjuk meg az _admin/reports/updates/update_ útvonalat).
 
-. Find and check the theme in the list. Click _Download these updates_ for the theme.
+. Keressük meg a felsorolásban a frissíteni kívánt sminket, és pipáljuk be a jelölőnégyzetet a sorában, majd kattintsunk a _Frissítések letöltése_ gombra.
 +
 --
 // Update page for theme (admin/reports/updates/update).
-image:images/security-update-theme-updates.png["Available updates",width="100%"]
+image:images/security-update-theme-updates.png["Elérhető frissítések",width="100%"]
 --
 
-. Click _Continue_.
+. Kattintsunk a _Folytatás_ gombra.
 
-. Click _Run database updates_. If you obtained the new theme files manually, start with this step, and reach the database updates page by typing the URL _example.com/update.php_ in your browser.
+. Kattintsunk az _Adatbázis-frissítések futtatása_ elemre. Ha a smink fájljait kézzel másoltuk fel, akkor innentől folytatjuk, és az adatbázis-frissítés oldal megnyitásához írjuk be böngészőnk címsorába: _http://pelda.hu/update.php_.
 
-. Click _Continue_ to run the updates. The database update scripts will be executed.
+. A _Folytatás_ gombra kattintva lefut a szkript, ami elvégez minden szükséges módosítást az adatbázison.
 
-. Click _Administration pages_ to return to the administration section of your site.
+. Az _Adminisztrációs oldalak_ hivatkozásra kattintva visszajutunk az adminfelületre.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Kapcsoljuk ki a _Karbantartási módot_ (lásd: <<extend-maintenance>>).
 
-. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
-
-===== Using Drush
-
-. Find the project name for the theme you wish to update, which is the last segment of the theme's project page URL. For example, if the project URL is _https://www.drupal.org/project/mayo_, the project name is "mayo".
-
-. Run the following Drush command, giving the project name (for example, `mayo`) as a parameter:
-+
-----
-drush up mayo
-----
-
-. Follow the instructions on the screen.
+. Ürítsük ki a gyorsítótárat (lásd: <<prevent-cache-clear>>).
 
 ==== Az ismeretek elmélyítése
 
-* Review the site log, see <<prevent-log>>, once the updates are complete to check for errors.
+* Mint minden komolyabb beavatkozás után, sminkfrissítést követően is javasolt megnézni a rendszernaplót (<<prevent-log>>) az esetleges rejtett hibák felfedezése érdekében.
 
 * <<security-update-module>>
 
@@ -83,10 +68,10 @@ drush up mayo
 ==== Videó
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/2jihIuY91vs[title="Updating a Theme"]
+video::https://www.youtube-nocookie.com/embed/2jihIuY91vs[title="Egy smink frissítése"]
 
 //==== Egyéb források
 
 *Közreműködők*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Írta: https://www.drupal.org/u/batigolix[Boris Doesborg]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

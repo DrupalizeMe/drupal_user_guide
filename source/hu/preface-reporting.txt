@@ -1,4 +1,5 @@
 [[preface-reporting]]
+
 === Hibajelentés
 
 [role="summary"]
@@ -12,15 +13,15 @@ E témakörben áttekintjük, milyen fajta hibákat lehet jelenteni:
 * Egy leírásban szereplő lépések nem működnek a gyakorlatban.
 * Ha a valóság eltér az illusztrációként használt képernyőképektől vagy a bemutatott felhasználói felülettől.
 * Nehezen érthető megfogalmazás.
-* A szöveg olyan részei, ahol egy képernyőkép vagy áttekintő táblázat segíthet a leírtak jobb megértésében.
+* A szövegben vannak olyan részek, ahol egy képernyőkép vagy áttekintőtáblázat segíthet a leírtak jobb megértésében.
 * Nem (eléggé) kifejtett szakkifejezések.
-* Rosszul, hiányosan feltüntetett előfeltételek a témakör elején (akár ismeretbeli, akár a próba webhely állapotát érintően).
+* Rosszul, hiányosan feltüntetett előfeltételek a témakör elején (akár ismeretbeli, akár a próbawebhely állapotát érintően).
 * Gépelési, helyesírási, nyelvtani, stilisztikai vagy formázási hibák.
 * Nem működő hivatkozások.
 
 // ==== Szükséges előismeretek
 
-//==== Webhely előfeltételei
+// ==== Webhely előfeltételei
 
 ==== Lépések
 
@@ -34,11 +35,11 @@ E témakörben áttekintjük, milyen fajta hibákat lehet jelenteni:
   * Ha csak kevés nyitott feladat van, akkor szemmel fussuk át a _Summary_ oszlopot, hogy valamelyik leírása nem egyezik-e esetleg a miénkkel. Ehhez néha szükség lehet egy-egy feladat megnyitására – a _Summary_ oszlopban a címre kattintva – , hogy belepillantsunk a részleteibe.
   * Ha a nyitott feladatok listája hosszú, akkor megadhatunk egy keresési kulcsszót (ami az észrevételünket jól jellemzi), vagy rákereshetünk annak a témakörnek a címére, ahol a problémát véljük. A kereséssel leszűkített találatok leírását ismét fussuk át, vagy kattintsunk rá néhányra, és olvassuk el őket.
 
-. Ha ily módon meggyőződtünk róla, hogy még nincs a miénkhez hasonló feladat felvéve, akkor kattintsunk a _Create a new issue_ gombra és a megjelenő űrlapot töltsük ki az alábbiak szerint:
+. Ha ily módon meggyőződtünk róla, hogy még nincs a miénkhez hasonló feladat felvéve, akkor kattintsunk a _Create a new issue_ gombra, és a megjelenő űrlapot töltsük ki az alábbiak szerint:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező neve | Magyarázat | Példa érték
+| Mező neve | Magyarázat | Javasolt kitöltés
 | Title (_Cím_) | Rövid összefoglalója annak, hogy mit tapasztaltunk | A „Tartalomtípus hozzáadása” útmutató lépései nem működnek
 | Category (_Kategória_) | A jelenteni kívánt észrevétel fajtája | Bug report (azaz hibajelentés)
 | Version (_Verzió_) | A Kézikönyv azon kiadása, amelyben a hibát észleltük | 8.x-2.x-dev
@@ -53,7 +54,7 @@ E témakörben áttekintjük, milyen fajta hibákat lehet jelenteni:
 
 . Kattintsunk a _Save_ („Mentés”) gombra a feladat létrehozásához.
 
-. Néhány nap múlva jöjjünk vissza és ellenőrizzük, érkezett-e válasz a jelzésünkre. Ha a User Guide projekt valamelyik felelőse további részleteket kér tőlünk a hibajelentésükkel kapcsolatban, akkor lehetőségeinkhez mérten igyekezzünk segíteni további információkkal.
+. Néhány nap múlva jöjjünk vissza, és ellenőrizzük, érkezett-e válasz a jelzésünkre. Ha a User Guide projekt valamelyik felelőse további részleteket kér tőlünk a hibajelentésükkel kapcsolatban, akkor lehetőségeinkhez mérten igyekezzünk segíteni további információkkal.
 
 //==== Az ismeretek elmélyítése
 

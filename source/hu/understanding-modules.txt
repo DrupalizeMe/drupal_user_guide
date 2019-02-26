@@ -1,8 +1,9 @@
 [[understanding-modules]]
+
 === Alapfogalom: a modulok
 
 [role="summary"]
-A modulok, és az általuk elérhető bővítési lehetőségek áttekintése.
+A modulok és az általuk elérhető bővítési lehetőségek áttekintése.
 
 (((Modul,áttekintés)))
 (((Közösségi modul,áttekintés)))
@@ -14,7 +15,7 @@ A modulok, és az általuk elérhető bővítési lehetőségek áttekintése.
 (((User modul,áttekintés)))
 (((Views modul,áttekintés)))
 (((Views UI modul,áttekintés)))
-(((Module,alarendszeri)))
+(((Modul,alaprendszeri)))
 (((Modul,közösségi)))
 (((Modul,Field)))
 (((Modul,Field UI)))
@@ -30,7 +31,7 @@ A modulok, és az általuk elérhető bővítési lehetőségek áttekintése.
 
 ==== Mi az a modul?
 
-Olyan PHP, JavaScript, és/vagy CSS programkód, amely kibővíti a webhely képességeit és további funkciókat ad hozzá. A modulokat _telepíteni_ és engedélyezni kell használat előtt, kikapcsolásukhoz pedig letiltani vagy _eltávolítani_ a webhelyről. Ez utóbbi művelet előtt szükség lehet a letiltani kívánt modulok által kezelt adatok lementésére. Általános jótanács: érdemes a modulok számát mindig a lehető legkisebbre leszorítani egy éles webhelyen. Amire nincs szükségünk, vagy nem használjuk, azt jobb ha letiltjuk vagy eltávolítjuk.
+Olyan PHP-, JavaScript- és/vagy CSS-programkód, amely kibővíti a webhely képességeit, és további funkciókat ad hozzá. A modulokat _telepíteni_ és engedélyezni kell használat előtt, kikapcsolásukhoz pedig letiltani vagy _eltávolítani_ őket a webhelyről. Ez utóbbi művelet előtt szükség lehet a letiltani kívánt modulok által kezelt adatok lementésére. Általános jó tanács: érdemes a modulok számát mindig a lehető legkisebbre szorítani egy éles webhelyen. Amire nincs szükségünk vagy nem használjuk, azt jobb, ha letiltjuk vagy eltávolítjuk.
 
 Az alaprendszer is tartalmaz modulokat (ezeket _alapmoduloknak_ is szokták nevezni), melyek például a következő általános feladatokat látják el:
 
@@ -40,9 +41,9 @@ Az alaprendszer is tartalmaz modulokat (ezeket _alapmoduloknak_ is szokták neve
 
 * Navigáció a webhelyen (_Menu UI_ modul)
 
-* A tartalmak listázása táblázatos, rácsos vagy egyszerű felsorolásokként (_Views_ modul, valamint felülete a _Views UI_ modul)
+* A tartalmak listázása táblázatos, rácsos vagy egyszerű felsorolásokként (_Views_ modul, valamint felülete, a _Views UI_ modul)
 
-Bármikor további _közösség által fejlesztett modulok_ tölthetők le a https://www.drupal.org/project/project_module[Drupal.org gyűjteményéből] ingyenesen, de némi hozzáértéssel és programozási tapasztalattal akár _egyedi modulok_ is készíthetőek.
+Bármikor további, _közösség által fejlesztett modulok_ tölthetők le a https://www.drupal.org/project/project_module[Drupal.org gyűjteményéből] ingyenesen, de némi hozzáértéssel és programozási tapasztalattal akár _egyedi modulok_ is készíthetőek.
 
 ==== Kapcsolódó témák
 
@@ -61,4 +62,4 @@ https://www.drupal.org/developing/modules[Module developer's guide]: „Modulfej
 
 *Közreműködők*
 
-Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+Írta: https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

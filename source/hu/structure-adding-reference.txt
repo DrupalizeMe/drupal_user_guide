@@ -3,7 +3,7 @@
 === Egy hivatkozás mező hozzáadása
 
 [role="summary"]
-Hogyan hivatkozhatjuk össze két tartalomtípusunkat egy egymásra mutató mező segítségével.
+Két tartalomtípus összekötése egy egymásra mutató mező segítségével.
 
 (((Entitáshivatkozás,hozzáadás)))
 (((Mező,hozzáadása hivatkozásokhoz)))
@@ -14,7 +14,7 @@ Hogyan hivatkozhatjuk össze két tartalomtípusunkat egy egymásra mutató mez�
 
 ==== Célkitűzés
 
-Ebben a témakörben célunk, hogy a _Recept_ tartalmakat összehivatkozzuk az azokat beküldő _Árusok_ adatlapjaival.
+Ebben a témakörben célunk, hogy a _Recept_ tartalmakat összekössük az azokat beküldő _Árusok_ adatlapjaival.
 
 ==== Szükséges előismeretek
 
@@ -30,13 +30,13 @@ A _Recept_ és _Árus_ tartalomtípusoknak létezniük kell. Ehhez lásd a <<str
 
 . Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. Aztán kattintsunk a _Mezők kezelése_ lenyíló gombra a _Recept_ tartalomtípusnál. Ekkor megjelenik a _Mezők kezelése_ oldal.
 
-. Kattintsunk a _Mező hozzáadása_ gombra. Megjelenik a _Mező hozzáadása_ oldal. Töltsünk ki minden mezőt a lent látható módon. Miután végeztünk, mentsük munkánkat a _Mentés és folytatás_ gombbal.
+. Kattintsunk a _Mező hozzáadása_ gombra. Megjelenik a _Mező hozzáadása_ oldal. Töltsünk ki minden mezőt a lent látható módon. Miután végeztünk, mentsük el munkánkat a _Mentés és folytatás_ gombbal.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező felirata | Magyarázat | Példa érték
+| Mező felirata | Magyarázat | Javasolt kitöltés
 | Új mező hozzáadása | Lehetőségünk van kiválasztani a mező típusát. | Referencia > Tartalom
-| Felirat | Adhatunk egy tetszőleges nevet a mezőnek. | Beküldte
+| Felirat | Adhatunk a mezőnek egy tetszőleges nevet. | Beküldte
 |================================
 +
 --
@@ -48,28 +48,28 @@ image:images/structure-adding-reference-add-field.png["Egy hivatkozó mező hozz
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező felirata | Magyarázat | Példa érték
+| Mező felirata | Magyarázat | Javasolt kitöltés
 | Hivatkozó elem típusa | A webhelyen létező entitástípusok közül ki kell választanunk, hogy pontosan melyikre fog hivatkozni ez a mező. | Tartalom
 | Értékek megengedett száma  | Az ebben a mezőben tárolható értékek számának felső határa. | Korlátozott, 1
 |================================
 +
 --
 // Field storage settings page for Submitted by field.
-image:images/structure-adding-reference-set-field-basic.png["Egy hivatkozhott mező tárolási beállításai"]
+image:images/structure-adding-reference-set-field-basic.png["Egy hivatkozott mező tárolási beállításai"]
 --
 
 . Az ezután megjelenő _Recept Beküldte beállításai_ oldalon már nem a mező általános, webhelyszerte használt beállításait, hanem már csak kifejezetten a _Recept_ tartalomtípuson belüli használatának módját szabályozhatjuk. Töltsünk ki minden mezőt a lent látható módon. Végezetül kattintsunk majd a _Beállítások mentése_ gombra.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Mező felirata | Magyarázat | Példa érték
+| Mező felirata | Magyarázat | Javasolt kitöltés
 | Felirat  | Ez a cím fog megjelenni a látogatóknak az oldalon a mező értéke felett. | Beküldte
-| Súgó szöveg | Egy rövid szöveges segítség a webhely tartalmait szerkesztő adminisztrátoroknak. | Válaszd ki az ezt a receptet beküldő árust
+| Súgó szöveg | Egy rövid szöveges segítség a webhely tartalmait szerkesztő adminisztrátoroknak. | Válaszd ki a receptet beküldő árust
 | Kötelező mező | Annak szabályozására való, hogy muszáj-e kitöltenie a szerkesztőnek ahhoz, hogy elmenthesse a tartalmat. | Bejelölve
 | _Hivatkozás típusa_ > _Hivatkozási mód_ legördülő lista | Kiválasztható, hogy a mező kitöltésekor miként legyenek felsorolva a lehetséges értékek. | Alapértelmezés
-| _Hivatkozás típusa_ > _Tartalomtípusok_ jelölőnégyzetek | A webhelyen párhuzamosan létező több tartalomtípus közül melyikekből lehessen tartalmakat kiválasztani ebbe a mezőbe. | Árus
+| _Hivatkozás típusa_ > _Tartalomtípusok_ jelölőnégyzetek | A webhelyen párhuzamosan létező több tartalomtípus közül melyekből lehessen tartalmakat kiválasztani ebbe a mezőbe. | Árus
 | _Hivatkozás típusa_ > _Rendezés_ legördülő lista | A mező kitöltésekor a lehetséges értékeket a könnyebb áttekintés érdekében ábécérendbe lehet sorolni. Itt lehet kiválasztani, hogy ez milyen szempont szerint történjen. | Árus neve
-| _Hivatkozás típusa_ > _Rendezés iránya_ legördülő lista | Melyik végéről kezdődjön a sorbarendezett lista. | Növekvő
+| _Hivatkozás típusa_ > _Rendezés iránya_ legördülő lista | Melyik végéről kezdődjön a sorba rendezett lista. | Növekvő
 |================================
 +
 --
