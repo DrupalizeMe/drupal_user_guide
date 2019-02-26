@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\auto_screenshots\Tests;
+namespace Drupal\Tests\auto_screenshots\FunctionalJavascript;
 
 /**
  * Builds the demo site for the User Guide, Simplified Chinese, with

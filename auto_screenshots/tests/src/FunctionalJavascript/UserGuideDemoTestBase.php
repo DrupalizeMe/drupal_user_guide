@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\auto_screenshots\Tests;
+namespace Drupal\Tests\auto_screenshots\FunctionalJavascript;
 
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Gettext\PoStreamReader;
@@ -10,7 +10,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 use Drupal\locale\PoDatabaseWriter;
-use Drupal\simpletest\WebTestBase;
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 use Drupal\user\Entity\User;
 use BackupMigrate\Core\Config\Config;
 use BackupMigrate\Core\Destination\DirectoryDestination;
@@ -25,6 +25,7 @@ use BackupMigrate\Core\Service\TarArchiveReader;
 use BackupMigrate\Core\Service\TarArchiveWriter;
 use BackupMigrate\Core\Source\FileDirectorySource;
 use BackupMigrate\Core\Source\MySQLiSource;
+use WebDriver\Exception\UnknownError;
 
 /**
  * Base class for tests that automate screenshots for the User Guide.
@@ -51,12 +52,12 @@ use BackupMigrate\Core\Source\MySQLiSource;
  * portion of the screenshots. See the documentation for the $runList member
  * variable for details.
  */
-abstract class UserGuideDemoTestBase extends WebTestBase {
+abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
   /**
    * Which Drupal Core software version to use for the downloading screenshots.
    */
-  protected $latestRelease = '8.5.0';
+  protected $latestRelease = '8.6.9';
 
   /**
    * Strings and other information to input into the demo site.
@@ -216,18 +217,18 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @var array
    */
   protected $runList = [
-    'doPrefaceInstall' => 'run',
-    'doBasicConfig' => 'run',
-    'doBasicPage' => 'run',
-    'doContentStructure' => 'run',
-    'doUserAccounts' => 'run',
-    'doBlocks' => 'run',
-    'doViews' => 'run',
-    'doMultilingualSetup' => 'run',
-    'doTranslating' => 'run',
-    'doExtending' => 'run',
-    'doPreventing' => 'run',
-    'doSecurity' => 'run',
+    'doPrefaceInstall' => 'backup',
+    'doBasicConfig' => 'backup',
+    'doBasicPage' => 'backup',
+    'doContentStructure' => 'backup',
+    'doUserAccounts' => 'backup',
+    'doBlocks' => 'backup',
+    'doViews' => 'backup',
+    'doMultilingualSetup' => 'backup',
+    'doTranslating' => 'backup',
+    'doExtending' => 'backup',
+    'doPreventing' => 'backup',
+    'doSecurity' => 'backup',
   ];
 
   /**
@@ -241,22 +242,26 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   public static $modules = ['update', 'screenshot_alters'];
 
   /**
-   * We need verbose logging to be on.
-   */
-  public $verbose = TRUE;
-
-  /**
    * We don't care about schema checking.
    */
   protected $strictConfigSchema = FALSE;
 
   /**
-   * Counter for screenshot output, separate from regular verbose IDs.
+   * The directory where screenshots should be saved.
+   *
+   * This is set in the testBuildDemoSite() method.
    */
-  protected $screenshotId = 0;
+  protected $screenshotsDirectory;
 
   /**
-   * The directory where asset files can be found.
+   * The URL to the directory where screenshots should be saved.
+   *
+   * This is set in the testBuildDemoSite() method.
+   */
+  protected $screenshotsDirectoryUrl;
+
+  /**
+   * The directory where asset files can be found, relative to site root.
    *
    * This is set in the testBuildDemoSite() method.
    */
@@ -276,22 +281,24 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     array_pop($dir_parts);
     $this->assetsDirectory = implode('/', $dir_parts) . '/assets/';
 
-    // Verify the temporary directory.
-    $temp_dir = $this->getTempFilesDirectory();
-    file_prepare_directory($temp_dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
-    // Verify we can write to this directory.
-    $filename = $temp_dir . '/temp_test.txt';
-    $fp = @fopen($filename, 'x');
-    if (!$fp) {
-      $this->fail("Could not create temporary file $filename");
-      return;
-    }
-    fclose($fp);
+    // Create subdirectories for backups and screenshots, and verify temp
+    // directory.
+    $backup_write_dir = $this->htmlOutputDirectory . '/' .
+      $this->databasePrefix . '/backups';
+    $this->ensureDirectoryWriteable($backup_write_dir, 'backups');
+    $this->logTestMessage('BACKUPS GOING TO: ' . $backup_write_dir . "\n");
+
+    $this->screenshotsDirectory = $this->htmlOutputDirectory . '/' .
+      $this->databasePrefix . '/screenshots';
+    $this->ensureDirectoryWriteable($this->screenshotsDirectory, 'screenshots');
+    $this->screenshotsDirectoryUrl = $GLOBALS['base_url'] .
+      '/sites/simpletest/browser_output/' . $this->databasePrefix .
+      '/screenshots';
+    $this->logTestMessage('SCREENSHOTS GOING TO: ' . $this->screenshotsDirectory . "\n");
+
+    $this->ensureDirectoryWriteable($this->tempFilesDirectory, 'temp');
 
     // Run all the desired chapters.
-    $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
-    $this->ensureDirectoryWriteable($backup_write_dir, 'top');
-
     $backup_read_dir = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $this->demoInput['first_langcode']);
     $previous = '';
     foreach ($this->runList as $method => $op) {
@@ -314,7 +321,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Makes screenshots for Preface and Install chapters, and from drupal.org.
+   * Makes screenshots for Preface and Install chapters.
    */
   protected function doPrefaceInstall() {
 
@@ -366,57 +373,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: block-regions - postpone until after theme is configured.
 
-    // Topic: install-prepare - Preparing to install.
-
-    // English-only drupal.org screenshots, from this and other topics.
-    if ($this->demoInput['first_langcode'] == 'en') {
-
-      $this->drupalGet('https://www.drupal.org/project/drupal/releases/' . $this->latestRelease);
-
-      // File section of a recent Drupal release download page, such as
-      // https://www.drupal.org/project/drupal/releases/8.4.0.
-      $this->setUpScreenShot('install-prepare-files.png', 'onLoad="' . $this->showOnly('#page') . $this->hideArea('#page-title-tools, #nav-content, #tabs, .panel-display .content, .panel-display .footer, .views-field-field-release-file-hash, .views-field-field-release-file-sha1, .views-field-field-release-file-sha256, .pane-custom') . '"', TRUE);
-
-      // Search for Admin Toolbar in 8.x on drupal.org. Just go directly to the
-      // URL.
-      $this->drupalGet('https://www.drupal.org/project/project_module?f[3]=drupal_core%3A7234&f[4]=sm_field_project_type%3Afull&f[5]=&text=Admin+Toolbar&solrsort=iss_project_release_usage+desc&op=Search');
-
-      // Module search box on https://www.drupal.org/project/project_module.
-      $this->setUpScreenShot('extend-module-find_module_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"', TRUE);
-
-      // Search results on https://www.drupal.org/project/project_module.
-      $this->setUpScreenShot('extend-module-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-module') . $this->hideArea('img') . $this->removeScrollbars() . '"', TRUE);
-
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-
-      // Project page for Admin Toolbar module.
-      $this->setUpScreenShot('extend-module-find_project_info.png', 'onLoad="' . $this->hideArea('#nav-header, #header, #page-title-tools, #nav-content, #banner') . $this->addBorder('#block-versioncontrol-project-project-maintainers, .issue-cockpit-categories, #block-drupalorg-project-resources, .project-info, .block-views') . $this->removeScrollbars() . '"', TRUE);
-
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-module-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"', TRUE);
-
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('extend-manual-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension a:first') . $this->removeScrollbars() . '"', TRUE);
-
-      // Downloads section of the Admin Toolbar project page on drupal.org.
-      $this->setUpScreenShot('security-update-module-release-notes.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-field-release-version:first a:first') . $this->removeScrollbars() . '"', TRUE);
-
-      // Search for actively maintained 8.x themes on drupal.org. Just go
-      // directly to the URL.
-      $this->drupalGet('https://www.drupal.org/project/project_theme?f%5B0%5D=im_vid_44%3A13028&f%5B1%5D=&f%5B2%5D=drupal_core%3A7234&f%5B3%5D=sm_field_project_type%3Afull&f%5B4%5D=&text=&solrsort=iss_project_release_usage+desc&op=Search');
-
-      // Theme search box on https://www.drupal.org/project/project_theme.
-      $this->setUpScreenShot('extend-theme-find_theme_finder.png', 'onLoad="' . $this->showOnly('#drupalorg-browse-projects-form') . $this->removeScrollbars() . '"', TRUE);
-
-      // Search results on https://www.drupal.org/project/project_theme.
-      $this->setUpScreenShot('extend-theme-find_search_results.png', 'onLoad="' . $this->showOnly('#block-system-main .node-project-theme') . $this->hideArea('img') . $this->removeScrollbars() . '"', TRUE);
-
-      $this->drupalGet('https://www.drupal.org/project/mayo');
-
-      // Downloads section of the Mayo project page on drupal.org.
-      $this->setUpScreenShot('extend-theme-install-download.png', 'onLoad="window.scroll(0,6000);' . $this->hideArea('h3, #header, #nav-header, #page-heading, #tabs, #sidebar-first, #banner, .submitted, .field-name-body, .field-name-field-supporting-organizations, h3:contains(&quot;Information&quot;), .project-info, .node-footer, #aside, #footer, .field-name-field-project-images, img') . $this->addBorder('.view-drupalorg-project-downloads > .view-content .views-field-extension:first a:first') . $this->removeScrollbars() . '"', TRUE);
-
-    }
+    // Topic: install-prepare - Preparing to install. Skip -- manual
+    // screenshots.
 
     // Topic: install-run - Running the installer. Skip -- manual screenshots.
   }
@@ -505,10 +463,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Topic: config-install -- Installing a module.
 
-    // Due to a Core bug, installing a module corrupts translations. So,
-    // export them first.
-    $this->exportTranslations($this->demoInput['first_langcode']);
-
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Extend'));
     // Names of modules are not translated.
@@ -522,7 +476,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations.
+    // import translations again.
     $this->importTranslations($this->demoInput['first_langcode']);
     $this->verifyTranslations();
 
@@ -542,6 +496,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Top part of admin/modules/uninstall, with Activity Tracker checked.
     $this->setUpScreenShot('config-uninstall_check-modules.png', 'onLoad="jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); ' . $this->showOnly('table thead, table tbody tr:lt(4)') . '"');
+
+    $this->scrollWindowUp();
+    $this->waitForInteraction('css', '#edit-uninstall-tracker');
+    $this->waitForInteraction('css', '#edit-uninstall-history');
+    $this->waitForInteraction('css', '#edit-uninstall-search');
     $this->drupalPostForm(NULL, [
         'uninstall[tracker]' => TRUE,
         'uninstall[search]' => TRUE,
@@ -612,10 +571,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Link color'));
     $this->assertText($this->callT('Logo image'));
     $this->assertText($this->callT('Use the logo supplied by the theme'));
+    $this->scrollWindowUp();
+    $this->getSession()->getPage()->uncheckField('edit-default-logo');
+    $this->scrollWindowUp();
+    $this->waitForInteraction('css', '#edit-logo-upload');
     $this->assertText($this->callT('Upload logo image'));
     $this->assertText($this->callT('Preview'));
 
-    // For this screenshot, before the setting are changed, use JavaScript to
+    // For this screenshot, before the settings are changed, use JavaScript to
     // scroll down to the bottom, uncheck Use the default logo, and outline
     // the logo upload box.
     // Logo upload section of admin/appearance/settings/bartik.
@@ -671,7 +634,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Create a Home page.
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Content'));
-    $this->clickLink($this->callT('Add content'));
+    // clickLink ran into problems here, so assert text and then go to page.
+    $this->assertText($this->callT('Add content'));
+    $this->drupalGet('node/add');
     // Here, you would ideally want to click the "Basic page" link.
     // However, the link text includes a span that says this, plus a div with
     // the description, so using clickLink is not really feasible. So, just
@@ -687,23 +652,31 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Body'));
     $this->assertText($this->callT('URL alias'));
     $this->assertText($this->callT('Published'));
-    $this->assertRaw($this->callT('Save'));
-    $this->assertRaw($this->callT('Preview'));
+    $this->waitForInteraction('css', '#edit-submit', 'focus');
+    $this->assertRaw((string) $this->callT('Save'));
+    $this->waitForInteraction('css', '#edit-preview', 'focus');
+    $this->assertRaw((string) $this->callT('Preview'));
 
-    // General note: Filling in textarea fields -- use .append() in jQuery.
-    // However, this does not work with ckeditor fields.
+    // Fill in the body text. Also open up the path edit area.
+    $this->waitForInteraction('css', '#edit-path-0 summary');
+    $this->fillInBody($this->demoInput['home_body']);
+
     // Partly filled-in node/add/page, with Summary section open.
-    $this->setUpScreenShot('content-create-create-basic-page.png', 'onLoad="jQuery(\'#edit-title-0-value\').val(&quot;' . $this->demoInput['home_title'] . '&quot;); jQuery(\'#edit-path-settings, #edit-path-settings .details-wrapper\').show(); jQuery(\'#edit-path-0-alias\').val(\'' . $this->demoInput['home_path'] . '\');' . $this->hideArea('#toolbar-administration') . 'jQuery(\'.link-edit-summary\').click(); jQuery(\'.form-item-body-0-summary\').show();' . 'jQuery(\'#edit-body-0-summary\').append(\'' . $this->demoInput['home_summary'] . '\');' . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('content-create-create-basic-page.png', 'onLoad="jQuery(\'#edit-title-0-value\').val(&quot;' . $this->demoInput['home_title'] . '&quot;); jQuery(\'#edit-path-0-alias\').val(\'' . $this->demoInput['home_path'] . '\');' . $this->hideArea('#toolbar-administration') . 'jQuery(\'.link-edit-summary\').click(); jQuery(\'.form-item-body-0-summary\').show();' . 'jQuery(\'#edit-body-0-summary\').append(\'' . $this->demoInput['home_summary'] . '\');' . $this->removeScrollbars() . '"');
+
+    // Submit the rest of the form.
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['home_title'],
-        'body[0][value]' => $this->demoInput['home_body'],
         'path[0][alias]' => $this->demoInput['home_path'],
       ], $this->callT('Save'));
 
     // Create About page. No screenshots.
-    $this->drupalPostForm('node/add/page', [
+    $this->drupalGet('node/add/page');
+    $this->waitForInteraction('css', '#edit-submit', 'focus');
+    $this->waitForInteraction('css', '#edit-path-0 summary');
+    $this->fillInBody($this->demoInput['about_body']);
+    $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['about_title'],
-        'body[0][value]' => $this->demoInput['about_body'],
         'path[0][alias]' => $this->demoInput['about_path'],
       ], $this->callT('Save'));
 
@@ -716,7 +689,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Some of these filters are mentioned on other topics.
     $this->assertText($this->callT('Language'));
     $this->assertText($this->callT('Published status'));
-    $this->assertRaw($this->callT('Filter'));
+    $this->assertRaw((string) $this->callT('Filter'));
 
     // Content list on admin/content, with filters above.
     $this->setUpScreenShot('content-edit-admin-content.png', 'onLoad="' . $this->showOnly('.block-system-main-block') . $this->hideArea('.secondary-action') . $this->setBodyColor() . '"');
@@ -776,11 +749,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // English.
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->drupalGet('admin/structure/menu');
-      $this->assertRaw($this->callT('Main navigation'));
-      $this->assertRaw($this->callT('Administration'));
-      $this->assertRaw($this->callT('User account menu'));
-      $this->assertRaw($this->callT('Footer'));
-      $this->assertRaw($this->callT('Tools'));
+      $this->assertRaw((string) $this->callT('Main navigation'));
+      $this->assertRaw((string) $this->callT('Administration'));
+      $this->assertRaw((string) $this->callT('User account menu'));
+      $this->assertRaw((string) $this->callT('Footer'));
+      $this->assertRaw((string) $this->callT('Tools'));
     }
 
     // Topic: menu-link-from-content: Adding a page to the navigation.
@@ -794,6 +767,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // To avoid having to decide which Edit button to click, navigate to the
     // correct edit page.
     $this->drupalGet('node/2/edit');
+    // Open up the menu area and click the add a menu button.
+    $this->waitForInteraction('css', '#edit-menu summary');
+    $this->waitForInteraction('css', '#edit-menu-enabled');
+
     $this->assertText($this->callT('Menu settings'));
     $this->assertText($this->callT('Provide a menu link'));
     $this->assertText($this->callT('Menu link title'));
@@ -842,9 +819,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     if ($this->demoInput['first_langcode'] == 'en') {
       // Menu names are in English, so do not translate this text. See also
       // https://www.drupal.org/project/user_guide/issues/2959852
-      $this->assertRaw($this->callT('Edit menu %label', TRUE, ['%label' => 'Main navigation']));
+      $this->assertRaw((string) $this->callT('Edit menu %label', TRUE, ['%label' => 'Main navigation']));
     }
-    $this->assertRaw($this->callT('Save'));
+    $this->assertRaw((string) $this->callT('Save'));
     $this->assertLink($this->callT('Home'));
     $this->assertLink($this->demoInput['about_title']);
 
@@ -884,6 +861,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $main_image = $this->demoInput['vendor_field_image_machine_name'];
     $main_image_hyphens = str_replace('_', '-', $main_image);
     $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
+    $ingredients_hyphens = str_replace('_', '-', $ingredients);
     $submitted_by = $this->demoInput['recipe_field_submitted_machine_name'];
 
     // Topic: structure-content-type - Adding a Content Type.
@@ -902,37 +880,50 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/types');
 
     $this->clickLink($this->callT('Add content type'));
-    $this->assertRaw($this->callT('Add content type'));
+    $this->assertRaw((string) $this->callT('Add content type'));
     $this->assertText($this->callT('Name'));
     $this->assertText($this->callT('Description'));
     $this->assertText($this->callT('Submission form settings'));
     $this->assertText($this->callT('Title field label'));
     $this->assertText($this->callT('Preview before submitting'));
     $this->assertText($this->callT('Explanation or submission guidelines'));
-    $this->assertText($this->callT('Publishing options'));
+    // Reload the page from the URL to make sure we are at the right place.
+    $this->drupalGet('admin/structure/types/add');
+    // Open the publishing options section and uncheck "Promoted..".
+    $this->clickLink($this->callT('Publishing options'));
+    $this->waitForInteraction('css', '#edit-options-promote');
     $this->assertText($this->callT('Published'));
     $this->assertText($this->callT('Promoted to front page'));
     $this->assertText($this->callT('Sticky at top of lists'));
     $this->assertText($this->callT('Create new revision'));
-    $this->assertText($this->callT('Display settings'));
+    // Open the display settings section and uncheck 'Display author..'.
+    $this->scrollWindowUp();
+    $this->clickLink($this->callT('Display settings'));
+    $this->waitForInteraction('css', '#edit-display-submitted');
     $this->assertText($this->callT('Display author and date information'));
-    $this->assertText($this->callT('Menu settings'));
+    // Open the menu settings section and uncheck Main navigation menu.
+    $this->scrollWindowUp();
+    $this->clickLink($this->callT('Menu settings'));
+    $this->waitForInteraction('css', '#edit-menu-options-main');
     $this->assertText($this->callT('Available menus'));
 
     // Top of admin/structure/types/add, with Name and Description fields.
     $this->setUpScreenShot('structure-content-type-add.png', 'onLoad="' . 'jQuery(\'#edit-name\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-name .field-suffix\').show(); jQuery(\'#edit-name\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;' . $vendor . '&quot;); ' . $this->hideArea('.form-type-vertical-tabs, #toolbar-administration, #edit-actions, header, .region-breadcrumbs') . $this->setWidth('.layout-container') . 'jQuery(\'#edit-description\').append(\'' . $this->demoInput['vendor_type_description'] . '\');' . '"');
 
+
+    // Submit form with above checkboxes and some additional information.
+    $this->scrollWindowUp();
+    $this->clickLink($this->callT('Submission form settings'));
+    $this->waitForInteraction('css', '#edit-title-label', 'focus');
+    $this->waitForInteraction('css', '#edit-save-continue', 'focus');
+    $this->openMachineNameEdit();
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['vendor_type_name'],
         'type' => $vendor,
         'description' => $this->demoInput['vendor_type_description'],
         'title_label' => $this->demoInput['vendor_type_title_label'],
-        'options[promote]' => FALSE,
-        'options[revision]' => TRUE,
-        'display_submitted' => FALSE,
-        'menu_options[main]' => FALSE,
       ], $this->callT('Save and manage fields'));
-    $this->assertRaw($this->callT('Manage fields'));
+    $this->assertRaw((string) $this->callT('Manage fields'));
 
     // Manage fields page after adding Vendor content type.
     $this->setUpScreenShot('structure-content-type-add-confirmation.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
@@ -951,14 +942,27 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Add content type for Recipe. No screen shots.
     $this->drupalGet('admin/structure/types/add');
+    // Open the publishing options section and uncheck "Promoted..".
+    $this->clickLink($this->callT('Publishing options'));
+    $this->waitForInteraction('css', '#edit-options-promote');
+    // Open the display settings section and uncheck 'Display author..'.
+    $this->scrollWindowUp();
+    $this->clickLink($this->callT('Display settings'));
+    $this->waitForInteraction('css', '#edit-display-submitted');
+    // Open the menu settings section and uncheck Main navigation menu.
+    $this->scrollWindowUp();
+    $this->clickLink($this->callT('Menu settings'));
+    $this->waitForInteraction('css', '#edit-menu-options-main');
+    $this->openMachineNameEdit();
+    // Open submission form area and submit the form.
+    $this->clickLink($this->callT('Submission form settings'));
+    $this->waitForInteraction('css', '#edit-title-label', 'focus');
+    $this->waitForInteraction('css', '#edit-save-continue', 'focus');
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['recipe_type_name'],
         'type' => $recipe,
         'description' => $this->demoInput['recipe_type_description'],
         'title_label' => $this->demoInput['recipe_type_title_label'],
-        'options[promote]' => FALSE,
-        'display_submitted' => FALSE,
-        'menu_options[main]' => FALSE,
       ], $this->callT('Save and manage fields'));
 
     // Topic: structure-content-type-delete - Deleting a Content Type
@@ -979,14 +983,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('This action cannot be undone.'));
     // This test is problematic in non-English, due to entities or something.
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('Are you sure you want to delete the @entity-type %label?', TRUE, ['@entity-type' => $this->callT('content type'), '%label' => $this->callT('Article')]));
+      $this->assertRaw((string) $this->callT('Are you sure you want to delete the @entity-type %label?', TRUE, ['@entity-type' => $this->callT('content type'), '%label' => $this->callT('Article')]));
     }
 
     // Confirmation page for deleting Article content type.
     $this->setUpScreenShot('structure-content-type-delete-confirmation.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
     $this->drupalPostForm(NULL, [], $this->callT('Delete'));
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('The @entity-type %label has been deleted.', TRUE, ['@entity-type' => $this->callT('content type'), '%label' => $this->callT('Article')]));
+      $this->assertRaw((string) $this->callT('The @entity-type %label has been deleted.', TRUE, ['@entity-type' => $this->callT('content type'), '%label' => $this->callT('Article')]));
     }
 
     // Confirmation message after deleting Article content type.
@@ -997,8 +1001,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Navigation to the Manage fields page has been tested in previous topics.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields');
     $this->clickLink($this->callT('Add field'));
-    $this->assertRaw($this->callT('Add field'));
+    $this->assertRaw((string) $this->callT('Add field'));
     $this->assertText($this->callT('Add a new field'));
+    $this->setUpAddNewField('link');
     $this->assertText($this->callT('Label'));
 
     // Fill in the form in the screenshot: choose Link for field type and
@@ -1034,6 +1039,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Add Main Image field to Vendor content type.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/fields/add-field');
+    $this->setUpAddNewField('image');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'image',
         'label' => $this->demoInput['vendor_field_image_label'],
@@ -1049,8 +1055,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('File directory'));
     $this->assertText($this->callT('Minimum image resolution'));
     $this->assertText($this->callT('Maximum upload size'));
-    $this->assertRaw($this->callT('Enable <em>Alt</em> field'));
-    $this->assertRaw($this->callT('<em>Alt</em> field required'));
+    $this->assertRaw((string) $this->callT('Enable <em>Alt</em> field'));
+    $this->assertRaw((string) $this->callT('<em>Alt</em> field required'));
     $this->drupalPostForm(NULL, [
         'required' => 1,
         'settings[file_directory]' => $this->demoInput['vendor_field_image_directory'],
@@ -1068,6 +1074,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('structure-fields-main-img.png', 'onLoad="window.scroll(0,100); ' . $this->hideArea('#toolbar-administration, #edit-actions') . $this->removeScrollbars() . '"');
     // Add the main image field to Recipe. No screenshots.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/fields/add-field');
+    $this->setUpAddExistingField('field_' . $main_image);
     $this->drupalPostForm(NULL, [
         'existing_storage_name' => 'field_' . $main_image,
         'existing_storage_label' => $this->demoInput['vendor_field_image_label'],
@@ -1082,12 +1089,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Create two Vendor content items. No screenshots.
     $this->drupalGet('node/add/' . $vendor);
+    // Fill in the body text. Also open up the path edit area.
+    $this->waitForInteraction('css', '#edit-path-0 summary');
+    $this->fillInBody($this->demoInput['vendor_1_body']);
+    $this->fillInSummary($this->demoInput['vendor_1_summary']);
     // Submit once.
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['vendor_1_title'],
-        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'farm.jpg',
-        'body[0][summary]' => $this->demoInput['vendor_1_summary'],
-        'body[0][value]' => $this->demoInput['vendor_1_body'],
+        'files[field_' . $main_image . '_0]' => DRUPAL_ROOT . '/' . $this->assetsDirectory . 'farm.jpg',
         'path[0][alias]' => $this->demoInput['vendor_1_path'],
         'field_' . $vendor_url . '[0][uri]' => $this->demoInput['vendor_1_url'],
       ], $this->callT('Save'));
@@ -1098,11 +1107,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save'));
 
     $this->drupalGet('node/add/' . $vendor);
+    // Fill in the body text. Also open up the path edit area.
+    $this->waitForInteraction('css', '#edit-path-0 summary');
+    $this->fillInBody($this->demoInput['vendor_2_body']);
+    $this->fillInSummary($this->demoInput['vendor_2_summary']);
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['vendor_2_title'],
-        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'honey_bee.jpg',
-        'body[0][summary]' => $this->demoInput['vendor_2_summary'],
-        'body[0][value]' => $this->demoInput['vendor_2_body'],
+        'files[field_' . $main_image . '_0]' => DRUPAL_ROOT . '/' . $this->assetsDirectory . 'honey_bee.jpg',
         'path[0][alias]' => $this->demoInput['vendor_2_path'],
         'field_' . $vendor_url . '[0][uri]' => $this->demoInput['vendor_2_url'],
       ], $this->callT('Save'));
@@ -1139,6 +1150,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Add Ingredients vocabulary from admin/structure/taxonomy/add.
     $this->setUpScreenShot('structure-taxonomy-setup-add-vocabulary.png', 'onLoad="jQuery(\'#edit-name\').val(&quot;' . $this->demoInput['recipe_field_ingredients_label'] . '&quot;);' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
+    $this->openMachineNameEdit();
     $this->drupalPostForm(NULL, [
         'name' => $this->demoInput['recipe_field_ingredients_label'],
         'vid' => $ingredients,
@@ -1178,6 +1190,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // and type in Ingredients for the Label.
     // Add field page to add Ingredients taxonomy reference field.
     $this->setUpScreenShot('structure-taxonomy-setup-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:taxonomy_term\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['recipe_field_ingredients_label'] . '&quot;);  jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;field_' . $ingredients . '&quot;); jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content') . '"');
+    $this->setUpAddNewField('field_ui:entity_reference:taxonomy_term');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:taxonomy_term',
         'label' => $this->demoInput['recipe_field_ingredients_label'],
@@ -1196,9 +1209,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Vocabulary'));
     $this->assertText($this->callT("Create referenced entities if they don't already exist"));
 
+    $this->scrollWindowUp();
+    // The checkboxes for vocabulary on this page are a bit weird in the test.
+    // So check them outside of the form submit.
+    $this->waitForInteraction('css', '.form-item-settings-handler-settings-target-bundles-ingredients input');
     $this->drupalPostForm(NULL, [
         'description' => $this->demoInput['recipe_field_ingredients_help'],
-        'settings[handler_settings][target_bundles][' . $ingredients . ']' => 1,
         'settings[handler_settings][auto_create]' => 1,
       ], $this->callT('Save settings'));
     // Manage fields page showing Ingredients field on Recipe content type.
@@ -1225,6 +1241,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Add field page for adding a Submitted by field to Recipe.
     $this->setUpScreenShot('structure-adding-reference-add-field.png', 'onLoad="' . 'jQuery(\'#edit-new-storage-type\').val(\'field_ui:entity_reference:node\'); jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['recipe_field_submitted_label'] . '&quot;); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;field_' . $submitted_by . '&quot;);  jQuery(\'#edit-new-storage-wrapper, #edit-new-storage-wrapper .field-suffix, #edit-new-storage-wrapper .field-suffix small\').show(); ' . $this->hideArea('#toolbar-administration') . $this->setWidth('header, .page-content', 800) . '"');
 
+    $this->setUpAddNewField('field_ui:entity_reference:node');
     $this->drupalPostForm(NULL, [
         'new_storage_type' => 'field_ui:entity_reference:node',
         'label' => $this->demoInput['recipe_field_submitted_label'],
@@ -1236,18 +1253,20 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $this->drupalPostForm(NULL, [], $this->callT('Save field settings'));
 
-
     $this->assertText($this->callT('Label'));
     $this->assertText($this->callT('Help text'));
     $this->assertText($this->callT('Required field'));
     $this->assertText($this->callT('Reference method'));
     $this->assertText($this->callT('Content types'));
     $this->assertText($this->callT('Sort by'));
+    $this->scrollWindowUp();
+    // The checkbox for content type on this page is a bit
+    // weird in the test. So do it outside of the form submit.
+    $this->waitForInteraction('css', '.form-item-settings-handler-settings-target-bundles-' . $vendor . ' input');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->drupalPostForm(NULL, [
         'description' => $this->demoInput['recipe_field_submitted_help'],
         'required' => 1,
-        'settings[handler_settings][target_bundles][' . $vendor . ']' => 1,
-        'settings[handler_settings][sort][field]' => 'title',
       ], $this->callT('Save settings'));
 
     // Manage fields page for content type Recipe.
@@ -1259,11 +1278,15 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Field settings page for Submitted by field.
     $this->setUpScreenShot('structure-adding-reference-field-settings.png', 'onLoad="window.scroll(0,2000);' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
 
-    // Submit this form to set the sort direction to its default. It is not
-    // set properly in the earlier submit, leading to exceptions in a later
-    // test.
+    // The sort setting doesn't seem to work on the first try of editing the
+    // field settings. So, set it here again.
+    $this->getSession()->getPage()
+      ->find('css', '#edit-settings-handler-settings-sort-field')
+      ->selectOption('title');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Sort direction'));
-    $this->drupalPostForm(NULL, [], $this->callT('Save settings'));
+    $this->drupalPostForm(NULL, [
+      ], $this->callT('Save settings'));
 
     // Topic: structure-form-editing - Changing Content Entry Forms.
     // Note: Navigation has been tested on other topics.
@@ -1273,10 +1296,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Widget drop-down outlined.
     // Note that ideally, the drop-down would be open, but this is not
     // apparently possible using JavaScript.
-    $this->setUpScreenShot('structure-form-editing-manage-form.png', 'onLoad="window.scroll(0,200);' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .field-plugin-settings-edit-wrapper, .tabledrag-toggle-weight-wrapper') . 'jQuery(\'#edit-fields-field-' . $ingredients . '-type\').val(\'entity_reference_autocomplete_tags\');' . $this->addBorder('#edit-fields-field-' . $ingredients . '-type') . $this->setWidth('#field-display-overview', 800) . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('structure-form-editing-manage-form.png', 'onLoad="window.scroll(0,200);' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, .help, .field-plugin-settings-edit-wrapper, .tabledrag-toggle-weight-wrapper') . 'jQuery(\'#edit-fields-field-' . $ingredients_hyphens . '-type\').val(\'entity_reference_autocomplete_tags\');' . $this->addBorder('#edit-fields-field-' . $ingredients . '-type') . $this->setWidth('#field-display-overview', 800) . $this->removeScrollbars() . '"');
 
     // Set the Ingredients field to use tag-style autocomplete.
-    $this->assertRaw($this->callT('Autocomplete (Tags style)'));
+    $this->assertRaw((string) $this->callT('Autocomplete (Tags style)'));
     $this->drupalPostForm(NULL, [
         'fields[field_' . $ingredients . '][type]' => 'entity_reference_autocomplete_tags',
       ], $this->callT('Save'));
@@ -1287,11 +1310,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Create two Recipe content items. No screenshots.
     $this->drupalGet('node/add/' . $recipe);
+    // Fill in the body text. Also open up the path edit area.
+    $this->waitForInteraction('css', '#edit-path-0 summary');
+    $this->fillInBody($this->demoInput['recipe_1_body']);
     // Submit once.
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['recipe_1_title'],
-        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'salad.jpg',
-        'body[0][value]' => $this->demoInput['recipe_1_body'],
+        'files[field_' . $main_image . '_0]' => DRUPAL_ROOT . '/' . $this->assetsDirectory . 'salad.jpg',
         'path[0][alias]' => $this->demoInput['recipe_1_path'],
         'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_1_ingredients'],
         'field_' . $submitted_by . '[0][target_id]' => $this->demoInput['vendor_1_title'],
@@ -1303,10 +1328,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Save'));
 
     $this->drupalGet('node/add/' . $recipe);
+    // Fill in the body text. Also open up the path edit area.
+    $this->waitForInteraction('css', '#edit-path-0 summary');
+    $this->fillInBody($this->demoInput['recipe_2_body']);
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['recipe_2_title'],
-        'files[field_' . $main_image . '_0]' => $this->assetsDirectory . 'carrots.jpg',
-        'body[0][value]' => $this->demoInput['recipe_2_body'],
+        'files[field_' . $main_image . '_0]' => DRUPAL_ROOT . '/' . $this->assetsDirectory . 'carrots.jpg',
         'path[0][alias]' => $this->demoInput['recipe_2_path'],
         'field_' . $ingredients . '[target_id]' => $this->demoInput['recipe_2_ingredients'],
         'field_' . $submitted_by . '[0][target_id]' => $this->demoInput['vendor_1_title'],
@@ -1335,7 +1362,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Set the labels for main image and vendor URL to hidden.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
     $this->assertText($this->callT('Label'));
-    $this->assertRaw($this->callT('Hidden'));
+    $this->assertRaw((string) $this->callT('Hidden'));
     $this->drupalPostForm(NULL, [
         'fields[field_' . $main_image . '][label]' => 'hidden',
         'fields[field_' . $vendor_url . '][label]' => 'hidden',
@@ -1348,13 +1375,15 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('structure-content-display_main_image_hidden.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-breadcrumb, .help, #edit-modes, #edit-actions') . $this->removeScrollbars() . $this->addBorder('#edit-fields-field-' . $main_image_hyphens . '-label, #edit-fields-field-' . $vendor_url_hyphens . '-label') . '"');
 
     // Use Ajax to open the Edit area for the Vendor URL field.
-    $this->drupalPostAjaxForm(NULL, [], 'field_' . $vendor_url . '_settings_edit');
+    $this->waitForInteraction('css', '#edit-fields-field-' . $vendor_url_hyphens . '-settings-edit');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+
     // These text tests can be problematic in non-English languages due to
     // entities etc.
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->assertText($this->callT('Trim link text length'));
-      $this->assertRaw($this->callT('Open link in new window'));
-      $this->assertRaw($this->callT('Update'));
+      $this->assertRaw((string) $this->callT('Open link in new window'));
+      $this->assertRaw((string) $this->callT('Update'));
     }
 
     // Vendor URL settings form, with trim length cleared, and open link in
@@ -1372,6 +1401,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('structure-content-display_change_order.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-breadcrumb, .help, .tabledrag-toggle-weight-wrapper, #edit-modes, #edit-actions') . 'jQuery(\'table\').before(\'<div style=&quot;display: block; &quot; class=&quot;tabledrag-changed-warning messages messages--warning&quot; role=&quot;alert&quot;><abbr class=&quot;warning tabledrag-changed&quot;>*</abbr>' . $this->callT('You have unsaved changes.') . '</div>\');' . 'var img = jQuery(\'table tbody tr#field-' . $main_image_hyphens . '\').detach(); var bod = jQuery(\'table tbody tr#body\').detach(); var vurl = jQuery(\'table tbody tr#field-' . $vendor_url_hyphens . '\').detach(); jQuery(\'table tbody\').prepend(vurl).prepend(bod).prepend(img); jQuery(\'table tbody tr:first\').toggleClass(\'drag-previous\');' . '"');
 
     // Submit the changed order in the form.
+    $this->waitForInteraction('css', '.tabledrag-toggle-weight');
+    $this->waitForInteraction('css', '#edit-fields-field-' . $main_image_hyphens . '-weight', 'focus');
     $this->drupalPostForm(NULL, [
         'fields[field_' . $main_image . '][weight]' => 10,
         'fields[body][weight]' => 20,
@@ -1381,6 +1412,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Make similar changes for the Recipe content type. No screenshots.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/display');
+    // Show weights should still be toggled. Just in case, use jQuery.
+    $this->getSession()->getDriver()->executeScript("jQuery('.tabledrag-hide').show();");
+    $this->waitForInteraction('css', '#edit-fields-field-' . $main_image_hyphens . '-weight', 'focus');
     $this->drupalPostForm(NULL, [
         'fields[field_' . $main_image . '][weight]' => 10,
         'fields[field_' . $main_image . '][label]' => 'hidden',
@@ -1409,6 +1443,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/config/media/image-styles');
 
     $this->clickLink($this->callT('Add image style'));
+    $this->openMachineNameEdit('#edit-label');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['image_style_label'],
         'name' => $this->demoInput['image_style_machine_name'],
@@ -1416,7 +1451,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
 
     $this->assertText($this->callT('Effect'));
-    $this->assertRaw($this->callT('Scale and crop'));
+    $this->assertRaw((string) $this->callT('Scale and crop'));
     $this->drupalPostForm(NULL, [
         'new' => 'image_scale_and_crop',
       ], $this->callT('Add'));
@@ -1432,14 +1467,16 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Navigation has already been tested for this page.
     $this->drupalGet('admin/structure/types/manage/' . $vendor . '/display');
     // Use Ajax to open the Edit area for the Main Image field.
-    $this->drupalPostAjaxForm(NULL, [], 'field_' . $main_image . '_settings_edit');
+    $this->waitForInteraction('css', '#edit-fields-field-' . $main_image_hyphens . '-settings-edit');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+
     // These text tests can be problematic in non-English languages due to
     // entities etc.
     if ($this->demoInput['first_langcode'] == 'en') {
       $this->assertText($this->callT('Image style'));
-      $this->assertRaw($this->callT('Link image to'));
-      $this->assertRaw($this->callT('Nothing'));
-      $this->assertRaw($this->callT('Update'));
+      $this->assertRaw((string) $this->callT('Link image to'));
+      $this->assertRaw((string) $this->callT('Nothing'));
+      $this->assertRaw((string) $this->callT('Update'));
     }
 
     // Main image settings area of Vendor content type.
@@ -1450,7 +1487,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Repeat for Recipe content type, no screenshots.
     $this->drupalGet('admin/structure/types/manage/' . $recipe . '/display');
-    $this->drupalPostAjaxForm(NULL, [], 'field_' . $main_image . '_settings_edit');
+    $this->waitForInteraction('css', '#edit-fields-field-' . $main_image_hyphens . '-settings-edit');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->drupalPostForm(NULL, [
         'fields[field_' . $main_image . '][settings_edit_form][settings][image_style]' => $this->demoInput['image_style_machine_name'],
       ], $this->callT('Save'));
@@ -1489,7 +1527,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // The button configuration for the editing toolbar uses drag-and-drop,
     // but has a text field behind the scenes. So, save the configuration and
-    // then come back for the screenshot.
+    // then come back for the screenshot, after showing the text form.
+    $this->getSession()->getDriver()->executeScript("jQuery('.form-item-editor-settings-toolbar-button-groups').show();");
     $this->drupalPostForm(NULL, [
         'editor[settings][toolbar][button_groups]' => '[[{"name":"' . $this->callT('Formatting') . '","items":["Bold","Italic"]},{"name":"' . $this->callT('Links') . '","items":["DrupalLink","DrupalUnlink"]},{"name":"' . $this->callT('Lists') . '","items":["BulletedList","NumberedList"]},{"name":"' . $this->callT('Media') . '","items":["Blockquote","DrupalImage"]},{"name":"' . $this->callT('Tools') . '","items":["Source", "HorizontalRule"]}]]',
         'filters[filter_html][settings][allowed_html]' => '<hr> <a hreflang href> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img width height data-caption data-align data-entity-uuid data-entity-type alt src> <hr>',
@@ -1532,12 +1571,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Add role page (admin/people/roles/add).
     $this->setUpScreenShot('user-new-role-add-role.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;' . $vendor . '&quot;); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration') . '"');
+    $this->openMachineNameEdit('#edit-label');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendor_type_name'],
         'id' => $vendor,
       ], $this->callT('Save'));
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('Role %label has been added.', TRUE, ['%label' => $this->demoInput['vendor_type_name']]));
+      $this->assertRaw((string) $this->callT('Role %label has been added.', TRUE, ['%label' => $this->demoInput['vendor_type_name']]));
     }
 
     // Confirmation message after adding new role.
@@ -1569,13 +1609,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'pass[pass2]' => $password,
         'roles[' . $vendor . ']' => $vendor,
         'notify' => TRUE,
-        'files[user_picture_0]' => $this->assetsDirectory . 'honey_bee.jpg',
+        'files[user_picture_0]' => DRUPAL_ROOT . '/' . $this->assetsDirectory . 'honey_bee.jpg',
       ], $this->callT('Create new account'));
     if ($this->demoInput['first_langcode'] == 'en') {
       // Looking for the whole string requires that we know the URL. So,
       // just look for the two parts separately. This will only work in
       // English.
-      $this->assertRaw($this->callT('A welcome message with further instructions has been emailed to the new user'));
+      $this->assertRaw((string) $this->callT('A welcome message with further instructions has been emailed to the new user'));
       $this->assertRaw($this->demoInput['vendor_2_title']);
     }
 
@@ -1592,7 +1632,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'pass[pass2]' => $password,
         'roles[' . $vendor . ']' => $vendor,
         'notify' => TRUE,
-        'files[user_picture_0]' => $this->assetsDirectory . 'farm.jpg',
+        'files[user_picture_0]' => DRUPAL_ROOT . '/' . $this->assetsDirectory . 'farm.jpg',
       ], $this->callT('Create new account'));
 
 
@@ -1608,7 +1648,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertLink($this->callT('Edit permissions'));
     $this->assertText($this->demoInput['vendor_type_name']);
     $this->drupalGet('admin/people/permissions/' . $vendor);
-    $this->assertRaw($this->callT('Edit role'));
+    $this->assertRaw((string) $this->callT('Edit role'));
     $this->assertText($this->callT('Post comments'));
     $this->assertText($this->callT('Administer blocks'));
     $this->assertText('Contact');
@@ -1624,10 +1664,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText('Use the');
       $this->assertText('Restricted HTML');
       $this->assertText('text format');
-      $this->assertRaw($this->callT('%type_name: Create new content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
-      $this->assertRaw($this->callT('%type_name: Edit own content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
-      $this->assertRaw($this->callT('%type_name: Delete own content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
-      $this->assertRaw($this->callT('%type_name: Edit own content', TRUE, ['%type_name' => $this->demoInput['vendor_type_name']]));
+      $this->assertRaw((string) $this->callT('%type_name: Create new content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
+      $this->assertRaw((string) $this->callT('%type_name: Edit own content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
+      $this->assertRaw((string) $this->callT('%type_name: Delete own content', TRUE, ['%type_name' => $this->demoInput['recipe_type_name']]));
+      $this->assertRaw((string) $this->callT('%type_name: Edit own content', TRUE, ['%type_name' => $this->demoInput['vendor_type_name']]));
     }
 
     $this->drupalPostForm(NULL, [
@@ -1653,7 +1693,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/people');
     $this->assertLink($this->callT('Edit'));
     $this->assertText($this->callT('Name or email contains'));
-    $this->assertRaw($this->callT('Filter'));
+    $this->assertRaw((string) $this->callT('Filter'));
 
     // People page (admin/people), with user 1's Edit button outlined.
     $this->setUpScreenShot('user-roles_people-list.png', 'onLoad="' . $this->addBorder('a[href*=&quot;user/1/edit&quot;]') . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
@@ -1674,9 +1714,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Update two accounts using bulk edit.
     $this->drupalGet('admin/people');
-    $this->assertRaw($this->callT('Action'));
+    $this->assertRaw((string) $this->callT('Action'));
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('Add the @label role to the selected user(s)', TRUE, ['@label' => $this->demoInput['vendor_type_name']]));
+      $this->assertRaw((string) $this->callT('Add the @label role to the selected user(s)', TRUE, ['@label' => $this->demoInput['vendor_type_name']]));
     }
 
     // Bulk editing form on People page (admin/people).
@@ -1687,7 +1727,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'action' => 'user_add_role_action.' . $vendor,
       ], $this->callT('Apply to selected items'));
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('%action was applied to @count items.', TRUE, ['@count' => 2, '%action' => $this->callT('Add the @label role to the selected user(s)', TRUE, ['@label' => $this->demoInput['vendor_type_name']])]));
+      $this->assertRaw((string) $this->callT('%action was applied to @count items.', TRUE, ['@count' => 2, '%action' => $this->callT('Add the @label role to the selected user(s)', TRUE, ['@label' => $this->demoInput['vendor_type_name']])]));
     }
 
     // Confirmation message after bulk user update.
@@ -1700,6 +1740,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Navigation has been tested on other topics.
     $this->drupalGet('node/3/edit');
     $this->assertText($this->callT('Authoring information'));
+    $this->waitForInteraction('css', '#edit-author summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Authored by'));
 
     $this->drupalPostForm(NULL, [
@@ -1722,7 +1764,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Assign second vendor node to the corresponding vendor user, without
     // screenshots.
-    $this->drupalPostForm('node/4/edit', [
+    $this->drupalGet('node/4/edit');
+    $this->waitForInteraction('css', '#edit-author summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->drupalPostForm(NULL, [
         'uid[0][target_id]' => $this->demoInput['vendor_2_title'],
       ], $this->callT('Save'));
   }
@@ -1735,7 +1780,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Some UI tests from the block-concept topic.
     $this->drupalGet('admin/structure/block');
-    $this->assertRaw($this->callT('Block layout'));
+    $this->assertRaw((string) $this->callT('Block layout'));
     $this->drupalGet('admin/structure/block/library/bartik');
     // We should test the "Who's online" block title, but due to the ' being
     // sometimes an entity, this is problematic. So only test in English and
@@ -1760,9 +1805,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalGet('admin/structure/block');
     $this->clickLink($this->callT('Custom block library'));
     $this->clickLink($this->callT('Add custom block'));
-    $this->assertRaw($this->callT('Add custom block'));
+    $this->assertRaw((string) $this->callT('Add custom block'));
     $this->assertText($this->callT('Block description'));
-    $this->assertRaw($this->callT('Body'));
+    $this->assertRaw((string) $this->callT('Body'));
 
     // Now navigate directly to the page, without the destination set.
     // Without the destination set, saving a custom block takes you to the
@@ -1770,17 +1815,17 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // getting to that page involves some kind of obscured URL and is very
     // difficult to manage.
     $this->drupalGet('block/add');
+    $this->fillInBody($this->demoInput['hours_block_body']);
 
     // Block add page (block/add).
     $this->setUpScreenShot('block-create-custom-add-custom-block.png', 'onLoad="jQuery(\'#edit-info-0-value\').val(&quot;' . $this->demoInput['hours_block_description'] . '&quot;);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'info[0][value]' => $this->demoInput['hours_block_description'],
-        'body[0][value]' => $this->demoInput['hours_block_body'],
       ], $this->callT('Save'));
 
     // Topic: block-place - Placing a Block in a Region.
     // Configuration page for placing a custom block in the sidebar.
-    $this->assertRaw($this->callT('Configure block'));
+    $this->assertRaw((string) $this->callT('Configure block'));
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Display title'));
     $this->assertText($this->callT('Region'));
@@ -1788,6 +1833,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(&quot;' . $this->demoInput['hours_block_title'] . '&quot;); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . 'jQuery(\'#edit-region\').val(\'sidebar_second\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
 
     // Place the block in Bartik, sidebar second.
+    $this->waitForInteraction('css', '#edit-settings-label-machine-name-suffix button');
     $this->drupalPostForm(NULL, [
         'settings[label]' => $this->demoInput['hours_block_title'],
         'id' => $this->demoInput['hours_block_title_machine_name'],
@@ -1808,8 +1854,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Sidebar first'));
     $this->assertText($this->callT('Sidebar second'));
     $this->assertText($this->callT('Operations'));
-    $this->assertText($this->callT('Disable'));
-    $this->assertText($this->callT('Remove'));
+    $this->assertRaw((string) $this->callT('Disable'));
+    $this->assertRaw((string) $this->callT('Remove'));
     // The Place block link on this page has some other hidden text in it. So,
     // only test in English.
     if ($this->demoInput['first_langcode'] == 'en') {
@@ -1817,11 +1863,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
 
     $this->drupalGet('admin/structure/block/library/bartik');
-    $this->assertRaw($this->callT('Place block'));
-    $this->assertRaw($this->callT('User login'));
+    $this->assertRaw((string) $this->callT('Place block'));
+    $this->assertRaw((string) $this->callT('User login'));
 
     $this->drupalGet('admin/structure/block/block-content');
-    $this->assertLink($this->callT('Edit'));
+    $this->assertRaw((string) $this->callT('Edit'));
   }
 
   /**
@@ -1853,23 +1899,28 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLink($this->callT('Add view'));
     $this->assertText($this->callT('View name'));
     $this->assertText($this->callT('Show'));
-    $this->assertRaw($this->callT('Content'));
+    $this->assertRaw((string) $this->callT('Content'));
     $this->assertText($this->callT('of type'));
     $this->assertText($this->callT('sorted by'));
     $this->assertText($this->callT('Create a page'));
+    $this->waitForInteraction('css', '#edit-page-create');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Page title'));
     $this->assertText($this->callT('Path'));
     $this->assertText($this->callT('Display format'));
-    $this->assertRaw($this->callT('Table'));
+    $this->assertRaw((string) $this->callT('Table'));
     $this->assertText($this->callT('Items to display'));
     $this->assertText($this->callT('Use a pager'));
     $this->assertText($this->callT('Create a menu link'));
+    $this->waitForInteraction('css', '#edit-page-link');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Menu'));
-    $this->assertRaw($this->callT('Main navigation'));
+    $this->assertRaw((string) $this->callT('Main navigation'));
     $this->assertText($this->callT('Link text'));
 
     // Add view wizard.
     $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:ASC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;);' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
+    $this->openMachineNameEdit('#edit-label');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendors_view_title'],
         'id' => $vendors_view,
@@ -1893,7 +1944,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Create a label'));
     $this->assertText($this->callT('Image style'));
     $this->assertText($this->callT('Link image to'));
-    $this->assertRaw($this->callT('Content'));
+    $this->assertRaw((string) $this->callT('Content'));
     $this->drupalPostForm(NULL, [
         'options[custom_label]' => FALSE,
         'options[settings][image_style]' => 'medium',
@@ -1907,7 +1958,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Add and configure @types', TRUE, ['@types' => $this->callT('fields')]));
     $this->assertText($this->callT('Create a label'));
     $this->assertText($this->callT('Formatter'));
-    $this->assertRaw($this->callT('Summary or trimmed'));
+    $this->assertRaw((string) $this->callT('Summary or trimmed'));
     $this->drupalPostForm(NULL, [
         'options[custom_label]' => FALSE,
         'options[type]' => 'text_summary_or_trimmed',
@@ -1939,7 +1990,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'menu[weight]' => 20,
       ], $this->callT('Apply'));
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('Update preview'));
+      $this->assertRaw((string) $this->callT('Update preview'));
     }
 
     // Save the view.
@@ -1947,8 +1998,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Completed vendors view administration page.
     $this->setUpScreenShot('views-create-view.png', 'onLoad="' . $this->hideArea('#toolbar-administration, #views-preview-wrapper, .messages') . $this->removeScrollbars() . '"');
-    // View the output, with preloaded images.
-    $this->drupalGetWithImagePreload($this->demoInput['vendors_view_path']);
+    // View the output.
+    $this->drupalGet($this->demoInput['vendors_view_path']);
     // Completed vendors view output.
     $this->setUpScreenShot('views-create-view-output.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
@@ -1956,12 +2007,13 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: views-duplicate - Duplicating a View.
     // Duplicate the Vendors view.
     $this->drupalGet('admin/structure/views');
-    $this->assertRaw($this->callT('Duplicate'));
+    $this->assertRaw((string) $this->callT('Duplicate'));
 
     // Views page (admin/structure/views), with operations dropdown
     // for Vendor view open.
     $this->setUpScreenShot('views-duplicate_duplicate.png', 'onLoad="' . 'jQuery(&quot;a[href*=\'views/view/' . $vendors_view . '\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration, .disabled') . 'jQuery(&quot;a[href*=\'views/view/content\'], a[href*=\'views/view/block_content\'], a[href*=\'views/view/files\'], a[href*=\'views/view/frontpage\'], a[href*=\'views/view/user_admin_people\'], a[href*=\'views/view/comments_recent\']&quot;).parents(\'tr\').hide();' . $this->removeScrollbars() . '"');
     $this->clickLinkContainingUrl('views/view/' . $vendors_view . '/duplicate');
+    $this->openMachineNameEdit('#edit-label');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['recipes_view_title'],
         'id' => $recipes_view,
@@ -1973,7 +2025,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Page title.
     $this->assertText($this->callT('Title'));
     $this->clickLinkContainingUrl('page_1/title');
-    $this->assertRaw($this->callT('The title of this view'));
+    $this->assertRaw((string) $this->callT('The title of this view'));
     $this->drupalPostForm(NULL, [
         'title' => $this->demoInput['recipes_view_title'],
       ], $this->callT('Apply'));
@@ -1986,19 +2038,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Grid style.
     $this->assertText($this->callT('Format'));
     $this->clickLinkContainingUrl('page_1/style');
-    $this->assertRaw($this->callT('How should this view be styled'));
-    $this->assertRaw($this->callT('Grid'));
+    $this->assertRaw((string) $this->callT('How should this view be styled'));
+    $this->assertRaw((string) $this->callT('Grid'));
     $this->drupalPostForm(NULL, [
         'style[type]' => 'grid',
       ], $this->callT('Apply'));
-    $this->assertRaw($this->callT('Style options'));
-    $this->drupalPostForm(NULL, [], $this->callT('Apply'));
-    // In a real site, changing to Grid would also change the row style to
-    // Fields, but for some reason this is not working in the test environment.
-    $this->clickLinkContainingUrl('page_1/row');
-    $this->drupalPostForm(NULL, [
-        'row[type]' => 'fields',
-      ], $this->callT('Apply'));
+    $this->assertRaw((string) $this->callT('Style options'));
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
 
     // Remove body field.
@@ -2006,9 +2051,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->drupalPostForm(NULL, [], $this->callT('Remove'));
 
     // Filter on Recipe content type.
-    $this->assertRaw($this->callT('Filter criteria'));
+    $this->assertRaw((string) $this->callT('Filter criteria'));
     $this->clickLinkContainingUrl('page_1/filter/type');
-    $this->assertRaw($this->callT('filter criterion'));
+    $this->assertRaw((string) $this->callT('filter criterion'));
     $this->drupalPostForm(NULL, [
         'options[value][' . $vendor . ']' => FALSE,
         'options[value][' . $recipe . ']' => $recipe,
@@ -2047,7 +2092,10 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Apply'));
 
     // Use Ajax.
-    $this->assertRaw($this->callT('Advanced'));
+    $this->assertRaw((string) $this->callT('Advanced'));
+    // Open up the Advanced section.
+    $this->waitForInteraction('css', '.third summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Other'));
     $this->assertText($this->callT('Use AJAX'));
     $this->clickLinkContainingUrl('page_1/use_ajax');
@@ -2055,10 +2103,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'use_ajax' => 1,
       ], $this->callT('Apply'));
 
-    // Save the view.
+    // Save the view and view the output.
     $this->drupalPostForm(NULL, [], $this->callT('Save'));
-
-    $this->drupalGetWithImagePreload($this->demoInput['recipes_view_path']);
+    $this->drupalGet($this->demoInput['recipes_view_path']);
     // Completed recipes view output.
     $this->setUpScreenShot('views-duplicate_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor() . '"');
 
@@ -2068,25 +2115,21 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Add display button on Recipes view edit page, with Block highlighted
     // (admin/structure/views/view/recipes).
     $this->setUpScreenShot('views-block_add-block.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .region-highlighted, #views-display-extra-actions, #edit-display-settings, #edit-actions, .views-preview-wrapper, #views-preview-wrapper, .dropbutton-wrapper, .messages') . 'jQuery(\'#views-display-menu-tabs li.add ul\').show();' . $this->setWidth('.region-content') . '"');
-    // Note: in the UI that you actually see in practice, the button looks
-    // like a link, and the displayed name is just "Block". But if you look at
-    // the HTML source of the page (before jQuery/Ajax processing), the
-    // button actually says "Add Block" (with that capitalization).
-    // Note that there is a separate translation of 'Add @type' and
-    // 'Add @display'; Views UI uses the latter. In some languages they may
-    // be translated differently.
-    $this->drupalPostForm(NULL, [],
-      $this->callT('Add @display', TRUE, ['@display' => $this->callT('Block')]));
+    // Click the Add > Block button.
+    $this->waitForInteraction('css', '#views-display-menu-tabs li.add a');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-displays-top-add-display-block');
+    $this->assertSession()->assertWaitOnAjaxRequest();
 
     // Update various settings for the block display.
 
     // Display title.
     if ($this->demoInput['first_langcode'] == 'en') {
-      $this->assertRaw($this->callT('Display name'));
+      $this->assertRaw((string) $this->callT('Display name'));
     }
     $this->clickLinkContainingUrl('block_1/display_title');
-    $this->assertRaw($this->callT('The name and the description of this display'));
-    $this->assertRaw($this->callT('Administrative name'));
+    $this->assertRaw((string) $this->callT('The name and the description of this display'));
+    $this->assertRaw((string) $this->callT('Administrative name'));
     $this->drupalPostForm(NULL, [
         'display_title' => $this->demoInput['recipes_view_block_display_name'],
       ], $this->callT('Apply'));
@@ -2095,7 +2138,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->clickLinkContainingUrl('block_1/title');
     // Configuring the block title for this display only.
     $this->setUpScreenShot('views-block_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region-breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-title\').val(&quot;' . $this->demoInput['recipes_view_block_title'] . '&quot;);' . $this->setWidth('.content-header, .layout-container') . '"');
-    $this->assertRaw($this->callT('This @display_type (override)', TRUE, ['@display_type' => 'block']));
+    $this->assertRaw((string) $this->callT('This @display_type (override)', TRUE, ['@display_type' => 'block']));
 
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
@@ -2128,9 +2171,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Remove'));
 
     // Add sort by authored date.
-    $this->assertRaw($this->callT('Sort criteria'));
+    $this->assertRaw((string) $this->callT('Sort criteria'));
     $this->clickLinkContainingUrl('add-handler/' . $recipes_view . '/block_1/sort');
-    $this->assertRaw($this->callT('Authored on'));
+    $this->assertRaw((string) $this->callT('Authored on'));
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'name[node_field_data.created]' => 'node_field_data.created',
@@ -2142,14 +2185,14 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Instead of pager, display 5 recipes.
     $this->assertText($this->callT('Pager'));
-    $this->assertRaw($this->callT('Mini'));
+    $this->assertRaw((string) $this->callT('Mini'));
     $this->clickLinkContainingUrl('block_1/pager');
-    $this->assertRaw($this->callT('Display a specified number of items'));
+    $this->assertRaw((string) $this->callT('Display a specified number of items'));
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'pager[type]' => 'some',
       ], $this->callT('Apply'));
-    $this->assertRaw($this->callT('Pager options'));
+    $this->assertRaw((string) $this->callT('Pager options'));
     $this->assertText($this->callT('Items to display'));
     $this->drupalPostForm(NULL, [
         'pager_options[items_per_page]' => 5,
@@ -2170,7 +2213,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
         'theme' => 'bartik',
         'label' => $this->demoInput['recipes_view_block_title'],
       ]);
-    $this->drupalGetWithImagePreload('<front>');
+    $this->drupalGet('<front>');
     // Home page with recipes sidebar visible.
     $this->setUpScreenShot('views-block_sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars() . '"');
 
@@ -2187,9 +2230,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->verifyTranslations();
 
     // Topic: language-add - Adding a Language.
-    // Due to a Core bug, installing a module corrupts translations. So,
-    // export them first.
-    $this->exportTranslations($this->demoInput['first_langcode']);
 
     // Enable the 4 multilingual modules.
     // For non-English versions, locale and language will already be enabled;
@@ -2234,6 +2274,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       // Also test the navigation text for the next topics.
       $this->assertText($this->callT('Content language and translation'));
     }
+    $this->fixTranslationSettings();
     $this->drupalGet('admin/config/regional/language');
     $this->clickLink($this->callT('Add language'));
     $this->assertText($this->callT('Language name'));
@@ -2248,7 +2289,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     // Place the Language Switcher block in sidebar second (no screenshots).
     $this->drupalGet('admin/structure/block/library/bartik');
-    $this->assertRaw($this->callT('Language switcher'));
+    $this->assertRaw((string) $this->callT('Language switcher'));
     $this->placeBlock('language_block:language_interface', [
         'region' => 'sidebar_second',
         'theme' => 'bartik',
@@ -2267,6 +2308,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
 
     $recipes_view = $this->demoInput['recipes_view_machine_name'];
     $ingredients = $this->demoInput['recipe_field_ingredients_machine_name'];
+    $ingredients_hyphens = str_replace('_', '-', $ingredients);
 
     // Topic: language-content-config - Configuring Content Translation
     // Set up content translation for Basic page nodes, Custom blocks, and
@@ -2277,11 +2319,22 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Content'));
     $this->assertText($this->callT('Custom block'));
     $this->assertText($this->callT('Custom menu link'));
+    $this->waitForInteraction('css', '#edit-entity-types-node');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-entity-types-block-content');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-entity-types-menu-link-content');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Basic page'));
     $this->assertText($this->callT('Basic block'));
-    $this->assertText($this->callT('Custom menu link'));
     $this->assertText($this->callT('Default language'));
     $this->assertText($this->callT('Show language selector on create and edit pages'));
+    $this->waitForInteraction('css', '#edit-settings-node-page-translatable');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-settings-block-content-basic-translatable');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-settings-menu-link-content-menu-link-content-translatable');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Title'));
     $this->assertText($this->callT('Authored by'));
     $this->assertText($this->callT('Published'));
@@ -2353,9 +2406,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Body'));
     $this->assertText($this->callT('URL alias'));
 
+    $this->fillInBody($this->demoInput['home_body_translated']);
     $this->drupalPostForm(NULL, [
         'title[0][value]' => $this->demoInput['home_title_translated'],
-        'body[0][value]' => $this->demoInput['home_body_translated'],
         'path[0][alias]' => $this->demoInput['home_path_translated'],
         // This looks strange, but that is how the button text is translated.
       ], $this->callT('Save') . ' ' . $this->callT('(this translation)'));
@@ -2374,8 +2427,29 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->assertText($this->callT('Displays'));
     if ($this->demoInput['first_langcode'] == 'en') {
       // String had trouble in French due to accents/quotes.
-      $this->assertText($this->callT('Display settings'));
+      $this->assertText('Display settings');
     }
+
+    // Open up a bunch of the fieldsets.
+    $this->waitForInteraction('css', '#edit-default summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-display-options summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-exposed-form summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-options summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-filters summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-field-' . $ingredients_hyphens . '-target-id summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-expose--3 summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+
+    $this->waitForInteraction('css', '#edit-block-1 summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-page-1 summary');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->assertText($this->callT('Display title'));
     $this->assertText($this->callT('Exposed form'));
     $this->assertText($this->callT('Reset'));
@@ -2404,40 +2478,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->verifyTranslations(FALSE);
 
     $vendors_view = $this->demoInput['vendors_view_machine_name'];
-
-    // Topic: extend-module-find - Finding Modules
-
-    // English-only screenshots.
-    if ($this->demoInput['first_langcode'] == 'en') {
-      // Test navigation and search page.
-      $this->drupalGet('https://www.drupal.org');
-      $this->assertLink('Download & Extend');
-      // clickLink doesn't work on external sites!
-      $this->drupalGet('https://www.drupal.org/download');
-      $this->assertLink('Modules');
-      $this->drupalGet('https://www.drupal.org/project/project_module');
-      $this->assertText('Maintenance status');
-      $this->assertText('Development status');
-      $this->assertText('Module categories');
-      $this->assertText('Core compatibility');
-      $this->assertText('Status');
-      $this->assertText('Search modules');
-      $this->assertText('Sort by');
-
-      // drupal.org screenshots for extend-module are in the doPrefaceInstall()
-      // method.
-
-      // Test project page.
-      $this->drupalGet('https://www.drupal.org/project/admin_toolbar');
-      $this->assertText('downloads');
-      $this->assertText('sites report using this module');
-      $this->assertText('Maintainers');
-      $this->assertText('Issues');
-      $this->assertText('Statistics');
-      $this->assertText('Documentation');
-      $this->assertText('Resources');
-      $this->assertText('tar.gz');
-    }
 
     // Topic: extend-maintenance: Enabling and Disabling Maintenance Mode.
     $this->drupalGet('<front>');
@@ -2476,59 +2516,32 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('extend-maintenance-mode-disabled.png', 'onLoad="' . $this->replaceSiteName() . $this->removeScrollbars() . '"');
     $this->drupalLogin($this->rootUser);
 
+    // Topic: extend-module-find - Finding Modules. Manual screenshots only.
+
     // Topic: extend-module-install - Downloading and Installing a Module from
-    // drupal.org. drupal.org screenshots are in the doPrefaceInstall() method.
+    // drupal.org.
 
     // Test navigation to install page.
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Extend'));
     $this->clickLink($this->callT('Install new module'));
     $this->assertText($this->callT('Install from a URL'));
-    $this->assertRaw($this->callT('Install'));
+    $this->assertRaw((string) $this->callT('Install'));
 
     // Install new module page (admin/modules/install).
     $this->setUpScreenShot('extend-module-install-admin-toolbar-do.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
 
-    // Topic: extend-theme-find - Finding Themes. drupal.org screenshots are
-    // in the doPrefaceInstall() method.
-
-    if ($this->demoInput['first_langcode'] == 'en') {
-      // Test navigation and search page.
-      $this->drupalGet('https://www.drupal.org');
-      $this->assertLink('Download & Extend');
-      // clickLink doesn't work on external sites!
-      $this->drupalGet('https://www.drupal.org/download');
-      $this->assertLink('Themes');
-      $this->drupalGet('https://www.drupal.org/project/project_theme');
-      $this->assertText('Maintenance status');
-      $this->assertText('Development status');
-      $this->assertText('Core compatibility');
-      $this->assertText('Status');
-      $this->assertText('Search themes');
-      $this->assertText('Sort by');
-
-      // Test project page
-      $this->drupalGet('https://www.drupal.org/project/mayo');
-      $this->assertText('Downloads');
-      $this->assertText('Project information');
-      $this->assertText('sites report using this theme');
-      $this->assertText('downloads');
-      $this->assertText('Issues');
-      $this->assertText('Resources');
-      $this->assertText('Documentation');
-      $this->assertText('tar.gz');
-    }
+    // Topic: extend-theme-find - Finding Themes. Manual screenshots only.
 
     // Topic: extend-theme-install - Downloading and Installing a Theme from
-    // drupal.org. Screenshot from drupal.org is in the doPrefaceInstall()
-    // method.
+    // drupal.org.
 
     // Test navigation to install page.
     $this->drupalGet('<front>');
     $this->clickLink($this->callT('Appearance'));
     $this->clickLink($this->callT('Install new theme'));
     $this->assertText($this->callT('Install from a URL'));
-    $this->assertRaw($this->callT('Install'));
+    $this->assertRaw((string) $this->callT('Install'));
 
     $this->drupalGet('admin/theme/install');
     // Install new theme page (admin/theme/install).
@@ -2546,8 +2559,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
 
     // Topic: extend-manual-install - Manually Downloading Module or Theme
-    // Files. Screenshot from drupal.org is in the doPrefaceInstall()
-    // method.
+    // Files. Manual screenshots only.
 
     // Topic: extend-deploy - Deploying New Site Features.
 
@@ -2611,7 +2623,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       $this->assertText($this->callT('Performance'));
     }
     $this->drupalGet('admin/config/development/performance');
-    $this->assertRaw($this->callT('Clear all caches'));
+    $this->assertRaw((string) $this->callT('Clear all caches'));
 
     // Topic: prevent-log - Concept: Log.
     // Test navigation for this and the next few topics.
@@ -2634,9 +2646,8 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Topic: prevent-status - Concept: Status Report.
 
     $this->drupalGet('admin/reports/status');
-    $this->useExampleHome();
     // Status report (admin/reports/status).
-    $this->setUpScreenShot('prevent-status.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('prevent-status.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"', TRUE);
   }
 
   /**
@@ -2670,20 +2681,12 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     }
     $this->drupalGet('admin/config/system/cron');
     $this->assertText($this->callT('Cron settings'));
-    $this->assertRaw($this->callT('Save configuration'));
+    $this->assertRaw((string) $this->callT('Save configuration'));
 
-    $this->useExampleHome();
     // Cron configuration page (admin/config/system/cron).
-    $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"', TRUE);
 
-    // Topic: security-update-module - Updating a Module. Screenshots from
-    // drupal.org are in the doPrefaceInstall() method.
-
-    // Due to a Core bug, installing a module corrupts translations. So,
-    // export them first. Note that this could cause problems if one of the
-    // two languages here is not English! But normally one is English.
-    $this->exportTranslations($this->demoInput['first_langcode']);
-    $this->exportTranslations($this->demoInput['second_langcode']);
+    // Topic: security-update-module - Updating a Module.
 
     // Install an old version of the Admin Toolbar module, and visit the
     // Updates page.
@@ -2692,7 +2695,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
       ], $this->callT('Install'));
 
     // Due to a core bug, installing a module corrupts translations. So,
-    // import the saved translations.
+    // import translations again.
     $this->importTranslations($this->demoInput['first_langcode']);
     $this->importTranslations($this->demoInput['second_langcode']);
     $this->verifyTranslations();
@@ -2712,7 +2715,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // This link text is in an earlier topic on security notifications.
     $this->assertLink($this->callT('Settings'));
     $this->clickLink($this->callT('Update'));
-    $this->assertRaw($this->callT('Download these updates'));
+    $this->assertRaw((string) $this->callT('Download these updates'));
 
     $this->drupalGet('admin/reports/updates/update');
     // Update page for module (admin/reports/updates/update).
@@ -2796,9 +2799,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    *   'onLoad="window.scroll(0,500);"'. This code should blank out irrelevant
    *   portions of the page, so that the ImageMagick capture script can trim
    *   the image automatically down to the right size.
-   * @param bool $fix_drupal_org
-   *   (optional) If set to TRUE, do an additional search/replace to fix
-   *   screenshots of drupal.org pages.
+   * @param bool $replace_url
+   *   (optional) If set to TRUE, replace the front URL with example.com
+   *   wherever it appears in the page. Defaults to FALSE.
    *
    * @see UserGuideDemoTestBase::showOnly()
    * @see UserGuideDemoTestBase::hideArea()
@@ -2808,26 +2811,18 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    * @see UserGuideDemoTestBase::reloadOnce()
    * @see UserGuideDemoTestBase::addBorder()
    */
-  protected function setUpScreenShot($file, $body_addition = '', $fix_drupal_org = FALSE) {
-    $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getRawContent());
-    if ($fix_drupal_org) {
-      // Drupal is putting out a bunch of relative URLs for CSS and images,
-      // which do not work well in screenshots. Fix them.
-      $output = str_replace('"//', '"https://', $output);
-      $output = preg_replace('|"/(?=\w+)|', '"https://www.drupal.org/', $output);
-      $output = preg_replace("|'/(?=\w+)|", "'https://www.drupal.org/", $output);
+  protected function setUpScreenShot($file, $body_addition = '', $replace_url = FALSE) {
+    $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getSession()->getPage()->getContent());
+    if ($replace_url) {
+      $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
+      $output = str_replace($front_url, 'http://example.com/', $output);
     }
+    $basename = basename($file, '.png');
+    $screenshot_filename =  $basename . '.html';
+    $url = $this->screenshotsDirectoryUrl . '/' . $screenshot_filename;
 
-    // This is like TestBase::verbose() but just the bare HTML output, and
-    // with a separate file counter so it doesn't interfere.
-    $screenshot_filename =  $this->verboseClassName . '-screenshot-' . $this->screenshotId . '-' . $this->testId . '.html';
-    if (file_put_contents($this->verboseDirectory . '/' . $screenshot_filename, $output)) {
-      $url = $this->verboseDirectoryUrl . '/' . $screenshot_filename;
-      $link = '<a href="' . $url . '" target="_blank">Screen shot output</a>';
-      $this->error($link, 'User notice');
-    }
-    $this->screenshotId++;
-    $this->pass('SCREENSHOT: ' . $file . ' ' . $url);
+    file_put_contents($this->screenshotsDirectory . '/' . $screenshot_filename, $output);
+    $this->logTestMessage('SCREENSHOT: ' . $file . ' ' . $url . "\n");
   }
 
   /**
@@ -2994,8 +2989,9 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
    */
   protected function prepareSettings() {
     parent::prepareSettings();
+    $this->initBrowserOutputFile();
 
-    $this->publicFilesDirectory = $this->verboseDirectory . '/' . $this->databasePrefix;
+    $this->publicFilesDirectory = 'sites/simpletest/browser_output/' . $this->databasePrefix . '/public_files' ;
     $settings['settings']['file_public_path'] = (object) [
       'value' => $this->publicFilesDirectory,
       'required' => TRUE,
@@ -3010,28 +3006,11 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   protected function clickLinkContainingUrl($url, $index = 0) {
     $urls = $this->xpath('//a[contains(@href, :url)]', [':url' => $url]);
     if (isset($urls[$index])) {
-      $url_target = $this->getAbsoluteUrl($urls[$index]['href']);
+      $url_target = $this->getAbsoluteUrl($urls[$index]->getAttribute('href'));
       $this->drupalGet($url_target);
     }
     else {
       $this->fail('Could not find link matching ' . $url);
-    }
-  }
-
-  /**
-   * Finds and preloads all images on the given path, and the the page itself.
-   *
-   * This is primarily useful if you have image styles in force on the page.
-   */
-  protected function drupalGetWithImagePreload($path) {
-    $this->drupalGet($path);
-    $imgs = $this->xpath('//img');
-    foreach ($imgs as $img) {
-      $source = $this->getAbsoluteUrl($img['src']);
-      // Load the image.
-      $this->drupalGet($source);
-      // Reload the main page again so that getAbsoluteUrl() works right.
-      $this->drupalGet($path);
     }
   }
 
@@ -3050,7 +3029,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $db_manager->backup('database1', 'directory1');
     $file_manager = $this->backupFileManager($directory);
     $file_manager->backup('public1', 'directory1');
-    $this->pass('BACKUP MADE TO: ' . $directory);
+    $this->logTestMessage('BACKUP MADE TO: ' . $directory . "\n");
   }
 
   /**
@@ -3072,7 +3051,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $db_manager->restore('database1', 'directory1', 'database.mysql.gz');
     $file_manager = $this->backupFileManager($directory);
     $file_manager->restore('public1', 'directory1', 'public_files.tar.gz');
-    $this->pass('BACKUP RESTORED FROM: ' . $directory);
+    $this->logTestMessage('BACKUP RESTORED FROM: ' . $directory . "\n");
 
     // Fix the configuration for temp files directory.
     \Drupal::configFactory()->getEditable('system.file')
@@ -3105,7 +3084,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     // Figure out which tables to exclude: anything lacking the current
     // test prefix. Also do not save data for any table containing 'cache_'.
     $db_info = Database::getConnectionInfo()['default'];
-    $prefix = $this->getDatabasePrefix();
+    $prefix = $this->databasePrefix;
     $exclude = [];
     $no_data = [];
     $all_tables = Database::getConnection()->query('SHOW TABLES')->fetchCol();
@@ -3144,7 +3123,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $manager = new BackupMigrate();
     $manager->services()->add('ArchiveReader', new TarArchiveReader());
     $manager->services()->add('ArchiveWriter', new TarArchiveWriter());
-    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->getTempFilesDirectory()));
+    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->tempFilesDirectory));
     $manager->services()->add('TempFileManager', new TempFileManager($manager->services()->get('TempFileAdapter')));
 
     $db_source = new MySQLiSource();
@@ -3205,7 +3184,7 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $manager = new BackupMigrate();
     $manager->services()->add('ArchiveReader', new TarArchiveReader());
     $manager->services()->add('ArchiveWriter', new TarArchiveWriter());
-    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->getTempFilesDirectory()));
+    $manager->services()->add('TempFileAdapter', new TempFileAdapter($this->tempFilesDirectory));
     $manager->services()->add('TempFileManager', new TempFileManager($manager->services()->get('TempFileAdapter')));
 
     $manager->services()->addClient($files_source);
@@ -3223,14 +3202,6 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $manager->plugins()->setConfig($config);
 
     return $manager;
-  }
-
-  /**
-   * Replaces the front URL with example.com in the current page.
-   */
-  protected function useExampleHome() {
-    $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
-    $this->content = str_replace($front_url, 'http://example.com/', $this->content);
   }
 
   /**
@@ -3252,88 +3223,49 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
   }
 
   /**
-   * Exports the translations for a language to a temporary file.
-   *
-   * @param string $langcode
-   *   Language code to export the translations for.
-   *
-   * @see UserGuideDemoTestBase::importTranslations()
-   * @see https://www.drupal.org/project/drupal/issues/2806009
-   */
-  protected function exportTranslations($langcode) {
-    if ($langcode != 'en') {
-      $this->fixTranslationSettings();
-      $this->drupalPostForm('admin/config/regional/translate/export', [
-          'langcode' => $langcode,
-          'content_options[not_customized]' => 1,
-          'content_options[customized]' => 1,
-          'content_options[not_translated]' => 0,
-        ], $this->callT('Export'));
-      $filename = \Drupal::config('locale.settings')->get('translation.path') . '/' . $langcode . '_' . $this->randomMachineName() . '.po';
-      file_put_contents($filename, $this->getRawContent());
-      $this->pass('TRANSLATIONS SAVED TO: ' . $filename);
-    }
-  }
-
-  /**
    * Imports translations from all existing .po files in translation directory.
+   *
+   * Translations are read from the
+   * auto_screenshots/translations/LANGCODE directory.
    *
    * @param string $langcode
    *   Language code to import the translations for. Skips if it is English.
-   * @param bool $read_initial
-   *   If TRUE (FALSE is the default), also read the initial translation files
-   *   from the auto_screenshots/translations/LANGCODE directory.
-   *
-   * @see UserGuideDemoTestBase::exportTranslations()
+   * @param bool $is_initial
+   *   If TRUE (FALSE is the default), this is the initial import, and we need
+   *   to refresh configuration (even for English).
+    *
    * @see https://www.drupal.org/project/drupal/issues/2806009
    */
-  protected function importTranslations($langcode, $read_initial = FALSE) {
+  protected function importTranslations($langcode, $is_initial = FALSE) {
     if ($langcode != 'en') {
       $this->fixTranslationSettings();
 
-      // Find any translation files in the translation directory, which could
-      // have come from a batch import that didn't really finish, or from the
-      // exportTranslations() method, and import them, deleting after import so
-      // that they don't get imported again later.
-
-      $directory = \Drupal::config('locale.settings')->get('translation.path');
-      $this->pass('CHECKING FOR TRANSLATION EXPORTS IN: ' . $directory);
+      // Find all the translation files to import.
       $pattern = '|[a-zA-Z0-9_\-\.]+\.po$|';
       $options = ['recurse' => FALSE];
-      $result = file_scan_directory($directory, $pattern, $options);
-      if ($read_initial) {
-        $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/translations/' . $langcode);
-        if (is_dir($directory)) {
-          $this->pass('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory);
-          $result = array_merge($result, file_scan_directory($directory, $pattern, $options));
-        }
+      $result = [];
+      $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/translations/' . $langcode);
+      if (is_dir($directory)) {
+        $this->logTestMessage('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory . "\n");
+        $result = file_scan_directory($directory, $pattern, $options);
       }
 
-      $backup_write_dir = '/tmp/screenshots_backups/' . $this->getDatabasePrefix();
+      $backup_write_dir = '/tmp/screenshots_backups/' . $this->databasePrefix;
       $this->ensureDirectoryWriteable($backup_write_dir, 'backup');
       foreach ($result as $file) {
         $file->langcode = $langcode;
         $this->readPoFile($file->uri, $langcode);
-        $this->pass('TRANSLATIONS READ FROM: ' . $file->uri);
-        $new_name = file_unmanaged_move($file->uri, $backup_write_dir, FILE_EXISTS_RENAME);
-        if ($new_name) {
-          $this->pass('TRANSLATION FILE COPIED TO: ' . $new_name);
-        }
-        else {
-          $this->fail('Could not copy translation file to ' . $backup_write_dir);
-          unlink($directory . '/' . $file->filename);
-          $this->drupalGet('admin/reports/dblog');
-        }
+        $this->logTestMessage('TRANSLATIONS READ FROM: ' . $file->uri . "\n");
       }
     }
 
-    if ($read_initial) {
+    if ($is_initial) {
       // Emulate the batch that we turned off in the screenshot_alters module,
       // that was coming from locale_form_language_admin_add_form_alter() and
       // should run whenever a new language is added (even English).
       $locale_config = \Drupal::service('locale.config_manager');
-      $names = $locale_config()->getComponentNames([]);
-      $locale_config()->updateConfigTranslations($names, [$langcode]);
+      $names = $locale_config->getComponentNames([]);
+      $locale_config->updateConfigTranslations($names, [$langcode]);
     }
     $this->flushAll();
 
@@ -3498,6 +3430,177 @@ abstract class UserGuideDemoTestBase extends WebTestBase {
     $this->container->get('router.builder')->rebuild();
     drupal_flush_all_caches();
     $this->refreshVariables();
+  }
+
+  /**
+   * Temporary override of assertText().
+   *
+   * The one in AssertLegacyTest doesn't work in WebDriverTestBase.
+   */
+  protected function assertText($text) {
+    $this->assertSession()->pageTextContains($text);
+  }
+
+  /**
+   * Waits for a UI element to be present and ready to interact.
+   *
+   * The desired interaction is also performed. If it doesn't work out, the
+   * method generates a test assertion fail.
+   *
+   * @param string $type
+   *   Type of selector: 'css' or 'xpath'.
+   * @param string $selector
+   *   Selector for element to wait for.
+   * @param string $interaction
+   *   The interaction to check for and perform. One of:
+   *   - 'click' (default)
+   *   - 'focus'
+   *   - 'none': Just wait for the element to be visible.
+   */
+  protected function waitForInteraction($type, $selector, $interaction = 'click') {
+    $page = $this->getSession()->getPage();
+    $reason = '';
+    $result = $page->waitFor(10,
+      function() use ($type, $selector, $page, $interaction, &$reason) {
+        $item = $page->find($type, $selector);
+        if (!$item) {
+          $reason = "$type $selector not found on page";
+          return FALSE;
+        }
+        try {
+          switch ($interaction) {
+            case 'click':
+              $item->click();
+              return TRUE;
+            case 'focus':
+              $item->focus();
+              return TRUE;
+            case 'none':
+              return TRUE;
+          }
+        }
+        catch (UnknownError $exception) {
+          if (strstr($exception->getMessage(), 'not clickable') === FALSE &&
+            strstr($exception->getMessage(), 'not interactable') === FALSE) {
+            // Rethrow any unexpected exception.
+            throw $exception;
+          }
+          $reason = "$type $selector found but not ready\n" .
+            $exception->getmessage();
+          return FALSE;
+        }
+      });
+
+    if (!$result) {
+      $this->fail($reason);
+    }
+  }
+
+  /**
+   * Fills in the body in a CKEditor field.
+   *
+   * @param string $text
+   *   Text to put in the body in the CKEditor field.
+   * @param string $prefix
+   *   (optional) CSS selector prefix for the body field to fill in.
+   */
+  protected function fillInBody($text, $prefix = '#edit-body-wrapper') {
+    $this->waitForInteraction('css', $prefix . ' .cke_button__source');
+    $this->waitForInteraction('css', $prefix . ' .cke_contents textarea', 'focus');
+    $this->getSession()->getPage()
+      ->find('css', $prefix . ' .cke_contents textarea')
+      ->setValue($text);
+    $this->getSession()->getPage()
+      ->find('css', $prefix . ' .cke_button__source')->click();
+  }
+
+  /**
+   * Fills in the summary in a CKEditor field.
+   *
+   * @param string $text
+   *   Text to put in the summary in the CKEditor field.
+   * @param string $prefix
+   *   (optional) CSS selector prefix for the body field to fill in the summary
+   *   for.
+   */
+  protected function fillInSummary($text, $prefix = '#edit-body-wrapper') {
+    $this->waitForInteraction('css', $prefix . ' label .field-edit-link button');
+    $this->getSession()->getPage()
+      ->find('css', $prefix . ' .text-summary-wrapper textarea')
+      ->setValue($text);
+  }
+
+  /**
+   * Scrolls the window to the top, to avoid test weirdness.
+   */
+  protected function scrollWindowUp() {
+    $this->getSession()->getDriver()->executeScript('window.scroll(0,0);');
+  }
+
+  /**
+   * Opens up the machine name edit area on a page.
+   *
+   * @param string $name_selector
+   *   (optional) CSS selector for the human-readable name field. Defaults to
+   *   '#edit-name'.
+   */
+  protected function openMachineNameEdit($name_selector = '#edit-name') {
+    $this->getSession()->getDriver()->executeScript("window.scroll(0,0); jQuery('" . $name_selector . "').val('foo'); jQuery('.field-suffix').show(); jQuery('" . $name_selector . "-machine-name-suffix').show();");
+    $this->waitForInteraction('css', $name_selector . '-machine-name-suffix button');
+  }
+
+  /**
+   * Sets up an add field page that you are on for a new field edit.
+   *
+   * @param string $type
+   *   Type of field to add.
+   */
+  protected function setUpAddNewField($type) {
+    $this->getSession()->getPage()
+      ->find('css', '#edit-new-storage-type')
+      ->selectOption($type);
+    $this->getSession()->getDriver()
+      ->executeScript("jQuery('#edit-new-storage-wrapper').show();");
+    $this->openMachineNameEdit('#edit-label');
+  }
+
+  /**
+   * Sets up an add field page that you are on for an existing field edit.
+   *
+   * @param string $name
+   *   Name of existing field to add.
+   */
+  protected function setUpAddExistingField($name) {
+    $this->getSession()->getPage()
+      ->find('css', '#edit-existing-storage-name')
+      ->selectOption($name);
+    $this->getSession()->getDriver()
+      ->executeScript("jQuery('.form-item-existing-storage-label').show();");
+  }
+
+  /**
+   * Overrides drupalPostForm so that it always scrolls the window up first.
+   */
+  protected function drupalPostForm($path, $edit, $submit, array $options = [], $form_html_id = NULL) {
+    $this->scrollWindowUp();
+    parent::drupalPostForm($path, $edit, $submit, $options, $form_html_id);
+  }
+
+  /**
+   * Logs a message to the test log file.
+   *
+   * @param string $message
+   *   Message to log.
+   */
+  protected function logTestMessage($message) {
+    file_put_contents($this->htmlOutputFile, $message, FILE_APPEND);
+  }
+
+  /**
+   * Debug: stops the test with the site open.
+   */
+  protected function stopTheTestForDebug() {
+    $this->assertSession()->waitForElementVisible('css', '.test-wait', 100000000000000000000);
   }
 
 }

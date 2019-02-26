@@ -20,3 +20,10 @@ function screenshot_alters_form_language_admin_add_form_alter(&$form, FormStateI
     $form['predefined_submit']['#submit'],
     ['locale_form_language_admin_add_form_alter_submit']);
 }
+
+/**
+ * Adds the CSS library to turn off transitions for random test fails.
+ */
+function screenshot_alters_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'screenshot_alters/screenshot_disable_transitions';
+}
