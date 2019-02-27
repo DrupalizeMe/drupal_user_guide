@@ -1600,13 +1600,13 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('Administrator'));
 
     // Roles page (admin/people/roles).
-    $this->setUpScreenShot('user-new-role-roles-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header', 630) . $this->setWidth('.layout-container', 600) . '"');
+    $this->makeScreenShot('user-new-role-roles-page.png', $this->hideArea('#toolbar-administration') . $this->setWidth('header', 630) . $this->setWidth('.layout-container', 600) . $this->removeScrollbars());
 
     $this->clickLink($this->callT('Add role'));
     $this->assertText($this->callT('Role name'));
 
     // Add role page (admin/people/roles/add).
-    $this->setUpScreenShot('user-new-role-add-role.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendor_type_name'] . '&quot;); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(&quot;' . $vendor . '&quot;); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration') . '"');
+    $this->makeScreenShot('user-new-role-add-role.png', 'jQuery(\'#edit-label\').val("' . $this->demoInput['vendor_type_name'] . '"); jQuery(\'.form-item-label .field-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html("' . $vendor . '"); ' . $this->setWidth('.layout-container, header') . $this->hideArea('#toolbar-administration'));
     $this->openMachineNameEdit('#edit-label');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendor_type_name'],
@@ -1617,7 +1617,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     }
 
     // Confirmation message after adding new role.
-    $this->setUpScreenShot('user-new-role-confirm.png', 'onLoad="' . $this->showOnly('.messages') . $this->setWidth('.messages', 500) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('user-new-role-confirm.png', $this->showOnly('.messages') . $this->setWidth('.messages', 500) . $this->setBodyColor() . $this->removeScrollbars());
 
 
     // Topic: user-new-user - Creating a User Account.
@@ -1636,7 +1636,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('Contact settings'));
 
     // Add new user form (/admin/people/create).
-    $this->setUpScreenShot('user-new-user_form.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('header', 830) . $this->setWidth('.layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('user-new-user_form.png', $this->hideArea('#toolbar-administration') . $this->setWidth('header', 830) . $this->setWidth('.layout-container', 800) . $this->removeScrollbars());
     $password = $this->randomString();
     $this->drupalPostForm(NULL, [
         'mail' => $this->demoInput['vendor_2_email'],
@@ -1656,7 +1656,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     }
 
     // Confirmation message after adding new user.
-    $this->setUpScreenShot('user-new-user-created.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 800) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('user-new-user-created.png', $this->showOnly('.messages--status') . $this->setWidth('.messages', 800) . $this->setBodyColor() . $this->removeScrollbars());
 
     // Create a second user account for Happy Farms, no screenshots.
     $this->drupalGet('admin/people/create');
@@ -1718,9 +1718,11 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('The changes have been saved.'));
 
     // Confirmation message after updating permissions.
-    $this->setUpScreenShot('user-permissions-save-permissions.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 400) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('user-permissions-save-permissions.png', $this->showOnly('.messages--status') . $this->setWidth('.messages', 400) . $this->setBodyColor() . $this->removeScrollbars());
+
+    $this->drupalGet('admin/people/permissions/' . $vendor);
     // Permissions page for Vendor (admin/people/permissions/vendor).
-    $this->setUpScreenShot('user-permissions-check-permissions.png', 'onLoad="window.scroll(0,3200);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container, table.sticky-header', 800) . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->makeScreenShot('user-permissions-check-permissions.png', 'window.scroll(0,3200);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.layout-container, table.sticky-header', 800) . $this->removeScrollbars() . $this->setBodyColor());
 
 
     // Topic: user-roles - Changing a User's Roles.
@@ -1732,21 +1734,24 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertRaw((string) $this->callT('Filter'));
 
     // People page (admin/people), with user 1's Edit button outlined.
-    $this->setUpScreenShot('user-roles_people-list.png', 'onLoad="' . $this->addBorder('a[href*=&quot;user/1/edit&quot;]') . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('user-roles_people-list.png', $this->addBorder('a[href*="user/1/edit"]') . $this->hideArea('#toolbar-administration') . $this->removeScrollbars());
 
     $this->drupalGet('user/1/edit');
     $this->assertText($this->callT('Roles'));
     $this->assertText($this->callT('Administrator'));
 
     // Roles area on user editing page.
-    $this->setUpScreenShot('user-roles_person-edit.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('#edit-roles--wrapper') . 'jQuery(\'#edit-roles-administrator\').attr(\'checked\', 1);' . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->makeScreenShot('user-roles_person-edit.png', 'window.scroll(0,6000);' . $this->showOnly('#edit-roles--wrapper') . 'jQuery(\'#edit-roles-administrator\').attr(\'checked\', 1);' . $this->removeScrollbars() . $this->setBodyColor());
+
+    // Reload the page and submit form.
+    $this->drupalGet('user/1/edit');
     $this->drupalPostForm(NULL, [
         'roles[administrator]' => 1,
       ], $this->callT('Save'));
     $this->assertText($this->callT('The changes have been saved.'));
 
     // Confirmation message after updating user.
-    $this->setUpScreenShot('user-roles_message.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 500) . $this->setBodyColor() . '"');
+    $this->makeScreenShot('user-roles_message.png', $this->showOnly('.messages--status') . $this->setWidth('.messages', 500) . $this->setBodyColor());
 
     // Update two accounts using bulk edit.
     $this->drupalGet('admin/people');
@@ -1756,7 +1761,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     }
 
     // Bulk editing form on People page (admin/people).
-    $this->setUpScreenShot('user-roles_bulk.png', 'onLoad="' . $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .view-filters') . 'jQuery(\'#edit-user-bulk-form-0, #edit-user-bulk-form-1\').attr(\'checked\', 1).parents(\'tr\').addClass(\'selected\');' . 'jQuery(\'#edit-action\').val(\'user_add_role_action.' . $vendor . '\');' . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->makeScreenShot('user-roles_bulk.png', $this->hideArea('#toolbar-administration, header, .region-breadcrumb, #block-seven-local-actions, .view-filters') . 'jQuery(\'#edit-user-bulk-form-0, #edit-user-bulk-form-1\').attr(\'checked\', 1).parents(\'tr\').addClass(\'selected\');' . 'jQuery(\'#edit-action\').val(\'user_add_role_action.' . $vendor . '\');' . $this->removeScrollbars() . $this->setBodyColor());
+
+    $this->drupalGet('admin/people');
     $this->drupalPostForm(NULL, [
         'user_bulk_form[0]' => 1,
         'user_bulk_form[1]' => 1,
@@ -1767,7 +1774,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     }
 
     // Confirmation message after bulk user update.
-    $this->setUpScreenShot('user-roles_message_bulk.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . '"');
+    $this->makeScreenShot('user-roles_message_bulk.png', $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor());
 
 
     // Topic: user-content - Assigning Authors to Content.
@@ -1792,11 +1799,11 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     }
 
     // Confirmation message after content update.
-    $this->setUpScreenShot('user-content_updated.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('user-content_updated.png', $this->showOnly('.messages--status') . $this->setWidth('.messages') . $this->setBodyColor() . $this->removeScrollbars());
     // Go back and take the screenshot of the authoring information.
     $this->drupalGet('node/3/edit');
     // Authoring information section of content edit page.
-    $this->setUpScreenShot('user-content.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .layout-region-node-main, .layout-region-node-footer') . $this->setBodyColor() . 'jQuery(\'#edit-author\').attr(\'open\', \'open\'); ' . 'jQuery(\'#edit-path-0\').removeAttr(\'open\'); ' . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('user-content.png', $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, .layout-region-node-main, .layout-region-node-footer') . $this->setBodyColor() . 'jQuery(\'#edit-author\').attr(\'open\', \'open\'); ' . 'jQuery(\'#edit-path-0\').removeAttr(\'open\'); ' . $this->removeScrollbars());
 
     // Assign second vendor node to the corresponding vendor user, without
     // screenshots.
@@ -1854,7 +1861,8 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->fillInBody($this->demoInput['hours_block_body']);
 
     // Block add page (block/add).
-    $this->setUpScreenShot('block-create-custom-add-custom-block.png', 'onLoad="jQuery(\'#edit-info-0-value\').val(&quot;' . $this->demoInput['hours_block_description'] . '&quot;);' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('block-create-custom-add-custom-block.png', 'jQuery(\'#edit-info-0-value\').val("' . $this->demoInput['hours_block_description'] . '");' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars());
+
     $this->drupalPostForm(NULL, [
         'info[0][value]' => $this->demoInput['hours_block_description'],
       ], $this->callT('Save'));
@@ -1866,7 +1874,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('Display title'));
     $this->assertText($this->callT('Region'));
 
-    $this->setUpScreenShot('block-place-configure-block.png', 'onLoad="jQuery(\'#edit-settings-label\').val(&quot;' . $this->demoInput['hours_block_title'] . '&quot;); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . 'jQuery(\'#edit-region\').val(\'sidebar_second\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('block-place-configure-block.png', 'jQuery(\'#edit-settings-label\').val("' . $this->demoInput['hours_block_title'] . '"); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['hours_block_title_machine_name'] . '\');' . 'jQuery(\'#edit-region\').val(\'sidebar_second\');' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars());
 
     // Place the block in Bartik, sidebar second.
     $this->waitForInteraction('css', '#edit-settings-label-machine-name-suffix button');
@@ -1877,7 +1885,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       ], $this->callT('Save block'));
     $this->drupalGet('node/2');
     // About page with placed sidebar block.
-    $this->setUpScreenShot('block-place-sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('block-place-sidebar.png', $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars());
 
     // Verify some UI text on several block pages, without checking navigation.
     $this->drupalGet('admin/structure/block');
@@ -1955,7 +1963,14 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('Link text'));
 
     // Add view wizard.
-    $this->setUpScreenShot('views-create-wizard.png', 'onLoad="' . 'jQuery(\'#edit-label\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:ASC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val(&quot;' . $this->demoInput['vendors_view_title'] . '&quot;);' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('views-create-wizard.png', 'jQuery(\'#edit-label\').val("' . $this->demoInput['vendors_view_title'] . '"); jQuery(\'#edit-label-machine-name-suffix\').show(); jQuery(\'#edit-label\').trigger(\'formUpdated.machineName\'); jQuery(\'.machine-name-value\').html(\'' . $this->demoInput['vendors_view_machine_name'] . '\').parent().show(); jQuery(\'#edit-show-type\').val(\'' . $vendor . '\'); jQuery(\'#edit-show-sort\').val(\'node_field_data-title:ASC\'); jQuery(\'#edit-page-create\').attr(\'checked\', \'checked\'); jQuery(\'#edit-page--2\').show(); jQuery(\'#edit-page-title\').val("' . $this->demoInput['vendors_view_title'] . '"); jQuery(\'#edit-page-path\').val(\'' . $this->demoInput['vendors_view_path'] . '\'); jQuery(\'.form-item-page-style-style-plugin select\').val(\'table\'); jQuery(\'#edit-page-link\').attr(\'checked\', \'checked\'); jQuery(\'.form-item-page-link-properties-menu-name select\').val(\'main\');  jQuery(\'.form-item-page-link-properties-title select\').val("' . $this->demoInput['vendors_view_title'] . '");' . $this->hideArea('#toolbar-administration, .messages') . $this->removeScrollbars(), '', TRUE);
+
+    // Refresh page and submit.
+    $this->drupalGet('admin/structure/views/add');
+    $this->waitForInteraction('css', '#edit-page-create');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-page-link');
+    $this->assertSession()->assertWaitOnAjaxRequest();
     $this->openMachineNameEdit('#edit-label');
     $this->drupalPostForm(NULL, [
         'label' => $this->demoInput['vendors_view_title'],
@@ -2015,6 +2030,8 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     // Reorder the fields.
     $this->clickLinkContainingUrl('rearrange');
+    // Show weight fields.
+    $this->getSession()->getDriver()->executeScript("jQuery('.tabledrag-hide').show();");
     $this->drupalPostForm(NULL, [
         'fields[title][weight]' => 3,
         'fields[body][weight]' => 4,
@@ -2033,11 +2050,11 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->drupalPostForm(NULL, [], $this->callT('Save'));
 
     // Completed vendors view administration page.
-    $this->setUpScreenShot('views-create-view.png', 'onLoad="' . $this->hideArea('#toolbar-administration, #views-preview-wrapper, .messages') . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('views-create-view.png', $this->hideArea('#toolbar-administration, #views-preview-wrapper, .messages') . $this->removeScrollbars());
     // View the output.
     $this->drupalGet($this->demoInput['vendors_view_path']);
     // Completed vendors view output.
-    $this->setUpScreenShot('views-create-view-output.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->makeScreenShot('views-create-view-output.png', $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor());
 
 
     // Topic: views-duplicate - Duplicating a View.
@@ -2047,7 +2064,10 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     // Views page (admin/structure/views), with operations dropdown
     // for Vendor view open.
-    $this->setUpScreenShot('views-duplicate_duplicate.png', 'onLoad="' . 'jQuery(&quot;a[href*=\'views/view/' . $vendors_view . '\']&quot;).parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration, .disabled') . 'jQuery(&quot;a[href*=\'views/view/content\'], a[href*=\'views/view/block_content\'], a[href*=\'views/view/files\'], a[href*=\'views/view/frontpage\'], a[href*=\'views/view/user_admin_people\'], a[href*=\'views/view/comments_recent\']&quot;).parents(\'tr\').hide();' . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('views-duplicate_duplicate.png', 'jQuery("a[href*=\'views/view/' . $vendors_view . '\']").parents(\'.dropbutton-wrapper\').addClass(\'open\'); ' . $this->hideArea('#toolbar-administration, .disabled') . 'jQuery("a[href*=\'views/view/content\'], a[href*=\'views/view/block_content\'], a[href*=\'views/view/files\'], a[href*=\'views/view/frontpage\'], a[href*=\'views/view/user_admin_people\'], a[href*=\'views/view/comments_recent\']").parents(\'tr\').hide();' . $this->removeScrollbars());
+
+    // Start over after screenshot.
+    $this->drupalGet('admin/structure/views');
     $this->clickLinkContainingUrl('views/view/' . $vendors_view . '/duplicate');
     $this->openMachineNameEdit('#edit-label');
     $this->drupalPostForm(NULL, [
@@ -2068,7 +2088,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $this->clickLinkContainingUrl('page_1/title');
     // View title configuration screen.
-    $this->setUpScreenShot('views-duplicate_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .breadcrumb') . $this->setWidth('layout-container') . '"');
+    $this->makeScreenShot('views-duplicate_title.png', $this->hideArea('#toolbar-administration, .content-header, .breadcrumb') . $this->setWidth('layout-container'));
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
 
     // Grid style.
@@ -2113,7 +2133,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       ], $this->callT('Apply'));
     $this->clickLinkContainingUrl('/page_1/filter/field_');
     // Ingredients field exposed filter configuration.
-    $this->setUpScreenShot('views-duplicate_expose.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .breadcrumb, .exposed-description, #edit-options-expose-button-button, .grouped-description, #edit-options-group-button-button, #edit-options-operator--wrapper, .form-item-options-value, .form-item-options-expose-use-operator,  .form-item-options-expose-operator-id,  .form-item-options-expose-multiple,  .form-item-options-expose-remember, #edit-options-expose-remember-roles--wrapper,  .form-item-options-expose-identifier,  .form-item-options-error-message,  .form-item-options-reduce-duplicates, #edit-options-admin-label, #edit-actions') . $this->setWidth('layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('views-duplicate_expose.png', $this->hideArea('#toolbar-administration, .content-header, .breadcrumb, .exposed-description, #edit-options-expose-button-button, .grouped-description, #edit-options-group-button-button, #edit-options-operator--wrapper, .form-item-options-value, .form-item-options-expose-use-operator,  .form-item-options-expose-operator-id,  .form-item-options-expose-multiple,  .form-item-options-expose-remember, #edit-options-expose-remember-roles--wrapper,  .form-item-options-expose-identifier,  .form-item-options-error-message,  .form-item-options-reduce-duplicates, #edit-options-admin-label, #edit-actions') . $this->setWidth('layout-container', 800) . $this->removeScrollbars(), "jQuery('#edit-actions').show();");
     $this->drupalPostForm(NULL, [], $this->callT('Apply'));
 
     // Path and menu link title.
@@ -2143,14 +2163,16 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->drupalPostForm(NULL, [], $this->callT('Save'));
     $this->drupalGet($this->demoInput['recipes_view_path']);
     // Completed recipes view output.
-    $this->setUpScreenShot('views-duplicate_final.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor() . '"');
+    $this->makeScreenShot('views-duplicate_final.png', $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor());
 
     // Topic: views-block - Adding a Block Display to a View.
     // Add a block to the Recipes view.
     $this->drupalGet('admin/structure/views/view/' . $recipes_view);
     // Add display button on Recipes view edit page, with Block highlighted
     // (admin/structure/views/view/recipes).
-    $this->setUpScreenShot('views-block_add-block.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .region-highlighted, #views-display-extra-actions, #edit-display-settings, #edit-actions, .views-preview-wrapper, #views-preview-wrapper, .dropbutton-wrapper, .messages') . 'jQuery(\'#views-display-menu-tabs li.add ul\').show();' . $this->setWidth('.region-content') . '"');
+    $this->makeScreenShot('views-block_add-block.png', $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .region-highlighted, #views-display-extra-actions, #edit-display-settings, #edit-actions, .views-preview-wrapper, #views-preview-wrapper, .dropbutton-wrapper, .messages') . 'jQuery(\'#views-display-menu-tabs li.add ul\').show();' . $this->setWidth('.region-content') . $this->removeScrollbars());
+
+    $this->drupalGet('admin/structure/views/view/' . $recipes_view);
     // Click the Add > Block button.
     $this->waitForInteraction('css', '#views-display-menu-tabs li.add a');
     $this->assertSession()->assertWaitOnAjaxRequest();
@@ -2173,7 +2195,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     // Block title.
     $this->clickLinkContainingUrl('block_1/title');
     // Configuring the block title for this display only.
-    $this->setUpScreenShot('views-block_title.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region-breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-title\').val(&quot;' . $this->demoInput['recipes_view_block_title'] . '&quot;);' . $this->setWidth('.content-header, .layout-container') . '"');
+    $this->makeScreenShot('views-block_title.png', $this->hideArea('#toolbar-administration, .region-breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-title\').val("' . $this->demoInput['recipes_view_block_title'] . '");' . $this->setWidth('.content-header, .layout-container'));
     $this->assertRaw((string) $this->callT('This @display_type (override)', TRUE, ['@display_type' => 'block']));
 
     $this->drupalPostForm(NULL, [
@@ -2193,7 +2215,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     // Image field.
     $this->clickLinkContainingUrl('block_1/field/field_' . $main_image);
     // Configuring the image field for this display only.
-    $this->setUpScreenShot('views-block_image.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .region_breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-options-settings-image-style\').val(\'thumbnail\');' . $this->addBorder('#edit-override-dropdown, #edit-options-settings-image-style') . $this->setWidth('.content-header, .layout-container') . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('views-block_image.png', $this->hideArea('#toolbar-administration, .region_breadcrumbs, .region-highlighted') . 'jQuery(\'#edit-override-dropdown\').val(\'block_1\'); jQuery(\'#edit-options-settings-image-style\').val(\'thumbnail\');' . $this->addBorder('#edit-override-dropdown, #edit-options-settings-image-style') . $this->setWidth('.content-header, .layout-container') . $this->removeScrollbars());
     $this->drupalPostForm(NULL, [
         'override[dropdown]' => 'block_1',
         'options[settings][image_style]' => 'thumbnail',
@@ -2241,7 +2263,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       $this->assertText('has been saved.');
     }
     // View saved confirmation message.
-    $this->setUpScreenShot('views-block_recipes.png', 'onLoad="' . $this->showOnly('.messages--status') . $this->setWidth('.messages', 600) . $this->setBodyColor() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('views-block_recipes.png', $this->showOnly('.messages--status') . $this->setWidth('.messages', 600) . $this->setBodyColor() . $this->removeScrollbars());
 
     // Place the block on the sidebar.
     $this->placeBlock('views_block:' . $recipes_view . '-block_1', [
@@ -2251,7 +2273,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       ]);
     $this->drupalGet('<front>');
     // Home page with recipes sidebar visible.
-    $this->setUpScreenShot('views-block_sidebar.png', 'onLoad="' . $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('views-block_sidebar.png', $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars());
 
   }
 
@@ -2420,7 +2442,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     // Main settings area for Custom Block translations.
     $this->setUpScreenShot('language-content-config_content.png', 'onLoad="' . $this->showOnly('#edit-settings-block-content tr.bundle-settings') . $this->setWidth('#edit-settings-block-content', 600) . 'jQuery(\'tr\').css(\'border-bottom\', \'none\');' . $this->removeScrollbars() . '"');
     // Field settings area for Basic page translations.
-    $this->setUpScreenShot('language-content-config_basic_page.png', 'onLoad="' . $this->hideArea('*') . 'jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*=&quot;settings[node][page]&quot;]\').show().parents().show(); jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*=&quot;settings[node][page]&quot;]\').find(\'*\').show();'  . $this->setWidth('#edit-settings-node', 400) . $this->setWidth('.language-content-settings-form .field', 350) . $this->setWidth('.language-content-settings-form .operations', 0) . $this->removeScrollbars() . '"');
+    $this->setUpScreenShot('language-content-config_basic_page.png', 'onLoad="' . $this->hideArea('*') . 'jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*="settings[node][page]"]\').show().parents().show(); jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*="settings[node][page]"]\').find(\'*\').show();'  . $this->setWidth('#edit-settings-node', 400) . $this->setWidth('.language-content-settings-form .field', 350) . $this->setWidth('.language-content-settings-form .operations', 0) . $this->removeScrollbars() . '"');
 
     // Topic: language-content-translate - Translating Content.
 
@@ -2592,7 +2614,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertLink($this->callT('Install and set as default'));
 
     // Mayo theme on the Appearance page.
-    $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains(&quot;Mayo&quot;)') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
+    $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains("Mayo")') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
 
     // Topic: extend-manual-install - Manually Downloading Module or Theme
     // Files. Manual screenshots only.
@@ -2877,6 +2899,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
    *   (optional) JavaScript to execute after the screenshot, to put things
    *   back to usable. If the next statement is a drupalGet(), this is not
    *   necessary.
+   * @param bool $wait
+   *   (optional) If set to TRUE (default is FALSE), wait after executing the
+   *   JavaScript for Ajax to finish.
    *
    * @see UserGuideDemoTestBase::showOnly()
    * @see UserGuideDemoTestBase::hideArea()
@@ -2888,9 +2913,12 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
    * @see UserGuideDemoTestBase::replaceUrl()
    * @see UserGuideDemoTestBase::replaceSiteName()
    */
-  protected function makeScreenShot($file, $script_before = '', $script_after = '') {
+  protected function makeScreenShot($file, $script_before = '', $script_after = '', $wait = FALSE) {
     if ($script_before) {
       $this->getSession()->executeScript($script_before);
+      if ($wait) {
+        $this->assertSession()->assertWaitOnAjaxRequest();
+      }
     }
 
     $image = imagecreatefromstring($this->getSession()->getScreenshot());
@@ -2902,6 +2930,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->logTestMessage('SCREENSHOT: ' . $file . ' ' . $url);
     if ($script_after) {
       $this->getSession()->executeScript($script_after);
+      if ($wait) {
+        $this->assertSession()->assertWaitOnAjaxRequest();
+      }
     }
   }
 
@@ -3637,6 +3668,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
   protected function openMachineNameEdit($name_selector = '#edit-name') {
     $this->getSession()->getDriver()->executeScript("window.scroll(0,0); jQuery('" . $name_selector . "').val('foo'); jQuery('.field-suffix').show(); jQuery('" . $name_selector . "-machine-name-suffix').show();");
     $this->waitForInteraction('css', $name_selector . '-machine-name-suffix button');
+    $this->assertSession()->assertWaitOnAjaxRequest();
   }
 
   /**
