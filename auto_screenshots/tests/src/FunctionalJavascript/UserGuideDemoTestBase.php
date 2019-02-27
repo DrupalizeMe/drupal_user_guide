@@ -2874,7 +2874,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
    * @see UserGuideDemoTestBase::setWidth()
    * @see UserGuideDemoTestBase::setBodyColor()
    * @see UserGuideDemoTestBase::removeScrollbars()
-   * @see UserGuideDemoTestBase::reloadOnce()
    * @see UserGuideDemoTestBase::addBorder()
    * @see UserGuideDemoTestBase::replaceUrl()
    */
@@ -2993,19 +2992,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
    */
   protected function removeScrollbars() {
     return "jQuery('body').css('overflow', 'hidden');";
-  }
-
-  /**
-   * Creates JavaScript code to reload the page, exactly once.
-   *
-   * This is useful for race conditions on some pages between built-in Ajax
-   * and the added JavaScript code.
-   *
-   * @return string
-   *   JavaScript code that will cause the page to reload once.
-   */
-  protected function reloadOnce() {
-    return "if(window.location.href.substr(-2) !== '?r') window.location = window.location.href + '?r';";
   }
 
   /**
@@ -3494,7 +3480,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
   }
 
   /**
-   * Temporary override of assertText().
+   * Override of assertText().
    *
    * The one in AssertLegacyTest doesn't work in WebDriverTestBase.
    */
