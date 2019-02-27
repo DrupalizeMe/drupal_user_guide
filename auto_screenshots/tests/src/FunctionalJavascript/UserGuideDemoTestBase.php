@@ -55,11 +55,6 @@ use WebDriver\Exception\UnknownError;
 abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
   /**
-   * Which Drupal Core software version to use for the downloading screenshots.
-   */
-  protected $latestRelease = '8.6.9';
-
-  /**
    * Strings and other information to input into the demo site.
    *
    * This information is translated into other languages in the
@@ -286,7 +281,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $backup_write_dir = $this->htmlOutputDirectory . '/' .
       $this->databasePrefix . '/backups';
     $this->ensureDirectoryWriteable($backup_write_dir, 'backups');
-    $this->logTestMessage('BACKUPS GOING TO: ' . $backup_write_dir . "\n");
+    $this->logTestMessage('BACKUPS GOING TO: ' . $backup_write_dir);
 
     $this->screenshotsDirectory = $this->htmlOutputDirectory . '/' .
       $this->databasePrefix . '/screenshots';
@@ -294,9 +289,12 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->screenshotsDirectoryUrl = $GLOBALS['base_url'] .
       '/sites/simpletest/browser_output/' . $this->databasePrefix .
       '/screenshots';
-    $this->logTestMessage('SCREENSHOTS GOING TO: ' . $this->screenshotsDirectory . "\n");
+    $this->logTestMessage('SCREENSHOTS GOING TO: ' . $this->screenshotsDirectory);
 
     $this->ensureDirectoryWriteable($this->tempFilesDirectory, 'temp');
+
+    // Set the window size for screenshots.
+    $this->getSession()->resizeWindow(1200, 800);
 
     // Run all the desired chapters.
     $backup_read_dir = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/backups/' . $this->demoInput['first_langcode']);
@@ -364,12 +362,13 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     // Topic: preface-conventions: Conventions of the user guide.
     $this->drupalGet('admin/config');
     // Top navigation bar on any admin page, with Manage menu showing.
-    // This same screenshot is also config-overview-toolbar.png in the
-    // config-overview topic.
-    $this->setUpScreenShot('preface-conventions-top-menu.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
+    $this->makeScreenShot('preface-conventions-top-menu.png', $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor());
+    // This is a copy of the previous screenshot.
+    $this->makeScreenShot('config-overview-toolbar.png');
 
+    $this->drupalGet('admin/config');
     // System section of admin/config page.
-    $this->setUpScreenShot('preface-conventions-config-system.png', 'onLoad="' . $this->showOnly('.panel:has(a[href$=&quot;admin/config/system/site-information&quot;])') . '"');
+    $this->makeScreenShot('preface-conventions-config-system.png', $this->showOnly('.panel:has(a[href$="admin/config/system/site-information"])'));
 
     // Topic: block-regions - postpone until after theme is configured.
 
@@ -386,15 +385,20 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->verifyTranslations();
 
     // Topic: config-overview - Concept: Administrative overview.
-    $this->drupalGet('admin/config');
-    // Top navigation bar on any admin page, with Manage menu showing.
-    // Same as preface-conventions-top-menu.png defined earlier.
-    $this->setUpScreenShot('config-overview-toolbar.png', 'onLoad="' . $this->addBorder('#toolbar-bar', '#ffffff') . $this->hideArea('header, .region-breadcrumb, .page-content, .toolbar-toggle-orientation') . $this->setWidth('#toolbar-bar, #toolbar-item-administration-tray', 1100) . 'jQuery(\'*\').css(\'box-shadow\', \'none\');' . $this->setBodyColor() . '"');
 
-    // The vertical orientation navigation screenshot could not be
-    // successfully reproduced, unfortunately -- the buttons didn't show up.
-    // So config-overview-vertical.png must be done manually. Same with
-    // config-overview-pencils.png.
+    // config-overview-toolbar.png screenshot was made in the Preface chapter.
+
+    // Put the toolbar into vertical orientation.
+    $this->drupalGet('admin/config');
+    $this->waitForInteraction('css', '.toolbar-toggle-orientation button');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    // Vertical orientation toolbar.
+    $this->makeScreenShot('config-overview-vertical-menu.png', $this->showOnly('#toolbar-item-administration-tray') . $this->removeScrollbars() . $this->setBodyColor() . "jQuery('#toolbar-bar').css('box-shadow', 'none');", '', TRUE);
+
+    // Toggle the toolbar back to horizontal.
+    $this->waitForInteraction('css', '.toolbar-toggle-orientation button');
+
+    // config-overview-pencils -- postpone until after the coloring is done.
 
     // Topic: config-basic - Editing basic site information.
     $this->drupalGet('<front>');
@@ -424,15 +428,10 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     // been set up during the install.
     $this->drupalGet('admin/config/system/site-information');
     // Site details section of admin/config/system/site-information.
-    $this->setUpScreenShot('config-basic-SiteInfo.png', 'onLoad="' . $this->showOnly('#edit-site-information') . $this->setWidth('#edit-site-information') . '"');
+    $this->makeScreenShot('config-basic-SiteInfo.png', $this->showOnly('#edit-site-information') . $this->setWidth('#edit-site-information'));
 
     $this->drupalGet('<front>');
-    /**
-     * Due to some weird bug, even though we have set the site name, it is
-     * not showing on the site except in English, so don't run this line of
-     * the test.
-     */
-    //    $this->assertText($this->demoInput['site_name']);
+    $this->assertText($this->demoInput['site_name']);
     $this->assertText($this->demoInput['site_slogan']);
 
     $this->clickLink($this->callT('Configuration'));
@@ -459,7 +458,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $this->drupalGet('admin/config/regional/settings');
     // Locale and Time Zones sections of admin/config/regional/settings.
-    $this->setUpScreenShot('config-basic-TimeZone.png', 'onLoad="' . $this->showOnly('.page-content') . $this->setWidth('#edit-locale') . $this->setWidth('#edit-timezone') . '"');
+    $this->makeScreenShot('config-basic-TimeZone.png', $this->showOnly('.page-content') . $this->setWidth('#edit-locale') . $this->setWidth('#edit-timezone') . $this->removeScrollbars());
 
     // Topic: config-install -- Installing a module.
 
@@ -470,8 +469,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText('tracker');
 
     // Top part of Core section of admin/modules, with Activity Tracker checked.
-    $this->setUpScreenShot('config-install-check-modules.png', 'onLoad="jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services, #edit-modules-migration') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)') . '"');
-    $this->drupalPostForm(NULL, [
+    $this->makeScreenShot('config-install-check-modules.png', 'jQuery(\'#edit-modules-tracker-enable\').attr(\'checked\', 1);' . $this->hideArea('#toolbar-administration, header, .region-pre-content, .region-highlighted, .help, .action-links, .region-breadcrumb, #edit-filters, #edit-actions') . $this->hideArea('#edit-modules-core-experimental, #edit-modules-field-types, #edit-modules-multilingual, #edit-modules-other, #edit-modules-administration, #edit-modules-testing, #edit-modules-web-services, #edit-modules-migration') . $this->hideArea('#edit-modules-core table tbody tr:gt(4)'));
+
+    $this->drupalPostForm('admin/modules', [
         'modules[tracker][enable]' => TRUE,
       ], $this->callT('Install'));
 
@@ -495,9 +495,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText('Image');
 
     // Top part of admin/modules/uninstall, with Activity Tracker checked.
-    $this->setUpScreenShot('config-uninstall_check-modules.png', 'onLoad="jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); ' . $this->showOnly('table thead, table tbody tr:lt(4)') . '"');
+    $this->makeScreenShot('config-uninstall_check-modules.png', 'jQuery(\'#edit-uninstall-tracker\').attr(\'checked\', 1); ' . $this->showOnly('table thead, table tbody tr:lt(4)'));
 
-    $this->scrollWindowUp();
+    $this->drupalGet('admin/modules/uninstall');
     $this->waitForInteraction('css', '#edit-uninstall-tracker');
     $this->waitForInteraction('css', '#edit-uninstall-history');
     $this->waitForInteraction('css', '#edit-uninstall-search');
@@ -508,7 +508,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       ], $this->callT('Uninstall'));
     // Uninstall confirmation screen, after checking Activity Tracker, History,
     // and Search modules from admin/modules/uninstall.
-    $this->setUpScreenShot('config-uninstall_confirmUninstall.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.block-system-main-block') . $this->setWidth('header', 640) . '"');
+    $this->makeScreenShot('config-uninstall_confirmUninstall.png', $this->hideArea('#toolbar-administration') . $this->setWidth('.block-system-main-block') . $this->setWidth('header', 640) . $this->removeScrollbars());
     $this->drupalPostForm(NULL, [], $this->callT('Uninstall'));
     $this->flushAll();
 
@@ -537,11 +537,11 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
         'user_register' => 'admin_only',
       ], $this->callT('Save configuration'));
     // Registration and cancellation section of admin/config/people/accounts.
-    $this->setUpScreenShot('config-user_account_reg.png', 'onLoad="window.scroll(0,500);' . $this->showOnly('#edit-registration-cancellation') . $this->setWidth('#edit-registration-cancellation') . '"');
+    $this->makeScreenShot('config-user_account_reg.png', 'window.scroll(0,500);' . $this->showOnly('#edit-registration-cancellation') . $this->setWidth('#edit-registration-cancellation'));
     // Email address section of admin/config/people/accounts.
-    $this->setUpScreenShot('config-user_from_email.png', 'onLoad="window.scroll(0,500);' . $this->showOnly('.form-item-mail-notification-address') . $this->setWidth('.form-item-mail-notification-address') . '"');
+    $this->makeScreenShot('config-user_from_email.png', 'window.scroll(0,500);' . $this->showOnly('.form-item-mail-notification-address') . $this->setWidth('.form-item-mail-notification-address'));
     // Emails section of admin/config/people/accounts.
-    $this->setUpScreenShot('config-user_email.png', 'onLoad="window.scroll(0,5000); ' . $this->showOnly('div.form-type-vertical-tabs') . $this->hideArea('div.form-type-vertical-tabs details:gt(0)') . '"');
+    $this->makeScreenShot('config-user_email.png', 'window.scroll(0,5000); ' . $this->showOnly('div.form-type-vertical-tabs') . $this->hideArea('div.form-type-vertical-tabs details:gt(0)') . $this->removeScrollbars());
 
     // Topic: config-theme - Configuring the theme.
 
@@ -556,8 +556,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('default theme'));
 
     // Bartik section of admin/appearance.
-    $this->setUpScreenShot('config-theme_bartik_settings.png', 'onLoad="' . $this->showOnly('.system-themes-list-installed') . $this->hideArea('.theme-admin') . '"');
+    $this->makeScreenShot('config-theme_bartik_settings.png', $this->showOnly('.system-themes-list-installed') . $this->hideArea('.theme-admin'));
 
+    $this->drupalGet('admin/appearance');
     $this->clickLink($this->callT('Settings'), 1);
     $this->assertText($this->callT('Color scheme'));
     $this->assertText($this->callT('Header background top'));
@@ -579,10 +580,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('Preview'));
 
     // For this screenshot, before the settings are changed, use JavaScript to
-    // scroll down to the bottom, uncheck Use the default logo, and outline
-    // the logo upload box.
+    // scroll down to the bottom and outline the logo upload box.
     // Logo upload section of admin/appearance/settings/bartik.
-    $this->setUpScreenShot('config-theme_logo_upload.png', 'onLoad="window.scroll(0,6000); jQuery(\'#edit-default-logo\').click(); ' . $this->addBorder('#edit-logo-upload') . $this->showOnly('#edit-logo') . $this->setWidth('#edit-logo') . '"');
+    $this->makeScreenShot('config-theme_logo_upload.png', 'window.scroll(0,6000); ' . $this->addBorder('#edit-logo-upload') . $this->showOnly('#edit-logo') . $this->setWidth('#edit-logo'), "jQuery('*').show();");
 
     $this->drupalPostForm(NULL, [
         'scheme' => '',
@@ -601,10 +601,11 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $this->drupalGet('admin/appearance/settings/bartik');
     // Color settings section of admin/appearance/settings/bartik.
-    $this->setUpScreenShot('config-theme_color_scheme.png', 'onLoad="window.scroll(0,200);' . $this->showOnly('#color_scheme_form') . $this->hideArea('h2') . $this->hideArea('.color-preview') . $this->setWidth('#color_scheme_form', 800) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('config-theme_color_scheme.png', 'window.scroll(0,200);' . $this->showOnly('#color_scheme_form') . $this->hideArea('h2') . $this->hideArea('.color-preview') . $this->setWidth('#color_scheme_form', 800) . $this->removeScrollbars());
     // Preview section of admin/appearance/settings/bartik.
-    $this->setUpScreenShot('config-theme_color_scheme_preview.png', 'onLoad="window.scroll(0,1000);' . $this->showOnly('.color-preview') . $this->setWidth('#color_scheme_form', 700) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('config-theme_color_scheme_preview.png', 'window.scroll(0,1000);' . $this->showOnly('.color-preview') . $this->setWidth('#color_scheme_form', 700) . "jQuery('#color_scheme_form').css('border', 'none').css('background', 'white');" . $this->removeScrollbars());
 
+    $this->drupalGet('admin/appearance/settings/bartik');
     $this->clickLink($this->callT('Home'));
     if ($this->demoInput['first_langcode'] == 'en') {
       // This string is part of a complicated config string now, and checking
@@ -614,14 +615,23 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     }
 
     // Home page after theme settings are finished.
-    $this->setUpScreenShot('config-theme_final_result.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName( ['.region-header .site-branding__text a', 'main .content h1']) . $this->removeScrollbars() . '"');
+    //    $this->makeScreenShot('config-theme_final_result.png', $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName( ['.region-header .site-branding__text a', 'main .content h1']) . $this->removeScrollbars());
+    $this->makeScreenShot('config-theme_final_result.png', $this->hideArea('#toolbar-administration, .contextual') . $this->removeScrollbars());
 
     // Back to topic: block-regions.
     $this->drupalGet('admin/structure/block/demo/bartik');
     // Bartik theme region preview at admin/structure/block/demo/bartik,
     // after configuring the theme for the Farmers Market scenario.
-    $this->setUpScreenShot('block-regions-bartik.png', 'onLoad="' . 'window.scroll(0,5000);' . $this->showOnly('#page-wrapper') . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('block-regions-bartik.png', $this->showOnly('#page-wrapper') . $this->removeScrollbars());
 
+    // Back to screenshot: config-overview-pencils.
+    $this->drupalGet('<front>');
+    $this->waitForInteraction('css', 'button.toolbar-icon-edit');
+    // Pencils for contextual links showing on site home page.
+    $this->makeScreenShot('config-overview-pencils.png', $this->removeScrollbars());
+
+    // Toggle the pencils back off.
+    $this->waitForInteraction('css', 'button.toolbar-icon-edit');
   }
 
   /**
@@ -2647,7 +2657,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $this->drupalGet('admin/reports/status');
     // Status report (admin/reports/status).
-    $this->setUpScreenShot('prevent-status.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"', TRUE);
+    $this->setUpScreenShot('prevent-status.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . $this->replaceUrl() . '"');
   }
 
   /**
@@ -2684,7 +2694,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertRaw((string) $this->callT('Save configuration'));
 
     // Cron configuration page (admin/config/system/cron).
-    $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"', TRUE);
+    $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . $this->replaceUrl() . '"');
 
     // Topic: security-update-module - Updating a Module.
 
@@ -2822,7 +2832,51 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $url = $this->screenshotsDirectoryUrl . '/' . $screenshot_filename;
 
     file_put_contents($this->screenshotsDirectory . '/' . $screenshot_filename, $output);
-    $this->logTestMessage('SCREENSHOT: ' . $file . ' ' . $url . "\n");
+    $this->logTestMessage('SCREENSHOT: ' . $file . ' ' . $url);
+  }
+
+  /**
+   * Makes a screenshot, and adds a note afterwards.
+   *
+   * The screen shot is of the current page. The image will be cropped down
+   * to eliminate whitespace at the edges, so make sure to use the
+   * $script_before parameter to white out everything outside the area that
+   * you want to be in the screenshot.
+   *
+   * @param string $file
+   *   Name of the screen shot file.
+   * @param string $script_before
+   *   (optional) JavaScript to execute before the screenshot.
+   * @param string $script_after
+   *   (optional) JavaScript to execute after the screenshot, to put things
+   *   back to usable. If the next statement is a drupalGet(), this is not
+   *   necessary.
+   *
+   * @see UserGuideDemoTestBase::showOnly()
+   * @see UserGuideDemoTestBase::hideArea()
+   * @see UserGuideDemoTestBase::setWidth()
+   * @see UserGuideDemoTestBase::setBodyColor()
+   * @see UserGuideDemoTestBase::removeScrollbars()
+   * @see UserGuideDemoTestBase::reloadOnce()
+   * @see UserGuideDemoTestBase::addBorder()
+   * @see UserGuideDemoTestBase::replaceUrl()
+   * @see UserGuideDemoTestBase::replaceSiteName()
+   */
+  protected function makeScreenShot($file, $script_before = '', $script_after = '') {
+    if ($script_before) {
+      $this->getSession()->executeScript($script_before);
+    }
+
+    $image = imagecreatefromstring($this->getSession()->getScreenshot());
+    $image = imagecropauto($image, IMG_CROP_SIDES);
+    $image = imagecropauto($image, IMG_CROP_WHITE);
+    imagepng($image, $this->screenshotsDirectory . '/' . $file);
+
+    $url = $this->screenshotsDirectoryUrl . '/' . $file;
+    $this->logTestMessage('SCREENSHOT: ' . $file . ' ' . $url);
+    if ($script_after) {
+      $this->getSession()->executeScript($script_after);
+    }
   }
 
   /**
@@ -2850,7 +2904,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $code .= "jQuery('" . $selector . "').show(); ";
     $code .= "jQuery('" . $selector . "').parents().show(); ";
     $code .= "jQuery('" . $selector . "').find('*').show(); ";
-    // Add border and remove box shadow, if indicated.
+    // Add border if indicated.
     if ($border) {
       $code .= $this->addBorder($selector, '#ffffff', TRUE);
     }
@@ -2956,6 +3010,16 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
   }
 
   /**
+   * Returns JavaScript code to replace the site URL in the page.
+   *
+   * Replaces the test environment URL with example.com.
+   */
+  protected function replaceUrl() {
+    $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
+    return "orig = jQuery('body').html(); jQuery('body').html(orig.replace('" . $front_url . "', 'https://example.com'));";
+  }
+
+  /**
    * Returns JavaScript code to replace the site name in the header.
    *
    * There is a bug for non-English languages, which hasn't been reported or
@@ -3029,7 +3093,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $db_manager->backup('database1', 'directory1');
     $file_manager = $this->backupFileManager($directory);
     $file_manager->backup('public1', 'directory1');
-    $this->logTestMessage('BACKUP MADE TO: ' . $directory . "\n");
+    $this->logTestMessage('BACKUP MADE TO: ' . $directory);
   }
 
   /**
@@ -3051,7 +3115,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $db_manager->restore('database1', 'directory1', 'database.mysql.gz');
     $file_manager = $this->backupFileManager($directory);
     $file_manager->restore('public1', 'directory1', 'public_files.tar.gz');
-    $this->logTestMessage('BACKUP RESTORED FROM: ' . $directory . "\n");
+    $this->logTestMessage('BACKUP RESTORED FROM: ' . $directory);
 
     // Fix the configuration for temp files directory.
     \Drupal::configFactory()->getEditable('system.file')
@@ -3246,7 +3310,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       $result = [];
       $directory = drupal_realpath(drupal_get_path('module', 'auto_screenshots') . '/translations/' . $langcode);
       if (is_dir($directory)) {
-        $this->logTestMessage('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory . "\n");
+        $this->logTestMessage('CHECKING FOR INITIAL TRANSLATIONS IN: ' . $directory);
         $result = file_scan_directory($directory, $pattern, $options);
       }
 
@@ -3255,7 +3319,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       foreach ($result as $file) {
         $file->langcode = $langcode;
         $this->readPoFile($file->uri, $langcode);
-        $this->logTestMessage('TRANSLATIONS READ FROM: ' . $file->uri . "\n");
+        $this->logTestMessage('TRANSLATIONS READ FROM: ' . $file->uri);
       }
     }
 
@@ -3590,10 +3654,10 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
    * Logs a message to the test log file.
    *
    * @param string $message
-   *   Message to log.
+   *   Message to log. A line return will be appended.
    */
   protected function logTestMessage($message) {
-    file_put_contents($this->htmlOutputFile, $message, FILE_APPEND);
+    file_put_contents($this->htmlOutputFile, $message . "\n", FILE_APPEND);
   }
 
   /**

@@ -1,8 +1,8 @@
 This module does not do anything directly. All it contains is tests that:
 - Verify that the user interface text that is used in the User Guide and the
   steps for the tasks are present and work.
-- Generates screen capture images
-- Generates database dumps and files directories that you can use to clone the
+- Generate screen capture images
+- Generate database dumps and files directories that you can use to clone the
   demo site that the User Guide builds, as it would be at the end of each
   chapter.
 
@@ -23,6 +23,7 @@ to drupal.org pages:
 - security-update-module
 - security-update-theme
 
+
 SETTING UP THE ENVIRONMENT
 --------------------------
 
@@ -32,23 +33,16 @@ line image tools to make screenshot images. This section details how to set up
 the tools; some steps may need to be repeated if you update software on your
 local computer. Here are the steps:
 
-1. Install Firefox and Chrome or Chromium browser, if you do not already have
-   them installed.
+1. Install the Chrome or Chromium browser, if you do not already have it
+   installed.
 
 2. Install a local test Drupal site, running the version of Drupal you want to
    generate screen shots for (Drupal 8.0.2, 8.1.0, etc. -- make sure it is the
-   latest actual release, not a development branch, so that translations are
-   downloaded correctly).
+   latest actual release, not a development branch, for purposes of screenshots.
 
-3. Apply patches for two core issues:
+3. Apply patches for core issue(s):
 
-   a. https://www.drupal.org/node/2886904
-   This makes the open/closed icons for details elements on admin
-   forms go away in Firefox. To fix this, edit your local copy of file
-     core/assets/vendor/normalize-css/normalize.css
-   and remove "summary" from getting CSS display: block around line 47.
-
-   b. https://www.drupal.org/project/drupal/issues/2905295
+   https://www.drupal.org/project/drupal/issues/2905295
    At this time, the issue has no patch. But it can be gotten around by
    editing
      core/modules/locale/locale.module
@@ -71,33 +65,17 @@ local computer. Here are the steps:
    to install dependencies of this project. If you do not have Composer
    installed, see https://getcomposer.org/
 
-   This will install a Backup Migrate library from Github. You will need to
-   make sure that this issue has been fixed in the version you download:
-
-   https://github.com/backupmigrate/backup_migrate_core/issues/7
-
-   If not, you'll need to edit the file
-   vendor/backupmigrate/core/src/Source/MySQLiSource.php
-   to put in the fix shown in that issue.
-
 7. Follow the steps in core/tests/README.md to set up the testing environment,
    including the parts that are specific to running tests that use
    chromedriver and WebDriverTestBase.
 
-8. At the command line, make sure the "import" command from ImageMagick is
-   installed. On Linux, use one of the following commands to install it, if it
-   is not present:
-
-   sudo apt-get install imagemagick
-   sudo yum install imagemagick
-
-9. Download a near-current 8.x version of the Mayo theme to the /themes
+8. Download a near-current 8.x version of the Mayo theme to the /themes
    directory in your test site (for instance, if the current version is
    8.x-1.15, get 8.x-1.14). It is used for some of the screenshots.
    https://www.drupal.org/project/mayo
 
-10. Do the same for a near-current version of the Admin Toolbar module
-    from https://www.drupal.org/project/admin_toolbar
+9. Do the same for a near-current version of the Admin Toolbar module
+   from https://www.drupal.org/project/admin_toolbar
 
 
 MAKING SCREENSHOTS
@@ -128,28 +106,11 @@ a particular language as follows:
    file).
 
 3. Assuming the test run succeeds, you should see some output that tells you
-   where the backups and screenshot HTML files have been stored. You can copy
-   the .gz files in these directories into the "backups" directory under this
-   directory, in the subdirectory for the appropriate language, and commit
-   them to Git.
-
-4. To make images from the screenshot files, open Firefox, and set the browser
-   width to 1200 pixels, and height to 800 pixels. Make sure the zoom level
-   is set to normal.
-
-   Then run the mkshots.sh file in this directory. It takes 4 arguments:
-
-   - The directory where the HTML files are.
-   - The base URL for that directory within the Drupal site.
-   - The output directory where you'd like the screen shots to be saved,
-     as either absolute path or relative to where you plan to run the scripts.
-   - The window ID for your Firefox window. You can find this by running the
-     xwininfo command and clicking in the Firefox window.  It should be
-     something like 0x3200078. Or you can use the window name (if you can figure
-     out what that would be).
-
-   You may need to edit the timeout (3 seconds) or the Y offset (125) in the
-   script if it doesn't run correctly.
+   where the backups and screenshot files have been stored. You can copy
+   the .gz files in the backup directories into the "backups" directory under
+   this directory, in the subdirectory for the appropriate language, and commit
+   them to Git. Images go into the ../source/LL/images directory, where LL is
+   the language code.
 
 
 BACKUP AND RESTORE
@@ -172,21 +133,11 @@ database and files manually. The database table prefix is
 MORE DETAILS FOR THE CURIOUS
 ----------------------------
 
-You can look at the output before you make screen shots. In the test results,
-there are lines like:
-
-SCREENSHOT filename.png http://example.com/long_url_here
-
-The file name in this line is the image file that will be created by the
-script. The URL is the HTML for making the image.
-
 For developers... The screen shot output is generated by a custom method
-in the UserGuideDemoTest class called setUpScreenShot(). It generates a
-clean output file (without the headers that are usually on a drupalGet()),
-as well as the SCREENSHOT line.
+in the UserGuideDemoTest class called makeScreenShot().
 
-Also, the code that generates each screenshot adds JavaScript commands to each
+The code that generates each screenshot adds JavaScript commands to each
 page's HTML output, which do things like clicking buttons, opening up vertical
 tabs, and drawing boxes around highlighted items on the page. The JavaScript
-also hides irrelevant areas of the page, which allows the ImageMagick commands
-to trim the images down to their final sizes automatically.
+also hides irrelevant areas of the page, which allows the images to be
+trimmed down to their final sizes automatically.
