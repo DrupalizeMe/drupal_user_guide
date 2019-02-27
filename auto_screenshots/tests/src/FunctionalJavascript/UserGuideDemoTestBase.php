@@ -615,7 +615,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     }
 
     // Home page after theme settings are finished.
-    //    $this->makeScreenShot('config-theme_final_result.png', $this->hideArea('#toolbar-administration, .contextual') . $this->replaceSiteName( ['.region-header .site-branding__text a', 'main .content h1']) . $this->removeScrollbars());
     $this->makeScreenShot('config-theme_final_result.png', $this->hideArea('#toolbar-administration, .contextual') . $this->removeScrollbars());
 
     // Back to topic: block-regions.
@@ -1885,7 +1884,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       ], $this->callT('Save block'));
     $this->drupalGet('node/2');
     // About page with placed sidebar block.
-    $this->makeScreenShot('block-place-sidebar.png', $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars());
+    $this->makeScreenShot('block-place-sidebar.png', $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars());
 
     // Verify some UI text on several block pages, without checking navigation.
     $this->drupalGet('admin/structure/block');
@@ -2054,7 +2053,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     // View the output.
     $this->drupalGet($this->demoInput['vendors_view_path']);
     // Completed vendors view output.
-    $this->makeScreenShot('views-create-view-output.png', $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor());
+    $this->makeScreenShot('views-create-view-output.png', $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor());
 
 
     // Topic: views-duplicate - Duplicating a View.
@@ -2163,7 +2162,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->drupalPostForm(NULL, [], $this->callT('Save'));
     $this->drupalGet($this->demoInput['recipes_view_path']);
     // Completed recipes view output.
-    $this->makeScreenShot('views-duplicate_final.png', $this->hideArea('#toolbar-administration, .site-footer') . $this->replaceSiteName() . $this->removeScrollbars() . $this->setBodyColor());
+    $this->makeScreenShot('views-duplicate_final.png', $this->hideArea('#toolbar-administration, .site-footer') . $this->removeScrollbars() . $this->setBodyColor());
 
     // Topic: views-block - Adding a Block Display to a View.
     // Add a block to the Recipes view.
@@ -2273,7 +2272,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       ]);
     $this->drupalGet('<front>');
     // Home page with recipes sidebar visible.
-    $this->makeScreenShot('views-block_sidebar.png', $this->hideArea('#toolbar-administration, footer') . $this->replaceSiteName() . $this->removeScrollbars());
+    $this->makeScreenShot('views-block_sidebar.png', $this->hideArea('#toolbar-administration, footer') . $this->removeScrollbars());
 
   }
 
@@ -2340,7 +2339,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
         'predefined_langcode' => $this->demoInput['second_langcode'],
       ], $this->callT('Add language'));
     // Confirmation and language list after adding second language.
-    $this->setUpScreenShot('language-add-list.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('language-add-list.png', $this->hideArea('#toolbar-administration') . $this->removeScrollbars());
     $this->importTranslations($this->demoInput['second_langcode'], TRUE);
     $this->verifyTranslations();
     $this->verifyTranslations(FALSE);
@@ -2369,6 +2368,19 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $ingredients_hyphens = str_replace('_', '-', $ingredients);
 
     // Topic: language-content-config - Configuring Content Translation
+
+    // Top section of Content language settings page
+    // (admin/config/regional/content-language).
+    $this->drupalGet('admin/config/regional/content-language');
+    $this->waitForInteraction('css', '#edit-entity-types-node');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-entity-types-block-content');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->waitForInteraction('css', '#edit-entity-types-menu-link-content');
+    $this->assertSession()->assertWaitOnAjaxRequest();
+    $this->makeScreenShot('language-content-config_custom.png', $this->showOnly('#edit-entity-types--wrapper') . $this->removeScrollbars());
+
+    // Reset page and start over.
     // Set up content translation for Basic page nodes, Custom blocks, and
     // Custom menu links.
     // Navigation for this page is tested in the language-content-config topic.
@@ -2406,10 +2418,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       $this->assertText($this->callT('URL alias'));
     }
 
-
-    // Top section of Content language settings page
-    // (admin/config/regional/content-language).
-    $this->setUpScreenShot('language-content-config_custom.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .content-header, .region-breadcrumb, .help, #edit-cations') . 'jQuery(\'#edit-entity-types-node\').attr(\'checked\', \'checked\'); jQuery(\'#edit-entity-types-block-content\').attr(\'checked\', \'checked\'); jQuery(\'#edit-entity-types-menu-link-content\').attr(\'checked\', \'checked\');' . $this->removeScrollbars() . '"');
     $this->drupalPostForm(NULL, [
         'entity_types[node]' => 'node',
         'settings[node][page][translatable]' => TRUE,
@@ -2440,9 +2448,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
         'settings[menu_link_content][menu_link_content][fields][changed]' => FALSE,
       ], $this->callT('Save configuration'));
     // Main settings area for Custom Block translations.
-    $this->setUpScreenShot('language-content-config_content.png', 'onLoad="' . $this->showOnly('#edit-settings-block-content tr.bundle-settings') . $this->setWidth('#edit-settings-block-content', 600) . 'jQuery(\'tr\').css(\'border-bottom\', \'none\');' . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('language-content-config_content.png', $this->showOnly('#edit-settings-block-content tr.bundle-settings') . $this->setWidth('#edit-settings-block-content', 600) . 'jQuery(\'tr\').css(\'border-bottom\', \'none\');' . $this->removeScrollbars());
     // Field settings area for Basic page translations.
-    $this->setUpScreenShot('language-content-config_basic_page.png', 'onLoad="' . $this->hideArea('*') . 'jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*="settings[node][page]"]\').show().parents().show(); jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*="settings[node][page]"]\').find(\'*\').show();'  . $this->setWidth('#edit-settings-node', 400) . $this->setWidth('.language-content-settings-form .field', 350) . $this->setWidth('.language-content-settings-form .operations', 0) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('language-content-config_basic_page.png', $this->hideArea('*') . 'jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*="settings[node][page]"]\').show().parents().show(); jQuery(\'#edit-settings-node tr.field-settings\').has(\'input[name*="settings[node][page]"]\').find(\'*\').show();'  . $this->setWidth('#edit-settings-node', 400) . $this->setWidth('.language-content-settings-form .field', 350) . $this->setWidth('.language-content-settings-form .operations', 0) . $this->removeScrollbars());
 
     // Topic: language-content-translate - Translating Content.
 
@@ -2455,7 +2463,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->drupalGet('node/1/translations');
     $this->assertLink($this->callT('Add'));
     // Screen shot of the translations page for the Home page content item.
-    $this->setUpScreenShot('language-content-translate-add.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . '"');
+    $this->makeScreenShot('language-content-translate-add.png', $this->hideArea('#toolbar-administration'));
 
     // The UI is in Spanish if you use the link, and the instructions in the
     // User guide say to alter the URL... so go ahead and get the right page.
@@ -2503,7 +2511,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertSession()->assertWaitOnAjaxRequest();
     $this->waitForInteraction('css', '#edit-expose--3 summary');
     $this->assertSession()->assertWaitOnAjaxRequest();
-
     $this->waitForInteraction('css', '#edit-block-1 summary');
     $this->assertSession()->assertWaitOnAjaxRequest();
     $this->waitForInteraction('css', '#edit-page-1 summary');
@@ -2518,8 +2525,9 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertText($this->callT('Expose'));
     $this->assertText($this->callT('Label'));
 
+    $this->scrollWindowUp();
     // Exposed form options for Recipes view.
-    $this->setUpScreenShot('language-config-translate-recipes-view.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . 'jQuery(\'#edit-default, #edit-display-options, #edit-exposed-form, #edit-options\').attr(\'open\', \'open\');' . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('language-config-translate-recipes-view.png', $this->hideArea('#toolbar-administration') . $this->removeScrollbars(), "jQuery('body').css('overflow', 'scroll');");
     $this->drupalPostForm(NULL, [
         'translation[config_names][views.view.' . $recipes_view . '][display][default][display_options][title]' => $this->demoInput['recipes_view_title_translated'],
         'translation[config_names][views.view.' . $recipes_view . '][display][default][display_options][exposed_form][options][submit_button]' => $this->demoInput['recipes_view_submit_button_translated'],
@@ -2560,9 +2568,8 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->clearCache();
     $this->drupalLogout();
     $this->drupalGet('<front>');
-    // Site in maintenance mode. Note that this page does not have
-    // jQuery, so we cannot use the $this->replaceSiteName() function.
-    $this->setUpScreenShot('extend-maintenance-mode-enabled.png', 'style="overflow: hidden;" onLoad="var orig = document.body.innerHTML; orig = orig.replace(\'Drupal\', \'' . $this->demoInput['site_name'] . '\').replace(\'Drupal\', \'' . $this->demoInput['site_name'] . '\'); document.body.innerHTML = orig;"');
+    // Site in maintenance mode.
+    $this->makeScreenShot('extend-maintenance-mode-enabled.png', "document.documentElement.style.overflow = 'hidden';");
     $this->drupalLogin($this->rootUser);
     $this->drupalPostForm('admin/config/development/maintenance', [
         'maintenance_mode' => FALSE,
@@ -2571,7 +2578,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->drupalLogout();
     $this->drupalGet('<front>');
     // Site no longer in maintenance mode.
-    $this->setUpScreenShot('extend-maintenance-mode-disabled.png', 'onLoad="' . $this->replaceSiteName() . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('extend-maintenance-mode-disabled.png', $this->removeScrollbars());
     $this->drupalLogin($this->rootUser);
 
     // Topic: extend-module-find - Finding Modules. Manual screenshots only.
@@ -2587,7 +2594,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertRaw((string) $this->callT('Install'));
 
     // Install new module page (admin/modules/install).
-    $this->setUpScreenShot('extend-module-install-admin-toolbar-do.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
+    $this->makeScreenShot('extend-module-install-admin-toolbar-do.png', $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600));
 
     // Topic: extend-theme-find - Finding Themes. Manual screenshots only.
 
@@ -2603,7 +2610,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $this->drupalGet('admin/theme/install');
     // Install new theme page (admin/theme/install).
-    $this->setUpScreenShot('extend-theme-install-page.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . '"');
+    $this->makeScreenShot('extend-theme-install-page.png', $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600));
 
     $this->drupalGet('admin/appearance');
     // The text 'Uninstalled themes' is translated through a formatPlural call,
@@ -2614,7 +2621,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertLink($this->callT('Install and set as default'));
 
     // Mayo theme on the Appearance page.
-    $this->setUpScreenShot('extend-theme-install-appearance-page.png', 'onLoad="window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains("Mayo")') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');' . '"');
+    $this->makeScreenShot('extend-theme-install-appearance-page.png', 'window.scroll(0,6000);' . $this->showOnly('.system-themes-list-uninstalled .theme-selector:contains("Mayo")') . 'jQuery(\'.system-themes-list-uninstalled\').css(\'border\', \'none\');');
 
     // Topic: extend-manual-install - Manually Downloading Module or Theme
     // Files. Manual screenshots only.
@@ -2656,7 +2663,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->drupalGet('admin/config/development/configuration/single/export/view/' . $vendors_view);
     // Single configuration export of the Vendors view from
     // admin/config/development/configuration/single/export.
-    $this->setUpScreenShot('extend-deploy-export-single.png', 'onLoad="' . $this->hideArea('#toolbar-administration, .breadcrumb ol li:gt(4)') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('extend-deploy-export-single.png', $this->hideArea('#toolbar-administration, .breadcrumb ol li:gt(4)') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars());
 
   }
 
@@ -2699,13 +2706,13 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $this->drupalGet('admin/reports/dblog');
     // Recent log messages report (admin/reports/dblog).
-    $this->setUpScreenShot('prevent-log.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('prevent-log.png', $this->hideArea('#toolbar-administration') . $this->removeScrollbars());
 
     // Topic: prevent-status - Concept: Status Report.
 
     $this->drupalGet('admin/reports/status');
     // Status report (admin/reports/status).
-    $this->setUpScreenShot('prevent-status.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . $this->replaceUrl() . '"');
+    $this->makeScreenShot('prevent-status.png', $this->hideArea('#toolbar-administration') . $this->removeScrollbars() . $this->replaceUrl());
   }
 
   /**
@@ -2742,7 +2749,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->assertRaw((string) $this->callT('Save configuration'));
 
     // Cron configuration page (admin/config/system/cron).
-    $this->setUpScreenShot('security-cron.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . $this->replaceUrl() . '"');
+    $this->makeScreenShot('security-cron.png', $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 600) . $this->removeScrollbars() . $this->replaceUrl());
 
     // Topic: security-update-module - Updating a Module.
 
@@ -2777,7 +2784,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $this->drupalGet('admin/reports/updates/update');
     // Update page for module (admin/reports/updates/update).
-    $this->setUpScreenShot('security-update-module-updates.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('security-update-module-updates.png', $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars());
     // Uninstall the module.
     $this->drupalPostForm('admin/modules/uninstall', [
         'uninstall[admin_toolbar]' => 1,
@@ -2791,7 +2798,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
     $this->clickLinkContainingUrl('theme=mayo');
     $this->drupalGet('admin/reports/updates/update');
     // Update page for theme (admin/reports/updates/update).
-    $this->setUpScreenShot('security-update-theme-updates.png', 'onLoad="' . $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars() . '"');
+    $this->makeScreenShot('security-update-theme-updates.png', $this->hideArea('#toolbar-administration') . $this->setWidth('.content-header, .layout-container', 800) . $this->removeScrollbars());
     // As this is the last screenshot, do not bother to uninstall the theme.
   }
 
@@ -2843,47 +2850,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
   }
 
   /**
-   * Makes clean screenshot output, and adds a note afterwards.
-   *
-   * The screen shot is of the current page. The HTML output for each screenshot
-   * can be manipulated using JavaScript, so that it only shows a small area of
-   * the page, with the rest hidden. The script that captures the images then
-   * trims the images automatically down to the relevant area.
-   *
-   * @param string $file
-   *   Name of the screen shot file.
-   * @param string $body_addition
-   *   (optional) Additional text to add into the HTML body tag. Example:
-   *   'onLoad="window.scroll(0,500);"'. This code should blank out irrelevant
-   *   portions of the page, so that the ImageMagick capture script can trim
-   *   the image automatically down to the right size.
-   * @param bool $replace_url
-   *   (optional) If set to TRUE, replace the front URL with example.com
-   *   wherever it appears in the page. Defaults to FALSE.
-   *
-   * @see UserGuideDemoTestBase::showOnly()
-   * @see UserGuideDemoTestBase::hideArea()
-   * @see UserGuideDemoTestBase::setWidth()
-   * @see UserGuideDemoTestBase::setBodyColor()
-   * @see UserGuideDemoTestBase::removeScrollbars()
-   * @see UserGuideDemoTestBase::reloadOnce()
-   * @see UserGuideDemoTestBase::addBorder()
-   */
-  protected function setUpScreenShot($file, $body_addition = '', $replace_url = FALSE) {
-    $output = str_replace('<body ', '<body ' . $body_addition . ' ', $this->getSession()->getPage()->getContent());
-    if ($replace_url) {
-      $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
-      $output = str_replace($front_url, 'http://example.com/', $output);
-    }
-    $basename = basename($file, '.png');
-    $screenshot_filename =  $basename . '.html';
-    $url = $this->screenshotsDirectoryUrl . '/' . $screenshot_filename;
-
-    file_put_contents($this->screenshotsDirectory . '/' . $screenshot_filename, $output);
-    $this->logTestMessage('SCREENSHOT: ' . $file . ' ' . $url);
-  }
-
-  /**
    * Makes a screenshot, and adds a note afterwards.
    *
    * The screen shot is of the current page. The image will be cropped down
@@ -2911,7 +2877,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
    * @see UserGuideDemoTestBase::reloadOnce()
    * @see UserGuideDemoTestBase::addBorder()
    * @see UserGuideDemoTestBase::replaceUrl()
-   * @see UserGuideDemoTestBase::replaceSiteName()
    */
   protected function makeScreenShot($file, $script_before = '', $script_after = '', $wait = FALSE) {
     if ($script_before) {
@@ -3074,31 +3039,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
   protected function replaceUrl() {
     $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
     return "orig = jQuery('body').html(); jQuery('body').html(orig.replace('" . $front_url . "', 'https://example.com'));";
-  }
-
-  /**
-   * Returns JavaScript code to replace the site name in the header.
-   *
-   * There is a bug for non-English languages, which hasn't been reported or
-   * investigated, that in the test environment, even though the site name
-   * has been configured, it doesn't show up correctly in the page header. So,
-   * this method works around the bug for screenshots by using JQuery to
-   * replace the text in the header block.
-   *
-   * @param string[] $selectors
-   *   JQuery selectors for the HTML elements containing the site name. Defaults
-   *   to the site branding block in the header. Each array element will be
-   *   processed.
-   * @param string $original
-   *   Text currently appearing there that needs to be replaced with the site
-   *   name. Defaults to 'Drupal', which seems to be what is normally there.
-   */
-  protected function replaceSiteName($selectors = ['.region-header .site-branding__text a'], $original = 'Drupal') {
-    $string = 'var orig;';
-    foreach ($selectors as $selector) {
-       $string .= "orig = jQuery('" . $selector . "').html(); jQuery('" . $selector . "').html(orig.replace('" . $original . "', '" . $this->demoInput['site_name'] . "'));";
-    }
-    return $string;
   }
 
   /**
