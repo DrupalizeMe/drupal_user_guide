@@ -343,7 +343,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       $this->drupalPostForm('admin/config/regional/language/add', [
           'predefined_langcode' => $this->demoInput['first_langcode'],
         ], 'Add language');
-      $this->importTranslations($this->demoInput['first_langcode'], TRUE);
+      $this->importTranslations($this->demoInput['first_langcode']);
 
       // Set the new language to default. After this, the UI should be
       // translated.
@@ -2340,7 +2340,7 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       ], $this->callT('Add language'));
     // Confirmation and language list after adding second language.
     $this->makeScreenShot('language-add-list.png', $this->hideArea('#toolbar-administration') . $this->removeScrollbars());
-    $this->importTranslations($this->demoInput['second_langcode'], TRUE);
+    $this->importTranslations($this->demoInput['second_langcode']);
     $this->verifyTranslations();
     $this->verifyTranslations(FALSE);
 
@@ -3273,17 +3273,15 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
    * Imports translations from all existing .po files in translation directory.
    *
    * Translations are read from the
-   * auto_screenshots/translations/LANGCODE directory.
+   * auto_screenshots/translations/LANGCODE directory. Also, configuration is
+   * refreshed, to get around using the locale batch.
    *
    * @param string $langcode
    *   Language code to import the translations for. Skips if it is English.
-   * @param bool $is_initial
-   *   If TRUE (FALSE is the default), this is the initial import, and we need
-   *   to refresh configuration (even for English).
-    *
+   *
    * @see https://www.drupal.org/project/drupal/issues/2806009
    */
-  protected function importTranslations($langcode, $is_initial = FALSE) {
+  protected function importTranslations($langcode) {
     if ($langcode != 'en') {
       $this->fixTranslationSettings();
 
@@ -3306,16 +3304,14 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
       }
     }
 
-    if ($is_initial) {
-      // Emulate the batch that we turned off in the screenshot_alters module,
-      // that was coming from locale_form_language_admin_add_form_alter() and
-      // should run whenever a new language is added (even English).
-      $locale_config = \Drupal::service('locale.config_manager');
-      $names = $locale_config->getComponentNames([]);
-      $locale_config->updateConfigTranslations($names, [$langcode]);
-    }
+    // Emulate the batch that we turned off in the screenshot_alters module,
+    // that was coming from locale_form_language_admin_add_form_alter() and
+    // locale_modules_installed() and needs to run whenever a new language is
+    // added (even English), or a module is installed.
+    $locale_config = \Drupal::service('locale.config_manager');
+    $names = $locale_config->getComponentNames([]);
+    $locale_config->updateConfigTranslations($names, [$langcode]);
     $this->flushAll();
-
   }
 
   /**
