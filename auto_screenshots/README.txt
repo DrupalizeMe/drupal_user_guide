@@ -10,10 +10,12 @@ A list of images that could not be automated, and therefore need to be generated
 manually, can be found in the source/en/images/README.txt file (under the main
 project directory).
 
-Also, text that comes from drupal.org pages cannot be tested in the current
-testing framework, because drupal.org blocks access. So, periodically, the
-following topic pages should be checked for accuracy with respect to changes
-to drupal.org pages:
+There are also some pages in the User Guide that are difficult to test using
+this automated test framework, because they involve steps on drupal.org. There
+may be a test added for them later, but for now, these pages should be manually
+tested periodically, to make sure the text in the User Guide for task steps
+matches the current drupal.org site:
+
 - extend-manual-install
 - extend-module-find
 - extend-module-install
@@ -24,14 +26,13 @@ to drupal.org pages:
 - security-update-theme
 
 
-SETTING UP THE ENVIRONMENT
---------------------------
+SETTING UP TO RUN TESTS MANUALLY
+--------------------------------
 
-The tests are run using Drupal Core's PHPUnit test framework from the
-command line. They generate HTML files, which can be processed using command-
-line image tools to make screenshot images. This section details how to set up
-the tools; some steps may need to be repeated if you update software on your
-local computer. Here are the steps:
+You can run the tests on your own local system using Drupal Core's PHPUnit test
+framework from the command line. This section details how to set up the tools;
+some steps may need to be repeated if you update software on your local
+computer. Here are the steps:
 
 1. Install the Chrome or Chromium browser, if you do not already have it
    installed.
@@ -78,18 +79,29 @@ local computer. Here are the steps:
    from https://www.drupal.org/project/admin_toolbar
 
 
-MAKING SCREENSHOTS
-------------------
+RUNNING THE TESTS MANUALLY
+--------------------------
 
-Once you are set up for screenshots, you can make a set of screen shots for
-a particular language as follows:
+Once you are set up for testing, you can run the tests for a particular language
+as follows:
 
 1. Start chromedriver and keep it running:
 
    chromedriver --port=4444
 
 
-2. Run the test for that language with a command like this, from the core
+2. Find the test file for the language you want to run. The tests for each
+   language are in the tests/src/FunctionalJavascript directory under this
+   directory.
+
+3. Optionally, edit the test file to make it run just a subset of the
+   screenshots and tests, and to enable/disable the saving of database/file
+   backups. To do this, find the member variable $notRunList in the test file,
+   change its name to $runList, and change 'skip' to another value for each
+   section you want to run. The values are documented in the base class
+   UserGuideDemoTestBase.php.
+
+4. Run the test for that language with a command like this, from the core
    directory under your Drupal root:
 
    sudo -u www-data ../vendor/bin/phpunit -v -c /path/to/phpunit.xml \
@@ -99,13 +111,7 @@ a particular language as follows:
    appropriately, and change the language near the end of the command if
    necessary. You will also need to change the path to your phpunit.xml file.
 
-   Note that you can edit the test file that you are running, to make it run
-   just a subset of the screenshots and tests. To do this, find the member
-   variable $notRunList, change its name to $runList, and change 'skip' to
-   another value to run it (see the definitions in the UserGuideDemoTestBase.php
-   file).
-
-3. Assuming the test run succeeds, you should see some output that tells you
+5. Assuming the test run succeeds, you should see some output that tells you
    where the backups and screenshot files have been stored. You can copy
    the .gz files in the backup directories into the "backups" directory under
    this directory, in the subdirectory for the appropriate language, and commit
@@ -113,31 +119,18 @@ a particular language as follows:
    the language code.
 
 
-BACKUP AND RESTORE
-------------------
+RESTORING BACKUPS
+-----------------
 
-The screenshot script also has the ability to make database and public files
-backups at intermediate points (at the end of each chapter, roughly), so that
-you can restore to those points and make only a subset of the screenshots (to
-save time). See the documentation for the $runList member variable in the
-UserGuideDemoTestBase class for details, and override the $runList variable in
-the class for the language you are running.
+This Git repository contains file and database backups from running the tests
+for each language, for each chapter. You can use them to set up a site that
+contains the output of the User Guide steps, at the end of each chapter. Find
+backups in subdirectory "backups" under this directory, organized by language
+and then by chapter.
 
-The backups from the tests have been saved in the repository for this project,
-for each language, in subdirectories of the "backups" directory under this
-directory. They could also be used to set up demo sites, by restoring the
-database and files manually. The database table prefix is
-'generic_simpletest_prefix'.
+Note that if you restore a database backup, the database
+table prefix has been set to 'generic_simpletest_prefix'. You can either set
+your Drupal site to use this database prefix in your settings.php file, or you
+could do a search/replace on the database backup file before you import it.
 
-
-MORE DETAILS FOR THE CURIOUS
-----------------------------
-
-For developers... The screen shot output is generated by a custom method
-in the UserGuideDemoTest class called makeScreenShot().
-
-The code that generates each screenshot adds JavaScript commands to each
-page's HTML output, which do things like clicking buttons, opening up vertical
-tabs, and drawing boxes around highlighted items on the page. The JavaScript
-also hides irrelevant areas of the page, which allows the images to be
-trimmed down to their final sizes automatically.
+The file backups contain the contents of the sites/default/files directory.
