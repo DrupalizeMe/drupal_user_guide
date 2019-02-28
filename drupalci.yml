@@ -1,0 +1,19 @@
+# Override file for the DrupalCI automated build system.
+# Runs the tests for the User Guide. Customizations:
+# - No codebase validation. It's just not really necessary for this project.
+# - Suppress deprecation messages.
+# - Only run FunctionalJavascript tests (it's the only kind we have for now).
+# - Apply a patch to get around one Core issue:
+#   https://www.drupal.org/project/drupal/issues/2905295
+build:
+  assessment:
+    testing:
+      run_tests.js:
+        concurrency: 1
+        types: 'PHPUnit-FunctionalJavascript'
+        suppress-deprecations: true
+        testgroups: '--all'
+        halt-on-fail: false
+    container_command
+      commands: "cd ${SOURCE_DIR} && sudo -u www-data curl https://www.drupal.org/files/issues/2019-02-26/2905295-work-around.patch | git apply -"
+      halt-on-fail: true
