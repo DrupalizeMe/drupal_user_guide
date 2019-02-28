@@ -39,18 +39,15 @@ use WebDriver\Exception\UnknownError;
  *   column A, and the translated text in column C, you can use this formula
  *   to generate the array in row 2 (and then copy to the other rows):
  *   =IF(A2 <> "","'"&A2&"' => """&C2&""",","")
- *   Then just copy this column of output into the $demoInput array in your
+ *   Then copy this column of output into the $demoInput array in your
  *   new class.
- * - Override the $runList member variable to run the sections of interest.
  * - Add PO files to the auto_screenshots/translations directory (see
  *   README.txt file there for instructions).
  *
- * See README.txt file in the module directory for instructions for making
- * screenshot images from this test output.
- *
- * This script can also create/restore backups, to allow you to run only some
- * portion of the screenshots. See the documentation for the $runList member
- * variable for details.
+ * See README.txt file in the module directory for instructions for running
+ * the tests and making backups and screenshot output. Note that you can
+ * override the $runList member variable in each language class to run certain
+ * sections, and decide whether or not to make backups.
  */
 abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
@@ -3185,8 +3182,8 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
 
     $manager->plugins()->add('excluder', new DBExcludeFilter());
     $manager->plugins()->add('renamer', new DBTableRenameFilter());
-    $manager->plugins()->add('namer', new FileNamer());
     $manager->plugins()->add('compressor', new CompressionFilter());
+    $manager->plugins()->add('namer', new FileNamer());
     $manager->plugins()->setConfig($config);
 
     return $manager;
@@ -3295,8 +3292,6 @@ abstract class UserGuideDemoTestBase extends WebDriverTestBase {
         $result = file_scan_directory($directory, $pattern, $options);
       }
 
-      $backup_write_dir = '/tmp/screenshots_backups/' . $this->databasePrefix;
-      $this->ensureDirectoryWriteable($backup_write_dir, 'backup');
       foreach ($result as $file) {
         $file->langcode = $langcode;
         $this->readPoFile($file->uri, $langcode);

@@ -35,7 +35,7 @@ class DBTableRenameFilter extends PluginBase {
   public function afterBackup(BackupFileReadableInterface $file) {
     $source = $this->confGet('source_prefix');
     $destination = $this->confGet('destination_prefix');
-    return $this->doReplace($file, $source, $destination);
+    return $this->doReplace($file, $source, $destination, TRUE);
   }
 
   /**
@@ -50,7 +50,7 @@ class DBTableRenameFilter extends PluginBase {
   public function beforeRestore(BackupFileReadableInterface $file) {
     $source = $this->confGet('source_prefix');
     $destination = $this->confGet('destination_prefix');
-    return $this->doReplace($file, $destination, $source);
+    return $this->doReplace($file, $destination, $source, FALSE);
   }
 
   /**
@@ -62,11 +62,13 @@ class DBTableRenameFilter extends PluginBase {
    *   String to search for.
    * @param string $replace
    *   String to replace it with.
+   * @param string $rename
+   *   If TRUE, rename the file after the operation to the previous file name.
    *
    * @return BackupFileReadableInterface
    *   Modified or new file, with $search replaced with $replace.
    */
-  protected function doReplace(BackupFileReadableInterface $file, $search, $replace) {
+  protected function doReplace(BackupFileReadableInterface $file, $search, $replace, $rename) {
     $contents = $file->readAll();
     $count = 0;
     $new_contents = str_replace($search, $replace, $contents, $count);
@@ -80,6 +82,10 @@ class DBTableRenameFilter extends PluginBase {
     $new_file = $this->getTempFileManager()->create('mysql');
     $new_file->write($new_contents);
     $new_file->close();
+    if ($rename) {
+      $new_file->setName($file->getName());
+    }
+
     return $new_file;
   }
 
