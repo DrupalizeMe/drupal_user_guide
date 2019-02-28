@@ -70,9 +70,10 @@ computer. Here are the steps:
    including the parts that are specific to running tests that use
    chromedriver and WebDriverTestBase.
 
-8. Download a near-current 8.x version of the Mayo theme to the /themes
-   directory in your test site (for instance, if the current version is
-   8.x-1.15, get 8.x-1.14). It is used for some of the screenshots.
+8. If Composer didn't already install it, download a near-current 8.x version
+   of the Mayo theme to the /themes directory in your test site (for instance,
+   if the current version is 8.x-1.3, get 8.x-1.2). It is used for some of
+   the screenshots.
    https://www.drupal.org/project/mayo
 
 9. Do the same for a near-current version of the Admin Toolbar module
