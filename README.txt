@@ -2,7 +2,9 @@ The files in this project can be used to build a User Guide to Drupal. The
 source uses AsciiDoc markdown format, which can be compiled into DocBook format,
 which in turn can be compiled into HTML, PDF, and various e-book formats. The
 AsciiDoc Display module (https://www.drupal.org/project/asciidoc_display) can be
-used to display special HTML output in a Drupal site.
+used to display special HTML output in a Drupal site. The companion User
+Guide Tests module (https://www.drupal.org/project/user_guide_tests) contains
+automated tests that also generate screenshots for the User Guide.
 
 
 COPYRIGHT AND LICENSE
@@ -14,8 +16,7 @@ project. Output files produced and displayed by this project also must contain
 copyright/license information.
 
 Code in this project, consisting of scripts for generating output from the
-source files, and code for generating automatic screen captures, is licensed
-under the GNU/GPL version 2 and later license.
+source files, is licensed under the GNU/GPL version 2 and later license.
 
 
 FILE ORGANIZATION
@@ -50,12 +51,6 @@ Guide scripts produce HTML output as well as PDF and other e-books.
 The output the scripts produces lands in the output directory. Subdirectory html
 of that is the output for the AsciiDoc Display module; e-books land in the
 ebooks subdirectory.
-
-* auto_screenshots
-
-This directory holds a module that contains a Simpletest test that creates
-a demo site for the guide. This can be used as a reference, and to make
-screen shots. See README.txt in that directory for more information.
 
 
 ASCIIDOC OUTPUT BUILD SCRIPTS
