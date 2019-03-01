@@ -8,12 +8,12 @@
 build:
   assessment:
     testing:
+      container_command:
+        commands: "cd ${SOURCE_DIR} && sudo -u www-data curl https://www.drupal.org/files/issues/2019-02-26/2905295-work-around.patch | git apply -"
+        halt-on-fail: true
       run_tests.js:
         concurrency: 1
         types: 'PHPUnit-FunctionalJavascript'
         suppress-deprecations: true
         testgroups: '--all'
         halt-on-fail: false
-    container_command
-      commands: "cd ${SOURCE_DIR} && sudo -u www-data curl https://www.drupal.org/files/issues/2019-02-26/2905295-work-around.patch | git apply -"
-      halt-on-fail: true
