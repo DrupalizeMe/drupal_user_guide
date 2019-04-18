@@ -23,14 +23,16 @@ you to have images in your website that are specifically sized for different
 screen sizes. This is useful, for example, to make your site load faster on
 mobile devices because image sizes are optimized for smaller screens.
 
-A responsive image style is a mapping between images styles and breakpoints.
+A responsive image style is a mapping between image styles and breakpoints.
 Breakpoints are the points where a responsive design needs to change in order
-to respond to different screen sizes. Responsive image styles can only be used
-if the breakpoints are defined in the theme.
+to respond to different screen sizes. Responsive image styles can either work
+with breakpoints defined in your theme or with breakpoints defined in the
+responsive image style settings.
 
 When a responsive image style is defined, it can be used in the display settings
 for Image fields. This allows the site to display responsive images using the
-HTML5 picture tag.
+HTML5 _picture_ tag, or using the _srcset_ and _sizes_ attributes in an _img_
+tag, depending on how the responsive image style is set up.
 
 ==== Related topics
 
@@ -44,6 +46,7 @@ HTML5 picture tag.
 
 * https://www.drupal.org/docs/8/theming-drupal-8/working-with-breakpoints-in-drupal-8[_Drupal.org_ community documentation page "Working with breakpoints in Drupal 8"]
 
+* https://chromatichq.com/blog/responsive-images-drupal-8-using-srcset[Blog post "Responsive Images in Drupal 8 using 'srcset'"]
 
 *Attributions*
 
