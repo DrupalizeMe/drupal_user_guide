@@ -62,7 +62,8 @@ Drupal site root. This will prevent others from getting a copy of your
 database.
 
 . Copy all of the files from the web root of your live site to the web root of
-your development site.
+your development site. You may wish to use Git to do this; if so, see
+<<extend-git>>.
 
 . Edit the _sites/default/settings.php_ file under your development site's
 top-level directory in a plain-text editor. Find the lines near the end that
@@ -129,6 +130,8 @@ $config['system.site']['name'] = "Development Site for Anytown Farmers Market";
 <<prevent-cache-clear>>.
 
 * <<extend-deploy>>
+
+* <<extend-git>>
 
 // ==== Related concepts
 

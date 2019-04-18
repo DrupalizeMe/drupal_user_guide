@@ -28,13 +28,7 @@ more accurately and with less effort.
 Drush and Drupal Console::
   See below for more about command-line tools.
 Git::
-  https://git-scm.com/[Git] is a version control system you can use to track
-  changes made to files within your entire site, or files relating only to the
-  module or theme that you are using. Git makes it possible to try out changes,
-  and if necessary, revert to a previous version. It can be used as well to
-  track changes in the configuration files and synchronize the configuration of
-  different sites. Git has become the standard for web development
-  projects.
+  See below for more about version control tools.
 Composer::
   See below for more about Composer.
 Devel::
@@ -68,6 +62,33 @@ in the Drupal Console documentation.
 To use these tools, you will need to have command-line terminal access to the
 server where your website will be hosted, and you will need to install Composer
 first in order to install either the Drush or Drupal Console tool.
+
+==== What is a version control system?
+
+A version control system is software that keeps copies of files and revision
+history in a _repository_, and allows you to add, delete, and update files. For
+a web site project, revision control software can help you:
+
+* Test locally before deploying files on the live site
+
+* Look at, compare with, and revert to previous versions of files
+
+* Look at the added, changed, or deleted files before you _commit_ the changes
+(update the repository)
+
+* Merge changes from different team members together
+
+* Keep files and configuration synchronized between local and live sites
+
+There are many proprietary and open-source version control systems to choose
+from; a popular choice is https://git-scm.com/[Git], which is open-source
+software that runs on most computer platforms. Git is a _distributed_ version
+control system that allows you to have one or more copies of your repository,
+which allows you to commit changes to a copy and then only _push_ them to the
+repository you've designated as _canonical_ when you're ready to share them with
+others. The canonical git repository can be hosted on your local computer or a
+server at your company, but many software projects and individuals host their
+Git repositories on the https://github.com/[GitHub] site.
 
 ==== What is Composer used for?
 
@@ -119,8 +140,13 @@ Browser debugging tools::
 
 * https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
 
+* https://en.wikipedia.org/wiki/Distributed_version_control[Wikipedia article "Distributed version control"]
+
 
 *Attributions*
 
 Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Some text adapted from
+https://www.drupal.org/node/991716["Introduction to Git"],
+copyright 2000-2019 by the individual contributors to the
+https://www.drupal.org/documentation[Drupal Community Documentation].
