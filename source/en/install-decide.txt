@@ -40,17 +40,19 @@ Use a pre-configured environment::
   https://www.drupal.org/docs/develop/local-server-setup[Drupal.org's Local server setup guide]
   for possible options.
 
-Use Composer::
-  If you plan to use the Drush tool (see <<install-tools>>), or if you are
-  building a site that might use modules with complicated dependencies, you
-  should use Composer to download the core software, because Composer will
-  manage the dependencies properly. See <<install-composer>> for instructions.
-
 Download manually from the web site::
   If you plan to build a site without add-on modules that have complicated
   dependencies, you can download the core software, or a distribution that
   contains the core software and additional modules or themes, from the web
   site. See <<install-manual>> for instructions.
+
+Use Composer::
+  If you plan to use the Drush tool (see <<install-tools>>), or if you are
+  building a site that might use modules with complicated dependencies, you
+  should use Composer to download the core software, because Composer will
+  manage the dependencies properly. If you start your site by downloading
+  manually, however, you can convert to using Composer to manage dependencies
+  later. See <<install-composer>> for downloading and conversion instructions.
 
 ==== What happens when I install the core software?
 

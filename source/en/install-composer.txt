@@ -72,12 +72,30 @@ composer create-project drupal-composer/drupal-project:8.x-dev mydir --no-intera
 sub-directory; you'll also get some extra tools such as Drush and Drupal Console
 in the _mydir/vendor_ directory.
 
+===== Converting a previously-downloaded site to use Composer
+
+If you previously downloaded the core software without using Composer, you may
+find later that you want or need to use Composer to manage and update
+dependencies. To convert your existing site to using Composer, enter the
+following commands at the root of your site:
+
+----
+composer global require grasmash/composerize-drupal
+composer composerize-drupal --composer-root=. --drupal-root=.
+----
+
+Note that this will also make modules, themes, and profiles that you previously
+downloaded without using Composer available to Composer, if they were placed in
+the _modules/contrib_, _themes/contrib_, and _profiles/contrib_ directories. If
+you placed them in another location, you might consider deleting
+previously-downloaded modules and themes, and then following the instructions
+below to re-download them using Composer.
 
 ===== Using Composer to download a module or theme
 
-Follow these steps if you have already downloaded the core software, and you
-want to use Composer to add a contributed module or theme with its
-dependencies.
+Follow these steps if you are already using Composer to manage the core
+software, and you want to use Composer to add a contributed module or theme with
+its dependencies.
 
 . Each time you want to add a contributed module or theme, determine the
 project's short name. This is the last part of the URL of the project page; for
@@ -139,6 +157,7 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer 
 
 * https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Using Composer to manage Drupal site dependencies"]
 * https://www.drupal.org/docs/8/update/update-core-via-composer["Update core via Composer"]
+* https://github.com/grasmash/composerize-drupal[Composerize Drupal project for converting a previously-downloaded site to using Composer]
 
 *Attributions*
 
