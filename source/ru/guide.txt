@@ -1,16 +1,16 @@
 [[user_guide]]
-= Drupal 8 User Guide
+= Drupal 8 Руководство пользователя
 
-// Chapters are defined here, and each one includes the individual
-// topic files that make up the chapter, in order.
+// Главы определяются здесь, каждая глава включает собственные
+// файлы тем, чтобы выводить их в нужном порядке.
 
 
 [[preface]]
 
-== Введение
+== Предисловие
 
 [role="summary"]
-Overview of introductory topics that help to leverage this guide in an efficient manner.
+Обзор вводных тем, которые помогут сделать прочтение руководства эффективным.
 
 include::copyright.txt[]
 include::preface-audience.txt[]
@@ -21,10 +21,10 @@ include::preface-scenario.txt[]
 
 
 [[understanding-chapter]]
-== Understanding Drupal
+== Основы Drupal
 
 [role="summary"]
-Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+Обзор основных коцепций Drupal таких как модули, темы, диструбутивы, и типы данных.
 
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
@@ -36,10 +36,11 @@ include::understanding-gpl.txt[]
 
 
 [[planning-chapter]]
-== Planning Your Site
+== Проектирование сайта
 
 [role="summary"]
-Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+Обзор концепций планирования сайта и общие макеты сайта. Сущности материалов и структура данных
+также описаны в этой главе.
 
 include::block-regions.txt[]
 include::planning-layout.txt[]
@@ -51,10 +52,10 @@ include::language-concept.txt[]
 
 
 [[installation-chapter]]
-== Installation
+== Установка Drupal
 
 [role="summary"]
-Overview of server requirements and details of common installation tasks.
+Обзор требований к серверу и различные способы установки Drupal.
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
@@ -66,10 +67,10 @@ include::install-run.txt[]
 
 
 [[config-chapter]]
-== Basic Site Configuration
+== Основные настройки сайта
 
 [role="summary"]
-Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+Обзор основных настроек сайта. Описание установки и настройки модулей и тем оформления, настройки аккаунтов пользователей.
 
 include::config-overview.txt[]
 include::config-basic.txt[]
@@ -81,10 +82,11 @@ include::config-theme.txt[]
 
 
 [[content-chapter]]
-== Basic Page Management
+== Основные настройки страниц
 
 [role="summary"]
-Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+Обзор основ управления страницами сайта. Описание различных создания и редактирования материалов,
+быстрого редактирования и работы с меню.
 
 include::content-paths.txt[]
 include::content-create.txt[]
@@ -96,10 +98,10 @@ include::menu-link-from-content.txt[]
 include::menu-reorder.txt[]
 
 [[content-structure-chapter]]
-== Setting Up Content Structure
+== Настрока типов материалов
 
 [role="summary"]
-Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+Обзор основ структуры контента. Описание типов материалов, таксономии и полей связей.
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -124,10 +126,10 @@ include::structure-text-format-config.txt[]
 
 
 [[user-chapter]]
-== Managing User Accounts
+== Управление аккаунтами пользователей
 
 [role="summary"]
-Overview of user account concepts and details of common user account tasks.
+Обзор страниц настроек для аккаунтов пользователей и основные возможности аккаунтов пользователей.
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
@@ -139,10 +141,10 @@ include::user-content.txt[]
 
 
 [[blocks-chapter]]
-== Blocks
+== Блоки
 
 [role="summary"]
-Overview of block concepts and details of common block tasks.
+Обзор концепции блоков и настройки вывода блоков.
 
 include::block-concept.txt[]
 include::block-create-custom.txt[]
@@ -150,10 +152,10 @@ include::block-place.txt[]
 
 
 [[views-chapter]]
-== Creating Listings with Views
+== Вывод материалов через Views
 
 [role="summary"]
-Overview of view concepts and details of common view tasks.
+Обзор контруктора Views и вывод страниц и блоков через Views.
 
 include::views-concept.txt[]
 include::views-parts.txt[]
@@ -163,10 +165,10 @@ include::views-block.txt[]
 
 
 [[multilingual-chapter]]
-== Making Your Site Multilingual
+== Создание мультиязычного сайта
 
 [role="summary"]
-Details of tasks needed to make a site multilingual.
+Обзор как сделать Drupal сайт для отображения страниц на разных языках.
 
 include::language-add.txt[]
 include::language-content-config.txt[]
@@ -175,10 +177,10 @@ include::language-config-translate.txt[]
 
 
 [[extend-chapter]]
-== Extending and Customizing Your Site
+== Расширение функционала и настройка оформления сайта
 
 [role="summary"]
-Overview of site customization and development. Tasks on downloading modules and themes are covered.
+Обзор разработки и настройки внешнего вида сайта. Установка модулей и тем оформления.
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -194,10 +196,10 @@ include::extend-git.txt[]
 
 
 [[prevent-chapter]]
-== Preventing and Fixing Problems
+== Предупреждение и решение проблем
 
 [role="summary"]
-Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+Обзор работы кеша, создания резервных копий и сбора логов. Описание сброса кэша на сайте.
 
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
@@ -207,10 +209,10 @@ include::prevent-status.txt[]
 
 
 [[security-chapter]]
-== Security and Maintenance
+== Безопасность и обслуживание сайта
 
 [role="summary"]
-Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+Обзор основ безопасности и обслуживания сайта. Задачи на обновление ядра Drupal, модулей и тем.
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -222,10 +224,10 @@ include::security-update-theme.txt[]
 
 
 [[thoughts-chapter]]
-== Final Thoughts
+== Заключение
 
 [role="summary"]
-Overview of the Drupal community and how to connect with other users.
+Обзор Drupal сообщества и где найти других людей из сообщества Drupal.
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
@@ -242,9 +244,9 @@ include::glossary.txt[]
 
 [[appendix]]
 [appendix]
-== Appendix
+== Дополнения
 
 [role="summary"]
-Overview of contributors to this guide.
+Авторы этого руководства пользователя.
 
 include::attributions.txt[]
