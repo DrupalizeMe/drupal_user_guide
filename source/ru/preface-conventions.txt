@@ -1,145 +1,146 @@
 [[preface-conventions]]
-=== Conventions of the Guide
+=== Условные обозначения Руководства
 
 [role="summary"]
-Understanding the conventions used in this guide.
+Объяснения обозначений используемых в Руководстве.
 
-==== Assumptions and prerequisites
+==== Предположения и предпологаемые требования
 
-This guide has the following assumptions and prerequisites:
+Это руководство имеет следующие предположения и предполагаемые требования:
 
-* This guide is organized into topics; see <<preface-organization>> for details.
-Many topics include a _Prerequisite knowledge_ section, which lists other
-topics whose content knowledge is needed in order to understand the topic you
-are reading. Some background knowledge that is not covered in the guide is
-also assumed; see <<preface-audience>> for details.
+* Это руководство организовано с помощью тем; смотрите <<preface-organization>> для больше информации.
+Многие темы включают cвои _Prerequisite knowledge_ разделы, в которых есть списки остальных
+тем для которых необходимые знания располагаются в порядке нужным для понимания темы,
+которую вы читаете. Некоторые общие знания, которые не описаны в руководстве
+также предполагаются; смотрите <<preface-audience>> для большей информации.
 
-* Many task topics list _Site prerequisites_, which are tasks that you'll need
-to have completed on your site before you'll be able to do the task in the
-topic you are reading.
+* Во многих задачах есть _Site prerequisites_, которые также являются задачами необходимые
+к выполнению на вашем сайте, перед тем как вы сможете выполнить задачу
+в читаемой теме.
 
-* The specifics of the site prerequisites relate to the scenario used throughout
-this guide of building a site for a farmers market (see <<preface-scenario>>
-for details). You can adapt the tasks to your own scenario, but you will also
-need to remember the changes you made when deciding if your site satisfies the
-site prerequisites for a task.
+* Специфичные требования к сайту относятся к сценарию использованному во многих темах
+этого руководства для создания сайта ярмарки города N (смотрите <<preface-scenario>>
+для большей информации). Вы можете адаптировать таски к своему собственному сценарию, но тогда вы должны
+помнить, что изменения которые вы сделали должны соответсвовать
+требованиям к сайту в других задачах.
 
-* For all task topics after <<install-run>>, there is also an implicit
-prerequisite: you must have installed the content management software on your
-site, and be logged in to a user account with sufficient permissions to do the
-task (such as the user account created when you installed your site, which
-automatically has full permissions).
+* Для всех задач после <<install-run>>, также есть неявное
+требование: вы должны установить Drupal,
+и авторизироваться под пользователем имеющим достаточные права для выполнения
+задачи (таким пользователем является аккаунт созданный при установке сайта, который
+автоматически имеет все права).
 
-* If you read all the topics in order, and perform all of the steps in the task
-topics as you go (staying logged in), you should have the background knowledge
-and site prerequisites in place for each topic as you read it.
+* Если вы прочитали все темы в последовательном порядке и выполнили все шаги из задач
+, то у вас должны быть все знания
+и настройки сайта, которые вы получили из предыдущих тем.
 
-* This guide demonstrates how to perform tasks using the administrative user
-interface, and wherever possible, also using the Drush command-line tool (see
-<<install-tools>>). You can feel free to use a different command-line tool, such
-as Drupal Console (if you look up equivalent commands), or to only use the
-administrative interface for now.
+* Это руководство показывает как выполнить задачи используя пользовательский
+интерфейс, и где возможно используя Drush утилиту командной строки (смотрите
+<<install-tools>>). Вы можете свободно использовать различные утилиты командной строки, такие
+как Drupal Console (если вы нашли подходящую команду) или используйте
+пользовательский интерфейс для начала.
 
-==== Text conventions
+==== Обозначения в тексте
 
-The following conventions are used in the text of this guide:
+Следующие обозначения использованы в тексте этого руководства:
 
-* The URL _example.com_ means the base URL of your website. See the Navigation
-section below for more details on how URLs internal to your site are
-indicated.
+* URL _example.com_ означает базовый URL вашего сайта. Смотрите раздел
+Навигации ниже для больше информации про внутренние URL вашего сайта.
 
-* Text you should see in the user interface of your site is shown in _italics_,
-such as: Click _Save configuration_. This only applies to text in the user
-interface that comes from the software, not to text that was entered in a
-previous topic. For example, in a topic about editing, you might see this
-instruction: Click _Edit_ in the row of the About page (_Edit_ would be in
-italics, but About would not be, because the About page was created in a
-previous topic).
+* Текст который вам следуюет искать в пользовательском интерфейсе выделен _italics_,
+например: Нажмите _Save configuration_. Это касается только текста пользовательского
+интерфейчас который находится в Drupal и не является текстом, который мы вводим в
+предыдущей теме. Например, в теме о редактирование, вы можете увидеть такие
+инструкции: Нажмите _Edit_ в строчке О Ярмарке (_Edit_ будет выделено
+курсивом, однако О Ярмарке не будет выделено, потому что страница О Ярмарке была создана в
+предыдущей теме).
 
-* URLs, file names, and newly-introduced terminology are also shown in
+* URL, имена файлов и новые введенные термины также будут выделены
 _italics_.
 
-* Text that you should type at a shell command line is shown in monospace type,
-such as:
+* Текст который вам следует ввести в командной строке будет написан моношириным шрифтом,
+например:
 +
 ----
 drush cr
 ----
 
-* Within this guide, the word _directory_ is always used to refer to file
-directories (which some people prefer to call _folders_).
+* На протяжение руководства, слово _directory_ будет всегда использоваться для указания на папки
+с файлами (которые некоторые пользователи называют _folders_).
 
-==== Navigation
+==== Навигация
 
-To do most of the task topics in this guide, you will need to navigate to one
-or more pages in the administrative interface of your site. You might see
-something like this in the instructions (this will make more sense after you
-have the base software installed):
+Чтобы сделать большинство задач этого руководства, вам будет необходимы указания на одну
+или несколько страниц в пользовательском интерфейсе вашего сайта. Вы можете посмотреть
+похожие указания в инструктциях (это будет иметь больше смыслы после того как вы
+установите Drupal):
 
 =============
-In the _Manage_ administrative menu, navigate to
+В _Manage_ меню администратора, перейдите на
 _Structure_ > _Taxonomy_ (_admin/structure/taxonomy_).
 =============
 
-Navigation instructions like this assume that you have the core Toolbar module
-installed, and this example means that in the menu bar at the top of your site,
-you would need to click _Manage_ to expose the menu choices, then click
-_Structure_, then _Taxonomy_, and that at the end, you would be on a page with
-URL _http://example.com/admin/structure/taxonomy_ (if your site base URL is
+Иструкции по переходам на подобие вышеуказанных предполагают что вы установили Toolbar модуль
+из ядра Drupal и этот пример означает что у вас есть верхнее меню администратора на вашем сайте,
+вы сможете выбрать _Manage_, чтобы раскрыть меню, затем нажмите
+_Structure_, и выберите _Taxonomy_ и в после этого, вы перейдете на страницу с
+URL _http://example.com/admin/structure/taxonomy_ (если адрес вашего сайта
 _http://example.com_).
 
 // Top navigation bar on any admin page, with Manage menu showing.
 image:images/preface-conventions-top-menu.png["Admin menu",width="100%"]
 
-Here's another example:
+Еще один пример:
 
 =============
-In the _Manage_ administrative menu, navigate to
+В _Manage_ меню администратора, перейдите на
 _Configuration_ > _System_ > _Basic site settings_
 (_admin/config/system/site-information_).
 =============
 
-In this example, after clicking on _Manage_ and _Configuration_, you would need
-to find the _System_ section of the page, and within that, click _Basic
-site settings_. After that, you'd end up on
+В этом примере, после нажатия на _Manage_ и _Configuration_, вы сможете
+найти _System_ раздел на странице и затем нажать _Basic
+site settings_. После чего вы попадёте на:
 _http://example.com/admin/config/system/site-information_.
 
 // System section of admin/config page.
 image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
 
-One other note: if you are using the standard administrative core Seven theme,
-many "Add" buttons in the administrative interface are displayed with + signs on
-them. For instance, on admin/content, the Add new content button appears as
-_+ Add new content_. However, this is theme-dependent and is not really part of
-the text on the button (for instance, it would not necessarily be read by a
-screen reader), so in this guide, the convention is to not mention the + sign
-on the buttons.
+Еще одно замечание: если вы используете стандартную тему администрирования Seven,
+многие кнопки "Добавить" в пользовательском интерфейсе отображаются со знаком плюс + на
+них. Например, на admin/content, кнопка Добавить новый контент появляется как
+_+ Add new content_. Однако, это зависит от темы оформления и не является частью
+текста кнопки (например, это не обязательно появится на всех
+устройствах), так что в этом руководстве, мы не заостряем внимание на знаке плюса +
+на кнопках.
 
-==== Filling in forms
+==== Заполнение форм
 
-Many of the task topics in this guide include steps where you will fill out a
-web form. In most cases, a screen capture image of the form will be included,
-along with a table of the values you will need to enter into each form
-field. For example, you might see a table that starts out like this, explaining
-the site information form you would see if you navigated to _Configuration_ >
+Многие задачи в этом руководстве включают шаги где вам нужно заполнить
+форму. В большинстве случаев, скриншоты этих форм будут добавлены в текст,
+также как и таблицы со значениями, которые вы должны ввести в каждое поле
+формы. Например, вы можете увидет таблицу которая начинается как показано ниже, в качестве объяснения
+формы основных настроек сайта, формы которую вы можете увидеть если перейдете на _Configuration_ >
 _System_ > _Site information_ (_admin/config/system/site-information_):
 
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site details > Site name|Name of your site|Anytown Farmers Market
+|Имя поля|Объяснение|Примерное значение
+|Настройки сайта > Имя сайта|Название вашего сайта|Ярмарка города N
 |================================
 
-To use this table, find the field labeled _Site name_ in the section that is
-under _Site details_ in the form, and enter the name of your site in this
-field. An example site name of "Anytown Farmers Market" is suggested in the
-table, which relates to the scenario of building a website for a farmers market
-that you'll find all through this guide (see <<preface-scenario>> for
-details). Also note that on some forms, you might have to click a section title
-(like _Site details_ in this example) to expand the section and find the field
-it contains.
+Используя эту таблицу, вы можете найти поле _Site name_ в форме раздела
+с названием _Site details_ и ввести имя вашего сайта в этом
+поле. Как пример имя сайта "Ярмарка города N" предложенное в
+таблице, которое относится к сценарию создания сайта городскоя ярмарки,
+который мы будет создавать в различных темах этого руководства (смотрите <<preface-scenario>> для
+больше информации). Также заметьте что в некоторых формах, вы должны будете нажать на заголовок раздела
+(как например в _Site details_), чтобы раскрыть раздел и найти поле, которое в
+нем содержится.
 
 
-*Attributions*
+*Авторы*
 
-Written/edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано/отредактировано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван].
