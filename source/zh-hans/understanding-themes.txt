@@ -1,58 +1,49 @@
 [[understanding-themes]]
 
-=== Concept: Themes
+=== 概念：主题
 
 [role="summary"]
-Overview of themes and where to obtain them.
+主题概述以及如何获取它们。
 
-(((Theme,overview)))
-(((Theme,core)))
-(((Core theme,overview)))
-(((Theme,third-party)))
-(((Third-party theme,overview)))
-(((Theme,custom)))
-(((Custom theme,overview)))
+(((主题,概述)))
+(((主题,核心)))
+(((核心主题,概述)))
+(((主题,第三方)))
+(((第三方主题,概述)))
+(((主题,自定义)))
+(((自定义主题,概述)))
 
-==== Prerequisite knowledge
+==== 预备知识
 
 <<understanding-drupal>>
 
-==== What is a Theme?
+==== 什么是主题？
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+主题是定义站点视觉观感的一系列文件。Drupal核心和模块决定您的站点显示什么
+_内容_（内容包括HTML文本和其他存储在数据库里的数据、上传的图像以及其他资源文件）。
+主题则决定这些内容的HTML标记和CSS样式。
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+Drupal有提供几个基本主题。这些主题是由社区在过去几年设计和开发的。对于创建第一个网站
+和熟悉Drupal核心如何工作，它们都是不错的选择。
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+Drupal是一个成熟的内容管理系统，一般来说，提供（免费或付费）主题的第三方也都值得信赖。
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software. Guidance for creating custom themes in
-Drupal 8 can be found in the
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"].
+如果第三方提供的主题不能满足您的需求，那么，您需要创建一个自定义主题。一个简单的自定义主题，
+可以是单个CSS文件，给Drupal核心提供的标记添加一些样式。关于如何创建自定义Drupal 8主题，
+请访问 https://www.drupal.org/theme-guide/8[_Drupal.org_ 社区文档 "Theming Drupal"]
 
-==== Related topics
+==== 相关话题
 
 * <<extend-theme-find>>
 * <<extend-theme-install>>
 * <<understanding-modules>>
 
-==== Additional resources
+==== 相关资料
 
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"]
+https://www.drupal.org/theme-guide/8[_Drupal.org_ 社区文档 “Drupal Theming”]
 
 
-*Attributions*
+*贡献者*
 
-Written and edited by https://www.drupal.org/u/jgrubb[John Grubb] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+编写： https://www.drupal.org/u/jgrubb[John Grubb]、
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]；翻译： https://www.drupal.org/u/jungle[冉强军]
