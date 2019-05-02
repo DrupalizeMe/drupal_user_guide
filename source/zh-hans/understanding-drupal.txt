@@ -1,120 +1,94 @@
 [[understanding-drupal]]
 
-=== Concept: Drupal as a Content Management System
+=== 概念: Drupal作为一个内容管理系统
 
 [role="summary"]
-Overview of Drupal and the reasons to choose it as a reliable Content Management System (CMS).
+Drupal概述以及为什么选择Drupal作为一个值得信赖的内容管理系统（CMS）。
 
-(((CMS (Content Management System),overview)))
-(((Content Management System (CMS),overview)))
-(((Drupal content management system,overview)))
-(((Drupal content management system,server requirements)))
-(((Drupal core,overview)))
-(((Drupal.org website,downloading modules and themes from)))
+(((CMS (内容管理系统),概述)))
+(((内容管理系统 (CMS),概述)))
+(((Drupal内容管理系统,概述)))
+(((Drupal内容管理系统,服务器需求)))
+(((Drupal核心,概述)))
+(((Drupal.org网站,下载模块和主题)))
 
-//==== Prerequisite knowledge
+//==== 预备知识
 
-==== What is a Content Management System?
+==== 什么是内容管理系统？
 
-A content management system (CMS) is a software tool that lets users add,
-publish, edit, or remove content from a website, using a web browser on a
-smartphone, tablet, or desktop computer. Typically, the CMS software is written
-in a scripting language, and its scripts run on a computer where a database and
-a web server are installed. The content and settings for the website are usually
-stored in a database, and for each page request that comes to the web server,
-the scripts combine information from the database and _assets_ (JavaScript
-files, CSS files, image files, etc. that are part of the CMS or have been
-uploaded) to build the pages of the website.
+内容管理系统（CMS）是一种软件，它允许用户使用智能手机，平板电脑或台式计算机中的Web浏览器访问网站，
+添加、发布、编辑和删除内容。通常，CMS软件使用脚本语言编写，运行在安装有数据库和Web服务器的计算机上。
+网站的内容和配置一般存储在数据库中，对于每个页面请求，页面的构建是由服务器中的脚本完成的，
+它将来自数据库的信息和 _资源文件_ (来自CMS或上传的JavaScript文件，CSS文件，图像文件等)组合起来
+构建网站的页面。
 
-The combination of the operating system that the CMS runs on, the scripting
-language it is written in, the database it stores its information in, and the
-web server that runs the scripts to retrieve information and return it to the
-site visitor's web browser is known as the _stack_ that the CMS runs on; the
-commonly used combination of the Linux operating system, Apache web server,
-MySQL database, and PHP scripting language is known as the _LAMP stack_.
+对于CMS，运行它的操作系统、编写它的脚本语言、为它存储信息的数据库以及Web服务器，
+构成了运行它的"_技术栈_"。一般使用的组合是 _LAMP_，即Linux操作系统、Apache Web服务器、
+MySQL数据库、和脚本语言PHP。
 
-==== What is Drupal?
+==== 什么是Drupal?
 
-Drupal is a flexible CMS based on the LAMP stack, with a modular design allowing
-features to be added and removed by installing and uninstalling _modules_, and
-allowing the entire look and feel of the website to be changed by installing and
-uninstalling _themes_. The base Drupal download, known as Drupal Core, contains
-the PHP scripts needed to run the basic CMS functionality, several optional
-modules and themes, and many JavaScript, CSS, and image assets. Many additional
-modules and themes can be downloaded from the https://www.drupal.org[_Drupal.org_]
-website.
+Drupal是一个灵活的，基于LAMP技术栈的CMS，它的模块化设计，允许通过安装和卸载 _模块_
+的方式添加和移除功能，同时，允许通过安装和卸载 _主题_ 改变整个网站的视觉感观。我们平时下载的Drupal，
+被称作Drupal核心，它包含：运行CMS所需的PHP脚本，一些默认的模块和主题，以及很多
+JavaScript、CSS、和图像文件。下载更多模块和主题，请访问 https://www.drupal.org[_Drupal.org_]。
 
-Drupal can also run on other technology stacks:
+Drupal还可以运行在其他技术栈上：
 
-* The operating system can be Windows or Mac OS instead of Linux.
+* 除了Linux，操作系统还可以是Windows或Mac OS。
 
-* The web server can be Nginx or IIS instead of Apache.
+* Web服务器可以用Nginx或IIS，替代Apache。
 
-* The database can be PostgreSQL or SQLite instead of MySQL, or a
-MySQL-compatible replacement such as MariaDB or Percona.
+* 数据库可以用PostgreSQL或SQLite，替代 MySQL，或者其他兼容MySQL的数据库
+比如MariaDB或Percona。
 
-Other operating systems, web servers, and databases can also be made to work;
-however, the scripts that the software uses are written in PHP, so that cannot
-be changed.
+其他的操作系统，Web服务器，数据库也可以让它工作。但是，编写它的PHP脚本语言，这一点是不变的。
 
-==== What are the reasons for using Drupal?
+==== 使用Drupal的理由有哪些？
 
-When building a website, you have your choice of using one of the many existing
-CMS packages and hosted services, developing your own CMS, or building the site
-without using a CMS. Here are some of the reasons you might choose to use
-Drupal:
+当创建一个网站时，您可以从众多的CMS和托管服务中选择，也可以选择开发您自己的CMS
+或者完全不用CMS。而以下可能是您选择使用Drupal的理由：
 
-* Building a small, simple site with static HTML pages is not difficult, and you
-can get a simple site up very quickly. Setting up a site in a CMS generally
-requires more time initially, but brings you the benefits of on-line editing
-(easier for less experienced content maintainers), uniformity (harder to
-maintain using static HTML for larger sites), and the possibility of more
-complex features requiring a database.
+* 创建一个短小的、简单的静态HTML页面并不难，很快，您就可以让一个简单的站点运行起来。而使用
+CMS构建一个网站，开始时通常需要更多时间，但是会带给你一些好处：在线编辑（这对于缺乏
+经验的内容维护者很有用），统一管理（对于大型站点使用静态HTML是极难维护的），
+可以构建需要数据库支持的复杂功能。
 
-* Some CMS software is special-purpose; for instance, there are packages and
-hosted services that you can use to build a blog or a club membership
-website. Drupal, in contrast, is a general-purpose CMS. If you are building a
-special-purpose site, you might choose to use a special-purpose CMS; however, if
-your site falls even slightly outside the intended purpose, you will probably be
-better off using a general-purpose CMS rather than trying to adapt a
-special-purpose CMS.
+* 有的CMS仅适合特定用途；比如，您可以使用某些CMS和托管服务，来构建博客或俱乐部会员网站。
+然而，Drupal是一个通用的CMS。如果您正在构建特定用途的网站，您可以选择使用特定用途的CMS；
+但是，如果您的网站会超出那怕一点点预期目的，可能最好选择通用CMS，而不是专用CMS。
 
-* Building your own CMS-type software can seem attractive. However, using a
-general-purpose CMS like Drupal as a starting point is usually a better idea,
-because the basic CMS functionality (such as user accounts and content
-management) has thousands of developer hours behind it, including many years of
-user testing, bug fixing, and security hardening.
+* 构建自己的CMS软件，听起来不错。 但是，使用像Drupal这类通用CMS，通常来说，是
+一个更好的主意，因为CMS的基本功能（比如用户账号和内容管理），其背后，积累的是成千上万
+开发者的贡献，并经历了多年的用户测试，Bug修复和安全加固。
 
-* Some CMS software packages are expensive to purchase a license for. Some are
-free or have a free version, but have restrictive licenses that do not allow you
-to make modifications and extensions. You might prefer to use a package (like
-Drupal) that has a less restrictive software license, and is developed by a
-world-wide community. See <<understanding-project>> for more on this topic.
+* 某些CMS是需要付费的，而且购买它的许可证非常昂贵。也有一些CMS声称免费或者提供有免费版本，
+但是，其许可证会限制您、不允许您对它进行修改和扩展。您可能更喜欢Drupal这样的软件：
+它具有较少的许可证限制，并且拥有一个全球性的社区。更多信息，请查看<<understanding-project>>。
 
-==== Related topics
+==== 相关话题
 
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-distributions>>
 * <<understanding-project>>
 
-==== Additional resources
+==== 相关资料
 
-* https://www.drupal.org/docs/8/understanding-drupal-8/overview[The Drupal overview]
+* https://www.drupal.org/getting-started/before/overview[Drupal概述]
 
-* https://www.drupal.org/about/faq[_Drupal.org_ page "FAQ" (Frequently Asked Questions)]
+* https://www.drupal.org/about/faq[_Drupal.org_ "FAQ" (常见问题)]
 
-* https://www.drupal.org/case-studies[_Drupal.org_ page "Case Studies"]
+* https://www.drupal.org/case-studies[_Drupal.org_ "案例研究"]
 
-* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia page "Content management systems"]
+* https://en.wikipedia.org/wiki/Content_management_system[维基百科"内容管理系统"]
 
-* https://en.wikipedia.org/wiki/Modular_design[Wikipedia page "Modular design"]
+* https://en.wikipedia.org/wiki/Modular_design[维基百科"模块化设计"]
 
 
-*Attributions*
+*贡献者*
 
-Written and edited by https://www.drupal.org/u/kvantomme[Kristof van Tomme]
-at https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan]
-at https://erdfisch.de[erdfisch].
+编写: https://www.drupal.org/u/kvantomme[Kristof van Tomme] @ http://pronovix.com[Pronovix]，
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]、
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] @ https://erdfisch.de[erdfisch]
+；翻译: https://www.drupal.org/u/jungle[冉强军] @ https://intergreat.com[InterGreat Education Group]。
