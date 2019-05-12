@@ -1,80 +1,81 @@
 [[prevent-backups]]
 
-=== Concept: Data Backups
+=== Основы: Резервная копия данных
 
 [role="summary"]
-Overview of data backups and what should be backed up on a site.
+Обзор создания резервных копий и как следует хранить копии сайта.
 
-(((Backup,overview)))
-(((Content,backing up)))
-(((File,backing up)))
-(((Database,backing up)))
+(((Резервная копия,обзор)))
+(((Контент,создание резервных копий)))
+(((Файл,создание резервных копий)))
+(((База данных,создание резервных копий)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<understanding-drupal>>
 * <<install-prepare>>
 
-==== What is a site backup?
+==== Что такое резервная копия сайта?
 
-If something happens to the computer (or computers) that your site and its
-database are running on, or if you lose access to this computer, you could lose
-some or all of your site's data. You could also lose data if your site is
-hacked, or if someone with administrative privileges on your site deletes or
-alters data mistakenly from the administrative interface. In order to prevent
-scenarios like this from being permanent, expensive data losses, it is important
-to make regular backups of your site's data, and to store them in a location
-that is separate from the computer where your site is running.
+Если что-нибудь случится с компьютером (или компьютерами), на котором ваш сайт и его
+база данных работают или в случае когда вы потеряете доступ к этому компьютеру, то вы потеряете
+некоторые или все данные вашего сайта. Вы можете также потерять данные, если ваш сайт
+взломан, или кто-то с доступом в админку на вашем сайте удалил все данные или
+изменил данные на сайте с ошибками. Чтобы предупредить все эти
+возможные ситуации потерь данных, важно
+делать регулярные резервные копии вашего сайта и хранить их в месте
+отдельном от компьютера, где ваш сайт работает.
 
-The frequency with which you should make data backups, and how many backups you
-should keep, depends on how frequently your site is changing. If you have a very
-large amount of content on your site that is being added to or updated many
-times per day, you would want to make more frequent backups than you would for a
-site that changes rarely. Also consider that some time could pass between when a
-data problem occurs and when you notice that it is a problem, so storing a
-sequence of backups (so that you can go back to the last known good data and
-retrieve that), rather than overwriting a single backup repeatedly, is a
-good practice.
+Частота с которой вы должны делать ваши резервные копии и как много копий вам
+следует хранить, зависит от того как часто ваш сайт изменяется. Если вы имеете большой
+объем информации на вашем сайте, которая была добавлена или обновлена много
+раз за день, то вам следует делать резервные копии как можно чаще, чем если
+сайт меняется редко. Также расчитывайте, что некоторое время должно пройти, между тем
+когда проблема произойдет и когда вы заметите проблему, так что хранить нужно
+несколько последовательных копий (так чтобы можно было вернуться к моменту, когда проблема еще не произошла и
+исправить ее), прежде чем перезаписывать, какую-нибудь резервную копию немедленно, убедитесь
+что ошибки которая возникла, нет в вашей резервной копии.
 
-Another consideration is that whatever format you store your backups in, it is a
-good idea to verify that you can actually retrieve lost data from your
-backups. You might want to test several possible data loss scenarios, and make
-sure that your data can be restored to the site in all cases.
 
-In order to make a complete backup of your site, you will need to make copies of
-the following:
+Еще одно предостережение, в каком формате бы вы не хранили ваши резервные копии,
+хорошей идеей будет проверять, что вы можете развернуть вашу копию для восстановления ваших
+данных. Вам возможно потребуется протестировать различные сценариии потери данных, чтобы
+быть уверенным, что вы сможете восстановить утраченные данные во всех случаях.
 
-* The data in the _sites_ directory, including the _sites/default/settings.php_
-file.
+Следующие шаги позволят сделать полную резервную копию
+вашего сайта:
 
-* The data in your site's database. A few tables can be truncated, such as those
-storing the temporary data cache and user login session information, but it is
-always safe to back up the entire database.
+* Данные в папке _sites_, включая файл _sites/default/settings.php_.
 
-* Uploaded files, such as images and other attachments. The location of these
-files is configurable; the standard location is the _sites/default/files_
-directory under your site root. In the _Manage_ administrative menu, navigate
-to _Configuration_ > _Media_ > _File system_ (_admin/config/media/file-system_)
-to check the file upload locations; to change them, you'll need to edit your
-_settings.php_ file.
 
-* Modules, themes and any other software files you have customized. You can find
-customized modules and themes in the _modules_ and _themes_ directories
-respectively. Some people prefer to back up all software files, including core
-files and contributed modules and themes (which you could recover by downloading
-them again from the source), rather than trying to pick out specific files that
-definitely need to be backed up.
+* Данные из базы данных вашего сайта. Некоторые таблицы могут быть очищены, например
+хранящие временный данные с кэшем и информацией о сессиях авторизованных пользователей, однако
+всегда безопаснее создавать резервную копию всей базы данных.
 
-You can perform a test to confirm whether your backup has been done right by
-making a development copy of the site (see <<install-dev-making>>).
+* Загруженные файлы, такие как изображения и другие прикрепленные файлы. Местоположожение этих
+файлов настраивается; стандартное местоположение это папка _sites/default/files_
+относительно корня сайта. В _Управлении_ меню администратора, перейдите
+на страницу _Конфигурация_ > _Медиа_ > _Файловая система_ (_admin/config/media/file-system_)
+проверьте папку для загрузки файлов; вы можете изменить папку для файловой системы, вы также можете это сделать это
+в файле _settings.php_.
 
-==== Related topics
+* Модули, темы офомления и любые другие пользовательские файлы, которые вы добавили. Вы можете найти
+пользовательские модули и темы оформления в папках _modules_ и _themes_
+со всеми вложенными папками. Некоторые люди предпочитают создать резервную копию всех файлов, включая файлы Drupal,
+модулей и тем оформления (которые вы сможете восстановить загрузив
+их снова из исходников), прежде чем пытаться собрать проект из источников,
+которые необходимо использовать.
+
+Вам следует выполнить тест, чтобы потвердить, что ваша резервная копия создана верно
+и вы можете развернуть копию сайта (смотрите <<install-dev-making>>).
+
+==== Связанные темы
 
 * <<security-update-core>>
 * <<install-dev-making>>
 * <<prevent-cache>>
 
-==== Additional resources
+==== Дополнительные материала
 
 * https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
 
@@ -83,6 +84,8 @@ which can be used to set up automatic backups of the database and uploaded
 files.
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Написано https://www.drupal.org/u/levmyshkin[Иван Абраменко]
