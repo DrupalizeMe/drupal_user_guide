@@ -1,15 +1,15 @@
 [[extend-git]]
-=== Managing File and Configuration Revisions with Git
+=== Управление файлами и конфигурационными редакциями с помощью Git
 
-(((Tool,Git)))
-(((Git tool,using)))
+(((Инструмент,Git)))
+(((Git инструмент,использование)))
 
-==== Goal
+==== Цель
 
-Use the Git revision control tool to manage revisions to files and configuration
-on your site.
+Используйте инструмент контроля версий Git, чтобы управлять редакциями файлов и конфигурации
+на вашем сайте.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<install-tools>>
 
@@ -17,54 +17,54 @@ on your site.
 
 * <<install-dev-sites>>
 
-* How to set up a Git repository and find its _clone_ URL. For example, if
-you want to use GitHub to host your repository, see
+* Как настроить Git репозиторий и найти его _клон_ URL. Например, если
+вы хотите использовать GitHub хост вашего репозитория, посмотрите
 https://help.github.com/en/articles/create-a-repo[GitHub "Create a repo" page]
-and
+и
 https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub "Which remote URL should I use" page].
 
-* How to open and use a command terminal window and a plain-text editor.
+* Как открыть и использовать окно командной строки и текстовый редактор.
 
-* To manage configuration, how to unpack and pack archive files (such as _.zip_
-and _.tar.gz_).
+* Для управления конфигурацией, как распаковать и упаковать архивные файлы (например _.zip_
+и _.tar.gz_).
 
-==== Site prerequisites
+==== Требования к сайту
 
-* You must have downloaded the software for your site, using one of the methods
-in <<install-decide>>. If you want to manage configuration, you must have
-installed the software and have a running site.
+* Вы должны загрузить программное обеспечение для вашего сайта, используя один из методов
+в <<install-decide>>. Если вы хотите управлять конфигурацией, вы должны иметь
+установленное программное обеспечение и работающий сайт.
 
-* Git client software must be installed on your site's server. See
-https://git-scm.com/[Git] for instructions.
+* Git клиент должен быть установлен на сервере вашего сайта. Смотрите
+https://git-scm.com/[Git] для инструкции.
 
-* You must have a new repository created and know its Git clone URL.
+* Вы должны создать новый репозиторий и знать его Git клон URL.
 
-==== Steps
+==== Шаги
 
-===== Initializing the repository
+===== Инициализация репозитория
 
-Do these steps once, after creating a Git repository, to connect your local
-directory to the repository and add the initial files to it.
+Выполните эти шаги один раз, после создания Git-репозитория, для подключения вашей
+локальной директории к репозиторию и добавления к нему исходного файла.
 
-. Open a command terminal window, and change to the directory where your site's
-files are located. This is your "top" directory.
+. Откройте окно командной строки и перейдите в директорию, где находятся файлы
+вашего сайта. Это ваша "верхняя" директория.
 
-. Determine where your web root is. If the _core_, _modules_, and _themes_
-directories are located directly in this directory, then you are in your web
-root. If you have used Composer to download the software, then these files are
-located inside the _web_ subdirectory (which is your web root).
+. Определите где находится ваш корневой каталог. Если _core_, _modules_, и _themes_
+директории расположены в этом каталоге, тогда вы в вашем корневом
+каталоге. Если вы использовали Композер для загрузки, тогда эти файлы
+находятся внутри _web_ подкаталога (который является вашим корневым каталогом).
 
-. In a plain text editor, create a new file called _.gitignore_ in the top
-directory (or edit it if it already exists). This file contains a list of files
-and directories that Git should ignore (not add to the repository). For example,
-the _settings.php_ file for your site should not be added to Git, because it
-contains your database account information, and the media files uploaded to
-your site (usually in _sites/default/files_) should not be in Git either -- the
-objective is to have the software in the repository, not the site content.
+. В текстовом редакторе создайте новый файл с именем_.gitignore_ в верхней
+директории (или отредактируйте его, если он уже существует). Этот файл содержит список файлов
+и директорий который Git будет игнорировать (не добавлять в репозиторий). Например,
+_settings.php_ файл для вашего сайта не будет добавлен в Git, потому что он
+содержит сведения об учетной записи базы данных, и медиафайлы, загруженные на
+ваш сайт (обычно _sites/default/files_) также не должно быть в Git --
+цель состоит в том, чтобы в репозитории было програмное обеспечение, а не содержимое сайта.
 
-. Make sure the following lines are in the _.gitignore_ file. If your web root
-is not your top directory, check each of these to see if they need a prefix. For
-example, _sites_ may need to be replaced with _web/sites_.
+. Убедитесь, что следующие строки находятся в файле _.gitignore_. Если ваш корневой каталог
+не является верхней директорией, проверьте каждую из них, чтобы узнать, нужен ли им префикс. Например,
+_sites_ возможно потребуется заменить на _web/sites_.
 +
 ----
 sites/*/settings*.php
@@ -72,23 +72,23 @@ sites/*/files
 config
 ----
 
-. Enter the following commands:
+. Введите следующие команды:
 +
 ----
 git init
 git add -A
 ----
 
-. Optionally, verify the list of files you will be adding to your Git repository
-by entering this command and scrolling through the (very long) list:
+. При желании проверьте список файлов, которые вы будете добавлять в свой репозиторий Git,
+введя эту команду и листая (очень длинный) список:
 +
 ----
 git status
 ----
 
-. Enter the following commands. You can substitute your own _commit message_ for
-"Initial file add" if you wish, and you will need to substitute your own Git
-clone URL for the URL in the second command:
+. Введите следующие команды. Вы можете заменить ваше _сообщение коммита_ для
+"Initial file add" если вы хотите, и вам нужно будет заменить свой собственный Git
+клон URL на URL во второй команде:
 +
 ----
 git commit -m "Initial file add"
@@ -96,101 +96,101 @@ git remote add origin https://github.com/example-name/example-repo.git
 git push -u origin master
 ----
 
-. If you are using GitHub repository hosting, or another host with online
-access, you can now go to your repository page and see that the files are there.
+. Если вы используете хостинг репозитория GitHub или другой хост с онлайн
+доступом, вы можете перейти на свою страницу репозитория и увидеть, что файлы там.
 
-===== Updating files in the repository
+===== Обновление данных в репозитории
 
-Use these steps when you have updated, added, or deleted one or more files in
-your site, in order to send the changes (_push_) to your repository.
+Используйте эти шаги, при обновлении, добавлении или удалении одного или нескольких файлов на
+вашем сайте, чтобы отправить изменения (_push_) в ваш репозиторий.
 
-. Open a command terminal window, and change to the directory where your site's
-files are located.
+. Откройте окно командной строки, и прейдите в директорию где находятся файлы
+вашего сайта.
 
-. Check the list of files that have been added, changed, or deleted:
+. Проверьте список файлов, которые были добавлены, изменены или удалены::
 +
 ----
 git status
 ----
 
-. Optionally, for text files that have been changed (not images), look at the
-differences between the new and old versions of the file:
+. Дополнительно, для текстовых файлов, которые были изменены (не изображения), посмотрите на
+различия между новой и старой версиями файла:
 +
 ----
 git diff path/to/file.txt
 ----
 
-. Stage all the changes for the next commit, and verify that they are staged:
+. Подготовьте все изменения для следующего коммита и убедитесь, что они внесены:
 +
 ----
 git add -A
 git status
 ----
 
-. You can omit a particular file from the commit that you have already staged,
-or add another file to the ones you have already staged. If a particular file
-or directory keeps getting added by mistake, consider adding it to the
-_.gitignore_ file so that it will be ignored by Git. Omit/add commands:
+. Вы можете пропустить определенный файл из коммита который вы уже поставили,
+или добавить другой файл к уже созданным. Если конкретный файл
+или директория продолжает добавляться по ошибке, рассмотрете возможность добавления его в
+_.gitignore_ файл, чтобы он был проигнорирован в Git. Пропускающие/добавляющие команды:
 +
 ----
 git reset HEAD path/to/file.txt
 git add path/to/file.txt
 ----
 
-. Commit and push your changes. Substitute something meaningful for the commit
-message:
+. Коммите и пуште ваши изменения. Напишите что-то значимое в сообщении
+коммита:
 +
 ----
 git commit -m "commit message here"
 git push
 ----
 
-. If you have other copies of your repository, update them by opening a command
-window in the directory of each copy and running the following command:
+. Если у вас есть другие копии вашего репозитория, обновите их, открыв командное
+окно в директории каждой копии и запустив следующую команду:
 +
 ----
 git pull
 ----
 
 
-===== Making a copy of the files in your repository
+===== Создание копии файлов в вашем репозитории
 
-Follow these steps if you want to copy all the files in your repository to a
-new location. For example, you might have both a local development copy of your
-site and a production site, or several team members might all have local
-copies of the site.
+Выполните следующие действия, если вы хотите скопировать все файлы вашего репозитория на
+новое местоположение. Например, у вас может быть локальная копия разработки
+вашего сайта и рабочий сайт, или несколько членов команды могут иметь локальные
+копии сайта.
 
-. Open a command window in the location where you want the files to be.
+. Откройте командное окно в том месте, где вы хотите, чтобы находились файлы.
 
-. Enter the following command, substituting your repository clone URL for the
-URL, and the name of the subdirectory you want them in for _dirname_:
+. Введите следующую команду, заменив URL вашего клона репозитория на
+URL и имя подкаталога, в котором вы хотите их использовать для _dirname_:
 +
 ----
 git clone https://github.com/example-name/example-repo.git dirname
 ----
 
-===== Managing configuration in the repository
+===== Управление конфигурацией в репозитории
 
-. Follow the instructions on <<extend-config-versions>> to export a complete
-archive of your site's configuration.
+. Следуйте инструкциям на <<extend-config-versions>> для экспорта полного
+архива конфигурации вашего сайта.
 
-. If you have not already initialized configuration in the repository, unpack
-the configuration archive into a new directory, preferably above the web root
-directory, and follow the instructions above to add these files to your
-repository.
+. Если вы еще не инициализировали конфигурацию в репозитории, распакуйте
+архив конфигурации в новую директорию, желательно над корневым каталогом
+директории, и следуйте инструкциям выше, чтобы добавить эти файлы в свой
+репозиторий.
 
-. After initializing, whenever your site configuration changes, export and
-unpack the configuration archive in the same location. Follow the instructions
-above to update these files in your repository.
+. После инициализации, при изменении конфигурации вашего сайта, экспортируйте и
+распакуйте архив конфигурации в том же месте. Следуйте инструкциям выше,
+чтобы обновить эти файлы в вашем репозитории.
 
-. To import updated configuration to another site, make an archive of the
-configuration directory from your repository. Then follow the instructions on
-<<extend-config-versions>> to upload and import this archive into the site.
+. Чтобы импортировать обновленную конфигурацию на другой сайт, сделайте архив
+конфигурационной директории из вашего репозитория. Затем следуйте инструкциям на
+<<extend-config-versions>> для загрузки и импорта этого архива на сайт.
 
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== Связанные понятия
 
 <<install-dev-sites>>
 
@@ -199,9 +199,11 @@ configuration directory from your repository. Then follow the instructions on
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Adapted and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+Адаптирован и отредактирован https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] от
 https://www.drupal.org/node/803746["Building a Drupal site with Git"],
-copyright 2000-2019 by the individual contributors to the
+авторские права 2000-2019 отдельных авторов
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Исмайлов Михаил]
