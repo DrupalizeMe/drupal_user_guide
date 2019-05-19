@@ -1,72 +1,73 @@
 [[menu-home]]
 
-=== Designating a Front Page for your Site
+=== Настройка главной страницы
 
 [role="summary"]
-How to configure a content item so that it gets displayed as the home page.
+Как настроить часть содержимого так, чтобы она отображалась как Главная страница
 
-(((Front page,configuring)))
-(((Home page,configuring)))
-(((Configuring,home page)))
+(((Начальная страница, конфигурирование)))
+(((Главная страница, конфигурирование)))
+(((Конфигурирование, Главная страница)))
 
+==== Цель
 
-==== Goal
+Конфигурация
+Конфигурация, которая отображает часть содержимого как Начальную страницу вашего Web-сайта
 
-Configure which content item is displayed as the front page of your website.
+//==== Необходимые знания
 
-//==== Prerequisite knowledge
+==== Необходимые компоненты сайта
 
-==== Site prerequisites
+Часть содержимого, которую вы хотите определить как Начальную страницу на Вашем сайте, должна
+существовать. Посмотрите <<content-create>>.
 
-The content item that you want to designate as the front page of your site must
-exist. See <<content-create>>.
+==== Шаги
 
-==== Steps
+. В _Управление_ административным меню перейдите к _Содержание_ > _Сиситема_ >
+_Основные настройки сайта_ (__admin/config/system/site-information_).
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_).
-
-. Under _Front page_, replace _/node_ with the name of the page you
-would like to make the home page. To use the home page that was previously
-created, provide its path _/home_. Click _Save configuration_.
+. Под _Начальной страницей_, замените  _/node_ на имя страницы, которую Вы
+бы хотели сделать Главной страницей. Чтобы использовать Главную страницу, которая была ранее
+создана, укажите ее путь _/home_. Нажмите _Сохранить настройки_.
 +
 --
 // Front page section of admin/config/system/site-information.
 image:images/menu-home_new_text_field.png["'FRONT PAGE' area with /home in text field"]
 --
 
-. Navigate to the home page to verify that it displays content as configured by
-you.
+. Перейдите на Главную страницу, чтобы проверить, что она отображает содержание, настроенное на
+Вас.
 +
 --
 // Site front page after configuring it to point to the Home content item.
 image:images/menu-home_final.png["'FRONT PAGE' with 'Home' (Basic page) content added",width="100%"]
 --
 
-==== Expand your understanding
+==== Узнать больше
 
 * <<menu-link-from-content>>
 
-* Follow <<content-create>> to create an error page to be used as a 404 (page
-not found) or 403 (not authorized) response on your site. Then following the
-steps here, you can designate it as the error response, in the _Error pages_
-section of the configuration.
+* Перейдите на <<content-create>>, чтобы создать страницу ошибок, которая может использоваться как 404 (страница
+не найдена) или 403 (не авторизовано) ответ на Вашем сайте. После, следуя
+шагам здесь, вы можете назначать ее как ответ на ошибку в _Странице ошибки_,
+раздел конфигурации.
 
-==== Related concepts
+==== Связанные понятия
 
 <<menu-concept>>
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/qOL8arBYpJ4[title="Designating a Front Page for Your Site"]
 
-//==== Additional resources
+//==== Дополнительные ресурсы
 
+*Авторы*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel],
+Написано и отредактировано: https://www.drupal.org/u/AnnGreazel[Ann Greazel],
 https://www.drupal.org/u/jerseycheese[Jack Haas], and
 https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+http://redcrackle.com[Red Crackle]
+
+Переведено: https://www.drupal.org/u/asdasha[Аземша Дарья].
