@@ -1,19 +1,19 @@
 [[planning-layout]]
-=== Planning Your Site Layout
+=== Проектирование макетов сайта
 
 [role="summary"]
-How to plan the navigation and layout of a website (mobile and desktop browsers).
+Как планировать навигацию и макеты вашего сайта (мобильные и десктопные браузеры).
 
-(((Planning,site layout)))
-(((Site layout,planning)))
-(((Layout,planning)))
+(((Планирование,макет сайта)))
+(((Макет сайта,планирование)))
+(((Макет,планирование)))
 
-==== Goal
+==== Цель
 
-Plan the navigation and layout of the site, for both mobile and desktop
-browsers.
+Планировать навигацию и макет сайта для мобильных и десктопных
+браузеров.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<understanding-themes>>
 * <<block-regions>>
@@ -21,74 +21,74 @@ browsers.
 
 // ==== Site prerequisites
 
-==== Steps
+==== Шаги
 
-It is a good idea to plan the site layout before you start building
-the site and writing content; however, your plan may need to be revised either
-before you start implementing it or after you have some of the site built with
-draft content in place, based on budgetary concerns or stakeholder feedback.
+Это отличная идея планировать макеты сайта перед тем как начать создание
+сайта и добавление контента; однако, ваш план может нуждаться в пересмотре также
+перед вы начали реализовывать сайт или после того как вы уже создали сайт с некоторым
+неопубликованным контентом, исходя из бюджета вашего проекта или отзыва клиента.
 
-. Make a list of the information that your site should present to visitors. In
-the farmers market scenario, this might include:
+. Создайте список информации, которую ваш сайт должен представлять посетителям. В
+сценарии городской ярмарки, это может включать:
 +
-  * Location of the market, with directions and a map
-  * Hours and days the market is open
-  * History of the market
-  * List of vendors
-  * Details about each vendor
-  * Searchable list of recipes
-  * Details about each recipe
-  * List of the most recently added recipes
+  * Адрес ярмарки, с планом проезда и картой
+  * Часы и дни работы ярмарки
+  * История ярмарки
+  * Список продавцов
+  * Подробности о каждом из продавцов
+  * Поиск по списку рецептов
+  * Подробности о каждом рецепте
+  * Список с недавно добавленными рецептами
 
-. Decide which information should be on which pages or types of pages on the
-site:
+. Решить какая информация должна быть на следующих страница или типах страниц
+на сайте:
 +
-  Information that should be on all pages::
-    Address, hours, and recently-added recipes list
-  Vendor details pages::
-    Information about each vendor on its own page
-  Recipe details pages::
-    Details of each recipe on its own page
-  Home page::
-    Location, map, directions, and hours
-  About page::
-    History of the market
-  Vendors list page::
-    List of vendors, with links to vendor detail pages
-  Recipe list page::
-    Searchable list of recipes, with links to recipe detail pages
+  Информация которая должна быть на всех страницах::
+    Адрес, часы, недавно добавленные рецепты
+  Страницы с подробностью о продавце::
+    Информация о каждом продавце на своей странице
+  Страницы с подробностью о рецептах::
+    Подробности о каждом рецепте на каждой странице
+  Главная страница::
+    Адрес, карта, схема проезда и часы работы
+  Страница о ярмарке::
+    История ярмарке
+  Страница со списком продавцов::
+    Список продавцов с ссылками на страницу продавца с подробностями
+  Страница со списком рецептов::
+    Поиск по списку рецептов с ссылками на страницу рецепта с подробностями
 
-. Decide which information is the most important on each page. Site visitors
-using mobile phones or other small browsers will often only see the content that
-is presented first, and they may not scroll down to see all of the information.
+. Решить какая информация наиболее важная на каждой странице. Посетители сайта,
+использующие мобильные устройства или небольшое разрешение экрана, будут часто видет только контент, который
+представлен первым и они могут не проскролить вниз и не посмотреть всю информацию на странице.
 
-. Decide which of these pages should appear in the main site navigation. For
-instance, the main navigation might consist of the Home, About, Vendors, and
-Recipes pages.
+. Решить какие из вышеуказанных страниц должны появится в главном меню сайта. Например,
+главное меню может состоять из ссылок Главная, О Ярмарке, Продавцы и
+Рецепты.
 
-. Make a rough design sketch for each page, showing how it would look when
-viewed on a small screen such as a phone, as well as on a larger screen such as
-a desktop browser. Considering that most site visitors will be using smaller
-browsers, it is a good idea to start with the phone-size layout, to make sure
-that these visitors will be able to find the information they need without too
-much scrolling.
+. Сделайте грубый набросок дизацна для каждой страницы, показывая, как это может выглядить
+просматривая сайт на маленьком экране, таком как телефон, также как и на больших экранах, как например
+на настольном комьютере. Полагая что большинство посетителей сайта будут использовать маленькие
+экраны, будет хорошей идеей начать с макета для телефонов и убедиться,
+что эти пользователи смогут найти информацию, которая им нужна без слишком
+большой прокрутки.
 +
-In making these page layout plans, you might find that you need to revise your
-plan for which information should be on which pages. For example, you might
-decide that the address, hours, and recently-added recipes list would all fit
-well in the right sidebar area of all pages, when the site is viewed on
-desktop-sized browsers. On the other hand, you might decide that for mobile
-browsers, you would instead put the address and hours in a short format at the
-top of each page, but only display the recent recipe list at the bottom of the
-home page.
+В процессе создания планов для ваших страниц, вы возможно найдете, что вам необходимо и пересмотрите ваш
+план для информации, которая должна быть на страницах. Например, вы можете
+решить, что адрес, часы работы и недавно добавленные рецепты должны быть вынесены
+в правую колонку сайта на всех страницах, когда сайт просматривается с
+настольного компьютера. С другой стороны, вы можете решить, что мобильные
+браузеры, вы могли бы поместить адрес и часы работы в более коротком формате в
+начале каждой странице, однако только отображение списка последних рецептов перенести вниз
+главной страниц.
 
-==== Expand your understanding
+==== Улучшите понимание темы
 
 <<planning-structure>>
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/35e16QDFE7k[title="Planning Your Site Layout"]
@@ -96,6 +96,8 @@ video::https://www.youtube-nocookie.com/embed/35e16QDFE7k[title="Planning Your S
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+
+Переведено https://www.drupal.org/u/levmyshkin[Иван Абраменко].
