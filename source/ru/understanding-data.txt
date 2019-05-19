@@ -1,58 +1,63 @@
 [[understanding-data]]
-=== Concept: Types of Data
+=== Основы: Типы данных
 
 [role="summary"]
-Overview of common types of data used in a site.
+Обзор часто употребляемых типов данных, используемых на сайтах.
 
-(((Data type,overview)))
-(((Data type,configuration)))
-(((Data type,content)))
-(((Data type,state)))
-(((Data type,session)))
-(((Configuration,as a type of data)))
-(((Content,as a type of data)))
-(((State,as a type of data)))
-(((Session,as a type of data)))
+(((Тип данных,обзор)))
+(((Тип данных,конфигурация)))
+(((Тип данных,контент)))
+(((Тип данных,состояние)))
+(((Тип данных,сессия)))
+(((Конфигурация как тип данных)))
+(((Контент как тип данных)))
+(((Состояние как тип данных)))
+(((Сеанс работы как тип данных)))
 
 
 //==== Prerequisite knowledge
 
-==== What are the types of data?
+==== Какие существуют типы данных?
 
-The data and information on your site is divided up into four types, which are
-edited, translated, and stored differently. These four types are:
+Данные и информация на Вашей странице делятся на четыре типа, которые
+редактируются, переводятся и хранятся по-разному. Эти четыре типа:
 
-Content::
-  Information (text, images, etc.) meant to be displayed to site visitors. This
-  type of information tends to be relatively permanent, but can normally be
-  edited.
-Configuration::
-  Information about your site that is not content, but is also relatively
-  permanent, and is used to define how your site behaves or is displayed. It is
-  sometimes also displayed to site visitors, but tends to be smaller pieces of
-  text (like field labels, the name of your site, etc.) rather than larger
-  chunks that you'd normally think of as Content.
-State::
-  Information of a temporary nature about the current state of your
-  site, such as the time when cron jobs were last run.
-Session::
-  Information about individual site visitors' interactions with the site, such
-  as whether they are logged in and their cookies. This is technically a
-  subtype of State information, since it is also temporary.
+Контент::
+ Информация(текст, изображения и т.д.)предназначена для посетителей сайта. Этот
+ тип информации, как правило, не изменяется, но он может
+ редактироваться.
 
-==== Related topics
+Конфигурация::
+ Информация о Вашей странице – не основное содержимое, но она не изменяется
+ и может использоваться для определения того, как Ваш сайт ведет себя или отображается. Она
+ иногда отображает на сайте посетителей, но заботится о небольших частях
+ текста(такие, как метки поля, название Вашего сайта и т.д.) быстрее, чем о больших
+ частях, о которых Вы обычно думаете, как о содержимом.
+
+Состояние(state)::
+ Инофрмация временного характера о текущем состоянии Вашего
+ сайта, такая как время, когда задачи крона были запущены в последний раз.
+
+Сессия::
+ Иноформация о взаимодействии отдельных посетителей сайта на странице, такая
+ как: вошли ли они в систему и о их куки. Технически, это
+ подтип иноформации о положении, так как это также временно.
+
+=== Связанные темы
 
 * <<planning-data-types>>
 * <<security-cron-concept>>
 * <<user-concept>>
 * <<language-concept>>
 
-//==== Additional resources
+//==== Дополнительные ресурсы
 
 
-*Attributions*
+*Авторы*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+Написано/отредактировано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
 https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"],
 copyright 2000-2017 by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Переведено https://www.drupal.org/user/3615464[Аземша Дарья].
