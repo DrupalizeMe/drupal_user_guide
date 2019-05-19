@@ -1,17 +1,17 @@
 [[install-prepare]]
-=== Preparing to Install
+=== Подготовка в установке
 
 [role="summary"]
-How to download the core software and satisfy prerequisites for installation.
+Как загрузить основное программное обеспечение и удовлетворить требования к установке.
 
-(((Downloading,core software)))
-(((Drupal core,preparing install)))
+(((Загрузка,основное программное обеспечение)))
+(((Ядро Drupal,подготовка установки)))
 
-==== Goal
+==== Цель
 
-Download the core software, and handle any required prerequisites.
+Загрузить основное программное обеспечение, и обработать все необходимые условия.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<install-requirements>>
 
@@ -19,66 +19,68 @@ Download the core software, and handle any required prerequisites.
 
 * <<install-decide>>
 
-* How to install and configure server software (if installing on your own
-computer)
+* Как установить и настроить серверное программное обеспечение (при установке на Ваш личный
+компьютер)
 
-* How to set up hosting for a generic web site
+* Как настроить хостинг для стандартного веб-сайта
 
-* How to create a database
+* Как создать базу данных
 
-==== Site prerequisites
+==== Требования сайта
 
-Server software must be installed on the computer where you plan to host your
-site. See <<install-requirements>>.
+Серверное программное обеспечение должно быть установлено на компьютер, где вы планируете развернуть свой
+сайт. Смотрите <<install-requirements>>.
 
-Depending on how you plan to download the core software, you may need to install
-additional software tools first. See <<install-decide>> and <<install-tools>>.
+В зависимости от того, как Вы планируете загрузить основное программное обеспечение, возможно потребуется сперва установить
+дополнительные инструменты к программному обеспечению. Смотрите <<install-decide>> и <<install-tools>>.
 
-==== Steps
+==== Этапы
 
-. Choose methods for downloading and installing the core software, from those
-listed in <<install-decide>>. The rest of these instructions apply to the
-Composer and manual download options and the interactive installer; if you chose
-other options, the software should be installed for you.
+. Выбрать методы загрузки и установки основного программного обеспечения, из
+перечисленных в <<install-decide>>. Остальные инструкции относятся к
+параметрам загрузки Composer и интерактивной программе установке; если Вы выбрали
+другие опции, программное обеспечение должно быть установлено для Вас.
 
-. Set up a URL and hosting for your site on the server. Verify that the hosting
-is working by putting a simple HTML file in the web root directory of the
-hosting, and visiting the URL for your site.
+. Настройка URL и хостинга для Вашего сайта на сервере. Подтвердите, что хостинг
+работает, помещая простой HTML-файл в веб-корневой каталог хостинга,
+и посещая URL для Вашего сайта.
 
-. Create a database, along with a database user account with full access.
+. Создайте базу данных, вместе с учётной записью пользователя базы данных с полным доступом.
 
-. Download the core software files to the web root directory, using the method
-you decided on. See <<install-decide>> for links to instructions.
+. Загрузите файлы основного программного обеспечения в корневой католог, используя метод,
+который Вы выбрали. Смотрите <<install-decide>> для ссылок на инструкции.
 
-==== Expand your understanding
+==== Расширьте своё понимание
 
-See <<install-run>> to run the interactive installer.
+Смотрите <<install-run>>, чтобы запустить интерактивную программу установки.
 
-Alternatively, you can use the following Drush command, from inside the
-directory that you downloaded the software to, where _DB_NAME_, _DB_USER_ and
-_DB_PASS_ are your database's credentials:
+Кроме того, Вы можете использовать следующую Drush-команду, из каталога,
+в который Вы загрузили программное обеспечение, где _DB_NAME_, _DB_USER_ и
+_DB_PASS_ являются учебными данными Вашей базы данных:
 
 ----
 drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
 ----
 
-// ==== Related concepts
+// ==== Связанные концепции
 
-==== Videos
+==== Видео
 
-// Video from Drupalize.Me.
+// Видео с Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Preparing to Install"]
 
-==== Additional resources
+==== Дополнительные ресурсы
 
 http://www.drush.org[Drush]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Написано и отредактировано https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] на
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] на
 http://redcrackle.com[Red Crackle].
+
+Переведено https://www.drupal.org/u/karina-masalova [Карина Масалова]
