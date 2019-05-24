@@ -1,69 +1,71 @@
 [[block-regions]]
 
-=== Concept: Regions in a Theme
+=== Основы: Регионы в теме оформления
 
 [role="summary"]
-Overview of regions from a theming perspective.
+Обзор регионов для темизации сайта.
 
-(((Theme,regions in)))
-(((Bartik theme,regions in)))
-(((Region,overview)))
-(((Breadcrumb region,overview)))
-(((Content region,overview)))
-(((Featured regions,overview)))
-(((Footer regions,overview)))
-(((Header region,overview)))
-(((Help region,overview)))
-(((Highlighted region,overview)))
-(((Menu region,overview)))
-(((Primary menu region,overview)))
-(((Secondary menu region,overview)))
-(((Sidebar regions,overview)))
-(((Region,breadcrumb)))
-(((Region,content)))
-(((Region,featured)))
-(((Region,footer)))
-(((Region,header)))
-(((Region,help)))
-(((Region,highlighted)))
-(((Region,menu)))
-(((Region,primary menu)))
-(((Region,secondary menu)))
-(((Region,sidebar)))
+(((Тема оформления,регионы в ней)))
+(((Bartik тема оформления,регионы в ней)))
+(((Регион,обзор)))
+(((Регион Хлебные крошки,обзор)))
+(((Регион Контент,обзор)))
+(((Регионы Рекомендованное,обзор)))
+(((Регионы Подвала,обзор)))
+(((Регионы Шапки,обзор)))
+(((Регион Помощь,обзор)))
+(((Регион Выделенное,обзор)))
+(((Регион Меню,обзор)))
+(((Регион Первичного меню,обзор)))
+(((Регион Вторичного меню,обзор)))
+(((Регионы Колонок,обзор)))
+(((Регион,хлебные крошки)))
+(((Регион,контент)))
+(((Регион,рекомендованное)))
+(((Регион,подвал)))
+(((Регион,шапка)))
+(((Регион,помощь)))
+(((Регион,выделенное)))
+(((Регион,меню)))
+(((Регион,первичное меню)))
+(((Регион,вторичное меню)))
+(((Регион,колонка)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<understanding-themes>>
 
-==== What is a region?
+==== Что такое регион?
 
-Besides its primary content, a web page contains other content such as site
-branding (site name, slogan, and logo), navigation aids (menus, links, and
-icons), formatted text, and images. Each theme provides a set of named regions,
-such as _Header_, _Content_, and _Sidebar_, where site builders may choose to
-place their content.
+Кроме основного контента, страница содержит другой контент, такой как
+заголовок сайта (название сайта, слоган и логотип), навигационные элементы (меню, ссылки и
+иконки), форматированный текст и изображения. Каждая тема оформления предоставляет набор из наименованных регионов,
+таких как _Шапка_, _Контент_ и _Колонка_, где создатели сайта могут выбирать
+место для их контента.
 
-The available regions depend on the theme design. Only the Content region,
-which contains the primary content, is required; others are optional.  The
-core Bartik theme provides the regions highlighted in the following image.
+Доступные регионы зависят от дизайна темы оформления. Только регион Контент,
+который содержит главный контент, является обязательных; остальные регионы необязательные. Тема
+оформления ядра Bartik предоставляет регионы выделенные на следующем скриншоте.
 
 // Bartik theme region preview at admin/structure/block/demo/bartik,
 // after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+image:images/block-regions-bartik.png["Регионы темы оформления Bartik",width="100%"]
 
-==== Related topics
+==== Связанные темы
 
 * <<block-concept>>
 * <<planning-data-types>>
 * <<block-place>>
 
-==== Additional resources
+==== Дополнительные материалы
 
 * https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch].
+Написано и отредактировано https://www.drupal.org/u/jfmacdonald[John MacDonald],
+и https://www.drupal.org/u/michaellenahan[Michael Lenahan] из
+https://erdfisch.de[erdfisch]
+
+Переведено https://www.drupal.org/u/levmyshkin[Иван Абраменко]
