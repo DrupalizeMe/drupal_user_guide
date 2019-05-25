@@ -1,144 +1,146 @@
 [[extend-theme-install]]
 
-=== Downloading and Installing a Theme from _Drupal.org_
+=== Загрузка и установка темы оформления с _Drupal.org_
 
 [role="summary"]
-How to download and install a theme from Drupal.org or by using Drush.
+Как скачать и установить тему оформления с Drupal.org или с помощью Drush.
 
-(((Theme,downloading)))
-(((Theme,installing)))
-(((Theme,enabling)))
-(((Theme,contributed)))
-(((Theme,custom)))
-(((Contributed theme,downloading)))
-(((Contributed theme,installing)))
-(((Contributed theme,enabling)))
-(((Custom theme,installing)))
-(((Custom theme,enabling)))
-(((Downloading,theme)))
-(((Installing,theme)))
-(((Enabling,theme)))
-(((Update Manager module,using to install theme)))
-(((Module,Update Manager)))
-(((Drush tool,using to install theme)))
-(((Drupal.org website,downloading and installing theme from)))
+(((Тема,загрузка)))
+(((Тема,установка)))
+(((Тема,включение)))
+(((Тема,дополнительная)))
+(((Тема,пользовательская)))
+(((Тема,загрузка)))
+(((Тема,установка)))
+(((Тема,включение)))
+(((Пользовательская тема,установка)))
+(((Пользовательская тема,включение)))
+(((Загрузка,тема)))
+(((Установка,тема)))
+(((Включение,тема)))
+(((Update Manager модуль,использование для установки темы)))
+(((Модуль,Update Manager)))
+(((Drush инструмент,использование для установки темы)))
+(((Drupal.org сайт,загрузка и установка темы из)))
 
-==== Goal
+==== Цель
 
-Download and install a theme from _Drupal.org_.
+Загрузка и установка темы оформления с _Drupal.org_.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<extend-theme-find>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-If you want to install via the website, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing modules.
+Если вы хотите установить через сайт, модуль ядра Update Manager должен быть
+установлен. Смотрите <<config-install>> для инструкции по установке модуля.
 
-If you want to use Drush, Drush must be installed. See <<install-tools>>.
+Если вы хотите использовать Drush, он должен быть установлен. Смотрите <<install-tools>>.
 
-==== Steps
+==== Шаги
 
-You can use the administrative interface to download and install a contributed
-theme. If you are installing a custom theme rather than a contributed theme, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to download and unpack the theme
-files, follow the steps in <<extend-manual-install>>. If you are using Composer
-to manage the files in your site, follow the steps for downloading in
-<<install-composer>>. In either of these cases, you can then install the theme
-using Drush, or by continuing with step 7 in the instructions for the
-administrative interface below.
+Вы можете использовать административный интерфейс для загрузки и установки дополнительной
+темы. Если вы устанавливаете пользовательскую тему, а не дополнительную тему, если
+вы видите сообщение _Установка модулей и тем требует FTP-доступа к
+вашему серверу_, или если нижеприведенные шаги не работают для загрузки и распаковки файлов
+темы, следуйте шагам в <<extend-manual-install>>. Если вы используете Composer
+для управления файлами вашего сайта, следуйте шагам для загрузки в
+<<install-composer>>. В любом из этих случаев, вы можете установить тему через
+Drush, или продолжить с шага 7 в инструкции для
+административного интерфейса ниже.
 
-===== Using the administrative interface
+===== Использование административного интерфейса
 
-. On the theme's project page on drupal.org (for example,
-_https://www.drupal.org/project/mayo_), scroll to the _Downloads_ section
-at the bottom of the page.
+. На странице темы проекта на drupal.org (для примера,
+_https://www.drupal.org/project/mayo_), скрольте к _Downloads_ разделу
+внизу страницы.
 
-. Right-click _tar.gz_ to copy the address.
+. Щелкните правой кнопкой мыши на _tar.gz_ для копирования адреса.
 +
 --
 // Downloads section of the Mayo project page on drupal.org.
-image:images/extend-theme-install-download.png["Finding the URL for a theme"]
+изображение:images/extend-theme-install-download.png["Поиск URL-адреса темы"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Appearance_
-(_admin/appearance_). The _Appearance_ page appears.
+. В _управлении_ административного меню, перейдите в _Оформление_
+(_admin/appearance_). Появится страница _Оформление_.
 
-. Click _Install new theme_. The _Install new theme_ page appears.
+. Нажмите _Установить новую тему_. Появится страница _Установить новую тему_.
 +
 --
 // Install new theme page (admin/theme/install).
-image:images/extend-theme-install-page.png["Installing a theme"]
+изображение:images/extend-theme-install-page.png["Установка темы"]
 --
 
-. In the field _Install from a URL_, paste the copied download link. This value
-could look like
+. В поле _Установить с URL-адреса_, вставьте скопированную ссылку для скачивания. Эта ссылка может
+выглядеть так
 `https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
 
-. Click _Install_ to upload and unpack the new theme on the server. The files
-are being downloaded to the _themes_ directory.
+. Нажмите _Установить_ для загрузки и распаковки новой темы на сервер. Файлы
+загрузятся в директорию _themes_.
 
-. Click _Install newly added themes_ to return to the _Appearance_ page. If you
-used the manual uploading procedure mentioned earlier, then you can continue
-with this step, and reach the _Appearance_ page by using the _Manage_
-administrative menu and navigating to _Appearance_ (_admin/appearance_).
+. Нажмите _Установить новую добавленную тему_ для возвращения на страницу _Оформление_. Если вы
+использовали процедуру загрузки вручную, упомянутую ранее, вы можете продолжить
+с этого шага, и попасть на страницу _Оформление_ используя _Управление_
+административного меню и перейти в _Управление_ (_admin/appearance_).
 
-. Locate the new theme under _Uninstalled themes_ and click _Install and set as
-default_ to use it. All non-administrative pages on the site will now use this
-new theme.
+. Найдите новую тему в разделе _Неустановленные темы_ и нажмите _Включить и установить по умолчанию_
+для её использования. Все неадминистративные страницы на сайте будут использовать эту
+новую тему.
 +
 --
 // Mayo theme on the Appearance page.
-image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
+изображение:images/extend-theme-install-appearance-page.png["Удаление темы на странице Оформление",width="286px"]
 --
 
-===== Using Drush to install a theme
+===== Использование Drush для установки темы
 
-. Find the project name for the theme you want to install, which is the last
-segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/mayo_, the project name is `mayo`.
+. Найдите название проекта для темы, которую вы хотите установить, последняя часть
+URL страницы темы проекта. Например, если URL проекта
+_https://www.drupal.org/project/mayo_, имя проекта будет `mayo`.
 
-. Download the theme using either the steps in <<extend-manual-install>> or
+. Загрузите тему, используя шаги в <<extend-manual-install>> или
 <<install-composer>>.
 
-. Run the following Drush commands, giving the project name (for example,
-_mayo_) as a parameter:
+. Выполните следующие команды Drush, указав имя проекта (например,
+_mayo_) в качестве примера:
 +
 ----
 drush en mayo
 drush config-set system.theme default mayo
 ----
 
-. Follow the instructions on the screen.
+. Следуйте инструкциям на экране.
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
-* In the _Manage_ administrative menu, navigate to _Appearance_
-(_admin/appearance_) and uninstall any themes that you are not using.
+* В _Управлении_ административного меню, перейдите в _Оформление_
+(_admin/appearance_) и темы, которые вы не используете.
 
 * <<extend-module-find>>
 
 * <<extend-module-install>>
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Если вы не видите изменений на вашем сайте, возможно вам стоит
+очистить кэш. Смотрите <<prevent-cache-clear>>.
 
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/UOYy9A_9_Lw[title="Downloading and Installing a Theme from Drupal.org"]
+видео::https://www.youtube-nocookie.com/embed/UOYy9A_9_Lw[заголовок="Downloading and Installing a Theme from Drupal.org"]
 
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me], and
+Написано и отредактировано https://www.drupal.org/u/eojthebrave[Joe Shindelar] в
+https://drupalize.me[Drupalize.Me], и
 https://www.drupal.org/u/batigolix[Boris Doesborgh].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов]
