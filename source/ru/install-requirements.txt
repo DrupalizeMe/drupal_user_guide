@@ -1,113 +1,115 @@
 [[install-requirements]]
 
-=== Concept: Server Requirements
+=== Основы: Требования к серверу
 
 [role="summary"]
-Overview of server requirements for installing and running the core software.
+Обзор требований к серверу для установки и запуска Drupal.
 
-(((Installation requirements,overview)))
-(((Installation requirements,disk space)))
-(((Installation requirements,web server)))
-(((Installation requirements,database)))
-(((Installation requirements,PHP programming language)))
-(((Installing,core software)))
-(((Core software,installation requirements)))
-(((Disk space,installation requirements)))
-(((Web server,installation requirements)))
-(((Apache web server,version requirements)))
-(((Hiawatha web server,version requirements)))
-(((Nginx web server,version requirements)))
-(((Microsoft IIS web server,version requirements)))
-(((Database,installation requirements)))
-(((MySQL database,version requirements)))
-(((PostgreSQL database,version requirements)))
-(((SQLight database,version requirements)))
-(((PHP programming language,version requirements)))
+(((Требования к установке,обзор)))
+(((Требования к установке,место на диске)))
+(((Требования к установке,веб сервер)))
+(((Требования к установке,база данных)))
+(((Требования к установке,PHP язык программирования)))
+(((Установка,ядро Drupal)))
+(((Ядро Drupal,Требования к установке)))
+(((Место на диске,Требования к установке)))
+(((Веб сервер,Требования к установке)))
+(((Apache веб сервер,требования к версии)))
+(((Hiawatha веб сервер,требования к версии)))
+(((Nginx веб сервер,требования к версии)))
+(((Microsoft IIS веб сервер,требования к версии)))
+(((База данных,требования к версии)))
+(((MySQL база данных,требования к версии)))
+(((PostgreSQL база данных,требования к версии)))
+(((SQLight база данных,требования к версии)))
+(((PHP язык программирования,требования к версии)))
 
-// ==== Prerequisite knowledge
+// ==== Необходимые знания
 
-==== What are the requirements for running the core software?
+==== Какие требования для запуска ядра Drupal?
 
-===== Disk space
+===== Место на диске
 
-The total amount of disk space needed for your site is not a fixed amount, as it
-depends on your site. The base files for the core software take up about 100 MB
-on the web server. You will need more space if you install additional modules or
-themes, and you'll also need space for media, backups, and other files generated
-by and uploaded to your site. The database also uses disk space, although that
-is typically not in the same area (and in some cases, not even on the same
-server) as that used by the site files.
+Суммарное место на диске, которое необходимо для вашего сайта неограничено, все
+зависит от размера вашего сайта. Основыне файлы для ядра Drupal занимаю около 100 МБ
+на веб сервере. Вам потребуется больше места если вы устанавливаете дополнительные модули или
+темы оформления и вам также потребуется место для изображений, бекапов и других генерируемых
+и загруженных на ваш сайт файлов. База данных также использует место на диске, хотя
+обычно это не тоже место (и в некоторых случает даже не тот же
+сервер), которое используется для файлов сайта.
 
 ===== PHP
 
-PHP 7.2 or higher. PHP must be set up with a minimum memory size of 64MB; if you
-are running multiple modules on your site or using memory-intensive PHP-based
-command-line tools (such as Composer), considerably more memory than that may be
-needed.
+PHP 7.2 или выше. PHP должен быть установлен с минимумальный ограничением на память в 64MB (настройка memory_limit); и если вы
+запускаете несколько модулей на вашем сайте или используете тяжелый по памяти PHP
+инструмент для коммандной строки (такой как Composer), предполагается использовать больше памяти, чем может быть
+необходимо.
 
-Certain PHP extensions are also required; the exact list of required PHP
-extensions depends on how you install the core software and which modules you
-are using on your site. Generally, hosting service providers have installed all
-the PHP extensions you will need. If you are self-hosting or running your site
-on your local computer, you will get error messages during installation if any
-required PHP extensions are missing, and should be able to install them and
-continue.
+Определенные PHP расширения также необходимы; точный список требуемых PHP
+расширений зависит от того как вы устанавливаете ядро Drupal и какие модули вы
+используете на своем сайте. Главным образом, хостинг провайдеры уже устанавливают все
+необходимые PHP расширения. Если вы хостите свой сайт сами или запускаете ваш сайт
+на вашем локальном компьютере, то вам будет выдаваться сообщение об ошибке в ходе установки если какое-нибудь
+из необходимых PHP расширений отсутствует и вы должны установить его чтобы
+продолжить.
 
-===== Web server
+===== Веб серве
 
-Apache (Recommended)::
-  Apache is the most commonly used web server. The core software will work on
-  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache
-  mod_rewrite module installed and enabled. The Apache VirtualHost configuration
-  must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
-  to be used.
-PHP Local Server::
-  You can temporarily run a local demo site on your computer using just PHP,
-  without installing web server software.
+Apache (Рекомендовано)::
+  Apache самый распространенный веб сервер. Ядро друпал будет работать на
+  Apache 2.x установленном на UNIX/Linux, OS X или Windows, который имеет
+  установленный и включенный mod_rewrite модуль. Конфигурация виртуального хоста Apache
+  должна содержать настройку _AllowOverride All_, чтобы позволять файлу _.htaccess_
+  работать.
+PHP локальный сарвер::
+  Вы можете временно запускать локальный демо сайт на вашем компьютере используя только PHP,
+  без установки дополнительного веб сервера.
 Nginx::
-  Nginx is a commonly used web server that focuses on high concurrency,
-  performance and low memory usage. The core software will work on Nginx 1.1 or
-  greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module
-  must be installed and enabled.
+  Nginx широко используемый веб сервер, который специализируется на многопоточности,
+  производительности и малом потребление памяти. Ядро Drupal может использовать Nginx 1.1 или
+  выше установленном на UNIX/Linux, OS X или Windows. ngx_http_rewrite_module
+  должен быть установлен и включен.
 Hiawatha::
-  Hiawatha is a web server with a strong focus on security. It also aims at
-  being easy to use and lightweight. Research performed by independent
-  researchers proves that Hiawatha offers a performance comparable to other web
-  servers under normal conditions, but much better while under attack. URL
-  Toolkit must be installed and configured to rewrite URLs.
+  Hiawatha - это веб сервер с сильным фокусом на безопасность. Он также стремиться
+  быть легким в использовании и легковесным. Исследование проведенное независимыми
+  исследователями подтверждают, что Hiawatha предлагает производительность сравнимую с остальными веб
+  серверами для нормальных условий, однако более устойчив к атакам. URL
+  Toolkit должен быть установлен и настроен перезаписывать URLы.
 Microsoft IIS::
-  Microsoft IIS is a web server and set of feature extension modules for use
-  with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
-  7 if PHP is configured correctly. Because clean URLs are required, you may
-  need to use a third party product. For IIS 7, you can use the Microsoft URL
-  Rewrite module or a third party solution.
+  Microsoft IIS - это веб сервер и набор модулей расширений для использования
+  на Microsoft Windows. Ядро Drupal может работать с IIS 5, IIS 6 или IIS
+  7 если PHP настроен правильно. Потому что чистые URLы требуют, чтобы вы
+  использовали сторонние продукты. Для IIS 7, вы можете использовать модуль Microsoft URL
+  Rewrite или сторонние решения.
 
-===== Database
+===== База данных
 
-Use one of the following databases:
+Используйте одну из следующих баз данных:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
-InnoDB-compatible primary storage engine
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) или выше с
+InnoDB-совместимым первичным хранилищем данных
 
-* PostgreSQL - 9.1.2 or higher
+* PostgreSQL - 9.1.2 или выше
 
-* SQLite - 3.4.2 or higher. Temporary local demo sites use SQLite, which is
-distributed as part of PHP and doesn't require installing separate database
-software.
+* SQLite - 3.4.2 или выше. Временные локальный демо сайты используют SQLite, который
+поставляется как часть PHP и не нуждается в установке отдельного ПО для
+базы данных.
 
-//==== Related topics
+//==== Связанные темы
 
-==== Additional resources
+==== Дополнительные материалы
 
 * https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
 * https://secure.php.net/manual/en/configuration.php[PHP Runtime Configuration (PHP memory limit and other settings)]
 
 
-*Attributions*
+*Авторы*
 
-Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
-https://www.drupal.org/u/bemery987[Brian Emery], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+Адаптировано https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
+https://www.drupal.org/u/bemery987[Brian Emery], и
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] из
 https://www.drupal.org/docs/8/system-requirements["System requirements"],
 copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Переведено https://www.drupal.org/u/levmyshkin[Иван Абраменко].
