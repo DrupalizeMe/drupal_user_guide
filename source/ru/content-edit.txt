@@ -1,88 +1,90 @@
 [[content-edit]]
-=== Editing a Content Item
+=== Редактирование материала (in English: Editing a Content Item)
 
 [role="summary"]
-How to edit a content item.
+Как редактировать материалы.
 
-(((Content,editing)))
-(((Content,finding)))
-(((Editing content)))
+(((Материал,редактирование)))
+(((Материла,поиск)))
+(((Редактирование материала)))
 
-==== Goal
+==== Цель
 
-Update the hours on the Home page content item.
+Обновить часы работы на главной странице.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<content-create>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-A content item for the Home page must exist. See <<content-create>>.
+Материал для главной странице должен быть создан. Смотрите <<content-create>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. В разделе _Управление_ меню администратора, перейдите на _Контент_ (_admin/content_).
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use the _Content type_, _Title_, or other filters to locate the content item.
+. Если материал который вы хотите отредактировать был обновлен или создан недавно, то он
+будет в верху списка контента. Если нет, то вы можете
+использовать _Тип материала_, _Заголовок_ или другие фильтры для поиска материала.
 +
 --
 // Content list on admin/content, with filters above.
-image:images/content-edit-admin-content.png["Content administration page",width="100%"]
+image:images/content-edit-admin-content.png["Контент страница администрирования",width="100%"]
 --
 
-. Click _Edit_ in the row of the content item you want to edit (Home), to
-open the content editing form. Update the opening hours in the _Body_ field. See
-<<content-create>> for an explanation of the fields and a screenshot.
+. Нажмите _Редактировать_ в строке материала, чтобы редактировать (Главную страницу),
+откроется форма редактирования контента. Обновите часы работы в поле _Содержимое_. Смотрите
+<<content-create>> для объяснения полей на скриншоте.
 
-. Check _Create new revision_ under _Published_, if it is not already
-checked, and enter a _Revision log message_ explaining what changes you are
-making (for example, you might enter "Updated opening hours"). This text
-will appear in the revision log for the page.
+. Проверьте галочку _Создать новую редакцию_ под _Опубликовано_, если вы поставили
+галочку и ввели _Сообщение об редакции_, объясняющее какие изменения вы
+внесли (например, вы можете ввести "Обновил часы работы"). Этот текст
+будет появляться на странице списка редакций.
 +
 --
 // Revision area of the content edit page.
-image:images/content-edit-revision.png["Revision information section of the content edit page"]
+image:images/content-edit-revision.png["Раздел информации о редакции на странице редактирования материала"]
 --
 
-. Click _Save_ to save your changes.
+. Нажмите _Сохранить_, чтобы сохранить свои изменения.
 
-. You will be redirected back to the _Content_ administrative page, and there
-should be a message showing that the content item was updated.
+. Вы будете перенаправлены назад на страницу _Контент_ и здесь
+будет отображено сообщение об успешном обновление материла.
 +
 --
 // Updated content message.
-image:images/content-edit-message.png["Updated content message"]
+image:images/content-edit-message.png["Сообщение об обновление материала"]
 --
 
-==== Expand your understanding
+==== Улучшите свое понимание
 
-As an alternative to the first two steps above, you can also reach the
-content edit form as follows:
+Вместо первых двух шагов выше, вы также можете открыть
+форму редактирования материла следующим образом:
 
-. Starting from your site's home page, use the site's navigation menus to locate
-the page where the content you want to edit is displayed to visitors.
+. Откройте сайт на главной странице, используйте навигационное меню для определения
+страницы которую вы хотите редактировать.
 
-. Most themes will display an _Edit_ link or tab near the top of that page to
-people with permission to edit the page; clicking the link will take you to
-the full content edit form.
+. Большинство тема оформления отображают ссылку _Редактировать_ или вкладки сверху страницы
+для пользователей с соотвествующими правами на редактирование; нажмите ссылку Редактировать, чтобы перейти
+на страницу редактирования материала.
 
-. You could also use the in-place editor (refer to <<content-in-place-edit>>)
-from this page.
+. Вы также можете использовать быстрое редактирование (смотрите <<content-in-place-edit>>)
+на странице.
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/TAFZMcuOqG0[title="Editing a Content Item"]
 
-//==== Additional resources
+//==== Дополнительные материалы
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/chris-dart[Chris Dart]
+и https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+
+https://www.drupal.org/u/levmyshkin[Иван Абраменко].
