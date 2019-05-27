@@ -1,151 +1,153 @@
 [[extend-module-install]]
 
-=== Downloading and Installing a Module from _Drupal.org_
+=== Загрузка функционала и установка модуля с _Drupal.org_
 
 [role="summary"]
-How to download and install a module from Drupal.org (using the user interface) or by using Drush.
+Как загрузить и установить модуль с Drupal.org (используя пользовательский интерфейс) или с помощью Drush.
 
-(((Module,downloading)))
-(((Module,installing)))
-(((Module,enabling)))
-(((Module,contributed)))
-(((Module,custom)))
-(((Downloading,module)))
-(((Installing,module)))
-(((Enabling,module)))
-(((Contributed module,downloading)))
-(((Contributed module,installing)))
-(((Functionality,extending)))
-(((Drush tool,using to install module)))
-(((Admin Toolbar module,downloading)))
-(((Admin Toolbar module,installing)))
-(((Module,Admin Toolbar)))
-(((Update Manager module,using to install module)))
-(((Module,Update Manager)))
-(((Drupal.org website,downloading and installing module from)))
+(((Модуль,загрузка)))
+(((Модуль,установка)))
+(((Модуль,включение)))
+(((Модуль,дополнительный)))
+(((Модуль,пользовательский)))
+(((Загрузка,модуль)))
+(((Установка,модуль)))
+(((Включение,модуль)))
+(((Дополнительный модуль,загрузка)))
+(((Дополнительный модуль,установка)))
+(((Функциональность,расширение)))
+(((Инструменты drush,использование для установки модуля)))
+(((Admin Toolbar модуль,загрузка)))
+(((Admin Toolbar модуль,установка)))
+(((Модуль,Admin Toolbar)))
+(((Update Manager модуль,использование для установки модуля)))
+(((Модуль,Update Manager)))
+(((Сайт Drupal.org,загрузка и установка модуля)))
 
-==== Goal
+==== Цель
 
-Download and install the
-https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module],
-which allows you to easily browse through the administration section of the
-website.
+Загрузить и установить
+https://www.drupal.org/project/admin_toolbar[Admin Toolbar модуль],
+что позволяет вам легко просматривать раздел администрирования
+сайта.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<understanding-modules>>
 * <<extend-module-find>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-* If you want to install modules via the website, the core Update Manager module
-must be installed. See <<config-install>> for instructions on installing
-modules.
+* Если вы хотите установить модули через сайт, модуль ядра Update Manager
+должен быть установлен. Смотрите <<config-install>> для инструкций по установке
+модулей.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* Если хотите использовать Drush, он должен быть установлен. See <<install-tools>>.
 
-==== Steps
+==== Шаги
 
-You can use the administrative interface to download and install a contributed
-module. If you are installing a custom module rather than a contributed module,
-if you see a message saying _Installing modules and themes requires FTP access
-to your server_, or if the steps below do not work to download and unpack the
-module files, follow the steps in <<extend-manual-install>>. If you are using
-Composer to manage the files in your site, follow the steps for downloading in
-<<install-composer>>. In either of these cases, you can then install the module
-using Drush, or by continuing with step 7 in the instructions for the
-administrative interface below.
+Вы можете использовать административный интерфейс для загрузки и установки дополнительного
+модуля. Если вы устанавливаете пользовательский модуль, а не дополнительный модуль,
+если вы видите сообщение _Установка модулей и тем требует FTP доступ
+к вашему серверу_, или если нижеприведенные шаги не работают для загрузки и распаковки файлов
+модуля, следуйте шагам в <<extend-manual-install>>. Если вы используете
+Composer для управления файлами вашего сайта, следуйте шагам для загрузки в
+<<install-composer>>. В любом из этих случаев, вы можете установить модуль
+через Drush, или продолжить с шага 7 в инструкции для
+административного интерфейса.
 
-===== Using the administrative interface
+===== Использование административного интерфейса
 
-. On the _Admin toolbar_ project page on drupal.org
-(_https://www.drupal.org/project/admin_toolbar_), scroll to the _Downloads_
-section at the bottom of the page.
+. На странице проекта _Admin toolbar_ на drupal.org
+(_https://www.drupal.org/project/admin_toolbar_), скрольте к разделу _Downloads_
+внизу страницы.
 
-. Copy the address of the _tar.gz_ link. Depending on your device and browser,
-you might do this by right clicking and selecting _Copy link address_.
+. Скопируйте адрес _tar.gz_ ссылки. В зависимости от вашего устройства и браузера,
+вы можете сделать это, щелкнув правой кнопкой мыши и выбрав _Копировать адрес ссылки_.
 +
 --
 // Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/extend-module-install-download.png["Finding a module URL"]
+изображение:images/extend-module-install-download.png["Найти URL модуля"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears.
+. В _Управлении_ административного меню, перейдите в _Расширение_
+(_admin/modules_). Появится страница  _Расширение_.
 
-. Click _Install new module_. The _Install new module_ page appears.
+. Нажмите _Установить новый модуль_. Появится страница _Установить новый модуль_.
 +
 --
 // Install new module page (admin/modules/install).
-image:images/extend-module-install-admin-toolbar-do.png["Installing a module from a URL"]
+изображение:images/extend-module-install-admin-toolbar-do.png["Установка модуля с URL"]
 --
 
-. In the field _Install from a URL_, paste the copied download link. This value
-could look like this:
+. В поле _Установить с URL-адреса_, вставьте скопированную ссылку. Это значение
+может выглядеть так:
 _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz_
 
-. Click _Install_ to upload and unpack the new module on the server. The files
-are being downloaded to the _modules_ directory.
+. Нажмите _Установить_ для загрузки и распаковки нового модуля на сервер. Файлы
+загружаются в директорию _modules_.
 
-. Click _Enable newly added modules_ to return to the _Extend_ page. If you
-used the manual uploading procedure mentioned earlier, then you can continue
-with this step, and reach the _Extend_ page by using the _Manage_
-administrative menu and navigating to _Extend_ (_admin/modules_).
+. Нажмите _Включить новые добавленные модули_ для возвращения на страницу _Расширение_. Если вы
+использовали процедуру загрузки вручную, упомянутую ранее, вы можете продолжить
+с этого шага, и попасть на страницу _Расширение_ используя _Управление_
+административного меню и перейти в _Расширение_ (_admin/modules_).
 
-. Locate the _Admin toolbar_ module and check it.
+. Найдите модуль _Admin toolbar_ и проверьте его.
 
-. Click _Install_ to turn on the new module.
+. Нажмите _Установить_ для включения нового модуля.
 
-===== Using Drush to install a module
+===== Использование Drush для установки модуля
 
-. Find the project name for the module you want to install, which is the last
-segment of the module's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/admin_toolbar_, the project name is
+. Найдите имя проекта модуля, который хотите установить, последняя часть
+URL страницы проекта модуля. Например, если URL проекта
+_https://www.drupal.org/project/admin_toolbar_, имя проекта будет
 "admin_toolbar".
 
-. Download the module using either the steps in <<extend-manual-install>> or
+. Загрузите модуль, используя шаги в <<extend-manual-install>> или
 <<install-composer>>.
 
-. Run the following Drush command, giving the project name (for example,
-`admin_toolbar`) as a parameter:
+. Запустите следующую Drush команду, используя имя проекта (например,
+`admin_toolbar`) в качестве параметра:
 +
 ----
 drush en admin_toolbar
 ----
 
-. Follow the instructions on the screen.
+. Следуйте инструкциям на экране.
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
-* Verify that the
-https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module]
-is working by browsing through the menu in the administration section.
+* Убедитесь, что
+https://www.drupal.org/project/admin_toolbar[Admin Toolbar модуль]
+работает, просматривая меню в разделе администрирования.
 
-* Install and configure the
-https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content pages in your site get nice URLs by default. See
-<<content-paths>> for more on URLs.
+* Установите и настройте
+https://www.drupal.org/project/pathauto[Pathauto модуль]
+чтобы страницы контента на вашем сайте по умолчанию получали хорошие URL-адреса. Смотрите
+<<content-paths>> для дополнительных сведений по URL.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Если вы не видите изменений на вашем сайте, возможно вам стоит
+очистить кэш. Смотрите <<prevent-cache-clear>>.
 
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/GJWS2TLtEpk[title="Downloading and Installing a Module from Drupal.org"]
+видео::https://www.youtube-nocookie.com/embed/GJWS2TLtEpk[заголовок="Downloading and Installing a Module from Drupal.org"]
 
-==== Additional resources
+==== Дополнительные ресурсы
 
-* https://www.drupal.org/node/340271[_Drupal.org_ community documentation page "Contributed modules"]
-* https://www.drupal.org/download["Download and Extend" page on _Drupal.org_]
-* https://www.drupal.org/project/admin_toolbar[Admin Toolbar module on _Drupal.org_]
+* https://www.drupal.org/node/340271[_Drupal.org_ страница документации сообщества "Contributed modules"]
+* https://www.drupal.org/download["Download and Extend" страница на _Drupal.org_]
+* https://www.drupal.org/project/admin_toolbar[Admin Toolbar модуль на _Drupal.org_]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано и отредактировано https://www.drupal.org/u/batigolix[Boris Doesborg] и
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
