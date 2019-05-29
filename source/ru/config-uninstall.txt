@@ -1,98 +1,98 @@
 [[config-uninstall]]
 
-=== Uninstalling Unused Modules
+=== Удаление неиспользуемых модулей
 
 [role="summary"]
-How to uninstall modules to reduce overhead.
+Как удалить модули для сокращения нагрузки на сайте.
 
-(((Module,uninstalling unused)))
-(((Uninstalling,unused modules)))
-(((Performance,improving)))
-(((Drush tool,using to uninstall module)))
+(((Модуль,удаление неиспользованных)))
+(((Удаление,неиспользованные модули)))
+(((Производительность,улучшение)))
+(((Drush инструмент,использование для удаление модулей)))
 
-==== Goal
+==== Цель
 
-Uninstall the core Search and History modules, as well as the core Activity
-Tracker module if you installed it in <<config-install>>, to reduce overhead.
+Удалить модулей Search и History, также как модуль Activity
+Tracker если вы установили его в этой статье <<config-install>>, для того чтобы сократить нагрузку на сайте.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<understanding-modules>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-* You must have at least one unused module on your site that you want to
-uninstall, such as the core Search module.
+* Вы должны иметь хотя бы один неиспользуемый модуль на вашем сайте, который вы хотите
+удалить, например модуль Search.
 
-* If you want to use Drush to uninstall modules, Drush must be installed. See
+* Вы можете использовать Drush для удаления модулей, Drush должен быть установлен. Смотрите
 <<install-tools>>.
 
-==== Steps
+==== Шаги
 
-You can use the administrative interface or Drush to uninstall modules.
+Вы можете использовать административный интерфейс или Drush для установки модулей.
 
-===== Using the administrative interface
+===== Использование административного интерфейса
 
-. In the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_
-(_admin/modules/uninstall_) where you will find the list of modules that are
-ready to be uninstalled.
+. В разделе _Управление_ административного меню, перейдите в _Расширения_ > _Удалить_
+(_admin/modules/uninstall_), где вы сможете найти список модулей, которые
+готовы к удалению.
 
-. Check the boxes for the modules you are uninstalling (_Search_, _History_, and
-_Activity Tracker_). Click _Uninstall_ at the bottom of the page.
+. Поставьте галочки на модулях для удаления (_Search_, _History_ и
+_Activity Tracker_). Нажмите _Удалить_ внизу страницы.
 +
 --
 // Top part of admin/modules/uninstall, with Activity Tracker checked.
-image:images/config-uninstall_check-modules.png["Uninstalling module",width="100%"]
+image:images/config-uninstall_check-modules.png["Удаление модуля",width="100%"]
 
 [NOTE]
 =================
-You cannot uninstall a module if it is required by some other module(s) and/or
-functionality. For example, the core File module is required by the core Text
-Editor, CKEditor, and Image modules. It can't be uninstalled unless you
-uninstall its dependent module(s) and functionality first. A module that cannot
-be uninstalled yet will have a disabled checkbox, restricting you from
-uninstalling it.
+Вы не можете удалить модуль, елси он требуется для других модулей или
+функционала. Например, модуль File требуется для модулей Text
+Editor, CKEditor и Image. Модуль File может быть удален, если
+сперва удалите все зависимые модули и функционал. Модуль который не может
+быть удален, пока чекбокс нерабочий, тем самым ограничивая его
+от удаления.
 =================
 --
 
-. Step 2 will prompt you to confirm the module uninstall request. Click
-_Uninstall_.
+. На шаге 2 вам потребуется потвердить запрос удаления модуля. Нажмите
+_Удалить_.
 +
 --
 // Uninstall confirmation screen, after checking Activity Tracker, History,
 // and Search modules from admin/modules/uninstall.
-image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
+image:images/config-uninstall_confirmUninstall.png["Потверждение удаления - модуль поиска",width="100%"]
 --
 
-===== Using Drush
+===== Использование Drush
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. В разделе _Manage_ административного меню, перейдите на страницу _Расширения_
+(_admin/modules_). Страница _Расширения_ отображает доступные модули
+на вашем сайте.
 
-. Find the machine name of the module you want to uninstall, by expanding the
-information area for the module. For instance, the core Activity Tracker
-module's machine name is _tracker_.
+. Найдите машинное имя модуля, который вы хотите удалить, раскрыв
+блок информации для модуля. Например, имя модуля Activity Tracker
+это _tracker_.
 
-. Run the following Drush command to uninstall the module:
+. Запустите следующую Drush команду для удаления модуля:
 +
 ----
 drush pm-uninstall tracker
 ----
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
 * <<install-tools>>
 
 * <<prevent-cache-clear>>
 
-* You can also uninstall the core Comment module by following these steps, but
-only after comment fields have been removed, which is a side effect of
+* Вы можете также удалить модуль Comment, использую шагах изложенных выше, однако
+только после того как удалены все поля комментариев, это ограничения накладываемые от
 <<structure-content-type-delete>>.
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/hUonnNkeF6g[title="Uninstalling Unused Modules"]
@@ -100,8 +100,10 @@ video::https://www.youtube-nocookie.com/embed/hUonnNkeF6g[title="Uninstalling Un
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Написано и отредактировано https://www.drupal.org/u/surendramohan[Surendra Mohan],
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] из
+http://redcrackle.com[Red Crackle]
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван].
