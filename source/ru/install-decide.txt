@@ -1,98 +1,100 @@
 [[install-decide]]
-=== Concept: Methods for Downloading and Installing the Core Software
+=== Основы: Способы загрузки и установки Drupal
 
 [role="summary"]
-Overview of methods you can use to download the core software.
+Обзор методов, которыми вы можете загрузить Drupal.
 
-(((Downloading,core software)))
-(((Installing,core software)))
-(((Core software,downloading)))
-(((Core software,installing)))
+(((Загрузка,ядро Drupal)))
+(((Установка,ядро Drupal)))
+(((Ядро Drupal,загрузка)))
+(((Ядро Drupal,установка)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<install-tools>>
 * <<install-requirements>>
 * <<understanding-distributions>>
 
-==== What methods are available for downloading the core software?
+==== Какие методы доступны для загрузки Drupal?
 
-Before you can build a site, you will need to first download the core software.
-Depending on your plans, there are several ways that you can download the core
-software:
+Перед тем как вы сможете создавать свой сайт, вам необходимо сперва скачать Drupal.
+В зависимости от ваших планов, есть несколько способой как вы можете скачать ядро
+Drupal:
 
-Try a free online demo::
-  If you are evaluating whether or not to use Drupal to build a site, you
-  can use an online provider to get a demo installation of the core software in
-  20 minutes or less. See the
+Попробовать бесплатное онлайн демо::
+  Если вы определяетесь использовать или нет Drupal для создания сайта, вы
+  можете ипользовать онлайн сервис для получения демо установки Drupal за
+  20 минут или даже меньше. Смотрите статью
   https://www.drupal.org/try-drupal[_Drupal.org_ page "Try Drupal"].
 
-Use a one-click installer from your hosting provider::
-  If you choose to install the core software at your hosting provider, your
-  hosting provider may have specific documentation and/or a one-click install
-  that you can use. See
+Использовать установщик в один клик у вашего хостинг провайдера::
+  Если вы выбираете CMS доступную на вашем хостинге, ваш
+  хостинг может иметь документацию о том как установить в один клик
+  CMS которая вам нужна. Смотрите
   https://www.drupal.org/association/supporters/hosting[_Drupal.org's_ list of hosting providers that support Drupal].
 
-Use a pre-configured environment::
-  Use a pre-configured environment or virtual machine that contains Drupal and
-  all the required supporting software to install Drupal locally. See the
-  section for your operating system under
+Использовать преднастроенное окружение::
+  Использовать преднастроенное окружение или виртуальную машину, которая содержит Drupal и
+  все необходимые библиотеки для установки Drupal локально. Смотрите
+  раздел для вашей операционной системы
   https://www.drupal.org/docs/develop/local-server-setup[Drupal.org's Local server setup guide]
-  for possible options.
+  с возможными вариантами.
 
-Download manually from the web site::
-  If you plan to build a site without add-on modules that have complicated
-  dependencies, you can download the core software, or a distribution that
-  contains the core software and additional modules or themes, from the web
-  site. See <<install-manual>> for instructions.
+Загрузить вручную с Drupal.org::
+  Если вы планируете создавать сайт без дополнительных модулей,
+  вы можете загрузить Drupal или дистрибутив,
+  содержащий ядро Drupal и дополнительные модули и темы оформления, с сайта
+  Drupal.org. Смотрите инструкции <<install-manual>>.
 
-Use Composer::
-  If you plan to use the Drush tool (see <<install-tools>>), or if you are
-  building a site that might use modules with complicated dependencies, you
-  should use Composer to download the core software, because Composer will
-  manage the dependencies properly. If you start your site by downloading
-  manually, however, you can convert to using Composer to manage dependencies
-  later. See <<install-composer>> for downloading and conversion instructions.
+Использовать Composer::
+  Если вы планируете использовать Drush (смотрите <<install-tools>>) или вы
+  создаете сайт, используя дополнительные модули с библиотеками в зависимостях, то вам
+  следует использовать Composer для загрузки Drupal, потому что Composer будет
+  управлять зависимостями правильно. Если вы начнете делать ваш сайт, загрузив его
+  вручную, то вы сможете конвертировать его с использованием Composer для управления зависимости
+  позднее. Смотрите <<install-composer>> для детальных инструкци по загрузки и конвертации.
 
-==== What happens when I install the core software?
+==== Что нужно сделать для установки Drupal?
 
-_Installing_ the core software means setting up some database tables,
-configuration, and an administrative user account, so that you can build and use
-your site.
+_Установка_ Drupal требует настройки базы данных,
+имя сайта и аккаунта администратора, после этого вы сможете создавать и использовать
+ваш сайт.
 
-==== What methods are available for installing the core software?
+==== Какие методы доступны для установки Drupal?
 
-There are several ways to install the core software:
+Есть несколько путей установки Drupal:
 
-Behind-the-scenes installer::
-  If you choose to use an online demo or one-click installer from a hosting
-  provider, the core software may be installed for you automatically.
+Установка в один клик::
+  Если вы выбрали онлайн демо или установщик в один клик на вашем
+  хостинге, Drupal будет установлен автоматически.
 
-Interactive installer::
-  The core software has an interactive installer that presents you with several
-  on-line forms, and then completes the installation using the information you
-  provide in the forms. See <<install-prepare>> and <<install-run>>.
+Интерактивная установка::
+  Drupal имеет интерактивную установку, которая показывает несколько
+  форм и после заполнения этих форм
+  Drupal будет установлен. Смотрите <<install-prepare>> и <<install-run>>.
 
-Demo site installer::
-  If you download the core software to your local computer, you can quickly
-  create a temporary demo site that uses the built-in web server and SQLite
-  database that are part of PHP. The command to set up a demo site is given at
-  the end of <<install-manual>>. In this case, you will not run the interactive
-  installer.
+Установка демо сайта::
+  Если вы загрузили Drupal на ваш локальный компьютер, вы можете быстро
+  создать временный демо сайт использующий встроенный веб сервер и базу данных SQLite,
+  которые являются частью PHP. Команда для настройки демо сайта описана в
+  конце <<install-manual>>. В этом случае, вам не потребуется запускать интерактивную
+  установку.
 
-Command-line tool::
-  Command-line tools (see <<install-tools>>) can also be used to perform the
-  installation steps.
+Установка через командную строку::
+  Инструменты командной строки (смотрите <<install-tools>>) также могут быть использованы для выполнения
+  установки Drupal.
 
 // ==== Related topics
 
 // ==== Additional resources
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Написано и отредактиовано https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] из
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] из
+http://redcrackle.com[Red Crackle]
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван].
