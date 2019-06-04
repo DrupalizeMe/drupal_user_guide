@@ -1,34 +1,34 @@
 [[block-concept]]
 
-=== Concept: Blocks
+=== Основы: Блоки
 
 [role="summary"]
-Overview of blocks.
+Обзор блоков.
 
-(((Block,overview)))
+(((Блок,обзор)))
 
 //==== Prerequisite knowledge
 
-==== What is a block?
+==== Что такое блок?
 
-_Blocks_ are individual pieces of your site's web page layout. They are placed
-inside the regions (see <<block-regions>>) of your theme, and can be created,
-removed, and rearranged in the _Block layout_ (_admin/structure/block_)
-administration page.  Examples of blocks include the _Who's online_ listing, the
-main navigation menu, and the breadcrumb trail. The main page content is also a
-block.
+_Блоки_ являются отдельными частями макета веб-страницы вашего сайта. Они размещены
+внутри регионов (смотрите <<block-regions>>) вашей темы, и может быть созданы,
+удалены, и перемещены в _Схеме блоков_ (_admin/structure/block_)
+административной страницы.  Примеры блоков включают в себя список _Кто на сайте_,
+меню основной навигации, и хлебные крошки. Содержание главной страницы также
+является блоком.
 
-Some modules make new blocks available for placement on your site. For example,
-when the core Search module is installed and configured, it provides a block
-that contains a search form. You may also create and place your own custom
-blocks.
+Некоторые модули делают новые блоки доступными для размещения на вашем сайте. Например,
+когда модуль ядра Search установлен и настроен, он обеспечивает блок,
+который содержит форму поиска. Вы также можете создать и разместить свои собственные
+блоки.
 
-Each block has its own configuration settings, which allow you to select
-which pages of your site will display the block. It is even possible to place
-multiple copies of a block, each with its own separate configuration and
-visibility rules.
+Каждый блок имеет свои настройки, которые позволяют выбрать
+на каких страницах вашего сайта будет отображаться блок. Также можно разместить
+несколько копий блока, каждая со своей конфигурацией и
+правилами видимости.
 
-==== Related topics
+==== Похожие темы
 
 * <<block-regions>>
 * <<block-create-custom>>
@@ -37,10 +37,12 @@ visibility rules.
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Adapted by https://www.drupal.org/u/les-lim[Les Lim] from
+Адаптировано https://www.drupal.org/u/les-lim[Les Lim] от
 https://www.drupal.org/docs/8/core/modules/block/overview["Working with blocks
 (content in regions)"]
-copyright 2000-2017 by the individual contributors to the
+copyright 2000-2017 отдельными вкладчиками в
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
