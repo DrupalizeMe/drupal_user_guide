@@ -1,49 +1,49 @@
 [[views-concept]]
-=== Concept: Uses of Views
+=== Основы: Использование Представлений
 
 [role="summary"]
-Overview of views and the data that can be displayed or output by them.
+Обзор представлений и данных, которые могут быть отображены или выведены ими.
 
-(((View,overview)))
-(((Views module,overview)))
+(((Представление,обзор)))
+(((Views модуль,обзор)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<planning-modular>>
 * <<planning-data-types>>
 
-==== What is a view?
+==== Что такое представление?
 
-A _view_ is a listing of content on a website. The core Views module handles the
-display of views, and the core Views UI module allows you to create and edit
-them in the administrative interface. When you define views, you are interested
-in taking data from your website and displaying it to the user.
+_Представление_ это список контента на сайте. Модуль ядра Views обрабатывает
+отображение представления, и модуль ядра Views UI позволяет создавать и редактировать
+их в административном интерфейсе. Когда вы определяете представление, вы заинтересованы
+взять данные с вашего сайта и отобразить их пользователю.
 
-==== What types of data can be displayed using views?
+==== Какие типы данных могут быть отображены с помощью представления?
 
-You can create views to output practically any content entity that is stored in
-the system. For example, you can create the following lists for the farmers
-market site:
+Вы можете создавать представления для вывода практически любого содержимого, которое хранится в
+системе. Например, вы можете создать следующие списки для
+сайта фермерского рынка:
 
-* Lists of vendors
-* Lists of recipes
-* Lists of the most recent content on the site
-* Lists of users on the site
+* Списки продавцов
+* Списки рецептов
+* Списки самого последнего контента на сайте
+* Списки пользователей на сайте
 
-==== What are the ways data can be output using views?
+==== Как можно выводить данные с использованием представлений?
 
-A listing created by a view can be in any of the following forms:
+Список, созданный представлением, может быть в любой из следующих форм:
 
-* Table with sortable fields
-* Grid layouts
-* Teasers or pictures that link to articles
-* Blocks
-* JSON output
-* RSS feeds
-* Calendars
-* On-screen slideshows
+* Таблица с сортируемыми полями
+* Таблица макетов
+* Тизеры или картинки, которые ссылаются на статьи
+* Блоки
+* Вывод JSON
+* RSS-каналы
+* Календари
+* Слайд-шоу на экране
 
-==== Related topics
+==== Похожие темы
 
 * <<views-parts>>
 * <<views-create>>
@@ -51,10 +51,12 @@ A listing created by a view can be in any of the following forms:
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Написано и отредактировано
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] в
+https://erdfisch.de[erdfisch], и
+https://www.drupal.org/u/jojyja[Jojy Alphonso] в
+http://redcrackle.com[Red Crackle]
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
