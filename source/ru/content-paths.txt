@@ -1,33 +1,34 @@
 [[content-paths]]
 
-=== Concept: Paths, Aliases, and URLs
+=== Основы: пути, синонимы URL и URL-адреса
 
 [role="summary"]
-Overview of paths, aliases, and URLs (with examples).
+Обзор путей, синонимов и URL-адресов (с примерами)
 
-(((Path,overview)))
-(((Alias,overview)))
-(((URL (Uniform Resource Locator),overview)))
-(((Uniform Resource Locator (URL),overview)))
-(((URL alias,overview)))
+(((Путь,обзор)))
+(((Синоним,обзор)))
+(((URL (Uniform Resource Locator),обзор)))
+(((Uniform Resource Locator (URL),обзор)))
+(((URL синоним,обзор)))
 
 //==== Prerequisite knowledge
 
 
-==== What is a URL?
+==== Что такое URL?
 
-URL is the abbreviation for "Uniform Resource Locator", which is the page's
-address on the web. It is the "name" by which a browser identifies a page to
-display. In the example "Visit us at _example.com_.", _example.com_ is the URL
-for the home page of your website. Users use URLs to locate content on the web.
+URL - это аббревиатура от "Uniform Resource Locator", который является
+адресом страницы в сети. Это "имя", по которому браузер идентифицирует
+отображаемую страницу. В примере "Посетите нас по адресу _example.com_",
+_example.com_ - это URL-адрес главной страницы вашего веб-сайта. Пользователи
+используют URL-адреса для нахождения информации в сети.
 
-==== What is a Path?
+==== Что такое путь?
 
-A path is the unique, last part of the URL for a specific function or piece of
-content. For example, for a page whose full URL is _http://example.com/node/7_,
-the path is _node/7_.
+Путь - это уникальная, последняя часть URL для определенной функции или части
+содержимого. Например, для страницы с полным URL _http://example.com/node/7_
+путем является _node/7_.
 
-Here are some examples of paths you might find in your site:
+Вот несколько примеров путей, которые вы можете встретить на вашем сайте:
 
 * _node/7_
 * _taxonomy/term/6_
@@ -35,15 +36,16 @@ Here are some examples of paths you might find in your site:
 * _user/login_
 * _user/3_
 
-==== What is an Alias?
+==== Что такое синоним?
 
-The core software has a feature called "URL Alias" that allows you to provide a
-more understandable name to the content. So, if you have an "About Us" page with
-the path _node/7_, you can set up an alias so that your visitors will see it as
-_http://www.example.com/AboutUs_. The core Path module, which supports URL
-aliasing, provides this functionality.
+Программное обеспечение ядра имеет функцию под названием "Синонимы URL",
+которая позволяет вам дать более понятное название содержимому. Итак, если у
+вас есть страница "About Us" с путём _node/7_, вы можете настроить псевдоним
+так, чтобы ваши посетители видели его как _http://www.example.com/AboutUs_.
+Эту функциональность обеспечивает модуль ядра Path, который поддерживает
+синонимы в URL.
 
-==== Related topics
+==== Связанные понятия
 
 * <<content-create>>
 * <<content-edit>>
@@ -56,11 +58,13 @@ aliasing, provides this functionality.
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com/[Pronovix] from
-https://www.drupal.org/node/120631["URL aliases"], and
+Адаптировано https://www.drupal.org/u/dianalakatos[Diána Lakatos] из
+https://pronovix.com/[Pronovix] из
+https://www.drupal.org/node/120631["URL aliases"], и
 https://www.drupal.org/node/31644["Understanding Drupal paths"]
-copyright 2000-2017 by the individual contributors to the
+copyright 2000-2017 отдельных лиц, вносящих свой вклад в
 https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
