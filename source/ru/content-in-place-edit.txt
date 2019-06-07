@@ -1,93 +1,98 @@
 [[content-in-place-edit]]
-=== Editing with the In-Place Editor
+=== Редактирование в режиме быстрого редактирования
 
 [role="summary"]
-How to edit content with the in-place editor.
+Как редактировать содержимое в режиме быстрого редактирования.
 
-(((Editing content)))
-(((Content,editing)))
-(((In-place editor)))
-(((Quick editor)))
-(((Full editor)))
+(((Редактирование содержимого)))
+(((Содержимое,редактирование)))
+(((Быстрое редактирование)))
+(((Редактор)))
 
-==== Goal
+==== Цель
 
-Use the in-place editor to add information to the About page without opening
-the full editor page.
+Используйте быстрое редактирование для добавления информации на страницу О
+рынке без открытия страницы в редакторе.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<planning-data-types>>
 * <<content-create>>
 * <<content-edit>>
 * <<config-overview>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-The About page you want to edit must exist. See <<content-create>>.
+Страница О рынке, которую вы хотите отредактировать, должна существовать.
+Смотрите <<content-create>>.
 
-==== Steps
+==== Шаги
 
-Navigate to the About page to edit content with the in-place editor. If the
-page has not yet been added to a
-navigation menu, you can find and open it by following these steps:
+Перейдите на страницу О рынке, чтобы отредактировать содержимое с помощью
+быстрого редактирования. Если страница еще не добавлена в навигационное меню,
+то ее можно найти и открыть, выполнив следующие действия:
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. В административном меню _Управление_, перейдите к _Содержимое_ (_admin/content_).
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use _Type_, _Title_, or other filters to locate the content item.
+. Если пункт содержимого, который вы хотите изменить, был недавно обновлен
+или создан, он должен появиться в верхней части списка содержимого на этой
+странице. Если нет, вы можете использовать _Тип материала_, _Заголовок_ или другие
+фильтры, чтобы найти пункт содержимого.
 
-. Find the About page and click it.
+. Найдите страницу О рынке и щелкните на ней.
 
-Once the content you want to edit is being viewed in your browser, follow these
-steps to use the quick editor:
+После того как содержимое, которое вы хотите отредактировать, будет показано
+в браузере, выполните следующие действия для использования быстрого редактора:
 
-
-. Find the section of the page that displays the content you want to edit, and
-turn on quick editing mode using the _Quick edit_ contextual link (see
-<<config-overview>> for instructions on how to access contextual links). You
-will see each editable field on this content item outlined in blue; also,
-a hovering dialog box will appear.
+. Найдите часть страницы, на которой отображается содержимое, которое вы
+хотите отредактировать, и включите режим быстрого редактирования, используя
+контекстную ссылку _Быстрое редактирование_ (инструкции по доступу к
+контекстным ссылкам см. в <<<config-overview>>). Вы увидите каждое
+редактируемое поле на этом элементе содержимого, выделенное синим цветом;
+кроме того, появится диалоговое окно наведения курсора.
 +
 --
-// Screenshot of About page with Quick Edit turned on for the node.
-image:images/content-in-place-edit-hover-box.png["Quick edit mode",width="100%"]
+// Снимок экрана страницы О рынке с включенной функцией быстрого редактирования для материала.
+image:images/content-in-place-edit-hover-box.png["Режим быстрого редактирования",width="100%"]
 --
 
-. Click the _Body_ text area to begin editing. The _Body_ field
-supports a rich text editor. The editing toolbar will be displayed in a
-hovering dialog box.
+. Щелкните в текстовом поле _Содержимое_, чтобы начать редактирование. Поле
+_Содержимое_ поддерживает полнотекстовый редактор. Панель инструментов
+редактирования будет отображена в висящем диалоговом окне.
 
-. Add some information about City Market. A _Save_ button will appear in the
-hovering dialog box, and the field outline will change color.
+. Добавьте немного информации о рынке. В диалоговом окне наведения
+появится кнопка _Сохранить_, и контур поля изменит цвет.
 +
 --
-// Screenshot of About page with Quick Edit turned on for the node area, after clicking the Body field and changing text in the box.
-image:images/content-in-place-edit-save-box.png["Quick edit mode after editing",width="100%"]
+// Снимок экрана страницы О рынке с включенной функцией быстрого редактирования
+// для области материала после щелчка по полю Содержимое и изменения текста в окне.
+image:images/content-in-place-edit-save-box.png["Режим быстрого редактирования после внесенных изменений",width="100%"]
 --
 
-. If you are satisfied with your edits, click _Save_ in the hovering dialog
-box. If not, click "x" to discard your edits, and confirm. Either way, quick
-editing mode will be turned off.
+. Если вы удовлетворены своими правками, нажмите _Сохранить_ в диалоговом
+окне наведения курсора. Если нет, нажмите "x", чтобы отказаться от
+редактирования и подтвердить. В любом случае, режим быстрого редактирования
+будет выключен.
 
-==== Expand your understanding
+==== Улучшите свое понимание
 
-Try using the full editor on the same content (see <<content-edit>>) and note
-that there is much more information that can be edited that is not available in
-the quick editor.
+Попробуйте использовать полный редактор на том же содержимом
+(см. <<<content-edit>>) и обратите внимание, что есть гораздо больше
+информации, которую можно отредактировать, чем в быстром редакторе.
 
-// ==== Related concepts
+// ==== Связанные понятия
 
-==== Videos
+==== Видео
 
-// Video from Drupalize.Me.
+// Видео с Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/6A6kbceIKKw[title="Editing with the In-Place Editor"]
 
-// ==== Additional resources
+// ==== Дополнительные ресурсы
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/davidlee55[David Lee] and
+Написано и отредактировано https://www.drupal.org/u/davidlee55[David Lee] и
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
