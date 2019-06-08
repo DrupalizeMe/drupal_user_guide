@@ -34,7 +34,10 @@ A webhely szoftvere által elfoglalt teljes tárterület nem egy általános, mi
 
 ===== PHP értelmező
 
-Legalább PHP 5.5.9 szükséges vagy újabb (például PHP 7.x) javasolt.
+Legalább PHP 7.2 szükséges vagy javasolt a még újabb. Fontos, hogy a PHP-szkriptek futtatásához legalább 64 MB memória legyen engedélyezve a számítógépen. Ha ugyanis sok Drupal-modult használunk majd webhelyünkön, amelyek közül több akár párhuzamosan is futhat egyidőben, vagy memóriaigényes feladatokat végző PHP-programokat (például Composer) fogunk futtatni, akkor valószínűleg ennél magasabbra kell állítanunk a korlátot.
+
+Nemcsak a Drupalnak vannak kiegészítő moduljai, de magának a PHP nyelvhez is léteznek bővítmények. A Drupal elvárja némelyik meglétét, de hogy pontosan melyikét, az attól is függ, hogyan telepítettük az alaprendszert és milyen modulokat adunk hozzá. Aggodalomra azonban nincs okunk: egyrészt a legtöbb tárhelyszolgáltató pontosan tisztában van vele, hogy ezeket a PHP-bővítményeket előre engedélyezzék a tárhelyünkön, másrészt pedig a Drupal képes ellenőrizni, hogy teljesülnek-e a szükséges PHP-feltételek és időben figyelmeztet a telepítés során.
+
 
 ===== Webkiszolgáló
 
@@ -63,7 +66,10 @@ A következő adatbázis-kiszolgálók bármelyike használható:
 
 ==== Egyéb források
 
-https://www.drupal.org/docs/8/system-requirements[System requirements] (azaz „Rendszerkövetelmények”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+Az alább felsorolt közösségi dokumentációk a Drupal.org-on bár angol nyelvűek, de hasznosak lehetnek a téma alaposabb megértéséhez:
+
+* https://www.drupal.org/docs/8/system-requirements[System requirements] (azaz „Rendszerkövetelmények”)
+* https://secure.php.net/manual/en/configuration.php[PHP Runtime Configuration – PHP memory limit and other settings]  (azaz „A PHP futtatókörnyezet konfigurálása – Memóriakorlát és más beállítások”)
 
 *Közreműködők*
 

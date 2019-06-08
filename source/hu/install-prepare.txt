@@ -17,18 +17,19 @@ Ebben a szakaszban letöltjük az alaprendszer forráskódját és biztosítjuk 
 * <<install-requirements>>
 * <<install-tools>>
 * <<install-decide>>
+* Hogyan kell szerverszoftvereket telepíteni a saját számítógépünkön
 * Hogyan kell beállítani egy tárhelyet egy általános webhely számára
 * Miként lehet adatbázist létrehozni
 
 ==== Webhely előfeltételei
 
-Attól függően, hogy az alaprendszer letöltésének melyik módját választottuk, szükségünk lehet további eszközökre is. A döntéshez lásd a <<install-decide>> részt, míg az eszközök beszerzéséhez pedig a <<install-tools>> szakaszt.
+A számítógépen, ahol a webhelyünket tervezzük elhelyezni, bizonyos szerverszoftvereknek már telepítve kell lenniük. Ebben segíthet a <<install-requirements>> leírás. Valamint attól függően, hogy az alaprendszer letöltésének melyik módját választottuk, szükségünk lehet további eszközökre is. A döntéshez lásd a <<install-decide>> részt, míg az eszközök beszerzéséhez pedig a <<install-tools>> szakaszt.
 
 ==== Lépések
 
-. Válasszunk egy letöltési és telepítési módot a <<install-decide>> szakaszban felsoroltak közül. Az itt következő lépések a Composerre és kézi letöltésre, valamint a interaktív telepítő futtatására vonatkoznak. Más lehetőség esetén a szoftvernek már telepítve kell lennie.
+. Válasszunk egy letöltési és telepítési módot a <<install-decide>> szakaszban felsoroltak közül. Az itt következő lépések a Composerre és kézi letöltésre, valamint az interaktív telepítő futtatására vonatkoznak. Más lehetőség esetén a szoftvernek már telepítve kell lennie.
 
-. Akár a helyi gépünkön (localhost), akár a távoli kiszolgálón állítsunk be egy doménnevet a tárhelyünkhöz. Egy egyszerű HTML fájlt téve a tárhely gyökérkönyvtárába, majd a webcímét megnyitva egy böngészőben ellenőrizzük, hogy az elérhető-e.
+. Akár a távoli kiszolgálón állítsunk be egy doménnevet a tárhelyünkhöz. Egy egyszerű HTML fájlt téve a tárhely gyökérkönyvtárába, majd a webcímét megnyitva egy böngészőben ellenőrizzük, hogy az elérhető-e.
 
 . Ugyanekkor készítsük el az adatbázist is egy teljes hozzáférési joggal rendelkező adatbázis-felhasználóval együtt.
 
@@ -36,7 +37,7 @@ Attól függően, hogy az alaprendszer letöltésének melyik módját választo
 
 ==== Az ismeretek elmélyítése
 
-Az <<install-run>> szakasz bemutatja az interaktív webes telepítő végigkattintgatásának menetét.
+A <<install-run>> szakasz bemutatja az interaktív webes telepítő végigkattintgatásának menetét.
 
 Ha a vizuális felületnél jobban szeretjük a parancssoros hozzáférést, akkor az alábbi Drush parancs közel ugyanezt végzi el. Gépeljük a következő utasításokat a parancssorba, ahol  `example` annak a könyvtárnak a neve, ahova az alaprendszert letöltöttük, valamint a `DB_NAME`, `DB_USER` és `DB_PASS` az adatbázis hitelesítő adatai:
 
