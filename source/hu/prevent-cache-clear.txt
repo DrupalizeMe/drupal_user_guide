@@ -23,17 +23,32 @@ Ha szeretnénk Drush eszközt használni a gyorsítótár kiürítéséhez, akko
 
 ==== Lépések
 
-E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfelületét használjuk webböngészőnkben, vagy pedig a Drush nevű eszközt parancssorban.
+E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfelületét használjuk webböngészőnkben, vagy pedig a Drush nevű eszközt parancssorban. Szintén hasznos lehet megismernünk az újraépítő szkript (`rebuild.php`) használatát.
 
 ===== Adminfelületen keresztül
 
-. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Teljesítmény_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/performance_ útvonalat).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Teljesítmény_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/performance_ útvonalat). Ha bármi oknál fogva nem töltődik be az adminfelület, ne essünk kétségbe, próbáljuk meg a következő módok valamelyikét.
 
 . Kattintsunk a _Gyorsítótár teljes törlése_ gombra.
 
 . Kis idő elteltével az oldal újratöltődik, immár egy rendszerüzenettel a tetején, ami tájékoztat minket a művelet eredményéről.
 
-===== Drush használatával
+. Ha ez esetleg mégsem oldaná meg a gondot, ami a gyorsítótár ürítése előtt fennállt, akkor próbáljuk meg a következő módok valamelyikét.
+
+===== Az újraépítő szkript használatával
+
+. Ha elérjük, nyissuk meg a webhelypéldányunk helyi beállításait tartalmazó `settings.php` fájlt (amit a gyökérkönyvtártól kiindulva a _/sites/default/settings.php_ útvonalon találjuk a fájlrendszerben) egy szövegszerkesztőben és másoljuk be ezt a sort a legvégére:
++
+----
+$settings['rebuild_access'] = TRUE;
+----
+Ezzel ez egy fontos biztonsági védelmet iktatunk ki ideiglenesen, a művelet végeztével vissza fogjuk állítani letiltott módba. Emlékeztetőként akár nyitva is hagyhatjuk a szerkesztőt.
+
+. Miután elmentettük a fájlt (lehet, hogy írásvédett), látogassuk meg webhelyünkön ezt a fájlt a böngésző címsorában ehhez hasonló módon megadva: _http://www.pelda.hu/core/rebuild.php_. Kis idő elteltével betöltődik a webhely címlapja, miután a Drupal valamennyi gyorsítótára teljesen újraépült.
+
+. Visszatérve a `settings.php` fájlhoz a szövegszerkesztőben, töröljük ki az egész `$settings['rebuild_access']` kezdetű sort és mentsük el a fájlt.
+
+===== Drush használata ürítésre vagy újraépítésre
 
 A következő két parancs valamelyikét használhatjuk e célra:
 
