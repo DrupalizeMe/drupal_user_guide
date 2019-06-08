@@ -36,7 +36,7 @@ Az itt leírt útmutatóra csak akkor van szükségünk, ha a korábbi részek s
 ** <<security-update-module>>
 ** <<security-update-theme>>
 
-Ha a fenti esetek egyike sem áll fenn, akkor nyugodt szívvel átugorhatjuk ezt a szakaszt és folytathatjuk a következővel.
+Ha a fenti esetek egyike sem áll fenn, akkor nyugodt szívvel átugorhatjuk ezt a szakaszt és folytathatjuk a következővel. Ha viszont használunk Composert a webhelyünkön, akkor az azt jelenti, hogy már automatizáltan kezeljük a szoftver (azaz a Drupal) forráskódjának fájlrendszerét, tehát nincs szükségünk az itt leírt lépéssor kézzel való elvégzésére. Ez esetben kövessük inkább a <<install-composer>> fejezet útmutatásait.
 
 ==== Lépések
 
@@ -86,7 +86,6 @@ image:images/extend-manual-install-directories.png["Javasolt könyvtárszerkezet
 ----
 $ tar -xzf admin_toolbar-8.x-1.17.tar.gz
 ----
-+
 Ha nem Linuxon fut a kiszolgáló, vagy nem használhatjuk a parancssort, akkor a tárhelyszolgáltatónk valószínűleg kínál valamilyen grafikus felületet a kicsomagolás elvégzésére.
 
 . Ha a kicsomagolási művelet nem tette meg magától, akkor töröljük a tömörített állományt kézzel.
@@ -114,9 +113,11 @@ video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Modul- és smin
 
 ==== Egyéb források
 
-* https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Updating modules"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ community documentation page "Installing contributed modules (Drupal 8)"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[_Drupal.org_ community documentation page "Installing themes"]
+Az alább felsorolt közösségi dokumentációk a Drupal.org-on bár angol nyelvűek, de hasznosak lehetnek a téma alaposabb megértéséhez:
+
+* https://www.drupal.org/node/250790[Updating modules] (azaz „Modulok frissítése”)
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[Installing contributed modules] (azaz „Közösségi modulok telepítése”)
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[Installing themes] (azaz „Sminkek telepítése”)
 
 *Közreműködők*
 

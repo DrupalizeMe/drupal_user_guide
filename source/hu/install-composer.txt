@@ -1,25 +1,31 @@
 [[install-composer]]
 
-=== Telepítőfájlok letöltése Composer használatával
+=== Rendszerfájlok letöltése és frissítése Composer használatával
 
 [role="summary"]
-Megismerjük, hogyan lehet az alaprendszer és más modulok fájljait a Composer nevű fejlesztőeszközzel karbantartani.
+Megismerjük, hogyan lehet az alaprendszer és más modulok, sminkek fájljait a Composer nevű fejlesztőeszközzel karbantartani.
 
 (((Composer eszköz,az alaprendszer letöltése a használatával)))
 (((Composer eszköz,modulok letöltése a használatával)))
 (((Composer eszköz,sminkek letöltése a használatával)))
+(((Alaprendszer,letöltés)))
+(((Alaprendszer,frissítés)))
 (((Letöltés,alaprendszer)))
-(((Letöltés,smink)))
 (((Letöltés,modul)))
+(((Letöltés,smink)))
 (((Szoftverfüggőségek,kezelésük)))
 (((Modul,letöltés)))
+(((Modul,frissítés)))
 (((Smink,letöltés)))
-(((Közösségi smink,letöltés)))
+(((Smink,frissítés)))
 (((Közösségi modul,letöltés)))
+(((Közösségi modul,frissítés)))
+(((Közösségi smink,letöltés)))
+(((Közösségi smink,frissítés)))
 
 ==== Célkitűzés
 
-Használjuk a Composer fejlesztői eszközt arra, hogy letöltsük az alaprendszer, a modulok és a sminkek forráskódját, valamint kezeljük azok függőségeit, azaz beszerezzük hozzájuk a további szükséges szoftverelemeket. Ha nem használjuk ezt az eszközt, akkor nyugodtan ugorjuk át ezt a témakört.
+Használjuk a Composer fejlesztői eszközt arra, hogy letöltsük vagy frissítsük az alaprendszer, a modulok és a sminkek forráskódját, valamint kezeljük azok függőségeit, azaz beszerezzük hozzájuk a további szükséges szoftverelemeket. Ha nem használjuk ezt az eszközt, akkor nyugodtan ugorjuk át ezt a témakört.
 
 ==== Szükséges előismeretek
 
@@ -47,36 +53,36 @@ Ha még nem töltöttük le az alaprendszer forráskódját, és szeretnénk él
 . Adjuk ki az alábbi parancsot, melyben a +webhelyem+ részt helyettesítsük be a létrehozni kívánt könyvtárunk nevével:
 +
 ----
-$ composer create-project drupal-composer/drupal-project:8.x-dev webhelyem --no-dev --no-progress --stability dev --no-interaction
+$ composer create-project drupal-composer/drupal-project:8.x-dev webhelyem --no-interaction
 ----
-+
-Sikeres lefutást követően létrejön a +webhelyem+ argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
+
+Sikeres lefutást követően létrejön a +webhelyem+ argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer legfrissebb kiadásának forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
 
 ===== Közösségi projektek letöltése Composerrel
 
-Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már meg is van a Drupal alaprendszerünk, akkor használhatjuk a Composert arra is, hogy beszerezzük vele a kívánt verziókat az alábbi lépéseket követve:
+Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már Composerrel kezdtük el felépíteni webhelyünket, akkor azt használhatjuk arra is, hogy beszerezzük vele a többi szükséges kiegészítő kívánt verzióját az alábbi lépéseket követve:
 
-. Bármikor, ha egy új, az adott webhelyen korábban még nem használt közösségi projektet (modult vagy sminket) szeretnénk hozzáadni a már meglévőkhöz, akkor először is a legelső lépés, hogy pontosan tudnunk kell a letölteni kívánt projekt gépek által használt nevét. Ez mindig csak az angol ábécé kisbetűiből áll, nem tartalmazhat szóközt, szavak elkülönítésére helyette az aláhúzás karaktert használja. Legkönnyebben a Drupal.org portálon a projektoldal webcímének végén találjuk. Például a _Geofield_ modulé a https://www.drupal.org/project/geofield URL-ben a +geofield+.
+. Bármikor, ha egy új, az adott webhelyen korábban még nem használt közösségi projektet (modult vagy sminket) szeretnénk hozzáadni a már meglévőkhöz, akkor először is a legelső lépés, hogy pontosan tudnunk kell a letölteni kívánt projekt gépek által használt nevét. Ez mindig csak az angol ábécé kisbetűiből áll, nem tartalmazhat szóközt és szavak elkülönítésére az aláhúzás karaktert használja. Legkönnyebben a Drupal.org portálon a projektoldal webcímének végén találjuk. Például a _Geofield_ modulé a https://www.drupal.org/project/geofield URL-ben a +geofield+.
 
-. Ha megvan a neve, akkor azt a következő parancsban a példaként használt „+geofield+” helyére behelyettesítve és egy parancssoros ablakban lefuttatva a Composer letölti a modult minden további szükséges függőségével együtt:
+. Ha megvan a neve, akkor azt a következő parancsban a példaként használt „geofield” helyére behelyettesítve és egy parancssoros ablakban lefuttatva a Composer letölti a modult minden további szükséges függőségével együtt:
 +
 ----
 $ composer require drupal/geofield
 ----
 
-===== Közösségi projektek frissítése Composerrel
+===== Korábban már Composerrel letöltött közösségi projektek frissítése
 
-Miután az előző részeknél leírtak szerint már használunk Composert a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így a következő lépéseket követve már könnyedén elvégezhetjük mindezek rendszeres frissítését.
+Miután az előző részeknél leírtak szerint már használunk Composert a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így a következő lépéseket követve könnyedén elvégezhetjük mindezek rendszeres frissítését is.
 
 . Akárcsak telepítéskor (lásd fentebb), most is tudnunk kell a frissíteni kívánt modulok vagy sminkek gépi nevét. Az alaprendszeré +core+, a közösségi projektekét pedig megnézhetjük webhelyünk adminfelületén.
 
 . Második lépésként meg kell határoznunk, hogy az adott szoftverelem melyik verzióját szeretnénk letöltetni a Composerrel. Egyszerű dolgunk van, ha a legfrissebb verziót kérjük:
 +
 ----
-$ composer update drupal/geofield  --with-dependencies
+$ composer update drupal/geofield --with-dependencies
 ----
-+
-Ha valamilyen oknál fogva egy adott verzióra van szükségünk, akkor jó, ha tudjuk, hogy a kötőjeles verziószámok esetén a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az +1.7+ verziószámot megadnunk. Ugyanez nem érvényes azonban az alaprendszerre, mert annak nem kötőjellel összetett verziószáma van. Ott továbbra is ugyanúgy ki kell írnunk: például +drupal/core:8.6.3+.
+
+. Ha valamilyen oknál fogva egy adott verzióra van szükségünk, akkor jó, ha tudjuk, hogy a kötőjeles verziószámok esetén a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az +1.7+ verziószámot megadnunk. Mindez azonban nem érvényes a Drupal 8 alaprendszerre, mert az a régies kéttagú verziószámok (például „Drupal 7.59”) helyett már a korszerű _szemantikus verziószámozás_ elvét követve háromtagú jelölést használ. Mivel pedig a +core+ magasabb szintű, mint a kiegészítők, ezért kötőjel sem szerepel benne. Ezt tehát továbbra is ugyanúgy ki kell írnunk a Composer-parancsokban: például +drupal/core:8.6.3+.
 +
 ----
 $ composer require drupal/geofield:1.7
@@ -84,7 +90,9 @@ $ composer require drupal/geofield:1.7
 +
 . Ha minden információ rendelkezésre áll, akkor a parancssoros ablakban webhelyünk gyökérkönyvtárában állva adjuk ki a fentiekhez hasonló parancsunkat, melyben a +geofield+ mintát értelemszerűen a frissíteni kívánt projekt nevére cseréltük.
 
-//==== Az ismeretek elmélyítése
+==== Az ismeretek elmélyítése
+
+A Composer használatát kézenfekvő módon annak beépített súgójából ismerhetjük meg. Például a fentebb már említett `$ create-project` utasításról a `$ composer help create-project` paranccsal olvashatunk bővebben.
 
 //==== Kapcsolódó témák
 
@@ -95,8 +103,11 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer 
 
 ==== Egyéb források
 
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[Using Composer with Drupal] (azaz „A Drupal használata Composerrel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+Az alább felsorolt közösségi dokumentációk a Drupal.org-on bár angol nyelvűek, de hasznosak lehetnek a téma alaposabb megértéséhez:
+
+* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies[Using Composer to manage Drupal site dependencies] (azaz „Composer használata a Drupal függőségeinek kezeléséhez”)
+* https://www.drupal.org/docs/8/update/update-core-via-composer["Update core via Composer"] (azaz „Alaprendszer frissítése Composerrel”)
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug] és https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[„Using Composer with Drupal”] (azaz „A Drupal használata Composerrel”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug] és https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies[„Using Composer to manage Drupal site dependencies”] (azaz „Composer használata a Drupal függőségeinek kezeléséhez”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
