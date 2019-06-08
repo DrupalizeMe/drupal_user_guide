@@ -1,150 +1,154 @@
 [[install-run]]
 
-=== Running the Interactive Installer
+=== Запуск интерактивного установщика
 
 [role="summary"]
-How to use the interactive installer to install the core software.
+Как использовать интерактивный установщик для установки Drupal.
 
-(((Installer tool,running)))
-(((Installation process)))
-(((Installation profile)))
-(((Profile,installation)))
-(((Database,configuring during the installation process)))
-(((Core software,installing)))
-(((Drupal core,installing)))
-(((Web installer,running)))
+(((Установщик,запуск)))
+(((Процесс установки)))
+(((Установочный профайл)))
+(((Профайл,установка)))
+(((База данных,настройка в течении установочного процесса)))
+(((Drupal,установка)))
+(((Ядро Drupal,установка)))
+(((Веб установщик,запуск)))
 
-==== Goal
+==== Цель
 
-Install the core software and create the admin account by running the included
-installer.
+Установить Drupal и создать аккаунт администратора через запуск встроенного
+установщика.
 
 // ==== Prerequisite knowledge
 
-==== Site prerequisites
+==== Требования к сайту
 
 <<install-prepare>>
 
-==== Steps
+==== Шаги
 
-. If you are using a 1-click install from a hosting provider or demo site, you
-will most likely see some or all of the following screens as part of the
-installation process. If you uploaded the core files manually or using Composer,
-to start the installer, open a browser and visit the URL that you set up for
-your hosting.
+. Если вы используете установку в один клик от вашего хостинга или демо сайт, вы
+скорее всего увидите некоторые или все следующие действия как часть
+установочного процесса. Если вы загрузили Drupal файлы вручную или использовали Composer,
+запустите установщик, открыв браузер и перейдите по адресу, который выдал вам
+ваш хостинг.
 
-. Select a language on the first page of the installer; for example,
-English. You could optionally choose from any of the other listed languages.
-The language files for the chosen language will be downloaded and installed so
-that the rest of the installation process can be finished in the chosen
-language. After choosing a language, click _Save and continue_.
+. Выберите язык на первой странице установщика; например,
+Русский. Вы можете выбрать любой другой язык из представленного списка языков.
+Файлы выбранного языка будут скачены и установлены тогда,
+когда остальные шаги инсталяционного процесса будут завершены для выбранного
+языка. После выбора языка, нажмите _Сохранить и продолжить_.
 +
 --
 // Go to the first step of the installer
-image:images/install-run-1.png["Choose a language",width="100%"]
+image:images/install-run-1.png["Выбор языка",width="100%"]
 --
 
-. Select an installation profile. Installation profiles provide site features
-and functions for a specific type of site as a single download containing
-the core software, contributed modules, themes, and pre-defined
-configuration. Core contains two installation profiles. Select the core
-Standard installation profile. Click _Save and continue_.
+. Выберите установочный профайл. Установочный профайл предоставляет сайту возможности
+и функции для сайтов со специфичными задачами как отдельно загружаемый контейнер
+с Drupal, содержащий модули, темы, и предустановленные
+настройки. Drupal содержит три инсталяционных профайла. Выберите
+инсталяционный профайл "Стандарт". Нажмите _Сохранить и продолжить_.
 +
 --
 // Go to the choose an installation profile step of the installer
-image:images/install-run-2.png["Choose an installation profile",width="100%"]
+image:images/install-run-2.png["Выберите инсталяционный профайл",width="100%"]
 --
 
-. The next step in the installer will verify that your system meets the minimum
-requirements. If it does not, you'll be presented with an outline of what
-needs to be corrected in order to proceed. If it does, the installer will
-automatically advance to the next step.
+. На следующем шаге установщик будет проверять вашу систему на соотвествие минимальным
+требованиям. Если системы не подходит, вам будет отображено, что
+необходимо поправить для того чтобы продолжить. Если все подходит, установщик будет
+автоматически переходить на следующий шаг.
 
-. Provide details of the database you created in the <<install-prepare>>
-chapter. Then click _Save and continue_.
+. Предоставьте доступы для вашей базы данных, которую вы создали в разделе <<install-prepare>>.
+После этого нажмите _Сохранить и продолжить_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Database name | The custom name given to the database | drupal8
-|Database username | Username created | databaseUsername
-|Database password | Password chosen | ************
+|Имя поля | Объяснение | Значение
+|Имя базы данных | Пользовательское имя данное базе данных | drupal8
+|Пользователь базы данных | Созданный пользователь | databaseUsername
+|Пароль базы данных | Выбранный пароль | ************
 |================================
 +
 --
 // Go to the database configuration step of the installer
-image:images/install-run-3.png["Database configuration form",width="100%"]
+image:images/install-run-3.png["Форма конфигурации базы данных",width="100%"]
 --
 
-. The next step will display a progress bar under the heading _Installing
-Drupal_. After the installer has completed, it will automatically advance to
-the next step.
+. На следующем шаге будет отображаться индикатор прогресса под заголовком _Установка
+Drupal_. После окончания установки, вы будете перенаправлены
+а следующий шаг.
 +
 --
 // Go to the page displaying the installation progress bar
-image:images/install-run-4.png["Installation progress bar",width="100%"]
+image:images/install-run-4.png["Индикатор процесса установки",width="100%"]
 --
 
-. The final step is to configure some basic information about your new site.
-Note that the user account you create in this step is the site's admin
-account. See <<user-admin-account>> for important information about this unique
-account. You can safely name this account "admin", and make sure to choose a
-secure and unique password.
+. На последнем шаге настройте некоторые основные настройки вашего нового сайта.
+Заметьте что пользователь, которого вы создаете на этом шаге будет администратором сайта.
+Смотрите <<user-admin-account>> для более подробной информации об этом уникальном
+пользователе. Вы можете безапасно назвать этого пользователя "admin", только будьте уверены, что выбрали
+безопасный и уникальный пароль.
 +
-Fill in the form with the following information:
+Заполните форму со следующей информацией:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Site name | The name chosen for the site | Anytown Farmers Market
-|Site email address | The email associated with the site | info@example.com
-|Username | The designated user's credentials| admin
-|Password | The password chosen | ************
-|Confirm password | Repeat the password | ************
-|Email address | The user's email | admin@example.com
+|Имя поля | Объяснение | Значение
+|Название сайта | The name chosen for the site | Anytown Farmers Market
+|Адрес электронной почты сайта | The email associated with the site | info@example.com
+|Имя пользователя | The designated user's credentials| admin
+|Пароль | Пароль для пользователя | ************
+|Повторите пароль | Введите пароль еще раз | ************
+|E-mail адрес | Электронная почта пользователя | admin@example.com
 |================================
 +
-The remaining fields can likely be left at their default values.
+Оставшиеся поля могут быть оставлены со значениями по умолчанию.
 +
 --
 // Go to the basic site information configuration step of the installer
-image:images/install-run-5.png["Configuration form",width="100%"]
+image:images/install-run-5.png["Форма настройки сайта",width="100%"]
 --
 
-. Click _Save and continue_.
+. Нажмите _Сохранить и продолжить_.
 
-. You will be redirected to the front page of your new site and you should see
-the message _Congratulations, you installed Drupal!_ displayed at the top of
-the page.
+. Вы будете перенапралены на главную страницу вашего нового сайта и вы должны увидеть
+сообщение _Drupal успешно установлен, поздравляем!_ отображенное в верху
+страницы.
 +
 --
 // Front page of Drupal after the installer just completed showing the success message
-image:images/install-run-6.png["Installation success",width="100%"]
+image:images/install-run-6.png["Успешная установка",width="100%"]
 --
 
-==== Expand your understanding
+==== Улучшите свое понимание
 
-Check the Status Report to see if there are any problems with the
-installation. See <<prevent-status>>.
+Проверьте Отчет о состояние, чтобы посмотреть наличие проблем с
+установкой. Смотрите <<prevent-status>>.
 
-==== Related concepts
+==== Связанные темы
 
 * <<install-dev-sites>>
 * <<install-tools>>
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/LGfRKKKDjv8[title="Running the Installer"]
+video::https://youtu.be/stfyr0757ts[title="Установка и русификация Drupal 8"]
 
-==== Additional resources
+==== Дополнительные материалы
 
 https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
+http://drupalbook.ru/drupal/1-ustanovka-i-rusifikaciya-drupal-8[Drupalbook.ru - Установка и русификация Drupal 8]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+Написано и отредактировано https://www.drupal.org/u/eojthebrave[Joe Shindelar] из
 https://drupalize.me[Drupalize.Me],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] из
 http://redcrackle.com[Red Crackle].
+
+Переведено https://www.drupal.org/u/levmyshkin[Иван Абраменко].
