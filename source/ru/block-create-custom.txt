@@ -1,74 +1,77 @@
 [[block-create-custom]]
 
-=== Creating A Custom Block
+=== Создание Пользовательского блока
 
 [role="summary"]
-How to create a custom block.
+Как создавать пользовательские блоки.
 
-(((Block,creating)))
-(((Custom block,creating)))
+(((Блок,создание)))
+(((Пользовательский блок,создание)))
 
-==== Goal
+==== Цель
 
-Create a block showing the hours and location of the farmers market.
+Создать блок отображающий часы работы и адрес городской ярмарки.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<block-concept>>
 * <<block-regions>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block
-layout_ > _Custom block library_ (_admin/structure/block/block-content_).
+. В меню администратора _Управление_, перейдите в _Структура_ > _Схема
+блоков_ > _Пользовательские блоки_ (_admin/structure/block/block-content_).
 
-. Click _Add custom block_. The _Add custom block_ page appears.
+. Нажмите _Добавить блок_. И у вас отобразится странциа _Добавить блок_.
 
-. Fill in the fields as shown below.
+. Заполните поля как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Block description |Name of the block shown to administrators |Hours and location block
-|Body |Content of the block when it is displayed |Open: Sundays, 9 AM to
-2 PM, April to September<br />Location: Parking lot of Trust Bank, 1st & Union,
-downtown Anytown.
+|Имя поля |Объяснение |Примерное значение
+|Описание блока |Имя блока, которое показывается администратору |Часы работы и адрес блок
+|Содержимое |Контент блока, который отображается для пользователей |Открыто: Воскресенье, 9:00 -
+14:00, с апреля по сентябрь<br />Адрес: пл. Пушкина,
+центр города N.
 |================================
 +
 --
 // Block add page (block/add).
-image:images/block-create-custom-add-custom-block.png["Add a custom block", width="100%"]
+image:images/block-create-custom-add-custom-block.png["Добавить пользовательский блок", width="100%"]
 --
 
-. Click _Save_. A message appears indicating the block has been saved.
+. Нажмите _Сохранить_. Должно быть выведено сообщение об успешном сохранении блока.
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
-* Edit the content of your custom block. In the _Manage_ administrative menu,
-navigate to _Structure_ > _Block layout_ > _Custom block library_
-(_admin/structure/block/block-content_). Find your block in the list and click
-_Edit_ to make changes.
+* Отредактируйте содержимое вашего пользовательского блока. В меню администратора _Упавление_,
+перейдите в _Структура_ > _Схема блоков_ > _Пользовательские блоки_
+(_admin/structure/block/block-content_). Найдите ваш блок в списке и нажмите
+_Редактировать_ для применения изменений.
 
-* Place the block you created in the sidebar. See <<block-place>> for details.
+* Разместите созданный вами блок в колонке. Смотрите инструкции здесь <<block-place>>.
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/sI2wrbn3cPg[title="Creating a Custom Block"]
+video::http://drupalbook.ru/drupal/26-block-regiony-i-bloki[title="Регионы и блоки"]
 
-==== Additional resources
+==== Дополнительные материалы
 
 https://www.drupal.org/docs/8/core/modules/block/overview[_Drupal.org_ community documentation page "Working with blocks (content in regions)"]
+http://drupalbook.ru/drupal/26-block-regiony-i-bloki[_DrupalBook.ru_ страница "2.6. Block - Регионы и блоки"]
 
+*Авторы*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/jredding[Jacob Redding] and
-https://www.drupal.org/u/batigolix[Boris Doesborg] from
+Адаптировано https://www.drupal.org/u/jredding[Jacob Redding] и
+https://www.drupal.org/u/batigolix[Boris Doesborg] из
 https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks
-(content in regions)], copyright 2000-2017 by the individual contributors to
-the https://www.drupal.org/documentation[Drupal Community Documentation].
+(content in regions)], авторские права 2000-2017 за участниками
+https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/levmyshkin[Иван Абраменко].
