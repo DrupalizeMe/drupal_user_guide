@@ -58,6 +58,16 @@ $ composer create-project drupal-composer/drupal-project:8.x-dev webhelyem --no-
 
 Sikeres lefutást követően létrejön a +webhelyem+ argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer legfrissebb kiadásának forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
 
+===== Egy korábban tömörített fájlból telepített webhely átalakítása Composeresre
+
+Bárkivel előfordulhat, hogy miután már feltelepítette a Drupalt a Drupal.org-ról letöltött _zip_ vagy _tar.gz_ fájlból (tehát Composer használata nélkül), később meggondolja magát és mégis szeretne élni inkább az automatikus függőségkezelés lehetőségével. Szerencsére ez sem lehetetlen: ha már telepítettük a Composert a gépünkre, de az még nem kezeli a Drupal kódbázisát, akkor az alábbi két lépéssel megtehetjük.
+
+. Webhelyünk gyökérkönyvtárában adjuk ki a `$ composer global require grasmash/composerize-drupal` parancsot, mely letölti és a gépünkön általánosan elérhetővé teszi Matthew Grasmick átalakítóprogramját a Composerhez.
+
+. Ha ez sikeresen települt, utána meghívhatjuk a Composeren keresztül a `$ composer composerize-drupal --composer-root=. --drupal-root=.` paranccsal.
+
+Így futtatva feltérképezi a Drupalunk könyvtárszerkezetét és összegyűjti belől azokat az információkat, amikre majd a Composer-nek szüksége lesz. Ha webhelyünkhöz már töltöttünk le közösségi modulokat vagy sminkeket, és azokat az ajánlásoknak megfelelően a _modules/contrib_, _themes/contrib_, vagy _profiles/contrib_ nevű alkönyvtárakba tettük, akkor ez a program azokat is fel fogja fedezni és hozzáadja őket a Composer listájához. Ha viszont nem tettük őket ilyen alkönyvtárakba, akkor jobban járunk, ha letöröljük őket és a következő részben leírtakat követve újra beszerezzük őket, de immár a Composer segítségével.
+
 ===== Közösségi projektek letöltése Composerrel
 
 Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már Composerrel kezdtük el felépíteni webhelyünket, akkor azt használhatjuk arra is, hogy beszerezzük vele a többi szükséges kiegészítő kívánt verzióját az alábbi lépéseket követve:
@@ -106,7 +116,9 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer 
 Az alább felsorolt közösségi dokumentációk a Drupal.org-on bár angol nyelvűek, de hasznosak lehetnek a téma alaposabb megértéséhez:
 
 * https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies[Using Composer to manage Drupal site dependencies] (azaz „Composer használata a Drupal függőségeinek kezeléséhez”)
-* https://www.drupal.org/docs/8/update/update-core-via-composer["Update core via Composer"] (azaz „Alaprendszer frissítése Composerrel”)
+* https://www.drupal.org/docs/8/update/update-core-via-composer[Update core via Composer] (azaz „Alaprendszer frissítése Composerrel”)
+* https://github.com/grasmash/composerize-drupal[Composerize Drupal] (azaz „A Drupal Composeresítése”)
+program a korábban nem Composerrel telepített Drupal-webhelyek átalakítására.
 
 *Közreműködők*
 
