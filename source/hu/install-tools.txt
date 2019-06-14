@@ -24,16 +24,7 @@ Ebben a témakörben áttekintjük, hogy még milyen praktikus kiegészítők se
 
 ==== Milyen eszközök állnak rendelkezésünkre?
 
-Az alábbiakban bemutatott eszközök célja az, hogy gyorsabban, pontosabban és kevesebb időbefektetéssel tudjunk webhelyeket építeni.
-
-Git::
-  A https://git-scm.com/[Git] egy verziókövető rendszer, amivel akár csak modulok és sminkek saját könyvtárait, akár a webhely teljes kódbázisát felügyelhetjük: hol, mikor, milyen változtatás történt. A Git nyilvántartására támaszkodva biztonságosabban próbálhatunk ki módosításokat, mert ha egy változtatás nem sikeres, könnyen vissza tudunk állni az utolsó, még működőképes állapotra. Mivel a Drupal fájlokban is tárolja a konfigurációját, ezért a Git segítségével összehasonlíthatjuk és hordozhatjuk a beállításokat két webhelymásolat (például a helyi gépen futó és az élesítésre váró) között. Napjainkra a Git a nemzetközi webfejlesztési iparág _de facto_ szabványává vált.
-Devel::
-  A https://www.drupal.org/project/devel[Devel] egy közösségi modul, ami rengeteg praktikus funkciót kínál a webfejlesztési feladatok elvégzéséhez, mint például a forráskód vizsgálatát, az adatbázis-lekérdezések elemzését és próbatartalmak tömeges előállítását tesztjelleggel.
-Drush és Drupal Console::
-  Ezekkel a nélkülözhetetlen parancssoros eszközökkel lentebb még bővebben is foglalkozunk.
-Composer::
-  Erről a másik nagyszerű segítségről is írunk még alább.
+Ezen eszközök célja, hogy gyorsabban, pontosabban és kevesebb időbefektetéssel tudjunk webhelyeket építeni és üzemeltetni. A https://www.drupal.org/project/devel[Devel] közösségi modul például rengeteg praktikus funkciót kínál a webfejlesztési feladatok elvégzéséhez és a Drupal belső működésének jobb megértéséhez. Ilyen funkciók például a forráskód vizsgálata, az adatbázis-lekérdezések elemzése és próbatartalmak tömeges előállítása tesztjelleggel.
 
 ==== Mik a parancssori eszközök?
 
@@ -48,6 +39,20 @@ A parancssorban futó alkalmazásokkal a Drupalnak kényelmesebben és gyorsabba
 A két legismertebb ilyen fejlesztői eszköz a http://www.drush.org[Drush] (ejtsd: „dráss”) és a https://drupalconsole.com[Drupal Console] (ejtsd: „konzol”). A _Drush_ jelent meg előbb és nem csak az alaprendszert kezelhetjük vele, hanem népszerűsége okán már más közösségi modulok és sminkek is definiálnak saját Drush-parancsokat a még gördülékenyebb üzemeltetés érdekében. A _Drupal Console_ viszont főként a fejlesztőket célozza meg, de folyamatosan bővülnek az üzemeltetőknek hasznos képességei is. Jelen Kézikönyvünkben a parancsokat csak Drushoz mutatjuk be és nem érintjük a Drupal Console használatát.
 
 Ha sikerült felkelteni az érdeklődést a kipróbálásuk iránt, akkor szükség lesz a parancssoron keresztüli hozzáférésre és a Drush kompatibilis verziójának feltelepítésére azon a számítógépen. Jelentős különbség van a Drush 8-as és 9-es verziója között, ezért javasolt a Composer eszközzel mindig az aktuálisat telepíteni. További tudnivaló a telepítésről és kompatibilis verziókról a http://www.drush.org[Drush weboldalán] található. Ugyanott részletes dokumentáció is elérhető.
+
+==== Mi az a verziókövető rendszer?
+
+A verziókezelő rendszerek olyan programok, amelyek más szoftverek forráskódjának fájlait, valamint azok változásait tartják nyilván. Ezáltal lehetővé teszik az időbeli visszatekintést és párhuzamosan külön ágak vezetését. Egy webhely készítése (ami végső soron szoftverfejlesztésnek tekinthető) során a következőkben lehet számunkra hasznos:
+
+* A módosítások letisztult áttekintése a változástörténetbe való mentés előtt
+* Az elvégzett fejlesztés helyi tesztelése élesítés előtt
+* A fájlok különböző időpontokban készült változatainak összehasonlítása és szükség esetén visszaállítása
+* Más csapattagok által írt módosítások együttes összehangolása
+* A helyi környezet és a távoli szerver fájlrendszerének szinkronban tartása
+
+Egy verziókezelő rendszerrel akár csak modulok és sminkek saját könyvtárait, akár a webhely teljes kódbázisát felügyelhetjük: hol, mikor, milyen változtatás történt. Ennek nyilvántartására támaszkodva biztonságosabban próbálhatunk ki módosításokat, mert ha egy változtatás nem sikeres, könnyen vissza tudunk állni az utolsó, még működőképes állapotra. Mivel a Drupal 8 fájlokban is tárolja a konfigurációját, ezért egy verziókezelővel összehasonlíthatjuk és hordozhatjuk a beállításokat két webhelymásolat (például a helyi gépen futó és az élesítésre váró) között.
+
+Bár manapság számos verziókezelő rendszer érthető el a piacon, akár fizetős kereskedelmi programként, akár nyílt forráskódú projektként, napjainkra a népszerű https://git-scm.com/[Git] a nemzetközi webfejlesztési iparág _de facto_ szabványává vált. A legtöbb operációs rendszeren futtatható és mivel elosztott felépítésű, ezért a Git-tárolónkat több helyre is felmásolhatjuk: a helyi számítógépünkről (egyik Git-példány) egyszerűen felküldhetjük (angolul _„push”_-oljuk) módosításainkat a központinak kinevezett példányba. Ez a központi (angolul _„canonical”_) példány lehet akár a saját gépünkön is, de leggyakrabban egy távoli szerveren helyezik el. Egy cég fenntarthat egy saját szervert e célra, de magánszemélyként a legegyszerűbb igénybe vennünk egy ingyenes Git-szolgáltatást, mint például a közismert https://github.com/[GitHub]-ot.
 
 ==== Mire jó a Composer?
 
@@ -77,6 +82,8 @@ Firebug::
 * https://www.drupal.org/node/147789[Development tools] (azaz „Fejlesztői eszközök”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
 * https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[Using Composer with Drupal] (azaz „Drupal használata Composerrel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+
+* https://hu.wikipedia.org/wiki/Verzi%C3%B3kezel%C3%A9s#Elosztott_verzi%C3%B3kezel%C5%91_rendszerek[Elosztott verziókezelő rendszerek] szócikk a magyar Wikipédián.
 
 
 *Közreműködők*

@@ -46,7 +46,7 @@ $ drush sql-dump > BACKUPFILE.sql
 +
 Így tehát megvan a webhely adatbázisa elmentve egy _BACKUPFILE.sql_ (hacsak más nevet nem adtunk neki) fájlban. Le is menthetjük a helyi számítógépünkre, de tárolhatjuk a távoli gépen is. Utóbbi esetén viszont fontos biztonsági óvintézkedés, hogy a kiszolgálónak csak olyan könyvtárában tartsuk, ami nem érhető el kívülről az internetről. (Tehát ne a Drupal gyökérkönyvtárában vagy az alatt!)
 
-. Másoljunk át minden fájlt az éles webhely gyökérkönyvtárából a fejlesztési példányéba.
+. Másoljunk át minden fájlt az éles webhely gyökérkönyvtárából a fejlesztési példányéba. Erre kiváló eszköz a Git verziókövető program: a <<extend-git>> részből megtudhatjuk, milyen egyszerű is ezt elvégezni vele.
 
 . Nyissuk meg a fejlesztési példány _sites/default/settings.php_ konfigurációs fájlját egy egyszerű szövegszerkesztőben. Keressük meg benne az adatbáziskapcsolatot leíró beállításokat (lehet, hogy a végefelé találjuk). Ehhez hasonlóan festenek:
 +

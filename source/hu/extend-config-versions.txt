@@ -48,7 +48,7 @@
 
 * A tömörített állományba belepillantva láthatjuk, hogy meglehetősen nagy adatmennyiséget tartalmaz már akár egy közepes méretű webhely esetén is. A fájl tartalmának kiolvasása az adatbázisból és a tömörített állomány előállítása akár percekig is tarthat. Ezért ha tudjuk, hogy az átvinni kívánt módosításaink csak egyetlen konfigurációelemet érintenek (például egy nézetet), akkor jobban járunk, ha inkább az egyesével való szinkronizálást választjuk a <<extend-deploy>> részben leírtak szerint.
 
-* Ha használunk valamilyen verziókövető rendszert (például Git javasolt) webhelyünk fejlesztése során, akkor a letöltött és kicsomagolt állományt bekommitolhatjuk. Így a jövőben bármikor lesz öszehasonlítási alapunk, hogy mi változott a legutóbbi szinkronizálás óta. A Gitről a <<install-tools>> részben ejtettünk szót.
+* Ha használunk valamilyen verziókövető rendszert (például Git javasolt) webhelyünk fejlesztése során, akkor a letöltött és kicsomagolt állományt bekommitolhatjuk. Így a jövőben bármikor lesz öszehasonlítási alapunk, hogy mi változott a legutóbbi szinkronizálás óta. A Git alapjairól a <<install-tools>> részben már esett szó, míg használatának pontos részleteit a következő, <<extend-git>> című részben mutatjuk be.
 
 //==== Kapcsolódó témák
 
