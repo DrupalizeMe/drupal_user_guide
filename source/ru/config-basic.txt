@@ -1,106 +1,104 @@
 [[config-basic]]
 
-=== Editing Basic Site Information
+=== Редактирование основной информации о сайте
 
 [role="summary"]
-How to edit basic site information (site name, slogan, and default time zone).
+Как редактировать основную информацию о сайте (название сайта, слоган и часовой пояс по умолчанию).
 
-(((Configuring,site)))
-(((Site name,configuring)))
-(((Site slogan,configuring)))
-(((Slogan,configuring)))
-(((Site tagline,configuring)))
-(((Tagline,configuring)))
-(((Site email address,configuring)))
-(((Email address,configuring)))
-(((Front page,configuring)))
-(((Error page,configuring)))
-(((Regional setting,configuring)))
-(((Locale setting,configuring)))
-(((Country setting,configuring)))
-(((Time zone setting,configuring)))
-(((First day of week,configuring)))
+(((Настройка,site)))
+(((Название сайта,настройка)))
+(((Слоган сайта,настройка)))
+(((Слоган,настройка)))
+(((Таглайн сайта,настройка)))
+(((Таглайн,настройка)))
+(((Email сайта,настройка)))
+(((Email адрес,настройка)))
+(((Главная страница,настройка)))
+(((Страница ошибок,настройка)))
+(((Региональные настройки,настройка)))
+(((Настройки языка,настройка)))
+(((Настройки страны,настройка)))
+(((Часовой пояс,настройка)))
+(((Первый день недели,настройка)))
 
-==== Goal
+==== Цель
 
-Change basic site information such as _Site name_, _Slogan_,
-_Default time zone_.
+Изменение основной информации о сайте, такой как _Название сайта_, _Слоган_,
+_Часовой пояс по умолчанию_.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<config-overview>>
 
 //==== Site prerequisites
 
-==== Steps
+==== Шаги
 
-===== Configuring the basic site information
+===== Настройка базовой информации о сайте
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_) to change the
-_Site name_, _Slogan_, administrative _Email address_, or the _Default front
-page_ path.
+. В административном меню _Управление_ перейдите к _Конфигурация_ > _Система_ > _Основные настройки сайта_
+(_admin/config/system/site-information_) для изменения _Названия сайта_, _Слогана_, административного _Email адреса_ или пути
+ _Главной страницы_.
 
-. Fill in the available fields as appropriate for your site.
+. Заполните доступные поля в соответствии с особенностями вашего сайта.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site details > Site name|Used to identify the site and displayed in browsers|Anytown Farmers Market
-|Site details > Slogan|Usually displayed sitewide|Farm Fresh Food
-|Site details > Email address|Used as _From_ address in automated email messages (registrations, password resets, etc)|info@example.com
+|Название поля|Объяснение|Пример
+|Информация о сайте > Название сайта|Используется для идентификации сайта и отображается в браузерах.|Рынок продуктов города N
+|Информация о сайте > Слоган|Обычно отображается по всему сайту|Свежие продукты от фермерских хозяйств]]
+|Информация о сайте > Email адрес|Адрес будет указываться в поле _Отправителя_ в автоматических email сообщениях (регистрация, сброс пароля и т.д.)|info@example.com
 |================================
 +
 --
 // Site details section of admin/config/system/site-information.
-image:images/config-basic-SiteInfo.png["Site Information"]
+image:images/config-basic-SiteInfo.png["Информация о сайте"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. После редактирования полей, нажмите _Сохранить конфигурацию_, чтобы увидеть изменения, внесенные на сайте.
 
-===== Configuring default Regional settings
+===== Установка региональных настроек по умолчанию
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and language_ > _Regional settings_
-(_admin/config/regional/settings_).
+. В административном меню _Управление_, перейдите к _Конфигурация_ > _Регион и язык_ >
+_Региональные настройки_ (_admin/config/regional/settings_).
 
-. Fill in the form as follows:
+. Заполните форму следующим образом:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Locale > Default country| The primary country for your site|United States
-|Locale > First day of week| The day when the week starts on calendars|Sunday
-|Time zones > Default time zone| The primary time zone for your site |America > Los Angeles
-|Time zones > Users may set their own time zone| Whether logged-in users can choose a different time zone for display of dates and times on the site |Unchecked
+|Название поля|Объяснение|Пример
+|Язык > страна по умолчанию| The primary country for your site|Россия
+|Язык > Первый день недели| The day when the week starts on calendars|понедельник
+|Часовые пояса > Часовой пояс по умолчанию| Основной часовой пояс для вашего сайта |Moscow
+|Часовые пояса > Пользователи могут указать свой часовой пояс| Возможность выбора пользователями другого часового пояса для отображения дат и времени на сайте |нет флажка
 |================================
 +
 --
 // Locale and Time Zones sections of admin/config/regional/settings.
-image:images/config-basic-TimeZone.png["Time Zones"]
+image:images/config-basic-TimeZone.png["Часовые пояса"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. После редактирования полей, нажмите _Сохранить конфигурацию_, чтобы увидеть изменения, внесенные на сайте.
 
 // ==== Expand your understanding
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/oDMCQ1cDYOI[title="Editing Basic Site Information"]
 
-==== Additional resources
+==== Дополнительные материалы
 
 https://www.drupal.org/node/1896670[_Drupal.org_ community documentation page "Getting started with Drupal 8 administration"]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Написано и отредактировано https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] из
 https://erdfisch.de[erdfisch],
-https://www.drupal.org/u/ifrik[Antje Lorch], and
+https://www.drupal.org/u/ifrik[Antje Lorch] и
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
