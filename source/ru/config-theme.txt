@@ -1,113 +1,120 @@
 [[config-theme]]
 
-=== Configuring the Theme
+=== Настройка темы
 
 [role="summary"]
-How to edit a theme's settings to update the color scheme and add a logo.
+Как изменить настройки темы для обновления цветовой схемы и добавления логотипа.
 
-(((Theme,configuring)))
-(((Bartik theme,configuring)))
-(((Color scheme,configuring)))
-(((Logo image,configuring)))
+(((Тема,настройка)))
+(((Bartik тема,настройка)))
+(((Цветовая схема,настройка)))
+(((Логотип,настройка)))
 
-==== Goal
+==== Цель
 
-Edit the settings of the default core Bartik theme to change the color scheme
-and to add a logo.
+Отредактируйте настройки основной темы по умолчанию Bartik, чтобы изменить
+цветовую схему и добавить логотип.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<understanding-themes>>
 
 //==== Site prerequisites
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Appearance_
+. В административном меню _Управление_, перейдите к _Оформление_
 (_admin/appearance_).
 
-. Under _Installed themes_, you will find Bartik listed as your default
-theme. Under _Bartik (default theme)_, click _Settings_.
+. В  _Установленные темы_, вы найдете Bartik в качестве темы по
+умолчанию. В _Bartik (стандартная тема)_, нажмите  _Настройки_.
 +
 --
 // Bartik section of admin/appearance.
-image:images/config-theme_bartik_settings.png["Default theme, Bartik",width="100%"]
+image:images/config-theme_bartik_settings.png["Стандартная тема, Bartik",
+width="100%"]
 --
 
-. Under _Color scheme_, click inside each color build box and type the proper
-color codes you would like to add. For example, use the
-following colors:
+. В  _Цветовая схема_, щелкните внутри каждого окна построения цветов и
+введите нужные цветовые коды, которые вы хотите добавить. Например,
+используйте следующие цвета:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Area | Color
-|Header background top| #7db84a (green)
-|Header background bottom| #2a3524 (dark green)
-|Main background| #ffffff (white)
-|Sidebar background| #f8bc65 (light orange)
-|Sidebar borders| #e96b3c (orange)
-|Footer background| #2a3524 (dark green)
-|Title and slogan| #ffffff (white)
-|Text color| #000000 (black)
-|Link color| #2a3524 (dark green)
+|Зона | Цвет
+|Верхняя часть фона шапки страницы| #7db84a (зеленый)
+|Нижняя часть фона шапки страницы| #2a3524 (темно-зеленый)
+|Основной фон| #ffffff (белый)
+|Фон боковой колонки| #f8bc65 (светло-оранжевый)
+|Рамка боковой панели| #e96b3c (оранжевый)
+|Фон подвала| #2a3524 (темно-зеленый)
+|Заголовок и девиз| #ffffff (белый)
+|Цвет текста| #000000 (черный)
+|Цвет ссылок| #2a3524 (темно-зеленый)
 |================================
 +
-Note: You can also use the color wheel on the right to select colors of your
-choice. The web color codes will be added for you.
+Примечание: Вы также можете использовать цветовое колесо справа, чтобы
+выбрать цвета по вашему вкусу. Коды цветов будут добавлены.
 +
 --
 // Color settings section of admin/appearance/settings/bartik.
-image:images/config-theme_color_scheme.png["Updated color specifications in the core Bartik theme",width="100%"]
+image:images/config-theme_color_scheme.png["обновленные цветовые
+характеристики в теме Bartik, поставляемой вместе с ядром системы",width="100%"]
 --
 
-. Under _Logo image_, uncheck _Use the logo supplied by the
-theme_.
+. В _Изображение логотипа_, уберите флажок у _Использовать логотип,
+предоставленный темой_.
 +
 --
 // Logo upload section of admin/appearance/settings/bartik.
-image:images/config-theme_logo_upload.png["New logo in core Bartik theme settings"]
+image:images/config-theme_logo_upload.png["Новый логотип в настройках темы
+Bartik"]
 --
 
-. Under _Upload logo image_, locate a logo file and upload it to your
-site. Note: You can also set a universal logo for all themes under
-_Appearance_ > _Settings_ (_admin/appearance/settings_). A custom logo for your
-theme will override the universal logo.
+. В _Закачать изображение логотипа_, найти файл с логотипом и загрузить его
+на ваш сайт. Примечание: Вы также можете установить универсальный логотип для
+всех тем в разделе _Оформление_ > _Настройки_ (_admin/appearance/settings_).
+Индивидуальный логотип для вашей темы перекрывает универсальный логотип.
 +
-Once you have selected the file you would like to upload, you will see its
-filename next to the _Choose File_ or _Browse_ button in your browser.
+После того, как вы выбрали файл, который хотите загрузить, на экране появится
+следующее сообщение имя файла рядом с кнопкой _Choose File_ или _Browse_ в
+браузере.
 
-. In order to save your changes and see the updated colors and logo on your
-site, click _Save configuration_ at the bottom of the page.
+. Для того, чтобы сохранить изменения и увидеть обновленные цвета и логотип
+на вашем компьютере, нажмите кнопку _Сохранить конфигурацию_ в нижней части
+страницы.
 +
-Note: Under _Color scheme_, there is a _Preview_ section that displays a sample
-of how your website will look with the new settings.
+Примечание: В разделе _Цветовая схема_ имеется раздел _Preview_, в котором
+отображается пример как будет выглядеть ваш сайт с новыми настройками.
 +
 --
 // Preview section of admin/appearance/settings/bartik.
-image:images/config-theme_color_scheme_preview.png["core Bartik theme settings preview",width="100%"]
+image:images/config-theme_color_scheme_preview.png["Предварительный просмотр
+темы ядра Bartik",width="100%"]
 --
 
-. Click _Return to site_ or _Home_ in the toolbar to verify that you have
-updated the core Bartik theme settings for your website.
+. Нажмите кнопку _Вернуться на сайт_ или _Главная_ на панели инструментов, чтобы
+проверить, что у вас обновились основные настройки тем Bartik для веб-сайта.
 +
 --
 // Home page after theme settings are finished.
-image:images/config-theme_final_result.png["Final result of editing the core Bartik theme settings - colors and logo",width="100%"]
+image:images/config-theme_final_result.png["Окончательный результат
+редактирования основных настроек темы Bartik - цвета и логотип.",width="100%"]
 --
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
 * <<extend-theme-find>>
 
 * <<extend-theme-install>>
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Если вы не видите эффекта от этих изменений на сайте, то может понадобиться
+ очистка кэша. <<prevent-cache-clear>>.
 
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/CEi3i1YGOs0[title="Configuring the Theme"]
@@ -115,9 +122,11 @@ video::https://www.youtube-nocookie.com/embed/CEi3i1YGOs0[title="Configuring the
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel],
-https://www.drupal.org/u/mndonx[Amanda Luker] at
-https://www.advomatic.com/[Advomatic], and
+Написано и отредактировано https://www.drupal.org/u/AnnGreazel[Ann Greazel],
+https://www.drupal.org/u/mndonx[Amanda Luker] из
+https://www.advomatic.com/[Advomatic] и
 https://www.drupal.org/u/jerseycheese[Jack Haas].
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
