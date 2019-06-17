@@ -1,152 +1,159 @@
 [[structure-fields]]
 
-=== Adding Basic Fields to a Content Type
+=== Добавление базовых полей к типу материала
 
 [role="summary"]
-How to add fields to a content type.
+Как добавить поля к типу материала.
 
-(((Content type,adding field to)))
-(((Field,adding to content type)))
-(((Image field,adding)))
-(((URL field,adding)))
+(((Тип материала,добавление поля)))
+(((поле,добавление в тип материала)))
+(((Поле изображение,добавление)))
+(((Поле URL,добавление)))
 
-==== Goal
+==== Цель
 
-Add a link field and an image field to the Vendor content type.
+Добавление поля ссылки и поля изображения к типу материала Производитель.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<planning-data-types>>
 
 ==== Site prerequisites
 
-The Vendor content type must exist. See <<structure-content-type>>.
+Тип материала Производитель должен существовать. См. <<structure-content-type>>.
 
-==== Steps
+==== Шаги
 
-Add the fields Vendor URL and Main image to the Vendor content type.
+Добавление поля URL производителя и Основное изображение к типу материала
+Производитель.
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). Then click _Manage fields_ in the dropdown
-button for the Vendor content type. The _Manage fields_ page appears. Note that
-the names and descriptions of the content types and fields that were provided by
-your installation profile are shown in English on these pages; see
-<<language-concept>> for an explanation.
+. В административном меню _Управление_ перейдите к _Структура_ > _Типы
+материалов_ (_admin/structure/types_). Затем нажмите _Управление полями_ в
+раскрывающемся списке для типа содержимого Производитель. Откроется страница
+_Управление полями_. Обратите внимание, что названия и описания типов
+содержимого и полей, которые были предоставлены вашим профилем установки,
+показаны на этих страницах на английском языке; см. пояснения в <<language-concept>>.
 
-. Click _Add field_. The _Add field_ page appears. You can either create a new
-field for the content type or re-use an existing field.
+. Нажмите _Добавить поле_. Откроется страница _Добавить поле_. Вы можете либо
+создать новое поле для данного типа материала, либо повторно использовать
+существующее поле.
 
-. Fill in the fields as shown below.
+. Заполните поля как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Add a new field | Field type| Link
-| Label | Label that is visible in administration pages | Vendor URL
+| Имя поля | Объяснение | Значение
+| Добавить новое поле | Тип поля| Ссылка
+| Метка | Метка, отображаемая на страницах администрирования | URL производителя
 |================================
 +
-A machine name is automatically generated, based on the _Label_ value. Click
-_Edit_ if you want to override the default name.
+Машинное имя поля автоматически генерируется на основе значения _Label_.
+Нажмите _Редактировать_, если вы хотите переопределить имя по умолчанию.
 +
 --
 // Initial page for admin/structure/types/manage/vendor/fields/add-field.
-image:images/structure-fields-add-field.png["Add field page"]
+image:images/structure-fields-add-field.png["AСтраница добавления поля"]
 --
 
-. Click _Save and continue_. The page Vendor URL appears which lets you set
-the allowed number of values. Fill in the fields as shown below.
+. Нажмите кнопку _Сохранить и продолжить_. Появляется страница URL
+производителя, позволяющая задать следующие параметры
+допустимое количество значений. Заполните поля, как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Allowed number of values | The number of values that can be entered | Limited, 1
+| Имя поля | Объяснение | Значение
+| Допустимое количество значений  | Количество значений, которое может быть введено | Ограничено, 1
 |================================
 
 
-. Click _Save field settings_. The page _Vendor URL settings for Vendor_
-appears which allows you to configure the field. Fill in the fields as shown
-below.
+. Нажмите _Сохранить настройки поля_. Появляется страница _Настройки URL
+производителя для Производитель_, который позволяет вам настроить это поле.
+Заполните поля, как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Label  | Label that is visible in the content form | Vendor URL
-| Help text | The instruction that is shown below the field | (leave blank)
-| Required field | Whether the field is required or not | Unchecked
-| Allowed link type | The kind of links that can be entered | External links only
-| Allow link text | Whether a link text can be entered | Disabled
+| Имя поля | Объяснение | Значение
+| Метка  | Метка, которая отображается в форме | URL производителя
+| Справочный текст | Инструкция, которая приведена ниже поля | (оставьте пустым)
+| Обязательное поле | Является ли поле обязательным или нет | Нет флажка
+| Разрешенный тип ссылки | Виды ссылок, которые можно вводить. | Только внешние ссылки
+| Разрешить текст ссылки | Можно ли вводить текст ссылки | Отключено
 |================================
 +
 --
 // Field settings page for adding vendor URL field.
-image:images/structure-fields-vendor-url.png["Field settings page for Vendor URL",width="100%"]
+image:images/structure-fields-vendor-url.png["Страница настроек для поля URL производителя",width="100%"]
 --
 
-. Click _Save settings_. The Vendor URL has been added to the content
-type. Continue creating the Main image field.
+. Нажмите _Сохранить настройки_. Поле URL производителя добавлено к типу
+материала. Перейдем к созданию поля Главное изображение.
 
-. Click _Add field_. The _Add field_ page appears. Fill in the fields as shown
-below.
+. Нажмите _Добавить поле_. Откроется страница _Добавить поле_. Заполните поля,
+как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Add a new field | Field type | Image
-| Label | Label that is visible in administration pages | Main image
+| Имя поля | Объяснение | Значение
+| Добавить новое поле | Тип поля | Image
+| Метка | Метка, отображаемая на страницах администрирования | Главное изображение
 |================================
 
-. Click _Save and continue_. The page Main image appears. Fill in the fields
-as shown below.
+. Нажмите _Сохранить и продолжить_. Откроется страница Главное изображение.
+Заполните поля как показано ниже
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Allowed number of values | The number of values that can be entered | Limited, 1
+| Имя поля | Объяснение | Значение
+| Допустимое количество значений  | Количество значений, которое может быть введено | Ограничено, 1
 |================================
 +
-You can set a default image here. This will be used when you do not provide an
-image when creating a Vendor content item.
+Здесь можно задать изображение по умолчанию. Этот параметр используется, если
+ производитель не предоставил никакого изображения.
 
-. Click _Save field settings_. The page _Main image settings for Vendor_
-appears. Fill in the fields as shown below.
+. Нажмите _Сохранить настройки поля_. Откроется страница _Настройки поля
+"Главное изображение для Производитель". Заполните поля как указано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Label  | Label that is visible in the content form | Main image
-| Help text | The instruction that is shown below the field | (leave blank)
-| Required field | Whether the field is required or not | Checked
-| Allowed file extensions | The type of images that can be uploaded | png, gif, jpg, jpeg
-| File directory | The directory where the files will be stored. By providing a file directory value, you ensure that all images uploaded via the Main image field will be located in the same directory. | vendors
-| Minimum image resolution | The minimum resolution of the uploaded image | 600 x 600
-| Maximum upload size | The maximum file size of the uploaded image | 5 MB
-| Enable Alt field | Whether an alternative text can be entered | Checked
-| Alt field required | Whether an alternative text is required | Checked
+| Имя поля | Объяснение | Значение
+| Метка  | Метка, которая отображается в форме | Главное изображение
+| Справочный текст | Инструкция, которая приведена ниже поля | (оставьте пустым)
+| Обязательное поле | Является ли поле обязательным или нет | Флажок
+| Допустимые расширения файлов | Типы изображений, которые могут быть загружены | png, gif, jpg, jpeg
+| Каталог файлов | Каталог, в котором будут храниться файлы. Предоставляя
+каталог файлов, убедитесь, что все изображения, загруженные в поле Главное
+изображение, будут находиться в одном каталоге. | vendors
+| Минимальное разрешение изображения | Минимальное разрешение закачиваемых изображений | 600 x 600
+| Максимальный размер закачки | Максимальный размер файла, закачиваемого изображения | 5 MB
+| Показывать поле для ввода атрибута «alt» | Можно ли ввести альтернативный текст | Флажок
+| Поле Alt обязательно для заполнения | Требуется ли альтернативный текст | Флажок
 |================================
 +
 --
 // Field settings page for adding main image field.
-image:images/structure-fields-main-img.png["Field settings page for Main Image",width="100%"]
+image:images/structure-fields-main-img.png["Настройки поля Главное изображение",width="100%"]
 --
 
-. Click _Save settings_. Main image has been added to the content type.
+. Нажмите _Сохранить настройки_. Поле Главное изображение добавлено к типу
+материал
 +
 --
 // Manage fields page for Vendor, showing two new fields.
-image:images/structure-fields-result.png["Manage fields page",width="100%"]
+image:images/structure-fields-result.png["Страница Управление полями",width="100%"]
 --
 
-. Add a Main image field to the Recipe content type, using similar steps. Start
-by navigating to the Recipe content type's _Manage Fields_ page in step 1. Then
-skip to step 7 and follow the remaining steps, but reuse the existing Main image
-field you created for the Vendor content type rather than creating a new
-field. In subsequent steps, some of the configuration screens will not be
-available, because of the field reuse.
+. Добавьте Главное изображение в тип материала Рецепт, выполнив
+аналогичные действия. Начните с перехода на страницу типа материала Рецепт
+_Управление полями_ в шаге 1. Затем перейдите к шагу 7 и выполните остальные
+шаги, но вместо создания нового поля используйте существующее поле Главное
+изображение, созданное для типа материала Производитель. На последующих
+шагах, некоторые из экранов настройки будут недоступны из-за повторного
+использования уже существующего поля.
 
-. Create two Vendor content items (see <<content-create>>) called "Happy Farm"
-and "Sweet Honey". Make sure that they include images and URLs.
+. Создайте два материала Производитель (см. <<content-create>>) с названиями
+"Happy Farm" и "Sweet Honey". Убедитесь, что они содержат изображения и URL.
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
 * <<structure-image-styles>>
 * <<structure-content-display>>
@@ -154,17 +161,19 @@ and "Sweet Honey". Make sure that they include images and URLs.
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/CZpfR9WbVcQ[title="Adding Basic Fields to a Content Type"]
 
-==== Additional resources
+==== Дополнительные ресурсы
 
 https://www.drupal.org/node/774742[_Drupal.org_ community documentation page "Add a field to a content type"]
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/sree[Sree Veturi] and
+Написано by https://www.drupal.org/u/sree[Sree Veturi] и
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
