@@ -1,123 +1,123 @@
 [[extend-maintenance]]
 
-=== Enabling and Disabling Maintenance Mode
+=== Включение и выключение Режима обслуживания
 
 [role="summary"]
-How to enable maintenance mode to set up a "Site under maintenance" message, and how to disable it.
+Как включить режим обслуживания, чтобы настроить сообщение «Сайт находится в режиме обслуживания», и как его отключить.
 
-(((Maintenance mode,overview)))
-(((Maintenance mode,enabling)))
-(((Maintenance mode,disabling)))
+(((Режим обслуживания,обзор)))
+(((Режим обслуживания,включение)))
+(((Режим обслуживания,отключение)))
 
-==== Goal
+==== Цель
 
-Put your site in maintenance mode to allow users with the right permissions to
-use the site while users without this permission are presented with a message
-that the site is under maintenance.
+Переведите ваш сайт в режим обслуживания, чтобы пользователи с правами доступа могли
+использовать сайт, в то время как пользователи без этого разрешения получат сообщение
+что сайт находится в режиме обслуживания.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<security-concept>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-If you want to use Drush to enable or disable maintenance mode, Drush must be
-installed. See <<install-tools>>.
+Если вы хотите использовать Drush, чтобы включать и выключать режим обслуживания, Drush должен быть
+установлен. Смотрите <<install-tools>>.
 
-==== Steps
+==== Шаги
 
-You can use the administrative interface or Drush to enable or disable
-maintenance mode.
+Вы можете использовать административное меню или Drush для включения или выключения
+режима обслуживания.
 
-===== Enabling maintenance mode using the administrative interface
+===== Включение режима обслуживание через административный интерфейс
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
-_Maintenance mode_ page appears.
+. В _Управлении_ административного меню, перейдите в _Конфигурация_ >
+_Разработка_ > _Режим обслуживания_ (_admin/config/development/maintenance_).
+появится страница _Режим обслуживания_.
 
-. Fill in the fields as shown below.
+. Заполните поля, как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
+|Имя поля | Объяснение | Значение
 
-| Put site into maintenance mode | Enable the maintenance mode |
+| Перевести сайт в режим обслуживания | Включить режим обслуживания |
 Checked
 
-| Message to display when in maintenance mode | The information that is shown to
-website visitors when the mode is enabled. Variables such as @site can be used
-in the message |@site is currently under maintenance but should be back
-shortly. Thank you for your patience.
+| Сообщение о том, что сайт находится в режиме технического обслуживания |Информация, которая отображается
+посетителям сайта при включенном режиме. Можно использовать такие переменные, как @site
+в сообщении |@site в настоящее время находится на обслуживании, но должен вернуться
+в ближайшее время. Спасибо за терпение.
 
 |================================
 
-. Click _Save configuration_.
+. Нажмите _Сохранить конфигурацию_.
 
-. Verify that the site is in maintenance mode by accessing it from another
-browser where you aren't logged in. If you are not able to verify, try clearing
-the cache. See <<prevent-cache-clear>>.
+. Убедитесь, что сайт находится в режиме обслуживания, открыв его с другого
+браузера, где вы не вошли в систему. Если вы не можете проверить, попробуйте сбросить
+кэш. Смотрите <<prevent-cache-clear>>.
 +
 --
 // Site in maintenance mode.
-image:images/extend-maintenance-mode-enabled.png["Maintenance mode enabled",width="100%"]
+изображение:images/extend-maintenance-mode-enabled.png["Режим обслуживания включен",width="100%"]
 --
 
-===== Disabling maintenance mode using the administrative interface
+===== Отключение режима обслуживания с использованием административного интерфейса
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
-_Maintenance mode_ page appears.
+. В _Управлении_ административного меню, перейдите в _Конфигурация_ >
+_Разработка_ > _Режим обслуживания_ (_admin/config/development/maintenance_).
+Появится страница _Режим обслуживания_.
 
-. Fill in the fields as shown below.
+. Заполните поля, как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
+|Имя поля | Объяснение | Значение
 
-| Put site into maintenance mode | Disable the maintenance mode |
-Unchecked
+| Перевести сайт в режим обслуживания | Выключить режим обслуживания |
+Checked
 
-| Message to display when in maintenance mode | No message required while disabling. You can leave the field blank. |
+| Сообщение о том, что сайт находится в режиме технического обслуживания | При отключении сообщения не требуется. Вы можете оставить поле пустым. |
 
 |================================
 
-. Click _Save configuration_.
+. Нажмите _Сохранить конфигурацию_.
 
-. Verify that the site is no longer in maintenance mode by accessing it from
-another browser where you aren't logged in. If you are not able to verify, try
-clearing the cache. See <<prevent-cache-clear>>.
+. Убедитесь, что сайт больше не находится в режиме обслуживания, получив доступ к нему из
+другого браузера, где вы не вошли в систему. Если вы не можете проверить, попробуйте сбросить
+кэш. Смотрите <<prevent-cache-clear>>.
 +
 --
 // Site no longer in maintenance mode.
-image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",width="100%"]
+изображение:images/extend-maintenance-mode-disabled.png["Режим обслуживания отключен",width="100%"]
 --
 
-===== Enabling or disabling maintenance mode using Drush
+===== Включение или отключение режима обслуживания с помощью Drush
 
-. Follow the user interface steps above to edit the site maintenance message, if
-desired.
+. Выполните действия, описанные выше, для редактирования сообщения об обслуживании сайта, если
+это нужно.
 
-. Run the following Drush commands to enable maintenance mode and clear the
-cache:
+. Выполните следующие команды Drush, чтобы включить режим обслуживания и очистить
+кэш:
 +
 ----
 drush sset system.maintenance_mode 1
 drush cr
 ----
 
-. Run the following Drush commands to disable maintenance mode and clear the
-cache:
+. Выполните следующие команды Drush, чтобы отключить режим обслуживания и очистить
+кэш:
 +
 ----
 drush sset system.maintenance_mode 0
 drush cr
 ----
 
-. After running either set of commands, verify that your site is either in or
-out of maintenance mode by visiting the site in a browser where you are not
-logged in.
+. После запуска любого набора команд убедитесь, что ваш сайт находится в или
+вне режима обслуживания посетив сайт в браузере, где вы не
+авторизованы.
 
-==== Expand your understanding
+==== Расширьте своё понимание
 
 * <<security-update-core>>
 
@@ -127,7 +127,7 @@ logged in.
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Disabling Maintenance Mode"]
@@ -135,9 +135,11 @@ video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Di
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], and
+Написано и отредактировано https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] в
+http://redcrackle.com[Red Crackle], и
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
