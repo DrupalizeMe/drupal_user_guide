@@ -1,83 +1,91 @@
 [[menu-reorder]]
 
-=== Changing the Order of Navigation
+=== Изменение очередности в навигации
 
 [role="summary"]
-How to reorder items in a menu.
+Как изменить порядок пунктов меню.
 
-(((Menu items,reordering)))
-(((Navigation,changing the order of menu items)))
+(((Пункт меню,переупорядочение)))
+(((Навигация,изменение порядка следования пунктов меню)))
 
-==== Goal
+==== Цель
 
-Reorder the items in a menu.
+Изменить очередность пунктов меню.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<menu-concept>>
 * <<menu-link-from-content>>
 
-==== Site prerequisites
+==== Предварительные требования к сайту
 
-Home and About pages must exist in the main navigation menu. See
-<<menu-link-from-content>>.
+Страницы Главная и О рынке уже должны существовать в меню основной
+навигации. См. <<menu-link-from-content>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Menus_
-(_admin/structure/menu_) where all menus on your site are listed. Click _Edit
-Menu_ from the _Operations_ dropdown for _Main navigation_. You can also reach
-this page using contextual links (refer to <<config-overview>>) for the
-menu. Note that the names and descriptions of the menus that were provided by
-your installation profile are shown in English on this page; see
-<<language-concept>> for an explanation.
+. В административном меню _Управление_ перейдите к _Структура_ > _Меню_
+(_admin/structure/menu_), где перечислены все меню вашего сайта. Нажмите
+_Редактировать меню_ в раскрывающемся списке _Операции_ для _Основная
+навигация (Main navigation)_. Вы также можете попасть на эту страницу, используя
+контекстные ссылки (см. <<config-overview>>) для доступа к меню. Обратите
+внимание, что названия и описания меню, которые были предоставлены вашим
+профилем установки, показаны на этой странице на английском языке; для
+более подробной информации смотрите <<language-concept>>.
 +
 --
 // Menu list section of admin/structure/menu, with Edit menu button on Main
 // navigation menu highlighted.
-image:images/menu-reorder_menu_titles.png["List of menus on the site with 'Main navigation' highlighted",width="100%"]
+image:images/menu-reorder_menu_titles.png["Список меню на сайте с подсвеченным
+'Main navigation'",width="100%"]
 --
 
-. The _Edit menu_ page will display a list of each item in the menu you
-chose (_Main navigation_).
+. На странице _Редактировать меню_ будет отображен список каждого пункта
+меню, в котором вы находитесь (_Основная навигация_).
 +
 --
 // Menu links section of admin/structure/menu/manage/main.
-image:images/menu-reorder_edit_menu.png["List of menus items under _Main navigation_"]
+image:images/menu-reorder_edit_menu.png["Список пунктов меню в _Main
+navigation_"]
 --
 
-. Drag the cross bar handles of menu items to change their order: Home, then
-About. As an alternative to dragging, you can click the _Show row weights_ link
-at the top of the table and select numerical weights (menu items with lower or
-more negative weights will be shown first).
+. Перетащите "перекрестие" на пункте меню на новое место, чтобы изменить их
+порядок: Главная, затем О рынке. В качестве альтернативы перетаскиванию можно
+щелкнуть ссылку _Показать вес строки_ вверху таблицы и выбрать числовые
+значения весов (сначала будут показаны  пункты меню с меньшим или большим количеством
+отрицательных значений веса, т.е. чем меньше - тем выше).
 +
 --
 // Menu links section of admin/structure/menu/manage/main, after
 // changing the order.
-image:images/menu-reorder_reorder.png["Reordered menu items with warning message about unsaved changes and the _Save_ button"]
+image:images/menu-reorder_reorder.png["Измененный порядок следования
+пунктов меню с предупреждением о том, что есть не сохраненные
+изменения"]
 --
 
-. Click _Save_.
+. Нажмите _Сохранить_.
 
-. The home page now displays the main navigation with the Home menu
-item displayed first.
+. В навигации на главной страниц, пункт меню Главная теперь показывается
+первым.
 +
 --
 // Header section of Home page with reordered menu items.
-image:images/menu-reorder_final_order.png["Reordered menu items on the home page with 'Home' first and then 'About'"]
+image:images/menu-reorder_final_order.png["Измененный порядок следования
+пунктов меню на главной странице: сначала 'Главная', а затем 'О рынке'"]
 --
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
-Add a menu item called _Contact_, leading to the _/contact_ page, to your Main
-navigation menu. The contact page is provided by the core Contact module; you
-may want to edit its layout and fields (see <<structure-form-editing>>).
+Добавьте пункт меню _Контакт_, ведущий на страницу _/contact_, в меню
+основной навигации. Страница контакта предоставляется основным модулем
+Contact, возможно, потребуется отредактировать его расположение и поля (см.
+<<structure-form-editing>>).
 
-==== Related concepts
+==== Связанные понятия
 
 <<menu-concept>>
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/OtT8e8lLx5E[title="Changing the Order of Navigation"]
@@ -85,6 +93,8 @@ video::https://www.youtube-nocookie.com/embed/OtT8e8lLx5E[title="Changing the Or
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel].
+Написано https://www.drupal.org/u/AnnGreazel[Ann Greazel].
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
