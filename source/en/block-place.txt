@@ -55,8 +55,11 @@ because you want to show the block everywhere.
 image:images/block-place-configure-block.png["Block configuration page",width="100%"]
 --
 
-. Click _Save block_. The _Block layout_ page appears. You can drag blocks to
-change the order in which they will appear.
+. Click _Save block_. The _Block layout_ page appears. You can drag the cross
+bar handles of blocks to change their order within each region. As an
+alternative to dragging, you can click the _Show row weights_ link at the top of
+the table and select numerical weights (blocks with lower or more negative
+weights will be shown first).
 
 . Verify that the Opening hours and location block is listed in the _Sidebar
 second_ region, and click _Save blocks_.
@@ -71,11 +74,17 @@ image:images/block-place-sidebar.png["Page with a block placed on the Sidebar se
 
 ==== Expand your understanding
 
-* Remove the _Powered by Drupal_ block from the _Footer fifth_ region by setting
-the region to _- None -_.
+* Remove the _Powered by Drupal_ block from the _Footer fifth_ region by
+clicking _Disable_ or _Remove_ in the _Operations_ dropdown button. Clicking
+_Disable_ will let you enable the block easily later with the same
+configuration; if you click _Remove_ and you want the block back, you would
+need to go through the steps in this topic to place it in a region again. Note
+that the names of the blocks that are provided by the core software, such as
+_Powered by Drupal_ and _User login_, are shown in English on this page; see
+<<language-concept>> for an explanation.
 
-* Remove the _Tools_ block from the _Sidebar first_ region by setting the
-region to _- None -_. This block is only visible to logged-in users.
+* Remove the _Tools_ block from the _Sidebar first_ region. This block is only
+visible to logged-in users.
 
 * Place the _User login_ block in a region.
 
@@ -84,6 +93,11 @@ to clear the cache. See <<prevent-cache-clear>>.
 
 
 //==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/iWW7Ja5p0hA[title="Placing a Block in a Region"]
 
 //==== Additional resources
 

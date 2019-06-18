@@ -40,7 +40,9 @@ described in this topic:
 <<extend-module-install>>, <<extend-theme-install>>,
 <<security-update-module>>, or <<security-update-theme>>
 
-Skip this topic if none of the above applies to you.
+Skip this topic if none of the above applies to you. If you are using Composer
+to manage the files in your site, follow the file updating steps in
+<<install-composer>> instead of this topic.
 
 ==== Steps
 
@@ -75,7 +77,7 @@ modules and themes that they created. Your _modules_ directory might look like
 this:
 +
 --
-// Make custom and contrib directories under modules, and take a screen shot
+// Make custom and contrib directories under modules, and take a screenshot
 // showing the directory structure.
 image:images/extend-manual-install-directories.png["Suggested directory structure for modules",width="174px"]
 
@@ -126,10 +128,15 @@ _Appearance_ (_admin/appearance_) and uninstall the old theme.
 
 // ==== Related concepts
 
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Manually Downloading Module or Theme Files"]
+
 ==== Additional resources
 
 * https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Updating modules"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-modules[_Drupal.org_ community documentation page "Installing contributed modules (Drupal 8)"]
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ community documentation page "Installing contributed modules (Drupal 8)"]
 * https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[_Drupal.org_ community documentation page "Installing themes"]
 
 

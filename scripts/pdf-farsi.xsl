@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exsl="http://exslt.org/common" xmlns:cf="http://docbook.sourceforge.net/xmlns/chunkfast/1.0" xmlns:ng="http://docbook.org/docbook-ng" xmlns:db="http://docbook.org/ns/docbook" xmlns="http://www.w3.org/1999/xhtml" version="1.0" exclude-result-prefixes="exsl cf ng db">
+<xsl:stylesheet
+    xmlns:fo="http://www.w3.org/1999/XSL/Format"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:exsl="http://exslt.org/common"
+    xmlns:cf="http://docbook.sourceforge.net/xmlns/chunkfast/1.0"
+    xmlns:ng="http://docbook.org/docbook-ng"
+    xmlns:db="http://docbook.org/ns/docbook"
+    xmlns="http://www.w3.org/1999/xhtml"
+    version="1.0" exclude-result-prefixes="exsl cf ng db">
 
 <!-- This file contains overrides for output for PDF e-books using
-   the FreeFarsi font family. -->
+   the Amiri font family. -->
 <!-- Note that PDF is normally made with the fo stylesheets
      from the docbook-xsl project. -->
+
+<!-- No title on the abstract for title page. -->
+<xsl:param name="abstract.notitle.enabled" select="1"/>
 
 <!-- Use FOP extensions, so RTL languages are supported. -->
 <xsl:param name="fop1.extensions" select="1"/>
@@ -22,6 +33,45 @@
 <xsl:variable name="toc.max.depth">
   <xsl:value-of select="'2'" />
 </xsl:variable>
+
+<!-- Fix the ... in table of contents. Change is in the leader-pattern-width
+     line in this template, telling it to use font metrics rather than assuming
+     the width of the . is always 3pt, which doesn't seem to work well for
+     Arabic/Farsi fonts. -->
+<xsl:template name="toc.line">
+  <xsl:param name="toc-context" select="NOTANODE"/>
+
+  <xsl:variable name="id">
+    <xsl:call-template name="object.id"/>
+  </xsl:variable>
+
+  <xsl:variable name="label">
+    <xsl:apply-templates select="." mode="label.markup"/>
+  </xsl:variable>
+
+  <fo:block xsl:use-attribute-sets="toc.line.properties">
+    <fo:inline keep-with-next.within-line="always">
+      <fo:basic-link internal-destination="{$id}">
+        <xsl:if test="$label != ''">
+          <xsl:copy-of select="$label"/>
+          <xsl:value-of select="$autotoc.label.separator"/>
+        </xsl:if>
+        <xsl:apply-templates select="." mode="titleabbrev.markup"/>
+      </fo:basic-link>
+    </fo:inline>
+    <fo:inline keep-together.within-line="always">
+      <xsl:text> </xsl:text>
+      <fo:leader leader-pattern="dots"
+                 leader-pattern-width="use-font-metrics"
+                 leader-alignment="reference-area"
+                 keep-with-next.within-line="always"/>
+      <xsl:text> </xsl:text>
+      <fo:basic-link internal-destination="{$id}">
+        <fo:page-number-citation ref-id="{$id}"/>
+      </fo:basic-link>
+    </fo:inline>
+  </fo:block>
+</xsl:template>
 
 <!-- Waste less space by not indenting all text. -->
 <xsl:param name="body.start.indent">0pt</xsl:param>
@@ -85,12 +135,12 @@
 
 
 <!-- Better fonts. Less whitespace. -->
-<xsl:param name="body.font.family">FreeFarsi, Noto Sans</xsl:param>
+<xsl:param name="body.font.family">Amiri, Noto Sans</xsl:param>
 <xsl:param name="body.font.master">11</xsl:param>
-<xsl:param name="title.font.family">FreeFarsi, Noto Sans</xsl:param>
+<xsl:param name="title.font.family">Amiri, Noto Sans</xsl:param>
 <xsl:attribute-set name="section.title.level1.properties">
   <xsl:attribute name="font-size">
-    <xsl:value-of select="$body.font.master * 1.6"/>
+    <xsl:value-of select="$body.font.master * 1.8"/>
     <xsl:text>pt</xsl:text>
   </xsl:attribute>
   <xsl:attribute name="space-before.minimum">1.8em</xsl:attribute>
@@ -138,5 +188,25 @@
 
 <!-- Ordered list formatting -->
 <xsl:param name="orderedlist.label.width">1.8em</xsl:param>
+
+<!-- Override video template to output a video as a link. -->
+<xsl:template match="videodata">
+  <xsl:variable name="alt">
+    <xsl:choose>
+      <xsl:when test="ancestor::mediaobject/alt">
+        <xsl:apply-templates select="ancestor::mediaobject/alt"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="(ancestor::mediaobject/textobject/phrase)[1]"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="filename">
+    <xsl:call-template name="mediaobject.filename">
+      <xsl:with-param name="object" select=".."/>
+    </xsl:call-template>
+  </xsl:variable>
+  <fo:basic-link external-destination="{$filename}"><xsl:copy-of select="$alt"/></fo:basic-link>
+</xsl:template>
 
 </xsl:stylesheet>

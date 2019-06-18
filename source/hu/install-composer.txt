@@ -1,196 +1,102 @@
 [[install-composer]]
-=== Using Composer and Git to Download Files
+
+=== Telepítőfájlok letöltése Composer használatával
 
 [role="summary"]
-How to use the Composer and Git tools to manage the files in the core software
-and add-on modules and themes.
+Megismerjük, hogyan lehet az alaprendszer és más modulok fájljait a Composer nevű fejlesztőeszközzel karbantartani.
 
-(((Composer tool,using to download the core software)))
-(((Composer tool,using to download modules)))
-(((Composer tool,using to download themes)))
-(((Downloading,core software)))
-(((Downloading,theme)))
-(((Downloading,module)))
-(((Software dependencies,managing)))
-(((Module,downloading)))
-(((Theme,downloading)))
-(((Contributed theme,downloading)))
-(((Contributed module,downloading)))
+(((Composer eszköz,az alaprendszer letöltése a használatával)))
+(((Composer eszköz,modulok letöltése a használatával)))
+(((Composer eszköz,sminkek letöltése a használatával)))
+(((Letöltés,alaprendszer)))
+(((Letöltés,smink)))
+(((Letöltés,modul)))
+(((Szoftverfüggőségek,kezelésük)))
+(((Modul,letöltés)))
+(((Smink,letöltés)))
+(((Közösségi smink,letöltés)))
+(((Közösségi modul,letöltés)))
 
-==== Goal
+==== Célkitűzés
 
-Use Composer and/or Git to download files and dependencies in the core software,
-or in add-on modules and themes.
+Használjuk a Composer fejlesztői eszközt arra, hogy letöltsük az alaprendszer, a modulok és a sminkek forráskódját, valamint kezeljük azok függőségeit, azaz beszerezzük hozzájuk a további szükséges szoftverelemeket. Ha nem használjuk ezt az eszközt, akkor nyugodtan ugorjuk át ezt a témakört.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
-* <<install-tools>>
-* <<install-dev-sites>>
+<<install-tools>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-If you want to use Git or Composer, they must be installed either on a local
-development server or your live site. See <<install-tools>>.
+A Composer használatához annak először is telepítve kell lennie vagy a helyi fejlesztői környezetünkön, vagy az éles webhelyünk távoli kiszolgálóján. Erről bővebben lásd a <<install-tools>> témakört.
 
-==== Steps
+==== Lépések
 
-If you are unable to install the Git or Composer tools on your live server,
-after following the steps in any of the sections below on your local server, you
-will need to transfer any updated or added files to your live server. The
-recommended procedure is to make an archive or zip file of the new and changed
-files, transfer the archive to your live server, and extract it there. If you
-are using Composer, make sure to check for updates and additions to the
-following files, in the root of your installation:
+Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése sok mindenben eltér, előfordulhat, hogy az alábbiakban leírt, a helyi fejlesztői környezetünkre való telepítésről szóló lépéssor alapján nem sikerül telepítenünk a Composert az éles webkiszolgálón. Ilyen esetekben javasolt lokálhoszton elvégezni vele a frissítéseket az alábbi lépések alapján, majd a módosult könyvtárakat és fájlokat betömörítve felmásolni a távoli tárhelyünkre. Ott kicsomagolva remélhetőleg a helyi webhelypéldányunkkal megegyező fájlrendszert kapunk. Composer használata esetén különösen ügyeljünk az alábbiak módosulásaira a telepítésünk gyökerében:
 
-* _vendor_ directory
-* _autoload.php_
-* _composer.json_
-* _composer.lock_
+* _vendor_ könyvtár
+* _autoload.php_ fájl
+* _composer.json_ fájl
+* _composer.lock_ fájl
 
-===== Using Git to download a project
+===== Alaprendszer letöltése Composerrel
 
-Follow these steps if you want to download the development version of the core
-software, or of a contributed module or theme, from the project's Git version
-control repository:
+Ha még nem töltöttük le az alaprendszer forráskódját, és szeretnénk élni a Composer azon áldásos hatásával, hogy automatikusan gondoskodik a Drupal függőségeinek meglétéről, akkor kövessük az alábbi lépéseket:
 
-. In a command-line window, change to one level above the directory where you
-want the files to reside. For the core software, this would be your web
-root. For an add-on module, this would be the _modules_ directory, or a
-sub-directory like _contrib_ under the modules directory.
+. Számítógépünk parancssoros ablakában álljunk egy szinttel feljebb, mint amelyik könyvtárban majd szeretnénk, hogy a Drupal létrejöjjön.
 
-. Locate the page for the project that you want to download on _Drupal.org_; for
-example, https://www.drupal.org/project/drupal for the core software, or
-https://www.drupal.org/project/admin_toolbar for the contributed Admin Toolbar
-module.
-
-. Click the _Version control_ link near the top of the page, which opens up a
-page giving Git commands for this project.
-
-. Copy the +git clone+ command under _Setting up repository for the first time_,
-and paste it into your command line. For example, it might be:
+. Adjuk ki az alábbi parancsot, melyben a +webhelyem+ részt helyettesítsük be a létrehozni kívánt könyvtárunk nevével:
 +
 ----
-git clone --branch 8.2.x https://git.drupal.org/project/drupal.git
+$ composer create-project drupal-composer/drupal-project:8.x-dev webhelyem --no-dev --no-progress --stability dev --no-interaction
 ----
++
+Sikeres lefutást követően létrejön a +webhelyem+ argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
 
-. This will create a directory named with the short name of the project
-(_drupal_ in this example), and download the required files into that
-directory. If necessary, rename the directory.
+===== Közösségi projektek letöltése Composerrel
 
-. If you downloaded the _drupal_ project (the core software), follow the
-instructions below to download its external dependencies.
+Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már meg is van a Drupal alaprendszerünk, akkor használhatjuk a Composert arra is, hogy beszerezzük vele a kívánt verziókat az alábbi lépéseket követve:
 
-. Later on, you can change to the created directory and run the command +git
-pull+ to update the files to the latest version from the Git repository for the
-project.
+. Bármikor, ha egy új, az adott webhelyen korábban még nem használt közösségi projektet (modult vagy sminket) szeretnénk hozzáadni a már meglévőkhöz, akkor először is a legelső lépés, hogy pontosan tudnunk kell a letölteni kívánt projekt gépek által használt nevét. Ez mindig csak az angol ábécé kisbetűiből áll, nem tartalmazhat szóközt, szavak elkülönítésére helyette az aláhúzás karaktert használja. Legkönnyebben a Drupal.org portálon a projektoldal webcímének végén találjuk. Például a _Geofield_ modulé a https://www.drupal.org/project/geofield URL-ben a +geofield+.
 
-===== Using Composer to download external core dependencies
-
-Follow these steps if you downloaded the core software files using Git, which
-does not include the external dependencies:
-
-. Change to the core software's root directory.
-
-. Run the command +composer install+ at the command line. The external
-dependencies will be downloaded.
-
-===== Using Composer to download the core software
-
-Follow these steps if you have not yet downloaded or installed the core
-software, and you want to use Composer to download both the core software and
-its external dependencies:
-
-. At the command line, change to one level above the directory where you want
-the software to reside.
-
-. Enter this command, where +my_site_name+ is the directory you want to create:
+. Ha megvan a neve, akkor azt a következő parancsban a példaként használt „+geofield+” helyére behelyettesítve és egy parancssoros ablakban lefuttatva a Composer letölti a modult minden további szükséges függőségével együtt:
 +
 ----
-composer create-project drupal/drupal my_site_name
+$ composer require drupal/geofield
 ----
 
-===== Using Composer to download a module or theme
+===== Közösségi projektek frissítése Composerrel
 
-Follow these steps if you have already downloaded the core software, and you
-want to use Composer to add a contributed module or theme (usually because it
-has external dependencies that need to be downloaded with Composer):
+Miután az előző részeknél leírtak szerint már használunk Composert a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így a következő lépéseket követve már könnyedén elvégezhetjük mindezek rendszeres frissítését.
 
-. If you have not already done so, tell Composer about the download location for
-contributed modules and themes, by entering this command from the root of your
-site installation:
+. Akárcsak telepítéskor (lásd fentebb), most is tudnunk kell a frissíteni kívánt modulok vagy sminkek gépi nevét. Az alaprendszeré +core+, a közösségi projektekét pedig megnézhetjük webhelyünk adminfelületén.
+
+. Második lépésként meg kell határoznunk, hogy az adott szoftverelem melyik verzióját szeretnénk letöltetni a Composerrel. Egyszerű dolgunk van, ha a legfrissebb verziót kérjük:
 +
 ----
-composer config repositories.drupal composer https://packages.drupal.org/8
+$ composer update drupal/geofield  --with-dependencies
 ----
-
-. If you have not already done so, you can optionally override the default
-location where Composer will put downloaded modules and themes. For example,
-typically you would want contributed modules to go in a _contrib_ subdirectory
-of the top-level _modules_ directory, instead of the default location of
-_modules_. To make this change, edit the _composer.json_ file at the root level
-in your site installation. Find the line that says +"extra": {+, and add these
-lines following that line:
++
+Ha valamilyen oknál fogva egy adott verzióra van szükségünk, akkor jó, ha tudjuk, hogy a kötőjeles verziószámok esetén a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az +1.7+ verziószámot megadnunk. Ugyanez nem érvényes azonban az alaprendszerre, mert annak nem kötőjellel összetett verziószáma van. Ott továbbra is ugyanúgy ki kell írnunk: például +drupal/core:8.6.3+.
 +
 ----
-"installer-paths": {
-    "modules/contrib/{$name}": ["type:drupal-module"],
-    "modules/custom/{$name}": ["type:drupal-custom-module"],
-    "profiles/contrib/{$name}": ["type:drupal-profile"],
-    "themes/contrib/{$name}": ["type:drupal-theme"],
-    "themes/custom/{$name}": ["type:drupal-custom-theme"],
-    "libraries/{$name}": ["type:drupal-library"],
-    "drush/{$name}": ["type:drupal-drush"]
-},
+$ composer require drupal/geofield:1.7
 ----
-
-. Each time you want to add a contributed module or theme, determine the
-project's short name. This is the last part of the URL of the project page; for
-example, the Geofield module, at
-https://www.drupal.org/project/geofield, has short name +geofield+.
-
-. To download the contributed module or theme, along with its external
-dependencies, enter the following command at the root of your site (substituting
-the short name of the module or theme for +geofield+):
 +
-----
-composer require drupal/geofield
-----
+. Ha minden információ rendelkezésre áll, akkor a parancssoros ablakban webhelyünk gyökérkönyvtárában állva adjuk ki a fentiekhez hasonló parancsunkat, melyben a +geofield+ mintát értelemszerűen a frissíteni kívánt projekt nevére cseréltük.
 
-===== Using Composer to update a project's files
+//==== Az ismeretek elmélyítése
 
-Follow these steps to update the files for the core software or a contributed
-module or theme, after having already started to manage dependencies with
-Composer:
+//==== Kapcsolódó témák
 
-. Determine the short name of the project you want to update. For the core
-software, it is _drupal_. For contributed modules and themes, it is the last
-part of the URL of the project page; for example, the Geofield module, at
-https://www.drupal.org/project/geofield, has short name +geofield+.
+==== Videó
 
-. Determine how to enter the version number you want to update to. For
-example, for version 8.x-1.7 of a contributed module, you would enter just the
-1.7, and for the core software version 8.3.1, you would enter 3.1.
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer to Download files"]
 
-. Enter the following command at the root of your site (substituting
-the short name of the module or theme for +geofield+ and the correct version
-number):
-+
-----
-composer require drupal/geofield:1.7
-----
+==== Egyéb források
 
-// ==== Expand your understanding
+https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[Using Composer with Drupal] (azaz „A Drupal használata Composerrel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
-// ==== Related concepts
+*Közreműködők*
 
-==== Additional resources
-
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
-
-
-*Attributions*
-
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal["Using Composer with Drupal"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug] és https://www.drupal.org/u/eojthebrave[Joe Shindelar] (https://drupalize.me[Drupalize.Me]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[„Using Composer with Drupal”] (azaz „A Drupal használata Composerrel”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

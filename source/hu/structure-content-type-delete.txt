@@ -1,57 +1,61 @@
 [[structure-content-type-delete]]
 
-=== Deleting a Content Type
+=== Tartalomtípus törlése
 
 [role="summary"]
-How to delete a content type that is not required for the site.
+Így lehet törölni egy már felesleges tartalomtípust a webhelyünkről.
 
-(((Content type,deleting)))
+(((Tartalomtípus,törlés)))
 
-==== Goal
+==== Célkitűzés
 
-Delete the unneeded content type _Article_.
+Itt most az a cél, hogy a nem használt  _Cikk_ tartalomtípust megszüntessük a webhelyünkön.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<config-overview>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-The _Article_ content type must exist. It is created on your site when you install with the core Standard installation profile.
+Értelemszerűen a Cikk tartalomtípusnak léteznie kell ahhoz, hogy ki tudjuk törölni. Nem kell félnünk, ez nem a mi dolgunk: a Drupal telepítésekor ez a típus már automatikusan létrejött.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_ (_admin/structure/types_). The _Content types_ page appears.
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. Az így megnyitott _Tartalomtípusok_ oldalon látjuk valamennyit felsorolva. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt mégis találkozunk angol feliratokkal a <<language-concept>> témakörnél leírtak miatt.
 
-. Click _Delete_ in the _Operations_ dropdown button for the _Article_ content type.
+. Válasszuk a _Cikk_ sorának a végén, a _Műveletek_ oszlopban a legördülő gomb _Törlés_ lehetőségét.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
 // for Article content type expanded.
-image:images/structure-content-type-delete-dropdown.png["Article delete dropdown",width="100%"]
+image:images/structure-content-type-delete-dropdown.png["Cikk tartalomtípus legördülő gombja",width="100%"]
 --
 
-. A confirmation page is displayed. Click _Delete_.
+. Egy megerősítő oldal jelenik meg. Mi kattintsunk ismét a _Törlés_ gombra itt is.
 +
 --
 // Confirmation page for deleting Article content type.
-image:images/structure-content-type-delete-confirmation.png["Article delete confirmation page",width="100%"]
+image:images/structure-content-type-delete-confirmation.png["Cikk törlésének megerősítő oldala",width="100%"]
 --
 
-. The _Content types_ page appears with a confirmation message saying that the content type has been deleted:
+. Újra a _Tartalomtípusok_ oldalra jutunk, ahol egy pozitív rendszerüzenet tájékoztat a törlés sikerességéről:
 +
 --
 // Confirmation message after deleting Article content type.
-image:images/structure-content-type-delete-confirm.png["Article delete confirmation message"]
+image:images/structure-content-type-delete-confirmation.png["Cikk törlésének megerősítő üzenete",width="100%"]
 --
 
-//==== Expand your understanding
+//==== Az ismeretek elmélyítése
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-//==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Egy tartalomtípus törlése"]
 
-*Attributions*
+//==== Egyéb források
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi] and https://www.drupal.org/u/batigolix[Boris Doesborg].
+*Közreműködők*
+
+Írta és szerkesztette: https://www.drupal.org/u/sree[Sree Veturi] és https://www.drupal.org/u/batigolix[Boris Doesborg]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum])

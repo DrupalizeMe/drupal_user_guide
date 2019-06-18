@@ -24,7 +24,10 @@ You need to have a plan in place for your content structure. See
 
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
 (_admin/structure/types_). The _Content types_ page appears showing all the
-available types of content.
+available types of content. Note that the names and descriptions of the
+content types that were provided by your installation profile are shown in
+English on this page; see <<language-concept>> for an explanation.
+
 
 . Click _Add content type_. The _Add content type_ page appears. Fill
 in the fields as shown below.
@@ -41,7 +44,7 @@ in the fields as shown below.
 image:images/structure-content-type-add.png["Adding a Content type"]
 --
 
-. In the vertical tab _Submission form settings_, configure the form that is
+. Under _Submission form settings_, configure the form that is
 used for creating and editing content of this type. Fill in the fields as shown
 below.
 +
@@ -58,7 +61,7 @@ below.
 image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
 --
 
-. In the vertical tab _Publishing options_, decide on default options for new
+. Under _Publishing options_, decide on default options for new
 content of this type. Fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
@@ -78,7 +81,7 @@ created.
 image:images/structure-content-type-add-Publishing-Options.png["Publishing Options"]
 --
 
-. In the vertical tab _Display settings_, decide if the author and
+. Under _Display settings_, decide if the author and
 publication date will be visible in the content item. Fill in the fields as
 shown below.
 +
@@ -93,7 +96,7 @@ shown below.
 image:images/structure-content-type-add-Display-settings.png["Display settings"]
 --
 
-. In the vertical tab _Menu settings_, fill in the fields as shown below.
+. Under _Menu settings_, fill in the fields as shown below.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -138,6 +141,11 @@ contributed modules, and <<extend-module-install>> for instructions on
 downloading and installing contributed modules.
 
 // ==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/vyvqiaaGM1k[title="Adding a Content Type"]
 
 // ==== Additional resources
 

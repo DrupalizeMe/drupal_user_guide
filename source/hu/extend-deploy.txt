@@ -1,83 +1,85 @@
 [[extend-deploy]]
 
-=== Deploying New Site Features
+=== Webhelyfunkciók átvitele
 
 [role="summary"]
-How to copy a view created in a local development site to a production site.
+Egy funkció átvitele ugyanannak a webhelynek a két példánya között.
 
-(((Feature,deploying)))
-(((Configuration,deploying)))
-(((Feature,copying)))
-(((Configuration,copying)))
+(((Funkció,átmásolása)))
+(((Funkció,élesítése)))
+(((Konfiguráció,átmásolása)))
+(((Konfiguráció,élesítése)))
 
-==== Goal
+==== Célkitűzés
 
-Copy a view that you have created in a local development site to the production site.
+Ebben a részben át fogjuk vinni az egyik nézetet (másképpen listát) a helyi fejlesztési példányról az éles webhelyre.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<install-dev-making>>
 * <<extend-config-versions>>
 * <<install-dev-sites>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-* The core Configuration Manager module must be installed in both the development and production sites. See <<config-install>> for instructions on installing core modules.
+* Az alaprendszeri _Configuration Manager_ modulnak engedélyezve kell lennie mindkét webhelypéldányon. A <<config-install>> részben volt szó modulok telepítéséről.
 
-* The Vendor content type must exist in both the development and production sites, with the same fields. See <<structure-content-type>>.
+* Az _Árus_ tartalomtípusnak már léteznie kell ugyanazokkal a mezőkkel szintén mindkét webhelypéldányon. Ehhez lásd a <<structure-content-type>> részt.
 
-* The Vendors view must exist in the development site but not the production site. See <<views-create>>.
+* Az _Árusok_ nevű nézetnek már léteznie kell a fejlesztési példányon, de még nem lehet jelen az éles webhelyen. A nézetekről a <<views-create>> részben ejtettünk szót.
 
-==== Steps
+==== Lépések
 
-. Open the local development site.
+. Nyissuk meg és lépjünk be adminisztrátori felhasználóval a fejlesztési példányon.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Development_ > _Configuration synchronization_ > _Export_ > _Single item_ (_admin/config/development/configuration/single/export_). The _Single export_ page appears.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Konfiguráció szinkronizálása_ > _Export_ > _Egyetlen elem_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/configuration/single/export_ útvonalat).
 
-. Select _View_ from the _Configuration type_ list.
+. A _Beállítás típusa_ legördülőből válasszuk a _Nézet_ lehetőséget.
 
-. Select Vendors from the _Configuration name_ list. The configuration appears in the textarea.
+. Pár másodperc alatt frissül a második, _Beállításnév_ legördülő listája, amiből válasszuk az _Árusok (arusok)_ lehetőséget.
 
-. Copy the configuration from the textarea.
+. Ekkor megjelenik egy hosszú szöveg az _Ezek a beállítások_ felirat alatt, amit egészben másoljunk ki vágólapra.
 +
 --
 // Single configuration export of the Vendors view from
 // admin/config/development/configuration/single/export.
-image:images/extend-deploy-export-single.png["Export a single item"]
+image:images/extend-deploy-export-single.png["A konfiguráció egyetlen elemének kimentése"]
 --
 
-. Open the production site.
+. Most menjünk át az éles webhelyre.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Development_ > _Configuration synchronization_ _Import_ > _Single_ (_admin/config/development/configuration_). The _Import_ page appears.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Konfiguráció szinkronizálása_ > _Import_ > _Egyetlen elem_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/configuration/single/import_ útvonalat).
 
-. Select _View_ from the _Configuration type_ list.
+. A _Beállítás típusa_ legördülőből válasszuk a _Nézet_ lehetőséget.
 
-. Paste the configuration in the textarea.
+. A nagy szövegmezőbe illesszük be vágólapról az előbb kimásolt hosszú szöveget.
 
-. Click _Import_. The confirmation page appears.
+. Kattintsunk az _Import_ gombra, mire megjelenik egy megerősítő képernyő, amit szintén fogadjunk el.
 
-. Click _Confirm_.
+. Ellenőrizzük a _Kezelés_ adminisztrációs menüben a _Felépítés_ > _Nézetek_ oldalon, hogy az újonnan felvitt nézet létrejött-e, és működik-e.
 
-. Verify that the new view is being created by navigating in the _Manage_ administrative menu to _Structure_ > _Views_.
+==== Az ismeretek elmélyítése
 
-==== Expand your understanding
+Az itt bemutatott lépéssor a webhely teljes konfigurációjából csak egyetlen elem átvitelére való. Az általános gyakorlat szerint ez meglehetősen ritkán fordul elő, mivel a valós helyzetekben sokszor egyszerre több konfigurációelemet kell szinkronizálni két webhelypéldány között. Például ha a fejlesztési példányon egy új tartalomtípust hoztunk létre különféle mezőkkel, akkor máris fél tucat elemet (egyet magának a tartalomtípusnak, egyet-egyet minden mezőjéhez, és valószínűleg még továbbiakat a megjelenítési és beviteli módokhoz) kellene ezen a módon külön-külön átmásolni, ráadásul a kötött sorrendjükre pontosan ügyelve. Belátható, hogy ez nem lenne életképes megoldás.
 
-The steps in this topic show how to export and import a single configuration item. However, often if you develop functionality on a development website and want to transfer it to your production site, you will need to transfer multiple configuration items. For instance, if you developed a new content type with fields, you would need to transfer several configuration items for each field, one for the content type itself, and possibly multiple view mode and form mode items, and they would have to be transferred in the right order. Getting this right can be both tedious and difficult.
+Helyette exportálható és importálható a webhely teljes konfigurációkészlete. Ehhez a legjobb, ha az éles webhelyet egy lehetőleg (majdnem) mindenben hű másolatként klónozzuk a <<install-dev-making>> részben leírtakat követve, majd a <<extend-config-versions>> útmutatása szerint szinkronizáljuk a két példányt.
 
-As an alternative, you can export and import the complete configuration of the site. For this, you would need a local development site that is a clone of the production site (see <<install-dev-making>>), and then you can follow the steps in <<extend-config-versions>> to synchronize configuration between development and production sites.
+További lehetőség még a https://www.drupal.org/project/features[Features] közösségi modul használata, ami a csoportosítás fenti két (egyesével vagy egyben mindent) véglete között köztes lehetőségeket biztosít (például egy képgaléria valamennyi konfigurációjának – de csak annak – kimentése-beolvasása).
 
-Another alternative is to use the https://www.drupal.org/project/features[contributed Features module], which allows exporting and importing bundled functionality (for example, all the configuration for a photo gallery).
+Ha nem látjuk azonnal a változtatásaink eredményét, akkor szükség lehet a gyorsítótár kiürítésére. Lásd: <<prevent-cache-clear>>.
 
-Finally, if you do not see the effect of these changes in your site, you might need to clear the cache. See <<prevent-cache-clear>>.
-
-==== Related concepts
+==== Kapcsolódó témák
 
 * <<install-dev-sites>>
 * <<planning-workflow>>
 
-// ==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hysqVDIfLTA[title="Webhelyfunkciók átvitele"]
 
-*Attributions*
+//==== Egyéb források
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+*Közreműködők*
+
+Írta: https://www.drupal.org/u/batigolix[Boris Doesborg]. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum])

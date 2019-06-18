@@ -9,6 +9,10 @@ The scripts were derived from the build scripts in:
   https://www.drupal.org/project/asciidoc_display
 See that project's README.txt file for more information.
 
+It also contains two utility scripts:
+- testurls._php - tests validity of URLs in a source directory.
+- search_replace._php - performs text search and replace in a source directory.
+
 SOFTWARE
 
 To run the scripts here, you will need the following software:
@@ -38,13 +42,13 @@ FONTS
 In order to build PDF files, you need to have several fonts installed:
  - Noto fonts -- https://www.google.com/get/noto/
  - GNU Unifont -- http://www.unifoundry.com/unifont.html
- - FreeFarsi -- https://fontlibrary.org/en/font/freefarsi
+ - Amiri -- http://www.amirifont.org/
  - BabelStone Han -- http://www.babelstone.co.uk/Fonts/Han.html
  - Takao -- https://launchpad.net/takao-fonts
 
 On Linux, they can be found in the following packages (install with apt-get or
 yum):
-  fonts-noto-hinted unifont fonts-freefarsi fonts-babelstone-han fonts-takao
+  fonts-noto-hinted unifont fonts-hosny-amiri fonts-babelstone-han fonts-takao
 Use the links above for other operating systems. You can see which fonts
 are installed on Linux by using the command:
   fc-list

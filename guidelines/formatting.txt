@@ -184,7 +184,7 @@ See also: <<composing-index-entries>>
 
 
 [[formatting-images]]
-==== Including images
+==== Including images and videos
 
 Here's the syntax to include an image:
 
@@ -231,6 +231,28 @@ all images will need to be regenerated when the UI changes and for each
 translated language, avoid annotations if possible.
 
 * See <<good-writing-text>> for guidelines on what images should be included.
+
+
+The syntax for embedded videos is similar:
+
+----
+video::https://www.youtube.com/embed/HymQsDOcT3E[title="Name of video"]
+----
+
+Notes and guidelines:
+
+* The video line must start at the left margin of your text file.
+
+* At this time, only YouTube videos are supported, and the URL must not have
+a ? in it or any URL parameters (various parameters are added by the formatting
+scripts).
+
+* Consider using https://www.youtube-nocookie.com as the base URL instead of
+https://www.youtube.com, which ensures that YouTube won't store information
+about visitors to the page unless they play the video.
+
+* See <<guideline-additional-info>> for guidelines on embedding videos.
+
 
 
 [[style-literals]]

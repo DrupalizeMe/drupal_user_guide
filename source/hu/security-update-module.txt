@@ -1,97 +1,84 @@
 [[security-update-module]]
 
-=== Updating a Module
+=== Egy modul frissítése
 
 [role="summary"]
-How to update a contributed module by using the administrative interface and running the Database updates script, or by using Drush.
+Így frissítsünk egy közösségi modult, és futtassuk az adatbázis-karbantartó szkriptet adminfelületről.
 
-(((Module,updating)))
-(((Security update,applying)))
-(((Contributed module,updating)))
-(((Drush tool,using to update module)))
+(((Közösségi modul,frissítése)))
+(((Modul,frissítése)))
+(((Biztonsági frissítés,alkalmazása)))
 
-==== Goal
+==== Célkitűzés
 
-Update a contributed module and run the _Database updates_ script.
+Frissítjük webhelyünk egyik közösségi modulját az elavult verziójáról a legújabbra, majd lefuttatjuk az adatbázis-karbantartó szkriptet.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-* A contributed module has been installed and there is an update available for it. See <<extend-module-install>> and <<security-announce>>.
+* Legalább egy közösségi modulnak telepítve kell lennie, és kell, hogy legyen hozzá elérhető frissítés. Előbbihez lásd a <<extend-module-install>> leírást, míg utóbbihoz a <<security-announce>> lehet hasznos.
 
-* If your site is live, you should test this process in a development environment before running it on your production site. See <<install-dev-making>>.
+* Ha webhelyünk már éles, látogatók előtt megnyitott, akkor ezt a folyamatot javasolt előbb egy tesztkörnyezeten elvégezni. Erről a <<install-dev-making>> részben volt szó.
 
-* You have created a full-site backup. See <<prevent-backups>>.
+* A webhelyről készítsünk egy tartalék másolatot (lásd: <<prevent-backups>>).
 
-* If you want to use the user interface, the core Update Manager module must be installed. See <<config-install>> for instructions on installing core modules.
+* Ha az adminfelületen keresztül szeretnénk elvégezni ezt a műveletet, akkor az alaprendszer _Update Manager_ moduljának engedélyezve kell lennie. Ennek módjáról a <<config-install>> szakaszban már esett szó.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+==== Lépések
 
-==== Steps
-
-Before you start, check for module-specific update instructions. This is typically necessary while updating modules that involve the usage of third-party libraries. Read and understand all module-specific requirements before proceeding with the updates. To find instructions, check the module's project page _Read Documentation_ link.
-
-To view further instructions, download the tar.gz or .zip file from the project page to your local computer. Unzip the file and look for _README.txt_, _INSTALL.txt_, and _UPGRADE.txt_ that come with the module's installation file. Also, review the release notes on the project page by clicking the version number you're downloading.
+Mielőtt elkezdjük, körültekintően olvassuk el a modulhoz adott frissítési útmutatót, amit általában a projektoldalukon, a _Read Documentation_ (azaz „Dokumentáció elolvasása”) hivatkozáson találunk. Ez kifejezetten akkor szükséges, amikor valamilyen külső függvénykönyvtárat vagy harmadik fél általi szolgáltatást integráló modulról van szó. További tudnivalókat szerezhetünk még, ha letöltjük a számítógépünkre és kicsomagoljuk _tar.gz_ vagy _zip_ fájljukat, és megnyitjuk bennük a _README.txt_, _INSTALL.txt_ vagy _UPGRADE.txt_ dokumentumokat. Mindezen túl pedig érdemes vetni egy pillantást a modul telepíteni tervezett verziójának kiadási jegyzékére is, amit a projektoldalán a verziószámra kattintva nyithatunk meg:
 
 // Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/security-update-module-release-notes.png["Release notes link"]
+image:images/security-update-module-release-notes.png["Hivatkozás a kiadási jegyzékre"]
 
-You can use the administrative interface or Drush to update a contributed module. If you are updating a custom module rather than a contributed module, if you see a message saying _Installing modules and themes requires FTP access to your server_, or if the steps below do not work to obtain the new module files, follow the steps in <<extend-manual-install>>. You can then continue here with step 6 in the instructions for the administrative interface below.
+Itt most az egyszerűbb, az adminfelületen keresztül történő frissítést mutatjuk be. Ha viszont közösségi helyett egy egyedileg fejlesztett modult frissítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének, akkor még mindig követhetjük a <<extend-manual-install>> szakasz útmutatásait. Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közösségi modul már a Composer eszközzel kezeli a függőségeit, ezért ha erre utaló felhívást látunk a modul projektoldalán, akkor az itt leírtak helyett kövessük inkább a <<install-composer>> szakaszban leírt lépéseket. Ha azzal végeztünk, visszatérhetünk ide, és folytathatjuk a 6. lépéstől tovább ugyanúgy.
 
-===== Using the administrative interface
+===== Az adminfelület használatával
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. Állítsuk a webhelyet karbantartási módba (lásd: <<extend-maintenance>>).
 
-. In the _Manage_ administrative menu, navigate to _Reports_ > _Available updates_ > _Update_ (_admin/reports/updates/update_).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Jelentések_ > _Elérhető frissítések_ > _Frissítés_ oldalra (vagy a címsorban adjuk meg az _admin/reports/updates/update_ útvonalat).
 
-. Find and check the module in the list. Click _Download these updates_ for the module.
+. Keressük meg a felsorolásban a frissíteni kívánt modult és pipáljuk be a jelölőnégyzetet a sorában, majd kattintsunk a _Frissítések letöltése_ gombra.
 +
 --
 // Update page for theme (admin/reports/updates/update).
-image:images/security-update-module-updates.png["Available updates",width="100%"]
+image:images/security-update-module-updates.png["Elérhető frissítések",width="100%"]
 --
 
-. Click _Continue_.
+. Kattintsunk a _Folytatás_ gombra.
 
-. Click _Run database updates_. If you obtained the new module files manually, start with this step, and reach the database updates page by typing the URL _example.com/update.php_ in your browser.
+. Kattintsunk az _Adatbázis-frissítések futtatása_ elemre. Ha a modul fájljait kézzel másoltuk fel, akkor innentől folytatjuk, és az adatbázis-frissítés oldal megnyitásához írjuk be böngészőnk címsorába: _http://pelda.hu/update.php_.
 
-. Click _Continue_ and apply all updates. The database update scripts will be executed.
+. A _Folytatás_ gombra kattintva lefut a szkript, ami elvégez minden szükséges módosítást az adatbázison.
 
-. Click _Administration pages_ to return to the administration section of your site.
+. Az _Adminisztrációs oldalak_ hivatkozásra kattintva visszajutunk az adminfelületre.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Kapcsoljuk ki a _Karbantartási módot_ (lásd: <<extend-maintenance>>).
 
-. Clear the cache (refer to <<prevent-cache-clear>>).
+. Ürítsük ki a gyorsítótárat (lásd: <<prevent-cache-clear>>).
 
-===== Using Drush
+==== Az ismeretek elmélyítése
 
-. Find the project name for the module you wish to update. It is the last segment of the module's project page URL. For example, if the project URL is _https://www.drupal.org/project/admin_toolbar_, the project name is "admin_toolbar".
-
-. Run the following Drush command, giving the project name (for example, `admin_toolbar`) as a parameter (if you have more than one module to update, add the additional module project names to the end of the command, separated by spaces):
-+
-----
-drush up admin_toolbar
-----
-
-. Follow the instructions on the screen.
-
-==== Expand your understanding
-
-* Review the site log (refer to <<prevent-log>>) once the updates are complete to check for errors.
+* Mint minden komolyabb beavatkozás után, modulfrissítést követően is javasolt megnézni a rendszernaplót (<<prevent-log>>) esetleges rejtett hibák felfedezése érdekében.
 
 * <<security-update-theme>>
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
-==== Additional resources
+==== Videó
 
-https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Updating modules"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/ZYFJ_OJaK4M[title="Egy modul frissítése"]
 
+==== Egyéb források
 
-*Attributions*
+https://www.drupal.org/node/250790[Updating modules] (azaz „Modulok frissítése”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborgh], and https://www.drupal.org/u/hey_germano[Sarah German] at https://www.advomatic.com[Advomatic], from https://www.drupal.org/node/250790["Updating modules"], copyright 2000-2017 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+*Közreműködők*
+
+E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborgh] és https://www.drupal.org/u/hey_germano[Sarah German] (https://www.advomatic.com[Advomatic]) a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/node/250790[Updating modules] (azaz „Modulok frissítése”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

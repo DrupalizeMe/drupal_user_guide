@@ -21,6 +21,7 @@ On this page:
 * <<pm-guide-topics>>
 * <<pm-guide-new-phase>>
 * <<pm-guide-translating>>
+* <<pm-guide-tm>>
 * <<pm-guide-updates>>
 
 [[pm-guide-commits]]
@@ -254,6 +255,8 @@ In these issue templates, make the following replacements:
 
 * EMAIL_LIST: project_translation_list
 
+* PM_GUIDE_URL: project_guidelines_pm_guide_url
+
 * Set the issue component to be "Project management" and the issue title to
 "Set up for LANGUAGE translations", for the "setup" issue.
 
@@ -290,7 +293,7 @@ The LANGUAGE_NAME translation of this guide was coordinated by:
 
 <li>Grant issue maintainer and VCS commit permissions to the manager or managers of the language team for the new language, by editing the Maintainers page for the project. <strong>Note: Language team managers will need to re-clone their Git repositories using "Maintainer" mode after receiving this permission, in order to be able to commit to the repository.</strong></li>
 
-<li>Make issues for translating each topic into the target language. There is a spreadsheet file scripts/bookmarks.fods that will aid in doing this.</li>
+<li>Make issues for translating each topic into the target language. There is a spreadsheet file scripts/bookmarks.fods that will aid in doing this. You will need to translate the guide-docinfo.xml file, as well as all of the .txt files in the source directory.</li>
 
 <li>At least one leader of the translation group needs to subscribe to the email list the project uses for notifications about updates to the English source that require translations to be updated. This is at: [EMAIL_LIST] </li>
 
@@ -304,6 +307,8 @@ However, if you found an existing lang-lc.conf file on Github, you should instea
 </li>
 
 <li>Add langcode to the build scripts in scripts/languages.txt, and verify that it builds without errors. You may need to adjust the font used for PDF files in the scripts/mkebooks.sh file.</li>
+
+<li>Decide whether your team wants to use translation memory software or not. You can read more about this in the Translation Memory section of the <a href="PM_GUIDE_URL">User Guide Contributor Guidelines - Project Management page</a>.</li>
 
 <li>Optional but recommended steps:
   <ul>
@@ -328,7 +333,6 @@ jQuery("tbody .views-field-title a").each(
   </li>
   </ul>
 </li>
-
 <li>Start translating!</li>
 
 </ol>
@@ -353,12 +357,136 @@ Tasks and their status (unmarked tasks are assumed not to be done yet):
 </ul>
 
 </li>
-<li>Make initial automated screenshots. Procedure: See auto_screenshots/README.txt.</li>
+<li>Make initial automated screenshots. Procedure: See User Guide Tests module (https://www.drupal.org/project/user_guide_tests)</li>
 <li>Make initial non-automated screenshots. See the source/en/images/README.txt file for details of which images need to be made.</li>
 <li>Check each screenshot to make sure it is all in the target language and is readable. The LANGUAGE language team will do this as they translate each topic. If problems are found, add tasks here so that the screenshots can be updated. Leave this issue open until all the topics have been translated and the screenshots checked and/or updated.</li>
 </ol>
 ----
 
+[[pm-guide-tm]]
+==== Using translation memory
+
+Some language translation groups have found that using Translation Memory (often
+abbreviated as TM) software helps them keep their translations consistent and
+save time. This section explains what a TM is, and describes how to set it up.
+
+===== What is translation memory software?
+
+Translation memories (TM) are software applications specialized for helping
+translators by reusing their translations of previous text in translating new
+text. This saves time for translators, and also leads to more consistency in the
+translation across the text, especially if multiple translators are involved and
+they all share the same TM.
+
+TMs can be imagined as an organized pool of pairs of source/target character
+strings, for a given pair of source-target languages. The more string pairs they
+store, the more useful suggestions they can give you to select from when you are
+translating.  In a documentation project like the project_name,
+there are many reused strings, such as section titles, terminology, index
+entries, author attribution phrases, etc. In addition, translated text in the
+Drupal software user interface can also be imported into the TM, so that when
+this text is mentioned in the documentation, the translation matches what the
+user would see in the software interface.
+
+Note that TM is not the same as machine translation (MT), which would
+automatically attempt to translate text using learning algorithms.
+
+===== Which TM software is recommended?
+
+The free TM software FreeTM has been used successfully by at least one
+translation team for translating the Drupal User Guide, and is recommended.
+FreeTM is provided by the company WordFast as a software-as-a-service (SaaS) on
+the web, and runs in your web browser.
+
+===== How do I set up a TM?
+
+. Log in on https://www.freetm.com . If you have used it before for this
+language, skip the rest of this step. If you have not used it before, you will
+need to register for an account.
+
+. Configure the source and target languages on the initial configuration
+screen. The source language should be English (EN). The target language is the
+language you are translating into. Click _OK_ to submit; after submitting you
+will see a list of the files you are working on.
+// Screenshot from http://www.drupal.hu/files/5-choosing-lang-code.png
+
+. The "Machine Translation (MT)" feature is not helpful for translating
+documentation text, so turn it off. To do this, in the main navigation, navigate
+to _WordFast Anywhere_ > _Setup_ (icon) > _General_ (tab) > _Setup Machine
+Translation_ (link) > _MyMemory_ (tab). Uncheck _Use MyMemory_, and click _OK_.
+// Screen shot from http://www.drupal.hu/files/6-disabling-machine-translation.png
+
+. This step is different for managers and translators in the team:
+  * *Manager:* read
+  http://balagandrupal.blogspot.hu/2016/09/using-freetmcom-to-translate-drupal-user-guide.html[balagan's
+  blogpost about how to set up the common TM], which has more details about the
+  instructions below.
+
+  * *Translator:* contact the leader of your translation team, who has probably
+  already set up the common TM to share among the translators, and ask to have
+  your account added to the TM with read/write access. There may be two or more
+  separate TMs; for example, the Hungarian team uses one TM for the Drupal UI,
+  and another for phrases, expressions, sentences, glossary and other text
+  elements for the User Guide.
+
+. Add the TMs for your team to your account, once you are authorized, as
+follows:
+  * You will need to have a file open, so you will need at least a temporary
+  file in the account. To create one, in the main navigation, navigate to _File_
+  > _Upload_ (icon). Select _From URL_, which provides a default sample file
+  that will be fine to use (http://www.freetm.com/doc/ipad_sample.doc). Click
+  _Upload and Open_.
+// Screenshot from http://www.drupal.hu/files/7-adding-temporary-file.png
+
+  * With this (or any other file) open, in the main navigation, navigate to _TMs
+  & Glossaries_ > _Setup_ (icon). A modal dialog opens, where you can configure
+  the TMs and Glossaries for the account.
+// Screenshot from http://www.drupal.hu/files/8-disabling-iate-glossary.png
+
+  * User Guide translation teams have not found the default
+    http://iate.europa.eu/SearchByQueryLoad.do[IATE] glossary to be very
+    helpful, so you can uncheck the box to disable it. If you are the team
+    leader, you will be creating one or more new TMs here (see note above from
+    the Hungarian team, and the blog post referenced above) by using the
+    _Create_ button.
+
+  * Add the common TMs for your group to your account:
+// Screenshot from http://www.drupal.hu/files/9-setting-up-our-tms.png
+
+  * Click _Save_ to save the configuration, and then delete the temporary file.
+
+===== Start translation with the aid of TM
+
+This section assumes you have followed the steps in
+<<practicalities-translating>> to select a topic to translate, have assigned the
+issue to yourself, and have located the source file to edit. (You'll need to
+find the URL to the source file in the Git repository, which should be in your
+issue summary.)
+
+To translate this file using the TM:
+
+. In the main navigation of https://www.freetm.com (you will need to be logged
+in), navigate to _File_ > _Upload_ (icon). In this dialog, select _From URL_,
+and paste in the URL of the source file from the Git repository
+(for example,
+http://cgit.drupalcode.org/user_guide/plain/source/de/attributions.txt). Click
+_Upload and Open_.
+// Screenshot from http://www.drupal.hu/files/2-document-upload.png
+
+. Click _Start/Next_ to start the translation. When the software finds a match
+to strings stored in the translation memory, it inserts it for you as a
+suggestion; an example has been marked with green in this screenshot:
+// Screenshot from http://www.drupal.hu/files/4-start-translation.png
+
+. Make sure not to translate AsciiDoc formatting and IDs (marked with red in the
+screenshot). See <<guidelines-translating>> for details.
+
+. When you have finished translating the document, including the provided
+translations from the translation memory and the rest of the text, in the main
+navigation, navigate to _File_ > _Close_ (icon) to save the file. Then click
+_Download_ (icon) in the secondary navigation to download the file to your local
+computer, and upload it to the issue. Set the status of the issue to "Needs
+Review", and save.
 
 [[pm-guide-updates]]
 ==== Making updates
@@ -408,5 +536,7 @@ sent to the email list.
 *Attributions*
 
 Written/edited by
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] and
-https://www.drupal.org/u/eojthebrave[Joe Shindelar].
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/eojthebrave[Joe Shindelar], and
+https://www.drupal.org/u/balu-ertl[Balu Ertl] of
+https://www.drupal.org/brainsum[Brainsum].

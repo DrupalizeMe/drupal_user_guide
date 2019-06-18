@@ -42,9 +42,9 @@ might be using.
 
 . Put your site in maintenance mode. See <<extend-maintenance>>.
 
-. If you are using Composer to manage dependencies, or using Git, skip the next
-six steps, and instead see <<install-composer>> for instructions on downloading
-updated files. Continue with the _update.php_ step.
+. If you are using Composer to manage dependencies, skip the next six steps, and
+instead see <<install-composer>> for instructions on downloading updated
+files. Continue with the _update.php_ step.
 
 . Download the tar.gz or zip file archive for the latest version of Drupal
 8.x core from https://www.drupal.org/project/drupal[_Drupal.org_ Drupal Core
@@ -61,13 +61,6 @@ like:
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
-----
-
-. You can also use Drush to download the archive and extract it in one step, by
-navigating to the temporary directory on the server and entering this command:
-+
-----
-drush dl drupal
 ----
 
 . In your site hosting directory, delete the _core_ and _vendor_ directories,
@@ -119,6 +112,11 @@ version of your software by checking the _Status report_ (see
 ==== Related concepts
 
 <<prevent-status>>
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/eLzAD83a9BY[title="Updating the Core Software"]
 
 ==== Additional resources
 

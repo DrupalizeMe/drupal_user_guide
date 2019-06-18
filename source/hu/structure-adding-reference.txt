@@ -1,96 +1,100 @@
 [[structure-adding-reference]]
 
-=== Adding a Reference Field
+=== Egy hivatkozás mező hozzáadása
 
 [role="summary"]
-How to add a reference field that connects two content types.
+Két tartalomtípus összekötése egy egymásra mutató mező segítségével.
 
-(((Reference field,adding)))
-(((Field,for adding references)))
-(((Entity reference field,adding)))
-(((Content reference field,adding)))
-(((User reference field,adding)))
-(((Taxonomy term reference field,adding)))
+(((Entitáshivatkozás,hozzáadás)))
+(((Mező,hozzáadása hivatkozásokhoz)))
+(((Entitáshivatkozás mező,hozzáadás)))
+(((Tartalmi hivatkozás mező,hozzáadás)))
+(((Felhasználóra hivatkozó mező,hozzáadás)))
+(((Taxonómia kifejezésre hivatkozó mező,hozzáadás)))
 
-==== Goal
+==== Célkitűzés
 
-Add a reference field so that recipes can be linked to the vendor that has submitted it.
+Ebben a témakörben célunk, hogy a _Recept_ tartalmakat összekössük az azokat beküldő _Árusok_ adatlapjaival.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<structure-fields>>
 * <<structure-reference-fields>>
 * <<structure-content-type>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-The Recipe and Vendor content types must exist. See <<structure-content-type>>.
+A _Recept_ és _Árus_ tartalomtípusoknak létezniük kell. Ehhez lásd a <<structure-content-type>> témakört.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_ (_admin/structure/types_). Then click _Manage fields_ in the dropdown button for the Recipe content type. The _Manage fields_ page appears.
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. Aztán kattintsunk a _Mezők kezelése_ lenyíló gombra a _Recept_ tartalomtípusnál. Ekkor megjelenik a _Mezők kezelése_ oldal.
 
-. Click _Add field_. The _Add field_ page appears. Fill in the fields as shown below. Click _Save and continue_.
+. Kattintsunk a _Mező hozzáadása_ gombra. Megjelenik a _Mező hozzáadása_ oldal. Töltsünk ki minden mezőt a lent látható módon. Miután végeztünk, mentsük el munkánkat a _Mentés és folytatás_ gombbal.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Add a new field | Option to specify the field type | Reference > Content
-| Label | The title you want to give the field | Submitted by
+| Mező felirata | Magyarázat | Javasolt kitöltés
+| Új mező hozzáadása | Lehetőségünk van kiválasztani a mező típusát. | Referencia > Tartalom
+| Felirat | Adhatunk a mezőnek egy tetszőleges nevet. | Beküldte
 |================================
 +
 --
 // Add field page for adding a Submitted by field to Recipe.
-image:images/structure-adding-reference-add-field.png["Adding a reference field to a content type"]
+image:images/structure-adding-reference-add-field.png["Egy hivatkozó mező hozzáadása a tartalomtípushoz"]
 --
 
-. The page Submitted by appears which lets you set the allowed number of values. Fill in the fields as shown below. Click _Save field settings_.
+. Az ezt követően betöltődő oldal címe _Beküldte_, azaz az általunk előbb hozzáadott új mező neve. Itt lehet pár, kifejezetten ehhez a mezőhöz kapcsolódó beállítást megadni. Töltsünk ki minden mezőt a lent látható módon. Amikor végeztünk, kattintsunk a _Mező beállításainak mentése_ gombra.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Type of item to reference| Option to select the type of referenced item | Content
-| Allowed number of values | Specify the count of values associated with the field | Limited, 1
+| Mező felirata | Magyarázat | Javasolt kitöltés
+| Hivatkozó elem típusa | A webhelyen létező entitástípusok közül ki kell választanunk, hogy pontosan melyikre fog hivatkozni ez a mező. | Tartalom
+| Értékek megengedett száma  | Az ebben a mezőben tárolható értékek számának felső határa. | Korlátozott, 1
 |================================
 +
 --
 // Field storage settings page for Submitted by field.
-image:images/structure-adding-reference-set-field-basic.png["Storage configuration of a reference field "]
+image:images/structure-adding-reference-set-field-basic.png["Egy hivatkozott mező tárolási beállításai"]
 --
 
-. The page _Submitted by settings for Recipe_ appears which allows you to configure the field. Fill in the fields as shown below. Click _Save settings_.
+. Az ezután megjelenő _Recept Beküldte beállításai_ oldalon már nem a mező általános, webhelyszerte használt beállításait, hanem már csak kifejezetten a _Recept_ tartalomtípuson belüli használatának módját szabályozhatjuk. Töltsünk ki minden mezőt a lent látható módon. Végezetül kattintsunk majd a _Beállítások mentése_ gombra.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Label  | Title shown for this field on the page | Submitted by
-| Help text | Brief text aiding the person creating content | Choose the vendor that submitted this recipe
-| Required field | Whether a value has to be provided or not | Checked
-| Reference method | Option to select reference method | Default
-| Content types  |  Specify the content type | Vendor
-| Sort by | Sorting field | Title
-| Sort direction| Sorting order | Ascending
+| Mező felirata | Magyarázat | Javasolt kitöltés
+| Felirat  | Ez a cím fog megjelenni a látogatóknak az oldalon a mező értéke felett. | Beküldte
+| Súgó szöveg | Egy rövid szöveges segítség a webhely tartalmait szerkesztő adminisztrátoroknak. | Válaszd ki a receptet beküldő árust
+| Kötelező mező | Annak szabályozására való, hogy muszáj-e kitöltenie a szerkesztőnek ahhoz, hogy elmenthesse a tartalmat. | Bejelölve
+| _Hivatkozás típusa_ > _Hivatkozási mód_ legördülő lista | Kiválasztható, hogy a mező kitöltésekor miként legyenek felsorolva a lehetséges értékek. | Alapértelmezés
+| _Hivatkozás típusa_ > _Tartalomtípusok_ jelölőnégyzetek | A webhelyen párhuzamosan létező több tartalomtípus közül melyekből lehessen tartalmakat kiválasztani ebbe a mezőbe. | Árus
+| _Hivatkozás típusa_ > _Rendezés_ legördülő lista | A mező kitöltésekor a lehetséges értékeket a könnyebb áttekintés érdekében ábécérendbe lehet sorolni. Itt lehet kiválasztani, hogy ez milyen szempont szerint történjen. | Árus neve
+| _Hivatkozás típusa_ > _Rendezés iránya_ legördülő lista | Melyik végéről kezdődjön a sorba rendezett lista. | Növekvő
 |================================
 +
 --
 // Field settings page for Submitted by field.
-image:images/structure-adding-reference-field-settings.png["Settings for a reference field ",width="100%"]
+image:images/structure-adding-reference-field-settings.png["Egy tartalomra hivatkozó mező lehetséges beállításai",width="100%"]
 --
 
-. The Submitted by field has been added to the content type.
+. Ekkor a _Beküldte_ mező hozzá lett adva a _Recept_ tartalomtípushoz.
 +
 --
 // Manage fields page for content type Recipe, after adding Submitted by field.
-image:images/structure-adding-reference-manage-fields.png["Manage fields page for the Recipe content type",width="100%"]
+image:images/structure-adding-reference-manage-fields.png["A Recept tartalomtípus Mezők kezelése oldala",width="100%"]
 --
 
-// ==== Expand your understanding
+// ==== Az ismeretek elmélyítése
 
-// ==== Related concepts
+//==== Kapcsolódó témák
 
-// ==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hAhWiqPlKh0[title="Egy hivatkozás mező hozzáadása"]
 
-*Attributions*
+//==== Egyéb források
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
+*Közreműködők*
+
+Írta és szerkesztette: https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum])

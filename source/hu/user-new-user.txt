@@ -1,72 +1,77 @@
 [[user-new-user]]
 
-=== Creating a User Account
+=== Felhasználói fiók létrehozása
 
 [role="summary"]
-How to create a user account.
+Így hozhatunk létre új felhasználói fiókot a webhelyünkön.
 
-(((User,creating account)))
+(((Felhasználó,fiók létrehozása)))
 
-==== Goal
+==== Célkitűzés
 
-Create Vendor user accounts for Sweet Honey and Happy Farm vendors.
+Azért, hogy be tudjanak jelentkezni a webhelyre az adatlapjukat kitölteni, elkészítjük két árus, a _Csemege Méhészet_ és a _Víg Tanya_ felhasználói fiókját.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<user-concept>>
 * <<user-admin-account>>
 * <<user-new-role>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Az _Árus_ szerepkört már létre kellett hozni, amit az előző, <<user-new-role>> részben végeztünk el.
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _People_ (_admin/people_).
+. A _Kezelés_ adminisztrációs menüben menjünk a _Felhasználók_ oldalra (vagy a címsorban adjuk meg az _admin/people_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi felhasználói fiókot.
 
-. Click _Add user_.
+. Kattintsunk a _Felhasználó létrehozása_ gombra.
 +
 --
 // Add new user form (/admin/people/create).
-image:images/user-new-user_form.png["Form for creating a new user account",width="100%"]
+image:images/user-new-user_form.png["Az új felhasználói fiók létrehozása űrlap",width="100%"]
 --
 
-. Fill in the form fields. See the table below.
+. A megjelenő űrlapot töltsük ki az alábbiak szerint:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Email address |A valid email address for the vendor. All emails from the system will be sent to this address. The email address is not made public. | honey@example.com
-|Username |A username for the vendor that they will use to sign in or author content items. Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores. |Sweet Honey
-|Password |A password the vendor will use to sign in to the site. You can see how safe the password is on the _Password strength_ gauge. You also get tips on how to make it safer.  |(Make a secure password)
-|Confirm password |Type the same password to avoid any typing mistakes. |(Repeat password)
-|Status |Set the status of the user account. _Blocked_ users will not be able to sign in. |Active
-|Roles |Set the role of the user account.|Vendor
-|Notify user of new account |Whether or not to send a notification to the vendor's email address. |Checked
-|Picture |Click _Browse_ and select a picture to upload. Pay attention to size restrictions. | Photo of the vendor
-|Contact settings |Enable or disable the display of a contact form for the account. | Checked
+| Mező neve | Magyarázat | Javasolt kitöltés
+| E-mail cím | Egy érvényes elektronikus levelezési címe az árusnak. A rendszer a felhasználó minden levelét erre a címre fogja küldeni. Az e-mail címet a rendszer soha nem hozza automatikusan nyilvánosságra. | meheszet@pelda.hu
+| Felhasználónév | Ezt a nevet használva fog majd tudni bejelentkezni az árus, és az általa írt tartalmaknál (például beküldött recepteknél) is ez fog megjelenni szerzőként. A szóköz és néhány írásjel (a pont, a kötőjel, az aposztróf és az aláhúzás) megengedettek benne. | Csemege Méhészet
+| Jelszó | Ezt a jelszót használva fog majd tudni bejelentkezni az árus. A _Jelszó erőssége_ kijelző mutatja, hogy az addig beírt szöveg mennyire lenne erős jelszóként. Ahogy elkezdünk gépelni, a _Javaslatok a jelszó erősségének növelésére_ keretben további tanácsokat is kapunk, hogyan tegyük még biztonságosabbá az addig beírt szöveget. | Válasszunk egy megjegyezhető és biztonságos jelszót
+| Jelszó megerősítése | Pontosan ugyanazt a jelszót, ugyanúgy kell beírni még egyszer |
+| Állapot | Ha a felhasználói fiókot_Zárolt_ állapotúra állítanánk, akkor azzal nem lehetne bejelentkezni a webhelyre. | Aktív
+| Szerepkörök | Adjuk meg, hogy melyik csoportba soroljuk az illetőt. | Árus
+| Új felhasználó értesítése e-mailben | Küldjön-e a rendszer egy automatikus üdvözlő levelet a fent megadott e-mail címre, amikor itt a _Létrehozás_ gombra kattintunk? | Bejelölve
+| Kép | A tallózás gombra kattintva keressük ki számítógépünkről az adott személyhez tartozó fotót vagy logót. Ügyeljünk a fájlméretbeli korlátozásokra. | Egy képfájl
+| Személyes kapcsolatfelvételi űrlap | Engedélyezzük-e, hogy a webhely látogatói felvegyék a kapcsolatot ezzel a felhasználóval a profiloldalán megjelenő üzenetküldési lehetőségen keresztül? | Bejelölve
 |================================
 
-
-. Click _Create new account_. You will get a notification about the user account creation.
+. Kattintsunk az _Új fiók létrehozása_ gombra. Ezután egy _Csemege Méhészet új felhasználó számára el lett küldve egy további útmutatást tartalmazó üdvözlőüzenet_ állapotüzenet tájékoztat róla, ha a mentés sikeres volt:
 +
 --
 // Confirmation message after adding new user.
-image:images/user-new-user-created.png["New user account has been created",width="100%"]
+image:images/user-new-user-created.png["Az új felhasználói fiók sikeresen létrejött",width="100%"]
 --
 
-. Create a second Vendor account for Happy Farm by following the steps above.
+. Ugyanezeket a lépéseket megismételve készítsünk egy felhasználói fiókot a _Víg Tanya_ árus számára is.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
-Create a user account for yourself.
+A Kézikönyv lépéssorainak végrehajtása során mindeddig valószínűleg a korábban a <<install-run>> résznél létrehozott _Egyes számú felhasználói fiókot_ használtuk, amiről bővebben a <<user-admin-account>> résznél volt szó. Mivel ez egy különleges (angolul „superuser”) felhasználó, ezért biztonsági megfontolásból az általánosan javasolt gyakorlat az, hogy az _Egyes számú felhasználói fiók_ végig le van tiltva, és az adminisztrátorok saját, névre szóló felhasználói fiókjukba bejelentkezve tevékenykednek a webhelyen. Ez különösen akkor lesz hasznos, ha rajtunk kívül több adminisztrátor is kezeli a webhelyet, így a rendszernaplóban elkülöníthető lesz majd, hogy ki, mikor, mit csinált.
 
-//==== Related concepts
+A fenti lépéssort követve tehát hozzunk létre magunknak is egy felhasználói fiókot, a szerepköröknél pedig ne felejtsük el bejelölni az _Adminisztrátor_ opciót.
 
-//==== Additional resources
+//==== Kapcsolódó témák
 
+==== Videó
 
-*Attributions*
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title="Felhasználói fiók létrehozása"]
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at https://pronovix.com/[Pronovix].
+//==== Egyéb források
+
+*Közreműködők*
+
+Írta: https://www.drupal.org/u/dianalakatos[Diána Lakatos] (https://pronovix.com/[Pronovix]).  Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum/[Brainsum]).

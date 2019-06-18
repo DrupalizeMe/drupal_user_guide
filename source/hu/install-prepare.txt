@@ -1,115 +1,60 @@
 [[install-prepare]]
-=== Preparing to Install
+
+=== Felkészülés a telepítésre
 
 [role="summary"]
-How to choose a method for installing the core software, and satisfy prerequisites for installation.
+E szakaszban letöltjük az alaprendszer forráskódját és biztosítjuk a telepítés előfeltételeit.
 
-(((Installing,core software)))
-(((Drush tool,using to install the core software)))
-(((Web installer,using to install the core software)))
-(((Downloading,core software)))
-(((Drupal core,preparing install)))
+(((Letöltés,alaprendszer)))
+(((Drupal alaprendszer,felkészülés a telepítésre)))
 
-==== Goal
+==== Célkitűzés
 
-Choose an appropriate way to install the core software, and handle any required prerequisites.
+Ebben a szakaszban letöltjük az alaprendszer forráskódját és biztosítjuk az ahhoz szükséges előfeltételeket.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<install-requirements>>
 * <<install-tools>>
+* <<install-decide>>
+* Hogyan kell beállítani egy tárhelyet egy általános webhely számára
+* Miként lehet adatbázist létrehozni
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-If you want to use Drush to install the core software, Drush must be installed. See <<install-tools>>.
+Attól függően, hogy az alaprendszer letöltésének melyik módját választottuk, szükségünk lehet további eszközökre is. A döntéshez lásd a <<install-decide>> részt, míg az eszközök beszerzéséhez pedig a <<install-tools>> szakaszt.
 
-==== Steps
+==== Lépések
 
-. Choose a method for installing the core software.
-+
---
-Try a free online demo::
-  Use an online provider to get a demo installation of the core software in 20 minutes or less. See the https://www.drupal.org/try-drupal[_Drupal.org_ page "Try Drupal"].
+. Válasszunk egy letöltési és telepítési módot a <<install-decide>> szakaszban felsoroltak közül. Az itt következő lépések a Composerre és kézi letöltésre, valamint a interaktív telepítő futtatására vonatkoznak. Más lehetőség esetén a szoftvernek már telepítve kell lennie.
 
-Use a one-click installer from your hosting provider::
-  If you choose to install the core software at your hosting provider, your hosting provider may have specific documentation and/or a one-click install that you can use. See https://www.drupal.org/association/supporters/hosting[_Drupal.org's_ list of hosting providers that support Drupal].
+. Akár a helyi gépünkön (localhost), akár a távoli kiszolgálón állítsunk be egy doménnevet a tárhelyünkhöz. Egy egyszerű HTML fájlt téve a tárhely gyökérkönyvtárába, majd a webcímét megnyitva egy böngészőben ellenőrizzük, hogy az elérhető-e.
 
-Use Drush::
-  You will need to have Drush installed and command-line access to the site. See <<install-tools>>.
+. Ugyanekkor készítsük el az adatbázist is egy teljes hozzáférési joggal rendelkező adatbázis-felhasználóval együtt.
 
-Use the web installer::
-  You will need space on a local or hosted web server to install the core software manually.
+. Gondoskodjunk az alaprendszer forráskódjának a tárhely gyökérkönyvtárába való helyezéséről a <<install-decide>> szakaszban választott mód lépéssorát követve.
 
-Use a pre-configured environment::
-  Use a pre-configured environment or virtual machine that contains Drupal and all the required supporting software to install Drupal locally. See the section for your operating system under https://www.drupal.org/docs/develop/local-server-setup[Drupal.org's Local server setup guide] for possible options.
---
+==== Az ismeretek elmélyítése
 
-. If you are installing using Drush or the web installer, set up a URL and hosting for your site, either at an external hosting provider or on your own computer. Verify that the hosting is working by putting a simple HTML file in the web root directory of the hosting, and visiting the URL for your site.
+Az <<install-run>> szakasz bemutatja az interaktív webes telepítő végigkattintgatásának menetét.
 
-. If you are installing using Drush or the web installer, create a database, along with a database user account with full access.
+Ha a vizuális felületnél jobban szeretjük a parancssoros hozzáférést, akkor az alábbi Drush parancs közel ugyanezt végzi el. Gépeljük a következő utasításokat a parancssorba, ahol  `example` annak a könyvtárnak a neve, ahova az alaprendszert letöltöttük, valamint a `DB_NAME`, `DB_USER` és `DB_PASS` az adatbázis hitelesítő adatai:
 
-. If you are installing using Drush, type the following at the Drush command line, where _example_ is the name of the directory that the core software will be downloaded to, and _DB_NAME_, _DB_USER_ and _DB_PASS_ are your database's credentials:
-+
 ----
-drush dl drupal --drupal-project-rename=example
-cd example
-drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site- name=example
+$ drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
 ----
 
-. If you are installing using the web installer, upload the core software files manually. To do this using Git and/or Composer, see <<install-composer>>; to do  this by downloading a zipped archive:
+//==== Kapcsolódó témák
 
-.. Go to _https://www.drupal.org_ and click _Download & Extend_ on the top-level menu.
-+
---
-// Download Drupal area of https://www.drupal.org/download.
-image:images/install-prepare-downloads.png["Downloads page on _Drupal.org_",width="100%"]
---
+==== Videó
 
-.. Click the _Download Drupal_ button (of the appropriate version) to be taken to the Downloads page.
-+
---
-// Recommended releases section of https://www.drupal.org/project/drupal.
-image:images/install-prepare-recommended.png["Recommended releases section of Drupal downloads page on _Drupal.org_"]
---
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Felkészülés a telepítésre"]
 
-.. Click the version you wish to download under _Recommended releases_.
-+
---
-// File section of a recent Drupal release download page, such as
-// https://www.drupal.org/project/drupal/releases/8.1.3.
-image:images/install-prepare-files.png["Download files section of Drupal core download page on _Drupal.org_"]
---
-
-.. Download the tar.gz or zip file to your local machine.
-
-.. Upload the downloaded file to your hosting account. Log in to the control panel and navigate to the _HTML_ directory. Save the file there.
-
-.. Uncompress the tar.gz or zip file, which will create a new directory. If you do not have terminal access, or your hosting server is not running Linux, your hosting control panel's file manager should provide a way to extract the files. If you have terminal access to your hosting server (running Linux), you can use a command like:
-+
-----
-tar -xzf drupal-8.3.2.tar.gz
-----
-
-.. Delete the compressed file from the server, unless your unpacking method already deleted it.
-
-.. Rename the directory or reconfigure your web hosting, so that the directory name matches the directory your web hosting is configured to use for your site.
-
-==== Expand your understanding
-
-Run the installer if you chose web installer to install the core software. See <<install-run>>.
-
-// ==== Related concepts
-
-==== Additional resources
+==== Egyéb források
 
 http://www.drush.org[Drush]
 
+*Közreműködők*
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Írta és szerkesztette: https://www.drupal.org/u/dgorton[Drew Gorton], https://www.drupal.org/u/michaellenahan[Michael Lenahan] (https://erdfisch.de[erdfisch]), https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/pandelon[Pandelon].

@@ -3,14 +3,14 @@
 === Blokk régióba helyezése
 
 [role="summary"]
-Hogyan helyezhetünk el egy blokkot egy régióban.
+Így helyezhetünk el egy blokkot egy régióban.
 
 (((Blokk,elhelyezés régióban)))
 (((Régió,blokk elhelyezése)))
 
 ==== Célkitűzés
 
-A _Helyszín és nyitvatartás_ blokk megjelenítése a webhely oldalsávján.
+A _Helyszín és nyitvatartás_ blokk megjelenítése a webhely oldalsávjában.
 
 ==== Szükséges előismeretek
 
@@ -51,7 +51,7 @@ image:images/block-place-configure-block.png["Blokk beállítása oldal",width="
 
 . Győződjünk meg róla, hogy a _Helyszín és nyitvatartás_ blokk szerepel a _Második oldalsáv_ régióban, majd kattintsunk lent a _Blokkok mentése_ gombra.
 +
-A blokk innentől az alaprendszer Bartik sminkjét használó minden oldal oldalsávján megjelenik.
+A blokk innentől az alaprendszer Bartik sminkjét használó minden oldal oldalsávjában megjelenik.
 +
 --
 // About page with placed sidebar block.
@@ -60,19 +60,23 @@ image:images/block-place-sidebar.png["A Második oldalsáv régióban blokkal re
 
 ==== Az ismeretek elmélyítése
 
-* Távolítsuk el a _Drupal működteti_ blokkot a _Lábléc_ régióból úgy, hogy a régió megadásánál a _– Nincs –_ lehetőséget választjuk a legördülő menüből.
+* Távolítsuk el a _Drupal működteti_ blokkot a _Lábléc_ régióból úgy, hogy a sorában a lenyíló gomb _Letiltás_ lehetőségét választjuk. Így a jövőben bármikor könnyen és gyorsan visszakapcsolhatjuk ugyanezen beállításait megtartva. Ha viszont az _Eltávolítás_ opcióval töröljük, akkor legközelebb újra be kell majd állítanunk, amikor hozzá szeretnénk adni egy régióhoz. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt mégis találkozunk angol feliratokkal a <<language-concept>> témakörnél leírtak miatt.
 
 * Vegyük ki az _Eszközök_ blokkot az _Első oldalsáv_ régióból az előző lépésben leírt módon. Ez a blokk csak bejelentkezett felhasználók számára lesz látható.
 
 * Helyezzük a _Bejelentkezés_ blokkot egy régióba.
 
-* Ha nem látjuk azonnal az eredményét a változtatásainknak, akkor szükség lehet a gyorsítótár ürítésére. Ehhez lásd: <<prevent-cache-clear>>.
+* Ha nem látjuk azonnal a változtatásaink eredményét, szükség lehet a gyorsítótár kiürítésére. Ehhez lásd: <<prevent-cache-clear>>.
 
 //==== Kapcsolódó témák
 
-//==== Egyéb források
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/iWW7Ja5p0hA[title="Blokk régióba helyezése"]
+
+//==== Egyéb források
 
 *Közreműködők*
 
-Írta és szerkesztette https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balagan[balagan].
+Írta és szerkesztette: https://www.drupal.org/u/batigolix[Boris Doesborg] és https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Fordította: https://www.drupal.org/u/balagan[balagan].

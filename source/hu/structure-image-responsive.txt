@@ -18,9 +18,9 @@ Annak áttekintése, hogy miként lehet különböző kijelzőméretekhez a megf
 
 ==== Mit nevezünk alkalmazkodó képstílusnak?
 
-Az _alkalmazkodó képstílus_ tulajdonképpen nem más, mint a korábban meghatározott képstílusok összepárosítása adott töréspontokkal. Ez lehetővé teszi számunkra, hogy webhelyünk automatikusan létrehozza különböző méretváltozatait ugyanannak az egy képnek, így bármekkora felbontással rendelkező kijelzőről nézik meg oldalunkat, mindig az optimális (azaz se nem túl nagy vagy kicsi) méretben kapják meg őket. Ez azért nagyon hasznos, mert mobileszközökre a kisebb képernyők miatt amúgy is elég kisebb méretű változatait leküldeni egy fotónak, ami ezáltal kevesebb sávszélességet fogyaszt, így gyorsabban töltenek be oldalaink. Mindezt az alaprendszer _Responsive Image_ modulja biztosítja.
+Az _alkalmazkodó képstílus_ tulajdonképpen nem más, mint a korábban meghatározott képstílusok összepárosítása adott töréspontokkal. Ez lehetővé teszi számunkra, hogy webhelyünk automatikusan létrehozza ugyanannak a képnek a különböző méretváltozatait, így bármekkora felbontással rendelkező kijelzőn nézik meg oldalunkat, mindig az optimális (azaz nem túl nagy és nem túl kicsi) méretben kapják meg őket. Ez azért nagyon hasznos, mert mobileszközökre a kisebb képernyők miatt amúgy is elég egy fotó kisebb méretű változatait használni, ezáltal kisebb adatforgalommal jár, így gyorsabban töltenek be oldalaink. Mindezt az alaprendszer _Responsive Image_ modulja biztosítja.
 
-Töréspontnak azt a számszerű értéket nevezzük, amihez képest ha szélesebb vagy keskenyebb a képernyő vízszintes dimenziója, átvált a weboldal sminkje egy másik elrendezésbe. Éppen ezért ilyen rugalmas képstílusokat csak azoknál a sminkeknél tudunk használni, melyeknek vannak töréspontjaik beállítva.
+Töréspontnak azt a számszerű értéket nevezzük, amihez képest ha szélesebb vagy keskenyebb a képernyő vízszintes dimenziója, átvált a weboldal sminkje egy másik elrendezésbe. Éppen ezért ilyen rugalmas képstílusokat csak azoknál a sminkeknél tudunk használni, amelyeknek vannak beállított töréspontjaik.
 
 Ha viszont sikeresen felvettünk egy alkalmazkodó képstílust, akkor utána azt már kiválaszthatjuk a _Kép_ típusú mezők megjelenítési beállításai között. Ez lehetővé teszi, hogy a Drupal kihasználja a korszerű HTML5-ös _picture_ elemben rejlő lehetőségeket.
 
@@ -39,4 +39,4 @@ Ha viszont sikeresen felvettünk egy alkalmazkodó képstílust, akkor utána az
 
 *Közreműködők*
 
-E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsive images in Drupal 8] (azaz „Alkalmazkodó képek a Drupal 8-ban”) című szócikkéből vette át, melynek szerzői joga 2000-2017 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
+E témakör szövegét https://www.drupal.org/u/batigolix[Boris Doesborg] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsive images in Drupal 8] (azaz „Alkalmazkodó képek a Drupal 8-ban”) című szócikkéből vette át, melynek szerzői joga 2000–2017 között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

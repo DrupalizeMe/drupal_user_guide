@@ -1,58 +1,63 @@
 [[block-create-custom]]
 
-=== Creating A Custom Block
+=== Egy saját blokk létrehozása
 
 [role="summary"]
-How to create a custom block.
+Végigvesszük annak lépéseit, hogyan lehet egyéni, saját blokkot létrehozni.
 
-(((Block,creating)))
-(((Custom block,creating)))
+(((Blokk,létrehozás)))
+(((Egyéni blokk,létrehozás)))
 
-==== Goal
+==== Célkitűzés
 
-Create a block showing the hours and location of the farmers market.
+E témakör végére lesz egy saját definiált blokkunk, amiben a termelői piacunk nyitvatartási idejét és helyszínét tüntetjük fel.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 * <<block-concept>>
 * <<block-regions>>
 
-// ==== Site prerequisites
+//==== Webhely előfeltételei
 
-==== Steps
+==== Lépések
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_ > _Custom block library_ (_admin/structure/block/block-content_).
+. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Blokk elrendezés_ > _Egyéni blokkok könyvtára_ menüpontot, vagy írjuk be a címsorba az _admin/structure/block/block-content_) útvonalat.
 
-. Click _Add custom block_. The _Add custom block_ page appears.
+. Kattintsunk az _Egyéni blokk hozzáadása_ gombra. Megnyílik az ugyanilyen nevű oldal.
 
-. Fill in the fields as shown below.
+. Töltsünk ki minden mezőt a lent látható módon.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Block description |Name of the block shown to administrators |Hours and location block
-|Body |Content of the block when it is displayed |Open: Sundays, 9 AM to 2 PM, April to September<br />Location: Parking lot of Trust Bank, 1st & Union, downtown Anytown.
+| Mező neve | Magyarázat | Javasolt kitöltés
+| Blokk leírása | A csak az adminisztrátoroknak megjelenő összefoglalója a blokknak. | Helyszín és nyitvatartás blokk
+| Törzs | A blokk látogatóknak megjelenített tartalma. | Nyitva: vasárnap de. 9 órától du. 2 óráig április és szeptember között<br />Helyszín: Bárkifalva városközpontjában, a Bizalom Bank parkolójában.
 |================================
 +
 --
 // Block add page (block/add).
-image:images/block-create-custom-add-custom-block.png["Add a custom block", width="100%"]
+image:images/block-create-custom-add-custom-block.png["Egy egyéni blokk hozzáadása", width="100%"]
 --
 
-. Click _Save_. A message appears indicating the block has been saved.
+. Kattintsunk a _Mentés_ gombra. Megjelenik egy rendszerüzenet, ami tájékoztat a blokkunk elmentésének sikerességéről.
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
-* Edit the content of your custom block. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_ > _Custom block library_ (_admin/structure/block/block-content_). Find your block in the list and click _Edit_ to make changes.
+* A blokkunk tartalmának tetszőleges módosítása. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Blokk elrendezés_ > _Egyéni blokkok könyvtára_ menüpontot, vagy írjuk be a címsorba az _admin/structure/block/block-content_) útvonalat. Keressük meg a blokkunkat a listában, és a _Szerkesztés_ hivatkozásra kattintva írjuk át, amit változtatni szeretnénk.
 
-* Place the block you created in the sidebar. See <<block-place>> for details.
+* A most létrehozott blokkunk kihelyezése az oldalsávra. Ennek részleteit lásd a <<block-place>> témakörnél.
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
-==== Additional resources
+==== Videó
 
-https://www.drupal.org/docs/8/core/modules/block/overview[_Drupal.org_ community documentation page "Working with blocks (content in regions)"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/sI2wrbn3cPg[title="Egy saját blokk létrehozása"]
 
-*Attributions*
+==== Egyéb források
 
-Adapted by https://www.drupal.org/u/jredding[Jacob Redding] and https://www.drupal.org/u/batigolix[Boris Doesborg] from https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks (content in regions)], copyright 2000-2017 by the individual contributors to the https://www.drupal.org/documentation[Drupal Community Documentation].
+https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks (content in regions)] (azaz „Blokkok használata, tartalom a régiókban”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+
+*Közreműködők*
+
+E témakör szövegét https://www.drupal.org/u/jredding[Jacob Redding] és https://www.drupal.org/u/batigolix[Boris Doesborg] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks (content in regions] azaz „Blokkok használata, tartalom a régiókban”) című szócikkéből vették át és szerkesztették, melynek szerzői joga 2000–2017 között azok egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).

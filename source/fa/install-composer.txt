@@ -90,20 +90,6 @@ composer create-project drupal/drupal my_site_name
 composer config repositories.drupal composer https://packages.drupal.org/8
 ----
 
-. اگر کار شما هم اکنون تمام نشده است، محل قرارگیری پیشفرض افزونه‌ها و قالب‌ها را می‌توانید تغییر دهید. برای نمونه، معمولا می‌خواهید که افزونه‌های خارجی در بالاترین دایرکتوری از _modules_ بنام _contrib_ قرار گیرند، بجای محل پیشفرض _modules_. برای ایجاد این تغییر، فایل _composer.json_ را از محل  root دروپال ویرایش کنید. خط مرتبط با +"extra": {+ را یافته و اطلاعات زیر را به آن بیفزایید:
-+
-----
-"installer-paths": {
-    "modules/contrib/{$name}": ["type:drupal-module"],
-    "modules/custom/{$name}": ["type:drupal-custom-module"],
-    "profiles/contrib/{$name}": ["type:drupal-profile"],
-    "themes/contrib/{$name}": ["type:drupal-theme"],
-    "themes/custom/{$name}": ["type:drupal-custom-theme"],
-    "libraries/{$name}": ["type:drupal-library"],
-    "drush/{$name}": ["type:drupal-drush"]
-},
-----
-
 . هر زمان که قصد اضافه کردن یک افزونه یا قالب را دارید، نام کوتاه پروژه را مشخص کنید. این آخرین قسمت از نشانی صفحه پروژه است؛ برای نمونه افزونه Geofield در https://www.drupal.org/project/geofield دارای نام کوتاه +geofield+ است.
 
 . برای دانلود افزونه یا قالب خارجی، به همراه تمام وابستگی‌های آن، دستور زیر را در root دروپال اجرا کنید (با جایگزینی نام افزونه یا قالب با +geofield+):

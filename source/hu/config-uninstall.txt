@@ -1,83 +1,86 @@
 [[config-uninstall]]
 
-=== Uninstalling Unused Modules
+=== Nem használt modulok letiltása
 
 [role="summary"]
-How to uninstall modules to reduce overhead.
+A felesleg csökkentése webhelyünkön a használaton kívüli modulok kikapcsolásával.
 
-(((Module,uninstalling unused)))
-(((Uninstalling,unused modules)))
-(((Performance,improving)))
-(((Drush tool,using to uninstall module)))
+(((Modul,nem használtak törlése)))
+(((Törlés,nem használt modulok)))
+(((Teljesítmény,javítása)))
+(((Drush eszköz,modul törlése a használatával)))
 
-==== Goal
+==== Célkitűzés
 
-Uninstall the core Search and History modules, as well as the core Activity Tracker module if you installed it in <<config-install>>, to reduce overhead.
+Hogy optimalizáljuk webhelyünk működését, ebben a témakörben letiltjuk az alaprendszer _Search_, _History_ és – ha az előző témakörben engedélyeztük volna – _Activity tracker_ moduljait.
 
-==== Prerequisite knowledge
+==== Szükséges előismeretek
 
 <<understanding-modules>>
 
-==== Site prerequisites
+==== Webhely előfeltételei
 
-* You must have at least one unused module on your site that you want to uninstall, such as the core Search module.
+* A webhely legalább egy moduljának használaton kívül kell lennie, amin a letiltást kockázat nélkül kipróbálhatjuk.
 
-* If you want to use Drush to uninstall modules, Drush must be installed. See <<install-tools>>.
+* Ha szeretnénk Drush eszközt használni a modulok letiltásához, akkor azt telepíteni kell. Lásd: <<install-tools>>.
 
-==== Steps
+==== Lépések
 
-You can use the administrative interface or Drush to uninstall modules.
+E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfelületét használjuk webböngészőnkben, vagy pedig a Drush nevű eszközt parancssorban.
 
-===== Using the administrative interface
+===== Adminfelületen keresztül
 
-. In the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_ (_admin/modules/uninstall_) where you will find the list of modules that are ready to be uninstalled.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ > _Modul eltávolítása_ oldalra (vagy a címsorban adjuk meg az _admin/modules/uninstall_ útvonalat), ahol csak azokat a modulokat látjuk felsorolva, amelyek nem szolgálnak feltételként más modulok működéséhez, ezáltal készen állnak arra, hogy letiltsuk őket.
 
-. Check the boxes for the modules you are uninstalling (_Search_, _History_, and _Activity Tracker_). Click _Uninstall_ at the bottom of the page.
+. Jelöljük be a letiltani kívánt modulok (_Search_, _History_ és _Activity Tracker_) négyzeteit. Kattinsunk az _Eltávolítás_ gombra a lap alján.
 +
 --
 // Top part of admin/modules/uninstall, with Activity Tracker checked.
-image:images/config-uninstall_check-modules.png["Uninstalling module",width="100%"]
+image:images/config-uninstall_check-modules.png["Egy modul kikapcsolása",width="100%"]
 
 [NOTE]
 =================
-You cannot uninstall a module if it is required by some other module(s) and/or functionality. For example, the core File module is required by the core Text Editor, CKEditor, and Image modules. It can't be uninstalled unless you uninstall its dependent module(s) and functionality first. A module that cannot be uninstalled yet will have a disabled checkbox, restricting you from uninstalling it.
+Fontos megérteni, hogy addig nem lehet egy modult kikapcsolni, amíg valamely másik modul támaszkodik rá.  Például az alaprendszer _File_ modulját sok másik, például a _Text Editor_, _CKEditor_ és _Image_ modulok is igénylik. Érdemes ezért tehát e függőségi hierarchiában mindig „felülről lefelé” haladni, azaz a mások által nem igényelt modulok kikapcsolásával kezdeni. Nem kell aggódni, elrontani nem tudjuk: ha az általunk letiltani kívánt modul neve előtt a jelölőnégyzet inaktív a fentiek miatt, akkor ki sem tudjuk választani.
 =================
 --
 
-. Step 2 will prompt you to confirm the module uninstall request. Click _Uninstall_.
+. A következő, második lépésben meg kell erősítenünk szándékunkat. Bizonyos esetekben itt további információkat is közölnek a modulok. Kattintsunk az _Eltávolítás_ gombra.
 +
 --
 // Uninstall confirmation screen, after checking Activity Tracker, History,
 // and Search modules from admin/modules/uninstall.
-image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
+image:images/config-uninstall_confirmUninstall.png["Eltávolítás megerősítése",width="100%"]
 --
 
-===== Using Drush
+===== Drush használatával
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules in your site.
+. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 
-. Find the machine name of the module you want to uninstall, by expanding the information area for the module. For instance, the core Activity Tracker module's machine name is _tracker_.
+. Keressük ki a letiltani kívánt modult, majd nyissuk le a részletes információit tartalmazó dobozát. Itt megtaláljuk a modul programok által olvasható nevét. Például az előbb említett _Activity Tracker_ modulé „tracker”.
 
-. Run the following Drush command to uninstall the module:
+. Ennek ismeretében már le tudjuk futtatni a következő Drush-parancsot:
 +
 ----
 drush pm-uninstall tracker
 ----
 
-==== Expand your understanding
+==== Az ismeretek elmélyítése
 
 * <<install-tools>>
 
 * <<prevent-cache-clear>>
 
-* You can also uninstall the core Comment module by following these steps, but only after comment fields have been removed, which is a side effect of <<structure-content-type-delete>>.
+* Ha szeretnénk gyakorolni e témában, kipróbálhatjuk a szintén alaprendszeri _Comment_ modul eltávolítását is. Ehhez azonban előbb törölnünk kell a már létező hozzászólás mezőket onnan, ahol használatban vannak. Egy egész tartalomtípus törléséről a <<structure-content-type-delete>> részben lesz szó.
 
-//==== Related concepts
+//==== Kapcsolódó témák
 
-//==== Additional resources
+==== Videó
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hUonnNkeF6g[title="Nem használt modulok letiltása"]
 
-*Attributions*
+//==== Egyéb források
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan], and https://www.drupal.org/u/jojyja[Jojy Alphonso] at http://redcrackle.com[Red Crackle].
+*Közreműködők*
+
+Írta és szerkesztette: https://www.drupal.org/u/surendramohan[Surendra Mohan] és https://www.drupal.org/u/jojyja[Jojy Alphonso] (http://redcrackle.com[Red Crackle]). Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl] (https://www.drupal.org/brainsum[Brainsum]).
