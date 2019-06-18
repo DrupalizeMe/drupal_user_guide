@@ -1,0 +1,46 @@
+[[install-manual_video-script]]
+
+(Slide/Intro)
+Learn how to download the core software or a distribution from the web site.
+
+(Slide/Goal)
+By the end of this tutorial you should be able to download the core software or a distribution manually.
+
+(Slide/Prerequisites)
+Before you get started with this tutorial you'll want to make sure that you:
+
+- Are familiar with the concept of distributions
+- And know about the other methods available for downloading the core software
+
+Feel free to skip this topic if you are downloading using some other method. And check out the written version of this tutorial for links to additional information about either of these prerequisites.
+
+(Steps)
+
+Start by navigrating to _https://www.drupal.org_ in your Browser. From the homepage navigate to _Build_ > _Download & Extend_
+in the top-level menu.
+
+If you want to download just the core software, click the _Download Drupal zip_ or _download tar.gz_ link, and save the file to your local machine. I'll go ahead and do that now.
+(Download the files now)
+
+Alternatively, if you want to download a distribution, click the _Distributions_ icon or link, choose a distribution from the list, click through to its project page, and click the link to download the projects files at the bottom of the page.
+
+I'm going to stick with the just the core software.
+
+The next step is to find the files you downloaded and unpack them. Depending on your operating system this may vary a bit. And in some cases you might do this directly via your hosting platforms UI.
+
+I can un-compress the file by double clicking on it. Which will create a new directory. There's a terminal command included in the written version of this tutorial that you can use if you have command line access. Otherwise, you'll need to figure out your specific environment's process for unpacking compressed files.
+
+
+Once you've done that you can delete the compressed file if your unpacking method didn't already delete it.
+
+Finally, you'll need to rename, or move, the directory you just created, or reconfigure your web hosting, so that the directory name matches the directory your web hosting is configured to use for your site.
+
+You're now ready to proceed with installing the software.
+
+(Slide/Recap)
+In this tutorial we located and downloaded the core software on drupal.org. And then unpacked and prepared it to be installed.
+
+*Attributions*
+
+Written by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+at https://drupalize.me[Drupalize.Me]. Adopted from install-prepare.txt.
