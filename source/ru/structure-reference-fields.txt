@@ -1,58 +1,60 @@
 [[structure-reference-fields]]
 
-=== Concept: Reference Fields
+=== Концепция: Поле ссылка на сущность
 
 [role="summary"]
-Overview of reference fields and their commonly-used types.
+Обзор полей ссылки на сущность и их обычно используемые типы.
 
-(((Reference field,overview)))
-(((Reference field,content)))
-(((Reference field,taxonomy term)))
-(((Reference field,user)))
-(((Field,reference)))
-(((Field,content reference)))
-(((Field,taxonomy term reference)))
-(((Field,user reference)))
-(((Taxonomy term reference field,overview)))
-(((User reference field,overview)))
-(((Content reference field,overview)))
+(((Поле ссылка на сущность,обзор)))
+(((Поле ссылка на сущность,обзор)))
+(((Поле ссылка на сущность,термин таксономии)))
+(((Поле ссылка на сущность,пользователь)))
+(((Поле,связь)))
+(((Поле,ссылка на страницу материла)))
+(((Поле,ссылка на термин таксономии)))
+(((Поле,ссылка на пользователя)))
+(((Поле ссылка на термин таксономии,обзор)))
+(((Поле ссылка на пользователя,обзор)))
+(((Поле ссылка на материал,обзор)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<planning-data-types>>
 
-==== What is a reference field?
+==== Что такое ссылочное поле
 
-A _reference field_ is a field that represents a relationship between an entity
-and one or more other entities, which may belong to the same or different entity
-type. The three most commonly-used reference fields are:
+_Поле ссылка на сущность_ - это поле, которое представляет собой связь между
+сущностью и одной или несколькими другими сущностями, которые могут
+принадлежать к одному и тому же или разным типам сущностей. Наиболее часто
+используются три вида полей ссылок на сущность:
 
-Content reference::
-  A reference to a content item. For example, you might want to connect recipes
-  to the vendors who submitted them. You would set up a content reference field
-  called Submitted by referencing Vendor content items on the Recipe content
-  type.
+Ссылка на страницу материал::
+  Ссылка на страницу материла. Например, вам может понадобиться связать
+  рецепты с производителями, которые их прислали. Вы можете указать производителя
+  в поле "Добавлен"
+  типа материала Рецепт.
 
-Taxonomy term reference::
-  A reference to a taxonomy term. For example, you might want to connect recipes
-  to their ingredients. You would set up a taxonomy term reference field called
-  Ingredients on the Recipe content type. This reference field will point to the
-  vocabulary Ingredients.
+Ссылка на термин таксономии::
+  Например, вы можете связать рецепты к их ингредиентам. Вы можете создать поле
+  ссылки на таксономический термин под названием Ингредиенты в типе материала
+  Рецепт. В этом ссылочном поле будет указан словарь Ингредиенты.
 
-User reference::
-  A reference to a user account. For example, you might want to connect recipes
-  with their chefs. You would set up a user reference field called Chefs on the
-  Recipe content type.
+Ссылка на пользователя::
+  Ссылка на учетную запись пользователя. Например, можете связать рецепты блюд с
+  их шеф-поварами. Вы можете создать ссылку на пользователя
+  "Шеф-повар" в разделе "Тип содержимого рецепта".
 
-==== Related topics
+==== Сопутствующие темы
 
 <<structure-taxonomy>>
 
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Написано и отредактировано https://www.drupal.org/u/surendramohan[Surendra
+Mohan] и https://www.drupal.org/u/jojyja[Jojy Alphonso] из
 http://redcrackle.com[Red Crackle].
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
