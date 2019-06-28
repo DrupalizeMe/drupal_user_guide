@@ -1,23 +1,23 @@
 [[planning-data-types]]
-=== Concept: Content Entities and Fields
+=== Concept : entités de contenus et champs
 
 [role="summary"]
-Overview of content entities and fields.
+Vue d'ensemble des entités de contenu et des champs.
 
-(((Entity,overview)))
-(((Taxonomy term,overview)))
-(((Vocabulary,overview)))
-(((Content,entity type)))
-(((Entity type,overview)))
-(((Entity subtype,overview)))
-(((Block,entity type)))
-(((Comment entity type,overview)))
-(((Contact form entity type,overview)))
-(((Form entity type,overview)))
-(((Content entity type,overview)))
-(((Custom block,entity type)))
-(((Field,overview)))
-(((User profile entity type,overview)))
+(((Entité,vue d'ensemble)))
+(((Terme de taxonomie,vue d'ensemble)))
+(((Vocabulaire,vue d'ensemble)))
+(((Contenu,Type d'entité)))
+(((Type d'entité,vue d'ensemble)))
+(((Sous-type d'entité,vue d'ensemble)))
+(((Bloc,type d'entité)))
+(((Type d'entité commentaire,vue d'ensemble)))
+(((Type d'entité formulaire de contact,vue d'ensemble)))
+(((Type d'entité formulaire,vue d'ensemble)))
+(((Type d'entité contenu,vue d'ensemble)))
+(((Bloc personnalisé,type d'entité)))
+(((Champ,vue d'ensemble)))
+(((Type d'entité profil d'utilisateur,vue d'ensemble)))
 (((Module,Comment)))
 (((Module,Contact)))
 (((Module,Taxonomy)))
@@ -25,93 +25,100 @@ Overview of content entities and fields.
 (((Module,Node)))
 (((Module,Custom Block)))
 (((Module,File)))
-(((Comment module,entity type)))
-(((Contact module,entity type)))
-(((Custom block module,entity type)))
-(((Node module,entity type)))
-(((Taxonomy module,entity type)))
-(((User module,entity type)))
-(((File module,entity type)))
+(((Module Comment,type d'entité)))
+(((Module Contact,type d'entité)))
+(((Module Custom block,type d'entité)))
+(((Module Node,type d'entité)))
+(((Module Taxonomy,type d'entité)))
+(((Module User,type d'entité)))
+(((Module File,type d'entité)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<understanding-data>>
 * <<understanding-modules>>
 
-==== What is a content entity?
+==== Qu'est ce qu'une entité de contenu ?
 
-A _content entity_ (or more commonly, _entity_) is an item of content data,
-which can consist of text, HTML markup, images, attached files, and other data
-that is intended to be displayed to site visitors. Content entities can be
-defined by the core software or by modules.
+Une _entité de contenu_ (ou plus dimplement, _entité_) est un élément de données
+de contenu, qui peut contenir du texte, des balises HTML, des images, des
+fichiers attachés, et d'autres données, qui sont destinées à être affichées aux
+visiteurs du site. Les entités de contenu peuvent être définies par le cœur du
+logiciel ou par des modules.
 
-Content entities are grouped into _entity types_, which have different purposes
-and are displayed in very different ways on the site. Most entity
-types are also divided into _entity sub-types_, which are divisions within an
-entity type to allow for smaller variations in how the entities are used and
-displayed. Here is a table of some common content entity types:
+Les entités de contenu sont regroupées en _types d'entités_, qui peuvent avoir
+différents objectifs et sont affichés de manières vraiment différentes sur le
+site. La plupart des types d'entités sont aussi divisées en _sous-types
+d'entités_, qui permettent de petites variations sur l'utilisation des entités
+et leur affichage. Voici un tableau des types d'entité de contenu standards :
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Entity type |Entity sub-type |Defining Module |Main uses |Examples
+|Type d'entité |Sous-type d'entité |Module fournisseur |Usages principaux |Exemples
 
-|Content item |Content type |Node module
-  |Content intended to be the main page area for pages on the site
-  |In the farmers market site example, you might have content types for
-   basic pages, vendor pages, and recipe pages.
+|Élément de contenu |Type de contenu |Module Node
+  |Contenu destiné à être la zone principale pour les pages du site
+  | 3+| *Exemple* : dans l'exemple du site du marché fermier, vous devriez avoir
+  des types de contenus pages basiques, pages vendeurs, pages recettes.
 
-|Comment |Comment type |Comment module
-  |Commentary added to content entities (typically to Content item entities)
-  |On a blog site, blog posts might have comments. They are not needed in the
-   farmers market site example.
+|Commentaire |Type de commentaire |Module Comment
+  |Commentaire ajouté aux entités de contenus
+  | 3+| *Exemple* : sur un blog, les articles pourraient avoir des commentaires.
+  Ils ne sont pas utiles sur l'exemple du site du marché fermier.
 
-|User profile |(none) |User module
-  |Data related to a person with a user account (login access) on the site
-  |Every site has at least basic user profiles with user names and email
-   addresses; social networking sites may have more complex user profiles with
-   more information.
+|Profil Utilisateur |(aucun) |Module User
+  |Données liées à une personne avec un compte utilisateur (accès identifié) sur
+  le site
+  | 3+| *Exemple* : chaque site a au moins un profil utilisateur basique avec un
+  identifiant et une adresse électronique ; les sites de réseaux sociaux peuvent
+  avoir des profils utilisateurs complexes avec plus d'informations.
 
-|Custom block |Block type |Custom Block module
-  |Text and images in smaller chunks, often displayed in the site header,
-   footer, or sidebar
-  |In the farmers market site example, you might put the hours and location in
-   a sidebar block.
+|Bloc personnalisé |Type de Bloc |Module Custom Block
+  |Texte et images dans un petit espace, souvent affiché dans le bandeau du site,
+  le pied-de-page ou la barre latérale
+  | 3+| *Exemple* : dans le site d'exemple du marché fermier, vous pouvez placer
+  les horaires et la localisation dans un bloc dans la barre latérale.
 
-|Taxonomy term |Vocabulary |Taxonomy module
-  |Used to classify other types of content
-  |In the farmers market site example, you might classify Recipe content with an
-   Ingredients taxonomy vocabulary, with taxonomy terms like Carrots and
-   Tomatoes. In a blogging site, blog posts might be classified using a Tags
-   vocabulary, and perhaps also a Categories vocabulary.
+|Terme de Taxonomie|Vocabulaire |Module Taxonomy
+  |Utilisé pour classer d'autres types de contenus
+  | 3+| *Exemple* : dans le site d'exemple du marché fermier, vous pouvez
+  classer les contenus Recettes avec un vocabulaire de taxonomie Ingrédients,
+  avec des termes de taxonomies comme Carottes et Tomates.  Dans un blog, les
+  articles peuvent être classés en utilisant le vocabulaire mots clés, et peut
+  être un vocabulaire Catégories.
 
-|File |(none) |File module
-  |An image or attachment file that is tracked and managed by the site, often
-   attached to other types of content
-  |In the farmers market site example, both Recipe and Vendor pages might have
-   image attachments, which would (behind the scenes) be managed as File
-   entities by the site
+|Fichier |(aucun) |Module File
+  |Une image ou un fichier attaché qui sont suivis et gérés par le site, souvent
+  attachés à un autre type de contenu.
+  | 3+| *Exemple* : dans le site d'exemple fermier, les pages des recettes et
+  des vendeurs pourraient avoir des images attachées, qui seraient gérées
+  comme des entités de type fichier par le site.
 
-|Contact form |Form type |Contact module
-  |A form that lets site visitors contact site owners
-  |A contact form is needed in the farmers market site example
+|Formulaire de Contact |Type de Formulaire |Module Contact
+  |Un formulaire qui permet aux visiteurs du site de contacter le propriétaire
+  du site
+  | 3+| *Exemple* : un formulaire de contact est nécessaire dans le site
+  d'exemple du marché fermier.
 
 |=============================================
 
-==== What is a field?
+==== Qu'est ce qu'un champ ?
 
-Within entity items, the data is stored in individual _fields_, each of which
-holds one type of data, such as formatted or plain text, images or other files,
-or dates. Field types can be defined by the core software or by modules.
+A l'intérieur des entités, les données sont stockées dans des _champs_
+individuels, chacun contenant un type de donnée, comme du texte formaté ou brut,
+des images ou autres fichiers, ou des dates. Les types de champs peuvent être
+définis par le cœur du logiciel ou par des modules.
 
-Fields can be added by an administrator on entity sub-types, so that all
-entity items of a given entity sub-type have the same collection of fields
-available. For example, the Vendor content type in the farmers market example
-might have fields for the vendor name, a logo image, website URL, and
-description, whereas the _Basic page_ content type might only have fields for
-the title and page body. When you create or edit entity items, you are
-specifying the values for the fields on the entity item.
+Les champs peuvent être ajoutées par un administrateur aux sous-types d'entité,
+de sorte que toutes les entités d'un sous-type d'entité donné aient le même
+ensemble de champs disponibles. Par exemple, le type de contenu Vendeur de
+l'exemple du marché fermier pourrait comporter des champs pour le nom du
+vendeur, un logo, l'adresse d'un site web, et une description, alors que le type
+de contenu _pages basiques_ pourrait n'avoir des champs que pour le titre et le
+corps de la page. Lorsque vous créez ou modifiez une entité, vous spécifiez
+les valeurs pour les champs de cette entité.
 
-==== Related topics
+==== Sujets liés
 
 * <<planning-structure>>
 * <<content-create>>
@@ -120,10 +127,12 @@ specifying the values for the fields on the entity item.
 * <<user-concept>>
 * <<block-concept>>
 
-// ==== Additional resources
+// ==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
-and https://www.drupal.org/u/gdunham[Grant Dunham].
+Écrit et modifié par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+et https://www.drupal.org/u/gdunham[Grant Dunham].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
