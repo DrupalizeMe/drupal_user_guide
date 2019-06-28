@@ -1,58 +1,66 @@
 [[structure-widgets]]
 
-=== Concept: Forms and Widgets
+=== Concept : formulaires et widgets
 
 [role="summary"]
-Overview of forms and widgets.
+Vue d'ensemble des formulaires et des widgets.
 
-(((Content editing form,overview)))
-(((Widget,overview)))
-(((Field,overview)))
-(((Form,overview)))
+(((Formulaire de modification de contenu,vue d'ensemble)))
+(((Widget,vue d'ensemble)))
+(((Champ,vue d'ensemble)))
+(((Formulaire,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<planning-data-types>>
 
-==== What are forms and widgets?
+==== Que sont les formulaires et les widgets ?
 
-The content management system software that your site is running allows
-administrators to edit content and configure settings online, using various web
-_forms_. In particular, _content editing forms_ are used to edit your site's
-content, and they are configurable by administrators; settings configuration
-forms are provided by modules and cannot themselves be configured.
+Le logiciel de gestion de contenu que votre site utilise permet aux
+administrateurs de modifier le contenu et configurer des paramètres en ligne, en
+utilisant de nombreux _formulaires_ web. En particulier, les _formulaires de
+modification de contenu_ sont utilisés pour modifier le contenu de votre site,
+et ils sont configurables par les administrateurs ; les formulaires de
+configuration sont fournis par les modules et ne peuvent pas eux-même être
+configurés.
 
-The data in your site's content is stored in one or more fields that are
-attached to the content type and/or sub-type. When you configure the content
-editing form for each content sub-type, you can:
+Les données de contenu de votre site sont stockées dans un ou plusieurs champs
+qui sont attachés au type de contenu et/ou au sous-type. Lorsque vous configurez
+le formulaire de modification du contenu pour chaque sous-type de contenu, vous
+pouvez :
 
-* Select a _widget_ for each field. A widget defines the method used to enter
-the data for the field. For example, a taxonomy term can be chosen using
-an autocomplete field, a select list, or a tags-style field that lets editors
-add new tags automatically.
+* Sélectionner un _widget_ pour chaque champ. Un widget définit la méthode de
+saisie des données d'un champ. Par exemple, un terme de taxonomie peut être
+choisi en utilisant un champ auto-complétion, une liste de sélection ou un champ
+de style mots clés qui permet aux éditeurs d'ajouter directement de nouveaux
+mots clés.
 
-* Configure widget settings. For example, you can choose the size of a
-plain-text entry field.
+* Configurer les paramètres des widgets. Par exemple, vous pouvez choisir
+la taille d'un champ de saisie de texte brut.
 
-* Hide one or more fields from the editing form.
+* Masquer un ou plusieurs champs du formulaire d'édition.
 
-* Reorder the fields.
+* Réordonner les champs.
 
-In principle, you can also have multiple content editing forms available for
-each content sub-type. This feature is rarely used, however; the only exception
-in common use is for the user profile fields: you can use different forms for
-user registration and user editing. For example, you might have a limited set of
-fields shown when users first register on the site, and more fields shown later
-on when they edit their profiles.
+En principe, vous pouvez aussi avoir plusieurs formulaires d'édition disponibles
+pour chaque sous-type de contenu. Cette fonctionnalité est rarement utilisée,
+cependant ; la seule exception est l'usage courant pour les champs du profil
+utilisateur : vous pouvez utiliser différents formulaires pour l'enregistrement
+d'un utilisateur et la modification d'un compte utilisateur. Par exemple, vous
+pourriez avoir un ensemble de champs limité de champs affichés lorsque les
+utilisateurs s'inscrivent sur le site, et plus de champs affichés plus tard
+lorsqu'ils modifient leurs profils.
 
-==== Related topics
+==== Sujets liés
 
 * <<structure-form-editing>>
 * <<structure-view-modes>>
 
-//==== Additional resources
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
