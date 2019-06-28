@@ -1,118 +1,128 @@
 [[config-theme]]
 
-=== Configuring the Theme
+=== Configurer le thème
 
 [role="summary"]
-How to edit a theme's settings to update the color scheme and add a logo.
+Comment modifier les paramètres du thème pour mettre à jour le schéma de
+couleurs et ajouter un logo.
 
-(((Theme,configuring)))
-(((Bartik theme,configuring)))
-(((Color scheme,configuring)))
-(((Logo image,configuring)))
+(((Thème,configurer)))
+(((Thème Bartik,configurer)))
+(((Color scheme,configurer)))
+(((Image du logo,configurer)))
 
-==== Goal
+==== Objectif
 
-Edit the settings of the default core Bartik theme to change the color scheme
-and to add a logo.
+Modifier les paramètres du thème du cœur par défaut Bartik pour changer le
+schéma de couleurs et ajouter un logo.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<understanding-themes>>
 
-//==== Site prerequisites
+//==== Pré-requis du site
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Appearance_
+. Dans le menu d'administration _Gérer_, naviguer dans _Apparence_
 (_admin/appearance_).
 
-. Under _Installed Themes_, you will find Bartik listed as your default
-theme. Under _Bartik (default theme)_, click _Settings_.
+. Sous _Thèmes installés_, vous trouverez Bartik listé comme votre thème
+par défaut. Sous _Bartik (thème par défaut)_, cliquer sur _Paramètres_.
 +
 --
 // Bartik section of admin/appearance.
-image:images/config-theme_bartik_settings.png["Default theme, Bartik",width="100%"]
+image:images/config-theme_bartik_settings.png["Thème par défaut, Bartik",width="100%"]
 --
 
-. Under _Color scheme_, click inside each color build box and type the proper
-color codes you would like to add. For example, use the
-following colors:
+. Sous _Schéma de couleurs_, cliquer à l'intérieur de chaque boîte de couleur et
+taper les codes couleurs que vous voulez ajouter. Par exemple, utiliser les
+couleurs suivantes :
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Area | Color
-|Header background top| #7db84a (green)
-|Header background bottom| #2a3524 (dark green)
-|Main background| #ffffff (white)
-|Sidebar background| #f8bc65 (light orange)
-|Sidebar borders| #e96b3c (orange)
-|Footer background| #2a3524 (dark green)
-|Title and slogan| #ffffff (white)
-|Text color| #000000 (black)
-|Link color| #2a3524 (dark green)
+|Zone | Couleur
+|Fond d'écran du haut de l'en-tête| #7db84a (vert)
+|Fond d'écran du bas de l'ent-ête| #2a3524 (vert foncé)
+|Arrière-plan principal| #ffffff (blanc)
+|Arrière-plan de la barre latérale| #f8bc65 (orange léger)
+|Bordures de la barre latérale| #e96b3c (orange)
+|Arrière-plan du pied de page| #2a3524 (vert foncé)
+|Titre et slogan| #ffffff (blanc)
+|Couleur du texte| #000000 (noir)
+|Couleur des liens| #2a3524 (vert foncé)
 |================================
 +
-Note: You can also use the color wheel on the right to select colors of your
-choice. The web color codes will be added for you.
+Note : Vous pouvez aussi utiliser la roue de couleurs sur la droite pour
+sélectionner les couleurs de votre choix. Les codes couleurs web seront ajoutés
+pour vous.
 +
 --
 // Color settings section of admin/appearance/settings/bartik.
-image:images/config-theme_color_scheme.png["Updated color specifications in the core Bartik theme",width="100%"]
+image:images/config-theme_color_scheme.png["Spécifications des couleurs mises à
+jour pour le thème Bartik",width="100%"]
 --
 
-. Under _Logo Image Settings_, uncheck _Use the default logo supplied by the
-theme_.
+. Sous _Image du logo_, décocher _Utiliser le logo fourni par le thème_.
 +
 --
 // Logo upload section of admin/appearance/settings/bartik.
 image:images/config-theme_logo_upload.png["New logo in core Bartik theme settings"]
 --
 
-. Under _Upload logo image_, locate a logo file and upload it to your
-site. Note: You can also set a universal logo for all themes under
-_Appearance_ > _Settings_ (_admin/appearance/settings_). A custom logo for your
-theme will override the universal logo.
+. Sous _Envoyer le logo_, trouver un fichier de logo et le télécharger sur votre
+site. Note : Vous pouvez aussi définir un logo universel pour tous les thèmes
+dans _Apparence_ > _Paramètres_ (_admin/appearance/settings_). Un logo
+personnalisé pour votre thème surchargera le logo universel.
 +
-Once you have selected the file you would like to upload, you will see its
-filename next to the _Choose File_ button.
+Une fois sélectionné le fichier que vous voudriez transférer, vous verrez le nom
+du fichier à côté du bouton _Choisir un fichier_ ou _Naviguer_ de votre
+navigateur.
 
-. In order to save your changes and see the updated colors and logo on your
-site, click _Save configuration_ at the bottom of the page.
+. Afin d'enregistrer vos changements et voir les couleurs mises à jour et le
+logo sur votre site, cliquer sur _Enregistrer la configuration_ en bas de page.
 +
-Note: Under _Color scheme_, there is a _Preview_ section that displays a sample
-of how your website will look with the new settings.
+Note : Sous _Schéma de couleurs_, il y a une section _Aperçu_ qui montre un
+exemple de ce à quoi votre site ressemblera avec les nouveaux paramètres.
 +
 --
 // Preview section of admin/appearance/settings/bartik.
 image:images/config-theme_color_scheme_preview.png["core Bartik theme settings preview",width="100%"]
 --
 
-. Click _Return to site_ in the toolbar to verify that you have updated the
-core Bartik theme settings for your website.
+. Cliquer sur _Retour au site_ dans la barre d'outils pour vérifier que vous avez
+mis à jour les paramètres du thème du cœur Bartik pour votre site.
 +
 --
 // Home page after theme settings are finished.
 image:images/config-theme_final_result.png["Final result of editing the core Bartik theme settings - colors and logo",width="100%"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 * <<extend-theme-find>>
 
 * <<extend-theme-install>>
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Si vous ne voyez pas les effets des modifications sur votre site, vous
+pourriez devoir vider les caches. Voir <<prevent-cache-clear>>.
 
 
-//==== Related concepts
+//==== Concepts liés
 
-//==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CEi3i1YGOs0[title="Configuring the Theme"]
+
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel],
-https://www.drupal.org/u/mndonx[Amanda Luker] at
-https://www.advomatic.com/[Advomatic], and
+Ecrit et modifié par https://www.drupal.org/u/AnnGreazel[Ann Greazel],
+https://www.drupal.org/u/mndonx[Amanda Luker] de
+https://www.advomatic.com/[Advomatic], et
 https://www.drupal.org/u/jerseycheese[Jack Haas].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
