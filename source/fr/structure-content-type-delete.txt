@@ -1,62 +1,72 @@
 [[structure-content-type-delete]]
 
-=== Deleting a Content Type
+=== Supprimer un type de contenu
 
 [role="summary"]
-How to delete a content type that is not required for the site.
+Comment supprimer un type de contenu qui n'est pas nécessaire pour le site.
 
-(((Content type,deleting)))
+(((Type de contenu,supprimer)))
 
-==== Goal
+==== Objectif
 
-Delete the unneeded content type _Article_.
+Supprimer le type de contenu non nécessaire _Article_.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<config-overview>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The _Article_ content type must exist. It is created on your site when you
-install with the core Standard installation profile.
+Le type de contenu _Article_ doit exister. Il est créé sur votre site lorsque
+vous l'installez avec le profil d'installation Standard du cœur.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). The _Content types_ page appears.
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Types de
+contenu_ (_admin/structure/types_). La page des types de contenu apparaît.
 
-. Click _Delete_ in the _Operations_ dropdown button for the _Article_ content
-type.
+. Cliquer sur le bouton _Supprimer_ dans la liste des _Opérations_ pour le type
+de contenu _Article_.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
 // for Article content type expanded.
-image:images/structure-content-type-delete-dropdown.png["Article delete dropdown",width="100%"]
+image:images/structure-content-type-delete-dropdown.png["Bouton déroulant
+permettant de supprimer le type de contenu article",width="100%"]
 --
 
-. A confirmation page is displayed. Click _Delete_.
+. Une page de confirmation s'affiche. Cliquer sur _Supprimer_.
 +
 --
 // Confirmation page for deleting Article content type.
-image:images/structure-content-type-delete-confirmation.png["Article delete confirmation page",width="100%"]
+image:images/structure-content-type-delete-confirmation.png["Page de
+confirmation de la suppression du type de contenu article",width="100%"]
 --
 
-. The _Content types_ page appears with a confirmation message saying that the
-content type has been deleted:
+. La page des _types de contenu_ apparaît avec un message de confirmation disant
+que le type de contenu a été supprimé :
 +
 --
 // Confirmation message after deleting Article content type.
-image:images/structure-content-type-delete-confirm.png["Article delete confirmation message"]
+image:images/structure-content-type-delete-confirm.png["Message de confirmation
+de la suppression du type de contenu article"]
 --
 
-//==== Expand your understanding
+//==== Améliorer votre compréhension
 
-// ==== Related concepts
+// ==== Concepts liés
 
-//==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Deleting a Content Type"]
+
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi]
-and https://www.drupal.org/u/batigolix[Boris Doesborg].
+Ecrit et modifié par https://www.drupal.org/u/sree[Sree Veturi]
+et https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
