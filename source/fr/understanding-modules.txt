@@ -1,21 +1,22 @@
 [[understanding-modules]]
-=== Concept: Modules
+=== Concept : modules
 
 [role="summary"]
-Overview of modules and the functionality they can be used for.
+Vue d'ensemble des modules et des fonctionnalités pour lesquelles ils peuvent
+être utilisés.
 
-(((Module,overview)))
-(((Contributed module,overview)))
-(((Core module,overview)))
-(((Field module,overview)))
-(((Field UI module,overview)))
-(((Menu UI module,overview)))
-(((Node module,overview)))
-(((User module,overview)))
-(((Views module,overview)))
-(((Views UI module,overview)))
-(((Module,core)))
-(((Module,contributed)))
+(((Module,vue d'ensemble)))
+(((Module contribué,vue d'ensemble)))
+(((Module du cœur (core),vue d'ensemble)))
+(((Module Field,vue d'ensemble)))
+(((Module Field UI,vue d'ensemble)))
+(((Module Menu UI,vue d'ensemble)))
+(((Module Node,vue d'ensemble)))
+(((Module User,vue d'ensemble)))
+(((Module Views,vue d'ensemble)))
+(((Module Views UI,vue d'ensemble)))
+(((Module,cœur (core))))
+(((Module,contribué)))
 (((Module,Field)))
 (((Module,Field UI)))
 (((Module,Menu UI)))
@@ -24,37 +25,38 @@ Overview of modules and the functionality they can be used for.
 (((Module,Views)))
 (((Module,Views UI)))
 
-==== Prerequisite knowledge
+==== Connaissance requises
 
 <<understanding-drupal>>
 
-==== What is a module?
+==== Qu'est ce qu'un module ?
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site
-features and adds functionality. You can turn the features and functionality on
-by _installing_ the module, and you can turn it off by _uninstalling_ the
-module; before uninstalling, you may need to remove data and configuration
-related to the feature or functionality. Each module that is installed adds to
-the time needed to generate pages on your site, so it is a good idea to
-uninstall modules that are not needed.
+Un module est un ensemble de fichiers PHP, Javascript et/ou CSS qui étendent les
+fonctionnalités du site et ajoutent des fonctionnalités. Vous pouvez activer les
+fonctionnalités en _installant_ le module, et vous pouvez les désactiver en
+_désinstallant_ le module ; cependant, avant de le désinstaller, vous pourriez
+avoir besoin de supprimer les données et la configuration en lien avec le
+module. Chaque module qui est installé ajoute du temps nécessaire pour générer
+les pages de votre site, donc une bonne idée est de désinstaller les modules qui
+ne sont pas nécessaires.
 
-The core download provides modules for functionality such as:
+Le téléchargement du cœur fournit des modules avec des fonctionnalités comme :
 
-* Managing user accounts (the core User module)
+* Gestion des comptes utilisateur (le module du cœur User)
 
-* Managing basic content (the core Node module) and fields (the core Field and
-Field UI modules; there are also core modules providing field types)
+* Gestion basique du contenu (le module du cœur Node) et les champs (les modules
+du cœur Field et Field UI ; il y a aussi des modules du cœur qui fournissent des
+types de champs)
 
-* Managing navigation menus (the core Menu UI module)
+* Gestion des menus de navigation (le module du cœur Menu UI)
 
-* Making lists, grids, and blocks from existing content (the core Views and
-Views UI modules)
+* Faire des listes, des grilles et des blocs pour les contenus existants (les
+modules du cœur Views et Views UI)
 
-You can download additional _contributed modules_ from the
-https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], or create your own
-_custom modules_.
+Vous pouvez télécharger des _modules contribués_ supplémentaires depuis
+https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], ou créer vos propres _modules personnalisés_.
 
-==== Related topics
+==== Sujets liés
 
 * <<understanding-themes>>
 * <<understanding-distributions>>
@@ -64,11 +66,13 @@ _custom modules_.
 * <<security-concept>>
 * <<security-update-module>>
 
-==== Additional resources
+==== Pour aller plus loin
 
-https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
-
+https://www.drupal.org/developing/modules[_Drupal.org_ page de la documentation communautaire "Module developer's guide"]
 
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky],
+https://www.drupal.org/u/duaelfr[Edouard Cunibil] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
