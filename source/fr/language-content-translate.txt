@@ -1,83 +1,92 @@
 [[language-content-translate]]
 
-=== Translating Content
+=== Traduction de contenu
 
 [role="summary"]
-How to translate a page into another language.
+Comment traduire une page dans une autre langue.
 
-(((Content,translating)))
-(((Translating,content)))
+(((Contenu,traduction)))
+(((Traduction,contenu)))
 
-==== Goal
+=== Objectif
 
-Translate the home page to Spanish.
+Traduire la page d'accueil en espagnol.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<language-concept>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* The Home content item must exist. See <<content-create>>.
+* L'élément de contenu Accueil doit exister. Consulter <<content-create>>.
 
-* The core Content Translation module must be installed, and your site must
-have at least two languages. See <<language-add>>.
+* Le module du cœur Content Translation doit être installé et votre site doit
+avoir au moins deux langues. Consulter <<language-add>>.
 
-* The _Basic page_ content type must be configured to be translatable. See
-<<language-content-config>>.
+* Le type de contenu _Page de base_ doit être configuré pour être traduisible.
+Consulter <<language-content-config>>.
 
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Dans le menu d'administration _Gérer_, naviguer vers _Contenu_
+(_admin/content_).
 
-. Locate the home page. You can search for it by entering "Home" in the title
-field.
+. Localiser la page d'accueil. Saisir "Accueil" dans le champ titre pour trouver
+cette page.
 
-. Select _Translate_ from the dropdown button in the row of the Home content
-item. The page _Translations of Home_ appears.
+. Sélectionner _Traduire_ dans le bouton déroulant de la ligne du contenu
+Accueil. La page _Traductions d'Accueil_ s'affiche.
 
-. Click _Add_ in the row _Spanish_.
+. Cliquer _Insérer_ dans la ligne _Espagnol_.
 +
 --
-// Screen shot of the translations page for the Home page content item.
-image:images/language-content-translate-add.png["Adding a content translation",width="100%"]
+// Capture d'écran de la page traductions pour l'instance contenu page Accueil.
+image:images/language-content-translate-add.png["Insertion d'une traduction de contenu",width="100%"]
 --
 
-. Note that the user interface has switched to Spanish. To switch it back to
-English, remove the first instance of _es_ in the browser's URL. For
-example, if your URL looks like _example.com/es/node/5/translations/add/en/es_,
-remove the _es_ that comes immediately after _example.com_.
+. Remarquer que l'interface utilisateur est passée en espagnol. Pour repasser en
+français, suprimer la première occurrence de _es_ dans l'URL du navigateur. Par
+exemple, si votre URL ressemble à
+_example.com/es/node/5/translations/add/en/es_, suprimer le _es_ qui suit
+_example.com_.
 
-. Fill in the fields as shown below. You will have to click and expand _URL path
-settings_ on the right to provide the value for _URL alias_.
+. Remplir les champs comme suit ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation| Value
-|Title | Translated title of the page | Página principal
-|Body | Translated body of the page |
+|Nom de champ | Explication| Valeur
+|Titre | Titre de page traduit | Página principal
+|Corps | Corps de la page traduit |
 Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio!
 Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre
 Lugar: parking del Banco Trust número 1. En el centro de la ciudad
-|URL path settings > URL alias | Translated address of the webpage | pagina-principal
+|paramètres chemin URL > alias URL | adresse traduite de la page web | pagina-principal
 |================================
 
-. Click _Save and keep published (this translation)_.
+. Cliquer sur _Enregistrer et publier (cette traduction)_.
 
-. Go to your site's home page to view the newly translated page.
+. Aller à la page accueil de votre site pour visualiser la page qui vient d'être
+traduite.
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-* Follow the steps above to translate more content on your site.
+* Suivre les étapes ci-dessus pour traduire d'autres contenus sur votre site.
 
 * <<language-config-translate>>
 
-// ==== Related concepts
+// ==== Concepts associés
 
-// ==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TOalcUYD5zM[title="Translating Content"]
+
+// ==== Ressources suplémentaires
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Écrit par https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/onewomanbiz[Lydie Parisot] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
