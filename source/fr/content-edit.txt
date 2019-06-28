@@ -1,83 +1,95 @@
 [[content-edit]]
-=== Editing a Content Item
+=== Modifier un élément de contenu
 
 [role="summary"]
-How to edit a content item.
+Comment modifier un élément de contenu.
 
-(((Content,editing)))
-(((Content,finding)))
-(((Editing content)))
+(((Contenu,modifier)))
+(((Contenu,trouver)))
+(((Modifier contenu)))
 
-==== Goal
+==== Objectif
 
-Update the hours on the Home page content item.
+Mettre à jour les horaires de l'élément de contenu _Page d'accueil_.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<content-create>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-A content item for the Home page must exist. See <<content-create>>.
+Un élément de contenu pour la Page d'accueil doit exister. Voir
+<<content-create>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Dans le menu d'administration _Gérer_, aller à _Contenu_ (_admin/content_).
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use the _Type_, _Title_, or other filters to locate the content item.
+. Si l'élément de contenu que vous voulez modifier a été mis à jour ou créé
+récemment, il devrait apparaître en haut de la liste de contenus sur cette page.
+Sinon, vous pouvez utiliser le filtre _Type_, _Titre, ou autre filtre pour
+trouver l'élément de contenu.
 +
 --
 // Content list on admin/content, with filters above.
-image:images/content-edit-admin-content.png["Content administration page",width="100%"]
+image:images/content-edit-admin-content.png["Page d'administration du contenu",width="100%"]
 --
 
-. Click _Edit_ in the row of the content item you want to edit (Home), to
-open the content editing form. Update the opening hours in the _Body_ field. See
-<<content-create>> for an explanation of the fields and a screenshot.
+. Cliquer sur _Modifier_ sur la ligne de l'élément de contenu que vous voulez
+modifier (Accueil), poour ouvrir le formulaire de modification du contenu.
+Mettre à jour les horaires d'ouverture dans le champs _Corps_. Voir
+<<content-create>> pour une explication sur les champs et une capture d'écran.
 
-. Check _Create new revision_ in the box on the right, if it is not already
-checked, and enter a _Revision log message_ explaining what changes you are
-making (for example, you might enter "Updated opening hours"). This text
-will appear in the revision log for the page.
+. Cocher la case _Créer une nouvelle révision_ sur la droite, si elle n'est pas
+déjà cochée, et saisir un _Message du journal de révision_ expliquant les
+modifications en cours (par exemple, vous pouvez entrer "Mise à jour des
+horaires d'ouvertures"). Ce texte apparaîtra dans les messages de révision de la
+page.
 +
 --
 // Revision area of the content edit page.
-image:images/content-edit-revision.png["Revision information section of the content edit page"]
+image:images/content-edit-revision.png["Section des messages de révision de la
+page de modification du contenu"]
 --
 
-. Click _Save and keep published_ to save your changes.
+. Cliquer sur _Enregistrer_ pour enregistrer vos modifications.
 
-. You will be redirected back to the _Content_ administrative page, and there
-should be a message showing that the content item was updated.
+. Vous serez redirigé(e) vers la page d'administration du contenu, et il devrait
+s'afficher un message indiquant que le contenu a été mis à jour.
 +
 --
 // Updated content message.
-image:images/content-edit-message.png["Updated content message"]
+image:images/content-edit-message.png["Message de contenu mis à jour"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-As an alternative to the first two steps above, you can also reach the
-content edit form as follows:
+En guise d'alternative à ces deux étapes, vous pouvez aussi accéder au
+formulaire de modification du contenu comme suit :
 
-. Starting from your site's home page, use the site's navigation menus to locate
-the page where the content you want to edit is displayed to visitors.
+. En partant de la page d'accueil du site, utiliser les menus de navigation du
+site pour accéder à la page où se trouve le contenu que vous souhaitez modifier.
 
-. Most themes will display an _Edit_ link or tab near the top of that page to
-people with permission to edit the page; clicking the link will take you to
-the full content edit form.
+. La plupart des thèmes affichent un lien _Modifier_ ou un onglet en haut de
+page pour les personnes ayant le droit de modifier la page ; en cliquant sur le
+lien vous accéderez au formulaire de modification du contenu.
 
-. You could also use the in-place editor (refer to <<content-in-place-edit>>)
-from this page.
+. Vous pourriez également utiliser l'éditeur intégré (voir le
+<<content-in-place-edit>>) depuis cette page.
 
-//==== Related concepts
+//==== Concepts liés
 
-//==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TAFZMcuOqG0[title="Editing a Content Item"]
+
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/chris-dart[Chris Dart]
+et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
