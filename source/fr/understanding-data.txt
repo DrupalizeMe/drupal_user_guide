@@ -1,46 +1,47 @@
 [[understanding-data]]
-=== Concept: Types of Data
+=== Concept : types de données
 
 [role="summary"]
-Overview of common types of data used in a site.
+Aperçu des types de données communément utilisés dans un site.
 
-(((Data type,overview)))
-(((Data type,configuration)))
-(((Data type,content)))
-(((Data type,state)))
-(((Data type,session)))
-(((Configuration,as a type of data)))
-(((Content,as a type of data)))
-(((State,as a type of data)))
-(((Session,as a type of data)))
+(((Type de données,vue d'ensemble)))
+(((Type de données,configuration)))
+(((Type de données,contenu)))
+(((Type de données,état)))
+(((Type de données,session)))
+(((Configuration,en tant que type de données)))
+(((Contenu,en tant que type de données)))
+(((État,en tant que type de données)))
+(((Session,en tant que type de données)))
 
 
 //==== Prerequisite knowledge
 
-==== What are the types of data?
+==== Quels sont les types de données ?
 
-The data and information on your site is divided up into four types, which are
-edited, translated, and stored differently. These four types are:
+Les données et informations de votre site sont divisées en quatre types, qui
+sont modifiés, traduits et stockés différemment. Ces quatre types sont :
 
-Content::
-  Information (text, images, etc.) meant to be displayed to site visitors. This
-  type of information tends to be relatively permanent, but can normally be
-  edited.
+Contenu::
+  Information (texte, images, etc.) destinée à être affichée aux visiteurs du
+  site. Ce type d'information a tendance à être relativement permanent, mais
+  peut normalement être modifié.
 Configuration::
-  Information about your site that is not content, but is also relatively
-  permanent, and is used to define how your site behaves or is displayed. It is
-  sometimes also displayed to site visitors, but tends to be smaller pieces of
-  text (like field labels, the name of your site, etc.) rather than larger
-  chunks that you'd normally think of as Content.
-State::
-  Information of a temporary nature about the current state of your
-  site, such as the time when cron jobs were last run.
+  Information sur votre site qui n'est pas du contenu, mais est également
+  relativement permanente, et est utilisée pour définir la manière dont votre
+  site se comporte et est affiché. Elle est parfois également affichée aux
+  visiteurs du site, mais a tendance à consister en de petits morceaux de texte
+  (comme des étiquettes de champs, le nom de votre site, etc.) plutôt que de
+  plus gros morceaux que vous verriez normalement comme du contenu.
+État::
+  Information de nature temporaire à propos de l'état actuel de votre site,
+  comme la date et l'heure de dernière exécution du cron.
 Session::
-  Information about individual site visitors' interactions with the site, such
-  as whether they are logged in and their cookies. This is technically a
-  subtype of State information, since it is also temporary.
+  Information à propos des interactions de visiteurs avec le site, par exemple
+  s'ils sont connectés, et leurs cookies. Il s'agit techniquement d'un sous-type
+  d'information d'état, puisqu'elle est également temporaire.
 
-==== Related topics
+==== Sujets liés
 
 * <<planning-data-types>>
 * <<security-cron-concept>>
@@ -52,7 +53,9 @@ Session::
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+Adapté par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] depuis
 https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+copyright 2000-2017 par les contributeurs individuels de
+https://www.drupal.org/documentation[Drupal Community Documentation],
+traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
