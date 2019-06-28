@@ -1,75 +1,80 @@
 [[config-install]]
-=== Installing a Module
+=== Installer un module
 
 [role="summary"]
-How to install a core or contributed module, using the administrative interface or Drush.
+Comment installer un module du cœur ou contribué, en utilisant l'interface
+d'administration ou Drush.
 
-(((Module,enabling)))
-(((Module,installing)))
+(((Module,activer)))
+(((Module,installer)))
 
-==== Goal
+==== Objectif
 
-Install a core module, or a contributed module whose files have already been
-uploaded to the site, through the administrative interface or using Drush.
+Installer un module du cœur, ou un module contribué dont les fichiers ont déjà
+été téléchargés sur le site, à travers l'interface d'administration ou en
+utilisant Drush.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<understanding-modules>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-If you want to use Drush to install modules, Drush must be installed. See
-<<install-tools>>.
+Si vous voulez utiliser Drush pour installer des modules, Drush doit être
+installé, voir <<install-tools>>.
 
-==== Steps
+==== Étapes
 
-You can use the administrative interface or Drush to install modules.
+Vous pouvez utiliser l'interface d'administration ou Drush pour installer des
+modules.
 
-===== Using the administrative interface
+===== En utilisant l'interface d'administration
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. Dans le menu d'administration _Gérer_, naviguer dans _Extensions_
+(_admin/modules_). La page _Extensions_ affiche tous les modules
+disponibles sur votre site.
 
-. Check the boxes for the module or modules you want to install. For example,
-check the box for the core Activity Tracker module.
+. Cocher les cases pour le module ou les modules que vous voulez installer. Par
+exemple, cocher la case pour le module Activity Tracker.
 +
 --
 // Top part of Core section of admin/modules, with Activity Tracker checked.
 image:images/config-install-check-modules.png["Enabling the core Activity Tracker module",width="100%"]
 --
 
-. Click _Install_. The checked modules will be installed.
+. Cliquer sur _Installer_. Les modules cochés seront installés.
 
-===== Using Drush
+===== En utilisant Drush
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. Dans le menu d'administration _Gérer_, naviguer dans _Extensions_
+(_admin/modules_). La page _Extensions_ montre tous les modules disponibles sur
+votre site.
 
-. Find the machine name of the module you want to install, by expanding the
-information area for the module. For instance, the core Activity Tracker
-module's machine name is _tracker_.
+. Trouver le nom machine du module que vous voulez installer, en affichant la
+zone d'information pour le module. Par exemple, pour le nom machine du module du
+cœur Activity Tracker est _tracker_.
 
-. Run the following Drush command to install the module:
+. Lancer la commande Drush suivante pour installer le module :
 +
 ----
 drush en tracker
 ----
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+Si vous ne voyez pas l'effet des changements sur votre site, vous aurez
+peut-être besoin de vider les caches. Consulter <<prevent-cache-clear>>.
 
-// ==== Related concepts
+// ==== Concepts liés
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 http://www.drush.org[Drush]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
+Ecrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg] et
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
