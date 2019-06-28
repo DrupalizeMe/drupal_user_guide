@@ -1,129 +1,139 @@
 [[language-config-translate]]
-=== Translating Configuration
+=== Traduction de la configuration
 
 [role="summary"]
-How to translate field labels in a view, and other configuration.
+Comment traduire les libellés de champs dans une vue, et autre configuration.
 
-(((Configuration,translating)))
-(((View,translating)))
-(((Label,translating)))
-(((Translating,configuration)))
-(((Translating,view)))
-(((Translating,label)))
+(((Configuration,traduction))
+(((Vue,traduction))
+((((Libellé,traduction)))
+((((Traduction,configuration)))
+((((Traduction,vue)))
+((((Traduction,libellé)))
 
-==== Goal
+==== Objectif
 
-Translate the labels on the Recipes view page into Spanish.
+Traduire les libellés de la page de vue Recettes en espagnol.
 
-==== Prerequisite knowledge
+==== Connaissances préalables
 
 * <<language-concept>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* The core Configuration Translation module must be installed, and your site
-must have at least two languages. See <<language-add>>.
+* Le module de traduction de la configuration du coeur doit être installé, et
+votre site doit avoir au moins deux langues. Consulter <<language-add>>.
 
-* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
+* La vue Recettes doit exister. Consulter <<views-create>> et <<views-duplicate>>.
 
-==== Steps
+==== Étapes
 
-The basic steps for translating any configuration on your site are:
+Les étapes de base pour traduire toute configuration sur votre site sont les
+suivantes :
 
-. Locate the page where the configuration you want to translate is created or
-edited in the site's primary language. For example, to translate the site name,
-you need to find the page where you would edit the site name (see
+. Localiser la page où la configuration que vous souhaitez traduire est créée ou
+modifiée dans la langue principale du site. Par exemple, pour traduire le nom du
+site, vous devez trouver la page où vous modifieriez le nom du site (consulter
 <<config-basic>>).
 
-. Find a link, tab, or button on the page that says "Translate" or something
-similar. Click this link, tab, or button.
+. Trouver un lien, un onglet ou un bouton sur la page intitulé "Traduire" ou
+quelque chose de similaire. Cliquer ce lien, onglet ou bouton.
 
-. Find a button that will let you add a translation in the desired language, and
-click this button.
+. Trouver un bouton qui vous permettra d’ajouter une traduction dans la langue
+souhaitée, et cliquer sur ce bouton.
 
-. Enter the translation in the form, and save.
+. Saisir la traduction dans le formulaire et enregistrer.
 
-Most configuration is fairly straightforward and intuitive to edit in this
-manner. Views configuration is an exception, because the translation editing
-form is nothing like the view editing form, and it is complex and hierarchical
-rather than being a simple form with just a few fields. As an example of how to
-translate a view, here are the steps to translate the labels in the Recipes view
-to Spanish:
+La plupart des configurations sont assez simples et intuitives à éditer de cette
+façon. La configuration des vues est une exception car le formulaire d'édition
+de la traduction ne ressemble en rien au formulaire d'édition de la vue, et il
+est complexe et hiérarchique plutôt que d'être un simple formulaire avec
+seulement quelques champs. En guise d'exemple de traduction d'une vue, voici les
+étapes pour traduire les libellés dans la vue Recettes vers l'espagnol:
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
+. Dans le menu d'administration _Gérer_, accéder à _Structure_ > _Vues_
 (_admin/structure/views_).
 
-. Locate the Recipes view and click _Translate_ from the dropdown button.
+. Localiser la vue Recettes et cliquer _Traduire_ dans le menu déroulant.
 
-. Click _Add_ in the row _Spanish_. The page _Add Spanish translation for
-Recipes view_ appears.
+. Cliquer sur _Ajouter_ dans la ligne _espagnol_. La page _Ajouter une
+traduction en espagnol pour la vue Recettes_ apparaît.
 
-. Find _Displays_ > _Master display settings_ > _Recipes default display
-options_. Translate the _Display title_ from "Recipes" to "Recetas".
+. Rechercher _Affichages_ > _Paramètres de l'affichage de Master_ > _Options
+d'affichage par défaut de Recettes_. Traduire le _Titre d'affichage_ de
+"Recettes" en "Recetas".
 
-. Find _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Exposed form_ > _Reset options_. Translate _Submit button text_
-(_Apply_) to "Applicar". The other buttons and labels in this section do not
-appear on the Recipes page or block, and do not need to be translated.
+. Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
+d'affichage par défaut de Recette_ > _Formulaire exposé_ > _Options de
+réinitialisation_. Traduire le bouton _Texte du bouton de soumission_
+(_Appliquer_) en "Aplicar". Les autres boutons et libellés de cette section
+n'apparaissent pas sur la page ou le bloc "Recettes", et n'ont pas besoin d'être
+traduits.
 +
 --
-// Exposed form options for Recipes view.
-image:images/language-config-translate-recipes-view.png["Translate the Recipes view",width="100%"]
+// Options du formulaire exposé pour la vue Recettes.
+image:images/language-config-translate-recipes-view.png["Traduire la vue Recettes",width="100%"]
 --
 
-. Find _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes
-using... Expose_. In the _Label_ field, enter "Encontrar recetas usando...".
+. Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
+d'affichage par défaut de Recettes_ > _Filtres_ > _(vide) Terme de taxonomie ID_
+> _Rechercher recettes en utilisant ... Exposer_. Dans le champ _Libellé_,
+entrer "Encontrar recetas usando...".
 
-. Click _Save translation_.
+. Cliquer sur _Enregistrer la traduction_.
 
-. Navigate to the Recipes page and switch to Spanish using the Language switcher
-block. Verify that the labels have been translated.
+. Accéder à la page Recettes et passer en espagnol à l'aide du bloc sélecteur de
+langue. Vérifier que les libellés ont été traduits.
 
-==== Expand your understanding
+==== Pour approfondir
 
-* Translate the block display title in the Recent recipes
-display settings section of the Recipes view.
+* Traduire le titre d'affichage du bloc dans les paramètres de l'affichage
+"Recettes récentes" de la vue Recettes.
 
-* Translate the page title in the Vendors view.
+* Traduire le titre de la page dans la vue Vendeurs.
 
-* Translate other configuration. Some examples of where to find the translation
-pages:
+* Traduire une autre configuration. Quelques exemples où trouver les pages de
+traduction:
 
-** To translate the site name, navigate in the _Manage_ administrative menu to
-_Configuration_ > _System_ > _Basic site settings_ > _Translate system
-information_ (_admin/config/system/site-information/translate_).
+** Pour traduire le nom du site, naviguer dans le menu d'administration _Gérer_
+jusqu'à _Configuration_ > _Système_ > _Paramètres de base du site_ > _Traduire
+information système_ (_admin/config/system/information-site/translate_).
 
-** To translate the contact form, navigate in the _Manage_ administrative menu
-to _Structure_ > _Contact forms_ (_admin/structure/contact_). Click _Translate_
-in the dropdown button in the _Website feedback_ row.
+** Pour traduire le formulaire de contact, naviguer dans le menu administratif
+_Gérer_ jusqu'à _Structure_ > _Formulaires de contact_
+(_admin/structure/contact_). Cliquer sur _Traduire_ dans le bouton déroulant de
+la ligne _Votre avis sur le site_.
 
-** To translate the name of a menu, navigate in the _Manage_ administrative menu
-to _Structure_ > _Menus_ (_admin/structure/menu_). Click _Translate_ in the
-dropdown button for the menu whose name you want to translate.
+** Pour traduire le nom d'un menu, naviguer dans le menu d'administration _Gérer_
+jusqu'à _Structure_ > _Menus_ (_admin/structure/menu_). Cliquer _Traduire_ dans le
+bouton déroulant du menu dont vous voulez traduire le nom.
 
-** Menu items within a menu are considered to be content (not configuration);
-see <<language-content-config>> to enable translation. Once translation is
-enabled, navigate in the _Manage_ administrative menu to _Structure_ > _Menus_
-(_admin/structure/menu_). Click _Edit menu_ in the dropdown button for the menu
-whose links you want to translate. Click _Translate_ in the dropdown button for
-the link you want to translate.
+** Les éléments de menu dans un menu sont considérés comme du contenu (et non de
+la configuration); voir <<language-content-config>> pour activer la traduction.
+Une fois que la traduction est activée, naviguer dans le menu administratif
+_Gérer_ jusqu'à _Structure_ > _Menus_ (_admin/structure/menu_). Cliquer
+_Modifier le menu_ dans le bouton déroulant du menu dont vous souhaitez traduire
+les liens. Cliquer sur _Traduire_ dans le menu déroulant pour le lien que vous
+souhaitez traduire.
 
-** To translate field labels on a content type, navigate in the _Manage_
-administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_). Click _Manage fields_ in the dropdown button for the
-content type whose field labels you want to edit. Click _Translate_ in the
-dropdown button for the field whose label you want to edit.
+** Pour traduire les libellés de champ sur un type de contenu, naviguer dans le
+menu administratif _Gérer_ jusqu'à _Structure_ > _Types de contenu_
+(_admin/structure/types_). Cliquer sur _Gérer les champs_ dans le bouton
+déroulant pour le type de contenu dont vous souhaitez modifier les libellés de
+champs. Cliquer _Traduire_ dans le bouton déroulant du champ dont vous souhaitez
+modifier le libellé.
 
-* Translate content. See <<language-content-translate>>.
+* Traduire le contenu. Voir <<language-content-translate>>.
 
-// ==== Related concepts
+// ==== Concepts associés
 
-// ==== Additional resources
+// ==== Ressources supplémentaires
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg] et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/alexandre.todorov[Alexandre Todorov] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
