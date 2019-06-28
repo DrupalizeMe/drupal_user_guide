@@ -1,42 +1,45 @@
 [[structure-image-responsive]]
 
-=== Concept: Responsive Image Styles
+=== Concept : styles d'images réactifs (responsive)
 
 [role="summary"]
-Overview of responsive image styles, which allow you to provide different images for different screen sizes.
+Vue d'ensemble des styles d'images réactifs (responsive), qui permettent de
+fournir différentes images pour des tailles d'écrans différentes.
 
-(((Responsive image style,overview)))
-(((Image style,responsive)))
-(((Breakpoint,overview)))
-(((HTML5 picture tag,and responsive images)))
+(((Style d'image réactif (responsive),vue d'ensemble)))
+(((Style d'image,réactif (responsive))))
+(((Point de rupture,vue d'ensemble)))
+(((Balise HTML5 picture,et images réactives (responsive))))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<understanding-themes>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== What are responsive image styles?
+==== Qu'est-ce qu'un style d'image réactif (responsive) ?
 
-The core Responsive Image module provides responsive image styles. This allows
-you to have images in your website that are specifically sized for different
-screen sizes. This is useful, for example, to make your site load faster on
-mobile devices because image sizes are optimized for smaller screens.
+Le module du cœur Responsive Image fournit des styles d'images réactifs. Cela
+vous permet d'avoir sur votre site web des images dimensionnées spécifiquement
+pour différentes tailles d'écrans. Cela est par exemple utile pour faire en
+sorte que votre site se charge plus vite sur des dispositifs mobiles, puisque
+les tailles d'images sont optimisées pour les écrans plus petits.
 
-A responsive image style is a mapping between images styles and breakpoints.
-Breakpoints are the points where a responsive design needs to change in order
-to respond to different screen sizes. Responsive image styles can only be used
-if the breakpoints are defined in the theme.
+Un style d'image réactif établit une correspondance entre des styles d'images et
+des points de rupture. Les points de rupture sont des points à partir desquels
+un design réactif doit changer pour répondre aux différentes tailles d'écrans.
+Les styles d'images réactifs ne peuvent être utilisés que si les points de
+rupture sont définis dans le thème.
 
-When a responsive image style is defined, it can be used in the display settings
-for Image fields. This allows the site to display responsive images using the
-HTML5 picture tag.
+Quand un style d'image réactif est défini, il peut être utilisé dans les
+paramètres d'affichage pour un champ image. Ceci permet au site d'afficher des
+images réactives en utilisant la balise HTML5 picture.
 
-==== Related topics
+==== Sujets liés
 
 <<structure-fields>>
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 * https://www.drupal.org/node/1388492[_Drupal.org_ community documentation page "Responsive web design"]
 
@@ -47,8 +50,9 @@ HTML5 picture tag.
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsive
-images in Drupal 8],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adapté par https://www.drupal.org/u/batigolix[Boris Doesborg] depuis
+https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsive images in Drupal 8],
+copyright 2000-2019 contributeurs individuels à 
+https://www.drupal.org/documentation[la documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
