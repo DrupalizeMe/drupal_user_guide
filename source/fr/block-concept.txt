@@ -1,34 +1,35 @@
 [[block-concept]]
 
-=== Concept: Blocks
+=== Concept : blocs
 
 [role="summary"]
-Overview of blocks.
+Vue d'ensemble des blocs.
 
-(((Block,overview)))
+(((Bloc,vue d'ensemble)))
 
 //==== Prerequisite knowledge
 
-==== What is a block?
+==== Qu'est-ce qu'un bloc ?
 
-_Blocks_ are individual pieces of your site's web page layout. They are placed
-inside the regions (see <<block-regions>>) of your theme, and can be created,
-removed, and rearranged in the _Block layout_ (_admin/structure/block_)
-administration page.  Examples of blocks include the _Who's online_ listing, the
-main navigation menu, and the breadcrumb trail. The main page content is also a
-block.
+Les _blocs_ sont des parties de la mise en page de votre site web indépendantes
+les unes des autres. Il sont placés dans les régions (consulter
+<<block-regions>>) de votre thème, et peuvent être créés, supprimés et
+réordonnés sur la page d'administration _Mise en page des blocs_
+(_admin/structure/block_). Il s'agit par exemple de la liste _Qui est en
+ligne ?_, le menu principal de navigation, ou le fil d'Ariane. Le contenu
+principal de la page est également un bloc.
 
-Some modules make new blocks available for placement on your site. For example,
-when the core Search module is installed and configured, it provides a block
-that contains a search form. You may also create and place your own custom
-blocks.
+Certains modules fournissent de nouveaux blocs que vous pouvez placer sur votre
+site. Par exemple, lorsque le module du cœur Search est installé et configuré,
+il fournit un bloc qui contient un formulaire de recherche. Vous pourriez
+également créer et placer vos propres blocs personnalisés.
 
-Each block has its own configuration settings, which allow you to select
-which pages of your site will display the block. It is even possible to place
-multiple copies of a block, each with its own separate configuration and
-visibility rules.
+Chaque bloc a ses propres paramètres, ce qui vous permet de sélectionner quelles
+pages de votre site afficheront le bloc. Il est même possible de placer
+plusieurs copies d'un bloc, chacune avec ses propres paramètres et règles de
+visibilité.
 
-==== Related topics
+==== Sujets liés
 
 * <<block-regions>>
 * <<block-create-custom>>
@@ -39,8 +40,10 @@ visibility rules.
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/les-lim[Les Lim] from
+Adaptation par https://www.drupal.org/u/les-lim[Les Lim] de
 https://www.drupal.org/docs/8/core/modules/block/overview["Working with blocks
 (content in regions)"]
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+copyright 2000-2019 contributeurs individuels à la
+https://www.drupal.org/documentation[documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb [Felip Manyer i Ballester].
