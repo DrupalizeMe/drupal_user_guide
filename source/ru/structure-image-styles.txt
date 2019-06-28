@@ -1,69 +1,71 @@
 [[structure-image-styles]]
 
-=== Concept: Image Styles
+=== Основы: Стили изображений
 
 [role="summary"]
-Overview of image styles and how they are used to display a single image in several variations.
+Обзор стилей изображения и как они используются для отображения одного изображения в нескольких вариантах.
 
-(((Image style,overview)))
-(((Style,image)))
-(((Image effect,overview)))
-(((Effect,image)))
+(((Стиль изображения,обзор)))
+(((Стиль,изображение)))
+(((Эффект изображения,обзор)))
+(((Эффект,изображение)))
 
 
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<structure-fields>>
 
 
-==== What are image styles?
+==== Что такое стили изображения?
 
-Image styles allow you to upload a single image but display it in several ways;
-each display variation, or _image style_, is the result of applying one or more
-_effects_ to the original image.
+Стили изображений позволяют загружать одно изображение, но отображать его несколькими способами;
+каждый вариант отображения, или _стиль изображения_, является результатом применения одного или нескольких
+_эффектов_ к исходному изображению.
 
-As an example, you might upload a high-resolution image with a 4:3 aspect ratio,
-and display it scaled down, square cropped, or black-and-white (or any
-combination of these effects). The core software provides a way to do this
-efficiently:
+Например, Вы можете загрузить изображение с высоким разрешением с соотношением сторон 4: 3,
+и отобразить его уменьшенным, квадратным или черно-белым (или любое
+другое сочетание цветов). Drupal делает это
+эффективно:
 
-. Configure an image style with the desired effects on the _Image styles_ page
+. Настройте стиль изображения с требуемыми эффектами на странице _Стили изображения_
 (_admin/config/media/image-styles_).
 
-. The effects will be applied the first time a particular image is requested in
-that style.
+. Эффекты будут применены при первом запросе определенной картинки в
+этот стиль изображения.
 
-. The resulting image is saved.
+. Полученное изображение сохраняется.
 
-. The next time that same style is requested, the saved image is retrieved
-without the need to recalculate the effects.
+. При следующем запросе того же стиля сохраненное изображение будет восстановлено
+без необходимости пересчитывать эффекты.
 
-The core software provides several effects that you can use to define styles;
-others may be provided by contributed modules.
+Ядро Drupal предоставляет несколько эффектов, которые вы можете использовать для определения стилей;
+другие могут быть предоставлены модулями.
 
-Visit the _Image styles_ page via the _Manage_ administrative menu, navigate to
-_Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_)
-to see the image styles that are defined by default.
+Посетите страницу _Стили изображения_ через _Управление_ административного меню, перейдите в
+_Конфигурация_ > _Media_ > _Стили изображения_ (_admin/config/media/image-styles_),
+чтобы увидеть стили изображения, которые определены по умолчанию.
 
-==== Related topics
+==== Похожие темы
 
 * <<structure-image-style-create>>
 * <<structure-image-responsive>>
 * <<structure-fields>>
 
 
-==== Additional resources
+==== Дополнительные ресурсы
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ страница документации сообщества "Working with images in Drupal 7 and 8"]
 
 
-*Attributions*
+*Авторы*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
+Адаптировано и отредактировано https://www.drupal.org/u/batigolix[Boris Doesborg],
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] в
+http://redcrackle.com[Red Crackle], от
 https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in
 Drupal 7 and 8"],
-copyright 2000-2017 by the individual contributors to the
+авторские права 2000-2017 отдельными вкладчиками в
 https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
