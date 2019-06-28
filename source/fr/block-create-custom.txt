@@ -1,69 +1,82 @@
 [[block-create-custom]]
 
-=== Creating A Custom Block
+=== Créer un bloc personalisé
 
 [role="summary"]
-How to create a custom block.
+Comment créer un bloc personnalisé.
 
-(((Block,creating)))
-(((Custom block,creating)))
+(((Bloc,créer)))
+(((Bloc personnalisé,créer)))
 
-==== Goal
+==== Objectif
 
-Create a block showing the hours and location of the farmers market.
+Créer un bloc affichant les horaires et la localisation du marché fermier.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<block-concept>>
 * <<block-regions>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block
-layout_ > _Custom block library_ (_admin/structure/block/block-content_).
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Mise en page des
+blocs_ > _Bibliothèque de bloc personnalisé_
+(_admin/structure/block/block-content_).
 
-. Click _Add custom block_. The _Add custom block_ page appears.
+. Cliquer sur _Ajouter un bloc personnalisé_. La page _Ajouter un bloc
+personnalisé_ apparaît.
 
-. Fill in the fields as shown below.
+. Remplir les champs comme ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Block description |Name of the block shown to administrators |Hours and location block
-|Body |Content of the block when it is displayed |Open: Sundays, 9 AM to
-2 PM, April to September<br />Location: Parking lot of Trust Bank, 1st & Union,
-downtown Anytown.
+|Nom du champ |Explication |Valeur d'exemple
+|Description du bloc |Nom du bloc tel qu'affiché pour les utilisateurs |Bloc
+horaires et localisation
+|Corps |Contenu du bloc lorsqu'il est affiché |Ouverture : le dimanche de 9 h à
+14 h, d'avril à septembre<br />Localisation : parking de la Poste, place de la
+mairie, centre-ville d'Anytown.
 |================================
 +
 --
 // Block add page (block/add).
-image:images/block-create-custom-add-custom-block.png["Add a custom block", width="100%"]
+image:images/block-create-custom-add-custom-block.png["Ajouter un bloc
+personnalisé", width="100%"]
 --
 
-. Click _Save_. A message appears indicating the block has been saved.
+. Cliquer sur _Enregistrer_. Un message indiquant que le bloc a été enregistré
+apparaît.
 
-==== Expand your understanding
+==== Pour approfondir
 
-* Edit the content of your custom block. In the _Manage_ administrative menu,
-navigate to _Structure_ > _Block layout_ > _Custom block library_
-(_admin/structure/block/block-content_). Find your block in the list and click
-_Edit_ to make changes.
+* Modifier le contenu du bloc personnalisé. dans le menu d'administration
+_Gérer_, aller à _Structure_ > _Mise en page des blocs_ > _Bibliothèque de blocs
+personnalisés_ (_admin/structure/block/block-content_). Localiser votre bloc
+dans la liste et cliquer sur _Modifier_ pour effectuer des changements.
 
-* Place the block you created in the sidebar. See <<block-place>> for details.
+* Placer le bloc que vous avez créé dans la barre latérale. Consulter
+<<block-place>> pour plus de détails.
 
 //==== Related concepts
 
-==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/sI2wrbn3cPg[title="Creating a Custom Block"]
+
+==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/docs/8/core/modules/block/overview[_Drupal.org_ community documentation page "Working with blocks (content in regions)"]
 
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/jredding[Jacob Redding] and
-https://www.drupal.org/u/batigolix[Boris Doesborg] from
+Adapté par https://www.drupal.org/u/jredding[Jacob Redding] et
+https://www.drupal.org/u/batigolix[Boris Doesborg] à partir de
 https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks
-(content in regions)], copyright 2000-2017 by the individual contributors to
-the https://www.drupal.org/documentation[Drupal Community Documentation].
+(content in regions)], copyright 2000-2019 par les contributeurs individuels de
+la https://www.drupal.org/documentation[documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
