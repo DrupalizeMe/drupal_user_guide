@@ -1,67 +1,78 @@
 [[menu-home]]
 
-=== Designating a Front Page for your Site
+=== Déclarer une page d'accueil pour votre site
 
 [role="summary"]
-How to configure a content item so that it gets displayed as the home page.
+Comment configurer un élément de contenu pour qu'il serve de page d'accueil.
 
-(((Front page,configuring)))
-(((Home page,configuring)))
-(((Configuring,home page)))
+(((Page d'accueil,configurer)))
+(((Page d'accueil,configurer)))
+(((Configurer,page d'accueil)))
 
 
-==== Goal
+==== Objectif
 
-Configure which content item is displayed as the front page of your website.
+Configurer quel élément de contenu servira de page d'accueil pour votre site
+web.
 
-//==== Prerequisite knowledge
+//==== Connaissances requises
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The content item that you want to designate as the front page of your site must
-exist. See <<content-create>>.
+L'élément de contenu que vous voulez désigner comme page d'accueil de votre site
+doit exister. Voir <<content-create>>.
 
-==== Steps
+=== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Site information_ (_admin/config/system/site-information_).
+. Dans le menu d'administration _Gérer_, aller à _Configuration_ > _Système_ >
+_Paramètres de base du site_ (_admin/config/system/site-information_).
 
-. Under _Front Page_, replace _/node_ with the name of the page you
-would like to make the home page. To use the home page that was previously
-created, provide its path _/home_. Click _Save configuration_.
+. Sous _Page d'accueil_ remplacer _/node_ par le nom de la page que vous avez
+choisi comme page d'accueil. Pour utiliser une page d'accueil qui avait été
+créée auparavant, donner son chemin _/home_. Cliquer sur _Enregistrer la
+configuration_.
 +
 --
 // Front page section of admin/config/system/site-information.
-image:images/menu-home_new_text_field.png["'FRONT PAGE' area with /home in text field"]
+image:images/menu-home_new_text_field.png["Zone 'page d'accueil' comportant
+/home dans le champ texte"]
 --
 
-. Navigate to the home page to verify that it displays content as configured by
-you.
+. Aller sur la page d'accueil pour vérifier que le contenu affiché correspond à
+celui que vous avez configuré.
 +
 --
 // Site front page after configuring it to point to the Home content item.
-image:images/menu-home_final.png["'FRONT PAGE' with 'Home' (Basic page) content added",width="100%"]
+image:images/menu-home_final.png["Page d'accueil sur laquelle apparaît le
+contenu 'Accueil' (page de base) ajouté",width="100%"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 * <<menu-link-from-content>>
 
-* Follow <<content-create>> to create an error page to be used as a 404 (page
-not found) or 403 (not authorized) response on your site. Then following the
-steps here, you can designate it as the error response, in the _Error pages_
-section of the configuration.
+* Suivre <<content-create>> pour créer une page d'erreur utilisée pour les
+réponses 404 (page non trouvé) ou 403 (non autorisé) de votre site. Puis en
+suivant les étapes ci-dessus, vous pouvez la choisir comme réponse à une erreur,
+dans la section _Pages d'erreur_ de la configuration.
 
-==== Related concepts
+==== Concepts liés
 
 <<menu-concept>>
 
-//==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/qOL8arBYpJ4[title="Designating a Front Page for Your Site"]
+
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/AnnGreazel[Ann Greazel],
-https://www.drupal.org/u/jerseycheese[Jack Haas], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Ecrit et modifié par https://www.drupal.org/u/AnnGreazel[Ann Greazel],
+https://www.drupal.org/u/jerseycheese[Jack Haas], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
 http://redcrackle.com[Red Crackle].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
