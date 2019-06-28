@@ -1,57 +1,59 @@
 [[structure-image-responsive]]
 
-=== Concept: Responsive Image Styles
+=== Основы: Адаптивные Стили изображений
 
 [role="summary"]
-Overview of responsive image styles, which allow you to provide different images for different screen sizes.
+Обзор адаптивных стилей изображения, которые позволяют вам предоставлять разные изображения для разных размеров экрана.
 
-(((Responsive image style,overview)))
-(((Image style,responsive)))
-(((Breakpoint,overview)))
-(((HTML5 picture tag,and responsive images)))
+(((Адаптивные Стили изображений,обзор)))
+(((Стили изображений,адаптированный)))
+(((Точка останова,обзор)))
+(((HTML5 тег изображения, и адаптированные изображения)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<understanding-themes>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== What are responsive image styles?
+==== Что такое адаптированные стили изображения?
 
-The core Responsive Image module provides responsive image styles. This allows
-you to have images in your website that are specifically sized for different
-screen sizes. This is useful, for example, to make your site load faster on
-mobile devices because image sizes are optimized for smaller screens.
+Модуль ядра Drupal Responsive Image предоставляет стили адаптивного изображения. Это позволяет
+вам изображения на вашем сайте, которые подстраиваются под разные
+размеры экрана. Это полезно, например, для ускорения загрузки вашего сайта на
+мобильных устройства, потому что размеры изображений оптимизированы для маленьких экранов.
 
-A responsive image style is a mapping between image styles and breakpoints.
-Breakpoints are the points where a responsive design needs to change in order
-to respond to different screen sizes. Responsive image styles can either work
-with breakpoints defined in your theme or with breakpoints defined in the
-responsive image style settings.
+Адаптивный стиль изображения - это отображение между стилями изображения и точками останова.
+Точки останова - это точки, где адаптивный дизайн должен меняться и
+реагировать на экраны разных размеров. Адаптивные стили изображений могут работать
+с точками останова, определенными в вашей теме, или с точками останова, определенными в
+настройках стилей адаптивного изображения.
 
-When a responsive image style is defined, it can be used in the display settings
-for Image fields. This allows the site to display responsive images using the
-HTML5 _picture_ tag, or using the _srcset_ and _sizes_ attributes in an _img_
-tag, depending on how the responsive image style is set up.
+Когда стиль адаптивного изображения определен, его можно использовать в настройках отображения
+для полей изображения. Это позволяет сайту отображать адаптивные изображения, используя
+HTML5 _picture_ тег или использовать атрибуты _srcset_ и _sizes_ в теге _img_,
+в зависимости от того, как настроен стиль адаптивного изображения.
 
-==== Related topics
+==== Похожие темы
 
 <<structure-fields>>
 
-==== Additional resources
+==== Дополнительные ресурсы
 
-* https://www.drupal.org/node/1388492[_Drupal.org_ community documentation page "Responsive web design"]
+* https://www.drupal.org/node/1388492[_Drupal.org_ страница документации сообщества "Responsive web design"]
 
-* https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[_Drupal.org_ community documentation page "Responsive images in Drupal 8"]
+* https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[_Drupal.org_ страница документации сообщества "Responsive images in Drupal 8"]
 
-* https://www.drupal.org/docs/8/theming-drupal-8/working-with-breakpoints-in-drupal-8[_Drupal.org_ community documentation page "Working with breakpoints in Drupal 8"]
+* https://www.drupal.org/docs/8/theming-drupal-8/working-with-breakpoints-in-drupal-8[_Drupal.org_ страница документации сообщества "Working with breakpoints in Drupal 8"]
 
-* https://chromatichq.com/blog/responsive-images-drupal-8-using-srcset[Blog post "Responsive Images in Drupal 8 using 'srcset'"]
+* https://chromatichq.com/blog/responsive-images-drupal-8-using-srcset[Пост в блоге "Responsive Images in Drupal 8 using 'srcset'"]
 
-*Attributions*
+*Авторы*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
+Адаптировано https://www.drupal.org/u/batigolix[Boris Doesborg] от
 https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsive
 images in Drupal 8],
-copyright 2000-2017 by the individual contributors to the
+авторские права 2000-2017 отдельными вкладчиками в
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
