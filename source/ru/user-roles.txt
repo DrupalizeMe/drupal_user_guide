@@ -1,101 +1,102 @@
 [[user-roles]]
-=== Changing a User's Roles
+=== Изменение ролей пользователя
 
 [role="summary"]
-How to change or add roles for a user.
+Как выбрать или добавить роль для пользователя.
 
-(((User role,changing)))
-(((Role,changing)))
-(((Permission,changing role)))
+(((Роль пользователя,выбор)))
+(((Роль,выбор)))
+(((Разрешение,выбор роли)))
 
-==== Goal
+==== Цель
 
-Change or add roles to a given user, either by editing a single-user or by
-applying a bulk operation.
+Изменение или добавление ролей для данного пользователя путем редактирования одного пользователя или
+применение массовой операции.
 
-==== Prerequisite knowledge
+==== Необходимие знания
 
 <<user-concept>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-The user account that you want to update, and the role you want it to have, must
-already exist. See <<user-new-user>>,  <<user-new-role>>, and
+Учетная запись пользователя, которую вы хотите обновить, и роль, которую вы хотите иметь, должны
+существовать. Смотрите <<user-new-user>>,  <<user-new-role>>, и
 <<user-permissions>>.
 
-==== Steps
+==== Шаги
 
-===== Updating the roles using single-user editing method
+===== Обновление ролей с использованием однопользовательского метода редактирования
 
-. In the _Manage_ administrative menu, navigate to _People_
+. В _Управлении_ административного меню, перейдите в _Пользователи_
 (_admin/people_).
 
-. Locate the user 1 account (named "admin") to assign it the _Administrator_
-role. If it is not immediately visible, use the _Name or email contains_ filter,
-or other filters, to narrow down the list.
+. Найдите аккаунт пользователя 1 (имя "admin") назначенного ролью _Администратор_.
+Если его не сразу видно, используйте фильтр _Имя или email содержит_,
+или другие фильтры, чтобы сузить список.
 
-.  Click _Edit_ to update the user account.
+.  Нажмите _Редактировать_, чтобы обновить учетную запись пользователя.
 +
 --
 // People page (admin/people), with user 1's Edit button outlined.
-image:images/user-roles_people-list.png["People page",width="100%"]
+изображение:images/user-roles_people-list.png["Страница пользователей",width="100%"]
 --
 
-.  On the _Edit_ page, scroll down to _Roles_ section. Check the _Administrator_
-role for the user account.
+.  На странице _Редактировать_, прокрутите вниз до раздела _Роли_. Выберите роль _Администратор_
+для аккаунта пользователя.
 +
 --
 // Roles area on user editing page.
-image:images/user-roles_person-edit.png["Roles section of user edit page",width="141px"]
+изображение:images/user-roles_person-edit.png["Раздел ролей страницы редактирования пользователя",width="141px"]
 --
 
-.  Click _Save_ to update the user account. You should be returned to the
-_People_ page and see a message saying that the changes have been saved.
+.  Нажмите _Сохранить_, чтобы обновить учетную запись пользователя. Вы будете возвращены на
+страницу _Пользователи_ и увидите сообщение о том, что изменения были сохранены.
 +
 --
 // Confirmation message after updating user.
-image:images/user-roles_message.png["Confirmation message"]
+изображение:images/user-roles_message.png["Сообщение подтверждения"]
 --
 
-===== Updating the roles using bulk editing method
+===== Обновление ролей методом массового редактирования
 
-. If the users Happy Farm and Sweet Honey did not already have the Vendor role,
-here is how you would add it. In the _Manage_ administrative menu, navigate to
-_People_ (_admin/people_).
+. Если у пользователей Веселый молочник и Алтайский мёд еще не было роли Производитель,
+вот как нужно добавить эту роль. В _Управлении_ административного меню, перейдите в
+_Пользователи_ (_admin/people_).
 
-. Locate Vendor user accounts  _Sweet Honey_ and _Happy Farm_ and check them. If
-they are not immediately visible, use the _Name or email contains_ filter, or
-other filters, to narrow down the list.
+. Найдите учетные записи Производителя  _Sweet Honey_ и _Happy Farm_ и проверьте их. Если
+они не сразу видны, используйте фильтр _Имя или email содержит_,
+или другие фильтры, чтобы сузить список.
 
-. Select _Add the Vendor role to the selected user(s)_ from the _Action_
-select list.
+. Выберите _Добавить роль Производителя для выбранных пользователей_ из списка _Действие_.
 +
 --
 // Bulk editing form on People page (admin/people).
-image:images/user-roles_bulk.png["People page with bulk operation set up", width="100%"]
+изображение:images/user-roles_bulk.png["People page with bulk operation set up", width="100%"]
 --
 
-. Click _Apply to selected items_. You should see a message indicating that the
-desired changes were made.
+. Нажмите _Применить к выбранным элементам_. Вы должны увидеть сообщение о том, что
+желаемые изменения были сделаны.
 +
 --
 // Confirmation message after bulk user update.
-image:images/user-roles_message_bulk.png["Confirmation message"]
+изображение:images/user-roles_message_bulk.png["Confirmation message"]
 --
 
 // ==== Expand your understanding
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/hd7Sr3-n9ME[title="Changing a User's Roles"]
+видео::https://www.youtube-nocookie.com/embed/hd7Sr3-n9ME[заголовок="Changing a User's Roles"]
 
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+Написано https://www.drupal.org/u/chris-dart[Chris Dart]
+и https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов]
