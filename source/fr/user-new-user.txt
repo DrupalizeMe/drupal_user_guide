@@ -1,74 +1,92 @@
 [[user-new-user]]
 
-=== Creating a User Account
+=== Créer un compte utilisateur
 
 [role="summary"]
-How to create a user account.
+Comment créer un compte utilisateur.
 
 (((User,creating account)))
 
-==== Goal
+==== Objectif
 
-Create Vendor user accounts for Sweet Honey and Happy Farm vendors.
+Créer les comptes utilisateur Vendeur pour les vendeurs Doux Miel et Ferme Joyeuse.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<user-concept>>
 * <<user-admin-account>>
 * <<user-new-role>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Le rôle Vendeur doit exister sur votre site. Voir <<user-new-role>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _People_ (_admin/people_).
+. Dans le menu d'administration _Gérer_, aller à _Personnes_ (_admin/people_).
 
-. Click _Add user_.
+. Cliquer sur _Ajouter un utilisateur_.
 +
 --
 // Add new user form (/admin/people/create).
-image:images/user-new-user_form.png["Form for creating a new user account",width="100%"]
+image:images/user-new-user_form.png["Formulaire de création d'un nouveau compte
+utilisateur",width="100%"]
 --
 
-. Fill in the form fields. See the table below.
+. Remplir les champs du formulaire, cf. tableau ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Email address |A valid email address for the vendor. All emails from the system will be sent to this address. The email address is not made public. | honey@example.com
-|Username |A username for the vendor that they will use to sign in or author content items. Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores. |Sweet Honey
-|Password |A password the vendor will use to sign in to the site. You can see how safe the password is on the _Password strength_ gauge. You also get tips on how to make it safer.  |(Make a secure password)
-|Confirm password |Type the same password to avoid any typing mistakes. |(Repeat password)
-|Status |Set the status of the user account. _Blocked_ users will not be able to sign in. |Active
-|Roles |Set the role of the user account.|Vendor
-|Notify user of new account |Whether or not to send a notification to the vendor's email address. |Checked
-|Picture |Click _Browse_ and select a picture to upload. Pay attention to size restrictions. | Photo of the vendor
-|Contact settings |Enable or disable the display of a contact form for the account. | Checked
+|Nom du champ |Explication |Valeur d'exemple
+|Adresse électronique |Une adresse électronique valide pour le vendeur. Tous les
+courriels envoyés par le système le seront à cette adresse. L'adresse
+électronique n'est pas rendue publique. | honey@example.com
+|Nom d’utilisateur |Un nom d'utilisateur pour le vendeur, qu'il utilisera pour
+se connecter ou qui servira pour assigner un auteur aux éléments de contenu. Les
+espaces sont autorisées ; la ponctuation n'est pas autorisée à l'exception des
+points, traits d'union, apostrophes, et tirets bas. |Doux Miel
+|Mot de passe |Un mot de passe que le vendeur utilisera pour se connecter au
+site. Vous pouvez voir le niveau de sécurité du mot de passe sur la jauge de
+_Sécurité du mot de passe_. Des astuces pour le rendre plus sûr sont proposées.
+|(Choisir un mot de passe sûr)
+|Confirmer le mot de passe |Saisir le même mot de passe pour éviter toute faute
+de frappe. |(Répéter le mot de passe)
+|Statut |Définir le statut du compte utilisateur. Les utilisateurs _bloqués_ ne
+pourront pas se connecter. |Actif
+|Rôles |Définir le rôle du compte utilisateur.|Vendeur
+|Prévenir l'utilisateur du nouveau compte |Envoyer ou non une notification à
+l'adresse électronique du vendeur. |Coché
+|Image |Cliquer sur _Parcourir_ et sélectionner une image à télécharger. Prêter attention aux limites de taille. | Photo du vendeur
+|Paramètres de Contact |Activer ou désactiver l'affichage d'un formulaire de contact pour le compte. |Coché
 |================================
 
-
-. Click _Create new account_. You will get a notification about the user account
-creation.
+. Cliquer sur _Créer le nouveau compte_. Une notification à propos de la création
+du compte utilisateur s'affiche.
 +
 --
 // Confirmation message after adding new user.
-image:images/user-new-user-created.png["New user account has been created",width="100%"]
+image:images/user-new-user-created.png["Un nouveau compte utilisateur a été créé",width="100%"]
 --
 
-. Create a second Vendor account for Happy Farm by following the steps above.
+. Créer un second compte vendeur pour la Ferme Joyeuse en suivant les étapes précédentes.
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-Create a user account for yourself.
+Créer un compte utilisateur pour vous-même.
 
 //==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title="Creating a User Account"]
 
 //==== Additional resources
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-at https://pronovix.com/[Pronovix].
+Ecrit par https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+de https://pronovix.com/[Pronovix].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
