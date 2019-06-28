@@ -1,146 +1,151 @@
 [[install-run]]
 
-=== Running the Installer
+=== Lancement de l'installeur interactif
 
 [role="summary"]
-How to use the installer to install the core software.
+Comment utiliser l'installeur interactif pour installer le cœur du logiciel.
 
-(((Installer tool,running)))
-(((Installation process)))
-(((Installation profile)))
-(((Profile,installation)))
-(((Database,configuring during the installation process)))
-(((Core software,installing)))
-(((Drupal core,installing)))
-(((Web installer,running)))
+(((Outil d'installation,lancer)))
+(((Processus d'installation)))
+(((Profil d'installation)))
+(((Profil,installation)))
+(((Base de données,configuration pendant le processus d'installation)))
+(((Cœur du logiciel,installer)))
+(((Cœur (core) de Drupal,installer)))
+(((Installeur web,lancer)))
 
-==== Goal
+==== Objectif
 
-Install the core software and create the admin account by running the included
-installer.
+Installer le cœur du logiciel et créer le compte administateur en lançant
+l'installeur fourni.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<install-requirements>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
 <<install-prepare>>
 
-==== Steps
+==== Étapes
 
-. If you are using a 1-click install from a hosting provider or demo site, you
-will most likely see some or all of the following screens as part of the
-installation process. If you uploaded the core files manually, to start the
-installer, open a browser and visit the URL that you set up for your hosting.
+. Si vous utilisez une installation en un clic de votre hébergeur ou site de
+démo, vous verrez très probablement tout ou partie des écrans suivants comme
+faisant partie du processus d'installation. Si vous transférez les fichiers du
+cœur manuellement, pour démarrer l'installeur, ouvrir un navigateur, et visiter
+l'URL que vous avez configurée pour votre hébergement.
 
-. Select a language on the first page of the installer; for example,
-English. You could optionally choose from any of the other listed languages.
-The language files for the chosen language will be downloaded and installed so
-that the rest of the installation process can be finished in the chosen
-language. After choosing a language, click _Save and continue_.
+. Sélectionner une langue sur la première page de l'installeur ; par exemple, le
+français. Vous pouvez choisir n'importe quelle autre langue depuis la liste.
+Les fichiers de langues pour la langue choisie seront téléchargés et installés
+pour que le reste du processus d'installation puisse s'achever dans la langue
+choisie. Après avoir choisi une langue, cliquer sur _Save and continue_.
 +
 --
 // Go to the first step of the installer
-image:images/install-run-1.png["Choose a language",width="100%"]
+image:images/install-run-1.png["Choisir une langue",width="100%"]
 --
 
-. Select an installation profile. Installation profiles provide site features
-and functions for a specific type of site as a single download containing
-the core software, contributed modules, themes, and pre-defined
-configuration. Core contains two installation profiles. Select the core
-Standard installation profile. Click _Save and continue_.
+. Sélectionner un profil d'installation. Les profils d'installations fournissent
+des fonctionnalités aux site pour un type spécifique de site en un seul
+téléchargement contenant le cœur du logiciel, des modules communautaires, des
+thèmes et une configuration prédéfinie. Le cœur contient deux profils
+d'installation. Sélectionner le profil d'installation du cœur Standard. Cliquer
+sur _Sauvegarder et continuer_.
 +
 --
 // Go to the choose an installation profile step of the installer
-image:images/install-run-2.png["Choose an installation profile",width="100%"]
+image:images/install-run-2.png["Choix d'un profil d'installation",width="100%"]
 --
 
-. The next step in the installer will verify that your system meets the minimum
-requirements. If it does not, you'll be presented with an outline of what
-needs to be corrected in order to proceed. If it does, the installer will
-automatically advance to the next step.
+. À la prochaine étape, l'installeur vérifie que votre système fournit les
+pré-requis nécessaires. Si ce n'est pas le cas, vous verrez un récapitulatif de
+ce qu'il est nécessaire de corriger afin de continuer. Si les pré-requis sont
+bons, l'installeur affichera automatiquement l'étape suivante. 
 
-. Provide details of the database you created in the <<install-prepare>>
-chapter. Then click _Save and continue_.
+. Fournir les détails de la base de données que vous avez créée dans le chapitre
+<<install-prepare>>. Puis cliquer sur _Sauvegarder et continuer_. 
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Database name | The custom name given to the database | drupal8
-|Database username | Username created | databaseUsername
-|Database password | Password chosen | ************
+|Nom du champ | Explication | Valeur
+|Nom de la base de données | Le nom personnalisé donné à votre base de données | drupal8
+|Nom de l'utilisateur de la base de données | Nom d'utilisateur créé | databaseUsername
+|Mot de passe de l'utilisateur de la base de données | Mot de passe choisi | ************
 |================================
 +
 --
 // Go to the database configuration step of the installer
-image:images/install-run-3.png["Database configuration form",width="100%"]
+image:images/install-run-3.png["Formulaire de configuration de la base de
+données",width="100%"]
 --
 
-. The next step will display a progress bar under the heading _Installing
-Drupal_. After the installer has completed, it will automatically advance to
-the next step.
+. L'étape suivante affichera une barre de progression sous l'en-tête
+_Installation Drupal_. Lorsque l'installeur a fini, il passera automatiquement à
+l'étape suivante.
 +
 --
 // Go to the page displaying the installation progress bar
-image:images/install-run-4.png["Installation progress bar",width="100%"]
+image:images/install-run-4.png["Barre de progression de l'installation",width="100%"]
 --
 
-. The final step is to configure some basic information about your new site.
-Note that the user account you create in this step is the site's admin
-account. See <<user-admin-account>> for important information about this unique
-account. You can safely name this account "admin", and make sure to choose a
-secure and unique password.
+. La dernière étape consiste à configurer quelques informations basiques pour
+votre nouveau site. Noter que le compte utilisateur créé à cette étape est le
+compte administrateur du site. Consulter <<user-admin-account>> pour des
+informations importantes à propos de ce compte unique. Vous pouvez nommer ce
+compte "admin", et vous assurer de définir un mot de passe sûr et unique. 
 +
-Fill in the form with the following information:
+Remplir le formulaire avec les informations suivantes :
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Site name | The name chosen for the site | Anytown Farmers Market
-|Site email address | The email associated with the site | info@example.com
-|Username | The designated user's credentials| admin
-|Password | The password chosen | ************
-|Confirm password | Repeat the password | ************
-|Email address | The user's email | admin@example.com
+|Nom du champ | Explication | Valeur
+|Nom du site | Le nom choisi pour le site | Marché fermier d'Anytown
+|Adresse électronique du site | L'adresse électronique associée au site | info@exemple.com
+|Nom d'utilisateur | L'identifiant de l'utilisateur| admin
+|Mot de passe | Le mot de passe choisi | ************
+|Confirmer le mot de passe | Répéter le mot de passe | ************
+|Adresse électronique | L'adresse électronique de l'utilisateur | admin@exemple.com
 |================================
 +
-The remaining fields can likely be left at their default values.
+Les champs restants peuvent être laissés avec leurs valeurs par défaut.
 +
 --
 // Go to the basic site information configuration step of the installer
-image:images/install-run-5.png["Configuration form",width="100%"]
+image:images/install-run-5.png["Formulaire de configuration",width="100%"]
 --
 
-. Click _Save and continue_.
+. Cliquer sur _Sauvegarder et continuer_.
 
-. You will be redirected to the front page of your new site and you should see
-the message _Congratulations, you installed Drupal!_ displayed at the top of
-the page.
+. Vous êtes redirigé(e) vers la page d'accueil de votre nouveau site et vous
+devriez voir le message _Félicitations, vous avez installé Drupal!_ affiché en
+haut de la page.
 +
 --
 // Front page of Drupal after the installer just completed showing the success message
-image:images/install-run-6.png["Installation success",width="100%"]
+image:images/install-run-6.png["Installation réussie",width="100%"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-Check the Status Report to see if there are any problems with the
-installation. See <<prevent-status>>.
+Vérifier le tableau de bord d'administration pour voir s'il y a des problèmes
+avec l'installation. Consulter <<prevent-status>>.
 
-==== Related concepts
+==== Concepts liés
 
 * <<install-dev-sites>>
 * <<install-tools>>
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+Écrit et modifié par https://www.drupal.org/u/eojthebrave[Joe Shindelar] de
 https://drupalize.me[Drupalize.Me],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+et https://www.drupal.org/u/jojyja[Jojy Alphonso] de
 http://redcrackle.com[Red Crackle].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
