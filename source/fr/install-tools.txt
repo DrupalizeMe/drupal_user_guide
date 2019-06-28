@@ -1,130 +1,169 @@
 [[install-tools]]
 
-=== Concept: Additional Tools
+=== Concept : outils supplémentaires
 
 [role="summary"]
-Overview of additional tools that help site builders conveniently create sites.
+Vue d'ensemble des outils supplémentaires qui aident les webmaster à créer
+facilement leurs sites.
 
-(((Tool,Coder)))
-(((Tool,Devel)))
-(((Tool,Drush)))
-(((Tool,Composer)))
-(((Tool,Firebug)))
-(((Tool,Git)))
-(((Tool,drupal Console)))
-(((Coder tool,overview)))
-(((Devel tool,overview)))
-(((Drush tool,overview)))
-(((Composer tool,overview)))
-(((Firebug tool,overview)))
-(((Git tool,overview)))
-(((Drupal Console tool,overview)))
+(((Outil,Coder)))
+(((Outil,Devel)))
+(((Outil,Drush)))
+(((Outil,Composer)))
+(((Outil,Git)))
+(((Outil,Drupal Console)))
+(((Outil Coder,vue d'ensemble)))
+(((Outil Devel,vue d'ensemble)))
+(((Outil Drush,vue d'ensemble)))
+(((Outil Composer,vue d'ensemble)))
+(((Outil Git,vue d'ensemble)))
+(((Outil Drupal Console,vue d'ensemble)))
 
-// ==== Prerequisite knowledge
+// ==== Connaissances requises
 
-==== What tools are available for site builders?
+==== Quels outils sont disponibles pour les webmasters ?
 
-There are several additional tools available that help you create sites faster,
-more accurately and with less effort.
+Il existe plusieurs outils supplémentaires qui sont disponibles pour vous aider à
+créer vos sites plus rapidement, plus précisément et avec moins d'efforts.
 
-Drush::
-  See below for more about Drush.
+Drush et Drupal Console::
+  Voir ci-dessous pour plus d'informations sur les outils en ligne de commande.
 Git::
-  https://git-scm.com/[Git] is a version control system you can use to track
-  changes made to files within your entire site, or files relating only to the
-  module or theme that you are using. Git makes it possible to try out changes,
-  and if necessary, revert to a previous version. It can be used as well to
-  track changes in the configuration files and synchronize the configuration of
-  different sites. Git has become the standard for web development
-  projects.
+  Voir ci-dessous pour plus d'informations sur les outils de gestion de
+  versions.
 Composer::
-  See below for more about Composer.
+  Voir ci-dessous pour plus d'informations sur Composer.
 Devel::
-  The https://www.drupal.org/project/devel[contributed Devel module] helps with
-  development tasks such as debugging and inspecting code, analyzing database
-  queries, and generating dummy content.
+  Le https://www.drupal.org/project/devel[module contribué Devel] est une aide
+  aux tâches de développement comme le débogage et l'inspection du code,
+  l'analyse des requêtes en base de données, et la génération de contenu de
+  test.
 
-==== What is special about Drush?
+==== Que sont les outils en ligne de commande ?
 
-http://www.drush.org[Drush] is a command-line tool for building and maintaining
-sites, providing an alternative to using the administrative interface for many
-operations. Many site builders and maintainers prefer to use Drush whenever
-possible, and consider the time spent installing and learning to use Drush to be
-a good investment. Reasons to consider using Drush:
+Les outils en ligne de commande fournissent une alternative à l'utilisation des
+interfaces d'administration pour un certain nombre d'opérations sur votre site.
+Beaucoup de webmasters et de mainteneurs ont investi du temps pour installer et
+apprendre à utiliser un outil en ligne de commande, pour les raisons suivantes :
 
-* Drush provides a large number of commands for tasks such as installing the
-base software, modules, and themes; updating software; performing database
-operations, including copying and querying; resetting passwords; and clearing
-the cache. Some contributed modules and themes also define Drush commands.
+* Les tâches d'administrations sont habituellement plus rapides et moins
+pénibles quand elles sont réalisées en ligne de commande plutôt qu'à travers
+l'interface utilisateur.
 
-* Doing administrative tasks using Drush is typically faster and less tedious
-than performing the same tasks through the administrative interface.
+* Vous pouvez écrire des scripts qui combinent des commandes liées au site et
+des commandes liées au serveur, pour automatiser des tâches plus compliquées.
 
-* Since Drush is a command-line interface, you can write scripts that combine
-Drush commands and other commands on the server, to automate more complicated
-tasks.
+* Les outils en ligne de commande fournissent des fonctionnalités additionnelles
+qui ne sont pas disponibles à travers l'interface d'administration ; par
+exemple, exécuter des requêtes sur la base de données.
 
-* Drush provides additional functionality not available via the administrative
-interface; for example, running database queries.
+Les outils les plus populaires sont http://www.drush.org[Drush] et
+https://drupalconsole.com[Drupal Console]. Drush est disponible depuis plus
+longtemps, et comporte des commandes à la fois pour le cœur du logiciel et les
+modules contribués ; ce guide documente les commandes Drush correspondant à
+beaucoup de tâches. Drupal Console était d'abord un outil pour les développeurs
+de modules, mais fait état d'une liste de plus en plus importante de commandes
+pour les webmasters ; ce guide ne documente pas de commandes de Drupal Console,
+mais vous pouvez les chercher dans la documentation de Drupal Console.
 
-If you want to use Drush, you will need to have command-line terminal access to
-the server where your website will be hosted, and you will need to have a
-compatible version of the Drush tool installed on that server. Check the
-http://www.drush.org[Drush website] for installation instructions and version
-compatibility. There is also documentation on the available Drush commands on
-that site.
+Pour utiliser ces outils, vous devrez avoir accès à un terminal permettant de
+saisir des lignes de commandes sur le serveur où votre site est hébergé, et vous
+devrez au préalable installer Composer afin d'installer soit Drush, soit Drupal
+Console.
 
-==== What is Composer used for?
+==== Qu'est-ce qu'un système de gestion de versions ?
 
-https://getcomposer.org/[Composer] is a tool for managing PHP dependencies,
-where the developer specifies what version of each external library is needed,
-and Composer manages the process of downloading and installing the libraries.
+Un système de gestion de versions est un logiciel qui conserve des copies de
+fichiers et l'historique des révisions dans un _dépôt_, et permet la création, la
+suppression et la mise à jour de fichiers. Pour un projet de site web, un
+logiciel de gestion de versions peut vous aider à :
 
-The core software is a primary user of Composer, because it makes use of several
-externally-developed software libraries, which must be downloaded and installed
-in order for the core software to work. When you install the core software, you
-either need to download an archive that contains compatible versions of the
-external libraries, or you need to run Composer to download the external
-libraries after the initial download.
+* Tester en local avant de déployer vos fichiers sur le site en production
 
-Some contributed modules also make use of externally-developed software
-libraries; for example, a Facebook integration module might require Facebook's
-integration library to be installed for the module to work, and a geographical
-module might make use of a standard library of geographical functions. To
-install a module with external dependencies, you will need to run Composer.
+* Examiner, comparer, et revenir à des versions antérieures de vos fichiers
 
-==== What tools are available for module and theme developers?
+* Examiner les fichiers ajoutés, modifiés ou supprimés avant de soumettre
+(_commit_) vos changements (mettre à jour le dépôt)
 
-In addition to the site builder tools mentioned above, the following tools are
-useful for module and theme developers.
+* Fusionner des changements provenant de différents membres d'une équipe
+
+* Faire en sorte que les fichiers et la configuration reste synchronisée entre
+vos sites en local et en production
+
+Il existe beaucoup de systèmes de gestion de versions propriétaires et _open
+source_ entre lesquels choisir. https://git-scm.com/[Git] est un choix répandu ;
+il est _open source_ et fonctionne sur la plupart des plateformes. Git est un
+système de gestion de versions _distribué_ qui vous laisse la possibilité
+d'avoir une ou plusieurs copies de votre dépôt, ce qui permet de soumettre vos
+changements sur une copie et de ne les _pousser_ vers le dépôt considéré comme
+_canonique_ que quand vous êtes prêt(e) à les partager avec d'autres. Le dépôt
+Git canonique peut être hégergé sur votre ordinateur local ou sur un serveur de
+votre entreprise, mais de nombreux projets logiciels et individus hébergent
+leurs dépôts Git sur le site https://github.com/[GitHub].
+
+==== Pourquoi Composer est-il utilisé ?
+
+https://getcomposer.org/[Composer] est un outil pour gérer les dépendances PHP,
+où les développeurs définissent quelle version de chaque bibliothèque externe
+est nécessaire, et Composer gère le processus de téléchargement et
+d'installation des bibliothèques.
+
+Le cœur du logiciel est le premier utilisateur de Composer, à cause de son usage
+de plusieurs bibliothèques logiciels externes, qui doivent être téléchargées et
+installés pour que le cœur du logiciel fonctionne. Lorsque vous installez le
+cœur du logiciel, vous devez soit télécharger une archive qui contient les
+versions compatibles des bibliothèques externes, soit utiliser Composer pour les
+télécharger après le téléchargement initial. Les outils en ligne de commande
+Drush et Drupal Console sont aussi téléchargés un utilisant Composer.
+
+Certains modules contribués utilisent également des bibliothèques externes ; par
+exemple, un module d'intégration à Facebook aura besoin que la bibliothèque
+d'intégration de Facebook soit installée pour que le module fonctionne, et un
+module géographique pourrait utiliser une bibliothèque standard de fonctions
+géographiques. Pour installer un module avec des dépendances externes, vous
+aurez besoin de Composer.
+
+==== Quels outils sont disponibles pour les développeurs de modules et de thèmes ?
+
+En plus des outils mentionnés ci-dessus pour les webmaster, les outils suivants
+sont utiles pour les développeurs de thèmes et de modules.
 
 Drupal Console::
-  https://drupalconsole.com[Drupal Console] is a command-line tool that
-  generates boilerplate code and interacts with a Drupal site. It can generate,
-  for example, block or form code, install modules and themes, and create dummy
-  content. Drupal Console makes use of the Symfony Console.
+  https://drupalconsole.com[Drupal Console] est un outil ligne de commande qui
+  génère du code standard et interagit avec un site Drupal. Il peut générer, par
+  exemple, le code d'un bloc ou un formulaire, installer des modules et des
+  thèmes, et créer du contenu de test. Drupal Console utilise la Console
+  Symfony.
 Coder::
-  https://www.drupal.org/project/coder[Coder] is a command-line tool that checks
-  if your modules and themes comply with coding standards and other best
-  practices. It can also fix coding standard violations.
-Firebug::
-  http://getfirebug.com[Firebug] is a Firefox plugin that allows viewing,
-  editing, debugging, and monitoring CSS, HTML, and JavaScript in a separate
-  browser window. The https://www.drupal.org/project/drupalforfirebug[contributed Drupal for Firebug module]
-  displays Drupal debugging and SQL query information in the Firebug window.
+  https://www.drupal.org/project/coder[Coder] est un outil ligne de commande qui
+  vérifie si vos modules et thèmes sont compatibles avec les normes de
+  développement et les autres bonnes pratiques. Il peut aussi réparer les
+  violations des standards de codage.
+Outils de débogage intégrés aux navigateurs::
+  Les navigateurs web tels que Firefox et Chrome incluent des outils qui
+  permettent de voir, modifier, et de surveiller le CSS, l'HTML et le
+  JavaScript. Vous pouvez ouvrir le panneau ou fenêtre de débogage en cliquant
+  avec le bouton droit de la souris dans une zone de votre fenêtre, et choisir
+  "Inspecter" ou "Inspecter l'élément".
 
-==== Related topics
+==== Sujets liés
 
 <<install-composer>>
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
-* https://www.drupal.org/node/147789[_Drupal.org_ community documentation page "Development tools"]
+* https://www.drupal.org/node/147789[_Drupal.org_ community documentation page
+"Development tools"] (en anglais)
 
 * https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
+(en anglais)
+
+* https://fr.wikipedia.org/wiki/Gestion_de_versions#Gestion_de_versions_d%C3%A9centralis%C3%A9e[Article Wikipédia "Gestion de versions décentralisée"]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit et modifié par  https://www.drupal.org/u/batigolix[Boris Doesborg]
+et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
