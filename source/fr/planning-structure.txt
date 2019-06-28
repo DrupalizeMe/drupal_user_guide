@@ -1,19 +1,21 @@
 [[planning-structure]]
-=== Planning your Content Structure
+=== Concevoir la structure de votre contenu
 
 [role="summary"]
-How to plan a content structure that assigns content entity types to specific content on the website.
+Comment concevoir une structure pour votre contenu qui utilise les types
+d'entité de contenu pour des contenus spécifiques à votre site.
 
-(((Content structure,planning)))
-(((Site plan,content structure)))
+(((Structure du contenu,planning)))
+(((Site plan,structure du contenu)))
 
-==== Goal
+==== Objectif
 
-Make a plan for the content structure of the site (which type and subtype of
-entity to use for which content), and which pages will contain listings of
-content.
+Concevoir la structure du contenu de votre site (quel type et sous-type d'entité
+utiliser pour quel contenu), et quelles pages contiendront des listes de
+contenus.
 
-==== Prerequisite knowledge
+
+==== Pré-requis
 
 * <<planning-data-types>>
 * <<planning-modular>>
@@ -21,127 +23,143 @@ content.
 
 //==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-. Brainstorm about what content your site needs to contain, which could include
-content that visitors would be looking for, as well as content that you want
-to show to visitors. The result could be the description in
-<<preface-scenario>>.
+. Réfléchir en amont au contenu que votre site contiendra, ce qui peut
+inclure le contenu que les visiteurs recherchent, tout comme le contenu que vous
+voulez montrer aux visiteurs. Le résultat peut être la description présentée
+dans <<preface-scenario>>.
 
-. For each identified piece of content, decide which content entity type would
-be the best fit. In doing this, you'll need to consider where and how
-the content will be used and edited on the site. For example, in the farmers
-market site scenario, you might want to display the hours and location of the
-farmers market on the sidebar of every page. For that content, a single custom
-block makes sense. As another example, you might decide that pages displaying
-information about each vendor should be content items managed by the core Node
-module, because you want vendors to be able to edit their own listings.
-The core Node module permission system lets you do this easily.
+. Pour chaque morceau de contenu identifié, choisir quel type d'entité de
+contenu conviendrait le mieux. Ce faisant, vous devriez prendre en compte où et
+comment le contenu sera utilisé et modifié sur le site. Par exemple, dans le
+scénario d'exemple du site du marché fermier, vous pourriez vouloir afficher les
+horaires et la localisation du marché de la ferme dans la barre de navigation
+sur chaque page. Pour ce contenu, un seul bloc personnalisé a du sens. Autre
+exemple : vous pourriez décider que les pages affichant les informations sur
+chaque vendeur doivent être des éléments de contenu gérés par le module du cœur
+(core) Node, parce que vous voulez que les vendeurs puissent eux même modifier
+leur propres listes. Le système de permissions du module du cœur Node permet de
+le faire facilement.
+
 +
-These decisions do not necessarily always have only one right answer; for
-instance, you could decide that vendor pages should be user profiles instead of
-content items, but if you did that the content would be tied to a specific user
-account, and it would not be as easy to later change the ownership of a vendor
-page to a different user account.
+Ces décisions n'admettent pas forcément une seule bonne réponse ; par exemple,
+vous pourriez décider que les pages des vendeurs doivent être des profils
+utilisateurs au lieu d'éléments de contenu, mais si vous faisiez ça, le contenu
+serait lié à un compte utilisateur spécifique, et il ne serait pas facile de
+transférer la propriété d'une page de vendeur à un autre compte utilisateur.
 
-. Within each content entity type you identified, decide what division into
-entity sub-types would make sense. For example, in the farmers market site
-example, you would probably decide that under the Content item entity type,
-there should be one content type for basic pages (Home and
-About), one for vendor pages, and one for recipe pages.
+. Au sein de chaque type d'entité de contenu que vous avez identifié, choisissez
+quel sous-type d'entité est adapté. Par exemple, dans l'exemple du site du
+marché fermier, vous décideriez probablement que sous le type d'entité élément
+de contenu, il devrait y avoir un type de contenu pour les pages basiques
+(Accueil et À propos), un pour les pages des vendeurs, et un autre pour les
+pages de recettes.
 
-. For each entity sub-type you decided on, decide what fields are needed. For
-instance, the Vendor content type might need fields for the vendor name, web
-page URL, image, and description.
+. Pour chaque sous-type d'entité que vous avez choisi, définir quels sont les
+champs nécessaires. Par exemple, le type de contenu Vendeur nécessite des champs
+pour le nom du vendeur, l'URL de son site, une image et une description.
 
-. Decide on what entity listings are needed, which could be entire pages or
-smaller areas on the page. For each listing, you'll need to determine what
-entity items should be listed. Then you'll need to decide in what order and with
-what filtering options they should be displayed; for example, you might want to
-give the site visitor the option to search by keyword, to filter the list down
-to a subset, or to sort the list. You'll also need to decide what information
-from the entity items should be shown, which might result in adding to the list
-of fields you determined in the previous step. The farmers market site, for
-example, needs to have a Recipes listing page that lists content items of type
-Recipe, with the ability to filter by ingredients, so that means that the Recipe
-content type needs an Ingredients field.
+. Définir les listes d'entités qui sont nécessaires, qui peuvent être des pages
+entières ou des zones plus petites de la page. Pour chaque liste, vous aurez
+besoin de définir quelles entités devront être listées, puis de définir l'ordre
+et avec quelles options de filtres elles doivent s'afficher ; par exemple, vous
+pourriez souhaiter donner au visiteur du site la possibilité de rechercher par
+mot clé, de filtrer la liste avec une liste déroulante pour la réduire à un
+sous-ensemble, ou d'ordonner la liste. Vous devrez aussi définir quelles
+informations de quelles entités doivent être affichées, ce qui pourrait
+entraîner l'ajout de champs à la liste que vous avez définie à l'étape
+précédente. Le site du marché fermier, par exemple, a besoin d'une page de liste
+de recettes, qui liste les éléments de contenus de type Recette, avec la
+possibilité de filtrer par ingrédients, ce qui signifie que le type de contenu
+Recette a besoin d'un champ Ingrédient.
 
-. For each identified field on each entity subtype, identify what type of data
-it should contain (such as plain text, formatted text, a date, an image file,
-etc.), and how many values should be allowed. Most fields are
-single-valued, but for example, a Recipe should allow for multiple values in
-its Ingredients field.
+. Pour chaque champ identifié sur chaque sous-type d'entité, déterminer quel
+type de données  il contiendra (comme texte brut, texte formaté, une date, un
+fichier image, etc.), et combien de valeurs sont autorisées. La plupart des
+champs n'admettent qu'une valeur, mais par exemple, une recette devrait
+permettre d'ajouter plusieurs ingrédients via son champ.
 
-. Consider which fields would be best as references to taxonomy term entities:
-fields whose values should be chosen from a list of allowed values. Allowed
-values that are expected to change and grow over time, are good candidates. An
-example is the Ingredients field for the Recipe content type.
+. Étudier quels champs seraient plus pertinents sous la forme de références vers
+des entités de type terme de taxonomie : les champs dont les valeurs devraient être
+choisies parmi une liste de valeurs prédéfinies. Les valeurs autorisées dont la
+liste va grandir avec le temps, sont de bons candidats. Un exemple est le champ
+ingrédient pour le type de contenu Recette.
 
-. Consider which fields should reference other content entities. An example is
-that since vendors will be submitting recipes, a field will be needed on
-the Recipe content type that references the Vendor content item for the vendor
-who submitted the recipe.
+* Étudier quels champs devraient référencer d'autres entités de
+contenu. Par exemple, puisque le vendeur soumet des recettes, un champ est
+requis sur le type de contenu Recette qui référence le contenu Vendeur pour
+chaque vendeur qui soumet une recette.
 
-Here's an example of the resulting content structure for the farmers market
-scenario example site:
-
-[width="100%",frame="topbot",options="header"]
-|=============================================
-|Entity type |Entity sub-type |Examples |Fields
-
-|Content item |Basic page |Home page, about page |Title, page body
-
-|Content item |Vendor |A page for each vendor at the market |
-  Vendor name, page body, image, URL
-
-|Content item |Recipe |A page for each submitted recipe |
-  Recipe name, page body, image, reference to Vendor who submitted it,
-  Ingredients taxonomy
-
-|Custom block |(generic) |Copyright notice for footer,
-  Hours and location for sidebar |No special fields
-
-|Taxonomy term |Ingredients |Carrots, tomatoes, and other recipe ingredients |
-  No special fields
-
-|Contact form |(generic) |Generic contact form |Name, email, subject, message
-
-|User profile |(none) |Will not be displayed on site |No special fields
-
-|=============================================
-
-And here are the listings the site needs:
+Voici un exemple du résultat de la structure du contenu dans le scénario d'exemple
+du site du marché de la ferme :
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Page or page area |Entity type and sub-type |Filter/sort/pagination |
-  Fields displayed
+|Type d'entité |Sous-type d'entité |Exemples |Champs
 
-|Vendors page |Vendor content items |All vendors, alphabetical, paged |
-  Image, vendor name, trimmed body
+|Élément de contenu |Page basique |Accueil, page À propos |Titre, corps de la page
 
-|Recipes page |Recipe content items |
-  Filter by ingredients, alphabetical, paged |Image, recipe name
+|Élément de contenu |Vendeur |Une page pour chaque vendeur du marché |
+  Nom du vendeur, corps de la page, image, URL
 
-|Recent recipes sidebar |Recipe content items |List 5 most recent |
-  Image, recipe name
+|Élément de contenu |Recette |Une page pour chaque recette soumise |
+  Nom de la recette, corps de la page, image, référence au vendeur qui l'a
+  proposée, taxonomie Ingrédients
+
+|Bloc personnalisé|(générique) |Crédits en pied-de-page,
+  Horaires et localisation pour la barre de navigation |Pas de champ spécifique
+
+|Terme de Taxonomie |Ingrédients |Carottes, tomates, et autres types
+d'ingrédients | Pas de champ spécifique
+
+|Formulaire de contact |(générique) |Formulaire de contact générique |Nom,
+adresse électronique, sujet, message
+
+|Profil utilisateur |(aucun) |Ne sera pas affiché sur le site |Pas de champ spécifique
 
 |=============================================
 
-==== Expand your understanding
+Et voici les listes dont le site a besoin :
+
+[width="100%",frame="topbot",options="header"]
+|=============================================
+|Page ou zone de page |Type d'entité et sous-type |Filtre/ordre/pagination |
+  Champs affichés
+
+|Page des vendeurs |Contenu Vendeur |Tous les vendeurs, alphabétique, paginé |
+  Image, Nom du vendeur, Corps tronqué
+
+|Page des recettes |Contenu Recette |
+  Filtrer par ingrédients, alphabétique, paginé |Image, Nom de la recette
+
+|Recettes récentes dans la barre de navigation |Contenu Recette |Lister les 5
+plus récentes |
+  Image, nom de la recette
+
+|=============================================
+
+==== Améliorer votre compréhension
 
 * <<structure-content-type>>
 * <<structure-fields>>
 * <<structure-taxonomy-setup>>
 
-==== Related concepts
+==== Concepts liés
 
 <<structure-taxonomy>>
 
-//==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CaNt4DEeIgU[title="Planning Your Content Structure"]
+
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
-and https://www.drupal.org/u/gdunham[Grant Dunham].
+Ecrit et modifié par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+et https://www.drupal.org/u/gdunham[Grant Dunham].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
