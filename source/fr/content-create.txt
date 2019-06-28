@@ -1,89 +1,97 @@
 [[content-create]]
 
-=== Creating a Content Item
+=== Créer un élément de contenu.
 
 [role="summary"]
-How to create a content item for use as the home page.
+Comment créer un élément de contenu pour utilisation en tant que page d'accueil.
 
-(((Content item,creating)))
-(((Basic page,creating)))
-(((Home page,creating)))
+(((Élément de contenu,création)))
+(((Page de base,création)))
+(((Page d'accueil,création)))
 
-==== Goal
+==== Objectif
 
-Create and publish a content item that will be used as the home page of the
-site.
+Créer et publier un élément de contenu qui sera utilisé en guise de page
+d'accueil du site.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<content-paths>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The _Basic page_ content type must exist. This is created on your site when you
-install with the core Standard installation profile.
+Le type de contenu _Page de Base_ doit exister. Il est créé sur votre site quand
+vous l'installez avec le profil d'installation Standard du cœur.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-_Basic page_ (_node/add/page_). The _Create Basic page_ form appears.
+. Dans le menu d'administration _Gérer_, naviguer dans _Contenu_ > _Ajouter un
+contenu_ > _Page de base_ (_node/add/page_). Le formulaire _Créer Page de base_
+apparaît.
 
-. Click _Edit summary_.
+. Cliquer sur _Modifier le résumé_.
 
-. Fill in the fields as shown below.
+. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Value
-| Title | Title of the page. Will also be used as a meta tag in the source code,
- URL alias, and as label of the content item in administration screens | Home
-| Summary | Summary of the value of the body field. Can be used as teaser
-in overview pages | Opening times and location of City Market.
-| Body | Full content of the page | Welcome to City Market - your neighborhood
-farmers market!
+| Nom du champ | Explication| Valeur
+| Titre | Titre de la page. Il sera aussi utilisé comme balise meta dans le code source,
+les alias d'URL, et comme étiquette de l'élément de contenu dans l'écran d'administration |Accueil
+| Résumé | Résumé de la valeur du champ Corps. Peut être utilisé comme accroche
+dans les pages d'aperçu. | Horaires d'ouvertures et localisation du marché.
+| Corps | Contenu complet de la page | Bienvenue au Marché - votre marché
+fermier de proximité !
 
-Open: Sundays, 9 AM to 2 PM, April to September
+Ouverture : dimanche de 9h à 14h, d'avril à septembre
 
-Location: Parking lot of Trust Bank, 1st & Union, downtown
-|URL path settings > URL alias| Alternate relative path for the content | /home
+Localisation : Parking de la banque, Place de la Poste, centre-ville
+|Paramètres des chemins d'URL > Alias d'URL| Chemin alternatif du contenu | /accueil
 |================================
 +
-By clicking the _Source_ button in the rich text editor toolbar, you can see the
-HTML source code of the text that you are editing.
+En cliquant sur le bouton _Source_ dans la barre d'outil de texte riche, vous
+pouvez voir le code source HTML du texte en cours de modification.
 +
 --
 // Partly filled-in node/add/page, with Summary section open.
-image:images/content-create-create-basic-page.png["Create a basic page",width="100%"]
+image:images/content-create-create-basic-page.png["Créer une page de base",width="100%"]
 --
 
-. Click _Preview_ to ensure everything looks like expected.
+. Cliquer sur _Aperçu_ pour vous assurer que tout est correct.
 
-. Click _Back to content editing_.
+. Cliquer sur _Revenir à la modification du contenu_.
 
-. Click _Save and publish_. The content is saved and can be found on the
-_Content_ page.
+. Cliquer sur _Enregistrer et publier_. Le contenu est enregistré et peut être
+trouvé dans la page _Contenu_.
 
-. Follow the same steps to create an About page, with title "About", and a body
-telling about the history of the farmer's market.
+. Suivre les mêmes étapes pour créer une page À propos, avec le titre "À propos"
+et un corps parlant de l'histoire du marché fermier.
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 * <<menu-home>>
 * <<menu-link-from-content>>
 * <<language-content-translate>>
 
-==== Related concepts
+==== Concepts liés
 
 * <<language-concept>>
 * <<content-paths>>
 * <<content-edit>>
 
-==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/h312fekiSNE[title="Creating a Content Item"]
+
+==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/docs/8/core/modules/node/about-nodes[_Drupal.org_ community documentation page "About nodes"]
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/pixiekiss[Agnes Kiss] and
+Écrit par https://www.drupal.org/u/pixiekiss[Agnes Kiss] et
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
