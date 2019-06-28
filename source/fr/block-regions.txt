@@ -1,70 +1,72 @@
 [[block-regions]]
 
-=== Concept: Regions in a Theme
+=== Concept : régions dans un thème
 
 [role="summary"]
-Overview of regions from a theming perspective.
+Vue d'ensemble des régions du point de vue du thème.
 
-(((Theme,regions in)))
-(((Bartik theme,regions in)))
-(((Region,overview)))
-(((Breadcrumb region,overview)))
-(((Content region,overview)))
-(((Featured regions,overview)))
-(((Footer regions,overview)))
-(((Header region,overview)))
-(((Help region,overview)))
-(((Highlighted region,overview)))
-(((Menu region,overview)))
-(((Primary menu region,overview)))
-(((Secondary menu region,overview)))
-(((Sidebar regions,overview)))
-(((Region,breadcrumb)))
-(((Region,content)))
-(((Region,featured)))
-(((Region,footer)))
-(((Region,header)))
-(((Region,help)))
-(((Region,highlighted)))
-(((Region,menu)))
-(((Region,primary menu)))
-(((Region,secondary menu)))
-(((Region,sidebar)))
+(((Thème,régions dans un)))
+(((Thème Bartik,régions dans le)))
+(((Région,vue d'ensemble)))
+(((Région du fil d'Ariane,vue d'ensemble)))
+(((Région du contenu,vue d'ensemble)))
+(((Régions mises en avant,vue d'ensemble)))
+(((Région du pied de page,vue d'ensemble)))
+(((Région de l'en-tête,vue d'ensemble)))
+(((Région de l'aide,vue d'ensemble)))
+(((Région mise en évidence,vue d'ensemble)))
+(((Région du menu,vue d'ensemble)))
+(((Région du menu primaire,vue d'ensemble)))
+(((Région du menu secondaire,vue d'ensemble)))
+(((Régions de barres latérales,vue d'ensemble)))
+(((Région,fil d'Ariane)))
+(((Région,contenu)))
+(((Région,featured)))
+(((Région,pied de page)))
+(((Région,en-tête)))
+(((Région,aide)))
+(((Région,highlighted)))
+(((Région,menu)))
+(((Région,menu primaire)))
+(((Région,menu secondaire)))
+(((Région,barre latérale)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<understanding-themes>>
 
-==== What is a region?
+==== Qu'est ce qu'une région ?
 
-Besides its primary content, a web page contains other content such as site
-branding (site name, slogan, and logo), navigation aids (menus, links, and
-icons), formatted text, and images. Each theme provides a set of named regions,
-such as _Header_, _Content_, and _Sidebar_, where site builders may choose to
-place their content.
+En plus de son contenu principal, une page web contient de nombreux autres
+contenus comme la marque du site (nom du site, slogan, et logo),  des aides à la
+navigation (menus, liens et icônes), du texte formaté et des images. Chaque
+thème fournit un ensemble de régions telles que _Header_, _Content_, et
+_Sidebar_, dans lesquelles un webmaster peut choisr de placer leur contenu.
 
-The available regions depend on the theme design. Only the Content region,
-which contains the primary content, is required; others are optional.  The
-core Bartik theme provides the eighteen regions highlighted in the following
-image.
+Les régions disponibles dépendent du design du thème. Seule la région Content
+peut contenir le contenu principal, c'est obligatoire ; les autres sont
+optionnelles. Le thème du cœur Bartik fournit dix-huit régions mises en évidence
+dans l'image suivante.
 
 // Bartik theme region preview at admin/structure/block/demo/bartik,
 // after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+image:images/block-regions-bartik.png["Régions du thème Bartik du cœur",width="100%"]
 
-==== Related topics
+==== Sujets liés
 
 * <<block-concept>>
 * <<planning-data-types>>
 * <<block-place>>
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 * https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Écrit et modifié par https://www.drupal.org/u/jfmacdonald[John MacDonald],
+et https://www.drupal.org/u/michaellenahan[Michael Lenahan] de
 https://erdfisch.de[erdfisch].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
