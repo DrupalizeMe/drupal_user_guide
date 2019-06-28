@@ -1,69 +1,71 @@
 [[user-concept]]
 
-=== Concept: Users, Roles, and Permissions
+=== Concept : utilisateurs, rôles et droits
 
 [role="summary"]
-Overview of user accounts, permissions, and roles.
+Vue d'ensemble des comptes utilisateurs, droits et rôles.
 
-(((User,overview)))
-(((Role,overview)))
-(((User role,overview)))
-(((Permission,overview)))
-(((Anonymous user,overview)))
-(((Authenticated user,overview)))
-(((Administrative user account,overview)))
+(((Utilisateur,vue d'ensemble)))
+(((Rôle,vue d'ensemble)))
+(((Rôle utilisateur,vue d'ensemble)))
+(((Droit,vue d'ensemble)))
+(((Utilisateur anonyme,vue d'ensemble)))
+(((Utilisateur authentifié,vue d'ensemble)))
+(((compte utilisateur d'administration,vue d'ensemble)))
 
 // ==== Prerequisite knowledge
 
-==== What are Users?
+==== Que sont les utilisateurs ?
 
-Anyone who visits your website is a _user_, including you. There are three
-groups of users:
+Quiconque visite votre site web est un _utilisateur_, y compris vous. Il y a
+trois groupes d'utilisateurs :
 
-* Users who are not logged in, or _anonymous users_
+* Les utilisateurs qui ne sont pas connectés, ou _utilisateurs anonymes_.
 
-* Users who are logged in, or _authenticated users_
+* Les utilisateurs qui sont connectés, ou _utilisateurs authentifiés_.
 
-* The administrative user account that was automatically created when you
-installed your site, or User 1. See <<user-admin-account>>.
+* Le compte d'administration, qui est créé automatiquement à l'installation de
+votre site, ou utilisateur n°1. Consulter <<user-admin-account>>.
 
-==== What are Permissions?
+==== Que sont les droits ?
 
-The ability to do actions on your site (including viewing content, editing
-content, and changing configuration) is governed by _permissions_. Each
-permission has a name (such as _View published content_) and covers one action
-or a small subset of actions. A user must be granted a permission in order to do
-the corresponding action on the site; permissions are defined by the modules
-that provide the actions.
+La capacité à effectuer des actions sur votre site (y compris voir le contenu,
+modifier le contenu, et modifier la configuration) est dirigée par les
+_droits_. Chaque droit a un nom (comme _Voir le contenu publié_) et
+couvre une action ou un petit ensemble d'actions. Un utilisateur doit avoir un
+droit pour effectuer l'action correspondante sur le site ; les droits sont
+définis par les modules qui définissent les actions.
 
-==== What are Roles?
+==== Que sont les rôles ?
 
-Rather than assigning individual permissions directly to each user, permissions
-are grouped into _roles_. You can define one or more roles on your site, and
-then grant permissions to each role. The permissions granted to authenticated
-and anonymous users are contained in the _Authenticated user_ and _Anonymous
-user_ roles, and depending on the installation profile you used when you
-installed your site, there may also be an _Administrator_ role that is
-automatically assigned all permissions on your site.
+Plutôt que d'assigner les droits individuellement à chaque utilisateur, les
+droits sont regroupés dans des _rôles_. Vous pouvez définir un ou plusieurs
+rôles sur votre site, et accorder des droits à chaque rôle. Les droits accordés
+aux utilisateurs anonymes et aux utilisateurs authentifiés sont contenus dans
+les rôles _Utilisateur anonyme_ et _Utilisateur authentifié_, et en fonction du
+profil d'installation utilisé lors de l'installation du site, il peut y avoir un
+rôle _Administrateur_ pour lequel les droits sont tous automatiquement accordés
+sur votre site.
 
-Each user account on your site is automatically given the _Authenticated user_
-role, and may optionally be assigned one or more additional roles. When you
-assign a role to a user account, the user will have all the permissions of the
-role when logged in.
+Chaque compte utilisateur de votre site a automatiquement le rôle _Utilisateur
+authentifié_, et peut en plus recevoir un ou plusieurs rôles. Lorsque vous
+assignez un rôle à un compte utilisateur, l'utilisateur aura toutes les
+droits du rôle lorsqu'il est connecté.
 
-It is a good practice to make several roles on your site. In the farmers market
-site example, you might want the following roles:
+C'est une bonne pratique d'avoir plusieurs rôles sur votre site. Dans le site
+d'exemple du marché fermier, vous pourriez vouloir disposer des rôles suivants :
 
-* A Vendor role that allows vendors to edit their own vendor listing page
+* Un rôle Vendeur qui permet aux vendeurs de modifier leur propre page vendeur.
 
-* A Content editor role for editing the general farmers market pages
+* Un rôle Éditeur du contenu pour modifier les pages générales du marché
+fermier.
 
-* A User manager role for managing the vendor accounts
+* Un rôle Gestionnaire des utilisateurs pour gérer les comptes des vendeurs.
 
-* The _Administrator_ role that was installed with your site, for expert users
-to manage the site configuration
+* Le rôle _Administrateur_ qui a été installé sur votre site, pour que les
+utilisateurs experts gèrent la configuration du site.
 
-==== Related topics
+==== Sujets liés
 
 * <<user-new-role>>
 * <<user-permissions>>
@@ -72,7 +74,7 @@ to manage the site configuration
 * <<user-admin-account>>
 * <<user-content>>
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 * https://www.drupal.org/node/120614[_Drupal.org_ community documentation page "Users, roles and permissions"]
 * https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
@@ -81,9 +83,11 @@ to manage the site configuration
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+Adapté par https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
+https://www.drupal.org/u/batigolix[Boris Doesborg], et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] depuis
 https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+copyright 2000-2019 par les contributeurs individuels de
+https://www.drupal.org/documentation[la documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
