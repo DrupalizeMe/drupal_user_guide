@@ -1,149 +1,166 @@
 [[structure-content-type]]
 
-=== Adding a Content Type
+=== Ajouter un type de contenu
 
 [role="summary"]
-How to add and configure a new content type.
+Comment ajouter et configurer un nouveau type de contenu.
 
-(((Content type, adding)))
+(((Type de contenu,ajouter)))
 
-==== Goal
+==== Objectif
 
-Add and configure a new content type Vendor.
+Ajouter et configurer un nouveau type de contenu Vendeur.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<planning-data-types>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-You need to have a plan in place for your content structure. See
+Vous avez besoin d'un plan pour la structure de votre contenu. Consulter
 <<planning-structure>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). The _Content types_ page appears showing all the
-available types of content.
+. Dans le menu d'admnistration _ Gérer_, aller à _Structure_ > _Types de
+contenu_ (_admin/structure/types_). La page _Types de contenu_ affiche les types
+de contenus disponibles.
 
-. Click _Add content type_. The _Add content type_ page appears. Fill
-in the fields as shown below.
+. Cliquer sur _Ajouter un type de contenu_. La page _Ajouter un type de contenu_
+apparaît.  Remlir les champs comme ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Name | Name of the content type | Vendor
-| Description | Explain the use of the content type | Information about a vendor
+| Nom du champ | Explication | Valeur d'exemple
+| Nom | Nom du type de contenu | Vendeur
+| Description | Expliquer l'usage du type de contenu | Information à propos d'un vendeur
 |================================
 +
 --
 // Top of admin/structure/types/add, with Name and Description fields.
-image:images/structure-content-type-add.png["Adding a Content type"]
+image:images/structure-content-type-add.png["Ajout d'un type de contenu"]
 --
 
-. In the vertical tab _Submission form settings_, configure the form that is
-used for creating and editing content of this type. Fill in the fields as shown
-below.
+. Dans l'onglet vertical _Paramètres du formulaire de soumission_, configurer le
+formulaire qui est utilisé pour créer et modifier le contenu de ce type. Remplir
+les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title | Label of the Title field that is shown when editing or creating content of this type. | Vendor name
-| Preview before submitting | Option to choose whether you should preview the content before submitting. | Optional
-| Explanation or submission guidelines | Instructions for creating or editing content. | (Leave blank)
+| Nom du champ | Explication | Valeur exemple
+| Titre | Étiquette du champ Titre qui est affichée lors de la modification ou de la création d'un contenu de ce type. | Nom du vendeur
+| Aperçu avant soumission | Option pour choisir si l'aperçu du contenu avant la publication est obligatoire. | Facultatif
+| Explication ou directives pour la contribution | Instructions pour la création et la modification de contenu. | (Laisser vide)
 |================================
 +
 --
 // Submission form settings section of admin/structure/types/add.
-image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
+image:images/structure-content-type-add-submission-form-settings.png["Paramètres
+du formulaire de soumission"]
 --
 
-. In the vertical tab _Publishing options_, decide on default options for new
-content of this type. Fill in the fields as shown below.
+. Dans l'onglet vertical _Options de publication_, décider des options par
+défaut pour les nouveaux contenus de ce type. Remplir les champs comme indiqué
+ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Published | Make the content item published by default. | Checked
-| Promoted to front page | In a default website, this setting can be used to show content on the homepage. | Unchecked
-| Sticky at the top of the list | In a default website, this setting can be used to keep content on top of a list. | Unchecked
-| Create new revision | Create a new revision each time the vendor is being edited. | Checked
+| Nom du champ | Explication | Valeur d'exemple
+| Publié | Publié le contenu par défaut. | Coché
+| Promu en page d'accueil | Dans un site web par défaut, cette option peut être
+utilisée pour voir le contenu sur la page d'accueil. | Décoché
+| Épinglé en haut des listes | Dans un site web par défaut, cette option peut
+être utilisée pour garder le contenu en haut d'une liste. | Décoché
+| Créer une nouvelle révision | Créer une nouvelle révision à chaque fois que le vendeur est modifié. | Coché
 |================================
 +
-Changing these settings does not affect the content items that have already been
-created.
+Changer ces options n'affecte pas les contenus déjà créés.
 +
 --
 // Publishing settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Publishing-Options.png["Publishing Options"]
+image:images/structure-content-type-add-Publishing-Options.png["Options de
+publication"]
 --
 
-. In the vertical tab _Display settings_, decide if the author and
-publication date will be visible in the content item. Fill in the fields as
-shown below.
+. Dans l'onglet vertical _Paramètres d'affichage_ , décider si l'auteur et la
+date de publication seront visibles sur les éléments de contenu.  Remplir les
+champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Display author and date information | Display the author username and publication date on each vendor page. | Unchecked
+| Nom du champ | Explication | Valeur exemple
+| Afficher les informations sur l'auteur et la date | Afficher l'identifiant de l'auteur et la date de publication sur chaque page de vendeur. | Décoché
 |================================
 +
 --
 // Display settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Display-settings.png["Display settings"]
+image:images/structure-content-type-add-Display-settings.png["Paramètres
+d'affichage"]
 --
 
-. In the vertical tab _Menu settings_, fill in the fields as shown below.
+. Dans l'onglet vertical _Paramètres du menu_, remplir les champs comme montré
+ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Available menus | Menus that this type of content can be added to. Vendors do not need to appear in menus, so uncheck all menu options. | Unchecked
+| Nom du champ | Explication | Valeur d'exemple
+| Menus disponibles | Menus dans lesquels les contenus de ce type peuvent être
+ajoutés. Les vendeurs n'ont pas besoin d'apparaitre dans les menus, donc
+décocher toutes les options de menus. | Décoché
 |================================
 +
 --
 // Menu settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
+image:images/structure-content-type-add-Menu-settings.png["Paramètres du menu"]
 --
 
-. Click _Save and manage fields_ to save the content type. The
-_Manage fields_ page appears that allows you to add fields to the content
-type. See <<structure-fields>>
+. Cliquer sur _Enregistrer et gérer les champs_ pour enregistrer le type de
+contenu.  La page _Gérer les champs_ qui apparaît permet d'ajouter des champs au
+type de contenu.  Voir <<structure-fields>>
 +
 --
 // Manage fields page after adding Vendor content type.
 image:images/structure-content-type-add-confirmation.png["Confirmation",width="100%"]
 --
 
-. Follow the same steps to create a content type for recipes. Example values
-for the fields in the forms, where they are different from the steps above:
+. Suivre les mêmes étapes pour créer un type de contenu pour les recettes. Valeurs
+d'exemples pour les champs dans les formulaires lorsqu'elles sont différentes de
+celles indiquées dans les étapes ci-dessus :
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Example value
-| Name | Recipe
-| Description | A recipe submitted by a vendor
-| Submission form settings - Title | Recipe name
+| Nom du champ | Valeur d'exemple
+| Nom | Recette
+| Description | Une recette proposée par un vendeur
+| Paramètres du formulaire de contribution - Titre | Nom de la recette
 |================================
 
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 * <<structure-fields>>
 
-* Install and configure the https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content items get automatically generated URLs/path aliases. See <<content-paths>> for more on
-URLs within your site, <<extend-module-find>> for instructions on finding
-contributed modules, and <<extend-module-install>> for instructions on
-downloading and installing contributed modules.
+* Installer et configurer le https://www.drupal.org/project/pathauto[contributed Pathauto module]
+pour que les items de contenus aient un alias d'URL / de chemin généré
+automatiquement. Voir <<content-paths>> pour plus d'information sur les URL de
+votre site, <<extend-module-find>> pour des instructions sur comment trouver les
+modules communautaires, et <<extend-module-install>> pour les instructions sur
+le téléchargement et l'installation de modules communautaires.
 
-// ==== Related concepts
+// ==== Concepts liés
 
-// ==== Additional resources
+==== Vidéos (anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/vyvqiaaGM1k[title="Adding a Content Type"]
+
+// ==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
+Ecrit et modifié par https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/batigolix[Boris Doesborg], et
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
