@@ -1,162 +1,178 @@
 [[structure-fields]]
 
-=== Adding Basic Fields to a Content Type
+=== Ajouter des champs de base à un type de contenu
 
 [role="summary"]
-How to add fields to a content type.
+Comment ajouter des champs à un type de contenu.
 
-(((Content type,adding field to)))
-(((Field,adding to content type)))
-(((Image field,adding)))
-(((URL field,adding)))
+(((Type de contenu,y ajouter un champ)))
+(((Champ,ajouter à un type de contenu)))
+(((Champ image,ajouter)))
+(((Champ URL,ajouter)))
 
-==== Goal
+==== Objectif
 
-Add a link field and an image field to the Vendor content type.
+Ajouter un champ lien et un champ image au type de contenu Vendeur.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<planning-data-types>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The Vendor content type must exist. See <<structure-content-type>>.
+Le type de contenu Vendeur doit exister. Consulter <<structure-content-type>>.
 
-==== Steps
+==== Étapes
 
-Add the fields Vendor URL and Main image to the Vendor content type.
+Ajouter les champs URL du vendeur et image principale au type de contenu Vendeur.
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). Then click _Manage fields_ in the dropdown
-button for the Vendor content type. The _Manage fields_ page appears.
+. Dans le menu d'administration _Gérer_, aller dans _Structure_ > _Types de
+contenu_ (_admin/structure/types_). Puis cliquer sur _Gérer les champs_ dans la
+liste déroulante du type de contenu Vendeur. La page _Gérer les champs_
+apparaît.
 
-. Click _Add field_. The _Add field_ page appears. You can either create a new
-field for the content type or re-use an existing field.
+. Cliquer sur _Ajouter champ_. La page _Ajouter un champ_ apparaît. Vous pouvez
+soit créer un nouveau champ pour le type de contenu, soit réutiliser un champ
+existant.
 
-. Fill in the fields as shown below.
+. Remplir les champs commme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Add a new field | Field type| Link
-| Label | Label that is visible in administration pages | Vendor URL
+| Nom du champ | Explication | Valeur
+| Ajouter un nouveau champ | Type de champ| Lien
+| Étiquette | Étiquette visible sur les pages d'administration | URL du vendeur
 |================================
 +
-A machine name is automatically generated, based on the _Label_ value. Click
-_Edit_ if you want to override the default name.
+Un nom système est automatiquement généré, basé sur la valeur de l'_Étiquette_.
+Cliquer sur _Modifier_ si vous souhaitez surcharger la valeur par défaut.
 +
 --
 // Initial page for admin/structure/types/manage/vendor/fields/add-field.
-image:images/structure-fields-add-field.png["Add field page"]
+image:images/structure-fields-add-field.png["Page d'ajout d'un champ"]
 --
 
-. Click _Save and continue_. The page Vendor URL appears which lets you set
-the allowed number of values. Fill in the fields as shown below.
+. Cliquer sur _Enregistrer et continuer_. La page URL du vendeur apparaît, qui
+vous permet de définir le nombre de valeurs autorisées. Remplir les champs comme
+indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Allowed number of values | The number of values that can be entered | Limited, 1
+| Nom du champ | Explication | Valeur
+| Nombre de valeurs autorisées | Le nombre de valeurs qui peuvent être saisies. | Limité, 1
 |================================
 
-
-. Click _Save field settings_. The page _Vendor URL settings for Basic page_
-appears which allows you to configure the field. Fill in the fields as shown
-below.
+. Cliquer sur _Enregistrer les paramètres du champ_. La page _Paramètres du
+champ URL du vendeur pour Vendeur_ apparaît, qui vous permet de configurer le
+champ. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Label  | Label that is visible in the content form | Vendor URL
-| Help text | The instruction that is shown below the field | (leave blank)
-| Required field | Whether the field is required or not | Unchecked
-| Allowed link type | The kind of links that can be entered | External links only
-| Allow link text | Whether a link text can be entered | Disabled
+| Nom du champ | Explication | Valeur
+| Étiquette  | Étiquette visible dans le formulaire de contenu | URL du vendeur
+| Texte d'aide | L'instruction affichée sous le champ | (laisser vide)
+| Champ requis | Si le champ est requis ou non | Décoché
+| Type de lien autorisé | Le type de liens qui peuvent être saisis | Liens externes seulement
+| Autoriser le texte du lien | Si un texte de lien peut être saisi | Désactivé
 |================================
 +
 --
 // Field settings page for adding vendor URL field.
-image:images/structure-fields-vendor-url.png["Field settings page for Vendor URL",width="100%"]
+image:images/structure-fields-vendor-url.png["Page de configuration du champ URL
+du vendeur",width="100%"]
 --
 
-. Click _Save settings_. The Vendor URL has been added to the content
-type. Continue creating the Main image field.
+. Cliquer sur _Enregistrer les paramètres_. L'URL du vendeur a été ajoutée au
+type de contenu. Continuer en créant le champ image principale.
 
-. Click _Add field_. The _Add field_ page appears. Fill in the fields as shown
-below.
+. Cliquer sur _Ajouter un champ_. La page _Ajouter un champ_ apparaît. Remplir
+les champs commme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Add a new field | Field type | Image
-| Label | Label that is visible in administration pages | Main image
+| Nom du champ | Explication | Valeur
+| Ajouter un nouveau champ | Type de champ| Image
+| Étiquette | Étiquette visible sur les pages d'administration | Image principale
 |================================
 
-. Click _Save and continue_. The page Main image appears. Fill in the fields
-as shown below.
+. Cliquer sur _Enregistrer et continuer_. La page Image principale apparaît.
+Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Allowed number of values | The number of values that can be entered | Limited, 1
+| Nom du champ | Explication | Valeur
+| Nombre de valeurs autorisées | Le nombre de valeurs qui peuvent être saisies. | Limité, 1
 |================================
 +
-You can set a default image here. This will be used when you do not provide an
-image when creating a Vendor content item.
+Vous pouvez ici définir une image par défaut. Elle sera utilisée lorsque vous ne
+fournirez pas d'image lors de la création d'un contenu Vendeur.
 
-. Click _Save field settings_. The page _Main image settings for Basic page_
-appears. Fill in the fields as shown below.
+. Cliquer sur _Enregistrer les paramètres du champ_. La page _Paramètres du
+champ Image principale pour Vendeur_ apparaît, qui vous permet de configurer le
+champ. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Value
-| Label  | Label that is visible in the content form | Main image
-| Help text | The instruction that is shown below the field | (leave blank)
-| Required field | Whether the field is required or not | Checked
-| Allowed file extensions | The type of images that can be uploaded | png, gif, jpg, jpeg
-| File directory | The directory where the files will be stored. By providing a file directory value, you ensure that all images uploaded via the Main image field will be located in the same directory. | vendors
-| Minimum image resolution | The minimum resolution of the uploaded image | 600 x 600
-| Maximum upload size | The maximum file size of the uploaded image | 5 MB
-| Enable Alt field | Whether an alternative text can be entered | Checked
-| Alt field required | Whether an alternative text is required | Checked
+| Nom du champ | Explication | Valeur
+| Étiquette  | Étiquette visible dans le formulaire de contenu | Image principale
+| Texte d'aide | Les instructions affichées sous le champ | (laisser vide)
+| Champ requis | Si le champ est requis ou non | Coché
+| Extensions de fichier autorisées | Le type des images qui peuvent être téléchargées | png, gif, jpg, jpeg
+| Répertoire du fichier | Le répertoire où les fichiers seront stockés. En
+fournissant une valeur pour le repertoire de fichier, vous vous assurez que
+toutes les images envoyées via le champ Image principale seront rassemblées au même endroit. | vendeurs
+| Résolution minimum de l'image | La résolution minimum des images envoyées | 600 x 600
+| Taille maximale de transfert | La taille maximum du fichier de l'image envoyée | 5 MB
+| Activer le champ alt | Si un texte alternatif peut être saisi | Coché
+| Champ alt requis | Si le texte alternatif est requis | Coché
 |================================
 +
 --
 // Field settings page for adding main image field.
-image:images/structure-fields-main-img.png["Field settings page for Main Image",width="100%"]
+image:images/structure-fields-main-img.png["Page de configuration du champ image
+principale",width="100%"]
 --
 
-. Click _Save settings_. Main image has been added to the content type.
+. Cliquer sur _Enregistrer les paramètres_. L'image principale a été ajoutée au
+type de contenu.
 +
 --
 // Manage fields page for Vendor, showing two new fields.
-image:images/structure-fields-result.png["Manage fields page",width="100%"]
+image:images/structure-fields-result.png["Page Gérer les champs",width="100%"]
 --
 
-. Add a Main image field to the Recipe content type, using similar steps. Start
-by navigating to the Recipe content type's _Manage Fields_ page in step 1. Then
-skip to step 7 and follow the remaining steps, but reuse the existing Main image
-field you created for the Vendor content type rather than creating a new
-field. In subsequent steps, some of the configuration screens will not be
-available, because of the field reuse.
+. Ajouter un champ Image principale au type de contenu Recette, en utilisant les
+mêmes étapes. Commencer par aller à la page de _Gérer les champs_ du type de
+contenu Recette de l'étape 1. Puis aller directement à l'étape 7 et suivre les
+étapes restantes, mais en réutilisant le champ existant Image principale que
+vous avez créé pour le type de contenu Vendeur plutôt que de créer un nouveau
+champ. Dans les étapes suivantes, certains écrans de configuration ne seront pas
+disponibles, à cause de la réutilisation du champ.
 
-. Create two Vendor content items (see <<content-create>>) called "Happy Farm"
-and "Sweet Honey". Make sure that they include images and URLs.
+. Créer deux contenus de type Vendeur (consulter <<content-create>>) appelés
+"Ferme Joyeuse" et "Doux miel". Assurez vous d'inclure des images et des URL.
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 * <<structure-image-styles>>
 * <<structure-content-display>>
 * <<structure-form-editing>>
 
-// ==== Related concepts
+// ==== Concepts liés
 
-==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CZpfR9WbVcQ[title="Adding Basic Fields to a Content Type"]
+
+==== Pour aller plus loin
 
 https://www.drupal.org/node/774742[_Drupal.org_ community documentation page "Add a field to a content type"]
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/sree[Sree Veturi] and
+Ecrit par https://www.drupal.org/u/sree[Sree Veturi] et
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
