@@ -1,87 +1,92 @@
 [[menu-link-from-content]]
-=== Adding a Page to the Navigation
+=== Ajouter une page à la navigation
 
 [role="summary"]
-How to add a page to the navigation.
+Comment ajouter une page à la navigation.
 
-(((Menu,adding a link to page)))
-(((Page,adding to menu while editing)))
-(((Content,adding to menu while editing)))
-(((Navigation,linking menu to page)))
+(((Menu,ajouter un lien à une page)))
+(((Page,ajouter au menu depuis le formulaire de modification)))
+(((Contenu,ajouter au menu depuis le formulaire de modification)))
+(((Navigation,lier un menu à une page)))
 
-==== Goal
+==== Objectif
 
-Add a page to the navigation. For example, the About page.
+Ajouter une page à la navigation. Par exemple, la page _À propos_.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<menu-concept>>
 * <<content-edit>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The About page content item must exist. See <<content-create>>.
+Le contenu de la page _À propos_ doit exister. Voir <<content-create>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Dans le menu d'administration _Gérer, aller à _Contenu_ (_admin/content_).
 
-. Find the About page, and click _Edit_ in that row. The content editing form
-appears.
+. Trouver la page _À propos_, et cliquer sur _Modifier_ sur cette ligne. Le
+formulaire de modification du contenu apparaît.
 +
 --
 // Content table from admin/content page, with a red border around the Edit
 // button for the About page.
-image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
+image:images/menu-link-from-content_edit_page.png["Lien d'édition de la page",width="100%"]
 --
 
-. Click _Menu settings_ on the right to expand it.
+. Cliquer sur _Paramètres du menu_ sur la droite pour ouvrir le bloc.
 
-. Check _Provide a menu link_ for the menu options to appear.
+. Cocher _Fournir un lien de menu_ pour faire apparaître les options de menu.
 
-. Enter values from the table below:
+. Saisir les valeurs de la table ci-dessous :
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Menu link title |Title that will be displayed in the menu | About
-|Description |Text that will be displayed when a visitor hovers over the link
-  |History of the market
-|Parent item |Location of the page in the menu hierarchy. For example,
-  if you choose _<Main navigation>_, the page will appear in the highest
-  level of the navigation. By choosing another menu item as parent, you can
-  create a menu hierarchy of multiple levels. |<Main navigation>
-|Weight|The order in which the page should appear in the menu (lower-weighted
-  menu items will be shown before higher-weighted menu items) | -2
+|Nom du champ |Explication |Exemple de valeur
+|Titre du lien dans le menu |Titre qui apparaît dans le menu | À propos
+|Description |Texte qui s'affiche lorsqu'un visiteur survole le lien|Histoire du marché
+|Élément parent |Localisation de la page dans la hiérarchie du menu. Par
+exemple, si vous choisissez _<Navigation principale>_, la page apparaîtra au
+plus haut niveau de la navigation. En choisissant un autre élément de menu comme parent, vous pouvez créer une hiérarchie de menu sur plusieurs niveaux (les éléments de menu avec les poids les plus bas seront affichés avant ceux avec les poids les plus hauts). | -2
 |================================
 +
 --
 // Menu settings section of content editing page.
-image:images/menu-link-from-content.png["Creating a menu link from within the content edit form"]
+image:images/menu-link-from-content.png["Créer un lien de menu depuis le
+formulaire de modification du contenu"]
 --
 
-. Click _Save and keep published_ to save the changes. Click _Home_ or _Return
-to site_ in the navigation bar to see the result, which could look like the
-picture below.
+. Cliquer sur _Enregistrer_ pour enregistrer les modifications. Cliquer sur
+_Accueil_ ou _Retour au site_ dans la barre de navigation pour voir le résultat,
+ce qui pourrait ressembler à l'image ci-dessous.
 +
 --
 // Home page after adding About to the navigation.
-image:images/menu-link-from-content-result.png["Link has been added to the main menu",width="100%"]
+image:images/menu-link-from-content-result.png["Le lien a été ajouté au menu
+principal",width="100%"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 <<menu-reorder>>
 
-==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/JE_3INtBcTw[title="Adding a Page to the Navigation"]
+
+==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/docs/8/core/modules/menu-ui[_Drupal.org_ community documentation page "Working with menus"]
 
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/docs/8/core/modules/menu-ui["Working with Menus"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation];
-edited by https://www.drupal.org/u/jerseycheese[Jack Haas].
+Adapté par https://www.drupal.org/u/batigolix[Boris Doesborg] depuis
+https://www.drupal.org/docs/8/core/modules/menu["Working with Menus"],
+copyright 2000-2016 contributeurs individuels de la
+https://www.drupal.org/documentation[documentation de la communauté Drupal] ;
+modifié par https://www.drupal.org/u/jerseycheese[Jack Haas].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
