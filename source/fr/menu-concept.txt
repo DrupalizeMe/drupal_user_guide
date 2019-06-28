@@ -1,95 +1,99 @@
 [[menu-concept]]
 
-=== Concept: Menu
+=== Concept : menu
 
 [role="summary"]
-Overview of the menu concept and menus automatically created with the core Standard installation profile.
+Vue d'ensemble du concept de menu et des menus créés automatiquement avec le
+profil d'installation Standard du coeur.
 
-(((Menu,overview)))
-(((Menu,main)))
-(((Menu,administrative)))
-(((Menu,user account)))
-(((Menu,footer)))
-(((Menu,custom)))
-(((Administrative menu,overview)))
-(((User account menu,overview)))
-(((Footer menu,overview)))
-(((Custom menu,overview)))
+(((Menu,vue d'ensemble)))
+(((Menu,principal)))
+(((Menu,d'administration)))
+(((Menu,compte utilisateur)))
+(((Menu,pied de page)))
+(((Menu,personnalisé)))
+(((Menu d'administration,vue d'ensemble)))
+(((Menu d'un compte utilisateur,vue d'ensemble)))
+(((Menu du pied de page,vue d'ensemble)))
+(((Menu personnalisé,vue d'ensemble)))
 
-// ==== Prerequisite knowledge
+// ==== Connaissances requises
 
-==== What is a menu?
+==== Qu'est ce qu'un menu ?
 
-Menus are a collection of links (menu items) used to navigate a website. The
-core Menu UI module provides an interface to control and customize the menu
-system. Menus are primarily displayed as a hierarchical list of links. By
-default, new menu items are placed inside a built-in menu labeled _Main
-navigation_, but administrators can also create custom menus.
+Les menus sont des collections de liens (éléments de menu) utilisés pour
+naviguer dans un site web. Le module du coeur Menu UI fournit une interface pour
+contrôler et personnaliser le système de menu. Les menus sont affichés par
+défaut comme une liste de liens hiérarchisés. Par défaut, les nouveaux éléments
+de menu sont placés dans un menu intégré appelé _navigation principale_, mais
+les administrateurs peuvent aussi définir des menus personnalisés.
 
-The core Standard installation profile contains five menus:
+Le profil d'installation Standard du coeur contient 5 menus : 
 
-Main navigation::
-  Links to sections intended for site visitors. They are usually created by site
-  administrators.
+Navigation principale::
+  Liens vers les sections affichées aux visiteurs du site. Ils sont généralement
+  créés par les administrateurs du site.
 
 Administration::
-  Links to administrative tasks. This menu mainly contains links supplied by
-  modules on your site.
+  Liens vers les tâches d'administration. Ce menu contient principalement les 
+  liens fournit par les modules sur votre site.
 
-User account menu::
-  Links to tasks associated with the user account such as _My account_ and _Log
-  out_.
+Menu du compte de l'utilisateur::
+  Liens associés aux comptes utilisateurs comme _Mon compte_ et _Se
+  déconnecter_.
 
-Footer::
-  Links to important pages within the site intended for the footer. They are
-  usually created by site administrators.
+Pied de page::
+  Liens vers des pages importantes du site affichés dans le pied-de-page. Ils
+  sont généralement créés par les administrateurs du site.
 
-Tools::
-  Links to tasks necessary for site visitors. Some modules feature their links
-  here.
+Outils::
+  Liens vers les tâches nécessaires pour les visiteurs du site. Certains modules
+  créent leur liens ici.
 
-You can customize menus in the following ways, using the menu administration
-functionality:
+Vous pouvez personnaliser les menus de la manière suivante, en utilisant la
+fonctionnalité du menu d'administration : 
 
-* Creating new custom menus.
+* Créer des nouveaux menus personnalisés.
 
-* Adding new menu items.
+* Ajouter des nouveaux éléments de menu.
 
-* Reordering menu items by setting their "weight" or by dragging them into
-place.
+* Réordonner les éléments de menus en paramètrant leur "poids" ou en les faisant
+glisser à la bonne place.
 
-* Renaming menu items.
+* Renommer les éléments de menus.
 
-* Changing the link title (the tooltip that appears when you mouse over a menu
-item).
+* Changer le titre du lien (l'info-bulle qui apparaît lors du survol à la souris
+d'un lien de menu).
 
-* Moving a menu item into a different menu by editing its _Parent_ property.
+* Déplacer un élément de menu dans un menu différent en modifiant son _Lien
+Parent_.
 
-A menu item will only be shown to a visitor if they have the rights to view the
-page it links to. For example, the admin menu item is not shown to visitors who
-are not logged in.
+Un élément de menu sera affiché uniquement aux visiteurs qui ont le droit de
+voir la page du lien. Par exemple, l'élément de menu admin ne sera pas affiché
+pour les visiteurs qui ne sont pas connectés.
 
-==== Related topics
+==== Concepts liés
 
 * <<menu-link-from-content>>
 
 * <<menu-reorder>>
 
-* To display a menu, you will need to place the block that corresponds to the
-menu in a region of your theme; see <<block-concept>>, <<block-regions>>, and
-<<block-place>>. The core Standard installation profile places all of the menus
-it defines except Administration in regions of the core Bartik theme. The core
-Toolbar module, which is installed by the core Standard installation profile,
-displays the Administration menu; it is also displayed by the contributed Admin
-Toolbar module.
-
+* Pour afficher un menu, vous aurez besoin de placer le bloc qui correspond au 
+menu dans une région de votre thème ; voir <<block-concept>>, <<block-regions>>,
+et <<block-place>>. Le profil d'installation Standard du cœur place tous les
+menus qu'il défini, sauf Administration, dans les régions du thème Bartik du
+coeur. Le module du cœur Toolbar, qui est installé par le profil d'installation
+Standard du cœur, affiche le menu Administration ; il est aussi affiché avec le
+module contribué Admin Toolbar.
 
 //==== Additional resources
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/ajayvi[Ajay Viswambharan],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Ecrit et modifié par https://www.drupal.org/u/ajayvi[Ajay Viswambharan],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
 http://redcrackle.com[Red Crackle],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
