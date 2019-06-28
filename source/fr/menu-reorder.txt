@@ -1,80 +1,97 @@
 [[menu-reorder]]
 
-=== Changing the Order of Navigation
+=== Changer l'ordre de la navigation
 
 [role="summary"]
-How to reorder items in a menu.
+Comment réordonner les éléments dans un menu.
 
-(((Menu items,reordering)))
-(((Navigation,changing the order of menu items)))
+(((Éléments de menu,réordonner)))
+(((Navigation,changer l'ordre des éléments de menus)))
 
-==== Goal
+==== Objectif
 
-Reorder the items in a menu.
+Réordonner les éléments dans un menu.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<menu-concept>>
 * <<menu-link-from-content>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-Home and About pages must exist in the main navigation menu. See
-<<menu-link-from-content>>.
+Les pages _Accueil_ et _À propos_ doivent exister dans le menu de navigation
+principale. Consulter <<menu-link-from-content>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Menus_
-(_admin/structure/menu_) where all menus on your site are listed. Click _Edit
-Menu_ from the _Operations_ dropdown for _Main Navigation_. You can also reach
-this page using contextual links (refer to <<config-overview>>) for the menu.
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Menus_
+(_admin/structure/menu_) où tous les menus de votre site sont listés. Cliquer
+sur _Modifier le menu_ dans la liste d'_Opérations_ pour la _Navigation
+principale_. Vous pouvez aussi accéder à cette page en utilisant les liens
+contextuels (voir <<config-overview>>) pour le menu.
 +
 --
 // Menu list section of admin/structure/menu, with Edit menu button on Main
 // navigation menu highlighted.
-image:images/menu-reorder_menu_titles.png["List of menus on the site with 'Main navigation' highlighted",width="100%"]
+image:images/menu-reorder_menu_titles.png["Liste des menus du site avec le menu
+'Navigation principale' surligné",width="100%"]
 --
 
-. The _Edit Menu_ page will display a list of each item in the menu you
-chose (_Main navigation_).
+. La page _Modifier le menu_ affiche une liste de chaque élément du menu choisi.
+(_Navigation principale_).
 +
 --
 // Menu links section of admin/structure/menu/manage/main.
-image:images/menu-reorder_edit_menu.png["List of menus items under _Main navigation_"]
+image:images/menu-reorder_edit_menu.png["Liste des éléments de menu sous
+_Navigation principale_"]
 --
 
-. Use the cross bar handles to reorder the menu items.  Drag the Home menu item
-above the About menu item so that it appears first.
+. Faire glisser les éléments de menus en utilisant la poignée en forme de croix
+pour changer l'ordre : _Accueil_, puis _À propos_. Alternativement au
+glisser/déposer, il est possible de cliquer sur le lien _Afficher les poids des
+lignes_ en tête de tableau, et de sélectionner des poids numériques (les
+éléments de menus ayant des poids algébriques inférieurs seront affichés en
+premier).
 +
 --
 // Menu links section of admin/structure/menu/manage/main, after
 // changing the order.
-image:images/menu-reorder_reorder.png["Reordered menu items with warning message about unsaved changes and the _Save_ button"]
+image:images/menu-reorder_reorder.png["Éléments de menu réordonnés avec le
+message avertissant de modifications non enregistrées et le bouton _Enregistrer_"]
 --
 
-. Click _Save_.
+. Cliquer sur _Enregistrer_.
 
-. The home page now displays the main navigation with the Home menu
-item displayed first.
+. La page d'accueil affiche maintenant la navigation principale avec l'élément
+de menu _Accueil_ affiché en premier.
 +
 --
 // Header section of Home page with reordered menu items.
-image:images/menu-reorder_final_order.png["Reordered menu items on the home page with 'Home' first and then 'About'"]
+image:images/menu-reorder_final_order.png["Éléments de menu réordonnés sur la
+page d'accueil avec 'Accueil' en premier puis 'À propos"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-Add a menu item called _Contact_, leading to the _/contact_ page, to your Main
-navigation menu. The contact page is provided by the core Contact module; you
-may want to edit its layout and fields (see <<structure-form-editing>>).
+Ajouter un élément de menu appelé _Contact_, renvoyant ver la page de
+_/contact_, dans votre menu de navigation principale. La page de contact est
+fournie par le module du cœur Contact ; vous pouvez modifier sa mise en page et
+ses champs (consulter <<structure-form-editing>>).
 
-==== Related concepts
+==== Concepts liés
 
 <<menu-concept>>
 
-//==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/OtT8e8lLx5E[title="Changing the Order of Navigation"]
+
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel].
+Écrit par https://www.drupal.org/u/AnnGreazel[Ann Greazel].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
