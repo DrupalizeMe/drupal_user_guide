@@ -1,67 +1,74 @@
 [[structure-text-formats]]
 
-=== Concept: Text Formats and Editors
+=== Concept : formats de texte et éditeurs
 
 [role="summary"]
-Overview of text formats, filters, editors, and cross-site scripting.
+Vue d'ensemble des formats de texte, des filtres, des éditeurs et du cross-site
+scripting.
 
-(((Text format,overview)))
-(((User-entered content,filtering)))
-(((Security,text format)))
-(((Security,cross-site scripting)))
-(((Cross-site scripting (XSS),preventing)))
-(((XSS (Cross-site scripting),preventing)))
+(((Format de texte,vue d'ensemble)))
+(((Contenu saisi par l'utilisateur,filtrer)))
+(((Sécurité,format de texte)))
+(((Sécurité,cross-site scripting)))
+(((Cross-site scripting (XSS),éviter)))
+(((XSS (Cross-site scripting),éviter)))
 
-// ==== Prerequisite knowledge
+// ==== Connaissances requises 
 
-==== What are text formats and filters?
+==== Que sont les formats de texte et les filtres ?
 
-_Text formats_ change how HTML tags and other text are processed and displayed
-on your site. Text formats are composed of a series of _filters_, each of which
-transforms text. When users create content, a text format is associated with the
-content, and the full, original text is stored in the database. The content is
-then passed through the filters in the text format before it becomes output on
-the site.
+Les _formats de texte_ modifient la manière dont les balises HTML et autres
+éléments textuels sont traités et affichés sur votre site. Les formats de textes
+sont composés d'une série de _filtres_, chacun effectuant des transformations
+sur le texte. Lorsque les utilisateurs créent du contenu, un format de texte est
+associé avec le contenu, et le texte complet et original est stocké dans la base
+de données. Le contenu est alors passé au travers des filtres du format de texte
+avant d'être affiché sur le site.
 
-The core Filter module provides text format functionality, and the core Standard
-installation profile sets up _Basic HTML_, _Restricted HTML_, and _Full HTML_
-text formats. Each text format has an associated permission, so that you can
-allow only trusted users to use permissive text formats. This restricts
-untrusted users to text formats like _Basic HTML_, which filters out dangerous
-HTML tags.
+Le module du cœur Filter fournit cette fonctionnalité, et le profil
+d'installation Standard du coeur définit les formats de texte _Basic HTML_,
+_Restricted HTML_, et _Full HTML_. Chaque format de texte est associé à un
+droit, de sorte que vous puissiez autoriser uniquement les utilisateurs de
+confiance à utiliser des formats de texte permissifs. Cela restreint les
+utilisateurs non vérifiés à l'utilisation de format de texte comme _Basic
+HTML_, qui filtre les balises HTML dangereuses. 
 
-==== What are the editors associated with text formats?
+==== Que sont les éditeurs associés aux formats de texte ?
 
-Each text format can be associated with an editor, such as a visual WYSIWYG
-(What You See Is What You Get) HTML editor. The core Text Editor module provides
-the ability to associate editors with text formats, and to configure the editors
-(such as adding and removing buttons from their toolbars). The core CKEditor
-module provides the industry-standard editor known as CKEditor, so that it can
-be used to edit HTML content on your site.
+Chaque format de texte peut être associé à un éditeur, comme un éditeur WYSIWYG
+(What You See Is What You Get). Le module du coeur Text Editor fournit la
+possibilité d'associer les éditeurs à des formats de texte, et de configurer les
+éditeurs (comme ajouter ou supprimer des boutons de leurs barres d'outils). Le
+module du cœur CKEditor fournit un éditeur respectant les standards de
+l'industrie nommé CKEditor, qui peut être utilisé pour modifier le contenu HTML
+de votre site.
 
-==== What is cross-site scripting?
+==== Qu'est ce que le cross-site scripting?
 
-Cross-site scripting (XSS) is a security vulnerability typically found in
-websites. In a site that is not well protected, malicious users can enter script
-into web pages that are viewed by other users (for example, in a comment or in
-the body of a page). A cross-site scripting vulnerability may be used by
-attackers to login as another user. It is important to configure the text
-formats of your website to prevent such abuse.
+Le Cross-site scripting (XSS) est une faille de sécurité communément trouvée sur
+les sites web. Dans un site qui n'est pas bien protégé, les utilisateurs
+malicieux peuvent saisir des scripts dans les pages web qui sont vues par les
+autres utilisateurs (par exemple, dans un commentaire ou dans le corps de la
+page). Une faille de cross-site scripting peut être utilisée par les attaquants
+pour s'identifier en tant qu'un autre utilisateur. Il est important de
+configurer les formats de textes du site pour éviter de tels abus.
 
-==== Related topics
+==== Sujets liés
 
 <<security-concept>>
 
-==== Additional resources
+==== Pour aller plus loin
 
 * https://www.drupal.org/docs/8/core/modules/filter/overview[_Drupal.org_ community
-documentation page "Filter module: text formats that filter user input"]
+documentation page "Filter module: text formats that filter user input"] (en anglais)
 
-* https://en.wikipedia.org/wiki/Cross-site_scripting[Wikipedia page "Cross-site
-scripting"]
+* https://fr.wikipedia.org/wiki/Cross-site_scripting[Page Wikipédia sur le cross-site
+scripting]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
+Ecrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg] et
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
