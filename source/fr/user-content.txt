@@ -1,70 +1,81 @@
 [[user-content]]
 
-=== Assigning Authors to Content
+=== Assigner un auteur au contenu
 
 [role="summary"]
-How to assign authorship of content items to a user account.
+Comment assigner la paternité d'un contenu à un compte utilisateur.
 
-(((Author,assigning)))
-(((Content,assigning author)))
+(((Auteur,assigner)))
+(((Contenu,assigner un auteur)))
 
-==== Goal
+==== Objectif
 
-Assign Vendor content items Happy Farm and Sweet Honey to the corresponding
-Vendor user accounts, so they can edit their own Vendor profiles on the site.
+Assigner les éléments de contenu de type vendeur "Ferme joyeuse et doux miel"
+aux comptes utilisateurs des vendeurs correspondants, afin qu'ils puissent
+modifier leurs propres profils de vendeurs sur le site.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* The Vendor content type must exist, and your site must have at least two
-Vendor content items. See <<structure-content-type>>, <<structure-fields>>, and
-<<content-create>>.
+* Le type de contenu vendeur doit exister, et votre site doit avoir au moins
+deux éléments de contenu de type vendeur. Consulter <<structure-content-type>>,
+<<structure-fields>>, et <<content-create>>.
 
-* User accounts for at least two vendors must exist. See <<user-new-user>>.
+* Les comptes utilisateurs doivent exister pour au moins deux vendeurs.
+Consulter <<user-new-user>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Dans le menu d'administration _Gérer_, aller à _Contenu_ (_admin/content_).
 
-. Find Vendor content item Happy Farm in the list. If it is not immediately
-visible, you can filter the list by _Published status_, _Type_ (Vendor), _Title_
-or _Language_.  Click _Edit_ for the Vendor content item you would like to
-assign an author to.
+. Localiser le contenu de type vendeur "Ferme joyeuse" dans la liste. S'il n'est
+pas immédiatement visible, vous pouvez filtrer la liste selon le _statut de
+publication_, _type de contenu_ (vendeur), _titre_ ou _langue_. Cliquer sur
+_Modifier_ pour le contenu de type vendeur auquel vous souhaitez assigner un
+auteur.
 
-. Locate the information block and click _Authoring information_.
+. Dans _Informations de publication_, taper le début du nom d'utilisateur du
+vendeur dans le champ _Écrit par_. Le champ liste les noms d'utilisateurs
+correspondants. Sélectionner le nom d'utilisateur du vendeur dans la liste.
 +
 --
 // Authoring information section of content edit page.
-image:images/user-content.png["Assigning an author to the Vendor content item"]
+image:images/user-content.png["Assigner un auteur à un élement de contenu de
+type vendeur"]
 --
 
-. Start typing the Vendor's user name Happy Farm in the _Authored by_ field.
-The field lists matching user names. Select the Vendor's user name from the
-list.
+. Cliquer sur _Enregistrer_.
 
-. Click _Save and keep published_.
-
-. You will get a notification that the Vendor content item has been updated.
+. Une notification indiquant que le contenu de type vendeur a été mis à jour
+s'affiche.
 +
 --
 // Confirmation message after content update.
-image:images/user-content_updated.png["Vendor content item has been updated"]
+image:images/user-content_updated.png["L'élement de contenu de type vendeur a
+été mis à jour"]
 --
 
-. Follow these steps again to assign Vendor content item Sweet Honey to the
-Vendor user account Sweet Honey.
+. Suivre ces étapes pour assigner le contenu de type vendeur "Doux miel" au
+compte d'utilisateur Doux miel.
 
-// ==== Expand your understanding
+// ==== Améliorer votre compréhension
 
-// ==== Related concepts
+// ==== Concepts liés
 
-//==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/yx9u2SCgono[title="Assigning Authors to Content"]
+
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Écrit par https://www.drupal.org/u/dianalakatos[Diána Lakatos] de
 https://pronovix.com/[Pronovix].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
