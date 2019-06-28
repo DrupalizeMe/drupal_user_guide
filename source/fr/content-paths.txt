@@ -1,33 +1,34 @@
 [[content-paths]]
 
-=== Concept: Paths, Aliases, and URLs
+=== Concept : chemins, alias et URL
 
 [role="summary"]
-Overview of paths, aliases, and URLs (with examples).
+Vue d'ensemble des chemins, alias et URL (avec des exemples).
 
-(((Path,overview)))
-(((Alias,overview)))
-(((URL (Uniform Resource Locator),overview)))
-(((Uniform Resource Locator (URL),overview)))
-(((URL alias,overview)))
+(((Chemin,vue d'ensemble)))
+(((Alias,vue d'ensemble)))
+(((URL (Uniform Resource Locator),vue d'ensemble)))
+(((Uniform Resource Locator (URL),vue d'ensemble)))
+(((alias d'URL,vue d'ensemble)))
 
-//==== Prerequisite knowledge
+//==== Pré-requis
 
 
-==== What is a URL?
+==== Qu'est ce qu'une URL ?
 
-URL is the abbreviation for "Uniform Resource Locator", which is the page's
-address on the web. It is the "name" by which a browser identifies a page to
-display. In the example "Visit us at _example.com_.", _example.com_ is the URL
-for the home page of your website. Users use URLs to locate content on the web.
+URL est un acronyme pour "Uniform Resource Locator", ce qui correspond à
+l'adresse d'une page sur le web. C'est le "nom" par lequel un navigateur
+identifie une page à afficher. Par exemple dans "Rendez-nous visite à
+_exemple.com_", _exemple.com_ est l'URL de la page d'accueil de votre site. Les
+utilisateurs utilisent les URL pour accéder au contenu sur le web.
 
-==== What is a Path?
+==== Qu'est ce qu'un chemin ?
 
-A path is the unique, last part of the URL for a specific function or piece of
-content. For example, for a page whose full URL is _http://example.com/node/7_,
-the path is _node/7_.
+Un chemin est la partie unique, la dernière partie d'une URL pour une fonction
+spécifique ou un contenu précis. Par exemple, pour une page dont l'URL complète
+est _http://example.com/node/7_, le chemin est _node/7_.
 
-Here are some examples of paths you might find in your site:
+Voici quelques exemples de chemins que vous pouvez trouver sur votre site :
 
 * _node/7_
 * _taxonomy/term/6_
@@ -35,15 +36,16 @@ Here are some examples of paths you might find in your site:
 * _user/login_
 * _user/3_
 
-==== What is an Alias?
+==== Qu'est ce qu'un alias ?
 
-The core software has a feature called "URL Alias" that allows you to provide a
-more understandable name to the content. So, if you have an "About Us" page with
-the path _node/7_, you can set up an alias so that your visitors will see it as
-_http://www.example.com/AboutUs_. The core Path module, which supports URL
-aliasing, provides this functionality.
+Le cœur du logiciel comprend une fonctionnalité appelée "Alias d'URL" qui vous
+autorise à définir des noms plus compréhensible pour le contenu. Par conséquent,
+si vous avez une page "À propos" avec le chemin _node/7_, vous pouvez définir un
+alias que les visiteurs verront comme _http://www.example.com/apropos_. Le
+module du coeur Path, qui supporte les alias d'URL, fournit cette
+fonctionnalité.
 
-==== Related topics
+==== Sujets liés
 
 * <<content-create>>
 * <<content-edit>>
@@ -53,14 +55,16 @@ aliasing, provides this functionality.
 // * <<structure-pathauto>>
 
 
-//==== Additional resources
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com/[Pronovix] from
-https://www.drupal.org/node/120631["URL aliases"], and
+Adapté par https://www.drupal.org/u/dianalakatos[Diána Lakatos] de
+https://pronovix.com/[Pronovix] depuis
+https://www.drupal.org/node/120631["URL aliases"], et
 https://www.drupal.org/node/31644["Understanding Drupal paths"]
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+copyright 2000-2019 contributeurs individuels de la
+https://www.drupal.org/documentation[documentation de la communauté Drupal]
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
