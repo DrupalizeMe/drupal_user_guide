@@ -1,65 +1,73 @@
 [[user-admin-account]]
 
-=== Concept: The User 1 Account
+=== Concept : le compte utilisateur n°1
 
 [role="summary"]
-Overview of the User 1 account, also known as the root account or administrative account.
+Vue d'ensemble du compte utilisateur n°1, aussi connu comme le compte root ou le
+compte d'administration.
 
-(((User,root)))
-(((User,user one)))
-(((User,administrative)))
-(((Security,user one account)))
+(((Utilisateur,root)))
+(((Utilisateur,utilisateur n°1)))
+(((Utilisateur,administrateur)))
+(((Sécurité,compte n°1)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<user-concept>>
 
-==== What is the user 1 account?
+==== Qu'est ce que le compte utilisateur 1 ?
 
-During the installation of your site, you created the first user account. Each
-user account internally has a numeric user ID, and since the ID of this user is
-one, it is commonly referred to as the _user 1_ account. This user account is
-special, because independent of what roles it is assigned, someone logged in as
-user 1 has permission to do all actions on the site, including viewing and
-editing all content, editing any user account, changing site configuration,
-installing and uninstalling modules, and running the update script.
+Pendant l'installation de votre site, vous avec créé le premier compte
+utilisateur. Chaque compte utilisateur est associé à un identifiant (ID)
+numérique, et comme l'identifiant de cette utilisateur est un, il est souvent
+appelé compte _utilisateur n°1_. Ce compte utilisateur est spécial, parce qu'il
+est indépendant des rôles qui lui sont assignés ; une personne connectée en tant
+qu'utilisateur n°1 a le droit de réaliser n'importe quelle action sur le site, y
+compris voir et modifier tout le contenu, modifier n'importe quel compte
+utilisateur, modifier la configuration du site, installer et désinstaller des
+modules, et lancer le script de mise à jour.
 
-Because of this level of permission, some people refer to this account as the
-_root user_, similar to the "root" user account that has full administrative
-permissions in Linux and other operating systems.
+À cause de son niveau de droits, certains appellent ce compte l'_utilisateur
+root_, en référence au compte utilisateur "root" qui a tous les droits
+d'administration sous Linux et d'autres systèmes d'exploitation.
 
-It is usually better to make separate accounts for each administrative user,
-giving them the _Administrator_ role, rather than having all administrative
-users log in using the user 1 account. There are several reasons for this:
+C'est généralement une bonne pratique de créer des comptes séparés pour chaque
+utilisateur administrateur, en leur donnant le rôle _Administrateur_, plutôt que
+de voir tous les utilisateurs administrateurs se connecter avec le compte
+utilisateur n°1. Il y a plusieurs raisons à ça :
 
-* Some actions and updates on the site are logged, and if everyone uses the same
-account, it is difficult to know who did them if you have questions.
+* Certaines actions et mises à jour du site sont journalisées, et si tout le
+monde utilise le même compte, il est difficle de savoir qui les a effectuées
+lorsque la question se pose.
 
-* The _Administrator_ role permissions can be modified to be safer than the
-full permissions of the user 1 account, so that people do not inadvertently
-change site features that shouldn't be changed.
+* Les droits du rôle _Administrateur_ peuvent être modifiés pour être plus
+sécurisés que l'accès complet du compte utilisateur n°1, afin que les personnes
+ne modifient pas par inadvertance des fonctionnalités du site qui ne doivent pas
+être modifiées.
 
-* People's responsibilities on a site may change over time. With ordinary user
-accounts, this can be mirrored in permissions by assigning or unassigning
-roles to their user accounts. If they are all using the user 1 account,
-this is more difficult.
+* Les responsabilités des personnes sur un site peuvent changer dans le temps.
+Avec un compte utilisateur ordinaire, cela peut être reflété dans les droits en
+assignant ou supprimant des rôles à leurs comptes utilisateurs. S'ils utilisent
+tous le compte utilisateur n°1, cela est plus difficile.
 
-* On some sites, the author of content or comments is displayed or tracked, and
-if everyone uses the same account to create content, it is difficult to know
-who created the content.
+* Sur certains sites, les auteurs des contenus ou des commentaires sont affichés
+ou tracés, et si tout le monde utilise le même compte pour créer le contenu, il est
+difficile de savoir qui a créé le contenu.
 
-It is not possible to delete the user 1 account from the administrative user
-interface. It would be possible to do with a database query, but it could cause
-problems in your site and is not advisable.
+Il n'est pas possible de supprimer le compte utilisateur 1 depuis l'interface
+d'administration. Cela est possible avec une requête sur la base de données,
+mais cela peut entrainer des problèmes sur votre site et n'est pas recommandé.
 
-//==== Related topics
+//==== Sujets liés
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/node/22284[_Drupal.org_ community documentation page "Accounts and roles"]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Ecrit et modifié par https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
+et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
