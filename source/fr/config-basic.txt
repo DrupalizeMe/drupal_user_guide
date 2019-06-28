@@ -1,96 +1,110 @@
 [[config-basic]]
 
-=== Editing Basic Site Information
+=== Modifier les informations basiques du site
 
 [role="summary"]
-How to edit basic site information (site name, slogan, and default time zone).
+Comment modifier les informations basiques du site (nom du site, slogan, et
+fuseau horaire par défaut).
 
-(((Configuring,site)))
-(((Site name,configuring)))
-(((Site slogan,configuring)))
-(((Slogan,configuring)))
-(((Site tagline,configuring)))
-(((Tagline,configuring)))
-(((Site email address,configuring)))
-(((Email address,configuring)))
-(((Front page,configuring)))
-(((Error page,configuring)))
-(((Regional setting,configuring)))
-(((Locale setting,configuring)))
-(((Country setting,configuring)))
-(((Time zone setting,configuring)))
-(((First day of week,configuring)))
+(((Configurer,site)))
+(((Nom du site,configurer)))
+(((Slogan du site,configurer)))
+(((Slogan,configurer)))
+(((Accroche du site,configurer)))
+(((Accroche,configurer)))
+(((Adresse électronique du site,configurer)))
+(((Adresse électronique,configurer)))
+(((Page d'accueil,configurer)))
+(((Page d'erreur,configurer)))
+(((Paramètres régionaux,configurer)))
+(((Paramètres du pays,configurer)))
+(((Paramètres du fuseau horaire,configurer)))
+(((Premier jour de la semaine,configurer)))
 
-==== Goal
+==== Objectif
 
-Change basic site information such as _Site name_, _Slogan_,
-_Default time zone_.
+Modifier les informations basiques du site comme le _nom du site_, le _slogan_,
+et le _fuseau horaire par défaut_.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<config-overview>>
 
 //==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-===== Configuring the basic site information
+===== Configurer les informations basiques du site
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_) to change the
-_Site name_, _Slogan_, administrative _Email address_, or the _Default front
-page_ path.
+. Dans le menu d'administration _Gérer_, naviguer dans _Configuration_ >
+_Système_ > _Informations du site_ (_admin/config/system/site-information_) pour
+changer le _nom du site_, le _slogan_, l'_adresse électronique_
+d'administration, ou le chemin de la _page d'accueil par défaut_.
 
-. Fill in the available fields as appropriate for your site.
+. Remplir les champs disponibles comme approprié pour votre site.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site name|Used to identify the site and displayed in browsers|Anytown Farmers Market
-|Slogan|Usually displayed sitewide|Farm Fresh Food
-|Email address|Used as _From_ address in automated email messages (registrations, password resets, etc)|info@example.com
+|Nom du champ|Explication|Valeur d'exemple
+|Nom du site|Utilisé pour identifier le site et affiché dans les
+navigateurs|Marché fermier d'Anytown
+|Slogan|Généralement affiché sur tout le site|Aliments frais de la ferme
+|Adresse électronique|Utilisé pour l'adresse d'_expéditeur_ dans les courriels
+automatiques (inscription, réinitialisation du mot de passe, etc)|info@example.com
 |================================
 +
 --
 // Site details section of admin/config/system/site-information.
-image:images/config-basic-SiteInfo.png["Site Information"]
+image:images/config-basic-SiteInfo.png["Informations du site"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. Après la modification des champs, cliquer sur _Enregistrer la configuration_
+pour voir les changements appliqués sur le site.
 
-===== Configuring default Regional settings
+===== Configurer les paramètres régionaux par défaut
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and Language_ > _Regional settings_
+. Dans le menu d'administration _Gérer_, naviguer dans _Configuration_ >
+_Régionalisation et Langue_ > _Paramètres régionaux_
 (_admin/config/regional/settings_).
 
-. Select the appropriate country from the _Default country_ select list in the
-_Locale_ section, and set which day will be displayed as _First day of week_
-on your site.
-
-. In the _Time zones_ section, select the sitewide _Default time zone_ from the
-list and configure user-specific time zones.
+. Remplir le formulaire comme suit :
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ|Explication|Valeur d'exemple
+|Localisation > Pays par défaut| Le pays principal de votre site |États-Unis
+|Localisation > Premier jour de la semaine| Le jour marquant le début de la
+semaine sur les calendriers|Dimanche
+|Fuseaux horaire > Fuseau horaire par défaut| Le fuseau horaire principal de votre  site |America > Los Angeles
+|Fuseaux horaires > Les utilisateurs peuvent définir leur propre fuseau  horaire| Si les utilisateurs connectés peuvent choisir un fuseau horaire différent pour l'affichage des dates et des heures sur le site |Décoché
+|================================
 +
 --
 // Locale and Time Zones sections of admin/config/regional/settings.
-image:images/config-basic-TimeZone.png["Time Zones"]
+image:images/config-basic-TimeZone.png["Fuseaux horaires"]
 --
 
-. After editing the fields, click
-_Save configuration_ to see the changes applied to the site.
+. Après avoir modifié les champs, cliquer sur _Enregistrer la configuration_
+pour voir les changements appliqués sur le site.
 
-// ==== Expand your understanding
-// ==== Related concepts
+// ==== Améliorer votre compréhension
+// ==== Concepts liés
 
-==== Additional resources
+==== Vidéos (en anglais)
 
-https://www.drupal.org/node/1896670[_Drupal.org_ community documentation page "Getting started with Drupal 8 administration"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/oDMCQ1cDYOI[title="Editing Basic Site Information"]
+
+==== Pour aller plus loin
+
+https://www.drupal.org/node/1896670[page de documentation communautaire de _Drupal.org_ "Getting started with Drupal 8 administration"]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Ecrit et modifié par https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] de
 https://erdfisch.de[erdfisch],
-and https://www.drupal.org/u/ifrik[Antje Lorch].
+et https://www.drupal.org/u/ifrik[Antje Lorch].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
