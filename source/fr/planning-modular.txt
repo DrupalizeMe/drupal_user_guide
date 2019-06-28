@@ -1,55 +1,61 @@
 [[planning-modular]]
-=== Concept: Modular Content
+=== Concept : contenu modulaire
 
 [role="summary"]
-Overview of modular content and how content in a page can be sourced from other content items.
+Vue d'ensemble de la modularité du contenu et comment le contenu d'une page peut
+provenir de différents éléments de contenus.
 
-(((Content,modular)))
-(((Modular content,overview)))
+(((Contenu,modulaire)))
+(((Contenu module,vue d'ensemble)))
 (((Page,composite)))
-(((Composite page,creating with modular content)))
-(((View,and modular content)))
-(((Views module,overview)))
+(((Page composite,créer à partir de contenu modulaire)))
+(((Vue,et contenu modulaire)))
+(((module Views,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<planning-data-types>>
 * <<planning-layout>>
 
-==== What is modular content?
+==== Qu'est ce qu'un contenu modulaire ?
 
-Given that the content of your site is stored in a database, it is desirable to
-make the content _modular_, meaning that certain pages on your site, rather than
-being edited as a whole page, are instead generated automatically from other
-content items. For instance, in the farmers market site scenario, you might
-create individual content items for recipes. If the recipe content items have a
-field that keeps track of ingredients, then your site could include a composite
-page that would list recipes, and allow visitors to search for a recipe that
-contained some particular ingredient they had bought at the market.
+Étant donné que le contenu de votre site est stocké dans une base de données, il
+est préférable de rendre le contenu _modulaire_, ce qui signifie que certaines
+pages de votre site, plutôt que d'être modifiées comme une seule page, sont à la
+place générées automatiquement depuis d'autres éléments de contenus. Par
+exemple, dans le scénario du site du marché fermier, vous pourriez créer des
+éléments de contenu individuels pour les recettes. Si les éléments de contenu de
+type recette ont un champ qui garde une trace des ingrédients, alors votre site
+pourrait inclure une page composite qui listerait les recettes et autoriserait
+les visiteurs à rechercher une recette qui contiendrait un ingrédient
+particulier qu'ils ont acheté au marché.
 
-Smaller sections of pages can also be generated as composites. For instance,
-recipe content items could have a field that keeps track of which vendor
-submitted the recipe (see <<structure-reference-fields>>), with the vendor
-details edited in separate vendor content items. This would allow you to do the
-following on your site:
+Des morceaux de pages plus petits peuvent aussi être générés. Par exemple, une
+recette peut contenir un champ qui fait le lien avec le vendeur qui l'a proposée
+(consulter <<structure-reference-fields>>), avec le détail du vendeur modifié
+dans un contenu vendeur séparé. Cela permet de faire les choses suivantes sur
+votre site :
 
-* On each Recipe page, there could be an area that displays some information
-about the vendor that submitted the recipe, such as their name and market stall
-number.
+* Sur chaque page Recette, il pourrait y avoir une zone qui affiche certaines
+informations à propos du vendeur qui a proposé la recette, comme son nom, et le
+numéro de son étal au marché.
 
-* Each vendor page could have a section that lists the recipes they have
-submitted.
+* Chaque vendeur pourrait avoir une section qui liste les recettes qu'il a
+proposées.
 
-The key idea is that each piece of information is only edited in one place.
-When vendor information is updated, all recipe pages that display that vendor
-information are automatically updated; when a recipe is submitted by a vendor,
-it is automatically displayed on the vendor page. The core Views module is the
-usual way to use modular content to create composite pages and page sections;
-see <<views-concept>> for more information. Also, _view modes_ are useful for
-defining different ways to display each content item; see
-<<structure-view-modes>> for more information.
+L'idée directrice est que chaque morceau d'information est modifié une seule
+fois, à un seul endroit. Quand l'information sur un vendeur est mise à jour,
+toutes les pages de recette qui affichent ces informations sur le vendeur sont
+automatiquement mises à jour ; quand une recette est soumise par un vendeur,
+elle est automatiquement affichée sur la page du vendeur. Le module du cœur
+Views est le moyen standard pour utiliser le contenu modulaire et créer des
+pages composées et des sections de pages ; consulter <<views-concept>> pour plus
+d'informations. De plus, les _modes d'affichages_ sont utiles pour définir
+différentes façons d'afficher chaque élément de contenu, voir
+<<structure-view-modes>> pour plus d'informations.
 
-==== Related topics
+
+==== Sujets liés
 
 * <<planning-structure>>
 * <<structure-content-type>>
@@ -58,9 +64,11 @@ defining different ways to display each content item; see
 * <<structure-view-modes>>
 * <<views-concept>>
 
-// ==== Additional resources
+// ==== Pour aller plus loin
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
