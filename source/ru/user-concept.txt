@@ -1,69 +1,69 @@
 [[user-concept]]
 
-=== Concept: Users, Roles, and Permissions
+=== Основы: Пользователи, Роли и Права доступа
 
 [role="summary"]
-Overview of user accounts, permissions, and roles.
+Обзор учетных записей пользователей, прав доступа и ролей.
 
-(((User,overview)))
-(((Role,overview)))
-(((User role,overview)))
-(((Permission,overview)))
-(((Anonymous user,overview)))
-(((Authenticated user,overview)))
-(((Administrative user account,overview)))
+(((Пользователь,обзор)))
+(((Роль,обзор)))
+(((Роль пользователя,обзор)))
+(((Права доступа,обзор)))
+(((Анонимный пользователь,обзор)))
+(((Авторизованный пользователь,обзор)))
+(((Аккаунт администратора,обзор)))
 
 // ==== Prerequisite knowledge
 
-==== What are Users?
+==== Что такое Пользователь?
 
-Anyone who visits your website is a _user_, including you. There are three
-groups of users:
+Любой, кто посещает ваш сайт, является _user_, включая вас. Есть три
+группы пользователей:
 
-* Users who are not logged in, or _anonymous users_
+* Пользователи, которые не вошли в систему, или _анонимный пользователь_
 
-* Users who are logged in, or _authenticated users_
+* Пользователи, которые вошли в систему, или _авторизованный пользователь_
 
-* The administrative user account that was automatically created when you
-installed your site, or User 1. See <<user-admin-account>>.
+* Учетная запись администратора, которая была автоматически создана при
+установке вашего сайта, или Пользователь 1. Смотрите <<user-admin-account>>.
 
-==== What are Permissions?
+==== Что такое Права доступа?
 
-The ability to do actions on your site (including viewing content, editing
-content, and changing configuration) is governed by _permissions_. Each
-permission has a name (such as _View published content_) and covers one action
-or a small subset of actions. A user must be granted a permission in order to do
-the corresponding action on the site; permissions are defined by the modules
-that provide the actions.
+Возможность совершать действия на вашем сайте (включая просмотр контента, добавление
+контента, и изменение конфигурации) регулируется _Правами доступа_. Каждое
+право доступа имеет имя (такое, как _Просмотр опубликованного контента_) и охватывает одно действие
+или небольшое подмножество действий. Пользователь должен получить разрешение для того, чтобы сделать
+соответствующее действие на сайте; права доступа определяются модулями,
+которые обеспечивают действия.
 
-==== What are Roles?
+==== Что такое Роль?
 
-Rather than assigning individual permissions directly to each user, permissions
-are grouped into _roles_. You can define one or more roles on your site, and
-then grant permissions to each role. The permissions granted to authenticated
-and anonymous users are contained in the _Authenticated user_ and _Anonymous
-user_ roles, and depending on the installation profile you used when you
-installed your site, there may also be an _Administrator_ role that is
-automatically assigned all permissions on your site.
+Вместо того, чтобы назначать индивидуальные разрешения непосредственно каждому пользователю, права доступа
+сгруппированы в _роли_.Вы можете определить одну или несколько ролей на вашем сайте, и
+затем предоставить права доступа каждой роли. Права доступа, предоставленные авторизованным
+и анонимным пользователям содержатся в ролях _Авторизованный пользователь_ и _Анонимный
+пользователь_, и в зависимости от установочного профиля, который вы использовали, когда
+устанавливали ваш сайт, также может быть роль _Администратор_, которой
+автоматически назначаются все разрешения на вашем сайте.
 
-Each user account on your site is automatically given the _Authenticated user_
-role, and may optionally be assigned one or more additional roles. When you
-assign a role to a user account, the user will have all the permissions of the
-role when logged in.
+Каждая учетная запись пользователя на вашем сайте автоматически получает роль_Авторизованный
+пользователь_, и при желании может быть назначена одна или несколько дополнительных ролей. Когда вы
+назначите роль учетной записи пользователя, пользователь будет иметь все права доступа
+при входе в систему.
 
-It is a good practice to make several roles on your site. In the farmers market
-site example, you might want the following roles:
+Хорошей практикой является создание нескольких ролей на вашем сайте. На примере сайта
+городская ярмарка, вам могут понадобиться следующие роли:
 
-* A Vendor role that allows vendors to edit their own vendor listing page
+* Роль производителя, которая позволяет производителям редактировать собственную страницу списка производителей.
 
-* A Content editor role for editing the general farmers market pages
+* Роль редактора для редактирования страниц городской ярмарки
 
-* A User manager role for managing the vendor accounts
+* Роль менеджера для управления счетами производителя
 
-* The _Administrator_ role that was installed with your site, for expert users
-to manage the site configuration
+* Роль _Администратор_, установленная на вашем сайте, для пользователей, которые будут
+управлять конфигурацией сайта
 
-==== Related topics
+==== Похожие темы
 
 * <<user-new-role>>
 * <<user-permissions>>
@@ -72,18 +72,20 @@ to manage the site configuration
 * <<user-admin-account>>
 * <<user-content>>
 
-==== Additional resources
+==== Дополнительные ресурсы
 
-* https://www.drupal.org/node/120614[_Drupal.org_ community documentation page "Users, roles and permissions"]
-* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
-* https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "User Roles"]
+* https://www.drupal.org/node/120614[_Drupal.org_ страница документации сообщества "Users, roles and permissions"]
+* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ страница документации сообщества "Managing Users"]
+* https://www.drupal.org/node/1803614[_Drupal.org_ страница документации сообщества "User Roles"]
 
 
-*Attributions*
+*Авторы*
 
-Adapted by https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+Адаптировано https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
+https://www.drupal.org/u/batigolix[Boris Doesborg], и
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] от
 https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-2017 by the individual contributors to the
+авторские права 2000-2017 отдельными вкладчиками в
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
