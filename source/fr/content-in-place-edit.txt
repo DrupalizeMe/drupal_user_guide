@@ -1,88 +1,99 @@
 [[content-in-place-edit]]
-=== Editing with the In-Place Editor
+=== Modifier avec l'éditeur intégrer
 
 [role="summary"]
-How to edit content with the in-place editor.
+Comment modifier du contenu avec l'éditeur intégré.
 
-(((Editing content)))
-(((Content,editing)))
-(((In-place editor)))
-(((Quick editor)))
-(((Full editor)))
+(((Modification du contenu)))
+(((Contenu,modification)))
+(((Éditeur intégré)))
+(((Éditeur rapide)))
+(((Éditeur complet)))
 
-==== Goal
+==== Objectif
 
-Use the in-place editor to add information to the About page without opening
-the full editor page.
+Utiliser l'éditeur intégré pour ajouter des informations à la page _À propos_
+sans ouvrir la page complète d'édition. 
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<planning-data-types>>
 * <<content-create>>
 * <<content-edit>>
 * <<config-overview>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The About page you want to edit must exist. See <<content-create>>.
+La page _À propos_ que vous voulez modifier doit exister. Voir
+<<content-create>>.
 
-==== Steps
+==== Étapes
 
-Navigate to the About page to edit content with the in-place editor. If the
-page has not yet been added to a
-navigation menu, you can find and open it by following these steps:
+Aller sur la page _À propos_ pour modifier le contenu avec l'éditeur intégré. Si
+la page n'a pas encore été ajoutée à un menu de navigation, vous pouvez la
+trouver et l'ouvrir en suivant les étapes suivantes :
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Dans le menu d'administration _Gérer_, aller à _Contenu_ (_admin/content_).
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use _Type_, _Title_, or other filters to locate the content item.
+. Si l'élément de contenu que vous voulez modifier a été mis à jour ou créé
+récemment, il devrait apparaître en haut de la liste de contenu de cette page.
+Sinon, vous pouvez utiliser les filtres _Type_, _Titre_, ou autres filtres pour
+trouver l'élément de contenu.
 
-. Find the About page and click it.
+. Trouver la page _À propos_ et cliquer sur le lien.
 
-Once the content you want to edit is being viewed in your browser, follow these
-steps to use the quick editor:
+Une fois que le contenu que vous voulez modifier est affiché dans votre
+navigateur, suivez ces étapes pour utiliser l'éditeur rapide :
 
-
-. Find the section of the page that displays the content you want to edit, and
-turn on quick editing mode using the _Quick edit_ contextual link (see
-<<config-overview>> for instructions on how to access contextual links). You
-will see each editable field on this content item outlined in blue; also,
-a hovering dialog box will appear.
+. Trouver la section de la page où s'affiche le contenu que vous voulez
+modifier, et activer le mode d'édition en utilisant le lien contextuel _Édition
+rapide_ (voir <<config-overview>> pour des instructions relatives à l'accès aux
+liens contextuels). Vous verrez chaque champ modifiable sur ce contenu surligné
+en bleu, ainsi qu'une boîte de dialogue apparaître au survol.
 +
 --
 // Screen shot of About page with Quick Edit turned on for the node.
-image:images/content-in-place-edit-hover-box.png["Quick edit mode",width="100%"]
+image:images/content-in-place-edit-hover-box.png["Mode d'édition rapide",width="100%"]
 --
 
-. Click the _Body_ text area to begin editing. The _Body_ field
-supports a rich text editor. The editing toolbar will be displayed in a
-hovering dialog box.
+. Cliquer dans la zone de texte du _Corps_ pour commencer à modifier. Le champ
+_Corps_ supporte l'édition en texte riche. La barre d'édition s'affichera dans
+une boîte de dialogue au survol.
 
-. Add some information about City Market. A _Save_ button will appear in the
-hovering dialog box, and the field outline will change color.
+. Ajouter des informations à propos du marché de la ville. Un bouton
+_Enregistrer_ apparaîtra dans la boîte de dialogue au survol, et la bordure du
+champ changera de couleur.
 +
 --
 // Screenshot of About page with Quick Edit turned on for the node area, after clicking the Body field and changing text in the box.
-image:images/content-in-place-edit-save-box.png["Quick edit mode after editing",width="100%"]
+image:images/content-in-place-edit-save-box.png["Mode de modification rapide
+après modification",width="100%"]
 --
 
-. If you are satisfied with your edits, click _Save_ in the hovering dialog
-box. If not, click "x" to discard your edits, and confirm. Either way, quick
-editing mode will be turned off.
+. Si vous êtes satisfait(e) de vos modifications, cliquer sur _Enregistrer_ dans
+la boîte de dialogue au survol. Sinon, cliquer sur "x" pour annuler vos
+modifications, et confirmer. Dans tous les cas, le mode de modification rapide
+sera désactivé.
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-Try using the full editor on the same content (see <<content-edit>>) and note
-that there is much more information that can be edited that is not available in
-the quick editor.
+Essayer d'utiliser l'éditeur complet sur le même contenu (voir <<content-edit>>)
+et noter qu'il y a beaucoup plus d'informations qui peuvent être modifiées qui
+ne sont pas disponible dans la modification rapide.
 
-// ==== Related concepts
+// ==== Concepts liés
 
-// ==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/6A6kbceIKKw[title="Editing with the In-Place Editor"]
+
+// ==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/davidlee55[David Lee] and
+Ecrit et modifié par https://www.drupal.org/u/davidlee55[David Lee] et
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky]  et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
