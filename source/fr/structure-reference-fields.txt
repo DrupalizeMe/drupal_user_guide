@@ -1,58 +1,62 @@
 [[structure-reference-fields]]
 
-=== Concept: Reference Fields
+=== Concept : champs de type référence
 
 [role="summary"]
-Overview of reference fields and their commonly-used types.
+Vue d'ensemble des champs de type référence et de leurs types fréquemment
+utilisés.
 
-(((Reference field,overview)))
-(((Reference field,content)))
-(((Reference field,taxonomy term)))
-(((Reference field,user)))
-(((Field,reference)))
-(((Field,content reference)))
-(((Field,taxonomy term reference)))
-(((Field,user reference)))
-(((Taxonomy term reference field,overview)))
-(((User reference field,overview)))
-(((Content reference field,overview)))
+(((Champ de type référence,vue d'ensemble)))
+(((Champ de type référence,contenu)))
+(((Champ de type référence,terme de taxonomie)))
+(((Champ de type référence,utilisateur)))
+(((Champ,référence)))
+(((Champ,référence à un contenu)))
+(((Champ,référence à un terme de taxonomie)))
+(((Champ,référence à un utilisateur)))
+(((Champ de type référence à un terme de taxonomie,vue d'ensemble)))
+(((Champ de type référence à un utilisateur,vue d'ensemble)))
+(((Champ de type référence à un contenu,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<planning-data-types>>
 
-==== What is a reference field?
+==== Qu'est ce qu'un champ de type référence ?
 
-A _reference field_ is a field that represents a relationship between an entity
-and one or more other entities, which may belong to the same or different entity
-type. The three most commonly-used reference fields are:
+Un _champ de type référence_ est un champ qui représente une relation entre une
+entité et une ou plusieurs autres entités, qui peuvent être du même type ou d'un
+type différent. Les trois cas les plus fréquents de champs de type référence
+sont :
 
-Content reference::
-  A reference to a content item. For example, you might want to connect recipes
-  to the vendors who submitted them. You would set up a content reference field
-  called Submitted by referencing Vendor content items on the Recipe content
-  type.
+Référence à un contenu ::
+  Une référence vers un élément de contenu. Par exemple, vous pourriez vouloir
+  relier les recettes et les vendeurs qui les ont proposées. Vous définiriez un
+  champ de type référence à un contenu appelé _Soumis par_ référençant les
+  éléments de contenu de type Vendeur sur le type de contenu Recette.
 
-Taxonomy term reference::
-  A reference to a taxonomy term. For example, you might want to connect recipes
-  to their ingredients. You would set up a taxonomy term reference field called
-  Ingredients on the Recipe content type. This reference field will point to the
-  vocabulary Ingredients.
+Référence à un terme de taxonomie ::
+  Une référence vers un terme de taxonomie. Par exemple, vous pourriez vouloir
+  relier les recettes à leurs ingrédients. Vous définiriez un champ de type
+  référence à un terme de taxonomie appelé Ingrédient sur le type de contenu
+  Recette. Ce champ de type référence pointera vers le vocabulaire Ingrédients.
 
-User reference::
-  A reference to a user account. For example, you might want to connect recipes
-  with their chefs. You would set up a user reference field called Chefs on the
-  Recipe content type.
+Référence à un utilisateur ::
+  Référence vers un compte utilisateur. Par exemple, vous pourriez vouloir
+  relier les recettes à leurs chefs. Vous définiriez un champ référence à un
+  utilisateur appelé Chefs sur le type de contenu Recette.
 
-==== Related topics
+==== Sujets liés
 
 <<structure-taxonomy>>
 
-//==== Additional resources
+//==== Pour aller plus loin
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Ecrit et modifié par https://www.drupal.org/u/surendramohan[Surendra Mohan],
+et https://www.drupal.org/u/jojyja[Jojy Alphonso] de
 http://redcrackle.com[Red Crackle].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
