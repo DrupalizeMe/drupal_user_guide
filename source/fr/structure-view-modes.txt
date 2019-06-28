@@ -1,58 +1,62 @@
 [[structure-view-modes]]
 
-=== Concept: View Modes and Formatters
+=== Concept: modes d'affichage et formateurs
 
 [role="summary"]
-Overview of view modes and field formatters.
+Vue d'ensemble des modes d'affichage et des formateurs de champ.
 
-(((View mode, overview)))
-(((Entity view mode, overview)))
-(((Formatter, overview)))
-(((Field formatter, overview)))
+(((mode d'affichage,vue d'ensemble)))
+(((Mode d'affichage d'une entité,vue d'ensemble)))
+(((Formateur,vue d'ensemble)))
+(((Formateur de champ,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<structure-content-type>>
 
-==== What is a View mode?
+==== Qu'est-ce qu'un mode d'affichage ?
 
-How an entity (such as content, a user or a comment) is displayed, depends on
-the context in which it is shown. This context is known as a _view
-mode_. Examples of view modes are:
+La manière dont une entité (telle que du contenu, un utilisateur ou un contenu)
+est affichée dépend du contexte dans lequel le visiteur la voit. Ce contexte est
+appelé _mode d'affichage_. Ces modes d'affichage peuvent être par exemple :
 
-* a full page of the content with all the field values
-* a teaser of the content with a thumbnail image and a _Read more_ link
-* a full user profile with a zoomable portrait photo
-* a user avatar with username and a link to the profile
+* le contenu en pleine page avec toutes les valeurs des champs
+* une accroche du contenu avec une miniature de l'image et un lien _En savoir plus_
+* un profil d'utilisateur complet avec une photo de portrait que l'on peut agrandir
+* l'avatar d'un utilisateur avec son nom d'utilisateur et un lien vers le profil
 
-Every view mode can be configured through the administration pages. To see the
-configuration options for the view modes of the Recipe content type, navigate
-in the _Manage_ administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_) and click _Manage display_ from the dropdown
-button. In each view mode, all fields can be hidden or displayed, and if they
-are displayed, you can choose and configure the field formatter.
+Chaque mode d'affichage peut être configuré à travers les pages
+d'administration. Pour voir les options de configuration des modes d'affichage
+du type de contenu Recette, aller dans le menu d'administration _Gérer_ dans
+_Structure_ > _Types de contenu_ (_admin/structure/types_) et cliquer sur _Gérer
+l'affichage_ dans la liste déroulante. Pour chaque mode d'affichage, tous les
+champs peuvent être masqués ou affichés, et s'ils sont affichés, vous pouvez
+choisir et configurer le formateur du champ.
 
-==== What is a field formatter?
+==== Qu'est-ce qu'un formateur de champ ?
 
-A field formatter is a setting for displaying the field values. For example,
-long text fields can be displayed trimmed or full-length, and taxonomy term
-reference fields can be displayed in plain text or linked to the taxonomy term
-page. Consult the _Manage display_ page to see the field formatters for the
-fields of the Recipe content type.
+Un formateur de champ est un paramètre d'affichage des valeurs du champ. Par
+exmple, les champs de type texte long peuvent être affichés tronqués ou dans
+leur intégralité, et les champs de type référence à un terme de taxonomie
+peuvent être affichés comme du texte simple ou comme un lien vers la page du
+terme de taxonomie. Consulter la page _Gérer l'affichage_ pour voir les
+formateurs de champ des champs du type de contenu Recette.
 
-==== Related topics
+==== Sujets liés
 
 * <<structure-content-type>>
 * <<structure-content-display>>
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
 
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
+Adapté par https://www.drupal.org/u/batigolix[Boris Doesborg] depuis
 https://www.drupal.org/node/1577752["View modes"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+copyright 2000-2019 contributeurs individuels de 
+https://www.drupal.org/documentation[la documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
