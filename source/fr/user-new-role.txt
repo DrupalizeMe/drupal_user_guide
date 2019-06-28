@@ -1,65 +1,65 @@
 [[user-new-role]]
 
-=== Creating a Role
+=== Créer un rôle
 
 [role="summary"]
-How to create a new role.
+Comment créer un nouveau rôle.
 
-(((User role,creating)))
-(((Role,creating)))
-(((Role,anonymous user)))
-(((Role,authenticated user)))
-(((Role,administrator)))
+(((Rôle utilisateur,créer)))
+(((Rôle,créer)))
+(((Rôle,utilisateur anonyme)))
+(((Rôle,utilisateur authentifié)))
+(((Rôle,administrateur)))
 
-==== Goal
+==== Objectif.
 
-Create a Vendor role to allow some - but not all - users to perform specific
-tasks.
+Créer un rôle Vendeur pour autoriser certains utilisateurs — mais pas tous — à
+effectuer des tâches spécifiques.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<user-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _People_ > _Roles_
+. Dans le menu d'administration _Gérer_, aller à _Personnes_ > _Rôles_
 (_admin/people/roles_).
 
-. You will find default roles _Anonymous user_,
-_Authenticated user_, and _Administrator_ already present.
+. Vous trouverez les rôles par défaut _utilisateur anonyme_, _utilisateur
+authentifié_ et _administrateur_ déjà présents.
 +
 --
 // Roles page (admin/people/roles).
-image:images/user-new-role-roles-page.png["Roles page"]
+image:images/user-new-role-roles-page.png["Page des rôles"]
 --
 
-. Click _Add Role_ to add a custom role.
+. Cliquer sur _Ajouter un rôle_ pour ajouter un rôle personnalisé.
 
-. Type Vendor in the _Role name_ field. Click _Save_.
+. Taper "Vendeur" dans le champ _nom du rôle_. Cliquer sur _Enregistrer_.
 +
 --
 // Add role page (admin/people/roles/add).
-image:images/user-new-role-add-role.png["adding vendor as a role"]
+image:images/user-new-role-add-role.png["ajouter vendeur en tant que rôle"]
 --
 
-. You will see the message "Role Vendor has been added." displayed at the top
-of the page.
+. Le message "Le rôle Vendeur a été ajouté." s'affiche en haut de page.
 +
 --
 // Confirmation message after adding new role.
-image:images/user-new-role-confirm.png["vendor role added success message"]
+image:images/user-new-role-confirm.png["message en cas de création réussie du
+rôle vendeur"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 * <<user-permissions>>
 * <<user-roles>>
 
 //==== Related concepts
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "User Roles"]
 
@@ -67,9 +67,11 @@ https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "U
 *Attributions*
 
 
-Adapted and edited by https://www.drupal.org/u/JackProbst[Jack Probst],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/eojthebrave[Joe Shindelar] from
-https://www.drupal.org/node/1803614["User Roles"], copyright 2000-2017 by the
-individual contributors to the https://www.drupal.org/documentation[Drupal
-Community Documentation]
+Adapté et édité par https://www.drupal.org/u/JackProbst[Jack Probst],
+https://www.drupal.org/u/batigolix[Boris Doesborg], et
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] depuis
+https://www.drupal.org/node/1803614["User Roles"], copyright 2000-2019
+contributeurs individuels à https://www.drupal.org/documentation[la
+documentation de la communauté Drupal] Traduit par
+https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
