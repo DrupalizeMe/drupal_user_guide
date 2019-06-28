@@ -1,57 +1,60 @@
 [[understanding-themes]]
 
-=== Concept: Themes
+=== Concept : thèmes
 
 [role="summary"]
-Overview of themes and where to obtain them.
+Vue d'ensemble des thèmes et obtention
 
-(((Theme,overview)))
-(((Theme,core)))
-(((Core theme,overview)))
-(((Theme,third-party)))
-(((Third-party theme,overview)))
-(((Theme,custom)))
-(((Custom theme,overview)))
+(((Thème,vue d'ensemble)))
+(((Thème,cœur (core))))
+(((Thème du cœur (core),vue d'ensemble)))
+(((Thème,tiers)))
+(((Thème tiers,vue d'ensemble)))
+(((Thème,personnalisé)))
+(((Thème personnalisé,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<understanding-drupal>>
 
-==== What is a Theme?
+==== Qu'est ce qu'un thème ?
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+Un thème est un ensemble de fichiers qui définissent la présentation de votre
+site. Le cœur et les modules de votre site déterminent quels _contenus_ (y
+compris le texte HTML et les autres données stockées dans la base de données,
+les images téléchargées et toutes les autres ressources) apparaissent sur les
+pages de votre site. Le thème détermine les balises HTML et les styles CSS qui
+encapsulent le contenu.
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+Le cœur fournit plusieurs thèmes basiques avec sa distribution. Ces thèmes ont
+globalement été essentiellement conçus et construits par la communauté ces
+dernières années et seront tous de bons choix pour construire vos premiers sites
+et vous familiariser avec le fonctionnement du cœur.
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+Drupal est un SGC de référence, de sorte que le marché des thèmes tiers —
+gratuits comme payants — est solide.
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software.  Guidance for creating custom themes
-in Drupal 8 can be found in the
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"].
+Si aucun des thèmes communautaires ne convient à vos besoin, il vous faudra
+créer un thème personnalisé. Un thème personnalisé peut être aussi simple qu'un
+seul fichier CSS qui ajoute des styles aux balises fournies par le cœur. Des
+conseils pour la creation des thèmes personnalisés est disponible ici :
+https://www.drupal.org/docs/8/theming[page de documentation communautaire sur _Drupal.org_ "Theming Drupal"].
 
-==== Related topics
+==== Sujets liés
 
 * <<extend-theme-find>>
 * <<extend-theme-install>>
 * <<understanding-modules>>
 
-==== Additional resources
+==== Pour aller plus loin
 
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documenation page "Theming Drupal"]
+https://www.drupal.org/docs/8/theming[_Drupal.org_ page de documentation communautaire "Theming Drupal"]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/jgrubb[John Grubb] and
+Écrit et modifié par https://www.drupal.org/u/jgrubb[John Grubb] et
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky],
+https://www.drupal.org/u/duaelfr[Edouard Cunibil] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
