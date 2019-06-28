@@ -1,90 +1,100 @@
 [[user-permissions]]
-=== Assigning Permissions to a Role
+=== Attribuer des droits à un rôle
 
 [role="summary"]
-How to assign a permission to a role.
+Comment attribuer des droits à un rôle.
 
-(((Permission,changing)))
-(((Permission,granting)))
-(((Permission,denying)))
-(((Role,changing permission)))
-(((Security,assigning permission)))
+(((Droit,modifier)))
+(((Droit,accorder)))
+(((Droit,refuser)))
+(((Rôle,modifier droit)))
+(((Sécurité,attribuer droit)))
 
-==== Goal
+==== Objectif
 
-Change the permissions for the Vendor role so that users can create, edit,
-and delete Recipe and Vendor content, format the content, and contact each
-other.
+Modifier les droits pour le rôle Vendeur pour que les utilisateurs puissent
+créer, modifier et supprimer du contenu de type Recette et Vendeur, mettre en
+forme le contenu, et rentrer en contact.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Le rôle Vendeur doit exister sur votre site. Consulter <<user-new-role>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _People_ > _Roles_
-(_admin/people/roles_). The _Roles_ page appears.
+. Dans le menu d'administration _Gérer_, aller à _Personnes_ > _Rôles_
+(_admin/people/roles_). La page _Rôles_ apparaît.
 
-. Click _Edit permissions_ in the dropdown for the Vendor
-role. The _Edit role_ page appears where you can see all the available
-actions for the website such as, for example, _Post comments_ or _Use advanced
-search_. The available permissions depend on the modules that are installed in
-the site. Note: Some permissions may have security implications. Be cautious
-while assigning permissions to roles.
+. Cliquer sur _Modifier les droits_ dans le bouton déroulant du rôle Vendeur. La
+page _Modifier le rôle_ apparaît ; vous pouvez voir toutes les actions
+disponibles pour le site comme, par exemple, _Poster des commentaires_ ou
+_Utiliser la recherche avancée_. Les droits disponibles dépendent des modules
+qui sont installés sur le site. Noter que certains droits peuvent avoir des
+conséquences sur la sécurité. Soyez prudent lorsque vous attribuez des
+droits aux rôles.
 
-. Check the boxes for the following permissions, listed by module:
+. Cocher les cases des droits suivants, listés par module :
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Module | Permission
-| Contact | Use users' personal contact forms
-| Filter | Use the Restricted HTML text format
-| Node | Recipe: Create new content
-| Node | Recipe: Edit own content
-| Node | Recipe: Delete own content
-| Node | Vendor: Edit own content
-| Quick Edit | Access in-place editing
+| Module | Droit
+| Contact | Utiliser les formulaires de contact personnels des utilisateurs
+| Filter | Utiliser le format de texte Restricted HTML
+| Node | Recette : Créer un nouveau contenu
+| Node | Recette : Modifier son propre contenu
+| Node | Recette : Supprimer son propre contenu
+| Node | Vendeur : Modifier son propre contenu
+| Quick Edit | Accéder à la modification rapide
 |================================
 +
 --
 // Permissions page for Vendor (admin/people/permissions/vendor).
-image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
+image:images/user-permissions-check-permissions.png["Accorder aux utilisateurs
+ayant le rôle Vendeur les droits de créer, supprimer et modifier des recettes",width="100%"]
 --
 
-. Click _Save permissions_. You will get a message saying your changes have been
-saved.
+. Cliquer sur _Enregistrer les droits d'accès_. Un message indiquant que vos
+modifications ont été enregistrées apparaît.
 +
 --
 // Confirmation message after updating permissions.
-image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
+image:images/user-permissions-save-permissions.png["Message de confirmation
+après la mise à jour des droits"]
 --
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-* Log in as one of the new users you created in <<user-new-user>>. Verify
-whether you have the correct permissions.
+* Connectez-vous comme un des utilisateurs que vous avez créés dans
+<<user-new-user>>. Vérifier que vous avez les droits nécessaires.
 
 * <<user-roles>>
 
-==== Related concepts
+==== Concepts liés
 
 <<user-admin-account>>
 
-==== Additional resources
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/IlVh9f4BHVw[title="Assigning Permissions to a Role"]
+
+==== Pour aller plus loin
 
 https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
 
 
 *Attributions*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-https://www.drupal.org/u/bemery987[Brian Emery],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
+Adapté et édité par https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/bemery987[Brian Emery], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle], à partir de
 https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+copyright 2000-2019 contributeurs individuels à
+https://www.drupal.org/documentation[la documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
