@@ -1,71 +1,71 @@
 [[user-new-user]]
 
-=== Creating a User Account
+=== Создание аккаунта пользователя
 
 [role="summary"]
-How to create a user account.
+Как создать аккаунт пользователя.
 
-(((User,creating account)))
+(((Пользователь,создание аккаунта)))
 
-==== Goal
+==== Цель
 
-Create Vendor user accounts for Sweet Honey and Happy Farm vendors.
+Создать пользовательский аккаунт Производитель для производителей Алтайский мед и Веселый молочник.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<user-concept>>
 * <<user-admin-account>>
 * <<user-new-role>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Роль Поставщик должна существовать на вашем сайте. Смотрите <<user-new-role>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _People_ (_admin/people_).
+. В _Управлении_ административного меню, перейдите в _Пользователи_ (_admin/people_).
 
-. Click _Add user_.
+. Нажмите _Добавить пользователя_.
 +
 --
 // Add new user form (/admin/people/create).
-image:images/user-new-user_form.png["Form for creating a new user account",width="100%"]
+изображение:images/user-new-user_form.png["Форма для создания нового аккаунта пользователя",width="100%"]
 --
 
-. Fill in the form fields. See the table below.
+. Заполните форму поля. Смотрите на таблицу ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Email address |A valid email address for the vendor. All emails from the system will be sent to this address. The email address is not made public. | honey@example.com
-|Username |A username for the vendor that they will use to sign in or author content items. Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores. |Sweet Honey
-|Password |A password the vendor will use to sign in to the site. You can see how safe the password is on the _Password strength_ gauge. You also get tips on how to make it safer.  |(Make a secure password)
-|Confirm password |Type the same password to avoid any typing mistakes. |(Repeat password)
-|Status |Set the status of the user account. _Blocked_ users will not be able to sign in. |Active
-|Roles |Set the role of the user account.|Vendor
-|Notify user of new account |Whether or not to send a notification to the vendor's email address. |Checked
-|Picture |Click _Browse_ and select a picture to upload. Pay attention to size restrictions. | Photo of the vendor
-|Contact settings |Enable or disable the display of a contact form for the account. | Checked
+|Название поля |Описание |Примерное значение
+|Email адрес |Действительный адрес электронной почты для производителя. Все электронные письма из системы будут отправлены на этот адрес. Адрес электронной почты не обнародуется. | honey@example.com
+|Имя пользователя(Username) |Имя пользователя для производителя, которое они будут использовать для входа или создания материалов. Пробелы разрешены; пунктуация не допускается, за исключением точек, дефисов, апострофов и подчеркиваний. |Алтайский мёд
+|Пароль |Пароль, который производитель будет использовать для входа на сайт. Вы можете увидеть, насколько безопасен пароль, на _индикаторе сложности_ пароля. Вы также получите советы о том, как сделать его безопаснее.  |(Сделайте надежный пароль)
+|Повторите пароль |Введите тот же пароль, чтобы избежать ошибок при наборе. |(Повторите пароль)
+|Статус |Установите статус пользовательского аккаунта. _Blocked_ пользователи не смогут войти. |Active
+|Роли (Roles) |Установите роль пользовательского аккаунта.|Vendor
+|Уведомить пользователя о создании учётной записи |Стоит ли отправлять уведомления на электронный адрес производителя. |Выбрано
+|Изображение |Нажмите _Выберите файл_ и выберите изображение для загрузки. Обратите внимание на ограничения по размеру. | Фотография производителя
+|Настройки контактной формы|Включить или отключить отображение контактной формы для аккаунта. | Выбрано
 |================================
 
 
-. Click _Create new account_. You will get a notification about the user account
-creation.
+. Нажмите _Регистрация_. Вы получите уведомление о создании пользовательского
+аккаунта.
 +
 --
 // Confirmation message after adding new user.
-image:images/user-new-user-created.png["New user account has been created",width="100%"]
+изображение:images/user-new-user-created.png["Новый аккаунт пользователя был создан",width="100%"]
 --
 
-. Create a second Vendor account for Happy Farm by following the steps above.
+. Создайте второй аккаунт Производитель для Веселого молочника, выполнив действия, описанные выше.
 
-==== Expand your understanding
+==== Расширьте своё понимание
 
-Create a user account for yourself.
+Создайте аккаунт пользователя для себя.
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title="Creating a User Account"]
@@ -73,7 +73,9 @@ video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title="Creating a User
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-at https://pronovix.com/[Pronovix].
+Написано https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+в https://pronovix.com/[Pronovix].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
