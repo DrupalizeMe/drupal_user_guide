@@ -1,116 +1,118 @@
 [[extend-module-find]]
 
-=== Finding Modules
+=== Поиск модулей
 
 [role="summary"]
-How to search and evaluate modules on Drupal.org.
+Как искать и оценивать модули на Drupal.org.
 
-(((Module,finding)))
-(((Module,evaluating)))
-(((Contributed module,finding)))
-(((Contributed module,evaluating)))
-(((Drupal.org website,finding and evaluating modules on)))
+(((Модуль,поиск)))
+(((Модуль,оцека)))
+(((Дополнительный модуль,поиск)))
+(((Дополнительный модуль,оцека)))
+(((Сайт Drupal.org,поиск и оценка модулей)))
 
-==== Goal
+==== Цель
 
-Find and evaluate modules on _Drupal.org_.
+Найти и оценить модули на _Drupal.org_.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<understanding-drupal>>
 * <<understanding-modules>>
 
 //==== Site prerequisites
 
-==== Steps
+==== Шаги
 
-. Go to https://www.drupal.org[_Drupal.org_], and navigate to _Download &
+. Зайдите на https://www.drupal.org[_Drupal.org_], и перейдите в _Download &
 Extend_ > _Modules_ (https://www.drupal.org/project/project_module).
 
-. Filter your search using the categories on the module search page.
-Fill in the fields as shown below.
+. Отфильтруйте результаты поиска по категориям на странице поиска модуля.
+Заполните поля, как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Maintenance status |How actively should the module be maintained? | Actively maintained
-|Development status |What kind of development should the module undergo?| Any
-|Module categories |The module's topic area.|Administration
-|Core compatibility |The version of the core software the module is compatible with.|8.x
-|Status |Project status: _Sandbox projects_ are experimental projects. _Full projects_ have
- already gone through an approval process, but they can still be in development. |Full projects
-|Stability | Whether or not the project maintainer has created a production-ready version.
+|Имя поля |Описание |Пример значения
+|Статус обслуживания (Maintenance status) |Насколько активно поддерживается модуль? | Активно поддерживается (Actively maintained)
+|Статус разработки (Development status) |Какой этап разработки проходит модуль?| Любой (any)
+|Категория модуля (Module categories) |Тематическая область модуля.|Администрирование (Administration)
+|Совместимость ядра (Core compatibility) |Версия ядра, с которой совместим модуль.|8.x
+|Статус (Status) |Статус проекта: _Sandbox projects_ - экспериментальные проекты. _Full projects_
+ уже прошли процесс утверждения, но они все еще могут быть в разработке. |Full projects
+|Стабильность (Stability) | Whether or not the project maintainer has created a production-ready version.
  |Has a supported stable release
-|Security advisory coverage | Whether or not the project maintainer has agreed to follow Drupal
- Security Team procedures. |Has security advisory coverage
-|Search modules |Search for _Admin Toolbar_, a module that will be covered in detail later.
- Alternatively, you can also leave the field blank if you are not sure which module to search for.
+|Cледование рекомендациям по безопасности (Security advisory coverage) | Согласен ли сопровождающий проекта следовать процедурам Drupal
+ Security Team. |Cледует рекомендациям по безопасности (Has security advisory coverage)
+|Поиск модулей (Search modules) |Найдите _Admin Toolbar_, модуль, который будет подробно описан позже.
+ Кроме того, вы также можете оставить поле пустым, если вы не уверены, какой модуль искать.
  |Admin Toolbar
-|Sort by |Order your search results by criteria like _Most installed_ (popular modules that many
- sites use) or _Last release_ (date of latest version released). |Most installed
+|Сортировать по (Sort by) |Упорядочивайте результаты поиска по критериям, таким как _Most Installed_ (популярные модули, которые используют многие
+ сайты) или _Last release_ (дата выпуска последней версии). |Most installed
 |================================
 +
 --
 // Module search box on https://www.drupal.org/project/project_module.
-image:images/extend-module-find_module_finder.png["Filters on the module search page on _Drupal.org_"]
+image:images/extend-module-find_module_finder.png["Фильтры на странице поиска модуля на _Drupal.org_"]
 --
 
-. Click _Search_. Search results will appear.
+. Нажмите _Search_. Появятся результаты поиска.
 +
 --
 // Search results on https://www.drupal.org/project/project_module.
-image:images/extend-module-find_search_results.png["Module search results page on _Drupal.org_"]
+image:images/extend-module-find_search_results.png["Страница результатов поиска модуля на _Drupal.org_"]
 --
 
-. To further evaluate a module, click its title in the list of search results
-to visit its project page.
+. Чтобы дополнительно оценить модуль, щелкните его название в списке результатов поиска и
+посетите страницу проекта.
 
-Some aspects to pay attention to when evaluating modules:
+Некоторые аспекты, на которые следует обратить внимание при оценке модулей:
 
-* Project description: The description of the module on its project page should
-be clear and useful. You should get an idea of its features and requirements.
+* Описание проекта: Описание модуля на его странице проекта должно
+быть ясным и понятным. Вы должны получить представление о его особенностях и требованиях.
 
-* Project information: There may be warnings in this area of the page, such as
-if a module is no longer being developed, or is not covered by the security
-advisory policy.
+* Информация о проекте (Project information): В этой области страницы могут быть предупреждения, такие как
+модуль больше не разрабатывается или он не следует
+рекомендациям по безопасности.
 
-* Project information > Reported installs, downloads: You can see how many
-people have downloaded and how many sites use the module. If it's only used by a
-few sites, it might be a unique solution that not many people need, or it might
-be a warning sign that you shouldn't use it either.
+* Информация о проекте (Project information) > Отмеченные установки, загрузки (Reported installs, downloads): Вы можете увидеть, сколько
+люди скачали и сколько сайтов используют модуль. Если он используется только
+на нескольких сайтах, это может быть уникальное решением, которое используют не так много людей, или может
+быть предупреждением, что вы не должны его устанавливать.
 
-* Maintainers: When was the last commit (the last time someone updated something
-on the module) or last release (new version)? If the project has few open
-issues, a long time since commits/releases might be appropriate, but if it has
-a lot of open issues and there are no commits/releases, that would be a clue
-that it might be abandoned.
+* Сопровождающие (Maintainers): Когда был последний коммит (последний раз когда кто-то что-то обновлял
+на модуле) или последний выпуск (новая версия)? Если у проекта мало открытых
+проблем, в течение длительного времени коммиты / выпуски могут быть уместны, но если модуль имеет
+много открытых проблем и нет коммитов / выпусков, это может быть подсказкой
+что устанавливать данный модуль не следует.
 
-* Issues: See if there are any open issues, potential problems with the
-module. Check the Statistics to see how regularly issues are responded to.
+* Проблемы (Issues): Посмотрите, есть ли открытые проблемы.
+Проверьте статистику, чтобы увидеть, как регулярно реагируют на проблемы.
 
-* Documentation, Resources: Check if the module has documentation or a README
-file, that can help you install, configure, explore, and test it.
+* Документация, Ресурсы (Documentation, Resources): Проверьте, есть ли у модуля документация или README
+файл, который поможет вам установить, настроить, исследовать, и протестировать его.
 +
 --
 // Project page for Admin Toolbar module.
-image:images/extend-module-find_project_info.png["Information on the project page to look for when evaluating a module", width="100%"]
+image:images/extend-module-find_project_info.png["Информация на странице проекта для поиска при оценке модуля", width="100%"]
 --
 
-==== Expand your understanding
+==== Расширьте своё понимание
 
 <<extend-module-install>>
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/G-XUuSj9xYA[title="Finding Modules"]
+video::https://www.youtube-nocookie.com/embed/G-XUuSj9xYA[заголовок="Finding Modules"]
 
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Написано https://www.drupal.org/u/dianalakatos[Diána Lakatos] в
 https://pronovix.com//[Pronovix].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов]
