@@ -1,65 +1,65 @@
 [[user-content]]
 
-=== Assigning Authors to Content
+=== Привязка автора к материалам
 
 [role="summary"]
-How to assign authorship of content items to a user account.
+Как привязать авторство материалов аккаунту пользователя.
 
-(((Author,assigning)))
-(((Content,assigning author)))
+(((Автор,привязка)))
+(((Контент,привязка автора)))
 
-==== Goal
+==== Цель
 
-Assign Vendor content items Happy Farm and Sweet Honey to the corresponding
-Vendor user accounts, so they can edit their own Vendor profiles on the site.
+Привязать материалы Производителя Веселый молочник и Алтайский мёд к соответствующим
+пользовательским аккаунтам Производителя, чтобы они могли редактировать свои собственные профили Производителя на сайте.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-* The Vendor content type must exist, and your site must have at least two
-Vendor content items. See <<structure-content-type>>, <<structure-fields>>, and
+* Тип материала Производитель должен существовать, и на вашем сайте должно быть не менее двух
+материалов Производителя. Смотрите <<structure-content-type>>, <<structure-fields>>, и
 <<content-create>>.
 
-* User accounts for at least two vendors must exist. See <<user-new-user>>.
+* Должны существовать пользовательские аккаунты как минимум для двух производителей. Смотрите <<user-new-user>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. В _Управлении_ административного меню, перейдите в _Содержимое_ (_admin/content_).
 
-. Find Vendor content item Happy Farm in the list. If it is not immediately
-visible, you can filter the list by _Published status_, _Content type_ (Vendor),
-_Title_, or _Language_.  Click _Edit_ for the Vendor content item you would like
-to assign an author to.
+. Выберите материал Производителя Весёлый молочник в списке. Если его не сразу
+видно, вы можете отфильтровать список по _Статусу публикации_, _Типу материала_ (Производитель),
+_Заголовку_, или _Языку_.  Нажмите _Редактировать_ для материала Производителя, для которого вы бы хотели
+назначить авторство.
 
-. Under _Authoring information_, start typing the Vendor's user
-name Happy Farm in the _Authored by_ field. The field lists matching user
-names. Select the Vendor's user name from the list.
+. Под _Информацией об авторе_, начните вводить пользовательское имя Производителя
+Весёлый молочник в поле _Автор_. В полях будут перечислены соответствующие пользовательские
+имена. Выберите имя пользователя Производителя из списка.
 +
 --
 // Authoring information section of content edit page.
-image:images/user-content.png["Assigning an author to the Vendor content item"]
+image:images/user-content.png["Привязка авторства материалу Производителя"]
 --
 
-. Click _Save_.
+. Нажмите _Сохранить_.
 
-. You will get a notification that the Vendor content item has been updated.
+. Вы получите уведомление о том, что материал Производителя был обновлен.
 +
 --
 // Confirmation message after content update.
-image:images/user-content_updated.png["Vendor content item has been updated"]
+image:images/user-content_updated.png["Материал Производителя обновлен"]
 --
 
-. Follow these steps again to assign Vendor content item Sweet Honey to the
-Vendor user account Sweet Honey.
+. Повторите инструкции, чтобы привязать материал Производителя Алтайский мёд к
+к пользовательскому аккаунту Производителя Алтайский мёд.
 
 // ==== Expand your understanding
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/yx9u2SCgono[title="Assigning Authors to Content"]
@@ -67,7 +67,9 @@ video::https://www.youtube-nocookie.com/embed/yx9u2SCgono[title="Assigning Autho
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Написано https://www.drupal.org/u/dianalakatos[Diána Lakatos] в
 https://pronovix.com/[Pronovix].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов]
