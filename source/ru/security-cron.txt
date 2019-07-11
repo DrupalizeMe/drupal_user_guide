@@ -1,105 +1,107 @@
 [[security-cron]]
 
-=== Configuring Cron Maintenance Tasks
+=== Настройка задач крона для обслуживания сайта
 
 [role="summary"]
-How to run cron maintenance tasks using the core Automated Cron module, or by running them from outside the site.
+Как запускать задачи крона, используя модуль ядра Automated Cron или запуская крон снаружи сайта.
 
-(((Automated Cron module,configuring)))
-(((Cron task,configuring)))
+(((Automated Cron модуль,настройка)))
+(((Задача крона,настройка)))
 
-==== Goal
+==== Цель
 
-Check whether cron maintenance tasks are run regularly, and if not, either
-install the core Automated Cron module or run cron maintenance tasks from
-outside the website.
+Проверить является ли задачи крона регулярными или нет,
+устанавливать модуль ядра Automated Cron или запускать задачи крона
+снаружи сайта.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<security-cron-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Шаги
 
-. Review the _Status report_ (see <<prevent-status>>) to see when cron
-maintenance tasks were last run.
+. Посмотреть страницу _Отчет о состоянии_ (смотрите <<prevent-status>>), где написано когда крон
+запускался последний раз.
 +
-If you installed the website using the core Standard installation profile (or
-similar), then cron maintenance tasks might already be running via the
-core Automated Cron module.  By default, these tasks are run about every three
-hours.
+Если вы установили сайт используя Стандартный инсталляционный профиль (или
+подобный), тогда крон уже будет запускаться через
+модуль ядра Automated Cron. По умолчанию крон будет запускаться каждые три
+часа.
 
-. Choose whether to run cron maintenance tasks using the core Automated Cron
-module, or by other means. The core Automated Cron module might not be suitable
-for some websites because:
+. Выбрать стоит ли запускать крон используя модуль ядра Automated Cron
+или использовать другой путь. Модуль ядра Automated Cron может не подойти
+для сайтов когда:
 +
-  * Each time someone accesses a page on the site, the module checks how long it
-  has been since cron maintenance tasks have last run, and then runs them if
-  necessary. If no one visits the website for a long time, cron maintenance
-  tasks will not be run.
-  * Cron maintenance tasks are run after the page has been generated. This means
-  there is less time for the tasks to be run before various server timeouts are
-  reached (for example, PHP execution timeout). If this happens, the logs (see
-  <<prevent-log>>) will show error messages that cron is unable to complete.
-  * There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
-  associated with the core Automated Cron module. This is because one of the web
-  server's processes is occupied (and can't serve other web pages) until the
-  cron maintenance tasks are complete.
+  * Каждый раз кто-то заходит на страницу сайта, модуль проверяет как долго
+  не запускался крон, и тогда запускает крон если это
+  необходимо. Если никто не заходит на сайт долгое время, то крон
+  не будет запускаться.
+  * Крон запускается после того как страница сгенерирована. Это означает,
+  что останется меньше времени для выполнения крона перед тем как различные лимиты времени на сервере
+  будут превышены (например, время исполнения PHP скрипта). Если это случается, то в логах (смотрите
+  <<prevent-log>>) будет показано сообщения об ошибках, о том что крон не мог исполниться.
+  * Крон слабо поддерживает https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C[Масштабируемость]
+  если работает на модуле ядра Automated Cron. Это происходит потому что процесс веб
+  сервера занят (и не может обслуживать другие веб страницы) пока
+  крон выполняется.
 
-. If you want to use the core Automated Cron module, first make sure it is
-installed (it is installed with the core Standard install profile; see
-<<config-install>> if it is not installed).
+. Если вы хотите использовать модуль Automated Cron, сперва убедитесь, что он
+установлен (Модуль устанавливается вместе со Стандартным инсталляционным профилем; смотрите
+<<config-install>> если модуль не установлен).
 +
-Next, configure the module to control how frequently cron maintenance tasks are
-run. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Select the desired interval from
-the _Run cron every_ field under _Cron settings_, and click _Save
-configuration_.
+Дальше, настройте модуль, задав частоту с которой крон будет
+выполняться. В меню администратора _Управление_, перейдите на _Конфигурация_ >
+_Система_ > _Крон_ (_admin/config/system/cron_). Выберите желаемый интервал в поле
+_Запускать cron каждые_ в разделе _Настройки крон_, и нажмите _Сохранить
+конфигурацию_.
 +
 --
 // Cron configuration page (admin/config/system/cron).
-image:images/security-cron.png["Configure the core Automated Cron module"]
+image:images/security-cron.png["Настройки модуля ядра Automated Cron"]
 --
 
-. If you want to run cron maintenance tasks from outside the website, uninstall
-the core Automated Cron module (see <<config-uninstall>>). Next, find the
-cron URL. This URL is shown in the _Status report_ (see <<prevent-status>>), and
-in the _Cron_ administration page (see previous step). The URL looks
-like this:
+. Если вы хотите запускать крон снаружи сайта, удалите
+модуль ядра Automated Cron (смотрите <<config-uninstall>>). Дальше, найдите
+URL адрес крона. Этот URL показывается на странице _Отчет о состоянии_ (смотрите <<prevent-status>>) и
+на странице _Крон_ (смотрите предыдущий шаг). Этот URL адрес выглядит
+примерно вот так:
 _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
-Whenever this URL is visited, cron maintenance tasks will run. Set up one of
-the following schedulers to access this URL regularly:
+Всякий раз когда URL адрес крона посещен, крон будет запускаться. Настройте один из
+следующих планировщиков посещать этот адрес URL регулярно:
 +
   * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
   BSD)
   * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
-  * A cron SASS provider (software as a service)
-  * A cron manager provided by your web hosting provider (see the documentation
-  provided by your provider)
+  * Сервис SASS для крон (software as a service)
+  * Крон менеджер предоставляемый вашим хостингом (смотрите документацию
+  предоставляемую вашим хостинг провайдером)
 
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== Связанные концепции
 
 <<security-concept>>
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
 
-==== Additional resources
+==== Дополнительные материалы
 
 * http://docs.drush.org/en/master/cron/[Drush page "Running Drupal cron tasks from Drush"]
 * https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
+Написано и отредактировано https://www.drupal.org/u/dalin[Dave Hansen-Lange] из
 https://www.advomatic.com/[Advomatic],
 https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+и https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван].
