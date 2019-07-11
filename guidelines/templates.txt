@@ -39,9 +39,11 @@ is file _templates/task-topic.txt_ in the project Git repository):
 // Titles for task topics should be in the format "Verbing a Noun".
 === Verbing a Noun
 
-// The next few lines are a summary of what the topic covers.
+// The next few lines are a summary of what the topic covers. Should start with
+// "How to [verb]".
 [role=summary]
-The steps in verbing a noun. No more than 140 characters.
+How to verb a noun. No more than 140 characters. Wrap text at 80 characters if
+it goes over.
 
 // The next thing that is needed is an entry for the index:
 // - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
@@ -211,9 +213,11 @@ concepts. Here is the template for concept topics, including the instructions
 // Titles for Concept topics should start with "Concept: ".
 === Concept: ...
 
-// The next few lines are a summary of what the topic covers.
+// The next few lines are a summary of what the topic covers. Should start with
+// "Overview of".
 [role=summary]
-Explanation of what a foo is. No more than 140 characters.
+Overview of foo. No more than 140 characters. Wrap text at 80 characters if it
+goes over.
 
 // The next thing that is needed is an entry for the index:
 // - Replace the text in (((indexentry))) with an appropriate index entry,
