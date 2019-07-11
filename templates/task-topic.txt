@@ -19,10 +19,16 @@
 // The first thing in the file is an ID: replace the text in the brackets below
 // so that it matches the name of the file (without the .txt extension; for
 // example, [[block-create]] if the file name is block-create.txt.
-[[id-goes-here]]
+[[noun-verb]]
 // The topic title goes on the next line. Use "Title Case" for topic titles.
 // Titles for task topics should be in the format "Verbing a Noun".
-=== Title Goes Here
+=== Verbing a Noun
+
+// The next few lines are a summary of what the topic covers. Should start with
+// "How to [verb]".
+[role=summary]
+How to verb a noun. No more than 140 characters. Wrap text at 80 characters if
+it goes over.
 
 // The next thing that is needed is an entry for the index:
 // - Replace the text in (((Nouns,verbing))) with an appropriate index entry,
@@ -78,8 +84,10 @@ Remove this placeholder text.
 // This is where you describe the actual steps needed to perform this task.
 // Remember to use the scenario and be specific, not generic.
 
-. Text of step one goes here. The subsequent lines of this step should
-  be indented by two spaces.
+. Text of step one goes here. The subsequent lines of this step need
+  to be indented by two spaces.
+
+  And it could be a couple of paragraphs.
 +
 If you have a multiple-paragraph step, separate the paragraphs by + signs.
 
