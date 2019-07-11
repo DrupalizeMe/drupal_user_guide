@@ -23,7 +23,11 @@ on your site.
 * <<install-dev-sites>>
 
 * How to set up a Git repository and find its _clone_ URL. For example, if
-you want to use GitHub to host your repository, see
+you want to use GitLab to host your repository, see
+https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab "Create a project" page]
+and
+https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab "Command Line basic commands" page].
+And if you want to use GitHub to host your repository, see
 https://help.github.com/en/articles/create-a-repo[GitHub "Create a repo" page]
 and
 https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub "Which remote URL should I use" page].
@@ -97,12 +101,12 @@ clone URL for the URL in the second command:
 +
 ----
 git commit -m "Initial file add"
-git remote add origin https://github.com/example-name/example-repo.git
+git remote add origin https://gitlab.com/example-name/example-repo.git
 git push -u origin master
 ----
 
-. If you are using GitHub repository hosting, or another host with online
-access, you can now go to your repository page and see that the files are there.
+. If you are using GitLab, GitHub, or another host with online access, you can
+now go to your repository page and see that the files are there.
 
 ===== Updating files in the repository
 
@@ -171,7 +175,7 @@ copies of the site.
 URL, and the name of the subdirectory you want them in for _dirname_:
 +
 ----
-git clone https://github.com/example-name/example-repo.git dirname
+git clone https://gitlab.com/example-name/example-repo.git dirname
 ----
 
 ===== Managing configuration in the repository
