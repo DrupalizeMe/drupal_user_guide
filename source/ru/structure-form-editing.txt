@@ -1,77 +1,78 @@
 [[structure-form-editing]]
 
-=== Changing Content Entry Forms
+=== Изменение формы добавления материала
 
 [role="summary"]
-How to edit a content entry form.
+Как изменить форму добавления материала.
 
-(((Content,editing entry form)))
+(((Cодержимого,изменение формы добавления)))
 
-==== Goal
+==== Цель
 
-Change the Recipe form to use a different widget to enter terms in the
-Ingredients field.
+Изменить форму для материала Рецепт, чтобы использовать другой виджет при
+вводе терминов таксономии в поле Ингредиенты.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<structure-content-type>>
 * <<structure-fields>>
 * <<structure-taxonomy>>
 * <<structure-widgets>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-The Recipe content type must exist, and it must have an Ingredients taxonomy
-term reference field. See <<structure-content-type>> and
+Должен существовать тип материала Рецепт, содержащий поле Ингредиенты как
+ссылку на термин таксономии. См. <<structure-content-type>> и
 <<structure-taxonomy-setup>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-_Recipe_ (_node/add/recipe_) to look at the content entry form that is set up by
-default. Notice how you have to enter ingredients one by one, instead of having
-a more compact format.
+. В разделе _Управление_ административного меню перейдите к пункту
+_Содержимое_ > _Добавить материал_ > _Рецепт_ (_node/add/recipe_), чтобы открыть
+форму ввода содержимого c настройками по умолчанию. Обратите внимание, что
+ингредиенты необходимо вносить последовательно, нет возможности использовать
+более компактный формат.
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). Then click _Manage form display_  on the
-dropdown button for the Recipe content type. The _Manage form display_ page
-appears.
+. В разделе _Управление_ административного меню перейдите к пункту
+_Структура_ > _Типы материалов_ (_admin/structure/types_). Затем выберите
+_Управление отображением формы_ в выпадающем списке для типа материала Рецепт.
+Появится страница _Управление отображением формы_.
 
-. For the Ingredients field, select _Autocomplete (Tags style)_ in the _Widget_
-column.
+. Выберите _Автодополнение (в стиле тегов)_ для поля Ингредиенты в колонке
+_Виджет_.
 +
 --
 // Manage form display page for Recipe, Ingredients field area, with
 // Widget drop-down outlined.
-image:images/structure-form-editing-manage-form.png["Manage the Recipe form",width="100%"]
+image:images/structure-form-editing-manage-form.png["Управление формой Рецепта",width="100%"]
 --
 
-. Click _Save_.
+. Нажмите _Сохранить_.
 
-. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-Recipe (_node/add/recipe_) to verify the changed behavior of the content
-form. The Ingredients field is now a single text field that accepts multiple
-values.
+. В разделе _Управление_ административного меню перейдите к пункту
+_Содержимое_ > _Добавить материал_ > _Рецепт_ (_node/add/recipe_), чтобы
+проверить новое поведение формы ввода содержимого. Теперь поле Ингредиенты
+допускает ввод нескольких значений, расположенных в одну строку.
 +
 --
 // Create recipe page (node/add/recipe).
-image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
+image:images/structure-form-editing-add-recipe.png["Добавить Рецепт",width="100%"]
 --
 
-. Create two Recipe content items (see <<content-create>>), such as recipes for
-"Green Salad" and "Fresh Carrots". Make sure all the fields have values,
-including images, ingredients, and submitted by (set this to one of the Vendor
-content items you created in <<structure-fields>>).
+. Создайте два материала типа Рецепт (см. <<content-create>>), например
+"Зеленый салат" и "Свежая морковь". Убедитесь, что все поля, включая изображения
+и ингредиенты, заполнены и сохранены (сделайте это для одного из материалов
+Производитель, созданного в <<structure-fields>>).
 
-==== Expand your understanding
+==== Узнать больше
 
-Change the main site Contact form by navigating in the _Manage_ administrative
-menu to _Structure_ > _Contact forms_. For instance, you may want to hide the
-_Send yourself a copy_ or _Language_ fields.
+Измените контактную форму сайта при помощи пункта _Структура_ > _Контактные формы_
+в разделе _Управление_ административного меню. Например, можно скрыть поля
+_Отправить копию себе_ или _Язык_.
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/CELMGX93fjE[title="Changing Content Entry Forms"]
@@ -79,6 +80,8 @@ video::https://www.youtube-nocookie.com/embed/CELMGX93fjE[title="Changing Conten
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Написано https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переведено: https://www.drupal.org/u/valeriytolmachov[Валерий Толмачёв].
