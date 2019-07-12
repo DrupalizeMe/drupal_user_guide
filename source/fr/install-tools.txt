@@ -60,11 +60,13 @@ exemple, exécuter des requêtes sur la base de données.
 Les outils les plus populaires sont http://www.drush.org[Drush] et
 https://drupalconsole.com[Drupal Console]. Drush est disponible depuis plus
 longtemps, et comporte des commandes à la fois pour le cœur du logiciel et les
-modules contribués ; ce guide documente les commandes Drush correspondant à
-beaucoup de tâches. Drupal Console était d'abord un outil pour les développeurs
+modules contribués ; Drupal Console était d'abord un outil pour les développeurs
 de modules, mais fait état d'une liste de plus en plus importante de commandes
-pour les webmasters ; ce guide ne documente pas de commandes de Drupal Console,
-mais vous pouvez les chercher dans la documentation de Drupal Console.
+pour les webmasters. Ce guide documente les commandes de la dernière version
+stable de Drush correspondant à beaucoup de tâches ; il ne documente pas de
+commandes de Drupal Console ou de commandes de versions antérieures de Drush,
+mais vous pouvez les rechercher dans les documentations respectives de Drupal
+Console et de Drush.
 
 Pour utiliser ces outils, vous devrez avoir accès à un terminal permettant de
 saisir des lignes de commandes sur le serveur où votre site est hébergé, et vous
@@ -99,7 +101,9 @@ changements sur une copie et de ne les _pousser_ vers le dépôt considéré com
 _canonique_ que quand vous êtes prêt(e) à les partager avec d'autres. Le dépôt
 Git canonique peut être hégergé sur votre ordinateur local ou sur un serveur de
 votre entreprise, mais de nombreux projets logiciels et individus hébergent
-leurs dépôts Git sur le site https://github.com/[GitHub].
+leurs dépôts Git en ayant recours à des services tiers fournis par
+https://about.gitlab.com/[GitLab] ou https://github.com/[GitHub].
+
 
 ==== Pourquoi Composer est-il utilisé ?
 
