@@ -68,7 +68,15 @@ la page d'_Admin toolbar_   (https://www.drupal.org/project/admin_toolbar).
 image:images/extend-manual-install-download.png["Téléchargement de modules"]
 --
 
-. Cliquer sur _tar.gz pour télécharger le fichier sur votre ordinateur.
+. Cliquer sur _tar.gz pour télécharger le fichier sur votre ordinateur. Sinon,
+si vous avez accès au terminal sur votre serveur d'hébergement (sous Linux),
+vous pouvez copier l'adresse du lien vers le fichier _tar.gz_ depuis votre
+navigateur, et utiliser cette commande pour télécharger le fichier (remplacer
+l'URL copiée) :
++
+----
+wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
+----
 
 ===== Transférer les fichiers sur votre site et les extraire
 
