@@ -10,7 +10,7 @@ Comment traduire une page dans une autre langue.
 
 === Objectif
 
-Traduire la page d'accueil en espagnol.
+Traduire la page d'accueil en anglais.
 
 ==== Pré-requis
 
@@ -38,30 +38,30 @@ cette page.
 . Sélectionner _Traduire_ dans le bouton déroulant de la ligne du contenu
 Accueil. La page _Traductions d'Accueil_ s'affiche.
 
-. Cliquer _Insérer_ dans la ligne _Espagnol_.
+. Cliquer _Insérer_ à la ligne _anglais_.
 +
 --
 // Capture d'écran de la page traductions pour l'instance contenu page Accueil.
 image:images/language-content-translate-add.png["Insertion d'une traduction de contenu",width="100%"]
 --
 
-. Remarquer que l'interface utilisateur est passée en espagnol. Pour repasser en
-français, suprimer la première occurrence de _es_ dans l'URL du navigateur. Par
+. Remarquer que l'interface utilisateur est passée en anglais. Pour repasser en
+français, suprimer la première occurrence de _en_ dans l'URL du navigateur. Par
 exemple, si votre URL ressemble à
-_example.com/es/node/5/translations/add/en/es_, suprimer le _es_ qui suit
+_example.com/en/node/5/translations/add/en/es_, suprimer le _en_ qui suit
 _example.com_.
 
 . Remplir les champs comme suit ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Nom de champ | Explication| Valeur
-|Titre | Titre de page traduit | Página principal
+|Nom du champ | Explication| Valeur
+|Titre | Titre de page traduit | Home
 |Corps | Corps de la page traduit |
-Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio!
-Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre
-Lugar: parking del Banco Trust número 1. En el centro de la ciudad
-|paramètres chemin URL > alias URL | adresse traduite de la page web | pagina-principal
+Welcome to City Market - your neighborhood farmers market!
+Open: Sundays, 9 AM to 2 PM, April to September
+Location: Parking lot of Trust Bank, 1st & Union, downtown
+|paramètres chemin URL > alias URL | adresse traduite de la page web | home
 |================================
 
 . Cliquer sur _Enregistrer et publier (cette traduction)_.
