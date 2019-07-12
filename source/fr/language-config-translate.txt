@@ -13,7 +13,7 @@ Comment traduire les libellés de champs dans une vue, et autre configuration.
 
 ==== Objectif
 
-Traduire les libellés de la page de vue Recettes en espagnol.
+Traduire les libellés de la page de vue Recettes en anglais.
 
 ==== Connaissances préalables
 
@@ -22,7 +22,7 @@ Traduire les libellés de la page de vue Recettes en espagnol.
 
 ==== Pré-requis du site
 
-* Le module de traduction de la configuration du coeur doit être installé, et
+* Le module de traduction de la configuration du cœur doit être installé, et
 votre site doit avoir au moins deux langues. Consulter <<language-add>>.
 
 * La vue Recettes doit exister. Consulter <<views-create>> et <<views-duplicate>>.
@@ -50,24 +50,24 @@ façon. La configuration des vues est une exception car le formulaire d'édition
 de la traduction ne ressemble en rien au formulaire d'édition de la vue, et il
 est complexe et hiérarchique plutôt que d'être un simple formulaire avec
 seulement quelques champs. En guise d'exemple de traduction d'une vue, voici les
-étapes pour traduire les libellés dans la vue Recettes vers l'espagnol:
+étapes pour traduire les libellés dans la vue Recettes vers l'anglais :
 
 . Dans le menu d'administration _Gérer_, accéder à _Structure_ > _Vues_
 (_admin/structure/views_).
 
 . Localiser la vue Recettes et cliquer _Traduire_ dans le menu déroulant.
 
-. Cliquer sur _Ajouter_ dans la ligne _espagnol_. La page _Ajouter une
-traduction en espagnol pour la vue Recettes_ apparaît.
+. Cliquer sur _Ajouter_ dans la ligne _anglais_. La page _Ajouter une
+traduction en anglais pour la vue Recettes_ apparaît.
 
 . Rechercher _Affichages_ > _Paramètres de l'affichage de Master_ > _Options
 d'affichage par défaut de Recettes_. Traduire le _Titre d'affichage_ de
-"Recettes" en "Recetas".
+"Recettes" en "Recipes".
 
 . Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
 d'affichage par défaut de Recette_ > _Formulaire exposé_ > _Options de
 réinitialisation_. Traduire le bouton _Texte du bouton de soumission_
-(_Appliquer_) en "Aplicar". Les autres boutons et libellés de cette section
+(_Appliquer_) en "Apply". Les autres boutons et libellés de cette section
 n'apparaissent pas sur la page ou le bloc "Recettes", et n'ont pas besoin d'être
 traduits.
 +
@@ -79,11 +79,11 @@ image:images/language-config-translate-recipes-view.png["Traduire la vue Recette
 . Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
 d'affichage par défaut de Recettes_ > _Filtres_ > _(vide) Terme de taxonomie
 ID_ > _Rechercher recettes en utilisant ... Exposer_. Dans le champ _Libellé_,
-entrer "Encontrar recetas usando...".
+saisir "Find recipes using...".
 
 . Cliquer sur _Enregistrer la traduction_.
 
-. Accéder à la page Recettes et passer en espagnol à l'aide du bloc sélecteur de
+. Accéder à la page Recettes et passer en anglais à l'aide du bloc sélecteur de
 langue. Vérifier que les libellés ont été traduits.
 
 ==== Pour approfondir
