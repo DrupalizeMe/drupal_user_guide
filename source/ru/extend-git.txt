@@ -18,7 +18,11 @@
 * <<install-dev-sites>>
 
 * Как настроить Git репозиторий и найти его _клон_ URL. Например, если
-вы хотите использовать GitHub хост вашего репозитория, посмотрите
+вы хотите использовать GitLab для хранения вашего репозитория, смотрите
+https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab "Create a project" page]
+и
+https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab "Command Line basic commands" page].
+И если вы хотите использовать GitHub для хранения вашего репозитория, смотрите
 https://help.github.com/en/articles/create-a-repo[GitHub "Create a repo" page]
 и
 https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub "Which remote URL should I use" page].
@@ -92,11 +96,11 @@ git status
 +
 ----
 git commit -m "Initial file add"
-git remote add origin https://github.com/example-name/example-repo.git
+git remote add origin https://gitlab.com/example-name/example-repo.git
 git push -u origin master
 ----
 
-. Если вы используете хостинг репозитория GitHub или другой хост с онлайн
+. Если вы используете хостинг репозитория GitLab, GitHub или другой хост с онлайн
 доступом, вы можете перейти на свою страницу репозитория и увидеть, что файлы там.
 
 ===== Обновление данных в репозитории
@@ -166,7 +170,7 @@ git pull
 URL и имя подкаталога, в котором вы хотите их использовать для _dirname_:
 +
 ----
-git clone https://github.com/example-name/example-repo.git dirname
+git clone https://gitlab.com/example-name/example-repo.git dirname
 ----
 
 ===== Управление конфигурацией в репозитории
