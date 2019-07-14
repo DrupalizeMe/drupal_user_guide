@@ -1,75 +1,75 @@
 [[install-dev-making]]
-=== Making a Development Site
+=== Создание сайта для разработки
 
 [role="summary"]
-How to make a copy of a live site for development purposes.
+Как создать копию живого сайта для разработки.
 
-(((Development site,making)))
-(((Staging site,making)))
+(((Сайт для разработки,создание)))
+(((Тестовый сайт,создание)))
 
-==== Goal
+==== Цель
 
-Make a copy of a site that you can use to develop new features and test updates
-on.
+Сделать копию сайта, которая может быть использована для разработки нового функционала и тестирования обновлений
+на нем.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<install-dev-sites>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-* You have a live, developed site that you would like to make a copy of for
-development purposes.
+* У вас должен быть живой, разрабатываемый сайт, из которого вы хотите копию для
+разработки.
 
-* If you want to use Drush for some of the steps in this task, Drush must be
-installed. See <<install-tools>>.
+* Если вы хотите использовать Drush для некоторых шагов в этой задаче, Drush должен быть
+установлен. Смотрите <<install-tools>>.
 
-==== Steps
+==== Шаги
 
-. Follow the steps in <<install-prepare>>, so that you have hosting set up for
-your development site, you know where the web root is for your development site,
-and you have an empty database and database user for your development site to
-use.
+. Пройдите шаги из <<install-prepare>>, так чтобы у вас был хостинг для
+вашего сайта для разработки, вы должны знать, где ваш корень сайта для вашего сайта для разработки и
+иметь пустую базу данных и пользователя базы данных для вашего сайта для
+разработки.
 
-. Make a database dump file from your live site's database. Try one of the
-following methods:
+. Создайте файл копии базы данных с базы данных вашего живого сайта. Попробуйте один из
+следующих методов:
 +
-  * If you are using MySQL as your database, and your live site's server has
-  phpMyAdmin installed (it is available from many hosting control panels),
-  use the _Export_ tab in phpMyAdmin to export in _SQL_ format. Using _gzip_
-  compression on the output file is suggested, to reduce the file size.
+  * Если вы используете MySQL как вашу базу данных и сервер вашего живого сайта имеет установленный
+  phpMyAdmin (который доступен из многих панелей управоления хостингов),
+  используйте вкладку _Экспортировать_ в phpMyAdmin для экспорта в _SQL_ формат. Используйте _gzip_
+  сжатие для выходного файла, чтобы уменьшить размер файла.
 
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password):
+  * Если вы используете MySQL и имеете доступ к командной строке, используйте следующую
+  команду (с заменой имени вашей базы данных, имени пользователя и пароля):
 +
 ----
 mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
 ----
 
-  * If you prefer to use Drush, use this command:
+  * Если вы предпочитаете использовать Drush, используйте следующую команду:
 +
 ----
 drush sql-dump > BACKUPFILE.sql
 ----
 
-  * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module]
-  from within your live site. See <<extend-module-install>> for instructions on
-  installing contributed modules.
+  * Используйте https://www.drupal.org/project/backup_migrate[дополнительный модуль Backup and Migrate]
+  на живом сайте. Смотрите <<extend-module-install>> для инструкций по
+  установке дополнительных модулей.
 +
-You now have a database dump stored in the file _BACKUPFILE.sql_. For security
-reasons, avoid storing this file on your hosting server anywhere under the
-Drupal site root. This will prevent others from getting a copy of your
-database.
+Сейчас у вас есть копия базы данных, хранимая в файле _BACKUPFILE.sql_. По соображениям
+безопасности, избегайте хранение этого файла на вашем хостинге или на сервере внутри
+корня сайта Drupal. Это предотвратит получение другими людьми копии вашей
+базы данных.
 
-. Copy all of the files from the web root of your live site to the web root of
-your development site. You may wish to use Git to do this; if so, see
+. Скопируйте все файлы из корня сайта вашего живого сайта в корень сайта
+для разработки. Если вы хотите использовать Git для этого, тогда смотрите
 <<extend-git>>.
 
-. Edit the _sites/default/settings.php_ file under your development site's
-top-level directory in a plain-text editor. Find the lines near the end that
-contain the database name, database username, and database password, and update
-them to the information about the development site database you set up. The
-lines look something like this (before editing):
+. Отредактируйте файл _sites/default/settings.php_ на вашем сайте для разработки
+в текстовом редакторе. Найдите строчки ближе к концу файла, которые
+содержат имя базы данных, пользователя и пароль, обновите
+их в соответствии с настройками базы данных вашего сайта для разработки.
+Строчки выглядят следующим образом (перед редактированием):
 +
 ----
 $databases['default']['default'] = array (
@@ -78,55 +78,55 @@ $databases['default']['default'] = array (
   'password' => 'live_site_database_password',
 ----
 
-. Check whether your _settings.php_ file has the following setting; if yes, then
-you will need to edit this to point to your development site URL instead of your
-production site URL:
+. Проверьте, что ваш файл _settings.php_ имеет следующие настройки, если имеет, тогда
+вы должны отредактировать их в соответствии с URL адресом вашего сайта для разработки, вместо
+адреса живого сайта:
 +
 ----
 $settings['trusted_host_patterns']
 ----
 
-. Import the database dump file you created, into the development site's
-database. Try one of the following methods:
+. Импортируйте файл базы данных, который вы создали, в базу данных сайта для
+разработки. Попробуйте один из следующих методов:
 +
-  * If you are using MySQL as your database, and your live site's server has
-  PHPMyAdmin installed (it is available from many hosting control panels),
-  use the _Import_ tab in PHPMyAdmin. You may find that you have to restart the
-  import a few times, if your database was large.
+  * Если вы используйте MySQL для базы данных и ваш сервер живого сайта имеет установленный
+  PHPMyAdmin (который доступен из многих панелей управоления хостингов),
+  используйте вкладку _Импортировать_ в PHPMyAdmin. Вам возможно потребуется перезапустить вкладку
+  импорта несколько раз, если ваша база данных была большой.
 
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password;
-  if you made a gzip-compressed backup file, you will also need to uncompress it
-  first):
+  * Если вы используете MySQL и имеете доступ к командной строке, то используйте эту
+  команду (с заменой имя базы данных, пользователя и пароля,
+  если вы сделали файл копии сжатым в gzip, вы должны сперва разархивировать
+  его):
 +
 ----
 mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
 ----
 +
-  * If you prefer to use Drush, use this command:
+  * Если вы предпочитаете использовать Drush, то используйте следующую команду:
 +
 ----
 drush sql-query --file=BACKUPFILE.sql
 ----
 
-. If your development and live sites need to have different configuration, then
-you have to use configuration overrides in the _settings.php_ file. The
-_$config_ variable will help you maintain override values separately from the
-standard configuration data. For instance, you might want the site name to be
-"Anytown Farmers Market" on the production site, but "Development Site for
-Anytown Farmers Market" on the development site. To do that, you could have the
-production value in the site configuration (in the database), and on the
-development site, in the settings.php file, you would need to have:
+. Если ваш сайт для разработки и живой сайт должны иметь различную конфигурацию, тогда
+вы должны использовать перезаписанные конфигурации в файле _settings.php_. Переменная
+_$config_ может помочь перезаписать значения отдельно от
+стандартных данных конфигурации. Например, вам может потребоваться имя сайта
+"Ярмарка города N" на живом сайте, но "Сайт Ярмарки города N
+для разработки" на сайте для разработки. Чтобы это сделать, вы должны иметь
+значение для живого сайта в конфигурации (в базе данных) и на
+сайте для разработки в файле settings.php, вам потребуется дописать:
 +
 ----
-$config['system.site']['name'] = "Development Site for Anytown Farmers Market";
+$config['system.site']['name'] = "Сайт Ярмарки города N  для разработки";
 ----
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
-* Verify that the development site is working correctly.
+* Проверьте, что сайт для разработки работает корректно.
 
-* Log in to the development site as an administrator, and clear the cache. See
+* Авторизуйтесь на сайте для разработки под администратором и очистите кэш. Смотрите
 <<prevent-cache-clear>>.
 
 * <<extend-deploy>>
@@ -135,21 +135,23 @@ $config['system.site']['name'] = "Development Site for Anytown Farmers Market";
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/FSBNm4oAkaA[title="Making a Development Site"]
 
-==== Additional resources
+==== Дополнительные материалы
 
 * https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
 * https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ community documentation page "Create a Test Site"]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Написано и отредактировано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] из
+https://drupalize.me[Drupalize.Me] и
+https://www.drupal.org/u/jojyja[Jojy Alphonso] из
 http://redcrackle.com[Red Crackle].
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван]
