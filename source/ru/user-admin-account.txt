@@ -1,65 +1,67 @@
 [[user-admin-account]]
 
-=== Concept: The User 1 Account
+=== Основы: Аккаунт пользователя с ID 1
 
 [role="summary"]
-Overview of the User 1 account, also known as the root account or administrative account.
+Обзор аккаунта пользователя с ID 1, также известный как аккаунт root или административный аккаунт.
 
-(((User,root)))
-(((User,user one)))
-(((User,administrative)))
-(((Security,user one account)))
+(((Пользователь,root)))
+(((Пользователь,пользователя с ID 1)))
+(((Пользователь,административный)))
+(((Безопасность,аккаунт пользователя с ID 1)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<user-concept>>
 
-==== What is the user 1 account?
+==== Что такое пользователь с ID 1?
 
-During the installation of your site, you created the first user account. Each
-user account internally has a numeric user ID, and since the ID of this user is
-one, it is commonly referred to as the _user 1_ account. This user account is
-special, because independent of what roles it is assigned, someone logged in as
-user 1 has permission to do all actions on the site, including viewing and
-editing all content, editing any user account, changing site configuration,
-installing and uninstalling modules, and running the update script.
+Во время установки вашего сайта вы создали первый аккаунт пользователя. Каждый
+аккаунт пользователя имеет номер пользователя ID, и так как ID этого пользователя
+один, обычно его называют аккаунтом _пользователь с ID 1_. Этот аккаунт пользователя
+специальный, потому что независимо от того, какие роли ему назначены, тот, кто вошёл как
+пользователь с ID 1, имеет разрешение делать все действия на сайте, включая просмотр и
+редактирование всего контента, редактирования любого аккаунта пользователя, изменение конфигурации сайта,
+установка и удаление модулей, и запуск скрипта обновления.
 
-Because of this level of permission, some people refer to this account as the
-_root user_, similar to the "root" user account that has full administrative
-permissions in Linux and other operating systems.
+Из-за этого уровня разрешения, некоторые люди называют этот аккаунт
+_пользователь root_, потому что он похож на аккаунт пользователя "root", который имеет полный административный
+доступ в Linux и других операционных системах.
 
-It is usually better to make separate accounts for each administrative user,
-giving them the _Administrator_ role, rather than having all administrative
-users log in using the user 1 account. There are several reasons for this:
+Обычно лучше создать отдельные аккаунты для каждого администратора,
+давая им роль _Administrator_, вместо того, чтобы все административные
+пользователи входили в систему, используя учетную запись пользователя с ID 1. На это есть несколько причин:
 
-* Some actions and updates on the site are logged, and if everyone uses the same
-account, it is difficult to know who did them if you have questions.
+* Некоторые действия и обновления на сайте регистрируются, и если все используют один и то же
+аккаунт, трудно понять, кто их сделал, если у вас возникли вопросы.
 
-* The _Administrator_ role permissions can be modified to be safer than the
-full permissions of the user 1 account, so that people do not inadvertently
-change site features that shouldn't be changed.
+* Права доступа для роли _Администратор_ можно изменить, чтобы она стала безопаснее,
+чем полные права доступа для аккаунта пользователя с ID 1, чтобы люди случайно не изменили
+функционал сайта, который не должен быть изменён.
 
-* People's responsibilities on a site may change over time. With ordinary user
-accounts, this can be mirrored in permissions by assigning or unassigning
-roles to their user accounts. If they are all using the user 1 account,
-this is more difficult.
+* Ответственность людей на сайте может со временем меняться. С обычным аккаунтом
+пользователя, это может быть изменено путем назначения или отмены назначения
+ролей для аккаунтов пользователей. Если они все используют аккаунт пользователя с ID 1,
+это становится сложнее.
 
-* On some sites, the author of content or comments is displayed or tracked, and
-if everyone uses the same account to create content, it is difficult to know
-who created the content.
+* На некоторых сайтах, автор материала или комментариев отображается, или отслеживается, и
+если все используют один и тот же аккаунт для создания материала, становится трудно понять
+кто создал материал.
 
-It is not possible to delete the user 1 account from the administrative user
-interface. It would be possible to do with a database query, but it could cause
-problems in your site and is not advisable.
+Невозможно удалить аккаунт пользователя с ID 1 через административный пользовательский
+интерфейс. Можно было бы это сделать через запрос к базе данных, но это может привести к
+проблемам на вашем сайте и не рекомендуется.
 
 //==== Related topics
 
-==== Additional resources
+==== Дополнительные ресурсы
 
-https://www.drupal.org/node/22284[_Drupal.org_ community documentation page "Accounts and roles"]
+https://www.drupal.org/node/22284[_Drupal.org_ страница документации сообщества "Accounts and roles"]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано и отредактировано https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
+и https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
