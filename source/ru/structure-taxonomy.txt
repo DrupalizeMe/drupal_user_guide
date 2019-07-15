@@ -1,62 +1,62 @@
 [[structure-taxonomy]]
 
-=== Concept: Taxonomy
+=== Основы: Таксономия
 
 [role="summary"]
-Overview of taxonomy and how it can be used to categorize content in a website.
+Обзор таксономии и как ее можно использовать для классификации контента на веб-сайте.
 
-(((Taxonomy,overview)))
-(((Term (taxonomy), overview)))
-(((Term (taxonomy),free tagging)))
-(((Term (taxonomy),fixed list)))
-(((Vocabulary,overview)))
+(((Таксономия,обзор)))
+(((Термин (таксономия),обзор)))
+(((Термин (таксономия),свободная маркировка)))
+(((Термин (таксономия),фиксированный список)))
+(((Словарь,обзор)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<planning-data-types>>
 * <<structure-reference-fields>>
 
-==== What is Taxonomy?
+==== Что такое Таксономия?
 
-_Taxonomy_ is used to classify website content. One common example of taxonomy
-is the tags used to classify or categorize posts in a blog website; the farmers
-market website could use an ingredients taxonomy to classify recipes.
-Individual taxonomy items are known as _terms_ (the blog tags or recipe
-ingredients in these examples); and a set of terms is known as a _vocabulary_
-(the set of all blog post tags, or the set of all recipe ingredients in these
-examples). Technically, taxonomy terms are an entity type and the entity
-subtypes are the vocabularies. Like other entities, taxonomy terms can have
-fields attached; for instance, you could set up an image field to contain an
-icon for each term.
+_Таксономия_ используется для классификации содержимого сайта. Один из распространенных примеров таксономии
+теги, используемые для классификации или категоризации сообщений на сайте блога;сайт фермерского
+магазина может использовать таксономию ингредиентов для классификации рецептов.
+Отдельные элементы таксономии Называются _терминами_ (например теги в блоге или ингредиенты
+рецептов); а набор терминов известен как _словарь_
+(набор всех тегов сообщений в блоге, или набор всех ингредиентов рецепта в этих
+примерах).Технически, таксономические термины - это тип объекта, а подтипы
+объекта являются словарями. Как и другие сущности, термины таксономии могут иметь
+прикрепленные поля; например, вы можете добавить поле изображения, чтобы каждый термин
+имел иконку.
 
-An individual vocabulary can organize its terms in a hierarchy, or it could be
-flat. For example, blog tags normally have a flat structure, while a recipe
-ingredients vocabulary could be hierarchical (for example, tomatoes could be a
-sub-term of vegetables, and under tomatoes, you could have green and red
-tomatoes).
+Индивидуальный словарь может иметь иерархию терминов, или быть
+линейным. Например, теги блога обычно имеют линейную структуру, а словарь ингредиентов
+рецепта может быть иерархическим (например, помидоры могут быть
+подтермином овощей, а под помидорами, вы можете подразумевать
+зеленый и красный).
 
-Taxonomy terms are normally attached as reference fields to other content
-entities, which is how you can use them to classify content. When you set up a
-taxonomy reference field, you can let users enter terms in two ways:
+Термины таксономии обычно прикрепляются как справочные поля к другим содержимым
+сущностей, их можно использовать для классификации контента. Когда вы создали
+поле со ссылкой таксономии, вы можете позволить пользователям вводить термины двумя способами:
 
-Free tagging::
-  New terms can be created right on the content editing form.
-Fixed list of terms::
-  The list of terms is curated and managed outside the content editing form, and
-  users can only choose from the existing list when editing content.
+Свободная маркировка::
+  Новые термины могут быть созданы прямо в форме редактирования контента.
+Фиксированный список терминов::
+  Список терминов создается и управляется вне формы редактирования контента, и
+  пользователи могут выбирать только из существующего списка при редактировании контента.
 
-Taxonomy reference fields can be added to any entity, such as user accounts,
-custom blocks, or regular content items. If you use them to classify regular
-content items, your site will automatically be set up with
-taxonomy listing pages for each term; each of these pages lists all of the
-content items that are classified with that term. For example, if you created
-several recipes that all had carrots as an ingredient, you might see something
-like this on the Carrots taxonomy listing page:
+Справочные поля таксономии могут быть добавлены к любому объекту, например учетным записям пользователей,
+пользовательским блокам или обычным элементам контента. Если вы используете их для классификации постоянных
+элементов контента, ваш сайт будет настроен автоматически со
+страницей списка таксономии для каждого термина; каждая из этих страниц перечисляет все
+элементы контента, которые классифицированы с этим термином. Например, если вы создали
+несколько рецептов, которые имели термин морковь в качестве ингредиента, вы можете увидеть что-то подобное
+на странице списка таксономии моркови:
 
 // Carrots taxonomy page after adding Recipe content items.
-image:images/structure-taxonomy_listingPage_carrots.png["Taxonomy listing page - Carrots"]
+изображение:images/structure-taxonomy_listingPage_carrots.png["Страница списка таксономии - Морковь"]
 
-==== Related topics
+==== Похожие темы
 
 * <<structure-taxonomy-setup>>.
 * The listing pages are views, which are covered in <<views-chapter>>.
@@ -64,13 +64,15 @@ image:images/structure-taxonomy_listingPage_carrots.png["Taxonomy listing page -
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Adapted and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
+Адаптировано и отредактировано https://www.drupal.org/u/surendramohan[Surendra Mohan],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle] from
-https://www.drupal.org/docs/7/organizing-content-with-taxonomies/organizing-content-with-taxonomy["Organizing content with taxonomies"]
-and https://www.drupal.org/node/774892["About taxonomies"],
-copyright 2000-2017 by the individual contributors to the
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] в
+http://redcrackle.com[Red Crackle] от
+https://www.drupal.org/docs/7/organizing-content-with-taxonomies/organizing-content-with-taxonomy["Организация контента с таксономиями"]
+и https://www.drupal.org/node/774892["О таксономии"],
+авторское право 2000-2017 отдельными участниками в
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
