@@ -1,151 +1,153 @@
 [[structure-taxonomy-setup]]
 
-=== Setting Up a Taxonomy
+=== Настройка таксономии
 
 [role="summary"]
-How to create a taxonomy vocabulary and add it as a field to a content type.
+Как создать словарь таксономии и добавить его поле к типу материалов.
 
-(((Taxonomy,creating)))
-(((Vocabulary,creating)))
-(((Metadata,creating)))
-(((Term list,creating)))
+(((Таксономия,создание)))
+(((Словарь,создание)))
+(((Метаданные,создание)))
+(((Список терминов,создание)))
 
-==== Goal
+==== Цель
 
-Create an Ingredients vocabulary and add it to the Recipe content type as
-a field that can contain an unlimited number of values and that allows adding
-new terms to the vocabulary.
+Создать словарь Ингридиенты и добавить его в тип материала Рецепт
+как поле, которое может содержать неограниченное количество значений и это позволит добавлять
+новые термины в словаре.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<planning-data-types>>
 * <<structure-taxonomy>>
 * <<structure-fields>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-The Recipe content type must exist. See <<structure-content-type>>.
+Тип материала Рецепт должен быть создан. Смотрите <<structure-content-type>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Taxonomy_
-(_admin/structure/taxonomy_). You will see the _Tags_ vocabulary that was
-created with the core Standard installation profile. (Note that the name and
-description of this vocabulary are shown in English on this page; see
-<<language-concept>> for an explanation.)
+. В _Управлении_ административного меню, перейдите в _Структура_ > _Таксономия_
+(_admin/structure/taxonomy_). Вы увидите словарь _Теги_ vocabulary, который был
+создан Стандартным установочным профилем. (Обратите внимание, что имя и
+описание этого словаря показано на английском на этой странице; смотрите
+<<language-concept>> для пояснения.)
 +
 --
 // Taxonomy list page (admin/structure/taxonomy).
-image:images/structure-taxonomy-setup-taxonomy-page.png["taxonomy list page",width="100%"]
+изображение:images/structure-taxonomy-setup-taxonomy-page.png["Страница таксономии",width="100%"]
 --
 
-. Click _Add vocabulary_, and fill in the values below.
+. Нажмите _Добавить словарь_, и заполните значения ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Name | The name of the vocabulary | Ingredients
-| Description | A brief note about the vocabulary | (Leave blank)
+| Название поля | Объяснение | Пример значения
+| Название | Название словаря | Ингридиенты
+| Описание | Краткое описание словаря | (Оставить пустым)
 |================================
 +
 --
 // Add Ingredients vocabulary from admin/structure/taxonomy/add.
-image:images/structure-taxonomy-setup-add-vocabulary.png["taxonomy add Ingredients",width="100%"]
+изображение:images/structure-taxonomy-setup-add-vocabulary.png["добавление таксономии Ингридиенты",width="100%"]
 --
 
-. Click _Save_. You will be taken to the Ingredients page, which shows a list
-of all the terms in this vocabulary.
+. Нажмите _Сохранить_. Вы попадете на страницу Ингредиентов, которая показывает список
+всех терминов в этом словаре.
 +
 --
 // Ingredients vocabulary page
 // (admin/structure/taxonomy/manage/ingredients/overview).
-image:images/structure-taxonomy-setup-vocabulary-overview.png["Ingredients taxonomy term listing",width="100%"]
+изображение:images/structure-taxonomy-setup-vocabulary-overview.png["Список терминов таксономии ингредиентов",width="100%"]
 --
 
-. Click _Add term_. Enter "Butter" in the _Name_ field. Click _Save_.
+. Нажмите _Добавить термин_. Введите "Масло" в поле _Название_. Нажмите _Сохранить_.
 +
 --
 // Name portion of Add term page
 // (admin/structure/taxonomy/manage/ingredients/add).
-image:images/structure-taxonomy-setup-add-term.png["Add term page",width="100%"]
+изображеие:images/structure-taxonomy-setup-add-term.png["Добавить страницу терминов",width="100%"]
 --
 
-. You will receive a confirmation about the term you created. Add more
-terms. For example, "Eggs" and "Milk".
+. Вы увидите подтверждение, что создали термин. Добавьте больше
+терминов. Например, "Яйца" и "Молоко".
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_
-(_admin/structure/types_). Click _Manage fields_ for your Recipe content type.
+. В _Управлении_ административного меню, перейдите в _Структура_ > _Типы материалов_
+(_admin/structure/types_). Нажмите _Управление полями_ для вашего типа материала Рецепт.
 
-. Click _Add field_, and enter values from the table below. Click _Save and
-continue_.
+. Нажмите _Добавить поле_, и введите значения из таблицы ниже. Нажмите _Сохранить и
+продолжить_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Add a new field | Select the field type | Reference > Taxonomy term
-| Label | The title to give the field | Ingredients
+|Название поля| Описание | Значение
+| Добавить поле | Выбор типа поля | Ссылка > Термин таксономии
+| Метка | Заголовок поля| Ингридиенты
 |================================
 +
 --
 // Add field page to add Ingredients taxonomy reference field.
-image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
+изображение:images/structure-taxonomy-setup-add-field.png["Добавление поля Ингридиенты в тип материала Рецепт"]
 --
 
-. On the following configuration screen, enter the values from the table below.
+. На следующем экране конфигурации, введите значения из таблицы ниже.
 Click _Save field settings_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Type of item to reference| The type of entity that is referenced by the field | Taxonomy term
-| Allowed number of values | The number of values a user can enter | Unlimited
+|Название поля| Описание | Значение
+| Тип элемента для ссылки| Тип объекта, на который ссылается поле | Термин таксономии
+| Допустимое количество значений | Количество значений, которые пользователь может ввести | Неограниченно
 |================================
 +
 --
 // Field storage settings page for Ingredients field.
-image:images/structure-taxonomy-setup-field-settings.png["Field storage settings for Ingredients field"]
+изображение:images/structure-taxonomy-setup-field-settings.png["Настройки поля для Ингридиентов"]
 --
 
-. On the following configuration screen, enter the values from the table below. Click _Save settings_.
+. На следующем экране конфигурации, введите значения из таблицы ниже. Нажмите _Сохранить настройки_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Help text | Help shown to users creating content |Enter ingredients that site visitors might want to search for
-|Reference type > Reference method | Select the method used to choose allowed values | Default
-|Reference type > Vocabulary | Select the vocabulary to choose allowed values from | Ingredients
-|Reference type > Create referenced entities if they don't already exist | Whether new ingredient terms can be created from the content editing form | Checked
+|Название поля | Описание | Value
+|Справочный текст | Справка, показанная пользователям, создающим контент |Введите ингредиенты, которые посетители сайта могут искать
+|Тип связи > Тип ссылки | Выберите метод, используемый для выбора допустимых значений | По умолчанию
+|Тип связи > Словарь | Выберите словарь, чтобы выбрать из него допустимые значения | Ингредиенты
+|Тип связи > Создать сущности по ссылке, если они еще не созданы | Можно ли создавать новые термины для ингредиентов из формы редактирования контента | Выбрано
 |================================
 +
 --
 // Reference type section of field settings page for Ingredients field.
-image:images/structure-taxonomy-setup-field-settings-2.png["reference type field settings",width="100%"]
+изображение:images/structure-taxonomy-setup-field-settings-2.png["настройка поля ссылки",width="100%"]
 --
 
 
-. Click _Save settings_. You will be taken back to the _Manage Fields_ page. A
-message will be displayed saying that the configuration for Ingredients is
-complete.
+. Нажмите _Сохранить настройки_. Вы вернетесь на страницу _Управление Полями_.
+Появится сообщение о том, что конфигурация для ингредиентов
+сохранена.
 +
 --
 // Manage fields page showing Ingredients field on Recipe content type.
-image:images/structure-taxonomy-setup-finished.png["Manage fields page for Recipe content type",width="100%"]
+изображение:images/structure-taxonomy-setup-finished.png["Страница управления полями для типа материала Рецепт",width="100%"]
 --
 
 // ==== Expand your understanding
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Setting up a Taxonomy"]
+видео::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[заголовок="Setting up a Taxonomy"]
 
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/bsnodgrass[Bob Snodgrass],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Написано и отредактировано https://www.drupal.org/u/bsnodgrass[Bob Snodgrass],
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] в
 http://redcrackle.com[Red Crackle].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
