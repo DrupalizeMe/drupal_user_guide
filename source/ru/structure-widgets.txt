@@ -1,51 +1,51 @@
 [[structure-widgets]]
 
-=== Concept: Forms and Widgets
+=== Основы: Формы и Виджеты
 
 [role="summary"]
-Overview of forms and widgets.
+Обзор форм и виджетов.
 
-(((Content editing form,overview)))
-(((Widget,overview)))
-(((Field,overview)))
-(((Form,overview)))
+(((Форма редактирования материала,обзор)))
+(((Виджет,обзор)))
+(((Поле,обзор)))
+(((Форма,обзор)))
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<planning-data-types>>
 
-==== What are forms and widgets?
+==== Что такое формы и виджеты?
 
-The content management system software that your site is running allows
-administrators to edit content and configure settings online, using various web
-_forms_. In particular, _content editing forms_ are used to edit your site's
-content, and they are configurable by administrators; settings configuration
-forms are provided by modules and cannot themselves be configured.
+Система управления сайтом позволяет вашим администраторам
+сайта редактировать контент и менять настройки онлайн, используя различные веб
+_формы_. В частности, _форма редактирования материала_ используется для редактирования вашего
+контента и эти формы настраиваются администраторами настройки конфигурации
+форм предоставленных модулями, не могут быть настроены отдельно от модуля.
 
-The data in your site's content is stored in one or more fields that are
-attached to the content type and/or sub-type. When you configure the content
-editing form for each content sub-type, you can:
+Данные в контенте вашего сайта храняться в одно или несколько полях, которые
+привязаны к типу сущности и/или подтипу. Когда вы настраиваете форму редактирования
+контента для каждого подтипа контента, вы можете:
 
-* Select a _widget_ for each field. A widget defines the method used to enter
-the data for the field. For example, a taxonomy term can be chosen using
-an autocomplete field, a select list, or a tags-style field that lets editors
-add new tags automatically.
+* Выбрать _виджет_ для каждого поля. Виджет определяет метод используемый для ввода
+данных в поле. Например, термин таксономии может использовать
+поле с авто дополнением, выбор из списка или поле с выбором тегов, которые позволяют редакторам
+добавлять новые теги автоматически.
 
-* Configure widget settings. For example, you can choose the size of a
-plain-text entry field.
+* Настроить виджет поля. Например, вы можете выбрать размер
+текстового поля ввода.
 
-* Hide one or more fields from the editing form.
+* Спрятать одно или несколько полей из формы редактирования.
 
-* Reorder the fields.
+* Менять поля местами.
 
-In principle, you can also have multiple content editing forms available for
-each content sub-type. This feature is rarely used, however; the only exception
-in common use is for the user profile fields: you can use different forms for
-user registration and user editing. For example, you might have a limited set of
-fields shown when users first register on the site, and more fields shown later
-on when they edit their profiles.
+Главным образом, вы можете также иметь различные формы редактирования доступные для
+каждого подтипа сущности. Этот функционал редко используется, однако, в виде исключения
+в общем случае для полей профиля пользователя: вы можете использовать различные формы для
+регистрации и редактирования пользователя. Например, вам может быть необходимо ограничить набор
+полей, которые показываются, когда пользователь регистрируется на сайте и показывать больше полей позже,
+когда пользователь редактирует свой профиль.
 
-==== Related topics
+==== Связанные темы
 
 * <<structure-form-editing>>
 * <<structure-view-modes>>
@@ -53,6 +53,8 @@ on when they edit their profiles.
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван].
