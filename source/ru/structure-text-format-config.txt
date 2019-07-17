@@ -1,94 +1,94 @@
 [[structure-text-format-config]]
 
-=== Configuring Text Formats and Editors
+=== Настройка форматов текста и Редакторов
 
 [role="summary"]
-How to make a change to a text format and its editor configuration.
+Как внести изменения в текстовый формат и в конфигурацию его редактора.
 
-(((Text format,configuring)))
-(((Configuring,text format)))
-(((Editor,configuring)))
-(((CKEditor text editor,default assignment to text format)))
-(((WYSIWYG (What You See Is What You Get),configuring editor)))
-(((What You See Is What You Get (WYSIWYG),configuring editor)))
-(((Module,Filter)))
-(((Module,Editor)))
-(((Module,CKEditor)))
-(((Filter module,configuring)))
-(((Editor module,configuring)))
-(((CKEditor module,configuring)))
+(((Текстовый формат,настройка)))
+(((Настройка,текстовый формат)))
+(((Редактор,настройка)))
+(((CKEditor текстовый редактор,присвоение значения по умолчанию текстовому формату)))
+(((WYSIWYG (Что вижу, то и получаю (What You See Is What You Get)),редактор настроек)))
+(((Что вижу, то и получаю (What You See Is What You Get) (WYSIWYG),редактор настроек)))
+(((Модуль,Filter)))
+(((Модуль,Editor)))
+(((Модуль,CKEditor)))
+(((Filter модуль,настройка)))
+(((Editor модуль,настройка)))
+(((CKEditor модуль,настройка)))
 
-==== Goal
+==== Цель
 
-Add a horizontal rule tag to the _Basic HTML_ text format, and a corresponding
-button to its editor configuration.
+Добавьте тег горизонтального правила(hr) в текстовый формат _Базовый HTML_ и соответствующую
+кнопку в конфигурацию его редактора.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 <<structure-text-formats>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-* The core Filter, Editor, and CKEditor modules must be installed. They are
-installed on your site when you install with the core Standard installation
-profile.
+* Модули ядра Filter, Editor, и CKEditor должны быть установлены. Они
+устанавливаются на вашем сайте при стандартной установке
+Drupal.
 
-* The _Basic HTML_ text format must exist. This is created on your site when you
-install with the core Standard installation profile.
+* Текстовый формат _Базовый HTML_ должен существовать. Он создается на вашем сайте
+при стандартной установке Drupal.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Content
-authoring_ > _Text formats and editors_ (_admin/config/content/formats_). The
-_Text formats and editors_ page appears. Note that the names of the text formats
-that came with your installation profile are shown in English on this page; see
-<<language-concept>> for an explanation.
+. В _Управлении_ административного меню, перейдите в _Конфигурация_ > _Работа
+с содержимым_ > _Текстовые форматы и редакторы_ (_admin/config/content/formats_). Появится
+страница _Текстовые форматы и редакторы_. Обратите внимание, что имена текстовых форматов
+которые пришли с вашим установочным профилем, отображаются на русском на этой странице; смотрите
+<<language-concept>> для объяснения.
 
-. Click _Configure_ for the _Basic HTML_ text format. The _Basic HTML_ page
-appears.
+. Нажмите _Настроить_ для текстового формата _Базовый HTML_. Появится страница
+_Базовый HTML_.
 
-. Note that _CKEditor_ is selected in the _Text editor_ field. This allows you
-to configure the editor's toolbar.
+. Обратите внимание, что _CKEditor_ выбран в поле _Текстовый редактор_. Это позволит вам
+настроить панель инструментов редактора.
 
-. Drag the _horizontal rule_ button from _Available buttons_ to _Tools_ under
-_Active toolbar_. You may need to click the _Show group names_ link to see the
-_Tools_ group name. As an alternative to dragging, you can tab to select
-buttons and then move them using keyboard arrow keys.
+. Перетащите кнопку _horizontal rule_ из _Доступных кнопок_ в _Tools_ под
+_Активной панелью_. Возможно, вам придется нажать на ссылку _Показать названия групп_, чтобы увидеть
+название группы _Tools_. В качестве альтернативы перетаскиванию, вы можете выбрать вкладку
+кнопки, а затем переместить её с помощью клавиш со стрелками на клавиатуре.
 +
 --
 // Button configuration area on text format edit page.
-image:images/structure-text-format-config-editor-config.png["Configuring the editor",width="100%"]
+изображение:images/structure-text-format-config-editor-config.png["Настройка редактора",width="100%"]
 --
 
-. Note that you can change the _Filter processing order_.
+. Обратите внимание, что вы можете изменить _Порядок фильтров_.
 
-. Under _Filter settings_ > _Limit allowed HTML tags and correct faulty HTML_,
-in the field _Allowed HTML tags_, verify that `<hr>` is present (adding its
-editor button will automatically update the allowed tags).
+. Под _Параметры фильтров_ > _Ограничить разрешённые HTML-теги и исправить ошибочный HTML_,
+в поле _Допустимые HTML-теги_, убедитесь, что `<hr>` присутствует (добавив его
+кнопка редактора автоматически обновит разрешенные теги).
 +
 --
 // Allowed HTML tags area on text format edit page.
-image:images/structure-text-format-config-allowed-html.png["Configuring the HTML tags",width="100%"]
+image:images/structure-text-format-config-allowed-html.png["Настройка HTML тегов",width="100%"]
 --
 
-. Click _Save configuration_. You will be taken back to the _Text formats and
-editors_ page. A message will be displayed saying that the text format has been
-updated.
+. Нажмите _Сохранить конфигурацию_. Вы вернетесь к странице _Текстовые форматы
+и редакторы_. Появится сообщение о том, что текстовый формат был
+обновлен.
 +
 --
 // Confirmation message after updating text format.
-image:images/structure-text-format-config-summary.png["Confirmation message for text format configuration"]
+image:images/structure-text-format-config-summary.png["Сообщение с подтверждением для конфигурации текстового формата"]
 --
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
-If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+Если вы не видите этих изменений на вашем сайте, вам может понадобиться
+очистить кеш. Смотрите <<prevent-cache-clear>>.
 
 
 // ==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Configuring Text Formats and Editors"]
@@ -96,6 +96,8 @@ video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Configuring Tex
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Написано https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
