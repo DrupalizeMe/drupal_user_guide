@@ -1,161 +1,162 @@
 [[views-create]]
-=== Creating a Content List View
+=== Вывод списков материалов через Представления
 
 [role="summary"]
-How to create a content list view.
+Как вывести список материлов через Представления.
 
-(((View,creating)))
-(((Content list view,creating)))
-(((Views module,creating a view)))
-(((Listing content,using Views module to)))
-(((Image module,creating a view)))
-(((Module,Views)))
-(((Module,Image)))
+(((Представление,вывод)))
+(((Представление список материалов,вывод)))
+(((Views модуль,вывод представления)))
+(((Список материлов,использование модуля Views для)))
+(((Image модуль,вывод представления)))
+(((Модуль,Views)))
+(((Модуль,Image)))
 
-==== Goal
+==== Цель
 
-Create a page listing vendors that will be automatically updated whenever a
-vendor is added, deleted, or updated on the site.
+Создайте страницу со списком производителей, которая будет автоматически обновляться всякий раз, когда
+производитель добавлен, удален или обновлен на сайте.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<views-concept>>
 * <<views-parts>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-* The core Views and Views UI modules must be installed. These are installed for
-you when you install with the core Standard installation profile.
+* Модули ядра Views и Views UI должны быть установлены. Они установливаются
+при стандартной установке ядра Drupal.
 
-* The Vendor content type must exist, with URL and Main image fields. Your
-site must have a couple of Vendor content items. See <<structure-content-type>>,
-<<structure-fields>>, and <<content-create>>.
+* Тип материала Производитель должен существовать, с полями URL и Главное изображение. На вашем
+сайте должно быть несколько материалов Производителя. Смотрите <<structure-content-type>>,
+<<structure-fields>>, и <<content-create>>.
 
-* The _Medium (220x220)_ image style must be defined. This is created on your
-site when you install the core Image module (installed with the core Standard
-installation profile) but can be recreated if deleted. See
+* _Средний (220x220)_ стиль изображения должен быть определен. Он создается на вашем
+сайте, когда вы устанавливаете модуль ядра Image (установлен при стандартной установке
+ядра Drupal), также его можно восстановить если он был удален. Смотрите
 <<structure-image-style-create>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add
-view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
+. В _Управлении_ административного меню, перейдите в _Структура_ > _Представления_ > _Добавить
+представление_ (_admin/structure/views/add_). Появится страница _Добавить представление_.
 
-. Fill in the fields as shown below.
+. Заполните поля, как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| View basic information > View name | Name of the view that will be visible in the administration pages | Vendors
-| View settings > Show | Type of information listed in the view | Content
-| View settings > of type | Specify content type | Vendor
-| View settings > sorted by | List order | Title
-| Page settings > Create a page | Create a page that displays the view | Checked
-| Page settings > Page title | Title show above the view | Vendors
-| Page settings > Path | Address of the page | vendors
-| Page settings > Page display settings > Display format | Type of list | Table
-| Page settings > Items to display | Number of items visible on the page | 10
-| Page settings > Use a pager | Split up the list in several pages if there are more items | Checked
-| Page settings > Create a menu link | Add the view page to the menu | Checked
-| Page settings > Menu | Menu in which to add the link | Main navigation
-| Page settings > Link text | Label of the link in the menu | Vendors
+| Название поля | Описание| Примерное значение
+| Просмотр основной информации > Имя представления | Название представления, которое будет отображаться на страницах администрирования. | Производители
+| Настройки представления > Показать | Тип информации, указанной в представлении | Содержимое
+| Настройки представления > типа | Уточнение типа материала | Производители
+| Настройки представления > отсортированные по | Порядок списка | Заголовок
+| Настройки страницы > Создать страницу | Создайте страницу, которая будет отображать представление | Выбрано
+| Настройки страницы > Заголовок страницы | Отображение заголовка представления | Производители
+| Настройки страницы > Путь | Адрес страницы | vendors
+| Настройки страницы > Настройки отображения страницы > Формат отображения | Тип списка | Таблица
+| Настройки страницы > Элементов для отображения | Количество элементов, видимых на странице | 10
+| Настройки страницы > Использовать постраничную навигацию | Разделите список на несколько страниц, если есть много элементов | Выбрано
+| Настройки страницы > Создать ссылку в меню | Добавить страницу представления в меню | Выбрано
+| Настройки страницы > Меню | В какое меню добавится ссылка | Основная навигация
+| Настройки страницы > Текст ссылки | Метка ссылки меню | Производители
 |================================
 +
 --
 // Add view wizard.
-image:images/views-create-wizard.png["Add new view wizard",width="100%"]
+image:images/views-create-wizard.png["Добавление нового представления",width="100%"]
 --
 
-. Click _Save and edit_. The view configuration page appears.
+. Нажмите _Сохранить и редактировать_. Появится страница настройки представления.
 
-. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
-appears.
+. Под заголовком _Поля_, нажмите кнопку _Добавить_. Появится всплывающее окно
+_Добавить поля_.
 
-. Enter the word "image" in the search field.
+. Введите слово "изображение" в строке поиска.
 
-. Check Main image in the table.
+. Выберите Главное изображение из таблицы.
 
-. Click _Apply_. The _Configure field: Content: Main Image_
-pop-up appears.
+. Нажмите _Добавить и настроить поля_. Появится страница
+_Настроить поле: Содержимое: Главное изображение_
+.
 
-. Fill in the fields as shown below.
+. Заполните поля как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Image style | The format of the image | Medium (220x220)
-| Link image to | Add a link to the content item | Content
+| Название поля | Описание| Примерное значение
+| Создать метку | Добавить метку перед значением поля | Не выбрано
+| Стиль изображения | Формат изображения | Средний (220x220)
+| Изображение как ссылка на | Добавит ссылку на материал | Содержимое
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. Нажмите _Применить_. Появится страница настройки представления.
 
-. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
-appears.
+. Под заголовком _Поля_, нажмите кнопку _Добавить_. Появится всплывающее окно
+_Добавить поля_.
 
-. Enter the word "body" in the search field.
+. Введите слово "Содержимое" в строке поиска.
 
-. Select _Body_ in the table.
+. Выберите _Содержимое_ из таблицы.
 
-. Click _Apply_. The _Configure field: Content: Body_ pop-up
-appears.
+. Нажмите _Добавить и настроить поля_. Появится страница
+_Настроить поле: Содержимое: Содержимое_
 
-. Fill in the fields as shown below.
+. Заполните поля как показано ниже.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Formatter | The presentation of the field value | Summary or trimmed
-| Trimmed limit: | The number of maximum characters shown | 120
+| Название поля | Описание| Примерное значение
+| Создать метку | Добавить метку перед значением поля | Не выбрано
+| Средство форматирования | Вывод содержимого поля | Краткое содержание или обрезанный текст
+| Ограничения обрезки: | Максимальное значение отображаемых символов | 120
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. Нажмите _Применить_. Появится страница настройки представления.
 
-. Under _Fields_, click _Content: Title (Title)_. The _Configure field: Content:
-Title_ pop-up appears.
+. Под заголовком _Поля_, нажмите _Содержимое: Заголовок (Заголовок)_.  Появится всплывающее окно
+_Настроить поле: Содержимое: Заголовок_.
 
-. Uncheck _Create a label_. This will remove the label that was created by the
-wizard.
+. Уберите галочку _Создать метку_. Это удалит метку, созданную мастером
+настроек.
 
-. Click _Apply_. The view configuration page appears.
+. Нажмите _Применить_. Появится страница настройки представления.
 
-. Under _Fields_, click _Rearrange_ in the dropdown button. The _Rearrange
-fields_ pop-up appears.
+. Под заголовком _Поля_, нажмите на выпадающую кнопку _Изменить порядок_. Появится всплывающее окно
+_Изменить порядок поля_.
 
-. Drag the cross bar handles of fields to put them into the right order: Image,
-Title, Body. As an alternative to dragging, you can click the _Show row weights_
-link at the top of the table and enter numerical weights (fields with lower or
-more negative weights will be shown first).
+. Перетащите поля с помощью крестиков в правильном порядке: Изображение, Заголовок, Содержимое.
+В качестве альтернативы перетаскиванию, вы можете нажать на ссылку _Показать вес строк_
+в верхней части таблицы и ввести числовые значения (поля с более низким или
+отрицательным весом будут показаны первыми).
 
-. Click _Apply_. The view configuration page appears.
+. Нажмите _Применить_. Появится страница настройки представления.
 
-. Optionally, click _Update preview_ for a preview.
+. Вы можете нажать _Обновить предпросмотр_ для предпросмотра представления.
 
-. Click _Save_.
+. Нажмите _Сохранить_.
 +
 --
 // Completed vendors view administration page.
-image:images/views-create-view.png["Vendors view configuration page", width="100%"]
+image:images/views-create-view.png["Страница настройки представления Производители", width="100%"]
 --
 
-. Navigate to the homepage and click Vendors from the main navigation to see
-the result.
+. Перейдите на домашнюю страницу и нажмите «Производители» в главном меню, чтобы увидеть
+результат.
 +
 --
 // Completed vendors view output.
-image:images/views-create-view-output.png["Vendors view output", width="100%"]
+image:images/views-create-view-output.png["Вывод представления Производители", width="100%"]
 --
 
-==== Expand your understanding
+==== Расширьте своё понимание
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
+Ссылка на представление в основной навигации, вероятно, будет не на нужном
+месте. Измените порядок пунктов меню в основной навигации. Смотрите
 <<menu-reorder>>.
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/aw02gXlte9I[title="Creating a Content List View"]
@@ -163,7 +164,9 @@ video::https://www.youtube-nocookie.com/embed/aw02gXlte9I[title="Creating a Cont
 // ==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано/отредактировано https://www.drupal.org/u/batigolix[Boris Doesborg]
+и https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
