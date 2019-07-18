@@ -1,113 +1,115 @@
 [[language-content-config]]
 
-=== Configuring Content Translation
+=== Настройка Перевода материалов
 
 [role="summary"]
-How to configure content items to make them translatable.
+Как настроить материалы, чтобы сделать их переводимыми.
 
-(((Content,translation)))
-(((Configuring,content translation)))
+(((Материал,перевод)))
+(((Настройка,перевод материалов)))
 
-==== Goal
+==== Цель
 
-Make _Custom block_, _Custom menu link_, and _Content_ entity types
-translatable. Select specific subtypes and set which fields of these can be
-translated.
+Сделайте типы сущностей _Пользовательский блок_, _Пункты меню_, и _Содержимое_
+переводимыми. Выберите конкретные подтипы и установите, какие поля из них могут быть
+переведены.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<planning-data-types>>
 * <<language-concept>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-The core Content Translation module must be installed, and your site must
-have at least two languages. See <<language-add>>.
+Модуль ядра Content Translation должен быть установлен, и у вашего сайта должно
+быть два языка. Смотрите <<language-add>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Regional
-and language_ > _Content language and translation_
+. В _Управлении_ административного меню, перейдите в _Конфигурация_ > _Регион
+и язык_ > _Язык содержимого_
 (_admin/config/regional/content-language_).
 
-. Under _Custom language settings_, check _Content_,
-_Custom block_ and _Custom menu link_ to make these entity types translatable.
+. Под _Пользовательскими настройками языка_, выберите _Содержимое_,
+_Пользовательский блок_ и _Пункты меню_, чтобы сделать эти типы сущностей переводимыми.
 +
 --
 // Top section of Content language settings page
 // (admin/config/regional/content-language).
-image:images/language-content-config_custom.png["Custom language settings checklist",width="193px"]
+image:images/language-content-config_custom.png["Чеклист пользовательских настроек языка",width="193px"]
 --
 
-. Configuration options appear for _Content_, _Custom block_ and  _Custom menu
-link_. Choose the subtypes you want to translate for each entity
-type. Check _Basic page_ for _Content_, _Basic block_ for _Custom block_ and
-_Custom menu link_ for _Custom menu link_.
+. Параметры конфигурации отобразятся для _Содержимое_, _Пользовательский блок_ и  _Пункты
+меню_. Выберите подтипы, которые вы хотите перевести для каждого типа
+сущности. Выберите _Главная страница_ для _Содержимого_, _Главный блок_ для _Пользовательского блока_ и
+_Пункты меню_ для _Пунктов меню_.
 
-. Verify the settings for the entity types as shown below:
+. Проверьте настройки для типов сущности, как показано ниже:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Example value
-| Default language | The default language for the entity subtype | Site's default language (English)
-| Show language selector on create and edit pages | Whether or not the language selector should be shown while editing and creating content | Checked
+|Название поля | Описание | Пример значения
+| Язык по умолчанию | Язык по умолчанию для подтипа сущности | Язык сайта по умолчанию (Russian)
+| Показывать список выбора языка на страницах создания и редактирования | Должен ли быть выбран язык при редактировании и создании содержимого | Выбрано
 |================================
 +
 --
 // Main settings area for Custom Block translations.
-image:images/language-content-config_content.png["Default language and translatability for content types"]
+image:images/language-content-config_content.png["Язык по умолчанию и переводимость для типов материала"]
 --
 
-. Choose the fields that should be translatable for _Basic page_ as shown in the
-table below. If a field is not translation-dependent, leave it unchecked.
+. Выберите поля, которые должны быть переведены для _Главной страницы_, как показано в
+таблице ниже. Если полю не нужен перевод, не выбирайте его.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Example value
-| Title	| The title of the content | Checked
-| Authored by | The author | Unchecked
-| Published | Whether the content has been published or not | Checked
-| Authored on | Date of publishing | Unchecked
-| Changed | Date of last update | Unchecked
-| Promoted to front page | Whether the content will be included in some content views | Unchecked
-| Sticky at top of lists | Whether the content will be displayed first in some content views | Unchecked
-| URL alias | Nicer URL for the content | Checked
-| Body | The main content of the page | Checked
+|Название поля | Описание | Пример значения
+| Заголовок	| Заголовок содержимого | Выбрано
+| Автор | Автор | Не выбрано
+| Опубликовао | Было ли содержимое опубликовано| Выбрано
+| Время создания | Дата публикации | Не выбрано
+| Изменение | Дата последнего обновления | Не выбрано
+| Помещено на главную страницу | Будет ли содержимое включено в некоторые представления содержимого | Не выбрано
+| Закреплять вверху списков | Будет ли содержимое отображаться первым в некоторых представлениях содержимого | Не выбрано
+| Синоним URL | URL для содержимого | Выбрано
+| Содержимое | Основное содержание страницы | Выбрано
 |================================
 +
 --
 // Field settings area for Basic page translations.
-image:images/language-content-config_basic_page.png["Translatable content entity subtypes' fields checklist"]
+image:images/language-content-config_basic_page.png["Чеклист перевода содержимого подтипов сущностей"]
 --
 
-. Similarly, check the appropriate boxes for translatable fields belonging to
-_Basic block_ and _Custom menu link_.
+. Точно так же отметьте соответствующие поля для переводимых полей, принадлежащих
+_Главному блоку_ и _Пунктам меню_.
 
-. Click _Save configuration_.
+. Нажмите _Сохранить конфигурацию_.
 
-==== Expand your understanding
+==== Расширьте своё понимание
 
 * <<language-config-translate>>
 * <<language-content-translate>>
 
 //==== Related concepts
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/b_w904_pcTY[title="Configuring Content Translation"]
 
-==== Additional resources
+==== Дополнительные ресурсы
 
-* http://hojtsy.hu/blog/2013-jun-21/drupal-8-multilingual-tidbits-5-almost-limitless-language-assignment[Blog post "Multilingual Drupal 8 tidbits, part 5"]
+* http://hojtsy.hu/blog/2013-jun-21/drupal-8-multilingual-tidbits-5-almost-limitless-language-assignment[Сообщение блога "Multilingual Drupal 8 tidbits, part 5"]
 
-* http://hojtsy.hu/blog/2015-jan-27/drupal-8-multilingual-tidbits-17-content-translation-basics[Blog post "Multilingual Drupal 8 tidbits, part 17"]
+* http://hojtsy.hu/blog/2015-jan-27/drupal-8-multilingual-tidbits-17-content-translation-basics[Сообщение блога "Multilingual Drupal 8 tidbits, part 17"]
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+Написано и отредактировано https://www.drupal.org/u/lolk[Laura Vass] в
 https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+https://www.drupal.org/u/jojyja[Jojy Alphonso] в
 http://redcrackle.com[Red Crackle],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+и https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
