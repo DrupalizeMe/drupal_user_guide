@@ -1,135 +1,135 @@
 [[views-duplicate]]
 
-=== Duplicating a View
+=== Дублирование Представления
 
 [role="summary"]
-How to create a new page by duplicating a view.
+Как создать новую страницу, продублировав Представление.
 
-(((View,duplicating)))
-(((Views module,duplicating a view)))
-(((Module,Views)))
+(((Представление,дублирование)))
+(((Модуль Views,дублирование представления)))
+(((Модуль,Views)))
 
-==== Goal
+==== Цель
 
-Create a page listing recipes by duplicating the existing Vendors view.  Modify
-the page so that the recipes are displayed in a grid and can by filtered by
-ingredients.
+Создать страницу со списком рецептов, продублировав существующие представление Производители. Изменить
+страницу так, чтобы рецепты отображались в сетке и могли фильтроваться по
+ингредиентам.
 
-==== Prerequisite knowledge
+==== Необходимые знания
 
 * <<views-concept>>
 * <<views-parts>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Требования к сайту
 
-* The Vendor and Recipe content types must exist; both must have Main image
-fields, and the Recipe content type must have an Ingredients field. Your site
-must also have a couple of Recipe content items. See <<structure-content-type>>,
+* Типы материалов Производитель и Рецепт должны существовать; оба должны иметь поля
+Главное изображение, и тип материала Рецепт должен иметь поле Ингредиенты. Ваш сайт
+также должен иметь несколько страниц материала Рецепт. Смотрите <<structure-content-type>>,
 <<structure-fields>>, <<structure-taxonomy-setup>>, <<structure-form-editing>>,
-and <<content-create>>.
+и <<content-create>>.
 
-* The Vendors view must exist. See <<views-create>>.
+* Представление Производители должно существовать. Смотрите <<views-create>>.
 
-==== Steps
+==== Шаги
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_). Find the view "Vendors" and click _Duplicate_ in its
-dropdown button. (Note that the names of views that came with your installation
-profile are shown in English on this page; see <<language-concept>> for an
-explanation.)
+. В _Управлении_ административного меню перейдите в _Структура_ > _Представления_
+(_admin/structure/views_). Найдите представление "Производители" и нажмите на выпадающую кнопку
+_Дубликат_. (Обратите внимание, что имена представлений, которые установились со стандартной установкой
+Drupal имеют названия на русском языке на этой странице; смотрите <<language-concept>> для
+объяснения.)
 +
 --
 // Views page (admin/structure/views), with operations dropdown
 // for Vendor view open.
-image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
+image:images/views-duplicate_duplicate.png["Дублирование существующего представления",width="100%"]
 --
 
-. Name the duplicate "Recipes" and click _Duplicate_. The view configuration
-page appears.
+. Введите название дубликата "Рецепты" и нажмите _Дубликат_. Появится страница
+настройки представления.
 
-. To change the title of the view page to "Recipes", click Vendors in the
-_Title_ field under _Title_. The _Page: The title of this view_ pop-up
-appears. Enter "Recipes". Click _Apply_.
+. Чтобы изменить заголовок страницы представления на «Рецепты», нажмите на Производители
+в поле _Заголовок_. Появится всплывающее окно
+_Page: Заголовок данного представления_. Введите "Рецепты". Нажмите _Применить_.
 +
 --
 // View title configuration screen.
-image:images/views-duplicate_title.png["Change view title",width="100%"]
+image:images/views-duplicate_title.png["Выбор заголовка представления",width="100%"]
 --
 
-. To change from a table to a grid format, click _Table_ in the _Format_ field
-under _Format_. The _Page: How should this view be styled_ pop-up
-appears. Check _Grid_ and click _Apply_. The _Page: Style options_ pop-up
-appears. Retain the default values and click _Apply_.
+. Чтобы перейти из таблицы в формат сетки, нажмите _Таблица_ в поле _Формат_
+под заголовком _Формат_.Появится всплывающее окно
+_Page: Какой стиль будет иметь данное представление_. Выберите _Сетка_ и нажмите _Применить_. Появится всплывающее окно
+_Page: Настройки стиля_. Сохраните значения по умолчанию и нажмите _Применить_.
 
-. To retain only the title and image fields for the Recipes view, click
-_Content: Body_ under _Fields_. Click _Remove_ in the pop-up that appears.
+. Сохраните только поля заголовок и изображения для представления Рецепты, нажмите
+_Содержимое: Содержимое_ под заголовком _Поля_. Нажмите _Удалить_ в появившемся всплывающем окне.
 
-. To change the content type filter to use the Recipe content type, click
-_Content: Type (=Vendor)_ under _Filter criteria_. In the _Configure
-filter criterion: Content: Type_ pop-up, check Recipe and uncheck Vendor. Click
-_Apply_.
+. Чтобы изменить фильтр типа материала на использование типа материала Рецепт, нажмите
+_Содержимое: Тип материала (=Производитель)_ под заголовком _Критерии фильтрации_. В сплывающем окне
+_Настроить критерий фильтра: Содержимое: Тип материала_, выберите Рецепт и уберите галочку в поле Производитель. Нажмите
+_Применить_.
 
-. To add a further filter that is exposed to visitors, click _Add_ in the
-dropdown button under _Filter criteria_. Search for "ingredients" and check
-"Ingredients (field_ingredients)". Click _Add and configure filter criteria_.
+. Чтобы добавить дополнительный фильтр, который открыт для посетителей, нажмите на выпадающую кнопку
+_Добавить_ под заголовком _Критерии фильтрации_. Найдите "ингредиенты" и выберите
+"Ингредиенты (field_ingredients)". Нажмите _Добавить и настроить критерии фильтрации_.
 
-. The appearing pop-up offers extra settings on vocabulary and selection
-type. Click _Apply and continue_. The next pop-up allows you to expose this
-filter to visitors. Fill in the fields as shown below, and click _Apply_.
+. Появившееся всплывающее окно предлагает дополнительные настройки словаря и способа
+выбора. Нажмите _Применить и продолжить_. Следующее всплывающее окно позволяет вам выставить
+фильтр для посетителей. Заполните поля, как показано ниже, и нажмите _Применить_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Expose this filter to visitors, to allow them to change it | Allow visitors to filter and search | Checked
-| Required | Whether a value has to be provided or not | Unchecked
-| Label | Label shown for this filter on the view page | Find recipes using...
+| Название поля | Описание| Пример значения
+| Раскрыть этот фильтр для посетителей и позволить его изменять | Разрешить посетителям фильтровать и искать | Выбрано
+| Обязательно | Должно ли быть предоставлено значение или нет | Не выбрано
+| Метка | Метка, показанная для этого фильтра на странице представления | Найти рецепты...
 |================================
 +
 --
 // Ingredients field exposed filter configuration.
-image:images/views-duplicate_expose.png["Expose filter"]
+image:images/views-duplicate_expose.png["Выставить фильтр"]
 --
 
-. To change the _Path_ label field to "Recipes", click "/vendors" in the _Path_
-field under _Page settings_. In the pop-up that appears, enter the path
-"recipes" and click _Apply_.
+.Чтобы изменить поле _Путь_ на "Рецепты", нажмите "/vendors" в поле _Путь_
+под заголовком _Настройки страницы_. В сплывающем окне, введите путь
+"recipes" и нажмите _Применить_.
 +
-Note that when editing a view, you enter paths without the leading "/", unlike
-on other administrative pages (such as when providing a path to a content item
-page).
+Обратите внимание, что при редактировании представления вы вводите пути без начального символа "/", в отличие от
+других административных страниц (например, при указании пути к материалу
+страница).
 
-. To change the menu link title, click "Normal: Vendors" in the _Menu_ field
-under _Page settings_. In the pop-up that appears, change the title to "Recipes"
-and click _Apply_.
+. Чтобы изменить заголовок ссылки меню, нажмите "Нормальный: Производители" в поле _Меню_
+под заголовком _Настройки страницы_. В появившемся всплывающем окне, изменить название на "Рецепты"
+и нажмите _Применить_.
 
-. In order to use Ajax (see <<glossary-ajax,Ajax entry in the Glossary>>) to
-make filtering and paging faster for users, under _Advanced_ > _Other_, click
-_No_ in the _Use AJAX_ field. Check _Use AJAX_ in the pop-up that appears, and
-click _Apply_.
+. Для того, чтобы использовать Ajax (смотрите <<glossary-ajax,Ajax entry in the Glossary>>) при этом
+сделав фильтрацию и переключение страниц быстрее для пользователей, под _Расширенные_ > _Другое_, нажмите
+_Нет_ в поле _Использовать AJAX_. Выберите _Использовать AJAX_во всплывающем окне, и
+нажмите _Применить_.
 
-. Click _Save_ to save the view.
+. Нажмите _Сохранить_, чтобы сохранить представление.
 
-. Go back to the home page and click Recipes in the navigation to view the new
-Recipes page.
+.Вернитесь на домашнюю страницу и нажмите Рецепты в навигации, чтобы просмотреть новую
+Страница рецептов.
 +
 --
 // Completed recipes view output.
-image:images/views-duplicate_final.png["Recipes view",width="100%"]
+image:images/views-duplicate_final.png["Представление Рецепты",width="100%"]
 --
 
-==== Expand your understanding
+==== Расширьте свое понимание
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
+Ссылка на представление в основной навигации, вероятно, будет не на нужном
+месте. Измените порядок пунктов меню в основной навигации. Смотрите
 <<menu-reorder>>.
 
-==== Related concepts
+==== Схожие понятия
 
 * <<planning-structure>>
 * <<glossary-ajax, Ajax entry in the Glossary>>
 
-==== Videos
+==== Видео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/weWFDgw84_M[title="Duplicating a View"]
@@ -137,9 +137,11 @@ video::https://www.youtube-nocookie.com/embed/weWFDgw84_M[title="Duplicating a V
 //==== Additional resources
 
 
-*Attributions*
+*Авторы*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+Написано и отредактировано https://www.drupal.org/u/lolk[Laura Vass] в
 https://pronovix.com/[Pronovix],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+и https://www.drupal.org/u/jojyja[Jojy Alphonso] в
 http://redcrackle.com[Red Crackle].
+
+Переведено https://www.drupal.org/u/MishaIsmajlov[Михаил Исмайлов].
