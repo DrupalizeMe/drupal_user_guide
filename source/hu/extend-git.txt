@@ -17,7 +17,7 @@ Célunk, hogy a webhelyünk forráskódjának és konfigurációs fájljainak v�
 * <<install-tools>>
 * <<install-decide>>
 * <<install-dev-sites>>
-* Git tároló (angolul „repository”) létrehozása. Bár ez működhet a helyi számítógépünkön is, de az általános gyakorlat szerint ezt szinte mindig egy távoli szerveren szokás elhelyezni. Ha erre a GitHub szolgáltatását szeretnénk használni, akkor a https://help.github.com/en/articles/create-a-repo[Create a repo] (azaz „Repó készítése”) leírás segíthet. Tudnunk kell majd a tároló klónozási webcímét, ehhez pedig a https://help.github.com/en/articles/which-remote-url-should-i-use[Which remote URL should I use] (azaz „Melyik elérési cím használható”) útmutató szolgált további tudnivalókkal.
+* Git tároló (angolul „repository”) létrehozása és/vagy klónozási webcímének ismerete. Bár ez működhet a helyi számítógépünkön is, de az általános gyakorlat szerint ezt szinte mindig egy távoli szerveren szokás elhelyezni. Ha erre a GitLab szolgáltatását szeretnénk használni, akkor a https://docs.gitlab.com/ee/gitlab-basics/create-project.html[Create a repo] (azaz „Repó készítése”) és https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[Command Line basic commands] (azaz „Alapvető parancssori utasítások”) című leírások segíthetnek.
 * Parancssoros ablak és egyszerű szövegszerkesztő használata.
 * A webhelykonfiguráció kezeléséhez ismernünk kell a tömörített állományok (például _.zip_ és _.tar.gz_) ki- és becsomagolásának módját.
 
@@ -64,11 +64,11 @@ config
 
 . Eddig jól haladunk, már létezik egy biztos pont webhelyünk életében, ahová bármikor visszajöhetünk a jövőben, ha úgy érezzük majd, jobb lenne visszatérni a mostani kezdetekhez. Talán már sejtjük, hogy az „időutazás” ilyesféle formája mekkora segítség tud lenni bizonyos helyzetekben. Éppen ezért a Git-tárolónk információit – ahogy minden fontosabb adatot általában – érdemes több számítógépen is elhelyezni vész esetére. Most azonban még csak egy gépen van meg: azon, ahol a fenti parancsokat az előbb kiadtuk.
 
-. Jelezzük a helyi Git-kliensünknek, hogy hol éri el a tárolónk távoli párját a `$ git remote add origin https://github.com/pelda-nev/pelda-tarolo.git` paranccsal. Természetesen a webcím helyett a saját tárolónk korábban már feljegyzett klónozási webcímét használjuk.
+. Jelezzük a helyi Git-kliensünknek, hogy hol éri el a tárolónk távoli párját a `$ git remote add origin https://gitlab.com/pelda-nev/pelda-tarolo.git` paranccsal. Természetesen a webcím helyett a saját tárolónk korábban már feljegyzett klónozási webcímét használjuk.
 
 . Végezetül kezdeményezzünk szinkronizálást a tároló két példánya között a `$ git push -u origin master` paranccsal.
 
-. Ha GitHub-on vagy más verziókövetési szolgáltatónál helyeztük el a távoli tárolópéldányunkat, akkor innentől látni fogjuk az imént _bekommitolt_ fájlrendszerünket annak online felületén.
+. Ha GitLabon vagy más verziókövetési szolgáltatónál helyeztük el a távoli tárolópéldányunkat, akkor innentől látni fogjuk az imént _bekommitolt_ fájlrendszerünket annak online felületén.
 
 ===== Fájlok frissítése a tárolóban
 
@@ -90,11 +90,11 @@ Míg az előbbi lépéssort egyetlenegyszer, a tároló létrehozásakor kell cs
 
 ===== Egy teljes tároló beszerzése a helyi gépünkre
 
-Ahogy az előző lépéssor végén már utaltunk rá, a verziókövetés nem csak akkor hasznos, ha egymagunk dolgozunk a webhely forráskódján. Ellenkezőleg, a Git verziókövető egyik legnagyobb erőssége az elosztott működése: a korlátlan számú tárolópéldány mindegyike hiánytalanul tartalmazza a teljes addigi változástörténetet. Más szavakkal ez azt jelenti, hogy akár a kollégánk számítógépéről is átmásolhatjuk az ő példányát, azon szintén fogunk tudni tovább dolgozni. Az egyetlen fontos tényező, hogy egy adott Git-tároló valamennyi példánya közül ki kell neveznünk egyetlen központi példányt: ez lesz a mérvadó mindegyik másik számára. És mivel az egyazon Git-tárolón közösen dolgozó fejlesztők sokszor földrajzilag távol vannak egymástól, ezért kézenfekvőnek tűnik, hogy ez az egy különleges szerepű példány elérhető legyen a hálózaton keresztül. Felállíthatunk egy saját szervert e célra, de talán egyszerűbb igénybe vennünk az olyan ingyenes verziókövető-szolgáltatásokat, mint amilyen például a GitHub, a GitLab vagy a Bitbucket. Ha megosztották velünk egy ilyen távoli tárolópéldány klónozási webcímét, akkor a következő lépéseket követve hozhatunk létre belőle egy teljesértékű helyi másolatot:
+Ahogy az előző lépéssor végén már utaltunk rá, a verziókövetés nem csak akkor hasznos, ha egymagunk dolgozunk a webhely forráskódján. Ellenkezőleg, a Git verziókövető egyik legnagyobb erőssége az elosztott működése: a korlátlan számú tárolópéldány mindegyike hiánytalanul tartalmazza a teljes addigi változástörténetet. Más szavakkal ez azt jelenti, hogy akár a kollégánk számítógépéről is átmásolhatjuk az ő példányát, azon szintén fogunk tudni tovább dolgozni. Az egyetlen fontos tényező, hogy egy adott Git-tároló valamennyi példánya közül ki kell neveznünk egyetlen központi példányt: ez lesz a mérvadó mindegyik másik számára. És mivel az egyazon Git-tárolón közösen dolgozó fejlesztők sokszor földrajzilag távol vannak egymástól, ezért kézenfekvőnek tűnik, hogy ez az egy különleges szerepű példány elérhető legyen a hálózaton keresztül. Felállíthatunk egy saját szervert e célra, de talán egyszerűbb igénybe vennünk az olyan ingyenes verziókövető-szolgáltatásokat, mint amilyen például a GitLab, a GitHub vagy a Bitbucket. Ha megosztották velünk egy ilyen távoli tárolópéldány klónozási webcímét, akkor a következő lépéseket követve hozhatunk létre belőle egy teljesértékű helyi másolatot:
 
 . Nyissunk meg egy parancssoros ablakot és navigáljunk el abba a könyvtárba, amin belül szeretnénk, hogy a helyi tárolópéldányunk létrejöjjön.
 
-. A Git `clone` parancsának meghívásakor átadhatunk neki két értéket: a távoli tárolópéldány klónozási webcímét és egy tetszőleges könyvtárnevet (ha még nem létezik, automatikusan létrehozza), amin belülre kezdje el letölteni a fájlokat. Például `$ git clone https://github.com/pelda-nev/pelda-tarolo.git masik-webhely-konyvtara`.
+. A Git `clone` parancsának meghívásakor átadhatunk neki két értéket: a távoli tárolópéldány klónozási webcímét és egy tetszőleges könyvtárnevet (ha még nem létezik, automatikusan létrehozza), amin belülre kezdje el letölteni a fájlokat. Például `$ git clone https://gitlab.com/pelda-nev/pelda-tarolo.git masik-webhely-konyvtara`.
 
 ===== A webhely konfigurációjának kezelése a Git-tárolónkban
 
