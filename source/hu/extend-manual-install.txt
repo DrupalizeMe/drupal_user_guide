@@ -58,7 +58,11 @@ Utóbbi esetben tehát átugorhatjuk a következő, _Letöltés_ részt (hiszen 
 image:images/extend-manual-install-download.png["Közösségi modul forráskódjának letöltése"]
 --
 
-. Kattintsunk a _tar.gz_ hivatkozásra, így böngészőnk lementi a tömörített fájlt a számítógépünkre.
+. Kattintsunk a _tar.gz_ hivatkozásra, így böngészőnk lementi a tömörített fájlt a számítógépünkre. Ha a távoli kiszolgálónk Linuxon fut, és van parancssori hozzáférésünk, akkor egyszerűen futtathatjuk az alábbi parancsot, természetesen a webcímet lecserélve:
++
+----
+wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
+----
 
 ===== Feltöltés és kicsomagolás
 
