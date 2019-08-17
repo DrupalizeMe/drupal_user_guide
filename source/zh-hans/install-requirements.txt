@@ -1,91 +1,81 @@
 [[install-requirements]]
 
-=== Concept: Server Requirements
+=== 概念：服务器要求
 
 [role="summary"]
-Overview of server requirements for installing and running the core software.
+安装及运行 Drupal 的服务器要求
 
-(((Installation requirements,overview)))
-(((Installation requirements,disk space)))
-(((Installation requirements,web server)))
-(((Installation requirements,database)))
-(((Installation requirements,PHP programming language)))
-(((Installing,core software)))
-(((Core software,installation requirements)))
-(((Disk space,installation requirements)))
-(((Web server,installation requirements)))
-(((Apache web server,version requirements)))
-(((Hiawatha web server,version requirements)))
-(((Nginx web server,version requirements)))
-(((Microsoft IIS web server,version requirements)))
-(((Database,installation requirements)))
-(((MySQL database,version requirements)))
-(((PostgreSQL database,version requirements)))
-(((SQLight database,version requirements)))
-(((PHP programming language,version requirements)))
+(((安装要求,概述)))
+(((安装要求,磁盘空间)))
+(((安装要求,网络服务器)))
+(((安装要求,数据库)))
+(((安装要求,PHP 编程语言)))
+(((安装,核心软件)))
+(((核心软件,安装要求)))
+(((磁盘空间,安装要求)))
+(((Web 服务器,安装要求)))
+(((Apache Web 服务器,版本要求)))
+(((Hiawatha Web 服务器,版本要求)))
+(((Nginx Web 服务器,版本要求)))
+(((微软 IIS Web 服务器,版本要求)))
+(((数据库,安装要求)))
+(((MySQL 数据库,版本要求)))
+(((PostgreSQL 数据库,版本要求)))
+(((SQLight 数据库,版本要求)))
+(((PHP 编程语言,版本要求)))
 
-// ==== Prerequisite knowledge
+// ==== 预备知识
 
-==== What are the requirements for running the core software?
+==== 运行核心软件的要求有哪些？
 
-===== Disk space
+===== 磁盘空间
 
-A minimum installation requires 15 MB. 60 MB is needed for a website with many
-contributed modules and themes installed. Keep in mind you need much more for
-the database, files uploaded by the users, media, backups, and other files.
+最低安装需 15MB 磁盘空间。当网站安装大量的贡献模块和主题时需要 60MB 磁盘空间。谨记，你需要
+更多空间用于数据库、用户上传的文件、媒体文件、备份文件及其他文件。
 
-===== Web server
+===== Web 服务器
 
-Apache (Recommended)::
-  Apache is the most commonly used web server. The core software will work on
-  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache
-  mod_rewrite module installed and enabled. The Apache VirtualHost configuration
-  must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
-  to be used.
+Apache (推荐)::
+  Apache 是最常用的 Web 服务器。核心软件能在运行 Apache 2.x 的 UNIX/Linux、OSX、或
+  Windows 系统中工作，并确保 Apache mod_rewrite 模块已安装并已开启。Apache VirtualHost
+  配置必须包含指令 _AllowOverride All_  ，以允许使用 _.htaccess_ 文件。
 Nginx::
-  Nginx is a commonly used web server that focuses on high concurrency,
-  performance and low memory usage. The core software will work on Nginx 1.1 or
-  greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module
-  must be installed and enabled.
+  Nginx 也是常用的 Web 服务器，Nginx 服务器侧重高并发性，高性能和低内存占用。核心软件能在
+  运行Nginx 1.1 或其更高版本的UNIX/Linux、OSX、或 Windows 系统中工作。ngx_http_rewrite_module
+  必须安装并启用。
 Hiawatha::
-  Hiawatha is a web server with a strong focus on security. It also aims at
-  being easy to use and lightweight. Research performed by independent
-  researchers proves that Hiawatha offers a performance comparable to other web
-  servers under normal conditions, but much better while under attack. URL
-  Toolkit must be installed and configured to rewrite URLs.
-Microsoft IIS::
-  Microsoft IIS is a web server and set of feature extension modules for use
-  with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
-  7 if PHP is configured correctly. Because clean URLs are required, you may
-  need to use a third party product. For IIS 7, you can use the Microsoft URL
-  Rewrite module or a third party solution.
+  Hiawatha 是一个注重安全性的 Web 服务器。同时，Hiawatha 一直致力于易用性和轻量性。独立
+  研究人员进行的研究表明，Hiawatha 在正常条件下提供了与其他 Web 服务器相当的性能，在受到
+  网络入侵时，能提供更好的性能。必须安装并配置 URL Toolkit 才能重写 URL。
+微软 IIS::
+  微软 IIS 是一个 Web 服务器，它有一系列在微软 Windows 系统下使用的功能扩展模块。如果
+  PHP 配置正确的话，核心软件可以在 IIS 5、IIS 6及IIS 7 服务器中运行。由于简洁链接是必需的，
+  你需要用到第三方产品。对于 IIS 7 来说，你可以使用微软的URL重写模块或者第三方的解决方案。
 
-===== Database
+===== 数据库
 
-Use one of the following databases:
+可从下列数据库中任意选中一个：
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
-InnoDB-compatible primary storage engine
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) 或兼容 InnoDB 主存储引擎的更高版本
 
-* PostgreSQL - 9.1.2 or higher
+* PostgreSQL - 9.1.2 或更高版本
 
-* SQLite - 3.4.2 or higher
+* SQLite - 3.4.2 或更高版本
 
 ===== PHP
 
-PHP 5.5.9 or higher.
+PHP 5.5.9 或更高版本
 
-//==== Related topics
+//==== 相关主题
 
-==== Additional resources
+==== 相关资料
 
-https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+https://www.drupal.org/requirements[Drupal 官网文档：系统要求]
 
 
-*Attributions*
+*贡献者*
 
-Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] and
-https://www.drupal.org/u/bemery987[Brian Emery] from
-https://www.drupal.org/docs/8/system-requirements["System requirements"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+编写： https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] 和
+https://www.drupal.org/u/bemery987[Brian Emery]
+
+翻译： https://www.drupal.org/u/rabphito[周宇]， https://www.drupal.org/u/jungle[冉强军] @ https://intergreat.com[InterGreat Education Group]
