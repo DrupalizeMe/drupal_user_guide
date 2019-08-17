@@ -1,27 +1,27 @@
 [[views-parts]]
 
-=== Concept: The Parts of a View
+=== 概念： 视图的组成
 
 [role="summary"]
-Overview of the administrative parts of a view.
+概述视图的各个组成部分。
 
-(((View,parts of)))
-(((Display part of view,overview)))
-(((Format part of view,overview)))
-(((Fields part of view,overview)))
-(((Filter criteria part of view,overview)))
-(((Sort criteria part of view,overview)))
-(((Contextual filters part of view,overview)))
-(((Relationships part of view,overview)))
-(((View,display part)))
-(((View,format part)))
-(((View,fields part)))
-(((View,filter criteria part)))
-(((View,sort criteria part)))
-(((View,contextual filters part)))
-(((View,relationships part)))
+(((视图,组成)))
+(((视图显示,概述)))
+(((视图格式,概述)))
+(((视图字段,概述)))
+(((视图过滤条件,概述)))
+(((视图排序标准,概述)))
+(((视图上下文过滤,概述)))
+(((视图关联,概述)))
+(((视图,显示)))
+(((视图,格式)))
+(((视图,字段)))
+(((视图,过滤条件)))
+(((视图,排序标准)))
+(((视图,上下文过滤)))
+(((视图,关联)))
 
-==== Prerequisite knowledge
+==== 预备知识
 
 * <<planning-data-types>>
 * <<planning-modular>>
@@ -29,67 +29,54 @@ Overview of the administrative parts of a view.
 * <<content-paths>>
 * <<block-concept>>
 
-==== What are the parts of a view?
+==== 视图由哪些部分组成？
 
-When you are editing a view in the administrative interface, you will see the
-following parts (or sections), which allow you to specify what data to output,
-in what order, and in what format:
+在管理界面中编辑视图时，将会看到以下部分：它们允许您指定输出的数据是什么，输出的顺序是什么，
+以及输出的格式是什么：
 
-Display::
-  Each view can have one or more displays, each of which produces one type of
-  output. Options for display types include:
-  Page;;
-    Makes output at a particular URL, for the main page content at that URL.
-  Block;;
-    Makes output in a block, which can be placed on pages.
-  Feed;;
-    Makes an RSS or another type of feed.
-  Attachment;;
-    Makes output that you can attach to another display.
-Format::
-  Depending on the display type, you can choose to output your data in a
-  table, grid, HTML list, or another format. Some formats also give you a
-  second choice that lets you output either rendered entities or fields; other
-  formats do not give you this choice (for example, if you use a table format,
-  you must always use fields).
-Fields::
-  Depending on the format choice, you may be able to choose which content fields
-  are output. For example, if you were making a view of recipe content items, in
-  a block display you might show only the recipe names, while in a full page
-  display you might also show an image field because you have more space.
-Filter criteria::
-  Filters limit the data to be output, based on criteria such as whether the
-  content has been published or not, the type of content, or a field value.
-  For instance, to make a view of recipe content items, you would need to filter
-  to the Recipe content type, and to published recipes. Filters can also be
-   _exposed_, which means that users will have a form where they can choose
-  their own filter values. You might use this on a Recipe page to let users
-  filter for recipes with certain ingredients.
-Sort criteria::
-  Defines the order to present the output, which can be based on any content
-  field.
-Contextual filters::
-  Contextual filters are like regular filters, except that the values come from
-  the _context_ of the view display, such as the full URL of the page being
-  displayed, the current date or time, or some other value that can be
-  detected by the view calculation.
-Relationships::
-  Relationships allow you to expand what is displayed in your view, by relating
-  the base content being displayed to other content entities. Relationships are
-  created using fields on the base content that relate it to the other content;
-  one example is that all regular content items have an author field, which
-  references the user account of the person who authored the content. Once you
-  have created a relationship, you can display fields from the referenced
-  entity in the view.
+显示::
+  每个视图可以有一个或多个显示，每个显示可以产生一种类型的输出。显示类型包括：
+  页面;;
+    在一个特定的 URL 输出，并使其成为该 URL 的主要页面内容。
+  区块;;
+    在一个区块中输出，这个区块可以被放置到页面。
+  订阅源;;
+    创建一个 RSS 或者其他类型的订阅源。
+  附加;;
+    让输出可以附加到其他的显示。
+格式::
+  取决于显示类型，您可以选择以表格、网格、HTML 列表格式或其他格式显示您的数据。一些格式还
+  给您一个第二选择，让您选择是输出渲染后的实体还是字段。一些格式则不会给您这种选择
+  （比如，如果您使用表格格式，您只能使用字段）。
+字段::
+  取决于您选择的格式，您可能可以选择输出哪些内容字段。例如，如果您正在制作一个食谱内容条目的
+  视图，在一个区块显示中，您可能只显示食谱的食谱的名称，而在全文页面，拥有更多的空间，您可能
+  还会显示一个图像字段。
+过滤条件::
+  过滤器限制要输出的数据，基于条件，比如内容是否已发布，内容的类型或字段的值。例如，创建一个
+  食谱内容的视图，您可能需要过滤出食谱内容类型和已发布的食谱。过滤器还可以提供给用户，这意味着
+  用户将有一个表单，用户可以自行选择过滤器的值。您可以在一个 “食谱” 页面，让用户通过指定的
+  成分过滤出食谱。
+排序标准::
+  定义显示输出的顺序，可以基于任何内容字段。
+上下文过滤器::
+  上下文过滤器与常规过滤器类似，只是值来自所该视图显示的上下文，例如，页面显示时，页面的完整
+  URL，当前日期或时间，或可以通过视图计算来检测到的其他值。
+关联::
+  关联允许通过所显示的基本内容与其他的内容实体建立关系，来扩展视图中显示的内容。关联使用涉及到
+  其他内容的基本内容的字段创建；一个例子是所有常规内容都有作者字段，它引用的是内容作者的账号。
+  一旦创建了一个关联，您就可以在视图中显示来自其所引用实体中的字段。
 
-==== Related topics
+==== 相关主题
 
 <<views-create>>
 
-//==== Additional resources
+//==== 更多资源
 
 
-*Attributions*
+*贡献者*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+编写： https://www.drupal.org/u/surendramohan[Surendra Mohan]
+和 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+
+翻译： https://www.drupal.org/u/jungle[冉强军] @ https://intergreat.com[InterGreat Education Group]
