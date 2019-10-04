@@ -1,44 +1,44 @@
 [[structure-form-editing]]
 
-=== Changing Content Entry Forms
+=== Modificación de formularios de entrada de contenido
 
 [role="summary"]
-How to edit a content entry form.
+Cómo editar un formulario de entrada de contenido.
 
-(((Content,editing entry form)))
+(((Contenido,editando formulario de entrada)))
 
-==== Goal
+==== Objetivo
 
-Change the Recipe form to use a different widget to enter terms in the
-Ingredients field.
+Cambie el formulario Receta para usar un widget diferente y introducir
+términos en el campo Ingredientes.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<structure-content-type>>
 * <<structure-fields>>
 * <<structure-taxonomy>>
 * <<structure-widgets>>
 
-==== Site prerequisites
+==== Requisitos previos del sitio web
 
-The Recipe content type must exist, and it must have an Ingredients taxonomy
-term reference field. See <<structure-content-type>> and
+El Tipo de contenido Recetas debe existir, y debe tener un campo de referencia de
+términos de taxonomía de Ingredientes. Véase <<structure-content-type>> y
 <<structure-taxonomy-setup>>.
 
-==== Steps
+==== Pasos
 
-. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-_Recipe_ (_node/add/recipe_) to look at the content entry form that is set up by
-default. Notice how you have to enter ingredients one by one, instead of having
-a more compact format.
+. En el menú administrativo _Administrar_, vaya a _Contenido_ > _Añadir contenido_ >
+_Receta_ (_node/add/recipe_) para ver el formulario de entrada de contenido
+configurado por defecto. Observe cómo tiene que introducir los ingredientes
+uno por uno, en lugar de tener un formato más compacto.
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). Then click _Manage form display_  on the
-dropdown button for the Recipe content type. The _Manage form display_ page
-appears.
+. En el menú administrativo _Administrar_, vaya a _Estructura_> _Tipos de contenido_
+(_admin / structure / types_). A continuación, haga click en _Administrar la 
+visualización del formulario_ en el botón desplegable para el tipo de contenido Receta.
+La página Administrar la visualización del formulario aparecerá.
 
-. For the Ingredients field, select _Autocomplete (Tags style)_ in the _Widget_
-column.
+. Para el campo Ingredientes, seleccione _Autocompletar (estilo de etiquetado)_ 
+en la columna _Control_.
 +
 --
 // Manage form display page for Recipe, Ingredients field area, with
@@ -46,34 +46,36 @@ column.
 image:images/structure-form-editing-manage-form.png["Manage the Recipe form",width="100%"]
 --
 
-. Click _Save_.
+. Haga click en _Guardar_.
 
-. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-Recipe (_node/add/recipe_) to verify the changed behavior of the content
-form. The Ingredients field is now a single text field that accepts multiple
-values.
+. En el menú administrativo _Administrar_, vaya a _Contenido_ > _Añadir contenido_ > Receta
+(_node/add/recipe_) para verificar el comportamiento cambiado del
+formulario de contenido. El campo Ingredientes es ahora un solo campo de texto
+que acepta varios valores.
 +
 --
 // Create recipe page (node/add/recipe).
 image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
 --
 
-. Create two Recipe content items (see <<content-create>>), such as recipes for
-"Green Salad" and "Fresh Carrots". Make sure all the fields have values,
-including images, ingredients, and submitted by (set this to one of the Vendor
-content items you created in <<structure-fields>>).
+. Cree dos artículos de contenido de receta (véase << content-create >>),
+como las recetas de "Ensalada verde" y "Zanahorias frescas". Asegúrese de que
+todos los campos tienen valores, incluyendo imágenes, ingredientes y publicados
+por (defina esto como uno de los elementos de contenido del Proveedor que creó
+en <<structure-fields>>).
 
-==== Expand your understanding
+==== Ampliar conocimiento
 
-Change the main site Contact form by navigating in the _Manage_ administrative
-menu to _Structure_ > _Contact forms_. For instance, you may want to hide the
-_Send yourself a copy_ or _Language_ fields.
+Cambie el formulario de contacto del sitio principal navegando en el menú
+administrativo _Administrar_ > _Estructura_ > _Formularios de contacto_. Por ejemplo, es posible
+que desee ocultar los campos _Enviar una copia al emisor_ o _Idioma_.
 
-// ==== Related concepts
+// ==== Temas relacionados
 
-// ==== Additional resources
+// ==== Recursos adicionales
 
 
-*Attributions*
+*Atribuciones*
 
 Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia] y https://www.drupal.org/u/guiurocafortferrer[Guiu Rocafort Ferrer] para https://www.drupal.org/indra-sistemas-sa[Indra].

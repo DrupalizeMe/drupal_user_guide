@@ -1,46 +1,48 @@
 [[structure-adding-reference]]
 
-=== Adding a Reference Field
+=== Adición de un campo de referencia
 
 [role="summary"]
-How to add a reference field that connects two content types.
+Cómo añadir un campo de referencia que conecte dos tipos de contenido.
 
-(((Reference field,adding)))
-(((Field,for adding references)))
-(((Entity reference field,adding)))
-(((Content reference field,adding)))
-(((User reference field,adding)))
-(((Taxonomy term reference field,adding)))
+(((Campo de referencia,añadir)))
+(((Campo,para añadir referencias)))
+(((Campo de referencia de entidad,añadir)))
+(((Campo de referencia de contenido,añadir)))
+(((Campo de referencia del usuario,añadir)))
+(((Campo de referencia del término taxonomía,añadir)))
 
-==== Goal
+==== Objetivo
 
-Add a reference field so that recipes can be linked to the vendor that has
-submitted it.
+Agregar un campo de referencia para que las recetas se puedan vincular al
+proveedor que las ha enviado.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<structure-fields>>
 * <<structure-reference-fields>>
 * <<structure-content-type>>
 
-==== Site prerequisites
+==== Requisitos previos del sitio web
 
-The Recipe and Vendor content types must exist. See <<structure-content-type>>.
+Los tipos de contenido receta y proveedor deben existir. Consultar
+<<structure-content-type>>.
 
-==== Steps
+==== Pasos
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). Then click _Manage fields_ in the
-dropdown button for the Recipe content type. The _Manage fields_ page appears.
+. En el menú administrativo _Administrar_, vaya a _Estructura_ > _Tipos de contenido_
+(_admin / structure / types_). A continuación, haga click en _Gestionar campos_
+en el botón desplegable para el tipo de contenido Receta. Aparece la página
+_Gestionar campos_.
 
-. Click _Add field_. The _Add field_ page appears. Fill in the fields as shown
-below. Click _Save and continue_.
+. Haga click en _Añadir un campo_. La página _Añadir un campo_ aparecerá. Rellene los
+campos como se muestra a continuación. Haga click en Guardar y continuar.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Add a new field | Option to specify the field type | Reference > Content
-| Label | The title you want to give the field | Submitted by
+|Nombre del campo | Explicación | Valor
+| Añadir un nuevo campo | Opción para especificar el tipo de campo | Referencia > Contenido
+| Etiqueta | El título que quiere dar campo | Presentado por
 |================================
 +
 --
@@ -48,14 +50,15 @@ below. Click _Save and continue_.
 image:images/structure-adding-reference-add-field.png["Adding a reference field to a content type"]
 --
 
-. The page Submitted by appears which lets you set the allowed number of
-values. Fill in the fields as shown below. Click _Save field settings_.
+. Aparecerá la página presentado por, que le permite establecer el número de
+valores permitido. Rellene los campos como se muestra a continuación. Haga
+click en _Guardar opciones de campo_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Type of item to reference| Option to select the type of referenced item | Content
-| Allowed number of values | Specify the count of values associated with the field | Limited, 1
+|Nombre del campo | Explicación | Valor
+|Tipo de articulo a referenciar| Opción para seleccionar el tipo de artículo referenciado | Contenido
+| Número de valores permitidos | Especificar el recuento de valores asociados con el campo | Límite, 1
 |================================
 +
 --
@@ -63,19 +66,20 @@ values. Fill in the fields as shown below. Click _Save field settings_.
 image:images/structure-adding-reference-set-field-basic.png["Storage configuration of a reference field "]
 --
 
-. The page _Submitted by settings for Recipe_ appears which allows you to
-configure the field. Fill in the fields as shown below. Click _Save settings_.
+. Aparecerá la página _Configuración de Submitted by para Receta_ que le permite
+configurar el campo. Rellene los campos como se muestra a continuación. Haga
+click en _Guardar configuración_ .
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-| Label  | Title shown for this field on the page | Submitted by
-| Help text | Brief text aiding the person creating content | Choose the vendor that submitted this recipe
-| Required field | Whether a value has to be provided or not | Checked
-| Reference method | Option to select reference method | Default
-| Content types  |  Specify the content type | Vendor
-| Sort by | Sorting field | Title
-| Sort direction| Sorting order | Ascending
+|Nombre del campo | Explicación | Valor
+| Etiqueta  | Título mostrado por este campo en la página | Presentado por
+| Texto de ayuda | Breve texto de ayuda para la persona que crea el contenido | Elegir al proveedor que presentó la receta
+| Campo requerido | Si un valor tiene que ser proporcionado o no | Comprobado
+| Método de referencia | Opción para seleccionar el metodo de referencia | Por defecto
+| Tipos de contenido  |  Especificar el tipo de contenido | Proveedor
+| Ordenar por | Orden del campo | Título
+| Dirección de clasificación| Orden de clasificación | Ascendente
 |================================
 +
 --
@@ -83,22 +87,21 @@ configure the field. Fill in the fields as shown below. Click _Save settings_.
 image:images/structure-adding-reference-field-settings.png["Settings for a reference field ",width="100%"]
 --
 
-. The Submitted by field has been added to the content type.
+. El campo Presentado por se ha agregado al tipo de contenido.
 +
 --
 // Manage fields page for content type Recipe, after adding Submitted by field.
 image:images/structure-adding-reference-manage-fields.png["Manage fields page for the Recipe content type",width="100%"]
 --
 
-// ==== Expand your understanding
+// ==== Ampliar conocimiento
 
-// ==== Related concepts
+// ==== Temas relacionados
 
-// ==== Additional resources
+// ==== Recursos adicionales
 
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Escrito y editado por https://www.drupal.org/u/batigolix[Boris Doesborg] y https://www.drupal.org/u/jojyja[Jojy Alphonso] para http://redcrackle.com[Red Crackle].
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia] y https://www.drupal.org/u/guiurocafortferrer[Guiu Rocafort Ferrer] para https://www.drupal.org/indra-sistemas-sa[Indra].
