@@ -3,6 +3,11 @@
 # This script builds the AsciiDoc Display Direct module output for the
 # guidelines and user guide.
 
+# Usage:
+# "./mkoutput.sh" without parameters will build all the languages defined in languages.txt
+# "./mkoutput.sh lang1 lang2 lang3" will build the documentation for all the languages passed as parameters. 
+# lang1 lang2 lang3 represent valid language codes. 
+
 # Exit immediately on uninitialized variable or error, and print each command.
 set -uex
 
@@ -10,8 +15,16 @@ set -uex
 mkdir -p ../output
 mkdir -p ../output/html
 
+if [[ $# -gt 0 ]]; then
+    echo "Building specified languages in parameters"
+    langs=$*
+else
+    echo "Building all languages in languages.txt"
+    langs="$(cat languages.txt)"
+fi
+
 # Process each language. Add new languages to the languages.txt file.
-for lang in `cat languages.txt`
+for lang in $langs
 do
 
   mkdir -p ../output/html/$lang
