@@ -1,74 +1,82 @@
 [[preface-reporting]]
-=== Reporting Problems
+=== Reportando problemas
 [role="summary"]
-How to report an issue with this guide (with detailed steps).
+Cómo reportar un problema en esta guía ( con pasos detallados ).
 
-==== Goal
+==== Objetivo
 
-Report a problem with this guide, such as:
+Reportar un problema en esta guía, tales como:
 
-* Information that is incorrect or does not follow best practices
-* Steps that do not work
-* Screen shots or text that doesn't match what you see on the screen
-* Unclear writing
-* Places where a table or screen shot would help clarify the text
-* Failure to define terminology
-* Missing knowledge prerequisites or site prerequisites for a topic
-* Typographical, spelling, grammar, or formatting errors
-* Broken links
+* Información incorrecta o que no sigue las buenas prácticas
+* Pasos que no funcionan
+* Capturas de pantalla o texto que no encaja exactamente con lo que ve en la pantalla
+* Pasos que no funcionan
+* Redacción poco clara
+* Lugares donde una tabla o una captura de pantalla no aclara el texto
+* Terminología poco clara
+* Conocimientos previos o requisitos del sitio web no especificados
+* Errores tipográficos, gramáticos, de formato, o erratas
+* Enlaces rotos
 
 // ==== Prerequisite knowledge
 
 // ==== Site prerequisites
 
-==== Steps
+==== Advertencia
 
-. Make a note of the topic or topics that contain the problem you have found.
+Los pasos detallados a continuación explican el procedimiento de reportar un 
+error en la página de incidencias del proyecto. Esta página solamente está disponible
+en inglés, por lo que se indicarán los lugares en los que hay que hacer click o rellenar
+con el texto que aparece en Inglés.
 
-. Log in to https://www.drupal.org[_Drupal.org_] (you will need to create a user
-account if you do not already have one).
+==== Pasos
+. Tome nota del tema o temas que contienen el problema que ha encontrado.
 
-. Visit the https://www.drupal.org/project/issues/user_guide[User Guide issues
-page on _Drupal.org_].
+. Inicie sesión en https://www.drupal.org[_Drupal.org_] ( va a necesitar 
+crear una cuenta si no está registrado ).
 
-. Verify that the problem you found has not already been reported in another
-issue:
-  * If there are only a few open issues, scan the _Summary_ column to see if
-  any of their descriptions match the problem you found. You may also need to
-  read some of the issues to make sure, which you can do by clicking the links
-  in the _Summary_ column.
-  * If the open issue list is long, enter either a keyword related to the
-  problem you found or the title of the topic where the problem occurs in the
-  _Search for_ box, and click _Search_ to reduce the issue list. Then either
-  scan the summaries or read the issues to see if they match your problem.
+. Visite la https://www.drupal.org/project/issues/user_guide[Página de 
+incidencias en _Drupal.org_]
 
-. If you determine that your problem has not already been reported, click
-_Create a new issue_, and fill in the issue report as follows:
+. Verifique que el problema que ha encontrado no ha sido informado ya en 
+otro reporte.
+  * Si solo hay unos pocos reportes abiertos, escanee la columna de 
+  _Title_ (Título ) para ver si alguna de las descripciones encaja con el problema
+  que encontró. Quizás deba leer algunos de los reportes para asegurarse, lo
+  cual puede hacer haciendo click en la columna de _Title_ (Título).
+  * Si la lista de reportes abiertos es larga, puede introducir una palabra
+  clave relacionada con el problema que encontró o el título del tema donde
+  el problema ocurre en la casilla _Search for_ ( Buscar por ), y hacer click en  _Search_ ( Buscar )
+  para reducir la lista de reportes. Entonces, puede leer los títulos o 
+  leer los reportes para ver si alguno encaja con su problema.
+
+. Si determina que su problema no ha sido reportado todavía, haga click en
+_Create a new issue_ ( Crear un nuevo reporte ), y rellene el formulario como sigue:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title | Short summary of the problem you found | Instructions in "Adding
-  a Content Type" do not work
-| Category | Type of issue being reported | Bug report
-| Version | Version of the guide you found the problem in | 8.x-0.x-dev
-| Issue summary | Details of the problem you found | In the "Adding a Content
-  Type" topic, in step 3, when I clicked _Save_, I got the following error
-  message: ...
+| Nombre del campo | Explicación | Valor de ejemplo
+| Title ( Título) | Resumen corto del problema que encontró | Las instrucciones
+ en "Crear un tipo de contenido" no funcionan
+| Category ( Categoría ) | Tipo de problema reportado | Bug report
+| Version ( Versión ) | Versión de la guiía donde encontró el problema | 8.x-0.x-dev
+| Issue summary ( Resumen del incidente ) | Detalles de los problemas que encontró | En el 
+apartado de "Añadir un tipo de contenido, en el paso 3, cuando hago click
+en _Save_, me aparece el siguiente mensaje de error: ...
 |================================
 
-. Reread the _Title_ and _Issue summary_ you entered, and verify that the
-following information is included in your report:
-  * A complete description of the problem you found
-  * The name of the topic or topics where you found the problem
-  * The language you are reading the guide in (if not English)
-  * If you read the guide on a website, a link to the page or pages
-    with the problem
+. Relea el _Title_ ( Título ) y el _Issue summary_ ( Resumen de la incidencia ) que introdujo, 
+y verifique que la siguiente información se encuentra incluida en su informe:
+  * Una descripción completa del problema
+  * El nombre del tema o temas donde encontró el problema
+  * El idioma en el que estuvo leyendo la guía
+  * Si leyó la guía en una página web, un enlace a la página o páginas
+    donde se encuentra el problema
 
-. Click _Save_ to create the issue.
+. Haga click en _Save_ ( Guardar ) ara crear la incidencia.
 
-. Check back on the issue in a few days. If one of the project maintainers has
-asked for clarification, respond by adding a comment to the issue.
+. Revise la incidencia en unos dias. Si uno de los mantenedores del proyecto ha
+pedido alguna clarificación, responda añadiendo un comentario en la misma.
 
 // ==== Expand your understanding
 
@@ -77,6 +85,7 @@ asked for clarification, respond by adding a comment to the issue.
 // ==== Additional resources
 
 
-*Attributions*
+*Atribuciones*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Escrito por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traducido por https://www.drupal.org/u/guiurocafortferrer[Guiu Rocafort Ferrer].
