@@ -64,16 +64,16 @@ the file.
 
 You can use one of two commands:
 
-* Use the command `drush cache-rebuild` to clear and rebuild all cached data
+* Use the command `drush cache:rebuild` to clear and rebuild all cached data
 for a site. After running this command, you will see the output message "Cache
 rebuild complete."
 
-* Use the command `drush cc` to see a list of individual caches and then
-choose the specific cache you would like to clear. Running this command should
-produce output like the following:
+* Use the command `drush cache:clear` to see a list of individual caches and
+then choose the specific cache you would like to clear. Running this command
+should produce output like the following:
 +
 ----
-> drush cc
+> drush cache:clear
 Enter a number to choose which cache to clear.
  [0]  :  Cancel
  [1]  :  drush

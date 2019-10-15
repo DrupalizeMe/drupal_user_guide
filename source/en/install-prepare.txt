@@ -59,7 +59,7 @@ directory that you downloaded the software to, where _DB_NAME_, _DB_USER_ and
 _DB_PASS_ are your database's credentials:
 
 ----
-drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
 ----
 
 // ==== Related concepts
