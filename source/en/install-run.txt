@@ -85,7 +85,8 @@ the next step.
 image:images/install-run-4.png["Installation progress bar",width="100%"]
 --
 
-. The final step is to configure some basic information about your new site.
+. The next step is to configure some basic information about your new site
+(also notice if there is a warning about file permissions, for a later step).
 Note that the user account you create in this step is the site's admin
 account. See <<user-admin-account>> for important information about this unique
 account. You can safely name this account "admin", and make sure to choose a
@@ -122,6 +123,13 @@ the page.
 image:images/install-run-6.png["Installation success",width="100%"]
 --
 
+. You may have seen a warning in the Configuration step about file permissions,
+and you may continue to see this warning until you fix the permissions. To
+avoid the warning and make your site more secure, change the permissions on the
+_sites/default_ directory and the _sites/default/settings.php_ file so that they
+are read-only (you may need to consult your hosting company documentation about
+how to do that).
+
 ==== Expand your understanding
 
 Check the Status Report to see if there are any problems with the
@@ -139,7 +147,8 @@ video::https://www.youtube-nocookie.com/embed/LGfRKKKDjv8[title="Running the Ins
 
 ==== Additional resources
 
-https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
+* https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
+* https://www.drupal.org/server-permissions[Drupal.org community documentation section "Webhosting issues"]
 
 
 *Attributions*
