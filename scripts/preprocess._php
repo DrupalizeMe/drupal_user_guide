@@ -19,6 +19,8 @@
  *   after each 2nd-level and 3rd-level header found in the file.
  * - i: Fixes extra whitespace from index entries, by moving them to the
  *   first regular paragraph in each topic (except glossary files).
+ * - Anything: Replaces the string 'copyright_upper_year' with the current
+ *   year (no steps string required for this replacement).
  */
 
 if (count($argv) < 4) {
@@ -36,6 +38,8 @@ if ($source == $output) {
   exit("Source and output directories are the same");
 }
 
+$current_year = date("Y");
+
 // Find all *.txt files in the source directory and process them.
 if ($dh = opendir($source)) {
   while (($file = readdir($dh)) !== FALSE) {
@@ -49,6 +53,7 @@ if ($dh = opendir($source)) {
       if ($text && strpos($steps, 'f') !== FALSE) {
         $text = add_filenames($text, $file);
       }
+      $text = str_replace('copyright_upper_year', $current_year, $text);
       if ($text) {
         $count = file_put_contents($output . '/' . $file, $text);
       }
