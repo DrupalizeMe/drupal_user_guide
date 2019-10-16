@@ -7,7 +7,7 @@
 # Exit immediately on uninitialized variable or error, and print each command.
 set -uex
 
-if [[] $# -lt 1 ]]; then
+if [[ $# -lt 1 ]]; then
   echo "You must specify at least one parameter indicating the version"
   echo "Usage: ./mkzips.sh version [ lang1 lang2 lang3 ]"
   exit -1
