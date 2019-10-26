@@ -50,7 +50,7 @@ image:images/install-run-2.png["Képernyőkép a telepítési profil kiválaszt�
 |Mező felirata | Magyarázat | Javasolt kitöltés
 |Adatbázis neve | Egy tetszőleges név, ahogy az adatbázisunkat elneveztük | drupal9
 |Adatbázis-felhasználó neve | Az adatbázis használatára jogosult MySQL-felhasználó neve | databaseUsername
-|Adatbázis-felhasználó jelszava | Az előbbi fiókhoz választott jelszó | ************
+|Adatbázis-felhasználó jelszava | Az előbbi fiókhoz választott jelszó | &midast;&midast;&midast;&midast;&midast;&midast;
 |================================
 +
 --
@@ -66,7 +66,7 @@ Kattintsunk a _Mentés és folytatás_ gombra.
 image:images/install-run-4.png["Képernyőkép a telepítő folyamatjelzőjéről",width="100%"]
 --
 
-. Az utolsó lépés az új webhely néhány alapinformációjának megadása. Fontos tudni, hogy az itt létrehozott felhasználói fiók kiemelt szerepű lesz a későbbiekben. Ezt nevezzük ugyanis az Egyes számú felhasználónak, amelyről bővebben a <<user-admin-account>> témakörnél írunk. Most ezt nyugodtan elnevezhetjük „admin”-nak, de válasszunk hozzá egy biztonságos jelszót, amiben segítenek az alatta megjelenő tanácsok is.
+. Az utolsó lépés az új webhely néhány alapinformációjának megadása. (Ha ekkor megjelenik egy biztonsági figyelmeztetés, akkor a teendők az utolsó lépésnél olvashatók.) Fontos tudni, hogy az itt létrehozott felhasználói fiók kiemelt szerepű lesz a későbbiekben. Ezt nevezzük ugyanis az Egyes számú felhasználónak, amelyről bővebben a <<user-admin-account>> témakörnél írunk. Most ezt nyugodtan elnevezhetjük „admin”-nak, de válasszunk hozzá egy biztonságos jelszót, amiben segítenek az alatta megjelenő tanácsok is.
 +
 Töltsük ki az űrlapot a következő információkkal:
 +
@@ -95,6 +95,8 @@ Kattintsunk a _Mentés és folytatás_ gombra.
 // Front page of Drupal after the installer just completed showing the success message
 image:images/install-run-6.png["Képernyőkép a sikeresen feltelepített Drupalról",width="100%"]
 --
+
+. Bizonyos tárhelyek esetén előfordulhat, hogy a telepítési folyamat során nem lehet automatikusan átállítani a _sites/default_ könyvtár és az abban lévő _settings.php_ fájl írási jogosultságait. Ilyenkor a kettővel ezelőtti lépésnél egy figyelmeztető üzenet jelenik meg, ami ugyan nem gátolja meg a sikeres telepítést, de a biztonsági kockázatok csökkentése érdekében mindenképp erősen javasolt e kettőt csak olvashatóra állítani a fájlrendszerben. Ha szükséges, ennek mikéntjéről érdemes egyeztetni a tárhelyszolgáltatóval.
 
 ==== Az ismeretek elmélyítése
 

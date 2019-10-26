@@ -37,7 +37,7 @@ E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfel�
 
 ===== Az újraépítő szkript használatával
 
-. Ha elérjük, nyissuk meg a webhelypéldányunk helyi beállításait tartalmazó `settings.php` fájlt (amit a gyökérkönyvtártól kiindulva a _/sites/default/settings.php_ útvonalon találjuk a fájlrendszerben) egy szövegszerkesztőben és másoljuk be ezt a sort a legvégére:
+. Ha elérjük, nyissuk meg a webhelypéldányunk helyi beállításait tartalmazó _settings.php_ fájlt (amit a gyökérkönyvtártól kiindulva a _/sites/default/settings.php_ útvonalon találjuk a fájlrendszerben) egy szövegszerkesztőben és másoljuk be ezt a sort a legvégére:
 +
 ----
 $settings['rebuild_access'] = TRUE;
@@ -46,7 +46,7 @@ Ezzel ez egy fontos biztonsági védelmet iktatunk ki ideiglenesen, a művelet v
 
 . Miután elmentettük a fájlt (lehet, hogy írásvédett), látogassuk meg webhelyünkön ezt a fájlt a böngésző címsorában ehhez hasonló módon megadva: _http://www.pelda.hu/core/rebuild.php_. Kis idő elteltével betöltődik a webhely címlapja, miután a Drupal valamennyi gyorsítótára teljesen újraépült.
 
-. Visszatérve a `settings.php` fájlhoz a szövegszerkesztőben, töröljük ki az egész `$settings['rebuild_access']` kezdetű sort és mentsük el a fájlt.
+. Visszatérve a _settings.php_ fájlhoz a szövegszerkesztőben, töröljük ki az egész `$settings['rebuild_access']` kezdetű sort és mentsük el a fájlt.
 
 ===== Drush használata ürítésre vagy újraépítésre
 
