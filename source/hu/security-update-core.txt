@@ -44,7 +44,7 @@ $settings['update_free_access'] = TRUE;
 . Csomagoljuk ki a _tar.gz_ vagy _zip_ fájlt a távoli szerver egy ideiglenes könyvtárába, aminek kívül kell esnie a webhely telepítési könyvtárán (másképpen „docroot”). Valószínűleg a tárhelyszolgáltató által biztosított adminfelületnek van a kicsomagolásra szolgáló funkciója. Ha van parancssori hozzáférésünk a távoli (Linuxon futó) szerverhez, akkor használhatjuk az alábbi parancsot is:
 +
 ----
-$ tar -xzf drupal-8.3.2.tar.gz
+tar -xzf drupal-8.3.2.tar.gz
 ----
 
 . Most a webhelyünk eredeti telepítési könyvtárában töröljük ki a _core_ és _vendor_ könyvtárakat, valamint minden fájlt, ami nem alkönyvtárban van (beleértve a _.htaccess_, _composer.json_ és _autoload.php_ fájlokat is). Csak azokat hagyjuk meg, amelyekben valami módosítást végeztünk.

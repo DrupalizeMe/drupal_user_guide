@@ -42,7 +42,7 @@ A <<install-run>> szakasz bemutatja az interaktív webes telepítő végigkattin
 Ha a vizuális felületnél jobban szeretjük a parancssoros hozzáférést, akkor az alábbi Drush parancs közel ugyanezt végzi el. Gépeljük a következő utasításokat a parancssorba, ahol  `example` annak a könyvtárnak a neve, ahova az alaprendszert letöltöttük, valamint a `DB_NAME`, `DB_USER` és `DB_PASS` az adatbázis hitelesítő adatai:
 
 ----
-$ drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
 ----
 
 //==== Kapcsolódó témák

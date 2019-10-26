@@ -88,7 +88,7 @@ image:images/extend-manual-install-directories.png["Javasolt könyvtárszerkezet
 . Csomagoljuk ki a _.tar.gz_ (vagy más) tömörített állományt, ami így egy alkönyvtárat hoz létre a fájllal azonos szinten. Ha a távoli kiszolgálónk Linuxon fut, és van parancssori hozzáférésünk, akkor egyszerűen futtathatjuk az alábbi parancsot, természetesen a fájlnevet lecserélve:
 +
 ----
-$ tar -xzf admin_toolbar-8.x-1.17.tar.gz
+tar -xzf admin_toolbar-8.x-1.17.tar.gz
 ----
 Ha nem Linuxon fut a kiszolgáló, vagy nem használhatjuk a parancssort, akkor a tárhelyszolgáltatónk valószínűleg kínál valamilyen grafikus felületet a kicsomagolás elvégzésére.
 

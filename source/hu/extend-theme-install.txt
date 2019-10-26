@@ -82,8 +82,8 @@ image:images/extend-theme-install-appearance-page.png["Uninstalled themes on App
 . Miután a <<extend-manual-install>> vagy <<install-composer>> szakaszok egyikének lépéseit követve a letöltéssel megvagyunk, utána a következő Drush parancsok lefuttatásával először engedélyezzük (angolul „enable”, de véletlen egybeesésként magyarul is ugyanígy kezdődik, így könnyű megjegyezni), majd pedig beállítjuk alapértelmezettként. A parancsok paramétereként minden esetben meg kell adnunk a smink gépi nevét:
 +
 ----
-$ drush theme:enable mayo
-$ drush config:set system.theme default mayo
+drush theme:enable mayo
+drush config:set system.theme default mayo
 ----
 
 . Ezután már csak kövessük a parancssorban megjelenő utasításokat.
