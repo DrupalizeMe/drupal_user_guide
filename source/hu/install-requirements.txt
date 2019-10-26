@@ -15,7 +15,6 @@
 (((Lemezterület,telepítési követelmények)))
 (((Webszerver,telepítési követelmények)))
 (((Apache webszerver,verziókövetelmények)))
-(((Hiawatha webszerver,verziókövetelmények)))
 (((Nginx webszerver,verziókövetelmények)))
 (((Microsoft IIS webszerver,verziókövetelmények)))
 (((Adatbázis,telepítési követelmények)))
@@ -47,8 +46,6 @@ PHP beépített webszervere::
   Bár talán nem annyira közismert, de a PHP programozási nyelv értelmezője is tartalmaz egy alapszintű webkiszolgálót. A Drupal természetesen ezen is fut, bár kizárólag ideiglenes jelleggel, csak próba céljára javasolt használni.
 Nginx::
   Az Nginx egy szintén gyakran használt webszerver, ami nagy terhelés alatt, alacsony memóriahasználat mellett is kielégítő teljesítményre törekszik. A Drupal alaprendszer Nginx 1.1 és annál magasabb verzión is működik, és ez ugyanúgy futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Itt is fontos, hogy az _ngx_http_rewrite_module_ nevű modulja telepítve és engedélyezve legyen.
-Hiawatha::
-  A Hiawatha egy harmadik webszerver alkalmazás, amely leginkább a biztonságra összpontosít, de emellett igyekszik egyszerűen használható és pehelysúlyú maradni. Független kutatók által végrehajtott tesztek alapján a Hiawatha a többi webszerverrel összemérhető teljesítményt nyújt rendes körülmények között, viszont támadás alatt azoknál kimagaslóan jobban teljesít. A webcímek átírásához az _URL Toolkit_ funkciót kell telepíteni és megfelelően beállítani.
 Microsoft IIS::
   A Microsoft IIS egy webszerverfunkciókat tartalmazó kiegészítés Microsoft Windowsra. A Drupal alaprendszer működik IIS 5, IIS 6 és IIS 7 verziókon, ha a PHP megfelelően van beállítva. Mivel a Drupal megköveteli a szép webcímek kezelését, amit viszont csak az IIS 7-hez elérhető _Microsoft URL Rewrite_ modul támogat, ezért ennél alacsonyabb verziókon erre a célra külső megoldásra lehet szükség.
 
