@@ -59,7 +59,7 @@
 _DB_PASS_ являются учебными данными Вашей базы данных:
 
 ----
-drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
 ----
 
 // ==== Связанные концепции

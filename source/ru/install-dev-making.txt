@@ -49,7 +49,7 @@ mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
   * Если вы предпочитаете использовать Drush, используйте следующую команду:
 +
 ----
-drush sql-dump > BACKUPFILE.sql
+drush sql:dump --result-file=BACKUPFILE.sql
 ----
 
   * Используйте https://www.drupal.org/project/backup_migrate[дополнительный модуль Backup and Migrate]
@@ -106,7 +106,7 @@ mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
   * Если вы предпочитаете использовать Drush, то используйте следующую команду:
 +
 ----
-drush sql-query --file=BACKUPFILE.sql
+drush sql:query --file=BACKUPFILE.sql
 ----
 
 . Если ваш сайт для разработки и живой сайт должны иметь различную конфигурацию, тогда

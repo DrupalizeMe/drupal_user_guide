@@ -108,8 +108,8 @@ _https://www.drupal.org/project/mayo_, имя проекта будет `mayo`.
 _mayo_) в качестве примера:
 +
 ----
-drush then mayo
-drush config-set system.theme default mayo
+drush theme:enable mayo
+drush config:set system.theme default mayo
 ----
 
 . Следуйте инструкциям на экране.
