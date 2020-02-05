@@ -1,57 +1,58 @@
 [[understanding-themes]]
 
-=== Concept: Themes
+=== Концепція: Теми
 
 [role="summary"]
-Overview of themes and where to obtain them.
+Огляд тем і де їх отримати.
 
-(((Theme,overview)))
-(((Theme,core)))
-(((Core theme,overview)))
-(((Theme,third-party)))
-(((Third-party theme,overview)))
-(((Theme,custom)))
-(((Custom theme,overview)))
+(((Теми,огляд)))
+(((Теми,ядро)))
+(((Теми ядра,огляд)))
+(((Теми,сторонні)))
+(((Сторонні теми,огляд)))
+(((Теми,власні)))
+(((Власні теми,огляд)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<understanding-drupal>>
 
-==== What is a Theme?
+==== Що таке тема?
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+Тема являє собою набір файлів, які визначають візуальний зовнішній вигляд вашого сайту.
+Ядро Drupal та модулі, які працюють на вашому сайті, визначають який _вміст_ 
+(сюди входять HTML-текст та інші дані, що зберігаються в базі даних, завантажені зображення,
+а також будь-які інші мультимедійні ресурси) відображається на сторінках вашого сайту.
+Тема визначає розмітку та css-стилі HTML, що обгортають вміст.
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+Ядро Drupal надає кілька простих тем з коробки дистрибутива. Ці теми здебільшого були
+спроектовані та побудовані спільнотою протягом останніх кількох років, і кожна з них буде
+хорошим вибором для створення ваших перших сайтів і надасть змогу більше ознайомитися з тим,
+як працює ядро Drupal.
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+Drupal це - розповсюджена CMS, що зарекомендувала себе як добре влаштована система керування вмістом,
+тому що теми, які розробляються для Drupal сторонніми розробниками можуть бути безкоштовними або платними,
+але завжди надійними.
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software.  Guidance for creating custom themes
-in Drupal 8 can be found in the
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"].
+Якщо жодна зі сторонніх тем, що існує, не задовільнить ваші потреби, в такому разі можна створити власну тему.
+Власна тема може бути дуже простою. Наприклад, тема лише з одним файлом CSS, який додає стилі до розмітки,
+згенерованої ядром Drupal чи іншими модулями. Інструкцію зі створення власних тем в Drupal 8 можна знайти
+за посиланням: https://www.drupal.org/docs/8/theming[_Drupal.org_ сторінка документації спільноти "Темізація Drupal"].
 
-==== Related topics
+==== Пов'язані теми
 
 * <<extend-theme-find>>
 * <<extend-theme-install>>
 * <<understanding-modules>>
 
-==== Additional resources
+==== Додаткові матеріали
 
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documenation page "Theming Drupal"]
+https://www.drupal.org/docs/8/theming[_Drupal.org_ сторінка документації спільноти "Темізація Drupal"]
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/jgrubb[John Grubb] and
+Написано та відредаговано https://www.drupal.org/u/jgrubb[John Grubb] та
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклад https://www.drupal.org/u/alexmazaltov[Alex Mazaltov]
