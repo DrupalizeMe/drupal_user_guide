@@ -26,7 +26,7 @@ A content item for the Home page must exist. See <<content-create>>.
 
 . If the content item you want to edit was updated or created recently, it
 should appear near the top of the content list on that page. If not, you can
-use the _Type_, _Title_, or other filters to locate the content item.
+use the _Content type_, _Title_, or other filters to locate the content item.
 +
 --
 // Content list on admin/content, with filters above.
@@ -37,7 +37,7 @@ image:images/content-edit-admin-content.png["Content administration page",width=
 open the content editing form. Update the opening hours in the _Body_ field. See
 <<content-create>> for an explanation of the fields and a screenshot.
 
-. Check _Create new revision_ in the box on the right, if it is not already
+. Check _Create new revision_ under _Published_, if it is not already
 checked, and enter a _Revision log message_ explaining what changes you are
 making (for example, you might enter "Updated opening hours"). This text
 will appear in the revision log for the page.
@@ -47,7 +47,7 @@ will appear in the revision log for the page.
 image:images/content-edit-revision.png["Revision information section of the content edit page"]
 --
 
-. Click _Save and keep published_ to save your changes.
+. Click _Save_ to save your changes.
 
 . You will be redirected back to the _Content_ administrative page, and there
 should be a message showing that the content item was updated.
@@ -73,6 +73,11 @@ the full content edit form.
 from this page.
 
 //==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TAFZMcuOqG0[title="Editing a Content Item"]
 
 //==== Additional resources
 

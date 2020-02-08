@@ -49,7 +49,7 @@ mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
   * If you prefer to use Drush, use this command:
 +
 ----
-drush sql-dump > BACKUPFILE.sql
+drush sql:dump --result-file=BACKUPFILE.sql
 ----
 
   * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module]
@@ -62,7 +62,8 @@ Drupal site root. This will prevent others from getting a copy of your
 database.
 
 . Copy all of the files from the web root of your live site to the web root of
-your development site.
+your development site. You may wish to use Git to do this; if so, see
+<<extend-git>>.
 
 . Edit the _sites/default/settings.php_ file under your development site's
 top-level directory in a plain-text editor. Find the lines near the end that
@@ -105,7 +106,7 @@ mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
   * If you prefer to use Drush, use this command:
 +
 ----
-drush sql-query --file=BACKUPFILE.sql
+drush sql:query --file=BACKUPFILE.sql
 ----
 
 . If your development and live sites need to have different configuration, then
@@ -130,7 +131,14 @@ $config['system.site']['name'] = "Development Site for Anytown Farmers Market";
 
 * <<extend-deploy>>
 
+* <<extend-git>>
+
 // ==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/FSBNm4oAkaA[title="Making a Development Site"]
 
 ==== Additional resources
 

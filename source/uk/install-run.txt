@@ -1,9 +1,9 @@
 [[install-run]]
 
-=== Running the Installer
+=== Running the Interactive Installer
 
 [role="summary"]
-How to use the installer to install the core software.
+How to use the interactive installer to install the core software.
 
 (((Installer tool,running)))
 (((Installation process)))
@@ -19,9 +19,7 @@ How to use the installer to install the core software.
 Install the core software and create the admin account by running the included
 installer.
 
-==== Prerequisite knowledge
-
-<<install-requirements>>
+// ==== Prerequisite knowledge
 
 ==== Site prerequisites
 
@@ -31,8 +29,9 @@ installer.
 
 . If you are using a 1-click install from a hosting provider or demo site, you
 will most likely see some or all of the following screens as part of the
-installation process. If you uploaded the core files manually, to start the
-installer, open a browser and visit the URL that you set up for your hosting.
+installation process. If you uploaded the core files manually or using Composer,
+to start the installer, open a browser and visit the URL that you set up for
+your hosting.
 
 . Select a language on the first page of the installer; for example,
 English. You could optionally choose from any of the other listed languages.
@@ -86,7 +85,8 @@ the next step.
 image:images/install-run-4.png["Installation progress bar",width="100%"]
 --
 
-. The final step is to configure some basic information about your new site.
+. The next step is to configure some basic information about your new site
+(also notice if there is a warning about file permissions, for a later step).
 Note that the user account you create in this step is the site's admin
 account. See <<user-admin-account>> for important information about this unique
 account. You can safely name this account "admin", and make sure to choose a
@@ -123,6 +123,13 @@ the page.
 image:images/install-run-6.png["Installation success",width="100%"]
 --
 
+. You may have seen a warning in the Configuration step about file permissions,
+and you may continue to see this warning until you fix the permissions. To
+avoid the warning and make your site more secure, change the permissions on the
+_sites/default_ directory and the _sites/default/settings.php_ file so that they
+are read-only (you may need to consult your hosting company documentation about
+how to do that).
+
 ==== Expand your understanding
 
 Check the Status Report to see if there are any problems with the
@@ -133,9 +140,15 @@ installation. See <<prevent-status>>.
 * <<install-dev-sites>>
 * <<install-tools>>
 
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/LGfRKKKDjv8[title="Running the Installer"]
+
 ==== Additional resources
 
-https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
+* https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
+* https://www.drupal.org/server-permissions[Drupal.org community documentation section "Webhosting issues"]
 
 
 *Attributions*

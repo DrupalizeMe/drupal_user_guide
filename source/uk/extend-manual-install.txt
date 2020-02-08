@@ -40,7 +40,9 @@ described in this topic:
 <<extend-module-install>>, <<extend-theme-install>>,
 <<security-update-module>>, or <<security-update-theme>>
 
-Skip this topic if none of the above applies to you.
+Skip this topic if none of the above applies to you. If you are using Composer
+to manage the files in your site, follow the file updating steps in
+<<install-composer>> instead of this topic.
 
 ==== Steps
 
@@ -63,7 +65,15 @@ toolbar_ page (https://www.drupal.org/project/admin_toolbar).
 image:images/extend-manual-install-download.png["Downloading module files"]
 --
 
-. Click _tar.gz_ to download the file to your computer.
+. Click _tar.gz_ to download the file to your computer. Alternatively, if you
+have terminal access to your hosting server (running Linux), you can copy the
+link address for the _tar.gz_ file from your browser, and use this command to
+download the file (substituting the copied URL):
++
+----
+wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
+----
+
 
 ===== Uploading the files to your site and unpacking them
 
@@ -75,7 +85,7 @@ modules and themes that they created. Your _modules_ directory might look like
 this:
 +
 --
-// Make custom and contrib directories under modules, and take a screen shot
+// Make custom and contrib directories under modules, and take a screenshot
 // showing the directory structure.
 image:images/extend-manual-install-directories.png["Suggested directory structure for modules",width="174px"]
 
@@ -125,6 +135,11 @@ re-clone the environment. See <<install-dev-making>>.
 _Appearance_ (_admin/appearance_) and uninstall the old theme.
 
 // ==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Manually Downloading Module or Theme Files"]
 
 ==== Additional resources
 

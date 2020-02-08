@@ -34,12 +34,23 @@ For example, you might use these filters:
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name |Explanation |Example value
-|Maintenance status |How actively is the theme maintained? If a theme is actively maintained, you can expect bug fixes and improvements on a regular basis. | Actively maintained
-|Development status |What kind of development is the theme undergoing? If you select _Under active development_, you can expect new features to be added, and some aspects may still change. If you select _Maintenance fixes only_, it means that the theme is considered complete. |Any
+|Maintenance status |How actively is the theme maintained? If a theme is actively
+ maintained, you can expect bug fixes and improvements on a regular basis.
+ |Actively maintained
+|Development status |What kind of development is the theme undergoing? If you
+ select _Under active development_, you can expect new features to be added, and
+ some aspects may still change. If you select _Maintenance fixes only_, it means
+ that the theme is considered complete. |Any
 |Core compatibility |The Drupal version the theme is compatible with.|8.x
-|Status |_Sandbox projects_ are experimental projects. _Full projects_ have already gone through an approval process, but they can still be in development.|Full projects
-|Search Themes |Search by search term in the theme's description.|-
-|Sort by |Order your search results by criteria like _Most installed_ (popular themes that many sites use) or _Last release_ (date of latest version released). |Most installed
+|Status |_Sandbox projects_ are experimental projects. _Full projects_ have already
+ gone through an approval process, but they can still be in development.|Full projects
+|Stability | Whether or not the project maintainer has created a production-ready
+ version. |Has a supported stable release
+|Security advisory coverage | Whether or not the project maintainer has agreed to
+ follow Drupal Security Team procedures. |Has security advisory coverage
+|Search themes |Search by search term in the theme's description.|-
+|Sort by |Order your search results by criteria like _Most installed_ (popular themes
+ that many sites use) or _Last release_ (date of latest version released). |Most installed
 |================================
 +
 --
@@ -62,24 +73,29 @@ Some aspects to pay attention to while evaluating themes:
 * Introduction: The description of the theme on its project page should be clear
 and useful. A screenshot of the theme helps your evaluation as well.
 
-* Releases: The theme should be available for your version of the core
-software. Pay attention to the color-coding: Themes marked green are
-recommended to be used on live sites, the ones marked yellow should be
-carefully evaluated before use, and the ones marked red are only
-recommended for testing.
+* Project information: There may be warnings in this area of the page, such as
+if a theme is no longer being developed, or is not covered by the security
+advisory policy.
 
-* Project information: Check the theme's maintenance and development status, and
-how frequently it's downloaded and installed.
+* Project information > Reported installs, downloads: You can see how many
+people have downloaded and how many sites use the theme.
 
-* Issues: See if there are any open issues or potential problems with the theme.
+* Issues: See if there are any open issues, potential problems with the
+theme. Check the Statistics to see how regularly issues are responded to.
 
-* Resources: Check if the theme has documentation.
+* Documentation, Resources: Check if the theme has documentation or a README
+file, that can help you install, configure, explore, and test it.
 
 ==== Expand your understanding
 
 * <<extend-theme-install>>
 
 //==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/M8LYX6K53jg[title="Finding Themes"]
 
 //==== Additional resources
 

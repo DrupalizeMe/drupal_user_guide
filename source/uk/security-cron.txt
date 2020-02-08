@@ -3,7 +3,8 @@
 === Configuring Cron Maintenance Tasks
 
 [role="summary"]
-How to run cron maintenance tasks using the core Automated Cron module, or by running them from outside the site.
+How to run cron maintenance tasks using the core Automated Cron module, or by
+running them from outside the site.
 
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
@@ -53,8 +54,9 @@ installed (it is installed with the core Standard install profile; see
 +
 Next, configure the module to control how frequently cron maintenance tasks are
 run. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Choose the desired interval in
-the _Cron settings_ section, and click _Save configuration_.
+_System_ > _Cron_ (_admin/config/system/cron_). Select the desired interval from
+the _Run cron every_ field under _Cron settings_, and click _Save
+configuration_.
 +
 --
 // Cron configuration page (admin/config/system/cron).
@@ -84,6 +86,11 @@ the following schedulers to access this URL regularly:
 ==== Related concepts
 
 <<security-concept>>
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
 
 ==== Additional resources
 

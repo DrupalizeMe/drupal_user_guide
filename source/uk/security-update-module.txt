@@ -3,12 +3,12 @@
 === Updating a Module
 
 [role="summary"]
-How to update a contributed module by using the administrative interface and running the Database updates script, or by using Drush.
+How to update a contributed module by using the administrative interface and
+running the Database updates script.
 
 (((Module,updating)))
 (((Security update,applying)))
 (((Contributed module,updating)))
-(((Drush tool,using to update module)))
 
 ==== Goal
 
@@ -34,8 +34,6 @@ environment before running it on your production site. See
 installed. See <<config-install>> for instructions on installing core
 modules.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
-
 ==== Steps
 
 Before you start, check for module-specific update instructions. This is
@@ -53,12 +51,16 @@ number you're downloading.
 // Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/security-update-module-release-notes.png["Release notes link"]
 
-You can use the administrative interface or Drush to update a contributed
-module. If you are updating a custom module rather than a contributed module, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to obtain the new module files,
+You can use the administrative interface to update a contributed module. If you
+are updating a custom module rather than a contributed module, if you see a
+message saying _Installing modules and themes requires FTP access to your
+server_, or if the steps below do not work to obtain the new module files,
 follow the steps in <<extend-manual-install>>. You can then continue here with
 step 6 in the instructions for the administrative interface below.
+
+If you are using Composer to manage the files in your site, follow the steps
+in <<install-composer>> to update the files, then continue here with step 6 in
+the instructions for the administrative interface below.
 
 ===== Using the administrative interface
 
@@ -91,24 +93,6 @@ site.
 
 . Clear the cache (refer to <<prevent-cache-clear>>).
 
-===== Using Drush
-
-. Find the project name for the module you wish to update. It is the last
-segment of the module's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/admin_toolbar_, the project name is
-"admin_toolbar".
-
-. Run the following Drush command, giving the project name (for example,
-`admin_toolbar`) as a parameter (if you have more than one module to update, add
-the additional module project names to the end of the command, separated by
-spaces):
-+
-----
-drush up admin_toolbar
-----
-
-. Follow the instructions on the screen.
-
 ==== Expand your understanding
 
 * Review the site log (refer to <<prevent-log>>) once the updates are complete
@@ -117,6 +101,11 @@ to check for errors.
 * <<security-update-theme>>
 
 //==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Updating a Module"]
 
 ==== Additional resources
 
@@ -128,6 +117,6 @@ https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Up
 Adapted by https://www.drupal.org/u/batigolix[Boris Doesborgh], and
 https://www.drupal.org/u/hey_germano[Sarah German] at
 https://www.advomatic.com[Advomatic], from
-https://www.drupal.org/node/250790["Updating modules"], copyright 2000-2017 by
+https://www.drupal.org/node/250790["Updating modules"], copyright 2000-copyright_upper_year by
 the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
