@@ -65,31 +65,38 @@ the software to reside.
 . Enter this command, where _mydir_ is the directory you want to create:
 +
 ----
-composer create-project drupal-composer/drupal-project:8.x-dev mydir --no-interaction
+composer create-project drupal/recommended-project mydir
 ----
 
 . The latest release of the core software will be downloaded to the _mydir/web_
-sub-directory; you'll also get some extra tools such as Drush and Drupal Console
-in the _mydir/vendor_ directory.
+sub-directory.
 
 ===== Converting a previously-downloaded site to use Composer
 
 If you previously downloaded the core software without using Composer, you may
 find later that you want or need to use Composer to manage and update
-dependencies. To convert your existing site to using Composer, enter the
-following commands at the root of your site:
+dependencies. For sites created using version 8.8.0 or later of the core
+software the files already contain the necessary Composer configuration and you
+can start using Composer at any time.
+
+If your site includes modules, themes, or profiles, that are not part of the
+core software it is a good idea to add them to the _composer.json_ file in the
+root directory of your site.
+
+Run the following command once for each module, theme, or profile downloaded
+from Drupal.org substituting +module_name+ for the name of the project you want
+to add:
 
 ----
-composer global require grasmash/composerize-drupal
-composer composerize-drupal --composer-root=. --drupal-root=.
+composer require drupal/module_name
 ----
 
-Note that this will also make modules, themes, and profiles that you previously
-downloaded without using Composer available to Composer, if they were placed in
-the _modules/contrib_, _themes/contrib_, and _profiles/contrib_ directories. If
-you placed them in another location, you might consider deleting
-previously-downloaded modules and themes, and then following the instructions
-below to re-download them using Composer.
+See below for more on managing site dependencies with Composer.
+
+To convert a site that was created using a version of the core software prior to
+8.8.0, or that was installed from a zip or tar.gz file downloaded from
+Drupal.org, see the instructions at
+https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Add Composer to an existing site].
 
 ===== Using Composer to download a module or theme
 
@@ -157,7 +164,7 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer 
 
 * https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Using Composer to manage Drupal site dependencies"]
 * https://www.drupal.org/docs/8/update/update-core-via-composer["Update core via Composer"]
-* https://github.com/grasmash/composerize-drupal[Composerize Drupal project for converting a previously-downloaded site to using Composer]
+* https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Add Composer to an existing site]
 
 *Attributions*
 

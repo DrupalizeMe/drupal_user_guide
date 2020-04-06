@@ -64,6 +64,18 @@ To use these tools, you will need to have command-line terminal access to the
 server where your website will be hosted, and you will need to install Composer
 first in order to install either the Drush or Drupal Console tool.
 
+To install Drush or Drupal Console first make sure your project is using
+Composer to manage dependencies. See <<install-composer>>. Then use the
+following commands:
+
+----
+# Install Drush
+composer require drush/drush
+
+# Install Drupal Console
+composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader
+----
+
 ==== What is a version control system?
 
 A version control system is software that keeps copies of files and revision
