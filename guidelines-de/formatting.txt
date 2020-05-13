@@ -1,0 +1,327 @@
+[[formatting]]
+=== Formatieren Ihrer Texte
+
+[role="summary"]
+Informationen für Mitwirkende am project_name zur Formatierung von Text mit Hilfe der
+Auszeichnungssprache AsciiDoc.
+
+Auf dieser Seite
+
+* <<asciidoc>>
+* <<formatting-paragraph>>
+* <<style-sections>>
+* <<style-crosslinks>>
+* <<style-glossary>>
+* <<style-index>>
+* <<formatting-images>>
+* <<style-literals>>
+* <<style-code>>
+* <<style-comments>>
+* <<formatting-todo>>
+
+
+[[asciidoc]]
+==== AsciiDoc-Referenz
+Die Dokumentation in diesem Projekt ist folgendermaßen formatiert
+http://asciidoc.org[AsciiDoc], die Syntax entspricht dabei einem ziemlich allgemeinen Markdown-Stil. Das
+http://asciidoc.org/userguide.html[AsciiDoc Benutzerhandbuch] erklärt die
+Markup-Syntax im Detail. Eine prägnanterer, aber unvollständiger
+http://powerman.name/doc/asciidoc[AsciiDoc Spickzettel] ist ebenfalls verfügbar.
+
+Der Rest dieses Kapitels behandelt einige Konventionen, die für dieses
+Projekt und dessen Formatierung spezifisch sind.
+
+
+[[formatting-paragraph]]
+==== Absatz- und Listenformatierung
+
+* Ein paar Absätze haben die Eigenschaft "role". For Eine Eigenschaftszeile, die beispielsweise `[role=summary]` enthält,
+gibt an, dass der folgende Absatz eine Zusammenfassung des
+das Thema oder Kapitels enthält. Zusammenfassungen erscheinen nicht direkt in der Ausgabe.
+Sie müssen trotzdem unter einbeziehung der Quelldatei (Originaltext) redigiert und übersetzt werden.
+* Die Zusammenfassungen dprfen nicht länger als 140 Zeichen sein.*
+Hinweis: Übersetzen Sie die Zeilen, die die Rollenzuweisungen enthalten, bitte nicht.
+
+* Brechen Sie Ihren Text in Zeilen von 80 Zeichen Länge oder weniger um.
+Zeilenumbrüche haben keine Auswirkungen auf die Ausgabe,  sind aber für Personen,
+die die den Quelltext überprüfen genau, wei die Begrenzung von 80 Zeichen pro Zeile,
+eine große Hilfe.
+
+* Eine komplett leere Zeile sorkt fpr einen Absatz
+
+* Wenn Sie Aufzählungen erstellen (siehe auch <<<guideline-lists>>), formatieren Sie den Quelltext
+ähnlich wie hier:
+
+----
+* Ein einzeiliger Aufzählungspunkt.
+
+* Eine mehrzeilige Aufzählung. Eine mehrzeilige Aufzählung. Eine mehrzeilige Aufzählung.
+Eine mehrzeilige Aufzählung.Eine mehrzeilige Aufzählung.Eine mehrzeilige Aufzählung.
+
+. Eine mehrzeilige nummerische Aufzählung.Eine mehrzeilige nummerische Aufzählung
+Eine mehrzeilige nummerische AufzählungEine mehrzeilige nummerische Aufzählung
++
+Ein zweiter Absatz ohne nummerisches Aufzählungszeichen.
+----
+
+* Für einen Absatzumbruch innerhalb einer Aufzählung oder einer nummerierten Aufzählung verwenden Sie ein +-Zeichen wie
+oben gezeigt. Lesen Sie die
+http://asciidoc.org/userguide.html#X15[AsciiDoc-Dokumentation]
+für weitere Einzelheiten.
+
+
+[[style-sections]]
+==== Erstellen von Themen, Kapiteln und Abschnitten
+
+AsciiDoc unterstützt mehrere Syntaxstile zur Angabe von Kapiteln und
+Abschnitte (nicht alle davon werden in allen AsciiDoc-Handbüchern behandelt). Dieses Projekt
+verwendet die folgende Syntax. diese ist erforderlich, um jedes Thema und Kapitel als solches zu kennzeichnen:
+
+----
+= Titel des gesamten Buches
+
+
+[[first_chapter_id]]
+== Titel des ersten Kappitels
+
+
+[[first_topic_id]]
+=== Erstes Thema
+
+
+[[first_section_id]]
+==== Titel des ersten Abschnitts
+
+
+[[first_subsection_id]]
+===== Titel des ersten unterabschnitts
+----
+
+Um die Lesbarkeit des Quelltexts zu gewährleisten, fügen Sie zwei Leerzeilen vor Beginn jedes
+Kapitels, Themas oder vor dem Beginn eines neuen Abschnitts von beliebiger Tiefe ein.
+In diesem Projekt werden das Decknlatt des Handbuchs und die einzelnen Kapitel mittels
+einer  Gliederungsdatei erstellt, die die meisten Mitwirkenden nicht
+bearbeiten müssen. Jedes Thema innerhalb eines Kapitels ist in eine separaten Include-Datei mit einer
+Erklärung in die Gliederungsdatei aufzunehmen.
+Diese Dateien werden von der Mehrzahl der Mitwirkenden bearbeiten.
+
+Kapitel- und Themenüberschriften sollten  als „Titel" dargestellt werden.
+Titel für beliebige Abschnitte in einzelnen Kapiteln sollten als "Satz" dargestellt werden.
+
+
+[[style-crosslinks]]
+==== Verweisende Links erstelln
+
+Sobald Sie ein Kapitel oder Thema mit einem Zuordnungsnamen definiert haben,
+können Sie eine Verlinkung erzeugen, indem Sie z.B:
+
+----
+ <<first_section_id>>
+----
+
+in den Text schreiben. Der Linktext gitbt den Teitel des Abschnitts oder des Kapitels und (je nach Ausgabeformat) einen Link und/oder eine Seitenzahl aus.
+Sie können den Linktext auch auf folgende Weise ändern:
+
+----
+Innerhalb eines Absatzes, können Sie den Linktext von
+<<first_section_id,ändern indem Sie ihn hinter dem Komma einfügen>>.
+----
+
+der bevorzugter Schreibstil ist jedoch:
+
+----
+Innerhalb eines Absatzes können Sie den Linktext ändern. Siehe <<first_section_id>> für weitere Informationen
+----
+
+
+[[style-glossary]]
+==== Glossareinträge formatieren
+
+Glossareinträge gehen in eine separate Glossardatei. Halten Sie sie in alphabetischer Reihenfolge
+ordnen und dem Format der vorhandenen Elemente in dieser Datei folgen. Beispiel:
+
+----
+[[glossary-cms]] Content Management System (CMS)::
+Eine Sammlung von Werkzeugen, die die Erstellung und Modifizierung ermöglichen,
+Organisation, Suche, Abruf und Entfernung von Informationen auf einer Website.
+Siehe <<intro-drupal>>.
+----
+
+Dieser Eintrag beginnt mit der ID `glossary-cms`, gefolgt vom  Namen des Glossareintrags
+und einem Doppelpunkt. Die Definition beginnt in der nächsten Zeile und ist mit 4 Leerzeichen
+eingerückt. Er enthält auch einen Link zu einem Thema, das weitere Informationen enthält --
+Glossareinträge sollten nur ein paar Zeilen lang sein.
+
+Um einen Querverweis zu einem Glossareintrag im Text herzustellen, verwenden Sie folgende Syntax:
+
+----
+<<glossary-cms,glossary entry for "CMS">>
+----
+
+
+[[style-index]]
+==== Einträge im Inhaltsverzeichnis erstelln
+
+Jedes Thema sollte mindestens einen Eintrag im Inhaltsverzeichnis haben. So definieren Sie einen
+Eintrag im Inhaltsverzeichnis;
+setzen Sie diesen unmittelbar vor den Absatztext, der sich auf den Eintrag bezieht:
+
+----
+(((Block,creating)))
+----
+
+Beachten Sie, dass nach dem Komma kein Leerzeichen steht. Wenn es sich um eine Hauptüberschrift handelt.
+Unterüberschriften müssen mit Komma gekennzeichnet werden.
+Der Text kann in Anführungszeichen gesetzt werden. beispielsweise so:
+
+----
+(((Block,"Creating, or whatever")))
+----
+
+Siehe auch: <<composing-index-entries>>
+
+
+[[formatting-images]]
+==== Including images and videos
+
+Hier ist die Syntax zum Einbinden eines Bildes:
+
+----
+. Dest des Arbeitsschrittes unmittelbar vor dem Bild.
+--
+// Ein Kommentar, der erklärt, wie ein Bild durch neue Mitwirkende erzeugt werden kann.
+image:images/filename.png["alt text goes here",width="100%"]
+--
+----
+
+Anmerkungen und Konventionen:
+
+* Alle Zeilen müssen am linken Rand Ihrer Textdatei beginnen.
+
+* Die "--" Linen betten ein Bild korrekt in eine Aufzählung ein.
+Diese Linien könne auch in Listen mit Aufzählungspunkten verwendet werden.
+
+* Vor dem Alternativtext zu einem Bild darf [ kein Leerzeichen enthalten sein.
+
+* Verwenden Sie reguläre Klartext-ASCII-Anführungszeichen in der Textdatei, nicht
+"Curly-Quote"-Zeichen.
+
+* Fügen Sie immer "Alt"-Text ein, der beschreibt, was auf dem Bild zu sehen ist. Der Alt-Text
+sollte in Anführungszeichen stehen.
+
+* Fügen Sie vor der Bild-include-Anweisung immer einen Kommentar ein, der
+beschreibt, wie das Bild erzeugt wird. Siehe <<style-comments>>.
+
+* Wenn Sie ein Thema als mitwirkende Person schreiben, machen Sie einen groben Screenshot oder ein Bild, und
+hängen dieses als Datei an die Ausgabe an (siehe <<practicalities-submitting>>).
+Machen Sie sich keine Sorgen darüber, dass der erste Entwurf gleich perfekt sein muss.
+
+* Bilder sollten PNG-Dateien sein.
+
+* Wenn ein Bild für die Aufnahme in die Quelldatei _mein-Dateiname.txt_ bestimmt ist, dann
+sollte der Dateiname  _mein-Dateiname-Kurzbeschreibung.png_ lauten (ersetzen Sie
+_Kurzbeschreibung_ mit einem Suffix, das beschreibt, was das Bild zeigt. Allerdings sollten Sie nie
+zwei - Zeichen hintereinander im Dateinamen einer Bilddatei verwenden.
+
+* Wenn Sie ein Bild mit Anmerkungen versehen, stellen Sie sicher, dass Sie eine Anmerkungsfarbe mit guten
+Kontrastwerten zwischen Vorder- und Hintergrundfarbe verwenden. Bedenken Sie aber, dass
+alle Bilder neu generiert werden müssen, wenn sich die UI ändert.
+Vermeiden Sie daher nach möglichkeit Anmerkungen.
+
+* Siehe <<good-writing-text>> für Richtlinien dazu, welche Bilder aufgenommen werden sollten.
+
+
+Die Syntax für eingebettete Videos sieht sao aus:
+
+----
+video::https://www.youtube.com/embed/HymQsDOcT3E[title="Name des Videos"]
+----
+
+Hinweise und Richtlinien:
+
+* Die Videozeile muss am linken Rand Ihrer Textdatei beginnen.
+
+* Zurzeit werden nur YouTube-Videos unterstützt, und in der URL darf kein
+ ? enthalten sein. Auch URL-Parameter sind unzulässig (verschiedene Parameter werden durch die
+Skripte hinzugefügt).
+
+* Erwägen Sie die Verwendung von https://www.youtube-nocookie.com als Basis-URL anstelle von
+https://www.youtube.com, die sicherstellt, dass YouTube keine Informationen
+über die Besucher der Seite gespeichert werden, so lange das Video nicht abgespielt wird.
+
+* Siehe <<guideline-additional-info>> für Richtlinien zum Einbetten von Videos.
+
+
+
+[[style-literals]]
+==== Formatieren von Text
+
+Dateinamen und Verzeichnisse im Text sowie
+neue Begriffe, die eingeführt werden, sollten kursiv formatiert werden. Auch Text der in der Benutzungsoberfläche erscheint
+sollte kursiv formatiert werden. Verwenden Sie Unterstriche, um Text kursiv zu formatieren:
+
+----
+_sites/default.settings.php_
+_view_ (im Kontext zum Modul Views)
+Klicken Sie auf _Übernehmen_
+----
+
+Programmierdetails (Funktionen, Variablen usw.) und Betriebssystem
+In Text eingebettete Befehle sollten in Monospace formatiert werden. Verwenden Sie Backticks, um
+Text in Monospace formatieren:
+
+----
+`my_function_name()`
+`$foo`
+----
+
+Fettschrift sollte sparsam verwendet werden. Verwenden Sie Asteric-Zeichen zur Formatierung von Text in
+Fettschrifft:
+
+----
+*Eine wirklich wichtige Tatsache, die es zu beachten gilt*
+----
+
+
+[[style-code]]
+==== Formatting code blocks
+
+Codeblöcke sollten tatsächlich als Block dargestellt werden. Um einen Block zu erzeugen, lassen Sie eine
+Leerzeile frei und,fügen dann eine Zeile ein, die nur  `----` enthält. Anschließend geben Sie Ihre Codezeilen ein,
+und schließen mit einer weiteren `----` Zeile.
+
+Sie können Codeblöcken ein Präfix voranstellen, das angibt, welche Art von Code sich im Block befindet,
+wie zum Beispiel `[source,php]` für PHP. Weitere unzulässige Code-Typen sind `css`,
+`javascript`, `ql`, `html`, usw. Für generischen Quellcode, wie z.B. Befehle auf der Kommandozeiele eines Betriebssystems, können Sie die Zeile `[source,php]` weglassen.
+
+
+[[style-comments]]
+==== Hinzufügen von Kommentaren zu Quelldateien
+
+Sie können Kommentare in AsciiDoc mit doppelten Schrägstrichen einfügen, wie in PHP:
+
+----
+// Dies ist ein Kommentar, der nur für jemanden relevant ist, der
+// die AsciiDoc-Quelle. Sie wird in der Ausgabe nicht angezeigt.
+----
+
+
+[[formatting-todo]]
+==== Wie man ein Thema als unvollständig kennzeichnet
+
+Wenn Sie ein Thema schreiben und Ihre Arbeit in einem unvollständigen Zustand einreichen möchten
+(z.B. weil Sie die benötigten Informationen nicht finden konnten, keine Zeit mehr hatten oder
+um auf andere Themen zu verweisen, die noch nicht existieren), fügen Sie einen Text wie diesen in Ihre
+Datei:
+
+----
+@todo Erklären Sie, was hier noch zu tun ist.
+----
+
+
+*Mitwirkende*
+
+Geschrieben von
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/eojthebrave[Joe Shindelar],
+and https://www.drupal.org/u/batigolix[Boris Doesborg].
