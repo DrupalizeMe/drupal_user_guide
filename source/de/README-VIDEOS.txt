@@ -14,17 +14,17 @@ Die Bildunterschriften für alle von Drupalize.Me produzierten Videos sind in En
 mit dotsub (https://dotsub.com) in andere Sprachen übersetzt werden. Anleitungen
 wie Sie dotsub zum Übersetzen von Dateien verwenden können, finden Sie hier:
   https://drupalize.me/blog/201210/crowd-sourced-subtitles-free-drupal-videos
-Sie können auch ein Hilfsmittel Ihrer Wahl für die Übersetzung der Bildunterschriften verwenden; solange
-sie können exportiert und uns im SRT-Format zur Verfügung gestellt werden, wir können sie integrieren.
+Sie können auch ein Softwaretool Ihrer Wahl für die Übersetzung der Bildunterschriften verwenden; solange
+dieses Tool die Untertitel im Format exportiert und Sie uns diese Export-Datei zur Verfügung stellen können. In diesem Fall können wir diese Datei integireren.
 Wenn Sie ein anderes Tool verwenden möchten, setzen Sie sich bitte mit uns in Verbindung
-info@drupalize.me, damit wir Ihre Übersetzungen einbeziehen können.
+info@drupalize.me, damit wir Ihre Übersetzungen trotzdem einbeziehen können.
 
-Englische und bereits übersetzte Bildunterschriften können heruntergeladen werden unter
+Englische und bereits übersetzte Bildunterschriften können unter folgender Adresse heruntergeladen werden;
   https://dotsub.com/view/user/drupalizeme
-Wählen Sie das Video aus, für das Sie Untertitel abrufen möchten, und verwenden Sie dann die
-Download-Tool auf der resultierenden Seite.
+Wählen Sie das Video aus, für das Sie Untertitel abrufen möchten, und verwenden Sie dann das
+Download-Tool auf der daraufhin angezeigten Seite.
 
-Drupalize.Me hat derzeit Videos in der folgenden englischen Sprache eingebettet
+Drupalize.Me hat derzeit Videos in folgenden Kapiteln Videos in englischer Sprache eingebettet:
 Leitseiten:
 
 - block-create-custom
