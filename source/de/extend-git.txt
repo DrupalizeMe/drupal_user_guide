@@ -1,0 +1,216 @@
+[[extend-git]]
+
+=== Managing File and Configuration Revisions with Git
+
+[role="summary"]
+Wie man Datei- und Konfigurationsrevisionen mit der Git-Revisionskontrolle verwaltet
+Werkzeug.
+
+(((Tool,Git)))
+(((Git tool,using)))
+
+===== Ziel
+
+Verwenden Sie das Git-Revisionskontrollwerkzeug, um Revisionen an Dateien und Konfiguration zu verwalten
+auf Ihrer Website.
+
+==== Erforderliche Vorkenntnisse
+
+* <<install-tools>>
+
+* <<install-decide>>
+
+* <<install-dev-sites>>
+
+* Wie man ein Git-Repository einrichtet und seine _Klon-URL findet. Zum Beispiel, wenn
+Sie GitLab verwenden möchten, um Ihr Repository zu hosten, siehe
+https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab-Seite "Ein Projekt erstellen"]
+und
+https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab-Seite "Grundlegende Befehle der Kommandozeile"].
+Und wenn Sie GitHub verwenden möchten, um Ihr Repository zu hosten, lesen
+https://help.github.com/en/articles/create-a-repo[GitHub "Repo erstellen"-Seite]
+und
+https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub-Seite "Welche Remote-URL soll ich verwenden"].
+
+* Wie man ein Befehlsterminal-Fenster und einen Klartext-Editor öffnet und benutzt.
+
+* Wie man die Konfiguration verwaltet, wie man Archivdateien (wie z.B. _.zip_) entpackt und packt.
+und _.tar.gz_).
+
+==== Anforderungen an die Website
+
+* Sie müssen die Software für Ihre Website mit einer der folgenden Methoden heruntergeladen haben
+in <<installieren-entscheiden>>. Wenn Sie die Konfiguration verwalten wollen, müssen Sie
+die Software installiert haben und über eine laufende Website verfügen.
+
+* Die Git-Client-Software muss auf dem Server Ihrer Website installiert sein. Siehe
+https://git-scm.com/[Git] für Anweisungen.
+
+* Sie müssen ein neues Repository erstellt haben und seine Git-Klon-URL kennen.
+
+==== Steps
+
+===== Initializing the repository
+
+Führen Sie diese Schritte einmal durch, nachdem Sie ein Git-Repository erstellt haben, um Ihre lokale
+Verzeichnis zum Repository und fügen Sie die ursprünglichen Dateien hinzu.
+
+. Öffnen Sie ein Kommandoterminal-Fenster und wechseln Sie in das Verzeichnis, in dem Ihre Site
+Dateien gefunden werden. Dies ist Ihr "oberstes" Verzeichnis.
+
+. Bestimmen Sie, wo sich Ihre Web-Root befindet. Wenn die _Kerne_, _Module_ und _Themen_
+Verzeichnisse sich direkt in diesem Verzeichnis befinden, dann sind Sie in Ihrem Web
+Wurzel. Wenn Sie Composer zum Herunterladen der Software verwendet haben, dann sind diese Dateien
+die sich innerhalb des Unterverzeichnisses _web_ befindet (das Ihr Web-Root ist).
+
+. Erstellen Sie in einem einfachen Texteditor eine neue Datei namens _.gitignore_ im oberen Teil
+Verzeichnis (oder bearbeiten Sie es, wenn es bereits existiert). Diese Datei enthält eine Liste von Dateien
+und Verzeichnisse, die Git ignorieren (nicht zum Repository hinzufügen) sollte. Zum Beispiel,
+die Datei _settings.php_ für Ihre Site sollte nicht zu Git hinzugefügt werden, weil sie
+enthält Ihre Datenbankkontoinformationen und die Mediendateien, die auf
+Ihre Site (normalerweise in _sites/default/files_) sollte auch nicht in Git sein -- die
+Ziel ist es, die Software im Repository zu haben, nicht den Inhalt der Website.
+
+. Stellen Sie sicher, dass die folgenden Zeilen in der Datei _.gitignore_ stehen. Wenn Ihr Web-Stamm
+nicht Ihr oberstes Verzeichnis ist, überprüfen Sie jedes dieser Verzeichnisse, um zu sehen, ob sie ein Präfix benötigen. Für
+Zum Beispiel müssen _Sites_ möglicherweise durch _Web/Sites_ ersetzt werden.
++
+----
+sites/*/settings*.php
+sites/*/files
+config
+----
+
+. Geben Sie die folgenden Befehle ein:
++
+----
+git init
+git add -A
+----
+
+. Optional können Sie die Liste der Dateien überprüfen, die Sie Ihrem Git-Repository hinzufügen werden
+indem Sie diesen Befehl eingeben und durch die (sehr lange) Liste blättern:
++
+----
+git status
+----
+
+. Geben Sie die folgenden Befehle ein. Sie können Ihre eigene _Commit-Meldung_ ersetzen für
+"Anfangsdatei hinzufügen", wenn Sie dies wünschen, und Sie müssen Ihr eigenes Git ersetzen.
+URL für die URL im zweiten Befehl klonen:
++
+----
+git commit -m "Initial file add"
+git remote add origin https://gitlab.com/example-name/example-repo.git
+git push -u origin master
+----
+
+. Wenn Sie GitLab, GitHub oder einen anderen Host mit Online-Zugang verwenden, können Sie
+Gehen Sie nun zu Ihrer Repository-Seite und sehen Sie nach, ob die Dateien dort vorhanden sind.
+
+======== Aktualisieren von Dateien im Repository
+
+Verwenden Sie diese Schritte, wenn Sie eine oder mehrere Dateien aktualisiert, hinzugefügt oder gelöscht haben in
+Ihre Website, um die Änderungen (_push_) an Ihr Repository zu senden.
+
+. Öffnen Sie ein Befehlsterminal-Fenster und wechseln Sie in das Verzeichnis, in dem Ihre Site
+Dateien gefunden werden.
+
+. Überprüfen Sie die Liste der Dateien, die hinzugefügt, geändert oder gelöscht wurden:
++
+----
+git status
+----
+
+. Für Textdateien, die geändert wurden (keine Bilder), können Sie optional die
+Unterschiede zwischen der neuen und der alten Version der Datei:
++
+----
+git diff path/to/file.txt
+----
+
+. Stellen Sie alle Änderungen für die nächste Übergabe bereit und vergewissern Sie sich, dass sie durchgeführt werden:
++
+----
+git add -A
+git status
+----
+
+. Sie können eine bestimmte Datei bei der Übergabe, die Sie bereits durchgeführt haben, auslassen,
+oder fügen Sie eine weitere Datei zu denen hinzu, die Sie bereits bereitgestellt haben. Wenn eine bestimmte Datei
+oder Verzeichnis versehentlich immer wieder hinzugefügt wird, sollten Sie in Erwägung ziehen, es der
+_.gitignore_ Datei, so dass sie von Git ignoriert wird. Befehle auslassen/hinzufügen:
++
+----
+git reset HEAD path/to/file.txt
+git add path/to/file.txt
+----
+
+. Engagieren Sie sich und treiben Sie Ihre Änderungen voran. Ersetzen Sie die Verpflichtung durch etwas Sinnvolles
+Nachricht:
++
+----
+git commit -m "commit message here"
+git push
+----
+
+. Wenn Sie weitere Kopien Ihres Repositorys haben, aktualisieren Sie diese, indem Sie den Befehl
+Fenster im Verzeichnis jeder Kopie und führt den folgenden Befehl aus:
++
+----
+git pull
+----
+
+
+======== Erstellen einer Kopie der Dateien in Ihrem Repository
+
+Befolgen Sie diese Schritte, wenn Sie alle Dateien in Ihrem Repository in ein
+neuer Standort. Beispielsweise könnten Sie sowohl eine lokale Entwicklungskopie Ihrer
+Standort und einer Produktionsstätte, oder mehrere Teammitglieder haben alle lokale
+Kopien der Website.
+
+. Öffnen Sie ein Befehlsfenster an der Stelle, an der sich die Dateien befinden sollen.
+
+. Geben Sie den folgenden Befehl ein und ersetzen Sie die URL Ihres Repository-Klons durch die
+URL und den Namen des Unterverzeichnisses, in dem sie sich befinden sollen, als _Dateiname_:
++
+----
+git-Klon https://gitlab.com/example-name/example-repo.git dirname
+----
+
+======== Verwaltung der Konfiguration im Repository
+
+. Folgen Sie den Anweisungen unter <<extend-config-versions>>, um eine vollständige
+Archiv der Konfiguration Ihrer Website.
+
+. Wenn Sie die Konfiguration im Repository nicht bereits initialisiert haben, entpacken Sie
+das Konfigurationsarchiv in ein neues Verzeichnis, vorzugsweise oberhalb der Web-Root
+Verzeichnis, und folgen Sie den obigen Anweisungen, um diese Dateien zu Ihrem
+Repository.
+
+. Wenn sich nach der Initialisierung Ihre Site-Konfiguration ändert, exportieren und
+Entpacken Sie das Konfigurationsarchiv am gleichen Ort. Folgen Sie den Anweisungen
+oben, um diese Dateien in Ihrem Repository zu aktualisieren.
+
+. Um eine aktualisierte Konfiguration in eine andere Site zu importieren, erstellen Sie ein Archiv der
+Konfigurationsverzeichnis aus Ihrem Repository. Folgen Sie dann den Anweisungen auf
+<<extend-config-versions>> to upload and import this archive into the site.
+
+
+// ==== Expand your understanding
+
+==== Related concepts
+
+<<install-dev-sites>>
+
+// ==== Videos
+
+// ==== Additional resources
+
+
+*Mitwirkende*
+
+Adaptiert und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
+https://www.drupal.org/node/803746["Aufbau einer Drupal-Site mit Git"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

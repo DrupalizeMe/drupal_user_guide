@@ -1,0 +1,98 @@
+[[install-decide]]
+=== Konzept: Methoden zum Herunterladen und Installieren der Kern-Software
+
+[role="summary"]
+Überblick über die Methoden, mit denen Sie die Kern-Software herunterladen können.
+
+(((Downloading,core software)))
+(((Installing,core software)))
+(((Core software,downloading)))
+(((Core software,installing)))
+
+===== Vorkenntnisse
+* <<install-tools>>
+* <<install-requirements>>
+* <<understanding-distributions>>
+
+==== Welche Methoden stehen zum Herunterladen der Kern-Software zur Verfügung?
+
+Bevor Sie eine Website erstellen können, müssen Sie zunächst die Kern-Software herunterladen.
+Je nach Ihren Plänen gibt es mehrere Möglichkeiten, den Kern herunterzuladen
+Software:
+
+Testen Sie eine kostenlose Online-Demo::
+  Wenn Sie evaluieren, ob Sie Drupal zum Aufbau einer Website verwenden sollen oder nicht, können Sie
+  können einen Online-Anbieter nutzen, um eine Demo-Installation der Kern-Software in
+  20 Minuten oder weniger. Siehe die
+  https://www.drupal.org/try-drupal[_Drupal.org_ Seite "Versuchen Sie Drupal"].
+
+Verwenden Sie ein Ein-Klick-Installationsprogramm von Ihrem Hosting-Provider::
+  Wenn Sie die Kern-Software bei Ihrem Hosting-Provider installieren möchten, muss Ihr
+  Hosting-Provider kann über spezifische Dokumentation und/oder eine Installation mit einem Klick verfügen
+  die Sie verwenden können. Siehe
+  https://www.drupal.org/association/supporters/hosting[_Drupal.org's_ Liste der Hosting-Provider, die Drupal unterstützen].
+
+Verwenden Sie eine vorkonfigurierte Umgebung::
+  Verwenden Sie eine vorkonfigurierte Umgebung oder virtuelle Maschine, die Drupal und
+  alle erforderliche unterstützende Software, um Drupal lokal zu installieren. Siehe die
+  Abschnitt für Ihr Betriebssystem unter
+  https://www.drupal.org/docs/develop/local-server-setup[Drupal.org's Anleitung zur Einrichtung eines lokalen Servers]
+  für mögliche Optionen.
+
+Manuell von der Website herunterladen::
+  Wenn Sie planen, eine Website ohne Zusatzmodule zu erstellen, die
+  Abhängigkeiten, können Sie die Kern-Software oder eine Distribution herunterladen, die
+  enthält die Kern-Software und zusätzliche Module oder Themen aus dem Web
+  Standort. Siehe <<<Installationshandbuch>> für Anweisungen.
+
+Verwenden Sie Composer::
+  Wenn Sie vorhaben, das Drush-Tool zu verwenden (siehe <<Installations-Handbuch>>), oder wenn Sie
+  Wenn Sie eine Website erstellen, die Module mit komplizierten Abhängigkeiten verwenden könnte, können Sie
+  sollte Composer verwenden, um die Kern-Software herunterzuladen, denn Composer wird
+  die Abhängigkeiten richtig verwalten. Wenn Sie Ihre Website durch Herunterladen von
+  Sie können jedoch manuell auf die Verwendung des Composers zur Verwaltung von Abhängigkeiten umstellen
+  später. Siehe <<install-composer>> für Anweisungen zum Herunterladen und Konvertieren.
+
+===== Was passiert, wenn ich die Kern-Software installiere?
+
+Die _Installation_ der Kernsoftware bedeutet die Einrichtung einiger Datenbanktabellen,
+Konfiguration und ein administratives Benutzerkonto, so dass Sie Folgendes erstellen und verwenden können
+Ihre Website.
+
+===== Welche Methoden stehen für die Installation der Kern-Software zur Verfügung?
+
+Es gibt mehrere Möglichkeiten, die Kernsoftware zu installieren:
+
+Hinter-den-Kulissen-Installationsprogramm::
+  Wenn Sie sich für eine Online-Demo oder ein Ein-Klick-Installationsprogramm von einem Hosting
+  Anbieter, kann die Kern-Software automatisch für Sie installiert werden.
+
+Interaktives Installationsprogramm::
+  Die Kernsoftware verfügt über einen interaktiven Installer, der Ihnen mehrere
+  Online-Formulare und füllt dann die Installation mit den Informationen aus, die Sie
+  in den Formularen zur Verfügung stellen. Siehe <<installieren-vorbereiten>> und <<installieren-ausführen>>.
+
+Demo Website-Installationsprogramm::
+  Wenn Sie die Kern-Software auf Ihren lokalen Computer herunterladen, können Sie schnell
+  eine temporäre Demo-Site erstellen, die den eingebauten Webserver und SQLite verwendet
+  Datenbank, die Teil von PHP sind. Das Kommando zum Einrichten einer Demo-Site finden Sie unter
+  das Ende von <<install-manual>>. In diesem Fall werden Sie die interaktive
+  Installationsprogramm.
+
+Kommandozeilen-Tool::
+  Kommandozeilen-Tools (siehe <<<Installations-Tools>>) können auch verwendet werden, um die
+  Installationsschritte.
+
+// ===== Verwandte Themen
+
+// ===== Zusätzliche Ressourcen
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] unter
+https://erdfisch.de[erdfisch],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].
+*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***

@@ -9,33 +9,33 @@ How to create a new page by duplicating a view.
 (((Views module,duplicating a view)))
 (((Module,Views)))
 
-==== Goal
+==== Ziel
 
-Create a page listing recipes by duplicating the existing Vendors view.  Modify
-the page so that the recipes are displayed in a grid and can by filtered by
-ingredients.
+Erstellen Sie eine Seite mit Rezepten, indem Sie die vorhandene Ansicht " Lieferanten " duplizieren.  Ändern Sie
+die Seite, so dass die Rezepte mittels Raster angezeigt werden und nach folgenden Kriterien gefiltert werden können
+Zutaten.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<views-concept>>
 * <<views-parts>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-* The Vendor and Recipe content types must exist; both must have Main image
-fields, and the Recipe content type must have an Ingredients field. Your site
-must also have a couple of Recipe content items. See <<structure-content-type>>,
+* Die Inhaltstypen Lieferant und Rezept müssen vorhanden sein, Beide Inhaltstypen müssen ein Hauptbild haben
+und der Inhaltstyp Rezept muss ein Feld Zutaten haben. Ihre Website muss auch einige Inhalte vom Inhaltstyp des Rezept enthalten.
+ Siehe: <<structure-content-type>>,
 <<structure-fields>>, <<structure-taxonomy-setup>>, <<structure-form-editing>>,
-and <<content-create>>.
+und <<content-create>>.
 
-* The Vendors view must exist. See <<views-create>>.
+* Die Ansicht Lieferanten muss vorhanden sein. Siehe: <<views-create>>.
 
-==== Steps
+==== Arbeitsschritte
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_). Find the view "Vendors" and click _Duplicate_ in its
-dropdown button.
+.Navigieren Sie Im Menü _Verwalten_ zum Punkt _Struktur_ > _Ansichten_
+(_admin/structure/views_). Suchen sie die Ansicht "Lieferanten" und Klicken sie auf _Duplizieren_ innerhalb des Dropbuttons der Ansicht.
+(Beachten sie, dass die Namen der Ansichten, die mit Ihrem  Installationsprofil ausgeliefert werden hier in Englisch angezeigt werden. Siehe: <<language-concept>> um eine Erklärung dazu zu lesen.)
 +
 --
 // Views page (admin/structure/views), with operations dropdown
@@ -43,46 +43,44 @@ dropdown button.
 image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
 --
 
-. Name the duplicate "Recipes" and click _Duplicate_. The view configuration
-page appears.
+. Geben sie dem Duplikat den Namen "Rezepte" und klicken Sie auf _Duplizieren_. Die Seite Ansicht konfigureiren wird angezeigt.
 
-. Change the title of the view page to "Recipes" by clicking Vendors in the
-_Title_ Abschnitt. The _Page: The title of this view_ pop-up appears. Type in
-"Recipes". Click _Apply_.
+.Um den Titel der Seite in "Rezepte" zu ändern, Klicken Sie auf Lieferanten im Feld
+_Titel_. Das  Popup _Titel der Ansicht_
+wird geöffnet. Geben Sie "Rezepte" ein und klicken Sie auf _Übernehmen_.
 +
 --
 // View title configuration screen.
 image:images/views-duplicate_title.png["Change view title",width="100%"]
 --
 
-. Change from a table to a grid format by clicking _Table_ in the _Format_
-Abschnitt. The _Page: How should this view be styled_ pop-up appears. Check _Grid_
-and click _Apply_. The _Page: Style options_ pop-up appears. Retain the default
-values and click _Apply_.
+. Um von einer tabellarischen Ansicht in eine Rasteransicht zu wechseln, klicken Sie im Feld _Format_ auf _Tabelle_.
+Das  Popup _Wie soll diese Seite dargestellt werden?_ erscheint.
+Klicken sie auf _Raster_ und anschließend auf _Übernehmen_. Das Popup _Seite: Anzeigeoptionen_
+erscheint. Lassen Sie die Standardeinstellungen unverändert und klicken Sie auf _Übernehmen_.
 
-. Retain only the title and image fields for the Recipes view by clicking
-_Content: Body_ in the _Fields_ Abschnitt. Click _Remove_ in the pop-up that
-appears.
+. Wenn Sie nur den Titel und die Bildfelder für die Ansicht "Rezepte" beibehalten möchten, klicken Sie auf
+_Inhalt: Textkörper_ im Abschnitt _Felder_. Klicken sie auf _Entfernen_ im Popup, dass daraufhin erscheint.
 
-. Change the content type filter to use the Recipe content type by clicking
-_Content: Type (=Vendor)_ in the _Filter criteria_ Abschnitt. In the _Configure
-filter criterion: Content: Type_ pop-up, check Recipe and uncheck Vendor. Click
-_Apply_.
+. Um den Filter für den Inhaltstyp so zu ändern, dass der Inhaltstyp "Rezept" verwendet wird,
+klicken sie auf _Inhalt: Typ (=Lieferant)_ im Popup _Filterkreterien_.Im Bereich
+_Filterkreterien konfigurieren: Inhalt: Typ_, cwählen Sie Rezepte aus und Lieferanten ab. klicken Sie auf
+_Übernehmen_.
 
-. Add a further filter that is exposed to visitors by clicking _Add_ in the
-_Filter criteria_ Abschnitt. Search for "ingredients" and check "Ingredients
-(field_ingredients)". Click _Add and configure filter criteria_.
+. Um einen weiteren Filter hinzuzufügen, der den Besuchern der Website angeboten wird, klicken Sie
+im Dropdown-Button im Abschnitt _Filterkreterien_ auf _Hinzufügen_. Suchen sie nach dem Wert „Zutaten" und wählen Sie auf
+"Zutaten (Feld_Zutaten)". Klicken sie auf _Filterkriterien hinzufügen_.
 
-. The appearing pop-up offers extra settings on vocabulary and selection
-type. Click _Apply and continue_. The next pop-up allows you to expose this
-filter to visitors. Fill in the fields as shown below, and click _Apply_.
+. Das erscheinende Pop-up bietet zusätzliche Einstellungen zu Vokabularen und Auswahlkriterien
+Klicken sie auf _Übernehmen und fortsetzen_. Im nächsten Pop-up können Sie diese
+Filter Besuchern zur Verfügung stellen. Füllen Sie die Felder wie unten gezeigt aus und klicken Sie auf _Übernehmen_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Expose this filter to visitors, to allow them to change it | Allow visitors to filter and search | Checked
-| Required | Whether a value has to be provided or not | Unchecked
-| Label | Label shown for this filter on the view page | Find recipes using...
+| Feldname | Erläuterung| Beispielwert
+| Diesen Filter für Besucher freigeben, damit sie ihn ändern können | Besuchern erlauben, zu filtern und zu suchen | Geprüft
+| Erforderlich | Ob ein Wert angegeben werden muss oder nicht | Nicht angekreuzt
+| Etikett | Etikett, das für diesen Filter auf der Ansichtsseite angezeigt wird | Rezepte suchen mit...
 |================================
 +
 --
@@ -90,50 +88,53 @@ filter to visitors. Fill in the fields as shown below, and click _Apply_.
 image:images/views-duplicate_expose.png["Expose filter"]
 --
 
-. Change the _Path_ label field to "Recipes" by clicking "/vendors" in the _Page
-settings_ Abschnitt. In the pop-up that appears, enter the path "recipes" and
-click _Apply_.
+. Um die Bezeichnung für das Feld _Pfad_ in "Rezepte" zu ändern, klicken Sie auf "/lieferanten" im Feld _Pfad_
+im Abschnitt _Seiteneinstellungen_. Geben Sie im daraufhin erscheinenden Popup
+"rezepte" ein und klicken Sie auf _Übernehmen_.
 +
-Note that when editing a view, you enter paths without the leading "/", unlike
-on other administrative pages (such as when providing a path to a content item
-page).
+Beachten Sie, dass Sie beim Bearbeiten einer Ansicht im Gegensatz zu
+anderen Verwaltungsseiten (z. B. beim Bereitstellen einer Pfadangabe zu einem Inhalt), Pfadangaben ohne den anführenden "/" eingeben,
 
-. Change the menu link title by clicking "Normal: Vendors" in the _Page
-settings_ Abschnitt. In the pop-up that appears, change the title to "Recipes" and
-click _Apply_.
+. Um den Titel des Menülinks zu ändern klicken Sie im Abschnitt _Seiteneinstellungen_ > _Menü_ auf "Normal: Lieferanten"
+. Ändern Sie in dem erscheinenden Popup-Fenster den Titel in "Rezepte".
+und klicken Sie auf _Übernehmen_.
 
-. In order to use Ajax (see <<glossary-ajax,Ajax entry in the Glossary>>) to make filtering and paging
-faster for users, click _Advanced_ to expand the Abschnitt for more options. In
-the _Other_ Abschnitt, change _Use AJAX: No_ to "Yes" by clicking _No_ and
-checking _Use AJAX_ in the pop-up that appears. Click _Apply_.
+. Damit Sie Ajax verwenden können (siehe: <<glossary-ajax,Ajax entry in the Glossary>>) um das Filtern und seitenweise Anzeigen für die Benutzer schneller zu gestalten
+Klicken Sie unter _Erweitert_ > _Zusätzliche_  im Abschnitt Ajax verwenden auf
+_Nein_. Wählen Sie im erscheinenden Popup-Fenster _AJAX verwenden_  und
+klicken Sie auf _Übernehmen_.
 
-. Click _Save_ to save the view.
+. Klicken Sie auf _Speichern_ tum die Änderungen an der Ansicht zu übernehmen.
 
-. Go back to the home page and click Recipes in the navigation to view the new
-Recipes page.
+. Gehen Sie zurück auf die Startseite und klicken Sie in der Navigation auf Rezepte um die neue Rezeptseite aufzurufen.
 +
 --
 // Completed recipes view output.
 image:images/views-duplicate_final.png["Recipes view",width="100%"]
 --
 
-==== Expand your understanding
+==== Vertiefen Sie Ihr Wissen
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
+Der Link zur Ansicht in der Hauptnavigation wird sich wahrscheinlich nicht rechts befinden
+Ort. Ändern Sie die Reihenfolge der Menüpunkte in der Hauptnavigation. Siehe:
 <<menu-reorder>>.
 
-==== Related concepts
+==== Verwandte Konzepte
 
 * <<planning-structure>>
 * <<glossary-ajax, Ajax entry in the Glossary>>
 
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/weWFDgw84_M[title="Duplicating a View"]
+
 //==== Additional resources
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+Geschrieben und herausgegeben von https://www.drupal.org/u/lolk[Laura Vass] at
 https://pronovix.com/[Pronovix],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle].

@@ -1,9 +1,9 @@
 [[install-run]]
 
-=== Running the Installer
+=== Ausführen des interaktiven Installationsprogramms
 
 [role="summary"]
-How to use the installer to install the core software.
+Wie Sie das interaktive Installationsprogramm zur Installation der Kern-Software verwenden.
 
 (((Installer tool,running)))
 (((Installation process)))
@@ -14,62 +14,61 @@ How to use the installer to install the core software.
 (((Drupal core,installing)))
 (((Web installer,running)))
 
-==== Goal
+===== Ziel
 
-Install the core software and create the admin account by running the included
-installer.
+Installieren Sie die Kern-Software und erstellen Sie das Administratorkonto, indem Sie die mitgelieferte
+Installationsprogramm.
 
-==== Was man wissen sollte
+// ==== Erforderliche Vorkenntnisse
 
-<<install-requirements>>
-
-==== Site prerequisites
+===== Standort-Voraussetzungen
 
 <<install-prepare>>
 
-==== Steps
+===== Schritte
 
-. If you are using a 1-click install from a hosting provider or demo site, you
-will most likely see some or all of the following screens as part of the
-installation process. If you uploaded the core files manually, to start the
-installer, open a browser and visit the URL that you set up for your hosting.
+. Wenn Sie eine 1-Klick-Installation von einem Hosting-Provider oder einer Demo-Site verwenden, können Sie
+werden höchstwahrscheinlich einige oder alle der folgenden Bildschirme als Teil der
+Installationsprozess. Wenn Sie die Kerndateien manuell oder mit dem Composer hochgeladen haben,
+um das Installationsprogramm zu starten, öffnen Sie einen Browser und besuchen Sie die URL, die Sie für
+Ihr Hosting.
 
-. Select a language on the first page of the installer; for example,
-English. You could optionally choose from any of the other listed languages.
-The language files for the chosen language will be downloaded and installed so
-that the rest of the installation process can be finished in the chosen
-language. After choosing a language, click _Save and continue_.
+. Wählen Sie zum Beispiel auf der ersten Seite des Installationsprogramms eine Sprache aus,
+Englisch. Sie können optional eine der anderen aufgeführten Sprachen wählen.
+Die Sprachdateien für die gewählte Sprache werden heruntergeladen und installiert, so
+dass der Rest des Installationsprozesses in der gewählten
+Sprache. Nachdem Sie eine Sprache ausgewählt haben, klicken Sie auf _Speichern und fortfahren_.
 +
 --
 // Go to the first step of the installer
 image:images/install-run-1.png["Choose a language",width="100%"]
 --
 
-. Select an installation profile. Installation profiles provide site features
-and functions for a specific type of site as a single download containing
-the core software, contributed modules, themes, and pre-defined
-configuration. Core contains two installation profiles. Select the core
-Standard installation profile. Click _Save and continue_.
+. Wählen Sie ein Installationsprofil aus. Installationsprofile bieten Standortmerkmale
+und Funktionen für eine bestimmte Art von Website als ein einziger Download, der
+die Kern-Software, beigetragene Module, Themen und vordefinierte
+Konfiguration. Der Kern enthält zwei Installationsprofile. Wählen Sie den Core aus
+Standard-Installationsprofil. Klicken Sie auf _Speichern und fortfahren_.
 +
 --
 // Go to the choose an installation profile step of the installer
 image:images/install-run-2.png["Choose an installation profile",width="100%"]
 --
 
-. The next step in the installer will verify that your system meets the minimum
-requirements. If it does not, you'll be presented with an outline of what
-needs to be corrected in order to proceed. If it does, the installer will
-automatically advance to the next step.
+. Im nächsten Schritt des Installationsprogramms wird überprüft, ob Ihr System die Mindestvoraussetzungen erfüllt
+Anforderungen. Wenn dies nicht der Fall ist, erhalten Sie einen Überblick darüber, was
+muss korrigiert werden, um fortfahren zu können. Wenn dies der Fall ist, wird das Installationsprogramm
+automatisch zum nächsten Schritt übergehen.
 
-. Provide details of the database you created in the <<install-prepare>>
-chapter. Then click _Save and continue_.
+. Geben Sie Einzelheiten zu der Datenbank an, die Sie in der <<Installationsvorbereitung>>
+Kapitel. Klicken Sie dann auf _Speichern und fortfahren_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Database name | The custom name given to the database | drupal8
-|Database username | Username created | databaseUsername
-|Database password | Password chosen | ************
+|Feldname | Erläuterung | Wert
+|Datenbankname | Der der Datenbank gegebene benutzerdefinierte Name | drupal8
+|Benutzername der Datenbank | Erstellter Benutzername | DatenbankBenutzername
+|Datenbank-Passwort | Gewähltes Passwort | **************
 |================================
 +
 --
@@ -77,70 +76,84 @@ chapter. Then click _Save and continue_.
 image:images/install-run-3.png["Database configuration form",width="100%"]
 --
 
-. The next step will display a progress bar under the heading _Installing
-Drupal_. After the installer has completed, it will automatically advance to
-the next step.
+. Im nächsten Schritt wird ein Fortschrittsbalken unter der Überschrift _Installing
+Drupal_. Nachdem das Installationsprogramm abgeschlossen ist, wechselt es automatisch zu
+der nächste Schritt.
 +
 --
 // Go to the page displaying the installation progress bar
 image:images/install-run-4.png["Installation progress bar",width="100%"]
 --
 
-. The final step is to configure some basic information about your new site.
-Note that the user account you create in this step is the site's admin
-account. See <<user-admin-account>> for important information about this unique
-account. You can safely name this account "admin", and make sure to choose a
-secure and unique password.
+. Der nächste Schritt besteht darin, einige grundlegende Informationen über Ihre neue Website zu konfigurieren
+(beachten Sie auch, wenn es eine Warnung über Dateiberechtigungen gibt, für einen späteren Schritt).
+Beachten Sie, dass das Benutzerkonto, das Sie in diesem Schritt erstellen, der Administrator der Website ist.
+Konto. Siehe <<<user-admin-account>> für wichtige Informationen über dieses einzigartige
+Konto. Sie können dieses Konto getrost "admin" nennen, und stellen Sie sicher, dass Sie eine
+sicheres und eindeutiges Passwort.
 +
-Fill in the form with the following information:
+Füllen Sie das Formular mit den folgenden Informationen aus:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Site name | The name chosen for the site | Anytown Farmers Market
-|Site email address | The email associated with the site | info@example.com
-|Username | The designated user's credentials| admin
-|Password | The password chosen | ************
-|Confirm password | Repeat the password | ************
-|Email address | The user's email | admin@example.com
+|Feldname | Erläuterung | Wert
+|Standortname | Der für den Standort gewählte Name | Anytown Farmers Market
+|E-Mail-Adresse der Website | Die mit der Website verbundene E-Mail-Adresse | info@example.com
+|Benutzername | Anmeldedaten des designierten Benutzers| admin
+|Passwort | Das gewählte Passwort | **************
+| Passwort bestätigen | Passwort wiederholen | ****************
+|E-Mail-Adresse | E-Mail-Adresse des Benutzers | admin@example.com
 |================================
 +
-The remaining fields can likely be left at their default values.
+Die übrigen Felder können wahrscheinlich auf ihren Standardwerten belassen werden.
 +
 --
 // Go to the basic site information configuration step of the installer
 image:images/install-run-5.png["Configuration form",width="100%"]
 --
 
-. Click _Save and continue_.
+. Klicken Sie auf _Speichern und fortfahren_.
 
-. You will be redirected to the front page of your new site and you should see
-the message _Congratulations, you installed Drupal!_ displayed at the top of
-the page.
+. Sie werden auf die Startseite Ihrer neuen Website umgeleitet, und Sie sollten
+die Meldung _Glückwunsch, Sie haben Drupal installiert!_, die oben in
+die Seite.
 +
 --
 // Front page of Drupal after the installer just completed showing the success message
 image:images/install-run-6.png["Installation success",width="100%"]
 --
 
-==== Expand your understanding
+. Möglicherweise haben Sie im Konfigurationsschritt eine Warnung über Dateiberechtigungen gesehen,
+und Sie können diese Warnung weiterhin sehen, bis Sie die Berechtigungen korrigiert haben. An
+vermeiden Sie die Warnung und machen Sie Ihre Website sicherer, ändern Sie die Berechtigungen auf der
+Verzeichnis _sites/default_ und die Datei _sites/default/settings.php_, so dass sie
+schreibgeschützt sind (möglicherweise müssen Sie die Dokumentation Ihres gastgebenden Unternehmens konsultieren
+wie man das macht).
 
-Check the Status Report to see if there are any problems with the
-installation. See <<prevent-status>>.
+===== Erweitern Sie Ihr Verständnis
 
-==== Related concepts
+Überprüfen Sie den Statusbericht, um zu sehen, ob es Probleme mit der
+Installation. Siehe <<Verhinderungsstatus>>.
+
+===== Verwandte Konzepte
 
 * <<install-dev-sites>>
 * <<install-tools>>
 
-==== Additional resources
+==== Videos
 
-https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/LGfRKKKDjv8[title="Running the Installer"]
+
+===== Zusätzliche Ressourcen
+
+* https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org Community-Dokumentationsseite "Eine Datenbank erstellen"]
+* https://www.drupal.org/server-permissions[Drupal.org Gemeinschaft Dokumentation Abschnitt "Webhosting-Probleme"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+Geschrieben und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar] unter
 https://drupalize.me[Drupalize.Me],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

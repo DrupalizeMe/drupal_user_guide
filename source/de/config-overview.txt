@@ -1,9 +1,9 @@
 [[config-overview]]
 
-=== Concept: Administrative Overview
+=== Konzept: Administrativer Überblick
 
 [role="summary"]
-Overview of administrative menu and contextual links.
+Überblick über das Verwaltungsmenü und kontextbezogene Links.
 
 (((Administration,overview)))
 (((Administrative menu,overview)))
@@ -19,97 +19,98 @@ Overview of administrative menu and contextual links.
 (((Reports menu entry,administrative menu)))
 (((Help menu entry,administrative menu)))
 
-==== Was man wissen sollte
+==== Erforderliche Kenntnisse
 
 * <<understanding-themes>>
 * <<understanding-modules>>
 
-==== What is the administrative menu?
+==== Was ist das Menü Verwalten?
 
-The toolbar provided by the core Toolbar module displays the _Manage_
-administrative menu at the top or left side of the site, for users with
-permission to see it. This menu provides access to all of the administrative
-areas of the site. The menu entries will vary depending on which modules are
-active on your site and the permissions of the person viewing the menu; if you
-install using the core Standard installation profile and have full
-administrative permissions, the top-level entries are as follows:
+Die Symbolleiste, die vom Modul Toolbar bereitgestellt wird, das mit dem Kernsystem ausgeliefert wird,
+zeigt das Menü _Verwalten_ am oberen oder linken Rand der Website an,
+wenn Benutzer über die entsprechenden Berechtigungen verfügen. Dieses Menü bietet Zugang zu allen administrativen
+Bereiche der Website. Die Menüeinträge variieren je nachdem, welche Module
+auf Ihrer Website aktiv sind und danach, über welche Berechtigungen die angemeldete Person verfügt. Wenn Sie das
+Standard-Installationsprofil des Kernsystems zur Installation der Website verwenden, und über alle
+administrativen Berechtigungen verfügen, sind in der obersten Menüebene der Werkzeugleiste folgende Einträge vorhanden:
 
 // Top navigation bar on any admin page, with Manage menu showing.
 image:images/config-overview-toolbar.png["Administrative menu in horizontal mode",width="100%"]
 
-Content::
-  Lists and manages existing content, and allows creation of new content.
+Inhalt::
+  Listet vorhandene Inhalte auf, ermöglicht deren Verwaltung und ermöglicht das Erstellen neuer Inhalte.
 
-Structure::
-  Contains a list of links for managing structural elements of the site, such
-  as blocks, content types, menus, and taxonomy.
+Struktur::
+  Enthält eine Liste von Links zur Verwaltung von Strukturelementen der Website, wie
+  Blöcke, Inhaltstypen, Menüs und Taxonomievokabularen.
 
-Appearance::
-  Manages themes and appearance-related settings.
+Design::
+  Hier können Einstellungen für Themes und andere Design-Einstellungen festgelegt werden.
 
-Extend::
-  Manages the installation and uninstallation of modules.
+Erweitern::
+  Hier können Module installiert und deinstalliert werden.
 
-Configuration::
-  Contains links to settings pages for various site features.
+Konfiguration::
+  Enthält Links zu Konfigurationsseiten von verschiedenen Funktionen der Website.
 
-People::
-  Manages users, roles, and permissions.
+Benutzer::
+  Hier können Benutzer, Rollen und Berechtigungen verwaltet werden.
 
-Reports::
-  Contains links to logs, update information, search information, and other
-  information about the site's status.
+Berichte::
+  Enthält Links zu Protokollen, Aktualisierungsinformationen, Informationen zur Suche und anderen
+  Informationen über den Status der Website.
 
-Help::
-  Lists help Themen for installed modules that provide them.
+Hilfe::
+  Listet Hilfethemen für installierte Module auf, die diese bereitstellen.
 
-The arrow button on the far right side of the second line of the toolbar (or far
-left side, if the site is being viewed using a right-to-left-reading language
-like Arabic) can be used to switch the menu from appearing horizontally at the
-top of the page, to a vertical format on the left side (or right side, in
-right-to-left languages). When viewed vertically, the menu becomes an
-interactive tree.
+Die Pfeilschaltfläche ganz rechts in der zweiten Zeile der Werkzeugleiste (oder ganz
+links, wenn die Website in einer von rechts nach links zu lesenden Sprache angezeigt wird
+wie z. B. Arabisch) kann verwendet werden, um die Ausrichtung des Menüs vom horizontalen Layout, am oberen Rand der Seite, bei Sprachen,
+die von links nach rechts gelesen werden auf ein vertikales Layout auf der linken Seite (oder auf der rechten Seite, bei
+Sprachen, die von rechts nach links gelesen werden) umzustellen. Bei vertikaler Ansicht wird das Menü zu einer
+interaktiven Baumstruktur.
 
 // Navigation in vertical orientation.
 image:images/config-overview-vertical-menu.png["Administrative menu in vertical mode",width="228px"]
 
-This guide has a standard way to describe navigation to administrative pages
-using the administrative toolbar. See <<preface-conventions>> for more
-information.
+Dieses Handbuch enthält eine Standardbeschreibung für die Navigation zu zu den Seiten des Verwaltungsbereichs über die Werkzeugleiste.
+Siehe: <<preface-conventions>>
+für weitere Informationen.
 
-==== What are contextual links?
+===== Was sind kontextuelle Links?
 
-Some administrative and editing functionality on the site can be accessed
-through the _contextual links_ displayed by the core Contextual Links module.
-Contextual links take you to some of the same pages that you can access through
-the administrative menu, but instead of having to navigate through the menu
-hierarchy, these links are provided near where the related content is displayed
-on your site.
+Auf einige Verwaltungs- und Bearbeitungsfunktionen der Website kann über
+ _kontextlinks_ zugegriffen werden, die vom Modul Contextual Links angezeigt werden,
+ das mit dem Kernsystem ausgeliefert wird.
+Kontextuelle Links führen in manchen Fällen auf die gleichen Seiten, die Sie über
+das Verwaltungsmenü erreichen können. Anstatt durch die Hierarchie des Menüs navigieren zu müssen,
+werden diese Links in der Nähe der Stelle angezeigt, an der auf der Website der Inhalt angezeigt wird.
+auf den sich die jeweilige Konfiguration bezieht.
 
-Contextual links have to be activated to be visible. If your site's theme uses
-the default styling for contextual links, a pencil icon is used to indicate that
-contextual links are present and activated, and if you click the icon, you will
-see the contextual links. There are two ways to activate the pencil icons that
-provide access to the contextual links:
+Kontextlinks müssen aktiviert werden, um sichtbar zu sein. Wenn das Theme Ihrer
+Website den Designvorgaben für Kontextlinks folgt, wird ein Bleistift-Symbol verwendet, um anzuzeigen, dass
+kontextlinks vorhanden und aktiviert sind. Wenn Sie auf das Symbol klicken,
+werden auf der jeweiligen Seite alle verfügbaren Kontextlinks angezeigt. Es gibt zwei
+Möglichkeiten, die Kontextlink-Symbole zu aktivieren:
 
-* If you are using a mouse in a browser, the icon will temporarily appear when
-  you hover over an area that has related contextual links.
+* Wenn Sie eine Maus in einem Browser verwenden, wird das Symbol vorübergehend angezeigt, wenn
+  Sie mit dem Mauszeiger über einen Bereich fahren, der kontextbezogene Links enthält.
 
-* You can click the master pencil icon (or its _Edit_ link) at the right end of
-  the top bar in the toolbar, which will activate all of the contextual links on
-  the current page. This icon is only visible on pages with contextual links.
+* Sie können auf das Bleistift-Symbol (oder dessen _Bearbeiten_-Link) am rechten Ende
+  des Verwaltungsmenüs in der Werkzeugleiste klicken, um alle kontextbezogenen Links auf
+  der aktuelle Seite anzeigen zu lassen. Dieses Symbol ist nur auf Seiten mit kontextlinks sichtbar.
 +
 --
-// Home page with pencil icons showing, with configured theme.
-image:images/config-overview-pencils.png["Page with pencil icons turned on",width="100%"]
+// Startseite mit eingeblendeten Bleistiftsymbolen, mit konfiguriertem Thema.
+image:images/config-overview-pencils.png["Seite mit eingeschalteten Bleistift-Symbolen",width="100%"]
 --
 
-//==== Ähnliche Themen
+//====== Verwandte Themen
 
-//==== Additional resources
+//====== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/halofx[Scott Wilkinson] and
+Geschrieben von https://www.drupal.org/u/halofx[Scott Wilkinson] und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

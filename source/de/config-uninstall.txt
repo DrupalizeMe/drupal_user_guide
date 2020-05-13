@@ -1,102 +1,106 @@
 [[config-uninstall]]
 
-=== Uninstalling Unused Modules
+=== Unbenutzter Module deinstallieren
 
 [role="summary"]
-How to uninstall modules to reduce overhead.
+Wie man Module deinstalliert, die Ladezeit zu reduzieren.
 
 (((Module,uninstalling unused)))
 (((Uninstalling,unused modules)))
 (((Performance,improving)))
 (((Drush tool,using to uninstall module)))
 
-==== Goal
+==== Zielsetzung
 
-Uninstall the core Search and History modules, as well as the core Activity
-Tracker module if you installed it in <<config-install>>, to reduce overhead.
+Deinstallieren Sie die mit dem Kernsystem ausgeleiferten Module Search und History sowie die das Modul
+Activity Tracker, wenn Sie es im Kapitel <<config-install>> installiert haben, um die Ladezeit zu reduzieren.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<understanding-modules>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-* You must have at least one unused module on your site that you want to
-uninstall, such as the core Search module.
+* Sie müssen mindestens ein unbenutztes Modul auf Ihrer Website haben, das Sie
+deinstallieren möchten. Beispielsweise das Modul Search, das mit dem Kernsystem ausgeliefert wird.
 
-* If you want to use Drush to uninstall modules, Drush must be installed. See
+* Wenn Sie Drush zur Deinstallation von Modulen verwenden möchten, muss Drush installiert sein. Siehe
 <<install-tools>>.
 
-==== Steps
+===== Schritte
 
-You can use the administrative interface or Drush to uninstall modules.
+Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu deinstallieren.
 
-===== Using the administrative interface
+======== Verwendung des Verwaltungsbereichs
 
-. In the _Manage_ administrative menu, navigate to _Extend_ > _Uninstall_
-(_admin/modules/uninstall_) where you will find the list of modules that are
-ready to be uninstalled.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_ > _Deinstallieren_
+(_admin/modules/uninstall_). Dort finden Sie eine Liste der Module, die deinstalliert werden können.
 
-. Check the boxes for the modules you are uninstalling (_Search_, _History_, and
-_Activity Tracker_). Click _Uninstall_ at the bottom of the page.
+. Aktivieren Sie die Kontrollkästchen vor den Namen der Module, die Sie deinstallieren möchten (_Search_, _Historie_ und
+_Activity Tracker_). Klicken Sie auf _Deinstallieren_.
 +
 --
-// Top part of admin/modules/uninstall, with Activity Tracker checked.
-image:images/config-uninstall_check-modules.png["Uninstalling module",width="100%"]
+// Oberer Teil von admin/modules/uninstall, mit aktiviertem Activity Tracker.
+image:images/config-uninstall_check-modules.png["Deinstallationsmodul",width="100%"]
 
 [NOTE]
 =================
-You cannot uninstall a module if it is required by some other module(s) and/or
-functionality. For example, the core File module is required by the core Text
-Editor, CKEditor, and Image modules. It can't be uninstalled unless you
-uninstall its dependent module(s) and functionality first. A module that cannot
-be uninstalled yet will have a disabled checkbox, restricting you from
-uninstalling it.
+Sie können ein Modul nicht deinstallieren, wenn es von einem oder mehreren anderen Modulen und/oder Funktionalitäten benötigt wird.
+Zum Beispiel wird das Module File, das mit dem Kernsystem ausgeliefert wird, von den Kernsystemmodulen Text
+Editor, CKEditor und Image benötigt. Es kann nur deinstalliert werden, wenn Sie
+zunächst die abhängigen Module und Funktionen deinstallieren. Ein Modul, das nicht oder
+noch nicht deinstalliert werden kann, wird so lange durch ein ausgegrautes Kontrollkästchen gekennzeichnet,
+bis es deinstalliert werden kann.
 =================
 --
 
-. Step 2 will prompt you to confirm the module uninstall request. Click
-_Uninstall_.
+. In Schritt 2 werden Sie aufgefordert, die Deinstallation des Moduls zu bestätigen. Klicken Sie auf .
+_Deinstallieren_.
 +
 --
-// Uninstall confirmation screen, after checking Activity Tracker, History,
-// and Search modules from admin/modules/uninstall.
-image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
+// Deinstallationsbestätigungsbildschirm, nach dem Überprüfen von Activity Tracker, History,
+// und Suchmodule von admin/modules/uninstall.
+image:images/config-uninstall_confirmUninstall.png["Deinstallation bestätigen - Suchmodul",width="100%"]
 --
 
-===== Using Drush
+======== Drush verwenden
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
+(_admin/modules_). Die Seite _Erweitern_ erscheint und zeigt alle verfügbaren auf
+Ihrer Website verfügbaren Module an.
 
-. Find the machine name of the module you want to uninstall, by expanding the
-information area for the module. For instance, the core Activity Tracker
-module's machine name is _tracker_.
+. Suchen Sie den Systemnamen des Moduls, das Sie deinstallieren möchten, indem Sie den
+Informationsbereich für das Modul ausklappen. Das mit dem Kernsystem ausgelieferte Modul Activity Tracker
+besitzt beispielsweise den Systemnamen _tracker_.
 
-. Run the following Drush command to uninstall the module:
+. Führen Sie den folgenden Drush-Befehl aus, um das Modul zu deinstallieren:
 +
 ----
-drush pm-uninstall tracker
+drush pm:uninstall tracker
 ----
 
-==== Expand your understanding
+===== Erweitern Sie Ihr Verständnis
 
 * <<install-tools>>
 
 * <<prevent-cache-clear>>
 
-* You can also uninstall the core Comment module by following these steps, but
-only after comment fields have been removed, which is a side effect of
+* Sie können auch das mit dem Kernsystem ausgelieferte Modul Comment deinstallieren, indem Sie die folgenden Schritte ausführen, aber
+erst nachdem die Kommentarfelder entfernt wurden. Dies passiert automatisch im Kapitel
 <<structure-content-type-delete>>.
 
-//==== Related concepts
+//====== Verwandte Konzepte
 
-//==== Additional resources
+===== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hUonnNkeF6g[title="Nicht verwendete Module deinstallieren"]]
+
+//====== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Geschrieben und herausgegeben von https://www.drupal.org/u/surendramohan[Surendra Mohan],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle].

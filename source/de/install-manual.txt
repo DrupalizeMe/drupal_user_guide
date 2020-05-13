@@ -1,0 +1,102 @@
+[[install-manual]]
+=== Manuelles Herunterladen der Kern-Software
+
+[role="summary"]
+Wie Sie die Kern-Software oder eine Distribution von der Website herunterladen können.
+
+(((Downloading,core software)))
+(((Downloading,distribution)))
+(((Core software,downloading)))
+(((Distribution,downloading)))
+
+===== Ziel
+
+Laden Sie die Kern-Software oder eine Distribution manuell herunter. Überspringen Sie dieses Thema, wenn Sie
+mit einer anderen Methode herunterladen.
+
+===== Vorraussetzung Kenntnisse
+
+* <<understanding-distributions>>
+* <<install-decide>>
+
+// ==== Anforderungen an die Website
+
+===== Schritte
+
+. Gehen Sie zu _https://www.drupal.org_ und navigieren Sie zu _Build_ > _Download & Erweitern_
+im Menü der obersten Ebene.
++
+--
+// Download Drupal area of https://www.drupal.org/download.
+image:images/install-prepare-downloads.png["Downloads page on _Drupal.org_",width="100%"]
+--
+
+. Wenn Sie nur die Kern-Software herunterladen möchten, klicken Sie auf den _Download Drupal
+zip_ oder _download tar.gz_ link, und speichern Sie die Datei auf Ihrem lokalen Rechner.
+
+. Wenn Sie eine Distribution herunterladen möchten, klicken Sie auf das Symbol _Distributionen_ oder
+Link, wählen Sie eine Verteilung aus der Liste aus, klicken Sie sich zu ihrer Projektseite durch,
+und klicken Sie auf den Link, um eine Zip- oder tar.gz-Datei auf Ihren lokalen Rechner herunterzuladen. Die
+Link sieht so aus:
++
+--
+// Reusing an image from the extend-module-install topic.
+image:images/extend-module-install-download.png["Finding a download URL"]
+--
+
+. Laden Sie die heruntergeladene Datei auf Ihren Hosting-Account hoch. Melden Sie sich bei der Steuerung an
+Panel und navigieren Sie zum Verzeichnis _HTML_. Speichern Sie die Datei dort.
+
+. Dekomprimieren Sie die tar.gz- oder Zip-Datei, wodurch ein neues Verzeichnis erstellt wird. Wenn Sie
+keinen Terminal-Zugang haben oder Ihr Hosting-Server nicht unter Linux läuft, ist Ihr
+Der Dateimanager des Hosting Control Panels sollte eine Möglichkeit bieten, die
+Dateien. Wenn Sie Terminal-Zugriff auf Ihren Hosting-Server (unter Linux) haben, können Sie
+kann einen Befehl wie verwenden:
++
+----
+tar -xzf drupal-8.3.2.tar.gz
+----
+
+. Löschen Sie die komprimierte Datei vom Server, es sei denn, Ihre Entpackmethode
+bereits gelöscht.
+
+. Benennen Sie das Verzeichnis um oder konfigurieren Sie Ihr Webhosting um, so dass das Verzeichnis
+Name mit dem Verzeichnis übereinstimmt, das Ihr Webhosting für Ihre Website konfiguriert ist.
+
+==== Expand your understanding
+
+Sobald Sie die Software heruntergeladen haben, können Sie eine temporäre Demoseite installieren
+(siehe <<install-decide>>) indem Sie den folgenden Befehl von der obersten Ebene aus ausführen
+Verzeichnis der Kern-Software:
+
+----
+php core/scripts/drupal quick-start standard
+----
+
+Die Demo-Site wird installiert, und Ihr Webbrowser sollte sich öffnen, um sich anzumelden
+die neue Website, die nur so lange läuft, wie der PHP-Befehl aktiv ist. Zum Lernen
+Mehr über diese Funktionalität erfahren Sie unter dem Befehl help:
+
+----
+php core/scripts/drupal quick-start --help
+----
+
+
+// ==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/meVfH5mvdwI[title="Downloading the Core Software Manually"]
+
+// ==== Additional resources
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] unter
+https://erdfisch.de[erdfisch],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

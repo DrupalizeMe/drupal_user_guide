@@ -14,76 +14,92 @@ How to use filters to search themes and evaluate them.
 
 ==== Goal
 
-Find and evaluate themes on _Drupal.org_.
+Finden und bewerten Sie Themen auf _Drupal.org_.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<understanding-drupal>>
 * <<understanding-themes>>
 
-//==== Site prerequisites
+//==== Anforderungen an die Website
 
-==== Steps
+===== Schritte
 
-. Go to https://www.drupal.org, and navigate to _Download & Extend > Themes_
+. Gehen Sie zu https://www.drupal.org, und navigieren Sie zu _Download & Erweitern > Themen_
 (https://www.drupal.org/project/project_theme).
 
-. Filter your search using the categories on the theme search page.
-For example, you might use these filters:
+. Filtern Sie Ihre Suche mit Hilfe der Kategorien auf der Themensuchseite.
+Sie können zum Beispiel diese Filter verwenden:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name |Explanation |Example value
-|Maintenance status |How actively is the theme maintained? If a theme is actively maintained, you can expect bug fixes and improvements on a regular basis. | Actively maintained
-|Development status |What kind of development is the theme undergoing? If you select _Under active development_, you can expect new features to be added, and some aspects may still change. If you select _Maintenance fixes only_, it means that the theme is considered complete. |Any
-|Core compatibility |The Drupal version the theme is compatible with.|8.x
-|Status |_Sandbox projects_ are experimental projects. _Full projects_ have already gone through an approval process, but they can still be in development.|Full projects
-|Search Themes |Search by search term in the theme's description.|-
-|Sort by |Order your search results by criteria like _Most installed_ (popular themes that many sites use) or _Last release_ (date of latest version released). |Most installed
+|Feldname |Erläuterung |Beispielwert
+|Erhaltungsstatus |Wie aktiv wird das Thema gepflegt? Wenn ein Thema aktiv ist
+ gewartet werden, können Sie regelmäßig Fehlerbehebungen und Verbesserungen erwarten.
+ |Aktiv gewartet
+|Entwicklungsstand | Welche Art von Entwicklung durchläuft das Thema? Wenn Sie
+ wählen Sie _Unter aktiver Entwicklung_ können Sie erwarten, dass neue Funktionen hinzugefügt werden, und
+ einige Aspekte können sich noch ändern. Wenn Sie _Nur Wartungskorrekturen_ auswählen, bedeutet dies
+ dass das Thema als abgeschlossen betrachtet wird. |Any
+|Kernkompatibilität |Die Drupal-Version, mit der das Thema kompatibel ist.|8.x
+|Status |_Sandbox-Projekte_ sind experimentelle Projekte. |Volle Projekte_ haben bereits
+ einen Genehmigungsprozess durchlaufen haben, aber sie können sich noch in der Entwicklung befinden.|Volle Projekte
+|Stabilität | Ob der Projektbetreuer eine produktionsreife
+ Version. |Hat eine unterstützte stabile Version
+| Abdeckung der Sicherheitsberatung | Ob der Projektbetreuer zugestimmt hat oder nicht
+ die Verfahren des Drupal-Sicherheitsteams befolgen. |Hat Sicherheitsberatung
+|Themen suchen |Suchen Sie nach einem Suchbegriff in der Beschreibung des Themas.|-
+|Sortieren nach |Sortieren Sie Ihre Suchergebnisse nach Kriterien wie _Most installed_ (populäre Themen
+ die viele Sites verwenden) oder _Letzte Version_ (Datum der letzten veröffentlichten Version). |Meist installiert
 |================================
 +
 --
-// Theme search box on https://www.drupal.org/project/project_theme.
-image:images/extend-theme-find_theme_finder.png["Filters on the theme search page on _Drupal.org_"]
+// Themensuchfeld auf https://www.drupal.org/project/project_theme.
+image:images/extend-theme-find_theme_finder.png["Filter auf der Themensuchseite auf _Drupal.org_"]]
 --
 
-. Click _Search_. Search results will appear.
+. Klicken Sie auf _Suchen_. Die Suchergebnisse werden angezeigt.
 +
 --
 // Search results on https://www.drupal.org/project/project_theme.
 image:images/extend-theme-find_search_results.png["The search results page on _Drupal.org_"]
 --
 
-. To further evaluate a theme, click its title in the list of search results
-to visit its project page.
+. Um ein Thema weiter zu bewerten, klicken Sie auf seinen Titel in der Liste der Suchergebnisse
+um seine Projektseite zu besuchen.
 
-Some aspects to pay attention to while evaluating themes:
+Einige Aspekte, die bei der Bewertung von Themen zu beachten sind:
 
-* Introduction: The description of the theme on its project page should be clear
-and useful. A screenshot of the theme helps your evaluation as well.
+* Einleitung: Die Beschreibung des Themas auf seiner Projektseite sollte klar sein
+und nützlich. Auch ein Screenshot des Themas hilft Ihnen bei der Beurteilung.
 
-* Downloads: The theme should be available for your version of the core
-software. Pay attention to the color-coding: Themes marked green are
-recommended to be used on live sites, the ones marked yellow should be
-carefully evaluated before use, and the ones marked red are only
-recommended for testing.
+* Informationen zum Projekt: In diesem Bereich der Seite kann es Warnungen geben, wie z.B.
+wenn ein Thema nicht mehr weiterentwickelt wird oder nicht von der Sicherheit abgedeckt ist
+Beratungspolitik.
 
-* Project Information: Check the theme's maintenance and development status, and
-how frequently it's downloaded and installed.
+* Projektinformationen > Gemeldete Installationen, Downloads: Sie können sehen, wie viele
+Menschen heruntergeladen haben und wie viele Websites das Thema verwenden.
 
-* Issues: See if there are any open issues or potential problems with the theme.
+* Themen: Schauen Sie, ob es irgendwelche offenen Fragen, potentielle Probleme mit dem
+Thema. Schauen Sie sich die Statistiken an, um zu sehen, wie regelmäßig auf Themen reagiert wird.
 
-* Resources: Check if the theme has documentation.
+* Dokumentation, Ressourcen: Prüfen Sie, ob das Thema eine Dokumentation oder ein README enthält.
+Datei, die Ihnen beim Installieren, Konfigurieren, Erforschen und Testen helfen kann.
 
-==== Expand your understanding
+==== Erweitern Sie Ihr Wissen
 
 * <<extend-theme-install>>
 
-//==== Related concepts
+//==== Verwandte Konzepte
 
-//==== Additional resources
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/M8LYX6K53jg[title="Finding Themes"]
+
+//====== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos].
+Geschrieben von https://www.drupal.org/u/dianalakatos[Diána Lakatos].

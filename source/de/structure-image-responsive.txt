@@ -1,54 +1,58 @@
 [[structure-image-responsive]]
 
-=== Concept: Responsive Image Styles
+=== Konzept: Reaktionsfähige Bild-Stile
 
 [role="summary"]
-Overview of responsive image styles, which allow you to provide different images for different screen sizes.
+Überblick über reaktionsfähige Bildstile, mit denen Sie verschiedene Bilder bereitstellen können
+für verschiedene Bildschirmgrößen.
 
 (((Responsive image style,overview)))
 (((Image style,responsive)))
 (((Breakpoint,overview)))
 (((HTML5 picture tag,and responsive images)))
 
-==== Was man wissen sollte
+===== Vorrausgesetztes Wissen
 
 * <<understanding-themes>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== What are responsive image styles?
+===== Was sind reaktionsfähige Bildstile?
 
-The core Responsive Image module provides responsive image styles. This allows
-you to have images in your website that are specifically sized for different
-screen sizes. This is useful, for example, to make your site load faster on
-mobile devices because image sizes are optimized for smaller screens.
+Das Kernmodul Responsive Image bietet reaktionsfähige Bildstile. Dies ermöglicht
+Sie Bilder auf Ihrer Website haben, die speziell für verschiedene
+Bildschirmgrößen. Dies ist z.B. nützlich, damit Ihre Website schneller geladen wird auf
+mobile Geräte, da die Bildgrößen für kleinere Bildschirme optimiert sind.
 
-A responsive image style is a mapping between images styles and breakpoints.
-Breakpoints are the points where a responsive design needs to change in order
-to respond to different screen sizes. Responsive image styles can only be used
-if the breakpoints are defined in the theme.
+Ein reaktionsschneller Bildstil ist eine Zuordnung zwischen Bildstilen und Haltepunkten.
+Haltepunkte sind die Punkte, an denen sich ein reaktionsschneller Entwurf ändern muss, um
+um auf unterschiedliche Bildschirmgrößen zu reagieren. Reagierende Bildstile können entweder funktionieren
+mit Haltepunkten, die in Ihrem Thema definiert sind, oder mit Haltepunkten, die in der
+reaktionsfähige Bildstileinstellungen.
 
-When a responsive image style is defined, it can be used in the display settings
-for Image fields. This allows the site to display responsive images using the
-HTML5 picture tag.
+Wenn ein reaktionsschneller Bildstil definiert ist, kann er in den Anzeigeeinstellungen verwendet werden
+für Bildfelder. Auf diese Weise kann die Website ansprechende Bilder mit der
+HTML5 _picture_-Tag oder die Verwendung der Attribute _srcset_ und _sizes_ in einem _img_
+Tag, je nachdem, wie der ansprechende Bildstil eingerichtet ist.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 <<structure-fields>>
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
-* https://www.drupal.org/node/1388492[_Drupal.org_ community documentation page "Responsive web design"]
+* https://www.drupal.org/node/1388492[_Drupal.org_ Community-Dokumentationsseite "Reaktionsfähiges Webdesign"]
 
-* https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[_Drupal.org_ community documentation page "Responsive images in Drupal 8"]
+* https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[_Drupal.org_ community documentation page "Responsive images in Drupal 8"]]
 
-* https://www.drupal.org/docs/8/theming-drupal-8/working-with-breakpoints-in-drupal-8[_Drupal.org_ community documentation page "Working with breakpoints in Drupal 8"]
+* https://www.drupal.org/docs/8/theming-drupal-8/working-with-breakpoints-in-drupal-8[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Haltepunkten in Drupal 8"]
 
+* https://chromatichq.com/blog/responsive-images-drupal-8-using-srcset[Blog-Post "Responsive Images in Drupal 8 mit 'srcset'"]
 
-*Attributions*
+*Mitwirkende*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsive
-images in Drupal 8],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborg] aus
+https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsiv
+Bilder in Drupal 8],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

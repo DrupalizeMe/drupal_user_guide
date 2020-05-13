@@ -1,9 +1,9 @@
 [[config-basic]]
 
-=== Editing Basic Site Information
+=== Grundlegende Informationen der Website bearbeiten
 
 [role="summary"]
-How to edit basic site information (site name, slogan, and default time zone).
+So bearbeiten Sie grundlegende Informationen der Website (Name, Slogan und Standardzeitzone).
 
 (((Configuring,site)))
 (((Site name,configuring)))
@@ -21,76 +21,86 @@ How to edit basic site information (site name, slogan, and default time zone).
 (((Time zone setting,configuring)))
 (((First day of week,configuring)))
 
-==== Goal
+===== Zielsetzung
 
-Change basic site information such as _Site name_, _Slogan_,
-_Default time zone_.
+Ändern Sie grundlegende Informationen der Website wie _Name der Website_, _Slogan_ und
+_Standard-Zeitzone_.
 
-==== Was man wissen sollte
+===== Vorausgesetztes Wissen
 
-<<config-overview>>
+<<Config-Übersicht>>>
 
-//==== Site prerequisites
+//====== Standortvoraussetzungen
 
-==== Steps
+===== Arbeitsschritte
 
-===== Configuring the basic site information
+======= Konfigurieren der grundlegenden Informationen der Website
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_) to change the
-_Site name_, _Slogan_, administrative _Email address_, or the _Default front
-page_ path.
+. Navigieren Sie im Menü _Verwaltung_ zum Punkt _Konfiguration_ > _System_ >
+Grundlegende Information der Website_ (_admin/config/system/site-information_) um den
+_Namen der Website_, den _Slogan_, die  administrative _E-Mail-Adresse_ oder den _Pfad zur Startseite_ zu ändern.
 
-. Fill in the available fields as appropriate for your site.
+. Füllen Sie die verfügbaren Felder entsprechend Ihrer Website aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site name|Used to identify the site and displayed in browsers|Anytown Farmers Market
-|Slogan|Usually displayed sitewide|Farm Fresh Food
-|Email address|Used as _From_ address in automated email messages (registrations, password resets, etc)|info@example.com
+|Feldname|Erläuterung|Beispielwert
+|Details zur Website > Name der Website |Dient zur Identifizierung der Website und wird in Browsern angezeigt |Anytown Farmers Market
+|Standortdetails > Slogan | Auf der gesamten Website sichtbar |Farm Fresh Food
+|Details zur Website > E-Mail-Adresse | Wird als _Absenderadresse in automatisierten E-Mail-Nachrichten (Anmeldungen, Passwortanfragen usw. verwendet)|info@example.com
 |================================
 +
 --
-// Site details Abschnitt of admin/config/system/site-information.
-image:images/config-basic-SiteInfo.png["Site Information"]
+// Website-Details im Abschnitt admin/config/system/site-Informationen.
+image:images/config-basic-SiteInfo.png["Website-Informationen"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. Nachdem Sie die Felder bearbeitet haben, klicken Sie auf _Konfiguration speichern_, um Ihre Änderungen auf die Website anzuwenden.
 
-===== Configuring default Regional settings
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and language_ > _Regional settings_
+======= Konfigurieren der regionalen Einstellungen der Website
+
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+_Länderspezifisches und Sprache_ > _Regionale Einstellungen_
 (_admin/config/regional/settings_).
 
-. Select the appropriate country from the _Default country_ select list in the
-_Locale_ Abschnitt, and set which day will be displayed as _First day of week_
-on your site.
-
-. In the _Time zones_ Abschnitt, select the sitewide _Default time zone_ from the
-list and configure user-specific time zones.
+. Füllen Sie das Formular wie folgt aus:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname|Erläuterung|Beispielwert
+|Spracheinstellungen > Standardland| Das primäre Land für Ihre Website|Deutschland
+| Standard-Land > Erster Wochentag| Der Tag, an dem die Woche in den Kalendern beginnt|Montag
+|Zeitzonen > Standardzeitzone| Die primäre Zeitzone für Ihre Website |Amerika > Los Angeles
+|Zeitzonen > Benutzer dürfen ihre Zeitzone selbst einstellen| Ob angemeldete Benutzer eine andere Zeitzone für die Anzeige von Datum und Uhrzeit auf der Website auswählen können | Nicht ausgewählt
+|================================
 +
 --
-// Locale and Time Zones Abschnitte of admin/config/regional/settings.
-image:images/config-basic-TimeZone.png["Time Zones"]
+// Orts- und Zeitzonen-Abschnitte von admin/config/regional/settings.
+image:images/config-basic-TimeZone.png["Zeitzonen"]
 --
 
-. After editing the fields, click
-_Save configuration_ to see the changes applied to the site.
+. Nachdem Sie die Felder bearbeitet haben, klicken Sie auf _Konfiguration speichern_, um die Änderungen zu sehen und auf die Website anzuwenden.
 
-// ==== Expand your understanding
-// ==== Related concepts
+// ===== Vertiefen Sie Ihr Wissen
+// ===== Verwandte Konzepte
 
-==== Additional resources
+===== Videos
 
-https://www.drupal.org/node/1896670[_Drupal.org_ community documentation page "Getting started with Drupal 8 administration"]
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/oDMCQ1cDYOI[title="Grundlegende Website-Informationen bearbeiten"]
+
+===== Zusätzliche Ressourcen
+
+https://www.drupal.org/node/1896670[_Drupal.org_ Community-Dokumentationsseite "Erste Schritte mit der Administration von Drupal 8"]]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Geschrieben und herausgegeben von https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] bei
 https://erdfisch.de[erdfisch],
-and https://www.drupal.org/u/ifrik[Antje Lorch].
+https://www.drupal.org/u/ifrik[Antje Lorch], und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***

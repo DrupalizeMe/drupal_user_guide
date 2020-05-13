@@ -1,9 +1,10 @@
 [[extend-config-versions]]
 
-=== Synchronizing Configuration Versions
+=== Synchronisieren von Konfigurationsversionen
 
 [role="summary"]
-How to synchronize the configuration between a development and live site using the core Configuration Manager module.
+Wie Sie die Konfiguration zwischen einer Entwicklungs- und einer Produktivsite mit
+dem Modul Configuration Manager, das mit dem Kernsystem ausgeliefert wird, austauscht.
 
 (((Configuration,synchronizing between development and live site)))
 (((Development site,synchronizing with live site)))
@@ -11,78 +12,85 @@ How to synchronize the configuration between a development and live site using t
 (((Configuration Manager module,using to synchronize the configuration between a development and live site)))
 (((Module,Configuration Manager)))
 
-==== Goal
+===== Zielsetzung
 
-Synchronize the configuration between a development and live site.
+Synchronisieren Sie die Konfiguration zwischen einer Entwicklungs- und einer Produktiv-Site.
 
-==== Was man wissen sollte
+===== Erforderliche Vorkenntnisse
 
 * <<understanding-data>>
 * <<install-prepare>>
 * <<install-dev-sites>>
 * <<install-dev-making>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-* You must have a development copy of your production site. See
-<<install-dev-making>>.
+* Sie müssen eine Entwicklungskopie Ihrer Produktionsstätte haben. Siehe
+<<installieren-entwickeln>>.
 
-* The core Configuration Manager module must be installed on both the
-development and production sites. See <<config-install>> for instructions on how
-to install core modules.
+* Das Kernmodul Configuration Manager muss sowohl auf dem
+Entwicklungs- und Produktionsstätten. Siehe <<config-install>> für Anweisungen, wie
+um Kernmodule zu installieren.
 
-* You must have changed configuration on either the production or development
-site (the _source site_), and want to synchronize the changes to the other site
-(the _destination site_). As an example, you can develop a new content type,
-fields, and views on your development site, and when it is all working
-correctly, deploy the changes to the live site.
+* Sie müssen die Konfiguration entweder in der Produktion oder in der Entwicklung geändert haben.
+Site (die _Quellsite_), und möchten die Änderungen mit der anderen Site synchronisieren
+(der _Zielort_). Als Beispiel können Sie einen neuen Content-Typ entwickeln,
+Felder und Ansichten auf Ihrer Entwicklungs-Website, und wenn alles funktioniert
+die Änderungen an der Live-Site korrekt anwenden.
 
-* All configuration that should not be synchronized between the source and
-destination sites must be stored in configuration overrides in the
-_settings.php_ file rather than in the database. See <<install-dev-making>>.
+* Alle Konfigurationen, die nicht zwischen der Quelle und
+Zielstandorte müssen in Konfigurationsüberschreibungen in der
+Datei _settings.php_ und nicht in der Datenbank. Siehe <<installiert-dev-making>>.
 
-==== Steps
+===== Schritte
 
-. In the source site, in the _Manage_ administrative menu, navigate to
-_Configuration_ > _Development_ > _Configuration synchronization_ > _Export_
-(_admin/config/development/configuration/full/export_).
+. Navigieren Sie auf der Quell-Site im Verwaltungsmenü _Verwalten_ zu
+_Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Export_
+(_Admin/Konfiguration/Entwicklung/Konfiguration/vollständig/exportieren_).
 
-. Click _Export_. Your site will generate an archive of the full site
-configuration. Save the file on your local computer.
+. Klicken Sie auf _Exportieren_. Ihre Website wird ein Archiv der vollständigen Website erstellen.
+Konfiguration. Speichern Sie die Datei auf Ihrem lokalen Computer.
 
-. In the destination site, in the _Manage_ administrative menu, navigate to
-_Configuration_ > _Development_ > _Configuration synchronization_ > _Import_
+. Navigieren Sie am Zielort im Verwaltungsmenü _Verwalten_ zu
+_Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Importieren_
 (_admin/config/development/configuration/full/import_).
 
-. Browse to find the downloaded configuration archive, and click _Upload_. Your
-configuration archive will be uploaded to the destination site, and you will be
-redirected to the configuration _Synchronize_ page
-(_admin/config/development/configuration_) with a message saying your files were
-uploaded.
+. Suchen Sie nach dem heruntergeladenen Konfigurationsarchiv und klicken Sie auf _Upload_. Ihr
+Konfigurationsarchiv wird auf die Zielseite hochgeladen, und Sie werden
+auf die Konfigurationsseite _Synchronisieren_ umgeleitet
+(_admin/config/development/configuration_) mit einer Nachricht, die besagt, dass Ihre Dateien
+hochgeladen.
 
-. Verify that the differences shown on the page are what you expect. You may see
-configuration items that have been added, deleted, or changed; for changed
-items, you can click _View differences_ to see what the changes are.
+. Überprüfen Sie, ob die auf der Seite angezeigten Unterschiede Ihren Erwartungen entsprechen. Sie sehen möglicherweise
+Konfigurationselemente, die hinzugefügt, gelöscht oder geändert wurden; für geänderte
+Elemente können Sie auf _Unterschiede anzeigen_ klicken, um die Änderungen zu sehen.
 
-. When you are satisfied, click _Import all_ to import the configuration
-changes.
+. Wenn Sie zufrieden sind, klicken Sie auf _Import all_, um die Konfiguration zu importieren.
+Änderungen.
 
-==== Expand your understanding
+===== Erweitern Sie Ihr Verständnis
 
-* If the changes you have made involve only one configuration item (such as one
-view), you can use the single configuration export/import feature to deploy
-the change between sites. See <<extend-deploy>>.
+* Wenn die Änderungen, die Sie vorgenommen haben, nur ein Konfigurationsobjekt betreffen (z. B.
+Ansicht), können Sie die Export-/Import-Funktion für eine einzelne Konfiguration verwenden, um
+den Wechsel zwischen den Standorten. Siehe <<<erweiterter Einsatz>>.
 
-* After the step where you export the full configuration from the source site,
-you might also want to unpack the archive and commit it to a version control
-system, such as Git, to track changes in your site configuration. See
-<<install-tools>>.
+* Nach dem Schritt, in dem Sie die vollständige Konfiguration von der Quell-Site exportieren,
+Sie können das Archiv auch entpacken und an eine Versionskontrolle übergeben.
+System, wie z.B. Git, um Änderungen an Ihrer Website-Konfiguration zu verfolgen. Siehe
+<<<erweitern-git>>.
 
-// ==== Related concepts
+// ===== Verwandte Begriffe
 
-// ==== Additional resources
+===== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/dLUGQk8GKa0[title="Konfigurationsversionen synchronisieren"]]
+
+// ===== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***

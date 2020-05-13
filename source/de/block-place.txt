@@ -1,94 +1,108 @@
 [[block-place]]
 
-=== Placing a Block in a Region
+=== Einen Block in einem Abschnitt platzieren
 
 [role="summary"]
-How to place a block in a region.
+Wie man einen Block in einem Abschnitt platziert.
 
 (((Block,placing in a region)))
 (((Region,placing a block in)))
 
-==== Goal
+==== Zielsetzung
 
-Place the Opening hours and location block in the website's sidebar.
+Platzieren Sie den Block "Öffnungszeiten und Standort" in der Seitenleiste der Website.
 
-==== Was man wissen sollte
+==== Erforderliche Kenntnisse
 
 <<block-concept>>
 
-==== Site prerequisites
+==== Voraussetzungen auf der Website
 
-* The core Bartik theme must be installed and set as default. See
-<<config-theme>>.
+* Das  Theme Bartik, dass mit dem Kernsystem ausgeliefert wird, muss installiert und als Standard-Theme eingestellt sein.
+Siehe: <<config-theme>>.
 
-* The Opening hours and location block must exist. See <<block-create-custom>>.
+* Der Block Öffnungszeiten- und Standort muss vorhanden sein. Siehe <<block-create-custom>>.
 
-==== Steps
+==== Arbeitsschritte
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_
-(_admin/structure/block_). The _Block layout_ page appears, listing the theme's
-regions.
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Struktur_ > _Blocklayout_
+(_admin/structure/block_). Die Seite _Blocklayout_ erscheint, auf dieser wird das Theme
+und dessen Abschnitte angezeigt.
 
-. Ensure that in the secondary tab the core Bartik theme is selected. Block
-placement is defined per theme.
+. Stellen Sie sicher, dass in  der sekundären Registerkarte das Theme Bartik
+ausgewählt ist. Die Platzierung von Blöcken wird für hedes aktivierte Theme gesondert festgelegt.
 
-. Locate the region _Sidebar second_ in the list and click _Place block_ next to
-it. The _Place block_ window appears, listing all the blocks.
+. Suchen Sie den Abschnitt _Zweite Seitenleiste_ in der Liste und klicken Sie nebendran auf _Block platzieren_ .
+Das Fenster _Block platzieren_ erscheint und listet alle verfügbaren Blöcke auf.
 
-. Locate the block Opening hours and location and click _Place block_ next to
-it. The _Configure block_ window appears. Fill in the fields as shown below.
+. Suchen Sie den Block Öffnungszeiten und Standort und klicken Sie auf _Block platzieren_ nebendran.
+Das Fenster _Block konfigurieren_ erscheint. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-| Title | Hours and location
-| Display title | Checked
-| Region | Sidebar second
+|Feldname |Erläuterung |Beispielwert
+|Titel |Titel, der für den Block angezeigt werden soll |Öffnungszeiten und Standort
+|Titel anzeigen |Ob der Titel des Blocks angezeigt wird oder nicht |Aktiviwert = anzeigen Deaktiviert = nicht anzeigen
+|Abschnitt |In welchem Abschnitt des Themes soll der Block angezeigt werden? | Zweite Seitenleiste
 |================================
 +
-You can also hide or display the block on specific pages. In the case of the
-Farmer's market website you do not set any of these configuration options
-because you want to show the block everywhere.
+Sie können den Block auch auf bestimmten Seiten ein- oder ausblenden. Im Fall der
+Wocehnmarkt-Website stellen Sie keine der folgenden Konfigurationsoptionen ein
+weil Sie den Block überall zeigen wollen.
 +
 --
 // Configuration page for placing a custom block in the sidebar.
 image:images/block-place-configure-block.png["Block configuration page",width="100%"]
 --
 
-. Click _Save block_. The _Block layout_ page appears. You can drag blocks to
-change the order in which they will appear.
+. Klicken Sie auf _Block speichern_. Die Seite _Blocklayout_ erscheint. Sie können das Drag handle
+vor Blöcken verwenden, um deren Reihenfolge innerhalb der einzelnen Abschnitte zu ändern. Als
+Alternative zu Drag and Drop können Sie auf den Link _Gewichtung anzeigen_ oben in
+die Tabelle klicken und Blöcken nummerische Gewichtungen zuweisen (Blöcke mit niedrigeren oder negativeren
+Zahlen werden weiter vorne/oben angezeigt).
 
-. Verify that the Opening hours and location block is listed in the _Sidebar
-second_ region, and click _Save blocks_.
+. Überprüfen Sie, ob der Block Öffnungszeiten und Standort in der Seitenleiste_ aufgeführt ist
+ und klicken Sie auf _Blöcke speichern_.
 +
-The block has been placed on the sidebar of all pages that use the core Bartik
-theme.
+Der Block wurde in der Seitenleiste auf allen Seiten platziert,
+für die das Theme Bartik verwendet wird, dass mit dem Kernsystem ausgeliefert wird.
 +
 --
 // About page with placed sidebar block.
 image:images/block-place-sidebar.png["Page with a block placed on the Sidebar second region",width="100%"]
 --
 
-==== Expand your understanding
+===== Vertiefen Sie Ihr Wissen
 
-* Remove the _Powered by Drupal_ block from the _Footer fifth_ region by setting
-the region to _- None -_.
+* Entfernen Sie den Block _Angetrieben durch Drupal_ aus der fünften _Fusszeile_
+Klicken Sie dazu auf _Deaktivieren_ oder _Entfernen_ im Dropdown-Button _Aktionen_. Mit einem Klick auf
+_Deaktivieren_ können Sie den Block später leicht wieder aktivieren und die  selbe
+Konfiguration wiederverwenden. Wenn Sie auf _Löschen_ klicken und den Block erneut verwenden möchten, müssen Sie
+die Schritte in diesem Kapitel erneut durchführen, um den Block wieder in einem Abschnitt platzieren zu können.
+Beachten Sie, dass die Namen der Blöcke, die vom Kernsystem bereitgestellt werden, wie z.B.
+_Angetrieben durch Drupal_ und _Benutzeranmeldung_, auf dieser Seite auf Englisch angezeigt werden. Siehe:
+<<language-concept>> um weitere Informationen zu erhalten.
 
-* Remove the _Tools_ block from the _Sidebar first_ region by setting the
-region to _- None -_. This block is only visible to logged-in users.
+* Entfernen Sie den Block _Werkzeuge_ aus dem Abschnitt _Erste Seitenleiste_. Dieser Block ist nur
+für angemeldete Benutzer sichtbar.
 
-* Place the _User login_ block in a region.
+* Platzieren Sie den Block _Benutzeranmeldung in einem Abschnitt.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
-
-
-//==== Related concepts
-
-//==== Additional resources
+* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, müssen Sie möglicherweise
+den Cache leeren. Siehe: <<<prevent-cache-clear>>.
 
 
-*Attributions*
+//====== Verwandte Konzepte
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+===== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/iWW7Ja5p0hA[title="Einen Block in einer Region platzieren"]
+
+//====== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg]
+und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

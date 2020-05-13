@@ -1,99 +1,107 @@
 [[security-cron]]
 
-=== Configuring Cron Maintenance Tasks
+=== Konfigurieren von Cron-Wartungsaufgaben
 
 [role="summary"]
-How to run cron maintenance tasks using the core Automated Cron module, or by running them from outside the site.
+Wie man Cron-Wartungsaufgaben mit dem zentralen automatisierten Cron-Modul ausführt, oder durch
+sie von außerhalb des Standortes zu betreiben.
 
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
 
-==== Goal
+===== Ziel
 
-Check whether cron maintenance tasks are run regularly, and if not, either
-install the core Automated Cron module or run cron maintenance tasks from
-outside the website.
+Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden, und wenn nicht, entweder
+Installieren Sie das zentrale automatisierte Cron-Modul oder führen Sie Cron-Wartungsaufgaben aus
+außerhalb der Website.
 
-==== Was man wissen sollte
+===== Vorraussetzung Kenntnisse
 
 <<security-cron-concept>>
 
-// ==== Site prerequisites
+// ===== Standortvoraussetzungen
 
-==== Steps
+===== Schritte
 
-. Review the _Status report_ (see <<prevent-status>>) to see when cron
-maintenance tasks were last run.
+. Überprüfen Sie den _Statusbericht_ (siehe <<<Präventionsstatus>>), um zu sehen, wann cron
+Wartungsaufgaben wurden zuletzt ausgeführt.
 +
-If you installed the website using the core Standard installation profile (or
-similar), then cron maintenance tasks might already be running via the
-core Automated Cron module.  By default, these tasks are run about every three
-hours.
+Wenn Sie die Website mit dem Kerninstallationsprofil Standard installiert haben (oder
+ähnlich), dann könnten Cron-Wartungsaufgaben bereits über die
+Kern Automatisiertes Cron-Modul.  Standardmäßig werden diese Aufgaben etwa alle drei
+Stunden.
 
-. Choose whether to run cron maintenance tasks using the core Automated Cron
-module, or by other means. The core Automated Cron module might not be suitable
-for some websites because:
+. Wählen Sie, ob Sie Cron-Wartungsaufgaben mit dem Kern Automated Cron
+Modul oder durch andere Mittel. Das Automated-Cron-Kernmodul ist möglicherweise nicht geeignet
+für einige Websites, weil:
 +
-  * Each time someone accesses a page on the site, the module checks how long it
-  has been since cron maintenance tasks have last run, and then runs them if
-  necessary. If no one visits the website for a long time, cron maintenance
-  tasks will not be run.
-  * Cron maintenance tasks are run after the page has been generated. This means
-  there is less time for the tasks to be run before various server timeouts are
-  reached (for example, PHP execution timeout). If this happens, the logs (see
-  <<prevent-log>>) will show error messages that cron is unable to complete.
-  * There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
-  associated with the core Automated Cron module. This is because one of the web
-  server's processes is occupied (and can't serve other web pages) until the
-  cron maintenance tasks are complete.
+  * Jedes Mal, wenn jemand auf eine Seite auf der Website zugreift, prüft das Modul, wie lange sie
+  ist seit der letzten Ausführung von Cron-Wartungsaufgaben, und führt sie dann aus, wenn
+  notwendig. Wenn über einen längeren Zeitraum niemand die Website besucht, ist eine Cron-Wartung
+  Aufgaben werden nicht ausgeführt.
+  * Cron-Wartungsaufgaben werden ausgeführt, nachdem die Seite generiert wurde. Dies bedeutet
+  es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Server-Timeouts
+  erreicht (z.B. PHP-Ausführungszeitüberschreitung). Wenn dies geschieht, werden die Protokolle (siehe
+  <<<prevent-log>>>) wird Fehlermeldungen anzeigen, die cron nicht abschließen kann.
+  * Es fallen geringe Kosten für https://en.wikipedia.org/wiki/Scalability[Skalierbarkeit] an.
+  in Verbindung mit dem Kernmodul Automated Cron. Dies liegt daran, dass eines der Web
+  Server-Prozesse besetzt ist (und andere Webseiten nicht bedienen kann), bis die
+  cron-Wartungsaufgaben sind abgeschlossen.
 
-. If you want to use the core Automated Cron module, first make sure it is
-installed (it is installed with the core Standard install profile; see
-<<config-install>> if it is not installed).
+. Wenn Sie das Kernmodul Automated Cron verwenden möchten, stellen Sie zunächst sicher, daß es
+installiert (es wird mit dem Kern-Standardinstallationsprofil installiert; siehe
+<<config-install>> wenn es nicht installiert ist).
 +
-Next, configure the module to control how frequently cron maintenance tasks are
-run. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Choose the desired interval in
-the _Cron settings_ Abschnitt, and click _Save configuration_.
+Als Nächstes konfigurieren Sie das Modul so, dass es steuert, wie häufig Cron-Wartungsaufgaben durchgeführt werden
+laufen. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
+_System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie das gewünschte Intervall aus
+das Feld _Run cron every_ unter _Cron-Einstellungen_, und klicken Sie auf _Speichern
+Konfiguration_.
 +
 --
-// Cron configuration page (admin/config/system/cron).
-image:images/security-cron.png["Configure the core Automated Cron module"]
+// Cron-Konfigurationsseite (admin/config/system/cron).
+image:images/security-cron.png["Konfigurieren Sie den Kern des automatisierten Cron-Moduls"]]
 --
 
-. If you want to run cron maintenance tasks from outside the website, uninstall
-the core Automated Cron module (see <<config-uninstall>>). Next, find the
-cron URL. This URL is shown in the _Status report_ (see <<prevent-status>>), and
-in the _Cron_ administration page (see previous step). The URL looks
-like this:
-_http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
+. Wenn Sie Cron-Wartungsaufgaben von außerhalb der Website ausführen wollen, deinstallieren Sie
+das Kernmodul Automated Cron (siehe <<config-uninstall>>). Als nächstes finden Sie das
+cron-URL. Diese URL wird im _Statusbericht_ angezeigt (siehe <<<Prevent-status>>), und
+auf der Verwaltungsseite _Cron_ (siehe vorheriger Schritt). Die URL sieht aus
+wie dieses:
+{\an8}COPY6
 +
-Whenever this URL is visited, cron maintenance tasks will run. Set up one of
-the following schedulers to access this URL regularly:
+Wann immer diese URL besucht wird, werden Cron-Wartungsaufgaben ausgeführt. Richten Sie eine der
+die folgenden Scheduler, um regelmäßig auf diese URL zuzugreifen:
 +
-  * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
+  * https://www.drupal.org/node/23714[Der Cron-Dämon] (Linux, OS X, Solaris,
   BSD)
-  * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
-  * A cron SASS provider (software as a service)
-  * A cron manager provided by your web hosting provider (see the documentation
-  provided by your provider)
+  * https://www.drupal.org/node/31506[Geplante Aufgaben] (Windows)
+  * Ein Cron-SASS-Anbieter (Software as a Service)
+  * Ein Cron-Manager, der von Ihrem Webhosting-Provider zur Verfügung gestellt wird (siehe die Dokumentation
+  bereitgestellt von Ihrem Provider)
 
 
-// ==== Expand your understanding
+// ===== Erweitern Sie Ihr Verständnis
 
-==== Related concepts
+===== Verwandte Konzepte
+
 
 <<security-concept>>
 
-==== Additional resources
+==== Videos
 
-* http://docs.drush.org/en/master/cron/[Drush page "Running Drupal cron tasks from Drush"]
-* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
+
+===== Zusätzliche Ressourcen
+
+* http://docs.drush.org/en/master/cron/[Drush-Seite "Running Drupal cron tasks from Drush"]
+* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Cron einrichten"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
-https://www.advomatic.com/[Advomatic],
+Geschrieben und herausgegeben von https://www.drupal.org/u/dalin[Dave Hansen-Lange] unter
+https://www.advomatic.com/[Advomatisch],
 https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -1,119 +1,125 @@
 [[structure-image-style-create]]
 
-=== Setting Up an Image Style
+=== Einrichten eines Bildstils
 
 [role="summary"]
-How to add an image style to reformat an image.
+Wie man einen Bildstil hinzufügt, um ein Bild neu zu formatieren.
 
 (((Image style,creating)))
 (((Style,image)))
 (((Effect,image)))
 (((Image,resizing)))
 
-==== Goal
+===== Ziel
 
-Add an image style and use it to display images on Vendor pages.
+Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Anbieterseiten anzuzeigen.
 
-==== Was man wissen sollte
+===== Erforderliche Vorkenntnisse
 
 * <<structure-fields>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-* Vendor and Recipe content types must exist. See <<structure-content-type>>.
+* Lieferanten- und Rezept-Inhaltstypen müssen vorhanden sein. Siehe <<Struktur-Inhaltstyp>>.
 
-* Main image fields must exist for both content types. See <<structure-fields>>.
+* Hauptbildfelder müssen für beide Inhaltstypen vorhanden sein. Siehe <<Struktur-Felder>>>.
 
-* Content items must exist for both content types. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+* Inhaltselemente müssen für beide Inhaltstypen vorhanden sein. Siehe
+<<Struktur-Inhaltstyp>>, <<Struktur-Felder>>, und <<Inhalterstellung>>.
 
-==== Steps
+===== Schritte
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Media_ >
-_Image styles_ (_admin/config/media/image-styles_).
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ > _Medien_ >
+_Bildstile_ (_Admin/Konfiguration/Medien/Bildstile_).
 
-. Click _Add image style_.
+. Klicken Sie auf _Bildstil hinzufügen_.
 
-. Enter the name _Extra medium (300x200)_
+. Geben Sie den Namen _Extra Medium (300x200)_ ein.
 
-. Click _Create new style_. The page _Edit style Extra medium
-(300x200)_ appears.
+. Klicken Sie auf _Neuen Stil erstellen_. Die Seite _Bearbeiten Stil Extra Medium
+(300x200)_ erscheint.
 
-. In the _Effect_ table, select _Scale and crop_. Click _Add_.
+. Wählen Sie in der Tabelle _Effekt_ die Option _Skalieren und beschneiden_. Klicken Sie auf _Hinzufügen_.
 
-. Fill in the fields as shown below.
+. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Width | 300
-|Height | 200
+|Feldname | Wert
+|Breite | 300
+|Höhe | 200
 |================================
 
-. Click _Add effect_. The image style is saved with the chosen effects.
+. Klicken Sie auf _Effekt hinzufügen_. Der Bildstil wird mit den gewählten Effekten gespeichert.
 +
 --
-// Image style editing page, with effects added.
-image:images/structure-image-style-create-add-style.png["Add an image style",width="100%"]
+// Seite zur Bearbeitung des Bildstils, mit hinzugefügten Effekten.
+image:images/structure-image-style-create-add-style.png["Einen Bildstil hinzufügen",width="100%"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_).
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhaltstypen_
+(_Administration/Struktur/Arten_).
 
-. Click _Manage display_ in the _Operations_ dropdown for the Vendor content
-type. The _Manage display_ page (_admin/structure/types/manage/vendor/display_)
-appears.
+. Klicken Sie in der Dropdown-Liste _Operationen_ für den Inhalt des Lieferanten auf _Anzeige verwalten_.
+tippen. Die Seite _Anzeige_ verwalten (_Admin/Struktur/Arten/Verwaltung/Lieferant/Anzeige_)
+erscheint.
 
-. Ensure that the secondary tab _Default_ is selected.
+. Stellen Sie sicher, dass das sekundäre Register _Default_ ausgewählt ist.
 
-. Click the cogwheel next to _Main image_ for the configuration options.
+. Klicken Sie auf das Zahnrad für das Feld _Hauptbild_, um die Konfiguration zu öffnen
+Optionen.
 
-. Fill in the fields as shown below.
+. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
-|Image style | Extra medium (300x200)
-|Link image to | Nothing
+|Feldname | Erläuterung | Beispielwert
+|Bildstil | Welcher Bildstil ist zu verwenden | Zusätzliches Medium (300x200)
+|Bild mit | Zu besuchende Seite verknüpfen, wenn Bild angeklickt wird | Nichts
 |================================
 +
 --
-// Main image settings area of Vendor content type.
-image:images/structure-image-style-create-manage-display.png["Change field formatter settings of image field"]
+// Hauptbildeinstellungsbereich des Content-Typs Anbieter.
+image:images/structure-image-style-create-manage-display.png["Feldformatierungseinstellungen des Bildfeldes ändern"]]
 --
 
-. Click _Update_.
+. Klicken Sie auf _Aktualisieren_.
 
-. Click _Save_. The new image style will be used while displaying Vendor
-content.
+. Klicken Sie auf _Speichern_. Der neue Bildstil wird bei der Anzeige von Anbieter verwendet.
+Inhalt.
 
-. Open a Vendor content item and verify that it now shows up with the
-scaled-down image. See <<content-edit>> for information on how to locate an
-existing content item.
+. Öffnen Sie ein Inhaltselement des Anbieters und überprüfen Sie, ob es jetzt mit der
+verkleinertes Bild. Siehe <<<content-edit>> für Informationen über das Auffinden eines
+vorhandenes Inhaltselement.
 
-. Repeat steps 8-15 for the Recipe content type.
+. Wiederholen Sie die Schritte 8-15 für den Inhaltstyp Rezept.
 
-// ==== Expand your understanding
+// ===== Erweitern Sie Ihr Verständnis
 
-==== Related concepts
+===== Verwandte Konzepte
 
-* <<structure-fields>>
-* <<structure-image-styles>>
-* <<structure-image-responsive>>
+* <<Struktur-Felder>>>
+<< Struktur-Bild-Stile>>
+* << Struktur-Bild-Ansprechbar>>
 
-==== Additional resources
+===== Videos
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Einrichten eines Bildstils"]
+
+===== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle] from
-https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in
-Drupal 7 and 8"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg], und
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern] von
+https://www.drupal.org/docs/8/core/modules/image/working-with-images["Arbeiten mit Bildern in
+Drupal 7 und 8"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

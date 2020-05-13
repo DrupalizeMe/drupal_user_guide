@@ -1,9 +1,10 @@
 [[structure-image-styles]]
 
-=== Concept: Image Styles
+=== Konzept: Bild-Stile
 
 [role="summary"]
-Overview of image styles and how they are used to display a single image in several variations.
+Überblick über Bildstile und wie sie verwendet werden, um ein einzelnes Bild anzuzeigen in
+mehrere Variationen.
 
 (((Image style,overview)))
 (((Style,image)))
@@ -12,58 +13,57 @@ Overview of image styles and how they are used to display a single image in seve
 
 
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<structure-fields>>
 
 
-==== What are image styles?
+====== Was sind Bildstile?
+Mit Bildstilen können Sie ein einzelnes Bild hochladen, es aber auf verschiedene Arten anzeigen;
+jede Darstellungsvariante, oder _Bildstil_, ist das Ergebnis der Anwendung eines oder mehrerer
+_Effekte_ auf das Originalbild.
 
-Image styles allow you to upload a single image but display it in several ways;
-each display variation, or _image style_, is the result of applying one or more
-_effects_ to the original image.
+Als Beispiel können Sie ein hochauflösendes Bild mit einem Seitenverhältnis von 4:3 hochladen,
+und zeigen Sie sie verkleinert, quadratisch beschnitten oder schwarz-weiß an (oder eine beliebige
+Kombination dieser Wirkungen). Die Kern-Software bietet einen Weg dazu
+effizient:
 
-As an example, you might upload a high-resolution image with a 4:3 aspect ratio,
-and display it scaled down, square cropped, or black-and-white (or any
-combination of these effects). The core software provides a way to do this
-efficiently:
-
-. Configure an image style with the desired effects on the _Image styles_ page
+. Konfigurieren Sie einen Bildstil mit den gewünschten Effekten auf der Seite _Bildstile_.
 (_admin/config/media/image-styles_).
 
-. The effects will be applied the first time a particular image is requested in
-that style.
+. Die Effekte werden angewendet, wenn ein bestimmtes Bild zum ersten Mal angefordert wird in
+diesen Stil.
 
-. The resulting image is saved.
+. Das resultierende Bild wird gespeichert.
 
-. The next time that same style is requested, the saved image is retrieved
-without the need to recalculate the effects.
+. Wenn derselbe Stil das nächste Mal angefordert wird, wird das gespeicherte Bild abgerufen.
+ohne die Notwendigkeit, die Auswirkungen neu zu berechnen.
 
-The core software provides several effects that you can use to define styles;
-others may be provided by contributed modules.
+Die Kernsoftware bietet mehrere Effekte, die Sie zur Definition von Stilen verwenden können;
+andere können durch beigesteuerte Module bereitgestellt werden.
 
-Visit the _Image styles_ page via the _Manage_ administrative menu, navigate to
-_Configuration_ > _Media_ > _Image styles_ (_admin/config/media/image-styles_)
-to see the image styles that are defined by default.
+Besuchen Sie die Seite _Bildstile_ über das Verwaltungsmenü _Verwaltung_, navigieren Sie zu
+_Konfiguration_ > _Medien_ > _Bildstile_ (_Admin/Konfiguration/Medien/Bildstile_)
+um die Bildstile zu sehen, die standardmäßig definiert sind.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<structure-image-style-create>>
 * <<structure-image-responsive>>
 * <<structure-fields>>
 
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
-https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in
-Drupal 7 and 8"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Red Crackle], von
+https://www.drupal.org/docs/8/core/modules/image/working-with-images["Arbeiten mit Bildern in
+Drupal 7 und 8"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft]

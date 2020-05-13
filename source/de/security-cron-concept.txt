@@ -1,44 +1,44 @@
 [[security-cron-concept]]
 
-=== Concept: Cron
+=== Konzept: Cron
 
 [role="summary"]
-Overview of cron and how it is different from Unix cron.
+Überblick über cron und wie es sich von Unix cron unterscheidet.
 
 (((Cron task,overview)))
 (((Automated Cron module,overview)))
 
-//==== Was man wissen sollte
+//====== Vorkenntnisse
 
-==== What are cron tasks?
+===== Was sind Cron-Aufgaben?
 
-To ensure that your site and its modules continue to function well, a group
-of administrative operations should be run periodically. These operations are
-called _cron_ tasks. Examples of cron tasks are: checking for module and theme
-updates, indexing content for search, or cleaning up temporary files.
+Um sicherzustellen, dass Ihre Website und ihre Module weiterhin gut funktionieren, wird eine Gruppe
+von Verwaltungsvorgängen sollte periodisch durchgeführt werden. Diese Operationen sind
+genannt _cron_ Aufgaben. Beispiele für Cron-Aufgaben sind: Prüfung auf Modul und Thema
+Aktualisierungen, Indexierung von Inhalten für die Suche oder Bereinigung temporärer Dateien.
 
-==== What is the relationship between the site's cron tasks and Unix cron?
+===== Was ist die Beziehung zwischen den Cron-Aufgaben der Site und Unix-Cron?
 
-Linux/Unix-based operating systems have a cron scheduler that can be used to run
-periodic tasks. You can use the server’s cron scheduler to schedule runs of the
-site’s cron tasks. Alternatively, you can use the core Automated Cron module to
-run tasks. You can check the site’s cron tasks' status in the status report.
+Linux/Unix-basierte Betriebssysteme verfügen über einen Cron-Scheduler, mit dem Folgendes ausgeführt werden kann
+periodische Aufgaben. Sie können den Cron-Scheduler des Servers verwenden, um die Ausführung der
+Cron-Aufgaben der Website. Alternativ können Sie das Kernmodul Automated Cron verwenden, um
+Aufgaben ausführen. Sie können den Status der Cron-Aufgaben der Website im Statusbericht überprüfen.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<security-cron>>
 * <<prevent-status>>
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
-https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
+https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Einrichten von cron"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by
-https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Geschrieben und herausgegeben von
+https://www.drupal.org/u/dianalakatos[Diána Lakatos] unter
 https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
-https://www.advomatic.com/[Advomatic],
-and https://www.drupal.org/u/batigolix[Boris Doesborg].
+https://www.drupal.org/u/dalin[Dave Hansen-Lange] unter
+https://www.advomatic.com/[Advomatisch],
+und https://www.drupal.org/u/batigolix[Boris Doesborg].

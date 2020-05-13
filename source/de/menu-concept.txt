@@ -1,9 +1,10 @@
 [[menu-concept]]
 
-=== Concept: Menu
+=== Konzept: Menü
 
 [role="summary"]
-Overview of the menu concept and menus automatically created with the core Standard installation profile.
+Übersicht über das Menükonzept und die mit dem Kern automatisch erstellten Menüs
+Standard-Installationsprofil.
 
 (((Menu,overview)))
 (((Menu,main)))
@@ -16,80 +17,80 @@ Overview of the menu concept and menus automatically created with the core Stand
 (((Footer menu,overview)))
 (((Custom menu,overview)))
 
-// ==== Was man wissen sollte
+// ==== Erforderliche Vorkenntnisse
 
-==== What is a menu?
+===== Was ist ein Menü?
 
-Menus are a collection of links (menu items) used to navigate a website. The
-core Menu UI module provides an interface to control and customize the menu
-system. Menus are primarily displayed as a hierarchical list of links. By
-default, new menu items are placed inside a built-in menu labeled _Main
-navigation_, but administrators can also create custom menus.
+Menüs sind eine Sammlung von Links (Menüpunkten), die zum Navigieren auf einer Website verwendet werden. Die
+Kernmodul der Menü-Benutzeroberfläche bietet eine Schnittstelle zur Steuerung und Anpassung des Menüs
+System. Menüs werden in erster Linie als hierarchische Linkliste angezeigt. Über
+Standardmäßig werden neue Menüpunkte innerhalb eines integrierten Menüs mit der Bezeichnung _Main
+navigation_, aber Administratoren können auch benutzerdefinierte Menüs erstellen.
 
-The core Standard installation profile contains five menus:
+Das Kerninstallationsprofil Standard enthält fünf Menüs:
 
-Main navigation::
-  Links to Abschnitte intended for site visitors. They are usually created by site
-  administrators.
+Hauptnavigation::
+  Links zu Abschnitten, die für Besucher der Website bestimmt sind. Sie werden normalerweise von Site
+  Administratoren.
 
-Administration::
-  Links to administrative tasks. This menu mainly contains links supplied by
-  modules on your site.
+Verwaltung::
+  Links zu administrativen Aufgaben. Dieses Menü enthält hauptsächlich Links, die von
+  Module auf Ihrer Website.
 
-User account menu::
-  Links to tasks associated with the user account such as _My account_ and _Log
-  out_.
+Menü Benutzerkonto::
+  Links zu den mit dem Benutzerkonto verbundenen Aufgaben wie _Mein Konto_ und _Protokoll
+  aus_.
 
-Footer::
-  Links to important pages within the site intended for the footer. They are
-  usually created by site administrators.
+Fußzeile::
+  Links zu wichtigen Seiten innerhalb der Website, die für die Fußzeile bestimmt sind. Sie sind
+  in der Regel von Site-Administratoren erstellt.
 
-Tools::
-  Links to tasks necessary for site visitors. Some modules feature their links
-  here.
+Werkzeuge::
+  Links zu Aufgaben, die für Website-Besucher notwendig sind. Einige Module enthalten ihre Links
+  hier.
 
-You can customize menus in the following ways, using the menu administration
-functionality:
+Über die Menüverwaltung können Sie die Menüs auf folgende Weise anpassen
+Funktionalität:
 
-* Creating new custom menus.
+* Erstellen neuer benutzerdefinierter Menüs.
 
-* Adding new menu items.
+* Hinzufügen neuer Menüpunkte.
 
-* Reordering menu items by setting their "weight" or by dragging them into
-place.
+* Neuordnung von Menüeinträgen durch Einstellen ihres "Gewichts" oder durch Ziehen in
+Ort.
 
-* Renaming menu items.
+* Umbenennen von Menüpunkten.
 
-* Changing the link title (the tooltip that appears when you mouse over a menu
-item).
+* Ändern des Linktitels (die Quickinfo, die angezeigt wird, wenn Sie mit der Maus über ein Menü fahren)
+Artikel).
 
-* Moving a menu item into a different menu by editing its _Parent_ property.
+* Verschieben eines Menüeintrags in ein anderes Menü durch Bearbeiten seiner _Parent_-Eigenschaft.
 
-A menu item will only be shown to a visitor if they have the rights to view the
-page it links to. For example, the admin menu item is not shown to visitors who
-are not logged in.
+Ein Menüeintrag wird einem Besucher nur dann angezeigt, wenn er die Rechte hat, die
+Seite, auf die sie verlinkt. Zum Beispiel wird der Admin-Menüpunkt nicht für Besucher angezeigt, die
+sind nicht eingeloggt.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<menu-link-from-content>>
 
 * <<menu-reorder>>
 
-* To display a menu, you will need to place the block that corresponds to the
-menu in a region of your theme; see <<block-concept>>, <<block-regions>>, and
-<<block-place>>. The core Standard installation profile places all of the menus
-it defines except Administration in regions of the core Bartik theme. The core
-Toolbar module, which is installed by the core Standard installation profile,
-displays the Administration menu; it is also displayed by the contributed Admin
-Toolbar module.
+* Um ein Menü anzuzeigen, müssen Sie den Block platzieren, der dem
+Menü in einer Region Ihres Themas; siehe <<block-concept>>, <<block-regions>>, und
+<<block-place>>. Der Kern Standardinstallationsprofil platziert alle Menüs
+es definiert außer Verwaltung in Regionen des Kernthemas Bartik. Das Kernthema
+Symbolleistenmodul, das durch das Kerninstallationsprofil Standard installiert wird,
+zeigt das Administrationsmenü an; es wird auch vom beigetragenen Admin angezeigt
+Symbolleisten-Modul.
 
 
-//==== Additional resources
+//===== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/ajayvi[Ajay Viswambharan],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Geschrieben und herausgegeben von https://www.drupal.org/u/ajayvi[Ajay Viswambharan],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern],
+und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -1,9 +1,9 @@
 [[views-parts]]
 
-=== Concept: The Parts of a View
+=== Konzept: Die Teile einer Ansicht
 
 [role="summary"]
-Overview of the administrative parts of a view.
+Überblick über die administrativen Teile einer Ansicht.
 
 (((View,parts of)))
 (((Display part of view,overview)))
@@ -21,7 +21,7 @@ Overview of the administrative parts of a view.
 (((View,contextual filters part)))
 (((View,relationships part)))
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<planning-data-types>>
 * <<planning-modular>>
@@ -29,67 +29,68 @@ Overview of the administrative parts of a view.
 * <<content-paths>>
 * <<block-concept>>
 
-==== What are the parts of a view?
+====== Was sind die Teile einer Ansicht?
 
-When you are editing a view in the administrative interface, you will see the
-following parts (or Abschnitte), which allow you to specify what data to output,
-in what order, and in what format:
+Wenn Sie eine Ansicht in der Verwaltungsoberfläche bearbeiten, sehen Sie die
+folgende Teile (oder Abschnitte), mit denen Sie festlegen können, welche Daten ausgegeben werden sollen,
+in welcher Reihenfolge und in welchem Format:
 
-Display::
-  Each view can have one or more displays, each of which produces one type of
-  output. Options for display types include:
-  Page;;
-    Makes output at a particular URL, for the main page content at that URL.
+Anzeige::
+  Jede Ansicht kann eine oder mehrere Anzeigen haben, von denen jede einen Typ von
+  Ausgabe. Zu den Optionen für Anzeigetypen gehören:
+  Seite;;
+    Ausgabe unter einer bestimmten URL, für den Inhalt der Hauptseite unter dieser URL.
   Block;;
-    Makes output in a block, which can be placed on pages.
+    Macht die Ausgabe in einem Block, der auf Seiten platziert werden kann.
   Feed;;
-    Makes an RSS or another type of feed.
-  Attachment;;
-    Makes output that you can attach to another display.
+    Erstellt einen RSS-Feed oder eine andere Art von Feed.
+  Anhang;;
+    Erzeugt eine Ausgabe, die Sie an eine andere Anzeige anhängen können.
 Format::
-  Depending on the display type, you can choose to output your data in a
-  table, grid, HTML list, or another format. Some formats also give you a
-  second choice that lets you output either rendered entities or fields; other
-  formats do not give you this choice (for example, if you use a table format,
-  you must always use fields).
-Fields::
-  Depending on the format choice, you may be able to choose which content fields
-  are output. For example, if you were making a view of recipe content items, in
-  a block display you might show only the recipe names, while in a full page
-  display you might also show an image field because you have more space.
-Filter criteria::
-  Filters limit the data to be output, based on criteria such as whether the
-  content has been published or not, the type of content, or a field value.
-  For instance, to make a view of recipe content items, you would need to filter
-  to the Recipe content type, and to published recipes. Filters can also be
-   _exposed_, which means that users will have a form where they can choose
-  their own filter values. You might use this on a Recipe page to let users
-  filter for recipes with certain ingredients.
-Sort criteria::
-  Defines the order to present the output, which can be based on any content
-  field.
-Contextual filters::
-  Contextual filters are like regular filters, except that the values come from
-  the _context_ of the view display, such as the full URL of the page being
-  displayed, the current date or time, or some other value that can be
-  detected by the view calculation.
-Relationships::
-  Relationships allow you to expand what is displayed in your view, by relating
-  the base content being displayed to other content entities. Relationships are
-  created using fields on the base content that relate it to the other content;
-  one example is that all regular content items have an author field, which
-  references the user account of the person who authored the content. Once you
-  have created a relationship, you can display fields from the referenced
-  entity in the view.
+  Abhängig von der Anzeigeart können Sie wählen, ob Sie Ihre Daten in einem
+  Tabelle, Gitter, HTML-Liste oder ein anderes Format. Einige Formate geben Ihnen auch eine
+  zweite Wahl, mit der Sie entweder gerenderte Entitäten oder Felder ausgeben können; andere
+  Formate geben Ihnen diese Wahl nicht (z.B. wenn Sie ein Tabellenformat verwenden),
+  müssen Sie immer Felder verwenden).
+Felder::
+  Je nach Wahl des Formats können Sie wählen, welche Inhaltsfelder
+  ausgegeben werden. Wenn Sie z.B. eine Sicht auf Rezeptinhaltspositionen gemacht haben, wird in
+  Bei einer Blockanzeige werden möglicherweise nur die Rezeptnamen angezeigt, während sie auf einer ganzen Seite angezeigt werden.
+  anzeigen können Sie möglicherweise auch ein Bildfeld einblenden, weil Sie mehr Platz haben.
+Filterkriterien::
+  Filter schränken die auszugebenden Daten ein, basierend auf Kriterien wie z.B. ob die
+  Inhalt veröffentlicht wurde oder nicht, die Art des Inhalts oder ein Feldwert.
+  Um beispielsweise eine Ansicht von Rezeptinhaltselementen zu erstellen, müssen Sie Folgendes filtern
+  zum Inhaltstyp "Rezept" und zu veröffentlichten Rezepten. Filter können auch sein
+   _belichtet_, was bedeutet, dass die Benutzer ein Formular haben werden, in dem sie wählen können
+  ihre eigenen Filterwerte. Sie könnten dies auf einer Rezeptseite verwenden, damit Benutzer
+  Filter für Rezepte mit bestimmten Zutaten.
+Sortierkriterien::
+  Definiert die Reihenfolge für die Darstellung der Ausgabe, die auf einem beliebigen Inhalt basieren kann
+  Feld.
+Kontextbezogene Filter::
+  Kontextuelle Filter sind wie reguläre Filter, außer dass die Werte aus
+  den _Kontext_ der Anzeige der Ansicht, wie z.B. die vollständige URL der Seite, die
+  angezeigt werden, das aktuelle Datum oder die aktuelle Zeit oder ein anderer Wert, der
+  durch die Ansichtsberechnung erkannt.
+Beziehungen::
+  Mit Hilfe von Beziehungen können Sie die Anzeige in Ihrer Ansicht erweitern, indem Sie
+  der Basisinhalt wird anderen Inhaltsentitäten angezeigt. Beziehungen sind
+  die mit Hilfe von Feldern auf dem Basisinhalt erstellt wurden, die diesen mit dem anderen Inhalt in Beziehung setzen;
+  Ein Beispiel ist, dass alle regulären Inhaltselemente ein Autorenfeld haben, das
+  verweist auf das Benutzerkonto der Person, die den Inhalt verfasst hat. Sobald Sie
+  eine Beziehung angelegt haben, können Sie Felder aus der referenzierten
+  Entität in der Ansicht.
 
-==== Ähnliche Themen
+
+  ===== Verwandte Themen
 
 <<views-create>>
 
 //==== Additional resources
 
 
-*Attributions*
+*Mitwirkende*
 
 Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan]
 and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

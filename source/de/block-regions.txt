@@ -1,9 +1,9 @@
 [[block-regions]]
 
-=== Concept: Regions in a Theme
+=== Konzept: Abschnitte in einem Theme
 
 [role="summary"]
-Overview of regions from a theming perspective.
+Überblick über die Abschnitte (Regionen) aus Sicht eines Designers.
 
 (((Theme,regions in)))
 (((Bartik theme,regions in)))
@@ -31,40 +31,38 @@ Overview of regions from a theming perspective.
 (((Region,secondary menu)))
 (((Region,sidebar)))
 
-==== Was man wissen sollte
+===== Vorraussetzung Wissen
 
 <<understanding-themes>>
 
-==== What is a region?
+===== Was ist ein Abschnitt?
 
-Besides its primary content, a web page contains other content such as site
-branding (site name, slogan, and logo), navigation aids (menus, links, and
-icons), formatted text, and images. Each theme provides a set of named regions,
-such as _Header_, _Content_, and _Sidebar_, where site builders may choose to
-place their content.
+Neben ihrem primären Inhalt enthält eine Webseite andere Inhalte wie z.B.
+Branding (Name, Slogan und Logo der Website), Navigationshilfen (Menüs, Links und
+Symbole), formatierten Text und Bilder. Jedes Theme bietet eine Reihe von benannten Abschnitten,
+wie z.B. _Kopfzeile_, _Inhalt_ und _Seitenleiste_. Diese Abschnitte können Webdesigner verwenden, um Inhalte zu platzieren.
 
-The available regions depend on the theme design. Only the Content region,
-which contains the primary content, is required; others are optional.  The
-core Bartik theme provides the eighteen regions highlighted in the following
-image.
+Die verfügbaren Abschnitte hängen von der Gestaltung des verwendeten Themes ab. Nur der Abschnitt Inhalt,
+der den primären Inhalt enthält, ist erforderlich. Andere Abschnitte sind optional.
+Das mit dem Kernsystem ausgelieferte Theme Bartik stellt die in der folgenden Abbildung hervorgehobenen Abschnitte zur Verfügung.
 
 // Bartik theme region preview at admin/structure/block/demo/bartik,
 // after configuring the theme for the Farmers Market scenario.
 image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<block-concept>>
 * <<planning-data-types>>
 * <<block-place>>
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
 * https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Geschrieben und herausgegeben von https://www.drupal.org/u/jfmacdonald[John MacDonald],
+und https://www.drupal.org/u/michaellenahan[Michael Lenahan] bei
 https://erdfisch.de[erdfisch].

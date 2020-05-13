@@ -1,6 +1,6 @@
 [[prevent-status]]
 
-=== Concept: Status Report
+=== Konzept: Statusbericht
 
 [role="summary"]
 Overview of the status report and where to find it on a site.
@@ -16,31 +16,33 @@ Overview of the status report and where to find it on a site.
 (((Performance,status report)))
 (((Troubleshooting,status report)))
 
-//==== Was man wissen sollte
+//==== Erforderliche Vorkenntnisse
 
-==== What is a Status Report?
+===== Was ist ein Statusbericht?
 
-The status report is a short overview of your site's parameters as well as any
-problems detected with your installation. It may be useful to copy and paste
-this information into support requests filed on _Drupal.org's_ support forums
-and project issue queues or when asking for help on other channels.
+Der Statusbericht ist ein kurzer Überblick über die Parameter Ihrer Website sowie über
+Probleme, die mit Ihrer Installation festgestellt wurden. Es kann nützlich sein, Folgendes zu kopieren und einzufügen
+diese Informationen in Support-Anfragen, die in den Support-Foren von _Drupal.org eingereicht wurden
+und Projektproblem-Warteschlangen oder wenn auf anderen Kanälen um Hilfe gebeten wird.
 
-You can find the status report in the _Manage_ administrative menu by
-navigating to _Reports_ > _Status report_ (_admin/reports/status_).
+Sie finden den Statusbericht im Verwaltungsmenü _Verwalten_ unter
+weiter zu _Berichte_ > _Statusbericht_ (_admin/reports/status_).
 
 // Status report (admin/reports/status).
 image:images/prevent-status.png["Status report of a basic site",width="100%"]
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 <<thoughts-support>>
 
-//==== Additional resources
+===== Zusätzliche Ressourcen
 
+Wenn Sie in Ihrem Statusbericht einen Fehler über Einstellungen für vertrauenswürdige Hosts haben, siehe
+https://www.drupal.org/docs/8/install/trusted-host-settings[_Drupal.org_ Community-Dokumentationsseite "Einstellungen für vertrauenswürdige Hosts"].
 
-*Attributions*
+*Angaben*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-from https://www.drupal.org/docs/7/monitoring-a-site/reports["Reports"]
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+Adaptiert von https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+von https://www.drupal.org/docs/7/monitoring-a-site/reports["Berichte"]
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft]

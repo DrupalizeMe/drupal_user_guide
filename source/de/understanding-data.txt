@@ -1,8 +1,8 @@
 [[understanding-data]]
-=== Concept: Types of Data
+=== Konzept: Arten von Daten
 
 [role="summary"]
-Overview of common types of data used in a site.
+Überblick über gängige Datentypen, die in einer Website verwendet werden.
 
 (((Data type,overview)))
 (((Data type,configuration)))
@@ -15,32 +15,32 @@ Overview of common types of data used in a site.
 (((Session,as a type of data)))
 
 
-//==== Was man wissen sollte
+//==== Erforderliche Vorkenntnisse
 
-==== What are the types of data?
+===== Welche Arten von Daten gibt es?
 
-The data and information on your site is divided up into four types, which are
-edited, translated, and stored differently. These four types are:
+Die Daten und Informationen auf Ihrer Website sind in vier Typen unterteilt, die sich wie folgt gliedern
+anders bearbeitet, übersetzt und gespeichert. Diese vier Typen sind:
 
-Content::
-  Information (text, images, etc.) meant to be displayed to site visitors. This
-  type of information tends to be relatively permanent, but can normally be
-  edited.
-Configuration::
-  Information about your site that is not content, but is also relatively
-  permanent, and is used to define how your site behaves or is displayed. It is
-  sometimes also displayed to site visitors, but tends to be smaller pieces of
-  text (like field labels, the name of your site, etc.) rather than larger
-  chunks that you'd normally think of as Content.
-State::
-  Information of a temporary nature about the current state of your
-  site, such as the time when cron jobs were last run.
-Session::
-  Information about individual site visitors' interactions with the site, such
-  as whether they are logged in and their cookies. This is technically a
-  subtype of State information, since it is also temporary.
+Inhalt::
+  Informationen (Text, Bilder usw.), die den Besuchern der Website angezeigt werden sollen. Diese
+  Die Art der Information ist in der Regel relativ dauerhaft, kann aber normalerweise
+  bearbeitet.
+Konfiguration::
+  Informationen über Ihre Website, die nicht inhaltlich, sondern auch relativ
+  permanent, und wird verwendet, um zu definieren, wie sich Ihre Website verhält oder angezeigt wird. Sie ist
+  manchmal auch den Website-Besuchern angezeigt, aber in der Regel sind es kleinere Stücke von
+  Text (wie Feldbezeichner, der Name Ihrer Website usw.) und nicht größer
+  Brocken, die man normalerweise als Inhalt bezeichnen würde.
+Zustand::
+  Informationen vorübergehender Art über den aktuellen Zustand Ihrer
+  Website, wie z.B. die Zeit, zu der die Cron-Jobs zuletzt ausgeführt wurden.
+Sitzung::
+  Informationen über die Interaktionen einzelner Website-Besucher mit der Website, wie z.B.
+  ob sie eingeloggt sind und ihre Cookies. Dies ist technisch eine
+  Unterart der staatlichen Information, da sie ebenfalls vorübergehend ist.
 
-==== Ähnliche Themen
+  ===== Verwandte Themen
 
 * <<planning-data-types>>
 * <<security-cron-concept>>
@@ -50,9 +50,9 @@ Session::
 //==== Additional resources
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+Adaptiert von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
+https://www.drupal.org/node/2120523["Überblick über die Konfiguration (vs. andere Arten von Informationen)"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft]

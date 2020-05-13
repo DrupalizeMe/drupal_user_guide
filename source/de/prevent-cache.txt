@@ -1,9 +1,9 @@
 [[prevent-cache]]
 
-=== Concept: Cache
+=== Konzept: Cache
 
 [role="summary"]
-Overview of the cache and the site data that can be cached.
+Übersicht über den Cache und die Site-Daten, die zwischengespeichert werden können.
 
 (((Cache,overview)))
 (((Page cache,overview)))
@@ -12,74 +12,75 @@ Overview of the cache and the site data that can be cached.
 (((Internal Page Cache module,overview)))
 (((Dynamic Page Cache module,overview)))
 
-==== Was man wissen sollte
-
+===== Vorrausgesetztes Wissen
 <<understanding-drupal>>
 
-==== What is the page cache?
+===== Was ist der Seiten-Cache?
 
-The software that runs your site, on each page request, must perform
-calculations and retrieve data from the database, in order to compose the page
-that is sent to the web browser or other application that is accessing the
-site. These calculations take time, which can mean that your page load time is
-longer than would be desirable.
+Die Software, die Ihre Website ausführt, muss bei jeder Seitenanforderung Folgendes ausführen
+Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite zusammenzustellen
+die an den Web-Browser oder eine andere Anwendung gesendet wird, die auf die
+Standort. Diese Berechnungen benötigen Zeit, was bedeuten kann, dass die Ladezeit Ihrer Seite
+länger als wünschenswert wäre.
 
-There are several ways that page load time can be sped up, including installing
-software on the server. The system includes the core Internal Page Cache and
-Dynamic Page Cache modules, which do not require any additional server
-software; they use a _database cache_ mechanism to speed up your site. The way
-these modules work is that during page calculations, intermediate results and
-the final page output are stored in a special database area (known as the
-_cache_). Then the next time a compatible request is made, intermediate or final
-results, as appropriate, can be retrieved and used rather than redoing the
-entire calculation. In addition, when content or data that affects a particular
-calculation is updated, the affected cached data is removed from the cache,
-forcing that part of the calculation to be redone the next time it is needed.
+Es gibt verschiedene Möglichkeiten, die Seitenladezeit zu beschleunigen, einschließlich der Installation von
+Software auf dem Server. Das System umfasst den zentralen internen Seiten-Cache und
+Dynamische Seiten-Cache-Module, die keinen zusätzlichen Server benötigen
+Software; sie benutzen einen _Datenbank-Cache_-Mechanismus, um Ihre Website zu beschleunigen. Der Weg
+Diese Module funktionieren so, dass bei Seitenberechnungen, Zwischenergebnissen und
+Die endgültigen Seitenausgaben werden in einem speziellen Datenbankbereich gespeichert (bekannt als
+_cache_). Wenn dann das nächste Mal ein kompatibler Antrag gestellt wird, Zwischen- oder Endantrag
+Ergebnisse können gegebenenfalls abgerufen und verwendet werden, anstatt die
+gesamte Berechnung. Darüber hinaus, wenn Inhalte oder Daten, die eine bestimmte
+Berechnung aktualisiert wird, werden die betroffenen zwischengespeicherten Daten aus dem Cache entfernt,
+erzwingen, dass dieser Teil der Berechnung beim nächsten Mal, wenn er benötigt wird, erneut durchgeführt wird.
 
-These caching modules normally work reasonably well, and offer at least some
-speed-up for most sites. However, sometimes the page cache can have problems,
-such as:
+Diese Cache-Module funktionieren normalerweise recht gut und bieten zumindest einige
+Beschleunigung für die meisten Standorte. Manchmal kann der Seiten-Cache jedoch Probleme haben,
+wie zum Beispiel:
 
-* Corrupted data in the cache, leading to garbled or incorrect page output
+* Beschädigte Daten im Cache, was zu einer verstümmelten oder falschen Seitenausgabe führt
 
-* Old data remaining in the cache too long, leading to outdated page output
+* Alte Daten bleiben zu lange im Cache, was zu veralteter Seitenausgabe führt
 
-* Insufficient caching, leading to slow page loads
+* Unzureichender Cache, was zu langsamen Seitenladevorgängen führt
 
-==== What other data is cached?
+===== Welche anderen Daten werden zwischengespeichert?
 
-Independent of whether the two page cache modules are installed on your site,
-the software that your site runs will still cache the output of many internal
-calculations. The core systems that cache data include:
+Unabhängig davon, ob die beiden Seiten-Cache-Module auf Ihrer Site installiert sind,
+die Software, die auf Ihrer Website läuft, wird immer noch die Ausgabe vieler interner
+Berechnungen. Zu den Kernsystemen, die Daten zwischenspeichern, gehören
 
-* The theme system caches information in the database cache about which template
-files are used to render various types of data. If you are developing a new
-theme and add a new template file, you'll need to clear this cache to have
-your theme file recognized.
+* Das Theme-System speichert im Datenbank-Cache Informationen darüber, welche Vorlage
+Dateien werden zur Darstellung verschiedener Arten von Daten verwendet. Wenn Sie eine neue
+Thema und eine neue Vorlagendatei hinzufügen, müssen Sie diesen Cache löschen, um
+Ihre Themendatei erkannt.
 
-* CSS and JavaScript files can optionally be optimized and compressed (depending
-on your site settings). If so, the compressed versions are stored in the file
-system so that they don't have to be re-optimized too often. If you are
-developing a module or theme, you may need to either turn off or clear this
-file cache to have changes to CSS or JavaScript files be recognized.
+* CSS- und JavaScript-Dateien können optional optimiert und komprimiert werden (abhängig
+auf Ihren Website-Einstellungen). Wenn ja, werden die komprimierten Versionen in der Datei
+System, damit sie nicht zu oft neu optimiert werden müssen. Wenn Sie
+bei der Entwicklung eines Moduls oder Themas müssen Sie dies möglicherweise entweder ausschalten oder löschen
+Datei-Cache, damit Änderungen an CSS- oder JavaScript-Dateien erkannt werden können.
 
-* The system locates certain low-level PHP functions and classes, such as
-_hook implementations_ and _plugin classes_, from your installed modules and
-stores information about which module has which functionality. If you are
-developing a new module or adding features to an existing module, you may need
-to clear this cache to have your new features be recognized.
+* Das System lokalisiert bestimmte Low-Level-PHP-Funktionen und -Klassen, wie z.B.
+_Implementierungen_ und _Plugin-Klassen_ von Ihren installierten Modulen abhaken und
+speichert Informationen darüber, welches Modul welche Funktionalität hat. Wenn Sie
+Wenn Sie ein neues Modul entwickeln oder einem bestehenden Modul Funktionen hinzufügen möchten, benötigen Sie möglicherweise
+um diesen Cache zu leeren, damit Ihre neuen Funktionen erkannt werden können.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
-If you have problems with your site, the first thing to try to fix it is
-usually to clear the cache. See <<prevent-cache-clear>> for more information.
+Wenn Sie Probleme mit Ihrer Website haben, sollten Sie als erstes versuchen, sie zu beheben
+normalerweise, um den Cache zu leeren. Siehe <<<prevent-cache-clear>> für weitere Informationen.
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
-Learn about additional caching and performance optimization methods in the
-https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[_Drupal.org_ community documentation page "Caching to improve performance"].
+Erfahren Sie mehr über zusätzliche Caching- und Leistungsoptimierungsmethoden in der
+https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[_Drupal.org_ Community-Dokumentationsseite "Caching zur Leistungsverbesserung"].
 
 
-*Attributions*
+*Angaben*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***

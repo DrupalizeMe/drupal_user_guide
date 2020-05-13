@@ -1,9 +1,10 @@
 [[understanding-drupal]]
 
-=== Concept: Drupal as a Content Management System
+=== Konzept: Drupal als Content-Management-System
 
 [role="summary"]
-Overview of Drupal and the reasons to choose it as a reliable Content Management System (CMS).
+Überblick über Drupal und die Gründe, sich für Drupal als zuverlässiges Content Management zu entscheiden
+System (CMS).
 
 (((CMS (Content Management System),overview)))
 (((Content Management System (CMS),overview)))
@@ -12,109 +13,112 @@ Overview of Drupal and the reasons to choose it as a reliable Content Management
 (((Drupal core,overview)))
 (((Drupal.org website,downloading modules and themes from)))
 
-//==== Was man wissen sollte
+//==== Erforderliche Vorkenntnisse
 
-==== What is a Content Management System?
+===== Was ist ein Content Management System?
 
-A content management system (CMS) is a software tool that lets users add,
-publish, edit, or remove content from a website, using a web browser on a
-smartphone, tablet, or desktop computer. Typically, the CMS software is written
-in a scripting language, and its scripts run on a computer where a database and
-a web server are installed. The content and settings for the website are usually
-stored in a database, and for each page request that comes to the web server,
-the scripts combine information from the database and _assets_ (JavaScript
-files, CSS files, image files, etc. that are part of the CMS or have been
-uploaded) to build the pages of the website.
+Ein Content-Management-System (CMS) ist ein Software-Werkzeug, mit dem die Benutzer etwas hinzufügen können,
+Inhalte einer Website zu veröffentlichen, zu bearbeiten oder von einer Website zu entfernen, mit einem Webbrowser auf einer
+Smartphone, Tablet oder Desktop-Computer. Typischerweise wird die CMS-Software wie folgt geschrieben
+in einer Skriptsprache, und ihre Skripte laufen auf einem Computer, auf dem eine Datenbank und
+ein Webserver installiert sind. Die Inhalte und Einstellungen für die Website sind in der Regel
+in einer Datenbank gespeichert, und zwar für jede Seitenanforderung, die an den Webserver kommt,
+die Skripte kombinieren Informationen aus der Datenbank und _Assets_ (JavaScript
+Dateien, CSS-Dateien, Bilddateien usw., die Teil des CMS sind oder
+hochgeladen), um die Seiten der Website zu erstellen.
 
-The combination of the operating system that the CMS runs on, the scripting
-language it is written in, the database it stores its information in, and the
-web server that runs the scripts to retrieve information and return it to the
-site visitor's web browser is known as the _stack_ that the CMS runs on; the
-commonly used combination of the Linux operating system, Apache web server,
-MySQL database, and PHP scripting language is known as the _LAMP stack_.
+Die Kombination aus dem Betriebssystem, auf dem das CMS läuft, dem Skripting
+Sprache, in der es geschrieben ist, die Datenbank, in der es seine Informationen speichert, und die
+Webserver, der die Skripte ausführt, um Informationen abzurufen und sie an den
+Der Webbrowser des Website-Besuchers ist bekannt als der _Stapel_, auf dem das CMS läuft; der
+häufig verwendete Kombination des Linux-Betriebssystems, Apache Webserver,
+MySQL-Datenbank, und die Skriptsprache PHP ist als _LAMP-Stack_ bekannt.
 
-==== What is Drupal?
+===== Was ist Drupal?
 
-Drupal is a flexible CMS based on the LAMP stack, with a modular design allowing
-features to be added and removed by installing and uninstalling _modules_, and
-allowing the entire look and feel of the website to be changed by installing and
-uninstalling _themes_. The base Drupal download, known as Drupal Core, contains
-the PHP scripts needed to run the basic CMS functionality, several optional
-modules and themes, and many JavaScript, CSS, and image assets. Many additional
-modules and themes can be downloaded from the https://www.drupal.org[_Drupal.org_]
-website.
+Drupal ist ein flexibles CMS, das auf dem LAMP-Stack basiert und modular aufgebaut ist.
+Funktionen, die durch die Installation und Deinstallation von _Modulen_ hinzugefügt und entfernt werden können, und
+die Möglichkeit, das gesamte Erscheinungsbild der Website durch Installation und
+Deinstallation von _Themen_. Der Basis-Drupal-Download, bekannt als Drupal Core, enthält
+die PHP-Skripte, die zur Ausführung der grundlegenden CMS-Funktionalität benötigt werden, mehrere optional
+Module und Themen sowie viele JavaScript-, CSS- und Bildmaterialien. Viele zusätzliche
+Module und Themen können von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden.
+Website.
 
-Drupal can also run on other technology stacks:
+Drupal kann auch auf anderen Technologiestacks laufen:
 
-* The operating system can be Windows or Mac OS instead of Linux.
+* Das Betriebssystem kann Windows oder Mac OS anstelle von Linux sein.
 
-* The web server can be Nginx or IIS instead of Apache.
+* Der Webserver kann Nginx oder IIS anstelle von Apache sein.
 
-* The database can be PostgreSQL or SQLite instead of MySQL, or a
-MySQL-compatible replacement such as MariaDB or Percona.
+* Die Datenbank kann PostgreSQL oder SQLite anstelle von MySQL sein, oder ein
+MySQL-kompatibler Ersatz wie MariaDB oder Percona.
 
-Other operating systems, web servers, and databases can also be made to work;
-however, the scripts that the software uses are written in PHP, so that cannot
-be changed.
+Es können auch andere Betriebssysteme, Webserver und Datenbanken zum Laufen gebracht werden;
+die Skripte, die die Software verwendet, sind jedoch in PHP geschrieben, so dass
+geändert werden.
 
-==== What are the reasons for using Drupal?
+===== Was sind die Gründe für die Verwendung von Drupal?
 
-When building a website, you have your choice of using one of the many existing
-CMS packages and hosted services, developing your own CMS, or building the site
-without using a CMS. Here are some of the reasons you might choose to use
+Wenn Sie eine Website erstellen, haben Sie die Wahl, eine der vielen vorhandenen
+CMS-Pakete und gehostete Dienste, Entwicklung Ihres eigenen CMS oder Aufbau der Website
+ohne Verwendung eines CMS. Hier sind einige der Gründe, warum Sie sich für die Verwendung eines CMS entscheiden könnten
 Drupal:
 
-* Building a small, simple site with static HTML pages is not difficult, and you
-can get a simple site up very quickly. Setting up a site in a CMS generally
-requires more time initially, but brings you the benefits of on-line editing
-(easier for less experienced content maintainers), uniformity (harder to
-maintain using static HTML for larger sites), and the possibility of more
-complex features requiring a database.
+* Der Aufbau einer kleinen, einfachen Website mit statischen HTML-Seiten ist nicht schwierig, und Sie
+kann eine einfache Website sehr schnell eingerichtet werden. Einrichten einer Website in einem CMS allgemein
+erfordert anfangs mehr Zeit, bringt Ihnen aber die Vorteile der Online-Bearbeitung
+(einfacher für weniger erfahrene Inhaltspfleger), Einheitlichkeit (schwieriger zu
+die Verwendung von statischem HTML für größere Sites beibehalten), und die Möglichkeit von mehr
+komplexe Funktionen, die eine Datenbank erfordern.
 
-* Some CMS software is special-purpose; for instance, there are packages and
-hosted services that you can use to build a blog or a club membership
-website. Drupal, in contrast, is a general-purpose CMS. If you are building a
-special-purpose site, you might choose to use a special-purpose CMS; however, if
-your site falls even slightly outside the intended purpose, you will probably be
-better off using a general-purpose CMS rather than trying to adapt a
-special-purpose CMS.
+* Einige CMS-Software ist für spezielle Zwecke gedacht; so gibt es zum Beispiel Pakete und
+gehostete Dienste, die Sie zum Aufbau eines Blogs oder einer Club-Mitgliedschaft nutzen können
+Website. Drupal hingegen ist ein CMS für allgemeine Zwecke. Wenn Sie eine
+Spezial-Website, können Sie sich für die Verwendung eines Spezial-CMS entscheiden; allerdings, wenn
+Wenn Ihre Website auch nur geringfügig über den beabsichtigten Zweck hinausgeht, werden Sie wahrscheinlich
+Es ist besser, ein Allzweck-CMS zu verwenden, als zu versuchen, ein
+CMS für besondere Zwecke.
 
-* Building your own CMS-type software can seem attractive. However, using a
-general-purpose CMS like Drupal as a starting point is usually a better idea,
-because the basic CMS functionality (such as user accounts and content
-management) has thousands of developer hours behind it, including many years of
-user testing, bug fixing, and security hardening.
+* Der Aufbau einer eigenen Software vom Typ CMS kann attraktiv erscheinen. Allerdings kann die Verwendung eines
+Ein Allzweck-CMS wie Drupal als Ausgangspunkt ist in der Regel eine bessere Idee,
+weil die grundlegende CMS-Funktionalität (wie Benutzerkonten und Inhalte
+Management) hat Tausende von Entwicklungsstunden hinter sich, darunter viele Jahre
+Benutzertests, Fehlerbehebung und Sicherheitshärtung.
 
-* Some CMS software packages are expensive to purchase a license for. Some are
-free or have a free version, but have restrictive licenses that do not allow you
-to make modifications and extensions. You might prefer to use a package (like
-Drupal) that has a less restrictive software license, and is developed by a
-world-wide community. See <<understanding-project>> for more on this Thema.
+* Für einige CMS-Softwarepakete ist der Erwerb einer Lizenz teuer. Einige sind
+frei oder haben eine freie Version, haben aber restriktive Lizenzen, die es Ihnen nicht erlauben
+um Änderungen und Erweiterungen vorzunehmen. Sie könnten es vorziehen, ein Paket (wie
+Drupal), das eine weniger restriktive Software-Lizenz hat und von einem
+weltweite Gemeinschaft. Siehe <<Verständnis-Projekt>> für mehr zu diesem Thema.
 
-==== Ähnliche Themen
+===== Verwandte Themen
+
+*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***
+
 
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-distributions>>
 * <<understanding-project>>
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/8/understanding-drupal-8/overview[The Drupal overview]
+* https://www.drupal.org/docs/8/understanding-drupal-8/overview[Die Drupal-Übersicht]
 
-* https://www.drupal.org/about/faq[_Drupal.org_ page "FAQ" (Frequently Asked Questions)]
+* https://www.drupal.org/about/faq[_Drupal.org_ Seite "FAQ" (Häufig gestellte Fragen)]
 
-* https://www.drupal.org/case-studies[_Drupal.org_ page "Case Studies"]
+* https://www.drupal.org/case-studies[_Drupal.org_ Seite "Fallstudien"]]
 
-* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia page "Content management systems"]
+* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia-Seite "Inhaltsverwaltungssysteme"]
 
-* https://en.wikipedia.org/wiki/Modular_design[Wikipedia page "Modular design"]
+* https://en.wikipedia.org/wiki/Modular_design[Wikipedia-Seite "Modularer Aufbau"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/kvantomme[Kristof van Tomme]
-at https://pronovix.com/[Pronovix],
+Geschrieben und herausgegeben von https://www.drupal.org/u/kvantomme[Kristof van Tomme]
+unter https://pronovix.com/[Pronovix],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan]
-at https://erdfisch.de[erdfisch].
+und https://www.drupal.org/u/michaellenahan[Michael Lenahan]
+unter https://erdfisch.de[erdfisch].

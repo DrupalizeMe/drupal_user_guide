@@ -1,8 +1,8 @@
 [[user-permissions]]
-=== Assigning Permissions to a Role
+=== Zuweisen von Berechtigungen zu einer Rolle
 
 [role="summary"]
-How to assign a permission to a role.
+So weisen Sie einer Rolle eine Berechtigung zu.
 
 (((Permission,changing)))
 (((Permission,granting)))
@@ -10,44 +10,44 @@ How to assign a permission to a role.
 (((Role,changing permission)))
 (((Security,assigning permission)))
 
-==== Goal
+===== Ziel
 
-Change the permissions for the Vendor role so that users can create, edit,
-and delete Recipe and Vendor content, format the content, and contact each
-other.
+Ändern Sie die Berechtigungen für die Rolle Lieferant, so dass Benutzer anlegen und bearbeiten können,
+und löschen Sie den Inhalt von Rezept und Anbieter, formatieren Sie den Inhalt und nehmen Sie Kontakt mit jedem
+andere.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Die Rolle des Lieferanten muss auf Ihrer Website vorhanden sein. Siehe <<<Benutzer-neue-Rolle>>.
 
-==== Steps
+===== Schritte
 
-. In the _Manage_ administrative menu, navigate to _People_ > _Roles_
-(_admin/people/roles_). The _Roles_ page appears.
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Personen_ > _Rollen_
+(_admin/people/roles_). Die Seite _Rollen_ erscheint.
 
-. Click _Edit permissions_ in the dropdown for the Vendor
-role. The _Edit role_ page appears where you can see all the available
-actions for the website such as, for example, _Post comments_ or _Administer
-blocks_. The available permissions depend on the modules that are installed in
-the site. Note: Some permissions may have security implications. Be cautious
-while assigning permissions to roles.
+. Klicken Sie in der Dropdown-Liste für den Lieferanten auf _Berechtigungen bearbeiten_.
+Rolle. Die Seite _Rolle bearbeiten_ erscheint, auf der Sie alle verfügbaren
+Aktionen für die Website wie z.B. _Kommentare abgeben_ oder _Verwalten
+Blöcke_. Die verfügbaren Berechtigungen hängen von den Modulen ab, die in
+die Website. Hinweis: Einige Berechtigungen können Auswirkungen auf die Sicherheit haben. Vorsichtig sein
+beim Zuweisen von Berechtigungen zu Rollen.
 
-. Check the boxes for the following permissions, listed by module:
+. Markieren Sie die Kontrollkästchen für die folgenden Berechtigungen, aufgelistet nach Modul:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Module | Permission
-| Contact | Use users' personal contact forms
-| Filter | Use the Restricted HTML text format
-| Node | Recipe: Create new content
-| Node | Recipe: Edit own content
-| Node | Recipe: Delete own content
-| Node | Vendor: Edit own content
-| Quick Edit | Access in-place editing
+| Modul | Erlaubnis
+| Kontakt | Verwenden Sie die persönlichen Kontaktformulare der Benutzer
+| Filter | Verwendung des eingeschränkten HTML-Textformats
+| Knoten | Rezept: Neuen Inhalt erstellen
+| Knoten | Rezept: Eigenen Inhalt bearbeiten
+| Knoten | Rezept: Eigenen Inhalt löschen
+| Knoten | Lieferant: Eigenen Inhalt bearbeiten
+| Schnellbearbeitung | Zugriff auf die Vor-Ort-Bearbeitung
 |================================
 +
 --
@@ -55,18 +55,18 @@ while assigning permissions to roles.
 image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
 --
 
-. Click _Save permissions_. You will get a message saying your changes have been
-saved.
+. Klicken Sie auf _Berechtigungen speichern_. Sie erhalten eine Meldung, dass Ihre Änderungen
+gespeichert.
 +
 --
 // Confirmation message after updating permissions.
 image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
 --
 
-==== Expand your understanding
+===== Erweitern Sie Ihr Verständnis
 
-* Log in as one of the new users you created in <<user-new-user>>. Verify
-whether you have the correct permissions.
+* Melden Sie sich als einer der neuen Benutzer an, die Sie unter <<user-new-user>> angelegt haben. Überprüfen Sie
+ob Sie die richtigen Berechtigungen haben.
 
 * <<user-roles>>
 
@@ -74,17 +74,22 @@ whether you have the correct permissions.
 
 <<user-admin-account>>
 
-==== Additional resources
+===== Videos
 
-https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/IlVh9f4BHVw[title="Zuweisen von Berechtigungen zu einer Rolle"]
+
+===== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/7/managing-users[_Drupal.org_ Community-Dokumentationsseite "Benutzer verwalten"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
+Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
 https://www.drupal.org/u/bemery987[Brian Emery],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
-https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Red Crackle], von
+https://www.drupal.org/node/1803614["Benutzerrollen"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

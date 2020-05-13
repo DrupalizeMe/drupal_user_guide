@@ -1,58 +1,58 @@
 [[structure-view-modes]]
 
-=== Concept: View Modes and Formatters
+=== Konzept: Ansichtsmodi und Anzeigeformate
 
 [role="summary"]
-Overview of view modes and field formatters.
+Überblick über Ansichtsmodi und Anzeigeformate.
 
 (((View mode, overview)))
 (((Entity view mode, overview)))
 (((Formatter, overview)))
 (((Field formatter, overview)))
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<structure-content-type>>
 
-==== What is a View mode?
+===== Was ist ein Ansichtsmodus?
 
-How an entity (such as content, a user or a comment) is displayed, depends on
-the context in which it is shown. This context is known as a _view
-mode_. Examples of view modes are:
+Wie eine Entität (z. B. ein Inhalt, ein Benutzer oder ein Kommentar) angezeigt wird, hängt ab von
+den Kontext, in dem sie gezeigt wird. Dieser Kontext wird als _view bezeichnet.
+Modus_. Beispiele für Ansichtsmodi sind:
 
-* a full page of the content with all the field values
-* a teaser of the content with a thumbnail image and a _Read more_ link
-* a full user profile with a zoomable portrait photo
-* a user avatar with username and a link to the profile
+* eine ganze Seite des Inhalts mit allen Feldwerten
+* einen Teaser des Inhalts mit einem Miniaturbild und einem _Weiterlesen_-Link
+* ein vollständiges Benutzerprofil mit einem zoombaren Porträtfoto
+* ein Benutzer-Avatar mit Benutzername und einem Link zum Profil
 
-Every view mode can be configured through the administration pages. To see the
-configuration options for the view modes of the Recipe content type, navigate
-in the _Manage_ administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_) and click _Manage display_ from the dropdown
-button. In each view mode, all fields can be hidden or displayed, and if they
-are displayed, you can choose and configure the field formatter.
+Jeder Ansichtsmodus kann über die Verwaltungsseiten konfiguriert werden. Zur Anzeige der
+Konfigurationsoptionen für die Ansichtsmodi des Inhaltstyps "Rezept", Navigieren
+im Verwaltungsmenü _Verwaltung_ auf _Struktur_ > _Inhaltstypen_
+(_admin/structure/types_) und klicken Sie in der Dropdown-Liste auf _Anzeige verwalten_.
+Schaltfläche. In jedem Ansichtsmodus können alle Felder ein- oder ausgeblendet werden, und wenn sie
+angezeigt werden, können Sie den Feldformatierer auswählen und konfigurieren.
 
-==== What is a field formatter?
+===== Was ist ein Anzeigeformat?
 
-A field formatter is a setting for displaying the field values. For example,
-long text fields can be displayed trimmed or full-length, and taxonomy term
-reference fields can be displayed in plain text or linked to the taxonomy term
-page. Consult the _Manage display_ page to see the field formatters for the
-fields of the Recipe content type.
+Ein Anzeigeformat ist eine Einstellung für die Anzeige von Feldwerten. Zum Beispiel,
+Langtextfelder können beschnitten oder in voller Länge angezeigt werden, und der Begriff der Taxonomie
+Referenzfelder können im Klartext angezeigt oder mit dem Taxonomiebegriff verknüpft werden
+Seite. Auf der Seite _Anzeige verwalten_ finden Sie die Anzeigeformate für die
+Felder des Inhaltstyps Rezept.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<structure-content-type>>
 * <<structure-content-display>>
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
 https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/node/1577752["View modes"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborg] aus
+https://www.drupal.org/node/1577752["Ansichtsmodi"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

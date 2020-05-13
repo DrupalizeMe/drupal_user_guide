@@ -1,8 +1,8 @@
 [[content-in-place-edit]]
-=== Editing with the In-Place Editor
+=== Inhalte im Direktbearbeitungsmodus bearbeiten
 
 [role="summary"]
-How to edit content with the in-place editor.
+Wie Sie Inhalte im Direktbearbeitungsmodus bearbeiten.
 
 (((Editing content)))
 (((Content,editing)))
@@ -10,79 +10,82 @@ How to edit content with the in-place editor.
 (((Quick editor)))
 (((Full editor)))
 
-==== Goal
+===== Zielsetzung
 
-Use the in-place editor to add information to the About page without opening
-the full editor page.
+Verwenden Sie den integrierten Direktbearbeitungsmodus, um Informationen zur Info-Seite hinzuzufügen,
+ohne deren vollständiges Bearbeitungsformular zu verwenden.
 
-==== Was man wissen sollte
+===== Erforderliche Vorkenntnisse
 
 * <<planning-data-types>>
 * <<content-create>>
 * <<content-edit>>
 * <<config-overview>>
 
-==== Site prerequisites
 
-The About page you want to edit must exist. See <<content-create>>.
+===== Anforderungen an die Website
 
-==== Steps
+Die Info-Seite, die Sie bearbeiten möchten, muss vorhanden sein. Siehe <<content-create>>.
 
-Navigate to the About page to edit content with the in-place editor. If the
-page has not yet been added to a
-navigation menu, you can find and open it by following these steps:
+===== Arbeitsschritte
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+Navigieren Sie zur Seite Info, um den Inhalt mittels Direktbearbeitungsmodus zu bearbeiten. Wenn Sie die Seite noch nicht zu einem
+Navigationsmenü Hinzugefügt wurde, finden und öffnen Sie den Inhalt, indem Sie folgende Schritte ausführen:
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use _Type_, _Title_, or other filters to locate the content item.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ (_admin/contet_).
 
-. Find the About page and click it.
+. Wenn der Inhalt, den Sie bearbeiten möchten, kürzlich aktualisiert oder erstellt wurde, wird er
+Am Anfang der Liste auf der Seite Inhalt angezeigt. Falls der Inhalt dort nicht zu finden ist, können Sie
+die Filterfunktion verwenden und nach _Inhaltstyp_, _Titel_ und weiteren Kriterien Filtern, um den gewünschten Inhalt zu finden.
 
-Once the content you want to edit is being viewed in your browser, follow these
-steps to use the quick editor:
+. Suchen Sie die Seite Info und klicken Sie auf den Link zur Seite in der Liste der Inhalte.
+
+Sobald der Inhalt, den Sie bearbeiten möchten, in Ihrem Browser angezeigt wird,
+gehen Sie wie folgt vor, um den Direktbearbeitungsmodus zu verwenden:
 
 
-. Find the Abschnitt of the page that displays the content you want to edit, and
-turn on quick editing mode using the _Quick edit_ contextual link (see
-<<config-overview>> for instructions on how to access contextual links). You
-will see each editable field on this content item outlined in blue; also,
-a hovering dialog box will appear.
+. Suchen Sie den Abschnitt der Seite, der den Inhalt anzeigt, den Sie bearbeiten möchten, und
+aktivieren Sie den Direktbearbeitungsmodus über den kontextlink _Direktbearbeitungsmodus_ aktivieren (siehe
+<<config-overview>> um Anweisungen zum Zugriff auf Kontexlinks zu erhalten). Jedes
+Feld, dass in diesem Inhalt direkt bearbeitet werden kann, wird blau umrandet dargestellt. Außerdem wird ein hervorgehobenes Dialogfeld angezeigt.
 +
 --
-// Screen shot of About page with Quick Edit turned on for the node.
-image:images/content-in-place-edit-hover-box.png["Quick edit mode",width="100%"]
+// Screenshot der Seite Info mit eingeschalteter Schnellbearbeitung für den Knoten.
+image:images/content-in-place-edit-hover-box.png["Schnellbearbeitungsmodus",width="100%"]
 --
 
-. Click the _Body_ text area to begin editing. The _Body_ field
-supports a rich text editor. The editing toolbar will be displayed in a
-hovering dialog box.
+. Klicken Sie auf den Bereich _Textkörper_, um mit dessen Bearbeitung zu beginnen. Das Feld _Textkörper_
+unterstützt die Verwendung eines Rich-Text-Editors. Die Werkzeugleiste wird in einem
+hervorgehobenen Dialogfenster angezeigt.
 
-. Add some information about City Market. A _Save_ button will appear in the
-hovering dialog box, and the field outline will change color.
+. Fügen Sie einige Informationen über den Wochenmarkt hinzu. Ein _Speichern_-Button erscheint im
+hervorgehobenen Dialogfeld, und der Umriss des Feldes ändert seine Farbe.
 +
 --
-// Screenshot of About page with Quick Edit turned on for the node area, after clicking the Body field and changing text in the box.
-image:images/content-in-place-edit-save-box.png["Quick edit mode after editing",width="100%"]
+// Screenshot der Seite About mit eingeschalteter Schnellbearbeitung für den Knotenbereich, nachdem auf das Feld Body geklickt und der Text in der Box geändert wurde.
+image:images/content-in-place-edit-save-box.png["Schnellbearbeitungsmodus nach der Bearbeitung",width="100%"]
 --
 
-. If you are satisfied with your edits, click _Save_ in the hovering dialog
-box. If not, click "x" to discard your edits, and confirm. Either way, quick
-editing mode will be turned off.
+. Wenn Sie mit Ihrer Inhaltsüberarbeitung zufrieden sind, klicken Sie im hervorgehobenen Dialog auf _Speichern_.
+ Wenn kein Button erscheint, klicken Sie auf „x“, um die vorgenommenen Änderungen zu verwerfen, und bestätigen Sie den Vorgang. So oder so.
+ Der Direktbearbeitungsmodus wird verlasen.
 
-==== Expand your understanding
+===== Vertiefen Sie Ihr Wissen
 
-Try using the full editor on the same content (see <<content-edit>>) and note
-that there is much more information that can be edited that is not available in
-the quick editor.
+Versuchen Sie, das vollständige Bearbeitungsformular zur Bearbeitung desselben  Inhalts zu verwenden (siehe <<content-edit>>) und beachten Sie
+dass es im vollständigen Bearbeitungsformular noch wesentlich mehr Informationen gibt, als die Informationen, die mittels Direktbearbeitungsmodus bearbeitet werden können.
 
-// ==== Related concepts
+// ===== Verwandte Themen
 
-// ==== Additional resources
+===== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/6A6kbceIKKw[title="Bearbeitung mit dem In-Place-Editor"]]
+
+// ===== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/davidlee55[David Lee] and
+Geschrieben und herausgegeben von https://www.drupal.org/u/davidlee55[David Lee] und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -1,9 +1,9 @@
 [[install-requirements]]
 
-=== Concept: Server Requirements
+=== Konzept: Server-Anforderungen
 
 [role="summary"]
-Overview of server requirements for installing and running the core software.
+Überblick über die Server-Anforderungen für die Installation und den Betrieb der Kern-Software.
 
 (((Installation requirements,overview)))
 (((Installation requirements,disk space)))
@@ -15,7 +15,6 @@ Overview of server requirements for installing and running the core software.
 (((Disk space,installation requirements)))
 (((Web server,installation requirements)))
 (((Apache web server,version requirements)))
-(((Hiawatha web server,version requirements)))
 (((Nginx web server,version requirements)))
 (((Microsoft IIS web server,version requirements)))
 (((Database,installation requirements)))
@@ -24,68 +23,86 @@ Overview of server requirements for installing and running the core software.
 (((SQLight database,version requirements)))
 (((PHP programming language,version requirements)))
 
-// ==== Was man wissen sollte
+// ==== Erforderliche Vorkenntnisse
 
-==== What are the requirements for running the core software?
+===== Was sind die Voraussetzungen für den Betrieb der Kern-Software?
 
-===== Disk space
+======= Plattenplatz
 
-A minimum installation requires 15 MB. 60 MB is needed for a website with many
-contributed modules and themes installed. Keep in mind you need much more for
-the database, files uploaded by the users, media, backups, and other files.
+Die Gesamtmenge des für Ihre Website benötigten Speicherplatzes ist kein fester Betrag, da
+hängt von Ihrer Website ab. Die Basisdateien für die Kern-Software nehmen etwa 100 MB ein.
+auf dem Webserver. Sie werden mehr Platz benötigen, wenn Sie zusätzliche Module installieren oder
+Themen, und Sie benötigen auch Platz für Medien, Backups und andere Dateien, die
+von und hochgeladen auf Ihre Website. Die Datenbank verwendet auch Plattenplatz, obwohl diese
+befindet sich typischerweise nicht im gleichen Gebiet (und in einigen Fällen nicht einmal auf dem gleichen
+Server), wie er von den Standortdateien verwendet wird.
 
-===== Web server
+======== PHP
 
-Apache (Recommended)::
-  Apache is the most commonly used web server. The core software will work on
-  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache
-  mod_rewrite module installed and enabled. The Apache VirtualHost configuration
-  must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
-  to be used.
+PHP 7.2 oder höher. PHP muss mit einer Mindestspeichergröße von 64MB eingerichtet sein; wenn Sie
+mehrere Module auf Ihrer Website ausführen oder speicherintensive PHP-basierte
+Kommandozeilen-Tools (wie Composer), wesentlich mehr Speicher als das sein mag
+benötigt.
+
+Bestimmte PHP-Erweiterungen sind ebenfalls erforderlich; die genaue Liste der erforderlichen PHP
+Erweiterungen hängt davon ab, wie Sie die Kern-Software installieren und welche Module Sie
+auf Ihrer Website verwenden. Im Allgemeinen haben die Hosting-Service-Provider alle
+die PHP-Erweiterungen, die Sie benötigen werden. Wenn Sie Ihre Website selbst hosten oder betreiben
+auf Ihrem lokalen Computer, erhalten Sie während der Installation gegebenenfalls Fehlermeldungen
+die erforderlichen PHP-Erweiterungen fehlen und sollten diese installieren können und
+weiter.
+
+======== Web-Server
+
+Apache (empfohlen)::
+  Apache ist der am häufigsten verwendete Webserver. Die Kern-Software arbeitet auf
+  Apache 2.x gehostet auf UNIX/Linux, OS X oder Windows, die über den Apache
+  mod_rewrite Modul installiert und aktiviert. Die Apache-VirtualHost-Konfiguration
+  muss die Direktive _AllowOverride All_ enthalten, um die Datei _.htaccess_ zu erlauben
+  verwendet werden.
+PHP Lokaler Server::
+  Sie können vorübergehend eine lokale Demo-Site auf Ihrem Computer nur mit PHP betreiben,
+  ohne Installation von Webserver-Software.
 Nginx::
-  Nginx is a commonly used web server that focuses on high concurrency,
-  performance and low memory usage. The core software will work on Nginx 1.1 or
-  greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module
-  must be installed and enabled.
-Hiawatha::
-  Hiawatha is a web server with a strong focus on security. It also aims at
-  being easy to use and lightweight. Research performed by independent
-  researchers proves that Hiawatha offers a performance comparable to other web
-  servers under normal conditions, but much better while under attack. URL
-  Toolkit must be installed and configured to rewrite URLs.
+  Nginx ist ein häufig verwendeter Webserver, der sich auf hohe Gleichzeitigkeit konzentriert,
+  Leistung und geringer Speicherverbrauch. Die Kern-Software funktioniert auf Nginx 1.1 oder
+  größer, die auf UNIX/Linux, OS X oder Windows gehostet werden. Das ngx_http_rewrite_Modul
+  muss installiert und aktiviert sein.
 Microsoft IIS::
-  Microsoft IIS is a web server and set of feature extension modules for use
-  with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
-  7 if PHP is configured correctly. Because clean URLs are required, you may
-  need to use a third party product. For IIS 7, you can use the Microsoft URL
-  Rewrite module or a third party solution.
+  Microsoft IIS ist ein Webserver und ein Satz von Funktionserweiterungsmodulen zur Verwendung
+  mit Microsoft Windows. Die Kernsoftware arbeitet mit IIS 5, IIS 6 oder IIS
+  7, wenn PHP korrekt konfiguriert ist. Da saubere URLs erforderlich sind, können Sie
+  ein Produkt eines Drittanbieters verwenden müssen. Für IIS 7 können Sie die Microsoft-URL
+  Rewrite-Modul oder eine Lösung eines Drittanbieters.
 
-===== Database
+======== Datenbank
 
-Use one of the following databases:
+Verwenden Sie eine der folgenden Datenbanken:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
-InnoDB-compatible primary storage engine
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) oder höher mit einer
+InnoDB-kompatible Primärspeicher-Engine
 
-* PostgreSQL - 9.1.2 or higher
+* PostgreSQL - 9.1.2 oder höher
 
-* SQLite - 3.4.2 or higher
+* SQLite - 3.4.2 oder höher. Temporäre lokale Demosites verwenden SQLite, das
+wird als Teil von PHP verteilt und erfordert keine Installation einer separaten Datenbank
+Software.
 
-===== PHP
+//====== Verwandte Themen
 
-PHP 5.5.9 or higher.
+===== Zusätzliche Ressourcen
 
-//==== Ähnliche Themen
-
-==== Additional resources
-
-https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ community documentation page "System requirements"]
+* https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ Community-Dokumentationsseite "Systemanforderungen"]
+* https://secure.php.net/manual/en/configuration.php[PHP-Laufzeitkonfiguration (PHP-Speicherlimit und andere Einstellungen)]
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] and
-https://www.drupal.org/u/bemery987[Brian Emery] from
-https://www.drupal.org/docs/8/system-requirements["System requirements"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Bearbeitet von https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
+https://www.drupal.org/u/bemery987[Brian Emery], und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
+https://www.drupal.org/docs/8/system-requirements["Systemvoraussetzungen"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+
+*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***

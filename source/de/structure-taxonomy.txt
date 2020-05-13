@@ -1,9 +1,9 @@
 [[structure-taxonomy]]
 
-=== Concept: Taxonomy
+=== Konzept: Taxonomie
 
 [role="summary"]
-Overview of taxonomy and how it can be used to categorize content in a website.
+Überblick über die Taxonomie und wie sie zur Kategorisierung von Inhalten in einer Website verwendet werden kann.
 
 (((Taxonomy,overview)))
 (((Term (taxonomy), overview)))
@@ -11,66 +11,67 @@ Overview of taxonomy and how it can be used to categorize content in a website.
 (((Term (taxonomy),fixed list)))
 (((Vocabulary,overview)))
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<planning-data-types>>
 * <<structure-reference-fields>>
 
 ==== What is Taxonomy?
 
-_Taxonomy_ is used to classify website content. One common example of taxonomy
-is the tags used to classify or categorize posts in a blog website; the farmers
-market website could use an ingredients taxonomy to classify recipes.
-Individual taxonomy items are known as _terms_ (the blog tags or recipe
-ingredients in these examples); and a set of terms is known as a _vocabulary_
-(the set of all blog post tags, or the set of all recipe ingredients in these
-examples). Technically, taxonomy terms are an entity type and the entity
-subtypes are the vocabularies. Like other entities, taxonomy terms can have
-fields attached; for instance, you could set up an image field to contain an
-icon for each term.
+_Taxonomie_ wird zur Klassifizierung von Website-Inhalten verwendet. Ein gängiges Beispiel einer Taxonomie
+sind die Tags, die verwendet werden, um Beiträge auf einer Blog-Website zu klassifizieren oder zu kategorisieren; die Bauern
+Markt-Website könnte eine Zutatentaxonomie verwenden, um Rezepte zu klassifizieren.
+Einzelne Elemente der Taxonomie sind als _Terms_ bekannt (die Blog-Tags oder das Rezept
+Inhaltsstoffe in diesen Beispielen); und eine Reihe von Begriffen ist als _Vokabular_ bekannt
+(der Satz aller Blog-Post-Tags oder der Satz aller Rezept-Zutaten in diesen
+Beispiele). Technisch gesehen sind Taxonomiebegriffe ein Entitätstyp und die Entität
+Untertypen sind die Vokabulare. Wie andere Entitäten können Taxonomiebegriffe
+Felder angehängt; zum Beispiel könnten Sie ein Bildfeld so einrichten, dass es eine
+Symbol für jeden Begriff.
 
-An individual vocabulary can organize its terms in a hierarchy, or it could be
-flat. For example, blog tags normally have a flat structure, while a recipe
-ingredients vocabulary could be hierarchical (for example, tomatoes could be a
-sub-term of vegetables, and under tomatoes, you could have green and red
-tomatoes).
+Ein individuelles Vokabular kann seine Begriffe in einer Hierarchie organisieren, oder es könnte
+flach. Beispielsweise haben Blog-Tags normalerweise eine flache Struktur, während ein Rezept
+Das Zutatenvokabular könnte hierarchisch sein (z.B. könnten Tomaten ein
+Unterbegriff von Gemüse, und unter Tomaten könnte man grün und rot haben
+Tomaten).
 
-Taxonomy terms are normally attached as reference fields to other content
-entities, which is how you can use them to classify content. When you set up a
-taxonomy reference field, you can let users enter terms in two ways:
+Taxonomiebegriffe werden normalerweise als Referenzfelder an andere Inhalte angehängt
+Entitäten, so können Sie sie zur Klassifizierung von Inhalten verwenden. Wenn Sie eine
+Taxonomiereferenzfeld können Sie Benutzer Begriffe auf zwei Arten eingeben lassen:
 
-Free tagging::
-  New terms can be created right on the content editing form.
-Fixed list of terms::
-  The list of terms is curated and managed outside the content editing form, and
-  users can only choose from the existing list when editing content.
+Freies Tagging::
+  Neue Begriffe können direkt auf dem Inhaltsbearbeitungsformular angelegt werden.
+Feste Liste von Begriffen::
+  Die Liste der Begriffe wird außerhalb des Inhaltsbearbeitungsformulars kuratiert und verwaltet, und
+  Benutzer können beim Bearbeiten von Inhalten nur aus der vorhandenen Liste wählen.
 
-Taxonomy reference fields can be added to any entity, such as user accounts,
-custom blocks, or regular content items. If you use them to classify regular
-content items, your site will automatically be set up with
-taxonomy listing pages for each term; each of these pages lists all of the
-content items that are classified with that term. For example, if you created
-several recipes that all had carrots as an ingredient, you might see something
-like this on the Carrots taxonomy listing page:
+Taxonomiereferenzfelder können zu jeder Entität, wie z.B. Benutzerkonten, hinzugefügt werden,
+benutzerdefinierte Blöcke oder reguläre Inhaltselemente. Wenn Sie sie zur Klassifizierung von regulären
+Inhaltselementen wird Ihre Website automatisch mit
+Taxonomie-Listenseiten für jeden Begriff; jede dieser Seiten listet alle
+Inhaltselemente, die mit diesem Begriff klassifiziert sind. Wenn Sie zum Beispiel
+mehrere Rezepte, die alle Karotten als Zutat hatten, sehen Sie vielleicht etwas
+wie hier auf der Seite mit der Auflistung der Karotten-Taxonomie:
+
 
 // Carrots taxonomy page after adding Recipe content items.
 image:images/structure-taxonomy_listingPage_carrots.png["Taxonomy listing page - Carrots"]
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<structure-taxonomy-setup>>.
-* The listing pages are views, which are covered in <<views-chapter>>.
+* Die Auflistungsseiten sind Ansichten, die in <<views-chapter>>.
 
 // ==== Additional resources
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
+Adaptiert und herausgegeben von https://www.drupal.org/u/surendramohan[Surendra Mohan],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle] from
-https://www.drupal.org/docs/7/organizing-content-with-taxonomies/organizing-content-with-taxonomy["Organizing content with taxonomies"]
-and https://www.drupal.org/node/774892["About taxonomies"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern] von
+https://www.drupal.org/docs/7/organizing-content-with-taxonomies/organizing-content-with-taxonomy["Inhalte mit Taxonomien organisieren"]
+und https://www.drupal.org/node/774892["Über Taxonomien"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

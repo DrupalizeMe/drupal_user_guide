@@ -1,56 +1,79 @@
 [[prevent-cache-clear]]
 
-=== Clearing the Cache
+=== Leeren des Cache
 
 [role="summary"]
-How to clear the cache using Drush or the user interface.
+So löschen Sie den Cache mit Drush oder über die Benutzeroberfläche.
 
 (((Cache,clearing)))
 (((Cache,rebuilding)))
 
-==== Goal
+===== Ziel
 
-Clear or rebuild your site's internal caches to ensure they are up-to-date with
-the most recent data, using the user interface or Drush.
+Löschen oder erneuern Sie die internen Caches Ihrer Website, um sicherzustellen, dass sie auf dem neuesten Stand sind
+die aktuellsten Daten über die Benutzeroberfläche oder Drush.
 
-==== Was man wissen sollte
+===== Vorraussetzung Kenntnisse
 
 * <<prevent-cache>>
 * <<install-tools>>
 
-==== Site prerequisites
+===== Standort-Voraussetzungen
 
-If you want to use Drush to clear the cache, Drush must be installed. See
+Wenn Sie Drush zum Löschen des Caches verwenden möchten, muss Drush installiert sein. Siehe
 <<install-tools>>.
 
-==== Steps
+===== Schritte
 
-You can use the administrative interface or Drush to clear the cache.
+Sie können die administrative Schnittstelle oder Drush verwenden, um den Cache zu löschen. Sie können
+Verwenden Sie auch das Skript "Rebuild" oder Drush, um einen vollständigeren Cache-Neubau durchzuführen.
 
-===== Using the administrative interface
+======== Verwendung der administrativen Schnittstelle zum Löschen des Caches
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Performance_ (_admin/config/development/performance_).
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
+_Entwicklung_ > _Leistung_ (_Admin/Konfiguration/Entwicklung/Leistung_). Wenn Sie
+nicht auf diese Seite in der Verwaltungsschnittstelle zugreifen können, verwenden Sie eine der anderen
+Methoden zum Löschen oder Neuaufbau des Cache.
 
-. Click _Clear all caches_.
+. Klicken Sie auf _Alle Caches löschen_.
 
-. A message saying the cache has been cleared appears at the top of
-the page.
+. Eine Meldung, dass der Cache gelöscht wurde, erscheint oben in
+die Seite.
 
-===== Using Drush
+. Wenn dies nicht das Problem löst, das dazu geführt hat, dass Sie die
+Cache, versuchen Sie stattdessen einen Neuaufbau.
 
-You can use one of two commands:
+======== Mit dem Skript rebuild
 
-* Use the command `drush cache-rebuild` to clear and rebuild all cached data
-for a site. After running this command, you will see the output message "Cache
-rebuild complete."
-
-* Use the command `drush cc` to see a list of individual caches and then
-choose the specific cache you would like to clear. Running this command should
-produce output like the following:
+. Öffnen Sie _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Klartext
+Herausgeber. Fügen Sie diese Zeile an das Ende der Datei an und speichern Sie sie:
 +
 ----
-> drush cc
+$settings['rebuild_access'] = WAHR;
+----
+
+. Besuchen Sie _http://www.example.com/core/rebuild.php_ in Ihrem Browser (wobei
+_www.example.com_ ist die URL Ihrer Website). Nach einer kurzen Pause sollten Sie
+auf die Startseite Ihrer Website umgeleitet, und der Cache sollte neu aufgebaut werden.
+
+. Öffnen Sie _settings.php_ (_/sites/default/settings.php_) in einem Texteditor. Suchen Sie die
+Zeile, die Sie mit _$settings['rebuild_access']_ hinzugefügt haben, entfernen Sie diese Zeile und speichern
+die Datei.
+
+======= Mit Drush den Cache neu aufbauen oder löschen
+
+Sie können einen von zwei Befehlen verwenden:
+
+* Verwenden Sie den Befehl `drush cache:rebuild`, um alle gecachten Daten zu löschen und neu aufzubauen.
+für einen Standort. Nachdem Sie diesen Befehl ausgeführt haben, sehen Sie die Ausgabemeldung "Cache
+Wiederaufbau abgeschlossen".
+
+* Verwenden Sie den Befehl `drush cache:clear`, um eine Liste der einzelnen Caches zu sehen und
+wählen Sie dann den spezifischen Cache, den Sie löschen möchten. Ausführen dieses Befehls
+sollte eine Ausgabe wie die folgende erzeugen:
++
+----
+> drush cache:clear
 Enter a number to choose which cache to clear.
  [0]  :  Cancel
  [1]  :  drush
@@ -63,26 +86,30 @@ Enter a number to choose which cache to clear.
  [8]  :  render
  [9]  :  views
 ----
-Choose a cache to clear by entering the number associated with that cache. Press
-"Enter" to continue.
+Wählen Sie einen zu löschenden Cache aus, indem Sie die mit diesem Cache verbundene Nummer eingeben. Drücken Sie
+"Enter" um fortzufahren.
 
 
-//==== Expand your understanding
+//====== Erweitern Sie Ihr Verständnis
 
 
-//==== Related concepts
+//====== Verwandte Konzepte
+
+===== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Clearing the Cache"]
+
+===== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ Community-Dokumentationsseite "Löschen oder Neuaufbau des Drupal-Caches"]
 
 
-==== Additional resources
+*Mitwirkende*
 
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ community documentation page "Clearing or rebuilding Drupal's cache"]
-
-
-*Attributions*
-
-Adapted and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
-and https://www.drupal.org/u/jerseycheese[Jack Haas] from
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Clearing or
-rebuilding Drupal's cache"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adaptiert und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+und https://www.drupal.org/u/jerseycheese[Jack Haas] von
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Clearing oder
+Drupal's Cache neu aufbauen"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

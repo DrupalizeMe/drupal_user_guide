@@ -1,58 +1,58 @@
 [[structure-widgets]]
 
-=== Concept: Forms and Widgets
+=== Konzept: Formulare und Steuerelemente
 
 [role="summary"]
-Overview of forms and widgets.
+Überblick über Formulare und Steuerelemente.
 
 (((Content editing form,overview)))
 (((Widget,overview)))
 (((Field,overview)))
 (((Form,overview)))
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<planning-data-types>>
 
-==== What are forms and widgets?
+===== Was sind Formen und Steuerelemente?
 
-The content management system software that your site is running allows
-administrators to edit content and configure settings online, using various web
-_forms_. In particular, _content editing forms_ are used to edit your site's
-content, and they are configurable by administrators; settings configuration
-forms are provided by modules and cannot themselves be configured.
+Die Content-Management-System-Software, die auf Ihrer Website läuft, ermöglicht
+Administratoren, Inhalte zu bearbeiten und Einstellungen online zu konfigurieren, unter Verwendung verschiedener Web
+_Formen_. Insbesondere _Inhaltsbearbeitungsformulare_ werden verwendet, um die Inhalte Ihrer Website zu bearbeiten.
+Inhalt, und sie sind von Administratoren konfigurierbar; Konfiguration der Einstellungen
+Formulare werden von Modulen bereitgestellt und können selbst nicht konfiguriert werden.
 
-The data in your site's content is stored in one or more fields that are
-attached to the content type and/or sub-type. When you configure the content
-editing form for each content sub-type, you can:
+Die Daten im Inhalt Ihrer Website werden in einem oder mehreren Feldern gespeichert, die
+die an den Inhaltstyp und/oder Untertyp angehängt sind. Wenn Sie den Inhalt konfigurieren
+Bearbeitungsformular für jeden Inhaltsuntertyp können Sie
 
-* Select a _widget_ for each field. A widget defines the method used to enter
-the data for the field. For example, a taxonomy term can be chosen using
-an autocomplete field, a select list, or a tags-style field that lets editors
-add new tags automatically.
+* ein _Widget_ für jedes Feld auswählen. Ein Widget definiert die Methode zur Eingabe von
+die Daten für das Feld. Beispielsweise kann ein Taxonomiebegriff ausgewählt werden mit
+ein Autovervollständigungsfeld, eine Auswahlliste oder ein Feld im Stil von Tags, das Editoren
+neue Tags automatisch hinzufügen.
 
-* Configure widget settings. For example, you can choose the size of a
-plain-text entry field.
+* Konfigurieren Sie die Widget-Einstellungen. Sie können zum Beispiel die Größe eines
+Klartext-Eingabefeld.
 
-* Hide one or more fields from the editing form.
+* Blenden Sie ein oder mehrere Felder aus dem Bearbeitungsformular aus.
 
-* Reorder the fields.
+* Ordnen Sie die Felder neu an.
 
-In principle, you can also have multiple content editing forms available for
-each content sub-type. This feature is rarely used, however; the only exception
-in common use is for the user profile fields: you can use different forms for
-user registration and user editing. For example, you might have a limited set of
-fields shown when users first register on the site, and more fields shown later
-on when they edit their profiles.
+Prinzipiell können Sie auch mehrere Inhaltsbearbeitungsformulare zur Verfügung haben für
+jeder Inhalts-Untertyp. Diese Funktion wird jedoch nur selten verwendet; die einzige Ausnahme
+im allgemeinen Gebrauch ist für die Felder des Benutzerprofils: Sie können verschiedene Formulare verwenden für
+Benutzerregistrierung und Benutzerbearbeitung. Zum Beispiel könnten Sie einen begrenzten Satz von
+Felder, die bei der ersten Registrierung der Benutzer auf der Website angezeigt werden, und weitere Felder, die später angezeigt werden
+an, wenn sie ihre Profile bearbeiten.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<structure-form-editing>>
 * <<structure-view-modes>>
 
-//==== Additional resources
+//====== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

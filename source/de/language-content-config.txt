@@ -14,12 +14,12 @@ Make _Custom block_, _Custom menu link_, and _Content_ entity types
 translatable. Select specific subtypes and set which fields of these can be
 translated.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<planning-data-types>>
 * <<language-concept>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
 The core Content Translation module must be installed, and your site must
 have at least two languages. See <<language-add>>.
@@ -34,7 +34,7 @@ and language_ > _Content language and translation_
 _Custom block_ and _Custom menu link_ to make these entity types translatable.
 +
 --
-// Top Abschnitt of Content language settings page
+// Top section of Content language settings page
 // (admin/config/regional/content-language).
 image:images/language-content-config_custom.png["Custom language settings checklist",width="193px"]
 --
@@ -59,16 +59,14 @@ image:images/language-content-config_content.png["Default language and translata
 --
 
 . Choose the fields that should be translatable for _Basic page_ as shown in the
-table below. If a field is not translation-dependent, leave it
-unchecked. Enabling translation for fields that are numbers or dates has use for
-accountability or implementing workflows.
+table below. If a field is not translation-dependent, leave it unchecked.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Explanation | Example value
 | Title	| The title of the content | Checked
 | Authored by | The author | Unchecked
-| Publishing status | Whether the content has been published or not | Checked
+| Published | Whether the content has been published or not | Checked
 | Authored on | Date of publishing | Unchecked
 | Changed | Date of last update | Unchecked
 | Promoted to front page | Whether the content will be included in some content views | Unchecked
@@ -93,6 +91,11 @@ _Basic block_ and _Custom menu link_.
 * <<language-content-translate>>
 
 //==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/b_w904_pcTY[title="Configuring Content Translation"]
 
 ==== Additional resources
 

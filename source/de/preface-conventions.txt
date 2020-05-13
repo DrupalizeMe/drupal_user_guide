@@ -1,137 +1,146 @@
 [[preface-conventions]]
-=== Conventions of the Guide
+=== Konventionen des Leitfadens
 
 [role="summary"]
-Understanding the conventions used in this guide.
+Verstehen der in diesem Handbuch verwendeten Konventionen.
 
-==== Assumptions and prerequisites
+===== Annahmen und Voraussetzungen
 
-This guide has the following assumptions and prerequisites:
+Dieser Leitfaden geht von den folgenden Annahmen und Voraussetzungen aus:
 
-* This guide is organized into Themen; see <<preface-organization>> for details.
-Many Themen include a _Prerequisite knowledge_ Abschnitt, which lists other
-Themen whose content knowledge is needed in order to understand the Thema you
-are reading. Some background knowledge that is not covered in the guide is
-also assumed; see <<preface-audience>> for details.
+* Dieser Leitfaden ist nach Themen gegliedert; siehe <<Vorwortorganisation>> für Details.
+Viele Themen enthalten einen Abschnitt _Voraussetzungen_, in dem andere
+Themen, deren inhaltliche Kenntnisse erforderlich sind, um das Thema zu verstehen, das Sie
+lesen. Etwas Hintergrundwissen, das im Leitfaden nicht behandelt wird, ist
+ebenfalls angenommen; siehe <<Vorwort-Publikum>> für Details.
 
-* Many task Themen list _Site prerequisites_, which are tasks that you'll need
-to have completed on your site before you'll be able to do the task in the
-Thema you are reading.
+* Viele Aufgabenthemen listen _Voraussetzungen_ auf, d.h. Aufgaben, die Sie benötigen
+auf Ihrer Website abgeschlossen haben, bevor Sie die Aufgabe in der
+Thema, das Sie gerade lesen.
 
-* The specifics of the site prerequisites relate to the scenario used throughout
-this guide of building a site for a farmers market (see <<preface-scenario>>
-for details). You can adapt the tasks to your own scenario, but you will also
-need to remember the changes you made when deciding if your site satisfies the
-site prerequisites for a task.
+* Die Besonderheiten der Standortvoraussetzungen beziehen sich auf das Szenario, das im gesamten
+dieser Leitfaden für den Bau eines Geländes für einen Bauernmarkt (siehe <<Vorwort-Szenario>>
+für Einzelheiten). Sie können die Aufgaben an Ihr eigenes Szenario anpassen, aber Sie werden auch
+müssen sich an die Änderungen erinnern, die Sie vorgenommen haben, wenn Sie entscheiden, ob Ihre Website die
+Standortvoraussetzungen für eine Aufgabe.
 
-* For all task Themen after <<install-run>>, there is also an implicit
-prerequisite: you must have installed the content management software on your
-site, and be logged in to a user account with sufficient permissions to do the
-task (such as the user account created when you installed your site, which
-automatically has full permissions).
+* Für alle Aufgabenthemen nach <<install-run>> gibt es auch eine implizite
+Voraussetzung: Sie müssen die letzte stabile Version des Inhalts installiert haben
+Verwaltungssoftware auf Ihrer Website, und melden Sie sich bei einem Benutzerkonto mit
+ausreichende Berechtigungen, um die Aufgabe auszuführen (z. B. das Benutzerkonto, das erstellt wurde, als Sie
+Ihre Website installiert hat, die automatisch über alle Berechtigungen verfügt).
 
-* If you read all the Themen in order, and perform all of the steps in the task
-Themen as you go (staying logged in), you should have the background knowledge
-and site prerequisites in place for each Thema as you read it.
+* Wenn Sie alle Themen der Reihe nach lesen und alle Schritte in der Aufgabe
+topics as you go (eingeloggt bleiben), sollten Sie über das Hintergrundwissen
+und die für jedes Thema geltenden Website-Voraussetzungen, während Sie es lesen.
 
+* Dieser Leitfaden zeigt, wie Sie Aufgaben mit dem administrativen Benutzer
+Schnittstelle und, wo immer möglich, auch unter Verwendung der neuesten stabilen Version der
+Drush-Kommandozeilen-Tool (siehe <<Installations-Tools>>). Sie können gerne ein
+anderes Kommandozeilen-Tool, wie z.B. Drupal Console (wenn Sie nachschlagen gleichwertige
+Befehle), oder vorerst nur die administrative Schnittstelle zu verwenden.
 
-==== Text conventions
+====== Text-Konventionen
 
-The following conventions are used in the text of this guide:
+Die folgenden Konventionen werden im Text dieses Leitfadens verwendet:
 
-* The URL _example.com_ means the base URL of your website. See the Navigation
-Abschnitt below for more details on how URLs internal to your site are
-indicated.
+* Die URL _Beispiel.com_ bedeutet die Basis-URL Ihrer Website. Siehe die Navigation
+Abschnitt unten für weitere Einzelheiten darüber, wie URLs innerhalb Ihrer Website aussehen
+angegeben.
 
-* Text you should see in the user interface of your site is shown in _italics_,
-such as: Click _Save configuration_. This only applies to text in the user
-interface that comes from the software, not to text that was entered in a
-previous Thema. For example, in a Thema about editing, you might see this
-instruction: Click _Edit_ in the row of the About page (_Edit_ would be in
-italics, but About would not be, because the About page was created in a
-previous Thema).
+* Text, den Sie in der Benutzeroberfläche Ihrer Website sehen sollten, wird in _Kursivschrift_ angezeigt,
+wie zum Beispiel: Klicken Sie auf _Konfiguration speichern_. Dies gilt nur für Text im Benutzer
+Schnittstelle, die von der Software kommt, nicht zu Text, der in einer
+vorheriges Thema. Zum Beispiel könnten Sie in einem Thema über die Bearbeitung folgendes sehen
+Anweisung: Klicken Sie auf _Bearbeiten_ in der Zeile der Info-Seite (_Bearbeiten_ wäre in
+kursiv, aber About wäre es nicht, weil die About-Seite in einem
+vorheriges Thema).
 
-* URLs, file names, and newly-introduced terminology are also shown in
-_italics_.
+* URLs, Dateinamen und neu eingeführte Terminologie werden auch in
+_Kursivschrift_.
 
-* Text that you should type at a shell command line is shown in monospace type,
-such as:
+* Text, den Sie in eine Shell-Befehlszeile eingeben sollten, wird in Monospace-Schrift angezeigt,
+wie zum Beispiel:
+
 +
 ----
-drush cr
+drush cache:rebuild
 ----
 
-* Within this guide, the word _directory_ is always used to refer to file
-directories (which some people prefer to call _folders_).
+* In diesem Leitfaden wird das Wort _Verzeichnis_ immer als Verweis auf Datei
+Verzeichnisse (die manche Leute lieber als _Ordner_ bezeichnen).
 
-==== Navigation
+===== Navigation
 
-To do most of the task Themen in this guide, you will need to navigate to one
-or more pages in the administrative interface of your site. You might see
-something like this in the instructions (this will make more sense after you
-have the base software installed):
+Um die meisten Aufgaben in diesem Leitfaden zu erledigen, müssen Sie zu einem der folgenden Themen navigieren
+oder mehr Seiten in der administrativen Schnittstelle Ihrer Website. Sie könnten sehen
+so etwas in den Anweisungen (dies wird mehr Sinn machen, nachdem Sie
+die Basissoftware installiert haben):
 
 =============
 In the _Manage_ administrative menu, navigate to
 _Structure_ > _Taxonomy_ (_admin/structure/taxonomy_).
 =============
 
-Navigation instructions like this assume that you have the core Toolbar module
-installed, and this example means that in the menu bar at the top of your site,
-you would need to click _Manage_ to expose the menu choices, then click
-_Structure_, then _Taxonomy_, and that at the end, you would be on a page with
-URL _http://example.com/admin/structure/taxonomy_ (if your site base URL is
+Navigationsanweisungen wie diese setzen voraus, dass Sie über das Kernmodul Toolbar
+installiert, und dieses Beispiel bedeutet, dass in der Menüleiste oben auf Ihrer Website,
+müssten Sie auf _Verwalten_ klicken, um die Menüoptionen anzuzeigen, und dann auf
+_Struktur_, dann _Taxonomie_, und dass Sie am Ende auf einer Seite mit
+URL _http://example.com/admin/structure/taxonomy_ (wenn Ihre Website-Basis-URL
 _http://example.com_).
 
 // Top navigation bar on any admin page, with Manage menu showing.
 image:images/preface-conventions-top-menu.png["Admin menu",width="100%"]
 
-Here's another example:
+Hier ist ein weiteres Beispiel:
 
 =============
 In the _Manage_ administrative menu, navigate to
-_Configuration_ > _System_ > _Site information_
+_Configuration_ > _System_ > _Basic site settings_
 (_admin/config/system/site-information_).
 =============
 
-In this example, after clicking on _Manage_ and _Configuration_, you would need
-to find the _System_ Abschnitt of the page, and within that, click _Site
-information_. After that, you'd end up on
+In diesem Beispiel würden Sie, nachdem Sie auf _Verwalten_ und _Konfiguration_ geklickt haben, folgendes benötigen
+um den Abschnitt _System_ der Seite zu finden, und klicken Sie dort auf _Basic
+Website-Einstellungen_. Danach landen Sie auf
 _http://example.com/admin/config/system/site-information_.
 
-// System Abschnitt of admin/config page.
-image:images/preface-conventions-config-system.png["_System_ Abschnitt of the Configuration page"]
+// System section of admin/config page.
+image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
 
-One other note: if you are using the standard administrative core Seven theme,
-many "Add" buttons in the administrative interface are displayed with + signs on
-them. For instance, on admin/content, the Add new content button appears as
-_+ Add new content_. However, this is theme-dependent and is not really part of
-the text on the button (for instance, it would not necessarily be read by a
-screen reader), so in this guide, the convention is to not mention the + sign
-on the buttons.
+Ein weiterer Hinweis: Wenn Sie den administrativen Standardkern Sieben Thema verwenden,
+viele "Hinzufügen"-Schaltflächen in der Verwaltungsschnittstelle werden mit +-Zeichen angezeigt
+sie. Zum Beispiel erscheint bei Admin/Inhalt die Schaltfläche Neuen Inhalt hinzufügen als
+_+ Neuen Inhalt hinzufügen_. Dies ist jedoch themenabhängig und gehört nicht wirklich zu
+den Text auf der Schaltfläche (z.B. würde er nicht unbedingt von einem
+Screenreader), so dass in diesem Leitfaden die Konvention lautet, das +-Zeichen nicht zu erwähnen
+auf den Schaltflächen.
 
-==== Filling in forms
+===== Ausfüllen von Formularen
 
-Many of the task Themen in this guide include steps where you will fill out a
-web form. In most cases, a screen capture image of the form will be included,
-along with a table of the values you will need to enter into each form
-field. For example, you might see a table that starts out like this, explaining
-the site information form you would see if you navigated to _Configuration_ >
-_System_ > _Site information_ (_admin/config/system/site-information_):
+Viele der Aufgabenthemen in diesem Leitfaden enthalten Schritte, bei denen Sie eine
+Web-Formular. In den meisten Fällen wird ein Screen-Capture-Bild des Formulars beigefügt,
+zusammen mit einer Tabelle der Werte, die Sie in jedes Formular eingeben müssen
+Feld. Beispielsweise könnten Sie eine Tabelle sehen, die wie folgt beginnt und Folgendes erklärt
+das Website-Informationsformular, das Sie sehen würden, wenn Sie zu _Konfiguration_ > navigieren
+_System_ > _Standortinformationen_ (_admin/config/system/site-information_):
 
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site name|Name of your site|Anytown Farmers Market
+|Feldname|Erläuterung|Beispielwert
+|Standortdetails > Standortname|Name Ihres Standorts|Anytown Farmers Market
 |================================
 
-To use this table, find the field labeled _Site name_ in the form, and enter the
-name of your site in this field. An example site name of "Anytown Farmers
-Market" is suggested in the table, which relates to the scenario of building a
-website for a farmers market that you'll find all through this guide (see
-<<preface-scenario>> for details).
+Um diese Tabelle zu verwenden, suchen Sie das Feld mit der Bezeichnung _Standortname_ im Abschnitt
+unter _Website-Details_ im Formular, und geben Sie den Namen Ihrer Website in diesem
+Feld. Ein Beispiel für den Standortnamen "Anytown Farmers Market" wird im Feld
+Tabelle, die sich auf das Szenario der Erstellung einer Website für einen Bauernmarkt bezieht
+die Sie in diesem Leitfaden finden (siehe <<Vorwort-Szenario>> für
+Einzelheiten). Beachten Sie auch, dass Sie auf einigen Formularen möglicherweise auf den Titel eines Abschnitts klicken müssen.
+(wie _Standortdetails_ in diesem Beispiel), um den Abschnitt zu erweitern und das Feld
+es enthält.
 
 
-*Attributions*
+*Angaben*
 
-Written/edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Geschrieben/herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -1,80 +1,90 @@
 [[menu-reorder]]
 
-=== Changing the Order of Navigation
+=== Ändern der Reihenfolge der Navigation
 
 [role="summary"]
-How to reorder items in a menu.
+Wie man Elemente in einem Menü nü anordnet.
 
 (((Menu items,reordering)))
 (((Navigation,changing the order of menu items)))
 
-==== Goal
+===== Ziel
 
-Reorder the items in a menu.
+Ordnen Sie die Einträge in einem Menü neu an.
 
-==== Was man wissen sollte
+===== Vorkenntnisse
 
 * <<menu-concept>>
 * <<menu-link-from-content>>
 
-==== Site prerequisites
+===== Standort-Voraussetzungen
 
-Home and About pages must exist in the main navigation menu. See
-<<menu-link-from-content>>.
+Die Seiten Home und About müssen im Hauptnavigationsmenü vorhanden sein. Siehe
+<<<Menü-Link-vom-Inhalt>>.
 
-==== Steps
+===== Schritte
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Menus_
-(_admin/structure/menu_) where all menus on your site are listed. Click _Edit
-Menu_ from the _Operations_ dropdown for _Main navigation_. You can also reach
-this page using contextual links (refer to <<config-overview>>) for the menu.
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Menüs_
+(_Admin/Struktur/Menü_), wo alle Menüs auf Ihrer Website aufgelistet sind. Klicken Sie auf _Bearbeiten
+Menü_ aus der Dropdown-Liste _Operations_ für die _Hauptnavigation_. Sie können auch erreichen
+diese Seite mit kontextuellen Links (siehe <<Config-Übersicht>>>) für die
+Menü. Beachten Sie, dass die Namen und Beschreibungen der Menüs, die von
+Ihr Installationsprofil wird auf dieser Seite auf Englisch angezeigt; siehe
+<<language-concept>> for an explanation.
 +
 --
-// Menu list Abschnitt of admin/structure/menu, with Edit menu button on Main
+// Menu list section of admin/structure/menu, with Edit menu button on Main
 // navigation menu highlighted.
 image:images/menu-reorder_menu_titles.png["List of menus on the site with 'Main navigation' highlighted",width="100%"]
 --
 
-. The _Edit menu_ page will display a list of each item in the menu you
-chose (_Main navigation_).
+. Die Seite _Bearbeiten-Menü_ zeigt eine Liste aller Einträge im Menü an, die Sie
+gewählt (_Hauptnavigation_).
 +
 --
-// Menu links Abschnitt of admin/structure/menu/manage/main.
+// Menu links section of admin/structure/menu/manage/main.
 image:images/menu-reorder_edit_menu.png["List of menus items under _Main navigation_"]
 --
 
-. Use the cross bar handles to reorder the menu items.  Drag the Home menu item
-above the About menu item so that it appears first.
+. Ziehen Sie die Querbalkengriffe der Menüelemente, um ihre Reihenfolge zu ändern: Nach Hause, dann
+Über. Als Alternative zum Ziehen können Sie auf den Link _Zeilengewichte anzeigen_ klicken
+oben in der Tabelle und wählen Sie numerische Gewichte (Menüpunkte mit niedrigerer oder
+weitere negative Gewichte werden zuerst angezeigt).
 +
 --
-// Menu links Abschnitt of admin/structure/menu/manage/main, after
+// Menu links section of admin/structure/menu/manage/main, after
 // changing the order.
 image:images/menu-reorder_reorder.png["Reordered menu items with warning message about unsaved changes and the _Save_ button"]
 --
 
-. Click _Save_.
+. Klicken Sie auf _Speichern_.
 
-. The home page now displays the main navigation with the Home menu
-item displayed first.
+. Die Startseite zeigt nun die Hauptnavigation mit dem Menü Home
+Artikel wird zuerst angezeigt.
 +
 --
-// Header Abschnitt of Home page with reordered menu items.
+// Header section of Home page with reordered menu items.
 image:images/menu-reorder_final_order.png["Reordered menu items on the home page with 'Home' first and then 'About'"]
 --
 
-==== Expand your understanding
+===== Erweitern Sie Ihr Verständnis
 
-Add a menu item called _Contact_, leading to the _/contact_ page, to your Main
-navigation menu. The contact page is provided by the core Contact module; you
-may want to edit its layout and fields (see <<structure-form-editing>>).
+Fügen Sie einen Menüpunkt namens _Kontakt_, der zur Seite _/Kontakt_ führt, zu Ihrem Hauptmenü
+Navigationsmenü. Die Kontaktseite wird durch das Kernmodul Kontakt bereitgestellt; Sie
+kann sein Layout und seine Felder bearbeiten wollen (siehe <<Struktur-Form-Bearbeitung>>).
 
-==== Related concepts
+===== Verwandte Konzepte
 
 <<menu-concept>>
 
-//==== Additional resources
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/OtT8e8lLx5E[title="Changing the Order of Navigation"]
+
+//====== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel].
+Geschrieben von https://www.drupal.org/u/AnnGreazel[Ann Greazel].

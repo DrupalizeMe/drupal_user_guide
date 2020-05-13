@@ -14,127 +14,142 @@ How to manually download and upload a module or theme.
 
 ==== Goal
 
-Manually download module or theme files and upload them to your site, if the
-website or Drush methods for installing or updating a module or theme do not
-work, or if you are placing a custom-written module or theme.
+Laden Sie Modul- oder Themendateien manuell herunter und laden Sie sie auf Ihre Website hoch, wenn die
+Website oder Drush-Methoden zur Installation oder Aktualisierung eines Moduls oder Themas nicht
+Arbeit, oder wenn Sie ein speziell geschriebenes Modul oder Thema platzieren.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<understanding-modules>>
 * <<extend-module-find>>
 * <<understanding-themes>>
 * <<extend-theme-find>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-You need to be facing any of the following to perform the manual download
-described in this Thema:
+Für den Download des Handbuchs müssen Sie sich mit einem der folgenden Probleme auseinandersetzen
+in diesem Thema beschrieben:
 
-* File permission issues
+* Probleme mit der Dateierlaubnis
 
-* FTP permission issues
+* FTP-Zulassungsprobleme
 
-* You created a custom module/theme or received its files from someone
+* Sie haben ein benutzerdefiniertes Modul/Thema erstellt oder seine Dateien von jemandem erhalten
 
-* You could not successfully complete the instructions in
+* Sie konnten die Anweisungen in
 <<extend-module-install>>, <<extend-theme-install>>,
-<<security-update-module>>, or <<security-update-theme>>
+<<security-update-module>>, oder <<security-update-theme>>
 
-Skip this Thema if none of the above applies to you.
+Überspringen Sie dieses Thema, wenn keiner der oben genannten Punkte auf Sie zutrifft. Wenn Sie den Composer verwenden
+Um die Dateien auf Ihrer Website zu verwalten, folgen Sie den Schritten zur Dateiaktualisierung in
+<<install-composer>> instead of this topic.
 
 ==== Steps
 
-If you are installing a module or theme from _Drupal.org_, follow the
-downloading instructions, and then the uploading/unpacking instructions. If
-you created the module or theme, skip the downloading step. Instead, create
-an archive file (that you know how to extract on the server) and proceed with
-the steps in uploading/unpacking, using whatever method is appropriate for the
-way you initially created the archive file.
+Wenn Sie ein Modul oder Thema von _Drupal.org_ installieren, folgen Sie den
+Anweisungen zum Herunterladen und dann die Anweisungen zum Hochladen/Entpacken. Wenn
+Wenn Sie das Modul oder Thema erstellt haben, überspringen Sie den Schritt des Herunterladens. Legen Sie stattdessen
+eine Archivdatei (von der Sie wissen, wie man sie auf dem Server extrahiert) und fahren Sie fort mit
+die Schritte des Hochladens/Entpackens, mit welcher Methode auch immer für die
+wie Sie die Archivdatei ursprünglich angelegt haben.
 
 ===== Downloading the files
 
-. Open the module or theme project page on drupal.org; for example, the _Admin
-toolbar_ page (https://www.drupal.org/project/admin_toolbar).
+. Öffnen Sie das Modul oder Thema Projektseite auf drupal.org; zum Beispiel, die _Admin
+Symbolleiste_ Seite (https://www.drupal.org/project/admin_toolbar).
 
-. Scroll to the _Downloads_ Abschnitt near the bottom of the page.
+. Scroll to the _Downloads_ section near the bottom of the page.
 +
 --
-// Downloads Abschnitt of the Admin Toolbar project page on drupal.org.
+// Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/extend-manual-install-download.png["Downloading module files"]
 --
 
-. Click _tar.gz_ to download the file to your computer.
+. Klicken Sie auf _tar.gz_, um die Datei auf Ihren Computer herunterzuladen. Alternativ, wenn Sie
+Terminal-Zugang zu Ihrem Hosting-Server (unter Linux) haben, können Sie die
+Link-Adresse für die _tar.gz_-Datei von Ihrem Browser, und verwenden Sie diesen Befehl, um
+die Datei herunterladen (wobei die kopierte URL ersetzt wird):
++
+----
+wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
+----
+
 
 ===== Uploading the files to your site and unpacking them
 
-. If you are adding a new module or theme, create subdirectories in your
-top-level _modules_ and _themes_ directories (if they don't already
-exist). Typically, people make a _contrib_ subdirectory for contributed modules
-and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for
-modules and themes that they created. Your _modules_ directory might look like
-this:
+. Wenn Sie ein neues Modul oder Thema hinzufügen, erstellen Sie Unterverzeichnisse in Ihrem
+Top-Level-Verzeichnisse _Module_ und _Themen_ (falls sie nicht bereits
+existieren). Typischerweise wird ein _Contrib_-Unterverzeichnis für beigetragene Module angelegt
+und Themen, die von _Drupal.org_ heruntergeladen werden, sowie ein Unterverzeichnis _custom_ für
+Module und Themen, die sie erstellt haben. Ihr _Module_-Verzeichnis könnte wie folgt aussehen
+dies:
 +
 --
-// Make custom and contrib directories under modules, and take a screen shot
+// Make custom and contrib directories under modules, and take a screenshot
 // showing the directory structure.
 image:images/extend-manual-install-directories.png["Suggested directory structure for modules",width="174px"]
 
 // NOTE for Translators: you don't need to localize the 'custom' and 'contrib' directory names as they are more common in English.
 --
 
-. If you are replacing an existing module or theme with an updated version, put
-the site into maintenance mode. See <<extend-maintenance>>.
+. Wenn Sie ein vorhandenes Modul oder Thema durch eine aktualisierte Version ersetzen wollen, setzen Sie
+die Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>>.
 
-. If you are replacing an existing module or theme with an updated version, find
-and delete all the existing files and directories for the existing module
-or theme. Modules are normally located in directories under the top-level
-_modules_ directory, and themes are normally located in directories under the
-top-level _themes_ directory.
+. Wenn Sie ein vorhandenes Modul oder Thema durch eine aktualisierte Version ersetzen, finden Sie
+und löschen Sie alle vorhandenen Dateien und Verzeichnisse für das vorhandene Modul
+oder Thema. Die Module befinden sich normalerweise in Verzeichnissen unter der obersten Ebene
+_Module_-Verzeichnis, und Themen befinden sich normalerweise in Verzeichnissen unter dem
+Verzeichnis der obersten Ebene _Themen_.
 
-. Upload the _.tar.gz_ file (or whatever archive you created) to your site.
-Place it in either the same location from which you deleted the directory
-(if replacing an existing module or theme) or the appropriate subdirectory
-of _modules_ or _themes_ (if adding a new module or theme).
+. Laden Sie die _.tar.gz_-Datei (oder welches Archiv auch immer Sie erstellt haben) auf Ihre Website hoch.
+Platzieren Sie sie entweder an demselben Ort, von dem aus Sie das Verzeichnis gelöscht haben
+(wenn ein bestehendes Modul oder Thema ersetzt wird) oder das entsprechende Unterverzeichnis
+von _Modulen_ oder _Themen_ (wenn ein neues Modul oder Thema hinzugefügt wird).
 
-. Extract the files from the _.tar.gz_ archive (or whatever archive you
-created), making a subdirectory in the same location as the archive file.
-If you do not have terminal access, or your hosting server is not running
-Linux, your hosting control panel's file manager should provide a way to
-extract the files. If you have terminal access to your hosting server
-(running Linux) and you are using a tar.gz file, you can use a command like:
+. Extrahieren Sie die Dateien aus dem _.tar.gz_-Archiv (oder dem Archiv, das Sie
+erstellt), wobei ein Unterverzeichnis am gleichen Ort wie die Archivdatei erstellt wird.
+Wenn Sie keinen Terminal-Zugang haben oder Ihr Hosting-Server nicht läuft
+Linux, der Dateimanager Ihres Hosting Control Panels sollte eine Möglichkeit bieten
+die Dateien extrahieren. Wenn Sie Terminal-Zugang zu Ihrem Hosting-Server haben
+(unter Linux) und Sie eine tar.gz-Datei verwenden, können Sie einen Befehl wie
 +
 ----
 tar -xzf admin_toolbar-8.x-1.17.tar.gz
 ----
 
-. Delete the compressed file from the server, unless your unpacking method
-already deleted it.
+. Löschen Sie die komprimierte Datei vom Server, es sei denn, Ihre Entpackmethode
+bereits gelöscht.
 
-. Refer to <<extend-module-install>>, <<extend-theme-install>>,
-<<security-update-module>>, or <<security-update-theme>> to complete the
-installation or update of the module or theme. Start at the step after the
-automatic download has been completed.
+. Siehe <<extend-module-install>>, <<extend-theme-install>>,
+<<security-update-module>>, oder <<security-update-theme>> zur Vervollständigung der
+Installation oder Aktualisierung des Moduls oder Themas. Beginnen Sie mit dem Schritt nach der
+Der automatische Download ist abgeschlossen.
 
-==== Expand your understanding
+==== Vertiefen Sie Ihr Verständnis
 
-* If you work with multiple environments (for example, a local development site
-and a production site) you will have to repeat the steps on each environment, or
-re-clone the environment. See <<install-dev-making>>.
+* Wenn Sie mit mehreren Umgebungen arbeiten (z.B. eine lokale Entwicklungsumgebung
+und einer Produktionsstätte) müssen Sie die Schritte für jede Umgebung wiederholen, oder
+die Umwelt reklonieren. Siehe <<<installieren-entwickeln>>.
 
-* If you added a new theme, navigate in the _Manage_ administrative menu to
-_Appearance_ (_admin/appearance_) and uninstall the old theme.
+* Wenn Sie ein neues Thema hinzugefügt haben, navigieren Sie im Verwaltungsmenü _Verwalten_ zu
+_Erscheinung_ (_Admin/Erscheinung_) und deinstallieren Sie das alte Thema.
 
-// ==== Related concepts
+// ==== Verwandte Konzepte
 
-==== Additional resources
+==== Videos
 
-* https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Updating modules"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ community documentation page "Installing contributed modules (Drupal 8)"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[_Drupal.org_ community documentation page "Installing themes"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Manually Downloading Module or Theme Files"]
+
+===== Zusätzliche Ressourcen
+
+* https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen"]
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ Community-Dokumentationsseite "Installieren der beigetragenen Module (Drupal 8)"]
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[_Drupal.org_ Community-Dokumentationsseite "Installation von Themen"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
+Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], und
 https://www.drupal.org/u/vegantriathlete[Marc Isaacson].

@@ -1,89 +1,95 @@
 [[content-create]]
 
-=== Creating a Content Item
+=== Erstellen von Inhalten
 
 [role="summary"]
-How to create a content item for use as the home page.
+Wie Sie Inhalte zur Cerwendung auf der Starertseite erstellen können.
 
 (((Content item,creating)))
 (((Basic page,creating)))
 (((Home page,creating)))
 
-==== Goal
+===== Zielsetzung
 
-Create and publish a content item that will be used as the home page of the
-site.
+Erstellen und veröffentlichen Sie einen Inhalt, der als Startseite der
+Website verwendet wird.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<content-paths>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-The _Basic page_ content type must exist. This is created on your site when you
-install with the core Standard installation profile.
+Der Inhaltstyp Einfache Seite muss vorhanden sein. Dieser wird auf Ihrer Site angelegt, wenn Sie
+bei der Installation das Installationsprofil Standard verwendet haben.
 
-==== Steps
+===== Arbeitsschritte
 
-. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
-_Basic page_ (_node/add/page_). The _Create Basic page_ form appears.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ > _Inhalt hinzufügen_ >
+_Einfache Seite_ (_content/add/page_). Sie gelangen auf das Formular _Einfache Seite_ erstellen.
 
-. Click _Edit summary_.
+. Klicken Sie auf _Zusammenfassung bearbeiten_.
 
-. Fill in the fields as shown below.
+. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Value
-| Title | Title of the page. Will also be used as a meta tag in the source code,
- URL alias, and as label of the content item in administration screens | Home
-| Summary | Summary of the value of the body field. Can be used as teaser
-in overview pages | Opening times and location of City Market.
-| Body | Full content of the page | Welcome to City Market - your neighborhood
-farmers market!
+| Feldname | Erläuterung| Wert
+| Titel | Titel der Seite. Wird auch als Meta-Tag im Quellcode verwendet,
+ URL-Alias und als Bezeichnung des Inhaltselements in Verwaltungsbildschirmen | Home
+| Zusammenfassung | Zusammenfassung des Wertes des Body-Feldes. Kann als Teaser verwendet werden
+auf den Übersichtsseiten | Öffnungszeiten und Lage des Stadtmarktes.
+| Hauptteil | Vollständiger Inhalt der Seite | Willkommen auf dem Stadtmarkt - Ihre Nachbarschaft
+Wochenmarkt!
 
-Open: Sundays, 9 AM to 2 PM, April to September
+Geöffnet: Sonntags, 9 bis 14 Uhr, April bis September
 
-Location: Parking lot of Trust Bank, 1st & Union, downtown
-|URL path settings > URL alias| Alternate relative path for the content | /home
+Standort: Parkplatz der Trust Bank, 1. & Union, Stadtzentrum
+|Veröffentlicht | Ob der Inhalt zur öffentlichen Ansicht veröffentlicht ist oder nicht | Aktiviert
+|URL-Alias > URL-Alias| Alternativer relativer Pfad für den Inhalt | /home
 |================================
 +
-By clicking the _Source_ button in the rich text editor toolbar, you can see the
-HTML source code of the text that you are editing.
+Wenn Sie in der Werkzeugleiste des Rich-Text-Editors auf die Schaltfläche _Quelltet_ klicken, können Sie den
+HTML-Quellcode des Feldinhalts bearbeiten.
 +
 --
-// Partly filled-in node/add/page, with Summary Abschnitt open.
-image:images/content-create-create-basic-page.png["Create a basic page",width="100%"]
+// Teilweise ausgefüllter Knoten/Hinzufügen/Seite, mit geöffnetem Abschnitt Zusammenfassung.
+image:images/content-create-create-create basic-page.png["Eine Basisseite erstellen",width="100%"]]
 --
 
-. Click _Preview_ to ensure everything looks like expected.
+. Klicken Sie auf _Vorschau_, um sicherzustellen, dass alles wie erwartet aussieht.
 
-. Click _Back to content editing_.
+. Klicken Sie auf _Zurück zur Inhaltsbearbeitung_.
 
-. Click _Save and publish_. The content is saved and can be found on the
-_Content_ page.
+. Klicken Sie auf _Speichern_. Der Inhalt wird gespeichert und befindet sich anschließend auf der
+ Seite _Inhalt_.
 
-. Follow the same steps to create an About page, with title "About", and a body
-telling about the history of the farmer's market.
+. Führen Sie die Schritte erneut aus, um eine Seite "Info" mit dem Titel "Info" und einem Textkörper zu erstellen.
+Erzählen Sie auf dieser Seite etwas über die Geschichte des Wochenmarktes.
 
-==== Expand your understanding
+===== Vertiefen Sie Ihr Wissen
 
 * <<menu-home>>
 * <<menu-link-from-content>>
 * <<language-content-translate>>
 
-==== Related concepts
+==== Verwandte Konzepte
 
 * <<language-concept>>
 * <<content-paths>>
 * <<content-edit>>
 
-==== Additional resources
+===== Videos
 
-https://www.drupal.org/docs/8/core/modules/node/about-nodes[_Drupal.org_ community documentation page "About nodes"]
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/h312fekiSNE[title="Erstellen eines Inhaltselements"]
+
+===== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/8/core/modules/node/about-nodes[_Drupal.org_ Community-Dokumentationsseite "Über Knoten"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/pixiekiss[Agnes Kiss] and
+Geschrieben von https://www.drupal.org/u/pixiekiss[Agnes Kiss] und
 https://www.drupal.org/u/batigolix[Boris Doesborg].

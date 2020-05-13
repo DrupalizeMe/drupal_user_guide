@@ -1,61 +1,69 @@
 [[extend-maintenance]]
 
-=== Enabling and Disabling Maintenance Mode
+=== Aktivieren und Deaktivieren des Wartungsmodus
 
 [role="summary"]
-How to enable maintenance mode to set up a "Site under maintenance" message, and how to disable it.
+How to enable maintenance mode to set up a "Site under maintenance" message, and
+how to disable it.
 
 (((Maintenance mode,overview)))
 (((Maintenance mode,enabling)))
 (((Maintenance mode,disabling)))
 
-==== Goal
+===== Ziel
 
-Put your site in maintenance mode to allow users with the right permissions to
-use the site while users without this permission are presented with a message
-that the site is under maintenance.
+Versetzen Sie Ihre Website in den Wartungsmodus, um Benutzern mit den richtigen Berechtigungen Folgendes zu ermöglichen
+die Website benutzen, während Benutzern ohne diese Erlaubnis eine Nachricht angezeigt wird
+dass die Website in Wartung ist.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<security-concept>>
 
-// ==== Site prerequisites
+==== Anforderungen an die Website
+
+Wenn Sie Drush zum Aktivieren oder Deaktivieren des Wartungsmodus verwenden möchten, muss Drush
+installiert. Siehe <<<installierte-Werkzeuge>>.
 
 ==== Steps
-===== Enabling maintenance mode
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
-_Maintenance mode_ page appears.
+Sie können die administrative Schnittstelle oder Drush verwenden, um Folgendes zu aktivieren oder zu deaktivieren
+Wartungsmodus.
 
-. Fill in the fields as shown below.
+======== Aktivieren des Wartungsmodus über die administrative Schnittstelle
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
+_Entwicklung_ > _Wartungsmodus_ (_Admin/Konfiguration/Entwicklung/Wartung_). Die
+Die Seite _Wartungsmodus_ erscheint.
+
+. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
+|Feldname | Erläuterung | Wert
 
-| Put site into maintenance mode | Enable the maintenance mode |
-Checked
+| Website in Wartungsmodus versetzen | Wartungsmodus aktivieren |
+Geprüft
 
-| Message to display when in maintenance mode | The information that is shown to
-website visitors when the mode is enabled. Variables such as @site can be used
-in the message |@site is currently under maintenance but should be back
-shortly. Thank you for your patience.
+| Im Wartungsmodus anzuzeigende Meldung | Die Informationen, die angezeigt werden, um
+Website-Besucher, wenn der Modus aktiviert ist. Variablen wie @site können verwendet werden
+in der Nachricht |@site wird derzeit gewartet, sollte aber zurück sein
+in Kürze. Ich danke Ihnen für Ihre Geduld.
 
 |================================
 
-. Click _Save configuration_.
+. Klicken Sie auf _Konfiguration speichern_.
 
-. Verify that the site is in maintenance mode by accessing it from another
-browser where you aren't logged in. If you are not able to verify, try clearing
-the cache. See <<prevent-cache-clear>>.
+. Überprüfen Sie, ob sich die Site im Wartungsmodus befindet, indem Sie von einem anderen
+Browser, in dem Sie nicht eingeloggt sind. Wenn Sie nicht verifizieren können, versuchen Sie
+den Cache. Siehe <<<verhindert-cache-clear>>.
 +
 --
 // Site in maintenance mode.
 image:images/extend-maintenance-mode-enabled.png["Maintenance mode enabled",width="100%"]
 --
 
-===== Disabling maintenance mode
+===== Deaktivieren des Wartungsmodus über die administrative Schnittstelle
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
 _Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
@@ -67,25 +75,50 @@ _Maintenance mode_ page appears.
 |================================
 |Field name | Explanation | Value
 
-| Put site into maintenance mode | Disable the maintenance mode |
-Unchecked
+| Website in den Wartungsmodus versetzen | Deaktivieren des Wartungsmodus |
+Nicht angekreuzt
 
-| Message to display when in maintenance mode | No message required while disabling. You can leave the field blank. |
+| Im Wartungsmodus anzuzeigende Meldung | Während der Deaktivierung ist keine Meldung erforderlich. Sie können das Feld leer lassen. |
 
 |================================
 
-. Click _Save configuration_.
+. Klicken Sie auf _Konfiguration speichern_.
 
-. Verify that the site is no longer in maintenance mode by accessing it from
-another browser where you aren't logged in. If you are not able to verify, try
-clearing the cache. See <<prevent-cache-clear>>.
+. Stellen Sie sicher, dass sich die Site nicht mehr im Wartungsmodus befindet, indem Sie von
+einen anderen Browser, in dem Sie nicht eingeloggt sind. Wenn Sie nicht verifizieren können, versuchen Sie
+Löschen des Caches. Siehe <<prevent-cache-clear>>.
 +
 --
 // Site no longer in maintenance mode.
 image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",width="100%"]
 --
 
-==== Expand your understanding
+===== Aktivieren oder Deaktivieren des Wartungsmodus mit Drush
+
+. Folgen Sie den obigen Schritten der Benutzeroberfläche, um die Meldung zur Website-Wartung zu bearbeiten, wenn
+gewünscht.
+
+. Führen Sie die folgenden Drush-Befehle aus, um den Wartungsmodus zu aktivieren und die
+Cache:
++
+----
+drush state:set system.maintenance_mode 1 --input-format=integer
+drush cache:rebuild
+----
+
+. Führen Sie die folgenden Drush-Befehle aus, um den Wartungsmodus zu deaktivieren und die
+Cache:
++
+----
+drush state:set system.maintenance_mode 0 --input-format=integer
+drush cache:rebuild
+----
+
+. Nachdem Sie einen der beiden Befehlssätze ausgeführt haben, überprüfen Sie, ob Ihre Site entweder in oder
+aus dem Wartungsmodus heraus, indem Sie die Website in einem Browser besuchen, in dem Sie sich nicht
+eingeloggt.
+
+==== Erweitern Sie Ihr Wissen
 
 * <<security-update-core>>
 
@@ -95,11 +128,17 @@ image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",wi
 
 //==== Related concepts
 
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Disabling Maintenance Mode"]
+
 // ==== Additional resources
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern], und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

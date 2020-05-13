@@ -1,133 +1,122 @@
 [[security-update-module]]
 
-=== Updating a Module
+=== Aktualisieren eines Moduls
 
 [role="summary"]
-How to update a contributed module by using the administrative interface and running the Database updates script, or by using Drush.
+Wie man ein beigetragenes Modul unter Verwendung der administrativen Schnittstelle aktualisiert und
+Ausführen des Datenbank-Updates-Skripts.
 
 (((Module,updating)))
 (((Security update,applying)))
 (((Contributed module,updating)))
-(((Drush tool,using to update module)))
 
-==== Goal
+===== Ziel
 
-Update a contributed module and run the _Database updates_ script.
+Aktualisieren Sie ein beigetragenes Modul und führen Sie das Skript _Datenbankaktualisierungen_ aus.
 
-==== Was man wissen sollte
+===== Vorraussetzung
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+===== Standort-Voraussetzungen
 
-* A contributed module has been installed and there is an update available for
-it. See <<extend-module-install>> and <<security-announce>>.
+* Ein beigetragenes Modul wurde installiert, und es ist ein Update verfügbar für
+es. Siehe <<<Erweitern-Modul-installieren>> und <<<Sicherheit-ankündigen>>.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
-<<install-dev-making>>.
+* Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklung testen
+Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
+<<installieren-entwickeln>>.
 
-* You have created a full-site backup. See <<prevent-backups>>.
+* Sie haben eine Vollstandortsicherung erstellt. Siehe <<<verhinderte Backups>>.
 
-* If you want to use the user interface, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing core
-modules.
+* Wenn Sie die Benutzeroberfläche verwenden wollen, muss das Kernmodul Update Manager
+installiert. Siehe <<Config-install>> für Anweisungen zur Installation des Kerns
+Module.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+===== Schritte
 
-==== Steps
+Bevor Sie beginnen, suchen Sie nach modulspezifischen Update-Anweisungen. Dies ist
+typischerweise notwendig beim Aktualisieren von Modulen, die die Verwendung von Drittanbietern beinhalten
+Bibliotheken. Lesen und verstehen Sie alle modulspezifischen Anforderungen, bevor Sie
+Fortfahren mit den Aktualisierungen. Um Anweisungen zu finden, überprüfen Sie das Projekt des Moduls
+Seite _Lesen Sie die Dokumentation_ Link.
 
-Before you start, check for module-specific update instructions. This is
-typically necessary while updating modules that involve the usage of third-party
-libraries. Read and understand all module-specific requirements before
-proceeding with the updates. To find instructions, check the module's project
-page _Read Documentation_ link.
+Um weitere Anweisungen anzuzeigen, laden Sie die tar.gz- oder .zip-Datei aus dem Projekt herunter
+Seite auf Ihren lokalen Computer. Entpacken Sie die Datei und suchen Sie nach _README.txt_,
+_INSTALL.txt_ und _UPGRADE.txt_, die mit der Installation des Moduls geliefert werden
+Datei. Lesen Sie auch die Versionshinweise auf der Projektseite, indem Sie auf die Version
+Nummer, die Sie herunterladen.
 
-To view further instructions, download the tar.gz or .zip file from the project
-page to your local computer. Unzip the file and look for _README.txt_,
-_INSTALL.txt_, and _UPGRADE.txt_ that come with the module's installation
-file. Also, review the release notes on the project page by clicking the version
-number you're downloading.
-
-// Downloads Abschnitt of the Admin Toolbar project page on drupal.org.
+// Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/security-update-module-release-notes.png["Release notes link"]
 
-You can use the administrative interface or Drush to update a contributed
-module. If you are updating a custom module rather than a contributed module, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to obtain the new module files,
-follow the steps in <<extend-manual-install>>. You can then continue here with
-step 6 in the instructions for the administrative interface below.
+Sie können die administrative Schnittstelle verwenden, um ein beigetragenes Modul zu aktualisieren. Wenn Sie
+ein benutzerdefiniertes Modul anstelle eines beigetragenen Moduls aktualisieren, wenn Sie eine
+Meldung _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihre
+server_, oder wenn die folgenden Schritte nicht funktionieren, um die neuen Moduldateien zu erhalten,
+Folgen Sie den Schritten unter <<erweitern-manuelle Installation>>. Sie können dann hier fortfahren mit
+Schritt 6 in den Anweisungen für die administrative Schnittstelle unten.
 
-===== Using the administrative interface
+Wenn Sie den Composer zur Verwaltung der Dateien in Ihrer Site verwenden, folgen Sie den Schritten
+in <<install-composer>> um die Dateien zu aktualisieren, fahren Sie dann hier mit Schritt 6 in
+die untenstehenden Anweisungen für die administrative Schnittstelle.
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+===== Using the administRative Schnittstelle
 
-. In the _Manage_ administrative menu, navigate to _Reports_ >
-_Available updates_ > _Update_ (_admin/reports/updates/update_).
+. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>.
 
-. Find and check the module in the list. Click _Download these updates_ for the
-module.
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Berichte_ >
+_Verfügbare Aktualisierungen_ > _Aktualisierung_ (_Admin/Berichte/Aktualisierungen/Aktualisierung_).
+
+. Suchen und prüfen Sie das Modul in der Liste. Klicken Sie auf _Download dieser Updates_ für die
+Modul.
 +
 --
 // Update page for theme (admin/reports/updates/update).
 image:images/security-update-module-updates.png["Available updates",width="100%"]
 --
 
-. Click _Continue_.
+. Klicken Sie auf _Fortsetzen_.
 
-. Click _Run database updates_. If you obtained the new module files manually,
-start with this step, and reach the database updates page by typing the URL
-_example.com/update.php_ in your browser.
+. Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Moduldateien manuell bezogen haben,
+Beginnen Sie mit diesem Schritt und erreichen Sie die Datenbank-Updates-Seite, indem Sie die URL eingeben
+_example.com/update.php_ in Ihrem Browser.
 
-. Click _Continue_ and apply all updates. The database update scripts will be
-executed.
+. Klicken Sie auf _Fortsetzen_ und wenden Sie alle Aktualisierungen an. Die Datenbank-Update-Skripte werden
+ausgeführt.
 
-. Click _Administration pages_ to return to the administration Abschnitt of your
-site.
+. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihres
+Standort.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<Erweiterte Wartung>>.
 
-. Clear the cache (refer to <<prevent-cache-clear>>).
+. Löschen Sie den Cache (siehe <<<prevent-cache-clear>>).
 
-===== Using Drush
+===== Erweitern Sie Ihr Verständnis
 
-. Find the project name for the module you wish to update. It is the last
-segment of the module's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/admin_toolbar_, the project name is
-"admin_toolbar".
-
-. Run the following Drush command, giving the project name (for example,
-`admin_toolbar`) as a parameter (if you have more than one module to update, add
-the additional module project names to the end of the command, separated by
-spaces):
-+
-----
-drush up admin_toolbar
-----
-
-. Follow the instructions on the screen.
-
-==== Expand your understanding
-
-* Review the site log (refer to <<prevent-log>>) once the updates are complete
-to check for errors.
+* Überprüfen Sie das Website-Protokoll (siehe <<<Prevent-Log>>), sobald die Aktualisierungen abgeschlossen sind.
+um auf Fehler zu prüfen.
 
 * <<security-update-theme>>
 
-//==== Related concepts
+//====== Verwandte Konzepte
 
-==== Additional resources
+==== Videos
 
-https://www.drupal.org/node/250790[_Drupal.org_ community documentation page "Updating modules"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Updating a Module"]
+
+===== Zusätzliche Ressourcen
+
+https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborgh], and
-https://www.drupal.org/u/hey_germano[Sarah German] at
-https://www.advomatic.com[Advomatic], from
-https://www.drupal.org/node/250790["Updating modules"], copyright 2000-2017 by
-the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborgh], und
+https://www.drupal.org/u/hey_germano[Sarah Deutsch] unter
+https://www.advomatic.com[Advomatisch], von
+https://www.drupal.org/node/250790["Updating modules"], copyright 2000-copyright_upper_year by
+die einzelnen Beitragszahler zur
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

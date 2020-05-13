@@ -1,9 +1,9 @@
 [[content-paths]]
 
-=== Concept: Paths, Aliases, and URLs
+=== Konzept: Pfade, Aliase, und URLs
 
 [role="summary"]
-Overview of paths, aliases, and URLs (with examples).
+Überblick über Pfade, Aliase, und URLs (mit Beispielen).
 
 (((Path,overview)))
 (((Alias,overview)))
@@ -11,23 +11,23 @@ Overview of paths, aliases, and URLs (with examples).
 (((Uniform Resource Locator (URL),overview)))
 (((URL alias,overview)))
 
-//==== Was man wissen sollte
+//==== Erforderliche Vorkenntnisse
 
 
-==== What is a URL?
+===== Was ist eine URL?
 
-URL is the abbreviation for "Uniform Resource Locator", which is the page's
-address on the web. It is the "name" by which a browser identifies a page to
-display. In the example "Visit us at _example.com_.", _example.com_ is the URL
-for the home page of your website. Users use URLs to locate content on the web.
+URL ist die Abkürzung für „Uniform Resource Locator", d.h. für den "die einzigartige Adresse" der Seite Ihrer Website.
+im Internet. Es ist der „Name", über den ein Browser eine Seite identifiziert, um diese
+anzeigen zu können. Im Beispiel „Besuchen Sie uns unter _Bexample.com_." ist _example.com_ die URL
+für die Startseite Ihrer Website. Benutzer verwenden URLs, um Inhalte im Web zu finden.
 
-==== What is a Path?
+===== Was ist ein Pfad?
 
-A path is the unique, last part of the URL for a specific function or piece of
-content. For example, for a page whose full URL is _http://example.com/node/7_,
-the path is _node/7_.
+Ein Pfad ist der eindeutige, hintere  Teil der URL für eine bestimmte Funktion oder einen bestimmten Inhalt.
+Für eine Seite, deren vollständige URL _http://example.com/node/7_ lautet,
+lautet der Pfad beispielsweise _node/7_.
 
-Here are some examples of paths you might find in your site:
+Hier sind einige Beispiele für Pfade, die Sie auf Ihrer Site finden könnten:
 
 * _node/7_
 * _taxonomy/term/6_
@@ -35,32 +35,32 @@ Here are some examples of paths you might find in your site:
 * _user/login_
 * _user/3_
 
-==== What is an Alias?
+===== Was ist ein Alias?
 
-The core software has a feature called "URL Alias" that allows you to provide a
-more understandable name to the content. So, if you have an "About Us" page with
-the path _node/7_, you can set up an alias so that your visitors will see it as
-_http://www.example.com/AboutUs_. The core Path module, which supports URL
-aliasing, provides this functionality.
+Das Kernsystem verfügt über eine Funktion namens „URL-Alias", die es Ihnen ermöglicht, eine
+verständlichere Bezeichnung für einen Inhalt festzulegen. Wenn Sie beispielsweise ein Seite mit dem Titel „Über uns"-angelegt haben, die den Pfad
+_node/7_ besitzt, können Sie einen Alias einrichten, so dass Ihre Besucher die Seite über
+_http://www.example.com/Über.Uns_ aufrufen können. Das Modul Path,
+das mit dem Kernsystem ausgeliefert wird, stellt diese Funktionalität zur Verfügung.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 * <<content-create>>
 * <<content-edit>>
 
-// The following Thema has been deferred, so remove the link for now.
-// @todo Put this link back in when/if the Thema gets added back.
+// The following topic has been deferred, so remove the link for now.
+// @todo Put this link back in when/if the topic gets added back.
 // * <<structure-pathauto>>
 
 
-//==== Additional resources
+//====== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com/[Pronovix] from
-https://www.drupal.org/node/120631["URL aliases"], and
-https://www.drupal.org/node/31644["Understanding Drupal paths"]
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+Adaptiert von https://www.drupal.org/u/dianalakatos[Diána Lakatos] bei
+https://pronovix.com/[Pronovix] von
+https://www.drupal.org/node/120631["URL-Aliase"], und
+https://www.drupal.org/node/31644["Drupal-Pfade verstehen"]
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community]

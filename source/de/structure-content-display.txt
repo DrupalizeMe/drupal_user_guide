@@ -1,44 +1,44 @@
 [[structure-content-display]]
 
-=== Changing Content Display
+=== Ändern der Inhaltsanzeige
 
 [role="summary"]
-How to make content items more presentable.
+Wie man Inhaltselemente präsentationsfähiger macht.
 
 (((Content display,changing)))
 (((Content display,managing)))
 (((Content,displaying)))
 
-==== Goal
+===== Ziel
 
-Make the content items more readable, accessible, and visibly attractive by
-reordering the fields, hiding labels, and tuning the output of the fields.
+Machen Sie die Inhaltselemente lesbarer, zugänglicher und sichtbar attraktiver, indem
+Neuanordnung der Felder, Ausblenden von Beschriftungen und Abstimmen der Ausgabe der Felder.
 
-==== Was man wissen sollte
+===== Vorraussetzung Kenntnisse
 
 * <<planning-data-types>>
 * <<structure-view-modes>>
 
-==== Site prerequisites
+===== Standort-Voraussetzungen
 
-The Vendor content type must exist, it must have Main Image and Vendor URL
-fields, and your site must have at least one Vendor content item. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+Der Inhaltstyp "Anbieter" muss vorhanden sein, er muss ein Hauptbild und eine Anbieter-URL haben.
+Felder, und Ihre Site muss mindestens ein Inhaltselement des Lieferanten enthalten. Siehe
+<<Struktur-Inhaltstyp>>, <<Struktur-Felder>>, und <<Inhalterstellung>>.
 
-==== Steps
+===== Schritte
 
-. Find and view a Vendor content item you created in <<structure-fields>>.
-Notice that there are several things that could be done to improve how the page
-looks:
+. Suchen und zeigen Sie ein Inhaltselement Lieferant an, das Sie unter <<Strukturfelder>> angelegt haben.
+Beachten Sie, dass es mehrere Dinge gibt, die man tun könnte, um die Seite zu verbessern
+Aussehen:
 +
-  * The Main Image and Vendor URL fields should not have labels.
-  * The order of the fields should be changed so that the image comes first.
-  * The image should be smaller.
+  * Die Felder Hauptbild und Anbieter-URL sollten keine Beschriftungen haben.
+  * Die Reihenfolge der Felder sollte so geändert werden, dass das Bild an erster Stelle steht.
+  * Das Bild sollte kleiner sein.
 
-. To fix the first two problems, and update some additional settings, in the
-_Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). Then click _Manage display_ in the dropdown button
-for the Vendor content type.
+  . Um die ersten beiden Probleme zu beheben und einige zusätzliche Einstellungen zu aktualisieren, in der
+  Verwaltungsmenü _Verwaltung_, navigieren Sie zu _Struktur_ > _Inhaltstypen_
+  (_Administration/Struktur/Arten_). Klicken Sie dann auf _Anzeige verwalten_ in der Dropdown-Schaltfläche
+  für den Content-Typ Anbieter.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
@@ -46,8 +46,8 @@ for the Vendor content type.
 image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
 --
 
-. Under the _Label_ column, select _Hidden_ for Main image. Do the same
-for Vendor URL.
+. Unter der Spalte _Label_ wählen Sie _Versteckt_ für Hauptbild. Machen Sie dasselbe
+für Anbieter-URL.
 +
 --
 // Manage display page for Vendor content type
@@ -56,10 +56,17 @@ for Vendor URL.
 image:images/structure-content-display_main_image_hidden.png["Selecting _main image title_ as _hidden_",width="100%"]
 --
 
-. Click the gear for the Vendor URL field. Clear the _Trim link text length_
-setting.  Links will no longer have a trim length. Check the _Open link in new
-window_ checkbox. Now, when the link is clicked, it will open in a new browser
-window. Click _Update_.
+. Klicken Sie auf das Zahnrad für das Feld Hersteller-URL, um die Konfiguration zu öffnen.
+Optionen.
+
+. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname|Erläuterung|Beispielwert
+|Länge des Linktextes trimmen| Maximal angezeigte Länge für Linktext| Leer (kein Trimmen)
+|Link in neuem Fenster öffnen| Ob Links in einem neuen Fenster oder im selben Fenster geöffnet werden sollen |Geprüft
+|================================
 +
 --
 // Vendor URL settings form, with trim length cleared, and open link in
@@ -67,42 +74,51 @@ window. Click _Update_.
 image:images/structure-content-display_trim_length.png["Link trim length",width="100%"]
 --
 
-. Drag the cross arrows next to the field items to reorder as Main image,
-_Body_, Vendor URL, and _Links_.
+. Klicken Sie auf _Aktualisieren_.
+
+. Ziehen Sie die Querbalkengriffe der Felder, um sie als Hauptbild, _Körper_, neu anzuordnen,
+Anbieter-URL und _Links_. Alternativ zum Ziehen können Sie auf die Schaltfläche _Show
+Zeilengewichte_ Link oben in der Tabelle und geben Sie numerische Gewichte ein (Felder
+mit niedrigeren oder negativeren Gewichten werden zuerst angezeigt).
 +
 --
 // Manage display page for Vendor content type, with order changed.
 image:images/structure-content-display_change_order.png["Changing order of fields",width="100%"]
 --
 
-. Click _Save_.
+. Klicken Sie auf _Speichern_.
 
-. Find the Vendor content item from step 1 again, and verify that the updates
-have been made.
+. Suchen Sie das Inhaltselement "Anbieter" aus Schritt 1 erneut, und überprüfen Sie, ob die Aktualisierungen
+gemacht worden sind.
 
-. Repeat similar steps to manage the display of the Recipe content type
-fields.
+. Wiederholen Sie ähnliche Schritte, um die Anzeige des Inhaltstyps Rezept zu verwalten
+Felder.
 
-==== Expand your understanding
+===== Erweitern Sie Ihr Verständnis
 
-* Make the main image smaller. See <<structure-image-style-create>>.
+* Verkleinern Sie das Hauptbild. Siehe <<Struktur-Bild-Stil-Erstellen>>.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, benötigen Sie möglicherweise
+um den Cache zu leeren. Siehe <<<Cache-Löschen verhindern>>.
 
 
-==== Related concepts
+===== Verwandte Konzepte
 
 <<structure-image-styles>>
 
-==== Additional resources
+==== Videos
 
-* https://www.drupal.org/node/774798[_Drupal.org_ community documentation page "Specify how fields are displayed"]
-* https://www.drupal.org/node/774744[_Drupal.org_ community documentation page "Rearrange the order of fields"]
-* https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Changing Content Display"]
+
+===== Zusätzliche Ressourcen
+
+* https://www.drupal.org/node/774798[_Drupal.org_ Community-Dokumentationsseite "Spezifizieren Sie, wie Felder angezeigt werden"]
+* https://www.drupal.org/node/774744[_Drupal.org_ Community-Dokumentationsseite "Ordnen Sie die Reihenfolge der Felder neu an"]
+* https://www.drupal.org/node/1577752[_Drupal.org_ Community-Dokumentationsseite "Ansichtsmodi"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel] and
+Geschrieben von https://www.drupal.org/u/AnnGreazel[Ann Greazel] und
 https://www.drupal.org/u/batigolix[Boris Doesborg].

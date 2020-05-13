@@ -1,9 +1,9 @@
 [[structure-reference-fields]]
 
-=== Concept: Reference Fields
+=== Konzept: Referenzfelder
 
 [role="summary"]
-Overview of reference fields and their commonly-used types.
+Überblick über Referenzfelder und ihre häufig verwendeten Typen.
 
 (((Reference field,overview)))
 (((Reference field,content)))
@@ -17,42 +17,42 @@ Overview of reference fields and their commonly-used types.
 (((User reference field,overview)))
 (((Content reference field,overview)))
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<planning-data-types>>
 
-==== What is a reference field?
+===== Was ist ein Referenzfeld?
 
-A _reference field_ is a field that represents a relationship between an entity
-and one or more other entities, which may belong to the same or different entity
-type. The three most commonly-used reference fields are:
+Ein _Referenzfeld_ ist ein Feld, das eine Beziehung zwischen einer Entität
+und eine oder mehrere andere Entitäten, die derselben oder einer anderen Entität angehören können
+tippen. Die drei am häufigsten verwendeten Referenzfelder sind:
 
-Content reference::
-  A reference to a content item. For example, you might want to connect recipes
-  to the vendors who submitted them. You would set up a content reference field
-  called Submitted by referencing Vendor content items on the Recipe content
-  type.
+Inhaltsverweis::
+  Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte verbinden wollen
+  an die Anbieter, die sie eingereicht haben. Sie würden ein Inhaltsreferenzfeld einrichten
+  genannt Eingereicht durch Verweis auf Inhaltselemente des Lieferanten auf dem Rezeptinhalt
+  tippen.
 
-Taxonomy term reference::
-  A reference to a taxonomy term. For example, you might want to connect recipes
-  to their ingredients. You would set up a taxonomy term reference field called
-  Ingredients on the Recipe content type. This reference field will point to the
-  vocabulary Ingredients.
+Taxonomie-Begriffsreferenz::
+  Ein Verweis auf einen Taxonomiebegriff. Beispielsweise könnten Sie Rezepte verbinden wollen
+  zu ihren Inhaltsstoffen. Sie würden ein Taxonomiebegriff-Referenzfeld namens
+  Zutaten auf dem Inhaltstyp Rezept. Dieses Referenzfeld zeigt auf das Feld
+  Wortschatz Inhaltsstoffe.
 
-User reference::
-  A reference to a user account. For example, you might want to connect recipes
-  with their chefs. You would set up a user reference field called Chefs on the
-  Recipe content type.
+Benutzer-Referenz::
+  Ein Verweis auf ein Benutzerkonto. Zum Beispiel könnten Sie Rezepte verbinden wollen
+  mit ihren Küchenchefs. Sie würden ein Benutzerreferenzfeld namens Köche auf der Registerkarte
+  Typ des Rezeptinhalts.
 
-==== Ähnliche Themen
+===== Verwandte Themen
 
 <<structure-taxonomy>>
 
 //==== Additional resources
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Geschrieben und herausgegeben von https://www.drupal.org/u/surendramohan[Surendra Mohan],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

@@ -1,25 +1,26 @@
 [[planning-layout]]
-=== Planning Your Site Layout
+=== Planung des Layouts ihrer Website
 
 [role="summary"]
-How to plan the navigation and layout of a website (mobile and desktop browsers).
+Wie man die Navigation und das Layout einer Website (mobil und Desktop) plant
+Browsern).
 
 (((Planning,site layout)))
 (((Site layout,planning)))
 (((Layout,planning)))
 
-==== Goal
+===== Ziel
 
-Plan the navigation and layout of the site, for both mobile and desktop
-browsers.
+Planung der Navigation und des Layouts der Website, sowohl für mobile Geräte als auch für den Desktop
+Browsern.
 
-==== Was man wissen sollte
+===== Erforderliche Kenntnisse
 
 * <<understanding-themes>>
 * <<block-regions>>
 * <<preface-scenario>>
 
-// ==== Site prerequisites
+// ==== Anforderungen an die Website
 
 ==== Steps
 
@@ -43,54 +44,60 @@ the farmers market scenario, this might include:
 . Decide which information should be on which pages or types of pages on the
 site:
 +
-  Information that should be on all pages::
-    Address, hours, and recently-added recipes list
-  Vendor details pages::
-    Information about each vendor on its own page
-  Recipe details pages::
-    Details of each recipe on its own page
-  Home page::
-    Location, map, directions, and hours
-  About page::
-    History of the market
-  Vendors list page::
-    List of vendors, with links to vendor detail pages
-  Recipe list page::
-    Searchable list of recipes, with links to recipe detail pages
+Informationen, die auf allen Seiten stehen sollten::
+  Adresse, Öffnungszeiten und Liste der kürzlich hinzugefügten Rezepte
+Anbieter-Detailseiten::
+  Informationen zu jedem Lieferanten auf einer eigenen Seite
+Rezept-Detailseiten::
+  Details zu jedem Rezept auf einer eigenen Seite
+Startseite::
+  Standort, Karte, Wegbeschreibung und Öffnungszeiten
+Über Seite::
+  Geschichte des Marktes
+Seite der Lieferantenliste::
+  Liste der Lieferanten, mit Links zu Lieferanten-Detailseiten
+Seite Rezeptliste::
+  Durchsuchbare Rezeptliste, mit Links zu Rezept-Detailseiten
 
-. Decide which information is the most important on each page. Site visitors
-using mobile phones or other small browsers will often only see the content that
-is presented first, and they may not scroll down to see all of the information.
+. Entscheiden Sie, welche Informationen auf jeder Seite am wichtigsten sind. Besucher der Website
+Bei der Verwendung von Mobiltelefonen oder anderen kleinen Browsern werden oft nur die Inhalte angezeigt, die
+wird zuerst präsentiert, und sie können nicht nach unten scrollen, um alle Informationen zu sehen.
 
-. Decide which of these pages should appear in the main site navigation. For
-instance, the main navigation might consist of the Home, About, Vendors, and
-Recipes pages.
+. Entscheiden Sie, welche dieser Seiten in der Hauptnavigation der Website erscheinen soll. Für
+Die Hauptnavigation könnte z.B. aus den Bereichen Home, Über, Anbieter und
+Rezepte-Seiten.
 
-. Make a rough design sketch for each page, showing how it would look when
-viewed on a small screen such as a phone, as well as on a larger screen such as
-a desktop browser. Considering that most site visitors will be using smaller
-browsers, it is a good idea to start with the phone-size layout, to make sure
-that these visitors will be able to find the information they need without too
-much scrolling.
+. Machen Sie für jede Seite eine grobe Entwurfsskizze, die zeigt, wie sie aussehen würde, wenn
+sowohl auf einem kleinen Bildschirm, wie z.B. einem Telefon, als auch auf einem größeren Bildschirm, wie z.B.
+einen Desktop-Browser. Angesichts der Tatsache, dass die meisten Besucher der Website kleinere
+Browsern, ist es eine gute Idee, mit dem Layout in Telefongröße zu beginnen, um sicherzustellen, dass
+dass diese Besucher in der Lage sein werden, die benötigten Informationen zu finden, ohne
+viel Scrolling.
 +
-In making these page layout plans, you might find that you need to revise your
-plan for which information should be on which pages. For example, you might
-decide that the address, hours, and recently-added recipes list would all fit
-well in the right sidebar area of all pages, when the site is viewed on
-desktop-sized browsers. On the other hand, you might decide that for mobile
-browsers, you would instead put the address and hours in a short format at the
-top of each page, but only display the recent recipe list at the bottom of the
-home page.
+Bei der Erstellung dieser Seitenlayoutpläne müssen Sie möglicherweise feststellen, dass Sie Ihre
+planen, welche Informationen auf welchen Seiten stehen sollen. Zum Beispiel könnten Sie
+entscheiden, dass die Adresse, die Stunden und die Liste der kürzlich hinzugefügten Rezepte passen würden
+gut im rechten Seitenleistenbereich aller Seiten, wenn die Website auf
+Browser in Desktop-Größe. Auf der anderen Seite könnten Sie entscheiden, dass für mobile
+Browsern, würden Sie stattdessen die Adresse und die Stunden in einem kurzen Format auf der
+oben auf jeder Seite, sondern zeigen nur die Liste der letzten Rezepte am Ende der
+Startseite.
 
-==== Expand your understanding
+
+===== Erweitern Sie Ihr Verständnis
 
 <<planning-structure>>
 
 // ==== Related concepts
 
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/35e16QDFE7k[title="Planning Your Site Layout"]
+
 // ==== Additional resources
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

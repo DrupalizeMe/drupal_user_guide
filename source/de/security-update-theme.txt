@@ -3,106 +3,99 @@
 === Updating a Theme
 
 [role="summary"]
-How to update a contributed theme by using the administrative interface and running the Database Updates script, or by using Drush.
+Wie man ein beigesteuertes Thema mit Hilfe der administrativen Schnittstelle aktualisiert und
+Ausführen des Datenbank-Updates-Skripts.
 
 (((Theme,updating)))
 (((Security update,applying)))
 (((Contributed theme,updating)))
-(((Drush tool,using to update theme)))
 
-==== Goal
+===== Ziel
 
-Update a contributed theme on your site and run the _Database Updates_ script.
+Aktualisieren Sie ein beigetragenes Thema auf Ihrer Website und führen Sie das Skript _Datenbank-Updates_ aus.
 
-==== Was man wissen sollte
+===== Vorausgesetztes Wissen
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+===== Standort-Voraussetzungen
 
-* A contributed theme has been installed and there is an update available for
-it. See <<extend-theme-install>> and <<security-announce>>.
+* Ein beigetragenes Thema wurde installiert und es gibt ein Update für
+es. Siehe <<extend-theme-install>> und <<security-announce>>.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
+* Wenn Ihre Website live ist, sollten Sie diesen Prozess in einer Entwicklung testen
+Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
 <<install-dev-making>>.
 
-* You have created a full site backup. See <<prevent-backups>>.
+* Sie haben eine vollständige Standortsicherung erstellt. Siehe <<prevent-backups>>.
 
-* If you want to use the user interface, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing core
-modules.
+* Wenn Sie die Benutzerschnittstelle verwenden wollen, muss das Kernmodul Update Manager
+installiert. Siehe <<config-install>> für Anweisungen zur Kerninstallation
+Module.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+===== Schritte
 
-==== Steps
+Sie können die administrative Schnittstelle verwenden, um ein beigetragenes Thema zu aktualisieren. Wenn Sie
+ein benutzerdefiniertes Thema statt eines beigetragenen Themas aktualisieren, wenn Sie eine
+Meldung _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihre
+Server_, oder wenn die folgenden Schritte nicht funktionieren, um die neuen Themen-Dateien zu erhalten, folgen Sie
+die Schritte in <<erweitern-manuell-installieren>>, und fahren Sie dann mit Schritt 6 in der
+Anweisungen für die administrative Schnittstelle weiter unten.
 
-You can use the administrative interface or Drush to update a contributed
-theme. If you are updating a custom theme rather than a contributed theme, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to obtain the new theme files,
-follow the steps in <<extend-manual-install>>, and then continue with step 6 in
-the instructions for administrative interface below.
+Wenn Sie den Composer zur Verwaltung der Dateien auf Ihrer Website verwenden, befolgen Sie die folgenden Schritte
+in <<install-composer>> um die Dateien zu aktualisieren, fahren Sie dann hier mit Schritt 6 in
+die untenstehenden Anweisungen für die administrative Schnittstelle.
 
-===== Using the administrative interface
+======== Verwendung der administrativen Schnittstelle
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>.
 
-. In the _Manage_ administrative menu, navigate to _Reports_ >
-_Available updates_ > _Update_ (_admin/reports/updates/update_).
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Berichte_ >
+_Verfügbare Aktualisierungen_ > _Aktualisierung_ (_Admin/Berichte/Aktualisierungen/Aktualisierung_).
 
-. Find and check the theme in the list. Click _Download these updates_ for the
-theme.
+. Suchen und prüfen Sie das Thema in der Liste. Klicken Sie auf _Download dieser Updates_ für die
+Thema.
 +
 --
 // Update page for theme (admin/reports/updates/update).
 image:images/security-update-theme-updates.png["Available updates",width="100%"]
 --
 
-. Click _Continue_.
+. Klicken Sie auf _Fortsetzen_.
 
-. Click _Run database updates_. If you obtained the new theme files manually,
-start with this step, and reach the database updates page by typing the URL
-_example.com/update.php_ in your browser.
+. Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Themendateien manuell erhalten haben,
+Beginnen Sie mit diesem Schritt und erreichen Sie die Datenbank-Updates-Seite, indem Sie die URL eingeben
+_beispiel.com/update.php_ in Ihrem Browser.
 
-. Click _Continue_ to run the updates. The database update scripts will be
-executed.
+. Klicken Sie auf _Fortsetzen_, um die Aktualisierungen auszuführen. Die Datenbank-Update-Skripte werden
+ausgeführt.
 
-. Click _Administration pages_ to return to the administration Abschnitt of your
-site.
+. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihres
+Standort.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<Erweiterte Wartung>>.
 
-. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
-
-===== Using Drush
-
-. Find the project name for the theme you wish to update, which is the last
-segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/mayo_, the project name is "mayo".
-
-. Run the following Drush command, giving the project name (for example,
-`mayo`) as a parameter:
-+
-----
-drush up mayo
-----
-
-. Follow the instructions on the screen.
-
-==== Expand your understanding
-
-* Review the site log, see <<prevent-log>>, once the updates are complete to
-check for errors.
-
-* <<security-update-module>>
-
-// ==== Related concepts
-
-// ==== Additional resources
+. Löschen Sie den Drupal-Cache (siehe <<<Prävent-cache-clear>>).
 
 
-*Attributions*
+===== Erweitern Sie Ihr Verständnis
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+* Überprüfen Sie das Website-Protokoll, siehe <<<prevent-log>>, sobald die Aktualisierungen abgeschlossen sind, um
+auf Fehler prüfen.
+
+<<<Sicherheits-Update-Modul>>
+
+// ===== Verwandte Konzepte
+
+===== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Aktualisierung eines Themas"]
+
+// ===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].

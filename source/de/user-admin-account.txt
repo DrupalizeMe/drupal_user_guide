@@ -1,65 +1,66 @@
 [[user-admin-account]]
 
-=== Concept: The User 1 Account
+=== Konzept: Das Konto von Benutzer 1
 
 [role="summary"]
-Overview of the User 1 account, also known as the root account or administrative account.
+Übersicht über das Konto User 1, auch bekannt als Root-Konto oder administratives Konto
+Konto.
 
 (((User,root)))
 (((User,user one)))
 (((User,administrative)))
 (((Security,user one account)))
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<user-concept>>
 
-==== What is the user 1 account?
+==== Was ist das Konto des ersten Benutzers?
 
-During the installation of your site, you created the first user account. Each
-user account internally has a numeric user ID, and since the ID of this user is
-one, it is commonly referred to as the _user 1_ account. This user account is
-special, because independent of what roles it is assigned, someone logged in as
-user 1 has permission to do all actions on the site, including viewing and
-editing all content, editing any user account, changing site configuration,
-installing and uninstalling modules, and running the update script.
+Während der Installation Ihrer Website haben Sie das erste Benutzerkonto erstellt. Jedes
+Benutzerkonto hat intern eine numerische Benutzer-ID, und da die ID dieses Benutzers
+eins, wird es allgemein als _Benutzerkonto 1_ bezeichnet. Dieses Benutzerkonto ist
+speziell, denn unabhängig davon, welche Rollen ihm zugewiesen werden, hat sich jemand als
+Benutzer 1 hat die Erlaubnis, alle Aktionen auf der Website durchzuführen, einschließlich der Anzeige und
+Bearbeitung des gesamten Inhalts, Bearbeitung jedes Benutzerkontos, Änderung der Website-Konfiguration,
+Installieren und Deinstallieren von Modulen und Ausführen des Aktualisierungsskripts.
 
-Because of this level of permission, some people refer to this account as the
-_root user_, similar to the "root" user account that has full administrative
-permissions in Linux and other operating systems.
+Aufgrund dieser Berechtigungsstufe bezeichnen einige Leute dieses Konto als
+_Root-Benutzer_, ähnlich dem "root"-Benutzerkonto, das voll administrativ
+Berechtigungen in Linux und anderen Betriebssystemen.
 
-It is usually better to make separate accounts for each administrative user,
-giving them the _Administrator_ role, rather than having all administrative
-users log in using the user 1 account. There are several reasons for this:
+Es ist normalerweise besser, getrennte Konten für jeden administrativen Benutzer einzurichten,
+ihnen die Rolle des _Verwalters_ zu geben, anstatt alle administrativen
+Benutzer melden sich mit dem Konto Benutzer 1 an. Dafür gibt es mehrere Gründe:
 
-* Some actions and updates on the site are logged, and if everyone uses the same
-account, it is difficult to know who did them if you have questions.
+* Einige Aktionen und Aktualisierungen auf der Website werden protokolliert, und wenn alle dasselbe benutzen
+Konto, ist es schwierig zu wissen, wer sie gemacht hat, wenn Sie Fragen haben.
 
-* The _Administrator_ role permissions can be modified to be safer than the
-full permissions of the user 1 account, so that people do not inadvertently
-change site features that shouldn't be changed.
+* Die Berechtigungen der Rolle _Administrator_ können geändert werden, um sicherer zu sein als die
+volle Berechtigungen des Benutzerkontos 1, so dass Personen nicht versehentlich
+Website-Funktionen ändern, die nicht geändert werden sollten.
 
-* People's responsibilities on a site may change over time. With ordinary user
-accounts, this can be mirrored in permissions by assigning or unassigning
-roles to their user accounts. If they are all using the user 1 account,
-this is more difficult.
+* Die Verantwortlichkeiten der Menschen auf einer Website können sich mit der Zeit ändern. Mit gewöhnlichem Benutzer
+Konten, kann dies in Berechtigungen gespiegelt werden, indem man die Zuweisung oder Aufhebung der Zuweisung
+Rollen zu ihren Benutzerkonten. Wenn sie alle das Benutzerkonto 1 verwenden,
+das ist schwieriger.
 
-* On some sites, the author of content or comments is displayed or tracked, and
-if everyone uses the same account to create content, it is difficult to know
-who created the content.
+* Auf einigen Websites wird der Autor von Inhalten oder Kommentaren angezeigt oder verfolgt, und
+wenn alle dasselbe Konto zur Erstellung von Inhalten verwenden, ist es schwierig zu wissen
+wer den Inhalt erstellt hat.
 
-It is not possible to delete the user 1 account from the administrative user
-interface. It would be possible to do with a database query, but it could cause
-problems in your site and is not advisable.
+Es ist nicht möglich, das Konto Benutzer 1 aus dem administrativen Benutzer zu löschen.
+Schnittstelle. Es wäre möglich, mit einer Datenbankabfrage zu tun, aber es könnte
+Probleme auf Ihrer Website und ist nicht ratsam.
 
-//==== Ähnliche Themen
+//====== Verwandte Themen
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
-https://www.drupal.org/node/22284[_Drupal.org_ community documentation page "Accounts and roles"]
+https://www.drupal.org/node/22284[_Drupal.org_ Community-Dokumentationsseite "Konten und Rollen"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Geschrieben und herausgegeben von https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
+und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

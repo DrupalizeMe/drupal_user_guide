@@ -1,70 +1,73 @@
 [[user-content]]
 
-=== Assigning Authors to Content
+=== Zuweisen von Autoren zum Inhalt
 
 [role="summary"]
-How to assign authorship of content items to a user account.
+So weisen Sie einem Benutzerkonto die Urheberschaft von Inhaltselementen zu.
 
 (((Author,assigning)))
 (((Content,assigning author)))
 
-==== Goal
+===== Ziel
 
-Assign Vendor content items Happy Farm and Sweet Honey to the corresponding
-Vendor user accounts, so they can edit their own Vendor profiles on the site.
+Ordnen Sie die Inhaltselemente "Happy Farm" und "Sweet Honey" des Anbieters den entsprechenden
+Anbieter-Benutzerkonten, damit sie ihre eigenen Anbieterprofile auf der Website bearbeiten können.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-* The Vendor content type must exist, and your site must have at least two
-Vendor content items. See <<structure-content-type>>, <<structure-fields>>, and
+* Der Inhaltstyp Anbieter muss vorhanden sein, und Ihre Website muss mindestens zwei
+Inhaltsartikel des Lieferanten. Siehe <<structure-content-type>>, <<structure-fields>>, und
 <<content-create>>.
 
-* User accounts for at least two vendors must exist. See <<user-new-user>>.
+* Benutzerkonten für mindestens zwei Lieferanten müssen vorhanden sein. Siehe <<user-new-user>>.
 
-==== Steps
+===== Schritte
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Inhalt_ (_Admin/Inhalt_).
 
-. Find Vendor content item Happy Farm in the list. If it is not immediately
-visible, you can filter the list by _Published status_, _Content type_ (Vendor),
-_Title_, or _Language_.  Click _Edit_ for the Vendor content item you would like
-to assign an author to.
+. Suchen Sie in der Liste das Inhaltselement Anbieter Happy Farm. Wenn es nicht sofort
+sichtbar ist, können Sie die Liste nach _Veröffentlichungsstatus_, _Inhaltstyp_ (Anbieter) filtern,
+_Titel_, oder _Sprache_.  Klicken Sie auf _Bearbeiten_ für das gewünschte Inhaltselement des Lieferanten
+einen Autor zuweisen.
 
-. Locate the information block and click _Authoring information_.
+. Beginnen Sie unter _Authoring information_, den Benutzer des Anbieters einzugeben
+Name Happy Farm im Feld _Authored by_. Das Feld listet den passenden Benutzer
+Namen. Wählen Sie den Benutzernamen des Anbieters aus der Liste aus.
 +
 --
-// Authoring information Abschnitt of content edit page.
+// Authoring information section of content edit page.
 image:images/user-content.png["Assigning an author to the Vendor content item"]
 --
 
-. Start typing the Vendor's user name Happy Farm in the _Authored by_ field.
-The field lists matching user names. Select the Vendor's user name from the
-list.
+. Klicken Sie auf _Speichern_.
 
-. Click _Save and keep published_.
-
-. You will get a notification that the Vendor content item has been updated.
+. Sie erhalten eine Benachrichtigung, dass das Inhaltselement Lieferant aktualisiert wurde.
 +
 --
-// Confirmation message after content update.
-image:images/user-content_updated.png["Vendor content item has been updated"]
+// Bestätigungsnachricht nach Inhaltsaktualisierung.
+image:images/user-content_updated.png["Das Inhaltselement des Anbieters wurde aktualisiert"]
 --
 
-. Follow these steps again to assign Vendor content item Sweet Honey to the
-Vendor user account Sweet Honey.
+. Führen Sie diese Schritte erneut aus, um das Inhaltselement Lieferant Sweet Honey der
+Anbieter-Benutzerkonto Sweet Honey.
 
-// ==== Expand your understanding
+// ===== Erweitern Sie Ihr Verständnis
 
-// ==== Related concepts
+// ===== Verwandte Konzepte
 
-//==== Additional resources
+===== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/yx9u2SCgono[title="Assigning Authors to Content"]
+
+//====== Zusätzliche Ressourcen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Geschrieben von https://www.drupal.org/u/dianalakatos[Diána Lakatos] unter
 https://pronovix.com/[Pronovix].

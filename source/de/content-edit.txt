@@ -1,83 +1,88 @@
 [[content-edit]]
-=== Editing a Content Item
+=== Inhalt bearbeiten
 
 [role="summary"]
-How to edit a content item.
+Wie Sie Inhalte bearbeiten
 
 (((Content,editing)))
 (((Content,finding)))
 (((Editing content)))
 
-==== Goal
+==== Zielsetzung
 
-Update the hours on the Home page content item.
+Aktualisieren Sie die Öffnungszeiten auf der Startseite.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<content-create>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-A content item for the Home page must exist. See <<content-create>>.
+Inhalt für die Homepage muss vorhanden sein. Siehe <<content-create>>.
 
-==== Steps
+===== Schritte
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ (_admin/content_).
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use the _Content type_, _Title_, or other filters to locate the content item.
+. Wenn der Inhalt, den Sie bearbeiten möchten, kürzlich aktualisiert oder angelegt wurde, wird es
+ am Anfang der Inhaltsliste angezeigt. Falls der gewünschte Inhalt nicht angelegt wird, können Sie
+nach _Inhaltstyp_, _Titel_ oder anderen Kriterien filtern, um den gewünschten Inhalt zu finden.
 +
 --
-// Content list on admin/content, with filters above.
-image:images/content-edit-admin-content.png["Content administration page",width="100%"]
+// Inhaltsliste auf admin/content, mit Filtern oben.
+image:images/content-edit-admin-content.png["Inhaltsverwaltungsseite",width="100%"]]
 --
 
-. Click _Edit_ in the row of the content item you want to edit (Home), to
-open the content editing form. Update the opening hours in the _Body_ field. See
-<<content-create>> for an explanation of the fields and a screenshot.
+. Klicken Sie auf _Bearbeiten_ in der Zeile des Inhaltslinks, des Inhalts, den Sie bearbeiten möchten (Home), um
+das Formular zur Inhaltsbearbeitung zu öffnen. Aktualisieren Sie die Öffnungszeiten im Feld _Textkörper_. Siehe
+<<Content-create>> für eine Erklärung der Felder und einen Screenshot.
 
-. Check _Create new revision_ in the box on the right, if it is not already
-checked, and enter a _Revision log message_ explaining what changes you are
-making (for example, you might enter "Updated opening hours"). This text
-will appear in the revision log for the page.
+. Aktivieren Sie die Option _Neue Revision_, falls sie nicht bereits
+aktiviert ist und geben Sie eine _Revisionsprotokollmeldung_ ein, die erklärt, welche Änderungen Sie vorgenommen haben (Sie könnten zum Beispiel „Öffnungszeiten aktualisiert“ eingeben). Dieser Text
+wird im Revisionsprotokoll der Seite angezeigt.
 +
 --
-// Revision area of the content edit page.
-image:images/content-edit-revision.png["Revision information section of the content edit page"]
+// Revisionsbereich der Inhaltsbearbeitungsseite.
+image:images/content-edit-revision.png["Revisions-Informationsbereich der Inhaltsbearbeitungsseite"]]
 --
 
-. Click _Save and keep published_ to save your changes.
+. Klicken Sie auf _Speichern_, um Ihre Änderungen zu speichern.
 
-. You will be redirected back to the _Content_ administrative page, and there
-should be a message showing that the content item was updated.
+. Sie werden zurück auf die Seite _Inhalt_ weitergeleitet, und dort
+sollte eine Nachricht angezeigt werden, die darüber informiert, dass der Inhalt aktualisiert wurde.
 +
 --
-// Updated content message.
-image:images/content-edit-message.png["Updated content message"]
+// Aktualisierte Inhaltsnachricht.
+image:images/content-edit-message.png["Aktualisierte Inhaltsnachricht"]]
 --
 
-==== Expand your understanding
+===== Vertiefen Sie Ihr Wissen
 
-As an alternative to the first two steps above, you can also reach the
-content edit form as follows:
+Als Alternative zu den oben genannten Schritten können Sie auf das
+Formular zum Bearbeiten von Inhalten auch wie folgt zugreifen:
 
-. Starting from your site's home page, use the site's navigation menus to locate
-the page where the content you want to edit is displayed to visitors.
+. Ausgehend von der Startseite Ihrer Website verwenden Sie die Navigationsmenüs der Site, um
+die Seite zu finden, auf der der Inhalt, den Sie bearbeiten möchten, den Besuchern angezeigt wird.
 
-. Most themes will display an _Edit_ link or tab near the top of that page to
-people with permission to edit the page; clicking the link will take you to
-the full content edit form.
+. Die meisten Themes zeigen einen _Bearbeiten_-Link oder eine Registerkarte am oberen Rand der Seite an,
+über die/den Benutzer mit der entsprechenden Berechtigung den Inhalt bearbeiten können. wenn Sie auf den Link klicken, gelangen Sie zum
+Formular zur Inhaltsbearbeitung des Inhalts.
 
-. You could also use the in-place editor (refer to <<content-in-place-edit>>)
-from this page.
-
-//==== Related concepts
-
-//==== Additional resources
+. Sie können auch den Direktbearbeitungsmodus der Seite verwenden.
+Siehe: <<Content-In-Place-Edit>>
 
 
-*Attributions*
+//====== Verwandte Konzepte
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+===== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TAFZMcuOqG0[title="Bearbeiten eines Inhaltselements"]
+
+//====== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/chris-dart[Chris Dart]
+und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

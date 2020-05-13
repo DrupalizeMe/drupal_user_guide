@@ -1,9 +1,9 @@
 [[user-concept]]
 
-=== Concept: Users, Roles, and Permissions
+=== Konzept: Benutzer, Rollen und Berechtigungen
 
 [role="summary"]
-Overview of user accounts, permissions, and roles.
+Überblick über Benutzerkonten, Berechtigungen und Rollen.
 
 (((User,overview)))
 (((Role,overview)))
@@ -13,57 +13,59 @@ Overview of user accounts, permissions, and roles.
 (((Authenticated user,overview)))
 (((Administrative user account,overview)))
 
-// ==== Was man wissen sollte
+// ==== Erforderliche Vorkenntnisse
 
-==== What are Users?
+===== Was sind Benutzer?
 
-Anyone who visits your website is a _user_, including you. There are three
-groups of users:
+Jeder, der Ihre Website besucht, ist ein _Benutzer_, auch Sie. Es gibt drei
+Gruppen von Benutzern:
 
-* Users who are not logged in, or _anonymous users_
+* Benutzer, die nicht angemeldet sind, oder _anonyme Benutzer_
 
-* Users who are logged in, or _authenticated users_
+* Benutzer, die eingeloggt sind, oder _authentifizierte Benutzer_
 
-* The administrative user account that was automatically created when you
-installed your site, or User 1. See <<user-admin-account>>.
+* Das administrative Benutzerkonto, das automatisch erstellt wurde, als Sie
+Ihre Website installiert hat, oder Benutzer 1. Siehe <<<Benutzer-Admin-Account>>.
 
-==== What are Permissions?
+===== Was sind Berechtigungen?
 
-The ability to do actions on your site (including viewing content, editing
-content, and changing configuration) is governed by _permissions_. Each
-permission has a name (such as _View published content_) and covers one action
-or a small subset of actions. A user must be granted a permission in order to do
-the corresponding action on the site; permissions are defined by the modules
-that provide the actions.
+Die Möglichkeit, Aktionen auf Ihrer Site durchzuführen (einschließlich der Anzeige von Inhalten, der Bearbeitung
+Inhalt und Änderung der Konfiguration) wird durch _Berechtigungen_ geregelt. Jede
+Die Erlaubnis hat einen Namen (z.B. _Veröffentlichte Inhalte anzeigen_) und umfasst eine Aktion
+oder eine kleine Teilmenge von Aktionen. Ein Benutzer muss eine Berechtigung erhalten, um
+die entsprechende Aktion auf der Website; die Berechtigungen werden durch die Module definiert
+die die Aktionen bereitstellen.
 
-==== What are Roles?
+===== Was sind Rollen?
 
-Rather than assigning individual permissions directly to each user, permissions
-are grouped into _roles_. You can define one or more roles on your site, and
-then grant permissions to each role. The permissions granted to authenticated
-and anonymous users are contained in the _Authenticated user_ and _Anonymous
-user_ roles, and depending on the installation profile you used when you
-installed your site, there may also be an _Administrator_ role that is
-automatically assigned all permissions on your site.
+Anstatt jedem Benutzer individuelle Berechtigungen direkt zuzuweisen, werden Berechtigungen
+sind in _Rollen_ gruppiert. Sie können eine oder mehrere Rollen auf Ihrer Site definieren, und
+dann erteilen Sie Berechtigungen für jede Rolle. Die Berechtigungen, die authentifizierten
+und anonyme Benutzer sind in den Feldern _Authentifizierter Benutzer_ und _Anonymer Benutzer_ enthalten.
+Benutzer_ Rollen und abhängig vom Installationsprofil, das Sie verwendet haben, als Sie
+Ihre Site installiert hat, kann es auch eine _Administrator_ -Rolle geben, die
+automatisch alle Berechtigungen auf Ihrer Site zugewiesen.
 
-Each user account on your site is automatically given the _Authenticated user_
-role, and may optionally be assigned one or more additional roles. When you
-assign a role to a user account, the user will have all the permissions of the
-role when logged in.
+Jedem Benutzerkonto auf Ihrer Site wird automatisch der _Authentifizierte Benutzer_ zugewiesen.
+Rolle und kann optional mit einer oder mehreren zusätzlichen Rollen ausgestattet werden. Wenn Sie
+einem Benutzerkonto eine Rolle zuweisen, hat der Benutzer alle Berechtigungen des
+Rolle, wenn Sie angemeldet sind.
 
-It is a good practice to make several roles on your site. In the farmers market
-site example, you might want the following roles:
+Es ist eine gute Praxis, mehrere Rollen auf Ihrer Website einzurichten. Auf dem Bauernmarkt
+Standortbeispiel können Sie die folgenden Rollen wünschen:
 
-* A Vendor role that allows vendors to edit their own vendor listing page
+* Eine Lieferantenrolle, die es den Lieferanten ermöglicht, ihre eigene Lieferantenlistungsseite zu bearbeiten.
 
-* A Content editor role for editing the general farmers market pages
+* Eine Rolle als Inhaltsredakteur für die Bearbeitung der allgemeinen Bauernmarkt-Seiten
 
-* A User manager role for managing the vendor accounts
+* Eine Benutzer-Manager-Rolle für die Verwaltung der Kreditorenkonten
 
-* The _Administrator_ role that was installed with your site, for expert users
-to manage the site configuration
+* Die _Administrator_ -Rolle, die mit Ihrer Site installiert wurde, für erfahrene Benutzer
+zur Verwaltung der Website-Konfiguration
 
-==== Ähnliche Themen
+
+
+===== Verwandte Themen
 
 * <<user-new-role>>
 * <<user-permissions>>
@@ -72,18 +74,18 @@ to manage the site configuration
 * <<user-admin-account>>
 * <<user-content>>
 
-==== Additional resources
+===== Zusätzliche Ressourcen
 
-* https://www.drupal.org/node/120614[_Drupal.org_ community documentation page "Users, roles and permissions"]
-* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
-* https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "User Roles"]
+* https://www.drupal.org/node/120614[_Drupal.org_ Community-Dokumentationsseite "Benutzer, Rollen und Berechtigungen"]
+* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ Community-Dokumentationsseite "Benutzer verwalten"]
+* https://www.drupal.org/node/1803614[_Drupal.org_ Community-Dokumentationsseite "Benutzerrollen"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Adapted by https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Angepasst von https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
+https://www.drupal.org/u/batigolix[Boris Doesborg], und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
+https://www.drupal.org/node/1803614["Benutzerrollen"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

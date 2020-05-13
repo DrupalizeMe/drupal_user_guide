@@ -1,9 +1,9 @@
 [[structure-text-format-config]]
 
-=== Configuring Text Formats and Editors
+=== Konfigurieren von Textformaten und Editoren
 
 [role="summary"]
-How to make a change to a text format and its editor configuration.
+Wie man eine Änderung an einem Textformat und seiner Editor-Konfiguration vornimmt.
 
 (((Text format,configuring)))
 (((Configuring,text format)))
@@ -18,74 +18,84 @@ How to make a change to a text format and its editor configuration.
 (((Editor module,configuring)))
 (((CKEditor module,configuring)))
 
-==== Goal
+===== Ziel
 
-Add a horizontal rule tag to the _Basic HTML_ text format, and a corresponding
-button to its editor configuration.
+Fügen Sie ein horizontales Regel-Tag zum _Basis-HTML_-Textformat und ein entsprechendes
+Schaltfläche zu seiner Editor-Konfiguration.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
 <<structure-text-formats>>
 
-==== Site prerequisites
+==== Anforderungen an die Website
 
-* The core Filter, Editor, and CKEditor modules must be installed. They are
-installed on your site when you install with the core Standard installation
-profile.
+* Die Kernmodule Filter, Editor und CKEditor müssen installiert sein. Sie sind
+die auf Ihrer Website installiert werden, wenn Sie mit der Standard-Kerninstallation installieren
+Profil.
 
-* The _Basic HTML_ text format must exist. This is created on your site when you
-install with the core Standard installation profile.
+* Das Textformat _Basic HTML_ muss vorhanden sein. Dieses wird auf Ihrer Site erstellt, wenn Sie
+mit dem Kern-Standardinstallationsprofil installieren.
 
-==== Steps
+===== Schritte
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Content
-authoring_ > _Text formats and editors_ (_admin/config/content/formats_). The
-_Text formats and editors_ page appears.
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ > _Inhalt
+Verfassen_ > _Textformate und Redakteure_ (_Admin/Konfiguration/Inhalt/Formate_). Die
+Die Seite _Textformate und Editoren_ erscheint. Beachten Sie, dass die Namen der Textformate
+die mit Ihrem Installationsprofil geliefert wurden, werden auf dieser Seite auf Englisch angezeigt; siehe
+<<Sprache-Konzept>> für eine Erklärung.
 
-. Click _Configure_ for the _Basic HTML_ text format. The _Basic HTML_ page
-appears.
+. Klicken Sie auf _Konfigurieren_ für das Textformat _Basic HTML_. Die _Basic HTML_ Seite
+erscheint.
 
-. Note that _CKEditor_ is selected in the _Text editor_ field. This allows you
-to configure the editor's toolbar.
+. Beachten Sie, dass _CKEditor_ im Feld _Text-Editor_ ausgewählt ist. Dies ermöglicht Ihnen
+um die Symbolleiste des Editors zu konfigurieren.
 
-. Drag the _horizontal rule_ button from _Available buttons_ to _Tools_ in
-_Active toolbar_. You may need to click the _Show group names_ link to see the
-_Tools_ group name.
+. Ziehen Sie die Schaltfläche _horizontale Regel_ von _Verfügbare Schaltflächen_ auf _Werkzeuge_ unter
+_Aktive Symbolleiste_. Möglicherweise müssen Sie auf den Link _Gruppennamen anzeigen_ klicken, um die
+_Tools_ Gruppenname. Alternativ zum Ziehen können Sie mit der Registerkarte
+Schaltflächen und verschieben Sie sie dann mit den Pfeiltasten der Tastatur.
 +
 --
 // Button configuration area on text format edit page.
 image:images/structure-text-format-config-editor-config.png["Configuring the editor",width="100%"]
 --
 
-. Note that you can change the _Filter processing order_.
+. Beachten Sie, dass Sie die _Filter-Verarbeitungsreihenfolge_ ändern können.
 
-. In the field _Allowed HTML tags_, add `<hr>` to what is already present.
+. Unter _Filtereinstellungen_ > _Erlaubte HTML-Tags einschränken und fehlerhaftes HTML_ korrigieren,
+überprüfen Sie im Feld _Erlaubte HTML-Tags_, ob `<hr>` vorhanden ist (fügen Sie seine
+Editor-Schaltfläche werden die erlaubten Tags automatisch aktualisiert).
 +
 --
 // Allowed HTML tags area on text format edit page.
 image:images/structure-text-format-config-allowed-html.png["Configuring the HTML tags",width="100%"]
 --
 
-. Click _Save configuration_. You will be taken back to the _Text formats and
-editors_ page. A message will be displayed saying that the text format has been
-updated.
+. Klicken Sie auf _Konfiguration speichern_. Sie gelangen zurück zu den _Textformaten und
+Herausgeber_ Seite. Es wird eine Meldung angezeigt, dass das Textformat
+aktualisiert.
 +
 --
 // Confirmation message after updating text format.
 image:images/structure-text-format-config-summary.png["Confirmation message for text format configuration"]
 --
 
-==== Expand your understanding
+===== Erweitern Sie Ihr Verständnis
 
-If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
-
-
-// ==== Related concepts
-
-// ==== Additional resources
+Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, benötigen Sie
+um den Cache zu leeren. Siehe <<prevent-cache-clear>>.
 
 
-*Attributions*
+// ===== Verwandte Konzepte
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+===== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Konfigurieren von Textformaten und Editoren"]
+
+// ===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].

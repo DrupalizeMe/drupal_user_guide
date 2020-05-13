@@ -1,196 +1,179 @@
 [[install-composer]]
-=== Using Composer and Git to Download Files
+=== Verwendung des Composers zum Herunterladen und Aktualisieren von Dateien
 
 [role="summary"]
-How to use the Composer and Git tools to manage the files in the core software
-and add-on modules and themes.
+How to use the Composer tool to manage the files in the core software and add-on
+modules and themes.
 
 (((Composer tool,using to download the core software)))
 (((Composer tool,using to download modules)))
 (((Composer tool,using to download themes)))
+(((Core software,downloading)))
+(((Core software,updating)))
 (((Downloading,core software)))
 (((Downloading,theme)))
 (((Downloading,module)))
 (((Software dependencies,managing)))
 (((Module,downloading)))
+(((Module,updating)))
 (((Theme,downloading)))
+(((Theme,updating)))
 (((Contributed theme,downloading)))
+(((Contributed theme,updating)))
 (((Contributed module,downloading)))
+(((Contributed module,updating)))
+(((Security update,applying)))
 
-==== Goal
+==== Ziel
 
-Use Composer and/or Git to download files and dependencies in the core software,
-or in add-on modules and themes.
+Verwenden Sie den Composer, um Dateien und Abhängigkeiten in der Kern-Software herunterzuladen oder zu aktualisieren,
+oder in Zusatzmodulen und -themen. Überspringen Sie dieses Thema, wenn Sie den Composer nicht verwenden.
 
-==== Was man wissen sollte
+==== Erforderliche Vorkenntnisse
 
-* <<install-tools>>
-* <<install-dev-sites>>
+<<install-tools>>
 
-==== Site prerequisites
+==== Voraussetzungen für den Standort
 
-If you want to use Git or Composer, they must be installed either on a local
-development server or your live site. See <<install-tools>>.
+Wenn Sie den Composer verwenden möchten, muss er entweder auf einer lokalen Entwicklung
+Server oder Ihre Live-Site. Siehe <<installierte Werkzeuge>>.
 
 ==== Steps
 
-If you are unable to install the Git or Composer tools on your live server,
-after following the steps in any of the Abschnitte below on your local server, you
-will need to transfer any updated or added files to your live server. The
-recommended procedure is to make an archive or zip file of the new and changed
-files, transfer the archive to your live server, and extract it there. If you
-are using Composer, make sure to check for updates and additions to the
-following files, in the root of your installation:
+Wenn Sie das Tool Composer nicht auf Ihrem Live-Server installieren können, können Sie
+folgen Sie den Schritten in einem der folgenden Abschnitte auf Ihrem lokalen Server, und dann
+alle aktualisierten oder hinzugefügten Dateien auf Ihren Live-Server übertragen. Die empfohlene
+Das Verfahren besteht darin, ein Archiv oder eine Zip-Datei der neuen und geänderten Verzeichnisse zu erstellen,
+übertragen Sie das Archiv auf Ihren Live-Server, löschen Sie die Verzeichnisse, die
+geändert, und extrahieren Sie das Archiv. Stellen Sie sicher, dass Sie nach Aktualisierungen und Ergänzungen suchen.
+auf die folgenden Dateien im Stammverzeichnis Ihrer Installation:
 
 * _vendor_ directory
 * _autoload.php_
 * _composer.json_
 * _composer.lock_
 
-===== Using Git to download a project
-
-Follow these steps if you want to download the development version of the core
-software, or of a contributed module or theme, from the project's Git version
-control repository:
-
-. In a command-line window, change to one level above the directory where you
-want the files to reside. For the core software, this would be your web
-root. For an add-on module, this would be the _modules_ directory, or a
-sub-directory like _contrib_ under the modules directory.
-
-. Locate the page for the project that you want to download on _Drupal.org_; for
-example, https://www.drupal.org/project/drupal for the core software, or
-https://www.drupal.org/project/admin_toolbar for the contributed Admin Toolbar
-module.
-
-. Click the _Version control_ link near the top of the page, which opens up a
-page giving Git commands for this project.
-
-. Copy the +git clone+ command under _Setting up repository for the first time_,
-and paste it into your command line. For example, it might be:
-+
-----
-git clone --branch 8.2.x https://git.drupal.org/project/drupal.git
-----
-
-. This will create a directory named with the short name of the project
-(_drupal_ in this example), and download the required files into that
-directory. If necessary, rename the directory.
-
-. If you downloaded the _drupal_ project (the core software), follow the
-instructions below to download its external dependencies.
-
-. Later on, you can change to the created directory and run the command +git
-pull+ to update the files to the latest version from the Git repository for the
-project.
-
-===== Using Composer to download external core dependencies
-
-Follow these steps if you downloaded the core software files using Git, which
-does not include the external dependencies:
-
-. Change to the core software's root directory.
-
-. Run the command +composer install+ at the command line. The external
-dependencies will be downloaded.
-
 ===== Using Composer to download the core software
 
-Follow these steps if you have not yet downloaded or installed the core
-software, and you want to use Composer to download both the core software and
-its external dependencies:
+Folgen Sie diesen Schritten, wenn Sie den Kern noch nicht heruntergeladen oder installiert haben
+Software, und Sie möchten Composer verwenden, um sowohl die Kern-Software als
+seine externen Abhängigkeiten:
 
-. At the command line, change to one level above the directory where you want
-the software to reside.
+. Wechseln Sie auf der Kommandozeile in eine Ebene über dem Verzeichnis, in dem Sie
+die Software, die sich dort befinden soll.
 
-. Enter this command, where +my_site_name+ is the directory you want to create:
+. Geben Sie diesen Befehl ein, wobei _mydir_ das Verzeichnis ist, das Sie erstellen möchten:
 +
 ----
-composer create-project drupal/drupal my_site_name
+composer create-project drupal/recommended-project mydir
 ----
 
-===== Using Composer to download a module or theme
+. Die neueste Version der Kern-Software wird auf das _mydir/web_ heruntergeladen.
+Unterverzeichnis.
 
-Follow these steps if you have already downloaded the core software, and you
-want to use Composer to add a contributed module or theme (usually because it
-has external dependencies that need to be downloaded with Composer):
+======== Konvertieren einer zuvor heruntergeladenen Site zur Verwendung von Composer
 
-. If you have not already done so, tell Composer about the download location for
-contributed modules and themes, by entering this command from the root of your
-site installation:
+Wenn Sie zuvor die Kern-Software heruntergeladen haben, ohne Composer zu verwenden, können Sie
+später feststellen, dass Sie den Composer zur Verwaltung und Aktualisierung verwenden wollen oder müssen
+Abhängigkeiten. Für Sites, die mit Version 8.8.0 oder höher des Kerns erstellt wurden
+Software enthalten die Dateien bereits die erforderliche Composer-Konfiguration und Sie
+können jederzeit mit der Nutzung des Composers beginnen.
+
+Wenn Ihre Website Module, Themen oder Profile enthält, die nicht Teil der
+Kern-Software ist es eine gute Idee, sie in die Datei _composer.json_ in der
+Stammverzeichnis Ihrer Website.
+
+Führen Sie den folgenden Befehl einmal für jedes heruntergeladene Modul, Thema oder Profil aus
+von Drupal.org, wobei der Name des gewünschten Projekts durch +module_name+ ersetzt wird
+hinzufügen:
+
+----
+Komponist benötigen drupal/module_name
+----
+
+Weitere Informationen zur Verwaltung von Site-Abhängigkeiten mit Composer finden Sie weiter unten.
+
+So konvertieren Sie eine Site, die mit einer Version der Kern-Software vor
+8.8.0, oder das von einer Zip- oder tar.gz-Datei installiert wurde, die von
+Drupal.org, siehe die Anweisungen unter
+https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Komponist zu einer bestehenden Website hinzufügen].
+
+======= Composer zum Herunterladen eines Moduls oder Themas verwenden
+
+Befolgen Sie diese Schritte, wenn Sie bereits Composer zur Verwaltung des Kerns verwenden
+Software, und Sie möchten Composer verwenden, um ein beigetragenes Modul oder Thema hinzuzufügen mit
+seine Abhängigkeiten.
+
+. Jedes Mal, wenn Sie ein beigetragenes Modul oder Thema hinzufügen möchten, bestimmen Sie die
+den Kurznamen des Projekts. Dies ist der letzte Teil der URL der Projektseite; für
+Beispiel, das Modul Geofield, unter
+https://www.drupal.org/project/geofield, hat den Kurznamen +geofield+.
+
+. Zum Herunterladen des beigetragenen Moduls oder Themas, zusammen mit seinem externen
+Abhängigkeiten, geben Sie den folgenden Befehl im Stammverzeichnis Ihrer Website ein (ersetzen Sie
+die Kurzbezeichnung des Moduls oder Themas für +geofield+):
 +
 ----
-composer config repositories.drupal composer https://packages.drupal.org/8
+Komponist benötigen Drupal/Geofield
 ----
 
-. If you have not already done so, you can optionally override the default
-location where Composer will put downloaded modules and themes. For example,
-typically you would want contributed modules to go in a _contrib_ subdirectory
-of the top-level _modules_ directory, instead of the default location of
-_modules_. To make this change, edit the _composer.json_ file at the root level
-in your site installation. Find the line that says +"extra": {+, and add these
-lines following that line:
+======= Composer verwenden, um zuvor heruntergeladene Dateien zu aktualisieren
+
+Befolgen Sie diese Schritte, um die Dateien für die Kern-Software oder eine beigesteuerte
+Modul oder Thema, nachdem bereits begonnen wurde, Abhängigkeiten zu verwalten mit
+Komponist:
+
+. Bestimmen Sie die Kurzbezeichnung des Projekts, das Sie aktualisieren möchten. Für den Kern
+Software, es ist _Kern_. Für beigetragene Module und Themen ist es das letzte
+Teil der URL der Projektseite; zum Beispiel das Geofield-Modul, unter
+https://www.drupal.org/project/geofield, hat den Kurznamen +geofield+.
+
+. Wenn Sie auf das neueste stabile Release aktualisieren möchten, verwenden Sie
+Befehl, wobei der Kurzname des zu aktualisierenden Projekts ersetzt wird durch
++geofield+:
 +
 ----
-"installer-paths": {
-    "modules/contrib/{$name}": ["type:drupal-module"],
-    "modules/custom/{$name}": ["type:drupal-custom-module"],
-    "profiles/contrib/{$name}": ["type:drupal-profile"],
-    "themes/contrib/{$name}": ["type:drupal-theme"],
-    "themes/custom/{$name}": ["type:drupal-custom-theme"],
-    "libraries/{$name}": ["type:drupal-library"],
-    "drush/{$name}": ["type:drupal-drush"]
-},
+komponist update drupal/geofield --mit-abhÃ?ngigkeiten
 ----
 
-. Each time you want to add a contributed module or theme, determine the
-project's short name. This is the last part of the URL of the project page; for
-example, the Geofield module, at
-https://www.drupal.org/project/geofield, has short name +geofield+.
-
-. To download the contributed module or theme, along with its external
-dependencies, enter the following command at the root of your site (substituting
-the short name of the module or theme for +geofield+):
+. Wenn Sie eine bestimmte Version benötigen, legen Sie fest, wie Sie die Versionsnummer eingeben
+aktualisieren möchten. Zum Beispiel für Version 8.x-1.7 eines beigetragenen Moduls
+würde nur die Version 1.7 eingeben, und für die Kern-Software-Version 8.3.1 würden Sie
+8.3.1 eingeben. Geben Sie dann den folgenden Befehl im Stammverzeichnis Ihrer Website ein
+(Ersetzen des Kurznamens des Projekts durch +geofield+ und die korrekte
+Versionsnummer):
 +
 ----
-composer require drupal/geofield
+Komponist benötigen Drupal/Geofield:1,7
 ----
 
-===== Using Composer to update a project's files
+===== Erweitern Sie Ihr Verständnis
 
-Follow these steps to update the files for the core software or a contributed
-module or theme, after having already started to manage dependencies with
-Composer:
+Sie können mehr über die Composer-Befehle erfahren, indem Sie die integrierte Hilfe von Composer verwenden
+System. Um beispielsweise mehr über den Befehl `Projekt erstellen` zu erfahren, geben Sie
+`composer help create-project` in Ihrem Befehlsfenster.
 
-. Determine the short name of the project you want to update. For the core
-software, it is _drupal_. For contributed modules and themes, it is the last
-part of the URL of the project page; for example, the Geofield module, at
-https://www.drupal.org/project/geofield, has short name +geofield+.
+// ===== Verwandte Konzepte
 
-. Determine how to enter the version number you want to update to. For
-example, for version 8.x-1.7 of a contributed module, you would enter just the
-1.7, and for the core software version 8.3.1, you would enter 3.1.
+===== Videos
 
-. Enter the following command at the root of your site (substituting
-the short name of the module or theme for +geofield+ and the correct version
-number):
-+
-----
-composer require drupal/geofield:1.7
-----
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Verwendung von Composer und Git zum Herunterladen von Dateien"]
 
-// ==== Expand your understanding
+===== Zusätzliche Ressourcen
 
-// ==== Related concepts
+* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung von Composer zur Verwaltung von Drupal-Site-Abhängigkeiten"]]
+* https://www.drupal.org/docs/8/update/update-core-via-composer["Kern über Composer aktualisieren"]]
+* https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Komponist zu einer bestehenden Website hinzufügen]
 
-==== Additional resources
+*Mitwirkende*
 
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
+Bearbeitet von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], und
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] unter
+https://drupalize.me[Drupalize.Me] von
+https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung des Composers zur Verwaltung von Drupal-Site-Abhängigkeiten"],
+copyright 2000-copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
 
-
-*Attributions*
-
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal["Using Composer with Drupal"],
-copyright 2000-2017 by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***
