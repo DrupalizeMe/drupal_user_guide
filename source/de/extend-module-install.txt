@@ -25,7 +25,7 @@ oder mit Hilfe von Drush.
 (((Module,Update Manager)))
 (((Drupal.org website,downloading and installing module from)))
 
-===== Ziel
+==== Ziel
 
 Herunterladen und Installieren der
 https://www.drupal.org/project/admin_toolbar[beigetragenes Admin Toolbar-Modul],
@@ -46,7 +46,7 @@ Module.
 
 * Wenn Sie Drush verwenden möchten, muss Drush installiert sein. Siehe <<<installieren-Werkzeuge>>.
 
-===== Schritte
+==== Schritte
 
 Sie können die administrative Schnittstelle zum Herunterladen und Installieren einer
 Modul. Wenn Sie ein benutzerdefiniertes Modul anstelle eines beigetragenen Moduls installieren,
@@ -58,7 +58,7 @@ Composer, um die Dateien auf Ihrer Website zu verwalten, folgen Sie den Schritte
 mit Drush, oder indem Sie mit Schritt 7 in der Anleitung für die
 administrative Schnittstelle unten.
 
-======== Verwendung der administrativen Schnittstelle
+======= Verwendung der administrativen Schnittstelle
 
 . Auf der _Admin Symbolleiste_ Projektseite auf drupal.org
 (_https://www.drupal.org/project/admin_toolbar_), blättern Sie zu den _Downloads_
@@ -98,7 +98,7 @@ Verwaltungsmenü und Navigation zu _Erweitern_ (_Admin/Module_).
 
 . Klicken Sie auf _Install_, um das neue Modul einzuschalten.
 
-======= Drush zum Installieren eines Moduls verwenden
+====== Drush zum Installieren eines Moduls verwenden
 
 . Suchen Sie den Projektnamen des Moduls, das Sie installieren möchten, d.h. den letzten
 Segment der URL der Projektseite des Moduls. Wenn die Projekt-URL beispielsweise
@@ -117,7 +117,7 @@ drush pm:enable admin_toolbar
 
 . Folgen Sie den Anweisungen auf dem Bildschirm.
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 * Überprüfen Sie, ob die
 https://www.drupal.org/project/admin_toolbar[beigetragenes Admin Toolbar-Modul]
@@ -132,14 +132,14 @@ so dass Inhaltsseiten in Ihrer Website standardmäßig schöne URLs erhalten. Si
 um den Cache zu leeren. Siehe <<<Cache-Löschen verhindern>>.
 
 
-//====== Verwandte Konzepte
+//===== Verwandte Konzepte
 
-===== Videos
+==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/vx9nWJE1Kbk[title="Herunterladen und Installieren eines Moduls von Drupal.org"]
 
-===== Zusätzliche Ressourcen
+==== Zusätzliche Ressourcen
 
 * https://www.drupal.org/node/340271[_Drupal.org_ Community-Dokumentationsseite "Beisteuerte Module"]
 * https://www.drupal.org/download["Herunterladen und Erweitern"-Seite auf _Drupal.org_]

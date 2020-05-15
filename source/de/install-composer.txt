@@ -53,7 +53,7 @@ auf die folgenden Dateien im Stammverzeichnis Ihrer Installation:
 * _composer.json_
 * _composer.lock_
 
-===== Using Composer to download the core software
+==== Using Composer to download the core software
 
 Folgen Sie diesen Schritten, wenn Sie den Kern noch nicht heruntergeladen oder installiert haben
 Software, und Sie möchten Composer verwenden, um sowohl die Kern-Software als
@@ -71,7 +71,7 @@ composer create-project drupal/recommended-project mydir
 . Die neueste Version der Kern-Software wird auf das _mydir/web_ heruntergeladen.
 Unterverzeichnis.
 
-======== Konvertieren einer zuvor heruntergeladenen Site zur Verwendung von Composer
+======= Konvertieren einer zuvor heruntergeladenen Site zur Verwendung von Composer
 
 Wenn Sie zuvor die Kern-Software heruntergeladen haben, ohne Composer zu verwenden, können Sie
 später feststellen, dass Sie den Composer zur Verwaltung und Aktualisierung verwenden wollen oder müssen
@@ -98,7 +98,7 @@ So konvertieren Sie eine Site, die mit einer Version der Kern-Software vor
 Drupal.org, siehe die Anweisungen unter
 https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Komponist zu einer bestehenden Website hinzufügen].
 
-======= Composer zum Herunterladen eines Moduls oder Themas verwenden
+====== Composer zum Herunterladen eines Moduls oder Themas verwenden
 
 Befolgen Sie diese Schritte, wenn Sie bereits Composer zur Verwaltung des Kerns verwenden
 Software, und Sie möchten Composer verwenden, um ein beigetragenes Modul oder Thema hinzuzufügen mit
@@ -117,7 +117,7 @@ die Kurzbezeichnung des Moduls oder Themas für +geofield+):
 Komponist benötigen Drupal/Geofield
 ----
 
-======= Composer verwenden, um zuvor heruntergeladene Dateien zu aktualisieren
+====== Composer verwenden, um zuvor heruntergeladene Dateien zu aktualisieren
 
 Befolgen Sie diese Schritte, um die Dateien für die Kern-Software oder eine beigesteuerte
 Modul oder Thema, nachdem bereits begonnen wurde, Abhängigkeiten zu verwalten mit
@@ -147,20 +147,20 @@ Versionsnummer):
 Komponist benötigen Drupal/Geofield:1,7
 ----
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 Sie können mehr über die Composer-Befehle erfahren, indem Sie die integrierte Hilfe von Composer verwenden
 System. Um beispielsweise mehr über den Befehl `Projekt erstellen` zu erfahren, geben Sie
 `composer help create-project` in Ihrem Befehlsfenster.
 
-// ===== Verwandte Konzepte
+// ==== Verwandte Konzepte
 
-===== Videos
+==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Verwendung von Composer und Git zum Herunterladen von Dateien"]
 
-===== Zusätzliche Ressourcen
+==== Zusätzliche Ressourcen
 
 * https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung von Composer zur Verwaltung von Drupal-Site-Abhängigkeiten"]]
 * https://www.drupal.org/docs/8/update/update-core-via-composer["Kern über Composer aktualisieren"]]

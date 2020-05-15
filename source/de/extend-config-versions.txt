@@ -12,11 +12,11 @@ dem Modul Configuration Manager, das mit dem Kernsystem ausgeliefert wird, austa
 (((Configuration Manager module,using to synchronize the configuration between a development and live site)))
 (((Module,Configuration Manager)))
 
-===== Zielsetzung
+==== Zielsetzung
 
 Synchronisieren Sie die Konfiguration zwischen einer Entwicklungs- und einer Produktiv-Site.
 
-===== Erforderliche Vorkenntnisse
+==== Erforderliche Vorkenntnisse
 
 * <<understanding-data>>
 * <<install-prepare>>
@@ -42,7 +42,7 @@ die Änderungen an der Live-Site korrekt anwenden.
 Zielstandorte müssen in Konfigurationsüberschreibungen in der
 Datei _settings.php_ und nicht in der Datenbank. Siehe <<installiert-dev-making>>.
 
-===== Schritte
+==== Schritte
 
 . Navigieren Sie auf der Quell-Site im Verwaltungsmenü _Verwalten_ zu
 _Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Export_
@@ -68,7 +68,7 @@ Elemente können Sie auf _Unterschiede anzeigen_ klicken, um die Änderungen zu 
 . Wenn Sie zufrieden sind, klicken Sie auf _Import all_, um die Konfiguration zu importieren.
 Änderungen.
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 * Wenn die Änderungen, die Sie vorgenommen haben, nur ein Konfigurationsobjekt betreffen (z. B.
 Ansicht), können Sie die Export-/Import-Funktion für eine einzelne Konfiguration verwenden, um
@@ -79,14 +79,14 @@ Sie können das Archiv auch entpacken und an eine Versionskontrolle übergeben.
 System, wie z.B. Git, um Änderungen an Ihrer Website-Konfiguration zu verfolgen. Siehe
 <<<erweitern-git>>.
 
-// ===== Verwandte Begriffe
+// ==== Verwandte Begriffe
 
-===== Videos
+==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/dLUGQk8GKa0[title="Konfigurationsversionen synchronisieren"]]
 
-// ===== Zusätzliche Ressourcen
+// ==== Zusätzliche Ressourcen
 
 
 *Mitwirkende*

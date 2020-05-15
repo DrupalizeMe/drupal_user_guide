@@ -12,10 +12,10 @@
 (((Internal Page Cache module,overview)))
 (((Dynamic Page Cache module,overview)))
 
-===== Vorrausgesetztes Wissen
+==== Vorrausgesetztes Wissen
 <<understanding-drupal>>
 
-===== Was ist der Seiten-Cache?
+==== Was ist der Seiten-Cache?
 
 Die Software, die Ihre Website ausführt, muss bei jeder Seitenanforderung Folgendes ausführen
 Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite zusammenzustellen
@@ -45,7 +45,7 @@ wie zum Beispiel:
 
 * Unzureichender Cache, was zu langsamen Seitenladevorgängen führt
 
-===== Welche anderen Daten werden zwischengespeichert?
+==== Welche anderen Daten werden zwischengespeichert?
 
 Unabhängig davon, ob die beiden Seiten-Cache-Module auf Ihrer Site installiert sind,
 die Software, die auf Ihrer Website läuft, wird immer noch die Ausgabe vieler interner
@@ -68,12 +68,12 @@ speichert Informationen darüber, welches Modul welche Funktionalität hat. Wenn
 Wenn Sie ein neues Modul entwickeln oder einem bestehenden Modul Funktionen hinzufügen möchten, benötigen Sie möglicherweise
 um diesen Cache zu leeren, damit Ihre neuen Funktionen erkannt werden können.
 
-===== Verwandte Themen
+==== Verwandte Themen
 
 Wenn Sie Probleme mit Ihrer Website haben, sollten Sie als erstes versuchen, sie zu beheben
 normalerweise, um den Cache zu leeren. Siehe <<<prevent-cache-clear>> für weitere Informationen.
 
-===== Zusätzliche Ressourcen
+==== Zusätzliche Ressourcen
 
 Erfahren Sie mehr über zusätzliche Caching- und Leistungsoptimierungsmethoden in der
 https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[_Drupal.org_ Community-Dokumentationsseite "Caching zur Leistungsverbesserung"].

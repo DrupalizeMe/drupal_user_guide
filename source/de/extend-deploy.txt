@@ -10,18 +10,18 @@ How to copy a view created in a local development site to a production site.
 (((Feature,copying)))
 (((Configuration,copying)))
 
-===== Ziel
+==== Ziel
 
 Kopieren Sie eine Sicht, die Sie an einem lokalen Entwicklungsstandort erstellt haben, in die Produktion
 Standort.
 
-===== Vorraussetzung Kenntnisse
+==== Vorraussetzung Kenntnisse
 
 <<<installieren-entwickeln>>
 <<extend-config-versions>>
 <<<installieren-dev-sites>>
 
-===== Standort-Voraussetzungen
+==== Standort-Voraussetzungen
 
 * Das Kernmodul Configuration Manager muss sowohl in der
 Entwicklungs- und Produktionsstätten. Siehe <<config-install>> für
@@ -33,7 +33,7 @@ Sites, mit den gleichen Feldern. Siehe <<Struktur-Inhaltstyp>>.
 * Die Sicht Lieferant muss im Entwicklungsstandort vorhanden sein, nicht jedoch in der Produktion.
 Standort. Siehe <<Ansichten-Erstellen>>.
 
-===== Schritte
+==== Schritte
 
 . Öffnen Sie die Website zur lokalen Entwicklung.
 
@@ -72,7 +72,7 @@ _Entwicklung_ > _Konfigurationssynchronisation_ > _Import_ > _Einzelner Punkt_
 . Überprüfen Sie, ob die Ansicht importiert wurde, indem Sie im Fenster _Verwalten_ navigieren.
 Verwaltungsmenü auf _Struktur_ > _Ansichten_.
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 Die Schritte in diesem Thema zeigen, wie Sie eine einzelne Konfiguration exportieren und importieren
 Artikel. Wenn Sie jedoch Funktionen auf einer Entwicklungs-Website entwickeln
@@ -97,17 +97,17 @@ Konfiguration für eine Fotogalerie).
 Wenn Sie schließlich die Auswirkungen dieser Änderungen auf Ihre Website nicht sehen, könnten Sie
 müssen den Cache löschen. Siehe <<<Cache-Löschen verhindern>>.
 
-===== Verwandte Konzepte
+==== Verwandte Konzepte
 
 <<<installieren-dev-sites>>
 <<<Planungs-Workflow>>
 
-===== Videos
+==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/hysqVDIfLTA[title="Neue Website-Funktionen bereitstellen"]]
 
-// ===== Zusätzliche Ressourcen
+// ==== Zusätzliche Ressourcen
 
 
 *Mitwirkende*

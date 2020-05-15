@@ -10,16 +10,16 @@ Ausführen des Datenbank-Updates-Skripts.
 (((Security update,applying)))
 (((Contributed theme,updating)))
 
-===== Ziel
+==== Ziel
 
 Aktualisieren Sie ein beigetragenes Thema auf Ihrer Website und führen Sie das Skript _Datenbank-Updates_ aus.
 
-===== Vorausgesetztes Wissen
+==== Vorausgesetztes Wissen
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-===== Standort-Voraussetzungen
+==== Standort-Voraussetzungen
 
 * Ein beigetragenes Thema wurde installiert und es gibt ein Update für
 es. Siehe <<extend-theme-install>> und <<security-announce>>.
@@ -34,7 +34,7 @@ Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
 installiert. Siehe <<config-install>> für Anweisungen zur Kerninstallation
 Module.
 
-===== Schritte
+==== Schritte
 
 Sie können die administrative Schnittstelle verwenden, um ein beigetragenes Thema zu aktualisieren. Wenn Sie
 ein benutzerdefiniertes Thema statt eines beigetragenen Themas aktualisieren, wenn Sie eine
@@ -47,7 +47,7 @@ Wenn Sie den Composer zur Verwaltung der Dateien auf Ihrer Website verwenden, be
 in <<install-composer>> um die Dateien zu aktualisieren, fahren Sie dann hier mit Schritt 6 in
 die untenstehenden Anweisungen für die administrative Schnittstelle.
 
-======== Verwendung der administrativen Schnittstelle
+======= Verwendung der administrativen Schnittstelle
 
 . Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>.
 
@@ -79,21 +79,21 @@ Standort.
 . Löschen Sie den Drupal-Cache (siehe <<<Prävent-cache-clear>>).
 
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 * Überprüfen Sie das Website-Protokoll, siehe <<<prevent-log>>, sobald die Aktualisierungen abgeschlossen sind, um
 auf Fehler prüfen.
 
 <<<Sicherheits-Update-Modul>>
 
-// ===== Verwandte Konzepte
+// ==== Verwandte Konzepte
 
-===== Videos
+==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Aktualisierung eines Themas"]
 
-// ===== Zusätzliche Ressourcen
+// ==== Zusätzliche Ressourcen
 
 
 *Mitwirkende*

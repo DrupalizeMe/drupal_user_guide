@@ -10,7 +10,7 @@ how to disable it.
 (((Maintenance mode,enabling)))
 (((Maintenance mode,disabling)))
 
-===== Ziel
+==== Ziel
 
 Versetzen Sie Ihre Website in den Wartungsmodus, um Benutzern mit den richtigen Berechtigungen Folgendes zu ermöglichen
 die Website benutzen, während Benutzern ohne diese Erlaubnis eine Nachricht angezeigt wird
@@ -30,7 +30,7 @@ installiert. Siehe <<<installierte-Werkzeuge>>.
 Sie können die administrative Schnittstelle oder Drush verwenden, um Folgendes zu aktivieren oder zu deaktivieren
 Wartungsmodus.
 
-======== Aktivieren des Wartungsmodus über die administrative Schnittstelle
+======= Aktivieren des Wartungsmodus über die administrative Schnittstelle
 
 . Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
 _Entwicklung_ > _Wartungsmodus_ (_Admin/Konfiguration/Entwicklung/Wartung_). Die
@@ -63,7 +63,7 @@ den Cache. Siehe <<<verhindert-cache-clear>>.
 image:images/extend-maintenance-mode-enabled.png["Maintenance mode enabled",width="100%"]
 --
 
-===== Deaktivieren des Wartungsmodus über die administrative Schnittstelle
+==== Deaktivieren des Wartungsmodus über die administrative Schnittstelle
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ >
 _Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
@@ -93,7 +93,7 @@ Löschen des Caches. Siehe <<prevent-cache-clear>>.
 image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",width="100%"]
 --
 
-===== Aktivieren oder Deaktivieren des Wartungsmodus mit Drush
+==== Aktivieren oder Deaktivieren des Wartungsmodus mit Drush
 
 . Folgen Sie den obigen Schritten der Benutzeroberfläche, um die Meldung zur Website-Wartung zu bearbeiten, wenn
 gewünscht.

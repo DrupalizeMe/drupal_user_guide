@@ -26,7 +26,7 @@ Wenn Sie Drush zur Installation von Modulen verwenden möchten, muss Drush insta
 
 Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu installieren.
 
-===== Verwendung der administrativen Schnittstelle
+==== Verwendung der administrativen Schnittstelle
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
 (_admin/modules_). Die Seite _Erweitern_ erscheint und zeigt alle auf der Website verfügbaren Module an.
@@ -41,7 +41,7 @@ image:images/config-install-check-modules.png["Enabling the core Activity Tracke
 
 . Klicken Sie auf _Installieren_. Die markierten Module werden installiert.
 
-===== Drush verwenden
+==== Drush verwenden
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
 (_admin/modules_). Die Seite _Erweitern_ erscheint und zeigt alle auf der Website verfügbaren Module an.
@@ -56,19 +56,19 @@ das mit dem Kernsystem ausgeliefert wird, trägt beispielsweise den Systemnamen 
 drush pm:enable tracker
 ----
 
-===== Vertiefen Sie Ihr Wissen
+==== Vertiefen Sie Ihr Wissen
 
 Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, müssen Sie zunächst den Cache leeren.
 Siehe: <<prevent-cache-clear>>.
 
-// ===== Verwandte Konzepte
+// ==== Verwandte Konzepte
 
 ==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/HymQsDOcT3E[title="Installing a Module"]
 
-===== Zusätzliche Ressourcen
+==== Zusätzliche Ressourcen
 
 http://www.drush.org[Drush]
 

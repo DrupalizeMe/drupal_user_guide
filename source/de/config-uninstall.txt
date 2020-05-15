@@ -27,11 +27,11 @@ deinstallieren möchten. Beispielsweise das Modul Search, das mit dem Kernsystem
 * Wenn Sie Drush zur Deinstallation von Modulen verwenden möchten, muss Drush installiert sein. Siehe
 <<install-tools>>.
 
-===== Schritte
+==== Schritte
 
 Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu deinstallieren.
 
-======== Verwendung des Verwaltungsbereichs
+======= Verwendung des Verwaltungsbereichs
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_ > _Deinstallieren_
 (_admin/modules/uninstall_). Dort finden Sie eine Liste der Module, die deinstalliert werden können.
@@ -63,7 +63,7 @@ _Deinstallieren_.
 image:images/config-uninstall_confirmUninstall.png["Deinstallation bestätigen - Suchmodul",width="100%"]
 --
 
-======== Drush verwenden
+======= Drush verwenden
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
 (_admin/modules_). Die Seite _Erweitern_ erscheint und zeigt alle verfügbaren auf
@@ -79,7 +79,7 @@ besitzt beispielsweise den Systemnamen _tracker_.
 drush pm:uninstall tracker
 ----
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 * <<install-tools>>
 
@@ -89,14 +89,14 @@ drush pm:uninstall tracker
 erst nachdem die Kommentarfelder entfernt wurden. Dies passiert automatisch im Kapitel
 <<structure-content-type-delete>>.
 
-//====== Verwandte Konzepte
+//===== Verwandte Konzepte
 
-===== Videos
+==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/hUonnNkeF6g[title="Nicht verwendete Module deinstallieren"]]
 
-//====== Zusätzliche Ressourcen
+//===== Zusätzliche Ressourcen
 
 
 *Mitwirkende*

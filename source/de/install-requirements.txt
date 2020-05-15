@@ -25,9 +25,9 @@
 
 // ==== Erforderliche Vorkenntnisse
 
-===== Was sind die Voraussetzungen für den Betrieb der Kern-Software?
+==== Was sind die Voraussetzungen für den Betrieb der Kern-Software?
 
-======= Plattenplatz
+====== Plattenplatz
 
 Die Gesamtmenge des für Ihre Website benötigten Speicherplatzes ist kein fester Betrag, da
 hängt von Ihrer Website ab. Die Basisdateien für die Kern-Software nehmen etwa 100 MB ein.
@@ -37,7 +37,7 @@ von und hochgeladen auf Ihre Website. Die Datenbank verwendet auch Plattenplatz,
 befindet sich typischerweise nicht im gleichen Gebiet (und in einigen Fällen nicht einmal auf dem gleichen
 Server), wie er von den Standortdateien verwendet wird.
 
-======== PHP
+======= PHP
 
 PHP 7.2 oder höher. PHP muss mit einer Mindestspeichergröße von 64MB eingerichtet sein; wenn Sie
 mehrere Module auf Ihrer Website ausführen oder speicherintensive PHP-basierte
@@ -52,7 +52,7 @@ auf Ihrem lokalen Computer, erhalten Sie während der Installation gegebenenfall
 die erforderlichen PHP-Erweiterungen fehlen und sollten diese installieren können und
 weiter.
 
-======== Web-Server
+======= Web-Server
 
 Apache (empfohlen)::
   Apache ist der am häufigsten verwendete Webserver. Die Kern-Software arbeitet auf
@@ -75,7 +75,7 @@ Microsoft IIS::
   ein Produkt eines Drittanbieters verwenden müssen. Für IIS 7 können Sie die Microsoft-URL
   Rewrite-Modul oder eine Lösung eines Drittanbieters.
 
-======== Datenbank
+======= Datenbank
 
 Verwenden Sie eine der folgenden Datenbanken:
 
@@ -88,9 +88,9 @@ InnoDB-kompatible Primärspeicher-Engine
 wird als Teil von PHP verteilt und erfordert keine Installation einer separaten Datenbank
 Software.
 
-//====== Verwandte Themen
+//===== Verwandte Themen
 
-===== Zusätzliche Ressourcen
+==== Zusätzliche Ressourcen
 
 * https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ Community-Dokumentationsseite "Systemanforderungen"]
 * https://secure.php.net/manual/en/configuration.php[PHP-Laufzeitkonfiguration (PHP-Speicherlimit und andere Einstellungen)]

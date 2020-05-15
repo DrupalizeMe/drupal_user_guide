@@ -23,7 +23,7 @@ Wie man ein Thema von Drupal.org oder mit Hilfe von Drush herunterlädt und inst
 (((Drush tool,using to install theme)))
 (((Drupal.org website,downloading and installing theme from)))
 
-===== Ziel
+==== Ziel
 
 Laden Sie ein Thema von _Drupal.org_ herunter und installieren Sie es.
 
@@ -51,7 +51,7 @@ Um die Dateien auf Ihrer Website zu verwalten, folgen Sie den Schritten zum Heru
 mit Drush, oder indem Sie mit Schritt 7 in der Anleitung für die
 administrative Schnittstelle unten.
 
-======== Verwendung der administrativen Schnittstelle
+======= Verwendung der administrativen Schnittstelle
 
 . Auf der Projektseite des Themas auf drupal.org (zum Beispiel,
 _https://www.drupal.org/project/mayo_), blättern Sie zum Abschnitt _Downloads_
@@ -95,7 +95,7 @@ neues Thema.
 image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
 --
 
-======= Drush zur Installation eines Themas verwenden
+====== Drush zur Installation eines Themas verwenden
 
 . Suchen Sie den Projektnamen für das Thema, das Sie installieren möchten, und zwar den letzten
 Segment der URL der Projektseite des Themas. Wenn die Projekt-URL zum Beispiel
@@ -114,7 +114,7 @@ drush config:set system.theme standard mayo
 
 . Folgen Sie den Anweisungen auf dem Bildschirm.
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 * Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Erscheinung_
 (_Admin/Erscheinungsbild_) und deinstallieren Sie alle Themen, die Sie nicht verwenden.
@@ -127,14 +127,14 @@ drush config:set system.theme standard mayo
 um den Cache zu leeren. Siehe <<<Cache-Löschen verhindern>>.
 
 
-// ===== Verwandte Konzepte
+// ==== Verwandte Konzepte
 
-===== Videos
+==== Videos
 
 // Video von Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Herunterladen und Installieren eines Themas von Drupal.org"]
 
-//====== Zusätzliche Ressourcen
+//===== Zusätzliche Ressourcen
 
 
 *Mitwirkende*

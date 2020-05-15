@@ -9,19 +9,19 @@ sie von außerhalb des Standortes zu betreiben.
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
 
-===== Ziel
+==== Ziel
 
 Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden, und wenn nicht, entweder
 Installieren Sie das zentrale automatisierte Cron-Modul oder führen Sie Cron-Wartungsaufgaben aus
 außerhalb der Website.
 
-===== Vorraussetzung Kenntnisse
+==== Vorraussetzung Kenntnisse
 
 <<security-cron-concept>>
 
-// ===== Standortvoraussetzungen
+// ==== Standortvoraussetzungen
 
-===== Schritte
+==== Schritte
 
 . Überprüfen Sie den _Statusbericht_ (siehe <<<Präventionsstatus>>), um zu sehen, wann cron
 Wartungsaufgaben wurden zuletzt ausgeführt.
@@ -81,9 +81,9 @@ die folgenden Scheduler, um regelmäßig auf diese URL zuzugreifen:
   bereitgestellt von Ihrem Provider)
 
 
-// ===== Erweitern Sie Ihr Verständnis
+// ==== Erweitern Sie Ihr Verständnis
 
-===== Verwandte Konzepte
+==== Verwandte Konzepte
 
 
 <<security-concept>>
@@ -93,7 +93,7 @@ die folgenden Scheduler, um regelmäßig auf diese URL zuzugreifen:
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
 
-===== Zusätzliche Ressourcen
+==== Zusätzliche Ressourcen
 
 * http://docs.drush.org/en/master/cron/[Drush-Seite "Running Drupal cron tasks from Drush"]
 * https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Cron einrichten"]

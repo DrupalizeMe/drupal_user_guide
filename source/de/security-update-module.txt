@@ -10,16 +10,16 @@ Ausführen des Datenbank-Updates-Skripts.
 (((Security update,applying)))
 (((Contributed module,updating)))
 
-===== Ziel
+==== Ziel
 
 Aktualisieren Sie ein beigetragenes Modul und führen Sie das Skript _Datenbankaktualisierungen_ aus.
 
-===== Vorraussetzung
+==== Vorraussetzung
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-===== Standort-Voraussetzungen
+==== Standort-Voraussetzungen
 
 * Ein beigetragenes Modul wurde installiert, und es ist ein Update verfügbar für
 es. Siehe <<<Erweitern-Modul-installieren>> und <<<Sicherheit-ankündigen>>.
@@ -34,7 +34,7 @@ Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
 installiert. Siehe <<Config-install>> für Anweisungen zur Installation des Kerns
 Module.
 
-===== Schritte
+==== Schritte
 
 Bevor Sie beginnen, suchen Sie nach modulspezifischen Update-Anweisungen. Dies ist
 typischerweise notwendig beim Aktualisieren von Modulen, die die Verwendung von Drittanbietern beinhalten
@@ -62,7 +62,7 @@ Wenn Sie den Composer zur Verwaltung der Dateien in Ihrer Site verwenden, folgen
 in <<install-composer>> um die Dateien zu aktualisieren, fahren Sie dann hier mit Schritt 6 in
 die untenstehenden Anweisungen für die administrative Schnittstelle.
 
-===== Using the administRative Schnittstelle
+==== Using the administRative Schnittstelle
 
 . Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>.
 
@@ -93,21 +93,21 @@ Standort.
 
 . Löschen Sie den Cache (siehe <<<prevent-cache-clear>>).
 
-===== Erweitern Sie Ihr Verständnis
+==== Erweitern Sie Ihr Verständnis
 
 * Überprüfen Sie das Website-Protokoll (siehe <<<Prevent-Log>>), sobald die Aktualisierungen abgeschlossen sind.
 um auf Fehler zu prüfen.
 
 * <<security-update-theme>>
 
-//====== Verwandte Konzepte
+//===== Verwandte Konzepte
 
 ==== Videos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Updating a Module"]
 
-===== Zusätzliche Ressourcen
+==== Zusätzliche Ressourcen
 
 https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen"]
 

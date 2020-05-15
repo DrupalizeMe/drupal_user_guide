@@ -9,7 +9,7 @@ Werkzeug.
 (((Tool,Git)))
 (((Git tool,using)))
 
-===== Ziel
+==== Ziel
 
 Verwenden Sie das Git-Revisionskontrollwerkzeug, um Revisionen an Dateien und Konfiguration zu verwalten
 auf Ihrer Website.
@@ -50,7 +50,7 @@ https://git-scm.com/[Git] für Anweisungen.
 
 ==== Steps
 
-===== Initializing the repository
+==== Initializing the repository
 
 Führen Sie diese Schritte einmal durch, nachdem Sie ein Git-Repository erstellt haben, um Ihre lokale
 Verzeichnis zum Repository und fügen Sie die ursprünglichen Dateien hinzu.
@@ -108,7 +108,7 @@ git push -u origin master
 . Wenn Sie GitLab, GitHub oder einen anderen Host mit Online-Zugang verwenden, können Sie
 Gehen Sie nun zu Ihrer Repository-Seite und sehen Sie nach, ob die Dateien dort vorhanden sind.
 
-======== Aktualisieren von Dateien im Repository
+======= Aktualisieren von Dateien im Repository
 
 Verwenden Sie diese Schritte, wenn Sie eine oder mehrere Dateien aktualisiert, hinzugefügt oder gelöscht haben in
 Ihre Website, um die Änderungen (_push_) an Ihr Repository zu senden.
@@ -162,7 +162,7 @@ git pull
 ----
 
 
-======== Erstellen einer Kopie der Dateien in Ihrem Repository
+======= Erstellen einer Kopie der Dateien in Ihrem Repository
 
 Befolgen Sie diese Schritte, wenn Sie alle Dateien in Ihrem Repository in ein
 neuer Standort. Beispielsweise könnten Sie sowohl eine lokale Entwicklungskopie Ihrer
@@ -178,7 +178,7 @@ URL und den Namen des Unterverzeichnisses, in dem sie sich befinden sollen, als 
 git-Klon https://gitlab.com/example-name/example-repo.git dirname
 ----
 
-======== Verwaltung der Konfiguration im Repository
+======= Verwaltung der Konfiguration im Repository
 
 . Folgen Sie den Anweisungen unter <<extend-config-versions>>, um eine vollständige
 Archiv der Konfiguration Ihrer Website.
