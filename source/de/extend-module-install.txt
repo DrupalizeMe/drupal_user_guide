@@ -4,7 +4,7 @@
 
 [role="summary"]
 Ein Modul von Drupal.org (über die Benutzeroberfläche)
-oder Drush  herunterladen und installieren.
+oder mittels Drush  herunterladen und installieren.
 
 
 (((Module,downloading)))
@@ -28,10 +28,10 @@ oder Drush  herunterladen und installieren.
 
 ==== Zielsetzung
 
-Herunterladen und Installieren der
-https://www.drupal.org/project/admin_toolbar[beigetragenes Admin Toolbar-Modul],
-die es Ihnen ermöglicht, einfach durch den Verwaltungsbereich der
-Website.
+Herunterladen und Installieren des von der Community bereitgestellten
+Zusatzmoduls https://www.drupal.org/project/admin_toolbar[Admin Toolbar],
+das es Ihnen ermöglicht, einfacher durch den Verwaltungsbereich der Website
+zu navigieren.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -41,31 +41,31 @@ Website.
 
 ==== Anforderungen an die Website
 
-* Wenn Sie Module über die Website installieren möchten, muss das Kernmodul Update Manager
-muss installiert sein. Siehe <<Config-install>> für Anweisungen zur Installation
-Module.
+* Wenn Sie Module über die Website installieren möchten, muss das Modul
+Update Manager, das mit dem Kernsystem ausgeliefert wird, installiert sein.
+Siehe: <<config-install>> für Anweisungen zur Installation von Modulen.
 
 * Wenn Sie Drush verwenden möchten, muss Drush installiert sein. Siehe <<<installieren-Werkzeuge>>.
 
 ==== Arbeitsschritte
 
-Sie können die administrative Schnittstelle zum Herunterladen und Installieren einer
-Modul. Wenn Sie ein benutzerdefiniertes Modul anstelle eines beigetragenen Moduls installieren,
-wenn Sie eine Meldung sehen, die besagt: _Die Installation von Modulen und Themen erfordert FTP-Zugang
+Sie können die Benutzeroberfläche zum Herunterladen und Installieren von Modulen
+verwenden. Wenn Sie ein benutzerdefiniertes Modul anstellt haben oder ein von
+der Community bereitgestelltes Zusatzmodul installieren möchten.
+Wenn Sie eine Meldung sehen, die besagt: _Die Installation von Modulen und Themes erfordert FTP-Zugriff
 auf Ihren Server_, oder wenn die folgenden Schritte nicht funktionieren, laden Sie die
-Moduldateien, folgen Sie den Schritten unter <<erweitern-manual-install>>. Wenn Sie
-Composer, um die Dateien auf Ihrer Website zu verwalten, folgen Sie den Schritten zum Herunterladen in
-<<Installieren-Komponist>>. In jedem dieser Fälle können Sie dann das Modul
-mit Drush, oder indem Sie mit Schritt 7 in der Anleitung für die
-administrative Schnittstelle unten.
+Moduldateien, mit Hilfe der Arbeitsschritte im Kapitel <<extend-manual-install>> auf Ihren Web-Server. Wenn Sie
+Composer verwenden, um die Dateien auf Ihrer Website zu verwalten, folgen Sie den Arbeitsschritten im Kapitel
+<<Install-cpmposer>>. In beiden Fällen können Sie das Modul anschließend
+mit Drush installieren. Sie können auch mit Schritt 7 in der Anleitung zur
+Verwendung der Benutzeroberfläche unten fortfahren.
 
-======= Verwendung der administrativen Schnittstelle
+======= Verwendung Benutzeroberfläche
 
-. Auf der _Admin Symbolleiste_ Projektseite auf drupal.org
-(_https://www.drupal.org/project/admin_toolbar_), blättern Sie zu den _Downloads_
-Abschnitt am Ende der Seite.
+. Scrollen Sie auf der Auf der Projektseite des Moduls _Admin Toolbar_ auf drupal.org
+(_https://www.drupal.org/project/admin_toolbar_) zum Abschnitt Download am ende der Seite.
 
-. Kopieren Sie die Adresse des _tar.gz_-Links. Abhängig von Ihrem Gerät und Browser,
+. Kopieren Sie die Adresse des _tar.gz_-Archivs. Abhängig von Ihrem Gerät und Browser,
 können Sie dies tun, indem Sie mit der rechten Maustaste klicken und _Linkadresse kopieren_ auswählen.
 +
 --
@@ -73,8 +73,8 @@ können Sie dies tun, indem Sie mit der rechten Maustaste klicken und _Linkadres
 image:images/extend-module-install-download.png["Eine Modul-URL finden"]
 --
 
-. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Erweitern_
-(_Verwaltung/Module_). Die Seite _Erweitern_ erscheint.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
+(_admin/modules_). Die Seite _Erweitern_ erscheint.
 
 . Klicken Sie auf _Neues Modul installieren_. Die Seite _Neues Modul _Installieren_ erscheint.
 +
@@ -83,34 +83,38 @@ image:images/extend-module-install-download.png["Eine Modul-URL finden"]
 image:images/dextend-module-install-admin-toolbar-do.png["Ein Modul von einer URL installieren"]
 --
 
-. Fügen Sie in das Feld _Install from a URL_ den kopierten Download-Link ein. Dieser Wert
-könnte so aussehen:
-{\an8}COPY15
+. Fügen Sie den kopierten Download-Link in das Feld _Von URL installieren_  ein.
+Dieser Wert könnte so aussehen:
+_https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz_
 
-. Klicken Sie auf _Install_, um das neue Modul auf den Server hochzuladen und zu entpacken. Die Dateien
-werden in das Verzeichnis _modules_ heruntergeladen.
 
-. Klicken Sie auf _Neu hinzugefügte Module aktivieren_, um zur Seite _Erweitern_ zurückzukehren. Wenn Sie
-das bereits erwähnte manuelle Hochladeverfahren verwendet haben, dann können Sie fortfahren
-mit diesem Schritt, und erreichen Sie die Seite _Erweitern_ mit der Funktion _Verwalten_
-Verwaltungsmenü und Navigation zu _Erweitern_ (_Admin/Module_).
+. Klicken Sie auf _Installieren_, um das neue Modul auf den Server hochzuladen
+und zu entpacken. Die Dateien werden in das Verzeichnis _modules_
+heruntergeladen.
 
-. Suchen Sie das Modul _Admin-Symbolleiste_ und überprüfen Sie es.
+. Klicken Sie auf _Neu hinzugefügte Module aktivieren_, um zur Seite _Erweitern_
+zurückzukehren. Wenn Sie das bereits erwähnte Verfahren zum manuellen
+Hochladen von Modulen  erwendet haben, dann können Sie mit diesem Schritt
+fortfahren. In diesem Fall erreichen Sie die Seite _Erweitern_ über den Menüpunkt
+_Erweitern_ im Menü _Verwalten_ (_admin/modules_).
 
-. Klicken Sie auf _Install_, um das neue Modul einzuschalten.
+. Suchen Sie das Modul _Admin Toolbar_ und aktivieren Sie
+das entsprechende Kontrollkästchen.
+
+. Klicken Sie auf _Install_, um das neue Modul zu aktivieren.
 
 ====== Drush zum Installieren eines Moduls verwenden
 
 . Suchen Sie den Projektnamen des Moduls, das Sie installieren möchten, d.h. den letzten
-Segment der URL der Projektseite des Moduls. Wenn die Projekt-URL beispielsweise
-_https://www.drupal.org/project/admin_toolbar_, der Projektname lautet
-"admin_toolbar".
+Teil der URL der Projektseite des Moduls. Wenn die Projekt-URL beispielsweise
+_https://www.drupal.org/project/admin_toolbar_ lautet, ist der Projektname
+„admin_toolbar".
 
-. Laden Sie das Modul herunter, indem Sie entweder die Schritte unter <<erweitert-manual-install>> oder
-<<Installieren-Komponist>>.
+. Laden Sie das Modul herunter, indem Sie entweder die Schritte unter <<extend-manual-install>> oder
+<<install-composer>> durchführen.
 
-. Führen Sie den folgenden Drush-Befehl unter Angabe des Projektnamens aus (z.B,
-`admin_toolbar`) als Parameter:
+. Führen Sie den folgenden Drush-Befehl unter Angabe des Projektnamens als Parameter aus (z.B,
+`admin_toolbar`) :
 +
 ----
 drush pm:enable admin_toolbar
@@ -120,17 +124,18 @@ drush pm:enable admin_toolbar
 
 ==== Erweitern Sie Ihr Verständnis
 
-* Überprüfen Sie, ob die
-https://www.drupal.org/project/admin_toolbar[beigetragenes Admin Toolbar-Modul]
-arbeitet, indem sie durch das Menü im Verwaltungsbereich blättert.
+* Überprüfen Sie, ob das von der Community bereitgestellte Zusatzmodul
+https://www.drupal.org/project/admin_toolbar[Admin Toolbar]
+installiert wurde, indem sie verschiedene Menüpunkte aufrufen,
+die zum Verwaltungsbereich von Drupal gehören.
 
-* Installieren und konfigurieren Sie die
-https://www.drupal.org/project/pathauto[beigetragenes Pathauto-Modul]
-so dass Inhaltsseiten in Ihrer Website standardmäßig schöne URLs erhalten. Siehe
-<<<Inhaltspfade>> für mehr zu URLs.
+* Installieren und konfigurieren Sie das von der Community bereitgestellte Zusatzmodul
+https://www.drupal.org/project/pathauto[Pathauto]
+so dass Seiten in Ihrer Website standardmäßig mit lesbaren URLs ausgestattet werden.
+ Siehe: <<<content-paths>> für Weitere Informationen über URLs.
 
-* Wenn Sie die Auswirkungen dieser Änderungen auf Ihre Website nicht sehen, benötigen Sie möglicherweise
-um den Cache zu leeren. Siehe <<<Cache-Löschen verhindern>>.
+* Wenn Sie die Auswirkungen dieser Änderungen auf Ihre Website nicht sehen,
+müssen Sie mögloicherweise den Cahce leeren.  Siehe <<prevent-cache-clear>>.
 
 
 //===== Verwandte Konzepte
@@ -151,5 +156,3 @@ video::https://www.youtube-nocookie.com/embed/vx9nWJE1Kbk[title="Herunterladen u
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg] und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
-
-*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***

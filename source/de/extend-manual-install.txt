@@ -1,6 +1,6 @@
 [[extend-manual-install]]
 
-=== Manually Downloading Module or Theme Files
+=== Themes oder Module manuell herunterladen
 
 [role="summary"]
 Ein Modul oder Theme manuell herunterladen und auf die Website hochladen.
@@ -14,9 +14,10 @@ Ein Modul oder Theme manuell herunterladen und auf die Website hochladen.
 
 ==== Zielsetzung
 
-Laden Sie Modul- oder Themendateien manuell herunter und laden Sie sie auf Ihre Website hoch, wenn die
-Website oder Drush-Methoden zur Installation oder Aktualisierung eines Moduls oder Themas nicht
-Arbeit, oder wenn Sie ein speziell geschriebenes Modul oder Thema platzieren.
+Laden Sie Modul- oder Themendateien manuell herunter und laden Sie  diese
+auf Ihre Website hoch, wenn die Website oder Drush-Methoden zur Installation
+oder Aktualisierung eines Moduls oder Themas nicht Arbeit, oder wenn Sie ein
+speziell geschriebenes Modul oder Thema platzieren.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -27,38 +28,43 @@ Arbeit, oder wenn Sie ein speziell geschriebenes Modul oder Thema platzieren.
 
 ==== Anforderungen an die Website
 
-Für den Download des Handbuchs müssen Sie sich mit einem der folgenden Probleme auseinandersetzen
-in diesem Thema beschrieben:
+Für den manuellen Download müssen Sie sich mit einem der folgenden,
+in diesem Kapitel, beschriebene Probleme auseinandersetzen:
 
-* Probleme mit der Dateierlaubnis
+* Probleme mit Schreib- und Leserechten für Dateien
 
 * FTP-Zulassungsprobleme
 
-* Sie haben ein benutzerdefiniertes Modul/Thema erstellt oder seine Dateien von jemandem erhalten
+* Sie haben ein benutzerdefiniertes Modul/Theme erstellt oder dessen Dateien
+von jemandem erhalten
 
 * Sie konnten die Anweisungen in
 <<extend-module-install>>, <<extend-theme-install>>,
 <<security-update-module>>, oder <<security-update-theme>>
+nicht erfolgreich befolgen.
 
-Überspringen Sie dieses Thema, wenn keiner der oben genannten Punkte auf Sie zutrifft. Wenn Sie den Composer verwenden
-Um die Dateien auf Ihrer Website zu verwalten, folgen Sie den Schritten zur Dateiaktualisierung in
-<<install-composer>> instead of this topic.
+Überspringen Sie dieses Thema, wenn keiner der oben genannten Problemfälle in
+Ihrem Fall eingetreten ist. Wenn Sie Composer verwenden um Dateien auf
+Ihrer Website zu verwalten, folgen Sie den Schritten zur Dateiaktualisierung in
+<<install-composer>> an Stelle den Schritten dieses Kapitels.
 
-==== Steps
+==== Arbeitsschritte
 
-Wenn Sie ein Modul oder Thema von _Drupal.org_ installieren, folgen Sie den
-Anweisungen zum Herunterladen und dann die Anweisungen zum Hochladen/Entpacken. Wenn
-Wenn Sie das Modul oder Thema erstellt haben, überspringen Sie den Schritt des Herunterladens. Legen Sie stattdessen
-eine Archivdatei (von der Sie wissen, wie man sie auf dem Server extrahiert) und fahren Sie fort mit
-die Schritte des Hochladens/Entpackens, mit welcher Methode auch immer für die
-wie Sie die Archivdatei ursprünglich angelegt haben.
+Wenn Sie ein Modul oder Theme von _Drupal.org_ installieren, folgen Sie den
+Anweisungen zum Herunterladen und dann die Anweisungen zum Hochladen/Entpacken.
+Wenn Sie das Modul oder Theme erstellt haben, überspringen Sie die Anweisungen
+zum Herunterladen. Legen Sie stattdessen eine Archivdatei
+(von der Sie wissen, wie man sie auf dem Server extrahiert) an und fahren Sie
+mit den Schritte zum Hochladens/Entpacken eines Themes/Moduls fort.
+Verwenden Sie dazu eine Methode, die mit dem von Ihnen erzeugten Archiv
+kompatibel ist.
 
-==== Downloading the files
+==== Die notwendigen Dateien herunterladen
 
-. Öffnen Sie das Modul oder Thema Projektseite auf drupal.org; zum Beispiel, die _Admin
-Symbolleiste_ Seite (https://www.drupal.org/project/admin_toolbar).
+. Öffnen Sie die Projektseite des gewünschten Moduls oder Themes auf drupal.org.
+Zum Beispiel die Projektseite des Moduls, _Admin Toolbar_ (https://www.drupal.org/project/admin_toolbar).
 
-. Scroll to the _Downloads_ section near the bottom of the page.
+. Scrollen Sie zum Abschnitt _Downloads_ im unteren Bereich der Seite.
 +
 --
 // Downloads section of the Admin Toolbar project page on drupal.org.
@@ -67,72 +73,84 @@ image:images/extend-manual-install-download.png["Downloading module files"]
 
 . Klicken Sie auf _tar.gz_, um die Datei auf Ihren Computer herunterzuladen. Alternativ, wenn Sie
 Terminal-Zugang zu Ihrem Hosting-Server (unter Linux) haben, können Sie die
-Link-Adresse für die _tar.gz_-Datei von Ihrem Browser, und verwenden Sie diesen Befehl, um
-die Datei herunterladen (wobei die kopierte URL ersetzt wird):
+Link-Adresse für die _tar.gz_-Datei mit Hilfe Ihres Browsers kopieren und
+folgenden Befehl verwenden, um die Datei herunterladen (wobei sie die URL durch die von Ihnen kopierte Adresse ersetzen):
 +
 ----
 wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
 ----
 
 
-==== Uploading the files to your site and unpacking them
+==== Die Dateien auf Ihre Website hochladen und entpacken
 
-. Wenn Sie ein neues Modul oder Thema hinzufügen, erstellen Sie Unterverzeichnisse in Ihrem
-Top-Level-Verzeichnisse _Module_ und _Themen_ (falls sie nicht bereits
-existieren). Typischerweise wird ein _Contrib_-Unterverzeichnis für beigetragene Module angelegt
-und Themen, die von _Drupal.org_ heruntergeladen werden, sowie ein Unterverzeichnis _custom_ für
-Module und Themen, die sie erstellt haben. Ihr _Module_-Verzeichnis könnte wie folgt aussehen
-dies:
+. Wenn Sie ein neues Modul oder Theme hinzufügen möchten, erstellen Sie in
+Ihrem Hauptverzeichnis die Unterverzeichnisse  _modules_ und _themes_
+(falls diese nicht bereits existieren). Typischerweise wird ein Unterverzeichnis
+_contrib_von der community bereitgestellte Zusatzmodule oder Themes, die von
+_Drupal.org_ heruntergeladen werden im jeweiligen Verzeichnis erstellt.
+Außerdem wird normalerweise ein Unterverzeichnis mit dem Namen_custom_, für
+Module und Themes, angelegt, die sie selbst erstellt haben.
+Ihr _module_-Verzeichnis könnte wie folgt aussehen:
 +
 --
 // Make custom and contrib directories under modules, and take a screenshot
 // showing the directory structure.
-image:images/extend-manual-install-directories.png["Suggested directory structure for modules",width="174px"]
+image:images/extend-manual-install-directories.png["empfohlene Verzeichnisstruktur für das verzeichnis modules",width="174px"]
 
 // NOTE for Translators: you don't need to localize the 'custom' and 'contrib' directory names as they are more common in English.
 --
 
-. Wenn Sie ein vorhandenes Modul oder Thema durch eine aktualisierte Version ersetzen wollen, setzen Sie
-die Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>>.
+. Wenn Sie ein vorhandenes Modul oder Theme durch eine aktualisierte Version
+ersetzen wollen, versetzen Sie die Website in den Wartungsmodus.
+Siehe: <<extend-maintenance>>>.
 
-. Wenn Sie ein vorhandenes Modul oder Thema durch eine aktualisierte Version ersetzen, finden Sie
-und löschen Sie alle vorhandenen Dateien und Verzeichnisse für das vorhandene Modul
-oder Thema. Die Module befinden sich normalerweise in Verzeichnissen unter der obersten Ebene
-_Module_-Verzeichnis, und Themen befinden sich normalerweise in Verzeichnissen unter dem
-Verzeichnis der obersten Ebene _Themen_.
+. Wenn Sie ein vorhandenes Modul oder Theme durch eine aktualisierte Version
+ersetzen, lokalisieren und löschen Sie alle vorhandenen Dateien und
+Verzeichnisse des vorhandenen Moduls oder Themes. Die Module befinden sich
+normalerweise in Verzeichnissen auf der obersten Ebene des Verzeichnisses
+_modules_. Themes befinden sich normalerweise auf der obersten Ebene des
+Verzeichnisses _Themen_.
 
-. Laden Sie die _.tar.gz_-Datei (oder welches Archiv auch immer Sie erstellt haben) auf Ihre Website hoch.
-Platzieren Sie sie entweder an demselben Ort, von dem aus Sie das Verzeichnis gelöscht haben
-(wenn ein bestehendes Modul oder Thema ersetzt wird) oder das entsprechende Unterverzeichnis
-von _Modulen_ oder _Themen_ (wenn ein neues Modul oder Thema hinzugefügt wird).
+. Laden Sie die _.tar.gz_-Datei (oder die Archivdatei, die Sie erstellt haben)
+auf Ihre Website hoch. Platzieren Sie die Datei entweder am selben Ort,
+an dem Sie das entsprechende  Verzeichnis gelöscht haben
+(wenn ein vorhandenes Modul oder Theme ersetzt werden soll) oder
+das entsprechende Unterverzeichnis des Verzeichnisses _modules_ oder _themes_
+(wenn ein neues Modul oder Thems hinzugefügt werden soll).
 
 . Extrahieren Sie die Dateien aus dem _.tar.gz_-Archiv (oder dem Archiv, das Sie
-erstellt), wobei ein Unterverzeichnis am gleichen Ort wie die Archivdatei erstellt wird.
-Wenn Sie keinen Terminal-Zugang haben oder Ihr Hosting-Server nicht läuft
-Linux, der Dateimanager Ihres Hosting Control Panels sollte eine Möglichkeit bieten
-die Dateien extrahieren. Wenn Sie Terminal-Zugang zu Ihrem Hosting-Server haben
-(unter Linux) und Sie eine tar.gz-Datei verwenden, können Sie einen Befehl wie
+erstellt haben), wobei ein Unterverzeichnis am gleichen Ort erstellt wird,
+an dem sich auch die Archivdatei befindet. Wenn Sie keinen SSH-Zugang haben
+oder Ihr Hosting-Server Linux nicht verwendet, sollte der Dateimanager Ihres
+Hosting Control Panels eine Möglichkeit bieten die Datei zu entpacken.
+Wenn Sie (unter Linux) SSH-Zugriff auf Ihr Hosting-System haben
+und Sie eine tar.gz-Datei verwenden, können Sie einen Befehl wie
 +
 ----
 tar -xzf admin_toolbar-8.x-1.17.tar.gz
 ----
 
-. Löschen Sie die komprimierte Datei vom Server, es sei denn, Ihre Entpackmethode
-bereits gelöscht.
+verwenden, um Ihr Archiv zu entpacken.
 
-. Siehe <<extend-module-install>>, <<extend-theme-install>>,
-<<security-update-module>>, oder <<security-update-theme>> zur Vervollständigung der
-Installation oder Aktualisierung des Moduls oder Themas. Beginnen Sie mit dem Schritt nach der
-Der automatische Download ist abgeschlossen.
+. Löschen Sie die komprimierte Datei vom Server, es sei denn,
+sie wurde nach dem Entpacken automatisch gellöscht.
 
-==== Vertiefen Sie Ihr Verständnis
+. Siehe: <<extend-module-install>>, <<extend-theme-install>>,
+<<security-update-module>>, oder <<security-update-theme>> um die
+Installation oder Aktualisierung des Moduls oder Themas abszuschließen.
+Beginnen Sie mit dem Arbeitsschritt, nach dem der automatische Download
+abgeschlossen wurde.
 
-* Wenn Sie mit mehreren Umgebungen arbeiten (z.B. eine lokale Entwicklungsumgebung
-und einer Produktionsstätte) müssen Sie die Schritte für jede Umgebung wiederholen, oder
-die Umwelt reklonieren. Siehe <<<installieren-entwickeln>>.
+==== Vertiefen Sie ihr Wissen
 
-* Wenn Sie ein neues Thema hinzugefügt haben, navigieren Sie im Verwaltungsmenü _Verwalten_ zu
-_Erscheinung_ (_Admin/Erscheinung_) und deinstallieren Sie das alte Thema.
+* Wenn Sie mit mehreren Umgebungen arbeiten (z.B. einer lokalen
+Entwicklungsumgebung und einer Live-Website) müssen Sie diese Arbeitsschritte
+in jeder Umgebung  gesondert ausführen oder die betroffene Umgebung neu Klonen.
+Siehe: <<install-dev-making>>.
+
+* Wenn Sie ein neues Theme hinzugefügt haben, navigieren Sie im Menü _Verwalten_
+zum Mnüpunkt _Design_ (_admin/appearance_) und deinstallieren Sie
+das alte Theme.
 
 // ==== Verwandte Konzepte
 
