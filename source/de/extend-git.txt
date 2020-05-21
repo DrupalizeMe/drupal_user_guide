@@ -1,17 +1,17 @@
 [[extend-git]]
 
-=== Managing File and Configuration Revisions with Git
+=== Datei- und Konfigurationsrevisionen mit Git verwalten
 
 [role="summary"]
-Datei- und Konfigurationsrevisionen mit der Git-Revisionskontrolle verwalten.
+Datei- und Konfigurationsrevisionen mit der Versionskontrollsoftware Git verwalten.
 
 (((Tool,Git)))
 (((Git tool,using)))
 
-Zielsetzung
+=== Zielsetzung
 
-Verwenden Sie das Git-Revisionskontrollwerkzeug, um Revisionen an Dateien und Konfiguration zu verwalten
-auf Ihrer Website.
+Verwenden Sie das Git-Revisionskontrollwerkzeug, um Revisionen an den Dateien und
+der Konfiguration Ihrer Website zu verwalten.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -21,58 +21,71 @@ auf Ihrer Website.
 
 * <<install-dev-sites>>
 
-* Wie man ein Git-Repository einrichtet und seine _Klon-URL findet. Zum Beispiel, wenn
-Sie GitLab verwenden möchten, um Ihr Repository zu hosten, siehe
-https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab-Seite "Ein Projekt erstellen"]
+* Wie man eine Git-Repository einrichtet und deren _Klon-URL_ herausfindet.
+Wenn Sie beispielsweise GitLab verwenden möchten, um Ihr Repository zu hosten.
+Siehe: https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab.com „Ein Projekt erstellen"]
 und
-https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab-Seite "Grundlegende Befehle der Kommandozeile"].
-Und wenn Sie GitHub verwenden möchten, um Ihr Repository zu hosten, lesen
-https://help.github.com/en/articles/create-a-repo[GitHub "Repo erstellen"-Seite]
+https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab.com „Grundlegende Befehle der Kommandozeile"].
+Wenn Sie GitHub verwenden möchten, um Ihr Repository zu hosten, lesen
+https://help.github.com/en/articles/create-a-repo[GitHub „Eine Repository erstellen"]
 und
 https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub-Seite "Welche Remote-URL soll ich verwenden"].
 
-* Wie man ein Befehlsterminal-Fenster und einen Klartext-Editor öffnet und benutzt.
+* Wie man ein Kommandozeilen-Fenster und einen Klartext-Editor öffnet und benutzt.
 
-* Wie man die Konfiguration verwaltet, wie man Archivdateien (wie z.B. _.zip_) entpackt und packt.
-und _.tar.gz_).
+* Wie man die Konfiguration verwaltet.
+
+* wie man Archivdateien (wie z. B. _.zip_ und _.tar.gz_) entpackt und packt.
+
 
 ==== Anforderungen an die Website
 
-* Sie müssen die Software für Ihre Website mit einer der folgenden Methoden heruntergeladen haben
-in <<installieren-entscheiden>>. Wenn Sie die Konfiguration verwalten wollen, müssen Sie
-die Software installiert haben und über eine laufende Website verfügen.
+* Sie müssen die Software für Ihre Website mit einer der Methoden im Kapitel
+<<install-decide>> heruntergeladen haben in. Wenn Sie die Konfiguration
+verwalten möchten, müssen Sie die Software installiert haben und über eine
+funktionsfähige Website verfügen.
 
-* Die Git-Client-Software muss auf dem Server Ihrer Website installiert sein. Siehe
-https://git-scm.com/[Git] für Anweisungen.
+* Die Git-Client-Software muss auf dem Server  installiert sein, auf dem Ihre
+Website gehostet ist.
+Siehe: https://git-scm.com/[Git] für weitere Informationen.
 
-* Sie müssen ein neues Repository erstellt haben und seine Git-Klon-URL kennen.
+* Sie müssen eine neue Repository erstellt haben und deren Git-Klon-URL kennen.
 
-==== Steps
+==== Arbeitsschritte
 
-==== Initializing the repository
+==== Die Repository installieren
 
-Führen Sie diese Schritte einmal durch, nachdem Sie ein Git-Repository erstellt haben, um Ihre lokale
-Verzeichnis zum Repository und fügen Sie die ursprünglichen Dateien hinzu.
+Führen Sie diese Schritte einmal durch, nachdem Sie ein Git-Repository
+erstellt haben, um lokale Verzeichnisse zum Repository und die darin enthaltenen
+Dateien hinzuzufügen.
 
 . Öffnen Sie ein Kommandoterminal-Fenster und wechseln Sie in das Verzeichnis, in dem Ihre Site
 Dateien gefunden werden. Dies ist Ihr "oberstes" Verzeichnis.
 
-. Bestimmen Sie, wo sich Ihre Web-Root befindet. Wenn die _Kerne_, _Module_ und _Themen_
-Verzeichnisse sich direkt in diesem Verzeichnis befinden, dann sind Sie in Ihrem Web
-Wurzel. Wenn Sie Composer zum Herunterladen der Software verwendet haben, dann sind diese Dateien
-die sich innerhalb des Unterverzeichnisses _web_ befindet (das Ihr Web-Root ist).
+. Ermitteln Sie, wo sich das Hauptverzeichnis Ihrer Website befindet.
+Wenn sich die Verzeichnisse _Core_, _Modules_ und _Themes_ direkt in diesem
+Verzeichnis befinden, dann befinden Sie sich im Hauptverzeichnis Ihrer Installation.
+Wenn Sie Composer zum Herunterladen der Software verwendet haben, befinden sich
+diese Daten im Unterverzeichnis  _web_ (dies ist das Hauptverzeichnis Ihrer Website).
 
-. Erstellen Sie in einem einfachen Texteditor eine neue Datei namens _.gitignore_ im oberen Teil
-Verzeichnis (oder bearbeiten Sie es, wenn es bereits existiert). Diese Datei enthält eine Liste von Dateien
-und Verzeichnisse, die Git ignorieren (nicht zum Repository hinzufügen) sollte. Zum Beispiel,
-die Datei _settings.php_ für Ihre Site sollte nicht zu Git hinzugefügt werden, weil sie
-enthält Ihre Datenbankkontoinformationen und die Mediendateien, die auf
-Ihre Site (normalerweise in _sites/default/files_) sollte auch nicht in Git sein -- die
-Ziel ist es, die Software im Repository zu haben, nicht den Inhalt der Website.
+. Erstellen Sie in einem einfachen Texteditor eine neue Datei namens
+_.gitignore_, innerhalb ds Hauptverzeichnisses Ihrer Website
+(oder bearbeiten Sie diese Datei, wenn sie bereits existiert). Die Datei enthält
+ eine Liste von Dateien und Verzeichnisse, die Git ignorieren
+ (nicht zum Repository hinzufügen) soll. Zum Beispiel sollte
+die Datei _settings.php_ nicht zur Git-Repository hinzugefügt werden, weil diese
+die Daten enthält, mit denen Siech die Website an Ihrer Datenbank authentifiziert.
+Die Dateien, die die _Medienelemente_ der Website enthalten
+(normalerweise werden diese Dateien im Verzeichnis
+ _sites/default/files_ abgelegt) sollten auch nicht teil der Git-Repository sein.
+ Ihr Ziel ist es, die Software in die Repository zu laden, nicht
+den Inhalt der Website.
 
-. Stellen Sie sicher, dass die folgenden Zeilen in der Datei _.gitignore_ stehen. Wenn Ihr Web-Stamm
-nicht Ihr oberstes Verzeichnis ist, überprüfen Sie jedes dieser Verzeichnisse, um zu sehen, ob sie ein Präfix benötigen. Für
-Zum Beispiel müssen _Sites_ möglicherweise durch _Web/Sites_ ersetzt werden.
+. Stellen Sie sicher, dass die Datei _.gitignore_ folgende Zeilen enthält.
+ Wenn Ihr Hauptverzeichnis nicht das oberstes Verzeichnis ihrer
+ Datenstruktur ist, überprüfen Sie jedes dieser Verzeichnisse, um festzustellen
+ ob Sie ein Präfix angeben müssen. Eventuell müssen _Sites_
+ möglicherweise durch _web/sites_ ersetzen.
 +
 ----
 sites/*/settings*.php
@@ -87,16 +100,17 @@ git init
 git add -A
 ----
 
-. Optional können Sie die Liste der Dateien überprüfen, die Sie Ihrem Git-Repository hinzufügen werden
-indem Sie diesen Befehl eingeben und durch die (sehr lange) Liste blättern:
+. Optional können Sie die Liste der Dateien überprüfen, die Ihrer Git-Repository
+hinzufügz werden, indem Sie folgenden Befehl eingeben und durch die (sehr lange)
+Liste scrollen:
 +
 ----
 git status
 ----
 
-. Geben Sie die folgenden Befehle ein. Sie können Ihre eigene _Commit-Meldung_ ersetzen für
-"Anfangsdatei hinzufügen", wenn Sie dies wünschen, und Sie müssen Ihr eigenes Git ersetzen.
-URL für die URL im zweiten Befehl klonen:
+. Geben Sie die folgenden Befehle ein. Wenn Sie mögen, können Sie Ihre eigene
+_Commit Message_ einsetzen. Z. B. „Initialer Commit". Die URL im zweiten Befehl
+unten muss mit der URL ihrer eigenen Git-Repository ersetzt werden.
 +
 ----
 git commit -m "Initial file add"
@@ -104,101 +118,120 @@ git remote add origin https://gitlab.com/example-name/example-repo.git
 git push -u origin master
 ----
 
-. Wenn Sie GitLab, GitHub oder einen anderen Host mit Online-Zugang verwenden, können Sie
-Gehen Sie nun zu Ihrer Repository-Seite und sehen Sie nach, ob die Dateien dort vorhanden sind.
+. Wenn Sie GitLab, GitHub oder einen anderen Host mit Online-Zugang verwenden,
+können Sie nun die Seite Ihrer Repository aufrufen und überprüfen
+ob Ihre Dateien dort vorhanden sin, nachdem der Vorgang abgeschlossen wurde.
 
-======= Aktualisieren von Dateien im Repository
+======= Aktualisieren von Dateien innerhalb der Repository
 
-Verwenden Sie diese Schritte, wenn Sie eine oder mehrere Dateien aktualisiert, hinzugefügt oder gelöscht haben in
-Ihre Website, um die Änderungen (_push_) an Ihr Repository zu senden.
+Führen Sie folgende Schritte aus, wenn Sie eine oder mehrere Dateien innerhalb
+Ihrer Website aktualisiert, hinzugefügt oder gelöscht haben  um die Änderungen
+( mittels der Kommandozeilenoption _push_) an Ihr Repository zu senden.
 
-. Öffnen Sie ein Befehlsterminal-Fenster und wechseln Sie in das Verzeichnis, in dem Ihre Site
-Dateien gefunden werden.
+. Öffnen Sie ein Terminal/eine Eingabeaufforderung und wechseln Sie in
+das Verzeichnis, dass die Dateien ihrer Website enthält.
 
-. Überprüfen Sie die Liste der Dateien, die hinzugefügt, geändert oder gelöscht wurden:
+. Überprüfen Sie die Liste der Dateien, die hinzugefügt, geändert oder gelöscht
+wurden:
 +
 ----
 git status
 ----
 
 . Für Textdateien, die geändert wurden (keine Bilder), können Sie optional die
-Unterschiede zwischen der neuen und der alten Version der Datei:
+Unterschiede zwischen der neuen und der alten Version einer
+Datei anzeigen lassen:
 +
 ----
 git diff path/to/file.txt
 ----
 
-. Stellen Sie alle Änderungen für die nächste Übergabe bereit und vergewissern Sie sich, dass sie durchgeführt werden:
+. Stellen Sie alle Änderungen für die nächste Übergabe bereit und vergewissern
+Sie sich, dass sie durchgeführt werden:
 +
 ----
 git add -A
 git status
 ----
 
-. Sie können eine bestimmte Datei bei der Übergabe, die Sie bereits durchgeführt haben, auslassen,
-oder fügen Sie eine weitere Datei zu denen hinzu, die Sie bereits bereitgestellt haben. Wenn eine bestimmte Datei
-oder Verzeichnis versehentlich immer wieder hinzugefügt wird, sollten Sie in Erwägung ziehen, es der
-_.gitignore_ Datei, so dass sie von Git ignoriert wird. Befehle auslassen/hinzufügen:
+. Sie können eine bestimmte Datei von der Übergabe ausschließen.
+Auch dann, wenn diese sich bereits in der Liste der zu übergebenden Dateien befindet.
+Sie können auch weitere Verzeichnisse oder Dateien zur Übergabeliste hinzufpgen.
+Wenn eine bestimmte Datei oder ein bestimmtes Verzeichnis versehentlich immer wieder
+zur übergeben wird, sollten Sie in Erwägung ziehen, der Datei
+_.gitignore_ einen entsprechenden Eintrag hinzuzufügen, so dass das jeweilige
+Element zukünftig von Git ignoriert wird.
+
+Befehle zum ausschließen/hinzufügen von Elementen:
 +
 ----
-git reset HEAD path/to/file.txt
-git add path/to/file.txt
+git reset HEAD path/to/file.txt (Datei/Verzeichnis ausschließen)
+git add path/to/file.txt (Datei/Verzeichnis hinzufügen)
 ----
 
-. Engagieren Sie sich und treiben Sie Ihre Änderungen voran. Ersetzen Sie die Verpflichtung durch etwas Sinnvolles
-Nachricht:
+. Übergeben Sie die Liste der Änderungen an die Repository (commit) und
+führen Sie das Hochladen der Dateien aus (push).
+Ersetzen Sie die Commit Messaage durch etwas sinnvolles:
 +
 ----
-git commit -m "commit message here"
+git commit -m "Angabe zu den durchgeführten Änderungen"
 git push
 ----
 
-. Wenn Sie weitere Kopien Ihres Repositorys haben, aktualisieren Sie diese, indem Sie den Befehl
-Fenster im Verzeichnis jeder Kopie und führt den folgenden Befehl aus:
+. Wenn Sie weitere Kopien Ihres Repository haben, aktualisieren Sie diese,
+indem Sie ein Kommandozeilenfenster in jedem Verzeichnis öffnen,
+dass eine Kopie Ihrer Repository enthält und führen Sie folgenden Befehl aus:
 +
 ----
 git pull
 ----
 
 
-======= Erstellen einer Kopie der Dateien in Ihrem Repository
+======= Erstellen einer Kopie der Dateien in Ihrer Repository
 
-Befolgen Sie diese Schritte, wenn Sie alle Dateien in Ihrem Repository in ein
-neuer Standort. Beispielsweise könnten Sie sowohl eine lokale Entwicklungskopie Ihrer
-Standort und einer Produktionsstätte, oder mehrere Teammitglieder haben alle lokale
-Kopien der Website.
+Befolgen Sie diese Schritte, wenn Sie alle Dateien innerhalb ihrer Repository
+auf eine neue Umgebung übertragen wollen. Beispielsweise könnten Sie sowohl eine
+lokale Entwicklungskopie Ihrer Website und einer Live-Website Besitzen.
+In größeren Teams können auch mehrere Teammitglieder eine lokale Kopie der
+Website an verschiedenen Standorten verwalten.
 
-. Öffnen Sie ein Befehlsfenster an der Stelle, an der sich die Dateien befinden sollen.
+. Öffnen Sie ein Terminal/ eine Eingabeaufforderung in dem Verzeichnis,
+in das Sie die Dateien herunterladen möchten.
 
-. Geben Sie den folgenden Befehl ein und ersetzen Sie die URL Ihres Repository-Klons durch die
-URL und den Namen des Unterverzeichnisses, in dem sie sich befinden sollen, als _Dateiname_:
+. Geben Sie den folgenden Befehl ein und ersetzen Sie die Klon-URL Ihrer
+Repository durch die URL und den Namen des Unterverzeichnisses,
+in das sie die Repository klonen möchten, als _Dateiname_:
 +
 ----
-git-Klon https://gitlab.com/example-name/example-repo.git dirname
+git-clone https://gitlab.com/example-name/example-repo.git Verzeichnisname
 ----
 
 ======= Verwaltung der Konfiguration im Repository
 
-. Folgen Sie den Anweisungen unter <<extend-config-versions>>, um eine vollständige
-Archiv der Konfiguration Ihrer Website.
+. Folgen Sie den Anweisungen in <<extend-config-versions>>, um ein vollständiges
+Archiv der Konfiguration Ihrer Website zu erstellen.
 
-. Wenn Sie die Konfiguration im Repository nicht bereits initialisiert haben, entpacken Sie
-das Konfigurationsarchiv in ein neues Verzeichnis, vorzugsweise oberhalb der Web-Root
-Verzeichnis, und folgen Sie den obigen Anweisungen, um diese Dateien zu Ihrem
-Repository.
+. Wenn Sie die Konfiguration im Repository nicht bereits initialisiert haben,
+entpacken Sie das Konfigurationsarchiv in ein neues Verzeichnis,
+vorzugsweise oberhalb des Hauptverzeichnisses Ihrer Website.
+Folgen Sie anschließend den oben stehenden Anweisungen, um die Dateien zu Ihrer
+Repository hinzuzufügen.
 
-. Wenn sich nach der Initialisierung Ihre Site-Konfiguration ändert, exportieren und
-Entpacken Sie das Konfigurationsarchiv am gleichen Ort. Folgen Sie den Anweisungen
-oben, um diese Dateien in Ihrem Repository zu aktualisieren.
+. Wenn sich die Konfiguration Ihrer Website nach der Initialisierung Ihrer
+Git-Repository ändert, exportieren Sie das Konfigurationsarchiv und entpacken
+Sie es an der gleichen Stelle. Folgen Sie den Anweisungen
+oben, um diese Dateien in Ihrer Repository zu aktualisieren.
 
-. Um eine aktualisierte Konfiguration in eine andere Site zu importieren, erstellen Sie ein Archiv der
-Konfigurationsverzeichnis aus Ihrem Repository. Folgen Sie dann den Anweisungen auf
-<<extend-config-versions>> to upload and import this archive into the site.
+. Um eine aktualisierte Konfiguration in eine andere Website zu importieren,
+erstellen Sie ein Archiv des Konfigurationsverzeichnisses in Ihrer Repository.
+Folgen Sie dann den Anweisungen in
+<<extend-config-versions>> um dieses Archiv hochzuladen und in die neue Website
+zu importieren.
 
 
-// ==== Expand your understanding
+// ==== Vertiefen Sie Ihr Wissen
 
-==== Related concepts
+==== Vrwandte Konzepte
 
 <<install-dev-sites>>
 

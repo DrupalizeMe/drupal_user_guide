@@ -1,6 +1,6 @@
 [[config-uninstall]]
 
-=== Unbenutzter Module deinstallieren
+=== Unbenutzte Module deinstallieren
 
 [role="summary"]
 Ein Module deinstallieren,  um die Ladezeit der Website zu reduzieren.
@@ -12,8 +12,10 @@ Ein Module deinstallieren,  um die Ladezeit der Website zu reduzieren.
 
 ==== Zielsetzungsetzung
 
-Deinstallieren Sie die mit dem Kernsystem ausgeleiferten Module Search und History sowie die das Modul
-Activity Tracker, wenn Sie es im Kapitel <<config-install>> installiert haben, um die Ladezeit zu reduzieren.
+Deinstallieren Sie die mit dem Kernsystem ausgelieferten Module Search und
+History sowie die das Modul Activity Tracker, wenn Sie es im Kapitel
+<<config-install>> installiert haben, um die Ladezeit, Ihrer Website,
+zu reduzieren.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -22,10 +24,11 @@ Activity Tracker, wenn Sie es im Kapitel <<config-install>> installiert haben, u
 ==== Anforderungen an die Website
 
 * Sie müssen mindestens ein unbenutztes Modul auf Ihrer Website haben, das Sie
-deinstallieren möchten. Beispielsweise das Modul Search, das mit dem Kernsystem ausgeliefert wird.
+deinstallieren möchten. Beispielsweise das Modul Search,
+das mit dem Kernsystem ausgeliefert wird.
 
-* Wenn Sie Drush zur Deinstallation von Modulen verwenden möchten, muss Drush installiert sein. Siehe
-<<install-tools>>.
+* Wenn Sie Drush zur Deinstallation von Modulen verwenden möchten,
+muss Drush installiert sein. Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
 
@@ -34,10 +37,12 @@ Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu deinstalli
 ======= Verwendung des Verwaltungsbereichs
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_ > _Deinstallieren_
-(_admin/modules/uninstall_). Dort finden Sie eine Liste der Module, die deinstalliert werden können.
+(_admin/modules/uninstall_). Dort finden Sie eine Liste der Module,
+die deinstalliert werden können.
 
-. Aktivieren Sie die Kontrollkästchen vor den Namen der Module, die Sie deinstallieren möchten (_Search_, _Historie_ und
-_Activity Tracker_). Klicken Sie auf _Deinstallieren_.
+. Aktivieren Sie die Kontrollkästchen vor den Namen der Module, die Sie
+deinstallieren möchten (_Search_, _History_ und _Activity Tracker_).
+Klicken Sie auf _Deinstallieren_.
 +
 --
 // Oberer Teil von admin/modules/uninstall, mit aktiviertem Activity Tracker.
@@ -45,17 +50,19 @@ image:images/config-uninstall_check-modules.png["Deinstallationsmodul",width="10
 
 [NOTE]
 =================
-Sie können ein Modul nicht deinstallieren, wenn es von einem oder mehreren anderen Modulen und/oder Funktionalitäten benötigt wird.
-Zum Beispiel wird das Module File, das mit dem Kernsystem ausgeliefert wird, von den Kernsystemmodulen Text
+Sie können ein Modul nicht deinstallieren, wenn es von einem oder mehreren
+anderen Modulen und/oder Funktionalitäten benötigt wird. Zum Beispiel wird das Module
+File, das mit dem Kernsystem ausgeliefert wird, von den Kernsystemmodulen Text
 Editor, CKEditor und Image benötigt. Es kann nur deinstalliert werden, wenn Sie
-zunächst die abhängigen Module und Funktionen deinstallieren. Ein Modul, das nicht oder
-noch nicht deinstalliert werden kann, wird so lange durch ein ausgegrautes Kontrollkästchen gekennzeichnet,
+zunächst die abhängigen Module und Funktionen deinstallieren. Ein Modul,
+das nicht oder noch nicht deinstalliert werden kann, wird so lange durch
+ein ausgegrautes Kontrollkästchen gekennzeichnet,
 bis es deinstalliert werden kann.
 =================
 --
 
-. In Schritt 2 werden Sie aufgefordert, die Deinstallation des Moduls zu bestätigen. Klicken Sie auf .
-_Deinstallieren_.
+. In Schritt 2 werden Sie aufgefordert, die Deinstallation des Moduls
+zu bestätigen. Klicken Sie auf _Deinstallieren_.
 +
 --
 // Deinstallationsbestätigungsbildschirm, nach dem Überprüfen von Activity Tracker, History,
@@ -70,8 +77,9 @@ image:images/config-uninstall_confirmUninstall.png["Deinstallation bestätigen -
 Ihrer Website verfügbaren Module an.
 
 . Suchen Sie den Systemnamen des Moduls, das Sie deinstallieren möchten, indem Sie den
-Informationsbereich für das Modul ausklappen. Das mit dem Kernsystem ausgelieferte Modul Activity Tracker
-besitzt beispielsweise den Systemnamen _tracker_.
+Informationsbereich für das Modul ausklappen. Das mit dem Kernsystem
+ausgelieferte Modul Activity Tracker besitzt beispielsweise den Systemnamen
+_tracker_.
 
 . Führen Sie den folgenden Drush-Befehl aus, um das Modul zu deinstallieren:
 +
@@ -85,8 +93,9 @@ drush pm:uninstall tracker
 
 * <<prevent-cache-clear>>
 
-* Sie können auch das mit dem Kernsystem ausgelieferte Modul Comment deinstallieren, indem Sie die folgenden Schritte ausführen, aber
-erst nachdem die Kommentarfelder entfernt wurden. Dies passiert automatisch im Kapitel
+* Sie können auch das mit dem Kernsystem ausgelieferte Modul Comment
+deinstallieren, indem Sie die folgenden Schritte ausführen, aber erst nachdem
+die Kommentarfelder entfernt wurden. Dies passiert automatisch im Kapitel
 <<structure-content-type-delete>>.
 
 //===== Verwandte Konzepte

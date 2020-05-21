@@ -10,10 +10,11 @@ Inhalte im Direktbearbeitungsmodus bearbeiten.
 (((Quick editor)))
 (((Full editor)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Verwenden Sie den integrierten Direktbearbeitungsmodus, um Informationen zur Info-Seite hinzuzufügen,
-ohne deren vollständiges Bearbeitungsformular zu verwenden.
+Verwenden Sie den integrierten Direktbearbeitungsmodus,
+um Informationen zur Info-Seite hinzuzufügen, ohne deren vollständiges
+Bearbeitungsformular zu verwenden.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -25,55 +26,72 @@ ohne deren vollständiges Bearbeitungsformular zu verwenden.
 
 ==== Anforderungen an die Website
 
-Die Info-Seite, die Sie bearbeiten möchten, muss vorhanden sein. Siehe <<content-create>>.
+Die Info-Seite, die Sie bearbeiten möchten, muss vorhanden sein.
+Siehe: <<content-create>>.
 
 ==== Arbeitsschritte
 
-Navigieren Sie zur Seite Info, um den Inhalt mittels Direktbearbeitungsmodus zu bearbeiten. Wenn Sie die Seite noch nicht zu einem
-Navigationsmenü Hinzugefügt wurde, finden und öffnen Sie den Inhalt, indem Sie folgende Schritte ausführen:
+Navigieren Sie zur Seite Info, um den Inhalt mittels Direktbearbeitungsmodus
+zu bearbeiten. Wenn Sie die Seite noch nicht zu einem Navigationsmenü
+hinzugefügt wurde, finden und öffnen Sie den Inhalt,
+indem Sie folgende Schritte ausführen:
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ (_admin/contet_).
 
-. Wenn der Inhalt, den Sie bearbeiten möchten, kürzlich aktualisiert oder erstellt wurde, wird er
-Am Anfang der Liste auf der Seite Inhalt angezeigt. Falls der Inhalt dort nicht zu finden ist, können Sie
-die Filterfunktion verwenden und nach _Inhaltstyp_, _Titel_ und weiteren Kriterien Filtern, um den gewünschten Inhalt zu finden.
+. Wenn der Inhalt, den Sie bearbeiten möchten, kürzlich aktualisiert oder
+ erstellt wurde, wird er Am Anfang der Liste auf der Seite Inhalt angezeigt.
+ Falls der Inhalt dort nicht zu finden ist, können Sie die Filterfunktion
+ verwenden und nach _Inhaltstyp_, _Titel_ und weiteren Kriterien Filtern,
+ um den gewünschten Inhalt zu finden.
 
-. Suchen Sie die Seite Info und klicken Sie auf den Link zur Seite in der Liste der Inhalte.
+. Suchen Sie die Seite Info und klicken Sie auf den Link zur Seite in der Liste
+der Inhalte.
 
 Sobald der Inhalt, den Sie bearbeiten möchten, in Ihrem Browser angezeigt wird,
 gehen Sie wie folgt vor, um den Direktbearbeitungsmodus zu verwenden:
 
 
-. Suchen Sie den Abschnitt der Seite, der den Inhalt anzeigt, den Sie bearbeiten möchten, und
-aktivieren Sie den Direktbearbeitungsmodus über den kontextlink _Direktbearbeitungsmodus_ aktivieren (siehe
-<<config-overview>> um Anweisungen zum Zugriff auf Kontexlinks zu erhalten). Jedes
-Feld, dass in diesem Inhalt direkt bearbeitet werden kann, wird blau umrandet dargestellt. Außerdem wird ein hervorgehobenes Dialogfeld angezeigt.
+. Suchen Sie den Abschnitt der Seite, der den Inhalt anzeigt, den Sie bearbeiten
+möchten, und aktivieren Sie den Direktbearbeitungsmodus über den kontextlink
+_Direktbearbeitungsmodus_ aktivieren (siehe
+<<config-overview>> um Anweisungen zum Zugriff auf Kontexlinks zu erhalten).
+Jedes Feld, dass in diesem Inhalt direkt bearbeitet werden kann, wird blau
+umrandet dargestellt. Außerdem wird ein hervorgehobenes Dialogfeld angezeigt.
 +
 --
 // Screenshot der Seite Info mit eingeschalteter Schnellbearbeitung für den Knoten.
 image:images/content-in-place-edit-hover-box.png["Schnellbearbeitungsmodus",width="100%"]
 --
 
-. Klicken Sie auf den Bereich _Textkörper_, um mit dessen Bearbeitung zu beginnen. Das Feld _Textkörper_
-unterstützt die Verwendung eines Rich-Text-Editors. Die Werkzeugleiste wird in einem
-hervorgehobenen Dialogfenster angezeigt.
+. Klicken Sie auf den Bereich _Textkörper_, um mit dessen Bearbeitung zu
+beginnen. Das Feld _Textkörper_ unterstützt die Verwendung eines
+Rich-Text-Editors. Die Werkzeugleiste wird in einem hervorgehobenen
+Dialogfenster angezeigt.
 
-. Fügen Sie einige Informationen über den Wochenmarkt hinzu. Ein _Speichern_-Button erscheint im
-hervorgehobenen Dialogfeld, und der Umriss des Feldes ändert seine Farbe.
+. Fügen Sie einige Informationen über den Wochenmarkt hinzu.
+Ein _Speichern_-Button erscheint im hervorgehobenen Dialogfeld, und der Umriss
+des Feldes ändert seine Farbe.
 +
 --
-// Screenshot der Seite About mit eingeschalteter Schnellbearbeitung für den Knotenbereich, nachdem auf das Feld Body geklickt und der Text in der Box geändert wurde.
+// Screenshot der Seite About mit eingeschalteter Schnellbearbeitung für den
+//Abschnitt inhalt, nachdem auf das Feld Textkörper geklickt und der Text in der
+//Box geändert wurde.
 image:images/content-in-place-edit-save-box.png["Schnellbearbeitungsmodus nach der Bearbeitung",width="100%"]
 --
 
-. Wenn Sie mit Ihrer Inhaltsüberarbeitung zufrieden sind, klicken Sie im hervorgehobenen Dialog auf _Speichern_.
- Wenn kein Button erscheint, klicken Sie auf „x“, um die vorgenommenen Änderungen zu verwerfen, und bestätigen Sie den Vorgang. So oder so.
- Der Direktbearbeitungsmodus wird verlasen.
+. Wenn Sie mit Ihrer Inhaltsüberarbeitung zufrieden sind, klicken Sie im
+hervorgehobenen Dialog auf _Speichern_. Wenn kein Button erscheint,
+klicken Sie auf „x“, um die vorgenommenen Änderungen zu verwerfen, und
+bestätigen Sie den Vorgang. So oder so. Der Direktbearbeitungsmodus wird
+verlasen.
 
 ==== Vertiefen Sie Ihr Wissen
 
-Versuchen Sie, das vollständige Bearbeitungsformular zur Bearbeitung desselben  Inhalts zu verwenden (siehe <<content-edit>>) und beachten Sie
-dass es im vollständigen Bearbeitungsformular noch wesentlich mehr Informationen gibt, als die Informationen, die mittels Direktbearbeitungsmodus bearbeitet werden können.
+Versuchen Sie, das vollständige Bearbeitungsformular zur Bearbeitung desselben
+Inhalts zu verwenden (siehe <<content-edit>>) und beachten Sie
+dass es im vollständigen Bearbeitungsformular noch wesentlich mehr Informationen
+gibt, als die Informationen, die mittels Direktbearbeitungsmodus bearbeitet
+werden können.
 
 // ==== Verwandte Themen
 

@@ -10,97 +10,106 @@ Eine lokal erstellte Ansicht auf eine Entwicklungsseite Kopieren.
 (((Feature,copying)))
 (((Configuration,copying)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Kopieren Sie eine Anicht, die Sie an einem lokalen Entwicklungsstandort erstellt haben, in die Produktion
-Standort.
+Kopieren Sie eine Ansicht, die Sie in einer lokalen Entwicklungsumgebung erstellt
+haben, auf eine Live-Website.
 
-==== Vorraussetzung Kenntnisse
+==== Erforderliche Vorkenntnisse
 
 <<<installieren-entwickeln>>
 <<extend-config-versions>>
-<<<installieren-dev-sites>>
+<<<install-dev-sites>>
 
-==== Standort-Voraussetzungen
+==== Anforderungen an die Website
 
-* Das Kernmodul Configuration Manager muss sowohl in der
-Entwicklungs- und Produktionsstätten. Siehe <<config-install>> für
-Anweisungen zur Installation von Kernmodulen.
+* Das Modul, Configuration Manager, das mit dem Kernsystem ausgeliefert wird,
+muss sowohl auf der Entwicklungsumgebung, als auch auf der Live-Website
+installiert sein. Siehe: <<config-install>> für Anweisungen zur Installation von
+Modulen des Kernsystems.
 
-* Der Content-Typ Vendor muss sowohl in der Entwicklung als auch in der Produktion vorhanden sein.
-Sites, mit den gleichen Feldern. Siehe <<Struktur-Inhaltstyp>>.
+* Der Inhaltstyp Lieferant muss sowohl in der Entwicklungsumgebung als auch auf
+der Live-Website vorhanden sein. Die beiden Inhaltstypen müssen die gleichen
+Felder enthalten. Siehe: <<structure-content-type>>.
 
-* Die Sicht Lieferant muss im Entwicklungsstandort vorhanden sein, nicht jedoch in der Produktion.
-Standort. Siehe <<Ansichten-Erstellen>>.
+* Die Ansicht Lieferanten muss auf der Entwicklungsumgebung vorhanden sein,
+nicht jedoch auf der Live-Website. Siehe <<views-create>>.
 
 ==== Arbeitsschritte
 
-. Öffnen Sie die Website zur lokalen Entwicklung.
+. Öffnen Sie die Website auf der lokalen Entwicklungsumgebung.
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
-_Entwicklung_ > _Konfigurationssynchronisation_ > _Export_ > _Einzelner Punkt_
-(_Admin/Konfiguration/Entwicklung/Konfiguration/Einzel-/Export_).
-Die Seite _Einzelexport_ erscheint.
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+_Entwicklung_ > _Konfigurationssynchronisation_ > _Export_ > _Einzelnes Konfigurationselement_
+(_admin/config/development/configuration/single/export_).
+Die Seite _Einzelnes Konfigurationselement exportieren_ erscheint.
 
 . Wählen Sie _Ansicht_ aus der Liste _Konfigurationstyp_.
 
-. Wählen Sie Anbieter aus der Liste _Konfigurationsname_ aus. Die Konfiguration
-erscheint in der Textarea.
+. Wählen Sie Lieferanten aus der Liste _Konfigurationsname_ aus.
+Die Konfiguration erscheint im Textfeld.
 
-. Kopieren Sie die Konfiguration aus der Textarea.
+. Kopieren Sie die Konfiguration aus dem Textfeld.
 +
 --
-// Einzelner Konfigurationsexport der Ansicht "Anbieter" aus
+// Einzelner Konfigurationsexport der Ansicht „Lieferanten" aus
 // verwalten/konfigurieren/entwickeln/konfigurieren/einzel/exportieren.
 image:images/extend-deploy-deploy-export-single.png["Ein einzelnes Objekt exportieren"]
 --
 
-. Öffnen Sie die Produktionsstätte.
+. Öffnen Sie die Live-Website.
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
 _Entwicklung_ > _Konfigurationssynchronisation_ > _Import_ > _Einzelner Punkt_
-(_Admin/Konfiguration/Entwicklung/Konfiguration_). Die Seite _Import_ erscheint.
+(__admin/config/development/configuration_). Die Seite _Import_ erscheint.
 
 . Wählen Sie _Ansicht_ aus der Liste _Konfigurationstyp_.
 
-. Fügen Sie die Konfiguration in die Textarea ein.
+. Fügen Sie die Konfiguration in das Textfeld ein.
 
 . Klicken Sie auf _Importieren_. Die Bestätigungsseite erscheint.
 
 . Klicken Sie auf _Bestätigen_.
 
-. Überprüfen Sie, ob die Ansicht importiert wurde, indem Sie im Fenster _Verwalten_ navigieren.
-Verwaltungsmenü auf _Struktur_ > _Ansichten_.
+. Überprüfen Sie, ob die Ansicht importiert wurde, indem Sie im Menü _Verwalten_
+zum Menüpunkt _Struktur_ > _Ansichten_ navigieren.
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihr Wissen
 
-Die Schritte in diesem Thema zeigen, wie Sie eine einzelne Konfiguration exportieren und importieren
-Artikel. Wenn Sie jedoch Funktionen auf einer Entwicklungs-Website entwickeln
-und an Ihren Produktionsstandort übertragen wollen, müssen Sie
-mehrere Konfigurationselemente. Wenn Sie zum Beispiel einen neuen Inhalt entwickelt haben
-Typ mit Feldern, müssten Sie mehrere Konfigurationselemente übertragen für
-jedes Feld, eines für den Inhaltstyp selbst, und möglicherweise Mehrfachansichtsmodus
-und Formularmodus-Elemente, und sie müssten in der richtigen Reihenfolge übertragen werden.
-Dies richtig zu machen, kann sowohl mühsam als auch schwierig sein.
+Die Arbeitsschritte dieses Themas zeigen, wie Sie eine einzelne Konfiguration
+exportieren und wieder importieren. Wenn Sie jedoch Funktionen auf einer
+Entwicklungs-Website erstellen und auf Ihre Live-Website übertragen wollen,
+müssen Sie mehrere Konfigurationselemente exportieren und wieder importieren.
+Wenn Sie zum Beispiel einen neuen Inhaltstyp
+mit Feldern entwickelt haben, müssten Sie mehrere Konfigurationselemente
+für jedes Feld übertragen, ein Konfigurationselement für den Inhaltstyp selbst
+und möglicherweise mehrere Konfigurationselemente für mehrere _Ansichtsmodi_
+sowie Konfigurationsseite für _Formularanzeigemodi_.
+Außerdem müssen diese Elemente in der richtigen Reihenfolge übertragen werden.
+Diese Übertragung korrekt auszuführen, kann sowohl mühsam als auch
+aufwändig sein.
 
-Als Alternative können Sie die komplette Konfiguration der
-Standort. Dazu benötigen Sie eine lokale Entwicklungsseite, die ein Klon ist.
-des Produktionsstandorts (siehe <<<installieren-entwickeln>>), und dann können Sie die
-Schritte in <<extend-config-versions>> zur Synchronisierung der Konfiguration zwischen
-Entwicklungs- und Produktionsstätten.
+Als Alternative hierzu können Sie die komplette Konfiguration einer
+Website übertragen. Dazu benötigen Sie eine Website in einer lokalen
+Entwicklungsumgebung, bei der es sich um einen Klon der Love-Website handelt.
+Siehe <<install-dev-making>>. Anschließend können Sie die
+Schritte in <<extend-config-versions>> zur Synchronisierung der Konfiguration
+zwischen Entwicklungs- und Live-Umgebung ausführen.
 
 Eine weitere Alternative ist die Verwendung des
-https://www.drupal.org/project/features[beigetragenes Features-Modul], das
-erlaubt das Exportieren und Importieren gebündelter Funktionalität (z.B. alle
-Konfiguration für eine Fotogalerie).
+https://www.drupal.org/project/features[von der Community bereitgestellten
+Zusatzmoduls Features]. Dieses Modul ermöglich den Export und den Import sog.
+Funktionsbündel (Ein Bündel kann dabei z. B. alle Konfigurationen für eine
+Fotogalerie enthalten).
 
-Wenn Sie schließlich die Auswirkungen dieser Änderungen auf Ihre Website nicht sehen, könnten Sie
-müssen den Cache löschen. Siehe <<<Cache-Löschen verhindern>>.
+Wenn  die Auswirkungen dieser Änderungen anschließend auf Ihre Website nicht
+zu sehen sein sollten, müssen Sie den Cache leeren.
+Siehe: <<prevent-cache-clear>>.
 
 ==== Verwandte Konzepte
 
 <<<installieren-dev-sites>>
-<<<Planungs-Workflow>>
+<<<planning-workflow>>
 
 ==== Videos
 
@@ -113,5 +122,3 @@ video::https://www.youtube-nocookie.com/embed/hysqVDIfLTA[title="Neue Website-Fu
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].
-
-*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***

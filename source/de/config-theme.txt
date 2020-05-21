@@ -13,8 +13,8 @@ um dessen Farbschema zu aktualisieren und ein Logo hinzuzufügen.
 
 ==== Zielsetzungsetzung
 
-Bearbeiten Sie die Einstellungen des Standardkernthemes Bartik, um dessen Farbschema zu ändern
-und ein Logo hinzuzufügen.
+Bearbeiten Sie die Einstellungen des Standardthemes, des Kernsystems
+- Bartik -, um dessen Farbschema zu ändern und ein Logo hinzuzufügen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -27,16 +27,17 @@ und ein Logo hinzuzufügen.
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Design_
 (_admin/appearance_).
 
-. Unter _Installierte Themes_, finden Sie das Theme Bartik, dass dort als
-Standard-Theme aufgeführt ist. klicken Sie untr _Bartik (Standardtheme)_, auf _Einstellungen_.
+. Unter _Installierte Themes_, sehen Sie, dass das Theme Bartik, dass dort als
+Standard-Theme aufgeführt ist. klicken Sie unter _Bartik (Standard-Theme)_,
+auf _Einstellungen_.
 +
 --
 // Bartik section of admin/appearance.
 image:images/config-theme_bartik_settings.png["Default theme, Bartik",width="100%"]
 --
 
-. Klicken Sie unter _Farbschema_ in jede Farb-Buildbox und geben Sie die richtige
-Farbcodes, die Sie hinzufügen möchten. Verwenden Sie zum Beispiel die
+. Klicken Sie unter _Farbschema_ in jedes Fahrbwahlfeld und geben Sie die
+Farbcodes ein, die Sie hinzufügen möchten. Verwenden Sie beispielsweise
 folgende Farben:
 +
 [width="100%",frame="topbot",options="header"]
@@ -54,8 +55,8 @@ folgende Farben:
 |================================
 +
 Hinweis: Sie können auch das Farbrad auf der rechten Seite verwenden,
-um die die von Ihnen gewünschten Farben auszuwählen. Die ausgewählten Hexdezimalwerte
-für Web-Farben werden auf die Website angewendet.
+um die die von Ihnen gewünschten Farben auszuwählen.
+Die ausgewählten Hexdezimalwerte für Web-Farben werden auf die Website angewendet.
 +
 --
 // Abschnitt Farbeinstellungen in admin/appearance/settings/bartik.
@@ -69,27 +70,32 @@ image:images/config-theme_color_scheme.png["Aktualisierte Farbangaben im Kernthe
 image:images/config-theme_logo_upload.png["Neues Logo in den Einstellungen des Kernthemas Bartik"]
 --
 
-. Wählen Sie im Feld _Logo hochladen_ eine Logo-Datei aus und laden Sie diese auf Ihre
-Website hoch. Hinweis: Sie können auch ein grundlegendes Logo für alle Themes festlegen. Navigieren Sie hierzu zum, Menüpunkt:
-_Design_ > Globale Einstellungen_ (_admin/appearance/settings_). Wenn Sie in einem Theme ein benutzerdefiniertes Logo auswählen,
-wird das grundlegend festgelegte Logo außer Kraft gesetzt.
+. Wählen Sie im Feld _Logo hochladen_ eine Logo-Datei aus und laden
+Sie diese auf Ihre Website hoch. Hinweis: Sie können auch ein allgemeines
+Logo für alle Themes festlegen. Navigieren Sie hierzu zum, Menüpunkt:
+_Design_ > Globale Einstellungen_ (_admin/appearance/settings_).
+Wenn Sie in einem Theme ein benutzerdefiniertes Logo festlegen, wird das
+allgemein festgelegte Logo außer Kraft gesetzt.
 +
-Sobald Sie die Datei, die Sie hochladen möchten, ausgewählt haben, sehen Sie deren
-Dateinamen neben der Schaltfläche _Datei auswählen_ bzw. _Durchsuchen_ in Ihrem Browser.
+Sobald Sie die Datei, die Sie hochladen möchten, ausgewählt haben,
+sehen Sie deren Dateinamen neben der Schaltfläche _Datei auswählen_ bzw.
+_Durchsuchen_  in Ihrem Browser.
 
-. Um Ihre Änderungen, die aktualisierten Farben und das Logo auf die Website anzuwenden,
-klicken Sie auf _Konfiguration speichern_.
+. Um Ihre Änderungen, die aktualisierten Farben und das Logo auf die
+Website anzuwenden, klicken Sie auf _Konfiguration speichern_.
 +
-Hinweis: Unter _Farbschema_ gibt es den Abschnitt _Vorschau_, der in einer Vorschau anzeigt
-wie Ihre Website mit den neuen Einstellungen aussehen wird.
+Hinweis: Unter _Farbschema_ gibt es den Abschnitt _Vorschau_,
+der anzeigt wie Ihre Website mit den neuen Einstellungen
+aussehen wird.
 +
 --
 // Vorschau-Abschnitt von admin/appearance/settings/bartik.
 image:images/config-theme_color_scheme_preview.png["core Bartik theme settings preview",width="100%"]]
 --
 
-. Klicken Sie in der Werkzeugleiste auf _Zurück zur Website_ oder _Home_, um zu überprüfen, ob Sie
-die Einstellungen für Bartik auf Ihre Website aktualisiert wurden.
+. Klicken Sie in der Werkzeugleiste auf _Zurück zur Website_ oder _Home_,
+um zu überprüfen, ob die Einstellungen für Bartik auf Ihre Website
+aktualisiert wurden.
 +
 --
 // Startseite nach Abschluss der Themeneinstellungen.
@@ -102,8 +108,8 @@ image:images/config-theme_final_result.png["Endergebnis der Bearbeitung der zent
 
 * <<extend-theme-install>>
 
-* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, benötigen Sie
-um den Cache zu leeren. Siehe <<prevent-cache-clear>>.
+* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen,
+müssen Sie möglicherweise den Cache leeren. Siehe: <<<prevent-cache-clear>>.
 
 
 //===== Verwandte Konzepte

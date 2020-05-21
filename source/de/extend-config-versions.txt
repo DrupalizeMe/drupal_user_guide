@@ -3,8 +3,9 @@
 === Synchronisieren von Konfigurationsversionen
 
 [role="summary"]
-Wie Sie die Konfiguration zwischen einer Entwicklungs- und einer Produktivsite mit
-dem Modul Configuration Manager, das mit dem Kernsystem ausgeliefert wird, austauscht.
+Wie Sie die Konfiguration zwischen einer Entwicklungs- und einer Produktivsite
+mit dem Modul Configuration Manager, das mit dem Kernsystem ausgeliefert wird,
+austauscht.
 
 (((Configuration,synchronizing between development and live site)))
 (((Development site,synchronizing with live site)))
@@ -12,9 +13,10 @@ dem Modul Configuration Manager, das mit dem Kernsystem ausgeliefert wird, austa
 (((Configuration Manager module,using to synchronize the configuration between a development and live site)))
 (((Module,Configuration Manager)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Synchronisieren Sie die Konfiguration zwischen einer Entwicklungs- und einer Produktiv-Site.
+Synchronisieren Sie die Konfiguration zwischen einer Entwicklungs- und einer
+Produktiv-Site.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -25,59 +27,68 @@ Synchronisieren Sie die Konfiguration zwischen einer Entwicklungs- und einer Pro
 
 ==== Anforderungen an die Website
 
-* Sie müssen eine Entwicklungskopie Ihrer Produktionsstätte haben. Siehe
-<<installieren-entwickeln>>.
+* Sie müssen eine Entwicklungskopie Ihrer Live-Website besitzen. Siehe
+<<install-dev-making>>.
 
-* Das Kernmodul Configuration Manager muss sowohl auf dem
-Entwicklungs- und Produktionsstätten. Siehe <<config-install>> für Anweisungen, wie
-um Kernmodule zu installieren.
+* Das Modul Configuration Manager, das mit dem Kernsystem ausgeliefert wird,
+muss sowohl auf der Entwicklungs- und der Live-Umgebung installiert sein.
+Siehe <<config-install>> für Anweisungen dazu, wie Sie Module,
+die mit dem Kernsystem ausgeliefert werden, installieren.
 
-* Sie müssen die Konfiguration entweder in der Produktion oder in der Entwicklung geändert haben.
-Site (die _Quellsite_), und möchten die Änderungen mit der anderen Site synchronisieren
-(der _Zielort_). Als Beispiel können Sie einen neuen Content-Typ entwickeln,
-Felder und Ansichten auf Ihrer Entwicklungs-Website, und wenn alles funktioniert
-die Änderungen an der Live-Site korrekt anwenden.
+* Sie müssen die Konfiguration entweder Auf der Live-Website oder auf der
+Entwicklungs-Website geändert haben. Von der Entwicklungs-Website
+(der _Quell-Website_) aus sollen Änderungen mit der anderen Website
+(der _Ziel-Website_) synchronisiert werden.  Sie können zum Beispiel
+einen neuen Inhaltstyp entwickeln oder Felder und Ansichten auf Ihrer
+Entwicklungs-Website hinzufügen. Wenn in der Lokalen Entwicklungsumgebung alles
+korrekt funktioniert, können Sie die Änderungen auf die Live-Website anwenden.
 
-* Alle Konfigurationen, die nicht zwischen der Quelle und
-Zielstandorte müssen in Konfigurationsüberschreibungen in der
-Datei _settings.php_ und nicht in der Datenbank. Siehe <<installiert-dev-making>>.
+* Alle Konfigurationen, die nicht zwischen der Quell-Website und
+ der Ziel-Website synchronisiert werden sollen,  müssen in
+ Konfigurationsüberschreibungen in der Datei _settings.php_ und nicht in der
+ Datenbank erfasst werden. Siehe <<install-dev-making>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie auf der Quell-Site im Verwaltungsmenü _Verwalten_ zu
+. Navigieren Sie auf der Quell-Website im Menü _Verwalten_ zum Menüpunkt
 _Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Export_
-(_Admin/Konfiguration/Entwicklung/Konfiguration/vollständig/exportieren_).
+(_admin/config/development/configuration/full/export_).
 
-. Klicken Sie auf _Exportieren_. Ihre Website wird ein Archiv der vollständigen Website erstellen.
-Konfiguration. Speichern Sie die Datei auf Ihrem lokalen Computer.
+. Klicken Sie auf _Exportieren_. Ihre Website wird ein Archiv mit der vollständigen
+Konfiguration der Website erstellen. Speichern Sie die Datei auf Ihrem
+lokalen Computer.
 
-. Navigieren Sie am Zielort im Verwaltungsmenü _Verwalten_ zu
+. Navigieren Sie auf der Ziel-Website im Menü _Verwalten_ zum Menüpunkt
 _Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Importieren_
 (_admin/config/development/configuration/full/import_).
 
-. Suchen Sie nach dem heruntergeladenen Konfigurationsarchiv und klicken Sie auf _Upload_. Ihr
-Konfigurationsarchiv wird auf die Zielseite hochgeladen, und Sie werden
-auf die Konfigurationsseite _Synchronisieren_ umgeleitet
-(_admin/config/development/configuration_) mit einer Nachricht, die besagt, dass Ihre Dateien
-hochgeladen.
+. Suchen Sie nach dem heruntergeladenen Konfigurationsarchiv und klicken Sie auf
+_Upload_. Ihr Konfigurationsarchiv wird auf die Ziel-Website hochgeladen
+und Sie werden auf die Konfigurationsseite _Synchronisieren_
+(_admin/config/development/configuration_) weitergeleitet.
+Außerdem wird eine Meldung ausgegeben, die besagt,
+dass das Archiv hochgeladen wurde.
 
-. Überprüfen Sie, ob die auf der Seite angezeigten Unterschiede Ihren Erwartungen entsprechen. Sie sehen möglicherweise
-Konfigurationselemente, die hinzugefügt, gelöscht oder geändert wurden; für geänderte
-Elemente können Sie auf _Unterschiede anzeigen_ klicken, um die Änderungen zu sehen.
+. Überprüfen Sie, ob die auf der Seite angezeigten Unterschiede Ihren
+Erwartungen entsprechen. Sie sehen möglicherweise Konfigurationselemente,
+die hinzugefügt, gelöscht oder geändert wurden. Bei geänderten Elementen können
+Sie auf _Unterschiede anzeigen_ klicken, um die Änderungen einzusehen.
 
-. Wenn Sie zufrieden sind, klicken Sie auf _Import all_, um die Konfiguration zu importieren.
-Änderungen.
+. Wenn Sie zufrieden sind, klicken Sie auf _Alle importieren_,
+um die Konfigurationsänderungen zu importieren.
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihr Wissen
 
-* Wenn die Änderungen, die Sie vorgenommen haben, nur ein Konfigurationsobjekt betreffen (z. B.
-Ansicht), können Sie die Export-/Import-Funktion für eine einzelne Konfiguration verwenden, um
-den Wechsel zwischen den Standorten. Siehe <<<erweiterter Einsatz>>.
+* Wenn die Änderungen, die Sie vorgenommen haben, nur ein Konfigurationsobjekt
+betreffen (z. B. eine Ansicht), können Sie die Export-/Import-Funktion für eine
+einzelne Konfiguration verwenden, um die Konfigurationsänderung zwischen
+beiden Websites durchzuführen. Siehe: <<extend-deploy>>.
 
-* Nach dem Schritt, in dem Sie die vollständige Konfiguration von der Quell-Site exportieren,
-Sie können das Archiv auch entpacken und an eine Versionskontrolle übergeben.
-System, wie z.B. Git, um Änderungen an Ihrer Website-Konfiguration zu verfolgen. Siehe
-<<<erweitern-git>>.
+* Nach dem Schritt, in dem Sie die vollständige Konfiguration von der
+Quell-Website exportieren, Sie können das Archiv auch entpacken und an ein
+System zur Versionskontrolle, wie z.B. Git übergeben, um Änderungen an Ihrer
+ Website-Konfiguration zu protokollieren.
+Siehe: <<extend-git>>.
 
 // ==== Verwandte Begriffe
 
@@ -92,5 +103,3 @@ video::https://www.youtube-nocookie.com/embed/dLUGQk8GKa0[title="Konfigurationsv
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
-
-*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***
