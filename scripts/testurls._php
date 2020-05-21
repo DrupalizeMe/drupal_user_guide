@@ -4,6 +4,10 @@
  * @file
  * Find URLs in AsciiDoc text, and test them.
  *
+ * NOTE: DO NOT RUN THIS SCRIPT -- it will decide you are an attacker and start
+ * returning 403s after a while, and then you'll probably get locked out of
+ * drupal.org.
+ *
  * Required command-line argument: Source directory.
  * Optional second argument: T to print OK responses (by default it
  * doesn't print anything if the URL is OK).
