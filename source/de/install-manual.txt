@@ -1,20 +1,21 @@
 [[install-manual]]
-=== Manuelles Herunterladen der Kern-Software
+=== Manuelles Herunterladendes Kernsystems
 
 [role="summary"]
-Das Kernsystem oder eine Distribution von der Website herunterladen.
+Das Kernsystem oder eine Distribution von Drupal.org herunterladen.
 
 (((Downloading,core software)))
 (((Downloading,distribution)))
 (((Core software,downloading)))
 (((Distribution,downloading)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Laden Sie die Kern-Software oder eine Distribution manuell herunter. Überspringen Sie dieses Thema, wenn Sie
-mit einer anderen Methode herunterladen.
+Laden Sie das Kernsystem oder eine Distribution manuell herunter.
+Überspringen Sie dieses Thema, wenn Sie eine andere Methode zum Download
+verwenden.
 
-==== Vorraussetzung Kenntnisse
+==== Erforderliche Vorkenntnisse
 
 * <<understanding-distributions>>
 * <<install-decide>>
@@ -23,16 +24,17 @@ mit einer anderen Methode herunterladen.
 
 ==== Arbeitsschritte
 
-. Gehen Sie zu _https://www.drupal.org_ und navigieren Sie zu _Build_ > _Download & Erweitern_
-im Menü der obersten Ebene.
+. Rufen Sie die Website _https://www.drupal.org_  auf und navigieren Sie im
+Hauptmenü auf die Seite _Build_ > _Download & Extend_.
 +
 --
 // Download Drupal area of https://www.drupal.org/download.
 image:images/install-prepare-downloads.png["Downloads page on _Drupal.org_",width="100%"]
 --
 
-. Wenn Sie nur die Kern-Software herunterladen möchten, klicken Sie auf den _Download Drupal
-zip_ oder _download tar.gz_ link, und speichern Sie die Datei auf Ihrem lokalen Rechner.
+. Wenn Sie nur das Kernsystem herunterladen möchten, klicken Sie auf den Link
+_Download Drupal zip_ oder den Link _download tar.gz_, und speichern Sie die
+ Datei auf Ihrem lokalen Rechner.
 
 . Wenn Sie eine Distribution herunterladen möchten, klicken Sie auf das Symbol _Distributionen_ oder
 Link, wählen Sie eine Verteilung aus der Liste aus, klicken Sie sich zu ihrer Projektseite durch,
@@ -44,50 +46,53 @@ Link sieht so aus:
 image:images/extend-module-install-download.png["Finding a download URL"]
 --
 
-. Laden Sie die heruntergeladene Datei auf Ihren Hosting-Account hoch. Melden Sie sich bei der Steuerung an
-Panel und navigieren Sie zum Verzeichnis _HTML_. Speichern Sie die Datei dort.
+. Laden Sie die heruntergeladene Datei über Ihren Hosting-Account hoch.
+Melden Sie sich im Kontrollzentrum an und navigieren Sie zum Verzeichnis _htnml_.
+Legen Sie die Datei dort ab.
 
-. Dekomprimieren Sie die tar.gz- oder Zip-Datei, wodurch ein neues Verzeichnis erstellt wird. Wenn Sie
-keinen Terminal-Zugang haben oder Ihr Hosting-Server nicht unter Linux läuft, ist Ihr
-Der Dateimanager des Hosting Control Panels sollte eine Möglichkeit bieten, die
-Dateien. Wenn Sie Terminal-Zugriff auf Ihren Hosting-Server (unter Linux) haben, können Sie
-kann einen Befehl wie verwenden:
+. Dekomprimieren Sie die tar.gz- oder Zip-Datei. Dadurch wird ein neues
+Verzeichnis erstellt. Wenn Sie keinen Terminal-Zugang haben oder Ihr
+Server nicht unter Linux läuft, sollte der Dateimanager des Kontrollzentrums
+eine Möglichkeit bieten, die Datei zu entpacken. Wenn Sie Terminal-Zugriff auf
+Ihren Server (unter Linux) haben, können Sie folgenden Befehl verwenden:
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
 ----
 
-. Löschen Sie die komprimierte Datei vom Server, es sei denn, Ihre Entpackmethode
-bereits gelöscht.
+. Löschen Sie die komprimierte Datei vom Server, es sei denn,
+der von Ihnen verwendete Befehl hat dies bereits für Sie erledigt.
 
-. Benennen Sie das Verzeichnis um oder konfigurieren Sie Ihr Webhosting um, so dass das Verzeichnis
-Name mit dem Verzeichnis übereinstimmt, das Ihr Webhosting für Ihre Website konfiguriert ist.
+. Benennen Sie das Verzeichnis um oder konfigurieren Sie Ihr Web-Umgebung so,
+dass das der Name des Verzeichnisses mit dem Verzeichnis übereinstimmt, über das
+der Web-Server ihre Website anzeigt.
 
-==== Expand your understanding
+==== Vertiefen Sie ihr Wissen
 
-Sobald Sie die Software heruntergeladen haben, können Sie eine temporäre Demoseite installieren
-(siehe <<install-decide>>) indem Sie den folgenden Befehl von der obersten Ebene aus ausführen
-Verzeichnis der Kern-Software:
+Sobald Sie die Software heruntergeladen haben, können Sie eine temporäre
+Demo-Website installieren (siehe <<install-decide>>) indem Sie den folgenden
+Befehl im Hauptverzeichnis des Kernsystems ausführen:
 
 ----
 php core/scripts/drupal quick-start standard
 ----
 
-Die Demo-Site wird installiert, und Ihr Webbrowser sollte sich öffnen, um sich anzumelden
-die neue Website, die nur so lange läuft, wie der PHP-Befehl aktiv ist. Zum Lernen
-Mehr über diese Funktionalität erfahren Sie unter dem Befehl help:
+Die Demo-Website wird installiert, und Ihr Webbrowser sollte sich
+automatisch öffnen, damit Sie sich an der neuen Website anmelden können,
+die nur so lange läuft, wie der PHP-Befehl aktiv ist. Um mehr über diese
+Funktionalität zu erfahren verwenden sie dien Befehlszeilenparameter help:
 
 ----
 php core/scripts/drupal quick-start --help
 ----
 
 
-// ==== Related concepts
+// ==== Verwandte Konzepte
 
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/meVfH5mvdwI[title="Downloading the Core Software Manually"]
+video::https://www.youtube-nocookie.com/embed/meVfH5mvdwI[title="Das Kernsystem manuell herunterladen (englisch)"]
 
 // ==== Weiterführende Quellen
 
@@ -95,8 +100,8 @@ video::https://www.youtube-nocookie.com/embed/meVfH5mvdwI[title="Downloading the
 *Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] unter
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] bei
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
-http://redcrackle.com[Rotes Knistern].
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[redcrackle].

@@ -3,7 +3,7 @@
 === Konzept: Zusätzliche Werkzeuge
 
 [role="summary"]
-Überblick über zusätzliche Tools, die Website-Entwicklern helfen, Webistes bequem ztu erstellen.
+Überblick über zusätzliche Tools, die Webentwicklern helfen, Webistes bequem zu erstellen.
 
 (((Tool,Coder)))
 (((Tool,Devel)))
@@ -20,133 +20,161 @@
 
 // ==== Erforderliche Vorkenntnisse
 
-==== Welche Werkzeuge stehen den Bauherren von Websites zur Verfügung?
+==== Welche Werkzeuge stehen Site-Buildern zur Verfügung?
 
-Es gibt verschiedene zusätzliche Tools, die Ihnen helfen, Websites schneller zu erstellen,
-genauer und mit weniger Aufwand.
+Es gibt verschiedene zusätzliche Tools, die Ihnen helfen, Websites schneller
+und präziser mit weniger Aufwand zu erstellen.
 
-Drush und Drupal-Konsole::
-  Siehe unten für mehr über Befehlszeilen-Tools.
+Drush und Drupal-Console::
+  Mehr über Kommandozeilenwerkzeuge erfahren Sie weiter unten.
 Git::
-  Siehe unten für weitere Informationen über Versionskontrollwerkzeuge.
-Komponist:::
+  Mehr über über Versionskontrollwerkzeuge erfahren Sie weiter unten.
+Composer:::
   Weitere Informationen zu Composer finden Sie weiter unten.
-Devel::: Siehe unten für weitere Informationen über:
-  Das https://www.drupal.org/project/devel[beigetragenes Devel-Modul] hilft bei
-  Entwicklungsaufgaben wie das Debuggen und Inspizieren von Code, die Analyse von Datenbanken
-  Abfragen und die Generierung von Dummy-Inhalten.
+Devel::: Weitere Informationen zu Devel finden Sie weiter unten:
+  Das   von der Community bereitgestellte Zusatzmodul
+  https://www.drupal.org/project/devel[Devel] hilft bei
+  Entwicklungsaufgaben wie beispielsweise dem Debuggen und dem Inspizieren von
+  Quelltext, der Analyse von Datenbankabfragen und der Generierung von
+  Platzhalter-Inhalten.
 
 ==== Was sind Befehlszeilenwerkzeuge?
 
-Befehlszeilen-Tools bieten eine Alternative zur Verwendung der administrativen Schnittstelle
-für verschiedene Operationen auf Ihrer Website. Viele Website-Entwickler und -Betreuer haben
-investierte die Zeit, ein Kommandozeilen-Tool zu installieren und zu erlernen, denn
+Befehlszeilenwerkzeuge bieten eine Alternative zur Verwendung des
+administrativen Teils der Benutzeroberfläche, um verschiedene Aktionen an und
+auf Ihrer Website auszuführen. Viele Webentwickler, Programmierer und
+Projektbetreuer investieren aus folgenden Gründen Ihre Zeit in die
+Installation und das Erlernen diverser Kommandozeilenwerkzeuge:
 
-* Administrative Aufgaben sind normalerweise schneller und weniger mühsam, wenn sie unter
-der Befehlszeile als in der Benutzerschnittstelle.
+* Administrative Aufgaben lassen sich normalerweise schneller und mit weniger
+Aufwand durchführen, wen Sie über die Kommandozeile und nicht über die
+Benutzeroberfläche ausgeführt werden.
 
-* Sie können Skripte schreiben, die standortbezogene Befehle mit anderen Befehlen kombinieren.
-auf dem Server, um kompliziertere Aufgaben zu automatisieren.
+* Sie können Skripte schreiben, und Befehle zur Verwaltung der Website mit
+anderen Befehlen kombinieren, um komplizierte Aufgaben auf einem Web-Server zu
+automatisieren.
 
-* Befehlszeilen-Tools bieten zusätzliche Funktionen, die nicht über die
-administrative Schnittstelle; zum Beispiel das Ausführen von Datenbankabfragen.
+* Kommandozeilenwerkzeuge bieten zusätzliche Funktionen, die nicht über die
+Benutzeroberfläche zur Verfügung stehen. Zum Beispiel das Ausführen von
+Datenbankabfragen.
 
 Die beliebtesten Werkzeuge sind http://www.drush.org[Drush] und
-https://drupalconsole.com[Drupal-Konsole]. Drush ist schon länger verfügbar, und
-hat Befehle sowohl für die Kern-Software als auch für die beigesteuerten Module; Drupal Console
-begann als ein Werkzeug für Modulprogrammierer, hat aber eine wachsende Liste von Befehlen für
-Bauherren. Dieser Leitfaden dokumentiert Befehle aus der neuesten stabilen Version von
-Drush für viele Aufgaben; es dokumentiert keine Befehle der Drupal-Konsole
-für ältere Versionen von Drush, aber Sie können sie in der Drupal-Konsole nachschlagen und
-Drush-Dokumentation.
+https://drupalconsole.com[Drupal-Console]. Drush ist schon länger verfügbar, und
+bietet sowohl befehle für das Kernsystem als auch für die von der Community
+bereitgestellten Zusatzmodule. Drupal Console wurde zunächst als Werkzeug für Modulentwickler erdacht,
+besitzt aber eine wachsende Liste von Befehlen für
+Site-Builder. Dieses Handbuch dokumentiert Befehle aus der neuesten stabilen
+Version von Drush, mit denen viele Aufgaben erledigt werden können.
+Befehle der Drupal Console und aus älteren Versionen von Drush werden in diesem
+Handbuch nicht dokumentiert. Sie können diese Befehle jedoch in den
+Dokumentationen zu Drupal Console und Drush nachlesen.
 
-Um diese Tools verwenden zu können, benötigen Sie einen Kommandozeilen-Terminal-Zugang zum
-Server, auf dem Ihre Website gehostet wird, und Sie müssen den Composer installieren
-zuerst, um entweder das Drush oder die Drupal-Konsole zu installieren.
+Um diese Tools verwenden zu können, benötigen Zugang zur Kommandozeile des
+Servers auf dem Ihre Website gehostet wird. Außerdem müssen Sie zunächst Composer
+installieren um entweder Drush oder die Drupal-Console installieren zu können.
 
-Um Drush oder die Drupal-Konsole zu installieren, stellen Sie zunächst sicher, dass Ihr Projekt
-Composer zur Verwaltung von Abhängigkeiten. Siehe <<install-composer>>. Verwenden Sie dann die
-folgende Befehle:
+Um Drush oder die Drupal Console zu installieren, stellen Sie zunächst sicher,
+dass Ihr Projekt Composer zur Verwaltung von Abhängigkeiten verwendet.
+Siehe <<install-composer>>.  Verwenden Sie anschließend folgende Befehle:
 
 
 ----
 # Installation von Drush
 composer require drush/drush
 
-# Drupal-Konsole installieren
+# Drupal Console installieren
 composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader
 ----
 
 ==== Was ist ein Versionskontrollsystem?
 
-Ein Versionskontrollsystem ist Software, die Kopien von Dateien und Revisionen
-Historie in einem _Repository_, und ermöglicht Ihnen das Hinzufügen, Löschen und Aktualisieren von Dateien. Für
-ein Website-Projekt, kann Ihnen eine Software zur Revisionskontrolle helfen:
+Ein Versionskontrollsystem ist  eine Software, die Kopien von Dateien mit einer
+Revisionens-Hostorie in einer _Repository_ einrichtet und Ihnen so ermöglicht
+Dateien hinzuzufügen, zu löschen und zu aktualisieren. Ein solches
+Versionskontrollsystem kann beim erstellen eines Webprojektes sehr hilfreich
+sien. Versionskontrollsysteme bieten unter anderem folgende Vorteile:
 
-* Testen Sie lokal, bevor Sie Dateien auf der Live-Site bereitstellen.
+* Sie können lokal testen, bevor Sie Dateien auf ihrer Live-Site bereitstellen.
 
-* Betrachten Sie frühere Versionen von Dateien, vergleichen Sie sie und kehren Sie zu ihnen zurück
+* Sie können frühere Versionen von Dateien betrachten, vergleichen ältere
+  Dateiversionen wiederherstellen.
 
-* Schauen Sie sich die hinzugefügten, geänderten oder gelöschten Dateien an, bevor Sie die Änderungen _einverstanden_ machen
-(das Repository aktualisieren)
+* Sie können sich hinzugefügte, geänderten oder gelöschten Dateien ansehen,
+  bevor Sie sich mit den Änderungen an Ihrem Projekt _einverstanden_
+  erklären und diese an Ihre Repository übertragen (um diese zu aktualisieren).
 
-* Änderungen von verschiedenen Teammitgliedern zusammenführen
+* Sie können Änderungen von verschiedenen Teammitgliedern zusammenführen
 
 * Halten Sie Dateien und Konfiguration zwischen lokalen und Live-Standorten synchronisiert
 
-Es gibt viele proprietäre und Open-Source-Versionskontrollsysteme zur Auswahl
-von; eine beliebte Wahl ist https://git-scm.com/[Git], die quelloffen ist
-Software, die auf den meisten Computerplattformen läuft. Git ist eine _verteilte_ Version
-Kontrollsystem, das es Ihnen ermöglicht, eine oder mehrere Kopien Ihres Repositorys zu haben,
-die es Ihnen erlaubt, Änderungen an eine Kopie zu übergeben und sie dann nur noch in die
-Repository, das Sie als _kanonisch_ bezeichnet haben, wenn Sie bereit sind, sie mit
-andere. Das kanonische Git-Repository kann auf Ihrem lokalen Computer oder einem
-Server in Ihrem Unternehmen, aber viele Software-Projekte und Einzelpersonen hosten ihre
-Git-Repositorien, die Dienste Dritter nutzen, die von
+Es stehen viele Versionskontrollsysteme zur Auswahl.
+Proprietäre und Open-Source-Lösungen. Ein beliebtes System zur Versionskontrolle
+ist https://git-scm.com/[Git]. Git ist eine quelloffene Software, die auf den
+meisten Computerplattformen läuft. Git ist eine Versionskontrollsystem zur
+Verteilung von Software-Versionen, das es Ihnen ermöglicht, eine oder mehrere
+Kopien Ihrer Repository zu besitzen. So ist es Ihnen möglich, Änderungen an
+einer Kopie der Software vorzunehmen und sie dann nur noch in die
+Repository zu übertragen, die Sie als _Hauptsoftwarequelle
+(canonical software source)_ festgelegt haben.
+In  diese Repository, werden neue Versionen Ihrer Software hochgeladen,
+um sie mit anderen zu teilen. Diese Git-Repository kann auf Ihrem lokalen
+Computer oder einem Server in Ihrem Unternehmen liegen.
+Viele Software-Projekte und Einzelpersonen hosten ihre
+Git-Repositories, bei Drittanbieterdiensten wie
 https://about.gitlab.com/[GitLab] oder https://github.com/[GitHub].
 
 
 ==== Wozu wird der Composer verwendet?
 
-https://getcomposer.org/[Composer] ist ein Werkzeug zur Verwaltung von PHP-Abhängigkeiten,
-wobei der Entwickler angibt, welche Version jeder externen Bibliothek benötigt wird,
-und Composer verwaltet den Prozess des Herunterladens und der Installation der Bibliotheken.
+https://getcomposer.org/[Composer] ist ein Werkzeug zur Verwaltung von
+PHP-Abhängigkeiten, mit dessen Hilfe Entwickler angeben, welche Version
+jederr verwendeten externen Software-Bibliothek in Ihrem Projekt
+(Modul, Theme, Website) verwendet wird. Composer übernimmt mittels dieser
+Angaben das Herunterladen und die Installation dieser Abhängigkeiten.
 
-Die Kernsoftware ist ein Hauptnutzer von Composer, da sie mehrere
-extern entwickelte Software-Bibliotheken, die heruntergeladen und installiert werden müssen
-damit die Kern-Software funktionieren kann. Wenn Sie die Kernsoftware installieren, können Sie
-müssen entweder ein Archiv herunterladen, das kompatible Versionen der
-externe Bibliotheken, oder Sie müssen Composer ausführen, um die externe
-Bibliotheken nach dem ersten Herunterladen. Die Drush und Drupal-Konsole Befehlszeile
-Tools werden auch mit Composer heruntergeladen.
+Das Kernsystem verwendet hauptsächlich deshalb Composer, weil es aus mehreren
+extern entwickelten Software-Bibliotheken besteht, die heruntergeladen
+und installiert werden müssen, damit das Kernsystem funktionieren kann.
+Wenn Sie das Kernsystem installieren, können Sie
+entweder ein Archiv herunterladen, das kompatible Versionen der
+externe Bibliotheken enthält oder Sie verwenden Composer, um die externe
+Bibliotheken nach dem Herunterladen des Kernsystems
+aus dem Internet herunterladen und installieren zu lassen.
+Auch die Kommandozeilenwerkzeuge Drush und Drupal-Console können mittels
+Composer installiert werden.
 
-Einige beigesteuerte Module verwenden auch extern entwickelte Software
-Bibliotheken; zum Beispiel könnte ein Facebook-Integrationsmodul Facebook's
-Integrationsbibliothek, die installiert werden muss, damit das Modul funktioniert, und eine geographische
-Modul könnte eine Standardbibliothek mit geographischen Funktionen verwenden. Zu
-Wenn Sie ein Modul mit externen Abhängigkeiten installieren, müssen Sie den Composer ausführen.
+Einige von der Community bereitgestellte Zusatzmodule verwenden ebenfalls
+extern entwickelte Software-Bibliotheken. Ein Modul zur Integration von Facebook
+könnte beispielsweise Facebook's Software-Bibliothek benötigen, die installiert
+werden muss, damit das Modul auf  die von Facebook angebotenen Funktionen
+zugreifen kann. Ein Modul zur Darstellung von Landkarten, könnte eine Bibliothek
+benötigen, die geographische Angaben wie Längen- und Breiteengrade enthält,
+um bestimmte Punkte auf einer Landkarte markieren zu können.
+Wenn Sie ein Modul mit externen Abhängigkeiten installieren, müssen Sie Composer
+ausführen, damit diese Abhängigkeiten heruntergeladen und installiert
+werden können.
 
-==== Welche Werkzeuge stehen den Modul- und Themenentwicklern zur Verfügung?
+==== Welche Werkzeuge stehen den Modul- und Theme-Entwicklern (Designern) zur Verfügung?
 
-Zusätzlich zu den oben erwähnten Site-Builder-Werkzeugen sind folgende Werkzeuge verfügbar
-nützlich für Modul- und Themenentwickler.
+Zusätzlich zu den oben erwähnten Werkzeugen fpr Site-Buildern sind folgende
+Werkzeuge verfügbar für Modul- und Theme-Entwickler verfügbar.
 
-Drupal-Konsole::
-  https://drupalconsole.com[Drupal-Konsole] ist ein Kommandozeilen-Tool, das
-  generiert Boilerplate-Code und interagiert mit einer Drupal-Site. Es kann generieren,
-  z.B. Block- oder Formularcode, Module und Themen installieren und Dummy erstellen
-  Inhalt. Die Drupal-Konsole verwendet die Symfony-Konsole.
+Drupal-Console::
+  https://drupalconsole.com[Drupal-Console] ist ein Kommandozeilen-Tool, das
+  Code-Vorlagen geneireirt und mit einer Drupal-Website interagiert.
+  Es kann z. B. Code für Blöcke oder Formulare generieren, Module und Themes
+  installieren und Platzhalter-Inhalte erstellen.
+  Die Drupal Console verwendet die Symfony Console.
 Coder::
-  https://www.drupal.org/project/coder[Coder] ist ein Kommandozeilen-Werkzeug, das
-  ob Ihre Module und Themen den Kodierungsstandards und anderen besten
-  Praktiken. Sie kann auch Verstöße gegen Kodierungsstandards beheben.
+  https://www.drupal.org/project/coder[Coder] ist ein Kommandozeilen-Werkzeug,
+  mit dem überprüft werden kann, ob Ihre Module und Themes den Coding-Stands
+  und anderen Best-Practice-Lösungen entsprechen. Coder kann auch Verstöße gegen
+  Coding-Standards beheben.
 Browser-Debugging-Werkzeuge::
-  Webbrowser wie Firefox und Chrome enthalten Tools, die die Anzeige ermöglichen,
-  Bearbeitung, Fehlerbehebung und Überwachung von CSS, HTML und JavaScript. Sie können die
-  Debugging-Fenster oder -Fenster, indem Sie mit der rechten Maustaste in einen Bereich Ihrer
-  Fenster, und wählen Sie "Untersuchen" oder "Element untersuchen".
-
-*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***
+  Webbrowser wie Firefox und Chrome enthalten Tools, die die Anzeige,
+  Bearbeitung, Fehlerbehebung und Überwachung von CSS, HTML und JavaScript
+  ermöglichen. Sie können die Debugging-Fenster bzw. die  Entwicklungswerkzeuge im Browser öffnen, indem Sie mit der rechten Maustaste auf einen Bereich Ihrer
+  Website klicken und „Untersuchen" oder „Element untersuchen" auswählen.
 
 
 ==== Verwandte Themen

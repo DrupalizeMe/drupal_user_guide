@@ -14,74 +14,86 @@
 * <<install-requirements>>
 * <<understanding-distributions>>
 
-==== Welche Methoden stehen zum Herunterladen der Kern-Software zur Verfügung?
+==== Welche Methoden stehen zum Herunterladen des Kernsystems zur Verfügung?
 
-Bevor Sie eine Website erstellen können, müssen Sie zunächst die Kern-Software herunterladen.
-Je nach Ihren Plänen gibt es mehrere Möglichkeiten, den Kern herunterzuladen
-Software:
+Bevor Sie eine Website erstellen können, müssen Sie zunächst das Kernsystem
+herunterladen. Je nachdem, was Sie vorhaben, können Sie zwischen verschiedenen
+Methoden wählen, um das Kernsystem herunterzuladen:
 
-Testen Sie eine kostenlose Online-Demo::
-  Wenn Sie evaluieren, ob Sie Drupal zum Aufbau einer Website verwenden sollen oder nicht, können Sie
-  können einen Online-Anbieter nutzen, um eine Demo-Installation der Kern-Software in
-  20 Minuten oder weniger. Siehe die
-  https://www.drupal.org/try-drupal[_Drupal.org_ Seite "Versuchen Sie Drupal"].
+Testen Sie Drupal mittels kostenloser Online-Demo::
+  Wenn Sie herausfinden möchten, ob sich Drupal aus Ihrer Sicht zum Aufbau einer
+   Website eignet oder nicht, können Sie eine Online-Demo bei einem unserer
+   Partner installieren lassen. Um das Kernsystem zu evaluieren, lesen Sie
+
+  https://www.drupal.org/try-drupal[_Drupal.org_ Seite "Drupal Testen (englisch)"].
 
 Verwenden Sie ein Ein-Klick-Installationsprogramm von Ihrem Hosting-Provider::
-  Wenn Sie die Kern-Software bei Ihrem Hosting-Provider installieren möchten, muss Ihr
-  Hosting-Provider kann über spezifische Dokumentation und/oder eine Installation mit einem Klick verfügen
-  die Sie verwenden können. Siehe
+  Wenn Sie die Kern-Software bei Ihrem Hosting-Provider installieren möchten,
+  muss Ihr Hosting-Provider kann über spezifische Dokumentation und/oder
+  eine Installation mit einem Klick verfügen die Sie verwenden können.
+  Siehe:
   https://www.drupal.org/association/supporters/hosting[_Drupal.org's_ Liste der Hosting-Provider, die Drupal unterstützen].
 
 Verwenden Sie eine vorkonfigurierte Umgebung::
-  Verwenden Sie eine vorkonfigurierte Umgebung oder virtuelle Maschine, die Drupal und
-  alle erforderliche unterstützende Software, um Drupal lokal zu installieren. Siehe die
-  Abschnitt für Ihr Betriebssystem unter
-  https://www.drupal.org/docs/develop/local-server-setup[Drupal.org's Anleitung zur Einrichtung eines lokalen Servers]
-  für mögliche Optionen.
+  Verwenden Sie eine vorkonfigurierte Umgebung oder virtuelle Maschine,
+  die Drupal und alle erforderlichen Tools enthält, um Drupal lokal zu
+  installieren. Weitere Informationen sind in der
+  https://www.drupal.org/docs/develop/local-server-setup[Anleitung zum Einrichten einer Lokalen Entwicklungsumgebung (englisch) auf Drupal.org]
+  verfügbar.
 
-Manuell von der Website herunterladen::
-  Wenn Sie planen, eine Website ohne Zusatzmodule zu erstellen, die
-  Abhängigkeiten, können Sie die Kern-Software oder eine Distribution herunterladen, die
-  enthält die Kern-Software und zusätzliche Module oder Themen aus dem Web
-  Standort. Siehe <<<Installationshandbuch>> für Anweisungen.
+Laden Sie Drupal manuell von Drupal.org herunter::
+  Wenn Sie planen, eine Website zu erstellen, die keine von der Community
+  bereitgestellten Zusatzmodule enthält, können Sie Das Kernsystem oder eine
+  Distribution manuell herunterladen. Eine Distribution enthält das Kernsystem,
+  sowie ausgewählte Themes und von der Community bereitgestellte Zusatzmodule.
+   Siehe <<install-manual>> für weitere Informationen.
 
 Verwenden Sie Composer::
-  Wenn Sie vorhaben, das Drush-Tool zu verwenden (siehe <<Installations-Handbuch>>), oder wenn Sie
-  Wenn Sie eine Website erstellen, die Module mit komplizierten Abhängigkeiten verwenden könnte, können Sie
-  sollte Composer verwenden, um die Kern-Software herunterzuladen, denn Composer wird
-  die Abhängigkeiten richtig verwalten. Wenn Sie Ihre Website durch Herunterladen von
-  Sie können jedoch manuell auf die Verwendung des Composers zur Verwaltung von Abhängigkeiten umstellen
-  später. Siehe <<install-composer>> für Anweisungen zum Herunterladen und Konvertieren.
+  Wenn Sie vorhaben, das Kommandozeilenwerkzeug Drush zu verwenden
+  (siehe <install-manual>), oder wenn Sie eine Website erstellen, die Module mit
+  komplizierten Abhängigkeiten verwenden könnte, sollten Sie Composer verwenden,
+  um das Kernsystem herunterzuladen. Composer übernimmt die Verwaltung und den
+  Download der notwendigen Abhängigkeiten von Modulen und Themes für Sie.
+  Wenn Sie Ihre Website durch manuelles Herunterladen von der des .tar- oder
+  .zip-Archivs von Drupal.org installiert haben, können Sie eine solche
+  Installation manuell auf die Verwaltung durch Composer umstellen.
+  Siehe: <<install-composer>> für Anweisungen zum Herunterladen von Composer
+  und zur Konvertierung einer manuell installierten Website mit Composer.
 
-==== Was passiert, wenn ich die Kern-Software installiere?
+==== Was passiert, wenn ich das Kernsystem installiere?
 
-Die _Installation_ der Kernsoftware bedeutet die Einrichtung einiger Datenbanktabellen,
-Konfiguration und ein administratives Benutzerkonto, so dass Sie Folgendes erstellen und verwenden können
-Ihre Website.
+Die _Installation_ der Kernsoftware, dient der Einrichtung notwendiger
+Datenbanktabellen, die  initiale Konfiguration der Software und das Anlegen
+eines administrativen Benutzerkontos. Nach Abschluss der Installation der
+Software können sie Ihre neue Website verwenden.
 
-==== Welche Methoden stehen für die Installation der Kern-Software zur Verfügung?
+==== Welche Methoden stehen zur Durchführung der Installation des Kernsystems zur Verfügung?
 
-Es gibt mehrere Möglichkeiten, die Kernsoftware zu installieren:
+Es gibt mehrere Möglichkeiten, das Kernsystems zu installieren:
 
-Hinter-den-Kulissen-Installationsprogramm::
-  Wenn Sie sich für eine Online-Demo oder ein Ein-Klick-Installationsprogramm von einem Hosting
-  Anbieter, kann die Kern-Software automatisch für Sie installiert werden.
+Hintergrundinstallationsprogramm::
+  Wenn Sie Drupal für eine Online-Demo oder über ein
+  One-Click-Installationsprogramm eines Hosting-Anbieters installieren möchten,
+  kann die Installation des Kernsystem automatisch vorgenommen werden.
 
 Interaktives Installationsprogramm::
-  Die Kernsoftware verfügt über einen interaktiven Installer, der Ihnen mehrere
-  Online-Formulare und füllt dann die Installation mit den Informationen aus, die Sie
-  in den Formularen zur Verfügung stellen. Siehe <<installieren-vorbereiten>> und <<installieren-ausführen>>.
+  Das Kernsystem von Drupal verfügt über einen interaktives
+  Installationsprogramm, das Ihnen während der Installation mehrere
+  Online-Formulare  anzeigt, damit Sie die notwendigen Informationen während des
+  Installationsvorgangs eingebben können.
+  Siehe <<installn-prepare>> und <<install-run>>.
 
-Demo Website-Installationsprogramm::
-  Wenn Sie die Kern-Software auf Ihren lokalen Computer herunterladen, können Sie schnell
-  eine temporäre Demo-Site erstellen, die den eingebauten Webserver und SQLite verwendet
-  Datenbank, die Teil von PHP sind. Das Kommando zum Einrichten einer Demo-Site finden Sie unter
-  das Ende von <<install-manual>>. In diesem Fall werden Sie die interaktive
-  Installationsprogramm.
+Installationsprogramm der Demo-Website::
+  Wenn Sie Kernsystem auf Ihren lokalen Computer herunterladen, können Sie
+  auf schnelle  Art und weise eine temporäre Demo-Website erstellen, die den
+  eingebauten PHP-Webserver und eine SQLite-Datenbank verwendet.
+   Den kommandozeilenbefehl zum Einrichten einer Demo-Website finden Sie am Ende
+   des Kapitels <<install-manual>>.
+   In diesem Fall wird das interaktive Installationsprogramm nicht ausgeführt.
 
-Kommandozeilen-Tool::
-  Kommandozeilen-Tools (siehe <<<Installations-Tools>>) können auch verwendet werden, um die
-  Installationsschritte.
+Kommandozeilenwerkzeuge::
+  Auch Kommandozeilenwerkzeuge (siehe <<Installation-tools>>) können zur
+  Installation von Drupal verwendet werden.
 
 // ==== Verwandte Themen
 
@@ -90,9 +102,8 @@ Kommandozeilen-Tool::
 *Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] unter
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] bei
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
-http://redcrackle.com[Rotes Knistern].
-*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[rdcrackle].

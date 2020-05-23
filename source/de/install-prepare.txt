@@ -7,11 +7,12 @@ Das Kernsystem herunterladen und die Installationsvoraussetzungen erfüllen.
 (((Downloading,core software)))
 (((Drupal core,preparing install)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Laden Sie die Kern-Software herunter und kümmern Sie sich um alle erforderlichen Voraussetzungen.
+Laden Sie das Kernsystem herunter und kümmern Sie sich um alle erforderlichen
+Voraussetzungen.
 
-==== Vorgeschriebene Kenntnisse
+==== Erforderliche Vorkenntnisse
 
 * <<install-requirements>>
 
@@ -19,55 +20,60 @@ Laden Sie die Kern-Software herunter und kümmern Sie sich um alle erforderliche
 
 * <<install-decide>>
 
-* Wie man Server-Software installiert und konfiguriert (falls Sie die Installation selbst vornehmen
-Computer)
+* Wie man Server-Software installiert und konfiguriert (falls Sie die Installation selbst vornehmen)
 
-* Wie man das Hosting für eine generische Website einrichtet
+* Wie man das Hosting einer generische Website einrichtet
 
 * Wie man eine Datenbank erstellt
 
-==== Standort-Voraussetzungen
+==== Anforderungen an die Webiste
 
 Die Server-Software muss auf dem Computer installiert sein, auf dem Sie Ihre
-Standort. Siehe <<installierte Anforderungen>>.
+Website entwickeln. Siehe <<install-requirements>>.
 
-Je nachdem, wie Sie die Kernsoftware herunterladen möchten, müssen Sie möglicherweise Folgendes installieren
-zusätzliche Software-Tools zuerst. Siehe <<Installieren-Entscheiden>> und <<Installieren-Werkzeuge>>.
+Je nachdem, wie Sie das Kernsystem herunterladen möchten, müssen Sie
+möglicherweise  zunächst zusätzliche Software-Tools installieren.
+
+Siehe: <<install-decide>> und <<install-tools>>.
 
 ==== Arbeitsschritte
 
-. Wählen Sie unter den folgenden Methoden zum Herunterladen und Installieren der Kern-Software
-aufgelistet unter <<install-decide>>. Der Rest dieser Anweisungen gilt für die
-Download-Optionen für den Komponisten und das Handbuch sowie das interaktive Installationsprogramm; wenn Sie
-andere Optionen, sollte die Software für Sie installiert werden.
+. Wählen Sie eine der Methoden zum Herunterladen und Installieren
+des Kernsystems aus, die im Kapitel <<install-decide>> aufgelistet sind.
+Der Rest dieser Anweisungen gilt für den Download mittels Composer, die manuelle
+Installation und das interaktive Installationsprogramm gleichermaßen.
 
-. Richten Sie eine URL und ein Hosting für Ihre Website auf dem Server ein. Überprüfen Sie, ob das Hosting
-funktioniert, indem es eine einfache HTML-Datei in das Web-Stammverzeichnis der
-Hosting und Besuch der URL für Ihre Website.
+. Richten Sie eine URL und ein Hosting für Ihre Website auf dem Server ein.
+Überprüfen Sie, ob das Hosting funktioniert, indem eine einfache HTML-Datei im
+Stammverzeichnis Ihres Webservers platzieren und testen, ob diese den Besuchern
+Ihrer Website angezeigt wird.
 
-. Erstellen Sie eine Datenbank, zusammen mit einem Datenbank-Benutzerkonto mit Vollzugriff.
+. Erstellen Sie eine Datenbank und ein dazugehöriges Benutzerkonto, dass über
+Vollzugriff auf die Datenbank verfügt.
 
-. Laden Sie die Kern-Software-Dateien in das Web-Stammverzeichnis herunter, indem Sie die Methode
-für die Sie sich entschieden haben. Siehe <<installieren-entscheiden>> für Links zu Anweisungen.
+. Laden Sie die Dateien des Kernsystems in das Hauptverzeichnis Ihrer Website,
+indem Sie die von Ihnen gewünschte Methode verwenden.
+Siehe <<install-decide>>  für weitere Informationen.
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihr Wissen
 
 Siehe <<install-run>> um das interaktive Installationsprogramm auszuführen.
 
-Alternativ können Sie den folgenden Drush-Befehl aus dem
-Verzeichnis, in das Sie die Software heruntergeladen haben, wobei _DB_NAME_, _DB_USER_ und
-_DB_PASS_ sind die Anmeldedaten Ihrer Datenbank:
+Alternativ können Sie den folgenden Drush-Befehl in dem
+Verzeichnis ausführen, in das Sie die Software heruntergeladen haben, wobei
+_DATENBANKKNAME_, _DATENBANKBENUTZER_ und _DATENBANKPASSOWRT_ durch die
+Zugangsdaten zu Ihrer Datenbank ersetzt werden müssen:
 
 ----
-drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+drush site:install standard --db-url='mysql://DATENBNAKBENUTZER:DATENBANKPASSOWRT@localhost/DATENBANKNAME' --site-name=Meine-Website
 ----
 
-// ==== Related concepts
+// ==== Verwandte Konzepte
 
 ==== Videos
 
-// Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Preparing to Install"]
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Die Installation vorbereiten (englisch)"]
 
 ==== Zusätzliche Ressourcen
 
@@ -77,8 +83,8 @@ http://www.drush.org[Drush]
 *Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] unter
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] bei
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
-http://redcrackle.com[Rotes Knistern].
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[redcrackle].

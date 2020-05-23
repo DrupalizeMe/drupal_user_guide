@@ -3,56 +3,63 @@
 === Konzept: Entwicklungsstandorte
 
 [role="summary"]
-Überblick über Entwicklungswebites mit einemn Beispiels-Workfolow zum Zweck des Site-Buildings.
+Überblick über Entwicklungs-Webites mit Beispiel-Workfolow für Site-Buildings.
 
 (((Development site,overview)))
 (((Deployment workflow,overview)))
-(((Staging site,overview)))
+(((Stageing site,overview)))
 (((Installing,development site)))
-(((Installing,staging site)))
+(((Installing,Stageing site)))
 
 //==== Erforderliche Vorkenntnisse
 
-==== Was sind Entwicklungsstandorte?
+==== Was sind Entwicklungsumgebungen?
 
-Entwicklungsstandorte sind verschiedene Kopien desselben Standorts, die zur Entwicklung verwendet werden,
-Aktualisieren und Testen einer Website, ohne die Integrität der Live-Site zu gefährden.
+Entwicklungsumgebungen sind verschiedene Kopien der selben Website, die zur
+Entwicklung, zur Aktualisierung und zum Testen einer Website verwendet werden,
+ohne dabei die Integrität der Live-Site zu gefährden.
 
-Ein Beispiel für einen Deployment-Workflow zur Erstellung einer Website umfasst normalerweise die Websites
-unten erwähnt:
+Ein Beispiel für einen Deployment-Workflow zur Erstellung einer Website umfasst
+normalerweise die unten erwähnten Websites:
 
-Lokale Umgebung::
+Lokale Entwicklungsumgebung::
   Der Entwicklungsprozess beginnt mit den Entwicklern, die an neuen Funktionen, Bug
-  Fixes, Thematisierung und Konfiguration in ihrer lokalen Umgebung.
+  Fixes, Design und Konfiguration in einer lokalen Entwicklungsumgebung arbeiten.
 
-Entwicklungsstandort::
-  Entwickler treiben die Änderungen, an denen sie gearbeitet haben, in die Entwicklung
-  Standort. Für ein Team von mehr als einem Entwickler ist die Versionskontrolle normalerweise
-  verwendet. Git ist ein Versionskontrollsystem, das Ihre Dateien für jede
-  Änderungen. Sie können diese Änderungen dann an ein Repository übergeben. Die Verwendung von Git erlaubt
-  Teammitglieder am selben Standort arbeiten, ohne sich gegenseitig in ihrer Arbeit zu behindern. Es
-  macht es auch möglich, leicht zu früheren Stadien der
-  Entwicklung.
+Entwicklungswebsite::
+  Entwickler übertragen die Änderungen, an denen sie gearbeitet haben, auf die
+  Entwicklungswebsite. Diese wird in Teams, die aus mehr als einem Entwickler
+  bestehen, normalerweise zur Versionskontrolle eingesetzt. Git ist ein
+  Versionskontrollsystem, das die Änderungen an allen Dateien Ihres Projektes
+  aufzeichnet und protokolliert. Sie können diese Änderungen dann an ein
+  Repository übergeben. Die Verwendung von Git erlaubt
+  Teammitgliedern gleichzeitig an der selben Website zu arbeiten, ohne sich
+  dabei gegenseitig bei der Arbeit zu behindern. So ist es auch einfacher,
+  die verschiedenen Arbeitsschritte eines Entwicklungsprozesses nachzuverfolgen.
 
-Ort der Inszenierung::
-  Die Staging-Site kann zum Testen oder zur Präsentation der Änderungen an der
-  Client zur Genehmigung. QA (Qualitätssicherung) und UAT (Benutzerakzeptanztest)
-  werden meist am Ort der Bereitstellung durchgeführt. Es wird empfohlen, live
-  Inhalte sowohl auf der Entwicklungs- als auch auf der Staging-Website, so dass Sie testen können, wie
-  die neuen Funktionen mit dem bestehenden Inhalt funktionieren.
+Stageing-Umgebung::
+  Die Stageing-Website kann zum Testen oder zur Präsentation der Änderungen
+  gegenüber Kunden, Zu QA-Zwecken (Quallitätskontrolltests)
+  und UAT (Benutzerakzeptanztests)
+  verwendet werden. Diese Umgebung sollte der Umgebung, in der sich die
+  Live-Website befindet gleichen. Es wird empfohlen, live
+  Inhalte sowohl auf der Entwicklungs- als auch auf der Stageing-Website
+  bereitzustellen, so dass Sie testen können, wie die neuen Funktionen unter
+  Verwendung der Inhalte funktionieren, die sich bereits auf der Live-Website
+  befinden.
 
-Produktionsstandort::
-  Die Live-Site im Web, die den Besuchern zur Verfügung steht. Sie enthält neue Funktionen, die
-  haben sich als lebenssicher erwiesen.
+Live-Umgebung/Live-Website::
+  Die Live-Site im Web, die Besuchern zur Verfügung steht. Sie enthält neue
+  Funktionen, die sich als stabil erwiesen haben.
 
-Basierend auf der Größe, dem Umfang, den Anforderungen oder den Interessengruppen des Projekts werden die Phasen von
-kann der obige Arbeitsablauf entfernt werden, oder es können zusätzliche Stufen hinzugefügt werden. Für
-Beispiel: Ein Testgelände vor der Bereitstellung kann zu separaten Test- und Anwendern hinzugefügt werden.
-Abnahmeprozesse.
-
+Je nach Größe, dem Umfang, den Anforderungen oder den  am Projekt beteiligen
+Interessengruppen können die oben genannten Projektentwicklungsphasen angepasst
+oder entfernt werden. Sie können  natürlich auch weitere Entwicklungsphasen
+hinzufügen. Beispielsweise können Qualitätssicherungs- und
+Nutzerakzeptanztests in einer gesonderten Umgebung durchgeführt werden und die
+Staeging-Umgebung nur verwendet werden, um die  technische
+Kompatibilität der Website zu Ihrer Live-Umgebung sicherzustellen.
 ==== Verwandte Themen
-*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***
-
 
 
 * <<install-dev-making>>
@@ -64,5 +71,5 @@ Abnahmeprozesse.
 *Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/dianalakatos[Diána Lakatos],
-und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
-http://redcrackle.com[Rotes Knistern].
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[redcrackle].
