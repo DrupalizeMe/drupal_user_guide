@@ -1,6 +1,6 @@
 [[language-concept]]
 
-=== Konzept: Übersetzung von Benutzeroberfläche, Konfiguration und Inhalt
+=== Konzept: Übersetzung der Benutzeroberfläche, der Konfiguration und von Inhalten
 
 [role="summary"]
 Übersicht der Sprachen und Übersetzungen auf einer Website.
@@ -27,61 +27,81 @@
 
 ==== Welche Sprachen unterstützt die Software?
 
-Die Basissprache für die Software, die auf Ihrer Website läuft (Kern-Software, Module,
-und Themen) ist englisch. Mit dieser Software können Sie jedoch eine Website erstellen, deren
-Die Standardsprache ist nicht Englisch. In diesem Fall sollte jeder, der die Website besucht
-nur diese Sprache sehen (unter der Annahme, dass die Website vollständig übersetzt ist). Sie können
-Verwenden Sie diese Software auch, um eine mehrsprachige Website mit einem Sprachumschalter zu erstellen.
-mit der Besucher der Website zu ihrer bevorzugten Sprache wechseln können. Sie müssen
-das Kern-Sprachmodul installiert haben, um eine andere Sprache als
-Englisch auf der Website.
+Die Basissprache der Software, mit der Ihre Website betrieben wird
+(Kernsystem, Module, und Themes) ist englisch. Mit dieser Software können Sie
+jedoch eine Website erstellen, deren Standardsprache eine andere Sprache als
+Englisch ist. In diesem Fall sollte jeder, der die Website besucht
+nur diese Sprache sehen (immer vorausgesetzt die Website vollständig übersetzt).
+Sie können diese Software auch verwenden, um eine mehrsprachige Website mit einer
+Funktion zum Umschalten der Anzeigesprache zu erstellen,
+mit der Besucher der Website in ihrer bevorzugten Sprache ausgeben lassen können.
+Sie müssen das mit dem Kernsystem ausgeliefert Modul Language installiert haben,
+damit Ihre Website eine andere Sprache als englisch verwenden kann.
 
 ==== Was kann auf Ihrer Website übersetzt werden?
 
-Es gibt drei Arten von Informationen, die Sie übersetzen können, jede mit ihren eigenen
-Methode zum Übersetzen:
+Es gibt drei Arten von Informationen, die Sie übersetzen können,
+jede dieser Informationsarten muss mit einer anderen Methode übersetzt werden.
 
 Text der Benutzungsoberfläche::
-  Eingebauter Text, der in der Kern-Software, den Modulen und Themen vorhanden ist. Dies kann sein
-  aus der englischen Basissprache der Software in die Sprache(n) übersetzt
-  Ihrer Website. Normalerweise müssen Sie diesen Text nicht selbst übersetzen,
-  können Sie Übersetzungen herunterladen. Sie benötigen den Kern Interface Übersetzung
-  Modul installiert, um diesen Text zu übersetzen, und der zentrale Update-Manager
-  Modul installiert, um Übersetzungen automatisch herunterzuladen.
-Text der Konfiguration::
-  Text, dessen Struktur und Anfangswerte durch die Kern-Software definiert werden,
-  Module und Themen, die Sie jedoch bearbeiten können. Beispiele sind die Bezeichnungen für
-  Felder in Ihren Inhaltstypen, Kopftext in Ansichten, Ihren Site-Namen und die
-  Inhalt der automatischen E-Mail-Nachrichten, die Ihre Website versendet. Nach der Erstellung
-  Konfigurationstext in der Standardsprache Ihrer Website, Sie können ihn übersetzen
-  in andere Sprachen. Für die von der Kern-Software gelieferte Standardkonfiguration,
-  Module und Themen, die Übersetzung ist in den Downloads der Benutzer enthalten
-  Übersetzungen von Schnittstellentexten. Sie benötigen den Kern Konfiguration
-  Übersetzungsmodul installiert, um diesen Text zu übersetzen.
-Inhaltliche Texte und Dateien::
-  Wenn Ihre Website mehrsprachig ist, können Sie die Inhaltsfelder auf Ihrer
-  Website übersetzbar sein. Nachdem Sie Inhalte in einer Sprache erstellt haben, können Sie
-  sie in andere Sprachen übersetzen. Felder können Textinformationen enthalten oder
-  hochgeladenen Dateien, und für jedes Feld auf jedem Inhaltstyp können Sie es konfigurieren
-  übersetzbar oder nicht übersetzbar zu sein. Sie benötigen den Kerninhalt
-  Übersetzungsmodul installiert, um diesen Text zu übersetzen.
+  Mit der Software ausgelieferter Text, der im Kernsystem, den Modulen und
+  Themes vorhanden ist. Diese Art von Text kann sein
+  aus dem englischen , also aus der Basissprache der Software in die Sprache(n)
+  übersetzt werden, die Ihre Website normalerweise (Standardsprache).
+  Im Regelfall müssen Sie diesen Text nicht selbst übersetzen,
+  Sie können die  Übersetzung der Benutzeroberfläche stattdessen einfach
+  herunterladen. Sie benötigen dazu nur das Modul User Interface Translation,
+  das mit dem Kernsystem ausgeliefert wird.
+  Installieren Sie die Module User Interface Translation unnd Update Manager,
+  damit Sie Übersetzungen für die Benutzeroberfläche herunterladen können.
 
-==== Welche Informationen werden auf meiner Website auf Englisch bleiben?
+Text der Konfiguration::
+  Hierbei handelt es sich um Text, dessen Struktur und Ausgangswerte durch das
+  Kernsystem und von Modulen und Themes vordefiniert werden.
+  Text, die sich innerhalb der Konfiguration befinde können jedoch bearbeitet
+  und an die Anforderungen Ihrer Website angepasst werden.
+  Beispiele für Teste, die aus der Konfiguration stammen sind die Bezeichnungen,
+  der Felder innerhalb Ihrer Inhaltstypen, die Texte von Kopfzeilen
+  vordefinierter Ansichten, der Name Ihrer Website und die Inhalte der
+  automatischen E-Mails, die in Zusammenhang mit den Ereignissen rund um
+  Benutzerkonten versendet werden. Nach dem Erstellen eines
+  Konfigurationstextes in Ihrer Standardsprache, können Sie den Text in
+  andere Sprachen übersetzen. Für die vom Kernsystem ausgelieferte
+  Standardkonfiguration, die Konfiguration von Modulen und Themes, sind die
+  Ausgangswerte im Download der Übersetzung der Benutzeroberfläche enthalten.
+  Sie müssen das mit dem Kernsystem ausgelieferte Modul Configuration
+  Translation installieren um diese Texte übersetzen zu können.
+
+Inhaltliche Texte und Dateien::
+  Wenn Ihre Website mehrsprachig ist, können Sie die Felder, die die Inhalte
+  Ihrer Website enthalten so konfigurieren, dass die darin enthaltenen Inhalte
+  in alle für Ihre Website notwendigen Sprachen übersetzt werden können.
+  Nachdem sie Inhalte in einer Ausgangssprache übersetzt haben, können Sie diese
+  dann in andere Sprachen übersetzen. Felder können Textinformationen oder
+  hochgeladenen Dateien enthalten und für jedes Feld in jedem Inhaltstyp können
+  Sie über die Konfiguration festlegen, ob der Inhalt eins Feldes übersetzt
+  werden können soll, oder nicht. Um Inhalte übersetzbar machen zu können müssen
+  Sie das Modul Content Translation installeiren, dass mit dem Kernsystem
+  ausgeliefert wird.
+
+==== Welche Informationen werden auf meiner Website englisch bleiben?
 
 Selbst wenn die Standardsprache Ihrer Website nicht Englisch ist, sehen Sie
-Englischer Text auf bestimmten administrativen Seiten, die zur Verwaltung der Konfiguration verwendet werden. Die
-Der Grund dafür ist, dass Sie beim Bearbeiten der Konfiguration die Basis bearbeiten,
-unübersetzte Konfigurationswerte; das Übersetzen der Konfiguration ist eine separate
-Betrieb. Wenn Sie zum Beispiel die Verwaltungsseite _Menüs_ besuchen, werden Sie
-siehe Menünamen auf Englisch (für die Menüs, die bei der Installation eingerichtet wurden
-Ihre Website), und wenn Sie auf einen _Bearbeiten-Menü_-Link klicken, bearbeiten Sie die
-Englischer Name und Beschreibung des Menüs. So bearbeiten Sie den Menünamen in einem anderen
-Sprache benötigen Sie das Kernmodul Configuration Translation
-installiert, und verwenden Sie den Link _Translate_, um die übersetzten Menüinformationen zu bearbeiten.
+Englische Texte auf bestimmten Seiten im Verwaltungsbereich, die zur Verwaltung
+der Konfiguration verwendet werden. Der Grund hierfür ist, dass Sie beim
+Bearbeiten der Konfiguration die Ausgangswerte bearbeiten, bei denen es sich um
+unübersetzte Wert handelt. Das Übersetzen der Konfiguration ist eine separate
+Aufgabe. Wenn Sie zum Beispiel die Seite _Menüs_ aufrufen, werden Sie
+Menünamen in englisch (für die Menüs, die bei der Installation
+Ihre Website eingerichtet wurden) sehen können. Wenn Sie auf den Link
+ _Menü Bearbeiten-Menü_ klicken, bearbeiten Sie den englischen Namen und
+ die englische Beschreibung, des Menüs, wenn keine Übersetzung für den
+ entsprechenden Ausgangswert in Ihrer Sprache vorliegt. Um Menünamen in einer
+ anderen Sprache zu bearbeiten müssen Sie das mit dem Kernsystem
+ ausgelieferte Modul Configuration Translation installieren und den Link
+ _Überseetzen_ verwenden, Übersetzung der Menüinformationen zu bearbeiten.
 
 ==== Verwandte Themen
-
-*** Übersetzt mit www.DeepL.com/Translator (kostenlose Version) ***
 
 
 * <<language-add>>

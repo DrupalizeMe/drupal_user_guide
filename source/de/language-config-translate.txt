@@ -1,5 +1,5 @@
 [[language-config-translate]]
-=== Translating Configuration
+=== Konfigurationswerte übersetzen
 
 [role="summary"]
 Feldbezeichnungen in einer Ansicht und in anderen Konfigurationen übersetzen.
@@ -13,7 +13,7 @@ Feldbezeichnungen in einer Ansicht und in anderen Konfigurationen übersetzen.
 
 ==== Zielsetzung
 
-Translate the labels on the Recipes view page into Spanish.
+Übersetzen Sie die Feldbezeichnungen der Ansicht Rezepte auf Spanish.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -22,45 +22,58 @@ Translate the labels on the Recipes view page into Spanish.
 
 ==== Anforderungen an die Website
 
-* The core Configuration Translation module must be installed, and your site
-must have at least two languages. See <<language-add>>.
+* Das Modul Configuration Translation, das mit dem Kernsystem ausgeliefert wird,
+  muss installiert sein und auf ihrer Website müssen mindestens zwei Sprachen
+  instaliert sein.
+  Siehe: <<language-add>>.
 
-* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
+* Die Ansict Rezepte muss instaliert sein. Sieh: <<views-create>> und
+  <<views-duplicate>>.
 
-==== Steps
+==== Arbeitsschritte
 
-The basic steps for translating any configuration on your site are:
+Die grundlegenden Arbeitsschritte, um irgendeine Konfiguration auf Ihrer Website
+zu übersetzen sind folgende:
 
-. Locate the page where the configuration you want to translate is created or
-edited in the site's primary language. For example, to translate the site name,
-you need to find the page where you would edit the site name (see
-<<config-basic>>).
+. Machen Sie die Site Ihrer Website ausfindig, auf der sich die Konfiguration, in der Standardsprache der Website
+befindet, die Sie übersetzen oder bearbeiten möchten .
+Wenn Sie beispielsweise den Namen Ihrer Webseite übersetzen möchten,
+müssen Sie die Seite aufrufen, auf der Sie den Namen der Website in der
+Standardsprache bearbeiten können.
+Siehe: <<config-basic>>).
 
-. Find a link, tab, or button on the page that says "Translate" or something
-similar. Click this link, tab, or button.
+. Suchen Sie nach einem  Link, einer Registerkarte oer einem Button auf der Seite,
+der/die die Aufschrift „Übersetzen" oder eine ähnliche Aufschrift enthält.
+Klicken Sie auf diesen Link, die Registerkarte oder den Button.
 
-. Find a button that will let you add a translation in the desired language, and
-click this button.
+. Suchen Sie nach einem Button, der es Ihnen erlaubt eine Übersetzung in der
+gewünschten Sprache hinzuzufügen und klicken Sie darauf.
 
-. Enter the translation in the form, and save.
+. Tragen Sie die Übersetzung in das Formular ein und klicken Sie auf _Speichern_.
 
-Most configuration is fairly straightforward and intuitive to edit in this
-manner. Views configuration is an exception, because the translation editing
-form is nothing like the view editing form, and it is complex and hierarchical
-rather than being a simple form with just a few fields. As an example of how to
-translate a view, here are the steps to translate the labels in the Recipes view
-to Spanish:
+Die meisten Konfigurationswerte sind selbsterklärend und können auf diese Art
+und Weise daher sehr einfach bearbeitet werden. Die Konfiguration von Ansichten
+stellt hierbei eine Ausnahme dar, weil die Übersetzung der Konfiguration direkt
+auf dem Bearbeitungsformular der Ansicht und nicht über ein gesondertes Formular
+stattfindet. Besonders ist die Bearbeitung von Ansichten und deren Konfiguration
+auch deshalb, weil das  Formular zur Bearbeitung von Ansichten sehr komplex und
+hierarchisch aufgebaut ist und es sich hierbei nicht um ein Formular handelt, dass
+lediglich ein paar Felder enthält.
+Als Beispiel für das Übersetzen einer Ansicht findenden sie im Folgenden die
+Arbeitsschritte, um die Feldbezeichnungen in der Ansicht Rezepte auf Spanisch
+zu übersetzen:
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Ansichten_
 (_admin/structure/views_).
 
-. Locate the Recipes view and click _Translate_ from the dropdown button.
+. Suchen Sie die Ansicht _Rezepte_ und wählen Sie _Übersetzen_ aus dem
+Drop-Down-Button in der Zeile der Ansicht aus.
 
-. Click _Add_ in the row _Spanish_. The page _Add Spanish translation for
-Recipes view_ appears.
+. Klicken Sie in der Zeile _Spanisch_ auf _Hinzufügen_.
+Die Seite _Übersetzungen für Spanisch, für die Ansicht Rezepte hinzufügen_ erscheint.
 
-. Under _Displays_ > _Master Display settings_ > _Recipes default display
-Options_, translate _Display title_ from "Recipes" to "Recetas".
+. Unter _Anzeigen_ > _Master Anzeigeeinstellungen_ > _Rezepte Standardanzeigeeinstellungen_,
+übersetzen Sie den _Anzeigetitel von "Rezepte" in "Recetas".
 
 . Under _Displays_ > _Master display settings_ > _Recipes default display
 options_ > _Exposed form_ > _Reset options_, translate _Submit button text_
@@ -117,9 +130,10 @@ administrative menu to _Structure_ > _Content types_
 content type whose field labels you want to edit. Click _Translate_ in the
 dropdown button for the field whose label you want to edit.
 
-* Translate content. See <<language-content-translate>>.
+* Inhalte übersetzen. Siehe:
+ <<language-content-translate>>.
 
-// ==== Related concepts
+// ==== Verwandte Konzepte
 
 ==== Videos
 
@@ -129,7 +143,7 @@ video::https://www.youtube-nocookie.com/embed/j2GZdJIOo_I[title="Translating Con
 // ==== Weiterführende Quellen
 
 
-*Attributions*
+*Mitwirkende*
 
 Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
