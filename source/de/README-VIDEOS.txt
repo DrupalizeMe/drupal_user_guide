@@ -1,4 +1,4 @@
-Wenn Videos in eine Leitseite eingebettet werden, muss der Videoproduzent Folgendes bereitstellen
+Wenn Videos in eine Handbuchseite eingebettet werden, muss der Videoproduzent folgendes Angaben machen:
 Anweisungen zum Herunterladen der übersetzbaren Beschriftungsdatei, zum Übersetzen und
 Bereitstellung von Übersetzungen, damit sie dem Video hinzugefügt werden können.
 
