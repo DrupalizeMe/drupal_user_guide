@@ -1,6 +1,6 @@
 [[language-content-config]]
 
-=== Configuring Content Translation
+=== Inhaltsübersetzungen konfigurieren
 
 [role="summary"]
 Inhalte so konfigurieren, dass diese übersetzt werden können.
@@ -10,9 +10,10 @@ Inhalte so konfigurieren, dass diese übersetzt werden können.
 
 ==== Zielsetzung
 
-Make _Custom block_, _Custom menu link_, and _Content_ entity types
-translatable. Select specific subtypes and set which fields of these can be
-translated.
+Machen Sie _Benutzerdefinierte Blöcke_, _Benutzerdefinierte Menülinks_, und
+Entitätstypen vom Typ _Inhalt_
+übersetzbar. Wählen Sie bestimmte Subtypen aus und legen Sie fest, welche Felder
+dieser Subtypen übersetzt werden können.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -21,17 +22,17 @@ translated.
 
 ==== Anforderungen an die Website
 
-The core Content Translation module must be installed, and your site must
-have at least two languages. See <<language-add>>.
+Das Modul Content Translation, das mit dem Kernsystem ausgeliefert wird, muss
+installiert sein und auf dr Website müssen mindestens zwei Sprachen aktiviert
+sein. Siehe: <<language-add>>.
 
-==== Steps
+==== Arbeitsschritte
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Regional
-and language_ > _Content language and translation_
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ > _Länderspezifisches und Sprache_ > _Inhaltssprache and Übersetzung_
 (_admin/config/regional/content-language_).
 
-. Under _Custom language settings_, check _Content_,
-_Custom block_ and _Custom menu link_ to make these entity types translatable.
+. Unter _Benutzerdefinierte Spracheeinstellungen_, aktivieren Sie _Inhalt_,
+_Benutzerdefinierter Block_ und _Benutzerdefinierter Menülink_ um diese Entitätstypen übersetzbar zu machen.
 +
 --
 // Top section of Content language settings page
@@ -39,10 +40,10 @@ _Custom block_ and _Custom menu link_ to make these entity types translatable.
 image:images/language-content-config_custom.png["Custom language settings checklist",width="193px"]
 --
 
-. Configuration options appear for _Content_, _Custom block_ and  _Custom menu
-link_. Choose the subtypes you want to translate for each entity
-type. Check _Basic page_ for _Content_, _Basic block_ for _Custom block_ and
-_Custom menu link_ for _Custom menu link_.
+. Die Konfigurationsoptionen für _Inhalt_, _benutzerdefinierte Blöcke_ und
+_benutzerdefinierte Menülinks erscheinen. Wählen Sie für jede Entität den Subtyp
+den Sie bearbeiten möchten aus. Aktivieren Sie _Einfache Seite_ unter _Inhalt_, _Einfacher Block_ unter _Benutzerdefinierter Block_ und
+_Benutzerdefinierter Menülink_ unter _Benutzerdefinierter Menülink_.
 
 . Verify the settings for the entity types as shown below:
 +
@@ -58,8 +59,8 @@ _Custom menu link_ for _Custom menu link_.
 image:images/language-content-config_content.png["Default language and translatability for content types"]
 --
 
-. Choose the fields that should be translatable for _Basic page_ as shown in the
-table below. If a field is not translation-dependent, leave it unchecked.
+. Wählen Sie die Felder aus, die in _Einfachen Seiten_ übersetzbar sein sollen,
+wie die unten stehenden Tabelle dies zeigt. Wenn ein Feld nicht für die Übersetzung benötigt wird, lassen Sie es unausgewählt.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -80,17 +81,17 @@ table below. If a field is not translation-dependent, leave it unchecked.
 image:images/language-content-config_basic_page.png["Translatable content entity subtypes' fields checklist"]
 --
 
-. Similarly, check the appropriate boxes for translatable fields belonging to
-_Basic block_ and _Custom menu link_.
+. Wählen Sie auf ähnliche Weise die Felder der Entitätstypen
+_Einfacher Block_ und _Benutzerdefinierter Menülink aus_.
 
-. Click _Save configuration_.
+. Klicken Sie auf _Konfiguration speichern_.
 
-==== Expand your understanding
+==== Vertiefen Sie Ihr Wissen
 
 * <<language-config-translate>>
 * <<language-content-translate>>
 
-//==== Related concepts
+//==== Verwandte Konzepte
 
 ==== Videos
 
@@ -104,10 +105,10 @@ video::https://www.youtube-nocookie.com/embed/b_w904_pcTY[title="Configuring Con
 * http://hojtsy.hu/blog/2015-jan-27/drupal-8-multilingual-tidbits-17-content-translation-basics[Blog post "Multilingual Drupal 8 tidbits, part 17"]
 
 
-*Attributions*
+*Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+Geschrieben und bearbeitet von https://www.drupal.org/u/lolk[Laura Vass] bei
 https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle],
 and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

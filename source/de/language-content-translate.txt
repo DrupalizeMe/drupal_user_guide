@@ -1,6 +1,6 @@
 [[language-content-translate]]
 
-=== Translating Content
+=== Inhalt übersetzt
 
 [role="summary"]
 Eine Seite in eine andere Sprache übersetzen.
@@ -10,7 +10,7 @@ Eine Seite in eine andere Sprache übersetzen.
 
 ==== Zielsetzung
 
-Translate the home page to Spanish.
+Übersetzen Sie die Startseite auf Spanisch.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -18,38 +18,39 @@ Translate the home page to Spanish.
 
 ==== Anforderungen an die Website
 
-* The Home content item must exist. See <<content-create>>.
+* Die Startseite muss vorhanden sein. Siehe <<content-create>>.
 
-* The core Content Translation module must be installed, and your site must
-have at least two languages. See <<language-add>>.
+* Das Modul Content Translation, das mit dem Kernsystem ausgeliefert wird,
+muss installiert sein und auf der Website müssen mindestens zwei Sprachen
+aktiviert sein. Siehe: <<language-add>>.
 
-* The _Basic page_ content type must be configured to be translatable. See
-<<language-content-config>>.
+* Der Inhaltstyp _Einfache Seite_ muss so konfiguriet sein, dass er übersetzt
+werden kann. Siehe: <<language-content-config>>.
 
 
-==== Steps
+==== Arbeeitsschritte
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhlat_ (_admin/content_).
 
-. Locate the home page. You can search for it by entering "Home" in the title
-field.
+. Suchen Sie nach dem Inhalt füpr die Startseite. Sie können danach suchen, indem Sie  „Start" im Feld Titel eingeben.
 
-. Select _Translate_ from the dropdown button in the row of the Home content
-item. The page _Translations of Home_ appears.
+. Aus dem Drop-Button in der Zeile die den Inhalt der Startseite enthält wählen Sie _Übersetzen_.
+Die Seite _Übersetzungen für Startseite_ wird geöffnet.
 
-. Click _Add_ in the row _Spanish_.
+. Klicken Sie ub der Zeile _Spanisch_ auf _hinzufügen_.
 +
 --
 // Screenshot of the translations page for the Home page content item.
 image:images/language-content-translate-add.png["Adding a content translation",width="100%"]
 --
 
-. Note that the user interface has switched to Spanish. To switch it back to
-English, remove the first instance of _es_ in the browser's URL. For
-example, if your URL looks like _example.com/es/node/5/translations/add/en/es_,
-remove the _es_ that comes immediately after _example.com_.
+. Beachten Sie, das die Anzeigesorache der Benutzeroberfläche in spanisch geändert
+wurde. um zurück zu Englisch zu wechseln, entfernen Sie die erste Instanz von
+_es_ in der Adresse der Adresszeile des Browsers. Wenn ihre URL z. B. so aussieht:
+_example.com/es/node/5/translations/add/en/es_,
+entfernen Sie das _es_ sich innerhalb der URL direkt hinter _example.com_ befindet.
 
-. Fill in the fields as shown below.
+. Füllen Si die Felder wie folgt aus:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -62,17 +63,17 @@ Lugar: parking del Banco Trust número 1. En el centro de la ciudad
 |URL alias > URL alias | Translated address of the webpage | pagina-principal
 |================================
 
-. Click _Save (this translation)_.
+. Klicken Sie auf _(diese Übersetzung) speichern_.
 
-. Go to your site's home page to view the newly translated page.
+. Rufen Sie die Startseite auf, um die neue Übersetzung zu betrachten.
 
-==== Expand your understanding
+==== Vertiefen Sie Ihr Wissen
 
-* Follow the steps above to translate more content on your site.
+* Führen Sie die oben genanten Schritte erneut aus, um mehr Inhalte auf Ihrer Website zu übersetzen.
 
 * <<language-config-translate>>
 
-// ==== Related concepts
+// ==== Verwandte Konzepte
 
 ==== Videos
 
@@ -82,6 +83,6 @@ video::https://www.youtube-nocookie.com/embed/TOalcUYD5zM[title="Translating Con
 // ==== Weiterführende Quellen
 
 
-*Attributions*
+*Mitwirkende*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Geschreiben von https://www.drupal.org/u/batigolix[Boris Doesborg].

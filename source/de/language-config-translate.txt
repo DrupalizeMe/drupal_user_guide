@@ -75,60 +75,52 @@ Die Seite _Übersetzungen für Spanisch, für die Ansicht Rezepte hinzufügen_ e
 . Unter _Anzeigen_ > _Master Anzeigeeinstellungen_ > _Rezepte Standardanzeigeeinstellungen_,
 übersetzen Sie den _Anzeigetitel von "Rezepte" in "Recetas".
 
-. Under _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Exposed form_ > _Reset options_, translate _Submit button text_
-from "Apply" to "Applicar". The other buttons and labels in this section do not
-appear on the Recipes page or block, and do not need to be translated.
+. Under _Anzeigen_ > _Master Anzeigeeinstellungen_ > _Rezepte Standardanzeigeeinstellungen_ > _Hervorhebeformular_ > _Optionen zurücksetzen_, Übersetzen _Submit button text_
+von "Apply" auf "Applicar". Die Anderen Buttons oder Bezeichnungen tauchen auf der Seite Rezepte oder im zur Seite gehörenden Block nicht auf und müssen deshalb nicht übersetzt werden.
 +
 --
 // Exposed form options for Recipes view.
 image:images/language-config-translate-recipes-view.png["Translate the Recipes view",width="100%"]
 --
 
-. Under _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes
-using... Expose_, translate _Label_ from "Find recipes using..." to "Encontrar
+. Unter _Anzeigen_ > _Master Anzeigeeinstellungen_ > _Rezepte Standardanzeigeeinstellungen_ > _Filter_ > _(Leer) Taxonomy-Begriffs-ID_ > _Rezepte finden
+verwenden... Hervorheben_, übersetzen Sie die _Beschriftung_ von "Rezepte nach Zutaten finden..." nach "Encontrar
 recetas usando...".
 
-. Click _Save translation_.
+. Klicken Sie auf _Übersetzung Speichern_.
 
-. Navigate to the Recipes page and switch to Spanish using the Language switcher
-block. Verify that the labels have been translated.
+. Wechseln Sie auf die Seite Rezepte und verwenden Sie dien Sprachauswahlblock, um die  Sprache der Seit e auf Spanisch umzuschalten. Überprüfen Sie, dass di Bezeichnungen ins Spanische Übersetzt wurden.
 
-==== Expand your understanding
+==== Vertiefen Sie ihr Wissen
 
-* Translate the block display title in the Recent recipes
-display settings section of the Recipes view.
+* Übersetzen Sie den Titel der Blockanzeige zuletzt hinzugefügte Rezepte in der Ansicht in Rezepte.
 
-* Translate the page title in the Vendors view.
+*Übersetzen Sie den Titel der Seite in der Ansicht Lieferanten.
 
-* Translate other configuration. Some examples of where to find the translation
-pages:
+*Übersetzen Sie weitere Konfigurationswerte. Hier sind ein paar Beispiele dazu, wo sie die jeweiligen Übersetzungsseiten finden:
 
-** To translate the site name, navigate in the _Manage_ administrative menu to
-_Configuration_ > _System_ > _Basic site settings_ > _Translate system
-information_ (_admin/config/system/site-information/translate_).
+** Um den Namen der Website zu übersetzen, navigieren sie im Menü _Verwalten_ zum Menüpunkt
+_Konfiguration_ > _System_ > _Grundlegende Websiteeinstellungen_ > _Systeminformationen übersetzen_ (_admin/config/system/site-information/translate_).
 
-** To translate the contact form, navigate in the _Manage_ administrative menu
-to _Structure_ > _Contact forms_ (_admin/structure/contact_). Click _Translate_
-in the dropdown button in the _Website feedback_ row.
+** Um das Kontaktformular zu übersetzen , navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Kontaktformulare_ (_admin/structure/contact_).
+Klicken Sie im Drop-Button, in der Zeile Website-Feedback, in der Spalte Aktionen auf _Übersetzen_
 
-** To translate the name of a menu, navigate in the _Manage_ administrative menu
-to _Structure_ > _Menus_ (_admin/structure/menu_). Click _Translate_ in the
-dropdown button for the menu whose name you want to translate.
+** Um den Namen eines Menüs zu übersetzen, navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Menüs_ (_admin/structure/menu_).
+Klicken Sie im Drop-Button für das Menü, dessen Namen Sie übersetzen möchten
+auf _Übersetzen_.
 
-** Menu items within a menu are considered to be content (not configuration);
-see <<language-content-config>> to enable translation. Once translation is
-enabled, navigate in the _Manage_ administrative menu to _Structure_ > _Menus_
-(_admin/structure/menu_). Click _Edit menu_ in the dropdown button for the menu
-whose links you want to translate. Click _Translate_ in the dropdown button for
-the link you want to translate.
+** Menüeinträäge innerhalb eines Menüs werden als Inhalt behandelt (nicht als Konfiguration);
+Siehe: <<language-content-config>> um deren Übersetzung zu aktivieren. Sobald
+die Übersetzung einmal aktiviert wurde, navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Menüs_
+(_admin/structure/menu_). Klicken Sie im Drop-Button des Menüs, dessen Links Sie
+übersetzen möchten auf _Menü bearbeiten_.
+Klicken Sie im Drop-Button, des Links, den Sie bearbeiten möchten, auf _Übersetzen_.
 
-** To translate field labels on a content type, navigate in the _Manage_
-administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_). Click _Manage fields_ in the dropdown button for the
-content type whose field labels you want to edit. Click _Translate_ in the
-dropdown button for the field whose label you want to edit.
+** Um Feldbezeidhnungen in einem Inhaltstyp zu übersetzen, navigieren Sie im Menü _Verwalten_
+zum Menüpunkt _Struktur_ > _Inhaltstypen_
+(_admin/structure/types_). Klicken Sie im Drop-Button des Inhaltstyps dessen
+Feldbezeichnungen Sie bearbeiten möchten, auf _Felder verwalten_.
+Klicken Sie im Drop-Button, des Feldes, dessen Beschriftung Sie übersetzen möchten auf _Übersetzen_.
 
 * Inhalte übersetzen. Siehe:
  <<language-content-translate>>.
@@ -145,5 +137,5 @@ video::https://www.youtube-nocookie.com/embed/j2GZdJIOo_I[title="Translating Con
 
 *Mitwirkende*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
+Geschreiben und bearbetitee von https://www.drupal.org/u/batigolix[Boris Doesborg] und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
