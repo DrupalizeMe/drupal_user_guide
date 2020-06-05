@@ -39,16 +39,19 @@
 
 ==== Was ist eine Inhaltsentität?
 
-Eine _Inhaltsentität_ (oder häufiger _Entität_) ist ein Element von Inhaltsdaten,
-die aus Text, HTML-Markup, Bildern, angehängten Dateien und anderen Daten bestehen können
-die den Besuchern der Website angezeigt werden soll. Inhaltsentitäten können sein
-definiert durch die Kern-Software oder durch Module.
+Eine _Inhaltsentität_ (oder häufiger _Entität_) ist ein Element von
+Inhaltsdaten, die aus Text, HTML-Markup, Bildern, angehängten Dateien und
+anderen Daten bestehen können, die dem Besuchern der Website angezeigt werden
+sollen. Inhaltsentitäten können vom Kernsystem oder von Modulen definiert
+werden.
 
-Inhaltsentitäten werden in _Entitätstypen_ gruppiert, die unterschiedliche Zwecke haben
-und werden auf sehr unterschiedliche Weise auf der Website angezeigt. Die meisten Entitäten
-Typen werden auch in _Entitäts-Untertypen_ unterteilt, die Unterteilungen innerhalb einer
-Entitätstyp, um kleinere Variationen bei der Verwendung der Entitäten zu ermöglichen und
-angezeigt. Hier ist eine Tabelle mit einigen gängigen Inhaltsentitätstypen:
+Inhaltsentitäten werden in _Entitätstypen_ gruppiert, die unterschiedliche
+Zwecke haben und auf sehr unterschiedliche Weise auf der Website angezeigt
+werden. Die meisten Entitätstypen werden auch in _Entitäts-Subtypen_ unterteilt,
+die einen Entitätstyp noch genauer unterteilen, um um kleinere Variationen bei
+der Verwendung und Darstellung von Entitäten zu ermöglichen.
+im Folgenden finden Sie eine Tabelle die einige gängige Inhaltsentitätstypen
+enthält:
 
 [width="100%",frame="topbot",options="header",grid="rows"]
 |=============================================
@@ -98,17 +101,21 @@ Entitätstyp |Entitätstyp |Untertyp der Entität |Definierendes Modul |Hauptanw
 
 ==== Was ist ein Feld?
 
-Innerhalb der Entitätselemente werden die Daten in einzelnen _Feldern_ gespeichert, von denen jedes
-enthält eine Art von Daten, wie formatierten oder einfachen Text, Bilder oder andere Dateien,
-oder Daten. Feldtypen können durch die Kern-Software oder durch Module definiert werden.
+Innerhalb von Entitätstypen werden die Daten in einzelnen _Feldern_ gespeichert,
+von denen jedes eine bestimmte Art von Daten, wie formatierten Text oder
+Klartext, Bilder oder andere Dateien oder Daten enthält.
+Feldtypen können durch ddas Kernystem oder durch Module definiert werden.
 
-Felder können von einem Administrator auf Subtypen von Entitäten hinzugefügt werden, so dass alle
-Entitätselemente eines gegebenen Entitäts-Untertyps haben die gleiche Sammlung von Feldern
-verfügbar. Zum Beispiel der Inhaltstyp Anbieter im Beispiel des Bauernmarktes
-könnte Felder für den Anbieternamen, ein Logo-Bild, eine Website-URL und
-Beschreibung, während der Inhaltstyp _Basisseite_ möglicherweise nur Felder für
-den Titel und den Seitentext. Wenn Sie Entitätselemente anlegen oder bearbeiten, sind Sie
-die die Werte für die Felder auf dem Entitätselement angeben.
+Felder können von einem Administrator in Subtypen von Entitäten hinzugefügt
+werden, so dass alle Entitäts-Subtypen einer bestimmten Entität  die
+gleiche Sammlung von Feldern enthalten.
+Der Inhaltstyp Lieferant könnte  am Beispiel des Wochenmarktes
+Felder für den Namen eines Lieferanten, eine Bilddatei mit einem Lieferantenlogo,
+die URL einer Website und eine Beschreibung enthalten. Der Inhaltstyp
+_Einfache Seite_  enthält hingegen möglicherweise nur Felder für
+den Titel der Seite und ein Feld für den Textkörper der Seite. Wenn Sie
+Entitätstypen anlegen oder bearbeiten, sind Sie die Person, die
+die Werte für die Felder auf dem Entitätstypen angibt.
 
 ==== Verwandte Themen
 
