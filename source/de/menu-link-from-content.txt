@@ -9,25 +9,25 @@ Eine Seite zur Navigation hinzufügen.
 (((Content,adding to menu while editing)))
 (((Navigation,linking menu to page)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
 Fügen Sie der Navigation eine Seite hinzu. Zum Beispiel die Seite Info.
 
-==== Vorraussetzung Kenntnisse
+==== Erforderliche Vorkenntnisse
 
 * <<menu-concept>>
 * <<content-edit>>
 
-==== Standort-Voraussetzungen
+==== Anforderungen an die Website
 
-Das Inhaltselement Über die Seite muss vorhanden sein. Siehe <<<Inhalt erstellen>>.
+Der Inhalt der die Seite darstellt muss vorhanden sein. Siehe <<<content-create>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Inhalt_ (_Admin/Inhalt_).
+. Navigieren Sie im Mneü _Verwalten_ zum Menüpunkt _Inhalt_ (_admin/content_).
 
-. Suchen Sie die Seite Info, und klicken Sie in dieser Zeile auf _Bearbeiten_ (_Bearbeiten_). Das Formular zur Bearbeitung des Inhalts
-erscheint.
+. Suchen Sie die Seite Info, und klicken Sie in der entsprechenden Zeile auf _Bearbeiten_.
+Das Formular zur Bearbeitung des Inhalts erscheint.
 +
 --
 // Content table from admin/content page, with a red border around the Edit
@@ -35,9 +35,9 @@ erscheint.
 image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
 --
 
-. Klicken Sie rechts auf _Menü Einstellungen_, um es zu erweitern.
+. Klicken Sie rechts auf _Menüeinstellungen_, um das Tab zu erweitern.
 
-. Aktivieren Sie das Kontrollkästchen _Bereitstellen eines Menülinks_, damit die Menüoptionen angezeigt werden.
+. Aktivieren Sie das Kontrollkästchen _Menüpunkt erstellen_, damit die Menüoptionen angezeigt werden.
 
 . Geben Sie Werte aus der nachstehenden Tabelle ein:
 +
@@ -60,16 +60,16 @@ image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
 image:images/menu-link-from-content.png["Creating a menu link from within the content edit form"]
 --
 
-. Klicken Sie auf _Speichern_, um die Änderungen zu speichern. Klicken Sie auf _Home_ oder _Return_.
-auf site_ in der Navigationsleiste, um das Ergebnis zu sehen, das so aussehen könnte
-Bild unten.
+. Klicken Sie auf _Speichern_, um die Änderungen zu speichern. Klicken Sie in der Navigationsleiste auf _Startseite_ oder _Zurück_.
+zur Website_, um das Ergebnis zu sehen, das so aussehen könnte
+wie im Bild unten.
 +
 --
 // Home page after adding About to the navigation.
 image:images/menu-link-from-content-result.png["Link has been added to the main menu",width="100%"]
 --
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertieften Sie Ihr Wissen
 
 <<menu-reorder>>
 
@@ -86,7 +86,7 @@ https://www.drupal.org/docs/8/core/modules/menu-ui[_Drupal.org_ Community-Dokume
 *Mitwirkende*
 
 Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborg] aus
-https://www.drupal.org/docs/8/core/modules/menu-ui["Arbeiten mit Menüs"],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft];
+https://www.drupal.org/docs/8/core/modules/menu-ui["Arbeiten mit Menüs" (englisch)],
+copyright 2000 - copyright_upper_year liegt bei  den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community];
 herausgegeben von https://www.drupal.org/u/jerseycheese[Jack Haas].

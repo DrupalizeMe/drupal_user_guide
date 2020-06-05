@@ -23,10 +23,12 @@
 Menüs sind eine Sammlung von Links (Menüpunkten), die zum Navigieren auf einer Website verwendet werden. Die
 Kernmodul der Menü-Benutzeroberfläche bietet eine Schnittstelle zur Steuerung und Anpassung des Menüs
 System. Menüs werden in erster Linie als hierarchische Linkliste angezeigt. Über
-Standardmäßig werden neue Menüpunkte innerhalb eines integrierten Menüs mit der Bezeichnung _Main
-navigation_, aber Administratoren können auch benutzerdefinierte Menüs erstellen.
+Standardmäßig werden neue Menüpunkte innerhalb eines integrierten Menüs mit der
+Bezeichnung _Hautnavigation_, aber Administratoren können auch benutzerdefinierte
+Menüs erstellen.
 
-Das Kerninstallationsprofil Standard enthält fünf Menüs:
+Das Kerninstallationsprofil Standard, das mit dem Kernsystem ausgeliefert wird,
+enthält fünf Menüs:
 
 Hauptnavigation::
   Links zu Abschnitten, die für Besucher der Website bestimmt sind. Sie werden normalerweise von Site
@@ -36,7 +38,7 @@ Verwaltung::
   Links zu administrativen Aufgaben. Dieses Menü enthält hauptsächlich Links, die von
   Module auf Ihrer Website.
 
-Menü Benutzerkonto::
+Menü Benutzermenü::
   Links zu den mit dem Benutzerkonto verbundenen Aufgaben wie _Mein Konto_ und _Protokoll
   aus_.
 
@@ -60,8 +62,8 @@ Ort.
 
 * Umbenennen von Menüpunkten.
 
-* Ändern des Linktitels (die Quickinfo, die angezeigt wird, wenn Sie mit der Maus über ein Menü fahren)
-Artikel).
+* Ändern des Linktitels und des  Tooltips (der angezeigt wird, wenn Sie mit der
+Maus über einen Menüpunkt fahren).
 
 * Verschieben eines Menüeintrags in ein anderes Menü durch Bearbeiten seiner _Parent_-Eigenschaft.
 
@@ -77,12 +79,12 @@ sind nicht eingeloggt.
 
 * Um ein Menü anzuzeigen, müssen Sie den Block platzieren, der dem
 Menü in einer Region Ihres Themas; siehe <<block-concept>>, <<block-regions>>, und
-<<block-place>>. Der Kern Standardinstallationsprofil platziert alle Menüs
-es definiert außer Verwaltung in Regionen des Kernthemas Bartik. Das Kernthema
-Symbolleistenmodul, das durch das Kerninstallationsprofil Standard installiert wird,
-zeigt das Administrationsmenü an; es wird auch vom beigetragenen Admin angezeigt
-Symbolleisten-Modul.
-
+<<block-place>>. Standardinstallationsprofil des Kernsystems platziert alle
+definierten Menüs, außer dem Menü Verwaltung, in den Abschnitten des Themes Bartik.
+Das Theme des Kernsystems zeigt das Menü Verwalten über das Menü Toolbar an,
+das mit dem Kernsystem ausgeliefert und über das Installationsprofil Standard
+installiert wird. Das Menü Verwalten wird auch  vom von der Community
+bereitgestellten Zusatzmodul Admin Toolbar angezeigt.
 
 //==== Zusätzliche Ressourcen
 
