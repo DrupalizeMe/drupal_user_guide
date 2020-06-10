@@ -8,18 +8,18 @@ Verstehen der in diesem Handbuch verwendeten Konventionen.
 
 Dieser Leitfaden geht von den folgenden Annahmen und Voraussetzungen aus:
 
-* Dieser Leitfaden ist nach Themen gegliedert; siehe <<Vorwortorganisation>> für Details.
+* Dieser Leitfaden ist nach Themen gegliedert; siehe <<preface-organization>> für Details.
 Viele Themen enthalten einen Abschnitt _Voraussetzungen_, in dem andere
 Themen, deren inhaltliche Kenntnisse erforderlich sind, um das Thema zu verstehen, das Sie
 lesen. Etwas Hintergrundwissen, das im Leitfaden nicht behandelt wird, ist
-ebenfalls angenommen; siehe <<Vorwort-Publikum>> für Details.
+ebenfalls angenommen; siehe <<preface-audience>> für Details.
 
 * Viele Aufgabenthemen listen _Voraussetzungen_ auf, d.h. Aufgaben, die Sie benötigen
 auf Ihrer Website abgeschlossen haben, bevor Sie die Aufgabe in der
 Thema, das Sie gerade lesen.
 
 * Die Besonderheiten der Standortvoraussetzungen beziehen sich auf das Szenario, das im gesamten
-dieser Leitfaden für den Bau eines Geländes für einen Bauernmarkt (siehe <<Vorwort-Szenario>>
+dieser Leitfaden für den Bau eines Geländes für einen Bauernmarkt (siehe <<preface-scenario>>
 für Einzelheiten). Sie können die Aufgaben an Ihr eigenes Szenario anpassen, aber Sie werden auch
 müssen sich an die Änderungen erinnern, die Sie vorgenommen haben, wenn Sie entscheiden, ob Ihre Website die
 Standortvoraussetzungen für eine Aufgabe.
@@ -36,7 +36,7 @@ und die für jedes Thema geltenden Website-Voraussetzungen, während Sie es lese
 
 * Dieser Leitfaden zeigt, wie Sie Aufgaben mit dem administrativen Benutzer
 Schnittstelle und, wo immer möglich, auch unter Verwendung der neuesten stabilen Version der
-Drush-Kommandozeilen-Tool (siehe <<Installations-Tools>>). Sie können gerne ein
+Drush-Kommandozeilen-Tool (siehe <<install-tools>>). Sie können gerne ein
 anderes Kommandozeilen-Tool, wie z.B. Drupal Console (wenn Sie nachschlagen gleichwertige
 Befehle), oder vorerst nur die administrative Schnittstelle zu verwenden.
 
@@ -109,11 +109,11 @@ _http://example.com/admin/config/system/site-information_.
 image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
 
 Ein weiterer Hinweis: Wenn Sie den administrativen Standardkern Sieben Thema verwenden,
-viele "Hinzufügen"-Schaltflächen in der Verwaltungsschnittstelle werden mit +-Zeichen angezeigt
+viele "Hinzufügen"-Schaltflächen in der Verwaltungsschnittstelle werden mit \+-Zeichen angezeigt
 sie. Zum Beispiel erscheint bei Admin/Inhalt die Schaltfläche Neuen Inhalt hinzufügen als
 _+ Neuen Inhalt hinzufügen_. Dies ist jedoch themenabhängig und gehört nicht wirklich zu
 den Text auf der Schaltfläche (z.B. würde er nicht unbedingt von einem
-Screenreader), so dass in diesem Leitfaden die Konvention lautet, das +-Zeichen nicht zu erwähnen
+Screenreader), so dass in diesem Leitfaden die Konvention lautet, das \+-Zeichen nicht zu erwähnen
 auf den Schaltflächen.
 
 ==== Ausfüllen von Formularen
@@ -135,7 +135,7 @@ Um diese Tabelle zu verwenden, suchen Sie das Feld mit der Bezeichnung _Standort
 unter _Website-Details_ im Formular, und geben Sie den Namen Ihrer Website in diesem
 Feld. Ein Beispiel für den Standortnamen "Anytown Farmers Market" wird im Feld
 Tabelle, die sich auf das Szenario der Erstellung einer Website für einen Bauernmarkt bezieht
-die Sie in diesem Leitfaden finden (siehe <<Vorwort-Szenario>> für
+die Sie in diesem Leitfaden finden (siehe <<preface-scenario>> für
 Einzelheiten). Beachten Sie auch, dass Sie auf einigen Formularen möglicherweise auf den Titel eines Abschnitts klicken müssen.
 (wie _Standortdetails_ in diesem Beispiel), um den Abschnitt zu erweitern und das Feld
 es enthält.
