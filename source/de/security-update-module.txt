@@ -22,16 +22,16 @@ Aktualisieren Sie ein beigetragenes Modul und führen Sie das Skript _Datenbanka
 ==== Standort-Voraussetzungen
 
 * Ein beigetragenes Modul wurde installiert, und es ist ein Update verfügbar für
-es. Siehe <<<Erweitern-Modul-installieren>> und <<<Sicherheit-ankündigen>>.
+es. Siehe <<<extend-module-install>> und <<<security-announce>>.
 
 * Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklung testen
 Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
-<<installieren-entwickeln>>.
+<<install-dev-making>>.
 
-* Sie haben eine Vollstandortsicherung erstellt. Siehe <<<verhinderte Backups>>.
+* Sie haben eine Vollstandortsicherung erstellt. Siehe <<<prevent-backups>>.
 
 * Wenn Sie die Benutzeroberfläche verwenden wollen, muss das Kernmodul Update Manager
-installiert. Siehe <<Config-install>> für Anweisungen zur Installation des Kerns
+installiert. Siehe <<config-install>> für Anweisungen zur Installation des Kerns
 Module.
 
 ==== Arbeitsschritte
@@ -55,7 +55,7 @@ Sie können die administrative Schnittstelle verwenden, um ein beigetragenes Mod
 ein benutzerdefiniertes Modul anstelle eines beigetragenen Moduls aktualisieren, wenn Sie eine
 Meldung _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihre
 server_, oder wenn die folgenden Schritte nicht funktionieren, um die neuen Moduldateien zu erhalten,
-Folgen Sie den Schritten unter <<erweitern-manuelle Installation>>. Sie können dann hier fortfahren mit
+Folgen Sie den Schritten unter <<extend-manual-install>>. Sie können dann hier fortfahren mit
 Schritt 6 in den Anweisungen für die administrative Schnittstelle unten.
 
 Wenn Sie den Composer zur Verwaltung der Dateien in Ihrer Site verwenden, folgen Sie den Schritten
@@ -64,7 +64,7 @@ die untenstehenden Anweisungen für die administrative Schnittstelle.
 
 ==== Using the administRative Schnittstelle
 
-. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>.
+. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<extend-maintenance>>.
 
 . Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Berichte_ >
 _Verfügbare Aktualisierungen_ > _Aktualisierung_ (_Admin/Berichte/Aktualisierungen/Aktualisierung_).
@@ -89,13 +89,13 @@ ausgeführt.
 . Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihres
 Standort.
 
-. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<Erweiterte Wartung>>.
+. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<extend-maintenance>>.
 
 . Löschen Sie den Cache (siehe <<<prevent-cache-clear>>).
 
 ==== Erweitern Sie Ihr Verständnis
 
-* Überprüfen Sie das Website-Protokoll (siehe <<<Prevent-Log>>), sobald die Aktualisierungen abgeschlossen sind.
+* Überprüfen Sie das Website-Protokoll (siehe <<<prevent-log>>), sobald die Aktualisierungen abgeschlossen sind.
 um auf Fehler zu prüfen.
 
 * <<security-update-theme>>

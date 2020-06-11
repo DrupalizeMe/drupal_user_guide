@@ -23,7 +23,7 @@ außerhalb der Website.
 
 ==== Arbeitsschritte
 
-. Überprüfen Sie den _Statusbericht_ (siehe <<<Präventionsstatus>>), um zu sehen, wann cron
+. Überprüfen Sie den _Statusbericht_ (siehe <<<prevent-status>>), um zu sehen, wann cron
 Wartungsaufgaben wurden zuletzt ausgeführt.
 +
 Wenn Sie die Website mit dem Kerninstallationsprofil Standard installiert haben (oder
@@ -65,7 +65,7 @@ image:images/security-cron.png["Konfigurieren Sie den Kern des automatisierten C
 
 . Wenn Sie Cron-Wartungsaufgaben von außerhalb der Website ausführen wollen, deinstallieren Sie
 das Kernmodul Automated Cron (siehe <<config-uninstall>>). Als nächstes finden Sie das
-cron-URL. Diese URL wird im _Statusbericht_ angezeigt (siehe <<<Prevent-status>>), und
+cron-URL. Diese URL wird im _Statusbericht_ angezeigt (siehe <<<prevent-status>>), und
 auf der Verwaltungsseite _Cron_ (siehe vorheriger Schritt). Die URL sieht aus
 wie dieses:
 {\an8}COPY6

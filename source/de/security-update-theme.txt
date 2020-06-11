@@ -40,7 +40,7 @@ Sie können die administrative Schnittstelle verwenden, um ein beigetragenes The
 ein benutzerdefiniertes Thema statt eines beigetragenen Themas aktualisieren, wenn Sie eine
 Meldung _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihre
 Server_, oder wenn die folgenden Schritte nicht funktionieren, um die neuen Themen-Dateien zu erhalten, folgen Sie
-die Schritte in <<erweitern-manuell-installieren>>, und fahren Sie dann mit Schritt 6 in der
+die Schritte in <<extend-manual-install>>, und fahren Sie dann mit Schritt 6 in der
 Anweisungen für die administrative Schnittstelle weiter unten.
 
 Wenn Sie den Composer zur Verwaltung der Dateien auf Ihrer Website verwenden, befolgen Sie die folgenden Schritte
@@ -49,7 +49,7 @@ die untenstehenden Anweisungen für die administrative Schnittstelle.
 
 ======= Verwendung der administrativen Schnittstelle
 
-. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<Erweiterte Wartung>>.
+. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<extend-maintenance>>.
 
 . Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Berichte_ >
 _Verfügbare Aktualisierungen_ > _Aktualisierung_ (_Admin/Berichte/Aktualisierungen/Aktualisierung_).
@@ -74,9 +74,9 @@ ausgeführt.
 . Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihres
 Standort.
 
-. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<Erweiterte Wartung>>.
+. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<extend-maintenance>>.
 
-. Löschen Sie den Drupal-Cache (siehe <<<Prävent-cache-clear>>).
+. Löschen Sie den Drupal-Cache (siehe <<<prevent-cache-clear>>).
 
 
 ==== Erweitern Sie Ihr Verständnis
@@ -84,7 +84,7 @@ Standort.
 * Überprüfen Sie das Website-Protokoll, siehe <<<prevent-log>>, sobald die Aktualisierungen abgeschlossen sind, um
 auf Fehler prüfen.
 
-<<<Sicherheits-Update-Modul>>
+* <<<security-update-module>>
 
 // ==== Verwandte Konzepte
 

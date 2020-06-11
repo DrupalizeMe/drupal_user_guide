@@ -8,7 +8,7 @@ Datei- und Konfigurationsrevisionen mit der Versionskontrollsoftware Git verwalt
 (((Tool,Git)))
 (((Git tool,using)))
 
-=== Zielsetzung
+==== Zielsetzung
 
 Verwenden Sie das Git-Revisionskontrollwerkzeug, um Revisionen an den Dateien und
 der Konfiguration Ihrer Website zu verwalten.
@@ -53,7 +53,7 @@ Siehe: https://git-scm.com/[Git] für weitere Informationen.
 
 ==== Arbeitsschritte
 
-==== Die Repository installieren
+===== Die Repository installieren
 
 Führen Sie diese Schritte einmal durch, nachdem Sie ein Git-Repository
 erstellt haben, um lokale Verzeichnisse zum Repository und die darin enthaltenen
@@ -122,7 +122,7 @@ git push -u origin master
 können Sie nun die Seite Ihrer Repository aufrufen und überprüfen
 ob Ihre Dateien dort vorhanden sin, nachdem der Vorgang abgeschlossen wurde.
 
-======= Aktualisieren von Dateien innerhalb der Repository
+===== Aktualisieren von Dateien innerhalb der Repository
 
 Führen Sie folgende Schritte aus, wenn Sie eine oder mehrere Dateien innerhalb
 Ihrer Website aktualisiert, hinzugefügt oder gelöscht haben  um die Änderungen
@@ -187,7 +187,7 @@ git pull
 ----
 
 
-======= Erstellen einer Kopie der Dateien in Ihrer Repository
+===== Erstellen einer Kopie der Dateien in Ihrer Repository
 
 Befolgen Sie diese Schritte, wenn Sie alle Dateien innerhalb ihrer Repository
 auf eine neue Umgebung übertragen wollen. Beispielsweise könnten Sie sowohl eine
@@ -206,7 +206,7 @@ in das sie die Repository klonen möchten, als _Dateiname_:
 git-clone https://gitlab.com/example-name/example-repo.git Verzeichnisname
 ----
 
-======= Verwaltung der Konfiguration im Repository
+===== Verwaltung der Konfiguration im Repository
 
 . Folgen Sie den Anweisungen in <<extend-config-versions>>, um ein vollständiges
 Archiv der Konfiguration Ihrer Website zu erstellen.

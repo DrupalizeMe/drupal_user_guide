@@ -18,15 +18,15 @@ mit Drush.
 
 ==== Standort-Voraussetzungen
 
-* Wenn Sie Drush verwenden möchten, muss Drush installiert sein. Siehe <<<installieren-werkzeuge>>.
+* Wenn Sie Drush verwenden möchten, muss Drush installiert sein. Siehe <<<install-tools>>.
 
 * Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklung testen
 Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
-<<installieren-entwickeln>>.
+<<install-dev-making>>.
 
 ==== Arbeitsschritte
 
-. Machen Sie ein vollständiges Backup Ihrer Website. Siehe <<<verhinderte Sicherungen>>.
+. Machen Sie ein vollständiges Backup Ihrer Website. Siehe <<<prevent-backups>>.
 
 . Öffnen Sie _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Text
 Herausgeber. Suchen Sie die Zeile mit der Variablen _$settings['update_free_access']_. Durch
@@ -40,7 +40,7 @@ $settings['update_free_access'] = TRUE;
 . Deaktivieren Sie alle Caching-Techniken (Memcache, Firnis usw.) Ihrer Anwendung
 verwenden könnte.
 
-. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<<erweiterte Wartung>>.
+. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<<extend-maintenance>>.
 
 . Wenn Sie den Composer zur Verwaltung von Abhängigkeiten verwenden, überspringen Sie die nächsten sechs Schritte, und
 stattdessen siehe <<install-composer>> für Anweisungen zum Herunterladen aktualisiert
@@ -48,7 +48,7 @@ Dateien. Fahren Sie mit dem Schritt _update.php_ fort.
 
 . Laden Sie das tar.gz- oder Zip-Dateiarchiv für die neueste Version von Drupal herunter.
 8.x-Kern von https://www.drupal.org/project/drupal[_Drupal.org_ Drupal-Kern
-Downloads]. Unter <<installieren-vorbereiten>> finden Sie weitere Einzelheiten dazu, wie Sie die neuesten
+Downloads]. Unter <<install-prepare>> finden Sie weitere Einzelheiten dazu, wie Sie die neuesten
 Version.
 
 . Laden Sie die Archivdatei auf Ihren Webhosting-Server hoch.
@@ -93,9 +93,9 @@ $settings['update_free_access'] = FALSCH;
 . Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihrer
 Standort.
 
-. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<Erweiterte Wartung>>.
+. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<extend-maintenance>>.
 
-. Löschen Sie den Cache. Siehe <<<Cache-Löschen verhindern>>.
+. Löschen Sie den Cache. Siehe <<<prevent-cache-clear>>.
 
 . Aktivieren Sie alle Caching-Techniken wieder, die Sie in Schritt 3 deaktiviert haben.
 
