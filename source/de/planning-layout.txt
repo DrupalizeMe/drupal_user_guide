@@ -1,5 +1,5 @@
 [[planning-layout]]
-=== Planung des Layouts ihrer Website
+=== Des Layouts Ihrer Website planen
 
 [role="summary"]
 Die Navigation und das Layout einer Website ( für Mobil- und Desktopversionen) planen.
@@ -10,8 +10,8 @@ Die Navigation und das Layout einer Website ( für Mobil- und Desktopversionen) 
 
 ==== Zielsetzungsetzung
 
-Planung der Navigation und des Layouts der Website, sowohl für mobile Geräte als auch für den Desktop
-Browsern.
+Planung der Navigation und des Layouts der Website, sowohl für mobile Geräte
+als auch für Desktop-Browser.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -21,73 +21,83 @@ Browsern.
 
 // ==== Anforderungen an die Website
 
-==== Steps
+==== Arbeitsschritte
 
-It is a good idea to plan the site layout before you start building
-the site and writing content; however, your plan may need to be revised either
-before you start implementing it or after you have some of the site built with
-draft content in place, based on budgetary concerns or stakeholder feedback.
+Es ist eine gute Idee, das Layout der Website zu planen, bevor Sie mit dem
+Erstellen der Website und der darauf vorhandenen Texte beginnen. Ihr Konzept
+muss jedoch möglicherweise überarbeitet werden. Entweder bevor Sie mit der
+Implementierung beginnen oder nachdem Sie einen Teil der Website mit Entwürfen
+der vorgesehenen Inhalte, die vom Budget und den Vorstellungen des Herausgebers
+der Website abhängen, versehen haben.
 
-. Make a list of the information that your site should present to visitors. In
-the farmers market scenario, this might include:
+
+. Machen Sie eine Liste der Inhalte, die Ihre Website den Seitenbesuchern präsentieren soll. Auf
+das Szenario des Wochenmarktes bezogen, das wir hier anwendden, könnte diese Liste wie folgt aussehen:
 +
-  * Location of the market, with directions and a map
-  * Hours and days the market is open
-  * History of the market
-  * List of vendors
-  * Details about each vendor
-  * Searchable list of recipes
-  * Details about each recipe
-  * List of the most recently added recipes
+* Standort des Wochenmarktes, mit Wegbeschreibung und Karte
+* Öffnungszeiten des Wochenmarktes
+* Geschichte des Marktes
+* Liste der Lieferanten
+* Detailinformationen zu jedem Lieferanten
+* Durchsuchbare Liste von Rezepten
+* Einzelheiten zu jedem Rezept
+* Liste der zuletzt hinzugefügten Rezepte
 
-. Decide which information should be on which pages or types of pages on the
-site:
+. Entscheiden Sie, welche Informationen auf welchen Seiten oder welche
+Seitentypen auf der Website vorhanden sein sollen:
 +
 Informationen, die auf allen Seiten stehen sollten::
   Adresse, Öffnungszeiten und Liste der kürzlich hinzugefügten Rezepte
-Anbieter-Detailseiten::
+Lieferanten-Detailseiten::
   Informationen zu jedem Lieferanten auf einer eigenen Seite
 Rezept-Detailseiten::
   Details zu jedem Rezept auf einer eigenen Seite
 Startseite::
   Standort, Karte, Wegbeschreibung und Öffnungszeiten
-Über Seite::
+„Über uns“ Seite::
   Geschichte des Marktes
 Seite der Lieferantenliste::
   Liste der Lieferanten, mit Links zu Lieferanten-Detailseiten
 Seite Rezeptliste::
   Durchsuchbare Rezeptliste, mit Links zu Rezept-Detailseiten
 
-. Entscheiden Sie, welche Informationen auf jeder Seite am wichtigsten sind. Besucher der Website
-Bei der Verwendung von Mobiltelefonen oder anderen kleinen Browsern werden oft nur die Inhalte angezeigt, die
-wird zuerst präsentiert, und sie können nicht nach unten scrollen, um alle Informationen zu sehen.
+. Entscheiden Sie, welche Informationen auf jeder Seite für die Besucher der
+Website am wichtigsten sind. Bei der Verwendung von Mobiltelefonen oder anderen
+kleinen Geräten werden oft nur die Inhalte angezeigt, die zuerst präsentiert
+werden. Manchmal kann der Besucher auch nicht nach unten scrollen,
+um alle Inhalte zu sehen.
 
-. Entscheiden Sie, welche dieser Seiten in der Hauptnavigation der Website erscheinen soll. Für
-Die Hauptnavigation könnte z.B. aus den Bereichen Home, Über, Anbieter und
-Rezepte-Seiten.
+. Entscheiden Sie, welche dieser Seiten in der Hauptnavigation der Website
+erscheinen sollen. Die Hauptnavigation könnte z. B. aus den Menüpunkten
+Startseite, Über uns, Lieferanten und Rezepte bestehen.
 
-. Machen Sie für jede Seite eine grobe Entwurfsskizze, die zeigt, wie sie aussehen würde, wenn
-sowohl auf einem kleinen Bildschirm, wie z.B. einem Telefon, als auch auf einem größeren Bildschirm, wie z.B.
-einen Desktop-Browser. Angesichts der Tatsache, dass die meisten Besucher der Website kleinere
-Browsern, ist es eine gute Idee, mit dem Layout in Telefongröße zu beginnen, um sicherzustellen, dass
-dass diese Besucher in der Lage sein werden, die benötigten Informationen zu finden, ohne
-viel Scrolling.
+. Machen Sie für jede Seite eine grobe Entwurfsskizze, die zeigt, wie die Seite
+aussehen würde, wenn Sie sowohl auf einem kleinen Bildschirm, wie z. B. einem
+Mobiltelefon, als auch auf einem größeren Bildschirm, wie z. B.
+einen Desktop-Browser angezeigt werden würde. Angesichts der Tatsache, dass die
+meisten Besucher der Website kleinere Geräte, wie Mobiltelefone oder Tablets
+verwenden werden, ist es eine gute Idee, mit dem Layout in der Grße eines
+Mobiltelefons zu beginnen, um sicherzustellen, dass diese Besucher in der Lage
+sein werden, die benötigten Informationen zu finden, ohne
+viel durch die Website scrollen zu müssen.
 +
-Bei der Erstellung dieser Seitenlayoutpläne müssen Sie möglicherweise feststellen, dass Sie Ihre
-planen, welche Informationen auf welchen Seiten stehen sollen. Zum Beispiel könnten Sie
-entscheiden, dass die Adresse, die Stunden und die Liste der kürzlich hinzugefügten Rezepte passen würden
-gut im rechten Seitenleistenbereich aller Seiten, wenn die Website auf
-Browser in Desktop-Größe. Auf der anderen Seite könnten Sie entscheiden, dass für mobile
-Browsern, würden Sie stattdessen die Adresse und die Stunden in einem kurzen Format auf der
-oben auf jeder Seite, sondern zeigen nur die Liste der letzten Rezepte am Ende der
-Startseite.
+Bei der Erstellung dieser Seitenlayoutkonzepte müssen Sie möglicherweise
+feststellen, dass Sie Ihre Ideen davon, welche Informationen auf welcher Seite
+zu sehen sien sollen nochmals überdenken müssen. Zum Beispiel könnten Sie
+entscheiden, dass die Adresse des Wochenmarktes, die Öffnungszeiten und die
+Liste der kürzlich hinzugefügten Rezepte git in die rechte Seitenleiste der
+Website passen würden, um diese Informationen auf allen Seiten gelichermaßen
+anzeigen zu können, wenn die Website mittels eines Desktop-Browsers aufgerufen
+wird. Andererseites könnten Sie festlegen, dass diese angaben auf mobilen
+Gerätenstattdessen in einer Kurzform am oberen Rand der Website dargestellt
+werden sollen und die Liste der Rezepte weiter unten auf der Startseite
+angezeigt werden soll.
 
-
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihr Wissen
 
 <<planning-structure>>
 
-// ==== Related concepts
+// ==== Verwandte Konzepte
 
 ==== Videos
 
