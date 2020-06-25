@@ -2,8 +2,7 @@
 === Konzept: Modularer Inhalt
 
 [role="summary"]
-Überblick über den modularen Inhalt und wie der Inhalt einer Seite aus anderen Quellen bezogen werden kann
-Inhaltselemente.
+Überblick über den modulare Inhalte und wie der Inhalte einer Website aus anderen Quellen bezogen werden kann.
 
 (((Content,modular)))
 (((Modular content,overview)))
@@ -12,43 +11,44 @@ Inhaltselemente.
 (((View,and modular content)))
 (((Views module,overview)))
 
-==== Vorrausgesetztes Wissen
+==== Erforderliche Vorkenntnisse
 
 * <<planning-data-types>>
 * <<planning-layout>>
 
-==== Was ist modularer Inhalt?
+==== Was sind modulare Inhalte?
 
-Da der Inhalt Ihrer Website in einer Datenbank gespeichert ist, ist es wünschenswert
-Machen Sie den Inhalt _modular_, d.h. bestimmte Seiten auf Ihrer Website, anstatt
-die als ganze Seite bearbeitet werden, werden stattdessen automatisch aus anderen
-Inhaltselemente. Im Szenario Markt-Website für Landwirte könnten Sie zum Beispiel
-einzelne Inhaltselemente für Rezepte anlegen. Wenn die Rezeptinhaltspositionen eine
-Feld, das die Inhaltsstoffe nachverfolgt, dann könnte Ihre Website eine zusammengesetzte
-Seite, die Rezepte auflisten und Besuchern die Suche nach einem Rezept ermöglichen würde, das
-eine bestimmte Zutat enthielten, die sie auf dem Markt gekauft hatten.
+Da die Inhalte Ihrer Website in einer Datenbank gespeichert sind, ist es wünschenswert
+Inhalte _modular_ anzulegen, d.h. bestimmte Seiten auf Ihrer Website zu erstellen, anstatt
+die Website als Ganzes bearbeiten zu müssen. Stattdessen werden die Seiten der Website
+aus anderen Inhaltselementen zusammengesetzt. Im Szenario der Wochenmarktwebsite
+könnten Sie zum Beispiel einzelne Inhaltselemente für Rezepte anlegen.
+Wenn die einzelnen Zutaten eines Rezeptes in einem Feld abgespeichert werden,
+kann die Zutatenliste eines einzelnen Rezeptes aus diesen Zutaten zusammengesetzt werden.
+Ihre Website kann auch eine Seite enthalten, auf der man Rezepte mittels der Zutaten suchen
+kann, die man auf dem Wochenmarkt gekauft hat.
 
-Kleinere Seitenabschnitte können auch als Composite generiert werden. Zum Beispiel,
-Inhaltselemente von Rezepten könnten ein Feld haben, das den Überblick darüber behält, welcher Lieferant
-das Rezept eingereicht hat (siehe <<structure-reference-fields>>), mit dem Verkäufer
-Details, die in separaten Lieferanteninhaltselementen bearbeitet werden. Dies würde es Ihnen ermöglichen, die
-folgen auf Ihrer Website:
+Kleinere Seitenabschnitte können ebenfalls aus verschiedenen Inhaltselementen zusammengesetzt werden.
+Zum Beispiel, Rezepte können Beispielsweise ein Feld enthalten, das Auskunft darüber gibt, welcher
+Lieferant das Rezept eingereicht hat (siehe: <<structure-reference-fields>>). So können die Details zum jeweiligen Lieferanten in separaten
+Inhaltselementen bearbeitet werden. So ist es Ihnen möglich, folgendes auf Ihrer Website umzusetzen:
 
-* Auf jeder Rezeptseite könnte es einen Bereich geben, der einige Informationen anzeigt
-über den Verkäufer, der das Rezept eingereicht hat, wie z.B. dessen Name und Marktstand
-Nummer.
+* Auf jedem Rezept kann es einen Abschnitt geben, der einige Informationen
+über den Lieferanten anzeigt, der das Rezept eingereicht hat, wie z.B. dessen
+Name und die Nummer seines Marktstandes.
 
-* Jede Lieferantenseite könnte einen Abschnitt haben, der die Rezepte auflistet, über die sie verfügt
-eingereicht.
+* Jede Lieferantenseite kann einen Abschnitt enthalten, in dem die Rezepte aufgelistete werden, die der Lieferant eingereicht hat.
 
-Der Kerngedanke ist, dass jede Information nur an einer Stelle bearbeitet wird.
-Wenn Lieferanteninformationen aktualisiert werden, werden alle Rezeptseiten, die diesen Lieferanten anzeigen
-Informationen werden automatisch aktualisiert, wenn ein Rezept von einem Lieferanten eingereicht wird,
-wird sie automatisch auf der Verkäuferseite angezeigt. Das Kernmodul Views ist das
-übliche Art und Weise, modularen Inhalt zu verwenden, um zusammengesetzte Seiten und Seitenabschnitte zu erstellen;
-siehe <<<views-concept>> für weitere Informationen. Außerdem sind _Ansichtsmodi_ nützlich für
-Definition verschiedener Arten, jedes Inhaltselement anzuzeigen; siehe
-<<structure-view-modes>> für weitere Informationen.
+Der Gedanke dahinter ist, dass jede Information nur an einer Stelle auf der Website bearbeitet wird.
+Wenn Lieferanteninformationen aktualisiert werden, werden diese Informationen auf allen Rezepten
+des jeweiligen Lieferanten angezeigt und aktualisiert, nachdem Sie an einer Stelle auf der Website
+aktualisiert wurden. Wird ein neues Rezept von einem Lieferanten eingereicht, werden die Informationen
+zum Lieferanten automatisch auf dem neu eingestellten Rezept angezeigt, ohne dass diese auf der Rezeptseite
+selbst manuell eingetragen werden müssen. Das Modul View, das mit dem Kernsystem ausgeliefert wird, ist das Modul, das
+üblicherweise verwendet wird, um modulare Inhalte zu Seitenabschnitten oder vollständigen Webseiten zusammenzusetzen.
+Siehe <<views-concept>> für weitere Informationen. Außerdem sind _Ansichtsmodi_ nützlich um unterschiedliche 
+Anzeigearten für den selben Inhalt zu definieren.
+Siehe: <<structure-view-modes>> für weitere Informationen.
 
 ==== Verwandte Themen
 

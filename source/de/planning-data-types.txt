@@ -55,47 +55,45 @@ enthält:
 
 [width="100%",frame="topbot",options="header",grid="rows"]
 |=============================================
-|Entitätstyp |Untertyp der Entität |Definierendes Modul |Hauptanwendungen
+|Entitätstyp |Subtyp der Entität |Definierendes Modul |Hauptanwendungen
 
-|Inhaltselement |Inhaltstyp |Knotenmodul
-  |Inhalt, der als Hauptseitenbereich für Seiten auf der Website vorgesehen ist
-  | 3+| *Beispiel:* Im Beispiel der Website zum Bauernmarkt könnten Sie Inhalt haben
-  Typen für Basisseiten, Lieferantenseiten und Rezeptseiten.
+|Inhaltselement |Inhaltstyp |Node
+  |Inhalt, der als Hauptbestandteil der Seiten auf der Website vorgesehen ist
+  | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes könnten Sie Inhalte wie
+  Typen für Basisseiten, Lieferantenseiten und Rezeptseiten erstellt haben.
 
-|Kommentar |Kommentartyp |Kommentar-Modul
-    |Kommentar zu Inhaltsentitäten hinzugefügt (typischerweise zu Inhaltselemententitäten)
-    | 3+| *Beispiel:* Auf einer Blog-Site können Blog-Beiträge Kommentare haben. Sie sind nicht
-    am Beispiel des Bauernmarktes benötigt.
+|Kommentar |Kommentartyp |Comment
+    |Fügt Kommentare zu Inhalten hinzu (typischerweise zu Inhalten)
+    | 3+| *Beispiel:* Auf einer Blog-Site können Blog-Beiträge Kommentare haben.
+    Dies wird für das Beispiel der Wochenmarkt-Website nicht benötigt.
 
-|Benutzerprofil |(kein) |Benutzermodul
+|Benutzerprofil |(kein Subtyp) |User
       |Daten zu einer Person mit einem Benutzerkonto (Login-Zugang) auf der Website
       | 3+| *Beispiel:* Jede Website hat mindestens grundlegende Benutzerprofile mit Benutzernamen
       und E-Mail-Adressen; Social-Networking-Sites haben möglicherweise komplexere Benutzer
       Profile mit mehr Informationen.
 
-|Benutzerdefinierter Block |Blocktyp |Benutzerdefiniertes Blockmodul
-        |Text und Bilder in kleineren Abschnitten, die oft in der Kopfzeile der Website angezeigt werden,
-         Fußzeile oder Seitenleiste
-        | 3+| *Beispiel:* Im Beispiel der Website des Bauernmarktes könnten Sie die Stunden
-        und Position in einem Seitenleistenblock.
+|Benutzerdefinierter Block |Blocktyp |Custom Block Library
+        |Text und Bilder in kleineren Abschnitten, die oft im Header, der Fußzeile oder den Seitenleisten der Website angezeigt werden.
+        | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes ist das beispielsweise der Block mit den Angaben zu den Öffnungszeiten und dem Standort des Wochenmarktes.
 
-|Taxonomie-Begriff |Vokabular |Taxonomie-Modul
+|Taxonomie-Begriff |Vokabular |Taxonomy
           |Wird zur Klassifizierung anderer Arten von Inhalten verwendet
-          | 3+| *Beispiel:* Im Beispiel der Website des Bauernmarktes könnten Sie Rezept klassifizieren
-          Inhalt mit einem Ingredients-Taxonomie-Vokabular, mit Taxonomie-Begriffen wie
+          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes könnten Sie Rezept klassifizieren
+          Inhalt mit einem Taxonomievokabular für Zutaten, mit Taxonomie-Begriffen wie
           Karotten und Tomaten. Auf einer Blogging-Website können Blog-Beiträge klassifiziert werden
-          unter Verwendung eines Tags-Vokabulars und vielleicht auch eines Kategorien-Vokabulars.
+          unter Verwendung eines Tag-Vokabulars und vielleicht auch eines Kategorien-Vokabulars.
 
-|Datei |(keine) |Datei-Modul
-          | Eine Bild- oder Anhangsdatei, die von der Website verfolgt und verwaltet wird, oft
+|Datei |(keine) |File
+          | Eine Bild- oder eine Datei mit Anlagen, die von der Website gespeichert und verwaltet wird, oft
            an andere Arten von Inhalten angehängt
-          | 3+| *Beispiel:* Im Beispiel der Website des Bauernmarktes, sowohl Rezept als auch Verkäufer
-          Seiten könnten Bildanhänge haben, die (hinter den Kulissen)
-          die von der Website als Dateientitäten verwaltet werden.
+          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes, sowohl Rezept- als auch Lieferantenseiten
+          könnten Bildanhänge haben, die (hinter den Kulissen)
+          von der Website als Dateientitäten verwaltet werden.
 
-|Kontaktformular |Formulartyp |Kontaktmodul
+|Kontaktformular |Formulartyp |Contact
           |Ein Formular, mit dem Website-Besucher die Eigentümer der Website kontaktieren können
-          | 3+|| *Beispiel:* Ein Kontaktformular wird im Beispiel des Bauernmarktplatzes benötigt.
+          | 3+|| *Beispiel:* Ein Kontaktformular wird im Beispiel des Wochenmarktes benötigt.
 
 |=============================================
 
@@ -104,7 +102,7 @@ enthält:
 Innerhalb von Entitätstypen werden die Daten in einzelnen _Feldern_ gespeichert,
 von denen jedes eine bestimmte Art von Daten, wie formatierten Text oder
 Klartext, Bilder oder andere Dateien oder Daten enthält.
-Feldtypen können durch ddas Kernystem oder durch Module definiert werden.
+Feldtypen können durch das Kernsystem oder durch Module definiert werden.
 
 Felder können von einem Administrator in Subtypen von Entitäten hinzugefügt
 werden, so dass alle Entitäts-Subtypen einer bestimmten Entität  die
@@ -131,5 +129,5 @@ die Werte für die Felder auf dem Entitätstypen angibt.
 
 *Mitwirkende*
 
-Geschrieben und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon][Jennifer Hodgdon]
+Geschrieben und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
 und https://www.drupal.org/u/gdunham[Grant Dunham].

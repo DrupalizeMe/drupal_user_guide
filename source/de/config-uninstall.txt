@@ -10,10 +10,10 @@ Ein Module deinstallieren,  um die Ladezeit der Website zu reduzieren.
 (((Performance,improving)))
 (((Drush tool,using to uninstall module)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
 Deinstallieren Sie die mit dem Kernsystem ausgelieferten Module Search und
-History sowie die das Modul Activity Tracker, wenn Sie es im Kapitel
+History sowie das Modul Activity Tracker, wenn Sie es im Kapitel
 <<config-install>> installiert haben, um die Ladezeit, Ihrer Website,
 zu reduzieren.
 
@@ -23,7 +23,7 @@ zu reduzieren.
 
 ==== Anforderungen an die Website
 
-* Sie müssen mindestens ein unbenutztes Modul auf Ihrer Website haben, das Sie
+* Auf Ihrer Website muss sich mindestens ein ungenutztes Modul befinden, das Sie
 deinstallieren möchten. Beispielsweise das Modul Search,
 das mit dem Kernsystem ausgeliefert wird.
 
@@ -34,7 +34,7 @@ muss Drush installiert sein. Siehe: <<install-tools>>.
 
 Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu deinstallieren.
 
-======= Verwendung des Verwaltungsbereichs
+===== Verwendung des Verwaltungsbereichs
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_ > _Deinstallieren_
 (_admin/modules/uninstall_). Dort finden Sie eine Liste der Module,
@@ -42,7 +42,8 @@ die deinstalliert werden können.
 
 . Aktivieren Sie die Kontrollkästchen vor den Namen der Module, die Sie
 deinstallieren möchten (_Search_, _History_ und _Activity Tracker_).
-Klicken Sie auf _Deinstallieren_.
+
+. Klicken Sie auf _Deinstallieren_.
 +
 --
 // Oberer Teil von admin/modules/uninstall, mit aktiviertem Activity Tracker.
@@ -70,7 +71,7 @@ zu bestätigen. Klicken Sie auf _Deinstallieren_.
 image:images/config-uninstall_confirmUninstall.png["Deinstallation bestätigen - Suchmodul",width="100%"]
 --
 
-======= Drush verwenden
+===== Drush verwenden
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
 (_admin/modules_). Die Seite _Erweitern_ erscheint und zeigt alle verfügbaren auf
@@ -87,7 +88,7 @@ _tracker_.
 drush pm:uninstall tracker
 ----
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihre Kenntnisse
 
 * <<install-tools>>
 

@@ -23,7 +23,7 @@ für innerhalb einer Entwicklungsumgebung besitzen.
 
 * Wenn Sie Drush zur Ausführung einiger Arbeitsschritteschritte in dieser
 Aufgabe verwenden möchten, muss Drush installiert.
-Siehe: <<<install-tools>>.
+Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
 
@@ -39,8 +39,8 @@ der folgenden Methoden:
   phpMyAdmin installiert ist
   (die Software ist in vielen Hosting-Kontrollzentren verfügbar),
   verwenden Sie die Registerkarte _Export_ in phpMyAdmin, um die Datenbank Ihrer
-  Website im Format _SQL_ zu exportieren. Verwenden Sie  die   Komprimierung_
-  gzip_ für die Ausgabedatei um die Dateigröße des Exports zu verringern.
+  Website im Format _SQL_ zu exportieren. Verwenden Sie  die   Komprimierung
+  _gzip_ für die Ausgabedatei um die Dateigröße des Exports zu verringern.
 
   * Wenn Sie MySQL benutzen und Zugriff auf die Befehlszeile haben, benutzen Sie
     folgenden Befehl (Ersetzung des Datenbanknamens, des Benutzernamens und des Passworts Ihrer Website):
@@ -81,9 +81,9 @@ so aus:
 +
 ----
 $databases['default']['default'] = array (
-  'database' => 'live_site_database_name',
-  'username' => 'live_site_database_username',
-  'password' => 'live_site_database_password',
+  'database' => 'live_site_datenbankname',
+  'username' => 'live_site_datenbank_passwort',
+  'password' => 'live_site_datenbank_passwort',
 ----
 
 . Prüfen Sie, ob die Datei _settings.php_ die folgende Einstellung enthält;
@@ -135,7 +135,7 @@ folgendem Eintrag übersteuern:
 $config['system.site']['name'] = "Arbeitsversion der for Anytown Farmers Market Website";
 ----
 
-==== Vertiefen Sie Ihr Wissen
+==== Vertiefen Sie Ihre Kenntnisse
 
 * Überprüfen Sie, ob die Website in Ihrer Entwicklungsumgebung korrekt
 funktioniert.
@@ -168,4 +168,4 @@ Geschrieben und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hod
 https://www.drupal.org/u/eojthebrave[Joe Shindelar] bei
 https://drupalize.me[Drupalize.Me], und
 https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
-http://redcrackle.com[redcrackle].
+http://redcrackle.com[Red Crackle].

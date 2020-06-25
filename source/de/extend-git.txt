@@ -35,7 +35,7 @@ https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub-Seite "
 
 * Wie man die Konfiguration verwaltet.
 
-* wie man Archivdateien (wie z. B. _.zip_ und _.tar.gz_) entpackt und packt.
+* wie man Archivdateien (wie z. B. _.zip_ und _.tar.gz_) entpackt und gepackt.
 
 
 ==== Anforderungen an die Website
@@ -59,8 +59,8 @@ Führen Sie diese Schritte einmal durch, nachdem Sie ein Git-Repository
 erstellt haben, um lokale Verzeichnisse zum Repository und die darin enthaltenen
 Dateien hinzuzufügen.
 
-. Öffnen Sie ein Kommandoterminal-Fenster und wechseln Sie in das Verzeichnis, in dem Ihre Site
-Dateien gefunden werden. Dies ist Ihr "oberstes" Verzeichnis.
+. Öffnen Sie ein Kommandozeilenfenster und wechseln Sie in das Verzeichnis, in dem Die Dateien
+der Website befinden. Dies ist das „Hauptverzeichnis" der Installation.
 
 . Ermitteln Sie, wo sich das Hauptverzeichnis Ihrer Website befindet.
 Wenn sich die Verzeichnisse _Core_, _Modules_ und _Themes_ direkt in diesem
@@ -69,12 +69,12 @@ Wenn Sie Composer zum Herunterladen der Software verwendet haben, befinden sich
 diese Daten im Unterverzeichnis  _web_ (dies ist das Hauptverzeichnis Ihrer Website).
 
 . Erstellen Sie in einem einfachen Texteditor eine neue Datei namens
-_.gitignore_, innerhalb ds Hauptverzeichnisses Ihrer Website
+_.gitignore_, innerhalb des Hauptverzeichnisses Ihrer Website
 (oder bearbeiten Sie diese Datei, wenn sie bereits existiert). Die Datei enthält
  eine Liste von Dateien und Verzeichnisse, die Git ignorieren
  (nicht zum Repository hinzufügen) soll. Zum Beispiel sollte
 die Datei _settings.php_ nicht zur Git-Repository hinzugefügt werden, weil diese
-die Daten enthält, mit denen Siech die Website an Ihrer Datenbank authentifiziert.
+die Daten enthält, mit denen sich die Website an Ihrer Datenbank authentifiziert.
 Die Dateien, die die _Medienelemente_ der Website enthalten
 (normalerweise werden diese Dateien im Verzeichnis
  _sites/default/files_ abgelegt) sollten auch nicht teil der Git-Repository sein.
@@ -113,7 +113,7 @@ _Commit Message_ einsetzen. Z. B. „Initialer Commit". Die URL im zweiten Befeh
 unten muss mit der URL ihrer eigenen Git-Repository ersetzt werden.
 +
 ----
-git commit -m "Initial file add"
+git commit -m "Dateien zum ersten mal hinzugefügt"
 git remote add origin https://gitlab.com/example-name/example-repo.git
 git push -u origin master
 ----
@@ -128,7 +128,7 @@ Führen Sie folgende Schritte aus, wenn Sie eine oder mehrere Dateien innerhalb
 Ihrer Website aktualisiert, hinzugefügt oder gelöscht haben  um die Änderungen
 ( mittels der Kommandozeilenoption _push_) an Ihr Repository zu senden.
 
-. Öffnen Sie ein Terminal/eine Eingabeaufforderung und wechseln Sie in
+. Öffnen Sie ein Terminal bzw. eine Eingabeaufforderung und wechseln Sie in
 das Verzeichnis, dass die Dateien ihrer Website enthält.
 
 . Überprüfen Sie die Liste der Dateien, die hinzugefügt, geändert oder gelöscht
@@ -143,7 +143,7 @@ Unterschiede zwischen der neuen und der alten Version einer
 Datei anzeigen lassen:
 +
 ----
-git diff path/to/file.txt
+git diff Pfad/zur/Datei.txt
 ----
 
 . Stellen Sie alle Änderungen für die nächste Übergabe bereit und vergewissern
@@ -156,17 +156,16 @@ git status
 
 . Sie können eine bestimmte Datei von der Übergabe ausschließen.
 Auch dann, wenn diese sich bereits in der Liste der zu übergebenden Dateien befindet.
-Sie können auch weitere Verzeichnisse oder Dateien zur Übergabeliste hinzufpgen.
+Sie können auch weitere Verzeichnisse oder Dateien zur Übergabeliste hinzufügen.
 Wenn eine bestimmte Datei oder ein bestimmtes Verzeichnis versehentlich immer wieder
 zur übergeben wird, sollten Sie in Erwägung ziehen, der Datei
 _.gitignore_ einen entsprechenden Eintrag hinzuzufügen, so dass das jeweilige
 Element zukünftig von Git ignoriert wird.
-
-Befehle zum ausschließen/hinzufügen von Elementen:
 +
+
 ----
 git reset HEAD path/to/file.txt (Datei/Verzeichnis ausschließen)
-git add path/to/file.txt (Datei/Verzeichnis hinzufügen)
+git add pfad/zur/datei.txt (Datei/Verzeichnis hinzufügen)
 ----
 
 . Übergeben Sie die Liste der Änderungen an die Repository (commit) und

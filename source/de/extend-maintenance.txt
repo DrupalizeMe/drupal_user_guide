@@ -10,7 +10,7 @@ sowie den Wartungsmodus deaktivieren.
 (((Maintenance mode,enabling)))
 (((Maintenance mode,disabling)))
 
-Zielsetzung
+==== Zielsetzung
 
 Versetzen Sie Ihre Website in den Wartungsmodus, um Benutzern mit der
 entsprechenden Berechtigungen zu ermöglichen
@@ -24,16 +24,16 @@ verfügen eine Meldung angezeigt wird,  dass Wartungsarbeiten durchgeführt werd
 ==== Anforderungen an die Website
 
 Wenn Sie Drush zum Aktivieren oder Deaktivieren des Wartungsmodus verwenden
-möchten, muss Drush installiert. Siehe: <<<install-tools>>.
+möchten, muss Drush installiert. Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
 
 Sie können die Benutzeroberfläche oder Drush verwenden, um den
  Wartungsmodus zu aktivieren oder zu deaktivieren
 
-======= Aktivieren des Wartungsmodus im Verwaltungsbereich der Website
+===== Aktivieren des Wartungsmodus im Verwaltungsbereich der Website
 
-. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+. Navigieren Sie im Menü Verwalten zum Menüpunkt _Konfiguration_ >
 _Entwicklung_ > _Wartungsmodus_ (_admin/configuration/development/maintenance_).
 Die Seite _Wartungsmodus_ erscheint.
 
@@ -42,15 +42,11 @@ Die Seite _Wartungsmodus_ erscheint.
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-
 | Website in Wartungsmodus versetzen | Wartungsmodus aktivieren |
 Geprüft
-
 | Im Wartungsmodus anzuzeigende Meldung | Die Informationen, die angezeigt werden, um
-Website-Besucher, wenn der Modus aktiviert ist. Variablen wie @site können verwendet werden
-in der Nachricht |@site wird derzeit gewartet, sollte aber zurück sein
-in Kürze. Ich danke Ihnen für Ihre Geduld.
-
+Besucher der Wbsite darüber zu informieren, dass der Wartungsmodus aktiviert ist. Variablen wie @site können in der Nachricht verwendet werden.
+|@site wird derzeit gewartet, sollte aber in kürze wieder erreichbar sein. Vielen Dank für Ihre Geduld.
 |================================
 
 . Klicken Sie auf _Konfiguration speichern_.
@@ -58,20 +54,20 @@ in Kürze. Ich danke Ihnen für Ihre Geduld.
 . Überprüfen Sie, ob sich die Website im Wartungsmodus befindet, indem Sie mit
 einem anderen Browser, in dem Sie nicht an der Website angemeldet sind,
 auf die Website zugreifen. Wenn Sie dies nicht verifizieren können, versuchen Sie
-den Cache zu leeren. Siehe <<<prevent-cache-clear>>.
+den Cache zu leeren. Siehe <<prevent-cache-clear>>.
 +
 --
 // Site in maintenance mode.
 image:images/extend-maintenance-mode-enabled.png["Maintenance mode enabled",width="100%"]
 --
 
-==== Deaktivieren des Wartungsmodusim Verwaltungsbereich der Website
+==== Deaktivieren des Wartungsmodus im Verwaltungsbereich der Website
 
 . Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
 _Entwicklung_ > _Wartungsmodus_ (_admin/config/development/maintenance_). Die Seite
 _Wartungsmodus_ erscheint.
 
-. Fill in the fields as shown below.
+. Füllen Sie die Felder, wie untenstehend gezeigt aus:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -89,7 +85,7 @@ Nicht angekreuzt
 . Stellen Sie sicher, dass sich die Site nicht mehr im Wartungsmodus befindet, indem Sie mit
 einem anderen Browser, in dem Sie nicht an der Website angemeldet sind,
 auf die Website zugreifen. Wenn Sie dies nicht verifizieren können, versuchen Sie
-den Cache zu leeren. Siehe <<<prevent-cache-clear>>.
+den Cache zu leeren. Siehe <<prevent-cache-clear>>.
 +
 --
 // Site no longer in maintenance mode.
@@ -123,7 +119,7 @@ ob Sie den Wartungsmodus auf Ihrer Website aktiviert oder deaktiviert haben,
 indem Sie die Website mit einem Browser besuchen, in dem Sie sich nicht
 an der Website angemeldet haben.
 
-==== Vertiefen Sie Ihr Wissen
+==== Vertiefen Sie Ihre Kenntnisse
 
 * <<security-update-core>>
 

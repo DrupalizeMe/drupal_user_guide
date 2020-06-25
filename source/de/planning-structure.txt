@@ -2,24 +2,24 @@
 === Planung Ihrer Inhaltsstruktur
 
 [role="summary"]
-Wie man eine Inhaltsstruktur plant, die Inhalts-Entitätstypen bestimmten
-Inhalt auf der Website.
+Wie man eine Inhaltsstruktur plant und Inhalten die richtigen Entitätstypen zuordnet.
 
 (((Content structure,planning)))
 (((Site plan,content structure)))
 
 ==== Zielsetzung
 
-Erstellen Sie einen Plan für die Inhaltsstruktur der Site (welcher Typ und Subtyp von
-Entität für welchen Inhalt zu verwenden), und welche Seiten werden Auflistungen enthalten von
-Inhalt.
+Erstellen Sie einen Plan für die Inhaltsstruktur der Site (welche Entitätstypen
+und Entitäts-Subtypen für welche Art von Inhalten verwendet werden sollen)
+und auf Welchen Seiten welche Inhalte angezeigt werden sollen.
 
-==== Vorrausgesetztes Wissen
+==== Erforderliche Vorkenntnisse
+
 * <<planning-data-types>>
 * <<planning-modular>>
 * <<preface-scenario>>
 
-//===== Standortvoraussetzungen
+//===== Anforderungen an die Website
 
 ==== Arbeitsschritte
 
@@ -75,7 +75,7 @@ sein Bereich Inhaltsstoffe.
 . Überlegen Sie, welche Felder als Verweise auf Taxonomie-Begriffseinheiten am besten geeignet wären:
 Felder, deren Werte aus einer Liste zulässiger Werte ausgewählt werden sollten. Erlaubt
 Werte, von denen erwartet wird, dass sie sich mit der Zeit verändern und wachsen, sind gute Kandidaten. Eine
-Beispiel ist das Feld Ingredients für den Inhaltstyp Rezept.
+Beispiel ist das Feld Zutaten für den Inhaltstyp Rezept.
 
 . Überlegen Sie, welche Felder auf andere Inhaltsentitäten verweisen sollen. Ein Beispiel ist
 dass, da die Verkäufer Rezepte einreichen werden, ein Feld benötigt wird für
@@ -88,16 +88,16 @@ Szenario-Beispielstandort:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Entitätstyp |Entity-Untertyp |Beispiele |Felder
+|Entitätstyp |Entity-Subtyp |Beispiele |Felder
 
 |Inhaltselement |Grundseite |Hauptseite, über Seite |Titel, Seitentext
 
-|Inhaltsartikel |Anbieter |Eine Seite für jeden Anbieter auf dem Markt |
+|Inhaltsartikel |Lieferant |Eine Seite für jeden Anbieter auf dem Markt |
   Name des Anbieters, Seitentext, Bild, URL
 
 |Inhaltsangabe |Rezept |Eine Seite für jedes eingereichte Rezept |
   Rezeptname, Seitentext, Bild, Verweis auf den Lieferanten, der es eingereicht hat,
-  Taxonomie der Inhaltsstoffe
+  Taxonomie der Zutaten
 
 |Benutzerdefinierter Block |(generisch) |Copyright-Hinweis für die Fußzeile,
   Stunden und Ort für die Seitenleiste |keine speziellen Felder
@@ -115,11 +115,11 @@ Und hier sind die Listen, die die Website benötigt:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Seite oder Seitenbereich |Entitätstyp und Untertyp |Filter/Sortierung/Paginierung |
+|Seite oder Seitenabschnitt |Entitätstyp und Subtyp |Filter/Sortierung/Seitennavigation |
   Angezeigte Felder
 
-|Anbieterseite |Inhaltsartikel der Anbieter |Alle Anbieter, alphabetisch, seitenweise |
-  Bild, Herstellername, beschnittener Körper
+|Lieferantenseite |Inhaltsartikel der Lieferanten |Alle Lieferanten, alphabetisch, seitenweise |
+  Bild, Lieferantenname, Zusammenfasung des Textkörpers
 
 |Seite Rezepte | Rezepte | Inhaltselemente des Rezeptes |
   Filtern nach Zutaten, alphabetisch, seitenweise |Bild, Rezeptname
@@ -129,7 +129,7 @@ Und hier sind die Listen, die die Website benötigt:
 
 |=============================================
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihre Kenntnisse
 
 * <<structure-content-type>>
 * <<structure-fields>>
@@ -142,7 +142,7 @@ Und hier sind die Listen, die die Website benötigt:
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/CaNt4DEeIgU[title="Planning Your Content Structure"]
+video::https://www.youtube-nocookie.com/embed/CaNt4DEeIgU[title="Ihre Inhaltsstruktur planen (englisch)"]
 
 //===== Zusätzliche Ressourcen
 

@@ -3,7 +3,7 @@
 === Neue Website-Funktionen bereitstellen
 
 [role="summary"]
-Eine lokal erstellte Ansicht auf eine Entwicklungsseite Kopieren.
+Eine lokal erstellte Ansicht auf eine Live-Website Kopieren.
 
 (((Feature,deploying)))
 (((Configuration,deploying)))
@@ -17,19 +17,21 @@ haben, auf eine Live-Website.
 
 ==== Erforderliche Vorkenntnisse
 
-* <<<install-dev-making>>
+* <<install-dev-making>>
 * <<extend-config-versions>>
-* <<<install-dev-sites>>
+* <<install-dev-sites>>
 
 ==== Anforderungen an die Website
 
 * Das Modul, Configuration Manager, das mit dem Kernsystem ausgeliefert wird,
-muss sowohl auf der Entwicklungsumgebung, als auch auf der Live-Website
+muss sowohl auf der Website in der Entwicklungsumgebung, als auch auf der Live-Website
 installiert sein. Siehe: <<config-install>> für Anweisungen zur Installation von
-Modulen des Kernsystems.
+Modulen, die mit dem Kernsystem ausgeliefert werden.
 
 * Der Inhaltstyp Lieferant muss sowohl in der Entwicklungsumgebung als auch auf
-der Live-Website vorhanden sein. Die beiden Inhaltstypen müssen die gleichen
+der Live-Website vorhanden sein.
+
+* Die beiden Inhaltstypen müssen die gleichen
 Felder enthalten. Siehe: <<structure-content-type>>.
 
 * Die Ansicht Lieferanten muss auf der Entwicklungsumgebung vorhanden sein,
@@ -37,12 +39,12 @@ nicht jedoch auf der Live-Website. Siehe <<views-create>>.
 
 ==== Arbeitsschritte
 
-. Öffnen Sie die Website auf der lokalen Entwicklungsumgebung.
+. Öffnen Sie die Website in der lokalen Entwicklungsumgebung.
 
-. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
 _Entwicklung_ > _Konfigurationssynchronisation_ > _Export_ > _Einzelnes Konfigurationselement_
 (_admin/config/development/configuration/single/export_).
-Die Seite _Einzelnes Konfigurationselement exportieren_ erscheint.
+Die Seite _„Einzelnes Konfigurationselement exportieren“_ erscheint.
 
 . Wählen Sie _Ansicht_ aus der Liste _Konfigurationstyp_.
 
@@ -59,7 +61,7 @@ image:images/extend-deploy-export-single.png["Ein einzelnes Objekt exportieren"]
 
 . Öffnen Sie die Live-Website.
 
-. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+. Navigieren Sie im Menü Verwalten_ zum Menüpunkt _Konfiguration_ >
 _Entwicklung_ > _Konfigurationssynchronisation_ > _Import_ > _Einzelner Punkt_
 (__admin/config/development/configuration_). Die Seite _Import_ erscheint.
 
@@ -74,7 +76,7 @@ _Entwicklung_ > _Konfigurationssynchronisation_ > _Import_ > _Einzelner Punkt_
 . Überprüfen Sie, ob die Ansicht importiert wurde, indem Sie im Menü _Verwalten_
 zum Menüpunkt _Struktur_ > _Ansichten_ navigieren.
 
-==== Vertiefen Sie Ihr Wissen
+==== Vertiefen Sie Ihre Kenntnisse
 
 Die Arbeitsschritte dieses Themas zeigen, wie Sie eine einzelne Konfiguration
 exportieren und wieder importieren. Wenn Sie jedoch Funktionen auf einer

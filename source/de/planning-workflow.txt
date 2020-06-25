@@ -19,33 +19,31 @@
 
 Ein _Redaktions-Workflow_ ist der Prozess, den Organisationen zur Erstellung und Überprüfung befolgen,
 Inhalte bearbeiten und veröffentlichen. Mehrere Personen in verschiedenen Rollen in der
-Organisation kann Teil des Prozesses sein. Die Ersteller von Inhalten könnten zum Beispiel
-Informationen sammeln und Inhalte verfassen; Redakteure könnten Informationen überprüfen, bearbeiten, nach
-Änderungen, und veröffentlichen Sie den Inhalt, sobald er bereit ist, mit der
-Publikum. Später könnten inhaltliche Überarbeitungen einen einfachen Prozess durchlaufen für
-kleine Änderungen oder ein komplexerer Prozess mit Überprüfungen bei größeren Änderungen.
+Organisation kann Teil des Prozesses sein. Autoren könnten zum Beispiel
+Informationen sammeln und Inhalte verfassen; Redakteure könnten Informationen überprüfen, bearbeiten und die Inhalte nach Abschluss der Änderungen
+veröffentlichen. Später könnten inhaltliche Überarbeitungen mittels eines kleine Prozesses zur Überprüfung von  kleinen Änderungen oder
+eines komplexeren Prozesses zur Überprüfungen bei größeren Änderungen überarbeitet und erneut veröffentlicht werden.
 
 ==== Welche Werkzeuge stehen für die Verwaltung von Workflows zur Verfügung?
 
-Veröffentlichter/unveröffentlichter Status::
-  Der Entitätstyp Inhaltselement unterstützt die Kennzeichnung jedes Inhaltselements entweder als
-  Veröffentlicht oder unveröffentlicht. Anzeigeberechtigungen sind getrennt für veröffentlichte und
-  unveröffentlichte Inhalte; zum Beispiel könnten alle Besucher der Website in der Lage sein
-  veröffentlichte Inhaltselemente, während nur Inhaltsersteller und Redakteure sehen können
-  unveröffentlichte Inhaltselemente.
-Verfolgung der Revision::
-  Einige Inhalts-Entitätstypen unterstützen die Revisionsverfolgung, d.h. als Inhalt
-  überarbeitet wird, speichert die Software die älteren Revisionen, so dass sie
-  verglichen oder rückgängig gemacht.
+Status veröffentlicht/nicht veröffentlicht::
+  Der Entitätstyp Inhalt unterstützt die Kennzeichnung aller Inhalte als
+  Veröffentlicht oder nicht veröffentlicht. Anzeigeberechtigungen für veröffentlichte und nicht
+  veröffentlichte Inhalte  sind voneinander getrennt; zum Beispiel könnten alle Besucher der Website in der Lage sein
+  veröffentlichte Inhalte anzuzeigen, während nur Autoren und Redakteure unveröffentlichte Inhalte sehen können.
+Änderungsverfolgung mittels Revisionierung::
+  Einige Entitätstypen für Inhalte unterstützen die Revisionierung, d.h. wenn Inhalt
+  überarbeitet wird, speichert die Software die älteren Revisionen, so dass Inhaltsversionen verglichen und Änderungen zurückgesetzt werden können.
 Arbeitsabläufe::
-  Im Kernmodul Workflows können Sie Workflow-Zustände und Übergänge definieren,
-  über das bloße Veröffentlichen oder Nichtveröffentlichen von Inhalten hinaus. Der begleitende Kern
-  Mit dem Modul Content Moderation können Sie Berechtigungen und Rollen zuweisen
-  Workflow-Übergänge. Beide können sowohl mit dem Inhaltselement als auch mit dem benutzerdefinierten Block verwendet werden.
+  Im Modul  Workflow, dass mit dem Kernsystem ausgeliefert wird, können Sie Workflow-Zustände und Übergänge definieren,
+  über das bloße Veröffentlichen oder depublizieren von Inhalten hinaus. Ergänzt wird dies durch das mit dem Kernsystem ausgelieferte Modul,
+  Content Moderation, mit dem Sie Berechtigungen und Rollen für Workflow-Übergänge festlegen können.
+  Beide Module können sowohl mit Inhalten als auch mit benutzerdefinierten Blöcken verwendet werden.
   Entitätstypen.
 Block-Platzierung::
-  Mit der Inhaltsentität Benutzerdefinierter Block können Sie einen benutzerdefinierten Block erstellen und bearbeiten,
-  aber machen Sie sie erst auf der Website sichtbar, wenn sie fertig ist.
+  Mit der Inhaltsentität „Benutzerdefinierter Block” können Sie einen benutzerdefinierten Block
+  erstellen und bearbeiten und erst dann auf der Website veröffentlichen, wenn der Blockinhalt
+  fertig erstellt wurde,
 
 ==== Verwandte Themen
 
