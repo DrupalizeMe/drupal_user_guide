@@ -31,34 +31,49 @@ your development site, you know where the web root is for your development site,
 and you have an empty database and database user for your development site to
 use.
 
-. Make a database dump file from your live site's database. Try one of the
-following methods:
+. The next step is to make a database dump file, containing the contents of your
+site's database. This file can be quite large, but there are two things you can
+do to reduce the size:
 +
+ * Compress the file, using gzip or another compression utility.
+ * Exclude the contents of the database tables for the internal caching system,
+ by truncating these tables. Their data is temporary, and you need only the
+ table structure and not the table contents in order to make a copy of the
+ site.
++
+To make the database dump, try one of the following methods:
++
+  * If you use Drush, use this command, which will include only the structure
+  and not the contents of the cache tables, and gzip-compress the output:
++
+----
+drush sql:dump --gzip --structure-tables-list="cache,cache_*" \
+  --result-file='PATH/TO/BACKUPFILE.sql'
+----
++
+  * If you are using MySQL and have access to the command line, use this
+  command after truncating the cache tables (substituting in your site's
+  database name, user name, and password):
++
+----
+mysqldump -u'USERNAME' -p'PASSWORD' DATABASENAME | \
+  gzip > PATH/TO/BACKUPFILE.sql.gz
+----
+
   * If you are using MySQL as your database, and your live site's server has
   phpMyAdmin installed (it is available from many hosting control panels),
-  use the _Export_ tab in phpMyAdmin to export in _SQL_ format. Using _gzip_
-  compression on the output file is suggested, to reduce the file size.
-
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password):
-+
-----
-mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
-----
-
-  * If you prefer to use Drush, use this command:
-+
-----
-drush sql:dump --result-file=BACKUPFILE.sql
-----
+  you can truncate the cache tables by selecting them in the phpMyAdmin table
+  structure list and choosing the _Empty_ operation at the bottom of the page.
+  Then use the _Export_ tab in phpMyAdmin to export in _SQL_ format, with
+  _gzip_ compression to reduce the file size.
 
   * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module]
   from within your live site. See <<extend-module-install>> for instructions on
   installing contributed modules.
 +
-You now have a database dump stored in the file _BACKUPFILE.sql_. For security
-reasons, avoid storing this file on your hosting server anywhere under the
-Drupal site root. This will prevent others from getting a copy of your
+You now have a database dump stored in the file _BACKUPFILE.sql.gz_. For
+security reasons, avoid storing this file on your hosting server anywhere under
+the Drupal site root. This will prevent others from getting a copy of your
 database.
 
 . Copy all of the files from the web root of your live site to the web root of
@@ -72,10 +87,11 @@ them to the information about the development site database you set up. The
 lines look something like this (before editing):
 +
 ----
-$databases['default']['default'] = array (
+$databases['default']['default'] = [
   'database' => 'live_site_database_name',
   'username' => 'live_site_database_username',
   'password' => 'live_site_database_password',
+  …
 ----
 
 . Check whether your _settings.php_ file has the following setting; if yes, then
@@ -90,8 +106,8 @@ $settings['trusted_host_patterns']
 database. Try one of the following methods:
 +
   * If you are using MySQL as your database, and your live site's server has
-  PHPMyAdmin installed (it is available from many hosting control panels),
-  use the _Import_ tab in PHPMyAdmin. You may find that you have to restart the
+  phpMyAdmin installed (it is available from many hosting control panels),
+  use the _Import_ tab in phpMyAdmin. You may find that you have to restart the
   import a few times, if your database was large.
 
   * If you are using MySQL and have access to the command line, use this
@@ -100,13 +116,14 @@ database. Try one of the following methods:
   first):
 +
 ----
-mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
+gunzip < PATH/TO/BACKUPFILE.sql.gz | \
+  mysql -u'USERNAME' -p'PASSWORD' DATABASENAME
 ----
 +
   * If you prefer to use Drush, use this command:
 +
 ----
-drush sql:query --file=BACKUPFILE.sql
+drush sql:query --file='PATH/TO/BACKUPFILE.sql.gz'
 ----
 
 . If your development and live sites need to have different configuration, then
@@ -119,7 +136,8 @@ production value in the site configuration (in the database), and on the
 development site, in the settings.php file, you would need to have:
 +
 ----
-$config['system.site']['name'] = "Development Site for Anytown Farmers Market";
+$config['system.site']['name'] =
+  "Development Site for Anytown Farmers Market";
 ----
 
 ==== Expand your understanding
