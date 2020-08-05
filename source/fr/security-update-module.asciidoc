@@ -1,0 +1,131 @@
+[[security-update-module]]
+
+=== Mettre à jour un module
+
+[role="summary"]
+Comment mettre à jour un module contribué via l'interface d'administration et
+en exécutant le script de mise à jour de la base de données.
+
+(((Module,mise à jour)))
+(((Mise à jour de sécurité,application)))
+(((Module contribué,mise à jour)))
+
+==== Objectif
+
+Mettre à jour un module contribué et lancer le script de _Mise à jour de la base
+de données_.
+
+==== Pré-requis
+
+* <<security-concept>>
+* <<security-cron-concept>>
+
+==== Pré-requis du site
+
+* Un module contribué a été installé et une mise à jour est disponible pour lui.
+Consulter <<extend-module-install>> et <<security-announce>>.
+
+* Si votre site est en ligne, vous devriez tester ce processus dans un
+environnement de développement avant de l'exécuter sur votre site en production.
+Consulter <<install-dev-making>>.
+
+* Vous avez créé une sauvegarde complète du site. Consulter <<prevent-backups>>.
+
+* Si vous souhaitez utiliser l'interface utilisateur, le module Update Manager
+du cœur doit être installé. Voir <<config-install>> pour des instructions sur
+l'installation de modules du cœur.
+
+==== Étapes
+
+Avant de commencer, vérifier les instructions de mise à jour propres au module.
+Ceci est en particulier nécessaire lors de la mise à jour de modules impliquant
+l'utilisation de bibliothèques tierces. Lisez et assurez-vous de comprendre
+tous les pré-requis propres au module avant de procéder aux mises à jour. Pour
+trouver des instructions, consulter le lien _Lire la documentation_ de la page
+du projet du module.
+
+Pour consulter des instructions supplémentaires, télécharger sur votre
+ordinateur le fichier tar.gz ou .zip de la page du projet. Décompresser le
+fichier et consulter les fichiers _README.txt_, _INSTALL.txt_ et _UPGRADE.txt_
+fournis avec les fichiers d'installation du module. Consulter également les
+notes de version sur la page du projet en cliquant sur le numéro de la version
+que vous téléchargez.
+
+// Downloads section of the Admin Toolbar project page on drupal.org.
+image:images/security-update-module-release-notes.png["Lien des notes de version"]
+
+Vous pouvez utiliser l’interface d'administration pour mettre à jour un module
+contribué. Si vous mettez à jour un module personnalisé plutôt qu'un module
+contribué, si vous voyez un message indiquant que _L'installation de modules et
+de thèmes requiert un accès FTP à votre serveur_ ou si les étapes ci-dessous ne
+fonctionnent pas pour obtenir les nouveaux fichiers du module, suivez les étapes
+de <<extend-manual-install>>.  Vous pouvez ensuite reprendre à l'étape 6 des
+instructions pour l'interface d'administration ci-dessous.
+
+Si vous utilisez Composer pour gérer les fichiers de votre site, suivre les
+étapes dans <<install-composer>> pour mettre àjour les fichiers, puis continuer
+ici à l'étape 6 dans la section sur les instructions ci-dessous lorsque vous
+utilisez l'interface d'administration.
+
+===== Utilisation de l'interface d'administration
+
+. Mettre votre site en mode de maintenance. Consulter <<extend-maintenance>>.
+
+. Dans le menu d'administration _Gérer_, naviguer vers _Rapports_ > _Mises à
+jour disponibles_ > _Mettre à jour_ (_admin/reports/updates/update_).
+
+. Rechercher et vérifier le module dans la liste. Cliquer sur _Télécharger ces
+mises à jour_ après avoir sélectionné le module.
++
+--
+// Update page for theme (admin/reports/updates/update).
+image:images/security-update-module-updates.png["Mises à jour disponibles",width="100%"]
+--
+
+. Cliquer sur _Continuer_.
+
+. Cliquer sur _Lancer les mises à jour de la base de données_. Si vous avez
+obtenu les nouveaux fichiers du module manuellement, commencer par cette étape
+puis accéder à la page de mise à jour de la base de données en saisissant l'URL
+_example.com/update.php_ dans votre navigateur.
+
+. Cliquer sur _Continuer_ et appliquer toutes les mises à jour. Les scripts de
+mise à jour de la base de données seront exécutés.
+
+. Cliquer sur _Pages d'administration_ pour retourner à la section d'administration de votre site.
+
+. Sortir votre site du mode de maintenance. Consulter <<extend-maintenance>>.
+
+. Vider le cache (se référer à <<prevent-cache-clear>>).
+
+==== Améliorer votre compréhension
+
+* Une fois les mises à jour terminées, consulter le journal du site (se référer
+à <<prevent-log>>) pour vérifier s'il y a des erreurs.
+
+* <<security-update-theme>>
+
+//==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/ZYFJ_OJaK4M[title="Updating a Module"]
+
+==== Pour aller plus loin (en anglais)
+
+https://www.drupal.org/node/250790[Page de documentation "Mise à jour des modules" de la communauté _Drupal.org_]
+
+
+*Attributions*
+
+Adapté par https://www.drupal.org/u/batigolix[Boris Doesborgh] et
+https://www.drupal.org/u/hey_germano[Sarah German] de
+https://www.advomatic.com[Advomatic], à partir de
+https://www.drupal.org/node/250790["Updating modules"], copyright 2000-2019
+contributeurs individuels à la
+https://www.drupal.org/documentation[documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/ohmdesbois[Thierry Jarrige],
+https://www.drupal.org/u/duaelfr[Édouard Cunibil],
+https://www.drupal.org/u/pomliane[Francis Pomliane] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

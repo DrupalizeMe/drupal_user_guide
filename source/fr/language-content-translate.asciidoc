@@ -1,0 +1,92 @@
+[[language-content-translate]]
+
+=== Traduction de contenu
+
+[role="summary"]
+Comment traduire une page dans une autre langue.
+
+(((Contenu,traduction)))
+(((Traduction,contenu)))
+
+=== Objectif
+
+Traduire la page d'accueil en anglais.
+
+==== Pré-requis
+
+<<language-concept>>
+
+==== Pré-requis du site
+
+* L'élément de contenu Accueil doit exister. Consulter <<content-create>>.
+
+* Le module du cœur Content Translation doit être installé et votre site doit
+avoir au moins deux langues. Consulter <<language-add>>.
+
+* Le type de contenu _Page de base_ doit être configuré pour être traduisible.
+Consulter <<language-content-config>>.
+
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, naviguer vers _Contenu_
+(_admin/content_).
+
+. Localiser la page d'accueil. Saisir "Accueil" dans le champ titre pour trouver
+cette page.
+
+. Sélectionner _Traduire_ dans le bouton déroulant de la ligne du contenu
+Accueil. La page _Traductions d'Accueil_ s'affiche.
+
+. Cliquer _Insérer_ à la ligne _anglais_.
++
+--
+// Capture d'écran de la page traductions pour l'instance contenu page Accueil.
+image:images/language-content-translate-add.png["Insertion d'une traduction de contenu",width="100%"]
+--
+
+. Remarquer que l'interface utilisateur est passée en anglais. Pour repasser en
+français, suprimer la première occurrence de _en_ dans l'URL du navigateur. Par
+exemple, si votre URL ressemble à
+_example.com/en/node/5/translations/add/en/es_, suprimer le _en_ qui suit
+_example.com_.
+
+. Remplir les champs comme suit ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ | Explication| Valeur
+|Titre | Titre de page traduit | Home
+|Corps | Corps de la page traduit |
+Welcome to City Market - your neighborhood farmers market!
+Open: Sundays, 9 AM to 2 PM, April to September
+Location: Parking lot of Trust Bank, 1st & Union, downtown
+|paramètres chemin URL > alias URL | adresse traduite de la page web | home
+|================================
+
+. Cliquer sur _Enregistrer et publier (cette traduction)_.
+
+. Aller à la page accueil de votre site pour visualiser la page qui vient d'être
+traduite.
+
+==== Améliorer votre compréhension
+
+* Suivre les étapes ci-dessus pour traduire d'autres contenus sur votre site.
+
+* <<language-config-translate>>
+
+// ==== Concepts associés
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TOalcUYD5zM[title="Translating Content"]
+
+// ==== Ressources suplémentaires
+
+
+*Attributions*
+
+Écrit par https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/onewomanbiz[Lydie Parisot] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

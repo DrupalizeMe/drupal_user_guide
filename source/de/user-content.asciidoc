@@ -1,0 +1,73 @@
+[[user-content]]
+
+=== Zuweisen von Autoren zum Inhalt
+
+[role="summary"]
+So weisen Sie einem Benutzerkonto die Urheberschaft von Inhaltselementen zu.
+
+(((Author,assigning)))
+(((Content,assigning author)))
+
+==== Zielsetzungsetzung
+
+Ordnen Sie die Inhaltselemente "Happy Farm" und "Sweet Honey" des Anbieters den entsprechenden
+Anbieter-Benutzerkonten, damit sie ihre eigenen Anbieterprofile auf der Website bearbeiten können.
+
+==== Erforderliche Vorkenntnisse
+
+* <<user-concept>>
+
+==== Anforderungen an die Website
+
+* Der Inhaltstyp Anbieter muss vorhanden sein, und Ihre Website muss mindestens zwei
+Inhaltsartikel des Lieferanten. Siehe <<structure-content-type>>, <<structure-fields>>, und
+<<content-create>>.
+
+* Benutzerkonten für mindestens zwei Lieferanten müssen vorhanden sein. Siehe <<user-new-user>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Inhalt_ (_Admin/Inhalt_).
+
+. Suchen Sie in der Liste das Inhaltselement Anbieter Happy Farm. Wenn es nicht sofort
+sichtbar ist, können Sie die Liste nach _Veröffentlichungsstatus_, _Inhaltstyp_ (Anbieter) filtern,
+_Titel_, oder _Sprache_.  Klicken Sie auf _Bearbeiten_ für das gewünschte Inhaltselement des Lieferanten
+einen Autor zuweisen.
+
+. Beginnen Sie unter _Authoring information_, den Benutzer des Anbieters einzugeben
+Name Happy Farm im Feld _Authored by_. Das Feld listet den passenden Benutzer
+Namen. Wählen Sie den Benutzernamen des Anbieters aus der Liste aus.
++
+--
+// Authoring information section of content edit page.
+image:images/user-content.png["Assigning an author to the Vendor content item"]
+--
+
+. Klicken Sie auf _Speichern_.
+
+. Sie erhalten eine Benachrichtigung, dass das Inhaltselement Lieferant aktualisiert wurde.
++
+--
+// Bestätigungsnachricht nach Inhaltsaktualisierung.
+image:images/user-content_updated.png["Das Inhaltselement des Anbieters wurde aktualisiert"]
+--
+
+. Führen Sie diese Schritte erneut aus, um das Inhaltselement Lieferant Sweet Honey der
+Anbieter-Benutzerkonto Sweet Honey.
+
+// ==== Erweitern Sie Ihr Verständnis
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/yx9u2SCgono[title="Assigning Authors to Content"]
+
+//===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/dianalakatos[Diána Lakatos] unter
+https://pronovix.com/[Pronovix].

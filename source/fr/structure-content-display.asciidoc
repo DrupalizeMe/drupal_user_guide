@@ -1,0 +1,132 @@
+[[structure-content-display]]
+
+=== Modifier l'affichage du contenu
+
+[role="summary"]
+Comment rendre les éléments de contenu plus présentables.
+
+(((Affichage du contenu,changer)))
+(((Affichage du contenu,gérer)))
+(((Contenu,afficher)))
+
+==== Objectif
+
+Rendre les éléments de contenu plus lisibles, accessibles, et attractifs en
+réordonnant les champs, masquant les étiquettes et personnalisant le rendu des
+champs.
+
+==== Pré-requis
+
+* <<planning-data-types>>
+* <<structure-view-modes>>
+
+==== Pré-requis du site
+
+Le type de contenu Vendeur doit exister, il doit comporter les champs _image
+principale_ et _URL du vendeur_, et votre site doit avoir au moins un élément de
+contenu de type vendeur. Consulter <<structure-content-type>>,
+<<structure-fields>>, et <<content-create>>.
+
+==== Étapes
+
+. Trouver et afficher un élément de contenu de type vendeur que vous avez créé
+dans <<structure-fields>>. Noter qu'il y a plusieurs choses qui peuvent être
+faites pour améliorer l'apparence de la page : 
++
+  * Les champs _image principale_ et _URL du vendeur_ ne doivent pas avoir d'étiquettes.
+  * L'ordre des champs doit être changé pour que l'image s'affiche en premier.
+  * L'image doit être plus petite.
+
+. Pour traiter les deux premiers points, et mettre à jour des paramètres
+supplémentaires, dans le menu d'administration _Gérer_, aller à _Structure_ >
+_Types de contenu_ (_admin/structure/types_). Puis cliquer sur _Gérer
+l'affichage_ dans la liste de séléction pour le type de contenu Vendeur.
++
+--
+// Content types list on admin/structure/types, with operations dropdown
+// for Vendor content type expanded.
+image:images/structure-content-display_manage_display.png["Gérer l'affichage",width="100%"]
+--
+
+. Sous la colonne _Étiquette_ sélectionner _caché_ pour l'image principale.
+Faire de même pour l'URL du vendeur.
++
+--
+// Manage display page for Vendor content type
+// (admin/structure/types/manage/vendor/display), with labels for Main
+// Image and Vendor URL hidden, and their select lists outlined in red.
+image:images/structure-content-display_main_image_hidden.png["Sélection du
+titre de l'image principale",width="100%"]
+--
+
+. Cliquer sur l'engrenage du champ URL du vendeur afin d'ouvrir les options de
+configuration.
+
+. Remplir les champs tel qu'indiqué ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ|Explication|Valeur d'exemple
+|Longueur du texte du lien| Longueur maximum à l'affichage du texte du lien| Vide (ne pas tronquer)
+|Ouvrir le lien dans une nouvelle fenêtre| Si les liens devraient s'ouvrir
+dans une nouvelle fenêtre ou dans la même fenêtre|Coché
+|================================
++
+--
+// Vendor URL settings form, with trim length cleared, and open link in
+// new window checked.
+image:images/structure-content-display_trim_length.png["Longueur du lien",width="100%"]
+--
+
+. Cliquer sur _Mettre à jour_.
+
+. Faire glisser les poignées en forme de croix des champs pour réordonner
+l'image principale, le corps, l'URL du vendeur and les liens. Alternativement au
+glisser/déposer, il est possible de cliquer sur le lien _Afficher les poids des
+lignes_ en tête du tableau et de saisir des poids numériques (les champs ayant
+des poids algébriques inférieurs seront affichés en premier).
++
+--
+// Manage display page for Vendor content type, with order changed.
+image:images/structure-content-display_change_order.png["Changer l'ordre des
+champs",width="100%"]
+--
+
+. Cliquer sur _Enregistrer_.
+
+. Retrouver l'élément de contenu de type vendeur de l'étape 1, et vérifier que
+les mises à jour sont bien effectués.
+
+. Répéter des étapes similaires pour gérer l'affichage des champs du type de
+contenu Recette.
+
+==== Améliorer votre compréhension
+
+* Pour rendre l'image principale plus petite, consulter
+<<structure-image-style-create>>.
+
+* Si vous ne voyez pas les effets de ces changement sur votre site, vous
+pourriez avoir besoin de vider les caches. Consulter <<prevent-cache-clear>>.
+
+==== Concepts liés
+
+<<structure-image-styles>>
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Changing Content Display"]
+
+==== Pour aller plus loin (en anglais)
+
+* https://www.drupal.org/node/774798[_Drupal.org_ community documentation page "Specify how fields are displayed"]
+* https://www.drupal.org/node/774744[_Drupal.org_ community documentation page "Rearrange the order of fields"]
+* https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+
+
+*Attributions*
+
+Ecrit par https://www.drupal.org/u/AnnGreazel[Ann Greazel] et
+https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

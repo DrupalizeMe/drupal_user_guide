@@ -1,0 +1,133 @@
+[[planning-data-types]]
+=== Konzept: Inhaltsentitäten und Felder
+
+[role="summary"]
+Überblick über Inhaltsentitäten und Felder.
+
+(((Entity,overview)))
+(((Taxonomy term,overview)))
+(((Vocabulary,overview)))
+(((Content,entity type)))
+(((Entity type,overview)))
+(((Entity subtype,overview)))
+(((Block,entity type)))
+(((Comment entity type,overview)))
+(((Contact form entity type,overview)))
+(((Form entity type,overview)))
+(((Content entity type,overview)))
+(((Custom block,entity type)))
+(((Field,overview)))
+(((User profile entity type,overview)))
+(((Module,Comment)))
+(((Module,Contact)))
+(((Module,Taxonomy)))
+(((Module,User)))
+(((Module,Node)))
+(((Module,Custom Block)))
+(((Module,File)))
+(((Comment module,entity type)))
+(((Contact module,entity type)))
+(((Custom block module,entity type)))
+(((Node module,entity type)))
+(((Taxonomy module,entity type)))
+(((User module,entity type)))
+(((File module,entity type)))
+
+==== Vorrausgesetztes Wissen
+* <<understanding-data>>
+* <<understanding-modules>>
+
+==== Was ist eine Inhaltsentität?
+
+Eine _Inhaltsentität_ (oder häufiger _Entität_) ist ein Element von
+Inhaltsdaten, die aus Text, HTML-Markup, Bildern, angehängten Dateien und
+anderen Daten bestehen können, die dem Besuchern der Website angezeigt werden
+sollen. Inhaltsentitäten können vom Kernsystem oder von Modulen definiert
+werden.
+
+Inhaltsentitäten werden in _Entitätstypen_ gruppiert, die unterschiedliche
+Zwecke haben und auf sehr unterschiedliche Weise auf der Website angezeigt
+werden. Die meisten Entitätstypen werden auch in _Entitäts-Subtypen_ unterteilt,
+die einen Entitätstyp noch genauer unterteilen, um um kleinere Variationen bei
+der Verwendung und Darstellung von Entitäten zu ermöglichen.
+im Folgenden finden Sie eine Tabelle die einige gängige Inhaltsentitätstypen
+enthält:
+
+[width="100%",frame="topbot",options="header",grid="rows"]
+|=============================================
+|Entitätstyp |Subtyp der Entität |Definierendes Modul |Hauptanwendungen
+
+|Inhaltselement |Inhaltstyp |Node
+  |Inhalt, der als Hauptbestandteil der Seiten auf der Website vorgesehen ist
+  | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes könnten Sie Inhalte wie
+  Typen für Basisseiten, Lieferantenseiten und Rezeptseiten erstellt haben.
+
+|Kommentar |Kommentartyp |Comment
+    |Fügt Kommentare zu Inhalten hinzu (typischerweise zu Inhalten)
+    | 3+| *Beispiel:* Auf einer Blog-Site können Blog-Beiträge Kommentare haben.
+    Dies wird für das Beispiel der Wochenmarkt-Website nicht benötigt.
+
+|Benutzerprofil |(kein Subtyp) |User
+      |Daten zu einer Person mit einem Benutzerkonto (Login-Zugang) auf der Website
+      | 3+| *Beispiel:* Jede Website hat mindestens grundlegende Benutzerprofile mit Benutzernamen
+      und E-Mail-Adressen; Social-Networking-Sites haben möglicherweise komplexere Benutzer
+      Profile mit mehr Informationen.
+
+|Benutzerdefinierter Block |Blocktyp |Custom Block Library
+        |Text und Bilder in kleineren Abschnitten, die oft im Header, der Fußzeile oder den Seitenleisten der Website angezeigt werden.
+        | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes ist das beispielsweise der Block mit den Angaben zu den Öffnungszeiten und dem Standort des Wochenmarktes.
+
+|Taxonomie-Begriff |Vokabular |Taxonomy
+          |Wird zur Klassifizierung anderer Arten von Inhalten verwendet
+          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes könnten Sie Rezept klassifizieren
+          Inhalt mit einem Taxonomievokabular für Zutaten, mit Taxonomie-Begriffen wie
+          Karotten und Tomaten. Auf einer Blogging-Website können Blog-Beiträge klassifiziert werden
+          unter Verwendung eines Tag-Vokabulars und vielleicht auch eines Kategorien-Vokabulars.
+
+|Datei |(keine) |File
+          | Eine Bild- oder eine Datei mit Anlagen, die von der Website gespeichert und verwaltet wird, oft
+           an andere Arten von Inhalten angehängt
+          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes, sowohl Rezept- als auch Lieferantenseiten
+          könnten Bildanhänge haben, die (hinter den Kulissen)
+          von der Website als Dateientitäten verwaltet werden.
+
+|Kontaktformular |Formulartyp |Contact
+          |Ein Formular, mit dem Website-Besucher die Eigentümer der Website kontaktieren können
+          | 3+|| *Beispiel:* Ein Kontaktformular wird im Beispiel des Wochenmarktes benötigt.
+
+|=============================================
+
+==== Was ist ein Feld?
+
+Innerhalb von Entitätstypen werden die Daten in einzelnen _Feldern_ gespeichert,
+von denen jedes eine bestimmte Art von Daten, wie formatierten Text oder
+Klartext, Bilder oder andere Dateien oder Daten enthält.
+Feldtypen können durch das Kernsystem oder durch Module definiert werden.
+
+Felder können von einem Administrator in Subtypen von Entitäten hinzugefügt
+werden, so dass alle Entitäts-Subtypen einer bestimmten Entität  die
+gleiche Sammlung von Feldern enthalten.
+Der Inhaltstyp Lieferant könnte  am Beispiel des Wochenmarktes
+Felder für den Namen eines Lieferanten, eine Bilddatei mit einem Lieferantenlogo,
+die URL einer Website und eine Beschreibung enthalten. Der Inhaltstyp
+_Einfache Seite_  enthält hingegen möglicherweise nur Felder für
+den Titel der Seite und ein Feld für den Textkörper der Seite. Wenn Sie
+Entitätstypen anlegen oder bearbeiten, sind Sie die Person, die
+die Werte für die Felder auf dem Entitätstypen angibt.
+
+==== Verwandte Themen
+
+* <<planning-structure>>
+* <<content-create>>
+* <<structure-content-type>>
+* <<structure-taxonomy>>
+* <<user-concept>>
+* <<block-concept>>
+
+// ==== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+und https://www.drupal.org/u/gdunham[Grant Dunham].

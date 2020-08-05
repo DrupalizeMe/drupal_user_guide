@@ -1,0 +1,145 @@
+[[extend-maintenance]]
+
+=== Aktivieren und Deaktivieren des Wartungsmodus
+
+[role="summary"]
+Die Website in den Wartungsmodus versetzen und eine entsprechend Meldung ausgeben,
+sowie den Wartungsmodus deaktivieren.
+
+(((Maintenance mode,overview)))
+(((Maintenance mode,enabling)))
+(((Maintenance mode,disabling)))
+
+==== Zielsetzung
+
+Versetzen Sie Ihre Website in den Wartungsmodus, um Benutzern mit der
+entsprechenden Berechtigungen zu ermöglichen
+die Website zu benutzen, während Benutzern die nicht über diese Berechtigung
+verfügen eine Meldung angezeigt wird,  dass Wartungsarbeiten durchgeführt werden.
+
+==== Erforderliche Vorkenntnisse
+
+<<security-concept>>
+
+==== Anforderungen an die Website
+
+Wenn Sie Drush zum Aktivieren oder Deaktivieren des Wartungsmodus verwenden
+möchten, muss Drush installiert. Siehe: <<install-tools>>.
+
+==== Arbeitsschritte
+
+Sie können die Benutzeroberfläche oder Drush verwenden, um den
+ Wartungsmodus zu aktivieren oder zu deaktivieren
+
+===== Aktivieren des Wartungsmodus im Verwaltungsbereich der Website
+
+. Navigieren Sie im Menü Verwalten zum Menüpunkt _Konfiguration_ >
+_Entwicklung_ > _Wartungsmodus_ (_admin/configuration/development/maintenance_).
+Die Seite _Wartungsmodus_ erscheint.
+
+. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Website in Wartungsmodus versetzen | Wartungsmodus aktivieren |
+Geprüft
+| Im Wartungsmodus anzuzeigende Meldung | Die Informationen, die angezeigt werden, um
+Besucher der Wbsite darüber zu informieren, dass der Wartungsmodus aktiviert ist. Variablen wie @site können in der Nachricht verwendet werden.
+|@site wird derzeit gewartet, sollte aber in kürze wieder erreichbar sein. Vielen Dank für Ihre Geduld.
+|================================
+
+. Klicken Sie auf _Konfiguration speichern_.
+
+. Überprüfen Sie, ob sich die Website im Wartungsmodus befindet, indem Sie mit
+einem anderen Browser, in dem Sie nicht an der Website angemeldet sind,
+auf die Website zugreifen. Wenn Sie dies nicht verifizieren können, versuchen Sie
+den Cache zu leeren. Siehe <<prevent-cache-clear>>.
++
+--
+// Site in maintenance mode.
+image:images/extend-maintenance-mode-enabled.png["Maintenance mode enabled",width="100%"]
+--
+
+==== Deaktivieren des Wartungsmodus im Verwaltungsbereich der Website
+
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+_Entwicklung_ > _Wartungsmodus_ (_admin/config/development/maintenance_). Die Seite
+_Wartungsmodus_ erscheint.
+
+. Füllen Sie die Felder, wie untenstehend gezeigt aus:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erklärung | Wert
+
+| Website in den Wartungsmodus versetzen | Deaktivieren des Wartungsmodus |
+Nicht angekreuzt
+
+| Im Wartungsmodus anzuzeigende Meldung | Während der Deaktivierung ist keine Meldung erforderlich. Sie können das Feld leer lassen. |
+
+|================================
+
+. Klicken Sie auf _Konfiguration speichern_.
+
+. Stellen Sie sicher, dass sich die Site nicht mehr im Wartungsmodus befindet, indem Sie mit
+einem anderen Browser, in dem Sie nicht an der Website angemeldet sind,
+auf die Website zugreifen. Wenn Sie dies nicht verifizieren können, versuchen Sie
+den Cache zu leeren. Siehe <<prevent-cache-clear>>.
++
+--
+// Site no longer in maintenance mode.
+image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",width="100%"]
+--
+
+==== Aktivieren oder Deaktivieren des Wartungsmodus mit Drush
+
+. Folgen Sie den obigen Schritten innerhalb der Benutzeroberfläche,
+um die über die Wartungsarbeiten auf Ihrer Website wie von Ihnen
+gewünscht zu bearbeiten.
+
+. Führen Sie die folgenden Drush-Befehle aus, um den Wartungsmodus zu aktivieren
+und den Cache zu leeren:
++
+----
+drush state:set system.maintenance_mode 1 --input-format=integer
+drush cache:rebuild
+----
+
+. Führen Sie die folgenden Drush-Befehle aus, um den Wartungsmodus zu deaktivieren
+und den Cache zu leeren:
++
+----
+drush state:set system.maintenance_mode 0 --input-format=integer
+drush cache:rebuild
+----
+
+. Nachdem Sie einen der beiden Befehlssätze ausgeführt haben, überprüfen Sie,
+ob Sie den Wartungsmodus auf Ihrer Website aktiviert oder deaktiviert haben,
+indem Sie die Website mit einem Browser besuchen, in dem Sie sich nicht
+an der Website angemeldet haben.
+
+==== Vertiefen Sie Ihre Kenntnisse
+
+* <<security-update-core>>
+
+* <<security-update-theme>>
+
+* <<security-update-module>>
+
+//==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Disabling Maintenance Mode"]
+
+// ==== Weiterführende Quellen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern], und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

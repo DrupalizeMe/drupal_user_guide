@@ -1,0 +1,139 @@
+[[language-config-translate]]
+=== Traduction de la configuration
+
+[role="summary"]
+Comment traduire les libellés de champs dans une vue, et autre configuration.
+
+(((Configuration,traduction)))
+(((Vue,traduction)))
+(((Libellé,traduction)))
+(((Traduction,configuration)))
+(((Traduction,vue)))
+(((Traduction,libellé)))
+
+==== Objectif
+
+Traduire les libellés de la page de vue Recettes en anglais.
+
+==== Connaissances préalables
+
+* <<language-concept>>
+* <<views-create>>
+
+==== Pré-requis du site
+
+* Le module de traduction de la configuration du cœur doit être installé, et
+votre site doit avoir au moins deux langues. Consulter <<language-add>>.
+
+* La vue Recettes doit exister. Consulter <<views-create>> et <<views-duplicate>>.
+
+==== Étapes
+
+Les étapes de base pour traduire toute configuration sur votre site sont les
+suivantes :
+
+. Localiser la page où la configuration que vous souhaitez traduire est créée ou
+modifiée dans la langue principale du site. Par exemple, pour traduire le nom du
+site, vous devez trouver la page où vous modifieriez le nom du site (consulter
+<<config-basic>>).
+
+. Trouver un lien, un onglet ou un bouton sur la page intitulé "Traduire" ou
+quelque chose de similaire. Cliquer ce lien, onglet ou bouton.
+
+. Trouver un bouton qui vous permettra d’ajouter une traduction dans la langue
+souhaitée, et cliquer sur ce bouton.
+
+. Saisir la traduction dans le formulaire et enregistrer.
+
+La plupart des configurations sont assez simples et intuitives à éditer de cette
+façon. La configuration des vues est une exception car le formulaire d'édition
+de la traduction ne ressemble en rien au formulaire d'édition de la vue, et il
+est complexe et hiérarchique plutôt que d'être un simple formulaire avec
+seulement quelques champs. En guise d'exemple de traduction d'une vue, voici les
+étapes pour traduire les libellés dans la vue Recettes vers l'anglais :
+
+. Dans le menu d'administration _Gérer_, accéder à _Structure_ > _Vues_
+(_admin/structure/views_).
+
+. Localiser la vue Recettes et cliquer _Traduire_ dans le menu déroulant.
+
+. Cliquer sur _Ajouter_ dans la ligne _anglais_. La page _Ajouter une
+traduction en anglais pour la vue Recettes_ apparaît.
+
+. Rechercher _Affichages_ > _Paramètres de l'affichage de Master_ > _Options
+d'affichage par défaut de Recettes_. Traduire le _Titre d'affichage_ de
+"Recettes" en "Recipes".
+
+. Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
+d'affichage par défaut de Recette_ > _Formulaire exposé_ > _Options de
+réinitialisation_. Traduire le bouton _Texte du bouton de soumission_
+(_Appliquer_) en "Apply". Les autres boutons et libellés de cette section
+n'apparaissent pas sur la page ou le bloc "Recettes", et n'ont pas besoin d'être
+traduits.
++
+--
+// Options du formulaire exposé pour la vue Recettes.
+image:images/language-config-translate-recipes-view.png["Traduire la vue Recettes",width="100%"]
+--
+
+. Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
+d'affichage par défaut de Recettes_ > _Filtres_ > _(vide) Terme de taxonomie
+ID_ > _Rechercher recettes en utilisant ... Exposer_. Dans le champ _Libellé_,
+saisir "Find recipes using...".
+
+. Cliquer sur _Enregistrer la traduction_.
+
+. Accéder à la page Recettes et passer en anglais à l'aide du bloc sélecteur de
+langue. Vérifier que les libellés ont été traduits.
+
+==== Pour approfondir
+
+* Traduire le titre d'affichage du bloc dans les paramètres de l'affichage
+"Recettes récentes" de la vue Recettes.
+
+* Traduire le titre de la page dans la vue Vendeurs.
+
+* Traduire une autre configuration. Quelques exemples où trouver les pages de
+traduction:
+
+** Pour traduire le nom du site, naviguer dans le menu d'administration _Gérer_
+jusqu'à _Configuration_ > _Système_ > _Paramètres de base du site_ > _Traduire
+information système_ (_admin/config/system/information-site/translate_).
+
+** Pour traduire le formulaire de contact, naviguer dans le menu administratif
+_Gérer_ jusqu'à _Structure_ > _Formulaires de contact_
+(_admin/structure/contact_). Cliquer sur _Traduire_ dans le bouton déroulant de
+la ligne _Votre avis sur le site_.
+
+** Pour traduire le nom d'un menu, naviguer dans le menu d'administration _Gérer_
+jusqu'à _Structure_ > _Menus_ (_admin/structure/menu_). Cliquer _Traduire_ dans le
+bouton déroulant du menu dont vous voulez traduire le nom.
+
+** Les éléments de menu dans un menu sont considérés comme du contenu (et non de
+la configuration); voir <<language-content-config>> pour activer la traduction.
+Une fois que la traduction est activée, naviguer dans le menu administratif
+_Gérer_ jusqu'à _Structure_ > _Menus_ (_admin/structure/menu_). Cliquer
+_Modifier le menu_ dans le bouton déroulant du menu dont vous souhaitez traduire
+les liens. Cliquer sur _Traduire_ dans le menu déroulant pour le lien que vous
+souhaitez traduire.
+
+** Pour traduire les libellés de champ sur un type de contenu, naviguer dans le
+menu administratif _Gérer_ jusqu'à _Structure_ > _Types de contenu_
+(_admin/structure/types_). Cliquer sur _Gérer les champs_ dans le bouton
+déroulant pour le type de contenu dont vous souhaitez modifier les libellés de
+champs. Cliquer _Traduire_ dans le bouton déroulant du champ dont vous souhaitez
+modifier le libellé.
+
+* Traduire le contenu. Voir <<language-content-translate>>.
+
+// ==== Concepts associés
+
+// ==== Ressources supplémentaires
+
+
+*Attributions*
+
+Écrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg] et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/alexandre.todorov[Alexandre Todorov] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

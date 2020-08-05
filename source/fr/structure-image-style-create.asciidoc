@@ -1,0 +1,135 @@
+[[structure-image-style-create]]
+
+=== Définir un style d'image
+
+[role="summary"]
+Comment ajouter un style d'image pour reformater une image.
+
+(((Style d'image,créer)))
+(((Style,image)))
+(((Effet,image)))
+(((Image,redimensionner)))
+
+==== Objectif
+
+Ajouter un style d'image et l'utiliser pour afficher les images dans les pages
+Vendeur.
+
+==== Pré-requis
+
+* <<structure-fields>>
+* <<structure-content-display>>
+* <<structure-image-styles>>
+
+==== Pré-requis du site
+
+* Les types de contenu Vendeur et Recette doivent exister. Consulter
+<<structure-content-type>>.
+
+* Les champs Image principale doivent exister pour les deux types de contenus.
+Consulter <<structure-fields>>.
+
+* Des éléments de contenu doivent exister pour les deux types de contenu.
+Consulter <<structure-content-type>>, <<structure-fields>>, et
+<<content-create>>.
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, aller à _Configuration_ > _Média_ >
+_Styles d'image_ (_admin/config/media/image-styles_).
+
+. Cliquer sur _Ajouter un style d'image_.
+
+. Saisir le nom _Extra medium (300x200)_.
+
+. Cliquer sur _Créer un nouveau style_. La page _Modifier le style Extra Medium
+(300X200)_ apparaît.
+
+. Dans le tableau _Effets_, sélectionner _Mise à l'échelle et recadrage_.
+Cliquer sur _Ajouter_.
+
+. Remplir les champs comme indiqué ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ | Valeur
+|Largeur | 300
+|Hauteur | 200
+|================================
+
+. Cliquer sur _Ajouter l'effet_. Le style d'image est enregistré avec l'effet
+choisi.
++
+--
+// Image style editing page, with effects added.
+image:images/structure-image-style-create-add-style.png["Ajouter un style d'image",width="100%"]
+--
+
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Types de
+contenu_ (_admin/structure/types_).
+
+
+. Cliquer sur _Gérer l'affichage_ dans le bouton déroulant _Actions_ du type de
+contenu Vendeur. La page _Gérer l'affichage
+(_admin/structure/types/manage/vendeur/display_) apparaît.
+
+. Assurez-vous que le premier onglet _Défaut_ est sélectionné.
+
+. Cliquer sur l'engrenage à côté du champ _Image principale_ pour accéder aux
+options de configuration.
+
+. Remplir les champs comme indiqué ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ | Valeur
+|Style d'image | Extra medium (300x200)
+|Lier l'image à | Rien
+|================================
++
+--
+// Main image settings area of Vendor content type.
+image:images/structure-image-style-create-manage-display.png["Changer les
+paramètres du formateur de champ d'un champ image"]
+--
+
+. Cliquer sur _Mettre à jour_.
+
+. Cliquer sur _Enregistrer_. Le nouveau style d'image sera utilisé pour afficher
+les contenus de type vendeur.
+
+. Ouvrir un contenu de type vendeur et vérifier qu'il s'affiche avec l'image mise à
+l'échelle et recadrée. Voir <<content-edit>> pour plus d'informations sur la
+manière de trouver un contenu existant.
+
+. Répéter les étapes 8-15 pour le type de contenu Recette.
+
+// ==== Expand your understanding
+
+==== Concepts liés
+
+* <<structure-fields>>
+* <<structure-image-styles>>
+* <<structure-image-responsive>>
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Setting up an Image Style"]
+
+==== Pour aller plus loin (en anglais)
+
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+
+
+*Attributions*
+
+Adapté et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle] depuis
+https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in
+Drupal 7 and 8"],
+copyright 2000-2019 contributeurs individuels à
+https://www.drupal.org/documentation[la documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

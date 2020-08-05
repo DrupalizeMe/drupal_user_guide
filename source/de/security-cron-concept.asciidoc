@@ -1,0 +1,44 @@
+[[security-cron-concept]]
+
+=== Konzept: Cron
+
+[role="summary"]
+Überblick über cron und wie es sich von Unix cron unterscheidet.
+
+(((Cron task,overview)))
+(((Automated Cron module,overview)))
+
+//===== Vorkenntnisse
+
+==== Was sind Cron-Aufgaben?
+
+Um sicherzustellen, dass Ihre Website und ihre Module weiterhin gut funktionieren, wird eine Gruppe
+von Verwaltungsvorgängen sollte periodisch durchgeführt werden. Diese Operationen sind
+genannt _cron_ Aufgaben. Beispiele für Cron-Aufgaben sind: Prüfung auf Modul und Thema
+Aktualisierungen, Indexierung von Inhalten für die Suche oder Bereinigung temporärer Dateien.
+
+==== Was ist die Beziehung zwischen den Cron-Aufgaben der Site und Unix-Cron?
+
+Linux/Unix-basierte Betriebssysteme verfügen über einen Cron-Scheduler, mit dem Folgendes ausgeführt werden kann
+periodische Aufgaben. Sie können den Cron-Scheduler des Servers verwenden, um die Ausführung der
+Cron-Aufgaben der Website. Alternativ können Sie das Kernmodul Automated Cron verwenden, um
+Aufgaben ausführen. Sie können den Status der Cron-Aufgaben der Website im Statusbericht überprüfen.
+
+==== Verwandte Themen
+
+* <<security-cron>>
+* <<prevent-status>>
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Einrichten von cron"]
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von
+https://www.drupal.org/u/dianalakatos[Diána Lakatos] unter
+https://pronovix.com/[Pronovix],
+https://www.drupal.org/u/dalin[Dave Hansen-Lange] unter
+https://www.advomatic.com/[Advomatisch],
+und https://www.drupal.org/u/batigolix[Boris Doesborg].

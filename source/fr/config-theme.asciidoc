@@ -1,0 +1,128 @@
+[[config-theme]]
+
+=== Configurer le thème
+
+[role="summary"]
+Comment modifier les paramètres du thème pour mettre à jour le schéma de
+couleurs et ajouter un logo.
+
+(((Thème,configurer)))
+(((Thème Bartik,configurer)))
+(((Color scheme,configurer)))
+(((Image du logo,configurer)))
+
+==== Objectif
+
+Modifier les paramètres du thème du cœur par défaut Bartik pour changer le
+schéma de couleurs et ajouter un logo.
+
+==== Pré-requis
+
+<<understanding-themes>>
+
+//==== Pré-requis du site
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, naviguer dans _Apparence_
+(_admin/appearance_).
+
+. Sous _Thèmes installés_, vous trouverez Bartik listé comme votre thème
+par défaut. Sous _Bartik (thème par défaut)_, cliquer sur _Paramètres_.
++
+--
+// Bartik section of admin/appearance.
+image:images/config-theme_bartik_settings.png["Thème par défaut, Bartik",width="100%"]
+--
+
+. Sous _Schéma de couleurs_, cliquer à l'intérieur de chaque boîte de couleur et
+taper les codes couleurs que vous voulez ajouter. Par exemple, utiliser les
+couleurs suivantes :
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Zone | Couleur
+|Fond d'écran du haut de l'en-tête| #7db84a (vert)
+|Fond d'écran du bas de l'ent-ête| #2a3524 (vert foncé)
+|Arrière-plan principal| #ffffff (blanc)
+|Arrière-plan de la barre latérale| #f8bc65 (orange léger)
+|Bordures de la barre latérale| #e96b3c (orange)
+|Arrière-plan du pied de page| #2a3524 (vert foncé)
+|Titre et slogan| #ffffff (blanc)
+|Couleur du texte| #000000 (noir)
+|Couleur des liens| #2a3524 (vert foncé)
+|================================
++
+Note : Vous pouvez aussi utiliser la roue de couleurs sur la droite pour
+sélectionner les couleurs de votre choix. Les codes couleurs web seront ajoutés
+pour vous.
++
+--
+// Color settings section of admin/appearance/settings/bartik.
+image:images/config-theme_color_scheme.png["Spécifications des couleurs mises à
+jour pour le thème Bartik",width="100%"]
+--
+
+. Sous _Image du logo_, décocher _Utiliser le logo fourni par le thème_.
++
+--
+// Logo upload section of admin/appearance/settings/bartik.
+image:images/config-theme_logo_upload.png["New logo in core Bartik theme settings"]
+--
+
+. Sous _Envoyer le logo_, trouver un fichier de logo et le télécharger sur votre
+site. Note : Vous pouvez aussi définir un logo universel pour tous les thèmes
+dans _Apparence_ > _Paramètres_ (_admin/appearance/settings_). Un logo
+personnalisé pour votre thème surchargera le logo universel.
++
+Une fois sélectionné le fichier que vous voudriez transférer, vous verrez le nom
+du fichier à côté du bouton _Choisir un fichier_ ou _Naviguer_ de votre
+navigateur.
+
+. Afin d'enregistrer vos changements et voir les couleurs mises à jour et le
+logo sur votre site, cliquer sur _Enregistrer la configuration_ en bas de page.
++
+Note : Sous _Schéma de couleurs_, il y a une section _Aperçu_ qui montre un
+exemple de ce à quoi votre site ressemblera avec les nouveaux paramètres.
++
+--
+// Preview section of admin/appearance/settings/bartik.
+image:images/config-theme_color_scheme_preview.png["core Bartik theme settings preview",width="100%"]
+--
+
+. Cliquer sur _Retour au site_ dans la barre d'outils pour vérifier que vous avez
+mis à jour les paramètres du thème du cœur Bartik pour votre site.
++
+--
+// Home page after theme settings are finished.
+image:images/config-theme_final_result.png["Final result of editing the core Bartik theme settings - colors and logo",width="100%"]
+--
+
+==== Améliorer votre compréhension
+
+* <<extend-theme-find>>
+
+* <<extend-theme-install>>
+
+* Si vous ne voyez pas les effets des modifications sur votre site, vous
+pourriez devoir vider les caches. Voir <<prevent-cache-clear>>.
+
+
+//==== Concepts liés
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CEi3i1YGOs0[title="Configuring the Theme"]
+
+//==== Pour aller plus loin
+
+
+*Attributions*
+
+Ecrit et modifié par https://www.drupal.org/u/AnnGreazel[Ann Greazel],
+https://www.drupal.org/u/mndonx[Amanda Luker] de
+https://www.advomatic.com/[Advomatic], et
+https://www.drupal.org/u/jerseycheese[Jack Haas].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

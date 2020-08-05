@@ -1,0 +1,172 @@
+[[install-run]]
+
+=== Ausführen des interaktiven Installationsprogramms
+
+[role="summary"]
+Das interaktive Installationsprogramm zur Installation des Kernsystems verwenden.
+
+(((Installer tool,running)))
+(((Installation process)))
+(((Installation profile)))
+(((Profile,installation)))
+(((Database,configuring during the installation process)))
+(((Core software,installing)))
+(((Drupal core,installing)))
+(((Web installer,running)))
+
+==== Zielsetzung
+
+Installieren Sie das Kernsystem und erstellen Sie das Administratorkonto,
+indem Sie die mitgelieferte Installationsprogramm verwenden.
+
+// ==== Erforderliche Vorkenntnisse
+
+==== Anforderungen an die Website
+
+<<install-prepare>>
+
+==== Arbeitsschritte
+
+. Wenn Sie eine 1-Click-Installation von einem Hosting-Provider oder einer
+Demo-Website verwenden, können, werden höchstwahrscheinlich einige oder
+alle der folgenden Bildschirme als Teil der Installationsprozess überspringen.
+Wenn Sie das Kernsystem manuell oder mit dem Composer hochgeladen haben,
+öffnen Sie einen Browser und besuchen Sie Ihre Website,
+um das Installationsprogramm zu starten.
+
+. Wählen Sie zum Beispiel auf der ersten Seite des Installationsprogramms
+die Sprache Englisch aus. Sie können optional eine der anderen aufgeführten
+Sprachen auswählen. Die Sprachdateien für die gewählte Sprache werden
+heruntergeladen und installiert, so
+dass der Rest des Installationsprozesses in der gewählten
+Sprache durchgeführt werden kann. Nachdem Sie eine Sprache ausgewählt haben,
+klicken Sie auf _Speichern und fortfahren_.
++
+--
+// Go to the first step of the installer
+image:images/install-run-1.png["Choose a language",width="100%"]
+--
+
+. Wählen Sie ein Installationsprofil aus. Installationsprofile bieten
+Standortmerkmale und Funktionen für bestimmte Arten von Websites als
+eigenständigen Download, der das Kernsystem, von der Community bereitgestellte
+Module und Themes und vordefinierte Konfigurationen bereitstellt.
+Das Kernsystem enthält zwei Installationsprofile. Wählen Sie  das
+Installationsprofil Standard aus und Klicken Sie auf _Speichern und fortfahren_.
++
+--
+// Go to the choose an installation profile step of the installer
+image:images/install-run-2.png["Choose an installation profile",width="100%"]
+--
+
+. Im nächsten Schritt des Installationsprogramms wird überprüft, ob Ihr System
+die Mindestvoraussetzungen erfüllt. Wenn dies nicht der Fall ist, erhalten Sie
+einen Überblick darüber, was korrigiert werden muss, um fortfahren zu können.
+Werden die minimalen Systemvoraussetzungen erfüllt, wird das
+Installationsprogramm automatisch zum nächsten Schritt übergehen.
+
+. Geben Sie Zugangsdaten zu der Datenbank an, die Sie im, Kapitel
+<<install-prepare>> angelegt haben. Klicken Sie anschließend  auf
+_Speichern und fortfahren_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+|Datenbankname | Der Name, der Datenbank | drupal8
+|Benutzername des Datenbankbenutzers | Der Benutzername des Datenbankbenutzers | DatenbankBenutzername
+|Datenbank-Passwort | Das Passwort des Datenbankbenutzers | **************
+|================================
++
+--
+// Go to the database configuration step of the installer
+image:images/install-run-3.png["Database configuration form",width="100%"]
+--
+
+. Im nächsten Schritt wird ein Fortschrittsbalken unter der Überschrift
+_Installing Drupal_ angezeigt. Nachdem der Installationsvorgang abgeschlossen
+wurde, wechselt das Installationsprogramm automatisch zu zum nächste Schritt.
++
+--
+// Go to the page displaying the installation progress bar
+image:images/install-run-4.png["Installation progress bar",width="100%"]
+--
+
+. Der nächste Schritt besteht darin, einige grundlegende Informationen über Ihre
+neue Website zu konfigurieren
+(beachten Sie auch, eventuelle Warnungen über Dateiberechtigungen, die wir in einem der nächsten Schritte behandeln).
+Beachten Sie, dass das Benutzerkonto, das Sie in diesem Schritt erstellen,
+das Benutzerkontos des Administrators der Website ist.
+Siehe: <<<user-admin-account>> um wichtige Informationen über dieses
+einzigartige Benutzerkonto zu erhalten. Sie können dieses Konto getrost
+„admin" nennen, wen Sie diesem Benutzerkonto ein sicheres und einzigartiges
+Passwort zuweisen.
++
+Füllen Sie das Formular mit den folgenden Informationen aus:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+|Name der Website | Der für die Website gewählte Name | Anytown Farmers Market
+|E-Mail-Adresse der Website | Die mit der Website verbundene E-Mail-Adresse | info@example.com
+|Benutzername | Anmeldename des Administrators| admin
+|Passwort | Das gewählte Passwort | **************
+| Passwort bestätigen | Passwort wiederholen | ****************
+|E-Mail-Adresse | E-Mail-Adresse des Benutzers | admin@example.com
+|================================
++
+Die übrigen Felder können wahrscheinlich auf den Standardwerten belassen werden.
++
+--
+// Go to the basic site information configuration step of the installer
+image:images/install-run-5.png["Configuration form",width="100%"]
+--
+
+. Klicken Sie auf _Speichern und fortfahren_.
+
+. Sie werden auf die Startseite Ihrer neuen Website umgeleitet, und  sollten
+die Meldung _Glückwunsch, Sie haben Drupal installiert!_, im oberen Teil der
+Website sehen können.
++
+--
+// Front page of Drupal after the installer just completed showing the success message
+image:images/install-run-6.png["Installation success",width="100%"]
+--
+
+. Möglicherweise haben Sie im Konfigurationsschritt eine Warnung über
+Dateiberechtigungen gesehen. Diese Warnung wird Ihnen weiterhin angeziegt,
+bis Sie die Dateiberechtigungen korrigiert haben. So
+vermeiden Sie die Warnung und machen Ihre Website sicherer: Ändern Sie die
+Schreib- und Leseberechtigungen des
+Verzeichnisses _sites/default_ und der Datei _sites/default/settings.php_, so dass
+sowohl das Verzeixhnis, als auch die Datei schreibgeschützt sind
+(möglicherweise müssen Sie die Dokumentation Ihres Hosting-Providers
+konsultieren, um Anweisungen zum Setzen von Lese- und Schreibrechten
+zu erhalten).
+
+==== Vertiefen Sie Ihr Wissen
+
+Überprüfen Sie den Statusbericht, um zu sehen, ob es Probleme mit der
+Installation gibt. Siehe <<prevent-status>>.
+
+==== Verwandte Konzepte
+
+* <<install-dev-sites>>
+* <<install-tools>>
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/LGfRKKKDjv8[title="Das Installationsprogramm ausführen (englisch)"]
+
+==== Zusätzliche Ressourcen
+
+* https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org Community-Dokumentationsseite "Eine Datenbank erstellen"]
+* https://www.drupal.org/server-permissions[Drupal.org Gemeinschaft Dokumentation Abschnitt "Webhosting-Probleme"]
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar] bei
+https://drupalize.me[Drupalize.Me],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[redcrackle].

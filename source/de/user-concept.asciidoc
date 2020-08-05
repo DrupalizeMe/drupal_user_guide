@@ -1,0 +1,91 @@
+[[user-concept]]
+
+=== Konzept: Benutzer, Rollen und Berechtigungen
+
+[role="summary"]
+Überblick über Benutzerkonten, Berechtigungen und Rollen.
+
+(((User,overview)))
+(((Role,overview)))
+(((User role,overview)))
+(((Permission,overview)))
+(((Anonymous user,overview)))
+(((Authenticated user,overview)))
+(((Administrative user account,overview)))
+
+// ==== Erforderliche Vorkenntnisse
+
+==== Was sind Benutzer?
+
+Jeder, der Ihre Website besucht, ist ein _Benutzer_, auch Sie. Es gibt drei
+Gruppen von Benutzern:
+
+* Benutzer, die nicht angemeldet sind, oder _anonyme Benutzer_
+
+* Benutzer, die eingeloggt sind, oder _authentifizierte Benutzer_
+
+* Das administrative Benutzerkonto, das automatisch erstellt wurde, als Sie
+Ihre Website installiert hat, oder Benutzer 1. Siehe <<<user-admin-account>>.
+
+==== Was sind Berechtigungen?
+
+Die Möglichkeit, Aktionen auf Ihrer Site durchzuführen (einschließlich der Anzeige von Inhalten, der Bearbeitung
+Inhalt und Änderung der Konfiguration) wird durch _Berechtigungen_ geregelt. Jede
+Die Erlaubnis hat einen Namen (z.B. _Veröffentlichte Inhalte anzeigen_) und umfasst eine Aktion
+oder eine kleine Teilmenge von Aktionen. Ein Benutzer muss eine Berechtigung erhalten, um
+die entsprechende Aktion auf der Website; die Berechtigungen werden durch die Module definiert
+die die Aktionen bereitstellen.
+
+==== Was sind Rollen?
+
+Anstatt jedem Benutzer individuelle Berechtigungen direkt zuzuweisen, werden Berechtigungen
+sind in _Rollen_ gruppiert. Sie können eine oder mehrere Rollen auf Ihrer Site definieren, und
+dann erteilen Sie Berechtigungen für jede Rolle. Die Berechtigungen, die authentifizierten
+und anonyme Benutzer sind in den Feldern _Authentifizierter Benutzer_ und _Anonymer Benutzer_ enthalten.
+Benutzer_ Rollen und abhängig vom Installationsprofil, das Sie verwendet haben, als Sie
+Ihre Site installiert hat, kann es auch eine _Administrator_ -Rolle geben, die
+automatisch alle Berechtigungen auf Ihrer Site zugewiesen.
+
+Jedem Benutzerkonto auf Ihrer Site wird automatisch der _Authentifizierte Benutzer_ zugewiesen.
+Rolle und kann optional mit einer oder mehreren zusätzlichen Rollen ausgestattet werden. Wenn Sie
+einem Benutzerkonto eine Rolle zuweisen, hat der Benutzer alle Berechtigungen des
+Rolle, wenn Sie angemeldet sind.
+
+Es ist eine gute Praxis, mehrere Rollen auf Ihrer Website einzurichten. Auf dem Bauernmarkt
+Standortbeispiel können Sie die folgenden Rollen wünschen:
+
+* Eine Lieferantenrolle, die es den Lieferanten ermöglicht, ihre eigene Lieferantenlistungsseite zu bearbeiten.
+
+* Eine Rolle als Inhaltsredakteur für die Bearbeitung der allgemeinen Bauernmarkt-Seiten
+
+* Eine Benutzer-Manager-Rolle für die Verwaltung der Kreditorenkonten
+
+* Die _Administrator_ -Rolle, die mit Ihrer Site installiert wurde, für erfahrene Benutzer
+zur Verwaltung der Website-Konfiguration
+
+
+
+==== Verwandte Themen
+
+* <<user-new-role>>
+* <<user-permissions>>
+* <<user-roles>>
+* <<user-new-user>>
+* <<user-admin-account>>
+* <<user-content>>
+
+==== Zusätzliche Ressourcen
+
+* https://www.drupal.org/node/120614[_Drupal.org_ Community-Dokumentationsseite "Benutzer, Rollen und Berechtigungen"]
+* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ Community-Dokumentationsseite "Benutzer verwalten"]
+* https://www.drupal.org/node/1803614[_Drupal.org_ Community-Dokumentationsseite "Benutzerrollen"]
+
+
+*Mitwirkende*
+
+Angepasst von https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
+https://www.drupal.org/u/batigolix[Boris Doesborg], und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
+https://www.drupal.org/node/1803614["Benutzerrollen"],
+copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

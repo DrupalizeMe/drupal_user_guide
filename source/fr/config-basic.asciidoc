@@ -1,0 +1,110 @@
+[[config-basic]]
+
+=== Modifier les informations basiques du site
+
+[role="summary"]
+Comment modifier les informations basiques du site (nom du site, slogan, et
+fuseau horaire par défaut).
+
+(((Configurer,site)))
+(((Nom du site,configurer)))
+(((Slogan du site,configurer)))
+(((Slogan,configurer)))
+(((Accroche du site,configurer)))
+(((Accroche,configurer)))
+(((Adresse électronique du site,configurer)))
+(((Adresse électronique,configurer)))
+(((Page d'accueil,configurer)))
+(((Page d'erreur,configurer)))
+(((Paramètres régionaux,configurer)))
+(((Paramètres du pays,configurer)))
+(((Paramètres du fuseau horaire,configurer)))
+(((Premier jour de la semaine,configurer)))
+
+==== Objectif
+
+Modifier les informations basiques du site comme le _nom du site_, le _slogan_,
+et le _fuseau horaire par défaut_.
+
+==== Pré-requis
+
+<<config-overview>>
+
+//==== Site prerequisites
+
+==== Étapes
+
+===== Configurer les informations basiques du site
+
+. Dans le menu d'administration _Gérer_, naviguer dans _Configuration_ >
+_Système_ > _Informations du site_ (_admin/config/system/site-information_) pour
+changer le _nom du site_, le _slogan_, l'_adresse électronique_
+d'administration, ou le chemin de la _page d'accueil par défaut_.
+
+. Remplir les champs disponibles comme approprié pour votre site.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ|Explication|Valeur d'exemple
+|Nom du site|Utilisé pour identifier le site et affiché dans les
+navigateurs|Marché fermier d'Anytown
+|Slogan|Généralement affiché sur tout le site|Aliments frais de la ferme
+|Adresse électronique|Utilisé pour l'adresse d'_expéditeur_ dans les courriels
+automatiques (inscription, réinitialisation du mot de passe, etc)|info@example.com
+|================================
++
+--
+// Site details section of admin/config/system/site-information.
+image:images/config-basic-SiteInfo.png["Informations du site"]
+--
+
+. Après la modification des champs, cliquer sur _Enregistrer la configuration_
+pour voir les changements appliqués sur le site.
+
+===== Configurer les paramètres régionaux par défaut
+
+. Dans le menu d'administration _Gérer_, naviguer dans _Configuration_ >
+_Régionalisation et Langue_ > _Paramètres régionaux_
+(_admin/config/regional/settings_).
+
+. Remplir le formulaire comme suit :
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ|Explication|Valeur d'exemple
+|Localisation > Pays par défaut| Le pays principal de votre site |États-Unis
+|Localisation > Premier jour de la semaine| Le jour marquant le début de la
+semaine sur les calendriers|Dimanche
+|Fuseaux horaire > Fuseau horaire par défaut| Le fuseau horaire principal de votre  site |America > Los Angeles
+|Fuseaux horaires > Les utilisateurs peuvent définir leur propre fuseau  horaire| Si les utilisateurs connectés peuvent choisir un fuseau horaire différent pour l'affichage des dates et des heures sur le site |Décoché
+|================================
++
+--
+// Locale and Time Zones sections of admin/config/regional/settings.
+image:images/config-basic-TimeZone.png["Fuseaux horaires"]
+--
+
+. Après avoir modifié les champs, cliquer sur _Enregistrer la configuration_
+pour voir les changements appliqués sur le site.
+
+// ==== Améliorer votre compréhension
+// ==== Concepts liés
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/oDMCQ1cDYOI[title="Editing Basic Site Information"]
+
+==== Pour aller plus loin
+
+https://www.drupal.org/node/1896670[page de documentation communautaire de _Drupal.org_ "Getting started with Drupal 8 administration"]
+
+
+*Attributions*
+
+Ecrit et modifié par https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] de
+https://erdfisch.de[erdfisch],
+et https://www.drupal.org/u/ifrik[Antje Lorch].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

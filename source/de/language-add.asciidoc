@@ -1,0 +1,79 @@
+[[language-add]]
+
+=== Eine Sprache hinzufügen
+[role="summary"]
+Eine Sprache hinzufügen, die notwendigen Module installieren und die _Sprache_ mittels _Sprachauswahlblock_ einschalten.
+
+
+(((Language,adding)))
+(((Multilingual modules,installing)))
+(((Multilingual modules,enabling)))
+(((Language module,installing)))
+(((Content Translation module,installing)))
+(((Configuration Translation module,installing)))
+(((Interface Translation module,installing)))
+(((Module,Language)))
+(((Module,Content Translation)))
+(((Module,Configuration Translation)))
+(((Module,Interface Translation)))
+
+==== Zielsetzung
+
+Fügen Sie eine oder mehrere Sprachen zu Ihrer Website hinzu und legen Sie fest,
+welche davon standardmäßig verwendet wird.
+
+==== Erforderliche Vorkenntnisse
+
+<<language-concept>>
+
+// ==== Anforderungen an die Website
+
+==== Arbeitsschritte
+
+. Installieren Sie die vier Module des Kernsystems, die Unterstützung für mehrere Sprachen in
+Drupal bereitstellen.(Language, Interface Translation,
+Content Translation, and Configuration Translation), indem Sie die Schritte in
+<<config-install>> ausführen.
+
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+_Regional und Sprache_ > _Sprachen_ (_admin/config/regional/language_).
+
+. Klicken Sie auf _Sprache_ hinzufügen.
+
+. Wählen Sie _Spanisch_ (oder Ihre bevorzugte Sprache) aus der Liste _Sprache_ aus.
+  Klicken Sie auf _Sprache hinzufügen_. Warten auf die Fertigstellung des
+  Downloads der Übersetzung. die Seite _Sprachen_ wird erneut angezegt.
+  Eine Meldung drüber, dass die ausgewählte Übersetzung heruntergeladen wurde, wird herausgegeben.
++
+--
+// Bestätigung und Sprachliste nach Hinzufügen der spanischen Sprache.
+image:images/language-add-list.png["Liste der verfügbaren Sprachen auf der Website",width="100%"]]
+--
+
+. Folgen Sie den Arbeitsschritten im Kapitel <<block-place>>, um den _Sprachumschalter-Block in
+den Abschnitt _zweite Seitenleiste_ Ihres Themes zu platzieren.
+Dadurch können Besucher der Website zwischen
+Sprachen umschalten, sobald die Website übersetzt worden ist.
+
+==== Vertiefen Sie Ihr Wissen
+
+* <<language-content-config>>
+* <<language-content-translate>>
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/8Yu0G4gJ0f4[title="Hinzufügen einer Sprache (englich)"]
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/resource-guides/configuring-multilingual-site[_Drupal.org_ Seite "Ressourcenleitfaden: Konfigurieren einer mehrsprachigen Website"]]
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/yrvyn[Leila Tite],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], und
+https://www.drupal.org/u/batigolix[Boris Doesborg].

@@ -1,0 +1,169 @@
+[[structure-fields]]
+
+=== Hinzufügen von Basisfeldern zu einem Inhaltstyp
+
+[role="summary"]
+How to add fields to a content type.
+
+(((Content type,adding field to)))
+(((Field,adding to content type)))
+(((Image field,adding)))
+(((URL field,adding)))
+
+==== Zielsetzung
+
+Fügen Sie ein Verknüpfungsfeld und ein Bildfeld zum Inhaltstyp Anbieter hinzu.
+
+==== Vorrausgesetztes Wissen
+<<planning-data-types>>
+
+==== Anforderungen an die Website
+
+Der Inhaltstyp Lieferant muss vorhanden sein. See <<structure-content-type>>.
+
+==== Arbeitsschritte
+
+Fügen Sie die Felder Anbieter-URL und Hauptbild zum Inhaltstyp Anbieter hinzu.
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhalt
+Typen_ (_admin/structure/types_). Klicken Sie dann in der Dropdown-Liste auf _Felder verwalten_.
+für den Content-Typ Anbieter. Sie gelangen auf die Seite _Felder verwalten_. Beachten Sie, dass
+die Namen und Beschreibungen der Inhaltstypen und -felder, die von
+Ihr Installationsprofil wird auf diesen Seiten auf Englisch angezeigt; siehe
+<<language-concept>> für eine Erklärung.
+
+. Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint. Sie können entweder eine neue
+Feld für den Inhaltstyp oder verwenden Sie ein vorhandenes Feld wieder.
+
+. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Wert
+| Neues Feld hinzufügen | Feldtyp | Verknüpfung
+| Etikett | Etikett, das in Verwaltungsseiten sichtbar ist | Anbieter-URL
+|================================
++
+Basierend auf dem Wert _Label_ wird automatisch ein Rechnername generiert. Klicken Sie auf .
+_Bearbeiten_, wenn Sie den Standardnamen überschreiben möchten.
++
+--
+// Initial page for admin/structure/types/manage/vendor/fields/add-field.
+image:images/structure-fields-add-field.png["Add field page"]
+--
+
+. Klicken Sie auf _Speichern und fortfahren_. Die Seite Anbieter-URL wird angezeigt, auf der Sie folgende Einstellungen vornehmen können
+die zulässige Anzahl von Werten. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Wert
+| Erlaubte Anzahl von Werten | Die Anzahl der Werte, die eingegeben werden können | Begrenzt, 1
+|================================
+
+
+. Klicken Sie auf _Feldeinstellungen speichern_. Die Seite _Lieferanten-URL-Einstellungen für Lieferant_
+erscheint, wodurch Sie das Feld konfigurieren können. Füllen Sie die Felder wie gezeigt aus
+unten.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Etikett | Etikett, das in der Inhaltsform sichtbar ist | Anbieter-URL
+| Hilfetext | Die Anweisung, die unter dem Feld | angezeigt wird (leer lassen)
+| Erforderliches Feld | Ob das Feld erforderlich ist oder nicht | Nicht angekreuzt
+| Erlaubter Link-Typ | Die Art der Links, die eingegeben werden können | Nur externe Links
+| Linktext erlauben | Ob ein Linktext eingegeben werden kann | Deaktiviert
+|================================
++
+--
+// Field settings page for adding vendor URL field.
+image:images/structure-fields-vendor-url.png["Field settings page for Vendor URL",width="100%"]
+--
+
+. Klicken Sie auf _Einstellungen speichern_. Die Anbieter-URL wurde dem Inhalt hinzugefügt.
+tippen. Fahren Sie mit der Erstellung des Feldes Hauptbild fort.
+
+. Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint. Füllen Sie die Felder wie abgebildet aus
+unten.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Wert
+| Neues Feld hinzufügen | Feldtyp | Bild
+| Etikett | Etikett, das auf Verwaltungsseiten sichtbar ist | Hauptbild
+|================================
+
+. Klicken Sie auf _Speichern und fortfahren_. Die Seite Hauptbild erscheint. Füllen Sie die Felder aus
+wie unten dargestellt.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Wert
+| Erlaubte Anzahl von Werten | Die Anzahl der Werte, die eingegeben werden können | Begrenzt, 1
+|================================
++
+Sie können hier ein Standardbild festlegen. Dieses wird verwendet, wenn Sie kein Standardbild angeben.
+Bild beim Erstellen eines Anbieter-Inhaltsartikels.
+
+. Klicken Sie auf _Feldeinstellungen speichern_. Die Seite _Hauptbildeinstellungen für Anbieter_
+erscheint. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Wert
+| Etikett | Etikett, das in der Inhaltsform sichtbar ist | Hauptbild
+| Hilfetext | Die Anweisung, die unter dem Feld | angezeigt wird (leer lassen)
+| Pflichtfeld | Ob das Feld erforderlich ist oder nicht | Geprüft
+| Erlaubte Dateierweiterungen | Die Art der Bilder, die hochgeladen werden können | png, gif, jpg, jpeg
+| Dateiverzeichnis | Das Verzeichnis, in dem die Dateien gespeichert werden. Indem Sie einen Dateiverzeichniswert angeben, stellen Sie sicher, dass alle Bilder, die über das Feld Hauptbild hochgeladen werden, sich im selben Verzeichnis befinden. | Anbieter
+| Mindestbildauflösung | Die Mindestauflösung des hochgeladenen Bildes | 600 x 600
+| Maximale Upload-Größe | Die maximale Dateigröße des hochgeladenen Bildes | 5 MB
+| Alt-Feld aktivieren | Ob ein alternativer Text eingegeben werden kann | Geprüft
+| Alt-Feld erforderlich | Ob ein alternativer Text erforderlich ist | Geprüft
+|================================
++
+--
+// Field settings page for adding main image field.
+image:images/structure-fields-main-img.png["Field settings page for Main Image",width="100%"]
+--
+
+. Klicken Sie auf _Einstellungen speichern_. Das Hauptbild wurde dem Inhaltstyp hinzugefügt.
++
+--
+// Manage fields page for Vendor, showing two new fields.
+image:images/structure-fields-result.png["Manage fields page",width="100%"]
+--
+
+. Fügen Sie mit ähnlichen Schritten ein Hauptbildfeld zum Inhaltstyp "Rezept" hinzu. Starten Sie
+indem Sie in Schritt 1 zur Seite _Felder verwalten_ des Inhaltstyps Rezept navigieren. Dann .
+springen Sie zu Schritt 7 und folgen Sie den verbleibenden Schritten, aber verwenden Sie das vorhandene Hauptbild wieder
+Feld, das Sie für den Inhaltstyp Lieferant angelegt haben, anstatt ein neues
+Feld. In den folgenden Schritten werden einige der Konfigurationsbilder nicht
+verfügbar, wegen der Feldwiederverwendung.
+
+. Legen Sie zwei Lieferanten-Contentpositionen (siehe <<content-create>>) mit dem Namen "Happy Farm" an
+und "Sweet Honey". Stellen Sie sicher, dass sie Bilder und URLs enthalten.
+
+==== Erweitern Sie Ihr Verständnis
+
+* <<structure-image-styles>>
+* <<structure-content-display>>
+* <<structure-form-editing>>
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CZpfR9WbVcQ[title="Adding Basic Fields to a Content Type"]
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/node/774742[_Drupal.org_ community documentation page "Add a field to a content type"]
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/sree[Sree Veturi] und
+https://www.drupal.org/u/batigolix[Boris Doesborg].

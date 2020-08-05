@@ -1,0 +1,132 @@
+[[understanding-drupal]]
+
+=== Concepto: Drupal como Sistema de Gestión de Contenidos
+
+[role="summary"]
+Introducción a Drupal y las razones para elegirlo como un sistema de gestión de
+contenidos (CMS) fiable.
+
++(((CMS (Sistema de gestión de contenidos),vista general)))
++(((Sistema de gestión de contenidos (CMS),vista general)))
++(((CMS (Sistema de gestión de contenidos),vista general)))
++(((CMS (Sistema de gestión de contenidos),server requirements)))
++(((Nucleo de Drupal,vista general)))
++(((Drupal.org,descargando módulos y temas de)))
+
+//==== Conocimientos previos
+
+==== ¿Qué es un sistema de gestión de contenidos?
+
+Un sistema de gestión de contenidos (CMS por sus siglas en inglés) es una
+herramienta de software que permite a los usuarios añadir, publicar, editar o
+eliminar contenido desde un sitio web, utilizando un navegador web en un
+smartphone, tablet u ordenador personal. Habitualmente un software CMS se
+escribe en un lenguaje de programación que se ejecuta en un ordenador, donde se
+instalan un servidor web y una base de datos. El contenido y las opciones de
+configuración del sitio web normalmente se guardan en la base de datos, y por
+cada petición de página que recibe el servidor web, el sistema combina la
+información de la base de datos y los recursos (archivos JavaScript, CSS,
+imágenes, etc. que son parte del CMS o que han sido añadidos) para construir la
+página solicitada del sitio web.
+
+La combinación del sistema operativo donde se ejecuta el CMS, el lenguaje de
+programación en el que está escrito, la base de datos en la que se guarda su
+información, y el servidor web que ejecuta el software para obtener la
+información y devolverla al navegador del usuario que visita el sitio web es
+conocido como entorno o infraestructura en el que el CMS se ejecuta. La
+combinación del sistema operativo Linux, servidor web Apache, base de datos
+MySQL, y lenguaje de programación PHP es comunmente conocida como entorno
+_LAMP_.
+
+==== ¿Qué es Drupal?
+
+Drupal es un CMS flexible basado en el entorno LAMP, con un diseño modular que
+permite incorporar o quitar funcionalidad instalando o desinstalándo _módulos_,
+y permite que la apariencia o diseño del sitio web se pueda cambiar instalando
+o desistalando _temas_. La descarga básica de Drupal, conocida como el núcleo
+de Drupal, contiene los archivos PHP necesarios para ejecutar la funcionalidad
+básica del CMS, varias opciones de módulos y temas, y múltiples recursos
+JavaScript, CSS e imágenes. Se pueden descargar muchos más módulos y temas en
+el sitio web https://www.drupal.org[_Drupal.org_].
+
+Drupal también se puede ejecutar en otros entornos tecnológicos:
+
+* El sistema operativo puede ser Windows o Mac Os en lugar de Linux.
+
+* El servidor web puede ser Nginx o IIS en lugar de Apache.
+
+* La base de datos puede ser PostgreSQL o SQLLite en lugar de MySQL, o
+sustituirla por otro sistema compatible con MySQL, como MariaDB o Percona.
+
+Se puede hacer funcionar en otros sistemas operativos, servidores web, y
+sistemas de gestión de bases de datos, sin embargo hay que tener en cuenta que
+el lenguaje de programación en el que está escrito Drupal es PHP, y eso no se
+puede cambiar.
+
+==== ¿Cuáles son las razones para usar Drupal?
+
+Para construir una web, tenemos la opción de utilizar uno de los muchos CMS y
+servicios alojados existentes, desarrollar un CMS propio, o bien construir la
+web sin utilizar ningún CMS. Estas son algunas de las razones por las que
+elegir usar Drupal:
+
+* Construir un sitio web pequeño y simple con páginas estáticas HTML no es
+difícil, y se puede tener preparado y funcionando muy rápidamente. Montar un
+sitio web en un CMS generalmente require más tiempo inicialmente, pero aporta
+el beneficio de la edición on-line (más sencilla para editores de contenido
+menos experimentados), uniformidad (más difícil de mantener utilizando HTML
+estático para sitios web grandes), y la posibilidad de incluir funcionalidad
+más compleja que puedan requerir una base de datos.
+
+* Algunos CMS son muy específicos, por ejemplo, existen distribuciones y
+servicios alojados que se pueden usar para construir un blog o un sitio web
+para gestionar los miembros de un club. Drupal en cambio, es un CMS de
+propósito general. Para construir un sitio web con un propósito particular se
+podría elegir un CMS diseñado para ese propósito; sin embargo, si el proyecto
+difiere aunque sea ligeramente del propósito establecido por ese CMS,
+probablemente será mejor utilizar un CMS de propósito general en lugar de
+tratar de adaptarse o adapatar un CMS especifíco.
+
+* Construir un software propio tipo CMS puede resultar atractivo. Sin embargo,
+habitualmente es mejor utilizar un CMS de propósito general como Drupal como
+punto de partida, ya que la funcionalidad básica (como cuentas de usuario o
+gestión de contenidos) lleva miles de horas de desarrollo, incluyendo muchos
+años de testeo de usuarios, corrección de errores y securización.
+
+* Algunos productos CMS requiren pagar licencias muy costosas. Algunos son
+gratuitos o cuentan con una versión gratuita, pero tienen licencias
+restrictivas que no permiten hacer modificaciones o extender su funcionalidad.
+Puede ser preferible utilizar un CMS como Drupal que tiene menos licencias de
+software restrictivas, y que está desarrollado por una comunidad mundial. Ver
+<<understanding-project>> para más información sobre este tema.
+
+==== Temas relacionados
+
+* <<understanding-modules>>
+* <<understanding-themes>>
+* <<understanding-distributions>>
+* <<understanding-project>>
+
+==== Recursos adicionales
+
+* https://www.drupal.org/docs/8/understanding-drupal-8/overview[The Drupal overview]
+
+* https://www.drupal.org/about/faq[_Drupal.org_ page "FAQ" (Frequently Asked Questions)]
+
+* https://www.drupal.org/case-studies[_Drupal.org_ page "Case Studies"]
+
+* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia page "Content management systems"]
+
+* https://en.wikipedia.org/wiki/Modular_design[Wikipedia page "Modular design"]
+
+
+*Atribuciones*
+
+Escrito y editado por https://www.drupal.org/u/kvantomme[Kristof van Tomme]
+en https://pronovix.com/[Pronovix],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+y https://www.drupal.org/u/michaellenahan[Michael Lenahan]
+en https://erdfisch.de[erdfisch].
+
+Traducido por https://www.drupal.org/u/juanolalla[Juan Olalla].
+Revisado por https://www.drupal.org/u/alvar0hurtad0[ Alvaro Hurtado ] y https://www.drupal.org/u/guiurocafortferrer[Guiu Rocafort Ferrer]

@@ -1,0 +1,82 @@
+[[block-create-custom]]
+
+=== Créer un bloc personalisé
+
+[role="summary"]
+Comment créer un bloc personnalisé.
+
+(((Bloc,créer)))
+(((Bloc personnalisé,créer)))
+
+==== Objectif
+
+Créer un bloc affichant les horaires et la localisation du marché fermier.
+
+==== Pré-requis
+
+* <<block-concept>>
+* <<block-regions>>
+
+// ==== Site prerequisites
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Mise en page des
+blocs_ > _Bibliothèque de bloc personnalisé_
+(_admin/structure/block/block-content_).
+
+. Cliquer sur _Ajouter un bloc personnalisé_. La page _Ajouter un bloc
+personnalisé_ apparaît.
+
+. Remplir les champs comme ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ |Explication |Valeur d'exemple
+|Description du bloc |Nom du bloc tel qu'affiché pour les utilisateurs |Bloc
+horaires et localisation
+|Corps |Contenu du bloc lorsqu'il est affiché |Ouverture : le dimanche de 9 h à
+14 h, d'avril à septembre<br />Localisation : parking de la Poste, place de la
+mairie, centre-ville d'Anytown.
+|================================
++
+--
+// Block add page (block/add).
+image:images/block-create-custom-add-custom-block.png["Ajouter un bloc
+personnalisé", width="100%"]
+--
+
+. Cliquer sur _Enregistrer_. Un message indiquant que le bloc a été enregistré
+apparaît.
+
+==== Pour approfondir
+
+* Modifier le contenu du bloc personnalisé. dans le menu d'administration
+_Gérer_, aller à _Structure_ > _Mise en page des blocs_ > _Bibliothèque de blocs
+personnalisés_ (_admin/structure/block/block-content_). Localiser votre bloc
+dans la liste et cliquer sur _Modifier_ pour effectuer des changements.
+
+* Placer le bloc que vous avez créé dans la barre latérale. Consulter
+<<block-place>> pour plus de détails.
+
+//==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/sI2wrbn3cPg[title="Creating a Custom Block"]
+
+==== Pour aller plus loin (en anglais)
+
+https://www.drupal.org/docs/8/core/modules/block/overview[_Drupal.org_ community documentation page "Working with blocks (content in regions)"]
+
+
+*Attributions*
+
+Adapté par https://www.drupal.org/u/jredding[Jacob Redding] et
+https://www.drupal.org/u/batigolix[Boris Doesborg] à partir de
+https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks
+(content in regions)], copyright 2000-2019 par les contributeurs individuels de
+la https://www.drupal.org/documentation[documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

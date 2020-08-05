@@ -1,0 +1,149 @@
+[[preface-conventions]]
+=== Annahmen in diesem Handbuch
+
+[role="summary"]
+Die in diesem Handbuch getroffenenn Annahmen verstehen.
+
+==== Annahmen und Voraussetzungen
+
+Dieses Handbuch geht von den folgenden Annahmen und Voraussetzungen aus:
+
+* Dieses Handbuch ist nach Themen gegliedert; siehe <<preface-organization>> für weitere Informationen.
+Viele Themen enthalten den Abschnitt _Erforderliche Vorkenntnisse_, in dem andere
+Themen, genannt werden, mit deren Inhalten Sie sich auseinandergesetzt haben müssen, um das Thema, das Sie
+gerade lesen zu verstehen. Außerdem setzen wir auch etwas Hintergrundwissen voraus, das im Handbuch selbst nicht behandelt wird.
+Siehe <<preface-audience>> für weitere Informationen.
+
+* Viele Arbeitsthemen listen _Anforderungen an die Website_ auf, d.h. Aufgaben, die Sie
+auf Ihrer Website bereits abgeschlossen haben müssen, bevor Sie die Aufgabe, die
+in einem Thema behandelt wird, das sie gerade lesen, umsetzen können.
+
+* Die Besonderheiten der Anforderungen an die Website beziehen sich auf das Szenario, das im gesamten
+Handbuch für die Erstellung der Wochenmarkt-Website verwendet wird (siehe <<preface-scenario>>
+für Einzelheiten). Sie können die Aufgaben an Ihr eigenes Szenario anpassen,
+müssen sich dann aber auch an die benutzerdefinierten Änderungen erinnern, die Sie vorgenommen haben,
+um entscheiden zu können, ob Ihre Website die Anforderungen erfüllt, die erforderlich sind, um
+eine Aufgabe erfolgreich zu bearbeiten.
+
+* Für alle Arbeitsthemen nach <<install-run>> gibt es auch eine implizite
+Voraussetzung: Sie müssen die letzte stabile Version des der CMS-Software auf
+Ihrem System installiert haben und sich mit einem Benutzerkonto an Ihrer Website
+angemeldet haben, das über ausrechend Berechtigungen verfügt, um die Aufgabe
+auszuführen (z. B. das Benutzerkonto, das erstellt wurde, als Sie
+Drupal installiert haben. Dieses Benutzerkonto verfügt automatisch
+über alle vorhandenen Berechtigungen).
+
+* Wenn Sie alle Themen der Reihe nach lesen und alle Schritte in den Arbeitsthemen
+nach und nach ausführen (währen Sie an der Website angemeldet bleiben), sollten Sie
+über das Hintergrundwissen und die für jedes Thema geltenden Anforderungen an die
+Website, automatisch erfüllen, während Sie das Handbuch durcharbeiten.
+
+* Dieses Handbuch zeigt Ihnen, wie Sie Aufgaben über den Verwaltungsbereich und wo immer möglich,
+auch unter Verwendung der neuesten stabilen Version des Kommandozeilenwerkzeugs
+Drush (siehe: <<install-tools>>) erledigen können. Sie können gerne ein
+anderes Kommandozeilenwerkzeug, wie z.B. die Drupal Console
+(wenn Sie die darüber aktuell verfügbaren Befehle nachschlagen) oder vorerst nur
+den Verwaltungsbereich der Benutzeroberfläche verwenden.
+
+===== Text-Konventionen
+
+Die folgenden Konventionen werden im Text dieses Handbuchs verwendet:
+
+* Die URL example.com_ ist die Basis-URL Ihrer Website. Lesen Sie den Abschnitt Navigation
+weiter unten um weitere Informationen darüber zu erhalten,
+wie URLs innerhalb Ihrer Website aussehen und angegeben werden.
+
+* Text, den Sie in der Benutzeroberfläche Ihrer Website sehen sollten, wird in _Kursivschrift_ angezeigt,
+wie zum Beispiel: Klicken Sie auf _Konfiguration speichern_. Dies gilt nur für die Texte der Benutzeroberfläche,
+die mit der Software mitgeliefert werden und nur für den Teil der Benutzeroberfläche, der im aktuellen Thema behandelt wird.
+Zum Beispiel könnten Sie in einem Thema über das Bearbeiten von Inhalten folgendes lesen:
+Klicken Sie auf _Bearbeiten_ in der Zeile der Seite „Info“ (_Bearbeiten_ wäre in diesem Fall Kursiv dargestellt
+kursiv. Das Wort Info  wäre nicht kursiv dargestellt, weil die Info-Seite in einem vorgegangenen Thema behandelt worden währe).
+
+* URLs, Dateinamen und neu eingeführte Terminologie werden auch in
+_Kursivschrift_ dargestellt.
+
+* Text, den Sie in ein Kommandozeilenfenster eingeben sollten, wird in Monospace-Schrift angezeigt,
+beispielsweise so:
+
++
+----
+drush cache:rebuild
+----
+
+* In diesem Handbuch wird das Wort _Verzeichnis_ immer als Verweis auf Datei
+Verzeichnisse (die manche Leute lieber als _Ordner_ bezeichnen) verwendet.
+
+==== Navigation
+
+Um die meisten Aufgaben in diesem Handbuch zu erledigen, müssen Sie zu einem der folgenden Themen
+oder  über mehrere Seiten im Verwaltungsbereich der Website hinweg navigieren. In den Anweisungen könnte folgendes zu lesen sein
+(dies wird mehr Sinn machen, nachdem Sie das Kernsystem installiert haben):
+
+=============
+Navigieren Sie Im Menü _Verwalten_ zum Menüpunkt
+_Struktur_ > _Taxonomie_ (_admin/structure/taxonomy_).
+=============
+
+Navigationsanweisungen wie diese setzen voraus, dass Sie das Modul Toolbar,
+das mit dem Kernsystem ausgeliefert wird,
+installiert haben. Das Obige Beispiel bedeutet, dass Sie in der Werkzeugleiste oben auf Ihrer Website,
+auf _Verwalten_ klicken, um die Menüoptionen anzuzeigen, und dann auf den Menüpunkt
+_Struktur_ und den untergeordneten Menüpunkt _Taxonomie_ klicken, so dass Sie am Ende auf einer Seite mit der
+URL _http://example.com/admin/structure/taxonomy_ landen (wenn die Basis-URL Ihre Website
+_http://example.com_) lautet.
+
+// Top navigation bar on any admin page, with Manage menu showing.
+image:images/preface-conventions-top-menu.png["Admin menu",width="100%"]
+
+Hier ist ein weiteres Beispiel:
+
+=============
+Navigieren Sie im Menü _Verwalten_ zum Menüpunkt
+_Konfiguration_ > _System_ > _Grundlegende Website-Einstellungen_
+(_admin/config/system/site-information_).
+=============
+
+In diesem Beispiel würden Sie, nachdem Sie auf _Verwalten_ und _Konfiguration_
+geklickt haben, nachdem Abschnitt _System_  auf der Seite Konfiguration gesucht und gefunden haben
+und dort auf den Link _Grundlegende Website-Einstellungen geklickt haben_. Danach landen Sie auf der Seite
+_http://example.com/admin/config/system/site-information_.
+
+// System section of admin/config page.
+image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
+
+Ein weiterer Hinweis: Wenn Sie das mit dem Kernsystem ausgelieferte Verwaltungs-Theme Seven verwenden,
+werden viele „Hinzufügen"-Button im Verwaltungsberiech mit \+-Zeichen angezeigt.
+Zum Beispiel erscheint unter dem  Menüpunkt Verwalten/Inhalt der Button „Neuen Inhalt hinzufügen als
+_+ Neuen Inhalt hinzufügen_. Dies ist jedoch abhängig vom verwendeten Theme und gehört nicht wirklich zum
+Text des Buttons (Ein Screen Reader würde den Test beispielsweise falsch vorlesen), so dass wir uns entschieden haben, das \+-Zeichen in diesem Handbuch nicht zu erwähnen
+obwohl es sich auf den Schaltflächen befindet.
+
+==== Ausfüllen von Formularen
+
+Viele der Arbeitsthemen in diesem Handbuch enthalten Arbeitsschritte, bei denen Sie ein
+Web-Formular ausfüllen müssen. In den meisten Fällen wird ein Bildschrimfoto des Formulars,
+zusammen mit einer Tabelle von Beispielwerten die Sie in das jeweilige Formularfeld eingeben müssen
+mitgeliefert. Beispielsweise könnten Sie eine Tabelle sehen, die wie folgt beginnt und
+das Formular Grundlegende Website-Einstellungen erläutert, das Sie sehen würden,
+wenn Sie zum Menüpunkt _Konfiguration_ >
+_System_ > _Grundlegende Website-Einstellungen_ (_admin/config/system/site-information_) navigieren würden:
+
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname|Erläuterung|Beispielwert
+|Grundeinstellugn der Website > Name der Webiste|Name Ihrer Website|Musterstadt Wochenmarkt
+|================================
+
+Um diese Tabelle zu verwenden, suchen Sie das Feld mit der Bezeichnung _Name der Website_ im Abschnitt
+unter _Website-Details_ im Formular, und geben den Namen Ihrer Website in das
+Feld ein. Ein Beispiel für den Namen "Musterstadt Wochenmarkt" wird im Feld Beispielwert bereitgestellt.
+Die Tabelle, die sich auf das Szenario der Erstellung einer Website für einen Wochenmarkt bezieht
+finden Sie in diesem Handbuch (siehe; <<preface-scenario>> für
+weitere Informationen). Beachten Sie auch, dass Sie auf einigen Formularen möglicherweise auf den Titel eines Abschnitts klicken müssen.
+(z. B. auf _Grundelegende Einstellungen der Website_), um einem Formularabschnitt auszuklappen, um das jeweilige Feld sehen zu können.
+
+
+*Mitwirkende*
+
+Geschrieben/herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

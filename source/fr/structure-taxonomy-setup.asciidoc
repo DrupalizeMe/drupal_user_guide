@@ -1,0 +1,161 @@
+[[structure-taxonomy-setup]]
+
+=== Configurer une taxonomie
+
+[role="summary"]
+Comment créer un vocabulaire de taxonomie et l'ajouter en tant que champ à un
+type de contenu.
+
+(((Taxonomie,créer)))
+(((Vocabulaire,créer)))
+(((Metadonnées,créer)))
+(((Liste de termes,créer)))
+
+==== Objectif
+
+Créer un vocabulaire Ingrédients et l'ajouter au type de contenu Recette comme
+un champ qui peut contenir un nombre illimité de valeurs et qui autorise l'ajout
+de nouveaux termes au vocabulaire.
+
+==== Pré-requis
+
+* <<planning-data-types>>
+* <<structure-taxonomy>>
+* <<structure-fields>>
+
+==== Pré-requis du site
+
+Le type de contenu Recette doit exister. Voir <<structure-content-type>>.
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Taxonomie_
+(_admin/structure/taxonomy_). Vous verrez le vocabulaire _Mots clés_ qui est
+créé avec le profil d'installation Standard du coeur.
++
+--
+// Taxonomy list page (admin/structure/taxonomy).
+image:images/structure-taxonomy-setup-taxonomy-page.png["Page de liste des
+taxonomies",width="100%"]
+--
+
+. Cliquer sur _Ajouter un vocabulaire_, et remplir avec les valeurs ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Nom du champ | Explication | Valeur d'exemple
+| Nom | Le nom du vocabulaire | Ingrédients
+| Description | Une note brève sur le vocabulaire | (Laisser vide)
+|================================
++
+--
+// Add Ingredients vocabulary from admin/structure/taxonomy/add.
+image:images/structure-taxonomy-setup-add-vocabulary.png["Ajout d'un vocabulaire
+Ingrédients",width="100%"]
+--
+
+. Cliquer sur _Enregistrer_. Vous êtes redirigé(e) vers la page Ingrédients, qui
+Affiche une liste de tous les termes de ce vocabulaire.
++
+--
+// Ingredients vocabulary page
+// (admin/structure/taxonomy/manage/ingredients/overview).
+image:images/structure-taxonomy-setup-vocabulary-overview.png["Liste des termes
+de taxonomie du vocabulaire Ingrédients",width="100%"]
+--
+
+. Cliquer sur _Ajouter un terme_. Saisir "Beurre" dans le champ _Nom_. Cliquer
+sur _Enregistrer_.
++
+--
+// Name portion of Add term page
+// (admin/structure/taxonomy/manage/ingredients/add).
+image:images/structure-taxonomy-setup-add-term.png["Page d'ajout d'un terme",width="100%"]
+--
+
+. Une confirmation à propos du terme que vous avez créé s'affiche. Ajouter plus
+de termes. Par exemple, "Œufs" et "Lait".
+
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Types de contenu_
+(_admin/structure/types_). Cliquer sur _Gérer les champs_ pour votre type de contenu Recette.
+
+. Cliquer sur _Ajouter un champ_, et saisir les valeurs du tableau ci-dessous.
+Cliquer sur _Enregistrer et continuer_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Nom du champ | Explication | Valeur exemple
+| Ajouter un nouveau champ | Sélectionner le type de champ | Référence > Terme de taxonomie
+| Étiquette | Le titre à donner au champ | Ingrédients
+|================================
++
+--
+// Add field page to add Ingredients taxonomy reference field.
+image:images/structure-taxonomy-setup-add-field.png["Ajout d'un champ
+Ingrédients au type de contenu Recette"]
+--
+
+. Sur l'écran de configuration suivant, saisir les valeurs du tableau
+ci-dessous. Cliquer sur _Enregistrer les paramètres du champ_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Nom du champ | Explication | Valeur
+|Type d'élément à référencer| Le type d'entité qui est référencée par le champ | Terme de taxonomie
+| Nombre de valeurs autorisées | Le nombre de valeurs qu'un utilisateur peut saisir | Illimité
+|================================
++
+--
+// Field storage settings page for Ingredients field.
+image:images/structure-taxonomy-setup-field-settings.png["Paramètres de stockage
+du champ Ingrédients"]
+--
+
+. Sur l'écran de configuration suivant, saisir les valeurs du tableau
+ci-dessous.  Cliquer sur _Enregistrer les paramètres du champ_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Nom du champ | Explication | Valeur
+|Texte d'aide | Aide affiché aux utilisateurs créant le contenu | Saisir les ingrédients que les visiteurs du site pourraient vouloir chercher
+|Type de référence > Méthode de référence | Selectionner la méthode utilisée pour choisir les valeurs autorisées | Par défaut
+|Type de référence > Vocabulaire | Selectionner le vocabulaire dans lequel les valeurs sont choisies | Ingrédients
+|Type de référence >  Créer les entités référencées si elles n'existent pas déjà | Si les nouveaux termes ingrédients peuvent être créés depuis le formulaire de création du contenu | Coché
+|================================
++
+--
+// Reference type section of field settings page for Ingredients field.
+image:images/structure-taxonomy-setup-field-settings-2.png["Type de référence
+dans les paramètres du champ",width="100%"]
+--
+
+
+. Cliquer sur _Enregistrer les paramètres_. Vous revenez à la page _Gérer les
+champs_. Un message disant que la configuration pour Ingrédients est enregistrée
+s'affiche.
++
+--
+// Manage fields page showing Ingredients field on Recipe content type.
+image:images/structure-taxonomy-setup-finished.png["Page de gestion des champs
+pour le type de contenu Recette",width="100%"]
+--
+
+// ==== Améliorer votre compréhension
+
+//==== Concepts liés
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Setting up a Taxonomy"]
+
+//==== Pour aller plus loin
+
+
+*Attributions*
+
+Ecrit et modifié par https://www.drupal.org/u/bsnodgrass[Bob Snodgrass],
+et https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

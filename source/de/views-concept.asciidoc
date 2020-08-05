@@ -1,0 +1,60 @@
+[[views-concept]]
+=== Konzept: Verwendung von Ansichten
+
+[role="summary"]
+Overview of views and the data that can be displayed or output by them.
+
+(((View,overview)))
+(((Views module,overview)))
+
+==== Erforderliche Vorkenntnisse
+
+* <<planning-modular>>
+* <<planning-data-types>>
+
+==== Was ist eine Ansicht?
+
+Eine _Ansicht_ ist eine Auflistung von Inhalten auf einer Website. Das Kernmodul Views behandelt die
+Anzeige von Views, und das Kern-UI-Modul Views ermöglicht Ihnen das Erstellen und Bearbeiten
+sie in der administrativen Schnittstelle. Wenn Sie Sichten definieren, sind Sie interessiert
+bei der Entnahme von Daten von Ihrer Website und deren Anzeige für den Benutzer.
+
+==== Welche Arten von Daten können über Views angezeigt werden?
+
+Sie können Views anlegen, um praktisch jede Inhaltsentität auszugeben, die in
+das System. Sie können z.B. die folgenden Listen für die Landwirte erstellen
+Markt-Website:
+
+* Listen von Verkäufern
+* Rezepte-Listen
+* Listen der neuesten Inhalte auf der Website
+* Listen der Benutzer auf der Website
+
+===== Welche Möglichkeiten der Datenausgabe über Views gibt es?
+
+Eine durch einen View erstellte Auflistung kann in einer der folgenden Formen vorliegen:
+
+* Tabelle mit sortierbaren Feldern
+* Gitter-Layouts
+* Teaser oder Bilder, die auf Artikel verweisen
+* Blöcke
+* JSON-Ausgabe
+* RSS-Feeds
+* Kalender
+* Diashows auf dem Bildschirm
+
+==== Verwandte Themen
+
+* <<views-parts>>
+* <<views-create>>
+
+// ==== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] unter
+https://erdfisch.de[erdfisch], und
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

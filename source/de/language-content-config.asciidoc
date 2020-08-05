@@ -1,0 +1,114 @@
+[[language-content-config]]
+
+=== Inhaltsübersetzungen konfigurieren
+
+[role="summary"]
+Inhalte so konfigurieren, dass diese übersetzt werden können.
+
+(((Content,translation)))
+(((Configuring,content translation)))
+
+==== Zielsetzung
+
+Machen Sie _Benutzerdefinierte Blöcke_, _Benutzerdefinierte Menülinks_, und
+Entitätstypen vom Typ _Inhalt_
+übersetzbar. Wählen Sie bestimmte Subtypen aus und legen Sie fest, welche Felder
+dieser Subtypen übersetzt werden können.
+
+==== Erforderliche Vorkenntnisse
+
+* <<planning-data-types>>
+* <<language-concept>>
+
+==== Anforderungen an die Website
+
+Das Modul Content Translation, das mit dem Kernsystem ausgeliefert wird, muss
+installiert sein und auf dr Website müssen mindestens zwei Sprachen aktiviert
+sein. Siehe: <<language-add>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ > _Länderspezifisches und Sprache_ > _Inhaltssprache and Übersetzung_
+(_admin/config/regional/content-language_).
+
+. Unter _Benutzerdefinierte Spracheeinstellungen_, aktivieren Sie _Inhalt_,
+_Benutzerdefinierter Block_ und _Benutzerdefinierter Menülink_ um diese Entitätstypen übersetzbar zu machen.
++
+--
+// Top section of Content language settings page
+// (admin/config/regional/content-language).
+image:images/language-content-config_custom.png["Custom language settings checklist",width="193px"]
+--
+
+. Die Konfigurationsoptionen für _Inhalt_, _benutzerdefinierte Blöcke_ und
+_benutzerdefinierte Menülinks erscheinen. Wählen Sie für jede Entität den Subtyp
+den Sie bearbeiten möchten aus. Aktivieren Sie _Einfache Seite_ unter _Inhalt_, _Einfacher Block_ unter _Benutzerdefinierter Block_ und
+_Benutzerdefinierter Menülink_ unter _Benutzerdefinierter Menülink_.
+
+. Überprüfgen Sie die Einstellungen des Entitätstyps anhand der untenstehenden Tabelle:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Beispielwert
+| Standardsprache | Die Standardsprache des Entitäts-Subtyps | Die Standardsprache der Website (English)
+| Sprachauswahl auf Seiten zum Erstellen und Bearbeiten von Inhalten anzeigen |Ob die Sprachauswahl während der Bearbeitung und  Erstellung von Inhalten angezeigt werden soll oder nicht | Ausgewählt
+|================================
++
+--
+// Main settings area for Custom Block translations.
+image:images/language-content-config_content.png["Default language and translatability for content types"]
+--
+
+. Wählen Sie die Felder aus, die in _Einfachen Seiten_ übersetzbar sein sollen,
+wie die unten stehenden Tabelle dies zeigt. Wenn ein Feld nicht für die Übersetzung benötigt wird, lassen Sie es unausgewählt.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldnahme | Erläuterung | Beispielwert
+|Titel	| Der Titel des Inhalts | Ausgewählt
+| Geschrieben von | Der Autor | Nicht ausgewählt
+| Veröffentlicht | Ob der Inhalt veröffentlicht wurde oder nicht | ausgewählt
+| Geschrieben am | Datum der Veröffentlichung | Nicht ausgewählt
+| Geändert am | Datium der letzten Aktualisierung | Ausgewählt
+| Auf der Startseite veröffentlicht | Ob der Inhalt in Ansichten enthalten ist oder nicht | Nicht ausgewählt
+| Oben in Listen | Ob der Inhalt oben in Listen angezeigt wird oder nicht | Nicht ausgewählt
+| URL-Alias | Nicer URL for the content | Ausgewählt
+| Textkörper | Der Hauptbestandteil des Inhalts | Ausgewählt
+|================================
++
+--
+// Field settings area for Basic page translations.
+image:images/language-content-config_basic_page.png["Translatable content entity subtypes' fields checklist"]
+--
+
+. Wählen Sie auf ähnliche Weise die Felder der Entitätstypen
+_Einfacher Block_ und _Benutzerdefinierter Menülink aus_.
+
+. Klicken Sie auf _Konfiguration speichern_.
+
+==== Vertiefen SieIhre Kenntnisse
+
+* <<language-config-translate>>
+* <<language-content-translate>>
+
+//==== Verwandte Konzepte
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/b_w904_pcTY[title="Inhaltsübersetzungen konfigurieren (englisch)"]
+
+==== Weiterführende Quellen
+
+* http://hojtsy.hu/blog/2013-jun-21/drupal-8-multilingual-tidbits-5-almost-limitless-language-assignment[Blogartikel „Mehrsprachige Drupal-8-Leckerbissen, Teil 5" (englisch)]
+
+* http://hojtsy.hu/blog/2015-jan-27/drupal-8-multilingual-tidbits-17-content-translation-basics[Blogartikel „Mehrsprachige Drupal-8-Leckerbissen, Teil 17" (englisch)]
+
+
+*Mitwirkende*
+
+Geschrieben und bearbeitet von https://www.drupal.org/u/lolk[Laura Vass] bei
+https://pronovix.com/[Pronovix],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[Red Crackle],
+and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

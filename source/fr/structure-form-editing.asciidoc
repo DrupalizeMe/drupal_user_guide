@@ -1,0 +1,89 @@
+[[structure-form-editing]]
+
+=== Modifier les formulaires de saisie du contenu
+
+[role="summary"]
+Comment modifier un formulaire de saisie du contenu.
+
+(((Contenu,formulaire d'édition)))
+
+==== Objectif
+
+Modifier le formulaire de Recette pour utiliser un widget différent pour saisir
+les termes du champ Ingrédients.
+
+==== Pré-requis
+
+* <<structure-content-type>>
+* <<structure-fields>>
+* <<structure-taxonomy>>
+* <<structure-widgets>>
+
+==== Pré-requis du site
+
+Le type de contenu Recette doit exister, et il doit avoir un champ référence
+vers la taxonomie Ingrédients. Voir <<structure-content-type>> et
+<<structure-taxonomy-setup>>.
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, aller à _Contenu_ > _Ajouter un
+contenu_ > _ Recette_ (_node/add/recipe_) pour accéder au formulaire de saisie
+du contenu qui est configuré par défaut. Noter que vous devez saisir les
+ingrédients un par un, au lieu d'avoir un format plus compact.
+
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Types de
+contenus_ (_admin/structure/types_). Puis cliquer sur _Gérer l'affichage du
+formulaire_ sur la liste déroulante pour le type de contenu Recette. La page
+_Gérer l'affichage du formulaire_ apparaît.
+
+. Pour le champ Ingrédients, sélectionner _Autocomplétion (style étiquettes)
+dans la colonne _Widget_.
++
+--
+// Manage form display page for Recipe, Ingredients field area, with
+// Widget drop-down outlined.
+image:images/structure-form-editing-manage-form.png["Gérer le formulaire de
+recette",width="100%"]
+--
+
+. Cliquer sur _Enregistrer_.
+
+. Dans le menu d'administration _Gérer_, aller à _Contenu_ > _Ajouter un
+contenu_ > _Recette_ (_node/add/recipe_) pour vérifier le changement de
+comportement du formulaire de contenu. Le champ Ingrédients est désormais un
+champ texte unique qui accepte plusieurs valeurs.
++
+--
+// Create recipe page (node/add/recipe).
+image:images/structure-form-editing-add-recipe.png["Ajout d'une recette",width="100%"]
+--
+
+. Créer deux éléments de contenu de type Recette (voir <<content-create>>),
+comme les recettes pour la "Salade Verte" et les "Carottes fraîches".
+Assurez-vous que tous les champs aient des valeurs, y compris les images, les
+ingrédients et le champ _Proposé par_ (choisir un des vendeurs créés dans
+<<structure-fields>>).
+
+==== Améliorer votre compréhension
+
+Modifier le formulaire principal de contact du site en allant à _Structure_ >
+_Formulaires de contact_ dans le menu d'administration _Gérer_. Vous pourriez
+par exemple vouloir masquer les champs _M'envoyer une copie_ et _Langue_.
+
+// ==== Concepts liés
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CELMGX93fjE[title="Modifier les
+formulaires de saisie du contenu"]
+
+// ==== Pour aller plus loin
+
+
+*Attributions*
+
+Écrit par https://www.drupal.org/u/batigolix[Boris Doesborg]. Traduit par
+https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

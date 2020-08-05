@@ -1,0 +1,122 @@
+[[security-update-module]]
+
+=== Aktualisieren eines Moduls
+
+[role="summary"]
+Wie man ein beigetragenes Modul unter Verwendung der administrativen Schnittstelle aktualisiert und
+Ausführen des Datenbank-Updates-Skripts.
+
+(((Module,updating)))
+(((Security update,applying)))
+(((Contributed module,updating)))
+
+==== Zielsetzungsetzung
+
+Aktualisieren Sie ein beigetragenes Modul und führen Sie das Skript _Datenbankaktualisierungen_ aus.
+
+==== Vorraussetzung
+
+* <<security-concept>>
+* <<security-cron-concept>>
+
+==== Standort-Voraussetzungen
+
+* Ein beigetragenes Modul wurde installiert, und es ist ein Update verfügbar für
+es. Siehe <<<extend-module-install>> und <<<security-announce>>.
+
+* Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklung testen
+Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
+<<install-dev-making>>.
+
+* Sie haben eine Vollstandortsicherung erstellt. Siehe <<<prevent-backups>>.
+
+* Wenn Sie die Benutzeroberfläche verwenden wollen, muss das Kernmodul Update Manager
+installiert. Siehe <<config-install>> für Anweisungen zur Installation des Kerns
+Module.
+
+==== Arbeitsschritte
+
+Bevor Sie beginnen, suchen Sie nach modulspezifischen Update-Anweisungen. Dies ist
+typischerweise notwendig beim Aktualisieren von Modulen, die die Verwendung von Drittanbietern beinhalten
+Bibliotheken. Lesen und verstehen Sie alle modulspezifischen Anforderungen, bevor Sie
+Fortfahren mit den Aktualisierungen. Um Anweisungen zu finden, überprüfen Sie das Projekt des Moduls
+Seite _Lesen Sie die Dokumentation_ Link.
+
+Um weitere Anweisungen anzuzeigen, laden Sie die tar.gz- oder .zip-Datei aus dem Projekt herunter
+Seite auf Ihren lokalen Computer. Entpacken Sie die Datei und suchen Sie nach _README.txt_,
+_INSTALL.txt_ und _UPGRADE.txt_, die mit der Installation des Moduls geliefert werden
+Datei. Lesen Sie auch die Versionshinweise auf der Projektseite, indem Sie auf die Version
+Nummer, die Sie herunterladen.
+
+// Downloads section of the Admin Toolbar project page on drupal.org.
+image:images/security-update-module-release-notes.png["Release notes link"]
+
+Sie können die administrative Schnittstelle verwenden, um ein beigetragenes Modul zu aktualisieren. Wenn Sie
+ein benutzerdefiniertes Modul anstelle eines beigetragenen Moduls aktualisieren, wenn Sie eine
+Meldung _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihre
+server_, oder wenn die folgenden Schritte nicht funktionieren, um die neuen Moduldateien zu erhalten,
+Folgen Sie den Schritten unter <<extend-manual-install>>. Sie können dann hier fortfahren mit
+Schritt 6 in den Anweisungen für die administrative Schnittstelle unten.
+
+Wenn Sie den Composer zur Verwaltung der Dateien in Ihrer Site verwenden, folgen Sie den Schritten
+in <<install-composer>> um die Dateien zu aktualisieren, fahren Sie dann hier mit Schritt 6 in
+die untenstehenden Anweisungen für die administrative Schnittstelle.
+
+==== Using the administRative Schnittstelle
+
+. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<extend-maintenance>>.
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Berichte_ >
+_Verfügbare Aktualisierungen_ > _Aktualisierung_ (_Admin/Berichte/Aktualisierungen/Aktualisierung_).
+
+. Suchen und prüfen Sie das Modul in der Liste. Klicken Sie auf _Download dieser Updates_ für die
+Modul.
++
+--
+// Update page for theme (admin/reports/updates/update).
+image:images/security-update-module-updates.png["Available updates",width="100%"]
+--
+
+. Klicken Sie auf _Fortsetzen_.
+
+. Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Moduldateien manuell bezogen haben,
+Beginnen Sie mit diesem Schritt und erreichen Sie die Datenbank-Updates-Seite, indem Sie die URL eingeben
+_example.com/update.php_ in Ihrem Browser.
+
+. Klicken Sie auf _Fortsetzen_ und wenden Sie alle Aktualisierungen an. Die Datenbank-Update-Skripte werden
+ausgeführt.
+
+. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihres
+Standort.
+
+. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<extend-maintenance>>.
+
+. Löschen Sie den Cache (siehe <<<prevent-cache-clear>>).
+
+==== Erweitern Sie Ihr Verständnis
+
+* Überprüfen Sie das Website-Protokoll (siehe <<<prevent-log>>), sobald die Aktualisierungen abgeschlossen sind.
+um auf Fehler zu prüfen.
+
+* <<security-update-theme>>
+
+//===== Verwandte Konzepte
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Updating a Module"]
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen"]
+
+
+*Mitwirkende*
+
+Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborgh], und
+https://www.drupal.org/u/hey_germano[Sarah Deutsch] unter
+https://www.advomatic.com[Advomatisch], von
+https://www.drupal.org/node/250790["Updating modules"], copyright 2000 - copyright_upper_year by
+die einzelnen Beitragszahler zur
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

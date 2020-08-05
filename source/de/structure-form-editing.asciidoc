@@ -1,0 +1,84 @@
+[[structure-form-editing]]
+
+=== Ändern von Eingabeformularen für Inhalte
+
+[role="summary"]
+So bearbeiten Sie ein Inhaltseingabeformular.
+
+(((Content,editing entry form)))
+
+==== Zielsetzungsetzung
+
+Ändern Sie das Rezeptformular, um ein anderes Widget für die Eingabe von Begriffen in die
+Feld Inhaltsstoffe.
+
+==== Erforderliche Vorkenntnisse
+
+* <<structure-content-type>>
+* <<structure-fields>>
+* <<structure-taxonomy>>
+* <<structure-widgets>>
+
+==== Standort-Voraussetzungen
+
+Der Inhaltstyp Rezept muss vorhanden sein, und er muss eine Zutatentaxonomie haben.
+Begriffsreferenzfeld. Siehe <<structure-content-type>> und
+<<structure-taxonomy-setup>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Inhalt_ > _Inhalt hinzufügen_ >
+_Rezept_ (_node/add/recipe_) das inhaltliche Eingabeformular zu betrachten, das eingerichtet wird von
+Standard. Beachten Sie, dass Sie die Zutaten einzeln eingeben müssen, anstatt
+ein kompakteres Format.
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhalt
+Typen_ (_admin/structure/types_). Klicken Sie dann auf _Formularanzeige verwalten_ auf der
+Dropdown-Schaltfläche für den Inhaltstyp Rezept. Die Seite _Formularanzeige_ verwalten
+erscheint.
+
+. Wählen Sie für das Feld Inhaltsstoffe die Option _Autovervollständigen (Tags-Stil)_ im _Widget_
+Spalte.
++
+--
+// Manage form display page for Recipe, Ingredients field area, with
+// Widget drop-down outlined.
+image:images/structure-form-editing-manage-form.png["Manage the Recipe form",width="100%"]
+--
+
+. Klicken Sie auf _Speichern_.
+
+. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Inhalt_ > _Inhalt hinzufügen_ >
+Rezept (_node/add/recipe_) um das veränderte Verhalten des Inhalts zu überprüfen
+Formular. Das Feld "Inhaltsstoffe" ist jetzt ein einzelnes Textfeld, das mehrere
+Werte.
++
+--
+// Create recipe page (node/add/recipe).
+image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
+--
+
+. Legen Sie zwei Rezeptinhaltselemente an (siehe <<content-create>>), wie zum Beispiel Rezepte für
+"Grüner Salat" und "Frische Karotten". Stellen Sie sicher, dass alle Felder Werte enthalten,
+einschließlich Bilder, Zutaten und eingereicht von (setzen Sie dies auf einen der Anbieter
+Inhaltselemente, die Sie in <<structure-fields>>).
+
+==== Erweitern Sie Ihr Verständnis
+
+Ändern Sie das Kontaktformular der Hauptseite, indem Sie in der administrativen _Verwaltung_ navigieren.
+Menü auf _Struktur_ > _Kontaktformulare_. Zum Beispiel möchten Sie vielleicht die
+Schicken Sie sich selbst eine Kopie_ oder _Sprachfelder_.
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CELMGX93fjE[title="Changing Content Entry Forms"]
+
+// ==== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].

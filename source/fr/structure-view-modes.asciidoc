@@ -1,0 +1,62 @@
+[[structure-view-modes]]
+
+=== Concept: modes d'affichage et formateurs
+
+[role="summary"]
+Vue d'ensemble des modes d'affichage et des formateurs de champ.
+
+(((mode d'affichage,vue d'ensemble)))
+(((Mode d'affichage d'une entité,vue d'ensemble)))
+(((Formateur,vue d'ensemble)))
+(((Formateur de champ,vue d'ensemble)))
+
+==== Pré-requis
+
+<<structure-content-type>>
+
+==== Qu'est-ce qu'un mode d'affichage ?
+
+La manière dont une entité (telle que du contenu, un utilisateur ou un contenu)
+est affichée dépend du contexte dans lequel le visiteur la voit. Ce contexte est
+appelé _mode d'affichage_. Ces modes d'affichage peuvent être par exemple :
+
+* le contenu en pleine page avec toutes les valeurs des champs
+* une accroche du contenu avec une miniature de l'image et un lien _En savoir plus_
+* un profil d'utilisateur complet avec une photo de portrait que l'on peut agrandir
+* l'avatar d'un utilisateur avec son nom d'utilisateur et un lien vers le profil
+
+Chaque mode d'affichage peut être configuré à travers les pages
+d'administration. Pour voir les options de configuration des modes d'affichage
+du type de contenu Recette, aller dans le menu d'administration _Gérer_ dans
+_Structure_ > _Types de contenu_ (_admin/structure/types_) et cliquer sur _Gérer
+l'affichage_ dans la liste déroulante. Pour chaque mode d'affichage, tous les
+champs peuvent être masqués ou affichés, et s'ils sont affichés, vous pouvez
+choisir et configurer le formateur du champ.
+
+==== Qu'est-ce qu'un formateur de champ ?
+
+Un formateur de champ est un paramètre d'affichage des valeurs du champ. Par
+exmple, les champs de type texte long peuvent être affichés tronqués ou dans
+leur intégralité, et les champs de type référence à un terme de taxonomie
+peuvent être affichés comme du texte simple ou comme un lien vers la page du
+terme de taxonomie. Consulter la page _Gérer l'affichage_ pour voir les
+formateurs de champ des champs du type de contenu Recette.
+
+==== Sujets liés
+
+* <<structure-content-type>>
+* <<structure-content-display>>
+
+==== Pour aller plus loin (en anglais)
+
+https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+
+
+*Attributions*
+
+Adapté par https://www.drupal.org/u/batigolix[Boris Doesborg] depuis
+https://www.drupal.org/node/1577752["View modes"],
+copyright 2000-2019 contributeurs individuels de 
+https://www.drupal.org/documentation[la documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

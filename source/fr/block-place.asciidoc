@@ -1,0 +1,113 @@
+[[block-place]]
+
+=== Placer un bloc dans une région
+
+[role="summary"]
+Comment placer un bloc dans une région.
+
+(((Bloc,placer dans une région)))
+(((Région,y placer un bloc)))
+
+==== Objectif
+
+Placer le bloc Horaires d'ouverture et localisation dans la barre de menu du
+site.
+
+==== Pré-requis
+
+<<block-concept>>
+
+==== Pré-requis du site
+
+* Le thème du coeur Bartik doit être installé et utilisé par défaut.
+Consulter <<config-theme>>.
+
+* Le bloc Horaires d'ouverture et localisation doit exister. Consulter
+<<block-create-custom>>.
+
+==== Étapes	
+
+. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Mise en page des
+blocs_ (_admin/structure/block_). La page _Mise en page des Blocs_ apparaît,
+listant les régions du thème.
+
+. Vous asssurer dans le deuxième onglet que le thème du coeur Bartik est
+sélectionné. Le placement des blocs est défini par thème.
+
+. Localiser la région _Deuxième barre de navigation_ dans la liste et cliquer
+sur _Placer un bloc_ à côté d'elle. La fenêtre de _Placer un bloc_ apparaît,
+listant tous les blocs.
+
+. Trouver le bloc Horaires d'ouvertures et localisation et cliquer sur _Placer
+le bloc_ à côté de lui. La fenêtre _Configurer le bloc_ apparaît. Remplir les
+champs comme indiqué ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ |Explication |Exemple de valeur
+| Titre |Titre à afficher pour le bloc |Horaires et localisation
+| Afficher le titre |Si le titre doit être affiché avec le bloc ou non |Coché
+| Région |Dans quelle région du thème l'afficher |Deuxième barre de navigation
+|================================
++
+Vous pouvez aussi masquer ou afficher le bloc sur des pages spécifiques. Dans le
+cas du site du marché fermier, ne choisir aucune des options de configuration
+car vous voulez que le bloc soit affiché partout.
++
+--
+// Configuration page for placing a custom block in the sidebar.
+image:images/block-place-configure-block.png["Block configuration page",width="100%"]
+--
+
+. Cliquer sur _Enregistrer le bloc_. La page _Mise en page des blocs_ apparaît.
+Vous pouvez faire glisser l'ancre en forme de croix des blocs pour changer leur
+ordre d'apparition dans chaque région. Alternativement, vous pouvez cliquer sur
+_Montrer les poids des lignes_ en tête du tableau pour sélectionner des poids
+numériques (les blocs ayant des poids algébriques moindres seront affichés en
+premier).
+
+. Vérifier que le bloc Horaires d'ouverture et localisation est listé dans la
+région _Deuxième barre de navigation_, et cliquer sur _Enregistrer les blocs_.
++
+Le bloc a été placé dans la deuxième barre de navigation de toutes les pages qui
+utilisent le thème du cœur Bartik.
++
+--
+// About page with placed sidebar block.
+image:images/block-place-sidebar.png["Page with a block placed on the Sidebar second region",width="100%"]
+--
+
+==== Améliorer votre compréhension
+
+* Supprimer le block _Propulsé par Drupal_ de la région _Pied de page_ en
+cliquant sur _Désactiver_ ou _Retirer_ dans le bouton déroulant _Opérations_.
+Cliquer sur _Désactiver_ vous permettra d'activer facilement le bloc plus tard
+avec la même configuration ; si vous cliquez sur _Retirer_ et que vous voulez
+replacer le bloc, il vous faudra suivre les étapes décrites dans cette page pour
+qu'il apparaisse à nouveau dans une région.
+
+* Supprimer le bloc _Outils_ de la première barre de navigation_ en définissant
+la région à _-Aucune-_. Ce bloc est visible seulement des utilisateurs connectés.
+
+* Placer le bloc _Connexion utilisateur_ dans une région.
+
+* Si vous ne voyez pas les effets de ces changements sur votre site, vous devez
+vider les caches. Consulter <<prevent-cache-clear>>.
+
+
+//==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/iWW7Ja5p0hA[title="Placing a Block in a Region"]
+
+//==== Pour aller plus loin
+
+
+*Attributions*
+
+Écrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg]
+et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

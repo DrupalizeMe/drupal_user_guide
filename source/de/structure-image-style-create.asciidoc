@@ -1,0 +1,125 @@
+[[structure-image-style-create]]
+
+=== Einrichten eines Bildstils
+
+[role="summary"]
+Wie man einen Bildstil hinzufügt, um ein Bild neu zu formatieren.
+
+(((Image style,creating)))
+(((Style,image)))
+(((Effect,image)))
+(((Image,resizing)))
+
+==== Zielsetzungsetzung
+
+Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Anbieterseiten anzuzeigen.
+
+==== Erforderliche Vorkenntnisse
+
+* <<structure-fields>>
+* <<structure-content-display>>
+* <<structure-image-styles>>
+
+==== Anforderungen an die Website
+
+* Lieferanten- und Rezept-Inhaltstypen müssen vorhanden sein. Siehe <<structure-content-type>>.
+
+* Hauptbildfelder müssen für beide Inhaltstypen vorhanden sein. Siehe <<structure-fields>>>.
+
+* Inhaltselemente müssen für beide Inhaltstypen vorhanden sein. Siehe
+<<structure-content-type>>, <<structure-fields>>, und <<content-create>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ > _Medien_ >
+_Bildstile_ (_Admin/Konfiguration/Medien/Bildstile_).
+
+. Klicken Sie auf _Bildstil hinzufügen_.
+
+. Geben Sie den Namen _Extra Medium (300x200)_ ein.
+
+. Klicken Sie auf _Neuen Stil erstellen_. Die Seite _Bearbeiten Stil Extra Medium
+(300x200)_ erscheint.
+
+. Wählen Sie in der Tabelle _Effekt_ die Option _Skalieren und beschneiden_. Klicken Sie auf _Hinzufügen_.
+
+. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Wert
+|Breite | 300
+|Höhe | 200
+|================================
+
+. Klicken Sie auf _Effekt hinzufügen_. Der Bildstil wird mit den gewählten Effekten gespeichert.
++
+--
+// Seite zur Bearbeitung des Bildstils, mit hinzugefügten Effekten.
+image:images/structure-image-style-create-add-style.png["Einen Bildstil hinzufügen",width="100%"]
+--
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhaltstypen_
+(_Administration/Struktur/Arten_).
+
+. Klicken Sie in der Dropdown-Liste _Operationen_ für den Inhalt des Lieferanten auf _Anzeige verwalten_.
+tippen. Die Seite _Anzeige_ verwalten (_Admin/Struktur/Arten/Verwaltung/Lieferant/Anzeige_)
+erscheint.
+
+. Stellen Sie sicher, dass das sekundäre Register _Default_ ausgewählt ist.
+
+. Klicken Sie auf das Zahnrad für das Feld _Hauptbild_, um die Konfiguration zu öffnen
+Optionen.
+
+. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Beispielwert
+|Bildstil | Welcher Bildstil ist zu verwenden | Zusätzliches Medium (300x200)
+|Bild mit | Zu besuchende Seite verknüpfen, wenn Bild angeklickt wird | Nichts
+|================================
++
+--
+// Hauptbildeinstellungsbereich des Content-Typs Anbieter.
+image:images/structure-image-style-create-manage-display.png["Feldformatierungseinstellungen des Bildfeldes ändern"]]
+--
+
+. Klicken Sie auf _Aktualisieren_.
+
+. Klicken Sie auf _Speichern_. Der neue Bildstil wird bei der Anzeige von Anbieter verwendet.
+Inhalt.
+
+. Öffnen Sie ein Inhaltselement des Anbieters und überprüfen Sie, ob es jetzt mit der
+verkleinertes Bild. Siehe <<<content-edit>> für Informationen über das Auffinden eines
+vorhandenes Inhaltselement.
+
+. Wiederholen Sie die Schritte 8-15 für den Inhaltstyp Rezept.
+
+// ==== Erweitern Sie Ihr Verständnis
+
+==== Verwandte Konzepte
+
+* <<structure-fields>>
+* <<structure-image-styles>>
+* <<structure-image-responsive>>
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Einrichten eines Bildstils"]
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8"]
+
+
+*Mitwirkende*
+
+Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg], und
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern] von
+https://www.drupal.org/docs/8/core/modules/image/working-with-images["Arbeiten mit Bildern in
+Drupal 7 und 8"],
+copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

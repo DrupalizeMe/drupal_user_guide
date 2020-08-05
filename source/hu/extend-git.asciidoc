@@ -1,0 +1,121 @@
+[[extend-git]]
+
+=== Konfiguráció- és fájlváltozatok kezelése Gittel
+
+[role="summary"]
+Bár a Git verziókövető eszközről korábban már ejtettünk szót, most azonban részletesen is áttekintjük a használatát különböző helyzetekben.
+
+(((Eszköz,Git)))
+(((Git eszköz,használat)))
+
+==== Célkitűzés
+
+Célunk, hogy a webhelyünk forráskódjának és konfigurációs fájljainak változásait a Git verziókezelő program segítségével tartsuk nyilván.
+
+==== Szükséges előismeretek
+
+* <<install-tools>>
+* <<install-decide>>
+* <<install-dev-sites>>
+* Git tároló (angolul „repository”) létrehozása és/vagy klónozási webcímének ismerete. Bár ez működhet a helyi számítógépünkön is, de az általános gyakorlat szerint ezt szinte mindig egy távoli szerveren szokás elhelyezni. Ha erre a GitLab szolgáltatását szeretnénk használni, akkor a https://docs.gitlab.com/ee/gitlab-basics/create-project.html[Create a repo] (azaz „Repó készítése”) és https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[Command Line basic commands] (azaz „Alapvető parancssori utasítások”) című leírások segíthetnek.
+* Parancssoros ablak és egyszerű szövegszerkesztő használata.
+* A webhelykonfiguráció kezeléséhez ismernünk kell a tömörített állományok (például _.zip_ és _.tar.gz_) ki- és becsomagolásának módját.
+
+==== Webhely előfeltételei
+
+* A webhelyünket működtető szoftvereknek (ez esetben a Drupalnak és kiegészítőinek) már letöltve kell lenniük a <<install-decide>> részben leírtak alapján. Ha a webhelyünk konfigurációját is szeretnénk verziókezelni (nem csak a forráskódját alkotó fájlokat), akkor a webhelynek már működőképes állapotban telepítve kell lennie.
+* A Git kliensprogramjának már telepítve kell lennie a helyi számítógépünkön és webhelyünk távoli szerverén egyaránt. Ehhez lásd a https://git-scm.com/[Git útmutatóját].
+* A Git tárolónak (angolul „repository”) már léteznie kell és ismernünk kell távoli párjának a klónozási webcímét.
+
+==== Lépések
+
+===== A változástörténet elkezdése
+
+Ezeket a lépéseket csak egyszer kell elvégezni, miután létrehoztuk tárolónkat és össze szeretnénk kötni távoli párjával, hogy a nyilvántartani kívánt fájlok pillanatnyi állapotát elmentve megkezdődhessen a jövőbeni változásaik nyomonkövetése.
+
+. Nyissunk meg egy parancssoros ablakot és navigáljunk el abba a könyvtárba, ahol a webhelyünk szoftverének forráskódja található.
+
+. Mivel a Drupal eltérő könyvtárszerkezetekkel, több féle módon is telepíthető, verziókövetni pedig általában a gyökérkönyvtártól (angolul „docroot”) lefelé érdemes, ezért meg kell állapítanunk, hogy nekünk a gyökérkönyvtárunk hol található. Ha parancssorban egy `ls` parancsot kiadva látjuk a _core_, _modules_ és _themes_ könyvtárakat, akkor már meg is találtuk. Ha viszont Composer használatával telepítettünk, akkor egy szinttel mélyebben, a _web/_ alkönyvtárban találjuk ezeket, ilyenkor ez lesz a gyökérkönyvtárunk.
+
+. Alapértelmezés szerint a verziókövetés minden egyes alkönyvtárra, és bennük valamennyi fájlra kiterjed. Bár a verziókövetés az esetek többségében valóban hasznos, de bizonyos dolgok változásait veszélyes vagy felesleges nyilvántartani:
++
+  - A Drupal _settings.php_ fájlja érzékeny adatokat tartalmaz az adatbázishoz való kapcsolódáshoz, ezért nem szeretnénk, ha kikerülne a távoli tárolómásolatra.
+  - A felhasználóink által a _sites/default/files_ könyvtárba feltöltött fájlokat pedig egyszerűen nem érdemes követni, mert bár a fájlrendszerben van, de nem képezi a szoftver forráskódjának részét.
++
+Ezért egy _.gitignore_ nevű fájlban felsorolhatjuk azokat a fájlokat és könyvtárakat, amikkel a Git ne foglalkozzon. Ha még nem létezne, hozzunk létre, majd nyissuk meg ezt a _.gitignore_ fájlt egy egyszerű szövegszerkesztőben.
+
+. Győződjünk meg róla, hogy az alábbi sorok biztosan szerepelnek a _.gitignore_ fájlunkban. Ha a fenti 2. lépésnél arra jutottunk, hogy a gyökérkönyvtárunk _web/_, akkor az alább felsorolt útvonalakon felül ennek is szerepelnie kell az elejükön. Például a _sites_ helyett _web/sites_ lesz értelemszerűen.
++
+----
+sites/*/settings*.php
+sites/*/files
+config
+----
+
+. Hozzuk létre (idegen szóval _inicializáljuk_) a tárolót a `git init` paranccsal. Ezzel a csak sima, átlagos könyvtárunkat máris egy Git-tárolóvá alakítottuk, amiben innentől kezdve használhatjuk a verziókövetést.
+
+. Adjuk hozzá valamennyi létező fájlt és alkönyvtárat (kivéve persze a fenti _.gitignore_-ban kizártakat) a menteni kívánt állapothoz a `git add -A` paranccsal. Így közöljük a Git-tel, hogy a következő állapotmentéskor mikről készítsen majd pillanatfelvételt.
+
+. Ha szükséges, a `git status` paranccsal bármikor ellenőrizhetjük, hogy jelenleg mi szerepel a menteni kívánt állapotban (angolul „staged”). Ez általában egy tucat vagy még annál is kevesebb fájlt szokott jelezni, ahogy fejlődik a webhelyünk. De most – mivel a tárolónk változástörténetének legeslegelején vagyunk – a Drupal összes fájlját és könyvtárát (ami tízezernél is több!) fel fogja sorolni, hiszen mindegyik új a Git számára.
+
+. Kezdeményezzük az állapotmentést (vagy a magyar nyelvű webfejlesztők által gyakran használt kifejezéssel élve _kommitoljuk be_) a `git commit -m "Ez az első kommit ebben a repóban."` paranccsal.
+
+. Ha szeretnénk meggyőződni az állapotmentés (vagyis _kommit_) sikerességéről, akkor a `git log` paranccsal vessünk egy pillantást a tárolónk – immár megkezdődött – változástörténetére.
+
+. Eddig jól haladunk, már létezik egy biztos pont webhelyünk életében, ahová bármikor visszajöhetünk a jövőben, ha úgy érezzük majd, jobb lenne visszatérni a mostani kezdetekhez. Talán már sejtjük, hogy az „időutazás” ilyesféle formája mekkora segítség tud lenni bizonyos helyzetekben. Éppen ezért a Git-tárolónk információit – ahogy minden fontosabb adatot általában – érdemes több számítógépen is elhelyezni vész esetére. Most azonban még csak egy gépen van meg: azon, ahol a fenti parancsokat az előbb kiadtuk.
+
+. Jelezzük a helyi Git-kliensünknek, hogy hol éri el a tárolónk távoli párját a `git remote add origin https://gitlab.com/pelda-nev/pelda-tarolo.git` paranccsal. Természetesen a webcím helyett a saját tárolónk korábban már feljegyzett klónozási webcímét használjuk.
+
+. Végezetül kezdeményezzünk szinkronizálást a tároló két példánya között a `git push -u origin master` paranccsal.
+
+. Ha GitLabon vagy más verziókövetési szolgáltatónál helyeztük el a távoli tárolópéldányunkat, akkor innentől látni fogjuk az imént _bekommitolt_ fájlrendszerünket annak online felületén.
+
+===== Fájlok frissítése a tárolóban
+
+Míg az előbbi lépéssort egyetlenegyszer, a tároló létrehozásakor kell csak elvégeznünk, addig a most következő lépéseket minden olyan esetben, amikor úgy érezzük, a fájlok és könyvtárak pillanatnyi állapota megér egy mentést. Ezt általában célszerű megtenni fájlok és könyvtárak módosítása, hozzáadása vagy törlése után minden alkalommal.
+
+. Nyissunk meg egy parancssoros ablakot és navigáljunk el abba a könyvtárba, ahol a webhelyünk szoftverének forráskódja található.
+
+. A korábban már bemutatott `git status` paranccsal ellenőrizzük, hogy mely fájlok változtak és jelenleg mi szerepel a menteni kívánt állapotban (angolul „staged”). Most azonban a fentiekkel ellentétben nem a Drupal összes tízezer körüli fájlját fogjuk látni felsorolva, hanem csak azt a párat, amit nemrég mi magunk módosítottunk – hiszen a Gitnek így már van viszonyítási alapja, amihez képest a különbözőségüket kiszámíthatja.
+
+. Magunk is megtekinthetjük ezeket a változásokat: az egyszerű szöveges fájlok (tehát nem a bináris adatokat tartalmazók, például képek vagy videók) előtte-utána állapotai közötti különbségeket a `git diff konyvtarneve/fajlneve.txt` paranccsal listázhatjuk ki.
+
+. Ha minden módosult fájl változásait egyetlen állapotmentésben kívánjuk eltárolni, akkor a fentebb már megismert `git add -A` paranccsal hozzáadjuk őket a menteni kívánt állapothoz. Ekkor a `git status` paranccsal ismét ellenőrizhetjük, hogy mi fog bekerülni a _kommitba_. Ha parancssoros ablakunk támogatja a színek használatát (általában igen), akkor ami a 2. lépésben még vörös színnel volt írva, az immár zöld színűvé változott.
+
+. Ha a _staged_ listáját látva meggondolnánk magunkat, és egy bizonyos fájlnak mégsem kellene ebbe a _kommitba_ bekerülnie, akkor azt a `git reset HEAD konyvtarneve/fajlneve.txt` módon vissza tudjuk venni a menteni kívánt állapotból. Ha ennek éppen az ellenkezőjére, azaz csak egyetlen fájl _staged_ listához való hozzáadására van szükségünk, akkor azt is megtehetjük a `git add konyvtarneve/fajlneve.txt` módon. (Ne felejtsük, ha azt szeretnénk, hogy ezt az adott fájlt vagy könyvtárat a Git hagyja figyelmen kívül, akkor hozzáadhatjuk az útvonalát a korábban már tárgyalt _.gitignore_ fájlhoz.)
+
+. Kommitoljuk be a _staged_ listára összeválogatott fájlok módosításait a `git commit -m "Összefoglaló a módosításokról emlékeztetőül."` paranccsal. Miután a `git log`-gal ellenőriztük, hogy elégedettek vagyunk az új állapotmentés tartalmával és szövegével, küldjük fel a Git-tárolónk távoli példányába is a `git push` utasítással.
+
+. Ha a Git-tárolónknak több példánya is van (például a kollégánk is ebbe dolgozik), akkor a mások által felküldött változtatásokat (amik éppen ezért még nem lehetnek meg a mi gépünkön), a `git pull` paranccsal bármikor lehívhatjuk a saját helyi példányunkba is.
+
+===== Egy teljes tároló beszerzése a helyi gépünkre
+
+Ahogy az előző lépéssor végén már utaltunk rá, a verziókövetés nem csak akkor hasznos, ha egymagunk dolgozunk a webhely forráskódján. Ellenkezőleg, a Git verziókövető egyik legnagyobb erőssége az elosztott működése: a korlátlan számú tárolópéldány mindegyike hiánytalanul tartalmazza a teljes addigi változástörténetet. Más szavakkal ez azt jelenti, hogy akár a kollégánk számítógépéről is átmásolhatjuk az ő példányát, azon szintén fogunk tudni tovább dolgozni. Az egyetlen fontos tényező, hogy egy adott Git-tároló valamennyi példánya közül ki kell neveznünk egyetlen központi példányt: ez lesz a mérvadó mindegyik másik számára. És mivel az egyazon Git-tárolón közösen dolgozó fejlesztők sokszor földrajzilag távol vannak egymástól, ezért kézenfekvőnek tűnik, hogy ez az egy különleges szerepű példány elérhető legyen a hálózaton keresztül. Felállíthatunk egy saját szervert e célra, de talán egyszerűbb igénybe vennünk az olyan ingyenes verziókövető-szolgáltatásokat, mint amilyen például a GitLab, a GitHub vagy a Bitbucket. Ha megosztották velünk egy ilyen távoli tárolópéldány klónozási webcímét, akkor a következő lépéseket követve hozhatunk létre belőle egy teljesértékű helyi másolatot:
+
+. Nyissunk meg egy parancssoros ablakot és navigáljunk el abba a könyvtárba, amin belül szeretnénk, hogy a helyi tárolópéldányunk létrejöjjön.
+
+. A Git `clone` parancsának meghívásakor átadhatunk neki két értéket: a távoli tárolópéldány klónozási webcímét és egy tetszőleges könyvtárnevet (ha még nem létezik, automatikusan létrehozza), amin belülre kezdje el letölteni a fájlokat. Például `git clone https://gitlab.com/pelda-nev/pelda-tarolo.git masik-webhely-konyvtara`.
+
+===== A webhely konfigurációjának kezelése a Git-tárolónkban
+
+. A <<extend-config-versions>> részben leírtak szerint exportáljuk ki webhelyünk teljes konfigurációját.
+
+. Ha ez az első alkalom, hogy ezt kimentjük az adatbázisból a fájlrendszerbe (tehát még nem létezik ilyen a tárolónkban), akkor csomagoljuk ki a kapott tömörített állományt egy új könyvtárba (lehetőleg a gyökérkönyvtáron kívül) és kövessük a fenti „Változástörténet elkezdése” lépéssort a bekommitelésükhöz. Ezzel létrehoztunk (idegen szóval _inicializáltunk_) egy viszonyítási alapot a Git számára.
+
+. Amikor a jövőben változik a webhelyünk konfigurációja és ismét kiexportáljuk, akkor az újonnan letöltött állományt ugyanebbe a könyvtárba kicsomagolva a Git jelzi majd számunkra, hogy pontosan melyik fájl hányadik sora miről mire változott meg. Ilyenkor ha követjük a fenti „Fájlok frissítése a tárolóban” lépéssort az újbóli bekommitelésükhöz, akkor már két biztos pont létezik majd webhelyünk életében, amik közül választhatunk majd, ha úgy érezzük, hogy jobb lenne visszatérni egy korábbi állapothoz.
+
+. A webhely módosított konfigurációjának annak egy másik példányára való átviteléhez továbbra is használhatjuk a hagyományos becsomagolós-letöltős-feltöltős-kicsomagolós módot, de ennél sokkal egyszerűbb a Git verziókövető nyilvántartásából lekérdezni az éppen aktuális, legutolsó állapotot és azt beimportálni a Drupalba a <<extend-config-versions>> részben leírtak szerint.
+
+// ==== Az ismeretek elmélyítése
+
+==== Kapcsolódó témák
+
+<<install-dev-sites>>
+
+// ==== Videó
+
+// ==== Egyéb források
+
+*Közreműködők*
+
+E témakör szövegét https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] a Drupal közösségi https://www.drupal.org/documentation[dokumentációjának] https://www.drupal.org/node/803746["Building a Drupal site with Git"] (azaz „Drupal webhely építése Gittel”) című szócikkéből vette át, melynek szerzői joga 2000–copyright_upper_year között annak egyéni közreműködőié. Fordította: https://www.drupal.org/u/balu-ertl[Balu Ertl].

@@ -1,0 +1,76 @@
+[[install-dev-sites]]
+
+=== Konzept: Entwicklungs-Webistes
+
+[role="summary"]
+Überblick über Entwicklungs-Webites mit Beispiel-Workfolow für Site-Buildings.
+
+(((Development site,overview)))
+(((Deployment workflow,overview)))
+(((Stageing site,overview)))
+(((Installing,development site)))
+(((Installing,Stageing site)))
+
+//==== Erforderliche Vorkenntnisse
+
+==== Was sind Entwicklungsumgebungen?
+
+Entwicklungsumgebungen sind verschiedene Kopien der selben Website, die zur
+Entwicklung, zur Aktualisierung und zum Testen einer Website verwendet werden,
+ohne dabei die Integrität der Live-Site zu gefährden.
+
+Ein Beispiel für einen Deployment-Workflow zur Erstellung einer Website umfasst
+normalerweise die unten erwähnten Websites:
+
+Lokale Entwicklungsumgebung::
+  Der Entwicklungsprozess beginnt mit den Entwicklern, die an neuen Funktionen, Bug
+  Fixes, Design und Konfiguration in einer lokalen Entwicklungsumgebung arbeiten.
+
+Entwicklungswebsite::
+  Entwickler übertragen die Änderungen, an denen sie gearbeitet haben, auf die
+  Entwicklungswebsite. Diese wird in Teams, die aus mehr als einem Entwickler
+  bestehen, normalerweise zur Versionskontrolle eingesetzt. Git ist ein
+  Versionskontrollsystem, das die Änderungen an allen Dateien Ihres Projektes
+  aufzeichnet und protokolliert. Sie können diese Änderungen dann an ein
+  Repository übergeben. Die Verwendung von Git erlaubt
+  Teammitgliedern gleichzeitig an der selben Website zu arbeiten, ohne sich
+  dabei gegenseitig bei der Arbeit zu behindern. So ist es auch einfacher,
+  die verschiedenen Arbeitsschritte eines Entwicklungsprozesses nachzuverfolgen.
+
+Stageing-Umgebung::
+  Die Stageing-Website kann zum Testen oder zur Präsentation der Änderungen
+  gegenüber Kunden, Zu QA-Zwecken (Quallitätskontrolltests)
+  und UAT (Benutzerakzeptanztests)
+  verwendet werden. Diese Umgebung sollte der Umgebung, in der sich die
+  Live-Website befindet gleichen. Es wird empfohlen, live
+  Inhalte sowohl auf der Entwicklungs- als auch auf der Stageing-Website
+  bereitzustellen, so dass Sie testen können, wie die neuen Funktionen unter
+  Verwendung der Inhalte funktionieren, die sich bereits auf der Live-Website
+  befinden.
+
+Live-Umgebung/Live-Website::
+  Die Live-Site im Web, die Besuchern zur Verfügung steht. Sie enthält neue
+  Funktionen, die sich als stabil erwiesen haben.
+
+Je nach Größe, dem Umfang, den Anforderungen oder den  am Projekt beteiligen
+Interessengruppen können die oben genannten Projektentwicklungsphasen angepasst
+oder entfernt werden. Sie können  natürlich auch weitere Entwicklungsphasen
+hinzufügen. Beispielsweise können Qualitätssicherungs- und
+Nutzerakzeptanztests in einer gesonderten Umgebung durchgeführt werden und die
+Staeging-Umgebung nur verwendet werden, um die  technische
+Kompatibilität der Website zu Ihrer Live-Umgebung sicherzustellen.
+
+==== Verwandte Themen
+
+
+* <<install-dev-making>>
+* <<planning-workflow>>
+* <<extend-git>>
+
+// ==== Weiterführende Quellen
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/dianalakatos[Diána Lakatos],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[redcrackle].

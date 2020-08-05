@@ -1,0 +1,77 @@
+[[user-new-role]]
+
+=== Créer un rôle
+
+[role="summary"]
+Comment créer un nouveau rôle.
+
+(((Rôle utilisateur,créer)))
+(((Rôle,créer)))
+(((Rôle,utilisateur anonyme)))
+(((Rôle,utilisateur authentifié)))
+(((Rôle,administrateur)))
+
+==== Objectif.
+
+Créer un rôle Vendeur pour autoriser certains utilisateurs — mais pas tous — à
+effectuer des tâches spécifiques.
+
+==== Pré-requis
+
+<<user-concept>>
+
+// ==== Site prerequisites
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, aller à _Personnes_ > _Rôles_
+(_admin/people/roles_).
+
+. Vous trouverez les rôles par défaut _utilisateur anonyme_, _utilisateur
+authentifié_ et _administrateur_ déjà présents.
++
+--
+// Roles page (admin/people/roles).
+image:images/user-new-role-roles-page.png["Page des rôles"]
+--
+
+. Cliquer sur _Ajouter un rôle_ pour ajouter un rôle personnalisé.
+
+. Taper "Vendeur" dans le champ _nom du rôle_. Cliquer sur _Enregistrer_.
++
+--
+// Add role page (admin/people/roles/add).
+image:images/user-new-role-add-role.png["ajouter vendeur en tant que rôle"]
+--
+
+. Le message "Le rôle Vendeur a été ajouté." s'affiche en haut de page.
++
+--
+// Confirmation message after adding new role.
+image:images/user-new-role-confirm.png["message en cas de création réussie du
+rôle vendeur"]
+--
+
+==== Améliorer votre compréhension
+
+* <<user-permissions>>
+* <<user-roles>>
+
+//==== Related concepts
+
+==== Pour aller plus loin (en anglais)
+
+https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "User Roles"]
+
+
+*Attributions*
+
+
+Adapté et édité par https://www.drupal.org/u/JackProbst[Jack Probst],
+https://www.drupal.org/u/batigolix[Boris Doesborg], et
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] depuis
+https://www.drupal.org/node/1803614["User Roles"], copyright 2000-2019
+contributeurs individuels à https://www.drupal.org/documentation[la
+documentation de la communauté Drupal] Traduit par
+https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

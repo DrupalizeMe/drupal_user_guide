@@ -1,0 +1,118 @@
+[[prevent-cache-clear]]
+
+=== Очистка кэша
+
+[role="summary"]
+Как почистить кэш используя Drush и пользовательский интерфейс.
+
+(((Кэш,очистка)))
+(((Кэш,перестроение)))
+
+==== Цель
+
+Очистить или перестроить внутренний кэш вашего сайта, чтобы быть уверенным, что большая часть новых данных
+ актуальны и выводятся на сайте, используя при этом пользовательский интерфейс или Drush.
+
+==== Необходимые знания
+
+* <<prevent-cache>>
+* <<install-tools>>
+
+==== Требования к сайту
+
+Если вы хотите использовать Drush для очистки кэша, то Drush должен быть установлен. Смотрите
+<<install-tools>>.
+
+==== Шаги
+
+Вы можете использовать интерфейс администратора или Drush для очистки кэша. Вы можете
+также использовать скрипты для перестроения или Drush для более полного перестроения кэша.
+
+===== Использование административного интерфейса для очистки кэша
+
+. В _Управление_ меню администратора, перейдите на _Конфигурация_ >
+_Разработка_ > _Производительность_ (_admin/config/development/performance_). Если вы не
+имеете доступ к этой странице в интерфейсе администратора, используйте один из других
+методов очистки и перестроения кэша.
+
+. Нажмите _Очистка кэша_.
+
+. Сообщение об успешной очистке кэша появится сверху
+страницы.
+
+. Если это не помогает решить проблему, попробуйте вместо очистки
+кэша, перестроить кэш.
+
+===== Использование скрипт перестроения кэша
+
+. Откройте _settings.php_ (_/sites/default/settings.php_) в любом текстовом
+редакторе. Добавьте следующую строчку в конце файла и сохраните его:
++
+----
+$settings['rebuild_access'] = TRUE;
+----
+
+. Зайдите _http://www.example.com/core/rebuild.php_ в вашем браузере (где
+_www.example.com_ адрес вашего сайта). После короткой паузы, вы будете
+перенаправлены на главную страницу вашего сайта и кэш будет перестроен.
+
+. Откройте _settings.php_ (_/sites/default/settings.php_) в текстовом редакторе. Найдите строчку,
+которую вы добавили до этого с _$settings['rebuild_access']_, удалите ее и сохраните
+файл.
+
+===== Использование Drush для перестроения или очистки кэша
+
+Вы можете использовать одну из двух команд:
+
+* Используйте команду `drush cache:rebuild` для очистки и перестроения всех данных кэша
+на сайте. После запуска этой команды, вы увидите сообщение "Cache
+rebuild complete."
+
+* Используйте команду `drush cache:clear`, чтобы посмотреть список отдельных кэшей и потом
+выберите нужный кэш, который вы бы хотели очистить. Запуск этой команды выглядит
+примерно таким образом:
++
+----
+> drush cache:clear
+Enter a number to choose which cache to clear.
+ [0]  :  Cancel
+ [1]  :  drush
+ [2]  :  theme-registry
+ [3]  :  menu
+ [4]  :  css-js
+ [5]  :  block
+ [6]  :  module-list
+ [7]  :  theme-list
+ [8]  :  render
+ [9]  :  views
+----
+Выберите какой кэш вы хотите очистить через нажатие числа для этого кэша. Нажмите
+"Enter" чтобы продолжить.
+
+
+//==== Expand your understanding
+
+
+//==== Related concepts
+
+==== Видео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Clearing the Cache"]
+
+==== Дополнительные материалы
+
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ community documentation page "Clearing or rebuilding Drupal's cache"]
+
+
+*Авторы*
+
+Адаптировано и отредактировано https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+и https://www.drupal.org/u/jerseycheese[Jack Haas] из
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Clearing or
+rebuilding Drupal's cache"],
+авторские права 2000-copyright_upper_year за отдельнымм участниками
+https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван] из
+https://www.technocrat.com.au/[Technocrat].

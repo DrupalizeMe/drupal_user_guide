@@ -1,0 +1,124 @@
+[[structure-content-display]]
+
+=== Ändern der Inhaltsanzeige
+
+[role="summary"]
+Wie man Inhaltselemente präsentationsfähiger macht.
+
+(((Content display,changing)))
+(((Content display,managing)))
+(((Content,displaying)))
+
+==== Zielsetzungsetzung
+
+Machen Sie die Inhaltselemente lesbarer, zugänglicher und sichtbar attraktiver, indem
+Neuanordnung der Felder, Ausblenden von Beschriftungen und Abstimmen der Ausgabe der Felder.
+
+==== Vorraussetzung Kenntnisse
+
+* <<planning-data-types>>
+* <<structure-view-modes>>
+
+==== Standort-Voraussetzungen
+
+Der Inhaltstyp "Anbieter" muss vorhanden sein, er muss ein Hauptbild und eine Anbieter-URL haben.
+Felder, und Ihre Site muss mindestens ein Inhaltselement des Lieferanten enthalten. Siehe
+<<structure-content-type>>, <<structure-fields>>, und <<content-create>>.
+
+==== Arbeitsschritte
+
+. Suchen und zeigen Sie ein Inhaltselement Lieferant an, das Sie unter <<structure-fields>> angelegt haben.
+Beachten Sie, dass es mehrere Dinge gibt, die man tun könnte, um die Seite zu verbessern
+Aussehen:
++
+  * Die Felder Hauptbild und Anbieter-URL sollten keine Beschriftungen haben.
+  * Die Reihenfolge der Felder sollte so geändert werden, dass das Bild an erster Stelle steht.
+  * Das Bild sollte kleiner sein.
+
+  . Um die ersten beiden Probleme zu beheben und einige zusätzliche Einstellungen zu aktualisieren, in der
+  Verwaltungsmenü _Verwaltung_, navigieren Sie zu _Struktur_ > _Inhaltstypen_
+  (_Administration/Struktur/Arten_). Klicken Sie dann auf _Anzeige verwalten_ in der Dropdown-Schaltfläche
+  für den Content-Typ Anbieter.
++
+--
+// Content types list on admin/structure/types, with operations dropdown
+// for Vendor content type expanded.
+image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
+--
+
+. Unter der Spalte _Label_ wählen Sie _Versteckt_ für Hauptbild. Machen Sie dasselbe
+für Anbieter-URL.
++
+--
+// Manage display page for Vendor content type
+// (admin/structure/types/manage/vendor/display), with labels for Main
+// Image and Vendor URL hidden, and their select lists outlined in red.
+image:images/structure-content-display_main_image_hidden.png["Selecting _main image title_ as _hidden_",width="100%"]
+--
+
+. Klicken Sie auf das Zahnrad für das Feld Hersteller-URL, um die Konfiguration zu öffnen.
+Optionen.
+
+. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname|Erläuterung|Beispielwert
+|Länge des Linktextes trimmen| Maximal angezeigte Länge für Linktext| Leer (kein Trimmen)
+|Link in neuem Fenster öffnen| Ob Links in einem neuen Fenster oder im selben Fenster geöffnet werden sollen |Geprüft
+|================================
++
+--
+// Vendor URL settings form, with trim length cleared, and open link in
+// new window checked.
+image:images/structure-content-display_trim_length.png["Link trim length",width="100%"]
+--
+
+. Klicken Sie auf _Aktualisieren_.
+
+. Ziehen Sie die Querbalkengriffe der Felder, um sie als Hauptbild, _Körper_, neu anzuordnen,
+Anbieter-URL und _Links_. Alternativ zum Ziehen können Sie auf die Schaltfläche _Show
+Zeilengewichte_ Link oben in der Tabelle und geben Sie numerische Gewichte ein (Felder
+mit niedrigeren oder negativeren Gewichten werden zuerst angezeigt).
++
+--
+// Manage display page for Vendor content type, with order changed.
+image:images/structure-content-display_change_order.png["Changing order of fields",width="100%"]
+--
+
+. Klicken Sie auf _Speichern_.
+
+. Suchen Sie das Inhaltselement "Anbieter" aus Schritt 1 erneut, und überprüfen Sie, ob die Aktualisierungen
+gemacht worden sind.
+
+. Wiederholen Sie ähnliche Schritte, um die Anzeige des Inhaltstyps Rezept zu verwalten
+Felder.
+
+==== Erweitern Sie Ihr Verständnis
+
+* Verkleinern Sie das Hauptbild. Siehe <<structure-image-style-create>>.
+
+* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, benötigen Sie möglicherweise
+um den Cache zu leeren. Siehe <<<prevent-cache-clear>>.
+
+
+==== Verwandte Konzepte
+
+<<structure-image-styles>>
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Changing Content Display"]
+
+==== Zusätzliche Ressourcen
+
+* https://www.drupal.org/node/774798[_Drupal.org_ Community-Dokumentationsseite "Spezifizieren Sie, wie Felder angezeigt werden"]
+* https://www.drupal.org/node/774744[_Drupal.org_ Community-Dokumentationsseite "Ordnen Sie die Reihenfolge der Felder neu an"]
+* https://www.drupal.org/node/1577752[_Drupal.org_ Community-Dokumentationsseite "Ansichtsmodi"]
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/AnnGreazel[Ann Greazel] und
+https://www.drupal.org/u/batigolix[Boris Doesborg].

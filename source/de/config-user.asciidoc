@@ -1,0 +1,103 @@
+[[config-user]]
+
+=== Benutzerkonteneinstellungen Konfigurieren
+
+[role="summary"]
+Die Einstellungen für das Anlegen von Benutzerkonten anpassen.
+
+(((User,configuring account setting)))
+(((Account setting,configuring)))
+(((Security,managing user accounts)))
+(((Security,user account settings)))
+
+==== Zielsetzung
+
+Deaktivieren Sie die Möglichkeit das Benutzer selbstständig Benutzerkonten auf
+der Website erstellen können. Kontrollieren und Bearbeiten Sie außerdem die
+von der Website generierten E-Mail-Nachrichten für auf Benutzerkonten bezogene
+Ereignisse.
+
+==== Erforderliche Vorkenntnisse
+
+<<config-overview>>
+
+//===== Anforderungen an die Website
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ > _Benutzer_ >
+Kontoeinstellungen_ (_admin/config/people/accounts_).
+
+. Wählen Sie unter _An- und Abmeldung_ die Option _Nur Administratoren_ aus,
+um den Personenkreis mit Berechtigungen zum Erstellen neuer Benutzerkonten
+festzulegen. Sie können die Option _Bestätigung per E-Mail verlangen,
+wenn ein Besucher ein Benutzerkonto anlegt_  für den Fall Deaktivieren,
+dass Sie Benutzern später erlauben möchten selbstständig neue
+Benutzerkonten anzulegen.
++
+--
+// An- und Abmeldeabschnitt von admin/config/people/accounts.
+image:images/config-user_account_reg.png["Konto-Registrierung nur durch Admin"]
+--
+
+. Optional können Sie die Standard-E-Mail-Adresse ändern.
+Von dieser E-Mail-Adresse erhalten registrierte Benutzer Benachrichtigungen von
+der Website des Wochenmarktes. Diese Option hilft Ihnen dabei eine von der für
+die Website verwendeten E-Mail-Adresse getrennte E-Mail-Adresse in für
+allgemeine Benachrichtigungen festzulegen. Diese E-Mail-Adresse für
+Benutzerkonto-Benachrichtigungen ist beispielsweise nützlich,
+wenn es einen oder mehrere Mitarbeiter eingesetzt werden,
+die zur Kommunikation mit den Lieferanten des Wochenmarktes eingesetzt werden.
++
+--
+// E-Mail-Abschnitt von admin/config/people/accounts.
+image:images/config-user_from_email.png["Benachrichtigungs-E-Mail von Adresse"]
+--
+
+. Optional können Sie die E-Mail-Vorlagen der automatisierten E-Mails unter
+_E-Mails_ bearbeiten. Es gibt mehrere E-Mail-Vorlagen, die vom Kernsystem zur
+Verfügung gestellt werden. Sie sind für verschiedene benutzerspezifische
+Anliegen gedacht. Alle Vorlagen können von Ihnen personalisiert werden.
+Drei der Vorlagen können über das entsprechende Kontrollkästchen deaktiviert werden:
+Benutzerkonto-Aktivierung, Konto gesperrt, und Benutzerkonto wurde gelöscht.
++
+Sie können Ihren eigenen Text Verfassen (z. B. zur Begrüßung der neuer
+Lieferanten, wenn diese gerade Benutzerkonten erstellt haben), indem Sie die
+Vorlage _Willkommen (Neuer, von einem Administrator erstellter Benutzer)_
+bearbeiten.
++
+--
+// E-Mail-Abschnitt von admin/config/people/accounts.
+image:images/config-user_email.png["E-Mail-Benachrichtigung bei Kontoereignissen",width="100%"]
+--
+
+. Klicken Sie auf _Konfiguration speichern_, um die Änderungen zu speichern.
+
+==== Vertiefen Sie Ihr Wissen
+
+* <<prevent-cache-clear>>
+* <<user-new-user>>
+
+
+==== Verwandte Konzepte
+
+Siehe: <<user-chapter>> für weitere Informationen über
+Benutzerkonten und Berechtigungen.
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/POhQTAX93R8[title="Konfigurieren der Benutzerkontoeinstellungen"]
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/security/secure-configuration[Sicherheitsleitfaden] kann helfen
+Sie mit einem sicherheitsorientierteren Ansatz zur Konfiguration.
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/lolk[Laura Vass] bei
+https://pronovix.com/[Pronovix], und
+https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[Red Crackle].

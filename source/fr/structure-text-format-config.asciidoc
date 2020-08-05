@@ -1,0 +1,100 @@
+[[structure-text-format-config]]
+
+=== Configurer les formats de texte et les éditeurs
+
+[role="summary"]
+Comment modifier un format de texte et la configuration de son éditeur.
+
+(((Format de texte,configurer)))
+(((Format de texte,format de texte)))
+(((Éditeur,configurer)))
+(((Éditeur de texte Ckeditor,assigner par défaut à un format de texte)))
+(((WYSIWYG (What You See Is What You Get),configurer éditeur)))
+(((What You See Is What You Get (WYSIWYG),configurer éditeur)))
+(((Module,Filter)))
+(((Module,Editor)))
+(((Module,CKEditor)))
+(((module Filter,configurer)))
+(((module Editor,configurer)))
+(((module module,configurer)))
+
+==== Objectif
+
+Ajouter une balise de règle horizontale au format de texte _HTML Simple_, et un
+bouton correspondant à la configuration de son éditeur.
+
+==== Pré-requis
+
+<<structure-text-formats>>
+
+==== Pré-requis du site
+
+* Les modules du coeur Filter, Editor et CKEditor doivent être installés. Ils
+sont installés sur votre site lorsque vous l'installez avec le profil
+d'installation Standard du cœur.
+
+* Le format de texte _HTML Simple_ doit exister. Il est créé sur votre site
+lorsque vous l'installez avec le profil d'installation Standard du cœur.
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, aller à _Configuration_ > _Rédaction
+de contenu_ > _Formats de texte et éditeurs_ (_admin/config/content/formats_).
+La page _Formats de texte et éditeurs_ apparaît.
+
+. Cliquer sur _Configurer_ pour le format de texte _HTML Simple_. La page
+_HTML Simple_ apparaît.
+
+. Noter que _CKEditor_ est sélectionné dans le champ _Editeur de texte_. Cela
+vous permet de configurer la barre d'outils de l'éditeur.
+
+. Faire glisser le bouton _règle horizontale_ depuis _Boutons disponibles_ vers
+_Outils_ dans la _Barre d'outils active_. Vous pouvez avoir besoin de cliquer
+sur le lien _Afficher les noms de groupes_ pour voir le nom du groupe _Outils_.
++
+--
+// Button configuration area on text format edit page.
+image:images/structure-text-format-config-editor-config.png["Configurer
+l'éditeur",width="100%"]
+--
+
+. Noter que vous pouvez modifier l'_ordre de traitement des filtres_.
+
+. Dans le champ _Balises HTML autorisées_, ajouter '<hr>' à ceux déjà présents.
++
+--
+// Allowed HTML tags area on text format edit page.
+image:images/structure-text-format-config-allowed-html.png["Configurer les
+balises HTML",width="100%"]
+--
+
+. Cliquer sur _Enregistrer la configuration_. Vous êtes alors redirigé(e) vers
+la page _Formats de texte et éditeur_. Un message indiquant que le format de
+texte a été mis à jour s'affiche.
++
+--
+// Confirmation message after updating text format.
+image:images/structure-text-format-config-summary.png["Message de confirmation après configuration du format de texte"]
+--
+
+==== Améliorer votre compréhension
+
+Si vous ne voyez pas les effets des modifications sur votre site, pourriez voir
+besoin de vider les caches. Voir <<prevent-cache-clear>>.
+
+
+// ==== Concepts liés
+
+// ==== Pour aller plus loin
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Configuring Text Formats and Editors"]
+
+
+*Attributions*
+
+Écrit par https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

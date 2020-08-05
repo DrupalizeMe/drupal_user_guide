@@ -1,0 +1,141 @@
+[[views-block]]
+
+=== Hinzufügen einer Blockanzeige zu einer Ansicht
+
+[role="summary"]
+So fügen Sie einer Ansicht eine Blockanzeige hinzu.
+
+(((View,adding block display to)))
+(((Block,creating from a view)))
+(((Views module,adding to a view)))
+(((Module,Views)))
+
+==== Zielsetzungsetzung
+
+Hinzufügen einer Blockanzeige zur Ansicht "Rezepte", um die neuesten Rezepte anzuzeigen
+in einer Seitenleiste, und ändern Sie deren Konfiguration, ohne die bestehende
+Rezepte Seitenansicht.
+
+==== Erforderliche Vorkenntnisse
+
+* <<views-concept>>
+* <<views-parts>>
+* <<views-create>>
+
+==== Anforderungen an die Website
+
+* Der Inhaltstyp Rezept muss vorhanden sein, er muss ein Feld Hauptbild haben, und Ihre
+Website muss einige Inhaltselemente von Rezepten enthalten. Siehe <<structure-content-type>>,
+<<structure-fields>>, <<structure-form-editing>>, und <<content-create>>.
+
+* Der Bildstil _Thumbnail (100x100)_ muss definiert werden. Dieser wird auf Ihrem
+Site, wenn Sie das Kern-Image-Modul installieren (installiert mit dem Kern-Standard
+Installationsprofil), kann aber neu erstellt werden, wenn sie gelöscht wird. Siehe
+<<structure-image-style-create>>.
+
+* Die Sicht Rezepte muss vorhanden sein. Siehe <<views-create>> und <<views-duplicate>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Ansichten_
+(_admin/structure/views_). Suchen Sie die Ansicht "Rezepte" und klicken Sie auf _Bearbeiten_ in der
+Dropdown-Schaltfläche. Alternativ können Sie zur Seite Rezepte auf der Hauptseite navigieren
+Navigation, und klicken Sie auf den kontextuellen Link _Ansicht bearbeiten_ im Hauptbereich der
+Seite. Siehe <<config-overview>> für Informationen über kontextbezogene Links.
+
+. Erstellen Sie eine neue Blockanzeige, indem Sie unter _Anzeigen_ auf _Hinzufügen_ klicken. Klicken Sie auf .
+_Blockieren_ aus der angezeigten Liste der Links. Die neue Anzeige wird erstellt, und die
+Der Fokus wird automatisch auf seine Konfiguration umgeschaltet.
++
+--
+// Add display button on Recipes view edit page, with Block highlighted
+// (admin/structure/views/view/recipes).
+image:images/views-block_add-block.png["Add block display"]
+--
+
+. Um den Titel dieser Anzeige zu ändern, klicken Sie auf _Blockieren_ im Feld _Anzeige
+Feld name_. Das Feld _Block: Der Name und die Beschreibung dieses Anzeige-Popup
+erscheint. Ändern Sie den _Verwaltungsnamen_ in "Neueste Rezepte". Klicken Sie auf _Anwenden_.
+
+. Um den Titel des Blocks zu ändern, klicken Sie im Feld _Titel_ auf "Rezepte".
+unter _Titel_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block (überschreibt)_ unter
+die _Für_ Auswahlliste. Ändern Sie das Feld _Titel_ in "Neue Rezepte" und klicken Sie
+_Anwenden (diese Anzeige)_.
++
+--
+// Configuring the block title for this display only.
+image:images/views-block_title.png["Title only for this block"]
+--
+
+. Um den Stil des Blocks zu ändern, klicken Sie auf _Grid_ im _Format_-Feld unter
+_Format_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block (überschreiben)_ aus dem
+_Für_ Auswahlliste. Wählen Sie _Unformatierte Liste_ und klicken Sie auf _Anwenden (diese
+anzeigen)_. Sie können die Stiloptionen im nächsten Popup-Fenster weiter konfigurieren
+erscheint. Klicken Sie dann auf _Anwenden_.
+
+. Um das Bildfeld zu konfigurieren, klicken Sie auf _Inhalt_: Hauptbild_ unter _Felder_.
+Wählen Sie im angezeigten Popup-Fenster die Option _Dieser Block (überschreiben)_ aus dem
+_Für_ Auswahlliste. Wählen Sie _Bildstil Miniaturansicht (100x100)_. Klicken Sie _Anwenden
+(diese Anzeige)_.
++
+--
+// Configuring the image field for this display only.
+image:images/views-block_image.png["Image to thumbnail",width="100%"]
+--
+
+. Um Inhaltsstoffe als Filter zu entfernen, klicken Sie auf _Inhalt: Inhaltsstoffe (ausgesetzt)_
+unter _Filterkriterien_. Wählen Sie in dem angezeigten Popup-Fenster _Dieses
+Block (überschreiben)_ aus der Auswahlliste _Für_ blockieren. Klicken Sie unten auf _Entfernen_.
+
+. Um zu konfigurieren, wie der Inhalt in der Ansicht sortiert werden soll, klicken Sie auf _Hinzufügen_.
+über die Dropdown-Schaltfläche unter _Sortierkriterien_. Im angezeigten Popup-Fenster,
+Wählen Sie _Dieser Block (überschreiben)_ aus der Auswahlliste _Für_ aus. Prüfen Sie
+Autorisiert am_ (in der Kategorie _Inhalt_), und klicken Sie dann auf _Hinzufügen und konfigurieren
+Sortierkriterien_.
+
+. Wählen Sie in dem erscheinenden Konfigurations-Popup _Absteigend sortieren_, um die
+Die neuesten Rezepte erscheinen zuerst. Klicken Sie auf _Anwenden_.
+
+. Um die Anzahl der anzuzeigenden Elemente festzulegen, klicken Sie auf _Mini_ im Feld _Verwendung
+Pager_ Feld unter _Pager_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block
+(überschreiben)_ aus der Auswahlliste _Für_. Wählen Sie unter _Pager_ die Option _Anzeigen
+angegebene Anzahl von Elementen_. Klicken Sie auf _Anwenden (diese Anzeige)_. Im _Block: Pager
+Optionen_ Popup, geben Sie "5" als Wert für _Anzuzeigende Elemente_ ein. Klicken Sie auf _Anwenden_.
+
+. Klicken Sie auf _Speichern_. Sie sehen entweder wieder die Ansichtsbearbeitungsseite oder die Rezepte
+Seite, je nachdem, was Sie in Schritt 1 getan haben. Sie sollten auch eine Meldung sehen, die besagt
+dass die Ansicht gespeichert wurde.
++
+--
+// View saved confirmation message.
+image:images/views-block_recipes.png["Summary page after configuration",width="100%"]
+--
+
+. Platzieren Sie die "Rezepte: Zuletzt verwendete Rezepte" in den zweiten Bereich der _Seitenleiste. Siehe
+<<block-place>>. Navigieren Sie zur Startseite der Website, um den Block zu sehen.
++
+--
+// Home page with recipes sidebar visible.
+image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%"]
+--
+
+// ==== Erweitern Sie Ihr Verständnis
+
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/xrnuekARwYc[title="Hinzufügen einer Blockanzeige zu einer Ansicht"]
+
+//===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/lolk[Laura Vass] unter
+https://pronovix.com/[Pronovix],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], und
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

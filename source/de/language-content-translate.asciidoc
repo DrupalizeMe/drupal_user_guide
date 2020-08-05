@@ -1,0 +1,88 @@
+[[language-content-translate]]
+
+=== Inhalt übersetzt
+
+[role="summary"]
+Eine Seite in eine andere Sprache übersetzen.
+
+(((Content,translating)))
+(((Translating,content)))
+
+==== Zielsetzung
+
+Übersetzen Sie die Startseite auf Spanisch.
+
+==== Erforderliche Vorkenntnisse
+
+<<language-concept>>
+
+==== Anforderungen an die Website
+
+* Die Startseite muss vorhanden sein. Siehe <<content-create>>.
+
+* Das Modul Content Translation, das mit dem Kernsystem ausgeliefert wird,
+muss installiert sein und auf der Website müssen mindestens zwei Sprachen
+aktiviert sein. Siehe: <<language-add>>.
+
+* Der Inhaltstyp _Einfache Seite_ muss so konfiguriet sein, dass er übersetzt
+werden kann. Siehe: <<language-content-config>>.
+
+
+==== Arbeeitsschritte
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhlat_ (_admin/content_).
+
+. Suchen Sie nach dem Inhalt für die Startseite. Sie können danach suchen, indem Sie  „Start" im Feld Titel eingeben.
+
+. Aus dem Drop-Button in der Zeile die den Inhalt der Startseite enthält wählen Sie _Übersetzen_.
+Die Seite _Übersetzungen für Startseite_ wird geöffnet.
+
+. Klicken Sie ub der Zeile _Spanisch_ auf _hinzufügen_.
++
+--
+// Screenshot of the translations page for the Home page content item.
+image:images/language-content-translate-add.png["Adding a content translation",width="100%"]
+--
+
+. Beachten Sie, das die Anzeigesorache der Benutzeroberfläche in spanisch geändert
+wurde. um zurück zu Englisch zu wechseln, entfernen Sie die erste Instanz von
+_es_ in der Adresse der Adresszeile des Browsers. Wenn ihre URL z. B. so aussieht:
+_example.com/es/node/5/translations/add/en/es_,
+entfernen Sie das _es_ sich innerhalb der URL direkt hinter _example.com_ befindet.
+
+. Füllen Si die Felder wie folgt aus:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung| Wert
+|Titel | Übersetzter Titel der Seite | Página principal
+|Textkörper | Übersetzter Textkörper der Seite |
+Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio!
+Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre
+Lugar: parking del Banco Trust número 1. En el centro de la ciudad
+|URL Alias > URL alias | Übersetzte Adresse des Inhalts auf der Website | pagina-principal
+|================================
+
+. Klicken Sie auf _(diese Übersetzung) speichern_.
+
+. Rufen Sie die Startseite auf, um die neue Übersetzung zu betrachten.
+
+==== Vertiefen Sie Ihr Wissen
+
+* Führen Sie die oben genanten Schritte erneut aus, um mehr Inhalte auf Ihrer Website zu übersetzen.
+
+* <<language-config-translate>>
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TOalcUYD5zM[title="Inhlate übersetzen (englisch)"]
+
+// ==== Weiterführende Quellen
+
+
+*Mitwirkende*
+
+Geschreiben von https://www.drupal.org/u/batigolix[Boris Doesborg].

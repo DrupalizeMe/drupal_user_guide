@@ -1,0 +1,98 @@
+[[content-create]]
+
+=== Créer un élément de contenu.
+
+[role="summary"]
+Comment créer un élément de contenu pour utilisation en tant que page d'accueil.
+
+(((Élément de contenu,création)))
+(((Page de base,création)))
+(((Page d'accueil,création)))
+
+==== Objectif
+
+Créer et publier un élément de contenu qui sera utilisé en guise de page
+d'accueil du site.
+
+==== Pré-requis
+
+* <<content-paths>>
+* <<planning-data-types>>
+
+==== Pré-requis du site
+
+Le type de contenu _Page de Base_ doit exister. Il est créé sur votre site quand
+vous l'installez avec le profil d'installation Standard du cœur.
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, naviguer dans _Contenu_ > _Ajouter un
+contenu_ > _Page de base_ (_node/add/page_). Le formulaire _Créer Page de base_
+apparaît.
+
+. Cliquer sur _Modifier le résumé_.
+
+. Remplir les champs comme indiqué ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Nom du champ | Explication| Valeur
+| Titre | Titre de la page. Il sera aussi utilisé comme balise meta dans le code source,
+les alias d'URL, et comme étiquette de l'élément de contenu dans l'écran d'administration |Accueil
+| Résumé | Résumé de la valeur du champ Corps. Peut être utilisé comme accroche
+dans les pages d'aperçu. | Horaires d'ouvertures et localisation du marché.
+| Corps | Contenu complet de la page | Bienvenue au Marché - votre marché
+fermier de proximité !
+
+Ouverture : dimanche de 9h à 14h, d'avril à septembre
+
+Localisation : Parking de la banque, Place de la Poste, centre-ville
+|Paramètres des chemins d'URL > Alias d'URL| Chemin alternatif du contenu | /accueil
+|================================
++
+En cliquant sur le bouton _Source_ dans la barre d'outil de texte riche, vous
+pouvez voir le code source HTML du texte en cours de modification.
++
+--
+// Partly filled-in node/add/page, with Summary section open.
+image:images/content-create-create-basic-page.png["Créer une page de base",width="100%"]
+--
+
+. Cliquer sur _Aperçu_ pour vous assurer que tout est correct.
+
+. Cliquer sur _Revenir à la modification du contenu_.
+
+. Cliquer sur _Enregistrer et publier_. Le contenu est enregistré et peut être
+trouvé dans la page _Contenu_.
+
+. Suivre les mêmes étapes pour créer une page À propos, avec le titre "À propos"
+et un corps parlant de l'histoire du marché fermier.
+
+==== Améliorer votre compréhension
+
+* <<menu-home>>
+* <<menu-link-from-content>>
+* <<language-content-translate>>
+
+==== Concepts liés
+
+* <<language-concept>>
+* <<content-paths>>
+* <<content-edit>>
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/h312fekiSNE[title="Creating a Content Item"]
+
+==== Pour aller plus loin (en anglais)
+
+https://www.drupal.org/docs/8/core/modules/node/about-nodes[_Drupal.org_ community documentation page "About nodes"]
+
+
+*Attributions*
+
+Écrit par https://www.drupal.org/u/pixiekiss[Agnes Kiss] et
+https://www.drupal.org/u/batigolix[Boris Doesborg].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

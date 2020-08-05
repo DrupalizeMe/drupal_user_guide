@@ -1,0 +1,58 @@
+[[structure-widgets]]
+
+=== Konzept: Formulare und Steuerelemente
+
+[role="summary"]
+Überblick über Formulare und Steuerelemente.
+
+(((Content editing form,overview)))
+(((Widget,overview)))
+(((Field,overview)))
+(((Form,overview)))
+
+==== Erforderliche Vorkenntnisse
+
+<<planning-data-types>>
+
+==== Was sind Formen und Steuerelemente?
+
+Die Content-Management-System-Software, die auf Ihrer Website läuft, ermöglicht
+Administratoren, Inhalte zu bearbeiten und Einstellungen online zu konfigurieren, unter Verwendung verschiedener Web
+_Formen_. Insbesondere _Inhaltsbearbeitungsformulare_ werden verwendet, um die Inhalte Ihrer Website zu bearbeiten.
+Inhalt, und sie sind von Administratoren konfigurierbar; Konfiguration der Einstellungen
+Formulare werden von Modulen bereitgestellt und können selbst nicht konfiguriert werden.
+
+Die Daten im Inhalt Ihrer Website werden in einem oder mehreren Feldern gespeichert, die
+die an den Inhaltstyp und/oder Untertyp angehängt sind. Wenn Sie den Inhalt konfigurieren
+Bearbeitungsformular für jeden Inhaltsuntertyp können Sie
+
+* ein _Widget_ für jedes Feld auswählen. Ein Widget definiert die Methode zur Eingabe von
+die Daten für das Feld. Beispielsweise kann ein Taxonomiebegriff ausgewählt werden mit
+ein Autovervollständigungsfeld, eine Auswahlliste oder ein Feld im Stil von Tags, das Editoren
+neue Tags automatisch hinzufügen.
+
+* Konfigurieren Sie die Widget-Einstellungen. Sie können zum Beispiel die Größe eines
+Klartext-Eingabefeld.
+
+* Blenden Sie ein oder mehrere Felder aus dem Bearbeitungsformular aus.
+
+* Ordnen Sie die Felder neu an.
+
+Prinzipiell können Sie auch mehrere Inhaltsbearbeitungsformulare zur Verfügung haben für
+jeder Inhalts-Untertyp. Diese Funktion wird jedoch nur selten verwendet; die einzige Ausnahme
+im allgemeinen Gebrauch ist für die Felder des Benutzerprofils: Sie können verschiedene Formulare verwenden für
+Benutzerregistrierung und Benutzerbearbeitung. Zum Beispiel könnten Sie einen begrenzten Satz von
+Felder, die bei der ersten Registrierung der Benutzer auf der Website angezeigt werden, und weitere Felder, die später angezeigt werden
+an, wenn sie ihre Profile bearbeiten.
+
+==== Verwandte Themen
+
+* <<structure-form-editing>>
+* <<structure-view-modes>>
+
+//===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

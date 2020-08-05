@@ -1,0 +1,138 @@
+[[planning-data-types]]
+=== Concept : entités de contenus et champs
+
+[role="summary"]
+Vue d'ensemble des entités de contenu et des champs.
+
+(((Entité,vue d'ensemble)))
+(((Terme de taxonomie,vue d'ensemble)))
+(((Vocabulaire,vue d'ensemble)))
+(((Contenu,Type d'entité)))
+(((Type d'entité,vue d'ensemble)))
+(((Sous-type d'entité,vue d'ensemble)))
+(((Bloc,type d'entité)))
+(((Type d'entité commentaire,vue d'ensemble)))
+(((Type d'entité formulaire de contact,vue d'ensemble)))
+(((Type d'entité formulaire,vue d'ensemble)))
+(((Type d'entité contenu,vue d'ensemble)))
+(((Bloc personnalisé,type d'entité)))
+(((Champ,vue d'ensemble)))
+(((Type d'entité profil d'utilisateur,vue d'ensemble)))
+(((Module,Comment)))
+(((Module,Contact)))
+(((Module,Taxonomy)))
+(((Module,User)))
+(((Module,Node)))
+(((Module,Custom Block)))
+(((Module,File)))
+(((Module Comment,type d'entité)))
+(((Module Contact,type d'entité)))
+(((Module Custom block,type d'entité)))
+(((Module Node,type d'entité)))
+(((Module Taxonomy,type d'entité)))
+(((Module User,type d'entité)))
+(((Module File,type d'entité)))
+
+==== Pré-requis
+
+* <<understanding-data>>
+* <<understanding-modules>>
+
+==== Qu'est ce qu'une entité de contenu ?
+
+Une _entité de contenu_ (ou plus dimplement, _entité_) est un élément de données
+de contenu, qui peut contenir du texte, des balises HTML, des images, des
+fichiers attachés, et d'autres données, qui sont destinées à être affichées aux
+visiteurs du site. Les entités de contenu peuvent être définies par le cœur du
+logiciel ou par des modules.
+
+Les entités de contenu sont regroupées en _types d'entités_, qui peuvent avoir
+différents objectifs et sont affichés de manières vraiment différentes sur le
+site. La plupart des types d'entités sont aussi divisées en _sous-types
+d'entités_, qui permettent de petites variations sur l'utilisation des entités
+et leur affichage. Voici un tableau des types d'entité de contenu standards :
+
+[width="100%",frame="topbot",options="header"]
+|=============================================
+|Type d'entité |Sous-type d'entité |Module fournisseur |Usages principaux
+
+|Élément de contenu |Type de contenu |Module Node
+  |Contenu destiné à être la zone principale pour les pages du site
+  | 3+| *Exemple* : dans l'exemple du site du marché fermier, vous devriez avoir
+  des types de contenus pages basiques, pages vendeurs, pages recettes.
+
+|Commentaire |Type de commentaire |Module Comment
+  |Commentaire ajouté aux entités de contenus
+  | 3+| *Exemple* : sur un blog, les articles pourraient avoir des commentaires.
+  Ils ne sont pas utiles sur l'exemple du site du marché fermier.
+
+|Profil Utilisateur |(aucun) |Module User
+  |Données liées à une personne avec un compte utilisateur (accès identifié) sur
+  le site
+  | 3+| *Exemple* : chaque site a au moins un profil utilisateur basique avec un
+  identifiant et une adresse électronique ; les sites de réseaux sociaux peuvent
+  avoir des profils utilisateurs complexes avec plus d'informations.
+
+|Bloc personnalisé |Type de Bloc |Module Custom Block
+  |Texte et images dans un petit espace, souvent affiché dans le bandeau du site,
+  le pied-de-page ou la barre latérale
+  | 3+| *Exemple* : dans le site d'exemple du marché fermier, vous pouvez placer
+  les horaires et la localisation dans un bloc dans la barre latérale.
+
+|Terme de Taxonomie|Vocabulaire |Module Taxonomy
+  |Utilisé pour classer d'autres types de contenus
+  | 3+| *Exemple* : dans le site d'exemple du marché fermier, vous pouvez
+  classer les contenus Recettes avec un vocabulaire de taxonomie Ingrédients,
+  avec des termes de taxonomies comme Carottes et Tomates.  Dans un blog, les
+  articles peuvent être classés en utilisant le vocabulaire mots clés, et peut
+  être un vocabulaire Catégories.
+
+|Fichier |(aucun) |Module File
+  |Une image ou un fichier attaché qui sont suivis et gérés par le site, souvent
+  attachés à un autre type de contenu.
+  | 3+| *Exemple* : dans le site d'exemple fermier, les pages des recettes et
+  des vendeurs pourraient avoir des images attachées, qui seraient gérées
+  comme des entités de type fichier par le site.
+
+|Formulaire de Contact |Type de Formulaire |Module Contact
+  |Un formulaire qui permet aux visiteurs du site de contacter le propriétaire
+  du site
+  | 3+| *Exemple* : un formulaire de contact est nécessaire dans le site
+  d'exemple du marché fermier.
+
+|=============================================
+
+==== Qu'est ce qu'un champ ?
+
+A l'intérieur des entités, les données sont stockées dans des _champs_
+individuels, chacun contenant un type de donnée, comme du texte formaté ou brut,
+des images ou autres fichiers, ou des dates. Les types de champs peuvent être
+définis par le cœur du logiciel ou par des modules.
+
+Les champs peuvent être ajoutées par un administrateur aux sous-types d'entité,
+de sorte que toutes les entités d'un sous-type d'entité donné aient le même
+ensemble de champs disponibles. Par exemple, le type de contenu Vendeur de
+l'exemple du marché fermier pourrait comporter des champs pour le nom du
+vendeur, un logo, l'adresse d'un site web, et une description, alors que le type
+de contenu _pages basiques_ pourrait n'avoir des champs que pour le titre et le
+corps de la page. Lorsque vous créez ou modifiez une entité, vous spécifiez
+les valeurs pour les champs de cette entité.
+
+==== Sujets liés
+
+* <<planning-structure>>
+* <<content-create>>
+* <<structure-content-type>>
+* <<structure-taxonomy>>
+* <<user-concept>>
+* <<block-concept>>
+
+// ==== Pour aller plus loin
+
+
+*Attributions*
+
+Écrit et modifié par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+et https://www.drupal.org/u/gdunham[Grant Dunham].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

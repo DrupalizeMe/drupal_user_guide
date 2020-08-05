@@ -1,0 +1,93 @@
+[[user-concept]]
+
+=== Concept : utilisateurs, rôles et droits
+
+[role="summary"]
+Vue d'ensemble des comptes utilisateurs, droits et rôles.
+
+(((Utilisateur,vue d'ensemble)))
+(((Rôle,vue d'ensemble)))
+(((Rôle utilisateur,vue d'ensemble)))
+(((Droit,vue d'ensemble)))
+(((Utilisateur anonyme,vue d'ensemble)))
+(((Utilisateur authentifié,vue d'ensemble)))
+(((compte utilisateur d'administration,vue d'ensemble)))
+
+// ==== Prerequisite knowledge
+
+==== Que sont les utilisateurs ?
+
+Quiconque visite votre site web est un _utilisateur_, y compris vous. Il y a
+trois groupes d'utilisateurs :
+
+* Les utilisateurs qui ne sont pas connectés, ou _utilisateurs anonymes_.
+
+* Les utilisateurs qui sont connectés, ou _utilisateurs authentifiés_.
+
+* Le compte d'administration, qui est créé automatiquement à l'installation de
+votre site, ou utilisateur n°1. Consulter <<user-admin-account>>.
+
+==== Que sont les droits ?
+
+La capacité à effectuer des actions sur votre site (y compris voir le contenu,
+modifier le contenu, et modifier la configuration) est dirigée par les
+_droits_. Chaque droit a un nom (comme _Voir le contenu publié_) et
+couvre une action ou un petit ensemble d'actions. Un utilisateur doit avoir un
+droit pour effectuer l'action correspondante sur le site ; les droits sont
+définis par les modules qui définissent les actions.
+
+==== Que sont les rôles ?
+
+Plutôt que d'assigner les droits individuellement à chaque utilisateur, les
+droits sont regroupés dans des _rôles_. Vous pouvez définir un ou plusieurs
+rôles sur votre site, et accorder des droits à chaque rôle. Les droits accordés
+aux utilisateurs anonymes et aux utilisateurs authentifiés sont contenus dans
+les rôles _Utilisateur anonyme_ et _Utilisateur authentifié_, et en fonction du
+profil d'installation utilisé lors de l'installation du site, il peut y avoir un
+rôle _Administrateur_ pour lequel les droits sont tous automatiquement accordés
+sur votre site.
+
+Chaque compte utilisateur de votre site a automatiquement le rôle _Utilisateur
+authentifié_, et peut en plus recevoir un ou plusieurs rôles. Lorsque vous
+assignez un rôle à un compte utilisateur, l'utilisateur aura toutes les
+droits du rôle lorsqu'il est connecté.
+
+C'est une bonne pratique d'avoir plusieurs rôles sur votre site. Dans le site
+d'exemple du marché fermier, vous pourriez vouloir disposer des rôles suivants :
+
+* Un rôle Vendeur qui permet aux vendeurs de modifier leur propre page vendeur.
+
+* Un rôle Éditeur du contenu pour modifier les pages générales du marché
+fermier.
+
+* Un rôle Gestionnaire des utilisateurs pour gérer les comptes des vendeurs.
+
+* Le rôle _Administrateur_ qui a été installé sur votre site, pour que les
+utilisateurs experts gèrent la configuration du site.
+
+==== Sujets liés
+
+* <<user-new-role>>
+* <<user-permissions>>
+* <<user-roles>>
+* <<user-new-user>>
+* <<user-admin-account>>
+* <<user-content>>
+
+==== Pour aller plus loin (en anglais)
+
+* https://www.drupal.org/node/120614[_Drupal.org_ community documentation page "Users, roles and permissions"]
+* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
+* https://www.drupal.org/node/1803614[_Drupal.org_ community documentation page "User Roles"]
+
+
+*Attributions*
+
+Adapté par https://www.drupal.org/u/mark-lacroix[Mark LaCroix],
+https://www.drupal.org/u/batigolix[Boris Doesborg], et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] depuis
+https://www.drupal.org/node/1803614["User Roles"],
+copyright 2000-2019 par les contributeurs individuels de
+https://www.drupal.org/documentation[la documentation de la communauté Drupal].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

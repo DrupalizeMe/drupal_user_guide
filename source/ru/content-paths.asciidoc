@@ -1,0 +1,70 @@
+[[content-paths]]
+
+=== Основы: пути, синонимы URL и URL-адреса
+
+[role="summary"]
+Обзор путей, синонимов и URL-адресов (с примерами)
+
+(((Путь,обзор)))
+(((Синоним,обзор)))
+(((URL (Uniform Resource Locator),обзор)))
+(((Uniform Resource Locator (URL),обзор)))
+(((URL синоним,обзор)))
+
+//==== Prerequisite knowledge
+
+
+==== Что такое URL?
+
+URL - это аббревиатура от "Uniform Resource Locator", который является
+адресом страницы в сети. Это "имя", по которому браузер идентифицирует
+отображаемую страницу. В примере "Посетите нас по адресу _example.com_",
+_example.com_ - это URL-адрес главной страницы вашего веб-сайта. Пользователи
+используют URL-адреса для нахождения информации в сети.
+
+==== Что такое путь?
+
+Путь - это уникальная, последняя часть URL для определенной функции или части
+содержимого. Например, для страницы с полным URL _http://example.com/node/7_
+путем является _node/7_.
+
+Вот несколько примеров путей, которые вы можете встретить на вашем сайте:
+
+* _node/7_
+* _taxonomy/term/6_
+* _admin/content/comment_
+* _user/login_
+* _user/3_
+
+==== Что такое синоним?
+
+Программное обеспечение ядра имеет функцию под названием "Синонимы URL",
+которая позволяет вам дать более понятное название содержимому. Итак, если у
+вас есть страница "About Us" с путём _node/7_, вы можете настроить псевдоним
+так, чтобы ваши посетители видели его как _http://www.example.com/AboutUs_.
+Эту функциональность обеспечивает модуль ядра Path, который поддерживает
+синонимы в URL.
+
+==== Связанные понятия
+
+* <<content-create>>
+* <<content-edit>>
+
+// The following topic has been deferred, so remove the link for now.
+// @todo Put this link back in when/if the topic gets added back.
+// * <<structure-pathauto>>
+
+
+//==== Additional resources
+
+
+*Авторы*
+
+Адаптировано https://www.drupal.org/u/dianalakatos[Diána Lakatos] из
+https://pronovix.com/[Pronovix] из
+https://www.drupal.org/node/120631["URL aliases"], и
+https://www.drupal.org/node/31644["Understanding Drupal paths"]
+авторские права 2000-copyright_upper_year за отдельными участниками, вносящих свой вклад в
+https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].

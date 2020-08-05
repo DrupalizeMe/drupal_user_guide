@@ -1,0 +1,112 @@
+[[planning-layout]]
+=== Des Layouts Ihrer Website planen
+
+[role="summary"]
+Die Navigation und das Layout einer Website ( für Mobil- und Desktopversionen) planen.
+
+(((Planning,site layout)))
+(((Site layout,planning)))
+(((Layout,planning)))
+
+==== Zielsetzungsetzung
+
+Planung der Navigation und des Layouts der Website, sowohl für mobile Geräte
+als auch für Desktop-Browser.
+
+==== Erforderliche Vorkenntnisse
+
+* <<understanding-themes>>
+* <<block-regions>>
+* <<preface-scenario>>
+
+// ==== Anforderungen an die Website
+
+==== Arbeitsschritte
+
+Es ist eine gute Idee, das Layout der Website zu planen, bevor Sie mit dem
+Erstellen der Website und der darauf vorhandenen Texte beginnen. Ihr Konzept
+muss jedoch möglicherweise überarbeitet werden. Entweder bevor Sie mit der
+Implementierung beginnen oder nachdem Sie einen Teil der Website mit Entwürfen
+der vorgesehenen Inhalte, die vom Budget und den Vorstellungen des Herausgebers
+der Website abhängen, versehen haben.
+
+
+. Machen Sie eine Liste der Inhalte, die Ihre Website den Seitenbesuchern präsentieren soll. Auf
+das Szenario des Wochenmarktes bezogen, das wir hier anwendden, könnte diese Liste wie folgt aussehen:
++
+* Standort des Wochenmarktes, mit Wegbeschreibung und Karte
+* Öffnungszeiten des Wochenmarktes
+* Geschichte des Marktes
+* Liste der Lieferanten
+* Detailinformationen zu jedem Lieferanten
+* Durchsuchbare Liste von Rezepten
+* Einzelheiten zu jedem Rezept
+* Liste der zuletzt hinzugefügten Rezepte
+
+. Entscheiden Sie, welche Informationen auf welchen Seiten oder welche
+Seitentypen auf der Website vorhanden sein sollen:
++
+Informationen, die auf allen Seiten stehen sollten::
+  Adresse, Öffnungszeiten und Liste der kürzlich hinzugefügten Rezepte
+Lieferanten-Detailseiten::
+  Informationen zu jedem Lieferanten auf einer eigenen Seite
+Rezept-Detailseiten::
+  Details zu jedem Rezept auf einer eigenen Seite
+Startseite::
+  Standort, Karte, Wegbeschreibung und Öffnungszeiten
+„Über uns“ Seite::
+  Geschichte des Marktes
+Seite der Lieferantenliste::
+  Liste der Lieferanten, mit Links zu Lieferanten-Detailseiten
+Seite Rezeptliste::
+  Durchsuchbare Rezeptliste, mit Links zu Rezept-Detailseiten
+
+. Entscheiden Sie, welche Informationen auf jeder Seite für die Besucher der
+Website am wichtigsten sind. Bei der Verwendung von Mobiltelefonen oder anderen
+kleinen Geräten werden oft nur die Inhalte angezeigt, die zuerst präsentiert
+werden. Manchmal kann der Besucher auch nicht nach unten scrollen,
+um alle Inhalte zu sehen.
+
+. Entscheiden Sie, welche dieser Seiten in der Hauptnavigation der Website
+erscheinen sollen. Die Hauptnavigation könnte z. B. aus den Menüpunkten
+Startseite, Über uns, Lieferanten und Rezepte bestehen.
+
+. Machen Sie für jede Seite eine grobe Entwurfsskizze, die zeigt, wie die Seite
+aussehen würde, wenn Sie sowohl auf einem kleinen Bildschirm, wie z. B. einem
+Mobiltelefon, als auch auf einem größeren Bildschirm, wie z. B.
+einen Desktop-Browser angezeigt werden würde. Angesichts der Tatsache, dass die
+meisten Besucher der Website kleinere Geräte, wie Mobiltelefone oder Tablets
+verwenden werden, ist es eine gute Idee, mit dem Layout in der Grße eines
+Mobiltelefons zu beginnen, um sicherzustellen, dass diese Besucher in der Lage
+sein werden, die benötigten Informationen zu finden, ohne
+viel durch die Website scrollen zu müssen.
++
+Bei der Erstellung dieser Seitenlayoutkonzepte müssen Sie möglicherweise
+feststellen, dass Sie Ihre Ideen davon, welche Informationen auf welcher Seite
+zu sehen sein sollen nochmals überdenken müssen. Zum Beispiel könnten Sie
+entscheiden, dass die Adresse des Wochenmarktes, die Öffnungszeiten und die
+Liste der kürzlich hinzugefügten Rezepte git in die rechte Seitenleiste der
+Website passen würden, um diese Informationen auf allen Seiten gleichermaßen
+anzeigen zu können, wenn die Website mittels eines Desktop-Browsers aufgerufen
+wird. Andererseits könnten Sie festlegen, dass diese angaben auf mobilen
+Geräten stattdessen in einer Kurzform am oberen Rand der Website dargestellt
+werden sollen und die Liste der Rezepte weiter unten auf der Startseite
+angezeigt werden soll.
+
+==== Vertiefen Sie Ihre Kenntnisse
+
+<<planning-structure>>
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/35e16QDFE7k[title="Das Layout Ihrer Website planen (englisch)"]
+
+// ==== Weiterführende Quellen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

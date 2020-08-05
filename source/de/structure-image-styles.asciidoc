@@ -1,0 +1,69 @@
+[[structure-image-styles]]
+
+=== Konzept: Bild-Stile
+
+[role="summary"]
+Überblick über Bildstile und wie sie verwendet werden, um ein einzelnes Bild anzuzeigen in
+mehrere Variationen.
+
+(((Image style,overview)))
+(((Style,image)))
+(((Image effect,overview)))
+(((Effect,image)))
+
+
+
+==== Erforderliche Vorkenntnisse
+
+<<structure-fields>>
+
+
+===== Was sind Bildstile?
+Mit Bildstilen können Sie ein einzelnes Bild hochladen, es aber auf verschiedene Arten anzeigen;
+jede Darstellungsvariante, oder _Bildstil_, ist das Ergebnis der Anwendung eines oder mehrerer
+_Effekte_ auf das Originalbild.
+
+Als Beispiel können Sie ein hochauflösendes Bild mit einem Seitenverhältnis von 4:3 hochladen,
+und zeigen Sie sie verkleinert, quadratisch beschnitten oder schwarz-weiß an (oder eine beliebige
+Kombination dieser Wirkungen). Die Kern-Software bietet einen Weg dazu
+effizient:
+
+. Konfigurieren Sie einen Bildstil mit den gewünschten Effekten auf der Seite _Bildstile_.
+(_admin/config/media/image-styles_).
+
+. Die Effekte werden angewendet, wenn ein bestimmtes Bild zum ersten Mal angefordert wird in
+diesen Stil.
+
+. Das resultierende Bild wird gespeichert.
+
+. Wenn derselbe Stil das nächste Mal angefordert wird, wird das gespeicherte Bild abgerufen.
+ohne die Notwendigkeit, die Auswirkungen neu zu berechnen.
+
+Die Kernsoftware bietet mehrere Effekte, die Sie zur Definition von Stilen verwenden können;
+andere können durch beigesteuerte Module bereitgestellt werden.
+
+Besuchen Sie die Seite _Bildstile_ über das Verwaltungsmenü _Verwaltung_, navigieren Sie zu
+_Konfiguration_ > _Medien_ > _Bildstile_ (_Admin/Konfiguration/Medien/Bildstile_)
+um die Bildstile zu sehen, die standardmäßig definiert sind.
+
+==== Verwandte Themen
+
+* <<structure-image-style-create>>
+* <<structure-image-responsive>>
+* <<structure-fields>>
+
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8"]
+
+
+*Mitwirkende*
+
+Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Red Crackle], von
+https://www.drupal.org/docs/8/core/modules/image/working-with-images["Arbeiten mit Bildern in
+Drupal 7 und 8"],
+copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft]

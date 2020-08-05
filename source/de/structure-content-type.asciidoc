@@ -1,0 +1,158 @@
+[[structure-content-type]]
+
+=== Hinzufügen eines Inhaltstyps
+
+[role="summary"]
+Wie man einen neuen Inhaltstyp hinzufügt und konfiguriert.
+
+(((Content type, adding)))
+
+==== Zielsetzungsetzung
+
+Fügen Sie einen neuen Inhaltstyp Anbieter hinzu und konfigurieren Sie ihn.
+
+==== Vorrausgesetztes Wissen
+
+<<planning-data-types>>
+
+==== Standort-Voraussetzungen
+
+Sie müssen einen Plan für Ihre Inhaltsstruktur erstellt haben. Siehe
+
+<<planning-structure>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhaltstypen_
+(_Administration/Struktur/Arten_). Die Seite _Inhaltstypen_ erscheint und zeigt alle
+verfügbare Arten von Inhalten. Beachten Sie, dass die Namen und Beschreibungen der
+Inhaltstypen, die von Ihrem Installationsprofil bereitgestellt wurden, werden angezeigt in
+Englisch auf dieser Seite; siehe <<language-concept>> für eine Erklärung.
+
+
+. Klicken Sie auf _Inhaltstyp hinzufügen_. Die Seite _Inhaltstyp_ hinzufügen erscheint. Füllen Sie  aus.
+in den Feldern wie unten gezeigt.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Beispielwert
+| Name | Name des Inhaltstyps | Anbieter
+| Beschreibung | Erläutern Sie die Verwendung des Inhaltstyps | Informationen über einen Anbieter
+|================================
++
+--
+// Top of admin/structure/types/add, with Name and Description fields.
+image:images/structure-content-type-add.png["Adding a Content type"]
+--
+
+. Konfigurieren Sie unter _Anmeldeformular-Einstellungen_ das Formular, das
+die für die Erstellung und Bearbeitung von Inhalten dieser Art verwendet werden. Füllen Sie die Felder wie gezeigt aus
+unten.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Beispielwert
+| Beschriftung des Titelfelds | Beschriftung des Titelfelds, die beim Bearbeiten oder Erstellen von Inhalten dieses Typs angezeigt wird. | Name des Anbieters
+| Vorschau vor dem Einreichen | Option zur Auswahl, ob Sie vor dem Einreichen eine Vorschau des Inhalts anzeigen möchten. | Optional
+| Erläuterung oder Einreichungsrichtlinien | Anweisungen zur Erstellung oder Bearbeitung von Inhalten. | (leer lassen)
+|================================
++
+--
+// Submission form settings section of admin/structure/types/add.
+image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
+--
+
+. Entscheiden Sie unter _Veröffentlichungsoptionen_ über Standardoptionen für neue
+Inhalte dieser Art. Füllen Sie die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Beispielwert
+| Veröffentlicht | Das Inhaltselement wird standardmäßig veröffentlicht. | Geprüft
+| Zur Startseite befördert | In einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte auf der Startseite anzuzeigen. | Nicht angekreuzt
+| Sticky at top of lists | In einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte an der Spitze einer Liste zu halten. | Nicht angekreuzt
+| Neue Revision erstellen | Erstellen Sie jedes Mal, wenn der Anbieter bearbeitet wird, eine neue Revision. | Geprüft
+|================================
++
+Die Änderung dieser Einstellungen wirkt sich nicht auf die Inhaltselemente aus, die bereits
+erstellt.
++
+--
+// Publishing settings section of admin/structure/types/add.
+image:images/structure-content-type-add-Publishing-Options.png["Publishing Options"]
+--
+
+. Entscheiden Sie unter _Anzeigeeinstellungen_, ob der Autor und
+Das Veröffentlichungsdatum wird im Inhaltselement sichtbar sein. Füllen Sie die Felder als
+siehe unten.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Beispielwert
+| Informationen zu Autor und Datum anzeigen | Zeigen Sie auf jeder Anbieterseite den Benutzernamen des Autors und das Veröffentlichungsdatum an. | Nicht markiert
+|================================
++
+--
+// Display settings section of admin/structure/types/add.
+image:images/structure-content-type-add-Display-settings.png["Display settings"]
+--
+
+. Füllen Sie unter _Menü Einstellungen_ die Felder wie unten dargestellt aus.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Erläuterung | Beispielwert
+| Verfügbare Menüs | Menüs, zu denen diese Art von Inhalt hinzugefügt werden kann. Anbieter müssen nicht in Menüs erscheinen, deaktivieren Sie also alle Menüoptionen. | Nicht angekreuzt
+|================================
++
+--
+// Menu settings section of admin/structure/types/add.
+image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
+--
+
+. Klicken Sie auf _Speichern und Felder verwalten_, um den Inhaltstyp zu speichern. Die
+Die Seite _Felder verwalten_ erscheint, auf der Sie Felder zum Inhalt hinzufügen können.
+type. See <<structure-fields>>
++
+--
+// Manage fields page after adding Vendor content type.
+image:images/structure-content-type-add-confirmation.png["Confirmation",width="100%"]
+--
+
+. Führen Sie die gleichen Schritte aus, um einen Inhaltstyp für Rezepte anzulegen. Beispiel-Werte
+für die Felder in den Formularen, wenn sie sich von den obigen Schritten unterscheiden:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Feldname | Beispielwert
+| Name | Rezept
+| Beschreibung | Ein von einem Lieferanten eingereichtes Rezept
+| Einstellungen für das Einreichungsformular - Titel | Rezeptname
+|================================
+
+
+==== Erweitern Sie Ihr Verständnis
+
+* <<structure-fields>>
+
+* Installieren und konfigurieren Sie das https://www.drupal.org/project/pathauto[beigetragenes Pathauto-Modul]
+so dass Inhaltselemente automatisch generierte URLs/Pfad-Aliase erhalten. Siehe <<<content-paths>> für weitere Informationen über
+URLs innerhalb Ihrer Website, <<extend-module-find>> für Anweisungen zur Suche
+Module beisteuern und <<extend-module-install>> für Anweisungen zu
+Herunterladen und Installieren beigetragener Module.
+
+// ==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/vyvqiaaGM1k[title="Adding a Content Type"]
+
+// ==== Weiterführende Quellen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/batigolix[Boris Doesborg], und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

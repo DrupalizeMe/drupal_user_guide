@@ -1,0 +1,95 @@
+[[menu-reorder]]
+
+=== Ändern der Anordnung von Menüpunkten
+
+[role="summary"]
+Menüpunkte anordnen.
+
+(((Menu items,reordering)))
+(((Navigation,changing the order of menu items)))
+
+==== Zielsetzung
+
+Ordnen Sie die Einträge in einem Menü neu an.
+
+==== Erforderliche Vorkenntnisse
+
+* <<menu-concept>>
+* <<menu-link-from-content>>
+
+==== Anforderungen an die Website
+
+Die Seiten Home und About müssen im Hauptnavigationsmenü vorhanden sein.
+Siehe: <<menu-link-from-content>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Menüs_
+(_admin/structure/menu_), wo alle Menüs auf Ihrer Website aufgelistet sind.
+Klicken Sie, in der Zeile _Hauptnavigaation (Main Navigation)_ im Drop-Button Aktionen auf
+_Menü Bearbeiten_. Sie können auch diese Seite über die Kontextlinks des Menüs
+erreichen (siehe <<config-overview>>). Beachten Sie, dass die Namen und
+Beschreibungen der Menüs, die von
+Ihrem Installationsprofil angelgt wurden auf dieser Seite auf Englisch
+angezeigt werden. Siehe: <<language-concept>> für weitere Informationen.
++
+--
+// Menu list section of admin/structure/menu, with Edit menu button on Main
+// navigation menu highlighted.
+image:images/menu-reorder_menu_titles.png["List of menus on the site with 'Main navigation' highlighted",width="100%"]
+--
+
+. Die Seite _Menü bearbeiten_ zeigt eine Liste aller Einträge im  von Ihnen
+ausgewählten Menü an (_Hauptnavigation_).
++
+--
+// Menu links section of admin/structure/menu/manage/main.
+image:images/menu-reorder_edit_menu.png["List of menus items under _Main navigation_"]
+--
+
+. Verwenden Sie das Drag-Handle (die Schaltfläche zum anordnen von Menüeinträgen),
+um die Reihenfolge der Menüeinträge zu ändern: Startseite (Home), dann
+Über uns (About Us). Als Alternative zur Verwendunbg des Drag-Handles
+können Sie auf den Link _Zeilenreihenfolge_ oben in der Tabelle klicken
+ und die numerische Gewichtung der Menüpunkt festlegen (Menüpunkte mit niedrigerer oder
+negativer Gewichtung werden witer oben/weiter links angezeigt).
++
+--
+// Menu links section of admin/structure/menu/manage/main, after
+// changing the order.
+image:images/menu-reorder_reorder.png["Reordered menu items with warning message about unsaved changes and the _Save_ button"]
+--
+
+. Klicken Sie auf _Speichern_.
+
+. Die Startseite zeigt nun die Hauptnavigation mit dem Menüpunkt Startseite
+(Home) an erster Stelle an.
++
+--
+// Header section of Home page with reordered menu items.
+image:images/menu-reorder_final_order.png["Reordered menu items on the home page with 'Home' first and then 'About'"]
+--
+
+==== Erweitern Sie Ihre Kenntnise
+
+Fügen Sie einen Menüpunkt namens _Kontakt_, der auf die Seite _/contakt_
+verweist, zu Ihrem Hauptavigationsmenü hinzu. Die Seite Kontakt wird durch das
+mit dem Kernsystem ausgelieferte Modul Contact bereitgestellt.
+Es kann sien, dass Sie das Layout und die auf dem Kontaktformular verfügbaren
+Felder bearbetein möchten (siehe: <<structure-form-editing>>).
+
+==== Verwandte Konzepte
+
+<<menu-concept>>
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/OtT8e8lLx5E[title="Die Reiehnfolge von Menüeinträgen ändern (englisch)"]
+
+//===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/AnnGreazel[Ann Greazel].

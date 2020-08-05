@@ -1,0 +1,79 @@
+[[user-new-user]]
+
+=== Erstellen eines Benutzerkontos
+
+[role="summary"]
+Wie Sie ein Benutzerkonto erstellen.
+
+(((User,creating account)))
+
+==== Zielsetzungsetzung
+
+Erstellen Sie Lieferanten-Benutzerkonten für Lieferanten von Sweet Honey und Happy Farm.
+
+==== Erforderliche Vorkenntnisse
+
+* <<user-concept>>
+* <<user-admin-account>>
+* <<user-new-role>>
+
+==== Anforderungen an die Website
+
+Die Rolle des Lieferanten muss auf Ihrer Website vorhanden sein. Siehe <<<user-new-role>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Personen_ (_Admin/Personen_).
+
+. Klicken Sie auf _Benutzer_ hinzufügen.
++
+--
+// Add new user form (/admin/people/create).
+image:images/user-new-user_form.png["Form for creating a new user account",width="100%"]
+--
+
+. Füllen Sie die Formularfelder aus. Siehe Tabelle unten.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname |Erläuterung |Beispielwert
+|E-Mail-Adresse |Eine gültige E-Mail-Adresse für den Verkäufer. Alle E-Mails aus dem System werden an diese Adresse geschickt. Die E-Mail-Adresse wird nicht veröffentlicht. | honey@example.com
+|Benutzername |Ein Benutzername für den Anbieter, den er zum Anmelden oder Verfassen von Inhaltselementen verwendet. Leerzeichen sind erlaubt; Satzzeichen sind nicht erlaubt, mit Ausnahme von Punkten, Bindestrichen, Apostrophe und Unterstriche. |Süßer Honig
+|Passwort |Ein Passwort, mit dem sich der Anbieter bei der Website anmeldet. Wie sicher das Kennwort ist, können Sie an der _Passwortstärke_ ablesen. Sie erhalten auch Tipps, wie Sie es sicherer machen können.  |(Machen Sie ein sicheres Kennwort)
+|Passwort bestätigen |Geben Sie dasselbe Passwort ein, um Tippfehler zu vermeiden. |(Passwort wiederholen)
+|Status |Status des Benutzerkontos festlegen. _Blockierte_ Benutzer können sich nicht anmelden. |Aktiv
+Rollen |Rollen |Rolle des Benutzerkontos festlegen.|Lieferant
+|Benutzer über neues Konto benachrichtigen |Ob oder nicht, um eine Benachrichtigung an die E-Mail-Adresse des Anbieters zu senden. |Geprüft
+Bild |Bild |Klicken Sie auf _Blättern_ und wählen Sie ein Bild zum Hochladen aus. Achten Sie auf Größenbeschränkungen. |Foto des Anbieters
+|Kontakteinstellungen | Aktivieren oder deaktivieren Sie die Anzeige eines Kontaktformulars für das Konto. | Geprüft
+|================================
+
+
+. Klicken Sie auf _Neues Konto erstellen_. Sie erhalten eine Benachrichtigung über das Benutzerkonto
+Erstellung.
++
+--
+// Confirmation message after adding new user.
+image:images/user-new-user-created.png["New user account has been created",width="100%"]
+--
+
+. Erstellen Sie ein zweites Lieferantenkonto für Happy Farm, indem Sie die obigen Schritte befolgen.
+
+==== Erweitern Sie Ihr Verständnis
+
+Erstellen Sie ein Benutzerkonto für sich selbst.
+
+//===== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title="Erstellen eines Benutzerkontos"]
+
+//===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von: https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+unter https://pronovix.com/[Pronovix].

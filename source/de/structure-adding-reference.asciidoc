@@ -1,0 +1,109 @@
+[[structure-adding-reference]]
+
+=== Hinzufügen eines Referenzfeldes
+
+[role="summary"]
+So fügen Sie ein Referenzfeld hinzu, das zwei Inhaltstypen verbindet.
+
+(((Reference field,adding)))
+(((Field,for adding references)))
+(((Entity reference field,adding)))
+(((Content reference field,adding)))
+(((User reference field,adding)))
+(((Taxonomy term reference field,adding)))
+
+==== Zielsetzungsetzung
+
+Fügen Sie ein Referenzfeld hinzu, damit Rezepte mit dem Lieferanten verknüpft werden können, der
+hat es eingereicht.
+
+==== Vorraussetzung Kenntnisse
+
+* <<structure-fields>>
+* <<structure-reference-fields>>
+* <<structure-content-type>>
+
+==== Standort-Voraussetzungen
+
+Die Inhaltstypen Rezept und Lieferant müssen vorhanden sein. Siehe <<structure-content-type>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhalt
+Typen_ (_admin/structure/types_). Tenn Sie auf _Felder verwalten_ in der
+Dropdown-Schaltfläche für den Inhaltstyp Rezept. Sie gelangen auf die Seite _Felder verwalten_.
+
+. Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint. Füllen Sie die Felder wie abgebildet aus
+unten. Klicken Sie auf _Speichern und fortfahren_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Ein neues Feld hinzufügen | Option zur Angabe des Feldtyps | Referenz > Inhalt
+| Bezeichnung | Der Titel, den Sie dem Feld geben möchten | Eingereicht von
+|================================
++
+--
+// Add field page for adding a Submitted by field to Recipe.
+image:images/structure-adding-reference-add-field.png["Adding a reference field to a content type"]
+--
+
+. Es erscheint die Seite Submitted by, auf der Sie die zulässige Anzahl von
+Werte. Füllen Sie die Felder wie unten dargestellt aus. Klicken Sie auf _Feldeinstellungen speichern_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Typ des zu referenzierenden Artikels | Option zur Auswahl des Typs des referenzierten Artikels | Inhalt
+| Erlaubte Anzahl von Werten | Geben Sie die Anzahl der mit dem Feld verbundenen Werte an | Begrenzt, 1
+|================================
++
+--
+// Field storage settings page for Submitted by field.
+image:images/structure-adding-reference-set-field-basic.png["Storage configuration of a reference field "]
+--
+
+. Sie gelangen auf die Seite _Vorgelegt von Einstellungen für Rezept_, auf der Sie
+das Feld konfigurieren. Füllen Sie die Felder wie unten dargestellt aus. Klicken Sie auf _Einstellungen speichern_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Etikett | Titel, der für dieses Feld auf der Seite angezeigt wird | Übermittelt von
+| Hilfetext | Kurzer Text zur Unterstützung der Person, die den Inhalt erstellt | Wählen Sie den Anbieter, der dieses Rezept eingereicht hat
+| Pflichtfeld | Ob ein Wert angegeben werden muss oder nicht | Geprüft
+| Referenztyp > Referenzmethode | Option zur Auswahl der Referenzmethode | Standard
+| Referenztyp > Inhaltstypen | Geben Sie den Inhaltstyp an | Anbieter
+| Referenz-Typ > Sortieren nach | Sortierfeld | Titel
+| Verweistyp > Sortierrichtung| Sortierreihenfolge | Aufsteigend
+|================================
++
+--
+// Field settings page for Submitted by field.
+image:images/structure-adding-reference-field-settings.png["Settings for a reference field ",width="100%"]
+--
+
+. Das Feld Submitted by wurde dem Inhaltstyp hinzugefügt.
++
+--
+// Manage fields page for content type Recipe, after adding Submitted by field.
+image:images/structure-adding-reference-manage-fields.png["Manage fields page for the Recipe content type",width="100%"]
+--
+
+// ==== Erweitern Sie Ihr Verständnis
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hAhWiqPlKh0[title="Hinzufügen eines Referenzfeldes"]
+
+// ==== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

@@ -1,0 +1,58 @@
+[[understanding-data]]
+=== Konzept: Arten von Daten
+
+[role="summary"]
+Überblick über gängige Datentypen, die in einer Website verwendet werden.
+
+(((Data type,overview)))
+(((Data type,configuration)))
+(((Data type,content)))
+(((Data type,state)))
+(((Data type,session)))
+(((Configuration,as a type of data)))
+(((Content,as a type of data)))
+(((State,as a type of data)))
+(((Session,as a type of data)))
+
+
+//==== Erforderliche Vorkenntnisse
+
+==== Welche Arten von Daten gibt es?
+
+Die Daten und Informationen auf Ihrer Website sind in vier Typen unterteilt, die sich wie folgt gliedern
+anders bearbeitet, übersetzt und gespeichert. Diese vier Typen sind:
+
+Inhalt::
+  Informationen (Text, Bilder usw.), die den Besuchern der Website angezeigt werden sollen. Diese
+  Die Art der Information ist in der Regel relativ dauerhaft, kann aber normalerweise
+  bearbeitet.
+Konfiguration::
+  Informationen über Ihre Website, die nicht inhaltlich, sondern auch relativ
+  permanent, und wird verwendet, um zu definieren, wie sich Ihre Website verhält oder angezeigt wird. Sie ist
+  manchmal auch den Website-Besuchern angezeigt, aber in der Regel sind es kleinere Stücke von
+  Text (wie Feldbezeichner, der Name Ihrer Website usw.) und nicht größer
+  Brocken, die man normalerweise als Inhalt bezeichnen würde.
+Zustand::
+  Informationen vorübergehender Art über den aktuellen Zustand Ihrer
+  Website, wie z.B. die Zeit, zu der die Cron-Jobs zuletzt ausgeführt wurden.
+Sitzung::
+  Informationen über die Interaktionen einzelner Website-Besucher mit der Website, wie z.B.
+  ob sie eingeloggt sind und ihre Cookies. Dies ist technisch eine
+  Unterart der staatlichen Information, da sie ebenfalls vorübergehend ist.
+
+  ==== Verwandte Themen
+
+* <<planning-data-types>>
+* <<security-cron-concept>>
+* <<user-concept>>
+* <<language-concept>>
+
+//==== Weiterführende Quellen
+
+
+*Mitwirkende*
+
+Adaptiert von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
+https://www.drupal.org/node/2120523["Überblick über die Konfiguration (vs. andere Arten von Informationen)"],
+copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft]

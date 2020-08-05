@@ -1,0 +1,133 @@
+[[security-update-core]]
+
+=== Aktualisierung der Kern-Software
+
+[role="summary"]
+Wie man die Kern-Software über die administrative Schnittstelle oder Drush aktualisiert.
+
+(((Core software,updating)))
+(((Drush tool,using to update the core software)))
+(((Administrative interface,using to update the core software)))
+
+==== Zielsetzungsetzung
+
+Aktualisieren Sie die Kern-Software, entweder über die administrative Schnittstelle oder durch
+mit Drush.
+
+//==== Erforderliche Vorkenntnisse
+
+==== Standort-Voraussetzungen
+
+* Wenn Sie Drush verwenden möchten, muss Drush installiert sein. Siehe <<<install-tools>>.
+
+* Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklung testen
+Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
+<<install-dev-making>>.
+
+==== Arbeitsschritte
+
+. Machen Sie ein vollständiges Backup Ihrer Website. Siehe <<<prevent-backups>>.
+
+. Öffnen Sie _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Text
+Herausgeber. Suchen Sie die Zeile mit der Variablen _$settings['update_free_access']_. Durch
+Standardmäßig ist sie aus Sicherheitsgründen auf "FALSE" gesetzt. Ändern Sie die Einstellung auf
+"WAHR":
++
+----
+$settings['update_free_access'] = TRUE;
+----
+
+. Deaktivieren Sie alle Caching-Techniken (Memcache, Firnis usw.) Ihrer Anwendung
+verwenden könnte.
+
+. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<<extend-maintenance>>.
+
+. Wenn Sie den Composer zur Verwaltung von Abhängigkeiten verwenden, überspringen Sie die nächsten sechs Schritte, und
+stattdessen siehe <<install-composer>> für Anweisungen zum Herunterladen aktualisiert
+Dateien. Fahren Sie mit dem Schritt _update.php_ fort.
+
+. Laden Sie das tar.gz- oder Zip-Dateiarchiv für die neueste Version von Drupal herunter.
+8.x-Kern von https://www.drupal.org/project/drupal[_Drupal.org_ Drupal-Kern
+Downloads]. Unter <<install-prepare>> finden Sie weitere Einzelheiten dazu, wie Sie die neuesten
+Version.
+
+. Laden Sie die Archivdatei auf Ihren Webhosting-Server hoch.
+
+. Extrahieren Sie die Archivdatei in ein temporäres Verzeichnis auf Ihrem Server (sollte
+außerhalb des Verzeichnisses, in dem die Website gehostet wird). Ihr Hosting-Control Panel ist
+Dateimanager sollte eine Möglichkeit bieten, die Dateien zu extrahieren. Oder, wenn Sie
+Terminal-Zugriff auf Ihren Hosting-Server (unter Linux), können Sie einen Befehl
+wie:
++
+----
+tar -xzf drupal-8.3.2.tar.gz
+----
+
+. Löschen Sie in Ihrem Website-Hosting-Verzeichnis die Verzeichnisse _core_ und _vendor_,
+und alle Dateien, die sich nicht in einem Unterverzeichnis befinden, einschließlich _.htaccess_,
+_Komponist.json_, und _Autoload.php_. Löschen Sie keine benutzerdefinierten und angepassten Dateien
+weil Sie am Ende möglicherweise die darin gespeicherte benutzerdefinierte Funktionalität verlieren könnten.
+
+. Kopieren Sie die Verzeichnisse _core_ und _vendor_ sowie die nicht-kundenspezifischen/nicht-angepaßten
+Dateien, die Sie im vorhergehenden Schritt aus dem temporären Verzeichnis gelöscht haben, in
+Ihr Website-Verzeichnis.
+
+. Führen Sie das _update.php_-Skript aus, indem Sie eine der folgenden Methoden verwenden:
++
+  * Besuchen Sie _http://www.example.com/update.php_ in Ihrem Browser (wobei
+  _www.example.com_ ist die URL Ihrer Website). Klicken Sie im ersten Bildschirm auf _Fortsetzen_.
+  um die Aktualisierungen auszuführen und das Skript erfolgreich abzuschließen.
+  * Führen Sie den folgenden Drush-Befehl aus: `drush updatedb`
+
+. Wenn Sie einen Fehler oder eine Warnung erhalten, führen Sie das _update.php_-Skript erneut aus
+erneut, bis alle Aktualisierungen erfolgreich abgeschlossen sind.
+
+. Öffnen Sie _settings.php_ (_/sites/default/settings.php_) in einem Texteditor. Suchen Sie die
+Zeile mit der Variable _$settings['update_free_access']_ und aktualisieren Sie sie auf
+"FALSCH":
++
+----
+$settings['update_free_access'] = FALSCH;
+----
+
+. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihrer
+Standort.
+
+. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<extend-maintenance>>.
+
+. Löschen Sie den Cache. Siehe <<<prevent-cache-clear>>.
+
+. Aktivieren Sie alle Caching-Techniken wieder, die Sie in Schritt 3 deaktiviert haben.
+
+. Sie sollten die aktualisierte Version laufen haben. Sie können die aktuelle
+Version Ihrer Software, indem Sie den _Statusbericht_ überprüfen (siehe
+<<prevent-status>>).
+
+==== Erweitern Sie Ihr Wissen
+
+* <<install-tools>>
+* <<install-dev-making>>
+* <<prevent-backups>>
+
+==== Verwandte Konzepte
+
+<<prevent-status>>
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/DqYqxp4xByk[title="Updating the Core Software"]
+
+==== Zusätzliche Ressourcen
+
+* https://www.drupal.org/project/drupal["Drupal Core Downloads"-Seite auf _Drupal.org_]
+* https://www.drupal.org/project/registry_rebuild["Registry Rebuild"-Seite auf _Drupal.org_]
+* Die Datei _/core/UPDATE.txt_ innerhalb Ihrer Installation.
+
+
+*Angaben*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/surendramohan[Surendra Mohan],
+https://www.drupal.org/u/batigolix[Boris Doesborgh], und
+https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

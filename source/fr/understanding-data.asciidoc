@@ -1,0 +1,61 @@
+[[understanding-data]]
+=== Concept : types de données
+
+[role="summary"]
+Aperçu des types de données communément utilisés dans un site.
+
+(((Type de données,vue d'ensemble)))
+(((Type de données,configuration)))
+(((Type de données,contenu)))
+(((Type de données,état)))
+(((Type de données,session)))
+(((Configuration,en tant que type de données)))
+(((Contenu,en tant que type de données)))
+(((État,en tant que type de données)))
+(((Session,en tant que type de données)))
+
+
+//==== Prerequisite knowledge
+
+==== Quels sont les types de données ?
+
+Les données et informations de votre site sont divisées en quatre types, qui
+sont modifiés, traduits et stockés différemment. Ces quatre types sont :
+
+Contenu::
+  Information (texte, images, etc.) destinée à être affichée aux visiteurs du
+  site. Ce type d'information a tendance à être relativement permanent, mais
+  peut normalement être modifié.
+Configuration::
+  Information sur votre site qui n'est pas du contenu, mais est également
+  relativement permanente, et est utilisée pour définir la manière dont votre
+  site se comporte et est affiché. Elle est parfois également affichée aux
+  visiteurs du site, mais a tendance à consister en de petits morceaux de texte
+  (comme des étiquettes de champs, le nom de votre site, etc.) plutôt que de
+  plus gros morceaux que vous verriez normalement comme du contenu.
+État::
+  Information de nature temporaire à propos de l'état actuel de votre site,
+  comme la date et l'heure de dernière exécution du cron.
+Session::
+  Information à propos des interactions de visiteurs avec le site, par exemple
+  s'ils sont connectés, et leurs cookies. Il s'agit techniquement d'un sous-type
+  d'information d'état, puisqu'elle est également temporaire.
+
+==== Sujets liés
+
+* <<planning-data-types>>
+* <<security-cron-concept>>
+* <<user-concept>>
+* <<language-concept>>
+
+//==== Additional resources
+
+
+*Attributions*
+
+Adapté par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] depuis
+https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"],
+copyright 2000-2017 par les contributeurs individuels de
+https://www.drupal.org/documentation[Drupal Community Documentation],
+traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

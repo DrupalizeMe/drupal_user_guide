@@ -1,0 +1,92 @@
+[[user-new-user]]
+
+=== Créer un compte utilisateur
+
+[role="summary"]
+Comment créer un compte utilisateur.
+
+(((User,creating account)))
+
+==== Objectif
+
+Créer les comptes utilisateur Vendeur pour les vendeurs Doux Miel et Ferme Joyeuse.
+
+==== Pré-requis
+
+* <<user-concept>>
+* <<user-admin-account>>
+* <<user-new-role>>
+
+==== Pré-requis du site
+
+Le rôle Vendeur doit exister sur votre site. Voir <<user-new-role>>.
+
+==== Étapes
+
+. Dans le menu d'administration _Gérer_, aller à _Personnes_ (_admin/people_).
+
+. Cliquer sur _Ajouter un utilisateur_.
++
+--
+// Add new user form (/admin/people/create).
+image:images/user-new-user_form.png["Formulaire de création d'un nouveau compte
+utilisateur",width="100%"]
+--
+
+. Remplir les champs du formulaire, cf. tableau ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ |Explication |Valeur d'exemple
+|Adresse électronique |Une adresse électronique valide pour le vendeur. Tous les
+courriels envoyés par le système le seront à cette adresse. L'adresse
+électronique n'est pas rendue publique. | honey@example.com
+|Nom d’utilisateur |Un nom d'utilisateur pour le vendeur, qu'il utilisera pour
+se connecter ou qui servira pour assigner un auteur aux éléments de contenu. Les
+espaces sont autorisées ; la ponctuation n'est pas autorisée à l'exception des
+points, traits d'union, apostrophes, et tirets bas. |Doux Miel
+|Mot de passe |Un mot de passe que le vendeur utilisera pour se connecter au
+site. Vous pouvez voir le niveau de sécurité du mot de passe sur la jauge de
+_Sécurité du mot de passe_. Des astuces pour le rendre plus sûr sont proposées.
+|(Choisir un mot de passe sûr)
+|Confirmer le mot de passe |Saisir le même mot de passe pour éviter toute faute
+de frappe. |(Répéter le mot de passe)
+|Statut |Définir le statut du compte utilisateur. Les utilisateurs _bloqués_ ne
+pourront pas se connecter. |Actif
+|Rôles |Définir le rôle du compte utilisateur.|Vendeur
+|Prévenir l'utilisateur du nouveau compte |Envoyer ou non une notification à
+l'adresse électronique du vendeur. |Coché
+|Image |Cliquer sur _Parcourir_ et sélectionner une image à télécharger. Prêter attention aux limites de taille. | Photo du vendeur
+|Paramètres de Contact |Activer ou désactiver l'affichage d'un formulaire de contact pour le compte. |Coché
+|================================
+
+. Cliquer sur _Créer le nouveau compte_. Une notification à propos de la création
+du compte utilisateur s'affiche.
++
+--
+// Confirmation message after adding new user.
+image:images/user-new-user-created.png["Un nouveau compte utilisateur a été créé",width="100%"]
+--
+
+. Créer un second compte vendeur pour la Ferme Joyeuse en suivant les étapes précédentes.
+
+==== Améliorer votre compréhension
+
+Créer un compte utilisateur pour vous-même.
+
+//==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title="Creating a User Account"]
+
+//==== Additional resources
+
+
+*Attributions*
+
+Ecrit par https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+de https://pronovix.com/[Pronovix].
+Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

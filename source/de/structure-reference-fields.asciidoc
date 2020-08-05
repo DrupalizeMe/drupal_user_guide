@@ -1,0 +1,58 @@
+[[structure-reference-fields]]
+
+=== Konzept: Referenzfelder
+
+[role="summary"]
+Überblick über Referenzfelder und ihre häufig verwendeten Typen.
+
+(((Reference field,overview)))
+(((Reference field,content)))
+(((Reference field,taxonomy term)))
+(((Reference field,user)))
+(((Field,reference)))
+(((Field,content reference)))
+(((Field,taxonomy term reference)))
+(((Field,user reference)))
+(((Taxonomy term reference field,overview)))
+(((User reference field,overview)))
+(((Content reference field,overview)))
+
+==== Erforderliche Vorkenntnisse
+
+<<planning-data-types>>
+
+==== Was ist ein Referenzfeld?
+
+Ein _Referenzfeld_ ist ein Feld, das eine Beziehung zwischen einer Entität
+und eine oder mehrere andere Entitäten, die derselben oder einer anderen Entität angehören können
+tippen. Die drei am häufigsten verwendeten Referenzfelder sind:
+
+Inhaltsverweis::
+  Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte verbinden wollen
+  an die Anbieter, die sie eingereicht haben. Sie würden ein Inhaltsreferenzfeld einrichten
+  genannt Eingereicht durch Verweis auf Inhaltselemente des Lieferanten auf dem Rezeptinhalt
+  tippen.
+
+Taxonomie-Begriffsreferenz::
+  Ein Verweis auf einen Taxonomiebegriff. Beispielsweise könnten Sie Rezepte verbinden wollen
+  zu ihren Inhaltsstoffen. Sie würden ein Taxonomiebegriff-Referenzfeld namens
+  Zutaten auf dem Inhaltstyp Rezept. Dieses Referenzfeld zeigt auf das Feld
+  Wortschatz Inhaltsstoffe.
+
+Benutzer-Referenz::
+  Ein Verweis auf ein Benutzerkonto. Zum Beispiel könnten Sie Rezepte verbinden wollen
+  mit ihren Küchenchefs. Sie würden ein Benutzerreferenzfeld namens Köche auf der Registerkarte
+  Typ des Rezeptinhalts.
+
+==== Verwandte Themen
+
+<<structure-taxonomy>>
+
+//==== Weiterführende Quellen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/surendramohan[Surendra Mohan],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+http://redcrackle.com[Rotes Knistern].

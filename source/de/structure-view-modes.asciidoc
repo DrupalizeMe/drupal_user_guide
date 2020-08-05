@@ -1,0 +1,58 @@
+[[structure-view-modes]]
+
+=== Konzept: Ansichtsmodi und Anzeigeformate
+
+[role="summary"]
+Überblick über Ansichtsmodi und Anzeigeformate.
+
+(((View mode, overview)))
+(((Entity view mode, overview)))
+(((Formatter, overview)))
+(((Field formatter, overview)))
+
+==== Erforderliche Vorkenntnisse
+
+<<structure-content-type>>
+
+==== Was ist ein Ansichtsmodus?
+
+Wie eine Entität (z. B. ein Inhalt, ein Benutzer oder ein Kommentar) angezeigt wird, hängt ab von
+den Kontext, in dem sie gezeigt wird. Dieser Kontext wird als _view bezeichnet.
+Modus_. Beispiele für Ansichtsmodi sind:
+
+* eine ganze Seite des Inhalts mit allen Feldwerten
+* einen Teaser des Inhalts mit einem Miniaturbild und einem _Weiterlesen_-Link
+* ein vollständiges Benutzerprofil mit einem zoombaren Porträtfoto
+* ein Benutzer-Avatar mit Benutzername und einem Link zum Profil
+
+Jeder Ansichtsmodus kann über die Verwaltungsseiten konfiguriert werden. Zur Anzeige der
+Konfigurationsoptionen für die Ansichtsmodi des Inhaltstyps "Rezept", Navigieren
+im Verwaltungsmenü _Verwaltung_ auf _Struktur_ > _Inhaltstypen_
+(_admin/structure/types_) und klicken Sie in der Dropdown-Liste auf _Anzeige verwalten_.
+Schaltfläche. In jedem Ansichtsmodus können alle Felder ein- oder ausgeblendet werden, und wenn sie
+angezeigt werden, können Sie den Feldformatierer auswählen und konfigurieren.
+
+==== Was ist ein Anzeigeformat?
+
+Ein Anzeigeformat ist eine Einstellung für die Anzeige von Feldwerten. Zum Beispiel,
+Langtextfelder können beschnitten oder in voller Länge angezeigt werden, und der Begriff der Taxonomie
+Referenzfelder können im Klartext angezeigt oder mit dem Taxonomiebegriff verknüpft werden
+Seite. Auf der Seite _Anzeige verwalten_ finden Sie die Anzeigeformate für die
+Felder des Inhaltstyps Rezept.
+
+==== Verwandte Themen
+
+* <<structure-content-type>>
+* <<structure-content-display>>
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+
+
+*Mitwirkende*
+
+Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborg] aus
+https://www.drupal.org/node/1577752["Ansichtsmodi"],
+copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].

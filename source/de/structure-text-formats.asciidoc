@@ -1,0 +1,68 @@
+[[structure-text-formats]]
+
+=== Konzept: Textformate und Herausgeber
+
+[role="summary"]
+Überblick über Textformate, Filter, Editoren und Cross-Site-Scripting.
+
+(((Text format,overview)))
+(((User-entered content,filtering)))
+(((Security,text format)))
+(((Security,cross-site scripting)))
+(((Cross-site scripting (XSS),preventing)))
+(((XSS (Cross-site scripting),preventing)))
+
+// ==== Erforderliche Vorkenntnisse
+
+==== Was sind Textformate und Filter?
+
+_Textformate_ ändern, wie HTML-Tags und anderer Text verarbeitet und angezeigt werden
+auf Ihrer Website. Textformate bestehen aus einer Reihe von _Filtern_, von denen jeder
+wandelt Text um. Wenn Benutzer Inhalte erstellen, wird ein Textformat mit der
+Inhalt, und der vollständige, ursprüngliche Text wird in der Datenbank gespeichert. Der Inhalt ist
+dann die Filter im Textformat durchlaufen, bevor es auf
+die Website.
+
+Das Kernmodul Filter bietet Textformat-Funktionalität, und das Kernmodul Standard
+Installationsprofil richtet _Basic HTML_, _Restricted HTML_ und _Full HTML_ ein
+Textformate. Jedem Textformat ist eine Berechtigung zugeordnet, so dass Sie
+nur vertrauenswürdigen Benutzern erlauben, freizügige Textformate zu verwenden. Dies schränkt ein
+nicht vertrauenswürdige Benutzer auf Textformate wie _Basic HTML_, das gefährliche
+HTML-Tags.
+
+==== Welche Editoren sind den Textformaten zugeordnet?
+
+Jedes Textformat kann mit einem Editor verknüpft werden, z.B. einem visuellen WYSIWYG
+(What You See Is What You Get) HTML-Editor. Das Kernmodul des Texteditors bietet
+die Fähigkeit, Editoren mit Textformaten zu assoziieren und die Editoren zu konfigurieren
+(wie das Hinzufügen und Entfernen von Schaltflächen aus ihren Symbolleisten). Der Kern-CKEditor
+Modul stellt den Industriestandard-Editor, bekannt als CKEditor, zur Verfügung, so dass es
+zur Bearbeitung von HTML-Inhalten auf Ihrer Website verwendet werden.
+
+==== Was ist Cross-Site-Scripting?
+
+Cross-Site-Scripting (XSS) ist eine Sicherheitslücke, die typischerweise in
+Webseiten. Auf einer Website, die nicht gut geschützt ist, können böswillige Benutzer Skript
+in Webseiten, die von anderen Benutzern angesehen werden (zum Beispiel in einem Kommentar oder in
+der Hauptteil einer Seite). Eine Cross-Site-Scripting-Schwachstelle kann genutzt werden von
+Angreifer, sich als anderer Benutzer anzumelden. Es ist wichtig, den Text
+Formate Ihrer Website, um einen solchen Missbrauch zu verhindern.
+
+==== Verwandte Themen
+
+
+<<security-concept>>
+
+==== Zusätzliche Ressourcen
+
+* https://www.drupal.org/docs/8/core/modules/filter/overview[_Drupal.org_ Gemeinschaft
+Dokumentationsseite "Filtermodul: Textformate, die Benutzereingaben filtern"]
+
+* https://en.wikipedia.org/wiki/Cross-site_scripting[Wikipedia-Seite "Standortübergreifend
+Skripting"]
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg] und
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
