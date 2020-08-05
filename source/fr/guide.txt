@@ -47,6 +47,7 @@ include::planning-data-types.txt[]
 include::planning-modular.txt[]
 include::planning-structure.txt[]
 include::planning-workflow.txt[]
+include::language-concept.txt[]
 
 
 [[installation-chapter]]
@@ -57,7 +58,10 @@ Overview of server requirements and details of common installation tasks.
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
+include::install-decide.txt[]
 include::install-prepare.txt[]
+include::install-composer.txt[]
+include::install-manual.txt[]
 include::install-run.txt[]
 
 
@@ -162,9 +166,8 @@ include::views-block.txt[]
 == Making Your Site Multilingual
 
 [role="summary"]
-Overview of multilingual site concepts and details of tasks needed to make a site multilingual.
+Details of tasks needed to make a site multilingual.
 
-include::language-concept.txt[]
 include::language-add.txt[]
 include::language-content-config.txt[]
 include::language-content-translate.txt[]
@@ -185,9 +188,9 @@ include::extend-theme-install.txt[]
 include::extend-manual-install.txt[]
 include::install-dev-sites.txt[]
 include::install-dev-making.txt[]
-include::install-composer.txt[]
 include::extend-deploy.txt[]
 include::extend-config-versions.txt[]
+include::extend-git.txt[]
 
 
 [[prevent-chapter]]

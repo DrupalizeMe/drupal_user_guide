@@ -25,15 +25,20 @@ need to remember the changes you made when deciding if your site satisfies the
 site prerequisites for a task.
 
 * For all task topics after <<install-run>>, there is also an implicit
-prerequisite: you must have installed the content management software on your
-site, and be logged in to a user account with sufficient permissions to do the
-task (such as the user account created when you installed your site, which
-automatically has full permissions).
+prerequisite: you must have installed the latest stable version of the content
+management software on your site, and be logged in to a user account with
+sufficient permissions to do the task (such as the user account created when you
+installed your site, which automatically has full permissions).
 
 * If you read all the topics in order, and perform all of the steps in the task
 topics as you go (staying logged in), you should have the background knowledge
 and site prerequisites in place for each topic as you read it.
 
+* This guide demonstrates how to perform tasks using the administrative user
+interface, and wherever possible, also using the latest stable version of the
+Drush command-line tool (see <<install-tools>>). You can feel free to use a
+different command-line tool, such as Drupal Console (if you look up equivalent
+commands), or to only use the administrative interface for now.
 
 ==== Text conventions
 
@@ -58,7 +63,7 @@ _italics_.
 such as:
 +
 ----
-drush cr
+drush cache:rebuild
 ----
 
 * Within this guide, the word _directory_ is always used to refer to file
@@ -90,13 +95,13 @@ Here's another example:
 
 =============
 In the _Manage_ administrative menu, navigate to
-_Configuration_ > _System_ > _Site information_
+_Configuration_ > _System_ > _Basic site settings_
 (_admin/config/system/site-information_).
 =============
 
 In this example, after clicking on _Manage_ and _Configuration_, you would need
-to find the _System_ section of the page, and within that, click _Site
-information_. After that, you'd end up on
+to find the _System_ section of the page, and within that, click _Basic
+site settings_. After that, you'd end up on
 _http://example.com/admin/config/system/site-information_.
 
 // System section of admin/config page.
@@ -122,14 +127,17 @@ _System_ > _Site information_ (_admin/config/system/site-information_):
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name|Explanation|Example value
-|Site name|Name of your site|Anytown Farmers Market
+|Site details > Site name|Name of your site|Anytown Farmers Market
 |================================
 
-To use this table, find the field labeled _Site name_ in the form, and enter the
-name of your site in this field. An example site name of "Anytown Farmers
-Market" is suggested in the table, which relates to the scenario of building a
-website for a farmers market that you'll find all through this guide (see
-<<preface-scenario>> for details).
+To use this table, find the field labeled _Site name_ in the section that is
+under _Site details_ in the form, and enter the name of your site in this
+field. An example site name of "Anytown Farmers Market" is suggested in the
+table, which relates to the scenario of building a website for a farmers market
+that you'll find all through this guide (see <<preface-scenario>> for
+details). Also note that on some forms, you might have to click a section title
+(like _Site details_ in this example) to expand the section and find the field
+it contains.
 
 
 *Attributions*

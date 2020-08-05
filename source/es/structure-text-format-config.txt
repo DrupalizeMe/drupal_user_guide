@@ -8,7 +8,7 @@ How to make a change to a text format and its editor configuration.
 (((Text format,configuring)))
 (((Configuring,text format)))
 (((Editor,configuring)))
-(((Ckeditor text editor,default assignment to text format)))
+(((CKEditor text editor,default assignment to text format)))
 (((WYSIWYG (What You See Is What You Get),configuring editor)))
 (((What You See Is What You Get (WYSIWYG),configuring editor)))
 (((Module,Filter)))
@@ -40,17 +40,20 @@ install with the core Standard installation profile.
 
 . In the _Manage_ administrative menu, navigate to _Configuration_ > _Content
 authoring_ > _Text formats and editors_ (_admin/config/content/formats_). The
-_Text formats and editors_ page appears.
+_Text formats and editors_ page appears. Note that the names of the text formats
+that came with your installation profile are shown in English on this page; see
+<<language-concept>> for an explanation.
 
 . Click _Configure_ for the _Basic HTML_ text format. The _Basic HTML_ page
 appears.
 
-. Note that _Ckeditor_ is selected in the _Text editor_ field. This allows you
+. Note that _CKEditor_ is selected in the _Text editor_ field. This allows you
 to configure the editor's toolbar.
 
-. Drag the _horizontal rule_ button from _Available buttons_ to _Tools_ in
+. Drag the _horizontal rule_ button from _Available buttons_ to _Tools_ under
 _Active toolbar_. You may need to click the _Show group names_ link to see the
-_Tools_ group name.
+_Tools_ group name. As an alternative to dragging, you can tab to select
+buttons and then move them using keyboard arrow keys.
 +
 --
 // Button configuration area on text format edit page.
@@ -59,7 +62,9 @@ image:images/structure-text-format-config-editor-config.png["Configuring the edi
 
 . Note that you can change the _Filter processing order_.
 
-. In the field _Allowed HTML tags_, add `<hr>` to what is already present.
+. Under _Filter settings_ > _Limit allowed HTML tags and correct faulty HTML_,
+in the field _Allowed HTML tags_, verify that `<hr>` is present (adding its
+editor button will automatically update the allowed tags).
 +
 --
 // Allowed HTML tags area on text format edit page.
@@ -82,6 +87,11 @@ to clear the cache. See <<prevent-cache-clear>>.
 
 
 // ==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Configuring Text Formats and Editors"]
 
 // ==== Additional resources
 

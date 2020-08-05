@@ -3,7 +3,8 @@
 === Synchronizing Configuration Versions
 
 [role="summary"]
-How to synchronize the configuration between a development and live site using the core Configuration Manager module.
+How to synchronize the configuration between a development and live site using
+the core Configuration Manager module.
 
 (((Configuration,synchronizing between development and live site)))
 (((Development site,synchronizing with live site)))
@@ -76,9 +77,14 @@ the change between sites. See <<extend-deploy>>.
 * After the step where you export the full configuration from the source site,
 you might also want to unpack the archive and commit it to a version control
 system, such as Git, to track changes in your site configuration. See
-<<install-tools>>.
+<<extend-git>>.
 
 // ==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/dLUGQk8GKa0[title="Synchronizing Configuration Versions"]
 
 // ==== Additional resources
 

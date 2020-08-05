@@ -1,0 +1,73 @@
+[[structure-content-type-delete]]
+
+=== Удаление типа материала
+
+[role="summary"]
+Как удалить тип материала, который не требуется для сайта.
+
+(((Тип материала,удаление)))
+
+==== Цель
+
+Удалить ненужный тип материала _Article_.
+
+==== Необходимые знания
+
+<<config-overview>>
+
+==== Предварительные требования к сайту
+
+Тип содержимого _Article_ должен существовать. Он создается на вашем сайте при
+установке с основным Стандартным профилем установки.
+
+==== Шаги
+
+. В административном меню _Управление_ перейдите к _Структура_ > _Типы
+материалов_ (_admin/structure/types_). Откроется страница _Типы материалов_.
+
+. Нажмите кнопку _Удалить_ в раскрывающемся списке _Operations_ для типа
+содержимого _Article_. Обратите внимание, что название этого типа материала
+приведено на этой странице на английском языке; см. пояснения к нему в
+разделе <<language-concept>>.
++
+--
+// Content types list on admin/structure/types, with operations dropdown
+// for Article content type expanded.
+image:images/structure-content-type-delete-dropdown.png["Article delete dropdown",width="100%"]
+--
+
+. Отображается страница подтверждения. Нажмите _Удалить_.
++
+--
+// Confirmation page for deleting Article content type.
+image:images/structure-content-type-delete-confirmation.png["Article страница
+ подтверждения удаления",width="100%"]
+--
+
+. Появляется страница _Типы материалов_ с сообщением о том, что тип материала
+был удален:
++
+--
+// Confirmation message after deleting Article content type.
+image:images/structure-content-type-delete-confirm.png["Article сообщение с
+подтверждающее удаление"]
+--
+
+//==== Expand your understanding
+
+// ==== Related concepts
+
+==== Видео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Deleting a Content Type"]
+
+//==== Additional resources
+
+
+*Авторы*
+
+Написано и отредактировано https://www.drupal.org/u/sree[Sree Veturi]
+and https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].

@@ -3,6 +3,11 @@
 # This script builds PDF, ePub, and Mobi output for the guide.
 # See README.txt for notes about fonts and languages.
 
+# Usage:
+# "./mkebooks.sh" without parameters will build all the languages defined in languages.txt
+# "./mkebooks.sh lang1 lang2 lang3" will build the documentation for all the languages passed as parameters.
+# lang1 lang2 lang3 represent valid language codes.
+
 # Exit immediately on uninitialized variable or error, and print each command.
 set -uex
 
@@ -11,8 +16,16 @@ mkdir -p ../output
 mkdir -p ../output/ebooks
 mkdir -p ../ebooks
 
+if [[ $# -gt 0 ]]; then
+    echo "Building specified languages in parameters"
+    langs=$*
+else
+    echo "Building all languages in languages.txt"
+    langs="$(cat languages.txt)"
+fi
+
 # Process each language. Add new languages to the languages.txt file.
-for lang in `cat languages.txt`
+for lang in $langs
 do
 
   # Make output directories.

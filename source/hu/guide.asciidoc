@@ -1,0 +1,253 @@
+[[user_guide]]
+
+= Drupal 8 Kézikönyv
+
+// Chapters are defined here, and each one includes the individual
+// topic files that make up the chapter, in order.
+
+
+[[preface]]
+
+== Előszó
+
+[role="summary"]
+Pár szóban röviden e Kézikönyvről: kinek szól, milyen szerkezetet követ a formázása és tartalma, valamint hogyan a legkönnyebb olvasni.
+
+include::copyright.asciidoc[]
+include::preface-audience.asciidoc[]
+include::preface-organization.asciidoc[]
+include::preface-reporting.asciidoc[]
+include::preface-conventions.asciidoc[]
+include::preface-scenario.asciidoc[]
+
+
+[[understanding-chapter]]
+== Ismerkedés
+
+[role="summary"]
+Legyenek mindenki számára egyértelműek a leggyakrabban használt fogalmak jelentései: mik azok a modulok, sminkek, telepítési profilok stb.
+
+include::understanding-drupal.asciidoc[]
+include::understanding-modules.asciidoc[]
+include::understanding-themes.asciidoc[]
+include::understanding-distributions.asciidoc[]
+include::understanding-data.asciidoc[]
+include::understanding-project.asciidoc[]
+include::understanding-gpl.asciidoc[]
+
+
+[[planning-chapter]]
+== Tervezés
+
+[role="summary"]
+Megvalósítás előtt áttekintjük, hogyan lenne a legkézenfekvőbb tárolnunk mindazt az adatot, amiből webhelyünk áll: azaz az entitástípusokat.
+
+include::block-regions.asciidoc[]
+include::planning-layout.asciidoc[]
+include::planning-data-types.asciidoc[]
+include::planning-modular.asciidoc[]
+include::planning-structure.asciidoc[]
+include::planning-workflow.asciidoc[]
+include::language-concept.asciidoc[]
+
+
+[[installation-chapter]]
+== Telepítés
+
+[role="summary"]
+Pár szó a Drupal rendszerkövetelményeiről, valamint hogy azok teljesülésekor hogyan tudjuk működésbe hozni webhelyünket egy webkiszolgálón.
+
+include::install-requirements.asciidoc[]
+include::install-tools.asciidoc[]
+include::install-decide.asciidoc[]
+include::install-prepare.asciidoc[]
+include::install-composer.asciidoc[]
+include::install-manual.asciidoc[]
+include::install-run.asciidoc[]
+
+
+[[config-chapter]]
+== Alapbeállítások
+
+[role="summary"]
+Folytassuk a webhely legegyszerűbb beállításaival, mint a modulok bekapcsolása, sminkek testreszabása és felhasználói fiókok regisztrálása.
+
+include::config-overview.asciidoc[]
+include::config-basic.asciidoc[]
+include::config-install.asciidoc[]
+include::config-uninstall.asciidoc[]
+include::config-user.asciidoc[]
+include::config-theme.asciidoc[]
+
+
+
+[[content-chapter]]
+== Oldalkezelés
+
+[role="summary"]
+Majdnem minden, amit magáról a tartalmak szerkesztéséről tudni érdemes: például helybeni szerkesztésük, a címlap kezelése, navigációs menük.
+
+include::content-paths.asciidoc[]
+include::content-create.asciidoc[]
+include::content-edit.asciidoc[]
+include::content-in-place-edit.asciidoc[]
+include::menu-home.asciidoc[]
+include::menu-concept.asciidoc[]
+include::menu-link-from-content.asciidoc[]
+include::menu-reorder.asciidoc[]
+
+
+
+[[content-structure-chapter]]
+== Tartalomszerkezet
+
+[role="summary"]
+A webhely működési hátterének részletes kidolgozása: tartalomtípusok, mezők, taxonómiák, űrlapok, formázók és más izgalmas fogalmak.
+
+include::structure-content-type.asciidoc[]
+include::structure-content-type-delete.asciidoc[]
+include::structure-fields.asciidoc[]
+include::structure-reference-fields.asciidoc[]
+include::structure-taxonomy.asciidoc[]
+include::structure-taxonomy-setup.asciidoc[]
+include::structure-adding-reference.asciidoc[]
+include::structure-widgets.asciidoc[]
+include::structure-form-editing.asciidoc[]
+include::structure-view-modes.asciidoc[]
+include::structure-content-display.asciidoc[]
+include::structure-image-styles.asciidoc[]
+include::structure-image-style-create.asciidoc[]
+include::structure-image-responsive.asciidoc[]
+include::structure-text-formats.asciidoc[]
+include::structure-text-format-config.asciidoc[]
+
+// The following topic has been deferred, so remove the include for now.
+// @todo Put this link back in when/if the topic gets added back.
+// include::structure-pathauto.asciidoc[]
+
+
+[[user-chapter]]
+== Felhasználókezelés
+
+[role="summary"]
+A webhelyet használó emberekkel kapcsolatos fogalmak, mint például felhasználói és adminfiókok, szerepkörök, jogosultságok megismerése.
+
+include::user-concept.asciidoc[]
+include::user-admin-account.asciidoc[]
+include::user-new-role.asciidoc[]
+include::user-new-user.asciidoc[]
+include::user-permissions.asciidoc[]
+include::user-roles.asciidoc[]
+include::user-content.asciidoc[]
+
+
+[[blocks-chapter]]
+== Blokkok
+
+[role="summary"]
+Most már semmi nem blokkol minket, hogy megismerjük a blokkokat: mik ezek, mire valók, és hogyan használjuk őket az oldalakon.
+
+include::block-concept.asciidoc[]
+include::block-create-custom.asciidoc[]
+include::block-place.asciidoc[]
+
+
+[[views-chapter]]
+== Listázás nézetekkel
+
+[role="summary"]
+A legnagyszerűbb dolog a Drupalban, a legkevésbé egyértelmű elnevezéssel: nézetek, amik tulajdonképpen listák, és megjelenítőik vannak.
+
+include::views-concept.asciidoc[]
+include::views-parts.asciidoc[]
+include::views-create.asciidoc[]
+include::views-duplicate.asciidoc[]
+include::views-block.asciidoc[]
+
+
+[[multilingual-chapter]]
+== Többnyelvűsítés
+
+[role="summary"]
+Alapértelmezetten webhelyünk eddig egy nyelven értett (ami viszont nem kötelezően az angol), de most megtanítjuk több nyelven beszélni is.
+
+include::language-add.asciidoc[]
+include::language-content-config.asciidoc[]
+include::language-content-translate.asciidoc[]
+include::language-config-translate.asciidoc[]
+
+
+[[extend-chapter]]
+== Továbbfejlesztés
+
+[role="summary"]
+Most már haladó webmesterek vagyunk, így ideje, hogy szétnézzünk a műhelyben, és szerszámosládánk mélyére nyúljunk: fejlesztői eszközök.
+
+include::extend-module-find.asciidoc[]
+include::extend-maintenance.asciidoc[]
+include::extend-module-install.asciidoc[]
+include::extend-theme-find.asciidoc[]
+include::extend-theme-install.asciidoc[]
+include::extend-manual-install.asciidoc[]
+include::install-dev-sites.asciidoc[]
+include::install-dev-making.asciidoc[]
+include::extend-deploy.asciidoc[]
+include::extend-config-versions.asciidoc[]
+include::extend-git.asciidoc[]
+
+
+[[prevent-chapter]]
+== Hibaelhárítás
+
+[role="summary"]
+A szakma réme, a gyorsítótár. Miért tartsuk mindig üresen, mi is az a biztonsági mentés, a rendszernapló, és az állapotjelentés.
+
+include::prevent-cache.asciidoc[]
+include::prevent-cache-clear.asciidoc[]
+include::prevent-backups.asciidoc[]
+include::prevent-log.asciidoc[]
+include::prevent-status.asciidoc[]
+
+
+[[security-chapter]]
+== Karbantartás
+
+[role="summary"]
+Elkészültünk webhelyünkkel, de legyünk törődő jó gazdája a jövőben is: az alaprendszer biztonsági kiadásai, modul- és sminkfrissítések stb.
+
+include::security-cron-concept.asciidoc[]
+include::security-cron.asciidoc[]
+include::security-concept.asciidoc[]
+include::security-announce.asciidoc[]
+include::security-update-core.asciidoc[]
+include::security-update-module.asciidoc[]
+include::security-update-theme.asciidoc[]
+
+
+[[thoughts-chapter]]
+== Záró gondolatok
+
+[role="summary"]
+A Drupal két összetevőből áll: a szoftveres részét már kipipáltuk, de a másik, a közösségi élet még előttünk áll. Nézzünk hát körül!
+
+include::thoughts-connecting.asciidoc[]
+include::thoughts-support.asciidoc[]
+include::thoughts-learn-more.asciidoc[]
+
+
+// Glossary and index.
+
+include::glossary.asciidoc[]
+
+== Tárgymutató
+
+// Appendix
+
+[[appendix]]
+[appendix]
+== Közreműködők
+
+[role="summary"]
+Köszönetnyilvánítás mindazoknak, akik nélkül ma nem, vagy nem magyarul olvashatnánk ezt a könyvet.
+
+include::attributions.asciidoc[]

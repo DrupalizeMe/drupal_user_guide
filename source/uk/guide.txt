@@ -1,8 +1,8 @@
 [[user_guide]]
-= Drupal 8 User Guide
+= Drupal 8 Посібник користувача
 
-// Chapters are defined here, and each one includes the individual
-// topic files that make up the chapter, in order.
+// Розділи визначені тут, кожен з них складається
+// окремих файлів тем, щоб виводити їх в потрібному порядку.
 
 
 [[preface]]
@@ -10,7 +10,7 @@
 == Вступ
 
 [role="summary"]
-Overview of introductory topics that help to leverage this guide in an efficient manner.
+Огляд вступних тем, що допоможуть зробити читання цього посібника більш ефективним.
 
 include::copyright.txt[]
 include::preface-audience.txt[]
@@ -21,10 +21,10 @@ include::preface-scenario.txt[]
 
 
 [[understanding-chapter]]
-== Understanding Drupal
+== Порозуміння з Drupal-ом
 
 [role="summary"]
-Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+Огляд основних концепцій Drupal на зразок модулів, тем, дистрибутивів та типів даних.
 
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
@@ -36,10 +36,10 @@ include::understanding-gpl.txt[]
 
 
 [[planning-chapter]]
-== Planning Your Site
+== Планування сайту
 
 [role="summary"]
-Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+Огляд концепцій планування сайтів та подробиць основних способів використання макета сайту. Розглянуті поняття сутності матеріалів та структури.
 
 include::block-regions.txt[]
 include::planning-layout.txt[]
@@ -50,22 +50,25 @@ include::planning-workflow.txt[]
 
 
 [[installation-chapter]]
-== Installation
+== Встановлення
 
 [role="summary"]
-Overview of server requirements and details of common installation tasks.
+Огляд вимог до сервера та подробиці поширених способів установки
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
+include::install-decide.txt[]
 include::install-prepare.txt[]
+include::install-composer.txt[]
+include::install-manual.txt[]
 include::install-run.txt[]
 
 
 [[config-chapter]]
-== Basic Site Configuration
+== Основні налаштування сайту
 
 [role="summary"]
-Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+Огляд концепцій основних налаштувань сайту. Розглянуто способи встановлення модулів та тем, налаштувань облікових записів.
 
 include::config-overview.txt[]
 include::config-basic.txt[]
@@ -77,10 +80,10 @@ include::config-theme.txt[]
 
 
 [[content-chapter]]
-== Basic Page Management
+== Основи керування сторінками
 
 [role="summary"]
-Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+Огляд концепцій керування сторінками. Розглянуто способи використання матеріалів, редагування на місці та меню.
 
 include::content-paths.txt[]
 include::content-create.txt[]
@@ -92,10 +95,10 @@ include::menu-link-from-content.txt[]
 include::menu-reorder.txt[]
 
 [[content-structure-chapter]]
-== Setting Up Content Structure
+== Налаштування структури матеріалів
 
 [role="summary"]
-Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+Огляд концепцій структури матеріалів. Розглянуто способи використання типів матеріалів, таксономій та полів посилань.
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -120,10 +123,10 @@ include::structure-text-format-config.txt[]
 
 
 [[user-chapter]]
-== Managing User Accounts
+== Керування обліковими записами користувачів
 
 [role="summary"]
-Overview of user account concepts and details of common user account tasks.
+Огляд основних концепцій облікових записів користувачів та подробиць основних способів їх використання.
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
@@ -135,10 +138,10 @@ include::user-content.txt[]
 
 
 [[blocks-chapter]]
-== Blocks
+== Блоки
 
 [role="summary"]
-Overview of block concepts and details of common block tasks.
+Огляд основних концепцій блоків та подробиць основних способів їх використання.
 
 include::block-concept.txt[]
 include::block-create-custom.txt[]
@@ -146,10 +149,10 @@ include::block-place.txt[]
 
 
 [[views-chapter]]
-== Creating Listings with Views
+== Створення списків за допомогою видів
 
 [role="summary"]
-Overview of view concepts and details of common view tasks.
+Огляд основних концепцій видів та подробиць основних способів їх використання.
 
 include::views-concept.txt[]
 include::views-parts.txt[]
@@ -159,10 +162,10 @@ include::views-block.txt[]
 
 
 [[multilingual-chapter]]
-== Making Your Site Multilingual
+== Багатомовність
 
 [role="summary"]
-Overview of multilingual site concepts and details of tasks needed to make a site multilingual.
+Огляд концепцій багатомовності сайту та подробиць способу увімкнення багатомовності на сайті.
 
 include::language-concept.txt[]
 include::language-add.txt[]
@@ -172,10 +175,10 @@ include::language-config-translate.txt[]
 
 
 [[extend-chapter]]
-== Extending and Customizing Your Site
+== Розширення та персоналізація сайту
 
 [role="summary"]
-Overview of site customization and development. Tasks on downloading modules and themes are covered.
+Огляд персоналізації та розробки сайту. Розглянуто основні способи завантаження модулів та тем.
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -185,16 +188,16 @@ include::extend-theme-install.txt[]
 include::extend-manual-install.txt[]
 include::install-dev-sites.txt[]
 include::install-dev-making.txt[]
-include::install-composer.txt[]
 include::extend-deploy.txt[]
 include::extend-config-versions.txt[]
+include::extend-git.txt[]
 
 
 [[prevent-chapter]]
-== Preventing and Fixing Problems
+== Запобігання помилок та їх виправлення
 
 [role="summary"]
-Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+Огляд концепцій кешування, резервних копій даних та журналювання. Розглянуто основні способи очищення кешу.
 
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
@@ -204,10 +207,10 @@ include::prevent-status.txt[]
 
 
 [[security-chapter]]
-== Security and Maintenance
+== Безпека та підтримка
 
 [role="summary"]
-Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+Огляд концпецій безпеки та підтримки. Розглянуто основні способи оновлення ядра, модулів та тем.
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -219,29 +222,29 @@ include::security-update-theme.txt[]
 
 
 [[thoughts-chapter]]
-== Final Thoughts
+== Прикінцеві думки
 
 [role="summary"]
-Overview of the Drupal community and how to connect with other users.
+Огляд спільноти Drupal та способів зв'язку з іншими користувачами.
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
 include::thoughts-learn-more.txt[]
 
 
-// Glossary and index.
+// Глосарій та предметний покажчик.
 
 include::glossary.txt[]
 
 == Предметний покажчик
 
-// Appendix
+// Додаток
 
 [[appendix]]
 [appendix]
-== Appendix
+== Додаток
 
 [role="summary"]
-Overview of contributors to this guide.
+Автори цього посібника.
 
 include::attributions.txt[]

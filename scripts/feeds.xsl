@@ -317,7 +317,6 @@
     </xsl:call-template>
   </xsl:variable>
   <xsl:element name="iframe" namespace="http://www.w3.org/1999/xhtml">
-    <xsl:attribute name="id">ytplayer</xsl:attribute>
     <xsl:attribute name="type">text/html</xsl:attribute>
     <xsl:attribute name="width">640</xsl:attribute>
     <xsl:attribute name="height">360</xsl:attribute>

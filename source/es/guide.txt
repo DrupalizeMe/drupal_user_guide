@@ -1,5 +1,5 @@
 [[user_guide]]
-= Drupal 8 User Guide
+= Guía de usuario de Drupal 8
 
 // Chapters are defined here, and each one includes the individual
 // topic files that make up the chapter, in order.
@@ -10,7 +10,7 @@
 == Prefacio
 
 [role="summary"]
-Overview of introductory topics that help to leverage this guide in an efficient manner.
+Descripción general de los temas introductorios que permiten aprovechar mejor esta guía.
 
 include::copyright.txt[]
 include::preface-audience.txt[]
@@ -21,10 +21,10 @@ include::preface-scenario.txt[]
 
 
 [[understanding-chapter]]
-== Understanding Drupal
+== Entendiendo Drupal
 
 [role="summary"]
-Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+Resumen general de los conceptos de Drupal, como módulos, temas, distribuciones y tipos de datos.
 
 include::understanding-drupal.txt[]
 include::understanding-modules.txt[]
@@ -36,10 +36,10 @@ include::understanding-gpl.txt[]
 
 
 [[planning-chapter]]
-== Planning Your Site
+== Planificación de un sitio web
 
 [role="summary"]
-Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+Introducción a los conceptos de planificación de un sitio web y las tareas más comunes. Incluye tipos de contenido y estructura.
 
 include::block-regions.txt[]
 include::planning-layout.txt[]
@@ -47,25 +47,30 @@ include::planning-data-types.txt[]
 include::planning-modular.txt[]
 include::planning-structure.txt[]
 include::planning-workflow.txt[]
+include::language-concept.txt[]
 
 
 [[installation-chapter]]
-== Installation
+== Instalación
 
 [role="summary"]
-Overview of server requirements and details of common installation tasks.
+Descripción general de los requisitos del servidor y detalles de las tareas de instalación más comunes.
 
 include::install-requirements.txt[]
 include::install-tools.txt[]
+include::install-decide.txt[]
 include::install-prepare.txt[]
+include::install-composer.txt[]
+include::install-manual.txt[]
 include::install-run.txt[]
 
 
 [[config-chapter]]
-== Basic Site Configuration
+
+== Configuración básica del sitio
 
 [role="summary"]
-Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+Descripción general sobre configuración del sitio. Incluye instalación de módulos, configuración de cuentas de usuario y temas.
 
 include::config-overview.txt[]
 include::config-basic.txt[]
@@ -77,10 +82,10 @@ include::config-theme.txt[]
 
 
 [[content-chapter]]
-== Basic Page Management
+== Gestión básica de páginas
 
 [role="summary"]
-Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+Descripción general de gestión de páginas. Incluye elementos de contenido, edición in situ y menús.
 
 include::content-paths.txt[]
 include::content-create.txt[]
@@ -92,10 +97,10 @@ include::menu-link-from-content.txt[]
 include::menu-reorder.txt[]
 
 [[content-structure-chapter]]
-== Setting Up Content Structure
+== Configuración de la estructura de contenido
 
 [role="summary"]
-Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+Descripción general de los conceptos de estructura de contenido. Incluye tipos de contenido, taxonomías y campos de referencia.
 
 include::structure-content-type.txt[]
 include::structure-content-type-delete.txt[]
@@ -120,10 +125,10 @@ include::structure-text-format-config.txt[]
 
 
 [[user-chapter]]
-== Managing User Accounts
+== Gestión de cuentas de usuario
 
 [role="summary"]
-Overview of user account concepts and details of common user account tasks.
+Resumen de conceptos de cuenta de usuario y detalles de tareas comunes.
 
 include::user-concept.txt[]
 include::user-admin-account.txt[]
@@ -135,10 +140,10 @@ include::user-content.txt[]
 
 
 [[blocks-chapter]]
-== Blocks
+== Bloques
 
 [role="summary"]
-Overview of block concepts and details of common block tasks.
+Resumen del concepto de bloque y detalles de tareas más comunes.
 
 include::block-concept.txt[]
 include::block-create-custom.txt[]
@@ -146,10 +151,10 @@ include::block-place.txt[]
 
 
 [[views-chapter]]
-== Creating Listings with Views
+== Creación de listados con Vistas
 
 [role="summary"]
-Overview of view concepts and details of common view tasks.
+Resumen del concepto de vista, y detalles de las tareas más comunes.
 
 include::views-concept.txt[]
 include::views-parts.txt[]
@@ -159,12 +164,11 @@ include::views-block.txt[]
 
 
 [[multilingual-chapter]]
-== Making Your Site Multilingual
+== Haciendo su sitio multilingüe
 
 [role="summary"]
-Overview of multilingual site concepts and details of tasks needed to make a site multilingual.
+Detalles de las tareas necesarias para hacer un sitio web multilingüe
 
-include::language-concept.txt[]
 include::language-add.txt[]
 include::language-content-config.txt[]
 include::language-content-translate.txt[]
@@ -172,10 +176,10 @@ include::language-config-translate.txt[]
 
 
 [[extend-chapter]]
-== Extending and Customizing Your Site
+== Extendiendo y personalizando su sitio web
 
 [role="summary"]
-Overview of site customization and development. Tasks on downloading modules and themes are covered.
+Resumen de personalización y desarrollo del sitio web. Incluye descarga de módulos y temas adicionales.
 
 include::extend-module-find.txt[]
 include::extend-maintenance.txt[]
@@ -185,16 +189,16 @@ include::extend-theme-install.txt[]
 include::extend-manual-install.txt[]
 include::install-dev-sites.txt[]
 include::install-dev-making.txt[]
-include::install-composer.txt[]
 include::extend-deploy.txt[]
 include::extend-config-versions.txt[]
+include::extend-git.txt[]
 
 
 [[prevent-chapter]]
-== Preventing and Fixing Problems
+== Preveniendo y arreglando problemas
 
 [role="summary"]
-Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+Resumen de la cache, copia de seguridad de datos, y conceptos de registro. Incluye cómo limpiar la caché.
 
 include::prevent-cache.txt[]
 include::prevent-cache-clear.txt[]
@@ -204,10 +208,10 @@ include::prevent-status.txt[]
 
 
 [[security-chapter]]
-== Security and Maintenance
+== Seguridad y mantenimiento
 
 [role="summary"]
-Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+Resumen de los conceptos de seguridad y mantenimiento. Incluye cómo actualizar el código base, módulos y temas.
 
 include::security-cron-concept.txt[]
 include::security-cron.txt[]
@@ -219,10 +223,10 @@ include::security-update-theme.txt[]
 
 
 [[thoughts-chapter]]
-== Final Thoughts
+== Conclusiones
 
 [role="summary"]
-Overview of the Drupal community and how to connect with other users.
+Resumen de la comunidad de Drupal, y cómo conectar con otros usuarios.
 
 include::thoughts-connecting.txt[]
 include::thoughts-support.txt[]
@@ -239,9 +243,9 @@ include::glossary.txt[]
 
 [[appendix]]
 [appendix]
-== Appendix
+== Apéndice
 
 [role="summary"]
-Overview of contributors to this guide.
+Resumen de contribuidores de esta guía.
 
 include::attributions.txt[]

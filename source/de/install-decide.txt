@@ -1,0 +1,109 @@
+[[install-decide]]
+=== Konzept: Methoden zum Herunterladen und Installieren des Kernsystems
+
+[role="summary"]
+Überblick über die Methoden, mit denen Sie das Kernsystem herunterladen können.
+
+(((Downloading,core software)))
+(((Installing,core software)))
+(((Core software,downloading)))
+(((Core software,installing)))
+
+==== Vorkenntnisse
+* <<install-tools>>
+* <<install-requirements>>
+* <<understanding-distributions>>
+
+==== Welche Methoden stehen zum Herunterladen des Kernsystems zur Verfügung?
+
+Bevor Sie eine Website erstellen können, müssen Sie zunächst das Kernsystem
+herunterladen. Je nachdem, was Sie vorhaben, können Sie zwischen verschiedenen
+Methoden wählen, um das Kernsystem herunterzuladen:
+
+Testen Sie Drupal mittels kostenloser Online-Demo::
+  Wenn Sie herausfinden möchten, ob sich Drupal aus Ihrer Sicht zum Aufbau einer
+   Website eignet oder nicht, können Sie eine Online-Demo bei einem unserer
+   Partner installieren lassen. Um das Kernsystem zu evaluieren, lesen Sie
+
+  https://www.drupal.org/try-drupal[_Drupal.org_ Seite "Drupal Testen (englisch)"].
+
+Verwenden Sie ein Ein-Klick-Installationsprogramm von Ihrem Hosting-Provider::
+  Wenn Sie die Kern-Software bei Ihrem Hosting-Provider installieren möchten,
+  muss Ihr Hosting-Provider kann über spezifische Dokumentation und/oder
+  eine Installation mit einem Klick verfügen die Sie verwenden können.
+  Siehe:
+  https://www.drupal.org/association/supporters/hosting[_Drupal.org's_ Liste der Hosting-Provider, die Drupal unterstützen].
+
+Verwenden Sie eine vorkonfigurierte Umgebung::
+  Verwenden Sie eine vorkonfigurierte Umgebung oder virtuelle Maschine,
+  die Drupal und alle erforderlichen Tools enthält, um Drupal lokal zu
+  installieren. Weitere Informationen sind in der
+  https://www.drupal.org/docs/develop/local-server-setup[Anleitung zum Einrichten einer Lokalen Entwicklungsumgebung (englisch) auf Drupal.org]
+  verfügbar.
+
+Laden Sie Drupal manuell von Drupal.org herunter::
+  Wenn Sie planen, eine Website zu erstellen, die keine von der Community
+  bereitgestellten Zusatzmodule enthält, können Sie Das Kernsystem oder eine
+  Distribution manuell herunterladen. Eine Distribution enthält das Kernsystem,
+  sowie ausgewählte Themes und von der Community bereitgestellte Zusatzmodule.
+   Siehe <<install-manual>> für weitere Informationen.
+
+Verwenden Sie Composer::
+  Wenn Sie vorhaben, das Kommandozeilenwerkzeug Drush zu verwenden
+  (siehe <install-manual>), oder wenn Sie eine Website erstellen, die Module mit
+  komplizierten Abhängigkeiten verwenden könnte, sollten Sie Composer verwenden,
+  um das Kernsystem herunterzuladen. Composer übernimmt die Verwaltung und den
+  Download der notwendigen Abhängigkeiten von Modulen und Themes für Sie.
+  Wenn Sie Ihre Website durch manuelles Herunterladen von der des .tar- oder
+  .zip-Archivs von Drupal.org installiert haben, können Sie eine solche
+  Installation manuell auf die Verwaltung durch Composer umstellen.
+  Siehe: <<install-composer>> für Anweisungen zum Herunterladen von Composer
+  und zur Konvertierung einer manuell installierten Website mit Composer.
+
+==== Was passiert, wenn ich das Kernsystem installiere?
+
+Die _Installation_ der Kernsoftware, dient der Einrichtung notwendiger
+Datenbanktabellen, die  initiale Konfiguration der Software und das Anlegen
+eines administrativen Benutzerkontos. Nach Abschluss der Installation der
+Software können sie Ihre neue Website verwenden.
+
+==== Welche Methoden stehen zur Durchführung der Installation des Kernsystems zur Verfügung?
+
+Es gibt mehrere Möglichkeiten, das Kernsystems zu installieren:
+
+Hintergrundinstallationsprogramm::
+  Wenn Sie Drupal für eine Online-Demo oder über ein
+  One-Click-Installationsprogramm eines Hosting-Anbieters installieren möchten,
+  kann die Installation des Kernsystem automatisch vorgenommen werden.
+
+Interaktives Installationsprogramm::
+  Das Kernsystem von Drupal verfügt über einen interaktives
+  Installationsprogramm, das Ihnen während der Installation mehrere
+  Online-Formulare  anzeigt, damit Sie die notwendigen Informationen während des
+  Installationsvorgangs eingebben können.
+  Siehe <<install-prepare>> und <<install-run>>.
+
+Installationsprogramm der Demo-Website::
+  Wenn Sie Kernsystem auf Ihren lokalen Computer herunterladen, können Sie
+  auf schnelle  Art und weise eine temporäre Demo-Website erstellen, die den
+  eingebauten PHP-Webserver und eine SQLite-Datenbank verwendet.
+   Den kommandozeilenbefehl zum Einrichten einer Demo-Website finden Sie am Ende
+   des Kapitels <<install-manual>>.
+   In diesem Fall wird das interaktive Installationsprogramm nicht ausgeführt.
+
+Kommandozeilenwerkzeuge::
+  Auch Kommandozeilenwerkzeuge (siehe <<install-tools>>) können zur
+  Installation von Drupal verwendet werden.
+
+// ==== Verwandte Themen
+
+// ==== Zusätzliche Ressourcen
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] bei
+https://erdfisch.de[erdfisch],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[rdcrackle].

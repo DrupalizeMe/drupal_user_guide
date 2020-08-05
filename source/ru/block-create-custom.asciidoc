@@ -1,0 +1,78 @@
+[[block-create-custom]]
+
+=== Создание Пользовательского блока
+
+[role="summary"]
+Как создавать пользовательские блоки.
+
+(((Блок,создание)))
+(((Пользовательский блок,создание)))
+
+==== Цель
+
+Создать блок отображающий часы работы и адрес городской ярмарки.
+
+==== Необходимые знания
+
+* <<block-concept>>
+* <<block-regions>>
+
+// ==== Site prerequisites
+
+==== Шаги
+
+. В меню администратора _Управление_, перейдите в _Структура_ > _Схема
+блоков_ > _Пользовательские блоки_ (_admin/structure/block/block-content_).
+
+. Нажмите _Добавить блок_. И у вас отобразится страница _Добавить блок_.
+
+. Заполните поля как показано ниже.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Имя поля |Объяснение |Примерное значение
+|Описание блока |Имя блока, которое показывается администратору |Часы работы и адрес блок
+|Содержимое |Контент блока, который отображается для пользователей |Открыто: Воскресенье, 9:00 -
+14:00, с апреля по сентябрь<br />Адрес: пл. Пушкина,
+центр города N.
+|================================
++
+--
+// Block add page (block/add).
+image:images/block-create-custom-add-custom-block.png["Добавить пользовательский блок", width="100%"]
+--
+
+. Нажмите _Сохранить_. Должно быть выведено сообщение об успешном сохранении блока.
+
+==== Расширьте свое понимание
+
+* Отредактируйте содержимое вашего пользовательского блока. В меню администратора _Управление_,
+перейдите в _Структура_ > _Схема блоков_ > _Пользовательские блоки_
+(_admin/structure/block/block-content_). Найдите ваш блок в списке и нажмите
+_Редактировать_ для применения изменений.
+
+* Разместите созданный вами блок в колонке. Смотрите инструкции здесь <<block-place>>.
+
+//==== Related concepts
+
+==== Видео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/sI2wrbn3cPg[title="Creating a Custom Block"]
+video::http://drupalbook.ru/drupal/26-block-regiony-i-bloki[title="Регионы и блоки"]
+
+==== Дополнительные материалы
+
+https://www.drupal.org/docs/8/core/modules/block/overview[_Drupal.org_ community documentation page "Working with blocks (content in regions)"]
+http://drupalbook.ru/drupal/26-block-regiony-i-bloki[_DrupalBook.ru_ страница "2.6. Block - Регионы и блоки"]
+
+*Авторы*
+
+Адаптировано https://www.drupal.org/u/jredding[Jacob Redding] и
+https://www.drupal.org/u/batigolix[Boris Doesborg] из
+https://www.drupal.org/docs/8/core/modules/block/overview[Working with blocks
+(content in regions)], авторские права 2000-copyright_upper_year за отдельными участниками
+https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван] из
+https://www.technocrat.com.au/[Technocrat].
