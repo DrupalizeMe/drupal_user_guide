@@ -40,10 +40,10 @@ if ($source == $output) {
 
 $current_year = date("Y");
 
-// Find all *.txt files in the source directory and process them.
+// Find all *.asciidoc files in the source directory and process them.
 if ($dh = opendir($source)) {
   while (($file = readdir($dh)) !== FALSE) {
-    if (preg_match('|^[a-zA-Z_.\-]+\.txt$|', $file)) {
+    if (preg_match('|^[a-zA-Z_.\-]+\.asciidoc$|', $file)) {
       $text = file_get_contents($source . '/' . $file);
       $text = mb_convert_encoding($text, 'UTF-8',
         mb_detect_encoding($text, 'UTF-8, ISO-8859-1', TRUE));

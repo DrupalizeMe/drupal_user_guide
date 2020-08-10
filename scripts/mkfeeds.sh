@@ -42,7 +42,7 @@ do
 
   # Run the AsciiDoc processor to convert to DocBook format. Syntax:
   #  asciidoc -d book -b docbook -f [config file] -o [output file] [input file]
-  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/html_feed/$lang/guide.docbook ../output/html_feed/$lang/guide.txt
+  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/html_feed/$lang/guide.docbook ../output/html_feed/$lang/guide.asciidoc
 
   # Run the xmlto processor to convert from DocBook to bare XHTML,
   # using a custom style sheet that makes output for the AsciiDoc Display
@@ -65,7 +65,7 @@ mkdir -p ../output/html_feed/guidelines/images
 
 php preprocess._php ../guidelines ../output/html_feed/guidelines fi
 
-asciidoc -d book -b docbook -f std.conf -f guidelines.conf -o ../output/html_feed/guidelines/guidelines.docbook ../output/html_feed/guidelines/guidelines.txt
+asciidoc -d book -b docbook -f std.conf -f guidelines.conf -o ../output/html_feed/guidelines/guidelines.docbook ../output/html_feed/guidelines/guidelines.asciidoc
 
 xmlto -m feeds.xsl xhtml --stringparam section.autolabel.max.depth=2 -o ../output/html_feed/guidelines ../output/html_feed/guidelines/guidelines.docbook
 

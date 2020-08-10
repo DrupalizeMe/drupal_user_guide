@@ -41,7 +41,7 @@ do
 
   # Run the AsciiDoc processor to convert to DocBook format. Syntax:
   #  asciidoc -d book -b docbook -f [config file] -o [output file] [input file]
-  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/html/$lang/guide.docbook ../output/html/$lang/guide.txt
+  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/html/$lang/guide.docbook ../output/html/$lang/guide.asciidoc
 
 
   # Run the xmlto processor to convert from DocBook to bare XHTML, using a
@@ -64,7 +64,7 @@ mkdir -p ../output/html/guidelines/images
 
 php preprocess._php ../guidelines ../output/html/guidelines fi
 
-asciidoc -d book -b docbook -f std.conf -f guidelines.conf -o ../output/html/guidelines/guidelines.docbook ../output/html/guidelines/guidelines.txt
+asciidoc -d book -b docbook -f std.conf -f guidelines.conf -o ../output/html/guidelines/guidelines.docbook ../output/html/guidelines/guidelines.asciidoc
 
 xmlto -m bare.xsl xhtml --stringparam section.autolabel.max.depth=2 -o ../output/html/guidelines ../output/html/guidelines/guidelines.docbook
 
