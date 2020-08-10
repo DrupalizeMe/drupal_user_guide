@@ -1,0 +1,250 @@
+[[user_guide]]
+= Drupal 8 User Guide
+
+// Chapters are defined here, and each one includes the individual
+// topic files that make up the chapter, in order.
+
+
+[[preface]]
+
+== Préface
+
+[role="summary"]
+Overview of introductory topics that help to leverage this guide in an efficient manner.
+
+include::copyright.asciidoc[]
+include::preface-audience.asciidoc[]
+include::preface-organization.asciidoc[]
+include::preface-reporting.asciidoc[]
+include::preface-conventions.asciidoc[]
+include::preface-scenario.asciidoc[]
+
+
+[[understanding-chapter]]
+== Understanding Drupal
+
+[role="summary"]
+Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+
+include::understanding-drupal.asciidoc[]
+include::understanding-modules.asciidoc[]
+include::understanding-themes.asciidoc[]
+include::understanding-distributions.asciidoc[]
+include::understanding-data.asciidoc[]
+include::understanding-project.asciidoc[]
+include::understanding-gpl.asciidoc[]
+
+
+[[planning-chapter]]
+== Planning Your Site
+
+[role="summary"]
+Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+
+include::block-regions.asciidoc[]
+include::planning-layout.asciidoc[]
+include::planning-data-types.asciidoc[]
+include::planning-modular.asciidoc[]
+include::planning-structure.asciidoc[]
+include::planning-workflow.asciidoc[]
+include::language-concept.asciidoc[]
+
+
+[[installation-chapter]]
+== Installation
+
+[role="summary"]
+Overview of server requirements and details of common installation tasks.
+
+include::install-requirements.asciidoc[]
+include::install-tools.asciidoc[]
+include::install-decide.asciidoc[]
+include::install-prepare.asciidoc[]
+include::install-composer.asciidoc[]
+include::install-manual.asciidoc[]
+include::install-run.asciidoc[]
+
+
+[[config-chapter]]
+== Basic Site Configuration
+
+[role="summary"]
+Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+
+include::config-overview.asciidoc[]
+include::config-basic.asciidoc[]
+include::config-install.asciidoc[]
+include::config-uninstall.asciidoc[]
+include::config-user.asciidoc[]
+include::config-theme.asciidoc[]
+
+
+
+[[content-chapter]]
+== Basic Page Management
+
+[role="summary"]
+Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+
+include::content-paths.asciidoc[]
+include::content-create.asciidoc[]
+include::content-edit.asciidoc[]
+include::content-in-place-edit.asciidoc[]
+include::menu-home.asciidoc[]
+include::menu-concept.asciidoc[]
+include::menu-link-from-content.asciidoc[]
+include::menu-reorder.asciidoc[]
+
+[[content-structure-chapter]]
+== Setting Up Content Structure
+
+[role="summary"]
+Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+
+include::structure-content-type.asciidoc[]
+include::structure-content-type-delete.asciidoc[]
+include::structure-fields.asciidoc[]
+include::structure-reference-fields.asciidoc[]
+include::structure-taxonomy.asciidoc[]
+include::structure-taxonomy-setup.asciidoc[]
+include::structure-adding-reference.asciidoc[]
+include::structure-widgets.asciidoc[]
+include::structure-form-editing.asciidoc[]
+include::structure-view-modes.asciidoc[]
+include::structure-content-display.asciidoc[]
+include::structure-image-styles.asciidoc[]
+include::structure-image-style-create.asciidoc[]
+include::structure-image-responsive.asciidoc[]
+include::structure-text-formats.asciidoc[]
+include::structure-text-format-config.asciidoc[]
+
+// The following topic has been deferred, so remove the include for now.
+// @todo Put this link back in when/if the topic gets added back.
+// include::structure-pathauto.asciidoc[]
+
+
+[[user-chapter]]
+== Managing User Accounts
+
+[role="summary"]
+Overview of user account concepts and details of common user account tasks.
+
+include::user-concept.asciidoc[]
+include::user-admin-account.asciidoc[]
+include::user-new-role.asciidoc[]
+include::user-new-user.asciidoc[]
+include::user-permissions.asciidoc[]
+include::user-roles.asciidoc[]
+include::user-content.asciidoc[]
+
+
+[[blocks-chapter]]
+== Blocks
+
+[role="summary"]
+Overview of block concepts and details of common block tasks.
+
+include::block-concept.asciidoc[]
+include::block-create-custom.asciidoc[]
+include::block-place.asciidoc[]
+
+
+[[views-chapter]]
+== Creating Listings with Views
+
+[role="summary"]
+Overview of view concepts and details of common view tasks.
+
+include::views-concept.asciidoc[]
+include::views-parts.asciidoc[]
+include::views-create.asciidoc[]
+include::views-duplicate.asciidoc[]
+include::views-block.asciidoc[]
+
+
+[[multilingual-chapter]]
+== Making Your Site Multilingual
+
+[role="summary"]
+Details of tasks needed to make a site multilingual.
+
+include::language-add.asciidoc[]
+include::language-content-config.asciidoc[]
+include::language-content-translate.asciidoc[]
+include::language-config-translate.asciidoc[]
+
+
+[[extend-chapter]]
+== Extending and Customizing Your Site
+
+[role="summary"]
+Overview of site customization and development. Tasks on downloading modules and themes are covered.
+
+include::extend-module-find.asciidoc[]
+include::extend-maintenance.asciidoc[]
+include::extend-module-install.asciidoc[]
+include::extend-theme-find.asciidoc[]
+include::extend-theme-install.asciidoc[]
+include::extend-manual-install.asciidoc[]
+include::install-dev-sites.asciidoc[]
+include::install-dev-making.asciidoc[]
+include::extend-deploy.asciidoc[]
+include::extend-config-versions.asciidoc[]
+include::extend-git.asciidoc[]
+
+
+[[prevent-chapter]]
+== Preventing and Fixing Problems
+
+[role="summary"]
+Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+
+include::prevent-cache.asciidoc[]
+include::prevent-cache-clear.asciidoc[]
+include::prevent-backups.asciidoc[]
+include::prevent-log.asciidoc[]
+include::prevent-status.asciidoc[]
+
+
+[[security-chapter]]
+== Security and Maintenance
+
+[role="summary"]
+Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+
+include::security-cron-concept.asciidoc[]
+include::security-cron.asciidoc[]
+include::security-concept.asciidoc[]
+include::security-announce.asciidoc[]
+include::security-update-core.asciidoc[]
+include::security-update-module.asciidoc[]
+include::security-update-theme.asciidoc[]
+
+
+[[thoughts-chapter]]
+== Final Thoughts
+
+[role="summary"]
+Overview of the Drupal community and how to connect with other users.
+
+include::thoughts-connecting.asciidoc[]
+include::thoughts-support.asciidoc[]
+include::thoughts-learn-more.asciidoc[]
+
+
+// Glossary and index.
+
+include::glossary.asciidoc[]
+
+== Index
+
+// Appendix
+
+[[appendix]]
+[appendix]
+== Appendix
+
+[role="summary"]
+Overview of contributors to this guide.
+
+include::attributions.asciidoc[]

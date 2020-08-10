@@ -27,7 +27,7 @@ Dieses Projekt enthält die folgenden Verzeichnisse:
 * Quelltext
 
 Der AsciiDoc-Quelltext für das Handbuch befindet sich in Sprachunterverzeichnissen des Hauptverzeichnisses.
-Die Indexdatei heißt "guide.txt". Diese Datei enthält Include-Anweisungen
+Die Indexdatei heißt "guide.asciidoc". Diese Datei enthält Include-Anweisungen
 für die anderen Dateien, aus denen sich das Handbuch zusammensetzt.
 
 * Assets
@@ -38,7 +38,7 @@ Bilder und Texte zur Verwendung bei der Erstellung von Screenshots für das Hand
 
 Richtlinien und Vorlagen für Mitwirkende an diesem Projekt finden Sie in den Richtlinien-
 bzw. Vorlagenverzeichnissen. Die Richtlinien sind in Form eines
-weiteren AsciiDoc-Handbuch vorhanden. Die Indexdatei für dieses Handbuch ist die guidelines.txt. Es gibt
+weiteren AsciiDoc-Handbuch vorhanden. Die Indexdatei für dieses Handbuch ist die guidelines.asciidoc. Es gibt
 separate Vorlagen für Themen, die Aufgaben und Konzepte abdecken.
 
 * Skripte / Ausgabe

@@ -12,12 +12,12 @@
 [role="summary"]
 Огляд вступних тем, що допоможуть зробити читання цього посібника більш ефективним.
 
-include::copyright.txt[]
-include::preface-audience.txt[]
-include::preface-organization.txt[]
-include::preface-reporting.txt[]
-include::preface-conventions.txt[]
-include::preface-scenario.txt[]
+include::copyright.asciidoc[]
+include::preface-audience.asciidoc[]
+include::preface-organization.asciidoc[]
+include::preface-reporting.asciidoc[]
+include::preface-conventions.asciidoc[]
+include::preface-scenario.asciidoc[]
 
 
 [[understanding-chapter]]
@@ -26,13 +26,13 @@ include::preface-scenario.txt[]
 [role="summary"]
 Огляд основних концепцій Drupal на зразок модулів, тем, дистрибутивів та типів даних.
 
-include::understanding-drupal.txt[]
-include::understanding-modules.txt[]
-include::understanding-themes.txt[]
-include::understanding-distributions.txt[]
-include::understanding-data.txt[]
-include::understanding-project.txt[]
-include::understanding-gpl.txt[]
+include::understanding-drupal.asciidoc[]
+include::understanding-modules.asciidoc[]
+include::understanding-themes.asciidoc[]
+include::understanding-distributions.asciidoc[]
+include::understanding-data.asciidoc[]
+include::understanding-project.asciidoc[]
+include::understanding-gpl.asciidoc[]
 
 
 [[planning-chapter]]
@@ -41,12 +41,12 @@ include::understanding-gpl.txt[]
 [role="summary"]
 Огляд концепцій планування сайтів та подробиць основних способів використання макета сайту. Розглянуті поняття сутності матеріалів та структури.
 
-include::block-regions.txt[]
-include::planning-layout.txt[]
-include::planning-data-types.txt[]
-include::planning-modular.txt[]
-include::planning-structure.txt[]
-include::planning-workflow.txt[]
+include::block-regions.asciidoc[]
+include::planning-layout.asciidoc[]
+include::planning-data-types.asciidoc[]
+include::planning-modular.asciidoc[]
+include::planning-structure.asciidoc[]
+include::planning-workflow.asciidoc[]
 
 
 [[installation-chapter]]
@@ -55,13 +55,13 @@ include::planning-workflow.txt[]
 [role="summary"]
 Огляд вимог до сервера та подробиці поширених способів установки
 
-include::install-requirements.txt[]
-include::install-tools.txt[]
-include::install-decide.txt[]
-include::install-prepare.txt[]
-include::install-composer.txt[]
-include::install-manual.txt[]
-include::install-run.txt[]
+include::install-requirements.asciidoc[]
+include::install-tools.asciidoc[]
+include::install-decide.asciidoc[]
+include::install-prepare.asciidoc[]
+include::install-composer.asciidoc[]
+include::install-manual.asciidoc[]
+include::install-run.asciidoc[]
 
 
 [[config-chapter]]
@@ -70,12 +70,12 @@ include::install-run.txt[]
 [role="summary"]
 Огляд концепцій основних налаштувань сайту. Розглянуто способи встановлення модулів та тем, налаштувань облікових записів.
 
-include::config-overview.txt[]
-include::config-basic.txt[]
-include::config-install.txt[]
-include::config-uninstall.txt[]
-include::config-user.txt[]
-include::config-theme.txt[]
+include::config-overview.asciidoc[]
+include::config-basic.asciidoc[]
+include::config-install.asciidoc[]
+include::config-uninstall.asciidoc[]
+include::config-user.asciidoc[]
+include::config-theme.asciidoc[]
 
 
 
@@ -85,14 +85,14 @@ include::config-theme.txt[]
 [role="summary"]
 Огляд концепцій керування сторінками. Розглянуто способи використання матеріалів, редагування на місці та меню.
 
-include::content-paths.txt[]
-include::content-create.txt[]
-include::content-edit.txt[]
-include::content-in-place-edit.txt[]
-include::menu-home.txt[]
-include::menu-concept.txt[]
-include::menu-link-from-content.txt[]
-include::menu-reorder.txt[]
+include::content-paths.asciidoc[]
+include::content-create.asciidoc[]
+include::content-edit.asciidoc[]
+include::content-in-place-edit.asciidoc[]
+include::menu-home.asciidoc[]
+include::menu-concept.asciidoc[]
+include::menu-link-from-content.asciidoc[]
+include::menu-reorder.asciidoc[]
 
 [[content-structure-chapter]]
 == Налаштування структури матеріалів
@@ -100,26 +100,26 @@ include::menu-reorder.txt[]
 [role="summary"]
 Огляд концепцій структури матеріалів. Розглянуто способи використання типів матеріалів, таксономій та полів посилань.
 
-include::structure-content-type.txt[]
-include::structure-content-type-delete.txt[]
-include::structure-fields.txt[]
-include::structure-reference-fields.txt[]
-include::structure-taxonomy.txt[]
-include::structure-taxonomy-setup.txt[]
-include::structure-adding-reference.txt[]
-include::structure-widgets.txt[]
-include::structure-form-editing.txt[]
-include::structure-view-modes.txt[]
-include::structure-content-display.txt[]
-include::structure-image-styles.txt[]
-include::structure-image-style-create.txt[]
-include::structure-image-responsive.txt[]
-include::structure-text-formats.txt[]
-include::structure-text-format-config.txt[]
+include::structure-content-type.asciidoc[]
+include::structure-content-type-delete.asciidoc[]
+include::structure-fields.asciidoc[]
+include::structure-reference-fields.asciidoc[]
+include::structure-taxonomy.asciidoc[]
+include::structure-taxonomy-setup.asciidoc[]
+include::structure-adding-reference.asciidoc[]
+include::structure-widgets.asciidoc[]
+include::structure-form-editing.asciidoc[]
+include::structure-view-modes.asciidoc[]
+include::structure-content-display.asciidoc[]
+include::structure-image-styles.asciidoc[]
+include::structure-image-style-create.asciidoc[]
+include::structure-image-responsive.asciidoc[]
+include::structure-text-formats.asciidoc[]
+include::structure-text-format-config.asciidoc[]
 
 // The following topic has been deferred, so remove the include for now.
 // @todo Put this link back in when/if the topic gets added back.
-// include::structure-pathauto.txt[]
+// include::structure-pathauto.asciidoc[]
 
 
 [[user-chapter]]
@@ -128,13 +128,13 @@ include::structure-text-format-config.txt[]
 [role="summary"]
 Огляд основних концепцій облікових записів користувачів та подробиць основних способів їх використання.
 
-include::user-concept.txt[]
-include::user-admin-account.txt[]
-include::user-new-role.txt[]
-include::user-new-user.txt[]
-include::user-permissions.txt[]
-include::user-roles.txt[]
-include::user-content.txt[]
+include::user-concept.asciidoc[]
+include::user-admin-account.asciidoc[]
+include::user-new-role.asciidoc[]
+include::user-new-user.asciidoc[]
+include::user-permissions.asciidoc[]
+include::user-roles.asciidoc[]
+include::user-content.asciidoc[]
 
 
 [[blocks-chapter]]
@@ -143,9 +143,9 @@ include::user-content.txt[]
 [role="summary"]
 Огляд основних концепцій блоків та подробиць основних способів їх використання.
 
-include::block-concept.txt[]
-include::block-create-custom.txt[]
-include::block-place.txt[]
+include::block-concept.asciidoc[]
+include::block-create-custom.asciidoc[]
+include::block-place.asciidoc[]
 
 
 [[views-chapter]]
@@ -154,11 +154,11 @@ include::block-place.txt[]
 [role="summary"]
 Огляд основних концепцій видів та подробиць основних способів їх використання.
 
-include::views-concept.txt[]
-include::views-parts.txt[]
-include::views-create.txt[]
-include::views-duplicate.txt[]
-include::views-block.txt[]
+include::views-concept.asciidoc[]
+include::views-parts.asciidoc[]
+include::views-create.asciidoc[]
+include::views-duplicate.asciidoc[]
+include::views-block.asciidoc[]
 
 
 [[multilingual-chapter]]
@@ -167,11 +167,11 @@ include::views-block.txt[]
 [role="summary"]
 Огляд концепцій багатомовності сайту та подробиць способу увімкнення багатомовності на сайті.
 
-include::language-concept.txt[]
-include::language-add.txt[]
-include::language-content-config.txt[]
-include::language-content-translate.txt[]
-include::language-config-translate.txt[]
+include::language-concept.asciidoc[]
+include::language-add.asciidoc[]
+include::language-content-config.asciidoc[]
+include::language-content-translate.asciidoc[]
+include::language-config-translate.asciidoc[]
 
 
 [[extend-chapter]]
@@ -180,17 +180,17 @@ include::language-config-translate.txt[]
 [role="summary"]
 Огляд персоналізації та розробки сайту. Розглянуто основні способи завантаження модулів та тем.
 
-include::extend-module-find.txt[]
-include::extend-maintenance.txt[]
-include::extend-module-install.txt[]
-include::extend-theme-find.txt[]
-include::extend-theme-install.txt[]
-include::extend-manual-install.txt[]
-include::install-dev-sites.txt[]
-include::install-dev-making.txt[]
-include::extend-deploy.txt[]
-include::extend-config-versions.txt[]
-include::extend-git.txt[]
+include::extend-module-find.asciidoc[]
+include::extend-maintenance.asciidoc[]
+include::extend-module-install.asciidoc[]
+include::extend-theme-find.asciidoc[]
+include::extend-theme-install.asciidoc[]
+include::extend-manual-install.asciidoc[]
+include::install-dev-sites.asciidoc[]
+include::install-dev-making.asciidoc[]
+include::extend-deploy.asciidoc[]
+include::extend-config-versions.asciidoc[]
+include::extend-git.asciidoc[]
 
 
 [[prevent-chapter]]
@@ -199,11 +199,11 @@ include::extend-git.txt[]
 [role="summary"]
 Огляд концепцій кешування, резервних копій даних та журналювання. Розглянуто основні способи очищення кешу.
 
-include::prevent-cache.txt[]
-include::prevent-cache-clear.txt[]
-include::prevent-backups.txt[]
-include::prevent-log.txt[]
-include::prevent-status.txt[]
+include::prevent-cache.asciidoc[]
+include::prevent-cache-clear.asciidoc[]
+include::prevent-backups.asciidoc[]
+include::prevent-log.asciidoc[]
+include::prevent-status.asciidoc[]
 
 
 [[security-chapter]]
@@ -212,13 +212,13 @@ include::prevent-status.txt[]
 [role="summary"]
 Огляд концпецій безпеки та підтримки. Розглянуто основні способи оновлення ядра, модулів та тем.
 
-include::security-cron-concept.txt[]
-include::security-cron.txt[]
-include::security-concept.txt[]
-include::security-announce.txt[]
-include::security-update-core.txt[]
-include::security-update-module.txt[]
-include::security-update-theme.txt[]
+include::security-cron-concept.asciidoc[]
+include::security-cron.asciidoc[]
+include::security-concept.asciidoc[]
+include::security-announce.asciidoc[]
+include::security-update-core.asciidoc[]
+include::security-update-module.asciidoc[]
+include::security-update-theme.asciidoc[]
 
 
 [[thoughts-chapter]]
@@ -227,14 +227,14 @@ include::security-update-theme.txt[]
 [role="summary"]
 Огляд спільноти Drupal та способів зв'язку з іншими користувачами.
 
-include::thoughts-connecting.txt[]
-include::thoughts-support.txt[]
-include::thoughts-learn-more.txt[]
+include::thoughts-connecting.asciidoc[]
+include::thoughts-support.asciidoc[]
+include::thoughts-learn-more.asciidoc[]
 
 
 // Глосарій та предметний покажчик.
 
-include::glossary.txt[]
+include::glossary.asciidoc[]
 
 == Предметний покажчик
 
@@ -247,4 +247,4 @@ include::glossary.txt[]
 [role="summary"]
 Автори цього посібника.
 
-include::attributions.txt[]
+include::attributions.asciidoc[]

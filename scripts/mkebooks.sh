@@ -42,7 +42,7 @@ do
   cp ../source/$lang/guide-docinfo.xml ../output/ebooks/$lang
 
   # Run the AsciiDoc processor to convert to DocBook for ebooks.
-  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/ebooks/$lang/guide.docbook ../output/ebooks/$lang/guide.txt
+  asciidoc -d book -b docbook -f std.conf -a docinfo -a lang=$lang $langconf -o ../output/ebooks/$lang/guide.docbook ../output/ebooks/$lang/guide.asciidoc
 
   # Copy image files and config files to e-book directory.
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images

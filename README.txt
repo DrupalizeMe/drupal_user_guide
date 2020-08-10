@@ -27,7 +27,7 @@ This project contains the following directories:
 * source
 
 The AsciiDoc source for the manual is in language subdirectories of the source
-directory. The index file is called "guide.txt", and it has include statements
+directory. The index file is called "guide.asciidoc", and it has include statements
 for the other files that make up the manual.
 
 * assets
@@ -38,7 +38,7 @@ Images and text for use in making screen shots for the guide.
 
 Guidelines and templates for contributors to this project are in the guidelines
 and templates directories, respectively. The guidelines are in the form of
-another AsciiDoc manual, with guidelines.txt as the index file. There are
+another AsciiDoc manual, with guidelines.asciidoc as the index file. There are
 separate templates for topics covering tasks and concepts.
 
 * scripts / output
