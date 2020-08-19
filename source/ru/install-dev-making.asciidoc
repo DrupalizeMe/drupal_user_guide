@@ -31,26 +31,38 @@
 иметь пустую базу данных и пользователя базы данных для вашего сайта для
 разработки.
 
-. Создайте файл копии базы данных с базы данных вашего живого сайта. Попробуйте один из
-следующих методов:
+. Следующий шаг, создайте дамп файл базы данных, с данными вашего сайта. Этот файл может быть большим, но
+ есть два способа сократить размер дампа::
 +
-  * Если вы используете MySQL как вашу базу данных и сервер вашего живого сайта имеет установленный
-  phpMyAdmin (который доступен из многих панелей управоления хостингов),
-  используйте вкладку _Экспортировать_ в phpMyAdmin для экспорта в _SQL_ формат. Используйте _gzip_
-  сжатие для выходного файла, чтобы уменьшить размер файла.
+  * Заархивируйте файл, используя gzip или другую утилиту для архивирования.
+  * Исключите данные из таблиц кеша, используя очистку этих таблиц. Это временные данные и нам нужна только
+  структура таблиц.
++
+Создайте дамп базы данных, используя один из следующих методов:
++
+  * Если вы используете Drush, то используйте эту команду, которая будет включать только структуру
+  а не контент таблиц кеша и используйте gzip для сжатия файла дампа:
++
+----
+drush sql:dump --gzip --structure-tables-list="cache,cache_*" \
+  --result-file='PATH/TO/BACKUPFILE.sql'
+----
++
+  * Если вы используете MySQL и имеете доступ к командной строке, то используйте эту
+  команду после очистки таблиц кеша (с заменой на имя базы данных,
+  пользователя и пароля базы данных вашего сайта):
++
+----
+mysqldump -u'USERNAME' -p'PASSWORD' DATABASENAME | \
+  gzip > PATH/TO/BACKUPFILE.sql.gz
+----
 
-  * Если вы используете MySQL и имеете доступ к командной строке, используйте следующую
-  команду (с заменой имени вашей базы данных, имени пользователя и пароля):
-+
-----
-mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
-----
-
-  * Если вы предпочитаете использовать Drush, используйте следующую команду:
-+
-----
-drush sql:dump --result-file=BACKUPFILE.sql
-----
+  * Если вы используете MySQL для базы данных и сервер вашего живого сайта имеет
+  phpMyAdmin (который доступен для многих панелей управления хостингом),
+  вы можете очистить таблицы кеша выбрав их в списке таблиц phpMyAdmin
+  и выбрав операцию _Очистить_ внизу страницы.
+  Тогда используйте вкладку _Экспорт_ в phpMyAdmin для выгрузки в формат _SQL_, с
+  сжатием _gzip_ для уменьшения размера файла.
 
   * Используйте https://www.drupal.org/project/backup_migrate[дополнительный модуль Backup and Migrate]
   на живом сайте. Смотрите <<extend-module-install>> для инструкций по
@@ -72,10 +84,11 @@ drush sql:dump --result-file=BACKUPFILE.sql
 Строчки выглядят следующим образом (перед редактированием):
 +
 ----
-$databases['default']['default'] = array (
+$databases['default']['default'] = [
   'database' => 'live_site_database_name',
   'username' => 'live_site_database_username',
   'password' => 'live_site_database_password',
+  ...
 ----
 
 . Проверьте, что ваш файл _settings.php_ имеет следующие настройки, если имеет, тогда
@@ -90,8 +103,8 @@ $settings['trusted_host_patterns']
 разработки. Попробуйте один из следующих методов:
 +
   * Если вы используйте MySQL для базы данных и ваш сервер живого сайта имеет установленный
-  PHPMyAdmin (который доступен из многих панелей управоления хостингов),
-  используйте вкладку _Импортировать_ в PHPMyAdmin. Вам возможно потребуется перезапустить вкладку
+  phpMyAdmin (который доступен из многих панелей управоления хостингов),
+  используйте вкладку _Импортировать_ в phpMyAdmin. Вам возможно потребуется перезапустить вкладку
   импорта несколько раз, если ваша база данных была большой.
 
   * Если вы используете MySQL и имеете доступ к командной строке, то используйте эту
@@ -100,13 +113,14 @@ $settings['trusted_host_patterns']
   его):
 +
 ----
-mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
+gunzip < PATH/TO/BACKUPFILE.sql.gz | \
+  mysql -u'USERNAME' -p'PASSWORD' DATABASENAME
 ----
 +
   * Если вы предпочитаете использовать Drush, то используйте следующую команду:
 +
 ----
-drush sql:query --file=BACKUPFILE.sql
+drush sql:query --file='PATH/TO/BACKUPFILE.sql.gz'
 ----
 
 . Если ваш сайт для разработки и живой сайт должны иметь различную конфигурацию, тогда
@@ -142,8 +156,8 @@ video::https://www.youtube-nocookie.com/embed/FSBNm4oAkaA[title="Making a Develo
 
 ==== Дополнительные материалы
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ страница документации сообщества "Backing up a site"]
-* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ страница документации сообщества "How to create a test site"]
+* https://www.drupal.org/docs/official_docs/en/_local_development_guide.html[Installing a new Drupal application on your local machine]
+* https://www.drupal.org/docs/official_docs/en/_evaluator_guide.html[Creating a Drupal demo application for evaluation purposes]
 
 
 *Авторы*
