@@ -1,58 +1,62 @@
 [[understanding-data]]
-=== Concept: Types of Data
+=== Основи: Типи даних
 
 [role="summary"]
-Overview of common types of data used in a site.
+Огляд часто вживаних типів даних, що використовуються на сайтах.
 
-(((Data type,overview)))
-(((Data type,configuration)))
-(((Data type,content)))
-(((Data type,state)))
-(((Data type,session)))
-(((Configuration,as a type of data)))
-(((Content,as a type of data)))
-(((State,as a type of data)))
-(((Session,as a type of data)))
+(((Тип даних,огляд)))
+(((Тип даних,конфігурація)))
+(((Тип даних,контент)))
+(((Тип даних,стан)))
+(((Тип даних,сесія)))
+(((Конфігурація як тип даних)))
+(((Контент як тип даних)))
+(((Стан як тип даних)))
+(((Сеанс роботи як тип даних)))
 
 
 //==== Prerequisite knowledge
 
-==== What are the types of data?
+==== Які існують типи даних?
 
-The data and information on your site is divided up into four types, which are
-edited, translated, and stored differently. These four types are:
+Дані та інформація на вашій сторінці діляться на чотири типи, що редагуються,
+переводяться і зберігаються по-різному. Ці чотири типи:
 
-Content::
-  Information (text, images, etc.) meant to be displayed to site visitors. This
-  type of information tends to be relatively permanent, but can normally be
-  edited.
-Configuration::
-  Information about your site that is not content, but is also relatively
-  permanent, and is used to define how your site behaves or is displayed. It is
-  sometimes also displayed to site visitors, but tends to be smaller pieces of
-  text (like field labels, the name of your site, etc.) rather than larger
-  chunks that you'd normally think of as Content.
-State::
-  Information of a temporary nature about the current state of your
-  site, such as the time when cron jobs were last run.
-Session::
-  Information about individual site visitors' interactions with the site, such
-  as whether they are logged in and their cookies. This is technically a
-  subtype of State information, since it is also temporary.
+Контент::
+Інформація (текст, зображення і т.д.) призначена для відвідувачів сайту.
+Цей тип інформації, як правило, не змінюється, але він може редагуватися.
 
-==== Related topics
+Конфігурація::
+Інформація про вашу сторінку - не контент, але вона не змінюється і може
+використовуватися для визначення того, як ваш сайт веде себе або відображається.
+Ця інформіція іноді відображає на сайті відвідувачів, і швидше містить невеликі
+частини тексту (такі, як мітки поля, назва вашого сайту і т.д.) ніж для великих
+частин, про які ви зазвичай думаєте, як про вміст.
+
+Стан (state)::
+Інформація тимчасового характеру про поточний стан вашого сайту, така як час,
+коли завдання крона були запущені в останній раз.
+
+Сесія::
+Інформація про взаємодію окремих відвідувачів сайту на сторінці, така як: чи
+увійшли вони в систему і про їх куки. Технічно, це підтип інформації про стан,
+оскільки це також тимчасово.
+
+=== Пов'язані теми
 
 * <<planning-data-types>>
 * <<security-cron-concept>>
 * <<user-concept>>
 * <<language-concept>>
 
-//==== Additional resources
+//==== Додаткові ресурси
+https://www.drupal.org/docs/drupal-apis/configuration-api/overview-of-configuration-vs-other-types-of-information["Огляд конфігурації (порівняно з іншими типами даних)"]
 
+*Автори*
 
-*Attributions*
-
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/node/2120523["Overview of Configuration (vs. other types of information)"],
-copyright 2000-copyright_upper_year by the individual contributors to the
+Написано/відредаговано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
+https://www.drupal.org/docs/drupal-apis/configuration-api/overview-of-configuration-vs-other-types-of-information["Overview of Configuration (vs. other types of information)"],
+авторскі права 2000-copyright_upper_year за окремими участниками
 https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Перекладено https://www.drupal.org/user/2914091[Олексій Бондаренко].
