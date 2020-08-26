@@ -1,107 +1,104 @@
 [[understanding-drupal]]
 
-=== Concept: Drupal as a Content Management System
+=== Основи: Drupal як Система Управління Сайтом (CMS)
 
 [role="summary"]
-Overview of Drupal and the reasons to choose it as a reliable Content Management
-System (CMS).
+Огляд Drupal та причини його вибору як надійної системи управління сайтом (CMS).
 
-(((CMS (Content Management System),overview)))
-(((Content Management System (CMS),overview)))
-(((Drupal content management system,overview)))
-(((Drupal content management system,server requirements)))
-(((Drupal core,overview)))
-(((Drupal.org website,downloading modules and themes from)))
+(((CMS (Система Управління Сайтом),основи)))
+(((Система Управління Сайтом (CMS),основи)))
+(((Drupal система управіління сайтом,основи)))
+(((Drupal система управіління сайтом,вимоги до сервера)))
+(((Drupal ядро,основи)))
+(((Drupal.org вебсайт,завантаження модулів і тем)))
 
-//==== Prerequisite knowledge
+//==== Необхідні знання
 
-==== What is a Content Management System?
+==== Що таке Система Управління Сайтом?
 
-A content management system (CMS) is a software tool that lets users add,
-publish, edit, or remove content from a website, using a web browser on a
-smartphone, tablet, or desktop computer. Typically, the CMS software is written
-in a scripting language, and its scripts run on a computer where a database and
-a web server are installed. The content and settings for the website are usually
-stored in a database, and for each page request that comes to the web server,
-the scripts combine information from the database and _assets_ (JavaScript
-files, CSS files, image files, etc. that are part of the CMS or have been
-uploaded) to build the pages of the website.
+Система управління сайтом (CMS) це програмний інструмент, який дозволяє
+користувачам додавати, публікувати, редагувати і видаляти контент на сайті,
+використовуючи браузер на телефоні, планшеті, ноутбуці або комп'ютері.
+Зазвичай CMS написана на скриптовій мові і ці скрипти запускаються на комп'ютері,
+де є база даних і веб сервер. Контент і налаштування для сайту зазвичай
+зберігаються в базі даних і для кожного запиту сторінки, який йде на веб сервер,
+скрипти збирають інформацію з бази даних і додаткових файлів (JavaScript файли,
+CSS файли, файли зображень і так далі, які є частиною CMS або були завантажені),
+щоб відображатися на сторінках сайту.
 
-The combination of the operating system that the CMS runs on, the scripting
-language it is written in, the database it stores its information in, and the
-web server that runs the scripts to retrieve information and return it to the
-site visitor's web browser is known as the _stack_ that the CMS runs on; the
-commonly used combination of the Linux operating system, Apache web server,
-MySQL database, and PHP scripting language is known as the _LAMP stack_.
+Комбінація з операційної системи, на якій CMS працює, скриптова мова на якій CMS
+написана, база даних в якій зберігатиметься інформація і веб сервер на якому
+працюють скрипти отримуючи інформацію та повертають цю інформацію браузеру
+відвідувача сайту, все це відомо як _стек_ (_stack_), на якому CMS працює.
+Найбільш часто використовувана комбінація операційна система на Linux, веб сервер
+Apache, база даних MySQL і скриптова мова PHP, все це відомо як _LAMP стек_.
 
-==== What is Drupal?
+==== Що таке Drupal?
 
-Drupal is a flexible CMS based on the LAMP stack, with a modular design allowing
-features to be added and removed by installing and uninstalling _modules_, and
-allowing the entire look and feel of the website to be changed by installing and
-uninstalling _themes_. The base Drupal download, known as Drupal Core, contains
-the PHP scripts needed to run the basic CMS functionality, several optional
-modules and themes, and many JavaScript, CSS, and image assets. Many additional
-modules and themes can be downloaded from the https://www.drupal.org[_Drupal.org_]
-website.
+Drupal це гнучка CMS заснована на LAMP стеку, з модульною структурою, що дозволяє
+додавати і видаляти функціонал через установку і видалення _модулів_, і дозволяє
+змінити зовнішній вигляд сайту через установку і видалення _тем_ оформлення.
+Основа Drupal, відома як ядро Drupal, містить PHP скрипти необхідні для запуску
+основного функціоналу CMS, декількох додаткових модулів і тем, і безлічі JavaScript,
+CSS і файлів зображень. Безліч додаткових модулів і тем оформлення ви можете
+завантажити з сайту https://www.drupal.org[_Drupal.org_].
 
-Drupal can also run on other technology stacks:
+Drupal також може бути запущений на інших технологічних стеках:
 
-* The operating system can be Windows or Mac OS instead of Linux.
+* Операційна система може бути Windows або Mac OS замість Linux.
 
-* The web server can be Nginx or IIS instead of Apache.
+* Веб сервер може бути Nginx або IIS замість Apache.
 
-* The database can be PostgreSQL or SQLite instead of MySQL, or a
-MySQL-compatible replacement such as MariaDB or Percona.
+* База даних може бути PostgreSQL або SQLite замість MySQL або
+інша MySQL-сумісна заміна, така як MariaDB або Percona.
 
-Other operating systems, web servers, and databases can also be made to work;
-however, the scripts that the software uses are written in PHP, so that cannot
-be changed.
+Операційні системи, веб сервери і бази даних можуть також бути іншими, але
+скрипти, які використовує Drupal, написані на PHP, будуть одні і ті ж.
 
-==== What are the reasons for using Drupal?
+==== Які причини використовувати Drupal?
 
-When building a website, you have your choice of using one of the many existing
-CMS packages and hosted services, developing your own CMS, or building the site
-without using a CMS. Here are some of the reasons you might choose to use
-Drupal:
+При створенні сайту у вас є вибір між використанням одного з безлічі існуючих
+пакетів CMS і хостингових послуг, розробкою власної CMS або створенням сайту
+без використання CMS. Ось деякі з причин, за якими ви можете вибрати
+використання Drupal:
 
-* Building a small, simple site with static HTML pages is not difficult, and you
-can get a simple site up very quickly. Setting up a site in a CMS generally
-requires more time initially, but brings you the benefits of on-line editing
-(easier for less experienced content maintainers), uniformity (harder to
-maintain using static HTML for larger sites), and the possibility of more
-complex features requiring a database.
+* Створення простого, маленького сайту зі статичними HTML сторінками не так
+складно і ви можете легко отримати простий сайт дуже швидко. Налаштування сайту
+в CMS головним чином вимагає більше часу для установки, але це приносить вигоду
+в онлайн редагуванні (простіше для менш досвідчених модераторів контенту),
+уніфікацію (чим більше сайт, тим складніше поміняти одну і ту жу інформацію на
+безлічі статичних HTML сторінках) і можливості для складнішого функціоналу
+вимагають бази даних.
 
-* Some CMS software is special-purpose; for instance, there are packages and
-hosted services that you can use to build a blog or a club membership
-website. Drupal, in contrast, is a general-purpose CMS. If you are building a
-special-purpose site, you might choose to use a special-purpose CMS; however, if
-your site falls even slightly outside the intended purpose, you will probably be
-better off using a general-purpose CMS rather than trying to adapt a
-special-purpose CMS.
+* Деякі CMS є вузькоспрямованими, наприклад, ви можете створити блог або групу
+для організації на сайті. Drupal навпаки - це CMS для загальних цілей. Якщо ви
+будуєте вузькоспрямований сайт, ви можете вибрати спеціалізовану CMS, але, якщо
+ваш сайт вимагає більш глобальних речей, можливо вам краще використовувати CMS
+для загальних цілей, ніж намагатися адаптувати вузькоспрямовану CMS.
 
-* Building your own CMS-type software can seem attractive. However, using a
-general-purpose CMS like Drupal as a starting point is usually a better idea,
-because the basic CMS functionality (such as user accounts and content
-management) has thousands of developer hours behind it, including many years of
-user testing, bug fixing, and security hardening.
+* Створення своєї CMS здається привабливим. Але використання CMS для загальних
+цілей, такої як Drupal для початку роботи ідея трохи краща, тому що базовий
+функціонал CMS (такий як акаунти користувачів і управління контентом) увібрав
+в себе тисячі годин розробки, включаючи багато років тестування користувачами,
+правку багів і поліпшення безпеки.
 
-* Some CMS software packages are expensive to purchase a license for. Some are
-free or have a free version, but have restrictive licenses that do not allow you
-to make modifications and extensions. You might prefer to use a package (like
-Drupal) that has a less restrictive software license, and is developed by a
-world-wide community. See <<understanding-project>> for more on this topic.
+* Деякі CMS дорогі, щоб купувати їх ліцензію. Деякі мають безкоштовну версію,
+але з обмеженнями, які не дозволяють вам вносити зміни і розширювати функціонал.
+Ви можете віддати перевагу використовувати CMS (як Drupal), яка має менше
+обмежень у використанні і розробці та підтримується спільнотою по всьому світу.
+Дивіться також <<understanding-project>> для більш детальної інформації.
 
-==== Related topics
+==== Пов'язані теми
 
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-distributions>>
 * <<understanding-project>>
 
-==== Additional resources
+==== Додаткові ресурси
 
-* https://www.drupal.org/docs/8/understanding-drupal-8/overview[The Drupal overview]
+* https://www.drupal.org/docs/8/understanding-drupal-8/overview[_Drupal.org_ Сторінка документації спільноти
+"Understanding Drupal: Overview"]
 
 * https://www.drupal.org/about/faq[_Drupal.org_ page "FAQ" (Frequently Asked Questions)]
 
@@ -112,10 +109,12 @@ world-wide community. See <<understanding-project>> for more on this topic.
 * https://en.wikipedia.org/wiki/Modular_design[Wikipedia page "Modular design"]
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/kvantomme[Kristof van Tomme]
-at https://pronovix.com/[Pronovix],
+Написано та відредаговано https://www.drupal.org/u/kvantomme[Kristof van Tomme]
+в https://pronovix.com/[Pronovix],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan]
-at https://erdfisch.de[erdfisch].
+та https://www.drupal.org/u/michaellenahan[Michael Lenahan]
+в https://erdfisch.de[erdfisch].
+
+Перевів https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко].
