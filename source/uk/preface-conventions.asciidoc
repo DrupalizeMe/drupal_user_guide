@@ -1,145 +1,144 @@
 [[preface-conventions]]
-=== Conventions of the Guide
+=== Умовні позначення Керівництва
 
 [role="summary"]
-Understanding the conventions used in this guide.
+Пояснення позначень використовуваних в Керівництві.
 
-==== Assumptions and prerequisites
+==== Припущення і передумови
 
-This guide has the following assumptions and prerequisites:
+Це керівництво має такі припущення і передумови:
 
-* This guide is organized into topics; see <<preface-organization>> for details.
-Many topics include a _Prerequisite knowledge_ section, which lists other
-topics whose content knowledge is needed in order to understand the topic you
-are reading. Some background knowledge that is not covered in the guide is
-also assumed; see <<preface-audience>> for details.
+* Цей посібнику організовано за допомогою тем; дивіться <<preface-organization>> для деталей.
+Багато тем включають свої _Передумовлені знання_ розділи, в яких є списки інших
+тем для яких необхідні знання розташовуються в порядку потрібному для розуміння теми,
+яку ви читаєте. Деякі загальні знання, які не описані в керівництві
+також передбачаються; дивіться <<preface-audience>> для більшої інформації.
 
-* Many task topics list _Site prerequisites_, which are tasks that you'll need
-to have completed on your site before you'll be able to do the task in the
-topic you are reading.
+* У багатьох завданнях є _Сайт передумови_, які також є завданнями необхідними
+до виконання на вашому сайті, перед тим як ви зможете виконати завдання
+в темі яку ви читаєте.
 
-* The specifics of the site prerequisites relate to the scenario used throughout
-this guide of building a site for a farmers market (see <<preface-scenario>>
-for details). You can adapt the tasks to your own scenario, but you will also
-need to remember the changes you made when deciding if your site satisfies the
-site prerequisites for a task.
+* Специфічні вимоги до сайту належать до сценарію використаному в багатьох темах
+цього керівництва для створення сайту ярмарки міста N (дивіться <<preface-scenario>>
+для більшої інформації). Ви можете адаптувати таски до свого власного сценарію, але тоді ви повинні
+пам'ятати, що зміни які ви зробили повинні відповідати
+вимогам до сайту в інших завданнях.
 
-* For all task topics after <<install-run>>, there is also an implicit
-prerequisite: you must have installed the latest stable version of the content
-management software on your site, and be logged in to a user account with
-sufficient permissions to do the task (such as the user account created when you
-installed your site, which automatically has full permissions).
+* Для всіх завдань після <<install-run>>, також є неявна
+вимога: ви повинні встановити останню версію Drupal,
+і авторизуватися під користувачем що має достатні права для виконання
+завдання (таким користувачем є аккаунт створений при установці сайту, який
+автоматично має всі права).
 
-* If you read all the topics in order, and perform all of the steps in the task
-topics as you go (staying logged in), you should have the background knowledge
-and site prerequisites in place for each topic as you read it.
+* Якщо ви прочитали всі теми в послідовному порядку і виконали всі кроки із завдань
+, То у вас повинні бути всі знання
+і налаштування сайту, які ви отримали з попередніх тем.
 
-* This guide demonstrates how to perform tasks using the administrative user
-interface, and wherever possible, also using the latest stable version of the
-Drush command-line tool (see <<install-tools>>). You can feel free to use a
-different command-line tool, such as Drupal Console (if you look up equivalent
-commands), or to only use the administrative interface for now.
+* В цьому посібнику показано як виконати завдання, у випадку використання
+інтерфейсу, і де можливо використовуючи останню стабільну версію Drush утиліти командного рядка (дивіться
+<<install-tools>>). Ви можете вільно використовувати різні утиліти командного рядка, такі
+як Drupal Console (якщо ви знайшли підходящу команду) або використовуєте
+призначений для користувача інтерфейс на початку.
 
-==== Text conventions
+==== Позначення в тексті
 
-The following conventions are used in the text of this guide:
+Наступні позначення використані в тексті цього посібника:
 
-* The URL _example.com_ means the base URL of your website. See the Navigation
-section below for more details on how URLs internal to your site are
-indicated.
+* URL _example.com_ означає базовий URL вашого сайту. Дивіться розділ
+Навігації нижче для більшої інформації про внутрішні URL вашого сайту.
 
-* Text you should see in the user interface of your site is shown in _italics_,
-such as: Click _Save configuration_. This only applies to text in the user
-interface that comes from the software, not to text that was entered in a
-previous topic. For example, in a topic about editing, you might see this
-instruction: Click _Edit_ in the row of the About page (_Edit_ would be in
-italics, but About would not be, because the About page was created in a
-previous topic).
+* Текст який вам слід шукати в інтерфейсі виділено _курсивом_,
+наприклад: Натисніть _Зберегти конфігурацію_. Це стосується тільки тексту інтерфейсу користувача який знаходиться в Drupal і не є текстом, який ми вводимо в
+попередній темі. Наприклад, в темі про редагування, ви можете побачити такі
+інструкції: Натисніть _Редагувати_ в рядку Про Ярмарку (_Редагувати_ буде виділено
+курсивом, однак Про Ярмарку не буде виділено, тому що сторінка Про Ярмарку була створена в
+попередній темі).
 
-* URLs, file names, and newly-introduced terminology are also shown in
-_italics_.
+* URL, імена файлів і нові введені терміни також будуть виділені
+_курсивом_.
 
-* Text that you should type at a shell command line is shown in monospace type,
-such as:
+* Текст який вам слід ввести в командному рядку буде написаний `моношірінним` шрифтом,
+наприклад:
 +
 ----
 drush cache:rebuild
 ----
 
-* Within this guide, the word _directory_ is always used to refer to file
-directories (which some people prefer to call _folders_).
+* Протягом керівництва, слово _директорія_(_directory_) буде завжди використовуватися для вказівки на папки
+з файлами (деякі користувачі називають _folders_).
 
-==== Navigation
+==== Навігація
 
-To do most of the task topics in this guide, you will need to navigate to one
-or more pages in the administrative interface of your site. You might see
-something like this in the instructions (this will make more sense after you
-have the base software installed):
+Щоб зробити більшість завдань цього керівництва, вам будуть надані необхідні вказівки на одну
+або кілька сторінок в інтерфейсі вашого сайту. Ви можете подивитись
+схожі вказівки в інструкціях (це матиме більший зміст після того як ви
+встановите Drupal):
 
 =============
-In the _Manage_ administrative menu, navigate to
-_Structure_ > _Taxonomy_ (_admin/structure/taxonomy_).
+У _Керування_ меню адміністратора, перейдіть на
+_Структура_ > _Таксономія_ (_admin/structure/taxonomy_).
 =============
 
-Navigation instructions like this assume that you have the core Toolbar module
-installed, and this example means that in the menu bar at the top of your site,
-you would need to click _Manage_ to expose the menu choices, then click
-_Structure_, then _Taxonomy_, and that at the end, you would be on a page with
-URL _http://example.com/admin/structure/taxonomy_ (if your site base URL is
+Інструкції по переходам на подобу вищевказаних припускають що ви встановили Toolbar модуль
+з ядра Drupal і цей приклад означає що у вас є верхнє меню адміністратора на вашому сайті,
+ви зможете вибрати _Керування_, щоб розкрити меню, потім натисніть
+_Структура_, і виберіть _Таксономія_ і в після цього, ви перейдете на сторінку з
+URL _http://example.com/admin/structure/taxonomy_ (якщо адреса вашого сайту
 _http://example.com_).
 
 // Top navigation bar on any admin page, with Manage menu showing.
-image:images/preface-conventions-top-menu.png["Admin menu",width="100%"]
+image:images/preface-conventions-top-menu.png["Admin menu", width="100%"]
 
-Here's another example:
+Ще один приклад:
 
 =============
-In the _Manage_ administrative menu, navigate to
-_Configuration_ > _System_ > _Basic site settings_
-(_admin/config/system/site-information_).
+У _Керування_ меню адміністратора, перейдіть на
+_Конфігурація_> _Система_> _Basic site settings_
+(_Admin/config/system/site-information_).
 =============
 
-In this example, after clicking on _Manage_ and _Configuration_, you would need
-to find the _System_ section of the page, and within that, click _Basic
-site settings_. After that, you'd end up on
+У цьому прикладі, після натискання на _Керування_ і _Конфігурація_, ви зможете
+знайти _Система_ розділ на сторінці і потім натиснути _Основні налаштування сайту_. Після чого ви потрапите на:
 _http://example.com/admin/config/system/site-information_.
 
 // System section of admin/config page.
-image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
+image:images/preface-conventions-config-system.png["_ System_ section of the Configuration page"]
 
-One other note: if you are using the standard administrative core Seven theme,
-many "Add" buttons in the administrative interface are displayed with + signs on
-them. For instance, on admin/content, the Add new content button appears as
-_+ Add new content_. However, this is theme-dependent and is not really part of
-the text on the button (for instance, it would not necessarily be read by a
-screen reader), so in this guide, the convention is to not mention the + sign
-on the buttons.
+Ще одне зауваження: якщо ви використовуєте стандартну тему адміністрування Seven,
+багато кнопок "Додати" в інтерфейсі відображаються зі знаком плюс + на
+них. Наприклад, на admin/content, кнопка Додати новий контент з'являється як
+_+ Додати новий контент_. Однак, це залежить від теми оформлення і не є частиною
+тексту кнопки (для прикладу, це не обов'язково з'явиться на всіх
+пристроях), так що в цьому керівництві, ми не загострюємо увагу на знак + (плюса) на кнопках.
 
-==== Filling in forms
+==== Заповнення форм
 
-Many of the task topics in this guide include steps where you will fill out a
-web form. In most cases, a screen capture image of the form will be included,
-along with a table of the values you will need to enter into each form
-field. For example, you might see a table that starts out like this, explaining
-the site information form you would see if you navigated to _Configuration_ >
-_System_ > _Site information_ (_admin/config/system/site-information_):
+Багато задач в цьому керівництві включають кроки де вам потрібно заповнити
+форму. У більшості випадків, скріншоти цих форм будуть додані в текст,
+також як і таблиці зі значеннями, які ви повинні ввести в кожне поле
+форми. Наприклад, ви можете побачити таблицю яка починається як показано нижче, в якості пояснення
+форми основних налаштувань сайту, форми яку ви можете побачити якщо перейдете на _Конфігурація_>
+_Система_> _Інформація про сайт_ (_admin/config/system/site-information_):
 
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site details > Site name|Name of your site|Anytown Farmers Market
+|Ім'я поля |Пояснення |Зразкове значення
+|Налаштування сайту > Ім'я сайту |Назва вашого сайту |Ярмарок міста N
 |================================
 
-To use this table, find the field labeled _Site name_ in the section that is
-under _Site details_ in the form, and enter the name of your site in this
-field. An example site name of "Anytown Farmers Market" is suggested in the
-table, which relates to the scenario of building a website for a farmers market
-that you'll find all through this guide (see <<preface-scenario>> for
-details). Also note that on some forms, you might have to click a section title
-(like _Site details_ in this example) to expand the section and find the field
-it contains.
+Використовуючи цю таблицю, ви можете знайти поле _Ім'я сайту_ в формі розділу
+з назвою _Деталі сайту_ і ввести ім'я вашого сайту в цьому
+полі. Як приклад ім'я сайту "Ярмарок міста N" запропоноване в
+таблиці, яке відноситься до сценарію створення сайту міського ярмарку,
+який ми створюватимемо в різних темах цього керівництва (дивіться <<preface-scenario>> для
+детальнішої інформації). Також зауважте що в деяких формах, ви повинні будете натиснути на заголовок розділу
+(Як наприклад в _Деталі сайту_), щоб розкрити розділ і знайти поле, яке в
+ньому міститься.
 
 
-*Attributions*
+*Автори*
 
-Written/edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано/відредаговано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
