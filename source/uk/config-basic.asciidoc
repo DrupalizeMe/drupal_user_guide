@@ -1,106 +1,105 @@
 [[config-basic]]
 
-=== Editing Basic Site Information
+=== Редагування основної інформації про сайт
 
 [role="summary"]
-How to edit basic site information (site name, slogan, and default time zone).
+Як редагувати основну інформацію про сайт (назва сайту, слоган і часовий пояс за умовчанням).
 
-(((Configuring,site)))
-(((Site name,configuring)))
-(((Site slogan,configuring)))
-(((Slogan,configuring)))
-(((Site tagline,configuring)))
-(((Tagline,configuring)))
-(((Site email address,configuring)))
-(((Email address,configuring)))
-(((Front page,configuring)))
-(((Error page,configuring)))
-(((Regional setting,configuring)))
-(((Locale setting,configuring)))
-(((Country setting,configuring)))
-(((Time zone setting,configuring)))
-(((First day of week,configuring)))
+(((Налаштування, сайт)))
+(((Назва сайту, налаштування)))
+(((Слоган сайту, налаштування)))
+(((Слоган, налаштування)))
+(((Таглайн сайту, налаштування)))
+(((Таглайн, налаштування)))
+(((Email сайту, налаштування)))
+(((Email адреса, налаштування)))
+(((Головна сторінка, налаштування)))
+(((Сторінка помилок, налаштування)))
+(((Регіональні настройки, налаштування)))
+(((Налаштування мови, налаштування)))
+(((Налаштування країни, налаштування)))
+(((Часовий пояс, налаштування)))
+(((Перший день тижня, налаштування)))
 
-==== Goal
+==== Мета
 
-Change basic site information such as _Site name_, _Slogan_,
-_Default time zone_.
+Зміна основної інформації про сайт, такий як _Назва сайту_, _Слоган_,
+_Часовой пояс по замовчуванню_.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<config-overview>>
 
-//==== Site prerequisites
+// ==== Site prerequisites
 
-==== Steps
+==== Кроки
 
-===== Configuring the basic site information
+===== Налаштування базової інформації про сайт
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _System_ >
-_Basic site settings_ (_admin/config/system/site-information_) to change the
-_Site name_, _Slogan_, administrative _Email address_, or the _Default front
-page_ path.
+. В адміністративному меню _Управління_ перейдіть до _Конфігурація_ > _Система_> _Основні налаштування сайту_
+(_admin/config/system/site-information_) для зміни _Назва сайту_, _Слогана_, адміністративної _Email адреси_ або шляху
+ _Головної сторінки_.
 
-. Fill in the available fields as appropriate for your site.
+. Заповніть доступні поля відповідно до особливостей вашого сайту.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name|Explanation|Example value
-|Site details > Site name|Used to identify the site and displayed in browsers|Anytown Farmers Market
-|Site details > Slogan|Usually displayed sitewide|Farm Fresh Food
-|Site details > Email address|Used as _From_ address in automated email messages (registrations, password resets, etc)|info@example.com
+|Назва поля |Пояснення |Приклад
+|Інформація про сайт > Назва сайту |Використовується для ідентифікації сайту і відображається в браузерах. |Ярмарка товарів міста N
+|Інформація про сайт > Слоган |Зазвичай відображається по всьому сайту |Свіжі продукти від фермерських господарств]]
+|Інформація про сайт > Email адреса |Адреса вказуватиметься в поле _Відправника_ в автоматичних email повідомленнях (реєстрація, скидання пароля і т.д.) |info@example.com
 |================================
 +
 --
 // Site details section of admin/config/system/site-information.
-image:images/config-basic-SiteInfo.png["Site Information"]
+image:images/config-basic-SiteInfo.png["Інформація про сайт"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. Після редагування полів, натисніть _Зберегти конфігурацію_, щоб побачити зміни, внесені на сайті.
 
-===== Configuring default Regional settings
+===== Установка регіональних налаштувань за замовчуванням
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and language_ > _Regional settings_
-(_admin/config/regional/settings_).
+. В адміністративному меню _Управління_, перейдіть до _Конфігурація_ > _Регіон та мова_>
+_Регіональні налаштування_ (_admin/config/regional/settings_).
 
-. Fill in the form as follows:
+. Заповніть форму наступним чином:
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name|Explanation|Example value
-|Locale > Default country| The primary country for your site|United States
-|Locale > First day of week| The day when the week starts on calendars|Sunday
-|Time zones > Default time zone| The primary time zone for your site |America > Los Angeles
-|Time zones > Users may set their own time zone| Whether logged-in users can choose a different time zone for display of dates and times on the site |Unchecked
+|Назва поля |Пояснення |Приклад
+|Мова > країна за замовчуванням |The primary country for your site |Україна
+|Мова > Перший день тижня |The day when the week starts on calendars |понеділок
+|Часові пояси > Часовий пояс за умовчанням |Основний часовий пояс для вашого сайту |Kyiv
+|Часові пояси > наші клієнти можуть змінювати свій часовий пояс |Можливість вибору користувачами іншого часового поясу для відображення дат і часу на сайті |немає прапорця
 |================================
 +
 --
 // Locale and Time Zones sections of admin/config/regional/settings.
-image:images/config-basic-TimeZone.png["Time Zones"]
+image:images/config-basic-TimeZone.png["Часові пояси"]
 --
 
-. After editing the fields, click _Save configuration_ to see the changes
-applied to the site.
+. Після редагування полів, натисніть _Зберегти конфігурацію_, щоб побачити зміни, внесені на сайті.
 
 // ==== Expand your understanding
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/oDMCQ1cDYOI[title="Editing Basic Site Information"]
 
-==== Additional resources
+==== Додаткові матеріали
 
-https://www.drupal.org/node/1896670[_Drupal.org_ community documentation page "Getting started with Drupal 8 administration"]
+https://www.drupal.org/docs/administering-a-drupal-site/getting-started-with-drupal-administration[_Drupal.org_ сторінка документації спільноти "Getting started with Drupal administration"]
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Написано і змінено https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] з
 https://erdfisch.de[erdfisch],
-https://www.drupal.org/u/ifrik[Antje Lorch], and
+https://www.drupal.org/u/ifrik[Antje Lorch] і
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
