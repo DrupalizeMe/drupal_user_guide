@@ -1,105 +1,106 @@
 [[extend-theme-find]]
 
-=== Finding Themes
+=== Пошук тем оформлення
 
 [role="summary"]
-How to use filters to search themes and evaluate them.
+Як використовувати фільтри для пошуку тем і їх оцінки.
 
-(((Theme,finding)))
-(((Theme,evaluating)))
-(((Contributed theme,finding)))
-(((Contributed theme,evaluating)))
-(((Drupal.org website,finding and evaluating themes on)))
+(((Тема, пошук)))
+(((Тема, оцінка)))
+(((Додаткова тема, пошук)))
+(((Додаткова тема, оцінка)))
+(((Сайт Drupal.org, пошук і оцінка тeм)))
 
 
-==== Goal
+==== Мета
 
-Find and evaluate themes on _Drupal.org_.
+Пошук і оцінка тeм на _Drupal.org_.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<understanding-drupal>>
 * <<understanding-themes>>
 
-//==== Site prerequisites
+// ==== Site prerequisites
 
-==== Steps
+==== Кроки
 
-. Go to https://www.drupal.org, and navigate to _Download & Extend > Themes_
+. Зайдіть на https://www.drupal.org, і перейдіть в _Download & Extend > Themes_
 (https://www.drupal.org/project/project_theme).
 
-. Filter your search using the categories on the theme search page.
-For example, you might use these filters:
+. Фільтрувати результати пошуку за категоріями на сторінці пошуку теми.
+Наприклад, ви можете використовувати ці фільтри:
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name |Explanation |Example value
-|Maintenance status |How actively is the theme maintained? If a theme is actively
- maintained, you can expect bug fixes and improvements on a regular basis.
+|Ім'я поля |Пояснення |Зразкове значення
+|Maintenance status |Наскільки активно підтримується і розробляється тема оформлення? Якщо тема активно
+ розробляється, ви можете очікувати виправлення багів і поліпшення на регулярній основі.
  |Actively maintained
-|Development status |What kind of development is the theme undergoing? If you
- select _Under active development_, you can expect new features to be added, and
- some aspects may still change. If you select _Maintenance fixes only_, it means
- that the theme is considered complete. |Any
-|Core compatibility |The Drupal version the theme is compatible with.|8.x
-|Status |_Sandbox projects_ are experimental projects. _Full projects_ have already
- gone through an approval process, but they can still be in development.|Full projects
-|Stability | Whether or not the project maintainer has created a production-ready
- version. |Has a supported stable release
-|Security advisory coverage | Whether or not the project maintainer has agreed to
- follow Drupal Security Team procedures. |Has security advisory coverage
-|Search themes |Search by search term in the theme's description.|-
-|Sort by |Order your search results by criteria like _Most installed_ (popular themes
- that many sites use) or _Last release_ (date of latest version released). |Most installed
+|Development status |В якій стадії розробки знаходиться тема? Якщо ви
+ вибрали _Under active development_, ви можете очікувати додавання нового функціоналу і
+ деякі речі можуть бути змінені. Якщо ви вибрали _Maintenance fixes only_, це означає,
+ що тема імовірно завершена. |Any
+|Core compatibility |З якими версії Drupal тема сумісна. |8.x
+|Status |_Sandbox projects_ - це експериментальні проекти. _Full projects_ вже
+ пройшли процес підтвердження, але вони можуть бути до сих пір в розробці. |Full projects
+|Stability |Чи готова версія створена розробником до використання на живому сайті. |Has a supported stable release
+|Security advisory coverage |Чи погодився розробник теми
+ слідувати процедурам Drupal Security Team. |Has security advisory coverage
+|Search themes |Шукає теми за допомогою термінів в опис тем. |-
+|Sort by |Сортує результати пошуку за параметрами, таким як _Most installed_ (популярні теми
+ які часто використовуються на сайтах) або _Last release_ (випущені недавно). |Most installed
 |================================
 +
 --
-// Theme search box on https://www.drupal.org/project/project_theme.
-image:images/extend-theme-find_theme_finder.png["Filters on the theme search page on _Drupal.org_"]
+// Вікно пошуку теми на https://www.drupal.org/project/project_theme.
+image:images/extend-theme-find_theme_finder.png["Фільтри на сторінці пошуку теми на _Drupal.org_"]
 --
 
-. Click _Search_. Search results will appear.
+. Натисніть _Search_. Результати пошуку з'являться.
 +
 --
 // Search results on https://www.drupal.org/project/project_theme.
-image:images/extend-theme-find_search_results.png["The search results page on _Drupal.org_"]
+image:images/extend-theme-find_search_results.png["Сторінка результатів пошуку на _Drupal.org_"]
 --
 
-. To further evaluate a theme, click its title in the list of search results
-to visit its project page.
+. Для подальшої оцінки теми клацніть її назву в списку результатів пошуку,
+відвідавши сторінку проекту.
 
-Some aspects to pay attention to while evaluating themes:
+Деякі аспекти, на які слід звернути увагу при оцінці тем:
 
-* Introduction: The description of the theme on its project page should be clear
-and useful. A screenshot of the theme helps your evaluation as well.
+* Вступ: Опис теми на сторінці проекту має бути зрозумілим
+і корисним. Скріншот теми також допоможе вашій оцінці.
 
-* Project information: There may be warnings in this area of the page, such as
-if a theme is no longer being developed, or is not covered by the security
-advisory policy.
+* Project information: У цій області сторінки можуть бути попередження, такі як
+тема більше не розробляється або не захищена
+з міркуваннь політики безпеки.
 
-* Project information > Reported installs, downloads: You can see how many
-people have downloaded and how many sites use the theme.
+* Project information > Reported installs, downloads: Ви можете побачити скільки
+людей завантажили і скільки сайтів використовують цю тему.
 
-* Issues: See if there are any open issues, potential problems with the
-theme. Check the Statistics to see how regularly issues are responded to.
+* Issues: Подивіться, чи є відкриті питання, потенційні проблеми з
+темою. Перевірте статистику, щоб побачити, як регулярно реагують на проблеми.
 
-* Documentation, Resources: Check if the theme has documentation or a README
-file, that can help you install, configure, explore, and test it.
+* Documentation, Resources: Перевірте, чи є у теми документація або README
+файл, який допоможе вам встановити, налаштувати, дослідити, і протестувати її.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
 * <<extend-theme-install>>
 
-//==== Related concepts
+// ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/M8LYX6K53jg[title="Finding Themes"]
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos].
+Написано https://www.drupal.org/u/dianalakatos[Diána Lakatos].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://www.drupal.org/mazaltov[Mazaltov].
