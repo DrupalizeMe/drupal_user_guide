@@ -1,20 +1,15 @@
 [[extend-git]]
+=== Управління файлами і конфігураційними редакціями за допомогою Git
 
-=== Managing File and Configuration Revisions with Git
+(((Інструмент, Git)))
+(((Git інструмент, використання)))
 
-[role="summary"]
-How to manage file and configuration revisions with the Git revision control
-tool.
+==== Мета
 
-(((Tool,Git)))
-(((Git tool,using)))
+Використовуйте інструмент контролю версій Git, щоб управляти редакціями файлів і конфігурацій
+на вашому сайті.
 
-==== Goal
-
-Use the Git revision control tool to manage revisions to files and configuration
-on your site.
-
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<install-tools>>
 
@@ -22,58 +17,58 @@ on your site.
 
 * <<install-dev-sites>>
 
-* How to set up a Git repository and find its _clone_ URL. For example, if
-you want to use GitLab to host your repository, see
+* Як налаштувати Git репозиторій і знайти його _клон_ URL. Наприклад, якщо
+ви хочете використовувати GitLab для зберігання вашого сховища, дивіться
 https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab "Create a project" page]
-and
+і
 https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab "Command Line basic commands" page].
-And if you want to use GitHub to host your repository, see
+І якщо ви хочете використовувати GitHub для зберігання вашого сховища, дивіться
 https://help.github.com/en/articles/create-a-repo[GitHub "Create a repo" page]
-and
+і
 https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub "Which remote URL should I use" page].
 
-* How to open and use a command terminal window and a plain-text editor.
+* Як відкрити і використовувати вікно командного рядка і текстовий редактор.
 
-* To manage configuration, how to unpack and pack archive files (such as _.zip_
-and _.tar.gz_).
+* Для управління конфігурацією, як розпакувати і упакувати архівні файли (наприклад _.zip_
+і _.tar.gz_).
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* You must have downloaded the software for your site, using one of the methods
-in <<install-decide>>. If you want to manage configuration, you must have
-installed the software and have a running site.
+* Ви повинні завантажити програмне забезпечення для вашого сайту, використовуючи один з методів
+в <<install-decide>>. Якщо ви хочете керувати конфігурацією, ви повинні мати
+встановлене програмне забезпечення і працючий сайт.
 
-* Git client software must be installed on your site's server. See
-https://git-scm.com/[Git] for instructions.
+* Git клієнт повинен бути встановлений на сервері вашого сайту. дивіться
+https://git-scm.com/[Git] для інструкції.
 
-* You must have a new repository created and know its Git clone URL.
+* Ви повинні створити новий репозиторій і знати його Git клон URL.
 
-==== Steps
+==== Кроки
 
-===== Initializing the repository
+===== Ініціалізація сховища
 
-Do these steps once, after creating a Git repository, to connect your local
-directory to the repository and add the initial files to it.
+Виконайте ці кроки один раз, після створення Git-сховища, для підключення вашої
+локальної директорії до сховища і додавання до нього вихідного файлу.
 
-. Open a command terminal window, and change to the directory where your site's
-files are located. This is your "top" directory.
+. Відкрийте вікно командного рядка і перейдіть в директорію, де знаходяться файли
+вашого сайту. Це ваша "верхня"(коренева) директорія.
 
-. Determine where your web root is. If the _core_, _modules_, and _themes_
-directories are located directly in this directory, then you are in your web
-root. If you have used Composer to download the software, then these files are
-located inside the _web_ subdirectory (which is your web root).
+. Визначте де знаходиться ваш кореневий каталог. Якщо _core_, _modules_, і _themes_
+директорії розташовані в цьому каталозі, тоді ви в вашому кореневому
+каталозі. Якщо ви використовували Composer для завантаження, тоді ці файли
+знаходяться всередині _web_ підкаталогу (який є вашим кореневим каталогом).
 
-. In a plain text editor, create a new file called _.gitignore_ in the top
-directory (or edit it if it already exists). This file contains a list of files
-and directories that Git should ignore (not add to the repository). For example,
-the _settings.php_ file for your site should not be added to Git, because it
-contains your database account information, and the media files uploaded to
-your site (usually in _sites/default/files_) should not be in Git either -- the
-objective is to have the software in the repository, not the site content.
+. В текстовому редакторі створіть новий файл з ім'ям _.gitignore_ у верхній
+директорії (або внесіть необхідні зміни, якщо він вже існує). Цей файл містить список файлів
+і директорій який Git ігноруватиме (не додавати в репозиторій). наприклад,
+_settings.php_ файл для вашого сайту не буде додано до Git, тому що він
+містить відомості про обліковий запис бази даних, і медіафайли, завантажені на
+ваш сайт (зазвичай _sites/default/files_) також не повиннs бути в Git -
+мета полягає в тому, щоб в репозиторії було програмне забезпечення, а не вміст сайту.
 
-. Make sure the following lines are in the _.gitignore_ file. If your web root
-is not your top directory, check each of these to see if they need a prefix. For
-example, _sites_ may need to be replaced with _web/sites_.
+. Переконайтеся, що наступні рядки знаходяться в файлі _.gitignore_. Якщо ваш кореневий каталог
+перестав бути верхньою директорією, перевірте кожну з них, щоб дізнатися, чи потрібен їм префікс. наприклад,
+_sites_ можливо буде потрібно замінити на _web/sites_.
 +
 ----
 sites/*/settings*.php
@@ -81,23 +76,23 @@ sites/*/files
 config
 ----
 
-. Enter the following commands:
+. Введіть наступні команди:
 +
 ----
 git init
 git add -A
 ----
 
-. Optionally, verify the list of files you will be adding to your Git repository
-by entering this command and scrolling through the (very long) list:
+. При бажанні перевірте список файлів, які ви будете додавати в свій репозиторій Git,
+ввівши цю команду і гортаючи (дуже довгий) список:
 +
 ----
 git status
 ----
 
-. Enter the following commands. You can substitute your own _commit message_ for
-"Initial file add" if you wish, and you will need to substitute your own Git
-clone URL for the URL in the second command:
+. Введіть наступні команди. Ви можете замінити ваше _повідомлення комміта_ для
+"Initial file add" якщо ви хочете, і вам потрібно буде замінити Git
+клон URL на свій власний URL у другій команді:
 +
 ----
 git commit -m "Initial file add"
@@ -105,101 +100,99 @@ git remote add origin https://gitlab.com/example-name/example-repo.git
 git push -u origin master
 ----
 
-. If you are using GitLab, GitHub, or another host with online access, you can
-now go to your repository page and see that the files are there.
+. Якщо ви використовуєте хостинг сховища GitLab, GitHub або інший хост з онлайн
+доступом, ви можете перейти на свою сторінку сховища та побачити, що файли там.
 
-===== Updating files in the repository
+===== Оноалення даних до репозиторію
 
-Use these steps when you have updated, added, or deleted one or more files in
-your site, in order to send the changes (_push_) to your repository.
+Використовуйте ці кроки, при оновленні, додаванні або видаленні одного або декількох файлів на
+вашому сайті, щоб відправити зміни (_push_) в ваше сховище.
 
-. Open a command terminal window, and change to the directory where your site's
-files are located.
+. Відкрийте вікно командного рядка, і перейдемо в директорію де знаходяться файли
+вашого сайту.
 
-. Check the list of files that have been added, changed, or deleted:
+. Перевірте список файлів, які були додані, змінені або видалені.
 +
 ----
 git status
 ----
 
-. Optionally, for text files that have been changed (not images), look at the
-differences between the new and old versions of the file:
+. Додатково, для текстових файлів, які були змінені (не зображення), подивіться на
+відмінності між новою і старою версіями файлу:
 +
 ----
 git diff path/to/file.txt
 ----
 
-. Stage all the changes for the next commit, and verify that they are staged:
+. Підготуйте всі зміни для наступного комміту і переконайтеся, що вони внесені:
 +
 ----
 git add -A
 git status
 ----
 
-. You can omit a particular file from the commit that you have already staged,
-or add another file to the ones you have already staged. If a particular file
-or directory keeps getting added by mistake, consider adding it to the
-_.gitignore_ file so that it will be ignored by Git. Omit/add commands:
+. Ви можете усунути певний файл з чергового комміту який ви вже додали до стейджу але ще не закомітили,
+або можете додати інший файл до вже застейджених. Якщо конкретний файл
+або директорія продовжує додаватися помилково, розгляньте можливість додавання його в
+_.gitignore_ файл, щоб він був проігнорований в Git. Команди усунення/додавання до стейджу чергового коміту:
 +
 ----
 git reset HEAD path/to/file.txt
 git add path/to/file.txt
 ----
 
-. Commit and push your changes. Substitute something meaningful for the commit
-message:
+. Виконати коміт і пуш ваших змін. Напишіть щось значуще в повідомленні
+комміту:
 +
 ----
 git commit -m "commit message here"
 git push
 ----
 
-. If you have other copies of your repository, update them by opening a command
-window in the directory of each copy and running the following command:
+. Якщо у вас є інші копії вашого сховища, поновіть їх, відкривши командний рядок в директорії кожної копії і запустивши таку команду:
 +
 ----
 git pull
 ----
 
+===== Створення копії файлів в вашому сховищі
 
-===== Making a copy of the files in your repository
+Виконайте наступні дії, якщо ви хочете скопіювати всі файли вашого сховища на
+нове місце розташування. Наприклад, у вас може бути локальна копія розробки
+вашого сайту і робочий сайт, або кілька членів команди можуть мати локальні
+копії сайту.
 
-Follow these steps if you want to copy all the files in your repository to a
-new location. For example, you might have both a local development copy of your
-site and a production site, or several team members might all have local
-copies of the site.
+. Відкрийте командний рядок терміналу в тому місці, де ви хочете, щоб знаходилися файли.
 
-. Open a command window in the location where you want the files to be.
-
-. Enter the following command, substituting your repository clone URL for the
-URL, and the name of the subdirectory you want them in for _dirname_:
+. Введіть наступну команду, замінивши URL вашого клону репозиторія на
+URL і ім'я підкаталогу _dirname_, в якому ви хочете їх використовувати:
 +
 ----
 git clone https://gitlab.com/example-name/example-repo.git dirname
 ----
 
-===== Managing configuration in the repository
+===== Управління конфігурацією в репозиторії
 
-. Follow the instructions on <<extend-config-versions>> to export a complete
-archive of your site's configuration.
+. Дотримуйтесь інструкцій на <<extend-config-versions>> для експорту повного
+архіву конфігурації вашого сайту.
 
-. If you have not already initialized configuration in the repository, unpack
-the configuration archive into a new directory, preferably above the web root
-directory, and follow the instructions above to add these files to your
-repository.
+. Якщо ви ще не ініціалізували конфігурацію в репозиторії, розпакуйте
+архів конфігурації в нову директорію, бажано над кореневим каталогом
+директорії, і дотримуйтесь інструкцій вище, щоб додати ці файли в свій
+репозиторій.
 
-. After initializing, whenever your site configuration changes, export and
-unpack the configuration archive in the same location. Follow the instructions
-above to update these files in your repository.
+. Після ініціалізації, при зміні конфігурації вашого сайту, експортуйте і
+розпакуйте архів конфігурації в тому ж місці. Дотримуйтесь інструкцій вище,
+щоб оновити ці файли в ваше сховище.
 
-. To import updated configuration to another site, make an archive of the
-configuration directory from your repository. Then follow the instructions on
-<<extend-config-versions>> to upload and import this archive into the site.
+. Щоб імпортувати оновлену конфігурацію на інший сайт, зробіть архів
+конфигураційнної директорії з вашого сховища. Потім дотримуйтесь інструкцій на
+<<extend-config-versions>> для завантаження і імпорту цього архіву на сайт.
 
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== Пов'язані поняття
 
 <<install-dev-sites>>
 
@@ -208,9 +201,12 @@ configuration directory from your repository. Then follow the instructions on
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Adapted and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/node/803746["Building a Drupal site with Git"],
-copyright 2000-copyright_upper_year by the individual contributors to the
+Адаптований і відредагований https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] від
+https://www.drupal.org/node/803746["Building a Drupal site with Git "],
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
