@@ -1,81 +1,82 @@
 [[config-install]]
-=== Installing a Module
+=== Установка модуля Drupal
 
 [role="summary"]
-How to install a core or contributed module, using the administrative interface
-or Drush.
+Як встановити модуль, використовуючи адміністративний інтерфейс або Drush.
 
-(((Module,enabling)))
-(((Module,installing)))
+(((Модуль, включення)))
+(((Модуль, установка)))
 
-==== Goal
+==== Мета
 
-Install a core module, or a contributed module whose files have already been
-uploaded to the site, through the administrative interface or using Drush.
+Встановити модуль, файли якого вже
+завантажені на сайт, через адміністративний інтерфейс або Drush.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<understanding-modules>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-If you want to use Drush to install modules, Drush must be installed. See
+Якщо ви хочете використовувати Drush для установки модулів, Drush повинен бути встановлений. Дивіться
 <<install-tools>>.
 
-==== Steps
+==== Кроки
 
-You can use the administrative interface or Drush to install modules.
+Ви можете використовувати адміністративний інтерфейс або Drush для установки модулів.
 
-===== Using the administrative interface
+===== Використання адміністративного інтерфейсу
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. В адміністративному меню _Упаравління_, перейдіть в _Розшрення_
+(_admin/modules_). На сторінці _Розширення_ показуються всі доступні модулі
+на вашому сайті.
 
-. Check the boxes for the module or modules you want to install. For example,
-check the box for the core Activity Tracker module.
+. Проставте галочки для модуля або модулів, які ви хочете встановити. Наприклад,
+поставте галочку для модуля ядра Activity Tracker.
 +
---
-// Top part of Core section of admin/modules, with Activity Tracker checked.
-image:images/config-install-check-modules.png["Enabling the core Activity Tracker module",width="100%"]
---
+-
+// Top part of Core section of admin / modules, with Activity Tracker checked.
+image:images/config-install-check-modules.png["Включення модуля Activity Tracker", width = "100%"]
+-
 
-. Click _Install_. The checked modules will be installed.
+. Натисніть _Установити_. Вибрані модулі будуть встановлені.
 
-===== Using Drush
+===== Використання Drush
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears showing all the available modules
-in your site.
+. У розділі _Управління_ адміністративного інтерфейсу, перейдіть в _Розширення_
+(_admin/modules_). На сторінці _Розширення_ показані всі встановлені модулі
+на вашому сайті.
 
-. Find the machine name of the module you want to install, by expanding the
-information area for the module. For instance, the core Activity Tracker
-module's machine name is _tracker_.
+. Знайдіть машинне ім'я модуля який ви хочете встановити, розкривши
+блок інформації для потрібного модуля. Наприклад, Activity Tracker
+модуль має машинне ім'я _tracker_.
 
-. Run the following Drush command to install the module:
+. Запустіть наступну Drush команду, щоб встановити потрібний модуль:
 +
 ----
 drush pm:enable tracker
 ----
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+Якщо ви не спостерігаєте змін на вашому сайті, можливо вам потрібно
+почистити кеш. Дивіться <<prevent-cache-clear>>.
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/HymQsDOcT3E[title="Installing a Module"]
 
-==== Additional resources
+==== Додаткові матеріали
 
 http://www.drush.org[Drush]
 
+*Автори*
 
-*Attributions*
+Написано і відредаговано https://www.drupal.org/u/batigolix[Boris Doesborg] і
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
