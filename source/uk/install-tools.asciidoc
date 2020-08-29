@@ -1,155 +1,153 @@
 [[install-tools]]
 
-=== Concept: Additional Tools
+=== Основи: Додаткові інструменти
 
 [role="summary"]
-Overview of additional tools that help site builders conveniently create sites.
+Огляд додаткових інструментів, які допомагають творцям сайтів зручно створювати сайти.
 
-(((Tool,Coder)))
-(((Tool,Devel)))
-(((Tool,Drush)))
-(((Tool,Composer)))
-(((Tool,Git)))
-(((Tool,Drupal Console)))
-(((Coder tool,overview)))
-(((Devel tool,overview)))
-(((Drush tool,overview)))
-(((Composer tool,overview)))
-(((Git tool,overview)))
-(((Drupal Console tool,overview)))
+(((Інструмент, Coder)))
+(((Інструмент, Devel)))
+(((Інструмент, Drush)))
+(((Інструмент, Composer)))
+(((Інструмент, Git)))
+(((Інструмент, Drupal Console)))
+(((Coder інструмент, огляд)))
+(((Devel інструмент, огляд)))
+(((Drush інструмент, огляд)))
+(((Composer інструмент, огляд)))
+(((Git інструмент, огляд)))
+(((Drupal Console інструмент, огляд)))
 
 // ==== Prerequisite knowledge
 
-==== What tools are available for site builders?
+==== Які інструменти доступні творцям сайтів?
 
-There are several additional tools available that help you create sites faster,
-more accurately and with less effort.
+Ви можете створювати сайти швидше за допомогою наступних доступних інструментів,
+прикладаючи менше зусиль та більш ретельно.
 
-Drush and Drupal Console::
-  See below for more about command-line tools.
+Drush і Drupal Console::
+  Читайте нижче більше інформації про інструменти командного рядка.
 Git::
-  See below for more about version control tools.
+  Читайте нижче більше інформації про інструменти контролю версій.
 Composer::
-  See below for more about Composer.
+  Читайте нижче більше інформації про Composer.
 Devel::
-  The https://www.drupal.org/project/devel[contributed Devel module] helps with
-  development tasks such as debugging and inspecting code, analyzing database
-  queries, and generating dummy content.
+  https://www.drupal.org/project/devel[Модуль Devel] допомагає з
+  завданнями по розробці, таких як налагодження і вивчення коду, аналіз запитів до
+  бази даних і генерація підставного контенту.
 
-==== What are command-line tools?
+==== Що таке інструменти командного рядка?
 
-Command-line tools provide an alternative to using the administrative interface
-for various operations on your site. Many site builders and maintainers have
-invested the time to install and learn a command-line tool, because:
+Інструменти командного рядка надають алтернативу використання адміністративного інтерфейсу
+для різних операцій на вашому сайті. Багато творців сайтів і розробників вклали час для установки і вивчення інструментів командного рядка, тому що:
 
-* Administrative tasks are typically faster and less tedious when performed at
-the command line than in the user interface.
+* Завдання адміністрування зазвичай виконуються швидше і менш виснажливі, коли працюють через
+командний рядок, в порівнянні з призначеним для користувача інтерфейсом.
 
-* You can write scripts that combine site-related commands with other commands
-on the server, to automate more complicated tasks.
+* Ви можете написати скрипти, які об'єднують команди для сайту з іншими командами
+на сервері, для автоматизації більш складних тасків(завданнь).
 
-* Command-line tools provide additional functionality not available via the
-administrative interface; for example, running database queries.
+* Інструменти командного рядка надають додаткові можливості недоступні через
+адміністративний інтерфейс, наприклад, запуск запитів до бази даних.
 
-The most popular tools are http://www.drush.org[Drush] and
-https://drupalconsole.com[Drupal Console]. Drush has been available longer, and
-has commands for both the core software and contributed modules; Drupal Console
-started as a tool for module programmers, but has a growing list of commands for
-site builders. This guide documents commands from the latest stable version of
-Drush for many tasks; it does not document Drupal Console commands or commands
-for older versions of Drush, but you can look them up in the Drupal Console and
-Drush documentation.
+Найбільш популярні інструменти це http://www.drush.org[Drush] і
+https://drupalconsole.com[Drupal Console]. Drush був доступний раніше і
+має команди для ядра Drupal і модулів; Drupal Console з'явився як інструмент для
+розробників модулів, але в ньому з'явилися команди для творців сайтів. Це керівництво
+описує Drush команди для багатьох завдань; але в цьому керівництві не описуються команди Drupal Console
+і команди для старих версій Drush, однак ви можете їх знайти
+в документації по Drupal Console і Drush.
 
-To use these tools, you will need to have command-line terminal access to the
-server where your website will be hosted, and you will need to install Composer
-first in order to install either the Drush or Drupal Console tool.
+Для використання цих інструментів, вам необхідний доступ до командного рядка на
+сервері, де розташований ваш сайт і ви повинні спершу встановити Composer
+для того, щоб встановити далі Drush або Drupal Console.
 
-==== What is a version control system?
+==== Що таке система управління версіями?
 
-A version control system is software that keeps copies of files and revision
-history in a _repository_, and allows you to add, delete, and update files. For
-a web site project, revision control software can help you:
+Система управління версіями - програмне забезпечення, яке зберігає копії файлів і історію редакцій
+в _репозіторії_ і дозволяє вам додавати, видаляти або оновлювати файли. для
+проекту веб сайту, програмне забезпечення контролю версій допоможе вам:
 
-* Test locally before deploying files on the live site
+* Тестувати зміни локально, перед деплоем на живий сайт
 
-* Look at, compare with, and revert to previous versions of files
+* Відслідковувати, порівнювати і повертати попередні версії файлів
 
-* Look at the added, changed, or deleted files before you _commit_ the changes
-(update the repository)
+* Відслідковувати додані, змінені або видалені файли, перед тим як, ви _вносите_ зміни
+(Поновіть репозиторій)
 
-* Merge changes from different team members together
+* З'єднувати зміни разом від різних розробників
 
-* Keep files and configuration synchronized between local and live sites
+* Зберігати файли і конфігурації синхронізовані між локальним і живим сайтами
 
-There are many proprietary and open-source version control systems to choose
-from; a popular choice is https://git-scm.com/[Git], which is open-source
-software that runs on most computer platforms. Git is a _distributed_ version
-control system that allows you to have one or more copies of your repository,
-which allows you to commit changes to a copy and then only _push_ them to the
-repository you've designated as _canonical_ when you're ready to share them with
-others. The canonical git repository can be hosted on your local computer or a
-server at your company, but many software projects and individuals host their
-Git repositories using third-party services provided by
-https://about.gitlab.com/[GitLab] or https://github.com/[GitHub].
+Існує безліч пропрієтарних і відкритих систем контролю версій з яких можна
+вибирати; популярний вибір це https://git-scm.com/[Git], який є відкритим
+програмним забезпеченням і запускається на більшості операційних системах. Git - це _ррозподілена_ система
+контролю версій, тому що дозволяє вам мати одну або кілька копій вашого сховища,
+ви можете вносити зміни в копію і лише тоді _пушити_ їх в
+репозиторій позначений як _основний_, коли ви будете готові поділитися правками з
+іншими. Основний git репозиторій може бути розміщений на вашому локальному комп'ютері або
+сервері компанії, але багато проектів і приватні напрацювання в
+Git репозиторіях розміщуються на сайті https://about.gitlab.com/[GitLab] або https://github.com/[GitHub].
 
+==== Для чого використовувати Composer?
 
-==== What is Composer used for?
+https://getcomposer.org/[Composer] - це інструмент для управління PHP залежностями,
+які розробники вказують разом з версіями кожної сторонньої бібліотеки, яка їм потрібна
+і Composer управляє процесом завантаження і установки цих бібліотек.
 
-https://getcomposer.org/[Composer] is a tool for managing PHP dependencies,
-where the developer specifies what version of each external library is needed,
-and Composer manages the process of downloading and installing the libraries.
+Ядро Drupal головний користувач Composer, тому що воно використовує кілька
+сторонніх бібліотек, які повинні бути завантажені і встановлені
+для того щоб Drupal міг працювати. Коли ви встановлюєте Drupal, ви
+також можете завантажити архів, який вже містить сторонні бібліотеки
+необхідних версій або ви можете запустити Composer для завантаження сторонніх
+бібліотек після початкового завантаження. Drush і Drupal Console інструменти
+командного рядка також завантажуються, використовуючи Composer.
 
-The core software is a primary user of Composer, because it makes use of several
-externally-developed software libraries, which must be downloaded and installed
-in order for the core software to work. When you install the core software, you
-either need to download an archive that contains compatible versions of the
-external libraries, or you need to run Composer to download the external
-libraries after the initial download. The Drush and Drupal Console command-line
-tools are also downloaded using Composer.
+Деякі модулі також використовують сторонні
+бібліотеки; наприклад, модуль Facebook integration може зажадати бібліотеку інтеграції Facebook
+для завантаження і роботи модуля. Для
+установки модуля зі сторонніми залежностями ви повинні запускати Composer.
 
-Some contributed modules also make use of externally-developed software
-libraries; for example, a Facebook integration module might require Facebook's
-integration library to be installed for the module to work, and a geographical
-module might make use of a standard library of geographical functions. To
-install a module with external dependencies, you will need to run Composer.
+==== Які інструменти доступні для розробників модулів і тем оформлення?
 
-==== What tools are available for module and theme developers?
-
-In addition to the site builder tools mentioned above, the following tools are
-useful for module and theme developers.
+На додаток до інструментів для створення сайтів описаних вище, наступні інструменти будуть
+корисними для розробників модулів і тем оформлення.
 
 Drupal Console::
-  https://drupalconsole.com[Drupal Console] is a command-line tool that
-  generates boilerplate code and interacts with a Drupal site. It can generate,
-  for example, block or form code, install modules and themes, and create dummy
-  content. Drupal Console makes use of the Symfony Console.
+  https://drupalconsole.com[Drupal Console] - це інструмент командного рядка, який
+  генерує код за шаблоном і взаємодіє з Drupal сайтом. Він може генерувати,
+  наприклад плагін блоку або код для форми, встановлювати модулі і теми оформлення і створювати демо
+  контент. Drupal Console зроблений на основі Symfony Console.
 Coder::
-  https://www.drupal.org/project/coder[Coder] is a command-line tool that checks
-  if your modules and themes comply with coding standards and other best
-  practices. It can also fix coding standard violations.
-Browser debugging tools::
-  Web browsers such as Firefox and Chrome include tools that allow viewing,
-  editing, debugging, and monitoring CSS, HTML, and JavaScript. You can open the
-  debugging pane or window by right-clicking the mouse in an area of your
-  window, and choosing "Inspect" or "Inspect element".
+  https://www.drupal.org/project/coder[Coder] - це інструмент командного рядка, який перевіряє
+  ваші модулі і теми оформлення на дотримання стандартів написання коду та інших кращих
+  практик. Він також виправляє порушення правил написання коду.
+Інструменти відлагодження в браузері::
+  Веб браузери такі як Firefox і Chrome включають інструменти, які дозволяють переглядати,
+  редагувати, налагоджувати і моніторити CSS, HTML і JavaScript код. Ви можете відкрити
+  панель налагодження або вікно натиснувши праву кнопку миші на області вашого
+  вікна і вибрати "Відстежувати" ( "Inspect") або "Відкрити елемент" ( "Inspect element").
 
-==== Related topics
+==== Пов'язані теми
 
 <<install-composer>>
 
-==== Additional resources
+==== Додаткові матеріали
 
-* https://www.drupal.org/node/147789[_Drupal.org_ community documentation page "Development tools"]
+* https://www.drupal.org/docs/develop/development-tools/development-tools-overview[_Drupal.org_ сторінка документації спільноти "Development tools overview"]
 
-* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ community documentation page "Using Composer with Drupal"]
+* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ сторінка документації спільноти "Using Composer with Drupal"]
 
-* https://en.wikipedia.org/wiki/Distributed_version_control[Wikipedia article "Distributed version control"]
+* https://en.wikipedia.org/wiki/Distributed_version_control[Wikipedia стаття "Distributed version control"]
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Some text adapted from
-https://www.drupal.org/node/991716["Introduction to Git"],
-copyright 2000-copyright_upper_year by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Написано і змінено https://www.drupal.org/u/batigolix[Boris Doesborg]
+та https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Деякий текст адаптований з
+https://www.drupal.org/node/991716["Introduction to Git "],
+авторські права 2000-copyright_upper_year за окремими учасниками
+https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
