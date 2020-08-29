@@ -1,170 +1,172 @@
 [[install-composer]]
-=== Using Composer to Download and Update Files
+=== Використання Composer і Git для завантаження файлів
 
 [role="summary"]
-How to use the Composer tool to manage the files in the core software and add-on
-modules and themes.
+Як використовувати інструмент Composer для управління файлами ядра
+і додавати модулі і теми.
 
-(((Composer tool,using to download the core software)))
-(((Composer tool,using to download modules)))
-(((Composer tool,using to download themes)))
-(((Core software,downloading)))
-(((Core software,updating)))
-(((Downloading,core software)))
-(((Downloading,theme)))
-(((Downloading,module)))
-(((Software dependencies,managing)))
-(((Module,downloading)))
-(((Module,updating)))
-(((Theme,downloading)))
-(((Theme,updating)))
-(((Contributed theme,downloading)))
-(((Contributed theme,updating)))
-(((Contributed module,downloading)))
-(((Contributed module,updating)))
-(((Security update,applying)))
+(((Інструмент Composer, використання для завантаження ядра)))
+(((Інструмент Composer, використання для завантаження модулів)))
+(((Інструмент Composer, використання для завантаження тем)))
+(((Ядро, завантаження)))
+(((Ядро, оновлення)))
+(((Завантаження, ядро)))
+(((Завантаження, тема)))
+(((Завантаження, модуль)))
+(((Залежності, управління)))
+(((Модуль, завантаження)))
+(((Модуль, оновлення)))
+(((Тема, завантаження)))
+(((Тема, оновлення)))
+(((Додаткова тема, завантаження)))
+(((Додаткова тема, оновлення)))
+(((Додатковий модуль, завантаження)))
+(((Додатковий модуль, оновлення)))
+(((Оновлення безпеки, застосування)))
 
-==== Goal
+==== Мета
 
-Use Composer to download or update files and dependencies in the core software,
-or in add-on modules and themes. Skip this topic if you are not using Composer.
+Використання Composer для завантаження та оновлення файлів і залежностей в ядрі,
+або доданих модулях чи темах. Пропустіть цю тему якщо ви не використовуєте Composer.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<install-tools>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-If you want to use Composer, it must be installed either on a local development
-server or your live site. See <<install-tools>>.
+Якщо ви хочете використовувати Composer, він повинен бути встановлений або на сервері вашої локальної розробки
+або на живому сайті. Дивіться <<install-tools>>.
 
-==== Steps
+==== Кроки
 
-If you are unable to install the Composer tool on your live server, you can
-follow the steps in any of the sections below on your local server, and then
-transfer any updated or added files to your live server. The recommended
-procedure is to make an archive or zip file of the new and changed directories,
-transfer the archive to your live server, delete the directories that have
-changed, and extract the archive. Make sure to check for updates and additions
-to the following files, in the root of your installation:
+Якщо ви не можете встановити інструмент Composer на свій сервер, ви можете
+слідувати кроками в будь-якому з розділів нижче на вашому локальному сервері, і потім
+перенести всі оновлені або додані файли на ваш сервер для живого сайту. Рекомендована
+процедура полягає в тому, щоб зробити архів або zip-файл з нових і змінених директорій,
+перенести архів на ваш сервер для живого сайту, видалити директорії, які були
+змінені, і розпакувати архів. Обов'язково перевіряйте наявність оновлень і доповнень
+в наступних файлах, в корені вашої установки:
 
 * _vendor_ directory
 * _autoload.php_
 * _composer.json_
 * _composer.lock_
 
-===== Using Composer to download the core software
+===== Використання Composer для завантаження ядра
 
-Follow these steps if you have not yet downloaded or installed the core
-software, and you want to use Composer to download both the core software and
-its external dependencies:
+Виконайте наступні дії, якщо ви ще не завантажили або що не встановили ядро,
+і ви хочете використовувати Composer для завантаження ядра і
+його зовнішніх залежностей:
 
-. At the command line, change to one level above the directory where you want
-the software to reside.
+. У командному рядку перейдіть на один рівень вище директорії, де ви хочете
+розташувати ядро.
 
-. Enter this command, where _mydir_ is the directory you want to create:
+. Введіть цю команду, де _mydir_ директорія, яку ви хочете створити для проекту:
 +
 ----
-composer create-project drupal-composer/drupal-project:8.x-dev mydir --no-interaction
+composer create-project drupal-composer/drupal-project: 8.x-dev mydir --no-interaction
 ----
 
-. The latest release of the core software will be downloaded to the _mydir/web_
-sub-directory; you'll also get some extra tools such as Drush and Drupal Console
-in the _mydir/vendor_ directory.
+. Останній випуск ядра буде встановлений в _mydir/web_
+піддиректорії; Ви отримаєте деякі додаткові інструменти, такі як Drush і Drupal Console
+в _mydir/vendor_ директорії.
 
-===== Converting a previously-downloaded site to use Composer
+===== Перетворення раніше завантаженого сайту в Composer
 
-If you previously downloaded the core software without using Composer, you may
-find later that you want or need to use Composer to manage and update
-dependencies. To convert your existing site to using Composer, enter the
-following commands at the root of your site:
+Якщо ви раніше завантажували ядро ​​без використання Composer, ви можете
+виявити, що ви хочете або повинні використовувати Composer для управління або поновлення
+залежностей. Щоб перенести ваш існуючий сайт на використання Composer, введіть
+наступні команди в корені вашого сайту:
 
 ----
 composer global require grasmash/composerize-drupal
 composer composerize-drupal --composer-root=. --drupal-root=.
 ----
 
-Note that this will also make modules, themes, and profiles that you previously
-downloaded without using Composer available to Composer, if they were placed in
-the _modules/contrib_, _themes/contrib_, and _profiles/contrib_ directories. If
-you placed them in another location, you might consider deleting
-previously-downloaded modules and themes, and then following the instructions
-below to re-download them using Composer.
+Зверніть увагу, що це також зробить модулі, теми і профілі, які ви раніше
+завантажували без використання Composer, доступними для Composer, якщо вони були поміщені в директоріях _modules/contrib_, _themes/contrib_, and _profiles/contrib_. Якщо
+ви розмістили їх в іншому місці, ви можете розглянути можливість видалити
+раніше встановлення модулі і теми, а потім слідувати інструкціям
+нижче, щоб повторно завантажити їх за допомогою Composer.
 
-===== Using Composer to download a module or theme
+===== Використання Composer для завантаження модулів або тем
 
-Follow these steps if you are already using Composer to manage the core
-software, and you want to use Composer to add a contributed module or theme with
-its dependencies.
+Виконайте наступні дії, якщо ви вже використовуєте Composer для управління ядром,
+і ви хочете використовувати Composer для додавання модуля або теми з
+їх залежностями.
 
-. Each time you want to add a contributed module or theme, determine the
-project's short name. This is the last part of the URL of the project page; for
-example, the Geofield module, at
-https://www.drupal.org/project/geofield, has short name +geofield+.
+. Кожен раз, коли ви хочете додати модуль або тему, визначте
+коротку назва проекту. Це остання частина URL сторінки проекту;
+наприклад, модуль Geofield, в
+https://www.drupal.org/project/geofield, має коротку назву +geofield+.
 
-. To download the contributed module or theme, along with its external
-dependencies, enter the following command at the root of your site (substituting
-the short name of the module or theme for +geofield+):
+. Щоб завантажити модуль або тему, разом з їх зовнішніми
+залежностями, введіть наступну команду в корені вашого сайту (змінивши
+коротку назва модуля або теми для +geofield+):
 +
 ----
 composer require drupal/geofield
 ----
 
-===== Using Composer to update previously-downloaded files
+===== Використання Composer для поновлення раніше завантажених файлів
 
-Follow these steps to update the files for the core software or a contributed
-module or theme, after having already started to manage dependencies with
+Виконайте наступні дії, щоб оновити файли ядра,
+модуля або теми, після того як почали керувати залежностями через
 Composer:
 
-. Determine the short name of the project you want to update. For the core
-software, it is _core_. For contributed modules and themes, it is the last
-part of the URL of the project page; for example, the Geofield module, at
-https://www.drupal.org/project/geofield, has short name +geofield+.
+. Визначте коротку назва проекту, який ви хочете оновити. Для ядра
+це _core_. Для модулів або тем, це остання
+частина URL сторінки проекту; наприклад, модуль Geofield, в
+https://www.drupal.org/project/geofield, має коротку назву +geofield+.
 
-. If you want to update to the latest stable release, use the following
-command, substituting the short name of the project to be updated for
+. Якщо ви хочете оновити до останньої стабільної версії, використовуйте наступні
+команди, підставляючи коротку назву проекту для поновлення
 +geofield+:
 +
 ----
 composer update drupal/geofield --with-dependencies
 ----
 
-. If you need a specific version, determine how to enter the version number you
-want to update to. For example, for version 8.x-1.7 of a contributed module, you
-would enter just the 1.7, and for the core software version 8.3.1, you would
-enter 8.3.1. Then enter the following command at the root of your site
-(substituting the short name of the project for +geofield+ and the correct
-version number):
+. Якщо вам потрібна конкретна версія, до номера якої версії ви
+хочете оновитися. Наприклад, для модуля версії 8.x-1.7, ви
+будете вводити тільки 1.7, а для версії ядра 8.3.1, ви будете
+вводити 8.3.1. Потім введіть наступну команду в корені вашого сайту
+(Підставивши коротку назву проекту замість +geofield+ і правильний
+номер версії):
 +
 ----
 composer require drupal/geofield:1.7
 ----
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-You can learn more about Composer commands by using Composer's built-in help
-system. For example, to learn more about the `create-project` command, enter
-`composer help create-project` in your command window.
+Ви можете дізнатися більше про команди Composer за допомогою системи довідки Composer.
+Наприклад, щоб дізнатися більше про команду `create-project`, введіть
+`Composer help create-project` в вашому командному рядку терміналу.
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Using Composer and Git to Download Files"]
 
-==== Additional resources
+==== Додаткові документи
 
-* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Using Composer to manage Drupal site dependencies"]
-* https://www.drupal.org/docs/8/update/update-core-via-composer["Update core via Composer"]
-* https://github.com/grasmash/composerize-drupal[Composerize Drupal project for converting a previously-downloaded site to using Composer]
+* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies[_Drupal.org_ сторінка документації спільноти "Використання Composer для управління залежностями сайту Drupal"]
+* https://www.drupal.org/docs/updating-drupal/update-drupal-core-via-composer[_Drupal.org_ сторінка документації спільноти "Оновлення ядра Drupal через Composer"]
+* https://www.drupal.org/docs/installing-drupal/add-composer-to-an-existing-site[_Drupal.org_ сторінка документації спільноти "Додавання Composer на існуючий сайт"]
 
-*Attributions*
+*Автори*
 
-Adapted by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], and
-https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me] from
-https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Using Composer to manage Drupal site dependencies"],
-copyright 2000-copyright_upper_year by the individual contributors to the
+Адаптовано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], і
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] із
+https://drupalize.me [Drupalize.Me] від
+https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Using Composer to manage Drupal site dependencies "],
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
