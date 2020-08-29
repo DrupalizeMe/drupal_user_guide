@@ -1,74 +1,70 @@
 [[preface-reporting]]
-=== Reporting Problems
+=== Повідомлення про помилку
+
 [role="summary"]
-How to report an issue with this guide (with detailed steps).
+Як відправити питання з цього керівництву (з описом кроків).
 
-==== Goal
+==== Мета
 
-Report a problem with this guide, such as:
+Ви можете повідомити про проблеми в цьому керівництві, такі як:
 
-* Information that is incorrect or does not follow best practices
-* Steps that do not work
-* Screenshots or text that doesn't match what you see on the screen
-* Unclear writing
-* Places where a table or screenshot would help clarify the text
-* Failure to define terminology
-* Missing knowledge prerequisites or site prerequisites for a topic
-* Typographical, spelling, grammar, or formatting errors
-* Broken links
+* Інформація не достовірна або не відповідає кращим практикам
+* Деякі пункти не працюють в описі дій
+* Скріншоти або текст не збігається з тим що ви бачите на своєму сайті
+* Незрозумілий опис
+* Місця де таблиця або скріншот допоможуть роз'яснити опис
+* Невизначення термінології
+* Відсутні необхідні знання в описі теми
+* Граматичні, пунктуаційні або мовні помилки, а також помилки форматування тексту
+* Поламані посилання
 
 // ==== Prerequisite knowledge
 
 // ==== Site prerequisites
 
-==== Steps
+==== Кроки
 
-. Make a note of the topic or topics that contain the problem you have found.
+. Зробіть позначку про тему або теми з поточною проблемою, яку ви знайшли.
 
-. Log in to https://www.drupal.org[_Drupal.org_] (you will need to create a user
-account if you do not already have one).
+. Авторизуйтесь на сайті https://www.drupal.org[_Drupal.org_] (вам необхідно буде створити новий обліковий запис
+якщо у вас ще немає аккаунта).
 
-. Visit the https://www.drupal.org/project/issues/user_guide[User Guide issues
-page on _Drupal.org_].
+. Зайти на сайт https://www.drupal.org/project/issues/user_guide[User Guide issues сторінка на _Drupal.org_].
 
-. Verify that the problem you found has not already been reported in another
-issue:
-  * If there are only a few open issues, scan the _Summary_ column to see if
-  any of their descriptions match the problem you found. You may also need to
-  read some of the issues to make sure, which you can do by clicking the links
-  in the _Summary_ column.
-  * If the open issue list is long, enter either a keyword related to the
-  problem you found or the title of the topic where the problem occurs in the
-  _Search for_ box, and click _Search_ to reduce the issue list. Then either
-  scan the summaries or read the issues to see if they match your problem.
+. Перевірте що проблема яку ви знайшли ще не описана в іншому тикеті:
+  * Якщо там тільки кілька відкритих тікетів, перегляньте _Summary_ колонку, може бути
+  рішення для проблеми вже знайдено. ви також можете
+  прочитати деякі тікети докладно, для цього натисніть на посилання
+  в колонці _Summary_.
+  * Якщо список відкритих тікетів довгий, введіть ключові слова що відносяться до
+  проблеми, яку ви знайшли або заголовок теми, де проблема трапилася, в
+  _Search for_ поле і натисніть _Search_, щоб скоротити список тікетів. Тоді також
+  перегляньте описи або прочитайте тікети, може бути там є тікет схожий на вашу проблему.
 
-. If you determine that your problem has not already been reported, click
-_Create a new issue_, and fill in the issue report as follows:
+. Якщо ви впевнені, що про вашу проблему ще ніхто не повідомив, тоді натисніть
+_Create a new issue_ і заповніть повідомлення про помилку як описано нижче:
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title | Short summary of the problem you found | Instructions in "Adding
-  a Content Type" do not work
-| Category | Type of issue being reported | Bug report
-| Version | Version of the guide you found the problem in | 8.x-0.x-dev
-| Issue summary | Details of the problem you found | In the "Adding a Content
-  Type" topic, in step 3, when I clicked _Save_, I got the following error
-  message: ...
+|Ім'я поля |пояснення |Зразок значення
+|Title |Короткий опис проблеми, яку ви виявили |Інструкції "Додавання Типу матеріалу" не працює
+|Category |Тип тікета, який буде створений |Bug report
+|Version |Версія керівництва в якому ви знайшли помилку |8.x-8.x-dev
+|Issue summary |Подробиці як відтворити помилку |У темі "Додавання Типу Матеріала", на кроці 3, коли я натискаю _Save_, я отримую таке повідомлення про помилку: ...
 |================================
 
-. Reread the _Title_ and _Issue summary_ you entered, and verify that the
-following information is included in your report:
-  * A complete description of the problem you found
-  * The name of the topic or topics where you found the problem
-  * The language you are reading the guide in (if not English)
-  * If you read the guide on a website, a link to the page or pages
-    with the problem
+. Прочитайте ще раз _Title_ і _Issue summary_, який ви ввели і перевірте що
+наступна інформація включена в ваше повідомлення:
+  * Повний опис проблеми
+  * Ім'я теми або тем де є ця помилка
+  * Мова на якій ви читали Керівництво (якщо це не англійська)
+  * Якщо ви читали Керівництво на сайті, посилання на сторінку або сторінки
+    де виникає проблема
 
-. Click _Save_ to create the issue.
+. Натисніть _Save_ щоб створити тікет.
 
-. Check back on the issue in a few days. If one of the project maintainers has
-asked for clarification, respond by adding a comment to the issue.
+. Перевірте ще раз тікет через кілька днів. Якщо розробники проекту
+запитали роз'яснень, дайте відповідь в коментарях до цього тікету.
 
 // ==== Expand your understanding
 
@@ -77,6 +73,9 @@ asked for clarification, respond by adding a comment to the issue.
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
