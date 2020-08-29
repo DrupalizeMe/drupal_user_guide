@@ -1,17 +1,17 @@
 [[install-prepare]]
-=== Preparing to Install
+=== Підготовка до встановлення
 
-[role="summary"]
-How to download the core software and satisfy prerequisites for installation.
+[role = "summary"]
+Як завантажити Drupal і задовольнити вимоги по встановленню.
 
-(((Downloading,core software)))
-(((Drupal core,preparing install)))
+(((Завантаження, основне програмне забезпечення)))
+(((Ядро Drupal, підготовка установки)))
 
-==== Goal
+==== Мета
 
-Download the core software, and handle any required prerequisites.
+Завантажити основне програмне забезпечення, і забезпечити всі необхідні умови.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<install-requirements>>
 
@@ -19,66 +19,69 @@ Download the core software, and handle any required prerequisites.
 
 * <<install-decide>>
 
-* How to install and configure server software (if installing on your own
-computer)
+* Як встановити і налаштувати серверне програмне забезпечення (при установці на Ваш особистий
+комп'ютер)
 
-* How to set up hosting for a generic web site
+* Як налаштувати хостинг для стандартного веб-сайту
 
-* How to create a database
+* Як створити базу даних
 
-==== Site prerequisites
+==== Вимоги сайту
 
-Server software must be installed on the computer where you plan to host your
-site. See <<install-requirements>>.
+Серверне програмне забезпечення повинно бути встановлено на комп'ютер, де ви плануєте розгорнути свій
+сайт. Дивіться <<install-requirements>>.
 
-Depending on how you plan to download the core software, you may need to install
-additional software tools first. See <<install-decide>> and <<install-tools>>.
+Залежно від того, як Ви плануєте завантажити основне програмне забезпечення, можливо буде потрібно спершу встановити
+додаткові інструменти до програмного забезпечення. Дивіться <<install-decide>> і <<install-tools>>.
 
-==== Steps
+==== Етапи
 
-. Choose methods for downloading and installing the core software, from those
-listed in <<install-decide>>. The rest of these instructions apply to the
-Composer and manual download options and the interactive installer; if you chose
-other options, the software should be installed for you.
+. Вибрати методи завантаження і установки основного програмного забезпечення, з
+перерахованих в <<install-decide>>. Решта інструкції відносяться до
+параметрів завантаження Composer та інтерактивної програми установки; якщо Ви вибрали
+інші опції, програмне забезпечення повинно бути встановлено для Вас.
 
-. Set up a URL and hosting for your site on the server. Verify that the hosting
-is working by putting a simple HTML file in the web root directory of the
-hosting, and visiting the URL for your site.
+. Налаштування URL і хостингу для вашого сайту на сервері. Підтвердіть, що хостинг
+працює, помістивши простий HTML-файл у веб-кореневий каталог хостингу,
+і відвідавши URL для Вашого сайту.
 
-. Create a database, along with a database user account with full access.
+. Створіть базу даних, разом з обліковим записом користувача бази даних з повним доступом.
 
-. Download the core software files to the web root directory, using the method
-you decided on. See <<install-decide>> for links to instructions.
+. Завантажте файли основного програмного забезпечення в кореневий каталог, використовуючи метод,
+який Ви вибрали. Дивіться <<install-decide>> для посилань на інструкції.
 
-==== Expand your understanding
+==== Розширте своє розуміння
 
-See <<install-run>> to run the interactive installer.
+Дивіться <<install-run>>, щоб запустити інтерактивну програму установки.
 
-Alternatively, you can use the following Drush command, from inside the
-directory that you downloaded the software to, where _DB_NAME_, _DB_USER_ and
-_DB_PASS_ are your database's credentials:
+Крім того, Ви можете використовувати наступну Drush-команду, з каталогу,
+в який Ви завантажили програмне забезпечення, де _DB_NAME_, _DB_USER_ і
+_DB_PASS_ є обліковими даними Вашої бази даних (database credentials):
 
 ----
-drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+drush site:install standard --db-url = 'mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
 ----
 
-// ==== Related concepts
+// ==== Пов'язані концепції
 
-==== Videos
+==== Відео
 
-// Video from Drupalize.Me.
+// Відео з Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Preparing to Install"]
 
-==== Additional resources
+==== Додаткові ресурси
 
 http://www.drush.org[Drush]
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Написано і відредаговано https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] із
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+і https://www.drupal.org/u/jojyja[Jojy Alphonso] із
 http://redcrackle.com[Red Crackle].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
