@@ -59,10 +59,10 @@
 
 . Скрольте до розділу _Downloads_ внизу сторінки.
 +
--
+--
 // Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/extend-manual-install-download.png["Завантаження файлів модулів"]
--
+--
 
 . Натисніть _tar.gz_ щоб завантажити файл на комп'ютер. Іншим способом, якщо у вас
 є доступ до командного рядка на вашому сервері (що працбє на Linux), ви можете скопіювати
@@ -83,13 +83,13 @@ wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
 модулів і тем, які вони створили. Ваша директорія _modules_ може виглядати як
 це:
 +
--
+--
 // Make custom and contrib directories under modules, and take a screenshot
 // showing the directory structure.
 image:images/extend-manual-install-directories.png["Пропонована структура каталогів для модулів", width = "174px"]
 
 // NOTE for Translators: you do not need to localize the 'custom' and 'contrib' directory names as they are more common in English.
--
+--
 
 . Якщо ви замінюєте існуючий модуль або тему на оновлену версію, переведіть
 сайт в режим обслуговування. Дивіться <<extend-maintenance>>.
