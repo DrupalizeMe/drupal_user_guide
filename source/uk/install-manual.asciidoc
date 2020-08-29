@@ -1,81 +1,81 @@
 [[install-manual]]
-=== Downloading the Core Software Manually
+=== Завантаження Drupal вручну
 
-[role="summary"]
-How to download the core software or a distribution from the web site.
+[role = "summary"]
+Як завантажити ядро Drupal або дистрибутив з веб-сайту.
 
-(((Downloading,core software)))
-(((Downloading,distribution)))
-(((Core software,downloading)))
-(((Distribution,downloading)))
+(((Завантаження, ядро Drupal)))
+(((Завантаження, дистрибутив)))
+(((Ядро Drupal, завантаження)))
+(((Дистрибутив, завантаження)))
 
-==== Goal
+==== Мета
 
-Download the core software or a distribution manually. Skip this topic if you
-are downloading using some other method.
+Завантажити ядро Drupal або дистрибутив вручну. Пропустіть цю тему якщо ви
+використовуєте інший метод завантаження.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<understanding-distributions>>
 * <<install-decide>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Кроки
 
-. Go to _https://www.drupal.org_ and navigate to _Build_ > _Download & Extend_
-in the top-level menu.
+. Зайдіть на _https://www.drupal.org_ і перейдіть до _Build_ > _Download & Extend_
+в верхньому меню.
 +
 --
-// Download Drupal area of https://www.drupal.org/download.
-image:images/install-prepare-downloads.png["Downloads page on _Drupal.org_",width="100%"]
+// Download Drupal area of ​​https://www.drupal.org/download.
+image:images/install-prepare-downloads.png["Сторінка завантаження _Drupal.org_",width="100%"]
 --
 
-. If you want to download just the core software, click the _Download Drupal
-zip_ or _download tar.gz_ link, and save the file to your local machine.
+. Якщо ви хочете просто завантажити Drupal ядро, натисніть на _Download Drupal
+zip_ або _download tar.gz_ посилання, а потім збережіть його на вашому комп'ютері.
 
-. If you want to download a distribution, click the _Distributions_ icon or
-link, choose a distribution from the list, click through to its project page,
-and click the link to download a zip or tar.gz file to your local machine. The
-link looks like this:
+. Якщо ви хочете скачати дистрибутив, натисніть на _Distributions_ іконку або
+посилання, виберіть дистрибутив зі списку, перейдіть на сторінку проекту,
+і натисніть на посилання завантаження zip або tar.gz файлу на ваш комп'ютер. Посилання
+виглядає так:
 +
 --
 // Reusing an image from the extend-module-install topic.
-image:images/extend-module-install-download.png["Finding a download URL"]
+image:images/extend-module-install-download.png["Пошук URL для завантаження"]
 --
 
-. Upload the downloaded file to your hosting account. Log in to the control
-panel and navigate to the _HTML_ directory. Save the file there.
+. Завантажте скачаний дистрибутив на ваш хостинг. Увійдіть в управління
+панеллю і перейдіть в _HTML_ директорію. Збережіть файл тут.
 
-. Uncompress the tar.gz or zip file, which will create a new directory. If you
-do not have terminal access, or your hosting server is not running Linux, your
-hosting control panel's file manager should provide a way to extract the
-files. If you have terminal access to your hosting server (running Linux), you
-can use a command like:
+. Розпакуйте tar.gz або zip файл, який створить нову директорію. Якщо у вас
+немає доступу до терміналу або ваш сервер хостингу не працює на Linux, ваш
+файловий менеджер панелі управління хостингом повинен надати спосіб розархівації
+файлів. Якщо у вас є термінальний доступ до вашого хостинг-сервера (працює на Linux), ви
+можете використовувати команду як:
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
 ----
 
-. Delete the compressed file from the server, unless your unpacking method
-already deleted it.
+. Видаліть архівний файл на сервері, якщо тільки ваш метод розпакування
+його ще не видалив.
 
-. Rename the directory or reconfigure your web hosting, so that the directory
-name matches the directory your web hosting is configured to use for your site.
+. Переіменуйте директорію або змініть конфігурацію веб-хостингу так, щоб ім'я директорії
+відповідало директорії вашого веб-хостингу, яка налаштована для використання вашого сайту.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-Once you have the software downloaded, you can install a temporary demo site
-(see <<install-decide>>) by running the following command from the top-level
-directory of the core software:
+Як тільки ви завантажили ядро ​​Drupal, ви можете встановити тимчасовий демонстраційний сайт
+(Дивіться <<install-decide>>) запустивши таку команду з вашої кореневої
+директорії ядра Drupal:
 
 ----
 php core/scripts/drupal quick-start standard
 ----
 
-The demo site will be installed, and your web browser should open to log in to
-the new site, which will only run as long as the PHP command is active. To learn
-more about this functionality, use its help command:
+Демо сайт буде встановлений, і ваш веб браузер повинен відкрити вхід на
+на новий сайт, який буде працювати тільки до тих пір, поки команда PHP активна. Щоб дізнатися
+більше про цю функціональность, використовуйте команду:
 
 ----
 php core/scripts/drupal quick-start --help
@@ -84,19 +84,19 @@ php core/scripts/drupal quick-start --help
 
 // ==== Related concepts
 
-==== Videos
-
-// Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/meVfH5mvdwI[title="Downloading the Core Software Manually"]
+// ==== Videos
 
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Написано і відредаговано https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] із
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+і https://www.drupal.org/u/jojyja[Jojy Alphonso] із
 http://redcrackle.com[Red Crackle].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
