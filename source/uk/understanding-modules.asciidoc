@@ -1,60 +1,60 @@
 [[understanding-modules]]
-=== Concept: Modules
+=== Основи: Модулі
 
 [role="summary"]
-Overview of modules and the functionality they can be used for.
+Огляд модулів і функціональності, для якої вони можуть бути використані.
 
-(((Module,overview)))
-(((Contributed module,overview)))
-(((Core module,overview)))
-(((Field module,overview)))
-(((Field UI module,overview)))
-(((Menu UI module,overview)))
-(((Node module,overview)))
-(((User module,overview)))
-(((Views module,overview)))
-(((Views UI module,overview)))
-(((Module,core)))
-(((Module,contributed)))
-(((Module,Field)))
-(((Module,Field UI)))
-(((Module,Menu UI)))
-(((Module,Node)))
-(((Module,User)))
-(((Module,Views)))
-(((Module,Views UI)))
+(((Модуль, огляд)))
+(((Додатковий модуль, огляд)))
+(((Модуль ядра Drupal, огляд)))
+(((Модуль Field, огляд)))
+(((Модуль Field UI, огляд)))
+(((Модуль Menu UI, огляд)))
+(((Модуль Node, огляд)))
+(((Для користувача модуль, огляд)))
+(((Модуль Views, огляд)))
+(((Модуль Views UI, огляд)))
+(((Модуль, ядро)))
+(((Модуль, додатковий)))
+(((Модуль, Field)))
+(((Модуль, Field UI)))
+(((Модуль, Field UI)))
+(((Модуль, Node)))
+(((Модуль, User)))
+(((Модуль, Views)))
+(((Модуль, Views UI)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<understanding-drupal>>
 
-==== What is a module?
+==== Що таке модуль?
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site
-features and adds functionality. You can turn the features and functionality on
-by _installing_ the module, and you can turn it off by _uninstalling_ the
-module; before uninstalling, you may need to remove data and configuration
-related to the feature or functionality. Each module that is installed adds to
-the time needed to generate pages on your site, so it is a good idea to
-uninstall modules that are not needed.
+Модуль - це набір PHP, JavaScript і CSS файлів, які розширюють можливості сайту
+і додають функціональність. Ви можете включити можливості і функціональність сайту
+за допомогою _установки_ модуля, і ви можете відключити їх за допомогою _видалення_
+модуля; перед видаленням, вам може знадобитися видалити дані і конфігурації,
+пов'язані з можливостями і функціональністю. Кожен встановлений модуль додає
+час, необхідний для створення сторінок на вашому сайті, так що це гарна ідея
+видаляти модулі, які не потрібні.
 
-The core download provides modules for functionality such as:
+Ядро Drupal надає модулі для:
 
-* Managing user accounts (the core User module)
+* Управління обліковими записами користувачів (модуль ядра User)
 
-* Managing basic content (the core Node module) and fields (the core Field and
-Field UI modules; there are also core modules providing field types)
+* Управління основним вмістом (модуль ядра Node) і полями (модуль Field і
+Field UI; є також інші модулі ядра, що забезпечують різні типи полів Email, Phone і т.д.)
 
-* Managing navigation menus (the core Menu UI module)
+* Управління меню (модуль ядра Menu UI)
 
-* Making lists, grids, and blocks from existing content (the core Views and
-Views UI modules)
+* Створення списків, таблиць і блоків з існуючого контенту (модуль ядра Views і
+Views UI)
 
-You can download additional _contributed modules_ from the
-https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], or create your own
-_custom modules_.
+Ви можете завантажити _додаткові модулі_ на
+https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], або створити власний
+_клієнтський модуль_.
 
-==== Related topics
+==== Схожі теми
 
 * <<understanding-themes>>
 * <<understanding-distributions>>
@@ -64,11 +64,13 @@ _custom modules_.
 * <<security-concept>>
 * <<security-update-module>>
 
-==== Additional resources
+==== Додаткові ресурси
 
-https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
+https://www.drupal.org/developing/modules[_Drupal.org_ сторінка документації спільноти "Module developer's guide"]
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://www.drupal.org/mazaltov[Mazaltov].
