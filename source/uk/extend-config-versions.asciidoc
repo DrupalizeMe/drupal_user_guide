@@ -1,94 +1,92 @@
 [[extend-config-versions]]
 
-=== Synchronizing Configuration Versions
+=== Синхронізація Версій Конфігурацій
 
 [role="summary"]
-How to synchronize the configuration between a development and live site using
-the core Configuration Manager module.
+Як синхронізувати конфігурацію між сайтом в розробці і діючим сайтом, використовуючи модуль ядра Drupal Configuration Manager.
 
-(((Configuration,synchronizing between development and live site)))
-(((Development site,synchronizing with live site)))
-(((Live site,synchronizing with development site)))
-(((Configuration Manager module,using to synchronize the configuration between a development and live site)))
-(((Module,Configuration Manager)))
+(((Конфігурація, синхронізація між розробляємим і діючим сайтом)))
+(((Розробка сайту, синхронізація з діючим сайтом)))
+(((Діючий сайт, синхронізація із технічно розробляємим сайтом)))
+(((Модуль Configuration Manager, який використовується для синхронізації конфігурації між сайтом в розробці і діючим сайтом)))
+(((Модуль, Configuration Manager)))
 
-==== Goal
+==== Мета
 
-Synchronize the configuration between a development and live site.
+Синхронізація конфігурації між розробляємим і діючим сайтом.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<understanding-data>>
 * <<install-prepare>>
 * <<install-dev-sites>>
 * <<install-dev-making>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* You must have a development copy of your production site. See
+* У вас повинна бути копія в розробці вашого діючого сайту. дивіться
 <<install-dev-making>>.
 
-* The core Configuration Manager module must be installed on both the
-development and production sites. See <<config-install>> for instructions on how
-to install core modules.
+* Модуль ядра Drupal Configuration Manager повинен бути встановлений як на сайті
+розробки, так і на діючому сайті. Дивіться <<config-install>> для інструкції як
+встановити модуль ядра.
 
-* You must have changed configuration on either the production or development
-site (the _source site_), and want to synchronize the changes to the other site
-(the _destination site_). As an example, you can develop a new content type,
-fields, and views on your development site, and when it is all working
-correctly, deploy the changes to the live site.
+* Повинно бути, ви змінили конфігурацію на діючому сайті або на сайті розробки(_вихідний сайт_), і хочете синхронізувати зміни з іншим сайтом
+(_кінцевий сайт_). Як приклад, ви можете розробити новий тип контенту,
+поля(fields), і види(views) на вашому сайті розробки, і коли це все працює
+правильно, ви хочете розгорнути зміни на кінцевому діючому сайті.
 
-* All configuration that should not be synchronized between the source and
-destination sites must be stored in configuration overrides in the
-_settings.php_ file rather than in the database. See <<install-dev-making>>.
+* Вся конфігурація, яка не повинна бути синхронізована між вихідним і
+кінцевим сайтами повинна зберігатися в конфігураційному перевизначеному _settings.php_ файлі, а не в базі даних. Дивіться <<install-dev-making>>.
 
-==== Steps
+==== Кроки
 
-. In the source site, in the _Manage_ administrative menu, navigate to
-_Configuration_ > _Development_ > _Configuration synchronization_ > _Export_
+. У вихідному сайті, в _Управління_ адміністративного меню, перейдіть в
+_Конфігурація_ > _Розробка_ > _Синхронізація конфігурації_ > _Експорт_
 (_admin/config/development/configuration/full/export_).
 
-. Click _Export_. Your site will generate an archive of the full site
-configuration. Save the file on your local computer.
+. Натисніть _Експорт_. Ваш сайт згенерує архів повної конфігурації
+сайту. Збережіть файл на вашому локальному комп'ютері.
 
-. In the destination site, in the _Manage_ administrative menu, navigate to
-_Configuration_ > _Development_ > _Configuration synchronization_ > _Import_
+. В кінцевому сайті, в _Управління_ адміністративного меню, Перейдемо в
+_Конфігурація_ > _Розробка_ > _Синхронізація конфігурації_ > _Імпорт_
 (_admin/config/development/configuration/full/import_).
 
-. Browse to find the downloaded configuration archive, and click _Upload_. Your
-configuration archive will be uploaded to the destination site, and you will be
-redirected to the configuration _Synchronize_ page
-(_admin/config/development/configuration_) with a message saying your files were
-uploaded.
+. Знайдіть завантажений архів конфігурації, і натисніть _Upload_. Ваш
+конфігураційний архів буде завантажений на кінцевий сайт, і ви будете
+перенаправлені на сторінку конфігурації _Синхронізувати_
+(_admin/config/development/configuration_) з повідомленням про те, що ваші файли були
+завантажені.
 
-. Verify that the differences shown on the page are what you expect. You may see
-configuration items that have been added, deleted, or changed; for changed
-items, you can click _View differences_ to see what the changes are.
+. Переконайтеся, що відмінності, показані на сторінці, відповідають вашим очікуванням. Ви можете побачити
+елементи конфігурації, які були додані, видалені або змінені; для змінених
+елементів, ви можете натиснути _Переглянути зміни_ щоб побачити різницю.
 
-. When you are satisfied, click _Import all_ to import the configuration
-changes.
+. Коли ви будете задоволені, натисніть _Імпортувати все_ щоб імпортувати зміни
+конфігурації.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-* If the changes you have made involve only one configuration item (such as one
-view), you can use the single configuration export/import feature to deploy
-the change between sites. See <<extend-deploy>>.
+* Якщо внесені зміни стосуються тільки одного елемента конфігурації (наприклад одного виду(view)), ви можете використовувати одну конфігурацію export/import можливість для розгортання
+змін між сайтами. Дивіться <<extend-deploy>>.
 
-* After the step where you export the full configuration from the source site,
-you might also want to unpack the archive and commit it to a version control
-system, such as Git, to track changes in your site configuration. See
+* Після кроку, на якому ви експортуєте повну конфігурацію з вихідного сайту,
+Ви можете розпакувати архів і зафіксувати це в системі контролю
+версій, такій як Git, що відстежує зміни в конфігурації вашого сайту. дивіться
 <<extend-git>>.
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
-// Video from Drupalize.Me.
+// Відео Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/dLUGQk8GKa0[title="Synchronizing Configuration Versions"]
 
-// ==== Additional resources
+// ==== Додаткові матеріали
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бонд
