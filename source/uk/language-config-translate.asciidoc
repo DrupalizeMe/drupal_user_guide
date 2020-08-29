@@ -1,127 +1,127 @@
 [[language-config-translate]]
-=== Translating Configuration
+=== Переклад Конфігурації
 
 [role="summary"]
-How to translate field labels in a view, and other configuration.
+Як перекласти заголовки полів у видів та в інших конфігураціях.
 
-(((Configuration,translating)))
-(((View,translating)))
-(((Label,translating)))
-(((Translating,configuration)))
-(((Translating,view)))
-(((Translating,label)))
+(((Конфігурація, переклад)))
+(((Подання, переклад)))
+(((Тема, переклад)))
+(((Переклад, переклад)))
+(((Переклад, видів)))
+(((Переклад, заголовок)))
 
-==== Goal
+==== Мета
 
-Translate the labels on the Recipes view page into Spanish.
+Перекласти заголовки у видів Рецепти на іспанську мову.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<language-concept>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* The core Configuration Translation module must be installed, and your site
-must have at least two languages. See <<language-add>>.
+* Модуль ядра Configuration Translation повинен бути встановлений і ваш сайт
+повинен мати принаймні дві мови. Дивіться <<language-add>>.
 
-* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
+* Вид Рецепти повиннен бути доданий. Дивіться <<views-create>> і <<views-duplicate>>.
 
-==== Steps
+==== Кроки
 
-The basic steps for translating any configuration on your site are:
+Основні кроки для перекладу будь-якої конфігурації на вашому сайті:
 
-. Locate the page where the configuration you want to translate is created or
-edited in the site's primary language. For example, to translate the site name,
-you need to find the page where you would edit the site name (see
+. Перейдіть на сторінку з конфігурацією, яку ви хочете перекласти, створену або
+відредаговану на головну мовою сайту. Наприклад, для перекладу імені сайту,
+ви повинні знайти сторінку, де редагується ім'я сайту (дивіться
 <<config-basic>>).
 
-. Find a link, tab, or button on the page that says "Translate" or something
-similar. Click this link, tab, or button.
+. Знайдіть посилання, вкладку або кнопку на сторінці, на якій написано "Переклад" або щось
+подібне. Натисніть це посилання, вкладку або кнопку.
 
-. Find a button that will let you add a translation in the desired language, and
-click this button.
+. Знайдіть кнопку, яка дозволяє вам додати переклад на потрібну мову та
+натисніть цю кнопку.
 
-. Enter the translation in the form, and save.
+. Введіть переклад в формі і збережіть.
 
-Most configuration is fairly straightforward and intuitive to edit in this
-manner. Views configuration is an exception, because the translation editing
-form is nothing like the view editing form, and it is complex and hierarchical
-rather than being a simple form with just a few fields. As an example of how to
-translate a view, here are the steps to translate the labels in the Recipes view
-to Spanish:
+Більшість конфігурацій інтуїтивно зрозумілі як їх редагувати таким
+чином. Конфігурація видів є винятком, тому що переклад форми
+редагування відрізняється від перегляду форми редагування і це складна і ієрархічна
+задача, в порівнянні з додаванням полів на просту форму. Так наприклад про те як
+переводити види, описано в цих кроках для перекладу заголовків в у виді Рецепти
+на іспанську мову:
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
+. В меню адміністратора _Управління_, перейдіть в _Структура_> _Види_
 (_admin/structure/views_).
 
-. Locate the Recipes view and click _Translate_ from the dropdown button.
+. Перейдіть на вид Рецепти і натисніть _Переклад_ в випадаючому списку-кнопці.
 
-. Click _Add_ in the row _Spanish_. The page _Add Spanish translation for
-Recipes view_ appears.
+. Натисніть _Додати_ в рядку _Іспанский_. З'явиться сторінка _Додати іспанський переклад для
+виду Рецепти_.
 
-. Under _Displays_ > _Master Display settings_ > _Recipes default display
-Options_, translate _Display title_ from "Recipes" to "Recetas".
+. У _Відображення_> _Master налаштування виду_> _Рецепти налаштування за замовчуванням
+для відображення_, перекласти _Мітку_ з "Рецепти" на "Recetas".
 
-. Under _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Exposed form_ > _Reset options_, translate _Submit button text_
-from "Apply" to "Applicar". The other buttons and labels in this section do not
-appear on the Recipes page or block, and do not need to be translated.
+. У _Відображення_> _Master налаштування виду_> _Рецепти налаштування за замовчуванням
+для відображення_> _Розкрита форма_> _Зкинути налаштування_, перекласти _Текст кнопки відправки_
+з "Застосувати" на "Applicar". Решта кнопок і заголовків в цьому розділі налаштувань не
+з'являються на сторінці і блоці Рецептів і не потребують перекладу.
 +
 --
 // Exposed form options for Recipes view.
-image:images/language-config-translate-recipes-view.png["Translate the Recipes view",width="100%"]
+image:images/language-config-translate-recipes-view.png["Переклад виду Рецепти", width="100%"]
 --
 
-. Under _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes
-using... Expose_, translate _Label_ from "Find recipes using..." to "Encontrar
-recetas usando...".
+. У _Відображення_> _Master налаштування виду_> _Рецепти налаштування за замовчуванням
+для відображення_> _Фільтри_> _(Пусто) ID Терміну таксономії_> _Знайти рецепти
+використовуючи... Розширити_, перекладіть _заголовок_ із "Знайти рецепти використовуючи..." на "Encontrar
+recetas usando... ".
 
-. Click _Save translation_.
+. Натисніть _Зберегти переклад_.
 
-. Navigate to the Recipes page and switch to Spanish using the Language switcher
-block. Verify that the labels have been translated.
+. Перейдіть на сторінку Рецепти і включіть іспанську мову використовуючи блок перемикача
+мов. Перевірте, що заголовки були перекладені.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-* Translate the block display title in the Recent recipes
-display settings section of the Recipes view.
+* Перекладіть заголовок відображення блоку Недавні рецепти
+в наоаштуваннях перекладу виду Рецепти.
 
-* Translate the page title in the Vendors view.
+* Перекладіть заголовок сторінки у виді Виробники.
 
-* Translate other configuration. Some examples of where to find the translation
-pages:
+* Перекладіть інші налаштування. Деякі приклади того, де знайти сторінки для
+перекладів:
 
-** To translate the site name, navigate in the _Manage_ administrative menu to
-_Configuration_ > _System_ > _Basic site settings_ > _Translate system
-information_ (_admin/config/system/site-information/translate_).
+** Для перекладу імені сайту, перейдіть в меню адміністратора _Управління_ в
+_Конфігурації_ > _Система_> _Основні налаштування сайту_> _Перевод інформації
+про систему_ (_admin/config/system/site-information/translate_).
 
-** To translate the contact form, navigate in the _Manage_ administrative menu
-to _Structure_ > _Contact forms_ (_admin/structure/contact_). Click _Translate_
-in the dropdown button in the _Website feedback_ row.
+** Для перекладу контактної форми, перейдіть в меню адміністратора _Управління_
+в _Структура_ > _Контактні форми_ (_admin/structure/contact_). натисніть _Переклад_
+у випадаючому списку-кнопці в рядку _Зворотній зв'язок із сайтом_.
 
-** To translate the name of a menu, navigate in the _Manage_ administrative menu
-to _Structure_ > _Menus_ (_admin/structure/menu_). Click _Translate_ in the
-dropdown button for the menu whose name you want to translate.
+** Для перекладу імені меню, перейдіть в меню адміністратора _Управління_
+в _Структура_ > _Меню_ (_admin/structure/menu_). Натисніть _Переклад_ у
+випадаючому списку-кнопці для необхідного меню, яке ви хочете перекласти.
 
-** Menu items within a menu are considered to be content (not configuration);
-see <<language-content-config>> to enable translation. Once translation is
-enabled, navigate in the _Manage_ administrative menu to _Structure_ > _Menus_
-(_admin/structure/menu_). Click _Edit menu_ in the dropdown button for the menu
-whose links you want to translate. Click _Translate_ in the dropdown button for
-the link you want to translate.
+** Для перекладу посилань в меню, які є контентом (не конфігурацією);
+дивіться <<language-content-config>> для включення функціоналу перекладу. Коли переклад
+включений, перейдіть в меню адміністратора _Управління_ в _Структура_ > _Меню_
+(_admin/structure/menu_). Натисніть _Редагувати меню_ в випадаючому списку-кнопці для меню,
+яке ви хочете перекласти. Натисніть _Переклад_ в випадаючому списку-кнопці для
+посилання, яку ви хочете перекласти.
 
-** To translate field labels on a content type, navigate in the _Manage_
-administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_). Click _Manage fields_ in the dropdown button for the
-content type whose field labels you want to edit. Click _Translate_ in the
-dropdown button for the field whose label you want to edit.
+** Для перекладу заголовка поля в типі матеріалу, перейдіть в меню адміністратора _Управління_
+в _Структура_ > _Типи матеріалів_
+(_admin/structure/types_). Натисніть _Управління полями_ у випадаючому списку-кнопці для
+типу матеріалу заголовки полів, які ви хочете редагувати. Натисніть _Переклад_ у
+випадаючому списку-кнопці для поля, заголовок якого ви хочете перекласти.
 
-* Translate content. See <<language-content-translate>>.
+* Для перекладу контенту дивіться <<language-content-translate>>.
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/j2GZdJIOo_I[title="Translating Configuration"]
@@ -129,7 +129,9 @@ video::https://www.youtube-nocookie.com/embed/j2GZdJIOo_I[title="Translating Con
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
+Написано і змінено https://www.drupal.org/u/batigolix[Boris Doesborg] і
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://www.drupal.org/mazaltov[Mazaltov].
