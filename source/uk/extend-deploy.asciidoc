@@ -1,115 +1,115 @@
 [[extend-deploy]]
 
-=== Deploying New Site Features
+=== Розгортання нових функцій сайту
 
 [role="summary"]
-How to copy a view created in a local development site to a production site.
+Як скопіювати вид, створений на локальному сайті розробки, на робочий сайт.
 
-(((Feature,deploying)))
-(((Configuration,deploying)))
-(((Feature,copying)))
-(((Configuration,copying)))
+(((Функція, розгортання)))
+(((Конфігурація, розгортання)))
+(((Функція, копіювання)))
+(((Конфігурація, копіювання)))
 
-==== Goal
+==== Мета
 
-Copy a view that you have created in a local development site to the production
-site.
+Копіювання виду, який ви створили на локальному сайті розробки, в робочий
+сайт.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<install-dev-making>>
 * <<extend-config-versions>>
 * <<install-dev-sites>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* The core Configuration Manager module must be installed in both the
-development and production sites. See <<config-install>> for
-instructions on installing core modules.
+* Модуль ядра Drupal Configuration Manager повинен бути встановлений як на сайт
+розробки, так і на робочий. Дивіться <<config-install>> для
+інструкцій по установці модуля ядра Drupal.
 
-* The Vendor content type must exist in both the development and production
-sites, with the same fields. See <<structure-content-type>>.
+* Попередньо тип матеріалу повинен бути як на сайті розробки, так і на робочому
+сайтах, з тими ж полями. Дивіться <<structure-content-type>>.
 
-* The Vendors view must exist in the development site but not the production
-site. See <<views-create>>.
+* Встановлений вид має бути на сайті розробки, але не на робочому
+сайті. Дивіться <<views-create>>.
 
-==== Steps
+==== Кроки
 
-. Open the local development site.
+. Відкрийте сайт локальної розробки.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Configuration synchronization_ > _Export_ > _Single item_
+. В _Управління_ адміністративного меню, перейдіть в _Конфігурація_ > _Розробка_ > _Синхронізація конфігурації_ > _Експорт_ > _Один елемент_
 (_admin/config/development/configuration/single/export_).
-The _Single export_ page appears.
+З'явиться сторінка _Одиночний експорт_.
 
-. Select _View_ from the _Configuration type_ list.
+. Виберіть _Вид_ зі списку _Тип конфігурації_.
 
-. Select Vendors from the _Configuration name_ list. The configuration
-appears in the textarea.
+. Виберіть створений вид зі списку _Імя конфігурації _. конфігурація
+з'явиться в текстовій області.
 
-. Copy the configuration from the textarea.
+. Скопіюйте конфігурацію з текстової області.
 +
---
+-
 // Single configuration export of the Vendors view from
 // admin/config/development/configuration/single/export.
 image:images/extend-deploy-export-single.png["Export a single item"]
---
+-
 
-. Open the production site.
+. Відкрийте робочий сайт.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Configuration synchronization_ > _Import_ > _Single item_
-(_admin/config/development/configuration_). The _Import_ page appears.
+. В _Управління_ адміністративного меню, перейдіть в _Конфігурація_ > _Розробка_ > _Синхронізація конфігурації_ > _Імпорт_ > _Один елемент_
+(_admin/config/development/configuration_). З'явиться сторінка _Одиночний імпорт_.
 
-. Select _View_ from the _Configuration type_ list.
+. Виберіть _Вид_ зі списку _Тип конфігурації_.
 
-. Paste the configuration in the textarea.
+. Вставте конфігурацію в текстове поле.
 
-. Click _Import_. The confirmation page appears.
+. Натисніть _Імпортувати_. З'явиться сторінка підтвердження.
 
-. Click _Confirm_.
+. Натисніть _Подтвердити_.
 
-. Verify that the view was imported by navigating in the _Manage_
-administrative menu to _Structure_ > _Views_.
+. Переконайтеся, що подання було імпортовано, перейшовши в _Управління_
+адміністративного меню _Структура_ > _Види_.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-The steps in this topic show how to export and import a single configuration
-item. However, often if you develop functionality on a development website
-and want to transfer it to your production site, you will need to transfer
-multiple configuration items. For instance, if you developed a new content
-type with fields, you would need to transfer several configuration items for
-each field, one for the content type itself, and possibly multiple view mode
-and form mode items, and they would have to be transferred in the right order.
-Getting this right can be both tedious and difficult.
+Кроки в цьому розділі показують, як експортувати та імпортувати один елемент
+конфігурації. Однак часто, якщо ви розробляєте функціональність на сайті розробки
+і хочете перенести на робочий сайт, вам потрібно буде перенести
+кілька елементів конфігурації. Наприклад, якщо ви розробили новий тип
+матеріалу з полями, необхідно перенести кілька елементів конфігурації для
+кожного поля, один для самого типу матеріалу, і можливо режими різного відображення матеріалу
+та елементи режиму форми додавання/редагування матеріалу, і вони повинні бути перенесені в правильному порядку.
+Зробити все правильно може бути утомливо і важко.
 
-As an alternative, you can export and import the complete configuration of the
-site. For this, you would need a local development site that is a clone
-of the production site (see <<install-dev-making>>), and then you can follow the
-steps in <<extend-config-versions>> to synchronize configuration between
-development and production sites.
+В якості альтернативи, ви можете експортувати і імпортувати повну конфігурацію
+сайту. Для цього вам знадобиться локальний сайт розробки, який є клоном
+робочого сайту (дивіться <<install-dev-making>>), і тоді ви зможете слідувати
+кроками в <<extend-config-versions>> для синхронізації конфігурацій між
+сайтом розробки і робочим.
 
-Another alternative is to use the
-https://www.drupal.org/project/features[contributed Features module], which
-allows exporting and importing bundled functionality (for example, all the
-configuration for a photo gallery).
+Іншою альтернативою є використання
+https://www.drupal.org/project/features[contributed Features module], який
+дозволяє експортувати та імпортувати додаткові функціональні можливості (наприклад, всі
+конфігурації фотогалереї).
 
-Finally, if you do not see the effect of these changes in your site, you might
-need to clear the cache. See <<prevent-cache-clear>>.
+Нарешті, якщо ви не бачите наслідки змін після імпорту конфігурацій на вашому сайті, вам потрібно
+очистити кеш. Дивіться <<prevent-cache-clear>>.
 
-==== Related concepts
+==== Пов'язані поняття
 
 * <<install-dev-sites>>
 * <<planning-workflow>>
 
-==== Videos
+==== Відео
 
-// Video from Drupalize.Me.
+// Відео на Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/hysqVDIfLTA[title="Deploying New Site Features"]
 
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Написано https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://www.drupal.org/mazaltov[Mazaltov].
