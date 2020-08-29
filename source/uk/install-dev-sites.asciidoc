@@ -1,57 +1,55 @@
 [[install-dev-sites]]
 
-=== Concept: Development Sites
+=== Основи: Сайти для розробки
 
-[role="summary"]
-Overview of development sites with an example deployment workflow for site
-building.
+[role = "summary"]
+Огляд використання сайтів для розробки з прикладом робочого процесу для створення сайту.
 
-(((Development site,overview)))
-(((Deployment workflow,overview)))
-(((Staging site,overview)))
-(((Installing,development site)))
-(((Installing,staging site)))
+(((Сайт для розробки, огляд)))
+(((Робочий процес розгортання, огляд)))
+(((Тестовий сайт, огляд)))
+(((Установка, сайт для розробки)))
+(((Установка, тестовий сайт)))
 
-//==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
-==== What are Development Sites?
+==== Що таке сайт для розробки?
 
-Development Sites are different copies of the same site used for developing,
-updating, and testing a site without risking the integrity of the live site.
+Сайти для розробки це різні копії одного і того ж сайту що використовуються для розробки,
+оновлення та тестування сайту без ризику внесення змін на живий сайт.
 
-An example deployment workflow for site building will usually include the sites
-mentioned below:
+Приклад робочого процесу з розгортанням сайтів для розробки зазвичай включає сайти
+названі наступним чином:
 
-Local environment::
-  The development process starts with developers working on new features, bug
-  fixes, theming, and configuration in their local environment.
+Локальне оточення::
+  Процес розробки починається з того, що розробники працюють над новим функціаналом, правкою
+  багів, темізацією і конфігурацією на їх локальних сайтах.
 
-Development site::
-  Developers push the changes they've been working on to the development
-  site. For a team of more than one developer, version control is usually
-  used. Git is a version control system that tracks your files for any
-  changes. You can then commit those changes to a repository. Using Git allows
-  team members to work on the same site without overriding each other's work. It
-  also makes it possible to easily roll back to previous stages of the
-  development.
+Дев сайт::
+  Розробники відправляють зміни, які вони робили на дев
+  сайт. Для команди з більш ніж одного розробника, використовується зазвичай контроль версій.
+  Git - це система контролю версій, яка відстежує, які зміни відбулися у всіх ваших
+  файлах. Ви можете закомітити ці зміни в ваш репозиторій. Використання Git дозволяє
+  членам команди працювати на одному і тому ж сайті без перезапису роботи кожного. це
+  також робить можливим легко відкотити до попереднього стану
+  перед внесеними змінами.
 
-Staging site::
-  The staging site can be used for testing, or presenting the changes to the
-  client for approval. QA (Quality Assurance) and UAT (User Acceptance Testing)
-  are most often carried out on the staging site. It is recommended to have live
-  content on both the development and staging sites, so that you can test how
-  the new features will work with the existing content.
+Тестовий сайт::
+  Тестовий сайт може бути також використаний для тестування або перенесення змін для
+  підтвердження клієнтом. QA (Quality Assurance, Контроль якості) і UAT (User Acceptance Testing, Тестування користувачами)
+  найчастіше проводяться саме на тестовому сайті. Рекомендується мати той же контент
+  що і на живому сайті на дев і тестових сайтах, щоб ви могли тестувати як
+  новий функціонал буде працювати з існуючим контентом.
 
-Production site::
-  The live site on the web available to visitors. It contains new features that
-  have been proven safe to go live.
+Живий сайт::
+  Живий сайт викладений в Інтернет і доступний користувачам. Він містить нові зміни, які
+  підтверджені як безпечні для перенесення на живий сайт.
 
-Based on the project's size, scope, requirements, or stakeholders, stages from
-the above workflow can be removed, or additional stages can be added. For
-example, a testing site before staging can be added to separate testing and user
-acceptance processes.
+Залежно від розмірів проекту, обсягу робіт, вимог і зацікавлених сторін, етапи з
+вищеописаного процесу можуть бути видалені або додані додаткові етапи. Наприклад,
+тестування сайту перед перенесенням правок на тестовий сайт, може бути додано окреме тестування функціоналу та інтерфейсу користувача.
 
-==== Related topics
+==== Пов'язані теми
 
 * <<install-dev-making>>
 * <<planning-workflow>>
@@ -59,8 +57,11 @@ acceptance processes.
 
 // ==== Additional resources
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/dianalakatos[Diána Lakatos],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Написано і відредаговано https://www.drupal.org/u/dianalakatos[Diána Lakatos],
+і https://www.drupal.org/u/jojyja[Jojy Alphonso] із
 http://redcrackle.com[Red Crackle].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
