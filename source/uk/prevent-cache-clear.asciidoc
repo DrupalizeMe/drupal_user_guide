@@ -1,79 +1,79 @@
 [[prevent-cache-clear]]
 
-=== Clearing the Cache
+=== Очищення кешу
 
 [role="summary"]
-How to clear the cache using Drush or the user interface.
+Як почистити кеш використовуючи Drush і призначений для користувача інтерфейс.
 
-(((Cache,clearing)))
-(((Cache,rebuilding)))
+(((Кеш, очищення)))
+(((Кеш, перестроювання)))
 
-==== Goal
+==== Мета
 
-Clear or rebuild your site's internal caches to ensure they are up-to-date with
-the most recent data, using the user interface or Drush.
+Очистити або перебудувати внутрішній кеш вашого сайту, щоб бути впевненим, що велика частина нових даних
+ актуальна і виводяться на сайті, використовуючи при цьому інтерфейс користувача або Drush.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<prevent-cache>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-If you want to use Drush to clear the cache, Drush must be installed. See
+Якщо ви хочете використовувати Drush для очищення кешу, то Drush повинен бути встановлений. Дивіться
 <<install-tools>>.
 
-==== Steps
+==== Кроки
 
-You can use the administrative interface or Drush to clear the cache. You can
-also use the rebuild script or Drush to do a more complete cache rebuild.
+Ви можете використовувати інтерфейс адміністратора або Drush для очищення кеша. Ви можете
+також використовувати скрипти для скидання кешу або Drush для більш повного оновлення кеша.
 
-===== Using the administrative interface to clear the cache
+===== Використання адміністративного інтерфейсу для очищення кеша
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Performance_ (_admin/config/development/performance_). If you
-cannot access this page in the administrative interface, use one of the other
-methods to clear or rebuild the cache.
+. У _Керування_ меню адміністратора, перейдіть на _Конфігурація_ >
+_Розробка_ > _Швидкодія_ (_admin/config/development/performance_). Якщо ви не
+маєте доступ до цієї сторінки в інтерфейсі адміністратора, використовуйте один з інших
+методів очищення і перестроювання кеша.
 
-. Click _Clear all caches_.
+. Натисніть _Очистити всі кеші_.
 
-. A message saying the cache has been cleared appears at the top of
-the page.
+. Повідомлення про успішне очищення кеша з'явиться зверху
+сторінки.
 
-. If this doesn't resolve the problem that caused you to want to clear the
-cache, try a rebuild instead.
+. Якщо це не допомогло вирішити проблему, спробуйте замість очищення
+кешу, перебудувати кеш.
 
-===== Using the rebuild script
+===== Використання скрипт перестроювання кеша
 
-. Open _settings.php_ (_/sites/default/settings.php_) in any plain text
-editor. Add this line to the end of the file and save it:
+. Відкрийте _settings.php_ (_/sites/default/settings.php_) в будь-якому текстовому
+редакторі. Додайте наступний рядок в кінці файлу і збережіть його:
 +
 ----
-$settings['rebuild_access'] = TRUE;
+$settings['rebuild_access']=TRUE;
 ----
 
-. Visit _http://www.example.com/core/rebuild.php_ in your browser (where
-_www.example.com_ is your site's URL). After a short pause, you should be
-redirected to the home page of your site, and the cache should be rebuilt.
+. Зайдіть _http://www.example.com/core/rebuild.php_ в вашому браузері (де
+_www.example.com_ адреса вашого сайту). Після короткої паузи, ви будете
+перенаправлені на головну сторінку вашого сайту і кеш буде перебудований.
 
-. Open _settings.php_ (_/sites/default/settings.php_) in a text editor. Find the
-line you added with _$settings['rebuild_access']_, remove this line, and save
-the file.
+. Відкрийте _settings.php_ (_/sites/default/settings.php_) в текстовому редакторі. Знайдіть рядок,
+яку ви додали до цього з _$settings['rebuild_access']_, видаліть її та збережіть
+файл.
 
-===== Using Drush to rebuild or clear the cache
+===== Використання Drush для перестроювання або очищення кеша
 
-You can use one of two commands:
+Ви можете використовувати одну з двох команд:
 
-* Use the command `drush cache:rebuild` to clear and rebuild all cached data
-for a site. After running this command, you will see the output message "Cache
-rebuild complete."
+* Використовуйте команду `drush cache:rebuild` для очищення і перестроювання всіх даних кеша
+на сайті. Після запуску цієї команди, ви побачите повідомлення "Cache
+rebuild complete. "
 
-* Use the command `drush cache:clear` to see a list of individual caches and
-then choose the specific cache you would like to clear. Running this command
-should produce output like the following:
+* Використовуйте команду `drush cache:clear`, щоб подивитися список окремих кешів і потім
+виберіть потрібний кеш, який ви б хотіли очистити. Ця процедура виглядає
+приблизно таким чином:
 +
 ----
-> drush cache:clear
+> Drush cache:clear
 Enter a number to choose which cache to clear.
  [0]  :  Cancel
  [1]  :  drush
@@ -86,30 +86,32 @@ Enter a number to choose which cache to clear.
  [8]  :  render
  [9]  :  views
 ----
-Choose a cache to clear by entering the number associated with that cache. Press
-"Enter" to continue.
+Виберіть який кеш ви хочете очистити через введення числа для цього кеша. Натисніть
+"Enter" щоб продовжити.
 
 
-//==== Expand your understanding
+// ==== Expand your understanding
 
 
-//==== Related concepts
+// ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Clearing the Cache"]
 
-==== Additional resources
+==== Додаткові матеріали
 
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ community documentation page "Clearing or rebuilding Drupal's cache"]
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ сторінка документації спільноти "Clearing or rebuilding Drupal's cache"]
 
 
-*Attributions*
+*Автори*
 
-Adapted and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar]
-and https://www.drupal.org/u/jerseycheese[Jack Haas] from
+Адаптовано і змінено https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+і https://www.drupal.org/u/jerseycheese[Jack Haas] із
 https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Clearing or
-rebuilding Drupal's cache"],
-copyright 2000-copyright_upper_year by the individual contributors to the
+rebuilding Drupal's cache "],
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
