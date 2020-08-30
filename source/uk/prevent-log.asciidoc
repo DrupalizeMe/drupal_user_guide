@@ -1,40 +1,42 @@
 [[prevent-log]]
 
-=== Concept: Log
+=== Основи: Логи
 
 [role="summary"]
-Overview of logs and where to find recent log messages.
+Огляд логів і де знайти останні записи в логах.
 
-(((Log,overview)))
-(((Report,Recent log messages)))
-(((Error,log report)))
-(((Troubleshooting,log report)))
-(((Performance,log report)))
+(((Логи, огляд)))
+(((Логи, Останні записи журналу)))
+(((Помилки, Звіт про помилки)))
+(((Пошук помилок, Звіт про помилки)))
+(((Продуктивність, Звіт про помилки)))
 
-//==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
-==== What is a Log?
+==== Що таке Логи?
 
-Your site captures system events in a log to be reviewed by an authorized
-individual at a later time. The log is a list of recorded events
-containing usage data, performance data, errors, warnings, and operational
-information. It is vital to check the log on a regular basis as it is often the
-only way to tell what is going on.
+Ваш сайт зберігає системні повідомлення в логах, які можуть бути переглянуті авторизованими
+користувачами пізніше. Логи це список записаних подій,
+містять використовувані дані, дані про продуктивність, помилки, повідомлення та операційну
+інформацію. Це вкрай важливо перевіряти логи на регулярній основі, оскільки часто
+це єдиний шлях зрозуміти що відбувається на сайті.
 
-You can find your site's recent log messages in the _Manage_ administrative menu
-by navigating to _Reports_ > _Recent log messages_ (_admin/reports/dblog_).
+Ви можете знайти останні повідомлення лога на сторінці _Керування_ меню адміністратора
+перейшовши на _Звіти_> _Останні записи журналу_ (_admin/reports/dblog_).
 
 // Recent log messages report (admin/reports/dblog).
-image:images/prevent-log.png["Recent log messages of a basic site",width="100%"]
+image:images/prevent-log.png["Останні записи журналу сайту", width="100%"]
 
-//==== Related topics
+// ==== Related topics
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-from https://www.drupal.org/docs/7/monitoring-a-site/reports["Reports"]
-copyright 2000-copyright_upper_year by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+Адаптовано https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+з https://www.drupal.org/docs/7/monitoring-a-site/reports["Reports "]
+авторські права 2000-copyright_upper_year за окремими учасниками
+https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
