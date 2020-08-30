@@ -1,67 +1,66 @@
 [[planning-modular]]
-=== Concept: Modular Content
+=== Основи: Модульний Контент
 
-[role="summary"]
-Overview of modular content and how content in a page can be sourced from other
-content items.
+[Role = "summary"]
+Огляд модульного контенту і як контент на сторінці може бути взятий з іншого контенту сайту.
 
-(((Content,modular)))
-(((Modular content,overview)))
-(((Page,composite)))
-(((Composite page,creating with modular content)))
-(((View,and modular content)))
-(((Views module,overview)))
-
-==== Prerequisite knowledge
-
-* <<planning-data-types>>
-* <<planning-layout>>
-
-==== What is modular content?
-
-Given that the content of your site is stored in a database, it is desirable to
-make the content _modular_, meaning that certain pages on your site, rather than
-being edited as a whole page, are instead generated automatically from other
-content items. For instance, in the farmers market site scenario, you might
-create individual content items for recipes. If the recipe content items have a
-field that keeps track of ingredients, then your site could include a composite
-page that would list recipes, and allow visitors to search for a recipe that
-contained some particular ingredient they had bought at the market.
-
-Smaller sections of pages can also be generated as composites. For instance,
-recipe content items could have a field that keeps track of which vendor
-submitted the recipe (see <<structure-reference-fields>>), with the vendor
-details edited in separate vendor content items. This would allow you to do the
-following on your site:
-
-* On each Recipe page, there could be an area that displays some information
-about the vendor that submitted the recipe, such as their name and market stall
-number.
-
-* Each vendor page could have a section that lists the recipes they have
-submitted.
-
-The key idea is that each piece of information is only edited in one place.
-When vendor information is updated, all recipe pages that display that vendor
-information are automatically updated; when a recipe is submitted by a vendor,
-it is automatically displayed on the vendor page. The core Views module is the
-usual way to use modular content to create composite pages and page sections;
-see <<views-concept>> for more information. Also, _view modes_ are useful for
-defining different ways to display each content item; see
-<<structure-view-modes>> for more information.
-
-==== Related topics
-
-* <<planning-structure>>
-* <<structure-content-type>>
-* <<structure-fields>>
-* <<structure-reference-fields>>
-* <<structure-view-modes>>
-* <<views-concept>>
-
-// ==== Additional resources
+(((Контент, модульний)))
+(((Модульний контент, огляд)))
+(((Сторінка, композит)))
+(((Складання сторінки, створення сторінки через модульний контент)))
+(((Композитна сторінка, створення з модульним контентом)))
+(((Views модуль, огляд)))
 
 
-*Attributions*
+==== Необхідні знання
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+* << planning-data-types >>
+* << planning-layout >>
+
+==== Що таке модульний контент?
+
+З огляду на, що контент вашого сайту зберігається в базі даних, бажано
+зробити контент _діскретний_, що означає певні сторінки на вашому сайті,
+не редагуються як ціла сторінка, замість цього автоматично генеруються з інших
+елементів контенту. Наприклад, в сценарії сайту фермерського ринку ви можете
+створити окремі елементи контенту для рецептів. Якщо в елементах вмісту рецепта є
+поле, в якому відслідковуються інгредієнти, то на вашому сайті може бути складова
+сторінка зі списком рецептів, що дозволяє відвідувачам шукати рецепт, який
+містив якийсь конкретний інгредієнт, який вони купили на ринку.
+
+Невеликі розділи сторінок також можуть бути згенеровані як композити. наприклад,
+елементи вмісту рецепта можуть мати поле, яке відстежує, який постачальник
+відправив рецепт (див. << structure-reference-fields >>), при цьому відомості про постачальника
+редагуються в окремих елементах вмісту постачальника. Це дозволить вам зробити
+наступне на вашому сайті:
+
+* На кожній сторінці рецепта може бути область, яка відображає деяку інформацію
+ про продавця, який представив рецепт, наприклад, його ім'я і номер ринкового прилавка.
+
+* На кожній сторінці постачальника може бути розділ, в якому перераховані рецепти,
+які вони відправили.
+
+Основна ідея полягає в тому, що кожен фрагмент інформації редагується тільки в одному місці.
+Коли інформація про продавця оновлюється, всі сторінки рецептів, які відображатимуть цю інформацію про продавця,
+автоматично оновлюються; коли рецепт відправляється постачальником,
+він автоматично відображається на сторінці постачальника. Основний модуль Views -
+це звичайний спосіб використання модульного контенту для створення складових сторінок і розділів сторінок;
+ см. << views-concept >> для отримання додаткової інформації. Крім того, _віди отображеній_ корисні для
+визначення різних способів відображення кожного елемента контенту; см.
+<< structure-view-modes >> для отримання додаткової інформації.
+
+==== схожі теми
+
+* << planning-structure >>
+* << structure-content-type >>
+* << structure-fields >>
+* << structure-reference-fields >>
+* << structure-view-modes >>
+* << views-concept >>
+
+// ==== Додаткові ресурси
+
+
+* Автори *
+
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
