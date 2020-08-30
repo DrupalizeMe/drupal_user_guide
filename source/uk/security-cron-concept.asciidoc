@@ -1,44 +1,46 @@
 [[security-cron-concept]]
 
-=== Concept: Cron
+=== Основи: Крон
 
 [role="summary"]
-Overview of cron and how it is different from Unix cron.
+Огляд cron і чим він відрізняється від Unix cron.
 
-(((Cron task,overview)))
-(((Automated Cron module,overview)))
+(((Завдання Cron, огляд)))
+(((Автоматизований модуль Cron, огляд)))
 
-//==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
-==== What are cron tasks?
+==== Що таке cron завдання?
 
-To ensure that your site and its modules continue to function well, a group
-of administrative operations should be run periodically. These operations are
-called _cron_ tasks. Examples of cron tasks are: checking for module and theme
-updates, indexing content for search, or cleaning up temporary files.
+Щоб ваш сайт і його модулі продовжували нормально функціонувати, група
+адміністративних операцій повинна виконуватися періодично. Ці операції
+називаються завданнями _cron_. Приклади cron завдань: перевірка оновлень для модуля або
+теми, індексація контенту для пошуку або очищення тимчасових файлів.
 
-==== What is the relationship between the site's cron tasks and Unix cron?
+==== Який зв'язок між cron завданнями і Unix cron?
 
-Linux/Unix-based operating systems have a cron scheduler that can be used to run
-periodic tasks. You can use the server’s cron scheduler to schedule runs of the
-site’s cron tasks. Alternatively, you can use the core Automated Cron module to
-run tasks. You can check the site’s cron tasks' status in the status report.
+Операційні системи на основі Linux/Unix мають планувальник cron, який можна використовувати для запуску
+періодичних задач. Ви можете використовувати планувальник cron сервера для планування запуску
+cron завдань сайту. Крім того, ви можете використовувати модуль ядра Automated Cron для
+запуску завдань. Ви можете перевірити статус cron завдань сайту в звіті про стан.
 
-==== Related topics
+==== Схожі теми
 
 * <<security-cron>>
 * <<prevent-status>>
 
-==== Additional resources
+==== Додаткові ресурси
 
-https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
+https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ сторінка документації спільноти "Setting up cron"]
 
 
-*Attributions*
+*Автори*
 
-Written and edited by
-https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Написано і змінено
+https://www.drupal.org/u/dianalakatos[Diána Lakatos] із
 https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
+https://www.drupal.org/u/dalin[Dave Hansen-Lange] із
 https://www.advomatic.com/[Advomatic],
-and https://www.drupal.org/u/batigolix[Boris Doesborg].
+і https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
