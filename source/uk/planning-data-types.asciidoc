@@ -1,117 +1,117 @@
 [[planning-data-types]]
-=== Concept: Content Entities and Fields
+=== Основи: Сутності контенту і Поля
 
 [role="summary"]
-Overview of content entities and fields.
+Огляд сутностей контенту і полів.
 
-(((Entity,overview)))
-(((Taxonomy term,overview)))
-(((Vocabulary,overview)))
-(((Content,entity type)))
-(((Entity type,overview)))
-(((Entity subtype,overview)))
-(((Block,entity type)))
-(((Comment entity type,overview)))
-(((Contact form entity type,overview)))
-(((Form entity type,overview)))
-(((Content entity type,overview)))
-(((Custom block,entity type)))
-(((Field,overview)))
-(((User profile entity type,overview)))
-(((Module,Comment)))
-(((Module,Contact)))
-(((Module,Taxonomy)))
-(((Module,User)))
-(((Module,Node)))
-(((Module,Custom Block)))
-(((Module,File)))
-(((Comment module,entity type)))
-(((Contact module,entity type)))
-(((Custom block module,entity type)))
-(((Node module,entity type)))
-(((Taxonomy module,entity type)))
-(((User module,entity type)))
-(((File module,entity type)))
+(((Сутність, огляд)))
+(((Термін таксономії, огляд)))
+(((Словник таксономії, огляд)))
+(((Контент, тип сутності)))
+(((Тип сутності, огляд)))
+(((Підтип сутності, огляд)))
+(((Блок, тип сутності)))
+(((Тип сутності Коментар, огляд)))
+(((Тип сутності Контактна форма, огляд)))
+(((Форма тип сутності, огляд)))
+(((Контент тип матеріал, огляд)))
+(((Користувацький блок, тип сутності)))
+(((Поле, огляд)))
+(((Профіль користувача тип матеріалу, огляд)))
+(((Модуль, Comment)))
+(((Модуль, Contact)))
+(((Модуль, Taxonomy)))
+(((Модуль, User)))
+(((Модуль, Node)))
+(((Модуль, Custom Block)))
+(((Модуль, File)))
+(((Comment модуль, тип сутності)))
+(((Contact модулів, тип сутності)))
+(((Custom block модуль, тип сутності)))
+(((Node модуль, тип сутності)))
+(((Taxonomy модуль, тип сутності)))
+(((User модуль, тип сутності)))
+(((File модуль, тип сутності)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<understanding-data>>
 * <<understanding-modules>>
 
-==== What is a content entity?
+==== Що таке контент сутність?
 
-A _content entity_ (or more commonly, _entity_) is an item of content data,
-which can consist of text, HTML markup, images, attached files, and other data
-that is intended to be displayed to site visitors. Content entities can be
-defined by the core software or by modules.
+_Контент сутність_ (або зазвичай просто, _сутність_) - це елементи даних контенту,
+який може складатися з тексту, HMTL тексту, зображень, прикріплених файлів та інших типів даних,
+які створені для відображення відвідувачам сайту. Контент сутності можуть бути
+визначені через ядро ​​Drupal або модулями.
 
-Content entities are grouped into _entity types_, which have different purposes
-and are displayed in very different ways on the site. Most entity
-types are also divided into _entity sub-types_, which are divisions within an
-entity type to allow for smaller variations in how the entities are used and
-displayed. Here is a table of some common content entity types:
+Контет сутності згруповані в _типи сутностей_, які створені для однакових цілей
+і відображаються в по різному в різних місцях на сайті. Більшість типів
+сутностей також розділені на _підтипи сутностей_, які є підрозділом
+типу сутності і дозволяє створювати різні варіації в яких сутності використовуються і
+виводяться. Нижче таблиця з деякими загальними типами контент сутностей:
 
-[width="100%",frame="topbot",options="header",grid="rows"]
+[width="100%", frame="topbot", options="header", grid="rows"]
 |=============================================
-|Entity type |Entity sub-type |Defining Module |Main uses
+|Тип Сутності |Підтип сутності |Визначальний модуль |Головне використання
 
-|Content item |Content type |Node module
-  |Content intended to be the main page area for pages on the site
-  | 3+| *Example:* In the farmers market site example, you might have content
-  types for basic pages, vendor pages, and recipe pages.
+|Елемент контенту |Тип контенту |Node модуль
+  |Контент створений для виведення в головних регіонах сайту на сторінках сайту
+  |3+ |*Приклад:* На сайті прикладу міського ярмарку, ви можете мати контент
+  типи для Основних сторінок, сторінок продавців і сторінок рецептів.
 
-|Comment |Comment type |Comment module
-  |Commentary added to content entities (typically to Content item entities)
-  | 3+| *Example:* On a blog site, blog posts might have comments. They are not
-  needed in the farmers market site example.
+|Коментар |Тип коментаря |Comment модуль
+  |Коментарі додаються до контент сутностей (зазвичай до Матеріалів)
+  |3+ |*Приклад:* На сайті блозі, записи в блозі можуть містити коментарі. Вони не потрібні
+  на сайті прикладі міського ярмарку.
 
-|User profile |(none) |User module
-  |Data related to a person with a user account (login access) on the site
-  | 3+| *Example:* Every site has at least basic user profiles with user names
-  and email addresses; social networking sites may have more complex user
-  profiles with more information.
+|Профіль користувача |(немає) |User модуль
+  |Дані відносяться до користувача з аккаунтом (з можливістю авторизації) на сайті
+  |3+ |*Приклад:* Кожен сайт має щонайменше базовий профіль користувача з іменем користувача
+  і E-mail; сайти соціальних мереж можуть мати складніші профілі користувача
+  з набагато більшою кількістю інформації.
 
-|Custom block |Block type |Custom Block module
-  |Text and images in smaller chunks, often displayed in the site header,
-   footer, or sidebar
-  | 3+| *Example:* In the farmers market site example, you might put the hours
-  and location in a sidebar block.
+|Користувацький блок |Тип Блоку |Custom Block модуль
+  |Текст і зображення маленькими шматочками, відображені в шапці сайту,
+   підвалі або колонках
+  |3+ |*Приклад:* На сайті міського ярмарку, ви можете розмістити години роботи
+  і адресу в блок у колонці.
 
-|Taxonomy term |Vocabulary |Taxonomy module
-  |Used to classify other types of content
-  | 3+| *Example:* In the farmers market site example, you might classify Recipe
-  content with an Ingredients taxonomy vocabulary, with taxonomy terms like
-  Carrots and Tomatoes. In a blogging site, blog posts might be classified
-  using a Tags vocabulary, and perhaps also a Categories vocabulary.
+|Термін таксономії |Словник таксономії |Taxonomy модуль
+  |Використовується для класифікації інших типів контенту
+  |3+ |*Приклад:* На сайті прикладі міського ярмарку, ви можете класифікувати Рецепт
+  матеріал за допомогою словника таксономії Інгредієнти, термінів таксономії, таких як
+  Морква і Помідори. На сайті блозі, записи в блог можуть бути класифіковані
+  використовуючи словник Теги та можливо також словник Категорії.
 
-|File |(none) |File module
-  |An image or attachment file that is tracked and managed by the site, often
-   attached to other types of content
-  | 3+| *Example:* In the farmers market site example, both Recipe and Vendor
-  pages might have image attachments, which would (behind the scenes) be
-  managed as File entities by the site.
+|Файл |(немає) |File модуль
+  |Зображення або прикріплений файл, які відстежуються і керуються через сайт, часто
+   прикладаються до інших типів контенту
+  |3+ |*Приклад:* На сайті прикладі міського ярмарку, обидві сторінки Рецепт і Продавець
+  можуть мати прикріплені зображення, які могли б (через панель адміністрування)
+   управлятися як сутності Файлів через сайт.
 
-|Contact form |Form type |Contact module
-  |A form that lets site visitors contact site owners
-  | 3+| *Example:* A contact form is needed in the farmers market site example.
+|Контактна форма |Тип форми |Contact модуль
+  |Форма яка дозволяє відвідувачам сайту зв'язатися з власником сайту
+  |3+ |*Приклад:* Контактна форма потрібна на сайті прикладі міського ярмарку.
 
 |=============================================
 
-==== What is a field?
+==== Що таке поле?
 
-Within entity items, the data is stored in individual _fields_, each of which
-holds one type of data, such as formatted or plain text, images or other files,
-or dates. Field types can be defined by the core software or by modules.
+В межах сутності, дані зберігаються як окремі _поля_, кожне з яких
+містить один тип даних, такі як форматований або звичайний текст, зображення або інші файли
+або дані. Типи полів можуть бути визначені через ядро ​​Drupal або у модулях.
 
-Fields can be added by an administrator on entity sub-types, so that all
-entity items of a given entity sub-type have the same collection of fields
-available. For example, the Vendor content type in the farmers market example
-might have fields for the vendor name, a logo image, website URL, and
-description, whereas the _Basic page_ content type might only have fields for
-the title and page body. When you create or edit entity items, you are
-specifying the values for the fields on the entity item.
+Поля можуть бути додані адміністратором для підтипу сутності, так що всі
+сутності цього підтипу мають однаковий набір доступних
+полів. Наприклад, Продавець тип матеріалу на сайті міського ярмарку
+може мати поля для Ім'я продавця, логотипу, URL сайту і
+опису, в той час як тип матеріалу _Основна сторінка_ може мати тільки поля для
+заголовка і тексту. Коли ви створюєте або редагуєте сутності, ви
+визначаєте значення для полів по сутності.
 
-==== Related topics
+==== Пов'язані теми
 
 * <<planning-structure>>
 * <<content-create>>
@@ -123,7 +123,9 @@ specifying the values for the fields on the entity item.
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
-and https://www.drupal.org/u/gdunham[Grant Dunham].
+Написано і відредаговано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+і https://www.drupal.org/u/gdunham[Grant Dunham]
+
+Перевів https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://www.drupal.org/mazaltov[Mazaltov]
