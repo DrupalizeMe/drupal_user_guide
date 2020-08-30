@@ -1,101 +1,101 @@
 [[security-update-theme]]
 
-=== Updating a Theme
+=== Оновлення теми оформлення Drupal
 
 [role="summary"]
-How to update a contributed theme by using the administrative interface and
-running the Database Updates script.
+Як оновити додану тему оформлення, використовуючи адміністративний інтерфейс і запустити скрипт Оновлення Бази даних.
 
-(((Theme,updating)))
-(((Security update,applying)))
-(((Contributed theme,updating)))
+(((Тема, оновлення)))
+(((Оновлення безпеки, використання)))
+(((Тема оформлення, оновлення)))
 
-==== Goal
+==== Мета
 
-Update a contributed theme on your site and run the _Database Updates_ script.
+Оновити тему оформлення на своєму сайті і запустити скрипт _Database Updates_.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* A contributed theme has been installed and there is an update available for
-it. See <<extend-theme-install>> and <<security-announce>>.
+* Тема оформлення була встановлена ​​і доступне оновлення для
+неї. Дивіться <<extend-theme-install>> і <<security-announce>>.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
+* Якщо ваш сайт живий, спочатку вам потрібно перевірити цей процес на сайті розробки,
+перш ніж запускати його на вашому живому сайті. Дивіться
 <<install-dev-making>>.
 
-* You have created a full site backup. See <<prevent-backups>>.
+* Ви створили повну резервну копію сайту. Дивіться <<prevent-backups>>.
 
-* If you want to use the user interface, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing core
-modules.
+* Якщо ви хочете використовувати інтерфейс для користувача, модуль ядра Update Manager повинен бути
+встановлено. Дивіться <<config-install>> для інструкцій по установці модулів
+ядра.
 
-==== Steps
+==== Кроки
 
-You can use the administrative interface to update a contributed theme. If you
-are updating a custom theme rather than a contributed theme, if you see a
-message saying _Installing modules and themes requires FTP access to your
-server_, or if the steps below do not work to obtain the new theme files, follow
-the steps in <<extend-manual-install>>, and then continue with step 6 in the
-instructions for administrative interface below.
+Ви можете використовувати адміністративний інтерфейс для поновлення теми. Якщо ви
+оновлюєте призначену для користувача тему, а не додаткову тему, якщо ви бачите
+повідомлення _Для установки модулів і тем потрібен FTP-доступ до вашого серверу_, або якщо наведені нижче кроки не працюють для отримання нових файлів теми, дотримуйтесь
+інструкцій в <<extend-manual-install>>, а потім перейдіть до кроку 6 в
+інструкції для адміністративного інтерфейсу нижче.
 
-If you are using Composer to manage the files in your site, follow the steps
-in <<install-composer>> to update the files, then continue here with step 6 in
-the instructions for the administrative interface below.
+Якщо ви використовуєте Composer для управління файлами на вашому сайті, дотримуйтесь інструкцій
+в <<install-composer>> для поновлення файлів, потім продовжите тут з кроку 6 в
+інструкції для адміністративного інтерфейсу нижче.
 
-===== Using the administrative interface
+===== Використання адміністративного інтерфейсу
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. Переведіть ваш сайт в режим обслуговування. Дивіться <<extend-maintenance>>.
 
-. In the _Manage_ administrative menu, navigate to _Reports_ >
-_Available updates_ > _Update_ (_admin/reports/updates/update_).
+. У _Керування_ адміністративного меню, перейдіть в _Звіти_>
+_Доступні оновлення_> _Оновити_ (_admin/reports/updates/update_).
 
-. Find and check the theme in the list. Click _Download these updates_ for the
-theme.
+. Знайдіть і перевірте тему в списку. Натисніть _Скачать оновлення_ для
+теми.
 +
 --
 // Update page for theme (admin/reports/updates/update).
-image:images/security-update-theme-updates.png["Available updates",width="100%"]
+image:images/security-update-theme-updates.png["Доступні оновлення", width="100%"]
 --
 
-. Click _Continue_.
+. Натисніть _Продовжити_.
 
-. Click _Run database updates_. If you obtained the new theme files manually,
-start with this step, and reach the database updates page by typing the URL
-_example.com/update.php_ in your browser.
+. Натисніть _Запустити поновлення бази данних_. Якщо ви отримали нові файли теми вручну,
+почніть з цього кроку, і перейдіть на сторінку оновлень бази даних, ввівши URL
+_example.com/update.php_ в ваш браузер.
 
-. Click _Continue_ to run the updates. The database update scripts will be
-executed.
+. Натисніть _Продовжити_, щоб запустити оновлення. Скрипт поновлення бази даних буде
+виконаний.
 
-. Click _Administration pages_ to return to the administration section of your
-site.
+. Натисніть _Сторінка адміністрування_ для повернення на сторінку адміністрування вашого
+сайту.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Виведіть ваш сайт з режиму обслуговування. Дивіться <<extend-maintenance>>.
 
-. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
+. Очистіть кеш Drupal (посилання на <<prevent-cache-clear>>).
 
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-* Review the site log, see <<prevent-log>>, once the updates are complete to
-check for errors.
+* Перегляньте журнал сайту, дивіться <<prevent-log>>, як тільки оновлення будуть завершені
+перегляньте помилки.
 
 * <<security-update-module>>
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Updating a Theme"]
+video::https://www.youtube-nocookie.com/embed/2jihIuY91vs[title="Updating a Theme"]
 
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Написано https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
