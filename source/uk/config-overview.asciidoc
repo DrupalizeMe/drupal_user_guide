@@ -1,115 +1,118 @@
 [[config-overview]]
 
-=== Concept: Administrative Overview
+=== Основи: Огляд інтерфейсу адміністратора
 
 [role="summary"]
-Overview of administrative menu and contextual links.
+Огляд меню адміністратора і контекстних посилань.
 
-(((Administration,overview)))
-(((Administrative menu,overview)))
-(((Manage administrative menu,overview)))
-(((Toolbar,overview)))
-(((Contextual link,overview)))
-(((Content menu entry,administrative menu)))
-(((Structure menu entry,administrative menu)))
-(((Appearance menu entry,administrative menu)))
-(((Extend menu entry,administrative menu)))
-(((Configuration menu entry,administrative menu)))
-(((People menu entry,administrative menu)))
-(((Reports menu entry,administrative menu)))
-(((Help menu entry,administrative menu)))
+(((Адміністрування, огляд)))
+(((Меню адміністратора, огляд)))
+(((Управління меню адміністратора, огляд)))
+(((Панель інструментів, огляд)))
+(((Контекстне посилання, огляд)))
+(((Вміст пункт меню, меню адміністратора)))
+(((Структура пункт меню, меню адміністратора)))
+(((Оформлення пункт меню, меню адміністратора)))
+(((Розширення пункт меню, меню адміністратора)))
+(((Конфігурація пункт меню, меню адміністратора)))
+(((Користувачі пункт меню, меню адміністратора)))
+(((Звіти пункт меню, меню адміністратора)))
+(((Довідка пункт, меню адміністратора)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<understanding-themes>>
 * <<understanding-modules>>
 
-==== What is the administrative menu?
+==== Що таке меню адміністратора?
 
-The toolbar provided by the core Toolbar module displays the _Manage_
-administrative menu at the top or left side of the site, for users with
-permission to see it. This menu provides access to all of the administrative
-areas of the site. The menu entries will vary depending on which modules are
-active on your site and the permissions of the person viewing the menu; if you
-install using the core Standard installation profile and have full
-administrative permissions, the top-level entries are as follows:
+Панель інструментів надається модулем Toolbar і відображає пункт _Управління_
+в меню адміністратора в верху або з лівого боку сайту, для користувача з
+правами на перегляд панелі інструментів. Це меню надає доступ до всіх адміністраторських
+розділів на сайті. Пункти меню можуть відрізнятися в залежності від включених модулів
+на вашому сайті і прав доступу на перегляд пунктів меню; якщо ви
+встановили стандартний інсталяційний профайл, ви будете мати повний набір
+прав адміністратора, так що верхні пункти меню будуть наступними:
 
 // Top navigation bar on any admin page, with Manage menu showing.
-image:images/config-overview-toolbar.png["Administrative menu in horizontal mode",width="100%"]
+image:images/config-overview-toolbar.png["Меню адміністратора в горизонтальному вигляді", width="100%"]
 
-Content::
-  Lists and manages existing content, and allows creation of new content.
+Вміст::
+  Відображення списків і управління існуючим контентом, з можливістю створення нового матеріалу.
 
-Structure::
-  Contains a list of links for managing structural elements of the site, such
-  as blocks, content types, menus, and taxonomy.
+Структура::
+  Містить список всіх посилань для управління різними частинами сайту, такими
+  як блоки, типи матеріалів, меню і таксономія.
 
-Appearance::
-  Manages themes and appearance-related settings.
+Оформлення::
+  Управління темами оформлення і налаштуваннями пов'язаними із зовнішнім виглядом сайту.
 
-Extend::
-  Manages the installation and uninstallation of modules.
+Розширення::
+  Управління установкою і видаленням модулів.
 
-Configuration::
-  Contains links to settings pages for various site features.
+Конфігурація::
+  Містить посилання на сторінки налаштувань для різного функціоналу сайту.
 
-People::
-  Manages users, roles, and permissions.
+Користувачі::
+  Управління користувачами, ролями і правами доступу.
 
-Reports::
-  Contains links to logs, update information, search information, and other
-  information about the site's status.
+Звіти::
+  Містить посилання на записи в журналі, інформацію про доступні оновлення, інформацію про пошук та іншу
+  інформацію про стан сайту.
 
-Help::
-  Lists help topics for installed modules that provide them.
+Довідка::
+  Містить списки тем допомоги для встановлених модулів, які мають довідку.
 
-The arrow button on the far right side of the second line of the toolbar (or far
-left side, if the site is being viewed using a right-to-left-reading language
-like Arabic) can be used to switch the menu from appearing horizontally at the
-top of the page, to a vertical format on the left side (or right side, in
-right-to-left languages). When viewed vertically, the menu becomes an
-interactive tree.
+Кнопка стрілки в дальньому правому кутку на другому рядку панелі інструментів (або в далекому
+лівому кутку, якщо сайт проглядається використовуючи мову яка читається справа наліво,
+наприклад арабська) може бути використана для перемикання меню з перегляду горизонтального в
+в верху сторінки, до вертикального формату з лівого боку (або з правого боку, в
+мовах які читаються справа наліво). Коли меню проглядається вертикально, меню стає
+інтерактивним списком.
 
 // Navigation in vertical orientation.
-image:images/config-overview-vertical-menu.png["Administrative menu in vertical mode",width="228px"]
+image:images/config-overview-vertical-menu.png["Меню адміністратора в вертикальному режимі", width="228px"]
 
-This guide has a standard way to describe navigation to administrative pages
-using the administrative toolbar. See <<preface-conventions>> for more
-information.
+Це керівництво використовує стандартний вид для опису навігації по сторінках адміністрування,
+використовуючи панель інструментів адміністратора. Дивіться <<preface-conventions>> для більшої
+інформації.
 
-==== What are contextual links?
+==== Що таке контекстні посилання?
 
-Some administrative and editing functionality on the site can be accessed
-through the _contextual links_ displayed by the core Contextual Links module.
-Contextual links take you to some of the same pages that you can access through
-the administrative menu, but instead of having to navigate through the menu
-hierarchy, these links are provided near where the related content is displayed
-on your site.
+Деякий функціонал адміністрування і редагування на сайті може бути доступний
+через _контекстні посилання_ відображаються модулем Contextual Links.
+Контекстні посилання дають вам можливість перейти на деякі сторінки, до яких ви маєте доступ через
+меню адміністратора, однак замість переходу через всю ієрархію меню,
+ці посилання надають посилання на пов'язаний контент що відображається
+на вашому сайті.
 
-Contextual links have to be activated to be visible. If your site's theme uses
-the default styling for contextual links, a pencil icon is used to indicate that
-contextual links are present and activated, and if you click the icon, you will
-see the contextual links. There are two ways to activate the pencil icons that
-provide access to the contextual links:
+Контекстні посилання повинні бути активовані, щоб показувати посилання. Якщо тема оформлення вашого сайту використовує
+стилі за замовчуванням для контекстних посилань, іконка олівця використовується для позначення,
+контекстні посилання виведені і активні і якщо ви натиснете на іконку, то зможете
+побачити контекстні посилання. Є два способи активувати іконки олівця, яка
+надає доступ до контекстних посилань:
 
-* If you are using a mouse in a browser, the icon will temporarily appear when
-  you hover over an area that has related contextual links.
+* Якщо ви використовуєте мишку в браузері, іконка буде тимчасово показуватися, коли
+  ви наводите на область пов'язану з контекстними посиланнями.
 
-* You can click the master pencil icon (or its _Edit_ link) at the right end of
-  the top bar in the toolbar, which will activate all of the contextual links on
-  the current page. This icon is only visible on pages with contextual links.
+* Ви можете натиснути на головну іконку олівця (або посилання _Редагувати_) в правому кінці
+  верхніх посилань панелі інструментів, яка буде активувати всі контекстні посилання на
+  поточній сторінці. Іконку буде видно тільки на сторінках з контекстними посиланнями.
 +
 --
 // Home page with pencil icons showing, with configured theme.
-image:images/config-overview-pencils.png["Page with pencil icons turned on",width="100%"]
+image:images/config-overview-pencils.png["Сторінка з включеними іконками олівця", width="100%"]
 --
 
-//==== Related topics
+// ==== Related topics
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/halofx[Scott Wilkinson] and
+Написано https://www.drupal.org/u/halofx[Scott Wilkinson] і
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
