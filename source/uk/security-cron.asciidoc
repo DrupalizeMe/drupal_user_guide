@@ -1,106 +1,105 @@
 [[security-cron]]
 
-=== Configuring Cron Maintenance Tasks
+=== Налаштування завдань крона для обслуговування сайту
 
 [role="summary"]
-How to run cron maintenance tasks using the core Automated Cron module, or by
-running them from outside the site.
+Як запускати завдання крона, використовуючи модуль ядра Automated Cron або запускаючи крон зовні сайту.
 
-(((Automated Cron module,configuring)))
-(((Cron task,configuring)))
+(((Automated Cron модуль, налаштування)))
+(((Завдання крона, налаштування)))
 
-==== Goal
+==== Мета
 
-Check whether cron maintenance tasks are run regularly, and if not, either
-install the core Automated Cron module or run cron maintenance tasks from
-outside the website.
+Перевірити чи є завдання крона регулярними чи ні,
+встановити модуль ядра Automated Cron або запустити завдання крона
+зовні сайту.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<security-cron-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Кроки
 
-. Review the _Status report_ (see <<prevent-status>>) to see when cron
-maintenance tasks were last run.
+. Подивитися сторінку _Звіт про стан_ (дивіться <<prevent-status>>), де написано коли крон
+запускався останній раз.
 +
-If you installed the website using the core Standard installation profile (or
-similar), then cron maintenance tasks might already be running via the
-core Automated Cron module.  By default, these tasks are run about every three
-hours.
+Якщо ви встановили сайт використовуючи Стандартний інсталяційний профіль (або
+подібний), тоді крон вже буде запускатися через
+модуль ядра Automated Cron. За замовчуванням крон буде запускатися кожні три
+години.
 
-. Choose whether to run cron maintenance tasks using the core Automated Cron
-module, or by other means. The core Automated Cron module might not be suitable
-for some websites because:
+. Вибрати варто запускати крон використовуючи модуль ядра Automated Cron
+або використовувати інший шлях. Модуль ядра Automated Cron може не підійти
+для сайтів коли:
 +
-  * Each time someone accesses a page on the site, the module checks how long it
-  has been since cron maintenance tasks have last run, and then runs them if
-  necessary. If no one visits the website for a long time, cron maintenance
-  tasks will not be run.
-  * Cron maintenance tasks are run after the page has been generated. This means
-  there is less time for the tasks to be run before various server timeouts are
-  reached (for example, PHP execution timeout). If this happens, the logs (see
-  <<prevent-log>>) will show error messages that cron is unable to complete.
-  * There is a small https://en.wikipedia.org/wiki/Scalability[scalability] cost
-  associated with the core Automated Cron module. This is because one of the web
-  server's processes is occupied (and can't serve other web pages) until the
-  cron maintenance tasks are complete.
+  * Кожен раз хтось заходить на сторінку сайту, модуль перевіряє як довго
+  не запускався крон, і тоді запускає крон якщо це
+  необхідно. Якщо ніхто не заходить на сайт довгий час, то крон
+  НЕ буде запускатися.
+  * Крон запускається після того як сторінка згенерована. Це означає,
+  що залишиться менше часу для виконання крона перед тим як різні ліміти часу на сервері
+  будуть перевищені (наприклад, час виконання PHP скрипта). Якщо це трапляється, то в логах (дивіться
+  <<prevent-log>>) буде показано повідомлення про помилки, про те що крон не міг здійснитися.
+  * Крон слабо підтримує https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D0%BE%D1%81%D1%82%D1%8C[Масштабування]
+  якщо працює на модулі ядра Automated Cron. Це відбувається тому що процес веб
+  сервера зайнятий (і не може обслуговувати інші веб сторінки) поки
+  крон виконується.
 
-. If you want to use the core Automated Cron module, first make sure it is
-installed (it is installed with the core Standard install profile; see
-<<config-install>> if it is not installed).
+. Якщо ви хочете використовувати модуль Automated Cron, спершу переконайтеся, що він
+встановлений (Модуль встановлюється разом зі Стандартним інсталяційних профілем; дивіться
+<<config-install>> якщо модуль не встановлений).
 +
-Next, configure the module to control how frequently cron maintenance tasks are
-run. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Select the desired interval from
-the _Run cron every_ field under _Cron settings_, and click _Save
-configuration_.
+Далі, налаштуйте модуль, задавши частоту з якою крон буде
+виконуватися. В меню адміністратора _Керування_, перейдіть на _Конфігурація_ >
+_Система_ > _Крон_ (_admin/config/system/cron_). Виберіть бажаний інтервал в полі
+_Запускати крон кожні/кожен_ в розділі _Налаштування крону_, і натисніть _Зберегти конфігурацію_.
 +
 --
 // Cron configuration page (admin/config/system/cron).
-image:images/security-cron.png["Configure the core Automated Cron module"]
+image:images/security-cron.png["Налаштування модуля ядра Automated Cron"]
 --
 
-. If you want to run cron maintenance tasks from outside the website, uninstall
-the core Automated Cron module (see <<config-uninstall>>). Next, find the
-cron URL. This URL is shown in the _Status report_ (see <<prevent-status>>), and
-in the _Cron_ administration page (see previous step). The URL looks
-like this:
-_http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
+. Якщо ви хочете запускати крон зовні сайту, видаліть
+модуль ядра Automated Cron (дивіться <<config-uninstall>>). Далі, знайдіть
+URL адресу крона. Цей URL показується на сторінці _Звіт про стан_ (дивіться <<prevent-status>>) і
+на сторінці _Крон_ (дивіться попередній крок). Ця URL адреса виглядає
+приблизно ось так:
+_http: //www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
-Whenever this URL is visited, cron maintenance tasks will run. Set up one of
-the following schedulers to access this URL regularly:
+Кожен раз коли URL адреса крона відвідується, крон буде запускатися. Налаштуйте один з
+наступних планувальників відвідувати цю адресу URL регулярно:
 +
-  * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
-  BSD)
-  * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
-  * A cron SASS provider (software as a service)
-  * A cron manager provided by your web hosting provider (see the documentation
-  provided by your provider)
+  * https://www.drupal.org/docs/7/setting-up-cron/configuring-cron-jobs-using-the-cron-command[The Cron daemon] (Linux, OS X, Solaris, BSD)
+  * https://www.drupal.org/docs/7/setting-up-cron-for-drupal/configuring-cron-jobs-with-windows[Scheduled Tasks] (Windows)
+  * Сервіс SASS для крон (software as a service)
+  * Крон менеджер надається вашим хостингом (дивіться документацію
+  надану вашим хостинг провайдером)
 
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== Пов'язані концепції
 
 <<security-concept>>
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
 
-==== Additional resources
+==== Додаткові матеріали
 
 * http://docs.drush.org/en/master/cron/[Drush page "Running Drupal cron tasks from Drush"]
-* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
+* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ сторінка документації спільноти "Setting up cron"]
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
+Написано і змінено https://www.drupal.org/u/dalin[Dave Hansen-Lange] із
 https://www.advomatic.com/[Advomatic],
 https://www.drupal.org/u/batigolix[Boris Doesborg],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+і https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
