@@ -1,85 +1,86 @@
 [[prevent-cache]]
 
-=== Concept: Cache
+=== Основи: Кеш
 
 [role="summary"]
-Overview of the cache and the site data that can be cached.
+Огляд кеша і даних сайту, які можуть бути закешовано.
 
-(((Cache,overview)))
-(((Page cache,overview)))
-(((Module,Internal Page Cache)))
-(((Module,Dynamic Page Cache)))
-(((Internal Page Cache module,overview)))
-(((Dynamic Page Cache module,overview)))
+(((Кеш, огляд)))
+(((Кеш сторінки, огляд)))
+(((Модуль, Internal Page Cache)))
+(((Модуль, Dynamic Page Cache)))
+(((Internal Page Cache модуль, огляд)))
+(((Dynamic Page Cache модуль, огляд)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<understanding-drupal>>
 
-==== What is the page cache?
+==== Що таке кеш сторінки?
 
-The software that runs your site, on each page request, must perform
-calculations and retrieve data from the database, in order to compose the page
-that is sent to the web browser or other application that is accessing the
-site. These calculations take time, which can mean that your page load time is
-longer than would be desirable.
+Drupal на якому працює ваш сайт, на кожен запит сторінки, повиннен виконувати
+обчислення і обробляти дані з бази даних, для того щоб скласти сторінку,
+яка відправляється браузеру або іншому додатку що має доступ до
+сайту. Ці обчислення займають час, це може приводити до того, що завантаження сторінки займе
+більше часу, ніж хотілося б.
 
-There are several ways that page load time can be sped up, including installing
-software on the server. The system includes the core Internal Page Cache and
-Dynamic Page Cache modules, which do not require any additional server
-software; they use a _database cache_ mechanism to speed up your site. The way
-these modules work is that during page calculations, intermediate results and
-the final page output are stored in a special database area (known as the
-_cache_). Then the next time a compatible request is made, intermediate or final
-results, as appropriate, can be retrieved and used rather than redoing the
-entire calculation. In addition, when content or data that affects a particular
-calculation is updated, the affected cached data is removed from the cache,
-forcing that part of the calculation to be redone the next time it is needed.
+Нижче наведено кілька шляхів прискорення завантаження сторінки, включаючи установку
+додатків на сервер. Ядро Drupal вже включає в себе модулі Internal Page Cache і
+Dynamic Page Cache, які не вимагають додаткових налаштуваннь
+на сервері; вони використовують механізм _кеша в базі данних_ для прискорення вашого сайту. Таким чином
+ці модулі працюють так, що обчислення, проміжні результати та
+вся сторінка цілком зберігаються в спеціальних таблицях бази даних (більш відомі як
+_кеш_). Наступний раз, коли будуть потрібні ті ж самі обчислення або та ж інформація або вся
+сторінка цілком, в кращому випадку, може бути відправлена ​​і використана ще раз, уникаючи перестворення
+тих же обчислень заново. На додаток, коли контент або дані піддаються змінам, часткові
+обчислення будуть оновлені, це призводить до того що частина кешованих даних буде видалена з кешу,
+приводячи до того що нові обчислення будуть перевиконані ще раз і будуть збережені в кеші, коли це буде необхідно до наступного разу.
 
-These caching modules normally work reasonably well, and offer at least some
-speed-up for most sites. However, sometimes the page cache can have problems,
-such as:
+Ці модулі для кешування (Internal Page Cache і Dynamic Page Cache) працюють стабільно і надають деякі
+прискорення для більшості сайтів. Однак іноді кеш сторінки можуть мати проблеми, такі як:
 
-* Corrupted data in the cache, leading to garbled or incorrect page output
+* Пошкоджені дані в кеші призводять до некоректного виводу сторінки
 
-* Old data remaining in the cache too long, leading to outdated page output
+* Старі дані залишаються в кеші занадто довго і призводять до застарілого висновку сторінки
 
-* Insufficient caching, leading to slow page loads
+* Неефективне кешування призводить до того, що сторінка відкривається довго
 
-==== What other data is cached?
+==== Які ще дані кешуються?
 
-Independent of whether the two page cache modules are installed on your site,
-the software that your site runs will still cache the output of many internal
-calculations. The core systems that cache data include:
+Незалежно від того чи включені два кешуючих модуля на вашому сайті,
+ядро Drupal все одно буде використовувати кеш для багатьох внутрішніх
+обчислень. Ядро Drupal включає кеш для даних:
 
-* The theme system caches information in the database cache about which template
-files are used to render various types of data. If you are developing a new
-theme and add a new template file, you'll need to clear this cache to have
-your theme file recognized.
+* Кеш системи темізаціі для інформації в базі даних про шаблони
+які використані при обробці різних типів даних. Якщо ви розробляєте нову
+тему і додаєте новий файл шаблону, то вам необхідно очистити цей кеш, щоб
+ваш файл був розпізнаний.
 
-* CSS and JavaScript files can optionally be optimized and compressed (depending
-on your site settings). If so, the compressed versions are stored in the file
-system so that they don't have to be re-optimized too often. If you are
-developing a module or theme, you may need to either turn off or clear this
-file cache to have changes to CSS or JavaScript files be recognized.
+* Файли CSS і JavaScript можуть бути за бажанням оптимізовані і стиснуті (на основі
+налаштувань вашого сайту). Також, якщо стислі версії зберігаються в файловій
+системі, то вони не повинні перестворюватися і стискатися занадто часто. Якщо ви
+розробляєте модуль або тему, ви можливо захочете також відключити або очистити ці
+файли кешу, щоб додати новий CSS або JavaScript файл.
 
-* The system locates certain low-level PHP functions and classes, such as
-_hook implementations_ and _plugin classes_, from your installed modules and
-stores information about which module has which functionality. If you are
-developing a new module or adding features to an existing module, you may need
-to clear this cache to have your new features be recognized.
+* Drupal знаходить певні низькорівневі функції і класи PHP, такі як
+_реалізації хуків_ і _класи плагінів_, з ваших встановлених модулів і
+зберігає цю інформацію про функціонал ваших модулів. Якщо ви
+розробляєте новий модуль або додаєте новий функціонал в існуючий модуль, вам можливо буде потрібно
+очистити цей кеш, щоб новий функціонал був знайдений.
 
-==== Related topics
+==== Пов'язані теми
 
-If you have problems with your site, the first thing to try to fix it is
-usually to clear the cache. See <<prevent-cache-clear>> for more information.
+Якщо ви маєте проблеми з вашим сайтом, в першу чергу спробуйте
+почистити кеш. Дивіться <<prevent-cache-clear>> для більш детальної інформації.
 
-==== Additional resources
+==== Додаткові матеріали
 
-Learn about additional caching and performance optimization methods in the
-https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[_Drupal.org_ community documentation page "Caching to improve performance"].
+Почитайте про додаткове кешування і методи оптимізації продуктивності на сторінці
+https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[_Drupal.org_ сторінка документації спільноти "Caching overview"].
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
