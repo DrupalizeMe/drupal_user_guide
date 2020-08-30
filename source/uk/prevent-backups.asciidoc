@@ -1,88 +1,89 @@
 [[prevent-backups]]
 
-=== Concept: Data Backups
+=== Основи: Резервна копія даних
 
 [role="summary"]
-Overview of data backups and what should be backed up on a site.
+Огляд створення резервних копій і як слід зберігати копії сайту.
 
-(((Backup,overview)))
-(((Content,backing up)))
-(((File,backing up)))
-(((Database,backing up)))
+(((Резервна копія, огляд)))
+(((Контент, створення резервних копій)))
+(((Файл, створення резервних копій)))
+(((База даних, створення резервних копій)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<understanding-drupal>>
 * <<install-prepare>>
 
-==== What is a site backup?
+==== Що таке резервна копія сайту?
 
-If something happens to the computer (or computers) that your site and its
-database are running on, or if you lose access to this computer, you could lose
-some or all of your site's data. You could also lose data if your site is
-hacked, or if someone with administrative privileges on your site deletes or
-alters data mistakenly from the administrative interface. In order to prevent
-scenarios like this from being permanent, expensive data losses, it is important
-to make regular backups of your site's data, and to store them in a location
-that is separate from the computer where your site is running.
+Якщо що-небудь трапиться з комп'ютером (або комп'ютерами), на якому ваш сайт і його
+база даних працюють або в разі коли ви втратите доступ до цього комп'ютера, то ви втратите
+деякі або всі дані вашого сайту. Ви можете також втратити дані, якщо ваш сайт
+зламаний, або хтось з доступом в адмінку на вашому сайті видалив всі дані або
+змінив дані на сайті з помилками. Щоб попередити всі ці
+можливі ситуації втрат даних, важливо
+робити регулярні резервні копії вашого сайту і зберігати їх в місці
+окремому від комп'ютера, де ваш сайт працює.
 
-The frequency with which you should make data backups, and how many backups you
-should keep, depends on how frequently your site is changing. If you have a very
-large amount of content on your site that is being added to or updated many
-times per day, you would want to make more frequent backups than you would for a
-site that changes rarely. Also consider that some time could pass between when a
-data problem occurs and when you notice that it is a problem, so storing a
-sequence of backups (so that you can go back to the last known good data and
-retrieve that), rather than overwriting a single backup repeatedly, is a
-good practice.
+Частота з якою ви повинні робити ваші резервні копії і як багато копій вам
+слід зберігати, залежить від того як часто ваш сайт змінюється. Якщо ви маєте великий
+обсяг інформації на вашому сайті, яка була додана чи оновлена ​​багато
+раз за день, то вам слід робити резервні копії якомога частіше, на відміну коли
+сайт змінюється рідко. Також розраховуйте, що деякий час має пройти,
+коли проблема станеться і коли ви помітите проблему, так що зберігати потрібно
+кілька послідовних копій (так щоб можна було повернутися до моменту, коли проблема ще не відбулася і
+виправити її), перш ніж перезаписувати, якусь резервну копію негайно, переконайтеся
+що помилки яка виникла, відсутня у вашій резервної копії.
 
-Another consideration is that whatever format you store your backups in, it is a
-good idea to verify that you can actually retrieve lost data from your
-backups. You might want to test several possible data loss scenarios, and make
-sure that your data can be restored to the site in all cases.
 
-In order to make a complete backup of your site, you will need to make copies of
-the following:
+Ще одне застереження, в якому форматі б ви не зберігали ваші резервні копії,
+хорошою ідеєю буде перевіряти, що ви можете розгорнути вашу копію для відновлення ваших
+даних. Вам можливо буде потрібно протестувати різні сценарії втрати даних, щоб
+бути впевненим, що ви зможете відновити втрачені дані в усіх випадках.
 
-* The data in the _sites_ directory, including the _sites/default/settings.php_
-file.
+Наступні кроки дозволять зробити повну резервну копію
+вашого сайту:
 
-* The data in your site's database. A few tables can be truncated, such as those
-storing the temporary data cache and user login session information, but it is
-always safe to back up the entire database.
+* Дані в папці _sites_, включаючи файл _sites/default/settings.php_.
 
-* Uploaded files, such as images and other attachments. The location of these
-files is configurable; the standard location is the _sites/default/files_
-directory under your site root. In the _Manage_ administrative menu, navigate
-to _Configuration_ > _Media_ > _File system_ (_admin/config/media/file-system_)
-to check the file upload locations; to change them, you'll need to edit your
-_settings.php_ file.
+* Дані з бази даних вашого сайту. Деякі таблиці можуть бути очищені, наприклад ті що
+зберігають тимчасовий дані з кешем і інформацією про сесії авторизованих користувачів, проте
+завжди безпечніше створювати резервну копію всієї бази даних.
 
-* Modules, themes and any other software files you have customized. You can find
-customized modules and themes in the _modules_ and _themes_ directories
-respectively. Some people prefer to back up all software files, including core
-files and contributed modules and themes (which you could recover by downloading
-them again from the source), rather than trying to pick out specific files that
-definitely need to be backed up.
+* Завантажені файли, такі як зображення та інші прикріплені файли. Місцезнаходження цих
+файлів налаштовується; стандартне розташування це папка _sites/default/files_
+щодо кореня сайту. В _Керування_ меню адміністратора, перейдіть
+на сторінку _Конфігурація_ > _Медіа_ > _Файлова система_ (_admin/config/media/file-system_)
+перевірте папку для завантаження файлів; ви можете змінити папку для файлової системи, ви також можете це зробити
+в файлі _settings.php_.
 
-You can perform a test to confirm whether your backup has been done right by
-making a development copy of the site (see <<install-dev-making>>).
+* Модулі, теми оформлення і будь-які інші призначені для користувача файли, які ви додали. Ви можете знайти
+призначені для користувача модулі і теми оформлення в папках _modules_ і _themes_
+з усіма вкладеними папками. Деякі люди вважають за краще створити резервну копію всіх файлів, включаючи файли Drupal,
+модулів і тем оформлення (які ви зможете відновити завантаживши
+їх знову з висхідних кодів), перш ніж намагатися зібрати проект з джерел,
+які необхідно використовувати.
 
-==== Related topics
+Вам слід виконати тест, щоб підтвердити, що ваша резервна копія створена вірно
+і ви можете розгорнути копію сайту (дивіться <<install-dev-making>>).
+
+==== Пов'язані теми
 
 * <<security-update-core>>
 * <<install-dev-making>>
 * <<prevent-cache>>
 
-==== Additional resources
+==== Додаткові матеріалу
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ сторінка документації спільноти "Backing up a site"]
 
-* The https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module],
-which can be used to set up automatic backups of the database and uploaded
-files.
+* The https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate модуль],
+який можна використовувати для створення автоматичних резервних копій бази даних і завантажених
+файлів.
 
+*Автори*
 
-*Attributions*
+Написано https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
