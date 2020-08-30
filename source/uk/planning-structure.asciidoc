@@ -1,153 +1,153 @@
 [[planning-structure]]
-=== Planning your Content Structure
+=== Проектування структури контенту
 
 [role="summary"]
-How to plan a content structure that assigns content entity types to specific
-content on the website.
+Як планувати структуру контенту, яка пов'язує типи контентів і певний контент на сайті.
 
-(((Content structure,planning)))
-(((Site plan,content structure)))
+(((Структура контенту, планування)))
+(((План сайту, структура контенту)))
 
-==== Goal
+==== Мета
 
-Make a plan for the content structure of the site (which type and subtype of
-entity to use for which content), and which pages will contain listings of
-content.
+Створіть план для структури контенту вашого сайту (які типи і підтипи
+сутностей використовувати для контенту) і які сторінки будуть містити списки
+матеріалів.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<planning-data-types>>
 * <<planning-modular>>
 * <<preface-scenario>>
 
-//==== Site prerequisites
+// ==== Site prerequisites
 
-==== Steps
+==== Кроки
 
-. Brainstorm about what content your site needs to contain, which could include
-content that visitors would be looking for, as well as content that you want
-to show to visitors. The result could be the description in
+. Мозковий штурм про те який контент ваш сайт повинен відображати, серед якого буде
+контент, що відвідувачі хотіли б знайти, також контент, який ви хотіли б
+показати відвідувачам. Результат можна описати так само як це зроблено на цій сторінці
 <<preface-scenario>>.
 
-. For each identified piece of content, decide which content entity type would
-be the best fit. In doing this, you'll need to consider where and how
-the content will be used and edited on the site. For example, in the farmers
-market site scenario, you might want to display the hours and location of the
-farmers market on the sidebar of every page. For that content, a single custom
-block makes sense. As another example, you might decide that pages displaying
-information about each vendor should be content items managed by the core Node
-module, because you want vendors to be able to edit their own listings.
-The core Node module permission system lets you do this easily.
+. Для кожного певного шматочка контенту, визначте який тип сутності найкраще
+підходить для цього. Якщо ви це зробите, ви будете повинні розрахувати, де і як
+контент буде відображатися і редагуватися на сайті. Наприклад, на сайті міського
+ярмарку, ви можете відобразити години роботи і адресу
+міського ярмарку в колонці на кожній сторінці. Для цього контенту, один користувацький
+блок підійде найкраще. Як ще один приклад, ви можете вирішити що сторінки які повинні відображати
+інформацію про кожного продавця найкраще зробити через матеріали керовані ядром Drupal в Node
+модулі, тому що ви хочете щоб продавці мали можливість редагувати свої власні списки рецептів.
+Дозволи(permissions) модуля ядря Node дозволяють легко це зробити.
 +
-These decisions do not necessarily always have only one right answer; for
-instance, you could decide that vendor pages should be user profiles instead of
-content items, but if you did that the content would be tied to a specific user
-account, and it would not be as easy to later change the ownership of a vendor
-page to a different user account.
+Це рішення не обов'язково має завжди одну відповідь;
+наприклад, ви могли б вирішити, що продавці повинні бути профілями користувачів замість
+контенту, однак якщо ви зробили, так що контент буде пов'язаний з певним обліковим записом
+користувача, то вам буде не легко змінити авторство сторінки продавця
+на користь іншого користувача.
 
-. Within each content entity type you identified, decide what division into
-entity sub-types would make sense. For example, in the farmers market site
-example, you would probably decide that under the Content item entity type,
-there should be one content type for basic pages (Home and
-About), one for vendor pages, and one for recipe pages.
+. Всередині кожної сутності, яку ви визначаєте, вирішите, які розділи в
+підтипах сутностей мають місце бути. Наприклад, на сайті міської ярмарки
+ви можливо вирішите, що Матеріали
+повинні бути одним типом для звичайних сторінок (Головна і
+Про нас), іншим типом для сторінок продавців і ще одним підтипом для сторінок рецептів.
 
-. For each entity sub-type you decided on, decide what fields are needed. For
-instance, the Vendor content type might need fields for the vendor name, web
-page URL, image, and description.
+. Для кожного підтипу сутності визначіться які вам поля вам потрібні. Наприклад, для
+типу контенту Продавець необхідні поля назва продавця, шлях
+URL, зображення і опис.
 
-. Decide on what entity listings are needed, which could be entire pages or
-smaller areas on the page. For each listing, you'll need to determine what
-entity items should be listed. Then you'll need to decide in what order and with
-what filtering options they should be displayed; for example, you might want to
-give the site visitor the option to search by keyword, to filter the list down
-to a subset, or to sort the list. You'll also need to decide what information
-from the entity items should be shown, which might result in adding to the list
-of fields you determined in the previous step. The farmers market site, for
-example, needs to have a Recipes listing page that lists content items of type
-Recipe, with the ability to filter by ingredients, so that means that the Recipe
-content type needs an Ingredients field.
+. Вирішіть які списки сутностей вам потрібні, які сутності будуть займати цілі сторінки а які будуть займати
+менші області на сторінці. Для кожного списку, ви повинні будете визначити, які
+сутності будуть відображені в списках. Тоді ви будете повинні вирішити, в якому порядку і з якими
+параметрами фільтрів вони повинні будуть відображені; наприклад, ви можете захотіти
+дати можливість відвідувачам сайту шукати за ключовими словами, фільтрувати список по
+параметрам або вибирати параметри сортування. Ви також повинні будете вирішити яка інформація
+з сутностей буде показана, і яка інформація буде виводитися на додаток до списку
+полів визначених в минулих кроках. Сайт міського ярмарку, наприклад, Повинен мати сторінку списку рецептів, яка відображає контент тип
+Рецепт, з можливістю фільтрувати за інгредієнтами, це означає, що Рецепт
+тип матеріалу повинен мати поле Інгредієнти.
 
-. For each identified field on each entity subtype, identify what type of data
-it should contain (such as plain text, formatted text, a date, an image file,
-etc.), and how many values should be allowed. Most fields are
-single-valued, but for example, a Recipe should allow for multiple values in
-its Ingredients field.
+. Для кожного певного поля в кожному підтипі сутності, визначте який тип даних
+вони повинні містити (наприклад простий текст, форматований текст, дату, файл зображення,
+і т.д.), і як багато значень поля дозволяють зберігати. Більшість полів
+мають одне значення, проте наприклад, Рецепт може містити і множинні значення наприклад
+для поля Інгредієнти.
 
-. Consider which fields would be best as references to taxonomy term entities:
-fields whose values should be chosen from a list of allowed values. Allowed
-values that are expected to change and grow over time, are good candidates. An
-example is the Ingredients field for the Recipe content type.
+. Подумайте над полями, які найкраще зробити через зв'язку використовуючи терміни таксономії:
+поля які мають значення вибрані зі списку доступних значень. Доступні
+значення, які можливо змінити і додати через деякий час, кращими варіантами.
+Наприклад поле Інгредієнти для типу матеріалів Рецепт.
 
-. Consider which fields should reference other content entities. An example is
-that since vendors will be submitting recipes, a field will be needed on
-the Recipe content type that references the Vendor content item for the vendor
-who submitted the recipe.
+. Подумайте які поля найкраще зробити через зв'язку до інших сутностей. Наприклад
+коли продавці створюють рецепти, поле буде потрібно
+щоб зв'язати тип матеріал Рецепт і Продавець,
+який створює рецепт.
 
-Here's an example of the resulting content structure for the farmers market
-scenario example site:
-
-[width="100%",frame="topbot",options="header"]
-|=============================================
-|Entity type |Entity sub-type |Examples |Fields
-
-|Content item |Basic page |Home page, about page |Title, page body
-
-|Content item |Vendor |A page for each vendor at the market |
-  Vendor name, page body, image, URL
-
-|Content item |Recipe |A page for each submitted recipe |
-  Recipe name, page body, image, reference to Vendor who submitted it,
-  Ingredients taxonomy
-
-|Custom block |(generic) |Copyright notice for footer,
-  Hours and location for sidebar |No special fields
-
-|Taxonomy term |Ingredients |Carrots, tomatoes, and other recipe ingredients |
-  No special fields
-
-|Contact form |(generic) |Generic contact form |Name, email, subject, message
-
-|User profile |(none) |Will not be displayed on site |No special fields
-
-|=============================================
-
-And here are the listings the site needs:
+Нижче приклад структури для міського ярмарку
+з нашого сценарію:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Page or page area |Entity type and sub-type |Filter/sort/pagination |
-  Fields displayed
+|Тип сутності |Підтип сутності |Приклади |Поля
 
-|Vendors page |Vendor content items |All vendors, alphabetical, paged |
-  Image, vendor name, trimmed body
+|Елемент контенту |Сторінка |Головна сторінка, Про нас |Тема, вміст
 
-|Recipes page |Recipe content items |
-  Filter by ingredients, alphabetical, paged |Image, recipe name
+|Елемент контенту |Продавець |Сторінка для кожного продавця на ринку |
+  Ім'я продавця, вміст, зображення, URL
 
-|Recent recipes sidebar |Recipe content items |List 5 most recent |
-  Image, recipe name
+|Елемент контенту |Рецепт |Сторінка для кожного збереженого рецепта |
+  Ім'я рецепта, опис, зображення, зв'язати з продавцем, хто створив рецепт,
+  Інгредієнт таксономія
+
+|Користувацький блок |(основний) |Копірайт в футері,
+  Години роботи і адреса в колонці |Немає спеціальний полів
+
+|Терміни таксономії |Інгредієнти |Морква, помідори та інші інгредієнти в рецептах |
+  Немає спеціальний полів
+
+|Контактна форма |(основний) |Основна контактна форма |Ім'я, емейл, назва, повідомлення
+
+|Профіль користувача |(немає) |Не відображається на сайті |Немає спеціальний полів
 
 |=============================================
 
-==== Expand your understanding
+І нижче списки які потрібні на сайті:
+
+[width="100%", frame="topbot", options="header"]
+|=============================================
+|Сторінка і основний контент сторінки |Тип сутності і підтип |Фільтри/сортування/пагінація |
+  Відображені поля
+
+|Сторінка продавця |Елементи контенту продавця |Всі продавці, алфавітний, посторінкова |
+  Зображення, ім'я продавця, скорочений опис
+
+|Сторінка рецептів |Елементи контенту рецепта |
+  Фільтр за інгредієнтами, алфавітний, посторінкова |Зображення, ім'я рецепта
+
+|Недавні рецепти в колонці |Елементи контенту рецепта |Список 5 останніх рецептів |
+  Зображення, Ім'я рецепта
+
+|=============================================
+
+==== Покращимо своє розуміння
 
 * <<structure-content-type>>
 * <<structure-fields>>
 * <<structure-taxonomy-setup>>
 
-==== Related concepts
+==== Пов'язані теми
 
 <<structure-taxonomy>>
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/CaNt4DEeIgU[title="Planning Your Content Structure"]
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
-and https://www.drupal.org/u/gdunham[Grant Dunham].
+Написано і змінено https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+і https://www.drupal.org/u/gdunham[Grant Dunham].
+
+Перевів https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://www.drupal.org/mazaltov[Mazaltov].
