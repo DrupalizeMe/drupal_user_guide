@@ -1,53 +1,53 @@
 [[planning-workflow]]
 
-=== Concept: Editorial Workflow
+=== Основи: Робочий процес редагування
 
 [role="summary"]
-Overview of the editorial workflow to manage content on a website.
+Огляд робочого процесу редагування для управління контентом на сайті.
 
-(((Editorial Workflow,overview)))
-(((Published flag,overview)))
-(((Unpublished flag,overview)))
-(((Revision,overview)))
+(((Робочий процес редагування, огляд)))
+(((Статус опубліковано, огляд)))
+(((Статус знято з публікації, огляд)))
+(((Редакція, огляд)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<understanding-drupal>>
 * <<planning-data-types>>
 
-==== What is an editorial workflow?
+==== Що таке робочий процес редагування?
 
-An _editorial workflow_ is the process organizations follow to create, review,
-edit, and publish content. Multiple people in different roles in the
-organization can be part of the process. For example, content creators could
-collect information and write content; editors could review, edit, ask for
-changes, and publish the content once it's ready to be shared with the
-audience. Later on, content revisions could go through a simple process for
-small changes, or a more complex process with reviews for larger changes.
+_Рабочий процес редагування_ - це процес організації створення, перевірки,
+редагування і публікації контенту. Багато людей на різних посадах в
+організації можуть бути залучені в процес. Наприклад, творець контенту може
+збирати інформацію і писати статті; редактор може перевіряти статті, редагувати, запитувати
+зміни і публікувати контент, коли він буде готовий для
+аудиторії. Пізніше, редакції контенту можуть бути змінені, використовуючи простий процес
+для маленьких змін або більш складний процес з перевіркою для великих змін.
 
-==== What tools are available for managing workflows?
+==== Які інструменти доступні для робочого процесу управління?
 
-Published/Unpublished status::
-  The Content item entity type supports marking each content item as either
-  Published or Unpublished. Viewing permissions are separate for published and
-  unpublished content; for example, all site visitors might be able to see
-  published content items, while only content creators and editors can see
-  unpublished content items.
-Revision tracking::
-  Some content entity types support revision tracking, meaning that as content
-  is revised, the software stores the older revisions, so that they can be
-  compared or reverted.
-Workflows::
-  The core Workflows module lets you define workflow states and transitions,
-  beyond just having content be published or unpublished. The companion core
-  Content Moderation module lets you assign permissions and roles to the
-  workflow transitions. Both can be used with both Content item and Custom block
-  entity types.
-Block placement::
-  The Custom block content entity lets you create a custom block and edit it,
-  but only make it visible on the site once it is ready.
+Опублікований/Знятий з публікації статус контенту::
+  Сутності контенту підтримують позначку кожного елемента контенту як
+  Опублікований або Знятий з публікації. Права на перегляд розділені для контенту опублікованого і
+  знятого з публікації; наприклад, всі відвідувачі сайту можуть бачити
+  опублікований контент, проте тільки творці контенту і редактори можуть переглядати
+  контент знятий з публікації.
+Відстеження редакцій::
+  Деякі типи контенту підтримують відстеження редакцій, це означає, що такий контент
+  може бути виправлений і друпал зберігає всі старі правки, так що вони можуть бути
+  порівняні і відновлені.
+Робочі процеси::
+  Модуль ядра Workflows дозволяє визначити стан і переходи станів контенту в робочому процесі,
+  що більше ніж просто публікація і зняття з публікації контенту. Додатковий модуль ядра
+  Content Moderation дозволяє зв'язати права доступу і ролі з
+  переходами станів контенту в робочому процесі. Обидва модулі можуть бути використані для сутностей Вмісту та
+  Користувацьких блоків.
+Розміщення блоку::
+  Сутність користувацького блоку дозволяє вам створювати користувацький блок і редагувати його,
+  і зробити його видимим, коли сайт буде готовий до його показу.
 
-==== Related topics
+==== Пов'язані матеріали
 
 * <<content-create>>
 * <<content-edit>>
@@ -56,9 +56,12 @@ Block placement::
 
 // ==== Additional resources
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Написано і змінено https://www.drupal.org/u/dianalakatos[Diána Lakatos] із
 https://pronovix.com//[Pronovix],
 https://www.drupal.org/u/gdunham[Grant Dunham],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+і https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Перекладено https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із
+https://www.drupal.org/mazaltov[Mazaltov].
