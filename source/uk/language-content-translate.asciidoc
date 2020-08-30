@@ -1,80 +1,80 @@
 [[language-content-translate]]
 
-=== Translating Content
+=== Переклад матеріалу
 
 [role="summary"]
-How to translate a page into another language.
+Як перевести сторінку на іншу мову.
 
-(((Content,translating)))
-(((Translating,content)))
+(((Матеріал, переклад)))
+(((Переклад, матеріал)))
 
-==== Goal
+==== Мета
 
-Translate the home page to Spanish.
+Перекласти домашню сторінку на іспанську.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<language-concept>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* The Home content item must exist. See <<content-create>>.
+* Матеріал Головна повинен існувати. Дивіться <<content-create>>.
 
-* The core Content Translation module must be installed, and your site must
-have at least two languages. See <<language-add>>.
+* Модуль ядра Content Translation повинен бути встановлений, і ваш сайт повинен
+мати як мінімум дві мови. Дивіться <<language-add>>.
 
-* The _Basic page_ content type must be configured to be translatable. See
+* Тип матеріалу _Сторінка_ повинен бути налаштований на переклад. Дивіться
 <<language-content-config>>.
 
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. У _Керування_ адміністративного меню, перейдіть в _Вміст_ (_admin/content_).
 
-. Locate the home page. You can search for it by entering "Home" in the title
-field.
+. Знайдіть домашню сторінку. Ви можете знайти її, ввівши "Головна" в поле
+Заголовок.
 
-. Select _Translate_ from the dropdown button in the row of the Home content
-item. The page _Translations of Home_ appears.
+. Виберіть _Переводи_ з меню, що випадає в рядку елемента вмісту Головна.
+ З'явиться сторінка _Переводи Головна сторінка_.
 
-. Click _Add_ in the row _Spanish_.
+. Натисніть _Добавити_ в рядку _Spanish_.
 +
 --
 // Screenshot of the translations page for the Home page content item.
-image:images/language-content-translate-add.png["Adding a content translation",width="100%"]
+image:images/language-content-translate-add.png["Додавання перекладу вмісту", width="100%"]
 --
 
-. Note that the user interface has switched to Spanish. To switch it back to
-English, remove the first instance of _es_ in the browser's URL. For
-example, if your URL looks like _example.com/es/node/5/translations/add/en/es_,
-remove the _es_ that comes immediately after _example.com_.
+. Зверніть увагу, що призначений інтерфейс користувача переключився на іспанську. Щоб переключити його назад на
+Українську, видаліть _es_ в URL браузера. наприклад,
+якщо ваш URL виглядає _example.com/es/node/5/translations/add/en/es_,
+видаліть _es_, який йде відразу після _example.com_.
 
-. Fill in the fields as shown below.
+. Заповніть поля, як показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name | Explanation| Value
-|Title | Translated title of the page | Página principal
-|Body | Translated body of the page |
+|Назва поля |опис |значення
+|Тема |Перекладена назва сторінки |Página principal
+|Вміст |Переклад вмісту сторінки |
 Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio!
 Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre
 Lugar: parking del Banco Trust número 1. En el centro de la ciudad
-|URL alias > URL alias | Translated address of the webpage | pagina-principal
+|Синонім URL > Синонім URL |Перекладена адреса веб-сторінки |pagina-principal
 |================================
 
-. Click _Save (this translation)_.
+. Натисніть _Зберегти (цей переклад)_.
 
-. Go to your site's home page to view the newly translated page.
+. Перейдіть на домашню сторінку свого сайту, щоб переглянути нещодавно перекладену сторінку.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-* Follow the steps above to translate more content on your site.
+* Дотримуйтесь інструкцій вище, щоб перевести більше вмісту на вашому сайті.
 
 * <<language-config-translate>>
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/TOalcUYD5zM[title="Translating Content"]
@@ -82,6 +82,8 @@ video::https://www.youtube-nocookie.com/embed/TOalcUYD5zM[title="Translating Con
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Написано https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
