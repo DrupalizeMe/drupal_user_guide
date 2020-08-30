@@ -1,67 +1,101 @@
 [[structure-text-formats]]
 
-=== Concept: Text Formats and Editors
+=== Налаштування форматів тексту і Редакторів
 
 [role="summary"]
-Overview of text formats, filters, editors, and cross-site scripting.
+Огляд текстових форматів, фільтрів, редакторів та міжсайтових сценаріїв.
 
-(((Text format,overview)))
-(((User-entered content,filtering)))
-(((Security,text format)))
-(((Security,cross-site scripting)))
-(((Cross-site scripting (XSS),preventing)))
-(((XSS (Cross-site scripting),preventing)))
+(((Текстовий формат, налаштування)))
+(((Налаштування, текстовий формат)))
+(((Редактор, налаштування)))
+(((CKEditor текстовий редактор, встановлення значення за замовчуванням текстового формату)))
+(((WYSIWYG (Що бачу, то і отримую (What You See Is What You Get)), редактор налаштувань)))
+(((Що бачу, то і отримую (What You See Is What You Get) (WYSIWYG), редактор налаштувань)))
+(((Модуль, Filter)))
+(((Модуль, Editor)))
+(((Модуль, CKEditor)))
+(((Filter модуль, налаштування)))
+(((Editor модуль, налаштування)))
+(((CKEditor модуль, налаштування)))
 
-// ==== Prerequisite knowledge
+==== Мета
 
-==== What are text formats and filters?
+Додайте тег горизонтального правила(hr) в текстовий формат _Базовий HTML_ і відповідну
+кнопку в конфігурацію його редактора.
 
-_Text formats_ change how HTML tags and other text are processed and displayed
-on your site. Text formats are composed of a series of _filters_, each of which
-transforms text. When users create content, a text format is associated with the
-content, and the full, original text is stored in the database. The content is
-then passed through the filters in the text format before it becomes output on
-the site.
+==== Необхідні знання
 
-The core Filter module provides text format functionality, and the core Standard
-installation profile sets up _Basic HTML_, _Restricted HTML_, and _Full HTML_
-text formats. Each text format has an associated permission, so that you can
-allow only trusted users to use permissive text formats. This restricts
-untrusted users to text formats like _Basic HTML_, which filters out dangerous
-HTML tags.
+<<structure-text-formats>>
 
-==== What are the editors associated with text formats?
+==== Вимоги до сайту
 
-Each text format can be associated with an editor, such as a visual WYSIWYG
-(What You See Is What You Get) HTML editor. The core Text Editor module provides
-the ability to associate editors with text formats, and to configure the editors
-(such as adding and removing buttons from their toolbars). The core CKEditor
-module provides the industry-standard editor known as CKEditor, so that it can
-be used to edit HTML content on your site.
+* Модулі ядра Filter, Editor, і CKEditor повинні бути встановлені. Вони
+встановлюються на вашому сайті при стандартній установці
+Drupal.
 
-==== What is cross-site scripting?
+* Текстовий формат _Базовий HTML_ повинен існувати. Він створюється на вашому сайті
+при стандартній установці Drupal.
 
-Cross-site scripting (XSS) is a security vulnerability typically found in
-websites. In a site that is not well protected, malicious users can enter script
-into web pages that are viewed by other users (for example, in a comment or in
-the body of a page). A cross-site scripting vulnerability may be used by
-attackers to login as another user. It is important to configure the text
-formats of your website to prevent such abuse.
+==== Кроки
 
-==== Related topics
+. У _Куревання_ адміністративного меню, перейдіть в _Конфігурація_ > _Работа
+з содержімим_> _Текстовие формати та редактори_ (_admin/config/content/formats_). з'явиться
+сторінка _Текстові формати та редактори_. Зверніть увагу, що імена текстових форматів
+які прийшли з вашим інсталяційний профілем, відображаються українською на цій сторінці; дивіться
+<<language-concept>> для пояснення.
 
-<<security-concept>>
+. Натисніть _Налаштувати_ для текстового формату _Basic HTML_. з'явиться сторінка
+_Basic HTML_.
 
-==== Additional resources
+. Зверніть увагу, що _CKEditor_ обраний в полі _Текстовий редактор_. Це дозволить вам
+налаштувати панель інструментів редактора.
 
-* https://www.drupal.org/docs/8/core/modules/filter/overview[_Drupal.org_ community
-documentation page "Filter module: text formats that filter user input"]
+. Перетягніть кнопку _horizontal rule_ з _Доступних кнопок_ в _Інструменти_ під
+_Актівна панель інструментів_. Можливо, вам доведеться натиснути на посилання _Показати назви групп_, щоб побачити
+назва групи _Інструменти_. В якості альтернативи перетягування, ви можете вибрати вкладку
+кнопки, а потім перемістити її за допомогою клавіш зі стрілками на клавіатурі.
++
+--
+// Button configuration area on text format edit page.
+image:images/structure-text-format-config-editor-config.png["Налаштування редактора", width="100%"]
+--
 
-* https://en.wikipedia.org/wiki/Cross-site_scripting[Wikipedia page "Cross-site
-scripting"]
+. Зверніть увагу, що ви можете змінити _Послідовність обробки фільтрами_.
+
+. Під _Налаштування фільтру_> _Обмежити дозволені HTML-теґи та виправити хибний HTML_,
+в полі _Дозволені HTML-теґи_, переконайтеся, що `<hr>` присутній (додавши його кнопку редактор автоматично оновить дозволені теги).
++
+--
+// Allowed HTML tags area on text format edit page.
+image:images/structure-text-format-config-allowed-html.png["Налаштування HTML тегів", width="100%"]
+--
+
+. Натисніть _Зберегти конфігурацію_. Ви повернетеся на сторінку _Текстові формати та редактори_. З'явиться повідомлення про те, що текстовий формат був
+оновлений.
++
+--
+// Confirmation message after updating text format.
+image:images/structure-text-format-config-summary.png["Повідомлення з підтвердженням для конфігурації текстового формату"]
+--
+
+==== Розширте своє розуміння
+
+Якщо ви не бачите цих змін на вашому сайті, вам може знадобитися
+очистити кеш. Дивіться <<prevent-cache-clear>>.
 
 
-*Attributions*
+// ==== Related concepts
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+==== Відео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Configuring Text Formats and Editors"]
+
+// ==== Additional resources
+
+
+*Автори*
+
+Написав https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
