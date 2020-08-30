@@ -1,48 +1,50 @@
 [[prevent-status]]
 
-=== Concept: Status Report
+=== Основи: Звіт про стан
 
 [role="summary"]
-Overview of the status report and where to find it on a site.
+Огляд звіту про стан і де його знайти на сайті.
 
-(((Status report,overview)))
-(((Security,status report)))
-(((PHP version,status report)))
-(((Software version,status report)))
-(((Update status,status report)))
-(((Update,status report)))
-(((Site information,status report)))
-(((Server information,status report)))
-(((Performance,status report)))
-(((Troubleshooting,status report)))
+(((Звіт про стан, огляд)))
+(((Безпека, звіт про стан)))
+(((PHP версія, звіт про стан)))
+(((Версія ядра, звіт про стан)))
+(((Статус оновлення, звіт про стан)))
+(((Оновлення, звіт про стан)))
+(((Інформація про сайт, звіт про стан)))
+(((Інформація про сервер, звіт про стан)))
+(((Продуктивність, звіт про стан)))
+(((Пошук проблеми, звіт про стан)))
 
-//==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
-==== What is a Status Report?
+==== Що таке Звіт про стан?
 
-The status report is a short overview of your site's parameters as well as any
-problems detected with your installation. It may be useful to copy and paste
-this information into support requests filed on _Drupal.org's_ support forums
-and project issue queues or when asking for help on other channels.
+Звіт про стан являє собою короткий огляд параметрів вашого сайту, а також будь-які
+проблеми, виявлені при установці. Буде корисним скопіювати і вставити
+дані відомості, при подачі звернення на форумах підтримки
+і черги помилок проектів на сайті Drupal.org або при зверненні за допомогою іншим способом.
 
-You can find the status report in the _Manage_ administrative menu by
-navigating to _Reports_ > _Status report_ (_admin/reports/status_).
+Ви можете знайти звіт про стан в _Керування_ адміністративного меню
+перейшовши в _Звіти_> _Звіт про стан_ (_admin/reports/status_).
 
 // Status report (admin/reports/status).
-image:images/prevent-status.png["Status report of a basic site",width="100%"]
+image:images/prevent-status.png["Звіт про стан базового сайту", width="100%"]
 
-==== Related topics
+==== Схожі теми
 
 <<thoughts-support>>
 
-==== Additional resources
+==== Додаткові матеріали
 
-If you have an error about trusted host settings in your status report, see
-https://www.drupal.org/docs/8/install/trusted-host-settings[_Drupal.org_ community documentation page "Trusted Host settings"].
+Якщо у вас виникає помилка про Налаштування довірених хостів на сторінці звіту про стан, дивіться
+https://www.drupal.org/docs/installing-drupal/trusted-host-settings[_Drupal.org_ сторінка документації спільноти "Trusted Host settings"].
 
-*Attributions*
+*Автори*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-from https://www.drupal.org/docs/7/monitoring-a-site/reports["Reports"]
-copyright 2000-copyright_upper_year by the individual contributors to the
+Адаптовано https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+з https://www.drupal.org/docs/7/monitoring-a-site/reports["Reports "]
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
