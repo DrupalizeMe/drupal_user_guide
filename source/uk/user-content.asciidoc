@@ -1,73 +1,74 @@
 [[user-content]]
 
-=== Assigning Authors to Content
+=== Прив'язка автора до матеріалів
 
 [role="summary"]
-How to assign authorship of content items to a user account.
+Як прив'язати авторство матеріалів аккаунту користувача.
 
-(((Author,assigning)))
-(((Content,assigning author)))
+(((Автор, прив'язка)))
+(((Контент, прив'язка автора)))
 
-==== Goal
+==== Мета
 
-Assign Vendor content items Happy Farm and Sweet Honey to the corresponding
-Vendor user accounts, so they can edit their own Vendor profiles on the site.
+Прив'язати матеріали Постачальника Веселий молочник і солодкий мед до відповідних аккаунтів Постачальника, щоб вони могли редагувати свої власні профілі Постачальника на сайті.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* The Vendor content type must exist, and your site must have at least two
-Vendor content items. See <<structure-content-type>>, <<structure-fields>>, and
+* Тип матеріалу Постачальник повинен існувати, і на вашому сайті має бути не менше двох
+матеріалів Постачальника. Дивіться <<structure-content-type>>, <<structure-fields>>, і
 <<content-create>>.
 
-* User accounts for at least two vendors must exist. See <<user-new-user>>.
+* Повинні існувати аккаунти користувачів як мінімум для двох Постачальників. Дивіться <<user-new-user>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. У _Керування_ адміністративного меню, перейдіть в _Вміст_ (_admin/content_).
 
-. Find Vendor content item Happy Farm in the list. If it is not immediately
-visible, you can filter the list by _Published status_, _Content type_ (Vendor),
-_Title_, or _Language_.  Click _Edit_ for the Vendor content item you would like
-to assign an author to.
+. Виберіть матеріал Постачальника Веселий молочник в списку. Якщо його не відразу
+видно, ви можете відфільтрувати список по _Стану публікації_, _Типу матеріалів_ (Постачальник),
+_Заголовку_, або _Мові_. Натисніть _Редагувати_ для матеріалу Постачальника, для якого ви б хотіли
+призначити авторство.
 
-. Under _Authoring information_, start typing the Vendor's user
-name Happy Farm in the _Authored by_ field. The field lists matching user
-names. Select the Vendor's user name from the list.
+. Під _Відомості про автора_, почніть вводити для користувача ім'я Постачальника
+Веселий молочник в полі _Автор_. У полі будуть перераховані відповідні імена
+користувачів. Виберіть ім'я користувача Постачальника зі списку.
 +
 --
 // Authoring information section of content edit page.
-image:images/user-content.png["Assigning an author to the Vendor content item"]
+image:images/user-content.png["Прив'язка авторства матеріалу Постачальника"]
 --
 
-. Click _Save_.
+. Натисніть _Зберегти_.
 
-. You will get a notification that the Vendor content item has been updated.
+. Ви отримаєте повідомлення про те, що матеріал Постачальника був оновлений.
 +
 --
 // Confirmation message after content update.
-image:images/user-content_updated.png["Vendor content item has been updated"]
+image:images/user-content_updated.png["Матеріал Постачальника оновлений"]
 --
 
-. Follow these steps again to assign Vendor content item Sweet Honey to the
-Vendor user account Sweet Honey.
+. Повторіть інструкції, щоб прив'язати матеріал Постачальника Солодкий мед до
+до аккаунту користувача Постачальника Солодкий мед.
 
 // ==== Expand your understanding
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/yx9u2SCgono[title="Assigning Authors to Content"]
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Написано https://www.drupal.org/u/dianalakatos[Diána Lakatos] в
 https://pronovix.com/[Pronovix].
+
+Переклав https://www.drupal.org/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
