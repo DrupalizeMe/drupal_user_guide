@@ -1,95 +1,97 @@
 [[user-permissions]]
-=== Assigning Permissions to a Role
+=== Додавання прав доступу для ролі
 
 [role="summary"]
-How to assign a permission to a role.
+Як додати права доступу для ролі.
 
-(((Permission,changing)))
-(((Permission,granting)))
-(((Permission,denying)))
-(((Role,changing permission)))
-(((Security,assigning permission)))
+(((Права доступу, зміна)))
+(((Права доступу, дозвіл)))
+(((Права доступу, заборона)))
+(((Роль, зміна прав доступу)))
+(((Безпека, додавання прав доступу)))
 
-==== Goal
+==== Мета
 
-Change the permissions for the Vendor role so that users can create, edit,
-and delete Recipe and Vendor content, format the content, and contact each
-other.
+Змінити права доступу для ролі Постачальник, так щоб користувачі могли створювати, редагувати
+і видаляти рецепти і сторінку постачальника, змінювати контент і писати повідомлення один
+одному.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Роль Постачальник повинна існувати на вашому сайті. Дивіться <<user-new-role>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _People_ > _Roles_
-(_admin/people/roles_). The _Roles_ page appears.
+. В адміністративному меню _Керування_, перейдіть на _Люди_> _Ролі_
+(_admin/people/roles_). З'явиться сторінка _Ролі_.
 
-. Click _Edit permissions_ in the dropdown for the Vendor
-role. The _Edit role_ page appears where you can see all the available
-actions for the website such as, for example, _Post comments_ or _Administer
-blocks_. The available permissions depend on the modules that are installed in
-the site. Note: Some permissions may have security implications. Be cautious
-while assigning permissions to roles.
+. Натисніть _Редагувати права доступа_ у випадаючому списку для ролі постачальник.
+З'явиться сторінка _Редагування ролі_, де ви можете подивитися всі доступні
+дії для сайту такі як, _Додавання коментарів_ або _Управління
+блоками_. Доступні права доступу залежать від модулів, які встановлені на
+сайті. Замітка: Деякі права доступу мають позначку про важливість для безпеки. Будьте обережними
+коли додаєте права доступу для ролей.
 
-. Check the boxes for the following permissions, listed by module:
+. Виберіть галочками наступні дозволи надані модулями:
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Module | Permission
-| Contact | Use users' personal contact forms
-| Filter | Use the Restricted HTML text format
-| Node | Recipe: Create new content
-| Node | Recipe: Edit own content
-| Node | Recipe: Delete own content
-| Node | Vendor: Edit own content
-| Quick Edit | Access in-place editing
+|Модуль |Права доступу
+|Contact |Використання персональних контактних форм користувачів
+|Filter |Використання текстового формату Обмежений HTML
+|Node |Рецепт: Створення нових матеріалів
+|Node |Рецепт: Редагування власних матеріалів
+|Node |Рецепт: Видалення власного матеріалу
+|Node |Постачальник: Редагування власного матеріалу
+|Quick Edit |Доступ до вбудованого редактору
 |================================
 +
 --
 // Permissions page for Vendor (admin/people/permissions/vendor).
-image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
+image:images/user-permissions-check-permissions.png["Додавання користувачам з роллю постачальник прав доступу на створення, видалення і редагування Рецептів", width="100%"]
 --
 
-. Click _Save permissions_. You will get a message saying your changes have been
-saved.
+. Натисніть _Зберегти права доступа_. Ви отримаєте повідомлення, в якому буде сказано, що ваші зміни були
+збережені.
 +
 --
 // Confirmation message after updating permissions.
-image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
+image:images/user-permissions-save-permissions.png["Повідомлення з підтвердженням після оновлення прав доступу"]
 --
 
-==== Expand your understanding
+==== Поліпшити своє розуміння
 
-* Log in as one of the new users you created in <<user-new-user>>. Verify
-whether you have the correct permissions.
+* Авторизуйтесь під одним з нових користувачів, яких ви створили тут <<user-new-user>>. Перевірте
+чи мають вони правильні права доступу.
 
 * <<user-roles>>
 
-==== Related concepts
+==== пов'язані концепції
 
 <<user-admin-account>>
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/IlVh9f4BHVw[title="Assigning Permissions to a Role"]
 
-==== Additional resources
+==== Додаткові матеріали
 
-https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
+https://www.drupal.org/docs/7/managing-users[_Drupal.org_ сторінка документації спільноти "Managing Users"]
 
 
-*Attributions*
+*Автори*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
+Адаптовано і змінено https://www.drupal.org/u/batigolix[Boris Doesborg],
 https://www.drupal.org/u/bemery987[Brian Emery],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
-https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-copyright_upper_year by the individual contributors to the
+і https://www.drupal.org/u/jojyja[Jojy Alphonso] з
+http://redcrackle.com [Red Crackle], з
+https://www.drupal.org/docs/7/managing-users/user-roles["User Roles "],
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переклав https://www.drupal.org/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
