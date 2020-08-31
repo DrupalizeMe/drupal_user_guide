@@ -1,27 +1,27 @@
 [[views-parts]]
 
-=== Concept: The Parts of a View
+=== Основи: Розділи Видів
 
 [role="summary"]
-Overview of the administrative parts of a view.
+Огляд адміністрування частин видів.
 
-(((View,parts of)))
-(((Display part of view,overview)))
-(((Format part of view,overview)))
-(((Fields part of view,overview)))
-(((Filter criteria part of view,overview)))
-(((Sort criteria part of view,overview)))
-(((Contextual filters part of view,overview)))
-(((Relationships part of view,overview)))
-(((View,display part)))
-(((View,format part)))
-(((View,fields part)))
-(((View,filter criteria part)))
-(((View,sort criteria part)))
-(((View,contextual filters part)))
-(((View,relationships part)))
+(((Вид, розділ)))
+(((Відображення розділ виду, огляд)))
+(((Формат розділ виду, огляд)))
+(((Поля розділ виду, огляд)))
+(((Критерії фільтрування розділ виду, огляд)))
+(((Критерії впорядкування розділ виду, огляд)))
+(((Контекстні фільтри розділ виду, огляд)))
+(((Зв'язки розділ уявлення, огляд)))
+(((Вид, відображення розділ)))
+(((Вид, формат розділ)))
+(((Вид, поля розділ)))
+(((Вид, критерії фільтрування розділ)))
+(((Вид, критерії впорядкування розділ)))
+(((Вид, контекстні фільтри розділ)))
+(((Вид, зв'язки розділ)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<planning-data-types>>
 * <<planning-modular>>
@@ -29,67 +29,69 @@ Overview of the administrative parts of a view.
 * <<content-paths>>
 * <<block-concept>>
 
-==== What are the parts of a view?
+==== Які розділи є у виду?
 
-When you are editing a view in the administrative interface, you will see the
-following parts (or sections), which allow you to specify what data to output,
-in what order, and in what format:
+Коли ви редагуєте вид через адміністративний інтерфейс, ви можете побачити
+наступні розділи (або секції), які дозволяють визначити які дані будуть виводитися,
+в якому порядку і в якому форматі:
 
-Display::
-  Each view can have one or more displays, each of which produces one type of
-  output. Options for display types include:
-  Page;;
-    Makes output at a particular URL, for the main page content at that URL.
-  Block;;
-    Makes output in a block, which can be placed on pages.
-  Feed;;
-    Makes an RSS or another type of feed.
-  Attachment;;
-    Makes output that you can attach to another display.
-Format::
-  Depending on the display type, you can choose to output your data in a
-  table, grid, HTML list, or another format. Some formats also give you a
-  second choice that lets you output either rendered entities or fields; other
-  formats do not give you this choice (for example, if you use a table format,
-  you must always use fields).
-Fields::
-  Depending on the format choice, you may be able to choose which content fields
-  are output. For example, if you were making a view of recipe content items, in
-  a block display you might show only the recipe names, while in a full page
-  display you might also show an image field because you have more space.
-Filter criteria::
-  Filters limit the data to be output, based on criteria such as whether the
-  content has been published or not, the type of content, or a field value.
-  For instance, to make a view of recipe content items, you would need to filter
-  to the Recipe content type, and to published recipes. Filters can also be
-   _exposed_, which means that users will have a form where they can choose
-  their own filter values. You might use this on a Recipe page to let users
-  filter for recipes with certain ingredients.
-Sort criteria::
-  Defines the order to present the output, which can be based on any content
-  field.
-Contextual filters::
-  Contextual filters are like regular filters, except that the values come from
-  the _context_ of the view display, such as the full URL of the page being
-  displayed, the current date or time, or some other value that can be
-  detected by the view calculation.
-Relationships::
-  Relationships allow you to expand what is displayed in your view, by relating
-  the base content being displayed to other content entities. Relationships are
-  created using fields on the base content that relate it to the other content;
-  one example is that all regular content items have an author field, which
-  references the user account of the person who authored the content. Once you
-  have created a relationship, you can display fields from the referenced
-  entity in the view.
+Відображення::
+  Кожен вид може мати одне або більше відображень, кожне з відображень використовує один з типів
+  виведення. За замовчуванням модуль Views надає наступні типи відображень:
+  Сторінка;;
+    Створює виведення сторінки за певним URL, вивід контенту сайту в регіоні Головний контент буде братися з цього відображення для обраного URL.
+  Блок;;
+    Створює вивід в блоці, який може бути розміщений на сторінках.
+  Потік даних;;
+    Створює RSS або інші типи стрічок.
+  Прикріплення;;
+    Створює вивід який ви можете прикріпити до іншого відображення.
+Формат::
+  Залежить від типу відображення, який ви можете вибрати для виведення ваших даних в
+  таблиці, сіткою, HTML списком або іншим форматом. Деякі формати також дають вам
+  другий вибір, в якому дозволяються виводити або оброблені сутності або поля; інші
+  формати не дають вам такого вибору (наприклад, якщо ви використовуєте формат таблиці,
+  ви повинні завжди використовувати поля).
+Поля::
+  Залежать від формату який ви вибрали, щоб були доступні поля контенту
+  для виведення. Наприклад, якщо ви зробили вид рецептів, в
+  відображенні блоку ви можете показати тільки імена рецептів, в іншому місці на повній сторінці
+  ви можете відобразити поля зображення, тому що там ви маєте більше місця.
+Критерії фльтрування::
+  Фільтри дають змогу обмежити виведення даних, залежно від критеріїв, таких як чи є
+  контент опублікованими чи ні, тип матеріалу або значення поля.
+  Наприклад, створивши вид рецептів, ви повинні будете відфільтрувати
+  контент за типом матеріалу і виводити тільки опубліковані рецепти. Фільтри можуть також бути
+   _розкритими_, це означає, що користувачі матимуть форму, де вони зможуть вибрати
+  свої власні значення для фільтрів. Ви можете використовувати розкриті фільтри на сторінці рецептів, щоб дозволити користувачам
+  фільтрувати рецепти по відповідним інгредієнтам.
+Критерії впорядкування::
+  Визначають порядок представлений у висновку, який грунтується на будь-яких полях
+  контенту.
+Контекстні фільтри::
+  Контекстні фільтри подібні звичайним фільтрам, за винятком того, що значення приходять з
+  _контексту_ відображення виду, наприклад з URL сторінки, де вид
+  відображається, поточної дати або часу або деякі інші значення, які можуть бути
+  визначені через обчислення у виді.
+Зв'язки::
+  Зв'язки дозволяють вам розширити відображення вашого виду, через зв'язки
+  з базовим контентом що відображається у виді з іншими сутностями контенту. Зв'язки
+  створюються використовуючи поля в базовому контенті, які пов'язують їх з іншим контентом;
+  Одним з прикладів є те, що весь контент на сайті має поле автора, яке
+  посилається на аккаунт користувача, який створив цей контент. У той момент, коли ви
+  створили зв'язок, ви можете відображати поля з пов'язаної
+  сутності у виді.
 
-==== Related topics
+==== Пов'язані теми
 
 <<views-create>>
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано і змінено https://www.drupal.org/u/surendramohan[Surendra Mohan]
+і https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
