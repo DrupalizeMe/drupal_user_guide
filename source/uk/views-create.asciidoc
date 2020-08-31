@@ -1,161 +1,161 @@
 [[views-create]]
-=== Creating a Content List View
+=== Вивід списків матеріалів через Вид
 
 [role="summary"]
-How to create a content list view.
+Як вивести список матеріалів через Вид.
 
-(((View,creating)))
-(((Content list view,creating)))
-(((Views module,creating a view)))
-(((Listing content,using Views module to)))
-(((Image module,creating a view)))
-(((Module,Views)))
-(((Module,Image)))
+(((Вид, відображення)))
+(((Вивести список матеріалів, відображення)))
+(((Views модуль, виведення виду)))
+(((Список матеріалів, використання модуля Views для)))
+(((Image модуль, відображення виду)))
+(((Модуль, Views)))
+(((Модуль, Image)))
 
-==== Goal
+==== Мета
 
-Create a page listing vendors that will be automatically updated whenever a
-vendor is added, deleted, or updated on the site.
+Додати сторінку зі списком виробників, яка буде автоматично оновлюватися кожного разу, коли
+виробник доданий, видалений або оновлений на сайті.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<views-concept>>
 * <<views-parts>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* The core Views and Views UI modules must be installed. These are installed for
-you when you install with the core Standard installation profile.
+* Модулі ядра Views і Views UI повинні бути встановлені. Вони встановлюються
+при стандартній установці ядра Drupal.
 
-* The Vendor content type must exist, with URL and Main image fields. Your
-site must have a couple of Vendor content items. See <<structure-content-type>>,
-<<structure-fields>>, and <<content-create>>.
+* Тип матеріалу Виробник повинен існувати, з полями URL і Головне зображення. На вашому
+сайті має бути кілька матеріалів Виробника. Дивіться <<structure-content-type>>,
+<<structure-fields>>, і <<content-create>>.
 
-* The _Medium (220x220)_ image style must be defined. This is created on your
-site when you install the core Image module (installed with the core Standard
-installation profile) but can be recreated if deleted. See
+* _Средній (220x220)_ (_Medium (220x220)_) стиль зображення повинен бути визначений. Він створюється на вашому
+сайті, коли ви встановлюєте модуль ядра Image (встановлений при стандартній установці
+ядра Drupal), також його можна відновити якщо він був видалений. Дивіться
 <<structure-image-style-create>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add
-view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
+. У _Керування_ адміністративного меню, перейдіть в _Структура_ > _Види_> _Додати вид_ (_admin/structure/views/add_). З'явиться сторінка _Додати вид_.
 
-. Fill in the fields as shown below.
+. Заповніть поля, як показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation| Example value
-| View basic information > View name | Name of the view that will be visible in the administration pages | Vendors
-| View settings > Show | Type of information listed in the view | Content
-| View settings > of type | Specify content type | Vendor
-| View settings > sorted by | List order | Title
-| Page settings > Create a page | Create a page that displays the view | Checked
-| Page settings > Page title | Title show above the view | Vendors
-| Page settings > Path | Address of the page | vendors
-| Page settings > Page display settings > Display format | Type of list | Table
-| Page settings > Items to display | Number of items visible on the page | 10
-| Page settings > Use a pager | Split up the list in several pages if there are more items | Checked
-| Page settings > Create a menu link | Add the view page to the menu | Checked
-| Page settings > Menu | Menu in which to add the link | Main navigation
-| Page settings > Link text | Label of the link in the menu | Vendors
+|Назва поля |Опис |Приклад значення
+|Основна інформація виду > Назва виду |Назва виду, яка буде відображатися на сторінках адміністрування. |Постачальники
+|Налаштування виду > Показати |Тип інформації, що буде відображатися цим видом |Вміст
+|Налаштування виду > типу |Уточнення типу матеріалу |Постачальники
+|Налаштування виду > Впорядковані за |Виведення списку |Заголовок
+|Налаштування сторінки > Створити сторінку |Додати сторінку, яка буде відображати уявлення |Обрано
+|Налаштування сторінки > Заголовок сторінки |Відображення заголовка виду |Постачальники
+|Налаштування сторінки > Шлях |Адреса сторінки |vendors
+|Налаштування сторінки > Налаштування відображення сторінки > Формат відображення |Cписок HTML |Таблиця
+|Налаштування сторінки > Відображати елементів |Кількість елементів, видимих ​​на сторінці |10
+|Налаштування сторінки > Використовувати сторінковий навігатор |Розділіть список на кілька сторінок, якщо є багато елементів |Обрано
+|Налаштування сторінки > Створити посилання меню |Додати сторінку виду в меню |Обрано
+|Налаштування сторінки > Меню |В яке меню додасться посилання |Основна навіґація
+|Налаштування сторінки > Текст посилання |Мітка посилання меню |Постачальники
 |================================
 +
 --
 // Add view wizard.
-image:images/views-create-wizard.png["Add new view wizard",width="100%"]
+image:images/views-create-wizard.png["Додавання нового уявлення", width="100%"]
 --
 
-. Click _Save and edit_. The view configuration page appears.
+. Натисніть _Зберегти й продовжити редагування_. З'явиться сторінка налаштування відображення виду.
 
-. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
-appears.
+. Під заголовком _Поля_, натисніть кнопку _Додати_. У спливаючому вікні
+_Додати тип поля_.
 
-. Enter the word "image" in the search field.
+. Введіть слово "Зображення" в рядку пошуку.
 
-. Check Main image in the table.
+. Виберіть Зображення з таблиці.
 
-. Click _Apply_. The _Configure field: Content: Main Image_
-pop-up appears.
+. Натисніть _Додати і налаштувати поля_. з'явиться сторінка
+_Налаштувати поле: Вміст: Зображення_
+.
 
-. Fill in the fields as shown below.
+. Заповніть поля як показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Image style | The format of the image | Medium (220x220)
-| Link image to | Add a link to the content item | Content
+|Назва поля |Опис |Необхідне значення
+|Створити мітку |Додати мітку перед значенням поля |Не обрано
+|Стиль зображення |Формат зображення |Середній (220x220)
+|Зображення є посиланням на |Додасть посилання на матеріал |Вміст
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. Натисніть _Застосувати_. З'явиться сторінка налаштування відображення.
 
-. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
-appears.
+. Під заголовком _Поля_, натисніть кнопку _Додати_. У спливаючому вікні
+_Додати тип поля_.
 
-. Enter the word "body" in the search field.
+. Введіть слово "Вміст" в рядку пошуку.
 
-. Select _Body_ in the table.
+. Виберіть _Вміст_ з таблиці.
 
-. Click _Apply_. The _Configure field: Content: Body_ pop-up
-appears.
+. Натисніть _Додати і налаштувати поля_. З'явиться сторінка
+_Налаштувати поле: Вміст: Вміст_
 
-. Fill in the fields as shown below.
+. Заповніть поля як показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Formatter | The presentation of the field value | Summary or trimmed
-| Trimmed limit: | The number of maximum characters shown | 120
+|Назва поля |Опис |Зразкове значення
+|Створити мітку |Додати мітку перед значенням поля |Не обрано
+|Форматер |Вивід вмісту поля |Резюме або скорочений
+|Обмеження скорочення: |Максимальне значення кількосі символів що відображаються |120
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. Натисніть _Застосувати_. З'явиться сторінка налаштування відображення.
 
-. Under _Fields_, click _Content: Title (Title)_. The _Configure field: Content:
-Title_ pop-up appears.
+. Під заголовком _Поля_, натисніть _Вміст: Заголовок (Заголовок)_. У спливаючому вікні
+_Налаштувати поле: Вміст: Заголовок_.
 
-. Uncheck _Create a label_. This will remove the label that was created by the
-wizard.
+. Приберіть галочку _Створити мітку_. Це видалить мітку, створену майстром
+налаштувань.
 
-. Click _Apply_. The view configuration page appears.
+. Натисніть _Застосувати_. З'явиться сторінка налаштування відображення.
 
-. Under _Fields_, click _Rearrange_ in the dropdown button. The _Rearrange
-fields_ pop-up appears.
+. Під заголовком _Поля_, натисніть на випадаючу кнопку _Перемістити_. У спливаючому вікні
+_Перешикування поля_.
 
-. Drag the cross bar handles of fields to put them into the right order: Image,
-Title, Body. As an alternative to dragging, you can click the _Show row weights_
-link at the top of the table and enter numerical weights (fields with lower or
-more negative weights will be shown first).
+. Перетягніть поля за допомогою хрестиків в правильному порядку: Зображення, Заголовок, Вміст.
+В якості альтернативи перетягування, ви можете натиснути на посилання _Показати вагу рядків_
+у верхній частині таблиці і ввести числові значення (поля з більш низькою або
+негативною вагою будуть показані першими).
 
-. Click _Apply_. The view configuration page appears.
+. Натисніть _Застосувати_. З'явиться сторінка налаштування відображення.
 
-. Optionally, click _Update preview_ for a preview.
+. Ви можете натиснути _Оновити попередній перегляд_ для попереднього перегляду виду.
 
-. Click _Save_.
+. Натисніть _Зберегти_.
 +
 --
 // Completed vendors view administration page.
-image:images/views-create-view.png["Vendors view configuration page", width="100%"]
+image:images/views-create-view.png["Сторінка налаштування відображення Постачальники", width="100%"]
 --
 
-. Navigate to the homepage and click Vendors from the main navigation to see
-the result.
+. Перейдіть на домашню сторінку і натисніть «Постачальники» в головному меню, щоб побачити
+результат.
 +
 --
 // Completed vendors view output.
-image:images/views-create-view-output.png["Vendors view output", width="100%"]
+image: images/views-create-view-output.png [ "Висновок уявлення Постачальники", width="100%"]
 --
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
+Посилання на вид в меню основної навігації, ймовірно, буде не на потрібному
+місці. Змініть порядок пунктів меню в основний навігації. дивіться
 <<menu-reorder>>.
 
-//==== Related concepts
+// ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/aw02gXlte9I[title="Creating a Content List View"]
@@ -163,7 +163,9 @@ video::https://www.youtube-nocookie.com/embed/aw02gXlte9I[title="Creating a Cont
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано/змінено https://www.drupal.org/u/batigolix[Boris Doesborg]
+і https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
