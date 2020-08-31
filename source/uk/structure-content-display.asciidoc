@@ -1,124 +1,123 @@
 [[structure-content-display]]
 
-=== Changing Content Display
+=== Зміна Відображення типу матеріалу
 
 [role="summary"]
-How to make content items more presentable.
+Як поліпшити відображення полів типу матеріалу.
 
-(((Content display,changing)))
-(((Content display,managing)))
-(((Content,displaying)))
+(((Відображення типу матеріалу, зміна)))
+(((Відображення типу матеріалу, управління)))
+(((Контент, відображення)))
 
-==== Goal
+==== Мета
 
-Make the content items more readable, accessible, and visibly attractive by
-reordering the fields, hiding labels, and tuning the output of the fields.
+Зробити вміст зручнішим для читання, доступним і візуально привабливим
+шляхом зміни порядку полів, приховування міток і налаштування відображення полів.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<planning-data-types>>
 * <<structure-view-modes>>
 
-==== Site prerequisites
+==== Необхідні компоненти сайту
 
-The Vendor content type must exist, it must have Main Image and Vendor URL
-fields, and your site must have at least one Vendor content item. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+Повинен існувати тип матеріалу Постачальник, який містить поля
+Головне зображення і URL постачальника, також необхідно мати хоча б один
+матеріал типу Постачальник. Див. <<structure-content-type>>, <<structure-fields>>
+і <<content-create>>.
 
-==== Steps
+==== Кроки
 
-. Find and view a Vendor content item you created in <<structure-fields>>.
-Notice that there are several things that could be done to improve how the page
-looks:
+. Знайдіть і відкрийте матеріал Постачальник, створення якого описано в
+<<structure-fields>>. Для поліпшення відображення сторінки можна виконати
+наступне:
 +
-  * The Main Image and Vendor URL fields should not have labels.
-  * The order of the fields should be changed so that the image comes first.
-  * The image should be smaller.
+  * Приховати мітки для полів Головне зображення і URL постачальника.
+  * Змінити порядок розміщення полів, щоб зображення стало першим.
+  * Зменшити зображення.
 
-. To fix the first two problems, and update some additional settings, in the
-_Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). Then click _Manage display_ in the dropdown button
-for the Vendor content type.
+. Щоб виконати два перші пункти і здійснити додаткові налаштування,
+в розділі _Керування_ адміністративного меню перейдіть до пункту
+_Структура_ > _Типи матеріалів_ (_admin/structure/types_). Потім виберіть
+_Керувати відображенням_ у випадаючому списку для типу матеріалу Постачальник.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
 // for Vendor content type expanded.
-image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
+image:images/structure-content-display_manage_display.png["Керувати відображенням", width="100%"]
 --
 
-. Under the _Label_ column, select _Hidden_ for Main image. Do the same
-for Vendor URL.
+. У колонці _Мітка_ для поля Головне зображення виберіть _-Приховано-_. Теж саме виконайте для поля URL постачальника.
 +
 --
 // Manage display page for Vendor content type
 // (admin/structure/types/manage/vendor/display), with labels for Main
 // Image and Vendor URL hidden, and their select lists outlined in red.
-image:images/structure-content-display_main_image_hidden.png["Selecting _main image title_ as _hidden_",width="100%"]
+image:images/structure-content-display_main_image_hidden.png["Вибір _мітки головного зображення_ як _прихованого_", width="100%"]
 --
 
-. Click the gear wheel for the Vendor URL field, to open the configuration
-options.
+. Натисніть на символ шестерні для поля URL постачальника, щоб перейти до його налаштувань.
 
-. Fill in the fields as shown below.
+. Заповніть поля як зазначено нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name|Explanation|Example value
-|Trim link text length| Maximum displayed length for link text| Blank (no trimming)
-|Open link in new window| Whether links should open in a new window or the same window |Checked
+|Ім'я поля |Пояснення |Приклад
+|Скорочувати довжину тексту посилання |Максимальна довжина тексту посилання |Пусто (не скорочувати)
+|Відкривати посилання в новому вікні |Відкривати посилання в новому або існуючому вікні |Відзначено
 |================================
 +
 --
 // Vendor URL settings form, with trim length cleared, and open link in
 // new window checked.
-image:images/structure-content-display_trim_length.png["Link trim length",width="100%"]
+image:images/structure-content-display_trim_length.png["Обрізка довжини посилання", width="100%"]
 --
 
-. Click _Update_.
+. Натисніть _Оновити_.
 
-. Drag the cross bar handles of the fields to reorder as Main image, _Body_,
-Vendor URL, and _Links_. As an alternative to dragging, you can click the _Show
-row weights_ link at the top of the table and enter numerical weights (fields
-with lower or more negative weights will be shown first).
+. Змініть порядок полів _Головне зображення_, _Body_, _URL_ постачальника і _Посилання_
+перетягуванням кнопки з хрестиком. В якості альтернативи можна натиснути на
+посилання _Показати вагу рядків_, розташовану над таблицею, і ввести числові значення ваги
+(Поля з меншими або негативними значеннями будуть відображатися першими).
 +
 --
 // Manage display page for Vendor content type, with order changed.
-image:images/structure-content-display_change_order.png["Changing order of fields",width="100%"]
+image:images/structure-content-display_change_order.png["Зміна порядку полів", width="100%"]
 --
 
-. Click _Save_.
+. Натисніть _Зберегти_.
 
-. Find the Vendor content item from step 1 again, and verify that the updates
-have been made.
+. Знову знайдіть матеріал Постачальник з пункту 1 і переконайтеся, що зміни зроблені.
 
-. Repeat similar steps to manage the display of the Recipe content type
-fields.
+. Повторіть подібні кроки для управління відображенням полів типу матеріалів Рецепт.
 
-==== Expand your understanding
+==== Дізнатися більше
 
-* Make the main image smaller. See <<structure-image-style-create>>.
+* Як зменшити головне зображення. Див. <<structure-image-style-create>>.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Якщо зміни були виконані, але не відображаються на сайті, вам слід виконати
+очистку кешу. Див. <<prevent-cache-clear>>.
 
 
-==== Related concepts
+==== Пов'язані поняття
 
 <<structure-image-styles>>
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Changing Content Display"]
 
-==== Additional resources
+==== Додаткові ресурси
 
-* https://www.drupal.org/node/774798[_Drupal.org_ community documentation page "Specify how fields are displayed"]
-* https://www.drupal.org/node/774744[_Drupal.org_ community documentation page "Rearrange the order of fields"]
-* https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+* https://www.drupal.org/docs/7/nodes-content-types-and-fields/specify-how-fields-are-displayed[_Drupal.org_ сторінка документації спільноти "Specify how fields are displayed"]
+* https://www.drupal.org/docs/7/nodes-content-types-and-fields/rearrange-the-order-of-fields[_Drupal.org_ сторінка документації спільноти "Rearrange the order of fields"]
+* https://www.drupal.org/node/1577752[_Drupal.org_ сторінка документації спільноти "View modes"]
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/AnnGreazel[Ann Greazel] and
+Написано https://www.drupal.org/u/AnnGreazel[Ann Greazel] і
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
