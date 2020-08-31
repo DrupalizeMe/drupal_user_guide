@@ -1,49 +1,49 @@
 [[views-concept]]
-=== Concept: Uses of Views
+=== Основи: Використання Видів
 
 [role="summary"]
-Overview of views and the data that can be displayed or output by them.
+Огляд видів і даних, які можуть бути відображені або виведені ними.
 
-(((View,overview)))
-(((Views module,overview)))
+(((Вид, огляд)))
+(((Views модуль, огляд)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<planning-modular>>
 * <<planning-data-types>>
 
-==== What is a view?
+==== Що таке вид?
 
-A _view_ is a listing of content on a website. The core Views module handles the
-display of views, and the core Views UI module allows you to create and edit
-them in the administrative interface. When you define views, you are interested
-in taking data from your website and displaying it to the user.
+_Вид_ це список контенту на сайті. Модуль ядра Views обробляє
+відображення виду, і модуль ядра Views UI дозволяє створювати і редагувати
+їх в адміністративному інтерфейсі. Коли ви налаштовуєте вид, ви зацікавлені
+взяти дані з вашого сайту і відобразити їх користувачеві.
 
-==== What types of data can be displayed using views?
+==== Які типи даних можуть бути відображені за допомогою виду?
 
-You can create views to output practically any content entity that is stored in
-the system. For example, you can create the following lists for the farmers
-market site:
+Ви можете створювати види для виведення практично будь-якого вмісту, яке зберігається в
+системі. Наприклад, ви можете створити такі списки для
+сайту фермерського ярмарку:
 
-* Lists of vendors
-* Lists of recipes
-* Lists of the most recent content on the site
-* Lists of users on the site
+* Списки продавців
+* Списки рецептів
+* Списки самого останнього контенту на сайті
+* Списки користувачів на сайті
 
-==== What are the ways data can be output using views?
+==== Як можна виводити дані з використанням видів?
 
-A listing created by a view can be in any of the following forms:
+Список, створений видом, може бути в будь-якій з наступних форм:
 
-* Table with sortable fields
-* Grid layouts
-* Teasers or pictures that link to articles
-* Blocks
-* JSON output
-* RSS feeds
-* Calendars
-* On-screen slideshows
+* Таблиця з сортованими полями
+* Сітка
+* Тизери або картинки, які посилаються на статті
+* Блоки
+* Вивід JSON
+* RSS-канали
+* Календарі
+* Слайд-шоу на екрані
 
-==== Related topics
+==== схожі теми
 
 * <<views-parts>>
 * <<views-create>>
@@ -51,10 +51,12 @@ A listing created by a view can be in any of the following forms:
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Написано і змінено
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] в
+https://erdfisch.de [erdfisch], і
+https://www.drupal.org/u/jojyja[Jojy Alphonso] в
+http://redcrackle.com [Red Crackle].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
