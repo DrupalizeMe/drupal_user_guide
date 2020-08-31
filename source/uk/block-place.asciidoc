@@ -1,108 +1,109 @@
 [[block-place]]
 
-=== Placing a Block in a Region
+=== Розташування блоку в Регіоні
 
 [role="summary"]
-How to place a block in a region.
+Як розмістити блок в регіоні.
 
-(((Block,placing in a region)))
-(((Region,placing a block in)))
+(((Блок, розташування в регіоні)))
+(((Регіон, розташування блоку)))
 
-==== Goal
+==== Мета
 
-Place the Opening hours and location block in the website's sidebar.
+Розмістити блок години роботи і адреса в колонці сайту.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<block-concept>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* The core Bartik theme must be installed and set as default. See
+* Тема Bartik повинна бути встановлена ​​і включена як стандартна тема. Дивіться
 <<config-theme>>.
 
-* The Opening hours and location block must exist. See <<block-create-custom>>.
+* Блок години роботи і адреса повинна існувати. Дивіться <<block-create-custom>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Block layout_
-(_admin/structure/block_). The _Block layout_ page appears, listing the theme's
-regions.
+. В меню адміністратора _Керування_, перейдіть в _Структура_ > _Схема блоків_
+(_admin/structure/block_). На сторінці _Схема блоків_ з'явиться список регіонів
+теми.
 
-. Ensure that in the secondary tab the core Bartik theme is selected. Block
-placement is defined per theme.
+. Переконайтеся, що в другорядних вкладках обрана тема Bartik. Розташування
+блоку визначається для кожної теми окремо.
 
-. Locate the region _Sidebar second_ in the list and click _Place block_ next to
-it. The _Place block_ window appears, listing all the blocks.
+. Перейдіть до регіону _Sidebar second_ (_Друга бічна колонка_) в списку і натисніть _Розмістить блок_ поблизу
+заголовка регіону. З'явиться вікно _Размістити блок_ зі списком всіх блоків.
 
-. Locate the block Opening hours and location and click _Place block_ next to
-it. The _Configure block_ window appears. Fill in the fields as shown below.
+. Знайдіть блок Години роботи і адреса і натисніть _Розмістити блок_ в рядку
+блоку. З'явиться вікно _Налаштувати блок_. Заповніть поля як показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name |Explanation |Example value
-|Title |Title to be displayed for the block |Hours and location
-|Display title |Whether or not to display the title with the block |Checked
-|Region |Which theme region to display it in |Sidebar second
+|Ім'я поля |Пояснення |Зразкове значення
+|Тема |Тема відображається для блоку |Години роботи і адреса
+|Відображати заголовок |Відображати чи ні заголовок для блоку |Обрано
+|Регіон |Який регіон теми буде відображати блок |Друга колонка (Sidebar second)
 |================================
 +
-You can also hide or display the block on specific pages. In the case of the
-Farmer's market website you do not set any of these configuration options
-because you want to show the block everywhere.
+Ви також можете заховати або відображати блок для певних сторінок. У випадку з
+сайтом Міський ярмарки вам не потрібно налаштовувати якісь варіанти,
+тому що ви хочете відображати блок всюди.
 +
 --
 // Configuration page for placing a custom block in the sidebar.
-image:images/block-place-configure-block.png["Block configuration page",width="100%"]
+image:images/block-place-configure-block.png["Сторінка настройки блоку", width="100%"]
 --
 
-. Click _Save block_. The _Block layout_ page appears. You can drag the cross
-bar handles of blocks to change their order within each region. As an
-alternative to dragging, you can click the _Show row weights_ link at the top of
-the table and select numerical weights (blocks with lower or more negative
-weights will be shown first).
+. Натисніть _Зберегти блок_. З'явиться сторінка _Схема блоків_. Ви можете перетягнути блок за іконку хрестика,
+змінивши тим самим порядок блоків в кожному регіоні. Як
+додатковий спосіб перетягування, ви можете натиснути посилання _Показати вагу рядків_ зверху
+таблиці і вибрати числа для ваг блоків (блоки з найменшим
+вагами будуть відображатися першими).
 
-. Verify that the Opening hours and location block is listed in the _Sidebar
-second_ region, and click _Save blocks_.
+. Перевірте, що блок Години роботи і адреса відображається в _Sidebar second_ (Другій колонці) регіоні і натисніть _Зберегти блоки_.
 +
-The block has been placed on the sidebar of all pages that use the core Bartik
-theme.
+Блок буде розміщений в колонці на всіх сторінках, які використовують тему
+Bartik.
 +
 --
 // About page with placed sidebar block.
-image:images/block-place-sidebar.png["Page with a block placed on the Sidebar second region",width="100%"]
+image:images/block-place-sidebar.png["Сторінка з розміщеним блоком в регіоні Друга колонка", width="100%"]
 --
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-* Remove the _Powered by Drupal_ block from the _Footer fifth_ region by
-clicking _Disable_ or _Remove_ in the _Operations_ dropdown button. Clicking
-_Disable_ will let you enable the block easily later with the same
-configuration; if you click _Remove_ and you want the block back, you would
-need to go through the steps in this topic to place it in a region again. Note
-that the names of the blocks that are provided by the core software, such as
-_Powered by Drupal_ and _User login_, are shown in English on this page; see
-<<language-concept>> for an explanation.
+* Видаліть блок _Зроблено на Drupal_ з регіону _Footer fifth_ (п'ятий підвал),
+натиснувши на _Вимкнути_ або _Вилучити_ в випадаючому списку _Налаштувати_. Якщо ви натиснули
+_Вимкнути_, ви зможете включити блок пізніше з тими ж
+налаштуваннями; Якщо ви натиснули _Видалити_ і ви хочете повернути блок назад, то вам потрібно буде
+пройти через всі кроки описані в цій темі, щоб додати блок в потрібний регіон знову. Зауважте,
+що імена блоків, створених ядром Drupal, таких як
+_Зроблено на Drupal_ і _Вхід на сайт_, відображаються англійською на цій сторінці; Дивіться
+<<language-concept>> для інформації.
 
-* Remove the _Tools_ block from the _Sidebar first_ region. This block is only
-visible to logged-in users.
+* Видаліть блок _Інструменти_ з регіону _Sidebar first_ (першої колонки). Цей блок
+показується тільки зареєстрованим користувачам.
 
-* Place the _User login_ block in a region.
+* Додайте блок _Вхід на сайт_ в будь-який регіон.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Якщо ви не бачите зміни на вашому сайті, можливо вам потрібно
+почистити кеш. Дивіться <<prevent-cache-clear>>.
 
 
-//==== Related concepts
+// ==== Related concepts
 
 ==== Videos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/iWW7Ja5p0hA[title="Placing a Block in a Region"]
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Написано і змінено https://www.drupal.org/u/batigolix[Boris Doesborg]
+і https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
