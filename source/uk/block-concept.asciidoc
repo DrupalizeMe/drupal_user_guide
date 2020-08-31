@@ -1,46 +1,47 @@
 [[block-concept]]
 
-=== Concept: Blocks
+=== Основи: Блоки
 
 [role="summary"]
-Overview of blocks.
+Огляд блоків.
 
-(((Block,overview)))
+(((Блок, огляд)))
 
-//==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
-==== What is a block?
+==== Що таке блок?
 
-_Blocks_ are individual pieces of your site's web page layout. They are placed
-inside the regions (see <<block-regions>>) of your theme, and can be created,
-removed, and rearranged in the _Block layout_ (_admin/structure/block_)
-administration page.  Examples of blocks include the _Who's online_ listing, the
-main navigation menu, and the breadcrumb trail. The main page content is also a
-block.
+_Блоки_ є окремими частинами макета веб-сторінки вашого сайту. Вони розміщуються
+всередині регіонів (дивіться <<block-regions>>) вашої теми, і можуть бути створені,
+видалені, і переміщені в _Схемі блоків_ (_admin/structure/block_)
+адміністративної сторінки. Приклади блоків включають в себе список _Хто на сайті_,
+меню основної навігації, і хлібні крихти. Зміст головної сторінки також
+є блоком.
 
-Some modules make new blocks available for placement on your site. For example,
-when the core Search module is installed and configured, it provides a block
-that contains a search form. You may also create and place your own custom
-blocks.
+Деякі модулі роблять нові блоки доступними для розміщення на вашому сайті. наприклад,
+коли модуль ядра Search встановлений і налаштований, він забезпечує блок,
+який містить форму пошуку. Ви також можете створити і розмістити свої власні
+блоки.
 
-Each block has its own configuration settings, which allow you to select
-which pages of your site will display the block. It is even possible to place
-multiple copies of a block, each with its own separate configuration and
-visibility rules.
+Кожен блок має свої налаштування, які дозволяють вибрати
+на яких сторінках вашого сайту буде відображатися блок. Також можна розмістити
+кілька копій блоку, кожна зі своєю конфігурацією і
+правилами видимості.
 
-==== Related topics
+==== Схожі теми
 
 * <<block-regions>>
 * <<block-create-custom>>
 * <<block-place>>
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Adapted by https://www.drupal.org/u/les-lim[Les Lim] from
-https://www.drupal.org/docs/8/core/modules/block/overview["Working with blocks
-(content in regions)"]
-copyright 2000-copyright_upper_year by the individual contributors to the
+Адаптовано https://www.drupal.org/u/les-lim[Les Lim] з
+https://www.drupal.org/docs/core-modules-and-themes/core-modules/block-module/managing-blocks["Managing blocks "]
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
