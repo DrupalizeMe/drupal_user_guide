@@ -1,145 +1,146 @@
 [[views-duplicate]]
 
-=== Duplicating a View
+=== Дублювання Виду
 
 [role="summary"]
-How to create a new page by duplicating a view.
+Як створити нову сторінку, дублюючи Вид.
 
-(((View,duplicating)))
-(((Views module,duplicating a view)))
-(((Module,Views)))
+(((Вид, дублювання)))
+(((Модуль Views, дублювання виду)))
+(((Модуль, Views)))
 
-==== Goal
+==== Мета
 
-Create a page listing recipes by duplicating the existing Vendors view.  Modify
-the page so that the recipes are displayed in a grid and can by filtered by
-ingredients.
+Створити сторінку зі списком рецептів, продублювавши існуюче подання Виробники. Змінити
+сторінку так, щоб рецепти відображалися в сітці і могли фільтруватися по
+інгредієнтам.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<views-concept>>
 * <<views-parts>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-* The Vendor and Recipe content types must exist; both must have Main image
-fields, and the Recipe content type must have an Ingredients field. Your site
-must also have a couple of Recipe content items. See <<structure-content-type>>,
+* Типи матеріалів Виробник і Рецепт повинні існувати; обидва повинні мати поля
+Головне зображення, і тип матеріалу Рецепт повинен мати поле Інгредієнти. Ваш сайт
+також повинен мати кілька сторінок матеріалу Рецепт. Дивіться <<structure-content-type>>,
 <<structure-fields>>, <<structure-taxonomy-setup>>, <<structure-form-editing>>,
-and <<content-create>>.
+і <<content-create>>.
 
-* The Vendors view must exist. See <<views-create>>.
+* Вид Виробники має існувати. Дивіться <<views-create>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_). Find the view "Vendors" and click _Duplicate_ in its
-dropdown button. (Note that the names of views that came with your installation
-profile are shown in English on this page; see <<language-concept>> for an
-explanation.)
+. У _Керування_ адміністративного меню перейдіть в _Структура_ > _Види_
+(_admin/structure/views_). Знайдіть вид "Виробники" і натисніть у випадаючій кнопці
+_Продублювати_. (Зверніть увагу, що імена видів, які встановилися зі стандартною установкою
+Drupal мають назви українською мовою на цій сторінці; дивіться <<language-concept>> для
+пояснення.)
 +
 --
 // Views page (admin/structure/views), with operations dropdown
 // for Vendor view open.
-image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
+image:images/views-duplicate_duplicate.png["Дублювання існуючого відображення виду", width="100%"]
 --
 
-. Name the duplicate "Recipes" and click _Duplicate_. The view configuration
-page appears.
+. Введіть назву дубліката "Рецепти" та натисніть _Продублювати_. з'явиться сторінка
+налаштування відображення виду.
 
-. To change the title of the view page to "Recipes", click Vendors in the
-_Title_ field under _Title_. The _Page: The title of this view_ pop-up
-appears. Enter "Recipes". Click _Apply_.
+. Щоб змінити заголовок сторінки виду на «Рецепти», натисніть на Виробники
+в поле _Заголовок_. У спливаючому вікні
+_Page: Заголовок цього виду_. Введіть "Рецепти". Натисніть _Застосувати_.
 +
 --
 // View title configuration screen.
-image:images/views-duplicate_title.png["Change view title",width="100%"]
+image:images/views-duplicate_title.png["Вибір заголовка виду", width="100%"]
 --
 
-. To change from a table to a grid format, click _Table_ in the _Format_ field
-under _Format_. The _Page: How should this view be styled_ pop-up
-appears. Check _Grid_ and click _Apply_. The _Page: Style options_ pop-up
-appears. Retain the default values and click _Apply_.
+. Щоб перейти з таблиці в формат сітки, натисніть _Таблиця_ в полі _Формат_
+під заголовком _Формат_. З'явиться спливаюче вікно
+_Page: Який стиль матиме даний вид_. Виберіть _Сітка_ і натисніть _Застосувати_. У спливаючому вікні
+_Page: Налаштування стилю_. Збережіть значення за замовчуванням і натисніть _Застосувати_.
 
-. To retain only the title and image fields for the Recipes view, click
-_Content: Body_ under _Fields_. Click _Remove_ in the pop-up that appears.
+. Збережіть тільки поля заголовок і зображення для виду Рецепти, натисніть
+_Вміст: Вміст_ під заголовком _Поля_. Натисніть _Вилучити_ у спливаючому вікні.
 
-. To change the content type filter to use the Recipe content type, click
-_Content: Type (=Vendor)_ under _Filter criteria_. In the _Configure
-filter criterion: Content: Type_ pop-up, check Recipe and uncheck Vendor. Click
-_Apply_.
+. Щоб змінити фільтр типу матеріалу на використання типу матеріалу Рецепт, натисніть
+_Вміст: Тип матеріалу (= Виробник)_ під заголовком _Крітерії фільтрування_. У спливаючому вікні
+_Налаштувати критерій фільтрування: Вміст: Тип матеріалів_, виберіть Рецепт і приберіть галочку в полі Виробник. натисніть
+_Застосувати_.
 
-. To add a further filter that is exposed to visitors, click _Add_ in the
-dropdown button under _Filter criteria_. Search for "ingredients" and check
-"Ingredients (field_ingredients)". Click _Add and configure filter criteria_.
+. Щоб добавити додатковий фільтр, який відкритий для відвідувачів, натисніть на випадаючу кнопку
+_Додати_ під заголовком _Крітерії фільтрування_. Знайдіть "інгредієнти" і виберіть
+"Інгредієнти (field_ingredients)". Натисніть _Додати і налаштувати критерії фільтрування_.
 
-. The appearing pop-up offers extra settings on vocabulary and selection
-type. Click _Apply and continue_. The next pop-up allows you to expose this
-filter to visitors. Fill in the fields as shown below, and click _Apply_.
+. Спливаюче вікно запропонує додаткові налаштування словника і способу
+вибору. Натисніть _Застосувати і продовжити_. Наступне спливаюче вікно дозволяє вам виставити
+фільтр для відвідувачів. Заповніть поля, як показано нижче, і натисніть _Застосувати_.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation| Example value
-| Expose this filter to visitors, to allow them to change it | Allow visitors to filter and search | Checked
-| Required | Whether a value has to be provided or not | Unchecked
-| Label | Label shown for this filter on the view page | Find recipes using...
+|Назва поля |Опис |Приклад значення
+|Розкрити цей фільтр для відвідувачів, щоб вони мали змогу його змінювати. |Дозволити відвідувачам фільтрувати і шукати |Обрано
+|Обов'язкове |Чи повинно бути надано значення чи ні |Не обрано
+|Мітка |Мітка, показана для цього фільтра на сторінці подання |Знайти рецепти ...
 |================================
 +
 --
 // Ingredients field exposed filter configuration.
-image:images/views-duplicate_expose.png["Expose filter"]
+image:images/views-duplicate_expose.png["Виставити фільтр"]
 --
 
-. To change the _Path_ label field to "Recipes", click "/vendors" in the _Path_
-field under _Page settings_. In the pop-up that appears, enter the path
-"recipes" and click _Apply_.
+.Щоб змінити поле _Шлях_ на "Рецепти", натисніть "/ vendors" в полі _Шлях_
+під заголовком _Налаштування сторінки_. У спливаючому вікні, введіть шлях
+"Recipes" і натисніть _Застосувати_.
 +
-Note that when editing a view, you enter paths without the leading "/", unlike
-on other administrative pages (such as when providing a path to a content item
-page).
+Зверніть увагу, що при редагуванні виду ви вводите шлях без початкового символу "/", на відміну від
+інших адміністративних сторінок (наприклад, при вказівці шляху до матеріалу
+сторінка).
 
-. To change the menu link title, click "Normal: Vendors" in the _Menu_ field
-under _Page settings_. In the pop-up that appears, change the title to "Recipes"
-and click _Apply_.
+. Щоб змінити заголовок посилання меню, натисніть "Звичайний: Виробники" в полі _Меню_
+під заголовком _Налаштування сторінки_. У спливаючому вікні, змініть назву на "Рецепти"
+і натисніть _Застосувати_.
 
-. In order to use Ajax (see <<glossary-ajax,Ajax entry in the Glossary>>) to
-make filtering and paging faster for users, under _Advanced_ > _Other_, click
-_No_ in the _Use AJAX_ field. Check _Use AJAX_ in the pop-up that appears, and
-click _Apply_.
+. Для того, щоб використовувати Ajax (дивіться <<glossary-ajax, Ajax entry in the Glossary>>) це
+зробить фільтрацію і перемикання сторінок швидше для користувачів, під _Розширені_ > _Інше_, натисніть
+_Ні_ в полі _Використовувати AJAX_. Виберіть _Використовувати AJAX_ у спливаючому вікні, і
+натисніть _Застосувати_.
 
-. Click _Save_ to save the view.
+. Натисніть _Зберегти_, щоб зберегти вид.
 
-. Go back to the home page and click Recipes in the navigation to view the new
-Recipes page.
+.Вернітесь на домашню сторінку і натисніть Рецепти в навігації, щоб переглянути нову Сторінку рецептів.
 +
 --
 // Completed recipes view output.
-image:images/views-duplicate_final.png["Recipes view",width="100%"]
+image:images/views-duplicate_final.png["Подання Рецепти", width="100%"]
 --
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
+Посилання на вид в меню навігації, ймовірно, буде не на потрібному
+місці. Змініть порядок пунктів меню в основному меню. дивіться
 <<menu-reorder>>.
 
-==== Related concepts
+==== Схожі поняття
 
 * <<planning-structure>>
 * <<glossary-ajax, Ajax entry in the Glossary>>
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/weWFDgw84_M[title="Duplicating a View"]
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+Написано і змінено https://www.drupal.org/u/lolk[Laura Vass] в
 https://pronovix.com/[Pronovix],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+і https://www.drupal.org/u/jojyja[Jojy Alphonso] в
 http://redcrackle.com[Red Crackle].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
