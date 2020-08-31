@@ -1,79 +1,81 @@
 [[user-new-user]]
 
-=== Creating a User Account
+=== Створення аккаунта користувача
 
 [role="summary"]
-How to create a user account.
+Як створити обліковий запис користувача.
 
-(((User,creating account)))
+(((Користувач, створення аккаунта)))
 
-==== Goal
+==== Мета
 
-Create Vendor user accounts for Sweet Honey and Happy Farm vendors.
+Створити аккаунт Постачальник для постачальників Солодкий мед і Веселий молочник.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<user-concept>>
 * <<user-admin-account>>
 * <<user-new-role>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+Роль Постачальник повинна існувати на вашому сайті. Дивіться <<user-new-role>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _People_ (_admin/people_).
+. У _Керування_ адміністративного меню, перейдіть в _Люди_ (_admin/people_).
 
-. Click _Add user_.
+. Натисніть _Додати користувача_.
 +
 --
-// Add new user form (/admin/people/create).
-image:images/user-new-user_form.png["Form for creating a new user account",width="100%"]
+// Add new user form (/ admin/people/create).
+image:images/user-new-user_form.png["Форма для створення нового облікового запису користувача", width="100%"]
 --
 
-. Fill in the form fields. See the table below.
+. Заповніть поля форми. Дивіться на таблицю нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name |Explanation |Example value
-|Email address |A valid email address for the vendor. All emails from the system will be sent to this address. The email address is not made public. | honey@example.com
-|Username |A username for the vendor that they will use to sign in or author content items. Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores. |Sweet Honey
-|Password |A password the vendor will use to sign in to the site. You can see how safe the password is on the _Password strength_ gauge. You also get tips on how to make it safer.  |(Make a secure password)
-|Confirm password |Type the same password to avoid any typing mistakes. |(Repeat password)
-|Status |Set the status of the user account. _Blocked_ users will not be able to sign in. |Active
-|Roles |Set the role of the user account.|Vendor
-|Notify user of new account |Whether or not to send a notification to the vendor's email address. |Checked
-|Picture |Click _Browse_ and select a picture to upload. Pay attention to size restrictions. | Photo of the vendor
-|Contact settings |Enable or disable the display of a contact form for the account. | Checked
+|Назва поля |Опис |Приклад значення
+|Адреса електронної пошти |Дійсна адреса електронної пошти для постачальника. Всі електронні листи з системи будуть відправлені на цю адресу. Адреса електронної пошти не оприлюднюється. |honey@example.com
+|Ім'я користувача (Username) |Ім'я користувача для постачальника, яке вони будуть використовувати для входу або створення матеріалів. Пробіли дозволені; пунктуація не допускається, за винятком крапок, дефісів, апострофів і підкреслень. |Солодкий мед
+|Пароль |Пароль, який постачальник буде використовувати для входу на сайт. Ви можете побачити, наскільки безпечний пароль, на _Індикаторі складності_ пароля. Ви також отримаєте поради про те, як зробити його безпечнішим. |(Зробіть надійний пароль)
+|Повторіть пароль |Введіть той же пароль, щоб уникнути помилок при наборі. |(Повторіть пароль)
+|Стан |Встановіть стан призначеного для користувача аккаунта. _Заблоковано_ користувачі не зможуть увійти. |Активно
+|Ролі (Roles) |Встановіть роль призначеного для користувача аккаунта. |Постачальник
+|Повідомити користувача про створення облікового запису |Чи варто відправляти повідомлення на електронну адресу постачальника. |Обрано
+|Зображення |Натисніть _Choose file_ і виберіть зображення для завантаження. Зверніть увагу на обмеження за розміром. |Фотографія постачальника
+|Налаштування контактної форми |Включити або відключити відображення контактної форми для аккаунта. |Обрано
 |================================
 
 
-. Click _Create new account_. You will get a notification about the user account
-creation.
+. Натисніть _Реєстрація_. Ви отримаєте повідомлення про створення призначеного для користувача
+аккаунта.
 +
 --
 // Confirmation message after adding new user.
-image:images/user-new-user-created.png["New user account has been created",width="100%"]
+image:images/user-new-user-created.png["Новий акаунт користувача був створений", width="100%"]
 --
 
-. Create a second Vendor account for Happy Farm by following the steps above.
+. Створіть другий аккаунт Постачальник для Веселого молочника, виконавши дії, описані вище.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-Create a user account for yourself.
+Створіть акаунт користувача для себе.
 
-//==== Related concepts
+// ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title="Creating a User Account"]
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-at https://pronovix.com/[Pronovix].
+Написано https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+в https://pronovix.com/[Pronovix].
+
+Переклав https://www.drupal.org/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
