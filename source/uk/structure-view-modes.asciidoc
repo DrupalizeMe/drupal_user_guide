@@ -1,58 +1,60 @@
 [[structure-view-modes]]
 
-=== Concept: View Modes and Formatters
+=== Основи: Режими перегляду та Форматери
 
 [role="summary"]
-Overview of view modes and field formatters.
+Огляд режимів перегляду і форматерів полів.
 
-(((View mode, overview)))
-(((Entity view mode, overview)))
-(((Formatter, overview)))
-(((Field formatter, overview)))
+(((Режими перегляду, огляд)))
+(((Режими перегляду сутності, огляд)))
+(((Форматер, огляд)))
+(((Форматер поля, огляд)))
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<structure-content-type>>
 
-==== What is a View mode?
+==== Що таке режими перегляду?
 
-How an entity (such as content, a user or a comment) is displayed, depends on
-the context in which it is shown. This context is known as a _view
-mode_. Examples of view modes are:
+Як відображається об'єкт (наприклад, вміст, користувач або коментар), залежить від
+контексту, в якому він відображається. Цей контекст відомий як _режим перегляду_.
+Прикладами режиму перегляду можуть бути:
 
-* a full page of the content with all the field values
-* a teaser of the content with a thumbnail image and a _Read more_ link
-* a full user profile with a zoomable portrait photo
-* a user avatar with username and a link to the profile
+* Повна сторінка вмісту з усіма значеннями полів
+* Тизер вмісту з мініатюрою і посиланням «Читати далі»
+* Повний профіль користувача масштабованою портретною фотографією
+* Аватар користувача з ім'ям користувача і посиланням на профіль
 
-Every view mode can be configured through the administration pages. To see the
-configuration options for the view modes of the Recipe content type, navigate
-in the _Manage_ administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_) and click _Manage display_ from the dropdown
-button. In each view mode, all fields can be hidden or displayed, and if they
-are displayed, you can choose and configure the field formatter.
+Кожен режим перегляду може бути налаштований на сторінках адміністрування. Щоб побачити
+параметри конфігурації для режиму перегляду типу матеріалу Рецепт, перейдіть
+в _Керування_ адміністративного меню _Структура_ > _Типи матеріалів_
+(_admin/structure/types_) і натисніть _Керувати відображенням_ з меню, випадаючої
+кнопки. У кожному режимі перегляду всі поля можуть бути приховані або відображені, і якщо вони
+відображаються, ви можете вибрати і налаштувати форматування поля.
 
-==== What is a field formatter?
+==== Що таке форматер поля?
 
-A field formatter is a setting for displaying the field values. For example,
-long text fields can be displayed trimmed or full-length, and taxonomy term
-reference fields can be displayed in plain text or linked to the taxonomy term
-page. Consult the _Manage display_ page to see the field formatters for the
-fields of the Recipe content type.
+Форматер поля - це налаштування для відображення значень поля. Наприклад,
+довгі текстові поля можуть відображатися як обрізані або повнорозмірні, так і в терміні таксономії
+посилальні поля можуть бути відображені у вигляді простого тексту або бути посиланням на сторінку терміна
+таксономії. Подивіться на сторінку _Керувати відображенням_, щоб побачити форматери поля для
+полів типу матеріалу Рецепт.
 
-==== Related topics
+==== Схожі теми
 
 * <<structure-content-type>>
 * <<structure-content-display>>
 
-==== Additional resources
+==== Додаткові ресурси
 
-https://www.drupal.org/node/1577752[_Drupal.org_ community documentation page "View modes"]
+https://www.drupal.org/node/1577752[_Drupal.org_сторінка документації спільноти "View modes"]
 
 
-*Attributions*
+*Автори*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/node/1577752["View modes"],
-copyright 2000-copyright_upper_year by the individual contributors to the
+Адаптовано https://www.drupal.org/u/batigolix[Boris Doesborg] з
+https://www.drupal.org/node/1577752["View modes "],
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переклав https://www.drupal.org/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
