@@ -1,93 +1,98 @@
 [[content-in-place-edit]]
-=== Editing with the In-Place Editor
+=== Редагування в режимі швидкого редагування
 
 [role="summary"]
-How to edit content with the in-place editor.
+Як редагувати вміст в режимі швидкого редагування.
 
-(((Editing content)))
-(((Content,editing)))
-(((In-place editor)))
-(((Quick editor)))
-(((Full editor)))
+(((Редагування вмісту)))
+(((Вміст, редагування)))
+(((Швидке редагування)))
+(((Редактор)))
 
-==== Goal
+==== Мета
 
-Use the in-place editor to add information to the About page without opening
-the full editor page.
+Використовувати швидке редагування для додавання інформації на сторінку Про
+ярмарок без відкриття сторінки в редакторі.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<planning-data-types>>
 * <<content-create>>
 * <<content-edit>>
 * <<config-overview>>
 
-==== Site prerequisites
+==== Вимоги до сайту
 
-The About page you want to edit must exist. See <<content-create>>.
+Сторінка Про ярмарок, яку ви бажаєте змінити, повинна існувати.
+Дивіться <<content-create>>.
 
-==== Steps
+==== Кроки
 
-Navigate to the About page to edit content with the in-place editor. If the
-page has not yet been added to a
-navigation menu, you can find and open it by following these steps:
+Перейдіть на сторінку Про ярмарок, щоб відредагувати вміст за допомогою
+швидкого редагування. Якщо сторінка ще не додана в навігаційне меню,
+то її можна знайти і відкрити, виконавши такі дії:
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. В адміністративному меню _Керування_, перейдіть до _Вміст_ (_admin/content_).
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use _Type_, _Title_, or other filters to locate the content item.
+. Якщо елемент вмісту, який ви хочете змінити, був недавно оновлений
+або створений, він повинен з'явитися у верхній частині списку вмісту на цій
+сторінці. Якщо ні, ви можете використовувати _Тип матеріалів_, _Заголовок_ або інші
+фільтри, щоб знайти елемент вмісту.
 
-. Find the About page and click it.
+. Знайдіть сторінку Про ярмарок і клацніть на ній.
 
-Once the content you want to edit is being viewed in your browser, follow these
-steps to use the quick editor:
+Після того як вміст, який ви хочете відредагувати, буде показано
+в браузері, виконайте наступні дії для використання швидкого редактора:
 
-
-. Find the section of the page that displays the content you want to edit, and
-turn on quick editing mode using the _Quick edit_ contextual link (see
-<<config-overview>> for instructions on how to access contextual links). You
-will see each editable field on this content item outlined in blue; also,
-a hovering dialog box will appear.
+. Знайдіть частину сторінки, на якій відображається вміст, який ви
+хочете відредагувати, і включіть режим швидкого редагування, використовуючи
+контекстне посилання _Швидке редагування_ (інструкції з доступу до
+контекстних посиланнь див. в <<<config-overview>>). Ви побачите кожне
+редаговане поле на цьому елементі вмісту, виділене синім кольором;
+крім того, з'явиться діалогове вікно наведення курсору.
 +
 --
-// Screenshot of About page with Quick Edit turned on for the node.
-image:images/content-in-place-edit-hover-box.png["Quick edit mode",width="100%"]
+// Знімок екрана сторінки Про ярмарок з активним з'єднанням швидкого редагування для матеріалу.
+image:images/content-in-place-edit-hover-box.png["Режим швидкого редагування", width="100%"]
 --
 
-. Click the _Body_ text area to begin editing. The _Body_ field
-supports a rich text editor. The editing toolbar will be displayed in a
-hovering dialog box.
+. Клацніть в текстовому полі _Тіло_, щоб почати редагування. Поле
+_Тіло_(_Body_) підтримує повнотекстовий редактор. Панель інструментів
+редагування буде відображена у нависаючому діалоговому вікні.
 
-. Add some information about City Market. A _Save_ button will appear in the
-hovering dialog box, and the field outline will change color.
+. Додайте трохи інформації про ярмарок. У діалоговому вікні наведення
+з'явиться кнопка _Зберегти_, і контур поля змінить колір.
 +
 --
-// Screenshot of About page with Quick Edit turned on for the node area, after clicking the Body field and changing text in the box.
-image:images/content-in-place-edit-save-box.png["Quick edit mode after editing",width="100%"]
+// Знімок екрана сторінки Про ярмарок з активованим швидким редагуванням
+// для області матеріалу після клацання по полю Тіло і зміни тексту в вікні.
+image:images/content-in-place-edit-save-box.png["Режим швидкого редагування після внесених змін", width="100%"]
 --
 
-. If you are satisfied with your edits, click _Save_ in the hovering dialog
-box. If not, click "x" to discard your edits, and confirm. Either way, quick
-editing mode will be turned off.
+. Якщо ви задоволені своїми правками, натисніть _Зберегти_ в діалоговому
+вікні наведення курсору. Якщо ні, то натисніть "x", щоб відмовитися від
+редагування і підтвердити. Після цього, режим швидкого редагування
+буде вимкнений.
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
-Try using the full editor on the same content (see <<content-edit>>) and note
-that there is much more information that can be edited that is not available in
-the quick editor.
+Спробуйте використовувати повний редактор на тому ж вмісті
+(Див. <<<content-edit>>) і зверніть увагу, що є набагато більше
+інформації, яку можна відредагувати, ніж у швидкому редакторі.
 
-// ==== Related concepts
+// ==== Пов'язані поняття
 
-==== Videos
+==== Відео
 
-// Video from Drupalize.Me.
+// Відео з Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/6A6kbceIKKw[title="Editing with the In-Place Editor"]
 
-// ==== Additional resources
+// ==== Додаткові ресурси
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/davidlee55[David Lee] and
+Написано і змінено https://www.drupal.org/u/davidlee55[David Lee] і
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
