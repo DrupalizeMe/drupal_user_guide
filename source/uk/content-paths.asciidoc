@@ -1,33 +1,34 @@
 [[content-paths]]
 
-=== Concept: Paths, Aliases, and URLs
+=== Основи: шляхи, синоніми URL і URL-адреси
 
 [role="summary"]
-Overview of paths, aliases, and URLs (with examples).
+Огляд шляхів, синонімів і URL-адрес (з прикладами)
 
-(((Path,overview)))
-(((Alias,overview)))
-(((URL (Uniform Resource Locator),overview)))
-(((Uniform Resource Locator (URL),overview)))
-(((URL alias,overview)))
+(((Шлях, огляд)))
+(((Синонім, огляд)))
+(((URL (Uniform Resource Locator), огляд)))
+(((Uniform Resource Locator (URL), огляд)))
+(((URL синонім, огляд)))
 
-//==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
 
-==== What is a URL?
+==== Що таке URL?
 
-URL is the abbreviation for "Uniform Resource Locator", which is the page's
-address on the web. It is the "name" by which a browser identifies a page to
-display. In the example "Visit us at _example.com_.", _example.com_ is the URL
-for the home page of your website. Users use URLs to locate content on the web.
+URL - це абревіатура від "Uniform Resource Locator", який є
+адресою сторінки в мережі. Це "ім'я", за яким браузер ідентифікує
+сторінку, На прикладі "Відвідайте нас за адресою _example.com_",
+_example.com_ - це URL-адреса головної сторінки вашого веб-сайту. Відвідувачі
+використовують URL-адреси для знаходження інформації в мережі.
 
-==== What is a Path?
+==== Що таке шлях?
 
-A path is the unique, last part of the URL for a specific function or piece of
-content. For example, for a page whose full URL is _http://example.com/node/7_,
-the path is _node/7_.
+Шлях - це унікальна, остання частина URL для певної функції або частини
+вмісту. Наприклад, для сторінки з повним URL _http://example.com/node/7_
+шляхом є _node/7_.
 
-Here are some examples of paths you might find in your site:
+Ось кілька прикладів шляхів, які ви можете зустріти на вашому сайті:
 
 * _node/7_
 * _taxonomy/term/6_
@@ -35,15 +36,16 @@ Here are some examples of paths you might find in your site:
 * _user/login_
 * _user/3_
 
-==== What is an Alias?
+==== Що таке синонім?
 
-The core software has a feature called "URL Alias" that allows you to provide a
-more understandable name to the content. So, if you have an "About Us" page with
-the path _node/7_, you can set up an alias so that your visitors will see it as
-_http://www.example.com/AboutUs_. The core Path module, which supports URL
-aliasing, provides this functionality.
+Програмне забезпечення ядра має функцію під назвою "Синоніми URL",
+яка дозволяє вам дати більш зрозумілу назву вмісту. Отже, якщо у
+вас є сторінка "About Us" з шляхом _node/7_, ви можете налаштувати псевдонім
+так, щоб ваші відвідувачі бачили його як _http://www.example.com/AboutUs_.
+Цю функціональність забезпечує модуль ядра Path, який підтримує
+синоніми в URL.
 
-==== Related topics
+==== Пов'язані поняття
 
 * <<content-create>>
 * <<content-edit>>
@@ -53,14 +55,16 @@ aliasing, provides this functionality.
 // * <<structure-pathauto>>
 
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com/[Pronovix] from
-https://www.drupal.org/node/120631["URL aliases"], and
-https://www.drupal.org/node/31644["Understanding Drupal paths"]
-copyright 2000-copyright_upper_year by the individual contributors to the
+Адаптовано https://www.drupal.org/u/dianalakatos[Diána Lakatos] з
+https://pronovix.com/[Pronovix] з
+https://www.drupal.org/node/120631["URL aliases"], і
+https://www.drupal.org/docs/7/understanding-drupal/url-paths["URL paths"]
+авторські права 2000-copyright_upper_year за окремими учасниками, що роблять свій внесок у
 https://www.drupal.org/documentation[Drupal Community Documentation]
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
