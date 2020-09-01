@@ -1,157 +1,156 @@
 [[structure-content-type]]
 
-=== Adding a Content Type
+=== Додавання типу матеріалу
 
 [role="summary"]
-How to add and configure a new content type.
+Як додати і налаштувати новий тип матеріалу.
 
-(((Content type, adding)))
+(((Тип матеріалу, додавання)))
 
-==== Goal
+==== Мета
 
-Add and configure a new content type Vendor.
+Додати і налаштувати новий тип матеріалу Постачальник.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<planning-data-types>>
 
-==== Site prerequisites
+==== Попередні вимоги до сайту
 
-You need to have a plan in place for your content structure. See
-<<planning-structure>>.
+Вам необхідно знати план структури матеріалів. Див. <<planning-structure>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
-(_admin/structure/types_). The _Content types_ page appears showing all the
-available types of content. Note that the names and descriptions of the
-content types that were provided by your installation profile are shown in
-English on this page; see <<language-concept>> for an explanation.
+. В адміністративному меню _Керування_ перейдіть до _Структура_ > _Типи
+матеріалів_ (_admin/structure/types_). Відкриється сторінка _Типи матеріалів_, яка
+відображає всі доступні типи вмісту. Зверніть увагу, що назви
+і описи типів матеріалів, які були надані вашим профілем
+установки, показані на цій сторінці англійською мовою; для більш докладної
+інформації див. <<language-concept>>.
 
 
-. Click _Add content type_. The _Add content type_ page appears. Fill
-in the fields as shown below.
+. Натисніть _Додати тип матеріалу_. Відкриється сторінка _Додати тип матеріалу_. Заповніть поля як зазначено нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation | Example value
-| Name | Name of the content type | Vendor
-| Description | Explain the use of the content type | Information about a vendor
+|Ім'я поля |Пояснення |Значення
+|Назва (ім'я) |Назва типу матеріалу |Постачальник
+|Опис |Пояснення щодо використання типу матеріалу |Інформація про постачальника
 |================================
 +
 --
 // Top of admin/structure/types/add, with Name and Description fields.
-image:images/structure-content-type-add.png["Adding a Content type"]
+image:images/structure-content-type-add.png["Додавання типу матеріалу"]
 --
 
-. Under _Submission form settings_, configure the form that is
-used for creating and editing content of this type. Fill in the fields as shown
-below.
+. У розділі _Налаштування форми надсилання_ налаштуйте форму, яка використовується
+для створення і редагування вмісту цього типу. Заповніть поля, як
+показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title field label | Label of the Title field that is shown when editing or creating content of this type. | Vendor name
-| Preview before submitting | Option to choose whether you should preview the content before submitting. | Optional
-| Explanation or submission guidelines | Instructions for creating or editing content. | (Leave blank)
+|Ім'я поля |Пояснення |Значення
+|Мітка поля заголовку |Мітка поля Назва, яка відображається при редагуванні або створенні матеріалу даного типу. |Найменування постачальника
+|Попередній перегляд перед надсиланням |Можливість вибору попереднього перегляду вмісту перед відправкою матеріалу |Необов'язкове
+|Пояснення або вказівки щодо введення |Інструкції по створенню або редагуванню матеріалу. |(Залиште порожнім)
 |================================
 +
 --
 // Submission form settings section of admin/structure/types/add.
-image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
+image:images/structure-content-type-add-submission-form-settings.png["Налаштування форми"]
 --
 
-. Under _Publishing options_, decide on default options for new
-content of this type. Fill in the fields as shown below.
+. У розділі _Опції публікаціі_ виберіть опції за замовчуванням для нового
+матеріалу цього типу. Заповніть поля, як показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation | Example value
-| Published | Make the content item published by default. | Checked
-| Promoted to front page | In a default website, this setting can be used to show content on the homepage. | Unchecked
-| Sticky at top of lists | In a default website, this setting can be used to keep content on top of a list. | Unchecked
-| Create new revision | Create a new revision each time the vendor is being edited. | Checked
+|Ім'я поля |Пояснення |Значення
+|Опубліковано |Опублікувати матеріалу за замовчуванням. |Обрано
+|Винесено на головну сторінку |Для головної сторінки веб-сайту це налаштування може використовуватися для відображення вмісту на головній сторінці. |Не обрано
+|Прикріплено зверху списків |На веб-сайті за замовчуванням це налаштування може використовуватися для розміщення матеріалу у верхній частині списку. |Не обрано
+|Створювати нову редакцію |Створювати нову редакцію кожен раз при редагуванні постачальника. |Обрано
 |================================
 +
-Changing these settings does not affect the content items that have already been
-created.
+Зміна цих параметрів не впливає на вже створений матеріал.
 +
 --
 // Publishing settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Publishing-Options.png["Publishing Options"]
+image:images/structure-content-type-add-Publishing-Options.png["Налаштування публікації"]
 --
 
-. Under _Display settings_, decide if the author and
-publication date will be visible in the content item. Fill in the fields as
-shown below.
+. У розділі _Налаштування відображення_ визначіть, чи повинні автор і дата публікації
+відображатися в матеріалі. Заповніть поля як зазначено нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation | Example value
-| Display author and date information | Display the author username and publication date on each vendor page. | Unchecked
+|Ім'я поля |Пояснення |Значення
+|Показувати відомості про автора та час створення |Відображення імені автора і дати публікації на кожній сторінці постачальника. |Не обрано
 |================================
 +
 --
 // Display settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Display-settings.png["Display settings"]
+image:images/structure-content-type-add-Display-settings.png["Налаштування відображення"]
 --
 
-. Under _Menu settings_, fill in the fields as shown below.
+. У _Налаштування меню_ заповніть поля, як показано нижче.
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Explanation | Example value
-| Available menus | Menus that this type of content can be added to. Vendors do not need to appear in menus, so uncheck all menu options. | Unchecked
+|Ім'я поля |Пояснення |Значення
+|Доступні меню |Меню, в які можна додавати цей тип матеріалу. Постачальникам не потрібно з'являтися в меню, тому зніміть прапорець з усіх пунктів меню. |Не обрано
 |================================
 +
 --
 // Menu settings section of admin/structure/types/add.
-image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
+image: images/structure-content-type-add-Menu-settings.png [ "Налаштування меню"]
 --
 
-. Click _Save and manage fields_ to save the content type. The
-_Manage fields_ page appears that allows you to add fields to the content
-type. See <<structure-fields>>
+. Натисніть _Зберегти й продовжити керування полями_ для збереження типу
+матеріалу. З'явиться сторінка _Керувати полями_, що дозволяє додавати поля до
+типу матеріалу. <<structure-fields>>
 +
 --
 // Manage fields page after adding Vendor content type.
-image:images/structure-content-type-add-confirmation.png["Confirmation",width="100%"]
+image:images/structure-content-type-add-confirmation.png["Підтвердження", width="100%"]
 --
 
-. Follow the same steps to create a content type for recipes. Example values
-for the fields in the forms, where they are different from the steps above:
+. Виконайте ті ж дії для створення типу матеріалу рецептів страв.
+Приклад значень полів в формах, що відрізняються від наведених вище:
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-| Field name | Example value
-| Name | Recipe
-| Description | A recipe submitted by a vendor
-| Submission form settings - Title | Recipe name
+|Ім'я поля |Пояснення
+|Назва |Рецепт
+|Опис |Рецепт, представлений постачальником
+|Налаштування форми - Заголовок |Назва рецепта
 |================================
 
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
 * <<structure-fields>>
 
-* Install and configure the https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content items get automatically generated URLs/path aliases. See <<content-paths>> for more on
-URLs within your site, <<extend-module-find>> for instructions on finding
-contributed modules, and <<extend-module-install>> for instructions on
-downloading and installing contributed modules.
+* Встановіть і налаштуйте https://www.drupal.org/project/pathauto[модуль Pathauto] так, щоб елементи вмісту автоматично генерували
+псевдоніми URL-а/шлях. Дивіться <<<content-paths>> для отримання додаткової
+інформації про URL-адреси вашого сайту, <<extend-module-find>> для отримання
+інструкцій з пошуку модулів і <<extend-module-install>> для
+отримання інструкцій з установки цього модулів.
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/vyvqiaaGM1k[title="Adding a Content Type"]
+video::https://www.youtube-nocookie.com/embed/vyvqiaaGM1k[title="Додавання типу матеріалу"]
 
 // ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi],
-https://www.drupal.org/u/batigolix[Boris Doesborg], and
+Написано і змінено https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/batigolix[Boris Doesborg] і
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
