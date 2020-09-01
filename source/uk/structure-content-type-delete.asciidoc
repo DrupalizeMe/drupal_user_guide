@@ -1,68 +1,71 @@
 [[structure-content-type-delete]]
 
-=== Deleting a Content Type
+=== Видалення типу матеріалу
 
 [role="summary"]
-How to delete a content type that is not required for the site.
+Як видалити тип матеріалу, який не потрібен для сайту.
 
-(((Content type,deleting)))
+(((Тип матеріалу, видалення)))
 
-==== Goal
+==== Мета
 
-Delete the unneeded content type _Article_.
+Видалити непотрібний тип матеріалу _Article_.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 <<config-overview>>
 
-==== Site prerequisites
+==== Попередні вимоги до сайту
 
-The _Article_ content type must exist. It is created on your site when you
-install with the core Standard installation profile.
+Тип вмісту _Article_ повинен існувати. Він створюється на вашому сайті при
+установці з основним Стандартним профілем установки.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-types_ (_admin/structure/types_). The _Content types_ page appears.
+. В адміністративному меню _Керування_ перейдіть до _Структура_ > _Типи
+матеріалів_ (_admin/structure/types_). Відкриється сторінка _Типи матеріалів_.
 
-. Click _Delete_ in the _Operations_ dropdown button for the _Article_ content
-type. Note that the name of this content type is in English on this page;
-see <<language-concept>> for an explanation.
+. Натисніть кнопку _Видалити_ в списку _Операції_ для типу
+вмісту _Article_. Зверніть увагу, що назва цього типу матеріалу
+наведено на цій сторінці англійською мовою; див. пояснення в
+розділі <<language-concept>>.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
 // for Article content type expanded.
-image:images/structure-content-type-delete-dropdown.png["Article delete dropdown",width="100%"]
+image:images/structure-content-type-delete-dropdown.png["Article кнопка видалення у випадаючому списку", width="100%"]
 --
 
-. A confirmation page is displayed. Click _Delete_.
+. Відображається сторінка підтвердження. Натисніть _Видалити_.
 +
 --
 // Confirmation page for deleting Article content type.
-image:images/structure-content-type-delete-confirmation.png["Article delete confirmation page",width="100%"]
+image:images/structure-content-type-delete-confirmation.png["Article сторінка підтвердження видалення ", width="100%"]
 --
 
-. The _Content types_ page appears with a confirmation message saying that the
-content type has been deleted:
+. З'явиться сторінка _Типи матеріалів_ з повідомленням про те, що тип матеріалу
+був видалений:
 +
 --
 // Confirmation message after deleting Article content type.
-image:images/structure-content-type-delete-confirm.png["Article delete confirmation message"]
+image:images/structure-content-type-delete-confirm.png["Article повідомлення що підтверджує видалення"]
 --
 
-//==== Expand your understanding
+// ==== Expand your understanding
 
 // ==== Related concepts
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Deleting a Content Type"]
 
-//==== Additional resources
+// ==== Additional resources
 
 
-*Attributions*
+*Автори*
 
-Written and edited by https://www.drupal.org/u/sree[Sree Veturi]
-and https://www.drupal.org/u/batigolix[Boris Doesborg].
+Написано і змінено https://www.drupal.org/u/sree[Sree Veturi]
+та https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
