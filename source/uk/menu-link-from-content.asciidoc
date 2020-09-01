@@ -1,92 +1,96 @@
 [[menu-link-from-content]]
-=== Adding a Page to the Navigation
+=== Додавання сторінки в навігацію
 
 [role="summary"]
-How to add a page to the navigation.
+Як додати сторінку в навігацію.
 
-(((Menu,adding a link to page)))
-(((Page,adding to menu while editing)))
-(((Content,adding to menu while editing)))
-(((Navigation,linking menu to page)))
+(((Меню, додавання посилання на сторінку)))
+(((Сторінка, додавання в меню при редагуванні)))
+(((Вміст, додавання в меню при редагуванні)))
+(((Навігація, зв'язування меню зі сторінкою)))
 
-==== Goal
+==== Мета
 
-Add a page to the navigation. For example, the About page.
+Додайти сторінку в навігацію. Наприклад, сторінку Про ярмарку.
 
-==== Prerequisite knowledge
+==== Необхідні знання
 
 * <<menu-concept>>
 * <<content-edit>>
 
-==== Site prerequisites
+==== Попередні вимоги до сайту
 
-The About page content item must exist. See <<content-create>>.
+Сторінка Про ярмарку вже має існувати. Див. <<content-create>>.
 
-==== Steps
+==== Кроки
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. В адміністративному меню _Керування_, перейдіть до _Вміст_
+(_admin/content_).
 
-. Find the About page, and click _Edit_ in that row. The content editing form
-appears.
+. Знайдіть сторінку Про ярмарку в списку і натисніть _Редагувати_ у відповідному
+рядку. З'явиться форма редагування вмісту.
 +
 --
 // Content table from admin/content page, with a red border around the Edit
 // button for the About page.
-image:images/menu-link-from-content_edit_page.png["Page edit link",width="100%"]
+image:images/menu-link-from-content_edit_page.png["Посилання на редагування сторінки", width="100%"]
 --
 
-. Click _Menu settings_ on the right to expand it.
+. Натисніть _Налаштування меню_ праворуч, щоб розгорнути вкладку.
 
-. Check _Provide a menu link_ for the menu options to appear.
+. Поставте прапорець _Створити посилання в меню_ щоб відобразилися опції меню.
 
-. Enter values from the table below:
+. Введіть значення з наступної таблиці:
 +
-[width="100%",frame="topbot",options="header"]
+[width="100%", frame="topbot", options="header"]
 |================================
-|Field name |Explanation |Example value
-|Menu link title |Title that will be displayed in the menu | About
-|Description |Text that will be displayed when a visitor hovers over the link
-  |History of the market
-|Parent item |Location of the page in the menu hierarchy. For example,
-  if you choose _<Main navigation>_, the page will appear in the highest
-  level of the navigation. By choosing another menu item as parent, you can
-  create a menu hierarchy of multiple levels. |<Main navigation>
-|Weight|The order in which the page should appear in the menu (lower-weighted
-  menu items will be shown before higher-weighted menu items) | -2
+|Ім'я поля |Пояснення |Приклад
+|Назва посилання меню |Назва, яка буде відображатися в меню |Про ярмарку
+|Опис |Текст, який буде відображатися, коли відвідувач наведе курсор на посилання.
+  |Історія ярмарки
+|Батьківський пункт |Розташування сторінки в ієрархії меню. Наприклад, якщо вибрати
+_<Основна навіґація>_, сторінка з'явиться на самому верхньому рівні навіґації.
+Вибравши інший батьківський пункт меню, можна створити ієрархію меню, що складається
+ з декількох рівнів. |<Основна навігація>
+|Вага |Порядок, в якому сторінка повинна відображатися в меню (пункти меню з
+більш низькими значеннями відображаються перед пунктами меню з більш високими
+значеннями). |-2
 |================================
 +
 --
 // Menu settings section of content editing page.
-image:images/menu-link-from-content.png["Creating a menu link from within the content edit form"]
+image:images/menu-link-from-content.png["Створення посилання в меню в формі редагування вмісту"]
 --
 
-. Click _Save_ to save the changes. Click _Home_ or _Return
-to site_ in the navigation bar to see the result, which could look like the
-picture below.
+. Натисніть _Зберегти_, щоб зберегти зміни. Натисніть _Головна_ або
+_До сайту_ на панелі навігації, щоб побачити результат, який може
+виглядати як на малюнку нижче.
 +
 --
 // Home page after adding About to the navigation.
-image:images/menu-link-from-content-result.png["Link has been added to the main menu",width="100%"]
+image:images/menu-link-from-content-result.png["В основне меню було додано посилання", width="100%"]
 --
 
-==== Expand your understanding
+==== Поліпшіть своє розуміння
 
 <<menu-reorder>>
 
-==== Videos
+==== Відео
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/JE_3INtBcTw[title="Adding a Page to the Navigation"]
 
-==== Additional resources
+==== Додаткові ресурси
 
-https://www.drupal.org/docs/8/core/modules/menu-ui[_Drupal.org_ community documentation page "Working with menus"]
+https://www.drupal.org/docs/core-modules-and-themes/core-modules/menu-ui-module/adding-a-link-to-a-menu[_Drupal.org_ сторінка документації спільноти "Working with menus"]
 
 
-*Attributions*
+*Автори*
 
-Adapted by https://www.drupal.org/u/batigolix[Boris Doesborg] from
-https://www.drupal.org/docs/8/core/modules/menu-ui["Working with Menus"],
-copyright 2000-copyright_upper_year by the individual contributors to the
+Адаптовано https://www.drupal.org/u/batigolix[Boris Doesborg] з
+https://www.drupal.org/docs/core-modules-and-themes/core-modules/menu-ui-module/adding-a-link-to-a-menu["Додавання посилання в меню"],
+авторські права 2000-copyright_upper_year за окремими учасниками
 https://www.drupal.org/documentation[Drupal Community Documentation];
-edited by https://www.drupal.org/u/jerseycheese[Jack Haas].
+змінено https://www.drupal.org/u/jerseycheese[Jack Haas].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
