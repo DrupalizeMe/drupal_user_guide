@@ -1,96 +1,98 @@
 [[menu-concept]]
 
-=== Concept: Menu
+=== Основи: Меню
 
 [role="summary"]
-Overview of the menu concept and menus automatically created with the core
-Standard installation profile.
+Огляд концепції меню і різних меню, автоматично створених за допомогою стандартного
+профілю установки ядра.
 
-(((Menu,overview)))
-(((Menu,main)))
-(((Menu,administrative)))
-(((Menu,user account)))
-(((Menu,footer)))
-(((Menu,custom)))
-(((Administrative menu,overview)))
-(((User account menu,overview)))
-(((Footer menu,overview)))
-(((Custom menu,overview)))
+(((Меню, огляд)))
+(((Меню, основна навігація)))
+(((Меню, адміністрування)))
+(((Меню, обліковий запис)))
+(((Меню, підвал)))
+(((Меню, власне)))
+(((Адміністративне меню, огляд)))
+(((Меню облікового запису, огляд)))
+(((Меню підвалу, огляд)))
+(((Власне, огляд)))
 
 // ==== Prerequisite knowledge
 
-==== What is a menu?
+==== Що таке меню?
 
-Menus are a collection of links (menu items) used to navigate a website. The
-core Menu UI module provides an interface to control and customize the menu
-system. Menus are primarily displayed as a hierarchical list of links. By
-default, new menu items are placed inside a built-in menu labeled _Main
-navigation_, but administrators can also create custom menus.
+Меню - це набір посилань (пунктів меню), що використовуються для навігації по
+веб-сайту. Основний модуль меню в інтерфейсі користувача надає
+засоби управління і налаштування системи меню. Меню в основному відображаються в
+вигляді ієрархічного списку посилань. За замовчуванням, нові пункти меню поміщаються
+у вбудоване меню під назвою _Основна навігація_, але адміністратори
+також можуть створювати власні меню.
 
-The core Standard installation profile contains five menus:
+Стандартний профіль установки ядра містить п'ять меню:
 
-Main navigation::
-  Links to sections intended for site visitors. They are usually created by site
-  administrators.
+Основна навігація::
+  Посилання на розділи, призначені для відвідувачів сайту. Зазвичай вони
+  створюються адміністраторами сайту.
 
-Administration::
-  Links to administrative tasks. This menu mainly contains links supplied by
-  modules on your site.
+Адміністрування::
+  Посилання на адміністративні завдання. Це меню в основному містить посилання,
+  що надаються модулями вашого сайта.
 
-User account menu::
-  Links to tasks associated with the user account such as _My account_ and _Log
-  out_.
+Меню облікового запису::
+  Посилання на завдання, пов'язані з обліковим записом користувача, такі як _Мій обліковий запис_ і _Вихід_.
 
-Footer::
-  Links to important pages within the site intended for the footer. They are
-  usually created by site administrators.
+Підвал::
+  Посилання на важливі сторінки сайту, призначені для підвалу (нижнього
+  колонтитула). Зазвичай вони створюються адміністраторами сайту.
 
-Tools::
-  Links to tasks necessary for site visitors. Some modules feature their links
-  here.
+Інструменти::
+  Посилання на завдання, необхідні відвідувачам сайту. Деякі модулі мають
+  тут свої посилання.
 
-You can customize menus in the following ways, using the menu administration
-functionality:
+Меню можна змінити наступним чином, використовуючи наступний функціонал
+адміністрування меню:
 
-* Creating new custom menus.
+* Створення нових власних меню.
 
-* Adding new menu items.
+* Додавання нових пунктів меню.
 
-* Reordering menu items by setting their "weight" or by dragging them into
-place.
+* Зміна порядку пунктів меню шляхом установки їх "ваги" або переміщення
+на інше місце.
 
-* Renaming menu items.
+* Перейменування пунктів меню.
 
-* Changing the link title (the tooltip that appears when you mouse over a menu
-item).
+* Зміна заголовка посилання (підказка, що з'являється при
+наведенні курсору миші на пункт меню).
 
-* Moving a menu item into a different menu by editing its _Parent_ property.
+* Переміщення пункту меню в інше меню шляхом редагування параметра
+_Батьківське посилання_.
 
-A menu item will only be shown to a visitor if they have the rights to view the
-page it links to. For example, the admin menu item is not shown to visitors who
-are not logged in.
+Пункт меню буде показаний відвідувачеві тільки в тому випадку, якщо у нього є
+право на перегляд сторінки, на яку він посилається. Наприклад, пункти меню
+адміністратора не відображається відвідувачам, котрі ввійшли в систему.
 
-==== Related topics
+==== Пов'язані поняття
 
 * <<menu-link-from-content>>
 
 * <<menu-reorder>>
 
-* To display a menu, you will need to place the block that corresponds to the
-menu in a region of your theme; see <<block-concept>>, <<block-regions>>, and
-<<block-place>>. The core Standard installation profile places all of the menus
-it defines except Administration in regions of the core Bartik theme. The core
-Toolbar module, which is installed by the core Standard installation profile,
-displays the Administration menu; it is also displayed by the contributed Admin
-Toolbar module.
+* Для відображення меню необхідно помістити блок, відповідного меню, в
+регіон теми, див. <<block-concept>>, <<block-regions>> і <<block-place>>.
+Стандартний профіль установки містить всі обумовлені меню, за винятком
+меню Адміністрування в регіонах основної теми Bartik. Модуль Toolbar,
+який встановлюється за допомогою стандартного профілю установки, відображає
+меню Адміністрування; він також відображається за допомогою додаткового
+модуля Admin Toolbar.
+
+// ==== Additional resources
 
 
-//==== Additional resources
+*Автори*
 
-
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/ajayvi[Ajay Viswambharan],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Написано і змінено https://www.drupal.org/u/ajayvi[Ajay Viswambharan],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] з
 http://redcrackle.com[Red Crackle],
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+і https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].
