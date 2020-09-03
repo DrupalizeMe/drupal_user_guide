@@ -65,7 +65,7 @@ répertoire où vous avez transféré le logiciel, où _DB_NAME_, _DB_USER_ et
 _DB_PASS_ sont les identifiants de votre base de données :
 
 ----
-drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
 ----
 
 // ==== Concepts liés
