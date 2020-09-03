@@ -16,10 +16,9 @@ fonctionnement du cœur (core) du logiciel.
 (((Espace disque,pré-requis à l'installation)))
 (((Serveur web,pré-requis à l'installation)))
 (((Serveur web Apache,version exigée)))
-(((Serveur web Hiawatha,version exigée)))
 (((Serveur web Nginx,version exigée)))
 (((Serveur web IIS,version exigée)))
-(((Base de données,installation requirements)))
+(((Base de données,pré-requis à l'installation)))
 (((Base de données MySQL,version exigée)))
 (((Base de données PostgreSQL,version exigée)))
 (((Base de données SQLite,version exigée)))
@@ -31,10 +30,15 @@ fonctionnement du cœur (core) du logiciel.
 
 ===== Espace disque
 
-Une installation minimum nécessite 15 Mo. 60 Mo sont nécessaires pour un site
-avec de nombreux modules communautaires et thèmes installés. Gardez en tête que
-vous aurez besoin de plus d'espace pour la base de données, les fichiers déposés
-par les utilisateurs, les médias, les sauvegardes, et les autres fichiers.
+L'espace disque requis pour votre site n'est pas une quantité fixée, dans la
+mesure où il dépend de votre site. Les fichiers de base pour le cœur du logiciel
+occupent jusqu'à 100 Mo sur le serveur web. Vous aurez besoin de plus d'espace
+si vous installez des modules additionnels ou des thèmes, et vous aurez
+également besoin d'espace pour les médias, les sauvegardes, et autres fichiers
+générés par votre site ou téléversés. La base de données occupe également de
+l'espace disque, bien que souvent elle ne se trouve pas au même endroit (et
+dans certains cas, sur le même serveur) que celui utilisé pour les fichiers du
+site.
 
 ===== PHP
 
@@ -61,18 +65,14 @@ Apache (recommandé)::
   module mod_rewrite d'Apache installé et activé. La configuration du
   VirtualHost d'Apache doit contenir la directive _AllowOverride All_ pour
   autoriser l'utilisation des fichiers _.htaccess_.
+Serveur local de PHP::
+  Vous pouvez temporairement faire tourner un site de démonstration en local sur
+  votre ordinateur en utilisant juste PHP, sans installer de serveur web.
 Nginx::
   Nginx est un serveur web qui se concentre sur les accès concurrents, la
   performance et une faible utilisation de la mémoire. Le cœur du logiciel
   fonctionnera avec Nginx 1.1 ou supérieur herbergé sur UNIX/Linux, OS X, ou
   Windows. ngx_http_rewrite_module doit être installé et activé.
-Hiawatha::
-  Hiawatha est un serveur web qui se concentre sur la sécurité. Il se veut aussi
-  facile à utiliser et léger. Des recherches effectuées par des chercheurs
-  indépendants prouve que Hiawatha offre une performance comparable aux autres
-  serveurs web dans les mêmes conditions d'utilisation, mais meilleure en cas
-  d'attaques. URL Toolkit doit être installé et configuré pour la réécriture
-  d'URL.
 Microsoft IIS::
   Microsoft IIS est un serveur web et un ensemble de modules et de
   fonctionnalités tournant sous Microsoft Windows. Le cœur du logiciel
@@ -97,12 +97,15 @@ de stockage compatible InnoDB
 ==== Pour aller plus loin (en anglais)
 
 https://www.drupal.org/docs/system-requirements[Page de documentation de la communauté sur _Drupal.org_ "System requirements"]
-
+* https://secure.php.net/manual/en/configuration.php[PHP Runtime Configuration (PHP memory limit and other settings)]
+* https://www.drupal.org/docs/official_docs/en/_local_development_guide.html[Installing a new Drupal application on your local machine]
+* https://www.drupal.org/docs/official_docs/en/_evaluator_guide.html[Creating a Drupal demo application for evaluation purposes]
 
 *Attributions*
 
-Adapté par https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky] et
-https://www.drupal.org/u/bemery987[Brian Emery] depuis
+Adapté par https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
+https://www.drupal.org/u/bemery987[Brian Emery], et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] depuis
 https://www.drupal.org/docs/system-requirements["System requirements"],
 copyright 2000-copyright_upper_year contributeurs individuels à la
 https://www.drupal.org/documentation[documentation de la communauté Drupal].
