@@ -3,7 +3,8 @@
 === Configuring Cron Maintenance Tasks
 
 [role="summary"]
-How to run cron maintenance tasks using the core Automated Cron module, or by running them from outside the site.
+How to run cron maintenance tasks using the core Automated Cron module, or by
+running them from outside the site.
 
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
@@ -53,8 +54,9 @@ installed (it is installed with the core Standard install profile; see
 +
 Next, configure the module to control how frequently cron maintenance tasks are
 run. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Choose the desired interval in
-the _Cron settings_ section, and click _Save configuration_.
+_System_ > _Cron_ (_admin/config/system/cron_). Select the desired interval from
+the _Run cron every_ field under _Cron settings_, and click _Save
+configuration_.
 +
 --
 // Cron configuration page (admin/config/system/cron).
@@ -71,9 +73,8 @@ _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 Whenever this URL is visited, cron maintenance tasks will run. Set up one of
 the following schedulers to access this URL regularly:
 +
-  * https://www.drupal.org/node/23714[The Cron daemon] (Linux, OS X, Solaris,
-  BSD)
-  * https://www.drupal.org/node/31506[Scheduled Tasks] (Windows)
+  * https://www.drupal.org/docs/7/setting-up-cron/configuring-cron-jobs-using-the-cron-command[The Cron daemon] (Linux, OS X, Solaris, BSD)
+  * https://www.drupal.org/docs/7/setting-up-cron-for-drupal/configuring-cron-jobs-with-windows[Scheduled Tasks] (Windows)
   * A cron SASS provider (software as a service)
   * A cron manager provided by your web hosting provider (see the documentation
   provided by your provider)
@@ -84,6 +85,11 @@ the following schedulers to access this URL regularly:
 ==== Related concepts
 
 <<security-concept>>
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
 
 ==== Additional resources
 
