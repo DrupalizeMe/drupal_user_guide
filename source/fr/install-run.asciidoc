@@ -19,9 +19,7 @@ Comment utiliser l'installeur interactif pour installer le cœur du logiciel.
 Installer le cœur du logiciel et créer le compte administateur en lançant
 l'installeur fourni.
 
-==== Pré-requis
-
-<<install-requirements>>
+// ==== Pré-requis
 
 ==== Pré-requis du site
 
@@ -125,6 +123,15 @@ haut de la page.
 // Front page of Drupal after the installer just completed showing the success message
 image:images/install-run-6.png["Installation réussie",width="100%"]
 --
+
+. Vous pourriez avoir vu un avertissement à l'étape _Configuration_ à propos des
+permissions sur les fichiers, et vous pourriez continuer à voir cet
+avertissement jusqu'à ce que ces permissions soient corrigées. Pour éviter cet
+avertissement et sécuriser votre site, changer les permissions sur le répertoire
+_sites/default_ et le fichier _sites/default/settings.php_ de manière à ce
+qu'ils ne soient accessibles qu'en lecture seule (il peut être nécessaire de
+consulter la documentation de son hébergeur pour connaître la procédure à
+suivre).
 
 ==== Améliorer votre compréhension
 
