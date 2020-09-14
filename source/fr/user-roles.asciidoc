@@ -1,96 +1,105 @@
 [[user-roles]]
-=== Changing a User's Roles
+=== Changer les rôles d'un utilisateur
 
 [role="summary"]
-How to change or add roles for a user.
+Comment changer les rôles d'un utilisateur ou en ajouter.
 
-(((User role,changing)))
-(((Role,changing)))
-(((Permission,changing role)))
+(((Rôle d'utilisateur,changer)))
+(((Rôle,changer)))
+(((Droit,changer rôle)))
 
-==== Goal
+==== Objectif
 
-Change or add roles to a given user, either by editing a single-user or by
-applying a bulk operation.
+Changer les rôles d'un utilisateur donné ou en ajouter, en modifiant un seul
+utilisateur ou en appliquant une opération en masse.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<user-concept>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-The user account that you want to update, and the role you want it to have, must
-already exist. See <<user-new-user>>,  <<user-new-role>>, and
-<<user-permissions>>.
+Le compte d'utilisateur que vous voulez mettre et à jour, et le rôle que vous
+souhaitez lui attribuer, doivent déjà exister. Consulter <<user-new-user>>,
+<<user-new-role>> et <<user-permissions>>.
 
-==== Steps
+==== Étapes
 
-===== Updating the roles using single-user editing method
+===== Mettre à jour les rôles en modifiant un seul utilisateur
 
-. In the _Manage_ administrative menu, navigate to _People_
+. Dans le menu administratif _Gérer_, naviguer vers _Personnes_
 (_admin/people_).
 
-. Locate the user 1 account (named "admin") to assign it the _Administrator_
-role. If it is not immediately visible, use the _Name or email contains_ filter,
-or other filters, to narrow down the list.
+. Localiser le compte de l'utilisateur 1 (nommé "admin") pour lui attribuer le
+rôle _Administrator_. S'il n'est pas immédiatement visible, utiliser le filtre
+_Nom ou courriel contenant_, ou d'autres filtres, pour pour restreindre la
+liste.
 
-.  Click _Edit_ to update the user account.
+. Cliquer sur _Modifier_ pour modifier le compte d'utilisateur.
 +
 --
 // People page (admin/people), with user 1's Edit button outlined.
-image:images/user-roles_people-list.png["People page",width="100%"]
+image:images/user-roles_people-list.png["Page Personnes",width="100%"]
 --
 
-.  On the _Edit_ page, scroll down to _Roles_ section. Check the _Administrator_
-role for the user account.
+. Sur la page de modification, faire défiler jusqu'à la section _Rôles_. Cocher
+le rôle _Administrator_ pour ce compte d'utilisateur.
 +
 --
 // Roles area on user editing page.
-image:images/user-roles_person-edit.png["Roles section of user edit page",width="141px"]
+image:images/user-roles_person-edit.png["Section rôle sur la page de modification",width="141px"]
 --
 
-.  Click _Save_ to update the user account. You should be returned to the
-_People_ page and see a message saying that the changes have been saved.
+. Cliquer sur _Enregistrer_ pour mettre à jour le compte d'utilisateur. Vous
+devriez être redirigé·e vers la page _Personnes_ et voir un message disant que
+les changements ont été enregistrés.
 +
 --
 // Confirmation message after updating user.
-image:images/user-roles_message.png["Confirmation message"]
+image:images/user-roles_message.png["Message de confirmation"]
 --
 
-===== Updating the roles using bulk editing method
+===== Mettre à jour les rôles en utilisant la méthode de modification en masse
 
-. If the users Happy Farm and Sweet Honey did not already have the Vendor role,
-here is how you would add it. In the _Manage_ administrative menu, navigate to
-_People_ (_admin/people_).
+. Si les utilisateurs Happy Farm et Sweet Honey n'avaient pas encore le rôle
+Vendor, voici comment le leur attribuer. Dans le menu d'administration _Gérér_,
+naviguer vers _People_ (_admin/people_).
 
-. Locate Vendor user accounts  _Sweet Honey_ and _Happy Farm_ and check them. If
-they are not immediately visible, use the _Name or email contains_ filter, or
-other filters, to narrow down the list.
+. Localiser les comptes d'utilisateurs des marchands _Sweet Honey_ et _Happy
+Farm_, et cocher la case en début de ligne. S'ils ne sont pas immédiatement
+visibles, utiliser le filtre _Nom ou courriel contenant_, ou d'autres filtres,
+pour restreindre la liste.
 
-. Select _Add the Vendor role to the selected users_ from the _With selection_
-select list.
+. Sélectionner _Ajouter le rôle Vendor au(x) utilisateur(s) sélectionné(s)_ dans
+le menu déroulant _Action_.
 +
 --
 // Bulk editing form on People page (admin/people).
-image:images/user-roles_bulk.png["People page with bulk operation set up", width="100%"]
+image:images/user-roles_bulk.png["Page Personnes avec opération en masse prête", width="100%"]
 --
 
-. Click _Apply_. You should see a message indicating that the desired changes
-were made.
+. Cliquer sur _Appliquer aux éléments sélectionnés_. Vous devriez voir un
+message indiquant que les changements souhaités ont été appliqués.
 +
 --
 // Confirmation message after bulk user update.
-image:images/user-roles_message_bulk.png["Confirmation message"]
+image:images/user-roles_message_bulk.png["Message de confirmation"]
 --
 
 // ==== Expand your understanding
 
 // ==== Related concepts
 
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hd7Sr3-n9ME[title="Changing a User's Roles"]
+
 // ==== Additional resources
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+Écrit par https://www.drupal.org/u/chris-dart[Chris Dart]
+et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
