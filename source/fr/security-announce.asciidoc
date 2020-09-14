@@ -1,64 +1,76 @@
 [[security-announce]]
 
-=== Keeping Track of Updates
+=== Rester informé des mises à jour
 
 [role="summary"]
-How to secure a site by staying informed about the latest security updates.
+Comment protéger votre site en restant informé des dernières mises à jour de
+sécurité.
 
-(((Update,keeping track of)))
-(((Security update,keeping track of)))
-(((Update Manager module,overview)))
-(((Security announcement,subscribing to by email)))
-(((Security announcement,subscribing to on Twitter)))
+(((Mettre à jour,rester informé)))
+(((Mise à jour de sécurité,rester informé)))
+(((Module Update Manager,vue d'ensemble)))
+(((Annonce de sécurité,s'inscrire par courriel)))
+(((Annonce de sécurité,s'inscrire sur Twitter)))
 
-==== Goal
+==== Objectif
 
-Keep your site safe and up-to-date by keeping up with the latest security
-updates.
+Garder votre site sûr et à jour en restant informé des dernières mises à jour de
+sécurité.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<security-concept>>
 
 //==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-There are a few different ways to receive notifications of security releases:
+Il y a plusieurs manières différentes de recevoir des notifications de
+publications de mises à jour de sécurité :
 
-* In the _Manage_ administrative menu, navigate to _Reports_ > _Available
-updates_ > _Settings_. Enter the email addresses to be notified when updates are
-available. You can also specify whether you want daily or weekly updates. Click
-_Save configuration_.
+* Dans le menu d'administration _Gérer_, naviguer vers _Rapports_ > _Mises à
+jour disponibles_ > _Paramètres_. Saisir l'adresse électronique à laquelle vous
+notifier lorsque de nouvelles mises à jour sont disponibles. Vous pouvez aussi
+spécifier si vous voulez être notifié·e de manière quotidienne ou hebdomadaire.
+Cliquer sur _Enregistrer la configuration_.
 
-* Subscribe to the security announcements email list. To subscribe, log in to
-_Drupal.org_, go to your user profile page and subscribe to the security
-newsletter on the _Edit_ > _My newsletters_ tab.
+* S'inscrire à la liste de diffusion des annonces de sécurité. Pour vous
+enregistrer, se connecter à _Drupal.org_, aller sur la page de votre profil
+d'utilisateur et s'inscrire à la liste de diffusion sur l'onglet _Edit_ > _My
+newsletters_.
 
-* Follow @drupalsecurity on Twitter.
+* Suivre @drupalsecurity sur Twitter.
 
-* Subscribe to RSS feeds for
-https://www.drupal.org/security/rss.xml[core security updates],
-https://www.drupal.org/security/contrib/rss.xml[contributed project updates] and
-https://www.drupal.org/security/psa/rss.xml[public service announcements].
+* S'inscrire aux flux RSS pour
+https://www.drupal.org/security/rss.xml[core security updates] (mises à jour de
+sécurité du cœur), https://www.drupal.org/security/contrib/rss.xml[contributed
+project updates] (mises à jour des projets contribués) and
+https://www.drupal.org/security/psa/rss.xml[public service announcements]
+(annonces de sécurité publiques).
 
 //==== Expand your understanding
 
-==== Related concepts
+==== Concepts liés
 
 * <<security-concept>>
 * <<security-update-core>>
 * <<security-update-module>>
 * <<security-update-theme>>
 
-==== Additional resources
+==== Vidéos (en anglais)
 
-* https://www.drupal.org/security["Security advisories" on _Drupal.org_]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/GcamYLNeGAs[title="Keeping Track of Updates"]
+
+==== Pour aller plus loin (en anglais)
+
+* https://www.drupal.org/security["Security advisories" sur _Drupal.org_]
 * https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team]
-* https://twitter.com/drupalsecurity[@drupalsecurity on Twitter]
+* https://twitter.com/drupalsecurity[@drupalsecurity sur Twitter]
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/hey_germano[Sarah German] at
-https://www.advomatic.com[Advomatic].
+Écrit par https://www.drupal.org/u/hey_germano[Sarah German]
+d'https://www.advomatic.com[Advomatic]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
