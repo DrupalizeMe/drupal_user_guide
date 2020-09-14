@@ -1,88 +1,97 @@
 [[prevent-backups]]
 
-=== Concept: Data Backups
+=== Concept : sauvegarde de données
 
 [role="summary"]
-Overview of data backups and what should be backed up on a site.
+Vue d'ensemble des sauvegardes de données et de ce qui devrait être sauvegardé
+sur un site.
 
-(((Backup,overview)))
-(((Content,backing up)))
-(((File,backing up)))
-(((Database,backing up)))
+(((Sauvegarde,vue d'ensemble)))
+(((Contenu,sauvgarder)))
+(((Fichier,sauvgarder)))
+(((Base de données,sauvegarder)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<understanding-drupal>>
 * <<install-prepare>>
 
-==== What is a site backup?
+==== En quoi consiste la sauvegarde d'un site ?
 
-If something happens to the computer (or computers) that your site and its
-database are running on, or if you lose access to this computer, you could lose
-some or all of your site's data. You could also lose data if your site is
-hacked, or if someone with administrative privileges on your site deletes or
-alters data mistakenly from the administrative interface. In order to prevent
-scenarios like this from being permanent, expensive data losses, it is important
-to make regular backups of your site's data, and to store them in a location
-that is separate from the computer where your site is running.
+Si quelque chose arrive à l'ordinateur (ou aux ordinateurs) sur lequel votre
+site et sa base de données tournent, ou si vous ne pouvez plus accéder à cet
+ordinateur, vous pourriez perdre tout ou partie des données de votre site. Vous
+pourriez aussi perdre des données si votre site est attaqué, ou si quelqu'un
+jouissant des droits d'administration sur votre site supprime ou modifie des
+données par erreur depuis l'interface d'administration. Afin d'empêcher de tels
+scénarios de pertes de données irréversibles et coûteuses, il est important de
+réaliser régulièrement des sauvegardes des données de votre site, et de les
+stocker dans un lieu éloigné de l'endroit où se trouve l'ordinateur sur lequel
+tourne votre site.
 
-The frequency with which you should make data backups, and how many backups you
-should keep, depends on how frequently your site is changing. If you have a very
-large amount of content on your site that is being added to or updated many
-times per day, you would want to make more frequent backups than you would for a
-site that changes rarely. Also consider that some time could pass between when a
-data problem occurs and when you notice that it is a problem, so storing a
-sequence of backups (so that you can go back to the last known good data and
-retrieve that), rather than overwriting a single backup repeatedly, is a
-good practice.
+La fréquence à laquelle vous devriez sauvegarder vos données, et combien de
+sauvegardes vous devriez conserver, dépendent de la fréquence à laquelle votre
+site change. Si vous avez sur votre site un très large volume de contenus qui
+sont ajoutés ou mis à jour de nombreuses fois chaque jour, vous voudrez
+probablement sauvegarder plus fréquemment que s'agissant d'un site qui change
+rarement. Prendre également en compte qu'il pourrait s'écouler quelque temps
+entre le moment où un problème affecte les données et celui où vous vous en
+rendez compte, de sorte que stocker une série de sauvegardes (pour pouvoir
+revenir au dernier état correct connu de vos données et les extraire), plutôt
+que d'écraser de manière répétée une seule sauvegarde, est une bonne pratique.
 
-Another consideration is that whatever format you store your backups in, it is a
-good idea to verify that you can actually retrieve lost data from your
-backups. You might want to test several possible data loss scenarios, and make
-sure that your data can be restored to the site in all cases.
+Il ne faut pas perdre de vue, quel soit le format utilisé pour stocker vos
+sauvegardes, qu'il est bon de vérifier que vous pouvez effectivement récupérer
+depuis ces sauvegardes des données perdues. Vous pourriez vouloir tester
+plusieurs scénarios possibles de perte de données, et vous assurer que vos
+données peuvent être restaurées dans tous les cas.
 
-In order to make a complete backup of your site, you will need to make copies of
-the following:
+Afin de réaliser une sauvegarde complète de votre site, vous aurez besoin de
+faire des copies des éléments suivants :
 
-* The data in the _sites_ directory, including the _sites/default/settings.php_
-file.
+* Les données dans le répertoire _sites_, y compris le fichier
+_sites/default/settings.php_.
 
-* The data in your site's database. A few tables can be truncated, such as those
-storing the temporary data cache and user login session information, but it is
-always safe to back up the entire database.
+* Les données stockées dans la base de données de votre site. Quelques tables
+peuvent être tronquées, comme celles stockées dans le cache contenant des
+données temporaires et des informations liées aux sessions des utilisateurs,
+mais il est toujours prudent de sauvegarder l'ensemble de la base de données.
 
-* Uploaded files, such as images and other attachments. The location of these
-files is configurable; the standard location is the _sites/default/files_
-directory under your site root. In the _Manage_ administrative menu, navigate
-to _Configuration_ > _Media_ > _File system_ (_admin/config/media/file-system_)
-to check the file upload locations; to change them, you'll need to edit your
-_settings.php_ file.
+* Les fichiers téléversés, comme les images et autres pièces jointes. La
+localisation de ces fichiers est configurable ; la localisation standard est le
+répertoire _sites/default/files_ sous la racine de votre site. Dans le menu
+d'administration _Gérer_, naviguer vers _Configuration_ > _Média_ > _Système de
+fichiers_ (_admin/config/media/file-system_) et vérifier les localisations des
+répertoires contenant les fichiers téléversés ; pour les changer, vous devrez
+modifier votre fichier _settings.php_.
 
-* Modules, themes and any other software files you have customized. You can find
-customized modules and themes in the _modules_ and _themes_ directories
-respectively. Some people prefer to back up all software files, including core
-files and contributed modules and themes (which you could recover by downloading
-them again from the source), rather than trying to pick out specific files that
-definitely need to be backed up.
+* Les modules, les thèmes et tout fichier du logiciel que vous avez
+personnalisé. Vous pouvez trouver les modules et thèmes personnalisés
+respectivement dans les répertoires _modules_ et _themes_. Certains préfèrent
+sauvegarder l'ensemble des fichiers du logiciel, y compris les fichiers du cœur
+et les modules et thèmes contribués (que vous pourriez récupérer en les
+téléchargeant à nouveau depuis la source), plutôt que de cibler les fichiers
+spécifiques qui nécessitent d'être sauvegardés.
 
-You can perform a test to confirm whether your backup has been done right by
-making a development copy of the site (see <<install-dev-making>>).
+Vous pouvez effectuer un test pour confirmer que votre sauvegarde a été réalisée
+correctement en faisant une copie de développement de votre site (consulter
+<<install-dev-making>>).
 
-==== Related topics
+==== Sujets liés
 
 * <<security-update-core>>
 * <<install-dev-making>>
 * <<prevent-cache>>
 
-==== Additional resources
+==== Pour aller plus loin
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[Page de documentation de la communauté sur _Drupal.org_ "Backing up a site"]
 
-* The https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module],
-which can be used to set up automatic backups of the database and uploaded
-files.
-
+* Le https://www.drupal.org/project/backup_migrate[module contribué Backup and
+Migrate], qui peut être utilisé pour mettre en place des sauvegardes
+automatiques de la base de données et des fichiers téléversés.
 
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
