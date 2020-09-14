@@ -1,44 +1,48 @@
 [[security-cron-concept]]
 
-=== Concept: Cron
+=== Concept : cron
 
 [role="summary"]
-Overview of cron and how it is different from Unix cron.
+Vue d'ensemble du cron et différences avec le cron d'Unix.
 
-(((Cron task,overview)))
-(((Automated Cron module,overview)))
+(((Tâche cron,vue d'ensemble)))
+(((Automated Cron module,vue d'ensemble)))
 
 //==== Prerequisite knowledge
 
-==== What are cron tasks?
+==== Que sont les tâches cron ?
 
-To ensure that your site and its modules continue to function well, a group
-of administrative operations should be run periodically. These operations are
-called _cron_ tasks. Examples of cron tasks are: checking for module and theme
-updates, indexing content for search, or cleaning up temporary files.
+Pour s'assurer que votre site et ses modules continuent à fonctionner
+correctement, un groupe d'opérations d'administration devraient être lancées
+périodiquement. Ces opérations sont appelées des _tâches cron_. Exemples de
+tâches cron : vérification des mises à jour des modules et des thèmes,
+indexation du contenu pour la recherche, ou nettoyage des fichiers temporaires.
 
-==== What is the relationship between the site's cron tasks and Unix cron?
+==== Quelle relation existe-t-il entre les tâches cron du site et le cron d'Unix ?
 
-Linux/Unix-based operating systems have a cron scheduler that can be used to run
-periodic tasks. You can use the server’s cron scheduler to schedule runs of the
-site’s cron tasks. Alternatively, you can use the core Automated Cron module to
-run tasks. You can check the site’s cron tasks' status in the status report.
+Les systèmes d'exploitation basés sur GNU/Linux ou Unix ont un planificateur qui
+peut être utilisé pour exécuter des tâches périodiques. Vous pouvez utiliser le
+cron du serveur pour planifier l'exécution des tâches cron de votre site. Vous
+pouvez vérifier l'état des tâches cron de votre site dans le tableau de bord
+d'administration.
 
-==== Related topics
+==== Sujets liés
 
 * <<security-cron>>
 * <<prevent-status>>
 
-==== Additional resources
+==== Pour aller plus loin
 
-https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
+https://www.drupal.org/docs/7/setting-up-cron/overview[Page de documentation de
+la communauté sur _Drupal.org_ "Setting up cron"]
 
 
 *Attributions*
 
-Written and edited by
-https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
+Écrit et modifié par
+https://www.drupal.org/u/dianalakatos[Diána Lakatos] de
 https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/dalin[Dave Hansen-Lange] at
-https://www.advomatic.com/[Advomatic],
-and https://www.drupal.org/u/batigolix[Boris Doesborg].
+https://www.drupal.org/u/dalin[Dave Hansen-Lange]
+d'https://www.advomatic.com/[Advomatic],
+et https://www.drupal.org/u/batigolix[Boris Doesborg]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
