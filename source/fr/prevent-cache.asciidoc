@@ -1,85 +1,97 @@
 [[prevent-cache]]
 
-=== Concept: Cache
+=== Concept : cache
 
 [role="summary"]
-Overview of the cache and the site data that can be cached.
+Vue d'ensemble du cache et des données du site qui peuvent être mises en cache.
 
-(((Cache,overview)))
-(((Page cache,overview)))
+(((Cache,vue d'ensemble)))
+(((Cache des pages,vue d'ensemble)))
 (((Module,Internal Page Cache)))
 (((Module,Dynamic Page Cache)))
-(((Internal Page Cache module,overview)))
-(((Dynamic Page Cache module,overview)))
+(((Module Internal Page Cache,vue d'ensemble)))
+(((Module Dynamic Page Cache,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<understanding-drupal>>
 
-==== What is the page cache?
+==== Qu'est-ce que le cache des pages ?
 
-The software that runs your site, on each page request, must perform
-calculations and retrieve data from the database, in order to compose the page
-that is sent to the web browser or other application that is accessing the
-site. These calculations take time, which can mean that your page load time is
-longer than would be desirable.
+Le logiciel qui fait tourner votre site, à chaque requête de page, doit réaliser
+un certain nombre de calculs et récupérer des données depuis la base de données,
+afin de composer la page qui est envoyée au navigateur web ou à une autre
+application qui accède au site. Ces calculs prennent du temps, ce qui peut
+entraîner un temps de chargement plus long qu'il n'est souhaitable pour votre
+page.
 
-There are several ways that page load time can be sped up, including installing
-software on the server. The system includes the core Internal Page Cache and
-Dynamic Page Cache modules, which do not require any additional server
-software; they use a _database cache_ mechanism to speed up your site. The way
-these modules work is that during page calculations, intermediate results and
-the final page output are stored in a special database area (known as the
-_cache_). Then the next time a compatible request is made, intermediate or final
-results, as appropriate, can be retrieved and used rather than redoing the
-entire calculation. In addition, when content or data that affects a particular
-calculation is updated, the affected cached data is removed from the cache,
-forcing that part of the calculation to be redone the next time it is needed.
+Il existe plusieurs moyens d'accélerer le temps de chargement de la page, y
+compris l'installation de logiciels sur votre serveur. Le système inclut les
+modules du cœur Internal Page Cache et Dynamic Page Cache, qui ne nécessitent
+aucun logiciel supplémentaire : ils utilisent un mécanisme de cache en base de
+données. Ces modules fonctionnent en stockant, durant l'exécution des calculs,
+les résultats intermédiaires et le rendu final dans une zone spéciale de la base
+de données (connue comme le _cache_). Ensuite, la prochaine fois qu'une requête
+compatible est effectuée, les résultats intermédiaires ou les résultats finaux,
+selon la situation, peuvent être récupérés et utilisés plutôt que de refaire
+l'ensemble des calculs. De plus, lorsque du contenu ou des données qui affectent
+un calcul particulier sont mis à jour, les données en cache affectées sont
+retirées du cache, forçant cette partie du calcul à être refaite la prochaine
+fois qu'on en aura besoin.
 
-These caching modules normally work reasonably well, and offer at least some
-speed-up for most sites. However, sometimes the page cache can have problems,
-such as:
+Ces modules de cache fonctionnent normalement assez bien, et apportent au moins
+un surcroît de vitesse à la plupart des sites. Cependant, le cache des pages
+peut parfois rencontrer des problèmes, tels que :
 
-* Corrupted data in the cache, leading to garbled or incorrect page output
+* Des données corrompues en cache, menant à un rendu de la page incorrect.
 
-* Old data remaining in the cache too long, leading to outdated page output
+* De vieilles données restant trop longtemps en cache, menant à des rendus
+périmés.
 
-* Insufficient caching, leading to slow page loads
+* Un manque de cache, entraînant des chargements de page lents.
 
-==== What other data is cached?
+==== Quelles autres données sont mises en cache ?
 
-Independent of whether the two page cache modules are installed on your site,
-the software that your site runs will still cache the output of many internal
-calculations. The core systems that cache data include:
+Indépendamment de si les deux modules de cache sont installés sur votre site, le
+logiciel sous lequel tourne votre site mettra toujours en cache le résultat de
+nombreux calculs internes. Les systèmes du cœur qui mettent des données en cache
+incluent :
 
-* The theme system caches information in the database cache about which template
-files are used to render various types of data. If you are developing a new
-theme and add a new template file, you'll need to clear this cache to have
-your theme file recognized.
+* La couche de thème met en cache dans la base de données des informations
+indiquant quels fichiers de gabarits (_templates_) sont utilisés pour le rendu
+de divers types de données. Si vous développez un nouveau thème et ajoutez un
+nouveau fichier de gabarit, vous devrez vider le cache pour que le fichier de
+votre thème soit reconnu.
 
-* CSS and JavaScript files can optionally be optimized and compressed (depending
-on your site settings). If so, the compressed versions are stored in the file
-system so that they don't have to be re-optimized too often. If you are
-developing a module or theme, you may need to either turn off or clear this
-file cache to have changes to CSS or JavaScript files be recognized.
+* Les fichiers CSS et JavaScript peuvent optionnellement être optimisés et
+compressés (en fonction des paramètres de votre site). Si tel est les cas, les
+versions compressées sont stockées dans le système de fichiers de manières à ce
+qu'elles n'aient pas à être ré-optimisées trop souvent. Si vous développez un
+module ou un thème, il pourrait être nécessaire de désactiver ou vider ce cache
+de fichiers pour que les modifications de fichiers JavaScript ou CSS soient
+reconnues.
 
-* The system locates certain low-level PHP functions and classes, such as
-_hook implementations_ and _plugin classes_, from your installed modules and
-stores information about which module has which functionality. If you are
-developing a new module or adding features to an existing module, you may need
-to clear this cache to have your new features be recognized.
+* Le système localise certaines fonctions et classes PHP bas niveau, tels que
+les mises en œuvres de _hooks_ et les classes d'extension (_plugin classes_),
+depuis vos modules installés, et stocke des informations pour savoir quel module
+a quelle fonctionnalité. Si vous développez un nouveau module ou ajoutez des
+fonctionnalités à un module existant, il pourrait être nécessaire de vider ce
+cache de sorte que vos nouvelles fonctionnalités soient reconnues.
 
-==== Related topics
+==== Sujets liés
 
-If you have problems with your site, the first thing to try to fix it is
-usually to clear the cache. See <<prevent-cache-clear>> for more information.
+Si vous avez des problèmes avec  votre site, la première chose à essayer pour
+les résoudre est en général de vider le cache. Consulter <<prevent-cache-clear>>
+pour de plus amples informations.
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
-Learn about additional caching and performance optimization methods in the
-https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[_Drupal.org_ community documentation page "Caching overview"].
+S'informer de méthodes supplémentaires de mise en cache et d'optimisation des
+performances sur la
+https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[page de documentation de la communauté sur _Drupal.org_ "Caching overview"].
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
