@@ -1,67 +1,72 @@
 [[install-dev-sites]]
 
-=== Concept: Development Sites
+=== Concept : sites de développement
 
 [role="summary"]
-Overview of development sites with an example deployment workflow for site building.
+Vue d'ensemble des sites de développement avec un exemple de processus de
+déploiement pour la construction de sites.
 
-(((Development site,overview)))
-(((Deployment workflow,overview)))
-(((Staging site,overview)))
-(((Installing,development site)))
-(((Installing,staging site)))
+(((Site de développement,vue d'ensemble)))
+(((Processus de développement,vue d'ensemble)))
+(((Site de pré-production,vue d'ensemble)))
+(((Installer,site de développement)))
+(((Installer,site de pré-production)))
 
 //==== Prerequisite knowledge
 
-==== What are Development Sites?
+==== Que sont les sites de développement ?
 
-Development Sites are different copies of the same site used for developing,
-updating, and testing a site without risking the integrity of the live site.
+Les sites de développement sont différentes copies d'un même site utilisées pour
+développer, mettre à jour, et tester sans risques pour l'intégrité du site de
+production.
 
-An example deployment workflow for site building will usually include the sites
-mentioned below:
+Un exemple de processus de déploiement pour le construction de sites inclut
+habituellement les sites mentionnés ci-dessous.
 
-Local environment::
-  The development process starts with developers working on new features, bug
-  fixes, theming, and configuration in their local environment.
+Environnement local::
+  Le processus de développement commence avec des développeurs qui travaillent
+  sur de nouvelles fonctionnalités, des correctifs, sur le thème et la
+  configuration dans leur environnement de développement local.
 
-Development site::
-  Developers push the changes they've been working on to the development
-  site. For a team of more than one developer, version control is usually
-  used. Git is a version control system that tracks your files for any
-  changes. You can then commit those changes to a repository. Using Git allows
-  team members to work on the same site without overriding each other's work. It
-  also makes it possible to easily roll back to previous stages of the
-  development.
+Site de développement::
+  Les développeurs poussent les modifications sur lesquels ils ont travaillé
+  vers le site de développement. Pour une équipe comprenant plus d'un
+  développeur, la gestion de versions est habituellement utilisée. Git est un
+  système de gestion de versions qui suit chaque changement de vos fichiers.
+  Vous pouvez alors créer une nouvelle révision comportant ces modifications
+  dans un dépôt. Utiliser Git permet aux membres de l'équipe de travailler sur
+  le même site sans surcharger le travail de chacun. Cela permet également de
+  revenir facilement à des états antérieurs du développement.
 
-Staging site::
-  The staging site can be used for testing, or presenting the changes to the
-  client for approval. QA (Quality Assurance) and UAT (User Acceptance Testing)
-  are most often carried out on the staging site. It is recommended to have live
-  content on both the development and staging sites, so that you can test how
-  the new features will work with the existing content.
+Site de pré-production::
+  Le site de pré-production peut être utilisé pour tester ou présenter les
+  changements au client pour validation. L'assurance qualité (_quality
+  assurance_, QA) et les tests d'acceptation des utilisateurs (_user acceptance
+  testing_, UAT) sont le plus souvent réalisés sur le site de pré-production. Il
+  est recommandé d'avoir le contenu de pré-production à la fois sur les sites de
+  développement et de pré-production, de manière à pouvoir tester comment les
+  nouvelles fonctionnalités fonctionneront avec le contenu existant.
 
-Production site::
-  The live site on the web available to visitors. It contains new features that
-  have been proven safe to go live.
+Site de production::
+  Le site en ligne accessible aux visiteurs sur le web. Il contient les
+  nouvelles fonctionnalités qui se sont révélées suffisamment sûres pour être
+  mises en ligne.
 
-Based on the project's size, scope, requirements, or stakeholders, stages from
-the above workflow can be removed, or additional stages can be added. For
-example, a testing site before staging can be added to separate testing and user
-acceptance processes.
+Selon la taille du projet, son périmètre, les exigences, ou les acteurs, les
+étapes du processus ci-dessus peuvent être retirées, ou d'autres peuvent être
+ajoutées. Par exemple, un site de test avant la pré-production peut être ajouté
+pour séparer le test des processus de validation des utilisateurs.
 
-==== Related topics
+==== Sujets liés
 
 * <<install-dev-making>>
 * <<planning-workflow>>
+* <<extend-git>>
 
-==== Additional resources
-
-https://www.drupal.org/node/991716[_Drupal.org_ community documentation page "Introduction to Git"]
-
+// ==== Additional resources
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/dianalakatos[Diána Lakatos],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Écrit et modifié par https://www.drupal.org/u/dianalakatos[Diána Lakatos], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de http://redcrackle.com[Red
+Crackle]. Traduit par https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
