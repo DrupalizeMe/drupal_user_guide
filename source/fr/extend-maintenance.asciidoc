@@ -1,124 +1,125 @@
 [[extend-maintenance]]
 
-=== Enabling and Disabling Maintenance Mode
+=== Activer et désactiver le mode maintenance
 
 [role="summary"]
-How to enable maintenance mode to set up a "Site under maintenance" message, and
-how to disable it.
+Comment activer le mode maintenance pour mettre en place un message "Site en
+maintenance", et comment le désactiver.
 
-(((Maintenance mode,overview)))
-(((Maintenance mode,enabling)))
-(((Maintenance mode,disabling)))
+(((Mode maintenance,vue d'ensemble)))
+(((Mode maintenance,activer)))
+(((Mode maintenance,désactiver)))
 
-==== Goal
+==== Objectif
 
-Put your site in maintenance mode to allow users with the right permissions to
-use the site while users without this permission are presented with a message
-that the site is under maintenance.
+Mettre votre en site en mode maintenance pour permettre aux utilisateurs avec
+les bons droits d'utiliser votre site tandis que les utilisateurs sans ce droit
+verront s'afficher un message indiquant que le site est en maintenance.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<security-concept>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-If you want to use Drush to enable or disable maintenance mode, Drush must be
-installed. See <<install-tools>>.
+Si vous voulez utiliser Drush pour activer ou désactiver le mode maintenance,
+Drush doit être installé. Consulter <<install-tools>>.
 
-==== Steps
+==== Étapes
 
-You can use the administrative interface or Drush to enable or disable
-maintenance mode.
+Vous pouvez utiliser l'interface d'administration ou Drush pour activer ou
+désactiver le mode maintenance.
 
-===== Enabling maintenance mode using the administrative interface
+===== Activer le mode maintenance en utilisant l'interface d'administration
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
-_Maintenance mode_ page appears.
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Développement_ > _Mode maintenance_ (_admin/config/development/maintenance_).
+La page _Mode maintenance_ apparaît.
 
-. Fill in the fields as shown below.
+. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
+|Nom du champ | Explication | Valeur
 
-| Put site into maintenance mode | Enable the maintenance mode |
-Checked
+| Mettre le site en mode maintenance | Activer le mode maintenance | Coché
 
-| Message to display when in maintenance mode | The information that is shown to
-website visitors when the mode is enabled. Variables such as @site can be used
-in the message |@site is currently under maintenance but should be back
-shortly. Thank you for your patience.
+| Message à afficher en mode maintenance | Les informations qui sont affichées
+aux utilisateurs du site web quand le mode est activé. Des variables comme @site
+peuvent être utilisées dans le message |@site est actuellement en maintenance et
+devrait à nouveau être en ligne sous peu. Merci de votre patience.
 
 |================================
 
-. Click _Save configuration_.
+. Cliquer sur  _Enregistrer la configuration_.
 
-. Verify that the site is in maintenance mode by accessing it from another
-browser where you aren't logged in. If you are not able to verify, try clearing
-the cache. See <<prevent-cache-clear>>.
+. Vérifier que le site est en mode maintenance en y accédant depuis un autre
+navigateur depuis lequel vous n'êtes pas connecté·e. Si Vous ne parvenez pas à
+vérifier, essayer de vider le cache. Consulter <<prevent-cache-clear>>.
 +
 --
 // Site in maintenance mode.
-image:images/extend-maintenance-mode-enabled.png["Maintenance mode enabled",width="100%"]
+image:images/extend-maintenance-mode-enabled.png["Mode maintenance activé",width="100%"]
 --
 
-===== Disabling maintenance mode using the administrative interface
+===== Désactiver le mode maintenance en utilisant l'interface d'administration
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Maintenance mode_ (_admin/config/development/maintenance_). The
-_Maintenance mode_ page appears.
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Développement_ > _Mode maintenance_ (_admin/config/development/maintenance_).
+La page _Mode maintenace apparaît.
 
-. Fill in the fields as shown below.
+. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
+|Nom du champ | Explication | Valeur
 
-| Put site into maintenance mode | Disable the maintenance mode |
-Unchecked
+| Mettre le site en mode maintenance | Désactiver le mode maintenance |
+Désactivé
 
-| Message to display when in maintenance mode | No message required while disabling. You can leave the field blank. |
+| Message à afficher en mode maintenance | Aucun message requis pour désactiver.
+Vous pouvez laisser ce champ vide. |
 
 |================================
 
-. Click _Save configuration_.
+. Cliquer sur _Enregistrer la configuration_.
 
-. Verify that the site is no longer in maintenance mode by accessing it from
-another browser where you aren't logged in. If you are not able to verify, try
-clearing the cache. See <<prevent-cache-clear>>.
+. Vérifier que le site n'est plus en mode maintenance en y accédant depuis un
+autre navigateur depuis lequel vous n'êtes pas connecté·e. Si vous ne parvenez
+pas à vérifier, essayer de vider le cache. Consulter <<prevent-cache-clear>>.
 +
 --
 // Site no longer in maintenance mode.
-image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",width="100%"]
+image:images/extend-maintenance-mode-disabled.png["Mode maintenance désactivé",width="100%"]
 --
 
-===== Enabling or disabling maintenance mode using Drush
+===== Activer ou désactiver le mode maintenance en utilisant Drush
 
-. Follow the user interface steps above to edit the site maintenance message, if
-desired.
+. Suivre les étapes ci-dessus concernant l'interface utilisateur pour modifier
+le message affiché lorsque le site est en mode maintenance, si vous le
+souhaitez.
 
-. Run the following Drush commands to enable maintenance mode and clear the
-cache:
+. Lancer les commandes Drush suivantes pour activer le mode maintenance et vider
+le cache :
 +
 ----
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----
 
-. Run the following Drush commands to disable maintenance mode and clear the
-cache:
+. Lancer les commandes Drush suivantes pour désactiver le mode maintenace et
+vider le cache :
 +
 ----
 drush state:set system.maintenance_mode 0 --input-format=integer
 drush cache:rebuild
 ----
 
-. After running either set of commands, verify that your site is either in or
-out of maintenance mode by visiting the site in a browser where you are not
-logged in.
+Après avoir lancé l'un ou l'autre ensemble de commandes, vérifier que votre site
+est en mode maintenance ou hors du mode maintenance en visitant le site avec un
+navigateur depuis lequel vous n'êtes pas connecté·e.
 
-==== Expand your understanding
+==== Pour approfondir
 
 * <<security-update-core>>
 
@@ -128,7 +129,7 @@ logged in.
 
 //==== Related concepts
 
-==== Videos
+==== Vidéos (en anglais)
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Disabling Maintenance Mode"]
@@ -138,7 +139,8 @@ video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Di
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle], et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
