@@ -1,74 +1,74 @@
 [[preface-reporting]]
-=== Reporting Problems
+=== Signaler des problèmes
 [role="summary"]
-How to report an issue with this guide (with detailed steps).
+Comment signaler un problème avec ce guide (avec étapes détaillées).
 
-==== Goal
+==== Objectif
 
-Report a problem with this guide, such as:
+Signaler un problème avec ce guide, tels que :
 
-* Information that is incorrect or does not follow best practices
-* Steps that do not work
-* Screen shots or text that doesn't match what you see on the screen
-* Unclear writing
-* Places where a table or screen shot would help clarify the text
-* Failure to define terminology
-* Missing knowledge prerequisites or site prerequisites for a topic
-* Typographical, spelling, grammar, or formatting errors
-* Broken links
+* Informations incorrectes ou non conformes aux bonnes pratiques.
+* Étapes qui ne fonctionnent pas.
+* Captures d'écran ou texte qui ne correspondent pas à ce que vous voyez sur
+l'écran.
+* Rédaction peu claire.
+* Endroits où un tableau ou une copie d'écran aideraient à clarifier le texte.
+* Terminologie mal définie.
+* Pré-requis ou pré-requis du site manquants pour un sujet.
+* Erreurs de formatage, de grammaire, de frappe ou typographiques.
+* Liens cassés.
 
 // ==== Prerequisite knowledge
 
 // ==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-. Make a note of the topic or topics that contain the problem you have found.
+. Noter le(s) sujet(s) affectés par le problème que vous avez rencontré.
 
-. Log in to https://www.drupal.org[_Drupal.org_] (you will need to create a user
-account if you do not already have one).
+. Se connecter à https://www.drupal.org[_Drupal.org_] (il est nécessaire de
+créer un compte d'utilisateur si ce n'est pas déjà fait).
 
-. Visit the https://www.drupal.org/project/issues/user_guide[User Guide issues
-page on _Drupal.org_].
+. Visiter la https://www.drupal.org/project/issues/user_guide[page User Guide
+issues sur _Drupal.org_].
 
-. Verify that the problem you found has not already been reported in another
-issue:
-  * If there are only a few open issues, scan the _Summary_ column to see if
-  any of their descriptions match the problem you found. You may also need to
-  read some of the issues to make sure, which you can do by clicking the links
-  in the _Summary_ column.
-  * If the open issue list is long, enter either a keyword related to the
-  problem you found or the title of the topic where the problem occurs in the
-  _Search for_ box, and click _Search_ to reduce the issue list. Then either
-  scan the summaries or read the issues to see if they match your problem.
+. Vérifier que le problème rencontré n'a pas déjà été signalé dans un ticket
+existant :
+  * S'il n'y a que quelques tickets ouverts, parcourir la colonne _Summary_ pour
+  voir si l'une des descriptions correspond au problème rencontré.  Vous
+  pourriez avoir également besoin de lire quelques-uns des tickets pour vous en
+  assurer, ce que vous pouvez faire en cliquant sur les liens dans la colonne
+  _Summary_.
+  * Si la liste des tickets ouverts est longue, saisir un mot clef en liaison
+  avec le problème rencontré ou le titre du sujet où le problème se produit dans
+  la case _Search for_, et cliquer sur _Search_ pour limiter la liste de
+  tickets. Parcourir alors les résumés ou lire les tickets pour voir s'ils
+  correspondent à votre problème.
 
-. If you determine that your problem has not already been reported, click
-_Create a new issue_, and fill in the issue report as follows:
+. Si vous en déduisez que votre problème n'a pas encore été signalé, cliquer sur
+_Create a new issue_, et remplir le rapport comme suit :
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation | Example value
-| Title | Short summary of the problem you found | Instructions in "Adding
-  a Content Type" do not work
-| Category | Type of issue being reported | Bug report
-| Version | Version of the guide you found the problem in | 8.x-0.x-dev
-| Issue summary | Details of the problem you found | In the "Adding a Content
-  Type" topic, in step 3, when I clicked _Save_, I got the following error
-  message: ...
+| Nom du champ | Explication | Valeur d'exemple
+| Title | Court résumé du problème rencontré | Les instructions dans "Ajouter un type de contenu" ne fonctionnent pas
+| Category | Type de problème signalé | Bug report (rapport de bogue)
+| Version | Version du guide dans lequel vous avez rencontré ce problème | 8.x-0.x-dev
+| Issue summary | Détails du problème rencontré | Dans le sujet "Ajouter un type de contenu", à l'étape 3, quand je clique sur _Enregistrer_, j'obtiens le message d'erreur suivant : ...
 |================================
 
-. Reread the _Title_ and _Issue summary_ you entered, and verify that the
-following information is included in your report:
-  * A complete description of the problem you found
-  * The name of the topic or topics where you found the problem
-  * The language you are reading the guide in (if not English)
-  * If you read the guide on a website, a link to the page or pages
-    with the problem
+. Relire ce que vous avez saisi dans _Title_ et _Issue summary_, et vérifier que
+les informations suivantes sont incluses dans le rapport :
+  * Une description complète du problème rencontré.
+  * Le nom du ou des sujets où vous avez rencontré ce problème.
+  * La langue dans laquelle vous lisez ce guide (si différente de l'anglais).
+  * Si vous lisez ce guide sur un site web, un lien vers la page ou les pages
+  souffrant de ce problème.
 
-. Click _Save_ to create the issue.
+. Cliquer sur _Save_ pour créer le ticket.
 
-. Check back on the issue in a few days. If one of the project maintainers has
-asked for clarification, respond by adding a comment to the issue.
+. Revenir vérifier le ticket dans quelques jours. Si un des mainteneurs du
+projet a demandé des précisions, répondre en ajoutant un commentaire au ticket.
 
 // ==== Expand your understanding
 
@@ -79,4 +79,5 @@ asked for clarification, respond by adding a comment to the issue.
 
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
