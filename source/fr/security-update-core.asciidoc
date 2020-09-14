@@ -1,133 +1,140 @@
 [[security-update-core]]
 
-=== Updating the Core Software
+=== Mettre à jour le cœur
 
 [role="summary"]
-How to update the core software using the administrative interface or Drush.
+Comment mettre à jour le cœur en utilisant l'interface d'administration ou
+Drush.
 
-(((Core software,updating)))
-(((Drush tool,using to update the core software)))
-(((Administrative interface,using to update the core software)))
+(((Cœur,mise à jour)))
+(((Outil Drush,utilisation pour mettre à jour le cœur)))
+(((Interface d'administration,utilisation pour mettre à jour le cœur)))
 
-==== Goal
+==== Objectif
 
-Update the core software, either through the administrative interface or by
-using Drush.
+Mettre à jour le cœur, soit par l'interface d'administration, soit en utilisant
+Drush.
 
-//==== Prerequisite knowledge
+//==== Pré-requis
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* Si vous voulez utiliser Drush, Drush doit être installé. Consulter
+<<install-tools>>.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
+* Si votre site est en production, vous devriez tester ce processus dans un
+environnement de développement avant de l'appliquer. Consulter
 <<install-dev-making>>.
 
-==== Steps
+==== Étapes
 
-. Make a complete backup of your site. Refer to <<prevent-backups>>.
+. Faire une sauvegarde complète de votre site. Se référer à <<prevent-backups>>.
 
-. Open _settings.php_ (_/sites/default/settings.php_) in any plain text
-editor. Find the line with the _$settings['update_free_access']_ variable. By
-default, it is set to "FALSE" due to security reasons. Change the setting to
-"TRUE":
+. Ouvrir _settings.php_ (_/sites/default/settings.php_) dans un éditeur de
+texte. Trouver la ligne contenant la variable _$settings['update_free_access']_.
+Par défaut, elle est définie à "FALSE" pour des raisons de sécurité. Changer ce
+paramètre à "TRUE".
+
 +
 ----
 $settings['update_free_access'] = TRUE;
 ----
 
-. Disable any caching technique (memcache, varnish, and so on) your application
-might be using.
+. Désactiver tout système de mise en cache (memcache, varnish, et ainsi de
+suite) que votre application pourrait utiliser.
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. Mettre votre site en mode de maintenance. Consulter <<extend-maintenance>>.
 
-. If you are using Composer to manage dependencies, skip the next six steps, and
-instead see <<install-composer>> for instructions on downloading updated
-files. Continue with the _update.php_ step.
+. Si vous utilisez Composer pour gérer les dépendances, passer les six étapes
+précédentes, et consulter à la place <<install-composer>> pour des instructions
+sur la manières de télécharger des fichiers mis à jour. Reprendre à l'étape
+_update.php_.
 
-. Download the tar.gz or zip file archive for the latest version of Drupal
-8.x core from https://www.drupal.org/project/drupal[_Drupal.org_ Drupal Core
-Downloads]. See <<install-prepare>> for more details on how to find the latest
-version.
+. Télécharger l'achive tar.gz ou zip de la dernière version du cœur de Drupal
+depuis la page https://www.drupal.org/project/drupal[_Drupal.org_ Drupal Core
+Downloads]. Consulter <<install-prepare>> pour plus de détails sur la manière
+de trouver la dernière version.
 
-. Upload the archive file to your web hosting server.
+. Téléverser l'archive vers le serveur de votre hébergeur web.
 
-. Extract the archive file to a temporary directory on your server (should be
-outside the directory where the site is hosted). Your hosting control panel's
-file manager should provide a way to extract the files. Or, if you have
-terminal access to your hosting server (running Linux), you can use a command
-like:
+. Extraire l'archive dans un répertoire temporaire sur votre serveur (cela
+devrait être en dehors du répertoire où votre site est hébergé). Le gestionnaire
+de fichiers du panneau de contrôle de votre hébergeur devrait fournir un moyen
+d'extraire les fichiers. Ou, si vous avez un accès à un terminal sur le serveur
+de votre hébergement (sous Linux), vous pouvez utiliser une commande comme :
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
 ----
 
-. In your site hosting directory, delete the _core_ and _vendor_ directories,
-and all files that are not in a subdirectory, including _.htaccess_,
-_composer.json_, and _autoload.php_. Don't delete custom and customized files
-because you may end up losing the custom functionality stored in them.
+Dans le répertoire de l'hébergeur de votre site, supprimer les répertoires
+_core_ et _vendor_, et tous les fichiers qui ne sont pas dans ce
+sous-répertoire, y compris _.htaccess_, _composer.json_, et _autoload.php_. Ne
+pas supprimer les fichiers personnalisés : vous pourriez perdre des
+fonctionnalités stockées dans ces fichiers.
 
-. Copy the _core_ and _vendor_ directories and the non-custom/non-customized
-files that you deleted in the preceding step from the temporary directory to
-your site directory.
+. Copier les répertoires _core_ et _vendor_ ainsi que les fichiers non
+personnalisés supprimés à l'étape précédente depuis le répertoire temporaire
+vers le répertoire de votre site.
 
-. Run the _update.php_ script using either of the following:
+. Lancer le script _update.php_ en utilisant une des deux méthodes suivantes :
 +
-  * Visit _http://www.example.com/update.php_ in your browser (where
-  _www.example.com_ is your site's URL). Click _Continue_ in the first screen
-  to run the updates and successfully complete the script.
-  * Run the following Drush command: `drush updatedb`
+  * Visiter _http://www.example.com/update.php_ avec votre navigateur (où
+  _www.example.com est l'URL de votre site). Cliquer sur _Continuer_ au premier
+  écran pour lancer les mises à jour et achever l'exécution du script avec
+  succès.
+  * Lancer la commande Drush suivante : `drush updatedb`
 
-. If you get any error or warning, re-run the _update.php_ script
-again till all the updates have been completed successfully.
+. Si vous obtenez une erreur ou un avertissement, relancer le script
+_update.php_ à nouveau jusqu'à ce que les mises à jour s'achèvent avec succès.
 
-. Open _settings.php_ (_/sites/default/settings.php_) in a text editor. Find the
-line with the _$settings['update_free_access']_ variable and update it to
-"FALSE":
+. Ouvrir _settings.php_ (_/sites/default/settings.php_) dans un éditeur de
+texte. Trouver la ligne contenant la variable _$settings['update_free_access']_
+et changer sa valeur à "FALSE" :
 +
 ----
 $settings['update_free_access'] = FALSE;
 ----
 
-. Click _Administration pages_ to return to the administration section of your
-site.
+. Cliquer sur _Pages d'administration_ pour retourner à la section
+d'administration de votre site.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Sortir votre site du mode de maintenace. Consulter <<extend-maintenance>>.
 
-. Clear the cache. See <<prevent-cache-clear>>.
+. Vider le cache. Consulter <<prevent-cache-clear>>.
 
-. Re-enable any caching technique you disabled at Step 3.
+. Réactiver tout système de mise en cache désactivé à l'étape 3.
 
-. You should have the updated version running. You can verify the current
-version of your software by checking the _Status report_ (see
-<<prevent-status>>).
+. Votre site devrait à présent tourner sous la dernière version mise à jour.
+Vous pouvez vérifier la version courante du logiciel sur le _tableau de bord
+d'administration_ (consulter <<prevent-status>>).
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
 * <<install-tools>>
 * <<install-dev-making>>
 * <<prevent-backups>>
 
-==== Related concepts
+==== Concepts liés
 
 <<prevent-status>>
 
-==== Videos
+==== Vidéos (en anglais)
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/DqYqxp4xByk[title="Updating the Core Software"]
 
-==== Additional resources
+==== Pour aller plus loin
 
-* https://www.drupal.org/project/drupal["Drupal Core Downloads" page on _Drupal.org_]
-* https://www.drupal.org/project/registry_rebuild["Registry Rebuild" page on _Drupal.org_]
-* The file _/core/UPDATE.txt_ within your installation.
+* https://www.drupal.org/project/drupal[Page "Drupal Core Downloads" sur _Drupal.org_]
+* https://www.drupal.org/project/registry_rebuild[Page "Registry Rebuild" sur _Drupal.org_]
+* Le fichier _/core/UPDATE.txt_ de votre installation.
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
-https://www.drupal.org/u/batigolix[Boris Doesborgh], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+Écrit et modifié par https://www.drupal.org/u/surendramohan[Surendra Mohan],
+https://www.drupal.org/u/batigolix[Boris Doesborgh], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
 http://redcrackle.com[Red Crackle].
+Traduit par https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
