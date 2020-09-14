@@ -1,161 +1,175 @@
 [[views-create]]
-=== Creating a Content List View
+=== Créer une vue listant du contenu
 
 [role="summary"]
-How to create a content list view.
+Comment créer une vue listant du contenu.
 
-(((View,creating)))
-(((Content list view,creating)))
-(((Views module,creating a view)))
-(((Listing content,using Views module to)))
-(((Image module,creating a view)))
+(((Vue,créer)))
+(((Vue listant du contenu,créer)))
+(((Module Views,créer une vue)))
+(((Lister du contenu,utiliser Views pour)))
+(((Module Image,créer une vue)))
 (((Module,Views)))
 (((Module,Image)))
 
-==== Goal
+==== Objectif
 
-Create a page listing vendors that will be automatically updated whenever a
-vendor is added, deleted, or updated on the site.
+Créer une page listant des marchands qui sera automatiquement mise à jour chaque
+fois qu'un marchand est ajouté, supprimé, ou mis à jour sur le site.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<views-concept>>
 * <<views-parts>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* The core Views and Views UI modules must be installed. These are installed for
-you when you install with the core Standard installation profile.
+* Les modules du cœur Views et Views UI doivent être installés. Ils le sont
+automatiquement pour vous lors que vous installez Drupal avec le profil
+d'installation Standard du cœur.
 
-* The Vendor content type must exist, with URL and Main image fields. Your
-site must have a couple of Vendor content items. See <<structure-content-type>>,
-<<structure-fields>>, and <<content-create>>.
+* Le type de contenu Marchand doit exister, avec les champs URL et Image
+principale. Votre site doit avoir quelques éléments de contenu de type Marchand.
+Consulter <<structure-content-type>>, <<structure-fields>> et
+<<content-create>>.
 
-* The _Medium (220x220)_ image style must be defined. This is created on your
-site when you install the core Image module (installed with the core Standard
-installation profile) but can be recreated if deleted. See
-<<structure-image-style-create>>.
+* Le style d'image _Medium (220x220)_ doit être défini. Ce dernier est créé sur
+votre site lorsque vous installez le module du cœur Image (installé avec le
+profil d'installation du cœur Standard) mais peut être recréé s'il a été
+supprimé. Consulter <<structure-image-style-create>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_ > _Add
-view_ (_admin/structure/views/add_). The _Add view_ wizard appears.
+. Dans le menu d'administration _Gérer_, naviguer vers _Structure_ > _Vues_ >
+_Ajouter une vue_ (_admin/structure/views/add_). L'assistant _Ajouter une vue_
+apparaît.
 
-. Fill in the fields as shown below.
+. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| View name | Name of the view that will be visible in the administration pages | Vendors
-| Show | Type of information listed in the view | Content
-| Of Type | Specify content type | Vendor
-| Sorted by | List order | Title
-| Create a page | Create a page that displays the view | Checked
-| Page title | Title show above the view | Vendors
-| Path | Address of the page | vendors
-| Display format | Type of list | Table
-| Items to display | Number of items visible on the page | 10
-| Use a pager | Split up the list in several pages if there are more items | Checked
-| Create a menu link | Add the view page to the menu | Checked
-| Menu | Menu in which to add the link | Main navigation
-| Link text | Label of the link in the menu | Vendors
+| Nom du champ | Explication | Valeur d'exemple
+| Visualiser les informations basiques > Nom de la vue | Nom de la vue qui sera visible dans les pages d'administration | Marchands
+| Paramètres de la vue > Afficher | Type d'information listée dans la vue | Contenu
+| Paramètres de la vue > de type | Spécifier le type de contenu | Marchand
+| Paramètres de la vue > trié par | Ordre dans la liste | Titre
+| Paramètres de la page > Créer une page | Créer une page qui affiche la vue | Coché
+| Paramètres de la page > Titre de page | Titre affiché au-dessus de la vue | Marchands
+| Paramètres de la page > Chemin | adresse de la page | vendors
+| Paramètres de la page > Paramètres d'affichage de la page > Format d'affichage | Type de liste | Tableau
+| Paramètres de la page > Éléments à afficher | Nombre d'éléments visibles dans la page | 10
+| Paramètres de la page > Utiliser une pagination | Découper la liste en plusieurs pages s'il y a plus d'éléments | Coché
+| Paramètres de la page > Créer un lien de menu | Ajouter la page de la vue au menu | Coché
+| Paramètres de la page > Menu | Menu dans lequel ajouter le lien | Navigation principale
+| Paramètres de la page > Texte du lien | Ancre du lien dans le menu | Marchand
 |================================
 +
 --
 // Add view wizard.
-image:images/views-create-wizard.png["Add new view wizard",width="100%"]
+image:images/views-create-wizard.png["Assistant Ajouter une vue",width="100%"]
 --
 
-. Click _Save and edit_. The view configuration page appears.
+. Cliquer sur _Enregistrer et modifier_. La page de configuration de la vue
+apparaît.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. En dessous de _Champs_, cliquer sur _Ajouter_ dans le bouton déroulant. La
+fenêtre modale _Ajouter champs_ apparaît.
 
-. Enter the word "image" in the search field.
+. Saisir le mot "image" dans le champ de recherche.
 
-. Check Main image in the table.
+. Cocher Main image dans le tableau.
 
-. Click _Apply_. The _Configure field: Content: Main Image_
-pop-up appears.
+. Cliquer sur _Ajouter et configurer champs_. La fenêtre modale _Configurer
+champ : Image principale_ apparaît.
 
-. Fill in the fields as shown below.
+
+. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Image style | The format of the image | Medium (220x220)
-| Link image to | Add a link to the content item | Content
+| Nom du champ | Explication | Valeur d'exemple
+| Créer une étiquette | Ajouter une étiquette avant la valeur du champ | Non coché
+| Style d'image | Le format de l'image | Medium (220x220)
+| Lier l'image à | Ajouter un lien à l'élément de contenu | Contenu
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. Cliquer sur _Appliquer_. La page de configuration de la vue apparaît.
 
-. Click _Add_ from the dropdown button in the _Fields_ section. The _Add
-fields_ pop-up appears.
+. En-dessous de _Champs_, cliquer sur _Ajouter_ dans le bouton déroulant. La
+fenêtre modale _Ajouter champs_ apparaît.
 
-. Enter the word "body" in the search field.
+. Saisir le mot "corps" dans le champ de recherche.
 
-. Select _Body_ in the table.
+. Sélectionner _Corps_ dans le tableau.
 
-. Click _Apply_. The _Configure field: Content: Body_ pop-up
-appears.
+. Cliquer sur _Ajouter et configurer champs_. La fenêtre modale _Configurer
+champ : Contenu : Corps_ apparaît.
 
-. Fill in the fields as shown below.
+. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Create a label | Add a label before the field value | Unchecked
-| Formatter | The presentation of the field value | Summary or trimmed
-| Trimmed limit: | The number of maximum characters shown | 120
+| Nom du champ | Explication | Valeur d'exemple
+| Créer une étiquette | Ajouter une étiquette avant la valeur du champ | Non coché
+| Outil de mise en forme | La présentation de la valeur du champ | Résumé ou coupé
+| Limite de troncature | Le nombre maximum de caractères affichés | 120
 |================================
 
-. Click _Apply_. The view configuration page appears.
+. Cliquer sur _Appliquer_. La page de configuration de la vue apparaît.
 
-. Click _Content: Title (Title)_ in the _Fields_ list. The
-_Configure field: Content: Title_ pop-up appears.
+. En dessous de _Champs_, cliquer sur _Contenu : Titre_. La fenêtre modale
+_Configurer champ : Contenu : Titre_ apparaît.
 
-. Uncheck _Create a label_. This will remove the label that was created by the
-wizard.
+. Décocher _Créer une étiquette_. Ceci retirera l'étiquette créée par
+l'assistant.
 
-. Click _Apply_. The view configuration page appears.
+. Cliquer sur _Appliquer_. La page de configuration de la vue apparaît.
 
-. Click _Rearrange_ from the dropdown button in the _Fields_ section. The
-_Rearrange fields_ pop-up appears.
+. En dessous de _Champs_, cliquer sur _Réordonner_ dans le bouton déroulant. La
+fenêtre modale _Réordonner champs_ apparaît.
 
-. Drag the fields into the right order: Image, Title. Body.
+. Faire glisser les poignées en forme de croix des champs pour les mettre dans
+le bon ordre : Image, Titre, Corps. Alternativement au glisser/déplacer, vous
+pouvez cliquer sur le lien _Afficher les poids des lignes_ en tête de la table
+et saisir des poids numériques (les champs ayant des poids inférieurs seront
+affichés en premier).
 
-. Click _Apply_. The view configuration page appears.
+. Cliquer sur _Appliquer_. La page de configuration de la vue apparaît.
 
-. Optionally, click _Update preview_ for a preview.
+. Optionnellement, cliquer sur _Actualiser l'aperçu_ pour un aperçu.
 
-. Click _Save_.
+. Cliquer sur _Enregistrer_.
 +
 --
 // Completed vendors view administration page.
-image:images/views-create-view.png["Vendors view configuration page", width="100%"]
+image:images/views-create-view.png["Page de configuration de la vue Marchands", width="100%"]
 --
 
-. Navigate to the homepage and click Vendors from the main navigation to see
-the result.
+. Naviguer vers la page d'accueil et cliquer sur Marchands dans la navigation
+principale pour voir le résultat.
 +
 --
 // Completed vendors view output.
-image:images/views-create-view-output.png["Vendors view output", width="100%"]
+image:images/views-create-view-output.png["Rendu de la vue Marchands", width="100%"]
 --
 
-==== Expand your understanding
+==== Pour aller plus loin
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
-<<menu-reorder>>.
+Le lien vers la vue dans la navigation principale ne sera probablement pas à la
+bonne place. Changer l'ordre des éléments de menu dans la navigation principale.
+Consulter <<menu-reorder>>.
 
 //==== Related concepts
 
-// ==== Additional resources
+==== Vidéos (en anglais)
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/aw02gXlte9I[title="Creating a Content List View"]
+
+// ==== Additional resources
 
 *Attributions*
 
-Written/edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Créé et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg] et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
