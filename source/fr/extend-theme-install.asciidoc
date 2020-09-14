@@ -1,135 +1,142 @@
 [[extend-theme-install]]
 
-=== Downloading and Installing a Theme from _Drupal.org_
+== Télécharger et installer un thème depuis _Drupal.org_
 
 [role="summary"]
-How to download and install a theme from Drupal.org or by using Drush.
+Comment télécharger et installer un thème depuis Drupal.org ou en utilisant
+Drush.
 
-(((Theme,downloading)))
-(((Theme,installing)))
-(((Theme,enabling)))
-(((Theme,contributed)))
-(((Theme,custom)))
-(((Contributed theme,downloading)))
-(((Contributed theme,installing)))
-(((Contributed theme,enabling)))
-(((Custom theme,installing)))
-(((Custom theme,enabling)))
-(((Downloading,theme)))
-(((Installing,theme)))
-(((Enabling,theme)))
-(((Update Manager module,using to install theme)))
+(((Thème,télécharger)))
+(((Thème,installer)))
+(((Thème,activer)))
+(((Thème,contribué)))
+(((Thème,personnalisé)))
+(((Thème contribué,télécharger)))
+(((Thème contribué,installer)))
+(((Thème contribué,activer)))
+(((Thème personnalisé,installer)))
+(((Thème personnalisé,activer)))
+(((Télécharger,thème)))
+(((Installer,thème)))
+(((Activer,thème)))
+(((Module Update Manager,utiliser pour installer un thème)))
 (((Module,Update Manager)))
-(((Drush tool,using to install theme)))
-(((Drupal.org website,downloading and installing theme from)))
+(((Outil Drush,utiliser pour installer un thème)))
+(((Drupal.org,télécharger et installer un thème depuis le site web)))
 
-==== Goal
+==== Objectif
 
-Download and install a theme from _Drupal.org_.
+Télécharger et installer un thème depuis _Drupal.org_.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<extend-theme-find>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-If you want to install via the website, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing modules.
+Si vous voulez installer depuis le site web, le module du cœur Update Manager
+doit être installé. Consulter <<config-install>> pour des instructions sur
+l'installation de modules.
 
-If you want to use Drush, Drush must be installed. See <<install-tools>>.
+Si vous voulez utiliser Drush, Drush doit être installé. Consulter
+<<install-tools>>.
 
-==== Steps
+==== Étapes
 
-You can use the administrative interface to download and install a contributed
-theme. If you are installing a custom theme rather than a contributed theme, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to download and unpack the theme
-files, follow the steps in <<extend-manual-install>>. If you are using Composer
-to manage the files in your site, follow the steps for downloading in
-<<install-composer>>. In either of these cases, you can then install the theme
-using Drush, or by continuing with step 7 in the instructions for the
-administrative interface below.
+Vous pouvez utiliser l'interface d'administration pour télécharger et installer
+un thème contribué. Si vous êtes en train d'installer un thème personnalisé
+plutôt qu'un thème contribué, si vous voyez un message indiquant que
+_l'installation de modules et de thèmes requiert un accès FTP à votre serveur_,
+ou si les étapes ci-dessous ne fonctionnent pas pour télécharger et décompresser
+les fichiers du thème, suivre les étapes dans <<extend-manual-install>>. Si vous
+utilisez Composer pour gérer les fichiers de votre site, suivre les étapes pour
+télécharger dans <<install-composer>>. Dans tous les cas, vous pouvez alors
+installer le thème en utilisant Drush, ou en continuant avec l'étape 7 dans les
+instructions pour l'interface d'administration ci-dessous.
 
-===== Using the administrative interface
+===== En utilisant l'interface d'administration
 
-. On the theme's project page on drupal.org (for example,
-_https://www.drupal.org/project/mayo_), scroll to the _Downloads_ section
-at the bottom of the page.
+. Sur la page de projet du thème sur drupal.org (par exemple
+_https://www.drupal.org/project/mayo_), faire défiler jusqu'à la section
+_Downloads_ en bas de page.
 
-. Right-click _tar.gz_ to copy the address.
+. Faites un clic droit sur le _tar.gz_ pour copier l'adresse.
 +
 --
 // Downloads section of the Mayo project page on drupal.org.
-image:images/extend-theme-install-download.png["Finding the URL for a theme"]
+image:images/extend-theme-install-download.png["Trouver l'URL d'un thème"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Appearance_
-(_admin/appearance_). The _Appearance_ page appears.
+. Dans le menu d'administration _Gérer_, naviguer vers _Apparence_
+(_admin/appearance_). La page _Apparence_ apparaît.
 
-. Click _Install new theme_. The _Install new theme_ page appears.
+. Cliquer sur _Installer un nouveau thème_. La page _Installer un nouveau thème_
+apparaît.
 +
 --
 // Install new theme page (admin/theme/install).
-image:images/extend-theme-install-page.png["Installing a theme"]
+image:images/extend-theme-install-page.png["Installer un thème"]
 --
 
-. In the field _Install from a URL_, paste the copied download link. This value
-could look like
+. Dans le champ _Installer depuis une URL_, coller le lien de téléchargement.
+Cette valeur pourrait ressembler à
 `https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
 
-. Click _Install_ to upload and unpack the new theme on the server. The files
-are being downloaded to the _themes_ directory.
+. Cliquer sur _Installer_ pour téléverser et décompresser le nouveau thème sur
+le serveur. Les fichiers sont téléchargés dans le répertoire _themes_.
 
-. Click _Install newly added themes_ to return to the _Appearance_ page. If you
-used the manual uploading procedure mentioned earlier, then you can continue
-with this step, and reach the _Appearance_ page by using the _Manage_
-administrative menu and navigating to _Appearance_ (_admin/appearance_).
+. Cliquer sur _Activer les thèmes récemment ajoutés_ pour retourner à la page
+_Apparence_. Si vous avez utilisé la procédure de téléversement manuelle
+mentionnée plus haut, alors vous pouvez continuer avec cette étape, et atteindre
+la page _Apparence_ en utilisant le menu d'administration _Gérer_ et en
+naviguant vers _Apparence_ (_admin/appearance_).
 
-. Locate the new theme under _Uninstalled themes_ and click _Install and set as
-default_ to use it. All non-administrative pages on the site will now use this
-new theme.
+. Localiser le nouveau thème sous _Thèmes désinstallés_ et cliquer sur
+_Installer et définir par défaut_ pour l'utiliser. Toutes les pages hors celles
+d'administration de votre site utiliseront alors ce nouveau thème.
 +
 --
 // Mayo theme on the Appearance page.
-image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
+image:images/extend-theme-install-appearance-page.png["Thèmes désinstallés sur la page Apparence",width="286px"]
 --
 
-===== Using Drush to install a theme
+===== Utiliser Drush pour installer un thème
 
-. Find the project name for the theme you want to install, which is the last
-segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/mayo_, the project name is `mayo`.
+. Trouver le nom du projet pour le thème que vous voulez installer, qui est le
+dernier segment de l'URL de la page de projet du thème. Par exemple, si l'URL du
+projet est _https://www.drupal.org/project/mayo_, alors le nom du projet est
+`mayo`.
 
-. Download the theme using either the steps in <<extend-manual-install>> or
-<<install-composer>>.
+. Télécharger le thème en utilisant soit les étapes dans
+<<extend-manual-install>>, soit dans <<install-composer>>.
 
-. Run the following Drush commands, giving the project name (for example,
-_mayo_) as a parameter:
+. Exécuter les commandes Drush suivantes, en donnant le nom du projet (par
+exemple _mayo_) en argument :
 +
 ----
 drush theme:enable mayo
 drush config:set system.theme default mayo
 ----
 
-. Follow the instructions on the screen.
+. Suivre les instructions à l'écran.
 
-==== Expand your understanding
+==== Pour approfondir
 
-* In the _Manage_ administrative menu, navigate to _Appearance_
-(_admin/appearance_) and uninstall any themes that you are not using.
+* Dans le menu d'administration _Gérer_, naviguer vers _Apparence_
+(_admin/appearance) et désinstaller tous les thèmes que vous n'utilisez pas.
 
 * <<extend-module-find>>
 
 * <<extend-module-install>>
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Si vous ne voyez pas d'effet de ces modifications sur votre site, il pourrait
+être nécessaire de vider le cache. Consulter <<prevent-cache-clear>>.
 
 
 // ==== Related concepts
 
-==== Videos
+==== Vidéos (en anglais)
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Downloading and Installing a Theme from Drupal.org"]
@@ -139,6 +146,6 @@ video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Downloading and
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me], and
-https://www.drupal.org/u/batigolix[Boris Doesborgh].
+Écrit et modifié par https://www.drupal.org/u/eojthebrave[Joe Shindelar] de
+https://drupalize.me[Drupalize.Me], et https://www.drupal.org/u/batigolix[Boris
+Doesborgh]. Traduit par https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
