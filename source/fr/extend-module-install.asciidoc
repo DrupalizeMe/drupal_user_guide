@@ -1,152 +1,156 @@
 [[extend-module-install]]
 
-=== Downloading and Installing a Module from _Drupal.org_
+=== Télécharger et installer un module depuis _Drupal.org_
 
 [role="summary"]
-How to download and install a module from Drupal.org (using the user interface)
-or by using Drush.
+Comment télécharger et installer un module depuis Drupal.org (en utilisant
+l'interface d'administration) ou en utilisant Drush.
 
-(((Module,downloading)))
-(((Module,installing)))
-(((Module,enabling)))
-(((Module,contributed)))
-(((Module,custom)))
-(((Downloading,module)))
-(((Installing,module)))
-(((Enabling,module)))
-(((Contributed module,downloading)))
-(((Contributed module,installing)))
-(((Functionality,extending)))
-(((Drush tool,using to install module)))
-(((Admin Toolbar module,downloading)))
-(((Admin Toolbar module,installing)))
+(((Module,télécharger)))
+(((Module,installer)))
+(((Module,activé)))
+(((Module,contribué)))
+(((Module,personnalisé)))
+(((Télécharger,module)))
+(((Installer,module)))
+(((Activer,module)))
+(((Module contribué,télécharger)))
+(((Module contribué,installer)))
+(((Fonctionnalité,étendre)))
+(((Outil Drush,utiliser pour installer un module)))
+(((Module Admin Toolbar,télécharger)))
+(((Module Admin Toolbar,installer)))
 (((Module,Admin Toolbar)))
-(((Update Manager module,using to install module)))
+(((Module Update Manager,utiliser pour installer un module)))
 (((Module,Update Manager)))
-(((Drupal.org website,downloading and installing module from)))
+(((Site web Drupal.org,télécharger et installer un module depuis)))
 
-==== Goal
+==== Objectif
 
-Download and install the
-https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module],
-which allows you to easily browse through the administration section of the
-website.
+Télécharger et installer le
+https://www.drupal.org/project/admin_toolbar[module contribué Admin Toolbar],
+qui permet de naviguer facilement dans la section d'administration du site web.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<understanding-modules>>
 * <<extend-module-find>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* If you want to install modules via the website, the core Update Manager module
-must be installed. See <<config-install>> for instructions on installing
-modules.
+* Si vous voulez installer des modules depuis votre site web, le module du cœur
+Update Manager doit être installé. Consulter <<config-install>> pour des
+instructions quant à l'installation de modules.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+* Si vous voulez utiliser Drush, Drush doit être installé. Consulter
+<<install-tools>>.
 
-==== Steps
+==== Étapes
 
-You can use the administrative interface to download and install a contributed
-module. If you are installing a custom module rather than a contributed module,
-if you see a message saying _Installing modules and themes requires FTP access
-to your server_, or if the steps below do not work to download and unpack the
-module files, follow the steps in <<extend-manual-install>>. If you are using
-Composer to manage the files in your site, follow the steps for downloading in
-<<install-composer>>. In either of these cases, you can then install the module
-using Drush, or by continuing with step 7 in the instructions for the
-administrative interface below.
+Vous pouvez utiliser l'interface d'administration pour télécharger et installer
+un module contribué. Si vous êtes en train d'installer un module personnalisé
+plutôt qu'un module contribué et que vous voyez un message indiquant que
+_l'installation de modules et de thèmes requiert un accès FTP à votre serveur_,
+ou si les étapes ci-dessous ne fonctionnent pas pour télécharger et décompresser
+les fichiers du module, suivre les étapes dans <<extend-manual-install>>. Si
+vous utilisez Composer pour gérer les fichiers de votre site, suivre les étapes
+dans <<install-composer>>. Dans tous les cas, vous pouvez alors installer le
+module en utilisant Drush, ou en continuant avec l'étape 7 dans les instructions
+pour l'interface d'administration ci-dessous.
 
-===== Using the administrative interface
+===== En utilisant l'interface d'administration
 
-. On the _Admin toolbar_ project page on drupal.org
-(_https://www.drupal.org/project/admin_toolbar_), scroll to the _Downloads_
-section at the bottom of the page.
+. Sur la page du projet _Admin toolbar_ sur drupal .org
+(_https://www.drupal.org/project/admin_toolbar_), faire défiler jusqu'à la
+section _Downloads_ (téléchargements) en bas de page.
 
-. Copy the address of the _tar.gz_ link. Depending on your device and browser,
-you might do this by right clicking and selecting _Copy link address_.
+. Copier l'adresse du lien du _tar.gz_. Selon votre machine ou votre navigateur,
+vous pourriez réaliser cette opération en effectuant un clic droit et et
+sélectionnant _Copier l'adresse du lien_.
 +
 --
 // Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/extend-module-install-download.png["Finding a module URL"]
+image:images/extend-module-install-download.png["Trouver l'URL d'un module"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Extend_
-(_admin/modules_). The _Extend_ page appears.
+. Dans le menu d'administration _Gérér_, naviguer vers _Extension_
+(_admin/modules_). La page _Extension_ apparaît.
 
-. Click _Install new module_. The _Install new module_ page appears.
+. Cliquer sur _Installer un nouveau module_. La page _Installer un nouveau
+module_ apparaît.
 +
 --
 // Install new module page (admin/modules/install).
-image:images/extend-module-install-admin-toolbar-do.png["Installing a module from a URL"]
+image:images/extend-module-install-admin-toolbar-do.png["Installer un module depuis une URL"]
 --
 
-. In the field _Install from a URL_, paste the copied download link. This value
-could look like this:
+. Dans le champ _Installer depuis une URL_, coller le lien de téléchargement
+copié. Cette valeur pourrait ressembler à ceci :
 _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz_
 
-. Click _Install_ to upload and unpack the new module on the server. The files
-are being downloaded to the _modules_ directory.
+. Cliquer sur _Installer_ pour télécharger et décompresser le nouveau module sur
+le serveur. Les fichiers sont téléchargés dans le répertoire _modules_.
 
-. Click _Enable newly added modules_ to return to the _Extend_ page. If you
-used the manual uploading procedure mentioned earlier, then you can continue
-with this step, and reach the _Extend_ page by using the _Manage_
-administrative menu and navigating to _Extend_ (_admin/modules_).
+. Cliquer sur sur _Activer les modules récemment ajoutés_ pour retourner à la
+page _Extension_. Si vous avez utilisé la procédure de téléversement manuelle
+mentionnée ci-dessus, alors vous pouvez continuer avec cette étape, et atteindre
+la page _Extend_ en utilisant le menu d'administration _Gérer_ et en naviguant
+vers _Extension_ (_admin/modules_).
 
-. Locate the _Admin toolbar_ module and check it.
+. Localiser le module _Admin toolbar_ et le cocher.
 
-. Click _Install_ to turn on the new module.
+. Cliquer sur _Installer_ pour activer le nouveau module.
 
-===== Using Drush to install a module
+===== En utilisant Drush pour installer un module
 
-. Find the project name for the module you want to install, which is the last
-segment of the module's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/admin_toolbar_, the project name is
-"admin_toolbar".
+. Trouver le nom du projet pour le module que vous voulez installer, qui est le
+dernier segment de l'URL de la page de projet du module. Par exemple, si l'URL
+du projet est _https://www.drupal.org/project/admin_toolbar_, le nom du projet
+est "admin_toolbar".
 
-. Download the module using either the steps in <<extend-manual-install>> or
-<<install-composer>>.
+. Télécharger le module en utilisant soit les étapes dans
+<<extend-manual-install>>, soit dans <<install-composer>>.
 
-. Run the following Drush command, giving the project name (for example,
-`admin_toolbar`) as a parameter:
+. Exécuter la commande Drush suivante, en donnant le nom du projet (par exemple,
+`admin_toobar`) en paramètre :
 +
 ----
 drush pm:enable admin_toolbar
 ----
 
-. Follow the instructions on the screen.
+. Suivre les instructions à l'écran.
 
-==== Expand your understanding
+==== Pour approfondir
 
-* Verify that the
-https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module]
-is working by browsing through the menu in the administration section.
+* Vérifier que le
+https://www.drupal.org/project/admin_toolbar[module contribué Admin Toolbar]
+fonctionne en naviguant dans le menu dans la section d'administration.
 
-* Install and configure the
-https://www.drupal.org/project/pathauto[contributed Pathauto module]
-so that content pages in your site get nice URLs by default. See
-<<content-paths>> for more on URLs.
+* Installer et configurer le
+https://www.drupal.org/project/pathauto[module contribué Pathauto] pour que les
+pages de contenu de votre site aient des URL agréables par défaut. Consulter
+<<content-paths>> pour en savoir plus sur les URL.
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
-
+* Si vous ne voyez pas d'effet de ces modifications sur votre site, il pourrait
+être nécessaire de vider le cache. Consulter <<prevent-cache-clear>>.
 
 //==== Related concepts
 
-==== Videos
+==== Vidéos (en anglais)
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/vx9nWJE1Kbk[title="Downloading and Installing a Module from Drupal.org"]
 
-==== Additional resources
+==== Pour aller plus loin (en anglais)
 
-* https://www.drupal.org/docs/extending-drupal/installing-drupal-modules[_Drupal.org_ community documentation page "Installing Drupal modules"]
-* https://www.drupal.org/download["Download and Extend" page on _Drupal.org_]
-* https://www.drupal.org/project/admin_toolbar[Admin Toolbar module on _Drupal.org_]
+* https://www.drupal.org/docs/extending-drupal/installing-drupal-modules[Page de documentation de la communauté sur _Drupal.org_ "Installing Drupal modules"]
+* https://www.drupal.org/download[Page "Download and Extend" sur _Drupal.org_]
+* https://www.drupal.org/project/admin_toolbar[Module Admin Toolbar sur _Drupal.org_]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg] et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
