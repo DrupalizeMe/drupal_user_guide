@@ -1,151 +1,158 @@
 [[install-dev-making]]
-=== Making a Development Site
+=== Mettre en place un site de développement
 
 [role="summary"]
-How to make a copy of a live site for development purposes.
+Comment faire une copie d'un site en production à des fins de développement.
 
-(((Development site,making)))
-(((Staging site,making)))
+(((Site de développement,mettre en place)))
+(((Site de pré-production,mettre en place)))
 
-==== Goal
+==== Objectif
 
-Make a copy of a site that you can use to develop new features and test updates
-on.
+Mettre en place une copie d'un site qui pourra être utilisée pour développer de
+nouvelles fonctionnalités et y tester les mises à jour.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<install-dev-sites>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* You have a live, developed site that you would like to make a copy of for
-development purposes.
+* Vous avez un site en production, déjà développé, dont vous voudriez faire une
+copie à des fins de développement.
 
-* If you want to use Drush for some of the steps in this task, Drush must be
-installed. See <<install-tools>>.
+* Si vous voulez utiliser Drush pour certaines des étapes de cette tâche, Drush
+doit être installé. Consulter <<install-tools>>.
 
-==== Steps
+==== Étapes
 
-. Follow the steps in <<install-prepare>>, so that you have hosting set up for
-your development site, you know where the web root is for your development site,
-and you have an empty database and database user for your development site to
-use.
+. Suivre les étapes dans <<install-prepare>>, de sorte que vous ayez un
+hébergement prêt pour votre site de développement, que vous sachiez où est sa
+racine, et que vous ayez une base de données vide avec un compte d'utilisateur
+de la base de données prêts à être utilisés pour votre site de développement.
 
-. The next step is to make a database dump file, containing the contents of your
-site's database. This file can be quite large, but there are two things you can
-do to reduce the size:
+. La prochaine étape consiste à réaliser une copie brute (_dump_) de votre base
+de données, avec le contenu de la base de données de votre site. Ce fichier
+peut être assez gros, mais il y a deux choses que vous pouvez faire pour en
+réduire la taille :
 +
- * Compress the file, using gzip or another compression utility.
- * Exclude the contents of the database tables for the internal caching system,
- by truncating these tables. Their data is temporary, and you need only the
- table structure and not the table contents in order to make a copy of the
- site.
+ * Compresser le fichier, en utilisant gzip ou un autre utilitaire de
+ compression.
+ * Exclure le contenu des tables de la base de données correspondant au système
+ interne de mise en cache, en tronquant ces tables. Leurs données sont
+ temporaires, et vous n'avez besoin que de la structure de la table et non du
+ leur contenu pour faire une copie du site.
 +
-To make the database dump, try one of the following methods:
+Pour réaliser une copie brute, essayer une des méthodes suivantes :
 +
-  * If you use Drush, use this command, which will include only the structure
-  and not the contents of the cache tables, and gzip-compress the output:
+  * Si vous utilisez Drush, utiliser cette commande, qui inclura seulement la
+  structure et non le contenu de ces tables du cache, et compressera la sortie
+  avec gzip :
 +
 ----
 drush sql:dump --gzip --structure-tables-list="cache,cache_*" \
   --result-file='PATH/TO/BACKUPFILE.sql'
 ----
 +
-  * If you are using MySQL and have access to the command line, use this
-  command after truncating the cache tables (substituting in your site's
-  database name, user name, and password):
+  * Si vous utilisez MySQL et avez accès à la ligne de commande, utiliser cette
+  commande après avoir tronqué le tables du cache (en remplaçant le nom de votre
+  base de données ainsi que l'identifiant et le mot de passe) :
 +
 ----
 mysqldump -u'USERNAME' -p'PASSWORD' DATABASENAME | \
   gzip > PATH/TO/BACKUPFILE.sql.gz
 ----
 
-  * If you are using MySQL as your database, and your live site's server has
-  phpMyAdmin installed (it is available from many hosting control panels),
-  you can truncate the cache tables by selecting them in the phpMyAdmin table
-  structure list and choosing the _Empty_ operation at the bottom of the page.
-  Then use the _Export_ tab in phpMyAdmin to export in _SQL_ format, with
-  _gzip_ compression to reduce the file size.
+  * Si vous utilisez MySQL comme base de données, et phpMyAdmin est installé sur
+  le serveur de votre site de production (il est disponible depuis beaucoup de
+  tableaux de bord d'hébergeurs), vous pouvez tronquer les tables du cache en
+  les sélectionnant dans le tableau de phpMyAdmin présentant la structure de la
+  base de données et choisir l'opération _Vider_ en bas de page. Utiliser alors
+  l'onglet _Exporter_ dans phpMyAdmin pour exporter au format _SQL_, avec
+  compression _gzip_ pour réduire la taille du fichier.
 
-  * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module]
-  from within your live site. See <<extend-module-install>> for instructions on
-  installing contributed modules.
+  * Utiliser le https://www.drupal.org/project/backup_migrate[module contribué Backup and Migrate]
+  depuis votre site en production. Consulter <<extend-module-install>> pour des
+  instructions sur l'installation de modules contribués.
 +
-You now have a database dump stored in the file _BACKUPFILE.sql.gz_. For
-security reasons, avoid storing this file on your hosting server anywhere under
-the Drupal site root. This will prevent others from getting a copy of your
-database.
+Vous disposez maintenant d'une copie de la base de données stockée dans le
+fichier _BACKUPFILE.sql.gz_. Pour des raisons de sécurité, éviter de stocker ce
+fichier sur le serveur de votre hébergement sous la racine de votre site Drupal.
+Celan empêchera des tiers d'accéder à une copie de votre base de données.
 
-. Copy all of the files from the web root of your live site to the web root of
-your development site. You may wish to use Git to do this; if so, see
-<<extend-git>>.
+. Copier tous les fichiers depuis la racine de votre site en production vers
+celle de votre site de développement. Vous pourriez souhaiter utiliser Git pour
+ce faire ; le cas échéant, consulter <<extend-git>>.
 
-. Edit the _sites/default/settings.php_ file under your development site's
-top-level directory in a plain-text editor. Find the lines near the end that
-contain the database name, database username, and database password, and update
-them to the information about the development site database you set up. The
-lines look something like this (before editing):
+. Modifier le fichier _sites/default/settings.php_ sous le répertoire racine de
+votre site avec un éditeur de texte. Trouver les lignes vers la fin contenant
+les nom, identifiant, mot de passe de la base de données, et les remplacer par
+ceux de la base de données du site de développement mise en place. Les lignes
+ressemblent à quelque chose de ce genre (avant modification) :
 +
 ----
 $databases['default']['default'] = [
-  'database' => 'live_site_database_name',
-  'username' => 'live_site_database_username',
-  'password' => 'live_site_database_password',
+  'database' => 'nom_base_donnees_production',
+  'username' => 'identifiant_base_donnees_production',
+  'password' => 'mot_de_passe_base_donnees_production',
   …
 ----
 
-. Check whether your _settings.php_ file has the following setting; if yes, then
-you will need to edit this to point to your development site URL instead of your
-production site URL:
+. Vérifier si votre fichier _settings.php_ comporte le paramètre suivant ; si
+oui, alors il faudra le modifier pour qu'il pointe vers l'URL de votre site de
+développement au lieu de l'URL de votre site de production :
 +
 ----
 $settings['trusted_host_patterns']
 ----
 
-. Import the database dump file you created, into the development site's
-database. Try one of the following methods:
+. Importer la copie de la base de données créée dans la base de données du site
+de développement. Essayer une des méthodes suivantes :
 +
-  * If you are using MySQL as your database, and your live site's server has
-  phpMyAdmin installed (it is available from many hosting control panels),
-  use the _Import_ tab in phpMyAdmin. You may find that you have to restart the
-  import a few times, if your database was large.
+  * Si vous utilisez MySQL comme base de données, et que phpMyAdmin est installé
+  sur le serveur de votre site de production (il est disponible depuis beaucoup
+  de tableaux de bord d'hébergeurs), utiliser l'onglet _Importer_ dans
+  phpMyAdmin. Il se pourrait que vous deviez recommencer l'importation plusieurs
+  fois, si votre base de données était vraiment volumineuse.
 
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password;
-  if you made a gzip-compressed backup file, you will also need to uncompress it
-  first):
+  * Si vous utilisez MySQL et avez accès à la ligne de commandes, utiliser cette
+  commande (en remplaçant le nom de votre base de données ainsi que
+  l'identifiant et le mot de passe ; si vous avez créé un fichier de sauvegarde
+  compressé avec gzip, vous devrez aussi le décompresser au préalable) :
 +
 ----
 gunzip < PATH/TO/BACKUPFILE.sql.gz | \
   mysql -u'USERNAME' -p'PASSWORD' DATABASENAME
 ----
 +
-  * If you prefer to use Drush, use this command:
+  * Si vous préférez utiliser Drush, utiliser cette commande :
 +
 ----
 drush sql:query --file='PATH/TO/BACKUPFILE.sql.gz'
 ----
 
-. If your development and live sites need to have different configuration, then
-you have to use configuration overrides in the _settings.php_ file. The
-_$config_ variable will help you maintain override values separately from the
-standard configuration data. For instance, you might want the site name to be
-"Anytown Farmers Market" on the production site, but "Development Site for
-Anytown Farmers Market" on the development site. To do that, you could have the
-production value in the site configuration (in the database), and on the
-development site, in the settings.php file, you would need to have:
+. Si vos sites de développement et de production nécessitent des éléments de
+configuration différents, alors vous devez utiliser des surcharges de
+configuration dans le fichier _settings.php_. La variable _$config_ vous aidera
+à maintenir des valeurs surchargées séparément des données de configuration
+standard. Par exemple, vous pourriez vouloir que le nom du site soit "Anytown
+Farmers Market" sur le site de production, mais "Site de développement d'Anytown
+Farmers Market" sur le site de développement. Pour ce faire, vous pourriez avoir
+la valeur de production dans la configuration de votre site (dans la base de
+données), et sur le site de développement, dans le fichier settings.php, vous
+auriez besoin de rajouter :
 +
 ----
 $config['system.site']['name'] =
-  "Development Site for Anytown Farmers Market";
+  "Site de développement d'Anytown Farmers Market";
 ----
 
-==== Expand your understanding
+==== Pour approfondir
 
-* Verify that the development site is working correctly.
+* Vérifier que le site de développement fonctionne correctement.
 
-* Log in to the development site as an administrator, and clear the cache. See
-<<prevent-cache-clear>>.
+* Se connecter sur le site de développement en tant qu'administrateur, et vider
+le cache. Consulter <<prevent-cache-clear>>.
 
 * <<extend-deploy>>
 
@@ -153,20 +160,21 @@ $config['system.site']['name'] =
 
 // ==== Related concepts
 
-==== Videos
+==== Vidéos (en anglais)
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/FSBNm4oAkaA[title="Making a Development Site"]
 
-==== Additional resources
+==== Additional resources (en anglais)
 
 * https://www.drupal.org/docs/official_docs/en/_local_development_guide.html[Installing a new Drupal application on your local machine]
 * https://www.drupal.org/docs/official_docs/en/_evaluator_guide.html[Creating a Drupal demo application for evaluation purposes]
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Écrit et modifié par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] de
+https://drupalize.me[Drupalize.Me], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
