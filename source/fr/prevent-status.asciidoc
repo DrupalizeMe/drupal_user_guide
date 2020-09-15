@@ -1,48 +1,52 @@
 [[prevent-status]]
 
-=== Concept: Status Report
+=== Concept : tableau de bord d'administration
 
 [role="summary"]
-Overview of the status report and where to find it on a site.
+Vue d'ensemble du tableau de bord d'administration et où le trouver sur un site.
 
-(((Status report,overview)))
-(((Security,status report)))
-(((PHP version,status report)))
-(((Software version,status report)))
-(((Update status,status report)))
-(((Update,status report)))
-(((Site information,status report)))
-(((Server information,status report)))
-(((Performance,status report)))
-(((Troubleshooting,status report)))
+(((Tableau de bord d'administration,vue d'ensemble)))
+(((Sécurité,tableau de bord d'administration)))
+(((Version de PHP,tableau de bord d'administration)))
+(((Version du logiciel,tableau de bord d'administration)))
+(((État de mises à jour,tableau de bord d'administration)))
+(((Mise à jour,tableau de bord d'administration)))
+(((Informations sur le site,tableau de bord d'administration)))
+(((Informations sur le serveur,tableau de bord d'administration)))
+(((Performance,tableau de bord d'administration)))
+(((Résolution de problèmes,tableau de bord d'administration)))
 
 //==== Prerequisite knowledge
 
-==== What is a Status Report?
+==== Qu'est-ce que le tableau de bord d'administration ?
 
-The status report is a short overview of your site's parameters as well as any
-problems detected with your installation. It may be useful to copy and paste
-this information into support requests filed on _Drupal.org's_ support forums
-and project issue queues or when asking for help on other channels.
+Le tableau de bord d'administration est une vue d'ensemble des paramètres de
+votre site aussi bien que des problèmes détectés dans votre installation. Il
+peut être utile de copier et de coller cette information dans des demandes
+d'aide ouvertes sur les forums d'aide de _Drupal.org_ et les listes de tickets
+des projets ou lorsque vous demandez de l'aide par d'autres canaux.
 
-You can find the status report in the _Manage_ administrative menu by
-navigating to _Reports_ > _Status report_ (_admin/reports/status_).
+Vous pouvez trouver le tableau de bord d'administration dans le menu
+d'administration _Gérer_ en naviguant vers _Rapports_ > _Tableau de bord
+d'administration_ (_admin/reports/status_).
 
 // Status report (admin/reports/status).
-image:images/prevent-status.png["Status report of a basic site",width="100%"]
+image:images/prevent-status.png["Tableau de bord d'administration d'un site basique",width="100%"]
 
-==== Related topics
+==== Sujets liés
 
 <<thoughts-support>>
 
-==== Additional resources
+==== Pour aller plus loin
 
-If you have an error about trusted host settings in your status report, see
-https://www.drupal.org/docs/installing-drupal/trusted-host-settings[_Drupal.org_ community documentation page "Trusted Host settings"].
+Si vous obtenez une erreur relative aux paramètres des hôtes de confiance
+(_trusted host settings_), consulter
+https://www.drupal.org/docs/installing-drupal/trusted-host-settings[La page de documentation de la communauté sur _Drupal.org_ "Trusted Host settings"].
 
 *Attributions*
 
-Adapted by https://www.drupal.org/u/dianalakatos[Diána Lakatos]
-from https://www.drupal.org/docs/7/monitoring-a-site/reports["Reports"]
-copyright 2000-copyright_upper_year by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation]
+Adapté par https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+de https://www.drupal.org/docs/7/monitoring-a-site/reports["Reports"]
+copyright 2000-copyright_upper_year contributeurs individuels à la
+https://www.drupal.org/documentation[Documentation de la communauté de Drupal].
+Traduit par https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
