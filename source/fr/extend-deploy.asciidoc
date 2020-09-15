@@ -1,110 +1,123 @@
 [[extend-deploy]]
 
-=== Deploying New Site Features
+=== Déployer de nouvelles fonctionnalités pour votre site
 
 [role="summary"]
-How to copy a view created in a local development site to a production site.
+Comment copier une vue créée dans un site de développement local vers un site de
+production.
 
-(((Feature,deploying)))
-(((Configuration,deploying)))
-(((Feature,copying)))
-(((Configuration,copying)))
+(((Fonctionnalité,déployer)))
+(((Configuration,déployer)))
+(((Fonctionnalité,copier)))
+(((Configuration,copier)))
 
-==== Goal
+==== Objectif
 
-Copy a view that you have created in a local development site to the production
-site.
+Copier une vue créée dans un site de développement local vers un site de
+production.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<install-dev-making>>
 * <<extend-config-versions>>
 * <<install-dev-sites>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* The core Configuration Manager module must be installed in both the
-development and production sites. See <<config-install>> for
-instructions on installing core modules.
+* Le module du cœur Configuration Manager doit être installé à la fois sur les
+sites de développement et de production. Consulter <<config-install>> pour des
+instructions sur l'installation de modules du cœur.
 
-* The Vendor content type must exist in both the development and production
-sites, with the same fields. See <<structure-content-type>>.
+* Le type de contenu Marchand doit exister à la fois sur les sites de
+développement et de production, avec les mêmes champs. Consulter
+<<structure-content-type>>.
 
-* The Vendors view must exist in the development site but not the production
-site. See <<views-create>>.
+* La vue Marchands doit exister sur le site de développement mais pas sur le
+site de production. Consulter <<views-create>>.
 
-==== Steps
+==== Étapes
 
-. Open the local development site.
+. Ouvrir le site de développement local.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Configuration synchronization_ > _Export_ > _Single item_
-(_admin/config/development/configuration/single/export_).
-The _Single export_ page appears.
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Développement_ > _Synchronisation de configuration_ > _Exporter_ > _Élément
+individuel_ (_admin/config/development/configuration/single/export_). La page
+_Export individuel_ apparaît.
 
-. Select _View_ from the _Configuration type_ list.
+. Sélectionner _Vue_ (NdT ou _Voir_) dans le menu déroulant _Type de
+configuration_.
 
-. Select Vendors from the _Configuration name_ list. The configuration
-appears in the textarea.
+. Sélectionner Marchands dans le menu déroulant _Nom de la configuration_. La
+configuration apparaît dans la zone de texte.
 
-. Copy the configuration from the textarea.
+. Copier la configuration depuis la zone de texte.
 +
 --
 // Single configuration export of the Vendors view from
 // admin/config/development/configuration/single/export.
-image:images/extend-deploy-export-single.png["Export a single item"]
+image:images/extend-deploy-export-single.png["Exporter un élément individuel"]
 --
 
-. Open the production site.
+. Ouvrir le site de production.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Development_ > _Configuration synchronization_ _Import_ > _Single_
-(_admin/config/development/configuration_). The _Import_ page appears.
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Développement_ > _Synchronisation de configuration_ > _Importer_ > _Élément
+individuel_ (_admin/config/development/configuration_). La page _Import unique_
+apparaît.
 
-. Select _View_ from the _Configuration type_ list.
+. Sélectionner _Vue_ (NdT ou _Voir_) dans le menu déroulant _Type de
+configuration_.
 
-. Paste the configuration in the textarea.
+. Coller la configuration dans la zone de texte.
 
-. Click _Import_. The confirmation page appears.
+. Cliquer sur _Importer_. La page de confirmation apparaît.
 
-. Click _Confirm_.
+. Cliquer sur _Confirmer_.
 
-. Verify that the new view is being created by navigating in the _Manage_
-administrative menu to _Structure_ > _Views_.
+. Vérifier que la vue a été importée en naviguant vers _Structure_ > _Views_
+dans le menu d'administration _Manage_.
 
-==== Expand your understanding
+==== Pour approfondir
 
-The steps in this topic show how to export and import a single configuration
-item. However, often if you develop functionality on a development website
-and want to transfer it to your production site, you will need to transfer
-multiple configuration items. For instance, if you developed a new content
-type with fields, you would need to transfer several configuration items for
-each field, one for the content type itself, and possibly multiple view mode
-and form mode items, and they would have to be transferred in the right order.
-Getting this right can be both tedious and difficult.
+Les étapes de ce sujet montrent comment exporter et importer un élément de
+configuration individuel. Cependant, souvent, lorsque vous développez une
+fonctionnalité sur un site de développement et voulez la transférer vers votre
+site de production, vous aurez besoin de transférer de multiples éléments de
+configuration. Ainsi, si vous avez développé un nouveau type de contenu avec des
+champs, vous aurez besoin de transférer plusieurs éléments de configuration pour
+chaque champ, un pour le type de contenu lui-même, et sans doute de multiples
+mode de visualisation ou de saisie, qui devront être transférés dans le bon
+ordre. Faire ceci correctement peut se révéler à la fois fastidieux et
+difficile.
 
-As an alternative, you can export and import the complete configuration of the
-site. For this, you would need a local development site that is a clone
-of the production site (see <<install-dev-making>>), and then you can follow the
-steps in <<extend-config-versions>> to synchronize configuration between
-development and production sites.
+Alternativement, vous pouvez exporter et importer l'ensemble de la configuration
+du site. Pour ce faire, vous aurez besoin d'un site de développement qui soit un
+clone du site de production (consulter <<install-dev-making>>), et vous pourrez
+alors suivre les étapes de <<extend-config-versions>> pour synchroniser la
+configuration entre les sites de développement et de production.
 
-Another alternative is to use the
-https://www.drupal.org/project/features[contributed Features module], which
-allows exporting and importing bundled functionality (for example, all the
-configuration for a photo gallery).
+Une autre alternative consiste à utiliser le
+https://www.drupal.org/project/features[module contribué Features], qui permet
+d'exporter et d'importer une fonctionnalité sous la forme d'un paquet (par
+exemple, toute la configuration d'une galerie de photos).
 
-Finally, if you do not see the effect of these changes in your site, you might
-need to clear the cache. See <<prevent-cache-clear>>.
+Enfin, si vous ne parvenez pas à visualiser les effets ces modifications sur
+votre site, il pourrait être nécessaire de vider le cache. Consulter
+<<prevent-cache-clear>>.
 
-==== Related concepts
+==== Concepts liés
 
 * <<install-dev-sites>>
 * <<planning-workflow>>
 
-// ==== Additional resources
+==== Vidéos (en anglais)
 
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hysqVDIfLTA[title="Deploying New Site Features"]
+
+// ==== Additional resources
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Écrit par https://www.drupal.org/u/batigolix[Boris Doesborg]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
