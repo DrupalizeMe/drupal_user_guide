@@ -1,139 +1,152 @@
 [[views-duplicate]]
 
-=== Duplicating a View
+=== Dupliquer une vue
 
 [role="summary"]
-How to create a new page by duplicating a view.
+Comment créer une nouvelle page en dupliquant une vue.
 
-(((View,duplicating)))
-(((Views module,duplicating a view)))
+(((Vue,dupliquer)))
+(((Module Views,dupliquer une vue)))
 (((Module,Views)))
 
-==== Goal
+==== Objectif
 
-Create a page listing recipes by duplicating the existing Vendors view.  Modify
-the page so that the recipes are displayed in a grid and can by filtered by
-ingredients.
+Créer une page listant les recettes en dupliquant la vue des marchands
+existante. Modifier la page de manière à ce que les recettes soient affichées
+sour la forme d'une grille et puissent être filtrées selon les ingrédients.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<views-concept>>
 * <<views-parts>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* The Vendor and Recipe content types must exist; both must have Main image
-fields, and the Recipe content type must have an Ingredients field. Your site
-must also have a couple of Recipe content items. See <<structure-content-type>>,
+* Les types de contenu Marchand et Recette doivent exister ; tous deux doivent
+comporter des champs Image principale, et le type de contenu Recette doit
+comporter un champ Ingrédients. Consulter <<structure-content-type>>,
 <<structure-fields>>, <<structure-taxonomy-setup>>, <<structure-form-editing>>,
-and <<content-create>>.
+et <<content-create>>.
 
-* The Vendors view must exist. See <<views-create>>.
+* La vue Marchands doit exister. Consulter <<views-create>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_). Find the view "Vendors" and click _Duplicate_ in its
-dropdown button.
+. Dans le menu d'administration _Gérer_, naviguer vers _Structure_ > _Vues_
+(_admin/structure/views_). Trouver la vue "Marchands" et cliquer sur "Dupliquer"
+dans son bouton déroulant. (Noter que les noms des vues apportées par votre
+profil d'installation sont affichés en anglais sur cette page ; consulter
+<<language-concept>> pour une explication.)
 +
 --
 // Views page (admin/structure/views), with operations dropdown
 // for Vendor view open.
-image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
+image:images/views-duplicate_duplicate.png["Dupliquer une vue existante",width="100%"]
 --
 
-. Name the duplicate "Recipes" and click _Duplicate_. The view configuration
-page appears.
+. Nommer la vue dupliquée "Recettes" et cliquer sur _Dupliquer_. La page de
+configuration de la vue apparaît.
 
-. Change the title of the view page to "Recipes" by clicking Vendors in the
-_Title_ section. The _Page: The title of this view_ pop-up appears. Type in
-"Recipes". Click _Apply_.
+. Pour modifier le titre de la page de la vue en "Recettes", cliquer sur
+Marchands dans le champ _Titre_ sous _Titre_. La fenêtre modale _Page : le
+titre de cette vue_ apparaît. Saisir "Recettes". Cliquer sur _Appliquer_.
 +
 --
 // View title configuration screen.
-image:images/views-duplicate_title.png["Change view title",width="100%"]
+image:images/views-duplicate_title.png["Changer le titre de la vue",width="100%"]
 --
 
-. Change from a table to a grid format by clicking _Table_ in the _Format_
-section. The _Page: How should this view be styled_ pop-up appears. Check _Grid_
-and click _Apply_. The _Page: Style options_ pop-up appears. Retain the default
-values and click _Apply_.
+. Pour changer de format (grille au lieu d'un tableau), cliquer sur _Tableau_
+dans le champ _Format_. La fenêtre modale _Page : quel style appliquer à cette
+vue_ apparaît. Cocher _Grille_ et cliquer sur _Appliquer_. La fenêtre modale
+_Page : options de style_ apparaît. Conserver les valeurs par défaut et cliquer
+sur _Appliquer_.
 
-. Retain only the title and image fields for the Recipes view by clicking
-_Content: Body_ in the _Fields_ section. Click _Remove_ in the pop-up that
-appears.
+. Pour ne conserver que le titre et les champs de type image pour la vue
+Recettes, cliquer sur _Contenu : Corps_ sous _Champs_. Cliquer sur _Retirer_
+dans la fenêtre modale qui apparaît.
 
-. Change the content type filter to use the Recipe content type by clicking
-_Content: Type (=Vendor)_ in the _Filter criteria_ section. In the _Configure
-filter criterion: Content: Type_ pop-up, check Recipe and uncheck Vendor. Click
-_Apply_.
+. Pour modifier le filtre type de contenu de manière à utiliser le type de
+contenu Recette, cliquer sur _Contenu : Type de contenu (= Marchand)_ sous
+_Critères de filtrage_. Dans la fenêtre modale _Configurer critère de filtre :
+Contenu : Type de contenu_, cocher Recette et décocher Marchands. Cliquer sur
+_Appliquer_.
 
-. Add a further filter that is exposed to visitors by clicking _Add_ in the
-_Filter criteria_ section. Search for "ingredients" and check "Ingredients
-(field_ingredients)". Click _Add and configure filter criteria_.
+. Pour ajouter un filtre exposé au visiteurs, cliquer sur _Ajouter_ dans le
+bouton déroulant sous _Critères de filtrage_. Rechercher "ingrédients" et cocher
+"Ingrédients (field_ingredients)". Cliquer sur _Ajouter et configurer le critère
+de filtrage_.
 
-. The appearing pop-up offers extra settings on vocabulary and selection
-type. Click _Apply and continue_. The next pop-up allows you to expose this
-filter to visitors. Fill in the fields as shown below.
+. La fenêtre modale qui apparaît offre des paramètres supplémentaires concernant
+le vocabulaire et le type de sélection. Cliquer sur _Appliquer et continuer_. La
+fenêtre modale suivante permet d'exposer ce filtre aux visiteurs. Remplir les
+champs comme indiqué ci-dessous, et cliquer sur _Appliquer_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Field name | Explanation| Example value
-| Expose this filter to visitors, to allow them to change it | Allow visitors to filter and search | Checked
-| Required field | Whether a value has to be provided or not | Unchecked
-| Label | Label shown for this filter on the view page | Find recipes using...
+| Nom du champ | Explication | Valeur d'exemple
+| Exposer ce filtre aux visiteurs, pour leur permettre de le modifier | Permettre aux utilisateurs de filtrer et de rechercher | Coché
+| Requis | Une valeur doit-elle être fournie ou non ? | Coché
+| Étiquette | Étiquette affichée pour ce filtre sur la page de la vue | Trouver des recettes en utilisant...
 |================================
 +
 --
 // Ingredients field exposed filter configuration.
-image:images/views-duplicate_expose.png["Expose filter"]
+image:images/views-duplicate_expose.png["Exposer un filtre"]
 --
 
-. Change the _Path_ label field to "Recipes" by clicking "/vendors" in the _Page
-settings_ section. In the pop-up that appears, enter the path "recipes" and
-click _Apply_.
+. Pour modifier le champ dont l'étiquette est _Chemin_ (_Path_) en "Recettes",
+cliquer sur "/vendors" dans les champ _Chemin_ sous _Paramètres de la page_.
+Dans la fenêtre modale qui apparaît, saisir le chemin "recipes" et cliquer sur
+_Appliquer_.
 +
-Note that when editing a view, you enter paths without the leading "/", unlike
-on other administrative pages (such as when providing a path to a content item
-page).
+Noter que quand on modifie une vue, les chemins sont saisis sans la barre
+oblique ("/") initiale, contrairement à d'autres pages d'administration (comme
+lorsque l'on fournit un chemin dans la page d'un type de contenu)
 
-. Change the menu link title by clicking "Normal: Vendors" in the _Page
-settings_ section. In the pop-up that appears, change the title to "Recipes" and
-click _Apply_.
+. Pour modifier le titre du lien dans le menu, cliquer sur "Normal : Marchands"
+dans le champ _Menu_ sous _Paramètres de la page_. Dans la fenêtre modale qui
+apparaît, modifier le titre en "Recettes" et cliquer sur _Appliquer_.
 
-. In order to use Ajax (see <<glossary-ajax,Ajax entry in the Glossary>>) to make filtering and paging
-faster for users, click _Advanced_ to expand the section for more options. In
-the _Other_ section, change _Use Ajax: No_ to "Yes" by clicking _No_ and
-checking _Use Ajax_ in the pop-up that appears. Click _Apply_.
+. Pour utiliser Ajax (consulter <<glossary-ajax,Entrée ajax dans le glossaire>>)
+afin d'accélérer le filtrage et la pagination pour les utilisateurs, sous
+_Avancé_ > _Autre_, cliquer sur _Non_ dans le champ _Utiliser AJAX_. Cocher
+_Utiliser AJAX_ dans la fenêtre modale qui apparaît, et cliquer sur _Appliquer_.
 
-. Click _Save_ to save the view.
+. Cliquer sur _Enregistrer_ pour enregistrer la vue.
 
-. Go back to the home page and click Recipes in the navigation to view the new
-Recipes page.
+. Revenir à la page d'accueil et cliquer sur Recettes dans le menu de navigation
+pour visualiser la nouvelle page Recettes.
 +
 --
 // Completed recipes view output.
-image:images/views-duplicate_final.png["Recipes view",width="100%"]
+image:images/views-duplicate_final.png["Vue recettes",width="100%"]
 --
 
-==== Expand your understanding
+==== Pour approfondir
 
-The link to the view in the main navigation will probably not be in the right
-place. Change the order of the menu items in the main navigation. See
-<<menu-reorder>>.
+Le lien vers la vue dans la navigation principale ne sera probablement pas au
+bon endroit. Modifier l'ordre des éléments de menu dans la navigation
+principale. Consulter <<menu-reorder>>.
 
-==== Related concepts
+==== Concepts liés
 
 * <<planning-structure>>
 * <<glossary-ajax, Ajax entry in the Glossary>>
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/weWFDgw84_M[title="Duplicating a View"]
 
 //==== Additional resources
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+Écrit et modifié par https://www.drupal.org/u/lolk[Laura Vass] de
 https://pronovix.com/[Pronovix],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+et https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
