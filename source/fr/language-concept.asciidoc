@@ -1,64 +1,89 @@
 [[language-concept]]
 
-=== Concept: User Interface, Configuration, and Content translation
+=== Concept : interface utilisateur, configuration, et traduction du contenu
 
 [role="summary"]
-Overview of translation on a site.
+Vue d'ensemble des langues et traduction sur votre site.
 
-(((User interface,translating)))
-(((Configuration,translating)))
-(((Content,translating)))
-(((Translating,overview)))
+(((Interface utilisateur,traduire)))
+(((Configuration,traduire)))
+(((Contenu,traduire)))
+(((Traduire,vue d'ensemble)))
+(((Langues,vue d'ensemble)))
 (((Module,Language)))
 (((Module,Content Translation)))
 (((Module,Configuration Translation)))
 (((Module,Interface Translation)))
-(((Content Translation module,overview)))
-(((Configuration Translation module,overview)))
-(((Interface Translation module,overview)))
-(((Language module,overview)))
+(((Module Content Translation,vue d'ensemble)))
+(((Module Configuration Translation,vue d'ensemble)))
+(((Module Interface Translation,vue d'ensemble)))
+(((Module Language,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<understanding-data>>
 * <<understanding-modules>>
 * <<planning-data-types>>
 
-==== What can be translated on your site?
+==== Quelles langues le logiciel prend-il en charge ?
 
-The base language for the software that your site runs (core software,
-modules, and theme) is English. However, you can create either a site that
-displays in a different language or a multi-lingual site; if you do so, all
-relevant text, images, and file attachments should be shown in the appropriate
-language for each site visitor. You need to have the core Language
-module installed in order to use a language other than English on the site.
+La langue de base pour le logiciel qui fait tourner votre site (cœur du
+logiciel, modules et thèmes) est l'anglais. Cependant, en utilisant ce logiciel,
+vous pouvez créer un site dont la langue par défaut n'est pas l'anglais, auquel
+cas quiconque visualise votre site ne devrait voir que cette langue (en
+supposant que le site est entièrement traduit). Vous pouvez également utiliser
+ce logiciel pour créer un site multilingue, avec un sélecteur de langue que les
+visiteurs peuvent utiliser pour basculer vers leur langue préférée. Il faut que
+le module du cœur Language soit installé pour utiliser une langue autre que
+l'anglais sur le site.
 
-There are three types of information that you can translate, each with its own
-method for translating:
+==== Qu'est-ce qui peut être traduit sur le site ?
 
-User interface text::
-  Built-in text present in the core software, modules, and themes. This can be
-  translated from the base English language of the software into the language(s)
-  of your site. Typically, rather than needing to translate this text yourself,
-  you can download translations. You need to have the core Interface Translation
-  module installed in order to translate this text.
-Configuration text::
-  Text whose structure and initial values are defined by the core software,
-  modules, and theme, but that you can edit. Examples include the
-  labels for fields in your content types, header text in views, your site name,
-  and the content of automatic email messages that your site sends out. After
-  creating configuration text in the default language of your site, you can
-  translate it into other languages. You need to have the core Configuration
-  Translation module installed in order to translate this text.
-Content text and files::
-  If your site is multilingual, you can configure the content fields on your
-  site to be translatable. After creating content in one language, you can
-  translate it into other languages. Fields can contain textual information or
-  uploaded files, and for each field on each content type, you can configure it
-  to be translatable or non-translatable. You need to have the core Content
-  Translation module installed in order to translate this text.
+Il y a trois types d'informations que vous pouvez traduire, chacune ayant sa
+propre méthode de traduction :
 
-==== Related topics
+Texte de l'interface utilisateur::
+  Texte intégré au cœur, aux modules et aux thèmes. Il peut être traduit de
+  l'anglais utilisé de base vers la ou les langues de votre site.
+  Habituellement, plutôt que de traduire le texte vous-même, vous pouvez
+  télécharger des traductions. Il faut que le module du cœur Interface
+  Translation soit installé pour traduire ce texte, et que le module du cœur
+  Update Manager soit installé pour télécharger automatiquement les traductions.
+Texte de la configuration::
+  Texte dont la structure et les valeurs initiales sont définies par le cœur,
+  les modules et les thèmes, mais que vous pouvez modifier : par exemple, les
+  étiquettes des champs dans vos types de contenus, le texte des en-têtes des
+  vues, le nom de votre site, et le contenu des courriels que votre site envoie
+  automatiquement. Après avoir créé du texte de configuration dans la langue par
+  défaut de votre site, vous pouvez le traduire dans d'autres langues. Pour la
+  configuration par défaut fournie par le cœur, les modules et les thèmes, la
+  traduction est incluse dans les téléchargements de traductions du texte de
+  l'interface utilisateur. Il faut que le module du cœur Configuration
+  Translation soit installé afin de pouvoir traduire ce texte.
+Texte du contenu et fichiers::
+  Si votre site est multilingue, vous pouvez configurer les champs du contenu de
+  votre site de manière à ce qu'ils soient traduisibles. Après avoir créé du
+  contenu dans une langue, vous pouvez le traduire dans d'autres langues. Les
+  champs peuvent contenir de l'information textuelle ou des fichiers transférés,
+  et pour chaque champ de chaque type de contenu, vous pouvez le configurer de
+  manière à ce qu'il soit traduisible ou non. Il faut que le module du cœur
+  Content Translation soit installé afin de traduire ce type de texte.
+
+==== Quelles informations resteront en anglais sur mon site ?
+
+Même si la langue par défaut de votre site n'est pas l'anglais, vous verrez
+toujours du texte en anglais sur certaines pages d'administration utilisées pour
+gérer la configuration. En effet, quand vous modifiez la configuration, vous
+modifiez les valeurs de base, non traduites ; traduire la configuration est une
+opération à part. Par exemple, si vous visitez la page d'administration _Menus_,
+vous visualiserez les noms des menus en anglais (pour les menus qui ont été mis
+en place à l'installation du site), et si vous cliquez sur le lien _Modifier le
+menu_, vous éditerez le nom du menu et sa description en anglais. Pour modifier
+le menu dans une autres langue, il faudra que le module du cœur Configuration
+Translation soit installé, et utiliser le lien _Traduire_ pour modifier les
+informations du menu traduit.
+
+==== Sujets liés
 
 * <<language-add>>
 * <<language-content-config>>
@@ -67,7 +92,7 @@ Content text and files::
 
 //==== Additional resources
 
-
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
