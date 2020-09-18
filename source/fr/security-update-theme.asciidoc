@@ -1,108 +1,106 @@
 [[security-update-theme]]
 
-=== Updating a Theme
+=== Mettre un thème à jour
 
 [role="summary"]
-How to update a contributed theme by using the administrative interface and running the Database Updates script, or by using Drush.
+Comment mettre à jour un thème contribué en utilisant l'interface
+d'administration et en exécutant le script de mises à jour de la base.
 
-(((Theme,updating)))
-(((Security update,applying)))
-(((Contributed theme,updating)))
-(((Drush tool,using to update theme)))
+(((Thème,mettre à jour)))
+(((Mise à jour de sécurité,appliquer)))
+(((Thème contribué,mettre à jour)))
 
-==== Goal
+==== Objectif
 
-Update a contributed theme on your site and run the _Database Updates_ script.
+Mettre à jour un thème contribué sur votre site et lancer le script _Mises à
+jour de la base de données_.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* A contributed theme has been installed and there is an update available for
-it. See <<extend-theme-install>> and <<security-announce>>.
+* Un thème contribué a été installé et dispose d'une mise à jour. Consulter
+<<extend-theme-install>> et <<security-announce>>.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
-<<install-dev-making>>.
+* Si votre site est en production, vous devriez tester ce processus dans un
+environnement de développement avant de l'exécuter sur votre site de production.
+Consulter <<install-dev-making>>.
 
-* You have created a full site backup. See <<prevent-backups>>.
+* Vous avez réalisé une sauvegarde complète de votre site. Consulter
+<<prevent-backups>>.
 
-* If you want to use the user interface, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing core
-modules.
+* Si vous voulez utiliser l'interface utilisateur, le module du cœur Update
+Manager doit être installée. Consulter <<config-install>> pour des instructions
+sur l'installation de modules du cœur.
 
-* If you want to use Drush, Drush must be installed. See <<install-tools>>.
+==== Étapes
 
-==== Steps
+Vous pouvez utiliser l'interface d'administration pour mettre à jour un thème
+contribué. Si vous mettez à jour un thème personnalisé plutôt qu'un thème
+contribué, si vous voyez un message indiquant que _L'installation de modules et
+de thèmes requiert un accès FTP à votre serveur_, ou si les étapes ci-dessous ne
+fonctionnent pas pour obtenir les nouveaux fichiers du thème, suivre les étapes
+dans <<extend-manual-install>>, et continuer alors avec l'étape 6 des
+instructions pour l'interface d'administration ci-dessous.
 
-You can use the administrative interface or Drush to update a contributed
-theme. If you are updating a custom theme rather than a contributed theme, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to obtain the new theme files,
-follow the steps in <<extend-manual-install>>, and then continue with step 6 in
-the instructions for administrative interface below.
+Si vous utilisez Composer pour gérer les fichiers de votre site, suivre les
+étapes dans <<install-composer>> pour mettre à jour les fichiers, puis continuer
+ici avec l'étape 6 avec les instructions ci-dessous pour l'interface
+d'administration.
 
-===== Using the administrative interface
+===== En utilisant l'interface d'administration
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+. Mettre votre site en mode maintenance. Consulter <<extend-maintenance>>.
 
-. In the _Manage_ administrative menu, navigate to _Reports_ >
-_Available updates_ > _Update_ (_admin/reports/updates/update_).
+. Dans le menu d'administration _Gérer_, naviguer vers _Rapports_ > _Mises à
+jour disponibles_ > _Mettre à jour_ (_admin/reports/updates/update_).
 
-. Find and check the theme in the list. Click _Download these updates_ for the
-theme.
+. Trouver et cocher le thème dans la liste. Cliquer sur _Télécharger ces mises à
+jour_ pour le thème.
 +
 --
 // Update page for theme (admin/reports/updates/update).
-image:images/security-update-theme-updates.png["Available updates",width="100%"]
+image:images/security-update-theme-updates.png["Mises à jour disponibles",width="100%"]
 --
 
-. Click _Continue_.
+. Cliquer sur _Continuer_.
 
-. Click _Run database updates_. If you obtained the new theme files manually,
-start with this step, and reach the database updates page by typing the URL
-_example.com/update.php_ in your browser.
+. Cliquer sur _Exécuter les mises à jour de la base de données_. Si vous avez
+obtenu les fichiers du nouveau thème manuellement, commencer avec cette étape,
+et accéder à la page des mises à jour de la base en tapant l'URL
+_example.com/update.php_ dans votre navigateur.
 
-. Click _Continue_ to run the updates. The database update scripts will be
-executed.
+. Cliquer sur _Continuer_ pour exécuter les mises à jour. Les scripts de mise à
+jour de la base seront exécutés.
 
-. Click _Administration pages_ to return to the administration section of your
-site.
+. Cliquer sur _Pages d'administration_ pour revenir à la section
+d'administration de votre site.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Sortez votre site du mode maintenance. Consulter <<extend-maintenance>>.
 
-. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
+. Vider le cache de Drupal (se référer à <<prevent-cache-clear>>).
 
-===== Using Drush
+==== Pour approfondir
 
-. Find the project name for the theme you wish to update, which is the last
-segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/mayo_, the project name is "mayo".
-
-. Run the following Drush command, giving the project name (for example,
-`mayo`) as a parameter:
-+
-----
-drush up mayo
-----
-
-. Follow the instructions on the screen.
-
-==== Expand your understanding
-
-* Review the site log, see <<prevent-log>>, once the updates are complete to
-check for errors.
+* Examiner le journal du site (consulter <<prevent-log>>) une fois les mises
+à jour achevées, pour voir s'il y a eu des erreurs.
 
 * <<security-update-module>>
 
 // ==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Updating a Theme"]
 
 // ==== Additional resources
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Écrit par https://www.drupal.org/u/batigolix[Boris Doesborg]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
