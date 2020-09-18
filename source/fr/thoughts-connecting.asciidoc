@@ -1,121 +1,127 @@
 [[thoughts-connecting]]
-=== Connecting with the Community
+=== Comment entrer en contact avec la communauté
 
 [role="summary"]
-How to connect and get involved in the open-source community.
+Comment entrer en contact avec la communauté open source et s'impliquer.
 
-(((Community,connecting with)))
-(((Drupal project,connecting with)))
-(((Event,Drupal)))
-(((Interest group,finding)))
-(((User group,finding)))
-(((Group,finding)))
-(((Drupal user group,finding)))
-(((IRC (Internet Relay Chat),using to chat online)))
-(((Internet Relay Chat (IRC),using to chat online)))
-(((Chatting online)))
-(((Contributing to the project)))
-(((Bug,reporting)))
+(((Communauté,entrer en contact avec)))
+(((Projet Drupal,entrer en contact avec)))
+(((Évènement,Drupal)))
+(((Groupe d'intérêt,trouver)))
+(((Groupe d'utilisateurs,trouver)))
+(((Groupe,trouver)))
+(((Groupe d'utilisateurs de Drupal,trouver)))
+(((IRC (Internet Relay Chat),utiliser pour discuter en ligne)))
+(((Internet Relay Chat (IRC),utiliser pour discuter en ligne)))
+(((Discuter en ligne)))
+(((Contribuer au projet)))
+(((Bogue,signaler)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 <<understanding-project>>
 
-==== How can you connect with the community?
+==== Comment entrer en contact avec la communauté ?
 
-The Drupal project has a world-wide community of developers and users. One of
-the best ways to improve your knowledge of the platform is to connect with
-others that are using it, and get involved in the open-source community. There
-are many ways that you can get started:
+Le projet Drupal a une communauté mondiale de développeurs et d'utilisateurs.
+Un des meilleurs moyens d'améliorer vos connaissances sur la plate-forme est
+d'entrer en contact avec d'autres utilisateurs, et de s'impliquer dans la
+communauté _open source_. Il y a plusieurs manières de se lancer :
 
-Attend an event::
-  There are both regional and international Drupal events held around the
-  world. See the https://events.drupal.org["DrupalCon" page on _Drupal.org_]
-  to find international events, and the
-  https://groups.drupal.org/events["Event Calendar" on _groups.drupal.org_]
-  or https://www.drupical.com/[_drupical.com_] to find regional events.
-Join a local group::
-  There are Drupal user groups all around the world. Many of them have regular
-  meetings, which you can attend to learn more about Drupal and connect to other
-  Drupal users. Find local user groups on
+Assister à un évènement::
+  Il y a dans le monde entier des évènements autour de Drupal tant régionaux
+  qu'internationaux. Consulter la
+  https://events.drupal.org[page "DrupalCon" sur _Drupal.org_] pour trouver des
+  évènements internationaux, et le
+  https://groups.drupal.org/events["calendrier des évènements" sur _groups.drupal.org_]
+  ou https://www.drupical.com/[_drupical.com_] pour trouver des évènements
+  régionaux.
+Devenir membre d'un groupe local::
+  Il y a des groupes d'utilisateurs de Drupal dans le monde entier. Beaucoup
+  organisent des rencontres régulières, auxquelles vous pouvez assister pour en
+  apprendre plus sur Drupal et entrer en relation avec d'autres utilisateurs.
+  Trouver des groupes d'utilisateurs locaux sur
   https://groups.drupal.org/[_groups.drupal.org_].
-Participate in a topical or language group::
-  There are also interest groups for a wide range of topics, which have on-line
-  discussion forums. Find topical groups on
-  https://groups.drupal.org/[_groups.drupal.org_]. Many languages have
-  their own websites too; you can find them on the
-  https://www.drupal.org/language-specific-communities["Language-specific
-  communities" page on _Drupal.org_].
-Chat online::
-  The Drupal project uses IRC for on-line chatting. There are regional, topical,
-  and general-purpose chat groups available. Find out more on the
-  https://www.drupal.org/ircchat["IRC" page on _Drupal.org_].
-Report a problem::
-  See below.
-Contribute::
-  You can contribute your time and expertise to the community in many ways, such
-  as:
-  * Developing modules or themes. See the
-    https://www.drupal.org/contribute/development["Contribute to Development"
-    page on _Drupal.org_], or improving them (using the issue queues for existing
-    projects).
-  * Translating the user interface. See
+Participer à un groupe thématique ou linguistique::
+  Il y a également des groupes d'intérêt pour toute une gamme de sujets, qui
+  disposent de forums de discussion. Trouver des groupes thématiques sur
+  https://groups.drupal.org/[_groups.drupal.org_]. Beaucoup de langues ont aussi
+  leurs propres sites web ; vous pouvez les trouver sur la
+  https://www.drupal.org/language-specific-communities[page "Language-specific communities" sur _Drupal.org_].
+Discuter en ligne::
+  Le projet Drupal utilise IRC pour les conversations en ligne. Des groupes
+  régionaux, thématiques et généraux sont disponibles. En apprendre plus sur la
+  https://www.drupal.org/ircchat[page "IRC" sur _Drupal.org_].
+Signaler un problème::
+  Voir ci-dessous.
+Contribuer::
+  Vous pouvez contribuer en donnant à la communauté de votre temps et de votre
+  expertise de diverses manières, telles que :
+  * Développer des modules et des thèmes (consulter la
+    https://www.drupal.org/contribute/development[Page "Contribute to
+    Development" sur _Drupal.org_]),
+    ou les améliorer (en utilisant le système de tickets existant pour chaque
+    projet).
+  * Traduire l'interface utilisateur. Consulter
     https://localize.drupal.org[_localize.drupal.org_].
-  * Writing documentation. See
+  * Écrire la documentation. Consulter la page
     https://www.drupal.org/contribute/documentation["Contribute to
-    Documentation" on _Drupal.org_].
-  * Answer Support questions. See <<thoughts-support>>.
+    Documentation" sur _Drupal.org_].
+  * Répondre aux demandes d'aide. Consulter <<thoughts-support>>.
 
-==== How can you report a problem or suggest a feature?
+==== Comment signaler un problème ou suggérer une fonctionnalité ?
 
-Each project within the community (such as the Drupal Core project for the base
-software, and projects for each contributed theme and module) uses _issues_ to
-keep track of software bugs and plans for new features. You can participate by
-creating a bug report when you find a problem, creating a feature request, or
-commenting on existing issues. Search before creating an issue, to
-make sure that the problem or feature has not already been reported or
-requested. See the
-https://www.drupal.org/issue-queue[_Drupal.org_ page "Use the issue queue"] and the
-https://www.drupal.org/node/314185[_Drupal.org_ page "Reporting a problem"] for
-more information.
+Chaque projet au sein de la communauté (tel que le cœur de Drupal pour le
+logiciel de base, et les projets pour chaque module ou thème contribués)
+utilisent des _tickets_ (_issues_) pour suivre les erreurs logicielles et
+planifier de nouvelles fonctionnalités. Vous pouvez participer en créant un
+rapport de bogue quand vous trouvez un problème, en créant une demande de
+fonctionnalité (_feature request_), ou en commentant des tickets existants.
+Rechercher avant de créer un ticket, afin de vous assurer que le problème ou la
+fonctionnalité n'a pas déjà été signalée ou demandée. Consulter la
+https://www.drupal.org/issue-queue[page sur _Drupal.org_ "Use the issue queue"]
+et la https://www.drupal.org/node/314185[page sur _Drupal.org_ "Reporting a
+problem"] pour plus d'informations.
 
-If you find a problem that you believe is related to security, such as a
-cross-site scripting vulnerability, do not report it in the standard issue
-queue. Instead, report it to the security team. See the
-https://www.drupal.org/node/101494[_Drupal.org_ page "How to report a security issue"] for details.
+Si vous trouvez un problème et que vous pensez qu'il est lié à la sécurité,
+telle qu'une vulnérabilité de type _cross-site scripting_, ne pas le signaler
+dans le système de tickets standard. à la place, mais le signaler à l'équipe de
+sécurité. Consulter la https://www.drupal.org/node/101494[page sur _Drupal.org_
+"How to report a security issue"] pour plus de détails.
 
-==== Related topics
+==== Sujets liés
 
 <<thoughts-support>>
 
-==== Additional resources
+==== Pour aller plus loin
 
-* https://www.drupal.org/dcoc["Code of Conduct" on _Drupal.org_]
+* https://www.drupal.org/dcoc["Code of Conduct" sur _Drupal.org_]
 
-* https://groups.drupal.org/events["Event Calendar" on _groups.drupal.org_] or
+* https://groups.drupal.org/events["Event Calendar" sur _groups.drupal.org_] ou
 https://www.drupical.com/[_drupical.com_]
 
-* https://www.drupal.org/community["Community page on _Drupal.org_]
+* https://www.drupal.org/community[Page "community" sur _Drupal.org_]
 
 * https://groups.drupal.org/[_groups.drupal.org_]
 
-* https://www.drupal.org/ircchat["IRC" page on _Drupal.org_]
+* https://www.drupal.org/ircchat[Page "IRC" sur _Drupal.org_]
 
-* https://www.drupal.org/contribute["Ways to get involved" page on _Drupal.org_]
+* https://www.drupal.org/contribute[Page "Ways to get involved" sur _Drupal.org_]
 
-* https://www.drupal.org/node/2486391[_Drupal.org_ page "Why get involved?"]
+* https://www.drupal.org/node/2486391[Page "Why get involved?" sur _Drupal.org_]
 
-* https://www.drupal.org/contributor-tasks[_Drupal.org_ page "Contributor tasks"]
+* https://www.drupal.org/contributor-tasks[Page "Contributor tasks" sur _Drupal.org_]
 
-* https://www.drupal.org/issue-queue[_Drupal.org_ page "Use the issue queue"]
+* https://www.drupal.org/issue-queue[Page "Use the issue queue" sur Drupal.org]
 
-* https://www.drupal.org/node/314185[_Drupal.org_ page "Reporting a problem"]
+* https://www.drupal.org/node/314185[Page "Reporting a problem" sur Drupal.org]
 
-* https://www.drupal.org/node/101494[_Drupal.org_ page "How to report a security issue"]
+* https://www.drupal.org/node/101494[Page "How to report a security issue" sur Drupal.org]
 
 
 *Attributions*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me].
+Écrit par https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+et https://www.drupal.org/u/eojthebrave[Joe Shindelar] de
+https://drupalize.me[Drupalize.Me]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
