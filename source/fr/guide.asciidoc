@@ -1,5 +1,5 @@
 [[user_guide]]
-= Drupal User Guide
+= Guide utilisateur de Drupal
 
 // Chapters are defined here, and each one includes the individual
 // topic files that make up the chapter, in order.
@@ -7,10 +7,11 @@
 
 [[preface]]
 
-== Preface
+== Préface
 
 [role="summary"]
-Overview of introductory topics that help to leverage this guide in an efficient manner.
+Vue d'ensemble des sujets d'introduction qui aident à exploiter efficacement ce
+guide.
 
 include::copyright.asciidoc[]
 include::preface-audience.asciidoc[]
@@ -21,10 +22,11 @@ include::preface-scenario.asciidoc[]
 
 
 [[understanding-chapter]]
-== Understanding Drupal
+== Comprendre Drupal
 
 [role="summary"]
-Overview of Drupal concepts such as modules, themes, distributions, and types of data.
+Vue d'ensemble des concepts de Drupal tels que les modules, thèmes et
+distributions, et les types de données.
 
 include::understanding-drupal.asciidoc[]
 include::understanding-modules.asciidoc[]
@@ -36,10 +38,12 @@ include::understanding-gpl.asciidoc[]
 
 
 [[planning-chapter]]
-== Planning Your Site
+== Préparer votre site
 
 [role="summary"]
-Overview of site planning concepts and details of common site layout tasks. Content entity and structure concepts are covered.
+Vue d'ensemble des concepts d'organisation de votre site et détails sur des
+tâches courantes de mise en page d'un site. Ces chapitres couvrent les concepts
+relatifs aux entités de contenu et à la structure.
 
 include::block-regions.asciidoc[]
 include::planning-layout.asciidoc[]
@@ -54,7 +58,8 @@ include::language-concept.asciidoc[]
 == Installation
 
 [role="summary"]
-Overview of server requirements and details of common installation tasks.
+Vue d'ensemble des prérequis du serveur et détails sur des tâches courantes
+d'installation.
 
 include::install-requirements.asciidoc[]
 include::install-tools.asciidoc[]
@@ -66,10 +71,12 @@ include::install-run.asciidoc[]
 
 
 [[config-chapter]]
-== Basic Site Configuration
+== Configuration élémentaire du site
 
 [role="summary"]
-Overview of basic site configuration concepts. Tasks on module installation, user account settings, and themes are covered.
+Vue d'ensemble des concepts relatifs à la configuration élémentaire d'un site.
+Les tâches liées à l'installation, les paramètres des comptes d'utilisateurs et
+les thèmes sont traitées dans ces chapitres.
 
 include::config-overview.asciidoc[]
 include::config-basic.asciidoc[]
@@ -81,10 +88,12 @@ include::config-theme.asciidoc[]
 
 
 [[content-chapter]]
-== Basic Page Management
+== Gestion élémentaire des pages
 
 [role="summary"]
-Overview of page management concepts. Tasks on content items, in-place editing, and menus are covered.
+Vue d'ensemble des concepts relatifs à la gestion de pages. Les tâches liées aux
+éléments de contenu, à la modification intégrée, et les menus sont traitées dans
+ces chapitres.
 
 include::content-paths.asciidoc[]
 include::content-create.asciidoc[]
@@ -96,10 +105,12 @@ include::menu-link-from-content.asciidoc[]
 include::menu-reorder.asciidoc[]
 
 [[content-structure-chapter]]
-== Setting Up Content Structure
+== Mise en place de la structure du contenu
 
 [role="summary"]
-Overview of content structure concepts. Tasks on content types, taxonomies, and reference fields are covered.
+Vue d'ensemble des concepts relatifs à la structure du contenu. Les tâches
+relatives aux types de contenus, taxonomies et champs de type références sont
+traités dans ces chapitres.
 
 include::structure-content-type.asciidoc[]
 include::structure-content-type-delete.asciidoc[]
@@ -124,10 +135,11 @@ include::structure-text-format-config.asciidoc[]
 
 
 [[user-chapter]]
-== Managing User Accounts
+== Gestion des comptes d'utilisateurs
 
 [role="summary"]
-Overview of user account concepts and details of common user account tasks.
+Vue d'ensemble des concepts relatifs aux comptes d'utilisateurs et détails sur
+les tâches liées aux comptes d'utilisateurs.
 
 include::user-concept.asciidoc[]
 include::user-admin-account.asciidoc[]
@@ -142,7 +154,8 @@ include::user-content.asciidoc[]
 == Blocks
 
 [role="summary"]
-Overview of block concepts and details of common block tasks.
+Vue d'ensemble des concepts relatifs aux blocs et détails sur les tâches
+courantes liées aux blocs.
 
 include::block-concept.asciidoc[]
 include::block-create-custom.asciidoc[]
@@ -150,10 +163,11 @@ include::block-place.asciidoc[]
 
 
 [[views-chapter]]
-== Creating Listings with Views
+== Créer des listes avec Views
 
 [role="summary"]
-Overview of view concepts and details of common view tasks.
+Vue d'ensemble des concepts relatifs aux vues et détails sur les tâches
+courantes qui s'y rapportent.
 
 include::views-concept.asciidoc[]
 include::views-parts.asciidoc[]
@@ -163,10 +177,10 @@ include::views-block.asciidoc[]
 
 
 [[multilingual-chapter]]
-== Making Your Site Multilingual
+== Rendre votre site multilingue
 
 [role="summary"]
-Details of tasks needed to make a site multilingual.
+Détails sur les tâches requises pour rendre votre site multilingue.
 
 include::language-add.asciidoc[]
 include::language-content-config.asciidoc[]
@@ -175,10 +189,12 @@ include::language-config-translate.asciidoc[]
 
 
 [[extend-chapter]]
-== Extending and Customizing Your Site
+== Étendre et personnaliser votre site
 
 [role="summary"]
-Overview of site customization and development. Tasks on downloading modules and themes are covered.
+Vue d'ensemble de la personnalisation et du développement d'un site. Les tâches
+liées au téléchargement de modules et de thèmes sont traitées dans ces
+chapitres.
 
 include::extend-module-find.asciidoc[]
 include::extend-maintenance.asciidoc[]
@@ -194,10 +210,11 @@ include::extend-git.asciidoc[]
 
 
 [[prevent-chapter]]
-== Preventing and Fixing Problems
+== Prévenir et résoudre les problèmes
 
 [role="summary"]
-Overview of cache, data backup, and log concepts. Task on clearing the cache is covered.
+Vue d'ensemble des concepts de cache, de sauvegarde de données et de
+journalisation. La manière de vider le cache est traitée dans ces chapitres.
 
 include::prevent-cache.asciidoc[]
 include::prevent-cache-clear.asciidoc[]
@@ -210,7 +227,8 @@ include::prevent-status.asciidoc[]
 == Security and Maintenance
 
 [role="summary"]
-Overview of security and maintenance concepts. Tasks on updating the core software, modules, and themes are covered.
+Vue d'ensemble des concepts de sécurité et de maintenance. Les tâches liées à la
+mise à jour du cœur, des modules et des thèmes sont traitées dans ces chapitres.
 
 include::security-cron-concept.asciidoc[]
 include::security-cron.asciidoc[]
@@ -222,10 +240,11 @@ include::security-update-theme.asciidoc[]
 
 
 [[thoughts-chapter]]
-== Final Thoughts
+== Dernières remarques
 
 [role="summary"]
-Overview of the Drupal community and how to connect with other users.
+Vue d'ensemble de la communauté de Drupal et comment entrer en relation avec
+d'autres utilisateurs.
 
 include::thoughts-connecting.asciidoc[]
 include::thoughts-support.asciidoc[]
@@ -242,9 +261,9 @@ include::glossary.asciidoc[]
 
 [[appendix]]
 [appendix]
-== Appendix
+== Annexe
 
 [role="summary"]
-Overview of contributors to this guide.
+Vue d'ensemble des contributeurs de ce guide.
 
 include::attributions.asciidoc[]
