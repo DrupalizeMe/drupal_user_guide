@@ -1,120 +1,133 @@
 [[views-block]]
 
-=== Adding a Block Display to a View
+=== Ajouter un affichage de type bloc à une vue
 
 [role="summary"]
-How to add a block display to a view.
+Comment ajouter un affichage de type bloc à une vue.
 
-(((View,adding block display to)))
-(((Block,creating from a view)))
-(((Views module,adding to a view)))
+(((Vue,ajouter un affichage de type bloc à)))
+(((Bloc,créer depuis une vue)))
+(((Module Views,ajouter à une vue)))
 (((Module,Views)))
 
-==== Goal
+==== Objectif
 
-Add a block display to the Recipes view to display the most recent recipes
-in a sidebar, and change its configuration without changing the existing
-Recipes page view.
+Ajouter un affichage de type bloc à la vue Recettes pour afficher les recettes
+les plus récentes dans une barre latérale, et changer sa configuration sans
+changer la page Recettes de la vue.
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<views-concept>>
 * <<views-parts>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Pré-requis du site
 
-* The Recipe content type must exist, it must have a Main image field, and your
-site must have a couple of Recipe content items. See <<structure-content-type>>,
-<<structure-fields>>, <<structure-form-editing>>, and <<content-create>>.
+* Le type de contenu Recettes doit exister, il doit comporter un champ Image
+principale, et votre site doit comporter deux éléments de type Recette.
+Consulter <<structure-content-type>>, <<structure-fields>>,
+<<structure-form-editing>>, et <<content-create>>.
 
-* The _Thumbnail (100x100)_ image style must be defined. This is created on your
-site when you install the core Image module (installed with the core Standard
-installation profile) but can be recreated if deleted. See
-<<structure-image-style-create>>.
+* Le style d'image _Vignette (100x100)_ doit être défini. Il est créé sur votre
+site lorsque vous installez le module du cœur Image (installé avec le profil
+d'installation du cœur "Standard") mais peut être recréé s'il a été supprimé.
+Consulter <<structure-image-style-create>>.
 
-* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
+* La vue Recettes doit exister. Consulter <<views-create>> et
+<<views-duplicate>>.
 
-==== Steps
+==== Étapes
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_). Find the view "Recipes" and click _Edit_ from its
-dropdown button. Alternatively, navigate to the Recipes page in the main site
-navigation, and click the _Edit view_ contextual link in the main area of the
-page. See <<config-overview>> for information about contextual links.
+. Dans le menu d'administration _Gérer_, naviguer vers _Structure_ > _Views_
+(_admin/structure/views_). Trouver la vue "Recettes" et cliquer sur "Modifier"
+dans son bouton déroulant. Alternativement, naviguer vers la page des recettes
+depuis le menu principal, et cliquer sur le lien contextuel _Modifier la vue_
+dans la région principale de la page. Consulter <<config-overview>> pour des
+informations sur les liens contextuels.
 
-. Create a new block display by clicking _Add_ in the _Displays_ section. Click
-_Block_ from the dropdown button. The new display is created, and the focus is
-automatically switched to its configuration.
+. Créer un nouvel affichage de type bloc en cliquant sur _Ajouter_ sous
+_Affichages_. Cliquer sur _Bloc_ dans la liste de liens qui apparaît. Le nouvel
+affichage est créé, et le focus passe automatiquement sur sa configuration.
 +
 --
 // Add display button on Recipes view edit page, with Block highlighted
 // (admin/structure/views/view/recipes).
-image:images/views-block_add-block.png["Add block display"]
+image:images/views-block_add-block.png["Ajouter un affichage de type bloc"]
 --
 
-. Change the title of this display by clicking _Block_ next to _Display
-name_. The _Page: The name and the description of this display_ pop-up
-appears. Change the _Administrative name_ to "Recent recipes". Click _Apply_.
+. Pour modifier le titre de cet affichage, cliquer sur _Bloc_ dans le champ _Nom
+de l'affichage_. La fenêtre modale _Bloc : Le nom et la description de cet
+affichage_ apparaît. Changer le _Nom administratif_ en "Recettes récentes".
+Cliquer sur _Appliquer_.
 
-. Change the title of the view by clicking _Title: Recipes_ in the _Title_
-section. In the pop-up that appears, select _For This block (override)_ from the
-_For_ dropdown button. Change the title to "New Recipes" and click _Apply (this
-display)_.
+. Pour changer le titre du bloc, cliquer sur Recettes dans le champ _Titre_ sous
+_Titre_. Dans la fenêtre modale qui apparaît, sélectionner _Ce(tte) bloc
+(supplanter)_ dans le menu déroulant _Pour_. Modifier le champ _Titre_ en
+"Nouvelles recettes" et cliquer sur _Appliquer (cet affichage)_.
 +
 --
 // Configuring the block title for this display only.
-image:images/views-block_title.png["Title only for this block"]
+image:images/views-block_title.png["Titre uniquement pour ce bloc"]
 --
 
-. Change the view's style by clicking _Format: Grid_ in the _Format_ section. In
-the pop-up that appears, select _For This block (override)_ from the _For_
-dropdown button. Select _Unformatted list_ and Click _Apply (this display)_. You
-can further configure the style options in the next pop-up that appears.
+. Pour changer le style du bloc, cliquer sur _Grille_ dans le champ _Format_
+sous _Format_. Dans la fenêtre modale qui apparaît, sélectionner _Ce(tte) bloc
+(supplanter)_ dans le menu déroulant _Pour_. Sélectionner _Liste non mise en
+forme_ et cliquer sur _Appliquer (cet affichage)_. Vous pouvez configurer plus
+avant les options du style dans la prochaine fenêtre modale qui apparaît.
+Cliquer alors sur _Appliquer_.
 
-. Configure the image field by clicking _Content: Main image_ in the _Fields_
-section. In the pop-up that appears, select _For This block (override)_ from the
-_For_ dropdown button. Select _Image style Thumbnail (100x100)_. Click _Apply
-(this display)_.
+. Pour configurer le champ image, cliquer sur _Contenu : Image principale_ sous
+_Champs_. Dans la fenêtre modale qui apparaît, sélectionner _Ce(tte) bloc
+(supplanter)_ dans le menu déroulant _Pour_. Sélectionner _Style d'image
+Vignette (100x100)_. Cliquer sur _Appliquer (cet affichage)_).
 +
 --
 // Configuring the image field for this display only.
-image:images/views-block_image.png["Image to thumbnail",width="100%"]
+image:images/views-block_image.png["Image sous la forme d'une vignette",width="100%"]
 --
 
-. Remove ingredients as a filter by clicking _Content: Ingredients (exposed)_ in
-the _Filter criteria_ section. In the pop-up that appears, select _For This
-block (override)_ from the _For_ dropdown button. Click _Remove_ at the bottom.
+. Pour retirer les ingrédients en tant que filtre, cliquer sur _Contenu :
+Ingrédients (exposé)_ sous _Critères de filtrage_. Dans la fenêtre modale qui
+apparaît, sélectionner _Ce(tte) bloc (supplanter)_ dans le menu déroulant
+_Pour_. Cliquer sur _Retirer_ en bas.
 
-. Configure how you want the content to be sorted in the view by clicking _Add_
-in the _Sort criteria_ section. In the pop-up that appears, select _For This
-block (override)_ from the _For_ dropdown button. Check the field _Authored on_
-(from Content category), and then _Add and configure sort criteria_.
+. Pour configurer la manière dont vous voulez que le contenu soit trié dans la
+vue, cliquer sur _Ajouter_ dans le bouton déroulant sous _Critères de tri_. Dans
+la fenêtre modale qui apparaît, sélectionner _Ce(tte) bloc (supplanter)_ dans le
+menu déroulant _Pour_. Cocher _Écrit le_ (dans la catégorie _Contenu_) et
+cliquer alors sur _Ajouter et configurer des critères de recherche_.
 
-. In the appearing configuration pop-up, select _Sort descending_ to have the
-most recent recipes appear first. Click _Apply_.
+. Dans la fenêtre modale de configuration qui apparaît, sélectionner _Trier par
+ordre décroissant_ pour que les recettes les plus récentes apparaissent en
+premier. Cliquer sur _Appliquer_.
 
-. Specify the number of items to be displayed by clicking _Use pager: Mini_ in
-the _Pager_ section. In the pop-up that appears, select _For This block
-(override)_ from the _For_ dropdown button. Under _Pager_, select _Display a
-specified number of items_. Click _Apply (this display)_. In the _Page: Pager
-options_ pop-up, provide "5" as the value for _Items to display_.
+. Pour spécifier le nombre d'éléments à afficher, cliquer sur _Mini_ dans le
+champ _Utiliser la pagination_ sous _Pagination_. Dans la fenêtre modale qui
+apparaît, sélectionner _Ce(tte) bloc (supplanter)_ dans le menu déroulant
+_Pour_. Sélectionner _Afficher un nombre défini d'éléments_. Cliquer sur
+_Appliquer (cet affichage)_. Dans la fenêtre modale _Bloc : Options de
+pagination_, saisir "5" comme valeur pour _Éléments à afficher_. Cliquer sur
+_Appliquer_.
 
-. Click _Save_. You will either see the view editing page again, or the Recipes
-page, depending on what you did in step 1. You should also see a message saying
-that the view has been saved.
+. Cliquer sur _Enregistrer_. Vous visualiserez soit à nouveau la page de
+modification de la vue, soit la page Recettes, selon ce que vous avez fait dans
+l'étape 1. Vous devriez aussi visualiser un message indiquant que la vue a été
+enregistrée.
 +
 --
 // View saved confirmation message.
-image:images/views-block_recipes.png["Summary page after configuration",width="100%"]
+image:images/views-block_recipes.png["Page de résumé après configuration",width="100%"]
 --
 
-. Place the "Recipes: Recent Recipes" block in the _Sidebar second_ region. See
-<<block-place>>. Navigate to the site's home page to see the block.
+. Placer le bloc "Recettes : Recettes récentes" dans la région _Sidebar second_.
+Consulter <<block-place>>. Naviguer vers la page d'accueil du site pour visualiser
+le bloc.
 +
 --
 // Home page with recipes sidebar visible.
-image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%"]
+image:images/views-block_sidebar.png["Nouveau bloc recettes sur la page d'accueil",width="100%"]
 --
 
 // ==== Expand your understanding
@@ -122,13 +135,19 @@ image:images/views-block_sidebar.png["New Recipes block on homepage",width="100%
 
 // ==== Related concepts
 
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/xrnuekARwYc[title="Adding a Block Display to a View"]
+
 //==== Additional resources
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/lolk[Laura Vass] at
+Écrit et modifié par https://www.drupal.org/u/lolk[Laura Vass] de
 https://pronovix.com/[Pronovix],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
