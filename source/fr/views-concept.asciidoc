@@ -1,49 +1,51 @@
 [[views-concept]]
-=== Concept: Uses of Views
+=== Concept: usages des vues
 
 [role="summary"]
-Overview of views and the data that can be displayed or output by them.
+Vue d'ensemble des vues et des données qu'elles peuvent afficher ou générer.
 
-(((View,overview)))
-(((Views module,overview)))
+(((Vue,vue d'ensemble)))
+(((Module Views,vue d'ensemble)))
 
-==== Prerequisite knowledge
+==== Pré-requis
 
 * <<planning-modular>>
 * <<planning-data-types>>
 
-==== What is a view?
+==== Qu'est-ce qu'une vue ?
 
-A _view_ is a listing of content on a website. The core Views module handles the
-display of views, and the core Views UI module allows you to create and edit
-them in the administrative interface. When you define views, you are interested
-in taking data from your website and displaying it to the user.
+Une vue est une liste de contenus sur votre site web. Le module du cœur Views
+gère l'affichage des vues, et le module du cœur View UI permet de les créer et
+de les modifier dans une interface d'administration. Quand vous définissez des
+vues, votre but est de récupérer les données de votre site web pour les afficher
+aux utilisateurs.
 
-==== What types of data can be displayed using views?
+==== Quels types de données peuvent être affichés avec des vues ?
 
-You can create views to output practically any content entity that is stored in
-the system. For example, you can create the following lists for the farmers
-market site:
+Vous pouvez créer des vues pour afficher pratiquement n'importe quelle entité de
+contenu stockée dans le système. Par exemple, vous pouvez créer les listes
+suivantes pour le site du marché fermier :
 
-* Lists of vendors
-* Lists of recipes
-* Lists of the most recent content on the site
-* Lists of users on the site
+* listes de marchands,
+* listes de recettes,
+* listes de contenus les plus récents sur votre site,
+* listes d'utilisateurs de votre site.
 
-==== What are the ways data can be output using views?
+==== De quelles manières les données peuvent-elles être générées en utilisant les vues ?
 
-A listing created by a view can be in any of the following forms:
+Une liste créée par une vue peut prendre n'importe laquelle des formes
+suivantes :
 
-* Table with sortable fields
-* Grid layouts
-* Teasers or pictures that link to articles
-* Blocks
-* JSON output
-* RSS feeds
-* Calendars
-* On-screen slideshows
+* tableau avec champs triables,
+* mises en page sous forme de grilles,
+* accroches ou images liées à des articles,
+* blocs,
+* données en JSON,
+* flux RSS,
+* calendriers,
+* diaporamas.
 
-==== Related topics
+==== Sujets liés
 
 * <<views-parts>>
 * <<views-create>>
@@ -53,8 +55,9 @@ A listing created by a view can be in any of the following forms:
 
 *Attributions*
 
-Written and edited by
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+Écrit et modifié par
+https://www.drupal.org/u/michaellenahan[Michael Lenahan]
+d'https://erdfisch.de[erdfisch], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
