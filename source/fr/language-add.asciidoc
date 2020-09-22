@@ -1,77 +1,79 @@
 [[language-add]]
 
-=== Adding a Language
+=== Ajouter une langue
 
 [role="summary"]
-How to add a language, install the necessary modules, and turn on the _Language
-switcher_ block.
+Comment ajouter une langue, installer les modules nécessaires, et activer le
+bloc _Sélecteur de langue_.
 
-(((Language,adding)))
-(((Multilingual modules,installing)))
-(((Multilingual modules,enabling)))
-(((Language module,installing)))
-(((Content Translation module,installing)))
-(((Configuration Translation module,installing)))
-(((Interface Translation module,installing)))
+(((Langue,ajouter)))
+(((Modules multilingues,installer)))
+(((Modules multilingues,activer)))
+(((Module Language,installer)))
+(((Module Content Translation,installer)))
+(((Module Configuration Translation,installer)))
+(((Module Interface Translation,installer)))
 (((Module,Language)))
 (((Module,Content Translation)))
 (((Module,Configuration Translation)))
 (((Module,Interface Translation)))
 
-==== Goal
+==== Objectif
 
-Add one or more languages to your site and define which one is used by default.
+Ajouter un ou des langues à votre site et définir lequel est utilisé par défaut.
 
-==== Prerequisite knowledge
+==== Prérequis
 
 <<language-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-. Install the four core multilingual modules (Language, Interface Translation,
-Content Translation, and Configuration Translation), by following the steps in
-<<config-install>>.
+. Installer les quatre modules multilingues du cœur (Language, Interface
+Translation, Content Translation et Configuration Translation), en suivant les
+étapes de <<config-install>>.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and language_ > _Languages_ (_admin/config/regional/language_).
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Régionalisation et langue_ > _Langues_ (_admin/config/regional/language_).
 
-. Click _Add language_.
+. Cliquer sur _Ajouter une langue_.
 
-. Select _Spanish_ (or your preferred language) from the _Language name_ select
-list. Click _Add language_. After waiting for translations to finish
-downloading, you will be returned to the _Languages_ page, with a confirmation
-message and the new language shown.
+. Sélectionner _Anglais_ (ou la langue de votre choix) dans le menu déroulant
+_Nom de la langue_. Cliquer sur _Ajouter une langue_. Après un peu d'attente le
+temps que les traductions finissent d'être téléchargées, vous serez redirigé·e
+vers la page _Langues_, avec un message de confirmation. La nouvelle langue
+apparaît dans la liste.
 +
 --
 // Confirmation and language list after adding Spanish language.
-image:images/language-add-list.png["List of available languages in the website",width="100%"]
+image:images/language-add-list.png["Liste des langues disponibles sur le site web",width="100%"]
 --
 
-. Follow the steps in <<block-place>> to place the _Language switcher_ block in
-the _Sidebar second_ region. This will enable site visitors to switch between
-languages, once the site has been translated.
+. Suivre les étapes dans <<block-place>> pour placer le bloc _Sélecteur de
+langue_ dans la région _Sidebar second_. Cela permettra aux visiteurs du site de
+changer de langue, une fois que votre site aura été traduit.
 
-==== Expand your understanding
+==== Pour approfondir
 
 * <<language-content-config>>
 * <<language-content-translate>>
 
 // ==== Related concepts
 
-==== Videos
+==== Vidéos (en anglais)
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/8Yu0G4gJ0f4[title="Adding a Language"]
 
-==== Additional resources
+==== Pour aller plus loin
 
 https://www.drupal.org/docs/multilingual-guide[_Drupal.org_ community documentation page "Multilingual guide"]
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/yrvyn[Leila Tite],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
-https://www.drupal.org/u/batigolix[Boris Doesborg].
+Écrit et modifié par https://www.drupal.org/u/yrvyn[Leila Tite],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] et
+https://www.drupal.org/u/batigolix[Boris Doesborg]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
