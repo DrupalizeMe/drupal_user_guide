@@ -1,6 +1,6 @@
 [[prevent-backups]]
 
-=== Konzept: Daten-Sicherungen
+=== Konzept: Datensicherungen
 
 [role="summary"]
 Überblick über Datensicherungen und was auf einer Website gesichert werden sollte.
@@ -10,18 +10,18 @@
 (((File,backing up)))
 (((Database,backing up)))
 
-==== Vorrausgesetztes Wissen
+==== Erforderliche Vorkenntnisse
 
 * <<understanding-drupal>>
 * <<install-prepare>>
 
-==== Was ist eine Standortsicherung?
+==== Was ist eine Datensicherung?
 
-Wenn mit dem Computer (oder den Computern) etwas passiert, das Ihre Site und seine
-Datenbank laufen, oder wenn Sie den Zugriff auf diesen Computer verlieren, könnten Sie
-einige oder alle Daten Ihrer Website. Sie könnten auch Daten verlieren, wenn Ihre Website
-gehackt wurde, oder wenn jemand mit administrativen Rechten auf Ihrer Site oder
-Daten fälschlicherweise von der administrativen Schnittstelle aus ändert. Um zu verhindern
+Für den Fall das mit dem Computer (oder den Computern) die Ihre Website und deren
+Datenbank enthalten, etwas passiert oder wenn Sie den Zugriff auf diesen Computer verlieren, könnten Sie
+einige oder alle Daten Ihrer Website sichern. Sie könnten auch Daten verlieren, wenn Ihre Website
+gehackt wurde, oder wenn jemand mit administrativen Rechten Daten fälschlicherweise über
+den Verwaltungsbereich der Website ändert. Um zu verhindern
 Szenarien wie dieses vor dauerhaften, teuren Datenverlusten schützen, ist es wichtig
 regelmäßige Backups der Daten Ihrer Website zu erstellen und sie an einem Ort zu speichern
 die von dem Computer, auf dem Ihre Website läuft, getrennt ist.
@@ -33,7 +33,7 @@ Mal pro Tag würden Sie häufiger Backups erstellen wollen, als Sie es bei einer
 Website, die sich nur selten ändert. Bedenken Sie auch, dass einige Zeit vergehen könnte, wenn eine
 Datenproblem auftritt und wenn Sie merken, dass es sich um ein Problem handelt, so speichern Sie eine
 Sequenz von Sicherungen (so dass Sie zu den letzten bekannten guten Daten zurückgehen können und
-retrieve that), anstatt eine einzelne Sicherung wiederholt zu überschreiben, ist eine
+retrieve that), anstatt eine einzelne Sicherung wiederholt zu überschreiben, ist
 gute Praxis.
 
 Eine weitere Überlegung ist, dass unabhängig davon, in welchem Format Sie Ihre Backups speichern, es sich um ein
@@ -54,19 +54,18 @@ immer sicher, die gesamte Datenbank zu sichern.
 * Hochgeladene Dateien, wie Bilder und andere Anhänge. Der Speicherort dieser
 Dateien ist konfigurierbar; der Standardspeicherort ist die _Sites/default/files_
 Verzeichnis unter Ihrem Site-Root. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu
-zu _Konfiguration_ > _Medien_ > _Dateisystem_ (_Admin/Konfiguration/Medien/Dateisystem_)
+zu _Konfiguration_ > _Medien_ > _Dateisystem_ (_admin/configuration/media/filesystem_)
 um die Speicherorte der Datei-Uploads zu überprüfen; um sie zu ändern, müssen Sie Ihre
-_settings.php_ Datei.
+_settings.php_ Datei editieren.
 
-* Module, Themen und alle anderen Software-Dateien, die Sie angepasst haben. Sie finden
-kundenspezifische Module und Themen in den Verzeichnissen _Module_ und _Themen_
-entsprechend. Einige Leute ziehen es vor, alle Software-Dateien zu sichern, einschließlich der Kern
-Dateien und beigetragene Module und Themen (die Sie durch Herunterladen wiederherstellen können)
-sie wieder von der Quelle), anstatt zu versuchen, bestimmte Dateien herauszusuchen, die
-müssen auf jeden Fall unterstützt werden.
+* Module, Themes und alle anderen Software-Dateien, die Sie angepasst haben. Sie finden
+kundenspezifische Module und Themen in den Verzeichnissen _modules_ und _themes_
+entsprechend. Einige Leute ziehen es vor, alle Software-Dateien zu sichern, einschließlich der
+Dateien des Kernsystems und der Dateien der von der Community bereitgestellten Zusatzmodule und Themes (die Sie mittels Herunterladen aus der selben Quelle wiederherstellen können), anstatt zu versuchen, bestimmte Dateien herauszusuchen, die
+die auf jeden Fall gesichert werden müssen.
 
-Sie können einen Test durchführen, um zu bestätigen, ob Ihre Sicherung richtig durchgeführt wurde, indem Sie
-Erstellung einer Entwicklungskopie der Website (siehe <<install-dev-making>>).
+Sie können einen Test durchführen, um zu prüfen, ob Ihre Sicherung richtig durchgeführt wurde, indem Sie
+einee Kopie der Website in einer Entwicklungsumgebung erstellen (siehe <<install-dev-making>>).
 
 ==== Verwandte Themen
 
@@ -84,6 +83,6 @@ die zum Einrichten automatischer Sicherungen der Datenbank verwendet und hochgel
 Dateien.
 
 
-*Angaben*
+*Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
