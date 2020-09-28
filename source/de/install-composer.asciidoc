@@ -57,7 +57,7 @@ Hauptverzeichnis Ihrer Installation:
 * Die Datei _composer.json_
 * Die Dtei _composer.lock_
 
-==== Composer zum Herunterladen des Kernsystems verwenden
+===== Composer zum Herunterladen des Kernsystems verwenden
 
 Führen Sie folgende Schritte aus, wenn Sie das Kernsystem noch nicht
 heruntergeladen oder installiert haben und Sie Composer verwenden möchten, um
@@ -76,7 +76,7 @@ composer create-project drupal/recommended-project /pfad/zum/übergeordneten/Ver
 . Die neueste Version des Kernsystems wird in das Unterverzeichnis
 _/pfad/zum/übergeordneten/Verzeichnis/der/Installation/web_ heruntergeladen.
 
-====== Eine zuvor heruntergeladenen Website für die Verwaltung mit Composer vorbereiten
+===== Eine zuvor heruntergeladenen Website für die Verwaltung mit Composer vorbereiten
 
 Wenn Sie zuvor das Kernsystem heruntergeladen haben, ohne Composer zu verwenden, können Sie
 später feststellen, dass Sie den Composer zur Verwaltung und Aktualisierung verwenden wollen oder müssen
@@ -103,7 +103,7 @@ So konvertieren Sie eine Site, die mit einer Version des Kernsystems vor
 Drupal.org heruntergeladen wurde, um Compoeser zu verwenden. Siehe die Anweisungen unter
 https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen].
 
-====== Composer zum Herunterladen eines Moduls oder Themes verwenden
+===== Composer zum Herunterladen eines Moduls oder Themes verwenden
 
 Befolgen Sie diese Arbeitsschritte, wenn Sie bereits Composer zur Verwaltung des
 Kernsystems verwenden, und Sie möchten Composer verwenden,
@@ -126,7 +126,7 @@ des von Ihnen benötigten Projekts):
 composer require drupal/geofield
 ----
 
-====== Composer verwenden, um zuvor heruntergeladene Dateien zu aktualisieren
+===== Composer verwenden, um zuvor heruntergeladene Dateien zu aktualisieren
 
 Befolgen Sie diese Arbeitsschritte, um die Dateien des Kernsystems oder die Daten
 eines von der Community bereitgestellten Zusatzmodules oder Themes, mittels
@@ -157,10 +157,10 @@ würde nur die Version 1.7 eingeben, und für die Kern-Software-Version 8.3.1 w�
 Versionsnummer):
 +
 ----
-Komponist benötigen Drupal/Geofield:1,7
+Composer require drupal/geofield:1.7
 ----
 
-==== Erweitern Sie Ihe Kenntnisse
+==== Vertiefen Sie Ihe Kenntnisse
 
 Weitere Einzelheiten über die Befehle von Composer erfahren Sie, indem Sie die
 integrierte Hilfe von Composer verwenden. Um beispielsweise mehr über den
@@ -176,9 +176,9 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Verwendung von 
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung von Composer zur Verwaltung von Drupal-Site-Abhängigkeiten"]]
-* https://www.drupal.org/docs/8/update/update-core-via-composer["Kern über Composer aktualisieren"]]
-* https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Komponist zu einer bestehenden Website hinzufügen]
+* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung von Composer zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch)]
+* https://www.drupal.org/docs/8/update/update-core-via-composer["Das Kernsystem mittels Composer aktualisieren"(englisch)]
+* https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen (englisch)]
 
 *Mitwirkende*
 
@@ -186,6 +186,6 @@ Bearbeitet von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
 https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], und
 https://www.drupal.org/u/eojthebrave[Joe Shindelar] unter
 https://drupalize.me[Drupalize.Me] von
-https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung des Composers zur Verwaltung von Drupal-Site-Abhängigkeiten"],
+https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung des Composers zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch) ],
 copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
