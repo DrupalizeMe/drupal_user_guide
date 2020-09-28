@@ -1,18 +1,18 @@
 [[structure-image-style-create]]
 
-=== Einrichten eines Bildstils
+=== Einen Bildstil erstellen
 
 [role="summary"]
-Wie man einen Bildstil hinzufügt, um ein Bild neu zu formatieren.
+Wie man einen Bildstil hinzufügt, um ein Bild neu formatieren zu können.
 
 (((Image style,creating)))
 (((Style,image)))
 (((Effect,image)))
 (((Image,resizing)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Anbieterseiten anzuzeigen.
+Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Lieferantenseiten anzuzeigen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -31,17 +31,17 @@ Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Anbiete
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ > _Medien_ >
-_Bildstile_ (_Admin/Konfiguration/Medien/Bildstile_).
+. Navigieren Sie im Menü _Verwaltung_ zu _Konfiguration_ > _Medien_ >
+_Bildstile_ (_admin/configuration/media/image-styles_).
 
 . Klicken Sie auf _Bildstil hinzufügen_.
 
 . Geben Sie den Namen _Extra Medium (300x200)_ ein.
 
-. Klicken Sie auf _Neuen Stil erstellen_. Die Seite _Bearbeiten Stil Extra Medium
-(300x200)_ erscheint.
+. Klicken Sie auf _Neuen Stil erstellen_. Die Seite _Stil Extra Medium
+(300x200) bearbeiten_ erscheint.
 
-. Wählen Sie in der Tabelle _Effekt_ die Option _Skalieren und beschneiden_. Klicken Sie auf _Hinzufügen_.
+. Wählen Sie in der Tabelle _Effekt_ die Option _Skalieren und zuschneiden_ aus. Klicken Sie auf _Hinzufügen_.
 
 . Füllen Sie die Felder wie unten dargestellt aus.
 +
@@ -59,17 +59,16 @@ _Bildstile_ (_Admin/Konfiguration/Medien/Bildstile_).
 image:images/structure-image-style-create-add-style.png["Einen Bildstil hinzufügen",width="100%"]
 --
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhaltstypen_
-(_Administration/Struktur/Arten_).
+. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
+(_admin/structure/types_).
 
-. Klicken Sie in der Dropdown-Liste _Operationen_ für den Inhalt des Lieferanten auf _Anzeige verwalten_.
-tippen. Die Seite _Anzeige_ verwalten (_Admin/Struktur/Arten/Verwaltung/Lieferant/Anzeige_)
+. Klicken Sie in der Dropdown-Liste _OperationenAltionen_ für den Inhaltstyp Lieferanten auf _Anzeige verwalten_.
+Die Seite _Anzeige_ verwalten (_admin/structure/types/manage/lieferanten/display_)
 erscheint.
 
-. Stellen Sie sicher, dass das sekundäre Register _Default_ ausgewählt ist.
+. Stellen Sie sicher, dass der sekundäre Reiter _Standard_ ausgewählt ist.
 
-. Klicken Sie auf das Zahnrad für das Feld _Hauptbild_, um die Konfiguration zu öffnen
-Optionen.
+. Klicken Sie auf das Zahnrad für das Feld _Hauptbild_, um die Konfigurationsoptionen zu öffnen.
 
 . Füllen Sie die Felder wie unten dargestellt aus.
 +
@@ -87,16 +86,14 @@ image:images/structure-image-style-create-manage-display.png["Feldformatierungse
 
 . Klicken Sie auf _Aktualisieren_.
 
-. Klicken Sie auf _Speichern_. Der neue Bildstil wird bei der Anzeige von Anbieter verwendet.
-Inhalt.
+. Klicken Sie auf _Speichern_. Der neue Bildstil wird für die Anzeige von Inhalten des Typs Lieferanten verwendet.
 
-. Öffnen Sie ein Inhaltselement des Anbieters und überprüfen Sie, ob es jetzt mit der
-verkleinertes Bild. Siehe <<<content-edit>> für Informationen über das Auffinden eines
-vorhandenes Inhaltselement.
+
+. Öffnen Sie ein Inhaltselement vom Typ Lieferanten und überprüfen Sie, ob dieser nun eine verkleinerte Darstellung des Bilders enthält. Siehe <<<content-edit>> für Informationen über das finden von vorhandenen Inhalten.
 
 . Wiederholen Sie die Schritte 8-15 für den Inhaltstyp Rezept.
 
-// ==== Erweitern Sie Ihr Verständnis
+// ==== Vertiefen Sie Ihr Wissen
 
 ==== Verwandte Konzepte
 
@@ -107,11 +104,11 @@ vorhandenes Inhaltselement.
 ==== Videos
 
 // Video von Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Einrichten eines Bildstils"]
+video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Erstellen eines Bildstils (englisch)"]
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8"]
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8 (englisch)"]
 
 
 *Mitwirkende*
