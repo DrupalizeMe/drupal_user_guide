@@ -63,9 +63,12 @@ Cron-URL. Diese URL wird im _Statusbericht_ (siehe <<prevent-status>>) und
 auf der Seite _Cron_ im Verwaltungsbereich (siehe oben) angezeigt. Die URL sieht ungefähr wie folgt aus:
 
 _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
+
 +
+
 Wann immer diese URL besucht wird, werden Cron-Wartungsaufgaben ausgeführt. Richten Sie eines der
 folgenden Programme zur Zeitgesteuerten Ausführung von Aufgaben so ein, dass es regelmäßig auf diese URL zugreift:
+
 +
   * https://www.drupal.org/node/23714[Der Cron-Dämon] (Linux, OS X, Solaris,
 BSD [englisch])
