@@ -33,10 +33,10 @@ oder mit anderen Mitteln ausgeführt werden sollen. Das Modul Automated-Cron ist
 Gründen möglicherweise nicht für Ihre Website geeignet:
 +
   * Jedes Mal, wenn jemand auf eine Seite auf der Website zugreift, prüft das Modul, wie viel Zeit
-  seit der letzten Ausführung von Cron-Wartungsaufgaben vergangen ist, und führt die Aufgaben, falls erforderlich,
-  erneut aus. Wenn über einen längeren Zeitraum niemand die Website besucht, werdne Cron-Wartungsaufgaben also nicht ausgeführt.
+seit der letzten Ausführung von Cron-Wartungsaufgaben vergangen ist, und führt die Aufgaben, falls erforderlich,
+erneut aus. Wenn über einen längeren Zeitraum niemand die Website besucht, werdne Cron-Wartungsaufgaben also nicht ausgeführt.
   * Cron-Wartungsaufgaben werden ausgeführt, nachdem die Seite geladen wurde. Dies bedeutet
-  es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Server-Timeouts
+es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Server-Timeouts
  (z.B. PHP-Ausführungszeitüberschreitungen) in kraft treten. Wenn dies geschieht, wird im Systemprotokoll (siehe
   <<prevent-log>>) eine Fehlermeldung ausgegeben, die darüber Informiert, dass Wartungsaufgaben mittels Cron nicht abgeschlossen werden konnten.
   * Das Modul Automated Cron bietet aber auch einen Vorteil. Durch den Einsatz des Modus Automated Cron fallen geringere Kosten bezüglich der
@@ -68,11 +68,11 @@ Wann immer diese URL besucht wird, werden Cron-Wartungsaufgaben ausgeführt. Ric
 folgenden Programme zur Zeitgesteuerten Ausführung von Aufgaben so ein, dass es regelmäßig auf diese URL zugreift:
 +
   * https://www.drupal.org/node/23714[Der Cron-Dämon] (Linux, OS X, Solaris,
-  BSD [englisch])
+BSD [englisch])
   * https://www.drupal.org/node/31506[Geplante Wartungsaufgaben] (Windows) (englisch)
   * Einen Cron-SASS-Anbieter (Software as a Service)
   * Ein Cron-Manager, der von Ihrem Webhosting-Provider zur Verfügung gestellt wird
-  (Weitere Informationen finden Sie in der Dokumentation Ihres Providers)
+(Weitere Informationen finden Sie in der Dokumentation Ihres Providers)
 
 
 // ==== Vertiefen Sie Ihre Kenntnisse
