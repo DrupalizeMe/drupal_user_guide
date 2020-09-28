@@ -14,11 +14,11 @@
 
 <<planning-data-types>>
 
-==== Was sind Formen und Steuerelemente?
+==== Was sind Formulare und Steuerelemente?
 
 Die Content-Management-System-Software, die auf Ihrer Website läuft, ermöglicht
 Administratoren, Inhalte zu bearbeiten und Einstellungen online zu konfigurieren, unter Verwendung verschiedener Web
-_Formen_. Insbesondere _Inhaltsbearbeitungsformulare_ werden verwendet, um die Inhalte Ihrer Website zu bearbeiten.
+Formulare. Insbesondere _Inhaltsbearbeitungsformulare_ werden verwendet, um die Inhalte Ihrer Website zu bearbeiten.
 Inhalt, und sie sind von Administratoren konfigurierbar; Konfiguration der Einstellungen
 Formulare werden von Modulen bereitgestellt und können selbst nicht konfiguriert werden.
 
@@ -26,24 +26,23 @@ Die Daten im Inhalt Ihrer Website werden in einem oder mehreren Feldern gespeich
 die an den Inhaltstyp und/oder Untertyp angehängt sind. Wenn Sie den Inhalt konfigurieren
 Bearbeitungsformular für jeden Inhaltsuntertyp können Sie
 
-* ein _Widget_ für jedes Feld auswählen. Ein Widget definiert die Methode zur Eingabe von
-die Daten für das Feld. Beispielsweise kann ein Taxonomiebegriff ausgewählt werden mit
-ein Autovervollständigungsfeld, eine Auswahlliste oder ein Feld im Stil von Tags, das Editoren
-neue Tags automatisch hinzufügen.
+* Ein _Steuerelement_ für jedes Feld auswählen. Ein Steuerelement definiert die Methode zur Eingabe der
+Daten die das Feld enthält. Beispielsweise kann ein Taxonomiebegriff über ein
+Autovervollständigungsfeld, eine Auswahlliste oder ein Feld im Stil von Tags, über das Editoren
+neue Tags automatisch hinzufügen könnnen, ausgewählt werden.
 
-* Konfigurieren Sie die Widget-Einstellungen. Sie können zum Beispiel die Größe eines
-Klartext-Eingabefeld.
+* Steuerelemnteinstellungen festlegen. Sie können zum Beispiel die Länmge des Zulässigen Textes in einem
+Klartext-Eingabefeld festlegen.
 
-* Blenden Sie ein oder mehrere Felder aus dem Bearbeitungsformular aus.
+* Ein oder mehrere Felder aus dem dem Bearbeitungsformular ausblenden, indem Sie das Feld bzw. die felder in den Bereich Deaktiviert verschiebn.
 
-* Ordnen Sie die Felder neu an.
+* Felder neu anordnen.
 
-Prinzipiell können Sie auch mehrere Inhaltsbearbeitungsformulare zur Verfügung haben für
-jeder Inhalts-Untertyp. Diese Funktion wird jedoch nur selten verwendet; die einzige Ausnahme
-im allgemeinen Gebrauch ist für die Felder des Benutzerprofils: Sie können verschiedene Formulare verwenden für
-Benutzerregistrierung und Benutzerbearbeitung. Zum Beispiel könnten Sie einen begrenzten Satz von
-Felder, die bei der ersten Registrierung der Benutzer auf der Website angezeigt werden, und weitere Felder, die später angezeigt werden
-an, wenn sie ihre Profile bearbeiten.
+Prinzipiell können auch mehrere Inhaltsbearbeitungsformulare zur Verfügung gestellt werden. Für
+jeder Inhalts-Untertyp wird in diesem Fall ein eigenes Formular angelegt. Diese Funktion wird jedoch nur selten verwendet; die einzige Ausnahme
+im täglichen Einsatz  hierbei gilt für die Felde von Benutzerprofilen: Sie können untersschiedliche Formulare für die
+Benutzerregistrierung und die Bearbeitung von Benutzerkonten verwenden. Zum Beispiel könnten Sie einen begrenzten Satz von
+Feldern, der bei der ersten Registrierung eines Benutzers auf der Website angezeigt werden soll definieren und weitere Felder, nur dann angezeigt werden, wenn der Benutzer sein Profil bearbeitet.
 
 ==== Verwandte Themen
 
