@@ -64,18 +64,15 @@ auf der Seite _Cron_ im Verwaltungsbereich (siehe oben) angezeigt. Die URL sieht
 
 _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 
+_http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
-
-Wann immer diese URL besucht wird, werden Cron-Wartungsaufgaben ausgeführt. Richten Sie eines der
-folgenden Programme zur Zeitgesteuerten Ausführung von Aufgaben so ein, dass es regelmäßig auf diese URL zugreift:
-
+Immer wenn diese URL aufgerufen wird, werden die Cron-Wartungsaufgaben ausgeführt. Richten sie einen der folgenden Zeitplaner ein, damit diese URL regelmäßig aufgerufen wird:
 +
-  * https://www.drupal.org/node/23714[Der Cron-Dämon] (Linux, OS X, Solaris,
-BSD [englisch])
-  * https://www.drupal.org/node/31506[Geplante Wartungsaufgaben] (Windows) (englisch)
-  * Einen Cron-SASS-Anbieter (Software as a Service)
-  * Ein Cron-Manager, der von Ihrem Webhosting-Provider zur Verfügung gestellt wird
-(Weitere Informationen finden Sie in der Dokumentation Ihres Providers)
+  * https://www.drupal.org/docs/7/setting-up-cron/configuring-cron-jobs-using-the-cron-command[Der Systemdienst Cron (englisch)] (Linux, OS X, Solaris, BSD)
+  * https://www.drupal.org/docs/7/setting-up-cron-for-drupal/configuring-cron-jobs-with-windows[Geplante Aufgaben (englisch)] (Windows)
+  * Einen Cron-Dienstanbieter (software as a service)
+  * Eine Verwaltungsoberfläche für Cron-Aufgaben, die durch Ihren Webhoster bereitgestellt wird (Lesen Sie dazu die Dokumentation Ihres Webhosters)
+
 
 
 // ==== Vertiefen Sie Ihre Kenntnisse
