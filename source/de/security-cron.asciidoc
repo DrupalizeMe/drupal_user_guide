@@ -3,60 +3,54 @@
 === Konfigurieren von Cron-Wartungsaufgaben
 
 [role="summary"]
-Wie man Cron-Wartungsaufgaben mit dem zentralen automatisierten Cron-Modul ausführt, oder durch
-sie von außerhalb des Standortes zu betreiben.
-
+Wie man Cron-Wartungsaufgaben mit dem Kernsystemmodul Automatic Cron ausführt, oder diese außerhalb der Website ausführen lässt
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
 Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden, und wenn nicht, entweder
 Installieren Sie das zentrale automatisierte Cron-Modul oder führen Sie Cron-Wartungsaufgaben aus
 außerhalb der Website.
 
-==== Vorraussetzung Kenntnisse
+==== Erforderliche Vorkenntnisse
 
 <<security-cron-concept>>
 
-// ==== Standortvoraussetzungen
+// ==== Anforderungen an die Webiste
 
 ==== Arbeitsschritte
 
-. Überprüfen Sie den _Statusbericht_ (siehe <<<prevent-status>>), um zu sehen, wann cron
-Wartungsaufgaben wurden zuletzt ausgeführt.
+. Überprüfen Sie den _Statusbericht_ (siehe <<prevent-status>>), um zu sehen, wann Cron
+Wartungsaufgaben zuletzt ausgeführt wurden.
 +
-Wenn Sie die Website mit dem Kerninstallationsprofil Standard installiert haben (oder
-ähnlich), dann könnten Cron-Wartungsaufgaben bereits über die
-Kern Automatisiertes Cron-Modul.  Standardmäßig werden diese Aufgaben etwa alle drei
-Stunden.
+Wenn Sie die Website mit dem Standardinstallationsprofil des Kernsystems (oder auf ähnliche Weise) installiert haben,
+könnten Sie Cron-Wartungsaufgaben bereits mit Hilfe des Moduls Automatic Cron ausführen. Standardmäßig werden diese Aufgaben etwa alle drei
+Stunden ausgeführt.
 
-. Wählen Sie, ob Sie Cron-Wartungsaufgaben mit dem Kern Automated Cron
-Modul oder durch andere Mittel. Das Automated-Cron-Kernmodul ist möglicherweise nicht geeignet
-für einige Websites, weil:
+. Wählen Sie, ob Sie Cron-Wartungsaufgaben mit dem Modul Automated Cron, das mit dem Kernsystem ausgeliefert wird
+oder mit anderen Mitteln ausgeführt werden sollen. Das Modul Automated-Cron ist aus folgenden
+Gründen möglicherweise nicht für Ihre Website geeignet:
 +
-  * Jedes Mal, wenn jemand auf eine Seite auf der Website zugreift, prüft das Modul, wie lange sie
-  ist seit der letzten Ausführung von Cron-Wartungsaufgaben, und führt sie dann aus, wenn
-  notwendig. Wenn über einen längeren Zeitraum niemand die Website besucht, ist eine Cron-Wartung
-  Aufgaben werden nicht ausgeführt.
-  * Cron-Wartungsaufgaben werden ausgeführt, nachdem die Seite generiert wurde. Dies bedeutet
+  * Jedes Mal, wenn jemand auf eine Seite auf der Website zugreift, prüft das Modul, wie viel Zeit
+  seit der letzten Ausführung von Cron-Wartungsaufgaben vergangen ist, und führt die Aufgaben, falls erforderlich,
+  erneut aus. Wenn über einen längeren Zeitraum niemand die Website besucht, werdne Cron-Wartungsaufgaben also nicht ausgeführt.
+  * Cron-Wartungsaufgaben werden ausgeführt, nachdem die Seite geladen wurde. Dies bedeutet
   es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Server-Timeouts
-  erreicht (z.B. PHP-Ausführungszeitüberschreitung). Wenn dies geschieht, werden die Protokolle (siehe
-  <<<prevent-log>>>) wird Fehlermeldungen anzeigen, die cron nicht abschließen kann.
-  * Es fallen geringe Kosten für https://en.wikipedia.org/wiki/Scalability[Skalierbarkeit] an.
-  in Verbindung mit dem Kernmodul Automated Cron. Dies liegt daran, dass eines der Web
-  Server-Prozesse besetzt ist (und andere Webseiten nicht bedienen kann), bis die
-  cron-Wartungsaufgaben sind abgeschlossen.
+ (z.B. PHP-Ausführungszeitüberschreitungen) in kraft treten. Wenn dies geschieht, wird im Systemprotokoll (siehe
+  <<prevent-log>>) eine Fehlermeldung ausgegeben, die darüber Informiert, dass Wartungsaufgaben mittels Cron nicht abgeschlossen werden konnten.
+  * Das Modul Automated Cron bietet aber auch einen Vorteil. Durch den Einsatz des Modus Automated Cron fallen geringere Kosten bezüglich der
+  https://de.wikipedia.org/wiki/Skalierbarkeit[Skalierbarkeit] an.
+  Dies liegt daran, ein Cron-Job einen Prozess auf einem Webserver ausführt, der erst abgeschlossen werden muss, bevor andere Websites bedient werden können.
 
-. Wenn Sie das Kernmodul Automated Cron verwenden möchten, stellen Sie zunächst sicher, daß es
-installiert (es wird mit dem Kern-Standardinstallationsprofil installiert; siehe
-<<config-install>> wenn es nicht installiert ist).
+. Wenn Sie das Kernsystemmodul Automated Cron verwenden möchten, stellen Sie zunächst sicher, dass es
+installiert ist (Das Installationsprofil Standard installiert das Modul automatisch. Siehe:
+<<config-install>> wenn dass Modul nicht installtiert wurde).
 +
-Als Nächstes konfigurieren Sie das Modul so, dass es steuert, wie häufig Cron-Wartungsaufgaben durchgeführt werden
-laufen. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie das gewünschte Intervall aus
-das Feld _Run cron every_ unter _Cron-Einstellungen_, und klicken Sie auf _Speichern
-Konfiguration_.
+Als Nächstes konfigurieren Sie das Modul so, dass es steuert, wie häufig Cron-Wartungsaufgaben durchlaufen werden.
+Navigieren Sie dazu im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
+_System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie im Feld _Run cron every_ unter _Cron-Einstellungen_ das gewünschte Intervall aus
+und klicken Sie auf _Konfiguration Speichern_.
 +
 --
 // Cron-Konfigurationsseite (admin/config/system/cron).
@@ -64,24 +58,24 @@ image:images/security-cron.png["Konfigurieren Sie den Kern des automatisierten C
 --
 
 . Wenn Sie Cron-Wartungsaufgaben von außerhalb der Website ausführen wollen, deinstallieren Sie
-das Kernmodul Automated Cron (siehe <<config-uninstall>>). Als nächstes finden Sie das
-cron-URL. Diese URL wird im _Statusbericht_ angezeigt (siehe <<<prevent-status>>), und
-auf der Verwaltungsseite _Cron_ (siehe vorheriger Schritt). Die URL sieht aus
-wie dieses:
-{\an8}COPY6
+das Kernsystemmodul Automated Cron (siehe <<config-uninstall>>). Als nächstes ermitteln Sie die
+Cron-URL. Diese URL wird im _Statusbericht_ (siehe <<prevent-status>>) und
+auf der Seite _Cron_ im Verwaltungsbereich (siehe oben) angezeigt. Die URL sieht ungefähr wie folgt aus:
+
+_http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 +
-Wann immer diese URL besucht wird, werden Cron-Wartungsaufgaben ausgeführt. Richten Sie eine der
-die folgenden Scheduler, um regelmäßig auf diese URL zuzugreifen:
+Wann immer diese URL besucht wird, werden Cron-Wartungsaufgaben ausgeführt. Richten Sie eines der
+folgenden Programme zur Zeitgesteuerten Ausführung von Aufgaben so ein, dass es regelmäßig auf diese URL zugreift:
 +
   * https://www.drupal.org/node/23714[Der Cron-Dämon] (Linux, OS X, Solaris,
-  BSD)
-  * https://www.drupal.org/node/31506[Geplante Aufgaben] (Windows)
-  * Ein Cron-SASS-Anbieter (Software as a Service)
-  * Ein Cron-Manager, der von Ihrem Webhosting-Provider zur Verfügung gestellt wird (siehe die Dokumentation
-  bereitgestellt von Ihrem Provider)
+  BSD [englisch])
+  * https://www.drupal.org/node/31506[Geplante Wartungsaufgaben] (Windows) (englisch)
+  * Einen Cron-SASS-Anbieter (Software as a Service)
+  * Ein Cron-Manager, der von Ihrem Webhosting-Provider zur Verfügung gestellt wird
+  (Weitere Informationen finden Sie in der Dokumentation Ihres Providers)
 
 
-// ==== Erweitern Sie Ihr Verständnis
+// ==== Vertiefen Sie Ihre Kenntnisse
 
 ==== Verwandte Konzepte
 
@@ -91,17 +85,17 @@ die folgenden Scheduler, um regelmäßig auf diese URL zuzugreifen:
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Configuring Cron Maintenance Tasks"]
+video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Wartungsaufgaben mittels Cron konfigurieren  (englisch)"]
 
 ==== Zusätzliche Ressourcen
 
-* http://docs.drush.org/en/master/cron/[Drush-Seite "Running Drupal cron tasks from Drush"]
-* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Cron einrichten"]
+* http://docs.drush.org/en/master/cron/[Internetseite von Drush "Drupal-Wartungsaufgaben mit Drush ausführen (englisch)"]
+* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Cron einrichten (englisch)"]
 
 
 *Mitwirkende*
 
-Geschrieben und herausgegeben von https://www.drupal.org/u/dalin[Dave Hansen-Lange] unter
+Geschrieben und herausgegeben von https://www.drupal.org/u/dalin[Dave Hansen-Lange] bei
 https://www.advomatic.com/[Advomatisch],
 https://www.drupal.org/u/batigolix[Boris Doesborg],
 und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
