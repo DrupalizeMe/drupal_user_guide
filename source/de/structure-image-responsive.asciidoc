@@ -1,10 +1,9 @@
 [[structure-image-responsive]]
 
-=== Konzept: Reaktionsfähige Bild-Stile
+=== Konzept: Responsive Bildstile
 
 [role="summary"]
-Überblick über reaktionsfähige Bildstile, mit denen Sie verschiedene Bilder bereitstellen können
-für verschiedene Bildschirmgrößen.
+Überblick über responsive Bildstile, mit denen Sie Bilder bereitstellen können, die zu verschiedenen Bildschirmgrößen passen.
 
 (((Responsive image style,overview)))
 (((Image style,responsive)))
@@ -17,23 +16,21 @@ für verschiedene Bildschirmgrößen.
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== Was sind reaktionsfähige Bildstile?
+==== Was sind responsive Bildstile?
 
-Das Kernmodul Responsive Image bietet reaktionsfähige Bildstile. Dies ermöglicht
-Sie Bilder auf Ihrer Website haben, die speziell für verschiedene
-Bildschirmgrößen. Dies ist z.B. nützlich, damit Ihre Website schneller geladen wird auf
-mobile Geräte, da die Bildgrößen für kleinere Bildschirme optimiert sind.
+Das Modul Responsive Image, das mit dem Kernsystem ausgeliefert wird, stellt responsive Bildstile bereit. Dies ermöglicht
+Ihnen Bilder auf Ihrer Website zu erzeugen, die speziell für verschiedene
+Bildschirmgrößen optimiert sind. Dies ist z. B. nützlich, damit Ihre Website auf mobilden geräten schneller geladen werden kann, da die Bildgrößen für kleinere Bildschirme optimiert sind.
 
-Ein reaktionsschneller Bildstil ist eine Zuordnung zwischen Bildstilen und Haltepunkten.
-Haltepunkte sind die Punkte, an denen sich ein reaktionsschneller Entwurf ändern muss, um
-um auf unterschiedliche Bildschirmgrößen zu reagieren. Reagierende Bildstile können entweder funktionieren
-mit Haltepunkten, die in Ihrem Thema definiert sind, oder mit Haltepunkten, die in der
-reaktionsfähige Bildstileinstellungen.
+Ein responsiver Bildstil ist eine Zuordnung zwischen Bildstilen und Breakpoints.
+Breakpoints sind die Umbruchpunkte, an denen sich ein responsives Design muss, um
+auf unterschiedliche Bildschirmgrößen zu reagieren. responsive Bildstile können entweder
+mit Breakpoints funktionieren, die in Ihrem Theme definiert sind, oder mit Brekapoints, die über die Einstellungen für responsive Bilder festgelegt wurden.
 
-Wenn ein reaktionsschneller Bildstil definiert ist, kann er in den Anzeigeeinstellungen verwendet werden
-für Bildfelder. Auf diese Weise kann die Website ansprechende Bilder mit der
+Wenn ein responsiver Bildstil definiert ist, kann er in den Anzeigeeinstellungen von
+Bildfeldern verwendet werden. Auf diese Weise kann die Website Bilder mittels des
 HTML5 _picture_-Tag oder die Verwendung der Attribute _srcset_ und _sizes_ in einem _img_
-Tag, je nachdem, wie der ansprechende Bildstil eingerichtet ist.
+Tag ausliefern, je nachdem, wie der responsive Bildstil eingerichtet ist.
 
 ==== Verwandte Themen
 
@@ -43,16 +40,16 @@ Tag, je nachdem, wie der ansprechende Bildstil eingerichtet ist.
 
 * https://www.drupal.org/node/1388492[_Drupal.org_ Community-Dokumentationsseite "Reaktionsfähiges Webdesign"]
 
-* https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[_Drupal.org_ community documentation page "Responsive images in Drupal 8"]]
+* https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[_Drupal.org_ community documentation page "Responsive Bilder in Drupal 8 (englisch)"]
 
-* https://www.drupal.org/docs/8/theming-drupal-8/working-with-breakpoints-in-drupal-8[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Haltepunkten in Drupal 8"]
+* https://www.drupal.org/docs/8/theming-drupal-8/working-with-breakpoints-in-drupal-8[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Breakpoints in Drupal 8 (englisch)"]
 
-* https://chromatichq.com/blog/responsive-images-drupal-8-using-srcset[Blog-Post "Responsive Images in Drupal 8 mit 'srcset'"]
+* https://chromatichq.com/blog/responsive-images-drupal-8-using-srcset[Blog-Post "Responsive Bilder in Drupal 8 mit 'srcset' (englisch)"]
 
 *Mitwirkende*
 
-Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborg] aus
+Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborg] von
 https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8[Responsiv
-Bilder in Drupal 8],
+Bilder in Drupal 8 (englisch)],
 copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
