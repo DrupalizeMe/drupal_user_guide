@@ -17,80 +17,74 @@ System (CMS).
 
 ==== Was ist ein Content Management System?
 
-Ein Content-Management-System (CMS) ist ein Software-Werkzeug, mit dem die Benutzer etwas hinzufügen können,
-Inhalte einer Website zu veröffentlichen, zu bearbeiten oder von einer Website zu entfernen, mit einem Webbrowser auf einer
-Smartphone, Tablet oder Desktop-Computer. Typischerweise wird die CMS-Software wie folgt geschrieben
-in einer Skriptsprache, und ihre Skripte laufen auf einem Computer, auf dem eine Datenbank und
-ein Webserver installiert sind. Die Inhalte und Einstellungen für die Website sind in der Regel
-in einer Datenbank gespeichert, und zwar für jede Seitenanforderung, die an den Webserver kommt,
-die Skripte kombinieren Informationen aus der Datenbank und _Assets_ (JavaScript
+Ein Content-Management-System (CMS) ist ein Software-Werkzeug, mit dem die Benutzer beispielsweise etwas zu einer Website hinzufügen können,
+vorhandene Inhalte auf einer Website bearbetein oder veröffentlichen können oder vorhandene Inhalte von der Website entfernen können. Dies können Benutzer mittels eins Webbrowsers erledigen, der  auf einem Smartphone, einem Tablet oder einem Desktop-Computer installiert ist. Typischer Weise wird eine solche CMS-Software
+in einer Skriptsprache geschreiben. Die für die Software erstellten Skripte laufen anschließend auf einem Computer, auf dem ein Datenbank-Server und
+ein Web-Server installiert sind. Die Inhalte und Einstellungen der Website sind in der Regel
+in einer Datenbank gespeichert. Bei jeder Anfrage, die ein Browser nun an die Website stellt,
+kombinieren die Skripte nun  Informationen aus der Datenbank und _Assets_ (JavaScript
 Dateien, CSS-Dateien, Bilddateien usw., die Teil des CMS sind oder
-hochgeladen), um die Seiten der Website zu erstellen.
+hochgeladen wurden), um die Seiten der Website zu erstellen.
 
-Die Kombination aus dem Betriebssystem, auf dem das CMS läuft, dem Skripting
-Sprache, in der es geschrieben ist, die Datenbank, in der es seine Informationen speichert, und die
-Webserver, der die Skripte ausführt, um Informationen abzurufen und sie an den
-Der Webbrowser des Website-Besuchers ist bekannt als der _Stapel_, auf dem das CMS läuft; der
-häufig verwendete Kombination des Linux-Betriebssystems, Apache Webserver,
-MySQL-Datenbank, und die Skriptsprache PHP ist als _LAMP-Stack_ bekannt.
+Die Kombination aus dem Betriebssystem, auf dem das CMS läuft, der Skriptsprache, 
+in der es geschrieben ist, die Datenbank, in der es seine Informationen speichert, und die
+Webserver, der die Skripte ausführt, um Informationen abzurufen und sie an den Browser auszuliefern
+wird als _Stack_ bezeichnet. Gemeint ist damit die Software, die benötigt wird um das CMS auszufühen; Eine
+häufig verwendete Kombination die aus einem Linux-Betriebssystem, dem Webserver Apache, der
+Datenbank Mysql, und die Skriptsprache PHP besteht, ist als _LAMP-Stack_ bekannt.
 
 ==== Was ist Drupal?
 
-Drupal ist ein flexibles CMS, das auf dem LAMP-Stack basiert und modular aufgebaut ist.
+Drupal ist ein flexibles CMS, das auf einem LAMP-Stack ausgeführt wird und modular aufgebaut ist.
 Funktionen, die durch die Installation und Deinstallation von _Modulen_ hinzugefügt und entfernt werden können, und
 die Möglichkeit, das gesamte Erscheinungsbild der Website durch Installation und
-Deinstallation von _Themen_. Der Basis-Drupal-Download, bekannt als Drupal Core, enthält
+Deinstallation von _Themen_. Der Basis-Drupal-Download, bekannt als Drupal Core (bz. Drupal-Kernsysteem), enthält
 die PHP-Skripte, die zur Ausführung der grundlegenden CMS-Funktionalität benötigt werden, mehrere optional
 Module und Themen sowie viele JavaScript-, CSS- und Bildmaterialien. Viele zusätzliche
-Module und Themen können von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden.
-Website.
+Module und Themes können von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden.
 
-Drupal kann auch auf anderen Technologiestacks laufen:
+Drupal kann auch Stacks ausgeführt wertden. die aus anderen Technologien bestehen:
 
-* Das Betriebssystem kann Windows oder Mac OS anstelle von Linux sein.
+* Das Betriebssystem kann auch Windows oder Mac OS anstelle von Linux sein.
 
-* Der Webserver kann Nginx oder IIS anstelle von Apache sein.
+* Der Webserver kann auch Nginx oder IIS anstelle von Apache sein.
 
-* Die Datenbank kann PostgreSQL oder SQLite anstelle von MySQL sein, oder ein
-MySQL-kompatibler Ersatz wie MariaDB oder Percona.
+* Die Datenbank kann auch PostgreSQL oder SQLite anstelle von MySQL oder ein
+MySQL-kompatibler Ersatz wie MariaDB oder Percona sein.
 
-Es können auch andere Betriebssysteme, Webserver und Datenbanken zum Laufen gebracht werden;
-die Skripte, die die Software verwendet, sind jedoch in PHP geschrieben, so dass
-geändert werden.
+Drupal kann auch auf andere Betriebssysteme, Webserver und Datenbanken zum Laufen gebracht werden;
+die Skripte, die die Software verwendet, sind jedoch in PHP geschrieben, so dass PHP auf jeden Fall erfordlich ist,
+um Drupal auszuführen.
 
-==== Was sind die Gründe für die Verwendung von Drupal?
+==== Warum sollten Sie Drupal verwenden?
 
 Wenn Sie eine Website erstellen, haben Sie die Wahl, eine der vielen vorhandenen
 CMS-Pakete und gehostete Dienste, Entwicklung Ihres eigenen CMS oder Aufbau der Website
-ohne Verwendung eines CMS. Hier sind einige der Gründe, warum Sie sich für die Verwendung eines CMS entscheiden könnten
-Drupal:
+ohne Verwendung eines CMS. Hier sind einige der Gründe, warum Sie sich für die Verwendung des CMS-Systems Drupal entscheiden könnten:
 
-* Der Aufbau einer kleinen, einfachen Website mit statischen HTML-Seiten ist nicht schwierig, und Sie
-kann eine einfache Website sehr schnell eingerichtet werden. Einrichten einer Website in einem CMS allgemein
-erfordert anfangs mehr Zeit, bringt Ihnen aber die Vorteile der Online-Bearbeitung
-(einfacher für weniger erfahrene Inhaltspfleger), Einheitlichkeit (schwieriger zu
-die Verwendung von statischem HTML für größere Sites beibehalten), und die Möglichkeit von mehr
-komplexe Funktionen, die eine Datenbank erfordern.
+* Der Aufbau einer kleinen, einfachen Website mit statischen HTML-Seiten ist nicht schwierig.
+* Eine einfache Website kann sehr schnell eingerichtet werden. 
+* Das Einrichten einer Website in einem CMS erfordert anfangs im Allgemeinen mehr Zeit, bringt Ihnen aber die Vorteile der direkten Bearbeitung Ihrer Inhalte innerhalb eines Webbrowsers und direkt auf einem Webserver (dies ist für weniger erfahrene Redakteure wesentlich einfacher). 
+* Einheitliche Struktur (De Verwendung von statischem HTML ist beigrößere Sites wesentlich schwiriger und eine einheitliche Stuktur ist bei solchen Websites wesentlich schwieriger beizubehalten, wenn reiner HTML-Quelltext verwendet wird, um die Website zu erstellen) 
+* Die Möglichkeit wessentlich komplexre Funktionen, die eine Datenbank erfordern einzusetzen.
 
-* Einige CMS-Software ist für spezielle Zwecke gedacht; so gibt es zum Beispiel Pakete und
-gehostete Dienste, die Sie zum Aufbau eines Blogs oder einer Club-Mitgliedschaft nutzen können
-Website. Drupal hingegen ist ein CMS für allgemeine Zwecke. Wenn Sie eine
-Spezial-Website, können Sie sich für die Verwendung eines Spezial-CMS entscheiden; allerdings, wenn
-Wenn Ihre Website auch nur geringfügig über den beabsichtigten Zweck hinausgeht, werden Sie wahrscheinlich
-Es ist besser, ein Allzweck-CMS zu verwenden, als zu versuchen, ein
-CMS für besondere Zwecke.
+* Bestimmte CMS-Software ist für spezielle Zwecke gedacht. So gibt es zum Beispiel Pakete und
+gehostete Dienste, die Sie zum Aufbau eines Blogs oder eines Mitgliederbereiches nutzen können. 
+Drupal hingegen ist ein allgemein gehaltenes CMS. Wenn Sie eine
+Spezial-Website benötigen, können Sie sich dafür entscheiden, ein Spezial-CMS zu verwenden. Sobald die Anforderungen Ihrer Website aber nur geringfügig über den vorgegebenen Zweck eines solche nSpezial-CMS hinausgehen, stoßen Sie warscheinlich auf Probleme.
+Daher ist es besser, ein grundlegend algemein gehaltenes CMS zu verwenden, als zu versuchen, ein
+auf bestimmte Zwecke zugeschnittenes CMS anzupassen.
 
-* Der Aufbau einer eigenen Software vom Typ CMS kann attraktiv erscheinen. Allerdings kann die Verwendung eines
-Ein Allzweck-CMS wie Drupal als Ausgangspunkt ist in der Regel eine bessere Idee,
-weil die grundlegende CMS-Funktionalität (wie Benutzerkonten und Inhalte
-Management) hat Tausende von Entwicklungsstunden hinter sich, darunter viele Jahre
-Benutzertests, Fehlerbehebung und Sicherheitshärtung.
+* Der Aufbau einer eigenen Software vom Typ CMS kann attraktiv erscheinen.
+Ein Allzweck-CMS wie Drupal als Ausgangspunkt für Ihr Projekt ist in der Regel eine bessere Idee,
+weil in den grundlegendem CMS-Funktionen (wie Benutzerkonten und Inhaltsverwaltung) bereits  tausende von Entwicklungsstunden stecken. In diesem Zeitraum wurden bereits
+Viele Jahre für Usability-Tests, Fehlerbehebung und zur Behebung und Vermeidung von Sicherheitslücken verwendet. Dies stellt Ihr Projekt auf eine sicherere und soliedere Basis, als eine komplett neue Eigenentwicklung.
 
-* Für einige CMS-Softwarepakete ist der Erwerb einer Lizenz teuer. Einige sind
-frei oder haben eine freie Version, haben aber restriktive Lizenzen, die es Ihnen nicht erlauben
-um Änderungen und Erweiterungen vorzunehmen. Sie könnten es vorziehen, ein Paket (wie
-Drupal), das eine weniger restriktive Software-Lizenz hat und von einem
-weltweite Gemeinschaft. Siehe <<understanding-project>> für mehr zu diesem Thema.
+* Für einige CMS-Softwarepakete ist der Erwerb einer teuren Lizenz erforderlich. Einige sind
+kostenlos oder haben eine kostenlose Version, haben aber restriktive Lizenzen, die es Ihnen nicht erlauben
+Änderungen und Erweiterungen am Quelltext der Software vorzunehmen. Sie könnten es vorziehen an stelle eines solchen Paketes, ein Paket (wie
+Drupal) zu verwenden, das einer weniger restriktive Software-Lizenz unterliegt  und von einem
+weltweite Gemeinschaft entwicklet wird, zu verwenden. Siehe <<understanding-project>> für mehr zu diesem Thema.
 
 ==== Verwandte Themen
 
@@ -103,21 +97,21 @@ weltweite Gemeinschaft. Siehe <<understanding-project>> für mehr zu diesem Them
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/8/understanding-drupal-8/overview[Die Drupal-Übersicht]
+* https://www.drupal.org/docs/8/understanding-drupal-8/overview[Die Überblick pber Drupal 8]
 
 * https://www.drupal.org/about/faq[_Drupal.org_ Seite "FAQ" (Häufig gestellte Fragen)]
 
 * https://www.drupal.org/case-studies[_Drupal.org_ Seite "Fallstudien"]]
 
-* https://en.wikipedia.org/wiki/Content_management_system[Wikipedia-Seite "Inhaltsverwaltungssysteme"]
+* https://de.wikipedia.org/wiki/Content_management_system[Wikipedia-Seite "Content Management Systeme"]
 
-* https://en.wikipedia.org/wiki/Modular_design[Wikipedia-Seite "Modularer Aufbau"]
+* https://de.wikipedia.org/wiki/Modular_design[Wikipedia-Seite "Modulares Design"]
 
 
 *Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/kvantomme[Kristof van Tomme]
-unter https://pronovix.com/[Pronovix],
+bei https://pronovix.com/[Pronovix],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
 und https://www.drupal.org/u/michaellenahan[Michael Lenahan]
-unter https://erdfisch.de[erdfisch].
+bei https://erdfisch.de[erdfisch].
