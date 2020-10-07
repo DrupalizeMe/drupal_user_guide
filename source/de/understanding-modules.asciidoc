@@ -30,29 +30,23 @@
 
 ==== Was ist ein Modul?
 
-Ein Modul ist ein Satz von PHP-, JavaScript- und/oder CSS-Dateien, der die Website
-Features und zusätzliche Funktionalität. Sie können die Features und Funktionen einschalten
-durch _Installation_ des Moduls, und Sie können es durch _Deinstallation_ der
-Modul; vor der Deinstallation müssen Sie möglicherweise Daten und Konfiguration entfernen
-die sich auf das Merkmal oder die Funktionalität beziehen. Jedes Modul, das installiert wird, fügt hinzu
-die Zeit, die benötigt wird, um Seiten auf Ihrer Website zu generieren, daher ist es eine gute Idee
-deinstallieren Sie Module, die nicht benötigt werden.
+Ein Modul ist ein Satz von PHP-, JavaScript- und/oder CSS-Dateien, der bestimmte neue Funktionen innerhalb einer 
+Drupal-Website bereitstellt. Eine Neue Funktion, können Sie durch die _Installation_ eines zusätzlichen Moduls aktivieren Durch die _Deinstallation_ eines Moduls, kann eine bestimmte Funktion auf Wunsch auch abgescahlten werden. Vor der Deinstallation müssen Sie möglicherweise Daten und Konfiguration entfernen die mit der Funktionsweise eines Moduls in zusammenhang sthehen. Jedes Modul, das installiert wird, erhöht die Ladezeit der Website. Daher ist es eine gute Idee, Module ndie nicht benötigt werden, zu deinstallieren.
 
-Der Kerndownload bietet Module für Funktionen wie
+Das Kernsystem bietet Module für Funktionen wie:
 
-* Verwaltung von Benutzerkonten (das Kernmodul User)
+* Das Verwalten von Benutzerkonten (mittels des Kernsystemmoduls User)
 
-* Verwaltung des grundlegenden Inhalts (das Kern-Knoten-Modul) und der Felder (das Kern-Feld und
-Feld-UI-Module; es gibt auch Kernmodule, die Feldtypen bereitstellen)
+* Das Verwalten des grundlegenden Inhalts (mittels des Kernsystemmoduls Node) und der im Inhalt enthaltennen Felder (mittiels der Kernsystemmodule Field und Feld-UI. Es gibt auch Kernsystemmodule, die zusätzliche Feldtypen bereitstellen)
 
-* Verwaltung von Navigationsmenüs (das Kernmodul der Menü-Benutzeroberfläche)
+* Das Verwalten von Navigationsmenüs (mittels des Kernsystemmoduls Menu-UI)
 
-* Erstellen von Listen, Gitternetzen und Blöcken aus vorhandenen Inhalten (die Kernansichten und
-Ansichten der UI-Module)
+* Das Erstellen von Listen, Rastern und Blöcken aus vorhandenen Inhalten (mittels der Kernsystemmodule Views und
+Views-Ui).
 
-Sie können zusätzliche _beitragspflichtige Module_ von der
-https://www.drupal.org/project/project_module[_Drupal.org_ Modul-Downloads], oder erstellen Sie Ihr eigenes
-_benutzerdefinierte Module_.
+Sie können die _von der Community bereitgestellten Zusatzmodule_ von der Website
+https://www.drupal.org/project/project_module[_Drupal.org_ Modul-Downloads] herunterladen oder eigene
+_benutzerdefinierte Module_ erstellen.
 
 ==== Verwandte Themen
 
