@@ -8,17 +8,16 @@ Die in diesem Handbuch getroffenenn Annahmen verstehen.
 
 Dieses Handbuch geht von den folgenden Annahmen und Voraussetzungen aus:
 
-* Dieses Handbuch ist nach Themen gegliedert; siehe: <<preface-organization>> für weitere Informationen.
+* Dieses Handbuch ist nach Themen gegliedert. Siehe: <<preface-organization>> für weitere Informationen.
 Viele Themen enthalten den Abschnitt _Erforderliche Vorkenntnisse_, in dem andere
 Themen, genannt werden, mit deren Inhalten Sie sich auseinandergesetzt haben müssen, um das Thema, das Sie
 gerade lesen verstehen zu können. Außerdem setzen wir auch etwas Hintergrundwissen voraus, das im Handbuch selbst nicht behandelt wird.
 Siehe: <<preface-audience>> für weitere Informationen.
 
 * Viele Arbeitsthemen listen _Anforderungen an die Website_ auf, d.h. Aufgaben, die Sie
-auf Ihrer Website bereits abgeschlossen haben müssen, bevor Sie die Aufgabe, die
-in einem Thema behandelt wird, das sie gerade lesen, umsetzen können.
+auf Ihrer Website bereits abgeschlossen haben müssen, damit die Voraussetzungen erfüllt sind, die erfüllt sein müssen, damit Sie eine Aufgabe, die in dem Thema behandelt wird, das sie gerade durcharbeiten möchten, umsetzen können.
 
-* Die Besonderheiten der Anforderungen an die Website beziehen sich auf das Szenario, das im gesamten
+* Die besonderheiten der Anforderungen an die Website beziehen sich auf das Szenario, das im gesamten
 Handbuch für die Erstellung der Wochenmarkt-Website verwendet wird (siehe: <<preface-scenario>>
 für Einzelheiten). Sie können die Aufgaben an Ihr eigenes Szenario anpassen,
 müssen sich dann aber auch an die benutzerdefinierten Änderungen erinnern, die Sie vorgenommen haben,
@@ -41,7 +40,7 @@ Website, während Sie das Handbuch Stück für Stück durcharbeiten.
 * Dieses Handbuch zeigt Ihnen, wie Sie Aufgaben über den Verwaltungsbereich und wo immer möglich,
 auch unter Verwendung der neuesten stabilen Version des Kommandozeilenwerkzeugs
 Drush (siehe: <<install-tools>>) erledigen können. Sie können gerne ein
-anderes Kommandozeilenwerkzeug, wie z.B. die Drupal Console
+anderes Kommandozeilenwerkzeug, wie z. B. die Drupal Console
 (wenn Sie die dafür aktuell verfügbaren Befehle nachschlagen) oder vorerst nur
 den Verwaltungsbereich der Benutzeroberfläche verwenden.
 
@@ -58,7 +57,7 @@ wie zum Beispiel: Klicken Sie auf _Konfiguration speichern_. Dies gilt nur für 
 die mit der Software mitgeliefert werden und nur für den Teil der Benutzeroberfläche, der im aktuellen Thema behandelt wird.
 Zum Beispiel könnten Sie in einem Thema über das Bearbeiten von Inhalten folgendes lesen:
 Klicken Sie auf _Bearbeiten_ in der Zeile der Seite „Info“ (_Bearbeiten_ wäre in diesem Fall Kursiv dargestellt.
-Das Wort Info  wäre nicht kursiv dargestellt, weil die Info-Seite in einem vorgegangenen Thema behandelt worden währe).
+Das Wort Info  wäre nicht kursiv dargestellt, weil die Info-Seite in einem vorherigen Thema behandelt worden währe).
 
 * URLs, Dateinamen und neu eingeführte Terminologie werden auch in
 _Kursivschrift_ dargestellt.
@@ -100,20 +99,20 @@ Hier ist ein weiteres Beispiel:
 
 =============
 Navigieren Sie im Menü _Verwalten_ zum Menüpunkt
-_Konfiguration_ > _System_ > _Grundlegende Website-Einstellungen_
+_Konfiguration_ > _System_ > _Grundlegende Einstellungen der Website_
 (_admin/config/system/site-information_).
 =============
 
 In diesem Beispiel würden Sie, nachdem Sie auf _Verwalten_ und _Konfiguration_
 geklickt haben, nachdem Abschnitt _System_  auf der Seite Konfiguration gesucht und gefunden haben
-und dort auf den Link _Grundlegende Website-Einstellungen geklickt haben_. Danach landen Sie auf der Seite
+und dort auf den Link _Grundlegende Einstellungen der Website geklickt haben_. Danach landen Sie auf der Seite
 _http://example.com/admin/config/system/site-information_.
 
 // System section of admin/config page.
 image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
 
 Ein weiterer Hinweis: Wenn Sie das mit dem Kernsystem ausgelieferte Verwaltungs-Theme Seven verwenden,
-werden viele „Hinzufügen"-Button im Verwaltungsberiech mit \+-Zeichen angezeigt.
+werden viele „Hinzufügen"-Button im Verwaltungsbereich mit \+-Zeichen angezeigt.
 Zum Beispiel erscheint unter dem  Menüpunkt Verwalten/Inhalt der Button „Neuen Inhalt hinzufügen als
 _+ Neuen Inhalt hinzufügen_. Dies ist jedoch abhängig vom verwendeten Theme und gehört nicht wirklich zum
 Text des Buttons (Ein Screen Reader würde den Text beispielsweise falsch vorlesen), so dass wir uns entschieden haben, das \+-Zeichen in diesem Handbuch nicht zu erwähnen
@@ -132,7 +131,7 @@ _System_ > _Grundlegende Website-Einstellungen_ (_admin/config/system/site-infor
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname|Erläuterung|Beispielwert
-|Grundeinstellugen der Website > Name der Website|Name Ihrer Website|Musterstadt Wochenmarkt
+|Grundeinstellungen der Website > Name der Website|Name Ihrer Website|Musterstadt Wochenmarkt
 |================================
 
 Um diese Tabelle zu verwenden, suchen Sie das Feld mit der Bezeichnung _Name der Website_ im Abschnitt
@@ -141,7 +140,7 @@ Feld ein. Ein Beispiel für den Namen „Musterstadt Wochenmarkt" wird im Feld B
 Die Tabelle, die sich auf das Szenario der Erstellung einer Website für einen Wochenmarkt bezieht
 finden Sie in diesem Handbuch (siehe: <<preface-scenario>> für
 weitere Informationen). Beachten Sie auch, dass Sie auf einigen Formularen möglicherweise auf den Titel eines Abschnitts klicken müssen.
-(z. B. auf _Grundelegende Einstellungen der Website_), um einem Formularabschnitt auszuklappen, um das jeweilige Feld sehen zu können.
+(z. B. auf _Grundlegende Website-Einstellungen_), um einem Formularabschnitt auszuklappen, um das jeweilige Feld sehen zu können.
 
 
 *Mitwirkende*
