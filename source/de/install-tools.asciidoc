@@ -28,7 +28,7 @@ und präziser mit weniger Aufwand zu erstellen.
 Drush und Drupal-Console::
   Mehr über Kommandozeilenwerkzeuge erfahren Sie weiter unten.
 Git::
-  Mehr über über Versionskontrollwerkzeuge erfahren Sie weiter unten.
+  Mehr über Versionskontrollwerkzeuge erfahren Sie weiter unten.
 Composer:::
   Weitere Informationen zu Composer finden Sie weiter unten.
 Devel::: Weitere Informationen zu Devel finden Sie weiter unten:
@@ -69,7 +69,7 @@ Befehle der Drupal Console und aus älteren Versionen von Drush werden in diesem
 Handbuch nicht dokumentiert. Sie können diese Befehle jedoch in den
 Dokumentationen zu Drupal Console und Drush nachlesen.
 
-Um diese Tools verwenden zu können, benötigen Zugang zur Kommandozeile des
+Um diese Tools verwenden zu können, benötigen Sie Zugang zur Kommandozeile des
 Servers auf dem Ihre Website gehostet wird. Außerdem müssen Sie zunächst Composer
 installieren um entweder Drush oder die Drupal-Console installieren zu können.
 
@@ -82,35 +82,35 @@ Siehe <<install-composer>>.  Verwenden Sie anschließend folgende Befehle:
 # Installation von Drush
 composer require drush/drush
 
-# Drupal Console installieren
+# Installation der Drupal Console
 composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader
 ----
 
 ==== Was ist ein Versionskontrollsystem?
 
 Ein Versionskontrollsystem ist  eine Software, die Kopien von Dateien mit einer
-Revisionens-Hostorie in einer _Repository_ einrichtet und Ihnen so ermöglicht
+Revisions-Historie in einer _Repository_ einrichtet und Ihnen so ermöglicht
 Dateien hinzuzufügen, zu löschen und zu aktualisieren. Ein solches
-Versionskontrollsystem kann beim erstellen eines Webprojektes sehr hilfreich
-sien. Versionskontrollsysteme bieten unter anderem folgende Vorteile:
+Versionskontrollsystem kann beim Erstellen eines Webprojektes sehr hilfreich
+sein. Versionskontrollsysteme bieten unter anderem folgende Vorteile:
 
 * Sie können lokal testen, bevor Sie Dateien auf ihrer Live-Site bereitstellen.
 
-* Sie können frühere Versionen von Dateien betrachten, vergleichen ältere
+* Sie können frühere Versionen von Dateien betrachten und vergleichen oder ältere
   Dateiversionen wiederherstellen.
 
-* Sie können sich hinzugefügte, geänderten oder gelöschten Dateien ansehen,
+* Sie können sich hinzugefügte, geänderte oder gelöschten Dateien ansehen,
   bevor Sie sich mit den Änderungen an Ihrem Projekt _einverstanden_
   erklären und diese an Ihre Repository übertragen (um diese zu aktualisieren).
 
-* Sie können Änderungen von verschiedenen Teammitgliedern zusammenführen
+* Sie können Änderungen von verschiedenen Teammitgliedern zusammenführen,
 
-* Halten Sie Dateien und Konfiguration zwischen lokalen und Live-Standorten synchronisiert
+* Sie können Dateien und Konfigurationseinstellungen zwischen lokalen Webseiten und Live-Webseiten synchronisiert hateln.
 
 Es stehen viele Versionskontrollsysteme zur Auswahl.
 Proprietäre und Open-Source-Lösungen. Ein beliebtes System zur Versionskontrolle
 ist https://git-scm.com/[Git]. Git ist eine quelloffene Software, die auf den
-meisten Computerplattformen läuft. Git ist eine Versionskontrollsystem zur
+meisten Computerplattformen läuft. Git ist ein Versionskontrollsystem zur
 Verteilung von Software-Versionen, das es Ihnen ermöglicht, eine oder mehrere
 Kopien Ihrer Repository zu besitzen. So ist es Ihnen möglich, Änderungen an
 einer Kopie der Software vorzunehmen und sie dann nur noch in die
@@ -137,7 +137,7 @@ extern entwickelten Software-Bibliotheken besteht, die heruntergeladen
 und installiert werden müssen, damit das Kernsystem funktionieren kann.
 Wenn Sie das Kernsystem installieren, können Sie
 entweder ein Archiv herunterladen, das kompatible Versionen der
-externe Bibliotheken enthält oder Sie verwenden Composer, um die externe
+externen Bibliotheken enthält oder Sie verwenden Composer, um die externen
 Bibliotheken nach dem Herunterladen des Kernsystems
 aus dem Internet herunterladen und installieren zu lassen.
 Auch die Kommandozeilenwerkzeuge Drush und Drupal-Console können mittels
@@ -148,7 +148,7 @@ extern entwickelte Software-Bibliotheken. Ein Modul zur Integration von Facebook
 könnte beispielsweise Facebook's Software-Bibliothek benötigen, die installiert
 werden muss, damit das Modul auf  die von Facebook angebotenen Funktionen
 zugreifen kann. Ein Modul zur Darstellung von Landkarten, könnte eine Bibliothek
-benötigen, die geographische Angaben wie Längen- und Breiteengrade enthält,
+benötigen, die geographische Angaben wie Längen- und Breitengrade enthält,
 um bestimmte Punkte auf einer Landkarte markieren zu können.
 Wenn Sie ein Modul mit externen Abhängigkeiten installieren, müssen Sie Composer
 ausführen, damit diese Abhängigkeiten heruntergeladen und installiert
@@ -156,24 +156,24 @@ werden können.
 
 ==== Welche Werkzeuge stehen den Modul- und Theme-Entwicklern (Designern) zur Verfügung?
 
-Zusätzlich zu den oben erwähnten Werkzeugen fpr Site-Buildern sind folgende
-Werkzeuge verfügbar für Modul- und Theme-Entwickler verfügbar.
+Zusätzlich zu den oben erwähnten Werkzeugen für Site-Buildern sind folgende
+Werkzeuge für Modul- und Theme-Entwickler verfügbar.
 
 Drupal-Console::
   https://drupalconsole.com[Drupal-Console] ist ein Kommandozeilen-Tool, das
-  Code-Vorlagen geneireirt und mit einer Drupal-Website interagiert.
+  Code-Vorlagen geneiriert und mit einer Drupal-Website interagiert.
   Es kann z. B. Code für Blöcke oder Formulare generieren, Module und Themes
   installieren und Platzhalter-Inhalte erstellen.
   Die Drupal Console verwendet die Symfony Console.
 Coder::
   https://www.drupal.org/project/coder[Coder] ist ein Kommandozeilen-Werkzeug,
-  mit dem überprüft werden kann, ob Ihre Module und Themes den Coding-Stands
+  mit dem überprüft werden kann, ob Ihre Module und Themes den Coding-Stdards
   und anderen Best-Practice-Lösungen entsprechen. Coder kann auch Verstöße gegen
   Coding-Standards beheben.
 Browser-Debugging-Werkzeuge::
   Webbrowser wie Firefox und Chrome enthalten Tools, die die Anzeige,
   Bearbeitung, Fehlerbehebung und Überwachung von CSS, HTML und JavaScript
-  ermöglichen. Sie können die Debugging-Fenster bzw. die  Entwicklungswerkzeuge im Browser öffnen, indem Sie mit der rechten Maustaste auf einen Bereich Ihrer
+  ermöglichen. Sie können das Debugging-Fenster bzw. die  Entwicklungswerkzeuge im Browser öffnen, indem Sie mit der rechten Maustaste auf einen Bereich Ihrer
   Website klicken und „Untersuchen" oder „Element untersuchen" auswählen.
 
 
@@ -183,17 +183,17 @@ Browser-Debugging-Werkzeuge::
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/node/147789[_Drupal.org_ Community-Dokumentationsseite "Entwicklungswerkzeuge"]
+* https://www.drupal.org/node/147789[_Drupal.org_ Community-Dokumentationsseite "Entwicklungswerkzeuge (englisch)"]
 
-* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ Community-Dokumentationsseite "Verwendung von Composer mit Drupal"]
+* https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal[_Drupal.org_ Community-Dokumentationsseite "Verwendung von Composer mit Drupal (englisch)"]
 
-* https://en.wikipedia.org/wiki/Distributed_version_control[Wikipedia-Artikel "Verteilte Versionskontrolle"]
+* https://en.wikipedia.org/wiki/Distributed_version_control[Wikipedia-Artikel "Verteilte Versionskontrolle (englisch)"]
 
 
 *Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg]
-und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Einige Texte angepasst von
-https://www.drupal.org/node/991716["Einführung in Git"],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Einige Texte wurden in angepaster Form aus
+https://www.drupal.org/node/991716["Einführung in Git"] pbernommen.
+copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
