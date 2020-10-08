@@ -30,7 +30,7 @@
 ===== Festplattenspeicherplatz
 
 Die Gesamtmenge des für Ihre Website benötigten Speicherplatzes
-ist keine fester Größe, der Benötigte Speicherplatz hängt von Ihrer Website ab.
+ist keine feste Größe. der Benötigte Speicherplatz hängt von Ihrer Website ab.
 Die Basisdateien des Kernsystems nehmen etwa 100 MB Speicherplatz
 auf dem Webserver in Anspruch. Weiterer Speicherplatz wird benötigt, sobald Sie
 zusätzliche Module oder Themes installieren. Außerdem wird Speicherplatz auch
@@ -43,7 +43,7 @@ Server) befindet.
 
 ===== PHP
 
-PHP 7.2 oder höher. PHP muss mindestens  64MB Arbeitsspeicher
+PHP 7.2 oder höher. PHP muss mindestens 64MB Arbeitsspeicher
 zur Verfügung stehen. Wenn Sie
 mehrere Module auf Ihrer Website ausführen oder speicherintensive PHP-basierte
 Kommandozeilen-Tools (wie Composer) verwenden, wird wesentlich mehr
@@ -53,10 +53,10 @@ Bestimmte PHP-Erweiterungen sind ebenfalls erforderlich. die vollständige Liste
 der erforderlichen PHP-Erweiterungen hängt davon ab, wie Sie das  Kernsystem
 installieren und welche Module Sie auf Ihrer Website verwenden. Im Allgemeinen
 installieren Hosting-Service-Provider alle PHP-Erweiterungen, die Sie benötigen,
-um Drupal zu verwenden. Wenn Sie Ihre Website selbst hosten oder
+um Drupal verwenden zu können. Wenn Sie Ihre Website selbst hosten oder
 auf Ihrem lokalen Computer betreiben, erhalten Sie während der Installation
 gegebenenfalls Fehlermeldungen die darauf hinweisen, dass erforderliche
-PHP-Erweiterungen fehlen damit Sie die Installieren und die Installation
+PHP-Erweiterungen fehlen damit Sie diese Installieren und die Installation
 von Drupal fortsetzen können.
 
 ===== Web-Server
@@ -77,7 +77,7 @@ Nginx::
   Nginx ist ein häufig verwendeter Webserver, der vor allem bei hohem Zugriffsaufkommen
   auf Ihre Website zur gleichen Zeit, hohe Leistung und geringen
   Speicherverbrauch ausgelegt ist. Das Kernsystem funktioniert auf Nginx 1.1
-  oder neuer, unter UNIX/Linux, OS X oder Windows. Das Modul ngx_http_rewrite_
+  oder neuer, unter UNIX/Linux, Mac OS X oder Windows. Das Modul ngx_http_rewrite_
   muss installiert und aktiviert sein.
 
 Microsoft IIS::
@@ -105,8 +105,8 @@ Datenbank-Software erfordert.
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ Community-Dokumentationsseite "Systemanforderungen"]
-* https://secure.php.net/manual/en/configuration.php[PHP-Laufzeitkonfiguration (PHP-Speicherlimit und andere Einstellungen)]
+* https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ Community-Dokumentationsseite "Systemanforderungen (englisch)"]
+* https://secure.php.net/manual/en/configuration.php[PHP-Laufzeitkonfiguration (PHP-Speicherlimit und andere Einstellungen) (englisch)]
 
 
 *Mitwirkende*
@@ -115,5 +115,5 @@ Bearbeitet von https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
 https://www.drupal.org/u/bemery987[Brian Emery], und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] entnommen aus
 https://www.drupal.org/docs/8/system-requirements["Systemvoraussetzungen"],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Comunity].
