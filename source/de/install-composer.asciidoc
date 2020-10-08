@@ -25,8 +25,8 @@ Composer zur Verwaltung der Dateien im Kernsystem und in Zusatzmodulen verwenden
 
 ==== Zielsetzung
 
-Verwenden Sie den Composer, um Dateien und Abhängigkeiten in der Kern-Software herunterzuladen oder zu aktualisieren,
-oder in Zusatzmodulen und Themes. Überspringen Sie dieses Thema, wenn Sie den Composer nicht verwenden.
+Verwenden Sie den Composer, um Dateien und Abhängigkeiten des Kernsystems oder von installierten Zusatzmodulen und Themes herunterzuladen oder zu aktualisieren,
+Überspringen Sie dieses Thema, wenn Sie den Composer nicht verwenden.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -34,8 +34,7 @@ oder in Zusatzmodulen und Themes. Überspringen Sie dieses Thema, wenn Sie den C
 
 ==== Anforderungen an die Website
 
-Wenn Sie den Composer verwenden möchten, muss er entweder auf einer lokalen Entwicklung
-Server oder Ihre Live-Site. Siehe <<install-tools>>.
+Wenn Sie den Composer verwenden möchten, muss er entweder innerhalb einer lokalen Entwicklungsumgebung direkt auf dem Server installiert sein, auf dem sich Ihre Live-Website befindent. Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
 
@@ -55,18 +54,18 @@ Hauptverzeichnis Ihrer Installation:
 * Das Verzeichnis _vendor_
 * Die Datei _autoload.php_
 * Die Datei _composer.json_
-* Die Dtei _composer.lock_
+* Die Datei _composer.lock_
 
 ===== Composer zum Herunterladen des Kernsystems verwenden
 
 Führen Sie folgende Schritte aus, wenn Sie das Kernsystem noch nicht
 heruntergeladen oder installiert haben und Sie Composer verwenden möchten, um
-sowohl das Kernsystem als auch dessen externen Abhängigkeiten herunterzuladen:
+sowohl das Kernsystem als auch dessen externe Abhängigkeiten herunterzuladen:
 
-. Wechseln Sie auf der Kommandozeile in eine Ebene über dem Verzeichnis, in dem Sie
-die Software, die sich dort befinden soll.
+. Wechseln Sie auf der Kommandozeile in das Verzeichnis, dass sich eine Ebene über dem Verzeichnis befindet, in dem Sie
+die Software, extrahiert haben.
 
-. Geben Sie diesen Befehl ein, wobei _mydir_ das Verzeichnis ist,
+. Geben Sie folgenden Befehl ein, wobei _mydir_ das Verzeichnis ist,
 das Sie erstellen möchten:
 +
 ----
@@ -76,37 +75,37 @@ composer create-project drupal/recommended-project /pfad/zum/übergeordneten/Ver
 . Die neueste Version des Kernsystems wird in das Unterverzeichnis
 _/pfad/zum/übergeordneten/Verzeichnis/der/Installation/web_ heruntergeladen.
 
-===== Eine zuvor heruntergeladenen Website für die Verwaltung mit Composer vorbereiten
+===== Eine zuvor heruntergeladene Website für die Verwaltung mit Composer vorbereiten
 
 Wenn Sie zuvor das Kernsystem heruntergeladen haben, ohne Composer zu verwenden, können Sie
-später feststellen, dass Sie den Composer zur Verwaltung und Aktualisierung verwenden wollen oder müssen
-Abhängigkeiten. Für Sites, die mit Version 8.8.0 oder höher des Kerns erstellt wurden
-Software enthalten die Dateien bereits die erforderliche Composer-Konfiguration und Sie
+später feststellen, dass Sie den Composer zur Verwaltung und Aktualisierung verwenden wollen oder müssen,
+Abhängigkeiten. Für Sites, die mit Version 8.8.0 oder höher des Kernsystems erstellt wurden
+enthalten bereits die hierfür erforderliche Composer-Konfiguration und Sie
 können jederzeit mit der Nutzung des Composers beginnen.
 
-Wenn Ihre Website Module, Themen oder Profile enthält, die nicht Teil der
-Kern-Software ist es eine gute Idee, sie in die Datei _composer.json_ in der
-Stammverzeichnis Ihrer Website.
+Wenn Ihre Website Module, Themen oder Profile enthält, die nicht Teil des
+Kernsystems sin, ist es eine gute Idee, sie in die Datei _composer.json_ in
+Stammverzeichnis Ihrer Website zu übertragen.
 
-Führen Sie den folgenden Befehl einmal für jedes heruntergeladene Modul, Thema oder Profil aus
-von Drupal.org, wobei der Name des gewünschten Projekts durch +module_name+ ersetzt wird
+Hierfür führen Sie für jedes heruntergeladene Modul, Theme oder Profil einmal den folgenden Befehl aus
+wobei der Name des gewünschten Projekts durch +systemname+ ersetzt wird, um das jeweilige Projekt zur Datei _composer.json_
 hinzufügen:
 
 ----
 composer require drupal/systemname
 ----
 
-Weitere Informationen zur Verwaltung von Site-Abhängigkeiten mit Composer finden Sie weiter unten.
+Weitere Informationen zur Verwaltung von Abhängigkeiten mit Composer finden Sie weiter unten.
 
 So konvertieren Sie eine Site, die mit einer Version des Kernsystems vor
-8.8.0, oder auas einer Zip- oder tar.gz-Datei heraus installiert wurde, die von
-Drupal.org heruntergeladen wurde, um Compoeser zu verwenden. Siehe die Anweisungen unter
-https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen].
+8.8.0, oder aus einer Zip- oder tar.gz-Datei heraus installiert wurde, die von
+Drupal.org heruntergeladen wurde, um Compoeser zu verwenden. Lesen Sie die Anweisungen unter
+https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen (englisch)].
 
 ===== Composer zum Herunterladen eines Moduls oder Themes verwenden
 
 Befolgen Sie diese Arbeitsschritte, wenn Sie bereits Composer zur Verwaltung des
-Kernsystems verwenden, und Sie möchten Composer verwenden,
+Kernsystems verwenden, und Composer verwenden möchten,
 um ein von der Community bereitgestelltes Zusatzmodul  oder Theme und dessen
 Abhängigkeiten hinzuzufügen.
 
@@ -114,10 +113,10 @@ Abhängigkeiten hinzuzufügen.
 hinzufügen möchten, müssen Sie zunächst den Systemnamen des Projekts ermitteln.
 Dies ist der letzte Teil der URL der Projektseite eines Moduls oder Themes.
 Das Modul Geofield ist beispielsweise unter
-https://www.drupal.org/project/geofieldzu finden und hat den Systemnamen +geofield+.
+https://www.drupal.org/project/geofield zu finden und hat den Systemnamen +geofield+.
 
-. Zum Herunterladen eines von der Community bereitgestellten Moduls oder Theme,
-und dessen externe Komponenten, auch Abhängigkeiten genannt, herunterzuladen,
+. Zum Herunterladen eines von der Community bereitgestellten Moduls oder Themes,
+und dessen externer Komponenten, auch Abhängigkeiten genannt, herunterzuladen,
 geben Sie den folgenden Befehl im Hauptverzeichnis Ihrer Website ein (ersetzen Sie
 den Systemnamen des Moduls +geofield+ durch den Systemnamen,
 des von Ihnen benötigten Projekts):
@@ -128,39 +127,36 @@ composer require drupal/geofield
 
 ===== Composer verwenden, um zuvor heruntergeladene Dateien zu aktualisieren
 
-Befolgen Sie diese Arbeitsschritte, um die Dateien des Kernsystems oder die Daten
+Befolgen Sie diese Arbeitsschritte, um die Dateien des Kernsystems oder die Dateien
 eines von der Community bereitgestellten Zusatzmodules oder Themes, mittels
 Composer zu aktualisieren, wenn bereits eine Website vorhanden ist:
 
 . Bestimmen Sie den Systemnamen des Projekts, das Sie aktualisieren möchten.
-Der Systemname ds Kernsystems ist _core_. Für von der Community bereitgestellte
+Der Systemname des Kernsystems ist _core_. Für von der Community bereitgestellte
 Zusatzmodule und Themen ist der Systemname immer der letzte Teil der URL
 der Projektseite des jeweiligen Moduls oder Themes auf Drupal.org
 Der Systemname des Moduls Geofild, dessen Projektseite Sie unter
-https://www.drupal.org/project/geofield finden, hat beispielsweise
-den Systemnamen +geofield+.
+https://www.drupal.org/project/geofield finden, ist beispielsweise +geofield+.
 
 . Wenn Sie auf die neueste stabile Ausgabe des Quellcodes (Release)
 aktualisieren möchten, verwenden Sie folgenden Befehl, und ersetzen Sie
 den Systemnamen +geofield+ durch den Systemnamen des von Ihnen benötigten
-Moduls oder Themrs:
+Moduls oder Thems:
 +
 ----
 composer update drupal/geofield --with-dependencies
 ----
 
-. Wenn Sie eine bestimmte Version benötigen, legen Sie fest, wie Sie die Versionsnummer eingeben
-aktualisieren möchten. Zum Beispiel für Version 8.x-1.7 eines beigetragenen Moduls
-würde nur die Version 1.7 eingeben, und für die Kern-Software-Version 8.3.1 würden Sie
-8.3.1 eingeben. Geben Sie dann den folgenden Befehl im Stammverzeichnis Ihrer Website ein
-(Ersetzen des Kurznamens des Projekts durch +geofield+ und die korrekte
-Versionsnummer):
+. Wenn Sie eine bestimmte Version benötigen, legen Sie über die Versionsnummer fest, welche Version Sie installieren möchten. Zur Installation der  Version 8.x-1.7 eines von der Community bereitgestellten Zusatzmoduls
+würden Sie nur 1.7 eingeben. Wenn Sie das Modul auf eien Version aktualisieren möchten, die kompatibel zu einer neueren Version des Hauptsystems z. b.  8.3.1 ist, würden Sie 8.3.1 eingeben. 
+Geben Sie dann den folgenden Befehl im Stammverzeichnis Ihrer Website ein
+(Ersetzen Sie den Systemnamen des Projekts +geofield+ sowie die korerekte Versionsnummer des gewünschten Projektes):
 +
 ----
 Composer require drupal/geofield:1.7
 ----
 
-==== Vertiefen Sie Ihe Kenntnisse
+==== Erweitern Sie Ihe Kenntnisse
 
 Weitere Einzelheiten über die Befehle von Composer erfahren Sie, indem Sie die
 integrierte Hilfe von Composer verwenden. Um beispielsweise mehr über den
@@ -172,7 +168,7 @@ Befehl `create-project` zu erfahren, geben Sie
 ==== Videos
 
 // Video von Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Verwendung von Composer und Git zum Herunterladen von Dateien"]
+video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Verwendung von Composer und Git zum Herunterladen von Dateien (englisch)"]
 
 ==== Zusätzliche Ressourcen
 
@@ -184,8 +180,8 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Verwendung von 
 
 Bearbeitet von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
 https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], und
-https://www.drupal.org/u/eojthebrave[Joe Shindelar] unter
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] bei
 https://drupalize.me[Drupalize.Me] von
 https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung des Composers zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch) ],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
+copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
