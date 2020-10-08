@@ -17,33 +17,29 @@
 
 ==== Was ist ein redaktioneller Arbeitsablauf?
 
-Ein _Redaktions-Workflow_ ist der Prozess, den Organisationen zur Erstellung und Überprüfung befolgen,
-Inhalte bearbeiten und veröffentlichen. Mehrere Personen in verschiedenen Rollen in der
-Organisation kann Teil des Prozesses sein. Autoren könnten zum Beispiel
-Informationen sammeln und Inhalte verfassen; Redakteure könnten Informationen überprüfen, bearbeiten und die Inhalte nach Abschluss der Änderungen
-veröffentlichen. Später könnten inhaltliche Überarbeitungen mittels eines kleine Prozesses zur Überprüfung von  kleinen Änderungen oder
-eines komplexeren Prozesses zur Überprüfungen bei größeren Änderungen überarbeitet und erneut veröffentlicht werden.
+Ein _Redaktions-Workflow_ ist der Prozess, den Organisationen zur Erstellung Bearbeitung, Veröfentlichung und Überprüfung  von Inhalten befolgen,
+Mehrere Personen in verschiedenen Positionen innerhalb einer Organisation können an diesem Prozess beteiligt sein. Autoren könnten zum Beispiel
+Informationen sammeln und Inhalte verfassen. Redakteure könnten Informationen überprüfen, bearbeiten und die Inhalte nach Abschluss eventueller Korrekturarbeiten veröffentlichen. Später könnten inhaltliche Überarbeitungen mittels eines schlankeren Prozesses durchgeführt werden, um kleinere Anpassungen überprüfbar zu machen Es kann auch ein SDeperater Prozess für größere Änderungen festgelgt werden, damit diese nach der Aktualisierung erneut veröffentlicht  wwerden können.
 
-==== Welche Werkzeuge stehen für die Verwaltung von Workflows zur Verfügung?
+==== Welche Werkzeuge stehen zur Implementierung von Arbeitsabläufen zur Verfügung?
 
 Status veröffentlicht/nicht veröffentlicht::
   Der Entitätstyp Inhalt unterstützt die Kennzeichnung aller Inhalte als
   Veröffentlicht oder nicht veröffentlicht. Anzeigeberechtigungen für veröffentlichte und nicht
   veröffentlichte Inhalte  sind voneinander getrennt; zum Beispiel könnten alle Besucher der Website in der Lage sein
-  veröffentlichte Inhalte anzuzeigen, während nur Autoren und Redakteure unveröffentlichte Inhalte sehen können.
+  veröffentlichte Inhalte anzuzeigen, während nur Autoren und Redakteure nicht oder noch nicht veröffentlichte Inhalte sehen können.
 Änderungsverfolgung mittels Revisionierung::
-  Einige Entitätstypen für Inhalte unterstützen die Revisionierung, d.h. wenn Inhalt
+  Einige Entitätstypen unterstützen die Revisionierung, d.h. wenn Inhalt
   überarbeitet wird, speichert die Software die älteren Revisionen, so dass Inhaltsversionen verglichen und Änderungen zurückgesetzt werden können.
 Arbeitsabläufe::
-  Im Modul  Workflow, dass mit dem Kernsystem ausgeliefert wird, können Sie Workflow-Zustände und Übergänge definieren,
-  über das bloße Veröffentlichen oder depublizieren von Inhalten hinaus. Ergänzt wird dies durch das mit dem Kernsystem ausgelieferte Modul,
-  Content Moderation, mit dem Sie Berechtigungen und Rollen für Workflow-Übergänge festlegen können.
-  Beide Module können sowohl mit Inhalten als auch mit benutzerdefinierten Blöcken verwendet werden.
+  Mit dem Modul  Workflow, dass mit dem Kernsystem ausgeliefert wird, können Sie Zustände und Übergänge innerhalb eines Arbeitsablaufes definieren,
+  Die Möglichkeiten gehen dabei über das bloße Veröffentlichen oder depublizieren von Inhalten hinaus. Die Funktionalität für Arbeitsabläufe wird durch das mit dem Kernsystem ausgelieferte Modul Content Moderation ergänzt, mit dem Sie Berechtigungen und Rollen für Übergänge innerhalb von Arbeitsabläufen festlegen können.
+  Beide Module können sowohl für Inhalte als auch für benutzerdefinierte Blöcke verwendet werden.
   Entitätstypen.
 Platzierung von Blöcken::
   Mit der Inhaltsentität „Benutzerdefinierter Block” können Sie einen benutzerdefinierten Block
   erstellen und bearbeiten und erst dann auf der Website veröffentlichen, wenn der Blockinhalt
-  fertig erstellt wurde,
+  fertig erstellt wurde.
 
 ==== Verwandte Themen
 
@@ -57,7 +53,7 @@ Platzierung von Blöcken::
 
 *Mitwirkende*
 
-Geschrieben und herausgegeben von https://www.drupal.org/u/dianalakatos[Diána Lakatos] unter
+Geschrieben und herausgegeben von https://www.drupal.org/u/dianalakatos[Diána Lakatos] bei
 https://pronovix.com//[Pronovix],
 https://www.drupal.org/u/gdunham[Grant Dunham],
 und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
