@@ -39,7 +39,7 @@
 
 ==== Was ist eine Inhaltsentität?
 
-Eine _Inhaltsentität_ (oder häufiger _Entität_) ist ein Element von
+Eine _Inhaltsentität_ (auch _Entität_ genannt) ist ein Element von
 Inhaltsdaten, die aus Text, HTML-Markup, Bildern, angehängten Dateien und
 anderen Daten bestehen können, die dem Besuchern der Website angezeigt werden
 sollen. Inhaltsentitäten können vom Kernsystem oder von Modulen definiert
@@ -47,8 +47,8 @@ werden.
 
 Inhaltsentitäten werden in _Entitätstypen_ gruppiert, die unterschiedliche
 Zwecke haben und auf sehr unterschiedliche Weise auf der Website angezeigt
-werden. Die meisten Entitätstypen werden auch in _Entitäts-Subtypen_ unterteilt,
-die einen Entitätstyp noch genauer unterteilen, um um kleinere Variationen bei
+werden. Die meisten Entitätstypen werden zusätzlich in _Entitäts-Subtypen_ unterteilt,
+die einen Entitätstyp noch genauer unterteilen, um kleinere Variationen bei
 der Verwendung und Darstellung von Entitäten zu ermöglichen.
 im Folgenden finden Sie eine Tabelle die einige gängige Inhaltsentitätstypen
 enthält:
@@ -64,13 +64,13 @@ enthält:
 
 |Kommentar |Kommentartyp |Comment
     |Fügt Kommentare zu Inhalten hinzu (typischerweise zu Inhalten)
-    | 3+| *Beispiel:* Auf einer Blog-Site können Blog-Beiträge Kommentare haben.
+    | 3+| *Beispiel:* Auf einer Blog-Seite können Blog-Beiträge Kommentare haben.
     Dies wird für das Beispiel der Wochenmarkt-Website nicht benötigt.
 
 |Benutzerprofil |(kein Subtyp) |User
       |Daten zu einer Person mit einem Benutzerkonto (Login-Zugang) auf der Website
       | 3+| *Beispiel:* Jede Website hat mindestens grundlegende Benutzerprofile mit Benutzernamen
-      und E-Mail-Adressen; Social-Networking-Sites haben möglicherweise komplexere Benutzer
+      und E-Mail-Adressen; Seiten sozialer Netzwerke haben möglicherweise komplexere Benutzer
       Profile mit mehr Informationen.
 
 |Benutzerdefinierter Block |Blocktyp |Custom Block Library
@@ -79,16 +79,16 @@ enthält:
 
 |Taxonomie-Begriff |Vokabular |Taxonomy
           |Wird zur Klassifizierung anderer Arten von Inhalten verwendet
-          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes könnten Sie Rezept klassifizieren
-          Inhalt mit einem Taxonomievokabular für Zutaten, mit Taxonomie-Begriffen wie
-          Karotten und Tomaten. Auf einer Blogging-Website können Blog-Beiträge klassifiziert werden
+          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes könnten Sie Rezepttinhalte
+          mitels eines Taxonomievokabulars für Zutaten, mit Taxonomie-Begriffen wie
+          Karotten und Tomaten klassifizieren. Auf einer Blogging-Website können Blog-Beiträge klassifiziert werden
           unter Verwendung eines Tag-Vokabulars und vielleicht auch eines Kategorien-Vokabulars.
 
 |Datei |(keine) |File
           | Eine Bild- oder eine Datei mit Anlagen, die von der Website gespeichert und verwaltet wird, oft
            an andere Arten von Inhalten angehängt
-          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes, sowohl Rezept- als auch Lieferantenseiten
-          könnten Bildanhänge haben, die (hinter den Kulissen)
+          | 3+| *Beispiel:* Im Beispiel der Website des Wochenmarktes 
+          könnten  sowohl Rezept- als auch Lieferantenseiten Bildanhänge haben, die (hinter den Kulissen)
           von der Website als Dateientitäten verwaltet werden.
 
 |Kontaktformular |Formulartyp |Contact
@@ -104,7 +104,7 @@ von denen jedes eine bestimmte Art von Daten, wie formatierten Text oder
 Klartext, Bilder oder andere Dateien oder Daten enthält.
 Feldtypen können durch das Kernsystem oder durch Module definiert werden.
 
-Felder können von einem Administrator in Subtypen von Entitäten hinzugefügt
+Felder können von einem Administrator in Entitätssubtypen hinzugefügt
 werden, so dass alle Entitäts-Subtypen einer bestimmten Entität  die
 gleiche Sammlung von Feldern enthalten.
 Der Inhaltstyp Lieferant könnte  am Beispiel des Wochenmarktes
