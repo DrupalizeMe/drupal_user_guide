@@ -43,7 +43,7 @@ Server) befindet.
 
 ===== PHP
 
-PHP 7.2 oder höher. PHP muss mindestens 64MB Arbeitsspeicher
+PHP 7.2 oder höher. PHP muss mindestens 64 MB Arbeitsspeicher
 zur Verfügung stehen. Wenn Sie
 mehrere Module auf Ihrer Website ausführen oder speicherintensive PHP-basierte
 Kommandozeilen-Tools (wie Composer) verwenden, wird wesentlich mehr
@@ -52,8 +52,8 @@ Arbeitsspeicher für PHP benötigt.
 Bestimmte PHP-Erweiterungen sind ebenfalls erforderlich. die vollständige Liste
 der erforderlichen PHP-Erweiterungen hängt davon ab, wie Sie das  Kernsystem
 installieren und welche Module Sie auf Ihrer Website verwenden. Im Allgemeinen
-installieren Hosting-Service-Provider alle PHP-Erweiterungen, die Sie benötigen,
-um Drupal verwenden zu können. Wenn Sie Ihre Website selbst hosten oder
+sind bei Hosting-Service-Provider alle PHP-Erweiterungen, die Sie benötigen,
+um Drupal verwenden zu können vorinstalliert. Wenn Sie Ihre Website selbst hosten oder
 auf Ihrem lokalen Computer betreiben, erhalten Sie während der Installation
 gegebenenfalls Fehlermeldungen die darauf hinweisen, dass erforderliche
 PHP-Erweiterungen fehlen damit Sie diese Installieren und die Installation
@@ -70,8 +70,8 @@ Apache (empfohlen)::
 
 Lokaler PHP-Server::
   Sie können vorübergehend eine lokale Demo-Website auf Ihrem Computer
-  installieren, die den in PHP eingebauten Webserver verwendet, ohne einen
-  gesonderten Web-Server installieren zu müssen.
+  installieren, die den in PHP eingebauten Webserver verwendet, 
+  damit zur Evaluierung von Drupal kein zusätzlicher Websiter installiert werrden muss.
 
 Nginx::
   Nginx ist ein häufig verwendeter Webserver, der vor allem bei hohem Zugriffsaufkommen
@@ -86,14 +86,14 @@ Microsoft IIS::
   IIS 6 oder IIS 7, wenn PHP korrekt konfiguriert ist. Da lesbare URLs
   erforderlich sind, könnte es sein, dass Sie ein Produkt eines Drittanbieters
   verwenden müssen. Für IIS 7 können Sie das Microsoft-URL
-  Rewrite-Modul oder eine Lösung eines Drittanbieters verwenden.
+  Rewrite-Modul oder die Lösung eines Drittanbieters verwenden.
 
 ====== Datenbank
 
 Verwenden Sie eine der folgenden Datenbanken:
 
 * MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) oder höher mit einer
-InnoDB-kompatible Primärspeicher-Engine
+InnoDB-kompatiblen Primärspeicher-Engine
 
 * PostgreSQL - 9.1.2 oder höher
 
@@ -114,6 +114,6 @@ Datenbank-Software erfordert.
 Bearbeitet von https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
 https://www.drupal.org/u/bemery987[Brian Emery], und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] entnommen aus
-https://www.drupal.org/docs/8/system-requirements["Systemvoraussetzungen"],
+https://www.drupal.org/docs/8/system-requirements["Systemvoraussetzungen (englisch)"],
 copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Comunity].
