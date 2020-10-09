@@ -23,21 +23,21 @@ angezeigt werden sollen.
 
 ==== Arbeitsschritte
 
-. Brainstorming darüber, welche Inhalte Ihre Website enthalten muss, z.B.
+. Halten Sie ein Brainstorming darüber ab, welche Inhalte Ihre Website enthalten muss, z.B.
 Inhalte, nach denen Besucher suchen würden, sowie Inhalte, die Sie wünschen
 um sie den Besuchern zu zeigen. Das Ergebnis könnte die Beschreibung in
-<<preface-scenario>>.
+<<preface-scenario>> sein.
 
 . Entscheiden Sie für jedes identifizierte Stück Inhalt, welcher Inhalts-Entitätstyp
 am besten geeignet ist. Dabei müssen Sie überlegen, wo und wie
 der Inhalt auf der Website verwendet und bearbeitet werden soll. Im Beispiel des Szenarios des Wocchenmarktes könntn die Öffnungszeiten und der tandort des Wocchenmarktes auf jeder Unterseite der Website innerhalb einer Seitenleiste angezeigt werden. Für diese art von Inhalten macht es Sinn, einen einzelnen  benutzerdefinierten Block zu erstellen. Ein weiteres Beispiel könnte sein, dass Sie sich dafür entscheiden, dass Seiten, die
-Informationen über die einzelnen Lieferanten des Wochenmarktes enthalten Inhalte sein sollen, die vom Modul Node, das m,it dem Kernsystem ausgeliefert wird, bereitgestellt und verwaltet werden sollen,
+Informationen über die einzelnen Lieferanten des Wochenmarktes enthalten Inhalte sein sollen, die vom Modul Node, das mit dem Kernsystem ausgeliefert wird, bereitgestellt und verwaltet werden sollen,
  weil Sie möchten, dass die Lieferanten die Angaben über Ihr Unternehmen selbstständig bearbeiten können.
 Mit dem Berechtigungssystem des Kernsystemmoduls Node können Sie dieses Ziel auf einfache Weise erreichen.
 +
-Die Antworten auf solche Entscheidungen lauten nicht unbedingt immer nur richtig oder falsch. Solche Informationsseiten können entweder als Benutzerprofile oder als Inhalte der Website dargestellt werden. Die entscheidung darüber, wie Lieferanteninformationen dargestellt werden sollen und welche Module dafür eingesetzt werden, müssen Sie letztendlich selbst treffen. Würden Sie Lieferanteninformationen als Benutzerprofil darstellen, könnten diese auch nur von dem Benutzer bearbeitet werden, dem das Benutzerprofil auf OIhrer Website zugeordent ist. Ein Benutzerkonto später einem anderen Benutzer zu übertragen wäre nicht gans so einfach. Inhalte hingegen, können von allen Benutzern bearbeitet werden, denen die hierfür erforderlichen Berechtigungen zugewiesen worden sind.
+Die Antworten auf solche Entscheidungen lauten nicht unbedingt immer nur richtig oder falsch. Solche Informationsseiten können entweder als Benutzerprofile oder als Inhalte der Website dargestellt werden. Die Entscheidung darüber, wie Lieferanteninformationen dargestellt werden sollen und welche Module dafür eingesetzt werden, müssen Sie letztendlich selbst treffen. Würden Sie Lieferanteninformationen als Benutzerprofil darstellen, könnten diese auch nur von dem Benutzer bearbeitet werden, dem das Benutzerprofil auf Ihrer Website zugeordnet ist. Ein Benutzerkonto später einem anderen Benutzer zu übertragen wäre nicht gans so einfach. Inhalte hingegen, können von allen Benutzern bearbeitet werden, denen die hierfür erforderlichen Berechtigungen zugewiesen worden sind.
 
-. Einscheiden Sie für jeden der von Ihnen identifizierten Inhaltsentitätstypen, welche welche Subtyapen für den jeweiligen Inhaltstyp Sinn machen würden. Auf der Wochenmarktseite würden Sie beispielsweiwse festlegen, dass es einen Inhaltstyp für Basisseiten, wie die Startseite und die Seite über uns  geben sollte und zusätzlich einen gesonderten Inhlatstyp für Seiten mit Lieferanteninformationen sowei ienen weiteren Inhaltstyp für Rezeote.
+. Enscheiden Sie für jeden der von Ihnen identifizierten Inhaltsentitätstypen, welche Subtypen für den jeweiligen Inhaltstyp Sinn machen würden. Auf der Wochenmarktseite würden Sie beispielsweise festlegen, dass es einen Inhaltstyp für Basisseiten, wie die Startseite und die Seite über uns  geben sollte und zusätzlich einen gesonderten Inhaltstyp für Seiten mit Lieferanteninformationen sowie einen weiteren Inhaltstyp für Rezepte.
 
 . Entscheiden Sie für jede Unterart des Entitätstyps Inhalt, die Sie auf Ihrer Website ethablieren, welche Felder benötigt werden, um alle notwendigen informatioen im jeweiligen Subtyp erfassen zu können. Der Inhaltstyp Lieferant benötigt z. B. möglicherweise Felder für den den Namen des Lieferanten, die URL zur Webseite des Lieferanten, ein Feld für ein Bild bzw. Logo und ein Feld für einen beschreibenden Text,  den Lieferanten detailierte Informationen über Ihr Unternenhmen eintragen können.
 
