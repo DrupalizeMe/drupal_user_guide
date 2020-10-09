@@ -1,6 +1,6 @@
 [[extend-theme-install]]
 
-=== Herunterladen und Installieren eines Themas von _Drupal.org_
+=== Herunterladen und Installieren eines Themes von _Drupal.org_
 
 [role="summary"]
 Wie man ein Theme von Drupal.org manuell
@@ -26,7 +26,7 @@ oder mit Hilfe von Drush herunterlädt und installiert.
 
 ==== Zielsetzung
 
-Laden Sie ein Thema von _Drupal.org_ herunter und installieren Sie es.
+Laden Sie ein Theme von _Drupal.org_ herunter und installieren Sie es.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -35,7 +35,7 @@ Laden Sie ein Thema von _Drupal.org_ herunter und installieren Sie es.
 
 ==== Anforderungen an die Website
 
-Wenn Sie über die Website installieren möchten, muss das Modul Update Manager,
+Wenn Sie Themes über die Benutzeroberfläche der Website installieren möchten, muss das Modul Update Manager,
 das mit dem Kernsystem ausgeliefert wird, installiert sein.
 Siehe: <<config-install>> für Anweisungen zur Installation von Modulen.
 
@@ -44,17 +44,17 @@ Siehe <<<install-tools>>.
 
 ==== Arbeitsschritte
 
-Sie können die Benutzeroberfläche zum Herunterladen und Installieren einer
-Themes verwenden. Wenn Sie ein benutzerdefiniertes Theme anstelle eines
-beigesteuerten Themas installieren, wenn Ihnen eine Meldung angezeigt wird, die
+Sie können die Benutzeroberfläche zum Herunterladen und Installieren eines
+Themes verwenden. Wenn Sie ein benutzerdefiniertes Theme anstelle haben eines
+von der Commujnity bereitgestellten Themes installieren möchten und Ihnen eine Meldung angezeigt wird, die
 besagt: _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihrem
 Server_, oder wenn die folgenden Schritte zum Herunterladen und Entpacken des
 Themes nicht funktionieren, folgen Sie den Schritten in
 <<extend-manual-install>>. Wenn Sie den Composer verwenden Um die Dateien auf
 Ihrer Website zu verwalten, folgen Sie den Schritten zum Herunterladen in
-<<install-composer>>. In jedem dieser Fälle können Sie dann das Thema
-installieren mit Drush, oder indem Sie mit Schritt 7 in der Anleitung zur
-Verwendung der Benutzeroberfläche unten fortfahren.
+<<install-composer>>. In jedem dieser Fälle können Sie dann das Theme
+mittels Drush oder indem Sie mit Schritt 7 in der Anleitung zur
+Verwendung der Benutzeroberfläche unten fortfahren installieren.
 
 ===== Verwendung der Benutzeroberfläche
 
@@ -69,32 +69,32 @@ unten auf der Seite.
 image:images/extend-theme-install-download.png["Die URL für ein Thema finden"]
 --
 
-. Navigieren Sie im Menü _Verwaltung_ zum Menüpunkt _Design_
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Design_
 (_/admin/appearance_). Die Seite _Design_ erscheint.
 
-. Klicken Sie auf _Neues Thema installieren_. Die Seite _Neues Thema installieren_ wird angezeigt.
+. Klicken Sie auf _Neues Theme installieren_. Die Seite _Neues Theme installieren_ wird angezeigt.
 +
 --
 // Install new theme page (admin/theme/install).
 image:images/extend-theme-install-page.png["Installing a theme"]
 --
 
-. Fügen Sie in das Feld _Install from a URL_ den kopierten Download-Link ein. Dieser Wert
+. Fügen Sie in das Feld _Von URL isntallieren_ den kopierten Download-Link ein. Dieser Wert
 könnte so aussehen
 `https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
 
 . Klicken Sie auf _Installieren_, um das neue Theme auf den Server hochzuladen und zu entpacken. Die Dateien
 werden in das Verzeichnis _themes_ heruntergeladen.
 
-. Klicken Sie auf _Neu hinzugefügte Themen installieren_, um zur Seite _Erscheinung_ zurückzukehren. Wenn Sie
+. Klicken Sie auf _Neu hinzugefügte Themees installieren_, um zur Seite _Design_ zurückzukehren. Wenn Sie
 das bereits erwähnte manuelle Hochladeverfahren verwendet haben, dann können Sie fortfahren
-mit diesem Schritt, und erreichen Sie die Seite _Erscheinung_ mit der Funktion _Verwaltung_
-Verwaltungsmenü und Navigieren zu _Erscheinung_ (_admin/appearance_).
+mit diesem Schritt, und erreichen Sie die Seite _Design_ mit der Funktion _Verwaltung_
+Verwaltungsmenü und Navigieren zum Menüpunkt _Design_ (_admin/appearance_).
 
-. Suchen Sie das neue Thema unter _Deinstallierte Themen_ und klicken Sie auf
-_Installieren_ und aktivieren Sie die Option _Als Standard-Theme verwenden_.
-Alle nicht-administrativen Seiten auf der Website verwenden nun dieses
-neue Theme.
+. Suchen Sie das neue Theme unter _Deinstallierte Themes_ und klicken Sie auf
+_Installieren und als Standard festlegen_.
+Alle Seiten, die nicht zum Verwaltungsbereich Ihrer Website gehören, verwenden nun das von Ihnen festgelegte
+Theme.
 +
 --
 // Mayo theme on the Appearance page.
@@ -103,19 +103,19 @@ image:images/extend-theme-install-appearance-page.png["Uninstalled themes on App
 
 ====== Drush zur Installation eines Themes verwenden
 
-. Suchen Sie den Projektnamen für das Theme, das Sie installieren möchten,
+. Suchen Sie den Systemnamen des Themes, das Sie installieren möchten,
 dies ist der letzte Teil der URL zur Projektseite des Themes. Wenn die
 Projekt-URL zum Beispiel _https://www.drupal.org/project/mayo_ lautet,
-ist der Projektname `mayo`.
+ist der Systemname `mayo`.
 
 . Laden Sie das Theme herunter, indem Sie entweder die Schritte im Kapitel
 <<extend-manual-install>> oder im Kapitel <<install-composer>> durchführen.
 
-. Führen Sie die folgenden Drush-Befehle unter Angabe des Projektnamens als
+. Führen Sie die folgenden Drush-Befehle unter Angabe des Systemnamens als
 Parameter (z.B, _mayo_) aus:
 +
 ----
-drush-theme:Mayo aktivieren
+drush-theme:mayo enable
 drush config:set system.theme standard mayo
 ----
 
@@ -139,13 +139,13 @@ müssen Sie unter Umständen den Cache leeren. Siehe: <<prevent-cache-clear>>.
 ==== Videos
 
 // Video von Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Herunterladen und Installieren eines Themes von Drupal.org"]
+video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Herunterladen und Installieren eines Themes von Drupal.org (englisch)"]
 
 //===== Zusätzliche Ressourcen
 
 
 *Mitwirkende*
 
-Geschrieben und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar] unter
+Geschrieben und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar] bei
 https://drupalize.me[Drupalize.Me], und
 https://www.drupal.org/u/batigolix[Boris Doesborgh].
