@@ -10,7 +10,7 @@ Datei- und Konfigurationsrevisionen mit der Versionskontrollsoftware Git verwalt
 
 ==== Zielsetzung
 
-Verwenden Sie das Git-Revisionskontrollwerkzeug, um Revisionen an den Dateien und
+Verwenden Sie das Revisionskontrollwerkzeug Git, um Revisionen der Dateien und
 der Konfiguration Ihrer Website zu verwalten.
 
 ==== Erforderliche Vorkenntnisse
@@ -22,32 +22,32 @@ der Konfiguration Ihrer Website zu verwalten.
 * <<install-dev-sites>>
 
 * Wie man eine Git-Repository einrichtet und deren _Klon-URL_ herausfindet.
-Wenn Sie beispielsweise GitLab verwenden möchten, um Ihr Repository zu hosten.
-Siehe: https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab.com „Ein Projekt erstellen"]
+Wenn Sie beispielsweise GitLab verwenden möchten, um Ihre Repository zu hosten.
+Siehe: https://docs.gitlab.com/ee/gitlab-basics/create-project.html[GitLab.com „Ein Projekt erstellen (englisch)"]
 und
-https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab.com „Grundlegende Befehle der Kommandozeile"].
-Wenn Sie GitHub verwenden möchten, um Ihr Repository zu hosten, lesen
-https://help.github.com/en/articles/create-a-repo[GitHub „Eine Repository erstellen"]
+https://docs.gitlab.com/ee/gitlab-basics/command-line-commands.html[GitLab.com „Grundlegende Befehle für die Kommandozeile (englisch)"].
+Wenn Sie GitHub verwenden möchten, um Ihr Repository zu hosten, lesen Sie:
+https://help.github.com/en/articles/create-a-repo[GitHub „Eine Repository erstellen (englisch)"]
 und
-https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub-Seite "Welche Remote-URL soll ich verwenden"].
+https://help.github.com/en/articles/which-remote-url-should-i-use[GitHub-Seite "Welche Remote-URL soll ich verwenden (englisch)"].
 
 * Wie man ein Kommandozeilen-Fenster und einen Klartext-Editor öffnet und benutzt.
 
 * Wie man die Konfiguration verwaltet.
 
-* wie man Archivdateien (wie z. B. _.zip_ und _.tar.gz_) entpackt und gepackt.
+* Wie man Archivdateien (wie z. B. _.zip_ und _.tar.gz_) entpackt und erstellt.
 
 
 ==== Anforderungen an die Website
 
-* Sie müssen die Software für Ihre Website mit einer der Methoden im Kapitel
-<<install-decide>> heruntergeladen haben in. Wenn Sie die Konfiguration
+* Sie müssen die Software für Ihre Website mittels einer der Methoden im Kapitel
+<<install-decide>> heruntergeladen haben. Wenn Sie die Konfiguration
 verwalten möchten, müssen Sie die Software installiert haben und über eine
 funktionsfähige Website verfügen.
 
-* Die Git-Client-Software muss auf dem Server  installiert sein, auf dem Ihre
+* Die Git-Client-Software muss auf dem Server installiert sein, auf dem Ihre
 Website gehostet ist.
-Siehe: https://git-scm.com/[Git] für weitere Informationen.
+Siehe: https://git-scm.com/[Git (englisch)] für weitere Informationen.
 
 * Sie müssen eine neue Repository erstellt haben und deren Git-Klon-URL kennen.
 
@@ -55,11 +55,11 @@ Siehe: https://git-scm.com/[Git] für weitere Informationen.
 
 ===== Die Repository installieren
 
-Führen Sie diese Schritte einmal durch, nachdem Sie ein Git-Repository
-erstellt haben, um lokale Verzeichnisse zum Repository und die darin enthaltenen
+Führen Sie diese Schritte einmal durch, nachdem Sie eine Git-Repository
+erstellt haben, um lokale Verzeichnisse zur Repository und die darin enthaltenen
 Dateien hinzuzufügen.
 
-. Öffnen Sie ein Kommandozeilenfenster und wechseln Sie in das Verzeichnis, in dem Die Dateien
+. Öffnen Sie ein Kommandozeilenfenster und wechseln Sie in das Verzeichnis, in dem die Dateien
 der Website befinden. Dies ist das „Hauptverzeichnis" der Installation.
 
 . Ermitteln Sie, wo sich das Hauptverzeichnis Ihrer Website befindet.
@@ -72,7 +72,7 @@ diese Daten im Unterverzeichnis  _web_ (dies ist das Hauptverzeichnis Ihrer Webs
 _.gitignore_, innerhalb des Hauptverzeichnisses Ihrer Website
 (oder bearbeiten Sie diese Datei, wenn sie bereits existiert). Die Datei enthält
  eine Liste von Dateien und Verzeichnisse, die Git ignorieren
- (nicht zum Repository hinzufügen) soll. Zum Beispiel sollte
+ (nicht zur Repository hinzufügen) soll. Zum Beispiel sollte
 die Datei _settings.php_ nicht zur Git-Repository hinzugefügt werden, weil diese
 die Daten enthält, mit denen sich die Website an Ihrer Datenbank authentifiziert.
 Die Dateien, die die _Medienelemente_ der Website enthalten
@@ -83,7 +83,7 @@ den Inhalt der Website.
 
 . Stellen Sie sicher, dass die Datei _.gitignore_ folgende Zeilen enthält.
  Wenn Ihr Hauptverzeichnis nicht das oberstes Verzeichnis ihrer
- Datenstruktur ist, überprüfen Sie jedes dieser Verzeichnisse, um festzustellen
+ Dateistruktur ist, überprüfen Sie jedes dieser Verzeichnisse, um festzustellen
  ob Sie ein Präfix angeben müssen. Eventuell müssen _Sites_
  möglicherweise durch _web/sites_ ersetzen.
 +
@@ -241,7 +241,7 @@ zu importieren.
 
 *Mitwirkende*
 
-Adaptiert und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
-https://www.drupal.org/node/803746["Aufbau einer Drupal-Site mit Git"],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+Adaptiert und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] von
+https://www.drupal.org/node/803746["Aufbau einer Drupal-Site mit Git (englisch)"],
+copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
