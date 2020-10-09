@@ -9,8 +9,8 @@ Eine Kopie einer Live-Site für Entwicklungszwecke erstellen.
 
 ==== Zielsetzung
 
-Erstellen Sie eine Kopie einer Website, die Sie zur Entwicklung neuer Funktionen
-und zum Testen von Aktualisierungen verwenden können an.
+Erstellen Sie die Kopie einer Website, die Sie zur Entwicklung neuer Funktionen
+und zum Testen von Aktualisierungen verwenden können innerhalb einer Entwicklungsumgebung.
 
 ==== Erforderlichen Vorkenntnisse
 
@@ -18,10 +18,10 @@ und zum Testen von Aktualisierungen verwenden können an.
 
 ==== Anforderungen an die Website
 
-* Sie haben eine aktive,  fertig entwickelte Website, von der Sie eine Kopie
-für innerhalb einer Entwicklungsumgebung besitzen.
+* Sie haben eine fertig entwickelte Live-Website, von der Sie eine Kopie
+finnerhalb einer Entwicklungsumgebung besitzen.
 
-* Wenn Sie Drush zur Ausführung einiger Arbeitsschritteschritte in dieser
+* Wenn Sie Drush zur Ausführung einiger der Arbeitsschritteschritte dieser
 Aufgabe verwenden möchten, muss Drush installiert.
 Siehe: <<install-tools>>.
 
@@ -30,7 +30,7 @@ Siehe: <<install-tools>>.
 . Folgen Sie den Arbeitsschritten im Kapitel <<install-prepare>>, so dass Sie
 Ihre Entwicklungsumgebung vollständig eingerichtet haben und wissen,
 wo sich das Hauptverzeichnis Ihrer Entwicklungs-Website befindet.
-Außerdem haben Sie am ende dieses Kapitels eine leere Datenbank und den dazugehörigen Datenbank-Benutzer eingerichtet.
+Am Ende dieses Kapitels werden Sie außerdem eine Leer Datenbank inklusive des dazugehörigen Datebnakbenutzers eingerichtet haben.
 
 . Exportieren Sie die Datenbank Ihrer Live-Website. verwenden Sie dazu eine
 der folgenden Methoden:
@@ -39,17 +39,17 @@ der folgenden Methoden:
   phpMyAdmin installiert ist
   (die Software ist in vielen Hosting-Kontrollzentren verfügbar),
   verwenden Sie die Registerkarte _Export_ in phpMyAdmin, um die Datenbank Ihrer
-  Website im Format _SQL_ zu exportieren. Verwenden Sie  die   Komprimierung
-  _gzip_ für die Ausgabedatei um die Dateigröße des Exports zu verringern.
+  Website im Format _SQL_ zu exportieren. Kompromoeren Sie die
+  ausgegebene Datei mittels _gzip_ um die Dateigröße des Exports zu verringern.
 
   * Wenn Sie MySQL benutzen und Zugriff auf die Befehlszeile haben, benutzen Sie
-    folgenden Befehl (Ersetzung des Datenbanknamens, des Benutzernamens und des Passworts Ihrer Website):
+    folgenden Befehl (Ersetzen sie den Datenbanknahmen, den Benutzernamen udn das Passwort mit den entsprecheenden Daten Ihrer Website):
 +
 ----
 mysqldump -u BenuTZERNANE -p'PASSOWRT' DATENBANKNAME > DATEINAME.sql
 ----
 
-  * Wenn Sie lieber Drush verwenden möchten, verwenden Sie den   folgenden Befehl:
+  * Wenn Sie lieber Drush benutzen möchten, verwenden Sie den folgenden Befehl:
 +
 ----
 drush sql:dump --result-file=DATEINAME.sql
@@ -61,18 +61,18 @@ von Ihrer Live-Website aus. Siehe <<extend-module-install>> um Anweisungen
 zur Installation von Zusatzmodulen zu erhalten.
 +
 Sie haben jetzt einen Datenbank-Export in der Datei DATEINAME.sql_ gespeichert.
-Vermeiden Sie es aus Sicherheitsgründen, diese Datei auf Ihrem Hosting-Server
-irgendwo im oder unterhalb des Drupal-Hauptverzeichnisses abzulegen.
-Dadurch wird verhindert, dass dritte eine Kopie Ihrer Datenbank
+Aus Sicherheitsgründen sollten Sie es vermeiden, diese Datei auf Ihrem Hosting-Server
+und vor allem im Hauptverzeichnis von Druoal abzulegen.
+Doiese Maßnahme verhindert, dass dritte Personnen eine Kopie Ihrer Datenbank
 herunterladen können.
 
 . Kopieren Sie alle Dateien aus dem Hauptverzeichnis Ihrer Live-Website in das
-Hauptverzeichnis der Installation auf Ihre Entwicklungsumgebung.
-Möglicherweise möchten Sie Git dazu verwenden. Wenn Sie dies  möchten lesen Sie
+Hauptverzeichnis der Installation innerhalb Ihre Entwicklungsumgebung.
+Möglicherweise möchten Sie hierfür Git verwenden. Wenn Sie Git verwenden möchten, lesen Sie
 <<<extend-git>>.
 
 . Bearbeiten Sie die Datei _sites/default/settings.php_ in  Ihrer
-Entwicklungsumgebung mit einem Klartext-Editor. Suchen Sie folgende Zeilen
+Entwicklungsumgebung mit einem Texteditor. Suchen Sie folgende Zeilen
 in der Nähe des Dateiendes. Diese enthalten Angaben zum Datenbanknamen,
 zum Benutzernamen des Datenbankbenutzers und das dazugehörige Passwort.
 Aktualisieren Sie diese Angaben so, dass Sie zu den Daten Ihrer
@@ -87,16 +87,16 @@ $databases['default']['default'] = array (
 ----
 
 . Prüfen Sie, ob die Datei _settings.php_ die folgende Einstellung enthält;
-Ist dies der Fall, müssen Sie diese Einstellung bearbeiten, um auf die URL der
-Website in Ihrer Entwicklungsumgebung zu verweisen, an Stelle der URL Ihrer
-Live-Website.
+Ist dies der Fall, müssen Sie diese Einstellung bearbeiten, um an Stelle der URL Ihrer
+Live-Website auf die URL der
+Website in Ihrer Entwicklungsumgebung zu verweisen.
 +
 ----
 $settings['trusted_host_patterns']
 ----
 
 . Importieren Sie die Datei, die den Datenbank.-Export enthält,
-in die Datenbank der Entwicklungsumgebung. Verwenden Sie dazu eine der
+in die Datenbank in der Entwicklungsumgebung. Verwenden Sie dazu eine der
 folgenden Methoden:
 +
   * Wenn Sie MySQL als Datenbank verwenden und der Server Ihrer Live-Site über
@@ -120,12 +120,12 @@ mysql -u BENUTZERNAME -pPASSWORT  DATENBANKNAME < DATEINAME.sql
 drush sql:query --file=DATEINAHME.sql
 ----
 
-. Wenn Ihre Entwicklungs- und Live-Websites eine unterschiedliche Konfiguration
-haben, müssen Sie Konfigurationsüberschreibungen in der Datei _settings.php_
+. Wenn Ihre Entwicklungs- und Live-Websites unterschiedliche Konfigurationen
+aufweisen, müssen Sie Konfigurationsüberschreibungen in der Datei _settings.php_
 verwenden. Die _$config_-Variable hilft Ihnen dabei, separate Einstellungen
-getrennt von der Standard-Konfiguration zu halten.
+von der Standard-Konfiguration zu trennen.
 Beispielsweise könnte der Name der Website "Anytown Farmers Market" in der
-Entwicklungsumgebung, aber "Arbeitsversion der for Anytown Farmers Market Website"
+Entwicklungsumgebung, aber "Arbeitsversion der Website des Wochenmarktes"
 lauten soll, könnenn Sie diese Einstellung für Live-Website in der Datenbank
 (Standardkonfiguration) anlegen und auf der
 Website in der Entwicklungsumgebng, in der Datei settings.php, mit
@@ -135,7 +135,7 @@ folgendem Eintrag übersteuern:
 $config['system.site']['name'] = "Arbeitsversion der for Anytown Farmers Market Website";
 ----
 
-==== Vertiefen Sie Ihre Kenntnisse
+==== Erweitern Sie Ihre Kenntnisse
 
 * Überprüfen Sie, ob die Website in Ihrer Entwicklungsumgebung korrekt
 funktioniert.
@@ -158,8 +158,8 @@ video::https://www.youtube-nocookie.com/embed/FSBNm4oAkaA[title="Eine Entwicklun
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ Community-Dokumentationsseite "Sichern einer Website"]
-* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ Community-Dokumentationsseite "Erstellen einer Testsite"]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ Community-Dokumentationsseite "Sichern einer Website (englsich)"]
+* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ Community-Dokumentationsseite "Erstellen einer Testsite (englisch)"]
 
 
 *Mitwirkende*
