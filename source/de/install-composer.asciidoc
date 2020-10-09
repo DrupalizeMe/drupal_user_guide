@@ -34,7 +34,7 @@ Verwenden Sie den Composer, um Dateien und Abhängigkeiten des Kernsystems oder 
 
 ==== Anforderungen an die Website
 
-Wenn Sie den Composer verwenden möchten, muss er entweder innerhalb einer lokalen Entwicklungsumgebung direkt auf dem Server installiert sein, auf dem sich Ihre Live-Website befindent. Siehe: <<install-tools>>.
+Wenn Sie den Composer verwenden möchten, muss er entweder innerhalb einer lokalen Entwicklungsumgebung direkt auf dem Server installiert sein, auf dem sich Ihre Live-Website befindet. Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
 
@@ -62,7 +62,7 @@ Führen Sie folgende Schritte aus, wenn Sie das Kernsystem noch nicht
 heruntergeladen oder installiert haben und Sie Composer verwenden möchten, um
 sowohl das Kernsystem als auch dessen externe Abhängigkeiten herunterzuladen:
 
-. Wechseln Sie auf der Kommandozeile in das Verzeichnis, dass sich eine Ebene über dem Verzeichnis befindet, in dem Sie
+. Wechseln Sie auf der Kommandozeile in das Verzeichnis, dass sich eine Ebene über dem Verzeichnis befindet, in das Sie
 die Software, extrahiert haben.
 
 . Geben Sie folgenden Befehl ein, wobei _mydir_ das Verzeichnis ist,
@@ -84,7 +84,7 @@ enthalten bereits die hierfür erforderliche Composer-Konfiguration und Sie
 können jederzeit mit der Nutzung des Composers beginnen.
 
 Wenn Ihre Website Module, Themen oder Profile enthält, die nicht Teil des
-Kernsystems sin, ist es eine gute Idee, sie in die Datei _composer.json_ in
+Kernsystems sind, ist es eine gute Idee, sie in die Datei _composer.json_ in
 Stammverzeichnis Ihrer Website zu übertragen.
 
 Hierfür führen Sie für jedes heruntergeladene Modul, Theme oder Profil einmal den folgenden Befehl aus
@@ -148,15 +148,15 @@ composer update drupal/geofield --with-dependencies
 ----
 
 . Wenn Sie eine bestimmte Version benötigen, legen Sie über die Versionsnummer fest, welche Version Sie installieren möchten. Zur Installation der  Version 8.x-1.7 eines von der Community bereitgestellten Zusatzmoduls
-würden Sie nur 1.7 eingeben. Wenn Sie das Modul auf eien Version aktualisieren möchten, die kompatibel zu einer neueren Version des Hauptsystems z. b.  8.3.1 ist, würden Sie 8.3.1 eingeben. 
+würden Sie nur 1.7 eingeben. Wenn Sie das Modul auf eiene Version aktualisieren möchten, die kompatibel zu einer neueren Version des Hauptsystems z. b.  8.3.1 ist, würden Sie 8.3.1 eingeben. 
 Geben Sie dann den folgenden Befehl im Stammverzeichnis Ihrer Website ein
-(Ersetzen Sie den Systemnamen des Projekts +geofield+ sowie die korerekte Versionsnummer des gewünschten Projektes):
+(Ersetzen Sie den Systemnamen des Projekts +geofield+ sowie die korrerekte Versionsnummer des gewünschten Projektes):
 +
 ----
 Composer require drupal/geofield:1.7
 ----
 
-==== Erweitern Sie Ihe Kenntnisse
+==== Erweitern Sie Ihre Kenntnisse
 
 Weitere Einzelheiten über die Befehle von Composer erfahren Sie, indem Sie die
 integrierte Hilfe von Composer verwenden. Um beispielsweise mehr über den
