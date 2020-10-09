@@ -2,14 +2,14 @@
 === Vorbereiten der Installation
 
 [role="summary"]
-Das Kernsystem herunterladen und die Installationsvoraussetzungen erfüllen.
+Das Kernsystem herunterladen und die Systemvoraussetzungen erfüllen.
 
 (((Downloading,core software)))
 (((Drupal core,preparing install)))
 
 ==== Zielsetzung
 
-Laden Sie das Kernsystem herunter und kümmern Sie sich darum, dass alle erforderlichen Systemvoraussetungen erfüllt sind.
+Laden Sie das Kernsystem herunter und kümmern Sie sich darum, dass alle erforderlichen Systemvoraussetzungen erfüllt sind.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -52,7 +52,7 @@ Vollzugriff auf die Datenbank verfügt.
 
 . Laden Sie die Dateien des Kernsystems in das Hauptverzeichnis Ihrer Website,
 indem Sie die von Ihnen gewünschte Methode verwenden.
-Siehe <<install-decide>>  für weitere Informationen.
+Siehe: <<install-decide>>  für weitere Informationen.
 
 ==== Erweitern Sie Ihre Kenntnise
 
@@ -60,11 +60,11 @@ Siehe: <<install-run>> um das interaktive Installationsprogramm auszuführen.
 
 Alternativ können Sie den folgenden Drush-Befehl in dem
 Verzeichnis ausführen, in das Sie die Software heruntergeladen haben, wobei
-_DATENBANKKNAME_, _DATENBANKBENUTZER_ und _DATENBANKPASSOWRT_ durch die
+_DATENBANKKNAME_, _DATENBANKBENUTZER_ und _DATENBANKPASSWORT_ durch die
 Zugangsdaten zu Ihrer Datenbank ersetzt werden müssen:
 
 ----
-drush site:install standard --db-url='mysql://DATENBNAKBENUTZER:DATENBANKPASSOWRT@localhost/DATENBANKNAME' --site-name=Meine-Website
+drush site:install standard --db-url='mysql://DATENBNAKBENUTZER:DATENBANKPASSWORT@localhost/DATENBANKNAME' --site-name=Meine-Website
 ----
 
 // ==== Verwandte Konzepte
