@@ -3,7 +3,7 @@
 === Konzept: Zusätzliche Werkzeuge
 
 [role="summary"]
-Überblick über zusätzliche Tools, die Webentwicklern helfen, Webistes bequem zu erstellen.
+Überblick über zusätzliche Tools, die Webentwicklern helfen, Websites bequem zu erstellen.
 
 (((Tool,Coder)))
 (((Tool,Devel)))
@@ -47,7 +47,7 @@ Projektbetreuer investieren aus folgenden Gründen Ihre Zeit in die
 Installation und das Erlernen diverser Kommandozeilenwerkzeuge:
 
 * Administrative Aufgaben lassen sich normalerweise schneller und mit weniger
-Aufwand durchführen, wen Sie über die Kommandozeile und nicht über die
+Aufwand durchführen, wenn Sie über die Kommandozeile und nicht über die
 Benutzeroberfläche ausgeführt werden.
 
 * Sie können Skripte schreiben, und Befehle zur Verwaltung der Website mit
@@ -99,16 +99,16 @@ sein. Versionskontrollsysteme bieten unter anderem folgende Vorteile:
 * Sie können frühere Versionen von Dateien betrachten und vergleichen oder ältere
   Dateiversionen wiederherstellen.
 
-* Sie können sich hinzugefügte, geänderte oder gelöschten Dateien ansehen,
+* Sie können sich hinzugefügte, geänderte oder gelöschte Dateien ansehen,
   bevor Sie sich mit den Änderungen an Ihrem Projekt _einverstanden_
   erklären und diese an Ihre Repository übertragen (um diese zu aktualisieren).
 
 * Sie können Änderungen von verschiedenen Teammitgliedern zusammenführen,
 
-* Sie können Dateien und Konfigurationseinstellungen zwischen lokalen Webseiten und Live-Webseiten synchronisiert hateln.
+* Sie können Dateien und Konfigurationseinstellungen zwischen lokalen Webseiten und Live-Webseiten synchronisiert halten.
 
 Es stehen viele Versionskontrollsysteme zur Auswahl.
-Proprietäre und Open-Source-Lösungen. Ein beliebtes System zur Versionskontrolle
+Sowohl proprietäre als auch Open-Source-Lösungen. Ein beliebtes System zur Versionskontrolle
 ist https://git-scm.com/[Git]. Git ist eine quelloffene Software, die auf den
 meisten Computerplattformen läuft. Git ist ein Versionskontrollsystem zur
 Verteilung von Software-Versionen, das es Ihnen ermöglicht, eine oder mehrere
@@ -128,7 +128,7 @@ https://about.gitlab.com/[GitLab] oder https://github.com/[GitHub].
 
 https://getcomposer.org/[Composer] ist ein Werkzeug zur Verwaltung von
 PHP-Abhängigkeiten, mit dessen Hilfe Entwickler angeben, welche Version
-jederr verwendeten externen Software-Bibliothek in Ihrem Projekt
+jeder verwendeten externen Software-Bibliothek in Ihrem Projekt
 (Modul, Theme, Website) verwendet wird. Composer übernimmt mittels dieser
 Angaben das Herunterladen und die Installation dieser Abhängigkeiten.
 
@@ -143,7 +143,7 @@ aus dem Internet herunterladen und installieren zu lassen.
 Auch die Kommandozeilenwerkzeuge Drush und Drupal-Console können mittels
 Composer installiert werden.
 
-Einige von der Community bereitgestellte Zusatzmodule verwenden ebenfalls
+Einige von der Community bereitgestellten Zusatzmodule verwenden ebenfalls
 extern entwickelte Software-Bibliotheken. Ein Modul zur Integration von Facebook
 könnte beispielsweise Facebook's Software-Bibliothek benötigen, die installiert
 werden muss, damit das Modul auf  die von Facebook angebotenen Funktionen
@@ -154,25 +154,25 @@ Wenn Sie ein Modul mit externen Abhängigkeiten installieren, müssen Sie Compos
 ausführen, damit diese Abhängigkeiten heruntergeladen und installiert
 werden können.
 
-==== Welche Werkzeuge stehen den Modul- und Theme-Entwicklern (Designern) zur Verfügung?
+==== Welche Werkzeuge stehen Modul- und Theme-Entwicklern (Designern) zur Verfügung?
 
 Zusätzlich zu den oben erwähnten Werkzeugen für Site-Buildern sind folgende
 Werkzeuge für Modul- und Theme-Entwickler verfügbar.
 
 Drupal-Console::
   https://drupalconsole.com[Drupal-Console] ist ein Kommandozeilen-Tool, das
-  Code-Vorlagen geneiriert und mit einer Drupal-Website interagiert.
+  Code-Vorlagen generiert und mit einer Drupal-Website interagiert.
   Es kann z. B. Code für Blöcke oder Formulare generieren, Module und Themes
   installieren und Platzhalter-Inhalte erstellen.
   Die Drupal Console verwendet die Symfony Console.
 Coder::
   https://www.drupal.org/project/coder[Coder] ist ein Kommandozeilen-Werkzeug,
-  mit dem überprüft werden kann, ob Ihre Module und Themes den Coding-Stdards
+  mit dem überprüft werden kann, ob Ihre Module und Themes den Coding-Standards
   und anderen Best-Practice-Lösungen entsprechen. Coder kann auch Verstöße gegen
   Coding-Standards beheben.
 Browser-Debugging-Werkzeuge::
   Webbrowser wie Firefox und Chrome enthalten Tools, die die Anzeige,
-  Bearbeitung, Fehlerbehebung und Überwachung von CSS, HTML und JavaScript
+  Bearbeitung, Fehlerbehebung und Überwachung von und in CSS-, HTML- und JavaScript-Dateien
   ermöglichen. Sie können das Debugging-Fenster bzw. die  Entwicklungswerkzeuge im Browser öffnen, indem Sie mit der rechten Maustaste auf einen Bereich Ihrer
   Website klicken und „Untersuchen" oder „Element untersuchen" auswählen.
 
@@ -194,6 +194,6 @@ Browser-Debugging-Werkzeuge::
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg]
 und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Einige Texte wurden in angepaster Form aus
-https://www.drupal.org/node/991716["Einführung in Git"] pbernommen.
+https://www.drupal.org/node/991716["Einführung in Git"] übernommen.
 copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
