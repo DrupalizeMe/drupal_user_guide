@@ -28,14 +28,14 @@ benutzerdefiniertes Modul oder Theme installieren möchten.
 ==== Anforderungen an die Website
 
 Für den manuellen Download müssen Sie sich mit einem der folgenden,
-in diesem Kapitel, beschriebene Probleme auseinandersetzen:
+in diesem Kapitel, beschriebenen Probleme auseinandersetzen:
 
-* Probleme mit Schreib- und Leserechten für Dateien
+* Probleme mit Schreib- und Leserechten für Dateien.
 
-* FTP-Zulassungsprobleme
+* Probleme beim Zugriff auf die Website via FTP.
 
 * Sie haben ein benutzerdefiniertes Modul/Theme erstellt oder dessen Dateien
-von jemandem erhalten
+von jemandem erhalten.
 
 * Sie konnten die Anweisungen in
 <<extend-module-install>>, <<extend-theme-install>>,
@@ -54,7 +54,7 @@ Anweisungen zum Herunterladen und dann die Anweisungen zum Hochladen/Entpacken.
 Wenn Sie das Modul oder Theme erstellt haben, überspringen Sie die Anweisungen
 zum Herunterladen. Legen Sie stattdessen eine Archivdatei
 (von der Sie wissen, wie man sie auf dem Server extrahiert) an und fahren Sie
-mit den Schritte zum Hochladens/Entpacken eines Themes/Moduls fort.
+mit den Schritten zum Hochladens undEntpacken eines Themes bzw.Moduls fort.
 Verwenden Sie dazu eine Methode, die mit dem von Ihnen erzeugten Archiv
 kompatibel ist.
 
@@ -73,7 +73,7 @@ image:images/extend-manual-install-download.png["Downloading module files"]
 . Klicken Sie auf _tar.gz_, um die Datei auf Ihren Computer herunterzuladen. Alternativ, wenn Sie
 Terminal-Zugang zu Ihrem Hosting-Server (unter Linux) haben, können Sie die
 Link-Adresse für die _tar.gz_-Datei mit Hilfe Ihres Browsers kopieren und
-folgenden Befehl verwenden, um die Datei herunterladen (wobei sie die URL durch die von Ihnen kopierte Adresse ersetzen):
+folgenden Befehl verwenden, um die Datei herunter zu laden (wobei sie die URL durch die von Ihnen kopierte Adresse ersetzen):
 +
 ----
 wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
@@ -89,7 +89,7 @@ _contrib_von der community bereitgestellte Zusatzmodule oder Themes, die von
 _Drupal.org_ heruntergeladen werden im jeweiligen Verzeichnis erstellt.
 Außerdem wird normalerweise ein Unterverzeichnis mit dem Namen_custom_, für
 Module und Themes, angelegt, die sie selbst erstellt haben.
-Ihr _module_-Verzeichnis könnte wie folgt aussehen:
+Ihr _Modul_-Verzeichnis könnte wie folgt aussehen:
 +
 --
 // Make custom and contrib directories under modules, and take a screenshot
@@ -132,15 +132,15 @@ tar -xzf admin_toolbar-8.x-1.17.tar.gz
 verwenden, um Ihr Archiv zu entpacken.
 
 . Löschen Sie die komprimierte Datei vom Server, es sei denn,
-sie wurde nach dem Entpacken automatisch gellöscht.
+sie wurde nach dem Entpacken automatisch gelöscht.
 
 . Siehe: <<extend-module-install>>, <<extend-theme-install>>,
 <<security-update-module>>, oder <<security-update-theme>> um die
-Installation oder Aktualisierung des Moduls oder Themas abszuschließen.
+Installation oder Aktualisierung des Moduls oder Themas abzuschließen.
 Beginnen Sie mit dem Arbeitsschritt, nach dem der automatische Download
 abgeschlossen wurde.
 
-==== Vertiefen Sie ihre Kenntnisse
+==== Erweitern Sie ihre Kenntnisse
 
 * Wenn Sie mit mehreren Umgebungen arbeiten (z.B. einer lokalen
 Entwicklungsumgebung und einer Live-Website) müssen Sie diese Arbeitsschritte
@@ -156,13 +156,13 @@ das alte Theme.
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Manually Downloading Module or Theme Files"]
+video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Themes oder Module manuell herunterladen (englisch)"]
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ Community-Dokumentationsseite "Installieren der beigetragenen Module (Drupal 8)"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[_Drupal.org_ Community-Dokumentationsseite "Installation von Themen"]
+* https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen (englisch)"]
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ Community-Dokumentationsseite "Installieren der beigetragenen Module (Drupal 8) (englisch)"]
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[_Drupal.org_ Community-Dokumentationsseite "Installation von Themes (englisch)"]
 
 
 *Mitwirkende*
