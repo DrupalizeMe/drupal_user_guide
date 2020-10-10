@@ -3,7 +3,7 @@
 === Konzept: Cache
 
 [role="summary"]
-Übersicht über den Cache und die Site-Daten, die zwischengespeichert werden können.
+Übersicht über den Cache und die Daten der Weebsite, die zwischengespeichert werden können.
 
 (((Cache,overview)))
 (((Page cache,overview)))
@@ -17,19 +17,19 @@
 
 ==== Was ist der Cache?
 
-Die Software, die Ihre Website ausführt, muss bei jeder nfrage an Ihre Webstie folgende Aufgaben abarbeiten:
+Die Software, die Ihre Website ausführt, muss bei jeder Anfrage an Ihre Webstie folgende Aufgaben abarbeiten:
 
 * Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite zusammenzustellen
-die an den Web-Browser oder eine andere Anwendung gesendet weren, die auf die
+die an den Web-Browser oder eine andere Anwendung gesendet werden, die auf die
 Website zugreift. 
 
-Diese Berechnungen benötigen Zeit. Das bedeuten das die Ladezeit Ihrer Website länger ist, als gewüncht.
+Diese Berechnungen benötigen Zeit. Das bedeutet das die Ladezeit Ihrer Website länger ist, als gewünscht.
 
-Es gibt verschiedene Möglichkeiten, die Ladenzeit einer Website zu bescheunigen. Darunter fällt auch die Installation entsprechender Zusatzsoftware auf dem Web-Server. Das System umfasst den internen Cache der Webiste und das Modul
-Dynaic-Page-Cache. Hierfür wird keine zusätzliche Software auf dem Web-Server benötigt. Hierfür wird ein Mechanismus verweendet, der _
-_Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den LAdeforgang Ihrer Website zu beschleunigen. Die beiden Module funktiionieren wie folt:
+Es gibt verschiedene Möglichkeiten, die Ladenzeit einer Website zu beschleunigen. Darunter fällt auch die Installation entsprechender Zusatzsoftware auf dem Web-Server. Das System umfasst den internen Cache der Website und das Modul
+Dynamic-Page-Cache. Hierfür wird keine zusätzliche Software auf dem Web-Server benötigt. Hierfür wird ein Mechanismus verwendet, der 
+_Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den Ladeforgang Ihrer Website zu beschleunigen. Die beiden Module funktionieren wie folt:
 
-Bei der Berechung der Website werden Zwischenergebnisse der auszuliefernden Inhlalte in einem bestimmten Speicherbereich abgelgt.
+Bei der Berechnung der Website werden Zwischenergebnisse der auszuliefernden Inhlalte in einem bestimmten Speicherbereich abgelgt.
 Die endgültigen Dieentgültige Ausgabe der Website wird in einem spezellen Bereich der Datenbankbereich (der als
 _Cache_ bekannt ist) gespeichert. Wird danach erneu eine Anfrage an die Website gestellt, könnnen die zwishcengespeicheten Daten
 gegebenenfalls abgerufen werden, um so die Berechnung der Ausgabe, der Website zu beschleunigen, ohne, dass die fertige Website jedes mal komplett neu berechnet werden muss. Darüber hinaus werden betriffe Teiele der zwischengespeicherten Daten aus dem Cache entfernt, wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzungen, dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert werden, wen eine betroffene Seite nach der Aktualiierung des darauf enthaltenne Inhalts zum ersten mal neu aufgerufen wird.
