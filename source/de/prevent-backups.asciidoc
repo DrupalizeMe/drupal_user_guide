@@ -21,51 +21,35 @@ Für den Fall das mit dem Computer (oder den Computern) die Ihre Website und der
 Datenbank enthalten, etwas passiert oder wenn Sie den Zugriff auf diesen Computer verlieren, könnten Sie
 einige oder alle Daten Ihrer Website sichern. Sie könnten auch Daten verlieren, wenn Ihre Website
 gehackt wurde, oder wenn jemand mit administrativen Rechten Daten fälschlicherweise über
-den Verwaltungsbereich der Website ändert. Um zu verhindern
-Szenarien wie dieses vor dauerhaften, teuren Datenverlusten schützen, ist es wichtig
-regelmäßige Backups der Daten Ihrer Website zu erstellen und sie an einem Ort zu speichern
-die von dem Computer, auf dem Ihre Website läuft, getrennt ist.
+den Verwaltungsbereich der Website ändert. Um Szenarien wie diese zu verhindern und Ihre Website vor dauerhaften, teuren Datenverlusten zu schützen, ist es wichtig regelmäßige Backups der Daten Ihrer Website zu erstellen und diese an einem Ort zu speichern
+die sich nicht auf einem Computer befindet, auf der sich Ihre Website befindet.
 
-Die Häufigkeit, mit der Sie Datensicherungen durchführen sollten, und wie viele Sicherungen Sie
-halten sollte, hängt davon ab, wie häufig sich Ihre Website ändert. Wenn Sie eine sehr
-große Menge an Inhalten auf Ihrer Website, die zu vielen hinzugefügt oder aktualisiert werden
-Mal pro Tag würden Sie häufiger Backups erstellen wollen, als Sie es bei einer
-Website, die sich nur selten ändert. Bedenken Sie auch, dass einige Zeit vergehen könnte, wenn eine
-Datenproblem auftritt und wenn Sie merken, dass es sich um ein Problem handelt, so speichern Sie eine
-Sequenz von Sicherungen (so dass Sie zu den letzten bekannten guten Daten zurückgehen können und
-retrieve that), anstatt eine einzelne Sicherung wiederholt zu überschreiben, ist
-gute Praxis.
+Die Häufigkeit, mit der Sie Datensicherungen durchführen sollten, und die Anzahl der Datensicherungen, die sie vorhalten sollten, hängt davon ab, wie häufig auf Ihrer Website Änderungen eingepflegt werden. Wenn Ihrer Website eine Website ist, auf der sich sehr viele Inhalte befinden und auf der mehrmals am Tag neue Inhalte hinzugefügt oder Inhalte aktualisiert werden, würden Sie häufiger Backups erstellen,für eine Website, deren Inhalte und Daten sich nur selten ändern. Bedenken Sie auch, dass einige Zeit, zwischen dem Moment, in dem ein Problem, dass zum Datenverlust füht und dem Moment, in dem Sie diesen Datanverlust bemerken, vergehen könnte. Desghalb ist es eine gute Idee Sicherungskopieen zu unterschiedlichen Zeitüunkten durchzuführen und diese an unterschiedlichen Ortten abzuspeichern (damit Sie Ihre Website auf einen Datnbestand zurücksetzen könnnen, indem ein solches Problem noch nicht enthalten ist) diese Mthode aus der Praxis hat sich ggegenüber der Methode eine einzelne Sicherung ständig zu überschreiben bewährt.
 
-Eine weitere Überlegung ist, dass unabhängig davon, in welchem Format Sie Ihre Backups speichern, es sich um ein
-gute Idee, zu überprüfen, ob Sie tatsächlich verlorene Daten von Ihrem
-Sicherungen. Vielleicht möchten Sie mehrere mögliche Datenverlustszenarien testen und
-sicher, dass Ihre Daten in jedem Fall auf der Website wiederhergestellt werden können.
+Eine weitere Überlegung kann sein, dass es, unabhängig davon, in welchem Format Sie Ihre Sicherungskopien speichern eiene gute Idee ist, zu überprüfen, ob zwischen dem aktuellen Stand Ihrer Website und der Letzen Sicherungskopie tatsächlich ein Datenverlust aufgetreten ist. Vielleicht möchten Sie zu diesem Zweck mehrere mögliche Datenverlustszenarien testen und
+sicherstellen, dass Ihre Daten in jedem Fall wieder hergestellt werden könnnen.
 
-Um ein vollständiges Backup Ihrer Website zu erstellen, müssen Sie Kopien erstellen von
-die folgenden:
+Um ein vollständige Sicherungskopie Ihrer Website zu erstellen, müssen Sie Kopien der Folgenden Dateien und Verzeichnisse bereithalten:
 
-* Die Daten im Verzeichnis _sites_, einschließlich der Datei _sites/default/settings.php_
-Datei.
+* Eine Kopie der Daten im Verzeichnis _sites_, einschließlich der Datei _sites/default/settings.php_.
 
-* Die Daten in der Datenbank Ihrer Website. Einige wenige Tabellen können abgeschnitten werden, wie zum Beispiel
-Speicherung des temporären Daten-Cache und der Sitzungsinformationen für die Benutzeranmeldung, aber es ist
-immer sicher, die gesamte Datenbank zu sichern.
+* Eine Kopie der Datenbank Ihrer Website. Einige wenige Tabellen, wie zum Beispiel die Tabellen zur
+Speicherung des temporären Daten-Cache und der Sitzungsinformationen für angemeldeter Benutzer können während der Sicherung aus dem Backup entfernt werden. Die sicherste Variante ist es aber immer ein Sicherungskopie der gesammten Daenbank anzulegen.
 
-* Hochgeladene Dateien, wie Bilder und andere Anhänge. Der Speicherort dieser
-Dateien ist konfigurierbar; der Standardspeicherort ist die _Sites/default/files_
-Verzeichnis unter Ihrem Site-Root. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu
-zu _Konfiguration_ > _Medien_ > _Dateisystem_ (_admin/configuration/media/filesystem_)
-um die Speicherorte der Datei-Uploads zu überprüfen; um sie zu ändern, müssen Sie Ihre
-_settings.php_ Datei editieren.
+* Eine Kopie hochgeladener Dateien, wie Bilder und andere Anhänge. Der Speicherort dieser
+Dateien ist konfigurierbar. Werden die Standardeinstellungen verwendet, legt Drupal diese Dateien im Verzeichnis _sites/default/files_,
+das sich im Hauptverzeichnis Ihrer Drupal-Installation befindet, ab. Navigieren Sie im Menü _Verwalten_ zu
+zum Menüpunkt _Konfiguration_ > _Medien_ > _Dateisystem_ (_admin/configuration/media/filesystem_)
+um den Speicherort für Datei-Uploads zu überprüfen. Um den Speicherort zu Ändern müssen Sie die Datei
+_settings.php_ editieren.
 
-* Module, Themes und alle anderen Software-Dateien, die Sie angepasst haben. Sie finden
-kundenspezifische Module und Themen in den Verzeichnissen _modules_ und _themes_
-entsprechend. Einige Leute ziehen es vor, alle Software-Dateien zu sichern, einschließlich der
-Dateien des Kernsystems und der Dateien der von der Community bereitgestellten Zusatzmodule und Themes (die Sie mittels Herunterladen aus der selben Quelle wiederherstellen können), anstatt zu versuchen, bestimmte Dateien herauszusuchen, die
-die auf jeden Fall gesichert werden müssen.
+* Eine Kopie der Module, Themes und aller anderen Datein der Software, die Sie angepasst haben. Sie finden
+benutzerdefinierte Module und Themes in den Verzeichnissen _modules_ und _themes_. Einige Leute ziehen es vor, alle Datein der Software zu sichern, einschließlich der
+Dateien des Kernsystems und der Dateien aus denen die von der Community bereitgestellten Zusatzmodule und Themes besetehen. Diese  können Sie jedoch auch mittels Herunterladen von Drupal_org_ wiederherstellen), anstatt zu versuchen, bestimmte Dateien zu Identifizieren, die
+die auf jeden Fall mit in die Sicherungskopie gehören.
 
-Sie können einen Test durchführen, um zu prüfen, ob Ihre Sicherung richtig durchgeführt wurde, indem Sie
-einee Kopie der Website in einer Entwicklungsumgebung erstellen (siehe <<install-dev-making>>).
+Ob Ihre Website korrekt gesichert wurde, können Sie überprüfen, indem Sie
+einee Kopie der Website in eine Entwicklungsumgebung einspielen (siehe: <<install-dev-making>>).
 
 ==== Verwandte Themen
 
@@ -76,11 +60,10 @@ einee Kopie der Website in einer Entwicklungsumgebung erstellen (siehe <<install
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ Community-Dokumentationsseite "Sichern einer Website"]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ Community-Dokumentationsseite "Sichern einer Website (englisch)"]
 
-* Das https://www.drupal.org/project/backup_migrate[beigetragene Sicherungs- und Migrationsmodul],
-die zum Einrichten automatischer Sicherungen der Datenbank verwendet und hochgeladen werden können
-Dateien.
+* Das https://www.drupal.org/project/backup_migrate[von der community bereitgestellte Zusatzmodul Backup and Migrate],
+das Sie zum Einrichten automatischer Sicherungen der Datenbank sowie hochgeladener Dateien verwenden können.
 
 
 *Mitwirkende*
