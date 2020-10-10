@@ -3,74 +3,71 @@
 === Leeren des Cache
 
 [role="summary"]
-So löschen Sie den Cache mit Drush oder über die Benutzeroberfläche.
+So löschen Sie den Cache mittels Drush oder über die Benutzeroberfläche.
 
 (((Cache,clearing)))
 (((Cache,rebuilding)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Löschen oder erneuern Sie die internen Caches Ihrer Website, um sicherzustellen, dass sie auf dem neuesten Stand sind
-die aktuellsten Daten über die Benutzeroberfläche oder Drush.
+Löschen sie die internen Caches Ihrer Website,  bzw. bauen Sie diese neu auf, um sicherzustellen, dass die Website auf dem neuesten Sand ist. Verwenden Sie dazu entweder die Benutzeroberfläche oder drush.
 
-==== Vorraussetzung Kenntnisse
+==== Erforderliche Vorkenntnisse
 
 * <<prevent-cache>>
 * <<install-tools>>
 
-==== Standort-Voraussetzungen
+==== Anforerungen´an die Website
 
 Wenn Sie Drush zum Löschen des Caches verwenden möchten, muss Drush installiert sein. Siehe
 <<install-tools>>.
 
 ==== Arbeitsschritte
 
-Sie können die administrative Schnittstelle oder Drush verwenden, um den Cache zu löschen. Sie können
-Verwenden Sie auch das Skript "Rebuild" oder Drush, um einen vollständigeren Cache-Neubau durchzuführen.
+Sie können entweder die Benutzeroberfläche oder Drush verwenden, um den Cache zu löschen. Sie können
+auch das Skript „Rebuild" oder Drush verwenden, um einen vollständigen Neuaufbau des Cache durchzuführen.
 
-======= Verwendung der administrativen Schnittstelle zum Löschen des Caches
+======= Verwendung der der Benutzeroberfläche zum Löschen des Caches
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Konfiguration_ >
-_Entwicklung_ > _Leistung_ (_Admin/Konfiguration/Entwicklung/Leistung_). Wenn Sie
-nicht auf diese Seite in der Verwaltungsschnittstelle zugreifen können, verwenden Sie eine der anderen
-Methoden zum Löschen oder Neuaufbau des Cache.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
+_Entwicklung_ > _Leistung_ (_admin/configuration/development/preformance_). Wenn Sie
+nicht auf diese Seite des Verwaltungsbereichs zugreifen können, verwenden Sie eine der anderen
+Methoden zum Löschen oder  zum Neuaufbau des Cache.
 
-. Klicken Sie auf _Alle Caches löschen_.
+. Klicken Sie auf _Alle Caches leeren_.
 
-. Eine Meldung, dass der Cache gelöscht wurde, erscheint oben in
-die Seite.
+. Eine Meldung, die besagt, dass der Cache geleert wurde, erscheint im oberen Teil der Seite.
 
-. Wenn dies nicht das Problem löst, das dazu geführt hat, dass Sie die
-Cache, versuchen Sie stattdessen einen Neuaufbau.
+. Wenn dies nicht das Problem löst, das dazu geführt hat, dass Sie den
+Cache der Seite leeren wollten, versuchen Sie stattdessen den Cache komplett neu aufzubauen.
 
-======= Mit dem Skript rebuild
+======= Neuaufbau des Cache mit dem Skript Rebuild
 
-. Öffnen Sie _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Klartext
-Herausgeber. Fügen Sie diese Zeile an das Ende der Datei an und speichern Sie sie:
+. Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Texteditor. 
+Fügen Sie folgende Zeile am Ende der Datei ein und speichern Sie die Datei ab:
 +
 ----
-$settings['rebuild_access'] = WAHR;
+$settings['rebuild_access'] = TRUE;
 ----
 
-. Besuchen Sie _http://www.example.com/core/rebuild.php_ in Ihrem Browser (wobei
-_www.example.com_ ist die URL Ihrer Website). Nach einer kurzen Pause sollten Sie
-auf die Startseite Ihrer Website umgeleitet, und der Cache sollte neu aufgebaut werden.
+. Rufen Sie die Seite _http://www.example.com/core/rebuild.php_ in Ihrem Browser auf (wobei
+_www.example.com_ als Beispiel für die URL Ihrer Website dient). Nach einer kurzen Wartezeit sollten Sie
+auf die Startseite Ihrer Website umgeleitet, und der Neuaufbau des Caches sollte begonnen haben.
 
-. Öffnen Sie _settings.php_ (_/sites/default/settings.php_) in einem Texteditor. Suchen Sie die
-Zeile, die Sie mit _$settings['rebuild_access']_ hinzugefügt haben, entfernen Sie diese Zeile und speichern
-die Datei.
+. Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_)  erneut in einem Texteditor. Suchen Sie die
+Zeile, die Si die Zeile _$settings['rebuild_access']_, die Sie soeben hinzugefügt haben. Entfernen Sie diese Zeile und speichern
+die Datei ab.
 
-====== Mit Drush den Cache neu aufbauen oder löschen
+====== Mit Drush den Cache neu aufbauen oder leeren
 
-Sie können einen von zwei Befehlen verwenden:
+Sie können einen von zwei Befehlen verwenden, um den Cache neu aufzubuen oder zu leeren:
 
-* Verwenden Sie den Befehl `drush cache:rebuild`, um alle gecachten Daten zu löschen und neu aufzubauen.
-für einen Standort. Nachdem Sie diesen Befehl ausgeführt haben, sehen Sie die Ausgabemeldung "Cache
-Wiederaufbau abgeschlossen".
+* Verwenden Sie den Befehl `drush cache:rebuild`, um alle gecachten Daten einer Website zu löschen und den Chche neu aufzubauen. 
+Nachdem der Behl ausgeführt wurde, wird die Meldung „Cache rebuild
+complete" ausgegeben.
 
 * Verwenden Sie den Befehl `drush cache:clear`, um eine Liste der einzelnen Caches zu sehen und
-wählen Sie dann den spezifischen Cache, den Sie löschen möchten. Ausführen dieses Befehls
-sollte eine Ausgabe wie die folgende erzeugen:
+wählen Sie dann den spezifischen Cache, den Sie leeren möchten. Wenn sie diesen Befehl ausführen, sollte Ihnen ungefähr folgendes angezeigt werden:
 +
 ----
 > drush cache:clear
@@ -86,11 +83,12 @@ Enter a number to choose which cache to clear.
  [8]  :  render
  [9]  :  views
 ----
-Wählen Sie einen zu löschenden Cache aus, indem Sie die mit diesem Cache verbundene Nummer eingeben. Drücken Sie
-"Enter" um fortzufahren.
+Wählen Sie einen zu leerenden Cache aus, indem Sie die diesem Cache zugewiesene Nummer eingeben. Drücken Sie
+„Enter" um fortzufahren.
 
 
-//===== Erweitern Sie Ihr Verständnis
+//===== 
+Vertiefen Sie Ihr Wissen
 
 
 //===== Verwandte Konzepte
@@ -98,18 +96,17 @@ Wählen Sie einen zu löschenden Cache aus, indem Sie die mit diesem Cache verbu
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Clearing the Cache"]
+video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Den Cache leeren (englishc)"]
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ Community-Dokumentationsseite "Löschen oder Neuaufbau des Drupal-Caches"]
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ Community-Dokumentationsseite "Drpals Cache leeren oder neu aufbauen" (englisch)]
 
 
 *Mitwirkende*
 
-Adaptiert und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar]
-und https://www.drupal.org/u/jerseycheese[Jack Haas] von
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Clearing oder
-Drupal's Cache neu aufbauen"],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+Bearbeitet und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+und https://www.drupal.org/u/jerseycheese[Jack Haas] übernommen aus
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Drpals Cache leeren oder neu aufbauen" (englisch)"],
+copyright 2000 - copyright_upper_year iiegt bei den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
