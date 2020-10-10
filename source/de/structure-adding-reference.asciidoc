@@ -12,29 +12,30 @@ So fügen Sie ein Referenzfeld hinzu, das zwei Inhaltstypen verbindet.
 (((User reference field,adding)))
 (((Taxonomy term reference field,adding)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
 Fügen Sie ein Referenzfeld hinzu, damit Rezepte mit dem Lieferanten verknüpft werden können, der
-hat es eingereicht.
+das Rezept eingereicht hat.
 
-==== Vorraussetzung Kenntnisse
+==== Erforderliche Kenntnisse
 
 * <<structure-fields>>
 * <<structure-reference-fields>>
 * <<structure-content-type>>
 
-==== Standort-Voraussetzungen
+==== Anforderungen an die Website
 
 Die Inhaltstypen Rezept und Lieferant müssen vorhanden sein. Siehe <<structure-content-type>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhalt
-Typen_ (_admin/structure/types_). Tenn Sie auf _Felder verwalten_ in der
-Dropdown-Schaltfläche für den Inhaltstyp Rezept. Sie gelangen auf die Seite _Felder verwalten_.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_ (_admin/structure/types_).
+Klicken Sie im Drop-Button des Inhaltstyps Rezept auf _Felder verwalten_.
+Sie gelangen so auf die Seite _Felder verwalten_.
 
-. Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint. Füllen Sie die Felder wie abgebildet aus
-unten. Klicken Sie auf _Speichern und fortfahren_.
+. Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint.
+Füllen Sie die Formularfelder wie unten angegeben aus.
+Klicken Sie auf _Speichern und fortfahren_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -48,8 +49,9 @@ unten. Klicken Sie auf _Speichern und fortfahren_.
 image:images/structure-adding-reference-add-field.png["Adding a reference field to a content type"]
 --
 
-. Es erscheint die Seite Submitted by, auf der Sie die zulässige Anzahl von
-Werte. Füllen Sie die Felder wie unten dargestellt aus. Klicken Sie auf _Feldeinstellungen speichern_.
+. Es erscheint die Seite Geschrieben von, auf der Sie die zulässige Anzahl von
+Werten eintragen können. Füllen Sie die Felder wie unten angegeben aus.
+Klicken Sie auf _Feldeinstellungen speichern_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -69,9 +71,9 @@ das Feld konfigurieren. Füllen Sie die Felder wie unten dargestellt aus. Klicke
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-| Etikett | Titel, der für dieses Feld auf der Seite angezeigt wird | Übermittelt von
+| Bezeichnung | Titel, der für dieses Feld auf der Seite angezeigt wird | Übermittelt von
 | Hilfetext | Kurzer Text zur Unterstützung der Person, die den Inhalt erstellt | Wählen Sie den Anbieter, der dieses Rezept eingereicht hat
-| Pflichtfeld | Ob ein Wert angegeben werden muss oder nicht | Geprüft
+| Pflichtfeld | Ob ein Wert angegeben werden muss oder nicht | Ausgewählt
 | Referenztyp > Referenzmethode | Option zur Auswahl der Referenzmethode | Standard
 | Referenztyp > Inhaltstypen | Geben Sie den Inhaltstyp an | Anbieter
 | Referenz-Typ > Sortieren nach | Sortierfeld | Titel
@@ -83,14 +85,14 @@ das Feld konfigurieren. Füllen Sie die Felder wie unten dargestellt aus. Klicke
 image:images/structure-adding-reference-field-settings.png["Settings for a reference field ",width="100%"]
 --
 
-. Das Feld Submitted by wurde dem Inhaltstyp hinzugefügt.
+. Das Feld Übermittelt von wurde dem Inhaltstyp hinzugefügt.
 +
 --
 // Manage fields page for content type Recipe, after adding Submitted by field.
 image:images/structure-adding-reference-manage-fields.png["Manage fields page for the Recipe content type",width="100%"]
 --
 
-// ==== Erweitern Sie Ihr Verständnis
+// ==== Vertiefen Sie ihre Kenntnisse
 
 // ==== Verwandte Konzepte
 
@@ -106,4 +108,4 @@ video::https://www.youtube-nocookie.com/embed/hAhWiqPlKh0[title="Hinzufügen ein
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
 und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
-http://redcrackle.com[Red Crackle].
+http://redcrackle.com[Rotes Knistern].
