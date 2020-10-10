@@ -14,7 +14,7 @@ So fügen Sie ein Referenzfeld hinzu, das zwei Inhaltstypen verbindet.
 
 ==== Zielsetzung
 
-Fügen Sie ein Referenzfeld hinzu, damit Rezepte mit dem Lieferanten verknüpft werden können, der
+Fügen Sie ein Referenzfeld hinzu, damit Rezepte mit dem Profil des Lieferanten verknüpft werden können, der
 das Rezept eingereicht hat.
 
 ==== Erforderliche Kenntnisse
@@ -49,7 +49,7 @@ Klicken Sie auf _Speichern und fortfahren_.
 image:images/structure-adding-reference-add-field.png["Adding a reference field to a content type"]
 --
 
-. Es erscheint die Seite Geschrieben von, auf der Sie die zulässige Anzahl von
+. Es erscheint die Seite Fekdeinstellungn, auf der Sie die zulässige Anzahl von
 Werten eintragen können. Füllen Sie die Felder wie unten angegeben aus.
 Klicken Sie auf _Feldeinstellungen speichern_.
 +
@@ -71,11 +71,11 @@ das Feld konfigurieren. Füllen Sie die Felder wie unten dargestellt aus. Klicke
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-| Bezeichnung | Titel, der für dieses Feld auf der Seite angezeigt wird | Übermittelt von
-| Hilfetext | Kurzer Text zur Unterstützung der Person, die den Inhalt erstellt | Wählen Sie den Anbieter, der dieses Rezept eingereicht hat
+| Bezeichnung | Titel, der für dieses Feld auf der Seite angezeigt wird | Eingereicht von
+| Hilfetext | Kurzer Text zur Unterstützung der Person, die den Inhalt erstellt | Wählen Sie den Lieferanten aus, der dieses Rezept eingereicht hat
 | Pflichtfeld | Ob ein Wert angegeben werden muss oder nicht | Ausgewählt
 | Referenztyp > Referenzmethode | Option zur Auswahl der Referenzmethode | Standard
-| Referenztyp > Inhaltstypen | Geben Sie den Inhaltstyp an | Anbieter
+| Referenztyp > Inhaltstypen | Geben Sie den Inhaltstyp an | Lieferant
 | Referenz-Typ > Sortieren nach | Sortierfeld | Titel
 | Verweistyp > Sortierrichtung| Sortierreihenfolge | Aufsteigend
 |================================
@@ -85,7 +85,7 @@ das Feld konfigurieren. Füllen Sie die Felder wie unten dargestellt aus. Klicke
 image:images/structure-adding-reference-field-settings.png["Settings for a reference field ",width="100%"]
 --
 
-. Das Feld Übermittelt von wurde dem Inhaltstyp hinzugefügt.
+. Das Feld Eingereicht von wurde dem Inhaltstyp hinzugefügt.
 +
 --
 // Manage fields page for content type Recipe, after adding Submitted by field.
@@ -99,7 +99,7 @@ image:images/structure-adding-reference-manage-fields.png["Manage fields page fo
 ==== Videos
 
 // Video von Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/hAhWiqPlKh0[title="Hinzufügen eines Referenzfeldes (englisch)"]
+video::https://www.youtube-nocookie.com/embed/hAhWiqPlKh0[title="Ein Referenzfeld hinzufügen (englisch)"]
 
 // ==== Zusätzliche Ressourcen
 
