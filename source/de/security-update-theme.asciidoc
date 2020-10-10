@@ -12,7 +12,7 @@ das Script zur Aktualisierung der Datenbank ausführt.
 
 ==== Zielsetzung
 
-Aktualisieren Sie ein von der Community bereitgestelltes Thema auf Ihrer Website und führen Sie das Skrip_update.php_ zur _Datenbankaktualisierungen_ aus.
+Aktualisieren Sie ein von der Community bereitgestelltes Theme auf Ihrer Website und führen Sie das Skript _update.php_ zur _Datenbankaktualisierungen_ aus.
 
 ==== Erforderliche Kenntnisse
 
@@ -21,8 +21,8 @@ Aktualisieren Sie ein von der Community bereitgestelltes Thema auf Ihrer Website
 
 ==== Anforderungen an die Website
 
-* Ein von der Community bereitgestelltes Theme wurde installiert und es gibt ein Update für
-das Theme. Siehe <<extend-theme-install>> und <<security-announce>>.
+* Ein von der Community bereitgestelltes Theme, für das eine Aktualisierung vorhanden ist, wurde installiert. 
+Siehe <<extend-theme-install>> und <<security-announce>>.
 
 * Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklungsumgebung testen,
 bevor Sie diesen auf Ihrer Produktiv-Website durchführen. Siehe:
@@ -36,8 +36,8 @@ Siehe: <<config-install>> für Anweisungen zur Installation von Kernsystemmodule
 
 ==== Arbeitsschritte
 
-Sie können die Benutzeroberfläche verwenden, um ein von der community bereitgestelltes Thema zu aktualisieren. Wenn Sie
-ein benutzerdefiniertes Theme statt einem von der Community bereitgestellten Themes aktualisierenund eine Meldung angezeigt wird, die besagt,
+Sie können die Benutzeroberfläche verwenden, um ein von der Community bereitgestelltes Theme zu aktualisieren. Wenn Sie
+ein benutzerdefiniertes Theme statt einem von der Community bereitgestellten Themes aktualisieren und eine Meldung angezeigt wird, die besagt,
 dass _die Installation von Modulen und Themes FTP-Zugriff auf den Webserver erfordert_
 oder wenn die untenstehenden Arbeitsschritte für Sie nicht funktionieren, um die betroffenen Themes herunterzuladen,
 führen Sie die Arbeitsschritte in <<extend-manual-install>> aus. Anschließend können Sie hier mit Schritt 6
@@ -45,16 +45,16 @@ im Abschnitt „Die Benutzeroberfläche verwenden“ fortfahren.
 
 Wenn Sie Composer zur Verwaltung der Dateien auf Ihrer Website verwenden, befolgen Sie die Arbeitsschritte
 in <<install-composer>> um die Dateien zu aktualisieren und fahren Sie anschließend hier mit Schritt 6 in
-die untenstehenden Anweisungen zur Verwendung der Benutzeroberfläche fort.
+in den unterstehenden Anweisungen zur Verwendung der Benutzeroberfläche fort.
 
-======= Verwendung der Benutzeroberfläche
+====== Verwendung der Benutzeroberfläche
 
 . Versetzen Sie Ihre Website in den Wartungsmodus. Siehe: <<extend-maintenance>>.
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Berichte_ >
 _Verfügbare Aktualisierungen_ > _Aktualisieren_ (_/admin/reports/updates_).
 
-. Suchen und prüfen Sie das  betreffende Modul in der Liste. Klicken Sie auf _Herunterladen_ in der Zeile des entsprechenden Themes.
+. Suchen und prüfen Sie das  betreffende Theme in der Liste. Klicken Sie auf _Herunterladen_ in der Zeile des entsprechenden Themes.
 +
 --
 // Update page for theme (admin/reports/updates/update).
@@ -63,9 +63,9 @@ image:images/security-update-theme-updates.png["Available updates",width="100%"]
 
 . Klicken Sie auf _Fortsetzen_.
 
-. Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Moduldateien manuell bezogen haben,
-Beginnen Sie mit diesem Schritt und erreichen Sie die Datenbank-Updates-Seite, indem Sie die URL eingeben
-_example.com/update.php_ in Ihrem Browser.
+. Klicken Sie auf Datenbankaktualisierung ausführen_. Wenn Sie die neuen Theme-Dateien manuell bezogen haben,
+Beginnen Sie mit diesem Schritt und rufen Sie die Seite zur Datenbankaktualisierung auf, indem Sie die URL
+_example.com/update.php_ in die Adresszeile Ihres Browsers  eingeben.
 
 . Klicken Sie auf _Fortsetzen_ und wenden Sie alle Aktualisierungen an. Das Skript zur Datenbankaktualisierung wird
 ausgeführt.
