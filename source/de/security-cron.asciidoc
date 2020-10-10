@@ -3,15 +3,13 @@
 === Konfigurieren von Cron-Wartungsaufgaben
 
 [role="summary"]
-Wie man Cron-Wartungsaufgaben mit dem Kernsystemmodul Automatic Cron ausführt, oder diese außerhalb der Website ausführen lässt
+Wie man Cron-Wartungsaufgaben mit dem Kernsystemmodul Automatic Cron ausführt, oder diese außerhalb der Website ausführen lässt.
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
 
 ==== Zielsetzung
 
-Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden, und wenn nicht, entweder
-Installieren Sie das zentrale automatisierte Cron-Modul oder führen Sie Cron-Wartungsaufgaben aus
-außerhalb der Website.
+Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden. Ist dies nicht der Fall,installieren Sie entweder das Modul Autmatic Cron oder lassen Sie Cron-Wartungsaufgaben außerhalb Ihrer Website ausführen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -21,25 +19,24 @@ außerhalb der Website.
 
 ==== Arbeitsschritte
 
-. Überprüfen Sie den _Statusbericht_ (siehe <<prevent-status>>), um zu sehen, wann Cron
-Wartungsaufgaben zuletzt ausgeführt wurden.
+. Überprüfen Sie den _Statusbericht_ (siehe <<prevent-status>>), um zu sehen, wann Cron-Wartungsaufgaben zuletzt ausgeführt wurden.
 +
 Wenn Sie die Website mit dem Standardinstallationsprofil des Kernsystems (oder auf ähnliche Weise) installiert haben,
 könnten Sie Cron-Wartungsaufgaben bereits mit Hilfe des Moduls Automatic Cron ausführen. Standardmäßig werden diese Aufgaben etwa alle drei
 Stunden ausgeführt.
 
-. Wählen Sie, ob Sie Cron-Wartungsaufgaben mit dem Modul Automated Cron, das mit dem Kernsystem ausgeliefert wird
-oder mit anderen Mitteln ausgeführt werden sollen. Das Modul Automated-Cron ist aus folgenden
+. Wählen Sie aus, ob Sie Cron-Wartungsaufgaben mit dem Modul Automated Cron, das mit dem Kernsystem ausgeliefert wird
+oder oder mittels anderer Werkzeuge ausführen möchten. Das Modul Automated-Cron ist aus folgenden
 Gründen möglicherweise nicht für Ihre Website geeignet:
 +
-  * Jedes Mal, wenn jemand auf eine Seite auf der Website zugreift, prüft das Modul, wie viel Zeit
+  * Jedes mal, wenn jemand auf eine Seite auf der Website zugreift, prüft das Modul, wie viel Zeit
 seit der letzten Ausführung von Cron-Wartungsaufgaben vergangen ist, und führt die Aufgaben, falls erforderlich,
 erneut aus. Wenn über einen längeren Zeitraum niemand die Website besucht, werdne Cron-Wartungsaufgaben also nicht ausgeführt.
   * Cron-Wartungsaufgaben werden ausgeführt, nachdem die Seite geladen wurde. Dies bedeutet
 es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Server-Timeouts
  (z.B. PHP-Ausführungszeitüberschreitungen) in kraft treten. Wenn dies geschieht, wird im Systemprotokoll (siehe
   <<prevent-log>>) eine Fehlermeldung ausgegeben, die darüber Informiert, dass Wartungsaufgaben mittels Cron nicht abgeschlossen werden konnten.
-  * Das Modul Automated Cron bietet aber auch einen Vorteil. Durch den Einsatz des Modus Automated Cron fallen geringere Kosten bezüglich der
+  * Das Modul Automated Cron bietet aber auch einen Vorteil. Durch den Einsatz des Moduls Automated Cron fallen geringere Kosten bezüglich der
   https://de.wikipedia.org/wiki/Skalierbarkeit[Skalierbarkeit] an.
   Dies liegt daran, ein Cron-Job einen Prozess auf einem Webserver ausführt, der erst abgeschlossen werden muss, bevor andere Websites bedient werden können.
 
@@ -47,10 +44,9 @@ es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Ser
 installiert ist (Das Installationsprofil Standard installiert das Modul automatisch. Siehe:
 <<config-install>> wenn dass Modul nicht installtiert wurde).
 +
-Als Nächstes konfigurieren Sie das Modul so, dass es steuert, wie häufig Cron-Wartungsaufgaben durchlaufen werden.
-Navigieren Sie dazu im Menü _Verwaltung_ zum Menüpunkt _Konfiguration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie im Feld _Run cron every_ unter _Cron-Einstellungen_ das gewünschte Intervall aus
-und klicken Sie auf _Konfiguration Speichern_.
+Als Nächstes legen Sie fest, wie häufig Cron-Wartungsaufgaben durchlaufen werden sollen.
+Navigieren Sie dazu im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
+_System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie im Feld _Crona alle x-Miunten ausführen_ unter _Cron-Einstellungen_ das gewünschte Intervall aus und klicken Sie auf _Konfiguration Speichern_.
 +
 --
 // Cron-Konfigurationsseite (admin/config/system/cron).
