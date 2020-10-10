@@ -12,7 +12,7 @@ das Skript zum Aktualisieren der Datenbank ausführt
 
 ==== Zielsetzung
 
-Aktualisieren Sie ein von der Community bereitgestelltes Modul und führen Sie das Skript _update.php_ zur _Datenbankaktualisierungen_ aus.
+Aktualisieren Sie ein von der Community bereitgestelltes Modul und führen Sie das Skript _update.php_ zur _Datenbankaktualisierung_ aus.
 
 ==== Voraussetzung
 
@@ -28,7 +28,7 @@ verfügbar. Siehe: <<extend-module-install>> und <<security-announce>>.
 bevor Sie diesen auf Ihrer Produktiv-Website durchführen. Siehe:
 <<install-dev-making>>.
 
-* Sie haben eine vollständige Sicherung der Produktiv-Website erstellt. Siehe: <<prevent-backups>>.
+* Sie haben eine vollständige Sicherung Ihrer Produktiv-Website erstellt. Siehe: <<prevent-backups>>.
 
 * Wenn Sie die Benutzeroberfläche verwenden wollen, muss das Modul Update Manager,
 das mit dem Kernsystem ausgeliefert wird, installiert sein.
@@ -39,15 +39,15 @@ Siehe: <<config-install>> für Anweisungen zur Installation von Kernsystemmodule
 Bevor Sie beginnen, suchen Sie nach modulspezifischen Update-Anweisungen. Dies ist
 typischerweise beim Aktualisieren von Modulen notwendig, die Drittanbieter-Bibliotheken verwenden.
 Lesen und verstehen Sie alle modulspezifischen Anforderungen, bevor Sie
-mit der Aktualisierung des Moduls fortfahren. Solche Anweisungen finden lesen
+mit der Aktualisierung des Moduls fortfahren.Um solche Anweisungen finden lesen
 Sie die Projektseite des betretenden Moduls und lesen Sie die _Dokumentation_ die über einen
 Link auf der Projektseite des Moduls erreichbar ist.
 
 Um weitere Anweisungen zu erhalten, laden Sie die tar.gz- oder .zip-Datei von der Projektseite
 des Moduls auf Ihren lokalen Computer herunter. Entpacken Sie das Archiv und suchen Sie nach den Dateien _README.txt_,
-_INSTALL.txt_ und/oder _UPGRADE.txt_, die mit des Modul ausgeliefert werden
+_INSTALL.txt_ und/oder _UPGRADE.txt_, die mit dem Modul ausgeliefert werden
 Lesen Sie auch die Versionshinweise auf der Projektseite, indem Sie auf die Versionsnummer der Version klicken,
-die Sie herunterladen haben.
+die Sie heruntergeladen haben.
 
 // Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/security-update-module-release-notes.png["Release notes link"]
@@ -62,7 +62,7 @@ im Abschnitt „Die Benutzeroberfläche verwenden“ fortfahren.
 
 Wenn sie Composer zur Verwendung der Dateien Ihrer Website verwenden,
 führen Sie die Arbeitsschritte in <<nstall-composer>> aus,
-um die Dateine zu aktualisieren und fahren Sie anschließend mit
+um die Dateien zu aktualisieren und fahren Sie anschließend mit
 Schritt 6 im Abschnitt „Die Benutzeroberfläche verwenden“ fortfahren.
 
 ==== Die Benutzeroberfläche verwenden
@@ -82,13 +82,13 @@ image:images/security-update-module-updates.png["Available updates",width="100%"
 . Klicken Sie auf _Fortsetzen_.
 
 . Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Moduldateien manuell bezogen haben,
-Beginnen Sie mit diesem Schritt und erreichen Sie die Datenbank-Updates-Seite, indem Sie die URL eingeben
-_example.com/update.php_ in Ihrem Browser.
+Beginnen Sie mit diesem Schritt und öffnen Sie die Seite Datenbankaktualisierung, indem Sie die URL
+_example.com/update.php_ in die Adresszeiele Ihres Browsers eingeben.
 
 . Klicken Sie auf _Fortsetzen_ und wenden Sie alle Aktualisierungen an. Das Skript zur Datenbankaktualisierung wird
 ausgeführt.
 
-. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsbereich Ihres
+. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsbereich Ihrer
 Website zurückzukehren.
 
 . Deaktivieren Sie den Wartungsmodus auf Ihrer Website. Siehe: <<extend-maintenance>>.
@@ -97,8 +97,8 @@ Website zurückzukehren.
 
 ==== Vertiefen Sie Ihre Kenntnisse
 
-* Überprüfen Sie das Protokoll der Website (<<prevent-log>>), sobald die Aktualisierungen abgeschlossen sind.
-um zu prüfen, ob während des Aktualisierungsvorgangs Fehler aufgetreten sind.
+* Überprüfen Sie das Protokoll der Website (<<prevent-log>>), sobald die Aktualisierungen abgeschlossen wurden,
+um festzustellen, ob während des Aktualisierungsvorgangs Fehler aufgetreten sind.
 
 * <<security-update-theme>>
 
@@ -119,6 +119,5 @@ https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "A
 Adaptiert von https://www.drupal.org/u/batigolix[Boris Doesborgh], und
 https://www.drupal.org/u/hey_germano[Sarah Deutsch] bei
 https://www.advomatic.com[Advomatisch], von
-https://www.drupal.org/node/250790["Updating modules"], copyright 2000 - copyright_upper_year by
-die einzelnen Mitwirkenden der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+https://www.drupal.org/node/250790["Module aktualisieren (englisch)"], copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
