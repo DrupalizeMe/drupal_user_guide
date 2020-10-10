@@ -3,7 +3,7 @@
 === Aktualisieren des Kernsystems
 
 [role="summary"]
-Das Kernsystem über die Benutzeroberfläche oder mittes Drush aktualisieren.
+Das Kernsystem über die Benutzeroberfläche oder mittels Drush aktualisieren.
 
 (((Core software,updating)))
 (((Drush tool,using to update the core software)))
@@ -17,10 +17,10 @@ Aktualisieren Sie das Kernsystem, entweder über den Verwaltungsbereichoder mit 
 
 ==== Anforderungen an die Website
 
-* Wenn Sie Drush verwenden möchten, muss Drush installiert sein. Siehe <<<install-tools>>.
+* Wenn Sie Drush verwenden möchten, muss Drush installiert sein. Siehe: <<<install-tools>>.
 
-* Wenn sich Ihre seite im Produktiveinsatz befindet, sollten Sie diesen Prozess in einer Entwicklungsumgebung testen,
-Sie auf der eigentlichen Website ausführen. Siehe: <<install-dev-making>>.
+* Wenn sich Ihre Seite im Produktiveinsatz befindet, sollten Sie diesen Prozess in einer Entwicklungsumgebung testen,
+ bevor Sie Ihn auf der eigentlichen Website ausführen. Siehe: <<install-dev-making>>.
 
 ==== Arbeitsschritte
 
@@ -35,15 +35,15 @@ $settings['update_free_access'] = TRUE;
 
 . Deaktivieren Sie alle Caching-Technologien (Memcache, Varnish usw.), die Ihre Anwendung verwenden könnte.
 
-. Versetzen Sie Ihre Websit in den Wartungsmodus. Siehe: <<<extend-maintenance>>.
+. Versetzen Sie Ihre Website in den Wartungsmodus. Siehe: <<<extend-maintenance>>.
 
 . Wenn Sie Composer zur Verwaltung von Abhängigkeiten verwenden, überspringen Sie die nächsten sechs Schritte, und
-lesen Sie statdessen <<install-composer>>, um Anweisungen zur Aktualisierung Ihrer Website mittels Composer zu erhalten. Fahren Sie mit dem Schritt _update.php_ fort.
+lesen Sie stattdessen <<install-composer>>, um Anweisungen zur Aktualisierung Ihrer Website mittels Composer zu erhalten. Fahren Sie mit dem Schritt _update.php_ fort.
 
 . Laden Sie das tar.gz- oder Zip-Archiv der neuesten Version von Drupal-8.x
 von der Seite https://www.drupal.org/project/drupal[_Drupal.org_ Drupal-core
 Downloads] herunter. Im Abschnitt <<install-prepare>> finden Sie weitere Einzelheiten dazu, wie Sie die neueste Version von Drupal
-herunterladen könnnen.
+herunterladen können.
 
 . Laden Sie die Archivdatei auf Ihren Server hoch.
 
@@ -59,7 +59,7 @@ tar -xzf drupal-8.3.2.tar.gz
 
 verwenden, um die Dateien aus der Archivdatei zu entpacken.
 
-. Löschen Sie im Verzeichnsis, das Ihre Websie enthält die Verzeichnisse _core_ und _vendor_,
+. Löschen Sie im Verzeichns, das Ihre Websie enthält die Verzeichnisse _core_ und _vendor_,
 und alle Dateien, die sich nicht in einem Unterverzeichnis befinden. Einschließlich der Dateien _.htaccess_,
 _composer.json_, und _Autoload.php_. Löschen Sie keine benutzerdefinierten und angepassten Dateien
 weil dadurch die darin enthaltenen Anpassungen verloren gehen.
@@ -69,7 +69,7 @@ weil dadurch die darin enthaltenen Anpassungen verloren gehen.
 . Führen Sie das PHP-Skript _update.php_ aus, indem Sie eine der folgenden Methoden verwenden:
 +
   * Rufen Sie die Seite _http://www.example.com/update.php_ in Ihrem Browser auf (wobei
-  _www.example.com_ als Beispiel für die Adresse Ihrer Webste verwendet wird). Klicken Sie auf der ersten Seite auf _Fortsetzen_.
+  _www.example.com_ als Beispiel für die Adresse Ihrer Website verwendet wird). Klicken Sie auf der ersten Seite auf _Fortsetzen_.
   um die Aktualisierungen auszuführen und das Skript erfolgreich abzuschließen.
   * Führen Sie den folgenden Drush-Befehl aus: `drush updatedb`
 
@@ -119,7 +119,7 @@ video::https://www.youtube-nocookie.com/embed/DqYqxp4xByk[title=„Das Kernsyste
 * Die Datei _/core/UPDATE.txt_ innerhalb Ihrer Installation.
 
 
-*Angaben*
+*Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/surendramohan[Surendra Mohan],
 https://www.drupal.org/u/batigolix[Boris Doesborgh], und
