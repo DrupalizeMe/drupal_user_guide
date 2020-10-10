@@ -3,31 +3,31 @@
 === Leeren des Cache
 
 [role="summary"]
-So löschen Sie den Cache mittels Drush oder über die Benutzeroberfläche.
+So leeren Sie den Cache mittels Drush oder über die Benutzeroberfläche.
 
 (((Cache,clearing)))
 (((Cache,rebuilding)))
 
 ==== Zielsetzung
 
-Löschen sie die internen Caches Ihrer Website,  bzw. bauen Sie diese neu auf, um sicherzustellen, dass die Website auf dem neuesten Stand ist. Verwenden Sie dazu entweder die Benutzeroberfläche oder drush.
+Leeren Sie die internen Caches Ihrer Website,  bzw. bauen Sie diese neu auf, um sicherzustellen, dass die Website auf dem neuesten Stand ist. Verwenden Sie dazu entweder die Benutzeroberfläche oder drush.
 
 ==== Erforderliche Vorkenntnisse
 
 * <<prevent-cache>>
 * <<install-tools>>
 
-==== Anforerungen´an die Website
+==== Anforderungen´an die Website
 
 Wenn Sie Drush zum Löschen des Caches verwenden möchten, muss Drush installiert sein. Siehe
 <<install-tools>>.
 
 ==== Arbeitsschritte
 
-Sie können entweder die Benutzeroberfläche oder Drush verwenden, um den Cache zu leerem. Sie können
+Sie können entweder die Benutzeroberfläche oder Drush verwenden, um den Cache zu leeren. Sie können
 auch das Skript „Rebuild" oder Drush verwenden, um einen vollständigen Neuaufbau des Cache durchzuführen.
 
-====== Verwendung der der Benutzeroberfläche zum Leeren des Caches
+====== Verwendung der Benutzeroberfläche zum Leeren des Caches
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
 _Entwicklung_ > _Leistung_ (_admin/configuration/development/preformance_). Wenn Sie
@@ -60,10 +60,10 @@ die Datei ab.
 
 ====== Mit Drush den Cache neu aufbauen oder leeren
 
-Sie können einen von zwei Befehlen verwenden, um den Cache neu aufzubuen oder zu leeren:
+Sie können einen von zwei Befehlen verwenden, um den Cache neu aufzubauen oder zu leeren:
 
 * Verwenden Sie den Befehl `drush cache:rebuild`, um alle gecachten Daten einer Website zu löschen und den Chche neu aufzubauen. 
-Nachdem der Behl ausgeführt wurde, wird die Meldung „Cache rebuild
+Nachdem der Befehl ausgeführt wurde, wird die Meldung „Cache rebuild
 complete" ausgegeben.
 
 * Verwenden Sie den Befehl `drush cache:clear`, um eine Liste der einzelnen Caches zu sehen und
@@ -96,17 +96,17 @@ Vertiefen Sie Ihr Wissen
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Den Cache leeren (englishc)"]
+video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Den Cache leeren (englisch)"]
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ Community-Dokumentationsseite "Drpals Cache leeren oder neu aufbauen" (englisch)]
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ Community-Dokumentationsseite "Drupals Cache leeren oder neu aufbauen" (englisch)]
 
 
 *Mitwirkende*
 
 Bearbeitet und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar]
 und https://www.drupal.org/u/jerseycheese[Jack Haas] übernommen aus
-https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Drpals Cache leeren oder neu aufbauen" (englisch)"],
-copyright 2000 - copyright_upper_year iiegt bei den einzelnen Mitwirkenden an der
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Drupals Cache leeren oder neu aufbauen" (englisch)"],
+copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
