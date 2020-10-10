@@ -1,9 +1,9 @@
 [[structure-content-display]]
 
-=== Ändern der Inhaltsanzeige
+=== Ändern dAnzeigeeinstellungen von Inhalten
 
 [role="summary"]
-Wie man Inhaltselemente präsentationsfähiger macht.
+Wie man Inhaltselemente attraktiver darstellt.
 
 (((Content display,changing)))
 (((Content display,managing)))
@@ -11,35 +11,34 @@ Wie man Inhaltselemente präsentationsfähiger macht.
 
 ==== Zielsetzung
 
-Machen Sie die Inhaltselemente lesbarer, zugänglicher und sichtbar attraktiver, indem
+Gestalten Sie Inhalte lesbarer, zugänglicher und sichtbar attraktiver, indem
 Sie Felder neu anordnen, Beschriftungen ausblenden und bestimmen,
-welche Felder angezeigt werden sollen.
+welche Felder Benutzern angezeigt werden sollen.
 
-==== Erforderliche Kenntnisse
+==== Erforderliche Vorkenntnisse
 
 * <<planning-data-types>>
 * <<structure-view-modes>>
 
 ==== Anforderungen an die Website
 
-Der Inhaltstyp „Lieferant" muss vorhanden sein, er muss ein Feld für Cover-Bild (Logo) und ein Feld für eine Anbieter-URL enthalten.
-Außerdem muss auf Iherer Websites mindestens ein Inhaltselement vom Typ Lieferant vorhanden sein.
+Der Inhaltstyp „Lieferant" muss vorhanden sein, er muss ein Feld für eon Titelbild (Logo) und ein Feld für die URL zur Website des Lieferanten enthalten.
+Außerdem muss auf Iherer Websites mindestens ein Inhalts vom Typ Lieferant vorhanden sein.
 Siehe: <<structure-content-type>>, <<structure-fields>>, und <<content-create>>.
 
 ==== Arbeitsschritte
 
-. Suchen und zeigen Sie ein Inhaltselement Lieferant an, das Sie unter <<structure-fields>> angelegt haben.
-Beachten Sie, dass es mehrere Dinge gibt, die man tun könnte, um die Seite zu verbessern
-Aussehen:
+. Suchen Sie einen Inhalt vom Typ Lieferant, den Sie im Thema <<structure-fields>> angelegt haben, heruas und lassen Sie sich diesen  Inhalt anzeigen.  .
+Beachten Sie, dass es mehrere Dinge gibt, die Sie tun könnten, um die Darstellung der Seite zu verbessern:
 +
-  * Die Felder Hauptbild und Anbieter-URL sollten keine Beschriftungen haben.
-  * Die Reihenfolge der Felder sollte so geändert werden, dass das Bild an erster Stelle steht.
-  * Das Bild sollte kleiner sein.
+  * Für die Felder Hauptbild und URL zur Website des Leiferanten sollten keine Beschriftungen angezeigt werden.
 
-  . Um die ersten beiden Probleme zu beheben und einige zusätzliche Einstellungen zu aktualisieren, in der
-  Verwaltungsmenü _Verwaltung_, navigieren Sie zu _Struktur_ > _Inhaltstypen_
-  (_Administration/Struktur/Arten_). Klicken Sie dann auf _Anzeige verwalten_ in der Dropdown-Schaltfläche
-  für den Content-Typ Anbieter.
+  * Die Reihenfolge der Felder sollte so geändert werden, dass das Bild an erster Stelle steht.
+
+  * Das Bild sollte kleiner dargestellt werden.
+
+  . Um die ersten beiden Probleme zu beheben und einige zusätzliche Einstellungen zu aktualisieren, navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
+  (_admin/structure/types_). Klicken Sie dann im Drop-Button des Inhaltstyps Liefernt auf _Anzeige verwalten_.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
@@ -47,8 +46,7 @@ Aussehen:
 image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
 --
 
-. Unter der Spalte _Label_ wählen Sie _Versteckt_ für Hauptbild. Machen Sie dasselbe
-für Anbieter-URL.
+. In der Spalte _Beschriftung_ wählen Sie für das Hauptbild die Option _Deaktiviert_ aus. Wiederholen Sie dies für das Feld _URL zur Website des Lieferanten_
 +
 --
 // Manage display page for Vendor content type
@@ -57,16 +55,15 @@ für Anbieter-URL.
 image:images/structure-content-display_main_image_hidden.png["Selecting _main image title_ as _hidden_",width="100%"]
 --
 
-. Klicken Sie auf das Zahnrad für das Feld Hersteller-URL, um die Konfiguration zu öffnen.
-Optionen.
+. Klicken Sie auf das Zahnrad für das Feld URL zur Website des Lieferanten, um die Konfigurationsoptione für das Feld zu öffnen.
 
 . Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname|Erläuterung|Beispielwert
-|Länge des Linktextes trimmen| Maximal angezeigte Länge für Linktext| Leer (kein Trimmen)
-|Link in neuem Fenster öffnen| Ob Links in einem neuen Fenster oder im selben Fenster geöffnet werden sollen |Geprüft
+|Länge des Linktextes kürzem| Maximal Länge des Linktextes| Leer lassen (nicht kürzen)
+|Link in neuem Fenster öffnen| Ob die Seiten, auf die Links verweisen in einem neuen Reiter des Browsers oder im selben Browserfenster geöffnet werden sollen |Angekreuzt
 |================================
 +
 --
@@ -77,10 +74,8 @@ image:images/structure-content-display_trim_length.png["Link trim length",width=
 
 . Klicken Sie auf _Aktualisieren_.
 
-. Ziehen Sie die Querbalkengriffe der Felder, um sie als Hauptbild, _Körper_, neu anzuordnen,
-Anbieter-URL und _Links_. Alternativ zum Ziehen können Sie auf die Schaltfläche _Show
-Zeilengewichte_ Link oben in der Tabelle und geben Sie numerische Gewichte ein (Felder
-mit niedrigeren oder negativeren Gewichten werden zuerst angezeigt).
+. 'Ändern  Sie die Sortierreihenfolge der Felder übe die Drag-Handle', so das das Hauptbild vor dem Txtkörper des Inhalts angezeigt wird danach der Link zur Website des Lieferanten . Alternativ zur Verwendung der Schaltfläche zum Ziehen und Umsortieren können Sie auf den Link _Zeilenreihenfolge anzeigen_ oben in der Tabelle klicken und den Feldern nummerische Gewichtungswerte zuweisen (Felder
+mit niedrigeren oder negativeren Werten werden zuerst angezeigt).
 +
 --
 // Manage display page for Vendor content type, with order changed.
@@ -89,18 +84,16 @@ image:images/structure-content-display_change_order.png["Changing order of field
 
 . Klicken Sie auf _Speichern_.
 
-. Suchen Sie das Inhaltselement "Anbieter" aus Schritt 1 erneut, und überprüfen Sie, ob die Aktualisierungen
-gemacht worden sind.
+. Suchen Sie das den Inhlat vom Typ „Liueferant" aus Schritt 1 erneut, und lassen Sie sich die Seite erneut anzeigen, um zu überprüfen, ob die von Ihnen vorgenommenen Änderungen gespeichert wurden.
 
-. Wiederholen Sie ähnliche Schritte, um die Anzeige des Inhaltstyps Rezept zu verwalten
-Felder.
+. Wiederholen Sie ähnliche Schritte, um die Darstellung  der Felder des Inhaltstyps Rezept zu verändern.
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihr Wissen
 
 * Verkleinern Sie das Hauptbild. Siehe <<structure-image-style-create>>.
 
-* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, benötigen Sie möglicherweise
-um den Cache zu leeren. Siehe <<prevent-cache-clear>>.
+* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, müssen Sie möglicherweise
+zunächst den Cache Leeren. Siehe: <<prevent-cache-clear>>.
 
 
 ==== Verwandte Konzepte
@@ -110,13 +103,15 @@ um den Cache zu leeren. Siehe <<prevent-cache-clear>>.
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Changing Content Display"]
+video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Die Darstellung von Inhalten ändern (englisch)"]
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/node/774798[_Drupal.org_ Community-Dokumentationsseite "Spezifizieren Sie, wie Felder angezeigt werden"]
-* https://www.drupal.org/node/774744[_Drupal.org_ Community-Dokumentationsseite "Ordnen Sie die Reihenfolge der Felder neu an"]
-* https://www.drupal.org/node/1577752[_Drupal.org_ Community-Dokumentationsseite "Ansichtsmodi"]
+* https://www.drupal.org/node/774798[_Drupal.org_ Community-Dokumentationsseite "Legen Sie die Darstellung von Feldern fest (englisch)"]
+
+* https://www.drupal.org/node/774744[_Drupal.org_ Community-Dokumentationsseite "Felder neu anordnen (englisch)"]
+
+* https://www.drupal.org/node/1577752[_Drupal.org_ Community-Dokumentationsseite "Ansichtsmodi (englisch)"]
 
 
 *Mitwirkende*
