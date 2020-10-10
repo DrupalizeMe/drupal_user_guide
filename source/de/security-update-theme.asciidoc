@@ -1,61 +1,60 @@
 [[security-update-theme]]
 
-=== Updating a Theme
+=== Ein Theme aktualisieren
 
 [role="summary"]
-Wie man ein beigesteuertes Thema mit Hilfe der administrativen Schnittstelle aktualisiert und
-Ausführen des Datenbank-Updates-Skripts.
+Wie man ein von der Community bereitgestelltes Theme mit Hilfe der Benutzeroberfläche aktualisiert und
+das Script zur Aktualisierung der Datenbank ausführt.
 
 (((Theme,updating)))
 (((Security update,applying)))
 (((Contributed theme,updating)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Aktualisieren Sie ein beigetragenes Thema auf Ihrer Website und führen Sie das Skript _Datenbank-Updates_ aus.
+Aktualisieren Sie ein von der Community bereitgestelltes Thema auf Ihrer Website und führen Sie das Skrip_update.php_ zur _Datenbankaktualisierungen_ aus.
 
-==== Vorausgesetztes Wissen
+==== Erforderliche Kenntnisse
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Standort-Voraussetzungen
+==== Anforderungen an die Website
 
-* Ein beigetragenes Thema wurde installiert und es gibt ein Update für
-es. Siehe <<extend-theme-install>> und <<security-announce>>.
+* Ein von der Community bereitgestelltes Theme wurde installiert und es gibt ein Update für
+das Theme. Siehe <<extend-theme-install>> und <<security-announce>>.
 
-* Wenn Ihre Website live ist, sollten Sie diesen Prozess in einer Entwicklung testen
-Umgebung, bevor Sie es an Ihrem Produktionsstandort einsetzen. Siehe
+* Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklungsumgebung testen,
+bevor Sie diesen auf Ihrer Produktiv-Website durchführen. Siehe:
 <<install-dev-making>>.
 
-* Sie haben eine vollständige Standortsicherung erstellt. Siehe <<prevent-backups>>.
+* Sie haben eine vollständige Sicherung der Produktiv-Website erstellt. Siehe: <<prevent-backups>>.
 
-* Wenn Sie die Benutzerschnittstelle verwenden wollen, muss das Kernmodul Update Manager
-installiert. Siehe <<config-install>> für Anweisungen zur Kerninstallation
-Module.
+* Wenn Sie die Benutzeroberfläche verwenden wollen, muss das Modul Update Manager,
+das mit dem Kernsystem ausgeliefert wird, installiert sein.
+Siehe: <<config-install>> für Anweisungen zur Installation von Kernsystemmodulen.
 
 ==== Arbeitsschritte
 
-Sie können die administrative Schnittstelle verwenden, um ein beigetragenes Thema zu aktualisieren. Wenn Sie
-ein benutzerdefiniertes Thema statt eines beigetragenen Themas aktualisieren, wenn Sie eine
-Meldung _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihre
-Server_, oder wenn die folgenden Schritte nicht funktionieren, um die neuen Themen-Dateien zu erhalten, folgen Sie
-die Schritte in <<extend-manual-install>>, und fahren Sie dann mit Schritt 6 in der
-Anweisungen für die administrative Schnittstelle weiter unten.
+Sie können die Benutzeroberfläche verwenden, um ein von der community bereitgestelltes Thema zu aktualisieren. Wenn Sie
+ein benutzerdefiniertes Theme statt einem von der Community bereitgestellten Themes aktualisierenund eine Meldung angezeigt wird, die besagt,
+dass _die Installation von Modulen und Themes FTP-Zugriff auf den Webserver erfordert_
+oder wenn die untenstehenden Arbeitsschritte für Sie nicht funktionieren, um die betroffenen Themes herunterzuladen,
+führen Sie die Arbeitsschritte in <<extend-manual-install>> aus. Anschließend können Sie hier mit Schritt 6
+im Abschnitt „Die Benutzeroberfläche verwenden“ fortfahren.
 
-Wenn Sie den Composer zur Verwaltung der Dateien auf Ihrer Website verwenden, befolgen Sie die folgenden Schritte
-in <<install-composer>> um die Dateien zu aktualisieren, fahren Sie dann hier mit Schritt 6 in
-die untenstehenden Anweisungen für die administrative Schnittstelle.
+Wenn Sie Composer zur Verwaltung der Dateien auf Ihrer Website verwenden, befolgen Sie die Arbeitsschritte
+in <<install-composer>> um die Dateien zu aktualisieren und fahren Sie anschließend hier mit Schritt 6 in
+die untenstehenden Anweisungen zur Verwendung der Benutzeroberfläche fort.
 
-======= Verwendung der administrativen Schnittstelle
+======= Verwendung der Benutzeroberfläche
 
-. Bringen Sie Ihre Website in den Wartungsmodus. Siehe <<extend-maintenance>>.
+. Versetzen Sie Ihre Website in den Wartungsmodus. Siehe: <<extend-maintenance>>.
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Berichte_ >
-_Verfügbare Aktualisierungen_ > _Aktualisierung_ (_Admin/Berichte/Aktualisierungen/Aktualisierung_).
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Berichte_ >
+_Verfügbare Aktualisierungen_ > _Aktualisieren_ (_/admin/reports/updates_).
 
-. Suchen und prüfen Sie das Thema in der Liste. Klicken Sie auf _Download dieser Updates_ für die
-Thema.
+. Suchen und prüfen Sie das  betreffende Modul in der Liste. Klicken Sie auf _Herunterladen_ in der Zeile des entsprechenden Themes.
 +
 --
 // Update page for theme (admin/reports/updates/update).
@@ -64,34 +63,34 @@ image:images/security-update-theme-updates.png["Available updates",width="100%"]
 
 . Klicken Sie auf _Fortsetzen_.
 
-. Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Themendateien manuell erhalten haben,
+. Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Moduldateien manuell bezogen haben,
 Beginnen Sie mit diesem Schritt und erreichen Sie die Datenbank-Updates-Seite, indem Sie die URL eingeben
-_beispiel.com/update.php_ in Ihrem Browser.
+_example.com/update.php_ in Ihrem Browser.
 
-. Klicken Sie auf _Fortsetzen_, um die Aktualisierungen auszuführen. Die Datenbank-Update-Skripte werden
+. Klicken Sie auf _Fortsetzen_ und wenden Sie alle Aktualisierungen an. Das Skript zur Datenbankaktualisierung wird
 ausgeführt.
 
-. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsabschnitt Ihres
-Standort.
+. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsbereich Ihres
+Website zurückzukehren.
 
-. Schalten Sie Ihre Website aus dem Wartungsmodus. Siehe <<extend-maintenance>>.
+. Deaktivieren Sie den Wartungsmodus auf Ihrer Website. Siehe: <<extend-maintenance>>.
 
-. Löschen Sie den Drupal-Cache (siehe <<<prevent-cache-clear>>).
+. Löschen Sie den Cache. Siehe: <<prevent-cache-clear>>.
 
 
-==== Erweitern Sie Ihr Verständnis
+==== Vertiefen Sie Ihre Kenntnisse
 
-* Überprüfen Sie das Website-Protokoll, siehe <<<prevent-log>>, sobald die Aktualisierungen abgeschlossen sind, um
-auf Fehler prüfen.
+* Überprüfen Sie das Protokoll der Website (<<prevent-log>>), sobald die Aktualisierungen abgeschlossen sind.
+um zu prüfen, ob während des Aktualisierungsvorgangs Fehler aufgetreten sind.
 
-* <<<security-update-module>>
+* <<security-update-module>>
 
 // ==== Verwandte Konzepte
 
 ==== Videos
 
 // Video von Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Aktualisierung eines Themas"]
+video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Aktualisierung eines Themes (englisch)"]
 
 // ==== Zusätzliche Ressourcen
 
