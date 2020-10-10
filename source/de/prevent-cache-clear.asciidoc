@@ -52,10 +52,10 @@ $settings['rebuild_access'] = TRUE;
 
 . Rufen Sie die Seite _http://www.example.com/core/rebuild.php_ in Ihrem Browser auf (wobei
 _www.example.com_ als Beispiel für die URL Ihrer Website dient). Nach einer kurzen Wartezeit sollten Sie
-auf die Startseite Ihrer Website umgeleitet, und der Neuaufbau des Caches sollte begonnen haben.
+auf die Startseite Ihrer Website umgeleitet werden, und der Neuaufbau des Caches sollte begonnen haben.
 
 . Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_)  erneut in einem Texteditor. Suchen Sie die
-Zeile, die Si die Zeile _$settings['rebuild_access']_, die Sie soeben hinzugefügt haben. Entfernen Sie diese Zeile und speichern
+Zeile _$settings['rebuild_access']_, die Sie soeben hinzugefügt haben. Entfernen Sie diese Zeile und speichern
 die Datei ab.
 
 ====== Mit Drush den Cache neu aufbauen oder leeren
