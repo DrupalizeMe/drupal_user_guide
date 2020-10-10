@@ -21,22 +21,22 @@
 Die Software, die Ihre Website ausführt, muss bei jeder Anfrage an Ihre Website folgende Aufgabe abarbeiten:
 
 * Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite zusammenzustellen
-die an den Web-Browser oder eine andere Anwendung gesendet werden, die auf die
+die an den Web-Browser oder eine andere Anwendung gesendet wird, die auf die
 Website zugreift. 
 
 Diese Berechnungen benötigen Zeit. Das bedeutet das die Ladezeit Ihrer Website länger ist, als gewünscht.
 
 Es gibt verschiedene Möglichkeiten, die Ladezeit einer Website zu beschleunigen. Darunter fällt auch die Installation entsprechender Zusatzsoftware auf dem Web-Server. Das System umfasst den internen Cache der Website und das Modul
 Dynamic-Page-Cache. Hierfür wird keine zusätzliche Software auf dem Web-Server benötigt. Zum Cachen der Website wird ein Mechanismus verwendet, der 
-_Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den Ladeforgang Ihrer Website zu beschleunigen. Die beiden Module funktionieren wie folt:
+_Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den Ladevorgang Ihrer Website zu beschleunigen. Die beiden Module funktionieren wie folt:
 
 * Bei der Berechnung der Website werden Zwischenergebnisse der auszuliefernden Inhalte in einem bestimmten Speicherbereich abgelegt.
 
-* Die endgültigen Die entgültige Ausgabe der Website wird in einem spezellen Bereich der Datenbankbereich (der als
+* Die entgültige Ausgabe der Website wird in einem spezellen Bereich der Datenbank (der als
 _Cache_ bekannt ist) gespeichert. 
 
-Wird danach erneut eine Anfrage an die Website gestellt, könnnen die zwishcengespeicheten Daten
-gegebenenfalls abgerufen werden, um so die Berechnung der Ausgabe, der Website zu beschleunigen, ohne, dass die fertige Website jedes mal komplett neu berechnet werden muss. Darüber hinaus werden betriffe Teiele der zwischengespeicherten Daten aus dem Cache entfernt, wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzungen, dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert werden, wen eine betroffene Seite nach der Aktualiierung des darauf enthaltenne Inhalts zum ersten mal neu aufgerufen wird.
+Wird danach erneut eine Anfrage an die Website gestellt, könnnen die zwischengespeicheten Daten
+gegebenenfalls abgerufen werden, um so die Berechnung der Ausgabe, der Website zu beschleunigen, ohne, dass die fertige Website jedes mal komplett neu berechnet werden muss. Darüber hinaus werden betroffene Teiele der zwischengespeicherten Daten aus dem Cache entfernt, wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzwungen, dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert werden, wenn eine betroffene Seite nach der Aktualisierung des darauf enthaltenne Inhalts zum ersten mal neu aufgerufen wird.
 
 Die Cache-Module funktionieren normalerweise recht gut und sorgen zumindest auf einigen Websites für bessere Ladezeiten. Manchmal kann der Cache jedoch Probleme machen.
 
