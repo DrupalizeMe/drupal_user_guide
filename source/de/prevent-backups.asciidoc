@@ -29,23 +29,23 @@ Die Häufigkeit, mit der Sie Datensicherungen durchführen sollten, und die Anza
 Eine weitere Überlegung kann sein, dass es, unabhängig davon, in welchem Format Sie Ihre Sicherungskopien speichern eine gute Idee ist, zu überprüfen, ob zwischen dem aktuellen Stand Ihrer Website und der Letzen Sicherungskopie tatsächlich ein Datenverlust aufgetreten ist. Vielleicht möchten Sie zu diesem Zweck mehrere mögliche Datenverlustszenarien testen und
 sicherstellen, dass Ihre Daten in jedem Fall wieder hergestellt werden könnnen.
 
-Um ein vollständige Sicherungskopie Ihrer Website zu erstellen, müssen Sie Kopien der Folgenden Dateien und Verzeichnisse bereithalten:
+Um eine vollständige Sicherungskopie Ihrer Website zu erstellen, müssen Sie Kopien der Folgenden Dateien und Verzeichnisse bereithalten:
 
 * Eine Kopie der Daten im Verzeichnis _sites_, einschließlich der Datei _sites/default/settings.php_.
 
 * Eine Kopie der Datenbank Ihrer Website. Einige wenige Tabellen, wie zum Beispiel die Tabellen zur
-Speicherung des temporären Daten-Cache und der Sitzungsinformationen für angemeldeter Benutzer können während der Sicherung aus dem Backup entfernt werden. Die sicherste Variante ist es aber immer ein Sicherungskopie der gesammten Daenbank anzulegen.
+Speicherung des temporären Daten-Cache und der Sitzungsinformationen für angemeldete Benutzer können während der Sicherung aus dem Backup entfernt werden. Die sicherste Variante ist es aber immer eine Sicherungskopie der gesamten Datenbank anzulegen.
 
 * Eine Kopie hochgeladener Dateien, wie Bilder und andere Anhänge. Der Speicherort dieser
 Dateien ist konfigurierbar. Werden die Standardeinstellungen verwendet, legt Drupal diese Dateien im Verzeichnis _sites/default/files_,
-das sich im Hauptverzeichnis Ihrer Drupal-Installation befindet, ab. Navigieren Sie im Menü _Verwalten_ zu
+das sich im Hauptverzeichnis Ihrer Drupal-Installation befindet, ab. Navigieren Sie im Menü _Verwalten_
 zum Menüpunkt _Konfiguration_ > _Medien_ > _Dateisystem_ (_admin/configuration/media/filesystem_)
 um den Speicherort für Datei-Uploads zu überprüfen. Um den Speicherort zu Ändern müssen Sie die Datei
 _settings.php_ editieren.
 
 * Eine Kopie der Module, Themes und aller anderen Datein der Software, die Sie angepasst haben. Sie finden
 benutzerdefinierte Module und Themes in den Verzeichnissen _modules_ und _themes_. Einige Leute ziehen es vor, alle Datein der Software zu sichern, einschließlich der
-Dateien des Kernsystems und der Dateien aus denen die von der Community bereitgestellten Zusatzmodule und Themes besetehen. Diese  können Sie jedoch auch mittels Herunterladen von Drupal_org_ wiederherstellen), anstatt zu versuchen, bestimmte Dateien zu Identifizieren, die
+Dateien des Kernsystems und der Dateien aus denen die von der Community bereitgestellten Zusatzmodule und Themes bestehen. Diese  können Sie jedoch auch mittels Herunterladen von Drupal_org_ wiederherstellen), anstatt zu versuchen, bestimmte Dateien zu Identifizieren,
 die auf jeden Fall mit in die Sicherungskopie gehören.
 
 Ob Ihre Website korrekt gesichert wurde, können Sie überprüfen, indem Sie
