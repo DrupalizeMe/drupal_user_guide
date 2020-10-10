@@ -2,31 +2,31 @@
 
 === Einen Inhaltstyp löschen
 [role="summary"]
-So löschen Sie einen Inhaltstyp, der für die Site nicht erforderlich ist.
+So löschen Sie einen Inhaltstyp, der für Ihre Website nicht erforderlich ist.
 
 (((Content type,deleting)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
 Löschen Sie den nicht benötigten Inhaltstyp _Artikel_.
 
-==== Vorausgesetztes Wissen
+==== Erforderliche Vorkentnisse
 
 <<config-overview>>
 
-==== Standort-Voraussetzungen
+==== Anforderungen an die Website
 
-Der Inhaltstyp _Artikel_ muss vorhanden sein. Er wird auf Ihrer Site angelegt, wenn Sie
-mit dem Kern-Standardinstallationsprofil installieren.
+Der Inhaltstyp _Artikel_ muss vorhanden sein. Er wird auf Ihrer Website angelegt, wenn diese
+mit dem installitionsprofil Standard intalliert wird, das mit dem Kernsystem ausgeliefert wird.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhalt
-Typen_ (_admin/structure/types_). Die Seite _Inhaltstypen_ erscheint.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
+(_admin/structure/types_). Die Seite _Inhaltstypen_ erscheint.
 
-. Klicken Sie auf _Löschen_ in der Dropdown-Schaltfläche _Operationen_ für den Inhalt _Artikel_.
-tippen. Beachten Sie, dass der Name dieses Inhaltstyps auf dieser Seite auf Englisch ist;
-siehe <<language-concept>> for an explanation.
+. Klicken Sie im Drop-Button in der Spalte _Aktionen_ hinter den Inhaltstyp Artikel auf _Löschen_.
+Beachten Sie, dass der Name dieses Inhaltstyps auf dieser Seite auf Englisch angezeigt wird;
+siehe <<language-concept>> für weitere Konfigurationen.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
@@ -34,34 +34,33 @@ siehe <<language-concept>> for an explanation.
 image:images/structure-content-type-delete-dropdown.png["Article delete dropdown",width="100%"]
 --
 
-. Eine Bestätigungsseite wird angezeigt. Klicken Sie auf _Löschen_..
+. Eine Bestätigungsseite wird angezeigt. Klicken Sie auf _Löschen_.
 +
 --
 // Confirmation page for deleting Article content type.
 image:images/structure-content-type-delete-confirmation.png["Article delete confirmation page",width="100%"]
 --
 
-. Die Seite _Inhaltstypen_ erscheint mit einer Bestätigungsmeldung, die besagt, dass die
-Content-Typ wurde gelöscht:
+. Die Seite _Inhaltstypen_ wird geöffnet und es wird eine Bestätigungsmeldung ausgegeben, die besagt, dass der Inhaltstyp Artikel gelöscht wurde:
 +
 --
 // Confirmation message after deleting Article content type.
 image:images/structure-content-type-delete-confirm.png["Article delete confirmation message"]
 --
 
-//===== Erweitern Sie Ihr Verständnis
+//===== Vertiefen Sie Ihre Kenntnisse
 
-// ==== Verwandte Konzepte
+// ==== Verwandte Themen
 
 ==== Videos
 
 // Video von Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Einen Inhaltstyp löschen"]
+video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Einen Inhaltstyp löschen(englishc)"]
 
 //===== Zusätzliche Ressourcen
 
 
 *Mitwirkende*
 
-Geschrieben und herausgegeben von https://www.drupal.org/u/sree[Sree Veturi]
+Geschrieben und bearbeitet von https://www.drupal.org/u/sree[Sree Veturi]
 und https://www.drupal.org/u/batigolix[Boris Doesborg].
