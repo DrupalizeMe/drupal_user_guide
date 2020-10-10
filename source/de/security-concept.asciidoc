@@ -1,6 +1,6 @@
 [[security-concept]]
 
-=== Konzept: Sicherheit und regelmäßige Updates
+=== Konzept: Sicherheit und regelmäßige Aktualisierungen
 
 [role="summary"]
 Überblick über Sicherheitsaktualisierungen, die Behandlung von Fehlern und nicht sicherheitsrelevante Aktualisierungen.
@@ -11,49 +11,42 @@
 (((Security bug,reporting)))
 (((Security team,overview)))
 
-==== Vorkenntnisse
+==== Erfoprderliche Vorkenntnisse
 * <<understanding-drupal>>
 * <<understanding-modules>>
 * <<understanding-themes>>
 * <<understanding-project>>
 
-==== Was sind Sicherheitsupdates?
+==== Was sind Sicherheitsaktualisierungen?
 
-Jede Software hat gelegentlich Fehler, und manchmal haben diese Fehler Sicherheitslücken.
-Implikationen. Wenn Sicherheitsfehler in der Kern-Software, den Modulen oder
-Themen, die Ihre Website verwendet, werden sie in einem _Sicherheits-Update_ veröffentlicht. Sie werden
-müssen Sicherheitsupdates anwenden, um die Sicherheit Ihrer Website zu gewährleisten. Siehe
-<<<security-announce>> um zu erfahren, wie man über Sicherheitsupdates benachrichtigt wird von
-E-Mail und <<security-update-core>>, <<security-update-module>> und
-<<security-update-theme>> zu lernen, wie man Updates durchführt.
+Jede Software hat gelegentlich Fehler, und manchmal haben diese Fehler Sicherheitslücken zur Folge.
+Wenn Sicherheitslücken  im Kernsystem, den Modulen oder
+Themes, die Ihre Website verwendet bekannt werden, wird eine entsprechende Aktualisierung veröffentlicht. Sie werden
+diesen _Hotfix_ anwenden müssen, damit die Sicherheit Ihrer Website weiterhin gewährleistet ist. Siehe
+<<<security-announce>> um zu erfahren, wie man über Sicherheitsupdates  per E-Mail benachrichtigt wird und
+<<security-update-core>>, <<security-update-module>> sowie
+<<security-update-theme>>, um zu lernen, wie man Aktualisierungen durchführt.
 
-==== Was ist das Sicherheitsteam?
+==== Was ist das Security-Team?
 
 Das Open-Source-Projekt Drupal hat ein Team von Freiwilligen, die
-sicherheitsbezogene Fehler und Sicherheitsupdates zu veröffentlichen. Sie helfen auch anderen
-Entwickler beheben Fehler und pflegen Informationen für Benutzer darüber, wie sie ihre
-Websites sicher. Sie können mehr über das Sicherheitsteam und seine Praktiken erfahren
-und Prozesse auf der
-https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team] Seite.
+sicherheitsbezogene Fehler und Sicherheitsupdates veröffentlichen. Dieses Team hilft auch anderen
+Entwicklern dabei Fehler zu beheben und pflegt Informationen, darüber, wie Benutzer ihre
+Websites sicher halten können. Auf der Seite
+https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team (englisch)] können Sie mehr über das Security-Team, sowie dessen vorgehenswesie und die entsprechenden Prozesse erfahten. 
 
 ==== Wie werden Sicherheitslücken gemeldet?
 
 Es ist wichtig, dass Sicherheitsprobleme vertraulich behandelt werden, bis sie
-fixiert, so dass Standorte weniger gefährdet sind, bevor sie
-gesichert. Wenn Sie ein potentielles Sicherheitsproblem in einer der Software finden
-die von der Website _Drupal.org_ heruntergeladen wurden, folgen Sie den Verfahren auf der
-https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team] zu berichtende Seite
-es.
+behoben worden sind. Dadurch sind Websites weniger gefärtet, solange noch keinen Patch für eine gemeldete Sicherheitslücke existiert. Wenn Sie eine potentielle Sicherheitslücke in einem Teil der Software finden
+die von der Website _Drupal.org_ heruntergeladen wurde, folgen Sie dem Verfahren, das auf der
+https://www.drupal.org/drupal-security-team/general-information[Seite des _Drupal.org_ Security-Teams] beschrieben wird, um das Problem zu melden.
 
-==== Was sind regelmäßige (nicht sicherheitsrelevante) Updates?
+==== Was sind regelmäßige (nicht sicherheitsrelevante) Aktualisierungen?
 
-Auch die Kernsoftware, Module und Themen werden regelmäßig aktualisiert
-neue Funktionen hinzufügen und Fehler beheben. Diese Updates sind weniger kritisch als die Sicherheit.
-Aktualisierungen. Als allgemeine bewährte Praxis sollten Aktualisierungen angewandt werden, solange sie
-keine Probleme mit Ihrer Website verursachen. Tests an einer Entwicklungskopie Ihrer Website
-ist immer eine gute Idee, bevor Sie Aktualisierungen auf einer Live-Site anwenden. Der Grund dafür ist
-einige Aktualisierungen können Änderungen enthalten, die nicht mit den Modulen kompatibel sind oder
-Themen auf Ihrer Website, oder die eine bestimmte Funktionalität auf Ihrer Website unterbrechen.
+Auch daas Kernsystem, die Module und Themes werden regelmäßig aktualisiert, um
+neue Funktionen hinzufügen und Fehler  zu beheben. Diese Aktualisierungen sind weniger kritisch als Sicherheits-Updates. Allgemein hat es sich in der Praxis bewährt, aktualisuerzbgeb anzuwenden, solange diese keine Probleme auf Ihrer Website verursachen. Tests an einer Kopie, die zur Entwicklung Ihrer Website dient, sind inmmer eine gute Sache. Daher sollten sie solche testes durchführen, bevor sie eine Website, die sich im Produktiveinsatz befindet aktualisieren. Der Grund hierfür ist, das einige Aktualisierungen Änderunngen enthalten können, die nicht mit den Modulen oder
+Themes kompatibel sind, die Sie auf Ihrer Website einsetzen. Es kann auch sein, dass Aktualisierungen unter bestimmten Umständen eine bestimmte Funkion auf Ihrer Website unbrauchbar macchen.
 
 ==== Verwandte Themen
 
@@ -65,9 +58,9 @@ Themen auf Ihrer Website, oder die eine bestimmte Funktionalität auf Ihrer Webs
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/security/secure-configuration[_Drupal.org_ Community-Dokumentationsseite "Sichern Ihrer Website"]
-* https://www.drupal.org/security["Sicherheitshinweise" auf Drupal.org]
-* https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Sicherheitsteam]
+* https://www.drupal.org/security/secure-configuration[_Drupal.org_ Community-Dokumentationsseite "Sichern Ihrer Website" (englisch)]
+* https://www.drupal.org/security["Sicherheitshinweise" auf Drupal.org (englisch)]
+* https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Sicherheitsteam (englisch)]
 
 
 *Mitwirkende*
