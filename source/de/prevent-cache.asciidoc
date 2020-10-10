@@ -20,7 +20,7 @@
 
 Die Software, die Ihre Website ausführt, muss bei jeder Anfrage an Ihre Website folgende Aufgabe abarbeiten:
 
-* Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite zusammenzustellen
+* Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite zusammen zu stellen
 die an den Web-Browser oder eine andere Anwendung gesendet wird, die auf die
 Website zugreift. 
 
@@ -36,7 +36,7 @@ _Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den Ladevorgan
 _Cache_ bekannt ist) gespeichert. 
 
 Wird danach erneut eine Anfrage an die Website gestellt, könnnen die zwischengespeicherten Daten
-gegebenenfalls abgerufen werden, um so die Berechnung der Ausgabe der Website zu beschleunigen, ohne, dass die fertige Website jedes mal komplett neu berechnet werden muss. Darüber hinaus werden betroffene Teile der zwischengespeicherten Daten aus dem Cache entfernt, wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzwungen, dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert werden, wenn eine betroffene Seite nach der Aktualisierung des darauf enthaltenen Inhalts zum ersten mal neu aufgerufen wird.
+gegebenenfalls abgerufen werden, um so die Berechnung der Ausgabe der Website zu beschleunigen, ohne, dass die Ausgabe der fertigen Website jedes mal komplett neu berechnet werden muss. Darüber hinaus werden betroffene Teile der zwischengespeicherten Daten aus dem Cache entfernt, wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzwungen, dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert werden, wenn eine betroffene Seite nach der Aktualisierung des darauf enthaltenen Inhalts zum ersten mal neu aufgerufen wird.
 
 Die Cache-Module funktionieren normalerweise recht gut und sorgen zumindest auf einigen Websites für bessere Ladezeiten. Manchmal kann der Cache jedoch Probleme machen.
 
@@ -46,9 +46,9 @@ Beispielsweise wenn:
 
 * Alte Daten zu lange im Cache bleiben. Dies führt zur Ausgabe alter Versionen von Inhalten.
 
-* Der Cache zu klein ist. Dies führt zu einem verzögerten Aufbau und zu längeren Ladezeiten der Website führt. 
+* Der Cache zu klein ist. Dies führt zu einem verzögerten Aufbau und zu längeren Ladezeiten der Website. 
 
-==== Welche Daten werden ausßerdem zwischengespeichert?
+==== Welche Daten werden außerdem zwischengespeichert?
 
 Unabhängig davon, ob die beiden Cache-Module auf Ihrer Website installiert sind,
 legt die Software, mit der Ihre Website betrieben wird, immer noch jede Menge Daten in optimierter Form im Zwischenspeicher ab. Folgende Daten werden vom Kernsystem zwischengespeichert:
@@ -57,13 +57,13 @@ legt die Software, mit der Ihre Website betrieben wird, immer noch jede Menge Da
 zur Darstellung verschiedener Arten von Daten verwendet werden. Wenn Sie ein neues
 Theme oder eine neue Template-Datei hinzufügen, müssen Sie den Cache leeren, damit diese neue Templete-Datei oder das neue Theme erkannt wird.
 
-* CSS- und JavaScript-Dateien können (abhängig von den für die Website festgelegten Einstellunngen) optional optimiert und komprimiert werden. 
-Ist die Optimierung und Komprimierung für diese Dateien aktiviert, werden die optimierten und komprimierten Versionen dieser Datein im Dateisystem der Website abgelegt, damit diese nicht zu oft neu optimiert werden müssen. Deshalb müssen Sie den Cachce bei der Entwicklung eines Moduls oder Themes evetuell abschalten, damit Änderungen an CSS- oder JavaScript-Dateien erkannt werden können.
+* CSS- und JavaScript-Dateien können (abhängig von den für die Website festgelegten Einstellungen) optional optimiert und komprimiert werden. 
+Ist die Optimierung und Komprimierung für diese Dateien aktiviert, werden die optimierten und komprimierten Versionen dieser Datein im Dateisystem der Website abgelegt, damit diese nicht zu oft neu optimiert werden müssen. Deshalb müssen Sie den Cache bei der Entwicklung eines Moduls oder Themes evetuell abschalten, damit Änderungen an CSS- oder JavaScript-Dateien erkannt werden können.
 
-* Das System erkennt bestimmte Low-Level-PHP-Funktionen und -Klassen, wie z.B.
-_Hooik-Implementierungen_ und _Plug-in-Klassen_ die von den Modulen verwendet werden, die auf Ihrer Website aktiviert sind und
+* Das System erkennt bestimmte Low-Level-PHP-Funktionen und -Klassen, wie z. B.
+_Hook-Implementierungen_ und _Plug-in-Klassen_ die von den Modulen verwendet werden, die auf Ihrer Website aktiviert sind und
 speichert Informationen darüber ab, welches Modul welche Funktionalität zu Verfügung stellt.
-Wenn Sie ein neues Modul entwickeln oder zu einem vorhandenen Modul Funktionen hinzufügen möchten, müssen Sie den Cache der Websit möchlicherweise leeren, damit diese neuen Funktionen erkannt werden.
+Wenn Sie ein neues Modul entwickeln oder zu einem vorhandenen Modul Funktionen hinzufügen möchten, müssen Sie den Cache der Website möglicherweise leeren, damit diese neuen Funktionen erkannt werden.
 
 ==== Verwandte Themen
 
