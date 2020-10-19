@@ -1,17 +1,17 @@
 [[user-content]]
 
-=== Zuweisen von Autoren zum Inhalt
+=== Autoren Inhalte zuweisen
 
 [role="summary"]
-So weisen Sie einem Benutzerkonto die Urheberschaft von Inhaltselementen zu.
+So weisen Sie einem Benutzerkonto die Verwantwortung für bestimmte Inhalte zu.
 
 (((Author,assigning)))
 (((Content,assigning author)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Ordnen Sie die Inhaltselemente "Happy Farm" und "Sweet Honey" des Anbieters den entsprechenden
-Anbieter-Benutzerkonten, damit sie ihre eigenen Anbieterprofile auf der Website bearbeiten können.
+Ordnen Sie die Lieferanteninhalte „Glücklicher Bauernhof" und „Süßer Honig" den entsprechenden
+Lieferanten-Benutzerkonten zu, damit diese Lieferanten Ihre eigenen Profile auf der Website slebstständig bearbtein können.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -19,24 +19,24 @@ Anbieter-Benutzerkonten, damit sie ihre eigenen Anbieterprofile auf der Website 
 
 ==== Anforderungen an die Website
 
-* Der Inhaltstyp Anbieter muss vorhanden sein, und Ihre Website muss mindestens zwei
-Inhaltsartikel des Lieferanten. Siehe <<structure-content-type>>, <<structure-fields>>, und
+* Der Inhaltstyp Lieferant muss vorhanden sein, und Ihre Website muss mindestens zwei
+Inhhalte vom Typ Lieferant aufweisen. Siehe: <<structure-content-type>>, <<structure-fields>>, und
 <<content-create>>.
 
-* Benutzerkonten für mindestens zwei Lieferanten müssen vorhanden sein. Siehe <<user-new-user>>.
+* Benutzerkonten für mindestens zwei Lieferanten müssen vorhanden sein. Siehe: <<user-new-user>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu _Inhalt_ (_Admin/Inhalt_).
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ (_admin/content_).
 
-. Suchen Sie in der Liste das Inhaltselement Anbieter Happy Farm. Wenn es nicht sofort
-sichtbar ist, können Sie die Liste nach _Veröffentlichungsstatus_, _Inhaltstyp_ (Anbieter) filtern,
-_Titel_, oder _Sprache_.  Klicken Sie auf _Bearbeiten_ für das gewünschte Inhaltselement des Lieferanten
-einen Autor zuweisen.
+. Suchen Sie in der Liste das den Leiferanten Glücklicher Bauernhof. Wenn es nicht sofort
+sichtbar ist, können Sie die Liste nach _Veröffentlichungsstatus_, _Inhaltstyp_ (Lieferant), 
+_Titel_, oder _Sprache_.  Klicken Sie auf _Bearbeiten_ für dne günschten Inhalt, 
+vom Typ Lieferant, dem sie einen Autor zuweisen möchten.
 
-. Beginnen Sie unter _Authoring information_, den Benutzer des Anbieters einzugeben
-Name Happy Farm im Feld _Authored by_. Das Feld listet den passenden Benutzer
-Namen. Wählen Sie den Benutzernamen des Anbieters aus der Liste aus.
+. Beginnen Sie im Anschnitt _Informationen zum Autor_ , im Feld _Geschrieben von_ , damit, das Benutzerkonto des Lieferanten
+_Glücklicher Bauernhof_ einzugeben. Das Feld gibt den passenden Benutzernamen aus. 
+Wählen Sie den Namen des passenden Benuters aus der Liste aus.
 +
 --
 // Authoring information section of content edit page.
@@ -45,7 +45,7 @@ image:images/user-content.png["Assigning an author to the Vendor content item"]
 
 . Klicken Sie auf _Speichern_.
 
-. Sie erhalten eine Benachrichtigung, dass das Inhaltselement Lieferant aktualisiert wurde.
+. Es wird eine Benachrichtigung ausgegeben, die besagt, dass der entsprechende Inhaltaktualisiert wurde.
 +
 --
 // Bestätigungsnachricht nach Inhaltsaktualisierung.
