@@ -39,29 +39,27 @@ jeweils durch das Modul definiert, das die mit der Berechtigung verbundene Aktio
 ==== Was sind Rollen?
 
 Anstatt jedem Benutzer individuelle Berechtigungen direkt zuzuweisen, werden Berechtigungen
-sind in _Rollen_ gruppiert. Sie können eine oder mehrere Rollen auf Ihrer Site definieren, und
-dann erteilen Sie Berechtigungen für jede Rolle. Die Berechtigungen, die authentifizierten
-und anonyme Benutzer sind in den Feldern _Authentifizierter Benutzer_ und _Anonymer Benutzer_ enthalten.
-Benutzer_ Rollen und abhängig vom Installationsprofil, das Sie verwendet haben, als Sie
-Ihre Site installiert hat, kann es auch eine _Administrator_ -Rolle geben, die
-automatisch alle Berechtigungen auf Ihrer Site zugewiesen.
+in _Rollen_ gruppiert. Sie können eine oder mehrere Rollen auf Ihrer Site definieren und
+jeder Rolle die für die Rolle erforderlichen Bereictigungen zuweisen. Die Berechtigungen, für authentifizierte
+Benutzer und Gäste sind in den Rollen _Angemeldeter Benutzer_ und _Gast_ enthalten.
+Die Bezeichnungen und die Anzahl der vorhandenen _Rollen_ sind vom vom bei der Installation der Website 
+verwendeten Installationsprofil abhängig. Es kann auch eine Rolle mit der Bezeichnung _Admiistrator_ vorhanden sein, 
+die automatisch über alle auf der Website vorhandenen Berechtigungen verfügt.
 
-Jedem Benutzerkonto auf Ihrer Site wird automatisch der _Authentifizierte Benutzer_ zugewiesen.
-Rolle und kann optional mit einer oder mehreren zusätzlichen Rollen ausgestattet werden. Wenn Sie
-einem Benutzerkonto eine Rolle zuweisen, hat der Benutzer alle Berechtigungen des
-Rolle, wenn Sie angemeldet sind.
+Jedem Benutzerkonto auf Ihrer Website wird automatisch die Rolle _Angemeldeter Benutzer_ zugewiesen.
+Optional kann jedes Benutzerkonto miit einer oder mehrerne weiteren Rollen ausgestaettet werden. Wenn Sie
+einem Benutzerkonto eine Rolle zuweisen, hat der Benutzer alle Berechtigungen die der jeweiligen Rolle zugewiesen wurden, sobald er sich auf der Website angemeldet hat.
 
-Es ist eine gute Praxis, mehrere Rollen auf Ihrer Website einzurichten. Auf dem Bauernmarkt
-Standortbeispiel können Sie die folgenden Rollen wünschen:
+In der Praxis hat sich gezeigt, dass es eine gut Idee ist, mehrere Rollen für eine Website einzurichten.Im Beispiel der Wochebmakt-Website 
+könnte man sich beispielsweise folgende Rollen wünschen:
 
-* Eine Lieferantenrolle, die es den Lieferanten ermöglicht, ihre eigene Lieferantenlistungsseite zu bearbeiten.
+* Eine Rolle für Lieferanten, die es den Lieferanten ermöglicht, ihre eignes Profil zu bearbeiten.
 
-* Eine Rolle als Inhaltsredakteur für die Bearbeitung der allgemeinen Bauernmarkt-Seiten
+* Eine Rolle für Inhaltsredakteure die es Benutzern ermöglicht, die allgemeinen Seiten der Wochnmarkt-Website zu bearbtein.
 
-* Eine Benutzer-Manager-Rolle für die Verwaltung der Kreditorenkonten
+* Eine Rolle zur Verwaltung von Benutzern, mit der sich Benutzer, um die Verwaltung von Kundenkonten auf der Website kümmern könnnen.
 
-* Die _Administrator_ -Rolle, die mit Ihrer Site installiert wurde, für erfahrene Benutzer
-zur Verwaltung der Website-Konfiguration
+* Die Rolle _Administrator_, die über das Installationsprofil Ihrer Website installiert wurde, dient erfahrenen Benutzern zur Verwaltung und Konfguration der Website.
 
 
 
@@ -76,9 +74,9 @@ zur Verwaltung der Website-Konfiguration
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/node/120614[_Drupal.org_ Community-Dokumentationsseite "Benutzer, Rollen und Berechtigungen"]
-* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ Community-Dokumentationsseite "Benutzer verwalten"]
-* https://www.drupal.org/node/1803614[_Drupal.org_ Community-Dokumentationsseite "Benutzerrollen"]
+* https://www.drupal.org/node/120614[_Drupal.org_ Community-Dokumentationsseite „Benutzerkonten, Rollen und Berechtigungen" (englisch)]
+* https://www.drupal.org/docs/7/managing-users[_Drupal.org_ Community-Dokumentationsseite „Benutzer verwalten"  (englisch)"]
+* https://www.drupal.org/node/1803614[_Drupal.org_ Community-Dokumentationsseite „Benutzerrollen"  (englisch)]
 
 
 *Mitwirkende*
@@ -88,4 +86,4 @@ https://www.drupal.org/u/batigolix[Boris Doesborg], und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] aus
 https://www.drupal.org/node/1803614["Benutzerrollen"],
 copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
