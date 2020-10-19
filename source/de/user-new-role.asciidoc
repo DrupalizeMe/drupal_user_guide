@@ -11,10 +11,9 @@ Wie Sie eine neue Rolle erstellen.
 (((Role,authenticated user)))
 (((Role,administrator)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Erstellen Sie eine Anbieterrolle, um einigen - aber nicht allen - Benutzern zu ermöglichen, bestimmte
-Aufgaben.
+Erstellen Sie die Rolle Lieferant, um einigen - aber nicht allen - Benutzern die Durchführung bestimmter Aufgaben zu ermöglichen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -24,11 +23,11 @@ Aufgaben.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Personen_ > _Rollen_
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Benutzer_ > _Rollen_
 (_admin/people/roles_).
 
-. Sie finden die Standardrollen _Anonymer Benutzer_,
-_Authentifizierter Benutzer_, und _Administrator_ bereits vorhanden.
+. Sie werden feststellen, dass die Standardrollen _Gast_,
+_Authentifizierter Benutzer_, und _Administrator_ bereits vorhanden sind.
 +
 --
 // Roles page (admin/people/roles).
@@ -37,15 +36,14 @@ image:images/user-new-role-roles-page.png["Roles page"]
 
 . Klicken Sie auf _Rolle hinzufügen_, um eine benutzerdefinierte Rolle hinzuzufügen.
 
-. Geben Sie im Feld _Rollenname_ den Typ Lieferant ein. Klicken Sie auf _Speichern_.
+. Geben Sie im Feld _Rollenname_ den Namen Lieferant ein. Klicken Sie auf _Speichern_.
 +
 --
 // Add role page (admin/people/roles/add).
 image:images/user-new-role-add-role.png["adding vendor as a role"]
 --
 
-. Oben sehen Sie die Meldung "Role Vendor has been added".
-der Seite.
+. Im oberen Teil der Website wird die Meldung: „Die Rolle Lieferant wurde hinzgefügt" ausgeben.
 +
 --
 // Confirmation message after adding new role.
@@ -62,11 +60,11 @@ image:images/user-new-role-confirm.png["vendor role added success message"]
 ==== Videos
 
 // Video von Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/JdNxJKWAi8Q[title="Eine Rolle erstellen"]
+video::https://www.youtube-nocookie.com/embed/JdNxJKWAi8Q[title=„Eine Rolle anlegen" (englisch)]
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/node/1803614[_Drupal.org_ Community-Dokumentationsseite "Benutzerrollen"]
+https://www.drupal.org/node/1803614[_Drupal.org_ Community-Dokumentationsseite „Benutzerrollen"]
 
 
 *Mitwirkende*
@@ -75,6 +73,5 @@ https://www.drupal.org/node/1803614[_Drupal.org_ Community-Dokumentationsseite "
 Adaptiert und herausgegeben von https://www.drupal.org/u/JackProbst[Jack Probst],
 https://www.drupal.org/u/batigolix[Boris Doesborg], und
 https://www.drupal.org/u/eojthebrave[Joe Shindelar] aus
-https://www.drupal.org/node/1803614["Benutzerrollen"], copyright 2000 - copyright_upper_year von der
-einzelne Mitwirkende an der https://www.drupal.org/documentation[Drupal
-Dokumentation der Gemeinschaft]
+https://www.drupal.org/node/1803614["Benutzerrollen"], copyright 2000 - copyright_upper_year liegt bei den
+einzelne Mitwirkende an der https://www.drupal.org/documentation[Dokumentation der Drupal-Communiy]
