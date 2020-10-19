@@ -20,7 +20,7 @@
 Jeder, der Ihre Website besucht, ist ein _Benutzer_, auch Sie. Es gibt drei
 Gruppen von Benutzern:
 
-* Benutzer, die nicht angemeldet sind, oder _anonyme Benutzer_
+* Benutzer, die nicht angemeldet sind, oder _anonyme Benutzer_ ,auch _Gäste genannt_
 
 * Benutzer, die eingeloggt sind, oder _authentifizierte Benutzer_
 
@@ -29,12 +29,12 @@ Ihre Website installiert hat, oder Benutzer 1. Siehe <<<user-admin-account>>.
 
 ==== Was sind Berechtigungen?
 
-Die Möglichkeit, Aktionen auf Ihrer Site durchzuführen (einschließlich der Anzeige von Inhalten, der Bearbeitung
-Inhalt und Änderung der Konfiguration) wird durch _Berechtigungen_ geregelt. Jede
-Die Erlaubnis hat einen Namen (z.B. _Veröffentlichte Inhalte anzeigen_) und umfasst eine Aktion
-oder eine kleine Teilmenge von Aktionen. Ein Benutzer muss eine Berechtigung erhalten, um
-die entsprechende Aktion auf der Website; die Berechtigungen werden durch die Module definiert
-die die Aktionen bereitstellen.
+Die Möglichkeit, Aktionen auf der  Website  (einschließlich der Anzeige von Inhalten, der Bearbeitung
+Inhalt und Änderung der Konfiguration)  auszuführen wird über _Berechtigungen_ geregelt. Jede
+Berechtigung hat einen Namen (z.B. _Veröffentlichte Inhalte anzeigen_) und umfasst eine Aktion
+oder eine kleine Teilmenge von Aktionen. Ein Benutzer muss über eine Berechtigung verfügen, um
+die entsprechende Aktion auf der Website ausführen zu können. Die einzelnen Berechtigungen wereden 
+jeweils durch das Modul definiert, das die mit der Berechtigung verbundene Aktion bereitstellt. 
 
 ==== Was sind Rollen?
 
