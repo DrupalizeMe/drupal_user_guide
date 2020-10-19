@@ -17,46 +17,38 @@
 ==== Was ist das Konto des ersten Benutzers?
 
 Während der Installation Ihrer Website haben Sie das erste Benutzerkonto erstellt. Jedes
-Benutzerkonto hat intern eine numerische Benutzer-ID, und da die ID des zuerst erstellen Benutzerkontos 1 ist, 
-wird es allgemein als _Benutzerkonto 1_ bezeichnet. Dieses Benutzerkonto ist
-speziell, denn unabhängig davon, welche Rollen ihm zugewiesen werden, hat sich jemand als
-Benutzer 1 hat die Erlaubnis, alle Aktionen auf der Website durchzuführen, einschließlich der Anzeige und
-Bearbeitung des gesamten Inhalts, Bearbeitung jedes Benutzerkontos, Änderung der Website-Konfiguration,
-Installieren und Deinstallieren von Modulen und Ausführen des Aktualisierungsskripts.
+Benutzerkonto hat intern eine numerische Benutzer-ID, und da die ID des zuerst erstellten Benutzerkontos 1 ist, 
+wird es allgemein als _Benutzerkonto 1_ bezeichnet. Dieses Benutzerkonto ist iein spezielles Konteo, 
+denn dieses Benutzerkonto hat unabhängig von den ihm zugewisenen Rollen, die Möglichkeit, alle Aktionen auf der Website durchzuführen, einschließlich der Anzeige und
+Bearbeitung des gesamten Inhalts,  der Bearbeitung jedes Benutzerkontos, und des änderns der Konfiguraiton der Website.
+Das Benutzerkonto darf auch Module installieren und deinstallieren und das Skript zur Aktualisierung der Website ausführen.
 
 Aufgrund dieser Berechtigungsstufe bezeichnen einige Leute dieses Konto als
-_Root-Benutzer_, ähnlich dem "root"-Benutzerkonto, das voll administrativ
-Berechtigungen in Linux und anderen Betriebssystemen.
+_Root-Benutzer_, ähnlich dem Benutzerkonto „root", das auf Linux-Betriebssystemen alle Berechtigungen eines Systemadministrators besietzt.
 
-Es ist normalerweise besser, getrennte Konten für jeden administrativen Benutzer einzurichten,
-ihnen die Rolle des _Verwalters_ zu geben, anstatt alle administrativen
-Benutzer melden sich mit dem Konto Benutzer 1 an. Dafür gibt es mehrere Gründe:
+Es ist normalerweise besser, für jeden administrativen Benutzer ein gesondertes Benutzerkonto einzurichten,
+und diesen die Rolle eines _Administrators_ zuzuweisen, anstatt allen Benutzern, mit administrativen Aufgaben, die Möglichkeit zu geben, sich über das erste Beniutzerkonto der Installation anzumelden. Hierfür gibt es mehrere Gründe:
 
-* Einige Aktionen und Aktualisierungen auf der Website werden protokolliert, und wenn alle dasselbe benutzen
-Konto, ist es schwierig zu wissen, wer sie gemacht hat, wenn Sie Fragen haben.
+* Einige Aktionen und Aktualisierungen auf der Website werden protokolliert. Wenn mehrere Benutzer das selbe Benutzerkonto verwenden, ist es schwieriger nachzuvollziehen, welcher Benutzer eine Änderung durchgeführt hat, wenn sich aus einer solchen Änderung weitere Fragen ergeben.
 
 * Die Berechtigungen der Rolle _Administrator_ können geändert werden, um sicherer zu sein als die
 volle Berechtigungen des Benutzerkontos 1, so dass Personen nicht versehentlich
 Website-Funktionen ändern, die nicht geändert werden sollten.
 
-* Die Verantwortlichkeiten der Menschen auf einer Website können sich mit der Zeit ändern. Mit gewöhnlichem Benutzer
-Konten, kann dies in Berechtigungen gespiegelt werden, indem man die Zuweisung oder Aufhebung der Zuweisung
-Rollen zu ihren Benutzerkonten. Wenn sie alle das Benutzerkonto 1 verwenden,
-das ist schwieriger.
+* Die Verantwortlichkeiten der Menschen, die gemeinsam eine Website bertreuen, können sich mit der Zeit ändern. Für gewöhnlichem Benutzerkonten, kann eine solche Entwicklung über die Berechtigungen gespiegelt werden, indem man Benutzerkonten bestimmte Rollen zuweist oder ihnen die aberkennt, die mit den  Berechtigungen ausgestattet sind, die der jeweilige Benutzer braucht. Wenn mehrere Benutzer das Benutzerkonto 1 verwenden, kann eine solche entwicklung nnicht abgebldit werden.
 
-* Auf einigen Websites wird der Autor von Inhalten oder Kommentaren angezeigt oder verfolgt, und
-wenn alle dasselbe Konto zur Erstellung von Inhalten verwenden, ist es schwierig zu wissen
+* Auf einigen Websites wird der Autor von Inhalten oder Kommentaren angezeigt oder aufgezeichnet. 
+Wenn alle Benutzer dasselbe Benutzerkonto zur Erstellung von Inhalten verwenden, ist es schwierig nachzuvollziehen
 wer den Inhalt erstellt hat.
 
-Es ist nicht möglich, das Konto Benutzer 1 aus dem administrativen Benutzer zu löschen.
-Schnittstelle. Es wäre möglich, mit einer Datenbankabfrage zu tun, aber es könnte
-Probleme auf Ihrer Website und ist nicht ratsam.
-
+Es ist nicht möglich, das Benutzerkonto mit der ID 1 über den Verwalötungsbereich, bzw die Benutzeroberfläche von Drupal zu löschen. 
+Mittels einer Datanbankabfrage könnte das Benutzerkonto zwar entfernt werden, dies würde aber zu Problemen mit der Website führen. 
+Daher ist es nicht ratsam, das Benutzerkonto mit der ID 1 zu löschen.
 //===== Verwandte Themen
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/node/22284[_Drupal.org_ Community-Dokumentationsseite "Konten und Rollen"]
+https://www.drupal.org/node/22284[_Drupal.org_ Community-Dokumentationsseite "Benutzerkonten und Rollen (englisch)" )]
 
 
 *Mitwirkende*
