@@ -1,88 +1,91 @@
 [[install-decide]]
-=== Concept: Methods for Downloading and Installing the Core Software
+=== Concept : méthodes pour télécharger et installer le cœur (core)
 
 [role="summary"]
-Overview of methods you can use to download the core software.
+Vue d'ensemble des méthodes que vous pouvez utiliser pour télécharger le cœur
+(core).
 
-(((Downloading,core software)))
-(((Installing,core software)))
-(((Core software,downloading)))
-(((Core software,installing)))
+(((Télécharger,cœur)))
+(((Installer,cœur)))
+(((Cœur,télécharger)))
+(((Cœur,installer)))
 
-==== Prerequisite knowledge
+==== Prérequis
 
 * <<install-tools>>
 * <<install-requirements>>
 * <<understanding-distributions>>
 
-==== What methods are available for downloading the core software?
+==== Quelles sont les méthodes disponibles pour télécharger le cœur ?
 
-Before you can build a site, you will need to first download the core software.
-Depending on your plans, there are several ways that you can download the core
-software:
+Avant de construire un site, vous devrez d'abord télécharger le cœur (core). En
+fonction de vos plans, il y a plusieurs manières de télécharger le cœur :
 
-Try a free online demo::
-  If you are evaluating whether or not to use Drupal to build a site, you
-  can use an online provider to get a demo installation of the core software in
-  20 minutes or less. See the
-  https://www.drupal.org/try-drupal[_Drupal.org_ page "Try Drupal"].
+Essayer une démo en ligne gratuite::
+  Si vous êtes en train d'évaluer Drupal en vue de l'utiliser pour construire un
+  site, vous pouvez recourir à un fournisseur en ligne pour obtenir une
+  installation de démo du cœur en au plus 20 minutes. Consulter la 
+  https://www.drupal.org/try-drupal[page "Try Drupal" sur _Drupal.org_].
 
-Use a one-click installer from your hosting provider::
-  If you choose to install the core software at your hosting provider, your
-  hosting provider may have specific documentation and/or a one-click install
-  that you can use. See
-  https://www.drupal.org/association/supporters/hosting[_Drupal.org's_ list of hosting providers that support Drupal].
+Utiliser un installeur en un clic chez votre hébergeur::
+  Si vous décidez d'installer le cœur chez votre hébergeur, ce dernier pourrait
+  offrir une documentation spécifique et/ou une installation en un clic.
+  Consulter
+  https://www.drupal.org/association/supporters/hosting[la liste d'hébergeurs qui supportent Drupal sur _Drupal.org's_].
 
-Use a pre-configured environment::
-  Use a pre-configured environment or virtual machine that contains Drupal and
-  all the required supporting software to install Drupal locally. See the
-  section for your operating system under
-  https://www.drupal.org/docs/develop/local-server-setup[_Drupal.org_ community documentation page "Local server setup guide"]
-  for possible options.
+Utiliser un environnement pré-configuré::
+  Utiliser un environnement pré-configuré ou une machine virtuelle qui contient
+  Drupal et tous les composants logiciels requis pour installer Drupal en local.
+  Consulter la section concernant votre système d'exploitation sur la
+  https://www.drupal.org/docs/develop/local-server-setup[page de documentation de la communauté sur _Drupal.org_ "Local server setup guide"]
+  pour les options envisageables.
 
-Download manually from the web site::
-  If you plan to build a site without add-on modules that have complicated
-  dependencies, you can download the core software, or a distribution that
-  contains the core software and additional modules or themes, from the web
-  site. See <<install-manual>> for instructions.
+Téléchargement manuel depuis le site web::
+  Si vous prévoyez de construire un site sans modules complémentaires avec des
+  dépendances complexes, vous pouvez télécharger le cœur, ou une distribution
+  qui contient le cœur et des modules et thèmes additionnels, depuis le site
+  web. Consulter <<install-manual>> pour des instructions.
 
-Use Composer::
-  If you plan to use the Drush tool (see <<install-tools>>), or if you are
-  building a site that might use modules with complicated dependencies, you
-  should use Composer to download the core software, because Composer will
-  manage the dependencies properly. If you start your site by downloading
-  manually, however, you can convert to using Composer to manage dependencies
-  later. See <<install-composer>> for downloading and conversion instructions.
+Utiliser Composer::
+  Si vous prévoyez d'utiliser l'outil Drush (consulter <<install-tools>>), ou si
+  vous êtes en train de construire un site qui pourrait utiliser des modules
+  avec des dépendances complexes, vous devriez utiliser Composer pour
+  télécharger le cœur, parce que Composer gèrera correctement les dépendances.
+  Si vous commencez votre site en le téléchargeant manuellement, vous pourrez
+  plus tard le convertir en une installation utilisant Composer. Consulter
+  <<install-composer>> pour des instructions pour le téléchargement et la
+  conversion.
 
-==== What happens when I install the core software?
+==== Que se passe-t-il quand j'installe le cœur ?
 
-_Installing_ the core software means setting up some database tables,
-configuration, and an administrative user account, so that you can build and use
-your site.
+_Installer_ le cœur signifie mettre en place les tables dans la base de données,
+la configuration, et un compte d'utilisateur d'administration, de manière à ce
+que vous puissiez construire et utiliser votre site.
 
-==== What methods are available for installing the core software?
+==== Quelles sont le méthodes disponibles pour installer le cœur ?
 
-There are several ways to install the core software:
+Il y a plusieurs manières d'installer le cœur (core) :
 
-Behind-the-scenes installer::
-  If you choose to use an online demo or one-click installer from a hosting
-  provider, the core software may be installed for you automatically.
+Installeur en arrière-plan::
+  Si vous décidez d'utiliser une démo en ligne ou un installeur chez votre
+  hébergeur, le cœur pourrait être installé automatiquement pour vous.
 
-Interactive installer::
-  The core software has an interactive installer that presents you with several
-  on-line forms, and then completes the installation using the information you
-  provide in the forms. See <<install-prepare>> and <<install-run>>.
+Installeur interactif::
+  Le cœur comporte un installeur interactif qui vous présente plusieurs
+  formulaires en ligne, et achève l'installation en  utilisant les informations
+  que vous saisissez dans les formulaires. Consulter <<install-prepare>> et
+  <<install-run>>.
 
-Demo site installer::
-  If you download the core software to your local computer, you can quickly
-  create a temporary demo site that uses the built-in web server and SQLite
-  database that are part of PHP. The command to set up a demo site is given at
-  the end of <<install-manual>>. In this case, you will not run the interactive
-  installer.
+Installeur d'un site de démo::
+  Si vous téléchargez le cœur sur votre ordinateur local, vous pouvez rapidement
+  créer un site de démo temporaire qui utilise le serveur web intégré et la base
+  de données SQLite qui sont pris en charge par PHP. La commande pour mettre en
+  place un site de démo est donnée à la fin d'<<install-manual>>. Dans ce cas,
+  vous n'aurez pas à lancer l'installer interactif.
 
-Command-line tool::
-  Command-line tools (see <<install-tools>>) can also be used to perform the
-  installation steps.
+Outil en ligne de commande::
+  Des outils en ligne de commande (consulter <<install-tools>>) peuvent
+  également être utilisés pour mener à bien les étapes de l'installation.
 
 // ==== Related topics
 
@@ -90,9 +93,10 @@ Command-line tool::
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch],
+Écrit et modifié par https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan]
+d'https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+et https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
