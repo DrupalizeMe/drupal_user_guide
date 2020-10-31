@@ -1,81 +1,87 @@
 [[install-manual]]
-=== Downloading the Core Software Manually
+=== Télécharger manuellement le cœur (core)
 
 [role="summary"]
-How to download the core software or a distribution from the web site.
+Comment télécharger le cœur (core) ou une distribution depuis le site web.
 
-(((Downloading,core software)))
-(((Downloading,distribution)))
-(((Core software,downloading)))
-(((Distribution,downloading)))
+(((Télécharger,cœur)))
+(((Télécharger,distribution)))
+(((Cœur,télécharger)))
+(((Distribution,télécharger)))
 
-==== Goal
+==== Objectif
 
-Download the core software or a distribution manually. Skip this topic if you
-are downloading using some other method.
+Télécharger le cœur (core) ou une distribution manuellement. Passer ce sujet si
+vous téléchargez en utilisant une autre méthode.
 
-==== Prerequisite knowledge
+==== Prérequis
 
 * <<understanding-distributions>>
 * <<install-decide>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Étapes
 
-. Go to _https://www.drupal.org_ and navigate to _Build_ > _Download & Extend_
-in the top-level menu.
+. Aller à _https://www.drupal.org_ et naviguer vers _Build_ > _Download &
+Extend_ dans le menu principal.
 +
 --
 // Download Drupal area of https://www.drupal.org/download.
-image:images/install-prepare-downloads.png["Downloads page on _Drupal.org_",width="100%"]
+image:images/install-prepare-downloads.png["Page des téléchargements sur _Drupal.org_",width="100%"]
 --
 
-. If you want to download just the core software, click the _Download Drupal
-zip_ or _download tar.gz_ link, and save the file to your local machine.
+. Si vous voulez juste télécharger le cœur, cliquer sur un des liens _Download
+Drupal zip_ ou _download tar.gz_, et enregistrer le fichier sur votre machine
+locale.
 
-. If you want to download a distribution, click the _Distributions_ icon or
-link, choose a distribution from the list, click through to its project page,
-and click the link to download a zip or tar.gz file to your local machine. The
-link looks like this:
+. Si vous voulez télécharger une distribution, cliquer sur l'icône
+_Distributions_ ou sur le lien, choisir une distribution dans la liste, cliquer
+pour se rendre sur la page du projet puis faire défiler jusqu'au lien pour
+télécharger une archive zip ou tar.gz sur votre machine locale. Le lien
+ressemble à ceci :
 +
 --
 // Reusing an image from the extend-module-install topic.
-image:images/extend-module-install-download.png["Finding a download URL"]
+image:images/extend-module-install-download.png["Trouver une URL de téléchargement"]
 --
 
-. Upload the downloaded file to your hosting account. Log in to the control
-panel and navigate to the _HTML_ directory. Save the file there.
+. Transférer le fichier télécharger chez votre hébergeur. Se connecter au
+tableau de bord et naviguer vers le répertoire _HTML_ (ou plus généralement, le
+répertoire racine NdT). Y enregistrer le fichier.
 
-. Uncompress the tar.gz or zip file, which will create a new directory. If you
-do not have terminal access, or your hosting server is not running Linux, your
-hosting control panel's file manager should provide a way to extract the
-files. If you have terminal access to your hosting server (running Linux), you
-can use a command like:
+. Décompresser le fichier tar.gz ou zip, ce qui créera un nouveau répertoire. Si
+vous n'avez pas un accès au terminal, ou si le serveur de votre hébergeur ne
+tourne pas sous Linux, le gestionnaire de fichier du tableau de bord de votre
+hébergeur devrait fournir un moyen d'extraire les fichiers. Si vous avez accès
+au terminal de votre serveur d'hébergement (tournant sous Linux), vous pouvez
+utiliser une commande comme :
 +
 ----
 tar -xzf drupal-8.3.2.tar.gz
 ----
 
-. Delete the compressed file from the server, unless your unpacking method
-already deleted it.
+. Supprimer le fichier compressé du serveur, à moins que la méthode de
+décompression utilisée ne s'en soit déjà chargée.
 
-. Rename the directory or reconfigure your web hosting, so that the directory
-name matches the directory your web hosting is configured to use for your site.
+. Renommer le répertoire ou reconfigurer votre hébergement web, de manière à ce
+que le nom du répertoire corresponde à celui qui est configuré pour
+l'utilisation du site chez votre hébergeur.
 
-==== Expand your understanding
+==== Améliorer votre compréhension
 
-Once you have the software downloaded, you can install a temporary demo site
-(see <<install-decide>>) by running the following command from the top-level
-directory of the core software:
+Une fois le cœur téléchargé, vous pouvez installer un site de démo temporaire
+(consulter <<install-decide>>) en lançant la commande suivante depuis le
+répertoire racine du cœur :
 
 ----
 php core/scripts/drupal quick-start standard
 ----
 
-The demo site will be installed, and your web browser should open to log in to
-the new site, which will only run as long as the PHP command is active. To learn
-more about this functionality, use its help command:
+Le site de démo sera installé, et votre navigateur web devrait s'ouvrir pour
+vous connecter au nouveau site, qui ne fonctionnera que tant que la commande PHP
+sera active. Pour en savoir plus sur cette fonctionnalité, utiliser sa commande
+d'aide :
 
 ----
 php core/scripts/drupal quick-start --help
@@ -84,16 +90,20 @@ php core/scripts/drupal quick-start --help
 
 // ==== Related concepts
 
-// ==== Videos
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/meVfH5mvdwI[title="Downloading the Core Software Manually"]
 
 // ==== Additional resources
 
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch],
+Écrit et modifié par https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan]
+d'https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle].
+et https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].
