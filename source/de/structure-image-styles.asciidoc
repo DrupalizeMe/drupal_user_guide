@@ -1,10 +1,10 @@
 [[structure-image-styles]]
 
-=== Konzept: Bild-Stile
+=== Konzept: Bildstile
 
 [role="summary"]
-Überblick über Bildstile und wie sie verwendet werden, um ein einzelnes Bild anzuzeigen in
-mehrere Variationen.
+Überblick über Bildstile und wie sie verwendet werden, um ein einzelnes Bild in
+mehrere Variationen anzuzeigen.
 
 (((Image style,overview)))
 (((Style,image)))
@@ -19,32 +19,29 @@ mehrere Variationen.
 
 
 ===== Was sind Bildstile?
-Mit Bildstilen können Sie ein einzelnes Bild hochladen, es aber auf verschiedene Arten anzeigen;
+Mit Bildstilen können Sie ein einzelnes Bild hochladen, es aber auf verschiedene Arten anzeigen.
 jede Darstellungsvariante, oder _Bildstil_, ist das Ergebnis der Anwendung eines oder mehrerer
 _Effekte_ auf das Originalbild.
 
-Als Beispiel können Sie ein hochauflösendes Bild mit einem Seitenverhältnis von 4:3 hochladen,
-und zeigen Sie sie verkleinert, quadratisch beschnitten oder schwarz-weiß an (oder eine beliebige
-Kombination dieser Wirkungen). Die Kern-Software bietet einen Weg dazu
-effizient:
+Sie können beispielsweise ein hochauflösendes Bild mit einem Seitenverhältnis von 4:3 hochladen,
+und und dieses verkleinert, quadratisch zugeschnitten oder schwarz-weiß anzeigen lassen (Sie kkönnen auch eine beliebige Kombination diesesr Effekte verwenden). Das Kernsystem, stellt hierzu einen effizienten Weg zur Verfügung:
 
 . Konfigurieren Sie einen Bildstil mit den gewünschten Effekten auf der Seite _Bildstile_.
 (_admin/config/media/image-styles_).
 
-. Die Effekte werden angewendet, wenn ein bestimmtes Bild zum ersten Mal angefordert wird in
-diesen Stil.
+. Die Effekte werden angewendet, wenn ein bestimmtes Bild zum ersten Mal unter Verwendung dieses Bildstils angefordert  wird.
 
-. Das resultierende Bild wird gespeichert.
+. Das so erzeugt e Bild wird gesopeichert.
 
-. Wenn derselbe Stil das nächste Mal angefordert wird, wird das gespeicherte Bild abgerufen.
-ohne die Notwendigkeit, die Auswirkungen neu zu berechnen.
+. Wenn derselbe Bildstil das nächste Mal angefordert wird, wird das gespeicherte Bild abgerufen.
+ohne das der Bildstil neu berechnet werden muss.
 
-Die Kernsoftware bietet mehrere Effekte, die Sie zur Definition von Stilen verwenden können;
+Das Kernsystem bietet mehrere Effekte, die Sie zur Definition von Bildstilen verwenden können;
 andere können durch beigesteuerte Module bereitgestellt werden.
 
-Besuchen Sie die Seite _Bildstile_ über das Verwaltungsmenü _Verwaltung_, navigieren Sie zu
-_Konfiguration_ > _Medien_ > _Bildstile_ (_Admin/Konfiguration/Medien/Bildstile_)
-um die Bildstile zu sehen, die standardmäßig definiert sind.
+Rufen Sie die Seite _Bildstile_ über das Menü _Verwalten_ auf, indem Sie zum Menüpunkt
+_Konfiguration_ > _Medien_ > _Bildstile_ (_admin/configuration/media/imagesyles_)
+navigieren, um die Bildstile einzusehen, die standardmäßig definiert sind.
 
 ==== Verwandte Themen
 
@@ -55,15 +52,15 @@ um die Bildstile zu sehen, die standardmäßig definiert sind.
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8"]
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8" (englisch)]
 
 
 *Mitwirkende*
 
 Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
-und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle], von
 https://www.drupal.org/docs/8/core/modules/image/working-with-images["Arbeiten mit Bildern in
-Drupal 7 und 8"],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft]
+Drupal 7 und 8" (englisch)],
+copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community]
