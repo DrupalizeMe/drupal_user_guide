@@ -1,16 +1,16 @@
 [[structure-form-editing]]
 
-=== Eingabeformularen für Inhalte verändern
+=== Bearbeitungsformulare für Inhalte verändern
 
 [role="summary"]
-So bearbeiten Sie ein Inhaltseingabeformular.
+So bearbeiten Sie inhalte mittels Bearbeitungsformular.
 
 (((Content,editing entry form)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Ändern Sie das Bearbeitungsformular für Rezepte an, um ein anderes Steuerelement für die Eingabe von Begriffen für das Feld
-Feld Zutaten auszuwählen.
+Passen Sie das Bearbeitungsformular für Rezepte an, idem Sie ein anderes Steuerelement für die Eingabe von Begriffen über das Feld
+Zutaten auszuwählen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -19,7 +19,7 @@ Feld Zutaten auszuwählen.
 * <<structure-taxonomy>>
 * <<structure-widgets>>
 
-==== Standort-Voraussetzungen
+==== Anforderungen an die Website
 
 Der Inhaltstyp Rezept muss vorhanden sein, und er muss ein Taxonnomiebegriffsreferenzfeld für Zutaten besitzen.
 . Siehe <<structure-content-type>> und
@@ -27,16 +27,16 @@ Der Inhaltstyp Rezept muss vorhanden sein, und er muss ein Taxonnomiebegriffsref
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Menü _Verwalten_ zu _Inhalt_ > _Inhalt hinzufügen_ >
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ > _Inhalt hinzufügen_ >
 _Rezept_ (_node/add/recipe_) das Formular zum Bearbeiten von Inhalten und desssen Standardkonfiguration zu betrachten. 
 Beachten Sie, dass Sie die Zutaten einzeln eingeben müssen, und diese nicht als Liste angeebn werden können.
 
-. Navigieren Sie im Menü _Verwalten_ zum Punkt _Struktur_ > _Inhaltsypen_ 
-(_admin/structure/types_). Klicken Sie dann auf _Formularanzeige verwalten_ auf der
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltsypen_ 
+(_admin/structure/types_). Klicken Sie dann auf der Seite _Formularanzeige verwalten_ auf der
 Dropdown-Schaltfläche für den Inhaltstyp Rezept. Die Seite _Formularanzeige_ verwalten
 erscheint.
 
-. Wählen Sie für das Feld Inhaltsstoffe die Option _Autovervollständigen (Tags-Stil)_ in der Spalte _Steuierelement_.
+. Wählen Sie für das Feld Zutaten die Option _Autovervollständigen (Tags-Stil)_ in der Spalte _Steuerelement_.
 +
 --
 // Manage form display page for Recipe, Ingredients field area, with
@@ -46,7 +46,7 @@ image:images/structure-form-editing-manage-form.png["Manage the Recipe form",wid
 
 . Klicken Sie auf _Speichern_.
 
-. Navigieren Sie im Menü _Verwalten_ zu _Inhalt_ > _Inhalt hinzufügen_ >
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ > _Inhalt hinzufügen_ >
 Rezept (_node/add/recipe_) um das veränderte Verhalten des zum Inhaltstyp gehörigen Bearbeitungsformulars zu überprüfen. 
 Das Feld „Zutaten" ist jetzt ein einzelnes Textfeld, das mehrere
 Werte akzeptiert.
@@ -56,7 +56,7 @@ Werte akzeptiert.
 image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
 --
 
-. Legen Sie zwei Inhaltselemente vom Typ Rezept an (siehe <<content-create>>), wie zum Beispiel Rezepte für
+. Legen Sie zwei Inhalte vom Typ Rezept an (siehe <<content-create>>), wie zum Beispiel Rezepte für
 „Grüner Salat" und „Frische Karotten". Stellen Sie sicher, dass alle Felder Werte enthalten. Einschließlich der Felder;
 
 *Bild, 
@@ -65,7 +65,7 @@ image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
 
 ==== Vertiefen sie Ihr Wissen
 
-Ändern Sie das Seitenweite Kontaktformular, indem Sie im Menü _verwalten_ zum Menüpiunkt
+Ändern Sie das Seitenweite Kontaktformular, indem Sie im Menü _Verwalten_ zum Menüpiunkt
 _Struktur_ > _Kontaktformulare_ navigieren. Zum Beispiel möchten Sie vielleicht die Felder
 Eien Kopie an mich Senden_ oder Felder für die  _Eingabesprache_ des Formulars hinzufügen.
 
