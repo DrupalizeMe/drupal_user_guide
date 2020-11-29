@@ -3,7 +3,7 @@
 === Konzept: Taxonomie
 
 [role="summary"]
-Überblick über die Taxonomie und wie sie zur Kategorisierung von Inhalten in einer Website verwendet werden kann.
+Überblick über die Taxonomie und wie diese zur Kategorisierung von Inhalten einer Website verwendet werden kann.
 
 (((Taxonomy,overview)))
 (((Term (taxonomy), overview)))
@@ -16,42 +16,32 @@
 * <<planning-data-types>>
 * <<structure-reference-fields>>
 
-==== What is Taxonomy?
+==== Was ist Taxonomie?
 
-_Taxonomie_ wird zur Klassifizierung von Website-Inhalten verwendet. Ein gängiges Beispiel einer Taxonomie
-sind die Tags, die verwendet werden, um Beiträge auf einer Blog-Website zu klassifizieren oder zu kategorisieren; die Bauern
-Markt-Website könnte eine Zutatentaxonomie verwenden, um Rezepte zu klassifizieren.
-Einzelne Elemente der Taxonomie sind als _Terms_ bekannt (die Blog-Tags oder das Rezept
-Inhaltsstoffe in diesen Beispielen); und eine Reihe von Begriffen ist als _Vokabular_ bekannt
-(der Satz aller Blog-Post-Tags oder der Satz aller Rezept-Zutaten in diesen
-Beispiele). Technisch gesehen sind Taxonomiebegriffe ein Entitätstyp und die Entität
-Untertypen sind die Vokabulare. Wie andere Entitäten können Taxonomiebegriffe
-Felder angehängt; zum Beispiel könnten Sie ein Bildfeld so einrichten, dass es eine
-Symbol für jeden Begriff.
+_Taxonomie_ wird zur Klassifizierung von Website-Inhalten verwendet. Das gängigste Beispiel einer Taxonomie
+sind die Begriffe (auch Tags genannt), die verwendet werden, um Beiträge auf einer Blog-Website zu klassifizieren 
+oder zu kategorisieren. Die Wochenmarkt-Website könnte eine Taxonomie für rezeptzutaten verwenden, 
+damit Rezepte nach den darin enthaltenen Zutataten gefiltert und sortiert werden können.
+Einzelne Elemente der Taxonomie sind als _Begriffe_ bekannt (Das können Blog-Themen oder wie in diesem Beispel Zutaten für rezepte sein). Eine Sammlung einzelner Begriffe, zu einem bestimmten Haupttehma wiedrum wird _Vokabular_ genannt
+(In unserem Beispiel ist das jeweils die Sammlung aller Themenbegriffe, die im blog behandelt werden oder ide Sammlung aller Zutaten, die auf dem Wochenmakrt gekauft erden können und in den Rezepten auf der Website verwendet werden). Technisch gesehen sind Taxonomiebegriffe ein Entitätstyp. Der Subtyp dieses Emtitätstyp, sind die Vokabulare, in denen die einzelnen Taxonomiebegriffe gebündelt werden. 
+Genau wie andere Entitäten können Taxonomiebegriffe Felder enthalten.
+Sie können einem taxinimiebegrif beispielsweise ien Bild hinzufügen,und so einrichten, das diesese Bild als Symbol für den Begriff angezeigt wird.
 
-Ein individuelles Vokabular kann seine Begriffe in einer Hierarchie organisieren, oder es könnte
-flach. Beispielsweise haben Blog-Tags normalerweise eine flache Struktur, während ein Rezept
-Das Zutatenvokabular könnte hierarchisch sein (z.B. könnten Tomaten ein
-Unterbegriff von Gemüse, und unter Tomaten könnte man grün und rot haben
-Tomaten).
+In einem individuellen Vokabular können Begriffe in einer Hierarchie organisiert werden. Es kann aber auch so angelgt werden, dass die Begriffe nebeneinander stehen. In diesem Fall handelt es sich dann um eine flache Hierarchie. Blogthemeen, erden zum beispiel meist in flachen Hierarchien organisiert, während ein Vokabular, das Rezeptutaten enthält durchasus hierarchisch organisiert werden kann 
+(z. B. könnten Tomaten ein Unterbegriff von Gemüse sein und unter  dem Begriff Tomaten wiederum könnte man grüne Tomaten und rote Tomaten auflisten).
 
-Taxonomiebegriffe werden normalerweise als Referenzfelder an andere Inhalte angehängt
-Entitäten, so können Sie sie zur Klassifizierung von Inhalten verwenden. Wenn Sie eine
-Taxonomiereferenzfeld können Sie Benutzer Begriffe auf zwei Arten eingeben lassen:
+Taxonomiebegriffe werden normalerweise als Referenzfelder an andere Inhaltsentitäten angehängt.
+So können Sie diese von Ihnen zur Klassifizierungvon Inhalten verwendet werden. Wenn Sie ein
+Taxonomiereferenzfeld anlegen, können Sie Benutzer Begriffe auf zwei Arten eingeben lassen:
 
 Freies Tagging::
-  Neue Begriffe können direkt auf dem Inhaltsbearbeitungsformular angelegt werden.
-Feste Liste von Begriffen::
-  Die Liste der Begriffe wird außerhalb des Inhaltsbearbeitungsformulars kuratiert und verwaltet, und
-  Benutzer können beim Bearbeiten von Inhalten nur aus der vorhandenen Liste wählen.
+  Neue Begriffe können direkt auf dem Bearbeitungsformular für neue Inhalte angelegt werden.
+  Liste vordefinierter Begriffe::
+  Die Liste der Begriffe wird außerhalb des Formulars zur Bearbeitung von Inhalten zusammengestellt und verwaltet. Benutzer können dann Begriffe nur aus dieser Liste vordefinierter Begriffe auswählen.
 
-Taxonomiereferenzfelder können zu jeder Entität, wie z.B. Benutzerkonten, hinzugefügt werden,
-benutzerdefinierte Blöcke oder reguläre Inhaltselemente. Wenn Sie sie zur Klassifizierung von regulären
-Inhaltselementen wird Ihre Website automatisch mit
-Taxonomie-Listenseiten für jeden Begriff; jede dieser Seiten listet alle
-Inhaltselemente, die mit diesem Begriff klassifiziert sind. Wenn Sie zum Beispiel
-mehrere Rezepte, die alle Karotten als Zutat hatten, sehen Sie vielleicht etwas
-wie hier auf der Seite mit der Auflistung der Karotten-Taxonomie:
+Taxonomiereferenzfelder können zu jeder Entität, wie z.B. Benutzerkonten,
+benutzerdefinierten Blöcken oder regulären Inhalten, hinzugefügt werden. Wenn Sie Taxonomiebegriffe zur Klassifizierung der Inhalte ihrer Website verwenden, wird für jeden angelgten Taxonomiebegriff automatisch auch eine Listenseite erstellt. Eine solche Taxonomiebegriffsseite listet alle Elemente auf, die mit dem jeweiligen Begriff klassifiziert worden sind. Wenn Sie zum Beispiel
+mehrere Rezepte angelgt haben, in denn Karotten als Zutat enhalten sind, Sied die Taxonomiebegriffs-Seite des für das Schalgwort Karrotten vielleicht ähnlich aus wie unten abgebildet:
 
 
 // Carrots taxonomy page after adding Recipe content items.
