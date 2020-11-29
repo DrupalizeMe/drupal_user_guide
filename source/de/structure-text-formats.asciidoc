@@ -18,18 +18,18 @@
 
 _Textformate_ ändern die Art und Weise, wie HTML-Tags und anderer Text
 auf Ihrer Website verarbeitet und angezeigt werden. Textformate bestehen aus einer Reihe von _Filtern_, von denen jeder
-Text auf eine bestimmte Art formatiert. Wenn Benutzer Inhalte erstellen, wird ein der Inhalt im jeweiligen Textformat
-sowie der vollständige, unformatierte Text der Datenbank gespeichert. Der Inhalt durchläuft dann die Filder eines Textformates, bevor er auf der Website dargestellt wird.
+Text auf eine bestimmte Art formatiert. Wenn Benutzer Inhalte erstellen, wird der Inhalt sowohl im jeweiligen Textformat
+als auich, als vollständig unformatierte Veariante in der Datenbank gespeichert. Der Inhalt durchläuft dann die Filteer, die in einem textformat definiert sind, bevor er final auf der Website dargestellt wird.
 
-Das Kernsystemmodul Filter stellt die Textformat-Funktionalität bereit. Das Installationsprofil Standard
+Das Kernsystemmodul Filter stellt die Textformat-Funktionalität zur Verfügung. Das Installationsprofil Standard
 richtet die Textformate _Einfaches HTML_, _Eingeschränktes HTML_ und _Volständiges HTML_ ein.
 Jedem Textformat ist eine Berechtigung zugeordnet, so dass Sie erweiterte Textformate nur
-vertrauenswürdigen Benutzern zugänglich machen müssen. So können Sie über Textformate einschränken welche HTML-Tags
-nicht vertrauenswürdige Benutzer verwenden dprfen. Beispielsweise über das Textformat _Einfaches HTML_
+vertrauenswürdigen Benutzern zugänglich machen müssen. so können Sie festlgegn welche HTML-Tags und Filter
+nicht vertrauenswürdige Benutzer verwenden dürfen. Das Textformat _Einfaches HTML_ enthält beispielsweise weniger Funktonen und zulässige HTML-Tags als das format _Vollständiges HTML_
 
 ==== Welche Editoren sind den Textformaten zugeordnet?
 
-Jedes Textformat kann mit einem Editor verknüpft werden, z.B. einem visuellen WYSIWYG
+Jedes Textformat kann mit einem Editor verknüpft werden, z. B. einem visuellen WYSIWYG
 (What You See Is What You Get) HTML-Editor. Das Texteditor Modul des Kernsystems bietet
 die Möglichkeit, Editoren mit Textformaten zu assoziieren und die Editoren zu konfigurieren
 (indem Buttons aus der Symbolleiste eines Editors entfernt oder, falls gewünscht neue Buttons hinzugefügt werrden können). Der Modul CKEditor, das mit dem Kernsystem ausgeliefert wird,
@@ -40,9 +40,9 @@ zur Bearbeitung von HTML-Inhalten auf Ihrer Website verwendet werden kannn.
 
 Cross-Site-Scripting (XSS) ist eine Sicherheitslücke, die typischerweise in
 Webseiten auftreten kann. Auf einer Website, die nicht gut geschützt ist, können böswillige Benutzer Skripts ausführen,
-die von Websites stammen, die von anderen Internenutzern betrieben werden (Dies kann zum Beispiel in einem Kommtar oder in einem Hauptartikel Ihrer Website passieren). Eine Cross-Site-Scripting-Schwachstelle kann von
-Angreifern genutzt werden,  um sich als anderer Benutzer anzumelden. Es ist wichtig die Text
-Formate Ihrer Website, korrekt zu konfigurieren, um einen solchen Missbrauch zu verhindern.
+die von Websites stammen, die von anderen Internenutzern betrieben werden (Dies kann zum Beispiel in einem Kommentar oder in einem Hauptartikel Ihrer Website passieren). Eine Cross-Site-Scripting-Schwachstelle kann von
+Angreifern genutzt werden,  um sich als anderer Benutzer anzumelden. Es ist wichtig die 
+Textformate Ihrer Website, korrekt zu konfigurieren, um einen solchen Missbrauch zu verhindern.
 
 ==== Verwandte Themen
 
