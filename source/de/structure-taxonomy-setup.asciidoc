@@ -12,9 +12,8 @@ Wie man ein Taxonomie-Vokabular erstellt und es als Feld zu einem Inhaltstyp hin
 
 ==== Zielsetzung
 
-Erstellen Sie ein Ingredients-Vokabular und fügen Sie es dem Inhaltstyp Rezept als
-ein Feld, das eine unbegrenzte Anzahl von Werten enthalten kann und das das Hinzufügen von
-neue Begriffe zum Vokabular.
+Erstellen Sie ein Zutantenvokabular und fügen Sie es dem Inhaltstyp Rezept als
+Feld hinzu, das eine unbegrenzte Anzahl von Werten enthalten kann.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -28,11 +27,11 @@ Der Inhaltstyp Rezept muss vorhanden sein. Siehe: <<structure-content-type>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Taxonomie_
-(_Administration/Struktur/Taxonomie_). Sie sehen das _Tags_-Vokabular, das
-die mit dem zentralen Standard-Installationsprofil erstellt wurden. (Beachten Sie, dass der Name und
-Beschreibungen dieses Vokabulars werden auf dieser Seite auf Englisch angezeigt; siehe
-<<language-concept>> for an explanation.)
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Taxonomie_
+(_admin/structure/taxonomy_). Sie sehen das Vokabular _Tags_, das
+die mit dem Standard-Installationsprofil des Kernsystems angelegt wurde. (Beachten Sie, dass der Name und die
+Beschreibungen dieses Vokabulars auf der Seit auf englisch angezeigt werden; Siehe
+<<language-concept>> für eine detailierte Erklärung.)
 +
 --
 // Taxonomy list page (admin/structure/taxonomy).
@@ -44,8 +43,8 @@ image:images/structure-taxonomy-setup-taxonomy-page.png["taxonomy list page",wid
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Beispielwert
-| Name | Der Name des Vokabulars | Inhaltsstoffe
-| Beschreibung | Eine kurze Notiz zum Vokabular | (leer lassen)
+| Name | Der Name des Vokabulars | Zutaten
+| Beschreibung | Eine kurze Beschreibung des Vokabulars | (leer lassen)
 |================================
 +
 --
@@ -62,7 +61,7 @@ aller Begriffe in diesem Vokabular.
 image:images/structure-taxonomy-setup-vocabulary-overview.png["Ingredients taxonomy term listing",width="100%"]
 --
 
-. Klicken Sie auf _Begriff hinzufügen_. Geben Sie "Butter" in das Feld _Name_ ein. Klicken Sie auf _Speichern_.
+. Klicken Sie auf _Begriff hinzufügen_. Geben Sie „Butter" in das Feld _Name_ ein. Klicken Sie auf _Speichern_.
 +
 --
 // Name portion of Add term page
@@ -70,20 +69,19 @@ image:images/structure-taxonomy-setup-vocabulary-overview.png["Ingredients taxon
 image:images/structure-taxonomy-setup-add-term.png["Add term page",width="100%"]
 --
 
-. Sie erhalten eine Bestätigung über den von Ihnen erstellten Begriff. Mehr hinzufügen
-Bedingungen. Zum Beispiel "Eier" und "Milch".
+. Sie erhalten eine Bestätigung darüber, dass der von ihnen erstellte Begriff zum vorkabilar hinzugefügt wurde. Fügen Sie nun merh Zutaten hinzu. Zum Beispiel „Eier" und „Milch".
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Inhaltstypen_
-(_admin/structure/types_). Klicken Sie auf _Felder verwalten_ für Ihren Inhaltstyp Rezept.
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
+(_admin/structure/types_). Klicken Sie im Inhaltstyp Rezept auf _Felder verwalten_.
 
-. Klicken Sie auf _Feld hinzufügen_, und geben Sie Werte aus der untenstehenden Tabelle ein. Klicken Sie auf _Speichern und
-weiter_.
+. Klicken Sie auf _Feld hinzufügen_, und geben Sie die Werte aus der untenstehenden Tabelle ein. 
+. Klicken Sie auf _Speichern und fortfahren_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
 | Ein neues Feld hinzufügen | Wählen Sie den Feldtyp | Referenz > Taxonomiebegriff
-| Etikett | Der Titel für das Feld | Inhaltsstoffe
+| Beschriftung | Der titel des feldes | Zutaten
 |================================
 +
 --
@@ -114,7 +112,7 @@ image:images/structure-taxonomy-setup-field-settings.png["Field storage settings
 |Hilfetext | Hilfe für Benutzer, die Inhalte erstellen |Zutaten eingeben, nach denen Besucher der Website suchen möchten
 |Referenztyp > Referenzmethode | Wählen Sie die Methode aus, die zur Auswahl der zulässigen Werte verwendet wird | Standard
 |Referenzart > Vokabular | Wählen Sie das Vokabular, um zulässige Werte aus | Inhaltsstoffe
-|Referenztyp > Referenzierte Entitäten erstellen, falls sie noch nicht existieren | Ob neue Inhaltsstoffterme aus dem Inhaltsbearbeitungsformular erstellt werden können | Geprüft
+|Referenztyp > Referenzierte Entitäten erstellen, falls sie noch nicht existieren | Ob neue Zutaten aus dem Formular heraus angelgt werden können | Angehagt
 |================================
 +
 --
@@ -139,7 +137,7 @@ image:images/structure-taxonomy-setup-finished.png["Manage fields page for Recip
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Setting up a Taxonomy"]
+video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Taxonomie einrichten"]
 
 //===== Zusätzliche Ressourcen
 
