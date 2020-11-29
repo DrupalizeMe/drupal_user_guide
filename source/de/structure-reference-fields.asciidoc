@@ -3,7 +3,7 @@
 === Konzept: Referenzfelder
 
 [role="summary"]
-Überblick über Referenzfelder und ihre häufig verwendeten Typen.
+Überblick über Referenzfelder und die am häufigsten verwendeten Typen.
 
 (((Reference field,overview)))
 (((Reference field,content)))
@@ -25,24 +25,25 @@
 
 Ein _Referenzfeld_ ist ein Feld, das eine Beziehung zwischen einer Entität
 und eine oder mehrere andere Entitäten, die derselben oder einer anderen Entität angehören können
-tippen. Die drei am häufigsten verwendeten Referenzfelder sind:
+tippen. Die 3 am häufigsten verwendeten Referenzfeldtypen sind:
 
-Inhaltsverweis::
-  Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte verbinden wollen
-  an die Anbieter, die sie eingereicht haben. Sie würden ein Inhaltsreferenzfeld einrichten
-  genannt Eingereicht durch Verweis auf Inhaltselemente des Lieferanten auf dem Rezeptinhalt
-  tippen.
+Inhaltsreferenz::
+  Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte dn Lieferanten zuordnen wollen, 
+  die sie eingereicht haben. Dazu würden Sie ein Inhaltsreferenzeld anlegen, dass den Namen „Eingereicht von“ trägt und von den 
+  eingereichten Rezepten aus auf das Profil des Lieferanten verweist, der das Rezept eingereicht 
+  hat.
 
 Taxonomie-Begriffsreferenz::
-  Ein Verweis auf einen Taxonomiebegriff. Beispielsweise könnten Sie Rezepte verbinden wollen
-  zu ihren Inhaltsstoffen. Sie würden ein Taxonomiebegriff-Referenzfeld namens
-  Zutaten auf dem Inhaltstyp Rezept. Dieses Referenzfeld zeigt auf das Feld
-  Wortschatz Inhaltsstoffe.
+  Eine Referenz auf einen Taxonomiebegriff. Beispielsweise könnten Sie auf Rezepten eine Liste von Zutaten
+  anlegen und diese als Taxonomiebegrife abspeichern. Auf einem Rezept würden Sie dann die Zutaten für das jeeilige gericht referenzieren. #
+  Dazu würden Sie im inhaltstyp Rezept ein Refernezfeld anlegen, dass auf das Taxonomievokabular verweist, das die Zutaten enthölt, die es auf
+  dem Wochenmarkt zu kaufen gibt.das Referenzfeld selbst würde das Taxonomievokabular 
+  Zutaten referenzieren.
 
 Benutzer-Referenz::
-  Ein Verweis auf ein Benutzerkonto. Zum Beispiel könnten Sie Rezepte verbinden wollen
-  mit ihren Küchenchefs. Sie würden ein Benutzerreferenzfeld namens Köche auf der Registerkarte
-  Typ des Rezeptinhalts.
+  Eine Referenz auf ein Benutzerkonto. Zum Beispiel könnten Sie auf Rezepten die Küchenshefs referenzieren, die auf dem Wochenmarkt Ihre Zutaten
+  für das jewielige Rezept beziehen. Dafür würden Sie im Inhaltstyp Rezept ein Referenfeld vom Typ 
+  Benutzer anlegen.
 
 ==== Verwandte Themen
 
