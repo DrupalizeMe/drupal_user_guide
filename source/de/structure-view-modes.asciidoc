@@ -16,28 +16,25 @@
 
 ==== Was ist ein Ansichtsmodus?
 
-Wie eine Entität (z. B. ein Inhalt, ein Benutzer oder ein Kommentar) angezeigt wird, hängt ab von
-den Kontext, in dem sie gezeigt wird. Dieser Kontext wird als _view bezeichnet.
-Modus_. Beispiele für Ansichtsmodi sind:
+Wie eine Entität (z. B. ein Inhalt, ein Benutzer oder ein Kommentar) angezeigt wird, hängt vom Kontext ab, 
+in dem die jeweige information angeziegt werden solll. Dieser Kontext wird als _Anschtsmodus_ bezeichnet.
+Beispiele für einen Ansichtsmodus sind:
 
-* eine ganze Seite des Inhalts mit allen Feldwerten
-* einen Teaser des Inhalts mit einem Miniaturbild und einem _Weiterlesen_-Link
-* ein vollständiges Benutzerprofil mit einem zoombaren Porträtfoto
-* ein Benutzer-Avatar mit Benutzername und einem Link zum Profil
+* Eine Seite, die den volltändigen Inhalte mit allen darin vorhandenn feldern anzeigt.
+* Ein Ansrisstext des Inhalts mit einem Miniaturbild und einem _Weiterlesen_-Link
+* Ein vollständiges Benutzerprofil mit einem zoombaren Porträtfoto
+* Ein Benutzer-Avatar mit Benutzername und einem Link zum Profil
 
-Jeder Ansichtsmodus kann über die Verwaltungsseiten konfiguriert werden. Zur Anzeige der
-Konfigurationsoptionen für die Ansichtsmodi des Inhaltstyps "Rezept", Navigieren
-im Verwaltungsmenü _Verwaltung_ auf _Struktur_ > _Inhaltstypen_
-(_admin/structure/types_) und klicken Sie in der Dropdown-Liste auf _Anzeige verwalten_.
-Schaltfläche. In jedem Ansichtsmodus können alle Felder ein- oder ausgeblendet werden, und wenn sie
-angezeigt werden, können Sie den Feldformatierer auswählen und konfigurieren.
+Jeder Ansichtsmodus kann über die entsprechende Seite im Verwltungsbereich konfiguriert werden. 
+Zur Anzeige der Konfigurationsoptionen für die Ansichtsmodi des Inhaltstyps „Rezept", navigeiren Sie im Menü 
+_Verwalten_ zum Menüpunkt  _Struktur_ > _Inhaltstypen_
+(_admin/structure/types_) und klicken Sie im Drop-Button hinter dem Inhaltstyp Rezepte auf _Anzeige verwalten_.
+In jedem Ansichtsmodus können alle Felder ein- oder ausgeblendet werden. Für Felder, die angezeigt werdne sollen, kann das jewilige Anziegeformat fetgelegt werden.
 
 ==== Was ist ein Anzeigeformat?
 
 Ein Anzeigeformat ist eine Einstellung für die Anzeige von Feldwerten. Zum Beispiel,
-Langtextfelder können beschnitten oder in voller Länge angezeigt werden, und der Begriff der Taxonomie
-Referenzfelder können im Klartext angezeigt oder mit dem Taxonomiebegriff verknüpft werden
-Seite. Auf der Seite _Anzeige verwalten_ finden Sie die Anzeigeformate für die
+können felder vom Tüp _lang_ kgekürzt oder in voller Längeangezeigt werden. taxonomiebegriffe können entweder als Klartext oder als Link zur Seite des jewiligen Taxonomiebegriffs angeziegt werden. Auf der Seite _Anzeige verwalten_ finden Sie die Anzeigeformate für die
 Felder des Inhaltstyps Rezept.
 
 ==== Verwandte Themen
