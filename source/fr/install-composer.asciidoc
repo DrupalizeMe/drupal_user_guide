@@ -103,7 +103,7 @@ avec Composer.
 Pour convertir un site qui a été créé en utilisant une version du cœur
 antérieure à 8.8.0, ou qui a été installée depuis un fichier zip ou tar.gz
 téléchargé depuis Drupal.org, consulter les instructions sur la page
-https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Add Composer to an existing site]
+https://www.drupal.org/docs/installing-drupal/add-composer-to-an-existing-site[Add Composer to an existing site]
 (en anglais).
 
 ===== Utiliser Composer pour télécharger un module ou un thème
@@ -145,13 +145,13 @@ composer update drupal/geofield --with-dependencies
 
 . S'il vous faut une version spécifique, déterminer comment saisir le numéro de
 version vers lequel vous voulez mettre à jour. Par exemple, pour la version
-8.x-1.7 d'un module contribué, vous saisiriez juste 1.7, tandis que pour la
-version 8.3.1 du cœur, vous saisiriez 8.3.1. Saisir ensuite la commande suivante
+8.x-1.16 d'un module contribué, vous saisiriez juste 1.16, tandis que pour la
+version 9.0.7 du cœur, vous saisiriez 9.0.7. Saisir ensuite la commande suivante
 à la racine de votre site (en remplaçant +geofield+ par le nom court du projet
 et en indiquant le bon numéro de version) :
 +
 ----
-composer require drupal/geofield:1.7
+composer require drupal/geofield:1.16
 ----
 
 ==== Améliorer votre compréhension
