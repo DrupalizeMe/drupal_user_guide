@@ -96,7 +96,7 @@ See below for more on managing site dependencies with Composer.
 To convert a site that was created using a version of the core software prior to
 8.8.0, or that was installed from a zip or tar.gz file downloaded from
 Drupal.org, see the instructions at
-https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Add Composer to an existing site].
+https://www.drupal.org/docs/installing-drupal/add-composer-to-an-existing-site[Add Composer to an existing site].
 
 ===== Using Composer to download a module or theme
 
@@ -137,14 +137,14 @@ composer update drupal/geofield --with-dependencies
 ----
 
 . If you need a specific version, determine how to enter the version number you
-want to update to. For example, for version 8.x-1.7 of a contributed module, you
-would enter just the 1.7, and for the core software version 8.3.1, you would
-enter 8.3.1. Then enter the following command at the root of your site
+want to update to. For example, for version 8.x-1.16 of a contributed module, you
+would enter just the 1.16, and for the core software version 9.0.7, you would
+enter 9.0.7. Then enter the following command at the root of your site
 (substituting the short name of the project for +geofield+ and the correct
 version number):
 +
 ----
-composer require drupal/geofield:1.7
+composer require drupal/geofield:1.16
 ----
 
 ==== Expand your understanding
