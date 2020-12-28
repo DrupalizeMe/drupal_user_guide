@@ -102,6 +102,26 @@ production site URL:
 $settings['trusted_host_patterns']
 ----
 
+. Check whether your _settings.php_ file has the following setting, and has it
+set to a random string value. If it does not, then you will need to add or edit
+it in order to prevent fatal errors:
++
+----
+$settings['hash_salt'] = 'any_string_value';
+----
++
+One way to produce a random string for the hash salt is the following Drush
+command:
++
+----
+drush php-eval 'echo
+  \Drupal\Component\Utility\Crypt::randomBytesBase64(55) . "\n";'
+----
++
+If you don't use Drush, there are numerous web sites and applications that
+provide random string generators; you'll want to generate a string that is about
+74 characters long.
+
 . Import the database dump file you created, into the development site's
 database. Try one of the following methods:
 +
