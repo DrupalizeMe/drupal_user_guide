@@ -24,9 +24,9 @@ Aktualisieren Sie das Kernsystem, entweder über den Verwaltungsbereichoder mit 
 
 ==== Arbeitsschritte
 
-. Legen Sie eine vollstänge Sicherungskopie Ihrer Website an. Siehe <<<prevent-backups>>.
+. Legen Sie eine vollständige Sicherungskopie Ihrer Website an. Siehe <<<prevent-backups>>.
 
-. Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Texteditor. 
+. Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Texteditor.
 Suchen Sie die Zeile mit der Variablen _$settings['update_free_access']_. Standardmäßig ist diese Zeile mit dem Wert FALSE versehen. Ändern Sie den Wert der Einstellung auf TRUE.
 +
 ----
@@ -40,15 +40,15 @@ $settings['update_free_access'] = TRUE;
 . Wenn Sie Composer zur Verwaltung von Abhängigkeiten verwenden, überspringen Sie die nächsten sechs Schritte, und
 lesen Sie stattdessen <<install-composer>>, um Anweisungen zur Aktualisierung Ihrer Website mittels Composer zu erhalten. Fahren Sie mit dem Schritt _update.php_ fort.
 
-. Laden Sie das tar.gz- oder Zip-Archiv der neuesten Version von Drupal-8.x
-von der Seite https://www.drupal.org/project/drupal[_Drupal.org_ Drupal-core
-Downloads] herunter. Im Abschnitt <<install-prepare>> finden Sie weitere Einzelheiten dazu, wie Sie die neueste Version von Drupal
-herunterladen können.
+. Laden Sie das tar.gz- oder zip-Dateiarchiv herunter, das  die neueste Version, des Zweigs, des Drupal-Kernsystems, den Sie gerade verwenden enthält (z. B. 8.x oder 9.x), von der
+https://www.drupal.org/project/drupal[_Drupal.org_ Downloadseite des Drupal Kernsystems] herunter.
+Lesen Sie: <<install-prepare>> um zu erfahren, wie Sie die neueste Version bekommen.
+
 
 . Laden Sie die Archivdatei auf Ihren Server hoch.
 
 . Extrahieren Sie die Archivdatei in einem temporären Verzeichnis auf Ihrem Server ( dieses Verzeichnis sollte
-außerhalb des Verzeichnisses liegen, in dem die Website gehostet wird). Der Dateimanager des Kontrollzentrums Ihres Hosting-Anbieters 
+außerhalb des Verzeichnisses liegen, in dem die Website gehostet wird). Der Dateimanager des Kontrollzentrums Ihres Hosting-Anbieters
 sollte eine Möglichkeit bieten, die Dateien zu extrahieren. Wenn Sie über
 Terminal-Zugriff auf Ihren Server (unter Linux) verfügen, können Sie einen Befehl wie:
 
@@ -73,7 +73,7 @@ weil dadurch die darin enthaltenen Anpassungen verloren gehen.
   um die Aktualisierungen auszuführen und das Skript erfolgreich abzuschließen.
   * Führen Sie den folgenden Drush-Befehl aus: `drush updatedb`
 
-. Wenn Sie einen Fehler oder eine Warnung erhalten, führen Sie das Skript _update.php_ solange  erneut aus, 
+. Wenn Sie einen Fehler oder eine Warnung erhalten, führen Sie das Skript _update.php_ solange  erneut aus,
 bis alle Aktualisierungen erfolgreich abgeschlossen wurden.
 
 . Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_) in einem Texteditor. Suchen Sie die

@@ -100,7 +100,7 @@ Weitere Informationen zur Verwaltung von Abhängigkeiten mit Composer finden Sie
 So konvertieren Sie eine Site, die mit einer Version des Kernsystems vor
 8.8.0, oder aus einer Zip- oder tar.gz-Datei heraus installiert wurde, die von
 Drupal.org heruntergeladen wurde, um Compoeser zu verwenden. Lesen Sie die Anweisungen unter
-https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen (englisch)].
+https://www.drupal.org/docs/installing-drupal/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen (englisch)].
 
 ===== Composer zum Herunterladen eines Moduls oder Themes verwenden
 
@@ -147,13 +147,15 @@ Moduls oder Thems:
 composer update drupal/geofield --with-dependencies
 ----
 
-. Wenn Sie eine bestimmte Version benötigen, legen Sie über die Versionsnummer fest, welche Version Sie installieren möchten. Zur Installation der  Version 8.x-1.7 eines von der Community bereitgestellten Zusatzmoduls
-würden Sie nur 1.7 eingeben. Wenn Sie das Modul auf eiene Version aktualisieren möchten, die kompatibel zu einer neueren Version des Hauptsystems z. b.  8.3.1 ist, würden Sie 8.3.1 eingeben. 
-Geben Sie dann den folgenden Befehl im Stammverzeichnis Ihrer Website ein
-(Ersetzen Sie den Systemnamen des Projekts +geofield+ sowie die korrerekte Versionsnummer des gewünschten Projektes):
+. Wenn Sie eine bestimmte Version benötigen, legen Sie fest, wie Sie die Versionsnummer eingeben, auf die Sie
+auf die Sie aktualisieren möchten. Zum Beispiel würden Sie für die Version 8.x-1.16 eines beigetragenen Moduls
+würden Sie nur 1.16 eingeben, und für die Version 9.0.7 des Kernsystems würden Sie
+9.0.7 eingeben. Geben Sie dann im Stammverzeichnis Ihrer Website den folgenden Befehl ein
+(ersetzen Sie +geofield+ durch den Systemnamen des Projekts und die korrekte
+Versionsnummer):
 +
 ----
-Composer require drupal/geofield:1.7
+composer require drupal/geofield:1.16
 ----
 
 ==== Erweitern Sie Ihre Kenntnisse

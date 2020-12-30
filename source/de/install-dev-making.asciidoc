@@ -19,7 +19,7 @@ und zum Testen von Aktualisierungen verwenden können innerhalb einer Entwicklun
 ==== Anforderungen an die Website
 
 * Sie haben eine fertig entwickelte Live-Website, von der Sie eine Kopie
-finnerhalb einer Entwicklungsumgebung besitzen.
+innerhalb einer Entwicklungsumgebung besitzen.
 
 * Wenn Sie Drush zur Ausführung einiger der Arbeitsschritteschritte dieser
 Aufgabe verwenden möchten, muss Drush installiert.
@@ -86,14 +86,31 @@ $databases['default']['default'] = array (
   'password' => 'live_site_datenbank_passwort',
 ----
 
-. Prüfen Sie, ob die Datei _settings.php_ die folgende Einstellung enthält;
-Ist dies der Fall, müssen Sie diese Einstellung bearbeiten, um an Stelle der URL Ihrer
-Live-Website auf die URL der
-Website in Ihrer Entwicklungsumgebung zu verweisen.
+. Prüfen Sie, ob Ihre Datei _settings.php_ die folgende Einstellung enthält. Ist dies der Fall,
+müssen Sie diese  Einstellung so bearbeiten, dass die URL auf Ihre Entwicklungs-Webiste  auf die URL  Ihrer Produktiv-Website verweist:
 +
 ----
 $settings['trusted_host_patterns']
 ----
+
+. Prüfen Sie, ob in Ihrer Datei _settings.php_ die folgende Einstellung vorhanden ist, und ob sie
+auf einen zufälligen String-Wert eingestellt ist. Wenn dies nicht der Fall ist, müssen Sie einen zufälligen Wert hinzufügen oder die Einstellung bearbeiten, um fatale Fehler zu vermeiden:
++
+----
+$settings['hash_salt'] = 'any_string_value';
+----
++
+Eine Möglichkeit, eine zufällige Zeichenfolge für das Salt-Hash zu erzeugen, ist der folgende Drush
+Befehl:
++
+----
+drush php-eval 'echo
+  \Drupal\Component\Utility\Crypt::randomBytesBase64(55) . "\n";'
+----
++
+Wenn Sie Drush nicht verwenden, gibt es zahlreiche Websites und Anwendungen, die
+Generatoren für zufällige Zeichenketten anbieten. Für den Wert der Einstellung sollten Sie eine Zeichenkette erzeugen, die
+74 Zeichen lang ist.
 
 . Importieren Sie die Datei, die den Datenbank.-Export enthält,
 in die Datenbank in der Entwicklungsumgebung. Verwenden Sie dazu eine der
