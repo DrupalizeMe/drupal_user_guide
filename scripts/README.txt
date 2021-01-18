@@ -28,15 +28,17 @@ apt install asciidoc docbook fop calibre php
 yum install asciidoc docbook fop calibre php
 
 
-NOTE: FOP is required to build ebooks. However, version 2.4 does not currently
-work (2.1 is OK; 2.2 and 2.3 are untested for the User Guide). Here is the
-issue:
+NOTE: FOP is required to build PDF files. However, version 2.4 does not
+currently work (2.1 is OK; 2.2 and 2.3 are untested for the User Guide). Here
+is the issue:
 https://issues.apache.org/jira/browse/FOP-2704
+
 The issue page says that the bug is fixed in FOP 2.5. There are workarounds
 shown on the issue page, but they do not seem to work for the User Guide.
 You can find out what version you have by running:
 fop -version
 
+You do not need FOP to build ePub, mobi, or HTML output.
 
 LANGUAGES
 
