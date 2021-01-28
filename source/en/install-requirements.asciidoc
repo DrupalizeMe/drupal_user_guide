@@ -39,10 +39,10 @@ server) as that used by the site files.
 
 ===== PHP
 
-PHP 7.2 or higher. PHP must be set up with a minimum memory size of 64MB; if you
-are running multiple modules on your site or using memory-intensive PHP-based
-command-line tools (such as Composer), considerably more memory than that may be
-needed.
+PHP 7.3 or a higher PHP 7 version. PHP must be set up with a minimum memory size
+of 64MB; if you are running multiple modules on your site or using
+memory-intensive PHP-based command-line tools (such as Composer), considerably
+more memory than that may be needed.
 
 Certain PHP extensions are also required; the exact list of required PHP
 extensions depends on how you install the core software and which modules you
@@ -56,37 +56,37 @@ continue.
 
 Apache (Recommended)::
   Apache is the most commonly used web server. The core software will work on
-  Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache
-  mod_rewrite module installed and enabled. The Apache VirtualHost configuration
-  must contain the directive _AllowOverride All_ to allow the _.htaccess_ file
-  to be used.
+  Apache 2.4.7 or higher hosted on UNIX/Linux, OS X, or Windows that have the
+  Apache mod_rewrite module installed and enabled. The Apache VirtualHost
+  configuration must contain the directive _AllowOverride All_ to allow the
+  _.htaccess_ file to be used.
 PHP Local Server::
   You can temporarily run a local demo site on your computer using just PHP,
   without installing web server software.
 Nginx::
   Nginx is a commonly used web server that focuses on high concurrency,
-  performance and low memory usage. The core software will work on Nginx 1.1 or
+  performance and low memory usage. The core software will work on Nginx 0.7 or
   greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module
   must be installed and enabled.
 Microsoft IIS::
   Microsoft IIS is a web server and set of feature extension modules for use
-  with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS
-  7 if PHP is configured correctly. Because clean URLs are required, you may
-  need to use a third party product. For IIS 7, you can use the Microsoft URL
+  with Microsoft Windows. The core software will work with IIS 5, 6, 7, 8, or
+  10 if PHP is configured correctly. Because clean URLs are required, you may
+  need to use a third party product. For IIS 7/8, you can use the Microsoft URL
   Rewrite module or a third party solution.
 
 ===== Database
 
 Use one of the following databases:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
+* MySQL - 5.7.8 (MariaDB 10.3.7, Percona 5.7.8) or higher with an
 InnoDB-compatible primary storage engine
 
-* PostgreSQL - 9.1.2 or higher
+* PostgreSQL - 10.0 or higher with the pg_trgm extension
 
-* SQLite - 3.4.2 or higher. Temporary local demo sites use SQLite, which is
+* SQLite - 3.26 or higher. Temporary local demo sites use SQLite, which is
 distributed as part of PHP and doesn't require installing separate database
-software.
+software, but make sure your version of PHP has the minimum SQLite included.
 
 //==== Related topics
 
