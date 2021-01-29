@@ -42,11 +42,11 @@ site.
 
 ===== PHP
 
-PHP 7.2 ou supérieur. PHP doit être configuré avec un espace mémoire minimal de
-64 Mo ; si vous utilisez plusieurs modules sur votre site ou des outils en ligne
-de commande basés sur PHP qui consomment beaucoup de mémoire (comme Composer),
-une quantité de mémoire considérablement plus importante pourrait être
-nécessaire.
+PHP 7.3 ou version 7 supérieure. PHP doit être configuré avec un espace mémoire
+minimal de 64 Mo ; si vous utilisez plusieurs modules sur votre site ou des
+outils en ligne de commande basés sur PHP qui consomment beaucoup de mémoire
+(comme Composer), une quantité de mémoire considérablement plus importante
+pourrait être nécessaire.
 
 Certaines extensions PHP sont également requises ; la liste exacte des
 extensions PHP dépend de la manière dont vous installez le cœur du logiciel et
@@ -61,9 +61,9 @@ installer avant de continuer.
 
 Apache (recommandé)::
   Apache est le serveur web le plus fréquemment utilisé. Le cœur du logiciel
-  fonctionnera avec Apache 2.x hébergé sur UNIX/Linux, OS X, ou Windows avec
-  module mod_rewrite d'Apache installé et activé. La configuration du
-  VirtualHost d'Apache doit contenir la directive _AllowOverride All_ pour
+  fonctionnera avec Apache 2.4.7 ou supérieur hébergé sur UNIX/Linux, OS X, ou
+  Windows avec module mod_rewrite d'Apache installé et activé. La configuration
+  du VirtualHost d'Apache doit contenir la directive _AllowOverride All_ pour
   autoriser l'utilisation des fichiers _.htaccess_.
 Serveur local de PHP::
   Vous pouvez temporairement faire tourner un site de démonstration en local sur
@@ -71,26 +71,29 @@ Serveur local de PHP::
 Nginx::
   Nginx est un serveur web qui se concentre sur les accès concurrents, la
   performance et une faible utilisation de la mémoire. Le cœur du logiciel
-  fonctionnera avec Nginx 1.1 ou supérieur herbergé sur UNIX/Linux, OS X, ou
+  fonctionnera avec Nginx 0.7 ou supérieur herbergé sur UNIX/Linux, OS X, ou
   Windows. ngx_http_rewrite_module doit être installé et activé.
 Microsoft IIS::
   Microsoft IIS est un serveur web et un ensemble de modules et de
   fonctionnalités tournant sous Microsoft Windows. Le cœur du logiciel
-  fonctionnera avec IIS 5, IIS 6, ou IIS 7 si PHP est configuré correctement. En
-  raison de la nécessité de la réécriture d'URL, vous pourriez avoir besoin d'un
-  logiciel supplémentaire. Pour IIS 7, vous pouvez utiliser le module Microsoft
-  URL Rewrite ou une autre solution externe.
+  fonctionnera avec IIS 5, 6, 7, 8 ou 10 si PHP est configuré correctement. La
+  réécriture d'URL étant nécessaire, vous pourriez avoir besoin d'un logiciel
+  supplémentaire. Pour IIS 7/8, vous pouvez utiliser le module Microsoft URL
+  Rewrite ou une autre solution externe.
 
 ===== Database
 
 Utiliser une des bases de données suivantes :
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) ou supérieur avec un moteur
+* MySQL - 5.7.8 (MariaDB 10.3.7, Percona 5.7.8) ou supérieur avec un moteur
 de stockage compatible InnoDB
 
-* PostgreSQL - 9.1.2 ou supérieur
+* PostgreSQL - 10.0 ou supérieur avec l'extension pg_trgm
 
-* SQLite - 3.4.2 ou supérieur
+* SQLite - 3.26 ou supérieur. Des sites de démonstration temporaires utilisent
+SQLite, qui est distribué en même temps que PHP et ne nécessite pas
+l'installation d'un logiciel de gestion de bases de données à part. S'assurer
+toutefois que votre version de PHP inclut la version minimal requise de SQLite.
 
 //==== Sujets liés
 
