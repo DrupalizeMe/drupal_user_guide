@@ -47,13 +47,13 @@ defined by the core software or by modules.
 
 Content entities are grouped into _entity types_, which have different purposes
 and are displayed in very different ways on the site. Most entity
-types are also divided into _entity sub-types_, which are divisions within an
+types are also divided into _entity subtypes_, which are divisions within an
 entity type to allow for smaller variations in how the entities are used and
 displayed. Here is a table of some common content entity types:
 
 [width="100%",frame="topbot",options="header",grid="rows"]
 |=============================================
-|Entity type |Entity sub-type |Defining Module |Main uses
+|Entity type |Entity subtype |Defining Module |Main uses
 
 |Content item |Content type |Node module
   |Content intended to be the main page area for pages on the site
@@ -99,17 +99,17 @@ displayed. Here is a table of some common content entity types:
 
 ==== What is a field?
 
-Within entity items, the data is stored in individual _fields_, each of which
+Within entities, the data is stored in individual _fields_, each of which
 holds one type of data, such as formatted or plain text, images or other files,
 or dates. Field types can be defined by the core software or by modules.
 
-Fields can be added by an administrator on entity sub-types, so that all
-entity items of a given entity sub-type have the same collection of fields
+Fields can be added by an administrator on entity subtypes, so that all
+entities of a given entity subtype have the same collection of fields
 available. For example, the Vendor content type in the farmers market example
 might have fields for the vendor name, a logo image, website URL, and
 description, whereas the _Basic page_ content type might only have fields for
-the title and page body. When you create or edit entity items, you are
-specifying the values for the fields on the entity item.
+the title and page body. When you create or edit entities, you are
+specifying the values for the fields on the entity.
 
 ==== Related topics
 
