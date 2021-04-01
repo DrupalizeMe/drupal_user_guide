@@ -10,14 +10,14 @@ Vue d'ensemble du menu d'administration et des liens contextuels.
 (((Gérer le menu d'administration,vue d'ensemble)))
 (((Barre d'outils,vue d'ensemble)))
 (((Lien contextuel,vue d'ensemble)))
-(((Entrée de menu Contenu,menu d'administration)))
-(((Entrée de menu Structure,menu d'administration)))
-(((Entrée de menu Apparence,menu d'administration)))
-(((Entrée de menu Extension,menu d'administration)))
-(((Entrée de menu Configuration,menu d'administration)))
-(((Entrée de menu Personnes,menu d'administration)))
-(((Entrée de menu Rapports,menu d'administration)))
-(((Entrée de menu Aide,menu d'administration)))
+(((Lien de menu Contenu,menu d'administration)))
+(((Lien de menu Structure,menu d'administration)))
+(((Lien de menu Apparence,menu d'administration)))
+(((Lien de menu Extension,menu d'administration)))
+(((Lien de menu Configuration,menu d'administration)))
+(((Lien de menu Personnes,menu d'administration)))
+(((Lien de menu Rapports,menu d'administration)))
+(((Lien de menu Aide,menu d'administration)))
 
 ==== Prérequis
 
@@ -29,18 +29,18 @@ Vue d'ensemble du menu d'administration et des liens contextuels.
 La barre d'outils fournie par le module du cœur Toolbar affiche le menu
 d'administration _Gérer_ en haut ou à gauche du site, pour les utilisateurs
 ayant la permission de le voir. Ce menu donne accès à toutes les zones
-d'administration du site. Les entrées de menu dépendront de quels modules sont
+d'administration du site. Les liens de menu dépendront de quels modules sont
 activés sur votre site et des droits des personnes voyant le menu ; si vous
 installez votre site en utilisant le profil d'installation Standard du cœur et
-que vous avez tous les droits d'administration, les entrées de premier niveau
-sont les suivantes :
+que vous avez tous les droits d'administration, les liens de premier niveau
+sont les suivants :
 
 // Top navigation bar on any admin page, with Manage menu showing.
 image:images/config-overview-toolbar.png["Menu d'administration en mode
 horizontal",width="100%"]
 
 Contenu::
-  Liste et gére les contenus existants, et autorise la création de nouveaux
+  Liste et gère les contenus existants, et autorise la création de nouveaux
   contenus.
 
 Structure::
