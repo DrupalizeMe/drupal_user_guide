@@ -17,17 +17,17 @@ Vue d'ensemble des formulaires et des widgets.
 ==== Que sont les formulaires et les widgets ?
 
 Le logiciel de gestion de contenu que votre site utilise permet aux
-administrateurs de modifier le contenu et configurer des paramètres en ligne, en
-utilisant de nombreux _formulaires_ web. En particulier, les _formulaires de
-modification de contenu_ sont utilisés pour modifier le contenu de votre site,
-et ils sont configurables par les administrateurs ; les formulaires de
-configuration sont fournis par les modules et ne peuvent pas eux-même être
+administrateurs de modifier le contenu et configurer des paramètres en ligne,
+en utilisant de nombreux _formulaires_ web. En particulier, les _formulaires de
+modification de contenu_ sont utilisés pour modifier les entités de contenu de
+votre site, et ils sont configurables par les administrateurs ; les formulaires
+de configuration sont fournis par les modules et ne peuvent pas eux-même être
 configurés.
 
-Les données de contenu de votre site sont stockées dans un ou plusieurs champs
-qui sont attachés au type de contenu et/ou au sous-type. Lorsque vous configurez
-le formulaire de modification du contenu pour chaque sous-type de contenu, vous
-pouvez :
+Les données des entités de contenu de votre site sont stockées dans un ou
+plusieurs champs qui sont attachés au type d'entité et/ou au sous-type.
+Lorsque vous configurez le formulaire de modification du contenu pour chaque
+sous-type d'entité, vous pouvez :
 
 * Sélectionner un _widget_ pour chaque champ. Un widget définit la méthode de
 saisie des données d'un champ. Par exemple, un terme de taxonomie peut être
@@ -42,14 +42,14 @@ la taille d'un champ de saisie de texte brut.
 
 * Réordonner les champs.
 
-En principe, vous pouvez aussi avoir plusieurs formulaires d'édition disponibles
-pour chaque sous-type de contenu. Cette fonctionnalité est rarement utilisée,
-cependant ; la seule exception est l'usage courant pour les champs du profil
-utilisateur : vous pouvez utiliser différents formulaires pour l'enregistrement
-d'un utilisateur et la modification d'un compte utilisateur. Par exemple, vous
-pourriez avoir un ensemble de champs limité de champs affichés lorsque les
-utilisateurs s'inscrivent sur le site, et plus de champs affichés plus tard
-lorsqu'ils modifient leurs profils.
+En principe, vous pouvez aussi avoir plusieurs formulaires d'édition
+disponibles pour chaque sous-type d'entité. Cette fonctionnalité est rarement
+utilisée, cependant ; la seule exception est l'usage courant pour les champs du
+profil utilisateur : vous pouvez utiliser différents formulaires pour
+l'enregistrement d'un utilisateur et la modification d'un compte utilisateur.
+Par exemple, vous pourriez avoir un ensemble de champs limité de champs
+affichés lorsque les utilisateurs s'inscrivent sur le site, et plus de champs
+affichés plus tard lorsqu'ils modifient leurs profils.
 
 ==== Sujets liés
 
