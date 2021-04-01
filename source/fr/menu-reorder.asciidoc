@@ -3,14 +3,14 @@
 === Changer l'ordre de la navigation
 
 [role="summary"]
-Comment réordonner les éléments dans un menu.
+Comment réordonner les liens dans un menu.
 
-(((Éléments de menu,réordonner)))
-(((Navigation,changer l'ordre des éléments de menus)))
+(((Liens de menu,réordonner)))
+(((Navigation,changer l'ordre des liens de menus)))
 
 ==== Objectif
 
-Réordonner les éléments dans un menu.
+Réordonner les liens dans un menu.
 
 ==== Prérequis
 
@@ -37,46 +37,45 @@ image:images/menu-reorder_menu_titles.png["Liste des menus du site avec le menu
 'Navigation principale' surligné",width="100%"]
 --
 
-. La page _Modifier le menu_ affiche une liste de chaque élément du menu choisi.
+. La page _Modifier le menu_ affiche une liste de chaque lien du menu choisi.
 (_Navigation principale_).
 +
 --
 // Menu links section of admin/structure/menu/manage/main.
-image:images/menu-reorder_edit_menu.png["Liste des éléments de menu sous
+image:images/menu-reorder_edit_menu.png["Liste des liens de menu sous
 _Navigation principale_"]
 --
 
-. Faire glisser les éléments de menus en utilisant la poignée en forme de croix
+. Faire glisser les liens de menus en utilisant la poignée en forme de croix
 pour changer l'ordre : _Accueil_, puis _À propos_. Alternativement au
 glisser/déposer, il est possible de cliquer sur le lien _Afficher les poids des
-lignes_ en tête de tableau, et de sélectionner des poids numériques (les
-éléments de menus ayant des poids algébriques inférieurs seront affichés en
-premier).
+lignes_ en tête de tableau, et de sélectionner des poids numériques (les liens
+de menus ayant des poids algébriques inférieurs seront affichés en premier).
 +
 --
 // Menu links section of admin/structure/menu/manage/main, after
 // changing the order.
-image:images/menu-reorder_reorder.png["Éléments de menu réordonnés avec le
+image:images/menu-reorder_reorder.png["Liens de menu réordonnés avec le
 message avertissant de modifications non enregistrées et le bouton _Enregistrer_"]
 --
 
 . Cliquer sur _Enregistrer_.
 
-. La page d'accueil affiche maintenant la navigation principale avec l'élément
-de menu _Accueil_ affiché en premier.
+. La page d'accueil affiche maintenant la navigation principale avec le lien de
+menu _Accueil_ affiché en premier.
 +
 --
-// Header section of Home page with reordered menu items.
-image:images/menu-reorder_final_order.png["Éléments de menu réordonnés sur la
-page d'accueil avec 'Accueil' en premier puis 'À propos"]
+// Header section of Home page with reordered menu links.
+image:images/menu-reorder_final_order.png["Liens de menu réordonnés sur la page
+d'accueil avec 'Accueil' en premier puis 'À propos"]
 --
 
 ==== Améliorer votre compréhension
 
-Ajouter un élément de menu appelé _Contact_, renvoyant ver la page de
-_/contact_, dans votre menu de navigation principale. La page de contact est
-fournie par le module du cœur Contact ; vous pouvez modifier sa mise en page et
-ses champs (consulter <<structure-form-editing>>).
+Ajouter un lien de menu appelé _Contact_, renvoyant ver la page de _/contact_,
+dans votre menu de navigation principale. La page de contact est fournie par le
+module du cœur Contact ; vous pouvez modifier sa mise en page et ses champs
+(consulter <<structure-form-editing>>).
 
 ==== Concepts liés
 
