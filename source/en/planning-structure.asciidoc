@@ -46,22 +46,22 @@ account, and it would not be as easy to later change the ownership of a vendor
 page to a different user account.
 
 . Within each content entity type you identified, decide what division into
-entity sub-types would make sense. For example, in the farmers market site
+entity subtypes would make sense. For example, in the farmers market site
 example, you would probably decide that under the Content item entity type,
 there should be one content type for basic pages (Home and
 About), one for vendor pages, and one for recipe pages.
 
-. For each entity sub-type you decided on, decide what fields are needed. For
+. For each entity subtype you decided on, decide what fields are needed. For
 instance, the Vendor content type might need fields for the vendor name, web
 page URL, image, and description.
 
 . Decide on what entity listings are needed, which could be entire pages or
-smaller areas on the page. For each listing, you'll need to determine what
-entity items should be listed. Then you'll need to decide in what order and with
+smaller areas on the page. For each listing, you'll need to determine which
+entities should be listed. Then you'll need to decide in what order and with
 what filtering options they should be displayed; for example, you might want to
 give the site visitor the option to search by keyword, to filter the list down
 to a subset, or to sort the list. You'll also need to decide what information
-from the entity items should be shown, which might result in adding to the list
+from the entities should be shown, which might result in adding to the list
 of fields you determined in the previous step. The farmers market site, for
 example, needs to have a Recipes listing page that lists content items of type
 Recipe, with the ability to filter by ingredients, so that means that the Recipe
@@ -88,7 +88,7 @@ scenario example site:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Entity type |Entity sub-type |Examples |Fields
+|Entity type |Entity subtype |Examples |Fields
 
 |Content item |Basic page |Home page, about page |Title, page body
 
@@ -115,7 +115,7 @@ And here are the listings the site needs:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Page or page area |Entity type and sub-type |Filter/sort/pagination |
+|Page or page area |Entity type and subtype |Filter/sort/pagination |
   Fields displayed
 
 |Vendors page |Vendor content items |All vendors, alphabetical, paged |
