@@ -58,13 +58,13 @@ instructions pour l'interface d'administration ci-dessous.
 ===== En utilisant l'interface d'administration
 
 . Sur la page de projet du thème sur drupal.org (par exemple
-_https://www.drupal.org/project/mayo_), faire défiler jusqu'à la section
+_https://www.drupal.org/project/honey_), faire défiler jusqu'à la section
 _Downloads_ en bas de page.
 
 . Faites un clic droit sur le _tar.gz_ pour copier l'adresse.
 +
 --
-// Downloads section of the Mayo project page on drupal.org.
+// Downloads section of a theme project page on drupal.org.
 image:images/extend-theme-install-download.png["Trouver l'URL d'un thème"]
 --
 
@@ -81,7 +81,7 @@ image:images/extend-theme-install-page.png["Installer un thème"]
 
 . Dans le champ _Installer depuis une URL_, coller le lien de téléchargement.
 Cette valeur pourrait ressembler à
-`https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
+`https://ftp.drupal.org/files/projects/honey-1.0.1.tar.gz`.
 
 . Cliquer sur _Installer_ pour téléverser et décompresser le nouveau thème sur
 le serveur. Les fichiers sont téléchargés dans le répertoire _themes_.
@@ -97,7 +97,7 @@ _Installer et définir par défaut_ pour l'utiliser. Toutes les pages hors celle
 d'administration de votre site utiliseront alors ce nouveau thème.
 +
 --
-// Mayo theme on the Appearance page.
+// Honey theme on the Appearance page.
 image:images/extend-theme-install-appearance-page.png["Thèmes désinstallés sur la page Apparence",width="286px"]
 --
 
@@ -105,18 +105,18 @@ image:images/extend-theme-install-appearance-page.png["Thèmes désinstallés su
 
 . Trouver le nom du projet pour le thème que vous voulez installer, qui est le
 dernier segment de l'URL de la page de projet du thème. Par exemple, si l'URL du
-projet est _https://www.drupal.org/project/mayo_, alors le nom du projet est
-`mayo`.
+projet est _https://www.drupal.org/project/honey_, alors le nom du projet est
+`honey`.
 
 . Télécharger le thème en utilisant soit les étapes dans
 <<extend-manual-install>>, soit dans <<install-composer>>.
 
 . Exécuter les commandes Drush suivantes, en donnant le nom du projet (par
-exemple _mayo_) en argument :
+exemple _honey_) en argument :
 +
 ----
-drush theme:enable mayo
-drush config:set system.theme default mayo
+drush theme:enable honey
+drush config:set system.theme default honey
 ----
 
 . Suivre les instructions à l'écran.
