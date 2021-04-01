@@ -21,10 +21,10 @@ Standard installation profile.
 
 ==== What is a menu?
 
-Menus are a collection of links (menu items) used to navigate a website. The
+Menus are a collection of links used to navigate a website. The
 core Menu UI module provides an interface to control and customize the menu
 system. Menus are primarily displayed as a hierarchical list of links. By
-default, new menu items are placed inside a built-in menu labeled _Main
+default, new menu links are placed inside a built-in menu labeled _Main
 navigation_, but administrators can also create custom menus.
 
 The core Standard installation profile contains five menus:
@@ -54,20 +54,21 @@ functionality:
 
 * Creating new custom menus.
 
-* Adding new menu items.
+* Adding new menu links.
 
-* Reordering menu items by setting their "weight" or by dragging them into
+* Reordering menu links by setting their "weight" or by dragging them into
 place.
 
-* Renaming menu items.
+* Renaming menu links.
 
 * Changing the link title (the tooltip that appears when you mouse over a menu
-item).
+link).
 
-* Moving a menu item into a different menu by editing its _Parent_ property.
+* Moving a menu link into a different menu by editing its _Parent link_
+property.
 
-A menu item will only be shown to a visitor if they have the rights to view the
-page it links to. For example, the admin menu item is not shown to visitors who
+A menu link will only be shown to a visitor if they have the rights to view the
+page it links to. For example, the admin menu link is not shown to visitors who
 are not logged in.
 
 ==== Related topics
