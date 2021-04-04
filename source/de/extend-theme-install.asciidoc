@@ -59,10 +59,10 @@ Verwendung der Benutzeroberfläche unten fortfahren installieren.
 ===== Verwendung der Benutzeroberfläche
 
 . Auf der Projektseite des Themas auf drupal.org (zum Beispiel,
-_https://www.drupal.org/project/mayo_), blättern Sie zum Abschnitt _Downloads_
-unten auf der Seite.
+_https://www.drupal.org/project/honey_), navigieren Sie zum Abschnitt _Downloads_
+im unteren Teil der Seite.
 
-. Klicken Sie mit der rechten Maustaste auf _tar.gz_, um die Adresse zu kopieren.
+. Klicken Sie mit der rechten Maustaste auf _tar.gz_, um die Adresse des Archivs zu kopieren.
 +
 --
 // Downloads-Abschnitt der Mayo-Projektseite auf drupal.org.
@@ -79,9 +79,9 @@ image:images/extend-theme-install-download.png["Die URL für ein Thema finden"]
 image:images/extend-theme-install-page.png["Installing a theme"]
 --
 
-. Fügen Sie in das Feld _Von URL isntallieren_ den kopierten Download-Link ein. Dieser Wert
+. Fügen Sie in das Feld _Von URL installieren_ den kopierten Download-Link ein. Dieser Wert
 könnte so aussehen
-`https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
+https://ftp.drupal.org/files/projects/honey-1.0.1.tar.gz`.
 
 . Klicken Sie auf _Installieren_, um das neue Theme auf den Server hochzuladen und zu entpacken. Die Dateien
 werden in das Verzeichnis _themes_ heruntergeladen.
@@ -105,18 +105,18 @@ image:images/extend-theme-install-appearance-page.png["Uninstalled themes on App
 
 . Suchen Sie den Systemnamen des Themes, das Sie installieren möchten,
 dies ist der letzte Teil der URL zur Projektseite des Themes. Wenn die
-Projekt-URL zum Beispiel _https://www.drupal.org/project/mayo_ lautet,
-ist der Systemname `mayo`.
+Projekt-URL zum Beispiel https://www.drupal.org/project/honey_ lautet,
+ist der Systemname `honey`.
 
 . Laden Sie das Theme herunter, indem Sie entweder die Schritte im Kapitel
 <<extend-manual-install>> oder im Kapitel <<install-composer>> durchführen.
 
 . Führen Sie die folgenden Drush-Befehle unter Angabe des Systemnamens als
-Parameter (z.B, _mayo_) aus:
+Parameter (z.B, _honey_) aus:
 +
 ----
-drush theme: enable mayo
-drush config:set system.theme default mayo
+drush theme: enable honey
+drush config:set system.theme default honey
 ----
 
 . Folgen Sie den Anweisungen auf dem Bildschirm.
