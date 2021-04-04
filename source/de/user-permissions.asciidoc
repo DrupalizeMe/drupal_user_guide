@@ -12,8 +12,8 @@ So weisen Sie einer Rolle eine Berechtigung zu.
 
 ==== Zielsetzung
 
-Ändern Sie die Berechtigungen der Rolle Lieferant, so Benutzer, denen diese Rolle zugewisen ist, Rezepte und Inhalte vom Typ lieferant bearbetiein und Löschen können. löschen kann. Formatieren Sie die Inhalte und informieren Sie die Lieferanten über die von Ihnen vorgenommenne Ändernungen.
-andere.
+Ändern Sie die Berechtigungen der Rolle Lieferant so das Benutzer, denen diese Rolle zugewiesen ist, Rezepte und Inhalte vom Typ Lieferant bearbeiten und löschen können.
+Formatieren Sie die Inhalte und informieren Sie die Lieferanten über die von Ihnen vorgenommenen Änderungen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -25,28 +25,27 @@ Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe <<<user-new-rol
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Mrnü _Verwalten_ zum Menüpunkt _Benutzer_ > _Rollen_
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Benutzer_ > _Rollen_
 (_admin/people/roles_). Die Seite _Rollen_ erscheint.
 
-. Klicken Sie in der Dropdown-Liste für den Lieferanten auf _Berechtigungen bearbeiten_.
-Rolle. Die Seite _Rolle bearbeiten_ erscheint, auf der Sie alle verfügbaren
-Aktionen für die Website wie z.B. _Kommentare abgeben_ oder _Verwalten
-Blöcke_. Die verfügbaren Berechtigungen hängen von den Modulen ab, die in
-die Website. Hinweis: Einige Berechtigungen können Auswirkungen auf die Sicherheit haben. Vorsichtig sein
-beim Zuweisen von Berechtigungen zu Rollen.
+. Klicken Sie in der Dropdown-Liste der Rolle Lieferanten auf _Berechtigungen bearbeiten_.
+Die Seite _Rolle bearbeiten_, auf der Sie alle verfügbaren
+Berechtigungen für die Website wie z.B. _Kommentare abgeben_ oder _Blöcke verwalten_ vergeben können, erscheint.
+Die verfügbaren Berechtigungen hängen von den Modulen ab, die in
+Hinweis: Einige Berechtigungen können sich auf die Sicherheit der Website auswirken. Sein sie also bei der Vergabe einer Berechtigung an eine Rolle stets vorsichtig.
 
-. Markieren Sie die Kontrollkästchen für die folgenden Berechtigungen, aufgelistet nach Modul:
+. Markieren Sie die Kontrollkästchen für die folgenden Berechtigungen. Berechtigungen sind nach Modul aufgelistet:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Modul | Erlaubnis
-| Kontakt | Verwenden Sie die persönlichen Kontaktformulare der Benutzer
+| Contact | Verwenden Sie die persönlichen Kontaktformulare der Benutzer
 | Filter | Verwendung des eingeschränkten HTML-Textformats
-| Knoten | Rezept: Neuen Inhalt erstellen
-| Knoten | Rezept: Eigenen Inhalt bearbeiten
-| Knoten | Rezept: Eigenen Inhalt löschen
-| Knoten | Lieferant: Eigenen Inhalt bearbeiten
-| Schnellbearbeitung | Zugriff auf die Vor-Ort-Bearbeitung
+| Node | Rezept: Neuen Inhalt erstellen
+| Node | Rezept: Eigenen Inhalt bearbeiten
+| Node | Rezept: Eigenen Inhalt löschen
+| Node | Lieferant: Eigenen Inhalt bearbeiten
+| Quick Edit | Zugriff auf die Vor-Ort-Bearbeitung
 |================================
 +
 --
@@ -64,12 +63,12 @@ image:images/user-permissions-save-permissions.png["Confirmation message after u
 
 ==== Erweitern Sie Ihr Verständnis
 
-* Melden Sie sich als einer der neuen Benutzer an, die Sie unter <<user-new-user>> angelegt haben. Überprüfen Sie
-ob Sie die richtigen Berechtigungen haben.
+* Melden Sie sich als einer der neuen Benutzer an, die Sie im Abschnitt <<user-new-user>> angelegt haben. Überprüfen Sie
+ob das Benutzerkonto über  die richtigen Berechtigungen verfügt.
 
 * <<user-roles>>
 
-==== Related concepts
+==== Verwandte Konzepte
 
 <<user-admin-account>>
 
@@ -87,8 +86,8 @@ https://www.drupal.org/docs/7/managing-users[_Drupal.org_ Community-Dokumentatio
 
 Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
 https://www.drupal.org/u/bemery987[Brian Emery],
-und https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle], von
 https://www.drupal.org/node/1803614["Benutzerrollen"],
-copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
-https://www.drupal.org/documentation[Dokumentation der Drupal-Gemeinschaft].
+copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
