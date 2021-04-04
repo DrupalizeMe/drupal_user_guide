@@ -5,15 +5,18 @@ Wie man ein Problem mit diesem Benutzerhandbuch meldet (mit detaillierten Anweis
 
 ==== Zielsetzung
 
-Melden Sie ein Problem mit diesem Handbuch, wie beispielsweise:
+Melden Sie ein Problem in diesem Handbuch, wie beispielsweise:
 
 * Informationen die nicht korrekt sind oder nicht der gängigen Praxis entsprechen,
 * Arbeitsschritte, die nicht funktionieren.
-* Screenshots oder Text, der nicht mit dem übereinstimmt, was Sie auf Ihrem Bildschirm sehen.
+* Screenshots oder Text, der nicht mit dem übereinstimmt,
+  was Sie auf Ihrem Bildschirm sehen.
 * Unklare Arbeitsanweisungen.
-* Stellen, an denen eine Tabelle oder ein Screenshot zur Verdeutlichung des Textes helfen würde.
-* Stellen an denen es versäumt wurde die entsprechenden Technologieen zu beschreiben.
-* Stellen an denen Erforderliche Vorkenntnisse oder die Anforderungen an die Website, die notwendig sind, um eine Aufgabe abzuschließen, nicht vorhanden sind.
+* Stellen, an denen eine Tabelle oder ein Screenshot zur Verdeutlichung des
+  Textes helfen würde.
+* Stellen an denen es versäumt wurde die entsprechenden Technologien zu beschreiben.
+* Stellen an denen Erforderliche Vorkenntnisse oder die Anforderungen an die Website,
+  die notwendig sind, um eine Aufgabe abzuschließen, nicht vorhanden sind.
 * Typische Fehler in der Rechtschreibung, Grammatik oder der Formatierung.
 * Kaputte Links.
 
@@ -23,45 +26,68 @@ Melden Sie ein Problem mit diesem Handbuch, wie beispielsweise:
 
 ==== Arbeitsschritte
 
-. Notieren Sie sich das Thema oder die Themen, in denen Sie ein Problem gefunden haben.
+. Notieren Sie sich das Thema oder die Themen, in denen Sie ein Problem gefunden
+  haben.
 
-. Melden Sie sich auf der Seite https://www.drupal.org[_Drupal.org_] an (Sie müssen ein Benutzerkonto anlegen, falls Sie noch kein Konto haben).
+. Melden Sie sich auf der Seite https://www.drupal.org[_Drupal.org_] an
+  (Sie müssen ein Benutzerkonto anlegen, falls Sie noch kein Benutzerkonto
+  angelegt haben).
 
-. Rufen Sie die Seite https://www.drupal.org/project/issues/user_guide[User Guide issues
-auf _Drupal.org_] auf.
+. Rufen Sie die Seite
+  https://www.drupal.org/project/issues/user_guide[User Guide issues auf _Drupal.org_]
+  auf.
 
-. Prüfen Sie, ob das von Ihnen gefundene Problem nicht bereits in eiem anderen Problembericht gemeldet wurde:
-  * Wenn nur ein paar Problemberichte (Issues) vorhanden sind, überprüfen Sie die Spalte _Summary_ um zu verifizieren, ob eines der gemeldeten Probleme bereits dem von Ihnen gefundenen Problem entspricht. Um dies sicherzustellen, müssen Sie auch einige der Problemberichte Lesen. Einen Problembericht können Sie Lesen, indem Sie auf den Titel in der Spalte _Summary_ klicken.
-  * Wenn die Liste der offenen Problemberichte länger ist, geben Sie entweder ein in Zusammenhang mit dem von Ihnen gefundenen Problem stehendes Schlüsselwort oder den Titel, des Themas, in dem das Problem auftritt in das Eingabefeld
-  _Search for_ ein und klicken Sie auf _Search_ um die Liste der offenen Problemberichte einzugrenzen. Lesen sie anschließend entweder die Problemberichte oder überfliegen Sie deren Zusamenfassung, um zu prüfen, ob einer der Problemberichte das von Ihnen gefundene Problem bereits beschreibt.
+. Prüfen Sie, ob das von Ihnen gefundene Problem nicht bereits in einem anderen
+  Problembericht gemeldet wurde:
+  * Wenn nur ein paar Problemberichte (Issues) vorhanden sind, überprüfen Sie
+    die Spalte _Summary_ um zu verifizieren, ob eines der gemeldeten Probleme
+    bereits dem von Ihnen gefundenen Problem entspricht. Um dies
+    sicherzustellen, müssen Sie auch einige der Problemberichte Lesen.
+    Einen Problembericht können Sie Lesen, indem Sie auf den Titel in der Spalte
+    _Summary_ klicken.
+  * Wenn die Liste der offenen Problemberichte länger ist, geben Sie entweder
+    ein in Zusammenhang mit dem von Ihnen gefundenen Problem stehendes
+    Schlüsselwort oder den Titel, des Themas, in dem das Problem auftritt in das
+    Eingabefeld _Search for_ ein und klicken Sie auf _Search_ um die Liste der
+    offenen Problemberichte einzugrenzen. Lesen sie anschließend entweder die
+    Problemberichte oder überfliegen Sie deren Zugsamenfassung, um zu prüfen,
+    ob einer der Problemberichte das von Ihnen gefundene Problem bereits
+    beschreibt.
 
-. Wenn Sie der Meinung sind, dass das von Ihnen gefundene Problem noch nicht gemeldet wurde,
-klicken Sie auf _Create a new issue_, und füllen den Problembericht (nach Möglichkeit in englischer Sprache) wie folgt aus:
+. Wenn Sie der Meinung sind, dass das von Ihnen gefundene Problem noch nicht
+  gemeldet wurde, klicken Sie auf _Create a new issue_, und füllen den
+  Problembericht (nach Möglichkeit in englischer Sprache) wie folgt aus:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Beispielwert
-| Titel | Kurze Zusammenfassung des Problems, das Sie gefunden haben | Instructions in "Adding
+| Title | Kurze Zusammenfassung des Problems, das Sie gefunden haben. | Instructions in "Adding
   a Content Type" do not work
-| Kategorie | Type of issue being reported | Bug report
-| Version | Version of the guide you found the problem in | 9.1.x-dev
-| Zusammenfassung des Problmes | Details of the problem you found | In the "Adding a Content
-  Type" topic, in step 3, when I clicked _Save_, I got the following error
+| Category | Die Art des Problems, dass Sie melden möchten. | Bug report
+| Version | Die Version, des Benutzerhandbuchs, in der Sie das Problem gefunden haben. | 9.1.x-dev
+| Issue Summary | Einzelhieten zum gefundenen Problem (in englisch) | In the "Adding a Content
+  Type" topic, in step 3, when I clicked _Save_, I got the following error.
   message: ...
 |================================
 
-. Lesen Sie den _Titel_ und die _Issue summary_ den/die sie eingegeben haben.
-und prüfen Sie, dass die von Ihnen bereitgestellten Informationen folgendes enthalten:
+. Lesen Sie den _Titel_ und die _Issue summary_ den/die sie eingegeben haben
+  und prüfen Sie, dass die von Ihnen bereitgestellten Informationen folgendes
+  enthalten:
+
   * Eine komplette Beschreibung, des von Ihnen gefundenen Problems (in englisch).
-  * Den/die Namen des Themas oder der Themen, in dem/denen Sie das Problem gefunden haben.
-  * Die Sprache, in der Sie das Benutzerhandbuch gelesen haben (Wenn es sich um eine andere Sprache als Englisch handelt).
-  * Wenn Sie das Benutzerhandbuch auf eiener Website gelesen haben, einen Link zur entsprechenden Seite oder Links zu den entsprechenden Seiten
-    auf denen das Problem auftritt.
+  * Den/die Namen des Themas oder der Themen, in dem/denen Sie das Problem
+    gefunden haben.
+  * Die Sprache, in der Sie das Benutzerhandbuch gelesen haben (Wenn es sich um
+    eine andere Sprache als Englisch handelt).
+  * Wenn Sie das Benutzerhandbuch auf einer Website gelesen haben, einen Link
+    zur entsprechenden Seite oder Links zu den entsprechenden Seiten auf denen
+    das Problem auftritt.
 
 . Klicken Sie auf _Save_ um den Problembericht (Issue) zu erstellen.
 
-. Rufen Sie den Problembericht ein paar Tage später wieder auf. um zu prüfen, ob einer der Projektbetreuer Rückfragen
- zu Ihrem Problembericht hat und kommentieren Sie den Problembericht, falls das notwendig ist.
+. Rufen Sie den Problembericht ein paar Tage später wieder auf, um zu prüfen,
+  ob einer der Projektbetreuer Rückfragen zu Ihrem Problembericht hat und
+  kommentieren Sie den Problembericht, falls das notwendig ist.
 
 // ==== Vertiefen Sie Ihre Kenntnisse
 
@@ -73,3 +99,5 @@ und prüfen Sie, dass die von Ihnen bereitgestellten Informationen folgendes ent
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Übersetzt und bearbeitet von https://www.drupal.org/u/joachim-namyslo[Joachim Namyslo].

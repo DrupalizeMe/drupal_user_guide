@@ -26,7 +26,7 @@ kombinieren die Skripte nun  Informationen aus der Datenbank und _Assets_ (JavaS
 Dateien, CSS-Dateien, Bilddateien usw., die Teil des CMS sind oder
 hochgeladen wurden), um die Seiten der Website im Browser zusammenzusetzen.
 
-Die Kombination aus dem Betriebssystem, auf dem das CMS läuft, der Skriptsprache, 
+Die Kombination aus dem Betriebssystem, auf dem das CMS läuft, der Skriptsprache,
 in der es geschrieben ist, die Datenbank, in der es seine Informationen speichert, und dem
 Webserver, der die Skripte ausführt, um Informationen abzurufen und sie an den Browser auszuliefern
 wird als _Stack_ bezeichnet. Gemeint ist damit die Software, die benötigt wird um das CMS auszuführen. Eine
@@ -36,14 +36,14 @@ Datenbank Mysql, und der Skriptsprache PHP besteht, ist als _LAMP-Stack_ bekannt
 ==== Was ist Drupal?
 
 Drupal ist ein flexibles CMS, das auf einem LAMP-Stack ausgeführt wird und modular aufgebaut ist.
-Funktionen, die durch die Installation und Deinstallation von _Modulen_ hinzugefügt und entfernt werden können, und
+Funktionen, die durch die Installation und Deinstallation von _Modulen_ hinzugefügt und entfernt werden können und
 die Möglichkeit, das gesamte Erscheinungsbild der Website durch Installation und
 Deinstallation von _Themes_. Der Basis-Drupal-Download, bekannt als Drupal Core (bzw. Drupal-Kernsysteem), enthält
 die PHP-Skripte, die zur Ausführung der grundlegenden CMS-Funktionalität benötigt werden, mehrere optional
 Module und Themes sowie viele JavaScript-, CSS- und Bildmaterialien. Viele zusätzliche
 Module und Themes können von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden.
 
-Drupal kann auch auf Stacks ausgeführt wertden. die aus anderen Technologien bestehen:
+Drupal kann auch auf Stacks ausgeführt werden. die aus anderen Technologien bestehen:
 
 * Das Betriebssystem kann auch Windows oder Mac OS anstelle von Linux sein.
 
@@ -59,17 +59,17 @@ um Drupal auszuführen.
 ==== Warum sollten Sie Drupal verwenden?
 
 Wenn Sie eine Website erstellen, können Sie sich für eines der  vielen vorhandenen
-CMS-Pakete, gehosteten Diensten,  derEntwicklung Ihres eigenen CMS oder derm Aufbau einer Website
+CMS-Pakete, gehosteten Diensten,  der Entwicklung Ihres eigenen CMS oder derm Aufbau einer Website
 ohne Verwendung eines CMS entscheiden. Hier sind einige der Gründe, warum Sie sich für die Verwendung des CMS-Systems Drupal entscheiden könnten:
 
 * Der Aufbau einer kleinen, einfachen Website mit statischen HTML-Seiten ist nicht schwierig.
-* Eine einfache Website kann sehr schnell eingerichtet werden. 
-* Das Einrichten einer Website in einem CMS erfordert anfangs im Allgemeinen mehr Zeit, bringt Ihnen aber die Vorteile der direkten Bearbeitung Ihrer Inhalte innerhalb eines Webbrowsers und direkt auf einem Webserver (dies ist für weniger erfahrene Redakteure wesentlich einfacher). 
-* Einheitliche Struktur (Die Verwendung von statischem HTML ist bei größeren Sites wesentlich schwiriger und eine einheitliche Struktur ist bei solchen Websites wesentlich schwieriger beizubehalten, wenn reiner HTML-Quelltext verwendet wird, um die Website zu erstellen) 
+* Eine einfache Website kann sehr schnell eingerichtet werden.
+* Das Einrichten einer Website in einem CMS erfordert anfangs im Allgemeinen mehr Zeit, bringt Ihnen aber die Vorteile der direkten Bearbeitung Ihrer Inhalte innerhalb eines Webbrowsers und direkt auf einem Webserver (dies ist für weniger erfahrene Redakteure wesentlich einfacher).
+* Einheitliche Struktur (Die Verwendung von statischem HTML ist bei größeren Sites wesentlich schwiriger und eine einheitliche Struktur ist bei solchen Websites wesentlich schwieriger beizubehalten, wenn reiner HTML-Quelltext verwendet wird, um die Website zu erstellen).
 * Die Möglichkeit wesentlich komplexre Funktionen, die eine Datenbank erfordern einzusetzen.
 
 * Bestimmte CMS-Software ist für spezielle Zwecke gedacht. So gibt es zum Beispiel Pakete und
-gehostete Dienste, die Sie zum Aufbau eines Blogs oder eines Mitgliederbereiches nutzen können. 
+gehostete Dienste, die Sie zum Aufbau eines Blogs oder eines Mitgliederbereiches nutzen können.
 Drupal hingegen ist ein allgemein gehaltenes CMS. Wenn Sie eine
 Spezial-Website benötigen, können Sie sich dafür entscheiden, ein Spezial-CMS zu verwenden. Sobald die Anforderungen Ihrer Website aber nur geringfügig über den vorgegebenen Zweck eines solchen Spezial-CMS hinausgehen, stoßen Sie warscheinlich auf Probleme.
 Daher ist es besser, ein grundlegend allgemein gehaltenes CMS zu verwenden, als zu versuchen, ein
