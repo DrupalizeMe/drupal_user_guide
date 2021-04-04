@@ -4,36 +4,46 @@
 [role="summary"]
 Überblick über gängige Datentypen, die in einer Website verwendet werden.
 
-(((Data type,overview)))
-(((Data type,configuration)))
-(((Data type,content)))
-(((Data type,state)))
-(((Data type,session)))
-(((Configuration,as a type of data)))
-(((Content,as a type of data)))
-(((State,as a type of data)))
-(((Session,as a type of data)))
+(((Datentypen,Überblick)))
+(((Datentypen,Konfiguration)))
+(((Datentyp,Inhalt)))
+(((Datentyp,Status)))
+(((Datentyp,Sitzung)))
+(((Konfiguration,als Datentyp)))
+(((Inhalte, als Datentyp)))
+(((Status,als Datentyp)))
+(((Sitzung,als Datentyp)))
 
 
 //==== Erforderliche Vorkenntnisse
 
-==== Welche Arten von Daten gibt es?
+=== Welche Arten von Daten gibt es?
 
-Die Daten und Informationen auf Ihrer Website sind in vier Typen unterteilt, die sich wie folgt gliedern:
-(jede Datenart, wird auf andere Art und Weise bearbeitet, übersetzt und abgespeichert). Diese vier Typen sind:
+Die Daten und Informationen auf Ihrer Website sind in vier Typen unterteilt.
+(jede Datenart, wird auf andere Art und Weise bearbeitet, übersetzt und abgespeichert).
+Diese vier Typen sind:
 
 Inhalt::
   Informationen (Text, Bilder usw.), die den Besuchern der Website angezeigt werden sollen. Diese
   Art Information werden in der Regel dauerhaft gespeichert, können aber normalerweise bearbeitet werden.
 Konfiguration::
   Informationen über Ihre Website, die  keine Inhalte sind und relativ
-  permanent gespeichert werden und dazu verwendet werden zu definieren, wie sich Ihre Website verhält oder angezeigt wird. Diese Art Daten werden manchmal auch den Besuchern der Website angezeigt, In der Regel handelt es sich dabei aber nur um kurze Texte (wie Beschriftungen von Feldern, den Namen Ihrer Website usw.). Konfiguraitionsdaten sind jedoch keine größeren Ansammlungen von Daten, die man normalerweise als Inhalt bezeichnen würde.
+  permanent gespeichert werden und dazu verwendet werden zu definieren,
+  wie sich Ihre Website verhält oder angezeigt wird.
+  Diese Art Daten werden manchmal auch den Besuchern der Website angezeigt,
+  In der Regel handelt es sich dabei aber nur um kurze Texte (wie Beschriftungen
+  von Feldern, den Namen Ihrer Website usw.).
+  Konfigurationsdaten sind jedoch keine größeren Ansammlungen von Daten,
+  die man normalerweise als Inhalt bezeichnen würde.
 Zustand::
   Informationen vorübergehender Art über den aktuellen Zustand Ihrer
-  Website, wie z.B. die Zeit, zu der die Cron-Jobs zuletzt ausgeführt wurden.
+  Website, wie z.B. die Zeit, zu der eine Cron-Aufgabe zuletzt ausgeführt wurden.
 Sitzung::
   Informationen über die Interaktionen einzelner Website-Besucher, wie z.B.
-  ob diese an der Website angemeldet sind oder ob für den jeweiligen Benutzer ein bstimmtes Cookie gesetzt wurde. Diese Art Daten ist technisch eine Unterart der Daten vom Typ Zustand, da sie ebenfalls nur vorübergehend aufbewahrt werden.
+  ob diese an der Website angemeldet sind oder ob für den jeweiligen Benutzer
+  ein bestimmtes Cookie gesetzt wurde. Diese Art Daten ist technisch eine
+  Unterart der Daten vom Typ Zustand, da sie ebenfalls nur vorübergehend
+  aufbewahrt werden.
 
   ==== Verwandte Themen
 
