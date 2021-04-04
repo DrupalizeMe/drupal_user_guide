@@ -19,12 +19,12 @@ Overview of forms and widgets.
 The content management system software that your site is running allows
 administrators to edit content and configure settings online, using various web
 _forms_. In particular, _content editing forms_ are used to edit your site's
-content, and they are configurable by administrators; settings configuration
-forms are provided by modules and cannot themselves be configured.
+content entities, and they are configurable by administrators; settings
+configuration forms are provided by modules and cannot themselves be configured.
 
-The data in your site's content is stored in one or more fields that are
-attached to the content type and/or sub-type. When you configure the content
-editing form for each content sub-type, you can:
+The data in your site's content entities is stored in one or more fields that
+are attached to the entity type and/or subtype. When you configure the content
+editing form for each entity subtype, you can:
 
 * Select a _widget_ for each field. A widget defines the method used to enter
 the data for the field. For example, a taxonomy term can be chosen using
@@ -39,7 +39,7 @@ plain-text entry field.
 * Reorder the fields.
 
 In principle, you can also have multiple content editing forms available for
-each content sub-type. This feature is rarely used, however; the only exception
+each entity subtype. This feature is rarely used, however; the only exception
 in common use is for the user profile fields: you can use different forms for
 user registration and user editing. For example, you might have a limited set of
 fields shown when users first register on the site, and more fields shown later

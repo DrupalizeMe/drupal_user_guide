@@ -16,16 +16,29 @@ It also contains two utility scripts:
 SOFTWARE
 
 To run the scripts here, you will need the following software:
+- PHP
 - AsciiDoc (has been tested with version 8.6.9)
 - DocBook XSL and xmlto (has been tested with xmlto version 0.0.28)
-- FOP (version 2.1 or later)
+- FOP (version 2.1 or later, in theory -- see below)
 - Calibre
 
 On Linux, you can try one of the following commands to install the packages:
 
-apt-get install asciidoc docbook fop calibre
-yum install asciidoc docbook fop calibre
+apt install asciidoc docbook fop calibre php
+yum install asciidoc docbook fop calibre php
 
+
+NOTE: FOP is required to build PDF files. However, version 2.4 does not
+currently work (2.1 is OK; 2.2 and 2.3 are untested for the User Guide). Here
+is the issue:
+https://issues.apache.org/jira/browse/FOP-2704
+
+The issue page says that the bug is fixed in FOP 2.5. There are workarounds
+shown on the issue page, but they do not seem to work for the User Guide.
+You can find out what version you have by running:
+fop -version
+
+You do not need FOP to build ePub, mobi, or HTML output.
 
 LANGUAGES
 
