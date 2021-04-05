@@ -13,7 +13,7 @@ Feldbezeichnungen in einer Ansicht und in anderen Konfigurationen übersetzen.
 
 ==== Zielsetzung
 
-Übersetzen Sie die Feldbezeichnungen der Ansicht Rezepte in die Spache Spanisch.
+Übersetzen Sie die Feldbezeichnungen der Ansicht Rezepte in die Sprache Spanisch.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -24,7 +24,7 @@ Feldbezeichnungen in einer Ansicht und in anderen Konfigurationen übersetzen.
 
 * Das Modul Configuration Translation, das mit dem Kernsystem ausgeliefert wird,
   muss installiert sein und auf ihrer Website müssen mindestens zwei Sprachen
-  instaliert sein.
+  installiert sein.
   Siehe: <<language-add>>.
 
 * Die Ansicht Rezepte muss instaliert sein. Siehe: <<views-create>> und
@@ -35,19 +35,20 @@ Feldbezeichnungen in einer Ansicht und in anderen Konfigurationen übersetzen.
 Die grundlegenden Arbeitsschritte, um irgendeine Konfiguration auf Ihrer Website
 zu übersetzen sind folgende:
 
-. Machen Sie die Site Ihrer Website ausfindig, auf der sich die Konfiguration, in der Standardsprache der Website
-befindet, die Sie übersetzen oder bearbeiten möchten.
-Wenn Sie beispielsweise den Namen Ihrer Webseite übersetzen möchten,
-müssen Sie die Seite aufrufen, auf der Sie den Namen der Website in der
-Standardsprache bearbeiten können.
-Siehe: <<config-basic>>).
+. Machen Sie die Seite Ihrer Website ausfindig, auf der sich die Konfiguration,
+  in der Standardsprache der Website
+  befindet, die Sie übersetzen oder bearbeiten möchten.
+  Wenn Sie beispielsweise den Namen Ihrer Webseite übersetzen möchten,
+  müssen Sie die Seite aufrufen, auf der Sie den Namen der Website in der
+  Standardsprache bearbeiten können.
+  Siehe: <<config-basic>>).
 
-. Suchen Sie nach einem  Link, einer Registerkarte oder einem Button auf der Seite,
-der/die Aufschrift „Übersetzen" oder eine ähnliche Aufschrift enthält.
-Klicken Sie auf diesen Link, die Registerkarte oder den Button.
+. Suchen Sie nach einem  Link, einer Registerkarte oder einem Button auf der
+  Seite, mit der Aufschrift „Übersetzen" oder einer ähnlichen Aufschrift.
+  Klicken Sie auf diesen Link, die Registerkarte oder den Button.
 
 . Suchen Sie nach einem Button, der es Ihnen erlaubt eine Übersetzung in der
-gewünschten Sprache hinzuzufügen und klicken Sie darauf.
+  gewünschten Sprache hinzuzufügen und klicken Sie darauf.
 
 . Tragen Sie die Übersetzung in das Formular ein und klicken Sie auf _Speichern_.
 
@@ -57,8 +58,8 @@ stellt hierbei eine Ausnahme dar, weil die Übersetzung der Konfiguration direkt
 auf dem Bearbeitungsformular der Ansicht und nicht über ein gesondertes Formular
 stattfindet. Besonders ist die Bearbeitung von Ansichten und deren Konfiguration
 auch deshalb, weil das  Formular zur Bearbeitung von Ansichten sehr komplex und
-hierarchisch aufgebaut ist und es sich hierbei nicht um ein Formular handelt, dass
-lediglich ein paar Felder enthält.
+hierarchisch aufgebaut ist und es sich hierbei nicht um ein Formular handelt,
+dass lediglich ein paar Felder enthält.
 Als Beispiel für das Übersetzen einer Ansicht findenden sie im Folgenden die
 Arbeitsschritte, um die Feldbezeichnungen in der Ansicht Rezepte auf Spanisch
 zu übersetzen:
@@ -89,7 +90,9 @@ recetas usando...".
 
 . Klicken Sie auf _Übersetzung Speichern_.
 
-. Wechseln Sie auf die Seite Rezepte und verwenden Sie den Sprachauswahlblock, um die  Sprache der Seite auf Spanisch umzuschalten. Überprüfen Sie, ob diw Bezeichnungen ins Spanische Übersetzt wurden.
+. Wechseln Sie auf die Seite Rezepte und verwenden Sie den Sprachauswahlblock,
+  um die  Sprache der Seite auf Spanisch umzuschalten. Überprüfen Sie, ob die
+  Bezeichnungen ins Spanische Übersetzt wurden.
 
 ==== Vertiefen Sie ihr Wissen
 
@@ -100,7 +103,7 @@ recetas usando...".
 * Übersetzen Sie weitere Konfigurationswerte. Hier sind ein paar Beispiele dazu, wo sie die jeweiligen Übersetzungsseiten finden:
 
 ** Um den Namen der Website zu übersetzen, navigieren sie im Menü _Verwalten_ zum Menüpunkt
-_Konfiguration_ > _System_ > _Grundlegende Websiteeinstellungen_ > _Systeminformationen übersetzen_ (_admin/config/system/site-information/translate_).
+_Konfiguration_ > _System_ > _Grundlegende Einstllungen der Website > _Systeminformationen übersetzen_ (_admin/config/system/site-information/translate_).
 
 ** Um das Kontaktformular zu übersetzen , navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Kontaktformulare_ (_admin/structure/contact_).
 Klicken Sie im Drop-Button, in der Zeile Website-Feedback, in der Spalte Aktionen auf _Übersetzen_

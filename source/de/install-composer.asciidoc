@@ -25,7 +25,8 @@ Composer zur Verwaltung der Dateien im Kernsystem und in Zusatzmodulen verwenden
 
 ==== Zielsetzung
 
-Verwenden Sie den Composer, um Dateien und Abhängigkeiten des Kernsystems oder von installierten Zusatzmodulen und Themes herunterzuladen oder zu aktualisieren,
+Verwenden Sie den Composer, um Dateien und Abhängigkeiten des Kernsystems oder
+von installierten Zusatzmodulen und Themes herunterzuladen oder zu aktualisieren,
 Überspringen Sie dieses Thema, wenn Sie den Composer nicht verwenden.
 
 ==== Erforderliche Vorkenntnisse
@@ -34,7 +35,9 @@ Verwenden Sie den Composer, um Dateien und Abhängigkeiten des Kernsystems oder 
 
 ==== Anforderungen an die Website
 
-Wenn Sie den Composer verwenden möchten, muss er entweder innerhalb einer lokalen Entwicklungsumgebung direkt auf dem Server installiert sein, auf dem sich Ihre Live-Website befindet. Siehe: <<install-tools>>.
+Wenn Sie den Composer verwenden möchten, muss er entweder innerhalb einer
+lokalen Entwicklungsumgebung direkt auf dem Server installiert sein, auf dem
+sich Ihre Live-Website befindet. Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
 
@@ -44,7 +47,7 @@ Ihrem lokalen Server ausführen und dann alle aktualisierten oder hinzugefügten
 Dateien auf Ihren Live-Server übertragen. Das empfohlene Verfahren besteht
 darin, ein Archiv oder eine Zip-Datei, in der die neuen und geänderten
 Verzeichnisse und Dateien enthalten sind, zu erstellen, übertragen Sie das
-Archiv auf Ihren Live-Server, löschen Sie die Verzeichnisse, an denen Sie Lokal
+Archiv auf Ihren Live-Server, löschen Sie die Verzeichnisse, an denen Sie lokal
 Änderungen vorgenommen haben und extrahieren Sie das Archiv.
 Stellen Sie sicher, dass Sie überprüfen, ob in den folgenden
 Verzeichnissen und Dateien nach dem Vorgang Aktualisierungen und Ergänzungen zu
@@ -62,11 +65,12 @@ Führen Sie folgende Schritte aus, wenn Sie das Kernsystem noch nicht
 heruntergeladen oder installiert haben und Sie Composer verwenden möchten, um
 sowohl das Kernsystem als auch dessen externe Abhängigkeiten herunterzuladen:
 
-. Wechseln Sie auf der Kommandozeile in das Verzeichnis, dass sich eine Ebene über dem Verzeichnis befindet, in das Sie
-die Software, extrahiert haben.
+. Wechseln Sie auf der Kommandozeile in das Verzeichnis, dass sich eine Ebene
+  über dem Verzeichnis befindet, in das Sie
+  die Software, extrahiert haben.
 
 . Geben Sie folgenden Befehl ein, wobei _mydir_ das Verzeichnis ist,
-das Sie erstellen möchten:
+  das Sie erstellen möchten:
 +
 ----
 composer create-project drupal/recommended-project /pfad/zum/übergeordneten/Verzeichnis/der/Installation
@@ -77,9 +81,10 @@ _/pfad/zum/übergeordneten/Verzeichnis/der/Installation/web_ heruntergeladen.
 
 ===== Eine zuvor heruntergeladene Website für die Verwaltung mit Composer vorbereiten
 
-Wenn Sie zuvor das Kernsystem heruntergeladen haben, ohne Composer zu verwenden, können Sie
-später feststellen, dass Sie den Composer zur Verwaltung und Aktualisierung verwenden wollen oder müssen,
-Abhängigkeiten. Für Sites, die mit Version 8.8.0 oder höher des Kernsystems erstellt wurden
+Wenn Sie zuvor das Kernsystem heruntergeladen haben, ohne Composer zu verwenden,
+können Sie später feststellen, dass Sie den Composer zur Verwaltung und
+Aktualisierung von Abhängigkeiten verwenden wollen oder müssen.
+Für Websites die mit Version 8.8.0 oder höher des Kernsystems erstellt wurden
 enthalten bereits die hierfür erforderliche Composer-Konfiguration und Sie
 können jederzeit mit der Nutzung des Composers beginnen.
 
@@ -87,15 +92,17 @@ Wenn Ihre Website Module, Themen oder Profile enthält, die nicht Teil des
 Kernsystems sind, ist es eine gute Idee, sie in die Datei _composer.json_ in
 Stammverzeichnis Ihrer Website zu übertragen.
 
-Hierfür führen Sie für jedes heruntergeladene Modul, Theme oder Profil einmal den folgenden Befehl aus
-wobei der Name des gewünschten Projekts durch +systemname+ ersetzt wird, um das jeweilige Projekt zur Datei _composer.json_
+Hierfür führen Sie für jedes heruntergeladene Modul, Theme oder Profil einmal
+den folgenden Befehl aus wobei der Name des gewünschten Projekts durch
++systemname+ ersetzt wird, um das jeweilige Projekt zur Datei _composer.json_
 hinzufügen:
 
 ----
 composer require drupal/systemname
 ----
 
-Weitere Informationen zur Verwaltung von Abhängigkeiten mit Composer finden Sie weiter unten.
+Weitere Informationen zur Verwaltung von Abhängigkeiten mit Composer finden
+Sie weiter unten.
 
 So konvertieren Sie eine Site, die mit einer Version des Kernsystems vor
 8.8.0, oder aus einer Zip- oder tar.gz-Datei heraus installiert wurde, die von
@@ -147,8 +154,9 @@ Moduls oder Thems:
 composer update drupal/geofield --with-dependencies
 ----
 
-. Wenn Sie eine bestimmte Version benötigen, legen Sie fest, wie Sie die Versionsnummer eingeben, auf die Sie
-auf die Sie aktualisieren möchten. Zum Beispiel würden Sie für die Version 8.x-1.16 eines beigetragenen Moduls
+. Wenn Sie eine bestimmte Version benötigen, legen Sie fest, wie Sie die
+Versionsnummer eingeben, auf die Sie auf die Sie aktualisieren möchten.
+Zum Beispiel würden Sie für die Version 8.x-1.16 eines beigetragenen Moduls
 würden Sie nur 1.16 eingeben, und für die Version 9.0.7 des Kernsystems würden Sie
 9.0.7 eingeben. Geben Sie dann im Stammverzeichnis Ihrer Website den folgenden Befehl ein
 (ersetzen Sie +geofield+ durch den Systemnamen des Projekts und die korrekte
@@ -174,9 +182,9 @@ video::https://www.youtube-nocookie.com/embed/v-WeFthdmD4[title="Verwendung von 
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung von Composer zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch)]
-* https://www.drupal.org/docs/8/update/update-core-via-composer["Das Kernsystem mittels Composer aktualisieren"(englisch)]
-* https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen (englisch)]
+* https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies[„Verwendung von Composer zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch)]
+* https://www.drupal.org/docs/8/update/update-core-via-composer[„Das Kernsystem mittels Composer aktualisieren" (englisch)]
+* https://www.drupal.org/docs/8/install/add-composer-to-an-existing-site[„Composer zu einer bestehenden Website hinzufügen" (englisch)]
 
 *Mitwirkende*
 
@@ -184,6 +192,6 @@ Bearbeitet von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
 https://www.drupal.org/u/hansfn[Hans Fredrik Nordhaug], und
 https://www.drupal.org/u/eojthebrave[Joe Shindelar] bei
 https://drupalize.me[Drupalize.Me] von
-https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies["Verwendung des Composers zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch) ],
+https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies[„Verwendung des Composers zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch) ],
 copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].

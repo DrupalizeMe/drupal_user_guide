@@ -53,7 +53,7 @@ Siehe: https://git-scm.com/[Git (englisch)] für weitere Informationen.
 
 ==== Arbeitsschritte
 
-===== Die Repository installieren
+===== Die Repository initialisieren
 
 Führen Sie diese Schritte einmal durch, nachdem Sie eine Git-Repository
 erstellt haben, um lokale Verzeichnisse zur Repository und die darin enthaltenen
@@ -101,7 +101,7 @@ git add -A
 ----
 
 . Optional können Sie die Liste der Dateien überprüfen, die Ihrer Git-Repository
-hinzugefügz werden, indem Sie folgenden Befehl eingeben und durch die (sehr lange)
+hinzugefügt werden, indem Sie folgenden Befehl eingeben und durch die (sehr lange)
 Liste scrollen:
 +
 ----
@@ -120,7 +120,7 @@ git push -u origin master
 
 . Wenn Sie GitLab, GitHub oder einen anderen Host mit Online-Zugang verwenden,
 können Sie nun die Seite Ihrer Repository aufrufen und überprüfen
-ob Ihre Dateien dort vorhanden sin, nachdem der Vorgang abgeschlossen wurde.
+ob Ihre Dateien dort vorhanden sind, nachdem der Vorgang abgeschlossen wurde.
 
 ===== Aktualisieren von Dateien innerhalb der Repository
 
@@ -191,7 +191,7 @@ git pull
 Befolgen Sie diese Schritte, wenn Sie alle Dateien innerhalb ihrer Repository
 auf eine neue Umgebung übertragen wollen. Beispielsweise könnten Sie sowohl eine
 lokale Entwicklungskopie Ihrer Website und einer Live-Website Besitzen.
-In größeren Teams können auch mehrere Teammitglieder eine lokale Kopie der
+In größeren Teams können auch mehrere Team-Mitglieder eine lokale Kopie der
 Website an verschiedenen Standorten verwalten.
 
 . Öffnen Sie ein Terminal/ eine Eingabeaufforderung in dem Verzeichnis,
@@ -224,13 +224,13 @@ oben, um diese Dateien in Ihrer Repository zu aktualisieren.
 . Um eine aktualisierte Konfiguration in eine andere Website zu importieren,
 erstellen Sie ein Archiv des Konfigurationsverzeichnisses in Ihrer Repository.
 Folgen Sie dann den Anweisungen in
-<<extend-config-versions>> um dieses Archiv hochzuladen und in die neue Website
+<<extend-config-versions>> um dieses Archiv hoch zu laden und in die neue Website
 zu importieren.
 
 
 // ==== Vertiefen Sie Ihr Wissen
 
-==== Vrwandte Konzepte
+==== Verwandte Konzepte
 
 <<install-dev-sites>>
 
@@ -242,6 +242,6 @@ zu importieren.
 *Mitwirkende*
 
 Adaptiert und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] von
-https://www.drupal.org/node/803746["Aufbau einer Drupal-Site mit Git (englisch)"],
+https://www.drupal.org/node/803746[„Aufbau einer Drupal-Site mit Git (englisch)"],
 copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
