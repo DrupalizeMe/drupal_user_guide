@@ -10,7 +10,8 @@ Eine Kopie einer Live-Site für Entwicklungszwecke erstellen.
 ==== Zielsetzung
 
 Erstellen Sie die Kopie einer Website, die Sie zur Entwicklung neuer Funktionen
-und zum Testen von Aktualisierungen verwenden können innerhalb einer Entwicklungsumgebung.
+und zum Testen von Aktualisierungen verwenden können innerhalb einer
+Entwicklungsumgebung.
 
 ==== Erforderlichen Vorkenntnisse
 
@@ -19,31 +20,32 @@ und zum Testen von Aktualisierungen verwenden können innerhalb einer Entwicklun
 ==== Anforderungen an die Website
 
 * Sie haben eine fertig entwickelte Live-Website, von der Sie eine Kopie
-innerhalb einer Entwicklungsumgebung besitzen.
+  innerhalb einer Entwicklungsumgebung besitzen.
 
 * Wenn Sie Drush zur Ausführung einiger der Arbeitsschritteschritte dieser
-Aufgabe verwenden möchten, muss Drush installiert.
-Siehe: <<install-tools>>.
+  Aufgabe verwenden möchten, muss Drush installiert.
+  Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
 
 . Folgen Sie den Arbeitsschritten im Kapitel <<install-prepare>>, so dass Sie
-Ihre Entwicklungsumgebung vollständig eingerichtet haben und wissen,
-wo sich das Hauptverzeichnis Ihrer Entwicklungs-Website befindet.
-Am Ende dieses Kapitels werden Sie außerdem eine Leer Datenbank inklusive des dazugehörigen Datebnakbenutzers eingerichtet haben.
+  Ihre Entwicklungsumgebung vollständig eingerichtet haben und wissen,
+  wo sich das Hauptverzeichnis Ihrer Entwicklungs-Website befindet.
+  Am Ende dieses Kapitels werden Sie außerdem eine Leer Datenbank inklusive des dazugehörigen Datebnakbenutzers eingerichtet haben.
 
 . Exportieren Sie die Datenbank Ihrer Live-Website. verwenden Sie dazu eine
-der folgenden Methoden:
+  der folgenden Methoden:
 +
   * Wenn Sie MySQL als Datenbank verwenden und auf dem Server Ihrer Live-Site
-  phpMyAdmin installiert ist
-  (die Software ist in vielen Hosting-Kontrollzentren verfügbar),
-  verwenden Sie die Registerkarte _Export_ in phpMyAdmin, um die Datenbank Ihrer
-  Website im Format _SQL_ zu exportieren. Kompromoeren Sie die
-  ausgegebene Datei mittels _gzip_ um die Dateigröße des Exports zu verringern.
+    phpMyAdmin installiert ist
+    (die Software ist in vielen Hosting-Kontrollzentren verfügbar),
+    verwenden Sie die Registerkarte _Export_ in phpMyAdmin, um die Datenbank Ihrer
+    Website im Format _SQL_ zu exportieren. Kompromoeren Sie die
+    ausgegebene Datei mittels _gzip_ um die Dateigröße des Exports zu verringern.
 
   * Wenn Sie MySQL benutzen und Zugriff auf die Befehlszeile haben, benutzen Sie
-    folgenden Befehl (Ersetzen sie den Datenbanknahmen, den Benutzernamen udn das Passwort mit den entsprecheenden Daten Ihrer Website):
+    folgenden Befehl (Ersetzen sie den Datenbanknahmen, den Benutzernamen und
+    das Passwort mit den entsprechenden Daten Ihrer Website):
 +
 ----
 mysqldump -u BenuTZERNANE -p'PASSOWRT' DATENBANKNAME > DATEINAME.sql
@@ -63,13 +65,13 @@ zur Installation von Zusatzmodulen zu erhalten.
 Sie haben jetzt einen Datenbank-Export in der Datei DATEINAME.sql_ gespeichert.
 Aus Sicherheitsgründen sollten Sie es vermeiden, diese Datei auf Ihrem Hosting-Server
 und vor allem im Hauptverzeichnis von Druoal abzulegen.
-Doiese Maßnahme verhindert, dass dritte Personnen eine Kopie Ihrer Datenbank
+Diese Maßnahme verhindert, dass dritte Personen eine Kopie Ihrer Datenbank
 herunterladen können.
 
 . Kopieren Sie alle Dateien aus dem Hauptverzeichnis Ihrer Live-Website in das
 Hauptverzeichnis der Installation innerhalb Ihre Entwicklungsumgebung.
-Möglicherweise möchten Sie hierfür Git verwenden. Wenn Sie Git verwenden möchten, lesen Sie
-<<<extend-git>>.
+Möglicherweise möchten Sie hierfür Git verwenden. Wenn Sie Git verwenden möchten,
+lesen Sie <<<extend-git>>.
 
 . Bearbeiten Sie die Datei _sites/default/settings.php_ in  Ihrer
 Entwicklungsumgebung mit einem Texteditor. Suchen Sie folgende Zeilen
@@ -87,14 +89,16 @@ $databases['default']['default'] = array (
 ----
 
 . Prüfen Sie, ob Ihre Datei _settings.php_ die folgende Einstellung enthält. Ist dies der Fall,
-müssen Sie diese  Einstellung so bearbeiten, dass die URL auf Ihre Entwicklungs-Webiste  auf die URL  Ihrer Produktiv-Website verweist:
+  müssen Sie diese  Einstellung so bearbeiten, dass die URL auf Ihre
+  Entwicklungs-Webiste  auf die URL  Ihrer Produktiv-Website verweist:
 +
 ----
 $settings['trusted_host_patterns']
 ----
 
 . Prüfen Sie, ob in Ihrer Datei _settings.php_ die folgende Einstellung vorhanden ist, und ob sie
-auf einen zufälligen String-Wert eingestellt ist. Wenn dies nicht der Fall ist, müssen Sie einen zufälligen Wert hinzufügen oder die Einstellung bearbeiten, um fatale Fehler zu vermeiden:
+  auf einen zufälligen String-Wert eingestellt ist. Wenn dies nicht der Fall ist,
+  müssen Sie einen zufälligen Wert hinzufügen oder die Einstellung bearbeiten, um fatale Fehler zu vermeiden:
 +
 ----
 $settings['hash_salt'] = 'any_string_value';
@@ -109,17 +113,18 @@ drush php-eval 'echo
 ----
 +
 Wenn Sie Drush nicht verwenden, gibt es zahlreiche Websites und Anwendungen, die
-Generatoren für zufällige Zeichenketten anbieten. Für den Wert der Einstellung sollten Sie eine Zeichenkette erzeugen, die
-74 Zeichen lang ist.
+Generatoren für zufällige Zeichenketten anbieten. Für den Wert der Einstellung
+sollten Sie eine Zeichenkette erzeugen, die 74 Zeichen lang ist.
 
 . Importieren Sie die Datei, die den Datenbank.-Export enthält,
-in die Datenbank in der Entwicklungsumgebung. Verwenden Sie dazu eine der
-folgenden Methoden:
+  in die Datenbank in der Entwicklungsumgebung. Verwenden Sie dazu eine der
+  folgenden Methoden:
 +
   * Wenn Sie MySQL als Datenbank verwenden und der Server Ihrer Live-Site über
   PHPMyAdmin verfügt (die  Software ist in vielen Hosting-Kontrollzentren verfügbar),
   Verwenden Sie die Registerkarte _Import_ in PHPMyAdmin. Möglicherweise müssen
-  Sie den Import ein paar mal wiederholen, wenn es sich um eine sehr große Datenbank handelt.
+  Sie den Import ein paar mal wiederholen, wenn es sich um eine sehr große
+  Datenbank handelt.
 
   * Wenn Sie MySQL benutzen und Zugriff auf die Kommandozeile Ihres Web-Servers
   haben, benutzen Sie folgenden Befehl
@@ -141,18 +146,18 @@ drush sql:query --file=DATEINAHME.sql
 aufweisen, müssen Sie Konfigurationsüberschreibungen in der Datei _settings.php_
 verwenden. Die _$config_-Variable hilft Ihnen dabei, separate Einstellungen
 von der Standard-Konfiguration zu trennen.
-Beispielsweise könnte der Name der Website "Anytown Farmers Market" in der
-Entwicklungsumgebung, aber "Arbeitsversion der Website des Wochenmarktes"
-lauten soll, könnenn Sie diese Einstellung für Live-Website in der Datenbank
+Beispielsweise könnte der Name der Website „Anytown Farmers Market" in der
+Entwicklungsumgebung, aber „Arbeitsversion der Website des Wochenmarktes"
+lauten soll, können Sie diese Einstellung für Live-Website in der Datenbank
 (Standardkonfiguration) anlegen und auf der
-Website in der Entwicklungsumgebng, in der Datei settings.php, mit
+Website in der Entwicklungsumgebung, in der Datei settings.php, mit
 folgendem Eintrag übersteuern:
 +
 ----
 $config['system.site']['name'] = "Arbeitsversion der for Anytown Farmers Market Website";
 ----
 
-==== Erweitern Sie Ihre Kenntnisse
+==== Vertiefen Sie Ihre Kenntnisse
 
 * Überprüfen Sie, ob die Website in Ihrer Entwicklungsumgebung korrekt
 funktioniert.
@@ -160,7 +165,9 @@ funktioniert.
 * Melden Sie sich bei der Website in der Entwicklungsumgebung als Administrator
 an und leeren Sie den Cache.
 
-Siehe:<<prevent-cache-clear>>.
+Siehe:
+
+* <<prevent-cache-clear>>.
 
 * <<extend-deploy>>
 
@@ -175,8 +182,8 @@ video::https://www.youtube-nocookie.com/embed/FSBNm4oAkaA[title="Eine Entwicklun
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ Community-Dokumentationsseite "Sichern einer Website (englsich)"]
-* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ Community-Dokumentationsseite "Erstellen einer Testsite (englisch)"]
+* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ Community-Dokumentationsseite „Sichern einer Website (englsich)"]
+* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ Community-Dokumentationsseite „Erstellen einer Testsite (englisch)"]
 
 
 *Mitwirkende*

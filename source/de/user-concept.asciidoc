@@ -33,33 +33,33 @@ Die Möglichkeit, Aktionen auf der  Website  (einschließlich der Anzeige von In
 Inhalt und Änderung der Konfiguration)  auszuführen wird über _Berechtigungen_ geregelt. Jede
 Berechtigung hat einen Namen (z.B. _Veröffentlichte Inhalte anzeigen_) und umfasst eine Aktion
 oder eine kleine Teilmenge von Aktionen. Ein Benutzer muss über eine Berechtigung verfügen, um
-die entsprechende Aktion auf der Website ausführen zu können. Die einzelnen Berechtigungen werden
-jeweils durch das Modul definiert, das die mit der Berechtigung verbundene Aktion bereitstellt.
+die entsprechende Aktion auf der Website ausführen zu können. Die einzelnen Berechtigungen wereden 
+jeweils durch das Modul definiert, das die mit der Berechtigung verbundene Aktion bereitstellt. 
 
 ==== Was sind Rollen?
 
 Anstatt jedem Benutzer individuelle Berechtigungen direkt zuzuweisen, werden Berechtigungen
-in _Rollen_ gruppiert. Sie können eine oder mehrere Rollen auf Ihrer Seite definieren und
-jeder Rolle die für die Rolle erforderlichen Berechtigungen zuweisen. Die Berechtigungen, für authentifizierte
+in _Rollen_ gruppiert. Sie können eine oder mehrere Rollen auf Ihrer Site definieren und
+jeder Rolle die für die Rolle erforderlichen Bereictigungen zuweisen. Die Berechtigungen, für authentifizierte
 Benutzer und Gäste sind in den Rollen _Angemeldeter Benutzer_ und _Gast_ enthalten.
-Die Bezeichnungen und die Anzahl der vorhandenen _Rollen_ sind vom vom bei der Installation der Website
-verwendeten Installationsprofil abhängig. Es kann auch eine Rolle mit der Bezeichnung _Admiistrator_ vorhanden sein,
+Die Bezeichnungen und die Anzahl der vorhandenen _Rollen_ sind vom vom bei der Installation der Website 
+verwendeten Installationsprofil abhängig. Es kann auch eine Rolle mit der Bezeichnung _Admiistrator_ vorhanden sein, 
 die automatisch über alle auf der Website vorhandenen Berechtigungen verfügt.
 
 Jedem Benutzerkonto auf Ihrer Website wird automatisch die Rolle _Angemeldeter Benutzer_ zugewiesen.
-Optional kann jedes Benutzerkonto mit einer oder mehreren weiteren Rollen ausgestattet werden. Wenn Sie
+Optional kann jedes Benutzerkonto miit einer oder mehrerne weiteren Rollen ausgestaettet werden. Wenn Sie
 einem Benutzerkonto eine Rolle zuweisen, hat der Benutzer alle Berechtigungen die der jeweiligen Rolle zugewiesen wurden, sobald er sich auf der Website angemeldet hat.
 
-In der Praxis hat sich gezeigt, dass es eine gut Idee ist, mehrere Rollen für eine Website einzurichten.Im Beispiel der Wochenmarkt-Website
+In der Praxis hat sich gezeigt, dass es eine gut Idee ist, mehrere Rollen für eine Website einzurichten.Im Beispiel der Wochebmakt-Website 
 könnte man sich beispielsweise folgende Rollen wünschen:
 
-* Eine Rolle für Lieferanten, die es den Lieferanten ermöglicht, ihre eigenes Profil zu bearbeiten.
+* Eine Rolle für Lieferanten, die es den Lieferanten ermöglicht, ihre eignes Profil zu bearbeiten.
 
-* Eine Rolle für Inhaltsredakteure die es Benutzern ermöglicht, die allgemeinen Seiten der Wochenmarkt-Website zu bearbeiten.
+* Eine Rolle für Inhaltsredakteure die es Benutzern ermöglicht, die allgemeinen Seiten der Wochnmarkt-Website zu bearbtein.
 
-* Eine Rolle zur Verwaltung von Benutzern, mit der sich Benutzer, um die Verwaltung von Kundenkonten auf der Website kümmern können.
+* Eine Rolle zur Verwaltung von Benutzern, mit der sich Benutzer, um die Verwaltung von Kundenkonten auf der Website kümmern könnnen.
 
-* Die Rolle _Administrator_, die über das Installationsprofil Ihrer Website installiert wurde, dient erfahrenen Benutzern zur Verwaltung und Konfiguration der Website.
+* Die Rolle _Administrator_, die über das Installationsprofil Ihrer Website installiert wurde, dient erfahrenen Benutzern zur Verwaltung und Konfguration der Website.
 
 
 
