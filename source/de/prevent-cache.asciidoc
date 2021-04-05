@@ -5,12 +5,12 @@
 [role="summary"]
 Übersicht über den Cache und die Daten der Website, die zwischengespeichert werden können.
 
-(((Cache,overview)))
-(((Page cache,overview)))
-(((Module,Internal Page Cache)))
-(((Module,Dynamic Page Cache)))
-(((Internal Page Cache module,overview)))
-(((Dynamic Page Cache module,overview)))
+(((Cache,Überblick)))
+(((Page cache,Überblick)))
+(((Modul,Internal Page Cache)))
+(((Modul,Dynamic Page Cache)))
+(((Internal-Page-Cache-Modul,Überblick)))
+(((Dynamic-Page-Cache-Modul,Überblick)))
 
 ==== Vorausgesetztes Wissen
 
@@ -18,56 +18,90 @@
 
 ==== Was ist der Cache?
 
-Die Software, die Ihre Website ausführt, muss bei jeder Anfrage an Ihre Website folgende Aufgabe abarbeiten:
+Die Software, die Ihre Website ausführt, muss bei jeder Anfrage an Ihre Website
+folgende Aufgabe abarbeiten:
 
-* Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite zusammen zu stellen
-die an den Web-Browser oder eine andere Anwendung gesendet wird, die auf die
-Website zugreift. 
+* Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite
+  zusammen zu stellen die an den Web-Browser oder eine andere Anwendung
+  gesendet wird, die auf die Website zugreift.
 
-Diese Berechnungen benötigen Zeit. Das bedeutet das die Ladezeit Ihrer Website länger ist, als gewünscht.
+Diese Berechnungen benötigen Zeit. Das bedeutet das die Ladezeit Ihrer Website
+länger ist, als gewünscht.
 
-Es gibt verschiedene Möglichkeiten, die Ladezeit einer Website zu beschleunigen. Darunter fällt auch die Installation entsprechender Zusatzsoftware auf dem Web-Server. Das System umfasst den internen Cache der Website und das Modul
-Dynamic-Page-Cache. Hierfür wird keine zusätzliche Software auf dem Web-Server benötigt. Zum Cachen der Website wird ein Mechanismus verwendet, der 
-_Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den Ladevorgang Ihrer Website zu beschleunigen. Die beiden Module funktionieren wie folt:
+Es gibt verschiedene Möglichkeiten, die Ladezeit einer Website zu beschleunigen.
+Darunter fällt auch die Installation entsprechender Zusatzsoftware auf dem
+Web-Server. Das System umfasst den internen Cache der Website und das Modul
+Dynamic-Page-Cache. Hierfür wird keine zusätzliche Software auf dem Web-Server
+benötigt. Zum Cachen der Website wird ein Mechanismus verwendet, der
+_Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den
+Ladevorgang Ihrer Website zu beschleunigen. Die beiden Module
+funktionieren wie folgt:
 
-* Bei der Berechnung der Website werden Zwischenergebnisse der auszuliefernden Inhalte in einem bestimmten Speicherbereich abgelegt.
+* Bei der Berechnung der Website werden Zwischenergebnisse der auszuliefernden
+  Inhalte in einem bestimmten Speicherbereich abgelegt.
 
-* Die entgültige Ausgabe der Website wird in einem speziellen Bereich der Datenbank (der als
-_Cache_ bekannt ist) gespeichert. 
+* Die endgültige Ausgabe der Website wird in einem speziellen Bereich der
+Datenbank (der als _Cache_ bekannt ist) gespeichert.
 
-Wird danach erneut eine Anfrage an die Website gestellt, könnnen die zwischengespeicherten Daten
-gegebenenfalls abgerufen werden, um so die Berechnung der Ausgabe der Website zu beschleunigen, ohne, dass die Ausgabe der fertigen Website jedes mal komplett neu berechnet werden muss. Darüber hinaus werden betroffene Teile der zwischengespeicherten Daten aus dem Cache entfernt, wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzwungen, dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert werden, wenn eine betroffene Seite nach der Aktualisierung des darauf enthaltenen Inhalts zum ersten mal neu aufgerufen wird.
+Wird danach erneut eine Anfrage an die Website gestellt, können die
+zwischengespeicherten Daten gegebenenfalls abgerufen werden, um so die
+Berechnung der Ausgabe der Website zu beschleunigen, ohne, dass die Ausgabe der
+fertigen Website jedes mal komplett neu berechnet werden muss. Darüber hinaus
+werden betroffene Teile der zwischengespeicherten Daten aus dem Cache entfernt,
+wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzwungen,
+dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert
+werden, wenn eine betroffene Seite nach der Aktualisierung des darauf
+enthaltenen Inhalts zum ersten mal neu aufgerufen wird.
 
-Die Cache-Module funktionieren normalerweise recht gut und sorgen zumindest auf einigen Websites für bessere Ladezeiten. Manchmal kann der Cache jedoch Probleme machen.
+Die Cache-Module funktionieren normalerweise recht gut und sorgen zumindest auf
+einigen Websites für bessere Ladezeiten. Manchmal kann der Cache jedoch Probleme
+machen.
 
 Beispielsweise wenn:
 
-* Beschädigte Daten im Cache enthalten sind. Dies führt zu einer korrupten oder falschen Ausgabe der Website.
+* Beschädigte Daten im Cache enthalten sind. Dies führt zu einer korrupten oder
+  falschen Ausgabe der Website.
 
-* Alte Daten zu lange im Cache bleiben. Dies führt zur Ausgabe alter Versionen von Inhalten.
+* Alte Daten zu lange im Cache bleiben. Dies führt zur Ausgabe alter Versionen
+  von Inhalten.
 
-* Der Cache zu klein ist. Dies führt zu einem verzögerten Aufbau und zu längeren Ladezeiten der Website. 
+* Der Cache zu klein ist. Dies führt zu einem verzögerten Aufbau und zu längeren
+  Ladezeiten der Website.
 
 ==== Welche Daten werden außerdem zwischengespeichert?
 
 Unabhängig davon, ob die beiden Cache-Module auf Ihrer Website installiert sind,
-legt die Software, mit der Ihre Website betrieben wird, immer noch jede Menge Daten in optimierter Form im Zwischenspeicher ab. Folgende Daten werden vom Kernsystem zwischengespeichert:
+legt die Software, mit der Ihre Website betrieben wird, immer noch jede Menge
+Daten in optimierter Form im Zwischenspeicher ab. Folgende Daten werden vom
+Kernsystem zwischengespeichert:
 
-* Das Theme-System speichert im Datenbank-Cache Informationen darüber, welche Template-Dateien 
-zur Darstellung verschiedener Arten von Daten verwendet werden. Wenn Sie ein neues
-Theme oder eine neue Template-Datei hinzufügen, müssen Sie den Cache leeren, damit diese neue Templete-Datei oder das neue Theme erkannt wird.
+* Das Theme-System speichert im Datenbank-Cache Informationen darüber, welche
+  Template-Dateien zur Darstellung verschiedener Arten von Daten verwendet
+  werden. Wenn Sie ein neues Theme oder eine neue Template-Datei hinzufügen,
+  müssen Sie den Cache leeren, damit diese neue Template-Datei oder das neue
+  Theme erkannt wird.
 
-* CSS- und JavaScript-Dateien können (abhängig von den für die Website festgelegten Einstellungen) optional optimiert und komprimiert werden. 
-Ist die Optimierung und Komprimierung für diese Dateien aktiviert, werden die optimierten und komprimierten Versionen dieser Datein im Dateisystem der Website abgelegt, damit diese nicht zu oft neu optimiert werden müssen. Deshalb müssen Sie den Cache bei der Entwicklung eines Moduls oder Themes evetuell abschalten, damit Änderungen an CSS- oder JavaScript-Dateien erkannt werden können.
+* CSS- und JavaScript-Dateien können (abhängig von den für die Website
+  festgelegten Einstellungen) optional optimiert und komprimiert werden.
+  Ist die Optimierung und Komprimierung für diese Dateien aktiviert, werden die
+  optimierten und komprimierten Versionen dieser Dateien im Dateisystem der
+  Website abgelegt, damit diese nicht zu oft neu optimiert werden müssen.
+  Deshalb müssen Sie den Cache bei der Entwicklung eines Moduls oder
+  Themes eventuell abschalten, damit Änderungen an CSS- oder JavaScript-Dateien
+  erkannt werden können.
 
 * Das System erkennt bestimmte Low-Level-PHP-Funktionen und -Klassen, wie z. B.
-_Hook-Implementierungen_ und _Plug-in-Klassen_ die von den Modulen verwendet werden, die auf Ihrer Website aktiviert sind und
-speichert Informationen darüber ab, welches Modul welche Funktionalität zu Verfügung stellt.
-Wenn Sie ein neues Modul entwickeln oder zu einem vorhandenen Modul Funktionen hinzufügen möchten, müssen Sie den Cache der Website möglicherweise leeren, damit diese neuen Funktionen erkannt werden.
+_Hook-Implementierungen_ und _Plug-in-Klassen_ die von den Modulen verwendet
+werden, die auf Ihrer Website aktiviert sind und speichert Informationen darüber
+ab, welches Modul welche Funktionalität zu Verfügung stellt.
+Wenn Sie ein neues Modul entwickeln oder zu einem vorhandenen Modul Funktionen
+hinzufügen möchten, müssen Sie den Cache der Website möglicherweise leeren,
+damit diese neuen Funktionen erkannt werden.
 
 ==== Verwandte Themen
 
-Wenn Sie Probleme mit Ihrer Website haben, sollten Sie als erstes versuchen, den Cache zu leeren. Siehe <<<prevent-cache-clear>> für weitere Informationen.
+Wenn Sie Probleme mit Ihrer Website haben, sollten Sie als erstes versuchen,
+den Cache zu leeren. Siehe <<<prevent-cache-clear>> für weitere Informationen.
 
 ==== Zusätzliche Ressourcen
 

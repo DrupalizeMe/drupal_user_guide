@@ -30,25 +30,31 @@ kann, die man auf dem Wochenmarkt gekauft hat.
 
 Kleinere Seitenabschnitte können ebenfalls aus verschiedenen Inhaltselementen zusammengesetzt werden.
 Rezepte können Beispielsweise ein Feld enthalten, das Auskunft darüber gibt, welcher
-Lieferant das Rezept eingereicht hat (siehe: <<structure-reference-fields>>). So können die Details zum jeweiligen Lieferanten in separaten
-Inhaltselementen bearbeitet werden. So ist es Ihnen möglich, folgendes auf Ihrer Website umzusetzen:
+Lieferant das Rezept eingereicht hat (siehe: <<structure-reference-fields>>).
+So können die Details zum jeweiligen Lieferanten in separaten
+Inhaltselementen bearbeitet werden. So ist es Ihnen möglich,
+folgendes auf Ihrer Website umzusetzen:
 
 * Auf jedem Rezept kann es einen Abschnitt geben, der einige Informationen
 über den Lieferanten anzeigt, der das Rezept eingereicht hat, wie z.B. dessen
 Name und die Nummer seines Marktstandes.
 
-* Jede Lieferantenseite kann einen Abschnitt enthalten, in dem die Rezepte aufgelistet werden, die der Lieferant eingereicht hat.
+* Jede Lieferantenseite kann einen Abschnitt enthalten, in dem die Rezepte
+  aufgelistet werden, die der Lieferant eingereicht hat.
 
-Der Gedanke dahinter ist, dass jede Information nur an einer Stelle auf der Website bearbeitet wird.
-Wenn Lieferanteninformationen aktualisiert werden, werden diese Informationen auf allen Rezepten
-des jeweiligen Lieferanten angezeigt und aktualisiert, nachdem Sie an einer Stelle auf der Website
-aktualisiert wurden. Wird ein neues Rezept von einem Lieferanten eingereicht, werden die Informationen
-zum Lieferanten automatisch auf dem neu eingestellten Rezept angezeigt, ohne dass diese auf der Rezeptseite
-selbst manuell eingetragen werden müssen. Das Modul Views, das mit dem Kernsystem ausgeliefert wird, ist das Modul, das
-üblicherweise verwendet wird, um modulare Inhalte zu Seitenabschnitten oder vollständigen Webseiten zusammenzusetzen.
-Siehe: <<views-concept>> für weitere Informationen. Außerdem sind _Ansichtsmodi_ nützlich um unterschiedliche 
-Anzeigearten für den selben Inhalt zu definieren.
-Siehe: <<structure-view-modes>> für weitere Informationen.
+Der Gedanke dahinter ist, dass jede Information nur an einer Stelle auf der
+Website bearbeitet wird. Wenn Lieferanteninformationen aktualisiert werden,
+werden diese Informationen auf allen Rezepten des jeweiligen Lieferanten
+angezeigt und aktualisiert, nachdem Sie an einer Stelle auf der Website
+aktualisiert wurden. Wird ein neues Rezept von einem Lieferanten eingereicht,
+werden die Informationen zum Lieferanten automatisch auf dem neu eingestellten
+Rezept angezeigt, ohne dass diese auf der Rezeptseite selbst manuell
+eingetragen werden müssen. Das Modul Views, das mit dem Kernsystem ausgeliefert
+wird, ist das Modul, das üblicherweise verwendet wird, um modulare Inhalte zu
+Seitenabschnitten oder vollständigen Webseiten zusammenzusetzen.
+Siehe: <<views-concept>> für weitere Informationen. Außerdem sind
+_Ansichtsmodi_ nützlich um unterschiedliche  Anzeigearten für den selben Inhalt
+zu definieren. Siehe: <<structure-view-modes>> für weitere Informationen.
 
 ==== Verwandte Themen
 
