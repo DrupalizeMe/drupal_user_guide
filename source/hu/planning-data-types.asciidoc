@@ -51,45 +51,33 @@ Fontos még, hogy ezek _entitástípusokba_ vannak sorolva, amelyeknek más-más
 
 | Tartalom egy eleme | Tartalomtípus | _Node_ modul
   | Ez fogja kitölteni a webhely oldalainak legnagyobb, középső területét.
-| 3+| *Példa:* A termelői piac példánknál maradva 3 altípusát hozzuk létre ennek az entitásnak: egy _Egyszerű oldalt_ (amit majd az olyan sima szöveges oldalak létrehozásához fogunk használni, mint a Rólunk, Impresszum és Küldetés), egy _Árus oldala_ (amit már nemcsak mi, adminisztrátorok fogunk tudni szerkeszteni, hanem szerepkörük révén a kereskedők is a sajátjaikat), és egy _Recept oldalt_ (amit pedig már dinamikusan, mezőhivatkozásokból állít elő a Drupal). +
-{nbsp} +
-{nbsp} +
+  | 3+| *Példa:* A termelői piac példánknál maradva 3 altípusát hozzuk létre ennek az entitásnak: egy _Egyszerű oldalt_ (amit majd az olyan sima szöveges oldalak létrehozásához fogunk használni, mint a Rólunk, Impresszum és Küldetés), egy _Árus oldala_ (amit már nemcsak mi, adminisztrátorok fogunk tudni szerkeszteni, hanem szerepkörük révén a kereskedők is a sajátjaikat), és egy _Recept oldalt_ (amit pedig már dinamikusan, mezőhivatkozásokból állít elő a Drupal).
 
 | Hozzászóláslánc | Hozzászólástípus | _Comment_ modul
   | Felhasználók személyes megjegyzései, amelyeket leggyakrabban tartalmakhoz (lásd előző sor) fűznek.
-| 3+| *Példa:* Egy blogon a naplóbejegyzések alatt gyakran lehet kommentelni. A mi termelői piac webhelyünkön azonban nem fogunk hozzászólásokat használni. +
-{nbsp} +
-{nbsp} +
+  | 3+| *Példa:* Egy blogon a naplóbejegyzések alatt gyakran lehet kommentelni. A mi termelői piac webhelyünkön azonban nem fogunk hozzászólásokat használni.
 
 | Felhasználói fiók | (nincs altípusa) | _User_ modul
   | Minden, a webhelyre bejelentkezési joggal rendelkező személlyel kapcsolatos adatot ilyen entitásként tárolunk.
-| 3+| *Példa:* Ma már minden dinamikusan működő webhelyen van valamilyen felhasználói profil: a legegyszerűbb a felhasználónév és e-mail cím kiírása, de a közösségi hálózatok természetesen jóval részletesebb adatlapokat biztosítanak. +
-{nbsp} +
-{nbsp} +
+  | 3+| *Példa:* Ma már minden dinamikusan működő webhelyen van valamilyen felhasználói profil: a legegyszerűbb a felhasználónév és e-mail cím kiírása, de a közösségi hálózatok természetesen jóval részletesebb adatlapokat biztosítanak.
 
 | Egyéni blokk | Blokktípus | _Custom Block_ modul
   | Általában rövidebb szövegrészletek kisebb képekkel, amelyeket gyakran az oldalsávokon, vagy fej- és láblécekben helyeznek el.
-| 3+| *Példa:* A termelői piac webhelyén készítünk például egy _Nyitvatartás_ blokkot a jobb oldalsávra. +
-{nbsp} +
-{nbsp} +
+  | 3+| *Példa:* A termelői piac webhelyén készítünk például egy _Nyitvatartás_ blokkot a jobb oldalsávra.
 
 | Taxonómiakifejezés | Taxonómia-szótár | _Taxonomy_ modul
   | Leginkább a többi fajta entitás (lásd fentebbi sorok) címkézésével azok kategorizálására használatos.
-| 3+| *Példa:* A termelői piac webhelyén osztályozhatjuk a _Recept_ tartalomtípus elemeit egy taxonómia-szótárral (mondjuk legyen a neve _Szükséges összetevők_), amiben két kifejezés (répa és paradicsom) van felvéve. Egy blogon a bejegyzéseket akár két, egymással párhuzamosan működő szótárral is címkézhetjük: míg a _Téma_ szótár három kifejezése (szakmai, hobbi, magánélet) a poszt témaköre szerint, addig a _Címkék_ szótár változó kifejezései pedig a megemlített fogalmak alapján csoportosíthatják ugyanazt a blogbejegyzést. +
-{nbsp} +
-{nbsp} +
+  | 3+| *Példa:* A termelői piac webhelyén osztályozhatjuk a _Recept_ tartalomtípus elemeit egy taxonómia-szótárral (mondjuk legyen a neve _Szükséges összetevők_), amiben két kifejezés (répa és paradicsom) van felvéve. Egy blogon a bejegyzéseket akár két, egymással párhuzamosan működő szótárral is címkézhetjük: míg a _Téma_ szótár három kifejezése (szakmai, hobbi, magánélet) a poszt témaköre szerint, addig a _Címkék_ szótár változó kifejezései pedig a megemlített fogalmak alapján csoportosíthatják ugyanazt a blogbejegyzést.
 
 | Fájl | (nincs altípusa) | _File_ modul
   | Lehet például egy fotóillusztráció egy cikkhez vagy egy letölthető jelentkezési lap PDF-ként, a lényeg, hogy a webhely szoftvere kezeli.
-| 3+| *Példa:* Példánknál maradva a _Recept_ és _Árus_ tartalomtípusok (lásd fent) egyaránt kínálhatnak képfeltöltési lehetőséget, amit a háttérben a webhely fájl entitásokként fog látni. +
-{nbsp} +
-{nbsp} +
+  | 3+| *Példa:* Példánknál maradva a _Recept_ és _Árus_ tartalomtípusok (lásd fent) egyaránt kínálhatnak képfeltöltési lehetőséget, amit a háttérben a webhely fájl entitásokként fog látni.
 
 | Kapcsolatfelvételi űrlap | Űrlaptípus | _Contact_ modul
   | Ezen az űrlapon keresztül a látogatók úgy írhatnak e-mailt a webhely üzemeltetőinek, hogy nem kell tudniuk hozzá a címzett e-mail címét.
-| 3+| *Példa:* A termelői piac webhelyén is használunk kapcsolatfelvételi űrlapot.
+  | 3+| *Példa:* A termelői piac webhelyén is használunk kapcsolatfelvételi űrlapot.
 |=============================================
-{nbsp} +
+
 
 ==== Mik azok a mezők?
 Így, hogy már alaposan átnéztük az entitástípusokat (első oszlop), jogosan merül fel a kérdés, hogy miben térnek el az altípusaik (második oszlop) egymástól? Elsősorban abban, hogy különböző fajta adatokat is képesek tárolni úgy, hogy közben megmaradnak ugyanannak a szülő-entitástípus gyermekének. Ez úgy lehetséges, hogy a _mezők_ eltérő készletéből épülnek fel.
