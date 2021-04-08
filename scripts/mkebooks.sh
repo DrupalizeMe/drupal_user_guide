@@ -46,33 +46,25 @@ do
 
   # Copy image files and config files to e-book directory.
   cp ../source/$lang/images/*.png ../output/ebooks/$lang/images
-  cp fop-conf.xml ../output/ebooks/$lang
   cp *.xsl ../output/ebooks/$lang
+  cp fop-conf.xml ../output/ebooks/$lang
   cp foprocess._php ../output/ebooks/$lang
 
   # Run the rest of the script from the output directory.
   cd ../output/ebooks/$lang
 
-  # Make FO intermediate file for PDF output. Which font to use depends on the
-  # language.
-  if [ "$lang" = "fa" ]; then
+  # Use dblatex to convert to PDF, except for Farsi, which doesn't work.
+  if [[ "$lang" = "fa" ]] ; then
       xmlto fo -m pdf-farsi.xsl guide.docbook
-
-  elif [ "$lang" = "zh-hans" ]; then
-      xmlto fo -m pdf-cjk.xsl guide.docbook
-
-  elif [ "$lang" = "ja" ]; then
-      xmlto fo -m pdf-takao.xsl guide.docbook
-
+      php foprocess._php guide.fo guide.fop
+      fop -c fop-conf.xml -fo guide.fop -pdf guide.pdf
   else
-      xmlto fo -m pdf.xsl guide.docbook
-
+      if [[ -s dblatex-$lang.xsl ]] ; then
+          dblatex --pdf -b xetex -T db2latex -p dblatex.xsl -p dblatex-$lang.xsl -o guide.pdf guide.docbook
+      else
+          dblatex --pdf -b xetex -T db2latex -p dblatex.xsl -o guide.pdf guide.docbook
+      fi
   fi
-
-  # Process the FO output to remove certain characters and language attributes.
-  php foprocess._php guide.fo guide.fop
-  # Process this output into PDF.
-  fop -c fop-conf.xml -fo guide.fop -pdf guide.pdf
 
   # Run the xmlto processor to convert from DocBook to ePub.
   # The syntax is:
