@@ -26,7 +26,7 @@ Siehe:<<planning-structure>>.
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
 (_admin/structure/types_). Die Seite _Inhaltstypen_ erscheint und zeigt alle
 verfügbare Inhaltstypen an. Beachten Sie, dass die Namen und Beschreibungen der
-Inhaltstypen, die von Ihrem Installationsprofil bereitgestellt wurden auf dieser Seite, in englisch angezeigt werden. Siehe: <<language-concept>> für weitere Informationen.
+Inhaltstypen, die von Ihrem Installationsprofil bereitgestellt wurden auf dieser Seite, in Englisch angezeigt werden. Siehe: <<language-concept>> für weitere Informationen.
 
 
 . Klicken Sie auf _Inhaltstyp hinzufügen_. Die Seite _Inhaltstyp_ hinzufügen erscheint. Füllen Sie das Formular anhand der unten dargestellten Tabelle  aus.
@@ -44,9 +44,7 @@ Inhaltstypen, die von Ihrem Installationsprofil bereitgestellt wurden auf dieser
 image:images/structure-content-type-add.png["Adding a Content type"]
 --
 
-. Konfigurieren Sie unter _Anmeldeformular-Einstellungen_ das Formular, das
-die für die Erstellung und Bearbeitung von Inhalten dieser Art verwendet werden. Füllen Sie die Felder wie gezeigt aus
-unten.
+. Konfigurieren Sie unter _Anmeldeformular-Einstellungen_ das Formular, das für die Erstellung und Bearbeitung von Inhalten dieser Art verwendet wird. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -67,14 +65,14 @@ Inhalte dieser Art. Füllen Sie die Felder wie unten dargestellt aus.
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Beispielwert
-| Veröffentlicht | Das Inhaltselement wird standardmäßig veröffentlicht. | Geprüft
+| Veröffentlicht | Das Inhaltselement wird standardmäßig veröffentlicht. | angekreuzt
 | Zur Startseite befördert | In einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte auf der Startseite anzuzeigen. | Nicht angekreuzt
 | Sticky at top of lists | In einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte an der Spitze einer Liste zu halten. | Nicht angekreuzt
-| Neue Revision erstellen | Erstellen Sie jedes Mal, wenn der Anbieter bearbeitet wird, eine neue Revision. | Geprüft
+| Neue Revision erstellen | Erstellen Sie jedes Mal, wenn der Anbieter bearbeitet wird, eine neue Revision. | angekreuzt
 |================================
 +
 Die Änderung dieser Einstellungen wirkt sich nicht auf die Inhaltselemente aus, die bereits
-erstellt.
+erstellt wurden.
 +
 --
 // Publishing settings section of admin/structure/types/add.
@@ -82,13 +80,12 @@ image:images/structure-content-type-add-Publishing-Options.png["Publishing Optio
 --
 
 . Entscheiden Sie unter _Anzeigeeinstellungen_, ob der Autor und
-Das Veröffentlichungsdatum wird im Inhaltselement sichtbar sein. Füllen Sie die Felder als
-siehe unten.
+das Veröffentlichungsdatum  im Inhaltselement sichtbar sein wird. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Beispielwert
-| Informationen zu Autor und Datum anzeigen | Zeigen Sie auf jeder Anbieterseite den Benutzernamen des Autors und das Veröffentlichungsdatum an. | Nicht markiert
+| Informationen zu Autor und Datum anzeigen | Zeigen Sie auf jeder Anbieterseite den Benutzernamen des Autors und das Veröffentlichungsdatum an. | Nicht angekreuzt
 |================================
 +
 --
@@ -110,7 +107,7 @@ image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
 --
 
 . Klicken Sie auf _Speichern und Felder verwalten_, um den Inhaltstyp zu speichern. Die
-Die Seite _Felder verwalten_ erscheint, auf der Sie Felder zum Inhalt hinzufügen können.
+Seite _Felder verwalten_ erscheint, auf der Sie Felder zum Inhalt hinzufügen können.
 type. See <<structure-fields>>
 +
 --
@@ -119,7 +116,7 @@ image:images/structure-content-type-add-confirmation.png["Confirmation",width="1
 --
 
 . Führen Sie die gleichen Schritte aus, um einen Inhaltstyp für Rezepte anzulegen. Beispiel-Werte
-für die Felder in den Formularen, wenn sie sich von den obigen Schritten unterscheiden:
+für die Felder in den Formularen, wenn dies sich von den obigen Schritten unterscheiden:
 +
 [width="100%",frame="topbot",options="header"]
 |================================

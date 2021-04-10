@@ -3,7 +3,7 @@
 === Konzept: Cron
 
 [role="summary"]
-Überblick über Cron und darüber wie diese Modul sich von Unix-Dienst Cron unterscheidet.
+Überblick über Cron und darüber wie dieses Modul sich vom Unix-Dienst Cron unterscheidet.
 
 (((Cron task,overview)))
 (((Automated Cron module,overview)))
@@ -12,13 +12,13 @@
 
 ==== Was sind Cron-Aufgaben?
 
-Um sicherzustellen, dass Ihre Website und ihre Module weiterhin gut funktionieren, solten bestimmte Verwaltugsaufgaben in regelmäßigen Abständen, auf Ihrer Website ausgeführt werden. 
+Um sicherzustellen, dass Ihre Website und ihre Module weiterhin gut funktionieren, sollten bestimmte Verwaltugsaufgaben in regelmäßigen Abständen, auf Ihrer Website ausgeführt werden. 
 
 Diese Aufgben werden _Cron_-Jobs genannnt
 
 Beispiele für Cron-Aufgaben sind:
 
-* Das Prüfren auf Aktualisierungen für Module und Themes, 
+* Das Prüfen auf Aktualisierungen für Module und Themes, 
 
 * Die Indexierung von Inhalten für die Suche oder
 
@@ -26,7 +26,7 @@ Beispiele für Cron-Aufgaben sind:
 
 ==== Wie hängen Cron-Aufgaben und der Unix-Dienst Cron zusammen?
 
-Linux/Unix-basierte Betriebssysteme verfügen über einen Dienst, der Cron-Aufgaben zeitgesteuert, d. h. in regelmäßigen Abständen ausfüht. 
+Linux/Unix-basierte Betriebssysteme verfügen über einen Dienst, der Cron-Aufgaben zeitgesteuert, d. h. in regelmäßigen Abständen ausführt. 
 Sie können den Zeitplaner Cron, der sich auf Ihrem Webserver befindet verwenden, um Wartungsaufgaben auf Ihrer Website auszuführen. Alternativ können Sie das mit dem Kernsystem ausgelieferte Modul Automated Cron verwenden, um diese Aufgaben ausführen zu lassen.
 Sie können den Status der Cron-Aufgaben Ihrer Website im Statusbericht überprüfen.
 

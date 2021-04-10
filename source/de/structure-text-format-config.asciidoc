@@ -20,7 +20,7 @@ Wie man eine Änderung an einem Textformat und der Konfiguarion von Texteditoren
 
 ==== Zielsetzungsetzung
 
-Fügen Sie zum Textformat _Einfachs HTML_ das HTML-Tag für horizontale Linien zu Lite der erlaubten HTML-Tags hinzu und ergänzen Sie die Konfiguatio des zugeordneten Texteditors um eine entsprechende Schaltfläche.
+Fügen Sie zum Textformat _Einfachs HTML_ das HTML-Tag für horizontale Linien zu Liste der erlaubten HTML-Tags hinzu und ergänzen Sie die Konfiguation des zugeordneten Texteditors um eine entsprechende Schaltfläche.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -29,17 +29,17 @@ Fügen Sie zum Textformat _Einfachs HTML_ das HTML-Tag für horizontale Linien z
 ==== Anforderungen an die Website
 
 * Die Kernsystemmodule Filter, Editor und CKEditor müssen installiert sein. Die Module wurden automaitsch installiert,
-wenn Sie das installationsprofil Standard zur Installation Ihrer Website verwendet haben.
+wenn Sie das Installationsprofil Standard zur Installation Ihrer Website verwendet haben.
 
 * Das Textformat _Einfaches HTML_ muss vorhanden sein. Dieses wird auf Ihrer Site erstellt, wenn Sie
-Ihre Website unter Verwendung des installationsprofils Standard aufsetzen.
+Ihre Website unter Verwendung des Installationsprofils Standard aufsetzen.
 
 ==== Arbeitsschritte
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ > _Inhalt
 Verfassen_ > _Textformate und Editoren_ (_admin/configuration/content/formats_).
 Die Seite _Textformate und Editoren_ erscheint. Beachten Sie, dass die Namen der Textformate
-die mit Ihrem Installationsprofil geliefert wurden,auf der Wbsite auf englisch angezeigt werden. Lesen sie den Abschnitt
+die mit Ihrem Installationsprofil geliefert wurden, auf der Website evtl. auf englisch angezeigt werden. Lesen sie den Abschnitt
 <<language-concept>> um den Grund hierfür zu erfahren.
 
 . Klicken Sie hinter dem Textformat _Einfaches HTML_ auf _Konfigurieren_. Die Seite _Einfaches HTML_
@@ -59,15 +59,15 @@ image:images/structure-text-format-config-editor-config.png["Configuring the edi
 . Beachten Sie, dass Sie die _Filter-Verarbeitungsreihenfolge_ ändern können.
 
 . Unter _Filtereinstellungen_ > _Erlaubte HTML-Tags einschränken und fehlerhaftes HTML_ korrigieren,
-überprüfen Sie im Feld _Erlaubte HTML-Tags_, ob `<hr>` vorhanden ist (fügen Sie seine
-Editor-Schaltfläche werden die erlaubten Tags automatisch aktualisiert).
+überprüfen Sie im Feld _Erlaubte HTML-Tags_, ob `<hr>` vorhanden ist (fügen Sie eine
+Editor-Schaltfläche hinzu, werden die erlaubten Tags automatisch aktualisiert).
 +
 --
 // Allowed HTML tags area on text format edit page.
 image:images/structure-text-format-config-allowed-html.png["Configuring the HTML tags",width="100%"]
 --
 
-. Klicken Sie auf _Konfiguration speichern_. Sie gelangen zurück auf die Seite _Textformaten und
+. Klicken Sie auf _Konfiguration speichern_. Sie gelangen zurück auf die Seite _Textformate und
 Editoren_. Es wird eine Meldung angezeigt, dass das Textformat
 aktualisiert worden ist.
 +

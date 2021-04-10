@@ -24,14 +24,14 @@ jede Darstellungsvariante, oder _Bildstil_, ist das Ergebnis der Anwendung eines
 _Effekte_ auf das Originalbild.
 
 Sie können beispielsweise ein hochauflösendes Bild mit einem Seitenverhältnis von 4:3 hochladen,
-und und dieses verkleinert, quadratisch zugeschnitten oder schwarz-weiß anzeigen lassen (Sie kkönnen auch eine beliebige Kombination diesesr Effekte verwenden). Das Kernsystem, stellt hierzu einen effizienten Weg zur Verfügung:
+und und dieses verkleinert, quadratisch zugeschnitten oder schwarz-weiß anzeigen lassen (Sie können auch eine beliebige Kombination dieser Effekte verwenden). Das Kernsystem, stellt hierzu einen effizienten Weg zur Verfügung:
 
 . Konfigurieren Sie einen Bildstil mit den gewünschten Effekten auf der Seite _Bildstile_.
 (_admin/config/media/image-styles_).
 
 . Die Effekte werden angewendet, wenn ein bestimmtes Bild zum ersten Mal unter Verwendung dieses Bildstils angefordert  wird.
 
-. Das so erzeugt e Bild wird gesopeichert.
+. Das so erzeugte Bild wird gesopeichert.
 
 . Wenn derselbe Bildstil das nächste Mal angefordert wird, wird das gespeicherte Bild abgerufen.
 ohne das der Bildstil neu berechnet werden muss.
