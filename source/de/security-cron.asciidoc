@@ -39,7 +39,7 @@ es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Ser
   <<prevent-log>>) eine Fehlermeldung ausgegeben, die darüber Informiert, dass Wartungsaufgaben mittels Cron nicht abgeschlossen werden konnten.
   * Das Modul Automated Cron bietet aber auch einen Vorteil. Durch den Einsatz des Moduls Automated Cron fallen geringere Kosten bezüglich der
   https://de.wikipedia.org/wiki/Skalierbarkeit[Skalierbarkeit] an.
-  Dies liegt daran, ein Cron-Job, dass einen Prozess auf einem Webserver ausführt, der erst abgeschlossen werden muss, bevor andere Websites bedient werden können.
+  Dies liegt daran, dass ein Cron-Job, der einen Prozess auf einem Webserver ausführt, dieser dann erst abgeschlossen werden muss, bevor andere Websites bedient werden können.
 
 . Wenn Sie das Kernsystemmodul Automated Cron verwenden möchten, stellen Sie zunächst sicher, dass es
 installiert ist (Das Installationsprofil Standard installiert das Modul automatisch. Siehe:

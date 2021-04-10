@@ -24,24 +24,24 @@
 ==== Was ist ein Referenzfeld?
 
 Ein _Referenzfeld_ ist ein Feld, das eine Beziehung zwischen einer Entität
-und eine oder mehrere andere Entitäten, die derselben oder einer anderen Entität angehören können
-tippen. Die 3 am häufigsten verwendeten Referenzfeldtypen sind:
+und einer oder mehreren anderen Entitäten herstellt. Diese können derselben oder einer anderen Entität angehören.
+Die drei am häufigsten verwendeten Referenzfeldtypen sind:
 
 Inhaltsreferenz::
-  Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte dn Lieferanten zuordnen wollen, 
+  Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte den Lieferanten zuordnen wollen, 
   die sie eingereicht haben. Dazu würden Sie ein Inhaltsreferenzeld anlegen, dass den Namen „Eingereicht von“ trägt und von den 
   eingereichten Rezepten aus auf das Profil des Lieferanten verweist, der das Rezept eingereicht 
   hat.
 
 Taxonomie-Begriffsreferenz::
   Eine Referenz auf einen Taxonomiebegriff. Beispielsweise könnten Sie auf Rezepten eine Liste von Zutaten
-  anlegen und diese als Taxonomiebegrife abspeichern. Auf einem Rezept würden Sie dann die Zutaten für das jeeilige gericht referenzieren. #
-  Dazu würden Sie im inhaltstyp Rezept ein Refernezfeld anlegen, dass auf das Taxonomievokabular verweist, das die Zutaten enthölt, die es auf
-  dem Wochenmarkt zu kaufen gibt.das Referenzfeld selbst würde das Taxonomievokabular 
+  anlegen und diese als Taxonomiebegriffe abspeichern. Auf einem Rezept würden Sie dann die Zutaten für das jeweilige Gericht referenzieren. #
+  Dazu würden Sie im Inhaltstyp Rezept ein Referenzfeld anlegen, dass auf das Taxonomievokabular verweist, welches die Zutaten enthält, die es auf
+  dem Wochenmarkt zu kaufen gibt. Das Referenzfeld selbst würde das Taxonomievokabular 
   Zutaten referenzieren.
 
 Benutzer-Referenz::
-  Eine Referenz auf ein Benutzerkonto. Zum Beispiel könnten Sie auf Rezepten die Küchenshefs referenzieren, die auf dem Wochenmarkt Ihre Zutaten
+  Eine Referenz auf ein Benutzerkonto. Zum Beispiel könnten Sie auf Rezepten die Küchenchefs referenzieren, die auf dem Wochenmarkt Ihre Zutaten
   für das jewielige Rezept beziehen. Dafür würden Sie im Inhaltstyp Rezept ein Referenfeld vom Typ 
   Benutzer anlegen.
 
