@@ -11,8 +11,7 @@ Wie man eine Inhaltsstruktur plant und Inhalten die richtigen Entitätstypen zuo
 
 Erstellen Sie einen Plan für die Inhaltsstruktur der Website. Aus diesem soll
 hervorgehen, welche Entitätstypen und Entitäts-Subtypen für welche Art von
-Inhalten verwendet werden sollen und auf Welchen Seiten welche Inhalte
-angezeigt werden sollen.
+Inhalten verwendet werden sollen und welche Inhalte auf den Seiten angezeigt werden sollen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -24,12 +23,12 @@ angezeigt werden sollen.
 
 ==== Arbeitsschritte
 
-. Halten Sie ein Brainstorming darüber ab, welche Inhalte Ihre Website enthalten muss, z. B.
+. Machen Sie sich Gedanken darüber, welche Inhalte Ihre Website enthalten muss, z. B.
   Inhalte, nach denen Besucher suchen würden, sowie Inhalte, die den Besuchern
   Ihrer Website angezeigt werden sollen. Das Ergebnis könnte die Beschreibung in
   <<preface-scenario>> sein.
 
-. Entscheiden Sie für jedes identifizierte Stück Inhalt, welcher
+. Entscheiden Sie für jeden identifizierten Teil des Inhalt, welcher
 Inhalts-Entitätstyp am besten geeignet ist. Dabei müssen Sie überlegen,
 wo und wie der Inhalt auf der Website verwendet und bearbeitet werden soll.
 Im Beispiel des Szenarios des Wochenmarktes könnten die Öffnungszeiten und der
@@ -66,7 +65,7 @@ hierfür erforderlichen Berechtigungen zugewiesen worden sind.
 . Entscheiden Sie für jede Unterart des Entitätstyps Inhalt, die Sie auf
   Ihrer Website etablieren, welche Felder benötigt werden, um alle notwendigen
   Informationen im jeweiligen Subtyp erfassen zu können. Der Inhaltstyp
-  Lieferant benötigt z. B. möglicherweise Felder für den den Namen des
+  Lieferant benötigt z. B. möglicherweise Felder für den Namen des
   Lieferanten, die URL zur Webseite des Lieferanten, ein Feld für ein Bild
   bzw. Logo und ein Feld in dem Lieferanten detaillierte Informationen über Ihr
   Unternehmen eintragen können.
@@ -84,8 +83,7 @@ hierfür erforderlichen Berechtigungen zugewiesen worden sind.
   einem Entitätstyp angezeigt werden sollen. Das Ergebnis einer solchen
   Entscheidung, könnte beispielsweise die Liste der Felder sein, die weiter oben
   skizziert wurde. Auf der Seite des Wochenmarktes soll es zum Beispiel eine
-  Liste geben, die,Inhalte vom Typ
-  Rezept auflistet.Diese Rezepte sollen nach den darin enthaltenen Zutaten
+  Liste geben, die Inhalte vom Typ Rezept auflistet. Diese Rezepte sollen nach den darin enthaltenen Zutaten
   gefiltert werden können. Deshalb benötigt der Inhaltstyp Rezept auch ein Feld
   zur Eingabe der enthaltenen Zutaten.
 
@@ -101,10 +99,11 @@ hierfür erforderlichen Berechtigungen zugewiesen worden sind.
 . Überlegen Sie sich: welche Felder als Verweise auf Taxonomie-Begriffe am
   besten geeignet wären.
 
-- Ob die Eingabewerte für diese Felder aus einer Liste zulässiger Begriffe
-  ausgewählt werden sollten oder ob ein Feld Begriffe enthält, die zukünftig
-  weiter ergänzt werden müssen.  Diese Art Felder sind gute Kandidaten für
-  Taxonomiebegriffe. Ein Beispiel ist das Feld Zutaten für den Inhaltstyp Rezept.
+- Ob die Eingabewerte für diese Felder aus einer festen Liste zulässiger Begriffe
+  ausgewählt werden sollten oder 
+- ob ein Feld Begriffe enthält, die zukünftig weiter ergänzt werden können.  
+  Diese Arten von Feldern sind gute Kandidaten für Taxonomiebegriffe.
+  Ein Beispiel ist das Feld Zutaten für den Inhaltstyp Rezept.
 
 . Überlegen Sie sich, welche Felder auf andere Inhaltsentitäten verweisen sollen.
   Ein Beispiel für ein solches Feld  ist Lieferant, da Rezepte von Lieferanten
@@ -122,10 +121,10 @@ Wochenmarkt-Website aus dem Beispielszenario:
 
 |Inhaltselement |Einfache Seite |Hauptseite, über Uns Seite |Titel, Seitentext
 
-|Inhaltsartikel |Lieferant |Eine Seite für jeden Anbieter auf dem Wochenmarkt |
-  Name des Anbieters, Seitentext, Bild, URL
+|Inhaltselement |Lieferant |Eine Seite für jeden Lieferanten auf dem Wochenmarkt |
+  Name des Lieferanten, Seitentext, Bild, URL
 
-|Inhaltsangabe |Rezept |Eine Seite für jedes eingereichte Rezept |
+|Inhaltselement |Rezept |Eine Seite für jedes eingereichte Rezept |
   Rezeptname, Seitentext, Bild, Verweis auf den Lieferanten, der das Rezept eingereicht hat,
   Taxonomie der Zutaten
 
@@ -148,13 +147,13 @@ Im folgenden sind die, für die Beispielwebsite benötigten Inhalte aufgelistet:
 |Seite oder Seitenabschnitt |Entitätstyp und Subtyp |Filter/Sortierung/Seitennavigation |
   Angezeigte Felder
 
-|Lieferantenseite |Artikel der Lieferanten |Alle Lieferanten, alphabetisch, seitenweise |
+|Lieferantenseite |Inhalte für Lieferanten |Alle Lieferanten, alphabetisch, seitenweise |
   Bild, Lieferantenname, Zusammenfasung des Textkörpers
 
-|Seite Rezepte | Rezepte | Inhaltselemente des Rezeptes |
+|Rezepteseite |Inhaltselemente der Rezepte |
   Filtern nach Zutaten, alphabetisch, seitenweise |Bild, Rezeptname
 
-|Seitenleiste |Rezeptinhalte |Liste 5 neueste Rezepte |Liste der 5 neuesten Rezepte |
+|Seitenleiste, Neuste Rezepte |Inhaltselemente der Rezepte  |Liste der 5 neuesten Rezepte |
   Bild, Rezeptname
 
 |=============================================

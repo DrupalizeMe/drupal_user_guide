@@ -30,7 +30,7 @@
 ===== Festplattenspeicherplatz
 
 Die Gesamtmenge des für Ihre Website benötigten Speicherplatzes
-ist keine feste Größe. der Benötigte Speicherplatz hängt von Ihrer Website ab.
+ist keine feste Größe. Der Benötigte Speicherplatz hängt von Ihrer Website ab.
 Die Basisdateien des Kernsystems nehmen etwa 100 MB Speicherplatz
 auf dem Webserver in Anspruch. Weiterer Speicherplatz wird benötigt, sobald Sie
 zusätzliche Module oder Themes installieren. Außerdem wird Speicherplatz auch
@@ -43,7 +43,7 @@ Server) befindet.
 
 ===== PHP
 
-PHP 7.2 oder höher. PHP muss mindestens 64 MB Arbeitsspeicher
+PHP 7.3 oder höher. PHP muss mindestens 64 MB Arbeitsspeicher
 zur Verfügung stehen. Wenn Sie
 mehrere Module auf Ihrer Website ausführen oder speicherintensive PHP-basierte
 Kommandozeilen-Tools (wie Composer) verwenden, wird wesentlich mehr
@@ -76,7 +76,7 @@ Lokaler PHP-Server::
 
 Nginx::
   Nginx ist ein häufig verwendeter Webserver, der vor allem bei hohem Zugriffsaufkommen
-  auf Ihre Website zur gleichen Zeit, hohe Leistung und geringen
+  zur gleichen Zeit auf Ihrer Website , hohe Leistung und geringen
   Speicherverbrauch ausgelegt ist. Das Kernsystem funktioniert auf Nginx 1.1
   oder neuer, unter UNIX/Linux, Mac OS X oder Windows. Das Modul ngx_http_rewrite_
   muss installiert und aktiviert sein.
@@ -93,12 +93,12 @@ Microsoft IIS::
 
 Verwenden Sie eine der folgenden Datenbanken:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) oder höher mit einer
+* MySQL - 5.7.8 (MariaDB 5.5.20, Percona 5.5.8) oder höher mit einer
 InnoDB-kompatiblen Primärspeicher-Engine
 
-* PostgreSQL - 9.1.2 oder höher
+* PostgreSQL - 10.0 oder höher mit der pg_trgm Erweiterung
 
-* SQLite - 3.4.2 oder höher. Temporäre lokale Demo-Websites verwenden SQLite,
+* SQLite - 3.26 oder höher. Temporäre lokale Demo-Websites verwenden SQLite,
 das als Teil von PHP ausgeliefert wird und keine Installation einer separaten
 Datenbank-Software erfordert.
 
