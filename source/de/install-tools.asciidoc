@@ -20,19 +20,17 @@
 
 // ==== Erforderliche Vorkenntnisse
 
-==== Welche Werkzeuge stehen Site-Buildern zur Verfügung?
+==== Welche Werkzeuge stehen Seiten-Gestaltern zur Verfügung?
 
-Es gibt verschiedene zusätzliche Tools, die Ihnen helfen, Websites schneller
-und präziser mit weniger Aufwand zu erstellen.
+Es gibt verschiedene zusätzliche Tools, die Ihnen helfen, Websites schneller, präziser und mit weniger Aufwand zu erstellen.
 
 Drush und Drupal-Console::
   Mehr über Kommandozeilenwerkzeuge erfahren Sie weiter unten.
 Git::
   Mehr über Versionskontrollwerkzeuge erfahren Sie weiter unten.
-Composer:::
+Composer::
   Weitere Informationen zu Composer finden Sie weiter unten.
-Devel::: Weitere Informationen zu Devel finden Sie weiter unten:
-  Das   von der Community bereitgestellte Zusatzmodul
+Devel:: Das von der Community bereitgestellte Zusatzmodul
   https://www.drupal.org/project/devel[Devel] hilft bei
   Entwicklungsaufgaben wie beispielsweise dem Debuggen und dem Inspizieren von
   Quelltext, der Analyse von Datenbankabfragen und der Generierung von
@@ -58,9 +56,9 @@ automatisieren.
 Benutzeroberfläche zur Verfügung stehen. Zum Beispiel das Ausführen von
 Datenbankabfragen.
 
-Die beliebtesten Werkzeuge sind http://www.drush.org[Drush] und
+Die beliebtesten Werkzeuge sind http://www.drush.org[Drush] und die 
 https://drupalconsole.com[Drupal-Console]. Drush ist schon länger verfügbar, und
-bietet sowohl befehle für das Kernsystem als auch für die von der Community
+bietet sowohl Befehle für das Kernsystem als auch für die von der Community
 bereitgestellten Zusatzmodule. Drupal Console wurde zunächst als Werkzeug für Modulentwickler erdacht,
 besitzt aber eine wachsende Liste von Befehlen für
 Site-Builder. Dieses Handbuch dokumentiert Befehle aus der neuesten stabilen
@@ -96,12 +94,11 @@ sein. Versionskontrollsysteme bieten unter anderem folgende Vorteile:
 
 * Sie können lokal testen, bevor Sie Dateien auf ihrer Live-Site bereitstellen.
 
-* Sie können frühere Versionen von Dateien betrachten und vergleichen oder ältere
-  Dateiversionen wiederherstellen.
+* Sie können frühere Versionen von Dateien betrachten, vergleichen oder wiederherstellen.
 
-* Sie können sich hinzugefügte, geänderte oder gelöschte Dateien ansehen,
+* Sie können hinzugefügte, geänderte oder gelöschte Dateien ansehen,
   bevor Sie sich mit den Änderungen an Ihrem Projekt _einverstanden_
-  erklären und diese an Ihre Repository übertragen (um diese zu aktualisieren).
+  erklären und dadurch das Repository aktualisieren.
 
 * Sie können Änderungen von verschiedenen Teammitgliedern zusammenführen,
 
@@ -130,16 +127,16 @@ https://getcomposer.org/[Composer] ist ein Werkzeug zur Verwaltung von
 PHP-Abhängigkeiten, mit dessen Hilfe Entwickler angeben, welche Version
 jeder verwendeten externen Software-Bibliothek in Ihrem Projekt
 (Modul, Theme, Website) verwendet wird. Composer übernimmt mittels dieser
-Angaben das Herunterladen und die Installation dieser Abhängigkeiten.
+Angaben das Herunterladen und die Installation der angegebenen Bibliotheken.
 
 Das Kernsystem verwendet hauptsächlich deshalb Composer, weil es aus mehreren
 extern entwickelten Software-Bibliotheken besteht, die heruntergeladen
 und installiert werden müssen, damit das Kernsystem funktionieren kann.
 Wenn Sie das Kernsystem installieren, können Sie
-entweder ein Archiv herunterladen, das kompatible Versionen der
+entweder ein Archiv herunterladen, welches kompatible Versionen der
 externen Bibliotheken enthält oder Sie verwenden Composer, um die externen
 Bibliotheken nach dem Herunterladen des Kernsystems
-aus dem Internet herunterladen und installieren zu lassen.
+aus dem Internet herunterzuladen und installieren zu lassen.
 Auch die Kommandozeilenwerkzeuge Drush und Drupal-Console können mittels
 Composer installiert werden.
 
@@ -156,7 +153,7 @@ werden können.
 
 ==== Welche Werkzeuge stehen Modul- und Theme-Entwicklern (Designern) zur Verfügung?
 
-Zusätzlich zu den oben erwähnten Werkzeugen für Site-Buildern sind folgende
+Zusätzlich zu den oben erwähnten Werkzeugen für Seiten-Gestalter sind folgende
 Werkzeuge für Modul- und Theme-Entwickler verfügbar.
 
 Drupal-Console::
