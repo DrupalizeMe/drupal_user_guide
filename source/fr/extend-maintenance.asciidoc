@@ -12,8 +12,7 @@ maintenance", et comment le désactiver.
 
 ==== Objectif
 
-Mettre votre en site en mode maintenance pour permettre aux utilisateurs avec
-les bons droits d'utiliser votre site tandis que les utilisateurs sans ce droit
+Mettre votre en site en mode maintenance pour permettre aux utilisateurs disposant des droits d'administration d'utiliser votre site tandis que les utilisateurs sans ce droit
 verront s'afficher un message indiquant que le site est en maintenance.
 
 ==== Prérequis
@@ -27,7 +26,7 @@ Drush doit être installé. Consulter <<install-tools>>.
 
 ==== Étapes
 
-Vous pouvez utiliser l'interface d'administration ou Drush pour activer ou
+Vous pouvez utiliser l'interface d'administration de votre site ou Drush pour activer ou
 désactiver le mode maintenance.
 
 ===== Activer le mode maintenance en utilisant l'interface d'administration
@@ -95,9 +94,7 @@ image:images/extend-maintenance-mode-disabled.png["Mode maintenance désactivé"
 
 ===== Activer ou désactiver le mode maintenance en utilisant Drush
 
-. Suivre les étapes ci-dessus concernant l'interface utilisateur pour modifier
-le message affiché lorsque le site est en mode maintenance, si vous le
-souhaitez.
+. Pour modifier le message affiché lorsque le site est en mode maintenance, suivre les étapes ci-dessus concernant l'interface utilisateur.
 
 . Lancer les commandes Drush suivantes pour activer le mode maintenance et vider
 le cache :
