@@ -29,7 +29,7 @@ l'interface d'administration) ou en utilisant Drush.
 
 Télécharger et installer le
 https://www.drupal.org/project/admin_toolbar[module contribué Admin Toolbar],
-qui permet de naviguer facilement dans la section d'administration du site web.
+qui permet de naviguer facilement dans le menu d'administration du site web.
 
 ==== Prérequis
 
@@ -62,11 +62,11 @@ pour l'interface d'administration ci-dessous.
 ===== En utilisant l'interface d'administration
 
 . Sur la page du projet _Admin toolbar_ sur drupal .org
-(_https://www.drupal.org/project/admin_toolbar_), faire défiler jusqu'à la
-section _Downloads_ (téléchargements) en bas de page.
+(_https://www.drupal.org/project/admin_toolbar_), dérouler la page jusqu'à la
+section _Downloads_ (téléchargements) en bas.
 
 . Copier l'adresse du lien du _tar.gz_. Selon votre machine ou votre navigateur,
-vous pourriez réaliser cette opération en effectuant un clic droit et et
+vous pourriez réaliser cette opération en effectuant un clic droit et en
 sélectionnant _Copier l'adresse du lien_.
 +
 --
@@ -92,8 +92,8 @@ _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-2.4.tar.gz_
 . Cliquer sur _Installer_ pour télécharger et décompresser le nouveau module sur
 le serveur. Les fichiers sont téléchargés dans le répertoire _modules_.
 
-. Cliquer sur sur _Activer les modules récemment ajoutés_ pour retourner à la
-page _Extension_. Si vous avez utilisé la procédure de téléversement manuelle
+. Cliquer sur _Activer les modules récemment ajoutés_ pour retourner à la
+page _Extension_. Si vous avez utilisé la procédure de téléchargement manuelle
 mentionnée ci-dessus, alors vous pouvez continuer avec cette étape, et atteindre
 la page _Extend_ en utilisant le menu d'administration _Gérer_ et en naviguant
 vers _Extension_ (_admin/modules_).
@@ -102,18 +102,17 @@ vers _Extension_ (_admin/modules_).
 
 . Cliquer sur _Installer_ pour activer le nouveau module.
 
-===== En utilisant Drush pour installer un module
+===== En utilisant Drush
 
-. Trouver le nom du projet pour le module que vous voulez installer, qui est le
-dernier segment de l'URL de la page de projet du module. Par exemple, si l'URL
+. Trouver le nom du projet qui correspond au module que vous voulez installer, il s'agit du dernier segment de l'URL de la page de projet du module. Par exemple, si l'URL
 du projet est _https://www.drupal.org/project/admin_toolbar_, le nom du projet
 est "admin_toolbar".
 
 . Télécharger le module en utilisant soit les étapes dans
 <<extend-manual-install>>, soit dans <<install-composer>>.
 
-. Exécuter la commande Drush suivante, en donnant le nom du projet (par exemple,
-`admin_toobar`) en paramètre :
+. Exécuter la commande Drush suivante, en donnant le nom du projet en paramètre (par exemple,
+`admin_toobar`) :
 +
 ----
 drush pm:enable admin_toolbar
