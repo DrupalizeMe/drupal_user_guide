@@ -35,8 +35,8 @@ Télécharger et installer un thème depuis _Drupal.org_.
 
 ==== Prérequis du site
 
-Si vous voulez installer depuis le site web, le module du cœur Update Manager
-doit être installé. Consulter <<config-install>> pour des instructions sur
+Si vous voulez installer un thème depuis le site web, le module du cœur Update Manager
+doit être installé. Consulter <<config-install>> pour les instructions sur
 l'installation de modules.
 
 Si vous voulez utiliser Drush, Drush doit être installé. Consulter
@@ -46,7 +46,7 @@ Si vous voulez utiliser Drush, Drush doit être installé. Consulter
 
 Vous pouvez utiliser l'interface d'administration pour télécharger et installer
 un thème contribué. Si vous êtes en train d'installer un thème personnalisé
-plutôt qu'un thème contribué, si vous voyez un message indiquant que
+plutôt qu'un thème contribué, ou si vous voyez un message indiquant que
 _l'installation de modules et de thèmes requiert un accès FTP à votre serveur_,
 ou si les étapes ci-dessous ne fonctionnent pas pour télécharger et décompresser
 les fichiers du thème, suivre les étapes dans <<extend-manual-install>>. Si vous
@@ -58,10 +58,10 @@ instructions pour l'interface d'administration ci-dessous.
 ===== En utilisant l'interface d'administration
 
 . Sur la page de projet du thème sur drupal.org (par exemple
-_https://www.drupal.org/project/honey_), faire défiler jusqu'à la section
-_Downloads_ en bas de page.
+_https://www.drupal.org/project/honey_), dérouler la page jusqu'à la section
+_Downloads_ en bas.
 
-. Faites un clic droit sur le _tar.gz_ pour copier l'adresse.
+. Faire un clic droit sur le _tar.gz_ pour copier l'adresse.
 +
 --
 // Downloads section of a theme project page on drupal.org.
@@ -83,11 +83,11 @@ image:images/extend-theme-install-page.png["Installer un thème"]
 Cette valeur pourrait ressembler à
 `https://ftp.drupal.org/files/projects/honey-1.0.1.tar.gz`.
 
-. Cliquer sur _Installer_ pour téléverser et décompresser le nouveau thème sur
+. Cliquer sur _Installer_ pour télécharger et décompresser le nouveau thème sur
 le serveur. Les fichiers sont téléchargés dans le répertoire _themes_.
 
 . Cliquer sur _Activer les thèmes récemment ajoutés_ pour retourner à la page
-_Apparence_. Si vous avez utilisé la procédure de téléversement manuelle
+_Apparence_. Si vous avez utilisé la procédure de téléchargement manuelle
 mentionnée plus haut, alors vous pouvez continuer avec cette étape, et atteindre
 la page _Apparence_ en utilisant le menu d'administration _Gérer_ et en
 naviguant vers _Apparence_ (_admin/appearance_).
@@ -103,16 +103,15 @@ image:images/extend-theme-install-appearance-page.png["Thèmes désinstallés su
 
 ===== Utiliser Drush pour installer un thème
 
-. Trouver le nom du projet pour le thème que vous voulez installer, qui est le
-dernier segment de l'URL de la page de projet du thème. Par exemple, si l'URL du
+. Trouver le nom du projet qui correspond au thème que vous voulez installer, il s'agit du dernier segment de l'URL de la page de projet du module. Par exemple, si l'URL du
 projet est _https://www.drupal.org/project/honey_, alors le nom du projet est
 `honey`.
 
 . Télécharger le thème en utilisant soit les étapes dans
 <<extend-manual-install>>, soit dans <<install-composer>>.
 
-. Exécuter les commandes Drush suivantes, en donnant le nom du projet (par
-exemple _honey_) en argument :
+. Exécuter les commandes Drush suivantes, en donnant le nom du projet en argument (par
+exemple _honey_) :
 +
 ----
 drush theme:enable honey
