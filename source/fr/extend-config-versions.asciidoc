@@ -3,8 +3,8 @@
 === Synchroniser les versions de la configuration
 
 [role="summary"]
-Comment synchroniser la configuration entre sites de développement et de
-production en utilisant le module du cœur Configuration Manager.
+Comment synchroniser la configuration entre différents sites : développement et
+production, en utilisant le module du cœur Configuration Manager.
 
 (((Configuration,synchroniser entre sites de développement et de production)))
 (((Site de développement,synchroniser avec le site de production)))
@@ -30,14 +30,14 @@ production.
 Consulter <<install-dev-making>>.
 
 * Le module du cœur Configuration Manager doit être installé à la fois sur les
-sites de développement et de production. Consulter <<config-install>> pour des
+sites de développement et de production. Consulter <<config-install>> pour les
 instruction sur l'installation de modules du cœur.
 
 * Vous devez avoir changé la configuration sur le site de développement ou de
-production (_site source_), et vouloir synchroniser les modifications vers
-l'autre site (_site de destination_). Par exemple, vous pouvez développer un
+production (_site source_), et vouloir synchroniser ces modifications d'un site vers
+l'autre (_site de destination_). Par exemple, vous pouvez développer un
 nouveau type de contenu, avec des champs ainsi que des vues sur votre site de
-développement, et quand tout fonctionner correctement, le déployer vers votre
+développement, et quand tout fonctionne correctement, le déployer vers votre
 site de production.
 
 * Toute configuration qui ne devrait pas être synchronisée entre les sites
@@ -49,18 +49,18 @@ _settings.php_ plutôt que dans la base de données. Consulter
 
 . Sur le site source, dans le menu d'administration _Gérer_, naviguer vers
 _Configuration_ > _Développement_ > _Synchronisation de configuration_ >
-_Exporter_ (_admin/config/development/configuration/full/export_).
+_Exporter_ (_admin/config/development/configuration/full/export_). La page Exporter apparaît.
 
 . Cliquer sur _Exporter_. Votre site génèrera une archive de l'ensemble de la
-configuration du site. Enregistrer le fichier sur votre ordinateur local.
+configuration du site. Enregistrer le fichier sur votre ordinateur localement.
 
 . Dans le site de destination, dans le menu d'administration _Gérer_, naviguer
 vers _Configuration_ > _Développement_ > _Synchronisation de configuration_ >
-_Importer_ (_admin/config/development/configuration/full/import_).
+_Importer_ (_admin/config/development/configuration/full/import_). La page Importer apparaît.
 
-. Naviguer pour trouver l'archive contenant la configuration téléchargée, et
+. Sélectionner l'archive contenant la configuration téléchargée localement, et
 cliquer sur _Transférer_. L'archive contenant votre configuration sera
-téléversée vers le site de destination, et vous serez redirigé·e vers la page de
+téléversée vers le site de destination, et vous serez redirigé vers la page de
 configuration _Synchroniser_ (_admin/config/development/configuration_), avec un
 message indiquant que vos fichiers ont bien été transférés.
 
@@ -69,7 +69,7 @@ Vous pourriez voir des éléments de configuration qui ont été ajoutés, suppr
 ou modifiés ; pour les éléments modifiés, vous pouvez cliquer sur _Visualiser
 les différences_ pour voir quelles sont ces modifications.
 
-. Quand vous êtes satisfait·e, cliquer sur _Tout importer_ pour importer les
+. Lorsque le résultat est satifaisant, cliquer sur _Tout importer_ pour importer l'ensemble des
 modifications de la configuration.
 
 ==== Pour approfondir
