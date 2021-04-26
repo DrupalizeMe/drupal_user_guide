@@ -13,8 +13,8 @@ Comment ajouter un affichage de type bloc à une vue.
 ==== Objectif
 
 Ajouter un affichage de type bloc à la vue Recettes pour afficher les recettes
-les plus récentes dans une barre latérale, et changer sa configuration sans
-changer la page Recettes de la vue.
+les plus récentes dans une barre latérale, puis modifier sa configuration sans
+changer celle utilisée par la vue de la page Recettes.
 
 ==== Prérequis
 
@@ -24,8 +24,8 @@ changer la page Recettes de la vue.
 
 ==== Prérequis du site
 
-* Le type de contenu Recettes doit exister, il doit comporter un champ Image
-principale, et votre site doit comporter deux éléments de type Recette.
+* Le type de contenu Recette doit exister, il doit comporter un champ Image
+principale, et votre site doit disposer de deux contenus/pages de type Recette.
 Consulter <<structure-content-type>>, <<structure-fields>>,
 <<structure-form-editing>>, et <<content-create>>.
 
@@ -41,13 +41,13 @@ Consulter <<structure-image-style-create>>.
 
 . Dans le menu d'administration _Gérer_, naviguer vers _Structure_ > _Views_
 (_admin/structure/views_). Trouver la vue "Recettes" et cliquer sur "Modifier"
-dans son bouton déroulant. Alternativement, naviguer vers la page des recettes
-depuis le menu principal, et cliquer sur le lien contextuel _Modifier la vue_
+dans son bouton déroulant. Il est aussi possible de naviguer vers la page des recettes
+depuis le menu principal du site, et de cliquer sur le lien contextuel _Modifier la vue_
 dans la région principale de la page. Consulter <<config-overview>> pour des
 informations sur les liens contextuels.
 
 . Créer un nouvel affichage de type bloc en cliquant sur _Ajouter_ sous
-_Affichages_. Cliquer sur _Bloc_ dans la liste de liens qui apparaît. Le nouvel
+_Affichages_. Cliquer sur _Bloc_ dans la liste de propositions qui apparaît. Le nouvel
 affichage est créé, et le focus passe automatiquement sur sa configuration.
 +
 --
