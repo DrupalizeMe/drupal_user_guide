@@ -22,7 +22,7 @@ fichiers et de la configuration sur votre site.
 
 * <<install-dev-sites>>
 
-* Comment mettre en place un dépôt Git et trouver son URL de clonage. Par
+* Mettre en place un dépôt Git et trouver son URL de clonage. Par
 exemple, si vous voulez utiliser Gitlab pour héberger votre dépôt, consulter les
 pages
 https://docs.gitlab.com/ee/gitlab-basics/create-project.html["Create a project"]
@@ -34,17 +34,17 @@ https://help.github.com/en/articles/create-a-repo["Create a repo"] et
 https://help.github.com/en/articles/which-remote-url-should-i-use["Which remote URL should I use"].
 sur GitHub (en anglais).
 
-* Comment ouvrir et utiliser une fenêtre d'invite de commande et un éditeur de
+* Ouvrir et savoir utiliser une fenêtre d'invite de commande et un éditeur de
 texte.
 
-* Pour gérer la configuration, comment décompresser et compresser des archives
+* Pour gérer la configuration, savoir décompresser et compresser des archives
 (comme _.zip_ et _.tar.gz_).
 
 ==== Prérequis du site
 
-* Vous devez avoir téléchargé le logiciel pour votre site, en utilisant une des
+* Vous devez avoir téléchargé Drupal pour votre site, en utilisant une des
 méthodes exposées dans <<install-decide>>. Si vous voulez gérer la
-configuration, vous devez avoir installé le logiciel et disposer d'un site
+configuration, vous devez l'avoir installé et disposer d'un site
 fonctionnel.
 
 * Un client Git doit être installé sur le serveur de votre site. Consulter
@@ -65,8 +65,7 @@ fichiers de votre site (répertoire racine).
 
 . Déterminer où se trouve la racine du site. Si les répertoires _core_,
 _modules_ et _themes_ se trouvent directement dans ce répertoire, alors vous
-êtes bien à la racine du site. Si vous avez utilisé Composer pour télécharger le
-logiciel, alors ces fichiers se trouvent dans le sous-répertoire _web_ (qui est
+êtes bien à la racine du site. Si vous avez utilisé Composer pour télécharger Drupal, alors ces fichiers se trouvent dans le sous-répertoire _web_ (qui est
 la racine de votre site).
 
 . Dans un éditeur de texte, créer un nouveau fichier appelé _.gitignore_ au
@@ -80,7 +79,7 @@ que le dépôt contienne le logiciel, et non le contenu du site.
 
 . S'assurer que les lignes suivantes se trouvent dans le fichier _.gitignore_.
 Si la racine de votre site ne correspond pas avec le répertoire racine de
-l'installation, modifier en conséquence chacune des lignes si elles nécessitent
+l'installation, modifier en conséquence chacune de ces lignes si elles nécessitent
 un préfixe. Par exemple, il se pourrait que _sites_ doive être remplacé par
 _web/sites_.
 +
@@ -166,7 +165,7 @@ git add path/to/file.txt
 en conséquence le message de la révision :
 +
 ----
-git commit -m "commit message here"
+git commit -m "mon message de commit"
 git push
 ----
 
@@ -190,10 +189,10 @@ membres de l'équipe pourraient avoir des copies locales de votre site.
 fichiers.
 
 . Saisir la commande suivante, en remplaçant l'URL par votre URL de clonage, et
-_dirname_ par le nom du sous-répertoire souhaité :
+_repertoire_ par le nom du sous-répertoire souhaité :
 +
 ----
-git clone https://gitlab.com/example-name/example-repo.git dirname
+git clone https://gitlab.com/example-name/example-repo.git repertoire
 ----
 
 ===== Gérer la configuration dans le dépôt
