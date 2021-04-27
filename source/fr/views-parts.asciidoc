@@ -1,9 +1,9 @@
 [[views-parts]]
 
-=== Concept : les parties constitutives d'une vue
+=== Concept : les parties qui composent une vue
 
 [role="summary"]
-Vue d'ensemble des parties constitutives d'une vue dans l'administration.
+Vue d'ensemble des parties qui composent une vue dans l'administration.
 
 (((Vue,parties constitutives d'une)))
 (((Affichage d'une vue,vue d'ensemble)))
@@ -29,49 +29,47 @@ Vue d'ensemble des parties constitutives d'une vue dans l'administration.
 * <<content-paths>>
 * <<block-concept>>
 
-==== Quelles sont les parties constitutives d'une vue ?
+==== De quoi est composée une vue ?
 
 Quand vous modifiez une vue dans l'interface d'administration, vous voyez les
-parties suivantes (ou sections), qui vous permettent de spécifier quelles
-données générer, dans quel ordre, et dans quel format :
+parties suivantes (ou sections), qui vous permettent de définir les
+données générées, ainsi que leur ordre, et leur format :
 
 Affichage::
   Chaque vue peut avoir un ou plusieurs affichages, chacun produisant un type 
   de rendu. Parmi les options possibles pour les types d'affichage, on trouve :
   Page;;
-    Génère un rendu à une URL particulière, pour le contenu principal de la page
-    à cette URL.
+    Génère une page accessible à une URL donnée, la vue est affichée dans la zone principale de la page.
   Block;;
-    Génère un rendu dans un bloc, qui peut être placé sur des pages.
+    Génère un bloc, qui peut être placé sur des pages.
   Flux;;
     Génère un flux RSS ou d'un autre type.
   vue attachée;;
     Génère un rendu que vous pouvez attacher à un autre affichage.
 Format::
-  Selon le type d'affichage, vous pouvez choisir de rendre vos données sous la
+  Selon le type d'affichage, vous pouvez choisir de présenter vos données sous la
   forme d'un tableau, d'une grille, d'une liste HTML, ou sous un autre format.
-  Quelques formats vous donnent également le choix de rendre des entités ou des
+  Quelques formats vous donnent également le choix de présenter des entités ou des
   champs ; d'autres formats ne vous laissent pas le choix (par exemple, si vous
   utilisez le format tableau, vous devez toujours utiliser des champs).
 Champs::
   Selon le choix du format, vous pourrez choisir quels champs des contenus sont
-  rendus. Par exemple, si vous étiez en train de créer une vue d'éléments de
-  contenu de type "recette", dans un affichage de type bloc vous pourriez ne
-  montrer que les noms des recettes, alors que dans un affichage en pleine page
+  affichés. Par exemple, si vous étiez en train de créer une vue de
+  contenus de type "recette", dans un affichage de type bloc vous pourriez ne
+  montrer que les titres des recettes, alors que dans un affichage en pleine page
   vous pourriez également afficher un champ image parce que vous disposez de
   plus d'espace.
 Critères de filtrage::
-  Les filtres limitent les données à rendre, en se basant sur des critères tels
-  que si le contenu est publié ou non, le type de contenu, ou la valeur d'un
-  champ. Par exemple, pour créer une vue d'éléments de contenu de type
-  "recette", vous auriez besoin de filtrer selon le type de contenu (Recette) et
+  Les filtres limitent les données retournées par la vue, en se basant sur des critères tels
+  que le statut de publication d'un contenu, son type, ou la valeur d'un des champs. Par exemple, pour créer une vue de contenu de type
+  "recette", vous aurez besoin de filtrer selon le type de contenu (Recette) et
   de vous limiter aux recettes publiées. Les filtres peuvent êtres _exposés_, ce
-  qui signifie que les utilisateurs disposeront d'un formulaire où ils peuvent
-  choisir leurs propres valeurs de filtres. Vous pourriez utiliser ceci sur la
+  qui signifie que les utilisateurs disposeront d'un formulaire où ils pourront
+  filtrer avec leurs propres valeurs. Vous pourriez utiliser ceci sur la
   page d'une recette pour permettre aux utilisateurs de filtrer les recettes
   selon certains ingrédients.
 Critères de tri::
-  Ils définissent l'ordre dans lequel présenter le rendu, qui peut être basé sur
+  Ils définissent l'ordre dans lequel présenter les résultats retournés par la vue, il peut être basé sur
   n'importe quel champ du contenu.
 Filtres contextuels::
   Les filtres contextuels sont comme des filtres normaux, à ceci près que les
@@ -81,11 +79,10 @@ Filtres contextuels::
 Relations::
   Les relations vous permettent d'étendre ce qui est affiché dans votre vue, en
   reliant le contenu de base affiché à d'autres entités de contenu. Les
-  relations sont créées en utilisant des champs du contenu de base qui le
-  relient à d'autres contenus ; par exemple, tous les éléments de contenu
-  habituels ont un champ auteur, qui référence le compte d'utilisateur d'une
-  personne auant créé le contenu. Après avoir créé une relation, vous pouvez
-  afficher dans la vue les champs de l'entité référencée.
+  relations sont créées en utilisant les champs du contenu de base qui le
+  relient à d'autres contenus ; par exemple, tous les contenus ont un champ auteur, qui référence le compte d'utilisateur d'une
+  personne qui a créé le contenu. Après avoir créé une relation, vous pourrez
+  afficher dans la vue les champs de l'entité utilisateur référencée.
 
 ==== Sujets liés
 
