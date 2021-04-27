@@ -18,13 +18,13 @@ Vue d'ensemble des méthodes que vous pouvez utiliser pour télécharger le cœu
 
 ==== Quelles sont les méthodes disponibles pour télécharger le cœur ?
 
-Avant de construire un site, vous devrez d'abord télécharger le cœur (core). En
+Pour construire un site, vous devrez d'abord télécharger le cœur (core). En
 fonction de vos plans, il y a plusieurs manières de télécharger le cœur :
 
 Essayer une démo en ligne gratuite::
   Si vous êtes en train d'évaluer Drupal en vue de l'utiliser pour construire un
   site, vous pouvez recourir à un fournisseur en ligne pour obtenir une
-  installation de démo du cœur en au plus 20 minutes. Consulter la 
+  installation de démonstration du cœur, cela ne prend pas plus de 20 minutes. Consulter la 
   https://www.drupal.org/try-drupal[page "Try Drupal" sur _Drupal.org_].
 
 Utiliser un installeur en un clic chez votre hébergeur::
@@ -38,7 +38,7 @@ Utiliser un environnement pré-configuré::
   Drupal et tous les composants logiciels requis pour installer Drupal en local.
   Consulter la section concernant votre système d'exploitation sur la
   https://www.drupal.org/docs/develop/local-server-setup[page de documentation de la communauté sur _Drupal.org_ "Local server setup guide"]
-  pour les options envisageables.
+  avec les options envisageables.
 
 Téléchargement manuel depuis le site web::
   Si vous prévoyez de construire un site sans modules complémentaires avec des
@@ -50,7 +50,7 @@ Utiliser Composer::
   Si vous prévoyez d'utiliser l'outil Drush (consulter <<install-tools>>), ou si
   vous êtes en train de construire un site qui pourrait utiliser des modules
   avec des dépendances complexes, vous devriez utiliser Composer pour
-  télécharger le cœur, parce que Composer gèrera correctement les dépendances.
+  télécharger le cœur, car Composer gèrera correctement les dépendances.
   Si vous commencez votre site en le téléchargeant manuellement, vous pourrez
   plus tard le convertir en une installation utilisant Composer. Consulter
   <<install-composer>> pour des instructions pour le téléchargement et la
