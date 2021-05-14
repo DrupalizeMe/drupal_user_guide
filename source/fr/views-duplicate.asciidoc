@@ -13,7 +13,7 @@ Comment créer une nouvelle page en dupliquant une vue.
 
 Créer une page listant les recettes en dupliquant la vue des marchands
 existante. Modifier la page de manière à ce que les recettes soient affichées
-sour la forme d'une grille et puissent être filtrées selon les ingrédients.
+sous la forme d'une grille et puissent être filtrées selon les ingrédients.
 
 ==== Prérequis
 
@@ -78,7 +78,7 @@ bouton déroulant sous _Critères de filtrage_. Rechercher "ingrédients" et coc
 "Ingrédients (field_ingredients)". Cliquer sur _Ajouter et configurer le critère
 de filtrage_.
 
-. La fenêtre modale qui apparaît offre des paramètres supplémentaires concernant
+. La fenêtre modale qui apparaît propose des paramètres supplémentaires concernant
 le vocabulaire et le type de sélection. Cliquer sur _Appliquer et continuer_. La
 fenêtre modale suivante permet d'exposer ce filtre aux visiteurs. Remplir les
 champs comme indiqué ci-dessous, et cliquer sur _Appliquer_.
@@ -101,9 +101,9 @@ cliquer sur "/vendors" dans les champ _Chemin_ sous _Paramètres de la page_.
 Dans la fenêtre modale qui apparaît, saisir le chemin "recipes" et cliquer sur
 _Appliquer_.
 +
-Noter que quand on modifie une vue, les chemins sont saisis sans la barre
+Noter que lorsque l'on modifie une vue, les chemins sont saisis sans la barre
 oblique ("/") initiale, contrairement à d'autres pages d'administration (comme
-lorsque l'on fournit un chemin dans la page d'un type de contenu)
+lorsque l'on fournit un chemin dans la page d'un type de contenu).
 
 . Pour modifier le titre du lien dans le menu, cliquer sur "Normal : Marchands"
 dans le champ _Menu_ sous _Paramètres de la page_. Dans la fenêtre modale qui
@@ -127,7 +127,7 @@ image:images/views-duplicate_final.png["Vue recettes",width="100%"]
 ==== Pour approfondir
 
 Le lien vers la vue dans la navigation principale ne sera probablement pas au
-bon endroit. Modifier l'ordre des liens de menu dans la navigation principale.
+bon endroit dans le menu. Modifier l'ordre des liens de menu dans la navigation principale.
 Consulter <<menu-reorder>>.
 
 ==== Concepts liés
