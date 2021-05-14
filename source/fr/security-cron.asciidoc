@@ -12,7 +12,7 @@ Automated Cron, ou en les exécutant depuis l'extérieur du site.
 ==== Objectif
 
 Vérifier que les tâches planifiées (cron) de maintenance sont lancées
-régulièrement, et, si tel n'est pas le cas, installer le module du cœur
+régulièrement, sinon, installer le module du cœur
 Automated Cron ou lancer les tâches planifiées de maintenance depuis l'extérieur
 du site web.
 
@@ -34,18 +34,16 @@ pourraient déjà être lancées via le module du cœur Automated Cron. Par déf
 ces tâches sont lancées environ toutes les trois heures.
 
 . Choisir si les tâches planifiées de maintenance doivent être lancées en
-utilisant le module du cœur Automated Cron, ou par d'autres moyens. Le module du
-cœur Automated Cron pourrait ne pas être approprié pour certains sites parce
-que :
+utilisant le module du cœur Automated Cron, ou avec d'autres moyens. Le module du
+cœur Automated Cron pourrait ne pas être approprié pour certains sites, voici quelques raison à cela :
 +
-  * Chaque fois que quelqu'un accède à une page du site, le module vérifie
+  * Chaque fois qu'un utilisateur accède à une page du site, le module vérifie
   depuis combien de temps les tâches cron de maintenance n'ont pas été lancées,
   et les lance alors si nécessaire. Si personne ne visite le site web pendant
   une assez longue période, les tâches planifiées de maintenance ne seront pas
   lancées.
   * Les tâches planifiées de maintenance ne sont lancées qu'après la génération
-  de la page. Cela signifie qu'il y a moins de temps pour exécuter la tâche
-  avant d'atteindre divers temps limites du serveur (par exemple, le temps
+  de la page. Cela signifie que la tâche doit être jouée avant le temps maximum alloué au serveur (par exemple, le temps
   limite d'exécution de PHP). Si ceci se produit, les journaux (consulter
   <<prevent-log>>) afficheront des messages d'erreurs indiquant que le cron est
   dans l'incapacité d'arriver à son terme.
@@ -54,7 +52,7 @@ que :
   processus du serveur web est occupé (et ne peut pas servir d'autres pages web)
   jusqu'à la fin de la tâche planifiée de maintenance.
 
-. Si vous voulez utiliser le module du cœur Automated Cron, s'assurer d'abord
+. Si vous voulez utiliser le module du cœur Automated Cron, il faut s'assurer d'abord
 qu'il est bien installé (il est installé avec le profil d'installation
 _Standard_ du cœur ; consulter <<config-install>> s'il n'est pas installé).
 +
