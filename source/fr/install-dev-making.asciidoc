@@ -51,7 +51,7 @@ Pour réaliser une copie brute, essayer une des méthodes suivantes :
 +
 ----
 drush sql:dump --gzip --structure-tables-list="cache,cache_*" \
-  --result-file='PATH/TO/BACKUPFILE.sql'
+  --result-file='CHEMIN/DE/LA/SAUVEGARDE.sql'
 ----
 +
   * Si vous utilisez MySQL et avez accès à la ligne de commande, utiliser cette
@@ -59,11 +59,11 @@ drush sql:dump --gzip --structure-tables-list="cache,cache_*" \
   base de données ainsi que l'identifiant et le mot de passe) :
 +
 ----
-mysqldump -u'USERNAME' -p'PASSWORD' DATABASENAME | \
-  gzip > PATH/TO/BACKUPFILE.sql.gz
+mysqldump -u'IDENTIFIANT' -p'MOTDEPASSE' NOMDELABASEDEDONNEES | \
+  gzip > CHEMIN/DE/LA/SAUVEGARDE.sql.gz
 ----
 
-  * Si vous utilisez MySQL comme base de données, et phpMyAdmin est installé sur
+  * Si vous utilisez MySQL comme base de données, et que phpMyAdmin est installé sur
   le serveur de votre site de production (il est disponible depuis beaucoup de
   tableaux de bord d'hébergeurs), vous pouvez tronquer les tables du cache en
   les sélectionnant dans le tableau de phpMyAdmin présentant la structure de la
@@ -76,9 +76,9 @@ mysqldump -u'USERNAME' -p'PASSWORD' DATABASENAME | \
   instructions sur l'installation de modules contribués.
 +
 Vous disposez maintenant d'une copie de la base de données stockée dans le
-fichier _BACKUPFILE.sql.gz_. Pour des raisons de sécurité, éviter de stocker ce
+fichier _SAUVEGARDE.sql.gz_. Pour des raisons de sécurité, éviter de stocker ce
 fichier sur le serveur de votre hébergement sous la racine de votre site Drupal.
-Celan empêchera des tiers d'accéder à une copie de votre base de données.
+Cela empêchera des tiers d'accéder à une copie de votre base de données.
 
 . Copier tous les fichiers depuis la racine de votre site en production vers
 celle de votre site de développement. Vous pourriez souhaiter utiliser Git pour
@@ -142,14 +142,14 @@ de développement. Essayer une des méthodes suivantes :
   compressé avec gzip, vous devrez aussi le décompresser au préalable) :
 +
 ----
-gunzip < PATH/TO/BACKUPFILE.sql.gz | \
-  mysql -u'USERNAME' -p'PASSWORD' DATABASENAME
+gunzip < CHEMIN/DE/LA/SAUVEGARDE.sql.gz | \
+  mysql -u'IDENTIFIANT' -p'MOTDEPASSE' BASEDEDONNEES
 ----
 +
   * Si vous préférez utiliser Drush, utiliser cette commande :
 +
 ----
-drush sql:query --file='PATH/TO/BACKUPFILE.sql.gz'
+drush sql:query --file='CHEMIN/DE/LA/SAUVEGARDE.sql.gz'
 ----
 
 . Si vos sites de développement et de production nécessitent des éléments de
