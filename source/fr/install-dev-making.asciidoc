@@ -111,21 +111,23 @@ que cette chaîne de caractères prend une valeur aléatoire. Dans le cas
 contraire, il vous faudra l'ajouter ou le modifier afin d'éviter une erreur
 fatale :
 +
+--
 ----
 $settings['hash_salt'] = 'une_chaine_aleatoire';
 ----
-+
+
 Une manière de produire une chaîne aléatoire pour le salage du hachage consiste
 à exécuter la commande Drush suivante :
-+
+
 ----
 drush php-eval 'echo
   \Drupal\Component\Utility\Crypt::randomBytesBase64(55) . "\n";'
 ----
-+
+
 Si vous n'utilisez pas Drush, il existe de nombreux sites web et des
 applications mettant à disposition des générateurs de chaînes aléatoires ;
 s'assurer de générer une chaîne longue d'au moins 74 caractères.
+--
 
 . Importer la copie de la base de données créée dans la base de données du site
 de développement. Essayer une des méthodes suivantes :
