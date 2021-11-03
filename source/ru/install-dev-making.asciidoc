@@ -99,6 +99,28 @@ $databases['default']['default'] = [
 $settings['trusted_host_patterns']
 ----
 
+. Проверьте ваш файл _settings.php_ имеет следующую настройку и здесь установлена
+строка со случайными символами. Если это не так, тогда вам нужно добавить или отредактировать
+настройку, чтобы не возникала ошибка:
++
+--
+----
+$settings['hash_salt'] = 'строка_с_любым_содержимым';
+----
+
+Один из путей создания строки со случайными значениями для хэш соли с использованием следующей Drush
+команды:
+
+----
+drush php-eval 'echo
+  \Drupal\Component\Utility\Crypt::randomBytesBase64(55) . "\n";'
+----
+
+Если вы не используете Drush, тогда воспользуйтесь одним из множества веб сайтов или приложений, которые
+генерируют случайные строки символов; вы можете сгенерировать строку примерно
+длинной в 74 символа.
+--
+
 . Импортируйте файл базы данных, который вы создали, в базу данных сайта для
 разработки. Попробуйте один из следующих методов:
 +
@@ -168,5 +190,4 @@ https://drupalize.me[Drupalize.Me] и
 https://www.drupal.org/u/jojyja[Jojy Alphonso] из
 http://redcrackle.com[Red Crackle].
 
-Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван] из
-https://www.technocrat.com.au/[Technocrat].
+Переведено https://www.drupal.org/u/levmyshkin[Абраменко Иван] из https://drupalbook.org/ru[DrupalBook].
