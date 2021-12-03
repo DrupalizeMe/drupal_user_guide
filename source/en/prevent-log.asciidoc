@@ -23,6 +23,9 @@ only way to tell what is going on.
 
 You can find your site's recent log messages in the _Manage_ administrative menu
 by navigating to _Reports_ > _Recent log messages_ (_admin/reports/dblog_).
+These logs may be cleared by administrators and automated cron tasks, so they
+should not be used for https://en.wikipedia.org/wiki/Audit_trail[forensic
+logging]. For forensic purposes, use the Syslog module.
 
 // Recent log messages report (admin/reports/dblog).
 image:images/prevent-log.png["Recent log messages of a basic site",width="100%"]
