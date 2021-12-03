@@ -31,13 +31,17 @@ must have at least two languages. See <<language-add>>.
 
 The basic steps for translating any configuration on your site are:
 
-. Locate the page where the configuration you want to translate is created or
-edited in the site's primary language. For example, to translate the site name,
-you need to find the page where you would edit the site name (see
-<<config-basic>>).
+. In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Regional and Language_ > _Configuration translation_
+(_admin/config/regional/config-translation_).
 
-. Find a link, tab, or button on the page that says "Translate" or something
-similar. Click this link, tab, or button.
+. Locate the configuration item that you would like to translate. For example,
+to translate the site name, you need to find _System information_. For
+configuration that is grouped by type (for example, views or date formats),
+click the _List_ button to list all configuration of that type, and then locate
+the item you are looking for.
+
+. Click _Translate_ for the item you located.
 
 . Find a button that will let you add a translation in the desired language, and
 click this button.
@@ -51,12 +55,15 @@ rather than being a simple form with just a few fields. As an example of how to
 translate a view, here are the steps to translate the labels in the Recipes view
 to Spanish:
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_).
+. In the _Manage_ administrative menu, navigate to _Configuration_ >
+_Regional and Language_ > _Configuration translation_
+(_admin/config/regional/config-translation_).
 
-. Locate the Recipes view and click _Translate_ from the dropdown button.
+. Click _List_ in the _Views_ row.
 
-. Click _Add_ in the row _Spanish_. The page _Add Spanish translation for
+. Click _Translate_ in the Recipes row.
+
+. Click _Add_ in the _Spanish_ row. The page _Add Spanish translation for
 Recipes view_ appears.
 
 . Under _Displays_ > _Master Display settings_ > _Recipes default display
