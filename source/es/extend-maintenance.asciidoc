@@ -102,7 +102,8 @@ desired.
 cache:
 +
 ----
-drush sset system.maintenance_mode 1
+drush config:set system.maintenance message "mensaje opcional" -y
+drush state:set system.maintenance_mode 1 --input-format=integer
 drush cr
 ----
 
@@ -110,7 +111,7 @@ drush cr
 cache:
 +
 ----
-drush sset system.maintenance_mode 0
+drush state:set system.maintenance_mode 0 --input-format=integer
 drush cr
 ----
 

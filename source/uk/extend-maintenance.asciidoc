@@ -92,6 +92,7 @@ image:images/extend-maintenance-mode-disabled.png["Режим обслугову
 кеш:
 +
 ----
+drush config:set system.maintenance message "додаткове повідомлення" -y
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----

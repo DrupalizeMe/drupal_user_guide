@@ -102,6 +102,7 @@ desired.
 cache:
 +
 ----
+drush config:set system.maintenance message "Optional message" -y
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----

@@ -102,6 +102,7 @@ gewünscht zu bearbeiten.
 und den Cache zu leeren:
 +
 ----
+drush config:set system.maintenance message "optionale Nachricht" -y
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----

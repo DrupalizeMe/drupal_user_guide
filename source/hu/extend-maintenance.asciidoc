@@ -82,6 +82,7 @@ image:images/extend-maintenance-mode-disabled.png["Webhely rendes üzemmódban m
 . Parancssoros ablakban futtassuk az alábbi utasításokat, amelyek először engedélyezik a karbantartási módot, majd rögtön utána kiürítik a gyorsítótárat:
 +
 ----
+drush config:set system.maintenance message "opcionális üzenet" -y
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----
