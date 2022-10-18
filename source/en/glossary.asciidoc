@@ -13,14 +13,18 @@
 (((Alias,definition)))
 [[glossary-alias]] Alias::
    A user-friendly name to replace the internal <<glossary-path,path>> that
-   the system assigns to a URL on the site. For example, you might assign an
-   alias of _/about_ to the About page on your site, to replace the internal
-   path _/node/5_. This would give the page a URL of _http://example.com/about_
+   the system assigns to a <<glossary-url,URL>> on the site. For example, you
+   might assign an alias of _/about_ to the About page on your site, to replace
+   the internal path _/node/5_. This would give the page a URL of _http://example.com/about_
    instead of _http://example.com/node/5_. See <<content-paths>> for more
    information.
 (((Anonymous,definition)))
 [[glossary-anonymous]] Anonymous::
    A person (<<glossary-user,user>>) interacting with the site who is not logged
+   in. See <<user-concept>> for more information.
+(((Authenticated,definition)))
+[[glossary-authenticated]] Authenticated::
+   A person (<<glossary-user,user>>) interacting with the site who is logged
    in. See <<user-concept>> for more information.
 (((Block,definition)))
 [[glossary-block]] Block::
@@ -44,6 +48,18 @@
    External caching systems can also be used on the web server to speed up
    a site's response. See <<prevent-cache>> for more information on the
    internal cache.
+(((Coder, definition)))
+[[glossary-coder]] Coding standards::
+   Coding standards are the rules for programmers that define best practices,
+   formatting, and various other rules, so that everyone uses the same
+   conventions and has the same expectations when they see code. See
+   <<install-tools>> for more information.
+(((Composer,definition)))
+[[glossary-composer]] Composer::
+   The PHP dependency manager used by Drupal, <<glossary-drush, Drush>>,
+   <<glossary-drupal-console, Drupal console>>, the Symfony framework and
+   others. It is the preferred means of installing Drupal projects. See
+   <<install-composer>> for more information.
 (((CMS (Content Management System),definition)))
 (((Content Management System (CMS),definition)))
 [[glossary-cms]] CMS::
@@ -80,6 +96,11 @@
    has its own fields. For example, a site for a farmers market might have a
    content type for simple pages, and another for a vendor listing page.
    See <<planning-data-types>> for more information.
+(((Contextual Filter, definition)))
+[[glossary-contextual-filter]] Contextual Filter (in a View)::
+  Limits the data to be output in a <<glossary-view, view>>, based on the
+  context of the view <<glossary-display, display>>, such as the full URL of
+  the page. See  <<views-parts>> for more information.
 (((Contextual link,definition)))
 [[glossary-contextual-link]] Contextual link::
    A link to an administrative page for editing or configuring a feature of the
@@ -102,6 +123,24 @@
    Your site defines periodic tasks, also known as cron tasks, that need to be
    triggered either by an operating system cron scheduler, or internally. See
    <<security-cron-concept>> for more information.
+(((Cross Site Scripting (XSS), definition)))
+[[glossary-cross-site-scripting]] Cross Site Scripting::
+   Security vulnerability typically found in websites. In a site that is not
+   well protected, malicious users can enter script into web pages that are
+   viewed by other users. See <<structure-text-formats>> for more information.
+(((Devel, definition)))
+[[glossary-devel]] Devel::
+   Module that helps with development tasks such as debugging and inspecting
+   code, analyzing database queries, and generating dummy content. See
+   <<install-tools>> for more information.
+(((Development site,definition)))
+[[glossary-development-site]] Development site::
+   Copy of the live website that is used for developing, updating, and testing
+   the website. See <<install-dev-sites>> for more information.
+(((Display, definition)))
+[[glossary-display]] Display (in a View)::
+  Type of output of a <<glossary-view, view>>, for example a page, a
+  <<glossary-block, block>> or a feed. See <<views-parts>> for more information.
 (((Distribution,definition)))
 [[glossary-distribution]] Distribution::
    A single download that provides a shortcut for setting up a specific type
@@ -109,12 +148,31 @@
    distribution contains <<glossary-drupal-core,Drupal core>>, along with
    <<glossary-contributed,contributed>> <<glossary-module,modules>> and/or
    <<glossary-theme,themes>>; many distributions also pre-configure the site
-   or even create sample content upon installation. See
-   <<understanding-distributions>> for more information.
+   or even create sample content upon <<glossary-installing,installation>>.
+   See <<understanding-distributions>> for more information.
+(((Drupal Association (DA) ,definition)))
+(((DA (Drupal Association),definition)))
+[[glossary-drupal-association]] Drupal Association::
+   Non-profit organization dedicated to supporting the Drupal project and
+   community. See <<understanding-project>> for more information.
 (((Drupal core,definition)))
 [[glossary-drupal-core]] Drupal core::
    The files, themes, profiles, and modules included with the standard
    project software download. See <<understanding-drupal>> for more information.
+(((Drupal console,definition)))
+[[glossary-drupal-console]] Drupal console::
+  Command line shell and scripting interface for Drupal. Comparable with
+  <<glossary-drush, Drush>>. See <<install-tools>> for more information.
+(((Drush,definition)))
+[[glossary-drush]] Drush::
+  Command line shell and scripting interface for Drupal. Comparable with
+  <<glossary-drupal-console, Drupal console>>. See <<install-tools>> for
+  more information.
+(((Editorial workflow, definition)))
+[[glossary-editorial-workflow]] Editorial Workflow::
+   Process to create, review, edit, and publish content. Multiple people in
+   different roles (for example content creators and editors) can be part
+   of the process. See <<planning-workflow>> for more information.
 (((Entity,definition)))
 [[glossary-entity]] Entity::
    An item of either <<glossary-content,content>> or
@@ -174,6 +232,11 @@
    there could be a setting for the size of the box. See also
    <<glossary-field-formatter,Field formatter>>. See <<structure-widgets>> for
    more information.
+(((Filter, definition)))
+[[glossary-filter]] Filter (in a View)::
+  Limits the data to be output in a <<glossary-view, view>>, based on criteria
+  such as publication status, type of content, or field value. See
+  <<views-parts>> for more information.
 [[glossary-formatter]] Formatter::
    See <<glossary-field-formatter,Field formatter>>.
 (((FOSS (Free and Open Source Software),definition)))
@@ -183,6 +246,13 @@
    developed by a community of people and released under a non-commercial
    license. See also <<glossary-gpl,GPL>>. See <<understanding-project>> for
    more information.
+(((Git, definition)))
+[[glossary-git]] Git::
+  <<glossary-vcs, Version control system>> used by Drupal developers to
+  coordinate their individual code changes. Git records everyone’s changes to a
+  given project in a directory tree called a git
+  <<glossary-repository, repository>>. See <<install-tools>> for more
+  information.
 (((GPL (General Public License or GNU General Public License),definition)))
 (((GNU General Public License,definition)))
 [[glossary-gpl]] GPL::
@@ -197,6 +267,12 @@
    A set of processing steps that transform a base image into a new image;
    typical processing includes scaling and cropping. See
    <<structure-image-styles>> for more information.
+(((Installing,definition)))
+[[glossary-installing]] Installing::
+   Preparing Drupal core or any contributed theme or module for usage. In the
+   case of Drupal core this means downloading the necessary files, creating the
+   database, configuring and running the installation script. See
+   <<install-decide>> for more information.
 (((LAMP (Linux Apache MySQL PHP),definition)))
 (((Linux Apache MySQL PHP (LAMP),definition)))
 [[glossary-lamp]] LAMP::
@@ -221,11 +297,12 @@
    modules. See <<understanding-modules>> for more information.
 (((Path,definition)))
 [[glossary-path]] Path::
-   The unique, last part of the internal URL that the system assigns to a page
-   on the site, which can be a visitor-facing page or an administrative
-   page. For example, the internal URL for the About page on your site might be
-   _http://example.com/node/5_, and in this case, the path is _node/5_. See also
-   <<glossary-alias,Alias>>. See <<content-paths>> for more information.
+   The unique, last part of the internal <<glossary-url,URL>> that the system
+   assigns to a page on the site, which can be a visitor-facing page or an
+   administrative page. For example, the internal URL for the About page on
+   your site might be _http://example.com/node/5_, and in this case, the path
+   is _node/5_. See also <<glossary-alias,Alias>>. See <<content-paths>> for
+   more information.
 (((Permission,definition)))
 [[glossary-permission]] Permission::
    The ability to perform some action on the site, such as editing
@@ -247,6 +324,14 @@
    defined by <<glossary-theme,themes>>, and the content displayed in each
    region is contained in <<glossary-block,blocks>>. See <<block-regions>> for
    more information.
+(((Relationship, definition)))
+[[glossary-relationship]] Relationship (in a View)::
+  Expansion of the data that is displayed in a view, by relating the base
+  content to other content entities. See <<views-parts>> for more information.
+(((Repository, definition)))
+[[glossary-repository]] Repository::
+   Location where a version control system stores all the files and directories
+   for a project. See <<install-tools>> for more information.
 (((Responsive,definition)))
 [[glossary-responsive]] Responsive::
    A site or <<glossary-theme,theme>> is said to be responsive if it adjusts
@@ -266,6 +351,16 @@
 [[glossary-security-update]] Security update::
    An <<glossary-update,update>> that fixes a security-related bug, such as a
    hacking vulnerability. See <<security-concept>> for more information.
+(((Session,definition)))
+[[glossary-session]] Session::
+  Information about individual site visitors' interactions with the site, such
+  as whether they are logged in and their cookies. See <<understanding-data>>
+  for more information.
+(((Staging site,definition)))
+[[glossary-staging-site]] Staging site::
+   Copy of the live website that can be used for testing, or presenting the
+   changes to the client for approval. See <<install-dev-sites>> for more
+   information.
 (((State,definition)))
 [[glossary-state]] State::
    Information of a temporary nature about the current state of your
@@ -286,8 +381,8 @@
 [[glossary-text-format]] Text format::
    <<glossary-configuration,Configuration>> that defines the processing that
    happens to user-entered text before it is shown in the browser. This might
-   include stripping or limiting HTML tags, or turning URLs into links. See
-   <<structure-text-formats>> for more information.
+   include stripping or limiting HTML tags, or turning <<glossary-url,URLs>>
+   into links. See <<structure-text-formats>> for more information.
 (((Theme,definition)))
 [[glossary-theme]] Theme::
    Software and asset files (images, CSS, PHP code, and/or templates) that
@@ -305,6 +400,11 @@
    <<glossary-theme,theme>>. See also
    <<glossary-security-update,Security update>>. See <<security-concept>> for
    more information.
+(((URL (Uniform Resource Locator),definition)))
+(((Uniform Resource Locator (URL),definition)))
+[[glossary-url]] URL::
+   A web page's unique address on the web. For example
+   https://example.com/node/7. See <<content-paths>> for more information.
 (((User,definition)))
 [[glossary-user]] User::
    A person interacting with the site, either logged-in or
@@ -316,11 +416,17 @@
    interface.
 (((User one,definition)))
 [[glossary-user-one]] User one (User 1)::
-   The initial <<glossary-user,user>> account that is created when you install
-   the site (whose ID number is 1). It automatically has all
-   <<glossary-permission,permissions>>, even if it is not assigned an
-   administrative <<glossary-role,role>>. See <<user-admin-account>> for more
-   information.
+   The initial <<glossary-user,user>> account that is created when you
+   <<glossary-installing,install>> the site (whose ID number is 1). It
+   automatically has all <<glossary-permission,permissions>>, even if it is
+   not assigned an administrative <<glossary-role,role>>. See
+   <<user-admin-account>> for more information.
+(((Version Control System (VCS), definition)))
+(((VCS (Version Control System), definition)))
+[[glossary-vcs]] Version Control System::
+   Software that keeps copies of files and revision history in a
+   <<glossary-repository, repository>>, and allows you to add, delete, and
+   update files. See <<install-tools>> for more information.
 (((View,definition)))
 [[glossary-view]] View::
    A formatted listing of data; typically, the data comes from
@@ -367,3 +473,9 @@
    <<glossary-content,content>> where what you see on the editing screen
    closely resembles the final product. See <<structure-text-format-config>> for
    more information.
+(((Workflow, definition)))
+[[glossary-workflow]] Workflow::
+   See <<glossary-editorial-workflow, Editorial Workflow>>.
+(((XSS (Cross Site Scripting), definition)))
+[[glossary-xss]] XSS::
+   Acronym for <<glossary-cross-site-scripting, Cross Site Scripting>>.
