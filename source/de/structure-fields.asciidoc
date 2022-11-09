@@ -32,7 +32,7 @@ die Namen und Beschreibungen der Inhaltstypen und -felder, auf diesen Seiten eve
 <<language-concept>> für eine Erklärung.
 
 . Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint. Sie können entweder ein neues 
-Feld für den Inhaltstyp hinzufügen oder Sie verwenden ein vorhandenes Feld wieder.
+Feld für den Inhaltstyp hinzufügen oder Sie verwenden ein vorhandenes Feld erneut.
 
 . Füllen Sie die Felder wie unten dargestellt aus.
 +
@@ -40,7 +40,7 @@ Feld für den Inhaltstyp hinzufügen oder Sie verwenden ein vorhandenes Feld wie
 |================================
 | Feldname | Erläuterung | Wert
 | Neues Feld hinzufügen | Feldtyp | Verknüpfung
-| Beschriftung | EBeschriftung, die im Verwaltungsbereich sichtbar ist | URL zur Website des Lieferanten
+| Beschriftung | Beschriftung, die im Verwaltungsbereich sichtbar ist | URL zur Website des Lieferanten
 |================================
 +
 Basierend auf dem Wert _Beschriftung_ wird automatisch ein Systemname generiert. Klicken Sie auf .
@@ -68,7 +68,7 @@ erscheint. Auf dieser können Sie das Feld konfigurieren. Füllen Sie die Felder
 |================================
 |Feldname | Erläuterung | Wert
 | Beschriftung | die Beschriftung, die im Bearbeitungsformular angezeigt wird | URL zur Website des Lieferanten
-| Hilfetext | Die Anweisung, die unter dem Feld | angezeigt wird (leer lassen)
+| Hilfetext | Die Anweisung, die unter dem Feld angezeigt wird (leer lassen) | 
 | Erforderliches Feld | Ob das Feld erforderlich ist oder nicht | Nicht angekreuzt
 | Erlaubter Link-Typ | Die Art der Links, die eingegeben werden können | Nur externe Links
 | Linktext erlauben | Ob ein Linktext eingegeben werden kann | Nicht angekreuzt
@@ -89,7 +89,7 @@ unten.
 |================================
 | Feldname | Erläuterung | Wert
 | Neues Feld hinzufügen | Feldtyp | Bild
-| Beschriftung | Im verwaltungsbereich sichtbare Beschriftung | Hauptbild
+| Beschriftung | Im Verwaltungsbereich sichtbare Beschriftung | Hauptbild
 |================================
 
 . Klicken Sie auf _Speichern und fortfahren_. Die Seite Hauptbild erscheint. Füllen Sie die Felder
@@ -109,8 +109,8 @@ erscheint. Füllen Sie die Felder wie unten dargestellt aus.
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Wert
-| Beschriftung | Beschriftung, die im Inhlat sichtbar ist| Hauptbild
-| Hilfetext | Die Anweisung, die unter dem Feld | angezeigt wird (leer lassen)
+| Beschriftung | Beschriftung, die im Inhalt sichtbar ist| Hauptbild
+| Hilfetext | Die Anweisung, die unter dem Feld angezeigt wird (leer lassen) |
 | Pflichtfeld | Ob das Feld erforderlich ist oder nicht | angekreuzt
 | Erlaubte Dateierweiterungen | Die Art der Bilder, die hochgeladen werden können | png, gif, jpg, jpeg
 | Dateiverzeichnis | Das Verzeichnis, in dem die Dateien gespeichert werden. Indem Sie einen Dateiverzeichniswert angeben, stellen Sie sicher, dass alle Bilder, die über das Feld Hauptbild hochgeladen werden, sich im selben Verzeichnis befinden. | Lieferant
@@ -134,8 +134,7 @@ image:images/structure-fields-result.png["Manage fields page",width="100%"]
 
 . Fügen Sie mit ähnlichen Schritten ein Hauptbildfeld zum Inhaltstyp "Rezept" hinzu. Starten Sie
 indem Sie in Schritt 1 zur Seite _Felder verwalten_ des Inhaltstyps Rezept navigieren. Dann springen Sie zu Schritt 7 und folgen Sie den verbleibenden Arbeitsschritten, aber verwenden Sie das vorhandene Hauptbildfeld wieder, 
-das Sie für den Inhaltstyp Lieferant angelegt haben, anstatt ein neues
-anstatt ein neues Feld zu erstellen. In den folgenden Schritten werden einige der oben gezeigten Seiten nicht angezeigt,
+das Sie für den Inhaltstyp Lieferant angelegt haben, anstatt ein neues neues Feld zu erstellen. In den folgenden Schritten werden einige der oben gezeigten Seiten nicht angezeigt,
 da das Feld wiederverwendet wird und bereits konfiguriert ist.
 
 . Legen Sie zwei Inhalte vom Typ Lieferant (siehe <<content-create>>) mit den Titeln „Happy Farm"
@@ -152,7 +151,7 @@ und „Sweet Honey" an. Stellen Sie sicher, dass sie Bilder und URLs enthalten.
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/CZpfR9WbVcQ[title="Grundlegende Felder zu einem Inhlatstyp hinzufügen (englisch)"]
+video::https://www.youtube-nocookie.com/embed/CZpfR9WbVcQ[title="Grundlegende Felder zu einem Inhaltstyp hinzufügen (englisch)"]
 
 ==== Zusätzliche Ressourcen
 

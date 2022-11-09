@@ -23,7 +23,7 @@ sind die Begriffe (auch Tags genannt), die verwendet werden, um Beiträge auf ei
 oder zu kategorisieren. Die Wochenmarkt-Website könnte eine Taxonomie für Rezeptzutaten verwenden, 
 damit Rezepte nach den darin enthaltenen Zutaten gefiltert und sortiert werden können.
 Einzelne Elemente der Taxonomie sind als _Begriffe_ bekannt (Das können Blog-Themen oder, wie in diesem Beispiel, Zutaten für Rezepte sein). Eine Sammlung einzelner Begriffe, zu einem bestimmten Hauptthema wiedrum wird _Vokabular_ genannt
-(In unserem Beispiel ist das jeweils die Sammlung aller Themenbegriffe, die im blog behandelt werden oder die Sammlung aller Zutaten, die auf dem Wochenmarkt gekauft werden können und in den Rezepten auf der Website verwendet werden). Technisch gesehen sind Taxonomiebegriffe ein Entitätstyp. Der Subtyp dieses Emtitätstyp, sind die Vokabulare, in denen die einzelnen Taxonomiebegriffe gebündelt werden. 
+(In unserem Beispiel ist das jeweils die Sammlung aller Themenbegriffe, die im Blog behandelt werden oder die Sammlung aller Zutaten welche in den Rezepten verwendet werden). Technisch gesehen sind Taxonomiebegriffe ein Entitätstyp. Der Subtyp dieses Emtitätstyp, sind die Vokabulare, in denen die einzelnen Taxonomiebegriffe gebündelt werden. 
 Genau wie andere Entitäten können Taxonomiebegriffe Felder enthalten.
 Sie können einem Taxonomiebegriff beispielsweise ein Bild hinzufügen, und so einrichten, das diesese Bild als Symbol für den Begriff angezeigt wird.
 
@@ -40,8 +40,8 @@ Freies Tagging::
   Die Liste der Begriffe wird außerhalb des Formulars zur Bearbeitung von Inhalten zusammengestellt und verwaltet. Benutzer können dann Begriffe nur aus dieser Liste vordefinierter Begriffe auswählen.
 
 Taxonomiereferenzfelder können zu jeder Entität, wie z.B. Benutzerkonten,
-benutzerdefinierten Blöcken oder regulären Inhalten, hinzugefügt werden. Wenn Sie Taxonomiebegriffe zur Klassifizierung der Inhalte ihrer Website verwenden, wird für jeden angelgten Taxonomiebegriff automatisch auch eine Listenseite erstellt. Eine solche Taxonomiebegriffsseite listet alle Elemente auf, die mit dem jeweiligen Begriff klassifiziert worden sind. Wenn Sie zum Beispiel
-mehrere Rezepte angelgt haben, in denn Karotten als Zutat enhalten sind, sieht die Taxonomiebegriffs-Seite des für das Schalgwort Karrotten vielleicht ähnlich aus wie unten abgebildet:
+benutzerdefinierten Blöcken oder regulären Inhalten, hinzugefügt werden. Wenn Sie Taxonomiebegriffe zur Klassifizierung der Inhalte ihrer Website verwenden, wird für jeden angelegten Taxonomiebegriff automatisch auch eine Listenseite erstellt. Eine solche Taxonomiebegriffsseite listet alle Elemente auf, die mit dem jeweiligen Begriff klassifiziert worden sind. Wenn Sie zum Beispiel
+mehrere Rezepte angelgt haben, in denen Karotten als Zutat enhalten sind, sieht die Taxonomiebegriffs-Seite für das Schlagwort Karrotten vielleicht ähnlich aus wie unten abgebildet:
 
 
 // Carrots taxonomy page after adding Recipe content items.
@@ -50,7 +50,7 @@ image:images/structure-taxonomy_listingPage_carrots.png["Taxonomy listing page -
 ==== Verwandte Themen
 
 * <<structure-taxonomy-setup>>.
-* Die Auflistungsseiten sind Ansichten, die in <<views-chapter>>.
+* Die Auflistungsseiten sind Ansichten, die in <<views-chapter>> behandelt werden.
 
 // ==== Weiterführende Quellen
 

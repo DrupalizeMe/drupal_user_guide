@@ -43,7 +43,7 @@ lesen Sie stattdessen <<install-composer>>, um Anweisungen zur Aktualisierung Ih
 . Laden Sie das tar.gz- oder zip-Dateiarchiv herunter, das  die neueste Version, des Zweigs, des Drupal-Kernsystems enthält, den Sie gerade verwenden (z. B. 8.x oder 9.x), herunter.
 Nutzen Sie dafür den folgenden link: 
 https://www.drupal.org/project/drupal[_Drupal.org_ Downloadseite des Drupal Kernsystems].
-Lesen Sie: <<install-prepare>> um zu erfahren, wie Sie die neueste Version bekommen.
+Lesen Sie: <<install-prepare>> um mehr Einzehlheiten zu erfahren und wie Sie die neueste Version bekommen.
 
 
 . Laden Sie die Archivdatei auf Ihren Server hoch.
@@ -53,7 +53,7 @@ außerhalb des Verzeichnisses liegen, in dem die Website gehostet wird). Der Dat
 sollte eine Möglichkeit bieten, die Dateien zu extrahieren. Wenn Sie über
 Terminal-Zugriff auf Ihren Server (unter Linux) verfügen, können Sie einen Befehl wie:
 
-+
+
 ----
 tar -xzf drupal-8.3.2.tar.gz
 ----
@@ -80,7 +80,7 @@ bis alle Aktualisierungen erfolgreich abgeschlossen wurden.
 . Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_) in einem Texteditor. Suchen Sie die
 Zeile mit der Variable _$settings['update_free_access']_ und aktualisieren Sie sie diese auf den Wert
 "False".
-+
+
 ----
 $settings['update_free_access'] = False;
 ----

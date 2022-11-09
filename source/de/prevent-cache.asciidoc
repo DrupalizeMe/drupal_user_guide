@@ -19,11 +19,11 @@
 ==== Was ist der Cache?
 
 Die Software, die Ihre Website ausführt, muss bei jeder Anfrage an Ihre Website
-folgende Aufgabe abarbeiten:
+folgende Aufgabe bearbeiten:
 
 * Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite
-  zusammen zu stellen die an den Web-Browser oder eine andere Anwendung
-  gesendet wird, die auf die Website zugreift.
+  aufzubauen die an den Web-Browser oder eine andere Anwendung
+  weitergeleitet wird, welche auf die Website zugreifen.
 
 Diese Berechnungen benötigen Zeit. Das bedeutet das die Ladezeit Ihrer Website
 länger ist, als gewünscht.
@@ -38,23 +38,19 @@ Ladevorgang Ihrer Website zu beschleunigen. Die beiden Module
 funktionieren wie folgt:
 
 * Bei der Berechnung der Website werden Zwischenergebnisse der auszuliefernden
-  Inhalte in einem bestimmten Speicherbereich abgelegt.
+  Inhalte und die endgültige Ausgabe der Website  in einem speziellen Bereich der 
+  Datenbank (_Cache_ genannt) gespeichert. 
 
-* Die endgültige Ausgabe der Website wird in einem speziellen Bereich der
-Datenbank (der als _Cache_ bekannt ist) gespeichert.
-
-Wird danach erneut eine Anfrage an die Website gestellt, können die
+Wird danach  eine kompatible Anfrage an die Website gestellt, können die
 zwischengespeicherten Daten gegebenenfalls abgerufen werden, um so die
-Berechnung der Ausgabe der Website zu beschleunigen, ohne, dass die Ausgabe der
-fertigen Website jedes mal komplett neu berechnet werden muss. Darüber hinaus
-werden betroffene Teile der zwischengespeicherten Daten aus dem Cache entfernt,
-wenn Inhalte oder Daten, auf der Website aktualisiert wurden. So wird erzwungen,
+Berechnung der Ausgabe der Website zu beschleunigen, ohne diese jedes mal komplett neu zu berechnen. 
+Die zwischengespeicherten Daten werden aus dem Cache entfernt,
+wenn Inhalte oder Daten, auf der Website verändert wurden. So wird erzwungen,
 dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert
-werden, wenn eine betroffene Seite nach der Aktualisierung des darauf
-enthaltenen Inhalts zum ersten mal neu aufgerufen wird.
+werden, wenn die betreffende Seite neu aufgerufen wird.
 
-Die Cache-Module funktionieren normalerweise recht gut und sorgen zumindest auf
-einigen Websites für bessere Ladezeiten. Manchmal kann der Cache jedoch Probleme
+Die Cache-Module funktionieren normalerweise gut und sorgen auf
+den meisten Websites für bessere Ladezeiten. Manchmal kann der Cache jedoch Probleme
 machen.
 
 Beispielsweise wenn:
@@ -68,7 +64,7 @@ Beispielsweise wenn:
 * Der Cache zu klein ist. Dies führt zu einem verzögerten Aufbau und zu längeren
   Ladezeiten der Website.
 
-==== Welche Daten werden außerdem zwischengespeichert?
+==== Welche anderen Daten werden außerdem im Cache zwischengespeichert?
 
 Unabhängig davon, ob die beiden Cache-Module auf Ihrer Website installiert sind,
 legt die Software, mit der Ihre Website betrieben wird, immer noch jede Menge
@@ -81,8 +77,7 @@ Kernsystem zwischengespeichert:
   müssen Sie den Cache leeren, damit diese neue Template-Datei oder das neue
   Theme erkannt wird.
 
-* CSS- und JavaScript-Dateien können (abhängig von den für die Website
-  festgelegten Einstellungen) optional optimiert und komprimiert werden.
+* CSS- und JavaScript-Dateien können (abhängig von den Einstellungen für die Website) optimiert und komprimiert werden.
   Ist die Optimierung und Komprimierung für diese Dateien aktiviert, werden die
   optimierten und komprimierten Versionen dieser Dateien im Dateisystem der
   Website abgelegt, damit diese nicht zu oft neu optimiert werden müssen.

@@ -44,7 +44,7 @@ Inhaltstypen, die von Ihrem Installationsprofil bereitgestellt wurden auf dieser
 image:images/structure-content-type-add.png["Adding a Content type"]
 --
 
-. Konfigurieren Sie unter _Anmeldeformular-Einstellungen_ das Formular, das für die Erstellung und Bearbeitung von Inhalten dieser Art verwendet wird. Füllen Sie die Felder wie unten dargestellt aus.
+. Konfigurieren Sie unter _Einstellungen für das Eingabeformular_ das Formular, welches für die Erstellung und Bearbeitung von Inhalten dieser Art verwendet wird. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -59,7 +59,7 @@ image:images/structure-content-type-add.png["Adding a Content type"]
 image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
 --
 
-. Entscheiden Sie unter _Veröffentlichungsoptionen_ über Standardoptionen für neue
+. Entscheiden Sie unter _Veröffentlichungseinstellungen_ über Standardoptionen für neue
 Inhalte dieser Art. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
@@ -93,7 +93,7 @@ das Veröffentlichungsdatum  im Inhaltselement sichtbar sein wird. Füllen Sie d
 image:images/structure-content-type-add-Display-settings.png["Display settings"]
 --
 
-. Füllen Sie unter _Menü Einstellungen_ die Felder wie unten dargestellt aus.
+. Füllen Sie unter _Menüeinstellungen_ die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -108,7 +108,7 @@ image:images/structure-content-type-add-Menu-settings.png["Menu settings"]
 
 . Klicken Sie auf _Speichern und Felder verwalten_, um den Inhaltstyp zu speichern. Die
 Seite _Felder verwalten_ erscheint, auf der Sie Felder zum Inhalt hinzufügen können.
-type. See <<structure-fields>>
+type. Siehe <<structure-fields>>
 +
 --
 // Manage fields page after adding Vendor content type.
@@ -116,7 +116,7 @@ image:images/structure-content-type-add-confirmation.png["Confirmation",width="1
 --
 
 . Führen Sie die gleichen Schritte aus, um einen Inhaltstyp für Rezepte anzulegen. Beispiel-Werte
-für die Felder in den Formularen, wenn dies sich von den obigen Schritten unterscheiden:
+für die Felder in den Formularen, wenn diese sich von den obigen Schritten unterscheiden:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -132,11 +132,9 @@ für die Felder in den Formularen, wenn dies sich von den obigen Schritten unter
 * <<structure-fields>>
 
 * Installieren und konfigurieren Sie das https://www.drupal.org/project/pathauto[von der Community bereitgestellte Zusatzmodul Pathauto]
-so dass Inhaltselemente automatisch generierte URLs/Pfad-Aliase erhalten. Siehe: 
-* <<<content-paths>> für weitere Informationen über
-URLs innerhalb Ihrer Website, 
-* <<extend-module-find>> für Anweisungen zur Suche nach von der community bereitgestellten Zusatzmodulen und
-* <<extend-module-install>> für Anweisungen zum
+so dass Inhaltselemente automatisch generierte URLs/Pfad-Aliase erhalten. Siehe: <<<content-paths>> für weitere Informationen über
+URLs innerhalb Ihrer Website, <<extend-module-find>> für Anweisungen zur Suche nach von der community bereitgestellten Zusatzmodulen und
+* <<extend-module-install>> für Anweisungen zum 
 Herunterladen und Installieren von Zusatzmodulen, die durch die Community bereitgestlllt werden.
 
 // ==== Related concepts

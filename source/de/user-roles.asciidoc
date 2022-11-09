@@ -8,7 +8,7 @@ Wie Sie Rollen für einen Benutzer ändern oder hinzufügen.
 (((Role,changing)))
 (((Permission,changing role)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
 Ändern oder Hinzufügen von Rollen zu einem bestimmten Benutzer, entweder durch Bearbeiten eines Einzelbenutzers oder durch
 Anwendung einer Massenoperation.
@@ -25,13 +25,12 @@ bereits existieren. Siehe <<user-new-user>>,  <<user-new-role>>, and
 
 ==== Arbeitsschritte
 
-====== Aktualisieren der Rollen mit der Einzelbenutzer-Bearbeitungsmethode
+===== Aktualisieren der Rollen mit der Einzelbenutzer-Bearbeitungsmethode
 
 . Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Personen_
 (_admin/people_).
 
-. Suchen Sie das Konto von Benutzer 1 (mit dem Namen "admin"), um ihm den _Administrator_ zuzuweisen
-Rolle. Wenn sie nicht sofort sichtbar ist, verwenden Sie den Filter _Name oder E-Mail enthält_,
+. Suchen Sie das Konto von Benutzer 1 (mit dem Namen "admin"), um diesem die Rolle _Administrator_ zuzuweisen. Wenn es nicht sofort sichtbar ist, verwenden Sie den Filter _Name oder E-Mail enthält_,
 oder andere Filter, um die Liste einzugrenzen.
 
 .  Klicken Sie auf _Bearbeiten_, um das Benutzerkonto zu aktualisieren.
@@ -41,41 +40,39 @@ oder andere Filter, um die Liste einzugrenzen.
 image:images/user-roles_people-list.png["People page",width="100%"]
 --
 
-.  Blättern Sie auf der Seite _Bearbeiten_ nach unten zum Abschnitt _Rollen_. Prüfen Sie den _Administrator_.
-Rolle für das Benutzerkonto.
+.  Blättern Sie auf der Seite _Bearbeiten_ zum Abschnitt _Rollen_. Aktivieren Sie den Haken bei der Rolle _Administrator_ für das Benutzerkonto.
 +
 --
 // Roles area on user editing page.
 image:images/user-roles_person-edit.png["Roles section of user edit page",width="141px"]
 --
 
-.  Klicken Sie auf _Speichern_, um das Benutzerkonto zu aktualisieren. Sie sollten zurück zum
-_Personen_ Seite und sehen eine Meldung, dass die Änderungen gespeichert wurden.
+.  Klicken Sie auf _Speichern_, um das Benutzerkonto zu aktualisieren. Sie sollten dadurch zur _Personen_ Seite zurückkehren und sehen eine Meldung, dass die Änderungen gespeichert wurden.
 +
 --
 // Confirmation message after updating user.
 image:images/user-roles_message.png["Confirmation message"]
 --
 
-====== Aktualisieren der Rollen mit der Massenbearbeitungsmethode
+===== Aktualisieren der Rollen mit der Massenbearbeitungsmethode
 
 . Wenn die Benutzer Happy Farm und Sweet Honey nicht bereits die Rolle des Lieferanten hatten,
-hier ist, wie Sie es hinzufügen würden. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu
+zeigen wir hier, wie Sie diese hinzufügen können. Navigieren Sie im Verwaltungsmenü _Verwalten_ zu
 _People_ (_admin/people_).
 
-. Suchen Sie die Benutzerkonten des Lieferanten _Sweet Honey_ und _Happy Farm_ und überprüfen Sie sie. Wenn
+. Suchen Sie die Benutzerkonten des Lieferanten _Sweet Honey_ und _Happy Farm_ und wählen Sie diese durch Anklicken des linken Kästchens aus. Wenn
 sie nicht sofort sichtbar sind, verwenden Sie den Filter _Name oder E-Mail enthält_, oder
 andere Filter, um die Liste einzugrenzen.
 
-. Wählen Sie _Hinzufügen der Rolle Lieferant zu dem/den ausgewählten Benutzer(n)_ aus der Liste _Aktion_
-Liste auswählen.
+. Wählen Sie _Hinzufügen der Rolle Lieferant zu dem/den ausgewählten Benutzer(n)_ aus der oben stehenden Liste _Aktion_
+aus.
 +
 --
 // Massenbearbeitungsformular auf der Seite Menschen (admin/people).
 image:images/user-roles_bulk.png["People page with bulk operation set up", width="100%"]
 --
 
-. Klicken Sie auf _Anwenden auf ausgewählte Elemente_. Sie sollten eine Meldung sehen, die anzeigt, daß die
+. Klicken Sie unten auf _Anwenden auf ausgewählte Elemente_. Sie sollten eine Meldung sehen, daß die
 gewünschte Änderungen vorgenommen wurden.
 +
 --

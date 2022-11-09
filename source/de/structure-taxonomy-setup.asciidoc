@@ -12,7 +12,7 @@ Wie man ein Taxonomie-Vokabular erstellt und es als Feld zu einem Inhaltstyp hin
 
 ==== Zielsetzung
 
-Erstellen Sie ein Zutatenvokabular und fügen Sie es dem Inhaltstyp Rezept als
+Erstellen Sie ein Vokabular für Zutaten und fügen Sie es dem Inhaltstyp Rezept als
 Feld hinzu. Es kann eine unbegrenzte Anzahl von Werten enthalten.
 
 ==== Erforderliche Vorkenntnisse
@@ -74,7 +74,7 @@ image:images/structure-taxonomy-setup-add-term.png["Add term page",width="100%"]
 (_admin/structure/types_). Klicken Sie im Inhaltstyp Rezept auf _Felder verwalten_.
 
 . Klicken Sie auf _Feld hinzufügen_, und geben Sie die Werte aus der untenstehenden Tabelle ein. 
-. Klicken Sie auf _Speichern und fortfahren_.
+Klicken Sie auf _Speichern und fortfahren_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -88,13 +88,13 @@ image:images/structure-taxonomy-setup-add-term.png["Add term page",width="100%"]
 image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
 --
 
-. Geben Sie auf dem folgenden Konfigurationsbild die Werte aus der untenstehenden Tabelle ein.
+. Geben Sie auf dem folgenden Konfigurationsbild die Werte aus der unten stehenden Tabelle ein.
 Klicken Sie auf _Feldeinstellungen speichern_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-|Art des zu referenzierenden Elements | Art der Entität, die durch das Feld | Taxonomiebegriff referenziert wird
+|Art des zu referenzierenden Elements | Art der Entität, die durch das Feld referenziert wird | Taxonomiebegriff
 | Erlaubte Anzahl von Werten | Die Anzahl der Werte, die ein Benutzer eingeben kann | Unbegrenzt
 |================================
 +
@@ -108,10 +108,10 @@ image:images/structure-taxonomy-setup-field-settings.png["Field storage settings
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-|Hilfetext | Hilfe für Benutzer, die Inhalte erstellen |Zutaten eingeben, nach denen Besucher der Website suchen möchten
+|Hilfetext | Hilfe für Benutzer, die Inhalte erstellen |Zutaten eingeben, nach denen Besucher der Website suchen möchte
 |Referenztyp > Referenzmethode | Wählen Sie die Methode aus, die zur Auswahl der zulässigen Werte verwendet wird | Standard
-|Referenzart > Vokabular | Wählen Sie das Vokabular, um zulässige Werte aus | Inhaltsstoffe
-|Referenztyp > Referenzierte Entitäten erstellen, falls sie noch nicht existieren | Ob neue Zutaten aus dem Formular heraus angelgt werden können | aangeklickt
+|Referenzart > Vokabular | Wählen Sie das Vokabular, um zulässige Werte auszuwählen | Inhaltsstoffe
+|Referenztyp > Referenzierte Entitäten erstellen, falls sie noch nicht existieren | Ob neue Zutaten aus dem Formular heraus angelegt werden können | angeklickt
 |================================
 +
 --

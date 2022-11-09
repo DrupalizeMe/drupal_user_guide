@@ -14,7 +14,7 @@ sowie den Wartungsmodus deaktivieren.
 
 Versetzen Sie Ihre Website in den Wartungsmodus, um Benutzern mit der
 entsprechenden Berechtigungen zu ermöglichen
-die Website zu benutzen, während Benutzern die nicht über diese Berechtigung
+die Website zu verwalten, während Benutzern die nicht über diese Berechtigung
 verfügen eine Meldung angezeigt wird,  dass Wartungsarbeiten durchgeführt werden.
 
 ==== Erforderliche Vorkenntnisse
@@ -42,11 +42,10 @@ Die Seite _Wartungsmodus_ erscheint.
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-| Website in Wartungsmodus versetzen | Wartungsmodus aktivieren |
-Geprüft
+| Website in Wartungsmodus versetzen | Wartungsmodus aktivieren | Ausgewählt
 | Im Wartungsmodus anzuzeigende Meldung | Die Informationen, die angezeigt werden, um
 Besucher der Website darüber zu informieren, dass der Wartungsmodus aktiviert ist. Variablen wie @site können in der Nachricht verwendet werden.
-|@site wird derzeit gewartet, sollte aber in kürze wieder erreichbar sein. Vielen Dank für Ihre Geduld.
+|@site wird derzeit gewartet, sollte aber in Kürze wieder erreichbar sein. Vielen Dank für Ihre Geduld.
 |================================
 
 . Klicken Sie auf _Konfiguration speichern_.
@@ -73,9 +72,7 @@ _Wartungsmodus_ erscheint.
 |================================
 |Feldname | Erklärung | Wert
 
-| Website in den Wartungsmodus versetzen | Deaktivieren des Wartungsmodus |
-Nicht angekreuzt
-
+| Website in den Wartungsmodus versetzen | Deaktivieren des Wartungsmodus | Nicht ausgewählt
 | Im Wartungsmodus anzuzeigende Meldung | Während der Deaktivierung ist keine Meldung erforderlich. Sie können das Feld leer lassen. |
 
 |================================
@@ -95,14 +92,12 @@ image:images/extend-maintenance-mode-disabled.png["Maintenance mode disabled",wi
 ==== Aktivieren oder Deaktivieren des Wartungsmodus mit Drush
 
 . Folgen Sie den obigen Schritten innerhalb der Benutzeroberfläche,
-um die über die Wartungsarbeiten auf Ihrer Website wie von Ihnen
-gewünscht zu bearbeiten.
+um die Meldung über die Wartungsarbeiten auf Ihrer Website zu bearbeiten.
 
 . Führen Sie die folgenden Drush-Befehle aus, um den Wartungsmodus zu aktivieren
 und den Cache zu leeren:
 +
 ----
-drush config:set system.maintenance message "optionale Nachricht" -y
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----

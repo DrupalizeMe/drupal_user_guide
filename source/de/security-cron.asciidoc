@@ -37,10 +37,9 @@ erneut aus. Wenn über einen längeren Zeitraum niemand die Website besucht, wer
 es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Server-Timeouts
  (z. B. PHP-Ausführungszeitüberschreitungen) in kraft treten. Wenn dies geschieht, wird im Systemprotokoll (siehe
   <<prevent-log>>) eine Fehlermeldung ausgegeben, die darüber Informiert, dass Wartungsaufgaben mittels Cron nicht abgeschlossen werden konnten.
-  * Das Modul Automated Cron bietet aber auch einen Vorteil. Durch den Einsatz des Moduls Automated Cron fallen geringere Kosten bezüglich der
-  https://de.wikipedia.org/wiki/Skalierbarkeit[Skalierbarkeit] an.
-  Dies liegt daran, dass ein Cron-Job, der einen Prozess auf einem Webserver ausführt, dieser dann erst abgeschlossen werden muss, bevor andere Websites bedient werden können.
-
+  * Mit dem Kernmodul Automated Cron sind geringe Skalierbarkeitskosten verbunden. 
+  Dies liegt daran, dass einer der Prozesse des Webservers belegt ist (und keine anderen Webseiten bedienen kann), bis die Cron-Wartungsaufgaben abgeschlossen sind. 
+  
 . Wenn Sie das Kernsystemmodul Automated Cron verwenden möchten, stellen Sie zunächst sicher, dass es
 installiert ist (Das Installationsprofil Standard installiert das Modul automatisch. Siehe:
 <<config-install>> wenn dass Modul nicht installtiert wurde).
@@ -58,8 +57,6 @@ image:images/security-cron.png["Konfigurieren Sie den Kern des automatisierten C
 das Kernsystemmodul Automated Cron (siehe <<config-uninstall>>). Als nächstes ermitteln Sie die
 Cron-URL. Diese URL wird im _Statusbericht_ (siehe <<prevent-status>>) und
 auf der Seite _Cron_ im Verwaltungsbereich (siehe oben) angezeigt. Die URL sieht ungefähr wie folgt aus:
-
-+
 _http://www.example.com/cron/0MgWtfB33FYbbQ5UAC3L0LL3RC0PT3RNUBZILLA0Nf1Re_
 
 

@@ -37,9 +37,9 @@ in welcher Reihenfolge und in welchem Format:
 
 Anzeige::
   Jede Ansicht kann eine oder mehrere Anzeigen haben, von denen jede einen Typ von
-  Ausgabe. Zu den Optionen für Anzeigetypen gehören:
+  Ausgabe erstellt. Zu den Optionen für Anzeigetypen gehören:
   Seite;;
-    Ausgabe unter einer bestimmten URL, für den Inhalt der Hauptseite unter dieser URL.
+    Ausgabe unter einer bestimmten URL, für den Hauptseiteninhalt unter dieser URL.
   Block;;
     Macht die Ausgabe in einem Block, der auf Seiten platziert werden kann.
   Feed;;
@@ -47,40 +47,36 @@ Anzeige::
   Anhang;;
     Erzeugt eine Ausgabe, die Sie an eine andere Anzeige anhängen können.
 Format::
-  Abhängig von der Anzeigeart können Sie wählen, ob Sie Ihre Daten in einem
-  Tabelle, Gitter, HTML-Liste oder ein anderes Format. Einige Formate geben Ihnen auch eine
+  Abhängig von der Anzeigeart können Sie wählen, ob Sie Ihre Daten als
+  Tabelle, Gitter, HTML-Liste oder ein anderes Format ausgeben wollen. Einige Formate geben Ihnen auch eine
   zweite Wahl, mit der Sie entweder gerenderte Entitäten oder Felder ausgeben können; andere
-  Formate geben Ihnen diese Wahl nicht (z.B. wenn Sie ein Tabellenformat verwenden),
+  Formate geben Ihnen diese Wahl nicht (z.B. wenn Sie ein Tabellenformat verwenden,
   müssen Sie immer Felder verwenden).
 Felder::
   Je nach Wahl des Formats können Sie wählen, welche Inhaltsfelder
-  ausgegeben werden. Wenn Sie z.B. eine Sicht auf Rezeptinhaltspositionen gemacht haben, wird in
-  Bei einer Blockanzeige werden möglicherweise nur die Rezeptnamen angezeigt, während sie auf einer ganzen Seite angezeigt werden.
-  anzeigen können Sie möglicherweise auch ein Bildfeld einblenden, weil Sie mehr Platz haben.
+  ausgegeben werden. Wenn Sie z.B. eine Sicht auf Rezeptinhaltspositionen gemacht haben, werden bei einer Blockanzeige möglicherweise nur die Rezeptnamen angezeigt, 
+  während sie auf einer ganzen Seite, weil Sie mehr Platz haben, möglicherweise auch ein Bildfeld einblenden.
 Filterkriterien::
   Filter schränken die auszugebenden Daten ein, basierend auf Kriterien wie z.B. ob die
-  Inhalt veröffentlicht wurde oder nicht, die Art des Inhalts oder ein Feldwert.
-  Um beispielsweise eine Ansicht von Rezeptinhaltselementen zu erstellen, müssen Sie Folgendes filtern
-  zum Inhaltstyp "Rezept" und zu veröffentlichten Rezepten. Filter können auch sein
-   _belichtet_, was bedeutet, dass die Benutzer ein Formular haben werden, in dem sie wählen können
-  ihre eigenen Filterwerte. Sie könnten dies auf einer Rezeptseite verwenden, damit Benutzer
-  Filter für Rezepte mit bestimmten Zutaten.
+  Inhalt veröffentlicht wurden oder nicht, die Art des Inhalts oder ein Feldwert.
+  Um beispielsweise eine Ansicht von Rezeptinhaltselementen zu erstellen, müssen Sie filtern auf 
+  den Inhaltstyp "Rezept" und die veröffentlichten Rezepte. Filter können auch
+   _freigegeben_ sein. Dann haben die Benutzer ein Formular in der Ansicht, in dem sie ihre eigenen Filterwerte auswählen können.
+  Sie könnten dies auf einer Rezeptseite verwenden, damit Benutzer Rezepte nach bestimmten Zutaten filtern können.
 Sortierkriterien::
-  Definiert die Reihenfolge für die Darstellung der Ausgabe, die auf einem beliebigen Inhalt basieren kann
-  Feld.
+  Definiert die Reihenfolge für die Darstellung der Ausgabe, die auf einem beliebigen Inhaltsfeld basieren kann.
 Kontextbezogene Filter::
-  Kontextuelle Filter sind wie reguläre Filter, außer dass die Werte aus
-  den _Kontext_ der Anzeige der Ansicht, wie z.B. die vollständige URL der Seite, die
-  angezeigt werden, das aktuelle Datum oder die aktuelle Zeit oder ein anderer Wert, der
-  durch die Ansichtsberechnung erkannt.
+  Kontextuelle Filter sind wie reguläre Filter, außer dass diese Werte aus
+  dem _Kontext_ der Ansichtanzeige verwenden, wie z.B. die vollständige URL der angezeigten Seite, das aktuelle Datum, die aktuelle Zeit oder ein anderer Wert, der
+  durch die Ansichtsberechnung erkannt werden kann.
 Beziehungen::
   Mit Hilfe von Beziehungen können Sie die Anzeige in Ihrer Ansicht erweitern, indem Sie
-  der Basisinhalt wird anderen Inhaltsentitäten angezeigt. Beziehungen sind
-  die mit Hilfe von Feldern auf dem Basisinhalt erstellt wurden, die diesen mit dem anderen Inhalt in Beziehung setzen;
-  Ein Beispiel ist, dass alle regulären Inhaltselemente ein Autorenfeld haben, das
+  den Basisinhalt der angezeigt werden soll in Beziehung zu anderen Inhaltsentitäten bringen. 
+  Beziehungen werden erstellt wenn Felder aus dem Basisinhalt, mit dem anderen Inhalt in Beziehung gesetzt werden.
+  Ein Beispiel ist, dass alle regulären Inhaltselemente ein Autorenfeld haben. Dieses
   verweist auf das Benutzerkonto der Person, die den Inhalt verfasst hat. Sobald Sie
-  eine Beziehung angelegt haben, können Sie Felder aus der referenzierten
-  Entität in der Ansicht.
+  eine Beziehung dazwischen angelegt haben, können Sie Felder aus der referenzierten
+  Entität (Benutzerkonto) in der Ansicht verwenden.
 
 ==== Verwandte Themen
 

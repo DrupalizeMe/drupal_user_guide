@@ -56,7 +56,7 @@ Siehe: https://git-scm.com/[Git (englisch)] für weitere Informationen.
 ===== Die Repository initialisieren
 
 Führen Sie diese Schritte einmal durch, nachdem Sie eine Git-Repository
-erstellt haben, um lokale Verzeichnisse zur Repository und die darin enthaltenen
+erstellt haben, um lokale Verzeichnisse mit der Repository zu verbinden und die darin enthaltenen
 Dateien hinzuzufügen.
 
 . Öffnen Sie ein Kommandozeilenfenster und wechseln Sie in das Verzeichnis, in dem die Dateien
@@ -68,7 +68,7 @@ Verzeichnis befinden, dann befinden Sie sich im Hauptverzeichnis Ihrer Installat
 Wenn Sie Composer zum Herunterladen der Software verwendet haben, befinden sich
 diese Daten im Unterverzeichnis  _web_ (dies ist das Hauptverzeichnis Ihrer Website).
 
-. Erstellen Sie in einem einfachen Texteditor eine neue Datei namens
+. Erstellen Sie mit einem einfachen Texteditor eine neue Datei namens
 _.gitignore_, innerhalb des Hauptverzeichnisses Ihrer Website
 (oder bearbeiten Sie diese Datei, wenn sie bereits existiert). Die Datei enthält
  eine Liste von Dateien und Verzeichnisse, die Git ignorieren
@@ -119,8 +119,8 @@ git push -u origin master
 ----
 
 . Wenn Sie GitLab, GitHub oder einen anderen Host mit Online-Zugang verwenden,
-können Sie nun die Seite Ihrer Repository aufrufen und überprüfen
-ob Ihre Dateien dort vorhanden sind, nachdem der Vorgang abgeschlossen wurde.
+können Sie nun die Seite Ihrer Repository aufrufen und überprüfen, nachdem der Vorgang abgeschlossen wurde, 
+ob Ihre Dateien dort vorhanden sind.
 
 ===== Aktualisieren von Dateien innerhalb der Repository
 
@@ -158,7 +158,7 @@ git status
 Auch dann, wenn diese sich bereits in der Liste der zu übergebenden Dateien befindet.
 Sie können auch weitere Verzeichnisse oder Dateien zur Übergabeliste hinzufügen.
 Wenn eine bestimmte Datei oder ein bestimmtes Verzeichnis versehentlich immer wieder
-zur übergeben wird, sollten Sie in Erwägung ziehen, der Datei
+Übergabe vorgeschlagen wird, sollten Sie in Erwägung ziehen, der Datei
 _.gitignore_ einen entsprechenden Eintrag hinzuzufügen, so dass das jeweilige
 Element zukünftig von Git ignoriert wird.
 +
@@ -170,7 +170,7 @@ git add pfad/zur/datei.txt (Datei/Verzeichnis hinzufügen)
 
 . Übergeben Sie die Liste der Änderungen an die Repository (commit) und
 führen Sie das Hochladen der Dateien aus (push).
-Ersetzen Sie die Commit Messaage durch etwas sinnvolles:
+Ersetzen Sie die 'Angabe zu den durchgeführten Änderungen' durch etwas sinnvolles:
 +
 ----
 git commit -m "Angabe zu den durchgeführten Änderungen"
@@ -199,7 +199,7 @@ in das Sie die Dateien herunterladen möchten.
 
 . Geben Sie den folgenden Befehl ein und ersetzen Sie die Klon-URL Ihrer
 Repository durch die URL und den Namen des Unterverzeichnisses,
-in das sie die Repository klonen möchten, als _Dateiname_:
+in das sie die Repository klonen möchten, als _Verzeichnisname_:
 +
 ----
 git-clone https://gitlab.com/example-name/example-repo.git Verzeichnisname
@@ -216,8 +216,8 @@ vorzugsweise oberhalb des Hauptverzeichnisses Ihrer Website.
 Folgen Sie anschließend den oben stehenden Anweisungen, um die Dateien zu Ihrer
 Repository hinzuzufügen.
 
-. Wenn sich die Konfiguration Ihrer Website nach der Initialisierung Ihrer
-Git-Repository ändert, exportieren Sie das Konfigurationsarchiv und entpacken
+. Wenn sich zukünftig die Konfiguration Ihrer Website nach der Initialisierung Ihrer
+Git-Repository ändert, exportieren Sie jedesmal das Konfigurationsarchiv und entpacken
 Sie es an der gleichen Stelle. Folgen Sie den Anweisungen
 oben, um diese Dateien in Ihrer Repository zu aktualisieren.
 

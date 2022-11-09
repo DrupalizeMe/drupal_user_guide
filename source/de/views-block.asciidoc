@@ -12,9 +12,8 @@ So fügen Sie einer Ansicht eine Blockanzeige hinzu.
 
 ==== Zielsetzungsetzung
 
-Hinzufügen einer Blockanzeige zur Ansicht "Rezepte", um die neuesten Rezepte anzuzeigen
-in einer Seitenleiste, und ändern Sie deren Konfiguration, ohne die bestehende
-Rezepte Seitenansicht.
+Hinzufügen einer Blockanzeige in einer Seitenleiste zur Ansicht "Rezepte", um die neuesten Rezepte anzuzeigen. 
+Ändern Sie deren Konfiguration, ohne die bestehende Ansicht der Seite Rezepte zu verändern.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -25,13 +24,11 @@ Rezepte Seitenansicht.
 ==== Anforderungen an die Website
 
 * Der Inhaltstyp Rezept muss vorhanden sein, er muss ein Feld Hauptbild haben, und Ihre
-Website muss einige Inhaltselemente von Rezepten enthalten. Siehe <<structure-content-type>>,
+Website muss einige Inhalte vom Typ Rezept enthalten. Siehe <<structure-content-type>>,
 <<structure-fields>>, <<structure-form-editing>>, und <<content-create>>.
 
-* Der Bildstil _Thumbnail (100x100)_ muss definiert werden. Dieser wird auf Ihrem
-Site, wenn Sie das Kern-Image-Modul installieren (installiert mit dem Kern-Standard
-Installationsprofil), kann aber neu erstellt werden, wenn sie gelöscht wird. Siehe
-<<structure-image-style-create>>.
+* Der Bildstil _Thumbnail (100x100)_ muss definiert sein. Dieser wird erstellt, wenn Sie das Kern-Image-Modul installieren (installiert mit dem Kern-Standard
+Installationsprofil). Er kann neu erstellt werden, falls er gelöscht wurde. Siehe <<structure-image-style-create>>.
 
 * Die Sicht Rezepte muss vorhanden sein. Siehe <<views-create>> und <<views-duplicate>>.
 
@@ -39,13 +36,11 @@ Installationsprofil), kann aber neu erstellt werden, wenn sie gelöscht wird. Si
 
 . Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Ansichten_
 (_admin/structure/views_). Suchen Sie die Ansicht "Rezepte" und klicken Sie auf _Bearbeiten_ in der
-Dropdown-Schaltfläche. Alternativ können Sie zur Seite Rezepte auf der Hauptseite navigieren
-Navigation, und klicken Sie auf den kontextuellen Link _Ansicht bearbeiten_ im Hauptbereich der
-Seite. Siehe <<config-overview>> für Informationen über kontextbezogene Links.
+Dropdown-Schaltfläche. Alternativ können Sie zur Seite Rezepte auf der Hauptseite navigieren und klicken Sie dort auf den kontextuellen Link _Ansicht bearbeiten_ im Hauptbereich der
+Seite. (Siehe <<config-overview>> für Informationen über kontextbezogene Links.)
 
 . Erstellen Sie eine neue Blockanzeige, indem Sie unter _Anzeigen_ auf _Hinzufügen_ klicken. Klicken Sie auf .
-_Blockieren_ aus der angezeigten Liste der Links. Die neue Anzeige wird erstellt, und die
-Der Fokus wird automatisch auf seine Konfiguration umgeschaltet.
+_Block_ aus der angezeigten Liste der Links. Die neue Anzeige wird erstellt, und der Fokus wird automatisch auf seine Konfiguration umgeschaltet.
 +
 --
 // Add display button on Recipes view edit page, with Block highlighted
@@ -53,13 +48,13 @@ Der Fokus wird automatisch auf seine Konfiguration umgeschaltet.
 image:images/views-block_add-block.png["Add block display"]
 --
 
-. Um den Titel dieser Anzeige zu ändern, klicken Sie auf _Blockieren_ im Feld _Anzeige
-Feld name_. Das Feld _Block: Der Name und die Beschreibung dieses Anzeige-Popup
+. Um den Titel dieser Anzeige zu ändern, klicken Sie auf _Block_ im Feld _Anzeige
+Feld name_. Das Pop-Up _Block: Der Name und die Beschreibung dieser Anzeige_ 
 erscheint. Ändern Sie den _Verwaltungsnamen_ in "Neueste Rezepte". Klicken Sie auf _Anwenden_.
 
 . Um den Titel des Blocks zu ändern, klicken Sie im Feld _Titel_ auf "Rezepte".
 unter _Titel_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block (überschreibt)_ unter
-die _Für_ Auswahlliste. Ändern Sie das Feld _Titel_ in "Neue Rezepte" und klicken Sie
+der _Für_ Auswahlliste. Ändern Sie das Feld _Titel_ in "Neue Rezepte" und klicken Sie
 _Anwenden (diese Anzeige)_.
 +
 --
@@ -68,13 +63,13 @@ image:images/views-block_title.png["Title only for this block"]
 --
 
 . Um den Stil des Blocks zu ändern, klicken Sie auf _Grid_ im _Format_-Feld unter
-_Format_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block (überschreiben)_ aus dem
+_Format_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block (überschreiben)_ aus der
 _Für_ Auswahlliste. Wählen Sie _Unformatierte Liste_ und klicken Sie auf _Anwenden (diese
-anzeigen)_. Sie können die Stiloptionen im nächsten Popup-Fenster weiter konfigurieren
-erscheint. Klicken Sie dann auf _Anwenden_.
+Anzeige)_. Sie können die Stiloptionen im nächsten Popup-Fenster weiter konfigurieren welches erscheint. 
+Klicken Sie dann auf _Anwenden_.
 
-. Um das Bildfeld zu konfigurieren, klicken Sie auf _Inhalt_: Hauptbild_ unter _Felder_.
-Wählen Sie im angezeigten Popup-Fenster die Option _Dieser Block (überschreiben)_ aus dem
+. Um das Bildfeld zu konfigurieren, klicken Sie auf _Inhalt: Hauptbild_ unter _Felder_.
+Wählen Sie im angezeigten Popup-Fenster die Option _Dieser Block (überschreiben)_ aus der
 _Für_ Auswahlliste. Wählen Sie _Bildstil Miniaturansicht (100x100)_. Klicken Sie _Anwenden
 (diese Anzeige)_.
 +
@@ -83,9 +78,9 @@ _Für_ Auswahlliste. Wählen Sie _Bildstil Miniaturansicht (100x100)_. Klicken S
 image:images/views-block_image.png["Image to thumbnail",width="100%"]
 --
 
-. Um Inhaltsstoffe als Filter zu entfernen, klicken Sie auf _Inhalt: Inhaltsstoffe (ausgesetzt)_
-unter _Filterkriterien_. Wählen Sie in dem angezeigten Popup-Fenster _Dieses
-Block (überschreiben)_ aus der Auswahlliste _Für_ blockieren. Klicken Sie unten auf _Entfernen_.
+. Um Inhaltsstoffe als Filter zu entfernen, klicken Sie auf _Inhalt: Inhaltsstoffe (angezeigt)_
+unter _Filterkriterien_. Wählen Sie in dem angezeigten Popup-Fenster _Dieser
+Block (überschreiben)_ aus der Auswahlliste _Für_ . Klicken Sie unten auf _Entfernen_.
 
 . Um zu konfigurieren, wie der Inhalt in der Ansicht sortiert werden soll, klicken Sie auf _Hinzufügen_.
 über die Dropdown-Schaltfläche unter _Sortierkriterien_. Im angezeigten Popup-Fenster,
@@ -93,8 +88,8 @@ Wählen Sie _Dieser Block (überschreiben)_ aus der Auswahlliste _Für_ aus. Pr�
 Autorisiert am_ (in der Kategorie _Inhalt_), und klicken Sie dann auf _Hinzufügen und konfigurieren
 Sortierkriterien_.
 
-. Wählen Sie in dem erscheinenden Konfigurations-Popup _Absteigend sortieren_, um die
-Die neuesten Rezepte erscheinen zuerst. Klicken Sie auf _Anwenden_.
+. Wählen Sie in dem erscheinenden Konfigurations-Popup _Absteigend sortieren_, und die
+neuesten Rezepte erscheinen zuerst. Klicken Sie auf _Anwenden_.
 
 . Um die Anzahl der anzuzeigenden Elemente festzulegen, klicken Sie auf _Mini_ im Feld _Verwendung
 Pager_ Feld unter _Pager_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block
@@ -111,7 +106,7 @@ dass die Ansicht gespeichert wurde.
 image:images/views-block_recipes.png["Summary page after configuration",width="100%"]
 --
 
-. Platzieren Sie die "Rezepte: Zuletzt verwendete Rezepte" in den zweiten Bereich der _Seitenleiste. Siehe
+. Platzieren Sie den Block "Rezepte: Zuletzt verwendete Rezepte" in den zweiten Bereich der _Seitenleiste_. Siehe
 <<block-place>>. Navigieren Sie zur Startseite der Website, um den Block zu sehen.
 +
 --

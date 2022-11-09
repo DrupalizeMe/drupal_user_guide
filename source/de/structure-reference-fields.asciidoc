@@ -29,20 +29,16 @@ Die drei am häufigsten verwendeten Referenzfeldtypen sind:
 
 Inhaltsreferenz::
   Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte den Lieferanten zuordnen wollen, 
-  die sie eingereicht haben. Dazu würden Sie ein Inhaltsreferenzeld anlegen, dass den Namen „Eingereicht von“ trägt und von den 
-  eingereichten Rezepten aus auf das Profil des Lieferanten verweist, der das Rezept eingereicht 
+  die sie eingereicht haben. Dazu würden Sie ein Inhaltsreferenzfeld anlegen, dass den Namen „Eingereicht von“ trägt. Dieses verweist 
+  von den eingereichten Rezepten aus auf das Profil des Lieferanten, der das Rezept eingereicht 
   hat.
 
 Taxonomie-Begriffsreferenz::
-  Eine Referenz auf einen Taxonomiebegriff. Beispielsweise könnten Sie auf Rezepten eine Liste von Zutaten
-  anlegen und diese als Taxonomiebegriffe abspeichern. Auf einem Rezept würden Sie dann die Zutaten für das jeweilige Gericht referenzieren. #
-  Dazu würden Sie im Inhaltstyp Rezept ein Referenzfeld anlegen, dass auf das Taxonomievokabular verweist, welches die Zutaten enthält, die es auf
-  dem Wochenmarkt zu kaufen gibt. Das Referenzfeld selbst würde das Taxonomievokabular 
-  Zutaten referenzieren.
+  Eine Referenz auf einen Taxonomiebegriff. Beispielsweise könnten Sie Rezepte mit ihren Zutaten verbinden. Auf einem Rezept würden Sie dann die Zutaten für das jeweilige Gericht referenzieren. 
+  Dazu würden Sie im Inhaltstyp Rezept ein Taxonomie-Referenzfeld anlegen. Das Referenzfeld selbst würde auf das Taxonomievokabular Zutaten verweisen.
 
 Benutzer-Referenz::
-  Eine Referenz auf ein Benutzerkonto. Zum Beispiel könnten Sie auf Rezepten die Küchenchefs referenzieren, die auf dem Wochenmarkt Ihre Zutaten
-  für das jewielige Rezept beziehen. Dafür würden Sie im Inhaltstyp Rezept ein Referenfeld vom Typ 
+  Eine Referenz auf ein Benutzerkonto. Zum Beispiel könnten Sie von Rezepten die Ersteller / Köche referenzieren. Dafür würden Sie im Inhaltstyp Rezept ein Referenfeld vom Typ 
   Benutzer anlegen.
 
 ==== Verwandte Themen
