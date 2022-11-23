@@ -1,79 +1,66 @@
-[[understanding-project]]
-
-=== Konzept: Das Drupal-Projekt
+[[understanding-modules]]
+=== Konzept: Module
 
 [role="summary"]
-Überblick über freie Open Source Software (FOSS), Das Projekt Drupal und Drupal
-Association.
+Überblick über die Module und die Funktionalität, für die sie verwendet werden können.
 
-(((Drupal project,Überblick)))
-(((Drupal Association,Überblick)))
-(((FOSS (Free and Open Source Software),Überblick)))
-(((Free and Open Source Software (FOSS),Überblick)))
+(((Module,overview)))
+(((Contributed module,overview)))
+(((Core module,overview)))
+(((Field module,overview)))
+(((Field UI module,overview)))
+(((Menu UI module,overview)))
+(((Node module,overview)))
+(((User module,overview)))
+(((Views module,overview)))
+(((Views UI module,overview)))
+(((Module,core)))
+(((Module,contributed)))
+(((Module,Field)))
+(((Module,Field UI)))
+(((Module,Menu UI)))
+(((Module,Node)))
+(((Module,User)))
+(((Module,Views)))
+(((Module,Views UI)))
 
 ==== Erforderliche Vorkenntnisse
 
 <<understanding-drupal>>
 
-==== Was ist freie und quelloffene Software?
+==== Was ist ein Modul?
 
-Freie und Open-Source-Software (FOSS) ist Software, die von einer
-Gemeinschaft von Personen entwickelt wird, die sich dazu entschieden hat,
-diese Software unter einer nicht-kommerziellen Lizenz zu veröffentlichen
-und deren _Quelltext_ (die Programmdateien, aus denen die Software besteht)
-frei verfügbar ist. Für weitere Informationen über die von Drupal verwendete
-nicht-kommerzielle Lizenz, siehe:
-<<understanding-gpl>>.
+Ein Modul ist ein Satz von PHP-, JavaScript- und/oder CSS-Dateien, der bestimmte neue Funktionen innerhalb einer
+Drupal-Website bereitstellt. Eine neue Funktion, können Sie durch die _Installation_ eines zusätzlichen Moduls aktivieren Durch die _De-Installation_ eines Moduls, kann eine bestimmte Funktion auf Wunsch auch abgeschaltet werden. Vor der Deinstallation müssen Sie möglicherweise Daten und Konfiguration entfernen die mit der Funktionsweise eines Moduls in Zusammenhang stehen. Jedes Modul, das installiert wird, erhöht die Ladezeit der Website. Daher ist es eine gute Idee, Module die nicht benötigt werden, zu deinstallieren, um die Ladezeit einer Website so kurz wie möglich zu halten.
 
-==== Was ist das Drupal-Projekt?
+Das Kernsystem bietet Module für Funktionen wie:
 
-Das Drupal-Projekt ist ein FOSS-Projekt, dessen Zweck es ist, das Kernsystem
-der Content-Management-System-Software Drupal sowie von der Community
-bereitgestellte Zusatzmodule und, zusätzliche Themes sowie Übersetzungen, die
-Dokumentation und auf bestimmte Zwecke zugeschnittene
-Distributionen bereitzustellen. Die Menschen, die dem Projekt Drupal ihre Zeit
-und ihr Geld zur Verfügung stellen, kommen aus der ganzen Welt und sind eine
-vielfältige Gemeinschaft, die sich den oben genannten Zwecken verschrieben hat.
+* Das Verwalten von Benutzerkonten (mittels des Kernsystemmoduls User).
 
-Die Community umfasst viele kleinere Gruppen, die viele verschiedene Aufgaben
-erfüllen. Zu diesen aufgaben zählt z.B. die Entwicklung eines bestimmten Teils
-von Drupal, das Schreiben der Dokumentation, die Aufrechterhaltung der
-Sicherheit des Content-Management-Systems Drupal, das Übersetzen von Drupal
-in eine bestimmte Sprache. Außerdem prüft die Community Anwendungszwecke für
-Drupal und stellt entsprechende Distributionen bereit und trifft sich regelmäßig
-nicht nur online, sondern auch offline.
+* Das Verwalten des grundlegenden Inhalts (mittels des Kernsystemmoduls Node) und der im Inhalt enthaltenen Felder (mittels der Kernsystemmodule Field und Field-UI. Es gibt auch Kernsystemmodule, die zusätzliche Feldtypen bereitstellen).
 
-Weitere Informationen darüber, wie Sie sich mit der weltweiten
-Community verbinden können finden Sie in folgenden
-Abschnitten: <<thoughts-connecting>> und <<thoughts-support>>.
+* Das Verwalten von Navigationsmenüs (mittels des Kernsystemmoduls Menu-UI)
 
-==== Was ist die Drupal Association?
+* Das Erstellen von Listen, Rastern und Blöcken aus vorhandenen Inhalten (mittels der Kernsystemmodule Views und
+Views-Ui).
 
-Die https://www.drupal.org/association[Drupal Association] ist eine
-gemeinnützige Organisation, die sich der Unterstützung des Drupal-Projekts
-und der Community widmet. Die Hauptaufgaben der Drupal Association
-sind:
-
-* Das Veranstalten großer Kongresse auf der ganzen Welt.
-* Die Wartung der Website_Drupal.org_ sowie die der daran angeschlossenen
-  Seiten und der Server, auf denen diese laufen.
-* Die Förderung von Drupal als Web-Plattform.
-* Die Unterstützung bei Schulungen und Trainings rund um Drupal.
-* Die Bereitstellung von Zuschüssen für die Drupal-Community zur Unterstützung
-  ihrer Mission.
-* Die Geldbeschaffung für diese Zwecke.
+Sie können die _von der Community bereitgestellten Zusatzmodule_ von der Website
+https://www.drupal.org/project/project_module[_Drupal.org_ Modul-Downloads] herunterladen oder eigene
+_benutzerdefinierte Module_ erstellen.
 
 ==== Verwandte Themen
 
-* <<understanding-gpl>>
+* <<understanding-themes>>
+* <<understanding-distributions>>
+* <<config-uninstall>>
+* <<extend-module-find>>
+* <<extend-module-install>>
 * <<security-concept>>
-* <<thoughts-connecting>>
-* <<thoughts-support>>
+* <<security-update-module>>
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/governance[Drupal-Projekt-Governance]
-* https://www.drupal.org/dcoc[Drupal-Verhaltenskodex]
+https://www.drupal.org/developing/modules[_Drupal.org_ Community-Dokumentationsseite "Leitfaden für Modulentwickler"]
 
 
 *Mitwirkende*
