@@ -28,12 +28,12 @@ Lieferant auf der Website hinzugefügt, gelöscht oder aktualisiert wird.
 Sie, wenn Sie mit dem Kern-Standardinstallationsprofil installieren.
 
 * Der Content-Typ Lieferant muss vorhanden sein, mit den Feldern URL und Hauptbild. Ihr
-Die Website muss einige Inhaltselemente des Anbieters enthalten. Siehe <<structure-content-type>>,
+Die Website muss einige Inhalte des Typs Anbieter enthalten. Siehe <<structure-content-type>>,
 <<structure-fields>>, und <<content-create>>.
 
-* Der Bildstil _Medium (220x220)_ muss definiert werden. Dieser wird auf Ihrem
-Site, wenn Sie das Kern-Image-Modul installieren (installiert mit dem Kern-Standard
-Installationsprofil), kann aber neu erstellt werden, wenn sie gelöscht wird. Siehe
+* Der Bildstil _Medium (220x220)_ muss definiert werden. Dieser wird auf Ihrer
+Site erstellt, wenn Sie das Kern-Image-Modul installieren (installiert mit dem Kern-Standard
+Installationsprofil). Er kann neu erstellt werden, falls er gelöscht wurde. Siehe
 <<structure-image-style-create>>.
 
 ==== Arbeitsschritte
@@ -50,13 +50,13 @@ Ansicht_ (_admin/structure/views/add_). Der Assistent zum Hinzufügen von Ansich
 | Ansichtseinstellungen > Anzeigen | Art der in der Ansicht aufgelisteten Informationen | Inhalt
 | Einstellungen anzeigen > vom Typ | Inhaltstyp angeben | Anbieter
 | Ansichtseinstellungen > sortiert nach | Listenreihenfolge | Titel
-| Seiteneinstellungen > Eine Seite erstellen | Eine Seite erstellen, die die Ansicht anzeigt | Geprüft
+| Seiteneinstellungen > Eine Seite erstellen | Eine Seite erstellen, die die Ansicht anzeigt | Ausgewählt
 | Seiteneinstellungen > Seitentitel | Titel wird über der Ansicht angezeigt | Anbieter
 | Seiteneinstellungen > Pfad | Adresse der Seite | Anbieter
 | Seiteneinstellungen > Seitenanzeige-Einstellungen > Anzeigeformat | Art der Liste | Tabelle
 | Seiteneinstellungen > Anzuzeigende Elemente | Anzahl der auf der Seite sichtbaren Elemente | 10
-| Seiteneinstellungen > Verwenden Sie einen Pager | Aufteilen der Liste in mehrere Seiten, falls mehr Einträge vorhanden sind | Geprüft
-| Seiteneinstellungen > Erstellen eines Menü-Links | Hinzufügen der Ansichtsseite zum Menü | Geprüft
+| Seiteneinstellungen > Verwenden Sie einen Pager | Aufteilen der Liste in mehrere Seiten, falls mehr Einträge vorhanden sind | Ausgewählt
+| Seiteneinstellungen > Erstellen eines Menü-Links | Hinzufügen der Ansichtsseite zum Menü | Ausgewählt
 | Seiteneinstellungen > Menü | Menü, in dem der Link hinzugefügt werden soll | Hauptnavigation
 | Seiteneinstellungen > Linktext | Bezeichnung des Links im Menü | Anbieter
 |================================
@@ -83,7 +83,7 @@ erscheint ein Popup-Fenster.
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung| Beispielwert
-| Erstellen einer Beschriftung | Hinzufügen einer Beschriftung vor dem Feldwert | Nicht angekreuzt
+| Erstellen einer Beschriftung | Hinzufügen einer Beschriftung vor dem Feldwert | Nicht ausgewählt
 | Bildstil | Das Format des Bildes | Medium (220x220)
 | Bild verknüpfen mit | Einen Link zum Inhaltselement hinzufügen | Inhalt
 |================================
@@ -95,38 +95,34 @@ erscheint.
 
 . Geben Sie das Wort "body" in das Suchfeld ein.
 
-. Wählen Sie _Körper_ in der Tabelle.
+. Wählen Sie _Body_ in der Tabelle.
 
-. Klicken Sie auf _Anwenden_. Das Feld _Konfigurieren: {Inhalt}: Popup-Fenster _Körper_.
-erscheint.
+. Klicken Sie auf _Anwenden_. Das Feld _Inhalt: Body konfigurieren_ erscheint.
 
 . Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung| Beispielwert
-| Erstellen einer Beschriftung | Hinzufügen einer Beschriftung vor dem Feldwert | Nicht angekreuzt
+| Erstellen einer Beschriftung | Hinzufügen einer Beschriftung vor dem Feldwert | Nicht ausgewählt
 | Formatierer | Die Darstellung des Feldwertes | Zusammenfassung oder beschnitten
 | Getrimmte Grenze: | Die Anzahl der maximal angezeigten Zeichen | 120
 |================================
 
 . Klicken Sie auf _Anwenden_. Die Ansichtskonfigurationsseite wird angezeigt.
 
-. Klicken Sie unter _Felder_ auf _Inhalt_: Titel (Titel)_. Das Feld _Konfigurieren: Inhalt:
-Titel_ erscheint.
+. Klicken Sie unter _Felder_ auf _Inhalt: Titel (Titel)_. Das Feld _Konfigurieren: Inhalt: Titel_ erscheint.
 
-. Deaktivieren Sie die Option _Erstellen einer Beschriftung_. Dadurch wird das Label entfernt, das von der
-Zauberer.
+. Deaktivieren Sie die Option _Erstellen einer Beschriftung_. Dadurch wird die Beschriftung entfernt, das automatisch erstellt wurde.
 
 . Klicken Sie auf _Anwenden_. Die Ansichtskonfigurationsseite wird angezeigt.
 
-. Klicken Sie unter _Felder_ in der Dropdown-Schaltfläche auf _Neu anordnen_. Die Registerkarte _Neu anordnen
-fields_ erscheint ein Popup-Fenster.
+. Klicken Sie unter _Felder_ in der Dropdown-Schaltfläche auf _Neu anordnen_. Das Pop-Up Fenster _Neu anordnen
+fields_ erscheint.
 
 . Ziehen Sie die Querbalkengriffe der Felder, um sie in die richtige Reihenfolge zu bringen: Bild,
-Titel, Körper. Als Alternative zum Ziehen können Sie auf die Schaltfläche _Zeilengewichte anzeigen_ klicken.
-oben in der Tabelle verknüpfen und numerische Gewichte eingeben (Felder mit niedrigerer oder
-weitere negative Gewichte werden zuerst angezeigt).
+Titel, Körper. Als Alternative zum Ziehen können Sie oben in der Tabelle auf die Schaltfläche _Zeilengewichte anzeigen_ klicken und numerische Zahlen eingeben (Felder mit niedrigeren oder
+stärker negativen Zahlen werden zuerst angezeigt).
 
 . Klicken Sie auf _Anwenden_. Die Ansichtskonfigurationsseite erscheint.
 
@@ -140,7 +136,7 @@ image:images/views-create-view.png["Konfigurationsseite für die Ansicht der Anb
 --
 
 . Navigieren Sie zur Homepage und klicken Sie in der Hauptnavigation auf Anbieter, um
-das Ergebnis.
+das Ergebnis zu sehen.
 +
 --
 // Completed vendors view output.
@@ -149,8 +145,8 @@ image:images/views-create-view-output.png["Vendors view output", width="100%"]
 
 ==== Erweitern Sie Ihr Verständnis
 
-Der Link zur Ansicht in der Hauptnavigation wird sich wahrscheinlich nicht rechts befinden
-Ort. Ändern Sie die Reihenfolge der Menüpunkte in der Hauptnavigation. Siehe
+Der Link zur Ansicht in der Hauptnavigation wird sich wahrscheinlich nicht an der richtigen Stelle befinden. 
+Ändern Sie die Reihenfolge der Menüpunkte in der Hauptnavigation. Siehe
 <<menu-reorder>>.
 
 //===== Verwandte Konzepte
