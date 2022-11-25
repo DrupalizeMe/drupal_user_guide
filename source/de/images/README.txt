@@ -68,7 +68,7 @@ is a list:
 
 - install-prepare-downloads.png : Shot from drupal.org. This is a
   manually-generated screenshot of the section of the Download & Extend page
-  on drupal.org that has the "Download Druppal 9...." button on it. We used
+  on drupal.org that has the "Download Drupal 9...." button on it. We used
   to be able to generate it automatically, but drupal.org markup changed and
   it no longer works.
 - install-prepare-files.png : Shot from drupal.org
