@@ -52,7 +52,7 @@ Arbeitsspeicher für PHP benötigt.
 Bestimmte PHP-Erweiterungen sind ebenfalls erforderlich. die vollständige Liste
 der erforderlichen PHP-Erweiterungen hängt davon ab, wie Sie das  Kernsystem
 installieren und welche Module Sie auf Ihrer Website verwenden. Im Allgemeinen
-sind bei Hosting-Service-Provider alle PHP-Erweiterungen, die Sie benötigen,
+sind bei Hosting-Service-Providern alle PHP-Erweiterungen, die Sie benötigen,
 um Drupal verwenden zu können vorinstalliert. Wenn Sie Ihre Website selbst
 hosten oder auf Ihrem lokalen Computer betreiben, erhalten Sie während der
 Installation gegebenenfalls Fehlermeldungen die darauf hinweisen, dass
@@ -62,11 +62,11 @@ Installation von Drupal fortsetzen können.
 ===== Web-Server
 
 Apache (empfohlen)::
-  Apache ist der am häufigsten verwendete Webserver. Das Kernsystem arbeitet auf
-  Apache 2.x unter UNIX/Linux, OS X oder Windows, wenn das Apache-Modul
-  mod_rewrite  installiert und aktiviert ist. Die Konfiguration des
-  Apache-VirtualHost muss die Direktive _AllowOverride All_ enthalten, um die
-  Verwendung der Datei _.htaccess_ zu erlauben.
+  Apache ist der am häufigsten verwendete Webserver. Die Kernsoftware funktioniert auf
+Apache 2.4.7 oder höher, die auf UNIX/Linux, OS X oder Windows gehostet werden und auf denen das
+Apache mod_rewrite Modul installiert und aktiviert ist. Die Apache VirtualHost
+Konfiguration muss die Anweisung AllowOverride All enthalten, damit die
+.htaccess-Datei verwendet werden kann.
 
 Lokaler PHP-Server::
   Sie können vorübergehend eine lokale Demo-Website auf Ihrem Computer
@@ -75,11 +75,10 @@ Lokaler PHP-Server::
   werden muss.
 
 Nginx::
-  Nginx ist ein häufig verwendeter Webserver, der vor allem bei hohem Zugriffsaufkommen
-  zur gleichen Zeit auf Ihrer Website , hohe Leistung und geringen
-  Speicherverbrauch ausgelegt ist. Das Kernsystem funktioniert auf Nginx 1.1
-  oder neuer, unter UNIX/Linux, Mac OS X oder Windows. Das Modul ngx_http_rewrite_
-  muss installiert und aktiviert sein.
+  Nginx ist ein weit verbreiteter Webserver, der sich auf hohe Gleichzeitigkeit,
+Leistung und geringen Speicherverbrauch konzentriert. Das Kernsystem läuft auf Nginx 0.7 oder höher
+oder höher, die auf UNIX/Linux, OS X oder Windows gehostet wird. Das ngx_http_rewrite_module
+muss installiert und aktiviert sein.
 
 Microsoft IIS::
   Microsoft IIS ist ein Webserver und ein Satz von Funktionserweiterungsmodulen
@@ -106,7 +105,7 @@ Datenbank-Software erfordert.
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ Community-Dokumentationsseite „Systemanforderungen (englisch)"]
+* https://www.drupal.org/docs/8/system-requirements[_Drupal.org_ Community-Dokumentationsseite „Systemanforderungen“ (englisch)]
 * https://secure.php.net/manual/en/configuration.php[PHP-Laufzeitkonfiguration (PHP-Speicherlimit und andere Einstellungen) (englisch)]
 
 
@@ -118,3 +117,4 @@ https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] entnommen aus
 https://www.drupal.org/docs/8/system-requirements["Systemvoraussetzungen (englisch)"],
 copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Comunity].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
