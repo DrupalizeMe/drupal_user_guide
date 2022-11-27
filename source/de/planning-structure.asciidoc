@@ -28,8 +28,8 @@ Inhalten verwendet werden sollen und welche Inhalte auf den Seiten angezeigt wer
   Ihrer Website angezeigt werden sollen. Das Ergebnis könnte die Beschreibung in
   <<preface-scenario>> sein.
 
-. Entscheiden Sie für jeden identifizierten Teil des Inhalt, welcher
-Inhalts-Entitätstyp am besten geeignet ist. Dabei müssen Sie überlegen,
+. Entscheiden Sie für jeden als Inhalt identifizierten Teil des Konzeptes, welcher
+Inhalts- bzw.Entitätstyp am besten geeignet ist. Dabei müssen Sie überlegen,
 wo und wie der Inhalt auf der Website verwendet und bearbeitet werden soll.
 Im Beispiel des Szenarios des Wochenmarktes könnten die Öffnungszeiten und der
 Standort des Wochenmarktes auf jeder Unterseite der Website innerhalb einer
@@ -51,7 +51,7 @@ und welche Module dafür eingesetzt werden, müssen Sie letztendlich selbst
 treffen. Würden Sie Lieferanteninformationen als Benutzerprofil darstellen,
 könnten diese auch nur von dem Benutzer bearbeitet werden, dem das
 Benutzerprofil auf Ihrer Website zugeordnet ist. Ein Benutzerkonto später
-einem anderen Benutzer zu übertragen wäre nicht gans so einfach. Inhalte
+einem anderen Benutzer zu übertragen wäre nicht ganz so einfach. Inhalte
 hingegen, können von allen Benutzern bearbeitet werden, denen die
 hierfür erforderlichen Berechtigungen zugewiesen worden sind.
 
@@ -75,7 +75,7 @@ hierfür erforderlichen Berechtigungen zugewiesen worden sind.
   einzelnen Seiten, die dem jeweiligen Entitätstyp entsprechen, enthalten.
   Für jeden Eintrag müssen Sie festlegen, welche Elemente aufgelistet werden
   sollen. Anschließend müssen Sie entscheiden, in welcher Reihenfolge und mit
-  welche Filteroptionen diese Informationen angezeigt werden sollen.
+  welchen Filteroptionen diese Informationen angezeigt werden sollen.
   Beispielsweise könnten Sie einem Website-Besucher die Möglichkeit geben,
   nach Schlüsselwörtern zu suchen, um eine entsprechende Liste anhand eines
   solchen Schlüsselwortes weiter einzugrenzen oder um eine Liste besser
@@ -108,7 +108,7 @@ hierfür erforderlichen Berechtigungen zugewiesen worden sind.
 . Überlegen Sie sich, welche Felder auf andere Inhaltsentitäten verweisen sollen.
   Ein Beispiel für ein solches Feld  ist Lieferant, da Rezepte von Lieferanten
   eingereicht werden sollen und aus diesen Rezepten auf das Profil des
-  jeweiligen Lieferanten verweisen werden soll. Daher benötigt der Inhaltstyp
+  jeweiligen Lieferanten verwiesen werden soll. Daher benötigt der Inhaltstyp
   Rezept ein Referenzfeld auf den Inhaltstyp Lieferant.
 
 Hier ist ein Beispiel für die sich daraus ergebende Inhaltsstruktur der
@@ -119,12 +119,12 @@ Wochenmarkt-Website aus dem Beispielszenario:
 |=============================================
 |Entitätstyp |Entitäts-Subtyp |Beispiele |Felder
 
-|Inhaltselement |Einfache Seite |Hauptseite, über Uns Seite |Titel, Seitentext
+|Inhalt |Einfache Seite |Hauptseite, über Uns Seite |Titel, Seitentext
 
-|Inhaltselement |Lieferant |Eine Seite für jeden Lieferanten auf dem Wochenmarkt |
+|Inhalt |Lieferant |Eine Seite für jeden Lieferanten auf dem Wochenmarkt |
   Name des Lieferanten, Seitentext, Bild, URL
 
-|Inhaltselement |Rezept |Eine Seite für jedes eingereichte Rezept |
+|Inhalt |Rezept |Eine Seite für jedes eingereichte Rezept |
   Rezeptname, Seitentext, Bild, Verweis auf den Lieferanten, der das Rezept eingereicht hat,
   Taxonomie der Zutaten
 
@@ -134,7 +134,7 @@ Wochenmarkt-Website aus dem Beispielszenario:
 |Taxonomiebegriff |Zutaten |Karotten, Tomaten und weitere Zutaten |
   Keine besonderen Felder
 
-|Kontaktformular |(allgemein) |Allgemeines Kontaktformular |Name, E-Mail, Betreff, Nachricht
+|Kontaktformular |(allgemein) |Allgemeines Kontaktformular |Name, E-Mail-Adresse, Betreff, Nachricht
 
 |Benutzerprofil |(keines) |wird auf dieser Seite nicht verwendet |keine besonderen Felder
 
@@ -148,12 +148,12 @@ Im folgenden sind die, für die Beispielwebsite benötigten Inhalte aufgelistet:
   Angezeigte Felder
 
 |Lieferantenseite |Inhalte für Lieferanten |Alle Lieferanten, alphabetisch, seitenweise |
-  Bild, Lieferantenname, Zusammenfasung des Textkörpers
+  Bild, Lieferantenname, Zusammenfassung des Textkörpers
 
-|Rezepteseite |Inhaltselemente der Rezepte |
+|Rezepteseite |Inhalte der Rezepte |
   Filtern nach Zutaten, alphabetisch, seitenweise |Bild, Rezeptname
 
-|Seitenleiste, Neuste Rezepte |Inhaltselemente der Rezepte  |Liste der 5 neuesten Rezepte |
+|Seitenleiste, Neuste Rezepte |Inhalte der Rezepte  |Liste der 5 neuesten Rezepte |
   Bild, Rezeptname
 
 |=============================================
@@ -180,3 +180,4 @@ video::https://www.youtube-nocookie.com/embed/CaNt4DEeIgU[title="Ihre Inhaltsstr
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
 und https://www.drupal.org/u/gdunham[Grant Dunham].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

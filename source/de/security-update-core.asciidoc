@@ -24,7 +24,7 @@ Aktualisieren Sie das Kernsystem, entweder über den Verwaltungsbereich oder mit
 
 ==== Arbeitsschritte
 
-. Legen Sie eine vollständige Sicherungskopie Ihrer Website an. Siehe <<<prevent-backups>>.
+. Legen Sie eine vollständige Sicherungskopie Ihrer Website an. Siehe <<prevent-backups>>.
 
 . Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_) in einem beliebigen Texteditor.
 Suchen Sie die Zeile mit der Variablen _$settings['update_free_access']_. Standardmäßig ist diese Zeile mit dem Wert FALSE versehen. Ändern Sie den Wert der Einstellung auf TRUE.
@@ -60,7 +60,7 @@ tar -xzf drupal-8.3.2.tar.gz
 
 verwenden, um die Dateien aus der Archivdatei zu entpacken.
 
-. Löschen Sie im Verzeichns, das Ihre Websie enthält die Verzeichnisse _core_ und _vendor_,
+. Löschen Sie im Verzeichnis, das Ihre Website enthält die Verzeichnisse _core_ und _vendor_,
 und alle Dateien, die sich nicht in einem Unterverzeichnis befinden. Einschließlich der Dateien _.htaccess_,
 _composer.json_, und _Autoload.php_. Löschen Sie keine benutzerdefinierten und angepassten Dateien
 weil dadurch die darin enthaltenen Anpassungen verloren gehen.
@@ -70,7 +70,7 @@ weil dadurch die darin enthaltenen Anpassungen verloren gehen.
 . Führen Sie das PHP-Skript _update.php_ aus, indem Sie eine der folgenden Methoden verwenden:
 +
   * Rufen Sie die Seite _http://www.example.com/update.php_ in Ihrem Browser auf (wobei
-  _www.example.com_ als Beispiel für die Adresse Ihrer Website verwendet wird). Klicken Sie auf der ersten Seite auf _Fortsetzen_.
+  _www.example.com_ als Beispiel für die Adresse Ihrer Website verwendet wird). Klicken Sie auf der ersten Seite auf _Fortsetzen_,
   um die Aktualisierungen auszuführen und das Skript erfolgreich abzuschließen.
   * Führen Sie den folgenden Drush-Befehl aus: `drush updatedb`
 
@@ -78,7 +78,7 @@ weil dadurch die darin enthaltenen Anpassungen verloren gehen.
 bis alle Aktualisierungen erfolgreich abgeschlossen wurden.
 
 . Öffnen Sie die Datei _settings.php_ (_/sites/default/settings.php_) in einem Texteditor. Suchen Sie die
-Zeile mit der Variable _$settings['update_free_access']_ und aktualisieren Sie sie diese auf den Wert
+Zeile mit der Variable _$settings['update_free_access']_ und aktualisieren Sie diese auf den Wert
 "False".
 
 ----
@@ -116,7 +116,7 @@ video::https://www.youtube-nocookie.com/embed/DqYqxp4xByk[title=„Das Kernsyste
 ==== Zusätzliche Ressourcen
 
 * https://www.drupal.org/project/drupal["Seite zum Herunterladen des Kernsystems" auf _Drupal.org_ (englisch)]
-* https://www.drupal.org/project/registry_rebuild["Seite zum Neuaufbau des Cahce auf _Drupal.org_ (englisch)]
+* https://www.drupal.org/project/registry_rebuild["Seite zum Neuaufbau des Cache auf _Drupal.org_ (englisch)]
 * Die Datei _/core/UPDATE.txt_ innerhalb Ihrer Installation.
 
 
@@ -126,3 +126,5 @@ Geschrieben und herausgegeben von https://www.drupal.org/u/surendramohan[Surendr
 https://www.drupal.org/u/batigolix[Boris Doesborgh], und
 https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

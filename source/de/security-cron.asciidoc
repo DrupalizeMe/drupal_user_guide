@@ -3,14 +3,14 @@
 === Konfigurieren von Cron-Wartungsaufgaben
 
 [role="summary"]
-Wie man Cron-Wartungsaufgaben mit dem Kernsystemmodul Automatic Cron ausführt, oder diese außerhalb der Website ausführen lässt.
+Wie man Cron-Wartungsaufgaben mit dem Kernsystemmodul Automated Cron ausführt, oder diese außerhalb der Website ausführen lässt.
 
 (((Automated Cron module,configuring)))
 (((Cron task,configuring)))
 
 ==== Zielsetzung
 
-Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden. Ist dies nicht der Fall, installieren Sie entweder das Modul Automatic Cron oder lassen Sie Cron-Wartungsaufgaben außerhalb Ihrer Website ausführen.
+Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden. Ist dies nicht der Fall, installieren Sie entweder das Modul Automated Cron oder lassen Sie Cron-Wartungsaufgaben außerhalb Ihrer Website ausführen.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -23,7 +23,7 @@ Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden. Ist dies 
 . Überprüfen Sie den _Statusbericht_ (siehe <<prevent-status>>), um zu sehen, wann Cron-Wartungsaufgaben zuletzt ausgeführt wurden.
 +
 Wenn Sie die Website mit dem Standardinstallationsprofil des Kernsystems (oder auf ähnliche Weise) installiert haben,
-können Sie Cron-Wartungsaufgaben bereits mit Hilfe des Moduls Automatic Cron ausführen. Standardmäßig werden diese Aufgaben etwa alle drei
+können Sie Cron-Wartungsaufgaben bereits mit Hilfe des Moduls Automated Cron ausführen. Standardmäßig werden diese Aufgaben etwa alle drei
 Stunden ausgeführt.
 
 . Wählen Sie aus, ob Sie Cron-Wartungsaufgaben mit dem Modul Automated Cron, das mit dem Kernsystem ausgeliefert wird
@@ -37,16 +37,16 @@ erneut aus. Wenn über einen längeren Zeitraum niemand die Website besucht, wer
 es bleibt weniger Zeit für die Ausführung der Aufgaben, bevor verschiedene Server-Timeouts
  (z. B. PHP-Ausführungszeitüberschreitungen) in kraft treten. Wenn dies geschieht, wird im Systemprotokoll (siehe
   <<prevent-log>>) eine Fehlermeldung ausgegeben, die darüber Informiert, dass Wartungsaufgaben mittels Cron nicht abgeschlossen werden konnten.
-  * Mit dem Kernmodul Automated Cron sind geringe Skalierbarkeitskosten verbunden. 
+  * Mit dem Kernsystemmodul Automated Cron sind geringe Skalierbarkeitskosten verbunden. 
   Dies liegt daran, dass einer der Prozesse des Webservers belegt ist (und keine anderen Webseiten bedienen kann), bis die Cron-Wartungsaufgaben abgeschlossen sind. 
   
 . Wenn Sie das Kernsystemmodul Automated Cron verwenden möchten, stellen Sie zunächst sicher, dass es
 installiert ist (Das Installationsprofil Standard installiert das Modul automatisch. Siehe:
-<<config-install>> wenn dass Modul nicht installtiert wurde).
+<<config-install>> wenn dass Modul nicht installiert wurde).
 +
 Als Nächstes legen Sie fest, wie häufig Cron-Wartungsaufgaben durchlaufen werden sollen.
 Navigieren Sie dazu im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
-_System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie im Feld _Cron alle x-Miunten ausführen_ unter _Cron-Einstellungen_ das gewünschte Intervall aus und klicken Sie auf _Konfiguration Speichern_.
+_System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie im Feld _Cron alle x-Minunten ausführen_ unter _Cron-Einstellungen_ das gewünschte Intervall aus und klicken Sie auf _Konfiguration Speichern_.
 +
 --
 // Cron-Konfigurationsseite (admin/config/system/cron).
@@ -81,13 +81,13 @@ Immer wenn diese URL aufgerufen wird, werden die Cron-Wartungsaufgaben ausgefüh
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Wartungsaufgaben mittels Cron konfigurieren  (englisch)"]
+video::https://www.youtube-nocookie.com/embed/ts4g1jTEAt4[title="Wartungsaufgaben mittels Cron konfigurieren"  (englisch)]
 
 ==== Zusätzliche Ressourcen
 
-* http://docs.drush.org/en/master/cron/[Internetseite von Drush "Drupal-Wartungsaufgaben mit Drush ausführen (englisch)"]
+* http://docs.drush.org/en/master/cron/[Internetseite von Drush "Drupal-Wartungsaufgaben mit Drush ausführen" (englisch)]
 
-* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Cron einrichten (englisch)"]
+* https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ Community-Dokumentationsseite "Cron einrichten" (englisch)]
 
 
 *Mitwirkende*
@@ -96,3 +96,5 @@ Geschrieben und herausgegeben von https://www.drupal.org/u/dalin[Dave Hansen-Lan
 https://www.advomatic.com/[Advomatisch],
 https://www.drupal.org/u/batigolix[Boris Doesborg],
 und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
