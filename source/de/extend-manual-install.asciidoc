@@ -36,7 +36,7 @@ in diesem Kapitel, beschriebenen Probleme auseinandersetzen:
 
 * Probleme beim Zugriff auf die Website via FTP.
 
-* Sie haben ein selbst definiertes Modul/Theme erstellt oder dessen Dateien
+* Sie selbst ein Modul/Theme erstellt oder dessen Dateien
 von jemandem erhalten.
 
 * Sie konnten die Anweisungen in
@@ -52,11 +52,11 @@ Ihrer Website zu verwalten, folgen Sie den Schritten zur Dateiaktualisierung in
 ==== Arbeitsschritte
 
 Wenn Sie ein Modul oder Theme von _Drupal.org_ installieren, folgen Sie den
-Anweisungen zum Herunterladen und dann die Anweisungen zum Hochladen/Entpacken.
+Anweisungen zum Herunterladen und anschkießend den Anweisungen zum Hochladen/Entpacken.
 Wenn Sie das Modul oder Theme erstellt haben, überspringen Sie die Anweisungen
 zum Herunterladen. Legen Sie stattdessen eine Archivdatei
 (von der Sie wissen, wie man sie auf dem Server extrahiert) an und fahren Sie
-mit den Schritten zum Hochladens und Entpacken eines Themes bzw. Moduls fort.
+mit den Schritten zum Hochladen und Entpacken eines Themes bzw. Moduls fort.
 Verwenden Sie dazu eine Methode, die mit dem von Ihnen erzeugten Archiv
 kompatibel ist.
 
@@ -90,7 +90,7 @@ Ihrem Hauptverzeichnis die Unterverzeichnisse  _modules_ und _themes_
 (falls diese nicht bereits existieren). Typischerweise wird ein Unterverzeichnis
 _contrib_ für von der Community bereitgestellte Zusatzmodule oder Themes, die von
 _Drupal.org_ heruntergeladen werden im jeweiligen Verzeichnis erstellt.
-Außerdem wird normalerweise ein Unterverzeichnis mit dem Namen_custom_ angelegt für
+Außerdem wird normalerweise ein Unterverzeichnis mit dem Namen _custom_ angelegt für
 Module und Themes, die sie selbst erstellt haben.
 Ihr _Modul_-Verzeichnis könnte dann wie folgt aussehen:
 +
@@ -138,11 +138,11 @@ nach dem Entpacken automatisch gelöscht wurde.
 . Siehe: <<extend-module-install>>, <<extend-theme-install>>,
 <<security-update-module>>, oder <<security-update-theme>> um die
 Installation oder Aktualisierung des Moduls oder Themas abzuschließen.
-Beginnen Sie dort mit dem Arbeitsschritt, der nach dem  automatische Download folgt.
+Beginnen Sie dort mit dem Arbeitsschritt, der nach dem  automatischen Download folgt.
 
 ==== Erweitern Sie ihre Kenntnisse
 
-* Wenn Sie mit mehreren Umgebungen arbeiten (z.B. einer lokalen
+* Wenn Sie mit mehreren Umgebungen arbeiten (z. B. einer lokalen
 Entwicklungsumgebung und einer Live-Website) müssen Sie diese Arbeitsschritte
 in jeder Umgebung  gesondert ausführen oder die betroffene Umgebung neu klonen.
 Siehe: <<install-dev-making>>.
@@ -161,8 +161,10 @@ video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Themes oder Mod
 ==== Zusätzliche Ressourcen
 
 * https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite „Aktualisierung von Modulen (englisch)"]
-* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ Community-Dokumentationsseite „Installieren der beigetragenen Module (Drupal 9) (englisch)"]
+* https://www.drupal.org/docs/8/extending-drupal-8/installing-drupal-8-modules[_Drupal.org_ Community-Dokumentationsseite „Installieren der von der Community bereitgestellten Zusatzmodule (Drupal 9) (englisch)"]
 * https://www.drupal.org/docs/8/extending-drupal-8/installing-themes[_Drupal.org_ Community-Dokumentationsseite „Installation von Themes (englisch)"]
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
+
 
 
 *Mitwirkende*
@@ -170,3 +172,4 @@ video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Themes oder Mod
 Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], und
 https://www.drupal.org/u/vegantriathlete[Marc Isaacson].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

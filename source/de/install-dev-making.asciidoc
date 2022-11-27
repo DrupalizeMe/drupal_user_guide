@@ -21,8 +21,8 @@ und zum Testen von Aktualisierungen verwenden können.
 * Sie haben eine fertig entwickelte Live-Website, von der Sie eine Kopie
   für Entwicklungsaufgaben erstellen wollen.
 
-* Wenn Sie Drush zur Ausführung einiger der Arbeitsschritteschritte dieser
-  Aufgabe verwenden möchten, muss Drush installiert.
+* Wenn Sie Drush zur Ausführung einiger der Arbeitsschritte dieser
+  Aufgabe verwenden möchten, muss Drush installiert sein.
   Siehe: <<install-tools>>.
 
 ==== Arbeitsschritte
@@ -32,15 +32,17 @@ und zum Testen von Aktualisierungen verwenden können.
   wo sich das Hauptverzeichnis Ihrer Entwicklungs-Website befindet.
   Sie haben außerdem eine leere Datenbank inklusive des dazugehörigen Datenbankbenutzers für ihre Entwicklungs-Website eingerichtet.
 
-. Der nächste Schritt ist, eine aktuelle Kopie ihre Datenbank anzulegen, diese beinhaltet alle Inhalte (Datensätze) ihrer Website-Datenbank.
+. Der nächste Schritt ist, eine aktuelle Kopie ihrer Datenbank anzulegen, diese beinhaltet alle Inhalte (Datensätze) ihrer Website.
 Diese Datei kann sehr groß sein, aber es gibt zwei Dinge, die sie tun können, um die Dateigröße zu verringern:
   
-  * Komprimieren sie die Datei, beispielsweise mit gzip oder einem anderen Kompressionswerkzeug.
-  * Schliessen sie von der Datenbank die Daten der Tabellen für das interne Caching-System aus, indem sie diese leeren (Truncate). 
-  Diese Daten sind temporär und sie brauchen nur die Struktur der Tabellen und nicht ihre Inhalte um eine Kopie der Site zu machen.
+  * Komprimieren Sie die Datei, beispielsweise mit gzip oder einem anderen Kompressionswerkzeug.
+  * Schliessen sie aus der Datenbank die Daten der Tabellen für das interne Caching-System aus, indem Sie diese leeren (Truncate). 
+  Diese Daten sind temporär. Daher benötigen Sie nur die Struktur der Tabellen und nicht deren Inhalte um eine Kopie der Website anzufertigen.
 
 Exportieren Sie die Datenbank Ihrer Live-Website. verwenden Sie dazu eine der folgenden Methoden:
+
 +
+
   * Wenn Sie MySQL als Datenbank verwenden und auf dem Server Ihrer Live-Site
     phpMyAdmin installiert ist
     (die Software ist in vielen Hosting-Kontrollzentren verfügbar),

@@ -11,42 +11,38 @@ Eine Web-Technologie, die zum Datenaustausch mit einem Server verwendet wird, um
 Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte neu laden zu müssen.
 (((Alias,definition)))
 [[glossary-alias]] Alias::
-   A user-friendly name to replace the internal <<glossary-path,path>> that
-   the system assigns to a URL on the site. For example, you might assign an
-   alias of _/about_ to the About page on your site, to replace the internal
-   path _/node/5_. This would give the page a URL of _http://example.com/about_
-   instead of _http://example.com/node/5_. See <<content-paths>> for more
-   information.
+   Ein benutzerfreundlicher Name, der den internen <<glossary-path,path>> ersetzt, den
+   das System einer URL auf der Website zuweist. Sie könnten zum Beispiel einen
+   Alias _/about_ für die Seite About auf Ihrer Website vergeben, um den internen
+   Pfad _/node/5_. Dadurch würde die Seite die URL _http://example.com/about_
+   anstelle von _http://example.com/node/5_. Siehe <<content-paths>> für weitere
+   Informationen.
 (((Anonymous,definition)))
 [[glossary-anonymous]] Anonymous::
-   A person (<<glossary-user,user>>) interacting with the site who is not logged
-   in. See <<user-concept>> for more information.
+   Eine Person (<<glossar-user,user>>), die mit der Website interagiert und nicht angemeldet ist.
+    Siehe <<user-concept>> für weitere Informationen.
 (((Block,definition)))
 [[glossary-block]] Block::
-   A chunk of <<glossary-content,content>> (text, images, links, etc.) that
-   can be displayed on a page of a site. Blocks are displayed in
-   <<glossary-region,regions>>. See <<block-concept>> for more information.
+   Ein Stück <<glossary-content,content>> (Text, Bild, Link, usw.) dasa auf einer Seite innerhalb eine Website angezeigt werden kann. Blöcke werden in
+   <<glossary-region,regions>> angezeigt. Siehe:<<block-concept>> für weiterte Information.
 (((Breakpoint,definition)))
 [[glossary-breakpoint]] Breakpoint::
-   Breakpoints are used to separate the height or width of browser screens,
-   printers, and other media output types into steps. A
-   <<glossary-responsive,responsive>> site adjusts its presentation at these
-   breakpoints. See <<structure-image-responsive>> for more information.
+   Breakpoints werden verwendet, um die Höhe oder Breite von Browsern, Bildschirmen,
+   Druckern und weiteren Medienausgabetypen in Bereiche zu unterteilen. Eine
+   <<glossary-responsive,responsive>> Seite passt ihre Präsentation anhand dieser 
+   Breakpoints an. Siehe: <<structure-image-responsive>> für Weitere Informatioonen.
 (((Bundle,definition)))
 [[glossary-bundle]] Bundle::
-   Synonym for <<glossary-entity-subtype,Entity subtype>>.
+   Synonym für <<glossary-entity-subtype,Entity subtype>>.
 (((Cache,definition)))
 [[glossary-cache]] Cache::
-   The site's internal cache stores the output of time-consuming calculations,
-   such as computing output for an HTML page request, and then
-   retrieves them instead of recalculating the next time they are needed.
-   External caching systems can also be used on the web server to speed up
-   a site's response. See <<prevent-cache>> for more information on the
-   internal cache.
+   Der interne Cache der Website, der auch Zwischenspeicher genannt wird, speichert die Ausgabe zeitaufwändiger Berechnungen, wie z.B. die Berechnung der Ausgabe für eine HTML-Seitenanfrage, und gibt das Ergebnis dieser Berechnung direkt aus, anstatt die Berechnung beim bei jedem Seitenaufruf neu durchführen.
+   Externe Caching-Systeme können auch auf dem Webserver verwendet werden, um die
+   Antwortzeit einer Website zu verkürzen. Siehe: <<prevent-cache>> für Weitere Informationen über den internen Cache.
 (((CMS (Content Management System),definition)))
 (((Content Management System (CMS),definition)))
 [[glossary-cms]] CMS::
-   Acronym for
+   Akronym für
    <<glossary-content-management-system,Content Management System>>.
 (((Configuration,definition)))
 [[glossary-configuration]] Configuration::

@@ -49,7 +49,7 @@ korrekt funktioniert, können Sie die Änderungen auf die Live-Website anwenden.
 ==== Arbeitsschritte
 
 . Navigieren Sie auf der Quell-Website im Menü _Verwalten_ zum Menüpunkt
-_Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Export_
+_Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Exportieren_
 (_admin/config/development/configuration/full/export_).
 
 . Klicken Sie auf _Exportieren_. Ihre Website wird ein Archiv mit der vollständigen
@@ -60,7 +60,8 @@ lokalen Computer.
 _Konfiguration_ > _Entwicklung_ > _Konfigurationssynchronisation_ > _Importieren_
 (_admin/config/development/configuration/full/import_).
 
-. Suchen Sie nach dem heruntergeladenen Konfigurationsarchiv und klicken Sie auf
+. Suchen Sie nach dem heruntergeladenen Konfigurationsarchiv und klicken Sie auf Datei auswählen, wählen Sie das exportierte Archiv aus und klicken Sie anschließénd auf „Hochladen“.
+
 _Datei hochladen_. Ihr Konfigurationsarchiv wird auf die Ziel-Website hochgeladen
 und Sie werden auf die Konfigurationsseite _„Synchronisieren“_
 (_admin/config/development/configuration_) weitergeleitet.
@@ -84,7 +85,7 @@ beiden Websites durchzuführen. Siehe: <<extend-deploy>>.
 
 * Nach dem Schritt, in dem Sie die vollständige Konfiguration von der
 Quell-Website exportieren, können Sie das Archiv auch entpacken und an ein
-System zur Versionskontrolle, wie z.B. Git übergeben, um Änderungen an der
+System zur Versionskontrolle, wie z. B. Git übergeben, um Änderungen an der
 Konfiguration einer Website zu protokollieren. Siehe: <<extend-git>>.
 
 // ==== Verwandte Begriffe
@@ -100,3 +101,5 @@ video::https://www.youtube-nocookie.com/embed/dLUGQk8GKa0[title="Konfigurationsv
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
+

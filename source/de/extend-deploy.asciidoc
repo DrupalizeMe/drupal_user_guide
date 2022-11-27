@@ -42,9 +42,9 @@ nicht jedoch auf der Live-Website. Siehe <<views-create>>.
 . Öffnen Sie die Website in der lokalen Entwicklungsumgebung.
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
-_Entwicklung_ > _Konfigurationssynchronisation_ > _Export_ > _Einzelnes Konfigurationselement_
+_Entwicklung_ > _Konfigurationssynchronisation_ > _Export_ > _Einzelnes Element_
 (_admin/config/development/configuration/single/export_).
-Die Seite _„Einzelnes Konfigurationselement exportieren“_ erscheint.
+Die Seite _„Einzelnes Element“_ erscheint.
 
 . Wählen Sie _Ansicht_ aus der Liste _Konfigurationstyp_.
 
@@ -62,7 +62,7 @@ image:images/extend-deploy-export-single.png["Ein einzelnes Objekt exportieren"]
 . Öffnen Sie die Live-Website.
 
 . Navigieren Sie im Menü Verwalten_ zum Menüpunkt _Konfiguration_ >
-_Entwicklung_ > _Konfigurationssynchronisation_ > _Import_ > _Einzelner Punkt_
+_Entwicklung_ > _Konfigurationssynchronisation_ > _Import_ > _Einzelnes Element_
 (__admin/config/development/configuration_). Die Seite _Import_ erscheint.
 
 . Wählen Sie _Ansicht_ aus der Liste _Konfigurationstyp_.
@@ -79,14 +79,14 @@ zum Menüpunkt _Struktur_ > _Ansichten_ navigieren.
 ==== Vertiefen Sie Ihre Kenntnisse
 
 Die Arbeitsschritte dieses Themas zeigen, wie Sie eine einzelne Konfiguration
-exportieren und wieder importieren. Öfters, wenn Sie neue Funktionen auf einer
+exportieren und wieder importieren können. Wenn Sie neue Funktionen auf einer
 Entwicklungs-Website erstellen und auf Ihre Live-Website übertragen,
-müssen Sie mehrere Konfigurationselemente exportieren und wieder importieren.
+müssen Sie oft mehrere Konfigurationselemente exportieren und wieder importieren.
 Wenn Sie zum Beispiel einen neuen Inhaltstyp
-mit Feldern entwickelt haben, müssten Sie mehrere Konfigurationselemente
+mit Feldern entwickelt haben, müssen Sie mehrere Konfigurationselemente
 für jedes Feld übertragen, ein Konfigurationselement für den Inhaltstyp selbst
 und möglicherweise mehrere Konfigurationselemente für mehrere _Ansichtsmodi_
-sowie Konfigurationsseite für _Formularanzeigemodi_.
+sowie mehrere Konfigurationselemente für _Formularanzeigemodi_.
 Außerdem müssen diese Elemente in der richtigen Reihenfolge übertragen werden.
 Diese Übertragung korrekt auszuführen, kann sowohl mühsam als auch
 aufwändig sein.
@@ -124,3 +124,5 @@ video::https://www.youtube-nocookie.com/embed/hysqVDIfLTA[title="Neue Website-Fu
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
+
