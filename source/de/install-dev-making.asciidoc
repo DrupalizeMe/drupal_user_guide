@@ -12,7 +12,7 @@ Eine Kopie einer Live-Site für Entwicklungszwecke erstellen.
 Erstellen Sie die Kopie einer Website, die Sie als Entwicklungsumgebung für neue Funktionen
 und zum Testen von Aktualisierungen verwenden können.
 
-==== Erforderlichen Vorkenntnisse
+==== Erforderliche Vorkenntnisse
 
 <<install-dev-sites>>
 
@@ -34,15 +34,14 @@ und zum Testen von Aktualisierungen verwenden können.
 
 . Der nächste Schritt ist, eine aktuelle Kopie ihrer Datenbank anzulegen, diese beinhaltet alle Inhalte (Datensätze) ihrer Website.
 Diese Datei kann sehr groß sein, aber es gibt zwei Dinge, die sie tun können, um die Dateigröße zu verringern:
-  
++  
   * Komprimieren Sie die Datei, beispielsweise mit gzip oder einem anderen Kompressionswerkzeug.
   * Schliessen sie aus der Datenbank die Daten der Tabellen für das interne Caching-System aus, indem Sie diese leeren (Truncate). 
   Diese Daten sind temporär. Daher benötigen Sie nur die Struktur der Tabellen und nicht deren Inhalte um eine Kopie der Website anzufertigen.
-
++
 Exportieren Sie die Datenbank Ihrer Live-Website. verwenden Sie dazu eine der folgenden Methoden:
 
 +
-
   * Wenn Sie MySQL als Datenbank verwenden und auf dem Server Ihrer Live-Site
     phpMyAdmin installiert ist
     (die Software ist in vielen Hosting-Kontrollzentren verfügbar),
@@ -50,7 +49,7 @@ Exportieren Sie die Datenbank Ihrer Live-Website. verwenden Sie dazu eine der fo
     Verwenden Sie danach die Registerkarte _Export_ in phpMyAdmin, um die Datenbank Ihrer
     Website im Format _SQL_ zu exportieren. Komprimieren Sie die
     ausgegebene Datei mittels _gzip_ um die Dateigröße des Exports zu verringern.
-
++
   * Wenn Sie MySQL benutzen und Zugriff auf die Befehlszeile haben, benutzen Sie
     folgenden Befehl (Ersetzen sie den Datenbanknahmen, den Benutzernamen und
     das Passwort mit den entsprechenden Daten Ihrer Website):
@@ -65,7 +64,7 @@ mysqldump -u'BENUTZERNANE' -p'PASSWORT' DATENBANKNAME | \ gzip > PFAD/TO/DATEINA
 ----
 drush sql:dump --gzip --structure-tables-list="cache,cache_*" \ --result-file='PFAD/TO/DATEINAME.sql.gz
 ----
-
++
 * Verwenden Sie das von der Community bereitgestellte Zusatzmodul
 https://www.drupal.org/project/backup_migrate[Backup and Migrate]
 von Ihrer Live-Website aus. Siehe <<extend-module-install>> um Anweisungen
