@@ -12,7 +12,7 @@ So fügen Sie Felder zu einem Inhaltstyp hinzu.
 
 ==== Zielsetzung
 
-Fügen Sie ein Verknüpfungsfeld und ein Bildfeld zum Inhaltstyp Anbieter hinzu.
+Fügen Sie ein Verknüpfungsfeld und ein Bildfeld zum Inhaltstyp Lieferant hinzu.
 
 ==== Vorrausgesetztes Wissen
 <<planning-data-types>>
@@ -25,10 +25,9 @@ Der Inhaltstyp Lieferant muss vorhanden sein. See <<structure-content-type>>.
 
 Fügen Sie die Felder Anbieter-URL und Hauptbild zum Inhaltstyp Anbieter hinzu.
 
-. Navigieren Sie im Menü _Verwaltuen_ zum Menüpunkt _Struktur_ > _Inhalt
-Typen_ (_admin/structure/types_). Klicken Sie dann in der Dropdown-Liste auf _Felder verwalten_.
-für den Inhaltstyp Anbieter. Sie gelangen auf die Seite _Felder verwalten_. Beachten Sie, dass
-die Namen und Beschreibungen der Inhaltstypen und -felder, auf diesen Seiten eventuell auf Englisch angezeigt werden; siehe
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_ (_admin/structure/types_). Klicken Sie dann im Drop-Button, in der Zeile des Inhaltstyps Lieferant, auf _Felder verwalten_.
+Sie gelangen auf die Seite _Felder verwalten_. Beachten Sie, dass
+die Namen und die Beschreibungen des Inhaltstyps und dessen Felder, auf diesen Seiten eventuell auf Englisch angezeigt werden. Siehe
 <<language-concept>> für eine Erklärung.
 
 . Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint. Sie können entweder ein neues 
@@ -39,12 +38,12 @@ Feld für den Inhaltstyp hinzufügen oder Sie verwenden ein vorhandenes Feld ern
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Wert
-| Neues Feld hinzufügen | Feldtyp | Verknüpfung
+| Neues Feld hinzufügen | Feld Hinzufügen | Link
 | Beschriftung | Beschriftung, die im Verwaltungsbereich sichtbar ist | URL zur Website des Lieferanten
 |================================
 +
 Basierend auf dem Wert _Beschriftung_ wird automatisch ein Systemname generiert. Klicken Sie auf .
-_Bearbeiten_, wenn Sie den Standardnamen überschreiben möchten.
+_Bearbeiten_, wenn Sie den automatisch generierten Systemnamen anpassen möchten möchten.
 +
 --
 // Initial page for admin/structure/types/manage/vendor/fields/add-field.
@@ -69,8 +68,8 @@ erscheint. Auf dieser können Sie das Feld konfigurieren. Füllen Sie die Felder
 |Feldname | Erläuterung | Wert
 | Beschriftung | die Beschriftung, die im Bearbeitungsformular angezeigt wird | URL zur Website des Lieferanten
 | Hilfetext | Die Anweisung, die unter dem Feld angezeigt wird (leer lassen) | 
-| Erforderliches Feld | Ob das Feld erforderlich ist oder nicht | Nicht angekreuzt
-| Erlaubter Link-Typ | Die Art der Links, die eingegeben werden können | Nur externe Links
+| Pflichtfeld | Ob das Feld erforderlich ist oder nicht | Nicht angekreuzt
+| Erlaubter Linktyp | Die Art der Links, die eingegeben werden können | Nur externe Links
 | Linktext erlauben | Ob ein Linktext eingegeben werden kann | Nicht angekreuzt
 |================================
 +
@@ -101,7 +100,7 @@ wie unten dargestellt aus.
 | Erlaubte Anzahl von Werten | Die Anzahl der Werte, die eingegeben werden können | Begrenzt, 1
 |================================
 +
-Sie können hier ein Standardbild festlegen. Dieses wird verwendet, wenn beim Erstellen eines Inhalts vom Typ Liefgerant kein Bild hochgeladen wird.
+Sie können hier ein Standardbild festlegen. Dieses wird verwendet, wenn beim Erstellen eines Inhalts vom Typ Lieferant kein Bild hochgeladen wird.
 
 . Klicken Sie auf _Feldeinstellungen speichern_. Die Seite _Einstellungen für Hauptbild - Lieferanten_
 erscheint. Füllen Sie die Felder wie unten dargestellt aus.
@@ -114,7 +113,7 @@ erscheint. Füllen Sie die Felder wie unten dargestellt aus.
 | Pflichtfeld | Ob das Feld erforderlich ist oder nicht | angekreuzt
 | Erlaubte Dateierweiterungen | Die Art der Bilder, die hochgeladen werden können | png, gif, jpg, jpeg
 | Dateiverzeichnis | Das Verzeichnis, in dem die Dateien gespeichert werden. Indem Sie einen Dateiverzeichniswert angeben, stellen Sie sicher, dass alle Bilder, die über das Feld Hauptbild hochgeladen werden, sich im selben Verzeichnis befinden. | Lieferant
-| Mindestbildauflösung | Die Mindestauflösung des hochgeladenen Bildes | 600 x 600
+| Minimale Bildauflösung | Die Minimale des Bildes in Breite X Höhe | 600 x 600
 | Maximale Upload-Größe | Die maximale Dateigröße des hochgeladenen Bildes | 5 MB
 | Alt-Feld aktivieren | Ob ein alternativer Text eingegeben werden kann | angekreuzt
 | Alt-Feld erforderlich | Ob ein alternativer Text erforderlich ist | angekreuzt
@@ -133,8 +132,8 @@ image:images/structure-fields-result.png["Manage fields page",width="100%"]
 --
 
 . Fügen Sie mit ähnlichen Schritten ein Hauptbildfeld zum Inhaltstyp "Rezept" hinzu. Starten Sie
-indem Sie in Schritt 1 zur Seite _Felder verwalten_ des Inhaltstyps Rezept navigieren. Dann springen Sie zu Schritt 7 und folgen Sie den verbleibenden Arbeitsschritten, aber verwenden Sie das vorhandene Hauptbildfeld wieder, 
-das Sie für den Inhaltstyp Lieferant angelegt haben, anstatt ein neues neues Feld zu erstellen. In den folgenden Schritten werden einige der oben gezeigten Seiten nicht angezeigt,
+indem Sie zunächst zur Seite _Felder verwalten_ des Inhaltstyps Rezept navigieren. Dann springen Sie zu Schritt 7 und folgen den verbleibenden Arbeitsschritten, verwenden dabvei aber das vorhandene Hauptbildfeld, 
+das Sie für den Inhaltstyp Lieferant angelegt haben wieder, anstatt ein neues neues Feld zu erstellen. In den folgenden Schritten werden einige der oben gezeigten Seiten nicht angezeigt,
 da das Feld wiederverwendet wird und bereits konfiguriert ist.
 
 . Legen Sie zwei Inhalte vom Typ Lieferant (siehe <<content-create>>) mit den Titeln „Happy Farm"
@@ -155,10 +154,12 @@ video::https://www.youtube-nocookie.com/embed/CZpfR9WbVcQ[title="Grundlegende Fe
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/node/774742[_Drupal.org_ Seite der Community-Dokumentation "Ein Feld zu einem Inhlatstyp hinzufpgen (englisch)"]
+https://www.drupal.org/node/774742[_Drupal.org_ Seite der Community-Dokumentation "Ein Feld zu einem Inhlatstyp hinzufügen" (englisch)]
 
 
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/sree[Sree Veturi] und
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

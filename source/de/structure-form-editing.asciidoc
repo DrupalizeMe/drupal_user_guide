@@ -9,7 +9,7 @@ So bearbeiten Sie Inhalte mittels Bearbeitungsformular.
 
 ==== Zielsetzung
 
-Passen Sie das Bearbeitungsformular für Rezepte an, idem Sie ein anderes Steuerelement für die Eingabe von Begriffen über das Feld
+Passen Sie das Bearbeitungsformular für Rezepte an, indem Sie ein anderes Steuerelement für die Eingabe von Begriffen über das Feld
 Zutaten auswählen.
 
 ==== Erforderliche Vorkenntnisse
@@ -21,7 +21,7 @@ Zutaten auswählen.
 
 ==== Anforderungen an die Website
 
-Der Inhaltstyp Rezept muss vorhanden sein, und er muss ein Taxonnomiebegriff-Referenzfeld für Zutaten besitzen.
+Der Inhaltstyp Rezept muss vorhanden sein, und er muss ein Taxonnomiebegriff-Referenzfeld für Zutaten enthalten.
 Siehe <<structure-content-type>> und
 <<structure-taxonomy-setup>>.
 
@@ -31,9 +31,9 @@ Siehe <<structure-content-type>> und
 _Rezept_ (_node/add/recipe_) um das Formular zum Bearbeiten von Inhalten und desssen Standardkonfiguration zu betrachten. 
 Beachten Sie, dass Sie die Zutaten einzeln eingeben müssen, und diese nicht als Liste eingegeben werden können.
 
-. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltsypen_ 
-(_admin/structure/types_). Klicken Sie dann auf der Seite _Formularanzeige verwalten_ auf die
-Dropdown-Schaltfläche für den Inhaltstyp Rezept. Die Seite _Formularanzeige_ verwalten
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_ 
+(_admin/structure/types_). Klicken Sie dann auf der Seite _Formularanzeige verwalten_ auf den
+Drop-Button des Inhaltstyps Rezept. Die Seite _Formularanzeige_ verwalten
 erscheint.
 
 . Wählen Sie für das Feld Zutaten die Option _Autovervollständigen (Tags-Style)_ in der Spalte _Steuerelement_.
@@ -62,7 +62,7 @@ image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
 
 ==== Vertiefen sie Ihr Wissen
 
-Ändern Sie das Seitenweite Kontaktformular, indem Sie im Menü _Verwalten_ zum Menüpiunkt
+Ändern Sie das Seitenweite Kontaktformular, indem Sie im Menü _Verwalten_ zum Menüpunkt
 _Struktur_ > _Kontaktformulare_ navigieren. Zum Beispiel möchten Sie vielleicht die Felder
 _Eine Kopie an mich Senden_ oder Felder für die  _Eingabesprache_ des Formulars hinzufügen.
 
@@ -79,3 +79,5 @@ video::https://www.youtube-nocookie.com/embed/CELMGX93fjE[title="Kontaktformular
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
