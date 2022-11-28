@@ -27,18 +27,18 @@ Ein _Referenzfeld_ ist ein Feld, das eine Beziehung zwischen einer Entität
 und einer oder mehreren anderen Entitäten herstellt. Diese können derselben oder einer anderen Entität angehören.
 Die drei am häufigsten verwendeten Referenzfeldtypen sind:
 
-Inhaltsreferenz::
+Inhalt::
   Ein Verweis auf ein Inhaltselement. Zum Beispiel könnten Sie Rezepte den Lieferanten zuordnen wollen, 
   die sie eingereicht haben. Dazu würden Sie ein Inhaltsreferenzfeld anlegen, dass den Namen „Eingereicht von“ trägt. Dieses verweist 
   von den eingereichten Rezepten aus auf das Profil des Lieferanten, der das Rezept eingereicht 
   hat.
 
-Taxonomie-Begriffsreferenz::
+Taxonomie-Begriff::
   Eine Referenz auf einen Taxonomiebegriff. Beispielsweise könnten Sie Rezepte mit ihren Zutaten verbinden. Auf einem Rezept würden Sie dann die Zutaten für das jeweilige Gericht referenzieren. 
   Dazu würden Sie im Inhaltstyp Rezept ein Taxonomie-Referenzfeld anlegen. Das Referenzfeld selbst würde auf das Taxonomievokabular Zutaten verweisen.
 
-Benutzer-Referenz::
-  Eine Referenz auf ein Benutzerkonto. Zum Beispiel könnten Sie von Rezepten die Ersteller / Köche referenzieren. Dafür würden Sie im Inhaltstyp Rezept ein Referenfeld vom Typ 
+Benutzer::
+  Eine Referenz auf ein Benutzerkonto. Zum Beispiel könnten Sie von Rezepten die Autoren / Köche referenzieren. Dafür würden Sie im Inhaltstyp Rezept ein Referenzfeld vom Typ 
   Benutzer anlegen.
 
 ==== Verwandte Themen
@@ -53,3 +53,4 @@ Benutzer-Referenz::
 Geschrieben und herausgegeben von https://www.drupal.org/u/surendramohan[Surendra Mohan],
 und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

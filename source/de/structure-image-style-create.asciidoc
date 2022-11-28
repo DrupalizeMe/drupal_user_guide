@@ -24,9 +24,9 @@ Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Liefera
 
 * Lieferanten- und Rezept-Inhaltstypen müssen vorhanden sein. Siehe <<structure-content-type>>.
 
-* Hauptbildfelder müssen für beide Inhaltstypen vorhanden sein. Siehe <<structure-fields>>>.
+* Hauptbildfelder müssen für beide Inhaltstypen vorhanden sein. Siehe <<structure-fields>>.
 
-* Inhaltselemente müssen für beide Inhaltstypen vorhanden sein. Siehe
+* Inhalte, die aus beiden Inhaltstypen heruas erzeugt wurden, müssen für beide Inhaltstypen vorhanden sein. Siehe
 <<structure-content-type>>, <<structure-fields>>, und <<content-create>>.
 
 ==== Arbeitsschritte
@@ -36,9 +36,9 @@ _Bildstile_ (_admin/configuration/media/image-styles_).
 
 . Klicken Sie auf _Bildstil hinzufügen_.
 
-. Geben Sie den Namen _Extra Medium (300x200)_ ein.
+. Geben Sie den Namen _Extra-Bid-Mittel (300x200)_ ein.
 
-. Klicken Sie auf _Neuen Stil erstellen_. Die Seite _Stil Extra Medium
+. Klicken Sie auf _Neuen Stil erstellen_. Die Seite _Stil Extra-Bild-Mittel
 (300x200) bearbeiten_ erscheint.
 
 . Wählen Sie in der Tabelle _Effekt_ die Option _Skalieren und zuschneiden_ aus. Klicken Sie auf _Hinzufügen_.
@@ -62,7 +62,7 @@ image:images/structure-image-style-create-add-style.png["Einen Bildstil hinzufü
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
 (_admin/structure/types_).
 
-. Klicken Sie in der Dropdown-Liste _Aktionen_ für den Inhaltstyp Lieferanten auf _Anzeige verwalten_.
+. Klicken Sie im Drop-Button _Aktionen_ für den Inhaltstyp Lieferanten auf _Anzeige verwalten_.
 Die Seite _Anzeige_ verwalten (_admin/structure/types/manage/lieferanten/display_)
 erscheint.
 
@@ -75,8 +75,8 @@ erscheint.
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Beispielwert
-|Bildstil | Welcher Bildstil ist zu verwenden | Extra Medium (300x200)
-|Bild mit | Zur Seite verlinken, falls Bild angeklickt wird | Nichts
+|Bildstil | Welcher Bildstil soll verwendet werden? | Extra Medium (300x200)
+|Bild verlinken mit | Auf was sll verlinkt werden, wenn das Bild angeklickt wrid? | Nichts
 |================================
 +
 --
@@ -89,7 +89,7 @@ image:images/structure-image-style-create-manage-display.png["Feldformatierungse
 . Klicken Sie auf _Speichern_. Der neue Bildstil wird für die Anzeige von Inhalten des Typs Lieferanten verwendet.
 
 
-. Öffnen Sie einen Inhalt vom Typ Lieferant und überprüfen Sie, ob dieser nun eine verkleinerte Darstellung des Bilders enthält. Siehe <<<content-edit>> für Informationen über das Finden von vorhandenen Inhalten.
+. Öffnen Sie einen Inhalt vom Typ Lieferant und überprüfen Sie, ob dieser nun eine verkleinerte Darstellung des Bildes enthält. Siehe <<content-edit>> für Informationen über das Finden von vorhandenen Inhalten.
 
 . Wiederholen Sie die Schritte 8-15 für den Inhaltstyp Rezept.
 
@@ -108,7 +108,7 @@ video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Erstellen eines
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite "Arbeiten mit Bildern in Drupal 7 und 8 (englisch)"]
+https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ Community-Dokumentationsseite „Arbeiten mit Bildern in Drupal 7 und 8“ (englisch)]
 
 
 *Mitwirkende*
@@ -120,3 +120,5 @@ https://www.drupal.org/docs/8/core/modules/image/working-with-images["Arbeiten m
 Drupal 7 und 8"],
 copyright 2000 - copyright_upper_year kiegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
