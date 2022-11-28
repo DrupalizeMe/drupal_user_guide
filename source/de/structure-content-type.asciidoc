@@ -25,7 +25,7 @@ Siehe:<<planning-structure>>.
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
 (_admin/structure/types_). Die Seite _Inhaltstypen_ erscheint und zeigt alle
-verfügbare Inhaltstypen an. Beachten Sie, dass die Namen und Beschreibungen der
+verfügbaren Inhaltstypen an. Beachten Sie, dass die Namen und Beschreibungen der
 Inhaltstypen, die von Ihrem Installationsprofil bereitgestellt wurden auf dieser Seite, in Englisch angezeigt werden. Siehe: <<language-concept>> für weitere Informationen.
 
 
@@ -44,14 +44,14 @@ Inhaltstypen, die von Ihrem Installationsprofil bereitgestellt wurden auf dieser
 image:images/structure-content-type-add.png["Adding a Content type"]
 --
 
-. Konfigurieren Sie unter _Einstellungen für das Eingabeformular_ das Formular, welches für die Erstellung und Bearbeitung von Inhalten dieser Art verwendet wird. Füllen Sie die Felder wie unten dargestellt aus.
+. Legen Sie unter _Einstellungen für das Eingabeformular_ die Einstellungen des Formulars fest, welches für die Erstellung und Bearbeitung von Inhalten die zu diesem Inhaltstyp gehören verwendet werden wird. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Beispielwert
-| Beschriftung des Titelfelds | Beschriftung des Titelfelds, die beim Bearbeiten oder Erstellen von Inhalten dieses Typs angezeigt wird. | Name des Anbieters
-| Vorschau vor dem Einreichen | Option zur Auswahl, ob Sie vor dem Einreichen eine Vorschau des Inhalts anzeigen möchten. | Optional
-| Erläuterung oder Einreichungsrichtlinien | Anweisungen zur Erstellung oder Bearbeitung von Inhalten. | (leer lassen)
+| Beschriftung des Titelfelds | Beschriftung des Titelfelds, die beim Bearbeiten oder Erstellen von Inhalten dieses Typs angezeigt wird. | Name des Lieferanten
+| Vorschau vor dem Speichern | Option zur Auswahl, ob Sie vor dem Einreichen eine Vorschau des Inhalts anzeigen möchten. | Optional
+| Erklärung oder Richtlinien zum erstellen von Inhalt | Anweisungen zur Erstellung oder Bearbeitung von Inhalten. | (leer lassen)
 |================================
 +
 --
@@ -59,19 +59,19 @@ image:images/structure-content-type-add.png["Adding a Content type"]
 image:images/structure-content-type-add-submission-form-settings.png["Submission form settings"]
 --
 
-. Entscheiden Sie unter _Veröffentlichungseinstellungen_ über Standardoptionen für neue
-Inhalte dieser Art. Füllen Sie die Felder wie unten dargestellt aus.
+. Legen Sie unter _Veröffentlichungseinstellungen_ die Standardeinstellungen für neue
+Inhalte dieser Art fest. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Beispielwert
-| Veröffentlicht | Das Inhaltselement wird standardmäßig veröffentlicht. | angekreuzt
-| Zur Startseite befördert | In einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte auf der Startseite anzuzeigen. | Nicht angekreuzt
-| Sticky at top of lists | In einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte an der Spitze einer Liste zu halten. | Nicht angekreuzt
-| Neue Revision erstellen | Erstellen Sie jedes Mal, wenn der Anbieter bearbeitet wird, eine neue Revision. | angekreuzt
+| Veröffentlicht | Der Inhalt dieses Typs wird standardmäßig veröffentlicht. | angekreuzt
+| Auf der Startseite anzeigen | Auf einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte auf der Startseite Anzeigen zu lassen. | Nicht angekreuzt
+| Oben in Listen | In einer Standard-Website kann diese Einstellung verwendet werden, um Inhalte am Anfang einer Liste anzuheften. | Nicht angekreuzt
+| Neue Revision erstellen | Bei jeder Bearbeitung vonm Inhalten diesee Typs wird eine neue Revision angelegt, die der Önderungsverfolgung dient. | angekreuzt
 |================================
 +
-Die Änderung dieser Einstellungen wirkt sich nicht auf die Inhaltselemente aus, die bereits
+Die Änderung dieser Einstellungen wirkt sich nicht auf die Inhalte aus, die bereits
 erstellt wurden.
 +
 --
@@ -80,7 +80,7 @@ image:images/structure-content-type-add-Publishing-Options.png["Publishing Optio
 --
 
 . Entscheiden Sie unter _Anzeigeeinstellungen_, ob der Autor und
-das Veröffentlichungsdatum  im Inhaltselement sichtbar sein wird. Füllen Sie die Felder wie unten dargestellt aus.
+das Veröffentlichungsdatum  im Inhalt angezeigt werden sollen. Füllen Sie die Felder wie unten dargestellt aus.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -98,7 +98,7 @@ image:images/structure-content-type-add-Display-settings.png["Display settings"]
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung | Beispielwert
-| Verfügbare Menüs | Menüs, zu denen diese Art von Inhalt hinzugefügt werden kann. Anbieter müssen nicht in Menüs erscheinen, deaktivieren Sie also alle Menüoptionen. | Nicht angekreuzt
+| Menüeinstellungen | Menüs, zu denen diese Art von Inhalt hinzugefügt werden kann. Anbieter müssen nicht in Menüs erscheinen, deaktivieren Sie also alle Menüoptionen. | Nicht angekreuzt
 |================================
 +
 --
@@ -152,3 +152,4 @@ video::https://www.youtube-nocookie.com/embed/vyvqiaaGM1k[title="Einen Inhaltsty
 Geschrieben und herausgegeben von https://www.drupal.org/u/sree[Sree Veturi],
 https://www.drupal.org/u/batigolix[Boris Doesborg], und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

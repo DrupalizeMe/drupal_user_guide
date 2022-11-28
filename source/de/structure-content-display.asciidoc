@@ -23,7 +23,7 @@ welche Felder Benutzern angezeigt werden sollen.
 ==== Anforderungen an die Website
 
 Der Inhaltstyp „Lieferant" muss vorhanden sein, er muss ein Feld für ein Titelbild (Logo) und ein Feld für die URL zur Website des Lieferanten enthalten.
-Außerdem muss auf Iherer Websites mindestens ein Inhalt vom Typ Lieferant vorhanden sein.
+Außerdem muss auf Ihrer Website mindestens ein Inhalt vom Typ Lieferant vorhanden sein.
 Siehe: <<structure-content-type>>, <<structure-fields>>, und <<content-create>>.
 
 ==== Arbeitsschritte
@@ -38,7 +38,7 @@ Beachten Sie, dass es mehrere Dinge gibt, die Sie tun können, um die Darstellun
   * Das Bild soll kleiner dargestellt werden.
 
   . Um die ersten beiden Probleme zu beheben und einige zusätzliche Einstellungen zu aktualisieren, navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
-  (_admin/structure/types_). Klicken Sie dann im Drop-Button des Inhaltstyps Liefernt auf _Anzeige verwalten_.
+  (_admin/structure/types_). Klicken Sie dann im Drop-Button des Inhaltstyps Lieferant auf _Anzeige verwalten_.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
@@ -46,7 +46,7 @@ Beachten Sie, dass es mehrere Dinge gibt, die Sie tun können, um die Darstellun
 image:images/structure-content-display_manage_display.png["Manage display",width="100%"]
 --
 
-. In der Spalte _Beschriftung_ wählen Sie für das Hauptbild die Option _Deaktiviert_ aus. Wiederholen Sie dies für das Feld _URL zur Website des Lieferanten_
+. In der Spalte _Beschriftung_ wählen Sie für das Hauptbild die Option _Ausgeblendet_ aus. Wiederholen Sie dies für das Feld _URL zur Website des Lieferanten_
 +
 --
 // Manage display page for Vendor content type
@@ -62,7 +62,7 @@ image:images/structure-content-display_main_image_hidden.png["Selecting _main im
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname|Erläuterung|Beispielwert
-|Länge des Linktextes kürze| Maximal Länge des Linktextes| Leer lassen (nicht kürzen)
+|Länge des geküzten Linktextes| Maximal Länge des Linktextes| Leer lassen (nicht kürzen)
 |Link in neuem Fenster öffnen| Ob die Seiten, auf die Links verweisen in einem neuen Reiter des Browsers oder im selben Browserfenster geöffnet werden sollen |Angekreuzt
 |================================
 +
@@ -74,8 +74,8 @@ image:images/structure-content-display_trim_length.png["Link trim length",width=
 
 . Klicken Sie auf _Aktualisieren_.
 
-. 'Ändern  Sie die Sortierreihenfolge der Felder über die 'Drag-Handle' links, so dass das Hauptbild vor dem Txtkörper des Inhalts angezeigt wird, danach der Link zur Website des Lieferanten . 
-Alternativ zur Verwendung der Schaltfläche zum Ziehen und Umsortieren (Drag-Handle) können Sie auf den Link _Zeilenreihenfolge anzeigen_ oben in der Tabelle klicken und den Feldern nummerische Gewichtungswerte zuweisen (Felder
+. 'Ändern  Sie die Sortierreihenfolge der Felder m,it Hilfe des 'Drag-Handles' links, so dass das Hauptbild vor dem Textkörper des Inhalts angezeigt wird. Lassen Sie unterhalb des Textkörperfeldes den Link zur Website des Lieferanten anzeigen. 
+Alternativ zur Verwendung der Schaltfläche zum Ziehen und Umsortieren (Drag-Handle) können Sie auf den Link _Zeilenreihenfolge anzeigen_ oben in der Tabelle klicken und den Feldern numerische Gewichtungswerte zuweisen (Felder
 mit niedrigeren oder negativeren Werten werden zuerst angezeigt).
 +
 --
@@ -85,7 +85,7 @@ image:images/structure-content-display_change_order.png["Changing order of field
 
 . Klicken Sie auf _Speichern_.
 
-. Suchen Sie den Inhalt vom Typ „Lieferant" aus Schritt 1 erneut, und lassen Sie sich die Seite wieder anzeigen, um zu überprüfen, ob die von Ihnen vorgenommenen Änderungen gespeichert wurden.
+. Suchen Sie den Inhalt vom Typ „Lieferant" aus Schritt 1 erneut aus der Liste der Inhalte der Website heraus, und lassen Sie sich die Seite wieder anzeigen, um zu überprüfen, ob die von Ihnen vorgenommenen Änderungen gespeichert wurden.
 
 . Wiederholen Sie ähnliche Schritte, um die Darstellung  der Felder des Inhaltstyps Rezept zu verändern.
 
@@ -104,18 +104,19 @@ zunächst den Cache Leeren. Siehe: <<prevent-cache-clear>>.
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Die Darstellung von Inhalten ändern (englisch)"]
+video::https://www.youtube-nocookie.com/embed/myYI9rhF_4o[title="Die Darstellung von Inhalten ändern“ (englisch)]
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/node/774798[_Drupal.org_ Community-Dokumentationsseite "Legen Sie die Darstellung von Feldern fest (englisch)"]
+* https://www.drupal.org/node/774798[_Drupal.org_ Community-Dokumentationsseite "Legen Sie die Darstellung von Feldern fest“ (englisch)]
 
-* https://www.drupal.org/node/774744[_Drupal.org_ Community-Dokumentationsseite "Felder neu anordnen (englisch)"]
+* https://www.drupal.org/node/774744[_Drupal.org_ Community-Dokumentationsseite "Felder neu anordnen (englisch)“]
 
-* https://www.drupal.org/node/1577752[_Drupal.org_ Community-Dokumentationsseite "Ansichtsmodi (englisch)"]
+* https://www.drupal.org/node/1577752[_Drupal.org_ Community-Dokumentationsseite "Ansichtsmodi“ (englisch)]
 
 
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/AnnGreazel[Ann Greazel] und
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
