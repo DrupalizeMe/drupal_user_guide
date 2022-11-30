@@ -3,13 +3,13 @@
 === Eine Ansicht duplizieren
 
 [role="summary"]
-How to create a new page by duplicating a view.
+Wie man eine neue Seite durch Duplizieren einer Ansicht erstellt.
 
 (((View,duplicating)))
 (((Views module,duplicating a view)))
 (((Module,Views)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
 Erstellen Sie eine Seite mit Rezepten, indem Sie die vorhandene Ansicht _Lieferanten_ duplizieren.  Ändern Sie
 die Seite so, dass die Rezepte mit einem Raster angezeigt und nach Zutaten gefiltert werden können.
@@ -22,8 +22,8 @@ die Seite so, dass die Rezepte mit einem Raster angezeigt und nach Zutaten gefil
 
 ==== Anforderungen an die Website
 
-* Die Inhaltstypen Lieferant und Rezept müssen vorhanden sein, Beide Inhaltstypen müssen ein Hauptbild haben
-und der Inhaltstyp Rezept muss ein Feld Zutaten haben. Ihre Website muss auch einige Inhalte vom Inhaltstyp _Rezept_ enthalten.
+* Die Inhaltstypen Lieferant und Rezept müssen vorhanden sein, Beide Inhaltstypen müssen ein Hauptbild enthalten
+und der Inhaltstyp Rezept muss ein Feld Zutaten enthalten. Ihre Website muss auch einige Inhalte vom Inhaltstyp _Rezept_ enthalten.
  Siehe: <<structure-content-type>>,
 <<structure-fields>>, <<structure-taxonomy-setup>>, <<structure-form-editing>>,
 und <<content-create>>.
@@ -32,8 +32,8 @@ und <<content-create>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie Im Menü _Verwalten_ zum Punkt _Struktur_ > _Ansichten_ (_admin/structure/views_). 
-Suchen sie die Ansicht "Lieferanten" und Klicken sie auf _Duplizieren_ innerhalb des Dropbuttons der Ansicht.
+. Navigieren Sie Im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Ansichten_ (_admin/structure/views_). 
+Suchen sie die Ansicht „Lieferanten" und Klicken sie auf _Duplizieren_ innerhalb des Dropbuttons der Ansicht.
 (Beachten sie, dass die Namen der Ansichten, die mit Ihrem  Installationsprofil ausgeliefert werden hier in Englisch angezeigt werden. Siehe: <<language-concept>> um eine Erklärung dazu zu lesen.)
 +
 --
@@ -42,41 +42,40 @@ Suchen sie die Ansicht "Lieferanten" und Klicken sie auf _Duplizieren_ innerhalb
 image:images/views-duplicate_duplicate.png["Duplicate existing view",width="100%"]
 --
 
-. Geben sie dem Duplikat den Namen "Rezepte" und klicken Sie auf _Duplizieren_. Die Seite Ansicht konfigurieren wird angezeigt.
+. Geben Sie dem Duplikat den Namen "Rezepte" und klicken Sie auf _Duplizieren_. Die Seite Ansicht konfigurieren wird angezeigt.
 
-. Um den Titel der Seite in "Rezepte" zu ändern, Klicken Sie auf Lieferanten im Feld _Titel_. Das  Popup _Titel der Ansicht_
-wird geöffnet. Geben Sie "Rezepte" ein und klicken Sie auf _Übernehmen_.
+. Um den Titel der Seite in "Rezepte" zu ändern, Klicken Sie auf Lieferanten im Feld _Titel_. Das  Popup _Titel der Ansicht_ wird geöffnet. Geben Sie "Rezepte" ein und klicken Sie auf _Übernehmen_.
 +
 --
 // View title configuration screen.
 image:images/views-duplicate_title.png["Change view title",width="100%"]
 --
 
-. Um von einer tabellarischen Ansicht in eine Rasteransicht zu wechseln, klicken Sie im Feld _Format_ auf _Tabelle_.
-Das  Popup _Wie soll diese Seite dargestellt werden?_ erscheint.
-Klicken sie auf _Raster_ und anschließend auf _Übernehmen_. Das Popup _Seite: Anzeigeoptionen_
-erscheint. Lassen Sie die Standardeinstellungen unverändert und klicken Sie auf _Übernehmen_.
+. Um von einer tabellarischen Ansicht in eine Rasteransicht zu wechseln, klicken Sie im Abschnitt _Format_ auf _Tabelle_.
+Das  Popup _Wie soll dies Ansicht dargestellt werden?_ erscheint.
+Klicken sie auf _Raster_ und anschließend auf Anwenden. Das Popup _Darstellungsoptionen_
+erscheint. Lassen Sie die Standardeinstellungen unverändert und klicken Sie auf _Anwenden_.
 
 . Wenn Sie nur den Titel und die Bildfelder für die Ansicht "Rezepte" beibehalten möchten, klicken Sie auf
 _Inhalt: Textkörper_ im Abschnitt _Felder_. Klicken sie auf _Entfernen_ im Popup, dass daraufhin erscheint.
 
 . Um den Filter für den Inhaltstyp so zu ändern, dass der Inhaltstyp "Rezept" verwendet wird,
-klicken sie auf _Inhalt: Typ (=Lieferant)_ im Popup _Filterkreterien_.Im Bereich
-_Filterkreterien konfigurieren: Inhalt: Typ_, wählen Sie Rezepte aus und Lieferanten ab. klicken Sie auf
-_Übernehmen_.
+klicken Sie im Abschnitt _Filterkriterien_ auf _Inhalt: Inhaltstyp_ und wählen Sie im Popup .Im Bereich
+_Filterkreterien konfigurieren: Inhalt: Typ_ und Wählen Sie im Popup-Diaog _Filterkkriterien: Inhalt: Inhaltstyp kofnfigfurieren_ den Inhaltstyp _Rezepte_ aus und den Inhaltsty _Lieferanten_ ab. 
+
+. klicken Sie auf _Übernehmen_.
 
 . Um einen weiteren Filter hinzuzufügen, der den Besuchern der Website angeboten wird, klicken Sie
-im Dropdown-Button im Abschnitt _Filterkreterien_ auf _Hinzufügen_. Suchen sie nach dem Wert „Zutaten" und wählen Sie auf
-"Zutaten (Feld_Zutaten)". Klicken sie auf _Filterkriterien hinzufügen_.
+im Dropbutton im Abschnitt _Filterkreterien_ auf _Hinzufügen_. Suchen sie nach dem Wert „Zutaten" und wählen Sie im Popup-Dialogf _Felder hinzufpgen_ das Feld Zutaten (field_Zutaten) aus. Klicken sie auf _Filterkriterien hinzufügen_.
 
 . Das erscheinende Pop-up bietet zusätzliche Einstellungen zu Vokabularien und Auswahlkriterien
-Klicken sie auf _Übernehmen und fortsetzen_. Im nächsten Pop-up können Sie diese
-Filter Besuchern zur Verfügung stellen. Füllen Sie die Felder wie unten gezeigt aus und klicken Sie auf _Übernehmen_.
+Klicken sie auf _Filterkriterien hinzufügen und Konfigureiren_. Im nächsten Pop-up können Sie diese
+Filter Besuchern zur Verfügung stellen. Füllen Sie die Felder wie unten gezeigt aus und klicken Sie auf _Anwenden und Fortsetzen_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Feldname | Erläuterung| Beispielwert
-| Diesen Filter für Besucher freigeben, damit sie ihn ändern können | Besuchern erlauben, zu filtern und zu suchen | Ausgewählt
+| Diesen Filter für Seitenbesucher freigeben, so dass sie die Optionen selbst wählen können. | Besuchern erlauben, zu filtern und zu suchen | Ausgewählt
 | Erforderlich | Ob ein Wert angegeben werden muss oder nicht | Nicht Ausgewählt
 | Beschreibung | Beschreibung, das für diesen Filter auf der Ansichtsseite angezeigt wird | Rezepte suchen mit...
 |================================
@@ -88,20 +87,20 @@ image:images/views-duplicate_expose.png["Expose filter"]
 
 . Um die Bezeichnung für das Feld _Pfad_ in "Rezepte" zu ändern, klicken Sie auf "/lieferanten" im Feld _Pfad_
 im Abschnitt _Seiteneinstellungen_. Geben Sie im daraufhin erscheinenden Popup
-"rezepte" ein und klicken Sie auf _Übernehmen_.
+"rezepte" ein und klicken Sie auf _Anwenden_.
 +
 Beachten Sie, dass Sie beim Bearbeiten einer Ansicht im Gegensatz zu
-anderen Verwaltungsseiten (z. B. beim Bereitstellen einer Pfadangabe zu einem Inhalt), Pfadangaben ohne den anführenden "/" eingeben,
+anderen Verwaltungsberecchsseiten (z. B. beim Bereitstellen einer Pfadangabe zu einem Inhalt), Pfadangaben ohne den anführenden "/" eingeben,
 
 . Um den Titel des Menülinks zu ändern klicken Sie im Abschnitt _Seiteneinstellungen_ > _Menü_ auf "Normal: Lieferanten".
-Ändern Sie in dem erscheinenden Popup-Fenster den Titel in "Rezepte" und klicken Sie auf _Übernehmen_.
+Ändern Sie in dem erscheinenden Popup-Fenster den Titel in "Rezepte" und klicken Sie auf _Anwenden_.
 
 . Damit Sie Ajax verwenden können (siehe: <<glossary-ajax,Ajax entry in the Glossary>>) um das Filtern und seitenweise Anzeigen für die Benutzer schneller zu gestalten
-Klicken Sie unter _Erweitert_ > _Zusätzliche_  im Abschnitt Ajax verwenden auf
+Klicken Sie unter _Erweitert_ > _Weitere_  im Abschnitt Ajax verwenden auf
 _Nein_. Wählen Sie im erscheinenden Popup-Fenster _AJAX verwenden_  und
-klicken Sie auf _Übernehmen_.
+klicken Sie auf _Anwenden_.
 
-. Klicken Sie auf _Speichern_ tum die Änderungen an der Ansicht zu übernehmen.
+. Klicken Sie auf _Speichern_ um die Änderungen an der Ansicht zu übernehmen.
 
 . Gehen Sie zurück auf die Startseite und klicken Sie in der Navigation auf Rezepte um die neue Rezeptseite aufzurufen.
 +
@@ -135,3 +134,5 @@ Geschrieben und herausgegeben von https://www.drupal.org/u/lolk[Laura Vass] at
 https://pronovix.com/[Pronovix],
 und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

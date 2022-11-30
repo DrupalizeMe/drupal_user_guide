@@ -1,9 +1,9 @@
 [[views-parts]]
 
-=== Konzept: Die Teile einer Ansicht
+=== Konzept: Abschnitte einer Ansicht
 
 [role="summary"]
-Überblick über die administrativen Teile einer Ansicht.
+Überblick über die administrativen Abschnitte einer Ansicht.
 
 (((View,parts of)))
 (((Display part of view,overview)))
@@ -32,8 +32,7 @@
 ===== Was sind die Teile einer Ansicht?
 
 Wenn Sie eine Ansicht in der Verwaltungsoberfläche bearbeiten, sehen Sie die
-folgende Teile (oder Abschnitte), mit denen Sie festlegen können, welche Daten ausgegeben werden sollen,
-in welcher Reihenfolge und in welchem Format:
+folgende Abschnitte, mit denen Sie festlegen können, welche Daten in welchem Format und in weilcher Reihenfolge ausgegeben werden sollen:
 
 Anzeige::
   Jede Ansicht kann eine oder mehrere Anzeigen haben, von denen jede einen Typ von
@@ -41,39 +40,33 @@ Anzeige::
   Seite;;
     Ausgabe unter einer bestimmten URL, für den Hauptseiteninhalt unter dieser URL.
   Block;;
-    Macht die Ausgabe in einem Block, der auf Seiten platziert werden kann.
+    Ermöglicht die Ausgabe der Daten in einem Block, der auf Seiten platziert werden kann.
   Feed;;
     Erstellt einen RSS-Feed oder eine andere Art von Feed.
   Anhang;;
     Erzeugt eine Ausgabe, die Sie an eine andere Anzeige anhängen können.
 Format::
   Abhängig von der Anzeigeart können Sie wählen, ob Sie Ihre Daten als
-  Tabelle, Gitter, HTML-Liste oder ein anderes Format ausgeben wollen. Einige Formate geben Ihnen auch eine
-  zweite Wahl, mit der Sie entweder gerenderte Entitäten oder Felder ausgeben können; andere
-  Formate geben Ihnen diese Wahl nicht (z.B. wenn Sie ein Tabellenformat verwenden,
-  müssen Sie immer Felder verwenden).
+  Tabelle, Raster, HTML-Liste oder in einem anderen Format ausgeben wollen. Einige Formate geben Ihnen auch sekundäre Auswahlmöglichkeiten, mit denen Sie entweder geänderte Entitäten oder Fleder ausgeben können. Andere
+  Formate geben Ihnen diese Wahl nicht (Wenn Sie beiispielsweise das Anzeigeformat Tabelle verwenden, müssen immer Felder verwendet werrden).
 Felder::
   Je nach Wahl des Formats können Sie wählen, welche Inhaltsfelder
-  ausgegeben werden. Wenn Sie z.B. eine Sicht auf Rezeptinhaltspositionen gemacht haben, werden bei einer Blockanzeige möglicherweise nur die Rezeptnamen angezeigt, 
-  während sie auf einer ganzen Seite, weil Sie mehr Platz haben, möglicherweise auch ein Bildfeld einblenden.
+  ausgegeben werden sollen. Wenn Sie z.B. eine Ansicht für Rezeptinhalte erstellt haben, werden auf einer Blockanzeige möglicherweise nur die Rezeptnamen angezeigt, während auf der Anzeige für einer ganzen Seite, möglicherweise auch Bilder der Gerichte aus den Rezepten angezeígt werden, weil dort mehr Platz ist, als in eiem Block.
 Filterkriterien::
-  Filter schränken die auszugebenden Daten ein, basierend auf Kriterien wie z.B. ob die
-  Inhalt veröffentlicht wurden oder nicht, die Art des Inhalts oder ein Feldwert.
-  Um beispielsweise eine Ansicht von Rezeptinhaltselementen zu erstellen, müssen Sie filtern auf 
-  den Inhaltstyp "Rezept" und die veröffentlichten Rezepte. Filter können auch
-   _freigegeben_ sein. Dann haben die Benutzer ein Formular in der Ansicht, in dem sie ihre eigenen Filterwerte auswählen können.
+  Filter schränken die auszugebenden Daten ein, basierend auf Kriterien wie z. B. dem Verröffentliichungsstatus eines inhalts, der Art des Inhalts oder einem Feldwert.
+  Um beispielsweise eine Ansicht von Rezeptinhalten zu erstellen, müssen Sie nach dem Inhaltstyp „Rezept“ und nur die veröffentlichten Rezepte Anzeigen lassen. Filter können auch
+   _hervorghoben_ werden. In diesem Fall können Benutzer die Filter der Anscht dazu verwenden, direkt auf der Ansicht Daten zur Filterung von Inhalten einzugeben.
   Sie könnten dies auf einer Rezeptseite verwenden, damit Benutzer Rezepte nach bestimmten Zutaten filtern können.
 Sortierkriterien::
   Definiert die Reihenfolge für die Darstellung der Ausgabe, die auf einem beliebigen Inhaltsfeld basieren kann.
 Kontextbezogene Filter::
-  Kontextuelle Filter sind wie reguläre Filter, außer dass diese Werte aus
-  dem _Kontext_ der Ansichtanzeige verwenden, wie z.B. die vollständige URL der angezeigten Seite, das aktuelle Datum, die aktuelle Zeit oder ein anderer Wert, der
-  durch die Ansichtsberechnung erkannt werden kann.
+  Kontextbezogene Filter sind wie reguläre Filter,  allerdings mit dem Unterschied, dass die Werte, nach denmnen gefiltert wird aus  dem _Kontext_ der Anzeige in der Ansicht stammen- Beisppielsweise vollständige URL der angezeigten Seite, das aktuelle Datum, die aktuelle Zeit oder ein anderer Wert, der
+  durch Bei der Berechnung einer Ansicht erkannt werden kann.
 Beziehungen::
   Mit Hilfe von Beziehungen können Sie die Anzeige in Ihrer Ansicht erweitern, indem Sie
-  den Basisinhalt der angezeigt werden soll in Beziehung zu anderen Inhaltsentitäten bringen. 
+  den Basisinhalt der angezeigt werden soll in Beziehung zu anderen Inhaltsentitäten setzen. 
   Beziehungen werden erstellt wenn Felder aus dem Basisinhalt, mit dem anderen Inhalt in Beziehung gesetzt werden.
-  Ein Beispiel ist, dass alle regulären Inhaltselemente ein Autorenfeld haben. Dieses
+  Ein Beispiel ist, dass alle regulären Inhale ein Autorenfeld haben. Dieses
   verweist auf das Benutzerkonto der Person, die den Inhalt verfasst hat. Sobald Sie
   eine Beziehung dazwischen angelegt haben, können Sie Felder aus der referenzierten
   Entität (Benutzerkonto) in der Ansicht verwenden.
@@ -89,3 +82,5 @@ Beziehungen::
 
 Geschrieben und bearbeitet von https://www.drupal.org/u/surendramohan[Surendra Mohan]
 und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
