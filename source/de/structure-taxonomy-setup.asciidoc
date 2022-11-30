@@ -28,8 +28,8 @@ Der Inhaltstyp Rezept muss vorhanden sein. Siehe: <<structure-content-type>>.
 ==== Arbeitsschritte
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Taxonomie_
-(_admin/structure/taxonomy_). Sie sehen das Vokabular _Tags_, das
-die mit dem Standard-Installationsprofil des Kernsystems angelegt wurde. (Beachten Sie, dass der Name und die
+(_admin/structure/taxonomy_). Sie sehen das Vokabular _Tags_, das 
+mit dem Standard-Installationsprofil des Kernsystems angelegt wurde. (Beachten Sie, dass der Name und die
 Beschreibungen dieses Vokabulars auf der Seite eventuell auf Englisch angezeigt werden; Siehe
 <<language-concept>> für eine detailierte Erklärung.)
 +
@@ -80,7 +80,7 @@ Klicken Sie auf _Speichern und fortfahren_.
 |================================
 |Feldname | Erläuterung | Wert
 | Ein neues Feld hinzufügen | Wählen Sie den Feldtyp | Referenz > Taxonomiebegriff
-| Beschriftung | Der titel des feldes | Zutaten
+| Beschriftung | Der Titel des Feldes | Zutaten
 |================================
 +
 --
@@ -88,13 +88,13 @@ Klicken Sie auf _Speichern und fortfahren_.
 image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
 --
 
-. Geben Sie auf dem folgenden Konfigurationsbild die Werte aus der unten stehenden Tabelle ein.
+. Geben Sie auf dem folgenden Konfigurationsbildschirm die Werte aus der unten stehenden Tabelle ein.
 Klicken Sie auf _Feldeinstellungen speichern_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-|Art des zu referenzierenden Elements | Art der Entität, die durch das Feld referenziert wird | Taxonomiebegriff
+|Zu referenzierender Elementtyp | Art der Entität, die durch das Feld referenziert wird | Taxonomiebegriff
 | Erlaubte Anzahl von Werten | Die Anzahl der Werte, die ein Benutzer eingeben kann | Unbegrenzt
 |================================
 +
@@ -108,9 +108,9 @@ image:images/structure-taxonomy-setup-field-settings.png["Field storage settings
 [width="100%",frame="topbot",options="header"]
 |================================
 |Feldname | Erläuterung | Wert
-|Hilfetext | Hilfe für Benutzer, die Inhalte erstellen |Zutaten eingeben, nach denen Besucher der Website suchen möchte
+|Hilfetext | Hilfe für Benutzer, die Inhalte erstellen |Bitte geben Sie die Zutaten ein, nach denen Sie suchen.
 |Referenztyp > Referenzmethode | Wählen Sie die Methode aus, die zur Auswahl der zulässigen Werte verwendet wird | Standard
-|Referenzart > Vokabular | Wählen Sie das Vokabular, um zulässige Werte auszuwählen | Inhaltsstoffe
+|Referenzart > Vokabular | Wählen Sie das Vokabular, aus dem zulässige Werte ausgewählt werden sollen. | Zutaten
 |Referenztyp > Referenzierte Entitäten erstellen, falls sie noch nicht existieren | Ob neue Zutaten aus dem Formular heraus angelegt werden können | angeklickt
 |================================
 +
@@ -121,8 +121,8 @@ image:images/structure-taxonomy-setup-field-settings-2.png["reference type field
 
 
 . Klicken Sie auf _Einstellungen speichern_. Sie gelangen zurück zur Seite _Felder verwalten_. 
-Es wird die Meldung angezeigt, dass die Konfiguration für Inhaltsstoffe
-vollständig ist.
+Es wird die Meldung angezeigt, dass die Konfiguration des Elements Zutaten
+gespeichert wurde.
 +
 --
 // Manage fields page showing Ingredients field on Recipe content type.
@@ -136,7 +136,7 @@ image:images/structure-taxonomy-setup-finished.png["Manage fields page for Recip
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Taxonomie einrichten"]
+video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Taxonomie einrichten (englisch)"]
 
 //===== Zusätzliche Ressourcen
 
@@ -146,3 +146,5 @@ video::https://www.youtube-nocookie.com/embed/EbsXffnjsjc[title="Taxonomie einri
 Geschrieben und herausgegeben von https://www.drupal.org/u/bsnodgrass[Bob Snodgrass],
 und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Red Crackle].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
