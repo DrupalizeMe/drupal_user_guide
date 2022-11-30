@@ -2,7 +2,7 @@
 === Konzept: Verwendung von Ansichten
 
 [role="summary"]
-Overview of views and the data that can be displayed or output by them.
+Übersicht über die Ansichten und die Daten, die durch sie angezeigt oder ausgegeben werden können.
 
 (((View,overview)))
 (((Views module,overview)))
@@ -14,34 +14,34 @@ Overview of views and the data that can be displayed or output by them.
 
 ==== Was ist eine Ansicht?
 
-Eine _Ansicht_ ist eine Auflistung von Inhalten auf einer Website. Das Kernmodul Views behandelt die
-Anzeige von Ansichten (Views), und das Kern-UI-Modul Views ermöglicht Ihnen das Erstellen und Bearbeiten
-dieser in der administrativen Schnittstelle. Wenn Sie Ansichten definieren, sind Sie daran interessiert
-Daten von Ihrer Website zu entnehmen und dem Benutzer anzuzeigen.
+Eine _Ansicht_ ist eine Auflistung von Inhalten auf einer Website. Das Kernsystemmodul Views kümmert sich um die
+Anzeige von Ansichten (Views), und das Kernsystemmodul Views-UI ermöglicht Ihnen das Erstellen und Bearbeiten
+solcher Ansichten im Verwlatungsbereich von Drupal. Wenn Sie Ansichten definieren, sind Sie daran interessiert
+Daten aus Ihrer Website zu entnehmen und dem Benutzer anzuzeigen.
 
 ==== Welche Arten von Daten können über Views angezeigt werden?
 
 Sie können Ansichten anlegen, um praktisch jede Inhaltsentität auszugeben, die in dem 
-System gespeichert ist. Sie können z.B. die folgenden Listen für die Landwirte auf 
-Markt-Website erstellen:
+System gespeichert ist. Sie können z. B. die folgenden Listen für die Lieferanten auf der Website des Wochenmarktes 
+erstellen:
 
 * Listen von Verkäufern
 * Rezept-Listen
 * Listen der neuesten Inhalte auf der Website
 * Listen der Benutzer auf der Website
 
-===== Welche Möglichkeiten der Datenausgabe über Views gibt es?
+===== Welche Möglichkeiten der Datenausgabe über Ansichten gibt es?
 
-Eine durch einen View erstellte Auflistung kann in einer der folgenden Formen vorliegen:
+Eine mittels einer Ansichterstellte Auflistung kann in einer der folgenden Formen vorliegen:
 
 * Tabelle mit sortierbaren Feldern
-* Gitter-Layouts
-* Teaser oder Bilder, die auf Artikel verweisen
+* Raster-Layouts
+* Anrisstext oder Bilder, die auf Artikel verweisen
 * Blöcke
 * JSON-Ausgabe
 * RSS-Feeds
 * Kalender
-* Diashow auf dem Bildschirm
+* Slideshow auf dem Bildschirm
 
 ==== Verwandte Themen
 
@@ -54,7 +54,9 @@ Eine durch einen View erstellte Auflistung kann in einer der folgenden Formen vo
 *Mitwirkende*
 
 Geschrieben und herausgegeben von
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] unter
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] bei
 https://erdfisch.de[erdfisch], und
-https://www.drupal.org/u/jojyja[Jojy Alphonso] unter
+https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[Rotes Knistern].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
