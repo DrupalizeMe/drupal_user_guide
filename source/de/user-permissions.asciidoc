@@ -20,30 +20,30 @@ So weisen Sie einer Rolle eine Berechtigung zu.
 
 ==== Anforderungen an die Website
 
-Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe <<<user-new-role>>.
+Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe <<user-new-role>>.
 
 ==== Arbeitsschritte
 
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Benutzer_ > _Rollen_
 (_admin/people/roles_). Die Seite _Rollen_ erscheint.
 
-. Klicken Sie in der Dropdown-Liste für die Rolle Lieferanten auf _Berechtigungen bearbeiten_. Die Seite _Rolle bearbeiten_ erscheint, auf der Sie alle verfügbaren
-Aktionen für die Website wie z.B. _Kommentare abgeben_ oder _Blöcke verwalten_:
-Die verfügbaren Berechtigungen hängen von den Modulen ab, die in
-die Website installiert wurden. Hinweis: Einige Berechtigungen können Auswirkungen auf die Sicherheit haben. Seien sie vorsichtig beim Zuweisen von Berechtigungen zu Rollen.
+. Klicken Sie im Dropbutton für die Rolle Lieferant auf _Berechtigungen bearbeiten_. Die Seite _Rolle bearbeiten_, auf der Sie alle verfügbaren Aktionen für die Website wie z.B. _Kommentare abgeben_ oder _Blöcke verwalten_ sehen können, erscheint. Die verfügbaren Berechtigungen hängen von den Modulen ab, die auf
+der Website aktiviert wurden. 
+
+Hinweis: Einige Berechtigungen können Auswirkungen auf die Sicherheit haben. Seien sie vorsichtig beim Zuweisen von Berechtigungen zu Rollen.
 
 . Markieren Sie die Kontrollkästchen für die folgenden Berechtigungen, aufgelistet nach Modul:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-| Modul | Erlaubnis
-| Kontakt | Verwenden der persönlichen Kontaktformulare der Benutzer
-| Filter | Verwendung des eingeschränkten HTML-Textformats
-| Knoten (Node) | Rezept: Neuen Inhalt erstellen
-| Knoten (Node) | Rezept: Eigenen Inhalt bearbeiten
-| Knoten (Node) | Rezept: Eigenen Inhalt löschen
-| Knoten (Node) | Lieferant: Eigenen Inhalt bearbeiten
-| Schnellbearbeitung | Zugriff auf die Vor-Ort-Bearbeitung
+| Modul | Berechtigung
+| Contact | Persönliches Kontaktformular verwenden
+| Filter | Textformat „Einfachs HTML“ verwenden
+| Node | Rezept: Neuen Inhalt erstellen
+| Node | Rezept: Eigenen Inhalt bearbeiten
+| Node | Rezept: Eigenen Inhalt löschen
+| Node | Lieferant: Eigenen Inhalt bearbeiten
+| Quick Edit | Auf Direktbearbeitungsmodus zugeifen
 |================================
 +
 --
