@@ -1,5 +1,5 @@
 [[views-create]]
-=== Erstellen einer Inhaltslisten-Ansicht
+=== Erstellen einer Ansicht zur Ausagabe von Listen
 
 [role="summary"]
 Wie Sie eine Inhaltslistenansicht erstellen.
@@ -12,10 +12,10 @@ Wie Sie eine Inhaltslistenansicht erstellen.
 (((Module,Views)))
 (((Module,Image)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Erstellen Sie eine Seite mit Anbietern, die automatisch aktualisiert wird, sobald eine
-Lieferant auf der Website hinzugefügt, gelöscht oder aktualisiert wird.
+Erstellen Sie eine Seite mit Lieferanten, die automatisch aktualisiert wird, sobald eine
+Lieferant auf der Website hinzugefügt bzw. gelöscht wrid, oder dessen angaben aktualisiert wurden.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -24,21 +24,18 @@ Lieferant auf der Website hinzugefügt, gelöscht oder aktualisiert wird.
 
 ==== Anforderungen an die Website
 
-* Die UI-Module Core Views und Views müssen installiert sein. Diese werden installiert für
-Sie, wenn Sie mit dem Kern-Standardinstallationsprofil installieren.
+* Die Kernsystemmodule Views und Views-UI müssen installiert sein. Dieser Schritt wird vom Installationsprofil Standard für Sie erledigt, wenn Sie er zur Installtion von Drupal verwenden.
 
-* Der Content-Typ Lieferant muss vorhanden sein, mit den Feldern URL und Hauptbild. Ihr
-Die Website muss einige Inhalte des Typs Anbieter enthalten. Siehe <<structure-content-type>>,
+* Der Inhaltstyp Lieferant muss vorhanden sein. Er Muss die Felder: URL zur Website des Lieferanten und Hauptbild enthalten.
+Die Website muss einige Inhalte des Typs Lieferant enthalten. Siehe <<structure-content-type>>,
 <<structure-fields>>, und <<content-create>>.
 
-* Der Bildstil _Medium (220x220)_ muss definiert werden. Dieser wird auf Ihrer
-Site erstellt, wenn Sie das Kern-Image-Modul installieren (installiert mit dem Kern-Standard
-Installationsprofil). Er kann neu erstellt werden, falls er gelöscht wurde. Siehe
+* Der Bildstil _Mittel (220x220)_ muss definiert werden. Dieser Bildstil wiird erstellt, wenn das mit dem Kernsystem ausgelieferte Modul Image instaliert wird (Dies wird für Se vom Inatallationsprofil Standard erledigt, wenn Sie es zur Installation von Drupal verwenden).  Der Bildstil kann neu erstellt werden, falls er gelöscht wurde. Siehe
 <<structure-image-style-create>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Ansichten_ > _Hinzufügen
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Ansichten_ > _Hinzufügen
 Ansicht_ (_admin/structure/views/add_). Der Assistent zum Hinzufügen von Ansichten erscheint.
 
 . Füllen Sie die Felder wie unten dargestellt aus.
