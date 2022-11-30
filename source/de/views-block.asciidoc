@@ -10,10 +10,10 @@ So fügen Sie einer Ansicht eine Blockanzeige hinzu.
 (((Views module,adding to a view)))
 (((Module,Views)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Hinzufügen einer Blockanzeige in einer Seitenleiste zur Ansicht "Rezepte", um die neuesten Rezepte anzuzeigen. 
-Ändern Sie deren Konfiguration, ohne die bestehende Ansicht der Seite Rezepte zu verändern.
+Hinzufügen einer Blockanzeige in einer Seitenleiste zur Ansicht „Rezepte", um die neuesten Rezepte anzuzeigen. 
+Ändern Sie die Konfiguration der neuen Anzeige, ohne die bestehende Ansicht der Seite Rezepte zu verändern.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -23,24 +23,22 @@ Hinzufügen einer Blockanzeige in einer Seitenleiste zur Ansicht "Rezepte", um d
 
 ==== Anforderungen an die Website
 
-* Der Inhaltstyp Rezept muss vorhanden sein, er muss ein Feld Hauptbild haben, und Ihre
+* Der Inhaltstyp Rezept muss vorhanden sein, er muss ein Feld Hauptbild enthalten, und Ihre
 Website muss einige Inhalte vom Typ Rezept enthalten. Siehe <<structure-content-type>>,
 <<structure-fields>>, <<structure-form-editing>>, und <<content-create>>.
 
-* Der Bildstil _Thumbnail (100x100)_ muss definiert sein. Dieser wird erstellt, wenn Sie das Kern-Image-Modul installieren (installiert mit dem Kern-Standard
-Installationsprofil). Er kann neu erstellt werden, falls er gelöscht wurde. Siehe <<structure-image-style-create>>.
+* Der Bildstil _Thumbnail (100x100)_ muss definiert sein. Dieser wird erstellt, wenn Sie das Image-Modul, das mit dem Kernsystem ausgeliefert wird, installieren (Das Installationsprofil Standard erledigt diesen Schritt für Sie automatisch.). Er kann neu erstellt werden, falls er gelöscht wurde. Siehe <<structure-image-style-create>>.
 
-* Die Sicht Rezepte muss vorhanden sein. Siehe <<views-create>> und <<views-duplicate>>.
+* Die Ansicht Rezepte muss vorhanden sein. Siehe <<views-create>> und <<views-duplicate>>.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Verwaltungsmenü _Verwaltung_ zu _Struktur_ > _Ansichten_
-(_admin/structure/views_). Suchen Sie die Ansicht "Rezepte" und klicken Sie auf _Bearbeiten_ in der
-Dropdown-Schaltfläche. Alternativ können Sie zur Seite Rezepte auf der Hauptseite navigieren und klicken Sie dort auf den kontextuellen Link _Ansicht bearbeiten_ im Hauptbereich der
-Seite. (Siehe <<config-overview>> für Informationen über kontextbezogene Links.)
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Ansichten_
+(_admin/structure/views_). Suchen Sie die Ansicht „Rezepte" und klicken Sie im entsprechenden Dropbutton auf _Bearbeiten_. Alternativ können Sie zur Seite Rezepte auf der Hauptseite navigieren und dort auf den kontextlink _Ansicht bearbeiten_ im Hauptbereich der
+Seite klicken. (Siehe <<config-overview>> für Informationen über kontextbezogene Links.)
 
-. Erstellen Sie eine neue Blockanzeige, indem Sie unter _Anzeigen_ auf _Hinzufügen_ klicken. Klicken Sie auf .
-_Block_ aus der angezeigten Liste der Links. Die neue Anzeige wird erstellt, und der Fokus wird automatisch auf seine Konfiguration umgeschaltet.
+. Erstellen Sie eine neue Blockanzeige, indem Sie unter _Anzeigen_ auf _Hinzufügen_ klicken. Klicken Sie  in der Lsite der Anzeigen, die Sie hinzufügen können auf 
+_Block_. Die neue Anzeige wird erstellt, und die Konfigurationsoptionen für die neue Anzeige werden automatisch angezeigt.
 +
 --
 // Add display button on Recipes view edit page, with Block highlighted
@@ -48,14 +46,14 @@ _Block_ aus der angezeigten Liste der Links. Die neue Anzeige wird erstellt, und
 image:images/views-block_add-block.png["Add block display"]
 --
 
-. Um den Titel dieser Anzeige zu ändern, klicken Sie auf _Block_ im Feld _Anzeige
-Feld name_. Das Pop-Up _Block: Der Name und die Beschreibung dieser Anzeige_ 
-erscheint. Ändern Sie den _Verwaltungsnamen_ in "Neueste Rezepte". Klicken Sie auf _Anwenden_.
+. Um den Titel dieser Anzeige zu ändern, klicken Sie im Abschnitt Anzeigename auf _Block_.
 
-. Um den Titel des Blocks zu ändern, klicken Sie im Feld _Titel_ auf "Rezepte".
-unter _Titel_. Wählen Sie in dem erscheinenden Popup-Fenster _Dieser Block (überschreibt)_ unter
-der _Für_ Auswahlliste. Ändern Sie das Feld _Titel_ in "Neue Rezepte" und klicken Sie
-_Anwenden (diese Anzeige)_.
+. Das Pop-Up _Block: Der Name und die Beschreibung dieser Anzeige_ 
+erscheint. Ändern Sie den _administrativen Namen_ in "Neueste Rezepte". Klicken Sie auf _Anwenden_.
+
+. Um den Titel des Blocks zu ändern, klicken Sie im Abschnitt _Titel_ auf "Rezepte".
+
+. Im Popup _Titel_ wählen Sie unter ___Für_ _Den Ansichtstyp Block (übersteuern)_  und klicken anschlißend auf Anwenden.
 +
 --
 // Configuring the block title for this display only.
