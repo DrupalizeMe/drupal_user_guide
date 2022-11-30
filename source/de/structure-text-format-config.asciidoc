@@ -3,7 +3,7 @@
 === Konfigurieren von Textformaten und Editoren
 
 [role="summary"]
-Wie man eine Änderung an einem Textformat und der Konfiguarion von Texteditoren vornimmt.
+Wie man eine Änderung an einem Textformat und der Konfiguration von Texteditoren vornimmt.
 
 (((Text format,configuring)))
 (((Configuring,text format)))
@@ -20,7 +20,7 @@ Wie man eine Änderung an einem Textformat und der Konfiguarion von Texteditoren
 
 ==== Zielsetzung
 
-Fügen Sie zum Textformat _Einfachs HTML_ das HTML-Tag für horizontale Linien zu Liste der erlaubten HTML-Tags hinzu und ergänzen Sie die Konfiguation des zugeordneten Texteditors um eine entsprechende Schaltfläche.
+Fügen Sie zum Textformat _Einfaches HTML_ das HTML-Tag für horizontale Linien zu Liste der erlaubten HTML-Tags hinzu und ergänzen Sie die Konfiguation des zugeordneten Texteditors um einen entsprechenden Buttton.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -28,7 +28,7 @@ Fügen Sie zum Textformat _Einfachs HTML_ das HTML-Tag für horizontale Linien z
 
 ==== Anforderungen an die Website
 
-* Die Kernsystemmodule Filter, Editor und CKEditor müssen installiert sein. Die Module wurden automaitsch installiert,
+* Die Kernsystemmodule Filter, Text Editor und CKEditor müssen installiert sein. Die Module wurden automatisch installiert,
 wenn Sie das Installationsprofil Standard zur Installation Ihrer Website verwendet haben.
 
 * Das Textformat _Einfaches HTML_ muss vorhanden sein. Dieses wird auf Ihrer Site erstellt, wenn Sie
@@ -36,8 +36,7 @@ Ihre Website unter Verwendung des Installationsprofils Standard aufsetzen.
 
 ==== Arbeitsschritte
 
-. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ > _Inhalt
-Verfassen_ > _Textformate und Editoren_ (_admin/configuration/content/formats_).
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ > _Inhaltserstellung_ > _Textformate und Editoren_ (_admin/configuration/content/formats_).
 Die Seite _Textformate und Editoren_ erscheint. Beachten Sie, dass die Namen der Textformate
 die mit Ihrem Installationsprofil geliefert wurden, auf der Website evtl. auf englisch angezeigt werden. Lesen sie den Abschnitt
 <<language-concept>> um den Grund hierfür zu erfahren.
@@ -48,8 +47,8 @@ wird geöffnet.
 . Achten Sie darauf, dass _CKEditor_ im Feld _Text-Editor_ ausgewählt ist. Diese Auswahl ermöglicht es Ihnen
 die Symbolleiste des Editors zu konfigurieren.
 
-. Ziehen Sie die Schaltfläche _horizontale Linie_ aus der Liste _Verfügbare Schaltflächen_ im Abschnitt _Werkzeuge_ auf die aktive Symbolleiste_. Möglicherweise müssen Sie auf den Link _Gruppennamen anzeigen_ klicken, um die Gruppe mit dem Namen
-_Tools_ zu finden. Alternativ zum Ziehen und Ablegen von Schaltflächen mit der Maus können Sie in die Registerkarte klicken und die einzelnen Schaltflächen mit den Pfieltastn auf Ihrer Tastatur verschieben.
+. Ziehen Sie den Button _Horizontale Linie_ aus der Liste _Verfügbare Buttons_ im Abschnitt _Werkzeuge_ auf die aktive Werkzeugleiste_. Möglicherweise müssen Sie auf den Link _Gruppennamen anzeigen_ klicken, um die Gruppe mit dem Namen
+_Tools_ zu finden. Alternativ zum Ziehen und Ablegen von Buttons mit der Maus können Sie in die Registerkarte klicken und die einzelnen Buttons mit den Pfeiltastn auf Ihrer Tastatur verschieben.
 +
 --
 // Button configuration area on text format edit page.
@@ -58,7 +57,7 @@ image:images/structure-text-format-config-editor-config.png["Configuring the edi
 
 . Beachten Sie, dass Sie die _Filter-Verarbeitungsreihenfolge_ ändern können.
 
-. Unter _Filtereinstellungen_ > _Erlaubte HTML-Tags einschränken und fehlerhaftes HTML_ korrigieren,
+. Unter _Aktivierte Filter_ > _Erlaubte HTML-Tags einschränken und fehlerhaftes HTML_ korrigieren,
 überprüfen Sie im Feld _Erlaubte HTML-Tags_, ob `<hr>` vorhanden ist (fügen Sie eine
 Editor-Schaltfläche hinzu, werden die erlaubten Tags automatisch aktualisiert).
 +
@@ -76,7 +75,7 @@ aktualisiert worden ist.
 image:images/structure-text-format-config-summary.png["Confirmation message for text format configuration"]
 --
 
-==== Vertiefen Sie Ihre Kenntnisse
+==== Vertiefen Sie Ihr Wissen
 
 Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, müssen Sie
 den Cache der Website leeren. Siehe: <<prevent-cache-clear>>.
@@ -95,3 +94,5 @@ video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Konfigurieren v
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

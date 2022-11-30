@@ -22,7 +22,7 @@ Text auf eine bestimmte Art formatiert. Wenn Benutzer Inhalte erstellen, wird so
 als auch der unformatierte Inhalt in der Datenbank gespeichert. Der Inhalt durchläuft dann die Filter in dem Textformat, bevor er final auf der Website dargestellt wird.
 
 Das Kernsystemmodul Filter stellt die Textformat-Funktionalität zur Verfügung. Das Installationsprofil Standard
-richtet die Textformate _Einfaches HTML_, _Eingeschränktes HTML_ und _Volständiges HTML_ ein.
+richtet die Textformate _Einfaches HTML_, _Eingeschränktes HTML_ und _Vollständiges HTML_ ein.
 Jedem Textformat ist eine Berechtigung zugeordnet, so dass Sie erweiterte Textformate nur
 vertrauenswürdigen Benutzern zugänglich machen müssen. So können Sie festlegen welche HTML-Tags und Filter
 nicht vertrauenswürdige Benutzer verwenden dürfen. Das Textformat _Einfaches HTML_ enthält beispielsweise weniger Funktionen und zulässige HTML-Tags als das format _Vollständiges HTML_
@@ -39,7 +39,7 @@ stellt den  bekannten Industriestandard CKEditor zur Verfügung. Dieser kann zur
 
 Cross-Site-Scripting (XSS) ist eine Sicherheitslücke, die typischerweise in
 Webseiten auftreten kann. Auf einer Website, die nicht gut geschützt ist, können böswillige Benutzer Skripts ausführen,
-die von Websites stammen, die von anderen Internenutzern betrieben werden (Dies kann zum Beispiel in einem Kommentar oder in einem Hauptartikel Ihrer Website passieren). Eine Cross-Site-Scripting-Schwachstelle kann von
+die von Websites stammen, die von anderen Internetnutzern betrieben werden (Dies kann zum Beispiel in einem Kommentar oder in einem Hauptartikel Ihrer Website passieren). Eine Cross-Site-Scripting-Schwachstelle kann von
 Angreifern genutzt werden,  um sich als anderer Benutzer anzumelden. Es ist wichtig die 
 Textformate Ihrer Website, korrekt zu konfigurieren, um einen solchen Missbrauch zu verhindern.
 
@@ -50,14 +50,15 @@ Textformate Ihrer Website, korrekt zu konfigurieren, um einen solchen Missbrauch
 
 ==== Zusätzliche Ressourcen
 
-* https://www.drupal.org/docs/8/core/modules/filter/overview[_Drupal.org_ Gemeinschaft
-Dokumentationsseite "Filtermodul: Textformate, die Benutzereingaben filtern (englisch)"]
+* https://www.drupal.org/docs/8/core/modules/filter/overview[_Drupal.org_ Community-Dokumentationsseite „Filtermodul: Textformate, die Benutzereingaben filtern“ (englisch)]
 
 * https://en.wikipedia.org/wiki/Cross-site_scripting[Wikipedia-Seite "Webseitenübergreifendes
-Skripting (englisch)"]
+Skripting“ (englisch)]
 
 
 *Mitwirkende*
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg] und
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
