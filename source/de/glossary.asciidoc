@@ -58,45 +58,45 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    <<glossary-state,State>>. See <<understanding-data>> for more information.
 (((Content item,definition)))
 [[glossary-content-item]] Content item::
-   An item of <<glossary-content,content>> that is typically meant to be
-   displayed as the main content of a page on your site. This is an
+   Ein Element von <<glossary-content,content>>, das normalerweise als
+   als Hauptinhalt einer Seite auf Ihrer Website angezeigt wird. Dies ist ein
    <<glossary-entity-type,entity type>>.
-   See <<planning-data-types>> for more information.
+   Sihe <<planning-data-types>> für weitere Infromationen.
 (((Content Management System (CMS),definition)))
 [[glossary-content-management-system]] Content Management System (CMS)::
-   A collection of tools designed to allow the creation, modification,
-   organization, search, retrieval and removal of information on a website.
-   See <<understanding-drupal>> for more information.
+   Eine Sammlung von Tools, die die Erstellung, Änderung,
+   Organisation, die Suche, den Abruf und  die Entfernung von Informationen auf einer Website vereinfacht.
+   Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Content type,definition)))
 [[glossary-content-type]] Content type::
-   An <<glossary-entity-subtype,entity subtype>> for the
+   Ein/eine <<glossary-entity-subtype,entity subtype>> eines/einer
    <<glossary-content-item,content item>> <<glossary-entity-type,entity type>>.
-   Each content type is used for some particular purpose on the site, and each
-   has its own fields. For example, a site for a farmers market might have a
-   content type for simple pages, and another for a vendor listing page.
-   See <<planning-data-types>> for more information.
+   Jeder Inhaltstyp wird für einen bestimmten Zweck auf der Website verwendet und
+   hat seine eigenen Felder. Zum Beispiel könnte eine Website für einen Wochenmarkt über einen
+   Inhaltstyp für einfache Seiten und einen anderen für eine Seite mit Lieferantenlisten.
+   Siehe <<planning-data-types>> für weitere Informationen.
 (((Contextual link,definition)))
-[[glossary-contextual-link]] Contextual link::
-   A link to an administrative page for editing or configuring a feature of the
-   site, shown in the context where that feature is displayed. Example: a
-   link to configure a <<glossary-menu,menu>> that is shown when you hover your
-   mouse over the menu. See <<config-overview>> for more information.
+[[glossary-contextual-link]] Kontextlink::
+   Ein Link zu einer administrativen Seite zum Bearbeiten oder Konfigurieren einer Funktion der
+   Website, die in dem Kontext angezeigt wird, in dem diese Funktion mit dem jewiligen Element auf einer Website 
+   in  Zusammenhang steht. Beispiel: Ein
+   Link zur Konfiguration eines <<glossary-menu,menu>> der angezeigt wird, wenn Sie den Mauszeiger über
+   das Menü bewegen. Siehe <<config-overview>> für weitere Informationen.
 (((Contributed,definition)))
 (((Contributed module,definition)))
 (((Contributed theme,definition)))
 [[glossary-contributed]] Contributed::
-   <<glossary-module,Modules>>, <<glossary-theme,themes>>, and
-   <<glossary-distribution,distributions>> that are not part of the
-   <<glossary-drupal-core,Drupal core>> download, and that can be downloaded
-   separately from the https://www.drupal.org[_Drupal.org_] website.
+   <<glossary-module,Modules>>, <<glossary-theme,themes>> und
+   <<glossary-distribution,distributions>> die nicht Teil des
+   <<glossary-drupal-core,Drupal core>> sind und seperat von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden könnnen.
 (((Cron task,definition)))
 (((Cron command scheduler,definition)))
 [[glossary-cron]] Cron::
-   On some operating systems, _cron_ is a command scheduler application that
-   executes commands or scripts periodically.
-   Your site defines periodic tasks, also known as cron tasks, that need to be
-   triggered either by an operating system cron scheduler, or internally. See
-   <<security-cron-concept>> for more information.
+   Auf einigen Betriebssystemen ist _Cron_ eine Anwendung zur Planung von Aufgaben, das
+   Befehle oder Skripte in regelmäßigen Abständen ausführt.
+   Ihre Website definiert periodische Aufgaben, auch Cron-Wartungsaufgaben genannt, die entweder
+   durch einen Cron-Aufgabenplaner des Betriebssystems oder intern ausgelöst werden müssen. Siehe
+   <<security-cron-concept>> für weitere Informationen.
 (((Distribution,definition)))
 [[glossary-distribution]] Distribution::
    A single download that provides a shortcut for setting up a specific type

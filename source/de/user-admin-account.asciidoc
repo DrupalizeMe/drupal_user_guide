@@ -31,16 +31,16 @@ und diesem die Rolle eines _Administrators_ zuzuweisen, anstatt allen Benutzern,
 
 * Einige Aktionen und Aktualisierungen auf der Website werden protokolliert. Wenn mehrere Benutzer das selbe Benutzerkonto verwenden, ist es schwieriger nachzuvollziehen, welcher Benutzer eine Änderung durchgeführt hat, wenn sich aus einer solchen Änderung weitere Fragen ergeben.
 
-* Die Berechtigungen der Rolle _Administrator_ können soo geändert werden, dass sie sicherer sind als dies beim Vollzugriff des ersten auf der Website angelegten Benutzerkontos der Fall ist. Auf diese weise können Personen nicht versehentlich die Konfiguration von Funktionen der Website ändern, die nicht geändert werden sollten.
+* Die Berechtigungen der Rolle _Administrator_ können soo geändert werden, dass sie sicherer sind als dies beim Vollzugriff des ersten auf der Website angelegten Benutzerkontos der Fall ist. Auf diese Weise können Personen nicht versehentlich die Konfiguration von Funktionen der Website ändern, die nicht geändert werden sollten.
 
-* Die Verantwortlichkeiten der Menschen, die gemeinsam eine Website bertreuen, können sich mit der Zeit ändern. Für gewöhnliche Benutzerkonten kann eine solche Entwicklung über die Berechtigungen gespiegelt werden, indem man Benutzerkonten bestimmte Rollen zuweist oder ihnen diese wieder aberkennt. Wenn mehrere Benutzer das Benutzerkonto 1 verwenden, kann eine solche Entwicklung nicht abgebildet werden.
+* Die Verantwortlichkeiten der Menschen, die gemeinsam eine Website betreuen, können sich mit der Zeit ändern. Für gewöhnliche Benutzerkonten kann eine solche Entwicklung über die Berechtigungen gespiegelt werden, indem man Benutzerkonten bestimmte Rollen zuweist oder ihnen diese wieder aberkennt. Wenn mehrere Benutzer das Benutzerkonto 1 verwenden, kann eine solche Entwicklung nicht abgebildet werden.
 
 * Auf einigen Websites wird der Autor von Inhalten oder Kommentaren angezeigt oder aufgezeichnet. 
 Wenn alle Benutzer dasselbe Benutzerkonto zur Erstellung von Inhalten verwenden, ist es schwierig nachzuvollziehen
 wer den Inhalt erstellt hat.
 
 Es ist nicht möglich, das Benutzerkonto mit der ID 1 über den Verwaltungsbereich, bzw die Benutzeroberfläche von Drupal zu löschen. 
-Mittels einer Datanbankabfrage könnte das Benutzerkonto zwar entfernt werden, dies würde aber zu Problemen mit der Website führen. 
+Mittels einer Datenbankabfrage könnte das Benutzerkonto zwar entfernt werden, dies würde aber zu Problemen mit der Website führen. 
 Daher ist es nicht ratsam, das Benutzerkonto mit der ID 1 zu löschen.
 //===== Verwandte Themen
 
@@ -53,3 +53,5 @@ https://www.drupal.org/node/22284[_Drupal.org_ Community-Dokumentationsseite "Be
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/mark-lacroix[Mark LaCroix]
 und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
