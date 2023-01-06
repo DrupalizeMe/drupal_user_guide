@@ -93,11 +93,11 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Auf einigen Betriebssystemen ist _Cron_ eine Anwendung zur Planung von Aufgaben, die
    Befehle oder Skripte in regelmäßigen Abständen ausführt.
    Ihre Website definiert periodische Aufgaben, auch Cron-Wartungsaufgaben genannt, die entweder
-   durch einen Cron-Aufgabenplaner des Betriebssystems oder intern ausgelöst werden müssen. Siehe
+   durch einen Aufgabenplaner des Betriebssystems oder intern ausgelöst werden müssen. Siehe
    <<security-cron-concept>> für weitere Informationen.
 (((Distribution,definition)))
 [[glossary-distribution]] Distribution::
-   Ein einzelner Download, der eine schnelle Lösung für die Einrichtung einer Webiste enthält, die einen spezifischen Anwendungsfall abdeckt.
+   Ein einzelner Download, der eine schnelle Lösung für die Einrichtung einer Website enthält, die einen spezifischen Anwendungsfall abdeckt.
 Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine Distribution enthält das <<glossary-drupal-core,Drupal-Kernsystem>> und   
 <<glossary-contributed,von der Community bereitgestellte>> <<glossary-module,Module>> sowie
    <<glossary-theme,Themes>>. Viele Distributionen konfigurieren die Website auch vorkonfiguriert
@@ -108,8 +108,8 @@ Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine 
    Die Dateien, Themes, Profile und Module, die im Lieferumfang von Drupal enthalten sind und anschließend durch Module und Themes erweitert werden können, die von der Community bereitgestellt werden. Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Entity,definition)))
 [[glossary-entity]] Entität::
-   Ein Element, das entwerder  dem Typ <<glossary-content,Inhalt>> oder
-   <<glossary-configuration,Konfiguration>> entsprechen kann. Der Begriff  wird im allgemeinen bestimmte Arten von Ihhalten auf einer Website verwendet. Beispiele sind:
+   Ein Element, das entweder  dem Typ <<glossary-content,Inhalt>> oder
+   <<glossary-configuration,Konfiguration>> entsprechen kann. Der Begriff  wird im allgemeinen bestimmte Arten von Inhalten auf einer Website verwendet. Beispiele sind:
    <<glossary-content-item,Inhalte>>,benutzerdefinierte <<glossary-block,Blöcke>>,
    <<glossary-taxonomy-term,Taxonomiebegriffe>>, und 
    <<glossary-content-type,Inhaltstypen>>; die ersten drei genannten Elemente sind Inhaltsentitäten,und das zuletzt genannte Element ist eine Konfiguration. Siehe auch:
@@ -119,10 +119,10 @@ Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine 
   weitere Informationen.
 (((Entity subtype,definition)))
 [[glossary-entity-subtype]] Entitätssubtyp::
-   Eine Gruppe von Entitäten innerhalb eines <<glossary-content,Inhalts>> bzw, eines <<glossary-entity-type,Entitätstypen>>, die sich die selben <<glossary-field,Felder>> teilen. Beispielsweise wird im Eintrag über
-   <<glossary-content-item,Inhalt>> beschrieben, dass die auf der Wochenmarkt-Website verwendeten Entitätstypen Entitätssubtypen des Entitätstyps <<glossary-content-type,Inhaltstypen>>) sind. Ein Subtyp für statische Seiten und ein Subtyp für Lieferanten.
-   Jeder Subtyp enthält dabei seine eigenen Felder. Auch der Begriff _Bündel/Bundle_ wird als Bezeichung solcher Elemente verwendet
-   (besonders in Dokumentationen für Entwickler).
+   Eine Gruppe von Entitäten innerhalb eines <<glossary-content,Inhalts>> bzw, eines <<glossary-entity-type,Entitätstyps>>, die sich die selben <<glossary-field,Felder>> teilen. Beispielsweise wird im Eintrag über
+   <<glossary-content-item,Inhalt>> beschrieben, dass die auf der Wochenmarkt-Website verwendeten Entitätstypen Entitätssubtypen des Entitätstyps <<glossary-content-type,Inhalt>>) sind. Ein Subtyp wird auf der Website für statische Seiten erwendet, während ein anderer Subtyp dazu verwende wird Informationen über Lieferanten zu erfassen und auf der Website darzustellen.
+   Jeder Subtyp enthält dabei seine eigenen Felder. Auch der Begriff _Bündel_ wird als Bezeichung solcher Elemente verwendet
+   (besonders in Dokumentationen für Entwickler, wo meist das englsiche Wort Bundle verwendet wird).
    Siehe: <<planning-data-types>> für weitere Informationen.
 (((Entity type,definition)))
 [[glossary-entity-type]] Entitätstyp::
