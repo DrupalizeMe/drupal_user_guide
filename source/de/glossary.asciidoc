@@ -137,71 +137,63 @@ Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine 
    <<glossary-block,blocks>>. Siehe: <<planning-data-types>> für weitere Informationen.
 (((Field,definition)))
 [[glossary-field]] Feld::
-   Eine bestimmte Arte Daten, die an Elemente wie
+   Eine bestimmte Art Daten, die an Elemente wie
    <<glossary-content,content>> und <<glossary-entity,entity>> angehängt wird. Zum Beispiel könnten Sie auf
    der Website eines Wochenmarktes Felder für ein Bild, die Beschreibung eines Lieferanten und einen
    <<glossary-taxonomy-term,taxonomy term>> enthatlen. Siehe
    <<planning-data-types>> für weitere Informationen.
 (((Field bundle,definition)))
 [[glossary-field-bundle]] Bündel::
-   Synonym for <<glossary-entity-subtype,Entity subtype>>.
+   Synonym für <<glossary-entity-subtype,Entity subtype>>.
 (((Formatter,definition)))
 (((Field formatter,definition)))
 [[glossary-field-formatter]] Anzeigeformat::
-   <<glossary-configuration,Configuration>> that defines how the data in
-   a <<glossary-field,field>> is displayed. For example, a text field could
-   be displayed with a prefix and/or suffix, and it could have its HTML tags
-   stripped out or limited. See also <<glossary-view-mode,View mode>> and
-   <<glossary-field-widget,Field widget>>. See <<structure-view-modes>> for more
-   information.
+   <<glossary-configuration,Configuration>> die angibt, wie ein <<glossary-field,field>> angezeigt wird. Zum Beispiel könnte ein Textfeld
+   mit einem Präfix und/oder Suffix angezeigt werden, und die darin zulässigen HTML-Tags können
+   eingeschränkt werden. Siehe auch: <<glossary-view-mode,View mode>> und
+   <<glossary-field-widget,Field widget>>. Siehe: <<structure-view-modes>> für weitere Informationen.
 (((Widget,definition)))
 (((Field widget,definition)))
-[[glossary-field-widget]] Field widget::
-   <<glossary-configuration,Configuration>> that defines how someone can
-   enter or edit data for a <<glossary-field,field>> on a data entry form. For
-   example, a text field could use a single-line or multi-line entry box, and
-   there could be a setting for the size of the box. See also
-   <<glossary-field-formatter,Field formatter>>. See <<structure-widgets>> for
-   more information.
-[[glossary-formatter]] Formatter::
-   See <<glossary-field-formatter,Field formatter>>.
+[[glossary-field-widget]] Steuerelement für Felder::
+   <<glossary-configuration,Configuration>> die festlegt, auf welche Weise jemand
+   Daten in ein <<glossary-field,field>> eingeben oder die darin vorhandenen Daten über ein Bearbeitungsformular bearbeiten kann. Beispielsweise könnte ein Textfeld eine Einzeilige Eingabemaske oder eine Mehrzeileige Eingabemaske verwenden und es kann eine Einstellung für die Größe des Eingabefelds enthalten sien.. Siehe auch:
+   <<glossary-field-formatter,Field formatter>>. Siehe: <<structure-widgets>> für weitere Informationen.
+[[glossary-formatter]] Anzeigeformat::
+   Siehe: <<glossary-field-formatter,Field formatter>>.
 (((FOSS (Free and Open Source Software),definition)))
 (((Free and Open Source Software (FOSS),definition)))
 [[glossary-foss]] FOSS::
-   Acronym for _Free and Open Source Software_, meaning software that is
-   developed by a community of people and released under a non-commercial
-   license. See also <<glossary-gpl,GPL>>. See <<understanding-project>> for
-   more information.
+   Akronym für _Freie und Quelloffene Software_, d.h. Software, die von einer
+   Gemeinschaft verschiedener Menschen entwickelt und unter einer nicht-kommerziellen Lizenz veröffentlicht wird. 
+   Siehe auch: <<glossary-gpl,GPL>>. Siehe: <<understanding-project>> für weitere Informationen.
 (((GPL (General Public License or GNU General Public License),definition)))
 (((GNU General Public License,definition)))
 [[glossary-gpl]] GPL::
-   Acronym for the _GNU General Public License_, a non-commercial software
-   license. All software downloaded from
-   the https://www.drupal.org[_Drupal.org_] website is licensed under the
+   Akronym für die _GNU General Public License_, eine nicht-kommerzielle Software
+   Lizenz. Software, die Sie von
+   der Webseite https://www.drupal.org[_Drupal.org_] herunterladen können, ist unter der
    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html["GNU General Public
-   License, version 2"]. See also <<glossary-foss,FOSS>>. See
-   <<understanding-gpl>> for more information.
+   License, Version 2"] lizensiert. Sioehe auch: <<glossary-foss,FOSS>>. Siehe;   <<understanding-gpl>> für weitere Informationen.
 (((Image style,definition)))
-[[glossary-image-style]] Image style::
-   A set of processing steps that transform a base image into a new image;
-   typical processing includes scaling and cropping. See
-   <<structure-image-styles>> for more information.
+[[glossary-image-style]] Bildstil::
+   Eine Reihe von Verarbeitungsschritten, die ein Ausgangsbild in ein neues Bild umwandeln.
+Die typische Verarbeitungsmethode beinhaltet die Arbeitsschritte Skalieren und Zuschneiden. Siehe:
+   <<structure-image-styles>> für weitere Informationen.
 (((LAMP (Linux Apache MySQL PHP),definition)))
 (((Linux Apache MySQL PHP (LAMP),definition)))
 [[glossary-lamp]] LAMP::
-   Acronym for _Linux, Apache, MySQL, and PHP_: the software on the web server
-   that the scripts commonly run on (although it can use other operating
-   systems, web servers, and databases). See <<install-requirements>> for more
-   information.
+   Akronym für _Linux, Apache, MySQL, und PHP_: die Software auf dem Webserver
+   auf dem die Skripte üblicherweise ausgeführt werden (obwohl auch andere Betriebssysteme,
+   Webserver und Datenbanken verwendet werden können). Siehe: <<install-requirements>> für weitere
+   Informationen.
 (((Log,definition)))
-[[glossary-log]] Log::
-   A list of recorded events on the site, such as usage data, performance data,
-   errors, warnings, and operational information. See
-   <<prevent-log>> for more information.
+[[glossary-log]] Protokoll::
+   Eine Liste der aufgezeichneten Ereignisse auf der Website, wie Nutzungsdaten, Leistungsdaten,
+   Fehler, Warnungen und Betriebsinformationen. Siehe
+   <<prevent-log>> für weitere Informationen.
 (((Menu,definition)))
-[[glossary-menu]] Menu::
-   A set of links used for navigation on a site, which may be arranged in a
-   hierarchy. See <<menu-concept>> for more information.
+[[glossary-menu]] Menü::
+   Eine Sammlung von Links zur Navigation auf einer Website, die hierarchisch angeordnet sein können. Siehe: <<menu-concept>> für weitere Informationen.
 (((Module, definition)))
 [[glossary-module]] Module::
    Software (usually PHP, JavaScript, and/or CSS) that extends site features
@@ -341,8 +333,8 @@ Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine 
    <<glossary-entity-type,entity type>>. See
    <<structure-taxonomy>> for more information.
 (((Widget,definition)))
-[[glossary-widget]] Widget::
-   See <<glossary-field-widget,Field widget>>.
+[[glossary-widget]] Steuerelement::
+   Siehe <<glossary-field-widget,Field widget>>.
 (((Wizard,definition)))
 [[glossary-wizard]] Wizard::
    Ein Webformular, in das Sie einige Werte eingeben können und das dann etwas
