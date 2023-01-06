@@ -199,25 +199,25 @@ Die typische Verarbeitungsmethode beinhaltet die Arbeitsschritte Skalieren und Z
 (((Path,definition)))
 [[glossary-path]] Pfad::
    Der eindeutige, letzte Teil der internen URL, den das System einer Seite zuweist. 
-   Dabei kann es sich um einen Teil der Website oder einen Teil des erwaltungsbereichs von Drupal handeln. Die interne URL für die Seite „Über“ auf Ihrer Website könnte zum Beispiel 
+   Dabei kann es sich um einen Teil der Website oder einen Teil des Verwaltungsbereichs von Drupal handeln. Die interne URL für die Seite „Über“ auf Ihrer Website könnte zum Beispiel 
    _http://example.com/node/5_ lauten. in diesem Fall währe der POfad der Seite _node/5_. Siehe auch:
    <<glossary-alias,Alias>>. Siehe: <<content-paths>> für weitere Informationen.
 (((Permission,definition)))
 [[glossary-permission]] Berechtigung::
    Die Möglichkeit, eine bestimmte Aktion auf der Website durchzuführen, wie z.B. die Bearbeitung
-   einer bestimmten Art von <<glossary-content,content>>, oder das Anzeigen von Benutzerprofilen.
-   Siehe auch: <<glossary-role,Role>>. Siehe: <<user-concept>> für weitere Informationen.
+   einer bestimmten Art von <<glossary-content,Inhalt>>, oder das Anzeigen von Benutzerprofilen.
+   Siehe auch: <<glossary-role,Rolle>>. Siehe: <<user-concept>> für weitere Informationen.
 (((Reference field,definition)))
 [[glossary-reference-field]] Referenzfeld::
    Ein <<glossary-field,Feld>> das eine Beziehung zwischen einer
-   <<glossary-entity,entity>> und einer oder mehreren anderen Entitäten repräsentiert. Diese Entitäten können dabei vom selben <<glossary-entity-type,entity type>> sein oder einen anderen Typ aufweisen. Beispielsweise
-   Kann ein Rezept auf der Website des Wochenmarktesein Referenzfeld zum Eintrag eines Leiferanten enthalten der das Rezept eingereicht hat. Der Eintrag des Lieferanten wurde in diesem Fall ebenfalls als Inhalt erzeugt. 
+   <<glossary-entity,Entität>> und einer oder mehreren anderen Entitäten repräsentiert. Diese Entitäten können dabei vom selben <<glossary-entity-type,Entitätstyp>> sein oder einen anderen Typ aufweisen. Beispielsweise
+   kann ein Rezept auf der Website des Wochenmarktesein Referenzfeld zum Eintrag eines Lieferanten enthalten der das Rezept eingereicht hat. Der Eintrag des Lieferanten wurde in diesem Fall ebenfalls als Inhalt erzeugt. 
    Felder mit <<glossary-taxonomy-term,Taxonomiebegriff>> sind ebenfalls Referenzfelder. Siehe: <<structure-reference-fields>> für weitere Informationen.
 (((Region,definition)))
 [[glossary-region]] Region::
-   Ein bestimmter Bereich auf einer Seite in dem <<glossary-content,content>> wie eine Kopfzeile, eine fußzeile, der Hauptiinhalt der Website, 
+   Ein bestimmter Bereich auf einer Seite in dem <<glossary-content,Inhalt>> wie eine Kopfzeile, eine Fußzeile, der Hauptiinhalt der Website, 
    die linke Seitenleiste, usw platziert werden kann. 
-   Regionen werden in <<glossary-theme,Themes>> definiert, Der Inahlt, der in jeder dieser Regionen dargestellt wird, ist Inahalt, der mit Hilfe von <<glossary-block,blocks>> dargestellt wird. 
+   Regionen werden in <<glossary-theme,Themes>> definiert, Der Inahlt, der in jeder dieser Regionen dargestellt wird, ist Inhalt, der mit Hilfe von <<glossary-block,Blöcken>> dargestellt wird. 
    Siehe: <<block-regions>> für weitere Informationen.
 (((Responsive,definition)))
 [[glossary-responsive]] Responsiv::
