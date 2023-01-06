@@ -18,7 +18,7 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    anstelle von _http://example.com/node/5_. Siehe <<content-paths>> für weitere
    Informationen.
 (((Anonymous,definition)))
-[[glossary-anonymous]] Anonymous::
+[[glossary-anonymous]] Gast::
    Eine Person (<<glossary-user,user>>), die mit der Website interagiert und nicht angemeldet ist.
     Siehe <<user-concept>> für weitere Informationen.
 (((Block,definition)))
@@ -32,7 +32,7 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    <<glossary-responsive,responsive>> Seite passt ihre Präsentation anhand dieser 
    Breakpoints an. Siehe: <<structure-image-responsive>> für Weitere Informatioonen.
 (((Bundle,definition)))
-[[glossary-bundle]] Bundle::
+[[glossary-bundle]] Subtyp::
    Synonym für <<glossary-entity-subtype,Entity subtype>>.
 (((Cache,definition)))
 [[glossary-cache]] Cache::
@@ -45,31 +45,31 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Akronym für
    <<glossary-content-management-system,Content Management System>>.
 (((Configuration,definition)))
-[[glossary-configuration]] Configuration::
+[[glossary-configuration]] Konfiguration::
    Informationen über Ihre Website, die nicht <<glossary-content,content>> sind,
    und die dauerhafter sein sollen als <<glossary-state,state>> Informationen,
    wie zum Beispiel der Name Ihrer Website, der <<glossary-content-type,content types>>
    und <<glossary-view,views>>, die Sie definiert haben, usw. Siehe <<Verstehen von Daten>>
    für weitere Informationen.
 (((Content,definition)))
-[[glossary-content]] Content::
+[[glossary-content]] Inhalt::
    Informationen, die auf Ihrer Website angezeigt werden sollen, z. B. Texte, Bilder,
    Downloads, usw. Siehe auch: <<glossary-configuration,Configuration>> und
    <<glossary-state,State>>. Siehe: <<understanding-data>> für weitere Informationen.
 (((Content item,definition)))
-[[glossary-content-item]] Content item::
+[[glossary-content-item]] Inhalt::
    Ein Element von <<glossary-content,content>>, das normalerweise als
    als Hauptinhalt einer Seite auf Ihrer Website angezeigt wird. Dies ist ein
    <<glossary-entity-type,entity type>>.
-   Sihe <<planning-data-types>> für weitere Infromationen.
+   Siehe <<planning-data-types>> für weitere Infromationen.
 (((Content Management System (CMS),definition)))
 [[glossary-content-management-system]] Content Management System (CMS)::
    Eine Sammlung von Tools, die die Erstellung, Änderung,
    Organisation, die Suche, den Abruf und  die Entfernung von Informationen auf einer Website vereinfacht.
    Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Content type,definition)))
-[[glossary-content-type]] Content type::
-   Ein/eine <<glossary-entity-subtype,entity subtype>> eines/einer
+[[glossary-content-type]] Inhaltstyp::
+   Ein/eine <<glossary-entity-subtype,entity subtype>> eines
    <<glossary-content-item,content item>> <<glossary-entity-type,entity type>>.
    Jeder Inhaltstyp wird für einen bestimmten Zweck auf der Website verwendet und
    hat seine eigenen Felder. Zum Beispiel könnte eine Website für einen Wochenmarkt über einen
@@ -85,7 +85,7 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
 (((Contributed,definition)))
 (((Contributed module,definition)))
 (((Contributed theme,definition)))
-[[glossary-contributed]] Contributed::
+[[glossary-contributed]] Von der Commuinity bereitgestellt::
    <<glossary-module,Modules>>, <<glossary-theme,themes>> und
    <<glossary-distribution,distributions>> die nicht Teil des
    <<glossary-drupal-core,Drupal core>> sind und seperat von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden könnnen.
@@ -99,61 +99,55 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    <<security-cron-concept>> für weitere Informationen.
 (((Distribution,definition)))
 [[glossary-distribution]] Distribution::
-   A single download that provides a shortcut for setting up a specific type
-   of site, such as a website for a club or for e-commerce. A
-   distribution contains <<glossary-drupal-core,Drupal core>>, along with
-   <<glossary-contributed,contributed>> <<glossary-module,modules>> and/or
-   <<glossary-theme,themes>>; many distributions also pre-configure the site
-   or even create sample content upon installation. See
-   <<understanding-distributions>> for more information.
+   Ein einzelner Download, der eine schnelle Lösung für die Einrichtung einer bestimmten Art von Website enthält.
+Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine Distribution enthält <<glossary-drupal-core,Drupal core>>und   
+<<glossary-contributed,contributed>> <<glossary-module,modules>> sowie
+   <<glossary-theme,themes>>. Viele Distributionen konfigurieren die Website auch vorkonfiguriert
+   oder erstellen sogar Beispielinhalte bei der Installation. Siehe
+   <<understanding-distributions>> für weitere Informationen.
 (((Drupal core,definition)))
-[[glossary-drupal-core]] Drupal core::
-   The files, themes, profiles, and modules included with the standard
-   project software download. See <<understanding-drupal>> for more information.
+[[glossary-drupal-core]] Drupal-Kernsytem::
+   Die Dateien, Themes, Profile und Module, die im Lieferumfang der Standard
+   Projekt-Software enthalten sind. Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Entity,definition)))
-[[glossary-entity]] Entity::
-   An item of either <<glossary-content,content>> or
-   <<glossary-configuration,configuration>> data, although in common usage,
-   the term often refers to content entities. Examples include
-   <<glossary-content-item,content items>>, custom <<glossary-block,blocks>>,
-   <<glossary-taxonomy-term,taxonomy terms>>, and definitions of
-   <<glossary-content-type,content types>>; the first three are content
-   entities, and the last is a configuration entity. See also
+[[glossary-entity]] Entität::
+   Ein Element, das entwerder <<glossary-content,content>> oder
+   <<glossary-configuration,configuration>> Daten sein kann, obwohl der Begriff im Allgemeinen für Inahltsentitäten verwendet wird. Beispiele sind:
+   <<glossary-content-item,content items>>,benutzerdefinierte <<glossary-block,blocks>>,
+   <<glossary-taxonomy-term,taxonomy terms>>, und definitionen von
+   <<glossary-content-type,content types>>; die erten drei sind Inhaltsentitäten,und das letzte ist ein Konfigurationselement. Siehe auch
    <<glossary-entity-type,Entity type>>,
-   <<glossary-entity-subtype,Entity subtype>>, and
-   <<glossary-field,Field>>. See <<planning-data-types>> for
-   more information.
+   <<glossary-entity-subtype,Entity subtype>>, und
+   <<glossary-field,Field>>. Siehe: <<planning-data-types>> für
+  weitere Informationen.
 (((Entity subtype,definition)))
-[[glossary-entity-subtype]] Entity subtype::
-   Within a <<glossary-content,content>> <<glossary-entity-type,entity type>>, a
-   grouping of entities that share the same <<glossary-field,fields>>. For
-   example, within the <<glossary-content-item,content item>> entity type, a
-   farmers market site might have subtypes (known as
-   <<glossary-content-type,content types>>) for static pages and vendor pages,
-   each with its own group of fields. You may also see the term _bundle_ used
-   (especially in programmer documentation) as a synonym of entity subtype.
-   See <<planning-data-types>> for more information.
+[[glossary-entity-subtype]] Entitätssubtyp::
+   Within a <<glossary-content,content>> <<glossary-entity-type,entity type>>, eine
+   Gruppe von Entitäten die sich die seleben <<glossary-field,fields>> teilen. Beispielsweise wird in
+   <<glossary-content-item,content item>> beschreiben, dass Entitätstypen auf der Wochenmarkt-Website Subtypen (bekannt als
+   <<glossary-content-type,content types>>) enthalten sind. Einer für Statische Seiten und einer für Lieferanten.Jeder Subtyp enthält dabei seine eigenen Felder. Auch der Begriff _Bündel/Bundle_ kann solche Elemente beschreiben
+   (besonders in Dokumentationen für Entwickler).
+   Siehe: <<planning-data-types>> für weitere Informationen.
 (((Entity type,definition)))
-[[glossary-entity-type]] Entity type::
-   The overall type of an <<glossary-entity,entity>>; in common usage, it is
-   only applied to a <<glossary-content,content>> entity. Examples include
+[[glossary-entity-type]] Entitätstyp::
+   The overall type of an <<glossary-entity,entity>>; im allgemeinen Sprachgebrauch wird es
+   nur auf eine Entität vom Typ <<glossary-content,content>>. Beispiele sind:
    <<glossary-content-type,content types>>,
-   <<glossary-taxonomy-term,taxonomy terms>>, and custom
-   <<glossary-block,blocks>>. See <<planning-data-types>> for more information.
+   <<glossary-taxonomy-term,taxonomy terms>> und benutzerdefinierte
+   <<glossary-block,blocks>>. Siehe: <<planning-data-types>> für weitere Informationen.
 (((Field,definition)))
-[[glossary-field]] Field::
-   Data of a certain type that is attached to a
-   <<glossary-content,content>> <<glossary-entity,entity>>. For instance, on
-   a farmers market site's vendor content type, you might have fields for an
-   image, the vendor description, and a
-   <<glossary-taxonomy-term,taxonomy term>>. See
-   <<planning-data-types>> for more information.
+[[glossary-field]] Feld::
+   Eine bestimmte Arte Daten, die an Elemente wie
+   <<glossary-content,content>> und <<glossary-entity,entity>> angehängt wird. Zum Beispiel könnten Sie auf
+   der Website eines Wochenmarktes Felder für ein Bild, die Beschreibung eines Lieferanten und einen
+   <<glossary-taxonomy-term,taxonomy term>> enthatlen. Siehe
+   <<planning-data-types>> für weitere Informationen.
 (((Field bundle,definition)))
-[[glossary-field-bundle]] Field bundle::
+[[glossary-field-bundle]] Bündel::
    Synonym for <<glossary-entity-subtype,Entity subtype>>.
 (((Formatter,definition)))
 (((Field formatter,definition)))
-[[glossary-field-formatter]] Field formatter::
+[[glossary-field-formatter]] Anzeigeformat::
    <<glossary-configuration,Configuration>> that defines how the data in
    a <<glossary-field,field>> is displayed. For example, a text field could
    be displayed with a prefix and/or suffix, and it could have its HTML tags
