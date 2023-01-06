@@ -23,8 +23,8 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
     Siehe <<user-concept>> für weitere Informationen.
 (((Block,definition)))
 [[glossary-block]] Block::
-   Ein Stück <<glossary-content,Inhalt>> (Text, Bild, Link, usw.) das auf einer Seite innerhalb eine Website angezeigt werden kann. Blöcke werden in
-   <<glossary-region,regions>> angezeigt. Siehe:<<block-concept>> für weiterte Information.
+   Ein Stück <<glossary-content,Inhalt>> (Text, Bild, Link, usw.) das auf einer Seite angezeigt werden kann, die Teil einer Website ist. Blöcke werden in
+   <<glossary-region,Regionen>> angezeigt. Siehe: <<block-concept>> für weitere Informationen.  
 (((Breakpoint,definition)))
 [[glossary-breakpoint]] Breakpoint::
    Breakpoints werden verwendet, um die Höhe oder Breite von Browsern, Bildschirmen,
@@ -33,10 +33,10 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Breakpoints an. Siehe: <<structure-image-responsive>> für weitere Informationen.
 (((Bundle,definition)))
 [[glossary-bundle]] Subtyp::
-   Synonym für <<glossary-entity-subtype,Entität oder Subtyp>>.
+   Synonym für <<glossary-entity-subtype,Entität oder Entitätssubtyp>>.
 (((Cache,definition)))
 [[glossary-cache]] Cache/Zwischenspeicher::
-   Der interne Cache der Website, der auch Zwischenspeicher genannt wird, speichert die Ausgabe zeitaufwändiger Berechnungen, wie z.B. die Berechnung der Ausgabe für eine HTML-Seitenanfrage, und gibt das Ergebnis dieser Berechnung direkt aus, anstatt die Berechnung beim bei jedem Seitenaufruf neu durchführen.
+   Der interne Cache der Website, der auch Zwischenspeicher genannt wird, speichert die Ausgabe zeitaufwändiger Berechnungen, wie z.B. die Berechnung der Ausgabe für eine HTML-Seitenanfrage, und gibt das Ergebnis dieser Berechnung direkt aus, anstatt die Berechnung bei jedem Seitenaufruf neu durchzuführen.
    Externe Caching-Systeme können auch auf dem Webserver verwendet werden, um die
    Antwortzeit einer Website zu verkürzen. Siehe: <<prevent-cache>> für weitere Informationen über den internen Cache.
 (((CMS (Content Management System),definition)))
@@ -46,76 +46,75 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    <<glossary-content-management-system,Content Management System>>.
 (((Configuration,definition)))
 [[glossary-configuration]] Konfiguration::
-   Informationen über Ihre Website, die nicht <<glossary-content,content>> sind,
-   und die dauerhafter sein sollen als <<glossary-state,state>> Informationen,
-   wie zum Beispiel der Name Ihrer Website, der <<glossary-content-type,content types>>
-   und <<glossary-view,views>>, die Sie definiert haben, usw. Siehe <<understanding-data>>
+   Informationen über Ihre Website, die keine <<glossary-content,Inhalte>> sind,
+   und die dauerhafter sein sollen als ein <<glossary-state,Status>> Informationen,
+   wie zum Beispiel der Name Ihrer Website, eines <<glossary-content-type,Inhaltstyps>>
+   oder <<glossary-view,Ansichten>>, die Sie definiert haben, usw. Siehe <<understanding-data>>
    für weitere Informationen.
 (((Content,definition)))
 [[glossary-content]] Inhalt::
    Informationen, die auf Ihrer Website angezeigt werden sollen, z. B. Texte, Bilder,
    Downloads, usw. Siehe auch: <<glossary-configuration,Konfiguration>> und
-   <<glossary-state,State>>. Siehe: <<understanding-data>> für weitere Informationen.
+   <<glossary-state,Status>>. Siehe: <<understanding-data>> für weitere Informationen.
 (((Content item,definition)))
 [[glossary-content-item]] Inhalt::
    Ein <<glossary-content,Inhalt>>, der normalerweise als
    Hauptinhalt  auf einer Seite Ihrer Website angezeigt wird. Dies ist ein
    <<glossary-entity-type,Entitätstyp>>.
-   Siehe <<planning-data-types>> für weitere Infromationen.
+   Siehe <<planning-data-types>> für weitere Informationen.
 (((Content Management System (CMS),definition)))
 [[glossary-content-management-system]] Content Management System (CMS)::
-   Eine Sammlung von Tools, die die Erstellung, Änderung,
-   Organisation, die Suche, den Abruf und  die Entfernung von Informationen auf einer Website vereinfacht.
+   Eine Sammlung von Tools, die das Erstellen,das Bearbeiten, die
+   Organisation, die Suche, den Abruf und  das Löschen von Informationen auf einer Website vereinfacht.
    Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Content type,definition)))
 [[glossary-content-type]] Inhaltstyp::
    Eine <<glossary-entity-subtype,Entität oder ein Entitätssubtyp>> eines
-   <<glossary-content-item,Inhalts>> <<glossary-entity-type,Entitätstyp>>.
+   <<glossary-content-item,Inhalts>>. Inhaltstypen sind <<glossary-entity-type,Entitätstypen>>.
    Jeder Inhaltstyp wird für einen bestimmten Zweck auf der Website verwendet und
    hat seine eigenen Felder. Zum Beispiel könnte eine Website für einen Wochenmarkt über einen
-   Inhaltstyp für einfache Seiten und einen anderen für eine Seite mit Lieferantenlisten.
+   Inhaltstyp für statische Seiten und einen Wieteren Inhaltstyp enthalten, mit dem Lieferantenlisten erzeugt werden können.
    Siehe <<planning-data-types>> für weitere Informationen.
 (((Contextual link,definition)))
 [[glossary-contextual-link]] Kontextlink::
    Ein Link zu einer administrativen Seite zum Bearbeiten oder Konfigurieren einer Funktion der
-   Website, die in dem Kontext angezeigt wird, in dem diese Funktion mit dem jewiligen Element auf einer Website 
+   Website, die in dem Kontext angezeigt wird, in dem diese Funktion mit dem jeweiligen Element auf einer Website 
    in  Zusammenhang steht. Beispiel: Ein
-   Link zur Konfiguration eines <<glossary-menu,Menü>> der angezeigt wird, wenn Sie den Mauszeiger über
+   Link zur Konfiguration eines <<glossary-menu,Menüs>>, der angezeigt wird, wenn Sie den Mauszeiger über
    das Menü bewegen. Siehe <<config-overview>> für weitere Informationen.
 (((Contributed,definition)))
 (((Contributed module,definition)))
 (((Contributed theme,definition)))
-[[glossary-contributed]] Von der Commuinity bereitgestellt::
+[[glossary-contributed]] Von der Community bereitgestellt::
    <<glossary-module,Module>>, <<glossary-theme,Themes>> und
    <<glossary-distribution,Distributionen>> die nicht im
    <<glossary-drupal-core,Drupal Kernsystem>> enthalten sind und seperat von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden könnnen.
 (((Cron task,definition)))
 (((Cron command scheduler,definition)))
 [[glossary-cron]] Cron::
-   Auf einigen Betriebssystemen ist _Cron_ eine Anwendung zur Planung von Aufgaben, das
+   Auf einigen Betriebssystemen ist _Cron_ eine Anwendung zur Planung von Aufgaben, die
    Befehle oder Skripte in regelmäßigen Abständen ausführt.
    Ihre Website definiert periodische Aufgaben, auch Cron-Wartungsaufgaben genannt, die entweder
    durch einen Cron-Aufgabenplaner des Betriebssystems oder intern ausgelöst werden müssen. Siehe
    <<security-cron-concept>> für weitere Informationen.
 (((Distribution,definition)))
 [[glossary-distribution]] Distribution::
-   Ein einzelner Download, der eine schnelle Lösung für die Einrichtung einer bestimmten Art von Website enthält.
-Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine Distribution enthält das <<glossary-drupal-core,Drupal Kernsystem>> und   
-<<glossary-contributed,von der Commuinity bereitgestellte>> <<glossary-module,Module>> sowie
+   Ein einzelner Download, der eine schnelle Lösung für die Einrichtung einer Webiste enthält, die einen spezifischen Anwendungsfall abdeckt.
+Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine Distribution enthält das <<glossary-drupal-core,Drupal-Kernsystem>> und   
+<<glossary-contributed,von der Community bereitgestellte>> <<glossary-module,Module>> sowie
    <<glossary-theme,Themes>>. Viele Distributionen konfigurieren die Website auch vorkonfiguriert
-   oder erstellen sogar Beispielinhalte bei der Installation. Siehe
+   oder erstellen sogar Beispielinhalte während der Installation. Siehe
    <<understanding-distributions>> für weitere Informationen.
 (((Drupal core,definition)))
 [[glossary-drupal-core]] Drupal-Kernsystem::
-   Die Dateien, Themes, Profile und Module, die im Lieferumfang der Standard
-   Projekt-Software enthalten sind. Siehe: <<understanding-drupal>> für weitere Informationen.
+   Die Dateien, Themes, Profile und Module, die im Lieferumfang von Drupal enthalten sind und anschließend durch Module und Themes erweitert werden können, die von der Community bereitgestellt werden. Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Entity,definition)))
 [[glossary-entity]] Entität::
-   Ein Element, das entwerder <<glossary-content,Inhaltt>> oder
-   <<glossary-configuration,Konfiguration>> sein kann, obwohl der Begriff im Allgemeinen für Inahltsentitäten verwendet wird. Beispiele sind:
+   Ein Element, das entwerder  dem Typ <<glossary-content,Inhalt>> oder
+   <<glossary-configuration,Konfiguration>> entsprechen kann. Der Begriff  wird im allgemeinen bestimmte Arten von Ihhalten auf einer Website verwendet. Beispiele sind:
    <<glossary-content-item,Inhalte>>,benutzerdefinierte <<glossary-block,Blöcke>>,
-   <<glossary-taxonomy-term,Taxonomiebegriffe>>, und definitionen von
-   <<glossary-content-type,Inhaltstypen>>; die erten drei sind Inhaltsentitäten,und das letzte ist ein Konfigurationselement. Siehe auch
+   <<glossary-taxonomy-term,Taxonomiebegriffe>>, und 
+   <<glossary-content-type,Inhaltstypen>>; die ersten drei genannten Elemente sind Inhaltsentitäten,und das zuletzt genannte Element ist eine Konfiguration. Siehe auch:
    <<glossary-entity-type,Entitätstyp>>,
    <<glossary-entity-subtype,Entitätssubtyp>>, und
    <<glossary-field,Feld>>. Siehe: <<planning-data-types>> für
@@ -123,8 +122,8 @@ Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine 
 (((Entity subtype,definition)))
 [[glossary-entity-subtype]] Entitätssubtyp::
    Eine Gruppe von Entitäten innerhalb eines <<glossary-content,Inhalts>> bzw, eines <<glossary-entity-type,Entitätstypen>>, die sich die selben <<glossary-field,Felder>> teilen. Beispielsweise wird im Eintrag über
-   <<glossary-content-item,Inhalt>> beschreiben, dass Entitätstypen auf der Wochenmarkt-Website Subtypen (bekannt als
-   <<glossary-content-type,Inhaltstypen>>) enthalten sind. Einer für statische Seiten und einer für Lieferanten.Jeder Subtyp enthält dabei seine eigenen Felder. Auch der Begriff _Bündel/Bundle_ kann solche Elemente beschreiben
+   <<glossary-content-item,Inhalt>> beschrieben, dass die auf der Wochenmarkt-Website verwendeten Entitätstypen Entitätssubtypen des Entitätstyps <<glossary-content-type,Inhaltstypen>>) sind. Ein Subtyp für statische Seiten und ein Subtyp für Lieferanten.
+   Jeder Subtyp enthält dabei seine eigenen Felder. Auch der Begriff _Bündel/Bundle_ wird als Bezeichung solcher Elemente verwendet
    (besonders in Dokumentationen für Entwickler).
    Siehe: <<planning-data-types>> für weitere Informationen.
 (((Entity type,definition)))
