@@ -30,7 +30,7 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Breakpoints werden verwendet, um die Höhe oder Breite von Browsern, Bildschirmen,
    Druckern und weiteren Medienausgabetypen in Bereiche zu unterteilen. Eine
    <<glossary-responsive,responsive>> Seite passt ihre Präsentation anhand dieser 
-   Breakpoints an. Siehe: <<structure-image-responsive>> für Weitere Informatioonen.
+   Breakpoints an. Siehe: <<structure-image-responsive>> für weitere Informationen.
 (((Bundle,definition)))
 [[glossary-bundle]] Subtyp::
    Synonym für <<glossary-entity-subtype,Entity subtype>>.
@@ -38,7 +38,7 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
 [[glossary-cache]] Cache::
    Der interne Cache der Website, der auch Zwischenspeicher genannt wird, speichert die Ausgabe zeitaufwändiger Berechnungen, wie z.B. die Berechnung der Ausgabe für eine HTML-Seitenanfrage, und gibt das Ergebnis dieser Berechnung direkt aus, anstatt die Berechnung beim bei jedem Seitenaufruf neu durchführen.
    Externe Caching-Systeme können auch auf dem Webserver verwendet werden, um die
-   Antwortzeit einer Website zu verkürzen. Siehe: <<prevent-cache>> für Weitere Informationen über den internen Cache.
+   Antwortzeit einer Website zu verkürzen. Siehe: <<prevent-cache>> für weitere Informationen über den internen Cache.
 (((CMS (Content Management System),definition)))
 (((Content Management System (CMS),definition)))
 [[glossary-cms]] CMS::
@@ -49,7 +49,7 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Informationen über Ihre Website, die nicht <<glossary-content,content>> sind,
    und die dauerhafter sein sollen als <<glossary-state,state>> Informationen,
    wie zum Beispiel der Name Ihrer Website, der <<glossary-content-type,content types>>
-   und <<glossary-view,views>>, die Sie definiert haben, usw. Siehe <<Verstehen von Daten>>
+   und <<glossary-view,views>>, die Sie definiert haben, usw. Siehe <<understanding-data>>
    für weitere Informationen.
 (((Content,definition)))
 [[glossary-content]] Inhalt::
@@ -195,52 +195,47 @@ Die typische Verarbeitungsmethode beinhaltet die Arbeitsschritte Skalieren und Z
 [[glossary-menu]] Menü::
    Eine Sammlung von Links zur Navigation auf einer Website, die hierarchisch angeordnet sein können. Siehe: <<menu-concept>> für weitere Informationen.
 (((Module, definition)))
-[[glossary-module]] Module::
-   Software (usually PHP, JavaScript, and/or CSS) that extends site features
-   and adds functionality. The Drupal project distinguishes between
-   _<<glossary-drupal-core,core>>_ and _<<glossary-contributed,contributed>>_
-   modules. See <<understanding-modules>> for more information.
+[[glossary-module]] Modul::
+   Software (in der Regel PHP, JavaScript und/oder CSS), die die Funktionen der Website
+   und Funktionalität hinzufügt. Drupal unterscheidet zwischen
+   _<<glossary-drupal-core,core>>_ und _<<glossary-contributed,contributed>>_
+   Modulen. Siehe: <<understanding-modules>> für weitere Informationen.
 (((Path,definition)))
-[[glossary-path]] Path::
-   The unique, last part of the internal URL that the system assigns to a page
-   on the site, which can be a visitor-facing page or an administrative
-   page. For example, the internal URL for the About page on your site might be
-   _http://example.com/node/5_, and in this case, the path is _node/5_. See also
-   <<glossary-alias,Alias>>. See <<content-paths>> for more information.
+[[glossary-path]] Pfad::
+   Der eindeutige, letzte Teil der internen URL, den das System einer Seite zuweist. 
+   Dabei kann es sich um einen Teil der Website oder einen Teil des erwaltungsbereichs von Drupal handeln. Die interne URL für die Seite „Über“ auf Ihrer Website könnte zum Beispiel 
+   _http://example.com/node/5_ lauten. in diesem Fall währe der POfad der Seite _node/5_. Siehe auch:
+   <<glossary-alias,Alias>>. Siehe: <<content-paths>> für weitere Informationen.
 (((Permission,definition)))
-[[glossary-permission]] Permission::
-   The ability to perform some action on the site, such as editing
-   a particular type of <<glossary-content,content>>, or viewing user profiles.
-   See also <<glossary-role,Role>>. See <<user-concept>> for more information.
+[[glossary-permission]] Berechtigung::
+   Die Möglichkeit, eine bestimmte Aktion auf der Website durchzuführen, wie z.B. die Bearbeitung
+   einer bestimmten Art von <<glossary-content,content>>, oder das Anzeigen von Benutzerprofilen.
+   Siehe auch: <<glossary-role,Role>>. Siehe: <<user-concept>> für weitere Informationen.
 (((Reference field,definition)))
-[[glossary-reference-field]] Reference field::
-   A <<glossary-field,field>> that represents a relationship between an
-   <<glossary-entity,entity>> and one or more other entities, which may be the
-   same <<glossary-entity-type,entity type>> or a different type. For example,
-   on a farmers market site, a recipe content item might have a reference field
-   to the vendor (also a content item) that posted the
-   recipe. <<glossary-taxonomy-term,Taxonomy term>> fields are also reference
-   fields. See <<structure-reference-fields>> for more information.
+[[glossary-reference-field]] Referenzfeld::
+   Ein <<glossary-field,field>> das eine Beziehung zwischen einer
+   <<glossary-entity,entity>> und einer oder mehreren anderen Entitäten repräsentiert. Diese Entitäten können dabei vom selben <<glossary-entity-type,entity type>> sein oder einen anderen Typ aufweisen. Beispielsweise
+   Kann ein Rezept auf der Website des Wochenmarktesein Referenzfeld zum Eintrag eines Leiferanten enthalten der das Rezept eingereicht hat. Der Eintrag des Lieferanten wurde in diesem Fall ebenfalls als Inhalt erzeugt. 
+   Felder mit <<glossary-taxonomy-term,Taxonomy term>> sind ebenfalls Referenzfelder. Siehe: <<structure-reference-fields>> für weitere Informationen.
 (((Region,definition)))
 [[glossary-region]] Region::
-   A defined area of a page where <<glossary-content,content>> can be placed,
-   such as the header, footer, main content area, left sidebar, etc. Regions are
-   defined by <<glossary-theme,themes>>, and the content displayed in each
-   region is contained in <<glossary-block,blocks>>. See <<block-regions>> for
-   more information.
+   Ein bestimmter Bereich auf einer Seite in dem <<glossary-content,content>> wie eine Kopfzeile, eine fußzeile, der Hauptiinhalt der Website, 
+   die linke Seitenleiste, usw platziert werden kann. 
+   Regionen werden in <<glossary-theme,themes>> definiert, Der Inahlt, der in jeder dieser Regionen dargestellt wird, ist Inahalt, der mit Hilfe von <<glossary-block,blocks>> dargestellt wird. 
+   Siehe: <<block-regions>> für weitere Informationen.
 (((Responsive,definition)))
-[[glossary-responsive]] Responsive::
-   A site or <<glossary-theme,theme>> is said to be responsive if it adjusts
-   its presentation in response to the size of the browser screen, printer,
-   or other media output type. See also <<glossary-breakpoint,Breakpoint>>. See
-   <<structure-image-responsive>> for more information.
+[[glossary-responsive]] Responsiv::
+   Eine Website oder ein <<glossary-theme,theme>> wird als responsiv bezeichnet, wenn es sich
+   an die Größe des Anzeigegeräts, des Druckers,
+   oder an einen Anderen Medienausgabetyp anpassen kann. Siehe auch: <<glossary-breakpoint,Breakpoint>>. Siehe:
+   <<structure-image-responsive>> für weitere Infromationen.
 (((Revision,definition)))
 [[glossary-revision]] Revision::
-   A record of the past or present state of a <<glossary-content,content>>
-   <<glossary-entity,entity>>, as it is edited over time. See
-   <<planning-workflow>> for more information.
+   Eine Aufzeichnung über den vergangenen oder gegenwärtigen Zustand eines <<glossary-content,content>>
+   <<glossary-entity,entity>>, im Verlauf der Bearbeitung. Siehe:
+   <<planning-workflow>> für weitere Infromationen.
 (((Role,definition)))
-[[glossary-role]] Role::
+[[glossary-role]] Rolle::
    A named set of <<glossary-permission,permissions>> that can be applied to
    a <<glossary-user,user account>>. See <<user-concept>> for more information.
 (((Security update,definition)))
