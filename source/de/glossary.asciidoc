@@ -11,7 +11,7 @@ Eine Web-Technologie, die zum Datenaustausch mit einem Server verwendet wird, um
 Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte neu laden zu müssen.
 (((Alias,definition)))
 [[glossary-alias]] Alias::
-   Ein benutzerfreundlicher Name, der den internen <<glossary-path,path>> ersetzt, den
+   Ein benutzerfreundlicher Name, der den internen <<glossary-path,Pfad>> ersetzt, den
    das System einer URL auf der Website zuweist. Sie könnten zum Beispiel einen
    Alias _/about_ für die Seite About auf Ihrer Website vergeben, um den internen
    Pfad _/node/5_. Dadurch würde die Seite die URL _http://example.com/about_
@@ -19,11 +19,11 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Informationen.
 (((Anonymous,definition)))
 [[glossary-anonymous]] Gast::
-   Eine Person (<<glossary-user,user>>), die mit der Website interagiert und nicht angemeldet ist.
+   Ein (<<glossary-user,Benutzer>>), der mit der Website interagiert und nicht angemeldet ist.
     Siehe <<user-concept>> für weitere Informationen.
 (((Block,definition)))
 [[glossary-block]] Block::
-   Ein Stück <<glossary-content,content>> (Text, Bild, Link, usw.) dasa auf einer Seite innerhalb eine Website angezeigt werden kann. Blöcke werden in
+   Ein Stück <<glossary-content,Inhalt>> (Text, Bild, Link, usw.) das auf einer Seite innerhalb eine Website angezeigt werden kann. Blöcke werden in
    <<glossary-region,regions>> angezeigt. Siehe:<<block-concept>> für weiterte Information.
 (((Breakpoint,definition)))
 [[glossary-breakpoint]] Breakpoint::
@@ -33,9 +33,9 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Breakpoints an. Siehe: <<structure-image-responsive>> für weitere Informationen.
 (((Bundle,definition)))
 [[glossary-bundle]] Subtyp::
-   Synonym für <<glossary-entity-subtype,Entity subtype>>.
+   Synonym für <<glossary-entity-subtype,Entität oder Subtyp>>.
 (((Cache,definition)))
-[[glossary-cache]] Cache::
+[[glossary-cache]] Cache/Zwischenspeicher::
    Der interne Cache der Website, der auch Zwischenspeicher genannt wird, speichert die Ausgabe zeitaufwändiger Berechnungen, wie z.B. die Berechnung der Ausgabe für eine HTML-Seitenanfrage, und gibt das Ergebnis dieser Berechnung direkt aus, anstatt die Berechnung beim bei jedem Seitenaufruf neu durchführen.
    Externe Caching-Systeme können auch auf dem Webserver verwendet werden, um die
    Antwortzeit einer Website zu verkürzen. Siehe: <<prevent-cache>> für weitere Informationen über den internen Cache.
@@ -54,13 +54,13 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
 (((Content,definition)))
 [[glossary-content]] Inhalt::
    Informationen, die auf Ihrer Website angezeigt werden sollen, z. B. Texte, Bilder,
-   Downloads, usw. Siehe auch: <<glossary-configuration,Configuration>> und
+   Downloads, usw. Siehe auch: <<glossary-configuration,Konfiguration>> und
    <<glossary-state,State>>. Siehe: <<understanding-data>> für weitere Informationen.
 (((Content item,definition)))
 [[glossary-content-item]] Inhalt::
-   Ein Element von <<glossary-content,content>>, das normalerweise als
-   als Hauptinhalt einer Seite auf Ihrer Website angezeigt wird. Dies ist ein
-   <<glossary-entity-type,entity type>>.
+   Ein <<glossary-content,Inhalt>>, der normalerweise als
+   Hauptinhalt  auf einer Seite Ihrer Website angezeigt wird. Dies ist ein
+   <<glossary-entity-type,Entitätstyp>>.
    Siehe <<planning-data-types>> für weitere Infromationen.
 (((Content Management System (CMS),definition)))
 [[glossary-content-management-system]] Content Management System (CMS)::
@@ -69,8 +69,8 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Content type,definition)))
 [[glossary-content-type]] Inhaltstyp::
-   Ein/eine <<glossary-entity-subtype,entity subtype>> eines
-   <<glossary-content-item,content item>> <<glossary-entity-type,entity type>>.
+   Eine <<glossary-entity-subtype,Entität oder ein Entitätssubtyp>> eines
+   <<glossary-content-item,Inhalts>> <<glossary-entity-type,Entitätstyp>>.
    Jeder Inhaltstyp wird für einen bestimmten Zweck auf der Website verwendet und
    hat seine eigenen Felder. Zum Beispiel könnte eine Website für einen Wochenmarkt über einen
    Inhaltstyp für einfache Seiten und einen anderen für eine Seite mit Lieferantenlisten.
@@ -80,15 +80,15 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
    Ein Link zu einer administrativen Seite zum Bearbeiten oder Konfigurieren einer Funktion der
    Website, die in dem Kontext angezeigt wird, in dem diese Funktion mit dem jewiligen Element auf einer Website 
    in  Zusammenhang steht. Beispiel: Ein
-   Link zur Konfiguration eines <<glossary-menu,menu>> der angezeigt wird, wenn Sie den Mauszeiger über
+   Link zur Konfiguration eines <<glossary-menu,Menü>> der angezeigt wird, wenn Sie den Mauszeiger über
    das Menü bewegen. Siehe <<config-overview>> für weitere Informationen.
 (((Contributed,definition)))
 (((Contributed module,definition)))
 (((Contributed theme,definition)))
 [[glossary-contributed]] Von der Commuinity bereitgestellt::
-   <<glossary-module,Modules>>, <<glossary-theme,themes>> und
-   <<glossary-distribution,distributions>> die nicht Teil des
-   <<glossary-drupal-core,Drupal core>> sind und seperat von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden könnnen.
+   <<glossary-module,Module>>, <<glossary-theme,Themes>> und
+   <<glossary-distribution,Distributionen>> die nicht im
+   <<glossary-drupal-core,Drupal Kernsystem>> enthalten sind und seperat von der Website https://www.drupal.org[_Drupal.org_] heruntergeladen werden könnnen.
 (((Cron task,definition)))
 (((Cron command scheduler,definition)))
 [[glossary-cron]] Cron::
@@ -100,9 +100,9 @@ Teile einer Webseite (zum Beispiel Formulare) zu aktualisieren, ohne die gesamte
 (((Distribution,definition)))
 [[glossary-distribution]] Distribution::
    Ein einzelner Download, der eine schnelle Lösung für die Einrichtung einer bestimmten Art von Website enthält.
-Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine Distribution enthält <<glossary-drupal-core,Drupal core>>und   
-<<glossary-contributed,contributed>> <<glossary-module,modules>> sowie
-   <<glossary-theme,themes>>. Viele Distributionen konfigurieren die Website auch vorkonfiguriert
+Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine Distribution enthält das <<glossary-drupal-core,Drupal Kernsystem>> und   
+<<glossary-contributed,von der Commuinity bereitgestellte>> <<glossary-module,Module>> sowie
+   <<glossary-theme,Themes>>. Viele Distributionen konfigurieren die Website auch vorkonfiguriert
    oder erstellen sogar Beispielinhalte bei der Installation. Siehe
    <<understanding-distributions>> für weitere Informationen.
 (((Drupal core,definition)))
@@ -111,55 +111,54 @@ Beispiele sind: Eine Website für einen Verein oder für den Onlinehandel. Eine 
    Projekt-Software enthalten sind. Siehe: <<understanding-drupal>> für weitere Informationen.
 (((Entity,definition)))
 [[glossary-entity]] Entität::
-   Ein Element, das entwerder <<glossary-content,content>> oder
-   <<glossary-configuration,configuration>> Daten sein kann, obwohl der Begriff im Allgemeinen für Inahltsentitäten verwendet wird. Beispiele sind:
-   <<glossary-content-item,content items>>,benutzerdefinierte <<glossary-block,blocks>>,
-   <<glossary-taxonomy-term,taxonomy terms>>, und definitionen von
-   <<glossary-content-type,content types>>; die erten drei sind Inhaltsentitäten,und das letzte ist ein Konfigurationselement. Siehe auch
-   <<glossary-entity-type,Entity type>>,
-   <<glossary-entity-subtype,Entity subtype>>, und
-   <<glossary-field,Field>>. Siehe: <<planning-data-types>> für
+   Ein Element, das entwerder <<glossary-content,Inhaltt>> oder
+   <<glossary-configuration,Konfiguration>> sein kann, obwohl der Begriff im Allgemeinen für Inahltsentitäten verwendet wird. Beispiele sind:
+   <<glossary-content-item,Inhalte>>,benutzerdefinierte <<glossary-block,Blöcke>>,
+   <<glossary-taxonomy-term,Taxonomiebegriffe>>, und definitionen von
+   <<glossary-content-type,Inhaltstypen>>; die erten drei sind Inhaltsentitäten,und das letzte ist ein Konfigurationselement. Siehe auch
+   <<glossary-entity-type,Entitätstyp>>,
+   <<glossary-entity-subtype,Entitätssubtyp>>, und
+   <<glossary-field,Feld>>. Siehe: <<planning-data-types>> für
   weitere Informationen.
 (((Entity subtype,definition)))
 [[glossary-entity-subtype]] Entitätssubtyp::
-   Within a <<glossary-content,content>> <<glossary-entity-type,entity type>>, eine
-   Gruppe von Entitäten die sich die seleben <<glossary-field,fields>> teilen. Beispielsweise wird in
-   <<glossary-content-item,content item>> beschreiben, dass Entitätstypen auf der Wochenmarkt-Website Subtypen (bekannt als
-   <<glossary-content-type,content types>>) enthalten sind. Einer für Statische Seiten und einer für Lieferanten.Jeder Subtyp enthält dabei seine eigenen Felder. Auch der Begriff _Bündel/Bundle_ kann solche Elemente beschreiben
+   Eine Gruppe von Entitäten innerhalb eines <<glossary-content,Inhalts>> bzw, eines <<glossary-entity-type,Entitätstypen>>, die sich die selben <<glossary-field,Felder>> teilen. Beispielsweise wird im Eintrag über
+   <<glossary-content-item,Inhalt>> beschreiben, dass Entitätstypen auf der Wochenmarkt-Website Subtypen (bekannt als
+   <<glossary-content-type,Inhaltstypen>>) enthalten sind. Einer für statische Seiten und einer für Lieferanten.Jeder Subtyp enthält dabei seine eigenen Felder. Auch der Begriff _Bündel/Bundle_ kann solche Elemente beschreiben
    (besonders in Dokumentationen für Entwickler).
    Siehe: <<planning-data-types>> für weitere Informationen.
 (((Entity type,definition)))
 [[glossary-entity-type]] Entitätstyp::
-   The overall type of an <<glossary-entity,entity>>; im allgemeinen Sprachgebrauch wird es
-   nur auf eine Entität vom Typ <<glossary-content,content>>. Beispiele sind:
-   <<glossary-content-type,content types>>,
-   <<glossary-taxonomy-term,taxonomy terms>> und benutzerdefinierte
+   The overall type of an <<glossary-entity,Entität>>; im allgemeinen Sprachgebrauch wird es
+   nur auf eine Entität vom Typ <<glossary-content,Inhalt>>. Beispiele sind:
+   <<glossary-content-type,Inhaltstypen>>,
+   <<glossary-taxonomy-term,Taxonomiebegriffe>> und benutzerdefinierte
    <<glossary-block,blocks>>. Siehe: <<planning-data-types>> für weitere Informationen.
 (((Field,definition)))
 [[glossary-field]] Feld::
    Eine bestimmte Art Daten, die an Elemente wie
-   <<glossary-content,content>> und <<glossary-entity,entity>> angehängt wird. Zum Beispiel könnten Sie auf
+   <<glossary-content,Inhalte>> und <<glossary-entity,Entitäten>> angehängt wird. Zum Beispiel könnten Sie auf
    der Website eines Wochenmarktes Felder für ein Bild, die Beschreibung eines Lieferanten und einen
-   <<glossary-taxonomy-term,taxonomy term>> enthatlen. Siehe
+   <<glossary-taxonomy-term,Taxonomiebegriff>> enthatlen. Siehe
    <<planning-data-types>> für weitere Informationen.
 (((Field bundle,definition)))
 [[glossary-field-bundle]] Bündel::
-   Synonym für <<glossary-entity-subtype,Entity subtype>>.
+   Synonym für <<glossary-entity-subtype,Entitätssubtyp>>.
 (((Formatter,definition)))
 (((Field formatter,definition)))
 [[glossary-field-formatter]] Anzeigeformat::
-   <<glossary-configuration,Configuration>> die angibt, wie ein <<glossary-field,field>> angezeigt wird. Zum Beispiel könnte ein Textfeld
+   <<glossary-configuration,Konfiguration>> die angibt, wie ein <<glossary-field,field>> angezeigt wird. Zum Beispiel könnte ein Textfeld
    mit einem Präfix und/oder Suffix angezeigt werden, und die darin zulässigen HTML-Tags können
-   eingeschränkt werden. Siehe auch: <<glossary-view-mode,View mode>> und
-   <<glossary-field-widget,Field widget>>. Siehe: <<structure-view-modes>> für weitere Informationen.
+   eingeschränkt werden. Siehe auch: <<glossary-view-mode,Anzeigemodus>> und
+   <<glossary-field-widget,Steuerelement>>. Siehe: <<structure-view-modes>> für weitere Informationen.
 (((Widget,definition)))
 (((Field widget,definition)))
 [[glossary-field-widget]] Steuerelement für Felder::
-   <<glossary-configuration,Configuration>> die festlegt, auf welche Weise jemand
+   <<glossary-configuration,Konfiguration>> die festlegt, auf welche Weise jemand
    Daten in ein <<glossary-field,field>> eingeben oder die darin vorhandenen Daten über ein Bearbeitungsformular bearbeiten kann. Beispielsweise könnte ein Textfeld eine Einzeilige Eingabemaske oder eine Mehrzeileige Eingabemaske verwenden und es kann eine Einstellung für die Größe des Eingabefelds enthalten sien.. Siehe auch:
-   <<glossary-field-formatter,Field formatter>>. Siehe: <<structure-widgets>> für weitere Informationen.
+   <<glossary-field-formatter,Anzeigeformat>>. Siehe: <<structure-widgets>> für weitere Informationen.
 [[glossary-formatter]] Anzeigeformat::
-   Siehe: <<glossary-field-formatter,Field formatter>>.
+   Siehe: <<glossary-field-formatter,Anzeigeformat>>.
 (((FOSS (Free and Open Source Software),definition)))
 (((Free and Open Source Software (FOSS),definition)))
 [[glossary-foss]] FOSS::
@@ -197,8 +196,8 @@ Die typische Verarbeitungsmethode beinhaltet die Arbeitsschritte Skalieren und Z
 (((Module, definition)))
 [[glossary-module]] Modul::
    Software (in der Regel PHP, JavaScript und/oder CSS), die die Funktionen der Website
-   und Funktionalität hinzufügt. Drupal unterscheidet zwischen
-   _<<glossary-drupal-core,core>>_ und _<<glossary-contributed,contributed>>_
+   und Funktionalität hinzufügt. Drupal unterscheidet zwischen dem
+   _<<glossary-drupal-core,Kernsystem>>_ und _<<glossary-contributed,von der Commuinity bereitgestellten>>_
    Modulen. Siehe: <<understanding-modules>> für weitere Informationen.
 (((Path,definition)))
 [[glossary-path]] Pfad::
@@ -213,19 +212,19 @@ Die typische Verarbeitungsmethode beinhaltet die Arbeitsschritte Skalieren und Z
    Siehe auch: <<glossary-role,Role>>. Siehe: <<user-concept>> für weitere Informationen.
 (((Reference field,definition)))
 [[glossary-reference-field]] Referenzfeld::
-   Ein <<glossary-field,field>> das eine Beziehung zwischen einer
+   Ein <<glossary-field,Feld>> das eine Beziehung zwischen einer
    <<glossary-entity,entity>> und einer oder mehreren anderen Entitäten repräsentiert. Diese Entitäten können dabei vom selben <<glossary-entity-type,entity type>> sein oder einen anderen Typ aufweisen. Beispielsweise
    Kann ein Rezept auf der Website des Wochenmarktesein Referenzfeld zum Eintrag eines Leiferanten enthalten der das Rezept eingereicht hat. Der Eintrag des Lieferanten wurde in diesem Fall ebenfalls als Inhalt erzeugt. 
-   Felder mit <<glossary-taxonomy-term,Taxonomy term>> sind ebenfalls Referenzfelder. Siehe: <<structure-reference-fields>> für weitere Informationen.
+   Felder mit <<glossary-taxonomy-term,Taxonomiebegriff>> sind ebenfalls Referenzfelder. Siehe: <<structure-reference-fields>> für weitere Informationen.
 (((Region,definition)))
 [[glossary-region]] Region::
    Ein bestimmter Bereich auf einer Seite in dem <<glossary-content,content>> wie eine Kopfzeile, eine fußzeile, der Hauptiinhalt der Website, 
    die linke Seitenleiste, usw platziert werden kann. 
-   Regionen werden in <<glossary-theme,themes>> definiert, Der Inahlt, der in jeder dieser Regionen dargestellt wird, ist Inahalt, der mit Hilfe von <<glossary-block,blocks>> dargestellt wird. 
+   Regionen werden in <<glossary-theme,Themes>> definiert, Der Inahlt, der in jeder dieser Regionen dargestellt wird, ist Inahalt, der mit Hilfe von <<glossary-block,blocks>> dargestellt wird. 
    Siehe: <<block-regions>> für weitere Informationen.
 (((Responsive,definition)))
 [[glossary-responsive]] Responsiv::
-   Eine Website oder ein <<glossary-theme,theme>> wird als responsiv bezeichnet, wenn es sich
+   Eine Website oder ein <<glossary-theme,Theme>> wird als responsiv bezeichnet, wenn es sich
    an die Größe des Anzeigegeräts, des Druckers,
    oder an einen Anderen Medienausgabetyp anpassen kann. Siehe auch: <<glossary-breakpoint,Breakpoint>>. Siehe:
    <<structure-image-responsive>> für weitere Infromationen.
@@ -236,8 +235,8 @@ Die typische Verarbeitungsmethode beinhaltet die Arbeitsschritte Skalieren und Z
    <<planning-workflow>> für weitere Infromationen.
 (((Role,definition)))
 [[glossary-role]] Rolle::
-   Eine beannte Sammlung von <<glossary-permission,permissions>> die einem
-   <<glossary-user,user account>> zugewiesen wird. Siehe: <<user-concept>> für weitere Informationen.
+   Eine beannte Sammlung von <<glossary-permission,Berechnungen>> die einem
+   <<glossary-user,Benutzerkonto>> zugewiesen wird. Siehe: <<user-concept>> für weitere Informationen.
 (((Security update,definition)))
 [[glossary-security-update]] Sicherheitsaktualisierung::
    Eine <<glossary-update,update>> das einen sicherheitsrelevanten Fehler behebt, z.B. eine
@@ -245,16 +244,16 @@ Sicherheitslücke. Siehe: <<security-concept>> für weitere Informationen.
 (((State,definition)))
 [[glossary-state]] Status::
    Informationen vorübergehender Natur über den aktuellen Zustand Ihrer
-   Website, wie z.B. die Zeit, zu der <<glossary-cron,cron>> zum letzten mal ausgeführt wurde, usw.
-   Siehe auch: <<glossary-content,Content>> und
-   <<glossary-configuration,Configuration>>.  Siehe: <<understanding-data>> für weitere Informationen.
+   Website, wie z.B. die Zeit, zu der <<glossary-cron,Cron>> zum letzten mal ausgeführt wurde, usw.
+   Siehe auch: <<glossary-content,Inhalt>> und
+   <<glossary-configuration,Konfiguration>>.  Siehe: <<understanding-data>> für weitere Informationen.
 (((Taxonomy,definition)))
 [[glossary-taxonomy]] Taxonomie::
-   Der Prozess der Klassifizierung von <<glossary-content,content>>. Siehe
+   Der Prozess der Klassifizierung von <<glossary-content,Inhalten>>. Siehe
    <<structure-taxonomy>> für weitere Informationen.
 (((Taxonomy term,definition)))
 [[glossary-taxonomy-term]] Taxonomiebegriff::
-   Ein Begriff zur Klassifizierung von <<glossary-content,content>>, wie beisppielsweise ein Tag oder eine Kategrie. Siehe auch: <<glossary-vocabulary,Vocabulary>>. Siehe:
+   Ein Begriff zur Klassifizierung von <<glossary-content,Inhalten>>, wie beisppielsweise ein Tag oder eine Kategrie. Siehe auch: <<glossary-vocabulary,Vokabular>>. Siehe:
    <<structure-taxonomy>> für weitere Informationen.
 (((Text format,definition)))
 [[glossary-text-format]] Textformat::
@@ -263,22 +262,21 @@ Sicherheitslücke. Siehe: <<security-concept>> für weitere Informationen.
 (((Theme,definition)))
 [[glossary-theme]] Theme::
    Software und Asset-Dateien (Bilder, CSS, PHP-Code und/oder Vorlagen), die
-   die den Stil und das Layout der Website bestimmen. Das Projekt Drupal unterscheidet zwischen _<<glossary-drupal-core,core>>_ und
-   _<<glossary-contributed,contributed>>_ Themes. Siehe: <<understanding-themes>>
+   die den Stil und das Layout der Website bestimmen. Das Projekt Drupal unterscheidet zwischen dem _<<glossary-drupal-core,Kernsystem>>_ und
+   _<<glossary-contributed,von der Commuinity bereitgestellten>>_ Themes. Siehe: <<understanding-themes>>
    für weitere Informationen.
 (((UI (User Interface),definition)))
 [[glossary-ui]] UI::
    Akronym für <<glossary-user-interface,_User Interface_>>.
 (((Update,definition)))
-[[glossary-update]] Update::
+[[glossary-update]] Aktualisierung::
    Eine neuere Version der Software für Ihre Website, entweder
-   <<glossary-drupal-core,Drupal core>> oder ein <<glossary-module,module>> bzw.
-   <<glossary-theme,theme>>. Siehe auch:
-   <<glossary-security-update,Security update>>. Siehe: <<security-concept>> for
-   more information.
+   <<glossary-drupal-core,Drupal-Kernsystem>> oder ein <<glossary-module,Modul>> bzw.
+   <<glossary-theme,Theme>>. Siehe auch:
+   <<glossary-security-update,Sicherheitsaktualisierung>>. Siehe: <<security-concept>> für weitere Informationen.
 (((User,definition)))
-[[glossary-user]] User::
-   Eine Person, die mit der Website interagiert, entweder angemeldet oder
+[[glossary-user]] Benutzer::
+   Eine Person, die mit der Website interagiert, entweder angemeldet oder als
    <<glossary-anonymous,anonymous>>. Siehe: <<user-concept>> für weitere Informationen.
 (((User Interface (UI),definition)))
 [[glossary-user-interface]] Benutzeroberfläche::
@@ -287,12 +285,12 @@ Sicherheitslücke. Siehe: <<security-concept>> für weitere Informationen.
 (((User one,definition)))
 [[glossary-user-one]] Benutzer Eins (User 1)::
    Das erste <<glossary-user,user>> Konto, das bei der Installation der Website erstellt wird (und deshalb die Nummer 1 erhält). Es besitzt automatisch alle 
-   <<glossary-permission,permissions>>, selbst, wenn dem Benutzekonto keeine
+   <<glossary-permission,Berechtigungen>>, selbst, wenn dem Benutzekonto keeine
    administrative <<glossary-role,role>> zugewiesen wurde. Siehe: <<user-admin-account>> für weitere Informationen.
 (((View,definition)))
 [[glossary-view]] Ansicht::
    Eine formatierte Liste von Daten; typischerweise beziehen Ansichten ihre zugrundeligenden Daten aus
-   <<glossary-content,content>> bzw. <<glossary-entity,entities>>. Auf der Website des Wochemartktes könnten Sie beispielsweise einen 
+   <<glossary-content,content>> bzw. <<glossary-entity,Entitäten>>. Auf der Website des Wochemartktes könnten Sie beispielsweise einen 
    <<glossary-content-item,content item>> für jeden Lieferanten erstellen. Sie könnten dann
    eine Ansicht erstellen, die eine Auflistungsseite generiert, die ein Miniaturbild und eine
    kurze Beschreibung jedes Lieferanten mit einem Link zu einem ganzseitigen
@@ -301,30 +299,30 @@ Sicherheitslücke. Siehe: <<security-concept>> für weitere Informationen.
    Siehe: <<planning-modular>> für weitere Informationen.
 (((View mode,definition)))
 [[glossary-view-mode]] Anzeigemodus::
-   Eine Sammlung von <<glossary-field-formatter,field formatter>>
-   <<glossary-configuration,configuration>> für alle
-   <<glossary-field,fields>> innerhalb von <<glossary-content,content>>
-   <<glossary-entity,entity>>, einige Felder können ausgeblendet sein. Jede/r
-   <<glossary-entity-subtype,entity subtype>> kabb eine oder mehrere Definitionen für einen Ansichtsmodus enthalten. Beispielsweise enthalten <<glossary-content-type,content types>> normalerweise
+   Eine Sammlung von <<glossary-field-formatter,Anzeigeformat>>
+   <<glossary-configuration,Konfiguration>> für alle
+   <<glossary-field,Felder>> innerhalb von <<glossary-content,Inhalten>> und
+   <<glossary-entity,Entitäten>>. Einige Felder können ausgeblendet sein. Jede/r
+   <<glossary-entity-subtype,Entität bzw. Subtyp>> kann eine oder mehrere Definitionen für einen Ansichtsmodus enthalten. Beispielsweise enthalten <<glossary-content-type,content types>> normalerweise
    den Ansichtsmodus _Vollständig_ und den Ansichtsmodus _Anrisstext_. Dabei enthält der Ansichtsmodus _Anrisstext_ weniger Felder als der Ansichtsmodus _Vollständig_. Siehe: <<structure-view-modes>> für weitere Informationen.
 (((Vocabulary,definition)))
 [[glossary-vocabulary]] Vokabular::
-   Eine Gruppe von <<glossary-taxonomy-term,taxonomy terms>> aus denen gewählt werden kann wenn <<glossary-content,content>> auf eine bestimmte Airt und Weise klassifiziert werden soll. Bieispielsweise so, wei die Liste aller Leiferanten des wopchenmarktes. Technisch gesheen sind Vokabulare ein
-   <<glossary-entity-subtype,entity subtype>> eines Taxonomiebegriffs
-   <<glossary-entity-type,entity type>>. Siehe
+   Eine Gruppe von <<glossary-taxonomy-term,Taxonomiebegriffe>> aus denen gewählt werden kann wenn <<glossary-content,Inhalte>> auf eine bestimmte Art und Weise klassifiziert werden soll. Bieispielsweise so, wei die Liste aller Leiferanten des wopchenmarktes. Technisch gesheen sind Vokabulare ein
+   <<glossary-entity-subtype,Entität Subtyp>> eines Taxonomiebegriffs
+   <<glossary-entity-type,Entitätssubtyp>>. Siehe
    <<structure-taxonomy>> für weitere Informationen.
 (((Widget,definition)))
 [[glossary-widget]] Steuerelement::
-   Siehe: <<glossary-field-widget,Field widget>>.
+   Siehe: <<glossary-field-widget,Steuerelement>>.
 (((Wizard,definition)))
 [[glossary-wizard]] Assistent::
    Ein Webformular, in das Sie einige Werte eingeben können und das dann etwas
    mit sinnvollen Voreinstellungen auf der Grundlage der von Ihnen gewählten Werte ausgibt. Zum Beispiel gibt es
-   Assistenten für die Erstellung von <<glossary-view,views>>. Siehe   
+   Assistenten für die Erstellung von <<glossary-view,Ansichten>>. Siehe   
    <<views-create>> für weitere Informationen.
 (((WYSIWYG (What You See Is What You Get),definition)))
 (((What You See Is What You Get (WYSIWYG),definition)))
 [[glossary-wysiwyg]] WYSIWYG::
-   Acronym für _What You See is What You Get_, beschreibt eine Bearbeitungsmethode für
+   Akronym für _What You See is What You Get_, beschreibt eine Bearbeitungsmethode für
    <<glossary-content,content>> bei der die eingabe auf dem Bearbeitungsformular dem späteren Ergebnis sehr nahe kommt. Siehe: <<structure-text-format-config>> für
    weitere Informationen.
