@@ -23,14 +23,6 @@ site, and take a screenshot of each step. Images:
 - install-run-5.png -- Site configuration
 - install-run-6.png -- Site installed configuration
 
-Editing with the In-Place Editor (topic content-in-place-edit.txt). To make
-these screenshots, install Drupal with the Standard install profile, and create
-an About page with text translated from the English version. Follow the
-instructions in the topic to enable in-place editing, and take similar
-screenshots.
-- content-in-place-edit-hover-box.png
-- content-in-place-edit-save-box.png
-
 ENGLISH-ONLY MANUALLY-GENERATED IMAGES
 --------------------------------------
 
