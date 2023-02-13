@@ -65,8 +65,8 @@ server where your website will be hosted, and you will need to install Composer
 first in order to install either the Drush or Drupal Console tool.
 
 To install Drush or Drupal Console first make sure your project is using
-Composer to manage dependencies. See <<install-composer>>. Then use the
-following commands:
+Composer to manage dependencies. See below for more about Composer. Then use
+the following commands:
 
 ----
 # Install Drush
@@ -110,6 +110,10 @@ https://about.gitlab.com/[GitLab] or https://github.com/[GitHub].
 https://getcomposer.org/[Composer] is a tool for managing PHP dependencies,
 where the developer specifies what version of each external library is needed,
 and Composer manages the process of downloading and installing the libraries.
+
+https://getcomposer.org/doc/00-intro.md[Composer can be installed] on the
+local development environment or webserver but is often already available in
+https://www.drupal.org/docs/develop/development-tools/development-tools-overview[Drupal development tool kits].
 
 The core software is a primary user of Composer, because it makes use of several
 externally-developed software libraries, which must be downloaded and installed

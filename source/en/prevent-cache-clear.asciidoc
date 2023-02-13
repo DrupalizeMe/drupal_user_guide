@@ -89,6 +89,12 @@ Enter a number to choose which cache to clear.
 Choose a cache to clear by entering the number associated with that cache. Press
 "Enter" to continue.
 
+To clear a specific cache type, you can specify it in the cache:clear command.
+For example to clear the render cache:
+
+----
+drush cache:clear render
+----
 
 //==== Expand your understanding
 

@@ -16,32 +16,25 @@
 
 ==== Was sind Formulare und Steuerelemente?
 
-Die Content-Management-System-Software, die die die Grundlage für Ihre Webiste bildet, ermöglicht
-Administratoren, Inhalte zu bearbeiten und Einstellungen unter Verwendung verschiedener 
-Formulare direkt im Webbrowser festzulgen. Insbesondere werden _Formulare zum Bearbetien von Inhalten_ verwendet, um die Inhalte Ihrer Website zu bearbeiten und Einstelungen für den jeweiligen Inhalt vorzunehemen.
-Diese Einstellungen können von den Administratoren der Website festgelt werden.
+Die Content-Management-System-Software, welche die Grundlage Ihrer Website bildet, ermöglicht
+Administratoren, unter Verwendung diverser Formulare, Inhalte und Einstellungen direkt im Webbrowser zu bearbeiten. Insbesondere werden _Formulare zum Bearbeiten von Inhalten_ von ihnen verwendet, um die Inhalte Ihrer Website zu bearbeiten, sie können von Administratoren voreingestellt werden. Einstellungen für Konfigurationsformulare werden von den Modulen bereitgestellt und können nicht gesondert konfiguriert werden.
 
-Die Daten der Inhalte Ihrer Website werden in einem oder in mehreren Feldern gespeichert, die
-an den jeweiligen Inhaltstyp oder an den Subtyps eines inhaltstyps angehängt werden. Wenn Sie das Bearbeitungsformular für einen 
-Inhaltstyp konfigueren könnnen Sie: 
+Die Daten der Inhalte Ihrer Website werden in einem oder mehreren Feldern gespeichert, welche an den jeweiligen Inhalts- und/oder Subtyp angehängt werden. Wenn Sie das Bearbeitungsformular für einen 
+Subtyp konfigurieren könnnen Sie jeweils: 
 
 * Ein _Steuerelement_ für jedes Feld auswählen. Ein Steuerelement definiert die Methode zur Eingabe der
 Daten die das Feld enthält. Beispielsweise kann ein Taxonomiebegriff über ein
 Autovervollständigungsfeld, eine Auswahlliste oder ein Feld im Stil von Tags, über das Redakteure
 neue Tags automatisch hinzufügen könnnen, ausgewählt werden.
 
-* Steuerelemnteinstellungen festlegen. Sie können zum Beispiel die Länmge des Zulässigen Textes in einem
+* Steuerelementeinstellungen festlegen. Sie können zum Beispiel die Länge des zulässigen Textes in einem
 Eingabefeld für Klartext festlegen.
 
-* Ein oder mehrere Felder aus dem dem Bearbeitungsformular ausblenden, indem Sie das Feld bzw. die Felder in den Bereich „Deaktiviert“ verschiebn.
+* Ein oder mehrere Felder aus dem Bearbeitungsformular ausblenden (indem Sie das Feld bzw. die Felder in den Bereich „Deaktiviert“ verschiebn).
 
-* Felder neu anordnen.
+* Die Reihenfolge der Felder neu anordnen.
 
-Prinzipiell können auch mehrere Inhaltsbearbeitungsformulare zur Verfügung gestellt werden. Für
-jeder Inhalts-Untertyp wird in diesem Fall ein eigenes Formular angelegt. Diese Funktion wird jedoch nur selten verwendet; die einzige Ausnahme
-im täglichen Einsatz  hierbei gilt für die Felde von Benutzerprofilen: Sie können untersschiedliche Formulare für die
-Benutzerregistrierung und die Bearbeitung von Benutzerkonten verwenden. Zum Beispiel könnten Sie einen begrenzten Satz von
-Feldern, der bei der ersten Registrierung eines Benutzers auf der Website angezeigt werden soll definieren und weitere Felder, nur dann angezeigt werden, wenn der Benutzer sein Profil bearbeitet.
+Prinzipiell können auch mehrere Inhaltsbearbeitungsformulare für jeden Subtyp zur Verfügung gestellt werden. Diese Funktion wird jedoch nur selten verwendet; die häufigste Ausnahme hierbei gilt für die Felder von Benutzerprofilen: Sie können unterschiedliche Formulare für die Benutzerregistrierung und die Bearbeitung von Benutzerkonten verwenden. Zum Beispiel könnten Sie einen begrenzten Satz von Feldern definieren, der bei der ersten Registrierung eines Benutzers auf der Website angezeigt werden soll, und weitere Felder, welche später angezeigt werden, wenn der Benutzer sein Profil bearbeitet.
 
 ==== Verwandte Themen
 
@@ -54,3 +47,5 @@ Feldern, der bei der ersten Registrierung eines Benutzers auf der Website angeze
 *Mitwirkende*
 
 Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

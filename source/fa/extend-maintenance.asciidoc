@@ -75,7 +75,8 @@ image:images/extend-maintenance-mode-disabled.png["حالت نگهداری غی�
 . دستورات زیر را به منظور فعال‌سازی حالت نگهداری و پاکسازی حافظه موقت اجرا کنید:
 +
 ----
-drush sset system.maintenance_mode 1
+drush config:set system.maintenance message "یادداشت اختیاری" -y
+drush state:set system.maintenance_mode 1 --input-format=integer
 drush cr
 ----
 

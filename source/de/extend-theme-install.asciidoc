@@ -41,12 +41,12 @@ installiert sein. Siehe: <<config-install>> für Anweisungen zur Installation
 von Modulen.
 
 Wenn Sie Drush verwenden möchten, muss Drush installiert sein.
-Siehe <<<install-tools>>.
+Siehe <<install-tools>>.
 
 ==== Arbeitsschritte
 
 Sie können die Benutzeroberfläche zum Herunterladen und Installieren eines
-Themes verwenden. Wenn Sie ein benutzerdefiniertes Theme anstelle haben eines
+Themes verwenden. Wenn Sie ein benutzerdefiniertes Theme anstelle eines
 von der Community bereitgestellten Themes installieren möchten und Ihnen eine
 Meldung angezeigt wird, die besagt:
 _Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihrem Server_,
@@ -60,7 +60,7 @@ Verwendung der Benutzeroberfläche unten fortfahren installieren.
 
 ===== Verwendung der Benutzeroberfläche
 
-. Auf der Projektseite des Themas auf drupal.org (zum Beispiel,
+. Auf der Projektseite des Themes auf drupal.org (zum Beispiel,
 _https://www.drupal.org/project/honey_), navigieren Sie zum Abschnitt _Downloads_
 im unteren Teil der Seite.
 
@@ -90,9 +90,9 @@ und zu entpacken. Die Dateien werden in das Verzeichnis _themes_ heruntergeladen
 
 . Klicken Sie auf _Neu hinzugefügte Themees installieren_, um zur Seite _Design_
 zurückzukehren. Wenn Sie das bereits erwähnte manuelle Hochladeverfahren
-verwendet haben, dann können Sie fortfahren mit diesem Schritt, und erreichen
-Sie die Seite _Design_ mit der Funktion _Verwaltung_ Verwaltungsmenü und
-navigieren zum Menüpunkt _Design_ (_admin/appearance_).
+verwendet haben, dann können Sie mit diesem Schritt fortfahren, und erreichen
+in diesem Fall die Seite _Design_, in dem Sie im Menü _Verwalten_ zum
+Menüpunkt _Design_ (_admin/appearance_) navigieren.
 
 . Suchen Sie das neue Theme unter _Deinstallierte Themes_ und klicken Sie auf
 _Installieren und als Standard festlegen_.
@@ -124,7 +124,7 @@ drush config:set system.theme default honey
 
 . Folgen Sie den Anweisungen auf dem Bildschirm.
 
-==== Vertiefen Sie Ihre Kenntnisse
+==== Vertiefen Sie Ihr Wissen
 
 * Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Design_
 (_admin/appearance_) und deinstallieren Sie alle Themes, die Sie nicht verwenden.
@@ -152,3 +152,5 @@ video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Herunterladen u
 Geschrieben und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar] bei
 https://drupalize.me[Drupalize.Me], und
 https://www.drupal.org/u/batigolix[Boris Doesborgh].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

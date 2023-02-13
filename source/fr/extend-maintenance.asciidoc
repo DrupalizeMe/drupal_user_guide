@@ -100,6 +100,7 @@ image:images/extend-maintenance-mode-disabled.png["Mode maintenance désactivé"
 le cache :
 +
 ----
+drush config:set system.maintenance message "remarque facultative" -y
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----

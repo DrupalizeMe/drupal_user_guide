@@ -24,20 +24,20 @@ jede Darstellungsvariante, oder _Bildstil_, ist das Ergebnis der Anwendung eines
 _Effekte_ auf das Originalbild.
 
 Sie können beispielsweise ein hochauflösendes Bild mit einem Seitenverhältnis von 4:3 hochladen,
-und und dieses verkleinert, quadratisch zugeschnitten oder schwarz-weiß anzeigen lassen (Sie können auch eine beliebige Kombination dieser Effekte verwenden). Das Kernsystem, stellt hierzu einen effizienten Weg zur Verfügung:
+und dieses verkleinert, quadratisch zugeschnitten oder schwarz-weiß anzeigen lassen (Sie können auch eine beliebige Kombination dieser Effekte verwenden). Das Kernsystem, stellt hierzu einen effizienten Weg zur Verfügung:
 
 . Konfigurieren Sie einen Bildstil mit den gewünschten Effekten auf der Seite _Bildstile_.
 (_admin/config/media/image-styles_).
 
 . Die Effekte werden angewendet, wenn ein bestimmtes Bild zum ersten Mal unter Verwendung dieses Bildstils angefordert  wird.
 
-. Das so erzeugte Bild wird gesopeichert.
+. Das so erzeugte Bild wird gespeichert.
 
-. Wenn derselbe Bildstil das nächste Mal angefordert wird, wird das gespeicherte Bild abgerufen.
+. Wenn derselbe Bildstil das nächste Mal angefordert wird, wird das gespeicherte Bild abgerufen, 
 ohne das der Bildstil neu berechnet werden muss.
 
-Das Kernsystem bietet mehrere Effekte, die Sie zur Definition von Bildstilen verwenden können;
-andere können durch beigesteuerte Module bereitgestellt werden.
+Das Kernsystem bietet mehrere Effekte, welche Sie zur Definition von Bildstilen verwenden können;
+weitere können durch beigesteuerte Module bereitgestellt werden.
 
 Rufen Sie die Seite _Bildstile_ über das Menü _Verwalten_ auf, indem Sie zum Menüpunkt
 _Konfiguration_ > _Medien_ > _Bildstile_ (_admin/configuration/media/imagesyles_)
@@ -64,3 +64,5 @@ https://www.drupal.org/docs/8/core/modules/image/working-with-images["Arbeiten m
 Drupal 7 und 8" (englisch)],
 copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community]
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

@@ -11,7 +11,7 @@
 (((Security bug,reporting)))
 (((Security team,overview)))
 
-==== Erfoprderliche Vorkenntnisse
+==== Erforderliche Vorkenntnisse
 * <<understanding-drupal>>
 * <<understanding-modules>>
 * <<understanding-themes>>
@@ -21,8 +21,8 @@
 
 Jede Software hat gelegentlich Fehler, und manchmal haben diese Fehler Sicherheitslücken zur Folge.
 Wenn Sicherheitslücken  im Kernsystem, den Modulen oder
-Themes, die Ihre Website verwendet bekannt werden, wird eine entsprechende Aktualisierung veröffentlicht. Sie werden
-diesen _Hotfix_ anwenden müssen, damit die Sicherheit Ihrer Website weiterhin gewährleistet ist. Siehe
+Themes, die Ihre Website verwendet bekannt werden, wird ein entsprechendes _Sicherheitsupdate_ veröffentlicht. Sie werden
+dieses _Sicherheitsupdate_ anwenden müssen, damit die Sicherheit Ihrer Website weiterhin gewährleistet ist. Siehe
 <<<security-announce>> um zu erfahren, wie man über Sicherheitsupdates  per E-Mail benachrichtigt wird und
 <<security-update-core>>, <<security-update-module>> sowie
 <<security-update-theme>>, um zu lernen, wie man Aktualisierungen durchführt.
@@ -30,10 +30,10 @@ diesen _Hotfix_ anwenden müssen, damit die Sicherheit Ihrer Website weiterhin g
 ==== Was ist das Security-Team?
 
 Das Open-Source-Projekt Drupal hat ein Team von Freiwilligen, die
-sicherheitsbezogene Fehler und Sicherheitsupdates veröffentlichen. Dieses Team hilft auch anderen
-Entwicklern dabei Fehler zu beheben und pflegt Informationen, darüber, wie Benutzer ihre
+sicherheitsbezogene Fehler bearbeiten und Sicherheitsupdates veröffentlichen. Dieses Team hilft auch anderen
+Entwicklern dabei, Fehler zu beheben und pflegt Informationen, darüber, wie Benutzer ihre
 Websites sicher halten können. Auf der Seite
-https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team (englisch)] können Sie mehr über das Security-Team, sowie dessen vorgehenswesie und die entsprechenden Prozesse erfahten. 
+https://www.drupal.org/drupal-security-team/general-information[_Drupal.org_ Security Team (englisch)] können Sie mehr über das Security-Team, sowie dessen Vorgehensweise und die entsprechenden Prozesse erfahren. 
 
 ==== Wie werden Sicherheitslücken gemeldet?
 
@@ -46,7 +46,7 @@ https://www.drupal.org/drupal-security-team/general-information[Seite des _Drupa
 
 Auch das Kernsystem, die Module und Themes werden regelmäßig aktualisiert, um
 neue Funktionen hinzuzufügen und Fehler  zu beheben. Diese Aktualisierungen sind weniger kritisch als Sicherheits-Updates. Allgemein hat es sich in der Praxis bewährt, Aktualisierungen anzuwenden, solange diese keine Probleme auf Ihrer Website verursachen. Tests an einer Kopie, die zur Entwicklung Ihrer Website dient, sind inmmer eine gute Sache. Daher sollten sie solche Tests durchführen, bevor sie eine Website, die sich im Produktiveinsatz befindet, aktualisieren. Der Grund hierfür ist, das einige Aktualisierungen Änderungen enthalten können, die nicht mit den Modulen oder
-Themes kompatibel sind, die Sie auf Ihrer Website einsetzen. Es kann auch sein, dass Aktualisierungen unter bestimmten Umständen eine bestimmte Funkion auf Ihrer Website unbrauchbar machen.
+Themes kompatibel sind, die Sie auf Ihrer Website einsetzen. Es kann auch sein, dass Aktualisierungen unter bestimmten Umständen eine bestimmte Funktion auf Ihrer Website unbrauchbar machen.
 
 ==== Verwandte Themen
 
@@ -67,3 +67,5 @@ Themes kompatibel sind, die Sie auf Ihrer Website einsetzen. Es kann auch sein, 
 
 Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg]
 und https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

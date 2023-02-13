@@ -101,6 +101,7 @@ image:images/extend-maintenance-mode-disabled.png["Режим обслужива
 кэш:
 +
 ----
+drush config:set system.maintenance message "Дополнительное сообщение" -y
 drush state:set system.maintenance_mode 1 --input-format=integer
 drush cache:rebuild
 ----

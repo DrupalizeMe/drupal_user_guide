@@ -40,12 +40,12 @@ Bevor Sie beginnen, suchen Sie nach modulspezifischen Update-Anweisungen. Dies i
 typischerweise beim Aktualisieren von Modulen notwendig, die Drittanbieter-Bibliotheken verwenden.
 Lesen und verstehen Sie alle modulspezifischen Anforderungen, bevor Sie
 mit der Aktualisierung des Moduls fortfahren. Um solche Anweisungen zu finden, lesen
-Sie die Projektseite des betretenden Moduls und lesen Sie die _Dokumentation_ die über einen
+Sie die Projektseite des betreffenden Moduls und lesen Sie die _Dokumentation_ die über einen
 Link auf der Projektseite des Moduls erreichbar ist.
 
 Um weitere Anweisungen zu erhalten, laden Sie die tar.gz- oder .zip-Datei von der Projektseite
 des Moduls auf Ihren lokalen Computer herunter. Entpacken Sie das Archiv und suchen Sie nach den Dateien _README.txt_,
-_INSTALL.txt_ und/oder _UPGRADE.txt_, die mit dem Modul ausgeliefert werden
+_INSTALL.txt_ und/oder _UPGRADE.txt_, die mit dem Modul ausgeliefert werden.
 Lesen Sie auch die Versionshinweise auf der Projektseite, indem Sie auf die Versionsnummer der Version klicken,
 die Sie heruntergeladen haben.
 
@@ -60,7 +60,7 @@ führen Sie die Arbeitsschritte in <<extend-manual-install>> aus.
 Anschließend können Sie hier mit Schritt 6
 im Abschnitt „Die Benutzeroberfläche verwenden“ fortfahren.
 
-Wenn sie Composer zur Verwendung der Dateien Ihrer Website verwenden,
+Wenn sie Composer zur Bearbeitung der Dateien Ihrer Website verwenden,
 führen Sie die Arbeitsschritte in <<install-composer>> aus,
 um die Dateien zu aktualisieren und fahren Sie anschließend mit
 Schritt 6 im Abschnitt „Die Benutzeroberfläche verwenden“ fort.
@@ -72,7 +72,7 @@ Schritt 6 im Abschnitt „Die Benutzeroberfläche verwenden“ fort.
 . Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Berichte_ >
 _Verfügbare Aktualisierungen_ > _Aktualisieren_ (_/admin/reports/updates_).
 
-. Suchen und prüfen Sie das  betreffende Modul in der Liste. Klicken Sie auf _Herunterladen_ in der Zeile des entsprechenden Moduls.
+. Suchen und prüfen Sie das betreffende Modul in der Liste. Klicken Sie auf _Herunterladen der Aktualisierung_ in der Zeile des entsprechenden Moduls.
 +
 --
 // Update page for theme (admin/reports/updates/update).
@@ -85,7 +85,7 @@ image:images/security-update-module-updates.png["Available updates",width="100%"
 Beginnen Sie mit diesem Schritt und öffnen Sie die Seite Datenbankaktualisierung, indem Sie die URL
 _example.com/update.php_ in die Adresszeiele Ihres Browsers eingeben.
 
-. Klicken Sie auf _Fortsetzen_ und wenden Sie alle Aktualisierungen an. Das Skript zur Datenbankaktualisierung wird
+. Klicken Sie auf _Fortsetzen_ und führen Sie alle Aktualisierungen aus. Das Skript zur Datenbankaktualisierung wird
 ausgeführt.
 
 . Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsbereich Ihrer
@@ -95,7 +95,7 @@ Website zurückzukehren.
 
 . Löschen Sie den Cache. Siehe: <<prevent-cache-clear>>.
 
-==== Vertiefen Sie Ihre Kenntnisse
+==== Vertiefen Sie Ihr Wissen
 
 * Überprüfen Sie das Protokoll der Website (<<prevent-log>>), sobald die Aktualisierungen abgeschlossen wurden,
 um festzustellen, ob während des Aktualisierungsvorgangs Fehler aufgetreten sind.
@@ -107,11 +107,11 @@ um festzustellen, ob während des Aktualisierungsvorgangs Fehler aufgetreten sin
 ==== Videos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Ein Modul aktualisieren (englisch)"]
+video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Ein Modul aktualisieren“ (englisch)]
 
 ==== Zusätzliche Ressourcen
 
-https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen (englisch)"]
+https://www.drupal.org/node/250790[_Drupal.org_ Community-Dokumentationsseite "Aktualisierung von Modulen“ (englisch)]
 
 
 *Mitwirkende*
@@ -121,3 +121,6 @@ https://www.drupal.org/u/hey_germano[Sarah Deutsch] bei
 https://www.advomatic.com[Advomatic], von
 https://www.drupal.org/node/250790["Module aktualisieren (englisch)"], copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].
+

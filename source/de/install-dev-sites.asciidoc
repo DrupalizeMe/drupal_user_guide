@@ -3,7 +3,7 @@
 === Konzept: Entwicklungs-Websites
 
 [role="summary"]
-Überblick über Entwicklungs-Webites mit Beispiel-Workflow für Site-Buildings.
+Überblick über Entwicklungs-Websites mit Beispiel-Workflow für Site-Buildings.
 
 (((Development site,overview)))
 (((Deployment workflow,overview)))
@@ -29,7 +29,7 @@ Lokale Entwicklungsumgebung::
 Entwicklungswebsite::
   Entwickler übertragen die Änderungen, an denen Sie gearbeitet haben, auf die
   Entwicklungswebsite. Diese wird in Teams, die aus mehr als einem Entwickler
-  bestehen, normalerweise zur Versionskontrolle eingesetzt. Git ist eine
+  bestehen, normalerweise zur Versionskontrolle eingesetzt. Git ist ein
   Versionskontrollsystem, das die Änderungen an allen Dateien Ihres Projektes
   aufzeichnet und protokolliert. Sie können diese Änderungen dann an ein
   Repository übergeben. Die Verwendung von Git erlaubt
@@ -37,27 +37,27 @@ Entwicklungswebsite::
   dabei gegenseitig bei der Arbeit zu behindern. So ist es auch einfacher,
   die verschiedenen Arbeitsschritte eines Entwicklungsprozesses nach zu verfolgen.
 
-Stageing-Umgebung::
-  Die Stageing-Website kann zum Testen oder zur Präsentation der Änderungen
+Staging-Umgebung::
+  Die Staging-Website kann zum Testen oder zur Präsentation der Änderungen
   gegenüber Kunden, Zu QA-Zwecken (Quallitätskontrolltests)
   und UAT (Benutzerakzeptanztests)
   verwendet werden. Diese Umgebung sollte der Umgebung, in der sich die
-  Live-Website befindet gleichen. Es wird empfohlen, live
-  Inhalte sowohl auf der Entwicklungs- als auch auf der Stageing-Website
+  Live-Website befindet, gleichen. Es wird empfohlen, Live-Inhalte 
+  sowohl auf der Entwicklungs- als auch auf der Stageing-Website
   bereitzustellen, so dass Sie testen können, wie die neuen Funktionen unter
   Verwendung der Inhalte funktionieren, die sich bereits auf der Live-Website
   befinden.
 
-Live-Umgebung/Live-Website::
+Live-Umgebung / Produktive Website::
   Die Live-Site im Web, die Besuchern zur Verfügung steht. Sie enthält neue
   Funktionen, die sich als stabil erwiesen haben.
 
-Je nach Größe, dem Umfang, den Anforderungen oder den  am Projekt beteiligen
+Je nach Größe, dem Umfang, den Anforderungen oder den  am Projekt beteiligten
 Interessengruppen können die oben genannten Projektentwicklungsphasen angepasst
 oder entfernt werden. Sie können  natürlich auch weitere Entwicklungsphasen
 hinzufügen. Beispielsweise können Qualitätssicherungs- und
 Nutzerakzeptanztests in einer gesonderten Umgebung durchgeführt werden und die
-Staeging-Umgebung nur verwendet werden, um die  technische
+Staging-Umgebung nur verwendet werden, um die  technische
 Kompatibilität der Website zu Ihrer Live-Umgebung sicherzustellen.
 
 ==== Verwandte Themen
@@ -74,3 +74,5 @@ Kompatibilität der Website zu Ihrer Live-Umgebung sicherzustellen.
 Geschrieben und herausgegeben von https://www.drupal.org/u/dianalakatos[Diána Lakatos],
 und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
 http://redcrackle.com[redcrackle].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

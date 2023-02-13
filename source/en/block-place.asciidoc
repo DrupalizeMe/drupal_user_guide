@@ -18,7 +18,7 @@ Place the Opening hours and location block in the website's sidebar.
 
 ==== Site prerequisites
 
-* The core Bartik theme must be installed and set as default. See
+* The core Olivero theme must be installed and set as default. See
 <<config-theme>>.
 
 * The Opening hours and location block must exist. See <<block-create-custom>>.
@@ -29,10 +29,10 @@ Place the Opening hours and location block in the website's sidebar.
 (_admin/structure/block_). The _Block layout_ page appears, listing the theme's
 regions.
 
-. Ensure that in the secondary tab the core Bartik theme is selected. Block
+. Ensure that in the secondary tab the core Olivero theme is selected. Block
 placement is defined per theme.
 
-. Locate the region _Sidebar second_ in the list and click _Place block_ next to
+. Locate the region _Sidebar_ in the list and click _Place block_ next to
 it. The _Place block_ window appears, listing all the blocks.
 
 . Locate the block Opening hours and location and click _Place block_ next to
@@ -69,12 +69,12 @@ theme.
 +
 --
 // About page with placed sidebar block.
-image:images/block-place-sidebar.png["Page with a block placed on the Sidebar second region",width="100%"]
+image:images/block-place-sidebar.png["Page with a block placed on the Sidebar region",width="100%"]
 --
 
 ==== Expand your understanding
 
-* Remove the _Powered by Drupal_ block from the _Footer fifth_ region by
+* Remove the _Powered by Drupal_ block from the _Footer Bottom_ region by
 clicking _Disable_ or _Remove_ in the _Operations_ dropdown button. Clicking
 _Disable_ will let you enable the block easily later with the same
 configuration; if you click _Remove_ and you want the block back, you would
@@ -82,9 +82,6 @@ need to go through the steps in this topic to place it in a region again. Note
 that the names of the blocks that are provided by the core software, such as
 _Powered by Drupal_ and _User login_, are shown in English on this page; see
 <<language-concept>> for an explanation.
-
-* Remove the _Tools_ block from the _Sidebar first_ region. This block is only
-visible to logged-in users.
 
 * Place the _User login_ block in a region.
 
@@ -104,5 +101,7 @@ video::https://www.youtube-nocookie.com/embed/iWW7Ja5p0hA[title="Placing a Block
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+https://drupalize.me[Drupalize.Me]

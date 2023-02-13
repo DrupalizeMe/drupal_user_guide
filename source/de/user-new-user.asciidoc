@@ -7,9 +7,9 @@ Wie Sie ein Benutzerkonto erstellen.
 
 (((User,creating account)))
 
-==== Zielsetzungsetzung
+==== Zielsetzung
 
-Erstellen Sie die Benutzerkonten für die Lieferanten „Süßer Honig“ und „Glücklicher Bauernhof“.
+Erstellen Sie die Benutzerkonten für die Lieferanten „Sweet Honey“ und „Happy Farm“.
 
 ==== Erforderliche Vorkenntnisse
 
@@ -19,7 +19,7 @@ Erstellen Sie die Benutzerkonten für die Lieferanten „Süßer Honig“ und �
 
 ==== Anforderungen an die Website
 
-Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe <<<user-new-role>>.
+Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe <<user-new-role>>.
 
 ==== Arbeitsschritte
 
@@ -38,25 +38,25 @@ image:images/user-new-user_form.png["Form for creating a new user account",width
 |================================
 |Feldname |Erläuterung |Beispielwert
 |E-Mail-Adresse |Eine gültige E-Mail-Adresse für den Verkäufer. Alle E-Mails aus dem System werden an diese Adresse geschickt. Die E-Mail-Adresse wird nicht veröffentlicht. | honey@example.com
-|Benutzername |Ein Benutzername für den Anbieter, den er zum Anmelden oder Verfassen von Inhaltselementen verwendet. Leerzeichen sind erlaubt; Satzzeichen sind nicht erlaubt, mit Ausnahme von Punkten, Bindestrichen, Apostrophe und Unterstriche. |Süßer Honig
-|Passwort |Ein Passwort, mit dem sich der Anbieter bei der Website anmeldet. Wie sicher das Kennwort ist, können Sie an der _Passwortstärke_ ablesen. Sie erhalten auch Tipps, wie Sie es sicherer machen können.  |(Machen Sie ein sicheres Kennwort)
+|Benutzername |Ein Benutzername für den Lieferanten, den dieser zur Anmeldung oder zum Verfassen von Inhalten verwendet. Leerzeichen sind erlaubt; Satzzeichen sind nicht erlaubt, mit Ausnahme von Punkten, Bindestrichen, Apostroph-Zeichen und Unterstrichen. |Sweet Honey
+|Passwort |Ein Passwort, mit dem sich der Anbieter bei der Website anmeldet. Wie sicher das Kennwort ist, können Sie an der _Passwortstärke_ ablesen. Sie erhalten auch Tipps, wie Sie es sicherer machen können.  |(Erstellen Sie ein sicheres Passwort)
 |Passwort bestätigen |Geben Sie dasselbe Passwort ein, um Tippfehler zu vermeiden. |(Passwort wiederholen)
-|Status |Status des Benutzerkontos festlegen. _Blockierte_ Benutzer können sich nicht anmelden. |Aktiv
-Rollen |Rollen |Rolle des Benutzerkontos festlegen.|Lieferant
-|Benutzer über neues Konto benachrichtigen |Ob oder nicht, um eine Benachrichtigung an die E-Mail-Adresse des Anbieters zu senden. |Geprüft
-Bild |Bild |Klicken Sie auf _Blättern_ und wählen Sie ein Bild zum Hochladen aus. Achten Sie auf Größenbeschränkungen. |Foto des Anbieters
-|Kontakteinstellungen | Aktivieren oder deaktivieren Sie die Anzeige eines Kontaktformulars für das Konto. | Geprüft
+|Status |Status des Benutzerkontos festlegen. _Gesperrte_ Benutzer können sich nicht anmelden. |Aktiv
+|Rollen |Rolle des Benutzerkontos festlegen.|Lieferant
+|Benutzer über neues Konto benachrichtigen |Ob eine Benachrichtigung an die E-Mail-Adresse des Lieferanten gesendet werden soll oder nicht. | Ausgewählt
+|Bild |Klicken Sie auf _Durchsuchen_ und wählen Sie ein Bild zum Hochladen aus. Achten Sie auf Größenbeschränkungen. |Logo des Lieferanten
+|Kontakteinstellungen | Aktivieren oder deaktivieren Sie die Anzeige eines Kontaktformulars für das Konto. | Ausgewählt
 |================================
 
 
-. Klicken Sie auf _Neues Brnutzerlonto erstellen_. Es wird eine Meldung ausgegeben, die besagt, dass das neue Benutzrkonto angelegt wurde.
+. Klicken Sie auf _Neues Benutzerkonto erstellen_. Es wird eine Meldung ausgegeben, dass das neue Benutzrkonto angelegt wurde.
 +
 --
 // Confirmation message after adding new user.
 image:images/user-new-user-created.png["New user account has been created",width="100%"]
 --
 
-. Erstellen Sie ein zweites Benutzerkonto für dien Lieferanten Glücklocjher Bauerrnhof, indem Sie die oben angegebenen schritte wiederholen.
+. Erstellen Sie ein zweites Benutzerkonto für den Lieferanten „Happy Farm“, indem Sie die oben angegebenen Schritte wiederholen.
 
 ==== Vertiefen Sie Ihr Wissen
 
@@ -76,3 +76,5 @@ video::https://www.youtube-nocookie.com/embed/2UtEtY9Cgaw[title=“Ein Benutzerk
 
 Geschrieben von: https://www.drupal.org/u/dianalakatos[Diána Lakatos]
 bei https://pronovix.com/[Pronovix].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

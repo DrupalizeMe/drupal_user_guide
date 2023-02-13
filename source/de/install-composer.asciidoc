@@ -51,10 +51,8 @@ Dateien auf Ihren Live-Server übertragen. Das empfohlene Verfahren ist:
   Verzeichnisse und Dateien enthalten sind.
 . Übertragen Sie das Archiv auf Ihren Live-Server
 . Löschen Sie dort die Verzeichnisse, an denen Sie (lokal) Änderungen vorgenommen haben
-. Extrahieren das Archiv zur Aktualisierung auf dem Live-Server.
-. Stellen Sie sicher, ob in den folgenden Verzeichnissen und Dateien im Hauptverzeichnis Ihrer Installation zu nach dem Vorgang
-
-Aktualisierungen und Ergänzungen zu finden sind:
+. Extrahieren Sie das Archiv zur Aktualisierung auf dem Live-Server.
+. Prüfen Sie, ob in den folgenden Verzeichnissen und Dateien im Hauptverzeichnis Ihrer Installation nach dem Aktualisieren und Ergänzungen zu finden sind:
 
 * Das Verzeichnis _vendor_
 * Die Datei _autoload.php_
@@ -88,7 +86,7 @@ können Sie später feststellen, dass Sie den Composer zur Verwaltung und
 Aktualisierung von Abhängigkeiten verwenden wollen oder müssen.
 Websites die mit Version 8.8.0 oder höher des Kernsystems erstellt wurden
 enthalten bereits die hierfür erforderliche Composer-Konfiguration und Sie
-können jederzeit mit der Nutzung des Composers beginnen.
+können jederzeit damit beginnen Composer zu nutzen.
 
 Wenn Ihre Website schon Module, Themen oder Profile enthält, die nicht Teil des
 Kernsystems sind, ist es eine gute Idee, sie in die Datei _composer.json_ im
@@ -97,11 +95,11 @@ Stammverzeichnis Ihrer Website zu übertragen.
 . Ermitteln Sie den Systemnamen des Projekts:
 Dies ist der letzte Teil der URL der Projektseite eines Moduls oder Themes. Das Modul
 Geofield ist beispielsweise unter https://www.drupal.org/project/geofield zu finden
-und hat den Systemnamen geofield.
+und hat den Systemnamen +geofield+.
 
 . Führen Sie für jedes heruntergeladene Modul, Theme oder Profil einmal
-den folgenden Befehl aus, wobei der Name des gewünschten Projekts durch
-+systemname+ ersetzt wird, um das jeweilige Projekt zur Datei _composer.json_
+den folgenden Befehl aus, wobei+systemname+ durch den Namen des des gewünschten Projekts
+ ersetzt wird, um das jeweilige Projekt zur Datei _composer.json_
 hinzuzufügen:
 
 ----
@@ -113,7 +111,7 @@ Sie weiter unten.
 
 So konvertieren Sie eine Site, die mit einer Version des Kernsystems vor
 8.8.0, oder aus einer Zip- oder tar.gz-Datei heraus installiert wurde, die von
-Drupal.org heruntergeladen wurde, um Compoeser zu verwenden. Lesen Sie die Anweisungen unter
+Drupal.org heruntergeladen wurde, für doe erwendung mit Composer. Lesen Sie die Anweisungen unter
 https://www.drupal.org/docs/installing-drupal/add-composer-to-an-existing-site[Composer zu einer bestehenden Website hinzufügen (englisch)].
 
 ===== Composer zum Herunterladen eines Moduls oder Themes verwenden
@@ -124,6 +122,7 @@ um ein von der Community bereitgestelltes Zusatzmodul  oder Theme und dessen
 Abhängigkeiten hinzuzufügen.
 
 . Bestimmen Sie den Systemnamen des Projekts
+
 . Zum Herunterladen eines von der Community bereitgestellten Moduls oder Themes,
 und dessen externer Komponenten, auch Abhängigkeiten genannt,
 geben Sie den folgenden Befehl im Hauptverzeichnis Ihrer Website ein (ersetzen Sie +systemname+ durch den Namen,
@@ -152,7 +151,7 @@ composer update drupal/systemname --with-dependencies
 
 . Wenn Sie eine bestimmte Version benötigen, legen Sie fest, wie Sie die
 Versionsnummer eingeben, auf die Sie aktualisieren möchten.
-Zum Beispiel würden Sie für die Version 8.x-1.16 eines beigetragenen Moduls
+Zum Beispiel würden Sie für die Version 8.x-1.16 eines von der Community bereitgestellten Zusatzmoduls
 nur 1.16 eingeben, und für die Version 9.0.7 des Kernsystems würden Sie
 9.0.7 eingeben. Geben Sie dann im Stammverzeichnis Ihrer Website den folgenden Befehl ein
 (ersetzen Sie +systemname+ durch den Systemnamen des Projekts und die korrekte
@@ -162,7 +161,7 @@ Versionsnummer):
 composer require drupal/systemname:1.16
 ----
 
-==== Erweitern Sie Ihre Kenntnisse
+==== Viertiefen Sie Ihr Wissen
 
 Weitere Einzelheiten über die Befehle von Composer erfahren Sie, indem Sie die
 integrierte Hilfe von Composer verwenden. Um beispielsweise mehr über den
@@ -191,3 +190,5 @@ https://drupalize.me[Drupalize.Me] von
 https://www.drupal.org/docs/develop/using-composer/using-composer-to-manage-drupal-site-dependencies[„Verwendung des Composers zur Verwaltung von Drupal-Site-Abhängigkeiten"(englisch) ],
 copyright 2000 - copyright_upper_year liegt bei den einzelnen Mitwirkenden an der
 https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

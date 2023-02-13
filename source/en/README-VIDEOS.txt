@@ -36,7 +36,7 @@ guide pages:
 - config-user
 - content-create
 - content-edit
-- content-in-place-edit
+- content-in-place-edit (9.x only)
 - extend-config-versions
 - extend-deploy
 - extend-maintenance
