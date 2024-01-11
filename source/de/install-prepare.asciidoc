@@ -65,7 +65,7 @@ _DATENBANKKNAME_, _DATENBANKBENUTZER_ und _DATENBANKPASSWORT_ durch die
 Zugangsdaten zu Ihrer Datenbank ersetzt werden müssen:
 
 ----
-drush site:install standard --db-url='mysql://DATENBNAKBENUTZER:DATENBANKPASSWORT@localhost/DATENBANKNAME' --site-name=Meine-Website
+drush site:install standard --db-url='mysql://DATENBANKBENUTZER:DATENBANKPASSWORT@localhost/DATENBANKNAME' --site-name=Meine-Website
 ----
 
 // ==== Verwandte Konzepte

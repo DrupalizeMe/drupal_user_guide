@@ -62,7 +62,7 @@ Installation von Drupal fortsetzen können.
 ===== Web-Server
 
 Apache (empfohlen)::
-  Apache ist der am häufigsten verwendete Webserver. Die Kernsoftware funktioniert auf
+  Apache ist der am häufigsten verwendete Webserver. Das Drupal-Kernsystem funktioniert auf
 Apache 2.4.7 oder höher, die auf UNIX/Linux, OS X oder Windows gehostet werden und auf denen das
 Apache mod_rewrite Modul installiert und aktiviert ist. Die Apache VirtualHost
 Konfiguration muss die Anweisung AllowOverride All enthalten, damit die
@@ -76,19 +76,19 @@ Lokaler PHP-Server::
 
 Nginx::
   Nginx ist ein weit verbreiteter Webserver, der sich auf hohe Gleichzeitigkeit,
-Leistung und geringen Speicherverbrauch konzentriert. Das Kernsystem läuft auf Nginx 0.7 oder höher
-oder höher, die auf UNIX/Linux, OS X oder Windows gehostet wird. Das ngx_http_rewrite_module
+Leistung und geringen Speicherverbrauch konzentriert. Das Kernsystem läuft auf Nginx 0.7 oder höher, 
+der auf UNIX/Linux, OS X oder Windows gehostet wird. Das ngx_http_rewrite_module
 muss installiert und aktiviert sein.
 
 Microsoft IIS::
   Microsoft IIS ist ein Webserver und ein Satz von Funktionserweiterungsmodulen
-  zur Verwendung mit Microsoft Windows. Die Kernsoftware arbeitet mit IIS 5,
+  zur Verwendung mit Microsoft Windows. Das Drupal-Kernsystem arbeitet mit IIS 5,
   IIS 6 oder IIS 7, wenn PHP korrekt konfiguriert ist. Da lesbare URLs
   erforderlich sind, könnte es sein, dass Sie ein Produkt eines Drittanbieters
   verwenden müssen. Für IIS 7 können Sie das Microsoft-URL
   Rewrite-Modul oder die Lösung eines Drittanbieters verwenden.
 
-====== Datenbank
+===== Datenbank
 
 Verwenden Sie eine der folgenden Datenbanken:
 
