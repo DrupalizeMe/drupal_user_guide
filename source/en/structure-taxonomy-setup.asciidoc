@@ -82,28 +82,14 @@ continue_.
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Explanation | Value
-| Add a new field | Select the field type | Reference > Taxonomy term
 | Label | The title to give the field | Ingredients
+| Choose a type of field | Select the field type | Reference
+| Choose an option below: | Type of content to reference | Taxonomy term
 |================================
 +
 --
 // Add field page to add Ingredients taxonomy reference field.
 image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
---
-
-. On the following configuration screen, enter the values from the table below.
-Click _Save field settings_.
-+
-[width="100%",frame="topbot",options="header"]
-|================================
-|Field name | Explanation | Value
-|Type of item to reference| The type of entity that is referenced by the field | Taxonomy term
-| Allowed number of values | The number of values a user can enter | Unlimited
-|================================
-+
---
-// Field storage settings page for Ingredients field.
-image:images/structure-taxonomy-setup-field-settings.png["Field storage settings for Ingredients field"]
 --
 
 . On the following configuration screen, enter the values from the table below. Click _Save settings_.
@@ -112,6 +98,8 @@ image:images/structure-taxonomy-setup-field-settings.png["Field storage settings
 |================================
 |Field name | Explanation | Value
 |Help text | Help shown to users creating content |Enter ingredients that site visitors might want to search for
+|Type of item to reference| The type of entity that is referenced by the field | Taxonomy term
+| Allowed number of values | The number of values a user can enter | Unlimited
 |Reference type > Reference method | Select the method used to choose allowed values | Default
 |Reference type > Vocabulary | Select the vocabulary to choose allowed values from | Ingredients
 |Reference type > Create referenced entities if they don't already exist | Whether new ingredient terms can be created from the content editing form | Checked

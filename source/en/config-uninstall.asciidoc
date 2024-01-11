@@ -12,8 +12,7 @@ How to uninstall modules to reduce overhead.
 
 ==== Goal
 
-Uninstall the core Search and History modules, as well as the core Activity
-Tracker module if you installed it in <<config-install>>, to reduce overhead.
+Uninstall the core Search and History modules, as well as the core Actions UI module if you installed it in <<config-install>>, to reduce overhead.
 
 ==== Prerequisite knowledge
 
@@ -38,10 +37,10 @@ You can use the administrative interface or Drush to uninstall modules.
 ready to be uninstalled.
 
 . Check the boxes for the modules you are uninstalling (_Search_, _History_, and
-_Activity Tracker_). Click _Uninstall_ at the bottom of the page.
+_Actions UI_). Click _Uninstall_ at the bottom of the page.
 +
 --
-// Top part of admin/modules/uninstall, with Activity Tracker checked.
+// Top part of admin/modules/uninstall, with Actions UI checked.
 image:images/config-uninstall_check-modules.png["Uninstalling module",width="100%"]
 
 [NOTE]
@@ -59,7 +58,7 @@ uninstalling it.
 _Uninstall_.
 +
 --
-// Uninstall confirmation screen, after checking Activity Tracker, History,
+// Uninstall confirmation screen, after checking Actions UI, History,
 // and Search modules from admin/modules/uninstall.
 image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
 --
@@ -71,13 +70,13 @@ image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search m
 in your site.
 
 . Find the machine name of the module you want to uninstall, by expanding the
-information area for the module. For instance, the core Activity Tracker
-module's machine name is _tracker_.
+information area for the module. For instance, the core Actions UI
+module's machine name is _action_.
 
 . Run the following Drush command to uninstall the module:
 +
 ----
-drush pm:uninstall tracker
+drush pm:uninstall action
 ----
 
 ==== Expand your understanding
@@ -102,6 +101,6 @@ video::https://www.youtube-nocookie.com/embed/hUonnNkeF6g[title="Uninstalling Un
 
 *Attributions*
 
-Written and edited by https://www.drupal.org/u/surendramohan[Surendra Mohan],
+Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me], https://www.drupal.org/u/surendramohan[Surendra Mohan],
 and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
 http://redcrackle.com[Red Crackle].
