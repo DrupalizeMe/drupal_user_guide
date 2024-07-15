@@ -76,20 +76,25 @@ terms. For example, "Eggs" and "Milk".
 . In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_
 (_admin/structure/types_). Click _Manage fields_ for your Recipe content type.
 
-. Click _Add field_, and enter values from the table below. Click _Save and
-continue_.
+. Click _Create a new field_. The _Add field_ page appears. Choose the _Reference_ field type from the _Choose a field type_ options. Click _Continue_. The _Add field_ page appears with a form to configure the field.
++
+--
+// Add field page to add Ingredients taxonomy reference field.
+image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
+--
+
+. Enter values from the table below. Click _Continue_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 |Field name | Explanation | Value
 | Label | The title to give the field | Ingredients
-| Choose a type of field | Select the field type | Reference
 | Choose an option below: | Type of content to reference | Taxonomy term
 |================================
 +
 --
 // Add field page to add Ingredients taxonomy reference field.
-image:images/structure-taxonomy-setup-add-field.png["Add Ingredients field to Content type Recipe"]
+image:images/structure-taxonomy-setup-add-field-label.png["Settings for Ingredients field"]
 --
 
 . On the following configuration screen, enter the values from the table below. Click _Save settings_.
