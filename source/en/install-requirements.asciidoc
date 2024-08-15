@@ -39,7 +39,7 @@ server) as that used by the site files.
 
 ===== PHP
 
-PHP 8.1 or a higher PHP 8 version. PHP must be set up with a minimum memory size
+PHP 8.3 or a higher PHP 8 version. PHP must be set up with a minimum memory size
 of 64MB; if you are running multiple modules on your site or using
 memory-intensive PHP-based command-line tools (such as Composer), considerably
 more memory than that may be needed.
@@ -50,7 +50,9 @@ are using on your site. Generally, hosting service providers have installed all
 the PHP extensions you will need. If you are self-hosting or running your site
 on your local computer, you will get error messages during installation if any
 required PHP extensions are missing, and should be able to install them and
-continue.
+continue. See 
+https://www.drupal.org/docs/getting-started/system-requirements/php-requirements[PHP requirements]
+for a complete list of requirements.
 
 ===== Web server
 
@@ -68,23 +70,17 @@ Nginx::
   performance and low memory usage. The core software will work on Nginx 0.7 or
   greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module
   must be installed and enabled.
-Microsoft IIS::
-  Microsoft IIS is a web server and set of feature extension modules for use
-  with Microsoft Windows. The core software will work with IIS 5, 6, 7, 8, or
-  10 if PHP is configured correctly. Because clean URLs are required, you may
-  need to use a third party product. For IIS 7/8, you can use the Microsoft URL
-  Rewrite module or a third party solution.
 
 ===== Database
 
 Use one of the following databases:
 
-* MySQL - 5.7.8 (MariaDB 10.3.7, Percona 5.7.8) or higher with an
+* MySQL - 8.0+ (MariaDB 10.6+, Percona 8.0+) or higher with an
 InnoDB-compatible primary storage engine
 
-* PostgreSQL - 10.0 or higher with the pg_trgm extension
+* PostgreSQL - 16 or higher with the pg_trgm extension
 
-* SQLite - 3.26 or higher. Temporary local demo sites use SQLite, which is
+* SQLite - 3.45 or higher. Temporary local demo sites use SQLite, which is
 distributed as part of PHP and doesn't require installing separate database
 software, but make sure your version of PHP has the minimum SQLite included.
 
@@ -101,7 +97,8 @@ software, but make sure your version of PHP has the minimum SQLite included.
 
 Adapted by https://www.drupal.org/u/KarlKedrovsky[Karl Kedrovsky],
 https://www.drupal.org/u/bemery987[Brian Emery], and
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] from
-https://www.drupal.org/docs/system-requirements["System requirements"],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me]
+from https://www.drupal.org/docs/system-requirements["System requirements"],
 copyright 2000-copyright_upper_year by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
