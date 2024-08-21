@@ -3,7 +3,7 @@
 === Downloading and Installing a Theme from _Drupal.org_
 
 [role="summary"]
-How to download and install a theme from Drupal.org or by using Drush.
+How to download and install a theme from Drupal.org.
 
 (((Theme,downloading)))
 (((Theme,installing)))
@@ -18,8 +18,6 @@ How to download and install a theme from Drupal.org or by using Drush.
 (((Downloading,theme)))
 (((Installing,theme)))
 (((Enabling,theme)))
-(((Update Manager module,using to install theme)))
-(((Module,Update Manager)))
 (((Drush tool,using to install theme)))
 (((Drupal.org website,downloading and installing theme from)))
 
@@ -34,57 +32,48 @@ Download and install a theme from _Drupal.org_.
 
 ==== Site prerequisites
 
-If you want to install via the website, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing modules.
-
-If you want to use Drush, Drush must be installed. See <<install-tools>>.
+Composer must be installed to download themes. If you want to use Drush, Drush
+must be installed. See <<install-tools>>.
 
 ==== Steps
 
-You can use the administrative interface to download and install a contributed
-theme. If you are installing a custom theme rather than a contributed theme, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to download and unpack the theme
-files, follow the steps in <<extend-manual-install>>. If you are using Composer
-to manage the files in your site, follow the steps for downloading in
-<<install-composer>>. In either of these cases, you can then install the theme
-using Drush, or by continuing with step 7 in the instructions for the
-administrative interface below.
+To install a contributed theme, first download the theme with Composer. Then
+install it using either the administrative interface or Drush. If you are
+installing a custom theme rather than a contributed theme that is not
+available via Composer, skip the steps for downloading the theme, and refer to
+<<extend-manual-install>>. Then return here and follow the steps for installing
+the theme using either the administrative interface or Drush.
 
-===== Using the administrative interface
+===== Download the contributed theme with Composer
 
 . On the theme's project page on drupal.org (for example,
-_https://www.drupal.org/project/honey_), scroll to the _Downloads_ section
+_https://www.drupal.org/project/honey_), scroll to the _Releases_ section
 at the bottom of the page.
 
-. Right-click _tar.gz_ to copy the address.
+. Copy the provided Composer command for the version of the theme you want to
+install.
 +
 --
-// Downloads section of a theme project page on drupal.org.
-image:images/extend-theme-install-download.png["Finding the URL for a theme"]
+// Releases section of a theme project page on drupal.org.
+image:images/extend-theme-install-download.png["Finding the composer command for a theme"]
 --
+
+. Alternatively, type the following command (substituting
+the short name of the theme and desired version for +honey:^1.0+):
++
+----
+composer require 'drupal/honey:^1.0'
+----
+
+. At the command line, change to the root directory or your project. Paste the
+Composer command and execute it.
+
+. You should see a message about the theme being successfully downloaded.
+
+===== Install the theme using the administrative interface
 
 . In the _Manage_ administrative menu, navigate to _Appearance_
 (_admin/appearance_). The _Appearance_ page appears.
-
-. Click _Add new theme_. The _Add new theme_ page appears.
-+
---
-// Add new theme page (admin/theme/install).
-image:images/extend-theme-install-page.png["Adding a theme"]
---
-
-. In the field _Add from a URL_, paste the copied download link. This value
-could look like
-`https://ftp.drupal.org/files/projects/honey-1.0.1.tar.gz`.
-
-. Click __ to upload and unpack the new theme on the server. The files
-are being downloaded to the _themes_ directory.
-
-. Click _Install newly added themes_ to return to the _Appearance_ page. If you
-used the manual uploading procedure mentioned earlier, then you can continue
-with this step, and reach the _Appearance_ page by using the _Manage_
-administrative menu and navigating to _Appearance_ (_admin/appearance_).
 
 . Locate the new theme under _Uninstalled themes_ and click _Install and set as
 default_ to use it. All non-administrative pages on the site will now use this
@@ -95,17 +84,10 @@ new theme.
 image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
 --
 
-===== Using Drush to install a theme
+===== Install the theme using Drush
 
-. Find the project name for the theme you want to install, which is the last
-segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/honey_, the project name is `honey`.
-
-. Download the theme using either the steps in <<extend-manual-install>> or
-<<install-composer>>.
-
-. Run the following Drush commands, giving the project name (for example,
-_honey_) as a parameter:
+. To install the theme, and set it as the default, run the following Drush\
+commands, giving the project name (for example, _honey_) as a parameter:
 +
 ----
 drush theme:enable honey

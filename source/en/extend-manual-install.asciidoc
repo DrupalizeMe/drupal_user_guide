@@ -1,9 +1,9 @@
 [[extend-manual-install]]
 
-=== Manually Downloading Module or Theme Files
+=== Manually Installing Module or Theme Files
 
 [role="summary"]
-How to manually download and upload a module or theme.
+How to manually install a module or theme.
 
 (((Module,downloading)))
 (((Contributed module,downloading)))
@@ -14,9 +14,8 @@ How to manually download and upload a module or theme.
 
 ==== Goal
 
-Manually download module or theme files and upload them to your site, if the
-website or Drush methods for installing or updating a module or theme do not
-work, or if you are placing a custom-written module or theme.
+Custom modules and themes may not be available via Composer and their files will
+need to be manually installed.
 
 ==== Prerequisite knowledge
 
@@ -27,22 +26,12 @@ work, or if you are placing a custom-written module or theme.
 
 ==== Site prerequisites
 
-You need to be facing any of the following to perform the manual download
-described in this topic:
+Use this approach if you created a custom module/theme or received its files
+from someone.
 
-* File permission issues
-
-* FTP permission issues
-
-* You created a custom module/theme or received its files from someone
-
-* You could not successfully complete the instructions in
-<<extend-module-install>>, <<extend-theme-install>>,
-<<security-update-module>>, or <<security-update-theme>>
-
-Skip this topic if none of the above applies to you. If you are using Composer
-to manage the files in your site, follow the file updating steps in
-<<install-composer>> instead of this topic.
+When installing or updating the core software, contributed modules, and
+contributed themes you should use Composer. See <<install-composer>>,
+<<extend-module-install>>, and <<extend-theme-install>> instead of this topic.
 
 ==== Steps
 
@@ -53,36 +42,14 @@ an archive file (that you know how to extract on the server) and proceed with
 the steps in uploading/unpacking, using whatever method is appropriate for the
 way you initially created the archive file.
 
-===== Downloading the files
-
-. Open the module or theme project page on drupal.org; for example, the _Admin
-toolbar_ page (https://www.drupal.org/project/admin_toolbar).
-
-. Scroll to the _Downloads_ section near the bottom of the page.
-+
---
-// Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/extend-manual-install-download.png["Downloading module files"]
---
-
-. Click _tar.gz_ to download the file to your computer. Alternatively, if you
-have terminal access to your hosting server (running Linux), you can copy the
-link address for the _tar.gz_ file from your browser, and use this command to
-download the file (substituting the copied URL):
-+
-----
-wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-2.4.tar.gz
-----
-
-
 ===== Uploading the files to your site and unpacking them
 
 . If you are adding a new module or theme, create subdirectories in your
 top-level _modules_ and _themes_ directories (if they don't already
 exist). Typically, people make a _contrib_ subdirectory for contributed modules
-and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for
-modules and themes that they created. Your _modules_ directory might look like
-this:
+and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory
+for modules and themes that they created. Your _modules_ directory might look
+like this:
 +
 --
 // Make custom and contrib directories under modules, and take a screenshot
@@ -114,7 +81,7 @@ extract the files. If you have terminal access to your hosting server
 (running Linux) and you are using a tar.gz file, you can use a command like:
 +
 ----
-tar -xzf admin_toolbar-8.x-2.4.tar.gz
+tar -xzf custom_toolbar-2.4.0.tar.gz
 ----
 
 . Delete the compressed file from the server, unless your unpacking method
@@ -152,4 +119,5 @@ video::https://www.youtube-nocookie.com/embed/kOzQz9q3Kf8[title="Manually Downlo
 
 Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
-https://www.drupal.org/u/vegantriathlete[Marc Isaacson].
+https://www.drupal.org/u/vegantriathlete[Marc Isaacson], and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me].

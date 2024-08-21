@@ -31,10 +31,6 @@ version rather than regenerated. (Most of them are from drupal.org pages,
 and they would only need to be updated if the download pages on drupal.org
 changed.) Here is a list:
 
-- extend-manual-install-directories.png : A manually-generated image that shows
-  the directory structure of "contrib" and "custom" directories under "modules"
-- extend-manual-install-download.png: Shot from drupal.org
-
 - extend-module-find_module_finder.png: Shot from drupal.org
 - extend-module-find_project_info.png : Shot from drupal.org
 - extend-module-find_search_results.png : Shot from drupal.org

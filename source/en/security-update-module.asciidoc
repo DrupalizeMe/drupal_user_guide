@@ -3,8 +3,8 @@
 === Updating a Module
 
 [role="summary"]
-How to update a contributed module by using the administrative interface and
-running the Database updates script.
+How to update a contributed module using Composer and the administrative
+interface for running the Database Updates script.
 
 (((Module,updating)))
 (((Security update,applying)))
@@ -30,44 +30,42 @@ environment before running it on your production site. See
 
 * You have created a full-site backup. See <<prevent-backups>>.
 
-* If you want to use the user interface, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing core
-modules.
+* If you want to use the user interface to check for updates, the core Update
+Manager module must be installed. See <<config-install>> for instructions on
+installing core modules.
 
 ==== Steps
 
-Before you start, check for module-specific update instructions. This is
-typically necessary while updating modules that involve the usage of third-party
-libraries. Read and understand all module-specific requirements before
-proceeding with the updates. To find instructions, check the module's project
-page _Read Documentation_ link.
+Before you start, check for module-specific update instructions. Read and
+understand all module-specific requirements before proceeding with the updates.
+To find instructions, check the module's project page _Read Documentation_ link.
 
-To view further instructions, download the tar.gz or .zip file from the project
-page to your local computer. Unzip the file and look for _README.txt_,
-_INSTALL.txt_, and _UPGRADE.txt_ that come with the module's installation
-file. Also, review the release notes on the project page by clicking the version
-number you're downloading.
+To view further instructions, after downloading the updated files, look for
+_README.txt_, _INSTALL.txt_, and _UPGRADE.txt_ that come with the module. Also,
+review the release notes on the project page by clicking the version number
+you're downloading.
 
 // Downloads section of the Admin Toolbar project page on drupal.org.
 image:images/security-update-module-release-notes.png["Release notes link"]
 
-You can use the administrative interface to update a contributed module. If you
-are updating a custom module rather than a contributed module, if you see a
-message saying _Installing modules and themes requires FTP access to your
-server_, or if the steps below do not work to obtain the new module files,
-follow the steps in <<extend-manual-install>>. You can then continue here with
-step 6 in the instructions for the administrative interface below.
+Updating a module requires first putting your site into maintenance mode, then
+obtaining the new code files and applying any required database updates, then
+finally taking the site out of maintenance mode.
 
-If you are using Composer to manage the files in your site, follow the steps
-in <<install-composer>> to update the files, then continue here with step 5 in
-the instructions for the administrative interface below.
+You can update the code for a contributed module using Composer. If you are
+updating a custom module rather than a contributed module, obtain the new module
+files, then continue with instructions for running the database updates via the
+administrative interface below.
 
-===== Using the administrative interface
+This assumes that you are using Composer to manage the files in your site; see
+<<install-composer>>.
+
+===== Update a contributed module with Composer
 
 . Put your site in maintenance mode. See <<extend-maintenance>>.
 
 . In the _Manage_ administrative menu, navigate to _Reports_ >
-_Available updates_ > _Update_ (_admin/reports/updates/update_).
+_Available updates_ > _Update_ (_admin/reports/updates_).
 
 . Find and check the module in the list. Click _Download these updates_ for the
 module.
@@ -77,13 +75,25 @@ module.
 image:images/security-update-module-updates.png["Available updates",width="100%"]
 --
 
-. Click _Continue_.
+. Determine the short name of the project you want to update. For contributed
+modules and themes, it is the last part of the URL of the project page; for
+example, the Geofield module, at https://www.drupal.org/project/geofield, has
+short name +geofield+.
 
-. Click _Run database updates_. If you obtained the new module files manually,
-start with this step, and reach the database updates page by typing the URL
-_example.com/update.php_ in your browser.
+. If you want to update to the latest stable release, use the following
+command, substituting the short name of the project to be updated for
++geofield+:
++
+----
+composer update drupal/geofield --with-dependencies
+----
++
+To learn how to download specific versions see <<install-composer>>.
 
-. Click _Continue_ and apply all updates. The database update scripts will be
+. After obtaining the new module files run any database updates page by typing
+the URL _example.com/update.php_ in your browser.
+
+. Click _Continue_ to run the updates. The database update scripts will be
 executed.
 
 . Click _Administration pages_ to return to the administration section of your
@@ -91,7 +101,7 @@ site.
 
 . Take your site out of maintenance mode. See <<extend-maintenance>>.
 
-. Clear the cache (refer to <<prevent-cache-clear>>).
+. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
 
 ==== Expand your understanding
 
@@ -114,7 +124,8 @@ video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Updating a Modu
 
 Adapted by https://www.drupal.org/u/batigolix[Boris Doesborgh], and
 https://www.drupal.org/u/hey_germano[Sarah German] at
-https://www.advomatic.com[Advomatic], from
-https://www.drupal.org/docs/7/update/updating-modules["Update modules"],
+https://www.advomatic.com[Advomatic], and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me]
+from https://www.drupal.org/docs/7/update/updating-modules["Update modules"],
 copyright 2000-copyright_upper_year by the individual contributors to the
 https://www.drupal.org/documentation[Drupal Community Documentation].
