@@ -13,7 +13,7 @@ Ein Modul deinstallieren,  um die Ladezeit der Website zu reduzieren.
 ==== Zielsetzung
 
 Deinstallieren Sie die mit dem Kernsystem ausgelieferten Module Search und
-History sowie das Modul Activity Tracker, wenn Sie es im Kapitel
+History sowie das Modul Setings Tray, wenn Sie es im Kapitel
 <<config-install>> installiert haben, um die Ladezeit, Ihrer Website,
 zu reduzieren.
 
@@ -41,12 +41,12 @@ Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu deinstalli
 die deinstalliert werden können.
 
 . Aktivieren Sie die Kontrollkästchen vor den Namen der Module, die Sie
-deinstallieren möchten (_Search_, _History_ und _Activity Tracker_).
+deinstallieren möchten (_Search_, _History_ und _Settings_tray_).
 
 . Klicken Sie auf _Deinstallieren_.
 +
 --
-// Oberer Teil von admin/modules/uninstall, mit aktiviertem Activity Tracker.
+// Oberer Teil von admin/modules/uninstall, mit aktiviertem Setings Tray.
 image:images/config-uninstall_check-modules.png["Deinstallationsmodul",width="100%"]
 
 [NOTE]
@@ -66,7 +66,7 @@ bis es deinstalliert werden kann.
 zu bestätigen. Klicken Sie auf _Deinstallieren_.
 +
 --
-// Deinstallationsbestätigungsbildschirm, nach dem Überprüfen von Activity Tracker, History,
+// Deinstallationsbestätigungsbildschirm, nach dem Überprüfen von Setings Tray, History,
 // und Suchmodule von admin/modules/uninstall.
 image:images/config-uninstall_confirmUninstall.png["Deinstallation bestätigen - Suchmodul",width="100%"]
 --
@@ -79,13 +79,13 @@ Ihrer Website verfügbaren Module an.
 
 . Suchen Sie den Systemnamen des Moduls, das Sie deinstallieren möchten, indem Sie den
 Informationsbereich für das Modul ausklappen. Das mit dem Kernsystem
-ausgelieferte Modul Activity Tracker besitzt beispielsweise den Systemnamen
-_tracker_.
+ausgelieferte Modul Setings Tray besitzt beispielsweise den Systemnamen
+_settings_tray_.
 
 . Führen Sie den folgenden Drush-Befehl aus, um das Modul zu deinstallieren:
 +
 ----
-drush pm:uninstall tracker
+drush pm:uninstall settings_tray
 ----
 
 ==== Vertiefen Sie Ihr Wissen
