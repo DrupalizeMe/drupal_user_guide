@@ -12,7 +12,7 @@ How to uninstall modules to reduce overhead.
 
 ==== Goal
 
-Uninstall the core Search and History modules, as well as the core Actions UI module if you installed it in <<config-install>>, to reduce overhead.
+Uninstall the core Search and History modules, as well as the core Ban module if you installed it in <<config-install>>, to reduce overhead.
 
 ==== Prerequisite knowledge
 
@@ -36,11 +36,10 @@ You can use the administrative interface or Drush to uninstall modules.
 (_admin/modules/uninstall_) where you will find the list of modules that are
 ready to be uninstalled.
 
-. Check the boxes for the modules you are uninstalling (_Search_, _History_, and
-_Actions UI_). Click _Uninstall_ at the bottom of the page.
+. Check the boxes for the modules you are uninstalling (_Ban_, _History_, and _Search_). Click _Uninstall_ at the bottom of the page.
 +
 --
-// Top part of admin/modules/uninstall, with Actions UI checked.
+// Top part of admin/modules/uninstall, with Ban checked.
 image:images/config-uninstall_check-modules.png["Uninstalling module",width="100%"]
 
 [NOTE]
@@ -58,7 +57,7 @@ uninstalling it.
 _Uninstall_.
 +
 --
-// Uninstall confirmation screen, after checking Actions UI, History,
+// Uninstall confirmation screen, after checking Ban, History,
 // and Search modules from admin/modules/uninstall.
 image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search module",width="100%"]
 --
@@ -70,13 +69,13 @@ image:images/config-uninstall_confirmUninstall.png["Confirm uninstall - search m
 in your site.
 
 . Find the machine name of the module you want to uninstall, by expanding the
-information area for the module. For instance, the core Actions UI
-module's machine name is _action_.
+information area for the module. For instance, the core Ban
+module's machine name is _ban_.
 
 . Run the following Drush command to uninstall the module:
 +
 ----
-drush pm:uninstall action
+drush pm:uninstall ban
 ----
 
 ==== Expand your understanding
