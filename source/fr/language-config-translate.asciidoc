@@ -32,13 +32,17 @@ votre site doit avoir au moins deux langues. Consulter <<language-add>>.
 Les étapes de base pour traduire toute configuration sur votre site sont les
 suivantes :
 
-. Localiser la page où la configuration que vous souhaitez traduire est créée ou
-modifiée dans la langue principale du site. Par exemple, pour traduire le nom du
-site, vous devez trouver la page où vous modifieriez le nom du site (consulter
-<<config-basic>>).
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Régionalisation et langue_ > _Traduction de la configuration_
+(_admin/config/regional/config-translation_).
 
-. Trouver un lien, un onglet ou un bouton sur la page intitulé "Traduire" ou
-quelque chose de similaire. Cliquer ce lien, onglet ou bouton.
+. Localiser l'élément de configuration que vous souhaitez traduire. Par exemple,
+pour traduire le nom du site, vous devez trouver _System information_. Pour la
+configuration qui est groupée par type (par exemple, les vues ou les formats de
+dates), cliquer sur le bouton _Liste_ pour voir toutes les configurations de ce
+type, et localiser ensuite l'élément recherché.
+
+. Cliquer sur _Traduire_ pour l'élement que vous avez localisé.
 
 . Trouver un bouton qui vous permettra d’ajouter une traduction dans la langue
 souhaitée, et cliquer sur ce bouton.
@@ -52,19 +56,22 @@ est complexe et hiérarchique plutôt que d'être un simple formulaire avec
 seulement quelques champs. En guise d'exemple de traduction d'une vue, voici les
 étapes pour traduire les libellés dans la vue Recettes vers l'anglais :
 
-. Dans le menu d'administration _Gérer_, accéder à _Structure_ > _Vues_
-(_admin/structure/views_).
+. Dans le menu d'administration _Gérer_, accéder à _configuration_ >
+_Régionalisation et langue_ > _Traduction de la configuration_
+(_admin/config/regional/config-translation_).
 
-. Localiser la vue Recettes et cliquer _Traduire_ dans le menu déroulant.
+. Cliquer sur _Liste_ sur la ligne _Views_.
+
+. Cliquer sur _Traduire_ sur la ligne Recettes.
 
 . Cliquer sur _Ajouter_ dans la ligne _anglais_. La page _Ajouter une
 traduction en anglais pour la vue Recettes_ apparaît.
 
-. Rechercher _Affichages_ > _Paramètres de l'affichage de Master_ > _Options
+. Rechercher _Affichages_ > _Paramètres de l'affichage de Défaut > _Options
 d'affichage par défaut de Recettes_. Traduire le _Titre d'affichage_ de
 "Recettes" en "Recipes".
 
-. Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
+. Rechercher _Affichages_ > _Paramètres d'affichage de Défaut > _Options
 d'affichage par défaut de Recette_ > _Formulaire exposé_ > _Options de
 réinitialisation_. Traduire le bouton _Texte du bouton de soumission_
 (_Appliquer_) en "Apply". Les autres boutons et libellés de cette section

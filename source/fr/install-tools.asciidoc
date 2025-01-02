@@ -11,13 +11,11 @@ facilement leurs sites.
 (((Outil,Drush)))
 (((Outil,Composer)))
 (((Outil,Git)))
-(((Outil,Drupal Console)))
 (((Outil Coder,vue d'ensemble)))
 (((Outil Devel,vue d'ensemble)))
 (((Outil Drush,vue d'ensemble)))
 (((Outil Composer,vue d'ensemble)))
 (((Outil Git,vue d'ensemble)))
-(((Outil Drupal Console,vue d'ensemble)))
 
 // ==== Connaissances requises
 
@@ -26,7 +24,7 @@ facilement leurs sites.
 Il existe plusieurs outils supplémentaires qui sont disponibles pour vous aider à
 créer vos sites plus rapidement, plus précisément et avec moins d'efforts.
 
-Drush et Drupal Console::
+Drush::
   Voir ci-dessous pour plus d'informations sur les outils en ligne de commande.
 Git::
   Voir ci-dessous pour plus d'informations sur les outils de gestion de
@@ -35,9 +33,8 @@ Composer::
   Voir ci-dessous pour plus d'informations sur Composer.
 Devel::
   Le https://www.drupal.org/project/devel[module contribué Devel] est une aide
-  aux tâches de développement comme le débogage et l'inspection du code,
-  l'analyse des requêtes en base de données, et la génération de contenu de
-  test.
+  aux tâches de développement comme le débogage et l'inspection du code, et la
+  génération de contenu de test.
 
 ==== Que sont les outils en ligne de commande ?
 
@@ -57,21 +54,28 @@ des commandes liées au serveur, pour automatiser des tâches plus compliquées.
 qui ne sont pas disponibles à travers l'interface d'administration ; par
 exemple, exécuter des requêtes sur la base de données.
 
-Les outils les plus populaires sont http://www.drush.org[Drush] et
-https://drupalconsole.com[Drupal Console]. Drush est disponible depuis plus
-longtemps, et comporte des commandes à la fois pour le cœur du logiciel et les
-modules contribués ; Drupal Console était d'abord un outil pour les développeurs
-de modules, mais fait état d'une liste de plus en plus importante de commandes
-pour les webmasters. Ce guide documente les commandes de la dernière version
-stable de Drush correspondant à beaucoup de tâches ; il ne documente pas de
-commandes de Drupal Console ou de commandes de versions antérieures de Drush,
-mais vous pouvez les rechercher dans les documentations respectives de Drupal
-Console et de Drush.
+L'outil le plus populaire est https://www.drush.org/[Drush]. Drush est un outil
+en ligne de commande pouvant également être utilisé pour scripter qui accélère
+la réalisation de tâches courantes par les développeurs, les constructeurs de
+sites et les équipes DevOps.
+
+Ce guide documente les commandes de la dernière version stable de Drush
+correspondant à beaucoup de tâches ; il ne documente pas de commandes de Drupal
+Console ou de commandes de versions antérieures de Drush, mais vous pouvez les
+rechercher dans la documentation de Drush.
 
 Pour utiliser ces outils, vous devrez avoir accès à un terminal permettant de
 saisir des lignes de commandes sur le serveur où votre site est hébergé, et vous
-devrez au préalable installer Composer afin d'installer soit Drush, soit Drupal
-Console.
+devrez au préalable installer Composer afin d'installer Drush.
+
+Pour installer Drush, s'ssurer au préalable que le projet utilise Composer pour
+la gestion des dépendances. Voir ci-dessous pour plus d'informations sur
+Composer. Utiliser alors les commandes suivantes :
+
+----
+# Installer Drush
+composer require drush/drush
+----
 
 ==== Qu'est-ce qu'un système de gestion de versions ?
 
@@ -112,13 +116,19 @@ où les développeurs définissent quelle version de chaque bibliothèque extern
 est nécessaire, et Composer gère le processus de téléchargement et
 d'installation des bibliothèques.
 
+https://getcomposer.org/doc/00-intro.md[Composer peut être installé] sur
+l'environnement de développement local ou sur le serveur web, mais il est
+souvent déjà fourni par les
+https://www.drupal.org/docs/develop/development-tools/development-tools-overview[kits
+de développement Drupal].
+
 Le cœur du logiciel est le premier utilisateur de Composer, à cause de son usage
 de plusieurs bibliothèques logiciels externes, qui doivent être téléchargées et
 installés pour que le cœur du logiciel fonctionne. Lorsque vous installez le
 cœur du logiciel, vous devez soit télécharger une archive qui contient les
 versions compatibles des bibliothèques externes, soit utiliser Composer pour les
-télécharger après le téléchargement initial. Les outils en ligne de commande
-Drush et Drupal Console sont aussi téléchargés un utilisant Composer.
+télécharger après le téléchargement initial. L'outil en ligne de commande
+Drush est aussi téléchargé en utilisant Composer.
 
 Certains modules contribués utilisent également des bibliothèques externes ; par
 exemple, un module d'intégration à Facebook aura besoin que la bibliothèque
@@ -132,12 +142,11 @@ aurez besoin de Composer.
 En plus des outils mentionnés ci-dessus pour les webmaster, les outils suivants
 sont utiles pour les développeurs de thèmes et de modules.
 
-Drupal Console::
-  https://drupalconsole.com[Drupal Console] est un outil ligne de commande qui
-  génère du code standard et interagit avec un site Drupal. Il peut générer, par
-  exemple, le code d'un bloc ou un formulaire, installer des modules et des
-  thèmes, et créer du contenu de test. Drupal Console utilise la Console
-  Symfony.
+Drush::
+  https://www.drush.org/[Drush] est un outil en ligne de commande qui peut être
+  utilisé pour générer du code et interagir avec un site Drupal. Il peut par
+  exemple générer du code pour un bloc ou un formulaire, vider le cache ou créer
+  du contenu d'exemple.
 Coder::
   https://www.drupal.org/project/coder[Coder] est un outil ligne de commande qui
   vérifie si vos modules et thèmes sont compatibles avec les normes de
@@ -166,7 +175,9 @@ Outils de débogage intégrés aux navigateurs::
 
 *Attributions*
 
-Écrit et modifié par  https://www.drupal.org/u/batigolix[Boris Doesborg]
-et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Écrit et modifié par  https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] et
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] de
+https://drupalize.me[Drupalize.Me].
 Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
 https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

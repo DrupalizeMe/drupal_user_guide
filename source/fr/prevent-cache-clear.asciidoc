@@ -91,6 +91,13 @@ Enter a number to choose which cache to clear.
 Choisir un cache à vider en saisissant le nombre associé avec ce cache. Taper
 "Entrée" pour continuer.
 
+Pour vider un type de cache en particulier, vous pouvez le spécifier dans la
+commande cache:clear. Par exemple pour vider le cache render :
+
+----
+drush cache:clear render
+----
+
 //==== Expand your understanding
 
 

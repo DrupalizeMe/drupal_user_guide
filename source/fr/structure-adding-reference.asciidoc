@@ -34,19 +34,30 @@ Les types de contenus Recette et Vendeur doivent exister. Consulter
 (_admin/structure/types_). Puis cliquer sur _Gérer les champs_ dans la liste 
 de sélection du type de contenu Recette. La page _Gérer les champs_ apparaît.
 
-. Cliquer sur _Ajouter un champ_. La page _Ajouter un champ_ apparaît. Remplir
-les champs comme montré ci-dessous. Cliquer sur _Enregistrer et continuer_.
-+
-[width="100%",frame="topbot",options="header"]
-|================================
-|Nom du champ | Explication | Valeur
-| Ajouter un nouveau champ | Option pour définir le type de champ | Référence > Contenu
-| Étiquette | Le titre que vous voulez donner au champ | Proposé par
-|================================
+. Cliquer sur _Créer un nouveau champ_. La page _Ajouter un champ_ apparaît.
+Choisir le type de champ _Référence_ dans les options _Choisir un type de
+champ_. Cliquer sur _Continuer_. La page _Ajouter un champ_ apparaît. Elle
+contient un formulaire pour configurer l'étiquette du champ.
 +
 --
 // Add field page for adding a Submitted by field to Recipe.
 image:images/structure-adding-reference-add-field.png["Ajouter un champ de type
+référence à un type de contenu"]
+--
+
+Remplir les champs comme montré ci-dessous. Cliquer sur _Enregistrer et
+continuer_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ | Explication | Valeur
+| Étiquette | Le titre que vous voulez donner au champ | Proposé par
+| Choisir un option ci-dessous : | Type de contenu à référencer | Contenu
+|================================
++
+--
+// Add field page for adding a Submitted by field to Recipe.
+image:images/structure-adding-reference-add-field-label.png["Ajouter un champ de type
 référence à un type de contenu"]
 --
 
