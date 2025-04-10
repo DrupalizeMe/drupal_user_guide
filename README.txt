@@ -53,6 +53,17 @@ of that is the output for the AsciiDoc Display module; e-books land in the
 ebooks subdirectory.
 
 
+DDEV QUICKSTART
+---------------
+
+To get started quickly in DDEV, clone the repository and run these commands
+from inside the user_guide folder to generate an English PDF:
+  ddev start
+  ddev ssh
+  cd scripts/
+  ./mkall.sh 11.x en
+
+
 ASCIIDOC OUTPUT BUILD SCRIPTS
 -----------------------------
 
