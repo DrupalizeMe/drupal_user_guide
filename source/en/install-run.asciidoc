@@ -25,6 +25,10 @@ installer.
 
 <<install-prepare>>
 
+Note that if you followed the instructions in <<install-ddev>> the core software
+was already installed. If you wish to install the core software again, you can
+run the command `ddev drush sql:drop` and then follow the instructions below.
+
 ==== Steps
 
 . If you are using a 1-click install from a hosting provider or demo site, you
@@ -131,6 +135,15 @@ are read-only (you may need to consult your hosting company documentation about
 how to do that).
 
 ==== Expand your understanding
+
+Alternatively, you can install the software using Drush instead of the UI. Use
+the following Drush command, from inside the directory that you downloaded the
+software to, where _DB_NAME_, _DB_USER_ and _DB_PASS_ are your database's
+credentials:
+
+----
+drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+----
 
 Check the Status Report to see if there are any problems with the
 installation. See <<prevent-status>>.

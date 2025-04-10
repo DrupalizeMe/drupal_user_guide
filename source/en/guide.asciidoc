@@ -1,5 +1,8 @@
 [[user_guide]]
 = Drupal User Guide
+:toc: right
+:sectnums:
+:sectnumlevels: 2
 
 // Chapters are defined here, and each one includes the individual
 // topic files that make up the chapter, in order.
@@ -56,10 +59,11 @@ include::language-concept.asciidoc[]
 [role="summary"]
 Overview of server requirements and details of common installation tasks.
 
+include::install-prepare.asciidoc[]
 include::install-requirements.asciidoc[]
 include::install-tools.asciidoc[]
 include::install-decide.asciidoc[]
-include::install-prepare.asciidoc[]
+include::install-ddev.asciidoc[]
 include::install-composer.asciidoc[]
 include::install-run.asciidoc[]
 
