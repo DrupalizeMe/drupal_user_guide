@@ -1,0 +1,58 @@
+[[install-ddev]]
+=== Setting Up An Environment with DDEV
+
+[role="summary"]
+How to set up a development site using DDEV, a local development environment for PHP applications.
+ 
+(((DDEV,overview)))
+(((DDEV,installation)))
+(((DDEV,development environment)))
+(((DDEV,development server)))
+(((DDEV,local server)))
+
+==== Goal
+
+Set up a local development environment using DDEV to serve the application and
+Composer to download the required files.
+
+==== Prerequisite knowledge
+
+<<install-requirements>>
+<<install-composer>>
+
+==== Why use DDEV?
+
+DDEV is a local development environment for PHP applications built on Docker. It
+includes all the necessary components to run the core software, and is used by
+many developers in the Drupal community.
+
+==== Steps
+
+. Follow the
+https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/[official DDEV installation instructions]
+to install DDEV on your local machine. DDEV is available for Windows, Mac, and
+Linux. The installation process is different for each operating system, so be
+sure to follow the instructions for your OS.
+. After installing DDEV, follow the
+https://ddev.readthedocs.io/en/stable/users/quickstart/#drupal[Drupal Quickstart instructions]
+to download the core software using Composer and install it in the DDEV
+environment.
+. Run the command `ddev launch` from the directory created in the previous step
+to open the site in your web browser and confirm the environment is working
+correctly.
+
+==== Related topics
+
+* <<install-requirements>>
+* <<install-dev-sites>>
+* <<install-tools>>
+
+==== Additional resources
+
+* https://ddev.readthedocs.io/en/stable/[DDEV documentation]
+* https://www.drupal.org/docs/getting-started/installing-drupal/install-drupal-using-ddev-for-local-development[Install Drupal using DDEV for local development]
+
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+https://drupalize.me[Drupalize.Me].

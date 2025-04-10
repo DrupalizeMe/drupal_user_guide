@@ -79,54 +79,48 @@ de termes. Par exemple, "Œufs" et "Lait".
 . Dans le menu d'administration _Gérer_, aller à _Structure_ > _Types de contenu_
 (_admin/structure/types_). Cliquer sur _Gérer les champs_ pour votre type de contenu Recette.
 
-. Cliquer sur _Ajouter un champ_, et saisir les valeurs du tableau ci-dessous.
-Cliquer sur _Enregistrer et continuer_.
+. Cliquer sur _Créer un nouveau champ_. La page _Ajouter un champ_ apparaît.
+Choisir le type de champ _Référence_ dans les options _Choisir un type de
+champ_. La page _Ajouter un champ_ apparaît. Elle contient un formulaire
+permettant de configurer le champ.
++
+--
+// Add field page to add Ingredients taxonomy reference field.
+image:images/structure-taxonomy-setup-add-field.png["Ajouter un champ Ingrédients au type de contenu Recette"]
+--
+
+. Saisir les valeurs du tableau ci-dessous. Cliquer sur _Continuer_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Nom du champ | Explication | Valeur exemple
-| Ajouter un nouveau champ | Sélectionner le type de champ | Référence > Terme de taxonomie
 | Étiquette | Le titre à donner au champ | Ingrédients
+| Choisir une option ci-dessous : | Type de contenu à référencer | Terme de taxonomie
 |================================
 +
 --
 // Add field page to add Ingredients taxonomy reference field.
-image:images/structure-taxonomy-setup-add-field.png["Ajout d'un champ
-Ingrédients au type de contenu Recette"]
+image:images/structure-taxonomy-setup-add-field-label.png["Paramètres du champ Ingrédients"]
 --
 
 . Sur l'écran de configuration suivant, saisir les valeurs du tableau
-ci-dessous. Cliquer sur _Enregistrer les paramètres du champ_.
-+
-[width="100%",frame="topbot",options="header"]
-|================================
-| Nom du champ | Explication | Valeur
-|Type d'élément à référencer| Le type d'entité qui est référencée par le champ | Terme de taxonomie
-| Nombre de valeurs autorisées | Le nombre de valeurs qu'un utilisateur peut saisir | Illimité
-|================================
-+
---
-// Field storage settings page for Ingredients field.
-image:images/structure-taxonomy-setup-field-settings.png["Paramètres de stockage
-du champ Ingrédients"]
---
-
-. Sur l'écran de configuration suivant, saisir les valeurs du tableau
-ci-dessous.  Cliquer sur _Enregistrer les paramètres du champ_.
+ci-dessous. Cliquer sur _Enregistrer les paramètres_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Nom du champ | Explication | Valeur
 |Texte d'aide | Aide affiché aux utilisateurs créant le contenu | Saisir les ingrédients que les visiteurs du site pourraient vouloir chercher
-|Type de référence > Méthode de référence | Selectionner la méthode utilisée pour choisir les valeurs autorisées | Par défaut
-|Type de référence > Vocabulaire | Selectionner le vocabulaire dans lequel les valeurs sont choisies | Ingrédients
+|Type d'élément à référencer| Le type d'entité qui est référencée par le champ | Terme de taxonomie
+| Nombre de valeurs autorisées | Le nombre de valeurs qu'un utilisateur peut saisir | Illimité
+|Type de référence > Méthode de référence | Sélectionner la méthode utilisée pour choisir les valeurs autorisées | Par défaut
+|Type de référence > Vocabulaire | Sélectionner le vocabulaire dans lequel les valeurs sont choisies | Ingrédients
 |Type de référence >  Créer les entités référencées si elles n'existent pas déjà | Si les nouveaux termes ingrédients peuvent être créés depuis le formulaire de création du contenu | Coché
 |================================
 +
 --
 // Reference type section of field settings page for Ingredients field.
-image:images/structure-taxonomy-setup-field-settings-2.png["Type de référence
-dans les paramètres du champ",width="100%"]
+image:images/structure-taxonomy-setup-field-settings-2.png["Paramètres du champ
+de type référence",width="100%"]
 --
 
 

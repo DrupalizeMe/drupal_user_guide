@@ -24,7 +24,11 @@ development purposes.
 * If you want to use Drush for some of the steps in this task, Drush must be
 installed. See <<install-tools>>.
 
-==== Steps
+* If you want to use DDEV for your local environment follow the steps in
+<<install-ddev>>. Then, follow the instructions in the DDEV specific section
+below.
+
+==== Generic steps for making a development site
 
 . Follow the steps in <<install-prepare>>, so that you have hosting set up for
 your development site, you know where the web root is for your development site,
@@ -160,6 +164,26 @@ development site, in the settings.php file, you would need to have:
 ----
 $config['system.site']['name'] =
   "Development Site for Anytown Farmers Market";
+----
+
+==== DDEV specific steps for making a development site
+
+. In the directory where you copied all of the files from your live site, run the
+  following command to configure, and start, the DDEV environment:
++
+----
+ddev config --project-type=drupal11 --docroot=web
+ddev start
+----
++
+This assumes that you are using the recommended directory structure where the
+web root is in a subdirectory called _web_. If you are using a different
+directory structure, you will need to adjust the _--docroot_ option accordingly.
+
+. Use the following command to import the database dump file you created:
++
+----
+ddev import-db --src=PATH/TO/BACKUPFILE.sql.gz
 ----
 
 ==== Expand your understanding

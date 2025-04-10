@@ -29,47 +29,49 @@ Ajouter les champs URL du vendeur et image principale au type de contenu Vendeur
 . Dans le menu d'administration _Gérer_, aller dans _Structure_ > _Types de
 contenu_ (_admin/structure/types_). Puis cliquer sur _Gérer les champs_ dans la
 liste déroulante du type de contenu Vendeur. La page _Gérer les champs_
-apparaît.
+apparaît. De là, vous pouvez soit créer un nouveau champ pour le type de
+contenu, soit réutiliser un champ existant. Noter que les noms et descriptions
+des types de contenu et champs fournis par votre profil d'installation sont
+affichés en anglais sur ces pages ; consulter <<language-concept>> pour une
+explication.
 
-. Cliquer sur _Ajouter champ_. La page _Ajouter un champ_ apparaît. Vous pouvez
-soit créer un nouveau champ pour le type de contenu, soit réutiliser un champ
-existant.
+. Cliquer sur _Ajouter champ_. La page _Ajouter un champ_ apparaît.
++
+--
+// Initial page for admin/structure/types/manage/vendor/fields/add-field.
+image:images/structure-fields-add-field.png["Choix d'un type de champ sur la page d'ajout d'un champ"]
+--
+
+. Choisir le type de champ _Lien_ dans les options _Choisir un type de champ_.
+Cliquer sur _Continuer_. La page _Ajouter un champ apparaît. Elle contient un
+champ permettant de configurer l'étiquette du champ.
 
 . Remplir les champs commme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Nom du champ | Explication | Valeur
-| Ajouter un nouveau champ | Type de champ| Lien
 | Étiquette | Étiquette visible sur les pages d'administration | URL du vendeur
+| Choisir un type de champ | Type de champ | Lien
 |================================
 +
 Un nom système est automatiquement généré, basé sur la valeur de l'_Étiquette_.
 Cliquer sur _Modifier_ si vous souhaitez surcharger la valeur par défaut.
 +
 --
-// Initial page for admin/structure/types/manage/vendor/fields/add-field.
-image:images/structure-fields-add-field.png["Page d'ajout d'un champ"]
+// Second page for admin/structure/types/manage/vendor/fields/add-field.
+image:images/structure-fields-add-field-label.png["Page Ajouter un champ permettant de configurer l'étiquette du champ"]
 --
 
-. Cliquer sur _Enregistrer et continuer_. La page URL du vendeur apparaît, qui
-vous permet de définir le nombre de valeurs autorisées. Remplir les champs comme
+. Cliquer sur _Continuer_. La page URL du vendeur apparaît, qui
+vous permet de configurer le champ. Remplir les champs comme
 indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Nom du champ | Explication | Valeur
-| Nombre de valeurs autorisées | Le nombre de valeurs qui peuvent être saisies. | Limité, 1
-|================================
-
-. Cliquer sur _Enregistrer les paramètres du champ_. La page _Paramètres du
-champ URL du vendeur pour Vendeur_ apparaît, qui vous permet de configurer le
-champ. Remplir les champs comme indiqué ci-dessous.
-+
-[width="100%",frame="topbot",options="header"]
-|================================
-| Nom du champ | Explication | Valeur
 | Étiquette  | Étiquette visible dans le formulaire de contenu | URL du vendeur
+| Nombre de valeurs autorisé | Le nombre de valeurs qui peuvent être saisies | Limité, 1
 | Texte d'aide | L'instruction affichée sous le champ | (laisser vide)
 | Champ requis | Si le champ est requis ou non | Décoché
 | Type de lien autorisé | Le type de liens qui peuvent être saisis | Liens externes seulement
@@ -85,36 +87,31 @@ du vendeur",width="100%"]
 . Cliquer sur _Enregistrer les paramètres_. L'URL du vendeur a été ajoutée au
 type de contenu. Continuer en créant le champ image principale.
 
-. Cliquer sur _Ajouter un champ_. La page _Ajouter un champ_ apparaît. Remplir
-les champs commme indiqué ci-dessous.
+. Cliquer sur _Créer un nouveau champ_. La page _Ajouter un champ_ apparaît.
+
+. Choisir le type de champ _Transfert de fichier_ depuis les options _Choisir un
+type de champ_. La page _Ajouter un champ apparaît. Elle contient un formulaire
+pour configurer l'étiquette du champ.
+
+. Certains champs nécessitent la sélection d'un sous-type. Remplir les champs
+commme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Nom du champ | Explication | Valeur
-| Ajouter un nouveau champ | Type de champ| Image
 | Étiquette | Étiquette visible sur les pages d'administration | Image principale
+| Choisir une option ci-dessous | Sous-type de champ | Image
 |================================
 
-. Cliquer sur _Enregistrer et continuer_. La page Image principale apparaît.
-Remplir les champs comme indiqué ci-dessous.
-+
-[width="100%",frame="topbot",options="header"]
-|================================
-| Nom du champ | Explication | Valeur
-| Nombre de valeurs autorisées | Le nombre de valeurs qui peuvent être saisies. | Limité, 1
-|================================
-+
-Vous pouvez ici définir une image par défaut. Elle sera utilisée lorsque vous ne
-fournirez pas d'image lors de la création d'un contenu Vendeur.
-
-. Cliquer sur _Enregistrer les paramètres du champ_. La page _Paramètres du
-champ Image principale pour Vendeur_ apparaît, qui vous permet de configurer le
-champ. Remplir les champs comme indiqué ci-dessous.
+. Cliquer sur _Continuer_. La page paramètres de Main image pour Vendeur
+apparaît. Remplir les champs comme indiqué ci-dessous.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Nom du champ | Explication | Valeur
 | Étiquette  | Étiquette visible dans le formulaire de contenu | Image principale
+| Nombre de valeurs autorisées | Le nombre de valeurs qui peuvent être saisies. | Limité, 1
+| Image par défaut | Vous pouvez configurer ici une image par défaut. Elle sera utilisée lorsque vous ne fournissez pas d'image lorsque vous créez un élément de contenu Vendeur. | (laisser vide)
 | Texte d'aide | Les instructions affichées sous le champ | (laisser vide)
 | Champ requis | Si le champ est requis ou non | Coché
 | Extensions de fichier autorisées | Le type des images qui peuvent être téléchargées | png, gif, jpg, jpeg
@@ -143,11 +140,14 @@ image:images/structure-fields-result.png["Page Gérer les champs",width="100%"]
 
 . Ajouter un champ Image principale au type de contenu Recette, en utilisant les
 mêmes étapes. Commencer par aller à la page de _Gérer les champs_ du type de
-contenu Recette de l'étape 1. Puis aller directement à l'étape 7 et suivre les
-étapes restantes, mais en réutilisant le champ existant Image principale que
-vous avez créé pour le type de contenu Vendeur plutôt que de créer un nouveau
-champ. Dans les étapes suivantes, certains écrans de configuration ne seront pas
-disponibles, à cause de la réutilisation du champ.
+contenu Recette. Utiliser ensuite le bouton _Réutiliser_ qui correspond au champ
+Image principale dans le tableau. Aller directement à l'étape 7 et suivre les
+étapes restantes.
++
+--
+// Modal dialog with list of fields to re-use.
+image:images/structure-fields-main-img-reuse.png["Sélectionner un champ à réutiliser",width="100%"]
+--
 
 . Créer deux contenus de type Vendeur (consulter <<content-create>>) appelés
 "Ferme Joyeuse" et "Doux miel". Assurez vous d'inclure des images et des URL.
@@ -173,7 +173,9 @@ de documentation de la communauté sur _Drupal.org_ "Add a field to a content ty
 
 *Attributions*
 
-Ecrit par https://www.drupal.org/u/sree[Sree Veturi] et
-https://www.drupal.org/u/batigolix[Boris Doesborg].
+Écrit par https://www.drupal.org/u/sree[Sree Veturi],
+https://www.drupal.org/u/batigolix[Boris Doesborg] et
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] de
+https://drupalize.me[Drupalize.Me].
 Traduit par https://www.drupal.org/u/vanessakovalsky[Vanessa Kovalsky] et
 https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

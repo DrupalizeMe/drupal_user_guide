@@ -1,9 +1,9 @@
 [[extend-manual-install]]
 
-=== Télécharger manuellement des modules ou des thèmes
+=== Installer manuellement des modules ou des thèmes
 
 [role="summary"]
-Comment télécharger manuellement un module ou un thème.
+Comment installer manuellement un module ou un thème.
 
 (((Module,téléchargement)))
 (((Module contribué,téléchargement)))
@@ -14,10 +14,8 @@ Comment télécharger manuellement un module ou un thème.
 
 ==== Objectif
 
-Télécharger manuellement un module ou un thème et le transférer sur votre site,
-lorsque les méthodes d'installation ou de mise à jour pour installer ou mettre à
-jour un module ou un thème via votre site web ou avec Drush ne fonctionnent pas,
-ou lors de la mise en place d'un module ou d'un thème personnalisé.
+Des modules ou des thèmes personnalisés pourraient ne pas être disponibles via
+Composer, et dans ce cas leurs fichiers doivent être installés manuellement.
 
 ==== Prérequis
 
@@ -28,23 +26,12 @@ ou lors de la mise en place d'un module ou d'un thème personnalisé.
 
 ==== Préquis du site
 
-Pour effectuer le téléchargement manuel décrit  dans cette page, les conditions
-suivantes doivent se présenter :
+Recourir à cette approche si vous avez créé un module ou thème personnalisé ou
+avez reçu directement les fichiers de quelqu'un.
 
-* Des problèmes de droits d'accès fichier
-
-* Des problèmes de droits FTP
-
-* Vous avez créé un module/thème personnalisé ou reçu des fichiers de quelqu'un
-
-* Vous n'avez pas réussi à suivre les instructions dans
-<<extend-module-install>>, <<extend-theme-install>>, <<security-update-module>>,
-ou <<security-update-theme>>
-
-Sauter cette page si aucun des cas susmentionnés ne s'applique à votre
-situation. Si vous utilisez Composer pour gérer les fichiers de votre site,
-suivre les étapes décrivant comment mettre à jour vos fichiers dans
-<<install-composer>> au lieu de cette page.
+Quand vous installez ou mettez à jour le cœur, des thèmes ou des modules
+contribués, vous devriez utiliser Composer. Consulter en ce cas
+<<install-composer>> et <<extend-module-install>>.
 
 ==== Étapes
 
@@ -55,28 +42,6 @@ téléchargement. À la place, créer une archive (que vous savez comment extrai
 sur le serveur) et continuer avec les étapes concernant le transfert et
 l'extraction, en utilisant n'importe quelle méthode appropriée, eu égard à la
 manière dont vous avez initialement créé l'archive.
-
-===== Téléchargement des fichiers
-
-. Ouvrir la page de projet du thème ou du module sur drupal.org ; par exemple,
-la page d'_Admin toolbar_   (https://www.drupal.org/project/admin_toolbar).
-
-. Faire défiler la page jusqu'à la section _Téléchargements_ vers le bas de la page.
-+
---
-// Downloads section of the Admin Toolbar project page on drupal.org.
-image:images/extend-manual-install-download.png["Téléchargement de modules"]
---
-
-. Cliquer sur _tar.gz pour télécharger le fichier sur votre ordinateur. Sinon,
-si vous avez accès au terminal sur votre serveur d'hébergement (sous Linux),
-vous pouvez copier l'adresse du lien vers le fichier _tar.gz_ depuis votre
-navigateur, et utiliser cette commande pour télécharger le fichier (remplacer
-l'URL copiée) :
-+
-----
-wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-2.4.tar.gz
-----
 
 ===== Transférer les fichiers sur votre site et les extraire
 
@@ -117,7 +82,7 @@ au terminal sur votre serveur d'hébergment (sous Linux) et il s'agit d'un
 fichier tar.gz, il est possible d'utiliser une commande telle que :
 +
 ----
-tar -xzf admin_toolbar-8.x-2.4.tar.gz
+tar -xzf custom_toolbar-2.4.0.tar.gz
 ----
 
 . Supprimer le fichier compressé du serveur, à moins que le mode d'extraction
@@ -158,7 +123,9 @@ documentation sur _Drupal.org_ de la communauté : "Installing themes"]
 *Attributions*
 
 Écrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
 https://www.drupal.org/u/vegantriathlete[Marc Isaacson] et
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] de
+https://drupalize.me[Drupalize.Me].
 Traduit par https://www.drupal.org/u/onewomanbiz[Lydie Parisot] et
 https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

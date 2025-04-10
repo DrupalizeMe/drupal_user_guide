@@ -4,6 +4,11 @@
 (((Glossaire)))
 (((Terminologie (Glossaire))))
 
+(((Affichage, définition)))
+[[glossary-display]] Affichage (dans une vue)::
+  Type de rendu d'une <<glossary-view, vue>>, par exemple une page, un
+  <<glossary-block, bloc>> ou un flue. Consulter <<view-parts>> pour plus
+  d'informations.
 (((Ajax,définition)))
 [glossary]
 [[glossary-ajax]] Ajax::
@@ -13,9 +18,9 @@
 (((Alias,définition)))
 [[glossary-alias]] Alias::
    Un nom convivial pour remplacer le <<glossary-path,chemin>> interne que le
-   système assigne à une URL du site. Par exemple, vous pourriez assigner un
-   alias _apropos_ à la page "À propos" de votre site, pour remplacer le chemin
-   interne _/node/5_. Cela donnerait à la page l'URL
+   système assigne à une <<glossary-url,URL>> du site. Par exemple, vous
+   pourriez assigner un alias _apropos_ à la page "À propos" de votre site, pour
+   remplacer le chemin interne _/node/5_. Cela donnerait à la page l'URL
    _http://example.com/apropos_ au lieu de _http://example.com/node/5_.
    Consulter <<content-paths>> pour plus d'informations.
 (((Anonyme,définition)))
@@ -29,6 +34,10 @@
    choisissez. Par exemple, il y a des assistants pour créer des
    <<glossary-view,vues>> de différents types. Consulter <<views-create>> pour
    plus d'informations.
+(((Authentifié,définition)))
+[[glossary-authenticated]] Authentifié::
+   Une personne (<<glossary-user,utilisateur>>) interagissant avec le site qui
+   est connectée. Consulter <<user-concept>> pour plus d'informations.
 (((Bloc,définition)))
 [[glossary-block]] Bloc::
    Un morceau de <<glossary-content,contenu>> (texte, images, liens, etc.) qui
@@ -63,12 +72,19 @@
    d'informations.
 (((Chemin,définition)))
 [[glossary-path]] Chemin::
-   La dernière partie, unique, de l'URL interne que le système assigne à une
-   page du site, qui peut être une page visible publiquement par les visiteurs
-   ou une page d'administration. Par exemple, l'URL interne de la page À propos
-   de votre site  pourrait être _http://example.com/node/5_, et dans ce cas, le
-   chemin serait _node/5_. Consulter aussi <<glossary-alias,alias>>. Consulter
-   <<content-paths>> pour plus d'informations.
+   La dernière partie, unique, de l'<<glossary-url,URL>> interne que le système
+   assigne à une page du site, qui peut être une page visible publiquement par
+   les visiteurs ou une page d'administration. Par exemple, l'URL interne de la
+   page À propos de votre site  pourrait être _http://example.com/node/5_, et
+   dans ce cas, le chemin serait _node/5_. Consulter aussi
+   <<glossary-alias,alias>>. Consulter <<content-paths>> pour plus
+   d'informations.
+(((Composer,définition)))
+[[glossary-composer]] Composer::
+   Le gestionnaire de dépendances de PHP utilisé par Drupal, <<glossary-drush,
+   Drush>>, le _framework_ et d'autres. Il est le moyen d'installation à
+   privilégier pour installer des projets Drupal. Consulter <<install-composer>>
+   pour plus d'informations.
 (((Cœur de Drupal,définition)))
 [[glossary-drupal-core]] Cœur de Drupal::
    Les fichiers, thèmes, profils et modules inclus avec le logiciel téléchargé
@@ -96,6 +112,12 @@
    <<glossary-distribution,distributions>> qui ne font pas partie du
    <<glossary-drupal-core,cœur de Drupal>>, et qui peuvent être téléchargés
    séparément depuis le site web https://www.drupal.org[_Drupal.org_].
+(((Coder, définition)))
+[[glossary-coder]] Conventions de codage::
+   Les conventions de codage sont les règles destinées aux développeurs, qui
+   définissent les bonnes pratiques, le formatage et autres, visant à ce que
+   tout le monde utilise les mêmes conventions, et ait les mêmes attentes en
+   visualisant du code. Consulter <<install-tools>> pour plus d'informations.
 (((Tâche planifiée,définition)))
 [[glossary-cron]] Cron::
    Sur certains systèmes d'exploitation, _cron_ est une application de
@@ -104,6 +126,22 @@
    déclenchées soit par le planificateur cron du système d'exploitation, ou de
    manière interne. Consulter <<security-cron-concept>> pour plus
    d'informations.
+(((Cross Site Scripting (XSS), définition)))
+[[glossary-cross-site-scripting]] Cross Site Scripting::
+   Faille de sécurité souvent présente sur des sites web. Sur un site qui n'est
+   pas bien protégé, des utilisateur mal intentionnés peuvent injecter un script
+   dans des pages web qui sont vues par d'autres utilisateurs. Consulter
+   <<structure-text-formats>> pour plus d'informations.
+(((Dépôt, définition)))
+[[glossary-repository]] Dépôt::
+   Endroit où un système de gestion de version stocke tous les fichiers et
+   répertoires d'un projet. Consulter <<install-tools>> pour plus
+   d'informations.
+(((Devel, définition)))
+[[glossary-devel]] Devel::
+   Module qui aide à la réalisation de tâches de développement comme le débogage
+   ou l'inspection du code, l'analyse de requêtes, et la génération de contenu
+   d'exemple. Consulter <<install-tools>> pour plus d'informations.
 (((Distribution,définition)))
 [[glossary-distribution]] Distribution::
    Un seul téléchargement qui fournit un raccourci pour mettre en place un site
@@ -111,7 +149,8 @@
    Une distribution comprend le <<glossary-drupal-core,cœur de Drupal>> ainsi
    que des <<glossary-module,modules>> <<glossary-contributed,contribués>> et/ou
    des <<glossary-theme,thèmes>> ; beaucoup de distributions préconfigurent le
-   site ou créent même du contenu d'exemple à l'installation. Consulter
+   site ou créent même du contenu d'exemple à
+   l'<<glossary-installing,installation>>. Consulter
    <<understanding-distributions>> pour plus d'informations.
 (((Droit,définition)))
 [[glossary-permission]] Droit::
@@ -119,6 +158,16 @@
    particulier de <<glossary-content,contenu>>, ou visualiser les profils des
    utilisateurs. Consulter aussi <<glossary-role,rôle>>. Consulter
    <<user-concept>> pour plus d'informations.
+(((Drupal Association (DA) ,définition)))
+(((DA (Drupal Association),définition)))
+[[glossary-drupal-association]] Drupal Association::
+   Organisation à but non lucratif dont le but est de soutenir le projet Drupal
+   et sa communauté. Consulter <<understanding-project>> pour plus
+   d'informations.
+(((Drush,définition)))
+[[glossary-drush]] Drush::
+  Interpréteur de commandes et interface permettant d'écrire des scripts pour
+  Drupal. Consulter <<install-tools>> pour plus d'informations.
 (((Élément de contenu,définition)))
 [[glossary-content-item]] Élément de contenu::
    Un élément de <<glossary-content,contenu>> qui est normalement destiné à être
@@ -145,6 +194,16 @@
    dernière fois, etc. Consulter aussi <<glossary-content,contenu>> et
    <<glossary-configuration,configuration>>. Consulter <<understanding-data>>
    pour plus d'informations.
+(((Filtre, définition)))
+[[glossary-filter]] Filtre (dans une vue)::
+  Limite les données à afficher dans une <<glossary-view, vue>>, en se basant
+  sur des critères tels que le statut de publication, le type de contenu ou la
+  valeur d'un champ. Consulter <<view-parts>> pour plus d'informations.
+(((Filtre contextuel, définition)))
+[[glossary-contextual-filter]] Filtre contextuel (dans une vue)::
+  Limite les données à afficher dans une <<glossary-view, vue>>, en se basant
+  sur le contexte de l'<<glossary-display, affichage>> de la vue, comme l'URL
+  complète de la page. Consulter <<view-parts>> pour plus d'informations.
 (((Format de texte,définition)))
 [[glossary-text-format]] Format de texte::
    <<glossary-configuration,Configuration>> qui définit le traitement appliqué
@@ -159,6 +218,13 @@
    développé par une communauté et publiée sous une licence non commerciale.
    Consulter aussi <<glossary-gpl,GPL>>. Consulter <<understanding-project>> pur
    plus d'informations.
+(((Git, définition)))
+[[glossary-git]] Git::
+  <<glossary-vcs, Système de gestion de versions>> utilisé par les développeurs
+  Drupal pour coordonner les modifications apportées par chacun. Git enregistre
+  les changements qu'ils apportent à un projet donné dans une arborescence de
+  répertoires appelé un <<glossary-repository, dépôt>> Git. Consulter
+  <<install-tools>> pour plus d'informations.
 (((GPL (General Public License or GNU General Public License),définition)))
 (((GNU General Public License,définition)))
 [[glossary-gpl]] GPL::
@@ -171,6 +237,13 @@
 (((Groupe de champs,définition)))
 [[glossary-field-bundle]] Groupe de champs::
    Synonyme de <<glossary-entity-subtype,sous-type d'entité>> (_field bundle_).
+(((Installation,définition)))
+[[glossary-installing]] Installation::
+   Préparation du cœur de Drupal ou de n'importe quel module ou thème contribué
+   en vue de son usage. Dans le cas du cœur de Drupal, cela consiste à
+   télécharger les fichiers nécessaires, créer la base de données, configurer et
+   exécuter le script d'installation. Consulter <<install-decide>> pour plus
+   d'informations.
 (((Interface utilisateur (UI),définition)))
 [[glossary-user-interface]] Interface utilisateur::
    Le texte, les styles, et les images qui sont visibles sur le site, séparés de
@@ -253,6 +326,12 @@
    ou autres supports. Un site <<glossary-responsive,réactif>> (_responsive_)
    ajuste sa présentation à ces points de rupture. Consulter
    <<structure-image-responsive>> pour plus d'informations.
+(((Processus éditorial, définition)))
+[[glossary-editorial-workflow]] Processus éditorial::
+   Processus de création, validation, modification et publication de contenu.
+   Plusieurs personnes ayant différents rôles (par exemple, des rédacteurs de
+   contenu ou des éditeurs) peuvent y prendre part. Consulter
+   <<planning-workflow>> pour plus d'informations.
 (((Réactif,définition)))
 [[glossary-responsive]] Réactif::
    Un site ou <<glossary-theme,thème>> est réactif (_responsive_) s'il ajuste sa
@@ -268,6 +347,11 @@
    <<glossary-theme,thèmes>> et le contenu affiché dans chaque région est
    contenu dans des <<glossary-block,blocs>>. Consulter <<block-regions>> pour
    plus d'informations.
+(((Relation, définition)))
+[[glossary-relationship]] Relation (dans une vue)::
+  Expansion de la donnée à afficher dans une vue, en mettant en relation le
+  contenu de base avec d'autres entités de contenu. Consulter <<view-parts>>
+  pour plus d'informations.
 (((Révision,définition)))
 [[glossary-revision]] Révision::
    Un enregistrement de l'état présent ou passé d'une <<glossary-entity,entité>>
@@ -278,12 +362,26 @@
    Un ensemble de <<glossary-permission,permissions>> droits qui peuvent être
    appliqués à un <<glossary-user,compte d'utilisateur>>. Consulter
    <<user-concept>> pour plus d'informations.
+(((Session,définition)))
+[[glossary-session]] Session::
+  Informations concernant les interactions d'un visiteur avec le site, par
+  exemple s'il est connecté, ou ses cookies. Consulter <<understanding-data>>
+  pour plus d'informations.
 (((SGC (Système de gestion de contenu),définition)))
 (((Système de gestion de contenu (SGC),définition)))
 [[glossary-cms]] SGC::
    Acronyme de
    <<glossary-content-management-system,Système de gestion de contenu>> (en
    anglais _content management system_ (SGC)).
+(((Site de développement,définition)))
+[[glossary-development-site]] Site de développement::
+   Copie du site de production qui est utilisée pour le développement, la mise à
+   jour et les tests. Consulter <<install-dev-sites>> pour plus d'informations.
+(((Site de pré-production,définition)))
+[[glossary-staging-site]] Site de pré-production::
+   Copie du site de production qui peut être utilisée pour tester, ou pour
+   présenter des modifications au client pour approbation. Consulter
+   <<install-dev-sites>> pour plus d'informations.
 (((Sous-type d'entité,définition)))
 [[glossary-entity-subtype]] Sous-type d'entité::
    Au sein d'un <<glossary-entity-type,type d'entité>> de
@@ -307,6 +405,12 @@
    Une collection d'outils conçus pour permettre la création, la modification,
    l'organisation, la recherche, la récupération et le retrait d'informations
    sur un site web. Consulter <<understanding-drupal>> pour plus d'informations.
+(((Système de gestion de versions, définition)))
+[[glossary-vcs]] Système de gestion de versions::
+   Logiciel qui conserve les copies des fichiers et l'historique de modification
+   dans un <<glossary-repository, dépôt>>, et autorise l'ajout, la suppression
+   et la mise à jour de fichiers. Consulter <<install-tools>> pour plus
+   d'informations.
 (((Taxonomie,définition)))
 [[glossary-taxonomy]] Taxonomie::
    Le procédé de classification du <<glossary-content,contenu>>. Consulter
@@ -346,6 +450,11 @@
 [[glossary-ui]] UI::
    Acronyme anglais de _user interface_
    (<<glossary-user-interface,interface utilisateur>>).
+(((URL (Uniform Resource Locator),définition)))
+(((Uniform Resource Locator (URL),définition)))
+[[glossary-url]] URL::
+   L'adresse unique d'une page web sur le Web, par exemple
+   https://example.com/node/7. Consulter <<content-paths>> plus d'informations.
 (((Utilisateur,définition)))
 [[glossary-user]] Utilisateur::
    Une personne interagissant avec votre site, connectée ou
@@ -354,9 +463,9 @@
 (((Utilisateur un,définition)))
 [[glossary-user-one]] Utilisateur un (Utilisateur 1)::
    Le compte d'<<glossary-user,utilisateur>> initial qui est créé à
-   l'installation du site (et dont l'identifiant (_ID_) est 1). Il a
-   automatiquement tous les <<glossary-permission,droits>>, même si on ne lui a
-   pas assigné de <<glossary-role,rôle>> d'administration. Consulter
+   l'<<glossary-install,installation>> du site (et dont l'identifiant (_ID_) est
+   1). Il a automatiquement tous les <<glossary-permission,droits>>, même si on
+   ne lui a pas assigné de <<glossary-role,rôle>> d'administration. Consulter
    <<user-admin-account>> pour plus d'informations.
 (((Vocabulaire,définition)))
 [[glossary-vocabulary]] Vocabulaire::
@@ -397,3 +506,9 @@
    <<glossary-content,contenu>> faisant en sorte que ce qui est visualisé à
    l'écran soit très proche du produit final. Consulter
    <<structure-text-format-config>> pour plus d'informations.
+(((Workflow, définition)))
+[[glossary-workflow]] Workflow::
+   See <<glossary-editorial-workflow, Processus éditorial>>.
+(((XSS (Cross Site Scripting), définition)))
+[[glossary-xss]] XSS::
+   Acronyme pour <<glossary-cross-site-scripting, Cross Site Scripting>>.

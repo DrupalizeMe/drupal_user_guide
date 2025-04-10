@@ -21,6 +21,14 @@ Vue d'ensemble des méthodes que vous pouvez utiliser pour télécharger le cœu
 Pour construire un site, vous devrez d'abord télécharger le cœur (core). En
 fonction de vos plans, il y a plusieurs manières de télécharger le cœur :
 
+Utiliser Composer::
+  Si vous prévoyez de construire un site, et de continuer à le développer au
+  cours du temps, vous devriez utiliser Composer pour télécharger le cœur, parce
+  que Composer est la manière la plus convenable de gérer les dépendances. Si
+  vous prévoyez d'utiliser Drush (consulter <<install-tools>>), l'utilisation de
+  Composer est requise. Consulter <<install-composer>> pour les instructions
+  correspondantes.
+
 Essayer une démo en ligne gratuite::
   Si vous êtes en train d'évaluer Drupal en vue de l'utiliser pour construire un
   site, vous pouvez recourir à un fournisseur en ligne pour obtenir une
@@ -39,22 +47,6 @@ Utiliser un environnement pré-configuré::
   Consulter la section concernant votre système d'exploitation sur la
   https://www.drupal.org/docs/develop/local-server-setup[page de documentation de la communauté sur _Drupal.org_ "Local server setup guide"]
   avec les options envisageables.
-
-Téléchargement manuel depuis le site web::
-  Si vous prévoyez de construire un site sans modules complémentaires avec des
-  dépendances complexes, vous pouvez télécharger le cœur, ou une distribution
-  qui contient le cœur et des modules et thèmes additionnels, depuis le site
-  web. Consulter <<install-manual>> pour des instructions.
-
-Utiliser Composer::
-  Si vous prévoyez d'utiliser l'outil Drush (consulter <<install-tools>>), ou si
-  vous êtes en train de construire un site qui pourrait utiliser des modules
-  avec des dépendances complexes, vous devriez utiliser Composer pour
-  télécharger le cœur, car Composer gèrera correctement les dépendances.
-  Si vous commencez votre site en le téléchargeant manuellement, vous pourrez
-  plus tard le convertir en une installation utilisant Composer. Consulter
-  <<install-composer>> pour des instructions pour le téléchargement et la
-  conversion.
 
 ==== Que se passe-t-il quand j'installe le cœur ?
 
@@ -76,16 +68,21 @@ Installeur interactif::
   que vous saisissez dans les formulaires. Consulter <<install-prepare>> et
   <<install-run>>.
 
-Installeur d'un site de démo::
-  Si vous téléchargez le cœur sur votre ordinateur local, vous pouvez rapidement
-  créer un site de démo temporaire qui utilise le serveur web intégré et la base
-  de données SQLite qui sont pris en charge par PHP. La commande pour mettre en
-  place un site de démo est donnée à la fin d'<<install-manual>>. Dans ce cas,
-  vous n'aurez pas à lancer l'installer interactif.
-
 Outil en ligne de commande::
   Des outils en ligne de commande (consulter <<install-tools>>) peuvent
   également être utilisés pour mener à bien les étapes de l'installation.
+
+Installeur d'un site de démo::
+  Créez rapidement rapidement un site de démo temporaire qui utilise le serveur
+  web intégré et la base de données SQLite qui sont pris en charge par PHP en
+  exécutant la commande ci-dessous depuis le répertoire racine de votre projet.
+  Dans ce cas, vous ne lancerez pas l'installeur interactif. Consulter la page
+  https://www.drupal.org/docs/official_docs/evaluator-guide[Evaluator Guide] (en
+  anglais) pour en apprendre plus.
+
+  ----
+  php -d memory_limit=256M core/scripts/drupal quick-start demo_umami
+  ----
 
 // ==== Related topics
 

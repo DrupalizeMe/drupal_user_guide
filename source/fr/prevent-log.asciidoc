@@ -25,6 +25,9 @@ mesure où c'est souvent la seule manière de savoir s'y passe.
 Vous pouvez trouver les entrées récentes du journal dans le menu
 d'administration _Gérer_ en naviguant vers _Rapports_ > _Entrées récentes du
 journal_ (_admin/reports/dblog_).
+Ces entrées de journal peuvent être purgées par les administrateurs ou les
+tâches planifiées : elles ne devraient pas être utilisées pour de l'_audit
+trail_. Le module Syslog est adapté à de tels usages.
 
 // Recent log messages report (admin/reports/dblog).
 image:images/prevent-log.png["Entrées récentes du journal sur un site basique",width="100%"]
