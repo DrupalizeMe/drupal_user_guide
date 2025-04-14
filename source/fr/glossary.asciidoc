@@ -7,7 +7,7 @@
 (((Affichage, définition)))
 [[glossary-display]] Affichage (dans une vue)::
   Type de rendu d'une <<glossary-view, vue>>, par exemple une page, un
-  <<glossary-block, bloc>> ou un flue. Consulter <<view-parts>> pour plus
+  <<glossary-block, bloc>> ou un flue. Consulter <<views-parts>> pour plus
   d'informations.
 (((Ajax,définition)))
 [glossary]
@@ -198,12 +198,12 @@
 [[glossary-filter]] Filtre (dans une vue)::
   Limite les données à afficher dans une <<glossary-view, vue>>, en se basant
   sur des critères tels que le statut de publication, le type de contenu ou la
-  valeur d'un champ. Consulter <<view-parts>> pour plus d'informations.
+  valeur d'un champ. Consulter <<views-parts>> pour plus d'informations.
 (((Filtre contextuel, définition)))
 [[glossary-contextual-filter]] Filtre contextuel (dans une vue)::
   Limite les données à afficher dans une <<glossary-view, vue>>, en se basant
   sur le contexte de l'<<glossary-display, affichage>> de la vue, comme l'URL
-  complète de la page. Consulter <<view-parts>> pour plus d'informations.
+  complète de la page. Consulter <<views-parts>> pour plus d'informations.
 (((Format de texte,définition)))
 [[glossary-text-format]] Format de texte::
    <<glossary-configuration,Configuration>> qui définit le traitement appliqué
@@ -350,7 +350,7 @@
 (((Relation, définition)))
 [[glossary-relationship]] Relation (dans une vue)::
   Expansion de la donnée à afficher dans une vue, en mettant en relation le
-  contenu de base avec d'autres entités de contenu. Consulter <<view-parts>>
+  contenu de base avec d'autres entités de contenu. Consulter <<views-parts>>
   pour plus d'informations.
 (((Révision,définition)))
 [[glossary-revision]] Révision::
@@ -463,7 +463,7 @@
 (((Utilisateur un,définition)))
 [[glossary-user-one]] Utilisateur un (Utilisateur 1)::
    Le compte d'<<glossary-user,utilisateur>> initial qui est créé à
-   l'<<glossary-install,installation>> du site (et dont l'identifiant (_ID_) est
+   l'<<glossary-installing,installation>> du site (et dont l'identifiant (_ID_) est
    1). Il a automatiquement tous les <<glossary-permission,droits>>, même si on
    ne lui a pas assigné de <<glossary-role,rôle>> d'administration. Consulter
    <<user-admin-account>> pour plus d'informations.
