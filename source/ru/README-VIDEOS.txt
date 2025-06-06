@@ -1,31 +1,29 @@
-When videos are embedded in a guide page the video producer must provide
-instructions for downloading the translatable caption file, translating, and
-providing translations so they can be added to the video.
+Когда видео встраиваются в страницу руководства, производитель видео должен предоставить
+инструкции по загрузке файла с переводимыми субтитрами, переводу и
+предоставлению переводов, чтобы их можно было добавить в видео.
 
-The following is a list of video producers and instructions for translating
-captions from each.
+Ниже приведен список производителей видео и инструкции по переводу
+субтитров от каждого из них.
 
 Drupalize.Me
 ------------
 
 https://drupalize.me
 
-Captions for all videos produced by Drupalize.Me are provided in English and can
-be translated to other languages using dotsub (https://dotsub.com). Instructions
-for how to use dotsub to translate files can be found here:
-  https://drupalize.me/blog/201210/crowd-sourced-subtitles-free-drupal-videos
-You may also use a tool of your choice for translating the captions; as long as
-they can be exported and provided to us in SRT format we can incorporate them.
-If you would like to use another tool please get in touch with us at
-info@drupalize.me so we can incorporate your translations.
+Субтитры для всех видео, созданных Drupalize.Me, предоставляются на английском языке и могут
+быть переведены на другие языки с помощью dotsub (https://dotsub.com). Инструкции
+по использованию dotsub для перевода файлов можно найти здесь:
+https://drupalize.me/blog/201210/crowd-sourced-subtitles-free-drupal-videos
+Вы также можете использовать инструмент по вашему выбору для перевода субтитров; пока их можно экспортировать и предоставить нам в формате SRT, мы можем их включить.
+Если вы хотите использовать другой инструмент, свяжитесь с нами по адресу
+info@drupalize.me, чтобы мы могли включить ваши переводы.
 
-English, and any existing translated, captions can be downloaded from
-  https://dotsub.com/view/user/drupalizeme
-Choose the video you would like to retrieve captions for and then use the
-download tool on the resulting page.
+Английские и любые существующие переведенные субтитры можно загрузить с
+https://dotsub.com/view/user/drupalizeme
+Выберите видео, для которого вы хотите получить субтитры, а затем используйте
+инструмент загрузки на полученной странице.
 
-Drupalize.Me currently has videos embedded on the following English language
-guide pages:
+Drupalize.Me в настоящее время имеет видео, встроенные на следующих страницах руководства на английском языке:
 
 - block-create-custom
 - block-place
