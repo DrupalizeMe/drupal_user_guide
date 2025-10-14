@@ -1,9 +1,11 @@
 [[user_guide]]
 = Drupal Руководство пользователя
+:toc: right
+:sectnums:
+:sectnumlevels: 2
 
 // Главы определяются здесь, каждая глава включает собственные
 // файлы тем, чтобы выводить их в нужном порядке.
-
 
 [[preface]]
 
@@ -24,7 +26,7 @@ include::preface-scenario.asciidoc[]
 == Основы Drupal
 
 [role="summary"]
-Обзор основных коцепций Drupal таких как модули, темы, диструбутивы, и типы данных.
+Обзор основных концепций Drupal, таких как модули, темы, дистрибутивы и типы данных.
 
 include::understanding-drupal.asciidoc[]
 include::understanding-modules.asciidoc[]
@@ -39,8 +41,7 @@ include::understanding-gpl.asciidoc[]
 == Проектирование сайта
 
 [role="summary"]
-Обзор концепций планирования сайта и общие макеты сайта. Сущности материалов и структура данных
-также описаны в этой главе.
+Обзор концепций планирования сайта и типовых макетов. Описываются сущности и структура данных.
 
 include::block-regions.asciidoc[]
 include::planning-layout.asciidoc[]
@@ -52,17 +53,17 @@ include::language-concept.asciidoc[]
 
 
 [[installation-chapter]]
-== Установка Drupal
+== Установка
 
 [role="summary"]
-Обзор требований к серверу и различные способы установки Drupal.
+Обзор требований к серверу и деталей основных задач по установке Drupal.
 
+include::install-prepare.asciidoc[]
 include::install-requirements.asciidoc[]
 include::install-tools.asciidoc[]
 include::install-decide.asciidoc[]
-include::install-prepare.asciidoc[]
+include::install-ddev.asciidoc[]
 include::install-composer.asciidoc[]
-include::install-manual.asciidoc[]
 include::install-run.asciidoc[]
 
 
@@ -70,7 +71,7 @@ include::install-run.asciidoc[]
 == Основные настройки сайта
 
 [role="summary"]
-Обзор основных настроек сайта. Описание установки и настройки модулей и тем оформления, настройки аккаунтов пользователей.
+Обзор основных понятий конфигурации сайта. Описаны задачи по установке модулей, настройке аккаунтов пользователей и тем.
 
 include::config-overview.asciidoc[]
 include::config-basic.asciidoc[]
@@ -82,26 +83,24 @@ include::config-theme.asciidoc[]
 
 
 [[content-chapter]]
-== Основные настройки страниц
+== Управление страницами
 
 [role="summary"]
-Обзор основ управления страницами сайта. Описание различных создания и редактирования материалов,
-быстрого редактирования и работы с меню.
+Обзор управления страницами. Описаны задачи по работе с материалами, быстрым редактированием и меню.
 
 include::content-paths.asciidoc[]
 include::content-create.asciidoc[]
 include::content-edit.asciidoc[]
-include::content-in-place-edit.asciidoc[]
 include::menu-home.asciidoc[]
 include::menu-concept.asciidoc[]
 include::menu-link-from-content.asciidoc[]
 include::menu-reorder.asciidoc[]
 
 [[content-structure-chapter]]
-== Настрока типов материалов
+== Структура контента
 
 [role="summary"]
-Обзор основ структуры контента. Описание типов материалов, таксономии и полей связей.
+Обзор структуры контента. Описаны типы материалов, таксономии и ссылочные поля.
 
 include::structure-content-type.asciidoc[]
 include::structure-content-type-delete.asciidoc[]
@@ -120,8 +119,8 @@ include::structure-image-responsive.asciidoc[]
 include::structure-text-formats.asciidoc[]
 include::structure-text-format-config.asciidoc[]
 
-// The following topic has been deferred, so remove the include for now.
-// @todo Put this link back in when/if the topic gets added back.
+// Следующая тема отложена, уберите include.
+// @todo Вернуть ссылку, когда/если тема будет добавлена обратно.
 // include::structure-pathauto.asciidoc[]
 
 
@@ -129,7 +128,7 @@ include::structure-text-format-config.asciidoc[]
 == Управление аккаунтами пользователей
 
 [role="summary"]
-Обзор страниц настроек для аккаунтов пользователей и основные возможности аккаунтов пользователей.
+Обзор концепций и задач по управлению аккаунтами пользователей.
 
 include::user-concept.asciidoc[]
 include::user-admin-account.asciidoc[]
@@ -144,7 +143,7 @@ include::user-content.asciidoc[]
 == Блоки
 
 [role="summary"]
-Обзор концепции блоков и настройки вывода блоков.
+Обзор блоков и основные задачи по их размещению.
 
 include::block-concept.asciidoc[]
 include::block-create-custom.asciidoc[]
@@ -155,7 +154,7 @@ include::block-place.asciidoc[]
 == Вывод материалов через Views
 
 [role="summary"]
-Обзор контруктора Views и вывод страниц и блоков через Views.
+Обзор Views и создание списков через страницы и блоки.
 
 include::views-concept.asciidoc[]
 include::views-parts.asciidoc[]
@@ -165,10 +164,10 @@ include::views-block.asciidoc[]
 
 
 [[multilingual-chapter]]
-== Создание мультиязычного сайта
+== Мультиязычность
 
 [role="summary"]
-Обзор как сделать Drupal сайт для отображения страниц на разных языках.
+Детали настройки мультиязычного сайта.
 
 include::language-add.asciidoc[]
 include::language-content-config.asciidoc[]
@@ -177,10 +176,10 @@ include::language-config-translate.asciidoc[]
 
 
 [[extend-chapter]]
-== Расширение функционала и настройка оформления сайта
+== Расширение и настройка
 
 [role="summary"]
-Обзор разработки и настройки внешнего вида сайта. Установка модулей и тем оформления.
+Обзор разработки и настройки сайта. Установка модулей и тем.
 
 include::extend-module-find.asciidoc[]
 include::extend-maintenance.asciidoc[]
@@ -196,10 +195,10 @@ include::extend-git.asciidoc[]
 
 
 [[prevent-chapter]]
-== Предупреждение и решение проблем
+== Предотвращение и решение проблем
 
 [role="summary"]
-Обзор работы кеша, создания резервных копий и сбора логов. Описание сброса кэша на сайте.
+Обзор кэша, резервного копирования и логов. Описан сброс кэша.
 
 include::prevent-cache.asciidoc[]
 include::prevent-cache-clear.asciidoc[]
@@ -209,10 +208,10 @@ include::prevent-status.asciidoc[]
 
 
 [[security-chapter]]
-== Безопасность и обслуживание сайта
+== Безопасность и обслуживание
 
 [role="summary"]
-Обзор основ безопасности и обслуживания сайта. Задачи на обновление ядра Drupal, модулей и тем.
+Обзор безопасности и обслуживания. Описано обновление ядра, модулей и тем.
 
 include::security-cron-concept.asciidoc[]
 include::security-cron.asciidoc[]
@@ -227,24 +226,24 @@ include::security-update-theme.asciidoc[]
 == Заключение
 
 [role="summary"]
-Обзор Drupal сообщества и где найти других людей из сообщества Drupal.
+Обзор Drupal-сообщества и как найти единомышленников.
 
 include::thoughts-connecting.asciidoc[]
 include::thoughts-support.asciidoc[]
 include::thoughts-learn-more.asciidoc[]
 
 
-// Glossary and index.
+// Глоссарий и предметный указатель.
 
 include::glossary.asciidoc[]
 
 == Предметный указатель
 
-// Appendix
+// Приложение
 
 [[appendix]]
 [appendix]
-== Дополнения
+== Приложение
 
 [role="summary"]
 Авторы этого руководства пользователя.

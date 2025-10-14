@@ -1,34 +1,29 @@
 [[structure-content-type-delete]]
 
-=== Удаление типа материала
+=== Удаление типа контента
 
 [role="summary"]
-Как удалить тип материала, который не требуется для сайта.
+Как удалить тип контента, который не требуется для сайта.
 
-(((Тип материала,удаление)))
+(((Тип контента,удаление)))
 
 ==== Цель
 
-Удалить ненужный тип материала _Article_.
+Удалить ненужный тип контента _Article_.
 
 ==== Необходимые знания
 
 <<config-overview>>
 
-==== Предварительные требования к сайту
+==== Требования к сайту
 
-Тип содержимого _Article_ должен существовать. Он создается на вашем сайте при
-установке с основным Стандартным профилем установки.
+Тип контента _Article_ должен существовать. Он создаётся на вашем сайте при установке с основным стандартным профилем установки.
 
 ==== Шаги
 
-. В административном меню _Управление_ перейдите к _Структура_ > _Типы
-материалов_ (_admin/structure/types_). Откроется страница _Типы материалов_.
+. В административном меню _Управление_ перейдите в _Структура_ > _Типы контента_ (_admin/structure/types_). Откроется страница _Типы контента_.
 
-. Нажмите кнопку _Удалить_ в раскрывающемся списке _Operations_ для типа
-содержимого _Article_. Обратите внимание, что название этого типа материала
-приведено на этой странице на английском языке; см. пояснения к нему в
-разделе <<language-concept>>.
+. Нажмите _Удалить_ в выпадающем списке _Operations_ для типа контента _Article_. Обратите внимание, что имя этого типа контента приведено на английском языке на этой странице; см. <<language-concept>> для объяснения.
 +
 --
 // Content types list on admin/structure/types, with operations dropdown
@@ -36,21 +31,18 @@
 image:images/structure-content-type-delete-dropdown.png["Article delete dropdown",width="100%"]
 --
 
-. Отображается страница подтверждения. Нажмите _Удалить_.
+. Появится страница подтверждения. Нажмите _Удалить_.
 +
 --
 // Confirmation page for deleting Article content type.
-image:images/structure-content-type-delete-confirmation.png["Article страница
- подтверждения удаления",width="100%"]
+image:images/structure-content-type-delete-confirmation.png["Article delete confirmation page",width="100%"]
 --
 
-. Появляется страница _Типы материалов_ с сообщением о том, что тип материала
-был удален:
+. Появится страница _Типы контента_ с сообщением о том, что тип контента был удалён:
 +
 --
 // Confirmation message after deleting Article content type.
-image:images/structure-content-type-delete-confirm.png["Article сообщение с
-подтверждающее удаление"]
+image:images/structure-content-type-delete-confirm.png["Article delete confirmation message"]
 --
 
 //==== Expand your understanding
@@ -68,6 +60,6 @@ video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Deleting a Cont
 *Авторы*
 
 Написано и отредактировано https://www.drupal.org/u/sree[Sree Veturi]
-and https://www.drupal.org/u/batigolix[Boris Doesborg].
+и https://www.drupal.org/u/batigolix[Boris Doesborg].
 
-Переведено: https://www.drupal.org/u/igorsh[Игорь Шабальников].
+Перевод: https://www.drupal.org/u/igorsh[Игорь Шабальников].
