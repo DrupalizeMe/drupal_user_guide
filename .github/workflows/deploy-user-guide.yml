@@ -1,0 +1,110 @@
+name: Build and deploy user guide to Drupalize.Me/Pantheon.
+
+on:
+  push:
+    branches:
+      - drupalizeme_live
+    paths:
+      - "source/en/**"
+      - "scripts/**"
+      - ".ddev/**"
+      - ".github/workflows/deploy-user-guide.yml"
+  workflow_dispatch:
+
+env:
+  SITE: dmetng
+  ENV: dev
+  SITE_ID: 63420aa4-ce06-4c3f-8f75-4d55c57437e6
+
+jobs:
+  build:
+    name: Build English HTML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup DDEV
+        uses: ddev/github-action-setup-ddev@v1
+        with:
+          autostart: true
+
+      - name: Build HTML feed for English
+        run: |
+          echo "en" > scripts/languages.txt
+          ddev exec bash -lc 'cd /var/www/html/scripts && bash -ex mkfeeds.sh'
+
+      - name: Generate tutorial changed-dates CSV
+        run: |
+          mkdir -p ./output/html_feed/en
+          rm -f ./output/html_feed/en/tutorial-changed-dates.csv
+
+          git ls-files -- source/en/*.asciidoc |
+          while read -r file; do
+            timestamp=$(git log --pretty=format:%ct -1 -- "$file")
+            mapped=$(echo "$file" | sed 's|^source/en||' | sed 's|\.asciidoc$|.html|')
+            echo "$mapped,$timestamp" >> ./output/html_feed/en/tutorial-changed-dates.csv
+          done
+
+          test -f ./output/html_feed/en/guide.docbook
+          test -f ./output/html_feed/en/tutorial-changed-dates.csv
+          test -f ./user_guide_video_map.csv
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: user-guide-html-feed-en
+          if-no-files-found: error
+          path: |
+            output/html_feed/en
+            user_guide_video_map.csv
+
+  deploy:
+    if: false
+    name: Sync and import on Pantheon
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: user-guide-html-feed-en
+          path: .
+
+      - name: Set up SSH
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.PANTHEON_SSH_KEY }}
+          known_hosts: unnecessary
+          config: |
+            Host *.drush.in
+              StrictHostKeyChecking no
+              Port 2222
+              ServerAliveInterval 60
+              ServerAliveCountMax 10
+
+      - name: Install Terminus
+        uses: pantheon-systems/terminus-github-actions@v1
+        with:
+          pantheon-machine-token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
+
+      - name: Rsync user guide files to Pantheon
+        run: |
+          rsync -rlvz --ipv4 --progress -e 'ssh -p 2222' output/html_feed/en/* --temp-dir=../../../tmp/ "${{ env.ENV }}.${{ env.SITE_ID }}@appserver.${{ env.ENV }}.${{ env.SITE_ID }}.drush.in:files/private/user_guide/"
+          rsync -rlvz --ipv4 --progress -e 'ssh -p 2222' user_guide_video_map.csv --temp-dir=../../../tmp/ "${{ env.ENV }}.${{ env.SITE_ID }}@appserver.${{ env.ENV }}.${{ env.SITE_ID }}.drush.in:files/private/user_guide/"
+
+      - name: Run Drupal migrations
+        run: |
+          terminus remote:drush "${{ env.SITE }}.${{ env.ENV }}" -- config:import --partial --source=modules/custom/dme_import/config/install/ --yes
+          terminus remote:drush "${{ env.SITE }}.${{ env.ENV }}" -- migrate-import user_guide_files --yes --update
+          terminus remote:drush "${{ env.SITE }}.${{ env.ENV }}" -- migrate-import user_guide_media_entities --yes --update
+          terminus remote:drush "${{ env.SITE }}.${{ env.ENV }}" -- migrate-import user_guide_chapters --yes --update
+          terminus remote:drush "${{ env.SITE }}.${{ env.ENV }}" -- migrate-import user_guide_tutorials --yes --update
+          terminus remote:drush "${{ env.SITE }}.${{ env.ENV }}" -- cr --yes
