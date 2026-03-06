@@ -63,8 +63,7 @@ jobs:
             user_guide_video_map.csv
 
   deploy:
-    if: false
-    name: Sync and import on Pantheon
+    name: Sync to pantheon and run migrations
     runs-on: ubuntu-latest
     needs: build
 
