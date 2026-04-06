@@ -183,7 +183,7 @@ directory structure, you will need to adjust the _--docroot_ option accordingly.
 . Use the following command to import the database dump file you created:
 +
 ----
-ddev import-db --src=PATH/TO/BACKUPFILE.sql.gz
+ddev import-db --file=PATH/TO/BACKUPFILE.sql.gz
 ----
 
 ==== Expand your understanding
