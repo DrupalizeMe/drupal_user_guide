@@ -1,0 +1,32 @@
+---
+title: "Alapfogalom: a nézetek építőelemei"
+description: "Ebben a szakaszban áttekintjük a nézetek adminisztrációs felületét."
+id: "views-parts"
+translation_key: "views-parts"
+source_locale: "hu"
+---
+## Szükséges előismeretek { #views-parts }
+
+* [planning-data-types](./planning-data-types.md)
+* [planning-modular](./planning-modular.md)
+* [views-concept](./views-concept.md)
+* [content-paths](./content-paths.md)
+* [block-concept](./block-concept.md)
+## Milyen részei vannak egy nézetnek?
+
+Amikor egy nézetet szerkesztünk az adminfelületen, akkor az oldal általában az alábbi részekből áll:
+
+- **Megjelenítés:** A nézeteknek nemcsak egy, hanem akár több megjelenítője is lehet, amelyek mind eltérő kimeneteket kínálnak. Nézzük az alábbi négy gyakori típust: Oldal;; A nézet kimenetét egy külön webcímen elérhető oldalon, annak központi, tartalmi régiójában jeleníti meg. Blokk;; A nézet eredményének létrehoz egy külön blokkot, amit utána bármely oldalra kihelyezhetünk. Hírcsatorna;; A nézet eredménylistájából egy RSS-típusú XML-fájlt állít elő. Csatolmány;; Lehetővé teszi a nézet eredménylistájának egy másik nézethez való kapcsolását.
+- **Formátum:** Attól függően, hogy az előbbiekben melyik kimeneti módot választottuk, lehetőségünk van táblázat, rács, HTML-lista vagy formázatlan lista használatára is. Néhány ezek közül további beállítási lehetőségeket is kínál, például ha az elemeket a mezőben nyers adatként, vagy renderelt entitásként szeretnénk használni (utóbbi ugyanis nem használható a táblázatos formátumhoz).
+- **Mezők:** Itt is az előző döntésünk függvényében nyílik lehetőségünk a továbbiakra: a választott formátumtól függően kijelölhetjük, mely mezők tartalmát szeretnénk látni a kimeneten. Maradva példánknál, a _Recept_ tartalomtípusunkhoz készíthetünk két külön nézetet: egyet, ami csak a receptek címét mutatja egy blokkban, és egy másikat, ami egy egész oldalon sorolja fel őket az összes adatukkal együtt – beleértve akár a hozzájuk csatolt fotókat is.
+- **Szűrési feltétel:** Az itt megadott szempontok szerint beállítható, hogy a nézet által megjelenítendő teljes adatmennyiségnek csak egy része legyen látható a kimeneten. _Receptek_ közül nyilván csak azokat a tartalmakat szeretnénk látogatóinknak megjeleníteni, amelyek közzé vannak téve – ez is egy szűrési feltétel. Ha megengedjük a felhasználóknak, hogy ezeket a feltételeket módosítsák maguknak, akkor azokat _felfedett szűrővé_ tehetjük. Ennek segítségével tudjuk lehetővé tenni számukra például, hogy a recepteket a szükséges hozzávalók szerint tudják szűrni.
+- **Rendezési szempont:** Azt határozza meg, hogy a már szűrt adatok milyen sorrendben következzenek egymás után. Rendezési szempontként valamelyik közös mezőjüket kell kijelölnünk.
+- **Szövegkörnyezeti szűrők:** Ezek a szűrők is hasonlóak az előbb említett szűrési feltételekhez, azzal a különbséggel, hogy értéküket a nézet környezetéből veszik: például az éppen megjelenített oldal webcímét, az aktuális dátumot és időt, vagy más, a nézet előállítása során kinyerhető értéket.
+- **Kapcsolatok:** A kapcsolatok lehetővé teszik, hogy a nézetünkhöz kiválasztott entitástípus (például felhasználó) mezőin túl további, más entitástípusok mezőiből is válogathassunk a fentebb említett _Mezők_ pontban. Ez úgy lehetséges, hogy az alap (a nézethez kiválasztott) entitástípus egy adott mezője kapcsolatban áll egy másik entitástípuséval. Például egy tartalomelemnek van egy _Szerző_ mezője, ami hivatkozik a webhely egy regisztrált felhasználójára. A kapcsolat létrehozását követően az így összekötött másik entitástípusból is használhatóak mezők.
+## Kapcsolódó témák
+
+[views-create](./views-create.md)
+
+*Közreműködők*
+
+Írta és szerkesztette: [Surendra Mohan](https://www.drupal.org/u/surendramohan) és [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon). Fordította: [Balu Ertl](https://www.drupal.org/u/balu-ertl) ([Brainsum](https://www.drupal.org/brainsum)).

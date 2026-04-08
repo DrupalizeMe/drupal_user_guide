@@ -1,0 +1,179 @@
+[project]
+site_name = "Guia d'usuari del Drupal 8"
+site_description = "Guia d'usuari del Drupal 8"
+site_url = "http://localhost:8000/ca/"
+docs_dir = "docs"
+site_dir = "site"
+
+copyright = """
+Copyright &copy; 2026 by the individual contributors, and can be used in accordance with the Creative Commons License, Attribution-ShareAlike 2.0 (CC BY-SA 2.0).
+"""
+
+nav = [
+  {"Guia d'usuari del Drupal 8" = [
+      "index.md",
+    ]},
+  {"Prefaci" = [
+      "copyright.md",
+      "preface-audience.md",
+      "preface-organization.md",
+      "preface-reporting.md",
+      "preface-conventions.md",
+      "preface-scenario.md",
+    ]},
+  {"Entendre el Drupal" = [
+      "understanding-drupal.md",
+      "understanding-modules.md",
+      "understanding-themes.md",
+      "understanding-distributions.md",
+      "understanding-data.md",
+      "understanding-project.md",
+      "understanding-gpl.md",
+    ]},
+  {"Planificació del vostre lloc" = [
+      "block-regions.md",
+      "planning-layout.md",
+      "planning-data-types.md",
+      "planning-modular.md",
+      "planning-structure.md",
+      "planning-workflow.md",
+    ]},
+  {"Instal·lació" = [
+      "install-requirements.md",
+      "install-tools.md",
+      "install-prepare.md",
+      "install-run.md",
+    ]},
+  {"Configuració bàsica del lloc" = [
+      "config-overview.md",
+      "config-basic.md",
+      "config-install.md",
+      "config-uninstall.md",
+      "config-user.md",
+      "config-theme.md",
+    ]},
+  {"Gestió bàsica de la pàgina" = [
+      "content-paths.md",
+      "content-create.md",
+      "content-edit.md",
+      "content-in-place-edit.md",
+      "menu-home.md",
+      "menu-concept.md",
+      "menu-link-from-content.md",
+      "menu-reorder.md",
+    ]},
+  {"Configuració de l'estructura del contingut" = [
+      "structure-content-type.md",
+      "structure-content-type-delete.md",
+      "structure-fields.md",
+      "structure-reference-fields.md",
+      "structure-taxonomy.md",
+      "structure-taxonomy-setup.md",
+      "structure-adding-reference.md",
+      "structure-widgets.md",
+      "structure-form-editing.md",
+      "structure-view-modes.md",
+      "structure-content-display.md",
+      "structure-image-styles.md",
+      "structure-image-style-create.md",
+      "structure-image-responsive.md",
+      "structure-text-formats.md",
+      "structure-text-format-config.md",
+    ]},
+  {"Gestió de comptes d'usuari" = [
+      "user-concept.md",
+      "user-admin-account.md",
+      "user-new-role.md",
+      "user-new-user.md",
+      "user-permissions.md",
+      "user-roles.md",
+      "user-content.md",
+    ]},
+  {"Blocs" = [
+      "block-concept.md",
+      "block-create-custom.md",
+      "block-place.md",
+    ]},
+  {"Creació de llistats amb el Views" = [
+      "views-concept.md",
+      "views-parts.md",
+      "views-create.md",
+      "views-duplicate.md",
+      "views-block.md",
+    ]},
+  {"Feu el vostre lloc multilingüe" = [
+      "language-concept.md",
+      "language-add.md",
+      "language-content-config.md",
+      "language-content-translate.md",
+      "language-config-translate.md",
+    ]},
+  {"Estendre i personalitzar el vostre lloc" = [
+      "extend-module-find.md",
+      "extend-maintenance.md",
+      "extend-module-install.md",
+      "extend-theme-find.md",
+      "extend-theme-install.md",
+      "extend-manual-install.md",
+      "install-dev-sites.md",
+      "install-dev-making.md",
+      "install-composer.md",
+      "extend-deploy.md",
+      "extend-config-versions.md",
+    ]},
+  {"Prevenció i ressolució de problemes" = [
+      "prevent-cache.md",
+      "prevent-cache-clear.md",
+      "prevent-backups.md",
+      "prevent-log.md",
+      "prevent-status.md",
+    ]},
+  {"Seguretat i manteniment" = [
+      "security-cron-concept.md",
+      "security-cron.md",
+      "security-concept.md",
+      "security-announce.md",
+      "security-update-core.md",
+      "security-update-module.md",
+      "security-update-theme.md",
+    ]},
+  {"Reflexions finals" = [
+      "thoughts-connecting.md",
+      "thoughts-support.md",
+      "thoughts-learn-more.md",
+      "glossary.md",
+    ]},
+]
+extra_css = ["assets/guide.css"]
+
+[project.theme]
+language = "ca"
+favicon = "assets/favicon.ico"
+logo = "assets/druplicon.svg"
+features = ["navigation.footer", "navigation.indexes", "navigation.path", "navigation.sections"]
+
+[project.extra]
+alternate = [
+  { name = "Català", link = "/ca/", lang = "ca" },
+  { name = "Deutsch", link = "/de/", lang = "de" },
+  { name = "English", link = "/en/", lang = "en" },
+  { name = "Español", link = "/es/", lang = "es" },
+  { name = "فارسی", link = "/fa/", lang = "fa" },
+  { name = "Français", link = "/fr/", lang = "fr" },
+  { name = "Magyar", link = "/hu/", lang = "hu" },
+  { name = "Հայերեն", link = "/hy/", lang = "hy" },
+  { name = "Bahasa Indonesia", link = "/id/", lang = "id" },
+  { name = "日本語", link = "/ja/", lang = "ja" },
+  { name = "Português do Brasil", link = "/pt-br/", lang = "pt-BR" },
+  { name = "Русский", link = "/ru/", lang = "ru" },
+  { name = "Українська", link = "/uk/", lang = "uk" },
+  { name = "简体中文", link = "/zh-hans/", lang = "zh-Hans" },
+]
+
+
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.tables]
+
+[project.markdown_extensions.toc]
+permalink = true

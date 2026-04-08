@@ -1,0 +1,36 @@
+---
+title: "Konzept: Abschnitte einer Ansicht"
+description: "Überblick über die administrativen Abschnitte einer Ansicht."
+id: "views-parts"
+translation_key: "views-parts"
+source_locale: "de"
+---
+## Erforderliche Vorkenntnisse { #views-parts }
+
+* [planning-data-types](./planning-data-types.md)
+* [planning-modular](./planning-modular.md)
+* [views-concept](./views-concept.md)
+* [content-paths](./content-paths.md)
+* [block-concept](./block-concept.md)
+### Was sind die Teile einer Ansicht?
+
+Wenn Sie eine Ansicht in der Verwaltungsoberfläche bearbeiten, sehen Sie die
+folgende Abschnitte, mit denen Sie festlegen können, welche Daten in welchem Format und in weilcher Reihenfolge ausgegeben werden sollen:
+
+- **Anzeige:** Jede Ansicht kann eine oder mehrere Anzeigen haben, von denen jede einen Typ von Ausgabe erstellt. Zu den Optionen für Anzeigetypen gehören: Seite;; Ausgabe unter einer bestimmten URL, für den Hauptseiteninhalt unter dieser URL. Block;; Ermöglicht die Ausgabe der Daten in einem Block, der auf Seiten platziert werden kann. Feed;; Erstellt einen RSS-Feed oder eine andere Art von Feed. Anhang;; Erzeugt eine Ausgabe, die Sie an eine andere Anzeige anhängen können.
+- **Format:** Abhängig von der Anzeigeart können Sie wählen, ob Sie Ihre Daten als Tabelle, Raster, HTML-Liste oder in einem anderen Format ausgeben wollen. Einige Formate geben Ihnen auch sekundäre Auswahlmöglichkeiten, mit denen Sie entweder geänderte Entitäten oder Fleder ausgeben können. Andere Formate geben Ihnen diese Wahl nicht (Wenn Sie beiispielsweise das Anzeigeformat Tabelle verwenden, müssen immer Felder verwendet werrden).
+- **Felder:** Je nach Wahl des Formats können Sie wählen, welche Inhaltsfelder ausgegeben werden sollen. Wenn Sie z.B. eine Ansicht für Rezeptinhalte erstellt haben, werden auf einer Blockanzeige möglicherweise nur die Rezeptnamen angezeigt, während auf der Anzeige für einer ganzen Seite, möglicherweise auch Bilder der Gerichte aus den Rezepten angezeígt werden, weil dort mehr Platz ist, als in eiem Block.
+- **Filterkriterien:** Filter schränken die auszugebenden Daten ein, basierend auf Kriterien wie z. B. dem Verröffentliichungsstatus eines inhalts, der Art des Inhalts oder einem Feldwert. Um beispielsweise eine Ansicht von Rezeptinhalten zu erstellen, müssen Sie nach dem Inhaltstyp „Rezept“ und nur die veröffentlichten Rezepte Anzeigen lassen. Filter können auch _hervorghoben_ werden. In diesem Fall können Benutzer die Filter der Anscht dazu verwenden, direkt auf der Ansicht Daten zur Filterung von Inhalten einzugeben. Sie könnten dies auf einer Rezeptseite verwenden, damit Benutzer Rezepte nach bestimmten Zutaten filtern können.
+- **Sortierkriterien:** Definiert die Reihenfolge für die Darstellung der Ausgabe, die auf einem beliebigen Inhaltsfeld basieren kann.
+- **Kontextbezogene Filter:** Kontextbezogene Filter sind wie reguläre Filter,  allerdings mit dem Unterschied, dass die Werte, nach denmnen gefiltert wird aus  dem _Kontext_ der Anzeige in der Ansicht stammen- Beisppielsweise vollständige URL der angezeigten Seite, das aktuelle Datum, die aktuelle Zeit oder ein anderer Wert, der durch Bei der Berechnung einer Ansicht erkannt werden kann.
+- **Beziehungen:** Mit Hilfe von Beziehungen können Sie die Anzeige in Ihrer Ansicht erweitern, indem Sie den Basisinhalt der angezeigt werden soll in Beziehung zu anderen Inhaltsentitäten setzen. Beziehungen werden erstellt wenn Felder aus dem Basisinhalt, mit dem anderen Inhalt in Beziehung gesetzt werden. Ein Beispiel ist, dass alle regulären Inhale ein Autorenfeld haben. Dieses verweist auf das Benutzerkonto der Person, die den Inhalt verfasst hat. Sobald Sie eine Beziehung dazwischen angelegt haben, können Sie Felder aus der referenzierten Entität (Benutzerkonto) in der Ansicht verwenden.
+## Verwandte Themen
+
+[views-create](./views-create.md)
+
+*Mitwirkende*
+
+Geschrieben und bearbeitet von [Surendra Mohan](https://www.drupal.org/u/surendramohan)
+und [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Ins Deutsche übersetzt von [Joachim Namyslo](https://www.drupal.org/u/Joachim-Namyslo).

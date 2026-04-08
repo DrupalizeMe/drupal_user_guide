@@ -1,0 +1,29 @@
+---
+title: "Concept: Types of Data"
+description: "Overview of common types of data used in a site."
+id: "understanding-data"
+translation_key: "understanding-data"
+source_locale: "es"
+---
+## What are the types of data? { #understanding-data }
+
+The data and information on your site is divided up into four types, which are
+edited, translated, and stored differently. These four types are:
+
+- **Content:** Information (text, images, etc.) meant to be displayed to site visitors. This type of information tends to be relatively permanent, but can normally be edited.
+- **Configuration:** Information about your site that is not content, but is also relatively permanent, and is used to define how your site behaves or is displayed. It is sometimes also displayed to site visitors, but tends to be smaller pieces of text (like field labels, the name of your site, etc.) rather than larger chunks that you'd normally think of as Content.
+- **State:** Information of a temporary nature about the current state of your site, such as the time when cron jobs were last run.
+- **Session:** Information about individual site visitors' interactions with the site, such as whether they are logged in and their cookies. This is technically a subtype of State information, since it is also temporary.
+## Related topics
+
+* [planning-data-types](./planning-data-types.md)
+* [security-cron-concept](./security-cron-concept.md)
+* [user-concept](./user-concept.md)
+* [language-concept](./language-concept.md)
+
+*Attributions*
+
+Adapted by [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon) from
+["Overview of Configuration (vs. other types of information)"](https://www.drupal.org/node/2120523),
+copyright 2000-2026 by the individual contributors to the
+[Drupal Community Documentation](https://www.drupal.org/documentation)

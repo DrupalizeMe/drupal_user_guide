@@ -1,0 +1,66 @@
+---
+title: "Ein Modul installieren"
+description: "Ein Modul des Kernsystems oder ein von der Community bereitgestelltes Zusatzmodul über die Benutzeroberfläche oder Drush installieren."
+id: "config-install"
+translation_key: "config-install"
+source_locale: "de"
+---
+## Zielsetzung { #config-install }
+
+Installieren Sie ein mit dem Kernsystem ausgeliefertes Modul oder ein von der
+Community bereitgestelltes Zusatzmodul, dass bereits auf den Webserver
+hochgeladen wurde, mit Hilfe des Verwaltungsbereichs oder mittels Drush.
+## Erforderliche Vorkenntnisse
+
+[understanding-modules](./understanding-modules.md)
+## Anforderungen an die Website
+
+Wenn Sie Drush zur Installation von Modulen verwenden möchten, muss Drush
+installiert sein. Siehe: [install-tools](./install-tools.md).
+## Arbeitsschritte
+
+Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu installieren.
+## Den Verwaltungsbereich der Website verwenden
+
+1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
+    (_admin/modules_). Die Seite _Erweitern_ erscheint und zeigt alle auf der
+    Website verfügbaren Module an.
+1. Markieren Sie die Kontrollkästchen für das Modul oder die Module, die Sie
+    installieren möchten. Markieren Sie zum Beispiel
+    das Kontrollkästchen für das mit dem Kernsystem ausgelieferte
+    Modul Setings Tray.
+    <img src="/images/config-install-check-modules.png" alt="Enabling the core Setings Tray module" width="100%" />
+1. Klicken Sie auf _Installieren_. Die ausgewählten Module werden installiert.
+## Drush verwenden
+
+1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
+    (_admin/modules_). Die Seite _Erweitern_ erscheint und zeigt alle auf der Website verfügbaren Module an.
+1. Suchen Sie den Systemnamen des Moduls, das Sie installieren möchten,
+    indem Sie den Informationsbereich für das Modul ausklappen. Das Modul Setings Tray,
+    das mit dem Kernsystem ausgeliefert wird, trägt beispielsweise
+    den Systemnamen _settings_tray_.
+1. Führen Sie den folgenden Drush-Befehl aus, um das Modul zu installieren:
+    ```text
+    drush pm:enable tracker
+    ```
+## Vertiefen Sie Ihr Wissen
+
+Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen,
+müssen Sie zunächst den Cache leeren.
+Siehe: [prevent-cache-clear](./prevent-cache-clear.md).
+## Videos
+
+<div class="embedded-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/HymQsDOcT3E" title="Ein Modul installieren (englisch)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+
+## Zusätzliche Ressourcen
+
+[Drush](http://www.drush.org)
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von [Boris Doesborg](https://www.drupal.org/u/batigolix) und
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Ins Deutsche übersetzt von [Joachim Namyslo](https://www.drupal.org/u/Joachim-Namyslo).

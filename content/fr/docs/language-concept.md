@@ -1,0 +1,53 @@
+---
+title: "Concept : interface utilisateur, configuration, et traduction du contenu"
+description: "Vue d'ensemble des langues et traduction sur votre site."
+id: "language-concept"
+translation_key: "language-concept"
+source_locale: "fr"
+---
+## Prérequis { #language-concept }
+
+* [understanding-data](./understanding-data.md)
+* [understanding-modules](./understanding-modules.md)
+* [planning-data-types](./planning-data-types.md)
+## Quelles langues le logiciel prend-il en charge ?
+
+La langue de base du logiciel qui fait tourner votre site (cœur du
+logiciel, modules et thèmes) est l'anglais. Cependant, en utilisant ce logiciel,
+vous pouvez créer un site dont la langue par défaut n'est pas l'anglais, dans ce cas, votre site ne sera visible que dans cette langue (en
+supposant que le site est entièrement traduit). Vous pouvez également créer un site multilingue, avec un sélecteur de langue que les
+visiteurs peuvent utiliser pour basculer vers leur langue préférée. Il faut que
+le module du cœur Language soit installé pour utiliser une langue autre que
+l'anglais sur le site.
+## Qu'est-ce qui peut être traduit sur le site ?
+
+Il y a trois types d'informations que vous pouvez traduire, chacune ayant sa
+propre méthode de traduction :
+
+- **Texte de l'interface utilisateur:** Texte intégré au cœur, aux modules et aux thèmes. Il peut être traduit de l'anglais utilisé de base vers la ou les langues de votre site. Plutôt que de traduire le texte vous-même, vous pouvez télécharger des traductions. Il faut que le module du cœur Interface Translation soit installé pour traduire ce texte, et que le module du cœur Update Manager soit installé pour télécharger automatiquement les traductions.
+- **Texte de la configuration:** Texte dont la structure et les valeurs initiales sont définies par le cœur, les modules et les thèmes, mais que vous pouvez modifier : par exemple, les étiquettes des champs dans vos types de contenus, le texte des en-têtes des vues, le nom de votre site, et le contenu des courriels que votre site envoie automatiquement. Après avoir créé du texte de configuration dans la langue par défaut de votre site, vous pouvez le traduire dans d'autres langues. Pour la configuration par défaut fournie par le cœur, les modules et les thèmes, la traduction est incluse dans les téléchargements de traductions du texte de l'interface utilisateur. Il faut que le module du cœur Configuration Translation soit installé afin de pouvoir traduire ce texte.
+- **Texte du contenu et fichiers:** Si votre site est multilingue, vous pouvez configurer les champs du contenu de votre site de manière à ce qu'ils soient traduisibles. Après avoir créé du contenu dans une langue, vous pouvez le traduire dans d'autres langues. Les champs peuvent contenir de l'information textuelle ou des fichiers transférés, et pour chaque champ de chaque sous-type d'entité, vous pouvez le configurer de manière à ce qu'il soit traduisible ou non. Il faut que le module du cœur Content Translation soit installé afin de traduire ce type de texte.
+## Quelles informations resteront en anglais sur mon site ?
+
+Même si la langue par défaut de votre site n'est pas l'anglais, vous verrez
+toujours du texte en anglais sur certaines pages d'administration utilisées pour
+gérer la configuration. En effet, quand vous modifiez la configuration, vous
+modifiez les valeurs de base, non traduites ; traduire la configuration est une
+opération à part. Par exemple, si vous visitez la page d'administration _Menus_,
+vous visualiserez les noms des menus en anglais (pour les menus qui ont été mis
+en place à l'installation du site), et si vous cliquez sur le lien _Modifier le
+menu_, vous éditerez le nom du menu et sa description en anglais. Pour modifier
+le menu dans une autres langue, il faudra que le module du cœur Configuration
+Translation soit installé, et utiliser le lien _Traduire_ pour modifier les
+informations du menu traduit.
+## Sujets liés
+
+* [language-add](./language-add.md)
+* [language-content-config](./language-content-config.md)
+* [language-content-translate](./language-content-translate.md)
+* [language-config-translate](./language-config-translate.md)
+
+*Attributions*
+
+Écrit par [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon). Traduit par
+[Felip Manyer i Ballester](https://www.drupal.org/u/fmb).

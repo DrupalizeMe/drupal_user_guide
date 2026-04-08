@@ -1,0 +1,44 @@
+---
+title: "Concept: Themes"
+description: "Overview of themes and where to obtain them."
+id: "understanding-themes"
+translation_key: "understanding-themes"
+source_locale: "pt-br"
+---
+## Prerequisite knowledge { #understanding-themes }
+
+[understanding-drupal](./understanding-drupal.md)
+## What is a Theme?
+
+A theme is a set of files that define the visual look and feel of your site.
+The core software and modules that run on your site determine which
+_content_ (including HTML text and other data stored in the database, uploaded
+images, and any other asset files) is displayed on the pages of your site. The
+theme determines the HTML markup and CSS styling that wraps the content.
+
+The core software provides several basic themes with the core distribution.
+These themes have largely been designed and built by the community over the last
+several years and will all be good choices for building your first sites and
+becoming more familiar with how the core software works.
+
+Drupal is a well-established CMS so the market for 3rd party themes - both free
+and paid - is very robust.
+
+If none of the 3rd party options suit your needs, you'll need to create a custom
+theme. A custom theme can be as simple as a single CSS file that adds styling to
+the markup provided by the core software. Guidance for creating custom themes in
+Drupal 8 can be found in the
+[_Drupal.org_ community documentation page "Theming Drupal"](https://www.drupal.org/docs/8/theming).
+## Related topics
+
+* [extend-theme-find](./extend-theme-find.md)
+* [extend-theme-install](./extend-theme-install.md)
+* [understanding-modules](./understanding-modules.md)
+## Additional resources
+
+[_Drupal.org_ community documentation page "Theming Drupal"](https://www.drupal.org/docs/8/theming)
+
+*Attributions*
+
+Written and edited by [John Grubb](https://www.drupal.org/u/jgrubb) and
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).

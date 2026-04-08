@@ -1,0 +1,60 @@
+---
+title: "Concept : menu"
+description: "Vue d'ensemble du concept de menu et des menus créés automatiquement avec le profil d'installation Standard du coeur."
+id: "menu-concept"
+translation_key: "menu-concept"
+source_locale: "fr"
+---
+## Qu'est ce qu'un menu ? { #menu-concept }
+
+Les menus sont des collections de liens utilisés pour naviguer dans un site
+web. Le module du coeur Menu UI fournit une interface pour contrôler et
+personnaliser le système de menu. Les menus sont affichés par défaut comme une
+liste de liens hiérarchisés. Par défaut, les nouveaux liens de menu sont placés
+dans un menu intégré appelé _navigation principale_, mais les administrateurs
+peuvent aussi définir des menus personnalisés.
+
+Le profil d'installation Standard du coeur contient 5 menus : 
+
+- **Navigation principale:** Liens vers les sections affichées aux visiteurs du site. Ils sont généralement créés par les administrateurs du site.
+- **Administration:** Liens vers les tâches d'administration. Ce menu contient principalement les liens fournit par les modules sur votre site.
+- **Menu du compte de l'utilisateur:** Liens associés aux comptes utilisateurs comme _Mon compte_ et _Se déconnecter_.
+- **Pied de page:** Liens vers des pages importantes du site affichés dans le pied-de-page. Ils sont généralement créés par les administrateurs du site.
+- **Outils:** Liens vers les tâches nécessaires pour les visiteurs du site. Certains modules créent leur liens ici.
+
+Vous pouvez personnaliser les menus de la manière suivante, en utilisant la
+fonctionnalité du menu d'administration : 
+
+* Créer des nouveaux menus personnalisés.
+* Ajouter des nouveaux liens de menu.
+* Réordonner les liens de menus en paramètrant leur "poids" ou en les faisant
+glisser à la bonne place.
+* Renommer les liens de menus.
+* Changer la description du lien (l'info-bulle qui apparaît lors du survol à la
+souris d'un lien de menu).
+* Déplacer un lien de menu dans un menu différent en modifiant son _Lien
+Parent_.
+
+Un lien de menu sera affiché uniquement aux visiteurs qui ont le droit de voir
+la page du lien. Par exemple, le lien de menu admin ne sera pas affiché pour
+les visiteurs qui ne sont pas connectés.
+## Concepts liés
+
+* [menu-link-from-content](./menu-link-from-content.md)
+* [menu-reorder](./menu-reorder.md)
+* Pour afficher un menu, vous aurez besoin de placer le bloc qui correspond au
+menu dans une région de votre thème ; voir [block-concept](./block-concept.md), [block-regions](./block-regions.md),
+et [block-place](./block-place.md). Le profil d'installation Standard du cœur place tous les
+menus qu'il défini, sauf Administration, dans les régions du thème Bartik du
+coeur. Le module du cœur Toolbar, qui est installé par le profil d'installation
+Standard du cœur, affiche le menu Administration ; il est aussi affiché avec le
+module contribué Admin Toolbar.
+
+*Attributions*
+
+Ecrit et modifié par [Ajay Viswambharan](https://www.drupal.org/u/ajayvi),
+[Jojy Alphonso](https://www.drupal.org/u/jojyja) de http://redcrackle.com[Red
+Crackle], [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon), et
+[Bill Seremetis](https://www.drupal.org/u/bserem).
+Traduit par [Vanessa Kovalsky](https://www.drupal.org/u/vanessakovalsky) et
+[Felip Manyer i Ballester](https://www.drupal.org/u/fmb).

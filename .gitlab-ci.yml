@@ -1,0 +1,73 @@
+workflow:
+  rules:
+    - if: $CI_MERGE_REQUEST_IID || $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $CI_PIPELINE_SOURCE == "webide"
+    - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
+
+default:
+  interruptible: true
+
+stages:
+  - build
+  - deploy
+
+.site-changes: &site_changes
+  - ".gitlab-ci.yml"
+  - "requirements.txt"
+  - "content/**/*"
+  - "scripts/**/*"
+  - "guidelines/**/*"
+  - "templates/**/*"
+  - "README.md"
+  - "ADDING_A_LOCALE.md"
+
+build documentation:
+  stage: build
+  image: python:latest
+  rules:
+    - if: $CI_MERGE_REQUEST_IID || $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes: *site_changes
+    - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
+      changes: *site_changes
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $CI_PIPELINE_SOURCE == "webide"
+  script:
+    - python3 -m venv .venv
+    - ./.venv/bin/python -m ensurepip --upgrade
+    - ./.venv/bin/python -m pip install -r requirements.txt
+    - ./.venv/bin/python scripts/zensical/build_site.py
+  artifacts:
+    paths:
+      - build/zensical/site-build/assembled
+    expire_in: 1 hour
+
+.pages-base:
+  stage: deploy
+  image: alpine:latest
+  needs:
+    - build documentation
+  script:
+    - echo "Documentation available at $CI_PAGES_URL"
+  artifacts:
+    expire_in: 1 hour
+
+preview documentation:
+  extends: .pages-base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes: *site_changes
+  pages:
+    publish: build/zensical/site-build/assembled
+    path_prefix: "preview-$CI_MERGE_REQUEST_IID"
+    expire_in: 3 days
+
+publish documentation:
+  extends: .pages-base
+  rules:
+    - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
+      changes: *site_changes
+  pages:
+    publish: build/zensical/site-build/assembled

@@ -1,0 +1,44 @@
+---
+title: "Audiència i objectius"
+description: "Entendre el públic objectiu d'aquesta guia, i el que n'aprendran d'ella."
+id: "preface-audience"
+translation_key: "preface-audience"
+source_locale: "ca"
+---
+[](){ #preface-audience }
+
+Aquesta guia va ser escrita principalment per a les persones amb un coneixement
+mínim del sistema de gestió de continguts Drupal. Els temes els ajudaran a
+convertir-se en expert en la instal·lació, l'administració, la creació de llocs,
+i/o a mantenir el contingut d'un lloc web basat en el Drupal. La guia també està
+dirigida a persones que ja tenen alguna experiència amb una versió actual o
+passada del Drupal, i desitgen ampliar el ventall de les seves habilitats i
+coneixements o actualitzar-los a la versió actual.
+
+Aquesta guia assumeix que ja heu decidit que voleu aprendre i utilitzar
+el Drupal. Si necessiteu més informació abans de decidir-vos, consulteu
+[understanding-drupal](./understanding-drupal.md).
+
+Depenent de quins aspectes del Drupal voleu aprendre, necessitareu coneixements
+bàsics per entendre aquesta guia: es donen per suposats coneixements generals
+d'Internet, i la guia se centra en com utilitzar el programari en si. Per
+exemple, les seccions sobre la instal·lació del Drupal en un servidor web donen
+per fet que podeu obtenir allotjament web i trobar la manera de transferir
+fitxers al vostre servidor web escollit. De la mateixa manera, les seccions
+sobre la gestió de continguts assumeixen que podeu entrar en un lloc web i
+omplir un formulari.
+
+Després de llegir aquesta guia, heu de ser capaços de:
+
+* Planificar l'arquitectura de continguts per a un lloc basat en el Drupal
+* Construir el lloc que heu planejat
+* Gestionar i administrar el vostre lloc
+* Comprendre la documentació i les entrades de blocs sobre temes no tractats
+aquí, per ampliar els vostres coneixements i habilitats
+* Connectar amb la comunitat del Drupal d'arreu del món
+
+*Atribucions*
+
+Escrit per [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon). Traduït per
+[Cristina Chumillas](https://www.drupal.org/u/ckrina) i revisat per
+[Ramon Vilar](https://www.drupal.org/u/rvilar).

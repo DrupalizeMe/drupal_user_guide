@@ -1,0 +1,113 @@
+---
+title: "Traduction de la configuration"
+description: "Comment traduire les libellés de champs dans une vue, et autre configuration."
+id: "language-config-translate"
+translation_key: "language-config-translate"
+source_locale: "fr"
+---
+## Objectif { #language-config-translate }
+
+Traduire les libellés de la page de vue Recettes en anglais.
+## Connaissances préalables
+
+* [language-concept](./language-concept.md)
+* [views-create](./views-create.md)
+## Prérequis du site
+
+* Le module de traduction de la configuration du cœur doit être installé, et
+votre site doit avoir au moins deux langues. Consulter [language-add](./language-add.md).
+* La vue Recettes doit exister. Consulter [views-create](./views-create.md) et [views-duplicate](./views-duplicate.md).
+## Étapes
+
+Les étapes de base pour traduire toute configuration sur votre site sont les
+suivantes :
+
+1. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+    _Régionalisation et langue_ > _Traduction de la configuration_
+    (_admin/config/regional/config-translation_).
+1. Localiser l'élément de configuration que vous souhaitez traduire. Par exemple,
+    pour traduire le nom du site, vous devez trouver _System information_. Pour la
+    configuration qui est groupée par type (par exemple, les vues ou les formats de
+    dates), cliquer sur le bouton _Liste_ pour voir toutes les configurations de ce
+    type, et localiser ensuite l'élément recherché.
+1. Cliquer sur _Traduire_ pour l'élement que vous avez localisé.
+1. Trouver un bouton qui vous permettra d’ajouter une traduction dans la langue
+    souhaitée, et cliquer sur ce bouton.
+1. Saisir la traduction dans le formulaire et enregistrer.
+
+    La plupart des configurations sont assez simples et intuitives à éditer de cette
+    façon. La configuration des vues est une exception car le formulaire d'édition
+    de la traduction ne ressemble en rien au formulaire d'édition de la vue, et il
+    est complexe et hiérarchique plutôt que d'être un simple formulaire avec
+    seulement quelques champs. En guise d'exemple de traduction d'une vue, voici les
+    étapes pour traduire les libellés dans la vue Recettes vers l'anglais :
+
+1. Dans le menu d'administration _Gérer_, accéder à _configuration_ >
+    _Régionalisation et langue_ > _Traduction de la configuration_
+    (_admin/config/regional/config-translation_).
+1. Cliquer sur _Liste_ sur la ligne _Views_.
+1. Cliquer sur _Traduire_ sur la ligne Recettes.
+1. Cliquer sur _Ajouter_ dans la ligne _anglais_. La page _Ajouter une
+    traduction en anglais pour la vue Recettes_ apparaît.
+1. Rechercher _Affichages_ > _Paramètres de l'affichage de Défaut > _Options
+    d'affichage par défaut de Recettes_. Traduire le _Titre d'affichage_ de
+    "Recettes" en "Recipes".
+1. Rechercher _Affichages_ > _Paramètres d'affichage de Défaut > _Options
+    d'affichage par défaut de Recette_ > _Formulaire exposé_ > _Options de
+    réinitialisation_. Traduire le bouton _Texte du bouton de soumission_
+    (_Appliquer_) en "Apply". Les autres boutons et libellés de cette section
+    n'apparaissent pas sur la page ou le bloc "Recettes", et n'ont pas besoin d'être
+    traduits.
+    <img src="/images/language-config-translate-recipes-view.png" alt="Traduire la vue Recettes" width="100%" />
+1. Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
+    d'affichage par défaut de Recettes_ > _Filtres_ > _(vide) Terme de taxonomie
+    ID_ > _Rechercher recettes en utilisant ... Exposer_. Dans le champ _Libellé_,
+    saisir "Find recipes using...".
+1. Cliquer sur _Enregistrer la traduction_.
+1. Accéder à la page Recettes et passer en anglais à l'aide du bloc sélecteur de
+    langue. Vérifier que les libellés ont été traduits.
+
+## Pour approfondir
+
+* Traduire le titre d'affichage du bloc dans les paramètres de l'affichage
+"Recettes récentes" de la vue Recettes.
+* Traduire le titre de la page dans la vue Vendeurs.
+* Traduire une autre configuration. Quelques exemples où trouver les pages de
+traduction:
+
+** Pour traduire le nom du site, naviguer dans le menu d'administration _Gérer_
+jusqu'à _Configuration_ > _Système_ > _Paramètres de base du site_ > _Traduire
+information système_ (_admin/config/system/information-site/translate_).
+
+** Pour traduire le formulaire de contact, naviguer dans le menu administratif
+_Gérer_ jusqu'à _Structure_ > _Formulaires de contact_
+(_admin/structure/contact_). Cliquer sur _Traduire_ dans le bouton déroulant de
+la ligne _Votre avis sur le site_.
+
+** Pour traduire le nom d'un menu, naviguer dans le menu d'administration _Gérer_
+jusqu'à _Structure_ > _Menus_ (_admin/structure/menu_). Cliquer _Traduire_ dans le
+bouton déroulant du menu dont vous voulez traduire le nom.
+
+** Les liens de menu dans un menu sont considérés comme du contenu (et non de
+la configuration); consulter [language-content-config](./language-content-config.md) pour activer la
+traduction. Une fois que la traduction est activée, naviguer dans le menu
+administratif _Gérer_ jusqu'à _Structure_ > _Menus_ (_admin/structure/menu_).
+Cliquer _Modifier le menu_ dans le bouton déroulant du menu dont vous souhaitez
+traduire les liens. Cliquer sur _Traduire_ dans le menu déroulant pour le lien
+que vous souhaitez traduire.
+
+** Pour traduire les libellés de champ sur un type de contenu, naviguer dans le
+menu administratif _Gérer_ jusqu'à _Structure_ > _Types de contenu_
+(_admin/structure/types_). Cliquer sur _Gérer les champs_ dans le bouton
+déroulant pour le type de contenu dont vous souhaitez modifier les libellés de
+champs. Cliquer _Traduire_ dans le bouton déroulant du champ dont vous souhaitez
+modifier le libellé.
+
+* Traduire le contenu. Voir [language-content-translate](./language-content-translate.md).
+
+*Attributions*
+
+Écrit et modifié par [Boris Doesborg](https://www.drupal.org/u/batigolix) et
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon). Traduit par
+[Alexandre Todorov](https://www.drupal.org/u/alexandre.todorov) et
+[Felip Manyer i Ballester](https://www.drupal.org/u/fmb).

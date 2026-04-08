@@ -1,0 +1,60 @@
+---
+title: "Alapfogalom: további hasznos eszközök"
+description: "Ebben a témakörben áttekintjük, hogy még milyen praktikus kiegészítők segíthetik egy webhelyépítő munkáját."
+id: "install-tools"
+translation_key: "install-tools"
+source_locale: "hu"
+---
+## Milyen eszközök állnak rendelkezésünkre? { #install-tools }
+
+Ezen eszközök célja, hogy gyorsabban, pontosabban és kevesebb időbefektetéssel tudjunk webhelyeket építeni és üzemeltetni. A [Devel](https://www.drupal.org/project/devel) közösségi modul például rengeteg praktikus funkciót kínál a webfejlesztési feladatok elvégzéséhez és a Drupal belső működésének jobb megértéséhez. Ilyen funkciók például a forráskód vizsgálata, az adatbázis-lekérdezések elemzése és próbatartalmak tömeges előállítása tesztjelleggel.
+## Mik a parancssori eszközök?
+
+A parancssorban futó alkalmazásokkal a Drupalnak kényelmesebben és gyorsabban adhatunk utasításokat, mintha ehhez az adminfelületén kellene kattintgatnunk. Sok webfejlesztő amikor csak lehet, parancssort használ a Drupal kezelésére, mert meggyőződésük, hogy a megismerésére és gyakorlására fordított tanulási idő hamar megtérül. Íme néhány érv, hogy miért lehet érdemes nekünk is áttérnünk a használatára:
+
+* A gyakori, sokat használt adminisztrációs feladatok elvégzése általában gyorsabb és kényelmesebb parancssorban begépelve, mint ugyanazt a grafikus felületen, több oldalbetöltésen keresztül navigálva.
+* Mivel ezek a parancssori programok a számítógép mélyebb szintjén futnak, ezért a kívánt műveletek egymás utáni elvégzésére automata szkriptek írhatóak, amik nemcsak a Drupal webhelyet vezérelhetik, hanem akár a webszervert és a stack más elemeit (például adatbázisszerver, külső gyorsítótárszerver stb.) is.
+* Rengeteg parancsot kínálnak szinte valamennyi feladathoz: a telepítéstől (nemcsak modulokat vagy sminkeket, de akár magát az alaprendszert is) kezdve a különböző adatbázis-műveleteken át egészen a gyorsítótárak kiürítéséig és jelszavak újragenerálásáig – csak hogy néhány előnyüket említsük. Bizonyos funkcióik (például az adatbázis-lekérdezések futtatása Drushsal) nem is érhetők el az adminfelületről.
+
+A két legismertebb ilyen fejlesztői eszköz a [Drush](http://www.drush.org) (ejtsd: „dráss”) és a [Drupal Console](https://drupalconsole.com) (ejtsd: „konzol”). A _Drush_ jelent meg előbb és nem csak az alaprendszert kezelhetjük vele, hanem népszerűsége okán már más közösségi modulok és sminkek is definiálnak saját Drush-parancsokat a még gördülékenyebb üzemeltetés érdekében. A _Drupal Console_ viszont főként a fejlesztőket célozza meg, de folyamatosan bővülnek az üzemeltetőknek hasznos képességei is. Jelen Kézikönyvünkben a parancsokat csak a Drush legújabb stabil főverziójához mutatjuk be. Nem érintjük az annak régebbi verzióiban használatos módokat, valamint a Drupal Console használatát sem – ezekhez azonban bőséges dokumentációt és leírásokat találhatunk.
+
+Ha sikerült felkelteni az érdeklődést a kipróbálásuk iránt, akkor szükség lesz a parancssoron keresztüli hozzáférésre és a Drush kompatibilis verziójának feltelepítésére azon a számítógépen. Jelentős különbség van a Drush 8-as és 9-es verziója között, ezért javasolt a Composer eszközzel mindig az aktuálisat telepíteni. További tudnivaló a telepítésről és kompatibilis verziókról a [Drush weboldalán](http://www.drush.org) található. Ugyanott részletes dokumentáció is elérhető.
+## Mi az a verziókövető rendszer?
+
+A verziókezelő rendszerek olyan programok, amelyek más szoftverek forráskódjának fájljait, valamint azok változásait tartják nyilván. Ezáltal lehetővé teszik az időbeli visszatekintést és párhuzamosan külön ágak vezetését. Egy webhely készítése (ami végső soron szoftverfejlesztésnek tekinthető) során a következőkben lehet számunkra hasznos:
+
+* A módosítások letisztult áttekintése a változástörténetbe való mentés előtt
+* Az elvégzett fejlesztés helyi tesztelése élesítés előtt
+* A fájlok különböző időpontokban készült változatainak összehasonlítása és szükség esetén visszaállítása
+* Más csapattagok által írt módosítások együttes összehangolása
+* A helyi környezet és a távoli szerver fájlrendszerének szinkronban tartása
+
+Egy verziókezelő rendszerrel akár csak modulok és sminkek saját könyvtárait, akár a webhely teljes kódbázisát felügyelhetjük: hol, mikor, milyen változtatás történt. Ennek nyilvántartására támaszkodva biztonságosabban próbálhatunk ki módosításokat, mert ha egy változtatás nem sikeres, könnyen vissza tudunk állni az utolsó, még működőképes állapotra. Mivel a Drupal 8 fájlokban is tárolja a konfigurációját, ezért egy verziókezelővel összehasonlíthatjuk és hordozhatjuk a beállításokat két webhelymásolat (például a helyi gépen futó és az élesítésre váró) között.
+
+Bár manapság számos verziókezelő rendszer érthető el a piacon, akár fizetős kereskedelmi programként, akár nyílt forráskódú projektként, napjainkra a népszerű [Git](https://git-scm.com/) a nemzetközi webfejlesztési iparág _de facto_ szabványává vált. A legtöbb operációs rendszeren futtatható és mivel elosztott felépítésű, ezért a Git-tárolónkat több helyre is felmásolhatjuk: a helyi számítógépünkről (egyik Git-példány) egyszerűen felküldhetjük (angolul _„push”_-oljuk) módosításainkat a központinak kinevezett példányba. Ez a központi (angolul _„canonical”_) példány lehet akár a saját gépünkön is, de leggyakrabban egy távoli szerveren helyezik el. Egy cég fenntarthat egy saját szervert e célra, de magánszemélyként a legegyszerűbb igénybe vennünk egy ingyenes Git-szolgáltatást, mint például a közismert [GitHub](https://github.com/)-ot.
+## Mire jó a Composer?
+
+A [Composer](https://getcomposer.org/) a PHP-függőségek kezelésére szolgáló eszköz, aminek segítségével a fejlesztőnek elég csak definiálnia, hogy egy adott külső függvénykönyvtár melyik verziójára van szüksége a saját programjai futtatásához, és onnantól a Composer gondoskodik annak letöltéséről és telepítéséről.
+
+A Drupal nagymértékben támaszkodik a Composer szolgáltatásaira, mivel számos külső, Drupalon kívül készülő komponens lett beépítve a rendszerbe, és a hibamentes működéshez ezeket mindig le kell tölteni és telepíteni. Az alaprendszer telepítésekor vagy le kell töltenünk egy tömörített állományt, ami tartalmazza e külső programok szükséges verzióit, vagy kézzel el kell indítanunk a Composert, hogy beszerezze azokat nekünk.
+
+Közösségi modulok is megkövetelhetik a Composer használatát, például egy Facebookkal való összeköttetést megvalósító modul igényli a Facebook által kiadott függvénykönyvtár meglétét a helyi szerveren, vagy egy földrajzi koordinátákat kezelő modulnak szüksége lehet egy adott geolokációs függvénykönyvtárra. Az ilyen, külső függőségekkel működő modulok és sminkek telepítéséhez futnia kell a Composernek. Sőt, a fentebb említett parancssori eszközök, mint a Drush és Drupal Console is telepíthetőek a Composer segítségével.
+## Milyen segítség áll a modul- és sminkfejlesztők rendelkezésére?
+
+Eddig azokról az eszközökről volt szó, amelyek leginkább a webhelyek építéséhez és üzemeltetéséhez hasznosak. Az alábbiakban azonban bemutatunk néhány olyat is, melyeknek inkább a modul- és sminkfejlesztők veszik nagy hasznát.
+
+- **Drupal Console:** A [Drupal Console](https://drupalconsole.com) szintén egy parancssori eszköz, ami kapcsolatba lép a Drupal webhellyel, és előregenerált kódrészleteket állít elő. Kérhetünk így blokkok vagy űrlapok programozásához sablonkódot, de szintén képes modulokat és sminkeket telepíteni, valamint próbatartalmat tömegesen előállítani. A Drupal Console tulajdonképpen a _Symfony Console_-ra épül.
+- **Coder:** A [Coder](https://www.drupal.org/project/coder) modul ugyanúgy a parancssorban futtatható, és arra készült, hogy segítsen az általunk írt forráskódot hozzáigazítani a projekt széleskörűen elfogadott és mások által is betartott szintaxisszokásaihoz. Sőt, ha ezektől való eltérést észlel, akkor nemcsak figyelmeztet minket, de akár ki is tudja javítani a hiányosságokat.
+- **Firebug:** A [Firebug](http://getfirebug.com) egy beépülő volt a Firefoxhoz, amely lehetővé tette a böngészőbe betöltődő weboldal HTML, CSS és JavaScript forráskódjának elemzését, szerkesztését, hibakeresését egy külön böngészőablakban. Funkcionalitását mára felváltották a nagyobb böngészők gyárilag beépített fejlesztői eszköztárai. Ezekről itt olvashatunk bővebben: [Google Chrome Dev Tools](https://developer.chrome.com/devtools) és [Mozilla Firefox Dev Tools](https://developer.mozilla.org/en-US/docs/Tools).
+## Kapcsolódó témák
+
+[install-composer](./install-composer.md)
+## Egyéb források
+
+* [Development tools](https://www.drupal.org/node/147789) (azaz „Fejlesztői eszközök”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+* [Using Composer with Drupal](https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal) (azaz „Drupal használata Composerrel”) című közösségi dokumentáció a Drupal.org-on angol nyelven.
+* [Elosztott verziókezelő rendszerek](https://hu.wikipedia.org/wiki/Verzi%C3%B3kezel%C3%A9s#Elosztott_verzi%C3%B3kezel%C5%91_rendszerek) szócikk a magyar Wikipédián.
+
+*Közreműködők*
+
+Írta és szerkesztette: [Boris Doesborg](https://www.drupal.org/u/batigolix) és [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon). Fordította: [Balu Ertl](https://www.drupal.org/u/balu-ertl) ([Brainsum](https://www.drupal.org/brainsum/))
