@@ -85,19 +85,26 @@ def build_locale(locale: str) -> None:
         print(result.stdout, end="")
 
 
-def rewrite_locale_asset_paths(root: Path, locale: str) -> None:
+def rewrite_locale_asset_paths(root: Path, locale: str, locales: list[str]) -> None:
     """Prefix root-relative image paths after nesting a locale under ``/<locale>/``.
 
     A single locale build treats ``/images/...`` as site-root-relative, which is
     fine when serving that locale by itself. The assembled Pages artifact nests
     each locale under ``/<locale>/``, so the combined site needs those image
-    references rewritten to ``/<locale>/images/...``.
+    references rewritten to ``/<locale>/images/...``. It also needs locale
+    switcher links rewritten away from site-root-relative ``/<locale>/`` paths
+    so they keep working under GitLab Pages path prefixes.
     """
 
     for html_path in root.rglob("*.html"):
         original = html_path.read_text(encoding="utf-8")
         updated = original.replace('src="/images/', f'src="/{locale}/images/')
         updated = updated.replace('href="/images/', f'href="/{locale}/images/')
+        relative_path = html_path.relative_to(root)
+        depth = len(relative_path.parts) - 1
+        locale_prefix = "../" * (depth + 1)
+        for target_locale in locales:
+            updated = updated.replace(f'href="/{target_locale}/"', f'href="{locale_prefix}{target_locale}/"')
         if updated != original:
             html_path.write_text(updated, encoding="utf-8")
 
@@ -109,7 +116,7 @@ def assemble_locales(locales: list[str]) -> None:
         site_dir = workspace_locale_root(locale, BUILD_WORKSPACE) / "site"
         destination = ASSEMBLED_ROOT / locale
         shutil.copytree(site_dir, destination, dirs_exist_ok=True)
-        rewrite_locale_asset_paths(destination, locale)
+        rewrite_locale_asset_paths(destination, locale, locales)
 
 
 def main() -> None:

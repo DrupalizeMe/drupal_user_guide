@@ -31,10 +31,10 @@ stages:
     - ./.venv/bin/python -m ensurepip --upgrade
     - ./.venv/bin/python -m pip install -r requirements.txt
 
-# Preview builds intentionally publish only a locale subset because the
-# full assembled multi-locale Pages artifact is currently too large for
-# MR preview deployment. If DrupalCode raises the Pages size limit for
-# this project, combine preview and publish back into one full build.
+# Preview builds intentionally publish only en,de locales because the
+# full assembled artifact is currently too large for MR preview deployment. If
+# we can get the Pages size limit for this project raised we can combine preview
+# and publish back into one full build.
 build preview documentation:
   extends: .build-documentation
   rules:
@@ -91,7 +91,7 @@ preview documentation:
   pages:
     publish: build/zensical/site-build/assembled
     path_prefix: "preview-$CI_MERGE_REQUEST_IID"
-    expire_in: 3 days
+    expire_in: 30 days
 
 publish documentation:
   extends: .pages-base
