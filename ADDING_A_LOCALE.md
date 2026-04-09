@@ -10,6 +10,8 @@ It assumes that:
 - locale images live in `content/<locale>/docs/images/`
 - locale-local site assets live in `content/<locale>/docs/assets/`
 
+This is slightly different from a standard single-site Zensical project. Each locale here is its own committed Zensical site, and the project-specific build wrapper later assembles those locale builds into one published multi-locale site.
+
 ## Summary
 
 To add a new locale:
@@ -164,6 +166,8 @@ Run a site build:
 ```bash
 ./.venv/bin/python scripts/zensical/build_site.py --locales <locale>
 ```
+
+That wrapper exists because Zensical builds one locale site at a time, while this repository publishes many locale sites together under one Drupal.org Pages deployment.
 
 Recommended checks:
 

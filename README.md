@@ -97,22 +97,22 @@ That means:
 - `content/fr/` is the French site
 - and so on for each locale listed in [content/locales.yml](./content/locales.yml)
 
-Each site is basically an exact copy of the English site with the content of the `.md` files translated to the specific locale.
-
-This layout exists because Zensical builds one site at a time, while the Drupal User Guide is published as one multi-locale documentation site with language roots such as `/en/` and `/de/`.
-
-So the repo works in two layers:
-
-- authoring layer: committed locale sites live under `content/<locale>/`
-- publish layer: the build wrapper assembles those locale builds into one output tree under `build/zensical/site-build/assembled/`
-
-If you are reading the repository directly, it helps to think of each locale directory as a self-contained site that happens to live alongside the others.
-
 For content authoring guidance, start with [guidelines/README.md](./guidelines/README.md).
 
 If you are adding a new locale, follow [ADDING_A_LOCALE.md](./ADDING_A_LOCALE.md).
 
-This also means that if you're making changes to Zensical configuration (zensical.toml) those changes likely need to be made across all locales. The same is true for assets like logo, favicon, and CSS.
+Each site is basically an exact copy of the English site with the content of the `.md` files translated to the specific locale.
+
+It's organized this way because Zensical builds one site at a time, but the Drupal User Guide is published as one multi-locale documentation site with language roots such as `/en/` and `/de/`.
+
+So we've basically got two layers:
+
+- authoring layer: locale sites live under `content/<locale>/`
+- publishing layer: custom build wrapper that runs a standard build for each locale, and then assembles those locale builds into one output tree under `build/zensical/site-build/assembled/`
+
+More about the custom build steps below.
+
+If you are reading the repository directly, it helps to think of each locale directory as a self-contained site that happens to live alongside the others.
 
 ## Building the HTML site
 
@@ -123,7 +123,9 @@ It does three project-specific things:
 - prepare generated locale workspaces under `build/zensical/workspaces/`
 - replace placeholder links like `[config-theme](./config-theme.md)` with the destination page title in the generated workspace
 - build a selected set of locale sites in one command
-- rewrite locale-local root image paths during assembly so pages published under `/en/`, `/de/`, and similar roots still resolve `/images/...` references correctly inside each locale subtree
+- rewrite root-relative locale URLs during assembly so navigation, images, stylesheets, favicons, and locale switcher links so they still work when GitLab pages serves previews under a path prefix such as `/user_guide/preview-74/`
+
+This also means that if you're making changes to Zensical configuration (zensical.toml) those changes likely need to be made across all locales. The same is true for assets like logo, favicon, and CSS.
 
 You can run any individual site locally, but if you want to preview or build the finished product there are some extra steps.
 

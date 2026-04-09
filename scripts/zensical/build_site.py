@@ -9,6 +9,7 @@ of locale configs and assembling them under one publish artifact root.
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -29,6 +30,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 ZENSICAL_BIN = REPO_ROOT / ".venv" / "bin" / "zensical"
 ASSEMBLED_ROOT = BUILD_ROOT / "site-build" / "assembled"
 BUILD_WORKSPACE = "build"
+LOCALE_URL_RE = re.compile(r'(?P<attr>href|src)="/(?P<locale>[A-Za-z0-9-]+)/(?P<rest>[^"]*)"')
 
 
 def parse_args() -> argparse.Namespace:
@@ -86,37 +88,39 @@ def build_locale(locale: str) -> None:
 
 
 def rewrite_locale_asset_paths(root: Path, locale: str, locales: list[str]) -> None:
-    """Prefix root-relative image paths after nesting a locale under ``/<locale>/``.
+    """Rewrite root-relative locale URLs for nested assembled Pages output.
 
-    A single locale build treats ``/images/...`` as site-root-relative, which is
-    fine when serving that locale by itself. The assembled Pages artifact nests
-    each locale under ``/<locale>/``, so the combined site needs those image
-    references rewritten to ``/<locale>/images/...``. It also needs locale
-    switcher links rewritten away from site-root-relative ``/<locale>/`` paths
-    so they keep working under GitLab Pages path prefixes.
+    A single locale build emits site-root-relative locale URLs like ``/en/...``
+    and shared image URLs like ``/images/...``. The assembled Pages artifact
+    nests each locale under a project/path prefix, so those root-relative URLs
+    must become page-relative paths to keep navigation, assets, and locale
+    switcher links working in preview and published Pages deployments.
     """
 
     for html_path in root.rglob("*.html"):
         original = html_path.read_text(encoding="utf-8")
-        updated = original.replace('src="/images/', f'src="/{locale}/images/')
-        updated = updated.replace('href="/images/', f'href="/{locale}/images/')
         relative_path = html_path.relative_to(root)
         depth = len(relative_path.parts) - 1
-        locale_prefix = "../" * (depth + 1)
-        for target_locale in locales:
-            updated = updated.replace(f'href="/{target_locale}/"', f'href="{locale_prefix}{target_locale}/"')
+        image_prefix = "../" * depth + "images/"
+        updated = original.replace('src="/images/', f'src="{image_prefix}')
+        updated = updated.replace('href="/images/', f'href="{image_prefix}')
+
+        def replace_locale_url(match: re.Match[str]) -> str:
+            attr = match.group("attr")
+            target_locale = match.group("locale")
+            rest = match.group("rest")
+            if target_locale not in locales:
+                return match.group(0)
+
+            if target_locale == locale:
+                prefix = "../" * depth
+            else:
+                prefix = "../" * (depth + 1) + f"{target_locale}/"
+            return f'{attr}="{prefix}{rest}"'
+
+        updated = LOCALE_URL_RE.sub(replace_locale_url, updated)
         if updated != original:
             html_path.write_text(updated, encoding="utf-8")
-
-
-def assemble_locales(locales: list[str]) -> None:
-    """Merge per-locale site builds under one publishable artifact root."""
-    reset_dir(ASSEMBLED_ROOT)
-    for locale in locales:
-        site_dir = workspace_locale_root(locale, BUILD_WORKSPACE) / "site"
-        destination = ASSEMBLED_ROOT / locale
-        shutil.copytree(site_dir, destination, dirs_exist_ok=True)
-        rewrite_locale_asset_paths(destination, locale, locales)
 
 
 def main() -> None:
@@ -129,11 +133,23 @@ def main() -> None:
     assert_zensical_installed()
     assert_locales(selected_locales)
 
+    all_locales = list(locale_meta().keys())
+
     for locale in selected_locales:
         build_locale(locale)
 
-    assemble_locales(selected_locales)
+    assemble_locales_with_registry(selected_locales, all_locales)
     print(f"Assembled site written to {ASSEMBLED_ROOT}")
+
+
+def assemble_locales_with_registry(selected_locales: list[str], all_locales: list[str]) -> None:
+    """Assemble selected locales while rewriting links for the full locale registry."""
+    reset_dir(ASSEMBLED_ROOT)
+    for locale in selected_locales:
+        site_dir = workspace_locale_root(locale, BUILD_WORKSPACE) / "site"
+        destination = ASSEMBLED_ROOT / locale
+        shutil.copytree(site_dir, destination, dirs_exist_ok=True)
+        rewrite_locale_asset_paths(destination, locale, all_locales)
 
 
 if __name__ == "__main__":
