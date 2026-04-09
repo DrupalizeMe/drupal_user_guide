@@ -13,6 +13,7 @@ import re
 import shutil
 import subprocess
 from pathlib import Path
+from shutil import which
 
 from site_prep import (
     BUILD_ROOT,
@@ -27,7 +28,7 @@ from site_prep import (
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-ZENSICAL_BIN = REPO_ROOT / ".venv" / "bin" / "zensical"
+LOCAL_ZENSICAL_BIN = REPO_ROOT / ".venv" / "bin" / "zensical"
 ASSEMBLED_ROOT = BUILD_ROOT / "site-build" / "assembled"
 BUILD_WORKSPACE = "build"
 LOCALE_URL_RE = re.compile(r'(?P<attr>href|src)="/(?P<locale>[A-Za-z0-9-]+)/(?P<rest>[^"]*)"')
@@ -40,12 +41,19 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def assert_zensical_installed() -> None:
-    """Fail fast when the local virtualenv is missing Zensical."""
-    if not ZENSICAL_BIN.exists():
-        raise RuntimeError(
-            f"Missing {ZENSICAL_BIN}. Create a virtualenv and install requirements.txt before building the site."
-        )
+def zensical_bin() -> str:
+    """Return the preferred Zensical executable for local and CI builds."""
+    if LOCAL_ZENSICAL_BIN.exists():
+        return str(LOCAL_ZENSICAL_BIN)
+
+    path_bin = which("zensical")
+    if path_bin:
+        return path_bin
+
+    raise RuntimeError(
+        f"Missing {LOCAL_ZENSICAL_BIN} and no 'zensical' binary was found on PATH. "
+        "Create a virtualenv and install requirements.txt, or run the build through uv."
+    )
 
 
 def assert_locales(locales: list[str]) -> None:
@@ -71,7 +79,7 @@ def build_locale(locale: str) -> None:
     prepared_config_path = prepared_root / "zensical.toml"
     shutil.rmtree(prepared_site_dir, ignore_errors=True)
     result = subprocess.run(
-        [str(ZENSICAL_BIN), "build", "--config-file", str(prepared_config_path)],
+        [zensical_bin(), "build", "--config-file", str(prepared_config_path)],
         cwd=prepared_root,
         text=True,
         capture_output=True,
@@ -130,7 +138,6 @@ def main() -> None:
         if args.locales
         else get_available_locales()
     )
-    assert_zensical_installed()
     assert_locales(selected_locales)
 
     all_locales = list(locale_meta().keys())

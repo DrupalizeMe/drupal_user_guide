@@ -25,11 +25,9 @@ stages:
 
 .build-documentation:
   stage: build
-  image: python:latest
+  image: ghcr.io/astral-sh/uv:python3.14-trixie-slim
   script:
-    - python3 -m venv .venv
-    - ./.venv/bin/python -m ensurepip --upgrade
-    - ./.venv/bin/python -m pip install -r requirements.txt
+    - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py
 
 # Preview builds intentionally publish only en,de locales because the
 # full assembled artifact is currently too large for MR preview deployment. If
@@ -41,10 +39,7 @@ build preview documentation:
     - if: $CI_MERGE_REQUEST_IID || $CI_PIPELINE_SOURCE == "merge_request_event"
       changes: *site_changes
   script:
-    - python3 -m venv .venv
-    - ./.venv/bin/python -m ensurepip --upgrade
-    - ./.venv/bin/python -m pip install -r requirements.txt
-    - ./.venv/bin/python scripts/zensical/build_site.py --locales en,de
+    - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py --locales en,de
   artifacts:
     paths:
       - build/zensical/site-build/assembled
@@ -58,11 +53,6 @@ build documentation:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "web"
     - if: $CI_PIPELINE_SOURCE == "webide"
-  script:
-    - python3 -m venv .venv
-    - ./.venv/bin/python -m ensurepip --upgrade
-    - ./.venv/bin/python -m pip install -r requirements.txt
-    - ./.venv/bin/python scripts/zensical/build_site.py
   artifacts:
     paths:
       - build/zensical/site-build/assembled
