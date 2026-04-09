@@ -21,7 +21,7 @@ nav = [
       "preface-conventions.md",
       "preface-scenario.md",
     ]},
-  {"Основы Drupal" = [
+  {"Глава 1: Основы Drupal" = [
       "understanding-drupal.md",
       "understanding-modules.md",
       "understanding-themes.md",
@@ -30,7 +30,7 @@ nav = [
       "understanding-project.md",
       "understanding-gpl.md",
     ]},
-  {"Проектирование сайта" = [
+  {"Глава 2: Проектирование сайта" = [
       "block-regions.md",
       "planning-layout.md",
       "planning-data-types.md",
@@ -39,7 +39,7 @@ nav = [
       "planning-workflow.md",
       "language-concept.md",
     ]},
-  {"Установка" = [
+  {"Глава 3: Установка" = [
       "install-prepare.md",
       "install-requirements.md",
       "install-tools.md",
@@ -48,7 +48,7 @@ nav = [
       "install-composer.md",
       "install-run.md",
     ]},
-  {"Основные настройки сайта" = [
+  {"Глава 4: Основные настройки сайта" = [
       "config-overview.md",
       "config-basic.md",
       "config-install.md",
@@ -56,7 +56,7 @@ nav = [
       "config-user.md",
       "config-theme.md",
     ]},
-  {"Управление страницами" = [
+  {"Глава 5: Управление страницами" = [
       "content-paths.md",
       "content-create.md",
       "content-edit.md",
@@ -65,7 +65,7 @@ nav = [
       "menu-link-from-content.md",
       "menu-reorder.md",
     ]},
-  {"Структура контента" = [
+  {"Глава 6: Структура контента" = [
       "structure-content-type.md",
       "structure-content-type-delete.md",
       "structure-fields.md",
@@ -83,7 +83,7 @@ nav = [
       "structure-text-formats.md",
       "structure-text-format-config.md",
     ]},
-  {"Управление аккаунтами пользователей" = [
+  {"Глава 7: Управление аккаунтами пользователей" = [
       "user-concept.md",
       "user-admin-account.md",
       "user-new-role.md",
@@ -92,25 +92,25 @@ nav = [
       "user-roles.md",
       "user-content.md",
     ]},
-  {"Блоки" = [
+  {"Глава 8: Блоки" = [
       "block-concept.md",
       "block-create-custom.md",
       "block-place.md",
     ]},
-  {"Вывод материалов через Views" = [
+  {"Глава 9: Вывод материалов через Views" = [
       "views-concept.md",
       "views-parts.md",
       "views-create.md",
       "views-duplicate.md",
       "views-block.md",
     ]},
-  {"Мультиязычность" = [
+  {"Глава 10: Мультиязычность" = [
       "language-add.md",
       "language-content-config.md",
       "language-content-translate.md",
       "language-config-translate.md",
     ]},
-  {"Расширение и настройка" = [
+  {"Глава 11: Расширение и настройка" = [
       "extend-module-find.md",
       "extend-maintenance.md",
       "extend-module-install.md",
@@ -123,14 +123,14 @@ nav = [
       "extend-config-versions.md",
       "extend-git.md",
     ]},
-  {"Предотвращение и решение проблем" = [
+  {"Глава 12: Предотвращение и решение проблем" = [
       "prevent-cache.md",
       "prevent-cache-clear.md",
       "prevent-backups.md",
       "prevent-log.md",
       "prevent-status.md",
     ]},
-  {"Безопасность и обслуживание" = [
+  {"Глава 13: Безопасность и обслуживание" = [
       "security-cron-concept.md",
       "security-cron.md",
       "security-concept.md",
@@ -139,12 +139,13 @@ nav = [
       "security-update-module.md",
       "security-update-theme.md",
     ]},
-  {"Заключение" = [
+  {"Глава 14: Заключение" = [
       "thoughts-connecting.md",
       "thoughts-support.md",
       "thoughts-learn-more.md",
-      "glossary.md",
-    ]},
+          ]},
+  "glossary.md",
+  "attributions.md",
 ]
 extra_css = ["assets/guide.css"]
 
@@ -152,7 +153,7 @@ extra_css = ["assets/guide.css"]
 language = "ru"
 favicon = "assets/favicon.ico"
 logo = "assets/druplicon.svg"
-features = ["navigation.footer", "navigation.indexes", "navigation.path", "navigation.sections"]
+features = ["content.code.copy","navigation.footer", "navigation.indexes", "navigation.path"]
 
 [project.extra]
 alternate = [
@@ -179,3 +180,11 @@ alternate = [
 
 [project.markdown_extensions.toc]
 permalink = true
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]

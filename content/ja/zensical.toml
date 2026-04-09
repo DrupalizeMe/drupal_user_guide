@@ -21,7 +21,7 @@ nav = [
       "preface-conventions.md",
       "preface-scenario.md",
     ]},
-  {"Drupalについて" = [
+  {"第1章: Drupalについて" = [
       "understanding-drupal.md",
       "understanding-modules.md",
       "understanding-themes.md",
@@ -30,7 +30,7 @@ nav = [
       "understanding-project.md",
       "understanding-gpl.md",
     ]},
-  {"あなたのサイトを計画する" = [
+  {"第2章: あなたのサイトを計画する" = [
       "block-regions.md",
       "planning-layout.md",
       "planning-data-types.md",
@@ -38,13 +38,13 @@ nav = [
       "planning-structure.md",
       "planning-workflow.md",
     ]},
-  {"インストール" = [
+  {"第3章: インストール" = [
       "install-requirements.md",
       "install-tools.md",
       "install-prepare.md",
       "install-run.md",
     ]},
-  {"基本的なサイト設定" = [
+  {"第4章: 基本的なサイト設定" = [
       "config-overview.md",
       "config-basic.md",
       "config-install.md",
@@ -52,7 +52,7 @@ nav = [
       "config-user.md",
       "config-theme.md",
     ]},
-  {"基本的なページ管理" = [
+  {"第5章: 基本的なページ管理" = [
       "content-paths.md",
       "content-create.md",
       "content-edit.md",
@@ -62,7 +62,7 @@ nav = [
       "menu-link-from-content.md",
       "menu-reorder.md",
     ]},
-  {"コンテンツ構造の設定" = [
+  {"第6章: コンテンツ構造の設定" = [
       "structure-content-type.md",
       "structure-content-type-delete.md",
       "structure-fields.md",
@@ -80,7 +80,7 @@ nav = [
       "structure-text-formats.md",
       "structure-text-format-config.md",
     ]},
-  {"ユーザーアカウントの管理" = [
+  {"第7章: ユーザーアカウントの管理" = [
       "user-concept.md",
       "user-admin-account.md",
       "user-new-role.md",
@@ -89,26 +89,26 @@ nav = [
       "user-roles.md",
       "user-content.md",
     ]},
-  {"ブロック" = [
+  {"第8章: ブロック" = [
       "block-concept.md",
       "block-create-custom.md",
       "block-place.md",
     ]},
-  {"ビューによるリスティングの作成" = [
+  {"第9章: ビューによるリスティングの作成" = [
       "views-concept.md",
       "views-parts.md",
       "views-create.md",
       "views-duplicate.md",
       "views-block.md",
     ]},
-  {"サイトを多言語化する" = [
+  {"第10章: サイトを多言語化する" = [
       "language-concept.md",
       "language-add.md",
       "language-content-config.md",
       "language-content-translate.md",
       "language-config-translate.md",
     ]},
-  {"サイトの拡張とカスタマイズ" = [
+  {"第11章: サイトの拡張とカスタマイズ" = [
       "extend-module-find.md",
       "extend-maintenance.md",
       "extend-module-install.md",
@@ -121,14 +121,14 @@ nav = [
       "extend-deploy.md",
       "extend-config-versions.md",
     ]},
-  {"問題の予防と解決" = [
+  {"第12章: 問題の予防と解決" = [
       "prevent-cache.md",
       "prevent-cache-clear.md",
       "prevent-backups.md",
       "prevent-log.md",
       "prevent-status.md",
     ]},
-  {"セキュリティとメンテナンス" = [
+  {"第13章: セキュリティとメンテナンス" = [
       "security-cron-concept.md",
       "security-cron.md",
       "security-concept.md",
@@ -137,12 +137,13 @@ nav = [
       "security-update-module.md",
       "security-update-theme.md",
     ]},
-  {"おわりに" = [
+  {"第14章: おわりに" = [
       "thoughts-connecting.md",
       "thoughts-support.md",
       "thoughts-learn-more.md",
-      "glossary.md",
-    ]},
+          ]},
+  "glossary.md",
+  "attributions.md",
 ]
 extra_css = ["assets/guide.css"]
 
@@ -150,7 +151,7 @@ extra_css = ["assets/guide.css"]
 language = "ja"
 favicon = "assets/favicon.ico"
 logo = "assets/druplicon.svg"
-features = ["navigation.footer", "navigation.indexes", "navigation.path", "navigation.sections"]
+features = ["content.code.copy","navigation.footer", "navigation.indexes", "navigation.path"]
 
 [project.extra]
 alternate = [
@@ -177,3 +178,11 @@ alternate = [
 
 [project.markdown_extensions.toc]
 permalink = true
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]

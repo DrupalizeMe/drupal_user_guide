@@ -21,7 +21,7 @@ nav = [
       "preface-conventions.md",
       "preface-scenario.md",
     ]},
-  {"Memahami Drupal" = [
+  {"Bab 1: Memahami Drupal" = [
       "understanding-drupal.md",
       "understanding-modules.md",
       "understanding-themes.md",
@@ -30,7 +30,7 @@ nav = [
       "understanding-project.md",
       "understanding-gpl.md",
     ]},
-  {"Merencanakan Situs Anda" = [
+  {"Bab 2: Merencanakan Situs Anda" = [
       "block-regions.md",
       "planning-layout.md",
       "planning-data-types.md",
@@ -38,13 +38,13 @@ nav = [
       "planning-structure.md",
       "planning-workflow.md",
     ]},
-  {"Instalasi" = [
+  {"Bab 3: Instalasi" = [
       "install-requirements.md",
       "install-tools.md",
       "install-prepare.md",
       "install-run.md",
     ]},
-  {"Konfigurasi Dasar Situs" = [
+  {"Bab 4: Konfigurasi Dasar Situs" = [
       "config-overview.md",
       "config-basic.md",
       "config-install.md",
@@ -52,7 +52,7 @@ nav = [
       "config-user.md",
       "config-theme.md",
     ]},
-  {"Manajemen Dasar Halaman" = [
+  {"Bab 5: Manajemen Dasar Halaman" = [
       "content-paths.md",
       "content-create.md",
       "content-edit.md",
@@ -62,7 +62,7 @@ nav = [
       "menu-link-from-content.md",
       "menu-reorder.md",
     ]},
-  {"Menyiapkan Struktur Konten" = [
+  {"Bab 6: Menyiapkan Struktur Konten" = [
       "structure-content-type.md",
       "structure-content-type-delete.md",
       "structure-fields.md",
@@ -80,7 +80,7 @@ nav = [
       "structure-text-formats.md",
       "structure-text-format-config.md",
     ]},
-  {"Mengelola Akun Pengguna" = [
+  {"Bab 7: Mengelola Akun Pengguna" = [
       "user-concept.md",
       "user-admin-account.md",
       "user-new-role.md",
@@ -89,26 +89,26 @@ nav = [
       "user-roles.md",
       "user-content.md",
     ]},
-  {"Blok" = [
+  {"Bab 8: Blok" = [
       "block-concept.md",
       "block-create-custom.md",
       "block-place.md",
     ]},
-  {"Membuat Daftar dengan Views" = [
+  {"Bab 9: Membuat Daftar dengan Views" = [
       "views-concept.md",
       "views-parts.md",
       "views-create.md",
       "views-duplicate.md",
       "views-block.md",
     ]},
-  {"Membuat Situs Anda Multilingual" = [
+  {"Bab 10: Membuat Situs Anda Multilingual" = [
       "language-concept.md",
       "language-add.md",
       "language-content-config.md",
       "language-content-translate.md",
       "language-config-translate.md",
     ]},
-  {"Mengembangkan dan Menyesuaikan Situs Anda" = [
+  {"Bab 11: Mengembangkan dan Menyesuaikan Situs Anda" = [
       "extend-module-find.md",
       "extend-maintenance.md",
       "extend-module-install.md",
@@ -121,14 +121,14 @@ nav = [
       "extend-deploy.md",
       "extend-config-versions.md",
     ]},
-  {"Mencegah dan Memperbaiki Masalah" = [
+  {"Bab 12: Mencegah dan Memperbaiki Masalah" = [
       "prevent-cache.md",
       "prevent-cache-clear.md",
       "prevent-backups.md",
       "prevent-log.md",
       "prevent-status.md",
     ]},
-  {"Keamanan dan Pemeliharaan" = [
+  {"Bab 13: Keamanan dan Pemeliharaan" = [
       "security-cron-concept.md",
       "security-cron.md",
       "security-concept.md",
@@ -137,12 +137,13 @@ nav = [
       "security-update-module.md",
       "security-update-theme.md",
     ]},
-  {"Pemikiran Akhir" = [
+  {"Bab 14: Pemikiran Akhir" = [
       "thoughts-connecting.md",
       "thoughts-support.md",
       "thoughts-learn-more.md",
-      "glossary.md",
-    ]},
+          ]},
+  "glossary.md",
+  "attributions.md",
 ]
 extra_css = ["assets/guide.css"]
 
@@ -150,7 +151,7 @@ extra_css = ["assets/guide.css"]
 language = "id"
 favicon = "assets/favicon.ico"
 logo = "assets/druplicon.svg"
-features = ["navigation.footer", "navigation.indexes", "navigation.path", "navigation.sections"]
+features = ["content.code.copy","navigation.footer", "navigation.indexes", "navigation.path"]
 
 [project.extra]
 alternate = [
@@ -177,3 +178,11 @@ alternate = [
 
 [project.markdown_extensions.toc]
 permalink = true
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]

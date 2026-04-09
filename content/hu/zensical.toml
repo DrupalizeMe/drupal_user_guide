@@ -21,7 +21,7 @@ nav = [
       "preface-conventions.md",
       "preface-scenario.md",
     ]},
-  {"Ismerkedés" = [
+  {"Fejezet 1: Ismerkedés" = [
       "understanding-drupal.md",
       "understanding-modules.md",
       "understanding-themes.md",
@@ -30,7 +30,7 @@ nav = [
       "understanding-project.md",
       "understanding-gpl.md",
     ]},
-  {"Tervezés" = [
+  {"Fejezet 2: Tervezés" = [
       "block-regions.md",
       "planning-layout.md",
       "planning-data-types.md",
@@ -39,7 +39,7 @@ nav = [
       "planning-workflow.md",
       "language-concept.md",
     ]},
-  {"Telepítés" = [
+  {"Fejezet 3: Telepítés" = [
       "install-requirements.md",
       "install-tools.md",
       "install-decide.md",
@@ -48,7 +48,7 @@ nav = [
       "install-manual.md",
       "install-run.md",
     ]},
-  {"Alapbeállítások" = [
+  {"Fejezet 4: Alapbeállítások" = [
       "config-overview.md",
       "config-basic.md",
       "config-install.md",
@@ -56,7 +56,7 @@ nav = [
       "config-user.md",
       "config-theme.md",
     ]},
-  {"Oldalkezelés" = [
+  {"Fejezet 5: Oldalkezelés" = [
       "content-paths.md",
       "content-create.md",
       "content-edit.md",
@@ -66,7 +66,7 @@ nav = [
       "menu-link-from-content.md",
       "menu-reorder.md",
     ]},
-  {"Tartalomszerkezet" = [
+  {"Fejezet 6: Tartalomszerkezet" = [
       "structure-content-type.md",
       "structure-content-type-delete.md",
       "structure-fields.md",
@@ -84,7 +84,7 @@ nav = [
       "structure-text-formats.md",
       "structure-text-format-config.md",
     ]},
-  {"Felhasználókezelés" = [
+  {"Fejezet 7: Felhasználókezelés" = [
       "user-concept.md",
       "user-admin-account.md",
       "user-new-role.md",
@@ -93,25 +93,25 @@ nav = [
       "user-roles.md",
       "user-content.md",
     ]},
-  {"Blokkok" = [
+  {"Fejezet 8: Blokkok" = [
       "block-concept.md",
       "block-create-custom.md",
       "block-place.md",
     ]},
-  {"Listázás nézetekkel" = [
+  {"Fejezet 9: Listázás nézetekkel" = [
       "views-concept.md",
       "views-parts.md",
       "views-create.md",
       "views-duplicate.md",
       "views-block.md",
     ]},
-  {"Többnyelvűsítés" = [
+  {"Fejezet 10: Többnyelvűsítés" = [
       "language-add.md",
       "language-content-config.md",
       "language-content-translate.md",
       "language-config-translate.md",
     ]},
-  {"Továbbfejlesztés" = [
+  {"Fejezet 11: Továbbfejlesztés" = [
       "extend-module-find.md",
       "extend-maintenance.md",
       "extend-module-install.md",
@@ -124,14 +124,14 @@ nav = [
       "extend-config-versions.md",
       "extend-git.md",
     ]},
-  {"Hibaelhárítás" = [
+  {"Fejezet 12: Hibaelhárítás" = [
       "prevent-cache.md",
       "prevent-cache-clear.md",
       "prevent-backups.md",
       "prevent-log.md",
       "prevent-status.md",
     ]},
-  {"Karbantartás" = [
+  {"Fejezet 13: Karbantartás" = [
       "security-cron-concept.md",
       "security-cron.md",
       "security-concept.md",
@@ -140,12 +140,13 @@ nav = [
       "security-update-module.md",
       "security-update-theme.md",
     ]},
-  {"Záró gondolatok" = [
+  {"Fejezet 14: Záró gondolatok" = [
       "thoughts-connecting.md",
       "thoughts-support.md",
       "thoughts-learn-more.md",
-      "glossary.md",
-    ]},
+          ]},
+  "glossary.md",
+  "attributions.md",
 ]
 extra_css = ["assets/guide.css"]
 
@@ -153,7 +154,7 @@ extra_css = ["assets/guide.css"]
 language = "hu"
 favicon = "assets/favicon.ico"
 logo = "assets/druplicon.svg"
-features = ["navigation.footer", "navigation.indexes", "navigation.path", "navigation.sections"]
+features = ["content.code.copy","navigation.footer", "navigation.indexes", "navigation.path"]
 
 [project.extra]
 alternate = [
@@ -180,3 +181,11 @@ alternate = [
 
 [project.markdown_extensions.toc]
 permalink = true
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]

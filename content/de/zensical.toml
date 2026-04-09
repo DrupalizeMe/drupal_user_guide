@@ -21,7 +21,7 @@ nav = [
       "preface-conventions.md",
       "preface-scenario.md",
     ]},
-  {"Drupal verstehen" = [
+  {"Kapitel 1: Drupal verstehen" = [
       "understanding-drupal.md",
       "understanding-modules.md",
       "understanding-themes.md",
@@ -30,7 +30,7 @@ nav = [
       "understanding-project.md",
       "understanding-gpl.md",
     ]},
-  {"Planen Sie Ihre Website" = [
+  {"Kapitel 2: Planen Sie Ihre Website" = [
       "block-regions.md",
       "planning-layout.md",
       "planning-data-types.md",
@@ -39,7 +39,7 @@ nav = [
       "planning-workflow.md",
       "language-concept.md",
     ]},
-  {"Installation" = [
+  {"Kapitel 3: Installation" = [
       "install-requirements.md",
       "install-tools.md",
       "install-decide.md",
@@ -48,7 +48,7 @@ nav = [
       "install-manual.md",
       "install-run.md",
     ]},
-  {"Grundlegende Konfiguration der Website" = [
+  {"Kapitel 4: Grundlegende Konfiguration der Website" = [
       "config-overview.md",
       "config-basic.md",
       "config-install.md",
@@ -56,7 +56,7 @@ nav = [
       "config-user.md",
       "config-theme.md",
     ]},
-  {"Grundlegende Verwaltung der Website" = [
+  {"Kapitel 5: Grundlegende Verwaltung der Website" = [
       "content-paths.md",
       "content-create.md",
       "content-edit.md",
@@ -66,7 +66,7 @@ nav = [
       "menu-link-from-content.md",
       "menu-reorder.md",
     ]},
-  {"Inhaltsstruktur der Website einrichten" = [
+  {"Kapitel 6: Inhaltsstruktur der Website einrichten" = [
       "structure-content-type.md",
       "structure-content-type-delete.md",
       "structure-fields.md",
@@ -84,7 +84,7 @@ nav = [
       "structure-text-formats.md",
       "structure-text-format-config.md",
     ]},
-  {"Benutzerkonten verwalten" = [
+  {"Kapitel 7: Benutzerkonten verwalten" = [
       "user-concept.md",
       "user-admin-account.md",
       "user-new-role.md",
@@ -93,25 +93,25 @@ nav = [
       "user-roles.md",
       "user-content.md",
     ]},
-  {"Blöcke" = [
+  {"Kapitel 8: Blöcke" = [
       "block-concept.md",
       "block-create-custom.md",
       "block-place.md",
     ]},
-  {"Listen und Ansichten erstellen" = [
+  {"Kapitel 9: Listen und Ansichten erstellen" = [
       "views-concept.md",
       "views-parts.md",
       "views-create.md",
       "views-duplicate.md",
       "views-block.md",
     ]},
-  {"Eine Website in mehreren Sprachen ausgeben" = [
+  {"Kapitel 10: Eine Website in mehreren Sprachen ausgeben" = [
       "language-add.md",
       "language-content-config.md",
       "language-content-translate.md",
       "language-config-translate.md",
     ]},
-  {"Eine Website erweitern und anpassen" = [
+  {"Kapitel 11: Eine Website erweitern und anpassen" = [
       "extend-module-find.md",
       "extend-maintenance.md",
       "extend-module-install.md",
@@ -124,14 +124,14 @@ nav = [
       "extend-config-versions.md",
       "extend-git.md",
     ]},
-  {"Fehler vermeiden und beheben" = [
+  {"Kapitel 12: Fehler vermeiden und beheben" = [
       "prevent-cache.md",
       "prevent-cache-clear.md",
       "prevent-backups.md",
       "prevent-log.md",
       "prevent-status.md",
     ]},
-  {"Sicherheit und Wartung" = [
+  {"Kapitel 13: Sicherheit und Wartung" = [
       "security-cron-concept.md",
       "security-cron.md",
       "security-concept.md",
@@ -140,12 +140,13 @@ nav = [
       "security-update-module.md",
       "security-update-theme.md",
     ]},
-  {"Abschließende Gedanken" = [
+  {"Kapitel 14: Abschließende Gedanken" = [
       "thoughts-connecting.md",
       "thoughts-support.md",
       "thoughts-learn-more.md",
-      "glossary.md",
-    ]},
+          ]},
+  "glossary.md",
+  "attributions.md",
 ]
 extra_css = ["assets/guide.css"]
 
@@ -153,7 +154,7 @@ extra_css = ["assets/guide.css"]
 language = "de"
 favicon = "assets/favicon.ico"
 logo = "assets/druplicon.svg"
-features = ["navigation.footer", "navigation.indexes", "navigation.path", "navigation.sections"]
+features = ["content.code.copy","navigation.footer", "navigation.indexes", "navigation.path"]
 
 [project.extra]
 alternate = [
@@ -180,3 +181,11 @@ alternate = [
 
 [project.markdown_extensions.toc]
 permalink = true
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]
