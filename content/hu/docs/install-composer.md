@@ -27,12 +27,12 @@ Tekintve, hogy egy személyi számítógép és egy webkiszolgáló működése 
 Ha még nem töltöttük le az alaprendszer forráskódját, és szeretnénk élni a Composer azon áldásos hatásával, hogy automatikusan gondoskodik a Drupal függőségeinek meglétéről, akkor kövessük az alábbi lépéseket:
 
 1. Számítógépünk parancssoros ablakában álljunk egy szinttel feljebb, mint amelyik könyvtárban majd szeretnénk, hogy a Drupal létrejöjjön.
-1. Adjuk ki az alábbi parancsot, melyben a +webhelyem+ részt helyettesítsük be a létrehozni kívánt könyvtárunk nevével:
+1. Adjuk ki az alábbi parancsot, melyben a `webhelyem` részt helyettesítsük be a létrehozni kívánt könyvtárunk nevével:
     ```text
     composer create-project drupal-composer/drupal-project:8.x-dev webhelyem --no-interaction
     ```
 
-    Sikeres lefutást követően létrejön a +webhelyem+ argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer legfrissebb kiadásának forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
+    Sikeres lefutást követően létrejön a `webhelyem` argumentumként megadott könyvtár, benne pedig egy _/web_ alkönyvtárban a Drupal alaprendszer legfrissebb kiadásának forráskódja. Emellett olyan hasznos fejlesztői eszközöket is kapunk, mint a _Drush_ és a _Drupal Console_.
 ### Egy korábban tömörített fájlból telepített webhely átalakítása Composeresre
 
 Bárkivel előfordulhat, hogy miután már feltelepítette a Drupalt a Drupal.org-ról letöltött _zip_ vagy _tar.gz_ fájlból (tehát Composer használata nélkül), később meggondolja magát és mégis szeretne élni inkább az automatikus függőségkezelés lehetőségével. Szerencsére ez sem lehetetlen: ha már telepítettük a Composert a gépünkre, de az még nem kezeli a Drupal kódbázisát, akkor az alábbi két lépéssel megtehetjük.
@@ -45,7 +45,7 @@ Bárkivel előfordulhat, hogy miután már feltelepítette a Drupalt a Drupal.or
 
 Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdonképpen bármely közösségi modulnak vagy sminknek is. Ezért is különösen hasznos, hogy ha már Composerrel kezdtük el felépíteni webhelyünket, akkor azt használhatjuk arra is, hogy beszerezzük vele a többi szükséges kiegészítő kívánt verzióját az alábbi lépéseket követve:
 
-1. Bármikor, ha egy új, az adott webhelyen korábban még nem használt közösségi projektet (modult vagy sminket) szeretnénk hozzáadni a már meglévőkhöz, akkor először is a legelső lépés, hogy pontosan tudnunk kell a letölteni kívánt projekt gépek által használt nevét. Ez mindig csak az angol ábécé kisbetűiből áll, nem tartalmazhat szóközt és szavak elkülönítésére az aláhúzás karaktert használja. Legkönnyebben a Drupal.org portálon a projektoldal webcímének végén találjuk. Például a _Geofield_ modulé a https://www.drupal.org/project/geofield URL-ben a +geofield+.
+1. Bármikor, ha egy új, az adott webhelyen korábban még nem használt közösségi projektet (modult vagy sminket) szeretnénk hozzáadni a már meglévőkhöz, akkor először is a legelső lépés, hogy pontosan tudnunk kell a letölteni kívánt projekt gépek által használt nevét. Ez mindig csak az angol ábécé kisbetűiből áll, nem tartalmazhat szóközt és szavak elkülönítésére az aláhúzás karaktert használja. Legkönnyebben a Drupal.org portálon a projektoldal webcímének végén találjuk. Például a _Geofield_ modulé a https://www.drupal.org/project/geofield URL-ben a `geofield`.
 1. Ha megvan a neve, akkor azt a következő parancsban a példaként használt „geofield” helyére behelyettesítve és egy parancssoros ablakban lefuttatva a Composer letölti a modult minden további szükséges függőségével együtt:
     ```text
     composer require drupal/geofield
@@ -54,16 +54,16 @@ Külső függőségei azonban nemcsak az alaprendszernek lehetnek, hanem tulajdo
 
 Miután az előző részeknél leírtak szerint már használunk Composert a webhelyünk szoftverfüggőségeinek automatizált kezelésére, így a következő lépéseket követve könnyedén elvégezhetjük mindezek rendszeres frissítését is.
 
-1. Akárcsak telepítéskor (lásd fentebb), most is tudnunk kell a frissíteni kívánt modulok vagy sminkek gépi nevét. Az alaprendszeré +core+, a közösségi projektekét pedig megnézhetjük webhelyünk adminfelületén.
+1. Akárcsak telepítéskor (lásd fentebb), most is tudnunk kell a frissíteni kívánt modulok vagy sminkek gépi nevét. Az alaprendszeré `core`, a közösségi projektekét pedig megnézhetjük webhelyünk adminfelületén.
 1. Második lépésként meg kell határoznunk, hogy az adott szoftverelem melyik verzióját szeretnénk letöltetni a Composerrel. Egyszerű dolgunk van, ha a legfrissebb verziót kérjük:
     ```text
     composer update drupal/geofield --with-dependencies
     ```
-1. Ha valamilyen oknál fogva egy adott verzióra van szükségünk, akkor jó, ha tudjuk, hogy a kötőjeles verziószámok esetén a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy +8.x-1.7+ (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az +1.7+ verziószámot megadnunk. Mindez azonban nem érvényes a Drupal 8 alaprendszerre, mert az a régies kéttagú verziószámok (például „Drupal 7.59”) helyett már a korszerű _szemantikus verziószámozás_ elvét követve háromtagú jelölést használ. Mivel pedig a +core+ magasabb szintű, mint a kiegészítők, ezért kötőjel sem szerepel benne. Ezt tehát továbbra is ugyanúgy ki kell írnunk a Composer-parancsokban: például +drupal/core:8.6.3+.
+1. Ha valamilyen oknál fogva egy adott verzióra van szükségünk, akkor jó, ha tudjuk, hogy a kötőjeles verziószámok esetén a főverzió számát sosem kell külön megadnunk, hiszen az magától értetődő. Ha tehát azt látjuk a modul projektoldalán, hogy `8.x-1.7` (amiben a kötőjel előtti szám webhelyünk Drupal-főverzióját jelöli), akkor a Composernek elég már csak az `1.7` verziószámot megadnunk. Mindez azonban nem érvényes a Drupal 8 alaprendszerre, mert az a régies kéttagú verziószámok (például „Drupal 7.59”) helyett már a korszerű _szemantikus verziószámozás_ elvét követve háromtagú jelölést használ. Mivel pedig a `core` magasabb szintű, mint a kiegészítők, ezért kötőjel sem szerepel benne. Ezt tehát továbbra is ugyanúgy ki kell írnunk a Composer-parancsokban: például `drupal/core:8.6.3`.
     ```text
     composer require drupal/geofield:1.7
     ```
-1. Ha minden információ rendelkezésre áll, akkor a parancssoros ablakban webhelyünk gyökérkönyvtárában állva adjuk ki a fentiekhez hasonló parancsunkat, melyben a +geofield+ mintát értelemszerűen a frissíteni kívánt projekt nevére cseréltük.
+1. Ha minden információ rendelkezésre áll, akkor a parancssoros ablakban webhelyünk gyökérkönyvtárában állva adjuk ki a fentiekhez hasonló parancsunkat, melyben a `geofield` mintát értelemszerűen a frissíteni kívánt projekt nevére cseréltük.
 ## Az ismeretek elmélyítése
 
 A Composer használatát kézenfekvő módon annak beépített súgójából ismerhetjük meg. Például a fentebb már említett `create-project` utasításról a `composer help create-project` paranccsal olvashatunk bővebben.

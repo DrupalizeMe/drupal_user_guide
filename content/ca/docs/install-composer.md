@@ -47,7 +47,7 @@ control repository:
     module.
 1. Click the _Version control_ link near the top of the page, which opens up a
     page giving Git commands for this project.
-1. Copy the +git clone+ command under _Setting up repository for the first time_,
+1. Copy the `git clone` command under _Setting up repository for the first time_,
     and paste it into your command line. For example, it might be:
     ```text
     git clone --branch 8.2.x https://git.drupal.org/project/drupal.git
@@ -66,7 +66,7 @@ Follow these steps if you downloaded the core software files using Git, which
 does not include the external dependencies:
 
 1. Change to the core software's root directory.
-1. Run the command +composer install+ at the command line. The external
+1. Run the command `composer install` at the command line. The external
     dependencies will be downloaded.
 ### Using Composer to download the core software
 
@@ -76,7 +76,7 @@ its external dependencies:
 
 1. At the command line, change to one level above the directory where you want
     the software to reside.
-1. Enter this command, where +my_site_name+ is the directory you want to create:
+1. Enter this command, where `my_site_name` is the directory you want to create:
     ```text
     composer create-project drupal/drupal my_site_name
     ```
@@ -97,7 +97,7 @@ has external dependencies that need to be downloaded with Composer):
     typically you would want contributed modules to go in a _contrib_ subdirectory
     of the top-level _modules_ directory, instead of the default location of
     _modules_. To make this change, edit the _composer.json_ file at the root level
-    in your site installation. Find the line that says +"extra": {+, and add these
+    in your site installation. Find the line that says `"extra": {`, and add these
     lines following that line:
     ```text
     "installer-paths": {
@@ -113,10 +113,10 @@ has external dependencies that need to be downloaded with Composer):
 1. Each time you want to add a contributed module or theme, determine the
     project's short name. This is the last part of the URL of the project page; for
     example, the Geofield module, at
-    https://www.drupal.org/project/geofield, has short name +geofield+.
+    https://www.drupal.org/project/geofield, has short name `geofield`.
 1. To download the contributed module or theme, along with its external
     dependencies, enter the following command at the root of your site (substituting
-    the short name of the module or theme for +geofield+):
+    the short name of the module or theme for `geofield`):
     ```text
     composer require drupal/geofield
     ```
@@ -129,12 +129,12 @@ Composer:
 1. Determine the short name of the project you want to update. For the core
     software, it is _drupal_. For contributed modules and themes, it is the last
     part of the URL of the project page; for example, the Geofield module, at
-    https://www.drupal.org/project/geofield, has short name +geofield+.
+    https://www.drupal.org/project/geofield, has short name `geofield`.
 1. Determine how to enter the version number you want to update to. For
     example, for version 8.x-1.7 of a contributed module, you would enter just the
     1.7, and for the core software version 8.3.1, you would enter 3.1.
 1. Enter the following command at the root of your site (substituting
-    the short name of the module or theme for +geofield+ and the correct version
+    the short name of the module or theme for `geofield` and the correct version
     number):
     ```text
     composer require drupal/geofield:1.7

@@ -72,10 +72,10 @@ its dependencies.
 1. Each time you want to add a contributed module or theme, determine the
     project's short name. This is the last part of the URL of the project page; for
     example, the Geofield module, at
-    https://www.drupal.org/project/geofield, has short name +geofield+.
+    https://www.drupal.org/project/geofield, has short name `geofield`.
 1. To download the contributed module or theme, along with its external
     dependencies, enter the following command at the root of your site (substituting
-    the short name of the module or theme for +geofield+):
+    the short name of the module or theme for `geofield`):
     ```text
     composer require drupal/geofield
     ```
@@ -88,10 +88,10 @@ Composer:
 1. Determine the short name of the project you want to update. For the core
     software, it is _core_. For contributed modules and themes, it is the last
     part of the URL of the project page; for example, the Geofield module, at
-    https://www.drupal.org/project/geofield, has short name +geofield+.
+    https://www.drupal.org/project/geofield, has short name `geofield`.
 1. If you want to update to the latest stable release, use the following
     command, substituting the short name of the project to be updated for
-    +geofield+:
+    `geofield`:
     ```text
     composer update drupal/geofield --with-dependencies
     ```
@@ -99,7 +99,7 @@ Composer:
     want to update to. For example, for version 8.x-1.7 of a contributed module, you
     would enter just the 1.7, and for the core software version 8.3.1, you would
     enter 8.3.1. Then enter the following command at the root of your site
-    (substituting the short name of the project for +geofield+ and the correct
+    (substituting the short name of the project for `geofield` and the correct
     version number):
     ```text
     composer require drupal/geofield:1.7

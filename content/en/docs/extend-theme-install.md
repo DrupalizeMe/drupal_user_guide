@@ -33,7 +33,7 @@ the theme using either the administrative interface or Drush.
     install.
     ![Finding the composer command for a theme](/images/extend-theme-install-download.png)
 1. Alternatively, type the following command (substituting
-    the short name of the theme and desired version for +honey:^1.0+):
+    the short name of the theme and desired version for `honey:^1.0`):
     ```text
     composer require 'drupal/honey:^1.0'
     ```

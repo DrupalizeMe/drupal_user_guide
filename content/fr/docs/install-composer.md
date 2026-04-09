@@ -58,9 +58,9 @@ dépendances.
 1. Chaque fois que vous voulez ajouter un module ou thème contribué, déterminer
     le nom court du projet. Il s'agit de la dernière partie de l'URL de la page du
     projet ; par exemple le module Geofield, à l'adresse
-    https://www.drupal.org/project/geofield, a pour nom court +geofield+.
+    https://www.drupal.org/project/geofield, a pour nom court `geofield`.
 1. Pour télécharger le module ou thème contribué avec ses dépendances externes,
-    saisir la commande suivante à la racine de votre site (en remplaçant +geofield+
+    saisir la commande suivante à la racine de votre site (en remplaçant `geofield`
     par le nom court du module ou du thème) :
     ```text
     composer require drupal/geofield
@@ -74,9 +74,9 @@ module contribué, après avoir commencé à gérer les dépendances avec Compos
 1. Déterminer le nom court du projet que vous voulez mettre à jour. Pour le cœur,
     il s'agit de _core_. Pour des modules ou thèmes contribués, il s'agit de la
     dernière partie de l'URL de la page du projet ; par exemple le module Geofield,
-    à l'adresse https://www.drupal.org/project/geofield, a pour nom court +geofield+.
+    à l'adresse https://www.drupal.org/project/geofield, a pour nom court `geofield`.
 1. Si vous voulez mettre à jour vers la dernière version stable, utiliser la
-    commande suivante, en remplaçant +geofield+ par le nom court du projet à mettre
+    commande suivante, en remplaçant `geofield` par le nom court du projet à mettre
     à jour :
     ```text
     composer update drupal/geofield --with-dependencies
@@ -85,7 +85,7 @@ module contribué, après avoir commencé à gérer les dépendances avec Compos
     version vers lequel vous voulez mettre à jour. Par exemple, pour la version
     8.x-1.16 d'un module contribué, vous saisiriez juste 1.16, tandis que pour la
     version 9.0.7 du cœur, vous saisiriez 9.0.7. Saisir ensuite la commande suivante
-    à la racine de votre site (en remplaçant +geofield+ par le nom court du projet
+    à la racine de votre site (en remplaçant `geofield` par le nom court du projet
     et en indiquant le bon numéro de version) :
     ```text
     composer require drupal/geofield:1.16

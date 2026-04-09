@@ -37,7 +37,7 @@ the module using either the administrative interface or Drush.
     install.
     ![Finding a module's composer install command](/images/extend-module-install-download.png)
 1. Alternatively, type the following command (substituting
-    the short name of the module and desired version for +admin_toolbar:^3.5+):
+    the short name of the module and desired version for `admin_toolbar:^3.5`):
     ```text
     composer require 'drupal/admin_toolbar:^3.5'
     ```

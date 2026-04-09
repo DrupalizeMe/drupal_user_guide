@@ -22,7 +22,7 @@ A Kézikönyv során a következő fogalmazási és szerkesztési gyakorlatot k�
 * A _pelda.hu_ doménnév alatt mindig a webhelyünk alapwebcímét értjük. A webhelyünkön belül használatos további webcímekről lentebb, a Navigáció szakaszban írunk.
 * _Dőlt betűvel_ a képernyőn megjelenő kifejezéseket jelöltük, mint például: „Kattintsunk a _Beállítások mentése_ gombra”. Ez azonban csak a szoftver kezelőfelületének részét képező kifejezésekre vonatkozik, nem pedig a korábbi témakörök során begépelt szövegekre. Például amikor egy tartalomszerkesztésről szóló leírásban egy ehhez hasonló utasítást olvashatunk: „Kattintsunk a _Szerkesztés_ gombra a Rólunk oldal sorában”, akkor a _Szerkesztés_ dőlt betűs, mert a gomb felirata, de a Rólunk nem az, mivel az egy általunk feltöltött tartalomnak a címe.
 * Az előbb említett UI-feliratokon kívül a _dőlttel_ való formázást használjuk még modulok és sminkek, valamint fájlok neveinek és az újonnan ismertetett szakkifejezéseknek a kiemelésére is.
-* Minden olyan szöveget, amelyet egy parancssori ablakba kell begépelnünk, +egyenszélességű+ betűvel jelöltünk:
+* Minden olyan szöveget, amelyet egy parancssori ablakba kell begépelnünk, `egyenszélességű` betűvel jelöltünk:
 ```text
 drush cache:rebuild
 ```
@@ -45,7 +45,7 @@ Ebben az esetben a _Kezelés_, majd _Konfiguráció_ menüpontokra való kattint
 
 ![A _Rendszer_ feliratú doboz a Konfiguráció oldalon](/images/preface-conventions-config-system.png)
 
-Végezetül pedig még egy apró megjegyzés: ha az alapértelmezett adminisztrációs sminket, a _Sevent_ használjuk, akkor az új elemeket hozzáadó gombokon szerepelni fog egy plusz („\+”) jel. Például az admin/content oldalon ezen a gombon a „+ Tartalom hozzáadása” felirat olvasható. Ez azonban csupán a _Seven_ design egy funkciója, a plusz jel nem a gombfelirat része (például a képernyőfelolvasó szoftverek is figyelmen kívül hagyják), ezért mi is anélkül fogjuk említeni ezeket a gombokat a Kézikönyvben.
+Végezetül pedig még egy apró megjegyzés: ha az alapértelmezett adminisztrációs sminket, a _Sevent_ használjuk, akkor az új elemeket hozzáadó gombokon szerepelni fog egy plusz („\`”) jel. Például az admin/content oldalon ezen a gombon a „` Tartalom hozzáadása” felirat olvasható. Ez azonban csupán a _Seven_ design egy funkciója, a plusz jel nem a gombfelirat része (például a képernyőfelolvasó szoftverek is figyelmen kívül hagyják), ezért mi is anélkül fogjuk említeni ezeket a gombokat a Kézikönyvben.
 ## Űrlapok kitöltése, adatok bevitele
 
 Könyvünk lépéssorainak majdnem minden feladata során szükségünk lesz különböző adatok webes űrlapokon keresztüli bevitelére. Ennek megkönnyítésére a legtöbb esetben egy képernyőképpel illusztráljuk majd őket, valamint egy táblázatban összefoglaljuk, hogy melyik mezőbe mit kell beírni. Például találkozni fogunk majd egy ehhez hasonló táblázattal, ami három oszlopban összefoglalja, hogyan töltsük ki a mezőket a _Konfiguráció_ > _Rendszer_ > _Alapvető webhelybeállítások_ (vagy a címsorban az  _admin/config/system/site-information_) oldalon:

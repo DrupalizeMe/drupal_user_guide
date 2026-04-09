@@ -70,9 +70,9 @@ Stammverzeichnis Ihrer Website zu übertragen.
 1. Ermitteln Sie den Systemnamen des Projekts:
     Dies ist der letzte Teil der URL der Projektseite eines Moduls oder Themes. Das Modul
     Geofield ist beispielsweise unter https://www.drupal.org/project/geofield zu finden
-    und hat den Systemnamen +geofield+.
+    und hat den Systemnamen `geofield`.
 1. Führen Sie für jedes heruntergeladene Modul, Theme oder Profil einmal
-    den folgenden Befehl aus, wobei+systemname+ durch den Namen des des gewünschten Projekts
+    den folgenden Befehl aus, wobei `systemname` durch den Namen des des gewünschten Projekts
      ersetzt wird, um das jeweilige Projekt zur Datei _composer.json_
     hinzuzufügen:
 
@@ -98,7 +98,7 @@ Abhängigkeiten hinzuzufügen.
 1. Bestimmen Sie den Systemnamen des Projekts
 1. Zum Herunterladen eines von der Community bereitgestellten Moduls oder Themes,
     und dessen externer Komponenten, auch Abhängigkeiten genannt,
-    geben Sie den folgenden Befehl im Hauptverzeichnis Ihrer Website ein (ersetzen Sie +systemname+ durch den Namen,
+    geben Sie den folgenden Befehl im Hauptverzeichnis Ihrer Website ein (ersetzen Sie `systemname` durch den Namen,
     des von Ihnen benötigten Projekts):
     ```text
     composer require drupal/systemname
@@ -113,7 +113,7 @@ Composer zu aktualisieren, wenn bereits eine Website vorhanden ist:
 1. Bestimmen Sie den Systemnamen des Projekts.
 1. Wenn Sie auf die neueste stabile Ausgabe des Quellcodes (Release)
     aktualisieren möchten, verwenden Sie folgenden Befehl, und ersetzen Sie
-     +systemname+ durch den Systemnamen des von Ihnen benötigten
+     `systemname` durch den Systemnamen des von Ihnen benötigten
     Moduls oder Thems:
     ```text
     composer update drupal/systemname --with-dependencies
@@ -123,7 +123,7 @@ Composer zu aktualisieren, wenn bereits eine Website vorhanden ist:
     Zum Beispiel würden Sie für die Version 8.x-1.16 eines von der Community bereitgestellten Zusatzmoduls
     nur 1.16 eingeben, und für die Version 9.0.7 des Kernsystems würden Sie
     9.0.7 eingeben. Geben Sie dann im Stammverzeichnis Ihrer Website den folgenden Befehl ein
-    (ersetzen Sie +systemname+ durch den Systemnamen des Projekts und die korrekte
+    (ersetzen Sie `systemname` durch den Systemnamen des Projekts und die korrekte
     Versionsnummer):
     ```text
     composer require drupal/systemname:1.16

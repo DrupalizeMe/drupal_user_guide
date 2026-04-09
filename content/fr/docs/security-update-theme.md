@@ -48,7 +48,7 @@ consulter [install-composer](./install-composer.md).
 1. Déterminer le nom machine du projet que vous voulez mettre à jour. Pour les
     modules contribués et les thèmes, il s'agit de la dernière partie de l'URL de la
     page du projet ; par exemple, pour le thème Honey, à l'adresse
-    https://www.drupal.org/project/honey, le nom machine est +honey+.
+    https://www.drupal.org/project/honey, le nom machine est `honey`.
 1. Si vous voulez mettre à jour vers la dernière version stable, utiliser la
     commande suivante, en remplaçant le nom machine du projet à mettre à jour :
     ```text
