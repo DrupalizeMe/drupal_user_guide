@@ -1,8 +1,9 @@
 [[understanding-modules]]
-=== Concept: Modules
+=== Concepto: módulos
 
 [role="summary"]
-Overview of modules and the functionality they can be used for.
+Descripción general de los módulos y de la funcionalidad para la que se pueden
+usar.
 
 (((Module,overview)))
 (((Contributed module,overview)))
@@ -24,37 +25,42 @@ Overview of modules and the functionality they can be used for.
 (((Module,Views)))
 (((Module,Views UI)))
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 <<understanding-drupal>>
 
-==== What is a module?
+==== ¿Qué es un módulo?
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site
-features and adds functionality. You can turn the features and functionality on
-by _installing_ the module, and you can turn it off by _uninstalling_ the
-module; before uninstalling, you may need to remove data and configuration
-related to the feature or functionality. Each module that is installed adds to
-the time needed to generate pages on your site, so it is a good idea to
-uninstall modules that are not needed.
+Un módulo es un paquete de archivos que amplía la funcionalidad del núcleo de
+Drupal. Los módulos suelen contener código PHP y configuración (YAML), y pueden
+incluir archivos JavaScript, CSS y de plantilla Twig.
 
-The core download provides modules for functionality such as:
+Puede activar las características y la funcionalidad _instalando_ el módulo, y
+puede desactivarlas _desinstalando_ el módulo; antes de desinstalarlo, puede que
+necesite eliminar los datos y la configuración relacionados con esa
+característica o funcionalidad.
 
-* Managing user accounts (the core User module)
+Cada módulo que se instala aumenta el tiempo necesario para generar las páginas
+de su sitio, así que es buena idea desinstalar los módulos que no se necesitan.
 
-* Managing basic content (the core Node module) and fields (the core Field and
-Field UI modules; there are also core modules providing field types)
+La descarga del núcleo incluye módulos para funcionalidades como:
 
-* Managing navigation menus (the core Menu UI module)
+* Gestionar cuentas de usuario (el módulo del núcleo User)
 
-* Making lists, grids, and blocks from existing content (the core Views and
-Views UI modules)
+* Gestionar el contenido básico (el módulo del núcleo Node) y los campos (los
+módulos del núcleo Field y Field UI; también hay módulos del núcleo que
+proporcionan tipos de campo)
 
-You can download additional _contributed modules_ from the
-https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], or create your own
-_custom modules_.
+* Gestionar los menús de navegación (el módulo del núcleo Menu UI)
 
-==== Related topics
+* Crear listas, cuadrículas y bloques a partir del contenido existente (los
+módulos del núcleo Views y Views UI)
+
+Puede descargar _módulos contribuidos_ adicionales desde
+https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], o
+crear sus propios _módulos personalizados_.
+
+==== Temas relacionados
 
 * <<understanding-themes>>
 * <<understanding-distributions>>
@@ -64,11 +70,11 @@ _custom modules_.
 * <<security-concept>>
 * <<security-update-module>>
 
-==== Additional resources
+==== Recursos adicionales
 
 https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
 
 
-*Attributions*
+*Atribuciones*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Escrito por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
