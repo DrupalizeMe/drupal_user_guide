@@ -1,9 +1,9 @@
 [[extend-theme-install]]
 
-=== Downloading and Installing a Theme from _Drupal.org_
+=== Descargar e instalar un tema desde _Drupal.org_
 
 [role="summary"]
-How to download and install a theme from Drupal.org or by using Drush.
+Cómo descargar e instalar un tema desde Drupal.org.
 
 (((Theme,downloading)))
 (((Theme,installing)))
@@ -18,127 +18,112 @@ How to download and install a theme from Drupal.org or by using Drush.
 (((Downloading,theme)))
 (((Installing,theme)))
 (((Enabling,theme)))
-(((Update Manager module,using to install theme)))
-(((Module,Update Manager)))
 (((Drush tool,using to install theme)))
 (((Drupal.org website,downloading and installing theme from)))
 
-==== Goal
+==== Objetivo
 
-Download and install a theme from _Drupal.org_.
+Descargar e instalar un tema desde _Drupal.org_.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<extend-theme-find>>
 * <<install-tools>>
 
-==== Site prerequisites
+==== Requisitos previos del sitio web
 
-If you want to install via the website, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing modules.
+Composer debe estar instalado para descargar temas. Si quiere usar Drush, Drush
+debe estar instalado. Ver <<install-tools>>.
 
-If you want to use Drush, Drush must be installed. See <<install-tools>>.
+==== Pasos
 
-==== Steps
+Para instalar un tema contribuido, primero descargue el tema con Composer.
+Después instálelo usando la interfaz administrativa o Drush. Si está instalando
+un tema personalizado en lugar de un tema contribuido que no está disponible a
+través de Composer, omita los pasos de descarga del tema y consulte
+<<extend-manual-install>>. Después vuelva aquí y siga los pasos para instalar el
+tema con la interfaz administrativa o con Drush.
 
-You can use the administrative interface to download and install a contributed
-theme. If you are installing a custom theme rather than a contributed theme, if
-you see a message saying _Installing modules and themes requires FTP access to
-your server_, or if the steps below do not work to download and unpack the theme
-files, follow the steps in <<extend-manual-install>>. If you are using Composer
-to manage the files in your site, follow the steps for downloading in
-<<install-composer>>. In either of these cases, you can then install the theme
-using Drush, or by continuing with step 7 in the instructions for the
-administrative interface below.
+===== Descargar el tema contribuido con Composer
 
-===== Using the administrative interface
+. En la página del proyecto del tema en drupal.org (por ejemplo,
+_https://www.drupal.org/project/honey_), desplácese hasta la sección _Releases_
+al final de la página.
 
-. On the theme's project page on drupal.org (for example,
-_https://www.drupal.org/project/mayo_), scroll to the _Downloads_ section
-at the bottom of the page.
-
-. Right-click _tar.gz_ to copy the address.
+. Copie el comando de Composer que se proporciona para la versión del tema que
+quiere instalar.
 +
 --
-// Downloads section of the Mayo project page on drupal.org.
-image:images/extend-theme-install-download.png["Finding the URL for a theme"]
+// Releases section of a theme project page on drupal.org.
+image:images/extend-theme-install-download.png["Finding the composer command for a theme"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Appearance_
-(_admin/appearance_). The _Appearance_ page appears.
+. Como alternativa, escriba el siguiente comando (sustituyendo +honey:^1.0+ por
+el nombre corto del tema y la versión deseada):
++
+----
+composer require 'drupal/honey:^1.0'
+----
 
-. Click _Install new theme_. The _Install new theme_ page appears.
+. En la línea de comandos, sitúese en el directorio raíz de su proyecto. Pegue
+el comando de Composer y ejecútelo.
+
+. Debería ver un mensaje indicando que el tema se ha descargado correctamente.
+
+===== Instalar el tema con la interfaz administrativa
+
+. En el menú administrativo _Manage_, vaya a _Appearance_ (_admin/appearance_).
+Aparece la página _Appearance_.
+
+. Busque el nuevo tema en _Uninstalled themes_ y haga clic en _Install and set
+as default_ para usarlo. A partir de ahora, todas las páginas no
+administrativas del sitio usarán este nuevo tema.
 +
 --
-// Install new theme page (admin/theme/install).
-image:images/extend-theme-install-page.png["Installing a theme"]
---
-
-. In the field _Install from a URL_, paste the copied download link. This value
-could look like
-`https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz`.
-
-. Click _Install_ to upload and unpack the new theme on the server. The files
-are being downloaded to the _themes_ directory.
-
-. Click _Install newly added themes_ to return to the _Appearance_ page. If you
-used the manual uploading procedure mentioned earlier, then you can continue
-with this step, and reach the _Appearance_ page by using the _Manage_
-administrative menu and navigating to _Appearance_ (_admin/appearance_).
-
-. Locate the new theme under _Uninstalled themes_ and click _Install and set as
-default_ to use it. All non-administrative pages on the site will now use this
-new theme.
-+
---
-// Mayo theme on the Appearance page.
+// Honey theme on the Appearance page.
 image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
 --
 
-===== Using Drush to install a theme
+===== Instalar el tema con Drush
 
-. Find the project name for the theme you want to install, which is the last
-segment of the theme's project page URL. For example, if the project URL is
-_https://www.drupal.org/project/mayo_, the project name is `mayo`.
-
-. Download the theme using either the steps in <<extend-manual-install>> or
-<<install-composer>>.
-
-. Run the following Drush commands, giving the project name (for example,
-_mayo_) as a parameter:
+. Para instalar el tema y establecerlo como predeterminado, ejecute los
+siguientes comandos de Drush, pasando el nombre del proyecto (por ejemplo,
+_honey_) como parámetro:
 +
 ----
-drush then mayo
-drush config-set system.theme default mayo
+drush theme:enable honey
+drush config:set system.theme default honey
 ----
 
-. Follow the instructions on the screen.
+. Siga las instrucciones que aparezcan en pantalla.
 
-==== Expand your understanding
+==== Ampliar conocimiento
 
-* In the _Manage_ administrative menu, navigate to _Appearance_
-(_admin/appearance_) and uninstall any themes that you are not using.
+* En el menú administrativo _Manage_, vaya a _Appearance_ (_admin/appearance_) y
+desinstale los temas que no esté usando.
 
 * <<extend-module-find>>
 
 * <<extend-module-install>>
 
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See <<prevent-cache-clear>>.
+* Si no ve el efecto de estos cambios en su sitio, puede que tenga que borrar
+la caché. Ver <<prevent-cache-clear>>.
 
 
 // ==== Related concepts
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/UOYy9A_9_Lw[title="Downloading and Installing a Theme from Drupal.org"]
+video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Downloading and Installing a Theme from Drupal.org"]
 
 //==== Additional resources
 
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me], and
+Escrito y editado por https://www.drupal.org/u/eojthebrave[Joe Shindelar] en
+https://drupalize.me[Drupalize.Me], y
 https://www.drupal.org/u/batigolix[Boris Doesborgh].
+
+Traducido por https://www.drupal.org/u/skuark[Jesús Manuel García].
