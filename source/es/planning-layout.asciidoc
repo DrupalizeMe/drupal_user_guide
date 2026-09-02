@@ -1,20 +1,20 @@
 [[planning-layout]]
-=== Planning Your Site Layout
+=== Planificar el diseño de su sitio
 
 [role="summary"]
-How to plan the navigation and layout of a website (mobile and desktop
-browsers).
+Cómo planificar la navegación y el diseño de un sitio web (navegadores de móvil
+y de escritorio).
 
 (((Planning,site layout)))
 (((Site layout,planning)))
 (((Layout,planning)))
 
-==== Goal
+==== Objetivo
 
-Plan the navigation and layout of the site, for both mobile and desktop
-browsers.
+Planificar la navegación y el diseño del sitio, tanto para navegadores de móvil
+como de escritorio.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<understanding-themes>>
 * <<block-regions>>
@@ -22,74 +22,77 @@ browsers.
 
 // ==== Site prerequisites
 
-==== Steps
+==== Pasos
 
-It is a good idea to plan the site layout before you start building
-the site and writing content; however, your plan may need to be revised either
-before you start implementing it or after you have some of the site built with
-draft content in place, based on budgetary concerns or stakeholder feedback.
+Es buena idea planificar el diseño del sitio antes de empezar a construirlo y a
+redactar contenido; sin embargo, puede que necesite revisar su plan, ya sea
+antes de empezar a implementarlo o después de tener parte del sitio construido
+con contenido de borrador, en función de cuestiones de presupuesto o de los
+comentarios de las partes interesadas.
 
-. Make a list of the information that your site should present to visitors. In
-the farmers market scenario, this might include:
+. Haga una lista de la información que su sitio debería presentar a los
+visitantes. En el escenario del mercado de agricultores, esto podría incluir:
 +
-  * Location of the market, with directions and a map
-  * Hours and days the market is open
-  * History of the market
-  * List of vendors
-  * Details about each vendor
-  * Searchable list of recipes
-  * Details about each recipe
-  * List of the most recently added recipes
+  * La ubicación del mercado, con indicaciones para llegar y un mapa
+  * El horario y los días de apertura del mercado
+  * La historia del mercado
+  * La lista de vendors
+  * Los datos de cada vendor
+  * Una lista de recetas con búsqueda
+  * Los datos de cada receta
+  * La lista de las recetas añadidas más recientemente
 
-. Decide which information should be on which pages or types of pages on the
-site:
+. Decida qué información debería estar en qué páginas o tipos de páginas del
+sitio:
 +
-  Information that should be on all pages::
-    Address, hours, and recently-added recipes list
-  Vendor details pages::
-    Information about each vendor on its own page
-  Recipe details pages::
-    Details of each recipe on its own page
-  Home page::
-    Location, map, directions, and hours
-  About page::
-    History of the market
-  Vendors list page::
-    List of vendors, with links to vendor detail pages
-  Recipe list page::
-    Searchable list of recipes, with links to recipe detail pages
+  Información que debería estar en todas las páginas::
+    Dirección, horario y lista de recetas añadidas recientemente
+  Páginas de detalle de vendor::
+    Información sobre cada vendor en su propia página
+  Páginas de detalle de receta::
+    Los datos de cada receta en su propia página
+  Página de inicio::
+    Ubicación, mapa, indicaciones para llegar y horario
+  Página Acerca de::
+    La historia del mercado
+  Página de lista de vendors::
+    Lista de vendors, con enlaces a las páginas de detalle de cada vendor
+  Página de lista de recetas::
+    Lista de recetas con búsqueda, con enlaces a las páginas de detalle de cada receta
 
-. Decide which information is the most important on each page. Site visitors
-using mobile phones or other small browsers will often only see the content that
-is presented first, and they may not scroll down to see all of the information.
+. Decida qué información es la más importante en cada página. Los visitantes que
+usen teléfonos móviles u otros navegadores pequeños a menudo solo verán el
+contenido que se presenta primero, y puede que no se desplacen hacia abajo para
+ver toda la información.
 
-. Decide which of these pages should appear in the main site navigation. For
-instance, the main navigation might consist of the Home, About, Vendors, and
-Recipes pages.
+. Decida cuáles de estas páginas deberían aparecer en la navegación principal
+del sitio. Por ejemplo, la navegación principal podría estar formada por las
+páginas Inicio, Acerca de, Vendors y Recetas.
 
-. Make a rough design sketch for each page, showing how it would look when
-viewed on a small screen such as a phone, as well as on a larger screen such as
-a desktop browser. Considering that most site visitors will be using smaller
-browsers, it is a good idea to start with the phone-size layout, to make sure
-that these visitors will be able to find the information they need without too
-much scrolling.
+. Haga un boceto de diseño aproximado para cada página, mostrando cómo se vería
+en una pantalla pequeña como la de un teléfono, así como en una pantalla más
+grande como la de un navegador de escritorio. Teniendo en cuenta que la mayoría
+de los visitantes usarán navegadores más pequeños, es buena idea empezar por el
+diseño para tamaño de teléfono, para asegurarse de que esos visitantes puedan
+encontrar la información que necesitan sin demasiado desplazamiento.
 +
-In making these page layout plans, you might find that you need to revise your
-plan for which information should be on which pages. For example, you might
-decide that the address, hours, and recently-added recipes list would all fit
-well in the right sidebar area of all pages, when the site is viewed on
-desktop-sized browsers. On the other hand, you might decide that for mobile
-browsers, you would instead put the address and hours in a short format at the
-top of each page, but only display the recent recipe list at the bottom of the
-home page.
+Al hacer estos planes de diseño de páginas, puede que descubra que necesita
+revisar su plan sobre qué información debe estar en qué páginas. Por ejemplo,
+podría decidir que la dirección, el horario y la lista de recetas añadidas
+recientemente encajarían bien en el área de la barra lateral derecha de todas
+las páginas, cuando el sitio se ve en navegadores de tamaño de escritorio. Por
+otro lado, podría decidir que, para los navegadores de móvil, en su lugar
+pondría la dirección y el horario en un formato breve en la parte superior de
+cada página, pero solo mostraría la lista de recetas recientes al final de la
+página de inicio.
 
-==== Expand your understanding
+==== Ampliar conocimiento
 
 <<planning-structure>>
 
 // ==== Related concepts
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/35e16QDFE7k[title="Planning Your Site Layout"]
@@ -97,6 +100,8 @@ video::https://www.youtube-nocookie.com/embed/35e16QDFE7k[title="Planning Your S
 // ==== Additional resources
 
 
-*Attributions*
+*Atribuciones*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Escrito por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].
