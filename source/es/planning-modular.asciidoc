@@ -1,8 +1,9 @@
 [[planning-modular]]
-=== Concept: Modular Content
+=== Concepto: contenido modular
 
 [role="summary"]
-Overview of modular content and how content in a page can be sourced from other content items.
+Descripción general del contenido modular y de cómo el contenido de una página
+puede obtenerse de otros elementos de contenido.
 
 (((Content,modular)))
 (((Modular content,overview)))
@@ -11,45 +12,46 @@ Overview of modular content and how content in a page can be sourced from other 
 (((View,and modular content)))
 (((Views module,overview)))
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<planning-data-types>>
 * <<planning-layout>>
 
-==== What is modular content?
+==== ¿Qué es el contenido modular?
 
-Given that the content of your site is stored in a database, it is desirable to
-make the content _modular_, meaning that certain pages on your site, rather than
-being edited as a whole page, are instead generated automatically from other
-content items. For instance, in the farmers market site scenario, you might
-create individual content items for recipes. If the recipe content items have a
-field that keeps track of ingredients, then your site could include a composite
-page that would list recipes, and allow visitors to search for a recipe that
-contained some particular ingredient they had bought at the market.
+Dado que el contenido de su sitio se almacena en una base de datos, conviene
+hacerlo _modular_, es decir, que ciertas páginas de su sitio, en lugar de
+editarse como una página completa, se generen automáticamente a partir de otros
+elementos de contenido. Por ejemplo, en el escenario del sitio del mercado de
+agricultores, podría crear elementos de contenido individuales para las recetas.
+Si los elementos de contenido de receta tienen un campo que registra los
+ingredientes, su sitio podría incluir una página compuesta que liste las recetas
+y permita a los visitantes buscar una receta que contenga algún ingrediente
+concreto que hayan comprado en el mercado.
 
-Smaller sections of pages can also be generated as composites. For instance,
-recipe content items could have a field that keeps track of which vendor
-submitted the recipe (see <<structure-reference-fields>>), with the vendor
-details edited in separate vendor content items. This would allow you to do the
-following on your site:
+También se pueden generar como compuestas secciones más pequeñas de las páginas.
+Por ejemplo, los elementos de contenido de receta podrían tener un campo que
+registre qué vendor envió la receta (ver <<structure-reference-fields>>), con
+los datos del vendor editados en elementos de contenido de vendor
+independientes. Esto le permitiría hacer lo siguiente en su sitio:
 
-* On each Recipe page, there could be an area that displays some information
-about the vendor that submitted the recipe, such as their name and market stall
-number.
+* En cada página de receta podría haber un área que muestre información sobre el
+vendor que envió la receta, como su nombre y su número de puesto en el mercado.
 
-* Each vendor page could have a section that lists the recipes they have
-submitted.
+* La página de cada vendor podría tener una sección que liste las recetas que ha
+enviado.
 
-The key idea is that each piece of information is only edited in one place.
-When vendor information is updated, all recipe pages that display that vendor
-information are automatically updated; when a recipe is submitted by a vendor,
-it is automatically displayed on the vendor page. The core Views module is the
-usual way to use modular content to create composite pages and page sections;
-see <<views-concept>> for more information. Also, _view modes_ are useful for
-defining different ways to display each content item; see
-<<structure-view-modes>> for more information.
+La idea clave es que cada dato se edita en un solo sitio. Cuando se actualiza la
+información de un vendor, todas las páginas de recetas que muestran esa
+información se actualizan automáticamente; cuando un vendor envía una receta,
+esta se muestra automáticamente en la página del vendor. El módulo del núcleo
+Views es la forma habitual de usar contenido modular para crear páginas
+compuestas y secciones de páginas; ver <<views-concept>> para más información.
+Además, los _modos de visualización_ son útiles para definir distintas formas de
+mostrar cada elemento de contenido; ver <<structure-view-modes>> para más
+información.
 
-==== Related topics
+==== Temas relacionados
 
 * <<planning-structure>>
 * <<structure-content-type>>
@@ -61,6 +63,8 @@ defining different ways to display each content item; see
 // ==== Additional resources
 
 
-*Attributions*
+*Atribuciones*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Escrito por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].
