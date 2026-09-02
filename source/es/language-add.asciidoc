@@ -1,10 +1,10 @@
 [[language-add]]
 
-=== Adding a Language
+=== Añadir un idioma
 
 [role="summary"]
-How to add a language, install the necessary modules, and turn on the _Language
-switcher_ block.
+Cómo añadir un idioma, instalar los módulos necesarios y activar el bloque
+_Language switcher_.
 
 (((Language,adding)))
 (((Multilingual modules,installing)))
@@ -18,60 +18,63 @@ switcher_ block.
 (((Module,Configuration Translation)))
 (((Module,Interface Translation)))
 
-==== Goal
+==== Objetivo
 
-Add one or more languages to your site and define which one is used by default.
+Añadir uno o varios idiomas a su sitio y definir cuál se usa de forma
+predeterminada.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 <<language-concept>>
 
 // ==== Site prerequisites
 
-==== Steps
+==== Pasos
 
-. Install the four core multilingual modules (Language, Interface Translation,
-Content Translation, and Configuration Translation), by following the steps in
-<<config-install>>.
+. Instale los cuatro módulos multilingües del núcleo (Language, Interface
+Translation, Content Translation y Configuration Translation) siguiendo los
+pasos de <<config-install>>.
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ >
-_Regional and language_ > _Languages_ (_admin/config/regional/language_).
+. En el menú administrativo _Manage_, vaya a _Configuration_ > _Region and
+language_ > _Languages_ (_admin/config/regional/language_).
 
-. Click _Add language_.
+. Haga clic en _Add language_.
 
-. Select _Spanish_ (or your preferred language) from the _Language name_ select
-list. Click _Add language_. After waiting for translations to finish
-downloading, you will be returned to the _Languages_ page, with a confirmation
-message and the new language shown.
+. Seleccione _Spanish_ (o el idioma que prefiera) en la lista de selección
+_Language name_. Haga clic en _Add language_. Después de esperar a que
+terminen de descargarse las traducciones, volverá a la página _Languages_, con
+un mensaje de confirmación y el nuevo idioma en la lista.
 +
 --
 // Confirmation and language list after adding Spanish language.
 image:images/language-add-list.png["List of available languages in the website",width="100%"]
 --
 
-. Follow the steps in <<block-place>> to place the _Language switcher_ block in
-the _Sidebar second_ region. This will enable site visitors to switch between
-languages, once the site has been translated.
+. Siga los pasos de <<block-place>> para colocar el bloque _Language switcher_
+en la región _Sidebar second_. Esto permitirá a los visitantes del sitio
+cambiar de idioma, una vez que el sitio se haya traducido.
 
-==== Expand your understanding
+==== Ampliar conocimiento
 
 * <<language-content-config>>
 * <<language-content-translate>>
 
 // ==== Related concepts
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/8Yu0G4gJ0f4[title="Adding a Language"]
 
-==== Additional resources
+==== Recursos adicionales
 
-https://www.drupal.org/resource-guides/configuring-multilingual-site[_Drupal.org_ page "Resource Guide: Configuring a Multilingual Site"]
+https://www.drupal.org/docs/multilingual-guide[_Drupal.org_ community documentation page "Multilingual guide"]
 
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by https://www.drupal.org/u/yrvyn[Leila Tite],
-https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], and
+Escrito y editado por https://www.drupal.org/u/yrvyn[Leila Tite],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] y
 https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].
