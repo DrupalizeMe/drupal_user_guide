@@ -21,8 +21,9 @@ términos en el campo Ingredientes.
 
 ==== Requisitos previos del sitio web
 
-El Tipo de contenido Recetas debe existir, y debe tener un campo de referencia de
-términos de taxonomía de Ingredientes. Véase <<structure-content-type>> y
+El tipo de contenido Recetas debe existir, y debe tener un campo de referencia
+de términos de taxonomía de Ingredientes. Debe existir al menos un elemento de
+contenido Proveedor. Véase <<structure-content-type>> y
 <<structure-taxonomy-setup>>.
 
 ==== Pasos
@@ -32,12 +33,12 @@ _Receta_ (_node/add/recipe_) para ver el formulario de entrada de contenido
 configurado por defecto. Observe cómo tiene que introducir los ingredientes
 uno por uno, en lugar de tener un formato más compacto.
 
-. En el menú administrativo _Administrar_, vaya a _Estructura_> _Tipos de contenido_
-(_admin / structure / types_). A continuación, haga click en _Administrar la 
+. En el menú administrativo _Administrar_, vaya a _Estructura_ > _Tipos de contenido_
+(_admin/structure/types_). A continuación, haga click en _Administrar la
 visualización del formulario_ en el botón desplegable para el tipo de contenido Receta.
 La página Administrar la visualización del formulario aparecerá.
 
-. Para el campo Ingredientes, seleccione _Autocompletar (estilo de etiquetado)_ 
+. Para el campo Ingredientes, seleccione _Autocompletar (estilo de etiquetado)_
 en la columna _Control_.
 +
 --
@@ -58,8 +59,8 @@ que acepta varios valores.
 image:images/structure-form-editing-add-recipe.png["Add a recipe",width="100%"]
 --
 
-. Cree dos artículos de contenido de receta (véase << content-create >>),
-como las recetas de "Ensalada verde" y "Zanahorias frescas". Asegúrese de que
+. Cree dos elementos de contenido Receta (véase <<content-create>>), como las
+recetas de "Ensalada verde" y "Zanahorias frescas". Asegúrese de que
 todos los campos tienen valores, incluyendo imágenes, ingredientes y publicados
 por (defina esto como uno de los elementos de contenido del Proveedor que creó
 en <<structure-fields>>).
@@ -71,6 +72,11 @@ administrativo _Administrar_ > _Estructura_ > _Formularios de contacto_. Por eje
 que desee ocultar los campos _Enviar una copia al emisor_ o _Idioma_.
 
 // ==== Temas relacionados
+
+==== Vídeos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CELMGX93fjE[title="Changing Content Entry Forms"]
 
 // ==== Recursos adicionales
 
