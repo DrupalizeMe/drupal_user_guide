@@ -1,8 +1,8 @@
 [[language-config-translate]]
-=== Translating Configuration
+=== Traducir la configuración
 
 [role="summary"]
-How to translate field labels in a view, and other configuration.
+Cómo traducir las etiquetas de los campos de una vista y otra configuración.
 
 (((Configuration,translating)))
 (((View,translating)))
@@ -11,117 +11,124 @@ How to translate field labels in a view, and other configuration.
 (((Translating,view)))
 (((Translating,label)))
 
-==== Goal
+==== Objetivo
 
-Translate the labels on the Recipes view page into Spanish.
+Traducir al español las etiquetas de la página de la vista Recipes.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<language-concept>>
 * <<views-create>>
 
-==== Site prerequisites
+==== Requisitos previos del sitio web
 
-* The core Configuration Translation module must be installed, and your site
-must have at least two languages. See <<language-add>>.
+* El módulo del núcleo Configuration Translation debe estar instalado y su sitio
+debe tener al menos dos idiomas. Ver <<language-add>>.
 
-* The Recipes view must exist. See <<views-create>> and <<views-duplicate>>.
+* La vista Recipes debe existir. Ver <<views-create>> y <<views-duplicate>>.
 
-==== Steps
+==== Pasos
 
-The basic steps for translating any configuration on your site are:
+Los pasos básicos para traducir cualquier configuración de su sitio son:
 
-. Locate the page where the configuration you want to translate is created or
-edited in the site's primary language. For example, to translate the site name,
-you need to find the page where you would edit the site name (see
-<<config-basic>>).
+. En el menú administrativo _Manage_, vaya a _Configuration_ > _Regional and
+Language_ > _Configuration translation_
+(_admin/config/regional/config-translation_).
 
-. Find a link, tab, or button on the page that says "Translate" or something
-similar. Click this link, tab, or button.
+. Localice el elemento de configuración que quiere traducir. Por ejemplo, para
+traducir el nombre del sitio, tiene que buscar _System information_. Para la
+configuración que se agrupa por tipo (por ejemplo, vistas o formatos de fecha),
+haga clic en el botón _List_ para listar toda la configuración de ese tipo y
+después localice el elemento que busca.
 
-. Find a button that will let you add a translation in the desired language, and
-click this button.
+. Haga clic en _Translate_ en el elemento que localizó.
 
-. Enter the translation in the form, and save.
+. Busque un botón que le permita añadir una traducción en el idioma deseado y
+haga clic en él.
 
-Most configuration is fairly straightforward and intuitive to edit in this
-manner. Views configuration is an exception, because the translation editing
-form is nothing like the view editing form, and it is complex and hierarchical
-rather than being a simple form with just a few fields. As an example of how to
-translate a view, here are the steps to translate the labels in the Recipes view
-to Spanish:
+. Introduzca la traducción en el formulario y guárdela.
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Views_
-(_admin/structure/views_).
+La mayoría de la configuración es bastante sencilla e intuitiva de editar de
+esta forma. La configuración de las vistas es una excepción, porque el
+formulario de edición de la traducción no se parece en nada al formulario de
+edición de la vista, y es complejo y jerárquico en lugar de ser un formulario
+simple con unos pocos campos. Como ejemplo de cómo traducir una vista, estos son
+los pasos para traducir al español las etiquetas de la vista Recipes:
 
-. Locate the Recipes view and click _Translate_ from the dropdown button.
+. En el menú administrativo _Manage_, vaya a _Configuration_ > _Regional and
+Language_ > _Configuration translation_
+(_admin/config/regional/config-translation_).
 
-. Click _Add_ in the row _Spanish_. The page _Add Spanish translation for
-Recipes view_ appears.
+. Haga clic en _List_ en la fila _Views_.
 
-. Under _Displays_ > _Master Display settings_ > _Recipes default display
-Options_, translate _Display title_ from "Recipes" to "Recetas".
+. Haga clic en _Translate_ en la fila de Recipes.
 
-. Under _Displays_ > _Master display settings_ > _Recipes default display
-options_ > _Exposed form_ > _Reset options_, translate _Submit button text_
-from "Apply" to "Applicar". The other buttons and labels in this section do not
-appear on the Recipes page or block, and do not need to be translated.
+. Haga clic en _Add_ en la fila _Spanish_. Aparece la página _Add Spanish
+translation for Recipes view_.
+
+. En _Displays_ > _Default Display settings_ > _Recipes default display
+Options_, traduzca _Display title_ de "Recipes" a "Recetas".
+
+. En _Displays_ > _Default display settings_ > _Recipes default display
+options_ > _Exposed form_ > _Reset options_, traduzca _Submit button text_ de
+"Apply" a "Aplicar". Los demás botones y etiquetas de esta sección no aparecen
+en la página ni en el bloque de Recipes, y no hace falta traducirlos.
 +
 --
 // Exposed form options for Recipes view.
 image:images/language-config-translate-recipes-view.png["Translate the Recipes view",width="100%"]
 --
 
-. Under _Displays_ > _Master display settings_ > _Recipes default display
+. En _Displays_ > _Default display settings_ > _Recipes default display
 options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes
-using... Expose_, translate _Label_ from "Find recipes using..." to "Encontrar
+using... Expose_, traduzca _Label_ de "Find recipes using..." a "Encontrar
 recetas usando...".
 
-. Click _Save translation_.
+. Haga clic en _Save translation_.
 
-. Navigate to the Recipes page and switch to Spanish using the Language switcher
-block. Verify that the labels have been translated.
+. Vaya a la página de Recipes y cambie al español con el bloque Language
+switcher. Compruebe que las etiquetas se han traducido.
 
-==== Expand your understanding
+==== Ampliar conocimiento
 
-* Translate the block display title in the Recent recipes
-display settings section of the Recipes view.
+* Traduzca el título del bloque en la sección de ajustes de visualización Recent
+recipes de la vista Recipes.
 
-* Translate the page title in the Vendors view.
+* Traduzca el título de la página en la vista Vendors.
 
-* Translate other configuration. Some examples of where to find the translation
-pages:
+* Traduzca otra configuración. Algunos ejemplos de dónde encontrar las páginas
+de traducción:
 
-** To translate the site name, navigate in the _Manage_ administrative menu to
+** Para traducir el nombre del sitio, en el menú administrativo _Manage_ vaya a
 _Configuration_ > _System_ > _Basic site settings_ > _Translate system
 information_ (_admin/config/system/site-information/translate_).
 
-** To translate the contact form, navigate in the _Manage_ administrative menu
-to _Structure_ > _Contact forms_ (_admin/structure/contact_). Click _Translate_
-in the dropdown button in the _Website feedback_ row.
+** Para traducir el formulario de contacto, en el menú administrativo _Manage_
+vaya a _Structure_ > _Contact forms_ (_admin/structure/contact_). Haga clic en
+_Translate_ en el botón desplegable de la fila _Website feedback_.
 
-** To translate the name of a menu, navigate in the _Manage_ administrative menu
-to _Structure_ > _Menus_ (_admin/structure/menu_). Click _Translate_ in the
-dropdown button for the menu whose name you want to translate.
+** Para traducir el nombre de un menú, en el menú administrativo _Manage_ vaya a
+_Structure_ > _Menus_ (_admin/structure/menu_). Haga clic en _Translate_ en el
+botón desplegable del menú cuyo nombre quiere traducir.
 
-** Menu items within a menu are considered to be content (not configuration);
-see <<language-content-config>> to enable translation. Once translation is
-enabled, navigate in the _Manage_ administrative menu to _Structure_ > _Menus_
-(_admin/structure/menu_). Click _Edit menu_ in the dropdown button for the menu
-whose links you want to translate. Click _Translate_ in the dropdown button for
-the link you want to translate.
+** Los enlaces de menú dentro de un menú se consideran contenido (no
+configuración); ver <<language-content-config>> para habilitar su traducción.
+Una vez habilitada la traducción, en el menú administrativo _Manage_ vaya a
+_Structure_ > _Menus_ (_admin/structure/menu_). Haga clic en _Edit menu_ en el
+botón desplegable del menú cuyos enlaces quiere traducir. Haga clic en
+_Translate_ en el botón desplegable del enlace que quiere traducir.
 
-** To translate field labels on a content type, navigate in the _Manage_
-administrative menu to _Structure_ > _Content types_
-(_admin/structure/types_). Click _Manage fields_ in the dropdown button for the
-content type whose field labels you want to edit. Click _Translate_ in the
-dropdown button for the field whose label you want to edit.
+** Para traducir las etiquetas de los campos de un tipo de contenido, en el
+menú administrativo _Manage_ vaya a _Structure_ > _Content types_
+(_admin/structure/types_). Haga clic en _Manage fields_ en el botón desplegable
+del tipo de contenido cuyas etiquetas de campo quiere editar. Haga clic en
+_Translate_ en el botón desplegable del campo cuya etiqueta quiere editar.
 
-* Translate content. See <<language-content-translate>>.
+* Traduzca contenido. Ver <<language-content-translate>>.
 
 // ==== Related concepts
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/j2GZdJIOo_I[title="Translating Configuration"]
@@ -129,7 +136,9 @@ video::https://www.youtube-nocookie.com/embed/j2GZdJIOo_I[title="Translating Con
 // ==== Additional resources
 
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg] and
+Escrito y editado por https://www.drupal.org/u/batigolix[Boris Doesborg] y
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Traducido por https://www.drupal.org/u/alvar0hurtad0[Alvaro Hurtado].
