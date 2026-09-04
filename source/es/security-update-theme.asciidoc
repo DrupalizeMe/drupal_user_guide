@@ -1,101 +1,118 @@
 [[security-update-theme]]
 
-=== Updating a Theme
+=== Actualización de un tema
 
 [role="summary"]
-How to update a contributed theme by using the administrative interface and
-running the Database Updates script.
+Cómo actualizar un tema contribuido utilizando Composer y la interfaz
+administrativa para ejecutar el script de actualizaciones de la base de datos.
 
 (((Theme,updating)))
 (((Security update,applying)))
 (((Contributed theme,updating)))
 
-==== Goal
+==== Objetivo
 
-Update a contributed theme on your site and run the _Database Updates_ script.
+Actualizar un tema contribuido en su sitio y ejecutar el script _Database
+Updates_.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<security-concept>>
 * <<security-cron-concept>>
 
-==== Site prerequisites
+==== Requisitos previos del sitio web
 
-* A contributed theme has been installed and there is an update available for
-it. See <<extend-theme-install>> and <<security-announce>>.
+* Se ha instalado un tema contribuido y hay una actualización disponible para
+él. Ver <<extend-theme-install>> y <<security-announce>>.
 
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
+* Si su sitio está en producción, debería probar este proceso en un entorno de
+desarrollo antes de ejecutarlo en su sitio de producción. Ver
 <<install-dev-making>>.
 
-* You have created a full site backup. See <<prevent-backups>>.
+* Ha creado una copia de seguridad completa del sitio. Ver <<prevent-backups>>.
 
-* If you want to use the user interface, the core Update Manager module must be
-installed. See <<config-install>> for instructions on installing core
-modules.
+* Si desea utilizar la interfaz de usuario para comprobar si hay
+actualizaciones, debe estar instalado el módulo Update Manager del núcleo. Ver
+<<config-install>> para obtener instrucciones sobre la instalación de módulos
+del núcleo.
 
-==== Steps
+==== Pasos
 
-You can use the administrative interface to update a contributed theme. If you
-are updating a custom theme rather than a contributed theme, if you see a
-message saying _Installing modules and themes requires FTP access to your
-server_, or if the steps below do not work to obtain the new theme files, follow
-the steps in <<extend-manual-install>>, and then continue with step 6 in the
-instructions for administrative interface below.
+Actualizar un tema contribuido requiere primero poner su sitio en modo de
+mantenimiento, después obtener los nuevos archivos de código y aplicar las
+actualizaciones de base de datos necesarias y, por último, sacar el sitio del
+modo de mantenimiento.
 
-If you are using Composer to manage the files in your site, follow the steps
-in <<install-composer>> to update the files, then continue here with step 6 in
-the instructions for the administrative interface below.
+Puede actualizar el código de un tema contribuido utilizando Composer. Si está
+actualizando un tema personalizado en lugar de un tema contribuido, obtenga los
+nuevos archivos del tema y después continúe con las instrucciones para ejecutar
+las actualizaciones de base de datos mediante la interfaz administrativa que se
+indican más abajo.
 
-===== Using the administrative interface
 
-. Put your site in maintenance mode. See <<extend-maintenance>>.
+Esto asume que está utilizando Composer para gestionar los archivos de su
+sitio; ver <<install-composer>>.
 
-. In the _Manage_ administrative menu, navigate to _Reports_ >
-_Available updates_ > _Update_ (_admin/reports/updates/update_).
+===== Actualizar un tema contribuido con Composer
 
-. Find and check the theme in the list. Click _Download these updates_ for the
-theme.
+. Ponga su sitio en modo de mantenimiento. Ver <<extend-maintenance>>.
+
+. En el menú administrativo _Manage_, vaya a _Reports_ >
+_Available updates_ > _Update_ (_admin/reports/updates_).
+
+. Busque en la lista los temas que necesiten actualizarse.
 +
---
 // Update page for theme (admin/reports/updates/update).
 image:images/security-update-theme-updates.png["Available updates",width="100%"]
---
 
-. Click _Continue_.
+. Determine el nombre corto del proyecto que quiere actualizar. Para los
+módulos y temas contribuidos, es la última parte de la URL de la página del
+proyecto; por ejemplo, el tema Honey, en https://www.drupal.org/project/honey,
+tiene el nombre corto +honey+.
 
-. Click _Run database updates_. If you obtained the new theme files manually,
-start with this step, and reach the database updates page by typing the URL
-_example.com/update.php_ in your browser.
+. Si quiere actualizar a la última versión estable, utilice el siguiente
+comando, sustituyendo +honey+ por el nombre corto del proyecto que se va a
+actualizar:
++
+----
+composer update drupal/honey --with-dependencies
+----
++
+Para saber cómo descargar versiones concretas, ver <<install-composer>>.
 
-. Click _Continue_ to run the updates. The database update scripts will be
-executed.
+. Después de obtener los nuevos archivos del tema, ejecute las actualizaciones
+de base de datos escribiendo la URL _example.com/update.php_ en su navegador.
 
-. Click _Administration pages_ to return to the administration section of your
-site.
+. Haga clic en _Continue_ para ejecutar las actualizaciones. Se ejecutarán los
+scripts de actualización de la base de datos.
 
-. Take your site out of maintenance mode. See <<extend-maintenance>>.
+. Haga clic en _Administration pages_ para volver a la sección de
+administración de su sitio.
 
-. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
+. Saque su sitio del modo de mantenimiento. Ver <<extend-maintenance>>.
 
+. Borre la caché de Drupal (consulte <<prevent-cache-clear>>).
 
-==== Expand your understanding
+==== Ampliar conocimiento
 
-* Review the site log, see <<prevent-log>>, once the updates are complete to
-check for errors.
+* Revise el registro del sitio, ver <<prevent-log>>, una vez completadas las
+actualizaciones para comprobar si hay errores.
 
 * <<security-update-module>>
 
-// ==== Related concepts
+// ==== Conceptos relacionados
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
-video::https://www.youtube-nocookie.com/embed/2jihIuY91vs[title="Updating a Theme"]
+video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Updating a Theme"]
 
-// ==== Additional resources
+// ==== Recursos adicionales
 
 
-*Attributions*
+*Atribuciones*
 
-Written by https://www.drupal.org/u/batigolix[Boris Doesborg].
+Escrito por https://www.drupal.org/u/batigolix[Boris Doesborg] y
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] en https://drupalize.me[Drupalize.Me].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].
