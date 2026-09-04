@@ -1,8 +1,8 @@
 [[user-permissions]]
-=== Assigning Permissions to a Role
+=== Asignación de permisos a un rol
 
 [role="summary"]
-How to assign a permission to a role.
+Cómo asignar un permiso a un rol.
 
 (((Permission,changing)))
 (((Permission,granting)))
@@ -10,33 +10,33 @@ How to assign a permission to a role.
 (((Role,changing permission)))
 (((Security,assigning permission)))
 
-==== Goal
+==== Objetivo
 
-Change the permissions for the Vendor role so that users can create, edit,
-and delete Recipe and Vendor content, format the content, and contact each
-other.
+Cambiar los permisos del rol Vendor para que los usuarios puedan crear, editar
+y eliminar contenido Recipe y Vendor, dar formato al contenido y ponerse en
+contacto entre sí.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<user-concept>>
 
-==== Site prerequisites
+==== Requisitos previos del sitio web
 
-The Vendor role must exist on your site. See <<user-new-role>>.
+El rol Vendor debe existir en su sitio. Ver <<user-new-role>>.
 
-==== Steps
+==== Pasos
 
-. In the _Manage_ administrative menu, navigate to _People_ > _Roles_
-(_admin/people/roles_). The _Roles_ page appears.
+. En el menú administrativo _Manage_, vaya a _People_ > _Roles_
+(_admin/people/roles_). Aparece la página _Roles_.
 
-. Click _Edit permissions_ in the dropdown for the Vendor
-role. The _Edit role_ page appears where you can see all the available
-actions for the website such as, for example, _Post comments_ or _Administer
-blocks_. The available permissions depend on the modules that are installed in
-the site. Note: Some permissions may have security implications. Be cautious
-while assigning permissions to roles.
+. Haga clic en _Edit permissions_ en el desplegable del rol Vendor. Aparece la
+página _Edit role_, donde puede ver todas las acciones disponibles para el
+sitio web como, por ejemplo, _Post comments_ o _Administer blocks_. Los
+permisos disponibles dependen de los módulos que estén instalados en el sitio.
+Nota: algunos permisos pueden tener implicaciones de seguridad. Sea prudente al
+asignar permisos a los roles.
 
-. Check the boxes for the following permissions, listed by module:
+. Marque las casillas de los siguientes permisos, enumerados por módulo:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
@@ -47,7 +47,6 @@ while assigning permissions to roles.
 | Node | Recipe: Edit own content
 | Node | Recipe: Delete own content
 | Node | Vendor: Edit own content
-| Quick Edit | Access in-place editing
 |================================
 +
 --
@@ -55,41 +54,45 @@ while assigning permissions to roles.
 image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
 --
 
-. Click _Save permissions_. You will get a message saying your changes have been
-saved.
+. Haga clic en _Save permissions_. Recibirá un mensaje indicando que sus
+cambios se han guardado.
 +
 --
 // Confirmation message after updating permissions.
 image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
 --
 
-==== Expand your understanding
+==== Ampliar conocimiento
 
-* Log in as one of the new users you created in <<user-new-user>>. Verify
-whether you have the correct permissions.
+* Inicie sesión como uno de los nuevos usuarios que creó en <<user-new-user>>.
+Compruebe si tiene los permisos correctos.
 
 * <<user-roles>>
 
-==== Related concepts
+==== Conceptos relacionados
 
 <<user-admin-account>>
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/IlVh9f4BHVw[title="Assigning Permissions to a Role"]
 
-==== Additional resources
+==== Recursos adicionales
 
 https://www.drupal.org/docs/7/managing-users[_Drupal.org_ community documentation page "Managing Users"]
 
 
-*Attributions*
+*Atribuciones*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
+Adaptado y editado por https://www.drupal.org/u/batigolix[Boris Doesborg],
 https://www.drupal.org/u/bemery987[Brian Emery],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle], from
-https://www.drupal.org/node/1803614["User Roles"],
-copyright 2000-copyright_upper_year by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+y https://www.drupal.org/u/jojyja[Jojy Alphonso] en
+http://redcrackle.com[Red Crackle],
+y https://www.drupal.org/u/eojthebrave[Joe Shindelar] en
+https://drupalize.me[Drupalize.Me], de
+https://www.drupal.org/docs/7/managing-users/user-roles["User Roles"],
+copyright 2000-copyright_upper_year por los colaboradores individuales de la
+https://www.drupal.org/documentation[Documentación de la Comunidad de Drupal].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].
