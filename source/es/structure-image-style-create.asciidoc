@@ -1,83 +1,87 @@
 [[structure-image-style-create]]
 
-=== Setting Up an Image Style
+=== Configuración de un estilo de imagen
 
 [role="summary"]
-How to add an image style to reformat an image.
+Cómo añadir un estilo de imagen para reformatear una imagen.
 
 (((Image style,creating)))
 (((Style,image)))
 (((Effect,image)))
 (((Image,resizing)))
 
-==== Goal
+==== Objetivo
 
-Add an image style and use it to display images on Vendor pages.
+Añadir un estilo de imagen y utilizarlo para mostrar imágenes en las páginas de
+Vendor.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 * <<structure-fields>>
 * <<structure-content-display>>
 * <<structure-image-styles>>
 
-==== Site prerequisites
+==== Requisitos previos del sitio web
 
-* Vendor and Recipe content types must exist. See <<structure-content-type>>.
+* Los tipos de contenido Vendor y Recipe deben existir. Ver
+<<structure-content-type>>.
 
-* Main image fields must exist for both content types. See <<structure-fields>>.
+* Deben existir campos de imagen principal para ambos tipos de contenido. Ver
+<<structure-fields>>.
 
-* Content items must exist for both content types. See
-<<structure-content-type>>, <<structure-fields>>, and <<content-create>>.
+* Deben existir elementos de contenido para ambos tipos de contenido. Ver
+<<structure-content-type>>, <<structure-fields>> y <<content-create>>.
 
-==== Steps
+==== Pasos
 
-. In the _Manage_ administrative menu, navigate to _Configuration_ > _Media_ >
+. En el menú administrativo _Manage_, vaya a _Configuration_ > _Media_ >
 _Image styles_ (_admin/config/media/image-styles_).
 
-. Click _Add image style_.
+. Haga clic en _Add image style_.
 
-. Enter the name _Extra medium (300x200)_
+. Introduzca el nombre _Extra medium (300x200)_.
 
-. Click _Create new style_. The page _Edit style Extra medium
-(300x200)_ appears.
+. Haga clic en _Create new style_. Aparece la página _Edit style Extra medium
+(300x200)_.
 
-. In the _Effect_ table, select _Scale and crop_. Click _Add_.
+. En la tabla _Effect_, seleccione _Scale and crop_. Haga clic en _Add_.
 
-. Fill in the fields as shown below.
+. Rellene los campos como se muestra a continuación.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Value
+|Nombre del campo | Valor
 |Width | 300
 |Height | 200
 |================================
 
-. Click _Add effect_. The image style is saved with the chosen effects.
+. Haga clic en _Add effect_. El estilo de imagen se guarda con los efectos
+elegidos.
 +
 --
 // Image style editing page, with effects added.
 image:images/structure-image-style-create-add-style.png["Add an image style",width="100%"]
 --
 
-. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
+. En el menú administrativo _Manage_, vaya a _Structure_ > _Content types_
 (_admin/structure/types_).
 
-. Click _Manage display_ in the _Operations_ dropdown for the Vendor content
-type. The _Manage display_ page (_admin/structure/types/manage/vendor/display_)
-appears.
+. Haga clic en _Manage display_ en el desplegable _Operations_ del tipo de
+contenido Vendor. Aparece la página _Manage display_
+(_admin/structure/types/manage/vendor/display_).
 
-. Ensure that the secondary tab _Default_ is selected.
+. Asegúrese de que está seleccionada la pestaña secundaria _Default_.
 
-. Click the gear wheel for the _Main image_ field, to open the configuration
-options.
+. Haga clic en la rueda dentada del campo _Main image_ para abrir las opciones
+de configuración.
 
-. Fill in the fields as shown below.
+. Rellene los campos como se muestra a continuación.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Example value
-|Image style | Which image style to use | Extra medium (300x200)
-|Link image to | Page to visit if image is clicked | Nothing
+|Nombre del campo | Explicación | Valor de ejemplo
+|Image style | Qué estilo de imagen usar | Extra medium (300x200)
+|Link image to | Página a la que ir si se hace clic en la imagen | Nothing
 |================================
 +
 --
@@ -85,41 +89,42 @@ options.
 image:images/structure-image-style-create-manage-display.png["Change field formatter settings of image field"]
 --
 
-. Click _Update_.
+. Haga clic en _Update_.
 
-. Click _Save_. The new image style will be used while displaying Vendor
-content.
+. Haga clic en _Save_. El nuevo estilo de imagen se utilizará al mostrar el
+contenido Vendor.
 
-. Open a Vendor content item and verify that it now shows up with the
-scaled-down image. See <<content-edit>> for information on how to locate an
-existing content item.
+. Abra un elemento de contenido Vendor y compruebe que ahora se muestra con la
+imagen a escala reducida. Ver <<content-edit>> para más información sobre cómo
+localizar un elemento de contenido existente.
 
-. Repeat steps 8-15 for the Recipe content type.
+. Repita los pasos 8-15 para el tipo de contenido Recipe.
 
 // ==== Expand your understanding
 
-==== Related concepts
+==== Conceptos relacionados
 
 * <<structure-fields>>
 * <<structure-image-styles>>
 * <<structure-image-responsive>>
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Setting up an Image Style"]
 
-==== Additional resources
+==== Recursos adicionales
 
-https://www.drupal.org/docs/8/core/modules/image/working-with-images[_Drupal.org_ community documentation page "Working with images in Drupal 7 and 8"]
+https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module/working-with-images[_Drupal.org_ community documentation page "Working with images"]
 
 
-*Attributions*
+*Atribuciones*
 
-Adapted and edited by https://www.drupal.org/u/batigolix[Boris Doesborg], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
-http://redcrackle.com[Red Crackle] from
-https://www.drupal.org/docs/8/core/modules/image/working-with-images["Working with images in
-Drupal 7 and 8"],
-copyright 2000-copyright_upper_year by the individual contributors to the
-https://www.drupal.org/documentation[Drupal Community Documentation].
+Adaptado y editado por https://www.drupal.org/u/batigolix[Boris Doesborg] y
+https://www.drupal.org/u/jojyja[Jojy Alphonso] en
+http://redcrackle.com[Red Crackle], de
+https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module/working-with-images["Working with images"],
+copyright 2000-copyright_upper_year por los colaboradores individuales de la
+https://www.drupal.org/documentation[Documentación de la Comunidad de Drupal].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].
