@@ -1,12 +1,12 @@
 [[block-regions]]
 
-=== Concept: Regions in a Theme
+=== Concepto: regiones de un tema
 
 [role="summary"]
-Overview of regions from a theming perspective.
+Descripción general de las regiones desde la perspectiva de la maquetación.
 
 (((Theme,regions in)))
-(((Bartik theme,regions in)))
+(((Olivero theme,regions in)))
 (((Region,overview)))
 (((Breadcrumb region,overview)))
 (((Content region,overview)))
@@ -31,39 +31,41 @@ Overview of regions from a theming perspective.
 (((Region,secondary menu)))
 (((Region,sidebar)))
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
 <<understanding-themes>>
 
-==== What is a region?
+==== ¿Qué es una región?
 
-Besides its primary content, a web page contains other content such as site
-branding (site name, slogan, and logo), navigation aids (menus, links, and
-icons), formatted text, and images. Each theme provides a set of named regions,
-such as _Header_, _Content_, and _Sidebar_, where site builders may choose to
-place their content.
+Además de su contenido principal, una página web contiene otro contenido como
+la identidad del sitio (nombre, eslogan y logo), ayudas de navegación (menús,
+enlaces e iconos), texto con formato e imágenes. Cada tema proporciona un
+conjunto de regiones con nombre, como _Header_, _Content_ y _Sidebar_, donde los
+site builders pueden decidir colocar su contenido.
 
-The available regions depend on the theme design. Only the Content region,
-which contains the primary content, is required; others are optional.  The
-core Bartik theme provides the regions highlighted in the following image.
+Las regiones disponibles dependen del diseño del tema. Solo es obligatoria la
+región Content, que contiene el contenido principal; las demás son opcionales.
+El tema del núcleo Olivero proporciona las regiones que se destacan en la
+siguiente imagen.
 
-// Bartik theme region preview at admin/structure/block/demo/bartik,
+// Olivero theme region preview at admin/structure/block/demo/olivero,
 // after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+image:images/block-regions-olivero.png["core Olivero theme regions",width="100%"]
 
-==== Related topics
+==== Temas relacionados
 
 * <<block-concept>>
 * <<planning-data-types>>
 * <<block-place>>
 
-==== Additional resources
+// ==== Additional resources
 
-* https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
+*Atribuciones*
 
+Escrito y editado por https://www.drupal.org/u/jfmacdonald[John MacDonald],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] en
+https://erdfisch.de[erdfisch],
+y https://www.drupal.org/u/eojthebrave[Joe Shindelar] en
+https://drupalize.me[Drupalize.Me].
 
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch].
+Traducido por https://www.drupal.org/u/alvar0hurtad0[Alvaro Hurtado].
