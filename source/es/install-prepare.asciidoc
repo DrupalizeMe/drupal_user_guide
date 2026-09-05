@@ -1,84 +1,81 @@
 [[install-prepare]]
-=== Preparing to Install
+=== Preparar la instalación
 
 [role="summary"]
-How to download the core software and satisfy prerequisites for installation.
+Cómo descargar el software del núcleo y cumplir los requisitos previos para la
+instalación.
 
 (((Downloading,core software)))
 (((Drupal core,preparing install)))
 
-==== Goal
+==== Objetivo
 
-Download the core software, and handle any required prerequisites.
+Esbozar los pasos para descargar el software del núcleo y resolver cualquier
+requisito previo necesario.
 
-==== Prerequisite knowledge
+==== Conocimientos previos
 
-* <<install-requirements>>
+* Cómo instalar y configurar software de servidor (si instala en su propio
+ordenador)
 
-* <<install-tools>>
+* Cómo preparar alojamiento para un sitio web genérico
 
-* <<install-decide>>
+* Cómo crear una base de datos
 
-* How to install and configure server software (if installing on your own
-computer)
+==== Requisitos previos del sitio web
 
-* How to set up hosting for a generic web site
+El software de servidor debe estar instalado en el ordenador donde planea alojar
+su sitio. Ver <<install-requirements>> para una lista de requisitos.
 
-* How to create a database
+Ver <<install-ddev>> para la forma recomendada de empezar a ejecutar el software
+localmente.
 
-==== Site prerequisites
+Dependiendo de cómo planee descargar el software del núcleo, puede que
+necesite instalar antes herramientas de software adicionales. Ver
+<<install-decide>> y <<install-tools>>.
 
-Server software must be installed on the computer where you plan to host your
-site. See <<install-requirements>>.
+==== Pasos
 
-Depending on how you plan to download the core software, you may need to install
-additional software tools first. See <<install-decide>> and <<install-tools>>.
+. Elija los métodos para descargar e instalar el software del núcleo, entre los
+que se enumeran en <<install-decide>>. El resto de estas instrucciones se
+aplican a las opciones de descarga con Composer y manual; si eligió otras
+opciones, como un instalador de un clic de un proveedor de alojamiento, consulte
+la documentación correspondiente para conocer los pasos adicionales.
 
-==== Steps
+. Configure una URL y el alojamiento de su sitio en el servidor. Compruebe que
+el alojamiento funciona colocando un archivo HTML sencillo en el directorio raíz
+web del alojamiento y visitando la URL de su sitio.
 
-. Choose methods for downloading and installing the core software, from those
-listed in <<install-decide>>. The rest of these instructions apply to the
-Composer and manual download options and the interactive installer; if you chose
-other options, the software should be installed for you.
+. Cree una base de datos, junto con una cuenta de usuario de base de datos con
+acceso completo.
 
-. Set up a URL and hosting for your site on the server. Verify that the hosting
-is working by putting a simple HTML file in the web root directory of the
-hosting, and visiting the URL for your site.
+. Descargue los archivos del software del núcleo al directorio raíz web,
+usando el método que haya decidido. Ver <<install-decide>> para enlaces a las
+instrucciones.
 
-. Create a database, along with a database user account with full access.
+==== Ampliar conocimiento
 
-. Download the core software files to the web root directory, using the method
-you decided on. See <<install-decide>> for links to instructions.
-
-==== Expand your understanding
-
-See <<install-run>> to run the interactive installer.
-
-Alternatively, you can use the following Drush command, from inside the
-directory that you downloaded the software to, where _DB_NAME_, _DB_USER_ and
-_DB_PASS_ are your database's credentials:
-
-----
-drush site-install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
-----
+Ver <<install-run>> para ejecutar el instalador interactivo.
 
 // ==== Related concepts
 
-==== Videos
+==== Vídeos
 
 // Video from Drupalize.Me.
 video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Preparing to Install"]
 
-==== Additional resources
+==== Recursos adicionales
 
 http://www.drush.org[Drush]
 
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by https://www.drupal.org/u/dgorton[Drew Gorton],
-https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
+Escrito y editado por https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] en
 https://erdfisch.de[erdfisch],
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+y https://www.drupal.org/u/jojyja[Jojy Alphonso] en
 http://redcrackle.com[Red Crackle].
+
+Traducido por https://www.drupal.org/u/alvar0hurtad0[Alvaro Hurtado].
