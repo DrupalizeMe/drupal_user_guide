@@ -1,58 +1,57 @@
 [[understanding-themes]]
 
-=== Concept: Themes
+=== Konsep: Tema
 
 [role="summary"]
-Overview of themes and where to obtain them.
+Gambaran umum tema dan tempat mendapatkannya.
 
-(((Theme,overview)))
-(((Theme,core)))
-(((Core theme,overview)))
-(((Theme,third-party)))
-(((Third-party theme,overview)))
-(((Theme,custom)))
-(((Custom theme,overview)))
+(((Tema,gambaran umum)))
+(((Tema,inti)))
+(((Tema inti,gambaran umum)))
+(((Tema,pihak ketiga)))
+(((Tema pihak ketiga,gambaran umum)))
+(((Tema,kustom)))
+(((Tema kustom,gambaran umum)))
 
-==== Prerequisite knowledge
+==== Pengetahuan prasyarat
 
 <<understanding-drupal>>
 
-==== What is a Theme?
+==== Apa itu Tema?
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+Tema adalah sekumpulan berkas yang menentukan tampilan visual dan nuansa situs
+Anda. Perangkat lunak inti serta modul yang berjalan di situs menentukan
+_konten_ yang ditampilkan pada halaman situs. Konten ini mencakup teks HTML dan
+data lain yang disimpan dalam database, gambar yang diunggah, serta berkas aset
+lainnya. Tema menentukan markup HTML dan gaya CSS yang membungkus konten.
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+Perangkat lunak inti menyediakan beberapa tema dasar bersama distribusi inti.
+Tema-tema ini sebagian besar telah dirancang dan dibuat oleh komunitas selama
+beberapa tahun terakhir. Semuanya merupakan pilihan yang baik untuk membangun
+situs pertama Anda dan semakin mengenal cara kerja perangkat lunak inti.
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+Drupal adalah CMS yang sudah mapan, sehingga pasar tema pihak ketiga, baik
+gratis maupun berbayar, sangat beragam.
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software. Guidance for creating custom themes in
-Drupal 8 can be found in the
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"].
+Jika tidak ada pilihan pihak ketiga yang sesuai dengan kebutuhan, Anda perlu
+membuat tema kustom. Tema kustom dapat sesederhana satu berkas CSS yang menambah
+gaya pada markup yang disediakan perangkat lunak inti. Panduan membuat tema
+kustom di Drupal dapat ditemukan di
+https://www.drupal.org/docs/theming-drupal[halaman dokumentasi komunitas _Drupal.org_
+"Pembuatan Tema Drupal"].
 
-==== Related topics
+==== Topik terkait
 
 * <<extend-theme-find>>
 * <<extend-theme-install>>
 * <<understanding-modules>>
 
-==== Additional resources
+==== Sumber daya tambahan
 
-https://www.drupal.org/docs/8/theming[_Drupal.org_ community documentation page
-"Theming Drupal"]
+https://www.drupal.org/docs/theming-drupal[halaman dokumentasi komunitas _Drupal.org_ "Pembuatan Tema Drupal"]
 
 
-*Attributions*
+*Atribusi*
 
-Written and edited by https://www.drupal.org/u/jgrubb[John Grubb] and
+Ditulis dan disunting oleh https://www.drupal.org/u/jgrubb[John Grubb] dan
 https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

@@ -1,60 +1,66 @@
 [[understanding-modules]]
-=== Concept: Modules
+=== Konsep: Modul
 
 [role="summary"]
-Overview of modules and the functionality they can be used for.
+Gambaran umum modul dan fungsionalitas yang dapat disediakannya.
 
-(((Module,overview)))
-(((Contributed module,overview)))
-(((Core module,overview)))
-(((Field module,overview)))
-(((Field UI module,overview)))
-(((Menu UI module,overview)))
-(((Node module,overview)))
-(((User module,overview)))
-(((Views module,overview)))
-(((Views UI module,overview)))
-(((Module,core)))
-(((Module,contributed)))
-(((Module,Field)))
-(((Module,Field UI)))
-(((Module,Menu UI)))
-(((Module,Node)))
-(((Module,User)))
-(((Module,Views)))
-(((Module,Views UI)))
+(((Modul,gambaran umum)))
+(((Modul kontribusi,gambaran umum)))
+(((Modul inti,gambaran umum)))
+(((Modul Field,gambaran umum)))
+(((Modul Field UI,gambaran umum)))
+(((Modul Menu UI,gambaran umum)))
+(((Modul Node,gambaran umum)))
+(((Modul User,gambaran umum)))
+(((Modul Views,gambaran umum)))
+(((Modul Views UI,gambaran umum)))
+(((Modul,inti)))
+(((Modul,kontribusi)))
+(((Modul,Field)))
+(((Modul,Field UI)))
+(((Modul,Menu UI)))
+(((Modul,Node)))
+(((Modul,User)))
+(((Modul,Views)))
+(((Modul,Views UI)))
 
-==== Prerequisite knowledge
+==== Pengetahuan prasyarat
 
 <<understanding-drupal>>
 
-==== What is a module?
+==== Apa itu modul?
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site
-features and adds functionality. You can turn the features and functionality on
-by _installing_ the module, and you can turn it off by _uninstalling_ the
-module; before uninstalling, you may need to remove data and configuration
-related to the feature or functionality. Each module that is installed adds to
-the time needed to generate pages on your site, so it is a good idea to
-uninstall modules that are not needed.
+Modul adalah paket berkas yang memperluas fungsionalitas inti Drupal. Modul
+umumnya berisi kode PHP, konfigurasi (YAML), dan dapat menyertakan berkas
+JavaScript, CSS, serta templat Twig.
 
-The core download provides modules for functionality such as:
+Anda dapat mengaktifkan fitur dan fungsionalitas dengan _menginstal_ modul serta
+menonaktifkannya dengan _menghapus instalasi_ modul. Sebelum menghapus
+instalasi,
+Anda mungkin perlu menghapus data dan konfigurasi yang terkait dengan fitur atau
+fungsionalitas tersebut.
 
-* Managing user accounts (the core User module)
+Setiap modul yang diinstal menambah waktu yang diperlukan untuk menghasilkan
+halaman di situs Anda. Oleh karena itu, sebaiknya hapus instalasi modul yang
+tidak diperlukan.
 
-* Managing basic content (the core Node module) and fields (the core Field and
-Field UI modules; there are also core modules providing field types)
+Unduhan inti menyediakan modul untuk fungsionalitas seperti:
 
-* Managing navigation menus (the core Menu UI module)
+* Mengelola akun pengguna (modul User inti)
 
-* Making lists, grids, and blocks from existing content (the core Views and
-Views UI modules)
+* Mengelola konten dasar (modul Node inti) dan kolom (modul Field serta Field UI
+  inti; ada pula modul inti yang menyediakan tipe kolom)
 
-You can download additional _contributed modules_ from the
-https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], or create your own
-_custom modules_.
+* Mengelola menu navigasi (modul Menu UI inti)
 
-==== Related topics
+* Membuat daftar, kisi, dan blok dari konten yang ada (modul Views serta Views
+  UI inti)
+
+Anda dapat mengunduh _modul kontribusi_ tambahan dari
+https://www.drupal.org/project/project_module[Unduhan Modul _Drupal.org_] atau
+membuat _modul kustom_ sendiri.
+
+==== Topik terkait
 
 * <<understanding-themes>>
 * <<understanding-distributions>>
@@ -64,11 +70,11 @@ _custom modules_.
 * <<security-concept>>
 * <<security-update-module>>
 
-==== Additional resources
+==== Sumber daya tambahan
 
-https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
+https://www.drupal.org/developing/modules[halaman dokumentasi komunitas _Drupal.org_ "Panduan pengembang modul"]
 
 
-*Attributions*
+*Atribusi*
 
-Written by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Ditulis oleh https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

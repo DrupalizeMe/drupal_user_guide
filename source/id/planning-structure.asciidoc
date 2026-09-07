@@ -1,19 +1,19 @@
 [[planning-structure]]
-=== Planning your Content Structure
+=== Merencanakan Struktur Konten Anda
 
 [role="summary"]
-How to plan a content structure that assigns content entity types to specific content on the website.
+Cara merencanakan struktur konten yang menetapkan tipe entitas konten untuk
+konten tertentu di situs web.
 
-(((Content structure,planning)))
-(((Site plan,content structure)))
+(((Struktur konten,perencanaan)))
+(((Rencana situs,struktur konten)))
 
-==== Goal
+==== Tujuan
 
-Make a plan for the content structure of the site (which type and subtype of
-entity to use for which content), and which pages will contain listings of
-content.
+Membuat rencana struktur konten situs (tipe dan subtipe entitas yang digunakan
+untuk setiap konten), serta halaman yang berisi daftar konten.
 
-==== Prerequisite knowledge
+==== Pengetahuan prasyarat
 
 * <<planning-data-types>>
 * <<planning-modular>>
@@ -21,127 +21,134 @@ content.
 
 //==== Site prerequisites
 
-==== Steps
+==== Langkah-langkah
 
-. Brainstorm about what content your site needs to contain, which could include
-content that visitors would be looking for, as well as content that you want
-to show to visitors. The result could be the description in
-<<preface-scenario>>.
+. Curah pendapat tentang konten yang perlu ada di situs. Konten ini dapat
+mencakup konten yang dicari pengunjung maupun konten yang ingin ditampilkan
+kepada pengunjung. Hasilnya dapat berupa deskripsi dalam <<preface-scenario>>.
 
-. For each identified piece of content, decide which content entity type would
-be the best fit. In doing this, you'll need to consider where and how
-the content will be used and edited on the site. For example, in the farmers
-market site scenario, you might want to display the hours and location of the
-farmers market on the sidebar of every page. For that content, a single custom
-block makes sense. As another example, you might decide that pages displaying
-information about each vendor should be content items managed by the core Node
-module, because you want vendors to be able to edit their own listings.
-The core Node module permission system lets you do this easily.
+. Untuk setiap konten yang telah diidentifikasi, tentukan tipe entitas konten
+yang paling sesuai. Dalam menentukan hal ini, Anda perlu mempertimbangkan tempat
+dan cara konten digunakan serta disunting di situs. Misalnya, dalam skenario
+situs pasar petani, Anda mungkin ingin menampilkan jam operasional dan lokasi
+pasar petani pada sidebar setiap halaman. Untuk konten tersebut, satu blok
+kustom masuk akal. Sebagai contoh lain, Anda mungkin memutuskan bahwa halaman
+yang menampilkan informasi setiap vendor sebaiknya berupa item konten yang
+dikelola oleh modul Node inti karena Anda ingin vendor dapat menyunting daftar
+mereka sendiri. Sistem izin modul Node inti memudahkan Anda melakukan hal ini.
 +
-These decisions do not necessarily always have only one right answer; for
-instance, you could decide that vendor pages should be user profiles instead of
-content items, but if you did that the content would be tied to a specific user
-account, and it would not be as easy to later change the ownership of a vendor
-page to a different user account.
+Keputusan ini tidak selalu hanya memiliki satu jawaban yang benar. Misalnya,
+Anda dapat memutuskan halaman vendor sebagai profil pengguna, bukan item konten.
+Jika demikian, konten akan terikat pada akun pengguna tertentu dan nantinya
+tidak semudah itu untuk mengubah kepemilikan halaman vendor ke akun pengguna
+lain.
 
-. Within each content entity type you identified, decide what division into
-entity sub-types would make sense. For example, in the farmers market site
-example, you would probably decide that under the Content item entity type,
-there should be one content type for basic pages (Home and
-About), one for vendor pages, and one for recipe pages.
+. Dalam setiap tipe entitas konten yang telah diidentifikasi, tentukan pembagian
+menjadi subtipe entitas yang masuk akal. Misalnya, dalam contoh situs pasar
+petani, Anda mungkin memutuskan bahwa di bawah tipe entitas Item konten, perlu
+ada satu tipe konten untuk halaman dasar (Home dan About), satu untuk halaman
+vendor, serta satu untuk halaman resep.
 
-. For each entity sub-type you decided on, decide what fields are needed. For
-instance, the Vendor content type might need fields for the vendor name, web
-page URL, image, and description.
+. Untuk setiap subtipe entitas yang diputuskan, tentukan kolom yang diperlukan.
+Misalnya, tipe konten Vendor mungkin memerlukan kolom untuk nama vendor,
+URL
+halaman web, gambar, dan deskripsi.
 
-. Decide on what entity listings are needed, which could be entire pages or
-smaller areas on the page. For each listing, you'll need to determine what
-entity items should be listed. Then you'll need to decide in what order and with
-what filtering options they should be displayed; for example, you might want to
-give the site visitor the option to search by keyword, to filter the list down
-to a subset, or to sort the list. You'll also need to decide what information
-from the entity items should be shown, which might result in adding to the list
-of fields you determined in the previous step. The farmers market site, for
-example, needs to have a Recipes listing page that lists content items of type
-Recipe, with the ability to filter by ingredients, so that means that the Recipe
-content type needs an Ingredients field.
+. Tentukan daftar entitas yang diperlukan, yang dapat berupa halaman utuh atau
+area halaman yang lebih kecil. Untuk setiap daftar, Anda perlu menentukan
+entitas yang harus dicantumkan. Kemudian, tentukan urutan dan opsi pemfilteran
+untuk menampilkannya. Misalnya, Anda mungkin ingin memberi pengunjung situs
+pilihan mencari berdasarkan kata kunci, memfilter daftar menjadi subset, atau
+mengurutkan daftar. Anda juga perlu menentukan informasi dari entitas yang harus
+ditampilkan. Hal ini mungkin mengharuskan Anda menambahkan daftar kolom yang
+ditentukan pada langkah sebelumnya. Sebagai contoh, situs pasar petani
+membutuhkan halaman daftar Recipes yang mencantumkan item konten tipe Recipe
+dengan kemampuan memfilter berdasarkan bahan. Jadi, tipe konten Recipe
+memerlukan kolom Ingredients.
 
-. For each identified field on each entity subtype, identify what type of data
-it should contain (such as plain text, formatted text, a date, an image file,
-etc.), and how many values should be allowed. Most fields are
-single-valued, but for example, a Recipe should allow for multiple values in
-its Ingredients field.
+. Untuk setiap kolom yang diidentifikasi pada setiap subtipe entitas, tentukan
+tipe data yang harus dikandungnya (seperti teks biasa, teks berformat, tanggal,
+berkas gambar, dan sebagainya) serta jumlah nilai yang diizinkan. Sebagian besar
+kolom bernilai tunggal, tetapi Recipe harus mengizinkan beberapa nilai dalam
+kolom Ingredients-nya.
 
-. Consider which fields would be best as references to taxonomy term entities:
-fields whose values should be chosen from a list of allowed values. Allowed
-values that are expected to change and grow over time, are good candidates. An
-example is the Ingredients field for the Recipe content type.
+. Pertimbangkan kolom yang paling sesuai sebagai referensi ke entitas istilah
+taksonomi, yaitu kolom yang nilainya harus dipilih dari daftar nilai yang
+diizinkan. Nilai yang diizinkan dan diperkirakan berubah serta berkembang
+seiring
+waktu adalah kandidat yang baik. Contohnya adalah kolom Ingredients untuk tipe
+konten Recipe.
 
-. Consider which fields should reference other content entities. An example is
-that since vendors will be submitting recipes, a field will be needed on
-the Recipe content type that references the Vendor content item for the vendor
-who submitted the recipe.
+. Pertimbangkan kolom yang harus merujuk ke entitas konten lain. Misalnya,
+karena vendor akan mengirimkan resep, tipe konten Recipe memerlukan kolom yang
+merujuk ke item konten Vendor untuk vendor yang mengirimkan resep.
 
-Here's an example of the resulting content structure for the farmers market
-scenario example site:
-
-[width="100%",frame="topbot",options="header"]
-|=============================================
-|Entity type |Entity sub-type |Examples |Fields
-
-|Content item |Basic page |Home page, about page |Title, page body
-
-|Content item |Vendor |A page for each vendor at the market |
-  Vendor name, page body, image, URL
-
-|Content item |Recipe |A page for each submitted recipe |
-  Recipe name, page body, image, reference to Vendor who submitted it,
-  Ingredients taxonomy
-
-|Custom block |(generic) |Copyright notice for footer,
-  Hours and location for sidebar |No special fields
-
-|Taxonomy term |Ingredients |Carrots, tomatoes, and other recipe ingredients |
-  No special fields
-
-|Contact form |(generic) |Generic contact form |Name, email, subject, message
-
-|User profile |(none) |Will not be displayed on site |No special fields
-
-|=============================================
-
-And here are the listings the site needs:
+Berikut contoh struktur konten yang dihasilkan untuk situs contoh skenario pasar
+petani:
 
 [width="100%",frame="topbot",options="header"]
 |=============================================
-|Page or page area |Entity type and sub-type |Filter/sort/pagination |
-  Fields displayed
+|Tipe entitas |Subtipe entitas |Contoh |Kolom
 
-|Vendors page |Vendor content items |All vendors, alphabetical, paged |
-  Image, vendor name, trimmed body
+|Item konten |Basic page |Halaman Home, halaman About |Judul, isi halaman
 
-|Recipes page |Recipe content items |
-  Filter by ingredients, alphabetical, paged |Image, recipe name
+|Item konten |Vendor |Halaman untuk setiap vendor di pasar |
+  Nama vendor, isi halaman, gambar, URL
 
-|Recent recipes sidebar |Recipe content items |List 5 most recent |
-  Image, recipe name
+|Item konten |Recipe |Halaman untuk setiap resep yang dikirimkan |
+  Nama resep, isi halaman, gambar, referensi ke Vendor yang mengirimkannya,
+  taksonomi Ingredients
+
+|Blok kustom |(generik) |Pemberitahuan hak cipta untuk footer,
+  Jam operasional dan lokasi untuk sidebar |Tidak ada kolom khusus
+
+|Istilah taksonomi |Ingredients |Carrots, tomatoes, dan bahan resep lain |
+  Tidak ada kolom khusus
+
+|Formulir kontak |(generik) |Formulir kontak umum |Nama, email, subjek, pesan
+
+|Profil pengguna |(tidak ada) |Tidak akan ditampilkan di situs |
+  Tidak ada kolom khusus
 
 |=============================================
 
-==== Expand your understanding
+Berikut daftar yang diperlukan situs:
+
+[width="100%",frame="topbot",options="header"]
+|=============================================
+|Halaman atau area halaman |Tipe dan subtipe entitas |Filter/urutkan/paginasi |
+  Kolom yang ditampilkan
+
+|Halaman Vendors |Item konten Vendor |Semua vendor, alfabetis, berhalaman |
+  Gambar, nama vendor, isi dipangkas
+
+|Halaman Recipes |Item konten Recipe |
+  Filter berdasarkan bahan, alfabetis, berhalaman |Gambar, nama resep
+
+|Sidebar resep terbaru |Item konten Recipe |Daftar 5 terbaru |
+  Gambar, nama resep
+
+|=============================================
+
+==== Perluas pemahaman Anda
 
 * <<structure-content-type>>
 * <<structure-fields>>
 * <<structure-taxonomy-setup>>
 
-==== Related concepts
+==== Konsep terkait
 
 <<structure-taxonomy>>
+
+==== Video
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CaNt4DEeIgU[title="Merencanakan Struktur Konten Anda"]
 
 //==== Additional resources
 
 
-*Attributions*
+*Atribusi*
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
-and https://www.drupal.org/u/gdunham[Grant Dunham].
+Ditulis dan disunting oleh https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+dan https://www.drupal.org/u/gdunham[Grant Dunham].

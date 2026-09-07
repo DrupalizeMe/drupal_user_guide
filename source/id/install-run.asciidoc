@@ -1,146 +1,175 @@
 [[install-run]]
 
-=== Running the Installer
+=== Menjalankan Pemasang Interaktif
 
 [role="summary"]
-How to use the installer to install the core software.
+Cara menggunakan pemasang interaktif untuk menginstal perangkat lunak inti.
 
-(((Installer tool,running)))
-(((Installation process)))
-(((Installation profile)))
-(((Profile,installation)))
-(((Database,configuring during the installation process)))
-(((Core software,installing)))
-(((Drupal core,installing)))
-(((Web installer,running)))
+(((Alat pemasang,menjalankan)))
+(((Proses instalasi)))
+(((Profil instalasi)))
+(((Profil,instalasi)))
+(((Basis data,mengonfigurasi selama proses instalasi)))
+(((Perangkat lunak inti,menginstal)))
+(((Inti Drupal,menginstal)))
+(((Pemasang web,menjalankan)))
 
-==== Goal
+==== Tujuan
 
-Install the core software and create the admin account by running the included
-installer.
+Instal perangkat lunak inti dan buat akun admin dengan menjalankan pemasang yang
+disertakan.
 
-==== Prerequisite knowledge
+// ==== Prerequisite knowledge
 
-<<install-requirements>>
-
-==== Site prerequisites
+==== Prasyarat situs
 
 <<install-prepare>>
 
-==== Steps
+Perhatikan bahwa jika Anda mengikuti petunjuk di <<install-ddev>>, perangkat
+lunak inti sudah diinstal. Jika ingin menginstal perangkat lunak inti kembali,
+Anda dapat menjalankan perintah `ddev drush sql:drop` lalu mengikuti petunjuk di
+bawah ini.
 
-. If you are using a 1-click install from a hosting provider or demo site, you
-will most likely see some or all of the following screens as part of the
-installation process. If you uploaded the core files manually, to start the
-installer, open a browser and visit the URL that you set up for your hosting.
+==== Langkah-langkah
 
-. Select a language on the first page of the installer; for example,
-English. You could optionally choose from any of the other listed languages.
-The language files for the chosen language will be downloaded and installed so
-that the rest of the installation process can be finished in the chosen
-language. After choosing a language, click _Save and continue_.
+. Jika Anda menggunakan instalasi 1-klik dari penyedia hosting atau situs demo,
+kemungkinan besar Anda akan melihat sebagian atau seluruh layar berikut sebagai
+bagian dari proses instalasi. Jika mengunggah berkas inti secara manual atau
+menggunakan Composer, untuk memulai pemasang, buka peramban dan kunjungi URL
+yang Anda siapkan untuk hosting Anda.
+
+. Pilih bahasa pada halaman pertama pemasang; misalnya, bahasa Inggris. Anda
+juga dapat memilih salah satu bahasa lain yang tercantum. Berkas bahasa untuk
+bahasa
+yang dipilih akan diunduh dan diinstal sehingga sisa proses instalasi dapat
+diselesaikan dalam bahasa tersebut. Setelah memilih bahasa, klik _Simpan dan
+lanjutkan_.
 +
 --
 // Go to the first step of the installer
-image:images/install-run-1.png["Choose a language",width="100%"]
+image:images/install-run-1.png["Pilih bahasa",width="100%"]
 --
 
-. Select an installation profile. Installation profiles provide site features
-and functions for a specific type of site as a single download containing
-the core software, contributed modules, themes, and pre-defined
-configuration. Core contains two installation profiles. Select the core
-Standard installation profile. Click _Save and continue_.
+. Pilih profil instalasi. Profil instalasi menyediakan fitur dan fungsi situs
+untuk jenis situs tertentu sebagai satu unduhan yang berisi perangkat lunak
+inti,
+modul kontribusi, tema, dan konfigurasi yang telah ditentukan. Inti memiliki dua
+profil instalasi. Pilih profil instalasi Standard dari inti. Klik _Simpan dan
+lanjutkan_.
 +
 --
 // Go to the choose an installation profile step of the installer
-image:images/install-run-2.png["Choose an installation profile",width="100%"]
+image:images/install-run-2.png["Pilih profil instalasi",width="100%"]
 --
 
-. The next step in the installer will verify that your system meets the minimum
-requirements. If it does not, you'll be presented with an outline of what
-needs to be corrected in order to proceed. If it does, the installer will
-automatically advance to the next step.
+. Langkah berikutnya dalam pemasang akan memverifikasi bahwa sistem Anda
+memenuhi persyaratan minimum. Jika tidak, Anda akan melihat ringkasan hal-hal
+yang perlu diperbaiki agar dapat melanjutkan. Jika ya, pemasang akan otomatis
+melanjutkan ke
+langkah berikutnya.
 
-. Provide details of the database you created in the <<install-prepare>>
-chapter. Then click _Save and continue_.
+. Masukkan rincian basis data yang Anda buat dalam bab <<install-prepare>>.
+Lalu, klik _Simpan dan lanjutkan_.
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Database name | The custom name given to the database | drupal8
-|Database username | Username created | databaseUsername
-|Database password | Password chosen | ************
+|Nama bidang | Penjelasan | Nilai
+|Nama basis data | Nama khusus yang diberikan untuk basis data | drupal
+|Nama pengguna basis data | Nama pengguna yang dibuat | databaseUsername
+|Kata sandi basis data | Kata sandi yang dipilih | ************
 |================================
 +
 --
 // Go to the database configuration step of the installer
-image:images/install-run-3.png["Database configuration form",width="100%"]
+image:images/install-run-3.png["Formulir konfigurasi basis data",width="100%"]
 --
 
-. The next step will display a progress bar under the heading _Installing
-Drupal_. After the installer has completed, it will automatically advance to
-the next step.
+. Langkah berikutnya akan menampilkan bilah kemajuan di bawah judul _Menginstal
+Drupal_. Setelah pemasang selesai, pemasang akan otomatis melanjutkan ke langkah
+berikutnya.
 +
 --
 // Go to the page displaying the installation progress bar
-image:images/install-run-4.png["Installation progress bar",width="100%"]
+image:images/install-run-4.png["Bilah kemajuan instalasi",width="100%"]
 --
 
-. The final step is to configure some basic information about your new site.
-Note that the user account you create in this step is the site's admin
-account. See <<user-admin-account>> for important information about this unique
-account. You can safely name this account "admin", and make sure to choose a
-secure and unique password.
+. Langkah berikutnya adalah mengonfigurasi beberapa informasi dasar tentang
+situs baru Anda (perhatikan juga jika ada peringatan tentang izin berkas, untuk
+langkah selanjutnya). Perhatikan bahwa akun pengguna yang dibuat dalam langkah
+ini adalah
+akun admin situs. Lihat <<user-admin-account>> untuk informasi penting tentang
+akun unik ini. Anda dapat dengan aman menamai akun ini "admin", dan pastikan
+untuk memilih kata sandi yang aman dan unik.
 +
-Fill in the form with the following information:
+Isi formulir dengan informasi berikut:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
-|Field name | Explanation | Value
-|Site name | The name chosen for the site | Anytown Farmers Market
-|Site email address | The email associated with the site | info@example.com
-|Username | The designated user's credentials| admin
-|Password | The password chosen | ************
-|Confirm password | Repeat the password | ************
-|Email address | The user's email | admin@example.com
+|Nama bidang | Penjelasan | Nilai
+|Nama situs | Nama yang dipilih untuk situs | Anytown Farmers Market
+|Alamat email situs | Email yang terkait dengan situs | info@example.com
+|Nama pengguna | Kredensial pengguna yang ditetapkan| admin
+|Kata sandi | Kata sandi yang dipilih | ************
+|Konfirmasi kata sandi | Ulangi kata sandi | ************
+|Alamat email | Email pengguna | admin@example.com
 |================================
 +
-The remaining fields can likely be left at their default values.
+Kolom lainnya kemungkinan dapat dibiarkan dengan nilai bawaannya.
 +
 --
 // Go to the basic site information configuration step of the installer
-image:images/install-run-5.png["Configuration form",width="100%"]
+image:images/install-run-5.png["Formulir konfigurasi",width="100%"]
 --
 
-. Click _Save and continue_.
+. Klik _Simpan dan lanjutkan_.
 
-. You will be redirected to the front page of your new site and you should see
-the message _Congratulations, you installed Drupal!_ displayed at the top of
-the page.
+. Anda akan dialihkan ke halaman depan situs baru Anda dan akan melihat pesan
+_Selamat, Anda telah menginstal Drupal!_ ditampilkan di bagian atas halaman.
 +
 --
 // Front page of Drupal after the installer just completed showing the success message
-image:images/install-run-6.png["Installation success",width="100%"]
+image:images/install-run-6.png["Instalasi berhasil",width="100%"]
 --
 
-==== Expand your understanding
+. Anda mungkin melihat peringatan pada langkah Konfigurasi tentang izin berkas,
+dan mungkin terus melihat peringatan ini hingga Anda memperbaiki izinnya. Untuk
+menghindari peringatan dan membuat situs lebih aman, ubah izin pada direktori
+_sites/default_ dan berkas _sites/default/settings.php_ menjadi hanya-baca (Anda
+mungkin perlu melihat dokumentasi perusahaan hosting untuk mengetahui caranya).
 
-Check the Status Report to see if there are any problems with the
-installation. See <<prevent-status>>.
+==== Perluas pemahaman Anda
 
-==== Related concepts
+Sebagai alternatif, Anda dapat menginstal perangkat lunak menggunakan Drush,
+bukan UI. Gunakan perintah Drush berikut, dari dalam direktori tempat Anda
+mengunduh perangkat lunak, dengan _DB_NAME_, _DB_USER_, dan _DB_PASS_ sebagai
+kredensial basis data Anda:
+
+----
+drush site:install standard --db-url='mysql://DB_USER:DB_PASS@localhost/DB_NAME' --site-name=example
+----
+
+Periksa Laporan Status untuk mengetahui apakah ada masalah dengan instalasi.
+Lihat <<prevent-status>>.
+
+==== Konsep terkait
 
 * <<install-dev-sites>>
 * <<install-tools>>
 
-==== Additional resources
+==== Video
 
-https://www.drupal.org/docs/8/install/step-3-create-a-database[Drupal.org community documentation page "Create A Database"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/LGfRKKKDjv8[title="Menjalankan Pemasang"]
+
+==== Sumber daya tambahan
+
+* https://www.drupal.org/docs/installing-drupal/step-3-create-a-database[Halaman dokumentasi komunitas _Drupal.org_ "Membuat basis data"]
+* https://www.drupal.org/server-permissions[Bagian dokumentasi komunitas _Drupal.org_ "Masalah webhosting"]
 
 
-*Attributions*
+*Atribusi*
 
-Written and edited by https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+Ditulis dan disunting oleh https://www.drupal.org/u/eojthebrave[Joe Shindelar] di
 https://drupalize.me[Drupalize.Me],
-and https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+dan https://www.drupal.org/u/jojyja[Jojy Alphonso] di
 http://redcrackle.com[Red Crackle].

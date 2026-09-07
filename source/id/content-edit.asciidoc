@@ -1,83 +1,87 @@
 [[content-edit]]
-=== Editing a Content Item
+=== Menyunting Item Konten
 
 [role="summary"]
-How to edit a content item.
+Cara menyunting item konten.
 
-(((Content,editing)))
-(((Content,finding)))
-(((Editing content)))
+(((Konten,menyunting)))
+(((Konten,menemukan)))
+(((Menyunting konten)))
 
-==== Goal
+==== Tujuan
 
-Update the hours on the Home page content item.
+Memperbarui jam operasional pada item konten halaman Home.
 
-==== Prerequisite knowledge
+==== Pengetahuan prasyarat
 
 <<content-create>>
 
-==== Site prerequisites
+==== Prasyarat situs
 
-A content item for the Home page must exist. See <<content-create>>.
+Item konten untuk halaman Home harus sudah ada. Lihat <<content-create>>.
 
-==== Steps
+==== Langkah-langkah
 
-. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
+. Dalam menu administratif _Kelola_, buka _Konten_ (_admin/content_).
 
-. If the content item you want to edit was updated or created recently, it
-should appear near the top of the content list on that page. If not, you can
-use the _Content type_, _Title_, or other filters to locate the content item.
+. Jika item konten yang ingin Anda sunting baru saja diperbarui atau dibuat,
+item tersebut seharusnya muncul di dekat bagian atas daftar konten pada halaman
+itu. Jika tidak, Anda dapat menggunakan filter _Tipe konten_, _Judul_, atau
+filter lain untuk menemukan item konten.
 +
 --
 // Content list on admin/content, with filters above.
-image:images/content-edit-admin-content.png["Content administration page",width="100%"]
+image:images/content-edit-admin-content.png["Halaman administrasi konten",width="100%"]
 --
 
-. Click _Edit_ in the row of the content item you want to edit (Home), to
-open the content editing form. Update the opening hours in the _Body_ field. See
-<<content-create>> for an explanation of the fields and a screenshot.
+. Klik _Sunting_ pada baris item konten yang ingin Anda sunting (Home) untuk
+membuka formulir penyuntingan konten. Perbarui jam operasional pada kolom _Isi_.
+Lihat <<content-create>> untuk penjelasan tentang kolom dan tangkapan layar.
 
-. Check _Create new revision_ in the box on the right, if it is not already
-checked, and enter a _Revision log message_ explaining what changes you are
-making (for example, you might enter "Updated opening hours"). This text
-will appear in the revision log for the page.
+. Centang _Buat revisi baru_ di bawah _Diterbitkan_ jika belum dicentang, lalu
+masukkan _Pesan log revisi_ yang menjelaskan perubahan yang Anda buat (misalnya,
+Anda dapat memasukkan "Jam operasional diperbarui"). Teks ini akan muncul dalam
+log revisi halaman.
 +
 --
 // Revision area of the content edit page.
-image:images/content-edit-revision.png["Revision information section of the content edit page"]
+image:images/content-edit-revision.png["Bagian informasi revisi pada halaman penyuntingan konten"]
 --
 
-. Click _Save and keep published_ to save your changes.
+. Klik _Simpan_ untuk menyimpan perubahan Anda.
 
-. You will be redirected back to the _Content_ administrative page, and there
-should be a message showing that the content item was updated.
+. Anda akan diarahkan kembali ke halaman administratif _Konten_, dan seharusnya
+ada pesan yang menunjukkan bahwa item konten telah diperbarui.
 +
 --
 // Updated content message.
-image:images/content-edit-message.png["Updated content message"]
+image:images/content-edit-message.png["Pesan konten diperbarui"]
 --
 
-==== Expand your understanding
+==== Perluas pemahaman Anda
 
-As an alternative to the first two steps above, you can also reach the
-content edit form as follows:
+Sebagai alternatif untuk dua langkah pertama di atas, Anda juga dapat membuka
+formulir penyuntingan konten sebagai berikut:
 
-. Starting from your site's home page, use the site's navigation menus to locate
-the page where the content you want to edit is displayed to visitors.
+. Dari halaman beranda situs, gunakan menu navigasi situs untuk menemukan
+halaman tempat konten yang ingin Anda sunting ditampilkan kepada pengunjung.
 
-. Most themes will display an _Edit_ link or tab near the top of that page to
-people with permission to edit the page; clicking the link will take you to
-the full content edit form.
-
-. You could also use the in-place editor (refer to <<content-in-place-edit>>)
-from this page.
+. Sebagian besar tema akan menampilkan tautan atau tab _Sunting_ di dekat bagian
+atas halaman tersebut kepada orang yang memiliki izin untuk menyunting halaman;
+mengklik tautan tersebut akan membawa Anda ke formulir penyuntingan konten
+lengkap.
 
 //==== Related concepts
+
+==== Video
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TAFZMcuOqG0[title="Menyunting Item Konten"]
 
 //==== Additional resources
 
 
-*Attributions*
+*Atribusi*
 
-Written by https://www.drupal.org/u/chris-dart[Chris Dart]
-and https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Ditulis oleh https://www.drupal.org/u/chris-dart[Chris Dart] dan
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

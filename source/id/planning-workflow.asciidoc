@@ -1,72 +1,67 @@
 [[planning-workflow]]
 
-=== Concept: Editorial Workflow
+=== Konsep: Alur Kerja Editorial
 
 [role="summary"]
-Overview of the editorial workflow to manage content on a website.
+Gambaran umum alur kerja editorial untuk mengelola konten di situs web.
 
-(((Editorial Workflow,overview)))
-(((Published flag,overview)))
-(((Unpublished flag,overview)))
-(((Revision,overview)))
+(((Alur Kerja Editorial,gambaran umum)))
+(((Tanda Diterbitkan,gambaran umum)))
+(((Tanda Tidak Diterbitkan,gambaran umum)))
+(((Revisi,gambaran umum)))
 
-==== Prerequisite knowledge
+==== Pengetahuan prasyarat
 
-<<understanding-drupal>>
+* <<understanding-drupal>>
+* <<planning-data-types>>
 
-==== What is an Editorial Workflow?
+==== Apa itu alur kerja editorial?
 
-An Editorial Workflow is the process organizations follow to create, review,
-edit and publish content.
+_Alur kerja editorial_ adalah proses yang diikuti organisasi untuk membuat,
+meninjau, menyunting, dan menerbitkan konten. Beberapa orang dengan peran
+berbeda
+dalam organisasi dapat menjadi bagian dari proses ini. Misalnya, pembuat konten
+dapat mengumpulkan informasi dan menulis konten. Editor dapat meninjau,
+menyunting, meminta perubahan, dan menerbitkan konten setelah siap dibagikan
+kepada audiens. Kemudian, revisi konten dapat melalui proses sederhana untuk
+perubahan kecil atau proses yang lebih kompleks dengan peninjauan untuk
+perubahan
+yang lebih besar.
 
-Depending on the size and processes of the organization, multiple people in
-different roles can be part of the process. For example, content creators
-collect information and write content, editors review, edit, ask for changes,
-and publish the content once it's considered ready to be shared with the
-audience.
+==== Alat apa yang tersedia untuk mengelola alur kerja?
 
-In your site, content types can have either a Published or an Unpublished flag
-to track their workflow states, that you can set for each content item when
-saving:
+Status Diterbitkan/Tidak Diterbitkan::
+  Tipe entitas Item konten mendukung penandaan setiap item konten sebagai
+  Diterbitkan atau Tidak Diterbitkan. Izin melihat konten diterbitkan dan tidak
+  diterbitkan berbeda. Misalnya, semua pengunjung situs dapat melihat item
+  konten yang diterbitkan, sedangkan hanya pembuat konten dan editor yang dapat
+  melihat item konten yang tidak diterbitkan.
+Pelacakan revisi::
+  Beberapa tipe entitas konten mendukung pelacakan revisi. Artinya, saat konten
+  direvisi, perangkat lunak menyimpan revisi lama agar dapat dibandingkan atau
+  dikembalikan.
+Alur kerja::
+  Modul Workflows inti memungkinkan Anda menentukan status dan transisi alur
+  kerja, bukan sekadar menerbitkan atau tidak menerbitkan konten. Modul Content
+  Moderation inti pendamping memungkinkan Anda menetapkan izin dan peran pada
+  transisi alur kerja. Keduanya dapat digunakan dengan tipe entitas Item konten
+  dan Blok kustom.
+Penempatan blok::
+  Entitas konten Blok kustom memungkinkan Anda membuat blok kustom dan
+  menyuntingnya, tetapi hanya membuatnya terlihat di situs setelah siap.
 
-* Published content items are visible to all visitors of the site.
-
-* Unpublished content items are not visible to the visitors of the site, but can
-be seen by authenticated users who have the permissions to view unpublished
-versions of specific content items.
-
-Most content entity types support revision tracking, if it is enabled by an
-administrator for the entity sub-type. If you have revision tracking enabled,
-the software will store old versions of the content each time it's revised, and
-add notes about what is changed. This allows you to look at the history and
-revert to older versions.
-
-Using the Unpublished flag and Revisions, you can build an editorial workflow
-that lets content creators and editors work on the live site without displaying
-the content to visitors. When the content is ready to be published, all they
-need to do is save it as Published.
-
-==== Related topics
+==== Topik terkait
 
 * <<content-create>>
 * <<content-edit>>
+* <<block-create-custom>>
+* <<block-place>>
 
-==== Additional resources
+// ==== Additional resources
 
-Talking about online content, organizations would also want to consider
-post-publication phases of the editorial workflow: content teams might need to
-update already published content. Some organizations might need a more complex
-workflow with the options to configure which content type goes through the
-workflow process, set up user roles and permissions, set different workflow
-states (for example draft, needs review, published).
+*Atribusi*
 
-For more complex workflows, you can add install or more modules from the
-https://www.drupal.org/documentation/modules/workbench[contributed Workbench Suite module]
-to your site.
-
-
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/dianalakatos[Diána Lakatos] at
-https://pronovix.com//[Pronovix], and
-https://www.drupal.org/u/gdunham[Grant Dunham].
+Ditulis dan disunting oleh https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+di https://pronovix.com//[Pronovix],
+https://www.drupal.org/u/gdunham[Grant Dunham], serta
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

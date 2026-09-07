@@ -1,0 +1,61 @@
+[[install-ddev]]
+=== Menyiapkan Lingkungan dengan DDEV
+
+[role="summary"]
+Cara menyiapkan situs pengembangan menggunakan DDEV, lingkungan pengembangan
+lokal untuk aplikasi PHP.
+ 
+(((DDEV,gambaran umum)))
+(((DDEV,instalasi)))
+(((DDEV,lingkungan pengembangan)))
+(((DDEV,server pengembangan)))
+(((DDEV,server lokal)))
+
+==== Tujuan
+
+Menyiapkan lingkungan pengembangan lokal menggunakan DDEV untuk menjalankan
+aplikasi dan Composer untuk mengunduh berkas yang diperlukan.
+
+==== Pengetahuan prasyarat
+
+<<install-requirements>>
+<<install-composer>>
+
+==== Mengapa menggunakan DDEV?
+
+DDEV adalah lingkungan pengembangan lokal untuk aplikasi PHP yang dibangun di
+atas Docker. Lingkungan ini mencakup semua komponen yang diperlukan untuk
+menjalankan perangkat lunak inti dan digunakan oleh banyak pengembang dalam
+komunitas Drupal.
+
+==== Langkah-langkah
+
+. Ikuti
+https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/[petunjuk instalasi resmi DDEV]
+untuk menginstal DDEV pada komputer lokal Anda. DDEV tersedia untuk Windows,
+Mac, dan Linux. Proses instalasinya berbeda untuk setiap sistem operasi, jadi
+pastikan Anda mengikuti petunjuk untuk OS Anda.
+. Setelah menginstal DDEV, ikuti
+https://ddev.readthedocs.io/en/stable/users/quickstart/#drupal[petunjuk Memulai Cepat Drupal]
+untuk mengunduh perangkat lunak inti menggunakan Composer dan menginstalnya di
+lingkungan DDEV.
+. Jalankan perintah `ddev launch` dari direktori yang dibuat pada langkah
+sebelumnya untuk membuka situs di peramban web Anda dan memastikan lingkungan
+berfungsi dengan benar.
+
+==== Topik terkait
+
+* <<install-requirements>>
+* <<install-dev-sites>>
+* <<install-tools>>
+
+==== Sumber daya tambahan
+
+* https://ddev.readthedocs.io/en/stable/[Dokumentasi DDEV]
+* https://www.drupal.org/docs/getting-started/installing-drupal/install-drupal-using-ddev-for-local-development[Menginstal Drupal menggunakan DDEV untuk pengembangan lokal]
+
+*Atribusi*
+
+Ditulis dan disunting oleh
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] di
+https://drupalize.me[Drupalize.Me].

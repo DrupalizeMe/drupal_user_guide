@@ -1,70 +1,68 @@
 [[block-regions]]
 
-=== Concept: Regions in a Theme
+=== Konsep: Wilayah dalam Tema
 
 [role="summary"]
-Overview of regions from a theming perspective.
+Gambaran umum wilayah dari perspektif pembuatan tema.
 
-(((Theme,regions in)))
-(((Bartik theme,regions in)))
-(((Region,overview)))
-(((Breadcrumb region,overview)))
-(((Content region,overview)))
-(((Featured regions,overview)))
-(((Footer regions,overview)))
-(((Header region,overview)))
-(((Help region,overview)))
-(((Highlighted region,overview)))
-(((Menu region,overview)))
-(((Primary menu region,overview)))
-(((Secondary menu region,overview)))
-(((Sidebar regions,overview)))
-(((Region,breadcrumb)))
-(((Region,content)))
-(((Region,featured)))
-(((Region,footer)))
-(((Region,header)))
-(((Region,help)))
-(((Region,highlighted)))
-(((Region,menu)))
-(((Region,primary menu)))
-(((Region,secondary menu)))
-(((Region,sidebar)))
+(((Tema,wilayah dalam)))
+(((Tema Olivero,wilayah dalam)))
+(((Wilayah,gambaran umum)))
+(((Wilayah Breadcrumb,gambaran umum)))
+(((Wilayah Content,gambaran umum)))
+(((Wilayah Featured,gambaran umum)))
+(((Wilayah Footer,gambaran umum)))
+(((Wilayah Header,gambaran umum)))
+(((Wilayah Help,gambaran umum)))
+(((Wilayah Highlighted,gambaran umum)))
+(((Wilayah Menu,gambaran umum)))
+(((Wilayah Primary menu,gambaran umum)))
+(((Wilayah Secondary menu,gambaran umum)))
+(((Wilayah Sidebar,gambaran umum)))
+(((Wilayah,breadcrumb)))
+(((Wilayah,content)))
+(((Wilayah,featured)))
+(((Wilayah,footer)))
+(((Wilayah,header)))
+(((Wilayah,help)))
+(((Wilayah,highlighted)))
+(((Wilayah,menu)))
+(((Wilayah,primary menu)))
+(((Wilayah,secondary menu)))
+(((Wilayah,sidebar)))
 
-==== Prerequisite knowledge
+==== Pengetahuan prasyarat
 
 <<understanding-themes>>
 
-==== What is a region?
+==== Apa itu wilayah?
 
-Besides its primary content, a web page contains other content such as site
-branding (site name, slogan, and logo), navigation aids (menus, links, and
-icons), formatted text, and images. Each theme provides a set of named regions,
-such as _Header_, _Content_, and _Sidebar_, where site builders may choose to
-place their content.
+Selain konten utama, halaman web berisi konten lain seperti merek situs
+(nama situs, slogan, dan logo), alat bantu navigasi (menu, tautan, dan ikon),
+teks diformat, serta gambar. Setiap tema menyediakan sekumpulan wilayah
+bernama, seperti _Header_, _Content_, dan _Sidebar_, tempat pembuat situs dapat
+memilih untuk menempatkan konten mereka.
 
-The available regions depend on the theme design. Only the Content region,
-which contains the primary content, is required; others are optional.  The
-core Bartik theme provides the eighteen regions highlighted in the following
-image.
+Wilayah yang tersedia bergantung pada desain tema. Hanya wilayah Content, yang
+berisi konten utama, yang wajib ada; wilayah lain bersifat opsional. Tema
+Olivero inti menyediakan wilayah yang ditandai pada gambar berikut.
 
-// Bartik theme region preview at admin/structure/block/demo/bartik,
+// Olivero theme region preview at admin/structure/block/demo/olivero,
 // after configuring the theme for the Farmers Market scenario.
-image:images/block-regions-bartik.png["core Bartik theme regions",width="100%"]
+image:images/block-regions-olivero.png["Wilayah tema Olivero inti",width="100%"]
 
-==== Related topics
+==== Topik terkait
 
 * <<block-concept>>
 * <<planning-data-types>>
 * <<block-place>>
 
-==== Additional resources
+// ==== Additional resources
 
-* https://www.drupal.org/node/171224[_Drupal.org_ community documentation page "Assigning content to regions"]
+*Atribusi*
 
-
-*Attributions*
-
-Written and edited by https://www.drupal.org/u/jfmacdonald[John MacDonald],
-and https://www.drupal.org/u/michaellenahan[Michael Lenahan] at
-https://erdfisch.de[erdfisch].
+Ditulis dan disunting oleh https://www.drupal.org/u/jfmacdonald[John MacDonald],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] di
+https://erdfisch.de[erdfisch], serta
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] di
+https://drupalize.me[Drupalize.Me].

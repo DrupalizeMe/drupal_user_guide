@@ -1,20 +1,20 @@
 [[preface-reporting]]
 === Melaporkan Masalah
 [role="summary"]
-Cara melaporkan masalah dengan panduan ini (dengan langkah-langkah terperinci).
+Cara melaporkan masalah pada panduan ini (dengan langkah-langkah terperinci).
 
 ==== Tujuan
 
-Laporkan masalah dengan panduan ini, seperti:
+Laporkan masalah pada panduan ini, seperti:
 
 * Informasi yang salah atau tidak mengikuti praktik terbaik
-* Langkah-langkah yang tidak berhasil
-* Cuplikan layar atau teks yang tidak sesuai dengan apa yang Anda lihat di layar
+* Langkah-langkah yang tidak berfungsi
+* Tangkapan layar atau teks yang tidak sesuai dengan yang Anda lihat di layar
 * Tulisan yang tidak jelas
-* Tempat-tempat di mana meja atau screen shot akan membantu memperjelas teks
-* Kegagalan untuk mendefinisikan terminologi
-* Hilang prasyarat pengetahuan atau prasyarat situs untuk suatu topik
-* Kesalahan ketik, ejaan, tata bahasa, atau pemformatan
+* Bagian yang dapat diperjelas teksnya dengan tabel atau tangkapan layar
+* Kegagalan mendefinisikan terminologi
+* Pengetahuan prasyarat atau prasyarat situs yang hilang untuk suatu topik
+* Kesalahan tipografi, ejaan, tata bahasa, atau pemformatan
 * Tautan rusak
 
 // ==== Prerequisite knowledge
@@ -23,54 +23,51 @@ Laporkan masalah dengan panduan ini, seperti:
 
 ==== Langkah-langkah
 
-. Catat topik atau topik yang mengandung masalah yang Anda temukan.
+. Catat topik yang berisi masalah yang Anda temukan.
 
 . Masuk ke https://www.drupal.org[_Drupal.org_] (Anda perlu membuat akun
- pengguna jika Anda belum memilikinya).
+pengguna jika belum memilikinya).
 
-. Kunjungi https://www.drupal.org/project/issues/user_guide[Halaman masalah
- Panduan Pengguna pada _Drupal.org_].
+. Kunjungi https://www.drupal.org/project/issues/user_guide[halaman isu Panduan
+Pengguna di _Drupal.org_].
 
-. Verifikasi bahwa masalah yang Anda temukan belum dilaporkan dalam masalah
- lain:
-  * Jika hanya ada beberapa masalah terbuka, pindai kolom _Summary_ untuk
-  melihat apakah salah satu deskripsi mereka sesuai dengan masalah yang Anda
-  temukan. Anda mungkin juga perlu membaca beberapa masalah untuk memastikan,
-  yang dapat Anda lakukan dengan mengklik tautan di kolom _Summary_.
-  * Jika daftar masalah terbuka panjang, masukkan kata kunci yang terkait
-  dengan masalah yang Anda temukan atau judul topik tempat masalah terjadi di
-  kotak _Search for_, dan klik _Search_ untuk mengurangi daftar masalah.
-  Kemudian pindai ringkasan atau baca masalah untuk melihat apakah mereka
-  cocok dengan masalah Anda.
+. Pastikan bahwa masalah yang Anda temukan belum dilaporkan dalam isu lain:
+  * Jika hanya ada beberapa isu terbuka, periksa kolom _Ringkasan_ untuk melihat
+  apakah salah satu deskripsinya sesuai dengan masalah yang Anda temukan. Anda
+  mungkin juga perlu membaca beberapa isu untuk memastikannya, yang dapat
+  dilakukan dengan mengeklik tautan di kolom _Ringkasan_.
+  * Jika daftar isu terbuka panjang, masukkan kata kunci yang terkait dengan
+  masalah yang Anda temukan atau judul topik tempat masalah terjadi ke kotak
+  _Cari_, lalu klik _Cari_ untuk mempersempit daftar isu. Kemudian periksa
+  ringkasan atau baca isu untuk mengetahui apakah isinya sesuai dengan masalah
+  Anda.
 
-. Jika Anda menemukan bahwa masalah Anda belum dilaporkan, klik
-_Create a new issue_, dan isi laporan masalah sebagai berikut:
+. Jika Anda memastikan bahwa masalah belum dilaporkan, klik _Buat isu baru_ dan
+isi laporan isu sebagai berikut:
 +
 [width="100%",frame="topbot",options="header"]
 |================================
 | Nama bidang | Penjelasan | Contoh nilai
-| Title | Ringkasan singkat masalah yang Anda temukan | Petunjuk dalam
-  "Menambahkan Jenis Konten" tidak berfungsi
-| Category | Jenis masalah sedang dilaporkan | Laporan bug
-| Version | Versi panduan yang Anda temukan masalahnya | 8.x-0.x-dev
-| Issue summary | Detail masalah yang Anda temukan | Di topik "Menambahkan tipe
-  konten", di langkah 3, ketika saya mengklik _Simpan_, saya mendapat pesan
-  galat berikut: ...
+| Judul | Ringkasan singkat masalah yang Anda temukan | Petunjuk dalam
+  "Menambahkan Tipe Konten" tidak berfungsi
+| Kategori | Jenis isu yang dilaporkan | Laporan bug
+| Versi | Versi panduan tempat Anda menemukan masalah | 9.1.x-dev
+| Ringkasan isu | Perincian masalah yang Anda temukan | Dalam topik
+  "Menambahkan Tipe Konten", pada langkah 3, ketika saya mengeklik _Simpan_,
+  saya mendapatkan pesan galat berikut: ...
 |================================
 
-. Baca kembali _Title_ dan _Issue summary_ yang Anda masukkan, dan verifikasi
-bahwa informasi berikut disertakan dalam laporan Anda:
-* Penjelasan lengkap tentang masalah yang Anda temukan
-   * Nama topik atau topik tempat Anda menemukan masalah
-   * Bahasa yang Anda baca di panduan (jika bukan bahasa Inggris)
-   * Jika Anda membaca panduan di situs web, tautan ke halaman atau halaman
-     dengan masalah
+. Baca kembali _Judul_ dan _Ringkasan isu_ yang Anda masukkan, lalu pastikan
+informasi berikut disertakan dalam laporan Anda:
+  * Deskripsi lengkap masalah yang Anda temukan
+  * Nama topik tempat Anda menemukan masalah
+  * Bahasa yang Anda gunakan untuk membaca panduan (jika bukan bahasa Inggris)
+  * Jika membaca panduan di situs web, tautan ke halaman yang memiliki masalah
 
-. Klik _Save_ untuk melaporkan masalah.
+. Klik _Simpan_ untuk membuat isu.
 
-. Periksa kembali masalah ini dalam beberapa hari. Jika salah satu pengelola
-  proyek telah meminta klarifikasi, tanggapi dengan menambahkan komentar
-  untuk masalah ini.
+. Periksa kembali isu tersebut dalam beberapa hari. Jika salah satu pengelola
+proyek meminta klarifikasi, tanggapi dengan menambahkan komentar ke isu.
 
 // ==== Expand your understanding
 
@@ -82,4 +79,3 @@ bahwa informasi berikut disertakan dalam laporan Anda:
 *Atribusi*
 
 Ditulis oleh https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
-Diterjemahkan oleh https://www.drupal.org/u/suryanto[Suryanto Rachmat]

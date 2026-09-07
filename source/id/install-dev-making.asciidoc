@@ -1,147 +1,220 @@
 [[install-dev-making]]
-=== Making a Development Site
+=== Membuat Situs Pengembangan
 
 [role="summary"]
-How to make a copy of a live site for development purposes.
+Cara membuat salinan situs aktif untuk tujuan pengembangan.
 
-(((Development site,making)))
-(((Staging site,making)))
+(((Situs pengembangan,membuat)))
+(((Situs staging,membuat)))
 
-==== Goal
+==== Tujuan
 
-Make a copy of a site that you can use to develop new features and test updates
-on.
+Buat salinan situs yang dapat Anda gunakan untuk mengembangkan fitur baru dan
+menguji pembaruan.
 
-==== Prerequisite knowledge
+==== Pengetahuan prasyarat
 
 <<install-dev-sites>>
 
-==== Site prerequisites
+==== Prasyarat situs
 
-* You have a live, developed site that you would like to make a copy of for
-development purposes.
+* Anda memiliki situs aktif yang telah dikembangkan dan ingin Anda salin untuk
+tujuan pengembangan.
 
-* If you want to use Drush for some of the steps in this task, Drush must be
-installed. See <<install-tools>>.
+* Jika ingin menggunakan Drush untuk beberapa langkah dalam tugas ini, Drush
+harus diinstal. Lihat <<install-tools>>.
 
-==== Steps
+* Jika ingin menggunakan DDEV untuk lingkungan lokal Anda, ikuti langkah-langkah
+di <<install-ddev>>. Kemudian, ikuti petunjuk di bagian khusus DDEV di bawah.
 
-. Follow the steps in <<install-prepare>>, so that you have hosting set up for
-your development site, you know where the web root is for your development site,
-and you have an empty database and database user for your development site to
-use.
+==== Langkah umum untuk membuat situs pengembangan
 
-. Make a database dump file from your live site's database. Try one of the
-following methods:
+. Ikuti langkah-langkah di <<install-prepare>>, sehingga hosting untuk situs
+  pengembangan Anda telah disiapkan, Anda mengetahui lokasi root web situs
+  pengembangan, dan Anda memiliki basis data kosong serta pengguna basis data
+  untuk digunakan oleh situs pengembangan.
+
+. Langkah berikutnya adalah membuat berkas dump basis data, yang berisi isi
+  basis data situs Anda. Berkas ini dapat berukuran cukup besar, tetapi ada dua
+  hal yang dapat dilakukan untuk mengurangi ukurannya:
 +
-  * If you are using MySQL as your database, and your live site's server has
-  phpMyAdmin installed (it is available from many hosting control panels),
-  use the _Export_ tab in phpMyAdmin to export in _SQL_ format. Using _gzip_
-  compression on the output file is suggested, to reduce the file size.
-
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password):
+  * Kompres berkas menggunakan gzip atau utilitas kompresi lainnya.
+  * Kecualikan isi tabel basis data untuk sistem cache internal dengan
+  mengosongkan tabel-tabel tersebut. Datanya bersifat sementara, dan Anda hanya
+  memerlukan struktur tabel, bukan isi tabel, untuk membuat salinan situs.
 +
-----
-mysqldump -u USERNAME -p'PASSWORD' DATABASENAME > BACKUPFILE.sql
-----
-
-  * If you prefer to use Drush, use this command:
+Untuk membuat dump basis data, cobalah salah satu metode berikut:
 +
-----
-drush sql-dump > BACKUPFILE.sql
-----
-
-  * Use the https://www.drupal.org/project/backup_migrate[contributed Backup and Migrate module]
-  from within your live site. See <<extend-module-install>> for instructions on
-  installing contributed modules.
-+
-You now have a database dump stored in the file _BACKUPFILE.sql_. For security
-reasons, avoid storing this file on your hosting server anywhere under the
-Drupal site root. This will prevent others from getting a copy of your
-database.
-
-. Copy all of the files from the web root of your live site to the web root of
-your development site.
-
-. Edit the _sites/default/settings.php_ file under your development site's
-top-level directory in a plain-text editor. Find the lines near the end that
-contain the database name, database username, and database password, and update
-them to the information about the development site database you set up. The
-lines look something like this (before editing):
+  * Jika menggunakan Drush, gunakan perintah ini, yang hanya akan menyertakan
+  struktur dan bukan isi tabel cache, serta mengompres output dengan gzip:
 +
 ----
-$databases['default']['default'] = array (
+drush sql:dump --gzip --structure-tables-list="cache,cache_*" \
+  --result-file='PATH/TO/BACKUPFILE.sql'
+----
++
+  * Jika menggunakan MySQL dan memiliki akses ke baris perintah, gunakan
+  perintah ini setelah mengosongkan tabel cache (gantikan dengan nama basis
+  data, nama pengguna, dan kata sandi situs Anda):
++
+----
+mysqldump -u'USERNAME' -p'PASSWORD' DATABASENAME | \
+  gzip > PATH/TO/BACKUPFILE.sql.gz
+----
+
+  * Jika menggunakan MySQL sebagai basis data dan server situs aktif Anda
+  memasang phpMyAdmin (tersedia dari banyak panel kontrol hosting), Anda dapat
+  mengosongkan tabel cache dengan memilihnya dalam daftar struktur tabel
+  phpMyAdmin dan memilih operasi _Empty_ di bagian bawah halaman. Kemudian,
+  gunakan tab _Export_ di phpMyAdmin untuk mengekspor dalam format _SQL_, dengan
+  kompresi _gzip_ untuk mengurangi ukuran berkas.
+
+  * Gunakan
+  https://www.drupal.org/project/backup_migrate[modul Backup and Migrate kontribusi]
+  dari dalam situs aktif Anda. Lihat <<extend-module-install>> untuk petunjuk
+  menginstal modul kontribusi.
++
+Kini Anda memiliki dump basis data yang disimpan dalam berkas
+_BACKUPFILE.sql.gz_. Demi alasan keamanan, hindari menyimpan berkas ini di
+server hosting Anda di lokasi mana pun di bawah root situs Drupal. Ini akan
+mencegah orang lain mendapatkan salinan basis data Anda.
+
+. Salin semua berkas dari root web situs aktif ke root web situs pengembangan.
+  Anda mungkin ingin menggunakan Git untuk melakukannya; jika demikian, lihat
+  <<extend-git>>.
+
+. Edit berkas _sites/default/settings.php_ di bawah direktori tingkat teratas
+  situs pengembangan dalam editor teks biasa. Temukan baris di dekat akhir yang
+  berisi nama basis data, nama pengguna basis data, dan kata sandi basis data,
+  lalu perbarui dengan informasi basis data situs pengembangan yang telah Anda
+  siapkan. Baris-baris tersebut tampak seperti ini (sebelum diedit):
++
+----
+$databases['default']['default'] = [
   'database' => 'live_site_database_name',
   'username' => 'live_site_database_username',
   'password' => 'live_site_database_password',
+  …
 ----
 
-. Check whether your _settings.php_ file has the following setting; if yes, then
-you will need to edit this to point to your development site URL instead of your
-production site URL:
+. Periksa apakah berkas _settings.php_ Anda memiliki pengaturan berikut; jika
+  ya, Anda perlu mengeditnya agar mengarah ke URL situs pengembangan alih-alih
+  URL situs produksi:
 +
 ----
 $settings['trusted_host_patterns']
 ----
 
-. Import the database dump file you created, into the development site's
-database. Try one of the following methods:
+. Periksa apakah berkas _settings.php_ Anda memiliki pengaturan berikut dan
+  diatur ke nilai string acak. Jika tidak, Anda perlu menambahkannya atau
+  mengeditnya untuk mencegah kesalahan fatal:
 +
-  * If you are using MySQL as your database, and your live site's server has
-  PHPMyAdmin installed (it is available from many hosting control panels),
-  use the _Import_ tab in PHPMyAdmin. You may find that you have to restart the
-  import a few times, if your database was large.
-
-  * If you are using MySQL and have access to the command line, use this
-  command (substituting in your site's database name, user name, and password;
-  if you made a gzip-compressed backup file, you will also need to uncompress it
-  first):
-+
+--
 ----
-mysql -u USERNAME -pPASSWORD  DATABASE_NAME < BACKUPFILE.sql
-----
-+
-  * If you prefer to use Drush, use this command:
-+
-----
-drush sql-query --file=BACKUPFILE.sql
+$settings['hash_salt'] = 'any_string_value';
 ----
 
-. If your development and live sites need to have different configuration, then
-you have to use configuration overrides in the _settings.php_ file. The
-_$config_ variable will help you maintain override values separately from the
-standard configuration data. For instance, you might want the site name to be
-"Anytown Farmers Market" on the production site, but "Development Site for
-Anytown Farmers Market" on the development site. To do that, you could have the
-production value in the site configuration (in the database), and on the
-development site, in the settings.php file, you would need to have:
+Salah satu cara menghasilkan string acak untuk hash salt adalah perintah Drush
+berikut:
+
+----
+drush php-eval 'echo
+  \Drupal\Component\Utility\Crypt::randomBytesBase64(55) . "\n";'
+----
+
+Jika tidak menggunakan Drush, ada banyak situs web dan aplikasi yang
+menyediakan generator string acak; Anda perlu menghasilkan string dengan
+panjang sekitar 74 karakter.
+--
+
+. Impor berkas dump basis data yang Anda buat ke basis data situs pengembangan.
+  Cobalah salah satu metode berikut:
++
+  * Jika menggunakan MySQL sebagai basis data dan server situs aktif Anda
+  memasang phpMyAdmin (tersedia dari banyak panel kontrol hosting), gunakan tab
+  _Import_ di phpMyAdmin. Anda mungkin perlu memulai ulang impor beberapa kali
+  jika basis data Anda besar.
+
+  * Jika menggunakan MySQL dan memiliki akses ke baris perintah, gunakan
+  perintah ini (gantikan dengan nama basis data, nama pengguna, dan kata sandi
+  situs Anda; jika membuat berkas cadangan yang dikompres gzip, Anda juga perlu
+  mengekstraknya terlebih dahulu):
 +
 ----
-$config['system.site']['name'] = "Development Site for Anytown Farmers Market";
+gunzip < PATH/TO/BACKUPFILE.sql.gz | \
+  mysql -u'USERNAME' -p'PASSWORD' DATABASENAME
+----
++
+  * Jika lebih suka menggunakan Drush, gunakan perintah ini:
++
+----
+drush sql:query --file='PATH/TO/BACKUPFILE.sql.gz'
 ----
 
-==== Expand your understanding
+. Jika situs pengembangan dan situs aktif Anda memerlukan konfigurasi yang
+  berbeda, Anda harus menggunakan override konfigurasi dalam berkas
+  _settings.php_. Variabel _$config_ membantu Anda mempertahankan nilai override
+  secara terpisah dari data konfigurasi standar. Misalnya, Anda mungkin ingin
+  nama situs menjadi "Anytown Farmers Market" di situs produksi, tetapi
+  "Development Site for Anytown Farmers Market" di situs pengembangan. Untuk
+  melakukannya, Anda dapat memiliki nilai produksi dalam konfigurasi situs
+  (dalam basis data), dan di situs pengembangan, dalam berkas settings.php,
+  Anda perlu memiliki:
++
+----
+$config['system.site']['name'] =
+  "Development Site for Anytown Farmers Market";
+----
 
-* Verify that the development site is working correctly.
+==== Langkah khusus DDEV untuk membuat situs pengembangan
 
-* Log in to the development site as an administrator, and clear the cache. See
-<<prevent-cache-clear>>.
+. Di direktori tempat Anda menyalin semua berkas dari situs aktif, jalankan
+  perintah berikut untuk mengonfigurasi dan memulai lingkungan DDEV:
++
+----
+ddev config --project-type=drupal11 --docroot=web
+ddev start
+----
++
+Ini mengasumsikan bahwa Anda menggunakan struktur direktori yang
+direkomendasikan dengan root web berada dalam subdirektori bernama _web_. Jika
+menggunakan struktur direktori berbeda, Anda perlu menyesuaikan opsi
+_--docroot_.
+
+. Gunakan perintah berikut untuk mengimpor berkas dump basis data yang Anda
+  buat:
++
+----
+ddev import-db --file=PATH/TO/BACKUPFILE.sql.gz
+----
+
+==== Perdalam pemahaman Anda
+
+* Pastikan situs pengembangan berfungsi dengan benar.
+
+* Masuk ke situs pengembangan sebagai administrator, lalu kosongkan cache.
+Lihat <<prevent-cache-clear>>.
 
 * <<extend-deploy>>
 
+* <<extend-git>>
+
 // ==== Related concepts
 
-==== Additional resources
+==== Video
 
-* https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site[_Drupal.org_ community documentation page "Backing up a site"]
-* https://www.drupal.org/docs/develop/local-server-setup/how-to-create-a-test-site[_Drupal.org_ community documentation page "Create a Test Site"]
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/FSBNm4oAkaA[title="Membuat Situs Pengembangan"]
 
+==== Sumber daya tambahan
 
-*Attributions*
+* https://www.drupal.org/docs/official_docs/en/_local_development_guide.html[Menginstal aplikasi Drupal baru di komputer lokal Anda]
+* https://www.drupal.org/docs/official_docs/en/_evaluator_guide.html[Membuat aplikasi demo Drupal untuk tujuan evaluasi]
 
-Written and edited by https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
-https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
-https://drupalize.me[Drupalize.Me], and
-https://www.drupal.org/u/jojyja[Jojy Alphonso] at
+*Atribusi*
+
+Ditulis dan disunting oleh https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] di
+https://drupalize.me[Drupalize.Me], serta
+https://www.drupal.org/u/jojyja[Jojy Alphonso] di
 http://redcrackle.com[Red Crackle].
