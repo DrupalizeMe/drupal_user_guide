@@ -43,8 +43,7 @@ content edit form as follows:
 1. Most themes will display an _Edit_ link or tab near the top of that page to
     people with permission to edit the page; clicking the link will take you to
     the full content edit form.
-1. You could also use the in-place editor (refer to [content-in-place-edit](./content-in-place-edit.md))
-    from this page.
+1. You could also use the in-place editor from this page.
 ## Videos
 
 <div class="embedded-video">

@@ -1,26 +1,32 @@
 ---
-title: "Concept: Log"
-description: "Overview of logs and where to find recent log messages."
+title: "Concepto: log"
+description: "Descripción general de los logs y dónde encontrar los mensajes de registro recientes."
 id: "prevent-log"
 translation_key: "prevent-log"
 source_locale: "es"
 ---
-## What is a Log? { #prevent-log }
+## ¿Qué es un log? { #prevent-log }
 
-Your site captures system events in a log to be reviewed by an authorized
-individual at a later time. The log is a list of recorded events
-containing usage data, performance data, errors, warnings, and operational
-information. It is vital to check the log on a regular basis as it is often the
-only way to tell what is going on.
+Su sitio captura los eventos del sistema en un log para que una persona
+autorizada los revise más adelante. El log es una lista de eventos registrados
+que contiene datos de uso, datos de rendimiento, errores, avisos e información
+operativa. Es vital revisar el log de forma periódica, ya que a menudo es la
+única manera de saber qué está ocurriendo.
 
-You can find your site's recent log messages in the _Manage_ administrative menu
-by navigating to _Reports_ > _Recent log messages_ (_admin/reports/dblog_).
+Puede encontrar los mensajes de registro recientes de su sitio en el menú
+administrativo _Manage_ navegando a _Reports_ > _Recent log messages_
+(_admin/reports/dblog_). Estos logs pueden ser borrados por los
+administradores y por las tareas de cron automatizadas, así que no deberían
+usarse para el [registro forense](https://en.wikipedia.org/wiki/Audit_trail).
+Para fines forenses, use el módulo Syslog.
 
 <img src="/images/prevent-log.png" alt="Recent log messages of a basic site" width="100%" />
 
-*Attributions*
+*Atribuciones*
 
-Adapted by [Diána Lakatos](https://www.drupal.org/u/dianalakatos)
-from ["Reports"](https://www.drupal.org/docs/7/monitoring-a-site/reports)
-copyright 2000-2026 by the individual contributors to the
-[Drupal Community Documentation](https://www.drupal.org/documentation)
+Adaptado por [Diána Lakatos](https://www.drupal.org/u/dianalakatos)
+de ["Reports"](https://www.drupal.org/docs/7/monitoring-a-site/reports)
+copyright 2000-2026 por los colaboradores individuales de la
+[Documentación de la Comunidad de Drupal](https://www.drupal.org/documentation)
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito)

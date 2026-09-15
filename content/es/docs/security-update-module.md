@@ -1,92 +1,104 @@
 ---
-title: "Updating a Module"
-description: "How to update a contributed module by using the administrative interface and running the Database updates script."
+title: "Actualización de un módulo"
+description: "Cómo actualizar un módulo contribuido utilizando Composer y la interfaz administrativa para ejecutar el script de actualizaciones de la base de datos."
 id: "security-update-module"
 translation_key: "security-update-module"
 source_locale: "es"
 ---
-## Goal { #security-update-module }
+## Objetivo { #security-update-module }
 
-Update a contributed module and run the _Database updates_ script.
-## Prerequisite knowledge
+Actualizar un módulo contribuido y ejecutar el script _Database updates_.
+## Conocimientos previos
 
 * [security-concept](./security-concept.md)
 * [security-cron-concept](./security-cron-concept.md)
-## Site prerequisites
+## Requisitos previos del sitio web
 
-* A contributed module has been installed and there is an update available for
-it. See [extend-module-install](./extend-module-install.md) and [security-announce](./security-announce.md).
-* If your site is live, you should test this process in a development
-environment before running it on your production site. See
+* Se ha instalado un módulo contribuido y hay una actualización disponible para
+él. Ver [extend-module-install](./extend-module-install.md) y [security-announce](./security-announce.md).
+* Si su sitio está en producción, debería probar este proceso en un entorno de
+desarrollo antes de ejecutarlo en su sitio de producción. Ver
 [install-dev-making](./install-dev-making.md).
-* You have created a full-site backup. See [prevent-backups](./prevent-backups.md).
-* If you want to use the user interface, the core Update Manager module must be
-installed. See [config-install](./config-install.md) for instructions on installing core
-modules.
-## Steps
+* Ha creado una copia de seguridad completa del sitio. Ver [prevent-backups](./prevent-backups.md).
+* Si quiere usar la interfaz de usuario para comprobar si hay actualizaciones,
+debe estar instalado el módulo del núcleo Update Manager. Ver [config-install](./config-install.md)
+para obtener instrucciones sobre la instalación de módulos del núcleo.
+## Pasos
 
-Before you start, check for module-specific update instructions. This is
-typically necessary while updating modules that involve the usage of third-party
-libraries. Read and understand all module-specific requirements before
-proceeding with the updates. To find instructions, check the module's project
-page _Read Documentation_ link.
+Antes de empezar, compruebe si hay instrucciones de actualización específicas
+del módulo. Lea y comprenda todos los requisitos específicos del módulo antes
+de continuar con las actualizaciones. Para encontrar las instrucciones,
+consulte el enlace _Read Documentation_ de la página del proyecto del módulo.
 
-To view further instructions, download the tar.gz or .zip file from the project
-page to your local computer. Unzip the file and look for _README.txt_,
-_INSTALL.txt_, and _UPGRADE.txt_ that come with the module's installation
-file. Also, review the release notes on the project page by clicking the version
-number you're downloading.
+Para ver más instrucciones, después de descargar los archivos actualizados,
+busque los archivos _README.txt_, _INSTALL.txt_ y _UPGRADE.txt_ que vienen con
+el módulo. Además, revise las notas de la versión en la página del proyecto
+haciendo clic en el número de versión que está descargando.
 
 ![Release notes link](/images/security-update-module-release-notes.png)
 
-You can use the administrative interface to update a contributed module. If you
-are updating a custom module rather than a contributed module, if you see a
-message saying _Installing modules and themes requires FTP access to your
-server_, or if the steps below do not work to obtain the new module files,
-follow the steps in [extend-manual-install](./extend-manual-install.md). You can then continue here with
-step 6 in the instructions for the administrative interface below.
+Actualizar un módulo requiere primero poner su sitio en modo de mantenimiento,
+después obtener los nuevos archivos de código y aplicar las actualizaciones de
+base de datos necesarias y, por último, sacar el sitio del modo de
+mantenimiento.
 
-If you are using Composer to manage the files in your site, follow the steps
-in [install-composer](./install-composer.md) to update the files, then continue here with step 6 in
-the instructions for the administrative interface below.
-### Using the administrative interface
+Puede actualizar el código de un módulo contribuido utilizando Composer. Si
+está actualizando un módulo personalizado en lugar de un módulo contribuido,
+obtenga los nuevos archivos del módulo y después continúe con las instrucciones
+para ejecutar las actualizaciones de base de datos mediante la interfaz
+administrativa que se indican más abajo.
 
-1. Put your site in maintenance mode. See [extend-maintenance](./extend-maintenance.md).
-1. In the _Manage_ administrative menu, navigate to _Reports_ >
-    _Available updates_ > _Update_ (_admin/reports/updates/update_).
-1. Find and check the module in the list. Click _Download these updates_ for the
-    module.
+Esto asume que está utilizando Composer para gestionar los archivos de su
+sitio; ver [install-composer](./install-composer.md).
+### Actualizar un módulo contribuido con Composer
+
+1. Ponga su sitio en modo de mantenimiento. Ver [extend-maintenance](./extend-maintenance.md).
+1. En el menú administrativo _Manage_, vaya a _Reports_ >
+    _Available updates_ > _Update_ (_admin/reports/updates_).
+1. Busque y marque el módulo en la lista. Haga clic en _Download these updates_
+    para el módulo.
     <img src="/images/security-update-module-updates.png" alt="Available updates" width="100%" />
-1. Click _Continue_.
-1. Click _Run database updates_. If you obtained the new module files manually,
-    start with this step, and reach the database updates page by typing the URL
-    _example.com/update.php_ in your browser.
-1. Click _Continue_ and apply all updates. The database update scripts will be
-    executed.
-1. Click _Administration pages_ to return to the administration section of your
-    site.
-1. Take your site out of maintenance mode. See [extend-maintenance](./extend-maintenance.md).
-1. Clear the cache (refer to [prevent-cache-clear](./prevent-cache-clear.md)).
-## Expand your understanding
+1. Determine el nombre corto del proyecto que quiere actualizar. Para los
+    módulos y temas contribuidos, es la última parte de la URL de la página del
+    proyecto; por ejemplo, el módulo Geofield, en
+    https://www.drupal.org/project/geofield, tiene el nombre corto `geofield`.
+1. Si quiere actualizar a la última versión estable, utilice el siguiente
+    comando, sustituyendo `geofield` por el nombre corto del proyecto que se va a
+    actualizar:
+    ```text
+    composer update drupal/geofield --with-dependencies
+    ```
 
-* Review the site log (refer to [prevent-log](./prevent-log.md)) once the updates are complete
-to check for errors.
+    Para saber cómo descargar versiones concretas, ver [install-composer](./install-composer.md).
+
+1. Después de obtener los nuevos archivos del módulo, ejecute las
+    actualizaciones de base de datos escribiendo la URL _example.com/update.php_ en
+    su navegador.
+1. Haga clic en _Continue_ para ejecutar las actualizaciones. Se ejecutarán los
+    scripts de actualización de la base de datos.
+1. Haga clic en _Administration pages_ para volver a la sección de
+    administración de su sitio.
+1. Saque su sitio del modo de mantenimiento. Ver [extend-maintenance](./extend-maintenance.md).
+1. Borre la caché de Drupal (consulte [prevent-cache-clear](./prevent-cache-clear.md)).
+## Ampliar conocimiento
+
+* Revise el registro del sitio (consulte [prevent-log](./prevent-log.md)) una vez completadas
+las actualizaciones para comprobar si hay errores.
 * [security-update-theme](./security-update-theme.md)
-## Videos
+## Vídeos
 
 <div class="embedded-video">
-  <iframe src="https://www.youtube-nocookie.com/embed/ZYFJ_OJaK4M" title="Updating a Module" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc" title="Updating a Module" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 
-## Additional resources
+*Atribuciones*
 
-[_Drupal.org_ community documentation page "Updating modules"](https://www.drupal.org/node/250790)
+Adaptado por [Boris Doesborgh](https://www.drupal.org/u/batigolix) y
+[Sarah German](https://www.drupal.org/u/hey_germano) en
+[Advomatic](https://www.advomatic.com), y
+[Joe Shindelar](https://www.drupal.org/u/eojthebrave) en [Drupalize.Me](https://drupalize.me)
+de ["Update modules"](https://www.drupal.org/docs/7/update/updating-modules),
+copyright 2000-2026 por los colaboradores individuales de la
+[Documentación de la Comunidad de Drupal](https://www.drupal.org/documentation).
 
-*Attributions*
-
-Adapted by [Boris Doesborgh](https://www.drupal.org/u/batigolix), and
-[Sarah German](https://www.drupal.org/u/hey_germano) at
-[Advomatic](https://www.advomatic.com), from
-["Updating modules"](https://www.drupal.org/node/250790), copyright 2000-2026 by
-the individual contributors to the
-[Drupal Community Documentation](https://www.drupal.org/documentation).
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

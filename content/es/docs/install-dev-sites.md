@@ -1,37 +1,40 @@
 ---
-title: "Concept: Development Sites"
-description: "Overview of development sites with an example deployment workflow for site building."
+title: "Concepto: Sitios de desarrollo"
+description: "Descripción general de los sitios de desarrollo con un ejemplo de flujo de trabajo de despliegue para la construcción de un sitio."
 id: "install-dev-sites"
 translation_key: "install-dev-sites"
 source_locale: "es"
 ---
-## What are Development Sites? { #install-dev-sites }
+## ¿Qué son los sitios de desarrollo? { #install-dev-sites }
 
-Development Sites are different copies of the same site used for developing,
-updating, and testing a site without risking the integrity of the live site.
+Los sitios de desarrollo son distintas copias del mismo sitio que se utilizan
+para desarrollar, actualizar y probar un sitio sin arriesgar la integridad del
+sitio en producción.
 
-An example deployment workflow for site building will usually include the sites
-mentioned below:
+Un ejemplo de flujo de trabajo de despliegue para la construcción de un sitio
+suele incluir los sitios que se mencionan a continuación:
 
-- **Local environment:** The development process starts with developers working on new features, bug fixes, theming, and configuration in their local environment.
-- **Development site:** Developers push the changes they've been working on to the development site. For a team of more than one developer, version control is usually used. Git is a version control system that tracks your files for any changes. You can then commit those changes to a repository. Using Git allows team members to work on the same site without overriding each other's work. It also makes it possible to easily roll back to previous stages of the development.
-- **Staging site:** The staging site can be used for testing, or presenting the changes to the client for approval. QA (Quality Assurance) and UAT (User Acceptance Testing) are most often carried out on the staging site. It is recommended to have live content on both the development and staging sites, so that you can test how the new features will work with the existing content.
-- **Production site:** The live site on the web available to visitors. It contains new features that have been proven safe to go live.
+- **Entorno local:** El proceso de desarrollo comienza con los desarrolladores trabajando en nuevas funcionalidades, correcciones de errores, tematización y configuración en su entorno local. La herramienta recomendada para preparar un entorno local es DDEV.
+- **Sitio de desarrollo:** Los desarrolladores suben (_push_) al sitio de desarrollo los cambios en los que han estado trabajando. Para un equipo de más de un desarrollador, normalmente se utiliza el control de versiones. Git es un sistema de control de versiones que hace un seguimiento de cualquier cambio en sus archivos. Después puede confirmar (_commit_) esos cambios en un repositorio. Usar Git permite a los miembros del equipo trabajar en el mismo sitio sin sobrescribir el trabajo de los demás. También hace posible volver fácilmente a etapas anteriores del desarrollo.
+- **Sitio de ensayo (_staging_):** El sitio de ensayo puede usarse para probar o para presentar los cambios al cliente para su aprobación. El QA (_Quality Assurance_, aseguramiento de la calidad) y el UAT (_User Acceptance Testing_, pruebas de aceptación del usuario) se realizan con mayor frecuencia en el sitio de ensayo. Se recomienda tener contenido de producción tanto en el sitio de desarrollo como en el de ensayo, de modo que pueda probar cómo funcionarán las nuevas funcionalidades con el contenido existente.
+- **Sitio de producción:** El sitio en producción, disponible en la web para los visitantes. Contiene las nuevas funcionalidades que se ha comprobado que son seguras para pasar a producción.
 
-Based on the project's size, scope, requirements, or stakeholders, stages from
-the above workflow can be removed, or additional stages can be added. For
-example, a testing site before staging can be added to separate testing and user
-acceptance processes.
-## Related topics
+En función del tamaño, el alcance, los requisitos o las partes interesadas del
+proyecto, se pueden eliminar etapas del flujo de trabajo anterior o añadir
+etapas adicionales. Por ejemplo, se puede añadir un sitio de pruebas antes del
+de ensayo para separar los procesos de pruebas y de aceptación del usuario.
+## Temas relacionados
 
 * [install-dev-making](./install-dev-making.md)
 * [planning-workflow](./planning-workflow.md)
-## Additional resources
+* [extend-git](./extend-git.md)
 
-[_Drupal.org_ community documentation page "Introduction to Git"](https://www.drupal.org/node/991716)
+*Atribuciones*
 
-*Attributions*
+Escrito y editado por [Diána Lakatos](https://www.drupal.org/u/dianalakatos)
+y [Jojy Alphonso](https://www.drupal.org/u/jojyja) en
+[Red Crackle](http://redcrackle.com), y
+[Joe Shindelar](https://www.drupal.org/u/eojthebrave) en
+[Drupalize.Me](https://drupalize.me).
 
-Written and edited by [Diána Lakatos](https://www.drupal.org/u/dianalakatos),
-and [Jojy Alphonso](https://www.drupal.org/u/jojyja) at
-[Red Crackle](http://redcrackle.com).
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

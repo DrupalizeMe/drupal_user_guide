@@ -1,61 +1,68 @@
 ---
-title: "Concept: Server Requirements"
-description: "Overview of server requirements for installing and running the core software."
+title: "Concepto: requisitos del servidor"
+description: "Descripción general de los requisitos del servidor para instalar y ejecutar el software del núcleo."
 id: "install-requirements"
 translation_key: "install-requirements"
 source_locale: "es"
 ---
-## What are the requirements for running the core software? { #install-requirements }
-### Disk space
+## ¿Cuáles son los requisitos para ejecutar el software del núcleo? { #install-requirements }
+### Espacio en disco
 
-The total amount of disk space needed for your site is not a fixed amount, as it
-depends on your site. The base files for the core software take up about 100 MB
-on the web server. You will need more space if you install additional modules or
-themes, and you'll also need space for media, backups, and other files generated
-by and uploaded to your site. The database also uses disk space, although that
-is typically not in the same area (and in some cases, not even on the same
-server) as that used by the site files.
+La cantidad total de espacio en disco que necesita su sitio no es una cifra
+fija, ya que depende de su sitio. Los archivos base del software del núcleo
+ocupan unos 100 MB en el servidor web. Necesitará más espacio si instala
+módulos o temas adicionales, y también necesitará espacio para los archivos
+multimedia, las copias de seguridad y otros archivos que su sitio genera y que
+se suben a él. La base de datos también usa espacio en disco, aunque
+normalmente no está en la misma zona (y en algunos casos, ni siquiera en el
+mismo servidor) que la que usan los archivos del sitio.
 ### PHP
 
-PHP 7.2 or higher. PHP must be set up with a minimum memory size of 64MB; if you
-are running multiple modules on your site or using memory-intensive PHP-based
-command-line tools (such as Composer), considerably more memory than that may be
-needed.
+PHP 8.3 o una versión de PHP 8 superior. PHP debe configurarse con un tamaño
+mínimo de memoria de 64 MB; si ejecuta varios módulos en su sitio o usa
+herramientas de línea de comandos basadas en PHP que consumen mucha memoria
+(como Composer), puede que necesite bastante más memoria que esa.
 
-Certain PHP extensions are also required; the exact list of required PHP
-extensions depends on how you install the core software and which modules you
-are using on your site. Generally, hosting service providers have installed all
-the PHP extensions you will need. If you are self-hosting or running your site
-on your local computer, you will get error messages during installation if any
-required PHP extensions are missing, and should be able to install them and
-continue.
-### Web server
+También se requieren ciertas extensiones de PHP; la lista exacta de extensiones
+de PHP necesarias depende de cómo instale el software del núcleo y de qué
+módulos use en su sitio. Por lo general, los proveedores de alojamiento tienen
+instaladas todas las extensiones de PHP que necesitará. Si se autoaloja o
+ejecuta su sitio en su ordenador local, recibirá mensajes de error durante la
+instalación si falta alguna extensión de PHP necesaria, y debería poder
+instalarlas y continuar. Ver
+[PHP requirements](https://www.drupal.org/docs/getting-started/system-requirements/php-requirements)
+para una lista completa de requisitos.
+### Servidor web
 
-- **Apache (Recommended):** Apache is the most commonly used web server. The core software will work on Apache 2.x hosted on UNIX/Linux, OS X, or Windows that have the Apache mod_rewrite module installed and enabled. The Apache VirtualHost configuration must contain the directive _AllowOverride All_ to allow the _.htaccess_ file to be used.
-- **PHP Local Server:** You can temporarily run a local demo site on your computer using just PHP, without installing web server software.
-- **Nginx:** Nginx is a commonly used web server that focuses on high concurrency, performance and low memory usage. The core software will work on Nginx 1.1 or greater hosted on UNIX/Linux, OS X, or Windows. The ngx_http_rewrite_module must be installed and enabled.
-- **Hiawatha:** Hiawatha is a web server with a strong focus on security. It also aims at being easy to use and lightweight. Research performed by independent researchers proves that Hiawatha offers a performance comparable to other web servers under normal conditions, but much better while under attack. URL Toolkit must be installed and configured to rewrite URLs.
-- **Microsoft IIS:** Microsoft IIS is a web server and set of feature extension modules for use with Microsoft Windows. The core software will work with IIS 5, IIS 6, or IIS 7 if PHP is configured correctly. Because clean URLs are required, you may need to use a third party product. For IIS 7, you can use the Microsoft URL Rewrite module or a third party solution.
-### Database
+- **Apache (recomendado):** Apache es el servidor web más utilizado. El software del núcleo funciona en Apache 2.4.7 o superior alojado en UNIX/Linux, OS X o Windows que tenga el módulo Apache mod_rewrite instalado y habilitado. La configuración del VirtualHost de Apache debe contener la directiva _AllowOverride All_ para permitir el uso del archivo _.htaccess_.
+- **Servidor local de PHP:** Puede ejecutar temporalmente un sitio de demostración local en su ordenador usando solo PHP, sin instalar software de servidor web.
+- **Nginx:** Nginx es un servidor web de uso habitual que se centra en la alta concurrencia, el rendimiento y el bajo consumo de memoria. El software del núcleo funciona en Nginx 0.7 o superior alojado en UNIX/Linux, OS X o Windows. El módulo ngx_http_rewrite_module debe estar instalado y habilitado.
+### Base de datos
 
-Use one of the following databases:
+Use una de las siguientes bases de datos:
 
-* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) or higher with an
-InnoDB-compatible primary storage engine
-* PostgreSQL - 9.1.2 or higher
-* SQLite - 3.4.2 or higher. Temporary local demo sites use SQLite, which is
-distributed as part of PHP and doesn't require installing separate database
-software.
-## Additional resources
+* MySQL - 8.0+ (MariaDB 10.6+, Percona 8.0+) o superior con un motor de
+almacenamiento primario compatible con InnoDB
+* PostgreSQL - 16 o superior con la extensión pg_trgm
+* SQLite - 3.45 o superior. Los sitios de demostración locales temporales usan
+SQLite, que se distribuye como parte de PHP y no requiere instalar software de
+base de datos por separado, pero asegúrese de que su versión de PHP incluye la
+versión mínima de SQLite.
+## Recursos adicionales
 
-* [_Drupal.org_ community documentation page "System requirements"](https://www.drupal.org/docs/8/system-requirements)
+* [_Drupal.org_ community documentation page "System requirements"](https://www.drupal.org/docs/system-requirements)
 * [PHP Runtime Configuration (PHP memory limit and other settings)](https://secure.php.net/manual/en/configuration.php)
+* [Installing a new Drupal application on your local machine](https://www.drupal.org/docs/official_docs/en/_local_development_guide.html)
+* [Creating a Drupal demo application for evaluation purposes](https://www.drupal.org/docs/official_docs/en/_evaluator_guide.html)
 
-*Attributions*
+*Atribuciones*
 
-Adapted by [Karl Kedrovsky](https://www.drupal.org/u/KarlKedrovsky),
-[Brian Emery](https://www.drupal.org/u/bemery987), and
-[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon) from
-["System requirements"](https://www.drupal.org/docs/8/system-requirements),
-copyright 2000-2026 by the individual contributors to the
-[Drupal Community Documentation](https://www.drupal.org/documentation).
+Adaptado por [Karl Kedrovsky](https://www.drupal.org/u/KarlKedrovsky),
+[Brian Emery](https://www.drupal.org/u/bemery987),
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon) y
+[Joe Shindelar](https://www.drupal.org/u/eojthebrave) en [Drupalize.Me](https://drupalize.me)
+de ["System requirements"](https://www.drupal.org/docs/system-requirements),
+copyright 2000-2026 por los colaboradores individuales de la
+[Documentación de la Comunidad de Drupal](https://www.drupal.org/documentation).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

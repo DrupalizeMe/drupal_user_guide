@@ -1,98 +1,103 @@
 ---
-title: "Changing Content Display"
-description: "How to make content items more presentable."
+title: "Cambiar la visualización del contenido"
+description: "Cómo hacer que los elementos de contenido sean más presentables."
 id: "structure-content-display"
 translation_key: "structure-content-display"
 source_locale: "es"
 ---
-## Goal { #structure-content-display }
+## Objetivo { #structure-content-display }
 
-Make the content items more readable, accessible, and visibly attractive by
-reordering the fields, hiding labels, and tuning the output of the fields.
-## Prerequisite knowledge
+Hacer que los elementos de contenido sean más legibles, accesibles y
+visualmente atractivos reordenando los campos, ocultando etiquetas y ajustando
+la salida de los campos.
+## Conocimientos previos
 
 * [planning-data-types](./planning-data-types.md)
 * [structure-view-modes](./structure-view-modes.md)
-## Site prerequisites
+## Requisitos previos del sitio web
 
-The Vendor content type must exist, it must have Main Image and Vendor URL
-fields, and your site must have at least one Vendor content item. See
-[structure-content-type](./structure-content-type.md), [structure-fields](./structure-fields.md), and [content-create](./content-create.md).
-## Steps
+El tipo de contenido Vendor debe existir, debe tener los campos Main Image y
+Vendor URL, y su sitio debe tener al menos un elemento de contenido Vendor. Ver
+[structure-content-type](./structure-content-type.md), [structure-fields](./structure-fields.md) y [content-create](./content-create.md).
+## Pasos
 
-1. Find and view a Vendor content item you created in [structure-fields](./structure-fields.md).
-    Notice that there are several things that could be done to improve how the page
-    looks:
-    * The Main Image and Vendor URL fields should not have labels.
-    * The order of the fields should be changed so that the image comes first.
-    * The image should be smaller.
-1. To fix the first two problems, and update some additional settings, in the
-    _Manage_ administrative menu, navigate to _Structure_ > _Content types_
-    (_admin/structure/types_). Then click _Manage display_ in the dropdown button
-    for the Vendor content type.
+1. Busque y vea un elemento de contenido Vendor que creó en [structure-fields](./structure-fields.md).
+    Observe que hay varias cosas que se podrían hacer para mejorar el aspecto de la
+    página:
+    * Los campos Main Image y Vendor URL no deberían tener etiquetas.
+    * Habría que cambiar el orden de los campos para que la imagen aparezca
+      primero.
+    * La imagen debería ser más pequeña.
+1. Para corregir los dos primeros problemas y actualizar algunos ajustes
+    adicionales, en el menú administrativo _Manage_, vaya a _Structure_ > _Content
+    types_ (_admin/structure/types_). Después haga clic en _Manage display_ en el
+    botón desplegable del tipo de contenido Vendor.
     <img src="/images/structure-content-display_manage_display.png" alt="Manage display" width="100%" />
-1. Under the _Label_ column, select _Hidden_ for Main image. Do the same
-    for Vendor URL.
+1. En la columna _Label_, seleccione _Hidden_ para Main image. Haga lo mismo con
+    Vendor URL.
     <img src="/images/structure-content-display_main_image_hidden.png" alt="Selecting _main image title_ as _hidden_" width="100%" />
-1. Click the gear wheel for the Vendor URL field, to open the configuration
-    options.
-1. Fill in the fields as shown below.
+1. Haga clic en la rueda dentada del campo Vendor URL para abrir las opciones de
+    configuración.
+1. Rellene los campos como se muestra a continuación.
     <table>
       <thead>
         <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Example value</th>
+          <th>Nombre del campo</th>
+          <th>Explicación</th>
+          <th>Valor de ejemplo</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Trim link text length</td>
-          <td>Maximum displayed length for link text</td>
-          <td>Blank (no trimming)</td>
+          <td>Longitud máxima que se muestra del texto del enlace</td>
+          <td>En blanco (sin recorte)</td>
         </tr>
         <tr>
           <td>Open link in new window</td>
-          <td>Whether links should open in a new window or the same window</td>
-          <td>Checked</td>
+          <td>Si los enlaces deben abrirse en una ventana nueva o en la misma ventana</td>
+          <td>Marcado</td>
         </tr>
       </tbody>
     </table>
 
     <img src="/images/structure-content-display_trim_length.png" alt="Link trim length" width="100%" />
 
-1. Click _Update_.
-1. Drag the cross bar handles of the fields to reorder as Main image, _Body_,
-    Vendor URL, and _Links_. As an alternative to dragging, you can click the _Show
-    row weights_ link at the top of the table and enter numerical weights (fields
-    with lower or more negative weights will be shown first).
+1. Haga clic en _Update_.
+1. Arrastre los tiradores en cruz de los campos para reordenarlos como Main
+    image, _Body_, Vendor URL y _Links_. Como alternativa a arrastrar, puede hacer
+    clic en el enlace _Show row weights_ situado en la parte superior de la tabla e
+    introducir pesos numéricos (los campos con pesos menores o más negativos se
+    mostrarán primero).
     <img src="/images/structure-content-display_change_order.png" alt="Changing order of fields" width="100%" />
-1. Click _Save_.
-1. Find the Vendor content item from step 1 again, and verify that the updates
-    have been made.
-1. Repeat similar steps to manage the display of the Recipe content type
-    fields.
-## Expand your understanding
+1. Haga clic en _Save_.
+1. Vuelva a buscar el elemento de contenido Vendor del paso 1 y compruebe que se
+    han aplicado las actualizaciones.
+1. Repita pasos similares para gestionar la visualización de los campos del tipo
+    de contenido Recipe.
+## Ampliar conocimiento
 
-* Make the main image smaller. See [structure-image-style-create](./structure-image-style-create.md).
-* If you do not see the effect of these changes in your site, you might need
-to clear the cache. See [prevent-cache-clear](./prevent-cache-clear.md).
-## Related concepts
+* Haga la imagen principal más pequeña. Ver [structure-image-style-create](./structure-image-style-create.md).
+* Si no ve el efecto de estos cambios en su sitio, puede que tenga que borrar
+la caché. Ver [prevent-cache-clear](./prevent-cache-clear.md).
+## Conceptos relacionados
 
 [structure-image-styles](./structure-image-styles.md)
-## Videos
+## Vídeos
 
 <div class="embedded-video">
   <iframe src="https://www.youtube-nocookie.com/embed/myYI9rhF_4o" title="Changing Content Display" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 
-## Additional resources
+## Recursos adicionales
 
-* [_Drupal.org_ community documentation page "Specify how fields are displayed"](https://www.drupal.org/node/774798)
-* [_Drupal.org_ community documentation page "Rearrange the order of fields"](https://www.drupal.org/node/774744)
+* [_Drupal.org_ community documentation page "Specify how fields are displayed"](https://www.drupal.org/docs/7/nodes-content-types-and-fields/specify-how-fields-are-displayed)
+* [_Drupal.org_ community documentation page "Rearrange the order of fields"](https://www.drupal.org/docs/7/nodes-content-types-and-fields/rearrange-the-order-of-fields)
 * [_Drupal.org_ community documentation page "View modes"](https://www.drupal.org/node/1577752)
 
-*Attributions*
+*Atribuciones*
 
-Written by [Ann Greazel](https://www.drupal.org/u/AnnGreazel) and
+Escrito por [Ann Greazel](https://www.drupal.org/u/AnnGreazel) y
 [Boris Doesborg](https://www.drupal.org/u/batigolix).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

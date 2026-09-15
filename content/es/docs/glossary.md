@@ -9,228 +9,316 @@ source_locale: "es"
 
 ## Ajax { #glossary-ajax }
 
-A web technology used to exchange data with a server to dynamically update parts of a web page (for example, forms) without needing entire page reloads.
+Tecnología web usada para intercambiar datos con un servidor y actualizar dinámicamente partes de una página web (por ejemplo, formularios) sin necesidad de recargar la página entera.
 
 ## Alias { #glossary-alias }
 
-A user-friendly name to replace the internal [path](./glossary.md#glossary-path) that the system assigns to a URL on the site. For example, you might assign an alias of _/about_ to the About page on your site, to replace the internal path _/node/5_. This would give the page a URL of _http://example.com/about_ instead of _http://example.com/node/5_. See [content-paths](./content-paths.md) for more information.
+Nombre fácil de recordar que reemplaza a la [path](./glossary.md#glossary-path) interna que el sistema asigna a una [URL](./glossary.md#glossary-url) del sitio. Por ejemplo, podría asignar el alias _/about_ a la página Acerca de de su sitio para reemplazar la ruta interna _/node/5_. Esto daría a la página la URL _http://example.com/about_ en lugar de _http://example.com/node/5_. Consultar [content-paths](./content-paths.md) para más información.
 
-## Anonymous { #glossary-anonymous }
+## Anónimo { #glossary-anonymous }
 
-A person ([user](./glossary.md#glossary-user)) interacting with the site who is not logged in. See [user-concept](./user-concept.md) for more information.
+Persona ([user](./glossary.md#glossary-user)) que interactúa con el sitio sin haber iniciado sesión. Consultar [user-concept](./user-concept.md) para más información.
 
-## Block { #glossary-block }
+## Autenticado { #glossary-authenticated }
 
-A chunk of [content](./glossary.md#glossary-content) (text, images, links, etc.) that can be displayed on a page of a site. Blocks are displayed in [regions](./glossary.md#glossary-region). See [block-concept](./block-concept.md) for more information.
+Persona ([user](./glossary.md#glossary-user)) que interactúa con el sitio habiendo iniciado sesión. Consultar [user-concept](./user-concept.md) para más información.
+
+## Bloque { #glossary-block }
+
+Fragmento de [content](./glossary.md#glossary-content) (texto, imágenes, enlaces, etc.) que se puede mostrar en una página de un sitio. Los bloques se muestran en [regions](./glossary.md#glossary-region). Consultar [block-concept](./block-concept.md) para más información.
 
 ## Breakpoint { #glossary-breakpoint }
 
-Breakpoints are used to separate the height or width of browser screens, printers, and other media output types into steps. A [responsive](./glossary.md#glossary-responsive) site adjusts its presentation at these breakpoints. See [structure-image-responsive](./structure-image-responsive.md) for more information.
+Los breakpoints se usan para separar en pasos la altura o la anchura de las pantallas de los navegadores, las impresoras y otros tipos de salida. Un sitio [responsive](./glossary.md#glossary-responsive) ajusta su presentación en estos breakpoints. Consultar [structure-image-responsive](./structure-image-responsive.md) para más información.
 
 ## Bundle { #glossary-bundle }
 
-Synonym for [Entity subtype](./glossary.md#glossary-entity-subtype).
+Sinónimo de [Entity subtype](./glossary.md#glossary-entity-subtype).
 
-## Cache { #glossary-cache }
+## Caché { #glossary-cache }
 
-The site's internal cache stores the output of time-consuming calculations, such as computing output for an HTML page request, and then retrieves them instead of recalculating the next time they are needed. External caching systems can also be used on the web server to speed up a site's response. See [prevent-cache](./prevent-cache.md) for more information on the internal cache.
+La caché interna del sitio almacena la salida de cálculos costosos, como generar la salida de una petición de página HTML, y luego la recupera en lugar de recalcularla la siguiente vez que se necesita. También se pueden usar sistemas de caché externos en el servidor web para acelerar la respuesta de un sitio. Consultar [prevent-cache](./prevent-cache.md) para más información sobre la caché interna.
+
+## Coding standards { #glossary-coder }
+
+Los estándares de código (coding standards) son las reglas para los programadores que definen buenas prácticas, formato y otras normas, de modo que todo el mundo use las mismas convenciones y tenga las mismas expectativas al ver el código. Consultar [install-tools](./install-tools.md) para más información.
+
+## Composer { #glossary-composer }
+
+El gestor de dependencias de PHP que usan Drupal, [Drush](./glossary.md#glossary-drush), el framework Symfony y otros. Es la forma preferida de instalar proyectos de Drupal. Consultar [install-composer](./install-composer.md) para más información.
 
 ## CMS { #glossary-cms }
 
-Acronym for [Content Management System](./glossary.md#glossary-content-management-system).
+Acrónimo de [Content Management System](./glossary.md#glossary-content-management-system).
 
-## Configuration { #glossary-configuration }
+## Configuración { #glossary-configuration }
 
-Information about your site that is not [content](./glossary.md#glossary-content), and is meant to be more permanent than [state](./glossary.md#glossary-state) information, such as the name of your site, the [content types](./glossary.md#glossary-content-type) and [views](./glossary.md#glossary-view) you have defined, etc. See [understanding-data](./understanding-data.md) for more information.
+Información sobre su sitio que no es [content](./glossary.md#glossary-content) y que está pensada para ser más permanente que la información de [state](./glossary.md#glossary-state), como el nombre de su sitio, los [content types](./glossary.md#glossary-content-type) y las [views](./glossary.md#glossary-view) que ha definido, etc. Consultar [understanding-data](./understanding-data.md) para más información.
 
-## Content { #glossary-content }
+## Contenido { #glossary-content }
 
-Information meant to be displayed on your site, such as text, images, downloads, etc. See also [Configuration](./glossary.md#glossary-configuration) and [State](./glossary.md#glossary-state). See [understanding-data](./understanding-data.md) for more information.
+Información pensada para mostrarse en su sitio, como texto, imágenes, descargas, etc. Véase también [Configuration](./glossary.md#glossary-configuration) y [State](./glossary.md#glossary-state). Consultar [understanding-data](./understanding-data.md) para más información.
 
 ## Content item { #glossary-content-item }
 
-An item of [content](./glossary.md#glossary-content) that is typically meant to be displayed as the main content of a page on your site. This is an [entity type](./glossary.md#glossary-entity-type). See [planning-data-types](./planning-data-types.md) for more information.
+Elemento de [content](./glossary.md#glossary-content) que normalmente está pensado para mostrarse como el contenido principal de una página de su sitio. Es un [entity type](./glossary.md#glossary-entity-type). Consultar [planning-data-types](./planning-data-types.md) para más información.
 
 ## Content Management System (CMS) { #glossary-content-management-system }
 
-A collection of tools designed to allow the creation, modification, organization, search, retrieval and removal of information on a website. See [understanding-drupal](./understanding-drupal.md) for more information.
+Conjunto de herramientas diseñadas para permitir la creación, modificación, organización, búsqueda, recuperación y eliminación de información en un sitio web. Consultar [understanding-drupal](./understanding-drupal.md) para más información.
 
 ## Content type { #glossary-content-type }
 
-An [entity subtype](./glossary.md#glossary-entity-subtype) for the [content item](./glossary.md#glossary-content-item) [entity type](./glossary.md#glossary-entity-type). Each content type is used for some particular purpose on the site, and each has its own fields. For example, a site for a farmers market might have a content type for simple pages, and another for a vendor listing page. See [planning-data-types](./planning-data-types.md) for more information.
+Un [entity subtype](./glossary.md#glossary-entity-subtype) para el [entity type](./glossary.md#glossary-entity-type) [content item](./glossary.md#glossary-content-item). Cada tipo de contenido se usa con un propósito concreto en el sitio y cada uno tiene sus propios campos. Por ejemplo, un sitio para un mercado de agricultores podría tener un tipo de contenido para páginas sencillas y otro para una página de listado de proveedores. Consultar [planning-data-types](./planning-data-types.md) para más información.
 
-## Contextual link { #glossary-contextual-link }
+## Contextual Filter (in a View) { #glossary-contextual-filter }
 
-A link to an administrative page for editing or configuring a feature of the site, shown in the context where that feature is displayed. Example: a link to configure a [menu](./glossary.md#glossary-menu) that is shown when you hover your mouse over the menu. See [config-overview](./config-overview.md) for more information.
+Limita los datos que va a mostrar una [view](./glossary.md#glossary-view) en función del contexto del [display](./glossary.md#glossary-display) de la vista, como la URL completa de la página. Consultar [views-parts](./views-parts.md) para más información.
 
-## Contributed { #glossary-contributed }
+## Enlace contextual { #glossary-contextual-link }
 
-[Modules](./glossary.md#glossary-module), [themes](./glossary.md#glossary-theme), and [distributions](./glossary.md#glossary-distribution) that are not part of the [Drupal core](./glossary.md#glossary-drupal-core) download, and that can be downloaded separately from the [_Drupal.org_](https://www.drupal.org) website.
+Enlace a una página de administración para editar o configurar una funcionalidad del sitio, que se muestra en el contexto donde aparece esa funcionalidad. Ejemplo: un enlace para configurar un [menu](./glossary.md#glossary-menu) que se muestra al pasar el ratón por encima del menú. Consultar [config-overview](./config-overview.md) para más información.
+
+## Contribuido { #glossary-contributed }
+
+[Modules](./glossary.md#glossary-module), [themes](./glossary.md#glossary-theme) y [distributions](./glossary.md#glossary-distribution) que no forman parte de la descarga del [Drupal core](./glossary.md#glossary-drupal-core) y que se pueden descargar por separado desde el sitio web [_Drupal.org_](https://www.drupal.org).
 
 ## Cron { #glossary-cron }
 
-On some operating systems, _cron_ is a command scheduler application that executes commands or scripts periodically. Your site defines periodic tasks, also known as cron tasks, that need to be triggered either by an operating system cron scheduler, or internally. See [security-cron-concept](./security-cron-concept.md) for more information.
+En algunos sistemas operativos, _cron_ es una aplicación planificadora de comandos que ejecuta comandos o scripts periódicamente. Su sitio define tareas periódicas, también conocidas como tareas de cron, que deben lanzarse mediante un planificador cron del sistema operativo o internamente. Consultar [security-cron-concept](./security-cron-concept.md) para más información.
 
-## Distribution { #glossary-distribution }
+## Cross Site Scripting { #glossary-cross-site-scripting }
 
-A single download that provides a shortcut for setting up a specific type of site, such as a website for a club or for e-commerce. A distribution contains [Drupal core](./glossary.md#glossary-drupal-core), along with [contributed](./glossary.md#glossary-contributed) [modules](./glossary.md#glossary-module) and/or [themes](./glossary.md#glossary-theme); many distributions also pre-configure the site or even create sample content upon installation. See [understanding-distributions](./understanding-distributions.md) for more information.
+Vulnerabilidad de seguridad habitual en los sitios web. En un sitio que no está bien protegido, un usuario malicioso puede introducir código de script en páginas web que otros usuarios visualizan. Consultar [structure-text-formats](./structure-text-formats.md) para más información.
+
+## Devel { #glossary-devel }
+
+Módulo que ayuda con tareas de desarrollo como depurar e inspeccionar código, analizar consultas a la base de datos y generar contenido de prueba. Consultar [install-tools](./install-tools.md) para más información.
+
+## Development site { #glossary-development-site }
+
+Copia del sitio en producción que se usa para desarrollar, actualizar y probar el sitio. Consultar [install-dev-sites](./install-dev-sites.md) para más información.
+
+## Display (in a View) { #glossary-display }
+
+Tipo de salida de una [view](./glossary.md#glossary-view), por ejemplo una página, un [block](./glossary.md#glossary-block) o un feed. Consultar [views-parts](./views-parts.md) para más información.
+
+## Distribución { #glossary-distribution }
+
+Descarga única que proporciona un atajo para configurar un tipo concreto de sitio, como un sitio web para un club o para comercio electrónico. Una distribución contiene el [Drupal core](./glossary.md#glossary-drupal-core), junto con [contributed](./glossary.md#glossary-contributed) [modules](./glossary.md#glossary-module) y/o [themes](./glossary.md#glossary-theme); muchas distribuciones también preconfiguran el sitio o incluso crean contenido de ejemplo durante la [installation](./glossary.md#glossary-installing). Consultar [understanding-distributions](./understanding-distributions.md) para más información.
+
+## Drupal Association { #glossary-drupal-association }
+
+Organización sin ánimo de lucro dedicada a apoyar el proyecto y la comunidad Drupal. Consultar [understanding-project](./understanding-project.md) para más información.
 
 ## Drupal core { #glossary-drupal-core }
 
-The files, themes, profiles, and modules included with the standard project software download. See [understanding-drupal](./understanding-drupal.md) for more information.
+Los archivos, temas, perfiles y módulos que se incluyen en la descarga estándar del software del proyecto. Consultar [understanding-drupal](./understanding-drupal.md) para más información.
 
-## Entity { #glossary-entity }
+## Drush { #glossary-drush }
 
-An item of either [content](./glossary.md#glossary-content) or [configuration](./glossary.md#glossary-configuration) data, although in common usage, the term often refers to content entities. Examples include [content items](./glossary.md#glossary-content-item), custom [blocks](./glossary.md#glossary-block), [taxonomy terms](./glossary.md#glossary-taxonomy-term), and definitions of [content types](./glossary.md#glossary-content-type); the first three are content entities, and the last is a configuration entity. See also [Entity type](./glossary.md#glossary-entity-type), [Entity subtype](./glossary.md#glossary-entity-subtype), and [Field](./glossary.md#glossary-field). See [planning-data-types](./planning-data-types.md) for more information.
+Shell de línea de comandos e interfaz de scripting para Drupal. Consultar [install-tools](./install-tools.md) para más información.
+
+## Editorial Workflow { #glossary-editorial-workflow }
+
+Proceso para crear, revisar, editar y publicar contenido. En el proceso pueden participar varias personas con distintos roles (por ejemplo, quienes crean el contenido y quienes lo editan). Consultar [planning-workflow](./planning-workflow.md) para más información.
+
+## Entidad { #glossary-entity }
+
+Elemento de datos de [content](./glossary.md#glossary-content) o de [configuration](./glossary.md#glossary-configuration), aunque en el uso habitual el término suele referirse a las entidades de contenido. Algunos ejemplos son los [content items](./glossary.md#glossary-content-item), los [blocks](./glossary.md#glossary-block) personalizados, los [taxonomy terms](./glossary.md#glossary-taxonomy-term) y las definiciones de [content types](./glossary.md#glossary-content-type); los tres primeros son entidades de contenido y la última es una entidad de configuración. Véase también [Entity type](./glossary.md#glossary-entity-type), [Entity subtype](./glossary.md#glossary-entity-subtype) y [Field](./glossary.md#glossary-field). Consultar [planning-data-types](./planning-data-types.md) para más información.
 
 ## Entity subtype { #glossary-entity-subtype }
 
-Within a [content](./glossary.md#glossary-content) [entity type](./glossary.md#glossary-entity-type), a grouping of entities that share the same [fields](./glossary.md#glossary-field). For example, within the [content item](./glossary.md#glossary-content-item) entity type, a farmers market site might have subtypes (known as [content types](./glossary.md#glossary-content-type)) for static pages and vendor pages, each with its own group of fields. You may also see the term _bundle_ used (especially in programmer documentation) as a synonym of entity subtype. See [planning-data-types](./planning-data-types.md) for more information.
+Dentro de un [entity type](./glossary.md#glossary-entity-type) de [content](./glossary.md#glossary-content), agrupación de entidades que comparten los mismos [fields](./glossary.md#glossary-field). Por ejemplo, dentro del entity type [content item](./glossary.md#glossary-content-item), un sitio de mercado de agricultores podría tener subtipos (conocidos como [content types](./glossary.md#glossary-content-type)) para páginas estáticas y páginas de proveedores, cada uno con su propio grupo de campos. También puede encontrar el término _bundle_ (especialmente en la documentación para programadores) como sinónimo de subtipo de entidad. Consultar [planning-data-types](./planning-data-types.md) para más información.
 
 ## Entity type { #glossary-entity-type }
 
-The overall type of an [entity](./glossary.md#glossary-entity); in common usage, it is only applied to a [content](./glossary.md#glossary-content) entity. Examples include [content types](./glossary.md#glossary-content-type), [taxonomy terms](./glossary.md#glossary-taxonomy-term), and custom [blocks](./glossary.md#glossary-block). See [planning-data-types](./planning-data-types.md) for more information.
+El tipo general de una [entity](./glossary.md#glossary-entity); en el uso habitual, solo se aplica a una entidad de [content](./glossary.md#glossary-content). Algunos ejemplos son los [content types](./glossary.md#glossary-content-type), los [taxonomy terms](./glossary.md#glossary-taxonomy-term) y los [blocks](./glossary.md#glossary-block) personalizados. Consultar [planning-data-types](./planning-data-types.md) para más información.
 
-## Field { #glossary-field }
+## Campo { #glossary-field }
 
-Data of a certain type that is attached to a [content](./glossary.md#glossary-content) [entity](./glossary.md#glossary-entity). For instance, on a farmers market site's vendor content type, you might have fields for an image, the vendor description, and a [taxonomy term](./glossary.md#glossary-taxonomy-term). See [planning-data-types](./planning-data-types.md) for more information.
+Datos de un cierto tipo que se adjuntan a una [entity](./glossary.md#glossary-entity) de [content](./glossary.md#glossary-content). Por ejemplo, en el tipo de contenido de proveedor de un sitio de mercado de agricultores, podría tener campos para una imagen, la descripción del proveedor y un [taxonomy term](./glossary.md#glossary-taxonomy-term). Consultar [planning-data-types](./planning-data-types.md) para más información.
 
 ## Field bundle { #glossary-field-bundle }
 
-Synonym for [Entity subtype](./glossary.md#glossary-entity-subtype).
+Sinónimo de [Entity subtype](./glossary.md#glossary-entity-subtype).
 
 ## Field formatter { #glossary-field-formatter }
 
-[Configuration](./glossary.md#glossary-configuration) that defines how the data in a [field](./glossary.md#glossary-field) is displayed. For example, a text field could be displayed with a prefix and/or suffix, and it could have its HTML tags stripped out or limited. See also [View mode](./glossary.md#glossary-view-mode) and [Field widget](./glossary.md#glossary-field-widget). See [structure-view-modes](./structure-view-modes.md) for more information.
+[Configuration](./glossary.md#glossary-configuration) que define cómo se muestran los datos de un [field](./glossary.md#glossary-field). Por ejemplo, un campo de texto se podría mostrar con un prefijo o un sufijo, y se le podrían eliminar o limitar sus etiquetas HTML. Véase también [View mode](./glossary.md#glossary-view-mode) y [Field widget](./glossary.md#glossary-field-widget). Consultar [structure-view-modes](./structure-view-modes.md) para más información.
 
 ## Field widget { #glossary-field-widget }
 
-[Configuration](./glossary.md#glossary-configuration) that defines how someone can enter or edit data for a [field](./glossary.md#glossary-field) on a data entry form. For example, a text field could use a single-line or multi-line entry box, and there could be a setting for the size of the box. See also [Field formatter](./glossary.md#glossary-field-formatter). See [structure-widgets](./structure-widgets.md) for more information.
+[Configuration](./glossary.md#glossary-configuration) que define cómo se introducen o editan los datos de un [field](./glossary.md#glossary-field) en un formulario de entrada de datos. Por ejemplo, un campo de texto podría usar una caja de entrada de una línea o de varias líneas, y podría haber un ajuste para el tamaño de la caja. Véase también [Field formatter](./glossary.md#glossary-field-formatter). Consultar [structure-widgets](./structure-widgets.md) para más información.
+
+## Filter (in a View) { #glossary-filter }
+
+Limita los datos que va a mostrar una [view](./glossary.md#glossary-view) en función de criterios como el estado de publicación, el tipo de contenido o el valor de un campo. Consultar [views-parts](./views-parts.md) para más información.
 
 ## Formatter { #glossary-formatter }
 
-See [Field formatter](./glossary.md#glossary-field-formatter).
+Consultar [Field formatter](./glossary.md#glossary-field-formatter).
 
 ## FOSS { #glossary-foss }
 
-Acronym for _Free and Open Source Software_, meaning software that is developed by a community of people and released under a non-commercial license. See also [GPL](./glossary.md#glossary-gpl). See [understanding-project](./understanding-project.md) for more information.
+Acrónimo de _Free and Open Source Software_ (software libre y de código abierto), que hace referencia al software desarrollado por una comunidad de personas y publicado bajo una licencia no comercial. Véase también [GPL](./glossary.md#glossary-gpl). Consultar [understanding-project](./understanding-project.md) para más información.
+
+## Git { #glossary-git }
+
+[Sistema de control de versiones](./glossary.md#glossary-vcs) que usan las personas que desarrollan Drupal para coordinar sus cambios de código individuales. Git registra los cambios de todo el mundo en un proyecto dado en un árbol de directorios llamado [repository](./glossary.md#glossary-repository) de git. Consultar [install-tools](./install-tools.md) para más información.
 
 ## GPL { #glossary-gpl }
 
-Acronym for the _GNU General Public License_, a non-commercial software license. All software downloaded from the [_Drupal.org_](https://www.drupal.org) website is licensed under the ["GNU General Public License, version 2"](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html). See also [FOSS](./glossary.md#glossary-foss). See [understanding-gpl](./understanding-gpl.md) for more information.
+Acrónimo de _GNU General Public License_ (Licencia Pública General de GNU), una licencia de software no comercial. Todo el software descargado desde el sitio web [_Drupal.org_](https://www.drupal.org) está licenciado bajo la ["GNU General Public License, version 2"](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html). Véase también [FOSS](./glossary.md#glossary-foss). Consultar [understanding-gpl](./understanding-gpl.md) para más información.
 
 ## Image style { #glossary-image-style }
 
-A set of processing steps that transform a base image into a new image; typical processing includes scaling and cropping. See [structure-image-styles](./structure-image-styles.md) for more information.
+Conjunto de pasos de procesamiento que transforman una imagen base en una imagen nueva; el procesamiento típico incluye el escalado y el recorte. Consultar [structure-image-styles](./structure-image-styles.md) para más información.
+
+## Installing { #glossary-installing }
+
+Preparar el Drupal core o cualquier tema o módulo contribuido para su uso. En el caso del Drupal core, esto significa descargar los archivos necesarios, crear la base de datos y configurar y ejecutar el script de instalación. Consultar [install-decide](./install-decide.md) para más información.
 
 ## LAMP { #glossary-lamp }
 
-Acronym for _Linux, Apache, MySQL, and PHP_: the software on the web server that the scripts commonly run on (although it can use other operating systems, web servers, and databases). See [install-requirements](./install-requirements.md) for more information.
+Acrónimo de _Linux, Apache, MySQL y PHP_: el software del servidor web sobre el que se ejecutan habitualmente los scripts (aunque se pueden usar otros sistemas operativos, servidores web y bases de datos). Consultar [install-requirements](./install-requirements.md) para más información.
 
 ## Log { #glossary-log }
 
-A list of recorded events on the site, such as usage data, performance data, errors, warnings, and operational information. See [prevent-log](./prevent-log.md) for more information.
+Lista de eventos registrados en el sitio, como datos de uso, datos de rendimiento, errores, avisos e información operativa. Consultar [prevent-log](./prevent-log.md) para más información.
 
-## Menu { #glossary-menu }
+## Menú { #glossary-menu }
 
-A set of links used for navigation on a site, which may be arranged in a hierarchy. See [menu-concept](./menu-concept.md) for more information.
+Conjunto de enlaces usado para la navegación en un sitio, que puede organizarse jerárquicamente. Consultar [menu-concept](./menu-concept.md) para más información.
 
-## Module { #glossary-module }
+## Módulo { #glossary-module }
 
-Software (usually PHP, JavaScript, and/or CSS) that extends site features and adds functionality. The Drupal project distinguishes between _[core](./glossary.md#glossary-drupal-core)_ and _[contributed](./glossary.md#glossary-contributed)_ modules. See [understanding-modules](./understanding-modules.md) for more information.
+Software (normalmente PHP, JavaScript y/o CSS) que amplía las características del sitio y añade funcionalidad. El proyecto Drupal distingue entre módulos _[core](./glossary.md#glossary-drupal-core)_ y _[contributed](./glossary.md#glossary-contributed)_. Consultar [understanding-modules](./understanding-modules.md) para más información.
 
-## Path { #glossary-path }
+## Ruta { #glossary-path }
 
-The unique, last part of the internal URL that the system assigns to a page on the site, which can be a visitor-facing page or an administrative page. For example, the internal URL for the About page on your site might be _http://example.com/node/5_, and in this case, the path is _node/5_. See also [Alias](./glossary.md#glossary-alias). See [content-paths](./content-paths.md) for more information.
+La última parte, única, de la [URL](./glossary.md#glossary-url) interna que el sistema asigna a una página del sitio, que puede ser una página orientada al visitante o una página de administración. Por ejemplo, la URL interna de la página Acerca de de su sitio podría ser _http://example.com/node/5_, y en ese caso la ruta es _node/5_. Véase también [Alias](./glossary.md#glossary-alias). Consultar [content-paths](./content-paths.md) para más información.
 
-## Permission { #glossary-permission }
+## Permiso { #glossary-permission }
 
-The ability to perform some action on the site, such as editing a particular type of [content](./glossary.md#glossary-content), or viewing user profiles. See also [Role](./glossary.md#glossary-role). See [user-concept](./user-concept.md) for more information.
+La capacidad de realizar alguna acción en el sitio, como editar un tipo concreto de [content](./glossary.md#glossary-content) o ver los perfiles de usuario. Véase también [Role](./glossary.md#glossary-role). Consultar [user-concept](./user-concept.md) para más información.
 
 ## Reference field { #glossary-reference-field }
 
-A [field](./glossary.md#glossary-field) that represents a relationship between an [entity](./glossary.md#glossary-entity) and one or more other entities, which may be the same [entity type](./glossary.md#glossary-entity-type) or a different type. For example, on a farmers market site, a recipe content item might have a reference field to the vendor (also a content item) that posted the recipe. [Taxonomy term](./glossary.md#glossary-taxonomy-term) fields are also reference fields. See [structure-reference-fields](./structure-reference-fields.md) for more information.
+[Field](./glossary.md#glossary-field) que representa una relación entre una [entity](./glossary.md#glossary-entity) y una o varias entidades más, que pueden ser del mismo [entity type](./glossary.md#glossary-entity-type) o de otro tipo. Por ejemplo, en un sitio de mercado de agricultores, un content item de receta podría tener un campo de referencia al proveedor (también un content item) que publicó la receta. Los campos de [Taxonomy term](./glossary.md#glossary-taxonomy-term) también son campos de referencia. Consultar [structure-reference-fields](./structure-reference-fields.md) para más información.
 
-## Region { #glossary-region }
+## Región { #glossary-region }
 
-A defined area of a page where [content](./glossary.md#glossary-content) can be placed, such as the header, footer, main content area, left sidebar, etc. Regions are defined by [themes](./glossary.md#glossary-theme), and the content displayed in each region is contained in [blocks](./glossary.md#glossary-block). See [block-regions](./block-regions.md) for more information.
+Área definida de una página donde se puede colocar [content](./glossary.md#glossary-content), como la cabecera, el pie de página, el área principal de contenido, la barra lateral izquierda, etc. Las regiones las definen los [themes](./glossary.md#glossary-theme), y el contenido que se muestra en cada región está contenido en [blocks](./glossary.md#glossary-block). Consultar [block-regions](./block-regions.md) para más información.
+
+## Relationship (in a View) { #glossary-relationship }
+
+Ampliación de los datos que se muestran en una vista, relacionando el contenido base con otras entidades de contenido. Consultar [views-parts](./views-parts.md) para más información.
+
+## Repositorio { #glossary-repository }
+
+Ubicación donde un sistema de control de versiones almacena todos los archivos y directorios de un proyecto. Consultar [install-tools](./install-tools.md) para más información.
 
 ## Responsive { #glossary-responsive }
 
-A site or [theme](./glossary.md#glossary-theme) is said to be responsive if it adjusts its presentation in response to the size of the browser screen, printer, or other media output type. See also [Breakpoint](./glossary.md#glossary-breakpoint). See [structure-image-responsive](./structure-image-responsive.md) for more information.
+Se dice que un sitio o un [theme](./glossary.md#glossary-theme) es responsive si ajusta su presentación en respuesta al tamaño de la pantalla del navegador, la impresora u otro tipo de salida. Véase también [Breakpoint](./glossary.md#glossary-breakpoint). Consultar [structure-image-responsive](./structure-image-responsive.md) para más información.
 
-## Revision { #glossary-revision }
+## Revisión { #glossary-revision }
 
-A record of the past or present state of a [content](./glossary.md#glossary-content) [entity](./glossary.md#glossary-entity), as it is edited over time. See [planning-workflow](./planning-workflow.md) for more information.
+Registro del estado pasado o presente de una [entity](./glossary.md#glossary-entity) de [content](./glossary.md#glossary-content), a medida que se edita con el tiempo. Consultar [planning-workflow](./planning-workflow.md) para más información.
 
-## Role { #glossary-role }
+## Rol { #glossary-role }
 
-A named set of [permissions](./glossary.md#glossary-permission) that can be applied to a [user account](./glossary.md#glossary-user). See [user-concept](./user-concept.md) for more information.
+Conjunto de [permissions](./glossary.md#glossary-permission) con nombre que se puede aplicar a una [user account](./glossary.md#glossary-user). Consultar [user-concept](./user-concept.md) para más información.
 
 ## Security update { #glossary-security-update }
 
-An [update](./glossary.md#glossary-update) that fixes a security-related bug, such as a hacking vulnerability. See [security-concept](./security-concept.md) for more information.
+[Update](./glossary.md#glossary-update) que corrige un error relacionado con la seguridad, como una vulnerabilidad. Consultar [security-concept](./security-concept.md) para más información.
 
-## State { #glossary-state }
+## Sesión { #glossary-session }
 
-Information of a temporary nature about the current state of your site, such as the time when [cron](./glossary.md#glossary-cron) was last run, etc. See also [Content](./glossary.md#glossary-content) and [Configuration](./glossary.md#glossary-configuration).  See [understanding-data](./understanding-data.md) for more information.
+Información sobre las interacciones de cada visitante con el sitio, como si ha iniciado sesión y sus cookies. Consultar [understanding-data](./understanding-data.md) para más información.
 
-## Taxonomy { #glossary-taxonomy }
+## Staging site { #glossary-staging-site }
 
-The process of classifying [content](./glossary.md#glossary-content). See [structure-taxonomy](./structure-taxonomy.md) for more information.
+Copia del sitio en producción que se puede usar para hacer pruebas o para presentar los cambios al cliente para su aprobación. Consultar [install-dev-sites](./install-dev-sites.md) para más información.
+
+## Estado { #glossary-state }
+
+Información de naturaleza temporal sobre el estado actual de su sitio, como el momento en que se ejecutó por última vez [cron](./glossary.md#glossary-cron), etc. Véase también [Content](./glossary.md#glossary-content) y [Configuration](./glossary.md#glossary-configuration). Consultar [understanding-data](./understanding-data.md) para más información.
+
+## Taxonomía { #glossary-taxonomy }
+
+El proceso de clasificar [content](./glossary.md#glossary-content). Consultar [structure-taxonomy](./structure-taxonomy.md) para más información.
 
 ## Taxonomy term { #glossary-taxonomy-term }
 
-A term used to classify [content](./glossary.md#glossary-content), such as a tag or a category. See also [Vocabulary](./glossary.md#glossary-vocabulary). See [structure-taxonomy](./structure-taxonomy.md) for more information.
+Término usado para clasificar [content](./glossary.md#glossary-content), como una etiqueta o una categoría. Véase también [Vocabulary](./glossary.md#glossary-vocabulary). Consultar [structure-taxonomy](./structure-taxonomy.md) para más información.
 
 ## Text format { #glossary-text-format }
 
-[Configuration](./glossary.md#glossary-configuration) that defines the processing that happens to user-entered text before it is shown in the browser. This might include stripping or limiting HTML tags, or turning URLs into links. See [structure-text-formats](./structure-text-formats.md) for more information.
+[Configuration](./glossary.md#glossary-configuration) que define el procesamiento que se aplica al texto introducido por el usuario antes de mostrarlo en el navegador. Puede incluir eliminar o limitar etiquetas HTML, o convertir [URLs](./glossary.md#glossary-url) en enlaces. Consultar [structure-text-formats](./structure-text-formats.md) para más información.
 
-## Theme { #glossary-theme }
+## Tema { #glossary-theme }
 
-Software and asset files (images, CSS, PHP code, and/or templates) that determine the style and layout of the site. The Drupal project distinguishes between  _[core](./glossary.md#glossary-drupal-core)_ and _[contributed](./glossary.md#glossary-contributed)_ themes. See [understanding-themes](./understanding-themes.md) for more information.
+Software y archivos de recursos (imágenes, CSS, código PHP y/o plantillas) que determinan el estilo y la disposición del sitio. El proyecto Drupal distingue entre temas _[core](./glossary.md#glossary-drupal-core)_ y _[contributed](./glossary.md#glossary-contributed)_. Consultar [understanding-themes](./understanding-themes.md) para más información.
 
 ## UI { #glossary-ui }
 
-Acronym for [_User Interface_](./glossary.md#glossary-user-interface).
+Acrónimo de [_User Interface_](./glossary.md#glossary-user-interface).
 
 ## Update { #glossary-update }
 
-A newer version of your site's software, either [Drupal core](./glossary.md#glossary-drupal-core) or a [module](./glossary.md#glossary-module) or [theme](./glossary.md#glossary-theme). See also [Security update](./glossary.md#glossary-security-update). See [security-concept](./security-concept.md) for more information.
+Una versión más reciente del software de su sitio, ya sea del [Drupal core](./glossary.md#glossary-drupal-core) o de un [module](./glossary.md#glossary-module) o [theme](./glossary.md#glossary-theme). Véase también [Security update](./glossary.md#glossary-security-update). Consultar [security-concept](./security-concept.md) para más información.
 
-## User { #glossary-user }
+## URL { #glossary-url }
 
-A person interacting with the site, either logged-in or [anonymous](./glossary.md#glossary-anonymous). See [user-concept](./user-concept.md) for more information.
+La dirección única de una página web en la web. Por ejemplo, https://example.com/node/7. Consultar [content-paths](./content-paths.md) para más información.
+
+## Usuario { #glossary-user }
+
+Persona que interactúa con el sitio, ya sea con la sesión iniciada o de forma [anonymous](./glossary.md#glossary-anonymous). Consultar [user-concept](./user-concept.md) para más información.
 
 ## User interface { #glossary-user-interface }
 
-The text, styles, and images that are visible on a site, separated logically into the user interface for site visitors and the administrative user interface.
+El texto, los estilos y las imágenes que son visibles en un sitio, separados lógicamente en la interfaz de usuario para los visitantes del sitio y la interfaz de usuario administrativa.
 
 ## User one (User 1) { #glossary-user-one }
 
-The initial [user](./glossary.md#glossary-user) account that is created when you install the site (whose ID number is 1). It automatically has all [permissions](./glossary.md#glossary-permission), even if it is not assigned an administrative [role](./glossary.md#glossary-role). See [user-admin-account](./user-admin-account.md) for more information.
+La cuenta de [user](./glossary.md#glossary-user) inicial que se crea cuando [instala](./glossary.md#glossary-installing) el sitio (cuyo número de ID es 1). Automáticamente tiene todos los [permissions](./glossary.md#glossary-permission), aunque no se le asigne un [role](./glossary.md#glossary-role) administrativo. Consultar [user-admin-account](./user-admin-account.md) para más información.
 
-## View { #glossary-view }
+## Version Control System { #glossary-vcs }
 
-A formatted listing of data; typically, the data comes from [content](./glossary.md#glossary-content) [entities](./glossary.md#glossary-entity). For example, on a farmers market site, you might create a [content item](./glossary.md#glossary-content-item) for each vendor. You could then make view that generates a listing page that shows a thumbnail image and short description of each vendor, linking to the full-page content item. Using the same data, you could also make a view that generates a new vendors block, which would show information from the most recently added vendors. See [planning-modular](./planning-modular.md) for more information.
+Software que guarda copias de los archivos y el historial de revisiones en un [repository](./glossary.md#glossary-repository) y le permite añadir, eliminar y actualizar archivos. Consultar [install-tools](./install-tools.md) para más información.
+
+## Vista { #glossary-view }
+
+Listado con formato de datos; normalmente, los datos provienen de [entities](./glossary.md#glossary-entity) de [content](./glossary.md#glossary-content). Por ejemplo, en un sitio de mercado de agricultores, podría crear un [content item](./glossary.md#glossary-content-item) para cada proveedor. Después podría crear una vista que genere una página de listado que muestre una imagen en miniatura y una descripción corta de cada proveedor, con un enlace al content item de la página completa. Con los mismos datos, también podría crear una vista que genere un bloque de proveedores nuevos, que mostraría información de los proveedores añadidos más recientemente. Consultar [planning-modular](./planning-modular.md) para más información.
 
 ## View mode { #glossary-view-mode }
 
-A set of [field formatter](./glossary.md#glossary-field-formatter) [configuration](./glossary.md#glossary-configuration) for all of the [fields](./glossary.md#glossary-field) of a [content](./glossary.md#glossary-content) [entity](./glossary.md#glossary-entity), some of which may be hidden. Each [entity subtype](./glossary.md#glossary-entity-subtype) can have one or more view modes defined; for example, [content types](./glossary.md#glossary-content-type) typically have _Full_ and _Teaser_ view modes, where the _Teaser_ view mode displays fewer or trimmed-down fields. See [structure-view-modes](./structure-view-modes.md) for more information.
+Conjunto de [configuration](./glossary.md#glossary-configuration) de [field formatter](./glossary.md#glossary-field-formatter) para todos los [fields](./glossary.md#glossary-field) de una [entity](./glossary.md#glossary-entity) de [content](./glossary.md#glossary-content), algunos de los cuales pueden estar ocultos. Cada [entity subtype](./glossary.md#glossary-entity-subtype) puede tener uno o varios modos de visualización definidos; por ejemplo, los [content types](./glossary.md#glossary-content-type) normalmente tienen los modos de visualización _Full_ y _Teaser_, donde el modo _Teaser_ muestra menos campos o campos recortados. Consultar [structure-view-modes](./structure-view-modes.md) para más información.
 
-## Vocabulary { #glossary-vocabulary }
+## Vocabulario { #glossary-vocabulary }
 
-A group of [taxonomy terms](./glossary.md#glossary-taxonomy-term) to choose from when classifying [content](./glossary.md#glossary-content) in a particular way, such as the list of all of the vendor categories on a farmers market site. Technically, vocabularies are the [entity subtype](./glossary.md#glossary-entity-subtype) for the taxonomy term [entity type](./glossary.md#glossary-entity-type). See [structure-taxonomy](./structure-taxonomy.md) for more information.
+Grupo de [taxonomy terms](./glossary.md#glossary-taxonomy-term) entre los que elegir al clasificar [content](./glossary.md#glossary-content) de una forma concreta, como la lista de todas las categorías de proveedores de un sitio de mercado de agricultores. Técnicamente, los vocabularios son el [entity subtype](./glossary.md#glossary-entity-subtype) del [entity type](./glossary.md#glossary-entity-type) de término de taxonomía. Consultar [structure-taxonomy](./structure-taxonomy.md) para más información.
 
 ## Widget { #glossary-widget }
 
-See [Field widget](./glossary.md#glossary-field-widget).
+Consultar [Field widget](./glossary.md#glossary-field-widget).
 
-## Wizard { #glossary-wizard }
+## Asistente { #glossary-wizard }
 
-A web form that allows you to fill in a few values, and creates something with sensible defaults based on the values you chose. For example, there are wizards for creating [views](./glossary.md#glossary-view) of different types. See [views-create](./views-create.md) for more information.
+Formulario web que le permite rellenar unos pocos valores y crea algo con valores predeterminados razonables en función de los valores que haya elegido. Por ejemplo, hay asistentes para crear [views](./glossary.md#glossary-view) de distintos tipos. Consultar [views-create](./views-create.md) para más información.
 
 ## WYSIWYG { #glossary-wysiwyg }
 
-Acronym for _What You See is What You Get_, meaning a method for editing [content](./glossary.md#glossary-content) where what you see on the editing screen closely resembles the final product. See [structure-text-format-config](./structure-text-format-config.md) for more information.
+Acrónimo de _What You See is What You Get_ ("lo que ves es lo que obtienes"), que hace referencia a un método de edición de [content](./glossary.md#glossary-content) en el que lo que se ve en la pantalla de edición se asemeja mucho al resultado final. Consultar [structure-text-format-config](./structure-text-format-config.md) para más información.
+
+## Workflow { #glossary-workflow }
+
+Consultar [Editorial Workflow](./glossary.md#glossary-editorial-workflow).
+
+## XSS { #glossary-xss }
+
+Acrónimo de [Cross Site Scripting](./glossary.md#glossary-cross-site-scripting).

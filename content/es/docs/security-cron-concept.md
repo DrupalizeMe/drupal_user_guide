@@ -1,35 +1,40 @@
 ---
-title: "Concept: Cron"
-description: "Overview of cron and how it is different from Unix cron."
+title: "Concepto: cron"
+description: "Descripción general de cron y en qué se diferencia del cron de Unix."
 id: "security-cron-concept"
 translation_key: "security-cron-concept"
 source_locale: "es"
 ---
-## What are cron tasks? { #security-cron-concept }
+## ¿Qué son las tareas de cron? { #security-cron-concept }
 
-To ensure that your site and its modules continue to function well, a group
-of administrative operations should be run periodically. These operations are
-called _cron_ tasks. Examples of cron tasks are: checking for module and theme
-updates, indexing content for search, or cleaning up temporary files.
-## What is the relationship between the site's cron tasks and Unix cron?
+Para asegurar que su sitio y sus módulos sigan funcionando bien, se debe
+ejecutar periódicamente un grupo de operaciones administrativas. Estas
+operaciones se llaman tareas de _cron_. Algunos ejemplos de tareas de cron son:
+comprobar si hay actualizaciones de módulos y temas, indexar contenido para las
+búsquedas o limpiar archivos temporales.
+## ¿Cuál es la relación entre las tareas de cron del sitio y el cron de Unix?
 
-Linux/Unix-based operating systems have a cron scheduler that can be used to run
-periodic tasks. You can use the server’s cron scheduler to schedule runs of the
-site’s cron tasks. Alternatively, you can use the core Automated Cron module to
-run tasks. You can check the site’s cron tasks' status in the status report.
-## Related topics
+Los sistemas operativos basados en Linux/Unix tienen un programador cron que se
+puede usar para ejecutar tareas periódicas. Puede usar el programador cron del
+servidor para programar la ejecución de las tareas de cron del sitio. Como
+alternativa, puede usar el módulo del núcleo Automated Cron para ejecutar
+tareas. Puede comprobar el estado de las tareas de cron del sitio en el informe
+de estado.
+## Temas relacionados
 
 * [security-cron](./security-cron.md)
 * [prevent-status](./prevent-status.md)
-## Additional resources
+## Recursos adicionales
 
 [_Drupal.org_ community documentation page "Setting up cron"](https://www.drupal.org/docs/7/setting-up-cron/overview)
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by
-[Diána Lakatos](https://www.drupal.org/u/dianalakatos) at
+Escrito y editado por
+[Diána Lakatos](https://www.drupal.org/u/dianalakatos) en
 [Pronovix](https://pronovix.com/),
-[Dave Hansen-Lange](https://www.drupal.org/u/dalin) at
+[Dave Hansen-Lange](https://www.drupal.org/u/dalin) en
 [Advomatic](https://www.advomatic.com/),
-and [Boris Doesborg](https://www.drupal.org/u/batigolix).
+y [Boris Doesborg](https://www.drupal.org/u/batigolix).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

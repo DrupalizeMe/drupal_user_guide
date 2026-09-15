@@ -1,39 +1,43 @@
 ---
-title: "Concept: Editorial Workflow"
-description: "Overview of the editorial workflow to manage content on a website."
+title: "Concepto: flujo de trabajo editorial"
+description: "Descripción general del flujo de trabajo editorial para gestionar el contenido de un sitio web."
 id: "planning-workflow"
 translation_key: "planning-workflow"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #planning-workflow }
+## Conocimientos previos { #planning-workflow }
 
 * [understanding-drupal](./understanding-drupal.md)
 * [planning-data-types](./planning-data-types.md)
-## What is an editorial workflow?
+## ¿Qué es un flujo de trabajo editorial?
 
-An _editorial workflow_ is the process organizations follow to create, review,
-edit, and publish content. Multiple people in different roles in the
-organization can be part of the process. For example, content creators could
-collect information and write content; editors could review, edit, ask for
-changes, and publish the content once it's ready to be shared with the
-audience. Later on, content revisions could go through a simple process for
-small changes, or a more complex process with reviews for larger changes.
-## What tools are available for managing workflows?
+Un _flujo de trabajo editorial_ es el proceso que siguen las organizaciones
+para crear, revisar, editar y publicar contenido. En el proceso pueden
+participar varias personas con distintos roles dentro de la organización. Por
+ejemplo, quienes crean el contenido pueden recopilar información y redactarlo;
+quienes lo editan pueden revisarlo, corregirlo, pedir cambios y publicarlo una
+vez que está listo para compartirse con el público. Más adelante, las
+revisiones del contenido pueden pasar por un proceso sencillo para cambios
+pequeños, o por un proceso más complejo con revisiones para cambios más
+grandes.
+## ¿Qué herramientas hay disponibles para gestionar flujos de trabajo?
 
-- **Published/Unpublished status:** The Content item entity type supports marking each content item as either Published or Unpublished. Viewing permissions are separate for published and unpublished content; for example, all site visitors might be able to see published content items, while only content creators and editors can see unpublished content items.
-- **Revision tracking:** Some content entity types support revision tracking, meaning that as content is revised, the software stores the older revisions, so that they can be compared or reverted.
-- **Workflows:** The core Workflows module lets you define workflow states and transitions, beyond just having content be published or unpublished. The companion core Content Moderation module lets you assign permissions and roles to the workflow transitions. Both can be used with both Content item and Custom block entity types.
-- **Block placement:** The Custom block content entity lets you create a custom block and edit it, but only make it visible on the site once it is ready.
-## Related topics
+- **Estado publicado/no publicado:** El tipo de entidad Content item permite marcar cada elemento de contenido como publicado o no publicado. Los permisos de visualización son independientes para el contenido publicado y el no publicado; por ejemplo, todos los visitantes del sitio podrían ver los elementos de contenido publicados, mientras que solo quienes crean y editan contenido pueden ver los elementos de contenido no publicados.
+- **Seguimiento de revisiones:** Algunos tipos de entidad de contenido admiten el seguimiento de revisiones, es decir, a medida que se revisa el contenido, el software almacena las revisiones anteriores, de modo que se pueden comparar o restaurar.
+- **Flujos de trabajo:** El módulo del núcleo Workflows le permite definir estados de flujo de trabajo y transiciones, más allá de que el contenido esté simplemente publicado o no publicado. El módulo del núcleo complementario Content Moderation le permite asignar permisos y roles a las transiciones del flujo de trabajo. Ambos se pueden usar con los tipos de entidad Content item y Custom block.
+- **Colocación de bloques:** La entidad de contenido Custom block le permite crear un bloque personalizado y editarlo, pero hacerlo visible en el sitio solo cuando esté listo.
+## Temas relacionados
 
 * [content-create](./content-create.md)
 * [content-edit](./content-edit.md)
 * [block-create-custom](./block-create-custom.md)
 * [block-place](./block-place.md)
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by [Diána Lakatos](https://www.drupal.org/u/dianalakatos) at
+Escrito y editado por [Diána Lakatos](https://www.drupal.org/u/dianalakatos) en
 [Pronovix](https://pronovix.com//),
 [Grant Dunham](https://www.drupal.org/u/gdunham),
-and [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+y [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

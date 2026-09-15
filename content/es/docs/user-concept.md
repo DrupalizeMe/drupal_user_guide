@@ -1,51 +1,53 @@
 ---
-title: "Concept: Users, Roles, and Permissions"
-description: "Overview of user accounts, permissions, and roles."
+title: "Concepto: usuarios, roles y permisos"
+description: "Descripción general de las cuentas de usuario, los permisos y los roles."
 id: "user-concept"
 translation_key: "user-concept"
 source_locale: "es"
 ---
-## What are Users? { #user-concept }
+## ¿Qué son los usuarios? { #user-concept }
 
-Anyone who visits your website is a _user_, including you. There are three
-groups of users:
+Cualquiera que visite su sitio web es un _usuario_, incluido usted. Hay tres
+grupos de usuarios:
 
-* Users who are not logged in, or _anonymous users_
-* Users who are logged in, or _authenticated users_
-* The administrative user account that was automatically created when you
-installed your site, or User 1. See [user-admin-account](./user-admin-account.md).
-## What are Permissions?
+* Usuarios que no han iniciado sesión, o _usuarios anónimos_
+* Usuarios que han iniciado sesión, o _usuarios autenticados_
+* La cuenta de usuario administrativa que se creó automáticamente cuando
+instaló su sitio, o Usuario 1. Ver [user-admin-account](./user-admin-account.md).
+## ¿Qué son los permisos?
 
-The ability to do actions on your site (including viewing content, editing
-content, and changing configuration) is governed by _permissions_. Each
-permission has a name (such as _View published content_) and covers one action
-or a small subset of actions. A user must be granted a permission in order to do
-the corresponding action on the site; permissions are defined by the modules
-that provide the actions.
-## What are Roles?
+La capacidad de realizar acciones en su sitio (incluyendo ver contenido,
+editar contenido y cambiar la configuración) se rige por _permisos_. Cada
+permiso tiene un nombre (como _View published content_) y abarca una acción o
+un pequeño subconjunto de acciones. A un usuario se le debe conceder un permiso
+para poder realizar la acción correspondiente en el sitio; los permisos los
+definen los módulos que proporcionan las acciones.
+## ¿Qué son los roles?
 
-Rather than assigning individual permissions directly to each user, permissions
-are grouped into _roles_. You can define one or more roles on your site, and
-then grant permissions to each role. The permissions granted to authenticated
-and anonymous users are contained in the _Authenticated user_ and _Anonymous
-user_ roles, and depending on the installation profile you used when you
-installed your site, there may also be an _Administrator_ role that is
-automatically assigned all permissions on your site.
+En lugar de asignar permisos individuales directamente a cada usuario, los
+permisos se agrupan en _roles_. Puede definir uno o varios roles en su sitio y
+después conceder permisos a cada rol. Los permisos concedidos a los usuarios
+autenticados y anónimos están contenidos en los roles _Authenticated user_ y
+_Anonymous user_ y, según el perfil de instalación que usara al instalar su
+sitio, también puede haber un rol _Administrator_ al que se le asignan
+automáticamente todos los permisos de su sitio.
 
-Each user account on your site is automatically given the _Authenticated user_
-role, and may optionally be assigned one or more additional roles. When you
-assign a role to a user account, the user will have all the permissions of the
-role when logged in.
+A cada cuenta de usuario de su sitio se le asigna automáticamente el rol
+_Authenticated user_ y, opcionalmente, se le pueden asignar uno o varios roles
+adicionales. Cuando asigna un rol a una cuenta de usuario, el usuario tendrá
+todos los permisos del rol al iniciar sesión.
 
-It is a good practice to make several roles on your site. In the farmers market
-site example, you might want the following roles:
+Es una buena práctica crear varios roles en su sitio. En el ejemplo del sitio
+del mercado de agricultores, podría querer los siguientes roles:
 
-* A Vendor role that allows vendors to edit their own vendor listing page
-* A Content editor role for editing the general farmers market pages
-* A User manager role for managing the vendor accounts
-* The _Administrator_ role that was installed with your site, for expert users
-to manage the site configuration
-## Related topics
+* Un rol Vendor que permita a los vendors editar su propia página de ficha de
+vendor
+* Un rol Content editor para editar las páginas generales del mercado de
+agricultores
+* Un rol User manager para gestionar las cuentas de los vendors
+* El rol _Administrator_ que se instaló con su sitio, para que los usuarios
+expertos gestionen la configuración del sitio
+## Temas relacionados
 
 * [user-new-role](./user-new-role.md)
 * [user-permissions](./user-permissions.md)
@@ -53,17 +55,18 @@ to manage the site configuration
 * [user-new-user](./user-new-user.md)
 * [user-admin-account](./user-admin-account.md)
 * [user-content](./user-content.md)
-## Additional resources
+## Recursos adicionales
 
-* [_Drupal.org_ community documentation page "Users, roles and permissions"](https://www.drupal.org/node/120614)
 * [_Drupal.org_ community documentation page "Managing Users"](https://www.drupal.org/docs/7/managing-users)
-* [_Drupal.org_ community documentation page "User Roles"](https://www.drupal.org/node/1803614)
+* [_Drupal.org_ community documentation page "User Roles"](https://www.drupal.org/docs/7/managing-users/user-roles)
 
-*Attributions*
+*Atribuciones*
 
-Adapted by [Mark LaCroix](https://www.drupal.org/u/mark-lacroix),
-[Boris Doesborg](https://www.drupal.org/u/batigolix), and
-[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon) from
-["User Roles"](https://www.drupal.org/node/1803614),
-copyright 2000-2026 by the individual contributors to the
-[Drupal Community Documentation](https://www.drupal.org/documentation).
+Adaptado por [Mark LaCroix](https://www.drupal.org/u/mark-lacroix),
+[Boris Doesborg](https://www.drupal.org/u/batigolix) y
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon) de
+["User Roles"](https://www.drupal.org/docs/7/managing-users/user-roles),
+copyright 2000-2026 por los colaboradores individuales de la
+[Documentación de la Comunidad de Drupal](https://www.drupal.org/documentation).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

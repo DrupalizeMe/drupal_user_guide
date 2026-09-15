@@ -1,36 +1,41 @@
 ---
-title: "Concept: Modules"
-description: "Overview of modules and the functionality they can be used for."
+title: "Concepto: módulos"
+description: "Descripción general de los módulos y de la funcionalidad para la que se pueden usar."
 id: "understanding-modules"
 translation_key: "understanding-modules"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #understanding-modules }
+## Conocimientos previos { #understanding-modules }
 
 [understanding-drupal](./understanding-drupal.md)
-## What is a module?
+## ¿Qué es un módulo?
 
-A module is a set of PHP, JavaScript, and/or CSS files that extends site
-features and adds functionality. You can turn the features and functionality on
-by _installing_ the module, and you can turn it off by _uninstalling_ the
-module; before uninstalling, you may need to remove data and configuration
-related to the feature or functionality. Each module that is installed adds to
-the time needed to generate pages on your site, so it is a good idea to
-uninstall modules that are not needed.
+Un módulo es un paquete de archivos que amplía la funcionalidad del núcleo de
+Drupal. Los módulos suelen contener código PHP y configuración (YAML), y pueden
+incluir archivos JavaScript, CSS y de plantilla Twig.
 
-The core download provides modules for functionality such as:
+Puede activar las características y la funcionalidad _instalando_ el módulo, y
+puede desactivarlas _desinstalando_ el módulo; antes de desinstalarlo, puede que
+necesite eliminar los datos y la configuración relacionados con esa
+característica o funcionalidad.
 
-* Managing user accounts (the core User module)
-* Managing basic content (the core Node module) and fields (the core Field and
-Field UI modules; there are also core modules providing field types)
-* Managing navigation menus (the core Menu UI module)
-* Making lists, grids, and blocks from existing content (the core Views and
-Views UI modules)
+Cada módulo que se instala aumenta el tiempo necesario para generar las páginas
+de su sitio, así que es buena idea desinstalar los módulos que no se necesitan.
 
-You can download additional _contributed modules_ from the
-[_Drupal.org_ Module Downloads](https://www.drupal.org/project/project_module), or create your own
-_custom modules_.
-## Related topics
+La descarga del núcleo incluye módulos para funcionalidades como:
+
+* Gestionar cuentas de usuario (el módulo del núcleo User)
+* Gestionar el contenido básico (el módulo del núcleo Node) y los campos (los
+módulos del núcleo Field y Field UI; también hay módulos del núcleo que
+proporcionan tipos de campo)
+* Gestionar los menús de navegación (el módulo del núcleo Menu UI)
+* Crear listas, cuadrículas y bloques a partir del contenido existente (los
+módulos del núcleo Views y Views UI)
+
+Puede descargar _módulos contribuidos_ adicionales desde
+[_Drupal.org_ Module Downloads](https://www.drupal.org/project/project_module), o
+crear sus propios _módulos personalizados_.
+## Temas relacionados
 
 * [understanding-themes](./understanding-themes.md)
 * [understanding-distributions](./understanding-distributions.md)
@@ -39,10 +44,10 @@ _custom modules_.
 * [extend-module-install](./extend-module-install.md)
 * [security-concept](./security-concept.md)
 * [security-update-module](./security-update-module.md)
-## Additional resources
+## Recursos adicionales
 
 [_Drupal.org_ community documentation page "Module developer's guide"](https://www.drupal.org/developing/modules)
 
-*Attributions*
+*Atribuciones*
 
-Written by [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+Escrito por [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).

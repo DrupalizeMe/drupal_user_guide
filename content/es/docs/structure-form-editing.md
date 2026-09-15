@@ -17,8 +17,9 @@ términos en el campo Ingredientes.
 * [structure-widgets](./structure-widgets.md)
 ## Requisitos previos del sitio web
 
-El Tipo de contenido Recetas debe existir, y debe tener un campo de referencia de
-términos de taxonomía de Ingredientes. Véase [structure-content-type](./structure-content-type.md) y
+El tipo de contenido Recetas debe existir, y debe tener un campo de referencia
+de términos de taxonomía de Ingredientes. Debe existir al menos un elemento de
+contenido Proveedor. Véase [structure-content-type](./structure-content-type.md) y
 [structure-taxonomy-setup](./structure-taxonomy-setup.md).
 ## Pasos
 
@@ -26,8 +27,8 @@ términos de taxonomía de Ingredientes. Véase [structure-content-type](./struc
     _Receta_ (_node/add/recipe_) para ver el formulario de entrada de contenido
     configurado por defecto. Observe cómo tiene que introducir los ingredientes
     uno por uno, en lugar de tener un formato más compacto.
-1. En el menú administrativo _Administrar_, vaya a _Estructura_> _Tipos de contenido_
-    (_admin / structure / types_). A continuación, haga click en _Administrar la 
+1. En el menú administrativo _Administrar_, vaya a _Estructura_ > _Tipos de contenido_
+    (_admin/structure/types_). A continuación, haga click en _Administrar la
     visualización del formulario_ en el botón desplegable para el tipo de contenido Receta.
     La página Administrar la visualización del formulario aparecerá.
 1. Para el campo Ingredientes, seleccione _Autocompletar (estilo de etiquetado)_
@@ -39,8 +40,8 @@ términos de taxonomía de Ingredientes. Véase [structure-content-type](./struc
     formulario de contenido. El campo Ingredientes es ahora un solo campo de texto
     que acepta varios valores.
     <img src="/images/structure-form-editing-add-recipe.png" alt="Add a recipe" width="100%" />
-1. Cree dos artículos de contenido de receta (véase [content-create](./content-create.md)),
-    como las recetas de "Ensalada verde" y "Zanahorias frescas". Asegúrese de que
+1. Cree dos elementos de contenido Receta (véase [content-create](./content-create.md)), como las
+    recetas de "Ensalada verde" y "Zanahorias frescas". Asegúrese de que
     todos los campos tienen valores, incluyendo imágenes, ingredientes y publicados
     por (defina esto como uno de los elementos de contenido del Proveedor que creó
     en [structure-fields](./structure-fields.md)).
@@ -49,6 +50,11 @@ términos de taxonomía de Ingredientes. Véase [structure-content-type](./struc
 Cambie el formulario de contacto del sitio principal navegando en el menú
 administrativo _Administrar_ > _Estructura_ > _Formularios de contacto_. Por ejemplo, es posible
 que desee ocultar los campos _Enviar una copia al emisor_ o _Idioma_.
+## Vídeos
+
+<div class="embedded-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/CELMGX93fjE" title="Changing Content Entry Forms" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
 
 *Atribuciones*
 

@@ -1,44 +1,49 @@
 ---
-title: "Concept: Themes"
-description: "Overview of themes and where to obtain them."
+title: "Concepto: temas"
+description: "Descripción general de los temas y de dónde obtenerlos."
 id: "understanding-themes"
 translation_key: "understanding-themes"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #understanding-themes }
+## Conocimientos previos { #understanding-themes }
 
 [understanding-drupal](./understanding-drupal.md)
-## What is a Theme?
+## ¿Qué es un tema?
 
-A theme is a set of files that define the visual look and feel of your site.
-The core software and modules that run on your site determine which
-_content_ (including HTML text and other data stored in the database, uploaded
-images, and any other asset files) is displayed on the pages of your site. The
-theme determines the HTML markup and CSS styling that wraps the content.
+Un tema es un conjunto de archivos que definen el aspecto visual de su sitio. El
+software del núcleo y los módulos que se ejecutan en su sitio determinan qué
+_contenido_ (incluidos el texto HTML y otros datos almacenados en la base de
+datos, las imágenes subidas y cualquier otro archivo de recursos) se muestra en
+las páginas de su sitio. El tema determina el marcado HTML y los estilos CSS que
+envuelven ese contenido.
 
-The core software provides several basic themes with the core distribution.
-These themes have largely been designed and built by the community over the last
-several years and will all be good choices for building your first sites and
-becoming more familiar with how the core software works.
+El software del núcleo incluye varios temas básicos en su distribución. Estos
+temas han sido diseñados y construidos en gran parte por la comunidad a lo largo
+de los últimos años y todos son buenas opciones para construir sus primeros
+sitios y familiarizarse con el funcionamiento del software del núcleo.
 
-Drupal is a well-established CMS so the market for 3rd party themes - both free
-and paid - is very robust.
+Drupal es un CMS bien consolidado, así que el mercado de temas de terceros
+—tanto gratuitos como de pago— es muy sólido.
 
-If none of the 3rd party options suit your needs, you'll need to create a custom
-theme. A custom theme can be as simple as a single CSS file that adds styling to
-the markup provided by the core software.  Guidance for creating custom themes
-in Drupal 8 can be found in the
-[_Drupal.org_ community documentation page "Theming Drupal"](https://www.drupal.org/docs/8/theming).
-## Related topics
+Si ninguna de las opciones de terceros se ajusta a sus necesidades, tendrá que
+crear un tema personalizado. Un tema personalizado puede ser tan sencillo como
+un único archivo CSS que añade estilos al marcado que proporciona el software
+del núcleo. Puede encontrar orientación para crear temas personalizados en
+Drupal en la
+[_Drupal.org_ community documentation page "Theming Drupal"](https://www.drupal.org/docs/theming-drupal).
+## Temas relacionados
 
 * [extend-theme-find](./extend-theme-find.md)
 * [extend-theme-install](./extend-theme-install.md)
 * [understanding-modules](./understanding-modules.md)
-## Additional resources
+## Recursos adicionales
 
-[_Drupal.org_ community documenation page "Theming Drupal"](https://www.drupal.org/docs/8/theming)
+[_Drupal.org_ community documentation page "Theming Drupal"](https://www.drupal.org/docs/theming-drupal)
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by [John Grubb](https://www.drupal.org/u/jgrubb) and
+Escrito y editado por [John Grubb](https://www.drupal.org/u/jgrubb) y
 [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Traducido por [Juan Olalla](https://www.drupal.org/u/juanolalla) y revisado por
+[Diego Marrufo](https://www.drupal.org/u/dimaro).

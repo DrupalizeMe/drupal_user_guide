@@ -1,38 +1,40 @@
 ---
-title: "Concept: Regions in a Theme"
-description: "Overview of regions from a theming perspective."
+title: "Concepto: regiones de un tema"
+description: "Descripción general de las regiones desde la perspectiva de la maquetación."
 id: "block-regions"
 translation_key: "block-regions"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #block-regions }
+## Conocimientos previos { #block-regions }
 
 [understanding-themes](./understanding-themes.md)
-## What is a region?
+## ¿Qué es una región?
 
-Besides its primary content, a web page contains other content such as site
-branding (site name, slogan, and logo), navigation aids (menus, links, and
-icons), formatted text, and images. Each theme provides a set of named regions,
-such as _Header_, _Content_, and _Sidebar_, where site builders may choose to
-place their content.
+Además de su contenido principal, una página web contiene otro contenido como
+la identidad del sitio (nombre, eslogan y logo), ayudas de navegación (menús,
+enlaces e iconos), texto con formato e imágenes. Cada tema proporciona un
+conjunto de regiones con nombre, como _Header_, _Content_ y _Sidebar_, donde los
+site builders pueden decidir colocar su contenido.
 
-The available regions depend on the theme design. Only the Content region,
-which contains the primary content, is required; others are optional.  The
-core Bartik theme provides the regions highlighted in the following image.
+Las regiones disponibles dependen del diseño del tema. Solo es obligatoria la
+región Content, que contiene el contenido principal; las demás son opcionales.
+El tema del núcleo Olivero proporciona las regiones que se destacan en la
+siguiente imagen.
 
-<img src="/images/block-regions-bartik.png" alt="core Bartik theme regions" width="100%" />
+<img src="/images/block-regions-olivero.png" alt="core Olivero theme regions" width="100%" />
 
-## Related topics
+## Temas relacionados
 
 * [block-concept](./block-concept.md)
 * [planning-data-types](./planning-data-types.md)
 * [block-place](./block-place.md)
-## Additional resources
 
-* [_Drupal.org_ community documentation page "Assigning content to regions"](https://www.drupal.org/node/171224)
+*Atribuciones*
 
-*Attributions*
+Escrito y editado por [John MacDonald](https://www.drupal.org/u/jfmacdonald),
+[Michael Lenahan](https://www.drupal.org/u/michaellenahan) en
+[erdfisch](https://erdfisch.de),
+y [Joe Shindelar](https://www.drupal.org/u/eojthebrave) en
+[Drupalize.Me](https://drupalize.me).
 
-Written and edited by [John MacDonald](https://www.drupal.org/u/jfmacdonald),
-and [Michael Lenahan](https://www.drupal.org/u/michaellenahan) at
-[erdfisch](https://erdfisch.de).
+Traducido por [Alvaro Hurtado](https://www.drupal.org/u/alvar0hurtad0).

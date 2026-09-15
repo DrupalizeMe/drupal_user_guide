@@ -7,23 +7,28 @@ source_locale: "es"
 ---
 [](){ #preface-scenario }
 
-Cuando lee esta guía, es útil tener un proyecto de sitio web concreto en mente. El siguiente escenario
-de sitio web proporciona un contexto y hace de hilo conductor de los ejemplos en esta guía:
+Cuando lee esta guía, es útil tener en mente un proyecto de sitio web concreto.
+El siguiente escenario de proyecto proporciona un contexto y hace de hilo
+conductor de los ejemplos de esta guía:
 
-Está haciendo un sitio web para un mercado de granjeros. Este sitio necesita mostrar
-información sobre la ubicación y horarios del mercado, y una página con información sobre 
-la historia del mercado. También necesita una lista de proveedores. Los proveedores deben ser
-capaces de editar sus listados ( incluyendo un logo o fotografía), y las entradas de tipo receta.
-Los visitantes del sitio web pueden navegar por las recetas, o encontrar recetas usando ingredientes que
-han obtenido en el mercado. Algunos visitantes de su sitio hablan otro idioma, asi que las páginas principales
-y las páginas de los proveedores necesitan ser traducidas.
+Está haciendo un sitio web para un mercado de agricultores. El sitio necesita
+mostrar información sobre la ubicación y el horario del mercado, y una página
+Acerca de con la historia del mercado. También necesita listar los vendors. Los
+vendors deben poder editar sus fichas (incluyendo un logo o una foto) y publicar
+recetas. Los visitantes del sitio deben poder explorar las recetas, o localizar
+recetas usando ingredientes que hayan comprado en el mercado. Algunos visitantes
+de su sitio hablan otro idioma, así que las páginas principales y las páginas de
+vendors deben traducirse.
 
-A medida que avanza en la guía y prueba las tareas que se presentan, puede que elija seguir el escenario exactamente;
-también puede modificar las tareas para que se adapten mejor a sus propositos. Si sigue el escenario exactamente, va a necesitar
-algunas imágenes, que están ubicadas en el directorio  _assets_ del archivo _.zip_ o _.tgz_ disponible para descargar en la 
-[Portada de la Guía de usuario](https://www.drupal.org/project/user_guide).
+A medida que avanza por la guía y prueba las tareas que se describen, puede
+optar por seguir el escenario exactamente; también puede modificar las tareas
+para que se adapten a sus propósitos. Si quiere seguir el escenario
+exactamente, verá que necesita algunos archivos de imagen, que están en el
+directorio _assets_ del archivo _.zip_ o _.tgz_ que se puede descargar en la
+[página del proyecto User Guide](https://www.drupal.org/project/user_guide).
 
 *Atribuciones*
 
 Escrito/editado por [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
 Traducido por [Guiu Rocafort Ferrer](https://www.drupal.org/u/guiurocafortferrer).

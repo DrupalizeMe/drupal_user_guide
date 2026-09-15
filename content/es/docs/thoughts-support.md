@@ -1,54 +1,59 @@
 ---
-title: "Getting Support"
-description: "How to find support for issues faced while developing a site."
+title: "Obtener soporte"
+description: "Cómo encontrar ayuda para los problemas que surgen al desarrollar un sitio."
 id: "thoughts-support"
 translation_key: "thoughts-support"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #thoughts-support }
+## Conocimientos previos { #thoughts-support }
 
 * [understanding-project](./understanding-project.md)
 * [thoughts-connecting](./thoughts-connecting.md)
-## Where can you find support?
+## ¿Dónde puede encontrar soporte?
 
-The Drupal project is open-source, so if you have questions about or problems
-with the software, your options for finding answers and fixes are somewhat
-different from what they would be for commercial software.
+El proyecto Drupal es de código abierto, así que si tiene dudas sobre el
+software o problemas con él, sus opciones para encontrar respuestas y
+soluciones son algo distintas de las que tendría con un software comercial.
 
-There are several options for free support provided by community
-volunteers. First, some IRC channels, local groups, and language communities
-encourage support questions, through on-line chat, in-person meetings, or
-websites (find out more about these on [thoughts-connecting](./thoughts-connecting.md)).
+Hay varias opciones de soporte gratuito que ofrecen personas voluntarias de la
+comunidad. En primer lugar, algunos canales de Slack, canales de DrupalChat,
+grupos locales y comunidades lingüísticas animan a hacer preguntas de soporte,
+a través de chat en línea, reuniones presenciales o sitios web (encuentre más
+información sobre estos en [thoughts-connecting](./thoughts-connecting.md)).
 
-Second, some (but not all) contributed module, distribution, and theme projects
-encourage you to post support requests in issues. Generally, projects that have
-a very large number of users do not allow support requests in their issues
-(Drupal Core is in that category), while projects with a smaller number of users
-welcome the occasional support question. Be respectful of developer time and
-read the documentation for the project before posting a question in an issue. On
-the other hand, all projects encourage you to use issues to report problems and
-bugs; see [thoughts-connecting](./thoughts-connecting.md) to learn more about that.
+En segundo lugar, algunos proyectos de módulos contribuidos, distribuciones y
+temas (pero no todos) le animan a publicar solicitudes de soporte en sus
+incidencias. Por lo general, los proyectos con un número muy grande de usuarios
+no permiten solicitudes de soporte en sus incidencias (el núcleo de Drupal está
+en esa categoría), mientras que los proyectos con un número menor de usuarios
+aceptan alguna pregunta de soporte ocasional. Sea respetuoso con el tiempo de
+las personas desarrolladoras y lea la documentación del proyecto antes de
+publicar una pregunta en una incidencia. Por otra parte, todos los proyectos le
+animan a usar las incidencias para informar de problemas y errores; ver
+[thoughts-connecting](./thoughts-connecting.md) para saber más sobre eso.
 
-In addition to those resources, the following sites provide free forums where
-volunteers answer support questions about Drupal:
+Además de esos recursos, los siguientes sitios ofrecen foros gratuitos donde
+personas voluntarias responden preguntas de soporte sobre Drupal:
 
-* The [_Drupal.org_ Forums](https://www.drupal.org/forum)
+* Los [_Drupal.org_ Forums](https://www.drupal.org/forum)
 * ["Drupal Answers" on StackExchange](https://drupal.stackexchange.com/)
 
-If you prefer to pay for support (presumably in exchange for more extensive
-service or better availability), you can find service providers in the
-["Drupal Marketplace" on _Drupal.org_](https://www.drupal.org/drupal-services).
-## Related topics
+Si prefiere pagar por el soporte (presumiblemente a cambio de un servicio más
+amplio o una mejor disponibilidad), puede encontrar proveedores de servicios en
+el ["Drupal Marketplace" on _Drupal.org_](https://www.drupal.org/drupal-services).
+## Temas relacionados
 
 * [thoughts-learn-more](./thoughts-learn-more.md)
 * [thoughts-connecting](./thoughts-connecting.md)
-## Additional resources
+## Recursos adicionales
 
 * ["Support" page on _Drupal.org_](https://www.drupal.org/support)
 * ["Drupal Marketplace" on _Drupal.org_](https://www.drupal.org/drupal-services)
 * The [_Drupal.org_ Forums](https://www.drupal.org/forum)
 * ["Drupal Answers" on StackExchange](https://drupal.stackexchange.com/)
 
-*Attributions*
+*Atribuciones*
 
-Written by [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+Escrito por [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

@@ -1,75 +1,82 @@
 ---
-title: "Concept: Data Backups"
-description: "Overview of data backups and what should be backed up on a site."
+title: "Concepto: copias de seguridad de los datos"
+description: "Descripción general de las copias de seguridad de los datos y de qué debería respaldarse en un sitio."
 id: "prevent-backups"
 translation_key: "prevent-backups"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #prevent-backups }
+## Conocimientos previos { #prevent-backups }
 
 * [understanding-drupal](./understanding-drupal.md)
 * [install-prepare](./install-prepare.md)
-## What is a site backup?
+## ¿Qué es una copia de seguridad de un sitio?
 
-If something happens to the computer (or computers) that your site and its
-database are running on, or if you lose access to this computer, you could lose
-some or all of your site's data. You could also lose data if your site is
-hacked, or if someone with administrative privileges on your site deletes or
-alters data mistakenly from the administrative interface. In order to prevent
-scenarios like this from being permanent, expensive data losses, it is important
-to make regular backups of your site's data, and to store them in a location
-that is separate from the computer where your site is running.
+Si le ocurre algo al ordenador (u ordenadores) en el que se ejecutan su sitio y
+su base de datos, o si pierde el acceso a ese ordenador, podría perder parte o
+la totalidad de los datos de su sitio. También podría perder datos si su sitio
+sufre un ataque, o si alguien con privilegios administrativos en su sitio borra
+o altera datos por error desde la interfaz administrativa. Para evitar que
+situaciones como estas se conviertan en pérdidas de datos permanentes y
+costosas, es importante hacer copias de seguridad periódicas de los datos de su
+sitio y guardarlas en una ubicación separada del ordenador donde se ejecuta su
+sitio.
 
-The frequency with which you should make data backups, and how many backups you
-should keep, depends on how frequently your site is changing. If you have a very
-large amount of content on your site that is being added to or updated many
-times per day, you would want to make more frequent backups than you would for a
-site that changes rarely. Also consider that some time could pass between when a
-data problem occurs and when you notice that it is a problem, so storing a
-sequence of backups (so that you can go back to the last known good data and
-retrieve that), rather than overwriting a single backup repeatedly, is a
-good practice.
+La frecuencia con la que debería hacer copias de seguridad, y cuántas copias
+debería conservar, depende de la frecuencia con la que cambia su sitio. Si tiene
+una gran cantidad de contenido en su sitio que se añade o se actualiza muchas
+veces al día, querrá hacer copias de seguridad más frecuentes que en un sitio
+que cambia rara vez. Tenga en cuenta también que puede pasar cierto tiempo entre
+que se produce un problema con los datos y que usted se da cuenta de que es un
+problema, así que guardar una secuencia de copias de seguridad (para poder
+volver a los últimos datos correctos conocidos y recuperarlos), en lugar de
+sobrescribir repetidamente una única copia, es una buena práctica.
 
-Another consideration is that whatever format you store your backups in, it is a
-good idea to verify that you can actually retrieve lost data from your
-backups. You might want to test several possible data loss scenarios, and make
-sure that your data can be restored to the site in all cases.
+Otra consideración es que, sea cual sea el formato en el que guarde sus copias
+de seguridad, es buena idea comprobar que realmente puede recuperar datos
+perdidos a partir de ellas. Puede que quiera probar varios escenarios posibles
+de pérdida de datos y asegurarse de que sus datos se pueden restaurar en el
+sitio en todos los casos.
 
-In order to make a complete backup of your site, you will need to make copies of
-the following:
+Para hacer una copia de seguridad completa de su sitio, tendrá que hacer copias
+de lo siguiente:
 
-* The data in the _sites_ directory, including the _sites/default/settings.php_
-file.
-* The data in your site's database. A few tables can be truncated, such as those
-storing the temporary data cache and user login session information, but it is
-always safe to back up the entire database.
-* Uploaded files, such as images and other attachments. The location of these
-files is configurable; the standard location is the _sites/default/files_
-directory under your site root. In the _Manage_ administrative menu, navigate
-to _Configuration_ > _Media_ > _File system_ (_admin/config/media/file-system_)
-to check the file upload locations; to change them, you'll need to edit your
-_settings.php_ file.
-* Modules, themes and any other software files you have customized. You can find
-customized modules and themes in the _modules_ and _themes_ directories
-respectively. Some people prefer to back up all software files, including core
-files and contributed modules and themes (which you could recover by downloading
-them again from the source), rather than trying to pick out specific files that
-definitely need to be backed up.
+* Los datos del directorio _sites_, incluido el archivo
+_sites/default/settings.php_.
+* Los datos de la base de datos de su sitio. Se pueden truncar algunas tablas,
+como las que almacenan la caché temporal de datos y la información de sesión de
+inicio de sesión de los usuarios, pero siempre es seguro respaldar toda la base
+de datos.
+* Los archivos subidos, como imágenes y otros adjuntos. La ubicación de estos
+archivos es configurable; la ubicación estándar es el directorio
+_sites/default/files_ bajo la raíz de su sitio. En el menú administrativo
+_Manage_, vaya a _Configuration_ > _Media_ > _File system_
+(_admin/config/media/file-system_) para comprobar las ubicaciones de subida de
+archivos; para cambiarlas, tendrá que editar su archivo _settings.php_.
+* Los módulos, temas y cualquier otro archivo de software que haya
+personalizado. Puede encontrar los módulos y temas personalizados en los
+directorios _modules_ y _themes_ respectivamente. Algunas personas prefieren
+respaldar todos los archivos de software, incluidos los archivos del núcleo y
+los módulos y temas contribuidos (que podría recuperar volviéndolos a descargar
+desde su origen), en lugar de intentar seleccionar los archivos concretos de los
+que hay que hacer copia de seguridad sin falta.
 
-You can perform a test to confirm whether your backup has been done right by
-making a development copy of the site (see [install-dev-making](./install-dev-making.md)).
-## Related topics
+Puede hacer una prueba para confirmar si la copia de seguridad se ha hecho
+correctamente creando una copia de desarrollo del sitio (ver
+[install-dev-making](./install-dev-making.md)).
+## Temas relacionados
 
 * [security-update-core](./security-update-core.md)
 * [install-dev-making](./install-dev-making.md)
 * [prevent-cache](./prevent-cache.md)
-## Additional resources
+## Recursos adicionales
 
 * [_Drupal.org_ community documentation page "Backing up a site"](https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site)
 * The [contributed Backup and Migrate module](https://www.drupal.org/project/backup_migrate),
 which can be used to set up automatic backups of the database and uploaded
 files.
 
-*Attributions*
+*Atribuciones*
 
-Written by [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+Escrito por [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

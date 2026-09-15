@@ -1,111 +1,103 @@
 ---
-title: "Adding Basic Fields to a Content Type"
-description: "How to add fields to a content type."
+title: "Añadir campos básicos a un tipo de contenido"
+description: "Cómo añadir campos a un tipo de contenido."
 id: "structure-fields"
 translation_key: "structure-fields"
 source_locale: "es"
 ---
-## Goal { #structure-fields }
+## Objetivo { #structure-fields }
 
-Add a link field and an image field to the Vendor content type.
-## Prerequisite knowledge
+Añadir un campo de enlace y un campo de imagen al tipo de contenido Vendor.
+## Conocimientos previos
 
 [planning-data-types](./planning-data-types.md)
-## Site prerequisites
+## Requisitos previos del sitio web
 
-The Vendor content type must exist. See [structure-content-type](./structure-content-type.md).
-## Steps
+El tipo de contenido Vendor debe existir. Ver [structure-content-type](./structure-content-type.md).
+## Pasos
 
-Add the fields Vendor URL and Main image to the Vendor content type.
+Añade los campos Vendor URL e Main image al tipo de contenido Vendor.
 
-1. In the _Manage_ administrative menu, navigate to _Structure_ > _Content
-    types_ (_admin/structure/types_). Then click _Manage fields_ in the dropdown
-    button for the Vendor content type. The _Manage fields_ page appears. Note that
-    the names and descriptions of the content types and fields that were provided by
-    your installation profile are shown in English on these pages; see
-    [language-concept](./language-concept.md) for an explanation.
-1. Click _Add field_. The _Add field_ page appears. You can either create a new
-    field for the content type or re-use an existing field.
-1. Fill in the fields as shown below.
+1. En el menú administrativo _Manage_, ve a _Structure_ > _Content types_
+    (_admin/structure/types_). A continuación, haz clic en _Manage fields_ en el
+    botón desplegable del tipo de contenido Vendor. Aparece la página _Manage
+    fields_. Desde aquí puedes crear un nuevo campo para el tipo de contenido o
+    reutilizar un campo existente. Ten en cuenta que los nombres y descripciones de
+    los tipos de contenido y campos que proporciona tu perfil de instalación se
+    muestran en inglés en estas páginas; ver [language-concept](./language-concept.md) para una
+    explicación.
+1. Haz clic en _Create a new field_. Aparece la página _Add field_.
+    ![Add field page to choose field type](/images/structure-fields-add-field.png)
+1. Elige el tipo de campo _Link_ en las opciones _Choose a field type_. Haz clic
+    en _Continue_. Aparece la página _Add field_ con un formulario para configurar
+    la etiqueta del campo.
+1. Rellena los campos como se muestra a continuación.
     <table>
       <thead>
         <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Value</th>
+          <th>Nombre del campo</th>
+          <th>Explicación</th>
+          <th>Valor</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Add a new field</td>
-          <td>Field type</td>
+          <td>Label</td>
+          <td>Etiqueta visible en las páginas de administración</td>
+          <td>Vendor URL</td>
+        </tr>
+        <tr>
+          <td>Choose a type of field</td>
+          <td>Tipo de campo</td>
           <td>Link</td>
         </tr>
-        <tr>
-          <td>Label</td>
-          <td>Label that is visible in administration pages</td>
-          <td>Vendor URL</td>
-        </tr>
       </tbody>
     </table>
 
-    A machine name is automatically generated, based on the _Label_ value. Click
-    _Edit_ if you want to override the default name.
-    ![Add field page](/images/structure-fields-add-field.png)
+    Se genera automáticamente un nombre de máquina basado en el valor de _Label_.
+    Haz clic en _Edit_ si quieres anular el nombre por defecto.
+    ![Add field page to set field label](/images/structure-fields-add-field-label.png)
 
-1. Click _Save and continue_. The page Vendor URL appears which lets you set
-    the allowed number of values. Fill in the fields as shown below.
+1. Haz clic en _Continue_. Aparece la página _Vendor URL settings for Vendor_,
+    que te permite configurar el campo. Rellena los campos como se muestra a
+    continuación.
     <table>
       <thead>
         <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Value</th>
+          <th>Nombre del campo</th>
+          <th>Explicación</th>
+          <th>Valor</th>
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>Label</td>
+          <td>Etiqueta visible en el formulario de contenido</td>
+          <td>Vendor URL</td>
+        </tr>
         <tr>
           <td>Allowed number of values</td>
-          <td>The number of values that can be entered</td>
+          <td>El número de valores que se pueden introducir</td>
           <td>Limited, 1</td>
-        </tr>
-      </tbody>
-    </table>
-1. Click _Save field settings_. The page _Vendor URL settings for Vendor_
-    appears which allows you to configure the field. Fill in the fields as shown
-    below.
-    <table>
-      <thead>
-        <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Label</td>
-          <td>Label that is visible in the content form</td>
-          <td>Vendor URL</td>
         </tr>
         <tr>
           <td>Help text</td>
-          <td>The instruction that is shown below the field</td>
-          <td>(leave blank)</td>
+          <td>La instrucción que se muestra debajo del campo</td>
+          <td>(dejar en blanco)</td>
         </tr>
         <tr>
           <td>Required field</td>
-          <td>Whether the field is required or not</td>
-          <td>Unchecked</td>
+          <td>Si el campo es obligatorio o no</td>
+          <td>Sin marcar</td>
         </tr>
         <tr>
           <td>Allowed link type</td>
-          <td>The kind of links that can be entered</td>
+          <td>El tipo de enlaces que se pueden introducir</td>
           <td>External links only</td>
         </tr>
         <tr>
           <td>Allow link text</td>
-          <td>Whether a link text can be entered</td>
+          <td>Si se puede introducir texto del enlace</td>
           <td>Disabled</td>
         </tr>
       </tbody>
@@ -113,107 +105,99 @@ Add the fields Vendor URL and Main image to the Vendor content type.
 
     <img src="/images/structure-fields-vendor-url.png" alt="Field settings page for Vendor URL" width="100%" />
 
-1. Click _Save settings_. The Vendor URL has been added to the content
-    type. Continue creating the Main image field.
-1. Click _Add field_. The _Add field_ page appears. Fill in the fields as shown
-    below.
+1. Haz clic en _Save settings_. Se ha añadido Vendor URL al tipo de contenido.
+    Continúa creando el campo Main image.
+1. Haz clic en _Create a new field_. Aparece la página _Add field_.
+1. Elige el tipo de campo _File upload_ en las opciones _Choose a field type_.
+    Haz clic en _Continue_. Aparece la página _Add field_ con un formulario para
+    configurar la etiqueta del campo.
+1. Algunos tipos de campo requieren la selección de un subtipo. Rellena los
+    campos como se muestra a continuación.
     <table>
       <thead>
         <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Value</th>
+          <th>Nombre del campo</th>
+          <th>Explicación</th>
+          <th>Valor</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Add a new field</td>
-          <td>Field type</td>
+          <td>Label</td>
+          <td>Etiqueta visible en las páginas de administración</td>
+          <td>Main image</td>
+        </tr>
+        <tr>
+          <td>Choose an option below</td>
+          <td>Subtipo de campo</td>
           <td>Image</td>
         </tr>
-        <tr>
-          <td>Label</td>
-          <td>Label that is visible in administration pages</td>
-          <td>Main image</td>
-        </tr>
       </tbody>
     </table>
-1. Click _Save and continue_. The page Main image appears. Fill in the fields
-    as shown below.
+1. Haz clic en _Continue_. Aparece la página Main image settings for Vendor.
+    Rellena los campos como se muestra a continuación.
     <table>
       <thead>
         <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Value</th>
+          <th>Nombre del campo</th>
+          <th>Explicación</th>
+          <th>Valor</th>
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>Label</td>
+          <td>Etiqueta visible en el formulario de contenido</td>
+          <td>Main image</td>
+        </tr>
         <tr>
           <td>Allowed number of values</td>
-          <td>The number of values that can be entered</td>
+          <td>El número de valores que se pueden introducir</td>
           <td>Limited, 1</td>
         </tr>
-      </tbody>
-    </table>
-
-    You can set a default image here. This will be used when you do not provide an
-    image when creating a Vendor content item.
-
-1. Click _Save field settings_. The page _Main image settings for Vendor_
-    appears. Fill in the fields as shown below.
-    <table>
-      <thead>
         <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Label</td>
-          <td>Label that is visible in the content form</td>
-          <td>Main image</td>
+          <td>Default image</td>
+          <td>Puedes establecer una imagen por defecto aquí. Se usará cuando no proporciones una imagen al crear un elemento de contenido Vendor.</td>
+          <td>(dejar en blanco)</td>
         </tr>
         <tr>
           <td>Help text</td>
-          <td>The instruction that is shown below the field</td>
-          <td>(leave blank)</td>
+          <td>La instrucción que se muestra debajo del campo</td>
+          <td>(dejar en blanco)</td>
         </tr>
         <tr>
           <td>Required field</td>
-          <td>Whether the field is required or not</td>
+          <td>Si el campo es obligatorio o no</td>
           <td>Checked</td>
         </tr>
         <tr>
           <td>Allowed file extensions</td>
-          <td>The type of images that can be uploaded</td>
+          <td>El tipo de imágenes que se pueden subir</td>
           <td>png, gif, jpg, jpeg</td>
         </tr>
         <tr>
           <td>File directory</td>
-          <td>The directory where the files will be stored. By providing a file directory value, you ensure that all images uploaded via the Main image field will be located in the same directory.</td>
+          <td>El directorio donde se almacenarán los archivos. Al proporcionar un valor de directorio de archivo, garantizas que todas las imágenes subidas a través del campo Main image se ubicarán en el mismo directorio.</td>
           <td>vendors</td>
         </tr>
         <tr>
-          <td>Minimum image resolution</td>
-          <td>The minimum resolution of the uploaded image</td>
+          <td>Minimum image dimensions</td>
+          <td>Las dimensiones mínimas de la imagen subida</td>
           <td>600 x 600</td>
         </tr>
         <tr>
           <td>Maximum upload size</td>
-          <td>The maximum file size of the uploaded image</td>
+          <td>El tamaño máximo de archivo de la imagen subida</td>
           <td>5 MB</td>
         </tr>
         <tr>
           <td>Enable Alt field</td>
-          <td>Whether an alternative text can be entered</td>
+          <td>Si se puede introducir un texto alternativo</td>
           <td>Checked</td>
         </tr>
         <tr>
           <td>Alt field required</td>
-          <td>Whether an alternative text is required</td>
+          <td>Si el texto alternativo es obligatorio</td>
           <td>Checked</td>
         </tr>
       </tbody>
@@ -221,32 +205,34 @@ Add the fields Vendor URL and Main image to the Vendor content type.
 
     <img src="/images/structure-fields-main-img.png" alt="Field settings page for Main Image" width="100%" />
 
-1. Click _Save settings_. Main image has been added to the content type.
+1. Haz clic en _Save settings_. Se ha añadido Main image al tipo de contenido.
     <img src="/images/structure-fields-result.png" alt="Manage fields page" width="100%" />
-1. Add a Main image field to the Recipe content type, using similar steps. Start
-    by navigating to the Recipe content type's _Manage Fields_ page in step 1. Then
-    skip to step 7 and follow the remaining steps, but reuse the existing Main image
-    field you created for the Vendor content type rather than creating a new
-    field. In subsequent steps, some of the configuration screens will not be
-    available, because of the field reuse.
-1. Create two Vendor content items (see [content-create](./content-create.md)) called "Happy Farm"
-    and "Sweet Honey". Make sure that they include images and URLs.
-## Expand your understanding
+1. Añade un campo Main image al tipo de contenido Recipe, usando pasos similares.
+    Comienza navegando a la página _Manage Fields_ del tipo de contenido Recipe.
+    Luego usa el botón _Re-use an existing field_ para abrir el diálogo modal y
+    presiona el botón _Re-use_ que corresponde al campo Main image en la tabla. A
+    continuación salta al paso 7 y sigue los pasos restantes.
+    <img src="/images/structure-fields-main-img-reuse.png" alt="Select a field to re-use" width="100%" />
+1. Crea dos elementos de contenido Vendor (ver [content-create](./content-create.md)) llamados
+    "Happy Farm" y "Sweet Honey". Asegúrate de que incluyen imágenes y URLs.
+## Ampliar conocimiento
 
 * [structure-image-styles](./structure-image-styles.md)
 * [structure-content-display](./structure-content-display.md)
 * [structure-form-editing](./structure-form-editing.md)
-## Videos
+## Vídeos
 
 <div class="embedded-video">
   <iframe src="https://www.youtube-nocookie.com/embed/CZpfR9WbVcQ" title="Adding Basic Fields to a Content Type" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 
-## Additional resources
+## Recursos adicionales
 
-[_Drupal.org_ community documentation page "Add a field to a content type"](https://www.drupal.org/node/774742)
+[Página de documentación comunitaria de _Drupal.org_ "Add a field to a content type"](https://www.drupal.org/docs/7/nodes-content-types-and-fields/add-a-field-to-a-content-type)
 
-*Attributions*
+*Atribuciones*
 
-Written by [Sree Veturi](https://www.drupal.org/u/sree) and
-[Boris Doesborg](https://www.drupal.org/u/batigolix).
+Escrito por [Sree Veturi](https://www.drupal.org/u/sree) y
+[Boris Doesborg](https://www.drupal.org/u/batigolix), y [Joe Shindelar](https://www.drupal.org/u/eojthebrave) en [Drupalize.Me](https://drupalize.me).
+
+Traducido por [Alvaro Hurtado](https://www.drupal.org/u/alvar0hurtad0).

@@ -1,50 +1,55 @@
 ---
-title: "Concept: Drupal Licensing"
-description: "Overview of Drupal licensing and the guidelines to be followed by users and contributors."
+title: "Concepto: licencia de Drupal"
+description: "Descripción general de la licencia de Drupal y las directrices que deben seguir los usuarios y los colaboradores."
 id: "understanding-gpl"
 translation_key: "understanding-gpl"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #understanding-gpl }
+## Conocimientos previos { #understanding-gpl }
 
 [understanding-drupal](./understanding-drupal.md)
-## What is Drupal Licensing?
+## ¿Qué es la licencia de Drupal?
 
-Drupal and all contributed files hosted on _Drupal.org_ are licensed under the
-GNU General Public License (GPL), version 2 or later. That means you are free to
-download, reuse, modify, and distribute any files that are part of a project on
-_Drupal.org_ under the terms of GPL version 2 or 3. You can also run the core
-software in combination with any code with any license that is compatible with
-version 2 or 3.
+Drupal y todos los archivos contribuidos alojados en _Drupal.org_ están
+licenciados bajo la Licencia Pública General de GNU (GPL), versión 2 o
+posterior. Eso significa que es libre de descargar, reutilizar, modificar y
+distribuir cualquier archivo que forme parte de un proyecto en _Drupal.org_
+bajo los términos de la GPL versión 2 o 3. También puede ejecutar el software
+del núcleo en combinación con cualquier código con cualquier licencia que sea
+compatible con la versión 2 o 3.
 
-Drupal contributors should follow these guidelines:
+Los colaboradores de Drupal deben seguir estas directrices:
 
-* All files (PHP, JavaScript, images, Flash, etc.) that are part of a project
-on _Drupal.org_ have to be under GPL version 2 or later.
-* All Drupal contributors retain copyright on their code, but agree to release
-it under the same license as Drupal.
-* Drupal modules and themes are a derivative work of Drupal. If you distribute
-them, you must do so under the terms of GPL version 2 or later.
-* All content on _Drupal.org_ itself is copyrighted by its original
-contributors, and is licensed under the Creative Commons Attribution-ShareAlike
-license 2.0.
-* Sample code on _Drupal.org_ is also available under GPL version 2 or later.
-## Related topics
+* Todos los archivos (PHP, JavaScript, imágenes, Flash, etc.) que forman parte
+de un proyecto en _Drupal.org_ tienen que estar bajo la GPL versión 2 o
+posterior.
+* Todos los colaboradores de Drupal conservan los derechos de autor de su
+código, pero aceptan publicarlo bajo la misma licencia que Drupal.
+* Los módulos y temas de Drupal son una obra derivada de Drupal. Si los
+distribuye, debe hacerlo bajo los términos de la GPL versión 2 o posterior.
+* Todo el contenido del propio _Drupal.org_ tiene los derechos de autor de sus
+colaboradores originales y está licenciado bajo la licencia Creative Commons
+Attribution-ShareAlike 2.0.
+* El código de ejemplo de _Drupal.org_ también está disponible bajo la GPL
+versión 2 o posterior.
+## Temas relacionados
 
 [thoughts-connecting](./thoughts-connecting.md)
-## Additional resources
+## Recursos adicionales
 
 * [_Drupal.org_ page on "Licensing"](https://www.drupal.org/about/licensing)
-* ["Drupal 8 LICENSE.txt" page on _api.drupal.org_](https://api.drupal.org/api/drupal/core!LICENSE.txt/8.2.x)
+* ["Drupal LICENSE.txt" page on _api.drupal.org_](https://api.drupal.org/api/drupal/core!LICENSE.txt/9.0.x)
 * [GNU General Public License, version 2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 * [GNU General Public License, version 3](http://www.gnu.org/licenses/gpl-3.0.en.html)
 * [Creative Commons Attribution-ShareAlike license 2.0.](https://creativecommons.org/licenses/by-sa/2.0/)
 * ["Legal Group" on _groups.drupal.org_](https://groups.drupal.org/legal)
 
-*Attributions*
+*Atribuciones*
 
-Adapted by [Diána Lakatos](https://www.drupal.org/u/dianalakatos) at
-[Pronovix](https://pronovix.com/) from
+Adaptado por [Diána Lakatos](https://www.drupal.org/u/dianalakatos) en
+[Pronovix](https://pronovix.com/) de
 ["Licensing"](https://www.drupal.org/about/licensing)
-copyright 2000-2026 by the individual contributors to the
-[Drupal Community Documentation](https://www.drupal.org/documentation).
+copyright 2000-2026 por los colaboradores individuales de la
+[Documentación de la Comunidad de Drupal](https://www.drupal.org/documentation).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

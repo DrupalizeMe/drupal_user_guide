@@ -1,28 +1,30 @@
 ---
-title: "Concept: Reference Fields"
-description: "Overview of reference fields and their commonly-used types."
+title: "Concepto: campos de referencia"
+description: "Descripción general de los campos de referencia y sus tipos de uso más común."
 id: "structure-reference-fields"
 translation_key: "structure-reference-fields"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #structure-reference-fields }
+## Conocimientos previos { #structure-reference-fields }
 
 [planning-data-types](./planning-data-types.md)
-## What is a reference field?
+## ¿Qué es un campo de referencia?
 
-A _reference field_ is a field that represents a relationship between an entity
-and one or more other entities, which may belong to the same or different entity
-type. The three most commonly-used reference fields are:
+Un _campo de referencia_ es un campo que representa una relación entre una
+entidad y una o varias entidades más, que pueden pertenecer al mismo tipo de
+entidad o a uno distinto. Los tres campos de referencia de uso más común son:
 
-- **Content reference:** A reference to a content item. For example, you might want to connect recipes to the vendors who submitted them. You would set up a content reference field called Submitted by referencing Vendor content items on the Recipe content type.
-- **Taxonomy term reference:** A reference to a taxonomy term. For example, you might want to connect recipes to their ingredients. You would set up a taxonomy term reference field called Ingredients on the Recipe content type. This reference field will point to the vocabulary Ingredients.
-- **User reference:** A reference to a user account. For example, you might want to connect recipes with their chefs. You would set up a user reference field called Chefs on the Recipe content type.
-## Related topics
+- **Referencia de contenido:** Una referencia a un elemento de contenido. Por ejemplo, quizá quiera conectar las recetas con los vendors que las enviaron. Configuraría un campo de referencia de contenido llamado Submitted by que hace referencia a elementos de contenido Vendor en el tipo de contenido Recipe.
+- **Referencia de término de taxonomía:** Una referencia a un término de taxonomía. Por ejemplo, quizá quiera conectar las recetas con sus ingredientes. Configuraría un campo de referencia de término de taxonomía llamado Ingredients en el tipo de contenido Recipe. Este campo de referencia apuntará al vocabulario Ingredients.
+- **Referencia de usuario:** Una referencia a una cuenta de usuario. Por ejemplo, quizá quiera conectar las recetas con sus chefs. Configuraría un campo de referencia de usuario llamado Chefs en el tipo de contenido Recipe.
+## Temas relacionados
 
 [structure-taxonomy](./structure-taxonomy.md)
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by [Surendra Mohan](https://www.drupal.org/u/surendramohan),
-and [Jojy Alphonso](https://www.drupal.org/u/jojyja) at
+Escrito y editado por [Surendra Mohan](https://www.drupal.org/u/surendramohan)
+y [Jojy Alphonso](https://www.drupal.org/u/jojyja) en
 [Red Crackle](http://redcrackle.com).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

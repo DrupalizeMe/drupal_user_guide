@@ -76,7 +76,6 @@ Descripción general de gestión de páginas. Incluye elementos de contenido, ed
 - [content-paths](./content-paths.md)
 - [content-create](./content-create.md)
 - [content-edit](./content-edit.md)
-- [content-in-place-edit](./content-in-place-edit.md)
 - [menu-home](./menu-home.md)
 - [menu-concept](./menu-concept.md)
 - [menu-link-from-content](./menu-link-from-content.md)

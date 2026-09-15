@@ -1,50 +1,54 @@
 ---
-title: "Concept: Content Entities and Fields"
-description: "Overview of content entities and fields."
+title: "Concepto: entidades de contenido y campos"
+description: "Descripción general de las entidades de contenido y los campos."
 id: "planning-data-types"
 translation_key: "planning-data-types"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #planning-data-types }
+## Conocimientos previos { #planning-data-types }
 
 * [understanding-data](./understanding-data.md)
 * [understanding-modules](./understanding-modules.md)
-## What is a content entity?
+## ¿Qué es una entidad de contenido?
 
-A _content entity_ (or more commonly, _entity_) is an item of content data,
-which can consist of text, HTML markup, images, attached files, and other data
-that is intended to be displayed to site visitors. Content entities can be
-defined by the core software or by modules.
+Una _entidad de contenido_ (o, más habitualmente, _entidad_) es un elemento de
+datos de contenido, que puede consistir en texto, marcado HTML, imágenes,
+archivos adjuntos y otros datos que se pretende mostrar a las personas que
+visitan el sitio. Las entidades de contenido pueden estar definidas por el
+software del núcleo o por módulos.
 
-Content entities are grouped into _entity types_, which have different purposes
-and are displayed in very different ways on the site. Most entity
-types are also divided into _entity sub-types_, which are divisions within an
-entity type to allow for smaller variations in how the entities are used and
-displayed. Here is a table of some common content entity types:
+Las entidades de contenido se agrupan en _tipos de entidad_, que tienen
+propósitos distintos y se muestran de formas muy diferentes en el sitio. La
+mayoría de los tipos de entidad se dividen además en _subtipos de entidad_, que
+son divisiones dentro de un tipo de entidad que permiten pequeñas variaciones en
+la forma de usar y mostrar las entidades. Esta es una tabla con algunos tipos
+habituales de entidad de contenido:
 
-| Entity type | Entity sub-type | Defining Module | Main uses |
+| Tipo de entidad | Subtipo de entidad | Módulo que lo define | Usos principales |
 | --- | --- | --- | --- |
-| Content item | Content type | Node module | Content intended to be the main page area for pages on the site<br><br>*Example:* In the farmers market site example, you might have content types for basic pages, vendor pages, and recipe pages. |
-| Comment | Comment type | Comment module | Commentary added to content entities (typically to Content item entities)<br><br>*Example:* On a blog site, blog posts might have comments. They are not needed in the farmers market site example. |
-| User profile | (none) | User module | Data related to a person with a user account (login access) on the site<br><br>*Example:* Every site has at least basic user profiles with user names and email addresses; social networking sites may have more complex user profiles with more information. |
-| Custom block | Block type | Custom Block module | Text and images in smaller chunks, often displayed in the site header,<br><br>*Example:* In the farmers market site example, you might put the hours and location in a sidebar block. |
-| Taxonomy term | Vocabulary | Taxonomy module | Used to classify other types of content<br><br>*Example:* In the farmers market site example, you might classify Recipe content with an Ingredients taxonomy vocabulary, with taxonomy terms like Carrots and Tomatoes. In a blogging site, blog posts might be classified using a Tags vocabulary, and perhaps also a Categories vocabulary. |
-| File | (none) | File module | An image or attachment file that is tracked and managed by the site, often<br><br>*Example:* In the farmers market site example, both Recipe and Vendor pages might have image attachments, which would (behind the scenes) be managed as File entities by the site. |
-| Contact form | Form type | Contact module | A form that lets site visitors contact site owners<br><br>*Example:* A contact form is needed in the farmers market site example. |
-## What is a field?
+| Elemento de contenido | Tipo de contenido | Módulo Node | Contenido pensado para ser el área principal de la página en las páginas del<br><br>*Ejemplo:* en el sitio de ejemplo del mercado agrícola, podrías tener tipos de contenido para páginas básicas, páginas de vendedores y páginas de recetas. |
+| Comentario | Tipo de comentario | Módulo Comment | Comentarios añadidos a entidades de contenido (normalmente a entidades de tipo<br><br>*Ejemplo:* en un sitio de blog, las entradas podrían tener comentarios. No hacen falta en el sitio de ejemplo del mercado agrícola. |
+| Perfil de usuario | (ninguno) | Módulo User | Datos relacionados con una persona que tiene una cuenta de usuario (acceso con<br><br>*Ejemplo:* todos los sitios tienen al menos perfiles de usuario básicos con nombres de usuario y direcciones de correo electrónico; los sitios de redes sociales pueden tener perfiles de usuario más complejos con más información. |
+| Bloque personalizado | Tipo de bloque | Módulo Custom Block | Texto e imágenes en fragmentos más pequeños, que a menudo se muestran en la<br><br>*Ejemplo:* en el sitio de ejemplo del mercado agrícola, podrías poner el horario y la ubicación en un bloque de la barra lateral. |
+| Término de taxonomía | Vocabulario | Módulo Taxonomy | Se usa para clasificar otros tipos de contenido<br><br>*Ejemplo:* en el sitio de ejemplo del mercado agrícola, podrías clasificar el contenido de Recetas con un vocabulario de taxonomía de Ingredientes, con términos de taxonomía como Zanahorias y Tomates. En un sitio de blog, las entradas podrían clasificarse con un vocabulario de Etiquetas y quizá también con un vocabulario de Categorías. |
+| Archivo | (ninguno) | Módulo File | Un archivo de imagen o adjunto que el sitio registra y gestiona, a menudo<br><br>*Ejemplo:* en el sitio de ejemplo del mercado agrícola, tanto las páginas de Recetas como las de Vendedores podrían tener imágenes adjuntas, que (entre bastidores) el sitio gestionaría como entidades de tipo Archivo. |
+| Formulario de contacto | Tipo de formulario | Módulo Contact | Un formulario que permite a las personas que visitan el sitio ponerse en<br><br>*Ejemplo:* en el sitio de ejemplo del mercado agrícola hace falta un formulario de contacto. |
+## ¿Qué es un campo?
 
-Within entity items, the data is stored in individual _fields_, each of which
-holds one type of data, such as formatted or plain text, images or other files,
-or dates. Field types can be defined by the core software or by modules.
+Dentro de las entidades, los datos se almacenan en _campos_ individuales, cada
+uno de los cuales contiene un tipo de dato, como texto con formato o sin
+formato, imágenes u otros archivos, o fechas. Los tipos de campo pueden estar
+definidos por el software del núcleo o por módulos.
 
-Fields can be added by an administrator on entity sub-types, so that all
-entity items of a given entity sub-type have the same collection of fields
-available. For example, the Vendor content type in the farmers market example
-might have fields for the vendor name, a logo image, website URL, and
-description, whereas the _Basic page_ content type might only have fields for
-the title and page body. When you create or edit entity items, you are
-specifying the values for the fields on the entity item.
-## Related topics
+Una persona administradora puede añadir campos a los subtipos de entidad, de modo
+que todas las entidades de un subtipo de entidad dado tengan disponible el mismo
+conjunto de campos. Por ejemplo, el tipo de contenido Vendor del ejemplo del
+mercado agrícola podría tener campos para el nombre del vendedor, una imagen de
+logo, la URL del sitio web y una descripción, mientras que el tipo de contenido
+_Basic page_ podría tener solo campos para el título y el cuerpo de la página.
+Cuando creas o editas entidades, especificas los valores de los campos de la
+entidad.
+## Temas relacionados
 
 * [planning-structure](./planning-structure.md)
 * [content-create](./content-create.md)
@@ -53,7 +57,9 @@ specifying the values for the fields on the entity item.
 * [user-concept](./user-concept.md)
 * [block-concept](./block-concept.md)
 
-*Attributions*
+*Atribuciones*
 
-Written and edited by [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon)
-and [Grant Dunham](https://www.drupal.org/u/gdunham).
+Escrito y editado por [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon)
+y [Grant Dunham](https://www.drupal.org/u/gdunham).
+
+Traducido por [Alvaro Hurtado](https://www.drupal.org/u/alvar0hurtad0).

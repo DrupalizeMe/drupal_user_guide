@@ -1,75 +1,78 @@
 ---
-title: "Translating Content"
-description: "How to translate a page into another language."
+title: "Traducir contenido"
+description: "Cómo traducir una página a otro idioma."
 id: "language-content-translate"
 translation_key: "language-content-translate"
 source_locale: "es"
 ---
-## Goal { #language-content-translate }
+## Objetivo { #language-content-translate }
 
-Translate the home page to Spanish.
-## Prerequisite knowledge
+Traducir la página de inicio al español.
+## Conocimientos previos
 
 [language-concept](./language-concept.md)
-## Site prerequisites
+## Requisitos previos del sitio web
 
-* The Home content item must exist. See [content-create](./content-create.md).
-* The core Content Translation module must be installed, and your site must
-have at least two languages. See [language-add](./language-add.md).
-* The _Basic page_ content type must be configured to be translatable. See
+* El contenido Home debe existir. Ver [content-create](./content-create.md).
+* El módulo del núcleo Content Translation debe estar instalado y su sitio debe
+tener al menos dos idiomas. Ver [language-add](./language-add.md).
+* El tipo de contenido _Basic page_ debe estar configurado como traducible. Ver
 [language-content-config](./language-content-config.md).
-## Steps
+## Pasos
 
-1. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
-1. Locate the home page. You can search for it by entering "Home" in the title
-    field.
-1. Select _Translate_ from the dropdown button in the row of the Home content
-    item. The page _Translations of Home_ appears.
-1. Click _Add_ in the row _Spanish_.
+1. En el menú administrativo _Manage_, vaya a _Content_ (_admin/content_).
+1. Localice la página de inicio. Puede buscarla escribiendo "Home" en el campo
+    de título.
+1. Seleccione _Translate_ en el botón desplegable de la fila del elemento de
+    contenido Home. Aparece la página _Translations of Home_.
+1. Haga clic en _Add_ en la fila _Spanish_.
     <img src="/images/language-content-translate-add.png" alt="Adding a content translation" width="100%" />
-1. Note that the user interface has switched to Spanish. To switch it back to
-    English, remove the first instance of _es_ in the browser's URL. For
-    example, if your URL looks like _example.com/es/node/5/translations/add/en/es_,
-    remove the _es_ that comes immediately after _example.com_.
-1. Fill in the fields as shown below.
+1. Tenga en cuenta que la interfaz de usuario ha cambiado al español. Para
+    volver a cambiarla al inglés, elimine la primera aparición de _es_ en la URL
+    del navegador. Por ejemplo, si su URL se parece a
+    _example.com/es/node/5/translations/add/en/es_, elimine el _es_ que aparece
+    inmediatamente después de _example.com_.
+1. Rellene los campos como se muestra a continuación.
     <table>
       <thead>
         <tr>
-          <th>Field name</th>
-          <th>Explanation</th>
-          <th>Value</th>
+          <th>Nombre del campo</th>
+          <th>Explicación</th>
+          <th>Valor</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Title</td>
-          <td>Translated title of the page</td>
+          <td>Título traducido de la página</td>
           <td>Página principal</td>
         </tr>
         <tr>
           <td>Body</td>
-          <td>Translated body of the page</td>
+          <td>Cuerpo traducido de la página</td>
           <td></td>
         </tr>
         <tr>
           <td>URL alias > URL alias</td>
-          <td>Translated address of the webpage</td>
+          <td>Dirección traducida de la página web</td>
           <td>pagina-principal</td>
         </tr>
       </tbody>
     </table>
-1. Click _Save (this translation)_.
-1. Go to your site's home page to view the newly translated page.
-## Expand your understanding
+1. Haga clic en _Save (this translation)_.
+1. Vaya a la página de inicio de su sitio para ver la página recién traducida.
+## Ampliar conocimiento
 
-* Follow the steps above to translate more content on your site.
+* Siga los pasos anteriores para traducir más contenido de su sitio.
 * [language-config-translate](./language-config-translate.md)
-## Videos
+## Vídeos
 
 <div class="embedded-video">
   <iframe src="https://www.youtube-nocookie.com/embed/TOalcUYD5zM" title="Translating Content" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 
-*Attributions*
+*Atribuciones*
 
-Written by [Boris Doesborg](https://www.drupal.org/u/batigolix).
+Escrito por [Boris Doesborg](https://www.drupal.org/u/batigolix).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

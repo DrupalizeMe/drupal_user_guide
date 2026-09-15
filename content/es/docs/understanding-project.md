@@ -1,60 +1,63 @@
 ---
-title: "Concept: The Drupal Project"
-description: "Overview of Free and Open Source Software (FOSS), Drupal project, and Drupal Association."
+title: "Concepto: el proyecto Drupal"
+description: "Descripción general del software libre y de código abierto (FOSS, por sus siglas en inglés), el proyecto Drupal y la Asociación Drupal."
 id: "understanding-project"
 translation_key: "understanding-project"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #understanding-project }
+## Conocimientos previos { #understanding-project }
 
 [understanding-drupal](./understanding-drupal.md)
-## What is Free and Open Source Software?
+## ¿Qué es el software libre y de código abierto?
 
-Free and Open Source Software (FOSS) is software that is developed by a
-community of people, released under a non-commercial license, and whose _source
-code_ (the program files that make up the software) is freely available. For
-more information on the non-commercial license used by Drupal, see
-[understanding-gpl](./understanding-gpl.md).
-## What is the Drupal project?
+El software libre y de código abierto (FOSS) es software desarrollado por una
+comunidad de personas, publicado bajo una licencia no comercial y cuyo _código
+fuente_ (los archivos de programa que componen el software) está disponible
+libremente. Para más información sobre la licencia no comercial que usa Drupal,
+ver [understanding-gpl](./understanding-gpl.md).
+## ¿Qué es el proyecto Drupal?
 
-The Drupal project is a FOSS project whose purpose is to develop the core
-content management system software, as well as add-on modules, additional
-themes, translations, documentation, and special-purpose distributions. The
-people who contribute their time and money to the Drupal project come from all
-over the world, and are a diverse community that comes together for this common
-purpose.
+El proyecto Drupal es un proyecto FOSS cuyo propósito es desarrollar el software
+del núcleo del sistema de gestión de contenidos, así como módulos
+complementarios, temas adicionales, traducciones, documentación y distribuciones
+para propósitos concretos. Las personas que dedican su tiempo y su dinero al
+proyecto Drupal proceden de todo el mundo y forman una comunidad diversa que se
+une en torno a este propósito común.
 
-The community encompasses many smaller groups who perform many different tasks
-such as developing a particular piece of Drupal-related software, writing
-documentation, maintaining the security of Drupal software, translating Drupal
-software into a particular language, using Drupal for some specific purpose,
-and coming together to meet in person within a particular geographical area.
+La comunidad abarca muchos grupos más pequeños que realizan tareas muy
+distintas, como desarrollar una pieza concreta de software relacionado con
+Drupal, escribir documentación, mantener la seguridad del software de Drupal,
+traducir el software de Drupal a un idioma concreto, usar Drupal para algún
+propósito específico y reunirse en persona dentro de una zona geográfica
+determinada.
 
-For more on how you can connect to and communicate with the world-wide
-community, see [thoughts-connecting](./thoughts-connecting.md) and [thoughts-support](./thoughts-support.md).
-## What is the Drupal Association?
+Para saber más sobre cómo puede conectarse y comunicarse con la comunidad
+mundial, ver [thoughts-connecting](./thoughts-connecting.md) y [thoughts-support](./thoughts-support.md).
+## ¿Qué es la Asociación Drupal?
 
-The [Drupal Association](https://www.drupal.org/association) is a non-profit organization
-dedicated to supporting the Drupal project and community. Its main functions
-are:
+La [Asociación Drupal](https://www.drupal.org/association) es una organización sin
+ánimo de lucro dedicada a apoyar el proyecto y la comunidad Drupal. Sus
+funciones principales son:
 
-* Putting on large conventions around the world
-* Maintaining the _Drupal.org_ websites and the servers that they run on
-* Promoting Drupal as a web platform
-* Supporting Drupal education and training
-* Providing grants to the Drupal community in support of its mission
-* Raising funds for these purposes
-## Related topics
+* Organizar grandes congresos por todo el mundo
+* Mantener los sitios web de _Drupal.org_ y los servidores en los que se ejecutan
+* Promocionar Drupal como plataforma web
+* Apoyar la educación y la formación sobre Drupal
+* Conceder ayudas a la comunidad Drupal en apoyo de su misión
+* Recaudar fondos para estos fines
+## Temas relacionados
 
 * [understanding-gpl](./understanding-gpl.md)
 * [security-concept](./security-concept.md)
 * [thoughts-connecting](./thoughts-connecting.md)
 * [thoughts-support](./thoughts-support.md)
-## Additional resources
+## Recursos adicionales
 
 * [Drupal project governance](https://www.drupal.org/governance)
 * [Drupal Code of Conduct](https://www.drupal.org/dcoc)
 
-*Attributions*
+*Atribuciones*
 
-Written by [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+Escrito por [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Traducido por [Juan Santovenia](https://www.drupal.org/u/juancasantito).

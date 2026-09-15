@@ -1,39 +1,40 @@
 ---
-title: "Concept: Distributions"
-description: "Overview of distributions and their different types to set up use-specific websites."
+title: "Concepto: Distribuciones"
+description: "Vista general de las distribuciones, que se pueden usar para configurar sitios web con propósitos específicos."
 id: "understanding-distributions"
 translation_key: "understanding-distributions"
 source_locale: "es"
 ---
-## Prerequisite knowledge { #understanding-distributions }
+## Conocimientos previos { #understanding-distributions }
 
 * [understanding-drupal](./understanding-drupal.md)
 * [understanding-modules](./understanding-modules.md)
 * [understanding-themes](./understanding-themes.md)
-## What are Distributions?
+## ¿Qué son las distribuciones?
 
-_Distributions_ provide site features and functions for a specific type of site
-as a single download containing the core software, contributed modules, themes,
-and pre-defined configuration. A distribution makes it possible to set up a
-complex, use-specific site in fewer steps than installing and configuring
-elements individually.
+Las _distribuciones_ proporcionan características y funcionalidades para un tipo
+específico de sitio web a modo de una única descarga que contiene el núcleo de
+software, los módulos contribuidos, los temas y una configuración predefinida.
+Una distribución hace posible configurar un sitio web complejo para un propósito
+específico en menos pasos que instalando y configurando los elementos de forma
+individual.
 
-There are two main types of distributions:
+Principalmente, hay dos tipos de distribuciones:
 
-- **Full-featured Distributions:** A full-featured distribution is a project that provides a complete solution to set up a site for a specialized purpose such as academic, business, government, nonprofit, publishing, social, etc. For example, you could use an existing distribution for farmers markets to build your own website, or you could share your set-up for the farmers market site as a distribution for others to use.
-- **Other Distributions:** Distributions can also be quick-start tools that developers and site builders can use as a starting point.
-## Related topics
+- **Distribuciones de funcionalidad completa:** Una distribución de funcionalidad completa es un proyecto que proporciona una solución completa para configurar un sitio web con un propósito especializado, como puede ser académico, de negocios, gubernamental, sin ánimo de lucro, editorial, social, etc. Por ejemplo, podría usar una distribución existente para mercados de agricultores para construir su propio sitio web, o podría compartir su configuración del sitio del mercado de agricultores como una distribución para que otros la utilicen.
+- **Otras distribuciones:** Las distribuciones también pueden ser herramientas de inicio rápido que los desarrolladores y _site-builders_ pueden usar como punto de partida.
+## Temas relacionados
 
 [thoughts-connecting](./thoughts-connecting.md)
-## Additional resources
+## Recursos adicionales
 
 [_Drupal.org_ Drupal Distribution Downloads](https://www.drupal.org/project/project_distribution)
 
-*Attributions*
+*Atribuciones*
 
-Adapted and edited by [Diána Lakatos](https://www.drupal.org/u/dianalakatos)
-and [Antje Lorch](https://www.drupal.org/u/ifrik),
-from ["Distributions"](https://www.drupal.org/docs/7/distributions)
-and ["Download & Extend -- Distributions"](https://www.drupal.org/project/project_distribution)
-copyright 2000-2026 by the individual contributors to the
-[Drupal Community Documentation](https://www.drupal.org/documentation).
+Adaptado y editado por [Diána Lakatos](https://www.drupal.org/u/dianalakatos)
+y [Antje Lorch](https://www.drupal.org/u/ifrik),
+a partir de ["Distributions"](https://www.drupal.org/docs/7/distributions)
+y ["Download & Extend -- Distributions"](https://www.drupal.org/project/project_distribution)
+copyright 2000-2026 por los colaboradores individuales de la
+[Documentación de la Comunidad de Drupal](https://www.drupal.org/documentation).
