@@ -1,0 +1,131 @@
+[[security-update-module]]
+
+=== Updating a Module
+
+[role="summary"]
+How to update a contributed module using Composer and the administrative
+interface for running the Database Updates script.
+
+(((Module,updating)))
+(((Security update,applying)))
+(((Contributed module,updating)))
+
+==== Goal
+
+Update a contributed module and run the _Database updates_ script.
+
+==== Prerequisite knowledge
+
+* <<security-concept>>
+* <<security-cron-concept>>
+
+==== Site prerequisites
+
+* A contributed module has been installed and there is an update available for
+it. See <<extend-module-install>> and <<security-announce>>.
+
+* If your site is live, you should test this process in a development
+environment before running it on your production site. See
+<<install-dev-making>>.
+
+* You have created a full-site backup. See <<prevent-backups>>.
+
+* If you want to use the user interface to check for updates, the core Update
+Manager module must be installed. See <<config-install>> for instructions on
+installing core modules.
+
+==== Steps
+
+Before you start, check for module-specific update instructions. Read and
+understand all module-specific requirements before proceeding with the updates.
+To find instructions, check the module's project page _Read Documentation_ link.
+
+To view further instructions, after downloading the updated files, look for
+_README.txt_, _INSTALL.txt_, and _UPGRADE.txt_ that come with the module. Also,
+review the release notes on the project page by clicking the version number
+you're downloading.
+
+// Downloads section of the Admin Toolbar project page on drupal.org.
+image:images/security-update-module-release-notes.png["Release notes link"]
+
+Updating a module requires first putting your site into maintenance mode, then
+obtaining the new code files and applying any required database updates, then
+finally taking the site out of maintenance mode.
+
+You can update the code for a contributed module using Composer. If you are
+updating a custom module rather than a contributed module, obtain the new module
+files, then continue with instructions for running the database updates via the
+administrative interface below.
+
+This assumes that you are using Composer to manage the files in your site; see
+<<install-composer>>.
+
+===== Update a contributed module with Composer
+
+. Put your site in maintenance mode. See <<extend-maintenance>>.
+
+. In the _Manage_ administrative menu, navigate to _Reports_ >
+_Available updates_ > _Update_ (_admin/reports/updates_).
+
+. Find and check the module in the list. Click _Download these updates_ for the
+module.
++
+--
+// Update page for theme (admin/reports/updates/update).
+image:images/security-update-module-updates.png["Available updates",width="100%"]
+--
+
+. Determine the short name of the project you want to update. For contributed
+modules and themes, it is the last part of the URL of the project page; for
+example, the Geofield module, at https://www.drupal.org/project/geofield, has
+short name +geofield+.
+
+. If you want to update to the latest stable release, use the following
+command, substituting the short name of the project to be updated for
++geofield+:
++
+----
+composer update drupal/geofield --with-dependencies
+----
++
+To learn how to download specific versions see <<install-composer>>.
+
+. After obtaining the new module files run any database updates page by typing
+the URL _example.com/update.php_ in your browser.
+
+. Click _Continue_ to run the updates. The database update scripts will be
+executed.
+
+. Click _Administration pages_ to return to the administration section of your
+site.
+
+. Take your site out of maintenance mode. See <<extend-maintenance>>.
+
+. Clear the Drupal cache (refer to <<prevent-cache-clear>>).
+
+==== Expand your understanding
+
+* Review the site log (refer to <<prevent-log>>) once the updates are complete
+to check for errors.
+
+* <<security-update-theme>>
+
+//==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/wxWW-lPQ_Pc[title="Updating a Module"]
+
+// ==== Additional resources
+
+
+*Attributions*
+
+Adapted by https://www.drupal.org/u/batigolix[Boris Doesborgh], and
+https://www.drupal.org/u/hey_germano[Sarah German] at
+https://www.advomatic.com[Advomatic], and
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] at https://drupalize.me[Drupalize.Me]
+from https://www.drupal.org/docs/7/update/updating-modules["Update modules"],
+copyright 2000-copyright_upper_year by the individual contributors to the
+https://www.drupal.org/documentation[Drupal Community Documentation].

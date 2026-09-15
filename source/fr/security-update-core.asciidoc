@@ -1,0 +1,139 @@
+[[security-update-core]]
+
+=== Mettre à jour le cœur
+
+[role="summary"]
+Comment mettre à jour le cœur en utilisant l'interface d'administration ou
+Drush.
+
+(((Cœur,mise à jour)))
+(((Outil Drush,utilisation pour mettre à jour le cœur)))
+(((Interface d'administration,utilisation pour mettre à jour le cœur)))
+
+==== Objectif
+
+Mettre à jour le cœur, soit par l'interface d'administration, soit en utilisant
+Drush.
+
+//==== Prérequis
+
+==== Prérequis du site
+
+* Si vous voulez utiliser Drush, Drush doit être installé. Consulter
+<<install-tools>>.
+
+* Si votre site est en production, vous devriez tester ce processus dans un
+environnement de développement avant de l'appliquer. Consulter
+<<install-dev-making>>.
+
+==== Étapes
+
+. Faire une sauvegarde complète de votre site. Se référer à <<prevent-backups>>.
+
+. Ouvrir _settings.php_ (_/sites/default/settings.php_) dans un éditeur de
+texte. Trouver la ligne contenant la variable _$settings['update_free_access']_.
+Par défaut, elle est définie à "FALSE" pour des raisons de sécurité. Changer ce
+paramètre à "TRUE".
+
++
+----
+$settings['update_free_access'] = TRUE;
+----
+
+. Désactiver tout système de mise en cache (memcache, varnish, et ainsi de
+suite) que votre application pourrait utiliser.
+
+. Mettre votre site en mode de maintenance. Consulter <<extend-maintenance>>.
+
+. Si vous utilisez Composer pour gérer les dépendances, passer les six prochaines étapes, et consulter à la place <<install-composer>> pour des instructions
+sur la manière de télécharger des fichiers mis à jour. Reprendre à l'étape qui traite du fichier _update.php_.
+
+. Télécharger l'achive tar.gz ou zip de la dernière version du cœur de Drupal
+dans la branche que vous utilisez (telle que 8.x ou 9.x) depuis la page
+https://www.drupal.org/project/drupal[_Drupal.org_ Drupal Core Downloads].
+Consulter <<install-prepare>> pour plus de détails sur la manière de trouver la
+dernière version.
+
+. Téléverser l'archive vers le serveur de votre hébergeur web.
+
+. Extraire l'archive dans un répertoire temporaire sur votre serveur (cela
+devrait être en dehors du répertoire où votre site est hébergé). Le gestionnaire
+de fichiers du panneau de contrôle de votre hébergeur devrait fournir un moyen
+d'extraire les fichiers. Ou, si vous avez un accès à un terminal sur le serveur
+de votre hébergement (sous Linux), vous pouvez utiliser une commande comme :
++
+----
+tar -xzf drupal-8.3.2.tar.gz
+----
+
+Dans le répertoire de l'hébergeur de votre site, supprimer les répertoires
+_core_ et _vendor_, et tous les fichiers qui ne sont pas dans ce
+sous-répertoire, y compris _.htaccess_, _composer.json_, et _autoload.php_. Ne
+pas supprimer les fichiers personnalisés : vous pourriez perdre des
+fonctionnalités stockées dans ces fichiers.
+
+. Copier les répertoires _core_ et _vendor_ ainsi que les fichiers non
+personnalisés supprimés à l'étape précédente depuis le répertoire temporaire
+vers le répertoire de votre site.
+
+. Lancer le script _update.php_ en utilisant une des deux méthodes suivantes :
++
+  * Visiter _http://www.example.com/update.php_ avec votre navigateur (où
+  _www.example.com est l'URL de votre site). Cliquer sur _Continuer_ au premier
+  écran pour lancer les mises à jour et achever l'exécution du script avec
+  succès.
+  * Lancer la commande Drush suivante : `drush updatedb`
+
+. Si vous obtenez une erreur ou un avertissement, relancer le script
+_update.php_ à nouveau jusqu'à ce que les mises à jour s'achèvent avec succès.
+
+. Ouvrir _settings.php_ (_/sites/default/settings.php_) dans un éditeur de
+texte. Trouver la ligne contenant la variable _$settings['update_free_access']_
+et changer sa valeur à "FALSE" :
++
+----
+$settings['update_free_access'] = FALSE;
+----
+
+. Cliquer sur _Pages d'administration_ pour retourner à la section
+d'administration de votre site.
+
+. Sortir votre site du mode de maintenace. Consulter <<extend-maintenance>>.
+
+. Vider le cache. Consulter <<prevent-cache-clear>>.
+
+. Réactiver tout système de mise en cache désactivé à l'étape 3.
+
+. Votre site devrait à présent tourner sous la dernière version mise à jour.
+Vous pouvez vérifier la version courante du logiciel sur le _tableau de bord
+d'administration_ (consulter <<prevent-status>>).
+
+==== Améliorer votre compréhension
+
+* <<install-tools>>
+* <<install-dev-making>>
+* <<prevent-backups>>
+
+==== Concepts liés
+
+<<prevent-status>>
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/DqYqxp4xByk[title="Updating the Core Software"]
+
+==== Pour aller plus loin
+
+* https://www.drupal.org/project/drupal[Page "Drupal Core Downloads" sur _Drupal.org_]
+* https://www.drupal.org/project/registry_rebuild[Page "Registry Rebuild" sur _Drupal.org_]
+* Le fichier _/core/UPDATE.txt_ de votre installation.
+
+
+*Attributions*
+
+Écrit et modifié par https://www.drupal.org/u/surendramohan[Surendra Mohan],
+https://www.drupal.org/u/batigolix[Boris Doesborgh], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle].
+Traduit par https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

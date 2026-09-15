@@ -1,0 +1,105 @@
+[[user-roles]]
+=== Changer les rôles d'un utilisateur
+
+[role="summary"]
+Comment changer les rôles d'un utilisateur ou en ajouter.
+
+(((Rôle d'utilisateur,changer)))
+(((Rôle,changer)))
+(((Droit,changer rôle)))
+
+==== Objectif
+
+Changer les rôles d'un utilisateur donné ou en ajouter, en modifiant un seul
+utilisateur ou en appliquant une opération en masse.
+
+==== Prérequis
+
+<<user-concept>>
+
+==== Prérequis du site
+
+Le compte d'utilisateur que vous voulez mettre et à jour, et le rôle que vous
+souhaitez lui attribuer, doivent déjà exister. Consulter <<user-new-user>>,
+<<user-new-role>> et <<user-permissions>>.
+
+==== Étapes
+
+===== Mettre à jour les rôles en modifiant un seul utilisateur
+
+. Dans le menu d'administration _Gérer_, naviguer vers _Personnes_
+(_admin/people_).
+
+. Localiser le compte de l'utilisateur 1 (nommé "admin") pour lui attribuer le
+rôle _Administrator_. S'il n'est pas immédiatement visible, utiliser le filtre
+_Nom ou courriel contenant_, ou d'autres filtres, pour restreindre la
+liste.
+
+. Cliquer sur _Modifier_ pour modifier le compte d'utilisateur.
++
+--
+// People page (admin/people), with user 1's Edit button outlined.
+image:images/user-roles_people-list.png["Page Personnes",width="100%"]
+--
+
+. Sur la page de modification, faire défiler jusqu'à la section _Rôles_. Cocher
+le rôle _Administrator_ pour ce compte d'utilisateur.
++
+--
+// Roles area on user editing page.
+image:images/user-roles_person-edit.png["Section rôle sur la page de modification",width="141px"]
+--
+
+. Cliquer sur _Enregistrer_ pour mettre à jour le compte d'utilisateur. Vous
+devriez être redirigé vers la page _Personnes_ et voir un message disant que
+les changements ont été enregistrés.
++
+--
+// Confirmation message after updating user.
+image:images/user-roles_message.png["Message de confirmation"]
+--
+
+===== Mettre à jour les rôles en utilisant la méthode de modification en masse
+
+. Si les utilisateurs Happy Farm et Sweet Honey n'avaient pas encore le rôle
+Vendor, voici comment le leur attribuer. Dans le menu d'administration _Gérér_,
+naviguer vers _People_ (_admin/people_).
+
+. Localiser les comptes d'utilisateurs des marchands _Sweet Honey_ et _Happy
+Farm_, et cocher la case en début de ligne. S'ils ne sont pas immédiatement
+visibles, utiliser le filtre _Nom ou courriel contenant_, ou d'autres filtres,
+pour restreindre la liste.
+
+. Sélectionner _Ajouter le rôle Vendor au(x) utilisateur(s) sélectionné(s)_ dans
+le menu déroulant _Action_.
++
+--
+// Bulk editing form on People page (admin/people).
+image:images/user-roles_bulk.png["Page Personnes avec opération en masse prête", width="100%"]
+--
+
+. Cliquer sur _Appliquer aux éléments sélectionnés_. Vous devriez voir un
+message indiquant que les changements souhaités ont été appliqués.
++
+--
+// Confirmation message after bulk user update.
+image:images/user-roles_message_bulk.png["Message de confirmation"]
+--
+
+// ==== Expand your understanding
+
+// ==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hd7Sr3-n9ME[title="Changing a User's Roles"]
+
+// ==== Additional resources
+
+
+*Attributions*
+
+Écrit par https://www.drupal.org/u/chris-dart[Chris Dart]
+et https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

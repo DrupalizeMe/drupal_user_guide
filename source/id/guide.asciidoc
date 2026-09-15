@@ -1,0 +1,260 @@
+[[user_guide]]
+= Panduan Pengguna Drupal
+:toc: right
+:sectnums:
+:sectnumlevels: 2
+
+// Chapters are defined here, and each one includes the individual
+// topic files that make up the chapter, in order.
+
+
+[[preface]]
+
+== Prakata
+
+[role="summary"]
+Gambaran umum topik pengantar yang membantu Anda memanfaatkan panduan ini secara
+efisien.
+
+include::copyright.asciidoc[]
+include::preface-audience.asciidoc[]
+include::preface-organization.asciidoc[]
+include::preface-reporting.asciidoc[]
+include::preface-conventions.asciidoc[]
+include::preface-scenario.asciidoc[]
+
+
+[[understanding-chapter]]
+== Memahami Drupal
+
+[role="summary"]
+Gambaran umum konsep Drupal seperti modul, tema, distribusi, dan jenis data.
+
+include::understanding-drupal.asciidoc[]
+include::understanding-modules.asciidoc[]
+include::understanding-themes.asciidoc[]
+include::understanding-distributions.asciidoc[]
+include::understanding-data.asciidoc[]
+include::understanding-project.asciidoc[]
+include::understanding-gpl.asciidoc[]
+
+
+[[planning-chapter]]
+== Merencanakan Situs Anda
+
+[role="summary"]
+Gambaran umum konsep perencanaan situs dan perincian tugas umum untuk menata
+situs. Konsep entitas dan struktur konten juga dibahas.
+
+include::block-regions.asciidoc[]
+include::planning-layout.asciidoc[]
+include::planning-data-types.asciidoc[]
+include::planning-modular.asciidoc[]
+include::planning-structure.asciidoc[]
+include::planning-workflow.asciidoc[]
+include::language-concept.asciidoc[]
+
+
+[[installation-chapter]]
+== Instalasi
+
+[role="summary"]
+Gambaran umum persyaratan server dan perincian tugas umum instalasi.
+
+include::install-prepare.asciidoc[]
+include::install-requirements.asciidoc[]
+include::install-tools.asciidoc[]
+include::install-decide.asciidoc[]
+include::install-ddev.asciidoc[]
+include::install-composer.asciidoc[]
+include::install-run.asciidoc[]
+
+
+[[config-chapter]]
+== Konfigurasi Dasar Situs
+
+[role="summary"]
+Gambaran umum konsep konfigurasi dasar situs. Tugas instalasi modul, pengaturan
+akun pengguna, dan tema juga dibahas.
+
+include::config-overview.asciidoc[]
+include::config-basic.asciidoc[]
+include::config-install.asciidoc[]
+include::config-uninstall.asciidoc[]
+include::config-user.asciidoc[]
+include::config-theme.asciidoc[]
+
+
+
+[[content-chapter]]
+== Pengelolaan Halaman Dasar
+
+[role="summary"]
+Gambaran umum konsep pengelolaan halaman. Tugas tentang item konten, pengeditan
+di tempat, dan menu juga dibahas.
+
+include::content-paths.asciidoc[]
+include::content-create.asciidoc[]
+include::content-edit.asciidoc[]
+include::menu-home.asciidoc[]
+include::menu-concept.asciidoc[]
+include::menu-link-from-content.asciidoc[]
+include::menu-reorder.asciidoc[]
+
+[[content-structure-chapter]]
+== Menyiapkan Struktur Konten
+
+[role="summary"]
+Gambaran umum konsep struktur konten. Tugas tentang tipe konten, taksonomi, dan
+kolom referensi juga dibahas.
+
+include::structure-content-type.asciidoc[]
+include::structure-content-type-delete.asciidoc[]
+include::structure-fields.asciidoc[]
+include::structure-reference-fields.asciidoc[]
+include::structure-taxonomy.asciidoc[]
+include::structure-taxonomy-setup.asciidoc[]
+include::structure-adding-reference.asciidoc[]
+include::structure-widgets.asciidoc[]
+include::structure-form-editing.asciidoc[]
+include::structure-view-modes.asciidoc[]
+include::structure-content-display.asciidoc[]
+include::structure-image-styles.asciidoc[]
+include::structure-image-style-create.asciidoc[]
+include::structure-image-responsive.asciidoc[]
+include::structure-text-formats.asciidoc[]
+include::structure-text-format-config.asciidoc[]
+
+// The following topic has been deferred, so remove the include for now.
+// @todo Put this link back in when/if the topic gets added back.
+// include::structure-pathauto.asciidoc[]
+
+
+[[user-chapter]]
+== Mengelola Akun Pengguna
+
+[role="summary"]
+Gambaran umum konsep akun pengguna dan perincian tugas umum akun pengguna.
+
+include::user-concept.asciidoc[]
+include::user-admin-account.asciidoc[]
+include::user-new-role.asciidoc[]
+include::user-new-user.asciidoc[]
+include::user-permissions.asciidoc[]
+include::user-roles.asciidoc[]
+include::user-content.asciidoc[]
+
+
+[[blocks-chapter]]
+== Blok
+
+[role="summary"]
+Gambaran umum konsep blok dan perincian tugas umum blok.
+
+include::block-concept.asciidoc[]
+include::block-create-custom.asciidoc[]
+include::block-place.asciidoc[]
+
+
+[[views-chapter]]
+== Membuat Daftar dengan Views
+
+[role="summary"]
+Gambaran umum konsep view dan perincian tugas umum view.
+
+include::views-concept.asciidoc[]
+include::views-parts.asciidoc[]
+include::views-create.asciidoc[]
+include::views-duplicate.asciidoc[]
+include::views-block.asciidoc[]
+
+
+[[multilingual-chapter]]
+== Menjadikan Situs Anda Multibahasa
+
+[role="summary"]
+Perincian tugas yang diperlukan untuk menjadikan suatu situs multibahasa.
+
+include::language-add.asciidoc[]
+include::language-content-config.asciidoc[]
+include::language-content-translate.asciidoc[]
+include::language-config-translate.asciidoc[]
+
+
+[[extend-chapter]]
+== Memperluas dan Menyesuaikan Situs Anda
+
+[role="summary"]
+Gambaran umum kustomisasi dan pengembangan situs. Tugas mengunduh modul dan tema
+juga dibahas.
+
+include::extend-module-find.asciidoc[]
+include::extend-maintenance.asciidoc[]
+include::extend-module-install.asciidoc[]
+include::extend-theme-find.asciidoc[]
+include::extend-theme-install.asciidoc[]
+include::extend-manual-install.asciidoc[]
+include::install-dev-sites.asciidoc[]
+include::install-dev-making.asciidoc[]
+include::extend-deploy.asciidoc[]
+include::extend-config-versions.asciidoc[]
+include::extend-git.asciidoc[]
+
+
+[[prevent-chapter]]
+== Mencegah dan Memperbaiki Masalah
+
+[role="summary"]
+Gambaran umum konsep cache, pencadangan data, dan log. Tugas mengosongkan cache
+juga dibahas.
+
+include::prevent-cache.asciidoc[]
+include::prevent-cache-clear.asciidoc[]
+include::prevent-backups.asciidoc[]
+include::prevent-log.asciidoc[]
+include::prevent-status.asciidoc[]
+
+
+[[security-chapter]]
+== Keamanan dan Pemeliharaan
+
+[role="summary"]
+Gambaran umum konsep keamanan dan pemeliharaan. Tugas memperbarui perangkat lunak
+inti, modul, dan tema juga dibahas.
+
+include::security-cron-concept.asciidoc[]
+include::security-cron.asciidoc[]
+include::security-concept.asciidoc[]
+include::security-announce.asciidoc[]
+include::security-update-core.asciidoc[]
+include::security-update-module.asciidoc[]
+include::security-update-theme.asciidoc[]
+
+
+[[thoughts-chapter]]
+== Pemikiran Akhir
+
+[role="summary"]
+Gambaran umum komunitas Drupal dan cara terhubung dengan pengguna lain.
+
+include::thoughts-connecting.asciidoc[]
+include::thoughts-support.asciidoc[]
+include::thoughts-learn-more.asciidoc[]
+
+
+// Glossary and index.
+
+include::glossary.asciidoc[]
+
+== Indeks
+
+// Appendix
+
+[[appendix]]
+[appendix]
+== Lampiran
+
+[role="summary"]
+Gambaran umum para kontributor panduan ini.
+
+include::attributions.asciidoc[]

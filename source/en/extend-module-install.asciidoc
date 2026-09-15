@@ -1,0 +1,136 @@
+[[extend-module-install]]
+
+=== Downloading and Installing a Module from _Drupal.org_
+
+[role="summary"]
+How to download and install a module from Drupal.org.
+
+(((Module,downloading)))
+(((Module,installing)))
+(((Module,enabling)))
+(((Module,contributed)))
+(((Module,custom)))
+(((Downloading,module)))
+(((Installing,module)))
+(((Enabling,module)))
+(((Contributed module,downloading)))
+(((Contributed module,installing)))
+(((Functionality,extending)))
+(((Drush tool,using to install module)))
+(((Admin Toolbar module,downloading)))
+(((Admin Toolbar module,installing)))
+(((Module,Admin Toolbar)))
+(((Drupal.org website,downloading and installing module from)))
+
+==== Goal
+
+Download and install the
+https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module],
+which allows you to easily browse through the administration section of the
+website.
+
+==== Prerequisite knowledge
+
+* <<understanding-modules>>
+* <<extend-module-find>>
+* <<install-tools>>
+
+==== Site prerequisites
+
+Composer must be installed to download modules. If you want to use Drush, Drush
+must be installed. See <<install-tools>>.
+
+==== Steps
+
+To install a contributed module, first download the module with Composer. Then
+install it using either the administrative interface or Drush. If you are
+installing a custom module rather than a contributed module that is not
+available via Composer, skip the steps for downloading the module, and refer to
+<<extend-manual-install>>. Then return here and follow the steps for installing
+the module using either the administrative interface or Drush.
+
+===== Download the contributed module with Composer
+
+. On the _Admin toolbar_ project page on drupal.org
+(_https://www.drupal.org/project/admin_toolbar_), scroll to the _Releases_
+section at the bottom of the page.
+
+. Copy the provided Composer command for the version of the module you want to
+install.
++
+--
+// Releases section of the Admin Toolbar project page on Drupal.org.
+image:images/extend-module-install-download.png["Finding a module's composer install command"]
+--
+
+. Alternatively, type the following command (substituting
+the short name of the module and desired version for +admin_toolbar:^3.5+):
++
+----
+composer require 'drupal/admin_toolbar:^3.5'
+----
+
+. At the command line, change to the root directory of your project. Paste the
+Composer command and execute it.
+
+. You should see a message about the module being successfully downloaded.
+
+===== Install the module using the administrative interface
+
+. In the _Manage_ administrative menu, navigate to _Extend_
+(_admin/modules_). The _Extend_ page appears.
+
+. Locate the _Admin toolbar_ module and check it.
++
+--
+// Extend page showing Admin Toolbar module checked.
+image:images/extend-module-install-admin-toolbar-do.png["Installing Admin Toolbar module"]
+--
+
+. Click _Install_ to turn on the new module.
+
+===== Install the module using Drush
+
+. Run the following Drush command, giving the project name (for example,
+`admin_toolbar`) as a parameter:
++
+----
+drush pm:enable admin_toolbar
+----
+
+. Follow the instructions on the screen.
+
+==== Expand your understanding
+
+* Verify that the
+https://www.drupal.org/project/admin_toolbar[contributed Admin Toolbar module]
+is working by browsing through the menu in the administration section.
+
+* Install and configure the
+https://www.drupal.org/project/pathauto[contributed Pathauto module]
+so that content pages in your site get nice URLs by default. See
+<<content-paths>> for more on URLs.
+
+* If you do not see the effect of these changes in your site, you might need
+to clear the cache. See <<prevent-cache-clear>>.
+
+//==== Related concepts
+
+==== Videos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/vx9nWJE1Kbk[title="Downloading and Installing a Module from Drupal.org"]
+
+==== Additional resources
+
+* https://www.drupal.org/docs/extending-drupal/installing-drupal-modules[_Drupal.org_ community documentation page "Installing Drupal modules"]
+* https://www.drupal.org/download["Download and Extend" page on _Drupal.org_]
+* https://www.drupal.org/project/admin_toolbar[Admin Toolbar module on _Drupal.org_]
+
+
+*Attributions*
+
+Written and edited by https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] at
+https://drupalize.me[Drupalize.Me], and
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

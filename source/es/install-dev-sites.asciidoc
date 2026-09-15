@@ -1,0 +1,78 @@
+[[install-dev-sites]]
+
+=== Concepto: Sitios de desarrollo
+
+[role="summary"]
+Descripción general de los sitios de desarrollo con un ejemplo de flujo de
+trabajo de despliegue para la construcción de un sitio.
+
+(((Development site,overview)))
+(((Deployment workflow,overview)))
+(((Staging site,overview)))
+(((Installing,development site)))
+(((Installing,staging site)))
+
+//==== Conocimientos previos
+
+==== ¿Qué son los sitios de desarrollo?
+
+Los sitios de desarrollo son distintas copias del mismo sitio que se utilizan
+para desarrollar, actualizar y probar un sitio sin arriesgar la integridad del
+sitio en producción.
+
+Un ejemplo de flujo de trabajo de despliegue para la construcción de un sitio
+suele incluir los sitios que se mencionan a continuación:
+
+Entorno local::
+  El proceso de desarrollo comienza con los desarrolladores trabajando en
+  nuevas funcionalidades, correcciones de errores, tematización y configuración
+  en su entorno local. La herramienta recomendada para preparar un entorno
+  local es DDEV. Ver <<install-ddev>>.
+
+Sitio de desarrollo::
+  Los desarrolladores suben (_push_) al sitio de desarrollo los cambios en los
+  que han estado trabajando. Para un equipo de más de un desarrollador,
+  normalmente se utiliza el control de versiones. Git es un sistema de control
+  de versiones que hace un seguimiento de cualquier cambio en sus archivos.
+  Después puede confirmar (_commit_) esos cambios en un repositorio. Usar Git
+  permite a los miembros del equipo trabajar en el mismo sitio sin
+  sobrescribir el trabajo de los demás. También hace posible volver fácilmente
+  a etapas anteriores del desarrollo.
+
+Sitio de ensayo (_staging_)::
+  El sitio de ensayo puede usarse para probar o para presentar los cambios al
+  cliente para su aprobación. El QA (_Quality Assurance_, aseguramiento de la
+  calidad) y el UAT (_User Acceptance Testing_, pruebas de aceptación del
+  usuario) se realizan con mayor frecuencia en el sitio de ensayo. Se
+  recomienda tener contenido de producción tanto en el sitio de desarrollo como
+  en el de ensayo, de modo que pueda probar cómo funcionarán las nuevas
+  funcionalidades con el contenido existente.
+
+Sitio de producción::
+  El sitio en producción, disponible en la web para los visitantes. Contiene
+  las nuevas funcionalidades que se ha comprobado que son seguras para pasar a
+  producción.
+
+En función del tamaño, el alcance, los requisitos o las partes interesadas del
+proyecto, se pueden eliminar etapas del flujo de trabajo anterior o añadir
+etapas adicionales. Por ejemplo, se puede añadir un sitio de pruebas antes del
+de ensayo para separar los procesos de pruebas y de aceptación del usuario.
+
+==== Temas relacionados
+
+* <<install-dev-making>>
+* <<install-ddev>>
+* <<planning-workflow>>
+* <<extend-git>>
+
+// ==== Additional resources
+
+*Atribuciones*
+
+Escrito y editado por https://www.drupal.org/u/dianalakatos[Diána Lakatos]
+y https://www.drupal.org/u/jojyja[Jojy Alphonso] en
+http://redcrackle.com[Red Crackle], y
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] en
+https://drupalize.me[Drupalize.Me].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].

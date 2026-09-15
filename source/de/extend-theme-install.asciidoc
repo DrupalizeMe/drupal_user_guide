@@ -1,0 +1,156 @@
+[[extend-theme-install]]
+
+=== Herunterladen und Installieren eines Themes von _Drupal.org_
+
+[role="summary"]
+Wie man ein Theme von Drupal.org manuell
+oder mit Hilfe von Drush herunterlädt und installiert.
+
+(((Theme,downloading)))
+(((Theme,installing)))
+(((Theme,enabling)))
+(((Theme,contributed)))
+(((Theme,custom)))
+(((Contributed theme,downloading)))
+(((Contributed theme,installing)))
+(((Contributed theme,enabling)))
+(((Custom theme,installing)))
+(((Custom theme,enabling)))
+(((Downloading,theme)))
+(((Installing,theme)))
+(((Enabling,theme)))
+(((Update Manager module,using to install theme)))
+(((Module,Update Manager)))
+(((Drush tool,using to install theme)))
+(((Drupal.org website,downloading and installing theme from)))
+
+==== Zielsetzung
+
+Laden Sie ein Theme von _Drupal.org_ herunter und installieren Sie es.
+
+==== Erforderliche Vorkenntnisse
+
+* <<extend-theme-find>>
+* <<install-tools>>
+
+==== Anforderungen an die Website
+
+Wenn Sie Themes über die Benutzeroberfläche der Website installieren möchten,
+muss das Modul Update Manager, das mit dem Kernsystem ausgeliefert wird,
+installiert sein. Siehe: <<config-install>> für Anweisungen zur Installation
+von Modulen.
+
+Wenn Sie Drush verwenden möchten, muss Drush installiert sein.
+Siehe <<install-tools>>.
+
+==== Arbeitsschritte
+
+Sie können die Benutzeroberfläche zum Herunterladen und Installieren eines
+Themes verwenden. Wenn Sie ein benutzerdefiniertes Theme anstelle eines
+von der Community bereitgestellten Themes installieren möchten und Ihnen eine
+Meldung angezeigt wird, die besagt:
+_Die Installation von Modulen und Themen erfordert FTP-Zugriff auf Ihrem Server_,
+oder wenn die folgenden Schritte zum Herunterladen und Entpacken des
+Themes nicht funktionieren, folgen Sie den Schritten in
+<<extend-manual-install>>. Wenn Sie den Composer verwenden Um die Dateien auf
+Ihrer Website zu verwalten, folgen Sie den Schritten zum Herunterladen in
+<<install-composer>>. In jedem dieser Fälle können Sie dann das Theme
+mittels Drush oder indem Sie mit Schritt 7 in der Anleitung zur
+Verwendung der Benutzeroberfläche unten fortfahren installieren.
+
+===== Verwendung der Benutzeroberfläche
+
+. Auf der Projektseite des Themes auf drupal.org (zum Beispiel,
+_https://www.drupal.org/project/honey_), navigieren Sie zum Abschnitt _Downloads_
+im unteren Teil der Seite.
+
+. Klicken Sie mit der rechten Maustaste auf _tar.gz_, um die Adresse des Archivs zu kopieren.
++
+--
+// Downloads-Abschnitt der Mayo-Projektseite auf drupal.org.
+image:images/extend-theme-install-download.png["Die URL für ein Thema finden"]
+--
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Design_
+(_/admin/appearance_). Die Seite _Design_ erscheint.
+
+. Klicken Sie auf _Neues Theme installieren_. Die Seite _Neues Theme installieren_ wird angezeigt.
++
+--
+// Install new theme page (admin/theme/install).
+image:images/extend-theme-install-page.png["Installing a theme"]
+--
+
+. Fügen Sie in das Feld _Von URL installieren_ den kopierten Download-Link ein. Dieser Wert
+könnte so aussehen
+https://ftp.drupal.org/files/projects/honey-1.0.1.tar.gz`.
+
+. Klicken Sie auf _Installieren_, um das neue Theme auf den Server hoch zu laden
+und zu entpacken. Die Dateien werden in das Verzeichnis _themes_ heruntergeladen.
+
+. Klicken Sie auf _Neu hinzugefügte Themees installieren_, um zur Seite _Design_
+zurückzukehren. Wenn Sie das bereits erwähnte manuelle Hochladeverfahren
+verwendet haben, dann können Sie mit diesem Schritt fortfahren, und erreichen
+in diesem Fall die Seite _Design_, in dem Sie im Menü _Verwalten_ zum
+Menüpunkt _Design_ (_admin/appearance_) navigieren.
+
+. Suchen Sie das neue Theme unter _Deinstallierte Themes_ und klicken Sie auf
+_Installieren und als Standard festlegen_.
+Alle Seiten, die nicht zum Verwaltungsbereich Ihrer Website gehören,
+verwenden nun das von Ihnen festgelegte Theme.
++
+--
+// Honey theme on the Appearance page.
+image:images/extend-theme-install-appearance-page.png["Uninstalled themes on Appearance page",width="286px"]
+--
+
+====== Drush zur Installation eines Themes verwenden
+
+. Suchen Sie den Systemnamen des Themes, das Sie installieren möchten,
+dies ist der letzte Teil der URL zur Projektseite des Themes. Wenn die
+Projekt-URL zum Beispiel https://www.drupal.org/project/honey_ lautet,
+ist der Systemname `honey`.
+
+. Laden Sie das Theme herunter, indem Sie entweder die Schritte im Kapitel
+<<extend-manual-install>> oder im Kapitel <<install-composer>> durchführen.
+
+. Führen Sie die folgenden Drush-Befehle unter Angabe des Systemnamens als
+Parameter (z.B, _honey_) aus:
++
+----
+drush theme: enable honey
+drush config:set system.theme default honey
+----
+
+. Folgen Sie den Anweisungen auf dem Bildschirm.
+
+==== Vertiefen Sie Ihr Wissen
+
+* Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Design_
+(_admin/appearance_) und deinstallieren Sie alle Themes, die Sie nicht verwenden.
+
+* <<extend-module-find>>
+
+* <<extend-module-install>>
+
+* Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen,
+müssen Sie unter Umständen den Cache leeren. Siehe: <<prevent-cache-clear>>.
+
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/UFgddj0F_bU[title="Herunterladen und Installieren eines Themes von Drupal.org (englisch)"]
+
+//===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/eojthebrave[Joe Shindelar] bei
+https://drupalize.me[Drupalize.Me], und
+https://www.drupal.org/u/batigolix[Boris Doesborgh].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

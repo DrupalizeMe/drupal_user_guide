@@ -1,0 +1,111 @@
+[[prevent-cache]]
+
+=== Konzept: Cache
+
+[role="summary"]
+Übersicht über den Cache und die Daten der Website, die zwischengespeichert werden können.
+
+(((Cache,Überblick)))
+(((Page cache,Überblick)))
+(((Modul,Internal Page Cache)))
+(((Modul,Dynamic Page Cache)))
+(((Internal-Page-Cache-Modul,Überblick)))
+(((Dynamic-Page-Cache-Modul,Überblick)))
+
+==== Vorausgesetztes Wissen
+
+<<understanding-drupal>>
+
+==== Was ist der Cache?
+
+Die Software, die Ihre Website ausführt, muss bei jeder Anfrage an Ihre Website
+folgende Aufgabe bearbeiten:
+
+* Berechnungen durchführen und Daten aus der Datenbank abrufen, um die Seite
+  aufzubauen die an den Web-Browser oder eine andere Anwendung
+  weitergeleitet wird, welche auf die Website zugreifen.
+
+Diese Berechnungen benötigen Zeit. Das bedeutet das die Ladezeit Ihrer Website
+länger ist, als gewünscht.
+
+Es gibt verschiedene Möglichkeiten, die Ladezeit einer Website zu beschleunigen.
+Darunter fällt auch die Installation entsprechender Zusatzsoftware auf dem
+Web-Server. Das System umfasst den internen Cache der Website und das Modul
+Dynamic-Page-Cache. Hierfür wird keine zusätzliche Software auf dem Web-Server
+benötigt. Zum Cachen der Website wird ein Mechanismus verwendet, der
+_Teile der Datenbank in aufbereiteter Form zwischenspeichert_, um den
+Ladevorgang Ihrer Website zu beschleunigen. Die beiden Module
+funktionieren wie folgt:
+
+* Bei der Berechnung der Website werden Zwischenergebnisse der auszuliefernden
+  Inhalte und die endgültige Ausgabe der Website  in einem speziellen Bereich der 
+  Datenbank (_Cache_ genannt) gespeichert. 
+
+Wird danach  eine kompatible Anfrage an die Website gestellt, können die
+zwischengespeicherten Daten gegebenenfalls abgerufen werden, um so die
+Berechnung der Ausgabe der Website zu beschleunigen, ohne diese jedes mal komplett neu zu berechnen. 
+Die zwischengespeicherten Daten werden aus dem Cache entfernt,
+wenn Inhalte oder Daten, auf der Website verändert wurden. So wird erzwungen,
+dass aktualisierte Daten auf der Website neu berechnet und zwischengespeichert
+werden, wenn die betreffende Seite neu aufgerufen wird.
+
+Die Cache-Module funktionieren normalerweise gut und sorgen auf
+den meisten Websites für bessere Ladezeiten. Manchmal kann der Cache jedoch Probleme
+machen.
+
+Beispielsweise wenn:
+
+* Beschädigte Daten im Cache enthalten sind. Dies führt zu einer korrupten oder
+  falschen Ausgabe der Website.
+
+* Alte Daten zu lange im Cache bleiben. Dies führt zur Ausgabe alter Versionen
+  von Inhalten.
+
+* Der Cache zu klein ist. Dies führt zu einem verzögerten Aufbau und zu längeren
+  Ladezeiten der Website.
+
+==== Welche anderen Daten werden außerdem im Cache zwischengespeichert?
+
+Unabhängig davon, ob die beiden Cache-Module auf Ihrer Website installiert sind,
+legt die Software, mit der Ihre Website betrieben wird, immer noch jede Menge
+Daten in optimierter Form im Zwischenspeicher ab. Folgende Daten werden vom
+Kernsystem zwischengespeichert:
+
+* Das Theme-System speichert im Datenbank-Cache Informationen darüber, welche
+  Template-Dateien zur Darstellung verschiedener Arten von Daten verwendet
+  werden. Wenn Sie ein neues Theme oder eine neue Template-Datei hinzufügen,
+  müssen Sie den Cache leeren, damit diese neue Template-Datei oder das neue
+  Theme erkannt wird.
+
+* CSS- und JavaScript-Dateien können (abhängig von den Einstellungen für die Website) optimiert und komprimiert werden.
+  Ist die Optimierung und Komprimierung für diese Dateien aktiviert, werden die
+  optimierten und komprimierten Versionen dieser Dateien im Dateisystem der
+  Website abgelegt, damit diese nicht zu oft neu optimiert werden müssen.
+  Deshalb müssen Sie den Cache bei der Entwicklung eines Moduls oder
+  Themes eventuell abschalten, damit Änderungen an CSS- oder JavaScript-Dateien
+  erkannt werden können.
+
+* Das System erkennt bestimmte Low-Level-PHP-Funktionen und -Klassen, wie z. B.
+_Hook-Implementierungen_ und _Plug-in-Klassen_ die von den Modulen verwendet
+werden, die auf Ihrer Website aktiviert sind und speichert Informationen darüber
+ab, welches Modul welche Funktionalität zu Verfügung stellt.
+Wenn Sie ein neues Modul entwickeln oder zu einem vorhandenen Modul Funktionen
+hinzufügen möchten, müssen Sie den Cache der Website möglicherweise leeren,
+damit diese neuen Funktionen erkannt werden.
+
+==== Verwandte Themen
+
+Wenn Sie Probleme mit Ihrer Website haben, sollten Sie als erstes versuchen,
+den Cache zu leeren. Siehe <<prevent-cache-clear>> für weitere Informationen.
+
+==== Zusätzliche Ressourcen
+
+Erfahren Sie mehr über zusätzliche Caching- und Leistungsoptimierungsmethoden auf der
+https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview[_Drupal.org_ Community-Dokumentationsseite „Caching zur Leistungsverbesserung" (englisch)].
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

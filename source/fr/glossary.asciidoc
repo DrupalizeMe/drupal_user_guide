@@ -1,0 +1,514 @@
+[[glossary]]
+== Glossaire
+
+(((Glossaire)))
+(((Terminologie (Glossaire))))
+
+(((Affichage, définition)))
+[[glossary-display]] Affichage (dans une vue)::
+  Type de rendu d'une <<glossary-view, vue>>, par exemple une page, un
+  <<glossary-block, bloc>> ou un flue. Consulter <<views-parts>> pour plus
+  d'informations.
+(((Ajax,définition)))
+[glossary]
+[[glossary-ajax]] Ajax::
+   Une technologie du web utilisée pour échanger des données avec un serveur
+   pour mettre dynamiquement à jour des parties d'une page web (par exemple, des
+   formulaires) sans nécessiter des rechargements de l'ensemble de la page.
+(((Alias,définition)))
+[[glossary-alias]] Alias::
+   Un nom convivial pour remplacer le <<glossary-path,chemin>> interne que le
+   système assigne à une <<glossary-url,URL>> du site. Par exemple, vous
+   pourriez assigner un alias _apropos_ à la page "À propos" de votre site, pour
+   remplacer le chemin interne _/node/5_. Cela donnerait à la page l'URL
+   _http://example.com/apropos_ au lieu de _http://example.com/node/5_.
+   Consulter <<content-paths>> pour plus d'informations.
+(((Anonyme,définition)))
+[[glossary-anonymous]] Anonyme::
+   Une personne (<<glossary-user,utilisateur>>) interagissant avec le site qui
+   n'est pas connectée. Consulter <<user-concept>> pour plus d'informations.
+(((Assistant,définition)))
+[[glossary-wizard]] Assistant::
+   Un formulaire web qui permet de saisir quelques valeurs et crée quelque chose 
+   avec des valeurs par défaut raisonnables se basant sur les valeurs que vous
+   choisissez. Par exemple, il y a des assistants pour créer des
+   <<glossary-view,vues>> de différents types. Consulter <<views-create>> pour
+   plus d'informations.
+(((Authentifié,définition)))
+[[glossary-authenticated]] Authentifié::
+   Une personne (<<glossary-user,utilisateur>>) interagissant avec le site qui
+   est connectée. Consulter <<user-concept>> pour plus d'informations.
+(((Bloc,définition)))
+[[glossary-block]] Bloc::
+   Un morceau de <<glossary-content,contenu>> (texte, images, liens, etc.) qui
+   peut être affiché sur une page d'un site. Les blocs sont affichés dans des
+   <<glossary-region,régions>>. Consulter <<block-concept>> pour plus
+   d'informations.
+(((Cache,définition)))
+[[glossary-cache]] Cache::
+   Le cache interne du site stocke le rendu de calculs coûteux en temps, comme
+   la génération d'une page HTML suite à une requête, et en récupère le
+   résultat, plutôt que de refaire le calcul, la prochaine fois qu'il est
+   demandé. Des systèmes de cache externes peuvent aussi être utilisés sur le
+   serveur web pour accélérer le temps de réponse d'un site. Consulter
+   <<prevent-cache>> pour plus d'informations sur le cache interne.
+(((Champ,définition)))
+[[glossary-field]] Champ::
+   Données d'un certain type qui sont attachées à une <<glossary-entity,entité>>
+   de <<glossary-content,contenu>>. Par exemple, sur le site d'un marché
+   fermier, vous pourriez avoir des champs pour une image, la description d'un
+   marchand, et un <<glossary-taxonomy-term,terme de taxonomie>>. Consulter
+   <<planning-data-types>> pour plus d'informations.
+(((Champ de type référence,définition)))
+[[glossary-reference-field]] Champ de type référence::
+   Un <<glossary-field,champ>> qui représente une relation entre une
+   <<glossary-entity,entité>> et une ou plusieurs autres entités, qui peuvent
+   appartenir au même <<glossary-entity-type,type d'entité>> ou à un type
+   différent. Par exemple, sur le site d'un marché fermier, un élément de
+   contenu de type recette pourrait avoir un champ de type référence vers le
+   marchand (également un élément de contenu) qui a posté la recette. Les champs
+   de type <<glossary-taxonomy-term,terme de taxonomie>> sont aussi des champs
+   de type référence. Consulter <<structure-reference-fields>> pour plus
+   d'informations.
+(((Chemin,définition)))
+[[glossary-path]] Chemin::
+   La dernière partie, unique, de l'<<glossary-url,URL>> interne que le système
+   assigne à une page du site, qui peut être une page visible publiquement par
+   les visiteurs ou une page d'administration. Par exemple, l'URL interne de la
+   page À propos de votre site  pourrait être _http://example.com/node/5_, et
+   dans ce cas, le chemin serait _node/5_. Consulter aussi
+   <<glossary-alias,alias>>. Consulter <<content-paths>> pour plus
+   d'informations.
+(((Composer,définition)))
+[[glossary-composer]] Composer::
+   Le gestionnaire de dépendances de PHP utilisé par Drupal, <<glossary-drush,
+   Drush>>, le _framework_ et d'autres. Il est le moyen d'installation à
+   privilégier pour installer des projets Drupal. Consulter <<install-composer>>
+   pour plus d'informations.
+(((Cœur de Drupal,définition)))
+[[glossary-drupal-core]] Cœur de Drupal::
+   Les fichiers, thèmes, profils et modules inclus avec le logiciel téléchargé
+   de manière standard. Consulter <<understanding-drupal>> pour plus
+   d'informations.
+(((Configuration,définition)))
+[[glossary-configuration]] Configuration::
+   Informations sur votre site qui ne sont pas du <<glossary-content,contenu>>,
+   qui sont censées être plus permanentes que des informations
+   d'<<glossary-state,état>>, comme le nom de votre site, les
+   <<glossary-content-type,types de contenu>> et les <<glossary-view,vues>> que
+   vous avez définies, etc. Consulter <<understanding-data>> pour plus
+   d'informations.
+(((Contenu,définition)))
+[[glossary-content]] Contenu::
+   Informations destinées à être affichées sur votre site, comme du texte, des
+   images, des téléchargements, etc. Consulter également
+   <<glossary-configuration,configuration>> et <<glossary-state,état>>.
+   Consulter <<understanding-data>> pour plus d'informations.
+(((Contribué,définition)))
+(((Module contribué,définition)))
+(((Thème contribué,définition)))
+[[glossary-contributed]] Contribué::
+   <<glossary-module,Modules>>, <<glossary-theme,thèmes>> et
+   <<glossary-distribution,distributions>> qui ne font pas partie du
+   <<glossary-drupal-core,cœur de Drupal>>, et qui peuvent être téléchargés
+   séparément depuis le site web https://www.drupal.org[_Drupal.org_].
+(((Coder, définition)))
+[[glossary-coder]] Conventions de codage::
+   Les conventions de codage sont les règles destinées aux développeurs, qui
+   définissent les bonnes pratiques, le formatage et autres, visant à ce que
+   tout le monde utilise les mêmes conventions, et ait les mêmes attentes en
+   visualisant du code. Consulter <<install-tools>> pour plus d'informations.
+(((Tâche planifiée,définition)))
+[[glossary-cron]] Cron::
+   Sur certains systèmes d'exploitation, _cron_ est une application de
+   planification de commandes qui exécute périodiquement des commandes ou des
+   scripts. Votre site définit des tâches planifiées, qui doivent être
+   déclenchées soit par le planificateur cron du système d'exploitation, ou de
+   manière interne. Consulter <<security-cron-concept>> pour plus
+   d'informations.
+(((Cross Site Scripting (XSS), définition)))
+[[glossary-cross-site-scripting]] Cross Site Scripting::
+   Faille de sécurité souvent présente sur des sites web. Sur un site qui n'est
+   pas bien protégé, des utilisateur mal intentionnés peuvent injecter un script
+   dans des pages web qui sont vues par d'autres utilisateurs. Consulter
+   <<structure-text-formats>> pour plus d'informations.
+(((Dépôt, définition)))
+[[glossary-repository]] Dépôt::
+   Endroit où un système de gestion de version stocke tous les fichiers et
+   répertoires d'un projet. Consulter <<install-tools>> pour plus
+   d'informations.
+(((Devel, définition)))
+[[glossary-devel]] Devel::
+   Module qui aide à la réalisation de tâches de développement comme le débogage
+   ou l'inspection du code, l'analyse de requêtes, et la génération de contenu
+   d'exemple. Consulter <<install-tools>> pour plus d'informations.
+(((Distribution,définition)))
+[[glossary-distribution]] Distribution::
+   Un seul téléchargement qui fournit un raccourci pour mettre en place un site
+   d'un type spécifique, comme un site pour un club ou une boutique en ligne.
+   Une distribution comprend le <<glossary-drupal-core,cœur de Drupal>> ainsi
+   que des <<glossary-module,modules>> <<glossary-contributed,contribués>> et/ou
+   des <<glossary-theme,thèmes>> ; beaucoup de distributions préconfigurent le
+   site ou créent même du contenu d'exemple à
+   l'<<glossary-installing,installation>>. Consulter
+   <<understanding-distributions>> pour plus d'informations.
+(((Droit,définition)))
+[[glossary-permission]] Droit::
+   La capacité de réaliser une action sur le site, comme modifier un type
+   particulier de <<glossary-content,contenu>>, ou visualiser les profils des
+   utilisateurs. Consulter aussi <<glossary-role,rôle>>. Consulter
+   <<user-concept>> pour plus d'informations.
+(((Drupal Association (DA) ,définition)))
+(((DA (Drupal Association),définition)))
+[[glossary-drupal-association]] Drupal Association::
+   Organisation à but non lucratif dont le but est de soutenir le projet Drupal
+   et sa communauté. Consulter <<understanding-project>> pour plus
+   d'informations.
+(((Drush,définition)))
+[[glossary-drush]] Drush::
+  Interpréteur de commandes et interface permettant d'écrire des scripts pour
+  Drupal. Consulter <<install-tools>> pour plus d'informations.
+(((Élément de contenu,définition)))
+[[glossary-content-item]] Élément de contenu::
+   Un élément de <<glossary-content,contenu>> qui est normalement destiné à être
+   affiché en tant que contenu principal d'une page de votre site. Il s'agit
+   d'un <<glossary-entity-type,type d'entité>>. Consulter
+   <<planning-data-types>> pour plus d'informations.
+(((Entité,définition)))
+[[glossary-entity]] Entité::
+   Un élément de <<glossary-content,contenu>> ou de données de
+   <<glossary-configuration,configuration>>, bien que souvent, ce terme se
+   réfère communément aux entités de contenu. Par exemple, des
+   <<glossary-content-item,éléments de contenu>>, des <<glossary-block,blocs>>
+   personnalisés, des <<glossary-taxonomy-term,termes de taxonomie>>, et des
+   définitions de <<glossary-content-type,types de contenus>> ; les trois
+   premières sont des entités de contenu, et la dernière une entité de
+   configuration. Consulter également
+   <<glossary-entity-type,type d'entité>>,
+   <<glossary-entity-subtype,sous-type d'entité>> et <<glossary-field,champ>>.
+   Consulter <<planning-data-types>> pour plus d'informations.
+(((État,définition)))
+[[glossary-state]] État::
+   Informations de nature temporaire sur l'état courant de votre site, comme
+   le moment auquel les tâches planifiées (cron) ont été exécutées pour la
+   dernière fois, etc. Consulter aussi <<glossary-content,contenu>> et
+   <<glossary-configuration,configuration>>. Consulter <<understanding-data>>
+   pour plus d'informations.
+(((Filtre, définition)))
+[[glossary-filter]] Filtre (dans une vue)::
+  Limite les données à afficher dans une <<glossary-view, vue>>, en se basant
+  sur des critères tels que le statut de publication, le type de contenu ou la
+  valeur d'un champ. Consulter <<views-parts>> pour plus d'informations.
+(((Filtre contextuel, définition)))
+[[glossary-contextual-filter]] Filtre contextuel (dans une vue)::
+  Limite les données à afficher dans une <<glossary-view, vue>>, en se basant
+  sur le contexte de l'<<glossary-display, affichage>> de la vue, comme l'URL
+  complète de la page. Consulter <<views-parts>> pour plus d'informations.
+(((Format de texte,définition)))
+[[glossary-text-format]] Format de texte::
+   <<glossary-configuration,Configuration>> qui définit le traitement appliqué
+   à du texte saisi par un utilisateur avant qu'il ne soit affiché dans le
+   navigateur. Ceci devrait inclure la suppression ou la limitation de balises
+   HTML, ou le changement d'URL en liens. Consulter <<structure-text-formats>>
+   pour plus d'informations.
+(((FOSS (Free and Open Source Software),définition)))
+(((Free and Open Source Software (FOSS),définition)))
+[[glossary-foss]] FOSS::
+   Acronyme de l'anglais _free and open source software_, désignant un logiciel
+   développé par une communauté et publiée sous une licence non commerciale.
+   Consulter aussi <<glossary-gpl,GPL>>. Consulter <<understanding-project>> pur
+   plus d'informations.
+(((Git, définition)))
+[[glossary-git]] Git::
+  <<glossary-vcs, Système de gestion de versions>> utilisé par les développeurs
+  Drupal pour coordonner les modifications apportées par chacun. Git enregistre
+  les changements qu'ils apportent à un projet donné dans une arborescence de
+  répertoires appelé un <<glossary-repository, dépôt>> Git. Consulter
+  <<install-tools>> pour plus d'informations.
+(((GPL (General Public License or GNU General Public License),définition)))
+(((GNU General Public License,définition)))
+[[glossary-gpl]] GPL::
+   Acronyme de l'anglais _GNU General Public License_, une licence logicielle
+   non commerciale. Tout programme téléchargé depuis le site web
+   https://www.drupal.org[_Drupal.org_] est sous
+   http://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html["Licence publique
+   générale GNU, version 2"]. Consulter aussi <<glossary-foss,FOSS>>. Consulter
+   <<understanding-gpl>> pour plus d'informations.
+(((Groupe de champs,définition)))
+[[glossary-field-bundle]] Groupe de champs::
+   Synonyme de <<glossary-entity-subtype,sous-type d'entité>> (_field bundle_).
+(((Installation,définition)))
+[[glossary-installing]] Installation::
+   Préparation du cœur de Drupal ou de n'importe quel module ou thème contribué
+   en vue de son usage. Dans le cas du cœur de Drupal, cela consiste à
+   télécharger les fichiers nécessaires, créer la base de données, configurer et
+   exécuter le script d'installation. Consulter <<install-decide>> pour plus
+   d'informations.
+(((Interface utilisateur (UI),définition)))
+[[glossary-user-interface]] Interface utilisateur::
+   Le texte, les styles, et les images qui sont visibles sur le site, séparés de
+   manière logique dans l'interface utilisateur entre l'interface pour les
+   visiteurs du site et l'interface destinée aux administrateurs. En anglais,
+   _user interface_ (UI).
+(((Journal,définition)))
+[[glossary-log]] Journal::
+   Une liste d'évènements enregistrés sur votre site, comme des données sur
+   l'utilisation ou la performance, des erreurs, des avertissements et des
+   informations sur le fonctionnment. Consulter <<prevent-log>> pour plus
+   d'informations.
+(((LAMP (Linux Apache MySQL PHP),définition)))
+(((Linux Apache MySQL PHP (LAMP),définition)))
+[[glossary-lamp]] LAMP::
+   Acronyme de _Linux, Apache, MySQL et PHP_ : les logiciels sur le serveur web
+   qui font souvent tourner votre site (bien qu'il puisse utiliser d'autres
+   systèmes d'exploitation, serveurs web et bases de données). Consulter
+   <<install-requirements>> pour plus d'informations.
+(((Lien contextuel,définition)))
+[[glossary-contextual-link]] Lien contextuel::
+   Un lien vers une page d'administration permettant de modifier ou configurer
+   une fonctionnalité de votre site, apparaissant dans le contexte où cette
+   fonctionnalité est affichée. Par exemple, un lien pour configurer le
+   <<glossary-menu,menu>> qui apparaît lorsque vous survolez le menu avec votre
+   souris. Consulter <<config-overview>> pour plus d'informations.
+(((Menu,définition)))
+[[glossary-menu]] Menu::
+   Un ensemble de liens utilisés pour la navigation sur le site, qui peuvent
+   être organisés de manière hiérarchique. Consulter <<menu-concept>> pour plus
+   d'informations.
+(((Mise à jour,définition)))
+[[glossary-update]] Mise à jour::
+   Une nouvelle version du logiciel de votre site, concernant le
+   <<glossary-drupal-core,cœur>>, les <<glossary-module,modules>> ou les
+   <<glossary-theme,thèmes>>. Consulter aussi <<glossary-security-update,mise
+   à jour de sécurité.>> Consulter <<security-concept>> pour plus
+   d'informations.
+(((Mise à jour de sécurité,définition)))
+[[glossary-security-update]] Mise à jour de sécurité::
+   Une <<glossary-update,mise à jour>> qui corrige une erreur liée à la
+   sécurité, comme une vulnérabilité pouvant être exploitée pour une attaque.
+   Consulter <<security-concept>> pour plus d'informations.
+(((Mode de visualisation,définition)))
+[[glossary-view-mode]] Mode de visualisation::
+   Un ensemble de <<glossary-configuration,configurations>>
+   d'<<glossary-field-formatter,outils de mise en forme>> pour tous les
+   <<glossary-field,champs>> d'un <<glossary-content,contenu>>, dont certains
+   pourraient être cachés. Un ou plusieurs modes de visualisation peuvent être
+   définis pour chaque <<glossary-entity-subtype,sous-type d'entité>> ; par
+   exemple, les <<glossary-content-type,types de contenu>> comportent
+   habituellement les modes de visualisation _Complet_ et _Accroche_, où le
+   mode de visualisation _Accroche_ affiche moins de champs ou des champs
+   tronqués. Consulter <<structure-view-modes>> pour plus d'informations.
+(((Module, définition)))
+[[glossary-module]] Module::
+   Programme (habituellement en PHP, JavaScript et/ou CSS) qui étend les
+   fonctionnalités de votre site et en ajoute. Le projet Drupal fait une
+   distinction entre le _<<glossary-drupal-core,cœur>>_ et les modules
+   _<<glossary-contributed,contribués>>_. Consulter <<understanding-modules>>
+   pour plus d'informations.
+(((Outil de mise en form,définition)))
+(((Outil de mise en forme d'un champ,définition)))
+[[glossary-field-formatter]] Outil de mise en forme d'un champ::
+   De la <<glossary-configuration,configuration>> qui définit comment les
+   données contenues dans un <<glossary-field,champ>> sont affichées. Par
+   exemple, un champ de type texte pourrait être affiché avec un préfixe et/ou
+   un suffixe, et ses balises HTML pourraient être retirées ou limitées.
+   Consulter aussi <<glossary-view-mode,mode de visualisation>> et
+   <<glossary-field-widget,widget de champ>>. Consulter <<structure-view-modes>>
+   pour plus d'informations.
+(((Paquet,définition)))
+[[glossary-bundle]] Paquet::
+   Synonyme de <<glossary-entity-subtype,sous-type d'entité>> (anglais
+   _bundle_).
+(((Point de rupture,définition)))
+[[glossary-breakpoint]] Point de rupture::
+   Les points de rupture (_breakpoints_) sont utilisés pour diviser en
+   intervalles la hauteur ou la largeur des écrans de navigateurs, imprimantes
+   ou autres supports. Un site <<glossary-responsive,réactif>> (_responsive_)
+   ajuste sa présentation à ces points de rupture. Consulter
+   <<structure-image-responsive>> pour plus d'informations.
+(((Processus éditorial, définition)))
+[[glossary-editorial-workflow]] Processus éditorial::
+   Processus de création, validation, modification et publication de contenu.
+   Plusieurs personnes ayant différents rôles (par exemple, des rédacteurs de
+   contenu ou des éditeurs) peuvent y prendre part. Consulter
+   <<planning-workflow>> pour plus d'informations.
+(((Réactif,définition)))
+[[glossary-responsive]] Réactif::
+   Un site ou <<glossary-theme,thème>> est réactif (_responsive_) s'il ajuste sa
+   présentation en fonction de la taille de l'écran du navigateur, de
+   l'imprimante, ou autre type de média. Consulter aussi
+   <<glossary-breakpoint,point de rupture>>. Consulter
+   <<structure-image-responsive>> pour plus d'informations.
+(((Région,définition)))
+[[glossary-region]] Région::
+   Une zone définie d'une page où le <<glossary-content,contenu>> peut être
+   placé, comme l'en-tête, le pied de page, la zone de contenu principale, la
+   barre latérale de gauche, etc. Les régions sont définies par les
+   <<glossary-theme,thèmes>> et le contenu affiché dans chaque région est
+   contenu dans des <<glossary-block,blocs>>. Consulter <<block-regions>> pour
+   plus d'informations.
+(((Relation, définition)))
+[[glossary-relationship]] Relation (dans une vue)::
+  Expansion de la donnée à afficher dans une vue, en mettant en relation le
+  contenu de base avec d'autres entités de contenu. Consulter <<views-parts>>
+  pour plus d'informations.
+(((Révision,définition)))
+[[glossary-revision]] Révision::
+   Un enregistrement de l'état présent ou passé d'une <<glossary-entity,entité>>
+   de <<glossary-content,contenu>>, telle qu'elle est modifiée au cours du
+   temps. Consulter <<planning-workflow>> pour plus d'informations.
+(((Rôle,définition)))
+[[glossary-role]] Rôle::
+   Un ensemble de <<glossary-permission,permissions>> droits qui peuvent être
+   appliqués à un <<glossary-user,compte d'utilisateur>>. Consulter
+   <<user-concept>> pour plus d'informations.
+(((Session,définition)))
+[[glossary-session]] Session::
+  Informations concernant les interactions d'un visiteur avec le site, par
+  exemple s'il est connecté, ou ses cookies. Consulter <<understanding-data>>
+  pour plus d'informations.
+(((SGC (Système de gestion de contenu),définition)))
+(((Système de gestion de contenu (SGC),définition)))
+[[glossary-cms]] SGC::
+   Acronyme de
+   <<glossary-content-management-system,Système de gestion de contenu>> (en
+   anglais _content management system_ (SGC)).
+(((Site de développement,définition)))
+[[glossary-development-site]] Site de développement::
+   Copie du site de production qui est utilisée pour le développement, la mise à
+   jour et les tests. Consulter <<install-dev-sites>> pour plus d'informations.
+(((Site de pré-production,définition)))
+[[glossary-staging-site]] Site de pré-production::
+   Copie du site de production qui peut être utilisée pour tester, ou pour
+   présenter des modifications au client pour approbation. Consulter
+   <<install-dev-sites>> pour plus d'informations.
+(((Sous-type d'entité,définition)))
+[[glossary-entity-subtype]] Sous-type d'entité::
+   Au sein d'un <<glossary-entity-type,type d'entité>> de
+   <<glossary-content,contenu>>, un groupe d'entités qui partagent les mêmes
+   <<glossary-field,champs>>. Par exemple, au sein du type d'entité
+   <<glossary-content-item,élément de contenu>>, le site d'un marché fermier
+   pourrait avoir des sous-types (<<glossary-content-type,types de contenu>>)
+   pour les pages statiques et les pages des marchands, chacune avec son propre
+   groupe de champs. Vous pourriez également trouver le terme _paquet_
+   (_bundle_) utilisé (particulièrement dans la documentation destinée aux
+   programmeurs) comme synonyme de sous-type d'entité. Consulter
+   <<planning-data-types>> pour plus d'informations.
+(((Style d'image,définition)))
+[[glossary-image-style]] Style d'image::
+   Un ensemble d'étapes de traitement qui transforment une image de base en une
+   nouvelle image ; la mise à l'échelle et le recadrage sont des exemples de
+   traitements habituels. Consulter <<structure-image-styles>> pour plus
+   d'informations.
+(((Système de gestion de contenu (CMS),définition)))
+[[glossary-content-management-system]] Système de gestion de contenu (SGC)::
+   Une collection d'outils conçus pour permettre la création, la modification,
+   l'organisation, la recherche, la récupération et le retrait d'informations
+   sur un site web. Consulter <<understanding-drupal>> pour plus d'informations.
+(((Système de gestion de versions, définition)))
+[[glossary-vcs]] Système de gestion de versions::
+   Logiciel qui conserve les copies des fichiers et l'historique de modification
+   dans un <<glossary-repository, dépôt>>, et autorise l'ajout, la suppression
+   et la mise à jour de fichiers. Consulter <<install-tools>> pour plus
+   d'informations.
+(((Taxonomie,définition)))
+[[glossary-taxonomy]] Taxonomie::
+   Le procédé de classification du <<glossary-content,contenu>>. Consulter
+   <<structure-taxonomy>> pour plus d'informations.
+(((Terme de taxonomie,définition)))
+[[glossary-taxonomy-term]] Terme de taxonomie::
+   Un terme utilisé pour classer du <<glossary-content,contenu>>, comme une
+   étiquette ou une catégorie. Consulter aussi
+   <<glossary-vocabulary,vocabulary>>. Consulter <<structure-taxonomy>> pour
+   plus d'informations.
+(((Thème,définition)))
+[[glossary-theme]] Thème::
+   Éléments logiciels et fichiers afférents (images, CSS, code PHP et/ou
+   gabarits) qui déterminent le style et la mise en page du site. Le projet
+   Drupal fait une distinction entre les thèmes du
+   _<<glossary-drupal-core,cœur>>_ et les thèmes
+   _<<glossary-contributed,contribués>>_. Consulter <<understanding-themes>>
+   pour plus d'informations.
+(((Type de contenu,définition)))
+[[glossary-content-type]] Type de contenu::
+   Un <<glossary-entity-subtype,sous-type d'entité>> pour le
+   <<glossary-entity-type,type d'entité>> <<glossary-content-item,élément de contenu>>.
+   Chaque type de contenu est utilisé dans un but particulier sur le site, et
+   chacun comporte ses propres champs. Par exemple, le site du marché fermier
+   pourrait avoir un type de contenu pour les pages simples, et un autre pour la
+   page d'un marchand. Consulter <<planning-data-types>> pour plus
+   d'informations.
+(((Type d'entité,définition)))
+[[glossary-entity-type]] Type d'entité::
+   Le type global d'une <<glossary-entity,entité>> ; il n'est communément
+   appliqué qu'aux entités de <<glossary-content,contenu>>. Par exemple, les
+   <<glossary-content-type,types de contenu>>, les
+   <<glossary-taxonomy-term,termes de taxonomie>> et les
+   <<glossary-block,blocs>> personnalisés. Consulter <<planning-data-types>>
+   pour plus d'informations.
+(((UI (user interface, interface utilisateur),définition)))
+[[glossary-ui]] UI::
+   Acronyme anglais de _user interface_
+   (<<glossary-user-interface,interface utilisateur>>).
+(((URL (Uniform Resource Locator),définition)))
+(((Uniform Resource Locator (URL),définition)))
+[[glossary-url]] URL::
+   L'adresse unique d'une page web sur le Web, par exemple
+   https://example.com/node/7. Consulter <<content-paths>> plus d'informations.
+(((Utilisateur,définition)))
+[[glossary-user]] Utilisateur::
+   Une personne interagissant avec votre site, connectée ou
+   <<glossary-anonymous,anonyme>>. Consulter <<user-concept>> pour plus
+   d'informations.
+(((Utilisateur un,définition)))
+[[glossary-user-one]] Utilisateur un (Utilisateur 1)::
+   Le compte d'<<glossary-user,utilisateur>> initial qui est créé à
+   l'<<glossary-installing,installation>> du site (et dont l'identifiant (_ID_) est
+   1). Il a automatiquement tous les <<glossary-permission,droits>>, même si on
+   ne lui a pas assigné de <<glossary-role,rôle>> d'administration. Consulter
+   <<user-admin-account>> pour plus d'informations.
+(((Vocabulaire,définition)))
+[[glossary-vocabulary]] Vocabulaire::
+   Un groupe de <<glossary-taxonomy-term,termes de taxonomies>> à sélectionner
+   pour classer le <<glossary-content,contenu>> d'une manière particulière,
+   comme la liste de toutes les catégories de marchands sur le site d'un marché
+   fermier. D'un point de vue technique, les vocabulaires sont les
+   <<glossary-entity-subtype,sous-types>> du <<glossary-entity-type,type
+   d'entité>> terme de taxonomie. Consulter <<structure-taxonomy>> pour plus
+   d'informations.
+(((Vue,définition)))
+[[glossary-view]] Vue::
+   Une liste formatée de données ; habituellement, les données proviennent
+   d'<<glossary-entity,entités>> de <<glossary-content,contenu>>. Par exemple,
+   sur le site du marché fermier, vous pourriez créer un
+   <<glossary-content-item,élément de contenu>> pour chaque marchand. Vous
+   pourriez alors créer une vue qui gènère sur une page une liste qui affiche
+   l'image sous forme de vignette et la description de chaque marchand, liées à
+   l'élément de contenu correspondant en pleine page. En utilisant les mêmes
+   données, vous pourriez aussi créer une vue qui génère un bloc des nouveaux
+   marchands, qui afficherait des informations relatives aux derniers marchands
+   ajoutés. Consulter <<planning-modular>> pour plus d'informations.
+(((Widget,définition)))
+(((Widget de champ,définition)))
+[[glossary-field-widget]] Widget de champ::
+   De la <<glossary-configuration,configuration>> qui définit comment saisir et
+   modifier des données dans un <<glossary-field,champ>> sur un formulaire de
+   modification. Paar exemple, un champ de type texte pourrait être présenté
+   comme une zone de texte sur une ou plusieurs lignes, et il pourrait y avoir
+   un paramètre pour la taille de la zone de texte. Consulter aussi
+   <<glossary-field-formatter,outil de mise en forme d'un champ>>. Consulter
+   <<structure-widgets>> pour plus d'informations.
+(((WYSIWYG (What You See Is What You Get),définition)))
+(((What You See Is What You Get (WYSIWYG),définition)))
+[[glossary-wysiwyg]] WYSIWYG::
+   Acronyme anglais de _what you see is what you get_ (ce que vous voyez est ce
+   que vous obtenez), se référant à une méthode de modification de
+   <<glossary-content,contenu>> faisant en sorte que ce qui est visualisé à
+   l'écran soit très proche du produit final. Consulter
+   <<structure-text-format-config>> pour plus d'informations.
+(((Workflow, définition)))
+[[glossary-workflow]] Workflow::
+   See <<glossary-editorial-workflow, Processus éditorial>>.
+(((XSS (Cross Site Scripting), définition)))
+[[glossary-xss]] XSS::
+   Acronyme pour <<glossary-cross-site-scripting, Cross Site Scripting>>.

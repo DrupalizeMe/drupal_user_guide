@@ -1,0 +1,232 @@
+[[user_guide]]
+= راهنمای کاربری دروپال ۸
+
+// Chapters are defined here, and each one includes the individual
+// topic files that make up the chapter, in order.
+
+[[preface]]
+
+== مقدمه
+
+[role="summary"]
+مروری بر مفاهیم مقدماتی که به درک این راهنما کمک می‌کنند.
+
+include::copyright.asciidoc[]
+include::preface-audience.asciidoc[]
+include::preface-organization.asciidoc[]
+include::preface-reporting.asciidoc[]
+include::preface-conventions.asciidoc[]
+include::preface-scenario.asciidoc[]
+
+[[understanding-chapter]]
+== درک دروپال
+
+[role="summary"]
+مروری بر مفاهیم دروپال از جمله افزونه‌ها، قالب‌ها، توزیع‌ها و انواع داده.
+
+include::understanding-drupal.asciidoc[]
+include::understanding-modules.asciidoc[]
+include::understanding-themes.asciidoc[]
+include::understanding-distributions.asciidoc[]
+include::understanding-data.asciidoc[]
+include::understanding-project.asciidoc[]
+include::understanding-gpl.asciidoc[]
+
+[[planning-chapter]]
+== طراحی سایت
+
+[role="summary"]
+مروری بر مفاهیم طراحی سایت و جزئیات وظایف متداول در صفحه‌بندی آن.
+
+include::block-regions.asciidoc[]
+include::planning-layout.asciidoc[]
+include::planning-data-types.asciidoc[]
+include::planning-modular.asciidoc[]
+include::planning-structure.asciidoc[]
+include::planning-workflow.asciidoc[]
+
+[[installation-chapter]]
+== نصب
+
+[role="summary"]
+مروری بر پیشنیازهای سرور و وظایف متداول در فرآیند نصب
+
+include::install-requirements.asciidoc[]
+include::install-tools.asciidoc[]
+include::install-prepare.asciidoc[]
+include::install-run.asciidoc[]
+
+
+[[config-chapter]]
+== پیکربندی پایه سایت
+
+[role="summary"]
+مروری بر مفاهیم پایه در پیکربندی سایت. وظایف مرتبط با نصب افزونه، تنظیمات حساب کاربری و قالب‌ها پوشش داده می‌شوند.
+
+include::config-overview.asciidoc[]
+include::config-basic.asciidoc[]
+include::config-install.asciidoc[]
+include::config-uninstall.asciidoc[]
+include::config-user.asciidoc[]
+include::config-theme.asciidoc[]
+
+[[content-chapter]]
+== مدیریت صفحه ساده
+
+[role="summary"]
+مروری بر مفاهیم مدیریت صفحه. وظایف مرتبط با گزینه‌های محتوایی، ویرایش درجا و منوها پوشش داده می‌شوند.
+
+include::content-paths.asciidoc[]
+include::content-create.asciidoc[]
+include::content-edit.asciidoc[]
+include::content-in-place-edit.asciidoc[]
+include::menu-home.asciidoc[]
+include::menu-concept.asciidoc[]
+include::menu-link-from-content.asciidoc[]
+include::menu-reorder.asciidoc[]
+
+[[content-structure-chapter]]
+== تنظیم ساختار محتوایی
+
+[role="summary"]
+مروری بر مفاهیم ساختار محتوا. وظایف مرتبط با انواع محتوا، دسته‌بندی‌ها و فیلدهای مرجع پوشش داده می‌شوند.
+
+include::structure-content-type.asciidoc[]
+include::structure-content-type-delete.asciidoc[]
+include::structure-fields.asciidoc[]
+include::structure-reference-fields.asciidoc[]
+include::structure-taxonomy.asciidoc[]
+include::structure-taxonomy-setup.asciidoc[]
+include::structure-adding-reference.asciidoc[]
+include::structure-widgets.asciidoc[]
+include::structure-form-editing.asciidoc[]
+include::structure-view-modes.asciidoc[]
+include::structure-content-display.asciidoc[]
+include::structure-image-styles.asciidoc[]
+include::structure-image-style-create.asciidoc[]
+include::structure-image-responsive.asciidoc[]
+include::structure-text-formats.asciidoc[]
+include::structure-text-format-config.asciidoc[]
+
+// The following topic has been deferred, so remove the include for now.
+// @todo Put this link back in when/if the topic gets added back.
+// include::structure-pathauto.asciidoc[]
+
+[[user-chapter]]
+== مدیریت حساب‌های کاربری
+
+[role="summary"]
+مروری بر مفاهیم حساب کاربری و جزئیات مرتبط با وظایف آن.
+
+include::user-concept.asciidoc[]
+include::user-admin-account.asciidoc[]
+include::user-new-role.asciidoc[]
+include::user-new-user.asciidoc[]
+include::user-permissions.asciidoc[]
+include::user-roles.asciidoc[]
+include::user-content.asciidoc[]
+
+[[blocks-chapter]]
+== بلاک‌ها
+
+[role="summary"]
+مروری بر مفاهیم بلاک و جزئیات مرتبط با وظایف آن.
+
+include::block-concept.asciidoc[]
+include::block-create-custom.asciidoc[]
+include::block-place.asciidoc[]
+
+[[views-chapter]]
+== ایجاد فهرست با استفاده از Views
+
+[role="summary"]
+مروری بر مفاهیم Views و جزئیات مرتبط با وظایف آن.
+
+include::views-concept.asciidoc[]
+include::views-parts.asciidoc[]
+include::views-create.asciidoc[]
+include::views-duplicate.asciidoc[]
+include::views-block.asciidoc[]
+
+[[multilingual-chapter]]
+== چندزبانه کردن سایت خود
+
+[role="summary"]
+مروری بر مفاهیم سایت چندزبانه و فعالیت‌هایی که برای دستیابی به آن مورد نیاز است.
+
+include::language-concept.asciidoc[]
+include::language-add.asciidoc[]
+include::language-content-config.asciidoc[]
+include::language-content-translate.asciidoc[]
+include::language-config-translate.asciidoc[]
+
+[[extend-chapter]]
+== توسعه و سفارشی‌سازی سایت خود
+
+[role="summary"]
+مروری بر مفاهیم توسعه و سفارشی‌سازی سایت. وظایف مرتبط با دانلود افزونه‌ها و قالب‌ها پوشش داده می‌شوند.
+
+include::extend-module-find.asciidoc[]
+include::extend-maintenance.asciidoc[]
+include::extend-module-install.asciidoc[]
+include::extend-theme-find.asciidoc[]
+include::extend-theme-install.asciidoc[]
+include::extend-manual-install.asciidoc[]
+include::install-dev-sites.asciidoc[]
+include::install-dev-making.asciidoc[]
+include::install-composer.asciidoc[]
+include::extend-deploy.asciidoc[]
+include::extend-config-versions.asciidoc[]
+
+[[prevent-chapter]]
+== پیشگیری و حل مشکلات
+
+[role="summary"]
+مروری بر مفاهیم حافظه، پشتیبان‌گیری از داده و فایل‌های گزارش.
+
+include::prevent-cache.asciidoc[]
+include::prevent-cache-clear.asciidoc[]
+include::prevent-backups.asciidoc[]
+include::prevent-log.asciidoc[]
+include::prevent-status.asciidoc[]
+
+[[security-chapter]]
+== امنیت و نگهداری
+
+[role="summary"]
+مروری بر مفاهیم امنیت و نگهداری. وظایف مرتبط با بروزرسانی دروپال، افزونه‌ها و قالب‌ها پوشش داده می‌شوند.
+
+include::security-cron-concept.asciidoc[]
+include::security-cron.asciidoc[]
+include::security-concept.asciidoc[]
+include::security-announce.asciidoc[]
+include::security-update-core.asciidoc[]
+include::security-update-module.asciidoc[]
+include::security-update-theme.asciidoc[]
+
+[[thoughts-chapter]]
+== سخن آخر
+
+[role="summary"]
+مروری بر جامعه‌کاربری دروپال و چگونگی ارتباط با افراد آن.
+
+include::thoughts-connecting.asciidoc[]
+include::thoughts-support.asciidoc[]
+include::thoughts-learn-more.asciidoc[]
+
+// Glossary and index.
+
+include::glossary.asciidoc[]
+
+== نمایه
+
+// Appendix
+
+[[appendix]]
+[appendix]
+== ضمیمه
+
+[role="summary"]
+مروری بر مشارکت‌کنندگان این راهنما
+
+include::attributions.asciidoc[]

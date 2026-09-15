@@ -1,0 +1,89 @@
+[[language-content-translate]]
+
+=== Переклад матеріалу
+
+[role="summary"]
+Як перевести сторінку на іншу мову.
+
+(((Матеріал, переклад)))
+(((Переклад, матеріал)))
+
+==== Мета
+
+Перекласти домашню сторінку на іспанську.
+
+==== Необхідні знання
+
+<<language-concept>>
+
+==== Вимоги до сайту
+
+* Матеріал Головна повинен існувати. Дивіться <<content-create>>.
+
+* Модуль ядра Content Translation повинен бути встановлений, і ваш сайт повинен
+мати як мінімум дві мови. Дивіться <<language-add>>.
+
+* Тип матеріалу _Сторінка_ повинен бути налаштований на переклад. Дивіться
+<<language-content-config>>.
+
+
+==== Кроки
+
+. У _Керування_ адміністративного меню, перейдіть в _Вміст_ (_admin/content_).
+
+. Знайдіть домашню сторінку. Ви можете знайти її, ввівши "Головна" в поле
+Заголовок.
+
+. Виберіть _Переводи_ з меню, що випадає в рядку елемента вмісту Головна.
+ З'явиться сторінка _Переводи Головна сторінка_.
+
+. Натисніть _Добавити_ в рядку _Spanish_.
++
+--
+// Screenshot of the translations page for the Home page content item.
+image:images/language-content-translate-add.png["Додавання перекладу вмісту", width="100%"]
+--
+
+. Зверніть увагу, що призначений інтерфейс користувача переключився на іспанську. Щоб переключити його назад на
+Українську, видаліть _es_ в URL браузера. наприклад,
+якщо ваш URL виглядає _example.com/es/node/5/translations/add/en/es_,
+видаліть _es_, який йде відразу після _example.com_.
+
+. Заповніть поля, як показано нижче.
++
+[width="100%", frame="topbot", options="header"]
+|================================
+|Назва поля |опис |значення
+|Тема |Перекладена назва сторінки |Página principal
+|Вміст |Переклад вмісту сторінки |
+Bienvenido al mercado de la ciudad - ¡el mercado de agricultores de tu barrio!
+Horario: Domingos de 9:00 a 14:00. Desde Abril a Septiembre
+Lugar: parking del Banco Trust número 1. En el centro de la ciudad
+|Синонім URL > Синонім URL |Перекладена адреса веб-сторінки |pagina-principal
+|================================
+
+. Натисніть _Зберегти (цей переклад)_.
+
+. Перейдіть на домашню сторінку свого сайту, щоб переглянути нещодавно перекладену сторінку.
+
+==== Поліпшіть своє розуміння
+
+* Дотримуйтесь інструкцій вище, щоб перевести більше вмісту на вашому сайті.
+
+* <<language-config-translate>>
+
+// ==== Related concepts
+
+==== Відео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/TOalcUYD5zM[title="Translating Content"]
+
+// ==== Additional resources
+
+
+*Автори*
+
+Написано https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].

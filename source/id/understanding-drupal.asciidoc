@@ -1,0 +1,125 @@
+[[understanding-drupal]]
+
+=== Konsep: Drupal sebagai Sistem Manajemen Konten
+
+[role="summary"]
+Gambaran umum Drupal dan alasan memilihnya sebagai Sistem Manajemen Konten (CMS)
+yang andal.
+
+(((CMS (Sistem Manajemen Konten),gambaran umum)))
+(((Sistem Manajemen Konten (CMS),gambaran umum)))
+(((Sistem manajemen konten Drupal,gambaran umum)))
+(((Sistem manajemen konten Drupal,persyaratan server)))
+(((Drupal core,gambaran umum)))
+(((Situs web Drupal.org,mengunduh modul dan tema dari)))
+
+//==== Prerequisite knowledge
+
+==== Apa itu Sistem Manajemen Konten?
+
+Sistem manajemen konten (CMS) adalah alat perangkat lunak yang memungkinkan
+pengguna menambahkan, menerbitkan, menyunting, atau menghapus konten dari situs
+web menggunakan peramban web pada ponsel cerdas, tablet, atau komputer desktop.
+Biasanya, perangkat lunak CMS ditulis dalam bahasa skrip dan skripnya berjalan
+pada komputer tempat database serta server web diinstal. Konten dan pengaturan
+situs web biasanya disimpan dalam database. Untuk setiap permintaan halaman yang
+masuk ke server web, skrip menggabungkan informasi dari database dan _aset_
+(berkas JavaScript, berkas CSS, berkas gambar, dan sebagainya yang merupakan
+bagian dari CMS atau telah diunggah) untuk membangun halaman situs web.
+
+Kombinasi sistem operasi tempat CMS berjalan, bahasa skrip yang digunakan untuk
+menulisnya, database tempat CMS menyimpan informasinya, serta server web yang
+menjalankan skrip untuk mengambil informasi dan mengembalikannya ke peramban web
+pengunjung situs dikenal sebagai _stack_ tempat CMS berjalan. Kombinasi yang
+umum digunakan, yaitu sistem operasi Linux, server web Apache, database MySQL,
+serta bahasa skrip PHP, dikenal sebagai _LAMP stack_.
+
+==== Apa itu Drupal?
+
+Drupal adalah CMS fleksibel yang berbasis pada LAMP stack, dengan desain modular
+yang memungkinkan fitur ditambahkan dan dihapus melalui instalasi dan
+penghapusan instalasi _modul_, serta memungkinkan keseluruhan tampilan
+dan nuansa situs web diubah melalui instalasi dan penghapusan instalasi _tema_.
+Unduhan
+dasar Drupal, yang dikenal sebagai Drupal Core, berisi skrip PHP yang diperlukan
+untuk menjalankan fungsi dasar CMS, beberapa modul dan tema opsional, serta
+banyak aset JavaScript, CSS, dan gambar. Banyak modul dan tema tambahan dapat
+diunduh dari situs web https://www.drupal.org[_Drupal.org_].
+
+Drupal juga dapat berjalan pada stack teknologi lain:
+
+* Sistem operasinya dapat berupa Windows atau Mac OS, bukan Linux.
+
+* Server webnya dapat berupa Nginx atau IIS, bukan Apache.
+
+* Databasenya dapat berupa PostgreSQL atau SQLite, bukan MySQL, atau pengganti
+  yang kompatibel dengan MySQL seperti MariaDB atau Percona.
+
+Sistem operasi, server web, dan database lain juga dapat digunakan. Namun, skrip
+yang digunakan perangkat lunak ditulis dalam PHP sehingga hal itu tidak dapat
+diubah.
+
+==== Apa alasan menggunakan Drupal?
+
+Saat membangun situs web, Anda dapat memilih untuk menggunakan salah satu dari
+banyak paket CMS dan layanan hosting yang ada, mengembangkan CMS sendiri, atau
+membangun situs tanpa menggunakan CMS. Berikut beberapa alasan Anda mungkin
+memilih untuk menggunakan Drupal:
+
+* Membangun situs kecil dan sederhana dengan halaman HTML statis tidak sulit.
+  Anda dapat membuat situs sederhana dengan sangat cepat. Menyiapkan situs dalam
+  CMS umumnya memerlukan lebih banyak waktu pada awalnya, tetapi memberi manfaat
+  berupa penyuntingan daring (lebih mudah bagi pemelihara konten yang kurang
+  berpengalaman), keseragaman (lebih sulit dipertahankan menggunakan HTML statis
+  untuk situs yang lebih besar), serta kemungkinan fitur yang lebih kompleks dan
+  membutuhkan database.
+
+* Beberapa perangkat lunak CMS dibuat untuk tujuan khusus. Misalnya, ada paket
+  dan layanan hosting untuk membuat blog atau situs web keanggotaan klub.
+  Sebaliknya, Drupal adalah CMS serbaguna. Jika membangun situs untuk tujuan
+  khusus, Anda mungkin memilih CMS untuk tujuan khusus. Namun, jika situs Anda
+  sedikit saja berada di luar tujuan yang dimaksudkan, Anda mungkin lebih baik
+  menggunakan CMS serbaguna daripada mencoba menyesuaikan CMS untuk tujuan
+  khusus.
+
+* Membangun perangkat lunak jenis CMS sendiri mungkin tampak menarik. Namun,
+  menggunakan CMS serbaguna seperti Drupal sebagai titik awal biasanya merupakan
+  ide yang lebih baik karena fungsi dasar CMS (seperti akun pengguna dan
+  pengelolaan konten) didukung oleh ribuan jam kerja pengembang, termasuk
+  bertahun-tahun pengujian pengguna, perbaikan bug, dan penguatan keamanan.
+
+* Beberapa paket perangkat lunak CMS mahal untuk dibeli lisensinya. Sebagian
+  gratis atau memiliki versi gratis, tetapi lisensinya membatasi dan tidak
+  mengizinkan Anda melakukan modifikasi serta perluasan. Anda mungkin lebih
+  memilih paket (seperti Drupal) yang memiliki lisensi perangkat lunak
+  yang tidak terlalu membatasi dan dikembangkan oleh komunitas di seluruh dunia.
+  Lihat <<understanding-project>> untuk informasi lebih lanjut tentang
+  topik ini.
+
+==== Topik terkait
+
+* <<understanding-modules>>
+* <<understanding-themes>>
+* <<understanding-distributions>>
+* <<understanding-project>>
+
+==== Sumber daya tambahan
+
+* https://www.drupal.org/docs/understanding-drupal/overview[halaman dokumentasi komunitas _Drupal.org_ "Memahami Drupal: Gambaran Umum"]
+
+* https://www.drupal.org/about/faq[halaman _Drupal.org_ "FAQ" (Pertanyaan yang Sering Diajukan)]
+
+* https://www.drupal.org/case-studies[halaman _Drupal.org_ "Studi Kasus"]
+
+* https://en.wikipedia.org/wiki/Content_management_system[halaman Wikipedia "Sistem manajemen konten"]
+
+* https://en.wikipedia.org/wiki/Modular_design[halaman Wikipedia "Desain modular"]
+
+
+*Atribusi*
+
+Ditulis dan disunting oleh https://www.drupal.org/u/kvantomme[Kristof van Tomme]
+di https://pronovix.com/[Pronovix],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon], serta
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] di
+https://erdfisch.de[erdfisch].

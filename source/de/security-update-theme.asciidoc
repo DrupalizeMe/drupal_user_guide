@@ -1,0 +1,101 @@
+[[security-update-theme]]
+
+=== Aktualisieren eines Themes
+
+[role="summary"]
+Wie man ein von der Community bereitgestelltes Theme aktualisiert und
+das Script zur Aktualisierung der Datenbank ausführt.
+
+(((Theme,updating)))
+(((Security update,applying)))
+(((Contributed theme,updating)))
+
+==== Zielsetzung
+
+Aktualisieren Sie ein von der Community bereitgestelltes Theme auf Ihrer Website und führen Sie das Skript _update.php_ zur _Datenbankaktualisierung_ aus.
+
+==== Erforderliche Kenntnisse
+
+* <<security-concept>>
+* <<security-cron-concept>>
+
+==== Anforderungen an die Website
+
+* Ein von der Community bereitgestelltes Theme, für das eine Aktualisierung vorhanden ist, wurde installiert. 
+Siehe <<extend-theme-install>> und <<security-announce>>.
+
+* Wenn Ihre Site live ist, sollten Sie diesen Prozess in einer Entwicklungsumgebung testen,
+bevor Sie diesen auf Ihrer Produktiv-Website durchführen. Siehe:
+<<install-dev-making>>.
+
+* Sie haben eine vollständige Sicherung der Produktiv-Website erstellt. Siehe: <<prevent-backups>>.
+
+* Wenn Sie die Benutzeroberfläche verwenden wollen, muss das Modul Update Manager,
+das mit dem Kernsystem ausgeliefert wird, installiert sein.
+Siehe: <<config-install>> für Anweisungen zur Installation von Kernsystemmodulen.
+
+==== Arbeitsschritte
+
+Sie können die Benutzeroberfläche verwenden, um ein von der Community bereitgestelltes Theme zu aktualisieren. Wenn Sie
+ein benutzerdefiniertes Theme statt einem von der Community bereitgestellten Themes aktualisieren und eine Meldung angezeigt wird, die besagt,
+dass _die Installation von Modulen und Themes FTP-Zugriff auf den Webserver erfordert_
+oder wenn die untenstehenden Arbeitsschritte für Sie nicht funktionieren, um die betroffenen Themes herunterzuladen,
+führen Sie die Arbeitsschritte in <<extend-manual-install>> aus. Anschließend können Sie hier mit Schritt 5
+im Abschnitt „Verwendung der Benutzeroberfläche“ fortfahren.
+
+Wenn Sie Composer zur Verwaltung der Dateien auf Ihrer Website verwenden, befolgen Sie die Arbeitsschritte
+in <<install-composer>> um die Dateien zu aktualisieren und fahren Sie anschließend hier mit Schritt 6 in
+ den unten stehenden Anweisungen zur Verwendung der Benutzeroberfläche fort.
+
+====== Verwendung der Benutzeroberfläche
+
+. Versetzen Sie Ihre Website in den Wartungsmodus. Siehe: <<extend-maintenance>>.
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Berichte_ >
+_Verfügbare Aktualisierungen_ > _Aktualisieren_ (_/admin/reports/updates_).
+
+. Suchen und prüfen Sie das  betreffende Theme in der Liste. Klicken Sie auf _Herunterladen_ in der Zeile des entsprechenden Themes.
++
+--
+// Update page for theme (admin/reports/updates/update).
+image:images/security-update-theme-updates.png["Available updates",width="100%"]
+--
+
+. Klicken Sie auf _Fortsetzen_.
+
+. Klicken Sie auf _Datenbankaktualisierung ausführen_. Wenn Sie die neuen Theme-Dateien manuell bezogen haben,
+Beginnen Sie mit diesem Schritt und rufen Sie die Seite zur Datenbankaktualisierung auf, indem Sie die URL
+_example.com/update.php_ in die Adresszeile Ihres Browsers  eingeben.
+
+. Klicken Sie auf _Fortsetzen_ und führen Sie alle Aktualisierungen aus. Das Skript zur Datenbankaktualisierung wird
+ausgeführt.
+
+. Klicken Sie auf _Verwaltungsseiten_, um zum Verwaltungsbereich Ihrer
+Website zurückzukehren.
+
+. Deaktivieren Sie den Wartungsmodus auf Ihrer Website. Siehe: <<extend-maintenance>>.
+
+. Löschen Sie den Cache. Siehe: <<prevent-cache-clear>>.
+
+
+==== Vertiefen Sie Ihre Kenntnisse
+
+* Überprüfen Sie das Protokoll der Website (<<prevent-log>>), sobald die Aktualisierungen abgeschlossen sind,
+um zu prüfen, ob während des Aktualisierungsvorgangs Fehler aufgetreten sind.
+
+* <<security-update-module>>
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/elVnWoaQMkk[title="Ein theme aktualisieren (englisch)"]
+
+// ==== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

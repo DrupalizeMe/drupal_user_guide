@@ -1,0 +1,247 @@
+[[user_guide]]
+= Guia d'usuari del Drupal 8
+
+// Chapters are defined here, and each one includes the individual
+// topic files that make up the chapter, in order.
+
+
+[[preface]]
+
+== Prefaci
+
+[role="summary"]
+Descripció dels temes introductoris que ajuden a aprofitar aquesta guia d'una forma eficient.
+
+include::copyright.asciidoc[]
+include::preface-audience.asciidoc[]
+include::preface-organization.asciidoc[]
+include::preface-reporting.asciidoc[]
+include::preface-conventions.asciidoc[]
+include::preface-scenario.asciidoc[]
+
+
+[[understanding-chapter]]
+== Entendre el Drupal
+
+[role="summary"]
+Descripció dels conceptes del Drupal com mòduls, temes, distribucions i tipus de dades.
+
+include::understanding-drupal.asciidoc[]
+include::understanding-modules.asciidoc[]
+include::understanding-themes.asciidoc[]
+include::understanding-distributions.asciidoc[]
+include::understanding-data.asciidoc[]
+include::understanding-project.asciidoc[]
+include::understanding-gpl.asciidoc[]
+
+
+[[planning-chapter]]
+== Planificació del vostre lloc
+
+[role="summary"]
+Descripció dels conceptes de planificació i de tasques de disposició del lloc. Es tracten els conceptes d'entitat de contingut i estructura.
+
+include::block-regions.asciidoc[]
+include::planning-layout.asciidoc[]
+include::planning-data-types.asciidoc[]
+include::planning-modular.asciidoc[]
+include::planning-structure.asciidoc[]
+include::planning-workflow.asciidoc[]
+
+
+[[installation-chapter]]
+== Instal·lació
+
+[role="summary"]
+Descripció dels requeriments del servidor i detalls de les tasques comunes d'instal·lació.
+
+include::install-requirements.asciidoc[]
+include::install-tools.asciidoc[]
+include::install-prepare.asciidoc[]
+include::install-run.asciidoc[]
+
+
+[[config-chapter]]
+== Configuració bàsica del lloc
+
+[role="summary"]
+Descripció dels conceptes de configuració bàsica del lloc. Es tracten les tasques d'instal·lació de mòduls, comptes d'usuari i temes.
+
+include::config-overview.asciidoc[]
+include::config-basic.asciidoc[]
+include::config-install.asciidoc[]
+include::config-uninstall.asciidoc[]
+include::config-user.asciidoc[]
+include::config-theme.asciidoc[]
+
+
+
+[[content-chapter]]
+== Gestió bàsica de la pàgina
+
+[role="summary"]
+Descripció general dels conceptes de gestió de la pàgina. Es cobreixen les tasques d'elements de contingut, edició en línia i menús.
+
+include::content-paths.asciidoc[]
+include::content-create.asciidoc[]
+include::content-edit.asciidoc[]
+include::content-in-place-edit.asciidoc[]
+include::menu-home.asciidoc[]
+include::menu-concept.asciidoc[]
+include::menu-link-from-content.asciidoc[]
+include::menu-reorder.asciidoc[]
+
+[[content-structure-chapter]]
+== Configuració de l'estructura del contingut
+
+[role="summary"]
+Descripció dels conceptes d'estructura del contingut. Es cobreixen les tasques de tipus de contingut, taxonomies i camps de referència.
+
+include::structure-content-type.asciidoc[]
+include::structure-content-type-delete.asciidoc[]
+include::structure-fields.asciidoc[]
+include::structure-reference-fields.asciidoc[]
+include::structure-taxonomy.asciidoc[]
+include::structure-taxonomy-setup.asciidoc[]
+include::structure-adding-reference.asciidoc[]
+include::structure-widgets.asciidoc[]
+include::structure-form-editing.asciidoc[]
+include::structure-view-modes.asciidoc[]
+include::structure-content-display.asciidoc[]
+include::structure-image-styles.asciidoc[]
+include::structure-image-style-create.asciidoc[]
+include::structure-image-responsive.asciidoc[]
+include::structure-text-formats.asciidoc[]
+include::structure-text-format-config.asciidoc[]
+
+// The following topic has been deferred, so remove the include for now.
+// @todo Put this link back in when/if the topic gets added back.
+// include::structure-pathauto.asciidoc[]
+
+
+[[user-chapter]]
+== Gestió de comptes d'usuari
+
+[role="summary"]
+Descripció dels conceptes de compte d'usuari i detalls de les tasques comunes a comptes d'usuari.
+
+include::user-concept.asciidoc[]
+include::user-admin-account.asciidoc[]
+include::user-new-role.asciidoc[]
+include::user-new-user.asciidoc[]
+include::user-permissions.asciidoc[]
+include::user-roles.asciidoc[]
+include::user-content.asciidoc[]
+
+
+[[blocks-chapter]]
+== Blocs
+
+[role="summary"]
+Descripció dels conceptes de blocs i detalls de les tasques comunes dels blocs.
+
+include::block-concept.asciidoc[]
+include::block-create-custom.asciidoc[]
+include::block-place.asciidoc[]
+
+
+[[views-chapter]]
+== Creació de llistats amb el Views
+
+[role="summary"]
+Descripció dels conceptes del views i detalls de les tasques comunes del views.
+
+include::views-concept.asciidoc[]
+include::views-parts.asciidoc[]
+include::views-create.asciidoc[]
+include::views-duplicate.asciidoc[]
+include::views-block.asciidoc[]
+
+
+[[multilingual-chapter]]
+== Feu el vostre lloc multilingüe
+
+[role="summary"]
+Descripció dels conceptes de lloc multilingüe i detalls de les tasques necessàries per a fer el lloc multilingüe.
+
+include::language-concept.asciidoc[]
+include::language-add.asciidoc[]
+include::language-content-config.asciidoc[]
+include::language-content-translate.asciidoc[]
+include::language-config-translate.asciidoc[]
+
+
+[[extend-chapter]]
+== Estendre i personalitzar el vostre lloc
+
+[role="summary"]
+Descripció de la personalització i el desenvolupament del lloc. Es cobreixen les tasques de descàrrega de mòduls i temes.
+
+include::extend-module-find.asciidoc[]
+include::extend-maintenance.asciidoc[]
+include::extend-module-install.asciidoc[]
+include::extend-theme-find.asciidoc[]
+include::extend-theme-install.asciidoc[]
+include::extend-manual-install.asciidoc[]
+include::install-dev-sites.asciidoc[]
+include::install-dev-making.asciidoc[]
+include::install-composer.asciidoc[]
+include::extend-deploy.asciidoc[]
+include::extend-config-versions.asciidoc[]
+
+
+[[prevent-chapter]]
+== Prevenció i ressolució de problemes
+
+[role="summary"]
+Descripció dels conceptes de memòria cau, còpia de seguretat de les dades i registre. Es cobreixen les tasques de neteja de la memòria cau.
+
+include::prevent-cache.asciidoc[]
+include::prevent-cache-clear.asciidoc[]
+include::prevent-backups.asciidoc[]
+include::prevent-log.asciidoc[]
+include::prevent-status.asciidoc[]
+
+
+[[security-chapter]]
+== Seguretat i manteniment
+
+[role="summary"]
+Descripció dels conceptes de seguretat i manteniment. Es cobreixen les tasques d'actualització del nucli del programari, mòduls i temes.
+
+include::security-cron-concept.asciidoc[]
+include::security-cron.asciidoc[]
+include::security-concept.asciidoc[]
+include::security-announce.asciidoc[]
+include::security-update-core.asciidoc[]
+include::security-update-module.asciidoc[]
+include::security-update-theme.asciidoc[]
+
+
+[[thoughts-chapter]]
+== Reflexions finals
+
+[role="summary"]
+Descripció de la comunitat del Drupal i de com connectar amb d'altres usuaris.
+
+include::thoughts-connecting.asciidoc[]
+include::thoughts-support.asciidoc[]
+include::thoughts-learn-more.asciidoc[]
+
+
+// Glossary and index.
+
+include::glossary.asciidoc[]
+
+== Índex
+
+// Appendix
+
+[[appendix]]
+[appendix]
+== Apèndix
+
+[role="summary"]
+Descripció dels contribuidors d'aquesta guia.
+
+include::attributions.asciidoc[]

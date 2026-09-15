@@ -1,0 +1,51 @@
+[[structure-widgets]]
+
+=== Konzept: Formulare und Steuerelemente
+
+[role="summary"]
+Überblick über Formulare und Steuerelemente.
+
+(((Content editing form,overview)))
+(((Widget,overview)))
+(((Field,overview)))
+(((Form,overview)))
+
+==== Erforderliche Vorkenntnisse
+
+<<planning-data-types>>
+
+==== Was sind Formulare und Steuerelemente?
+
+Die Content-Management-System-Software, welche die Grundlage Ihrer Website bildet, ermöglicht
+Administratoren, unter Verwendung diverser Formulare, Inhalte und Einstellungen direkt im Webbrowser zu bearbeiten. Insbesondere werden _Formulare zum Bearbeiten von Inhalten_ von ihnen verwendet, um die Inhalte Ihrer Website zu bearbeiten, sie können von Administratoren voreingestellt werden. Einstellungen für Konfigurationsformulare werden von den Modulen bereitgestellt und können nicht gesondert konfiguriert werden.
+
+Die Daten der Inhalte Ihrer Website werden in einem oder mehreren Feldern gespeichert, welche an den jeweiligen Inhalts- und/oder Subtyp angehängt werden. Wenn Sie das Bearbeitungsformular für einen 
+Subtyp konfigurieren könnnen Sie jeweils: 
+
+* Ein _Steuerelement_ für jedes Feld auswählen. Ein Steuerelement definiert die Methode zur Eingabe der
+Daten die das Feld enthält. Beispielsweise kann ein Taxonomiebegriff über ein
+Autovervollständigungsfeld, eine Auswahlliste oder ein Feld im Stil von Tags, über das Redakteure
+neue Tags automatisch hinzufügen könnnen, ausgewählt werden.
+
+* Steuerelementeinstellungen festlegen. Sie können zum Beispiel die Länge des zulässigen Textes in einem
+Eingabefeld für Klartext festlegen.
+
+* Ein oder mehrere Felder aus dem Bearbeitungsformular ausblenden (indem Sie das Feld bzw. die Felder in den Bereich „Deaktiviert“ verschiebn).
+
+* Die Reihenfolge der Felder neu anordnen.
+
+Prinzipiell können auch mehrere Inhaltsbearbeitungsformulare für jeden Subtyp zur Verfügung gestellt werden. Diese Funktion wird jedoch nur selten verwendet; die häufigste Ausnahme hierbei gilt für die Felder von Benutzerprofilen: Sie können unterschiedliche Formulare für die Benutzerregistrierung und die Bearbeitung von Benutzerkonten verwenden. Zum Beispiel könnten Sie einen begrenzten Satz von Feldern definieren, der bei der ersten Registrierung eines Benutzers auf der Website angezeigt werden soll, und weitere Felder, welche später angezeigt werden, wenn der Benutzer sein Profil bearbeitet.
+
+==== Verwandte Themen
+
+* <<structure-form-editing>>
+* <<structure-view-modes>>
+
+//===== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

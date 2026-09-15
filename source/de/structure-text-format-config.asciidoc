@@ -1,0 +1,98 @@
+[[structure-text-format-config]]
+
+=== Konfigurieren von Textformaten und Editoren
+
+[role="summary"]
+Wie man eine Änderung an einem Textformat und der Konfiguration von Texteditoren vornimmt.
+
+(((Text format,configuring)))
+(((Configuring,text format)))
+(((Editor,configuring)))
+(((CKEditor text editor,default assignment to text format)))
+(((WYSIWYG (What You See Is What You Get),configuring editor)))
+(((What You See Is What You Get (WYSIWYG),configuring editor)))
+(((Module,Filter)))
+(((Module,Editor)))
+(((Module,CKEditor)))
+(((Filter module,configuring)))
+(((Editor module,configuring)))
+(((CKEditor module,configuring)))
+
+==== Zielsetzung
+
+Fügen Sie zum Textformat _Einfaches HTML_ das HTML-Tag für horizontale Linien zu Liste der erlaubten HTML-Tags hinzu und ergänzen Sie die Konfiguation des zugeordneten Texteditors um einen entsprechenden Buttton.
+
+==== Erforderliche Vorkenntnisse
+
+<<structure-text-formats>>
+
+==== Anforderungen an die Website
+
+* Die Kernsystemmodule Filter, Text Editor und CKEditor müssen installiert sein. Die Module wurden automatisch installiert,
+wenn Sie das Installationsprofil Standard zur Installation Ihrer Website verwendet haben.
+
+* Das Textformat _Einfaches HTML_ muss vorhanden sein. Dieses wird auf Ihrer Site erstellt, wenn Sie
+Ihre Website unter Verwendung des Installationsprofils Standard aufsetzen.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ > _Inhaltserstellung_ > _Textformate und Editoren_ (_admin/configuration/content/formats_).
+Die Seite _Textformate und Editoren_ erscheint. Beachten Sie, dass die Namen der Textformate
+die mit Ihrem Installationsprofil geliefert wurden, auf der Website evtl. auf englisch angezeigt werden. Lesen sie den Abschnitt
+<<language-concept>> um den Grund hierfür zu erfahren.
+
+. Klicken Sie hinter dem Textformat _Einfaches HTML_ auf _Konfigurieren_. Die Seite _Einfaches HTML_
+wird geöffnet.
+
+. Achten Sie darauf, dass _CKEditor_ im Feld _Text-Editor_ ausgewählt ist. Diese Auswahl ermöglicht es Ihnen
+die Symbolleiste des Editors zu konfigurieren.
+
+. Ziehen Sie den Button _Horizontale Linie_ aus der Liste _Verfügbare Buttons_ im Abschnitt _Werkzeuge_ auf die aktive Werkzeugleiste_. Möglicherweise müssen Sie auf den Link _Gruppennamen anzeigen_ klicken, um die Gruppe mit dem Namen
+_Tools_ zu finden. Alternativ zum Ziehen und Ablegen von Buttons mit der Maus können Sie in die Registerkarte klicken und die einzelnen Buttons mit den Pfeiltastn auf Ihrer Tastatur verschieben.
++
+--
+// Button configuration area on text format edit page.
+image:images/structure-text-format-config-editor-config.png["Configuring the editor",width="100%"]
+--
+
+. Beachten Sie, dass Sie die _Filter-Verarbeitungsreihenfolge_ ändern können.
+
+. Unter _Aktivierte Filter_ > _Erlaubte HTML-Tags einschränken und fehlerhaftes HTML_ korrigieren,
+überprüfen Sie im Feld _Erlaubte HTML-Tags_, ob `<hr>` vorhanden ist (fügen Sie eine
+Editor-Schaltfläche hinzu, werden die erlaubten Tags automatisch aktualisiert).
++
+--
+// Allowed HTML tags area on text format edit page.
+image:images/structure-text-format-config-allowed-html.png["Configuring the HTML tags",width="100%"]
+--
+
+. Klicken Sie auf _Konfiguration speichern_. Sie gelangen zurück auf die Seite _Textformate und
+Editoren_. Es wird eine Meldung angezeigt, dass das Textformat
+aktualisiert worden ist.
++
+--
+// Confirmation message after updating text format.
+image:images/structure-text-format-config-summary.png["Confirmation message for text format configuration"]
+--
+
+==== Vertiefen Sie Ihr Wissen
+
+Wenn Sie die Auswirkungen dieser Änderungen auf Ihrer Website nicht sehen, müssen Sie
+den Cache der Website leeren. Siehe: <<prevent-cache-clear>>.
+
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/T9RD6PTxe9U[title="Konfigurieren von Textformaten und Editoren (englisch)"]
+
+// ==== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben von https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

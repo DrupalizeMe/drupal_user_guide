@@ -1,0 +1,72 @@
+[[install-dev-sites]]
+
+=== Concept : sites de développement
+
+[role="summary"]
+Vue d'ensemble des sites de développement avec un exemple de processus de
+déploiement pour la construction de sites.
+
+(((Site de développement,vue d'ensemble)))
+(((Processus de développement,vue d'ensemble)))
+(((Site de pré-production,vue d'ensemble)))
+(((Installer,site de développement)))
+(((Installer,site de pré-production)))
+
+//==== Prerequisite knowledge
+
+==== Qu'est-ce qu'un site de développement ?
+
+Les sites de développement sont des copies d'un même site, utilisées pour
+développer, mettre à jour, et tester des fonctionnalités sans risques pour l'intégrité du site de
+production.
+
+Un exemple de processus de déploiement pour la construction de sites inclut
+habituellement les sites mentionnés ci-dessous.
+
+Environnement local::
+  Le processus de développement commence lorsque des développeurs travaillent
+  sur de nouvelles fonctionnalités, des correctifs, sur le thème et la
+  configuration dans leur environnement de développement local.
+
+Site de développement::
+  Les développeurs poussent les modifications sur lesquels ils ont travaillé
+  vers le site de développement. Pour une équipe comprenant plus d'un
+  développeur, la gestion de versions est habituellement utilisée. Git est un
+  système de gestion de versions qui suit chaque changement de vos fichiers.
+  Vous pouvez alors créer une nouvelle révision comportant ces modifications
+  dans un dépôt. Utiliser Git permet aux membres de l'équipe de travailler sur
+  le même site sans surcharger le travail de chacun. Cela permet également de
+  revenir facilement à des états antérieurs du développement.
+
+Site de pré-production::
+  Le site de pré-production peut être utilisé pour tester ou présenter les
+  changements au client pour validation. L'assurance qualité (_quality
+  assurance_, QA) et les tests d'acceptation des utilisateurs (_user acceptance
+  testing_, UAT) sont le plus souvent réalisés sur le site de pré-production. Il
+  est recommandé d'avoir le contenu de pré-production à la fois sur les sites de
+  développement et de pré-production, de manière à pouvoir tester la façon dont les
+  nouvelles fonctionnalités fonctionneront avec le contenu existant.
+
+Site de production::
+  Le site en ligne accessible aux visiteurs sur le web. Il contient les
+  nouvelles fonctionnalités qui se sont révélées suffisamment sûres pour être
+  mises en ligne.
+
+Selon la taille du projet, son périmètre, les exigences, ou les acteurs, les
+étapes du processus ci-dessus peuvent être retirées, ou d'autres peuvent être
+ajoutées. Par exemple, un site de test avant la pré-production peut être ajouté
+pour séparer le test des processus de validation des utilisateurs.
+
+==== Sujets liés
+
+* <<install-dev-making>>
+* <<planning-workflow>>
+* <<extend-git>>
+
+// ==== Additional resources
+
+*Attributions*
+
+Écrit et modifié par https://www.drupal.org/u/dianalakatos[Diána Lakatos], et
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de http://redcrackle.com[Red
+Crackle]. Traduit par https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

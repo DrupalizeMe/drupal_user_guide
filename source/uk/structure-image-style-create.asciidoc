@@ -1,0 +1,124 @@
+[[structure-image-style-create]]
+
+=== Налаштування стилю зображення
+
+[role="summary"]
+Як додати стиль зображення, щоб переформатувати зображення.
+
+(((Стиль зображення, створення)))
+(((Стиль, зображення)))
+(((Ефект, зображення)))
+(((Зображення, зміна розміру)))
+
+==== Мета
+
+Додати стиль зображення і використовувати його для відображення зображень на сторінках Постачальника.
+
+==== Необхідні знання
+
+* <<structure-fields>>
+* <<structure-content-display>>
+* <<structure-image-styles>>
+
+==== Вимоги до сайту
+
+* Типи контенту Постачальник і Рецепт повинні існувати. Дивіться <<structure-content-type>>.
+
+* Основні поля зображення повинні існувати для обох типів контенту. Дивіться <<structure-fields>>.
+
+* Елементи контенту повинні існувати для обох типів контенту. Дивіться
+<<structure-content-type>>, <<structure-fields>>, і <<content-create>>.
+
+==== Кроки
+
+. У _Керування_ адміністративного меню, Перейдемо в _Конфігурація_ > _Медіа_ >
+_Стилі зображень_ (_admin/config/media/image-styles_).
+
+. Натисніть _Додати стиль зображення_.
+
+. Ведіть назву _Средній (300x200)_
+
+. Натисніть _Створити новий стиль_. З'явиться сторінка _Редагувати стиль Середній (300х200)_.
+
+. У таблиці _Ефект_, виберіть _Масштабування і кадрування_. Натисніть _Додати_.
+
+. Заповніть поля, як показано нижче.
++
+[width="100%", frame="topbot", options="header"]
+|================================
+|Ім'я поля |Значення
+|Ширина |300
+|Висота |200
+|================================
+
+. Натисніть _Додати ефект_. Стиль зображення збережеться з обраним ефектом.
++
+--
+// Image style editing page, with effects added.
+image:images/structure-image-style-create-add-style.png["Додати стиль зображення", width="100%"]
+--
+
+. У _Керування_ адміністративного меню, перейдіть в _Структура_ > _Типи матеріалів_
+(_admin/structure/types_).
+
+. Натисніть _Керувати відображенням_ з випадаючої кнопки в колонці _Операції_ для типу матеріалу
+Постачальник. З'явиться сторінка _Керувати відображенням_ (_admin/structure/types/manage/vendor/display_).
+
+. Переконайтеся, що обрана другорядна вкладка _Default_.
+
+. Натисніть на шестірню для поля _Основне зображення_, щоб відкрити опції
+конфігурації.
+
+. Заповніть поля, як показано нижче.
++
+[width="100%", frame="topbot", options="header"]
+|================================
+|Ім'я поля |Опис |Приклад значення
+|Стиль зображення |Який стиль зображення використовувати |Середній (300х200)
+|Зображення як посилання на |На яку сторінку перейде користувач при натисканні на зображення |Нічого
+|================================
++
+--
+// Main image settings area of ​​Vendor content type.
+image:images/structure-image-style-create-manage-display.png["Змінити настройки форматера поля зображення"]
+--
+
+. Натисніть _Оновити_.
+
+. Натисніть _Зберегти_. Новий стиль зображення буде використовуватися при відображенні вмісту
+Постачальник.
+
+. Відкрийте матеріал Постачальник і переконайтеся, що він тепер відображається за допомогою
+зменшеного зображення. Дивіться <<content-edit>> для отримання інформації про те, як знайти
+існуючий матеріал.
+
+. Повторіть кроки 8-15 для матеріалу Рецепт.
+
+// ==== Expand your understanding
+
+==== Схожі поняття
+
+* <<structure-fields>>
+* <<structure-image-styles>>
+* <<structure-image-responsive>>
+
+==== Відео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/DKIo7j19ulY[title="Setting up an Image Style"]
+
+==== Додаткові ресурси
+
+https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module/working-with-images[_Drupal.org_ сторінка документації спільноти "Working with images"]
+
+
+*Автори*
+
+Адаптовано і додано https://www.drupal.org/u/batigolix[Boris Doesborg], і
+https://www.drupal.org/u/jojyja[Jojy Alphonso] в
+http://redcrackle.com [Red Crackle] з
+https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module/working-with-images["Working with images"],
+авторські права 2000-copyright_upper_year за окремими учасниками в
+https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].

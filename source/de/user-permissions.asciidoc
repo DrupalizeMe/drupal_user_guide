@@ -1,0 +1,94 @@
+[[user-permissions]]
+=== Zuweisen von Berechtigungen zu einer Rolle
+
+[role="summary"]
+So weisen Sie einer Rolle eine Berechtigung zu.
+
+(((Permission,changing)))
+(((Permission,granting)))
+(((Permission,denying)))
+(((Role,changing permission)))
+(((Security,assigning permission)))
+
+==== Zielsetzung
+
+Ändern Sie die Berechtigungen der Rolle Lieferant, damit Benutzer, denen diese Rolle zugewisen ist, Rezepte und Inhalte vom Typ Lieferant bearbeiten und löschen können, Inhalte formatieren und sich untereinander kontaktieren können. 
+
+==== Erforderliche Vorkenntnisse
+
+* <<user-concept>>
+
+==== Anforderungen an die Website
+
+Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe <<user-new-role>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Benutzer_ > _Rollen_
+(_admin/people/roles_). Die Seite _Rollen_ erscheint.
+
+. Klicken Sie im Dropbutton für die Rolle Lieferant auf _Berechtigungen bearbeiten_. Die Seite _Rolle bearbeiten_, auf der Sie alle verfügbaren Aktionen für die Website wie z.B. _Kommentare abgeben_ oder _Blöcke verwalten_ sehen können, erscheint. Die verfügbaren Berechtigungen hängen von den Modulen ab, die auf
+der Website aktiviert wurden. 
+
+Hinweis: Einige Berechtigungen können Auswirkungen auf die Sicherheit haben. Seien sie vorsichtig beim Zuweisen von Berechtigungen zu Rollen.
+
+. Markieren Sie die Kontrollkästchen für die folgenden Berechtigungen, aufgelistet nach Modul:
++
+[width="100%",frame="topbot",options="header"]
+|================================
+| Modul | Berechtigung
+| Contact | Persönliches Kontaktformular verwenden
+| Filter | Textformat „Einfachs HTML“ verwenden
+| Node | Rezept: Neuen Inhalt erstellen
+| Node | Rezept: Eigenen Inhalt bearbeiten
+| Node | Rezept: Eigenen Inhalt löschen
+| Node | Lieferant: Eigenen Inhalt bearbeiten
+| Quick Edit | Auf Direktbearbeitungsmodus zugeifen
+|================================
++
+--
+// Permissions page for Vendor (admin/people/permissions/vendor).
+image:images/user-permissions-check-permissions.png["Granting users with the Vendor role the rights to create, delete and edit Recipes",width="100%"]
+--
+
+. Klicken Sie auf _Berechtigungen speichern_. Sie erhalten eine Meldung, dass Ihre Änderungen
+gespeichert wurden.
++
+--
+// Confirmation message after updating permissions.
+image:images/user-permissions-save-permissions.png["Confirmation message after updating permissions"]
+--
+
+==== Vertiefen Sie Ihr Wissen
+
+* Melden Sie sich als einer der neuen Benutzer an, die Sie im Abschnitt <<user-new-user>> angelegt haben. Überprüfen Sie, 
+ob Sie die richtigen Berechtigungen haben.
+
+* <<user-roles>>
+
+==== Verwandte Konzepte
+
+<<user-admin-account>>
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/IlVh9f4BHVw[title="Zuweisen von Berechtigungen zu einer Rolle (englisch)"]
+
+==== Zusätzliche Ressourcen
+
+https://www.drupal.org/docs/7/managing-users[_Drupal.org_ Community-Dokumentationsseite „Benutzer verwalten"]
+
+
+*Mitwirkende*
+
+Adaptiert und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/bemery987[Brian Emery],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[Red Crackle], von
+https://www.drupal.org/node/1803614[„Benutzerrollen"] (englisch),
+copyright 2000 - copyright_upper_year von den einzelnen Mitwirkenden an der
+https://www.drupal.org/documentation[Dokumentation der Drupal-Community].
+
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

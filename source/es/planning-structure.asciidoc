@@ -1,0 +1,160 @@
+[[planning-structure]]
+=== Planificar la estructura de su contenido
+
+[role="summary"]
+Cómo planificar una estructura de contenido que asigna tipos de entidad de
+contenido a contenido específico del sitio web.
+
+(((Content structure,planning)))
+(((Site plan,content structure)))
+
+==== Objetivo
+
+Hacer un plan para la estructura de contenido del sitio (qué tipo y subtipo de
+entidad usar para cada contenido) y qué páginas contendrán listados de
+contenido.
+
+==== Conocimientos previos
+
+* <<planning-data-types>>
+* <<planning-modular>>
+* <<preface-scenario>>
+
+//==== Site prerequisites
+
+==== Pasos
+
+. Haga una lluvia de ideas sobre qué contenido debe contener su sitio, que
+podría incluir contenido que los visitantes estarían buscando, así como
+contenido que usted quiere mostrarles. El resultado podría ser la descripción
+de <<preface-scenario>>.
+
+. Para cada elemento de contenido identificado, decida qué tipo de entidad de
+contenido encajaría mejor. Al hacerlo, tendrá que considerar dónde y cómo se
+usará y editará el contenido en el sitio. Por ejemplo, en el escenario del
+sitio del mercado de agricultores, quizá quiera mostrar el horario y la
+ubicación del mercado en la barra lateral de cada página. Para ese contenido,
+un único bloque personalizado tiene sentido. Como otro ejemplo, puede decidir
+que las páginas que muestran información sobre cada vendor sean elementos de
+contenido gestionados por el módulo del núcleo Node, porque quiere que los
+vendors puedan editar sus propias fichas. El sistema de permisos del módulo del
+núcleo Node se lo permite hacer fácilmente.
++
+Estas decisiones no siempre tienen necesariamente una única respuesta correcta;
+por ejemplo, podría decidir que las páginas de vendors fueran perfiles de
+usuario en lugar de elementos de contenido, pero si lo hiciera el contenido
+quedaría vinculado a una cuenta de usuario concreta y no sería tan fácil
+cambiar más adelante la propiedad de una página de vendor a otra cuenta de
+usuario.
+
+. Dentro de cada tipo de entidad de contenido que haya identificado, decida qué
+división en subtipos de entidad tendría sentido. Por ejemplo, en el ejemplo del
+sitio del mercado de agricultores, probablemente decidiría que, bajo el tipo de
+entidad Content item, debería haber un tipo de contenido para las páginas
+básicas (Inicio y Acerca de), uno para las páginas de vendors y otro para las
+páginas de recetas.
+
+. Para cada subtipo de entidad que haya decidido, decida qué campos son
+necesarios. Por ejemplo, el tipo de contenido Vendor podría necesitar campos
+para el nombre del vendor, la URL de la página web, la imagen y la descripción.
+
+. Decida qué listados de entidades son necesarios, que podrían ser páginas
+enteras o áreas más pequeñas de la página. Para cada listado, tendrá que
+determinar qué entidades deben listarse. Después tendrá que decidir en qué
+orden y con qué opciones de filtrado deben mostrarse; por ejemplo, quizá quiera
+dar al visitante del sitio la opción de buscar por palabra clave, de filtrar el
+listado hasta un subconjunto o de ordenarlo. También tendrá que decidir qué
+información de las entidades debe mostrarse, lo que podría añadir elementos a la
+lista de campos que determinó en el paso anterior. El sitio del mercado de
+agricultores, por ejemplo, necesita una página de listado de recetas que liste
+elementos de contenido de tipo Recipe, con la posibilidad de filtrar por
+ingredientes, lo que significa que el tipo de contenido Recipe necesita un
+campo Ingredients.
+
+. Para cada campo identificado en cada subtipo de entidad, identifique qué tipo
+de datos debe contener (como texto sin formato, texto con formato, una fecha,
+un archivo de imagen, etc.) y cuántos valores deben permitirse. La mayoría de
+los campos son de un solo valor, pero, por ejemplo, una receta debería permitir
+varios valores en su campo Ingredients.
+
+. Considere qué campos serían mejores como referencias a entidades de término
+de taxonomía: campos cuyos valores deberían elegirse de una lista de valores
+permitidos. Los valores permitidos que se espera que cambien y crezcan con el
+tiempo son buenos candidatos. Un ejemplo es el campo Ingredients del tipo de
+contenido Recipe.
+
+. Considere qué campos deberían hacer referencia a otras entidades de
+contenido. Un ejemplo: dado que los vendors enviarán recetas, se necesitará un
+campo en el tipo de contenido Recipe que haga referencia al elemento de
+contenido Vendor del vendor que envió la receta.
+
+A continuación se muestra un ejemplo de la estructura de contenido resultante
+para el sitio de ejemplo del escenario del mercado de agricultores:
+
+[width="100%",frame="topbot",options="header"]
+|=============================================
+|Tipo de entidad |Subtipo de entidad |Ejemplos |Campos
+
+|Content item |Basic page |Página de inicio, página Acerca de |Título, cuerpo de la página
+
+|Content item |Vendor |Una página para cada vendor del mercado |
+  Nombre del vendor, cuerpo de la página, imagen, URL
+
+|Content item |Recipe |Una página para cada receta enviada |
+  Nombre de la receta, cuerpo de la página, imagen, referencia al Vendor que la envió,
+  taxonomía Ingredients
+
+|Custom block |(genérico) |Aviso de copyright para el pie de página,
+  horario y ubicación para la barra lateral |Sin campos especiales
+
+|Taxonomy term |Ingredients |Zanahorias, tomates y otros ingredientes de recetas |
+  Sin campos especiales
+
+|Contact form |(genérico) |Formulario de contacto genérico |Nombre, correo, asunto, mensaje
+
+|User profile |(ninguno) |No se mostrará en el sitio |Sin campos especiales
+
+|=============================================
+
+Y estos son los listados que necesita el sitio:
+
+[width="100%",frame="topbot",options="header"]
+|=============================================
+|Página o área de página |Tipo y subtipo de entidad |Filtro/orden/paginación |
+  Campos mostrados
+
+|Página de vendors |Elementos de contenido Vendor |Todos los vendors, orden alfabético, paginado |
+  Imagen, nombre del vendor, cuerpo recortado
+
+|Página de recetas |Elementos de contenido Recipe |
+  Filtrar por ingredientes, orden alfabético, paginado |Imagen, nombre de la receta
+
+|Barra lateral de recetas recientes |Elementos de contenido Recipe |Listar las 5 más recientes |
+  Imagen, nombre de la receta
+
+|=============================================
+
+==== Ampliar conocimiento
+
+* <<structure-content-type>>
+* <<structure-fields>>
+* <<structure-taxonomy-setup>>
+
+==== Temas relacionados
+
+<<structure-taxonomy>>
+
+==== Vídeos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/CaNt4DEeIgU[title="Planning Your Content Structure"]
+
+//==== Additional resources
+
+
+*Atribuciones*
+
+Escrito y editado por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]
+y https://www.drupal.org/u/gdunham[Grant Dunham].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].

@@ -1,0 +1,82 @@
+[[user-new-role]]
+
+=== Створення ролі користувача
+
+[role="summary"]
+Як створити нову роль користувача.
+
+(((Роль користувача, створення)))
+(((Роль, створення)))
+(((Роль, анонімний користувач)))
+(((Роль, авторизований користувач)))
+(((Роль, адміністратор)))
+
+==== Мета
+
+Створити роль постачальника для того щоб виконувати деякі завдання, не всі, а тільки
+визначені для цієї ролі.
+
+==== Необхідні знання
+
+<<user-concept>>
+
+// ==== Site prerequisites
+
+==== Кроки
+
+. У _Керування_ адміністративного меню, перейдіть в _Люди_ > _Ролі_
+(_admin/people/roles_).
+
+. Ви знайдете ролі за замовчуванням _Анонімний користувач_,
+_Авторизований користувач_, і _Адміністратор_, які вже присутні.
++
+--
+// Roles page (admin/people/roles).
+image:images/user-new-role-roles-page.png["Roles page"]
+--
+
+. Натисніть _Додати роль_ для додавання власної ролі.
+
+. Введіть Постачальник в поле _Назва ролі_. Натисніть _Зберегти_.
++
+--
+// Add role page (admin/people/roles/add).
+image:images/user-new-role-add-role.png["додавання постачальника в якості ролі"]
+--
+
+. Ви побачите повідомлення «Роль Постачальник була додана.», Воно буде відображається у верхній частині
+сторінки.
++
+--
+// Confirmation message after adding new role.
+image:images/user-new-role-confirm.png["роль постачальника додана повідомлення про успіх"]
+--
+
+==== Поліпшіть своє розуміння
+
+* <<user-permissions>>
+* <<user-roles>>
+
+// ==== Related concepts
+
+==== Відео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/JdNxJKWAi8Q[title="Creating a Role"]
+
+==== Додаткові ресурси
+
+https://www.drupal.org/docs/7/managing-users/user-roles[_Drupal.org_ сторінка документації спільноти "User Roles"]
+
+
+*Автори*
+
+
+Адаптований і відредагований https://www.drupal.org/u/JackProbst[Jack Probst],
+https://www.drupal.org/u/batigolix[Boris Doesborg], і
+https://www.drupal.org/u/eojthebrave[Joe Shindelar] від
+https://www.drupal.org/docs/7/managing-users/user-roles["User Roles"], авторські права 2000-copyright_upper_year
+за окремими учасниками https://www.drupal.org/documentation[Drupal
+Community Documentation]
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].

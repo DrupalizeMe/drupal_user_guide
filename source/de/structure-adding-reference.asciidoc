@@ -1,0 +1,113 @@
+[[structure-adding-reference]]
+
+=== Hinzufügen eines Referenzfeldes
+
+[role="summary"]
+So fügen Sie ein Referenzfeld hinzu, das zwei Inhaltstypen verbindet.
+
+(((Reference field,adding)))
+(((Field,for adding references)))
+(((Entity reference field,adding)))
+(((Content reference field,adding)))
+(((User reference field,adding)))
+(((Taxonomy term reference field,adding)))
+
+==== Zielsetzung
+
+Fügen Sie ein Referenzfeld hinzu, damit Rezepte mit dem Profil des Lieferanten verknüpft werden können, welcher
+das Rezept eingereicht hat.
+
+==== Erforderliche Kenntnisse
+
+* <<structure-fields>>
+* <<structure-reference-fields>>
+* <<structure-content-type>>
+
+==== Anforderungen an die Website
+
+Die Inhaltstypen Rezept und Lieferant müssen vorhanden sein. Siehe <<structure-content-type>>.
+
+==== Arbeitsschritte
+
+. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_ (_admin/structure/types_).
+Klicken Sie im Drop-Button des Inhaltstyps Rezept auf _Felder verwalten_.
+Sie gelangen so auf die Seite _Felder verwalten_.
+
+. Klicken Sie auf _Feld hinzufügen_. Die Seite _Feld hinzufügen_ erscheint.
+Füllen Sie die Formularfelder wie unten angegeben aus.
+Klicken Sie auf _Speichern und fortfahren_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Ein neues Feld hinzufügen | Option zur Angabe des Feldtyps | Referenz > Inhalt
+| Beschriftung | Der Titel, den Sie dem Feld geben möchten | Eingereicht von
+|================================
++
+--
+// Add field page for adding a Submitted by field to Recipe.
+image:images/structure-adding-reference-add-field.png["Adding a reference field to a content type"]
+--
+
+. Es erscheint die Seite Feldeinstellungen, auf der Sie die zulässige Anzahl von
+Werten eintragen können. Füllen Sie die Felder wie unten angegeben aus.
+Klicken Sie auf _Feldeinstellungen speichern_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Zu referenzierender Elementtyp | Der mit Hilfe des Feldes zu referenzierende Elementtyp | Inhalt
+| Erlaubte Anzahl von Werten | Geben Sie die Anzahl der mit dem Feld verbundenen Werte an | Begrenzt, 1
+|================================
++
+--
+// Field storage settings page for Submitted by field.
+image:images/structure-adding-reference-set-field-basic.png["Storage configuration of a reference field "]
+--
+
+. Sie gelangen auf die Seite _Eingereicht von Einstellungen für Rezept_, auf der Sie
+die Konfiguration des Feldes vornehmen müssen. Füllen Sie die Felder des Eingabeformulars wie unten dargestellt aus. Klicken Sie auf _Einstellungen speichern_.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Feldname | Erläuterung | Wert
+| Bezeichnung | Titel, der für dieses Feld auf der Seite angezeigt wird | Eingereicht von
+| Hilfetext | Kurzer Text zur Unterstützung der Person, die den Inhalt erstellt | Wählen Sie den Lieferanten aus, der dieses Rezept eingereicht hat.
+| Pflichtfeld | Ob ein Wert angegeben werden muss oder nicht | Ausgewählt
+| Referenztyp > Referenzmethode | Option zur Auswahl der Referenzmethode | Standard
+| Referenztyp > Inhaltstypen | Geben Sie den Inhaltstyp an | Lieferant
+| Referenz-Typ > Sortieren nach | Sortierfeld | Titel
+| Verweistyp > Sortierrichtung| Sortierreihenfolge | Aufsteigend
+|================================
++
+--
+// Field settings page for Submitted by field.
+image:images/structure-adding-reference-field-settings.png["Settings for a reference field ",width="100%"]
+--
+
+. Das Feld Eingereicht von wurde dem Inhaltstyp hinzugefügt.
++
+--
+// Manage fields page for content type Recipe, after adding Submitted by field.
+image:images/structure-adding-reference-manage-fields.png["Manage fields page for the Recipe content type",width="100%"]
+--
+
+// ==== Vertiefen Sie Ihr Wissen
+
+// ==== Verwandte Konzepte
+
+==== Videos
+
+// Video von Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/hAhWiqPlKh0[title="Ein Referenzfeld hinzufügen (englisch)"]
+
+// ==== Zusätzliche Ressourcen
+
+
+*Mitwirkende*
+
+Geschrieben und herausgegeben von https://www.drupal.org/u/batigolix[Boris Doesborg],
+und https://www.drupal.org/u/jojyja[Jojy Alphonso] bei
+http://redcrackle.com[Red Crackle].
+
+Ins Deutsche übersetzt von https://www.drupal.org/u/Joachim-Namyslo[Joachim Namyslo].

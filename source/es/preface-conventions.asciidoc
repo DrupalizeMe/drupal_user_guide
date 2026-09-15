@@ -1,0 +1,139 @@
+[[preface-conventions]]
+=== Convenciones en la guía
+
+[role="summary"]
+Comprensión de las convenciones usadas en esta guía.
+
+==== Suposiciones y requisitos previos
+
+Esta guía hace las siguientes suposiciones y asume los siguientes requisitos previos:
+
+* Esta guía está organizada en temas; vea <<preface-organization>> para más detalles.
+Muchos temas incluyen una sección de _Conocimientos previos_, que lista otros temas que 
+se requieren conocer para comprender el tema que está leyendo. También se asumen algunos
+conocimientos básicos: vea <<preface-audience>> para más detalles.
+
+* Muchos temas del tipo tarea listan _Requisitos del sitio_, que son tareas que debe realizar
+en su sitio web antes de poder empezar la tarea en el tema que está leyendo.
+
+* Los requisitos del sitio específicos se relacionan con el escenario de ejemplo usado a través
+de la guía de construir un sitio web de un mercado de granjeros ( vea <<preface-scenario>>
+para más detalles). Puede adaptar las tareas a su propio escenario, pero también tendrá que 
+recordar los cambios que hizo cuando decida si el sitio web satisface los requisitos de cada
+tarea.
+
+* Para todos las tareas después de <<install-run>>, hay también un requisito implícito: 
+debe tener instalada la última versión estable del sistema de gestión de contenidos en su
+sitio, y haber iniciado sesión con un usuario que tenga suficientes permisos para realizar
+la tarea ( tal como la cuenta de usuario creada cuando instaló el sitio web, que automáticamente
+tiene todos los permisos).
+
+* Si ha leido todos los temas en orden, y ejecutado todos los pasos en la tarea a medida
+que avanza ( manteniendo la sesión iniciada ), debera tener los conocimientos básicos y los 
+requisitos del sitio cubiertos para cada tema a medida que lo va leyendo.
+
+* Esta guía muestra como realizar tareas usando la interfaz de usuario administrativa, y, 
+siempre que sea posible, también usando la última versión de la herramienta de línea de comando
+Drush ( vea <<install-tools>> ). Puede usar diferentes herramientas de consola, tal como
+Drupal Console ( si busca los comandos equivalentes ), o de usar la interfaz de administración
+por ahora.
+
+==== Convenciones de texto
+
+Las siguientes convenciones se han usado en el texto de esta guía:
+
+* La URL _ejemplo.com_ es la URL base de su sitio web. Vea la sección de Navegación 
+abajo para más detalles sobre cómo se indican las URLs internas de su sitio.
+
+* El texto que debería ver en la interfaz de usuario de su sitio web se muestra en _cursiva_,
+tal como: Haga click en _Guardar configuración_. Esto solo aplica a texto en la interfaz de 
+usuario que viene del programa, no al texto que ha sido introducido en un tema anterior. Por
+ejemplo, en un tema sobre edición, podría ver este paso: Haga click en _Editar_ en la fila de 
+la página Sobre nosotros ( _Editar_ debería estar en cursiva, pero Sobre nosotros no lo estará, 
+porque la página Sobre nosotros fue creada en un tema anterior.
+
+* URLs, nombres de archivo, y terminología nueva también se muestran en _cursiva_.
+
+* El texto que debería introducir en una línea de comandos se muestra en tipología monospace,
+como por ejemplo:
++
+----
+drush cr
+----
+
+* En esta guía, la palabra _directorio_ siempre se usa para referirse a directorios de archivos
+( algunas personas prefieren llamarlas _carpetas_ ).
+
+==== Navegación
+
+Para hacer la mayoría de tareas en esta guía, necesitará visitar una o más páginas
+de la interfaz administrativa de su sitio. Podría ver alguna cosa como esta en las 
+instrucciones ( esto tomará más sentido cuando haya instalado el software ).
+
+=============
+En el menú administrativo _Administrar_, navegue a _Estructura_ > _Taxonomía_
+(_admin/structure/taxonomy_)
+=============
+
+Las instrucciones de navegación como estas asumen que tiene el módulo Toolbar instalado,
+y este ejemplo significa, que en la barra superior en su sitio web, tendría que hacer click
+en _Administrar_ para exponer las opciones del menú. Entonces, haga click en _Estructura_, luego
+en _Taxonomía_, y finalmente, estaría en la pagina con la URL _http://example.com/admin/structure/taxonomy_
+( si la URL base de su sitio web es _http://example.com_ ).
+
+// Top navigation bar on any admin page, with Manage menu showing.
+image:images/preface-conventions-top-menu.png["Admin menu",width="100%"]
+
+Aqui vemos otro ejemplo:
+
+=============
+En el menú administrativo _Administrar_, navegue a _Configuración_ >
+ _Sistema_ > _Configuraciones básicas del sitio_ ) 
+ (_admin/config/system/site-information_)
+=============
+
+En este ejemplo, después de hacer click en _Administrar_ y _Configuración_, necesitaría 
+encontrar la sección _Sistema_ en la página, y dentro de ella, hacer click en
+_Configuraciones básicas del sitio_. Una vez realizados estos pasos, debería terminar en 
+http://example.com/admin/config/system/site-information_.
+
+// System section of admin/config page.
+image:images/preface-conventions-config-system.png["_System_ section of the Configuration page"]
+
+Una nota más: si está usando el tema administrativo estándar del núcleo Seven, muchos botones
+de "Añadir" son mostrados con signos de + en ellos. Por ejemplo, en admin/content, el botón de 
+Agregar contenido aparece como _+ Agregar contenido_. Sin embargo, esto depende del tema y no 
+es realmente parte del texto en el botón (por ejemplo, no necesariamente sería leído por un lector
+ de pantalla), por lo que en esta guía, la convención es no mencionar el signo + en el botones.
+
+
+
+==== Rellenando formularios
+
+Muchos de los temas de tareas en esta guía incluyen pasos donde completará un formulario web. 
+En la mayoría de los casos, se incluirá una imagen de captura de pantalla del formulario, 
+junto con una tabla de los valores que deberá ingresar en cada campo del formulario. 
+Por ejemplo, puede ver una tabla que comienza así, explicando el formulario de información del 
+sitio que vería si navegara a _Configuration_> _System_> _Site information_ 
+(_admin / config / system / site-information_):
+
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nombre del campo|Explicación|Valor de ejemplo
+|Detalles del sitio > Nombre del sitio|Nombre de su sitio web|Mercado de granjeros CualquierPueblo
+|================================
+
+Para usar esta tabla, busque el campo etiquetado como _Nombre del sitio_ en la sección que se
+encuentra bajo _Detalles del sitio_ en el formulario, y introduzca el nombre de su sitio web en
+ese campo. Se sugiere un ejemplo de valor "Mercado de granjeros CualquierPueblo" en la tabla, que 
+está relacionado con el escenario de construir un sitio web para un mercado de granjeros y encontrará
+durante toda esta guía ( vea <<preface-scenario>> para más detalles ). En algunos formularios,
+usted tendrá que hacer click en el título de la sección ( como _Detalles del sitio_ en este ejemplo )
+para expandir la sección y encontrar el campo que contiene.
+
+
+
+*Atribuciones*
+
+Escrito/editado por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].
+Traducido por https://www.drupal.org/u/guiurocafortferrer[Guiu Rocafort Ferrer].

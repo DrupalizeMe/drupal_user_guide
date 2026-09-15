@@ -1,0 +1,49 @@
+[[security-cron-concept]]
+
+=== Concepto: cron
+
+[role="summary"]
+Descripción general de cron y en qué se diferencia del cron de Unix.
+
+(((Cron task,overview)))
+(((Automated Cron module,overview)))
+
+//==== Prerequisite knowledge
+
+==== ¿Qué son las tareas de cron?
+
+Para asegurar que su sitio y sus módulos sigan funcionando bien, se debe
+ejecutar periódicamente un grupo de operaciones administrativas. Estas
+operaciones se llaman tareas de _cron_. Algunos ejemplos de tareas de cron son:
+comprobar si hay actualizaciones de módulos y temas, indexar contenido para las
+búsquedas o limpiar archivos temporales.
+
+==== ¿Cuál es la relación entre las tareas de cron del sitio y el cron de Unix?
+
+Los sistemas operativos basados en Linux/Unix tienen un programador cron que se
+puede usar para ejecutar tareas periódicas. Puede usar el programador cron del
+servidor para programar la ejecución de las tareas de cron del sitio. Como
+alternativa, puede usar el módulo del núcleo Automated Cron para ejecutar
+tareas. Puede comprobar el estado de las tareas de cron del sitio en el informe
+de estado.
+
+==== Temas relacionados
+
+* <<security-cron>>
+* <<prevent-status>>
+
+==== Recursos adicionales
+
+https://www.drupal.org/docs/7/setting-up-cron/overview[_Drupal.org_ community documentation page "Setting up cron"]
+
+
+*Atribuciones*
+
+Escrito y editado por
+https://www.drupal.org/u/dianalakatos[Diána Lakatos] en
+https://pronovix.com/[Pronovix],
+https://www.drupal.org/u/dalin[Dave Hansen-Lange] en
+https://www.advomatic.com/[Advomatic],
+y https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia].

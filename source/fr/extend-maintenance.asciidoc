@@ -1,0 +1,144 @@
+[[extend-maintenance]]
+
+=== Activer et désactiver le mode maintenance
+
+[role="summary"]
+Comment activer le mode maintenance pour mettre en place un message "Site en
+maintenance", et comment le désactiver.
+
+(((Mode maintenance,vue d'ensemble)))
+(((Mode maintenance,activer)))
+(((Mode maintenance,désactiver)))
+
+==== Objectif
+
+Mettre votre en site en mode maintenance pour permettre aux utilisateurs disposant des droits d'administration d'utiliser votre site tandis que les utilisateurs sans ce droit
+verront s'afficher un message indiquant que le site est en maintenance.
+
+==== Prérequis
+
+<<security-concept>>
+
+==== Prérequis du site
+
+Si vous voulez utiliser Drush pour activer ou désactiver le mode maintenance,
+Drush doit être installé. Consulter <<install-tools>>.
+
+==== Étapes
+
+Vous pouvez utiliser l'interface d'administration de votre site ou Drush pour activer ou
+désactiver le mode maintenance.
+
+===== Activer le mode maintenance en utilisant l'interface d'administration
+
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Développement_ > _Mode maintenance_ (_admin/config/development/maintenance_).
+La page _Mode maintenance_ apparaît.
+
+. Remplir les champs comme indiqué ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ | Explication | Valeur
+
+| Mettre le site en mode maintenance | Activer le mode maintenance | Coché
+
+| Message à afficher en mode maintenance | Les informations qui sont affichées
+aux utilisateurs du site web quand le mode est activé. Des variables comme @site
+peuvent être utilisées dans le message |@site est actuellement en maintenance et
+devrait à nouveau être en ligne sous peu. Merci de votre patience.
+
+|================================
+
+. Cliquer sur  _Enregistrer la configuration_.
+
+. Vérifier que le site est en mode maintenance en y accédant depuis un autre
+navigateur depuis lequel vous n'êtes pas connecté·e. Si Vous ne parvenez pas à
+vérifier, essayer de vider le cache. Consulter <<prevent-cache-clear>>.
++
+--
+// Site in maintenance mode.
+image:images/extend-maintenance-mode-enabled.png["Mode maintenance activé",width="100%"]
+--
+
+===== Désactiver le mode maintenance en utilisant l'interface d'administration
+
+. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
+_Développement_ > _Mode maintenance_ (_admin/config/development/maintenance_).
+La page _Mode maintenace apparaît.
+
+. Remplir les champs comme indiqué ci-dessous.
++
+[width="100%",frame="topbot",options="header"]
+|================================
+|Nom du champ | Explication | Valeur
+
+| Mettre le site en mode maintenance | Désactiver le mode maintenance |
+Désactivé
+
+| Message à afficher en mode maintenance | Aucun message requis pour désactiver.
+Vous pouvez laisser ce champ vide. |
+
+|================================
+
+. Cliquer sur _Enregistrer la configuration_.
+
+. Vérifier que le site n'est plus en mode maintenance en y accédant depuis un
+autre navigateur depuis lequel vous n'êtes pas connecté·e. Si vous ne parvenez
+pas à vérifier, essayer de vider le cache. Consulter <<prevent-cache-clear>>.
++
+--
+// Site no longer in maintenance mode.
+image:images/extend-maintenance-mode-disabled.png["Mode maintenance désactivé",width="100%"]
+--
+
+===== Activer ou désactiver le mode maintenance en utilisant Drush
+
+. Pour modifier le message affiché lorsque le site est en mode maintenance, suivre les étapes ci-dessus concernant l'interface utilisateur.
+
+. Lancer les commandes Drush suivantes pour activer le mode maintenance et vider
+le cache :
++
+----
+drush config:set system.maintenance message "remarque facultative" -y
+drush state:set system.maintenance_mode 1 --input-format=integer
+drush cache:rebuild
+----
+
+. Lancer les commandes Drush suivantes pour désactiver le mode maintenace et
+vider le cache :
++
+----
+drush state:set system.maintenance_mode 0 --input-format=integer
+drush cache:rebuild
+----
+
+Après avoir lancé l'un ou l'autre ensemble de commandes, vérifier que votre site
+est en mode maintenance ou hors du mode maintenance en visitant le site avec un
+navigateur depuis lequel vous n'êtes pas connecté·e.
+
+==== Pour approfondir
+
+* <<security-update-core>>
+
+* <<security-update-theme>>
+
+* <<security-update-module>>
+
+//==== Related concepts
+
+==== Vidéos (en anglais)
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/IQbqQs5h03Q[title="Enabling and Disabling Maintenance Mode"]
+
+// ==== Additional resources
+
+
+*Attributions*
+
+Écrit et modifié par https://www.drupal.org/u/batigolix[Boris Doesborg],
+https://www.drupal.org/u/jojyja[Jojy Alphonso] de
+http://redcrackle.com[Red Crackle], et
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon]. Traduit par
+https://www.drupal.org/u/fmb[Felip Manyer i Ballester].

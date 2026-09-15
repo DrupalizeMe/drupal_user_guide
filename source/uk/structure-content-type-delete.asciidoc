@@ -1,0 +1,71 @@
+[[structure-content-type-delete]]
+
+=== Видалення типу матеріалу
+
+[role="summary"]
+Як видалити тип матеріалу, який не потрібен для сайту.
+
+(((Тип матеріалу, видалення)))
+
+==== Мета
+
+Видалити непотрібний тип матеріалу _Article_.
+
+==== Необхідні знання
+
+<<config-overview>>
+
+==== Попередні вимоги до сайту
+
+Тип вмісту _Article_ повинен існувати. Він створюється на вашому сайті при
+установці з основним Стандартним профілем установки.
+
+==== Кроки
+
+. В адміністративному меню _Керування_ перейдіть до _Структура_ > _Типи
+матеріалів_ (_admin/structure/types_). Відкриється сторінка _Типи матеріалів_.
+
+. Натисніть кнопку _Видалити_ в списку _Операції_ для типу
+вмісту _Article_. Зверніть увагу, що назва цього типу матеріалу
+наведено на цій сторінці англійською мовою; див. пояснення в
+розділі <<language-concept>>.
++
+--
+// Content types list on admin/structure/types, with operations dropdown
+// for Article content type expanded.
+image:images/structure-content-type-delete-dropdown.png["Article кнопка видалення у випадаючому списку", width="100%"]
+--
+
+. Відображається сторінка підтвердження. Натисніть _Видалити_.
++
+--
+// Confirmation page for deleting Article content type.
+image:images/structure-content-type-delete-confirmation.png["Article сторінка підтвердження видалення", width="100%"]
+--
+
+. З'явиться сторінка _Типи матеріалів_ з повідомленням про те, що тип матеріалу
+був видалений:
++
+--
+// Confirmation message after deleting Article content type.
+image:images/structure-content-type-delete-confirm.png["Article повідомлення що підтверджує видалення"]
+--
+
+// ==== Expand your understanding
+
+// ==== Related concepts
+
+==== Відео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/1627xZFcJCY[title="Deleting a Content Type"]
+
+// ==== Additional resources
+
+
+*Автори*
+
+Написано і змінено https://www.drupal.org/u/sree[Sree Veturi]
+та https://www.drupal.org/u/batigolix[Boris Doesborg].
+
+Переклав https://www.drupal.org/u/alexmazaltov[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].

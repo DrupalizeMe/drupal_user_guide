@@ -1,0 +1,80 @@
+[[understanding-modules]]
+=== Concepto: módulos
+
+[role="summary"]
+Descripción general de los módulos y de la funcionalidad para la que se pueden
+usar.
+
+(((Module,overview)))
+(((Contributed module,overview)))
+(((Core module,overview)))
+(((Field module,overview)))
+(((Field UI module,overview)))
+(((Menu UI module,overview)))
+(((Node module,overview)))
+(((User module,overview)))
+(((Views module,overview)))
+(((Views UI module,overview)))
+(((Module,core)))
+(((Module,contributed)))
+(((Module,Field)))
+(((Module,Field UI)))
+(((Module,Menu UI)))
+(((Module,Node)))
+(((Module,User)))
+(((Module,Views)))
+(((Module,Views UI)))
+
+==== Conocimientos previos
+
+<<understanding-drupal>>
+
+==== ¿Qué es un módulo?
+
+Un módulo es un paquete de archivos que amplía la funcionalidad del núcleo de
+Drupal. Los módulos suelen contener código PHP y configuración (YAML), y pueden
+incluir archivos JavaScript, CSS y de plantilla Twig.
+
+Puede activar las características y la funcionalidad _instalando_ el módulo, y
+puede desactivarlas _desinstalando_ el módulo; antes de desinstalarlo, puede que
+necesite eliminar los datos y la configuración relacionados con esa
+característica o funcionalidad.
+
+Cada módulo que se instala aumenta el tiempo necesario para generar las páginas
+de su sitio, así que es buena idea desinstalar los módulos que no se necesitan.
+
+La descarga del núcleo incluye módulos para funcionalidades como:
+
+* Gestionar cuentas de usuario (el módulo del núcleo User)
+
+* Gestionar el contenido básico (el módulo del núcleo Node) y los campos (los
+módulos del núcleo Field y Field UI; también hay módulos del núcleo que
+proporcionan tipos de campo)
+
+* Gestionar los menús de navegación (el módulo del núcleo Menu UI)
+
+* Crear listas, cuadrículas y bloques a partir del contenido existente (los
+módulos del núcleo Views y Views UI)
+
+Puede descargar _módulos contribuidos_ adicionales desde
+https://www.drupal.org/project/project_module[_Drupal.org_ Module Downloads], o
+crear sus propios _módulos personalizados_.
+
+==== Temas relacionados
+
+* <<understanding-themes>>
+* <<understanding-distributions>>
+* <<config-uninstall>>
+* <<extend-module-find>>
+* <<extend-module-install>>
+* <<security-concept>>
+* <<security-update-module>>
+
+==== Recursos adicionales
+
+https://www.drupal.org/developing/modules[_Drupal.org_ community documentation page "Module developer's guide"]
+
+
+*Atribuciones*
+
+Escrito por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon].

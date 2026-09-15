@@ -1,0 +1,117 @@
+[[prevent-cache-clear]]
+
+=== Очищення кешу
+
+[role="summary"]
+Як почистити кеш використовуючи Drush і призначений для користувача інтерфейс.
+
+(((Кеш, очищення)))
+(((Кеш, перестроювання)))
+
+==== Мета
+
+Очистити або перебудувати внутрішній кеш вашого сайту, щоб бути впевненим, що велика частина нових даних
+ актуальна і виводяться на сайті, використовуючи при цьому інтерфейс користувача або Drush.
+
+==== Необхідні знання
+
+* <<prevent-cache>>
+* <<install-tools>>
+
+==== Вимоги до сайту
+
+Якщо ви хочете використовувати Drush для очищення кешу, то Drush повинен бути встановлений. Дивіться
+<<install-tools>>.
+
+==== Кроки
+
+Ви можете використовувати інтерфейс адміністратора або Drush для очищення кеша. Ви можете
+також використовувати скрипти для скидання кешу або Drush для більш повного оновлення кеша.
+
+===== Використання адміністративного інтерфейсу для очищення кеша
+
+. У _Керування_ меню адміністратора, перейдіть на _Конфігурація_ >
+_Розробка_ > _Швидкодія_ (_admin/config/development/performance_). Якщо ви не
+маєте доступ до цієї сторінки в інтерфейсі адміністратора, використовуйте один з інших
+методів очищення і перестроювання кеша.
+
+. Натисніть _Очистити всі кеші_.
+
+. Повідомлення про успішне очищення кеша з'явиться зверху
+сторінки.
+
+. Якщо це не допомогло вирішити проблему, спробуйте замість очищення
+кешу, перебудувати кеш.
+
+===== Використання скрипт перестроювання кеша
+
+. Відкрийте _settings.php_ (_/sites/default/settings.php_) в будь-якому текстовому
+редакторі. Додайте наступний рядок в кінці файлу і збережіть його:
++
+----
+$settings['rebuild_access']=TRUE;
+----
+
+. Зайдіть _http://www.example.com/core/rebuild.php_ в вашому браузері (де
+_www.example.com_ адреса вашого сайту). Після короткої паузи, ви будете
+перенаправлені на головну сторінку вашого сайту і кеш буде перебудований.
+
+. Відкрийте _settings.php_ (_/sites/default/settings.php_) в текстовому редакторі. Знайдіть рядок,
+яку ви додали до цього з _$settings['rebuild_access']_, видаліть її та збережіть
+файл.
+
+===== Використання Drush для перестроювання або очищення кеша
+
+Ви можете використовувати одну з двох команд:
+
+* Використовуйте команду `drush cache:rebuild` для очищення і перестроювання всіх даних кеша
+на сайті. Після запуску цієї команди, ви побачите повідомлення "Cache
+rebuild complete. "
+
+* Використовуйте команду `drush cache:clear`, щоб подивитися список окремих кешів і потім
+виберіть потрібний кеш, який ви б хотіли очистити. Ця процедура виглядає
+приблизно таким чином:
++
+----
+> Drush cache:clear
+Enter a number to choose which cache to clear.
+ [0]  :  Cancel
+ [1]  :  drush
+ [2]  :  theme-registry
+ [3]  :  menu
+ [4]  :  css-js
+ [5]  :  block
+ [6]  :  module-list
+ [7]  :  theme-list
+ [8]  :  render
+ [9]  :  views
+----
+Виберіть який кеш ви хочете очистити через введення числа для цього кеша. Натисніть
+"Enter" щоб продовжити.
+
+
+// ==== Expand your understanding
+
+
+// ==== Related concepts
+
+==== Відео
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/-evRieC6Y3U[title="Clearing the Cache"]
+
+==== Додаткові матеріали
+
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache[_Drupal.org_ сторінка документації спільноти "Clearing or rebuilding Drupal's cache"]
+
+
+*Автори*
+
+Адаптовано і змінено https://www.drupal.org/u/eojthebrave[Joe Shindelar]
+і https://www.drupal.org/u/jerseycheese[Jack Haas] із
+https://www.drupal.org/docs/7/administering-drupal-7-site/clearing-or-rebuilding-drupals-cache["Clearing or
+rebuilding Drupal's cache"],
+авторські права 2000-copyright_upper_year за окремими учасниками
+https://www.drupal.org/documentation[Drupal Community Documentation].
+
+Переклав https://www.drupal.org/user/2914091[Олексій Бондаренко] із https://drupal.org/mazaltov[Mazaltov].

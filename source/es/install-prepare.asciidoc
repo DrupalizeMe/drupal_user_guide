@@ -1,0 +1,81 @@
+[[install-prepare]]
+=== Preparar la instalación
+
+[role="summary"]
+Cómo descargar el software del núcleo y cumplir los requisitos previos para la
+instalación.
+
+(((Downloading,core software)))
+(((Drupal core,preparing install)))
+
+==== Objetivo
+
+Esbozar los pasos para descargar el software del núcleo y resolver cualquier
+requisito previo necesario.
+
+==== Conocimientos previos
+
+* Cómo instalar y configurar software de servidor (si instala en su propio
+ordenador)
+
+* Cómo preparar alojamiento para un sitio web genérico
+
+* Cómo crear una base de datos
+
+==== Requisitos previos del sitio web
+
+El software de servidor debe estar instalado en el ordenador donde planea alojar
+su sitio. Ver <<install-requirements>> para una lista de requisitos.
+
+Ver <<install-ddev>> para la forma recomendada de empezar a ejecutar el software
+localmente.
+
+Dependiendo de cómo planee descargar el software del núcleo, puede que
+necesite instalar antes herramientas de software adicionales. Ver
+<<install-decide>> y <<install-tools>>.
+
+==== Pasos
+
+. Elija los métodos para descargar e instalar el software del núcleo, entre los
+que se enumeran en <<install-decide>>. El resto de estas instrucciones se
+aplican a las opciones de descarga con Composer y manual; si eligió otras
+opciones, como un instalador de un clic de un proveedor de alojamiento, consulte
+la documentación correspondiente para conocer los pasos adicionales.
+
+. Configure una URL y el alojamiento de su sitio en el servidor. Compruebe que
+el alojamiento funciona colocando un archivo HTML sencillo en el directorio raíz
+web del alojamiento y visitando la URL de su sitio.
+
+. Cree una base de datos, junto con una cuenta de usuario de base de datos con
+acceso completo.
+
+. Descargue los archivos del software del núcleo al directorio raíz web,
+usando el método que haya decidido. Ver <<install-decide>> para enlaces a las
+instrucciones.
+
+==== Ampliar conocimiento
+
+Ver <<install-run>> para ejecutar el instalador interactivo.
+
+// ==== Related concepts
+
+==== Vídeos
+
+// Video from Drupalize.Me.
+video::https://www.youtube-nocookie.com/embed/7Aib3y9DM80[title="Preparing to Install"]
+
+==== Recursos adicionales
+
+http://www.drush.org[Drush]
+
+
+*Atribuciones*
+
+Escrito y editado por https://www.drupal.org/u/dgorton[Drew Gorton],
+https://www.drupal.org/u/michaellenahan[Michael Lenahan] en
+https://erdfisch.de[erdfisch],
+https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon],
+y https://www.drupal.org/u/jojyja[Jojy Alphonso] en
+http://redcrackle.com[Red Crackle].
+
+Traducido por https://www.drupal.org/u/alvar0hurtad0[Alvaro Hurtado].

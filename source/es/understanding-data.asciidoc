@@ -1,0 +1,61 @@
+[[understanding-data]]
+=== Concepto: tipos de datos
+
+[role="summary"]
+Descripción general de los tipos de datos habituales que se usan en un sitio.
+
+(((Data type,overview)))
+(((Data type,configuration)))
+(((Data type,content)))
+(((Data type,state)))
+(((Data type,session)))
+(((Configuration,as a type of data)))
+(((Content,as a type of data)))
+(((State,as a type of data)))
+(((Session,as a type of data)))
+
+
+//==== Prerequisite knowledge
+
+==== ¿Cuáles son los tipos de datos?
+
+Los datos y la información de su sitio se dividen en cuatro tipos, que se
+editan, traducen y almacenan de forma distinta. Estos cuatro tipos son:
+
+Content::
+  Información (texto, imágenes, etc.) destinada a mostrarse a los visitantes del
+  sitio. Este tipo de información tiende a ser relativamente permanente, pero
+  normalmente se puede editar.
+Configuration::
+  Información sobre su sitio que no es contenido, pero que también es
+  relativamente permanente y se usa para definir cómo se comporta o se muestra
+  su sitio. A veces también se muestra a los visitantes del sitio, pero suelen
+  ser fragmentos de texto más pequeños (como las etiquetas de los campos, el
+  nombre de su sitio, etc.) en lugar de bloques más grandes que normalmente
+  consideraría contenido.
+State::
+  Información de naturaleza temporal sobre el estado actual de su sitio, como el
+  momento en que se ejecutaron por última vez las tareas de cron.
+Session::
+  Información sobre las interacciones de cada visitante con el sitio, como si ha
+  iniciado sesión y sus cookies. Técnicamente es un subtipo de la información de
+  State, ya que también es temporal.
+
+==== Temas relacionados
+
+* <<planning-data-types>>
+* <<security-cron-concept>>
+* <<user-concept>>
+* <<language-concept>>
+
+//==== Additional resources
+
+
+*Atribuciones*
+
+Adaptado por https://www.drupal.org/u/jhodgdon[Jennifer Hodgdon] de
+https://www.drupal.org/docs/drupal-apis/configuration-api/overview-of-configuration-vs-other-types-of-information["Overview of Configuration (vs. other types of information)"],
+copyright 2000-copyright_upper_year por los colaboradores individuales de la
+https://www.drupal.org/documentation[Documentación de la Comunidad de Drupal]
+
+Traducido por https://www.drupal.org/u/juancasantito[Juan Santovenia]
