@@ -29,17 +29,22 @@ stages:
   script:
     - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py
 
-# Preview builds intentionally publish only en,de locales because the
-# full assembled artifact is currently too large for MR preview deployment. If
-# we can get the Pages size limit for this project raised we can combine preview
-# and publish back into one full build.
+# Preview builds publish en,de plus any locale whose content/<locale>/ files the
+# merge request changes, because the full assembled artifact is currently too
+# large for MR preview deployment.
 build preview documentation:
   extends: .build-documentation
   rules:
     - if: $CI_MERGE_REQUEST_IID || $CI_PIPELINE_SOURCE == "merge_request_event"
       changes: *site_changes
+  before_script:
+    # git is needed to find which locales the merge request changes.
+    - apt-get update -qq && apt-get install -y -qq --no-install-recommends git ca-certificates > /dev/null
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
   script:
-    - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py --locales en,de
+    - PREVIEW_LOCALES="$(scripts/zensical/preview_locales.sh)"
+    - echo "Building preview locales $PREVIEW_LOCALES"
+    - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py --locales "$PREVIEW_LOCALES"
   artifacts:
     paths:
       - build/zensical/site-build/assembled
