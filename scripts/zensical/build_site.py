@@ -12,8 +12,11 @@ import argparse
 import re
 import shutil
 import subprocess
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from shutil import which
+
+from PIL import Image
 
 from site_prep import (
     BUILD_ROOT,
@@ -32,12 +35,18 @@ LOCAL_ZENSICAL_BIN = REPO_ROOT / ".venv" / "bin" / "zensical"
 ASSEMBLED_ROOT = BUILD_ROOT / "site-build" / "assembled"
 BUILD_WORKSPACE = "build"
 LOCALE_URL_RE = re.compile(r'(?P<attr>href|src)="/(?P<locale>[A-Za-z0-9-]+)/(?P<rest>[^"]*)"')
+PNG_IMAGE_URL_RE = re.compile(r'(?P<attr>href|src)="(?P<prefix>(?:\.\./)*images/)(?P<name>[^"/]+)\.png"')
 
 
 def parse_args() -> argparse.Namespace:
     """Parse the CLI for the multi-locale assembly wrapper."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--locales", help="Comma-separated locale list")
+    parser.add_argument(
+        "--skip-webp",
+        action="store_true",
+        help="Keep screenshots as PNG instead of converting them to lossless WebP",
+    )
     return parser.parse_args()
 
 
@@ -131,6 +140,55 @@ def rewrite_locale_asset_paths(root: Path, locale: str, locales: list[str]) -> N
             html_path.write_text(updated, encoding="utf-8")
 
 
+def convert_png_to_webp(png_path: Path) -> Path | None:
+    """Convert one PNG to lossless WebP and remove the original.
+
+    The scripts that generate the screenshots create them as PNG files, but
+    WebP is smaller and more efficient for the static site, so we convert
+    them here.
+
+    Returns the PNG path on success, or ``None`` when the image can't be
+    decoded (for example a truncated file), in which case the PNG is kept.
+    """
+    webp_path = png_path.with_suffix(".webp")
+    try:
+        with Image.open(png_path) as image:
+            image.save(webp_path, "WEBP", lossless=True, quality=100, method=4)
+    except OSError as error:
+        webp_path.unlink(missing_ok=True)
+        print(f"Keeping {png_path} as PNG: {error}")
+        return None
+
+    png_path.unlink()
+    return png_path
+
+
+def convert_locale_images_to_webp(locale_roots: list[Path]) -> dict[Path, set[str]]:
+    """Convert assembled locale screenshots to lossless WebP in parallel."""
+    png_paths = [path for root in locale_roots for path in sorted((root / "images").glob("*.png"))]
+    converted: dict[Path, set[str]] = {root: set() for root in locale_roots}
+    with ProcessPoolExecutor() as executor:
+        for png_path in executor.map(convert_png_to_webp, png_paths):
+            if png_path is not None:
+                converted[png_path.parent.parent].add(png_path.stem)
+    return converted
+
+
+def rewrite_webp_image_paths(root: Path, converted: set[str]) -> None:
+    """Point image references at the WebP copies of converted screenshots."""
+
+    def replace_image_url(match: re.Match[str]) -> str:
+        if match.group("name") not in converted:
+            return match.group(0)
+        return f'{match.group("attr")}="{match.group("prefix")}{match.group("name")}.webp"'
+
+    for html_path in root.rglob("*.html"):
+        original = html_path.read_text(encoding="utf-8")
+        updated = PNG_IMAGE_URL_RE.sub(replace_image_url, original)
+        if updated != original:
+            html_path.write_text(updated, encoding="utf-8")
+
+
 def main() -> None:
     args = parse_args()
     selected_locales = (
@@ -146,6 +204,10 @@ def main() -> None:
         build_locale(locale)
 
     assemble_locales_with_registry(selected_locales, all_locales)
+    if not args.skip_webp:
+        locale_roots = [ASSEMBLED_ROOT / locale for locale in selected_locales]
+        for root, converted in convert_locale_images_to_webp(locale_roots).items():
+            rewrite_webp_image_paths(root, converted)
     print(f"Assembled site written to {ASSEMBLED_ROOT}")
 
 
