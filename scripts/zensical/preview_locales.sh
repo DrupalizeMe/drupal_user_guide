@@ -7,6 +7,10 @@
 # large for a GitLab Pages preview deployment, so this keeps previews small
 # while still showing the locales a merge request touches.
 #
+# A merge request that changes more than PREVIEW_MAX_EXTRA_LOCALES other
+# locales (default 4) is a sweeping change, such as an upstream sync or a
+# change to every locale's config, so it builds only the default locales.
+#
 # Uses GitLab's merge request CI variables to compare the merge request's
 # source commit with its merge base. If the changed files can't be determined,
 # it falls back to the default locales rather than failing the build.
@@ -14,6 +18,8 @@
 set -euo pipefail
 
 DEFAULT_LOCALES=(en de)
+# Each locale is roughly 12 MB, so this keeps previews well under the limit.
+MAX_EXTRA_LOCALES="${PREVIEW_MAX_EXTRA_LOCALES:-4}"
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT_DIR"
@@ -48,11 +54,15 @@ fi
 
 changed="$(git diff --name-only --no-renames "$base" "$head")" || fallback "could not diff $base and $head"
 
-locales=("${DEFAULT_LOCALES[@]}")
+extra=()
 while IFS= read -r locale; do
   [[ -n "$locale" && -f "content/$locale/zensical.toml" ]] || continue
-  [[ " ${locales[*]} " == *" $locale "* ]] && continue
-  locales+=("$locale")
+  [[ " ${DEFAULT_LOCALES[*]} " == *" $locale "* ]] && continue
+  extra+=("$locale")
 done < <(printf '%s\n' "$changed" | sed -n 's|^content/\([^/]*\)/.*|\1|p' | sort -u)
 
-print_locales "${locales[@]}"
+if [[ ${#extra[@]} -gt $MAX_EXTRA_LOCALES ]]; then
+  fallback "merge request changes ${#extra[@]} other locales ($(print_locales "${extra[@]}")), more than the $MAX_EXTRA_LOCALES a preview can hold"
+fi
+
+print_locales "${DEFAULT_LOCALES[@]}" ${extra[@]+"${extra[@]}"}
