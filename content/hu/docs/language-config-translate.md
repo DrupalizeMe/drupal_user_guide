@@ -33,7 +33,7 @@ A legtöbb esetben az alábbi alapvető lépéseken keresztül tudjuk webhelyün
 1. Ezen az oldalon számos egymásba ágyazott, lenyitható keretet látunk. Válasszuk ki a _Megjelenítések_ > _Mester megjelenítési beállítások_ > _Receptek alapértelmezett megjelenítési lehetőségei_ keretet. Itt tudjuk a megjelenítő nevét lefordítani: a _Cím megjelenítése_ mezőbe írjuk be a „Receptek” helyett, hogy „Recetas”.
 1. Ezután egy szinttel mélyebben, a _Felfedett űrlap_ keretben nyissuk ki az _Alaphelyzet beállítások_ keretet. Itt tudjuk a _Beküldés gomb felirata_ mezőbe (aminek alapértelmezett értéke magyarul „Alkalmaz”) beírni, hogy mi legyen a gomb felirata spanyolul: „Applicar”. A többi gomb nálunk nem fog megjelenni a nézet szűrőjében, ezért ebben a keretben a többi gombfeliratot hagyhatjuk érintetlenül.
 
-    <img src="/images/language-config-translate-recipes-view.png" alt="A Receptek nézet lefordítása" width="100%" />
+    <img src="/images/language-config-translate-recipes-view.webp" alt="A Receptek nézet lefordítása" width="100%" />
 
 1. Továbbra is a _Receptek alapértelmezett megjelenítési lehetőségei_ keretben most a _Szűrők_ csoportot nyissuk ki, azon belül pedig az _(Üres) Taxonómiakifejezés-azonosító_ > _Ezt tartalmazók keresése… Felfed_ keretben a _Felirat_ beállítását cseréljük annak spanyol megfelelőjére, azaz „Encontrar recetas usando…​”-ra.
 1. Kattintsunk a _Fordítás mentése_ gombra.

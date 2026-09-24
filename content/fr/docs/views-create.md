@@ -109,7 +109,7 @@ supprimé. Consulter [structure-image-style-create](./structure-image-style-crea
       </tbody>
     </table>
 
-    <img src="/images/views-create-wizard.png" alt="Assistant Ajouter une vue" width="100%" />
+    <img src="/images/views-create-wizard.webp" alt="Assistant Ajouter une vue" width="100%" />
 
 1. Cliquer sur _Enregistrer et modifier_. La page de configuration de la vue
     apparaît.
@@ -196,10 +196,10 @@ supprimé. Consulter [structure-image-style-create](./structure-image-style-crea
 1. Cliquer sur _Appliquer_. La page de configuration de la vue apparaît.
 1. Optionnellement, cliquer sur _Actualiser l'aperçu_ pour un aperçu.
 1. Cliquer sur _Enregistrer_.
-    ![Page de configuration de la vue Marchands](/images/views-create-view.png)
+    ![Page de configuration de la vue Marchands](/images/views-create-view.webp)
 1. Naviguer vers la page d'accueil et cliquer sur Marchands dans la navigation
     principale pour voir le résultat.
-    ![Rendu de la vue Marchands](/images/views-create-view-output.png)
+    ![Rendu de la vue Marchands](/images/views-create-view-output.webp)
 
 ## Pour aller plus loin
 

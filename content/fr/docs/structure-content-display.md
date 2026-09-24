@@ -32,10 +32,10 @@ contenu de type vendeur. Consulter [structure-content-type](./structure-content-
     supplémentaires, dans le menu d'administration _Gérer_, aller à _Structure_ >
     _Types de contenu_ (_admin/structure/types_). Puis cliquer sur _Gérer
     l'affichage_ dans la liste de séléction pour le type de contenu Vendeur.
-    <img src="/images/structure-content-display_manage_display.png" alt="Gérer l'affichage" width="100%" />
+    <img src="/images/structure-content-display_manage_display.webp" alt="Gérer l'affichage" width="100%" />
 1. Sous la colonne _Étiquette_ sélectionner _caché_ pour l'image principale.
     Faire de même pour l'URL du vendeur.
-    <img src="/images/structure-content-display_main_image_hidden.png" alt="Sélection du titre de l'image principale" width="100%" />
+    <img src="/images/structure-content-display_main_image_hidden.webp" alt="Sélection du titre de l'image principale" width="100%" />
 1. Cliquer sur l'engrenage du champ URL du vendeur afin d'ouvrir les options de
     configuration.
 1. Remplir les champs tel qu'indiqué ci-dessous.
@@ -62,7 +62,7 @@ contenu de type vendeur. Consulter [structure-content-type](./structure-content-
       </tbody>
     </table>
 
-    <img src="/images/structure-content-display_trim_length.png" alt="Longueur du lien" width="100%" />
+    <img src="/images/structure-content-display_trim_length.webp" alt="Longueur du lien" width="100%" />
 
 1. Cliquer sur _Mettre à jour_.
 1. Faire glisser les poignées en forme de croix des champs pour réordonner
@@ -70,7 +70,7 @@ contenu de type vendeur. Consulter [structure-content-type](./structure-content-
     glisser/déposer, il est possible de cliquer sur le lien _Afficher les poids des
     lignes_ en tête du tableau et de saisir des poids numériques (les champs ayant
     des poids algébriques inférieurs seront affichés en premier).
-    <img src="/images/structure-content-display_change_order.png" alt="Changer l'ordre des champs" width="100%" />
+    <img src="/images/structure-content-display_change_order.webp" alt="Changer l'ordre des champs" width="100%" />
 1. Cliquer sur _Enregistrer_.
 1. Retrouver l'élément de contenu de type vendeur de l'étape 1, et vérifier que
     les mises à jour sont bien effectués.

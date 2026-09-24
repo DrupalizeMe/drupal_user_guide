@@ -67,10 +67,10 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Фильтры на странице поиска тем на _Drupal.org_](/images/extend-theme-find_theme_finder.png)
+    ![Фильтры на странице поиска тем на _Drupal.org_](/images/extend-theme-find_theme_finder.webp)
 
 1. Нажмите _Search_. Появятся результаты поиска.
-    ![Страница результатов поиска на _Drupal.org_](/images/extend-theme-find_search_results.png)
+    ![Страница результатов поиска на _Drupal.org_](/images/extend-theme-find_search_results.webp)
 1. Для более детальной оценки темы щёлкните её название в списке результатов поиска,
     чтобы открыть страницу проекта.
 

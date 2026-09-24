@@ -16,7 +16,7 @@ only way to tell what is going on.
 You can find your site's recent log messages in the _Manage_ administrative menu
 by navigating to _Reports_ > _Recent log messages_ (_admin/reports/dblog_).
 
-<img src="/images/prevent-log.png" alt="Recent log messages of a basic site" width="100%" />
+<img src="/images/prevent-log.webp" alt="Recent log messages of a basic site" width="100%" />
 
 *Attributions*
 

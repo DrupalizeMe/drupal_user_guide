@@ -31,14 +31,14 @@ install with the core Standard installation profile.
 1. Drag the _horizontal rule_ button from _Available buttons_ to _Tools_ in
     _Active toolbar_. You may need to click the _Show group names_ link to see the
     _Tools_ group name.
-    <img src="/images/structure-text-format-config-editor-config.png" alt="Configuring the editor" width="100%" />
+    <img src="/images/structure-text-format-config-editor-config.webp" alt="Configuring the editor" width="100%" />
 1. Note that you can change the _Filter processing order_.
 1. In the field _Allowed HTML tags_, add `<hr>` to what is already present.
-    <img src="/images/structure-text-format-config-allowed-html.png" alt="Configuring the HTML tags" width="100%" />
+    <img src="/images/structure-text-format-config-allowed-html.webp" alt="Configuring the HTML tags" width="100%" />
 1. Click _Save configuration_. You will be taken back to the _Text formats and
     editors_ page. A message will be displayed saying that the text format has been
     updated.
-    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.png)
+    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.webp)
 ## Expand your understanding
 
 If you do not see the effect of these changes in your site, you might need

@@ -52,7 +52,7 @@ désactiver le mode maintenance.
 1. Vérifier que le site est en mode maintenance en y accédant depuis un autre
     navigateur depuis lequel vous n'êtes pas connecté·e. Si Vous ne parvenez pas à
     vérifier, essayer de vider le cache. Consulter [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-enabled.png" alt="Mode maintenance activé" width="100%" />
+    <img src="/images/extend-maintenance-mode-enabled.webp" alt="Mode maintenance activé" width="100%" />
 
 ### Désactiver le mode maintenance en utilisant l'interface d'administration
 
@@ -86,7 +86,7 @@ désactiver le mode maintenance.
 1. Vérifier que le site n'est plus en mode maintenance en y accédant depuis un
     autre navigateur depuis lequel vous n'êtes pas connecté·e. Si vous ne parvenez
     pas à vérifier, essayer de vider le cache. Consulter [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-disabled.png" alt="Mode maintenance désactivé" width="100%" />
+    <img src="/images/extend-maintenance-mode-disabled.webp" alt="Mode maintenance désactivé" width="100%" />
 
 ### Activer ou désactiver le mode maintenance en utilisant Drush
 

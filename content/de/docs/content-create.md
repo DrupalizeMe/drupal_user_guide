@@ -61,7 +61,7 @@ Standard verwendet haben.
 
     Wenn Sie in der Werkzeugleiste des Rich-Text-Editors auf die Schaltfläche
     _Quellcode_ klicken, können Sie den HTML-Quellcode des Feldinhalts sehen.
-    <img src="/images/content-create-create-basic-page.png" alt="Eine einfache Seite erstellen" width="100%" />
+    <img src="/images/content-create-create-basic-page.webp" alt="Eine einfache Seite erstellen" width="100%" />
 
 1. Klicken Sie auf _Vorschau_, um sicherzustellen, dass alles wie erwartet aussieht.
 1. Klicken Sie auf _Zurück zum Bearbeiten des Inhalts_.

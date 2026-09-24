@@ -20,7 +20,7 @@ Le rôle Vendeur doit exister sur votre site. Voir [user-new-role](./user-new-ro
 
 1. Dans le menu d'administration _Gérer_, aller à _Personnes_ (_admin/people_).
 1. Cliquer sur _Ajouter un utilisateur_.
-    <img src="/images/user-new-user_form.png" alt="Formulaire de création d'un nouveau compte utilisateur" width="100%" />
+    <img src="/images/user-new-user_form.webp" alt="Formulaire de création d'un nouveau compte utilisateur" width="100%" />
 1. Remplir les champs du formulaire, cf. tableau ci-dessous.
     <table>
       <thead>
@@ -72,7 +72,7 @@ Le rôle Vendeur doit exister sur votre site. Voir [user-new-role](./user-new-ro
     </table>
 1. Cliquer sur _Créer le nouveau compte_. Une notification à propos de la création
     du compte utilisateur s'affiche.
-    <img src="/images/user-new-user-created.png" alt="Un nouveau compte utilisateur a été créé" width="100%" />
+    <img src="/images/user-new-user-created.webp" alt="Un nouveau compte utilisateur a été créé" width="100%" />
 1. Créer un second compte vendeur pour la Ferme Joyeuse en suivant les étapes précédentes.
 
 ## Améliorer votre compréhension

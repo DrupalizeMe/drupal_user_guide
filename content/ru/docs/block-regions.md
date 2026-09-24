@@ -19,7 +19,7 @@ source_locale: "ru"
 в котором расположен основной контент; остальные регионы необязательны.  Базовая тема Olivero
 предоставляет регионы, выделенные на следующем изображении.
 
-<img src="/images/block-regions-olivero.png" alt="Регионы базовой темы Olivero" width="100%" />
+<img src="/images/block-regions-olivero.webp" alt="Регионы базовой темы Olivero" width="100%" />
 
 ## Связанные темы
 

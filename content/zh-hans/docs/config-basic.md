@@ -47,7 +47,7 @@ _Default time zone_.
       </tbody>
     </table>
 
-    ![Site Information](/images/config-basic-SiteInfo.png)
+    ![Site Information](/images/config-basic-SiteInfo.webp)
 
 1. After editing the fields, click _Save configuration_ to see the changes
     applied to the site.
@@ -61,7 +61,7 @@ _Default time zone_.
     on your site.
 1. In the _Time zones_ section, select the sitewide _Default time zone_ from the
     list and configure user-specific time zones.
-    ![Time Zones](/images/config-basic-TimeZone.png)
+    ![Time Zones](/images/config-basic-TimeZone.webp)
 1. After editing the fields, click
     _Save configuration_ to see the changes applied to the site.
 ## Additional resources

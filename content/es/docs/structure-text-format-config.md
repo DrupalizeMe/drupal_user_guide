@@ -35,16 +35,16 @@ instala con el perfil de instalación Standard del núcleo.
     visualmente mediante un separador vertical. Como alternativa a arrastrar, puede
     tabular para seleccionar botones y moverlos con las teclas de flecha del
     teclado.
-    <img src="/images/structure-text-format-config-editor-config.png" alt="Configuring the editor" width="100%" />
+    <img src="/images/structure-text-format-config-editor-config.webp" alt="Configuring the editor" width="100%" />
 1. Observe que puede cambiar el _Filter processing order_.
 1. En _Filter settings_ > _Limit allowed HTML tags and correct faulty HTML_, en
     el campo _Allowed HTML tags_, compruebe que `<hr>` está presente (al añadir su
     botón del editor se actualizan automáticamente las etiquetas permitidas).
-    <img src="/images/structure-text-format-config-allowed-html.png" alt="Configuring the HTML tags" width="100%" />
+    <img src="/images/structure-text-format-config-allowed-html.webp" alt="Configuring the HTML tags" width="100%" />
 1. Haga clic en _Save configuration_. Volverá a la página _Text formats and
     editors_. Se mostrará un mensaje indicando que el formato de texto se ha
     actualizado.
-    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.png)
+    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.webp)
 ## Ampliar conocimiento
 
 Si no ve el efecto de estos cambios en su sitio, puede que tenga que borrar la

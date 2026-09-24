@@ -35,7 +35,7 @@ instalar el módulo con la interfaz administrativa o con Drush.
     _Releases_ al final de la página.
 1. Copie el comando de Composer que se proporciona para la versión del módulo
     que quiere instalar.
-    ![Finding a module's composer install command](/images/extend-module-install-download.png)
+    ![Finding a module's composer install command](/images/extend-module-install-download.webp)
 1. Como alternativa, escriba el siguiente comando (sustituyendo
     `admin_toolbar:^3.5` por el nombre corto del módulo y la versión deseada):
     ```text
@@ -50,7 +50,7 @@ instalar el módulo con la interfaz administrativa o con Drush.
 1. En el menú administrativo _Manage_, vaya a _Extend_ (_admin/modules_). Aparece
     la página _Extend_.
 1. Busque el módulo _Admin toolbar_ y márquelo.
-    ![Installing Admin Toolbar module](/images/extend-module-install-admin-toolbar-do.png)
+    ![Installing Admin Toolbar module](/images/extend-module-install-admin-toolbar-do.webp)
 1. Haga clic en _Install_ para activar el nuevo módulo.
 ### Instalar el módulo con Drush
 

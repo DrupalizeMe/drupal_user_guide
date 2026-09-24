@@ -26,7 +26,7 @@ sein. Siehe: [language-add](./language-add.md).
     (_admin/config/regional/content-language_).
 1. Unter _Benutzerdefinierte Spracheinstellungen_, aktivieren Sie _Inhalt_,
     _Benutzerdefinierter Block_ und _Benutzerdefinierter Menülink_ um diese Entitätstypen übersetzbar zu machen.
-    <img src="/images/language-content-config_custom.png" alt="Custom language settings checklist" width="193px" />
+    <img src="/images/language-content-config_custom.webp" alt="Custom language settings checklist" width="193px" />
 1. Die Konfigurationsoptionen für _Inhalt_, _benutzerdefinierte Blöcke_ und
     _benutzerdefinierte Menülinks_ erscheinen. Wählen Sie für jede Entität den Subtyp
     den Sie bearbeiten möchten aus. Aktivieren Sie _Einfache Seite_ unter _Inhalt_, _Einfacher Block_ unter _benutzerdefinierter Block_ und
@@ -54,7 +54,7 @@ sein. Siehe: [language-add](./language-add.md).
       </tbody>
     </table>
 
-    ![Default language and translatability for content types](/images/language-content-config_content.png)
+    ![Default language and translatability for content types](/images/language-content-config_content.webp)
 
 1. Wählen Sie die Felder aus, die in _einfachen Seiten_ übersetzbar sein sollen,
     wie die unten stehende Tabelle dies zeigt. Wenn ein Feld nicht für die Übersetzung benötigt wird, lassen Sie es unausgewählt.
@@ -115,7 +115,7 @@ sein. Siehe: [language-add](./language-add.md).
       </tbody>
     </table>
 
-    ![Translatable content entity subtypes' fields checklist](/images/language-content-config_basic_page.png)
+    ![Translatable content entity subtypes' fields checklist](/images/language-content-config_basic_page.webp)
 
 1. Wählen Sie auf ähnliche Weise die Felder der Entitätstypen
     _Einfacher Block_ und _Benutzerdefinierter Menülink aus_.

@@ -42,7 +42,7 @@ A _Recept_ és _Árus_ tartalomtípusoknak létezniük kell. Ehhez lásd a [stru
       </tbody>
     </table>
 
-    ![Egy hivatkozó mező hozzáadása a tartalomtípushoz](/images/structure-adding-reference-add-field.png)
+    ![Egy hivatkozó mező hozzáadása a tartalomtípushoz](/images/structure-adding-reference-add-field.webp)
 
 1. Az ezt követően betöltődő oldal címe _Beküldte_, azaz az általunk előbb hozzáadott új mező neve. Itt lehet pár, kifejezetten ehhez a mezőhöz kapcsolódó beállítást megadni. Töltsünk ki minden mezőt a lent látható módon. Amikor végeztünk, kattintsunk a _Mező beállításainak mentése_ gombra.
     <table>
@@ -67,7 +67,7 @@ A _Recept_ és _Árus_ tartalomtípusoknak létezniük kell. Ehhez lásd a [stru
       </tbody>
     </table>
 
-    ![Egy hivatkozott mező tárolási beállításai](/images/structure-adding-reference-set-field-basic.png)
+    ![Egy hivatkozott mező tárolási beállításai](/images/structure-adding-reference-set-field-basic.webp)
 
 1. Az ezután megjelenő _Recept Beküldte beállításai_ oldalon már nem a mező általános, webhelyszerte használt beállításait, hanem már csak kifejezetten a _Recept_ tartalomtípuson belüli használatának módját szabályozhatjuk. Töltsünk ki minden mezőt a lent látható módon. Végezetül kattintsunk majd a _Beállítások mentése_ gombra.
     <table>
@@ -117,10 +117,10 @@ A _Recept_ és _Árus_ tartalomtípusoknak létezniük kell. Ehhez lásd a [stru
       </tbody>
     </table>
 
-    <img src="/images/structure-adding-reference-field-settings.png" alt="Egy tartalomra hivatkozó mező lehetséges beállításai" width="100%" />
+    <img src="/images/structure-adding-reference-field-settings.webp" alt="Egy tartalomra hivatkozó mező lehetséges beállításai" width="100%" />
 
 1. Ekkor a _Beküldte_ mező hozzá lett adva a _Recept_ tartalomtípushoz.
-    <img src="/images/structure-adding-reference-manage-fields.png" alt="A Recept tartalomtípus Mezők kezelése oldala" width="100%" />
+    <img src="/images/structure-adding-reference-manage-fields.webp" alt="A Recept tartalomtípus Mezők kezelése oldala" width="100%" />
 
 ## Videó
 

@@ -63,11 +63,11 @@ Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe [user-new-role]
       </tbody>
     </table>
 
-    <img src="/images/user-permissions-check-permissions.png" alt="Granting users with the Vendor role the rights to create, delete and edit Recipes" width="100%" />
+    <img src="/images/user-permissions-check-permissions.webp" alt="Granting users with the Vendor role the rights to create, delete and edit Recipes" width="100%" />
 
 1. Klicken Sie auf _Berechtigungen speichern_. Sie erhalten eine Meldung, dass Ihre Änderungen
     gespeichert wurden.
-    ![Confirmation message after updating permissions](/images/user-permissions-save-permissions.png)
+    ![Confirmation message after updating permissions](/images/user-permissions-save-permissions.webp)
 
 ## Vertiefen Sie Ihr Wissen
 

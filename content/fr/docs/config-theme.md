@@ -18,9 +18,9 @@ schéma de couleurs et ajouter un logo.
     (_admin/appearance_).
 1. Sous _Thèmes installés_, vous trouverez Olivero listé comme votre thème
     par défaut. Sous _Olivero (thème par défaut)_, cliquer sur _Paramètres_.
-    <img src="/images/config-theme_olivero_settings.png" alt="Thème par défaut, Olivero" width="100%" />
+    <img src="/images/config-theme_olivero_settings.webp" alt="Thème par défaut, Olivero" width="100%" />
 1. Sous _Image du logo_, décocher _Utiliser le logo fourni par le thème_.
-    ![Nouveau logo dans les paramètres du thème Olivero](/images/config-theme_logo_upload.png)
+    ![Nouveau logo dans les paramètres du thème Olivero](/images/config-theme_logo_upload.webp)
 1. Sous _Envoyer le logo_, trouver un fichier de logo et le télécharger sur votre
     site. Note : Vous pouvez aussi définir un logo universel pour tous les thèmes
     dans _Apparence_ > _Paramètres_ (_admin/appearance/settings_). Un logo
@@ -60,7 +60,7 @@ schéma de couleurs et ajouter un logo.
     <img src="/images/config-theme_color_scheme_preview.png" alt="core Olivero theme settings preview" width="100%" />
 1. Cliquer sur _Retour au site_ dans la barre d'outils pour vérifier que vous avez
     mis à jour les paramètres du thème du cœur Olivero pour votre site.
-    <img src="/images/config-theme_final_result.png" alt="Final result of editing the core Olivero theme settings - colors and logo" width="100%" />
+    <img src="/images/config-theme_final_result.webp" alt="Final result of editing the core Olivero theme settings - colors and logo" width="100%" />
 
 ## Améliorer votre compréhension
 

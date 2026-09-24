@@ -30,13 +30,13 @@ Siehe [structure-content-type](./structure-content-type.md) und
     Drop-Button des Inhaltstyps Rezept. Die Seite _Formularanzeige_ verwalten
     erscheint.
 1. Wählen Sie für das Feld Zutaten die Option _Autovervollständigen (Tags-Style)_ in der Spalte _Steuerelement_.
-    <img src="/images/structure-form-editing-manage-form.png" alt="Manage the Recipe form" width="100%" />
+    <img src="/images/structure-form-editing-manage-form.webp" alt="Manage the Recipe form" width="100%" />
 1. Klicken Sie auf _Speichern_.
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ > _Inhalt hinzufügen_ >
     Rezept (_node/add/recipe_) um das veränderte Verhalten des zum Inhaltstyp gehörigen Bearbeitungsformulars zu überprüfen. 
     Das Feld „Zutaten" ist jetzt ein einzelnes Textfeld, das mehrere
     Werte akzeptiert.
-    <img src="/images/structure-form-editing-add-recipe.png" alt="Add a recipe" width="100%" />
+    <img src="/images/structure-form-editing-add-recipe.webp" alt="Add a recipe" width="100%" />
 1. Legen Sie zwei Inhalte vom Typ Rezept an (siehe [content-create](./content-create.md)), wie zum Beispiel Rezepte für
     „Grüner Salat" und „Frische Karotten". Stellen Sie sicher, dass alle Felder Werte enthalten. Einschließlich der Felder 'Bild', 'Zutaten' und 
     'Eingereicht von' (Vergeben Sie für dieses Feld den Wert eines Lieferanten, den Sie in [structure-fields](./structure-fields.md)) angelegt haben.

@@ -35,11 +35,11 @@ administrative interface below.
     _https://www.drupal.org/project/honey_), scroll to the _Downloads_ section
     at the bottom of the page.
 1. Right-click _tar.gz_ to copy the address.
-    ![Finding the URL for a theme](/images/extend-theme-install-download.png)
+    ![Finding the URL for a theme](/images/extend-theme-install-download.webp)
 1. In the _Manage_ administrative menu, navigate to _Appearance_
     (_admin/appearance_). The _Appearance_ page appears.
 1. Click _Install new theme_. The _Install new theme_ page appears.
-    ![Installing a theme](/images/extend-theme-install-page.png)
+    ![Installing a theme](/images/extend-theme-install-page.webp)
 1. In the field _Install from a URL_, paste the copied download link. This value
     could look like
     `https://ftp.drupal.org/files/projects/honey-1.0.1.tar.gz`.
@@ -52,7 +52,7 @@ administrative interface below.
 1. Locate the new theme under _Uninstalled themes_ and click _Install and set as
     default_ to use it. All non-administrative pages on the site will now use this
     new theme.
-    <img src="/images/extend-theme-install-appearance-page.png" alt="Uninstalled themes on Appearance page" width="286px" />
+    <img src="/images/extend-theme-install-appearance-page.webp" alt="Uninstalled themes on Appearance page" width="286px" />
 
 ### Using Drush to install a theme
 

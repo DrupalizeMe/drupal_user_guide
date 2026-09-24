@@ -38,7 +38,7 @@ Consulter [structure-image-style-create](./structure-image-style-create.md).
 1. Créer un nouvel affichage de type bloc en cliquant sur _Ajouter_ sous
     _Affichages_. Cliquer sur _Bloc_ dans la liste de propositions qui apparaît. Le nouvel
     affichage est créé, et le focus passe automatiquement sur sa configuration.
-    ![Ajouter un affichage de type bloc](/images/views-block_add-block.png)
+    ![Ajouter un affichage de type bloc](/images/views-block_add-block.webp)
 1. Pour modifier le titre de cet affichage, cliquer sur _Bloc_ dans le champ _Nom
     de l'affichage_. La fenêtre modale _Bloc : Le nom et la description de cet
     affichage_ apparaît. Changer le _Nom administratif_ en "Recettes récentes".
@@ -47,7 +47,7 @@ Consulter [structure-image-style-create](./structure-image-style-create.md).
     _Titre_. Dans la fenêtre modale qui apparaît, sélectionner _Ce(tte) bloc
     (supplanter)_ dans le menu déroulant _Pour_. Modifier le champ _Titre_ en
     "Nouvelles recettes" et cliquer sur _Appliquer (cet affichage)_.
-    ![Titre uniquement pour ce bloc](/images/views-block_title.png)
+    ![Titre uniquement pour ce bloc](/images/views-block_title.webp)
 1. Pour changer le style du bloc, cliquer sur _Grille_ dans le champ _Format_
     sous _Format_. Dans la fenêtre modale qui apparaît, sélectionner _Ce(tte) bloc
     (supplanter)_ dans le menu déroulant _Pour_. Sélectionner _Liste non mise en
@@ -58,7 +58,7 @@ Consulter [structure-image-style-create](./structure-image-style-create.md).
     _Champs_. Dans la fenêtre modale qui apparaît, sélectionner _Ce(tte) bloc
     (supplanter)_ dans le menu déroulant _Pour_. Sélectionner _Style d'image
     Vignette (100x100)_. Cliquer sur _Appliquer (cet affichage)_).
-    <img src="/images/views-block_image.png" alt="Image sous la forme d'une vignette" width="100%" />
+    <img src="/images/views-block_image.webp" alt="Image sous la forme d'une vignette" width="100%" />
 1. Pour retirer les ingrédients en tant que filtre, cliquer sur _Contenu :
     Ingrédients (exposé)_ sous _Critères de filtrage_. Dans la fenêtre modale qui
     apparaît, sélectionner _Ce(tte) bloc (supplanter)_ dans le menu déroulant
@@ -82,11 +82,11 @@ Consulter [structure-image-style-create](./structure-image-style-create.md).
     modification de la vue, soit la page Recettes, selon ce que vous avez fait dans
     l'étape 1. Vous devriez aussi visualiser un message indiquant que la vue a été
     enregistrée.
-    <img src="/images/views-block_recipes.png" alt="Page de résumé après configuration" width="100%" />
+    <img src="/images/views-block_recipes.webp" alt="Page de résumé après configuration" width="100%" />
 1. Placer le bloc "Recettes : Recettes récentes" dans la région _Sidebar second_.
     Consulter [block-place](./block-place.md). Naviguer vers la page d'accueil du site pour visualiser
     le bloc.
-    <img src="/images/views-block_sidebar.png" alt="Nouveau bloc recettes sur la page d'accueil" width="100%" />
+    <img src="/images/views-block_sidebar.webp" alt="Nouveau bloc recettes sur la page d'accueil" width="100%" />
 
 ## Vidéos (en anglais)
 

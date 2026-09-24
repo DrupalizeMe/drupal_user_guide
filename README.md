@@ -38,7 +38,7 @@ Each locale lives in its own directory, such as `content/en/` or `content/de/`. 
 
 - `zensical.toml` for that locale's site config
 - `docs/` for that locale's Markdown pages
-- `docs/images/` for locale-specific screenshots and page images
+- `docs/images/` for locale-specific screenshots and page images, committed as WebP (see [Screenshots and images](#screenshots-and-images))
 - `docs/assets/` for committed site assets used by that locale build
 
 In other words, `content/en/` is a complete English site, `content/de/` is a complete German site, and so on.
@@ -85,6 +85,21 @@ Where `config-theme` is both the file stem, and the frontmatter `id`. This becom
 ```md
 [Configuring the Theme](./config-theme.md)
 ```
+
+### Screenshots and images
+
+Screenshots are committed as lossless WebP files in each locale's `docs/images/` directory, for example `/images/block-place-sidebar.webp`.
+
+Most screenshots are generated as PNG files by the [User Guide Tests](https://www.drupal.org/project/user_guide_tests) project, and some are made by hand (see `docs/images/README.txt`). Convert new or updated PNG screenshots before committing them:
+
+```bash
+scripts/convert-images-to-webp.sh           # all locales
+scripts/convert-images-to-webp.sh en de     # specific locales
+```
+
+When adding new screenshots make sure they are either lossless/compressed WebP files already. Or, drop a PNG file into the directory and run the script to generate an optimized WebP file.
+
+The script needs `cwebp` (`brew install webp` or `apt-get install webp`). For each PNG in `content/<locale>/docs/images/` it writes a `.webp` file with the same name and deletes the PNG. PNGs that can't be decoded are skipped and left as they are. It doesn't change Markdown, so link the `.webp` file names in your pages.
 
 ## Why are there multiple sites in one repo?
 

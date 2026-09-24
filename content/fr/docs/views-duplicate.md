@@ -30,13 +30,13 @@ et [content-create](./content-create.md).
     dans son bouton déroulant. (Noter que les noms des vues apportées par votre
     profil d'installation sont affichés en anglais sur cette page ; consulter
     [language-concept](./language-concept.md) pour une explication.)
-    <img src="/images/views-duplicate_duplicate.png" alt="Dupliquer une vue existante" width="100%" />
+    <img src="/images/views-duplicate_duplicate.webp" alt="Dupliquer une vue existante" width="100%" />
 1. Nommer la vue dupliquée "Recettes" et cliquer sur _Dupliquer_. La page de
     configuration de la vue apparaît.
 1. Pour modifier le titre de la page de la vue en "Recettes", cliquer sur
     Marchands dans le champ _Titre_ sous _Titre_. La fenêtre modale _Page : le
     titre de cette vue_ apparaît. Saisir "Recettes". Cliquer sur _Appliquer_.
-    <img src="/images/views-duplicate_title.png" alt="Changer le titre de la vue" width="100%" />
+    <img src="/images/views-duplicate_title.webp" alt="Changer le titre de la vue" width="100%" />
 1. Pour changer de format (grille au lieu d'un tableau), cliquer sur _Tableau_
     dans le champ _Format_. La fenêtre modale _Page : quel style appliquer à cette
     vue_ apparaît. Cocher _Grille_ et cliquer sur _Appliquer_. La fenêtre modale
@@ -85,7 +85,7 @@ et [content-create](./content-create.md).
       </tbody>
     </table>
 
-    ![Exposer un filtre](/images/views-duplicate_expose.png)
+    ![Exposer un filtre](/images/views-duplicate_expose.webp)
 
 1. Pour modifier le champ dont l'étiquette est _Chemin_ (_Path_) en "Recettes",
     cliquer sur "/vendors" dans les champ _Chemin_ sous _Paramètres de la page_.
@@ -104,7 +104,7 @@ et [content-create](./content-create.md).
 1. Cliquer sur _Enregistrer_ pour enregistrer la vue.
 1. Revenir à la page d'accueil et cliquer sur Recettes dans le menu de navigation
     pour visualiser la nouvelle page Recettes.
-    <img src="/images/views-duplicate_final.png" alt="Vue recettes" width="100%" />
+    <img src="/images/views-duplicate_final.webp" alt="Vue recettes" width="100%" />
 
 ## Pour approfondir
 

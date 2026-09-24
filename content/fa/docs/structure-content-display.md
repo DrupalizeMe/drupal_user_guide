@@ -22,9 +22,9 @@ source_locale: "fa"
     * ترتیب نمایش فیلدها باید طوری تغییر کند که ابتدا تصویر نمایش داده شود.
     * تصویر باید اندازه کوچکتری داشته باشد.
 1. برای رفع دو مشکل ابتدایی، و بروزرسانی چند تنظیم اضافی، از منوی _مدیریت_ به مسیر _ساختار_ > _انواع محتوا_ (_admin/structure/types_) بروید. سپس روی _مدیریت نمایش_ از منوی کشویی نوع محتوای فروشنده کلیک کنید.
-    <img src="/images/structure-content-display_manage_display.png" alt="مدیریت نمایش" width="100%" />
+    <img src="/images/structure-content-display_manage_display.webp" alt="مدیریت نمایش" width="100%" />
 1. زیر ستون _برچسب_ گزینه _مخفی_ برای تصویر اصلی را انتخاب کنید. همین کار را برای نشانی فروشنده نیز انجام دهید.
-    <img src="/images/structure-content-display_main_image_hidden.png" alt="انتخاب _تصویر اصلی_ به عنوان _مخفی_" width="100%" />
+    <img src="/images/structure-content-display_main_image_hidden.webp" alt="انتخاب _تصویر اصلی_ به عنوان _مخفی_" width="100%" />
 1. روی چرخ‌دنده فیلد نشانی فروشنده کلیک کنید تا گزینه‌های پیکربندی آن باز شود.
 1. فیلدها را با توجه به مقادیر زیر پر کنید.
     <table>
@@ -49,12 +49,12 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    <img src="/images/structure-content-display_trim_length.png" alt="طول متن پیوند" width="100%" />
+    <img src="/images/structure-content-display_trim_length.webp" alt="طول متن پیوند" width="100%" />
 
 1. روی  _بروزرسانی_ کلیک کنید.
 1. با استفاده از فلش‌های حرکتی که در کنار فیلدها قرار دارند ترتیب آن‌ها را به صورت تصویر اصلی، _بدنه_، نشانی فروشنده و _پیوندها_ قرار دهید.
 
-    <img src="/images/structure-content-display_change_order.png" alt="تغییر ترتیب فیلدها" width="100%" />
+    <img src="/images/structure-content-display_change_order.webp" alt="تغییر ترتیب فیلدها" width="100%" />
 
 1. روی _ذخیره‌سازی_ کلیک کنید.
 1. گزینه محتوایی فروشنده که در گام ۱ پیدا کردید را مشاهده کنید تا از تغییرات انجام شده اطمینان یابید.

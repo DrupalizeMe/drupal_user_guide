@@ -15,12 +15,12 @@ Létrehozunk webhelyünkön egy új, „Árus” nevű szerepkört, amivel az az
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Felhasználók_ > _Szerepkörök_ oldalra (vagy a címsorban adjuk meg az _admin/people/roles_ útvonalat).
 1. A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi szerepkört. Amint látjuk, a lista nem üres, pár beépített szerepkör, a _Névtelen felhasználó_, az _Azonosított felhasználó_ és az _Adminisztrátor_ már léteznek.
-    ![A Szerepkörök oldal](/images/user-new-role-roles-page.png)
+    ![A Szerepkörök oldal](/images/user-new-role-roles-page.webp)
 1. A _Szerepkör létrehozása_ gombra kattintva tudunk egy sajátot felvinni.
 1. A _Szerepkör neve_ mezőbe írjuk be, hogy „Árus”, majd kattintsunk a _Mentés_ gombra.
-    ![Az új Árus szerepkör létrehozása](/images/user-new-role-add-role.png)
+    ![Az új Árus szerepkör létrehozása](/images/user-new-role-add-role.webp)
 1. Egy _Árus szerepkör hozzáadva_ állapotüzenet tájékoztat róla, ha a mentés sikeres volt.
-    ![Árus szerepkör sikeresen létrejött](/images/user-new-role-confirm.png)
+    ![Árus szerepkör sikeresen létrejött](/images/user-new-role-confirm.webp)
 ## Az ismeretek elmélyítése
 
 * [user-permissions](./user-permissions.md)

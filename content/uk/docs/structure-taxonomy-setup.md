@@ -25,7 +25,7 @@ source_locale: "uk"
     створений Стандартним інсталяційний профілем. (Зверніть увагу, що ім'я та
     опис цього словника показано англійською на цій сторінці; дивіться
     [language-concept](./language-concept.md) для пояснення.)
-    ![Сторінка таксономії](/images/structure-taxonomy-setup-taxonomy-page.png)
+    ![Сторінка таксономії](/images/structure-taxonomy-setup-taxonomy-page.webp)
 1. Натисніть _Додати словник_, і заповніть значення нижче.
     <table>
       <thead>
@@ -49,13 +49,13 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Додавання таксономії Інгредієнти](/images/structure-taxonomy-setup-add-vocabulary.png)
+    ![Додавання таксономії Інгредієнти](/images/structure-taxonomy-setup-add-vocabulary.webp)
 
 1. Натисніть _Зберегти_. Ви потрапите на сторінку Інгредієнти, яка показує список
     всіх термінів в цьому словнику.
-    ![Список термінів таксономії інгредієнти](/images/structure-taxonomy-setup-vocabulary-overview.png)
+    ![Список термінів таксономії інгредієнти](/images/structure-taxonomy-setup-vocabulary-overview.webp)
 1. Натисніть _Додати термін_. Введіть "Масло" в поле _Назва (ім'я)_. Натисніть _Зберегти_.
-    ![Сторінка додавання терміну](/images/structure-taxonomy-setup-add-term.png)
+    ![Сторінка додавання терміну](/images/structure-taxonomy-setup-add-term.webp)
 1. Ви побачите підтвердження, що створили термін. Додайте більше
     термінів. Наприклад, "Яйця" і "Молоко".
 1. У _Керування_ адміністративного меню, перейдіть в _Структура_ > _Типи матеріалів_
@@ -83,7 +83,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Додавання поля Інгредієнти в тип матеріалу Рецепт](/images/structure-taxonomy-setup-add-field.png)
+    ![Додавання поля Інгредієнти в тип матеріалу Рецепт](/images/structure-taxonomy-setup-add-field.webp)
 
 1. На наступному екрані конфігурації, введіть значення з таблиці нижче.
     Натисніть _Зберегти налаштування поля_.
@@ -109,7 +109,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Налаштування поля для інгридієнтів](/images/structure-taxonomy-setup-field-settings.png)
+    ![Налаштування поля для інгридієнтів](/images/structure-taxonomy-setup-field-settings.webp)
 
 1. На наступному екрані конфігурації, введіть значення з таблиці нижче. Натисніть _Зберегти налаштування_.
     <table>
@@ -144,12 +144,12 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Налаштування поля посилання](/images/structure-taxonomy-setup-field-settings-2.png)
+    ![Налаштування поля посилання](/images/structure-taxonomy-setup-field-settings-2.webp)
 
 1. Натисніть _Зберегти налаштування_. Ви повернетеся на сторінку _Керувати полями_.
     З'явиться повідомлення про те, що конфігурація для Інгредієнти
     збережена.
-    ![Сторінка керування полями для типу матеріалу Рецепт](/images/structure-taxonomy-setup-finished.png)
+    ![Сторінка керування полями для типу матеріалу Рецепт](/images/structure-taxonomy-setup-finished.webp)
 ## Відео
 
 <div class="embedded-video">

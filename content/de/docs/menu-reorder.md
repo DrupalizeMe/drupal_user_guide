@@ -26,10 +26,10 @@ Siehe: [menu-link-from-content](./menu-link-from-content.md).
     Beschreibungen der Menüs, die vom
     Installationsprofil angelegt wurden auf dieser Seite auf Englisch
     angezeigt werden. Siehe: [language-concept](./language-concept.md) für weitere Informationen.
-    <img src="/images/menu-reorder_menu_titles.png" alt="List of menus on the site with 'Main navigation' highlighted" width="100%" />
+    <img src="/images/menu-reorder_menu_titles.webp" alt="List of menus on the site with 'Main navigation' highlighted" width="100%" />
 1. Die Seite _Menü bearbeiten_ zeigt eine Liste aller Einträge im  von Ihnen
     ausgewählten Menü (_Hauptnavigation_) an .
-    ![List of menus items under _Main navigation_](/images/menu-reorder_edit_menu.png)
+    ![List of menus items under _Main navigation_](/images/menu-reorder_edit_menu.webp)
 1. Verwenden Sie das Drag-and-Drop-Handle (es sieht aus wie zwei gekreutzte Doppelpfeile),
       um die Reihenfolge der Menüeinträge innerhalb des Menüs zu verschieben:
       Ziehen Sie das Menü mit der Startseite _Home_ an die erste Stelle, und legen Sie als nächsten
@@ -37,11 +37,11 @@ Siehe: [menu-link-from-content](./menu-link-from-content.md).
       können Sie auf den Link _Zeilenreihenfolge_ oben in der Tabelle klicken
       und die numerische Gewichtung der Menüpunkte festlegen (Menüpunkte mit niedrigerer oder
       negativerer Gewichtung werden weiter oben / weiter links angezeigt).
-    ![Reordered menu items with warning message about unsaved changes and the _Save_ button](/images/menu-reorder_reorder.png)
+    ![Reordered menu items with warning message about unsaved changes and the _Save_ button](/images/menu-reorder_reorder.webp)
 1. Klicken Sie auf _Speichern_.
 1. Die Startseite zeigt nun die Hauptnavigation mit dem Menüpunkt Startseite
     (Home) an erster Stelle an.
-    ![Reordered menu items on the home page with 'Home' first and then 'About'](/images/menu-reorder_final_order.png)
+    ![Reordered menu items on the home page with 'Home' first and then 'About'](/images/menu-reorder_final_order.webp)
 
 ## Vertiefen Sie Ihr Wissen
 

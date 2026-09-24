@@ -47,7 +47,7 @@ _Default time zone_.
       </tbody>
     </table>
 
-    ![Site Information](/images/config-basic-SiteInfo.png)
+    ![Site Information](/images/config-basic-SiteInfo.webp)
 
 1. After editing the fields, click _Save configuration_ to see the changes
     applied to the site.
@@ -90,7 +90,7 @@ _Default time zone_.
       </tbody>
     </table>
 
-    ![Time Zones](/images/config-basic-TimeZone.png)
+    ![Time Zones](/images/config-basic-TimeZone.webp)
 
 1. After editing the fields, click _Save configuration_ to see the changes
     applied to the site.

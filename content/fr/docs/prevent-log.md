@@ -21,7 +21,7 @@ Ces entrées de journal peuvent être purgées par les administrateurs ou les
 tâches planifiées : elles ne devraient pas être utilisées pour de l'_audit
 trail_. Le module Syslog est adapté à de tels usages.
 
-<img src="/images/prevent-log.png" alt="Entrées récentes du journal sur un site basique" width="100%" />
+<img src="/images/prevent-log.webp" alt="Entrées récentes du journal sur un site basique" width="100%" />
 
 *Attributions*
 

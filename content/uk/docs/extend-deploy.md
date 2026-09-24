@@ -34,7 +34,7 @@ source_locale: "uk"
     з'явиться в текстовій області.
 1. Скопіюйте конфігурацію з текстової області.
     -
-    ![Export a single item](/images/extend-deploy-export-single.png)
+    ![Export a single item](/images/extend-deploy-export-single.webp)
 
     -
 

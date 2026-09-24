@@ -18,11 +18,11 @@ Itt most az a cél, hogy a nem használt  _Cikk_ tartalomtípust megszüntessük
 
 1. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. Az így megnyitott _Tartalomtípusok_ oldalon látjuk valamennyit felsorolva. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt mégis találkozunk angol feliratokkal a [language-concept](./language-concept.md) témakörnél leírtak miatt.
 1. Válasszuk a _Cikk_ sorának a végén, a _Műveletek_ oszlopban a legördülő gomb _Törlés_ lehetőségét.
-    <img src="/images/structure-content-type-delete-dropdown.png" alt="Cikk tartalomtípus legördülő gombja" width="100%" />
+    <img src="/images/structure-content-type-delete-dropdown.webp" alt="Cikk tartalomtípus legördülő gombja" width="100%" />
 1. Egy megerősítő oldal jelenik meg. Mi kattintsunk ismét a _Törlés_ gombra itt is.
-    <img src="/images/structure-content-type-delete-confirmation.png" alt="Cikk törlésének megerősítő oldala" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.webp" alt="Cikk törlésének megerősítő oldala" width="100%" />
 1. Újra a _Tartalomtípusok_ oldalra jutunk, ahol egy pozitív rendszerüzenet tájékoztat a törlés sikerességéről:
-    <img src="/images/structure-content-type-delete-confirmation.png" alt="Cikk törlésének megerősítő üzenete" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.webp" alt="Cikk törlésének megerősítő üzenete" width="100%" />
 
 ## Videó
 

@@ -76,7 +76,7 @@ _Structure_, then _Taxonomy_, and that at the end, you would be on a page with
 URL _http://example.com/admin/structure/taxonomy_ (if your site base URL is
 _http://example.com_).
 
-<img src="/images/preface-conventions-top-menu.png" alt="Admin menu" width="100%" />
+<img src="/images/preface-conventions-top-menu.webp" alt="Admin menu" width="100%" />
 
 Here's another example:
 
@@ -89,7 +89,7 @@ to find the _System_ section of the page, and within that, click _Basic
 site settings_. After that, you'd end up on
 _http://example.com/admin/config/system/site-information_.
 
-![_System_ section of the Configuration page](/images/preface-conventions-config-system.png)
+![_System_ section of the Configuration page](/images/preface-conventions-config-system.webp)
 
 One other note: if you are using the standard administrative core Seven theme,
 many "Add" buttons in the administrative interface are displayed with + signs on

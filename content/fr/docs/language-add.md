@@ -24,7 +24,7 @@ Ajouter une ou plusieurs langues à votre site et définir laquelle est utilisé
     temps que les traductions finissent d'être téléchargées, vous serez redirigé
     vers la page _Langues_, avec un message de confirmation. La nouvelle langue
     apparaît dans la liste.
-    <img src="/images/language-add-list.png" alt="Liste des langues disponibles sur le site web" width="100%" />
+    <img src="/images/language-add-list.webp" alt="Liste des langues disponibles sur le site web" width="100%" />
 1. Suivre les étapes dans [block-place](./block-place.md) pour placer le bloc _Sélecteur de
     langue_ dans la région _Sidebar second_. Cela permettra aux visiteurs du site de
     changer de langue, une fois que votre site aura été traduit.

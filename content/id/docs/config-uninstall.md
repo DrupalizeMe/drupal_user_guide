@@ -28,4 +28,4 @@ You can use the administrative interface or Drush to uninstall modules.
     ready to be uninstalled.
 1. Check the boxes for the modules you are uninstalling (_Search_, _History_, and
     _Activity Tracker_). Click _Uninstall_ at the bottom of the page.
-    <img src="/images/config-uninstall_check-modules.png" alt="Uninstalling module" width="100%" />
+    <img src="/images/config-uninstall_check-modules.webp" alt="Uninstalling module" width="100%" />

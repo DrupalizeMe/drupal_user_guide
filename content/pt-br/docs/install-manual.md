@@ -17,14 +17,14 @@ are downloading using some other method.
 
 1. Go to _https://www.drupal.org_ and navigate to _Build_ > _Download & Extend_
     in the top-level menu.
-    <img src="/images/install-prepare-downloads.png" alt="Downloads page on _Drupal.org_" width="100%" />
+    <img src="/images/install-prepare-downloads.webp" alt="Downloads page on _Drupal.org_" width="100%" />
 1. If you want to download just the core software, click the _Download Drupal
     zip_ or _download tar.gz_ link, and save the file to your local machine.
 1. If you want to download a distribution, click the _Distributions_ icon or
     link, choose a distribution from the list, click through to its project page,
     and click the link to download a zip or tar.gz file to your local machine. The
     link looks like this:
-    ![Finding a download URL](/images/extend-module-install-download.png)
+    ![Finding a download URL](/images/extend-module-install-download.webp)
 1. Upload the downloaded file to your hosting account. Log in to the control
     panel and navigate to the _HTML_ directory. Save the file there.
 1. Uncompress the tar.gz or zip file, which will create a new directory. If you

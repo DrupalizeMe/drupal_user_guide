@@ -25,10 +25,10 @@ Létrehozunk egy új, recepteket listázó oldalt úgy, hogy egyszerűen megkett
 ## Lépések
 
 1. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Nézetek_ menüpontot (vagy a címsorban adjuk meg az _admin/structure/views_ útvonalat). Keressük meg a felsorolásban az _Árusok_ nevű nézetet, és a sorának jobb végén a lenyíló gombon válasszuk a _Megkettőzés_ lehetőséget. Megjegyzés: ha többnyelvű webhelyünk adminfelületét nem angolul használjuk, ne lepődjünk meg, ha itt találkozunk angol feliratokkal a [language-concept](./language-concept.md) témakörnél leírtak miatt.
-    <img src="/images/views-duplicate_duplicate.png" alt="Létező nézet megkettőzése" width="100%" />
+    <img src="/images/views-duplicate_duplicate.webp" alt="Létező nézet megkettőzése" width="100%" />
 1. Adjunk nevet az így megnyíló oldalon, írjuk be a _Nézet neve_ mezőbe, hogy „Receptek”. A _Megkettőzés_ gombra kattintva immár az újonnan létrejött nézet beállítási oldalára jutunk.
 1. Az előbb megadott nevén kívül a címét is módosítanunk kell, hiszen azt még örökölte elődjétől. Ehhez kattintsunk a képernyő három hasábja közül a bal oldalinak a tetején látható _Cím:_ felirat melletti _Árusok_ hivatkozásra, erre feljön egy _Oldal: Ennek a nézetnek a címe_ feliratú ablak. Írjuk be ide is, hogy „Receptek”, majd kattintsunk az _Alkalmaz_ gombra:
-    <img src="/images/views-duplicate_title.png" alt="Nézet címének módosítása" width="100%" />
+    <img src="/images/views-duplicate_title.webp" alt="Nézet címének módosítása" width="100%" />
 
     Az ablak bezárultával megjelenik egy figyelmeztetés az oldal tetején: _Nem mentett változások vannak._
 
@@ -64,7 +64,7 @@ Létrehozunk egy új, recepteket listázó oldalt úgy, hogy egyszerűen megkett
       </tbody>
     </table>
 
-    ![Felfedett szűrő](/images/views-duplicate_expose.png)
+    ![Felfedett szűrő](/images/views-duplicate_expose.webp)
 
 1. Végeztünk a képernyő bal oldali hasábjával, most jön a középső. A nézet webcímének módosításához az _Oldalbeállítások_ alatti _Útvonal:_ felirat mellett kattintsunk a _/arusok_ hivatkozásra. Az így megnyíló _Oldal: A nézet menüútvonala vagy webcíme_ ablakban írjuk be a kívánt útvonalat: „receptek”, majd zárjuk be az _Alkalmaz_ gombra kattintva.
     Fontos észben tartani (mindaddig, amíg talán egyszer a jövőben ki nem javítják), hogy a nézetek szerkesztésekor kivételesen *nem kell* kezdő per („/”) jelet tenni az útvonalak elé, miközben mindenhol máshol az adminfelületen igen.
@@ -72,7 +72,7 @@ Létrehozunk egy új, recepteket listázó oldalt úgy, hogy egyszerűen megkett
 1. Végül próbáljunk ki egy funkciót a képernyő jobb oldali hasábjából is: a _Haladó_ keretet kinyitva az _Egyéb_ cím alatt az _Ajax használata_ (lásd az [Ajax szócikket](./glossary.md#glossary-ajax) a Szójegyzékben) felirat melletti hivatkozásra kattintva engedélyezzük azt a megnyíló ablakban.
 1. Új nézetünk beállítási képernyőjére visszatérve kattintsunk a _Mentés_ gombra annak véglegesítéséhez.
 1. Lépjünk vissza webhelyünk címlapjára, és a navigációban a _Receptek_ menüpontot kiválasztva győződjünk meg róla, hogy valóban kilistázza-e a már felvitt receptjeinket.
-    <img src="/images/views-duplicate_final.png" alt="Az elkészült Receptek nézet" width="100%" />
+    <img src="/images/views-duplicate_final.webp" alt="Az elkészült Receptek nézet" width="100%" />
 
 ## Az ismeretek elmélyítése
 

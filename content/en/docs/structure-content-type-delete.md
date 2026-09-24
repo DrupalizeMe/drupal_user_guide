@@ -22,12 +22,12 @@ install with the core Standard installation profile.
 1. Click _Delete_ in the _Operations_ dropdown button for the _Article_ content
     type. Note that the name of this content type is in English on this page;
     see [language-concept](./language-concept.md) for an explanation.
-    <img src="/images/structure-content-type-delete-dropdown.png" alt="Article delete dropdown" width="100%" />
+    <img src="/images/structure-content-type-delete-dropdown.webp" alt="Article delete dropdown" width="100%" />
 1. A confirmation page is displayed. Click _Delete_.
-    <img src="/images/structure-content-type-delete-confirmation.png" alt="Article delete confirmation page" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.webp" alt="Article delete confirmation page" width="100%" />
 1. The _Content types_ page appears with a confirmation message saying that the
     content type has been deleted:
-    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.png)
+    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.webp)
 
 ## Videos
 

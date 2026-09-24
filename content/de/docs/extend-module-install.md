@@ -39,11 +39,11 @@ Verwendung der Benutzeroberfläche unten fortfahren.
     (_https://www.drupal.org/project/admin_toolbar_) zum Abschnitt Download am Ende der Seite.
 1. Kopieren Sie die Adresse des _tar.gz_-Archivs. Abhängig von Ihrem Gerät und Browser,
     können Sie dies tun, indem Sie mit der rechten Maustaste klicken und _Link-Adresse kopieren_ auswählen.
-    ![Eine Modul-URL finden](/images/extend-module-install-download.png)
+    ![Eine Modul-URL finden](/images/extend-module-install-download.webp)
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Erweitern_
     (_admin/modules_). Die Seite _Erweitern_ erscheint.
 1. Klicken Sie auf _Neues Modul installieren_. Die Seite _Neues Modul Installieren_ erscheint.
-    ![Ein Modul von einer URL installieren](/images/extend-module-install-admin-toolbar-do.png)
+    ![Ein Modul von einer URL installieren](/images/extend-module-install-admin-toolbar-do.webp)
 1. Fügen Sie den kopierten Download-Link in das Feld _Von URL installieren_  ein.
     Dieser Wert könnte so aussehen:
     _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-2.4.tar.gz_

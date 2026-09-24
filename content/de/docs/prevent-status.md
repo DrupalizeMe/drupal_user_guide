@@ -16,7 +16,7 @@ wird.
 Sie finden den Statusbericht im Menü _Verwalten_ unter
 _Berichte_ > _Statusbericht_ (_admin/reports/status_).
 
-<img src="/images/prevent-status.png" alt="Status report of a basic site" width="100%" />
+<img src="/images/prevent-status.webp" alt="Status report of a basic site" width="100%" />
 
 ## Verwandte Themen
 

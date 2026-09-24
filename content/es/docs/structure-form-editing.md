@@ -33,13 +33,13 @@ contenido Proveedor. Véase [structure-content-type](./structure-content-type.md
     La página Administrar la visualización del formulario aparecerá.
 1. Para el campo Ingredientes, seleccione _Autocompletar (estilo de etiquetado)_
     en la columna _Control_.
-    <img src="/images/structure-form-editing-manage-form.png" alt="Manage the Recipe form" width="100%" />
+    <img src="/images/structure-form-editing-manage-form.webp" alt="Manage the Recipe form" width="100%" />
 1. Haga click en _Guardar_.
 1. En el menú administrativo _Administrar_, vaya a _Contenido_ > _Añadir contenido_ > Receta
     (_node/add/recipe_) para verificar el comportamiento cambiado del
     formulario de contenido. El campo Ingredientes es ahora un solo campo de texto
     que acepta varios valores.
-    <img src="/images/structure-form-editing-add-recipe.png" alt="Add a recipe" width="100%" />
+    <img src="/images/structure-form-editing-add-recipe.webp" alt="Add a recipe" width="100%" />
 1. Cree dos elementos de contenido Receta (véase [content-create](./content-create.md)), como las
     recetas de "Ensalada verde" y "Zanahorias frescas". Asegúrese de que
     todos los campos tienen valores, incluyendo imágenes, ingredientes y publicados

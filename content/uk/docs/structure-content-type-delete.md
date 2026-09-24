@@ -23,12 +23,12 @@ source_locale: "uk"
     вмісту _Article_. Зверніть увагу, що назва цього типу матеріалу
     наведено на цій сторінці англійською мовою; див. пояснення в
     розділі [language-concept](./language-concept.md).
-    ![Article кнопка видалення у випадаючому списку](/images/structure-content-type-delete-dropdown.png)
+    ![Article кнопка видалення у випадаючому списку](/images/structure-content-type-delete-dropdown.webp)
 1. Відображається сторінка підтвердження. Натисніть _Видалити_.
-    ![Article сторінка підтвердження видалення](/images/structure-content-type-delete-confirmation.png)
+    ![Article сторінка підтвердження видалення](/images/structure-content-type-delete-confirmation.webp)
 1. З'явиться сторінка _Типи матеріалів_ з повідомленням про те, що тип матеріалу
     був видалений:
-    ![Article повідомлення що підтверджує видалення](/images/structure-content-type-delete-confirm.png)
+    ![Article повідомлення що підтверджує видалення](/images/structure-content-type-delete-confirm.webp)
 ## Відео
 
 <div class="embedded-video">

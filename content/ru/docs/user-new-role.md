@@ -17,13 +17,13 @@ source_locale: "ru"
     (_admin/people/roles_).
 1. Вы увидите, что роли по умолчанию _Anonymous user_,
     _Authenticated user_ и _Administrator_ уже присутствуют.
-    ![Roles page](/images/user-new-role-roles-page.png)
+    ![Roles page](/images/user-new-role-roles-page.webp)
 1. Нажмите _Добавить роль_, чтобы добавить новую пользовательскую роль.
 1. Введите Производитель в поле _Название роли_. Нажмите _Сохранить_.
-    ![добавление производителя в качестве роли](/images/user-new-role-add-role.png)
+    ![добавление производителя в качестве роли](/images/user-new-role-add-role.webp)
 1. Вы увидите сообщение «Роль Производитель была добавлена.», оно появится вверху
     страницы.
-    ![роль производителя добавлена сообщение об успехе](/images/user-new-role-confirm.png)
+    ![роль производителя добавлена сообщение об успехе](/images/user-new-role-confirm.webp)
 ## Расширьте своё понимание
 
 * [user-permissions](./user-permissions.md)

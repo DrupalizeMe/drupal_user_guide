@@ -65,10 +65,10 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Фільтри на сторінці пошуку теми на _Drupal.org_](/images/extend-theme-find_theme_finder.png)
+    ![Фільтри на сторінці пошуку теми на _Drupal.org_](/images/extend-theme-find_theme_finder.webp)
 
 1. Натисніть _Search_. Результати пошуку з'являться.
-    ![Сторінка результатів пошуку на _Drupal.org_](/images/extend-theme-find_search_results.png)
+    ![Сторінка результатів пошуку на _Drupal.org_](/images/extend-theme-find_search_results.webp)
 1. Для подальшої оцінки теми клацніть її назву в списку результатів пошуку,
     відвідавши сторінку проекту.
 

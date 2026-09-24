@@ -30,7 +30,7 @@ source_locale: "ru"
     на сайте.
 1. Отметьте флажками модули, которые вы хотите установить. Например,
     отметьте модуль ядра Ban.
-    <img src="/images/config-install-check-modules.png" alt="Включение модуля Ban" width="100%" />
+    <img src="/images/config-install-check-modules.webp" alt="Включение модуля Ban" width="100%" />
 1. Нажмите _Установить_. Выбранные модули будут установлены.
 ### Использование Drush
 

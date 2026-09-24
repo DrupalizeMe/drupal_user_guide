@@ -49,7 +49,7 @@ Fügen Sie die Felder Anbieter-URL und Hauptbild zum Inhaltstyp Anbieter hinzu.
 
     Basierend auf dem Wert _Beschriftung_ wird automatisch ein Systemname generiert. Klicken Sie auf .
     _Bearbeiten_, wenn Sie den automatisch generierten Systemnamen anpassen möchten möchten.
-    ![Add field page](/images/structure-fields-add-field.png)
+    ![Add field page](/images/structure-fields-add-field.webp)
 
 1. Klicken Sie auf _Speichern und fortfahren_. Die Seite Anbieter-URL wird angezeigt, auf der Sie die folgende Einstellungen vornehmen können:
     Die zulässige Anzahl von Werten. Füllen Sie die Felder wie unten dargestellt aus.
@@ -108,7 +108,7 @@ Fügen Sie die Felder Anbieter-URL und Hauptbild zum Inhaltstyp Anbieter hinzu.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-vendor-url.png" alt="Field settings page for Vendor URL" width="100%" />
+    <img src="/images/structure-fields-vendor-url.webp" alt="Field settings page for Vendor URL" width="100%" />
 
 1. Klicken Sie auf _Einstellungen speichern_. Die URL zur Website des Lieferanten wurde dem Inhalt hinzugefügt.
     Erstellen Sie nun das Feld Hauptbild.
@@ -215,10 +215,10 @@ Fügen Sie die Felder Anbieter-URL und Hauptbild zum Inhaltstyp Anbieter hinzu.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-main-img.png" alt="Field settings page for Main Image" width="100%" />
+    <img src="/images/structure-fields-main-img.webp" alt="Field settings page for Main Image" width="100%" />
 
 1. Klicken Sie auf _Einstellungen speichern_. Das Hauptbild wurde dem Inhaltstyp hinzugefügt.
-    <img src="/images/structure-fields-result.png" alt="Manage fields page" width="100%" />
+    <img src="/images/structure-fields-result.webp" alt="Manage fields page" width="100%" />
 1. Fügen Sie mit ähnlichen Schritten ein Hauptbildfeld zum Inhaltstyp "Rezept" hinzu. Starten Sie
     indem Sie zunächst zur Seite _Felder verwalten_ des Inhaltstyps Rezept navigieren. Dann springen Sie zu Schritt 7 und folgen den verbleibenden Arbeitsschritten, verwenden dabvei aber das vorhandene Hauptbildfeld, 
     das Sie für den Inhaltstyp Lieferant angelegt haben wieder, anstatt ein neues neues Feld zu erstellen. In den folgenden Schritten werden einige der oben gezeigten Seiten nicht angezeigt,

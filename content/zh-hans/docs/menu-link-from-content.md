@@ -20,7 +20,7 @@ The About page content item must exist. See [content-create](./content-create.md
 1. In the _Manage_ administrative menu, navigate to _Content_ (_admin/content_).
 1. Find the About page, and click _Edit_ in that row. The content editing form
     appears.
-    <img src="/images/menu-link-from-content_edit_page.png" alt="Page edit link" width="100%" />
+    <img src="/images/menu-link-from-content_edit_page.webp" alt="Page edit link" width="100%" />
 1. Click _Menu settings_ on the right to expand it.
 1. Check _Provide a menu link_ for the menu options to appear.
 1. Enter values from the table below:
@@ -53,12 +53,12 @@ The About page content item must exist. See [content-create](./content-create.md
       </tbody>
     </table>
 
-    ![Creating a menu link from within the content edit form](/images/menu-link-from-content.png)
+    ![Creating a menu link from within the content edit form](/images/menu-link-from-content.webp)
 
 1. Click _Save and keep published_ to save the changes. Click _Home_ or _Return
     to site_ in the navigation bar to see the result, which could look like the
     picture below.
-    <img src="/images/menu-link-from-content-result.png" alt="Link has been added to the main menu" width="100%" />
+    <img src="/images/menu-link-from-content-result.webp" alt="Link has been added to the main menu" width="100%" />
 
 ## Expand your understanding
 

@@ -20,10 +20,10 @@ existieren. Siehe: [content-create](./content-create.md).
     Sie zur Startseite machen möchten. Um die Homepage zu verwenden, die wir vorhin
     erstellt haben, geben Sie den Pfad _/home_ an. Klicken Sie auf
     _Konfiguration speichern_.
-    !['FRONT PAGE' Bereich mit /home im Textfeld](/images/menu-home_new_text_field.png)
+    !['FRONT PAGE' Bereich mit /home im Textfeld](/images/menu-home_new_text_field.webp)
 1. Navigieren Sie zur Startseite, um zu überprüfen, ob sie den Inhalt so anzeigt,
       wie er von Ihnen angelgt wurde.
-    <img src="/images/menu-home_final.png" alt="'FRONT PAGE' with 'Home' (Basic page) content added" width="100%" />
+    <img src="/images/menu-home_final.webp" alt="'FRONT PAGE' with 'Home' (Basic page) content added" width="100%" />
 
 ## Vertiefen Sie Ihre Kenntnisse
 

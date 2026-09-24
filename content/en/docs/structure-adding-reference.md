@@ -25,7 +25,7 @@ The Recipe and Vendor content types must exist. See [structure-content-type](./s
 1. Click _Create a new field_. The _Add field_ page appears. Choose the
     _Reference_ field type from the _Choose a field type_ options. Click _Continue_.
     The _Add field_ page appears with a form to configure the field label.
-    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field.png)
+    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field.webp)
 1. Fill in the fields as shown below. Click _Save and continue_.
     <table>
       <thead>
@@ -49,7 +49,7 @@ The Recipe and Vendor content types must exist. See [structure-content-type](./s
       </tbody>
     </table>
 
-    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field-label.png)
+    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field-label.webp)
 
 1. The page Submitted by appears which lets you set the allowed number of
     values. Fill in the fields as shown below. Click _Save settings_.
@@ -75,7 +75,7 @@ The Recipe and Vendor content types must exist. See [structure-content-type](./s
       </tbody>
     </table>
 
-    ![Storage configuration of a reference field ](/images/structure-adding-reference-set-field-basic.png)
+    ![Storage configuration of a reference field ](/images/structure-adding-reference-set-field-basic.webp)
 
 1. The page _Submitted by settings for Recipe_ appears which allows you to
     configure the field. Fill in the fields as shown below. Click _Save settings_.
@@ -126,10 +126,10 @@ The Recipe and Vendor content types must exist. See [structure-content-type](./s
       </tbody>
     </table>
 
-    <img src="/images/structure-adding-reference-field-settings.png" alt="Settings for a reference field " width="100%" />
+    <img src="/images/structure-adding-reference-field-settings.webp" alt="Settings for a reference field " width="100%" />
 
 1. The Submitted by field has been added to the content type.
-    <img src="/images/structure-adding-reference-manage-fields.png" alt="Manage fields page for the Recipe content type" width="100%" />
+    <img src="/images/structure-adding-reference-manage-fields.webp" alt="Manage fields page for the Recipe content type" width="100%" />
 
 ## Videos
 

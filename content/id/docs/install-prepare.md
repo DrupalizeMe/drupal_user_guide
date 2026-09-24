@@ -46,14 +46,14 @@ installed. See [install-tools](./install-tools.md).
 
     .. Go to _https://www.drupal.org_ and click _Download & Extend_ on the top-level
     menu.
-    <img src="/images/install-prepare-downloads.png" alt="Downloads page on _Drupal.org_" width="100%" />
+    <img src="/images/install-prepare-downloads.webp" alt="Downloads page on _Drupal.org_" width="100%" />
 
     .. Click the _Download Drupal_ button (of the appropriate version) to be taken
     to the Downloads page.
-    ![Recommended releases section of Drupal downloads page on _Drupal.org_](/images/install-prepare-recommended.png)
+    ![Recommended releases section of Drupal downloads page on _Drupal.org_](/images/install-prepare-recommended.webp)
 
     .. Click the version you wish to download under _Recommended releases_.
-    ![Download files section of Drupal core download page on _Drupal.org_](/images/install-prepare-files.png)
+    ![Download files section of Drupal core download page on _Drupal.org_](/images/install-prepare-files.webp)
 
     .. Download the tar.gz or zip file to your local machine.
 

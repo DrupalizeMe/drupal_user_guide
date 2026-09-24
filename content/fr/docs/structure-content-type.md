@@ -44,7 +44,7 @@ Vous avez besoin d'un plan pour la structure de votre contenu. Consulter
       </tbody>
     </table>
 
-    ![Ajout d'un type de contenu](/images/structure-content-type-add.png)
+    ![Ajout d'un type de contenu](/images/structure-content-type-add.webp)
 
 1. Dans l'onglet vertical _Paramètres du formulaire de soumission_, configurer le
     formulaire qui est utilisé pour créer et modifier le contenu de ce type. Remplir
@@ -76,7 +76,7 @@ Vous avez besoin d'un plan pour la structure de votre contenu. Consulter
       </tbody>
     </table>
 
-    ![Paramètres du formulaire de soumission](/images/structure-content-type-add-submission-form-settings.png)
+    ![Paramètres du formulaire de soumission](/images/structure-content-type-add-submission-form-settings.webp)
 
 1. Dans l'onglet vertical _Options de publication_, décider des options par
     défaut pour les nouveaux contenus de ce type. Remplir les champs comme indiqué
@@ -111,7 +111,7 @@ Vous avez besoin d'un plan pour la structure de votre contenu. Consulter
     </table>
 
     Changer ces options n'affecte pas les contenus déjà créés.
-    ![Options de publication](/images/structure-content-type-add-Publishing-Options.png)
+    ![Options de publication](/images/structure-content-type-add-Publishing-Options.webp)
 
 1. Dans l'onglet vertical _Paramètres d'affichage_ , décider si l'auteur et la
     date de publication seront visibles sur les éléments de contenu.  Remplir les
@@ -133,7 +133,7 @@ Vous avez besoin d'un plan pour la structure de votre contenu. Consulter
       </tbody>
     </table>
 
-    ![Paramètres d'affichage](/images/structure-content-type-add-Display-settings.png)
+    ![Paramètres d'affichage](/images/structure-content-type-add-Display-settings.webp)
 
 1. Dans l'onglet vertical _Paramètres du menu_, remplir les champs comme montré
     ci-dessous.
@@ -155,12 +155,12 @@ Vous avez besoin d'un plan pour la structure de votre contenu. Consulter
       </tbody>
     </table>
 
-    ![Paramètres du menu](/images/structure-content-type-add-Menu-settings.png)
+    ![Paramètres du menu](/images/structure-content-type-add-Menu-settings.webp)
 
 1. Cliquer sur _Enregistrer et gérer les champs_ pour enregistrer le type de
     contenu.  La page _Gérer les champs_ qui apparaît permet d'ajouter des champs au
     type de contenu.  Voir [structure-fields](./structure-fields.md)
-    <img src="/images/structure-content-type-add-confirmation.png" alt="Confirmation" width="100%" />
+    <img src="/images/structure-content-type-add-confirmation.webp" alt="Confirmation" width="100%" />
 1. Suivre les mêmes étapes pour créer un type de contenu pour les recettes. Valeurs
     d'exemples pour les champs dans les formulaires lorsqu'elles sont différentes de
     celles indiquées dans les étapes ci-dessus :

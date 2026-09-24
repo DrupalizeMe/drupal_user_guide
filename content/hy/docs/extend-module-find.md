@@ -73,10 +73,10 @@ Find and evaluate modules on _Drupal.org_.
       </tbody>
     </table>
 
-    ![Filters on the module search page on _Drupal.org_](/images/extend-module-find_module_finder.png)
+    ![Filters on the module search page on _Drupal.org_](/images/extend-module-find_module_finder.webp)
 
 1. Click _Search_. Search results will appear.
-    ![Module search results page on _Drupal.org_](/images/extend-module-find_search_results.png)
+    ![Module search results page on _Drupal.org_](/images/extend-module-find_search_results.webp)
 1. To further evaluate a module, click its title in the list of search results
     to visit its project page.
 
@@ -100,7 +100,7 @@ Find and evaluate modules on _Drupal.org_.
     module. Check the Statistics to see how regularly issues are responded to.
     * Documentation, Resources: Check if the module has documentation or a README
     file, that can help you install, configure, explore, and test it.
-    ![Information on the project page to look for when evaluating a module](/images/extend-module-find_project_info.png)
+    ![Information on the project page to look for when evaluating a module](/images/extend-module-find_project_info.webp)
 ## Expand your understanding
 
 [extend-module-install](./extend-module-install.md)

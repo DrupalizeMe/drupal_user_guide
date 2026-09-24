@@ -36,7 +36,7 @@ Prüfen Sie, ob Cron-Wartungsaufgaben regelmäßig ausgeführt werden. Ist dies 
     Als Nächstes legen Sie fest, wie häufig Cron-Wartungsaufgaben durchlaufen werden sollen.
     Navigieren Sie dazu im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
     _System_ > _Cron_ (_admin/config/system/cron_). Wählen Sie im Feld _Cron alle x-Minunten ausführen_ unter _Cron-Einstellungen_ das gewünschte Intervall aus und klicken Sie auf _Konfiguration Speichern_.
-    ![Konfigurieren Sie den Kern des automatisierten Cron-Moduls](/images/security-cron.png)
+    ![Konfigurieren Sie den Kern des automatisierten Cron-Moduls](/images/security-cron.webp)
 1. Wenn Sie Cron-Wartungsaufgaben von außerhalb der Website ausführen wollen, deinstallieren Sie
     das Kernsystemmodul Automated Cron (siehe [config-uninstall](./config-uninstall.md)). Als nächstes ermitteln Sie die
     Cron-URL. Diese URL wird im _Statusbericht_ (siehe [prevent-status](./prevent-status.md)) und

@@ -25,19 +25,19 @@ Home and About pages must exist in the main navigation menu. See
     menu. Note that the names and descriptions of the menus that were provided by
     your installation profile are shown in English on this page; see
     [language-concept](./language-concept.md) for an explanation.
-    <img src="/images/menu-reorder_menu_titles.png" alt="List of menus on the site with 'Main navigation' highlighted" width="100%" />
+    <img src="/images/menu-reorder_menu_titles.webp" alt="List of menus on the site with 'Main navigation' highlighted" width="100%" />
 1. The _Edit menu_ page will display a list of each link in the menu you
     chose (_Main navigation_).
-    ![List of menu links under _Main navigation_](/images/menu-reorder_edit_menu.png)
+    ![List of menu links under _Main navigation_](/images/menu-reorder_edit_menu.webp)
 1. Drag the cross bar handles of menu links to change their order: Home, then
     About. As an alternative to dragging, you can click the _Show row weights_ link
     at the top of the table and select numerical weights (menu links with lower or
     more negative weights will be shown first).
-    ![Reordered menu links with warning message about unsaved changes and the _Save_ button](/images/menu-reorder_reorder.png)
+    ![Reordered menu links with warning message about unsaved changes and the _Save_ button](/images/menu-reorder_reorder.webp)
 1. Click _Save_.
 1. The home page now displays the main navigation with the Home menu
     link displayed first.
-    ![Reordered menu links on the home page with 'Home' first and then 'About'](/images/menu-reorder_final_order.png)
+    ![Reordered menu links on the home page with 'Home' first and then 'About'](/images/menu-reorder_final_order.webp)
 ## Expand your understanding
 
 Add a menu link called _Contact_, leading to the _/contact_ page, to your Main

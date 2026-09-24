@@ -106,7 +106,7 @@ installation profile) but can be recreated if deleted. See
       </tbody>
     </table>
 
-    <img src="/images/views-create-wizard.png" alt="Add new view wizard" width="100%" />
+    <img src="/images/views-create-wizard.webp" alt="Add new view wizard" width="100%" />
 
 1. Click _Save and edit_. The view configuration page appears.
 1. Under _Fields_, click _Add_ from the dropdown button. The _Add fields_ pop-up
@@ -188,10 +188,10 @@ installation profile) but can be recreated if deleted. See
 1. Click _Apply_. The view configuration page appears.
 1. Optionally, click _Update preview_ for a preview.
 1. Click _Save_.
-    ![Vendors view configuration page](/images/views-create-view.png)
+    ![Vendors view configuration page](/images/views-create-view.webp)
 1. Navigate to the homepage and click Vendors from the main navigation to see
     the result.
-    ![Vendors view output](/images/views-create-view-output.png)
+    ![Vendors view output](/images/views-create-view-output.webp)
 ## Expand your understanding
 
 The link to the view in the main navigation will probably not be in the right

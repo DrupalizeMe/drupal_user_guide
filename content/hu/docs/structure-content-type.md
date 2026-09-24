@@ -41,7 +41,7 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
       </tbody>
     </table>
 
-    ![Az új tartalomtípus hozzáadására szolgáló oldal](/images/structure-content-type-add.png)
+    ![Az új tartalomtípus hozzáadására szolgáló oldal](/images/structure-content-type-add.webp)
 
 1. Az oldal alján, a _Beküldési űrlap beállításai_ függőleges fül alatt pár beállítást meg tudunk adni, hogyan nézzen ki az űrlap, amin keresztül az ilyen típusú tartalmakat lehet majd beküldeni. Töltsünk ki minden mezőt a lent látható módon.
     <table>
@@ -71,7 +71,7 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
       </tbody>
     </table>
 
-    ![Beküldési űrlap beállításai ehhez a tartalomtípushoz](/images/structure-content-type-add-submission-form-settings.png)
+    ![Beküldési űrlap beállításai ehhez a tartalomtípushoz](/images/structure-content-type-add-submission-form-settings.webp)
 
 1. A következő, _Közzétételi beállítások_ nevű függőleges fül alatt dönthetünk arról, hogy mi legyen az alapértelmezett publikációs állapota az ilyen típusú tartalmaknak, amikor létrehozzák őket. Töltsünk ki minden mezőt a lent látható módon.
     <table>
@@ -107,7 +107,7 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
     </table>
 
     Tekintettel arra, hogy most egy vadonatúj tartalomtípust hozunk létre, még nem létezhetnek ilyen típusú tartalmaink. Ellenben egy már létező tartalomtípus beállításai bármikor módosíthatóak a későbbiekben, azonban nem árt tudni, hogy az visszamenőlegesen már nem fogja befolyásolni a korábban már beküldött tartalmakat.
-    ![Közzétételi lehetőségek beállítása](/images/structure-content-type-add-Publishing-Options.png)
+    ![Közzétételi lehetőségek beállítása](/images/structure-content-type-add-Publishing-Options.webp)
 
 1. Eggyel lentebb, a  _Megjelenítési beállítások_ függőleges fül alatt szabályozható, hogy ki legyen-e írva minden ilyen típusú tartalomnál, hogy ki és mikor hozta létre őket a webhelyen. Töltsünk ki minden mezőt a lent látható módon.
     <table>
@@ -127,7 +127,7 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
       </tbody>
     </table>
 
-    ![Megjelenítési beállítások füle](/images/structure-content-type-add-Display-settings.png)
+    ![Megjelenítési beállítások füle](/images/structure-content-type-add-Display-settings.webp)
 
 1. A – valószínűleg – utolsó, _Menübeállítások_ fül van már csak hátra:
     <table>
@@ -147,10 +147,10 @@ Mielőtt a kivitelezésbe belekezdenénk, javasolt, hogy már legyen egy előzet
       </tbody>
     </table>
 
-    ![Menübeállítások füle](/images/structure-content-type-add-Menu-settings.png)
+    ![Menübeállítások füle](/images/structure-content-type-add-Menu-settings.webp)
 
 1. A _Mentés és mezők kezelése_ gombra kattintva mentsük el a beállításainkat, ezzel létre is hoztuk első saját, ámbár még üres (azaz mezőket még nem használó) tartalomtípusunkat. A sikeres mentést követően rögtön át leszünk irányítva a _Mezők kezelése_ oldalra, ahol elkezdhetjük felvenni a szükséges mezőket, ezzel felépítve tulajdonképpen magát a tartalomtípust. A mezőkről bővebben a [structure-fields](./structure-fields.md) témakörben lesz szó.
-    <img src="/images/structure-content-type-add-confirmation.png" alt="Megerősítés a sikeres mentésről" width="100%" />
+    <img src="/images/structure-content-type-add-confirmation.webp" alt="Megerősítés a sikeres mentésről" width="100%" />
 1. A fenti lépéssort követve ugyanígy hozzunk létre egy másik, _Recept_ nevű tartalomtípust is, amiben majd az árusok által beküldött recepteket tároljuk. Ugyanazokat a példaértékeket használhatjuk a legtöbb helyen a receptekhez is, mint az árusokhoz. Ahol mégis eltér, ott ezeket a példákat gépeljük be:
     <table>
       <thead>

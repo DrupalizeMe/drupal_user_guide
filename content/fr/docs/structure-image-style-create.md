@@ -54,7 +54,7 @@ Consulter [structure-content-type](./structure-content-type.md), [structure-fiel
     </table>
 1. Cliquer sur _Ajouter l'effet_. Le style d'image est enregistré avec l'effet
     choisi.
-    <img src="/images/structure-image-style-create-add-style.png" alt="Ajouter un style d'image" width="100%" />
+    <img src="/images/structure-image-style-create-add-style.webp" alt="Ajouter un style d'image" width="100%" />
 1. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Types de
     contenu_ (_admin/structure/types_).
 1. Cliquer sur _Gérer l'affichage_ dans le bouton déroulant _Actions_ du type de
@@ -83,7 +83,7 @@ Consulter [structure-content-type](./structure-content-type.md), [structure-fiel
       </tbody>
     </table>
 
-    ![Changer les paramètres du formateur de champ d'un champ image](/images/structure-image-style-create-manage-display.png)
+    ![Changer les paramètres du formateur de champ d'un champ image](/images/structure-image-style-create-manage-display.webp)
 
 1. Cliquer sur _Mettre à jour_.
 1. Cliquer sur _Enregistrer_. Le nouveau style d'image sera utilisé pour afficher

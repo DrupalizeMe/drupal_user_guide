@@ -48,7 +48,7 @@ Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Liefera
       </tbody>
     </table>
 1. Klicken Sie auf _Effekt hinzufügen_. Der Bildstil wird mit den gewählten Effekten gespeichert.
-    <img src="/images/structure-image-style-create-add-style.png" alt="Einen Bildstil hinzufügen" width="100%" />
+    <img src="/images/structure-image-style-create-add-style.webp" alt="Einen Bildstil hinzufügen" width="100%" />
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
     (_admin/structure/types_).
 1. Klicken Sie im Drop-Button _Aktionen_ für den Inhaltstyp Lieferanten auf _Anzeige verwalten_.
@@ -79,7 +79,7 @@ Fügen Sie einen Bildstil hinzu und verwenden Sie ihn, um Bilder auf den Liefera
       </tbody>
     </table>
 
-    ![Feldformatierungseinstellungen des Bildfeldes ändern](/images/structure-image-style-create-manage-display.png)
+    ![Feldformatierungseinstellungen des Bildfeldes ändern](/images/structure-image-style-create-manage-display.webp)
 
 1. Klicken Sie auf _Aktualisieren_.
 1. Klicken Sie auf _Speichern_. Der neue Bildstil wird für die Anzeige von Inhalten des Typs Lieferanten verwendet.

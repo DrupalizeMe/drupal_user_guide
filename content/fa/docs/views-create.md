@@ -98,7 +98,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    <img src="/images/views-create-wizard.png" alt="صفحه افزودن view جدید" width="100%" />
+    <img src="/images/views-create-wizard.webp" alt="صفحه افزودن view جدید" width="100%" />
 
 1. روی _ذخیره‌سازی و ویرایش_ کلیک کنید. صفحه پیکربندی view نمایش می‌یابد.
 1. روی _افزودن_ از منوی کشویی قسمت _فیلدها_ کلیک کنید. پنجره _افزودن فیلدها_ نمایش می‌یابد.
@@ -173,9 +173,9 @@ source_locale: "fa"
 1. روی _تایید_ کلیک کنید. صفحه پیکربندی view نمایش می‌یابد.
 1. در صورت نیاز، روی _بروزرسانی پیش‌نمایش_ کلیک کنید.
 1. روی _ذخیره‌سازی_ کلیک کنید.
-    ![صفحه پیکربندی view فرشندگان](/images/views-create-view.png)
+    ![صفحه پیکربندی view فرشندگان](/images/views-create-view.webp)
 1. به صفحه اصلی بروید و با کلیک روی منوی فروشندگان نتایج را مشاهده کنید.
-    ![خروجی view فروشندگان](/images/views-create-view-output.png)
+    ![خروجی view فروشندگان](/images/views-create-view-output.webp)
 
 ## درک خود را گسترش دهید
 

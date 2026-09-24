@@ -20,7 +20,7 @@ source_locale: "ru"
 
 1. В _Управлении_ административного меню перейдите в _Структура_ > _Типы контента_ (_admin/structure/types_). Затем нажмите _Управление полями_ в выпадающем списке для типа контента Рецепт. Откроется страница _Управление полями_.
 1. Нажмите _Создать новое поле_. Откроется страница _Добавить поле_. Выберите тип поля _Ссылка_ из вариантов _Выберите тип поля_. Нажмите _Продолжить_. Откроется страница _Добавить поле_ с формой для настройки метки поля.
-    ![Добавление поля ссылки на тип контента](/images/structure-adding-reference-add-field.png)
+    ![Добавление поля ссылки на тип контента](/images/structure-adding-reference-add-field.webp)
 1. Заполните поля, как показано ниже. Нажмите _Сохранить и продолжить_.
     <table>
       <thead>
@@ -44,7 +44,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Добавление поля ссылки на тип контента](/images/structure-adding-reference-add-field-label.png)
+    ![Добавление поля ссылки на тип контента](/images/structure-adding-reference-add-field-label.webp)
 
 1. Откроется страница Предоставлено, где можно указать допустимое количество значений. Заполните поля, как показано ниже. Нажмите _Сохранить настройки_.
     <table>
@@ -69,7 +69,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Настройка хранилища для поля ссылки](/images/structure-adding-reference-set-field-basic.png)
+    ![Настройка хранилища для поля ссылки](/images/structure-adding-reference-set-field-basic.webp)
 
 1. Откроется страница _Настройки поля Предоставлено для Рецепта_, позволяющая настроить поле. Заполните поля, как показано ниже. Нажмите _Сохранить настройки_.
     <table>
@@ -119,10 +119,10 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    <img src="/images/structure-adding-reference-field-settings.png" alt="Настройки для поля ссылки" width="100%" />
+    <img src="/images/structure-adding-reference-field-settings.webp" alt="Настройки для поля ссылки" width="100%" />
 
 1. Поле Предоставлено было добавлено к типу контента.
-    <img src="/images/structure-adding-reference-manage-fields.png" alt="Страница управления полями для типа контента Рецепт" width="100%" />
+    <img src="/images/structure-adding-reference-manage-fields.webp" alt="Страница управления полями для типа контента Рецепт" width="100%" />
 
 ## Видео
 

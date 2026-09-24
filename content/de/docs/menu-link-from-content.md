@@ -20,7 +20,7 @@ Der Inhalt der die Seite darstellt muss vorhanden sein. Siehe [content-create](.
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Inhalt_ (_admin/content_).
 1. Suchen Sie die Seite Info, und klicken Sie in der entsprechenden Zeile auf _Bearbeiten_.
     Das Formular zur Bearbeitung des Inhalts erscheint.
-    <img src="/images/menu-link-from-content_edit_page.png" alt="Page edit link" width="100%" />
+    <img src="/images/menu-link-from-content_edit_page.webp" alt="Page edit link" width="100%" />
 1. Klicken Sie rechts auf _Menüeinstellungen_, um das Tab zu erweitern.
 1. Aktivieren Sie das Kontrollkästchen _Menüpunkt erstellen_, damit die Menüoptionen angezeigt werden.
 1. Geben Sie die Werte aus der nachstehenden Tabelle ein:
@@ -53,12 +53,12 @@ Der Inhalt der die Seite darstellt muss vorhanden sein. Siehe [content-create](.
       </tbody>
     </table>
 
-    ![Einen Menülink aus der Bearbeitungssite für Ionhalte heruas erstellen](/images/menu-link-from-content.png)
+    ![Einen Menülink aus der Bearbeitungssite für Ionhalte heruas erstellen](/images/menu-link-from-content.webp)
 
 1. Klicken Sie auf _Speichern_, um die Änderungen zu speichern.
     Klicken Sie in der Navigationsleiste auf _Startseite_ oder _Zurück zur Website_,
     um das Ergebnis zu sehen, das so aussehen könnte wie im Bild unten.
-    <img src="/images/menu-link-from-content-result.png" alt="Link has been added to the main menu" width="100%" />
+    <img src="/images/menu-link-from-content-result.webp" alt="Link has been added to the main menu" width="100%" />
 
 ## Vertiefen Sie Ihr Wissen
 

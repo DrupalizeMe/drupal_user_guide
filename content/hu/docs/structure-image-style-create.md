@@ -46,7 +46,7 @@ Ebben a témakörben megismerjük, hogyan lehet a Drupalra bízni a látogatókn
       </tbody>
     </table>
 1. Kattintsunk a _Hatás hozzáadása_ gombra. Ezzel sikeresen elmentettük első saját képstílusunkat, ami még csak egy hatásból (arányos átméretezés-kivágás) áll.
-    <img src="/images/structure-image-style-create-add-style.png" alt="Egy képstílus hozzáadása" width="100%" />
+    <img src="/images/structure-image-style-create-add-style.webp" alt="Egy képstílus hozzáadása" width="100%" />
 1. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ menüpontot (vagy gépeljük a címsorba: _admin/structure/types_).
     (_admin/structure/types_).
 1. Az _Árus_ tartalomtípus sorának végén, a _Műveletek_ oszlopban kattintsunk a lenyíló gomb _Megjelenés beállítása_ lehetőségére. Betöltődik a _Megjelenés beállítása_ oldal (_admin/structure/types/manage/vendor/display_).
@@ -75,7 +75,7 @@ Ebben a témakörben megismerjük, hogyan lehet a Drupalra bízni a látogatókn
       </tbody>
     </table>
 
-    ![Egy képmező formázójának módosítása](/images/structure-image-style-create-manage-display.png)
+    ![Egy képmező formázójának módosítása](/images/structure-image-style-create-manage-display.webp)
 
 1. Kattintsunk a _Frissítés_ gombra.
 1. Kattintsunk a _Mentés_ gombra. Innentől már az új képstílus lesz használatban, amikor egy _Árus_ típusú tartalmat megnyitunk.

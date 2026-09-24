@@ -26,10 +26,10 @@ Inhhalte vom Typ Lieferant aufweisen. Siehe: [structure-content-type](./structur
     _Titel_, oder _Sprache_ eingrenzen.  Klicken Sie auf _Bearbeiten_ für den gewünschten Lieferanten-Inhalt, welchem sie einen Autor zuweisen möchten.
 1. Im Abschnitt _Informationen zum Autor_: Geben Sie im Feld _Geschrieben von_ das Benutzerkonto des Lieferanten _Happy Farm_ ein. Die Liste gibt die passenden Benutzernamen aus.
     Wählen Sie den Namen des passenden Benutzers aus der Liste aus.
-    ![Assigning an author to the Vendor content item](/images/user-content.png)
+    ![Assigning an author to the Vendor content item](/images/user-content.webp)
 1. Klicken Sie auf _Speichern_.
 1. Es wird eine Benachrichtigung ausgegeben, dass der entsprechende Inhalt aktualisiert wurde.
-    ![Das Inhaltselement des Anbieters wurde aktualisiert](/images/user-content_updated.png)
+    ![Das Inhaltselement des Anbieters wurde aktualisiert](/images/user-content_updated.webp)
 1. Führen Sie diese Schritte erneut aus, um den Inhalt des Lieferanten Sweet Honey dem
     Benutzerkonto des Lieferanten Sweet Honey zuzuordnen.
 

@@ -42,7 +42,7 @@ Wochenmarktes.
       </tbody>
     </table>
 
-    ![Einen benutzerdefinierten Block hinzufügen](/images/block-create-custom-add-custom-block.png)
+    ![Einen benutzerdefinierten Block hinzufügen](/images/block-create-custom-add-custom-block.webp)
 
 1. Klicken Sie auf _Speichern_. Es erscheint eine Meldung, dass der Block gespeichert wurde.
 

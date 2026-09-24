@@ -43,7 +43,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![اطلاعات سایت](/images/config-basic-SiteInfo.png)
+    ![اطلاعات سایت](/images/config-basic-SiteInfo.webp)
 
 1. پس از ویرایش فیلدها، روی _ذخیره‌سازی پیکربندی_ برای اعمال تغییرات انجام شده کلیک کنید.
 
@@ -83,7 +83,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![منطقه‌های زمانی](/images/config-basic-TimeZone.png)
+    ![منطقه‌های زمانی](/images/config-basic-TimeZone.webp)
 
     پس از ویرایش فیلدها، روی _ذخیره‌سازی پیکربندی_ برای اعمال تغییرات انجام شده کلیک کنید.
 

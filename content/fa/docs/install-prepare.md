@@ -34,13 +34,13 @@ source_locale: "fa"
 1. اگر فصد استفاده از نصب‌کننده تحب وب را دارید، فایل‌های دروپال را به صورت دستی آپلود کنید. برای اینکار با استفاده از Git یا Composer به [install-composer](./install-composer.md) مراجعه کنید؛ سپس برای دانلود فایل فشرده:
 
     .. به مسیر _https://www.drupal.org_ رفته و روی _Download & Extend_ کلیک کنید.
-    <img src="/images/install-prepare-downloads.png" alt="صفحه دانلود در _Drupal.org_" width="100%" />
+    <img src="/images/install-prepare-downloads.webp" alt="صفحه دانلود در _Drupal.org_" width="100%" />
 
     .. روی دکمه _Download Drupal_ کلیک کرده (با توجه به نسخه مناسب) تا به صفحه دانلود بروید.
-    ![قسمت انتشارهای توصیه‌شده در صفحه دانلود دروپال در _Drupal.org_](/images/install-prepare-recommended.png)
+    ![قسمت انتشارهای توصیه‌شده در صفحه دانلود دروپال در _Drupal.org_](/images/install-prepare-recommended.webp)
 
     .. نسخه‌ای که قصد دانلود آن را دارید از _Recommended releases_ انتخاب کرده و روی آن کلیک کنید.
-    ![قسمت دانلود فایل‌های هسته دروپال در صفحه دانلود دروپال در _Drupal.org_](/images/install-prepare-files.png)
+    ![قسمت دانلود فایل‌های هسته دروپال در صفحه دانلود دروپال در _Drupal.org_](/images/install-prepare-files.webp)
 
     .. نسخه tar.gz یا zip را روی رایانه خود دانلود کنید.
 

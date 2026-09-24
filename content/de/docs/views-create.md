@@ -103,7 +103,7 @@ Die Website muss einige Inhalte des Typs Lieferant enthalten. Siehe [structure-c
       </tbody>
     </table>
 
-    <img src="/images/views-create-wizard.png" alt="Add new view wizard" width="100%" />
+    <img src="/images/views-create-wizard.webp" alt="Add new view wizard" width="100%" />
 
 1. Klicken Sie auf _Speichern und bearbeiten_. Das Konfigurationsformularder Ansicht erscheint.
 1. Klicken Sie im Abschnitt _Felder_ im Dropbutton auf _Hinzufügen_. Das Popup-Fenster _Felder_ hinzufügen
@@ -183,10 +183,10 @@ Die Website muss einige Inhalte des Typs Lieferant enthalten. Siehe [structure-c
 1. Klicken Sie auf _Anwenden_. Die Konfigurationsseite der Ansicht erscheint.
 1. Klicken Sie optional auf _Vorschau aktualisieren_, um die Vorschau zu aktualisieren.
 1. Klicken Sie auf _Speichern_.
-    ![Konfigurationsseite für die Ansicht der Anbieter](/images/views-create-view.png)
+    ![Konfigurationsseite für die Ansicht der Anbieter](/images/views-create-view.webp)
 1. Navigieren Sie zur Startseite und klicken Sie in der Hauptnavigation auf Lieferanten, um
     das Ergebnis zu sehen.
-    ![Vendors view output](/images/views-create-view-output.png)
+    ![Vendors view output](/images/views-create-view-output.webp)
 
 ## Viertiefen Sie Ihr Wissen
 

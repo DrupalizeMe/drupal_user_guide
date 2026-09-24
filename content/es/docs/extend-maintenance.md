@@ -53,7 +53,7 @@ modo de mantenimiento.
 1. Compruebe que el sitio está en modo de mantenimiento accediendo a él desde
     otro navegador en el que no haya iniciado sesión. Si no puede comprobarlo,
     intente borrar la caché. Ver [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-enabled.png" alt="Maintenance mode enabled" width="100%" />
+    <img src="/images/extend-maintenance-mode-enabled.webp" alt="Maintenance mode enabled" width="100%" />
 
 ### Deshabilitar el modo de mantenimiento con la interfaz administrativa
 
@@ -86,7 +86,7 @@ modo de mantenimiento.
 1. Compruebe que el sitio ya no está en modo de mantenimiento accediendo a él
     desde otro navegador en el que no haya iniciado sesión. Si no puede
     comprobarlo, intente borrar la caché. Ver [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-disabled.png" alt="Maintenance mode disabled" width="100%" />
+    <img src="/images/extend-maintenance-mode-disabled.webp" alt="Maintenance mode disabled" width="100%" />
 
 ### Habilitar o deshabilitar el modo de mantenimiento con Drush
 

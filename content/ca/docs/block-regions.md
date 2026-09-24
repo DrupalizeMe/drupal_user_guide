@@ -21,7 +21,7 @@ Contingut, que conté el contingut principal, és obligatòria; les altres són
 opcionals. El tema Bartik del nucli proporciona les divuit regions destacades en
 la següent imatge.
 
-<img src="/images/block-regions-bartik.png" alt="regions del tema Bartik del nucli" width="100%" />
+<img src="/images/block-regions-bartik.webp" alt="regions del tema Bartik del nucli" width="100%" />
 
 ## Temes relacionats
 

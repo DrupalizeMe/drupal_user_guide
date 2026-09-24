@@ -42,7 +42,7 @@ drush cache:rebuild
 
 Такие инструкции предполагают, что у вас установлен модуль Toolbar, и пример означает, что в верхней панели меню сайта нужно нажать _Управление_, затем _Структура_, затем _Таксономия_, после чего вы окажетесь на странице с адресом _http://example.com/admin/structure/taxonomy_ (если базовый адрес сайта — _http://example.com_).
 
-<img src="/images/preface-conventions-top-menu.png" alt="Admin menu" width="100%" />
+<img src="/images/preface-conventions-top-menu.webp" alt="Admin menu" width="100%" />
 
 Вот ещё пример:
 
@@ -52,7 +52,7 @@ drush cache:rebuild
 
 В этом примере после нажатия _Управление_ и _Конфигурация_ нужно найти раздел _Система_ и в нём нажать _Основные настройки сайта_. В результате вы окажетесь на странице _http://example.com/admin/config/system/site-information_.
 
-![_System_ section of the Configuration page](/images/preface-conventions-config-system.png)
+![_System_ section of the Configuration page](/images/preface-conventions-config-system.webp)
 
 Ещё одно замечание: если вы используете стандартную административную тему Seven, многие кнопки "Добавить" в интерфейсе показываются со знаком `. Например, на admin/content кнопка Добавить новый контент будет _` Add new content_. Однако это зависит от темы и не обязательно отображается как часть текста кнопки (например, этот плюс может не прочитать скринридер), поэтому в этом руководстве не принято указывать знак + на кнопках.
 ## Заполнение форм

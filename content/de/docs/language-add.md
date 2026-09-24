@@ -25,7 +25,7 @@ welche davon standardmäßig verwendet wird.
       Klicken Sie auf _Sprache hinzufügen_. Warten sie auf die Fertigstellung des
       Downloads der Übersetzung. Die Seite _Sprachen_ wird erneut angezeigt.
       Eine Meldung zeigt an, dass die ausgewählte Übersetzung heruntergeladen wurde und die neue Sprache wird in der Auswahlliste angezeigt..
-    <img src="/images/language-add-list.png" alt="Liste der verfügbaren Sprachen auf der Website" width="100%" />
+    <img src="/images/language-add-list.webp" alt="Liste der verfügbaren Sprachen auf der Website" width="100%" />
 1. Folgen Sie den Arbeitsschritten im Kapitel [block-place](./block-place.md), um den _Sprachumschalter-Block_ in
     den Abschnitt _zweite Seitenleiste_ Ihres Themes zu platzieren.
     Dadurch können Besucher der Website zwischen

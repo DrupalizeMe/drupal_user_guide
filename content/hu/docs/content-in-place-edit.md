@@ -28,10 +28,10 @@ A helyi szerkesztő használatához menjünk el a Rólunk oldalra. Ha az oldalt 
     Ha a szerkeszteni kívánt tartalom megjelent a böngészőben, a gyorsszerkesztőt az alábbi lépéseket követve használhatjuk:
 
 1. Keressük meg azt a részét az oldalnak, ahol megjelenik a szerkeszteni kívánt tartalom, és kapcsoljuk be a gyorsszerkesztő módot a _Gyorsszerkesztés_ szövegkörnyezeti hivatkozás használatával (a szövegkörnyezeti hivatkozások hozzáférésével kapcsolatos utasításokat lásd itt: [config-overview](./config-overview.md)). Ennek a tartalomelemnek az összes szerkeszthető mezője kékkel keretezve jelenik meg, továbbá egy lebegő párbeszédablak is felugrik.
-    <img src="/images/content-in-place-edit-hover-box.png" alt="Képernyőkép a gyorsszerkesztő módról" width="100%" />
+    <img src="/images/content-in-place-edit-hover-box.webp" alt="Képernyőkép a gyorsszerkesztő módról" width="100%" />
 1. Mivel a _Törzs_ mező támogatja a szövegszerkesztőt, ezért kattintsunk a _Törzs_ szövegrészre a szerkesztés elkezdéséhez. A szerkesztő eszköztár a lebegő párbeszédablakban jelenik meg.
 1. Adjunk meg további információt a Termelői Piacról. A _Mentés_ gomb a lebegő dobozban jelenik meg, és a mező keretének színe megváltozik.
-    <img src="/images/content-in-place-edit-save-box.png" alt="Képernyőkép a gyorsszerkesztő módról a szerkesztés után" width="100%" />
+    <img src="/images/content-in-place-edit-save-box.webp" alt="Képernyőkép a gyorsszerkesztő módról a szerkesztés után" width="100%" />
 1. Ha megelégedtünk az elvégzett módosításokkal, a párbeszédablakban található _Mentés_ gombbal jóváhagyjuk. Ha tovább szeretnénk szerkeszteni, kattintsunk az „X”-re a változtatások elvetéséhez. A gyorsszerkesztő mód mindkét esetben kikapcsolódik.
 ## Az ismeretek elmélyítése
 

@@ -21,12 +21,12 @@ Az a cél, hogy a vízszintes elválasztó HTML-elemet hozzáadjuk az _Alap HTML
 1. Az _Alap HTML_ sorában kattintsunk a _Beállítás_ gombra. Megjelenik az _Alap HTML_ oldal.
 1. Figyeljük meg, hogy a _Szövegszerkesztő_ felirat alatt a _CKEditor_ van kiválasztva. Ez lehetővé teszi számunkra, hogy módosítsuk az eszközsorát.
 1. Húzzuk a _Vízszintes elválasztó vonal_ (angolul „horizontal rule”) gombot a _Rendelkezésre álló gombok_ területről az _Aktív eszköztár_ szalagra. Ha valami miatt ez nem működne, akkor egy-egy gombot kijelölve a _Tab_ és nyíl billentyűk segítségével a kívánt helyre mozgathatóak. A _Csoportnevek mutatása_ linkre kattintva pedig megjeleníthetjük a gombcsoportok nevét.
-    <img src="/images/structure-text-format-config-editor-config.png" alt="A szövegszerkesztő beállítása" width="100%" />
+    <img src="/images/structure-text-format-config-editor-config.webp" alt="A szövegszerkesztő beállítása" width="100%" />
 1. Ne felejtsük el, hogy átrendezhetjük a _Szűrők feldolgozási sorrendjét_ is.
 1. A gomb eszközsorra húzásakor a `<hr>` elem kódja automatikusan bekerült az _Engedélyezett HTML jelölők_ felsorolásába, ellenőrizzük a _Szűrő beállításai_ függőleges fülön, hogy valóban megjelent-e?
-    <img src="/images/structure-text-format-config-allowed-html.png" alt="HTML-elemek beállítása" width="100%" />
+    <img src="/images/structure-text-format-config-allowed-html.webp" alt="HTML-elemek beállítása" width="100%" />
 1. Kattintsunk a _Beállítások mentése_ gombra. Ekkor visszajutunk a _Szövegformátumok és szerkesztők_ oldalra. Egy pozitív rendszerüzenet tájékoztat minket az előbbi módosításaink sikeres elmentéséről.
-    ![Visszajelzés a sikeres módosításról](/images/structure-text-format-config-summary.png)
+    ![Visszajelzés a sikeres módosításról](/images/structure-text-format-config-summary.webp)
 ## Az ismeretek elmélyítése
 
 Ha nem látjuk azonnal a változtatásaink eredményét, szükség lehet a gyorsítótár kiürítésére. Lásd: [prevent-cache-clear](./prevent-cache-clear.md).

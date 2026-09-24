@@ -24,10 +24,10 @@ source_locale: "fa"
 
 1. در صفحه پروژه _Admin Toolbar_ وافع در _https://www.drupal.org/project/admin_toolbar_ به قسمت _دانلودها_ در انتهای صفحه بروید.
 1. از نشانی پیوند _tar.gz_ رونوشت بگیرید.
-    ![یافتن نشانی یک افزونه](/images/extend-module-install-download.png)
+    ![یافتن نشانی یک افزونه](/images/extend-module-install-download.webp)
 1. از منوی _مدیریت_ به مسیر _توسعه_ (_admin/modules_) بروید. صفحه _توسعه_ نمایش داده می‌شود.
 1. روی _نصب افزونه جدید_ کلیک کنید. صفحه _نصب افزونه جدید_ نمایش می‌یابد.
-    ![نصب افزونه با استفاده از نشانی آن](/images/extend-module-install-admin-toolbar-do.png)
+    ![نصب افزونه با استفاده از نشانی آن](/images/extend-module-install-admin-toolbar-do.webp)
 1. در فیلد _نصب از یک نشانی_ محتوای پیوند موجود را قرار دهید. این مقدار شبیه به زیر است:
     _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.14.tar.gz_
 1. روی _نصب_ کلیک کنید تا افزونه جدید در سرور قرار بگیرد. فایل‌ها در دایرکتوری _modules_ قرار می‌گیرند.

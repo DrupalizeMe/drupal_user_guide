@@ -18,11 +18,11 @@ source_locale: "ru"
 
 1. В административном меню _Управление_ перейдите в _Структура_ > _Типы контента_ (_admin/structure/types_). Откроется страница _Типы контента_.
 1. Нажмите _Удалить_ в выпадающем списке _Operations_ для типа контента _Article_. Обратите внимание, что имя этого типа контента приведено на английском языке на этой странице; см. [language-concept](./language-concept.md) для объяснения.
-    <img src="/images/structure-content-type-delete-dropdown.png" alt="Article delete dropdown" width="100%" />
+    <img src="/images/structure-content-type-delete-dropdown.webp" alt="Article delete dropdown" width="100%" />
 1. Появится страница подтверждения. Нажмите _Удалить_.
-    <img src="/images/structure-content-type-delete-confirmation.png" alt="Article delete confirmation page" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.webp" alt="Article delete confirmation page" width="100%" />
 1. Появится страница _Типы контента_ с сообщением о том, что тип контента был удалён:
-    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.png)
+    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.webp)
 ## Видео
 
 <div class="embedded-video">

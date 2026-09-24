@@ -26,7 +26,7 @@ tener al menos dos idiomas. Ver [language-add](./language-add.md).
 1. Seleccione _Translate_ en el botón desplegable de la fila del elemento de
     contenido Home. Aparece la página _Translations of Home_.
 1. Haga clic en _Add_ en la fila _Spanish_.
-    <img src="/images/language-content-translate-add.png" alt="Adding a content translation" width="100%" />
+    <img src="/images/language-content-translate-add.webp" alt="Adding a content translation" width="100%" />
 1. Tenga en cuenta que la interfaz de usuario ha cambiado al español. Para
     volver a cambiarla al inglés, elimine la primera aparición de _es_ en la URL
     del navegador. Por ejemplo, si su URL se parece a

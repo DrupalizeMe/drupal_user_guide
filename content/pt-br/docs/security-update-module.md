@@ -37,7 +37,7 @@ _INSTALL.txt_, and _UPGRADE.txt_ that come with the module's installation
 file. Also, review the release notes on the project page by clicking the version
 number you're downloading.
 
-![Release notes link](/images/security-update-module-release-notes.png)
+![Release notes link](/images/security-update-module-release-notes.webp)
 
 You can use the administrative interface to update a contributed module. If you
 are updating a custom module rather than a contributed module, if you see a
@@ -56,7 +56,7 @@ the instructions for the administrative interface below.
     _Available updates_ > _Update_ (_admin/reports/updates/update_).
 1. Find and check the module in the list. Click _Download these updates_ for the
     module.
-    <img src="/images/security-update-module-updates.png" alt="Available updates" width="100%" />
+    <img src="/images/security-update-module-updates.webp" alt="Available updates" width="100%" />
 1. Click _Continue_.
 1. Click _Run database updates_. If you obtained the new module files manually,
     start with this step, and reach the database updates page by typing the URL

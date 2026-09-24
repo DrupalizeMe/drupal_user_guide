@@ -32,7 +32,7 @@ Drush также должен быть установлен. Смотрите [i
 1. На странице проекта _Admin toolbar_ на drupal.org
     (_https://www.drupal.org/project/admin_toolbar_) прокрутите вниз до раздела _Releases_.
 1. Скопируйте команду Composer для нужной версии модуля.
-    ![Команда установки модуля через composer](/images/extend-module-install-download.png)
+    ![Команда установки модуля через composer](/images/extend-module-install-download.webp)
 1. Или введите следующую команду (замените короткое имя и версию на нужные вам):
     ```text
     composer require 'drupal/admin_toolbar:^3.5'
@@ -44,7 +44,7 @@ Drush также должен быть установлен. Смотрите [i
 1. В _Управлении_ административного меню, перейдите в _Расширения_
     (_admin/modules_). Откроется страница _Расширения_.
 1. Найдите модуль _Admin toolbar_ и поставьте галочку напротив него.
-    ![Установка модуля Admin Toolbar](/images/extend-module-install-admin-toolbar-do.png)
+    ![Установка модуля Admin Toolbar](/images/extend-module-install-admin-toolbar-do.webp)
 1. Нажмите _Установить_, чтобы включить новый модуль.
 ### Установка модуля через Drush
 

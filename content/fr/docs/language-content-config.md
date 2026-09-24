@@ -26,7 +26,7 @@ comporter au moins deux langues. Consulter [language-add](./language-add.md).
 1. Sous _Paramètres personnalisés des langues_, cocher _Contenu_, _Bloc
     de contenu_ et _Lien de menu personnalisé_ pour rendre ces types d'entités
     traduisibles.
-    <img src="/images/language-content-config_custom.png" alt="Liste des paramètres personnalisés des langues" width="193px" />
+    <img src="/images/language-content-config_custom.webp" alt="Liste des paramètres personnalisés des langues" width="193px" />
 1. Des options de configuration apparaissent pour _Contenu_, _Bloc de contenu_
     et _Lien de menu personnalisé_. Choisir les sous-types que vous voulez traduire
     pour chaque type d'entité. Cocher _Page basique_ pour _Contenu_, _Bloc basique_
@@ -57,7 +57,7 @@ comporter au moins deux langues. Consulter [language-add](./language-add.md).
       </tbody>
     </table>
 
-    ![Langue par défaut et caractère traduisible des types de contenu](/images/language-content-config_content.png)
+    ![Langue par défaut et caractère traduisible des types de contenu](/images/language-content-config_content.webp)
 
 1. Choisir les champs qui devraient être traduisibles pour _Page basique_ comme
     indiqué dans le tableau ci-dessous. Si un champ ne varie pas en fonction de la
@@ -116,7 +116,7 @@ comporter au moins deux langues. Consulter [language-add](./language-add.md).
       </tbody>
     </table>
 
-    ![Liste des sous-types d'entités de contenu traduisibles](/images/language-content-config_basic_page.png)
+    ![Liste des sous-types d'entités de contenu traduisibles](/images/language-content-config_basic_page.webp)
 
 1. De la même manière, cocher les cases appropriés pour les champs traduisibles
     appartenant à _Bloc basique_ et _Lien de menu personnalisé_.

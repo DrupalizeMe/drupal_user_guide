@@ -39,7 +39,7 @@ comprimido.
     contribuidos que se descargan de _Drupal.org_, y un subdirectorio _custom_ para
     los módulos y temas que uno crea. Su directorio _modules_ podría tener este
     aspecto:
-    <img src="/images/extend-manual-install-directories.png" alt="Suggested directory structure for modules" width="174px" />
+    <img src="/images/extend-manual-install-directories.webp" alt="Suggested directory structure for modules" width="174px" />
 1. Si está reemplazando un módulo o tema existente por una versión actualizada,
     ponga el sitio en modo de mantenimiento. Ver [extend-maintenance](./extend-maintenance.md).
 1. Si está reemplazando un módulo o tema existente por una versión actualizada,

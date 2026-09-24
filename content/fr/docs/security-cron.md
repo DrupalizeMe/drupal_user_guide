@@ -48,7 +48,7 @@ du site web.
     _Configuration_ > _Système_ > _Cron_ (_admin/config/system/cron_). Sélectionner
     l'intervalle souhaité dans le champ _Lancer les tâches planifiées (cron) toutes
     les_, et cliquer sur _Enregistrer la configuration_.
-    ![Configurer le module Automated Cron du cœur](/images/security-cron.png)
+    ![Configurer le module Automated Cron du cœur](/images/security-cron.webp)
 1. Si vous voulez lancer les tâches planifiées de maintenance depuis l'extérieur
     du site, désinstaller le module Automated Cron (consulter [config-uninstall](./config-uninstall.md)).
     Ensuite, trouver l'URL du cron. Cette URL s'affiche dans le _tableau de bord

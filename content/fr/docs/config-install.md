@@ -28,7 +28,7 @@ modules.
     disponibles sur votre site.
 1. Cocher les cases pour le module ou les modules que vous voulez installer. Par
     exemple, cocher la case pour le module Ban.
-    <img src="/images/config-install-check-modules.png" alt="Activation du module du cœur Ban" width="100%" />
+    <img src="/images/config-install-check-modules.webp" alt="Activation du module du cœur Ban" width="100%" />
 1. Cliquer sur _Installer_. Les modules cochés seront installés.
 
 ### En utilisant Drush

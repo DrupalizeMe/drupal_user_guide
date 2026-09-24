@@ -17,7 +17,7 @@ source_locale: "ja"
 主要なコンテンツが配置される「コンテンツ」リージョンだけが必須で、それ以外のリージョンは任意です。
 コアの Bartik テーマは、次の画像で強調されているリージョンを提供します。
 
-<img src="/images/block-regions-bartik.png" alt="コアの Bartik テーマのリージョン" width="100%" />
+<img src="/images/block-regions-bartik.webp" alt="コアの Bartik テーマのリージョン" width="100%" />
 
 ## 関連トピック
 

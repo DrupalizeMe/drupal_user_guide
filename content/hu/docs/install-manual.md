@@ -15,10 +15,10 @@ Erre az útmutatóra csak akkor van szükségünk, ha úgy döntöttünk, hogy a
 ## Lépések
 
 1. Nyissuk meg a _https://www.drupal.org_ oldalt és kattintsunk a _Build_ > _Download & Extend_ menüpontra a felső menüben.
-    <img src="/images/install-prepare-downloads.png" alt="Letöltési oldal a Drupal.org-on" width="100%" />
+    <img src="/images/install-prepare-downloads.webp" alt="Letöltési oldal a Drupal.org-on" width="100%" />
 1. Ha csak az alaprendszerre van szükségünk (nem egy disztribúcióra), akkor kattintsunk a _Download Drupal zip_ gombra vagy alatta a _download tar.gz_ hivatkozásra, és mentsük le a tömörített fájlt valahová a számítógépünkre.
 1. Ha viszont egy egész disztribúciót szeretnénk letölteni, akkor lentebb ezen az oldalon a ládát szimbolizáló ikonra kattintva nyissuk meg a listájukat, válasszuk ki a szükségeset a nevére kattintva, majd szintén töltsük le a _zip_ vagy _tar.gz_ fájljukat a helyi gépünkre. Az ehhez hasonló hivatkozást keressük a projektoldaluk alján:
-    ![Egy közösségi projekt letöltési linkje](/images/extend-module-install-download.png)
+    ![Egy közösségi projekt letöltési linkje](/images/extend-module-install-download.webp)
 1. Töltsük fel a letöltött fájlt a tárhelyünkre. Ha tárhelyszolgáltatónk kínál valamilyen vezérlőpult eszközt (pl. cPanel) a tárhely kezelésére, akkor lépjünk az internetről kívülről látható gyökérkönyvtárba (ez lehet „HTML”, „public”, „www” vagy „web”), és válasszuk azt a feltöltés céljának.
 1. Itt tömörítsük ki a _tar.gz_ (vagy _zip_) fájlt, ami egy új könyvtárat fog létrehozni. Ha nincs parancssori hozzáférésünk, vagy a tárhely nem Linux operációs rendszeren fut, akkor a szolgáltató vezérlőpultjának fájlkezelője általában biztosít kicsomagolási lehetőséget. Ha viszont van parancssori hozzáférésünk a távoli szerverhez (és az Linuxon fut), akkor a következő parancs kiadásával csomagolhatjuk ki a tömörített fájlt:
     ```text

@@ -52,7 +52,7 @@ Vendor.
     </table>
 1. Haga clic en _Add effect_. El estilo de imagen se guarda con los efectos
     elegidos.
-    <img src="/images/structure-image-style-create-add-style.png" alt="Add an image style" width="100%" />
+    <img src="/images/structure-image-style-create-add-style.webp" alt="Add an image style" width="100%" />
 1. En el menú administrativo _Manage_, vaya a _Structure_ > _Content types_
     (_admin/structure/types_).
 1. Haga clic en _Manage display_ en el desplegable _Operations_ del tipo de
@@ -84,7 +84,7 @@ Vendor.
       </tbody>
     </table>
 
-    ![Change field formatter settings of image field](/images/structure-image-style-create-manage-display.png)
+    ![Change field formatter settings of image field](/images/structure-image-style-create-manage-display.webp)
 
 1. Haga clic en _Update_.
 1. Haga clic en _Save_. El nuevo estilo de imagen se utilizará al mostrar el

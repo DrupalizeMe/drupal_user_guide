@@ -33,14 +33,14 @@ lorsque vous l'installez avec le profil d'installation Standard du cœur.
     groupés visuellement en utilisant un séparateur vertical. Au lieu de
     glisser/déplacer, vous pouvez utiliser la touche tabulation pour sélectionner
     des boutons, puis les déplacer en utilisant les flèches de votre clavier.
-    <img src="/images/structure-text-format-config-editor-config.png" alt="Configurer l'éditeur" width="100%" />
+    <img src="/images/structure-text-format-config-editor-config.webp" alt="Configurer l'éditeur" width="100%" />
 1. Noter que vous pouvez modifier l'_ordre de traitement des filtres_.
 1. Dans le champ _Balises HTML autorisées_, ajouter '&lt;hr&gt;' à ceux déjà présents.
-    <img src="/images/structure-text-format-config-allowed-html.png" alt="Configurer les balises HTML" width="100%" />
+    <img src="/images/structure-text-format-config-allowed-html.webp" alt="Configurer les balises HTML" width="100%" />
 1. Cliquer sur _Enregistrer la configuration_. Vous êtes alors redirigé(e) vers
     la page _Formats de texte et éditeur_. Un message indiquant que le format de
     texte a été mis à jour s'affiche.
-    ![Message de confirmation après configuration du format de texte](/images/structure-text-format-config-summary.png)
+    ![Message de confirmation après configuration du format de texte](/images/structure-text-format-config-summary.webp)
 
 ## Améliorer votre compréhension
 

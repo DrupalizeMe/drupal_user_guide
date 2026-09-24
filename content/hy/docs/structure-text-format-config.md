@@ -34,16 +34,16 @@ install with the core Standard installation profile.
     _Active toolbar_. You may need to click the _Show group names_ link to see the
     _Tools_ group name. As an alternative to dragging, you can tab to select
     buttons and then move them using keyboard arrow keys.
-    <img src="/images/structure-text-format-config-editor-config.png" alt="Configuring the editor" width="100%" />
+    <img src="/images/structure-text-format-config-editor-config.webp" alt="Configuring the editor" width="100%" />
 1. Note that you can change the _Filter processing order_.
 1. Under _Filter settings_ > _Limit allowed HTML tags and correct faulty HTML_,
     in the field _Allowed HTML tags_, verify that `<hr>` is present (adding its
     editor button will automatically update the allowed tags).
-    <img src="/images/structure-text-format-config-allowed-html.png" alt="Configuring the HTML tags" width="100%" />
+    <img src="/images/structure-text-format-config-allowed-html.webp" alt="Configuring the HTML tags" width="100%" />
 1. Click _Save configuration_. You will be taken back to the _Text formats and
     editors_ page. A message will be displayed saying that the text format has been
     updated.
-    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.png)
+    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.webp)
 ## Expand your understanding
 
 If you do not see the effect of these changes in your site, you might need

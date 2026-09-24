@@ -34,7 +34,7 @@ _README.txt_, _INSTALL.txt_, and _UPGRADE.txt_ that come with the module. Also,
 review the release notes on the project page by clicking the version number
 you're downloading.
 
-![Release notes link](/images/security-update-module-release-notes.png)
+![Release notes link](/images/security-update-module-release-notes.webp)
 
 Updating a module requires first putting your site into maintenance mode, then
 obtaining the new code files and applying any required database updates, then
@@ -54,7 +54,7 @@ This assumes that you are using Composer to manage the files in your site; see
     _Available updates_ > _Update_ (_admin/reports/updates_).
 1. Find and check the module in the list. Click _Download these updates_ for the
     module.
-    <img src="/images/security-update-module-updates.png" alt="Available updates" width="100%" />
+    <img src="/images/security-update-module-updates.webp" alt="Available updates" width="100%" />
 1. Determine the short name of the project you want to update. For contributed
     modules and themes, it is the last part of the URL of the project page; for
     example, the Geofield module, at https://www.drupal.org/project/geofield, has

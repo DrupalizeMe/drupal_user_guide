@@ -29,16 +29,16 @@ Ihre Website unter Verwendung des Installationsprofils Standard aufsetzen.
     die Symbolleiste des Editors zu konfigurieren.
 1. Ziehen Sie den Button _Horizontale Linie_ aus der Liste _Verfügbare Buttons_ im Abschnitt _Werkzeuge_ auf die aktive Werkzeugleiste_. Möglicherweise müssen Sie auf den Link _Gruppennamen anzeigen_ klicken, um die Gruppe mit dem Namen
     _Tools_ zu finden. Alternativ zum Ziehen und Ablegen von Buttons mit der Maus können Sie in die Registerkarte klicken und die einzelnen Buttons mit den Pfeiltastn auf Ihrer Tastatur verschieben.
-    <img src="/images/structure-text-format-config-editor-config.png" alt="Configuring the editor" width="100%" />
+    <img src="/images/structure-text-format-config-editor-config.webp" alt="Configuring the editor" width="100%" />
 1. Beachten Sie, dass Sie die _Filter-Verarbeitungsreihenfolge_ ändern können.
 1. Unter _Aktivierte Filter_ > _Erlaubte HTML-Tags einschränken und fehlerhaftes HTML_ korrigieren,
     überprüfen Sie im Feld _Erlaubte HTML-Tags_, ob `&lt;hr&gt;` vorhanden ist (fügen Sie eine
     Editor-Schaltfläche hinzu, werden die erlaubten Tags automatisch aktualisiert).
-    <img src="/images/structure-text-format-config-allowed-html.png" alt="Configuring the HTML tags" width="100%" />
+    <img src="/images/structure-text-format-config-allowed-html.webp" alt="Configuring the HTML tags" width="100%" />
 1. Klicken Sie auf _Konfiguration speichern_. Sie gelangen zurück auf die Seite _Textformate und
     Editoren_. Es wird eine Meldung angezeigt, dass das Textformat
     aktualisiert worden ist.
-    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.png)
+    ![Confirmation message for text format configuration](/images/structure-text-format-config-summary.webp)
 
 ## Vertiefen Sie Ihr Wissen
 

@@ -43,7 +43,7 @@ Talán szükségtelen mondani, hogy az _Árus_ nevű tartalomtípusnak, amihez e
     </table>
 
     Mellette a _Programok által használt név_ automatikusan jelenik meg a _Felirat_ mezőbe beírtak alapján. Ahogy a neve is mutatja, ezzel nem sok dolgunk van, de ha nem tetszik, akkor a _Szerkesztés_ hivatkozásra kattintva felülírhatjuk.
-    ![Mező hozzáadása oldal](/images/structure-fields-add-field.png)
+    ![Mező hozzáadása oldal](/images/structure-fields-add-field.webp)
 
 1. A _Mentés és folytatás_ gombra kattintva már az _Árus webcíme_ oldal _Mező beállításai_ fülén találjuk magunkat. Itt egyetlen, de fontos dolgot kell megadnunk: hány darab ilyen mezőt lehessen ugyanarra a tartalmi elemre rátenni? Ahogy a legördülőt kinyitva látjuk, számuk lehet korlátlan és korlátozott. Nekünk az utóbbi kell, írjunk be az _Értékek megengedett száma_ mezőbe egy egyes számjegyet.
 1. Kattintsunk a _Mező beállításainak mentése_ gombra, ekkor a – kissé félreérthető – _Árus Árus webcíme beállításai_ című oldalra jutunk, ahol már kifejezetten csak az ezen a tartalomtípuson való működését tudjuk beállítani az új mezőnek. Töltsük ki az alább felsorolt beviteli mezőket ezekkel az értékekkel:
@@ -84,7 +84,7 @@ Talán szükségtelen mondani, hogy az _Árus_ nevű tartalomtípusnak, amihez e
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-vendor-url.png" alt="Mezőbeállítások az Árus tartalomtípushoz" width="100%" />
+    <img src="/images/structure-fields-vendor-url.webp" alt="Mezőbeállítások az Árus tartalomtípushoz" width="100%" />
 
 1. A _Beállítások mentése_ gombra kattintva végeztünk is az árus saját honlapjára mutató hivatkozás tárolására szolgáló mező hozzáadásával. Jöhet a következő!
 ### Mező hozzáadása az árus fotójának vagy logójának tárolására
@@ -170,10 +170,10 @@ Talán szükségtelen mondani, hogy az _Árus_ nevű tartalomtípusnak, amihez e
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-main-img.png" alt="Képmező beállításai az Árus tartalomtípuson" width="100%" />
+    <img src="/images/structure-fields-main-img.webp" alt="Képmező beállításai az Árus tartalomtípuson" width="100%" />
 
 1. A _Beállítások mentése_ gombra kattintva végeztünk is az árus fotójának vagy logójának tárolására szolgáló mező hozzáadásával. Ha mindent jól csináltunk, akkor az alábbihoz hasonló látvány fogad az _Árus_ tartalomtípus mezőinek listáján:
-    <img src="/images/structure-fields-result.png" alt="Árus tartalomtípus mezőinek listája" width="100%" />
+    <img src="/images/structure-fields-result.webp" alt="Árus tartalomtípus mezőinek listája" width="100%" />
 1. Próbaképpen hozzunk létre két tartalmat az _Árus_ típussal (ehhez lásd az [content-create](./content-create.md) részt), és mindenképpen adjunk meg nekik külső honlapcímet, valamint töltsünk fel hozzájuk képet is.
 ### Már létező mezők újrahasznosítása
 

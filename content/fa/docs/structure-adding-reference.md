@@ -42,7 +42,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![افزودن یک فیلد مرجع به نوع محتوا](/images/structure-adding-reference-add-field.png)
+    ![افزودن یک فیلد مرجع به نوع محتوا](/images/structure-adding-reference-add-field.webp)
 
 1. صفحه _درج شده توسط_ ظاهر می‌شود که به شما اجازه تعیین مقادیر مجاز برای فیلد را می‌دهد. فیلدها را با توجه هب مقادیر زیر پر کنید. روی _ذخیره‌سازی تنظیمات فیلد_ کلیک کنید.
     <table>
@@ -67,7 +67,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![پیکربندی ذخیره‌سازی یک فیلد مرجع](/images/structure-adding-reference-set-field-basic.png)
+    ![پیکربندی ذخیره‌سازی یک فیلد مرجع](/images/structure-adding-reference-set-field-basic.webp)
 
 1. صفحه _تنظیمات محصول درج شده توسط_ نمایش می‌یابد که به شما اجازه پیکربندی فیلد را می‌دهد. فیلدها را با توجه به مقادیر زیر پر کنید. روی _ذخیره‌سازی تنظیمات_ کلیک کنید.
     <table>
@@ -117,10 +117,10 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    <img src="/images/structure-adding-reference-field-settings.png" alt="تنظیمات یک فیلد مرجع " width="100%" />
+    <img src="/images/structure-adding-reference-field-settings.webp" alt="تنظیمات یک فیلد مرجع " width="100%" />
 
 1. فیلد درج شده توسط به نوع محتوا افزوده شد.
-    <img src="/images/structure-adding-reference-manage-fields.png" alt="صفحه مدیریت فیلد برای نوع محتوای محصول" width="100%" />
+    <img src="/images/structure-adding-reference-manage-fields.webp" alt="صفحه مدیریت فیلد برای نوع محتوای محصول" width="100%" />
 
     *مشارکت‌کنندگان*
 

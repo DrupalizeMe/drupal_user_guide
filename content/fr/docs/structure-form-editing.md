@@ -32,13 +32,13 @@ Vendeur. Voir [structure-content-type](./structure-content-type.md) et [structur
     _Gérer l'affichage du formulaire_ apparaît.
 1. Pour le champ Ingrédients, sélectionner _Autocomplétion (style étiquettes)
     dans la colonne _Widget_.
-    <img src="/images/structure-form-editing-manage-form.png" alt="Gérer le formulaire de recette" width="100%" />
+    <img src="/images/structure-form-editing-manage-form.webp" alt="Gérer le formulaire de recette" width="100%" />
 1. Cliquer sur _Enregistrer_.
 1. Dans le menu d'administration _Gérer_, aller à _Contenu_ > _Ajouter un
     contenu_ > _Recette_ (_node/add/recipe_) pour vérifier le changement de
     comportement du formulaire de contenu. Le champ Ingrédients est désormais un
     champ texte unique qui accepte plusieurs valeurs.
-    <img src="/images/structure-form-editing-add-recipe.png" alt="Ajout d'une recette" width="100%" />
+    <img src="/images/structure-form-editing-add-recipe.webp" alt="Ajout d'une recette" width="100%" />
 1. Créer deux éléments de contenu de type Recette (voir [content-create](./content-create.md)),
     comme les recettes pour la "Salade Verte" et les "Carottes fraîches".
     Assurez-vous que tous les champs aient des valeurs, y compris les images, les

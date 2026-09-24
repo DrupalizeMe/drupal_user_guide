@@ -15,9 +15,9 @@ Már léteznie kell legalább egy tartalmi egységnek. Ehhez lásd az [content-c
 
 1. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Konfiguráció_ > _Rendszer_ > _Alapvető webhelybeállítások_ menüpontot (vagy a címsorban adjuk meg az _admin/config/system/site-information_ útvonalat).
 1. Itt a _Címlap_ mezőben írhatjuk át a _/node_ értéket az általunk használni kívánt oldal útvonalára, egy per (/) jelet követően. Ha például az előző témakörnél létrehozott _Címlap_ tartalmat szeretnénk itt megadni, akkor írjuk be azt, amit ott webcímálnévnek választottunk: _/cimlap_. Kattintsunk a _Beállítások mentése_ gombra.
-    ![A Címlap keret, benne az éppen aktuális útvonalálnév](/images/menu-home_new_text_field.png)
+    ![A Címlap keret, benne az éppen aktuális útvonalálnév](/images/menu-home_new_text_field.webp)
 1. Ellenőrzésképpen most menjünk webhelyünk címlapjára, hogy meggyőződhessünk arról, hogy valóban az töltődik-e be, amit beállítottunk.
-    <img src="/images/menu-home_final.png" alt="A webhely címlapjaként a Címlap nevű tartalom jelenik meg" width="100%" />
+    <img src="/images/menu-home_final.webp" alt="A webhely címlapjaként a Címlap nevű tartalom jelenik meg" width="100%" />
 
 ## Az ismeretek elmélyítése
 

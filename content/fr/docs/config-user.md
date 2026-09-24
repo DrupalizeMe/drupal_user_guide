@@ -22,14 +22,14 @@ aussi revoir et/ou modifier les courriels générés par le site pour les
     _Exiger la vérification du courriel lorsqu'un visiteur crée un compte_ dans le
     cas où vous voudriez changer les paramètres pour les créations de compte plus
     tard.
-    ![Inscriptions réalisée uniquement par les administrateurs](/images/config-user_account_reg.png)
+    ![Inscriptions réalisée uniquement par les administrateurs](/images/config-user_account_reg.webp)
 1. Optionnellement, modifier l'adresse électronique par défaut depuis laquelle
     les notifications des comptes utilisateurs seront envoyées depuis votre site du
     marché fermier. Cela vous permettra de garder une adresse électronique séparée
     de celle utilisée par le site en général. Par exemple, cette adresse
     électronique pour les notifications des comptes utilisateurs sera utile pour un
     membre de l'équipe qui communique avec les vendeurs.
-    ![Adresse d'expéditeur des notifications par courriel](/images/config-user_from_email.png)
+    ![Adresse d'expéditeur des notifications par courriel](/images/config-user_from_email.webp)
 1. Optionnellement, modifier les modèles de courriels dans la section _Courriels_
     pour personnaliser les courriels automatiques. Il y a plusieurs modèles de
     courriels disponibles avec le cœur. Ils sont prévus pour différentes occasions
@@ -38,7 +38,7 @@ aussi revoir et/ou modifier les courriels générés par le site pour les
     Vous pouvez définir votre propre texte (par exemple, accueillir les nouveaux
     vendeurs dont les comptes viennent juste d'être créés) en modifiant le modèle
     _Bienvenue (nouvel utilisateur créé par un administrateur)_.
-    <img src="/images/config-user_email.png" alt="Notification par courriel à l'occasion d'évènements liés aux comptes utilisateurs" width="100%" />
+    <img src="/images/config-user_email.webp" alt="Notification par courriel à l'occasion d'évènements liés aux comptes utilisateurs" width="100%" />
 1. Cliquer sur _Enregistrer la configuration_ pour enregistrer les modifications.
 
 ## Améliorer votre compréhension

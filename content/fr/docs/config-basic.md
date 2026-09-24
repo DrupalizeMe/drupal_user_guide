@@ -50,7 +50,7 @@ et le _fuseau horaire par défaut_.
       </tbody>
     </table>
 
-    ![Informations du site](/images/config-basic-SiteInfo.png)
+    ![Informations du site](/images/config-basic-SiteInfo.webp)
 
 1. Après la modification des champs, cliquer sur _Enregistrer la configuration_
     pour voir les changements appliqués sur le site.
@@ -91,7 +91,7 @@ et le _fuseau horaire par défaut_.
       </tbody>
     </table>
 
-    ![Fuseaux horaires](/images/config-basic-TimeZone.png)
+    ![Fuseaux horaires](/images/config-basic-TimeZone.webp)
 
 1. Après avoir modifié les champs, cliquer sur _Enregistrer la configuration_
     pour voir les changements appliqués sur le site.

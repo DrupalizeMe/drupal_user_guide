@@ -39,7 +39,7 @@ Create a block showing the hours and location of the farmers market.
       </tbody>
     </table>
 
-    ![Add a content block](/images/block-create-custom-add-custom-block.png)
+    ![Add a content block](/images/block-create-custom-add-custom-block.webp)
 
 1. Click _Save_. A message appears indicating the block has been saved.
 

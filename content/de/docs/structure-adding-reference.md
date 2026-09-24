@@ -47,7 +47,7 @@ Die Inhaltstypen Rezept und Lieferant müssen vorhanden sein. Siehe [structure-c
       </tbody>
     </table>
 
-    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field.png)
+    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field.webp)
 
 1. Es erscheint die Seite Feldeinstellungen, auf der Sie die zulässige Anzahl von
     Werten eintragen können. Füllen Sie die Felder wie unten angegeben aus.
@@ -74,7 +74,7 @@ Die Inhaltstypen Rezept und Lieferant müssen vorhanden sein. Siehe [structure-c
       </tbody>
     </table>
 
-    ![Storage configuration of a reference field ](/images/structure-adding-reference-set-field-basic.png)
+    ![Storage configuration of a reference field ](/images/structure-adding-reference-set-field-basic.webp)
 
 1. Sie gelangen auf die Seite _Eingereicht von Einstellungen für Rezept_, auf der Sie
     die Konfiguration des Feldes vornehmen müssen. Füllen Sie die Felder des Eingabeformulars wie unten dargestellt aus. Klicken Sie auf _Einstellungen speichern_.
@@ -125,10 +125,10 @@ Die Inhaltstypen Rezept und Lieferant müssen vorhanden sein. Siehe [structure-c
       </tbody>
     </table>
 
-    <img src="/images/structure-adding-reference-field-settings.png" alt="Settings for a reference field " width="100%" />
+    <img src="/images/structure-adding-reference-field-settings.webp" alt="Settings for a reference field " width="100%" />
 
 1. Das Feld Eingereicht von wurde dem Inhaltstyp hinzugefügt.
-    <img src="/images/structure-adding-reference-manage-fields.png" alt="Manage fields page for the Recipe content type" width="100%" />
+    <img src="/images/structure-adding-reference-manage-fields.webp" alt="Manage fields page for the Recipe content type" width="100%" />
 
 ## Videos
 

@@ -21,7 +21,7 @@ E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfel�
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 1. Ha már tudjuk, hogy melyik modulra van szükségünk, akkor a neve melletti jelölőnégyzettel engedélyezhetjük. Például jelöljük most be az alaprendszer _Activity Tracker_ moduljának négyzetét.
-    <img src="/images/config-install-check-modules.png" alt="Az alaprendszeri Activity Tracker modul bekapcsolása" width="100%" />
+    <img src="/images/config-install-check-modules.webp" alt="Az alaprendszeri Activity Tracker modul bekapcsolása" width="100%" />
 1. Kattintsunk a _Telepítés_ gombra. Az így megjelölt modulok ekkor működésbe lépnek a webhelyen.
 ### Drush használatával
 

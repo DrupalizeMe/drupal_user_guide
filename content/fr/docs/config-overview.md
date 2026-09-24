@@ -20,7 +20,7 @@ installez votre site en utilisant le profil d'installation Standard du cœur et
 que vous avez tous les droits d'administration, les liens de premier niveau
 sont les suivants :
 
-<img src="/images/config-overview-toolbar.png" alt="Menu d'administration en mode horizontal" width="100%" />
+<img src="/images/config-overview-toolbar.webp" alt="Menu d'administration en mode horizontal" width="100%" />
 
 - **Contenu:** Liste et gère les contenus existants, et autorise la création de nouveaux contenus.
 - **Structure:** Contient une liste de liens pour gérer les éléments structurels du site, comme les blocs, les types de contenus, les menus et la taxonomie.
@@ -38,7 +38,7 @@ position horizontale en haut de page, à la position verticale sur la gauche du
 site (ou sur la droite, dans les langues se lisant de droite à gauche).
 Lorsqu'il est affiché verticalement, le menu devient un arbre interactif.
 
-<img src="/images/config-overview-vertical-menu.png" alt="Menu d'administration en mode vertical" width="228px" />
+<img src="/images/config-overview-vertical-menu.webp" alt="Menu d'administration en mode vertical" width="228px" />
 
 Ce guide suit une méthode standard pour décrire la navigation dans les pages
 d'administration en utilisant la barre d'outils d'administration. Consulter
@@ -65,7 +65,7 @@ temporairement quand vous survolez une zone qui contient un lien contextuel.
 _Modifier_) au bout à droite de la barre d'outils, ce qui activera tous les
 liens contextuels sur la page courante. Cette icône n'est visible que sur les
 pages contenant des liens contextuels.
-<img src="/images/config-overview-pencils.png" alt="Page avec les icônes en forme de crayon activées" width="100%" />
+<img src="/images/config-overview-pencils.webp" alt="Page avec les icônes en forme de crayon activées" width="100%" />
 
 *Attributions*
 

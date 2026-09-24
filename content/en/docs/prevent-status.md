@@ -15,7 +15,7 @@ and project issue queues or when asking for help on other channels.
 You can find the status report in the _Manage_ administrative menu by
 navigating to _Reports_ > _Status report_ (_admin/reports/status_).
 
-<img src="/images/prevent-status.png" alt="Status report of a basic site" width="100%" />
+<img src="/images/prevent-status.webp" alt="Status report of a basic site" width="100%" />
 
 ## Related topics
 

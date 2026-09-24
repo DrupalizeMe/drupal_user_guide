@@ -22,9 +22,9 @@ Az _Árus_ tartalomtípusnak már léteznie kell, valamint már hozzá kell, hog
     * A web mai látogatóit a képek jobban érdeklik, mint a szövegek, ezért jó lenne, ha a fotó jönne először, majd utána a többi mező tartalma.
     * Bár jó, hogy a kereskedők tölthetnek fel magukról fotót a bemutatkozásukhoz, de azt kisebb méretben is elég lenne megjeleníteni.
 1. Az első két pontot ugyanott tudjuk javítani: a _Kezelés_ adminisztrációs menüben menjünk a _Felépítés_ > _Tartalomtípusok_ (vagy a címsorba gépelve: _admin/structure/types_) oldalra. Aztán az _Árus_ tartalomtípus sorának végén kattintsunk a lenyíló gomb _Megjelenés beállítása_ lehetőségére.
-    <img src="/images/structure-content-display_manage_display.png" alt="Megjelenés beállítása" width="100%" />
+    <img src="/images/structure-content-display_manage_display.webp" alt="Megjelenés beállítása" width="100%" />
 1. A _Fő kép_ mező sorában a _Felirat_ oszlopban válasszuk a _Rejtett_ lehetőséget. Majd ismételjük meg ugyanezt az _Árus webcíme_ mező sorában is.
-    <img src="/images/structure-content-display_main_image_hidden.png" alt="Két mező feliratának elrejtése" width="100%" />
+    <img src="/images/structure-content-display_main_image_hidden.webp" alt="Két mező feliratának elrejtése" width="100%" />
 1. Az _Árus webcíme_ mező sorában kattintsunk még a fogaskerék ikonra is.
 1. Töltsük ki az alább felsorolt mezőket ezekkel az értékekkel:
     <table>
@@ -49,11 +49,11 @@ Az _Árus_ tartalomtípusnak már léteznie kell, valamint már hozzá kell, hog
       </tbody>
     </table>
 
-    <img src="/images/structure-content-display_trim_length.png" alt="Linkszöveg hosszának korlátozása" width="100%" />
+    <img src="/images/structure-content-display_trim_length.webp" alt="Linkszöveg hosszának korlátozása" width="100%" />
 
 1. Kattintsunk a _Frissítés_ gombra.
 1. Keresztnyíl ikonjukra kattintva a mezők fogd-és-vidd módszerrel áthúzhatók egymás fölött. Ha valami miatt ez nem működne, akkor a _Sorok súlyának mutatása_ hivatkozásra kattintva megjelennek a sorszámaik: míg a nagyobb súlyúak (képzeletben „nehezebbek”) lesüllyednek, addig a kisebb súlyúak („könnyebbek”) feljebb kerülnek. Helyezzük tehát az elemeket a következő sorrendbe: Fő kép, Törzs, Árus webcíme és Hivatkozások.
-    <img src="/images/structure-content-display_change_order.png" alt="Mezők sorrendjének átrendezése" width="100%" />
+    <img src="/images/structure-content-display_change_order.webp" alt="Mezők sorrendjének átrendezése" width="100%" />
 1. Kattintsunk a _Mentés_ gombra.
 1. Nyissuk meg újra az árus 1. lépésnél megtekintett adatlapját, és ellenőrizzük, hogy iménti módosításaink valóban megváltoztatták a kinézetét az oldalnak.
 1. A fentiekhez hasonló módon ugyanezen lépésekkel testreszabhatjuk a _Recept_ típusú tartalmaink megjelenítését is.

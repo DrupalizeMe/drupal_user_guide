@@ -22,7 +22,7 @@ Frissítjük webhelyünk egyik közösségi modulját az elavult verziójáról 
 
 Mielőtt elkezdjük, körültekintően olvassuk el a modulhoz adott frissítési útmutatót, amit általában a projektoldalukon, a _Read Documentation_ (azaz „Dokumentáció elolvasása”) hivatkozáson találunk. Ez kifejezetten akkor szükséges, amikor valamilyen külső függvénykönyvtárat vagy harmadik fél általi szolgáltatást integráló modulról van szó. További tudnivalókat szerezhetünk még, ha letöltjük a számítógépünkre és kicsomagoljuk _tar.gz_ vagy _zip_ fájljukat, és megnyitjuk bennük a _README.txt_, _INSTALL.txt_ vagy _UPGRADE.txt_ dokumentumokat. Mindezen túl pedig érdemes vetni egy pillantást a modul telepíteni tervezett verziójának kiadási jegyzékére is, amit a projektoldalán a verziószámra kattintva nyithatunk meg:
 
-![Hivatkozás a kiadási jegyzékre](/images/security-update-module-release-notes.png)
+![Hivatkozás a kiadási jegyzékre](/images/security-update-module-release-notes.webp)
 
 Itt most az egyszerűbb, az adminfelületen keresztül történő frissítést mutatjuk be. Ha viszont közösségi helyett egy egyedileg fejlesztett modult frissítenénk, vagy FTP-hozzáférés hiányára utaló üzenetet kapunk, esetleg az alábbi lépések nem működnének, akkor még mindig követhetjük a [extend-manual-install](./extend-manual-install.md) szakasz útmutatásait.
 
@@ -32,7 +32,7 @@ Szintén fontos figyelmeztetés, hogy néhány (manapság egyre több) közöss�
 1. Állítsuk a webhelyet karbantartási módba (lásd: [extend-maintenance](./extend-maintenance.md)).
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Jelentések_ > _Elérhető frissítések_ > _Frissítés_ oldalra (vagy a címsorban adjuk meg az _admin/reports/updates/update_ útvonalat).
 1. Keressük meg a felsorolásban a frissíteni kívánt modult és pipáljuk be a jelölőnégyzetet a sorában, majd kattintsunk a _Frissítések letöltése_ gombra.
-    <img src="/images/security-update-module-updates.png" alt="Elérhető frissítések" width="100%" />
+    <img src="/images/security-update-module-updates.webp" alt="Elérhető frissítések" width="100%" />
 1. Kattintsunk a _Folytatás_ gombra.
 1. Kattintsunk az _Adatbázis-frissítések futtatása_ elemre. Ha a modul fájljait kézzel másoltuk fel, akkor innentől folytatjuk, és az adatbázis-frissítés oldal megnyitásához írjuk be böngészőnk címsorába: _http://pelda.hu/update.php_.
 1. A _Folytatás_ gombra kattintva lefut a szkript, ami elvégez minden szükséges módosítást az adatbázison.

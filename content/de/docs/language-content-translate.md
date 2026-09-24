@@ -28,7 +28,7 @@ werden kann. Siehe: [language-content-config](./language-content-config.md).
       wählen Sie _Übersetzen_. Die Seite _Übersetzungen für Startseite_ wird
       geöffnet.
 1. Klicken Sie in der Zeile _Spanisch_ auf _hinzufügen_.
-    <img src="/images/language-content-translate-add.png" alt="Adding a content translation" width="100%" />
+    <img src="/images/language-content-translate-add.webp" alt="Adding a content translation" width="100%" />
 1. Beachten Sie, das die Anzeigesprache der Benutzeroberfläche in spanisch geändert
     wurde. um zurück zu Englisch zu wechseln, entfernen Sie die erste Instanz von
     _es_ in der Adresszeile des Browsers. Wenn ihre URL z. B. so aussieht:

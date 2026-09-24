@@ -20,7 +20,7 @@ source_locale: "ru"
 
 1. В административном меню _Управление_ перейдите к _Структура_ > _Типы контента_ (_admin/structure/types_). Затем нажмите _Управление полями_ в выпадающем меню для типа контента Производитель. Откроется страница _Управление полями_. Здесь вы можете создать новое поле или использовать уже существующее поле. Обратите внимание, что названия и описания типов контента и полей, которые были предоставлены вашим профилем установки, отображаются на английском языке; см. [language-concept](./language-concept.md) для объяснения.
 1. Нажмите _Создать новое поле_. Появится страница _Добавить поле_.
-    ![Add field page to choose field type](/images/structure-fields-add-field.png)
+    ![Add field page to choose field type](/images/structure-fields-add-field.webp)
 1. Выберите тип поля _Ссылка_ из вариантов _Выберите тип поля_. Нажмите _Продолжить_. Появится страница _Добавить поле_ с формой для настройки метки поля.
 1. Заполните поля как показано ниже.
     <table>
@@ -46,7 +46,7 @@ source_locale: "ru"
     </table>
 
     Машинное имя создаётся автоматически на основе значения _Метка_. Нажмите _Редактировать_, если хотите переопределить имя по умолчанию.
-    ![Add field page to set field label](/images/structure-fields-add-field-label.png)
+    ![Add field page to set field label](/images/structure-fields-add-field-label.webp)
 
 1. Нажмите _Продолжить_. Появится страница _Настройки поля URL производителя для Производитель_, где можно настроить параметры поля. Заполните поля как показано ниже.
     <table>
@@ -91,7 +91,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-vendor-url.png" alt="Field settings page for Vendor URL" width="100%" />
+    <img src="/images/structure-fields-vendor-url.webp" alt="Field settings page for Vendor URL" width="100%" />
 
 1. Нажмите _Сохранить настройки_. Поле URL производителя добавлено к типу контента. Теперь добавьте поле Main image.
 1. Нажмите _Создать новое поле_. Откроется страница _Добавить поле_.
@@ -186,12 +186,12 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-main-img.png" alt="Field settings page for Main Image" width="100%" />
+    <img src="/images/structure-fields-main-img.webp" alt="Field settings page for Main Image" width="100%" />
 
 1. Нажмите _Сохранить настройки_. Поле Главное изображение добавлено к типу контента.
-    <img src="/images/structure-fields-result.png" alt="Manage fields page" width="100%" />
+    <img src="/images/structure-fields-result.webp" alt="Manage fields page" width="100%" />
 1. Добавьте поле Главное изображение в тип контента Рецепт, используя похожие шаги. Начните с перехода на страницу _Управление полями_ для типа контента Рецепт. Затем используйте кнопку _Повторно использовать существующее поле_, выберите Главное изображение из таблицы и нажмите _Повторно использовать_. Затем переходите к шагу 7 и выполните остальные шаги.
-    <img src="/images/structure-fields-main-img-reuse.png" alt="Select a field to re-use" width="100%" />
+    <img src="/images/structure-fields-main-img-reuse.webp" alt="Select a field to re-use" width="100%" />
 1. Создайте два материала типа Производитель (см. [content-create](./content-create.md)) с названиями "Веселый Молочник" и "Алтайский мёд". Убедитесь, что они содержат изображения и URL.
 ## Расширьте своё понимание
 

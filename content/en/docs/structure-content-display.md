@@ -30,10 +30,10 @@ fields, and your site must have at least one Vendor content item. See
     _Manage_ administrative menu, navigate to _Structure_ > _Content types_
     (_admin/structure/types_). Then click _Manage display_ in the dropdown button
     for the Vendor content type.
-    <img src="/images/structure-content-display_manage_display.png" alt="Manage display" width="100%" />
+    <img src="/images/structure-content-display_manage_display.webp" alt="Manage display" width="100%" />
 1. Under the _Label_ column, select _Hidden_ for Main image. Do the same
     for Vendor URL.
-    <img src="/images/structure-content-display_main_image_hidden.png" alt="Selecting _main image title_ as _hidden_" width="100%" />
+    <img src="/images/structure-content-display_main_image_hidden.webp" alt="Selecting _main image title_ as _hidden_" width="100%" />
 1. Click the gear wheel for the Vendor URL field, to open the configuration
     options.
 1. Fill in the fields as shown below.
@@ -59,14 +59,14 @@ fields, and your site must have at least one Vendor content item. See
       </tbody>
     </table>
 
-    <img src="/images/structure-content-display_trim_length.png" alt="Link trim length" width="100%" />
+    <img src="/images/structure-content-display_trim_length.webp" alt="Link trim length" width="100%" />
 
 1. Click _Update_.
 1. Drag the cross bar handles of the fields to reorder as Main image, _Body_,
     Vendor URL, and _Links_. As an alternative to dragging, you can click the _Show
     row weights_ link at the top of the table and enter numerical weights (fields
     with lower or more negative weights will be shown first).
-    <img src="/images/structure-content-display_change_order.png" alt="Changing order of fields" width="100%" />
+    <img src="/images/structure-content-display_change_order.webp" alt="Changing order of fields" width="100%" />
 1. Click _Save_.
 1. Find the Vendor content item from step 1 again, and verify that the updates
     have been made.

@@ -28,13 +28,13 @@ Website muss einige Inhalte vom Typ Rezept enthalten. Siehe [structure-content-t
     Seite klicken. (Siehe [config-overview](./config-overview.md) für Informationen über kontextbezogene Links.)
 1. Erstellen Sie eine neue Blockanzeige, indem Sie unter _Anzeigen_ auf _Hinzufügen_ klicken. Klicken Sie  in der Liste der Anzeigen, die Sie hinzufügen können auf
     _Block_. Die neue Anzeige wird erstellt, und die Konfigurationsoptionen für die neue Anzeige werden automatisch angezeigt.
-    ![Add block display](/images/views-block_add-block.png)
+    ![Add block display](/images/views-block_add-block.webp)
 1. Um den Titel dieser Anzeige zu ändern, klicken Sie im Abschnitt Anzeigename auf _Block_.
 1. Das Pop-Up _Block: Der Name und die Beschreibung dieser Anzeige_
     erscheint. Ändern Sie den _administrativen Namen_ in "Neueste Rezepte". Klicken Sie auf _Anwenden_.
 1. Um den Titel des Blocks zu ändern, klicken Sie im Abschnitt _Titel_ auf "Rezepte".
 1. Im Popup _Titel_ wählen Sie in der Auswahlliste _Für_ _Den Ansichtstyp Block (übersteuern)_ und klicken anschlißend auf Anwenden.
-    ![Title only for this block](/images/views-block_title.png)
+    ![Title only for this block](/images/views-block_title.webp)
 1. Um den Stil des Blocks zu ändern, klicken Sie im Abschnitt Format auf _Raster_ . Wählen Sie in dem erscheinenden Popup-Fenster in der Auswahlliste _Für_ _Den Ansichtstyp Block (übersteuern)_ aus.
 1. Wählen Sie _Unformatierte Liste_ und klicken Sie auf _Anwenden (diese
     Anzeige)_. Sie können die Dartellungsoptionen im nächsten Popup-Fenster weiter konfigurieren und anschließend auf _Anwendnen_ klicken.
@@ -42,7 +42,7 @@ Website muss einige Inhalte vom Typ Rezept enthalten. Siehe [structure-content-t
     Wählen Sie im angezeigten Popup-Fenster ind der Auswahlliste _Für_ die Option _Den Ansichtstyp Block (übersteuern)_ aus. Wählen Sie den _Bildstil Miniaturansicht (100x100)_. 
 1. Klicken Sie _Anwenden (diese Anzeige)_.
 
-    <img src="/images/views-block_image.png" alt="Image to thumbnail" width="100%" />
+    <img src="/images/views-block_image.webp" alt="Image to thumbnail" width="100%" />
 
 1. Um Zutaten als Filter zu entfernen, klicken Sie im Abschnitt _Filterkriterien_ auf _Inhalt: Zutaten. Wählen Sie in dem angezeigten Popup-Fenster in der Auswahlliste _Für_ _Den Ansichtstyp Block (übersteuern)_ aus.
 
@@ -60,10 +60,10 @@ Website muss einige Inhalte vom Typ Rezept enthalten. Siehe [structure-content-t
 1. Klicken Sie auf _Speichern_. Sie sehen entweder wieder die Ansichtsbearbeitungsseite oder die Rezepte
     Seite, je nachdem, was Sie in Schritt 1 getan haben. Sie sollten auch eine Meldung sehen, die besagt
     dass die Ansicht gespeichert wurde.
-    <img src="/images/views-block_recipes.png" alt="Summary page after configuration" width="100%" />
+    <img src="/images/views-block_recipes.webp" alt="Summary page after configuration" width="100%" />
 1. Platzieren Sie den Block "Rezepte": "Neueste Rezepte" in der _zweiten Seitenleiste_. Siehe
     [block-place](./block-place.md). Navigieren Sie zur Startseite der Website, um den Block zu sehen.
-    <img src="/images/views-block_sidebar.png" alt="New Recipes block on homepage" width="100%" />
+    <img src="/images/views-block_sidebar.webp" alt="New Recipes block on homepage" width="100%" />
 
 ## Videos
 

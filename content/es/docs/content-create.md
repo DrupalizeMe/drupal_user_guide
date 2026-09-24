@@ -58,7 +58,7 @@ install with the core Standard installation profile.
 
     By clicking the _Source_ button in the rich text editor toolbar, you can see the
     HTML source code of the text that you are editing.
-    <img src="/images/content-create-create-basic-page.png" alt="Create a basic page" width="100%" />
+    <img src="/images/content-create-create-basic-page.webp" alt="Create a basic page" width="100%" />
 
 1. Click _Preview_ to ensure everything looks like expected.
 1. Click _Back to content editing_.

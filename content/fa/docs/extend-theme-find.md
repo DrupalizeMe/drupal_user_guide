@@ -58,10 +58,10 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![فیلترهای صفحه جستجوی قالب در _Drupal.org_](/images/extend-theme-find_theme_finder.png)
+    ![فیلترهای صفحه جستجوی قالب در _Drupal.org_](/images/extend-theme-find_theme_finder.webp)
 
 1. روی _جستجو_ کلیک کنید. نتایج جستجو نمایش می‌یابد.
-    ![صفحه نمایش جستجو در _Drupal.org_](/images/extend-theme-find_search_results.png)
+    ![صفحه نمایش جستجو در _Drupal.org_](/images/extend-theme-find_search_results.webp)
 1. برای ارزیابی بیشتر یک قالب، روی عنوان آن از صفحه نتایج جستجو کلیک کرده تا به صفحه پروژه آن هدایت شوید.
 
     برخی جنبه‌های قابل توجه هنگام ارزیابی قالب‌ها:

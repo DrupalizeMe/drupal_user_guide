@@ -18,13 +18,13 @@ tasks.
     (_admin/people/roles_).
 1. You will find default roles _Anonymous user_,
     _Authenticated user_, and _Administrator_ already present.
-    ![Roles page](/images/user-new-role-roles-page.png)
+    ![Roles page](/images/user-new-role-roles-page.webp)
 1. Click _Add Role_ to add a custom role.
 1. Type Vendor in the _Role name_ field. Click _Save_.
-    ![adding vendor as a role](/images/user-new-role-add-role.png)
+    ![adding vendor as a role](/images/user-new-role-add-role.webp)
 1. You will see the message "Role Vendor has been added." displayed at the top
     of the page.
-    ![vendor role added success message](/images/user-new-role-confirm.png)
+    ![vendor role added success message](/images/user-new-role-confirm.webp)
 ## Expand your understanding
 
 * [user-permissions](./user-permissions.md)

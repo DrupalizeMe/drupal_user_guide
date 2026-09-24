@@ -44,7 +44,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Добавление типа контента](/images/structure-content-type-add.png)
+    ![Добавление типа контента](/images/structure-content-type-add.webp)
 
 1. В разделе _Настройки формы отправки_ настройте форму, которая
     используется для создания и редактирования контента этого типа. Заполните поля как указано ниже.
@@ -75,7 +75,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Настройки формы отправки](/images/structure-content-type-add-submission-form-settings.png)
+    ![Настройки формы отправки](/images/structure-content-type-add-submission-form-settings.webp)
 
 1. В разделе _Опции публикации_ выберите параметры по умолчанию для нового
     контента этого типа. Заполните поля как указано ниже.
@@ -112,7 +112,7 @@ source_locale: "ru"
     </table>
 
     Изменение этих настроек не влияет на уже созданные элементы.
-    ![Опции публикации](/images/structure-content-type-add-Publishing-Options.png)
+    ![Опции публикации](/images/structure-content-type-add-Publishing-Options.webp)
 
 1. В разделе _Настройки отображения_ решите, будет ли отображаться имя автора и дата публикации.
     Заполните поля как указано ниже.
@@ -133,7 +133,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Настройки отображения](/images/structure-content-type-add-Display-settings.png)
+    ![Настройки отображения](/images/structure-content-type-add-Display-settings.webp)
 
 1. В разделе _Настройки меню_ заполните поля как указано ниже.
     <table>
@@ -153,10 +153,10 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Настройки меню](/images/structure-content-type-add-Menu-settings.png)
+    ![Настройки меню](/images/structure-content-type-add-Menu-settings.webp)
 
 1. Нажмите _Сохранить и управлять полями_, чтобы сохранить тип контента. Откроется страница _Управление полями_, позволяющая добавить поля к типу контента. См. [structure-fields](./structure-fields.md)
-    <img src="/images/structure-content-type-add-confirmation.png" alt="Подтверждение" width="100%" />
+    <img src="/images/structure-content-type-add-confirmation.webp" alt="Подтверждение" width="100%" />
 1. Повторите те же шаги, чтобы создать тип контента для рецептов. Пример значений для полей, если отличаются:
     <table>
       <thead>

@@ -37,7 +37,7 @@ _UPGRADE.txt_ fournis avec les fichiers d'installation du module. Consulter
 également les notes de version sur la page du projet en cliquant sur le numéro
 de la version que vous téléchargez.
 
-![Lien des notes de version](/images/security-update-module-release-notes.png)
+![Lien des notes de version](/images/security-update-module-release-notes.webp)
 
 Mettre à jour un module suppose de mettre d'abord le site en mode de
 maintenance, d'obtenir les nouveaux fichiers de code, d'appliquer les mises à
@@ -57,7 +57,7 @@ consulter [install-composer](./install-composer.md).
     jour disponibles_ > _Mettre à jour_ (_admin/reports/updates/updates_).
 1. Rechercher et vérifier le module dans la liste. Cliquer sur _Télécharger ces
     mises à jour_ après avoir sélectionné le module.
-    <img src="/images/security-update-module-updates.png" alt="Mises à jour disponibles" width="100%" />
+    <img src="/images/security-update-module-updates.webp" alt="Mises à jour disponibles" width="100%" />
 1. Déterminer le nom machine du projet que vous voulez mettre à jour. Pour les
     modules contribués et les thèmes, il s'agit de la dernière partie de l'URL de la
     page du projet ; par exemple, pour le module Geofield, à l'adresse

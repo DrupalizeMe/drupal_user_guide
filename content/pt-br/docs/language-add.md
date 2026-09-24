@@ -23,7 +23,7 @@ Add one or more languages to your site and define which one is used by default.
     list. Click _Add language_. After waiting for translations to finish
     downloading, you will be returned to the _Languages_ page, with a confirmation
     message and the new language shown.
-    <img src="/images/language-add-list.png" alt="List of available languages in the website" width="100%" />
+    <img src="/images/language-add-list.webp" alt="List of available languages in the website" width="100%" />
 1. Follow the steps in [block-place](./block-place.md) to place the _Language switcher_ block in
     the _Sidebar second_ region. This will enable site visitors to switch between
     languages, once the site has been translated.

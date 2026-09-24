@@ -62,11 +62,11 @@ El rol Vendor debe existir en su sitio. Ver [user-new-role](./user-new-role.md).
       </tbody>
     </table>
 
-    <img src="/images/user-permissions-check-permissions.png" alt="Granting users with the Vendor role the rights to create, delete and edit Recipes" width="100%" />
+    <img src="/images/user-permissions-check-permissions.webp" alt="Granting users with the Vendor role the rights to create, delete and edit Recipes" width="100%" />
 
 1. Haga clic en _Save permissions_. Recibirá un mensaje indicando que sus
     cambios se han guardado.
-    ![Confirmation message after updating permissions](/images/user-permissions-save-permissions.png)
+    ![Confirmation message after updating permissions](/images/user-permissions-save-permissions.webp)
 ## Ampliar conocimiento
 
 * Inicie sesión como uno de los nuevos usuarios que creó en [user-new-user](./user-new-user.md).

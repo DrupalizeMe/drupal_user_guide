@@ -27,14 +27,14 @@ indem Sie das mitgelieferte Installationsprogramm verwenden.
     dass der Rest des Installationsprozesses in der ausgewählten
     Sprache durchgeführt werden kann. Nachdem Sie eine Sprache ausgewählt haben,
     klicken Sie auf _Speichern und fortfahren_.
-    <img src="/images/install-run-1.png" alt="Choose a language" width="100%" />
+    <img src="/images/install-run-1.webp" alt="Choose a language" width="100%" />
 1. Wählen Sie ein Installationsprofil aus. Installationsprofile stellen
     Merkmale und Funktionen für bestimmte Arten von Websites als
     eigenständigen Download zur Verfügung. Diese enthalten das Kernsystem,
     Zusatzmodule und Themes sowie vordefinierte Konfigurationen.
     Das Kernsystem enthält zwei Installationsprofile. Wählen Sie  das
     Installationsprofil Standard aus und Klicken Sie auf _Speichern und fortfahren_.
-    <img src="/images/install-run-2.png" alt="Choose an installation profile" width="100%" />
+    <img src="/images/install-run-2.webp" alt="Choose an installation profile" width="100%" />
 1. Im nächsten Schritt des Installationsprogramms wird überprüft, ob Ihr System
     die Mindestvoraussetzungen erfüllt. Wenn dies nicht der Fall ist, erhalten Sie
     einen Überblick darüber, was korrigiert werden muss, um fortfahren zu können.
@@ -70,12 +70,12 @@ indem Sie das mitgelieferte Installationsprogramm verwenden.
       </tbody>
     </table>
 
-    <img src="/images/install-run-3.png" alt="Database configuration form" width="100%" />
+    <img src="/images/install-run-3.webp" alt="Database configuration form" width="100%" />
 
 1. Im nächsten Schritt wird ein Fortschrittsbalken unter der Überschrift
     _Drupal wird installiert_ angezeigt. Nachdem der Installationsvorgang abgeschlossen
     wurde, wechselt das Installationsprogramm automatisch zum nächsten Schritt.
-    <img src="/images/install-run-4.png" alt="Installation progress bar" width="100%" />
+    <img src="/images/install-run-4.webp" alt="Installation progress bar" width="100%" />
 1. Der nächste Schritt besteht darin, einige grundlegende Informationen über Ihre
     neue Website zu konfigurieren
     (beachten Sie auch, eventuelle Warnungen über Dateiberechtigungen, die wir in einem der nächsten Schritte behandeln).
@@ -129,13 +129,13 @@ indem Sie das mitgelieferte Installationsprogramm verwenden.
     </table>
 
     Die übrigen Felder können wahrscheinlich auf den Standardwerten belassen werden.
-    <img src="/images/install-run-5.png" alt="Configuration form" width="100%" />
+    <img src="/images/install-run-5.webp" alt="Configuration form" width="100%" />
 
 1. Klicken Sie auf _Speichern und fortfahren_.
 1. Sie werden auf die Startseite Ihrer neuen Website umgeleitet, und  sollten
     die Meldung _Glückwunsch, Sie haben Drupal installiert!_, im oberen Teil der
     Website sehen können.
-    <img src="/images/install-run-6.png" alt="Installation success" width="100%" />
+    <img src="/images/install-run-6.webp" alt="Installation success" width="100%" />
 1. Möglicherweise haben Sie im Arbeitsschritt Website konfigurieren eine Warnung über
     Dateiberechtigungen gesehen. Diese Warnung wird Ihnen weiterhin angezeigt,
     bis Sie die Dateiberechtigungen korrigiert haben. So

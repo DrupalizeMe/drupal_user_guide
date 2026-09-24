@@ -70,10 +70,10 @@ Trouver et évaluer des thèmes sur _Drupal.org_.
       </tbody>
     </table>
 
-    ![Filtres sur la page de recherche de thèmes sur _Drupal.org_](/images/extend-theme-find_theme_finder.png)
+    ![Filtres sur la page de recherche de thèmes sur _Drupal.org_](/images/extend-theme-find_theme_finder.webp)
 
 1. Cliquer sur _Search_. Les résultats de recherche apparaissent.
-    ![La page des résultats de recherche sur _Drupal.org_](/images/extend-theme-find_search_results.png)
+    ![La page des résultats de recherche sur _Drupal.org_](/images/extend-theme-find_search_results.webp)
 1. Pour aller plus loin dans l'évaluation d'un thème, cliquer sur son titre dans
     la liste des résultats de recherche pour visiter la page du projet.
 

@@ -14,19 +14,19 @@ that file, translate the text "User Guide", then export to PNG.
 Running the installer (topic install-run.txt): You will need to run the standard
 installer, choosing your language, entering values for the Farmers Market web
 site, and take a screenshot of each step. Images:
-- install-run-1.png -- Select language
-- install-run-2.png -- Select profile (Standard)
-- install-run-3.png -- Database
-- install-run-4.png -- Installation in progress
-- install-run-5.png -- Site configuration
-- install-run-6.png -- Site installed configuration
+- install-run-1.webp -- Select language
+- install-run-2.webp -- Select profile (Standard)
+- install-run-3.webp -- Database
+- install-run-4.webp -- Installation in progress
+- install-run-5.webp -- Site configuration
+- install-run-6.webp -- Site installed configuration
 
 Screen shot of vertical toolbar menu configuration (topic config-overview.txt).
 To make this screenshot, install Drupal in your language using the Standard
 installation profile, log in as an administrator, change the Toolbar to vertical
 alignment, expand the Reports section, and take a screenshot of the vertical
 toolbar menu. Trim it down to 228x540 pixels:
-- config-overview-vertical-menu.png
+- config-overview-vertical-menu.webp
 
 Screen shot of "pencils" (topic config-overview.txt). To make this screenshot,
 install Drupal in your language using the Standard installation profile, with
@@ -35,15 +35,15 @@ as an administrator, go to the Home page, and click the Edit (pencil icon)
 button in the upper right corner of the Toolbar. This should turn on all of the
 contextual link pencils on the page. Take a screenshot of most or all of the
 screen, including the toolbar at the top:
-- config-overview-pencils.png
+- config-overview-pencils.webp
 
 Editing with the In-Place Editor (topic content-in-place-edit.txt). To make
 these screenshots, install Drupal with the Standard install profile, and create
 an About page with text translated from the English version. Follow the
 instructions in the topic to enable in-place editing, and take similar
 screenshots.
-- content-in-place-edit-hover-box.png
-- content-in-place-edit-save-box.png
+- content-in-place-edit-hover-box.webp
+- content-in-place-edit-save-box.webp
 
 ENGLISH-ONLY IMAGES
 
@@ -51,27 +51,27 @@ A few images are English-only, and should be copied directly from the English
 version rather than regenerated. (Most of them are from drupal.org pages.) Here
 is a list:
 
-- extend-manual-install-directories.png : A manually-generated image that shows
+- extend-manual-install-directories.webp : A manually-generated image that shows
   the directory structure of "contrib" and "custom" directories under "modules"
-- extend-manual-install-download.png: Shot from drupal.org
+- extend-manual-install-download.webp: Shot from drupal.org
 
-- extend-module-find_module_finder.png: Shot from drupal.org
-- extend-module-find_project_info.png : Shot from drupal.org
-- extend-module-find_search_results.png : Shot from drupal.org
+- extend-module-find_module_finder.webp: Shot from drupal.org
+- extend-module-find_project_info.webp : Shot from drupal.org
+- extend-module-find_search_results.webp : Shot from drupal.org
 
 - extend-module-install_download.png : Shot from drupal.org
 
-- extend-theme-find_search_results.png : Shot from drupal.org
-- extend-theme-find_theme_finder.png : Shot from drupal.org
+- extend-theme-find_search_results.webp : Shot from drupal.org
+- extend-theme-find_theme_finder.webp : Shot from drupal.org
 
 - extend-theme-install-download.png_ : Shot from drupal.org
 
-- install-prepare-downloads.png : Shot from drupal.org. This is a
+- install-prepare-downloads.webp : Shot from drupal.org. This is a
   manually-generated screenshot of the section of the Download & Extend page
   on drupal.org that has the "Download Drupal 8...." button on it. We used
   to be able to generate it automatically, but drupal.org markup changed and
   it no longer works.
-- install-prepare-files.png : Shot from drupal.org
-- install-prepare-recommended.png : Shot from drupal.org
+- install-prepare-files.webp : Shot from drupal.org
+- install-prepare-recommended.webp : Shot from drupal.org
 
-- security-update-module-release-notes.png : Shot from drupal.org
+- security-update-module-release-notes.webp : Shot from drupal.org

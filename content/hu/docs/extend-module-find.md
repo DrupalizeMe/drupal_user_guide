@@ -73,10 +73,10 @@ Ebben a részben hasznos szempontokat tekintünk át, amelyek alapján a Drupal.
       </tbody>
     </table>
 
-    ![A Drupal.org modullistájának szűrési lehetőségei](/images/extend-module-find_module_finder.png)
+    ![A Drupal.org modullistájának szűrési lehetőségei](/images/extend-module-find_module_finder.webp)
 
 1. A _Search_ gombra kattintva megjelennek a már csak a fenti feltételeknek megfelelő találatok.
-    ![A Drupal.org modullistájának keresési találatai](/images/extend-module-find_search_results.png)
+    ![A Drupal.org modullistájának keresési találatai](/images/extend-module-find_search_results.webp)
 1. Bár már így is nagyságrendekkel leszűkítettük a szóba jöhető modulok listáját, de az alaposabb átnézésükhöz nyissuk meg projektoldalaikat a nevükre kattintva.
 
     Íme néhány fontos szempont, ami segíthet értékelni és összehasonlítani őket, ezáltal könnyebben lehet eligazodni közöttük:
@@ -89,7 +89,7 @@ Ebben a részben hasznos szempontokat tekintünk át, amelyek alapján a Drupal.
     * _Maintainers_ (azaz „karbantartók”): a modul gazdáit a jobb oldalsáv legtetején találjuk együtt olyan hasznos információkkal, mint például mikor módosította valamelyikőjük utoljára a kódját (másképpen „commit”).
     * _Issues_ (azaz „ügyek”): szintén érdemes összehasonlítani a fennálló megoldatlan ügyek számát a legújabb verzió kiadásával. Ha például csak kevés nyitott ügyet látunk, akkor nem feltétlenül gond, ha nincs túl friss verzió. Ha viszont sok a még megoldatlan feladat és hibajelzés, viszont nem nagyon látszik mozgolódás a commitok terén, az az elhagyatottság egyik jele lehet. Szintén vessünk egy pillantást az összefoglaló grafikonokra, amelyek a karbantartók válaszkészségéről árulkodnak.
     * _Documentation_ és _Resources_ címek: szintén fontos szempont tudnunk, hogy mire készüljünk, ha esetleg elakadnánk a modul használatában. Itt tüntetnek fel általában olyan hasznos forrásokat, ahol további segítséget kaphatunk: például a README fájlt a modul forráskódjához mellékelve, vagy dokumentáció a telepítésről, beállításról és kipróbálásról.
-    ![Információk a projektoldalon, amiket javasolt figyelembe venni](/images/extend-module-find_project_info.png)
+    ![Információk a projektoldalon, amiket javasolt figyelembe venni](/images/extend-module-find_project_info.webp)
 ## Az ismeretek elmélyítése
 
 [extend-module-install](./extend-module-install.md)

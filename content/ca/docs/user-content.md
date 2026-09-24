@@ -26,13 +26,13 @@ Vendor content items. See [structure-content-type](./structure-content-type.md),
     or _Language_.  Click _Edit_ for the Vendor content item you would like to
     assign an author to.
 1. Locate the information block and click _Authoring information_.
-    ![Assigning an author to the Vendor content item](/images/user-content.png)
+    ![Assigning an author to the Vendor content item](/images/user-content.webp)
 1. Start typing the Vendor's user name Happy Farm in the _Authored by_ field.
     The field lists matching user names. Select the Vendor's user name from the
     list.
 1. Click _Save and keep published_.
 1. You will get a notification that the Vendor content item has been updated.
-    ![Vendor content item has been updated](/images/user-content_updated.png)
+    ![Vendor content item has been updated](/images/user-content_updated.webp)
 1. Follow these steps again to assign Vendor content item Sweet Honey to the
     Vendor user account Sweet Honey.
 

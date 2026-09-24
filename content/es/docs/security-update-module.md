@@ -35,7 +35,7 @@ busque los archivos _README.txt_, _INSTALL.txt_ y _UPGRADE.txt_ que vienen con
 el módulo. Además, revise las notas de la versión en la página del proyecto
 haciendo clic en el número de versión que está descargando.
 
-![Release notes link](/images/security-update-module-release-notes.png)
+![Release notes link](/images/security-update-module-release-notes.webp)
 
 Actualizar un módulo requiere primero poner su sitio en modo de mantenimiento,
 después obtener los nuevos archivos de código y aplicar las actualizaciones de
@@ -57,7 +57,7 @@ sitio; ver [install-composer](./install-composer.md).
     _Available updates_ > _Update_ (_admin/reports/updates_).
 1. Busque y marque el módulo en la lista. Haga clic en _Download these updates_
     para el módulo.
-    <img src="/images/security-update-module-updates.png" alt="Available updates" width="100%" />
+    <img src="/images/security-update-module-updates.webp" alt="Available updates" width="100%" />
 1. Determine el nombre corto del proyecto que quiere actualizar. Para los
     módulos y temas contribuidos, es la última parte de la URL de la página del
     proyecto; por ejemplo, el módulo Geofield, en

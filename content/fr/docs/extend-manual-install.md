@@ -39,7 +39,7 @@ manière dont vous avez initialement créé l'archive.
     on crée un sous-dossier _contrib_ pour les modules et thèmes contribués qui sont
     téléchargés depuis _Drupal.org_, et un sous-dossier _custom_ pour les modules et
     thèmes personnalisés. Votre dossier _modules_ pourrait ressembler à ceci :
-    <img src="/images/extend-manual-install-directories.png" alt="Arborescence dans le système fichier conseillée pour les modules" width="174px" />
+    <img src="/images/extend-manual-install-directories.webp" alt="Arborescence dans le système fichier conseillée pour les modules" width="174px" />
 1. Pour remplacer un module ou thème existant par une version actualisée, mettre
     le site en mode maintenance. Consulter [extend-maintenance](./extend-maintenance.md).
 1. Pour remplacer un module ou thème existant par une version actualisée, repérer

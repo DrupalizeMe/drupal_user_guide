@@ -73,10 +73,10 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Фільтри на сторінці пошуку модуля на _Drupal.org_](/images/extend-module-find_module_finder.png)
+    ![Фільтри на сторінці пошуку модуля на _Drupal.org_](/images/extend-module-find_module_finder.webp)
 
 1. Натисніть _Search_. З'являться результати пошуку.
-    ![Сторінка результатів пошуку модуля на _Drupal.org_](/images/extend-module-find_search_results.png)
+    ![Сторінка результатів пошуку модуля на _Drupal.org_](/images/extend-module-find_search_results.webp)
 1. Щоб додатково оцінити модуль, клацніть його назву в списку результатів пошуку і
     відвідайте сторінку проекту.
 
@@ -100,7 +100,7 @@ source_locale: "uk"
     Перевірте статистику, щоб побачити, як регулярно реагують на проблеми.
     * Документація, Ресурси (Documentation, Resources): Перевірте, чи є у модуля документація або README
     файл, який допоможе вам встановити, налаштувати, дослідити, і протестувати його.
-    ![Інформація на сторінці проекту для пошуку при оцінці модуля](/images/extend-module-find_project_info.png)
+    ![Інформація на сторінці проекту для пошуку при оцінці модуля](/images/extend-module-find_project_info.webp)
 ## Поліпшіть своє розуміння
 
 [extend-module-install](./extend-module-install.md)

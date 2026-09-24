@@ -27,7 +27,7 @@ Añade los campos Vendor URL e Main image al tipo de contenido Vendor.
     muestran en inglés en estas páginas; ver [language-concept](./language-concept.md) para una
     explicación.
 1. Haz clic en _Create a new field_. Aparece la página _Add field_.
-    ![Add field page to choose field type](/images/structure-fields-add-field.png)
+    ![Add field page to choose field type](/images/structure-fields-add-field.webp)
 1. Elige el tipo de campo _Link_ en las opciones _Choose a field type_. Haz clic
     en _Continue_. Aparece la página _Add field_ con un formulario para configurar
     la etiqueta del campo.
@@ -103,7 +103,7 @@ Añade los campos Vendor URL e Main image al tipo de contenido Vendor.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-vendor-url.png" alt="Field settings page for Vendor URL" width="100%" />
+    <img src="/images/structure-fields-vendor-url.webp" alt="Field settings page for Vendor URL" width="100%" />
 
 1. Haz clic en _Save settings_. Se ha añadido Vendor URL al tipo de contenido.
     Continúa creando el campo Main image.
@@ -203,10 +203,10 @@ Añade los campos Vendor URL e Main image al tipo de contenido Vendor.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-main-img.png" alt="Field settings page for Main Image" width="100%" />
+    <img src="/images/structure-fields-main-img.webp" alt="Field settings page for Main Image" width="100%" />
 
 1. Haz clic en _Save settings_. Se ha añadido Main image al tipo de contenido.
-    <img src="/images/structure-fields-result.png" alt="Manage fields page" width="100%" />
+    <img src="/images/structure-fields-result.webp" alt="Manage fields page" width="100%" />
 1. Añade un campo Main image al tipo de contenido Recipe, usando pasos similares.
     Comienza navegando a la página _Manage Fields_ del tipo de contenido Recipe.
     Luego usa el botón _Re-use an existing field_ para abrir el diálogo modal y

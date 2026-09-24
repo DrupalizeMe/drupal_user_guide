@@ -39,7 +39,7 @@ E témakör végére lesz egy saját definiált blokkunk, amiben a termelői pia
       </tbody>
     </table>
 
-    ![Egy egyéni blokk hozzáadása](/images/block-create-custom-add-custom-block.png)
+    ![Egy egyéni blokk hozzáadása](/images/block-create-custom-add-custom-block.webp)
 
 1. Kattintsunk a _Mentés_ gombra. Megjelenik egy rendszerüzenet, ami tájékoztat a blokkunk elmentésének sikerességéről.
 ## Az ismeretek elmélyítése

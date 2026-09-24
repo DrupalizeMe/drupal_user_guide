@@ -62,11 +62,11 @@ The Vendor role must exist on your site. See [user-new-role](./user-new-role.md)
       </tbody>
     </table>
 
-    <img src="/images/user-permissions-check-permissions.png" alt="Granting users with the Vendor role the rights to create, delete and edit Recipes" width="100%" />
+    <img src="/images/user-permissions-check-permissions.webp" alt="Granting users with the Vendor role the rights to create, delete and edit Recipes" width="100%" />
 
 1. Click _Save permissions_. You will get a message saying your changes have been
     saved.
-    ![Confirmation message after updating permissions](/images/user-permissions-save-permissions.png)
+    ![Confirmation message after updating permissions](/images/user-permissions-save-permissions.webp)
 
 ## Expand your understanding
 

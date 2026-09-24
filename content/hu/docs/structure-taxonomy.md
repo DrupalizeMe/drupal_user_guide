@@ -22,7 +22,7 @@ A szótárak ezen kifejezései hozzárendelhetők a webhely más típusú entit�
 
 Ilyen taxonómia-szótárakra mutató hivatkozott mezők bármelyik entitástípushoz hozzáadhatóak (például felhasználói fiókokhoz, egyedi blokkokhoz vagy sima tartalmakhoz). Ezután ha ilyen taxonómia-szótárakat használunk csoportosításra, akkor minden egyes kifejezéshez automatikusan létrejön egy listaoldal is, ami felsorolja az azzal a kifejezéssel megcímkézett elemeket. Tehát ha már vannak receptjeink felvéve a webhelyünkön, amiknek az összetevőit a fent vázolt módon összelinkeltük a _Zöldségek_ szótárral, akkor a _Répa_ listaoldalán két ételt látunk megjelenni:
 
-![A répa címke listaoldala](/images/structure-taxonomy_listingPage_carrots.png)
+![A répa címke listaoldala](/images/structure-taxonomy_listingPage_carrots.webp)
 ## Kapcsolódó témák
 
 * [structure-taxonomy-setup](./structure-taxonomy-setup.md).

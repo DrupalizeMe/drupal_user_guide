@@ -16,12 +16,12 @@ that file, translate the text "User Guide", then export to PNG.
 Running the installer (topic install-run.txt): You will need to run the standard
 installer, choosing your language, entering values for the Farmers Market web
 site, and take a screenshot of each step. Images:
-- install-run-1.png -- Select language
-- install-run-2.png -- Select profile (Standard)
-- install-run-3.png -- Database
-- install-run-4.png -- Installation in progress
-- install-run-5.png -- Site configuration
-- install-run-6.png -- Site installed configuration
+- install-run-1.webp -- Select language
+- install-run-2.webp -- Select profile (Standard)
+- install-run-3.webp -- Database
+- install-run-4.webp -- Installation in progress
+- install-run-5.webp -- Site configuration
+- install-run-6.webp -- Site installed configuration
 
 ENGLISH-ONLY MANUALLY-GENERATED IMAGES
 --------------------------------------
@@ -31,19 +31,19 @@ version rather than regenerated. (Most of them are from drupal.org pages,
 and they would only need to be updated if the download pages on drupal.org
 changed.) Here is a list:
 
-- extend-module-find_module_finder.png: Shot from drupal.org
-- extend-module-find_project_info.png : Shot from drupal.org
-- extend-module-find_search_results.png : Shot from drupal.org
+- extend-module-find_module_finder.webp: Shot from drupal.org
+- extend-module-find_project_info.webp : Shot from drupal.org
+- extend-module-find_search_results.webp : Shot from drupal.org
 
 - extend-module-install_download.png : Shot from drupal.org
 
-- extend-theme-find_search_results.png : Shot from drupal.org
-- extend-theme-find_theme_finder.png : Shot from drupal.org
+- extend-theme-find_search_results.webp : Shot from drupal.org
+- extend-theme-find_theme_finder.webp : Shot from drupal.org
 
 - extend-theme-install-download.png_ : Shot from drupal.org
 
-- install-prepare-downloads.png : Shot from drupal.org
+- install-prepare-downloads.webp : Shot from drupal.org
 - install-prepare-files.png : Shot from drupal.org
 - install-prepare-recommended.png : Shot from drupal.org
 
-- security-update-module-release-notes.png : Shot from drupal.org
+- security-update-module-release-notes.webp : Shot from drupal.org

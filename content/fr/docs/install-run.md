@@ -24,14 +24,14 @@ l'installeur fourni.
     Les fichiers de langues pour la langue choisie seront téléchargés et installés
     pour que le reste du processus d'installation puisse s'achever dans la langue
     choisie. Après avoir choisi une langue, cliquer sur _Save and continue_.
-    <img src="/images/install-run-1.png" alt="Choisir une langue" width="100%" />
+    <img src="/images/install-run-1.webp" alt="Choisir une langue" width="100%" />
 1. Sélectionner un profil d'installation. Les profils d'installations fournissent
     des fonctionnalités aux site pour un type spécifique de site en un seul
     téléchargement contenant le cœur du logiciel, des modules communautaires, des
     thèmes et une configuration prédéfinie. Le cœur contient deux profils
     d'installation. Sélectionner le profil d'installation du cœur Standard. Cliquer
     sur _Sauvegarder et continuer_.
-    <img src="/images/install-run-2.png" alt="Choix d'un profil d'installation" width="100%" />
+    <img src="/images/install-run-2.webp" alt="Choix d'un profil d'installation" width="100%" />
 1. À la prochaine étape, l'installeur vérifie que votre système fournit les
     prérequis nécessaires. Si ce n'est pas le cas, vous verrez un récapitulatif de
     ce qu'il est nécessaire de corriger afin de continuer. Si les prérequis sont
@@ -65,12 +65,12 @@ l'installeur fourni.
       </tbody>
     </table>
 
-    <img src="/images/install-run-3.png" alt="Formulaire de configuration de la base de données" width="100%" />
+    <img src="/images/install-run-3.webp" alt="Formulaire de configuration de la base de données" width="100%" />
 
 1. L'étape suivante affichera une barre de progression sous l'en-tête
     _Installation Drupal_. Lorsque l'installeur a fini, il passera automatiquement à
     l'étape suivante.
-    <img src="/images/install-run-4.png" alt="Barre de progression de l'installation" width="100%" />
+    <img src="/images/install-run-4.webp" alt="Barre de progression de l'installation" width="100%" />
 1. La dernière étape consiste à configurer quelques informations basiques pour
     votre nouveau site. Noter que le compte utilisateur créé à cette étape est le
     compte administrateur du site. Consulter [user-admin-account](./user-admin-account.md) pour des
@@ -120,13 +120,13 @@ l'installeur fourni.
     </table>
 
     Les champs restants peuvent être laissés avec leurs valeurs par défaut.
-    <img src="/images/install-run-5.png" alt="Formulaire de configuration" width="100%" />
+    <img src="/images/install-run-5.webp" alt="Formulaire de configuration" width="100%" />
 
 1. Cliquer sur _Sauvegarder et continuer_.
 1. Vous êtes redirigé(e) vers la page d'accueil de votre nouveau site et vous
     devriez voir le message _Félicitations, vous avez installé Drupal!_ affiché en
     haut de la page.
-    <img src="/images/install-run-6.png" alt="Installation réussie" width="100%" />
+    <img src="/images/install-run-6.webp" alt="Installation réussie" width="100%" />
 1. Vous pourriez avoir vu un avertissement à l'étape _Configuration_ à propos des
     permissions sur les fichiers, et vous pourriez continuer à voir cet
     avertissement jusqu'à ce que ces permissions soient corrigées. Pour éviter cet

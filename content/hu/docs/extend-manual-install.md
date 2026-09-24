@@ -40,7 +40,7 @@ Utóbbi esetben tehát átugorhatjuk a következő, _Letöltés_ részt (hiszen 
 
 1. Nyissuk meg a modul vagy smink projektoldalát a Drupal.org webhelyen. Például az _Admin toolbar_ modulé a _https://www.drupal.org/project/admin_toolbar_ címen található.
 1. Görgessünk le a _Downloads_ szakaszhoz egészen a lap alján:
-    ![Közösségi modul forráskódjának letöltése](/images/extend-manual-install-download.png)
+    ![Közösségi modul forráskódjának letöltése](/images/extend-manual-install-download.webp)
 1. Kattintsunk a _tar.gz_ hivatkozásra, így böngészőnk lementi a tömörített fájlt a számítógépünkre. Ha a távoli kiszolgálónk Linuxon fut, és van parancssori hozzáférésünk, akkor egyszerűen futtathatjuk az alábbi parancsot, természetesen a webcímet lecserélve:
     ```text
     wget https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.26.tar.gz
@@ -48,7 +48,7 @@ Utóbbi esetben tehát átugorhatjuk a következő, _Letöltés_ részt (hiszen 
 ### Feltöltés és kicsomagolás
 
 1. A modulok és sminkek a webhelyünk gyökerének legfelső szintű _/modules_ és _/themes_ könyvtáraiban találhatóak. (Fontos! *Nem* a _/core_ alattiakról van szó, azokhoz soha ne nyúljunk!) Az általánosan javasolt gyakorlat szerint ezeken belül is érdemes különválasztani őket forrásuk szerint közösségi (_/contrib_) és saját vagy egyedi (_/custom_) alkönyvtárakba. Ha ilyenek még nem léteznek a  _/modules_ és _/themes_ könyvtárainkban, akkor érdemes most létrehoznunk őket. Ezután az alábbihoz hasonló képet kapunk:
-    <img src="/images/extend-manual-install-directories.png" alt="Javasolt könyvtárszerkezet a modulokhoz" width="174px" />
+    <img src="/images/extend-manual-install-directories.webp" alt="Javasolt könyvtárszerkezet a modulokhoz" width="174px" />
 1. Ha egy már létező modult vagy sminket cserélünk le a frissebb verziójával, akkor érdemes az éles webhelyet ideiglenesen elzárni a látogatók elől: [extend-maintenance](./extend-maintenance.md).
 1. Ez azért javasolt, mert most töröljük a frissítendő modul/smink már létező könyvtárát. (Ha a látogató eközben épp olyan oldalt nyitna meg, amelyhez az ideiglenesen törölt modul/smink szükséges lenne, akkor hibát tapasztalna.)
 1. Töltsük fel a _.tar.gz_ fájlt (lehet más kiterjesztése is a tömörített állománynak) a webhelyünk tárhelyére. A feltöltés célkönyvtárát válasszuk ki az alábbiak szerint:

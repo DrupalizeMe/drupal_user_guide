@@ -28,4 +28,4 @@ Tracker якщо ви встановили його в цій статті [conf
     готові до видалення.
 1. Поставте галочки на модулях для видалення (_Search_, _History_ і
     _Activity Tracker_). Натисніть _Видалити_ внизу сторінки.
-    ![Видалення модуля](/images/config-uninstall_check-modules.png)
+    ![Видалення модуля](/images/config-uninstall_check-modules.webp)

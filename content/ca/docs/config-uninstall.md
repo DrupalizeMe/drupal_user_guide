@@ -24,4 +24,4 @@ Podeu utilitzar la interfície d'administració o el Drush per desinstal·lar m�
     (_admin/modules/uninstall_) on trobareu el llistat de mòduls que estan preparats per a ser desinstal·lats.
 1. Marqueu les caselles pels mòduls que esteu desinstal·lant (_Search_, _History_, i
     _Activity Tracker_). Feu clic a _Desinstal·la_ a la part inferior de la pàgina.
-    <img src="/images/config-uninstall_check-modules.png" alt="Desinstal·lant un mòdul" width="100%" />
+    <img src="/images/config-uninstall_check-modules.webp" alt="Desinstal·lant un mòdul" width="100%" />

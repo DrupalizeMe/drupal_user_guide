@@ -22,10 +22,10 @@ Már léteznie kell a _Recept_ tartalomtípusnak, és a mezői között már ott
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Tartalom_ > _Tartalom hozzáadása_ > _Recept_ (vagy a címsorba begépelve: _node/add/recept_) oldalra, hogy megnézzük, hogyan fest most az alapértelmezett tartalombeküldési oldalunk. Külön figyeljük meg, hogyan működik jelenleg az összetevők felvitelére szolgáló rész: egyenként, külön sorokban lehet megadni egy-egy hozzávalót.
 1. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. Aztán kattintsunk a _Recept_ tartalomtípus sorának végén a lenyíló gomb _Űrlap megjelenítésének beállítása_ lehetőségére. Megjelenik az _Űrlap megjelenítésének beállítása_ oldal.
 1. Itt a _Hozzávalók_ mező sorában a _Felületi elem_ oszlopban a legördülő listából válasszuk az _Automatikusan kiegészített (címkézés)_ lehetőséget.
-    <img src="/images/structure-form-editing-manage-form.png" alt="A Recept űrlap módosítása" width="100%" />
+    <img src="/images/structure-form-editing-manage-form.webp" alt="A Recept űrlap módosítása" width="100%" />
 1. Kattintsunk a _Mentés_ gombra.
 1. A _Kezelés_ adminisztrációs menüben ismét menjünk a _Tartalom_ > _Tartalom hozzáadása_ > _Recept_ (vagy a címsorba begépelve: _node/add/recept_) oldalra, hogy ellenőrizzük, hogyan változott meg az élelmiszer-alapanyagok kiválasztásának módja. A _Hozzávalók_ mező átváltozott egy (látszólag sima) szövegbeviteli mezővé, amibe gépelhetünk, ám a vessző leütésére felajánlja a már létező, egyező nevű kifejezések használatát.
-    <img src="/images/structure-form-editing-add-recipe.png" alt="Recept hozzáadása" width="100%" />
+    <img src="/images/structure-form-editing-add-recipe.webp" alt="Recept hozzáadása" width="100%" />
 1. Az így egyszerűsített adatbevitel kipróbálására küldjünk be két _Recept_ típusú tartalmat (ehhez lásd az [content-create](./content-create.md) témakört), amelyek neve lehet például „Zöldségsaláta” és „Friss répa”. Ügyeljünk rá, hogy minden mezőjük ki legyen töltve: legyen hozzájuk kép feltöltve, összetevők hozzárendelve, és a beküldő árusuk megnevezve (azok közül, akiknek adatlapjait a [structure-fields](./structure-fields.md) témakörben hoztuk létre).
 ## Az ismeretek elmélyítése
 

@@ -15,7 +15,7 @@ Módosítsuk az alaprendszer alapértelmezett _Bartik_ sminkjét azzal, hogy meg
 
 1. Webhelyünk _Kezelés_ adminisztrációs menüjében menjünk a _Megjelenés_ oldalra (vagy a címsorban adjuk meg az _admin/appearance_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi sminket.
 1. A _Telepített sminkek_ cím alatt találjuk a Bartik sminket, a neve mellett zárójelben pedig valószínűleg az „alapértelmezés szerinti smink” megjegyzés olvasható. Ha igen, akkor kattintsunk a _Beállítások_ hivatkozásra.
-    <img src="/images/config-theme_bartik_settings.png" alt="Alapértelmezett smink, Bartik" width="100%" />
+    <img src="/images/config-theme_bartik_settings.webp" alt="Alapértelmezett smink, Bartik" width="100%" />
 1. A _Színséma_ keretben kattintsunk bele minden egyes beviteli mezőbe és gépeljünk be tetszőlegesen választott színkódokat hexadecimális formában, de beírhatjuk a Kézikönyv során példaként használt _Termelői Piac_ webhelyünk színeit is az alábbi táblázatból:
     <table>
       <thead>
@@ -65,11 +65,11 @@ Módosítsuk az alaprendszer alapértelmezett _Bartik_ sminkjét azzal, hogy meg
     </table>
 
     Megjegyzés: A színek kiválasztásához használhatjuk a jobb oldalon megjelenő színkereket is. A színkerékre kattintva a színkódok automatikusan kitöltődnek.
-    <img src="/images/config-theme_color_scheme.png" alt="Az alaprendszer Bartik sminkjének frissített színbeállításai" width="100%" />
+    <img src="/images/config-theme_color_scheme.webp" alt="Az alaprendszer Bartik sminkjének frissített színbeállításai" width="100%" />
 
 1. A _Logókép_ keretben, tiltsuk le az _A smink által nyújtott logó használata_ jelölőnégyzetet.
 1. A _Logókép feltöltése_ felirat alatti gombra kattintva keressük meg a logófájlt számítógépünkön:
-    ![Új logó az alaprendszer Bartik sminkjének beállításainál](/images/config-theme_logo_upload.png)
+    ![Új logó az alaprendszer Bartik sminkjének beállításainál](/images/config-theme_logo_upload.webp)
 
     Ha kiválasztottuk a fájlt a gépünk mappa ablakában, akkor annak neve megjelenik a gomb mellett. Jó tudni, hogy beállítható általános, sminktől független logókép is a _Megjelenítés_ > _Beállítások_ (vagy címsorban _admin/appearance/settings_) oldalon. A smink itt megadott egyéni logója azonban felülírja azt az általános logót.
 
@@ -77,7 +77,7 @@ Módosítsuk az alaprendszer alapértelmezett _Bartik_ sminkjét azzal, hogy meg
     Megjegyzés: fentebb, a színkódok táblázata alatt egy _Előnézet_ látható, ami segít elképzelnünk nagyjából a választott színek összhatását.
     <img src="/images/config-theme_color_scheme_preview.png" alt="A Bartik smink előnézete" width="100%" />
 1. Kattintsunk a _Vissza a webhelyre_ gombra az eszközsor bal végén, hogy ellenőrizzük a smink új beállításait a webhelyünkön.
-    <img src="/images/config-theme_final_result.png" alt="Végső eredmény az alaprendszer Bartik sminkjének beállítása – színek és logó – után" width="100%" />
+    <img src="/images/config-theme_final_result.webp" alt="Végső eredmény az alaprendszer Bartik sminkjének beállítása – színek és logó – után" width="100%" />
 
 ## Az ismeretek elmélyítése
 

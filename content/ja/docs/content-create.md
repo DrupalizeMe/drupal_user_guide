@@ -53,7 +53,7 @@ source_locale: "ja"
     </table>
 
     リッチテキストエディターのツールバーにある「ソース」をクリックすると、編集中テキストの HTML ソースコードを表示できます。 
-    <img src="/images/content-create-create-basic-page.png" alt="基本ページの作成" width="100%" />
+    <img src="/images/content-create-create-basic-page.webp" alt="基本ページの作成" width="100%" />
 
 1. 「プレビュー」をクリックし、すべてが期待どおりに表示されることを確認します。
 1. 「コンテンツの編集に戻る」をクリックします。

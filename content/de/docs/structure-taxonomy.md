@@ -34,7 +34,7 @@ Taxonomiereferenzfelder können zu jeder Entität, wie z. B. Benutzerkonten,
 benutzerdefinierten Blöcken oder regulären Inhalten, hinzugefügt werden. Wenn Sie Taxonomiebegriffe zur Klassifizierung der Inhalte ihrer Website verwenden, wird für jeden angelegten Taxonomiebegriff automatisch auch eine Listenseite erstellt. Eine solche Taxonomiebegriffsseite listet alle Elemente auf, die mit dem jeweiligen Begriff klassifiziert worden sind. Wenn Sie zum Beispiel
 mehrere Rezepte angelegt haben, in denen Karotten als Zutat enhalten sind, sieht die Taxonomiebegriffs-Seite für das Schlagwort Karrotten vielleicht ähnlich aus wie unten abgebildet:
 
-![Taxonomy listing page - Carrots](/images/structure-taxonomy_listingPage_carrots.png)
+![Taxonomy listing page - Carrots](/images/structure-taxonomy_listingPage_carrots.webp)
 ## Verwandte Themen
 
 * [structure-taxonomy-setup](./structure-taxonomy-setup.md).

@@ -21,12 +21,12 @@ source_locale: "fa"
 1. روی _پیکربندی_ از قالب متنی _HTML پایه_ کلیک کنید. صفحه _HTML پایه_ نمایش می‌یابد.
 1. مشاهده می‌کنید که _CKEditor_ در فیلد _ویرایشگر متن_ انتخاب شده است. اینکار به شما امکان پیکربندی نوارابزار ویرایشگر را می‌دهد.
 1. دکمه _خط افقی_ را از قسمت _دکمه‌های موجود_ گرفته و در قسمت _ابزارها_ در _نوارابزار فعال_ قرار دهید. ممکن است لازم باشد برای مشاهده نام گروه _ابزارها_، روی پیوند _نمایش نام‌های گروه_ کلیک کنید.
-    <img src="/images/structure-text-format-config-editor-config.png" alt="پیکربندی ویرایشگر" width="100%" />
+    <img src="/images/structure-text-format-config-editor-config.webp" alt="پیکربندی ویرایشگر" width="100%" />
 1. مشاهده می‌کنید که می‌توان _ترتیب پردازش فیلتر_ را تغییر داد.
 1. در فیلد _تگ‌های مجاز HTML_ عبارت `&lt;hr&gt;` را به فهرست موجود اضافه کنید.
-    <img src="/images/structure-text-format-config-allowed-html.png" alt="پیکربندی تگ‌های HTML" width="100%" />
+    <img src="/images/structure-text-format-config-allowed-html.webp" alt="پیکربندی تگ‌های HTML" width="100%" />
 1. روی _ذخیره‌سازی پیکربندی_ کلیک کنید. در این مرحله به صفحه _قالب‌های متنی و ویرایشگرها_ هدایت می‌شوید. پیامی مبنی بر بروزرسانی قالب متنی به شما نمایش داده می‌شود.
-    ![پیام تاییدیه برای پیکربندی قالب متنی](/images/structure-text-format-config-summary.png)
+    ![پیام تاییدیه برای پیکربندی قالب متنی](/images/structure-text-format-config-summary.webp)
 
 ## درک خود را گسترش دهید
 

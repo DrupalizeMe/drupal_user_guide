@@ -45,7 +45,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    image: images/structure-adding-reference-add-field.png [ "Додавання поля посилання на сутність для типу матеріалу"]
+    image: images/structure-adding-reference-add-field.webp [ "Додавання поля посилання на сутність для типу матеріалу"]
 
 1. З'явиться сторінка _надано_, яка дозволяє встановити допустиму кількість
     значень. Заповніть поля, як показано нижче. Натисніть _Зберегти налаштування поля_.
@@ -71,7 +71,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Збереження конфігурації посилального поля](/images/structure-adding-reference-set-field-basic.png)
+    ![Збереження конфігурації посилального поля](/images/structure-adding-reference-set-field-basic.webp)
 
 1. З'явиться сторінка _Налаштування Надано для Рецепт_, яка дозволяє вам
     налаштувати поле. Заповніть поля, як показано нижче. Натисніть _Зберегти налаштування_.
@@ -122,10 +122,10 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Налаштування для поля посилання на сутність](/images/structure-adding-reference-field-settings.png)
+    ![Налаштування для поля посилання на сутність](/images/structure-adding-reference-field-settings.webp)
 
 1. Поле Надано було додано до типу матеріалу
-    image: images/structure-adding-reference-manage-fields.png [ "Сторінка керування полями для типу матеріалу Рецепт",width="100%"]
+    image: images/structure-adding-reference-manage-fields.webp [ "Сторінка керування полями для типу матеріалу Рецепт",width="100%"]
 ## Відео
 
 <div class="embedded-video">

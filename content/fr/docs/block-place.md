@@ -61,7 +61,7 @@ Consulter [config-theme](./config-theme.md).
     Vous pouvez aussi masquer ou afficher le bloc sur des pages spécifiques. Dans le
     cas du site du marché fermier, ne choisir aucune des options de configuration
     car vous voulez que le bloc soit affiché partout.
-    <img src="/images/block-place-configure-block.png" alt="Page de configuration des blocs" width="100%" />
+    <img src="/images/block-place-configure-block.webp" alt="Page de configuration des blocs" width="100%" />
 
 1. Cliquer sur _Enregistrer le bloc_. La page _Mise en page des blocs_ apparaît.
     Vous pouvez faire glisser l'ancre en forme de croix des blocs pour changer leur
@@ -73,7 +73,7 @@ Consulter [config-theme](./config-theme.md).
     région _Deuxième barre de navigation_, et cliquer sur _Enregistrer les blocs_.
     Le bloc a été placé dans la deuxième barre de navigation de toutes les pages qui
     utilisent le thème du cœur Olivero.
-    <img src="/images/block-place-sidebar.png" alt="Page comprenant un bloc placé dans la deuxième barre de navigation" width="100%" />
+    <img src="/images/block-place-sidebar.webp" alt="Page comprenant un bloc placé dans la deuxième barre de navigation" width="100%" />
 
 ## Améliorer votre compréhension
 

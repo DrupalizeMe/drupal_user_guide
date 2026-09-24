@@ -80,7 +80,7 @@ retrouvez sur la page dont l'URL est
 _http://example.com/admin/structure/taxonomy_ (si l'URL de base de votre site
 est _http://example.com_).
 
-<img src="/images/preface-conventions-top-menu.png" alt="Menu d'administration" width="100%" />
+<img src="/images/preface-conventions-top-menu.webp" alt="Menu d'administration" width="100%" />
 
 Voici un autre exemple :
 
@@ -93,7 +93,7 @@ devez trouvez la section _Système_ dans la page, et à l'intérieur de celle-ci
 cliquer sur _Paramètres de base du site_, après quoi vous arrivez sur la page
 _http://example.com/admin/config/system/site-information_.
 
-![Section _Système_ de la page de configuration](/images/preface-conventions-config-system.png)
+![Section _Système_ de la page de configuration](/images/preface-conventions-config-system.webp)
 
 Une autre remarque : si vous utilisez l'interface d'administration avec le thème
 Seven, beaucoup de boutons "Ajouter" dans l'interface d'administration sont

@@ -20,7 +20,7 @@ Az _Árus_ szerepkört már létre kellett hozni, amit az előző, [user-new-rol
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Felhasználók_ oldalra (vagy a címsorban adjuk meg az _admin/people_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi felhasználói fiókot.
 1. Kattintsunk a _Felhasználó létrehozása_ gombra.
-    <img src="/images/user-new-user_form.png" alt="Az új felhasználói fiók létrehozása űrlap" width="100%" />
+    <img src="/images/user-new-user_form.webp" alt="Az új felhasználói fiók létrehozása űrlap" width="100%" />
 1. A megjelenő űrlapot töltsük ki az alábbiak szerint:
     <table>
       <thead>
@@ -79,7 +79,7 @@ Az _Árus_ szerepkört már létre kellett hozni, amit az előző, [user-new-rol
       </tbody>
     </table>
 1. Kattintsunk az _Új fiók létrehozása_ gombra. Ezután egy _Csemege Méhészet új felhasználó számára el lett küldve egy további útmutatást tartalmazó üdvözlőüzenet_ állapotüzenet tájékoztat róla, ha a mentés sikeres volt:
-    <img src="/images/user-new-user-created.png" alt="Az új felhasználói fiók sikeresen létrejött" width="100%" />
+    <img src="/images/user-new-user-created.webp" alt="Az új felhasználói fiók sikeresen létrejött" width="100%" />
 1. Ugyanezeket a lépéseket megismételve készítsünk egy felhasználói fiókot a _Víg Tanya_ árus számára is.
 ## Az ismeretek elmélyítése
 

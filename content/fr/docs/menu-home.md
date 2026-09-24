@@ -21,10 +21,10 @@ doit exister. Voir [content-create](./content-create.md).
     choisi comme page d'accueil. Pour utiliser une page d'accueil qui avait été
     créée auparavant, donner son chemin _/home_. Cliquer sur _Enregistrer la
     configuration_.
-    ![Zone 'page d'accueil' comportant /home dans le champ texte](/images/menu-home_new_text_field.png)
+    ![Zone 'page d'accueil' comportant /home dans le champ texte](/images/menu-home_new_text_field.webp)
 1. Aller sur la page d'accueil pour vérifier que le contenu affiché correspond à
     celui que vous avez configuré.
-    <img src="/images/menu-home_final.png" alt="Page d'accueil sur laquelle apparaît le contenu 'Accueil' (page de base) ajouté" width="100%" />
+    <img src="/images/menu-home_final.webp" alt="Page d'accueil sur laquelle apparaît le contenu 'Accueil' (page de base) ajouté" width="100%" />
 
 ## Améliorer votre compréhension
 
