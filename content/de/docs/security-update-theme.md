@@ -41,7 +41,7 @@ in [install-composer](./install-composer.md) um die Dateien zu aktualisieren und
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Berichte_ >
     _Verfügbare Aktualisierungen_ > _Aktualisieren_ (_/admin/reports/updates_).
 1. Suchen und prüfen Sie das  betreffende Theme in der Liste. Klicken Sie auf _Herunterladen_ in der Zeile des entsprechenden Themes.
-    <img src="/images/security-update-theme-updates.webp" alt="Available updates" width="100%" />
+    <img src="/images/security-update-theme-updates.png" alt="Available updates" width="100%" />
 1. Klicken Sie auf _Fortsetzen_.
 1. Klicken Sie auf _Datenbankaktualisierung ausführen_. Wenn Sie die neuen Theme-Dateien manuell bezogen haben,
     Beginnen Sie mit diesem Schritt und rufen Sie die Seite zur Datenbankaktualisierung auf, indem Sie die URL

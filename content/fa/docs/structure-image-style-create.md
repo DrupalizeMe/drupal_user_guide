@@ -45,7 +45,7 @@ source_locale: "fa"
       </tbody>
     </table>
 1. روی _افزودن تغییر بصری_ کلیک کنید. سبک تصویری همراه با گزینه انتخاب شده ذخیره می‌گردد.
-    <img src="/images/structure-image-style-create-add-style.webp" alt="افزودن یک سبک تصویری" width="100%" />
+    <img src="/images/structure-image-style-create-add-style.png" alt="افزودن یک سبک تصویری" width="100%" />
 1. از منوی _مدیریت_ به مسیر _ساختار_ > _انواع محتوا_ (_admin/structure/types_) بروید.
 1. از منوی کشویی _عملیات_ برای نوع محتوای فروشنده گزینه _مدیریت نمایش_ را انتخاب کنید. صفحه _مدیریت نمایش_ (_admin/structure/types/manage/vendor/display_) ظاهر می‌شود.
 1. اطمینان یابید که زبانه ثانویه _پیشفرض_ انتخاب شده باشد.
@@ -73,7 +73,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![تغییر تنظیمات قالب‌دهنده فیلد تصویر](/images/structure-image-style-create-manage-display.webp)
+    ![تغییر تنظیمات قالب‌دهنده فیلد تصویر](/images/structure-image-style-create-manage-display.png)
 
 1. روی _بروزرسانی_ کلیک کنید.
 1. روی _ذخیره‌سازی_ کلیک کنید. هنگام نمایش محتوای فروشنده از سبک تصویری جدید استفاده خواهد شد.

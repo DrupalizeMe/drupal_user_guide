@@ -44,7 +44,7 @@ consulter [install-composer](./install-composer.md).
 1. Dans le menu d'administration _Gérer_, naviguer vers _Rapports_ > _Mises à
     jour disponibles_ > _Mettre à jour_ (_admin/reports/updates/update_).
 1. Trouver les thèmes dans la liste qui nécessitent une mise à jour.
-    <img src="/images/security-update-theme-updates.webp" alt="Mises à jour disponibles" width="100%" />
+    <img src="/images/security-update-theme-updates.png" alt="Mises à jour disponibles" width="100%" />
 1. Déterminer le nom machine du projet que vous voulez mettre à jour. Pour les
     modules contribués et les thèmes, il s'agit de la dernière partie de l'URL de la
     page du projet ; par exemple, pour le thème Honey, à l'adresse

@@ -48,7 +48,7 @@ Add the fields Vendor URL and Main image to the Vendor content type.
 
     A machine name is automatically generated, based on the _Label_ value. Click
     _Edit_ if you want to override the default name.
-    ![Add field page](/images/structure-fields-add-field.webp)
+    ![Add field page](/images/structure-fields-add-field.png)
 
 1. Click _Save and continue_. The page Vendor URL appears which lets you set
     the allowed number of values. Fill in the fields as shown below.
@@ -108,7 +108,7 @@ Add the fields Vendor URL and Main image to the Vendor content type.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-vendor-url.webp" alt="Field settings page for Vendor URL" width="100%" />
+    <img src="/images/structure-fields-vendor-url.png" alt="Field settings page for Vendor URL" width="100%" />
 
 1. Click _Save settings_. The Vendor URL has been added to the content
     type. Continue creating the Main image field.
@@ -216,10 +216,10 @@ Add the fields Vendor URL and Main image to the Vendor content type.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-main-img.webp" alt="Field settings page for Main Image" width="100%" />
+    <img src="/images/structure-fields-main-img.png" alt="Field settings page for Main Image" width="100%" />
 
 1. Click _Save settings_. Main image has been added to the content type.
-    <img src="/images/structure-fields-result.webp" alt="Manage fields page" width="100%" />
+    <img src="/images/structure-fields-result.png" alt="Manage fields page" width="100%" />
 1. Add a Main image field to the Recipe content type, using similar steps. Start
     by navigating to the Recipe content type's _Manage Fields_ page in step 1. Then
     skip to step 7 and follow the remaining steps, but reuse the existing Main image

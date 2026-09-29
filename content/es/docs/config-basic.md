@@ -47,7 +47,7 @@ _Zona horaria predefinida_.
       </tbody>
     </table>
 
-    ![Información del sitio](/images/config-basic-SiteInfo.webp)
+    ![Información del sitio](/images/config-basic-SiteInfo.png)
 
 1. Después de editar los campos, hacer clic en _Guardar configuración_ para ver
     los cambios aplicados al sitio web.
@@ -60,7 +60,7 @@ _Zona horaria predefinida_.
     día de la semana_ en el sitio web.
 1. En la sección _Zonas horarias_, seleccionar la _Zona horaria predefinida_ de
     la lista y configurar la zona horaria específica para usuarios.
-    ![Zonas horarias](/images/config-basic-TimeZone.webp)
+    ![Zonas horarias](/images/config-basic-TimeZone.png)
 1. Después de editar los campos, hacer clic en _Guardar configuración_ para ver
     los cambios aplicados al sitio web.
 ## Recursos adicionales

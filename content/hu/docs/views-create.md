@@ -98,7 +98,7 @@ Ebben a témakörben azt tűzzük ki célként, hogy legyen egy olyan oldala a v
       </tbody>
     </table>
 
-    <img src="/images/views-create-wizard.webp" alt="Új nézet hozzáadása varázsló" width="100%" />
+    <img src="/images/views-create-wizard.png" alt="Új nézet hozzáadása varázsló" width="100%" />
 
 1. Kattintsunk a _Mentés és szerkesztés_ gombra. Az előbbi varázsló után most megjelenik a teljes beállítási oldala az újonnan létrehozott nézetünknek.
 1. Az alapvetően három függőleges részre tagolható oldalon a bal oszlop közepe táján a _Mezők_ szakasznál kattintsunk a _Hozzáadás_ lenyíló gombra, mire feltűnik a _Mezők hozzáadása_ párbeszédablak.
@@ -169,9 +169,9 @@ Ebben a témakörben azt tűzzük ki célként, hogy legyen egy olyan oldala a v
 1. Most válasszuk az _Átrendezés_ lehetőséget a lenyíló gombról, majd az ekkor megjelenő _Mezők átrendezése_ párbeszédablakban a keresztnyíl ikonjukra kattintva fogd-és-vidd módszerrel húzzuk a három mezőt a következő sorrendbe: Fő kép, Cím, és Törzs. Ha valami miatt ez nem működne, akkor a _Sorok súlyának mutatása_ hivatkozásra kattintva megjelennek a sorszámaik: míg a nagyobb súlyúak (képzeletben „nehezebbek”) lesüllyednek, addig a kisebb súlyúak („könnyebbek”) feljebb kerülnek. Az _Alkalmaz_ gombbal bezárhatjuk ezt a panelt is.
 1. Ha az oldal alján az _Automata előnézet_ jelölőnégyzet nem lenne bejelölve alapértelmezetten, akkor kézzel is frissíthetjük azt az _Előnézet frissítése_ gombbal.
 1. Végül mentsük el az új nézetünk módosításait a _Mentés_ gombra kattintva.
-    ![Az Árusok nézet teljes beállítási oldala](/images/views-create-view.webp)
+    ![Az Árusok nézet teljes beállítási oldala](/images/views-create-view.png)
 1. Ha most meglátogatjuk a webhelyünk címlapját, a fő navigációban egy új, _Árusok_ menüpontot kell látnunk. Rákattintva az új nézetünk _oldal_ típusú megjelenítőjére érkezünk, amely felsorolja az eddig tárolt kereskedőinket.
-    ![Vendors view output](/images/views-create-view-output.webp)
+    ![Vendors view output](/images/views-create-view-output.png)
 ## Az ismeretek elmélyítése
 
 Elképzelhető, hogy az imént az új nézettel együtt automatikusan létrehozott menüpont nem éppen olyan sorrendben következik a többi között, ahogy szeretnénk. Bátran rendezzük át a menüpontok sorrendjét a [menu-reorder](./menu-reorder.md) témakörnél leírtak alapján.

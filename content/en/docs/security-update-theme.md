@@ -42,7 +42,7 @@ This assumes that you are using Composer to manage the files in your site; see
 1. In the _Manage_ administrative menu, navigate to _Reports_ >
     _Available updates_ > _Update_ (_admin/reports/updates_).
 1. Find any themes in the list that need updating.
-    <img src="/images/security-update-theme-updates.webp" alt="Available updates" width="100%" />
+    <img src="/images/security-update-theme-updates.png" alt="Available updates" width="100%" />
 1. Determine the short name of the project you want to update. For contributed
     modules and themes, it is the last part of the URL of the project page; for
     example, the Honey theme, at https://www.drupal.org/project/honey, has

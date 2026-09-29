@@ -49,12 +49,12 @@ A _Helyszín és nyitvatartás_ blokk megjelenítése a webhely oldalsávjában.
     </table>
 
     Bizonyos oldalakon elrejthetjük és megjeleníthetjük a blokkot. A Termelői piac webhely esetében nem kell megadni egyik beállítást sem, mert a blokkot mindenhol meg szeretnénk jeleníteni.
-    <img src="/images/block-place-configure-block.webp" alt="Blokk beállítása oldal" width="100%" />
+    <img src="/images/block-place-configure-block.png" alt="Blokk beállítása oldal" width="100%" />
 
 1. Kattintsunk a _Blokk mentése_ gombra, így ismét a _Blokk elrendezés_ oldalt látjuk. Az egy régión belül való megjelenítési sorrendjük módosításához a blokkok a keresztnyíl ikonjukra kattintva fogd-és-vidd módszerrel áthúzhatók egymás fölött. Ha valami miatt ez nem működne, akkor a _Sorok súlyának mutatása_ hivatkozásra kattintva megjelennek a sorszámaik: míg a nagyobb súlyúak (képzeletben „nehezebbek”) lesüllyednek, addig a kisebb súlyúak („könnyebbek”) feljebb kerülnek.
 1. Győződjünk meg róla, hogy a _Helyszín és nyitvatartás_ blokk szerepel a _Második oldalsáv_ régióban, majd kattintsunk lent a _Blokkok mentése_ gombra.
     A blokk innentől az alaprendszer Bartik sminkjét használó minden oldal oldalsávjában megjelenik.
-    <img src="/images/block-place-sidebar.webp" alt="A Második oldalsáv régióban blokkal rendelkező oldal" width="100%" />
+    <img src="/images/block-place-sidebar.png" alt="A Második oldalsáv régióban blokkal rendelkező oldal" width="100%" />
 
 ## Az ismeretek elmélyítése
 

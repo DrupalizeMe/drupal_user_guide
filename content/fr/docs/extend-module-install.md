@@ -36,7 +36,7 @@ d'administration, soit Drush.
     section _Releases_ (versions) en bas de page.
 1. Copier la commande Composer fournie correspondant à la version du module que
     vous souhaitez installer.
-    ![Trouver la commande d'installation d'un module avec Composer](/images/extend-module-install-download.webp)
+    ![Trouver la commande d'installation d'un module avec Composer](/images/extend-module-install-download.png)
 1. Vous pouvez autrement taper la commande suivante (en remplaçant le nom
     machine du module et la version souhaitée) :
     ```text
@@ -52,7 +52,7 @@ d'administration, soit Drush.
 1. Dans le menu d'administration _Gérér_, naviguer vers _Extension_
     (_admin/modules_). La page _Extension_ apparaît.
 1. Localiser le module _Admin toolbar_ et le cocher.
-    ![Installation du module Admin Toolbar](/images/extend-module-install-admin-toolbar-do.webp)
+    ![Installation du module Admin Toolbar](/images/extend-module-install-admin-toolbar-do.png)
 1. Cliquer sur _Installer_ pour activer le nouveau module.
 
 ### Installer le module en utilisant Drush

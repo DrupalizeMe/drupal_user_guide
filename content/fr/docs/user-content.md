@@ -31,11 +31,11 @@ Consulter [user-new-user](./user-new-user.md).
 1. Dans _Informations de publication_, taper le début du nom d'utilisateur du
     vendeur dans le champ _Écrit par_. Le champ liste les noms d'utilisateurs
     correspondants. Sélectionner le nom d'utilisateur du vendeur dans la liste.
-    ![Assigner un auteur à un élement de contenu de type vendeur](/images/user-content.webp)
+    ![Assigner un auteur à un élement de contenu de type vendeur](/images/user-content.png)
 1. Cliquer sur _Enregistrer_.
 1. Une notification indiquant que le contenu de type vendeur a été mis à jour
     s'affiche.
-    ![L'élement de contenu de type vendeur a été mis à jour](/images/user-content_updated.webp)
+    ![L'élement de contenu de type vendeur a été mis à jour](/images/user-content_updated.png)
 1. Suivre ces étapes pour assigner le contenu de type vendeur "Doux miel" au
     compte d'utilisateur Doux miel.
 

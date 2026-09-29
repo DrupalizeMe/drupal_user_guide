@@ -19,7 +19,7 @@ source_locale: "ru"
 ## Шаги
 
 1. В административном меню _Управление_ перейдите в _Структура_ > _Таксономия_ (_admin/structure/taxonomy_). Вы увидите словарь _Теги_, созданный при установке стандартного профиля. (Обратите внимание, что название и описание словаря отображаются на английском; см. [language-concept](./language-concept.md).)
-    <img src="/images/structure-taxonomy-setup-taxonomy-page.webp" alt="Страница таксономии" width="100%" />
+    <img src="/images/structure-taxonomy-setup-taxonomy-page.png" alt="Страница таксономии" width="100%" />
 1. Нажмите _Добавить словарь_ и заполните поля:
     <table>
       <thead>
@@ -43,16 +43,16 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-add-vocabulary.webp" alt="Добавление словаря Ингредиенты" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-vocabulary.png" alt="Добавление словаря Ингредиенты" width="100%" />
 
 1. Нажмите _Сохранить_. Откроется страница Ингредиенты с перечнем терминов в этом словаре.
-    <img src="/images/structure-taxonomy-setup-vocabulary-overview.webp" alt="Список терминов таксономии Ингредиенты" width="100%" />
+    <img src="/images/structure-taxonomy-setup-vocabulary-overview.png" alt="Список терминов таксономии Ингредиенты" width="100%" />
 1. Нажмите _Добавить термин_. В поле _Название_ введите «Масло». Нажмите _Сохранить_.
-    <img src="/images/structure-taxonomy-setup-add-term.webp" alt="Страница добавления термина" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-term.png" alt="Страница добавления термина" width="100%" />
 1. Появится подтверждение о создании термина. Добавьте еще несколько терминов — например, «Яйца» и «Молоко».
 1. В административном меню _Управление_ перейдите в _Структура_ > _Типы материалов_ (_admin/structure/types_). Для типа материала Рецепт нажмите _Управление полями_.
 1. Нажмите _Добавить поле_. В открывшемся окне выберите тип поля _Ссылка_ и подтип _Термин таксономии_. Нажмите _Сохранить и продолжить_.
-    ![Добавление поля Ингредиенты к типу материала Рецепт](/images/structure-taxonomy-setup-add-field.webp)
+    ![Добавление поля Ингредиенты к типу материала Рецепт](/images/structure-taxonomy-setup-add-field.png)
 1. Заполните поля:
     <table>
       <thead>
@@ -71,7 +71,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Настройки поля Ингредиенты](/images/structure-taxonomy-setup-add-field-label.webp)
+    ![Настройки поля Ингредиенты](/images/structure-taxonomy-setup-add-field-label.png)
 
 1. На следующем экране настройки задайте параметры:
     <table>
@@ -96,7 +96,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Настройки поля для Ингредиентов](/images/structure-taxonomy-setup-field-settings.webp)
+    ![Настройки поля для Ингредиентов](/images/structure-taxonomy-setup-field-settings.png)
 
 1. На следующем экране задайте:
     <table>
@@ -131,10 +131,10 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-field-settings-2.webp" alt="Настройки поля ссылки" width="100%" />
+    <img src="/images/structure-taxonomy-setup-field-settings-2.png" alt="Настройки поля ссылки" width="100%" />
 
 1. Нажмите _Сохранить настройки_. Вы вернетесь на страницу _Управление полями_. Появится сообщение, что настройка поля Ингредиенты завершена.
-    <img src="/images/structure-taxonomy-setup-finished.webp" alt="Страница управления полями для типа материала Рецепт" width="100%" />
+    <img src="/images/structure-taxonomy-setup-finished.png" alt="Страница управления полями для типа материала Рецепт" width="100%" />
 
 ## Видео
 

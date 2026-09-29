@@ -15,9 +15,9 @@ L'element de contingut que voleu designar com a portara del vostre lloc ha d'exi
 
 1. Al menú d'administració _Gestiona_, navegueu a _Configuració_ > _Sistema_ > Paràmetres bàsics del lloc_ (_admin/config/system/site-information_).
 1. On poso _Portada_, reemplaceu _/node_ pel nom de la pàgina que voldríeu que fos la portada. Per a utilitzar la portada que es va crear prèviament, especifiqueu el seu camí _/home_. Feu clic a _Desa la configuració_
-    ![Àrea de 'PORTADA' amb /home al camp de text](/images/menu-home_new_text_field.webp)
+    ![Àrea de 'PORTADA' amb /home al camp de text](/images/menu-home_new_text_field.png)
 1. Navegueu a la portada per a verificar que mostra el contingut que heu configurat.
-    <img src="/images/menu-home_final.webp" alt="'PORTADA' amb el contingut 'Portada' (Pàgina bàica) afegit" width="100%" />
+    <img src="/images/menu-home_final.png" alt="'PORTADA' amb el contingut 'Portada' (Pàgina bàica) afegit" width="100%" />
 
 ## Amplieu els vostres coneixements
 

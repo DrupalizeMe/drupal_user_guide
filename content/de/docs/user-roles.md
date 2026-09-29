@@ -25,11 +25,11 @@ bereits existieren. Siehe [user-new-user](./user-new-user.md),  [user-new-role](
 1. Suchen Sie das Konto von Benutzer 1 (mit dem Namen "admin"), um diesem die Rolle _Administrator_ zuzuweisen. Wenn das Benutzerkonto nicht sofort sichtbar ist, verwenden Sie den Filter _Name oder E-Mail enthält_,
     oder andere Filter, um die Liste einzugrenzen.
 1. Klicken Sie auf _Bearbeiten_, um das Benutzerkonto zu aktualisieren.
-    <img src="/images/user-roles_people-list.webp" alt="People page" width="100%" />
+    <img src="/images/user-roles_people-list.png" alt="People page" width="100%" />
 1. Scrollen Sie auf der Seite _Bearbeiten_ zum Abschnitt _Rollen_. Aktivieren Sie den Haken bei der Rolle _Administrator_ für das Benutzerkonto.
-    <img src="/images/user-roles_person-edit.webp" alt="Roles section of user edit page" width="141px" />
+    <img src="/images/user-roles_person-edit.png" alt="Roles section of user edit page" width="141px" />
 1. Klicken Sie auf _Speichern_, um das Benutzerkonto zu aktualisieren. Sie sollten dadurch zur Seite _Benutzer_ Seite zurückkehren und sehen eine Meldung, dass die Änderungen gespeichert wurden.
-    ![Confirmation message](/images/user-roles_message.webp)
+    ![Confirmation message](/images/user-roles_message.png)
 
 ### Aktualisieren der Rollen mit der Massenbearbeitungsmethode
 
@@ -41,10 +41,10 @@ bereits existieren. Siehe [user-new-user](./user-new-user.md),  [user-new-role](
     andere Filter, um die Liste einzugrenzen.
 1. Wählen Sie _Hinzufügen der Rolle Lieferant zum ausgewählten Benutzer_ aus der oben stehenden Liste _Aktion_
     aus.
-    ![People page with bulk operation set up](/images/user-roles_bulk.webp)
+    ![People page with bulk operation set up](/images/user-roles_bulk.png)
 1. Klicken Sie unten auf _Anwenden auf ausgewählte Elemente_. Sie sollten eine Meldung sehen, daß die
     gewünschte Änderungen vorgenommen wurden.
-    ![Bestätigungsmeldung (englisch)](/images/user-roles_message_bulk.webp)
+    ![Bestätigungsmeldung (englisch)](/images/user-roles_message_bulk.png)
 
 ## Videos
 

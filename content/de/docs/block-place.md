@@ -60,7 +60,7 @@ muss installiert und als Standard-Theme eingestellt sein. Siehe: [config-theme](
     Sie können den Block auch auf bestimmten Seiten ein- oder ausblenden.
     Im Fall der Wochenmarkt-Website stellen Sie keine der folgenden
     Konfigurationsoptionen ein weil Sie den Block überall anzeigen möchten.
-    <img src="/images/block-place-configure-block.webp" alt="Block configuration page" width="100%" />
+    <img src="/images/block-place-configure-block.png" alt="Block configuration page" width="100%" />
 
 1. Klicken Sie auf _Block speichern_. Die Seite _Blocklayout_ erscheint.
     Sie können  den Anfasspunkt zum Ziehen und Sortieren vor Blöcken verwenden,
@@ -74,7 +74,7 @@ muss installiert und als Standard-Theme eingestellt sein. Siehe: [config-theme](
     Der Block wurde in der Seitenleiste auf allen Seiten platziert,
     für die das Theme Bartik, dass mit dem Kernsystem ausgeliefert wird,
     aktiviert ist.
-    <img src="/images/block-place-sidebar.webp" alt="Page with a block placed on the Sidebar second region" width="100%" />
+    <img src="/images/block-place-sidebar.png" alt="Page with a block placed on the Sidebar second region" width="100%" />
 
 ## Vertiefen Sie Ihr Wissen
 

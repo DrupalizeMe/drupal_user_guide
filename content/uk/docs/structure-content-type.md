@@ -45,7 +45,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Додавання типу матеріалу](/images/structure-content-type-add.webp)
+    ![Додавання типу матеріалу](/images/structure-content-type-add.png)
 
 1. У розділі _Налаштування форми надсилання_ налаштуйте форму, яка використовується
     для створення і редагування вмісту цього типу. Заповніть поля, як
@@ -77,7 +77,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Налаштування форми](/images/structure-content-type-add-submission-form-settings.webp)
+    ![Налаштування форми](/images/structure-content-type-add-submission-form-settings.png)
 
 1. У розділі _Опції публікаціі_ виберіть опції за замовчуванням для нового
     матеріалу цього типу. Заповніть поля, як показано нижче.
@@ -114,7 +114,7 @@ source_locale: "uk"
     </table>
 
     Зміна цих параметрів не впливає на вже створений матеріал.
-    ![Налаштування публікації](/images/structure-content-type-add-Publishing-Options.webp)
+    ![Налаштування публікації](/images/structure-content-type-add-Publishing-Options.png)
 
 1. У розділі _Налаштування відображення_ визначіть, чи повинні автор і дата публікації
     відображатися в матеріалі. Заповніть поля як зазначено нижче.
@@ -135,7 +135,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Налаштування відображення](/images/structure-content-type-add-Display-settings.webp)
+    ![Налаштування відображення](/images/structure-content-type-add-Display-settings.png)
 
 1. У _Налаштування меню_ заповніть поля, як показано нижче.
     <table>
@@ -155,12 +155,12 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Налаштування меню](/images/structure-content-type-add-Menu-settings.webp)
+    ![Налаштування меню](/images/structure-content-type-add-Menu-settings.png)
 
 1. Натисніть _Зберегти й продовжити керування полями_ для збереження типу
     матеріалу. З'явиться сторінка _Керувати полями_, що дозволяє додавати поля до
     типу матеріалу. [structure-fields](./structure-fields.md)
-    ![Підтвердження](/images/structure-content-type-add-confirmation.webp)
+    ![Підтвердження](/images/structure-content-type-add-confirmation.png)
 1. Виконайте ті ж дії для створення типу матеріалу рецептів страв.
     Приклад значень полів в формах, що відрізняються від наведених вище:
     <table>

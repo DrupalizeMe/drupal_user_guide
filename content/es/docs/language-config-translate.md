@@ -54,7 +54,7 @@ Los pasos básicos para traducir cualquier configuración de su sitio son:
     options_ > _Exposed form_ > _Reset options_, traduzca _Submit button text_ de
     "Apply" a "Aplicar". Los demás botones y etiquetas de esta sección no aparecen
     en la página ni en el bloque de Recipes, y no hace falta traducirlos.
-    <img src="/images/language-config-translate-recipes-view.webp" alt="Translate the Recipes view" width="100%" />
+    <img src="/images/language-config-translate-recipes-view.png" alt="Translate the Recipes view" width="100%" />
 1. En _Displays_ > _Default display settings_ > _Recipes default display
     options_ > _Filters_ > _(Empty) taxonomy term ID_ > _Find recipes
     using... Expose_, traduzca _Label_ de "Find recipes using..." a "Encontrar

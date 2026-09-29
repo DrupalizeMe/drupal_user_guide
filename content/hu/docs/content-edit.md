@@ -18,13 +18,13 @@ Már léteznie kell a címlapot jelentő tartalomelemnek. Ehhez lásd az [conten
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Tartalom_ (címsorban _admin/content_) oldalra.
 1. Ha a szerkeszteni kívánt tartalomelem nemrég jött létre vagy frissült, a tartalomlista tetején jelenik meg. Ha régebbi, akkor a _Típus_, a  _Cím_ vagy egyéb szűrők használatával is rákereshetünk.
-    <img src="/images/content-edit-admin-content.webp" alt="Tartalmak adminsztrációs oldala" width="100%" />
+    <img src="/images/content-edit-admin-content.png" alt="Tartalmak adminsztrációs oldala" width="100%" />
 1. Kattintsunk a _Szerkesztés_ gombra annak az elemnek (Címlap) a sorában, amit módosítani szeretnénk. A _Törzs_ mezőben tudjuk átírni a nyitvatartási időt. A többi beviteli mező leírását lásd az előző, [content-create](./content-create.md) témakörnél.
 1. Ha még nincs bejelölve a négyzet az _Új változat készítése_ opció mellett a jobb oldalsáv „Közzétéve” feliratú keretében, akkor tegyük meg: ekkor megjelenik a _Változatnapló-üzenet_ szövegmező, ahová beírhatunk egy tömör kis emlékeztetőt, hogy éppen mit módosítottunk most. Ezen megjegyzések sorozatából épül fel egy tartalomegység változattörténete.
-    ![Változatnapló-üzenet beviteli mezője a tartalomszerkesztési oldalon](/images/content-edit-revision.webp)
+    ![Változatnapló-üzenet beviteli mezője a tartalomszerkesztési oldalon](/images/content-edit-revision.png)
 1. A _Mentés és megtartás közzétettként_ gombra kattintva menthetjük el új változtatásainkat.
 1. Ezután visszakerülünk a _Tartalom_ nevű áttekintőoldalra, valamint megjelenik egy rendszerüzenet, miszerint az előbb szerkesztett tartalom sikeresen frissült.
-    ![Rendszerüzenet a frissült tartalomról](/images/content-edit-message.webp)
+    ![Rendszerüzenet a frissült tartalomról](/images/content-edit-message.png)
 ## Az ismeretek elmélyítése
 
 Az első két lépésben bemutatott szokványos módon túl másféleképpen is el lehet érni a szerkeszteni kívánt tartalmat:

@@ -22,11 +22,11 @@ mit dem installationsprofil Standard installiert wird, welches mit dem Kernsyste
 1. Klicken Sie im Drop-Button in der Spalte _Aktionen_ hinter dem Inhaltstyp Artikel auf _Löschen_.
     Beachten Sie, dass der Name dieses Inhaltstyps auf dieser Seite auf Englisch angezeigt wird;
     siehe [language-concept](./language-concept.md) für weitere Informationen.
-    <img src="/images/structure-content-type-delete-dropdown.webp" alt="Article delete dropdown" width="100%" />
+    <img src="/images/structure-content-type-delete-dropdown.png" alt="Article delete dropdown" width="100%" />
 1. Eine Bestätigungsseite wird angezeigt. Klicken Sie auf _Löschen_.
-    <img src="/images/structure-content-type-delete-confirmation.webp" alt="Article delete confirmation page" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.png" alt="Article delete confirmation page" width="100%" />
 1. Die Seite _Inhaltstypen_ wird geöffnet und es wird eine Bestätigungsmeldung ausgegeben, die besagt, dass der Inhaltstyp Artikel gelöscht wurde:
-    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.webp)
+    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.png)
 
 ## Videos
 

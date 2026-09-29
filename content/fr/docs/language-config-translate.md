@@ -58,7 +58,7 @@ suivantes :
     (_Appliquer_) en "Apply". Les autres boutons et libellés de cette section
     n'apparaissent pas sur la page ou le bloc "Recettes", et n'ont pas besoin d'être
     traduits.
-    <img src="/images/language-config-translate-recipes-view.webp" alt="Traduire la vue Recettes" width="100%" />
+    <img src="/images/language-config-translate-recipes-view.png" alt="Traduire la vue Recettes" width="100%" />
 1. Rechercher _Affichages_ > _Paramètres d'affichage de Master_ > _Options
     d'affichage par défaut de Recettes_ > _Filtres_ > _(vide) Terme de taxonomie
     ID_ > _Rechercher recettes en utilisant ... Exposer_. Dans le champ _Libellé_,

@@ -28,10 +28,10 @@ Vendor content items. See [structure-content-type](./structure-content-type.md),
 1. Under _Authoring information_, start typing the Vendor's user
     name Happy Farm in the _Authored by_ field. The field lists matching user
     names. Select the Vendor's user name from the list.
-    ![Assigning an author to the Vendor content item](/images/user-content.webp)
+    ![Assigning an author to the Vendor content item](/images/user-content.png)
 1. Click _Save_.
 1. You will get a notification that the Vendor content item has been updated.
-    ![Vendor content item has been updated](/images/user-content_updated.webp)
+    ![Vendor content item has been updated](/images/user-content_updated.png)
 1. Follow these steps again to assign Vendor content item Sweet Honey to the
     Vendor user account Sweet Honey.
 

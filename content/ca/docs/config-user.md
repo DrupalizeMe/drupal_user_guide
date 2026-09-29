@@ -21,13 +21,13 @@ to user accounts.
     people with permissions to register user accounts. You can check _Require email
     verification when a visitor creates an account_ in case you want to change the
     settings for account registration later on.
-    ![Account registration only by admin](/images/config-user_account_reg.webp)
+    ![Account registration only by admin](/images/config-user_account_reg.png)
 1. Optionally, change the default email address from which user account
     notifications from the farmers market website will be sent. This will help you
     maintain a separate email address from the one used for the website in
     general. For example, this email address for user account notifications will be
     useful for a staff member(s) communicating with vendors.
-    ![Notification email from address](/images/config-user_from_email.webp)
+    ![Notification email from address](/images/config-user_from_email.png)
 1. Optionally, edit the email templates in the _Emails_ section to customize
     automated emails. There are seven email templates available with the core. They
     are meant for different user-specific occasions. All of them can be personalized
@@ -36,7 +36,7 @@ to user accounts.
     You can send out your own text (for example, welcoming the new vendors for whom
     accounts were just created) by editing the the _Welcome (new user created by
     administrator)_ template.
-    <img src="/images/config-user_email.webp" alt="Email notification on account events" width="100%" />
+    <img src="/images/config-user_email.png" alt="Email notification on account events" width="100%" />
 1. Click _Save configuration_ to save the changes.
 ## Expand your understanding
 

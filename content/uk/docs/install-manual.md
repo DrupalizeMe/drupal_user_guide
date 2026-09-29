@@ -17,14 +17,14 @@ source_locale: "uk"
 
 1. Зайдіть на _https://www.drupal.org_ і перейдіть до _Build_ > _Download & Extend_
     в верхньому меню.
-    <img src="/images/install-prepare-downloads.webp" alt="Сторінка завантаження _Drupal.org_" width="100%" />
+    <img src="/images/install-prepare-downloads.png" alt="Сторінка завантаження _Drupal.org_" width="100%" />
 1. Якщо ви хочете просто завантажити Drupal ядро, натисніть на _Download Drupal
     zip_ або _download tar.gz_ посилання, а потім збережіть його на вашому комп'ютері.
 1. Якщо ви хочете скачати дистрибутив, натисніть на _Distributions_ іконку або
     посилання, виберіть дистрибутив зі списку, перейдіть на сторінку проекту,
     і натисніть на посилання завантаження zip або tar.gz файлу на ваш комп'ютер. Посилання
     виглядає так:
-    ![Пошук URL для завантаження](/images/extend-module-install-download.webp)
+    ![Пошук URL для завантаження](/images/extend-module-install-download.png)
 1. Завантажте скачаний дистрибутив на ваш хостинг. Увійдіть в управління
     панеллю і перейдіть в _HTML_ директорію. Збережіть файл тут.
 1. Розпакуйте tar.gz або zip файл, який створить нову директорію. Якщо у вас

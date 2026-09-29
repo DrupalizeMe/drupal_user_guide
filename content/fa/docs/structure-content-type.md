@@ -40,7 +40,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![افزودن یک نوع محتوا](/images/structure-content-type-add.webp)
+    ![افزودن یک نوع محتوا](/images/structure-content-type-add.png)
 
 1. در زبانه عمودی _تنظیمات فرم ارسالی_ به پیکربندی فرمی بپردازید که برای ایجاد و ویرایش این نوع استفاده می‌شود. با توجه به مقادیر زیر فیلدهای آن را پر کنید.
     <table>
@@ -70,7 +70,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![تنظیمات فرم ارسالی](/images/structure-content-type-add-submission-form-settings.webp)
+    ![تنظیمات فرم ارسالی](/images/structure-content-type-add-submission-form-settings.png)
 
 1. در زبانه عمودی _گزینه‌های انتشار_ درباره گزینه‌های پیشفرض این نوع محتوا تصمیم‌گیری کنید. با توجه به مقادیر زیر فیلدهای آن را پر کنید.
     <table>
@@ -107,7 +107,7 @@ source_locale: "fa"
 
     تغییر این تنظیمات روی محتوایی که قبل از این ایجاد شده است تاثیرگذار نخواهد بود.
 
-    ![گزینه‌های انتشار](/images/structure-content-type-add-Publishing-Options.webp)
+    ![گزینه‌های انتشار](/images/structure-content-type-add-Publishing-Options.png)
 
 1. در زبانه عمودی _تنظیمات نمایش_ تصمیم بگیرید آیا نویسنده و تاریخ انتشار در کنار محتوا نمایش یابد یا خیر. با توجه به مقادیر زیر فیلدهای آن را پر کنید.
     <table>
@@ -127,7 +127,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![تنظیمات نمایش](/images/structure-content-type-add-Display-settings.webp)
+    ![تنظیمات نمایش](/images/structure-content-type-add-Display-settings.png)
 
 1. در زبانه عمودی _تنظیمات منو_، با توجه به مقادیر زیر فیلدهای آن را پر کنید.
 
@@ -148,10 +148,10 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![تنظیمات منو](/images/structure-content-type-add-Menu-settings.webp)
+    ![تنظیمات منو](/images/structure-content-type-add-Menu-settings.png)
 
 1. روی _ذخیره‌سازی و مدیریت فیلدها_ برای ذخیره‌سازی نوع محتوا کلیک کنید. صفحه _مدیریت فیلدها_ ظاهر می‌شود که به شما امکان افزودن فیلدهای دیگر را می‌دهد. [structure-fields](./structure-fields.md) را مشاهده کنید.
-    <img src="/images/structure-content-type-add-confirmation.webp" alt="تاییدیه" width="100%" />
+    <img src="/images/structure-content-type-add-confirmation.png" alt="تاییدیه" width="100%" />
 1. گام‌های مشابه را برای ایجاد نوع محتوای محصول تکرار کنید. مقادیر نمونه برای فیلدهای فرم، که در مقایسه با گام‌های بالا تفاوت دارند عبارتند از:
     <table>
       <thead>

@@ -24,7 +24,7 @@ Ereignisse.
     wenn ein Besucher ein Benutzerkonto anlegt_  für den Fall deaktivieren,
     dass Sie Benutzern später erlauben möchten selbstständig neue
     Benutzerkonten anzulegen.
-    ![Konto-Registrierung nur durch Admin](/images/config-user_account_reg.webp)
+    ![Konto-Registrierung nur durch Admin](/images/config-user_account_reg.png)
 1. Optional können Sie die Standard-E-Mail-Adresse ändern.
     Von dieser E-Mail-Adresse erhalten Benutzer dann Mails mit Benachrichtigungen von
     der Website des Wochenmarktes. Diese Option hilft Ihnen dabei eine von der für
@@ -33,7 +33,7 @@ Ereignisse.
     Benutzerkonto-Benachrichtigungen ist beispielsweise nützlich,
     wenn einer oder mehrere Mitarbeiter eingesetzt werden,
     welche die Kommunikation mit den Lieferanten des Wochenmarktes durchführen.
-    ![Benachrichtigungs-E-Mail von Adresse](/images/config-user_from_email.webp)
+    ![Benachrichtigungs-E-Mail von Adresse](/images/config-user_from_email.png)
 1. Optional können Sie die E-Mail-Vorlagen der automatisierten E-Mails unter
     _E-Mails_ bearbeiten. Es gibt mehrere E-Mail-Vorlagen, die vom Kernsystem zur
     Verfügung gestellt werden. Sie sind für verschiedene benutzerspezifische
@@ -44,7 +44,7 @@ Ereignisse.
     Lieferanten, wenn diese gerade ein Benutzerkonto erstellt haben), indem Sie die
     Vorlage _Willkommen (Neuer, von einem Administrator erstellter Benutzer)_
     bearbeiten.
-    <img src="/images/config-user_email.webp" alt="E-Mail-Benachrichtigung bei Kontoereignissen" width="100%" />
+    <img src="/images/config-user_email.png" alt="E-Mail-Benachrichtigung bei Kontoereignissen" width="100%" />
 1. Klicken Sie auf _Konfiguration speichern_, um die Änderungen zu speichern.
 
 ## Vertiefen Sie Ihr Wissen

@@ -43,7 +43,7 @@ content items that are classified with that term. For example, if you created
 several recipes that all had carrots as an ingredient, you might see something
 like this on the Carrots taxonomy listing page:
 
-![Taxonomy listing page - Carrots](/images/structure-taxonomy_listingPage_carrots.webp)
+![Taxonomy listing page - Carrots](/images/structure-taxonomy_listingPage_carrots.png)
 ## Related topics
 
 * [structure-taxonomy-setup](./structure-taxonomy-setup.md).

@@ -18,7 +18,7 @@ by navigating to _Reports_ > _Recent log messages_ (_admin/reports/dblog_).
 These logs may be cleared by administrators and automated cron tasks, so they
 should not be used for [forensic logging](https://en.wikipedia.org/wiki/Audit_trail). For forensic purposes, use the Syslog module.
 
-<img src="/images/prevent-log.webp" alt="Recent log messages of a basic site" width="100%" />
+<img src="/images/prevent-log.png" alt="Recent log messages of a basic site" width="100%" />
 
 *Attributions*
 

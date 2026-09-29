@@ -35,7 +35,7 @@ Az útmutató leírások elvégzéséhez leggyakrabban a Drupal adminisztráció
 
 Az ehhez hasonló navigációs útmutatások során feltételezzük, hogy a webhelyen a _Toolbar_ modul telepítve és engedélyezve van. Ha igen, akkor az oldal tetején megjelenő eszközsor _Kezelés_ menüpontjára kattintva kinyíló további lehetőségek közül nekünk a _Felépítés_, majd pedig a _Taxonómia_ nevű menüpontokra kell kattintanunk. Másik lehetőség, hogy böngészőnk címsorába beírjuk a _http://pelda.hu/admin/structure/taxonomy_ webcímet.
 
-<img src="/images/preface-conventions-top-menu.webp" alt="Az adminisztrációs menü" width="100%" />
+<img src="/images/preface-conventions-top-menu.png" alt="Az adminisztrációs menü" width="100%" />
 
 Vagy nézzünk egy másik példát:
 
@@ -43,7 +43,7 @@ Vagy nézzünk egy másik példát:
 
 Ebben az esetben a _Kezelés_, majd _Konfiguráció_ menüpontokra való kattintás után megnyíló oldalon meg kell keresnünk a _Rendszer_ című szakaszt, amelyben megtaláljuk az _Alapvető webhelybeállításokat_:
 
-![A _Rendszer_ feliratú doboz a Konfiguráció oldalon](/images/preface-conventions-config-system.webp)
+![A _Rendszer_ feliratú doboz a Konfiguráció oldalon](/images/preface-conventions-config-system.png)
 
 Végezetül pedig még egy apró megjegyzés: ha az alapértelmezett adminisztrációs sminket, a _Sevent_ használjuk, akkor az új elemeket hozzáadó gombokon szerepelni fog egy plusz („\`”) jel. Például az admin/content oldalon ezen a gombon a „` Tartalom hozzáadása” felirat olvasható. Ez azonban csupán a _Seven_ design egy funkciója, a plusz jel nem a gombfelirat része (például a képernyőfelolvasó szoftverek is figyelmen kívül hagyják), ezért mi is anélkül fogjuk említeni ezeket a gombokat a Kézikönyvben.
 ## Űrlapok kitöltése, adatok bevitele

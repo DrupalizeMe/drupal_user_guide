@@ -24,4 +24,4 @@ source_locale: "ru"
     (_admin/modules/uninstall_), где отображается список модулей,
     готовых к удалению.
 1. Отметьте флажками модули, которые нужно удалить (_Ban_, _History_ и _Search_). Затем нажмите _Удалить_ внизу страницы.
-    <img src="/images/config-uninstall_check-modules.webp" alt="Удаление модуля" width="100%" />
+    <img src="/images/config-uninstall_check-modules.png" alt="Удаление модуля" width="100%" />

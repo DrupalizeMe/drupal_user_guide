@@ -11,7 +11,7 @@ A webhely működése során bizonyos események bekövetkeztekor eltárol egy b
 
 A Drupal rendszernaplója a _Kezelés_ adminisztrációs menüben, a _Jelentések_ > _Legutóbbi naplóüzenetek_ (vagy admin/reports/dblog) oldalra ellátogatva tekinthető meg.
 
-<img src="/images/prevent-log.webp" alt="Egy egyszerű webhely legutóbbi naplóüzenetei" width="100%" />
+<img src="/images/prevent-log.png" alt="Egy egyszerű webhely legutóbbi naplóüzenetei" width="100%" />
 
 *Közreműködők*
 

@@ -32,5 +32,5 @@ Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu deinstalli
 1. Aktivieren Sie die Kontrollkästchen vor den Namen der Module, die Sie
     deinstallieren möchten (_Search_, _History_ und _Settings_tray_).
 1. Klicken Sie auf _Deinstallieren_.
-    <img src="/images/config-uninstall_check-modules.webp" alt="Deinstallationsmodul" width="100%" />
+    <img src="/images/config-uninstall_check-modules.png" alt="Deinstallationsmodul" width="100%" />
 

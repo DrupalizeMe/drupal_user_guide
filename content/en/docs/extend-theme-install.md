@@ -31,7 +31,7 @@ the theme using either the administrative interface or Drush.
     at the bottom of the page.
 1. Copy the provided Composer command for the version of the theme you want to
     install.
-    ![Finding the composer command for a theme](/images/extend-theme-install-download.webp)
+    ![Finding the composer command for a theme](/images/extend-theme-install-download.png)
 1. Alternatively, type the following command (substituting
     the short name of the theme and desired version for `honey:^1.0`):
     ```text
@@ -48,7 +48,7 @@ the theme using either the administrative interface or Drush.
 1. Locate the new theme under _Uninstalled themes_ and click _Install and set as
     default_ to use it. All non-administrative pages on the site will now use this
     new theme.
-    <img src="/images/extend-theme-install-appearance-page.webp" alt="Uninstalled themes on Appearance page" width="286px" />
+    <img src="/images/extend-theme-install-appearance-page.png" alt="Uninstalled themes on Appearance page" width="286px" />
 
 ### Install the theme using Drush
 

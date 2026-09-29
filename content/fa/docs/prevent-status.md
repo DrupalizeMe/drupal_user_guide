@@ -11,7 +11,7 @@ source_locale: "fa"
 
 شما می‌توانید گزارش وضعیت را با رفتن به مسیر _گزارش‌ها_ > _گزارش وضعیت_ (_admin/reports/status_) از منوی _مدیریت_ مشاهده کنید.
 
-<img src="/images/prevent-status.webp" alt="گزارش وضعیت یک سایت ساده" width="100%" />
+<img src="/images/prevent-status.png" alt="گزارش وضعیت یک سایت ساده" width="100%" />
 
 ## Related topics
 

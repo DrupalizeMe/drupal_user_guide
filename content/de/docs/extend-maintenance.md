@@ -54,7 +54,7 @@ Sie können die Benutzeroberfläche oder Drush verwenden, um den
     einem anderen Browser, in dem Sie nicht an der Website angemeldet sind,
     auf die Website zugreifen. Wenn Sie dies nicht verifizieren können, versuchen Sie
     den Cache zu leeren. Siehe [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-enabled.webp" alt="Maintenance mode enabled" width="100%" />
+    <img src="/images/extend-maintenance-mode-enabled.png" alt="Maintenance mode enabled" width="100%" />
 
 ## Deaktivieren des Wartungsmodus im Verwaltungsbereich der Website
 
@@ -88,7 +88,7 @@ Sie können die Benutzeroberfläche oder Drush verwenden, um den
     einem anderen Browser, in dem Sie nicht an der Website angemeldet sind,
     auf die Website zugreifen. Wenn Sie dies nicht verifizieren können, versuchen Sie
     den Cache zu leeren. Siehe [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-disabled.webp" alt="Maintenance mode disabled" width="100%" />
+    <img src="/images/extend-maintenance-mode-disabled.png" alt="Maintenance mode disabled" width="100%" />
 
 ## Aktivieren oder Deaktivieren des Wartungsmodus mit Drush
 

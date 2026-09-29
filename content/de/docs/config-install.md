@@ -29,7 +29,7 @@ Sie können den Verwaltungsbereich oder Drush verwenden, um Module zu installier
     installieren möchten. Markieren Sie zum Beispiel
     das Kontrollkästchen für das mit dem Kernsystem ausgelieferte
     Modul Setings Tray.
-    <img src="/images/config-install-check-modules.webp" alt="Enabling the core Setings Tray module" width="100%" />
+    <img src="/images/config-install-check-modules.png" alt="Enabling the core Setings Tray module" width="100%" />
 1. Klicken Sie auf _Installieren_. Die ausgewählten Module werden installiert.
 ## Drush verwenden
 

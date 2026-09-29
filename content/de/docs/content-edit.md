@@ -22,7 +22,7 @@ Inhalt für die Homepage muss vorhanden sein. Siehe [content-create](./content-c
     gewünschte Inhalt nicht angelegt wird, können Sie nach
     _Inhaltstyp_, _Titel_ oder anderen Kriterien filtern,
     um den gewünschten Inhalt zu finden.
-    <img src="/images/content-edit-admin-content.webp" alt="Inhaltsverwaltungsseite" width="100%" />
+    <img src="/images/content-edit-admin-content.png" alt="Inhaltsverwaltungsseite" width="100%" />
 1. Klicken Sie auf _Bearbeiten_ in der Zeile des Inhalts,
     den Sie bearbeiten möchten (Home), um das Formular zur Inhaltsbearbeitung
     zu öffnen. Aktualisieren Sie die Öffnungszeiten im Feld _Textkörper_.
@@ -32,12 +32,12 @@ Inhalt für die Homepage muss vorhanden sein. Siehe [content-create](./content-c
     die erklärt, welche Änderungen Sie vorgenommen haben (Sie könnten zum Beispiel
     „Öffnungszeiten aktualisiert“ eingeben). Dieser Text wird im Revisionsprotokoll
     der Seite angezeigt.
-    ![Revisions-Informationsbereich der Inhaltsbearbeitungsseite](/images/content-edit-revision.webp)
+    ![Revisions-Informationsbereich der Inhaltsbearbeitungsseite](/images/content-edit-revision.png)
 1. Klicken Sie auf _Speichern_, um Ihre Änderungen zu speichern.
 1. Sie werden zurück auf die Seite _Inhalt_ weitergeleitet. Dort
     sollte eine Nachricht angezeigt werden, die darüber informiert,
     dass der Inhalt der Seite aktualisiert wurde.
-    ![Aktualisierte Inhaltsnachricht](/images/content-edit-message.webp)
+    ![Aktualisierte Inhaltsnachricht](/images/content-edit-message.png)
 
 ## Vertiefen Sie Ihr Wissen
 

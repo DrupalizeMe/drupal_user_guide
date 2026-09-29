@@ -39,7 +39,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Додати власний блок](/images/block-create-custom-add-custom-block.webp)
+    ![Додати власний блок](/images/block-create-custom-add-custom-block.png)
 
 1. Натисніть _Зберегти_. Повинно бути виведено повідомлення про успішне збереженні блоку.
 ## Поліпшіть своє розуміння

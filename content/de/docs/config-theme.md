@@ -19,7 +19,7 @@ Bearbeiten Sie die Einstellungen des Standard-Themes des Kernsystems
 1. Unter _Installierte Themes_, sehen Sie das Theme Bartik, dass dort als
     Standard-Theme aufgeführt ist. klicken Sie unter _Bartik (Standard-Theme)_,
     auf _Einstellungen_.
-    <img src="/images/config-theme_bartik_settings.webp" alt="Default theme, Bartik" width="100%" />
+    <img src="/images/config-theme_bartik_settings.png" alt="Default theme, Bartik" width="100%" />
 1. Klicken Sie unter _Farbschema_ in jedes Fahrbwahlfeld und geben Sie die
     Farbcodes ein, die Sie hinzufügen möchten. Verwenden Sie beispielsweise
     folgende Farben:
@@ -73,10 +73,10 @@ Bearbeiten Sie die Einstellungen des Standard-Themes des Kernsystems
     Hinweis: Sie können auch das Farbrad auf der rechten Seite verwenden,
     um die von Ihnen gewünschten Farben auszuwählen.
     Die ausgewählten Hexdezimalwerte für Web-Farben werden auf die Website angewendet.
-    <img src="/images/config-theme_color_scheme.webp" alt="Aktualisierte Farbangaben im Kernthema Bartik" width="100%" />
+    <img src="/images/config-theme_color_scheme.png" alt="Aktualisierte Farbangaben im Kernthema Bartik" width="100%" />
 
 1. Deaktivieren Sie unter _Logo_ das Häkchen bei _Das vom Theme bereitgestellte Logo verwenden_.
-    ![Neues Logo in den Einstellungen des Kernsystemthemes Bartik](/images/config-theme_logo_upload.webp)
+    ![Neues Logo in den Einstellungen des Kernsystemthemes Bartik](/images/config-theme_logo_upload.png)
 1. Wählen Sie im Feld _Logo hochladen_ eine Logo-Datei aus und laden
     Sie diese auf Ihre Website hoch. Hinweis: Sie können auch ein allgemeines
     Logo für alle Themes festlegen. Navigieren Sie hierzu zum, Menüpunkt:
@@ -95,7 +95,7 @@ Bearbeiten Sie die Einstellungen des Standard-Themes des Kernsystems
 1. Klicken Sie in der Werkzeugleiste auf _Zurück zur Website_ oder _Home_,
     um zu überprüfen, ob die Einstellungen für Bartik auf Ihre Website
     aktualisiert wurden.
-    <img src="/images/config-theme_final_result.webp" alt="Endergebnis der Bearbeitung der zentralen Bartik-Themeneinstellungen - Farben und Logo" width="100%" />
+    <img src="/images/config-theme_final_result.png" alt="Endergebnis der Bearbeitung der zentralen Bartik-Themeneinstellungen - Farben und Logo" width="100%" />
 
 ## Vertiefen Sie Ihr Wissen
 

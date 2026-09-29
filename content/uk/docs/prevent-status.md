@@ -15,7 +15,7 @@ source_locale: "uk"
 Ви можете знайти звіт про стан в _Керування_ адміністративного меню
 перейшовши в _Звіти_ > _Звіт про стан_ (_admin/reports/status_).
 
-![Звіт про стан базового сайту](/images/prevent-status.webp)
+![Звіт про стан базового сайту](/images/prevent-status.png)
 ## Схожі теми
 
 [thoughts-support](./thoughts-support.md)

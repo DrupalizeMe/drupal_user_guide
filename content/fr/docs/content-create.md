@@ -55,7 +55,7 @@ vous l'installez avec le profil d'installation Standard du cœur.
 
     En cliquant sur le bouton _Source_ dans la barre d'outil de texte riche, vous
     pouvez voir le code source HTML du texte en cours de modification.
-    <img src="/images/content-create-create-basic-page.webp" alt="Créer une page de base" width="100%" />
+    <img src="/images/content-create-create-basic-page.png" alt="Créer une page de base" width="100%" />
 
 1. Cliquer sur _Aperçu_ pour vous assurer que tout est correct.
 1. Cliquer sur _Revenir à la modification du contenu_.

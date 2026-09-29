@@ -46,7 +46,7 @@ Siehe:[planning-structure](./planning-structure.md).
       </tbody>
     </table>
 
-    ![Adding a Content type](/images/structure-content-type-add.webp)
+    ![Adding a Content type](/images/structure-content-type-add.png)
 
 1. Legen Sie unter _Einstellungen für das Eingabeformular_ die Einstellungen des Formulars fest, welches für die Erstellung und Bearbeitung von Inhalten die zu diesem Inhaltstyp gehören verwendet werden wird. Füllen Sie die Felder wie unten dargestellt aus.
     <table>
@@ -76,7 +76,7 @@ Siehe:[planning-structure](./planning-structure.md).
       </tbody>
     </table>
 
-    ![Submission form settings](/images/structure-content-type-add-submission-form-settings.webp)
+    ![Submission form settings](/images/structure-content-type-add-submission-form-settings.png)
 
 1. Legen Sie unter _Veröffentlichungseinstellungen_ die Standardeinstellungen für neue
     Inhalte dieser Art fest. Füllen Sie die Felder wie unten dargestellt aus.
@@ -114,7 +114,7 @@ Siehe:[planning-structure](./planning-structure.md).
 
     Die Änderung dieser Einstellungen wirkt sich nicht auf die Inhalte aus, die bereits
     erstellt wurden.
-    ![Publishing Options](/images/structure-content-type-add-Publishing-Options.webp)
+    ![Publishing Options](/images/structure-content-type-add-Publishing-Options.png)
 
 1. Entscheiden Sie unter _Anzeigeeinstellungen_, ob der Autor und
     das Veröffentlichungsdatum  im Inhalt angezeigt werden sollen. Füllen Sie die Felder wie unten dargestellt aus.
@@ -135,7 +135,7 @@ Siehe:[planning-structure](./planning-structure.md).
       </tbody>
     </table>
 
-    ![Display settings](/images/structure-content-type-add-Display-settings.webp)
+    ![Display settings](/images/structure-content-type-add-Display-settings.png)
 
 1. Füllen Sie unter _Menüeinstellungen_ die Felder wie unten dargestellt aus.
     <table>
@@ -155,12 +155,12 @@ Siehe:[planning-structure](./planning-structure.md).
       </tbody>
     </table>
 
-    ![Menu settings](/images/structure-content-type-add-Menu-settings.webp)
+    ![Menu settings](/images/structure-content-type-add-Menu-settings.png)
 
 1. Klicken Sie auf _Speichern und Felder verwalten_, um den Inhaltstyp zu speichern. Die
     Seite _Felder verwalten_ erscheint, auf der Sie Felder zum Inhalt hinzufügen können.
     type. Siehe [structure-fields](./structure-fields.md)
-    <img src="/images/structure-content-type-add-confirmation.webp" alt="Confirmation" width="100%" />
+    <img src="/images/structure-content-type-add-confirmation.png" alt="Confirmation" width="100%" />
 1. Führen Sie die gleichen Schritte aus, um einen Inhaltstyp für Rezepte anzulegen. Beispiel-Werte
     für die Felder in den Formularen, wenn diese sich von den obigen Schritten unterscheiden:
     <table>

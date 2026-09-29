@@ -19,10 +19,10 @@ exist. See [content-create](./content-create.md).
 1. Under _Front page_, replace _/node_ with the name of the page you
     would like to make the home page. To use the home page that was previously
     created, provide its path _/home_. Click _Save configuration_.
-    !['FRONT PAGE' area with /home in text field](/images/menu-home_new_text_field.webp)
+    !['FRONT PAGE' area with /home in text field](/images/menu-home_new_text_field.png)
 1. Navigate to the home page to verify that it displays content as configured by
     you.
-    <img src="/images/menu-home_final.webp" alt="'FRONT PAGE' with 'Home' (Basic page) content added" width="100%" />
+    <img src="/images/menu-home_final.png" alt="'FRONT PAGE' with 'Home' (Basic page) content added" width="100%" />
 
 ## Expand your understanding
 

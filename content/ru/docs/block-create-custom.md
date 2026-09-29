@@ -39,7 +39,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Добавление блока контента](/images/block-create-custom-add-custom-block.webp)
+    ![Добавление блока контента](/images/block-create-custom-add-custom-block.png)
 
 1. Нажмите _Сохранить_. Появится сообщение о сохранении блока.
 ## Расширьте понимание

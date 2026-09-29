@@ -29,14 +29,14 @@ abajo.
     Los archivos de idioma del idioma elegido se descargarán e instalarán para que
     el resto del proceso de instalación pueda completarse en ese idioma. Después de
     elegir un idioma, haga clic en _Save and continue_.
-    <img src="/images/install-run-1.webp" alt="Choose a language" width="100%" />
+    <img src="/images/install-run-1.png" alt="Choose a language" width="100%" />
 1. Seleccione un perfil de instalación. Los perfiles de instalación proporcionan
     características y funcionalidades de sitio para un tipo específico de sitio a
     modo de una única descarga que contiene el software del núcleo, los módulos
     contribuidos, los temas y una configuración predefinida. El núcleo contiene dos
     perfiles de instalación. Seleccione el perfil de instalación Standard del
     núcleo. Haga clic en _Save and continue_.
-    <img src="/images/install-run-2.webp" alt="Choose an installation profile" width="100%" />
+    <img src="/images/install-run-2.png" alt="Choose an installation profile" width="100%" />
 1. El siguiente paso del instalador comprobará que su sistema cumple los
     requisitos mínimos. Si no los cumple, se le mostrará un resumen de lo que hay
     que corregir para poder continuar. Si los cumple, el instalador avanzará
@@ -70,12 +70,12 @@ abajo.
       </tbody>
     </table>
 
-    <img src="/images/install-run-3.webp" alt="Database configuration form" width="100%" />
+    <img src="/images/install-run-3.png" alt="Database configuration form" width="100%" />
 
 1. El siguiente paso mostrará una barra de progreso bajo el encabezado
     _Installing Drupal_. Cuando el instalador termine, avanzará automáticamente al
     siguiente paso.
-    <img src="/images/install-run-4.webp" alt="Installation progress bar" width="100%" />
+    <img src="/images/install-run-4.png" alt="Installation progress bar" width="100%" />
 1. El siguiente paso es configurar cierta información básica sobre su nuevo sitio
     (fíjese también si aparece un aviso sobre los permisos de archivos, para un
     paso posterior). Tenga en cuenta que la cuenta de usuario que cree en este paso
@@ -127,13 +127,13 @@ abajo.
     </table>
 
     Los campos restantes pueden dejarse con sus valores predeterminados.
-    <img src="/images/install-run-5.webp" alt="Configuration form" width="100%" />
+    <img src="/images/install-run-5.png" alt="Configuration form" width="100%" />
 
 1. Haga clic en _Save and continue_.
 1. Se le redirigirá a la página de inicio de su nuevo sitio y debería ver el
     mensaje _Congratulations, you installed Drupal!_ en la parte superior de la
     página.
-    <img src="/images/install-run-6.webp" alt="Installation success" width="100%" />
+    <img src="/images/install-run-6.png" alt="Installation success" width="100%" />
 1. Puede que haya visto un aviso en el paso de configuración sobre los permisos
     de archivos, y puede que siga viéndolo hasta que corrija los permisos. Para
     evitar el aviso y hacer su sitio más seguro, cambie los permisos del directorio

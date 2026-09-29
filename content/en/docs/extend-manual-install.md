@@ -39,7 +39,7 @@ way you initially created the archive file.
     and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory
     for modules and themes that they created. Your _modules_ directory might look
     like this:
-    <img src="/images/extend-manual-install-directories.webp" alt="Suggested directory structure for modules" width="174px" />
+    <img src="/images/extend-manual-install-directories.png" alt="Suggested directory structure for modules" width="174px" />
 1. If you are replacing an existing module or theme with an updated version, put
     the site into maintenance mode. See [extend-maintenance](./extend-maintenance.md).
 1. If you are replacing an existing module or theme with an updated version, find

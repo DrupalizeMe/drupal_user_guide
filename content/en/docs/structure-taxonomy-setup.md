@@ -25,7 +25,7 @@ The Recipe content type must exist. See [structure-content-type](./structure-con
     created with the core Standard installation profile. (Note that the name and
     description of this vocabulary are shown in English on this page; see
     [language-concept](./language-concept.md) for an explanation.)
-    <img src="/images/structure-taxonomy-setup-taxonomy-page.webp" alt="taxonomy list page" width="100%" />
+    <img src="/images/structure-taxonomy-setup-taxonomy-page.png" alt="taxonomy list page" width="100%" />
 1. Click _Add vocabulary_, and fill in the values below.
     <table>
       <thead>
@@ -49,19 +49,19 @@ The Recipe content type must exist. See [structure-content-type](./structure-con
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-add-vocabulary.webp" alt="taxonomy add Ingredients" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-vocabulary.png" alt="taxonomy add Ingredients" width="100%" />
 
 1. Click _Save_. You will be taken to the Ingredients page, which shows a list
     of all the terms in this vocabulary.
-    <img src="/images/structure-taxonomy-setup-vocabulary-overview.webp" alt="Ingredients taxonomy term listing" width="100%" />
+    <img src="/images/structure-taxonomy-setup-vocabulary-overview.png" alt="Ingredients taxonomy term listing" width="100%" />
 1. Click _Add term_. Enter "Butter" in the _Name_ field. Click _Save_.
-    <img src="/images/structure-taxonomy-setup-add-term.webp" alt="Add term page" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-term.png" alt="Add term page" width="100%" />
 1. You will receive a confirmation about the term you created. Add more
     terms. For example, "Eggs" and "Milk".
 1. In the _Manage_ administrative menu, navigate to _Structure_ > _Content Types_
     (_admin/structure/types_). Click _Manage fields_ for your Recipe content type.
 1. Click _Create a new field_. The _Add field_ page appears. Choose the _Reference_ field type from the _Choose a field type_ options. Click _Continue_. The _Add field_ page appears with a form to configure the field.
-    ![Add Ingredients field to Content type Recipe](/images/structure-taxonomy-setup-add-field.webp)
+    ![Add Ingredients field to Content type Recipe](/images/structure-taxonomy-setup-add-field.png)
 1. Enter values from the table below. Click _Continue_.
     <table>
       <thead>
@@ -85,7 +85,7 @@ The Recipe content type must exist. See [structure-content-type](./structure-con
       </tbody>
     </table>
 
-    ![Settings for Ingredients field](/images/structure-taxonomy-setup-add-field-label.webp)
+    ![Settings for Ingredients field](/images/structure-taxonomy-setup-add-field-label.png)
 
 1. On the following configuration screen, enter the values from the table below. Click _Save settings_.
     <table>
@@ -130,12 +130,12 @@ The Recipe content type must exist. See [structure-content-type](./structure-con
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-field-settings-2.webp" alt="reference type field settings" width="100%" />
+    <img src="/images/structure-taxonomy-setup-field-settings-2.png" alt="reference type field settings" width="100%" />
 
 1. Click _Save settings_. You will be taken back to the _Manage Fields_ page. A
     message will be displayed saying that the configuration for Ingredients is
     complete.
-    <img src="/images/structure-taxonomy-setup-finished.webp" alt="Manage fields page for Recipe content type" width="100%" />
+    <img src="/images/structure-taxonomy-setup-finished.png" alt="Manage fields page for Recipe content type" width="100%" />
 
 ## Videos
 

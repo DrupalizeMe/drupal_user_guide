@@ -20,7 +20,7 @@ Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe [user-new-role]
 
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Benutzer_ (_admin/people_).
 1. Klicken Sie auf _Benutzer hinzufügen_.
-    <img src="/images/user-new-user_form.webp" alt="Form for creating a new user account" width="100%" />
+    <img src="/images/user-new-user_form.png" alt="Form for creating a new user account" width="100%" />
 1. Füllen Sie die Formularfelder wie folgt aus. Siehe: Tabelle unten.
     <table>
       <thead>
@@ -79,7 +79,7 @@ Die Rolle Lieferant muss auf Ihrer Website vorhanden sein. Siehe [user-new-role]
       </tbody>
     </table>
 1. Klicken Sie auf _Neues Benutzerkonto erstellen_. Es wird eine Meldung ausgegeben, dass das neue Benutzrkonto angelegt wurde.
-    <img src="/images/user-new-user-created.webp" alt="New user account has been created" width="100%" />
+    <img src="/images/user-new-user-created.png" alt="New user account has been created" width="100%" />
 1. Erstellen Sie ein zweites Benutzerkonto für den Lieferanten „Happy Farm“, indem Sie die oben angegebenen Schritte wiederholen.
 
 ## Vertiefen Sie Ihr Wissen

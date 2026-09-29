@@ -15,11 +15,11 @@ Tiltsuk le webhelyünkön a regisztrációs lehetőséget, így csak az adminisz
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Felhasználók_ > _Fiókbeállítások_ oldalra (vagy a címsorban adjuk meg az _admin/config/people/accounts_ útvonalat).
 1. Az _Új felhasználó létrehozása és törlése_ keretben a _Ki hozhat létre új felhasználót?_ kérdés alatt válasszuk a „Csak az adminisztrátorok” lehetőséget. Arra az esetre, ha a jövőben változtatunk a regisztrációs szabályokon a webhelyünkön, akkor az „E-mail cím valódiságának ellenőrzése, amikor egy látogató létrehoz egy fiókot” jelölőnégyzetet érdemes lesz engedélyeznünk.
-    ![Fióklétrehozás csak adminisztrátor által](/images/config-user_account_reg.webp)
+    ![Fióklétrehozás csak adminisztrátor által](/images/config-user_account_reg.png)
 1. Ha szeretnénk különválasztani a Termelői Piac webhelyünk által automatikusan kiküldött valamennyi e-mail közül a csak felhasználói fiókokkal kapcsolatosakat, akkor itt megadhatunk egy alapértelmezett e-mail címet, amiről az ilyen levelek menni fognak, és feladóként látszik majd az árusok postafiókjában. Egy ilyen postafiók beállítása például hasznos lehet arra is, hogy az adminisztrátorok az árusokkal a webhellyel kapcsolatban kommunikáljanak egymással.
-    ![Az automata értesítések feladó e-mail címe](/images/config-user_from_email.webp)
+    ![Az automata értesítések feladó e-mail címe](/images/config-user_from_email.png)
 1. Természetesen nemcsak a kimenő levelek feladóját, hanem azok szövegét is kedvünk szerint szerkeszthetjük az _E-mailek_ cím alatti függőleges füleken le-föl mozogva. Mindegyik szöveg más-más esetben lesz használva, amikor a felhasználói fiókokkal kapcsolatban változás történik. Ha például szeretnénk módosítani az árusnak küldött üdvözlőlevelet, akinek éppen a fiókját létrehoztuk, akkor a legelső fül „Törzs” mezőjében fogalmazzuk át a levél szövegét:
-    <img src="/images/config-user_email.webp" alt="Felhasználói fiókokkal kapcsolatos események e-mail értesítőinek sablonszövegei" width="100%" />
+    <img src="/images/config-user_email.png" alt="Felhasználói fiókokkal kapcsolatos események e-mail értesítőinek sablonszövegei" width="100%" />
 
     Összesen kilenc sablonszöveget tartalmaz az alaprendszer, melyeket itt már magyarra lefordítva láthatunk. Ezek közül az alábbi három használata külön-külön is engedélyezhető:
     * Felhasználó aktiválása

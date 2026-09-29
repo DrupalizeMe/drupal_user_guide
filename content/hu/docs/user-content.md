@@ -23,9 +23,9 @@ Az Árus típusú tartalmainknak módosítani fogjuk a szerzőjét a megfelelő 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Tartalom_ oldalra (vagy a címsorban adjuk meg az _admin/content_ útvonalat).
 1. A könnyebb áttekintés kedvéért szűkítsük le a felsorolást a _Tartalomtípus_ legördülőben az _Árus_ lehetőséget választva és a _Szűrő_ gombra kattintva. Így már egyszerűbb megtalálnunk a _Víg Tanya_ árus bemutatkozó oldalát, amely sorának a jobb végén kattintsunk a _Szerkesztés_ gombra.
 1. A tartalom szerkesztőoldalán a jobb oldalsávban találjuk a _Szerzői információk_ keretet. (Ha nem lenne nyitva, a fejlécére kattintva nyissuk ki.) A _Szerző_ beviteli mezőbe kezdjük el gépelni a „víg” szót. Az automatikusan megjelenő találatok közül válasszuk ki a _Víg Tanya_ nevűt:
-    ![Szerző hozzárendelése az Árus típusú tartalomhoz](/images/user-content.webp)
+    ![Szerző hozzárendelése az Árus típusú tartalomhoz](/images/user-content.png)
 1. Az oldal legalján kattintsunk a _Mentés_ gombra. Ezután egy _Víg Tanya Árus frissítve lett_ állapotüzenet tájékoztat róla, ha a mentés sikeres volt:
-    ![Árus típusú tartalom frissítve lett](/images/user-content_updated.webp)
+    ![Árus típusú tartalom frissítve lett](/images/user-content_updated.png)
 1. Ugyanezen lépéseket megismételve rendeljük hozzá a _Csemege Méhészet_ bemutatkozó oldalához a felhasználói fiókjukat szerzőként.
 ## Videó
 

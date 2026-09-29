@@ -68,7 +68,7 @@ en _Administrar_ para exponer las opciones del menú. Entonces, haga click en _E
 en _Taxonomía_, y finalmente, estaría en la pagina con la URL _http://example.com/admin/structure/taxonomy_
 ( si la URL base de su sitio web es _http://example.com_ ).
 
-<img src="/images/preface-conventions-top-menu.webp" alt="Admin menu" width="100%" />
+<img src="/images/preface-conventions-top-menu.png" alt="Admin menu" width="100%" />
 
 Aqui vemos otro ejemplo:
 
@@ -81,7 +81,7 @@ encontrar la sección _Sistema_ en la página, y dentro de ella, hacer click en
 _Configuraciones básicas del sitio_. Una vez realizados estos pasos, debería terminar en 
 http://example.com/admin/config/system/site-information_.
 
-![_System_ section of the Configuration page](/images/preface-conventions-config-system.webp)
+![_System_ section of the Configuration page](/images/preface-conventions-config-system.png)
 
 Una nota más: si está usando el tema administrativo estándar del núcleo Seven, muchos botones
 de "Añadir" son mostrados con signos de + en ellos. Por ejemplo, en admin/content, el botón de 

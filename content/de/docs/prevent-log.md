@@ -17,7 +17,7 @@ kann, was auf der Website vor sich geht.
 Die aktuellen Protokollmeldungen Ihrer Website finden Sie im Menü _Verwalten_.
 unter dem Menüpunkt _Berichte_ > _Aktuelle Protokollnachrichten_ (_admin/reports/dblog_).
 
-<img src="/images/prevent-log.webp" alt="Neueste Logmeldungen einer Basis-Site" width="100%" />
+<img src="/images/prevent-log.png" alt="Neueste Logmeldungen einer Basis-Site" width="100%" />
 
 *Mitwirkende*
 

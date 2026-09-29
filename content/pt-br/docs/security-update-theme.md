@@ -42,7 +42,7 @@ the instructions for the administrative interface below.
     _Available updates_ > _Update_ (_admin/reports/updates/update_).
 1. Find and check the theme in the list. Click _Download these updates_ for the
     theme.
-    <img src="/images/security-update-theme-updates.webp" alt="Available updates" width="100%" />
+    <img src="/images/security-update-theme-updates.png" alt="Available updates" width="100%" />
 1. Click _Continue_.
 1. Click _Run database updates_. If you obtained the new theme files manually,
     start with this step, and reach the database updates page by typing the URL

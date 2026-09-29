@@ -44,7 +44,7 @@ way you initially created the archive file.
 1. Open the module or theme project page on drupal.org; for example, the _Admin
     toolbar_ page (https://www.drupal.org/project/admin_toolbar).
 1. Scroll to the _Downloads_ section near the bottom of the page.
-    ![Downloading module files](/images/extend-manual-install-download.webp)
+    ![Downloading module files](/images/extend-manual-install-download.png)
 1. Click _tar.gz_ to download the file to your computer.
 ### Uploading the files to your site and unpacking them
 
@@ -54,7 +54,7 @@ way you initially created the archive file.
     and themes that are downloaded from _Drupal.org_, and a _custom_ subdirectory for
     modules and themes that they created. Your _modules_ directory might look like
     this:
-    <img src="/images/extend-manual-install-directories.webp" alt="Suggested directory structure for modules" width="174px" />
+    <img src="/images/extend-manual-install-directories.png" alt="Suggested directory structure for modules" width="174px" />
 1. If you are replacing an existing module or theme with an updated version, put
     the site into maintenance mode. See [extend-maintenance](./extend-maintenance.md).
 1. If you are replacing an existing module or theme with an updated version, find

@@ -23,7 +23,7 @@ Installation der Website verwenden, und über alle administrativen Berechtigunge
 verfügen, sind in der obersten Menüebene der Werkzeugleiste folgende
 Einträge vorhanden:
 
-<img src="/images/config-overview-toolbar.webp" alt="Administrative menu in horizontal mode" width="100%" />
+<img src="/images/config-overview-toolbar.png" alt="Administrative menu in horizontal mode" width="100%" />
 
 - **Inhalt:** Listet vorhandene Inhalte auf, ermöglicht deren Verwaltung und das Erstellen neuer Inhalte.
 - **Struktur:** Enthält eine Liste von Links zur Verwaltung von Strukturelementen der Website, wie Blöcke, Inhaltstypen, Menüs und Taxonomievokabularien.
@@ -42,7 +42,7 @@ Layout auf der linken Seite (oder auf der rechten Seite, bei Sprachen, die von
 rechts nach links gelesen werden) umzustellen. Bei vertikaler Ansicht wird das
 Menü zu einer interaktiven Baumstruktur.
 
-<img src="/images/config-overview-vertical-menu.webp" alt="Administrative menu in vertical mode" width="228px" />
+<img src="/images/config-overview-vertical-menu.png" alt="Administrative menu in vertical mode" width="228px" />
 
 Dieses Handbuch enthält eine Standardbeschreibung für die Navigation zu  den
 Seiten des Verwaltungsbereichs über die Werkzeugleiste.
@@ -71,7 +71,7 @@ der kontextbezogene Links enthält.
 am rechten Ende des Verwaltungsmenüs in der Werkzeugleiste klicken, um alle
 kontextbezogenen Links auf der aktuellen Seite anzeigen zu lassen.
 Dieses Symbol ist nur auf Seiten mit Kontextlinks sichtbar.
-<img src="/images/config-overview-pencils.webp" alt="Seite mit eingeschalteten Bleistift-Symbolen" width="100%" />
+<img src="/images/config-overview-pencils.png" alt="Seite mit eingeschalteten Bleistift-Symbolen" width="100%" />
 
 *Mitwirkende*
 

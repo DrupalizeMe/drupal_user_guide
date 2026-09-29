@@ -48,7 +48,7 @@ Add an image style and use it to display images on Vendor pages.
       </tbody>
     </table>
 1. Click _Add effect_. The image style is saved with the chosen effects.
-    <img src="/images/structure-image-style-create-add-style.webp" alt="Add an image style" width="100%" />
+    <img src="/images/structure-image-style-create-add-style.png" alt="Add an image style" width="100%" />
 1. In the _Manage_ administrative menu, navigate to _Structure_ > _Content types_
     (_admin/structure/types_).
 1. Click _Manage display_ in the _Operations_ dropdown for the Vendor content
@@ -80,7 +80,7 @@ Add an image style and use it to display images on Vendor pages.
       </tbody>
     </table>
 
-    ![Change field formatter settings of image field](/images/structure-image-style-create-manage-display.webp)
+    ![Change field formatter settings of image field](/images/structure-image-style-create-manage-display.png)
 
 1. Click _Update_.
 1. Click _Save_. The new image style will be used while displaying Vendor

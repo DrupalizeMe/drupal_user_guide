@@ -18,7 +18,7 @@ verwenden.
 
 1. Rufen Sie die Website _https://www.drupal.org_  auf und navigieren Sie im
     Hauptmenü auf die Seite _Build_ > _Download & Extend_.
-    <img src="/images/install-prepare-downloads.webp" alt="Downloads page on _Drupal.org_" width="100%" />
+    <img src="/images/install-prepare-downloads.png" alt="Downloads page on _Drupal.org_" width="100%" />
 1. Wenn Sie nur das Kernsystem herunterladen möchten, klicken Sie auf den Link
     _Download Drupal zip_ oder den Link _download tar.gz_, und speichern Sie die
      Datei auf Ihrem lokalen Rechner.
@@ -27,7 +27,7 @@ verwenden.
       aus, klicken Sie sich zur Seite des gewünschten Projekts durch
       und klicken Sie auf den Link, um eine Zip- oder tar.gz-Datei auf Ihren lokalen
       Rechner herunterzuladen. der Link sieht beispielsweise so aus:
-    ![Finding a download URL](/images/extend-module-install-download.webp)
+    ![Finding a download URL](/images/extend-module-install-download.png)
 1. Laden Sie die heruntergeladene Datei über Ihren Hosting-Account hoch.
 1. Melden Sie sich im Kontrollzentrum an und navigieren Sie zum Verzeichnis _html_.
 1. Legen Sie die Datei dort ab.

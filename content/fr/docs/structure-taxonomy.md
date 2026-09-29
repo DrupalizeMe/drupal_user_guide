@@ -46,7 +46,7 @@ contenu qui sont classés avec ce terme. Par exemple, si vous créez plusieurs
 recettes qui ont toute la carotte comme ingrédient, vous pourriez voir quelque
 chose comme ça dans la page listant l'utilisation du terme Carotte :
 
-![Page de liste de taxonomie - carottes](/images/structure-taxonomy_listingPage_carrots.webp)
+![Page de liste de taxonomie - carottes](/images/structure-taxonomy_listingPage_carrots.png)
 ## Sujets liés
 
 * [structure-taxonomy-setup](./structure-taxonomy-setup.md).

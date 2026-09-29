@@ -32,10 +32,10 @@ Vendor URL, y su sitio debe tener al menos un elemento de contenido Vendor. Ver
     adicionales, en el menú administrativo _Manage_, vaya a _Structure_ > _Content
     types_ (_admin/structure/types_). Después haga clic en _Manage display_ en el
     botón desplegable del tipo de contenido Vendor.
-    <img src="/images/structure-content-display_manage_display.webp" alt="Manage display" width="100%" />
+    <img src="/images/structure-content-display_manage_display.png" alt="Manage display" width="100%" />
 1. En la columna _Label_, seleccione _Hidden_ para Main image. Haga lo mismo con
     Vendor URL.
-    <img src="/images/structure-content-display_main_image_hidden.webp" alt="Selecting _main image title_ as _hidden_" width="100%" />
+    <img src="/images/structure-content-display_main_image_hidden.png" alt="Selecting _main image title_ as _hidden_" width="100%" />
 1. Haga clic en la rueda dentada del campo Vendor URL para abrir las opciones de
     configuración.
 1. Rellene los campos como se muestra a continuación.
@@ -61,7 +61,7 @@ Vendor URL, y su sitio debe tener al menos un elemento de contenido Vendor. Ver
       </tbody>
     </table>
 
-    <img src="/images/structure-content-display_trim_length.webp" alt="Link trim length" width="100%" />
+    <img src="/images/structure-content-display_trim_length.png" alt="Link trim length" width="100%" />
 
 1. Haga clic en _Update_.
 1. Arrastre los tiradores en cruz de los campos para reordenarlos como Main
@@ -69,7 +69,7 @@ Vendor URL, y su sitio debe tener al menos un elemento de contenido Vendor. Ver
     clic en el enlace _Show row weights_ situado en la parte superior de la tabla e
     introducir pesos numéricos (los campos con pesos menores o más negativos se
     mostrarán primero).
-    <img src="/images/structure-content-display_change_order.webp" alt="Changing order of fields" width="100%" />
+    <img src="/images/structure-content-display_change_order.png" alt="Changing order of fields" width="100%" />
 1. Haga clic en _Save_.
 1. Vuelva a buscar el elemento de contenido Vendor del paso 1 y compruebe que se
     han aplicado las actualizaciones.

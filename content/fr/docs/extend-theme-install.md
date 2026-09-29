@@ -32,7 +32,7 @@ d'administration, soit Drush.
     _Releases_ (versions) en bas de page.
 1. Copier la commande Composer fournie correspondant à la version du thème que
     vous souhaitez installer.
-    ![Trouver la commande d'installation d'un thème avec Composer](/images/extend-theme-install-download.webp)
+    ![Trouver la commande d'installation d'un thème avec Composer](/images/extend-theme-install-download.png)
 1. Vous pouvez autrement taper la commande suivante (en remplaçant le nom
     machine du thème et la version souhaitée) :
     ```text
@@ -50,7 +50,7 @@ d'administration, soit Drush.
 1. Localiser le nouveau thème sous _Thèmes désinstallés_ et cliquer sur
     _Installer et définir par défaut_ pour l'utiliser. Toutes les pages hors celles
     d'administration de votre site utiliseront alors ce nouveau thème.
-    <img src="/images/extend-theme-install-appearance-page.webp" alt="Thèmes désinstallés sur la page Apparence" width="286px" />
+    <img src="/images/extend-theme-install-appearance-page.png" alt="Thèmes désinstallés sur la page Apparence" width="286px" />
 
 ### Utiliser Drush pour installer un thème
 

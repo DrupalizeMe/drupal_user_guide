@@ -41,11 +41,11 @@ Verwendung der Benutzeroberfläche unten fortfahren installieren.
     _https://www.drupal.org/project/honey_), navigieren Sie zum Abschnitt _Downloads_
     im unteren Teil der Seite.
 1. Klicken Sie mit der rechten Maustaste auf _tar.gz_, um die Adresse des Archivs zu kopieren.
-    ![Die URL für ein Thema finden](/images/extend-theme-install-download.webp)
+    ![Die URL für ein Thema finden](/images/extend-theme-install-download.png)
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Design_
     (_/admin/appearance_). Die Seite _Design_ erscheint.
 1. Klicken Sie auf _Neues Theme installieren_. Die Seite _Neues Theme installieren_ wird angezeigt.
-    ![Installing a theme](/images/extend-theme-install-page.webp)
+    ![Installing a theme](/images/extend-theme-install-page.png)
 1. Fügen Sie in das Feld _Von URL installieren_ den kopierten Download-Link ein. Dieser Wert
     könnte so aussehen
     https://ftp.drupal.org/files/projects/honey-1.0.1.tar.gz`.
@@ -60,7 +60,7 @@ Verwendung der Benutzeroberfläche unten fortfahren installieren.
     _Installieren und als Standard festlegen_.
     Alle Seiten, die nicht zum Verwaltungsbereich Ihrer Website gehören,
     verwenden nun das von Ihnen festgelegte Theme.
-    <img src="/images/extend-theme-install-appearance-page.webp" alt="Uninstalled themes on Appearance page" width="286px" />
+    <img src="/images/extend-theme-install-appearance-page.png" alt="Uninstalled themes on Appearance page" width="286px" />
 
 #### Drush zur Installation eines Themes verwenden
 

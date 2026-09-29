@@ -40,7 +40,7 @@ Créer un bloc affichant les horaires et la localisation du marché fermier.
       </tbody>
     </table>
 
-    ![Ajouter un bloc de contenu](/images/block-create-custom-add-custom-block.webp)
+    ![Ajouter un bloc de contenu](/images/block-create-custom-add-custom-block.png)
 
 1. Cliquer sur _Enregistrer_. Un message indiquant que le bloc a été enregistré
     apparaît.

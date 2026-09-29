@@ -51,7 +51,7 @@ kompatibel ist.
 1. Öffnen Sie die Projektseite des gewünschten Moduls oder Themes auf drupal.org.
     Zum Beispiel die Projektseite des Moduls, _Admin Toolbar_ (https://www.drupal.org/project/admin_toolbar).
 1. Scrollen Sie zum Abschnitt _Downloads_ im unteren Bereich der Seite.
-    ![Downloading module files](/images/extend-manual-install-download.webp)
+    ![Downloading module files](/images/extend-manual-install-download.png)
 1. Klicken Sie auf _tar.gz_, um die Datei auf Ihren Computer herunterzuladen.
     Wenn Sie Terminal-Zugang zu Ihrem Hosting-Server (unter Linux) haben, können Sie
     alternativ die Link-Adresse für die _tar.gz_-Datei mit Hilfe Ihres Browsers
@@ -70,7 +70,7 @@ kompatibel ist.
     Außerdem wird normalerweise ein Unterverzeichnis mit dem Namen _custom_ angelegt für
     Module und Themes, die sie selbst erstellt haben.
     Ihr _Modul_-Verzeichnis könnte dann wie folgt aussehen:
-    <img src="/images/extend-manual-install-directories.webp" alt="empfohlene Verzeichnisstruktur für das verzeichnis modules" width="174px" />
+    <img src="/images/extend-manual-install-directories.png" alt="empfohlene Verzeichnisstruktur für das verzeichnis modules" width="174px" />
 1. Wenn Sie ein vorhandenes Modul oder Theme durch eine aktualisierte Version
     ersetzen wollen, versetzen Sie die Website in den Wartungsmodus.
     Siehe: [extend-maintenance](./extend-maintenance.md).

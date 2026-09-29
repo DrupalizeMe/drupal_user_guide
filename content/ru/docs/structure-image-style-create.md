@@ -46,7 +46,7 @@ source_locale: "ru"
       </tbody>
     </table>
 1. Нажмите _Добавить эффект_. Стиль изображения будет сохранён с добавленным эффектом.
-    <img src="/images/structure-image-style-create-add-style.webp" alt="Добавить стиль изображения" width="100%" />
+    <img src="/images/structure-image-style-create-add-style.png" alt="Добавить стиль изображения" width="100%" />
 1. В административном меню _Управление_ перейдите в _Структура_ > _Типы материалов_ (_admin/structure/types_).
 1. В выпадающем меню _Операции_ для типа материала Производитель выберите _Управление отображением_. Откроется страница _Управление отображением_ (_admin/structure/types/manage/vendor/display_).
 1. Убедитесь, что выбрана вкладка _По умолчанию_ (_Default_).
@@ -74,7 +74,7 @@ source_locale: "ru"
       </tbody>
     </table>
 
-    ![Настройки форматирования поля изображения](/images/structure-image-style-create-manage-display.webp)
+    ![Настройки форматирования поля изображения](/images/structure-image-style-create-manage-display.png)
 
 1. Нажмите _Обновить_.
 1. Нажмите _Сохранить_. Новый стиль изображения будет использоваться для отображения материалов типа Производитель.

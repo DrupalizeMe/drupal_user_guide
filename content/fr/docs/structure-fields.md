@@ -27,7 +27,7 @@ Ajouter les champs URL du vendeur et image principale au type de contenu Vendeur
     affichés en anglais sur ces pages ; consulter [language-concept](./language-concept.md) pour une
     explication.
 1. Cliquer sur _Ajouter champ_. La page _Ajouter un champ_ apparaît.
-    ![Choix d'un type de champ sur la page d'ajout d'un champ](/images/structure-fields-add-field.webp)
+    ![Choix d'un type de champ sur la page d'ajout d'un champ](/images/structure-fields-add-field.png)
 1. Choisir le type de champ _Lien_ dans les options _Choisir un type de champ_.
     Cliquer sur _Continuer_. La page _Ajouter un champ apparaît. Elle contient un
     champ permettant de configurer l'étiquette du champ.
@@ -56,7 +56,7 @@ Ajouter les champs URL du vendeur et image principale au type de contenu Vendeur
 
     Un nom système est automatiquement généré, basé sur la valeur de l'_Étiquette_.
     Cliquer sur _Modifier_ si vous souhaitez surcharger la valeur par défaut.
-    ![Page Ajouter un champ permettant de configurer l'étiquette du champ](/images/structure-fields-add-field-label.webp)
+    ![Page Ajouter un champ permettant de configurer l'étiquette du champ](/images/structure-fields-add-field-label.png)
 
 1. Cliquer sur _Continuer_. La page URL du vendeur apparaît, qui
     vous permet de configurer le champ. Remplir les champs comme
@@ -103,7 +103,7 @@ Ajouter les champs URL du vendeur et image principale au type de contenu Vendeur
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-vendor-url.webp" alt="Page de configuration du champ URL du vendeur" width="100%" />
+    <img src="/images/structure-fields-vendor-url.png" alt="Page de configuration du champ URL du vendeur" width="100%" />
 
 1. Cliquer sur _Enregistrer les paramètres_. L'URL du vendeur a été ajoutée au
     type de contenu. Continuer en créant le champ image principale.
@@ -201,17 +201,17 @@ Ajouter les champs URL du vendeur et image principale au type de contenu Vendeur
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-main-img.webp" alt="Page de configuration du champ image principale" width="100%" />
+    <img src="/images/structure-fields-main-img.png" alt="Page de configuration du champ image principale" width="100%" />
 
 1. Cliquer sur _Enregistrer les paramètres_. L'image principale a été ajoutée au
     type de contenu.
-    <img src="/images/structure-fields-result.webp" alt="Page Gérer les champs" width="100%" />
+    <img src="/images/structure-fields-result.png" alt="Page Gérer les champs" width="100%" />
 1. Ajouter un champ Image principale au type de contenu Recette, en utilisant les
     mêmes étapes. Commencer par aller à la page de _Gérer les champs_ du type de
     contenu Recette. Utiliser ensuite le bouton _Réutiliser_ qui correspond au champ
     Image principale dans le tableau. Aller directement à l'étape 7 et suivre les
     étapes restantes.
-    <img src="/images/structure-fields-main-img-reuse.webp" alt="Sélectionner un champ à réutiliser" width="100%" />
+    <img src="/images/structure-fields-main-img-reuse.png" alt="Sélectionner un champ à réutiliser" width="100%" />
 1. Créer deux contenus de type Vendeur (consulter [content-create](./content-create.md)) appelés
     "Ferme Joyeuse" et "Doux miel". Assurez vous d'inclure des images et des URL.
 

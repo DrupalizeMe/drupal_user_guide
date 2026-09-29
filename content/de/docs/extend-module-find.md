@@ -76,10 +76,10 @@ Finden und bewerten Sie Module auf _Drupal.org_.
       </tbody>
     </table>
 
-    ![Filter auf der Modul-Suchseite auf _Drupal.org_](/images/extend-module-find_module_finder.webp)
+    ![Filter auf der Modul-Suchseite auf _Drupal.org_](/images/extend-module-find_module_finder.png)
 
 1. Klicken Sie auf _Search_. Die Suchergebnisse werden angezeigt.
-    ![Modul-Suchergebnisseite auf _Drupal.org_](/images/extend-module-find_search_results.webp)
+    ![Modul-Suchergebnisseite auf _Drupal.org_](/images/extend-module-find_search_results.png)
 1. Um ein Modul genauer zu bewerten, klicken Sie auf dessen Titel in der Liste
     der Suchergebnisse um die Projektseite des Moduls aufzurufen.
 
@@ -114,7 +114,7 @@ Finden und bewerten Sie Module auf _Drupal.org_.
     oder eine README-Datei verfügt, die Ihnen beim
     Installieren, Konfigurieren, Evaluieren und Testen des Moduls  helfen kann.
 
-    ![Information on the project page to look for when evaluating a module](/images/extend-module-find_project_info.webp)
+    ![Information on the project page to look for when evaluating a module](/images/extend-module-find_project_info.png)
 
 ## Vertiefen Sie Ihre Kenntnisse
 

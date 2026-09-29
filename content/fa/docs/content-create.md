@@ -52,7 +52,7 @@ source_locale: "fa"
     </table>
 
     با کلیک روی دکمه _سورس_ در نوارابزار ویرایشگر متن، می‌توانید کد HTML صفحه‌ای که ایجاد می‌کنید را ببینید.
-    <img src="/images/content-create-create-basic-page.webp" alt="ایجاد یک صفحه ساده" width="100%" />
+    <img src="/images/content-create-create-basic-page.png" alt="ایجاد یک صفحه ساده" width="100%" />
 
 1. با کلیک روی _پیش‌نمایش_ اطمینان یابید که محتوا به همان صورت مد نظر درج شده است.
 1. روی _بازگشت به ویرایش محتوا_ کلیک کنید.

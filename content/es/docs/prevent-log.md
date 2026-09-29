@@ -20,7 +20,7 @@ administradores y por las tareas de cron automatizadas, así que no deberían
 usarse para el [registro forense](https://en.wikipedia.org/wiki/Audit_trail).
 Para fines forenses, use el módulo Syslog.
 
-<img src="/images/prevent-log.webp" alt="Recent log messages of a basic site" width="100%" />
+<img src="/images/prevent-log.png" alt="Recent log messages of a basic site" width="100%" />
 
 *Atribuciones*
 

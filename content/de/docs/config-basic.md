@@ -48,7 +48,7 @@ _Name der Website_, _Slogan_ und _Standard-Zeitzone_.
       </tbody>
     </table>
 
-    ![Website-Informationen](/images/config-basic-SiteInfo.webp)
+    ![Website-Informationen](/images/config-basic-SiteInfo.png)
 
 1. Nachdem Sie die Felder bearbeitet haben, klicken Sie auf
     _Konfiguration speichern_, um Ihre Änderungen auf die Website anzuwenden.
@@ -91,7 +91,7 @@ _Name der Website_, _Slogan_ und _Standard-Zeitzone_.
       </tbody>
     </table>
 
-    ![Zeitzonen](/images/config-basic-TimeZone.webp)
+    ![Zeitzonen](/images/config-basic-TimeZone.png)
 
 1. Nachdem Sie die Felder bearbeitet haben, klicken Sie auf
     _Konfiguration speichern_, um die Änderungen zu sehen und auf die

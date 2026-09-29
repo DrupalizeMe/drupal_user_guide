@@ -58,7 +58,7 @@ predeterminado. Ver [config-theme](./config-theme.md).
     También puede ocultar o mostrar el bloque en páginas específicas. En el caso
     del sitio web del mercado de agricultores no establece ninguna de estas
     opciones de configuración porque quiere mostrar el bloque en todas partes.
-    <img src="/images/block-place-configure-block.webp" alt="Block configuration page" width="100%" />
+    <img src="/images/block-place-configure-block.png" alt="Block configuration page" width="100%" />
 
 1. Haga clic en _Save block_. Aparece la página _Block layout_. Puede arrastrar
     los tiradores en cruz de los bloques para cambiar su orden dentro de cada
@@ -69,7 +69,7 @@ predeterminado. Ver [config-theme](./config-theme.md).
     haga clic en _Save blocks_.
     El bloque se ha colocado en la barra lateral de todas las páginas que utilizan
     el tema del núcleo Bartik.
-    <img src="/images/block-place-sidebar.webp" alt="Page with a block placed on the Sidebar region" width="100%" />
+    <img src="/images/block-place-sidebar.png" alt="Page with a block placed on the Sidebar region" width="100%" />
 
 ## Ampliar conocimiento
 

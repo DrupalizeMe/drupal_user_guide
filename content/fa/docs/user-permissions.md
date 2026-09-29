@@ -58,10 +58,10 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    <img src="/images/user-permissions-check-permissions.webp" alt="اختصاص مجوزهای ایجاد، ویرایش و حذف محصول به نقش فروشنده" width="100%" />
+    <img src="/images/user-permissions-check-permissions.png" alt="اختصاص مجوزهای ایجاد، ویرایش و حذف محصول به نقش فروشنده" width="100%" />
 
 1. روی _ذخیره‌سازی مجوزها_ کلیک کنید. پیامی مبنی بر ذخیره‌سازی تغییرات خود دریافت می‌کنید.
-    ![پیام تاییدیه پس از ذخیره‌سازی مجوزها](/images/user-permissions-save-permissions.webp)
+    ![پیام تاییدیه پس از ذخیره‌سازی مجوزها](/images/user-permissions-save-permissions.png)
 
 ## درک خود را گسترش دهید
 

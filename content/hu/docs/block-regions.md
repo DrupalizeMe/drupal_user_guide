@@ -14,7 +14,7 @@ A webhely minden oldalának van valamilyen fő üzenete, tartalma, ami általáb
 
 A sminkek általában ugyanazokat a régiókat kínálják. Kizárólag egyetlen régió kötelező (értelemszerűen a _Tartalom_, hogy legyen hol elhelyezni a központi, fő üzenetét az adott aloldalnak), a többi régió viszont nem biztos, hogy létezik az adott sminkben.  Az alaprendszer népszerű Bartik sminkje például tucatnyinál is több, az alábbi képen sárga színnel kiemelve látható régiót határoz meg:
 
-<img src="/images/block-regions-bartik.webp" alt="Az alaprendszeri Bartik smink összes régiója" width="100%" />
+<img src="/images/block-regions-bartik.png" alt="Az alaprendszeri Bartik smink összes régiója" width="100%" />
 
 ## Kapcsolódó témák
 

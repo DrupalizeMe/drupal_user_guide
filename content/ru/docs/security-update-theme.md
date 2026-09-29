@@ -30,7 +30,7 @@ source_locale: "ru"
 1. Переведите сайт в режим обслуживания. См. [extend-maintenance](./extend-maintenance.md).
 1. В _Управлении_ административного меню перейдите в _Отчёты_ > _Доступные обновления_ > _Обновить_ (_admin/reports/updates_).
 1. Найдите все темы в списке, для которых доступны обновления.
-    <img src="/images/security-update-theme-updates.webp" alt="Available updates" width="100%" />
+    <img src="/images/security-update-theme-updates.png" alt="Available updates" width="100%" />
 1. Определите короткое имя проекта, который вы хотите обновить. Для дополнительных модулей и тем это последняя часть URL страницы проекта; например, тема Honey на https://www.drupal.org/project/honey имеет короткое имя `honey`.
 1. Если вы хотите обновить до последнего стабильного релиза, используйте команду, подставив короткое имя проекта вместо `honey`:
     ```text

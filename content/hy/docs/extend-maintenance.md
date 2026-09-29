@@ -53,7 +53,7 @@ maintenance mode.
 1. Verify that the site is in maintenance mode by accessing it from another
     browser where you aren't logged in. If you are not able to verify, try clearing
     the cache. See [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-enabled.webp" alt="Maintenance mode enabled" width="100%" />
+    <img src="/images/extend-maintenance-mode-enabled.png" alt="Maintenance mode enabled" width="100%" />
 
 ### Disabling maintenance mode using the administrative interface
 
@@ -86,7 +86,7 @@ maintenance mode.
 1. Verify that the site is no longer in maintenance mode by accessing it from
     another browser where you aren't logged in. If you are not able to verify, try
     clearing the cache. See [prevent-cache-clear](./prevent-cache-clear.md).
-    <img src="/images/extend-maintenance-mode-disabled.webp" alt="Maintenance mode disabled" width="100%" />
+    <img src="/images/extend-maintenance-mode-disabled.png" alt="Maintenance mode disabled" width="100%" />
 
 ### Enabling or disabling maintenance mode using Drush
 

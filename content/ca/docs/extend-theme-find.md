@@ -60,10 +60,10 @@ Find and evaluate themes on _Drupal.org_.
       </tbody>
     </table>
 
-    ![Filters on the theme search page on _Drupal.org_](/images/extend-theme-find_theme_finder.webp)
+    ![Filters on the theme search page on _Drupal.org_](/images/extend-theme-find_theme_finder.png)
 
 1. Click _Search_. Search results will appear.
-    ![The search results page on _Drupal.org_](/images/extend-theme-find_search_results.webp)
+    ![The search results page on _Drupal.org_](/images/extend-theme-find_search_results.png)
 1. To further evaluate a theme, click its title in the list of search results
     to visit its project page.
 

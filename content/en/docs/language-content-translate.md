@@ -26,7 +26,7 @@ have at least two languages. See [language-add](./language-add.md).
 1. Select _Translate_ from the dropdown button in the row of the Home content
     item. The page _Translations of Home_ appears.
 1. Click _Add_ in the row _Spanish_.
-    <img src="/images/language-content-translate-add.webp" alt="Adding a content translation" width="100%" />
+    <img src="/images/language-content-translate-add.png" alt="Adding a content translation" width="100%" />
 1. Note that the user interface has switched to Spanish. To switch it back to
     English, remove the first instance of _es_ in the browser's URL. For
     example, if your URL looks like _example.com/es/node/5/translations/add/en/es_,

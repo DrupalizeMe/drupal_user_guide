@@ -37,7 +37,7 @@ nicht jedoch auf der Live-Website. Siehe [views-create](./views-create.md).
 1. Wählen Sie Lieferanten aus der Liste _Konfigurationsname_ aus.
     Die Konfiguration erscheint im Textfeld.
 1. Kopieren Sie die Konfiguration aus dem Textfeld.
-    ![Ein einzelnes Objekt exportieren](/images/extend-deploy-export-single.webp)
+    ![Ein einzelnes Objekt exportieren](/images/extend-deploy-export-single.png)
 1. Öffnen Sie die Live-Website.
 1. Navigieren Sie im Menü Verwalten_ zum Menüpunkt _Konfiguration_ >
     _Entwicklung_ > _Konfigurationssynchronisation_ > _Import_ > _Einzelnes Element_

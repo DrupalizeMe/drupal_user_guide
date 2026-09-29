@@ -24,10 +24,10 @@ Ahogy a bevezetőből már kiderült, egy közösségi modul webhelyünkhöz ad�
 
 1. Az _Admin toolbar_ modul projektoldalán (_https://www.drupal.org/project/admin_toolbar_) görgessünk le a _Downloads_ részhez a lap alján.
 1. Másoljuk ki a _tar.gz_ hivatkozás webcímét. A legtöbb korszerű webböngészőben ez általában a jobbklikkre megnyíló helyi menüben a _Hivatkozás címének másolása_ (vagy hasonló) menüpont.
-    ![A modul letöltési linkje](/images/extend-module-install-download.webp)
+    ![A modul letöltési linkje](/images/extend-module-install-download.png)
 1. Webhelyünk _Kezelés_ adminisztrációs menüjében menjünk a _Bővítés_ oldalra (vagy a címsorban adjuk meg az _admin/modules_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi modult.
 1. Kattintsunk az _Új modul telepítése_ gombra, majd az azonos nevű oldalon két beviteli mezőt találunk:
-    ![Modultelepítési oldal az adminfelületen](/images/extend-module-install-admin-toolbar-do.webp)
+    ![Modultelepítési oldal az adminfelületen](/images/extend-module-install-admin-toolbar-do.png)
 1. A _Telepítés webcímről_ mezőbe illesszük be a tar.gz fájl előbb kimásolt webcímét, ami valami ehhez hasonló lesz: _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.24.tar.gz_
 1. Kattintsunk a _Telepítés_ gombra, ami letölti a Drupal.org fájlkiszolgálójáról a kért verziót, és felmásolja webhelyünk szerverére. Ezek a fájlok általában a _modules_ könyvtárban vannak tárolva.
 1. Miután a következő képernyőn lefutott a folyamatjelző, „A telepítés sikeresen befejeződött” állapotüzenetet kell kapnunk. Ekkor az „Újonnan hozzáadott modulok engedélyezése” hivatkozás közvetlenül visszavisz minket a _Bővítés_ oldalra, ahonnan indultunk.

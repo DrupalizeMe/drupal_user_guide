@@ -19,7 +19,7 @@ active on your site and the permissions of the person viewing the menu; if you
 install using the core Standard installation profile and have full
 administrative permissions, the top-level entries are as follows:
 
-<img src="/images/config-overview-toolbar.webp" alt="Administrative menu in horizontal mode" width="100%" />
+<img src="/images/config-overview-toolbar.png" alt="Administrative menu in horizontal mode" width="100%" />
 
 - **Content:** Lists and manages existing content, and allows creation of new content.
 - **Structure:** Contains a list of links for managing structural elements of the site, such as blocks, content types, menus, and taxonomy.
@@ -37,7 +37,7 @@ top of the page, to a vertical format on the left side (or right side, in
 right-to-left languages). When viewed vertically, the menu becomes an
 interactive tree.
 
-<img src="/images/config-overview-vertical-menu.webp" alt="Administrative menu in vertical mode" width="228px" />
+<img src="/images/config-overview-vertical-menu.png" alt="Administrative menu in vertical mode" width="228px" />
 
 This guide has a standard way to describe navigation to administrative pages
 using the administrative toolbar. See [preface-conventions](./preface-conventions.md) for more
@@ -62,7 +62,7 @@ provide access to the contextual links:
 * You can click the master pencil icon (or its _Edit_ link) at the right end of
   the top bar in the toolbar, which will activate all of the contextual links on
   the current page. This icon is only visible on pages with contextual links.
-<img src="/images/config-overview-pencils.webp" alt="Page with pencil icons turned on" width="100%" />
+<img src="/images/config-overview-pencils.png" alt="Page with pencil icons turned on" width="100%" />
 
 *Attributions*
 

@@ -30,11 +30,11 @@ elementos de contenido Vendor. Ver [structure-content-type](./structure-content-
 1. En _Authoring information_, comience a escribir el nombre de usuario del
     Vendor Happy Farm en el campo _Authored by_. El campo muestra los nombres de
     usuario coincidentes. Seleccione el nombre de usuario del Vendor en la lista.
-    ![Assigning an author to the Vendor content item](/images/user-content.webp)
+    ![Assigning an author to the Vendor content item](/images/user-content.png)
 1. Haga clic en _Save_.
 1. Recibirá una notificación de que el elemento de contenido Vendor se ha
     actualizado.
-    ![Vendor content item has been updated](/images/user-content_updated.webp)
+    ![Vendor content item has been updated](/images/user-content_updated.png)
 1. Siga estos pasos de nuevo para asignar el elemento de contenido Vendor Sweet
     Honey a la cuenta de usuario Vendor Sweet Honey.
 ## Vídeos

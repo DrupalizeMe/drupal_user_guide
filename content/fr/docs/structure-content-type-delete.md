@@ -21,12 +21,12 @@ vous l'installez avec le profil d'installation Standard du cœur.
     contenu_ (_admin/structure/types_). La page des types de contenu apparaît.
 1. Cliquer sur le bouton _Supprimer_ dans la liste des _Opérations_ pour le type
     de contenu _Article_.
-    <img src="/images/structure-content-type-delete-dropdown.webp" alt="Bouton déroulant permettant de supprimer le type de contenu article" width="100%" />
+    <img src="/images/structure-content-type-delete-dropdown.png" alt="Bouton déroulant permettant de supprimer le type de contenu article" width="100%" />
 1. Une page de confirmation s'affiche. Cliquer sur _Supprimer_.
-    <img src="/images/structure-content-type-delete-confirmation.webp" alt="Page de confirmation de la suppression du type de contenu article" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.png" alt="Page de confirmation de la suppression du type de contenu article" width="100%" />
 1. La page des _types de contenu_ apparaît avec un message de confirmation disant
     que le type de contenu a été supprimé :
-    ![Message de confirmation de la suppression du type de contenu article](/images/structure-content-type-delete-confirm.webp)
+    ![Message de confirmation de la suppression du type de contenu article](/images/structure-content-type-delete-confirm.png)
 
 ## Vidéos (en anglais)
 

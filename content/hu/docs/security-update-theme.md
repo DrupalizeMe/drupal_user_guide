@@ -28,7 +28,7 @@ Szintén fontos figyelmeztetés, hogy néhány közösségi smink Composer eszk�
 1. Állítsuk a webhelyet karbantartási módba (lásd: [extend-maintenance](./extend-maintenance.md)).
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Jelentések_ > _Elérhető frissítések_ > _Frissítés_ oldalra (vagy a címsorban adjuk meg az _admin/reports/updates/update_ útvonalat).
 1. Keressük meg a felsorolásban a frissíteni kívánt sminket, és pipáljuk be a jelölőnégyzetet a sorában, majd kattintsunk a _Frissítések letöltése_ gombra.
-    <img src="/images/security-update-theme-updates.webp" alt="Elérhető frissítések" width="100%" />
+    <img src="/images/security-update-theme-updates.png" alt="Elérhető frissítések" width="100%" />
 1. Kattintsunk a _Folytatás_ gombra.
 1. Kattintsunk az _Adatbázis-frissítések futtatása_ elemre. Ha a smink fájljait kézzel másoltuk fel, akkor innentől folytatjuk, és az adatbázis-frissítés oldal megnyitásához írjuk be böngészőnk címsorába: _http://pelda.hu/update.php_.
 1. A _Folytatás_ gombra kattintva lefut a szkript, ami elvégez minden szükséges módosítást az adatbázison.

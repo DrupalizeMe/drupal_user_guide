@@ -18,10 +18,10 @@ source_locale: "ru"
     (_admin/appearance_).
 1. В разделе _Установленные темы_ вы увидите, что Olivero установлена как тема
     по умолчанию. В блоке _Olivero (тема по умолчанию)_ нажмите _Настройки_.
-    <img src="/images/config-theme_olivero_settings.webp" alt="Тема по умолчанию, Olivero" width="100%" />
+    <img src="/images/config-theme_olivero_settings.png" alt="Тема по умолчанию, Olivero" width="100%" />
 1. В разделе _Изображение логотипа_ снимите галочку _Использовать логотип,
     предоставленный темой_.
-    ![Новый логотип в настройках темы Olivero](/images/config-theme_logo_upload.webp)
+    ![Новый логотип в настройках темы Olivero](/images/config-theme_logo_upload.png)
 1. В поле _Загрузить изображение логотипа_ найдите файл логотипа и загрузите его
     на сайт. Примечание: универсальный логотип для всех тем можно задать в
     _Оформление_ > _Настройки_ (_admin/appearance/settings_). Пользовательский логотип для
@@ -55,7 +55,7 @@ source_locale: "ru"
     нажмите _Сохранить конфигурацию_ внизу страницы.
 1. Нажмите _Вернуться на сайт_ или _Главная_ на панели, чтобы убедиться, что
     настройки темы Olivero обновлены.
-    <img src="/images/config-theme_final_result.webp" alt="Итог изменения настроек темы Olivero — цвета и логотип" width="100%" />
+    <img src="/images/config-theme_final_result.png" alt="Итог изменения настроек темы Olivero — цвета и логотип" width="100%" />
 
 ## Расширьте понимание
 

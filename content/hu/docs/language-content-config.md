@@ -19,7 +19,7 @@ Az alaprendszer _Content Translation_ moduljának engedélyezve, a webhelyen leg
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Helyek és nyelvek_ > _Tartalom nyelve és fordítás_ útvonalon az _admin/config/regional/content-language_ oldalra.
 1. Az _Egyéni nyelvi beállítások_ listában jelöljük be a _Tartalom_, _Egyéni blokk_ és _Egyéni menühivatkozás_ elemeket, hogy ezáltal lefordíthatóvá váljanak.
-    <img src="/images/language-content-config_custom.webp" alt="Az egyedi nyelvbeállítások listája" width="193px" />
+    <img src="/images/language-content-config_custom.png" alt="Az egyedi nyelvbeállítások listája" width="193px" />
 1. Ekkor az oldal lentebbi részén további részletes beállítások tűnnek fel. Itt választhatjuk ki azokat az altípusokat, amelyeket külön-külön lefordíthatóvá szeretnénk tenni. Mi most ebben a példánkban a _Tartalom_ cím alatt az _Egyszerű oldalt_, az _Egyéni blokk_ cím alatt az _Egyszerű blokkot_, míg az _Egyéni menühivatkozás_ cím alatt az ugyanilyen nevű altípust tesszük lefordíthatóvá.
 1. Ellenőrizzük az entitástípusok beállításait az alábbiak szerint:
     <table>
@@ -44,7 +44,7 @@ Az alaprendszer _Content Translation_ moduljának engedélyezve, a webhelyen leg
       </tbody>
     </table>
 
-    ![A tartalomtípusok első két nyelvi beállítási lehetősége](/images/language-content-config_content.webp)
+    ![A tartalomtípusok első két nyelvi beállítási lehetősége](/images/language-content-config_content.png)
 
 1. Következő lépésként kiválasztjuk az _Egyszerű oldal_ altípus azon mezőit, amiket lefordíthatóvá szeretnénk tenni (ehhez segítségképpen lásd az alábbi táblázatot). Ha nincs rá szükségünk, hogy nyelvenként eltérő értéket tároljunk abban a mezőben (azaz nem akarjuk lefordíthatóvá tenni), hagyjuk a jelölőnégyzetét üresen. A nem szöveges mezők (például számok és dátumok) lefordításának is lehet jelentősége több szerkesztő és adminisztrátor közötti munkafolyamatok szabályozásának szempontjából.
     <table>
@@ -104,7 +104,7 @@ Az alaprendszer _Content Translation_ moduljának engedélyezve, a webhelyen leg
       </tbody>
     </table>
 
-    ![A lefordíthatónak beállított entitásaltípusok kiválasztható mezői](/images/language-content-config_basic_page.webp)
+    ![A lefordíthatónak beállított entitásaltípusok kiválasztható mezői](/images/language-content-config_basic_page.png)
 
 1. Az előző lépésekben megismert módon válasszuk ki ugyanígy az _Egyszerű blokk_ és _Egyéni menühivatkozás_ entitásaltípusok lefordítani kívánt mezőit is.
 1. Kattintsunk a _Beállítások mentése_ gombra.

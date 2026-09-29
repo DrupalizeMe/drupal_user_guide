@@ -38,13 +38,13 @@ navigation menu, you can find and open it by following these steps:
     [config-overview](./config-overview.md) for instructions on how to access contextual links). You
     will see each editable field on this content item outlined in blue; also,
     a hovering dialog box will appear.
-    <img src="/images/content-in-place-edit-hover-box.webp" alt="Quick edit mode" width="100%" />
+    <img src="/images/content-in-place-edit-hover-box.png" alt="Quick edit mode" width="100%" />
 1. Click the _Body_ text area to begin editing. The _Body_ field
     supports a rich text editor. The editing toolbar will be displayed in a
     hovering dialog box.
 1. Add some information about City Market. A _Save_ button will appear in the
     hovering dialog box, and the field outline will change color.
-    <img src="/images/content-in-place-edit-save-box.webp" alt="Quick edit mode after editing" width="100%" />
+    <img src="/images/content-in-place-edit-save-box.png" alt="Quick edit mode after editing" width="100%" />
 1. If you are satisfied with your edits, click _Save_ in the hovering dialog
     box. If not, click "x" to discard your edits, and confirm. Either way, quick
     editing mode will be turned off.

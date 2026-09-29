@@ -27,10 +27,10 @@ und [content-create](./content-create.md).
 1. Navigieren Sie Im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Ansichten_ (_admin/structure/views_).
     Suchen sie die Ansicht „Lieferanten" und Klicken sie auf _Duplizieren_ innerhalb des Dropbuttons der Ansicht.
     (Beachten sie, dass die Namen der Ansichten, die mit Ihrem  Installationsprofil ausgeliefert werden hier in Englisch angezeigt werden. Siehe: [language-concept](./language-concept.md) um eine Erklärung dazu zu lesen.)
-    <img src="/images/views-duplicate_duplicate.webp" alt="Duplicate existing view" width="100%" />
+    <img src="/images/views-duplicate_duplicate.png" alt="Duplicate existing view" width="100%" />
 1. Geben Sie dem Duplikat den Namen "Rezepte" und klicken Sie auf _Duplizieren_. Die Seite Ansicht konfigurieren wird angezeigt.
 1. Um den Titel der Seite in "Rezepte" zu ändern, Klicken Sie auf Lieferanten im Feld _Titel_. Das  Popup _Titel der Ansicht_ wird geöffnet. Geben Sie "Rezepte" ein und klicken Sie auf _Übernehmen_.
-    <img src="/images/views-duplicate_title.webp" alt="Change view title" width="100%" />
+    <img src="/images/views-duplicate_title.png" alt="Change view title" width="100%" />
 1. Um von einer tabellarischen Ansicht in eine Rasteransicht zu wechseln, klicken Sie im Abschnitt _Format_ auf _Tabelle_.
     Das  Popup _Wie soll dies Ansicht dargestellt werden?_ erscheint.
     Klicken sie auf _Raster_ und anschließend auf Anwenden. Das Popup _Darstellungsoptionen_
@@ -73,7 +73,7 @@ und [content-create](./content-create.md).
       </tbody>
     </table>
 
-    ![Expose filter](/images/views-duplicate_expose.webp)
+    ![Expose filter](/images/views-duplicate_expose.png)
 
 1. Um die Bezeichnung für das Feld _Pfad_ in "Rezepte" zu ändern, klicken Sie auf "/lieferanten" im Feld _Pfad_
     im Abschnitt _Seiteneinstellungen_. Geben Sie im daraufhin erscheinenden Popup
@@ -88,7 +88,7 @@ und [content-create](./content-create.md).
     klicken Sie auf _Anwenden_.
 1. Klicken Sie auf _Speichern_ um die Änderungen an der Ansicht zu übernehmen.
 1. Gehen Sie zurück auf die Startseite und klicken Sie in der Navigation auf Rezepte um die neue Rezeptseite aufzurufen.
-    <img src="/images/views-duplicate_final.webp" alt="Recipes view" width="100%" />
+    <img src="/images/views-duplicate_final.png" alt="Recipes view" width="100%" />
 
 ## Vertiefen Sie Ihr Wissen
 

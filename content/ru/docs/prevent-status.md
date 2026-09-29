@@ -14,7 +14,7 @@ source_locale: "ru"
 Вы можете найти отчет о состоянии в _Управление_ административного меню,
 перейдя в _Отчеты_ > _Отчет о состоянии_ (_admin/reports/status_).
 
-<img src="/images/prevent-status.webp" alt="Отчет о состоянии базового сайта" width="100%" />
+<img src="/images/prevent-status.png" alt="Отчет о состоянии базового сайта" width="100%" />
 
 ## Связанные темы
 

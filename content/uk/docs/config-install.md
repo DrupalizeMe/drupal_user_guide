@@ -26,7 +26,7 @@ source_locale: "uk"
     на вашому сайті.
 1. Проставте галочки для модуля або модулів, які ви хочете встановити. Наприклад,
     поставте галочку для модуля ядра Activity Tracker.
-    ![Включення модуля Activity Tracker](/images/config-install-check-modules.webp)
+    ![Включення модуля Activity Tracker](/images/config-install-check-modules.png)
 1. Натисніть _Встановити_. Вибрані модулі будуть встановлені.
 ### Використання Drush
 

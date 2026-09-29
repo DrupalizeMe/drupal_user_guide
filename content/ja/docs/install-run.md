@@ -25,13 +25,13 @@ source_locale: "ja"
     後に続くインストールプロセスが選択された言語で表示されるように、
     選択された言語の言語ファイルがダウンロードされインストールされます。
     言語を選択した後に「Save and continue」をクリックしてください。
-    <img src="/images/install-run-1.webp" alt="言語を選択する" width="100%" />
+    <img src="/images/install-run-1.png" alt="言語を選択する" width="100%" />
 1. インストールプロフィールを選択してください。
     インストールプロフィールは、コアソフトウェア、拡張モジュール、テーマ、
     事前定義された設定を一度にダウンロードし、特定の種類のサイトに特徴的な機能を提供します。
     コアソフトウェアは2つのインストールプロフィールを持っています。
     「標準」インストールプロフィールを選択して、「保存して次へ」をクリックしてください。
-    <img src="/images/install-run-2.webp" alt="インストールプロフィールを選択する" width="100%" />
+    <img src="/images/install-run-2.png" alt="インストールプロフィールを選択する" width="100%" />
 1. インストーラーは、次のステップでシステムが最低限の要件を満たしているかの検証を行います。
     もし満たしていない場合は、続行するために必要な修正の概要が表示されます。
     問題がない場合は、自動的に次のステップに進みます。
@@ -63,11 +63,11 @@ source_locale: "ja"
       </tbody>
     </table>
 
-    <img src="/images/install-run-3.webp" alt="データベース設定フォーム" width="100%" />
+    <img src="/images/install-run-3.png" alt="データベース設定フォーム" width="100%" />
 
 1. 次のステップでは、 「Drupalのインストール」の見出しの下にプログレスバーが表示されます。
     インストールが完了すると、自動的に次のステップに進みます。
-    <img src="/images/install-run-4.webp" alt="インストールプログレスバー" width="100%" />
+    <img src="/images/install-run-4.png" alt="インストールプログレスバー" width="100%" />
 1. 最後のステップは、新しく作成したサイトの基本情報の設定です。
     このステップで作成したユーザーアカウントがサイト管理者のアカウントになることにご注意ください。
     この特殊なアカウントの重要な情報については、 [user-admin-account](./user-admin-account.md) を参照してください。
@@ -116,12 +116,12 @@ source_locale: "ja"
     </table>
 
     残りのフィールドは、初期値のままで良いでしょう。
-    <img src="/images/install-run-5.webp" alt="設定フォーム" width="100%" />
+    <img src="/images/install-run-5.png" alt="設定フォーム" width="100%" />
 
 1. 「保存して次へ」をクリックします。
 1. 新しく作成したサイトのトップページにリダイレクトされ、
     「おめでとうございます。Drupalのインストールが完了しました。」のメッセージがページ最上部に表示されるでしょう。
-    <img src="/images/install-run-6.webp" alt="インストール成功" width="100%" />
+    <img src="/images/install-run-6.png" alt="インストール成功" width="100%" />
 
 ## 理解を深める
 

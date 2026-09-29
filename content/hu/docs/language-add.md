@@ -17,7 +17,7 @@ E leírás végére érve már érteni fogjuk, hogyan kell egy vagy több továb
 1. Ezután a _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Helyek és nyelvek_ > _Nyelvek_ útvonalon az _admin/config/regional/language_ oldalra.
 1. Kattintsunk a _Nyelv hozzáadása_ gombra.
 1. Válasszuk ki a _Nyelv neve_ listából a hozzáadni kívánt nyelvet (például _Német_). Kattintsunk ismét a _Nyelv hozzáadása_ gombra. A következő oldalon automatikusan letöltődnek a kért nyelv felületfordítási fájljai a közösségi fordításkiszolgálóról webhelyünk tárhelyére, majd visszaérkezünk a korábbi _Nyelvek_ oldalra egy rendszerüzenettel, ami a letöltés eredményéről tájékoztat.
-    <img src="/images/language-add-list.webp" alt="Egy webhely telepített nyelveinek listája" width="100%" />
+    <img src="/images/language-add-list.png" alt="Egy webhely telepített nyelveinek listája" width="100%" />
 1. Ekkor azonban még csak a webcím átírásával lehet más nyelven megtekinteni oldalainkat. A [block-place](./block-place.md) témakörnél leírtakat követve viszont elhelyezhetünk egy _Nyelvválasztó_ blokkot valamelyik (például a _Második_) oldalsáv régiójába. Ennek segítségével a felhasználók már bármikor könnyen átválthatnak a webhelyen engedélyezett nyelvek között.
 ## Az ismeretek elmélyítése
 

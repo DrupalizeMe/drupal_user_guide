@@ -16,7 +16,7 @@ proyecto, o al pedir ayuda por otros canales.
 Puede encontrar el informe de estado en el menú administrativo _Manage_
 navegando a _Reports_ > _Status report_ (_admin/reports/status_).
 
-<img src="/images/prevent-status.webp" alt="Status report of a basic site" width="100%" />
+<img src="/images/prevent-status.png" alt="Status report of a basic site" width="100%" />
 
 ## Temas relacionados
 

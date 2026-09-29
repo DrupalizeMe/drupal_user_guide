@@ -68,10 +68,10 @@ Ebben a részben hasznos szempontokat tekintünk át, amelyek mentén a Drupal.o
       </tbody>
     </table>
 
-    ![A Drupal.org sminklistájának szűrési lehetőségei](/images/extend-theme-find_theme_finder.webp)
+    ![A Drupal.org sminklistájának szűrési lehetőségei](/images/extend-theme-find_theme_finder.png)
 
 1. A _Search_ gombra kattintva megjelennek a már csak a fenti feltételeknek megfelelő találatok.
-    ![A Drupal.org sminklistájának keresési találatai](/images/extend-theme-find_search_results.webp)
+    ![A Drupal.org sminklistájának keresési találatai](/images/extend-theme-find_search_results.png)
 1. Bár már így is nagyságrendekkel leszűkítettük a szóba jöhető sminkek listáját, az alaposabb átnézésükhöz nyissuk meg projektoldalaikat a nevükre kattintva.
 
     Íme néhány fontos szempont, ami segíthet értékelni és összehasonlítani őket, ezáltal könnyebben lehet eligazodni közöttük:

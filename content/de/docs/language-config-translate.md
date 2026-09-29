@@ -61,7 +61,7 @@ zu übersetzen sind folgende:
     übersetzen Sie den _Anzeigetitel_ von "Rezepte" in "Recetas".
 1. Unter _Anzeigen_ > _Master Anzeigeeinstellungen_ > _Rezepte Standardanzeigeeinstellungen_ > _Hervorgehobenes Formular_ > _Optionen zurücksetzen_, Übersetzen Sie den _Text des Buttons „Absenden“_
     von "Apply" auf "Applicar". Die Anderen Buttons oder Bezeichnungen tauchen auf der Seite Rezepte oder im zur Seite gehörenden Block nicht auf und müssen deshalb nicht übersetzt werden.
-    <img src="/images/language-config-translate-recipes-view.webp" alt="Translate the Recipes view" width="100%" />
+    <img src="/images/language-config-translate-recipes-view.png" alt="Translate the Recipes view" width="100%" />
 1. Unter _Anzeigen_ > _Master Anzeigeeinstellungen_ > _Rezepte Standardanzeigeeinstellungen_ > _Filter_ > _(Leer) Taxonomy-Begriffs-ID_ > _Rezepte finden
     verwenden... Hervorheben_, übersetzen Sie die _Beschriftung_ von "Rezepte nach Zutaten finden..." nach "Encontrar
     recetas usando...".

@@ -22,7 +22,7 @@ Un élément de contenu pour la Page d'accueil doit exister. Voir
     récemment, il devrait apparaître en haut de la liste de contenus sur cette page.
     Sinon, vous pouvez utiliser le filtre _Type_, _Titre, ou autre filtre pour
     trouver l'élément de contenu.
-    <img src="/images/content-edit-admin-content.webp" alt="Page d'administration du contenu" width="100%" />
+    <img src="/images/content-edit-admin-content.png" alt="Page d'administration du contenu" width="100%" />
 1. Cliquer sur _Modifier_ sur la ligne de l'élément de contenu que vous voulez
     modifier (Accueil), poour ouvrir le formulaire de modification du contenu.
     Mettre à jour les horaires d'ouverture dans le champs _Corps_. Voir
@@ -32,11 +32,11 @@ Un élément de contenu pour la Page d'accueil doit exister. Voir
     modifications en cours (par exemple, vous pouvez entrer "Mise à jour des
     horaires d'ouvertures"). Ce texte apparaîtra dans les messages de révision de la
     page.
-    ![Section des messages de révision de la page de modification du contenu](/images/content-edit-revision.webp)
+    ![Section des messages de révision de la page de modification du contenu](/images/content-edit-revision.png)
 1. Cliquer sur _Enregistrer_ pour enregistrer vos modifications.
 1. Vous serez redirigé(e) vers la page d'administration du contenu, et il devrait
     s'afficher un message indiquant que le contenu a été mis à jour.
-    ![Message de contenu mis à jour](/images/content-edit-message.webp)
+    ![Message de contenu mis à jour](/images/content-edit-message.png)
 
 ## Améliorer votre compréhension
 

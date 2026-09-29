@@ -13,7 +13,7 @@ source_locale: "hu"
 
 Ha egy adminisztrátori jogosultsággal rendelkező felhasználói fiókkal jelentkezünk be webhelyünkre, akkor az alaprendszer _Toolbar_ modulja minden oldal tetején megjelenít számunkra egy eszközsort, amelynek van egy _Kezelés_ nevű menüpontja. Ez tartalmaz minden olyan lehetőséget, amelyre csak szükségünk lehet a webhely üzemeltetéséhez. Menüpontjai egyrészt az adott felhasználó szerepköréhez igazodnak (amihez nincs jogosultsága, az nem jelenik meg), másrészt pedig a bekapcsolt modulok is hozzáadhatnak további elemeket. Ezért az alábbiakban csak azokat a menüpontokat soroljuk fel, amiket egy _Általános_ telepítési profillal létrehozott webhely _Egyes számú felhasználója_ lát:
 
-<img src="/images/config-overview-toolbar.webp" alt="Az adminmenü vízszintes üzemmódban" width="100%" />
+<img src="/images/config-overview-toolbar.png" alt="Az adminmenü vízszintes üzemmódban" width="100%" />
 
 - **Tartalom:** Lehetővé teszi a már létező tartalmak áttekintését és kezelését, valamint újak létrehozását.
 - **Felépítés:** Egy sor hivatkozást biztosít a webhely szerkezetének módosítására: itt találjuk a blokkok, tartalomtípusok, menük és taxonómiaszótárak beállításait.
@@ -26,7 +26,7 @@ Ha egy adminisztrátori jogosultsággal rendelkező felhasználói fiókkal jele
 
 A nyíl ikon a képernyő legszélén jobb oldalon (ha jobbról-balra írásirányú nyelven, például arabul nézzük a felületet, akkor a bal oldalon) arra szolgál, hogy a jelenlegi vízszintesből függőleges megjelenítésbe váltsuk át az adminisztrációs menüt. Függőlegesen nem fejléc lesz, hanem egy alá-fölé rendelt szerkezetű menüfa:
 
-<img src="/images/config-overview-vertical-menu.webp" alt="Az adminmenü függőleges üzemmódban" width="228px" />
+<img src="/images/config-overview-vertical-menu.png" alt="Az adminmenü függőleges üzemmódban" width="228px" />
 
 A Kézikönyvben valahányszor ezen az adminmenün keresztüli navigációt írunk le, akkor mindig az alapértelmezett _vízszintes_ módra gondolunk. Mindezt az [preface-conventions](./preface-conventions.md) témakörnél foglaltuk össze.
 ## Mik a szövegkörnyezeti hivatkozások?
@@ -40,7 +40,7 @@ Az alaprendszer _Contextual Links_ modulját engedélyezve bizonyos adminisztrá
 
 Ez az ikon is csak akkor jelenik meg, ahol van értelme: azaz ha az adott oldalon van legalább egy olyan blokk, ami támogatja a szövegkörnyezeti hivatkozásokat.
 
-![Egy oldal számos ceruza ikonnal megjelenítve,width=](/images/config-overview-pencils.webp)
+![Egy oldal számos ceruza ikonnal megjelenítve,width=](/images/config-overview-pencils.png)
 
 *Közreműködők*
 

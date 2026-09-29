@@ -22,4 +22,4 @@ E feladat végrehajtására két lehetőségünk is van: vagy a Drupal adminfel�
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Bővítés_ > _Modul eltávolítása_ oldalra (vagy a címsorban adjuk meg az _admin/modules/uninstall_ útvonalat), ahol csak azokat a modulokat látjuk felsorolva, amelyek nem szolgálnak feltételként más modulok működéséhez, ezáltal készen állnak arra, hogy letiltsuk őket.
 1. Jelöljük be a letiltani kívánt modulok (_Search_, _History_ és _Activity Tracker_) négyzeteit. Kattinsunk az _Eltávolítás_ gombra a lap alján.
-    <img src="/images/config-uninstall_check-modules.webp" alt="Egy modul kikapcsolása" width="100%" />
+    <img src="/images/config-uninstall_check-modules.png" alt="Egy modul kikapcsolása" width="100%" />

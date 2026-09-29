@@ -43,13 +43,13 @@ source_locale: "ja"
     [install-composer](./install-composer.md) を参照してください。
 
     .. 「https://www.drupal.org」にアクセスし、トップレベルメニューの「Download & Extend」をクリックします。
-    <img src="/images/install-prepare-downloads.webp" alt="_Drupal.org_ ダウンロードページ" width="100%" />
+    <img src="/images/install-prepare-downloads.png" alt="_Drupal.org_ ダウンロードページ" width="100%" />
 
     .. 適切なバージョンの「Download Drupal」ボタンをクリックしてダウンロードページを表示します。
-    ![_Drupal.org_ ダウンロードページの推奨リリースセクション](/images/install-prepare-recommended.webp)
+    ![_Drupal.org_ ダウンロードページの推奨リリースセクション](/images/install-prepare-recommended.png)
 
     .. 「Recommended releases」の下のダウンロードしたいバージョンをクリックします。
-    ![_Drupal.org_ コアダウンロードページのダウンロードファイルセクション](/images/install-prepare-files.webp)
+    ![_Drupal.org_ コアダウンロードページのダウンロードファイルセクション](/images/install-prepare-files.png)
 
     .. tar.gzまたはzipファイルをローカルマシンにダウンロードします。
 

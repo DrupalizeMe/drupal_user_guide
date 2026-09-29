@@ -18,7 +18,7 @@ and to add a logo.
     (_admin/appearance_).
 1. Under _Installed themes_, you will find Bartik listed as your default
     theme. Under _Bartik (default theme)_, click _Settings_.
-    <img src="/images/config-theme_bartik_settings.webp" alt="Default theme, Bartik" width="100%" />
+    <img src="/images/config-theme_bartik_settings.png" alt="Default theme, Bartik" width="100%" />
 1. Under _Color scheme_, click inside each color build box and type the proper
     color codes you would like to add. For example, use the
     following colors:
@@ -71,11 +71,11 @@ and to add a logo.
 
     Note: You can also use the color wheel on the right to select colors of your
     choice. The web color codes will be added for you.
-    <img src="/images/config-theme_color_scheme.webp" alt="Updated color specifications in the core Bartik theme" width="100%" />
+    <img src="/images/config-theme_color_scheme.png" alt="Updated color specifications in the core Bartik theme" width="100%" />
 
 1. Under _Logo image_, uncheck _Use the logo supplied by the
     theme_.
-    ![New logo in core Bartik theme settings](/images/config-theme_logo_upload.webp)
+    ![New logo in core Bartik theme settings](/images/config-theme_logo_upload.png)
 1. Under _Upload logo image_, locate a logo file and upload it to your
     site. Note: You can also set a universal logo for all themes under
     _Appearance_ > _Settings_ (_admin/appearance/settings_). A custom logo for your
@@ -89,7 +89,7 @@ and to add a logo.
     <img src="/images/config-theme_color_scheme_preview.png" alt="core Bartik theme settings preview" width="100%" />
 1. Click _Return to site_ or _Home_ in the toolbar to verify that you have
     updated the core Bartik theme settings for your website.
-    <img src="/images/config-theme_final_result.webp" alt="Final result of editing the core Bartik theme settings - colors and logo" width="100%" />
+    <img src="/images/config-theme_final_result.png" alt="Final result of editing the core Bartik theme settings - colors and logo" width="100%" />
 
 ## Expand your understanding
 

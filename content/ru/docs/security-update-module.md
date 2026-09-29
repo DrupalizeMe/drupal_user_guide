@@ -25,7 +25,7 @@ source_locale: "ru"
 
 Чтобы узнать больше, после загрузки обновленных файлов найдите файлы _README.txt_, _INSTALL.txt_ и _UPGRADE.txt_, входящие в комплект модуля. Также изучите примечания к релизу на странице проекта, нажав на номер скачиваемой версии.
 
-![Release notes link](/images/security-update-module-release-notes.webp)
+![Release notes link](/images/security-update-module-release-notes.png)
 
 Обновление модуля включает перевод сайта в режим обслуживания, получение новых файлов и выполнение необходимых обновлений базы данных, а затем возвращение сайта в обычный режим.
 
@@ -37,7 +37,7 @@ source_locale: "ru"
 1. Переведите сайт в режим обслуживания. См. [extend-maintenance](./extend-maintenance.md).
 1. В _Управлении_ административного меню перейдите в _Отчеты_ > _Доступные обновления_ > _Обновить_ (_admin/reports/updates_).
 1. Найдите и отметьте модуль в списке. Нажмите _Скачать эти обновления_ для модуля.
-    <img src="/images/security-update-module-updates.webp" alt="Available updates" width="100%" />
+    <img src="/images/security-update-module-updates.png" alt="Available updates" width="100%" />
 1. Определите короткое имя проекта, который вы хотите обновить. Для дополнительных модулей и тем это последняя часть URL страницы проекта; например, модуль Geofield на https://www.drupal.org/project/geofield имеет короткое имя `geofield`.
 1. Если вы хотите обновить до последнего стабильного релиза, используйте команду, подставив короткое имя проекта вместо `geofield`:
     ```text

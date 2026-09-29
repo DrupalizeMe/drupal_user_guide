@@ -26,5 +26,5 @@ You can use the administrative interface or Drush to uninstall modules.
     (_admin/modules/uninstall_) where you will find the list of modules that are
     ready to be uninstalled.
 1. Check the boxes for the modules you are uninstalling (_Ban_, _History_, and _Search_). Click _Uninstall_ at the bottom of the page.
-    <img src="/images/config-uninstall_check-modules.webp" alt="Uninstalling module" width="100%" />
+    <img src="/images/config-uninstall_check-modules.png" alt="Uninstalling module" width="100%" />
 

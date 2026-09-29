@@ -19,15 +19,15 @@ source_locale: "fa"
 1. از منوی _مدیریت_ به مسیر _ساختار_ > _انواع محتوا_ (_admin/structure/types_) بروید. صفحه _نوع محتوا_ نمایش می‌یابد.
 1. روی دکمه _حذف_ از قسمت _عملیات_ نوع محتوای _مقاله_ کلیک کنید.
 
-    <img src="/images/structure-content-type-delete-dropdown.webp" alt="منوی حذف Article" width="100%" />
+    <img src="/images/structure-content-type-delete-dropdown.png" alt="منوی حذف Article" width="100%" />
 
 1. یک صفحه تاییدیه نمایش می‌یابد. روی _حذف_ کلیک کنید.
 
-    <img src="/images/structure-content-type-delete-confirmation.webp" alt="صفحه تاییدیه حذف Article" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.png" alt="صفحه تاییدیه حذف Article" width="100%" />
 
 1. صفحه _انواع محتوا_ با پیامی مبنی بر حذف نوع محتوای خواسته شده نمایش می‌یابد.
 
-    ![پیام تاییدیه حذف Article](/images/structure-content-type-delete-confirm.webp)
+    ![پیام تاییدیه حذف Article](/images/structure-content-type-delete-confirm.png)
 
     *مشارکت‌کنندگان*
 

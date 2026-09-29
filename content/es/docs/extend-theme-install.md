@@ -31,7 +31,7 @@ tema con la interfaz administrativa o con Drush.
     al final de la página.
 1. Copie el comando de Composer que se proporciona para la versión del tema que
     quiere instalar.
-    ![Finding the composer command for a theme](/images/extend-theme-install-download.webp)
+    ![Finding the composer command for a theme](/images/extend-theme-install-download.png)
 1. Como alternativa, escriba el siguiente comando (sustituyendo `honey:^1.0` por
     el nombre corto del tema y la versión deseada):
     ```text
@@ -47,7 +47,7 @@ tema con la interfaz administrativa o con Drush.
 1. Busque el nuevo tema en _Uninstalled themes_ y haga clic en _Install and set
     as default_ para usarlo. A partir de ahora, todas las páginas no
     administrativas del sitio usarán este nuevo tema.
-    <img src="/images/extend-theme-install-appearance-page.webp" alt="Uninstalled themes on Appearance page" width="286px" />
+    <img src="/images/extend-theme-install-appearance-page.png" alt="Uninstalled themes on Appearance page" width="286px" />
 
 ### Instalar el tema con Drush
 

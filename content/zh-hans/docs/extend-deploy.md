@@ -34,7 +34,7 @@ site. See [views-create](./views-create.md).
 1. Select Vendors from the _Configuration name_ list. The configuration
     appears in the textarea.
 1. Copy the configuration from the textarea.
-    ![Export a single item](/images/extend-deploy-export-single.webp)
+    ![Export a single item](/images/extend-deploy-export-single.png)
 1. Open the production site.
 1. In the _Manage_ administrative menu, navigate to _Configuration_ >
     _Development_ > _Configuration synchronization_ _Import_ > _Single item_

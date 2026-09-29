@@ -40,11 +40,11 @@ administrative interface below.
     section at the bottom of the page.
 1. Copy the address of the _tar.gz_ link. Depending on your device and browser,
     you might do this by right clicking and selecting _Copy link address_.
-    ![Finding a module URL](/images/extend-module-install-download.webp)
+    ![Finding a module URL](/images/extend-module-install-download.png)
 1. In the _Manage_ administrative menu, navigate to _Extend_
     (_admin/modules_). The _Extend_ page appears.
 1. Click _Install new module_. The _Install new module_ page appears.
-    ![Installing a module from a URL](/images/extend-module-install-admin-toolbar-do.webp)
+    ![Installing a module from a URL](/images/extend-module-install-admin-toolbar-do.png)
 1. In the field _Install from a URL_, paste the copied download link. This value
     could look like this:
     _https://ftp.drupal.org/files/projects/admin_toolbar-8.x-2.4.tar.gz_

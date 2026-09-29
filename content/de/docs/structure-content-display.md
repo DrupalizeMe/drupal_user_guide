@@ -28,9 +28,9 @@ Siehe: [structure-content-type](./structure-content-type.md), [structure-fields]
     * Das Bild soll kleiner dargestellt werden.
 1. Um die ersten beiden Probleme zu beheben und einige zusätzliche Einstellungen zu aktualisieren, navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
       (_admin/structure/types_). Klicken Sie dann im Drop-Button des Inhaltstyps Lieferant auf _Anzeige verwalten_.
-    <img src="/images/structure-content-display_manage_display.webp" alt="Manage display" width="100%" />
+    <img src="/images/structure-content-display_manage_display.png" alt="Manage display" width="100%" />
 1. In der Spalte _Beschriftung_ wählen Sie für das Hauptbild die Option _Ausgeblendet_ aus. Wiederholen Sie dies für das Feld _URL zur Website des Lieferanten_
-    <img src="/images/structure-content-display_main_image_hidden.webp" alt="Selecting _main image title_ as _hidden_" width="100%" />
+    <img src="/images/structure-content-display_main_image_hidden.png" alt="Selecting _main image title_ as _hidden_" width="100%" />
 1. Klicken Sie auf das Zahnrad rechts für das Feld URL zur Website des Lieferanten, um die Konfigurationsoptionen für das Feld zu öffnen.
 1. Füllen Sie die Felder wie unten dargestellt aus.
     <table>
@@ -55,13 +55,13 @@ Siehe: [structure-content-type](./structure-content-type.md), [structure-fields]
       </tbody>
     </table>
 
-    <img src="/images/structure-content-display_trim_length.webp" alt="Link trim length" width="100%" />
+    <img src="/images/structure-content-display_trim_length.png" alt="Link trim length" width="100%" />
 
 1. Klicken Sie auf _Aktualisieren_.
 1. 'Ändern  Sie die Sortierreihenfolge der Felder m,it Hilfe des 'Drag-Handles' links, so dass das Hauptbild vor dem Textkörper des Inhalts angezeigt wird. Lassen Sie unterhalb des Textkörperfeldes den Link zur Website des Lieferanten anzeigen.
     Alternativ zur Verwendung der Schaltfläche zum Ziehen und Umsortieren (Drag-Handle) können Sie auf den Link _Zeilenreihenfolge anzeigen_ oben in der Tabelle klicken und den Feldern numerische Gewichtungswerte zuweisen (Felder
     mit niedrigeren oder negativeren Werten werden zuerst angezeigt).
-    <img src="/images/structure-content-display_change_order.webp" alt="Changing order of fields" width="100%" />
+    <img src="/images/structure-content-display_change_order.png" alt="Changing order of fields" width="100%" />
 1. Klicken Sie auf _Speichern_.
 1. Suchen Sie den Inhalt vom Typ „Lieferant" aus Schritt 1 erneut aus der Liste der Inhalte der Website heraus, und lassen Sie sich die Seite wieder anzeigen, um zu überprüfen, ob die von Ihnen vorgenommenen Änderungen gespeichert wurden.
 1. Wiederholen Sie ähnliche Schritte, um die Darstellung  der Felder des Inhaltstyps Rezept zu verändern.

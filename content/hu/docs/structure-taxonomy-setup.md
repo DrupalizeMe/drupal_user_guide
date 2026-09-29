@@ -19,7 +19,7 @@ A _Recept_ tartalomtípusnak léteznie kell. Ehhez lásd a [structure-content-ty
 ## Lépések
 
 1. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Taxonómia_ menüpontot (vagy gépeljük a címsorba: _admin/structure/taxonomy_). Az így megnyíló oldalon még csak egy _Tags_ nevű szótárat látunk felsorolva. Ez azért van már itt, mert a webhely létrehozásakor az _Általános_ telepítési profilt választottuk, ami bemutató céllal automatikusan definiálta ezt a példaszótárat. Ha webhelyünk többnyelvű, és adminfelületét nem angolul használjuk, akkor is angolul látjuk a szótár címét – ennek oka a [language-concept](./language-concept.md) témakörnél olvasható.
-    <img src="/images/structure-taxonomy-setup-taxonomy-page.webp" alt="Taxonómia-szótárak listaoldala" width="100%" />
+    <img src="/images/structure-taxonomy-setup-taxonomy-page.png" alt="Taxonómia-szótárak listaoldala" width="100%" />
 1. Kattintsunk a _Szótár hozzáadása_ gombra, és írjuk be az alábbi értékeket:
     <table>
       <thead>
@@ -43,12 +43,12 @@ A _Recept_ tartalomtípusnak léteznie kell. Ehhez lásd a [structure-content-ty
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-add-vocabulary.webp" alt="Hozzávalók taxonómia-szótár mentése" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-vocabulary.png" alt="Hozzávalók taxonómia-szótár mentése" width="100%" />
 
 1. Kattintsunk a _Mentés_ gombra. Ekkor az újonnan létrejött _Hozzávalók_ szótár kifejezéslista-oldalára jutunk, ami egyelőre még üres:
-    <img src="/images/structure-taxonomy-setup-add-vocabulary.webp" alt="Hozzávalók taxonómia-szótár kifejezéseinek listája" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-vocabulary.png" alt="Hozzávalók taxonómia-szótár kifejezéseinek listája" width="100%" />
 1. Kattintsunk a _Kifejezés hozzáadása_ gombra. A _Név_ mezőbe írjuk be: „Vaj”. Kattintsunk a _Mentés_ gombra.
-    <img src="/images/structure-taxonomy-setup-add-term.webp" alt="Kifejezés hozzáadása oldal" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-term.png" alt="Kifejezés hozzáadása oldal" width="100%" />
 1. A kifejezés sikeres mentéséről egy pozitív rendszerüzenetben kapunk visszajelzést. Ennek mintájára adjunk a szótárhoz további kifejezéseket is különböző élelmiszer-alapanyagokról. Lehetnek például „tojás” és „tej”.
 1. Válasszuk ki a _Kezelés_ adminisztrátori menüben a _Felépítés_ > _Tartalomtípusok_ (_admin/structure/types_) menüpontot. A _Recept_ tartalomtípusunk sorának végén a legördülő gombon válasszuk a _Mezők kezelése_ lehetőséget.
 1. Kattintsunk a _Mező hozzáadása_ gombra, és másoljuk be az alábbi értékeket a megfelelő helyekre. Miután végeztünk, mentsük munkánkat a _Mentés és folytatás_ gombbal.
@@ -74,7 +74,7 @@ A _Recept_ tartalomtípusnak léteznie kell. Ehhez lásd a [structure-content-ty
       </tbody>
     </table>
 
-    ![Hozzávalók mező hozzáadása a Recept tartalomtípushoz](/images/structure-taxonomy-setup-add-field.webp)
+    ![Hozzávalók mező hozzáadása a Recept tartalomtípushoz](/images/structure-taxonomy-setup-add-field.png)
 
 1. A következő beállítási oldalon másoljuk be az alábbi értékeket a megfelelő helyekre.
     Amikor végeztünk, kattintsunk a _Mező beállításainak mentése_ gombra.
@@ -100,7 +100,7 @@ A _Recept_ tartalomtípusnak léteznie kell. Ehhez lásd a [structure-content-ty
       </tbody>
     </table>
 
-    ![A Hozzávalók mező tárolási beállításai](/images/structure-taxonomy-setup-field-settings.webp)
+    ![A Hozzávalók mező tárolási beállításai](/images/structure-taxonomy-setup-field-settings.png)
 
 1. A következő beállítási oldalon másoljuk be az alábbi értékeket a megfelelő helyekre. Végül kattintsunk a _Beállítások mentése_ gombra.
     <table>
@@ -135,10 +135,10 @@ A _Recept_ tartalomtípusnak léteznie kell. Ehhez lásd a [structure-content-ty
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-field-settings-2.webp" alt="Mező hivatkozási beállításainak szerkesztése" width="100%" />
+    <img src="/images/structure-taxonomy-setup-field-settings-2.png" alt="Mező hivatkozási beállításainak szerkesztése" width="100%" />
 
 1. Kattintsunk a _Beállítások mentése_ gombra. Ekkor visszajutunk a _Recept_ tartalomtípus _Mezők kezelése_ oldalára, ahonnan korábban kiindultunk. Szintén a betöltődő oldalon egy pozitív rendszerüzenet tájékoztat minket a mező tartalomtípushoz való hozzárendelésének sikerességéről.
-    <img src="/images/structure-taxonomy-setup-finished.webp" alt="A Recept tartalomtípus Mezők kezelése oldala" width="100%" />
+    <img src="/images/structure-taxonomy-setup-finished.png" alt="A Recept tartalomtípus Mezők kezelése oldala" width="100%" />
 
 ## Videó
 

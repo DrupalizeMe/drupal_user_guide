@@ -63,11 +63,11 @@ Le rôle Vendeur doit exister sur votre site. Consulter [user-new-role](./user-n
       </tbody>
     </table>
 
-    <img src="/images/user-permissions-check-permissions.webp" alt="Accorder aux utilisateurs ayant le rôle Vendeur les droits de créer, supprimer et modifier des recettes" width="100%" />
+    <img src="/images/user-permissions-check-permissions.png" alt="Accorder aux utilisateurs ayant le rôle Vendeur les droits de créer, supprimer et modifier des recettes" width="100%" />
 
 1. Cliquer sur _Enregistrer les droits d'accès_. Un message indiquant que vos
     modifications ont été enregistrées apparaît.
-    ![Message de confirmation après la mise à jour des droits](/images/user-permissions-save-permissions.webp)
+    ![Message de confirmation après la mise à jour des droits](/images/user-permissions-save-permissions.png)
 
 ## Améliorer votre compréhension
 

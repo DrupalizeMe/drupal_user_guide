@@ -20,7 +20,7 @@ source_locale: "uk"
 який містить основний текст, є обов'язковим; інші регіони необов'язкові. Тема
 оформлення ядра Bartik надає регіони виділені на наступному скріншоті.
 
-![Регіони теми оформлення Bartik](/images/block-regions-bartik.webp)
+![Регіони теми оформлення Bartik](/images/block-regions-bartik.png)
 ## Пов'язані теми
 
 * [block-concept](./block-concept.md)

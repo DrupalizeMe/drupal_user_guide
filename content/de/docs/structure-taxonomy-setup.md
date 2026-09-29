@@ -24,7 +24,7 @@ Der Inhaltstyp Rezept muss vorhanden sein. Siehe: [structure-content-type](./str
     mit dem Standard-Installationsprofil des Kernsystems angelegt wurde. (Beachten Sie, dass der Name und die
     Beschreibungen dieses Vokabulars auf der Seite eventuell auf Englisch angezeigt werden; Siehe
     [language-concept](./language-concept.md) für eine detailierte Erklärung.)
-    <img src="/images/structure-taxonomy-setup-taxonomy-page.webp" alt="taxonomy list page" width="100%" />
+    <img src="/images/structure-taxonomy-setup-taxonomy-page.png" alt="taxonomy list page" width="100%" />
 1. Klicken Sie auf _Vokabular hinzufügen_, und füllen Sie die untenstehenden Werte aus.
     <table>
       <thead>
@@ -48,12 +48,12 @@ Der Inhaltstyp Rezept muss vorhanden sein. Siehe: [structure-content-type](./str
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-add-vocabulary.webp" alt="taxonomy add Ingredients" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-vocabulary.png" alt="taxonomy add Ingredients" width="100%" />
 
 1. Klicken Sie auf _Speichern_. Sie werden auf die Seite mit den Inhaltsstoffen weitergeleitet, die eine Liste aller Begriffe in diesem Vokabular zeigt.
-    <img src="/images/structure-taxonomy-setup-vocabulary-overview.webp" alt="Ingredients taxonomy term listing" width="100%" />
+    <img src="/images/structure-taxonomy-setup-vocabulary-overview.png" alt="Ingredients taxonomy term listing" width="100%" />
 1. Klicken Sie auf _Begriff hinzufügen_. Geben Sie „Butter" in das Feld _Name_ ein. Klicken Sie auf _Speichern_.
-    <img src="/images/structure-taxonomy-setup-add-term.webp" alt="Add term page" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-term.png" alt="Add term page" width="100%" />
 1. Sie erhalten eine Bestätigung darüber, dass der von ihnen erstellte Begriff zum Vokabular hinzugefügt wurde. Fügen Sie nun weitere Zutaten hinzu. Zum Beispiel „Eier" und „Milch".
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Struktur_ > _Inhaltstypen_
     (_admin/structure/types_). Klicken Sie im Inhaltstyp Rezept auf _Felder verwalten_.
@@ -81,7 +81,7 @@ Der Inhaltstyp Rezept muss vorhanden sein. Siehe: [structure-content-type](./str
       </tbody>
     </table>
 
-    ![Add Ingredients field to Content type Recipe](/images/structure-taxonomy-setup-add-field.webp)
+    ![Add Ingredients field to Content type Recipe](/images/structure-taxonomy-setup-add-field.png)
 
 1. Geben Sie auf dem folgenden Konfigurationsbildschirm die Werte aus der unten stehenden Tabelle ein.
     Klicken Sie auf _Feldeinstellungen speichern_.
@@ -107,7 +107,7 @@ Der Inhaltstyp Rezept muss vorhanden sein. Siehe: [structure-content-type](./str
       </tbody>
     </table>
 
-    ![Field storage settings for Ingredients field](/images/structure-taxonomy-setup-field-settings.webp)
+    ![Field storage settings for Ingredients field](/images/structure-taxonomy-setup-field-settings.png)
 
 1. Geben Sie auf dem folgenden Konfigurationsbild die Werte aus der untenstehenden Tabelle ein. Klicken Sie auf _Einstellungen speichern_.
     <table>
@@ -142,12 +142,12 @@ Der Inhaltstyp Rezept muss vorhanden sein. Siehe: [structure-content-type](./str
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-field-settings-2.webp" alt="reference type field settings" width="100%" />
+    <img src="/images/structure-taxonomy-setup-field-settings-2.png" alt="reference type field settings" width="100%" />
 
 1. Klicken Sie auf _Einstellungen speichern_. Sie gelangen zurück zur Seite _Felder verwalten_.
     Es wird die Meldung angezeigt, dass die Konfiguration des Elements Zutaten
     gespeichert wurde.
-    <img src="/images/structure-taxonomy-setup-finished.webp" alt="Manage fields page for Recipe content type" width="100%" />
+    <img src="/images/structure-taxonomy-setup-finished.png" alt="Manage fields page for Recipe content type" width="100%" />
 
 ## Videos
 

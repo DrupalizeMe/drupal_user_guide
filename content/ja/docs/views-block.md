@@ -35,7 +35,7 @@ installation profile) but can be recreated if deleted. See
 1. Create a new block display by clicking _Add_ under _Displays_. Click
     _Block_ from the list of links that appears. The new display is created, and the
     focus is automatically switched to its configuration.
-    ![Add block display](/images/views-block_add-block.webp)
+    ![Add block display](/images/views-block_add-block.png)
 1. To change the title of this display, click _Block_ in the _Display
     name_ field. The _Block: The name and the description of this display_ pop-up
     appears. Change the _Administrative name_ to "Recent recipes". Click _Apply_.
@@ -43,7 +43,7 @@ installation profile) but can be recreated if deleted. See
     under _Title_. In the pop-up that appears, select _This block (override)_ from
     the _For_ select list. Change the _Title_ field to "New recipes" and click
     _Apply (this display)_.
-    ![Title only for this block](/images/views-block_title.webp)
+    ![Title only for this block](/images/views-block_title.png)
 1. To change the block's style, click _Grid_ in the _Format_ field under
     _Format_. In the pop-up that appears, select _This block (override)_ from the
     _For_ select list. Select _Unformatted list_ and Click _Apply (this
@@ -53,7 +53,7 @@ installation profile) but can be recreated if deleted. See
     In the pop-up that appears, select _This block (override)_ from the
     _For_ select list. Select _Image style Thumbnail (100x100)_. Click _Apply
     (this display)_.
-    <img src="/images/views-block_image.webp" alt="Image to thumbnail" width="100%" />
+    <img src="/images/views-block_image.png" alt="Image to thumbnail" width="100%" />
 1. To remove ingredients as a filter, click _Content: Ingredients (exposed)_
     under _Filter criteria_. In the pop-up that appears, select _This
     block (override)_ from the _For_ select list. Click _Remove_ at the bottom.
@@ -72,10 +72,10 @@ installation profile) but can be recreated if deleted. See
 1. Click _Save_. You will either see the view editing page again, or the Recipes
     page, depending on what you did in step 1. You should also see a message saying
     that the view has been saved.
-    <img src="/images/views-block_recipes.webp" alt="Summary page after configuration" width="100%" />
+    <img src="/images/views-block_recipes.png" alt="Summary page after configuration" width="100%" />
 1. Place the "Recipes: Recent Recipes" block in the _Sidebar second_ region. See
     [block-place](./block-place.md). Navigate to the site's home page to see the block.
-    <img src="/images/views-block_sidebar.webp" alt="New Recipes block on homepage" width="100%" />
+    <img src="/images/views-block_sidebar.png" alt="New Recipes block on homepage" width="100%" />
 
     *Attributions*
 

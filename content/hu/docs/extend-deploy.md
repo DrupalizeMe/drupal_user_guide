@@ -25,7 +25,7 @@ Ebben a részben át fogjuk vinni az egyik nézetet (másképpen listát) a hely
 1. A _Beállítás típusa_ legördülőből válasszuk a _Nézet_ lehetőséget.
 1. Pár másodperc alatt frissül a második, _Beállításnév_ legördülő listája, amiből válasszuk az _Árusok (arusok)_ lehetőséget.
 1. Ekkor megjelenik egy hosszú szöveg az _Ezek a beállítások_ felirat alatt, amit egészben másoljunk ki vágólapra.
-    ![A konfiguráció egyetlen elemének kimentése](/images/extend-deploy-export-single.webp)
+    ![A konfiguráció egyetlen elemének kimentése](/images/extend-deploy-export-single.png)
 1. Most menjünk át az éles webhelyre.
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Konfiguráció_ > _Fejlesztés_ > _Konfiguráció szinkronizálása_ > _Import_ > _Egyetlen elem_ oldalra (vagy a címsorban adjuk meg az _admin/config/development/configuration/single/import_ útvonalat).
 1. A _Beállítás típusa_ legördülőből válasszuk a _Nézet_ lehetőséget.

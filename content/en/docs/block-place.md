@@ -57,7 +57,7 @@ Place the Opening hours and location block in the website's sidebar.
     You can also hide or display the block on specific pages. In the case of the
     Farmer's market website you do not set any of these configuration options
     because you want to show the block everywhere.
-    <img src="/images/block-place-configure-block.webp" alt="Block configuration page" width="100%" />
+    <img src="/images/block-place-configure-block.png" alt="Block configuration page" width="100%" />
 
 1. Click _Save block_. The _Block layout_ page appears. You can drag the cross
     bar handles of blocks to change their order within each region. As an
@@ -68,7 +68,7 @@ Place the Opening hours and location block in the website's sidebar.
     and click _Save blocks_.
     The block has been placed on the sidebar of all pages that use the core Bartik
     theme.
-    <img src="/images/block-place-sidebar.webp" alt="Page with a block placed on the Sidebar region" width="100%" />
+    <img src="/images/block-place-sidebar.png" alt="Page with a block placed on the Sidebar region" width="100%" />
 
 ## Expand your understanding
 

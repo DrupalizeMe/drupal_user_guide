@@ -23,15 +23,15 @@ Ahogy a bevezetőből már kiderült, egy közösségi smink webhelyünkhöz ad�
 
 1. Válasszunk ki egy sminket (lehet például a _https://www.drupal.org/project/mayo_) és a projektoldalán görgessünk le a _Downloads_ részhez a lap alján.
 1. Másoljuk ki a _tar.gz_ hivatkozás webcímét. A legtöbb korszerű webböngészőben ez általában a jobb klikkre megnyíló helyi menüben a _Hivatkozás címének másolása_ (vagy hasonló) menüpont.
-    ![A smink letöltési linkje](/images/extend-theme-install-download.webp)
+    ![A smink letöltési linkje](/images/extend-theme-install-download.png)
 1. Webhelyünk _Kezelés_ adminisztrációs menüjében menjünk a _Megjelenés_ oldalra (vagy a címsorban adjuk meg az _admin/appearance_ útvonalat). A megjelenő oldal felsorolja a webhelyünkön pillanatnyilag elérhető valamennyi sminket.
 1. Kattintsunk az _Új smink telepítése_ gombra, majd az azonos nevű oldalon két beviteli mezőt találunk:
-    ![Sminktelepítési oldal az adminfelületen](/images/extend-theme-install-page.webp)
+    ![Sminktelepítési oldal az adminfelületen](/images/extend-theme-install-page.png)
 1. A _Telepítés webcímről_ mezőbe illesszük be a tar.gz fájl előbb kimásolt webcímét, ami valami ehhez hasonló lesz: _https://ftp.drupal.org/files/projects/mayo-8.x-1.3.tar.gz_
 1. Kattintsunk a _Telepítés_ gombra, ami letölti a Drupal.org fájlkiszolgálójáról a kért verziót, és felmásolja webhelyünk szerverére. Ezek a fájlok általában a _themes_ könyvtárban vannak tárolva.
 1. Miután a következő képernyőn lefutott a folyamatjelző, „A telepítés sikeresen befejeződött” állapotüzenetet kell kapnunk. Ekkor az „Újonnan hozzáadott sminkek telepítése” hivatkozás közvetlenül visszavisz minket a _Megjelenés_ oldalra, ahonnan indultunk.
 1. Keressük meg az oldalon az „Eltávolított sminkek” cím alatt a _Mayo_ nevűt, és az alatta lévő „Telepítés és beállítás alapértelmezettként” hivatkozásra kattintva engedélyezzük. Innentől a webhely minden, nem az adminfelülethez tartozó oldala ezzel a kinézettel fog megjelenni.
-    <img src="/images/extend-theme-install-appearance-page.webp" alt="Uninstalled themes on Appearance page" width="286px" />
+    <img src="/images/extend-theme-install-appearance-page.png" alt="Uninstalled themes on Appearance page" width="286px" />
 
 ### Telepítés a Drush használatával
 

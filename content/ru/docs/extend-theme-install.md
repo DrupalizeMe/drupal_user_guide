@@ -30,7 +30,7 @@ source_locale: "ru"
     _https://www.drupal.org/project/honey_), прокрутите вниз к разделу _Releases_.
 1. Скопируйте предоставленную Composer-команду для версии темы, которую вы хотите
     установить.
-    ![Поиск composer-команды для темы](/images/extend-theme-install-download.webp)
+    ![Поиск composer-команды для темы](/images/extend-theme-install-download.png)
 1. Либо выполните следующую команду (подставив короткое имя темы и нужную версию вместо `honey:^1.0`):
     ```text
     composer require 'drupal/honey:^1.0'
@@ -45,7 +45,7 @@ source_locale: "ru"
 1. Найдите новую тему в разделе _Неустановленные темы_ и нажмите _Установить и назначить по умолчанию_
     для её использования. Все неадминистративные страницы сайта теперь будут использовать
     эту тему.
-    <img src="/images/extend-theme-install-appearance-page.webp" alt="Неустановленные темы на странице Оформление" width="286px" />
+    <img src="/images/extend-theme-install-appearance-page.png" alt="Неустановленные темы на странице Оформление" width="286px" />
 
 ### Установка темы с помощью Drush
 

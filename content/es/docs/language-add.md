@@ -24,7 +24,7 @@ predeterminada.
     _Language name_. Haga clic en _Add language_. Después de esperar a que
     terminen de descargarse las traducciones, volverá a la página _Languages_, con
     un mensaje de confirmación y el nuevo idioma en la lista.
-    <img src="/images/language-add-list.webp" alt="List of available languages in the website" width="100%" />
+    <img src="/images/language-add-list.png" alt="List of available languages in the website" width="100%" />
 1. Siga los pasos de [block-place](./block-place.md) para colocar el bloque _Language switcher_
     en la región _Sidebar second_. Esto permitirá a los visitantes del sitio
     cambiar de idioma, una vez que el sitio se haya traducido.

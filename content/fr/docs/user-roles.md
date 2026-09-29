@@ -27,14 +27,14 @@ souhaitez lui attribuer, doivent déjà exister. Consulter [user-new-user](./use
     _Nom ou courriel contenant_, ou d'autres filtres, pour restreindre la
     liste.
 1. Cliquer sur _Modifier_ pour modifier le compte d'utilisateur.
-    <img src="/images/user-roles_people-list.webp" alt="Page Personnes" width="100%" />
+    <img src="/images/user-roles_people-list.png" alt="Page Personnes" width="100%" />
 1. Sur la page de modification, faire défiler jusqu'à la section _Rôles_. Cocher
     le rôle _Administrator_ pour ce compte d'utilisateur.
-    <img src="/images/user-roles_person-edit.webp" alt="Section rôle sur la page de modification" width="141px" />
+    <img src="/images/user-roles_person-edit.png" alt="Section rôle sur la page de modification" width="141px" />
 1. Cliquer sur _Enregistrer_ pour mettre à jour le compte d'utilisateur. Vous
     devriez être redirigé vers la page _Personnes_ et voir un message disant que
     les changements ont été enregistrés.
-    ![Message de confirmation](/images/user-roles_message.webp)
+    ![Message de confirmation](/images/user-roles_message.png)
 
 ### Mettre à jour les rôles en utilisant la méthode de modification en masse
 
@@ -47,10 +47,10 @@ souhaitez lui attribuer, doivent déjà exister. Consulter [user-new-user](./use
     pour restreindre la liste.
 1. Sélectionner _Ajouter le rôle Vendor au(x) utilisateur(s) sélectionné(s)_ dans
     le menu déroulant _Action_.
-    ![Page Personnes avec opération en masse prête](/images/user-roles_bulk.webp)
+    ![Page Personnes avec opération en masse prête](/images/user-roles_bulk.png)
 1. Cliquer sur _Appliquer aux éléments sélectionnés_. Vous devriez voir un
     message indiquant que les changements souhaités ont été appliqués.
-    ![Message de confirmation](/images/user-roles_message_bulk.webp)
+    ![Message de confirmation](/images/user-roles_message_bulk.png)
 
 ## Vidéos (en anglais)
 

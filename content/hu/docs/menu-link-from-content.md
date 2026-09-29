@@ -19,7 +19,7 @@ Már léteznie kell a _Rólunk_ tartalomelemnek. Ehhez lásd az [content-create]
 
 1. A _Kezelés_ adminisztrációs menüben menjünk a _Tartalom_ (címsorban _admin/content_) oldalra.
 1. Keressük ki a _Rólunk oldalt_ és a sorának végén kattintsunk a _Szerkesztés_ gombra. Ekkor megjelenik a szokványos tartalomszerkesztési oldal.
-    <img src="/images/menu-link-from-content_edit_page.webp" alt="Oldal szerkesztése hivatkozás" width="100%" />
+    <img src="/images/menu-link-from-content_edit_page.png" alt="Oldal szerkesztése hivatkozás" width="100%" />
 1. A jobb oldalsávon a _Menübeállítások_ fülre kattintva nyissuk ki.
 1. Jelöljük be a _Menüpontot hoz létre_ opciót, így további lehetőségek jelennek meg.
 1. Töltsük ki a mezőket az alábbi táblázat szerint értelemszerűen:
@@ -55,10 +55,10 @@ Már léteznie kell a _Rólunk_ tartalomelemnek. Ehhez lásd az [content-create]
       </tbody>
     </table>
 
-    ![Menühivatkozás létrehozása a tartalomszerkesztési oldalon](/images/menu-link-from-content.webp)
+    ![Menühivatkozás létrehozása a tartalomszerkesztési oldalon](/images/menu-link-from-content.png)
 
 1. A _Mentés és megtartás közzétettként_ gombra kattintva menthetjük el új változtatásainkat. Ekkor a _Címlap_ linkre vagy a _Vissza a webhelyre_ menüpontra kattintva ellenőrizhetjük, valóban megjelenik-e új menüpontunk, ahogy az alábbi képen is látszik:
-    <img src="/images/menu-link-from-content-result.webp" alt="Az új Rólunk menüpont hozzáadva a főmenühöz" width="100%" />
+    <img src="/images/menu-link-from-content-result.png" alt="Az új Rólunk menüpont hozzáadva a főmenühöz" width="100%" />
 
 ## Az ismeretek elmélyítése
 

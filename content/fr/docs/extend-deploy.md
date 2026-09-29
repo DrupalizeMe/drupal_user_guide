@@ -35,7 +35,7 @@ site de production. Consulter [views-create](./views-create.md).
 1. Sélectionner Marchands dans le menu déroulant _Nom de la configuration_. La
     configuration apparaît dans la zone de texte.
 1. Copier la configuration depuis la zone de texte.
-    ![Exporter un élément individuel](/images/extend-deploy-export-single.webp)
+    ![Exporter un élément individuel](/images/extend-deploy-export-single.png)
 1. Ouvrir le site de production.
 1. Dans le menu d'administration _Gérer_, naviguer vers _Configuration_ >
     _Développement_ > _Synchronisation de configuration_ > _Importer_ > _Élément

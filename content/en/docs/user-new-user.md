@@ -20,7 +20,7 @@ The Vendor role must exist on your site. See [user-new-role](./user-new-role.md)
 
 1. In the _Manage_ administrative menu, navigate to _People_ (_admin/people_).
 1. Click _Add user_.
-    <img src="/images/user-new-user_form.webp" alt="Form for creating a new user account" width="100%" />
+    <img src="/images/user-new-user_form.png" alt="Form for creating a new user account" width="100%" />
 1. Fill in the form fields. See the table below.
     <table>
       <thead>
@@ -80,7 +80,7 @@ The Vendor role must exist on your site. See [user-new-role](./user-new-role.md)
     </table>
 1. Click _Create new account_. You will get a notification about the user account
     creation.
-    <img src="/images/user-new-user-created.webp" alt="New user account has been created" width="100%" />
+    <img src="/images/user-new-user-created.png" alt="New user account has been created" width="100%" />
 1. Create a second Vendor account for Happy Farm by following the steps above.
 
 ## Expand your understanding

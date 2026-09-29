@@ -20,7 +20,7 @@ source_locale: "fa"
 
 1. از منوی _مدیریت_ به مسیر _ساختار_ > _دسته‌بندی_ (_admin/structure/taxonomy_) بروید. در اینجا واژگان _تگ‌ها_ را مشاهده می‌کنید که در زمان نصب با پروفایل استاندارد ایجاده شده‌اند.
 
-    <img src="/images/structure-taxonomy-setup-taxonomy-page.webp" alt="صفحه فهرست دسته‌بندی" width="100%" />
+    <img src="/images/structure-taxonomy-setup-taxonomy-page.png" alt="صفحه فهرست دسته‌بندی" width="100%" />
 
 1. روی _افزودن واژگان_ کلیک کرده و مقادیر زیر را وارد نمایید.
     <table>
@@ -45,12 +45,12 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-add-vocabulary.webp" alt="افزودن مواد اولیه به دسته‌بندی" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-vocabulary.png" alt="افزودن مواد اولیه به دسته‌بندی" width="100%" />
 
 1. روی _ذخیره‌سازی_ کلیک کنید. به صفحه مواد اولیه هدایت می‌شوید، که فهرستی از تمام عبارت‌های موجود در آن را نمایش می‌دهد.
-    <img src="/images/structure-taxonomy-setup-vocabulary-overview.webp" alt="فهرستی از عبارت‌های دسته‌بندی مواد اولیه" width="100%" />
+    <img src="/images/structure-taxonomy-setup-vocabulary-overview.png" alt="فهرستی از عبارت‌های دسته‌بندی مواد اولیه" width="100%" />
 1. روی _افزودن عبارت_ کلیک کنید. در فیلد _نام_ عبارت "کره" را وارد کنید. روی _ذخیره‌سازی_ کلیک کنید.
-    <img src="/images/structure-taxonomy-setup-add-term.webp" alt="صفحه افزودن عبارت" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-term.png" alt="صفحه افزودن عبارت" width="100%" />
 1. تاییدیه‌ای مبنی بر عبارت جدید دریافت می‌کنید. عبارت‌های بیشتری ایجاد کنید. برای نمونه، "گوجه" و "خیار".
 1. از منوی _مدیریت_ به مسیر _ساختار_ > _انواع محتوا_ (_admin/structure/types_) بروید. روی _مدیریت فیلدها_ برای نوع محتوای محصول کلیک کنید.
 1. روی _افزودن فیلد_ کلیک کرده و مقادیر جدول زیر را وارد کنید. روی _ذخیره‌سازی و ادامه_ کلیک کنید.
@@ -76,7 +76,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![افزودن فیلد مواد اولیه به نوع محتوای محصول](/images/structure-taxonomy-setup-add-field.webp)
+    ![افزودن فیلد مواد اولیه به نوع محتوای محصول](/images/structure-taxonomy-setup-add-field.png)
 
 1. در صفحه پیکربندی پیش رو، مقادیر جدول زیر را وارد کنید. روی _ذخیره‌سازی تنظیمات فیلد_ کلیک کنید.
     <table>
@@ -101,7 +101,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![تنظیمات ذخیره‌سازی فیلد برای فیلد مواد اولیه](/images/structure-taxonomy-setup-field-settings.webp)
+    ![تنظیمات ذخیره‌سازی فیلد برای فیلد مواد اولیه](/images/structure-taxonomy-setup-field-settings.png)
 
 1. در صفحه پیکربندی پیش رو، مقادیر جدول زیر را وارد کنید. روی _ذخیره‌سازی تنظیمات_ کلیک کنید.
     <table>
@@ -136,10 +136,10 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-field-settings-2.webp" alt="تنظیمات فیلد نوع مرجع" width="100%" />
+    <img src="/images/structure-taxonomy-setup-field-settings-2.png" alt="تنظیمات فیلد نوع مرجع" width="100%" />
 
 1. روی _ذخیره‌سازی تنظیمات_ کلیک کنید. در این مرحله به صفحه _مدیریت فیلدها_ هدایت می‌شوید. پیامی نمایش می‌یابد مبنی بر اینکه پیکربندی برای مواد اولیه کامل شده است.
-    <img src="/images/structure-taxonomy-setup-finished.webp" alt="صفحه مدیریت فیلدها برای نوع محتوای محصول" width="100%" />
+    <img src="/images/structure-taxonomy-setup-finished.png" alt="صفحه مدیریت فیلدها برای نوع محتوای محصول" width="100%" />
 
     *مشارکت‌کنندگان*
 

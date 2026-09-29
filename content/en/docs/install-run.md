@@ -28,13 +28,13 @@ run the command `ddev drush sql:drop` and then follow the instructions below.
     The language files for the chosen language will be downloaded and installed so
     that the rest of the installation process can be finished in the chosen
     language. After choosing a language, click _Save and continue_.
-    <img src="/images/install-run-1.webp" alt="Choose a language" width="100%" />
+    <img src="/images/install-run-1.png" alt="Choose a language" width="100%" />
 1. Select an installation profile. Installation profiles provide site features
     and functions for a specific type of site as a single download containing
     the core software, contributed modules, themes, and pre-defined
     configuration. Core contains two installation profiles. Select the core
     Standard installation profile. Click _Save and continue_.
-    <img src="/images/install-run-2.webp" alt="Choose an installation profile" width="100%" />
+    <img src="/images/install-run-2.png" alt="Choose an installation profile" width="100%" />
 1. The next step in the installer will verify that your system meets the minimum
     requirements. If it does not, you'll be presented with an outline of what
     needs to be corrected in order to proceed. If it does, the installer will
@@ -68,12 +68,12 @@ run the command `ddev drush sql:drop` and then follow the instructions below.
       </tbody>
     </table>
 
-    <img src="/images/install-run-3.webp" alt="Database configuration form" width="100%" />
+    <img src="/images/install-run-3.png" alt="Database configuration form" width="100%" />
 
 1. The next step will display a progress bar under the heading _Installing
     Drupal_. After the installer has completed, it will automatically advance to
     the next step.
-    <img src="/images/install-run-4.webp" alt="Installation progress bar" width="100%" />
+    <img src="/images/install-run-4.png" alt="Installation progress bar" width="100%" />
 1. The next step is to configure some basic information about your new site
     (also notice if there is a warning about file permissions, for a later step).
     Note that the user account you create in this step is the site's admin
@@ -124,13 +124,13 @@ run the command `ddev drush sql:drop` and then follow the instructions below.
     </table>
 
     The remaining fields can likely be left at their default values.
-    <img src="/images/install-run-5.webp" alt="Configuration form" width="100%" />
+    <img src="/images/install-run-5.png" alt="Configuration form" width="100%" />
 
 1. Click _Save and continue_.
 1. You will be redirected to the front page of your new site and you should see
     the message _Congratulations, you installed Drupal!_ displayed at the top of
     the page.
-    <img src="/images/install-run-6.webp" alt="Installation success" width="100%" />
+    <img src="/images/install-run-6.png" alt="Installation success" width="100%" />
 1. You may have seen a warning in the Configuration step about file permissions,
     and you may continue to see this warning until you fix the permissions. To
     avoid the warning and make your site more secure, change the permissions on the

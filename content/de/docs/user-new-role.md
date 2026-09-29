@@ -17,12 +17,12 @@ Erstellen Sie die Rolle Lieferant, um einigen - aber nicht allen - Benutzern die
     (_admin/people/roles_).
 1. Sie werden feststellen, dass die Standardrollen _Gast_,
     _Authentifizierter Benutzer_, und _Administrator_ bereits vorhanden sind.
-    ![Roles page](/images/user-new-role-roles-page.webp)
+    ![Roles page](/images/user-new-role-roles-page.png)
 1. Klicken Sie auf _Rolle hinzufügen_, um eine benutzerdefinierte Rolle hinzuzufügen.
 1. Geben Sie im Feld _Rollenname_ den Namen Lieferant ein. Klicken Sie auf _Speichern_.
-    ![adding vendor as a role](/images/user-new-role-add-role.webp)
+    ![adding vendor as a role](/images/user-new-role-add-role.png)
 1. Im oberen Teil der Website wird die Meldung: „Die Rolle Lieferant wurde hinzugefügt" ausgegeben.
-    ![vendor role added success message](/images/user-new-role-confirm.webp)
+    ![vendor role added success message](/images/user-new-role-confirm.png)
 
 ## Vertiefen Sie Ihr Wissen
 

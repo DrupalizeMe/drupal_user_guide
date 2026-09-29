@@ -73,7 +73,7 @@ _Структура_, і виберіть _Таксономія_ і в післ�
 URL _http://example.com/admin/structure/taxonomy_ (якщо адреса вашого сайту
 _http://example.com_).
 
-![Admin menu](/images/preface-conventions-top-menu.webp)
+![Admin menu](/images/preface-conventions-top-menu.png)
 
 Ще один приклад:
 
@@ -85,7 +85,7 @@ _http://example.com_).
 знайти _Система_ розділ на сторінці і потім натиснути _Основні налаштування сайту_. Після чого ви потрапите на:
 _http://example.com/admin/config/system/site-information_.
 
-![_ System_ section of the Configuration page](/images/preface-conventions-config-system.webp)
+![_ System_ section of the Configuration page](/images/preface-conventions-config-system.png)
 
 Ще одне зауваження: якщо ви використовуєте стандартну тему адміністрування Seven,
 багато кнопок "Додати" в інтерфейсі відображаються зі знаком плюс + на

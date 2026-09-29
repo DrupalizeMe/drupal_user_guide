@@ -23,12 +23,12 @@ con el perfil de instalación Standard del núcleo.
     contenido _Article_. Tenga en cuenta que el nombre de este tipo de contenido
     aparece en inglés en esta página; ver [language-concept](./language-concept.md) para una
     explicación.
-    <img src="/images/structure-content-type-delete-dropdown.webp" alt="Article delete dropdown" width="100%" />
+    <img src="/images/structure-content-type-delete-dropdown.png" alt="Article delete dropdown" width="100%" />
 1. Se muestra una página de confirmación. Haga clic en _Delete_.
-    <img src="/images/structure-content-type-delete-confirmation.webp" alt="Article delete confirmation page" width="100%" />
+    <img src="/images/structure-content-type-delete-confirmation.png" alt="Article delete confirmation page" width="100%" />
 1. Aparece la página _Content types_ con un mensaje de confirmación que indica
     que el tipo de contenido se ha eliminado:
-    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.webp)
+    ![Article delete confirmation message](/images/structure-content-type-delete-confirm.png)
 ## Vídeos
 
 <div class="embedded-video">

@@ -22,17 +22,17 @@ Home and About pages must exist in the main navigation menu. See
     (_admin/structure/menu_) where all menus on your site are listed. Click _Edit
     Menu_ from the _Operations_ dropdown for _Main Navigation_. You can also reach
     this page using contextual links (refer to [config-overview](./config-overview.md)) for the menu.
-    <img src="/images/menu-reorder_menu_titles.webp" alt="List of menus on the site with 'Main navigation' highlighted" width="100%" />
+    <img src="/images/menu-reorder_menu_titles.png" alt="List of menus on the site with 'Main navigation' highlighted" width="100%" />
 1. The _Edit Menu_ page will display a list of each item in the menu you
     chose (_Main navigation_).
-    ![List of menus items under _Main navigation_](/images/menu-reorder_edit_menu.webp)
+    ![List of menus items under _Main navigation_](/images/menu-reorder_edit_menu.png)
 1. Use the cross bar handles to reorder the menu items.  Drag the Home menu item
     above the About menu item so that it appears first.
-    ![Reordered menu items with warning message about unsaved changes and the _Save_ button](/images/menu-reorder_reorder.webp)
+    ![Reordered menu items with warning message about unsaved changes and the _Save_ button](/images/menu-reorder_reorder.png)
 1. Click _Save_.
 1. The home page now displays the main navigation with the Home menu
     item displayed first.
-    ![Reordered menu items on the home page with 'Home' first and then 'About'](/images/menu-reorder_final_order.webp)
+    ![Reordered menu items on the home page with 'Home' first and then 'About'](/images/menu-reorder_final_order.png)
 ## Expand your understanding
 
 Add a menu item called _Contact_, leading to the _/contact_ page, to your Main

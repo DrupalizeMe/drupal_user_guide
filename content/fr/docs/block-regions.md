@@ -21,7 +21,7 @@ peut contenir le contenu principal, c'est obligatoire ; les autres sont
 optionnelles. Le thème du cœur Olivero fournit dix-huit régions mises en évidence
 dans l'image suivante.
 
-<img src="/images/block-regions-olivero.webp" alt="Régions du thème Olivero du cœur" width="100%" />
+<img src="/images/block-regions-olivero.png" alt="Régions du thème Olivero du cœur" width="100%" />
 
 ## Sujets liés
 

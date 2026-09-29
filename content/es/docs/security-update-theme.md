@@ -46,7 +46,7 @@ sitio; ver [install-composer](./install-composer.md).
 1. En el menú administrativo _Manage_, vaya a _Reports_ >
     _Available updates_ > _Update_ (_admin/reports/updates_).
 1. Busque en la lista los temas que necesiten actualizarse.
-    <img src="/images/security-update-theme-updates.webp" alt="Available updates" width="100%" />
+    <img src="/images/security-update-theme-updates.png" alt="Available updates" width="100%" />
 1. Determine el nombre corto del proyecto que quiere actualizar. Para los
     módulos y temas contribuidos, es la última parte de la URL de la página del
     proyecto; por ejemplo, el tema Honey, en https://www.drupal.org/project/honey,

@@ -23,7 +23,7 @@ Le type de contenu Recette doit exister. Voir [structure-content-type](./structu
 1. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Taxonomie_
     (_admin/structure/taxonomy_). Vous verrez le vocabulaire _Mots clés_ qui est
     créé avec le profil d'installation Standard du coeur.
-    <img src="/images/structure-taxonomy-setup-taxonomy-page.webp" alt="Page de liste des taxonomies" width="100%" />
+    <img src="/images/structure-taxonomy-setup-taxonomy-page.png" alt="Page de liste des taxonomies" width="100%" />
 1. Cliquer sur _Ajouter un vocabulaire_, et remplir avec les valeurs ci-dessous.
     <table>
       <thead>
@@ -47,14 +47,14 @@ Le type de contenu Recette doit exister. Voir [structure-content-type](./structu
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-add-vocabulary.webp" alt="Ajout d'un vocabulaire Ingrédients" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-vocabulary.png" alt="Ajout d'un vocabulaire Ingrédients" width="100%" />
 
 1. Cliquer sur _Enregistrer_. Vous êtes redirigé(e) vers la page Ingrédients, qui
     Affiche une liste de tous les termes de ce vocabulaire.
-    <img src="/images/structure-taxonomy-setup-vocabulary-overview.webp" alt="Liste des termes de taxonomie du vocabulaire Ingrédients" width="100%" />
+    <img src="/images/structure-taxonomy-setup-vocabulary-overview.png" alt="Liste des termes de taxonomie du vocabulaire Ingrédients" width="100%" />
 1. Cliquer sur _Ajouter un terme_. Saisir "Beurre" dans le champ _Nom_. Cliquer
     sur _Enregistrer_.
-    <img src="/images/structure-taxonomy-setup-add-term.webp" alt="Page d'ajout d'un terme" width="100%" />
+    <img src="/images/structure-taxonomy-setup-add-term.png" alt="Page d'ajout d'un terme" width="100%" />
 1. Une confirmation à propos du terme que vous avez créé s'affiche. Ajouter plus
     de termes. Par exemple, "Œufs" et "Lait".
 1. Dans le menu d'administration _Gérer_, aller à _Structure_ > _Types de contenu_
@@ -63,7 +63,7 @@ Le type de contenu Recette doit exister. Voir [structure-content-type](./structu
     Choisir le type de champ _Référence_ dans les options _Choisir un type de
     champ_. La page _Ajouter un champ_ apparaît. Elle contient un formulaire
     permettant de configurer le champ.
-    ![Ajouter un champ Ingrédients au type de contenu Recette](/images/structure-taxonomy-setup-add-field.webp)
+    ![Ajouter un champ Ingrédients au type de contenu Recette](/images/structure-taxonomy-setup-add-field.png)
 1. Saisir les valeurs du tableau ci-dessous. Cliquer sur _Continuer_.
     <table>
       <thead>
@@ -87,7 +87,7 @@ Le type de contenu Recette doit exister. Voir [structure-content-type](./structu
       </tbody>
     </table>
 
-    ![Paramètres du champ Ingrédients](/images/structure-taxonomy-setup-add-field-label.webp)
+    ![Paramètres du champ Ingrédients](/images/structure-taxonomy-setup-add-field-label.png)
 
 1. Sur l'écran de configuration suivant, saisir les valeurs du tableau
     ci-dessous. Cliquer sur _Enregistrer les paramètres_.
@@ -133,12 +133,12 @@ Le type de contenu Recette doit exister. Voir [structure-content-type](./structu
       </tbody>
     </table>
 
-    <img src="/images/structure-taxonomy-setup-field-settings-2.webp" alt="Paramètres du champ de type référence" width="100%" />
+    <img src="/images/structure-taxonomy-setup-field-settings-2.png" alt="Paramètres du champ de type référence" width="100%" />
 
 1. Cliquer sur _Enregistrer les paramètres_. Vous revenez à la page _Gérer les
     champs_. Un message disant que la configuration pour Ingrédients est enregistrée
     s'affiche.
-    <img src="/images/structure-taxonomy-setup-finished.webp" alt="Page de gestion des champs pour le type de contenu Recette" width="100%" />
+    <img src="/images/structure-taxonomy-setup-finished.png" alt="Page de gestion des champs pour le type de contenu Recette" width="100%" />
 
 ## Vidéos (en anglais)
 

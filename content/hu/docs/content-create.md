@@ -52,7 +52,7 @@ Az _Egyszerű oldal_ tartalomtípusnak már léteznie kell. Nem kell félnünk, 
     </table>
 
     A szövegszerkesztő eszközsorán a _Forráskód_ gombra kattintva elérjük közvetlenül a HTML forráskódját is az oldalunknak, amit éppen szerkesztünk.
-    <img src="/images/content-create-create-basic-page.webp" alt="Egy egyszerű oldal beküldése űrlap" width="100%" />
+    <img src="/images/content-create-create-basic-page.png" alt="Egy egyszerű oldal beküldése űrlap" width="100%" />
 
 1. Az _Előnézet_ gombra kattintva még elmentés előtt meggyőződhetünk róla, hogy minden úgy néz ki, ahogy szeretnénk.
 1. Az előnézet bezárásához kattintsunk a _Vissza a tartalomszerkesztéshez_ gombra.

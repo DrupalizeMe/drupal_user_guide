@@ -21,7 +21,7 @@ source_locale: "fa"
 
 1. از منوی _مدیریت_ به مسیر _توسعه_ (_admin/modules_) بروید. صفحه _توسعه_ فهرستی از تمام افزونه‌های موجود را نمایش می‌دهد.
 1. افزونه یا افزونه‌هایی که می‌خواهید نصب شوند را انتخاب کنید. برای نمونه، افزونه Activity Tracker را انتخاب کنید.
-    <img src="/images/config-install-check-modules.webp" alt="فعال‌سازی افزونه Activity Tracker" width="100%" />
+    <img src="/images/config-install-check-modules.png" alt="فعال‌سازی افزونه Activity Tracker" width="100%" />
 1. روی _نصب_ کلیک کنید. افزونه‌های انتخاب شده نصب می‌گردند.
 
 ### استفاده از Drush

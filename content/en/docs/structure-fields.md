@@ -26,7 +26,7 @@ Add the fields Vendor URL and Main image to the Vendor content type.
     were provided by your installation profile are shown in English on these pages;
     see [language-concept](./language-concept.md) for an explanation.
 1. Click _Create a new field_. The _Add field_ page appears.
-    ![Add field page to choose field type](/images/structure-fields-add-field.webp)
+    ![Add field page to choose field type](/images/structure-fields-add-field.png)
 1. Choose the _Link_ field type from the _Choose a field type_ options. Click _Continue_. The _Add field_ page appears with a form to configure the field label.
 1. Fill in the fields as shown below.
     <table>
@@ -53,7 +53,7 @@ Add the fields Vendor URL and Main image to the Vendor content type.
 
     A machine name is automatically generated, based on the _Label_ value. Click
     _Edit_ if you want to override the default name.
-    ![Add field page to set field label](/images/structure-fields-add-field-label.webp)
+    ![Add field page to set field label](/images/structure-fields-add-field-label.png)
 
 1. Click _Continue. The page _Vendor URL settings for Vendor_
     appears which allows you to configure the field. Fill in the fields as shown
@@ -100,7 +100,7 @@ Add the fields Vendor URL and Main image to the Vendor content type.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-vendor-url.webp" alt="Field settings page for Vendor URL" width="100%" />
+    <img src="/images/structure-fields-vendor-url.png" alt="Field settings page for Vendor URL" width="100%" />
 
 1. Click _Save settings_. The Vendor URL has been added to the content
     type. Continue creating the Main image field.
@@ -194,13 +194,13 @@ Add the fields Vendor URL and Main image to the Vendor content type.
       </tbody>
     </table>
 
-    <img src="/images/structure-fields-main-img.webp" alt="Field settings page for Main Image" width="100%" />
+    <img src="/images/structure-fields-main-img.png" alt="Field settings page for Main Image" width="100%" />
 
 1. Click _Save settings_. Main image has been added to the content type.
-    <img src="/images/structure-fields-result.webp" alt="Manage fields page" width="100%" />
+    <img src="/images/structure-fields-result.png" alt="Manage fields page" width="100%" />
 1. Add a Main image field to the Recipe content type, using similar steps. Start
     by navigating to the Recipe content type's _Manage Fields_ page. Then use the _Re-use an existing field_ button to open the modal dialog and press the _Re-use_ button that corresponds with the Main image field in the table. Then skip to step 7 and follow the remaining steps.
-    <img src="/images/structure-fields-main-img-reuse.webp" alt="Select a field to re-use" width="100%" />
+    <img src="/images/structure-fields-main-img-reuse.png" alt="Select a field to re-use" width="100%" />
 1. Create two Vendor content items (see [content-create](./content-create.md)) called "Happy Farm"
     and "Sweet Honey". Make sure that they include images and URLs.
 

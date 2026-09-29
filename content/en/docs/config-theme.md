@@ -18,10 +18,10 @@ and to add a logo.
     (_admin/appearance_).
 1. Under _Installed themes_, you will find Olivero listed as your default
     theme. Under _Olivero (default theme)_, click _Settings_.
-    <img src="/images/config-theme_olivero_settings.webp" alt="Default theme, Olivero" width="100%" />
+    <img src="/images/config-theme_olivero_settings.png" alt="Default theme, Olivero" width="100%" />
 1. Under _Logo image_, uncheck _Use the logo supplied by the
     theme_.
-    ![New logo in core Olivero theme settings](/images/config-theme_logo_upload.webp)
+    ![New logo in core Olivero theme settings](/images/config-theme_logo_upload.png)
 1. Under _Upload logo image_, locate a logo file and upload it to your
     site. Note: You can also set a universal logo for all themes under
     _Appearance_ > _Settings_ (_admin/appearance/settings_). A custom logo for your
@@ -56,7 +56,7 @@ and to add a logo.
     site, click _Save configuration_ at the bottom of the page.
 1. Click _Return to site_ or _Home_ in the toolbar to verify that you have
     updated the core Olivero theme settings for your website.
-    <img src="/images/config-theme_final_result.webp" alt="Final result of editing the core Olivero theme settings - colors and logo" width="100%" />
+    <img src="/images/config-theme_final_result.png" alt="Final result of editing the core Olivero theme settings - colors and logo" width="100%" />
 
 ## Expand your understanding
 

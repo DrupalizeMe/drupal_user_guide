@@ -24,7 +24,7 @@ Az alaprendszer _Content Translation_ moduljának engedélyezve kell lennie, és
 1. Keressük ki a címlapot jelentő tartalomelemet. Beírhatjuk a kereső Cím mezőjébe is.
 1. Ha megtaláltuk, a sorának a jobb oldalán válasszuk a lenyíló gombon a _Fordítás_ lehetőséget. Ekkor megjelenik a _Címlap fordításai_ oldal.
 1. Kattintsunk a _Hozzáadás_ gombra a _spanyol_ nyelv sorában.
-    <img src="/images/language-content-translate-add.webp" alt="Egy tartalmi fordítás felvitele" width="100%" />
+    <img src="/images/language-content-translate-add.png" alt="Egy tartalmi fordítás felvitele" width="100%" />
 1. Ne lepődjünk meg, a következő oldalon az adminfelület nyelve automatikusan spanyolra vált. Ha szeretnénk átváltani egy másik nyelvre, egyszerűen csak írjuk át a böngésző címsorában az _es_ szócskát például _hu_-ra a magyar nyelvhez. Tehát ha ezt látjuk a címsorban: _pelda.hu/es/node/5/translations/add/en/es_, akkor a legelső _es_-t kell cserélni, ami rögtön a pelda.hu doménnév után következik.
 1. Töltsünk ki minden mezőt a lent látható módon. Szükség lesz majd a jobb oldalpanelen az _Útvonal beállításai_ fülre kattintani, hogy elérhetővé váljon a _Webcímálnév_ feliratú beviteli mező.
     <table>

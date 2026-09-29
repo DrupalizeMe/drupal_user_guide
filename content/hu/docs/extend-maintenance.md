@@ -44,7 +44,7 @@ Mint számos más művelethez, a karbantartási mód ki- és bekapcsolására is
     </table>
 1. Kattintsunk a _Beállítások mentése_ gombra.
 1. Ellenőrizzük a megváltozott működést: ha most megnyitjuk webhelyünket egy másik böngészőben (amiben nem vagyunk bejelentkezve), akkor az alábbi képhez hasonlót kell látnunk. Ha mégsem, akkor előfordulhat, hogy ki kell ürítenünk a gyorsítótárat, amelynek menete a [prevent-cache-clear](./prevent-cache-clear.md) résznél olvasható.
-    <img src="/images/extend-maintenance-mode-enabled.webp" alt="Webhely karbantartási módban" width="100%" />
+    <img src="/images/extend-maintenance-mode-enabled.png" alt="Webhely karbantartási módban" width="100%" />
 
 ### A karbantartási mód letiltása az adminfelületen keresztül
 
@@ -73,7 +73,7 @@ Mint számos más művelethez, a karbantartási mód ki- és bekapcsolására is
     </table>
 1. Kattintsunk a _Beállítások mentése_ gombra.
 1. Ha most nyitjuk meg ismét webhelyünket egy másik böngészőben, amiben nem vagyunk bejelentkezve, akkor újra a rendes működést kell tapasztalnunk, ahogy az alábbi képen is látható. Ha mégsem, akkor előfordulhat, hogy ki kell ürítenünk a gyorsítótárat, ami a [prevent-cache-clear](./prevent-cache-clear.md) résznél olvasható.
-    <img src="/images/extend-maintenance-mode-disabled.webp" alt="Webhely rendes üzemmódban működés során" width="100%" />
+    <img src="/images/extend-maintenance-mode-disabled.png" alt="Webhely rendes üzemmódban működés során" width="100%" />
 
 ### A karbantartási mód ki- és bekapcsolása a Drush használatával
 

@@ -45,7 +45,7 @@ indem Sie folgende Schritte ausführen:
     [config-overview](./config-overview.md) um Anweisungen zum Zugriff auf Kontextlinks zu erhalten).
     Jedes Feld, dass in diesem Inhalt direkt bearbeitet werden kann, wird blau
     umrandet dargestellt. Außerdem wird ein hervorgehobenes Dialogfeld angezeigt.
-    <img src="/images/content-in-place-edit-hover-box.webp" alt="Schnellbearbeitungsmodus" width="100%" />
+    <img src="/images/content-in-place-edit-hover-box.png" alt="Schnellbearbeitungsmodus" width="100%" />
 1. Klicken Sie auf den Bereich _Textkörper_, um mit dessen Bearbeitung zu
     beginnen. Das Feld _Textkörper_ unterstützt die Verwendung eines
     Rich-Text-Editors. Die Werkzeugleiste wird in einem hervorgehobenen
@@ -53,7 +53,7 @@ indem Sie folgende Schritte ausführen:
 1. Fügen Sie einige Informationen über den Wochenmarkt hinzu.
     Ein _Speichern_-Button erscheint im hervorgehobenen Dialogfeld, und der Umriss
     des Feldes ändert seine Farbe.
-    <img src="/images/content-in-place-edit-save-box.webp" alt="Schnellbearbeitungsmodus nach der Bearbeitung" width="100%" />
+    <img src="/images/content-in-place-edit-save-box.png" alt="Schnellbearbeitungsmodus nach der Bearbeitung" width="100%" />
 1. Wenn Sie mit Ihrer Inhaltsüberarbeitung zufrieden sind, klicken Sie im
     hervorgehobenen Dialog auf _Speichern_. Wenn nicht, klicken Sie auf „x“, um die vorgenommenen Änderungen zu verwerfen, und
     bestätigen Sie den Vorgang. So oder so:  Der Direktbearbeitungsmodus wird

@@ -71,7 +71,7 @@ _Taxonomia_, i al final, seríeu a una pàgina amb la URL
 _http://example.com/admin/structure/taxonomy_ (si la URL base del vostre lloc és
 _http://example.com_).
 
-<img src="/images/preface-conventions-top-menu.webp" alt="Admin menu" width="100%" />
+<img src="/images/preface-conventions-top-menu.png" alt="Admin menu" width="100%" />
 
 Un altre exemple:
 
@@ -84,7 +84,7 @@ trobar la secció _Sistema_ de la pàgina i, dins d'aquesta, fer clic a
 _Informació del lloc_. Després d'això, hauríeu d'acabar a
 _http://example.com/admin/config/system/site-information_.
 
-![Secció _Sistema_ de la pàgina de Configuració](/images/preface-conventions-config-system.webp)
+![Secció _Sistema_ de la pàgina de Configuració](/images/preface-conventions-config-system.png)
 
 Una altra nota: si esteu utilitzant el tema d'administració estàndard del nucli
 Seven, molts dels botons "Afegeix" de la interfície d'administració contenen

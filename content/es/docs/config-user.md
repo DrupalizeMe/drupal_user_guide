@@ -21,14 +21,14 @@ el sitio para eventos relacionados con las cuentas de usuario.
     personas con permiso para registrar cuentas de usuario. Puede marcar _Require
     email verification when a visitor creates an account_ por si quiere cambiar los
     ajustes de registro de cuentas más adelante.
-    ![Account registration only by admin](/images/config-user_account_reg.webp)
+    ![Account registration only by admin](/images/config-user_account_reg.png)
 1. Opcionalmente, cambie la dirección de correo electrónico predeterminada desde
     la que se enviarán las notificaciones de cuenta de usuario del sitio web del
     mercado de agricultores. Esto le ayudará a mantener una dirección de correo
     electrónico separada de la que se usa para el sitio web en general. Por
     ejemplo, esta dirección de correo para las notificaciones de cuenta de usuario
     será útil para el personal que se comunica con los vendors.
-    ![Notification email from address](/images/config-user_from_email.webp)
+    ![Notification email from address](/images/config-user_from_email.png)
 1. Opcionalmente, edite las plantillas de correo en _Emails_ para personalizar
     los correos automatizados. El software del núcleo proporciona varias plantillas
     de correo, pensadas para distintas situaciones relacionadas con el usuario.
@@ -37,7 +37,7 @@ el sitio para eventos relacionados con las cuentas de usuario.
     Puede enviar su propio texto (por ejemplo, dando la bienvenida a los nuevos
     vendors para los que se acaban de crear cuentas) editando la plantilla
     _Welcome (new user created by administrator)_.
-    <img src="/images/config-user_email.webp" alt="Email notification on account events" width="100%" />
+    <img src="/images/config-user_email.png" alt="Email notification on account events" width="100%" />
 1. Haga clic en _Save configuration_ para guardar los cambios.
 ## Ampliar conocimiento
 

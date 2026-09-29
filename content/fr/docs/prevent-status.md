@@ -17,7 +17,7 @@ Vous pouvez trouver le tableau de bord d'administration dans le menu
 d'administration _Gérer_ en naviguant vers _Rapports_ > _Tableau de bord
 d'administration_ (_admin/reports/status_).
 
-<img src="/images/prevent-status.webp" alt="Tableau de bord d'administration d'un site basique" width="100%" />
+<img src="/images/prevent-status.png" alt="Tableau de bord d'administration d'un site basique" width="100%" />
 
 ## Sujets liés
 

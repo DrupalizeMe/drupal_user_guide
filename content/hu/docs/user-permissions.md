@@ -58,10 +58,10 @@ Az _Árus_ szerepkört már létre kellett hozni, amit az előző, [user-new-rol
       </tbody>
     </table>
 
-    <img src="/images/user-permissions-check-permissions.webp" alt="Receptek kezelésére vonatkozó jogosultságok megadása az Árus szerepkörű felhasználóknak" width="100%" />
+    <img src="/images/user-permissions-check-permissions.png" alt="Receptek kezelésére vonatkozó jogosultságok megadása az Árus szerepkörű felhasználóknak" width="100%" />
 
 1. Kattintsunk a _Jogosultságok mentése_ gombra, majd egy _A változások mentése megtörtént_ állapotüzenet tájékoztat róla, ha a mentés sikeres volt:
-    ![Megerősítő üzenet a jogosultságok mentése után](/images/user-permissions-save-permissions.webp)
+    ![Megerősítő üzenet a jogosultságok mentése után](/images/user-permissions-save-permissions.png)
 ## Az ismeretek elmélyítése
 
 * Mivel emlékszünk a jelszavaikra, ezért ellenőrzésképpen be tudunk jelentkezni az előző, [user-new-user](./user-new-user.md) részben készített két Árus szerepkörű fiókkal, hogy megnézzük, milyen funkciókhoz férnek hozzá a jogosultságaik kibővítését követően.

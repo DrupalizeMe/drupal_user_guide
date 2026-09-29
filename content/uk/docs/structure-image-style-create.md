@@ -47,7 +47,7 @@ source_locale: "uk"
       </tbody>
     </table>
 1. Натисніть _Додати ефект_. Стиль зображення збережеться з обраним ефектом.
-    ![Додати стиль зображення](/images/structure-image-style-create-add-style.webp)
+    ![Додати стиль зображення](/images/structure-image-style-create-add-style.png)
 1. У _Керування_ адміністративного меню, перейдіть в _Структура_ > _Типи матеріалів_
     (_admin/structure/types_).
 1. Натисніть _Керувати відображенням_ з випадаючої кнопки в колонці _Операції_ для типу матеріалу
@@ -78,7 +78,7 @@ source_locale: "uk"
       </tbody>
     </table>
 
-    ![Змінити настройки форматера поля зображення](/images/structure-image-style-create-manage-display.webp)
+    ![Змінити настройки форматера поля зображення](/images/structure-image-style-create-manage-display.png)
 
 1. Натисніть _Оновити_.
 1. Натисніть _Зберегти_. Новий стиль зображення буде використовуватися при відображенні вмісту

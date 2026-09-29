@@ -26,13 +26,13 @@ already exist. See [user-new-user](./user-new-user.md),  [user-new-role](./user-
     role. If it is not immediately visible, use the _Name or email contains_ filter,
     or other filters, to narrow down the list.
 1. Click _Edit_ to update the user account.
-    <img src="/images/user-roles_people-list.webp" alt="People page" width="100%" />
+    <img src="/images/user-roles_people-list.png" alt="People page" width="100%" />
 1. On the _Edit_ page, scroll down to _Roles_ section. Check the _Administrator_
     role for the user account.
-    <img src="/images/user-roles_person-edit.webp" alt="Roles section of user edit page" width="141px" />
+    <img src="/images/user-roles_person-edit.png" alt="Roles section of user edit page" width="141px" />
 1. Click _Save_ to update the user account. You should be returned to the
     _People_ page and see a message saying that the changes have been saved.
-    ![Confirmation message](/images/user-roles_message.webp)
+    ![Confirmation message](/images/user-roles_message.png)
 
 ### Updating the roles using bulk editing method
 
@@ -44,10 +44,10 @@ already exist. See [user-new-user](./user-new-user.md),  [user-new-role](./user-
     other filters, to narrow down the list.
 1. Select _Add the Vendor role to the selected user(s)_ from the _Action_
     select list.
-    ![People page with bulk operation set up](/images/user-roles_bulk.webp)
+    ![People page with bulk operation set up](/images/user-roles_bulk.png)
 1. Click _Apply to selected items_. You should see a message indicating that the
     desired changes were made.
-    ![Confirmation message](/images/user-roles_message_bulk.webp)
+    ![Confirmation message](/images/user-roles_message_bulk.png)
 
 ## Videos
 

@@ -25,7 +25,7 @@ tener al menos dos idiomas. Ver [language-add](./language-add.md).
     (_admin/config/regional/content-language_).
 1. En _Custom language settings_, marque _Content_, _Content block_ y _Custom
     menu link_ para hacer traducibles estos tipos de entidad.
-    <img src="/images/language-content-config_custom.webp" alt="Custom language settings checklist" width="193px" />
+    <img src="/images/language-content-config_custom.png" alt="Custom language settings checklist" width="193px" />
 1. Aparecen opciones de configuración para _Content_, _Content block_ y _Custom
     menu link_. Elija los subtipos que quiere traducir para cada tipo de entidad.
     Marque _Basic page_ para _Content_, _Basic block_ para _Content block_ y
@@ -54,7 +54,7 @@ tener al menos dos idiomas. Ver [language-add](./language-add.md).
       </tbody>
     </table>
 
-    ![Default language and translatability for content types](/images/language-content-config_content.webp)
+    ![Default language and translatability for content types](/images/language-content-config_content.png)
 
 1. Elija los campos que deben ser traducibles para _Basic page_ como se muestra
     en la tabla siguiente. Si un campo no depende de la traducción, déjelo sin
@@ -116,7 +116,7 @@ tener al menos dos idiomas. Ver [language-add](./language-add.md).
       </tbody>
     </table>
 
-    ![Translatable content entity subtypes' fields checklist](/images/language-content-config_basic_page.webp)
+    ![Translatable content entity subtypes' fields checklist](/images/language-content-config_basic_page.png)
 
 1. Del mismo modo, marque las casillas correspondientes a los campos traducibles
     que pertenecen a _Basic block_ y _Custom menu link_.

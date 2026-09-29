@@ -30,7 +30,7 @@ downloaded using Composer. See [install-composer](./install-composer.md) for mor
     in your site.
 1. Check the boxes for the module or modules you want to install. For example,
     check the box for the core Ban module.
-    <img src="/images/config-install-check-modules.webp" alt="Enabling the core Ban module" width="100%" />
+    <img src="/images/config-install-check-modules.png" alt="Enabling the core Ban module" width="100%" />
 1. Click _Install_. The checked modules will be installed.
 
 ### Using Drush

@@ -44,7 +44,7 @@ source_locale: "fa"
     </table>
 1. روی _ذخیره‌سازی پیکربندی_ کلیک کنید.
 1. با استفاده از مرورگر دیگری که در آن وارد سایت نشده‌اید، اطمینان یابید که سایت در حالت نگهداری قرار گرفته است. اگر قادر به انجام اینکار نیستید، حافظه موقت را پاکسازی نمایید. [prevent-cache-clear](./prevent-cache-clear.md) را مشاهده کنید.
-    <img src="/images/extend-maintenance-mode-enabled.webp" alt="حالت نگهداری فعال شده است" width="100%" />
+    <img src="/images/extend-maintenance-mode-enabled.png" alt="حالت نگهداری فعال شده است" width="100%" />
 
 ### غیرفعال‌سازی حالت نگهداری با استفاده از رابط مدیریتی
 
@@ -73,7 +73,7 @@ source_locale: "fa"
     </table>
 1. روی _ذخیره‌سازی پیکربندی_ کلیک کنید.
 1. با استفاده از مرورگر دیگری که در آن وارد سایت نشده‌اید، اطمینان یابید که سایت در حالت نگهداری قرار گرفته است. اگر قادر به انجام اینکار نیستید، حافظه موقت را پاکسازی نمایید. [prevent-cache-clear](./prevent-cache-clear.md) را مشاهده کنید.
-    <img src="/images/extend-maintenance-mode-disabled.webp" alt="حالت نگهداری غیرفعال شده است" width="100%" />
+    <img src="/images/extend-maintenance-mode-disabled.png" alt="حالت نگهداری غیرفعال شده است" width="100%" />
 
 ### فعال‌سازی یا غیرفعال‌سازی حالت نگهداری با استفاده از Drush
 

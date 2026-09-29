@@ -23,20 +23,20 @@ principale. Consulter [menu-link-from-content](./menu-link-from-content.md).
     sur _Modifier le menu_ dans la liste d'_Opérations_ pour la _Navigation
     principale_. Vous pouvez aussi accéder à cette page en utilisant les liens
     contextuels (voir [config-overview](./config-overview.md)) pour le menu.
-    <img src="/images/menu-reorder_menu_titles.webp" alt="Liste des menus du site avec le menu 'Navigation principale' surligné" width="100%" />
+    <img src="/images/menu-reorder_menu_titles.png" alt="Liste des menus du site avec le menu 'Navigation principale' surligné" width="100%" />
 1. La page _Modifier le menu_ affiche une liste de chaque lien du menu choisi.
     (_Navigation principale_).
-    ![Liste des liens de menu sous _Navigation principale_](/images/menu-reorder_edit_menu.webp)
+    ![Liste des liens de menu sous _Navigation principale_](/images/menu-reorder_edit_menu.png)
 1. Faire glisser les liens de menus en utilisant la poignée en forme de croix
     pour changer l'ordre : _Accueil_, puis _À propos_. Alternativement au
     glisser/déposer, il est possible de cliquer sur le lien _Afficher les poids des
     lignes_ en tête de tableau, et de sélectionner des poids numériques (les liens
     de menus ayant des poids algébriques inférieurs seront affichés en premier).
-    ![Liens de menu réordonnés avec le message avertissant de modifications non enregistrées et le bouton _Enregistrer_](/images/menu-reorder_reorder.webp)
+    ![Liens de menu réordonnés avec le message avertissant de modifications non enregistrées et le bouton _Enregistrer_](/images/menu-reorder_reorder.png)
 1. Cliquer sur _Enregistrer_.
 1. La page d'accueil affiche maintenant la navigation principale avec le lien de
     menu _Accueil_ affiché en premier.
-    ![Liens de menu réordonnés sur la page d'accueil avec 'Accueil' en premier puis 'À propos](/images/menu-reorder_final_order.webp)
+    ![Liens de menu réordonnés sur la page d'accueil avec 'Accueil' en premier puis 'À propos](/images/menu-reorder_final_order.png)
 
 ## Améliorer votre compréhension
 

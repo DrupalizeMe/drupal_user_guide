@@ -38,7 +38,7 @@ _INSTALL.txt_ und/oder _UPGRADE.txt_, die mit dem Modul ausgeliefert werden.
 Lesen Sie auch die Versionshinweise auf der Projektseite, indem Sie auf die Versionsnummer der Version klicken,
 die Sie heruntergeladen haben.
 
-![Release notes link](/images/security-update-module-release-notes.webp)
+![Release notes link](/images/security-update-module-release-notes.png)
 
 Sie können den Verwaltungsbereich der Website dazu verwenden, ein von der Community bereitgestelltes
 Modul zu Aktualisieren. Wenn Sie statt einem von der Community bereitgestelltem Zusatzmodul ein
@@ -58,7 +58,7 @@ Schritt 5 im Abschnitt „Die Benutzeroberfläche verwenden“ fort.
 1. Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Berichte_ >
     _Verfügbare Aktualisierungen_ > _Aktualisieren_ (_/admin/reports/updates_).
 1. Suchen und prüfen Sie das betreffende Modul in der Liste. Klicken Sie auf _Herunterladen der Aktualisierung_ in der Zeile des entsprechenden Moduls.
-    <img src="/images/security-update-module-updates.webp" alt="Available updates" width="100%" />
+    <img src="/images/security-update-module-updates.png" alt="Available updates" width="100%" />
 1. Klicken Sie auf _Fortsetzen_.
 1. Klicken Sie auf _Aktualisierungen der Datenbank ausführen_. Wenn Sie die neuen Moduldateien manuell bezogen haben,
     Beginnen Sie mit diesem Schritt und öffnen Sie die Seite Datenbankaktualisierung, indem Sie die URL

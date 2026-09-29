@@ -20,7 +20,7 @@ Le contenu de la page _À propos_ doit exister. Voir [content-create](./content-
 1. Dans le menu d'administration _Gérer, aller à _Contenu_ (_admin/content_).
 1. Trouver la page _À propos_, et cliquer sur _Modifier_ sur cette ligne. Le
     formulaire de modification du contenu apparaît.
-    <img src="/images/menu-link-from-content_edit_page.webp" alt="Lien d'édition de la page" width="100%" />
+    <img src="/images/menu-link-from-content_edit_page.png" alt="Lien d'édition de la page" width="100%" />
 1. Cliquer sur _Paramètres du menu_ sur la droite pour ouvrir le bloc.
 1. Cocher _Fournir un lien de menu_ pour faire apparaître les options de menu.
 1. Saisir les valeurs de la table ci-dessous :
@@ -52,12 +52,12 @@ Le contenu de la page _À propos_ doit exister. Voir [content-create](./content-
       </tbody>
     </table>
 
-    ![Créer un lien de menu depuis le formulaire de modification du contenu](/images/menu-link-from-content.webp)
+    ![Créer un lien de menu depuis le formulaire de modification du contenu](/images/menu-link-from-content.png)
 
 1. Cliquer sur _Enregistrer_ pour enregistrer les modifications. Cliquer sur
     _Accueil_ ou _Retour au site_ dans la barre de navigation pour voir le résultat,
     ce qui pourrait ressembler à l'image ci-dessous.
-    <img src="/images/menu-link-from-content-result.webp" alt="Le lien a été ajouté au menu principal" width="100%" />
+    <img src="/images/menu-link-from-content-result.png" alt="Le lien a été ajouté au menu principal" width="100%" />
 
 ## Améliorer votre compréhension
 

@@ -47,7 +47,7 @@ mantenimiento de cron desde fuera del sitio web.
     _Manage_, vaya a _Configuration_ > _System_ > _Cron_
     (_admin/config/system/cron_). Seleccione el intervalo deseado en el campo _Run
     cron every_, dentro de _Cron settings_, y haga clic en _Save configuration_.
-    ![Configure the core Automated Cron module](/images/security-cron.webp)
+    ![Configure the core Automated Cron module](/images/security-cron.png)
 1. Si quiere ejecutar las tareas de mantenimiento de cron desde fuera del sitio
     web, desinstale el módulo del núcleo Automated Cron (ver [config-uninstall](./config-uninstall.md)).
     A continuación, busque la URL de cron. Esta URL se muestra en el _Status

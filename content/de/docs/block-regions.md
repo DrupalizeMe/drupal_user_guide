@@ -22,7 +22,7 @@ ist erforderlich. Andere Abschnitte sind optional.
 Das mit dem Kernsystem ausgelieferte Theme Bartik stellt die in der folgenden
 Abbildung hervorgehobenen Abschnitte, die grundsätzlich auch Regionen genannt werden, zur Verfügung.
 
-<img src="/images/block-regions-bartik.webp" alt="core Bartik theme regions" width="100%" />
+<img src="/images/block-regions-bartik.png" alt="core Bartik theme regions" width="100%" />
 
 ## Verwandte Themen
 

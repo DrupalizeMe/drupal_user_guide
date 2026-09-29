@@ -92,7 +92,7 @@ _Taxonomie_ klicken, so dass Sie am Ende auf einer Seite mit der
 URL _http://example.com/admin/structure/taxonomy_ landen (wenn die Basis-URL
 Ihrer Website _http://example.com_) lautet.
 
-<img src="/images/preface-conventions-top-menu.webp" alt="Admin menu" width="100%" />
+<img src="/images/preface-conventions-top-menu.png" alt="Admin menu" width="100%" />
 
 Hier ist ein weiteres Beispiel:
 
@@ -107,7 +107,7 @@ geklickt. Im Abschnitt System hätten Sie auf  _Grundeinstellungen der  Website_
 geklickt und damit  die Seite
 _http://example.com/admin/config/system/site-information_ aufgerufen.
 
-![_System_ section of the Configuration page](/images/preface-conventions-config-system.webp)
+![_System_ section of the Configuration page](/images/preface-conventions-config-system.png)
 
 Ein weiterer Hinweis: Wenn Sie das mit dem Kernsystem ausgelieferte
 Verwaltungs-Theme Seven verwenden, werden viele „Hinzufügen"-Button im

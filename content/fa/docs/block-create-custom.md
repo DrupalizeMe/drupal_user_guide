@@ -39,7 +39,7 @@ source_locale: "fa"
       </tbody>
     </table>
 
-    ![افزودن یک بلاک سفارشی](/images/block-create-custom-add-custom-block.webp)
+    ![افزودن یک بلاک سفارشی](/images/block-create-custom-add-custom-block.png)
 
 1. روی _ذخیره‌سازی_ کلیک کنید. پیامی مبنی بر ذخیره‌سازی بلاک نمایش می‌یابد.
 

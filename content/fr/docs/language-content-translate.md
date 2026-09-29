@@ -27,7 +27,7 @@ Consulter [language-content-config](./language-content-config.md).
 1. Sélectionner _Traduire_ dans le bouton déroulant de la ligne du contenu
     Accueil. La page _Traductions d'Accueil_ s'affiche.
 1. Cliquer _Insérer_ à la ligne _anglais_.
-    <img src="/images/language-content-translate-add.webp" alt="Insertion d'une traduction de contenu" width="100%" />
+    <img src="/images/language-content-translate-add.png" alt="Insertion d'une traduction de contenu" width="100%" />
 1. Remarquer que l'interface utilisateur est passée en anglais. Pour repasser en
     français, suprimer la première occurrence de _en_ dans l'URL du navigateur. Par
     exemple, si votre URL ressemble à

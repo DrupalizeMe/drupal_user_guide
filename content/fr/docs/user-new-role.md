@@ -18,12 +18,12 @@ effectuer des tâches spécifiques.
     (_admin/people/roles_).
 1. Vous trouverez les rôles par défaut _utilisateur anonyme_, _utilisateur
     authentifié_ et _administrateur_ déjà présents.
-    ![Page des rôles](/images/user-new-role-roles-page.webp)
+    ![Page des rôles](/images/user-new-role-roles-page.png)
 1. Cliquer sur _Ajouter un rôle_ pour ajouter un rôle personnalisé.
 1. Taper "Vendeur" dans le champ _nom du rôle_. Cliquer sur _Enregistrer_.
-    ![ajouter vendeur en tant que rôle](/images/user-new-role-add-role.webp)
+    ![ajouter vendeur en tant que rôle](/images/user-new-role-add-role.png)
 1. Le message "Le rôle Vendeur a été ajouté." s'affiche en haut de page.
-    ![message en cas de création réussie du rôle vendeur](/images/user-new-role-confirm.webp)
+    ![message en cas de création réussie du rôle vendeur](/images/user-new-role-confirm.png)
 
 ## Améliorer votre compréhension
 

@@ -48,7 +48,7 @@ Los tipos de contenido receta y proveedor deben existir. Consultar
       </tbody>
     </table>
 
-    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field.webp)
+    ![Adding a reference field to a content type](/images/structure-adding-reference-add-field.png)
 
 1. Aparecerá la página presentado por, que le permite establecer el número de
     valores permitido. Rellene los campos como se muestra a continuación. Haga
@@ -75,7 +75,7 @@ Los tipos de contenido receta y proveedor deben existir. Consultar
       </tbody>
     </table>
 
-    ![Storage configuration of a reference field ](/images/structure-adding-reference-set-field-basic.webp)
+    ![Storage configuration of a reference field ](/images/structure-adding-reference-set-field-basic.png)
 
 1. Aparecerá la página _Configuración de Submitted by para Receta_ que le permite
     configurar el campo. Rellene los campos como se muestra a continuación. Haga
@@ -127,10 +127,10 @@ Los tipos de contenido receta y proveedor deben existir. Consultar
       </tbody>
     </table>
 
-    <img src="/images/structure-adding-reference-field-settings.webp" alt="Settings for a reference field " width="100%" />
+    <img src="/images/structure-adding-reference-field-settings.png" alt="Settings for a reference field " width="100%" />
 
 1. El campo Presentado por se ha agregado al tipo de contenido.
-    <img src="/images/structure-adding-reference-manage-fields.webp" alt="Manage fields page for the Recipe content type" width="100%" />
+    <img src="/images/structure-adding-reference-manage-fields.png" alt="Manage fields page for the Recipe content type" width="100%" />
 
     *Atribuciones*
 

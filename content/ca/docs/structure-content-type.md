@@ -44,7 +44,7 @@ You need to have a plan in place for your content structure. See
       </tbody>
     </table>
 
-    ![Adding a Content type](/images/structure-content-type-add.webp)
+    ![Adding a Content type](/images/structure-content-type-add.png)
 
 1. In the vertical tab _Submission form settings_, configure the form that is
     used for creating and editing content of this type. Fill in the fields as shown
@@ -76,7 +76,7 @@ You need to have a plan in place for your content structure. See
       </tbody>
     </table>
 
-    ![Submission form settings](/images/structure-content-type-add-submission-form-settings.webp)
+    ![Submission form settings](/images/structure-content-type-add-submission-form-settings.png)
 
 1. In the vertical tab _Publishing options_, decide on default options for new
     content of this type. Fill in the fields as shown below.
@@ -114,7 +114,7 @@ You need to have a plan in place for your content structure. See
 
     Changing these settings does not affect the content items that have already been
     created.
-    ![Publishing Options](/images/structure-content-type-add-Publishing-Options.webp)
+    ![Publishing Options](/images/structure-content-type-add-Publishing-Options.png)
 
 1. In the vertical tab _Display settings_, decide if the author and
     publication date will be visible in the content item. Fill in the fields as
@@ -136,7 +136,7 @@ You need to have a plan in place for your content structure. See
       </tbody>
     </table>
 
-    ![Display settings](/images/structure-content-type-add-Display-settings.webp)
+    ![Display settings](/images/structure-content-type-add-Display-settings.png)
 
 1. In the vertical tab _Menu settings_, fill in the fields as shown below.
     <table>
@@ -156,12 +156,12 @@ You need to have a plan in place for your content structure. See
       </tbody>
     </table>
 
-    ![Menu settings](/images/structure-content-type-add-Menu-settings.webp)
+    ![Menu settings](/images/structure-content-type-add-Menu-settings.png)
 
 1. Click _Save and manage fields_ to save the content type. The
     _Manage fields_ page appears that allows you to add fields to the content
     type. See [structure-fields](./structure-fields.md)
-    <img src="/images/structure-content-type-add-confirmation.webp" alt="Confirmation" width="100%" />
+    <img src="/images/structure-content-type-add-confirmation.png" alt="Confirmation" width="100%" />
 1. Follow the same steps to create a content type for recipes. Example values
     for the fields in the forms, where they are different from the steps above:
     <table>

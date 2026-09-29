@@ -43,7 +43,7 @@ Változtassuk meg az olyan alapvető információkat webhelyünkön, mint az eln
       </tbody>
     </table>
 
-    ![Webhely részletei űrlap](/images/config-basic-SiteInfo.webp)
+    ![Webhely részletei űrlap](/images/config-basic-SiteInfo.png)
 
 1. Miután végeztünk a mezők kitöltésével, kattintsunk a _Beállítások mentése_ gombra, hogy változtatásainkat elmentsük.
 ### Folytatjuk a területi beállításokkal
@@ -82,7 +82,7 @@ Változtassuk meg az olyan alapvető információkat webhelyünkön, mint az eln
       </tbody>
     </table>
 
-    ![Honosítás és Időzónák űrlapok](/images/config-basic-TimeZone.webp)
+    ![Honosítás és Időzónák űrlapok](/images/config-basic-TimeZone.png)
 
 1. Miután végeztünk a mezők kitöltésével, kattintsunk a _Beállítások mentése_ gombra, hogy változtatásainkat elmentsük.
 ## Videó

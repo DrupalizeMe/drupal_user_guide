@@ -20,7 +20,7 @@ The available regions depend on the theme design. Only the Content region,
 which contains the primary content, is required; others are optional.  The
 core Olivero theme provides the regions highlighted in the following image.
 
-<img src="/images/block-regions-olivero.webp" alt="core Olivero theme regions" width="100%" />
+<img src="/images/block-regions-olivero.png" alt="core Olivero theme regions" width="100%" />
 
 ## Related topics
 

@@ -22,5 +22,5 @@ source_locale: "fa"
 
 1. از منوی _مدیریت_ به مسیر _توسعه_ > _حذف_ (_admin/modules/uninstall_) بروید. این صفحه فهرستی از افزونه‌های قابل حذف را نمایش می‌دهد.
 1. افزونه‌هایی که قصد حذف آن‌ها را دارید (Search، History و Activity Tracker) انتخاب کنید. روی _حذف_ در انتهای صفحه کلیک کنید.
-    <img src="/images/config-uninstall_check-modules.webp" alt="حذف افزونه" width="100%" />
+    <img src="/images/config-uninstall_check-modules.png" alt="حذف افزونه" width="100%" />
 

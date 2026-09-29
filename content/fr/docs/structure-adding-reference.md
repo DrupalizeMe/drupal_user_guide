@@ -27,7 +27,7 @@ Les types de contenus Recette et Vendeur doivent exister. Consulter
     Choisir le type de champ _Référence_ dans les options _Choisir un type de
     champ_. Cliquer sur _Continuer_. La page _Ajouter un champ_ apparaît. Elle
     contient un formulaire pour configurer l'étiquette du champ.
-    ![Ajouter un champ de type référence à un type de contenu](/images/structure-adding-reference-add-field.webp)
+    ![Ajouter un champ de type référence à un type de contenu](/images/structure-adding-reference-add-field.png)
 
     Remplir les champs comme montré ci-dessous. Cliquer sur _Enregistrer et
     continuer_.
@@ -53,7 +53,7 @@ Les types de contenus Recette et Vendeur doivent exister. Consulter
       </tbody>
     </table>
 
-    ![Ajouter un champ de type référence à un type de contenu](/images/structure-adding-reference-add-field-label.webp)
+    ![Ajouter un champ de type référence à un type de contenu](/images/structure-adding-reference-add-field-label.png)
 
 1. La page _Proposé par_ apparaît et vous permet de définir le nombre de valeurs
     autorisées. Remplir les champs comme indiqué ci-dessous. Cliquer sur
@@ -80,7 +80,7 @@ Les types de contenus Recette et Vendeur doivent exister. Consulter
       </tbody>
     </table>
 
-    ![Configuration du stockage d'un champ de type référence](/images/structure-adding-reference-set-field-basic.webp)
+    ![Configuration du stockage d'un champ de type référence](/images/structure-adding-reference-set-field-basic.png)
 
     La page _Paramètres du champ Proposé par pour Recette_ apparaît et vous permet
     de configurer le champ. Remplir les champs comme indiqué ci-dessous. Cliquer sur
@@ -132,10 +132,10 @@ Les types de contenus Recette et Vendeur doivent exister. Consulter
       </tbody>
     </table>
 
-    <img src="/images/structure-adding-reference-field-settings.webp" alt="Paramètres d'un champ de type référence" width="100%" />
+    <img src="/images/structure-adding-reference-field-settings.png" alt="Paramètres d'un champ de type référence" width="100%" />
 
 1. Le champ Proposé par a été ajouté au type de contenu.
-    <img src="/images/structure-adding-reference-manage-fields.webp" alt="Manage fields page for the Recipe content type" width="100%" />
+    <img src="/images/structure-adding-reference-manage-fields.png" alt="Manage fields page for the Recipe content type" width="100%" />
 
 ## Vidéos (en anglais)
 

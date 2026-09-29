@@ -32,13 +32,13 @@ term reference field. See [structure-content-type](./structure-content-type.md) 
     appears.
 1. For the Ingredients field, select _Autocomplete (Tags style)_ in the _Widget_
     column.
-    <img src="/images/structure-form-editing-manage-form.webp" alt="Manage the Recipe form" width="100%" />
+    <img src="/images/structure-form-editing-manage-form.png" alt="Manage the Recipe form" width="100%" />
 1. Click _Save_.
 1. In the _Manage_ administrative menu, navigate to _Content_ > _Add content_ >
     Recipe (_node/add/recipe_) to verify the changed behavior of the content
     form. The Ingredients field is now a single text field that accepts multiple
     values.
-    <img src="/images/structure-form-editing-add-recipe.webp" alt="Add a recipe" width="100%" />
+    <img src="/images/structure-form-editing-add-recipe.png" alt="Add a recipe" width="100%" />
 1. Create two Recipe content items (see [content-create](./content-create.md)), such as recipes for
     "Green Salad" and "Fresh Carrots". Make sure all the fields have values,
     including images, ingredients, and submitted by (set this to one of the Vendor

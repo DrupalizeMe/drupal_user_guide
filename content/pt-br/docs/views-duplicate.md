@@ -30,13 +30,13 @@ and [content-create](./content-create.md).
     dropdown button. (Note that the names of views that came with your installation
     profile are shown in English on this page; see [language-concept](./language-concept.md) for an
     explanation.)
-    <img src="/images/views-duplicate_duplicate.webp" alt="Duplicate existing view" width="100%" />
+    <img src="/images/views-duplicate_duplicate.png" alt="Duplicate existing view" width="100%" />
 1. Name the duplicate "Recipes" and click _Duplicate_. The view configuration
     page appears.
 1. To change the title of the view page to "Recipes", click Vendors in the
     _Title_ field under _Title_. The _Page: The title of this view_ pop-up
     appears. Enter "Recipes". Click _Apply_.
-    <img src="/images/views-duplicate_title.webp" alt="Change view title" width="100%" />
+    <img src="/images/views-duplicate_title.png" alt="Change view title" width="100%" />
 1. To change from a table to a grid format, click _Table_ in the _Format_ field
     under _Format_. The _Page: How should this view be styled_ pop-up
     appears. Check _Grid_ and click _Apply_. The _Page: Style options_ pop-up
@@ -80,7 +80,7 @@ and [content-create](./content-create.md).
       </tbody>
     </table>
 
-    ![Expose filter](/images/views-duplicate_expose.webp)
+    ![Expose filter](/images/views-duplicate_expose.png)
 
 1. To change the _Path_ label field to "Recipes", click "/vendors" in the _Path_
     field under _Page settings_. In the pop-up that appears, enter the path
@@ -98,7 +98,7 @@ and [content-create](./content-create.md).
 1. Click _Save_ to save the view.
 1. Go back to the home page and click Recipes in the navigation to view the new
     Recipes page.
-    <img src="/images/views-duplicate_final.webp" alt="Recipes view" width="100%" />
+    <img src="/images/views-duplicate_final.png" alt="Recipes view" width="100%" />
 
 ## Expand your understanding
 

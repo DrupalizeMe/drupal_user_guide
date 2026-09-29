@@ -11,7 +11,7 @@ A Drupal webhely működésének főbb paramétereiről, a szerverkörnyezet be�
 
 Ezt az oldalt pedig a _Kezelés_ adminmenü _Jelentések_ » _Állapotjelentés_ (vagy címsorban az _admin/reports/status_) útvonalon találjuk.
 
-<img src="/images/prevent-status.webp" alt="Egy átlagos Drupal-webhely állapotjelentése" width="100%" />
+<img src="/images/prevent-status.png" alt="Egy átlagos Drupal-webhely állapotjelentése" width="100%" />
 
 ## Kapcsolódó témák
 

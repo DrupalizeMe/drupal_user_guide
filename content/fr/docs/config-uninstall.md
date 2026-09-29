@@ -30,5 +30,5 @@ modules.
 à être désinstallés.
 1. Cocher les cases pour les modules que vous désinstallez (_Ban_, _History_ et
     _Search_). Cliquer sur _Désinstaller_ en bas de la page.
-    <img src="/images/config-uninstall_check-modules.webp" alt="Désinstaller un module" width="100%" />
+    <img src="/images/config-uninstall_check-modules.png" alt="Désinstaller un module" width="100%" />
 
