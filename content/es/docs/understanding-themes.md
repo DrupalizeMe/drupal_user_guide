@@ -1,0 +1,49 @@
+---
+title: "Concepto: temas"
+description: "Descripción general de los temas y de dónde obtenerlos."
+id: "understanding-themes"
+translation_key: "understanding-themes"
+source_locale: "es"
+---
+## Conocimientos previos { #understanding-themes }
+
+[understanding-drupal](./understanding-drupal.md)
+## ¿Qué es un tema?
+
+Un tema es un conjunto de archivos que definen el aspecto visual de su sitio. El
+software del núcleo y los módulos que se ejecutan en su sitio determinan qué
+_contenido_ (incluidos el texto HTML y otros datos almacenados en la base de
+datos, las imágenes subidas y cualquier otro archivo de recursos) se muestra en
+las páginas de su sitio. El tema determina el marcado HTML y los estilos CSS que
+envuelven ese contenido.
+
+El software del núcleo incluye varios temas básicos en su distribución. Estos
+temas han sido diseñados y construidos en gran parte por la comunidad a lo largo
+de los últimos años y todos son buenas opciones para construir sus primeros
+sitios y familiarizarse con el funcionamiento del software del núcleo.
+
+Drupal es un CMS bien consolidado, así que el mercado de temas de terceros
+—tanto gratuitos como de pago— es muy sólido.
+
+Si ninguna de las opciones de terceros se ajusta a sus necesidades, tendrá que
+crear un tema personalizado. Un tema personalizado puede ser tan sencillo como
+un único archivo CSS que añade estilos al marcado que proporciona el software
+del núcleo. Puede encontrar orientación para crear temas personalizados en
+Drupal en la
+[_Drupal.org_ community documentation page "Theming Drupal"](https://www.drupal.org/docs/theming-drupal).
+## Temas relacionados
+
+* [extend-theme-find](./extend-theme-find.md)
+* [extend-theme-install](./extend-theme-install.md)
+* [understanding-modules](./understanding-modules.md)
+## Recursos adicionales
+
+[_Drupal.org_ community documentation page "Theming Drupal"](https://www.drupal.org/docs/theming-drupal)
+
+*Atribuciones*
+
+Escrito y editado por [John Grubb](https://www.drupal.org/u/jgrubb) y
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Traducido por [Juan Olalla](https://www.drupal.org/u/juanolalla) y revisado por
+[Diego Marrufo](https://www.drupal.org/u/dimaro).

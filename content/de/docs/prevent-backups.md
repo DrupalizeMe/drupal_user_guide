@@ -1,0 +1,91 @@
+---
+title: "Konzept: Datensicherungen"
+description: "Überblick über Datensicherungen und was auf einer Website gesichert werden sollte."
+id: "prevent-backups"
+translation_key: "prevent-backups"
+source_locale: "de"
+---
+## Erforderliche Vorkenntnisse { #prevent-backups }
+
+* [understanding-drupal](./understanding-drupal.md)
+* [install-prepare](./install-prepare.md)
+## Was ist eine Datensicherung?
+
+Für den Fall das mit dem Computer (oder den Computern) die Ihre Website und deren
+Datenbank enthalten, etwas passiert oder wenn Sie den Zugriff auf diesen
+Computer verlieren, könnten Sie einige oder alle Daten Ihrer Website verlieren.
+Sie könnten auch Daten verlieren, wenn Ihre Website gehackt wurde, oder wenn
+jemand mit administrativen Rechten Daten fälschlicherweise über den
+Verwaltungsbereich der Website ändert. Um Szenarien wie diese zu verhindern und
+Ihre Website vor dauerhaften, teuren Datenverlusten zu schützen, ist es wichtig
+regelmäßige Backups der Daten Ihrer Website zu erstellen und diese an einem anderen Computer
+zu speichern als dem auf welchem sich ihre Website befindet.
+
+Die Häufigkeit, mit der Sie Datensicherungen durchführen sollten, und die
+Anzahl der Datensicherungen, die Sie vorhalten sollten, hängt davon ab, wie
+häufig auf Ihrer Website Änderungen eingepflegt werden. 
+Wenn sich auf ihrer Website sehr viele Inhalte befinden und auf ihr mehrmals am
+Tag neue Inhalte hinzugefügt oder Inhalte aktualisiert werden, sollten Sie
+häufiger Backups erstellen, als für eine Website, deren Inhalte und Daten
+sich nur selten ändern. 
+Bedenken Sie auch, dass einige Zeit, zwischen dem
+Moment, in dem ein Problem entsteht, dass zum Datenverlust führt und dem Moment, in dem
+Sie diesen Datenverlust bemerken, vergehen könnte. 
+Deshalb ist es eine gute Idee Sicherungskopien von unterschiedlichen Zeitpunkten aufzubewahren (damit Sie Ihre Website auf einen
+  Datenbestand zurücksetzen können, indem ein solches Problem noch nicht
+  enthalten ist). Diese Methode hat sich bewährt gegenüber der Methode
+  eine einzelne Sicherung ständig zu überschreiben.
+
+Eine weitere Überlegung kann sein, unabhängig vom Format
+der Sicherungskopien, zu überprüfen, ob
+sie verlorne Daten aus ihren Backups wieder herstellen können. 
+Vielleicht testen Sie zu diesem Zweck mehrere mögliche Datenverlustszenarien und stellen so sicher, dass Ihre Daten in jedem Fall wieder hergestellt werden können.
+
+Um eine vollständige Sicherungskopie Ihrer Website zu erstellen, müssen Sie
+Kopien der Folgenden Dateien und Verzeichnisse erstellen:
+
+* Eine Kopie der Daten im Verzeichnis _sites_, einschließlich der Datei
+  _sites/default/settings.php_.
+* Eine Kopie der Datenbank Ihrer Website. Einige wenige Tabellen,
+  wie zum Beispiel die Tabellen zur Speicherung des temporären Daten-Cache und
+  der Sitzungsinformationen für angemeldete Benutzer können während der
+  Sicherung aus dem Backup entfernt werden. Die sicherste Variante ist es aber
+  immer eine Sicherungskopie der gesamten Datenbank anzulegen.
+* Eine Kopie hochgeladener Dateien, wie Bilder und andere Anhänge.
+  Der Speicherort dieser Dateien ist konfigurierbar. Werden die
+  Standardeinstellungen verwendet, legt
+  Drupal diese Dateien im Verzeichnis _sites/default/files_,
+  das sich im Hauptverzeichnis Ihrer Drupal-Installation befindet, ab.
+  Navigieren Sie im Menü _Verwalten_ zum Menüpunkt _Konfiguration_ >
+  _Medien_ > _Dateisystem_ (_admin/configuration/media/filesystem_)
+um den Speicherort für Datei-Uploads zu überprüfen. Um den Speicherort zu
+ändern müssen Sie die Datei _settings.php_ editieren.
+* Eine Kopie der Module, Themes und aller anderen Datein der Software, die Sie individuell
+  angepasst haben. Sie finden benutzerdefinierte Module und Themes in den
+  Verzeichnissen _modules_ und _themes_. Einige Leute ziehen es vor,
+  alle Dateien der Software zu sichern, einschließlich der Dateien des
+  Kernsystems und der Dateien aus denen die von der Community bereitgestellten
+  Zusatzmodule und Themes bestehen (diese  können Sie jedoch auch mittels
+  Herunterladen von _Drupal.org_ wiederherstellen), anstatt zu versuchen,
+  bestimmte Dateien zu Identifizieren, die auf jeden Fall mit in die
+  Sicherungskopie gehören.
+
+Ob Ihre Website korrekt gesichert wurde, können Sie überprüfen, indem Sie
+einee Kopie der Website in eine Entwicklungsumgebung einspielen
+(siehe: [install-dev-making](./install-dev-making.md)).
+## Verwandte Themen
+
+* [security-update-core](./security-update-core.md)
+* [install-dev-making](./install-dev-making.md)
+* [prevent-cache](./prevent-cache.md)
+## Zusätzliche Ressourcen
+
+* [_Drupal.org_ Community-Dokumentationsseite „Sichern einer Website“ (englisch)](https://www.drupal.org/docs/7/backing-up-and-migrating-a-site/backing-up-a-site)
+* Das [von der Community bereitgestellte Zusatzmodul Backup and Migrate](https://www.drupal.org/project/backup_migrate),
+das Sie zur Durchführung automatischer Sicherungen der Datenbank sowie der Sichrung hochgeladener Dateien verwenden können.
+
+*Mitwirkende*
+
+Geschrieben von [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Ins Deutsche übersetzt von [Joachim Namyslo](https://www.drupal.org/u/Joachim-Namyslo).

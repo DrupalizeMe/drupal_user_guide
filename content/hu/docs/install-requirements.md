@@ -1,0 +1,39 @@
+---
+title: "Alapfogalom: rendszerkövetelmények"
+description: "Áttekintjük, hogy a számítógépen milyen feltételek szükségesek a Drupal alaprendszer telepítéséhez és futtatásához."
+id: "install-requirements"
+translation_key: "install-requirements"
+source_locale: "hu"
+---
+## Mi kell ahhoz, hogy fusson a Drupal? { #install-requirements }
+### Lemezterület
+
+A webhely szoftvere által elfoglalt teljes tárterület nem egy általános, mindenkinél egyező érték, hiszen igencsak függ annak képességeitől, funkcionalitásától, ezért esetenként akár erősen eltérő is lehet. Annyi azonban így is elmondható, hogy maga a Drupal alaprendszer körülbelül 100 MB helyet igényel a kiszolgálón. Ennél több tárhelyre lesz valószínűleg szükség, ha további modulokat és sminkeket használunk, valamint fontos még arra is gondolni, hogy a puszta forráskódnál nagyságrendileg több tárhelyet fognak várhatóan igényelni a felhasználók által feltölthető és a Drupal által automatikusan előállított fájlok, a biztonsági mentések és más hasonló állományok. Természetesen maga az adatbázis is helyet igényel, bár ez sok esetben a kiszolgálón máshol kerül tárolásra (sőt, bizonyos esetekben akár másik gépen is lehet).
+### PHP értelmező
+
+Legalább PHP 7.2 szükséges vagy javasolt a még újabb. Fontos, hogy a PHP-szkriptek futtatásához legalább 64 MB memória legyen engedélyezve a számítógépen. Ha ugyanis sok Drupal-modult használunk majd webhelyünkön, amelyek közül több akár párhuzamosan is futhat egyidőben, vagy memóriaigényes feladatokat végző PHP-programokat (például Composer) fogunk futtatni, akkor valószínűleg ennél magasabbra kell állítanunk a korlátot.
+
+Nemcsak a Drupalnak vannak kiegészítő moduljai, de magának a PHP nyelvhez is léteznek bővítmények. A Drupal elvárja némelyik meglétét, de hogy pontosan melyikét, az attól is függ, hogyan telepítettük az alaprendszert és milyen modulokat adunk hozzá. Aggodalomra azonban nincs okunk: egyrészt a legtöbb tárhelyszolgáltató pontosan tisztában van vele, hogy ezeket a PHP-bővítményeket előre engedélyezzék a tárhelyünkön, másrészt pedig a Drupal képes ellenőrizni, hogy teljesülnek-e a szükséges PHP-feltételek és időben figyelmeztet a telepítés során.
+### Webkiszolgáló
+
+- **Apache (javasolt):** Manapság az Apache a legelterjedtebb webszerver-alkalmazás. A Drupal alaprendszer működik Apache 2.x verzión, ami futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Az Apache _mod_rewrite_ modulját telepíteni és engedélyezni kell, valamint a _VirtualHost_ konfigurációjának tartalmaznia kell az _AllowOverride All_ utasítást azért, hogy a _.htaccess_ fájlok működjenek.
+- **PHP beépített webszervere:** Bár talán nem annyira közismert, de a PHP programozási nyelv értelmezője is tartalmaz egy alapszintű webkiszolgálót. A Drupal természetesen ezen is fut, bár kizárólag ideiglenes jelleggel, csak próba céljára javasolt használni.
+- **Nginx:** Az Nginx egy szintén gyakran használt webszerver, ami nagy terhelés alatt, alacsony memóriahasználat mellett is kielégítő teljesítményre törekszik. A Drupal alaprendszer Nginx 1.1 és annál magasabb verzión is működik, és ez ugyanúgy futhat UNIX/Linux, OS X vagy Windows operációs rendszeren. Itt is fontos, hogy az _ngx_http_rewrite_module_ nevű modulja telepítve és engedélyezve legyen.
+- **Microsoft IIS:** A Microsoft IIS egy webszerverfunkciókat tartalmazó kiegészítés Microsoft Windowsra. A Drupal alaprendszer működik IIS 5, IIS 6 és IIS 7 verziókon, ha a PHP megfelelően van beállítva. Mivel a Drupal megköveteli a szép webcímek kezelését, amit viszont csak az IIS 7-hez elérhető _Microsoft URL Rewrite_ modul támogat, ezért ennél alacsonyabb verziókon erre a célra külső megoldásra lehet szükség.
+### Adatbázis
+
+A következő adatbázis-kiszolgálók bármelyike használható:
+
+* MySQL - 5.5.3 (MariaDB 5.5.20, Percona 5.5.8) vagy magasabb InnoDB-kompatibilis elsődleges tárolómotorral
+* PostgreSQL - 9.1.2 vagy magasabb
+* SQLite - 3.4.2 vagy magasabb. A PHP programozási nyelv értelmezője is tartalmazza az SQLite egy alapszintű megvalósítását, így akár külső adatbázismotorok telepítése nélkül is futtathatjuk a Drupalt, de csak ideiglenes jelleggel, próba céljára.
+## Egyéb források
+
+Az alább felsorolt közösségi dokumentációk a Drupal.org-on bár angol nyelvűek, de hasznosak lehetnek a téma alaposabb megértéséhez:
+
+* [System requirements](https://www.drupal.org/docs/8/system-requirements) (azaz „Rendszerkövetelmények”)
+* [PHP Runtime Configuration – PHP memory limit and other settings](https://secure.php.net/manual/en/configuration.php)  (azaz „A PHP futtatókörnyezet konfigurálása – Memóriakorlát és más beállítások”)
+
+*Közreműködők*
+
+E témakör szövegét [Karl Kedrovsky](https://www.drupal.org/u/KarlKedrovsky), [Brian Emery](https://www.drupal.org/u/bemery987) és [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon) a Drupal közösségi [dokumentációjának](https://www.drupal.org/documentation) [System requirements](https://www.drupal.org/docs/8/system-requirements) (azaz „Rendszerkövetelmények”) című szócikkéből vette át, melynek szerzői joga 2000–2026 között annak egyéni közreműködőié. Fordította: [Balu Ertl](https://www.drupal.org/u/balu-ertl) ([Brainsum](https://www.drupal.org/brainsum)).

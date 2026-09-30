@@ -1,0 +1,37 @@
+---
+title: "Concept: User Interface, Configuration, and Content translation"
+description: "Overview of translation on a site."
+id: "language-concept"
+translation_key: "language-concept"
+source_locale: "zh-hans"
+---
+## Prerequisite knowledge { #language-concept }
+
+* [understanding-data](./understanding-data.md)
+* [understanding-modules](./understanding-modules.md)
+* [planning-data-types](./planning-data-types.md)
+## What can be translated on your site?
+
+The base language for the software that your site runs (core software,
+modules, and theme) is English. However, you can create either a site that
+displays in a different language or a multi-lingual site; if you do so, all
+relevant text, images, and file attachments should be shown in the appropriate
+language for each site visitor. You need to have the core Language
+module installed in order to use a language other than English on the site.
+
+There are three types of information that you can translate, each with its own
+method for translating:
+
+- **User interface text:** Built-in text present in the core software, modules, and themes. This can be translated from the base English language of the software into the language(s) of your site. Typically, rather than needing to translate this text yourself, you can download translations. You need to have the core Interface Translation module installed in order to translate this text.
+- **Configuration text:** Text whose structure and initial values are defined by the core software, modules, and theme, but that you can edit. Examples include the labels for fields in your content types, header text in views, your site name, and the content of automatic email messages that your site sends out. After creating configuration text in the default language of your site, you can translate it into other languages. You need to have the core Configuration Translation module installed in order to translate this text.
+- **Content text and files:** If your site is multilingual, you can configure the content fields on your site to be translatable. After creating content in one language, you can translate it into other languages. Fields can contain textual information or uploaded files, and for each field on each content type, you can configure it to be translatable or non-translatable. You need to have the core Content Translation module installed in order to translate this text.
+## Related topics
+
+* [language-add](./language-add.md)
+* [language-content-config](./language-content-config.md)
+* [language-content-translate](./language-content-translate.md)
+* [language-config-translate](./language-config-translate.md)
+
+*Attributions*
+
+Written by [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).

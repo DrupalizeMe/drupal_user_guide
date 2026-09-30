@@ -1,0 +1,72 @@
+---
+title: "Downloading the Core Software Manually"
+description: "How to download the core software or a distribution from the web site."
+id: "install-manual"
+translation_key: "install-manual"
+source_locale: "hy"
+---
+## Goal { #install-manual }
+
+Download the core software or a distribution manually. Skip this topic if you
+are downloading using some other method.
+## Prerequisite knowledge
+
+* [understanding-distributions](./understanding-distributions.md)
+* [install-decide](./install-decide.md)
+## Steps
+
+1. Go to _https://www.drupal.org_ and navigate to _Build_ > _Download & Extend_
+    in the top-level menu.
+    <img src="/images/install-prepare-downloads.png" alt="Downloads page on _Drupal.org_" width="100%" />
+1. If you want to download just the core software, click the _Download Drupal
+    zip_ or _download tar.gz_ link, and save the file to your local machine.
+1. If you want to download a distribution, click the _Distributions_ icon or
+    link, choose a distribution from the list, click through to its project page,
+    and click the link to download a zip or tar.gz file to your local machine. The
+    link looks like this:
+    ![Finding a download URL](/images/extend-module-install-download.png)
+1. Upload the downloaded file to your hosting account. Log in to the control
+    panel and navigate to the _HTML_ directory. Save the file there.
+1. Uncompress the tar.gz or zip file, which will create a new directory. If you
+    do not have terminal access, or your hosting server is not running Linux, your
+    hosting control panel's file manager should provide a way to extract the
+    files. If you have terminal access to your hosting server (running Linux), you
+    can use a command like:
+    ```text
+    tar -xzf drupal-9.0.7.tar.gz
+    ```
+1. Delete the compressed file from the server, unless your unpacking method
+    already deleted it.
+1. Rename the directory or reconfigure your web hosting, so that the directory
+    name matches the directory your web hosting is configured to use for your site.
+## Expand your understanding
+
+Once you have the software downloaded, you can install a temporary demo site
+(see [install-decide](./install-decide.md)) by running the following command from the top-level
+directory of the core software:
+
+```text
+php core/scripts/drupal quick-start standard
+```
+
+The demo site will be installed, and your web browser should open to log in to
+the new site, which will only run as long as the PHP command is active. To learn
+more about this functionality, use its help command:
+
+```text
+php core/scripts/drupal quick-start --help
+```
+## Videos
+
+<div class="embedded-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/meVfH5mvdwI" title="Downloading the Core Software Manually" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+
+*Attributions*
+
+Written and edited by [Drew Gorton](https://www.drupal.org/u/dgorton),
+[Michael Lenahan](https://www.drupal.org/u/michaellenahan) at
+[erdfisch](https://erdfisch.de),
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon),
+and [Jojy Alphonso](https://www.drupal.org/u/jojyja) at
+[Red Crackle](http://redcrackle.com).

@@ -1,0 +1,190 @@
+[project]
+site_name = "Panduan Pengguna Drupal"
+site_description = "Panduan Pengguna Drupal"
+site_url = "http://localhost:8000/id/"
+docs_dir = "docs"
+site_dir = "site"
+
+copyright = """
+Copyright &copy; 2026 by the individual contributors, and can be used in accordance with the Creative Commons License, Attribution-ShareAlike 2.0 (CC BY-SA 2.0).
+"""
+
+nav = [
+  {"Panduan Pengguna Drupal" = [
+      "index.md",
+    ]},
+  {"Prakata" = [
+      "copyright.md",
+      "preface-audience.md",
+      "preface-organization.md",
+      "preface-reporting.md",
+      "preface-conventions.md",
+      "preface-scenario.md",
+    ]},
+  {"Bab 1: Memahami Drupal" = [
+      "understanding-drupal.md",
+      "understanding-modules.md",
+      "understanding-themes.md",
+      "understanding-distributions.md",
+      "understanding-data.md",
+      "understanding-project.md",
+      "understanding-gpl.md",
+    ]},
+  {"Bab 2: Merencanakan Situs Anda" = [
+      "block-regions.md",
+      "planning-layout.md",
+      "planning-data-types.md",
+      "planning-modular.md",
+      "planning-structure.md",
+      "planning-workflow.md",
+      "language-concept.md",
+    ]},
+  {"Bab 3: Instalasi" = [
+      "install-prepare.md",
+      "install-requirements.md",
+      "install-tools.md",
+      "install-decide.md",
+      "install-ddev.md",
+      "install-composer.md",
+      "install-run.md",
+    ]},
+  {"Bab 4: Konfigurasi Dasar Situs" = [
+      "config-overview.md",
+      "config-basic.md",
+      "config-install.md",
+      "config-uninstall.md",
+      "config-user.md",
+      "config-theme.md",
+    ]},
+  {"Bab 5: Pengelolaan Halaman Dasar" = [
+      "content-paths.md",
+      "content-create.md",
+      "content-edit.md",
+      "menu-home.md",
+      "menu-concept.md",
+      "menu-link-from-content.md",
+      "menu-reorder.md",
+    ]},
+  {"Bab 6: Menyiapkan Struktur Konten" = [
+      "structure-content-type.md",
+      "structure-content-type-delete.md",
+      "structure-fields.md",
+      "structure-reference-fields.md",
+      "structure-taxonomy.md",
+      "structure-taxonomy-setup.md",
+      "structure-adding-reference.md",
+      "structure-widgets.md",
+      "structure-form-editing.md",
+      "structure-view-modes.md",
+      "structure-content-display.md",
+      "structure-image-styles.md",
+      "structure-image-style-create.md",
+      "structure-image-responsive.md",
+      "structure-text-formats.md",
+      "structure-text-format-config.md",
+    ]},
+  {"Bab 7: Mengelola Akun Pengguna" = [
+      "user-concept.md",
+      "user-admin-account.md",
+      "user-new-role.md",
+      "user-new-user.md",
+      "user-permissions.md",
+      "user-roles.md",
+      "user-content.md",
+    ]},
+  {"Bab 8: Blok" = [
+      "block-concept.md",
+      "block-create-custom.md",
+      "block-place.md",
+    ]},
+  {"Bab 9: Membuat Daftar dengan Views" = [
+      "views-concept.md",
+      "views-parts.md",
+      "views-create.md",
+      "views-duplicate.md",
+      "views-block.md",
+    ]},
+  {"Bab 10: Menjadikan Situs Anda Multibahasa" = [
+      "language-add.md",
+      "language-content-config.md",
+      "language-content-translate.md",
+      "language-config-translate.md",
+    ]},
+  {"Bab 11: Memperluas dan Menyesuaikan Situs Anda" = [
+      "extend-module-find.md",
+      "extend-maintenance.md",
+      "extend-module-install.md",
+      "extend-theme-find.md",
+      "extend-theme-install.md",
+      "extend-manual-install.md",
+      "install-dev-sites.md",
+      "install-dev-making.md",
+      "extend-deploy.md",
+      "extend-config-versions.md",
+      "extend-git.md",
+    ]},
+  {"Bab 12: Mencegah dan Memperbaiki Masalah" = [
+      "prevent-cache.md",
+      "prevent-cache-clear.md",
+      "prevent-backups.md",
+      "prevent-log.md",
+      "prevent-status.md",
+    ]},
+  {"Bab 13: Keamanan dan Pemeliharaan" = [
+      "security-cron-concept.md",
+      "security-cron.md",
+      "security-concept.md",
+      "security-announce.md",
+      "security-update-core.md",
+      "security-update-module.md",
+      "security-update-theme.md",
+    ]},
+  {"Bab 14: Pemikiran Akhir" = [
+      "thoughts-connecting.md",
+      "thoughts-support.md",
+      "thoughts-learn-more.md",
+    ]},
+  "glossary.md",
+  "attributions.md",
+]
+extra_css = ["assets/guide.css"]
+
+[project.theme]
+language = "id"
+favicon = "assets/favicon.ico"
+logo = "assets/druplicon.svg"
+features = ["content.code.copy","navigation.footer", "navigation.indexes", "navigation.path"]
+
+[project.extra]
+alternate = [
+  { name = "Català", link = "/ca/", lang = "ca" },
+  { name = "Deutsch", link = "/de/", lang = "de" },
+  { name = "English", link = "/en/", lang = "en" },
+  { name = "Español", link = "/es/", lang = "es" },
+  { name = "فارسی", link = "/fa/", lang = "fa" },
+  { name = "Français", link = "/fr/", lang = "fr" },
+  { name = "Magyar", link = "/hu/", lang = "hu" },
+  { name = "Հայերեն", link = "/hy/", lang = "hy" },
+  { name = "Bahasa Indonesia", link = "/id/", lang = "id" },
+  { name = "日本語", link = "/ja/", lang = "ja" },
+  { name = "Português do Brasil", link = "/pt-br/", lang = "pt-BR" },
+  { name = "Русский", link = "/ru/", lang = "ru" },
+  { name = "Українська", link = "/uk/", lang = "uk" },
+  { name = "简体中文", link = "/zh-hans/", lang = "zh-Hans" },
+]
+
+
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.tables]
+
+[project.markdown_extensions.toc]
+permalink = true
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]

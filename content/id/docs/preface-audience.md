@@ -1,0 +1,42 @@
+---
+title: "Audiens dan Tujuan"
+description: "Memahami audiens sasaran panduan ini dan hal yang akan mereka pelajari darinya."
+id: "preface-audience"
+translation_key: "preface-audience"
+source_locale: "id"
+---
+[](){ #preface-audience }
+
+Panduan ini terutama ditulis untuk orang yang memiliki pengetahuan minimal
+tentang sistem manajemen konten Drupal. Topik-topik di dalamnya akan membantu
+mereka menjadi terampil dalam menginstal, mengadministrasikan, membangun situs,
+dan/atau memelihara konten situs web berbasis Drupal. Panduan ini juga ditujukan
+untuk orang yang sudah memiliki pengalaman dengan Drupal versi saat ini atau
+versi sebelumnya dan ingin memperluas keterampilan serta pengetahuan mereka,
+atau memperbaruinya ke versi saat ini.
+
+Panduan ini mengasumsikan bahwa Anda sudah memutuskan ingin mempelajari dan
+menggunakan Drupal. Jika perlu mempelajari lebih lanjut sebelum memutuskan,
+lihat [understanding-drupal](./understanding-drupal.md).
+
+Bergantung pada aspek Drupal yang ingin Anda pelajari, Anda memerlukan beberapa
+pengetahuan dasar untuk memahami panduan ini: keterampilan dan pengetahuan umum
+tentang Internet diasumsikan sudah Anda miliki, dan panduan ini berfokus pada
+cara menggunakan perangkat lunak itu sendiri. Misalnya, bagian tentang instalasi
+Drupal pada server web mengasumsikan bahwa Anda dapat memperoleh hosting web dan
+memahami cara mentransfer berkas ke host web pilihan Anda. Demikian pula, bagian
+tentang pengelolaan konten mengasumsikan bahwa Anda dapat masuk ke situs web dan
+mengisi formulir berbasis web.
+
+Setelah membaca panduan ini, Anda seharusnya dapat:
+
+* Merencanakan arsitektur konten untuk situs berbasis Drupal
+* Membangun situs yang telah Anda rencanakan
+* Mengelola dan mengadministrasikan situs Anda
+* Memahami dokumentasi dan postingan blog tentang topik yang tidak dibahas di
+  sini untuk memperluas pengetahuan dan keterampilan Anda
+* Terhubung dengan komunitas Drupal di seluruh dunia
+
+*Atribusi*
+
+Ditulis oleh [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).

@@ -1,0 +1,55 @@
+---
+title: "Konsep: Konten Modular"
+description: "Gambaran umum konten modular dan cara konten dalam halaman dapat berasal dari item konten lain."
+id: "planning-modular"
+translation_key: "planning-modular"
+source_locale: "id"
+---
+## Pengetahuan prasyarat { #planning-modular }
+
+* [planning-data-types](./planning-data-types.md)
+* [planning-layout](./planning-layout.md)
+## Apa itu konten modular?
+
+Karena konten situs disimpan dalam database, sebaiknya konten dibuat _modular_.
+Artinya, halaman tertentu di situs, alih-alih disunting sebagai satu halaman
+utuh, dibuat secara otomatis dari item konten lain. Misalnya, dalam skenario
+situs pasar petani, Anda mungkin membuat item konten tersendiri untuk resep.
+Jika item konten resep memiliki kolom yang melacak bahan, situs dapat
+menyertakan halaman gabungan yang mencantumkan resep dan memungkinkan
+pengunjung mencari resep yang berisi
+bahan tertentu yang mereka beli di pasar.
+
+Bagian halaman yang lebih kecil juga dapat dibuat sebagai gabungan. Misalnya,
+item konten resep dapat memiliki kolom yang melacak vendor yang mengirimkan
+resep
+(lihat [structure-reference-fields](./structure-reference-fields.md)), dengan perincian vendor disunting dalam
+item konten vendor terpisah. Dengan demikian, Anda dapat melakukan hal berikut
+di situs:
+
+* Pada setiap halaman Recipe, dapat ada area yang menampilkan informasi tentang
+  vendor yang mengirimkan resep, seperti nama dan nomor kios pasar mereka.
+* Setiap halaman vendor dapat memiliki bagian yang mencantumkan resep yang
+  mereka kirimkan.
+
+Gagasan utamanya adalah setiap informasi hanya disunting di satu tempat. Saat
+informasi vendor diperbarui, semua halaman resep yang menampilkan informasi
+vendor
+tersebut akan diperbarui secara otomatis. Saat resep dikirimkan oleh vendor,
+resep itu otomatis ditampilkan pada halaman vendor. Modul Views inti adalah cara
+umum untuk menggunakan konten modular dalam membuat halaman gabungan dan bagian
+halaman; lihat [views-concept](./views-concept.md) untuk informasi lebih lanjut. Selain itu,
+_mode tampilan_ berguna untuk menentukan berbagai cara menampilkan setiap item
+konten; lihat [structure-view-modes](./structure-view-modes.md) untuk informasi lebih lanjut.
+## Topik terkait
+
+* [planning-structure](./planning-structure.md)
+* [structure-content-type](./structure-content-type.md)
+* [structure-fields](./structure-fields.md)
+* [structure-reference-fields](./structure-reference-fields.md)
+* [structure-view-modes](./structure-view-modes.md)
+* [views-concept](./views-concept.md)
+
+*Atribusi*
+
+Ditulis oleh [Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).

@@ -1,0 +1,81 @@
+---
+title: "Konzept: Überblick über den Verwaltungsbereich von Drupal"
+description: "Überblick über das Menü Verwalten und kontextbezogene Links."
+id: "config-overview"
+translation_key: "config-overview"
+source_locale: "de"
+---
+## Erforderliche Vorkenntnisse { #config-overview }
+
+* [understanding-themes](./understanding-themes.md)
+* [understanding-modules](./understanding-modules.md)
+## Was ist das Menü Verwalten?
+
+Die Symbolleiste wird vom Modul Toolbar bereitgestellt welches mit dem
+Kernsystem ausgeliefert wird. Sie zeigt Benutzern,  die über die entsprechenden
+Berechtigungen verfügen, das Menü _Verwalten_ am oberen oder linken
+Rand der Website an. Dieses Menü bietet Zugang zu allen administrativen
+Bereichen der Website. Die Menüeinträge variieren je nachdem,
+welche Module auf Ihrer Website aktiv sind und danach, über welche
+Berechtigungen die angemeldete Person verfügt.
+Wenn Sie das Standard-Installationsprofil des Kernsystems zur
+Installation der Website verwenden, und über alle administrativen Berechtigungen
+verfügen, sind in der obersten Menüebene der Werkzeugleiste folgende
+Einträge vorhanden:
+
+<img src="/images/config-overview-toolbar.png" alt="Administrative menu in horizontal mode" width="100%" />
+
+- **Inhalt:** Listet vorhandene Inhalte auf, ermöglicht deren Verwaltung und das Erstellen neuer Inhalte.
+- **Struktur:** Enthält eine Liste von Links zur Verwaltung von Strukturelementen der Website, wie Blöcke, Inhaltstypen, Menüs und Taxonomievokabularien.
+- **Design:** Hier können Einstellungen für Themes und andere Design-Einstellungen festgelegt werden.
+- **Erweitern:** Hier können Module installiert und deinstalliert werden.
+- **Konfiguration:** Enthält Links zu Einstellungen für verschiedene Funktionen der Website.
+- **Benutzer:** Hier können Benutzer, Rollen und Berechtigungen verwaltet werden.
+- **Berichte:** Enthält Links zu Protokollen, Aktualisierungsinformationen, Informationen zur Suche und anderen Informationen zum Status der Website.
+- **Hilfe:** Listet Hilfethemen für installierte Module auf, die Einträge für diesen Bereich mitliefern.
+
+Die Pfeilschaltfläche ganz rechts in der zweiten Zeile der Werkzeugleiste
+(oder ganz links, wenn die Website in einer von rechts nach links zu lesenden
+Sprache wie z. B. Arabisch angezeigt wird) kann verwendet werden, um die
+Ausrichtung des Menüs vom horizontalen Layout, am oberen Rand der Seite, auf ein vertikales
+Layout auf der linken Seite (oder auf der rechten Seite, bei Sprachen, die von
+rechts nach links gelesen werden) umzustellen. Bei vertikaler Ansicht wird das
+Menü zu einer interaktiven Baumstruktur.
+
+<img src="/images/config-overview-vertical-menu.png" alt="Administrative menu in vertical mode" width="228px" />
+
+Dieses Handbuch enthält eine Standardbeschreibung für die Navigation zu  den
+Seiten des Verwaltungsbereichs über die Werkzeugleiste.
+Siehe: [preface-conventions](./preface-conventions.md) für weitere Informationen.
+## Was sind Kontextlinks?
+
+Auf einige Verwaltungs- und Bearbeitungsfunktionen der Website kann über
+ _kontextlinks_ zugegriffen werden, die vom Modul Contextual Links angezeigt
+ werden, das mit dem Kernsystem ausgeliefert wird. Kontextuelle Links führen in
+ manchen Fällen auf die gleichen Seiten, die Sie über
+das Menü _Verwalten_ erreichen können. Anstatt durch die Hierarchie des Menüs
+navigieren zu müssen, werden diese Links in der Nähe der Stelle angezeigt, an
+der auf der Website der entsprechende Inhalt angezeigt wird.
+
+Kontextlinks müssen aktiviert werden, um sichtbar zu sein. Wenn das Theme Ihrer
+Website den Designvorgaben für Kontextlinks folgt, wird ein Bleistift-Symbol
+verwendet, um anzuzeigen, dass kontextlinks vorhanden und aktiviert sind.
+Wenn Sie auf das Symbol klicken, werden auf der jeweiligen Seite alle
+verfügbaren Kontextlinks angezeigt. Es gibt zwei Möglichkeiten,
+die Kontextlink-Symbole zu aktivieren:
+
+* Wenn Sie die Maus in einem Browser verwenden, wird das Symbol
+vorübergehend angezeigt, wenn Sie mit dem Mauszeiger über einen Bereich fahren,
+der kontextbezogene Links enthält.
+* Sie können auf das Bleistift-Symbol (oder dessen _Bearbeiten_-Link)
+am rechten Ende des Verwaltungsmenüs in der Werkzeugleiste klicken, um alle
+kontextbezogenen Links auf der aktuellen Seite anzeigen zu lassen.
+Dieses Symbol ist nur auf Seiten mit Kontextlinks sichtbar.
+<img src="/images/config-overview-pencils.png" alt="Seite mit eingeschalteten Bleistift-Symbolen" width="100%" />
+
+*Mitwirkende*
+
+Geschrieben von [Scott Wilkinson](https://www.drupal.org/u/halofx) und
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Ins Deutsche übersetzt von [Joachim Namyslo](https://www.drupal.org/u/Joachim-Namyslo).

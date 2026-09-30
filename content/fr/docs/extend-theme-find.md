@@ -1,0 +1,108 @@
+---
+title: "Trouver des thèmes"
+description: "Comment utiliser les filtres pour chercher des thèmes et les évaluer."
+id: "extend-theme-find"
+translation_key: "extend-theme-find"
+source_locale: "fr"
+---
+## Objectif { #extend-theme-find }
+
+Trouver et évaluer des thèmes sur _Drupal.org_.
+## Prérequis
+
+* [understanding-drupal](./understanding-drupal.md)
+* [understanding-themes](./understanding-themes.md)
+## Étapes
+
+1. Aller sur https://www.drupal.org, et naviguer vers _Download & Extend_ >
+    _Themes_ (https://www.drupal.org/project/project_theme).
+1. Filtrer la recherche en utilisant les catégories de la page de recherche de
+    thèmes. Par exemple, vous pourriez utiliser ces filtres :
+    <table>
+      <thead>
+        <tr>
+          <th>Nom du champ</th>
+          <th>Explication</th>
+          <th>Valeur d'exemple</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maintenance status</td>
+          <td>Ce thème est-il activement maintenu ? Si un thème est activement maintenu, vous pouvez vous attendre à des corrections de bugs et des améliorations régulières.</td>
+          <td>Actively maintained</td>
+        </tr>
+        <tr>
+          <td>Development status</td>
+          <td>Quel est le niveau d'activité de développement de ce thème ? En sélectionnant _Under active development_, vous pouvez vous attendre à ce que de nouvelles fonctionnalités soient ajoutées, et à ce que certains aspects puissent encore changer. _Maintenance fixes only_ signifie que le thème est considéré comme achevé.</td>
+          <td>Any</td>
+        </tr>
+        <tr>
+          <td>Core compatibility</td>
+          <td>La version de Drupal avec laquelle le thème est compatible.</td>
+          <td>9.x</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>Les _sandbox projects_ sont des projets expérimentaux. Les _full projects_ sont déjà passés par un processus d'approbation, mais peuvent être toujours en développement.</td>
+          <td>Full projects</td>
+        </tr>
+        <tr>
+          <td>Stability</td>
+          <td>Le mainteneur du thème a-t-il créé une version prête pour la production ?</td>
+          <td>Has a supported stable release.</td>
+        </tr>
+        <tr>
+          <td>Security advisory coverage</td>
+          <td>Le mainteneur du thème a-t-il accepté de suivre les procédure de l'équipe de sécurité de Drupal ?</td>
+          <td>Has security advisory coverage</td>
+        </tr>
+        <tr>
+          <td>Search themes</td>
+          <td>Rechercher par mot clef dans la description.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Sort by</td>
+          <td>Trier les résultats de recherche selon des critères comme _Most installed_ (thèmes populaires que beaucoup de sites utilisent)</td>
+          <td>Most installed</td>
+        </tr>
+      </tbody>
+    </table>
+
+    ![Filtres sur la page de recherche de thèmes sur _Drupal.org_](/images/extend-theme-find_theme_finder.png)
+
+1. Cliquer sur _Search_. Les résultats de recherche apparaissent.
+    ![La page des résultats de recherche sur _Drupal.org_](/images/extend-theme-find_search_results.png)
+1. Pour aller plus loin dans l'évaluation d'un thème, cliquer sur son titre dans
+    la liste des résultats de recherche pour visiter la page du projet.
+
+    Certains aspects auxquels prêter attention pour évaluer des thèmes :
+
+    * Présentation : la description de ce thème sur la page du projet devrait être
+    claire et utile. Une capture d'écran vous aide dans votre évaluation.
+    * Information du projet : il pourrait y avoir des avertissements dans cette zone
+    de la page, par exemple si le thème n'est plus activement développé, ou n'est
+    pas couvert par la politique d'alerte de sécurité.
+    * Information du projet > Signalement des installations et téléchargements : vous voyez
+    combien de gens ont téléchargé ce thème et combien de sites l'utilisent.
+    * Tickets : voir s'il y a des tickets ouverts, des problèmes potentiels avec ce
+    thème. Vérifier les statistiques pour voir dans quelle mesure les tickets sont
+    traités régulièrement.
+    * Documentation, ressources : vérifier si le thème a une documentation ou un
+    fichier README, qui peut aider pour l'installer, le configurer, l'explorer ou le
+    tester.
+
+## Pour approfondir
+
+* [extend-theme-install](./extend-theme-install.md)
+## Vidéos (en anglais)
+
+<div class="embedded-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/M8LYX6K53jg" title="Finding Themes" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+
+*Attributions*
+
+Écrit par [Diána Lakatos](https://www.drupal.org/u/dianalakatos). Traduit par
+[Felip Manyer i Ballester](https://www.drupal.org/u/fmb).

@@ -1,0 +1,56 @@
+---
+title: "Concepto: formatos y editores de texto"
+description: "Descripción general de los formatos de texto, los filtros, los editores y el cross-site scripting."
+id: "structure-text-formats"
+translation_key: "structure-text-formats"
+source_locale: "es"
+---
+## ¿Qué son los formatos de texto y los filtros? { #structure-text-formats }
+
+Los _formatos de texto_ cambian la forma en que se procesan y se muestran las
+etiquetas HTML y el resto del texto en su sitio. Los formatos de texto se
+componen de una serie de _filtros_, cada uno de los cuales transforma el texto.
+Cuando los usuarios crean contenido, se asocia un formato de texto al contenido
+y el texto completo original se almacena en la base de datos. Después, el
+contenido se pasa por los filtros del formato de texto antes de convertirse en
+la salida que se muestra en el sitio.
+
+El módulo del núcleo Filter proporciona la funcionalidad de formatos de texto, y
+el perfil de instalación Standard del núcleo configura los formatos de texto
+_Basic HTML_, _Restricted HTML_ y _Full HTML_. Cada formato de texto tiene un
+permiso asociado, de modo que puede permitir que solo los usuarios de confianza
+usen los formatos de texto permisivos. Esto limita a los usuarios que no son de
+confianza a formatos de texto como _Basic HTML_, que filtra las etiquetas HTML
+peligrosas.
+## ¿Qué son los editores asociados a los formatos de texto?
+
+Cada formato de texto puede asociarse a un editor, como un editor HTML visual
+WYSIWYG (_What You See Is What You Get_, "lo que ves es lo que obtienes"). El
+módulo del núcleo Text Editor permite asociar editores a los formatos de texto y
+configurar los editores (por ejemplo, añadir y quitar botones de sus barras de
+herramientas). El módulo del núcleo CKEditor proporciona el editor estándar del
+sector conocido como CKEditor, de modo que se pueda usar para editar contenido
+HTML en su sitio.
+## ¿Qué es el cross-site scripting?
+
+El cross-site scripting (XSS) es una vulnerabilidad de seguridad habitual en los
+sitios web. En un sitio que no esté bien protegido, un usuario malicioso puede
+introducir código de script en páginas web que otros usuarios visualizan (por
+ejemplo, en un comentario o en el cuerpo de una página). Los atacantes pueden
+aprovechar una vulnerabilidad de cross-site scripting para iniciar sesión como
+otro usuario. Es importante configurar los formatos de texto de su sitio web
+para evitar este tipo de abuso.
+## Temas relacionados
+
+[security-concept](./security-concept.md)
+## Recursos adicionales
+
+* [_Drupal.org_ community documentation page "Filter module overview"](https://www.drupal.org/docs/core-modules-and-themes/core-modules/filter-module/filter-module-overview)
+* [Wikipedia page "Cross-site scripting"](https://en.wikipedia.org/wiki/Cross-site_scripting)
+
+*Atribuciones*
+
+Escrito y editado por [Boris Doesborg](https://www.drupal.org/u/batigolix) y
+[Jennifer Hodgdon](https://www.drupal.org/u/jhodgdon).
+
+Traducido por [Jesús Manuel García](https://www.drupal.org/u/skuark).
