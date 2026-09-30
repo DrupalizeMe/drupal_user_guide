@@ -1,0 +1,99 @@
+workflow:
+  rules:
+    - if: $CI_MERGE_REQUEST_IID || $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $CI_PIPELINE_SOURCE == "webide"
+    - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
+
+default:
+  interruptible: true
+
+stages:
+  - build
+  - deploy
+
+.site-changes: &site_changes
+  - ".gitlab-ci.yml"
+  - "requirements.txt"
+  - "content/**/*"
+  - "scripts/**/*"
+  - "guidelines/**/*"
+  - "templates/**/*"
+  - "README.md"
+  - "ADDING_A_LOCALE.md"
+
+.build-documentation:
+  stage: build
+  image: ghcr.io/astral-sh/uv:python3.14-trixie-slim
+  script:
+    - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py
+
+# Preview builds publish en,de plus any locale whose content/<locale>/ files the
+# merge request changes, because the full assembled artifact is currently too
+# large for MR preview deployment.
+build preview documentation:
+  extends: .build-documentation
+  rules:
+    - if: $CI_MERGE_REQUEST_IID || $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes: *site_changes
+  before_script:
+    # git is needed to find which locales the merge request changes.
+    - apt-get update -qq && apt-get install -y -qq --no-install-recommends git ca-certificates > /dev/null
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
+  script:
+    - PREVIEW_LOCALES="$(scripts/zensical/preview_locales.sh)"
+    - echo "Building preview locales $PREVIEW_LOCALES"
+    - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py --locales "$PREVIEW_LOCALES"
+  artifacts:
+    paths:
+      - build/zensical/site-build/assembled
+    expire_in: 1 hour
+
+build documentation:
+  extends: .build-documentation
+  rules:
+    - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
+      changes: *site_changes
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "web"
+    - if: $CI_PIPELINE_SOURCE == "webide"
+  artifacts:
+    paths:
+      - build/zensical/site-build/assembled
+    expire_in: 1 hour
+
+.pages-base:
+  stage: deploy
+  image: alpine:latest
+  needs:
+    - job: build documentation
+      optional: true
+    - job: build preview documentation
+      optional: true
+  script:
+    - echo "Documentation available at $CI_PAGES_URL"
+  artifacts:
+    expire_in: 1 hour
+
+preview documentation:
+  extends: .pages-base
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes: *site_changes
+  needs:
+    - build preview documentation
+  pages:
+    publish: build/zensical/site-build/assembled
+    path_prefix: "preview-$CI_MERGE_REQUEST_IID"
+    expire_in: 30 days
+
+publish documentation:
+  extends: .pages-base
+  rules:
+    - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
+      changes: *site_changes
+  needs:
+    - build documentation
+  pages:
+    publish: build/zensical/site-build/assembled
