@@ -118,12 +118,13 @@ If you are reading the repository directly, it helps to think of each locale dir
 
 This repository has a small Python prep/build layer around Zensical.
 
-It does three project-specific things:
+It does these project-specific things:
 
 - prepare generated locale workspaces under `build/zensical/workspaces/`
 - replace placeholder links like `[config-theme](./config-theme.md)` with the destination page title in the generated workspace
 - build a selected set of locale sites in one command
 - rewrite root-relative locale URLs during assembly so navigation, images, stylesheets, favicons, and locale switcher links so they still work when GitLab pages serves previews under a path prefix such as `/user_guide/preview-74/`
+- copy the static pages in `scripts/zensical/site-pages/` into the site: a root page that redirects to `/en/`, a `404.html`, and, when only some locales are built, a placeholder home page for each other locale that links to [#3629091](https://www.drupal.org/project/user_guide/issues/3629091) so the language switcher never leads to a 404
 
 This also means that if you're making changes to Zensical configuration (zensical.toml) those changes likely need to be made across all locales. The same is true for assets like logo, favicon, and CSS.
 

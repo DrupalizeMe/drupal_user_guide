@@ -33,6 +33,12 @@ ASSEMBLED_ROOT = BUILD_ROOT / "site-build" / "assembled"
 BUILD_WORKSPACE = "build"
 LOCALE_URL_RE = re.compile(r'(?P<attr>href|src)="/(?P<locale>[A-Za-z0-9-]+)/(?P<rest>[^"]*)"')
 
+# Static pages copied into the assembled site: a root redirect, a 404 page, and
+# a placeholder home page for each locale that isn't built. Every locale
+# together is larger than the GitLab Pages size limit, so published sites and
+# previews build only some of them.
+SITE_PAGES_DIR = Path(__file__).resolve().parent / "site-pages"
+
 
 def parse_args() -> argparse.Namespace:
     """Parse the CLI for the multi-locale assembly wrapper."""
@@ -146,6 +152,7 @@ def main() -> None:
         build_locale(locale)
 
     assemble_locales_with_registry(selected_locales, all_locales)
+    write_site_pages(selected_locales)
     print(f"Assembled site written to {ASSEMBLED_ROOT}")
 
 
@@ -158,6 +165,16 @@ def assemble_locales_with_registry(selected_locales: list[str], all_locales: lis
         shutil.copytree(site_dir, destination, dirs_exist_ok=True)
         rewrite_locale_asset_paths(destination, locale, all_locales)
 
+
+
+def write_site_pages(selected_locales: list[str]) -> None:
+    """Copy the root redirect, 404 page, and unpublished-locale placeholders."""
+    shutil.copy(SITE_PAGES_DIR / "index.html", ASSEMBLED_ROOT / "index.html")
+    shutil.copy(SITE_PAGES_DIR / "404.html", ASSEMBLED_ROOT / "404.html")
+    for locale in locale_meta():
+        if locale not in selected_locales:
+            (ASSEMBLED_ROOT / locale).mkdir(parents=True, exist_ok=True)
+            shutil.copy(SITE_PAGES_DIR / "unpublished-locale.html", ASSEMBLED_ROOT / locale / "index.html")
 
 if __name__ == "__main__":
     main()

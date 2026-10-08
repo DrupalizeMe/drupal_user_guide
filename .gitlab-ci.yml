@@ -9,6 +9,14 @@ workflow:
 default:
   interruptible: true
 
+variables:
+  # Every locale together is larger than the GitLab Pages size limit, so the
+  # published site includes only these. Override it when running a pipeline,
+  # or set it as a CI/CD variable, to publish a different set.
+  PUBLISH_LOCALES:
+    value: "en,de"
+    description: "Comma-separated locales to publish to GitLab Pages."
+
 stages:
   - build
   - deploy
@@ -50,6 +58,9 @@ build preview documentation:
       - build/zensical/site-build/assembled
     expire_in: 1 hour
 
+# The published site builds only PUBLISH_LOCALES (see the top of this file)
+# for the same reason: every locale together is larger than the GitLab Pages
+# size limit.
 build documentation:
   extends: .build-documentation
   rules:
@@ -58,6 +69,9 @@ build documentation:
     - if: $CI_PIPELINE_SOURCE == "schedule"
     - if: $CI_PIPELINE_SOURCE == "web"
     - if: $CI_PIPELINE_SOURCE == "webide"
+  script:
+    - echo "Building published locales $PUBLISH_LOCALES"
+    - uv run --with-requirements requirements.txt python scripts/zensical/build_site.py --locales "$PUBLISH_LOCALES"
   artifacts:
     paths:
       - build/zensical/site-build/assembled

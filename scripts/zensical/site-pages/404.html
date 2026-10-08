@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found: Drupal User Guide</title>
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.5; color: #1a1a1a;
+           background: #fff; margin: 0; padding: 3rem 1rem; }
+    main { max-width: 36rem; margin: 0 auto; }
+    a { color: #0b5fa5; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Page not found</h1>
+    <p>This page of the Drupal User Guide doesn't exist. Some translations may
+      not be published here yet because the site is too large to publish every
+      language; see
+      <a href="https://www.drupal.org/project/user_guide/issues/3629091">[#3629091] GitLab Pages can't publish every locale of the guide because the site exceeds the Pages size limit</a>.</p>
+    <p id="home" hidden><a href="">Go to the Drupal User Guide</a></p>
+  </main>
+  <script>
+    // This page is served for missing URLs at any depth, so find the site root
+    // from the first path segment that looks like a locale code (en, pt-br).
+    (function () {
+      var parts = window.location.pathname.split("/");
+      for (var i = 0; i < parts.length; i++) {
+        if (/^[a-z]{2,3}(-[a-z]+)?$/.test(parts[i])) {
+          document.querySelector("#home a").href = parts.slice(0, i).join("/") + "/en/";
+          document.getElementById("home").hidden = false;
+          return;
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
